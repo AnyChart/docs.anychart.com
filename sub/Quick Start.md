@@ -1,6 +1,6 @@
 Quick Start
 ===========
-### To start working with AnyChart framework you should do just three things:
+### To start working with AnyChart framework you should do three things:
 
 1. ####Include anychart.min.js to your head section<br>
 ```
@@ -8,13 +8,13 @@ Quick Start
     <script src="cdn.anychart.com/anychart.min.js" type="text/javascript"></script>
 </head>
 ```
-2. ####Create block-based container with id attribute for your chart<br>
+2. ####Create block-based container with an id attribute for your chart<br>
 ```
 <body>
     <div id="chart-container" style="width: 500px; height: 400px;"></div>
 </body>
 ```
-3. ####Insert following script section in any part of your page.<br>
+3. ####Insert following script section into any part of your page.<br>
 ```
     <script>
         anychart.onDocumentLoad(function() {
@@ -31,7 +31,7 @@ Quick Start
     </script>
 ```
 
-###After all you should have the following result
+###When all the above is done you should see the following result:
 ![Simple pie chart](../images/pie-chart.png)
 
 <h3 style="line-height:22px;padding-bottom:10px;">Here is a full snippet of code, you can copy this to a file on your computer and open it in your browser to display the pie chart shown above:
