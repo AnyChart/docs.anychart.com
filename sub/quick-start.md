@@ -18,7 +18,7 @@ Quick Start
 ```
     <script>
         anychart.onDocumentLoad(function() {
-            var chart = new anychart.pie.Chart([ //create instance of pie chart with data
+            var chart = new anychart.pie.Chart([ //create an instance of pie chart with data
                 ['Chocolate paste', 5],
                 ['White honey', 2],
                 ['Strawberry jam', 2],
@@ -26,7 +26,7 @@ Quick Start
             ]);
             chart.title('The kind of pancakes preferred at the Sochi 2014 Olympic Games');
             chart.container('chart-container'); //pass the container where chart will be drawn
-            chart.draw(); //call chart draw method to initiate chart drawing
+            chart.draw(); //call the chart draw method to initiate chart drawing
         });
     </script>
 ```
@@ -54,7 +54,7 @@ Quick Start
     <script src="../../out/anychart.min.js"></script>
     <script>
         anychart.onDocumentLoad(function() {
-            var chart = new anychart.pie.Chart([ //create instance of pie chart with data
+            var chart = new anychart.pie.Chart([ //create an instance of pie chart with data
                 ['Chocolate paste', 5],
                 ['White honey', 2],
                 ['Strawberry jam', 2],
@@ -62,7 +62,7 @@ Quick Start
             ]);
             chart.title('The kind of pancakes preferred at the Sochi 2014 Olympic Games');
             chart.container('chart-container'); //pass the container where chart will be drawn
-            chart.draw(); //call chart draw method to initiate chart drawing
+            chart.draw(); //call the chart draw method to initiate chart drawing
         });
     </script>
 </head>
@@ -77,7 +77,7 @@ Quick Start
 ```
 	<script>
 	    $(function() {
-	        var chart = new anychart.pie.Chart([ //create instance of pie chart with data
+	        var chart = new anychart.pie.Chart([ //create an instance of pie chart with data
 	            ['Mushrooms', 3],
 	            ['Onions', 1],
 	            ['Olives', 1],
@@ -86,7 +86,7 @@ Quick Start
 	        ]);
             chart.title('The kind of pancakes preferred at the Sochi 2014 Olympic Games')        
 	        chart.container('chart-container'); //pass the container where chart will be drawn
-	        chart.draw(); //call chart draw method to initiate chart drawing
+	        chart.draw(); //call the chart draw method to initiate chart drawing
 	    });
 	</script>
 ```
