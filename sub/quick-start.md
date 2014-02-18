@@ -26,7 +26,7 @@ Quick Start
             ]);
             chart.title('The kind of pancakes preferred at the Sochi 2014 Olympic Games');
             chart.container('chart-container'); //pass the container where chart will be drawn
-            chart.draw(); //call the chart draw method to initiate chart drawing
+            chart.draw(); //call the chart draw() method to initiate chart drawing
         });
     </script>
 ```
