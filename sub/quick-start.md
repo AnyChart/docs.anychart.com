@@ -44,8 +44,8 @@ Quick Start
 
 
 
-<h3 style="line-height:22px;padding-bottom:10px;">Here is the full snippet of code - you can copy this to a file on your computer and open it in your browser to display the pie chart shown above:
-</h3>
+<p style="line-height:22px;padding-bottom:10px;">Here is the full snippet of code - you can copy this to a file on your computer and open it in your browser to display the pie chart shown above:
+</p>
 
 
 ```
@@ -72,7 +72,7 @@ Quick Start
 </html>
 ```
 
-<h3 style="line-height:22px;padding-bottom:10px;">Also, you can use any other JavaScript library to manage the DOM ready event.<br> Here is an example with jQuery:</h3>
+<p style="line-height:22px;padding-bottom:10px;">Also, you can use any other JavaScript library to manage the DOM ready event.<br> Here is an example with jQuery:</p>
 
 ```
 	<script>
