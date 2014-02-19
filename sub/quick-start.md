@@ -31,7 +31,7 @@ Quick Start
     </script>
 ```
 
-###After all you should have the following result
+<p style="line-height:22px;padding-bottom:10px;">After all you should have the following result</p>
 
 <span style="text-align:center; display:inline-block; width:100%;">![Simple pie chart](../images/pie-chart.png)
 <br>
