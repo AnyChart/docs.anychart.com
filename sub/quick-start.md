@@ -51,7 +51,7 @@ Quick Start
 ```
 <!doctype html>
 <head>
-    <script src="../../out/anychart.min.js"></script>
+    <script src="cdn.anychart.com/anychart.min.js" type="text/javascript"></script> 
     <script>
         anychart.onDocumentLoad(function() {
             var chart = new anychart.pie.Chart([ //create an instance of pie chart with data
