@@ -5,8 +5,6 @@
 * [Method anchor()](#m-anchor)
 * [Method offestX() or offsetY()](#m-offsets)
 
-{sample}sample{sample}
-
 ## [Introduction](id:intro)
 Позиционирование таких элементов как Маркер, Лейбл, Мультимаркер и Мультилейбл происходит при помощи трех методов: **position**, **anchor**, **offsetX**, **offsetY**.
 Это обязательные методы для каждого из этих элементов.
@@ -27,32 +25,7 @@
   
 Более того, можно предавать не только точные значения, но и относительные (в процентах).
 
-<script>
-  var bg = new anychart.elements.Label().background().fill('green .05').stroke('1 green');
-  new anychart.elements.Label()
-      .container(stage)
-      .position(['30%', '20%'])
-      .background(bg)
-      .text('Label\nposition([30%,30%])')
-      .fontSize(14)
-      .padding(3)
-    // берем только половину контейнера для красоты
-      .parentBounds(new anychart.math.Rect(stage.width() / 2, 0, stage.width() / 2,     stage.height()))
-      .draw();
-  stage.path()
-      .moveTo(stage.width() / 2, 0)
-      .lineTo(stage.width() / 2, stage.height());
-  new anychart.elements.Label()
-      .container(stage)
-      .position([stage.width()/2 + 50, 20])
-      .background(bg)
-      .padding(3)
-      .text('Label\nposition([30,30])')
-      .parentBounds(new anychart.math.Rect(stage.width() / 2, 0, stage.width() / 2, stage.height()))
-      .fontSize(14)
-      .draw();
-</script>
-![](../images/position_lbl_perc_val.png) 
+{sample}position-lbl-perc-val{sample}
 
 ### Произвольное строковое значение
 **Для множественного Маркера и множественного Лейбла.**
