@@ -5,6 +5,7 @@
 * [Method anchor()](#m-anchor)
 * [Method offestX() or offsetY()](#m-offsets)
 
+{sample}sample{sample}
 
 ## [Introduction](id:intro)
 Позиционирование таких элементов как Маркер, Лейбл, Мультимаркер и Мультилейбл происходит при помощи трех методов: **position**, **anchor**, **offsetX**, **offsetY**.
