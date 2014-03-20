@@ -19,31 +19,7 @@
     * одним значением <code>fill('color **opacity**')</code>
  (то есть значения одной строкой разделенные пробелом).
 
-<script>
-stage.path()
-      .moveTo(stage.width() / 2, 0)
-      .lineTo(stage.width() / 2, stage.height());
-  var bg = new anychart.elements.Label().background();
-  new anychart.elements.Label()
-      .position([stage.width() / 12, 10])
-      .width(stage.width() / 3)
-      .height(stage.height() - 20)
-      .background(bg.fill('yellow'))
-      .text('fill: yellow\nopacity: 1')
-      .padding(10)
-      .container(stage)
-      .draw();
-  new anychart.elements.Label()
-      .position([7 * stage.width() / 12, 10])
-      .width(stage.width() / 3)
-      .height(stage.height() - 20)
-      .background(bg.fill('yellow 0.2'))
-      .text('fill: yellow\nopacity: 0.2')
-      .padding(10)
-      .container(stage)
-      .draw();
-</script>
-![](../images/fill_solid.png)
+{sample}fill_solid{sample}
 
 ## [2. Линейный градиент](id:linear-gradient)
 
@@ -68,21 +44,11 @@ stage.path()
 
 Пример двустопного градиента:
 
-<script>
-stage
-  .rect(0,0,stage.width(), stage.height())
-  .fill(['red', 'yellow']);
-</script>
-![](../images/fill_linearGradient.png)
+{sample}fill_linearGradient{sample}
 
 Пример многостопного градиента:
 
-<script>
-stage
-  .rect(0,0,stage.width(), stage.height())
-  .fill(['0.1 red', '.3 yellow', '.6 white', '.9 orange']);
-</script>
-![](../images/fill_linearGradient_m.png)
+{sample}fill_linearGradient_m{sample}
 
 ### 2.2. Дополнитьельные параметры
 * **прозрачность** - задает прозрачность всему градиенту
@@ -105,19 +71,7 @@ stage
 
 Рассмотрим их отличия на примере:
 
-<script>
-stage.text(stage.width() / 12, 3, 'без сохранения угла (45\u00b0)');
-  new anychart.elements.Background()
-      .fill(['0.4 black', '.6 white'], 45)
-      .bounds(new anychart.math.Rect(stage.width() /12 , 20, stage.width() / 4, stage.height() - 40))
-      .container(stage).draw();
-  stage.text(7 * stage.width() / 12 , 3, 'с сохранением угла (45\u00b0)');
-  new anychart.elements.Background()
-      .fill(['0.4 black', '.6 white'], 45, true)
-      .bounds(new anychart.math.Rect(7 * stage.width() / 12 , 20, stage.width() / 4, stage.height() - 40))
-      .container(stage).draw();
-</script>
-![alt](../images/fill_linearG_angle.png)
+{sample}fill_linearG_angle{sample}
 
 #### 2.3.3. UserSpaceOnUse
 Режим заливки, при котором градиенту указываются собственные размеры и координаты
@@ -127,38 +81,7 @@ stage.text(stage.width() / 12, 3, 'без сохранения угла (45\u00b
 
 Продемонстрируем принцип работы данного режима:
 
-<script>
-var fillSettings = {
-    keys: ['.1 red', '.5 green', '.9 blue'],
-    angle: -45,
-    mode: new anychart.math.Rect(150, 70, 100, 50),
-    opacity: .2
-  };
-  stage
-      .rect(0, 0, stage.width(), stage.height())
-      .fill(fillSettings);
-  fillSettings.opacity = 1;
-  stage.text(20, 3, 'figure 1');
-  new anychart.elements.Background()
-      .fill(fillSettings)
-      .bounds(new anychart.math.Rect(20, 20, 100, 70))
-      .container(stage).draw();
-  stage.text(20, 3, 'figure 2');
-  new anychart.elements.Background()
-      .fill(fillSettings)
-      .bounds(new anychart.math.Rect(60, 140, 70, 50))
-      .container(stage).draw();
-  stage.text(270, 73, 'figure 3');
-  new anychart.elements.Background()
-      .fill(fillSettings)
-      .bounds(new anychart.math.Rect(270, 93, 100, 100))
-      .container(stage).draw();
-  stage.text(150, 53, 'fill settings');
-  stage
-      .rect(150, 70, 100, 50).stroke('3 black')
-      .fill(fillSettings);
-</script>
-![alt](../images/fill_linearG_userspace.png)
+{sample}fill_linearG_userspace{sample}
 
 Как видно на изображении, настройки градиента обозначены **fill settings **, и
  при помощи даннго градиента закрашены области **figure 1-3**.
@@ -166,34 +89,7 @@ var fillSettings = {
 Стоит заметить, что если размеры контейнера в настройках градиента будут больше
  закрашиваемой области элемента, то будет иной эффект:
 
-<script>
-var fillSettings = {
-    keys: ['.1 red', '.5 green', '.9 blue'],
-    angle: -45,
-    mode: new anychart.math.Rect(5, 0, 395, 200),
-    opacity: .2
-  };
-  stage
-      .rect(5, 0, 395, 200)
-      .fill(fillSettings);
-  fillSettings.opacity = 1;
-  stage.text(20, 3, 'figure 1');
-  new anychart.elements.Background()
-      .fill(fillSettings)
-      .bounds(new anychart.math.Rect(20, 20, 100, 70))
-      .container(stage).draw();
-  stage.text(60, 120, 'figure 2');
-  new anychart.elements.Background()
-      .fill(fillSettings)
-      .bounds(new anychart.math.Rect(60, 140, 70, 50))
-      .container(stage).draw();
-  stage.text(270, 73, 'figure 3');
-  new anychart.elements.Background()
-      .fill(fillSettings)
-      .bounds(new anychart.math.Rect(270, 93, 100, 100))
-      .container(stage).draw();
-</script>
-![alt](../images/fill_linearG_userspace2.png)
+{sample}fill_linearG_userspace2{sample}
 
 ## [3. Радиальный градиент](id:radial-gradient)
 
@@ -205,13 +101,7 @@ var fillSettings = {
 
 Простая заливка радиальным градиентом c центром в точке (0.5, 0.5):
 
-<script>
-var bg = new anychart.elements.Background()
-    .fill(['black', 'white'], .5, .5)
-    .container(stage)
-    .draw();
-</script>
-![alt](../images/fill_radialG.png)
+{sample}fill_radialG{sample}
 
 ### 3.2. Дополнительные параметры
 Расширенные настройки градиента:
@@ -227,26 +117,11 @@ var bg = new anychart.elements.Background()
 Пример с фокальной точкой. Именно за радиусы этого эллипса и не должно
  выходить положение фокальной точки.
 
-<script>
-var bg = new anychart.elements.Background()
-    .fill(['black','white'], .5, .5, null, 1, 0.23, 0.81)
-    .container(stage)
-    .draw();
-  stage.ellipse(stage.width()/2, stage.height()/2,stage.width()/2-2, stage.height()/2-2)
-    .stroke('1 green')
-    .fill('green .2');
-</script>
-![alt](../images/fill_radialG_m.png)
+{sample}fill_radialG_m{sample}
 
 Пример с заданой областью заливки
 
-<script>
-var bg = new anychart.elements.Background()
-    .fill(['black','white'], .5, .5, new anychart.math.Rect(0, 0, 400, 400), 1,.5,.7)
-    .container(stage)
-    .draw();
-</script>
-![alt](../images/fill_radialG_usos.png)
+{sample}fill_radialG_usos{sample}
 
 ## [4. Заливка изображением](id:image-fill)
 Для того, чтобы залить элемент изображением, в метод **fill** необходимо 
@@ -254,29 +129,4 @@ var bg = new anychart.elements.Background()
  режим заливки (растянуть/сжать картинку, сохранять пропорции или нет,
  использовать в качестве шаблона заливки).
 
-<script>
-  stage.path()
-      .moveTo(stage.width() / 2, 0)
-      .lineTo(stage.width() / 2, stage.height());
-  stage.text(20, 0, 'Stretch image');
-  new anychart.elements.Background()
-      .fill({
-        src: 'http://icons.iconarchive.com/icons/mattahan/ultrabuuf/128/TV-Kitty-icon.png',
-        mode: acgraph.vector.ImageFillMode.STRETCH
-      })
-      .stroke('1 #000')
-      .bounds(new anychart.math.Rect(2, 18, stage.width() / 2 - 4, stage.height() - 22))
-      .container(stage)
-      .draw();
-  stage.text(stage.width() / 2 + 20, 0, 'Pattern image');
-  new anychart.elements.Background()
-      .fill({
-        src: 'http://icons.iconarchive.com/icons/mattahan/ultrabuuf/128/TV-Kitty-icon.png',
-        mode: acgraph.vector.ImageFillMode.TILE
-      })
-      .stroke('1 #000')
-      .bounds(new anychart.math.Rect(stage.width()/2 + 2, 18, stage.width() / 2 - 4, stage.height() - 22))
-      .container(stage)
-      .draw();
-</script>
-![alt](../images/fill_image.png)
+{sample}fill_image{sample}
