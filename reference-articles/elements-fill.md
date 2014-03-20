@@ -53,7 +53,7 @@
 
 Пример многостопного градиента:
 
-{sample}fill_linearGradient_m{sample}
+{sample}fill\_linearGradient\_m{sample}
 
 #### 1.2.2. Дополнитьельные параметры
 * **прозрачность** - задает прозрачность всему градиенту
@@ -76,7 +76,7 @@
 
 Рассмотрим их отличия на примере:
 
-{sample}fill_linearG_angle{sample}
+{sample}fill\_linearG\_angle{sample}
 
 ##### 1.2.3.3. UserSpaceOnUse
 Режим заливки, при котором градиенту указываются собственные размеры и координаты
@@ -86,7 +86,7 @@
 
 Продемонстрируем принцип работы данного режима:
 
-{sample}fill_linearG_userspace{sample}
+{sample}fill\_linearG\_userspace{sample}
 
 Как видно на изображении, настройки градиента обозначены **fill settings **, и
  при помощи даннго градиента закрашены области **figure 1-3**.
@@ -94,7 +94,7 @@
 Стоит заметить, что если размеры контейнера в настройках градиента будут больше
  закрашиваемой области элемента, то будет иной эффект:
 
-{sample}fill_linearG_userspace2{sample}
+{sample}fill\_linearG\_userspace2{sample}
 
 ### [1.3. Радиальный градиент](id:radial-gradient)
 
@@ -122,11 +122,11 @@
 Пример с фокальной точкой. Именно за радиусы этого эллипса и не должно
  выходить положение фокальной точки.
 
-{sample}fill_radialG_m{sample}
+{sample}fill\_radialG\_m{sample}
 
 Пример с заданой областью заливки
 
-{sample}fill_radialG_usos{sample}
+{sample}fill\_radialG\_usos{sample}
 
 ### [1.4. Заливка изображением](id:image-fill)
 Для того, чтобы залить элемент изображением, в метод **fill** необходимо 
