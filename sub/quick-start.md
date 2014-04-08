@@ -5,7 +5,7 @@ Quick Start
 ####1. Include anychart.min.js to your head section<br>
 ```
 <head>
-    <script src="cdn.anychart.com/anychart.min.js" type="text/javascript"></script> 
+    <script src="cdn.anychart.com/js/anychart.min.js" type="text/javascript"></script> 
 </head>
 ```
 ####2. Create a block-based container with the id attribute for your chart<br>
@@ -51,7 +51,7 @@ Quick Start
 ```
 <!doctype html>
 <head>
-    <script src="cdn.anychart.com/anychart.min.js" type="text/javascript"></script> 
+    <script src="cdn.anychart.com/js/anychart.min.js" type="text/javascript"></script> 
     <script>
         anychart.onDocumentLoad(function() {
             var chart = new anychart.pie.Chart([ //create an instance of pie chart with data
