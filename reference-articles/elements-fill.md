@@ -51,10 +51,16 @@
 
 {sample}fill_linearGradient{sample}
 
+```
+.fill(['red', 'yellow'])
+```
 Пример многостопного градиента:
 
 {sample}fill\_linearGradient\_m{sample}
 
+```
+.fill(['0.1 red', '.3 yellow', '.6 white', '.9 orange'])
+```
 #### 1.2.2. Дополнитьельные параметры
 * **прозрачность** - задает прозрачность всему градиенту
 * **угол** - задает угол наклона градиента (зависит от режима)
@@ -78,6 +84,10 @@
 
 {sample}fill\_linearG\_angle{sample}
 
+```
+.fill(['0.4 black', '.6 white'], 45)
+```
+
 ##### 1.2.3.3. UserSpaceOnUse
 Режим заливки, при котором градиенту указываются собственные размеры и координаты
  внутри которых и производится рассчет (с учетом угла, аналогично режиму 2).
@@ -88,6 +98,15 @@
 
 {sample}fill\_linearG\_userspace{sample}
 
+```
+.fill({
+    keys: ['.1 red', '.5 green', '.9 blue'],
+    angle: -45,
+    mode: new anychart.math.Rect(150, 70, 100, 50),
+    opacity: 1
+});
+```
+
 Как видно на изображении, настройки градиента обозначены **fill settings **, и
  при помощи даннго градиента закрашены области **figure 1-3**.
 
@@ -95,6 +114,15 @@
  закрашиваемой области элемента, то будет иной эффект:
 
 {sample}fill\_linearG\_userspace2{sample}
+
+```
+.fill({
+    keys: ['.1 red', '.5 green', '.9 blue'],
+    angle: -45,
+    mode: new anychart.math.Rect(5, 0, 395, 200),
+    opacity: 1
+})
+```
 
 ### [1.3. Радиальный градиент](id:radial-gradient)
 
@@ -107,6 +135,10 @@
 Простая заливка радиальным градиентом c центром в точке (0.5, 0.5):
 
 {sample}fill_radialG{sample}
+
+```
+.fill(['black', 'white'], .5, .5)
+```
 
 #### 1.3.2. Дополнительные параметры
 Расширенные настройки градиента:
@@ -124,9 +156,17 @@
 
 {sample}fill\_radialG\_m{sample}
 
+```
+.fill(['black', 'white'], .5, .5, null, 1, 0.23, 0.81)
+```
+
 Пример с заданой областью заливки
 
 {sample}fill\_radialG\_usos{sample}
+
+```
+.fill(['black', 'white'], .5, .5, new anychart.math.Rect(0, 0, 400, 400), 1, .5, .7)
+```
 
 ### [1.4. Заливка изображением](id:image-fill)
 Для того, чтобы залить элемент изображением, в метод **fill** необходимо 
@@ -135,6 +175,13 @@
  использовать в качестве шаблона заливки).
 
 {sample}fill_image{sample}
+
+```
+.fill({
+    src: '../images/fill_image_kitty.png',
+    mode: acgraph.vector.ImageFillMode.TILE
+})
+```
 
 ## Stroke settings.
 ### [2.1. Толщина и пунктир](id:thickness-dashed)
@@ -161,6 +208,10 @@
 
 {sample}stroke_dashed{sample}
 
+```
+.stroke('yellow', 5, '5 5 10')
+```
+
 ### [2.2. Заливка цветом: сплошной цвет, линейный/радиальный градиент](id:color)
 Цвет у stroke задается аналогично fill. То есть, поддерживается заливка:
 * сплошным цветом
@@ -172,3 +223,13 @@
 Примеры с заливкой stroke:
 
 {sample}stroke_color{sample}
+
+```
+.stroke({
+  keys: ['.1 red', 'white'],
+  cx: .5,
+  cy: .5,
+  fx: .3,
+  fy: .4
+}, 4)
+```
