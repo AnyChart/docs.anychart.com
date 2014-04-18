@@ -1,26 +1,26 @@
 <sample>
-    var stage = acgraph.create(400, 200).container('container');
-    var bg = new anychart.elements.Label().background().fill('green .05').stroke('1 green');
-    new anychart.elements.Label()
-            .container(stage)
-            .position(['30%', '20%'])
-            .background(bg)
-            .text('Label\nposition([30%,30%])')
-            .fontSize(14)
-            .padding(3)
-        // берем только половину контейнера для красоты
-            .parentBounds(new anychart.math.Rect(stage.width() / 2, 0, stage.width() / 2, stage.height()))
-            .draw();
-    stage.path()
-            .moveTo(stage.width() / 2, 0)
-            .lineTo(stage.width() / 2, stage.height());
-    new anychart.elements.Label()
-            .container(stage)
-            .position([stage.width() / 2 + 50, 20])
-            .background(bg)
-            .padding(3)
-            .text('Label\nposition([30,30])')
-            .parentBounds(new anychart.math.Rect(stage.width() / 2, 0, stage.width() / 2, stage.height()))
-            .fontSize(14)
-            .draw();
+var stage = acgraph.create(400, 200).container('container');
+var bg = new anychart.elements.Label().background().fill('green .05').stroke('1 green');
+new anychart.elements.Label()
+    .container(stage)
+    .position(['30%', '20%'])
+    .background(bg)
+    .text('Label\nposition([30%,30%])')
+    .fontSize(14)
+    .padding(3)
+  // берем только половину контейнера для красоты
+    .parentBounds(new anychart.math.Rect(stage.width() / 2, 0, stage.width() / 2, stage.height()))
+    .draw();
+stage.path()
+    .moveTo(stage.width() / 2, 0)
+    .lineTo(stage.width() / 2, stage.height());
+new anychart.elements.Label()
+    .container(stage)
+    .position([stage.width() / 2 + 50, 20])
+    .background(bg)
+    .padding(3)
+    .text('Label\nposition([30,30])')
+    .parentBounds(new anychart.math.Rect(stage.width() / 2, 0, stage.width() / 2, stage.height()))
+    .fontSize(14)
+    .draw();
 </sample>

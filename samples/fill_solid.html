@@ -1,25 +1,25 @@
 <sample>
-    var stage = acgraph.create(400, 200).container('container');
-    stage.path()
-            .moveTo(stage.width() / 2, 0)
-            .lineTo(stage.width() / 2, stage.height());
-    var bg = new anychart.elements.Label().background();
-    new anychart.elements.Label()
-            .position([stage.width() / 12, 10])
-            .width(stage.width() / 3)
-            .height(stage.height() - 20)
-            .background(bg.fill('yellow'))
-            .text('fill: yellow\nopacity: 1')
-            .padding(10)
-            .container(stage)
-            .draw();
-    new anychart.elements.Label()
-            .position([7 * stage.width() / 12, 10])
-            .width(stage.width() / 3)
-            .height(stage.height() - 20)
-            .background(bg.fill('yellow 0.2'))
-            .text('fill: yellow\nopacity: 0.2')
-            .padding(10)
-            .container(stage)
-            .draw();
+var stage = acgraph.create(400, 200).container('container');
+stage.path()
+    .moveTo(stage.width() / 2, 0)
+    .lineTo(stage.width() / 2, stage.height());
+var bg = new anychart.elements.Label().background();
+new anychart.elements.Label()
+    .position([stage.width() / 12, 10])
+    .width(stage.width() / 3)
+    .height(stage.height() - 20)
+    .background(bg.fill('yellow'))
+    .text('fill: yellow\nopacity: 1')
+    .padding(10)
+    .container(stage)
+    .draw();
+new anychart.elements.Label()
+    .position([7 * stage.width() / 12, 10])
+    .width(stage.width() / 3)
+    .height(stage.height() - 20)
+    .background(bg.fill('yellow 0.2'))
+    .text('fill: yellow\nopacity: 0.2')
+    .padding(10)
+    .container(stage)
+    .draw();
 </sample>

@@ -1,10 +1,10 @@
 <sample>
-    var stage = acgraph.create(400, 200).container('container');
-    var bg = new anychart.elements.Background()
-            .fill(['black', 'white'], .5, .5, null, 1, 0.23, 0.81)
-            .container(stage)
-            .draw();
-    stage.ellipse(stage.width() / 2, stage.height() / 2, stage.width() / 2 - 2, stage.height() / 2 - 2)
-            .stroke('1 green')
-            .fill('green .2');
+var stage = acgraph.create(400, 200).container('container');
+var bg = new anychart.elements.Background()
+    .fill(['black', 'white'], .5, .5, null, 1, 0.23, 0.81)
+    .container(stage)
+    .draw();
+stage.ellipse(stage.width() / 2, stage.height() / 2, stage.width() / 2 - 2, stage.height() / 2 - 2)
+    .stroke('1 green')
+    .fill('green .2');
 </sample>

@@ -1,45 +1,45 @@
 <sample>
-    var stage = acgraph.create(400, 200).container('container');
-    stage.pie(stage.width() / 10, 2 * stage.height() / 3, stage.height() / 2, -90, 60)
-            .fill('yellow 0.3');
-    stage.circle(stage.height() / 3, 5 * stage.height() / 12, 3).fill('blue');
-    stage.path()
-            .moveTo(stage.height() / 3, 5 * stage.height() / 12)
-            .lineTo(stage.height() / 2 + 2, 6 * stage.height() / 12 + 2)
-            .stroke('blue')
-    stage.text(stage.height() / 2, 6 * stage.height() / 12, 'INSIDE');
-    stage.circle(stage.height() / 2, stage.height() / 6, 3).fill('blue');
-    stage.text(stage.height() / 2 + 5, stage.height() / 6, 'OUTSIDE');
-    stage.path()
-            .moveTo(stage.width() / 2, 0)
-            .lineTo(stage.width() / 2, stage.height());
-    stage.path()
-            .moveTo(3 * stage.width() / 4, 0)
-            .lineTo(3 * stage.width() / 4, stage.height())
-            .stroke('4 grey .5');
-    stage.text(3 * stage.width() / 4 + 15, 0, 'Axis');
-    var path = stage.path().stroke('grey .8');
-    for (var i = 0; i < stage.height() / 15; i++) {
-        path.moveTo(3 * stage.width() / 4, i * 15)
-                .lineTo(3 * stage.width() / 4 + 15, i * 15);
-    }
-    var bg = new anychart.elements.Label().background().fill('green .05').stroke('1 green');
-    new anychart.elements.Label()
-            .container(stage)
-            .width(stage.width() / 4 - 20)
-            .position([stage.width() / 2 + 15, stage.height() / 3])
-            .background(bg)
-            .text('Label\nOutside')
-            .fontSize(14)
-            .padding(3)
-            .draw();
-    new anychart.elements.Label()
-            .container(stage)
-            .width(stage.width() / 4 - 20)
-            .position([3 * stage.width() / 4 + 15, stage.height() / 3])
-            .background(bg)
-            .text('Label\nInside')
-            .fontSize(14)
-            .padding(3)
-            .draw();
+var stage = acgraph.create(400, 200).container('container');
+stage.pie(stage.width() / 10, 2 * stage.height() / 3, stage.height() / 2, -90, 60)
+    .fill('yellow 0.3');
+stage.circle(stage.height() / 3, 5 * stage.height() / 12, 3).fill('blue');
+stage.path()
+    .moveTo(stage.height() / 3, 5 * stage.height() / 12)
+    .lineTo(stage.height() / 2 + 2, 6 * stage.height() / 12 + 2)
+    .stroke('blue');
+stage.text(stage.height() / 2, 6 * stage.height() / 12, 'INSIDE');
+stage.circle(stage.height() / 2, stage.height() / 6, 3).fill('blue');
+stage.text(stage.height() / 2 + 5, stage.height() / 6, 'OUTSIDE');
+stage.path()
+    .moveTo(stage.width() / 2, 0)
+    .lineTo(stage.width() / 2, stage.height());
+stage.path()
+    .moveTo(3 * stage.width() / 4, 0)
+    .lineTo(3 * stage.width() / 4, stage.height())
+    .stroke('4 grey .5');
+stage.text(3 * stage.width() / 4 + 15, 0, 'Axis');
+var path = stage.path().stroke('grey .8');
+for (var i = 0; i < stage.height() / 15; i++) {
+  path.moveTo(3 * stage.width() / 4, i * 15)
+      .lineTo(3 * stage.width() / 4 + 15, i * 15);
+}
+var bg = new anychart.elements.Label().background().fill('green .05').stroke('1 green');
+new anychart.elements.Label()
+    .container(stage)
+    .width(stage.width() / 4 - 20)
+    .position([stage.width() / 2 + 15, stage.height() / 3])
+    .background(bg)
+    .text('Label\nOutside')
+    .fontSize(14)
+    .padding(3)
+    .draw();
+new anychart.elements.Label()
+    .container(stage)
+    .width(stage.width() / 4 - 20)
+    .position([3 * stage.width() / 4 + 15, stage.height() / 3])
+    .background(bg)
+    .text('Label\nInside')
+    .fontSize(14)
+    .padding(3)
+    .draw();
 </sample>
