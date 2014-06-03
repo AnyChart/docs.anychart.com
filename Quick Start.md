@@ -72,24 +72,6 @@ Quick Start
 </html>
 ```
 
-<p style="line-height:22px;padding-bottom:10px;">Also, you can use any other JavaScript library to manage the DOM ready event.<br> Here is an example with jQuery:</p>
-
-```
-	<script>
-	    $(function() {
-	        var chart = new anychart.pie.Chart([ //create an instance of pie chart with data
-	            ['Mushrooms', 3],
-	            ['Onions', 1],
-	            ['Olives', 1],
-	            ['Zucchini', 1],
-	            ['Pepperoni', 2]
-	        ]);
-            chart.title('The kind of pancakes preferred at the Sochi 2014 Olympic Games')        
-	        chart.container('chart-container'); //pass the container where chart will be drawn
-	        chart.draw(); //call the chart draw() method to initiate chart drawing
-	    });
-	</script>
-```
 ###Learn more:
 1. [Supported charts types](https://www.google.com "Supported charts types")
 2. [Working with data](https://www.google.com "Working with data")
