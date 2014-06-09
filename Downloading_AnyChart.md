@@ -12,7 +12,7 @@ To locally download these files, right-click the link and select "Save as..." fr
 
 ###Using AnyChart with a CDN
 <a href="http://en.wikipedia.org/wiki/Content_delivery_network">CDNs</a> can offer a performance benefit by hosting AnyChart on servers spread across the globe.
-This also offers an advantage that if the visitor to your webpage has already downloaded a copy of AnyChart from the same CDN,
+This also offers an advantage that if the visitor to your web page has already downloaded a copy of AnyChart from the same CDN,
 it won't have to be re-downloaded.  
   
  
@@ -25,7 +25,7 @@ To use the AnyChart CDN, just reference the file directly from http://cdn.anycha
   
   
 
-###Cusom build of AnyChart
+###Custom build of AnyChart
 Using <a href="build.anychart.com">AnyChart Build Server</a> you can create your custom build of AnyChart 7.x.<br>
 Build Server provide simple web interface where you can choose with charts types and features you want to include.<br>
 You can read more about Build Server and custom builds in <a href="./Environment/Build_Server">appropriate section</a>.
