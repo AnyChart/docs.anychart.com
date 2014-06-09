@@ -28,7 +28,7 @@ To use AnyChart CDN, simply reference the file directly from http://cdn.anychart
 ###Custom build of AnyChart
 Using <a href="build.anychart.com">AnyChart Build Server</a>, you can create your custom build of AnyChart 7.x.<br>
 Build Server provides a simple web interface where you can choose which charts types and features you want to include.<br>
-You can read more about Build Server and custom builds in <a href="./Environment/Build_Server">Build Server</a> documentation section.
+You can read more about Build Server and custom builds in the <a href="./Environment/Build_Server">Build Server</a> documentation section.
   
   
 
