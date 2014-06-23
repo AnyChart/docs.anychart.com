@@ -40,7 +40,7 @@ See also:
 
 ###XML
 XML format is useful if you prefer the declarative style for chart configurations.  
-Also, all previous versions of AnyChart were XML based, so this way of setting data may be what you got used to.  
+Also, all previous versions of AnyChart were XML-based, so this way of setting data may be what you got used to.  
 We still recommend everyone to use JavaScript API, but you can stick with the XML format – it just has a little bit less perfect performance and is less flexible in terms of customization.
 ```
 // create an XML string
