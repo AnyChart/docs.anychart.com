@@ -1,4 +1,4 @@
-Working with Data
+Supported Data Formats
 =================
 
 ###Introduction
