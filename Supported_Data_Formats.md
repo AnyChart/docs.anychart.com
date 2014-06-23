@@ -2,22 +2,21 @@ Supported Data Formats
 =================
 
 ###Introduction
-AnyChart supports four data formats which you can use to work with data:
+AnyChart supports four ways to set data to your charts, all of them has some pros and cons and you can choose which to use depending on a task you have at hand. These ways are:
 * JavaScript API
 * XML
 * JSON
 * CSV
 
-Each of then have their own strengths and weaknesses.  
-We recommend to use JavaScript API which give more flexibility at all.
+Each of the ways has some strengths and weaknesses, but in general we recommend everyone to use JavaScript API – this ways gives the most flexibility in most of the cases.
 
 
 ###JavaScript API
-JavaScript API is useful then you need Create/Read/Update/Delete data points dynamically. 
+JavaScript API is most useful when you need to Create, Read, Update and Delete data points dynamically. 
 
-We recommend to use Data Sets for this purpose, but you can also pass data directly to chart creating function.
+We recommend to use <a href="./Working_with_Data/Using_Data_Sets">Data Sets</a> when you work using JS API, but you can also pass data directly to a chart creating function:
 ```
-//create pie chart
+// create a pie chart
 var chart = anychart.pieChart([
     ['Product A', 1222],
     ['Product B', 2431],
@@ -26,10 +25,10 @@ var chart = anychart.pieChart([
     ['Product E', 8813]
 ]);
 
-//set container id for the chart
+// set container id for the chart
 chart.container('container');
 
-//initiate chart drawing
+// initiate chart drawing
 chart.draw();
 ```
 See also:  
@@ -41,10 +40,10 @@ See also:
 
 ###XML
 XML format is useful if you prefer declarative style for chart configurations.  
-Also it's older AnyChart version salute which was generally XML based.  
-We recommend to use JavaScript API which give more flexibility at all.
+Also, all previous versions of AnyChart were XML based, so this way of setting data may be what you got used to.  
+We still recommend everyone to use JavaScript API, but you can stick with XML format – it just has a little bit less perfect performance and is less flexible in terms of customization.
 ```
-//create XML string
+// create an XML string
 var xmlString = '<xml>' +
                 '<chart type="pie" >' +
                   '<data>' +
@@ -56,13 +55,14 @@ var xmlString = '<xml>' +
                   '</data>' +
                 '</chart>' +
               '</xml>';
-//create chart from xml config              
+              
+// create a chart from xml config              
 var chart = anychart.xml(xmlString);
 
-//set container id for the chart
+// set container id for the chart
 chart.container('container');
 
-//initiate chart drawing
+// initiate chart drawing
 chart.draw();
 ```
 See also:  
@@ -73,10 +73,9 @@ See also:
 <a href="./Working_with_Data/Using_Data_Sets">Using Data Sets</a>   
 
 ###JSON
-JSON generally have same purpose as XML format.  
-We recommend to use JavaScript API which give more flexibility at all.
+JSON basically has the same purpose and drawbacks as XML format. We recommend everyone to use JavaScript API, it just has a little bit less perfect performance and is less flexible in terms of customization.
 ```
-//create json data
+// create json data
 var json = {
     "chart": {
         "type": "pie",
@@ -90,13 +89,13 @@ var json = {
     }
 };
 
-//create chart from json config              
+// create chart from json config              
 var chart = anychart.fromJson(json);
 
-//set container id for the chart
+// set container id for the chart
 chart.container('container');
 
-//initiate chart drawing
+// initiate chart drawing
 chart.draw();
 ```
 See also:  
@@ -107,9 +106,9 @@ See also:
 <a href="./Working_with_Data/Using_Data_Sets">Using Data Sets</a>   
 
 ###CSV  
-CSV is the best solution then you need to minimize data size of input data.
+CSV is obviously the best solution when you need to minimize the size of data input, using it is as easy as any other way, but CSV also lacks flexibility that JS API way has.
 ```
-//create CSV string
+// create CSV string
 var csvString = '2009-02-05,6764.81\n' +
       '2009-02-07,7056.48\n' +
       '2009-02-18,7180.97\n' +
@@ -120,16 +119,16 @@ var csvString = '2009-02-05,6764.81\n' +
       '2009-02-20,7461.49\n' +
       '2009-02-19,7555.23';
       
-//create area chart      
+// create an area chart      
 var chart = anychart.areaChart();
 
-//set container id for the chart
+// set container id for the chart
 chart.container('container');
 
-//create area series on passed csv data
+// create the area series based on CSV data
 chart.area(csvString);
 
-//initiate chart drawing
+// initiate chart drawing
 chart.draw();
 ```
 See also:  
