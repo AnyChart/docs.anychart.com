@@ -100,7 +100,7 @@ var lineChart = anychart.lineChart(dataSet);
 // initiate chart drawing
 pieChart.draw();
 ```
-As well as before, if you want to specify any points properties manually, you can use an Object as a cell value.
+As well as before, if you want to specify any points properties manually, you can use an `Object` as a cell value.
 ```
 var data = [ 
    // column 0    1    2    3
@@ -159,7 +159,7 @@ You can learn more about Data Mapping in appropriate article.
 See also:  
 <a href="./Advanced_Data_Mapping_features">Advanced Data Mapping features</a>  
 <a href="#">Multiple Charts layout</a>  
-<a href="#">Series and Point Meta Data</a  
+<a href="#">Series and Point Meta Data</a>
 
 
 
