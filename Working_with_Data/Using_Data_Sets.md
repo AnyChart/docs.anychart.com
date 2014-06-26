@@ -1,6 +1,5 @@
 Using Data Sets
 ===============
-
 ###Why we need Data Sets?
 Fairly often, you need use a same set of values in the different series of the one chart or different charts at all.
 For instance, we have data about weather in a three cities for a same date and we want to see difference on the line chart.
@@ -13,7 +12,6 @@ For instance, we have data about weather in a three cities for a same date and w
    | 2014/6/29 |    29    |      22       |     28      |
    | 2014/6/30 |    28    |      25       |     27      |
 ```
-
 Usually, to achieve this, you divide your data on a three pars and create the line chart with the tree series.
 ```
        Date      New York        Date      San Francisco        Date      Los Angeles 
@@ -24,10 +22,7 @@ Usually, to achieve this, you divide your data on a three pars and create the li
    | 2014/6/29 |    29    |  | 2014/6/29 |      22       |  | 2014/6/29 |     28      |
    | 2014/6/30 |    28    |  | 2014/6/30 |      25       |  | 2014/6/30 |     27      | 
 ```
-In case where you have simple visualization, it is not so difficult and you can neglect data duplication. 
-But then you start to create something complex, it's became very annoying, 
-especially then you need to append, update or remove some data from all duplications.  
-  
+In case where you have simple visualization, it is not so difficult and you can neglect data duplication. But then you start to create something complex, it's became very annoying, especially then you need to append, update or remove some data from all duplications.  
 To avoid this, we recommend to use Data Sets.
 
 ###Creating Data Set
@@ -35,7 +30,7 @@ Data Sets are working with list of rows.
 Each row can be represented by on of the following types:  
 ####Number or String  
 In this case each row of a list represent a point value.  
-Other point properties such as x, index, name, etc will be auto generated.
+Other point properties such as `x`, `index`, `name`, etc will be auto generated.
 ```
 var data = [
 // column 0
@@ -59,7 +54,7 @@ chart.container('container');
 pieChart.draw();
 ```
 ####Object
-If you want to specify point properties manually, you can use an Object as a row.  
+If you want to specify point properties manually, you can use an `Object` as a row.  
 ```
 var data = [
       // column 0
@@ -79,7 +74,7 @@ chart.container('container');
 pieChart.draw();
 ```
 ####Array
-In case, when you want to create more then one series or chart with similar data, using Array as a row is the best way to achieve.  
+In case, when you want to create more then one series or chart with similar data, using `Array` as a row is the best way to achieve.  
 Zero column values of the each row will be represented as a series X, each of the following column value will be represented as series value.  
 As a result we will take a chart with 3 line series.  
 ```
