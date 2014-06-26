@@ -33,7 +33,7 @@ To avoid this, we recommend to use Data Sets.
 ###Creating Data Set
 Data Sets are working with list of rows.  
 Each row can be represented by on of the following types:  
-* Number or String  
+#### Number or String  
 <br>In this case each row of a list represent a point value.
 Other point properties such as x, index, name, etc will be auto generated.
 
@@ -59,7 +59,7 @@ chart.container('container');
 // initiate chart drawing
 pieChart.draw();
 ```
-* Object
+#### Object
 <br>If you want to specify point properties manually, you can use an Object as a row.  
 
 ```
@@ -80,7 +80,7 @@ chart.container('container');
 // initiate chart drawing
 pieChart.draw();
 ```
-* Array
+#### Array
 <br>In case, when you want to create more then one series or chart with similar data, using Array as a row is the best way to achieve.  
 <br>Zero column values of the each row will be represented as a series X, each of the following column value will be represented as series value.  
 <br>As a result we will take a chart with 3 line series.  
