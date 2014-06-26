@@ -26,17 +26,16 @@ Usually, to achieve this, you divide your data on a three pars and create the li
 ```
 In case where you have simple visualization, it is not so difficult and you can neglect data duplication. 
 But then you start to create something complex, it's became very annoying, 
-especially then you need to append, update or remove some data from all duplications.
+especially then you need to append, update or remove some data from all duplications.  
   
 To avoid this, we recommend to use Data Sets.
 
 ###Creating Data Set
 Data Sets are working with list of rows.  
 Each row can be represented by on of the following types:  
-#### Number or String  
-In this case each row of a list represent a point value.
+####Number or String  
+In this case each row of a list represent a point value.  
 Other point properties such as x, index, name, etc will be auto generated.
-
 ```
 var data = [
 // column 0
@@ -59,9 +58,8 @@ chart.container('container');
 // initiate chart drawing
 pieChart.draw();
 ```
-#### Object
+####Object
 If you want to specify point properties manually, you can use an Object as a row.  
-
 ```
 var data = [
       // column 0
@@ -80,11 +78,10 @@ chart.container('container');
 // initiate chart drawing
 pieChart.draw();
 ```
-#### Array
+####Array
 In case, when you want to create more then one series or chart with similar data, using Array as a row is the best way to achieve.  
 Zero column values of the each row will be represented as a series X, each of the following column value will be represented as series value.  
 As a result we will take a chart with 3 line series.  
-
 ```
 var data = [ 
    // column 0    1    2    3
@@ -120,7 +117,6 @@ var lineChart = anychart.lineChart(dataSet);
 // initiate chart drawing
 pieChart.draw();
 ```
-
 ###Data Mapping
 Data mapping is useful then you want to represent the same data by different ways.  
 For instance in different charts.
