@@ -33,34 +33,35 @@ To avoid this, we recommend to use Data Sets.
 ###Creating Data Set
 Data Sets are working with list of rows.  
 Each row can be represented by on of the following types:  
-1. Number or String  
+* Number or String  
 <br>In this case each row of a list represent a point value.
 Other point properties such as x, index, name, etc will be auto generated.
+
 ```
-       var data = [
-       // column 0
-            28,   //row 0
-            26,   //    1
-            27,   //    2
-            "25", //    3
-            "29"  //    4
-       ];
-       // create the data set
-       var dataSet = new anychart.data.Set(data);
+var data = [
+// column 0
+    28,   //row 0
+    26,   //    1
+    27,   //    2
+    "25", //    3
+    "29"  //    4
+];
 
-       // create pie chart using data set 
-       var pieChart = anychart.pieChart(dataSet);
+// create the data set  
+var dataSet = new anychart.data.Set(data);
 
-       // set container id for the chart
-       chart.container('container');
+// create pie chart using data set
+var pieChart = anychart.pieChart(dataSet);  
 
-       // initiate chart drawing
-       pieChart.draw();
+// set container id for the chart  
+chart.container('container');
 
-```  
+// initiate chart drawing
+pieChart.draw();
+```
+* Object
+<br>If you want to specify point properties manually, you can use an Object as a row.  
 
-2. Object
-<br>If you want to specify point properties manually, you can use an Object as a row.
 ```
 var data = [
       // column 0
@@ -79,10 +80,11 @@ chart.container('container');
 // initiate chart drawing
 pieChart.draw();
 ```
-3. Array
+* Array
 <br>In case, when you want to create more then one series or chart with similar data, using Array as a row is the best way to achieve.  
 <br>Zero column values of the each row will be represented as a series X, each of the following column value will be represented as series value.  
-<br>As a result we will take a chart with 3 line series.
+<br>As a result we will take a chart with 3 line series.  
+
 ```
 var data = [ 
    // column 0    1    2    3
