@@ -37,22 +37,26 @@ Each row can be represented by on of the following types:
 <br>In this case each row of a list represent a point value.
 Other point properties such as x, index, name, etc will be auto generated.
 ```
-var data = [
-// column 0
-     28,   //row 0
-     26,   //    1
-     27,   //    2
-     "25", //    3
-     "29"  //    4
-];
-// create the data set
-var dataSet = new anychart.data.Set(data);
-// create pie chart using data set 
-var pieChart = anychart.pieChart(dataSet);
-// set container id for the chart
-chart.container('container');
-// initiate chart drawing
-pieChart.draw();
+       var data = [
+       // column 0
+            28,   //row 0
+            26,   //    1
+            27,   //    2
+            "25", //    3
+            "29"  //    4
+       ];
+       // create the data set
+       var dataSet = new anychart.data.Set(data);
+
+       // create pie chart using data set 
+       var pieChart = anychart.pieChart(dataSet);
+
+       // set container id for the chart
+       chart.container('container');
+
+       // initiate chart drawing
+       pieChart.draw();
+
 ```  
 
 2. Object
