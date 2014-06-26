@@ -64,18 +64,21 @@ var data = [
   {name: 'Product D', value: 5243},                //    3
   {name: 'Product E', value: 8813, fill: 'gold'}   //    4
 ];
+
 // create the data set
 var dataSet = new anychart.data.Set(data);
+
 // create pie chart using data set 
 var pieChart = anychart.pieChart(dataSet);
+
 // set container id for the chart
 chart.container('container');
+
 // initiate chart drawing
 pieChart.draw();
 ```
 ####Array
-In case, when you want to create more then one series or chart with similar data, using `Array` as a row is the best way to achieve.  
-Zero column values of the each row will be represented as a series X, each of the following column value will be represented as series value.  
+In case, when you want to create more then one series or chart with similar data, using `Array` as a row is the best way to achieve. Zero column values of the each row will be represented as a series X, each of the following column value will be represented as series value.  
 As a result we will take a chart with 3 line series.  
 ```
 var data = [ 
@@ -86,11 +89,14 @@ var data = [
   ["2014/6/28",  25,  21,  27], //     4
   ["2014/6/29",  29,  22,  28], //     5
   ["2014/6/30",  28,  25,  27]  //     6
-]
+];
+
 // create the data set
 var dataSet = new anychart.data.Set(data);
+
 // create line chart using data set 
 var lineChart = anychart.lineChart(dataSet);
+
 // initiate chart drawing
 pieChart.draw();
 ```
@@ -107,8 +113,10 @@ var data = [
 ]
 // create the data set
 var dataSet = new anychart.data.Set(data);
+
 // create line chart using data set 
 var lineChart = anychart.lineChart(dataSet);
+
 // initiate chart drawing
 pieChart.draw();
 ```
