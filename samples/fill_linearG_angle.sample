@@ -1,4 +1,3 @@
-<sample>
     var stage = acgraph.create(400, 200).container('container');
     stage.text(stage.width() / 12, 3, 'без сохранения угла (45\u00b0)');
     new anychart.elements.Background()
@@ -10,4 +9,3 @@
             .fill(['0.4 black', '.6 white'], 45, true)
             .bounds(new anychart.math.Rect(7 * stage.width() / 12, 20, stage.width() / 4, stage.height() - 40))
             .container(stage).draw();
-</sample>

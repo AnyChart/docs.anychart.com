@@ -1,4 +1,3 @@
-<sample>
 var stage = acgraph.create(400, 200).container('container');
 var star = stage.star4(stage.width() / 2, stage.height() / 2, stage.height() / 2 - 10).fill('yellow', 0.5);
 var pathBounds = star.getBounds();
@@ -10,4 +9,3 @@ stage.text(pathBounds.left + pathBounds.width + 7, pathBounds.top + pathBounds.h
 stage.circle(pathBounds.left + pathBounds.width, pathBounds.top + pathBounds.height / 2, 3).fill('blue');
 stage.text(pathBounds.left + pathBounds.width / 2 + 7, pathBounds.top + pathBounds.height - 7, 'SOUTH');
 stage.circle(pathBounds.left + pathBounds.width / 2, pathBounds.top + pathBounds.height, 3).fill('blue');
-</sample>
