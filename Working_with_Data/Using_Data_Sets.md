@@ -1,7 +1,7 @@
 Using Data Sets
 ===============
 ###Why we need Data Sets?
-Fairly often you need to use the same set of values in the different series of one chart or different charts.
+Quite often you need to use the same set of values in the different series of one chart or different charts.
 For example, here is some data about a weather in three cities, and we want to see difference on the line chart:
 ```
        Date      New York   San Francisco   Los Angeles  
