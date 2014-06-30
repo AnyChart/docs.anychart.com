@@ -1,14 +1,14 @@
 Quick Start
 ===========
-### To start working with AnyChart framework, you should do just three things:<br>
+### To start working with AnyChart framework, you should do just three simple things:<br>
 
-####1. Include anychart.min.js to your head section<br>
+####1. Include anychart.min.js to the head section of a page<br>
 ```
 <head>
     <script src="cdn.anychart.com/js/anychart.min.js" type="text/javascript"></script> 
 </head>
 ```
-####2. Create a block-based container with the id attribute for your chart<br>
+####2. Create a block-based container with the id attribute for a chart<br>
 ```
 <body>
     <div id="chart-container" style="width: 500px; height: 400px;"></div>
@@ -18,20 +18,20 @@ Quick Start
 ```
     <script>
         anychart.onDocumentLoad(function() {
-            var chart = new anychart.pie.Chart([ //create an instance of pie chart with data
+            var chart = new anychart.pie.Chart([ //create pie chart with data
                 ['Chocolate paste', 5],
                 ['White honey', 2],
                 ['Strawberry jam', 2],
                 ['Сondensed milk', 1]
             ]);
             chart.title('The kind of pancakes preferred at the Sochi 2014 Olympic Games');
-            chart.container('chart-container'); //pass the container where chart will be drawn
-            chart.draw(); //call the chart draw() method to initiate chart drawing
+            chart.container('chart-container'); // set the container where chart is to be drawn
+            chart.draw(); // call the chart draw() method to initiate chart drawing
         });
     </script>
 ```
 
-<p style="line-height:22px;padding-bottom:10px;">After all you should have the following result</p>
+<p style="line-height:22px;padding-bottom:10px;">You will the following result if everyhing is done right:</p>
 
 <span style="text-align:center; display:inline-block; width:100%;">![Simple pie chart](../images/pie-chart.png)
 <br>
@@ -44,7 +44,7 @@ Quick Start
 
 
 
-<p style="line-height:22px;padding-bottom:10px;">Here is the full snippet of code - you can copy this to a file on your computer and open it in your browser to display the pie chart shown above:
+<p style="line-height:22px;padding-bottom:10px;">Here is the full code - you can copy this to a file on your computer and open it in a browser to display the pie chart shown above:
 </p>
 
 
@@ -54,15 +54,15 @@ Quick Start
     <script src="cdn.anychart.com/js/anychart.min.js" type="text/javascript"></script> 
     <script>
         anychart.onDocumentLoad(function() {
-            var chart = new anychart.pie.Chart([ //create an instance of pie chart with data
+            var chart = new anychart.pie.Chart([ //create pie chart with data
                 ['Chocolate paste', 5],
                 ['White honey', 2],
                 ['Strawberry jam', 2],
                 ['Сondensed milk', 1]
             ]);
             chart.title('The kind of pancakes preferred at the Sochi 2014 Olympic Games');
-            chart.container('chart-container'); //pass the container where chart will be drawn
-            chart.draw(); //call the chart draw() method to initiate chart drawing
+            chart.container('chart-container'); // set the container where chart is to be drawn
+            chart.draw(); // call the chart draw() method to initiate chart drawing
         });
     </script>
 </head>
