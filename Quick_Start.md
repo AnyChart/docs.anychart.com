@@ -34,6 +34,7 @@ Quick Start
 ```
   
 ####After all you should have the following result
+
 {sample}quick\_start\_pie{sample}
   
 ####Full snippet of code
