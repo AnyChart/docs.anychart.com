@@ -34,7 +34,7 @@ Quick Start
 ```
   
 ####After all you should have the following result
-{sample}quick\_start/pie{sample}
+{sample}quick\_start\_pie{sample}
   
 ####Full snippet of code
 You can copy this to a file on your computer and open it in your browser to display the pie chart shown above:  
