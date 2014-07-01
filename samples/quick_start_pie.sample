@@ -1,12 +1,9 @@
-<sample>
-
-    var chart = new anychart.pie.Chart([
-    ['Chocolate paste', 5],
-    ['White honey', 2],
-    ['Strawberry jam', 2],
-    ['Сondensed milk', 1]
-    ]);
-    chart.title('The kind of pancakes preferred at the Sochi 2014 Olympic Games');
-    chart.container('container');
-    chart.draw();
-</sample>
+var chart = new anychart.pie.Chart([
+['Chocolate paste', 5],
+['White honey', 2],
+['Strawberry jam', 2],
+['Сondensed milk', 1]
+]);
+chart.title('The kind of pancakes preferred at the Sochi 2014 Olympic Games');
+chart.container('container');
+chart.draw();
