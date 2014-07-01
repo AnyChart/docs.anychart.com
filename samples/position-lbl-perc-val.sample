@@ -1,4 +1,3 @@
-<sample>
 var stage = acgraph.create(400, 200).container('container');
 var bg = new anychart.elements.Label().background().fill('green .05').stroke('1 green');
 new anychart.elements.Label()
@@ -23,4 +22,3 @@ new anychart.elements.Label()
     .parentBounds(new anychart.math.Rect(stage.width() / 2, 0, stage.width() / 2, stage.height()))
     .fontSize(14)
     .draw();
-</sample>

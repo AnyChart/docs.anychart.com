@@ -1,4 +1,3 @@
-<sample>
 var stage = acgraph.create(400, 200).container('container');
 var pathBounds = {
   left: stage.width() / 2 - stage.height() / 2,
@@ -66,4 +65,3 @@ stage.triangleUp(pathBounds.left + pathBounds.width - 15, pathBounds.top + pathB
     .rotateByAnchor(85, acgraph.vector.Anchor.CENTER).fill('green');
 stage.path().moveTo(pathBounds.left + pathBounds.width - 15, pathBounds.top + pathBounds.height - 15)
     .lineTo(pathBounds.left + pathBounds.width, pathBounds.top + pathBounds.height);
-</sample>

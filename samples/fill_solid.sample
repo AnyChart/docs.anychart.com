@@ -1,4 +1,3 @@
-<sample>
 var stage = acgraph.create(400, 200).container('container');
 stage.path()
     .moveTo(stage.width() / 2, 0)
@@ -22,4 +21,3 @@ new anychart.elements.Label()
     .padding(10)
     .container(stage)
     .draw();
-</sample>
