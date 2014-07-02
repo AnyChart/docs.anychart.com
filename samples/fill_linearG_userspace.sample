@@ -1,4 +1,3 @@
-<sample>
     var stage = acgraph.create(400, 200).container('container');
     var fillSettings = {
         keys: ['.1 red', '.5 green', '.9 blue'],
@@ -29,4 +28,3 @@
     stage
             .rect(150, 70, 100, 50).stroke('3 black')
             .fill(fillSettings);
-</sample>
