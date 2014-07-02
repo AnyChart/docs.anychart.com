@@ -178,7 +178,7 @@
 
 ```
 .fill({
-    src: 'http://cdn.anychart.con/resources/kitty.png',
+    src: 'http://cdn.anychart.com/resources/kitty.png',
     mode: acgraph.vector.ImageFillMode.TILE
 })
 ```
