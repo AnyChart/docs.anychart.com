@@ -1,44 +1,44 @@
-# Цветная заливка элементов и настройки stroke.
+# Element color filling and stroke settings.
 * 1. Fill settings
-  * [1.1. Сплошной цвет](#solid-color)
-  * [1.2. Линейный градиент](#linear-gradient)
-  * [1.3. Радиальный градиент](#radial-gradient)
-  * [1.4. Заливка изображением](#image-fill)
+  * [1.1. Solid color](#solid-color)
+  * [1.2. Linear Gradient](#linear-gradient)
+  * [1.3. Radial Gradient](#radial-gradient)
+  * [1.4. Image fill](#image-fill)
 * 2. Stroke settings
-  * [2.1. Толщина и пунктир](#thickness-dashed)
-  * [2.2. Заливка цветом: сплошной цвет, линейный/радиальный градиент](#color)
+  * [2.1. Line thickness and stipple settings](#thickness-dashed)
+  * [2.2. Color filling settings: Solid color, linear/radial gradient](#color)
 
 ## Fill settings.
-### [1.1. Сплошной цвет](id:solid-color)
-Простейшей заливкой является заливка сплошным цветом. 
-Цвет можно задать в форматах:
+### [1.1. Solid color](id:solid-color)
+The most simple fill is solid color fill. 
+Color can be set in the following formats:
 * Hex
 * RGB
 * HSL
 * HTML color name
 
-Рассмотрим как можно задать прозрачность цвета:
-* c помощью модификаторов: RGBA, HSLA.
-* либо отдельным параметром:
-    * вызов метода с параметрами <code>fill(_color_, _**opacity**_);</code>
-    * одним значением <code>fill('color **opacity**')</code>
- (то есть значения одной строкой разделенные пробелом).
+Color transparency can be set in two ways:
+* RGBA, HSLA modificators;
+* Dedicated parameter:
+    * Call procedure with the parameters <code>fill(_color_, _**opacity**_);</code>
+    * Single value <code>fill('color **opacity**')</code>
+ (one string value separated by space).
 
 {sample}fill_solid{sample}
 
-### [1.2. Линейный градиент](id:linear-gradient)
+### [1.2. Linear Gradient](id:linear-gradient)
 
-#### 1.2.1. Обязательным параметром
-для заливки линейным градиентом являются **ключи градиента**.
- Ключ градиента представляет собой пару (тройку): **положение** ключа и его
- **цвет** (и  **прозрачность**). Таких ключей должно быть более двух, иначе 
- заливка будет сплошной.
+#### 1.2.1. Gradient key is a necessary parameter to set linear gradient. 
+Gradient key consists of two or three values: gradient **position**,
+ its **color** and **opacity** as an option. There should be more than one key,
+ otherwise the fill will be solid.
 
-Положение ключа назначается числом от 0 до 1, где 0 и 1 - это границы градиента.
- Если положение не задавать в явном виде, то оно рассчитается автоматически, в 
- зависимости от количества ключей, что бы они расположились равномерно.
- 
-Настройки ключа в общем виде: `'position color opacity'` или 
+Gradient position is set by a number from 0 to 1, where 0 and 1 are gradient
+ borders. If gradient position is not set manually, it will be calculated
+ automatically depending on the number of keys to make gradients allocated
+ proportionally. 
+
+Gradient key settings: `'position color opacity'` or 
 ```
 {
     position: ,
@@ -47,40 +47,40 @@
 }
 ```
 
-Пример двустопного градиента:
+E.g., two-step gradient:
 
 {sample}fill_linearGradient{sample}
 
 ```
 .fill(['red', 'yellow'])
 ```
-Пример многостопного градиента:
+E.g., multiple-step gradient:
 
 {sample}fill\_linearGradient\_m{sample}
 
 ```
 .fill(['0.1 red', '.3 yellow', '.6 white', '.9 orange'])
 ```
-#### 1.2.2. Дополнитьельные параметры
-* **прозрачность** - задает прозрачность всему градиенту
-* **угол** - задает угол наклона градиента (зависит от режима)
-* **режим заливки** читай ниже
+#### 1.2.2. Additional values
+* **opacity** - sets an opacity value for gradient;
+* **angle** - sets gradient angle, depending on the mode;
+* **filling mode** - as described below.
 
-#### 1.2.3. Режимы заливки
+#### 1.2.3. Filling modes
 
-##### 1.2.3.1 ObjectBoundingBox без сохранения угла
-Режим заливки, при котором вектор градиента расчитывается под заданным углом, 
- но в фигуре с соотношением сторон не 1:1 он будет измнен браузером (сжат 
- пропорционально соотношению сторон) и визуально угол наклона вектора градиента 
- **не будет соответствовать** заданному.
+##### 1.2.3.1 ObjectBoundingBox without angle value preservation
+In this mode, gradient vector is calculated with the preset angle, but the
+ result gradient angle on the rendered page can be changed if the page
+ proportion is not 1:1 in the browser. So visually the result gradient angle
+ may **not correspong** original setting.
 
-##### 1.2.3.2. ObjectBoundingBox с сохранением угла
-При этом режиме в любой фигуре угол наклона градиента визуально **будет 
- соответствовать** заданному. То есть, в отличие от предыдущего режима для фигур 
- с соотношением не 1:1, градиент в итоге визуально будет соответствовать
- заданному углу, при помощи дополнительных внутренних вычислений.
+##### 1.2.3.2. ObjectBoundingBox with angle value preservation
+In this mode the result angle will visually correspond the original setting,
+ non regarding browser scaling duplication (so, for pages that do not have 1:1
+ proportion with the original figure, the gradient angle will correspond initial
+ value due to internal calculations).
 
-Рассмотрим их отличия на примере:
+Please see the following illustration of how these modes work:
 
 {sample}fill\_linearG\_angle{sample}
 
@@ -89,12 +89,12 @@
 ```
 
 ##### 1.2.3.3. UserSpaceOnUse
-Режим заливки, при котором градиенту указываются собственные размеры и координаты
- внутри которых и производится рассчет (с учетом угла, аналогично режиму 2).
- Затем, данная заливка применяется к необходимому элементу, учитывая координаты 
- его контейнера.
+In this mode gradient settings are added by gradient size and
+ borders/coordinates, and rendering is calculated within those borders
+ (wih angle settings, corresponding to moder 1.2.3.2). After that, the filling
+ is executed on the element figure according to its coordinates.
 
-Продемонстрируем принцип работы данного режима:
+This can be illustraded in the following way:
 
 {sample}fill\_linearG\_userspace{sample}
 
@@ -107,11 +107,11 @@
 });
 ```
 
-Как видно на изображении, настройки градиента обозначены **fill settings **, и
- при помощи даннго градиента закрашены области **figure 1-3**.
+Gradient settings are set by 'fill settings’, and this gradient fills
+ **figures 1-3**.
 
-Стоит заметить, что если размеры контейнера в настройках градиента будут больше
- закрашиваемой области элемента, то будет иной эффект:
+If the container size in gradient settings are larger than the filled element
+ size, it will result as follows::
 
 {sample}fill\_linearG\_userspace2{sample}
 
@@ -124,15 +124,14 @@
 })
 ```
 
-### [1.3. Радиальный градиент](id:radial-gradient)
+### [1.3. Radial Gradient](id:radial-gradient)
 
-#### 1.3.1. Обязательными параметроми
-для радиального градиента являются:
-1. _ключей градиента_, как и в случае линейного градиента, не менее двух. 
-2. _положение центра_, которые задаются **не в пикселях**, а в процентных 
- соотношениях от размеров контейнера (числом от 0 до 1).
+#### 1.3.1. Radial Gradient basic parameters are:
+1. _Gradient keys_, more then one (just like in linear gradient) 
+2. _Center location_, which is set by a number from 0 to 1 as a percentage ratio
+ from the container dimensions.
 
-Простая заливка радиальным градиентом c центром в точке (0.5, 0.5):
+E.g., radial gradient filling with center location (0.5, 0.5):
 
 {sample}fill_radialG{sample}
 
@@ -140,19 +139,17 @@
 .fill(['black', 'white'], .5, .5)
 ```
 
-#### 1.3.2. Дополнительные параметры
-Расширенные настройки градиента:
-* **прозрачность** - задает прозрачность всему градиенту.
-* **область заливки** - тоже что и 1.2.3.3 (UserSpaceOnUse) в линейном градиенте.
- Если область заливки не задана, то заливается весь контейнер элемента, а также,
- если соотношение сторон области заливки не 1:1, то заливка растягивается до 
- эллипса.
-* **положение фокальной точки** - как и положение центральной точки задается
- в соотношении сторон области заливки (числом от 0 до 1). **Заметка:** стоит
- помнить, что положение фокальной точки не должно выходить за рамки эллипса.
+#### 1.3.2. Additional parameters:
+* **opacity** - sets an opacity value for gradient;
+* **filling aria** - same as in 1.2.3.3 (UserSpaceOnUse). 
+ If filling area is not set, whole container is filled in.
+ If the resulting page proportion ration is not 1:1, the filling will stretch
+ to fill all area (resulting with an ellipse).
+* **focal spot location** - sets a focal point location as a percentage ration
+ from container dimensions (0, 1). Focal spot location must not overrun the
+ ellipse borders.
 
-Пример с фокальной точкой. Именно за радиусы этого эллипса и не должно
- выходить положение фокальной точки.
+E.g., focal spot figure. Focal spot must lay within ellipse borders.
 
 {sample}fill\_radialG\_m{sample}
 
@@ -160,7 +157,7 @@
 .fill(['black', 'white'], .5, .5, null, 1, 0.23, 0.81)
 ```
 
-Пример с заданой областью заливки
+E.g., figure with defined filling area:
 
 {sample}fill\_radialG\_usos{sample}
 
@@ -168,26 +165,27 @@
 .fill(['black', 'white'], .5, .5, new anychart.math.Rect(0, 0, 400, 400), 1, .5, .7)
 ```
 
-### [1.4. Заливка изображением](id:image-fill)
-Для того, чтобы залить элемент изображением, в метод **fill** необходимо 
- передать объект, который содержит информацию об адресе до изображения (_src_) и
- режим заливки (растянуть/сжать картинку, сохранять пропорции или нет,
- использовать в качестве шаблона заливки).
+### [1.4. Image fill](id:image-fill)
+To fill an element with picture, it is needed to pass to fill procedure the
+ following settings: object with the image details (src) and filling mode
+ (stretch/squeeze, proportions, pattern fill settings). 
+
+E.g.,
 
 {sample}fill_image{sample}
 
 ```
 .fill({
-    src: 'http://cdn.anychart.com/resources/kitty.png',
+    src: 'http://static.anychart.com/kitty.png',
     mode: acgraph.vector.ImageFillMode.TILE
 })
 ```
 
 ## Stroke settings.
-### [2.1. Толщина и пунктир](id:thickness-dashed)
-**Толщина** обводки просто задается числом в пикселях, аналогично позиции в ключе
- градиента <code>'**thickness** color opacity'</code>, либо отдельным соответствующим параметром,
- либо объектом:
+### [2.1. Line thickness and stripple stettings](id:thickness-dashed)
+Inking thickness is set by a value in pixels similar to the gradient key setting
+ `thickness color opacity`, or by a separate object: 
+
  ```
  {
      position: ,
@@ -196,15 +194,15 @@
  }
  ```
 
-Настройки пунктира задаются срокой состоящей из чисел, разделенных пробелами,
- данная строка будет использована как шаблон. То есть, если передано `'5'`,
- то итоговый шаблон будет `'5 5 5 5 5 ...'`, а если передано `'5 5 10'`, то
- итог будет `'5 5 10 5 5 10 5 5 10 ...'`.
+Stripple settings are set by the string with figures separated by spaces.
+ This string will be used as stripple pattern. That means, if  string value is
+ `5`, the resulting patternt will be `5 5 5 5 5 ...`, and if string value is 
+ `5 5 10`, that will result with `5 5 10 5 5 10 5 5 10 ...`.
+ 
+Every odd-numbered figure is a dash length, and every even-numbered figure is a
+ space length.
 
-Стоит заметить, что в итоговом шаблоне каждому нечетному числу будет соответствовать
- длина штриха, а четному, длина пробела между штрихами.
-
-Пример пунктира:
+E.g.,
 
 {sample}stroke_dashed{sample}
 
@@ -212,15 +210,16 @@
 .stroke('yellow', 5, '5 5 10')
 ```
 
-### [2.2. Заливка цветом: сплошной цвет, линейный/радиальный градиент](id:color)
-Цвет у stroke задается аналогично fill. То есть, поддерживается заливка:
-* сплошным цветом
-* линейным градиентом
-* радиальным градиентом
+### [2.2. Color fill settings: solid color, gradient](id:color)
+Stroke color is set similar to fill procedure. 
+The setting supports filling with:
+* solid color
+* linear gradient
+* radial gradient
 
-**Не поддерживается** заливка картинкой.
+Image fill **not supported**.
 
-Примеры с заливкой stroke:
+E.g., stroke color filling:
 
 {sample}stroke_color{sample}
 
