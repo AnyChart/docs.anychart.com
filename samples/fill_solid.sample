@@ -1,23 +1,24 @@
 var stage = acgraph.create(400, 200).container('container');
 stage.path()
-    .moveTo(stage.width() / 2, 0)
-    .lineTo(stage.width() / 2, stage.height());
-var bg = new anychart.elements.Label().background();
-new anychart.elements.Label()
-    .position([stage.width() / 12, 10])
-    .width(stage.width() / 3)
-    .height(stage.height() - 20)
-    .background(bg.fill('yellow'))
-    .text('fill: yellow\nopacity: 1')
-    .padding(10)
-    .container(stage)
-    .draw();
-new anychart.elements.Label()
-    .position([7 * stage.width() / 12, 10])
-    .width(stage.width() / 3)
-    .height(stage.height() - 20)
-    .background(bg.fill('yellow 0.2'))
-    .text('fill: yellow\nopacity: 0.2')
-    .padding(10)
-    .container(stage)
-    .draw();
+        .moveTo(stage.width() / 2, 0)
+        .lineTo(stage.width() / 2, stage.height());
+    var bg = new anychart.elements.Label().background();
+    var lbl = new anychart.elements.Label()
+        .parentBounds(new anychart.math.Rect(0, 0, stage.width()/2, stage.height()))
+        .width(stage.width() / 3)
+        .height(stage.height() - 20)
+        .background(bg.fill('yellow'))
+        .text('fill: yellow\nopacity: 1')
+        .padding(10);
+    lbl.background().enabled(true);
+    lbl.container(stage).draw();
+
+    lbl = new anychart.elements.Label()
+        .parentBounds(new anychart.math.Rect(stage.width()/2, 0, stage.width()/2, stage.height()))
+        .width(stage.width() / 3)
+        .height(stage.height() - 20)
+        .background(bg.fill('yellow 0.2'))
+        .text('fill: yellow\nopacity: 0.2')
+        .padding(10);
+    lbl.background().enabled(true);
+    lbl.container(stage).draw();
