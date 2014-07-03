@@ -5,7 +5,7 @@
     stage.text(20, 0, 'Stretch image');
     new anychart.elements.Background()
             .fill({
-                src: 'http://cdn.anychart.com/resources/kitty.png',
+                src: 'http://static.anychart.com/kitty.png',
                 mode: acgraph.vector.ImageFillMode.STRETCH
             })
             .stroke('1 #000')
@@ -15,7 +15,7 @@
     stage.text(stage.width() / 2 + 20, 0, 'Pattern image');
     new anychart.elements.Background()
             .fill({
-                src: 'http://cdn.anychart.com/resources/kitty.png',
+                src: 'http://static.anychart.com/kitty.png',
                 mode: acgraph.vector.ImageFillMode.TILE
             })
             .stroke('1 #000')
