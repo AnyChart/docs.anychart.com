@@ -1,12 +1,12 @@
-# Element color filling and stroke settings.
+# Element color fill and stroke settings.
 * 1. Fill settings
   * [1.1. Solid color](#solid-color)
   * [1.2. Linear Gradient](#linear-gradient)
   * [1.3. Radial Gradient](#radial-gradient)
   * [1.4. Image fill](#image-fill)
 * 2. Stroke settings
-  * [2.1. Line thickness and stipple settings](#thickness-dashed)
-  * [2.2. Color filling settings: Solid color, linear/radial gradient](#color)
+  * [2.1. Line thickness and dash settings](#thickness-dashed)
+  * [2.2. Color fill settings: Solid color, linear/radial gradient](#color)
 
 ## Fill settings.
 ### [1.1. Solid color](id:solid-color)
@@ -17,10 +17,10 @@ Color can be set in the following formats:
 * HSL
 * HTML color name
 
-Color transparency can be set in two ways:
+Color opacity can be set in two ways:
 * RGBA, HSLA modificators;
 * Dedicated parameter:
-    * Call procedure with the parameters <code>fill(_color_, _**opacity**_);</code>
+    * Call function with the parameters <code>fill(_color_, _**opacity**_);</code>
     * Single value <code>fill('color **opacity**')</code>
  (one string value separated by space).
 
@@ -54,7 +54,7 @@ E.g., two-step gradient:
 ```
 .fill(['red', 'yellow'])
 ```
-E.g., multiple-step gradient:
+E.g., multiple-key gradient:
 
 {sample}fill\_linearGradient\_m{sample}
 
@@ -64,20 +64,20 @@ E.g., multiple-step gradient:
 #### 1.2.2. Additional values
 * **opacity** - sets an opacity value for gradient;
 * **angle** - sets gradient angle, depending on the mode;
-* **filling mode** - as described below.
+* **fill mode** - as described below.
 
-#### 1.2.3. Filling modes
+#### 1.2.3. Fill modes
 
 ##### 1.2.3.1 ObjectBoundingBox without angle value preservation
 In this mode, gradient vector is calculated with the preset angle, but the
- result gradient angle on the rendered page can be changed if the page
+ result gradient angle on the rendered page can be changed if the object
  proportion is not 1:1 in the browser. So visually the result gradient angle
- may **not correspong** original setting.
+ may **not correspond** to the original settings.
 
 ##### 1.2.3.2. ObjectBoundingBox with angle value preservation
 In this mode the result angle will visually correspond the original setting,
- non regarding browser scaling duplication (so, for pages that do not have 1:1
- proportion with the original figure, the gradient angle will correspond initial
+ non regarding browser scaling duplication (so, for objects that do not have 1:1
+ proportion with the original figure, the gradient angle will correspond to the initial
  value due to internal calculations).
 
 Please see the following illustration of how these modes work:
@@ -91,10 +91,10 @@ Please see the following illustration of how these modes work:
 ##### 1.2.3.3. UserSpaceOnUse
 In this mode gradient settings are added by gradient size and
  borders/coordinates, and rendering is calculated within those borders
- (wih angle settings, corresponding to moder 1.2.3.2). After that, the filling
+ (wih angle settings, corresponding to moder 1.2.3.2). After that, the fill
  is executed on the element figure according to its coordinates.
 
-This can be illustraded in the following way:
+This can be shown in the following way:
 
 {sample}fill\_linearG\_userspace{sample}
 
@@ -111,7 +111,7 @@ Gradient settings are set by 'fill settings’, and this gradient fills
  **figures 1-3**.
 
 If the container size in gradient settings are larger than the filled element
- size, it will result as follows::
+ size, it will result in the following:
 
 {sample}fill\_linearG\_userspace2{sample}
 
@@ -131,7 +131,7 @@ If the container size in gradient settings are larger than the filled element
 2. _Center location_, which is set by a number from 0 to 1 as a percentage ratio
  from the container dimensions.
 
-E.g., radial gradient filling with center location (0.5, 0.5):
+E.g., radial gradient fill with center location (0.5, 0.5):
 
 {sample}fill_radialG{sample}
 
@@ -141,11 +141,11 @@ E.g., radial gradient filling with center location (0.5, 0.5):
 
 #### 1.3.2. Additional parameters:
 * **opacity** - sets an opacity value for gradient;
-* **filling aria** - same as in 1.2.3.3 (UserSpaceOnUse). 
- If filling area is not set, whole container is filled in.
- If the resulting page proportion ration is not 1:1, the filling will stretch
+* **fill area** - same as in 1.2.3.3 (UserSpaceOnUse). 
+ If fill area is not set, whole container is filled in.
+ If the resulting proportions ratio is not 1:1, the fill will stretch
  to fill all area (resulting with an ellipse).
-* **focal spot location** - sets a focal point location as a percentage ration
+* **focal spot location** - sets a focal point location as a percentage ratio
  from container dimensions (0, 1). Focal spot location must not overrun the
  ellipse borders.
 
@@ -157,7 +157,7 @@ E.g., focal spot figure. Focal spot must lay within ellipse borders.
 .fill(['black', 'white'], .5, .5, null, 1, 0.23, 0.81)
 ```
 
-E.g., figure with defined filling area:
+E.g., figure with defined fill area:
 
 {sample}fill\_radialG\_usos{sample}
 
@@ -167,7 +167,7 @@ E.g., figure with defined filling area:
 
 ### [1.4. Image fill](id:image-fill)
 To fill an element with picture, it is needed to pass to fill procedure the
- following settings: object with the image details (src) and filling mode
+ following settings: object with the image details (src) and fil mode
  (stretch/squeeze, proportions, pattern fill settings). 
 
 E.g.,
@@ -182,7 +182,7 @@ E.g.,
 ```
 
 ## Stroke settings.
-### [2.1. Line thickness and stripple stettings](id:thickness-dashed)
+### [2.1. Line thickness and dash settings](id:thickness-dashed)
 Inking thickness is set by a value in pixels similar to the gradient key setting
  `thickness color opacity`, or by a separate object: 
 
@@ -194,8 +194,8 @@ Inking thickness is set by a value in pixels similar to the gradient key setting
  }
  ```
 
-Stripple settings are set by the string with figures separated by spaces.
- This string will be used as stripple pattern. That means, if  string value is
+Dash settings are set by the string with figures separated by spaces.
+ This string will be used as dash pattern. That means, if  string value is
  `5`, the resulting patternt will be `5 5 5 5 5 ...`, and if string value is 
  `5 5 10`, that will result with `5 5 10 5 5 10 5 5 10 ...`.
  
@@ -212,14 +212,14 @@ E.g.,
 
 ### [2.2. Color fill settings: solid color, gradient](id:color)
 Stroke color is set similar to fill procedure. 
-The setting supports filling with:
+The setting supports fill with:
 * solid color
 * linear gradient
 * radial gradient
 
 Image fill **not supported**.
 
-E.g., stroke color filling:
+E.g., stroke color fill:
 
 {sample}stroke_color{sample}
 
