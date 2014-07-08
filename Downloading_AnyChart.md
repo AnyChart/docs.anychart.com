@@ -6,8 +6,8 @@ Compressed copies of the lastest AnyChart 7.x for development and production can
 To download these files, right-click the links below and select "Save as..." from the menu.
   
   
-* <a href="http://cdn.anychart.com/js/lastest/anychart.min.js">AnyChart for production</a>
-* <a href="http://cdn.anychart.com/js/lastest/anychart.dev.min.js">AnyChart for development</a>
+* <a href="http://cdn.anychart.com/js/latest/anychart.min.js">AnyChart for production</a>
+* <a href="http://cdn.anychart.com/js/latest/anychart.dev.min.js">AnyChart for development</a>
 
 
 ###Using AnyChart with a CDN
