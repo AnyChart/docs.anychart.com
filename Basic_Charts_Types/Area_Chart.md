@@ -12,12 +12,10 @@
   * [Minimum and Maximum values control](#min_max)
 * [Using styles](#using_style)
   * [Simple style sample](#simple_style)
-  * [Application of different styles to chart elements](#several_styles)
+  * [Application of different  an image as a chart color](#image_styles)
 * [Working with data labels and tooltips](#working_with_labels_and_tooltips)
 * [Using markers](#using_markers)
 * [Working with colors and color palettes](#colors)
-  * [Setting colors to the elements](#color_setting)
-  * [Color palettes](#color_palettes)
 * [Working with hatch fills and hatch palettes](#hatches)
   * [Setting hatch fills to the elements](#hatch_setting)
   * [Hatch palettes](#hatch_palettes)
@@ -171,7 +169,7 @@ Also, styles are used to make charts interactive, you can define how elements wi
 
 ## [Simple style](id:simple_style)
 
-Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an XML structure:
+Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an JSON structure:
 
 ```
 chart.area(data)
@@ -180,22 +178,15 @@ chart.area(data)
   .hatchFill('diagonalbrick', 'gray')
   .hoverHatchFill('diagonalbrick', 'darkred');
 ```
-Using such settings we've created a style that defines area of Gold color, rather thick area line, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed thick area line and hatch fill colored DarkRed too.
+Using such settings we've created a style that defines area of Gold color, rather thick area line, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it's hatch will be highlighted with a DarkRed.
 
-Now we will take a sample single series chart described above, define style in XML and apply it to all chart elements, using **<area_series style="style1"/>**
+Now we will take a sample single series chart described above, define style in JSON and apply it to all chart elements
 
 {sample}BCT_AreaChart_8{sample}
 
-## [Application of different styles to chart elements](id:several_styles)
+## [Application of different  an image as a chart color](id:image_styles)
 
-Now we will demonstrate how to apply different styles to different series and data elements. To do it we will use multi-series sample that was demonstrated above and create two more styles: **"style2"** and **"style3"**, both inherited from the **"style1"**.
-
-**"style1"** will be applied to "2003 Sales" series, **"style2"** will be applied to "2004 Sales" series and **"style3"** will be applied to the data element with a highest value (Note - we will find highest value and set its style manually in this sample. But with AnyChart it is possible to do that automatically using Thresholds, read more about it in Thresholds tutorial).
-
-So - the definitions of the styles are:
-
-**Style 1:**
-
+Color is not the only way to disign a chart. In this instance we will demonstrate how to use picture as a common color alternative.  
 ```
     chart.area(data).fill({
             src: 'http://static.anychart.com/kitty.png',
@@ -204,52 +195,30 @@ So - the definitions of the styles are:
 ```
 {sample}BCT_AreaChart_9{sample}
 
-
-**Style 2:**
-This style is inherited from "style1" and the only thing changed is a color of the fill: from **"Gold"** to **"Rgb(180,180,255)"**. We've used styles inheritance to avoid duplication of the common settings.
-
-XML Syntax
-XML Code
-Plain code
-01
-<area_style name="style2" parent="style1">
-02
-  <fill color="Rgb(180,180,255)" />
-03
-</area_style>
-**Style 3:**
-This style is also inherited from *"style1"* and the new color of the fill is **"Rgb(255,170,170)"**. And again we've used styles inheritance.
-
-And, as a result here is an example of these styles usage:
-
-Live Sample:  Sample Area chart - Application of different styles to chart elements
-
 # [Working with data labels and tooltips](id:working_with_labels_and_tooltips)
 
 In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.
 
-If you want to configure data labels and tooltips for all series - you should do that in **<label>** and **<tooltip>** sub-nodes of *8<area_series> node. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
+If you want to configure data labels and tooltips for all series - you should do that in **.labels** and **.tooltip** methods. You can tune their visual appearance, positioning and format. 
 
-When formatting data labels text and tooltip we will use formatting keywords: 
-{%CategoryName} - to show month name,
-{%YValue} - to show sales for this month,
-{%SeriesName} - to show period (Year),
-{%YPercentOfSeries} - to show every month percentage to total sales per year.
+When formatting data labels text we will use **.textFormatter** to show month name. Otherwise sales will be displayed here. 
 
-Live Sample:  Sample Area chart - Working with data labels and tooltips
-
-Related Help Topics:
-
-Learn more about labels and tooltips in Labels and tooltips
-Full reference of data labels settings can be found in XML Reference, particularly <label_style> and <label> nodes.
+```
+    var series= chart.bar(data);
+    series.labels().enabled(true).rotation(90).textFormatter(function(point){
+        return point.x;
+    });
+    series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
+```
+{sample}BCT_AreaChart_11{sample}
 
 # [Using markers](id:using_markers)
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including areas.
 
-In the sample below we will take single-series data described above and mark the highest point in series with a **"Star5"** of the **"Gold"** color.
+In the sample below we will take single-series data described above and mark the highest point in series with a **"Star"** of the **"Gold"** color.
 
-To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 16 pixels in normal state, and make it bigger (22 pixels) when user moves cursor over an element.
+To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 16 pixels in normal state, and make it bigger (12 pixels) when user moves cursor over an element.
 
 Marker style "myMarker":
 
@@ -263,40 +232,11 @@ And here is a result - March is the most successful month and we are showing thi
 
 Related help topics:
 
-Full reference of marker style can be found in XML Reference, particularly <area_series><marker_settings> and <marker_style> node.
+Full reference of marker style can be found in XML Reference, particularly <area_series><marker_settings> and <marker_style> method.
 
 # [Working with colors and color palettes](id:colors)
 
 AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can use your own palettes or palettes shipped with AnyChart. Also you can set and apply the color to exact data series or data point.
-
-## [Setting colors to the elements](id:color_setting)
-
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **"color"** attribute in the **<series>** node. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
-
-Live Sample:  Sample Area chart - Setting colors to the elements
-
-In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set **"Rgb(180,77,77)"** color for minimum point and **"Rgb(77,180,77)"** for the maximal one. As you see it is very easy to do by setting **"color"** attribute for **<point>** node.
-
-Live Sample:  Sample Area chart - Setting colors to the series
-
-**Important Note:**
-
-AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "Rgb(180,77,77)" you can set "HSB(h,s,b)" or "HTMLConstant" or "#HEXCode"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
-
-Different ways of setting colors of elements
-Advanced colorization techniques in Styles tutorial
-
-## [Color palettes](id:color_palettes)
-
-AnyChart allows to apply color palettes to all series or to the exact series. In the first case each next series will take each next color from palette. If the number of the colors in palette is less than the number of series - palette will be looped. If you have only one series it will be colored by the first color in the palette. To apply palette to all series we have to set **"palette"** attribute in **<data>** node. Here it is:
-
-Live Sample:  Sample Area chart - Setting Palette to all series
-
-When you have one series only, sometimes it is useful to color each point in series. You can do it by setting color of each point individually or you can apply a palette. For sure the second method is easier and more useful. To apply palette to the exact series you should set **"palette"** attribute for exact **<series>** node.
-
-Live Sample:  Sample Area chart - Working with palettes - Setting Palettes to the certain series
-
-In the samples above we have shown usage of predefined palettes only, but AnyChart allows to create your own custom palettes. To learn more about it read Palettes tutorial.
 
 # [Working with hatch fills and hatch palettes](id:hatches)
 
@@ -304,12 +244,48 @@ AnyChart technology allows printing of charts. Some color printers print colors 
 
 ## [Setting hatch fills to the elements](id:hatch_setting)
 
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting **"hatch_type"** attribute for **<series>** node. Also we've changed hatch type for last element in 5th series by setting **"hatch_type**" attribute for **<point>** node.
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting **hatch_type** for **".hatchFill"** method.
 ```
   chart.splineArea(seriesData_1).hatchFill('horizontalbrick');
   chart.splineArea(seriesData_2).hatchFill('zigzag');
 ```
 {sample}BCT_AreaChart_10{sample}
+
+List of posible Hatch Types
+```
+backwarddiagonal	
+forwarddiagonal	
+horizontal
+vertical
+dashedbackwarddiagonal	
+grid
+dashedFORWARD_DIAGONAL	
+DASHED_HORIZONTAL	
+DASHED_VERTICAL	
+DIAGONAL_CROSS	
+DIAGONAL_BRICK	
+DIVOT	
+HORIZONTAL_BRICK	
+VERTICAL_BRICK	
+CHECKER_BOARD	
+CONFETTI	
+PLAID	
+SOLID_DIAMOND	
+ZIG_ZAG	
+WEAVE	
+PERCENT_05	
+PERCENT_10	
+PERCENT_20	
+PERCENT_25	
+PERCENT_30	
+PERCENT_40	
+PERCENT_50	
+PERCENT_60	
+PERCENT_70	
+PERCENT_75	
+PERCENT_80	
+PERCENT_90
+```
 
 ## [Hatch palettes](id:hatch_palettes)
 
