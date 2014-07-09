@@ -1,1 +1,333 @@
-1
+#Area Chart
+
+* [Overview](#overview)
+* [Chart Building](#how_to_create_chart)
+  * [Single-Series Area chart](#single_series)
+  * [Single-Series Spline Area chart](#single_series_spline)
+  * [Multi-Series Area chart](#multi_categorized)
+  * [Multi-Series Area chart grouped by series](#milti_by_series)
+* [Axes management](#Axes)
+  * [Positioning](#position)
+  * [Inversion](#inversion)
+  * [Minimum and Maximum values control](#min_max)
+* [Using styles](#using_style)
+  * [Simple style sample](#simple_style)
+  * [Application of different styles to chart elements](#several_styles)
+* [Working with data labels and tooltips](#working_with_labels_and_tooltips)
+* [Using markers](#using_markers)
+* [Working with colors and color palettes](#colors)
+  * [Setting colors to the elements](#color_setting)
+  * [Color palettes](#color_palettes)
+* [Working with hatch fills and hatch palettes](#hatches)
+  * [Setting hatch fills to the elements](#hatch_setting)
+  * [Hatch palettes](#hatch_palettes)
+
+## [Overview](id:overview)
+Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts emphasize the magnitude of change over time, and can be used to draw attention to the total value across a trend. For example, data that represents profit over time can be plotted in an area chart to emphasize the total profit.
+
+## [Chart Building](id:how_to_create_chart)
+
+Depending on data model and the visualization purpose the area chart may contain single series or multi series.
+
+### [Single-Series Line Area Chart](id:single_series)
+
+Let's see single-series area chart created using the following data - sales of ACME Corp. through several monthes in one year:
+
+Month	|Sales
+----- |:-----
+January	| $10000
+February	| $12000
+March	| $18000
+April	| $11000 
+May	| $9000
+
+Now we need to convert this data table into JSON, this format will be accepted by AnyChart.
+In terms of AnyChart data model we have one series of data (Sales) with categories that hold months names. Each point in series represents one month and sales volume. Converted JSON Data looks like:
+
+```
+ new anychart.data.Set([
+      ['January', 10000],
+      ['February', 12000],
+      ['March', 18000],
+      ['April', 11000],
+      ['May', 9000]
+ ]);
+  chart = anychart.areaChart(data);
+ chart.area(data);
+```
+As you can see, we've created Data Sets. Every object is a point, which has some attributes.
+This instance sets first column attribute as category and second column attribute as value.
+
+Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on it to see Live Chart preview and full configured JSON.
+
+{sample}BCT_AreaChart_1{sample}
+
+## [Single-Series Spline Area Chart](id:single_special_spline)
+
+For better look and feel of your charts you can use SplineArea chart type:
+
+```
+ new anychart.data.Set([
+   {name: 'January', y: 10000},
+   {name: 'February', y: 12000},
+   {name: 'March', y: 18000},
+   {name: 'April', y: 11000},
+   {name: 'May', y: 9000}
+ ]);
+ chart = anychart.areaChart(data);
+ chart.splineArea(data);
+```
+Here is the same chart as shown above, but in Spline mode:
+
+{sample}BCT_AreaChart_2{sample}
+
+## [Multi-Series area chart](id:multi_categorized)
+
+To compare two or more data sets you have to use multi-series area charts as it shown in the sample below.
+
+Let's compare 2003 sales to 2004 sales:
+
+Month	|2003 Sales	|2004 Sales
+--------|:----------|:---------
+January	|$10000	|$12000
+February	 |$12000	 |$15000
+March	 |$18000	 |$16000
+April	 |$11000	 |$15000
+May	 |$9000	 |$14000
+As we do in single series area sample above we need to convert this table into XML, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
+
+```
+  var dataSet = new anychart.data.Set([
+    ['January', '10000', '12000'],
+    ['February', '12000', '15000'],
+    ['March', '18000', '16000'],
+    ['April', '11000', '15000'],
+    ['May', '9000', '14000'],
+  ]);
+  var Sales2003data = dataSet.mapAs({x: [0], value: [2]});
+  var Sales2004data = dataSet.mapAs({x: [0], value: [1]});
+```
+As we now have multi-series chart we don't want to set **type** for each series individually (there can be much more than two series in multi-series chart), so we add **<data_plot_settings default_series_type="Area"/>** node to **<chart>**. Now all series in chart will be of Area type by default.
+
+{sample}BCT_AreaChart_3{sample}
+
+## [Multi-Series Area Chart grouped by series](id:milti_by_series)
+
+Sometimes it is useful to visualize comparison in a different way - group values be series. In our sample it means that we want to compare sales in each year, not each sales in different monthes. You don't have to reformat your data to do this - all you need to do is to switch plot_type attribute to "CategorizedBySeriesVertical". Look at the resulting chart below:
+
+Live Sample:  Sample Multi-Series Categorized By Series Area Chart
+
+# [Axes management](id:Axes)
+
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in Working with Axes tutorial, in this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+
+## [Positioning](id:position)
+
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position with `orientation()` method of **yAxis** or **xAxis** instances.
+
+Positioning depends on plot type and inversion of axes, you will find list of all possible positining and inversion settings in Axes Positioning and Inverting Templates.
+
+```
+  chart.xAxis(0).orientation('top');
+  chart.yAxis(0).orientation('right');
+```
+And here is the demonstration of this feature on the Single-series sample:
+
+{sample}BCT_AreaChart_5{sample}
+
+## [Inversion](id:inversion)
+
+AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis **<scale>**:
+
+```
+  chart.yScale().inverted(true);
+```
+And here is the demonstration of Y Axis inversion on the Single-series sample:
+
+{sample}BCT_AreaChart_6{sample}
+
+## [Minimum and Maximum values control](id:min_max)
+
+By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting **maximum** and **minimum** attributes of **<scale>** node:
+
+```
+chart.yScale().minimum('0').maximum('50000');
+```
+And here is the demonstration of maximum and minimum values on the Single-series sample:
+
+{sample}BCT_AreaChart_7{sample}
+
+# [Using styles](id:using_style)
+
+In this section we will describe main parts of area chart style and demonstrate how style can be created and applied. Also you will see list of predefined styles.
+
+The main idea of styles is to segregate visualization and data definition. Visual appearance of areas is defined using certain styles and then you just apply the style to the certain data elements. Style can be applied to data series, data category or single data point.
+
+Area chart style can be configured in **<area_style>** and **<area_series>** nodes. On the image below you can see what area_style consists of: fill (including solid color fill, hatch fill, image fill and gradient fill), area line and effects applied to whole area.
+
+![](http://www.anychart.com/products/anychart/docs/users-guide/img/area_styles_diagram.jpg)
+
+Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when selected, when user moves cursor over an element, etc. More information about these features can be found in Interactivity tutorial.
+
+## [Simple style](id:simple_style)
+
+Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an XML structure:
+
+```
+chart.area(data)
+  .fill('Gold')
+  .stroke('#56561a', 4, 0.4)
+  .hatchFill('diagonalbrick', 'gray')
+  .hoverHatchFill('diagonalbrick', 'darkred');
+```
+Using such settings we've created a style that defines area of Gold color, rather thick area line, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed thick area line and hatch fill colored DarkRed too.
+
+Now we will take a sample single series chart described above, define style in XML and apply it to all chart elements, using **<area_series style="style1"/>**
+
+{sample}BCT_AreaChart_8{sample}
+
+## [Application of different styles to chart elements](id:several_styles)
+
+Now we will demonstrate how to apply different styles to different series and data elements. To do it we will use multi-series sample that was demonstrated above and create two more styles: **"style2"** and **"style3"**, both inherited from the **"style1"**.
+
+**"style1"** will be applied to "2003 Sales" series, **"style2"** will be applied to "2004 Sales" series and **"style3"** will be applied to the data element with a highest value (Note - we will find highest value and set its style manually in this sample. But with AnyChart it is possible to do that automatically using Thresholds, read more about it in Thresholds tutorial).
+
+So - the definitions of the styles are:
+
+**Style 1:**
+
+```
+    chart.area(data).fill({
+            src: 'http://static.anychart.com/kitty.png',
+            mode: acgraph.vector.ImageFillMode.TILE
+        })
+```
+{sample}BCT_AreaChart_9{sample}
+
+
+**Style 2:**
+This style is inherited from "style1" and the only thing changed is a color of the fill: from **"Gold"** to **"Rgb(180,180,255)"**. We've used styles inheritance to avoid duplication of the common settings.
+
+XML Syntax
+XML Code
+Plain code
+01
+<area_style name="style2" parent="style1">
+02
+  <fill color="Rgb(180,180,255)" />
+03
+</area_style>
+**Style 3:**
+This style is also inherited from *"style1"* and the new color of the fill is **"Rgb(255,170,170)"**. And again we've used styles inheritance.
+
+And, as a result here is an example of these styles usage:
+
+Live Sample:  Sample Area chart - Application of different styles to chart elements
+
+# [Working with data labels and tooltips](id:working_with_labels_and_tooltips)
+
+In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.
+
+If you want to configure data labels and tooltips for all series - you should do that in **<label>** and **<tooltip>** sub-nodes of *8<area_series> node. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
+
+When formatting data labels text and tooltip we will use formatting keywords: 
+{%CategoryName} - to show month name,
+{%YValue} - to show sales for this month,
+{%SeriesName} - to show period (Year),
+{%YPercentOfSeries} - to show every month percentage to total sales per year.
+
+Live Sample:  Sample Area chart - Working with data labels and tooltips
+
+Related Help Topics:
+
+Learn more about labels and tooltips in Labels and tooltips
+Full reference of data labels settings can be found in XML Reference, particularly <label_style> and <label> nodes.
+
+# [Using markers](id:using_markers)
+
+Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including areas.
+
+In the sample below we will take single-series data described above and mark the highest point in series with a **"Star5"** of the **"Gold"** color.
+
+To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 16 pixels in normal state, and make it bigger (22 pixels) when user moves cursor over an element.
+
+Marker style "myMarker":
+
+```
+chart.marker('March, 18000').type('star').size(12).fill('Gold');
+```
+
+And here is a result - March is the most successful month and we are showing this on the chart:
+
+{sample}BCT_AreaChart_10{sample}
+
+Related help topics:
+
+Full reference of marker style can be found in XML Reference, particularly <area_series><marker_settings> and <marker_style> node.
+
+# [Working with colors and color palettes](id:colors)
+
+AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can use your own palettes or palettes shipped with AnyChart. Also you can set and apply the color to exact data series or data point.
+
+## [Setting colors to the elements](id:color_setting)
+
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **"color"** attribute in the **<series>** node. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
+
+Live Sample:  Sample Area chart - Setting colors to the elements
+
+In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set **"Rgb(180,77,77)"** color for minimum point and **"Rgb(77,180,77)"** for the maximal one. As you see it is very easy to do by setting **"color"** attribute for **<point>** node.
+
+Live Sample:  Sample Area chart - Setting colors to the series
+
+**Important Note:**
+
+AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "Rgb(180,77,77)" you can set "HSB(h,s,b)" or "HTMLConstant" or "#HEXCode"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
+
+Different ways of setting colors of elements
+Advanced colorization techniques in Styles tutorial
+
+## [Color palettes](id:color_palettes)
+
+AnyChart allows to apply color palettes to all series or to the exact series. In the first case each next series will take each next color from palette. If the number of the colors in palette is less than the number of series - palette will be looped. If you have only one series it will be colored by the first color in the palette. To apply palette to all series we have to set **"palette"** attribute in **<data>** node. Here it is:
+
+Live Sample:  Sample Area chart - Setting Palette to all series
+
+When you have one series only, sometimes it is useful to color each point in series. You can do it by setting color of each point individually or you can apply a palette. For sure the second method is easier and more useful. To apply palette to the exact series you should set **"palette"** attribute for exact **<series>** node.
+
+Live Sample:  Sample Area chart - Working with palettes - Setting Palettes to the certain series
+
+In the samples above we have shown usage of predefined palettes only, but AnyChart allows to create your own custom palettes. To learn more about it read Palettes tutorial.
+
+# [Working with hatch fills and hatch palettes](id:hatches)
+
+AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings and palettes. To see whole range of available hatch types see Hatch tutorial.
+
+## [Setting hatch fills to the elements](id:hatch_setting)
+
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting **"hatch_type"** attribute for **<series>** node. Also we've changed hatch type for last element in 5th series by setting **"hatch_type**" attribute for **<point>** node.
+```
+  chart.splineArea(seriesData_1).hatchFill('horizontalbrick');
+  chart.splineArea(seriesData_2).hatchFill('zigzag');
+```
+{sample}BCT_AreaChart_10{sample}
+
+## [Hatch palettes](id:hatch_palettes)
+
+When you have a lot of points or series it is very useful to use hatch palettes. Methods of working with hatch palette is very similar to color palette. You can apply hatch palette to all series or to exact series. In the first case each next series will take each next hatch type from palette. If the number of hatch types in palette is less than number of series - palette will be looped. If you have only one series each point will take the first hatch type from the palette. To apply palette to all series we have to set **"hatch_palette"** attribute in **<data>** node. Here it is:
+
+Live Sample:  Sample Area chart - Setting hatch fills to the series
+
+When you have one series only you can can apply hatch palette to this series. To do it you should set **"hatch_palette"** attribute for *8<series>** node. See the sample below:
+
+```
+  chart.splineArea(seriesData_1).hatchFill('soliddiamond');
+  chart.splineArea(seriesData_2).hatchFill('forwarddiagonal');
+  splineArea.hatchFill('backwarddiagonal');
+```
+{sample}BCT_AreaChart_12{sample}
+
+
+
+In the samples above we have shown usage of predefined hatch palettes only, but AnyChart allows to create your own custom hatch palettes. To learn more about it read Hatch and hatch palettes.
+
+Current Page Online URL: Area Chart
