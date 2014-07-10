@@ -19,7 +19,7 @@ it won't have to be re-downloaded.
 To use AnyChart CDN, simply reference the file directly from http://cdn.anychart.com/ in the script tag:
 ```
     <script>
-        <script src="//cdn.anychart.com/latest/anychart.min.js"></script>
+        <script src="//cdn.anychart.com/js/latest/anychart.min.js"></script>
     </script>
 ```
   
