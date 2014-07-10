@@ -5,7 +5,7 @@ Quick Start
 ####1. Include anychart.min.js to your head section<br>
 ```
 <head>
-    <script src="cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
+    <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
 </head>
 ```
   
