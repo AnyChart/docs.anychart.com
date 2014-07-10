@@ -104,8 +104,9 @@ As we do in single series area sample above we need to convert this table into X
   ]);
   var Sales2003data = dataSet.mapAs({x: [0], value: [2]});
   var Sales2004data = dataSet.mapAs({x: [0], value: [1]});
+  chart = anychart.areaChart();
 ```
-As we now have multi-series chart we don't want to set **type** for each series individually (there can be much more than two series in multi-series chart), so we add **<data_plot_settings default_series_type="Area"/>** node to **<chart>**. Now all series in chart will be of Area type by default.
+As we now have multi-series chart we don't want to set **type** for each series individually (there can be much more than two series in multi-series chart), so we set **chart** as **anychart.areaChart()**. Now all series in chart will be of Area type by default.
 
 {sample}BCT_AreaChart_3{sample}
 
