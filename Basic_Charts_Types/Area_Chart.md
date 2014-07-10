@@ -12,7 +12,7 @@
   * [Minimum and Maximum values control](#min_max)
 * [Using styles](#using_style)
   * [Simple style sample](#simple_style)
-  * [Application of different  an image as a chart color](#image_styles)
+  * [Application of an image as a chart color](#image_styles)
 * [Working with data labels and tooltips](#working_with_labels_and_tooltips)
 * [Using markers](#using_markers)
 * [Working with colors and color palettes](#colors)
@@ -146,7 +146,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 ## [Minimum and Maximum values control](id:min_max)
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting **maximum** and **minimum** attributes of **<scale>** node:
+By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting **.maximum** and **.minimum** attributes of the method:
 
 ```
 chart.yScale().minimum('0').maximum('50000');
@@ -184,7 +184,7 @@ Now we will take a sample single series chart described above, define style in J
 
 {sample}BCT_AreaChart_8{sample}
 
-## [Application of different  an image as a chart color](id:image_styles)
+## [Application of an image as a chart color](id:image_styles)
 
 Color is not the only way to disign a chart. In this instance we will demonstrate how to use picture as a common color alternative.  
 ```
@@ -218,9 +218,7 @@ Marker is an object with a specified shape, size, and color or an image used to 
 
 In the sample below we will take single-series data described above and mark the highest point in series with a **"Star"** of the **"Gold"** color.
 
-To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 16 pixels in normal state, and make it bigger (12 pixels) when user moves cursor over an element.
-
-Marker style "myMarker":
+To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 12 pixels.
 
 ```
 chart.marker('March, 18000').type('star').size(12).fill('Gold');
