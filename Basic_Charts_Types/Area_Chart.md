@@ -251,7 +251,7 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 ```
 {sample}BCT_AreaChart_10{sample}
 
-List of posible Hatch Types
+List of Hatch types:
 ```
 backwarddiagonal	
 forwarddiagonal	
@@ -259,51 +259,32 @@ horizontal
 vertical
 dashedbackwarddiagonal	
 grid
-dashedFORWARD_DIAGONAL	
-DASHED_HORIZONTAL	
-DASHED_VERTICAL	
-DIAGONAL_CROSS	
-DIAGONAL_BRICK	
-DIVOT	
-HORIZONTAL_BRICK	
-VERTICAL_BRICK	
-CHECKER_BOARD	
-CONFETTI	
-PLAID	
-SOLID_DIAMOND	
-ZIG_ZAG	
-WEAVE	
-PERCENT_05	
-PERCENT_10	
-PERCENT_20	
-PERCENT_25	
-PERCENT_30	
-PERCENT_40	
-PERCENT_50	
-PERCENT_60	
-PERCENT_70	
-PERCENT_75	
-PERCENT_80	
-PERCENT_90
+dashedforwarddiagonal
+dashedhorizontal
+dashedvertical
+diagonalcross
+diagonalbrick	
+divot
+horizontalbrick
+verticalbrick
+checkerboard
+confetti
+plaid
+soliddiamond
+zigzag
+weave
+percent05
+percent10
+percent20
+percent25
+percent30
+percent40
+percent50
+percent60
+percent70
+percent75
+percent80
+percent90
 ```
-
-## [Hatch palettes](id:hatch_palettes)
-
-When you have a lot of points or series it is very useful to use hatch palettes. Methods of working with hatch palette is very similar to color palette. You can apply hatch palette to all series or to exact series. In the first case each next series will take each next hatch type from palette. If the number of hatch types in palette is less than number of series - palette will be looped. If you have only one series each point will take the first hatch type from the palette. To apply palette to all series we have to set **"hatch_palette"** attribute in **<data>** node. Here it is:
-
-Live Sample:  Sample Area chart - Setting hatch fills to the series
-
-When you have one series only you can can apply hatch palette to this series. To do it you should set **"hatch_palette"** attribute for *8<series>** node. See the sample below:
-
-```
-  chart.splineArea(seriesData_1).hatchFill('soliddiamond');
-  chart.splineArea(seriesData_2).hatchFill('forwarddiagonal');
-  splineArea.hatchFill('backwarddiagonal');
-```
-{sample}BCT_AreaChart_12{sample}
-
-
-
-In the samples above we have shown usage of predefined hatch palettes only, but AnyChart allows to create your own custom hatch palettes. To learn more about it read Hatch and hatch palettes.
 
 Current Page Online URL: Area Chart
