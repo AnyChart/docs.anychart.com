@@ -45,7 +45,7 @@ Depending on data model and the visualization purpose the bar chart may contain 
 Let's see single series bar chart created using the following data - sales of ACME Corp. apparel through different retail channels in one year:
 
 |Retail Channel |	Sales |
-|---------------|:======|
+|---------------|:------|
 |Department Stores |	$637.166|
 |Discount Stores	| $721.630|
 |Men's/Women's Specialty Stores	| $148.662|
@@ -74,7 +74,7 @@ To compare two or more data rows you have to use multi-series bar charts as it s
 Let's compare year 2003 sales to year 2004 sales:
 
 Retail Channel |	Year 2003 Sales |	Year 2004 Sales
----------------|:=================:|:--------------
+---------------|:---------------:|:--------------
 Department Stores	$637.166	$737.166
 Discount Stores	 $721.630	$537.166
 Men's/Women's Specialty Stores	 $148.662	$188.662
