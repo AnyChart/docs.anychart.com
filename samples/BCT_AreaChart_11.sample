@@ -7,7 +7,7 @@
         ['May', 9000]
     ]);
     chart = anychart.areaChart(data);
-    var series= chart.bar(data);
+    var series= chart.area(data);
     series.labels().enabled(true).rotation(90).textFormatter(function(point){
         return point.x;
     });
