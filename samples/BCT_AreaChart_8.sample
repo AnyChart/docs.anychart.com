@@ -8,8 +8,9 @@
 chart = anychart.areaChart(data);
 chart.area(data)
   .fill('Gold')
+  .hoverFill("darkred")
   .stroke('#56561a', 4, 0.4)
   .hatchFill('diagonalbrick', 'gray')
-  .hoverHatchFill('diagonalbrick', 'darkred');
+  .hoverHatchFill('diagonalbrick', 'black');
   chart.yScale().minimum('8000').maximum('20001');
 chart.container('container').draw();
