@@ -1,0 +1,11 @@
+var data = new anychart.data.Set([
+      ['January', 10000],
+      ['February', 12000],
+      ['March', 18000],
+      ['April', 11000],
+      ['May', 9000]
+    ]);
+chart = anychart.areaChart(data);
+chart.splineArea(data);
+chart.marker('March, 18000').type('star').size(12).fill('Gold');
+chart.container('container').draw();

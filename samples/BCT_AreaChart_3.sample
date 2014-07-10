@@ -1,0 +1,14 @@
+var dataSet = new anychart.data.Set([
+    ['January', '10000', '12000'],
+    ['February', '12000', '15000'],
+    ['March', '18000', '16000'],
+    ['April', '11000', '15000'],
+    ['May', '9000', '14000'],
+  ]);
+  var seriesData_2 = dataSet.mapAs({x: [0], value: [1]});
+  var seriesData_1 = dataSet.mapAs({x: [0], value: [2]});
+  chart = anychart.areaChart();
+  chart.container('container');
+  chart.area(seriesData_1);
+  chart.area(seriesData_2);
+  chart.draw();
