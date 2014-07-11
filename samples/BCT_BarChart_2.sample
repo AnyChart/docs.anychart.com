@@ -6,14 +6,14 @@
     ['All other outlets', 90000, 89000]
   ]);
 
-  var seriesData_1 = data.mapAs({x: [0], value: [1]});
-  var seriesData_2 = data.mapAs({x: [0], value: [2]});
+  var Sales2003 = data.mapAs({x: [0], value: [1]});
+  var Sales2004 = data.mapAs({x: [0], value: [2]});
   
   chart = anychart.barChart();
 
   var series;
-  series = chart.bar(seriesData_1);
-  series = chart.bar(seriesData_2);
+  series = chart.bar(Sales2003);
+  series = chart.bar(Sales2004);
 
   chart.container('container');
   chart.draw();
