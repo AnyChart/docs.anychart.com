@@ -7,7 +7,7 @@ var data = new anychart.data.Set([
     ]);
     chart = anychart.areaChart(data);
     chart.area(data).fill({
-            src: 'http://static.anychart.com/kitty.png',
+            src: 'http://static.anychart.com/anychart_site_header.png',
             mode: acgraph.vector.ImageFillMode.TILE
-        })
+        });
     chart.container('container').draw();
