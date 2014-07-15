@@ -1,0 +1,17 @@
+  var data = new anychart.data.Set([
+    ['Department Stores1', 637166],
+    ['Discount Stores', 721630],
+    ['Men\'s/Women\'s Specialty Stores', 148662],
+    ['Juvenile Specialty Stores', 78662],
+    ['All other outlets', 90000]
+  ]);
+
+  chart = anychart.barChart(data);
+chart.bar(data)
+  .fill('Gold')
+  .hoverStroke("darkred", 4, 1)
+  .stroke('#56561a', 4, 1)
+  .hatchFill('diagonalbrick', 'gray')
+  .hoverHatchFill('diagonalbrick', 'darkred');
+  chart.container('container');
+  chart.draw();
