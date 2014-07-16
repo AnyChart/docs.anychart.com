@@ -32,11 +32,8 @@ chart.container('container');
 chart.draw();
 ```
 See also:  
-<!--<a href="./JavaScript_API_Principles">JavaScript API Principles</a>-->  
-<a href="http://api.anychart.com">JavaScript API Reference</a>  
-<a href="./Using\_Data\_Sets">Using Data Sets</a>  
-<!--<a href="./Working_with_Data/Create_Update_Read_Delete_operations">Create/Update/Read/Delete operations</a>-->  
-<!--<a href="./Export/JavaScript_API_Serialization_Restrictions">JavaScript API serialization restrictions</a>-->  
+[JavaScript API Reference](http://api.anychart.com)
+[Using Data Sets](./Using_Data_Sets)
 
 ###XML
 XML format is useful if you prefer the declarative style for chart configurations.  
@@ -66,11 +63,7 @@ chart.container('container');
 chart.draw();
 ```
 See also:  
-<!--<a href="http://anychart.com/products/anychart7/api-reference?format=xml">XML Reference</a>-->  
-<!--<a href="./Working_with_Data/Using_XML_JSON_Schemas_for_Config_Validation">Using XML/JSON schema for config validation</a>--> 
-<!--<a href="./AnyChart_6.x_Migration_Guide">AnyChart 6.x migration guide</a>-->  
-<!--<a href="./Working_with_Data/XML_JSON_minification_recommendations.md">XML/JSON minification recommendations</a>-->  
-<a href="./Using\_Data\_Sets">Using Data Sets</a>   
+[Using Data Sets](./Using_Data_Sets)
 
 ###JSON
 JSON basically has the same purpose and drawbacks as the XML format. We recommend everyone to use JavaScript API - it just has a little bit less perfect performance and is less flexible in terms of customization.
@@ -99,11 +92,7 @@ chart.container('container');
 chart.draw();
 ```
 See also:  
-<!--<a href="http://anychart.com/products/anychart7/api-reference?format=json">JSON Reference</a>-->  
-<!--<a href="./Working_with_Data/Using_XML_JSON_Schemas_for_Config_Validation">Using XML/JSON schema for config validation</a>-->  
-<!--<a href="./AnyChart_6.x_Migration_Guide">AnyChart 6.x migration guide</a>-->  
-<!--<a href="./Working_with_Data/XML_JSON_minification_recommendations.md">XML/JSON minification recommendations</a>-->  
-<a href="./Using\_Data\_Sets">Using Data Sets</a>   
+[Using Data Sets](./Using_Data_Sets)
 
 ###CSV  
 CSV is obviously the best solution when you need to minimize the size of data input. Using it is as easy as any other way, but CSV also lacks flexibility that JS API way has.
@@ -132,6 +121,5 @@ chart.area(csvString);
 chart.draw();
 ```
 See also:  
-<!--<a href="./Working_with_Data/CSV_Settings">CSV Settings</a>-->  
 [Using Data Sets](./Using_Data_Sets)
 
