@@ -14,7 +14,7 @@ Each of the ways has some strengths and weaknesses, but in general we recommend 
 ###JavaScript API
 JavaScript API is most useful when you need to Create, Read, Update, and Delete data points dynamically. 
 
-We recommend to use <a href="./Using\_Data\_Sets">Data Sets</a> when you work using JS API, but you can also pass data directly to a chart by creating a function:
+We recommend to use [Data Sets](./Using_Data_Sets) when you work using JS API, but you can also pass data directly to a chart by creating a function:
 ```
 // create a pie chart
 var chart = anychart.pieChart([
