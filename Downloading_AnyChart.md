@@ -2,7 +2,7 @@ Downloading AnyChart
 ====================
   
 ###Downloading
-Compressed copies of the lastest AnyChart 7.x for development and production can be downloaded for use on your server or local PC.  
+Compressed copies of the latest AnyChart 7.x for development and production can be downloaded for use on your server or local PC.  
 To download these files, right-click the links below and select "Save as..." from the menu.
   
   
