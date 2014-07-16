@@ -64,6 +64,6 @@ You can copy this to a file on your computer and open it in your browser to disp
 ```
 
 ###Learn more:
-<a href="./Supported_Charts_Types">Supported charts types</a>
+<a href="./Supported\_Charts\_Types">Supported charts types</a>
 
 
