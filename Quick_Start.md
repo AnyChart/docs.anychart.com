@@ -64,7 +64,7 @@ You can copy this to a file on your computer and open it in your browser to disp
 ```
 
 ###Learn more:
-[Supported charts types](./Supported_Charts_Types "Supported charts types")  
-[JavaScript API Principles](./JavaScript_API_Principles "JavaScript API Principles")
+[Supported charts types](./Supported_Charts_Types)  
+[JavaScript API Principles](./JavaScript_API_Principles)
 
 
