@@ -34,7 +34,7 @@ You can read more about Build Server and custom builds in the <a href="./Environ
   
 
 ###Past Releases
-Previous versions of AnyChart 7.x can be found and downloaded from <a href="http://cdn.anychart.com/index.html" target="_blank">AnyChart CDN</a>.
+Previous versions of AnyChart 7.x can be found and downloaded from <a href="http://cdn.anychart.com/" target="_blank">AnyChart CDN</a>.
 
 
 
