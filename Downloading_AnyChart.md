@@ -11,7 +11,7 @@ To download these files, right-click the links below and select "Save as..." fro
 
 
 ###Using AnyChart with a CDN
-<a href="http://en.wikipedia.org/wiki/Content_delivery_network" target="_blank">CDNs</a> can offer a performance benefit by hosting AnyChart on servers spread across the globe.
+<a href="http://en.wikipedia.org/wiki/Content\_delivery\_network" target="_blank">CDNs</a> can offer a performance benefit by hosting AnyChart on servers spread across the globe.
 This also offers an advantage that if the visitor to your web page has already downloaded a copy of AnyChart from the same CDN,
 it won't have to be re-downloaded.  
   
