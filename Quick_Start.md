@@ -19,7 +19,7 @@ Example:
 </body>
 ```  
 ###3. Create the chart
-Add the JavaScript tag `<script> </script>` with the following code anywhere in the web page. 
+Add the JavaScript tag `<script>` with the following code anywhere in the web page. 
 This code example use JavaScript API to create the chart, but you also can ues JSON or XML format. See [Supported Data Formats](./Supported_Data_Formats) for details.
 Example:
 ```
