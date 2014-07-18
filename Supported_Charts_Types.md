@@ -26,7 +26,7 @@ with a links to tutorials where you can find out how to create them (with the sa
 <tr><td>Spline Chart</td><td>Yes</td><td>Yes</td></tr>    
 <tr><td>Spline-Area Chart</td><td>Yes</td><td>Yes</td></tr> 
 <tr><td>Step-Area Chart</td><td>Yes</td><td>Yes</td></tr> 
-<tr><td>Step-Line Chart</td><td>Yes</td><td>Yes</td>п</tr>                                 
+<tr><td>Step-Line Chart</td><td>Yes</td><td>Yes</td></tr>                                 
 </table>
 
 
