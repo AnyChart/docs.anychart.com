@@ -287,7 +287,6 @@ Now, let's look how to create a simple style and apply it to the chart. As we've
 
 ```
 chart.area(data)
-chart.area(data)
   .fill('Gold')
   .hoverFill("darkred")
   .stroke('#56561a', 4, 0.4)
