@@ -1,22 +1,27 @@
 Quick Start
 ===========
-### To start working with AnyChart framework, you should do just three things:<br>
   
-####1. Include anychart.min.js to your head section<br>
+## Three things to start using AnyChart:
+###1. Include AnyChart into your web page
+Include the JavaScript file in the `<head>` section of your web page.  
+You can use CDN as shown below or visit [download page](./Downloading_AnyChart).  
 ```
 <head>
     <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
 </head>
 ```
-  
-####2. Create a block-based container with the id attribute for your chart<br>
+###2. Create container for the chart
+Add a block-based HTML Element into your web page with the specified `id`, `width` and `height` attributes. AnyChart uses 100% of the container size if other behaviour is't specified. 
+Example:
 ```
 <body>
     <div id="container" style="width: 500px; height: 400px;"></div>
 </body>
-```
-  
-####3. Insert the following script section into any part of your page<br>
+```  
+###3. Create the chart
+Add the JavaScript tag `<script> </script>` with the following code anywhere in the web page. 
+This code example use JavaScript API to create the chart, but you also can ues JSON or XML format. See [Supported Data Formats](./Supported_Data_Formats) for details.
+Example:
 ```
 <script>
     anychart.onDocumentLoad(function() {
@@ -33,16 +38,17 @@ Quick Start
 </script>
 ```
   
-####After all you should have the following result
-
+## Consider the result
+After all steps you should have the following result.  
+You can launch this sample in the playground 
 {sample}quick\_start\_pie{sample}
-  
+ 
 ####Full snippet of code
 You can copy this to a file on your computer and open it in your browser to display the pie chart shown above:  
 ```
 <!doctype html>
 <head>
-    <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
+    <script src="cdn.anychart.com/js/anychart.min.js" type="text/javascript"></script> 
     <script>
         anychart.onDocumentLoad(function() {
             var chart = new anychart.pie.Chart([ //create an instance of pie chart with data
@@ -62,9 +68,7 @@ You can copy this to a file on your computer and open it in your browser to disp
 </body>
 </html>
 ```
-
 ###Learn more:
 [Supported charts types](./Supported_Charts_Types)  
-[JavaScript API Principles](./JavaScript_API_Principles)
 
 
