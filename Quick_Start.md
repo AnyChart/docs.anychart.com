@@ -1,7 +1,7 @@
 Quick Start
 ===========
   
-## Three things to start using AnyChart:
+## Three things to start using AnyChart
 ###1. Include AnyChart into your web page
 Include the JavaScript file in the `<head>` section of your web page.  
 You can use CDN as shown below or visit [download page](./Downloading_AnyChart).  
@@ -39,11 +39,11 @@ Example:
 ```
   
 ## Consider the result
-After all steps you should have the following result.  
-You can launch this sample in the playground 
+###See the result
+After all steps you should have the following result. 
+This example, like an others can be launched and explored with the samples playground.
 {sample}quick\_start\_pie{sample}
- 
-####Full snippet of code
+###Full snippet of code
 You can copy this to a file on your computer and open it in your browser to display the pie chart shown above:  
 ```
 <!doctype html>
@@ -68,7 +68,14 @@ You can copy this to a file on your computer and open it in your browser to disp
 </body>
 </html>
 ```
-###Learn more:
-[Supported charts types](./Supported_Charts_Types)  
+  
+## Further Steps
+### Learn more
+* Explore [JavaScript API Reference](http://api.anychart.com/)
+* See [Playground demos](http://playground.anychart.com/)  
+### Subscribe
+* Follow us on [Twitter](https://twitter.com/intent/follow?&screen_name=anychart&original_referer=http%3A%2F%2Fdocs.anychart.com)
+* Read the [blog](http://www.anychart.com/blog/)
+
 
 
