@@ -1,3 +1,5 @@
+anychart.onDocumentReady(function() {
+
 var dataSet = new anychart.data.Set([
     ['P1', '1274', 'missing', 'missing'],
     ['P2', '1397', 'missing', 'missing'],
@@ -32,3 +34,4 @@ var dataSet = new anychart.data.Set([
   splineArea.hoverFill('#2AD62A 0.7'); //setup custom series hover color with opacity
   splineArea.hatchFill('backwarddiagonal');
   chart.draw();
+  });

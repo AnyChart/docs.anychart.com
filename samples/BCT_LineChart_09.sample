@@ -1,0 +1,20 @@
+anychart.onDocumentReady(function() {
+
+  var data = new anychart.data.Set([
+    ['January', 12000],
+    ['February', 15000],
+    ['March', 16000],
+    ['April', 15000],
+    ['May', 14000]
+  ]);
+  chart = anychart.lineChart();
+  chart.container('container');
+    chart.yScale().minimum('0').maximum('20000');
+chart.spline(data).labels()
+      .enabled(true)
+      .fontWeight('bold')
+      .rotation(90)
+      .offsetX(10)
+      .offsetY(10);
+chart.draw();
+})

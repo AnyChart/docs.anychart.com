@@ -17,7 +17,7 @@
 <!--  * [Application of different styles to chart elements](#several_styles)        -->
 * [Working with data labels and tooltips](#working_with_labels_and_tooltips)
 * [Using markers](#using_markers)
-* [Working with colors and color palettes](#colors)
+* [Working with colors <!--and color palettes-->](#colors)
   * [Setting colors to the elements](#color_setting)
   * [Color palettes](#color_palettes)   
  <!--<li class="main"><a href="#3d_line">3D Line chart</a></li> -->                                                                                                           
@@ -450,19 +450,17 @@ In this section we will explain how to add and configure data labels and tooltip
 
 If you want to configure data labels and tooltips for all series - you should do that in **.labels** and **.tooltip** methods. You can tune their visual appearance, positioning and format.  Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
 
-When formatting data labels text we will use adjusted **.textFormatter** to show Y Axis value. Otherwise label displays  X Axis value.
+{sample}BCT\_LineChart\_09{sample}
 
-Live Sample:  Sample Line chart - Working with data labels and tooltips
+<!--Related Help Topics:
 
-Related Help Topics:
-
-Learn more about labels and tooltips in Labels and tooltips
-Full Keywords reference and formatting guide:Labels and tooltips
-Full reference of data labels settings can be found in XML Reference, particularly <label_style> and <label> nodes.
-to top
+* Learn more about labels and tooltips in Labels and tooltips
+* Full Keywords reference and formatting guide:Labels and tooltips
+* Full reference of data labels settings can be found in XML Reference, particularly <label_style> and <label> nodes.
+-->to top
 
 <a name="using_markers"/>
-Using markers
+## Using markers
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including lines.
 
@@ -470,51 +468,22 @@ In the sample below we will take single-series data described above and mark the
 
 To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 16 pixels in normal state, and make it bigger (22 pixels) when user moves cursor over an element.
 
-Marker style "myMarker":
-
-XML Syntax
-XML Code
-Plain code
-01
-<marker_style name="myMarker" color="Gold">
-02
-  <marker type="Star5" size="16" />
-03
-  <states>
-04
-    <hover>
-05
-      <marker size="22" />
-06
-    </hover>
-07
-  </states>
-08
-</marker_style>
-To apply marker to the certain data point we need to create <marker> sub-node in <point> and add 
-<marker enabled="True" style="myMarker"/>
-
-XML Syntax
-XML Code
-Plain code
-01
-<point name="March" y="16000">
-02
-  <marker enabled="True" style="myMarker" />
-03
-</point>
+```
+ {x: 'March', value: 18000, marker:{type:'star5', fill:'gold', size: 12}}
+    
+```
 And here is a result - March is the most successful month and we are showing this on the chart:
 
-Live Sample:  Sample Line chart - Working with markers
-
+{sample}BCT\_LineChart\_10{sample}
+<!--
 Related help topics:
 
 You can read more about working with markers in Markers tutorial.
 Full reference of marker style can be found in XML Reference, particularly <marker_style> node.
 to top
-
+-->
 <a name="colors"/>
-Working with colors and color palettes
+## Working with colors <!--and color palettes-->
 
 AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can use your own palettes or palettes shipped with AnyChart. Also you can set and apply the color to exact data series or data point.
 
@@ -525,8 +494,8 @@ Setting colors to the elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set "color" attribute in the <series> node. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
 
-Live Sample:  Sample Line chart - Setting colors to the elements
-
+{sample}BCT\_LineChart\_11{sample}
+<!--
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. As you see it is very easy to do by setting "color" attribute for <point> node.
 
 Live Sample:  Sample Line chart - Setting colors to the series
@@ -537,8 +506,8 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 
 Different ways of setting colors of elements
 Advanced coloring techniques in Styles tutorial
-to top
-
+to top-->
+<!--
 <a name="color_palettes"/>
 Color palettes
 
@@ -556,4 +525,4 @@ to top
 
 to top
 
-Current Page Online URL: Line Chart
+Current Page Online URL: Line Chart-->
