@@ -19,7 +19,7 @@
 * [Using markers](#using_markers)
 * [Working with colors <!--and color palettes-->](#colors)
   * [Setting colors to the elements](#color_setting)
-  * [Color palettes](#color_palettes)   
+<!--  * [Color palettes](#color_palettes)   -->
  <!--<li class="main"><a href="#3d_line">3D Line chart</a></li> -->                                                                                                           
   <!--  <li class="main"><a href="#predefined_styles">Predefined Styles </a></li> -->                                                                                
 
