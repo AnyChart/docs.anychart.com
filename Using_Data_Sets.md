@@ -48,7 +48,7 @@ var dataSet = new anychart.data.Set(data);
 var pieChart = anychart.pieChart(dataSet);  
 
 // set container id for the chart  
-chart.container('container');
+pieChart.container('container');
 
 // initiate chart drawing
 pieChart.draw();
@@ -72,7 +72,7 @@ var dataSet = new anychart.data.Set(data);
 var pieChart = anychart.pieChart(dataSet);
 
 // set container id for the chart
-chart.container('container');
+pieChart.container('container');
 
 // initiate chart drawing
 pieChart.draw();
@@ -98,7 +98,7 @@ var dataSet = new anychart.data.Set(data);
 var lineChart = anychart.lineChart(dataSet);
 
 // initiate chart drawing
-pieChart.draw();
+lineChart.draw();
 ```
 As shown in previous paragraphs, if you want to specify any point properties manually, you can use an `Object` as a cell value:
 ```
@@ -118,7 +118,7 @@ var dataSet = new anychart.data.Set(data);
 var lineChart = anychart.lineChart(dataSet);
 
 // initiate chart drawing
-pieChart.draw();
+lineChart.draw();
 ```
 ###Data Mapping
 Data mapping is useful (and must have) option when you want to show the same data in different ways, for example in different charts, grouped or sorted differently.
@@ -154,11 +154,12 @@ pieChart.draw();
 We map zero column of the Data Set as X, and the first column of the Data Set as value.  
 Result of the `mapAs` call very similar to the Data Set itself, you can use it in the any chart or series create function exactly as any Data Set.  
 You can learn more about Data Mapping in the appropriate article.
-
+<!--
 See also:  
 <a href="./Advanced_Data_Mapping_features">Advanced Data Mapping features</a>  
 <a href="#">Multiple Charts layout</a>  
 <a href="#">Series and Point Meta Data</a>
+-->
 
 
 
