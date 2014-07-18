@@ -244,7 +244,7 @@ And here is the demonstration of this feature on the Single-series sample:
 <a name="inversion"/>
 ### Inversion
 
-AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis **<scale>**:
+AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis **.inverted()**:
 
 ```
   chart.yScale().inverted(true);
