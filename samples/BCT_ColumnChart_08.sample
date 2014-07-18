@@ -1,0 +1,35 @@
+anychart.onDocumentReady(function() {
+  chart = anychart.columnChart();
+  chart.container('container');
+ var data = new anychart.data.Set([
+    ['John' , 10000, 12000],
+    ['Jake' , 12000, 15000],
+    ['Peter' , 18000, 16000],
+    ['James' , 11000, 13000],
+    ['Mary' , 9000, 19000]
+  ]);
+  var Sales2003 = data.mapAs({x: [0], value: [1]});
+  var Sales2004 = data.mapAs({x: [0], value: [2]});
+  
+    var series;
+    
+      var setupSeriesLabels = function(series) {
+    var seriesLabels = series.labels();
+    seriesLabels.enabled(true);
+    seriesLabels.position('center');
+    seriesLabels.rotation(90);
+    seriesLabels.anchor('center');
+    seriesLabels.fontColor('white');
+    seriesLabels.fontWeight('bold');
+  };
+    
+  series = chart.column(Sales2003);
+    setupSeriesLabels(series);
+    series.hoverFill('#333333');
+    series.tooltip().enabled(false);
+  series = chart.column(Sales2004);
+ setupSeriesLabels(series);
+    series.hoverFill('#333333');
+    series.tooltip().enabled(false);
+  chart.draw();
+});

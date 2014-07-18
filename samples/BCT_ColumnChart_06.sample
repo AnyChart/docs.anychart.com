@@ -1,0 +1,13 @@
+anychart.onDocumentReady(function() {
+   chart = anychart.columnChart();
+   chart.container('container');
+  chart.title().text('Chart title');
+  chart.column([10000, 12000]);
+  chart.column([12000, 15000]);
+  chart.column([18000, 16000]);
+  chart.column([11000, 13000]);
+  chart.column([9000, 19000]);
+  chart.barsPadding(-0.1);
+  chart.barGroupsPadding(2);
+  chart.draw();
+});
