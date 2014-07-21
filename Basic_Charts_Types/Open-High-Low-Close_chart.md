@@ -1,42 +1,33 @@
 # Open High Low Close (OHLC) Chart
-                                                                                          
-                                                                                            
-* [Overview   ](#overview                     
-* [Chart Building   ](#how_to_create_chart    
-  * [Single-Series OHLC chart      ](#single_series
-  * [Multi-Series OHLC chart      ](#multi_categorized
-  * [Multi-Series OHLC chart grouped by series     ](#multi_by_series
-* [Axes management ](#axes                                                                                    
-  * [Positioning](#position                                                                                                                                                                                                                       
-  * [Logarithmic Scale      ](#logarithmic	                                                                        
-  * [Minimum and Maximum values control    ](#min_max		                                                        
-* [Using styles     ](#using_styles                                                                              
-  * [Simple style sample     ](#simple_style                                                                                                                                                                                              
-  * [Application of different styles to chart elements   ](#several_styles                                   
-                                                                                                             <!--  <li class="main"><a href="#predefined_styles">Predefined Styles </a></li> -->                                                                                                                                                                            
-* [Working with data labels and tooltips   ](#working_with_labels_and_tooltips                              
-* [Working with colors and color palettes   ](#colors                                                       
-  * [Setting colors to the elements   ](#color_setting                                                       
-  * [Color palettes   ](#color_palettes                                                                                                                                                                                          
-* [Advanced OHLC Chart sample - OHLC, Line and Range Area Combination](#advanced-ohlc-stock-charting
-                                                                                                
-                                                                                                                                                                                                                         
-                                                                                               
-                                                                                                   
-                                                                                                                                                                                                         
-                                                                                                       
-                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                            
-                                                                                             
-                                                                                             
-Overview
+
+* [Overview](#overview)
+* [Chart Building](#how_to_create_chart)
+  * [Single-Series OHLC chart](#single_series)
+  * [Multi-Series OHLC chart](#multi_categorized)
+  * [Multi-Series OHLC chart grouped by series](#multi_by_series)
+* [Axes management](#axes)
+  * [Positioning](#position)
+  * [Logarithmic Scale](#logarithmic)
+  * [Minimum and Maximum values control](#min_max)
+* [Using styles](#using_styles)
+  * [Simple style sample](#simple_style)
+  * [Application of different styles to chart elements](#several_styles)
+ <!--  <li class="main"><a href="#predefined_styles">Predefined Styles </a></li> -->                                                                                                                                                                            
+* [Working with data labels and tooltips](#working_with_labels_and_tooltips)
+* [Working with colors and color palettes](#colors)
+  * [Setting colors to the elements](#color_setting)
+  * [Color palettes](#color_palettes)
+* [Advanced OHLC Chart sample - OHLC, Line and Range Area Combination](#advanced-ohlc-stock-charting)
+
+<a name="overview"/>
+## Overview
 
 An open-high-low-close chart (also known as OHLC, HLOC chart) is a type of chart typically used to illustrate movements in the price of a financial instrument over time. Each vertical line on the chart shows the price range (the highest and lowest prices) over one unit of time, e.g. one day or one hour. Tick marks project from each side of the line indicating the opening price (e.g. for a daily bar chart this would be the starting price for that day) on the left, and the closing price for that time period on the right. The bars may be shown in different hues depending on whether prices rose or fell in that period.
 
 The Japanese candlestick chart is another way of displaying market price data, with the opening and closing prices defining a rectangle within the range for each time unit. Both charts show the exact same data, i.e. the opening, high, low, and closing prices during a particular time frame. Some traders find the candlestick chart easier to read.
 
-Chart building
+<a name="how_to_create_chart"/>
+## Chart building
 
 OHLC chart uses four values, so we need to pass opening, high, low and closing price values to chart, this should be done using open, high, low, close attributes of <point> node:
 
@@ -45,7 +36,9 @@ XML Code
 Plain code
 01
 <point name="28-Aug-07" open="511.53" high="514.98" low="505.79" close="506.40" />
-Single-Series OHLC Chart
+
+<a name="single_series"/>
+### Single-Series OHLC Chart
 
 Let's see single-series OHLC chart created using the following data - ACME Corp. stock price changes through one week:
 
@@ -84,9 +77,8 @@ Here it is - AnyChart can now visualize your data. Look at the chart sample belo
 
 Live Sample:  Sample Single-Series OHLC Chart
 
-to top
-
-Multi-Series OHLC chart
+<a name="multi_categorized"/>
+## Multi-Series OHLC chart
 
 To compare two or more data rows you have to use multi-series OHLC charts as it shown in the sample below.
 
@@ -140,9 +132,8 @@ As we now have multi-series chart we don't want to set type for each series indi
 
 Live Sample:  Sample Multi-Series Open High Low Close Chart
 
-to top
-
-Multi-Series OHLC Chart grouped by series
+<a name="multi_by_series"/>
+## Multi-Series OHLC Chart grouped by series
 
 Sometimes it is useful to visualize comparison in a different way - group values be series. You don't have to reformat your data to do this - all you need to do is to switch plot_type attribute to "CategorizedBySeriesVertical". Look at the resulting chart below:
 

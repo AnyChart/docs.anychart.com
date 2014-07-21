@@ -1,6 +1,7 @@
 {:tags []
   :is_new false
   :exports "chart"}
+
 anychart.onDocumentReady(function() {
   var data = new anychart.data.Set([
     ['January', 10000],
