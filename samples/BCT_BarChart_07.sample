@@ -1,3 +1,4 @@
+anychart.onDocumentReady(function() {
   var data = new anychart.data.Set([
     ['Department Stores', 637166, 737166],
     ['Discount Stores', 721630, 537166],
@@ -29,3 +30,4 @@
     return 'Chanel: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2004';
   });
     chart.container('container').draw();
+    });

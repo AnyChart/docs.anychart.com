@@ -102,7 +102,7 @@ This instance sets first column attribute as category and second column attribut
 
 Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on it to see Live Chart preview and full configured JSON.
 
-{sample}BCT\_AreaChart\_1{sample}
+{sample}BCT\_AreaChart\_01{sample}
 
 <a name="single_special_spline"/>
 ### Single-Series Spline Area Chart
@@ -123,7 +123,7 @@ For better look and feel of your charts you can use SplineArea chart type:
 
 Here is the same chart as shown above, but in Spline mode:
 
-{sample}BCT\_AreaChart\_2{sample}
+{sample}BCT\_AreaChart\_02{sample}
 
 <a name="multi_categorized"/>
 ### Multi-Series area chart
@@ -218,7 +218,7 @@ As we do in single series area sample above we need to convert this table into J
 
 As we now have multi-series chart we don't want to set **charttype** for each series individually (there can be much more than two series in multi-series chart), so we set **chart** as **anychart.areaChart()**. Now all series in chart will be of Area type by default.
 
-{sample}BCT\_AreaChart\_3{sample}
+{sample}BCT\_AreaChart\_03{sample}
 
 <a name="Axes"/>
 ## Axes management
@@ -239,7 +239,7 @@ Positioning depends on plot type and inversion of axes, you will find list of al
 
 And here is the demonstration of this feature on the Single-series sample:
 
-{sample}BCT\_AreaChart\_5{sample}
+{sample}BCT\_AreaChart\_05{sample}
 
 <a name="inversion"/>
 ### Inversion
@@ -252,7 +252,7 @@ AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is control
 
 And here is the demonstration of Y Axis inversion on the Single-series sample:
 
-{sample}BCT\_AreaChart\_6{sample}
+{sample}BCT\_AreaChart\_06{sample}
 
 <a name="min_max"/>
 ### Minimum and Maximum values control
@@ -265,7 +265,7 @@ chart.yScale().minimum('0').maximum('50000');
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
 
-{sample}BCT\_AreaChart\_7{sample}
+{sample}BCT\_AreaChart\_07{sample}
 
 <a name="using_style"/>
 ## Using styles
@@ -297,7 +297,7 @@ Using such settings we've created a style that defines area of Gold color, rathe
 
 Now we will take a sample single series chart described above, define style in JSON and apply it to all chart elements
 
-{sample}BCT\_AreaChart\_8{sample}
+{sample}BCT\_AreaChart\_08{sample}
 
 <a name="image_styles"/>
 ### Application of an image as a chart color
@@ -310,7 +310,7 @@ Color is not the only way to disign a chart. In this instance we will demonstrat
         })
 ```
 
-{sample}BCT\_AreaChart\_9{sample}
+{sample}BCT\_AreaChart\_09{sample}
 
 <a name="working_with_labels_and_tooltips"/>
 ## Working with data labels and tooltips

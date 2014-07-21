@@ -108,7 +108,7 @@ Now we need to convert this data table into JSON, this format will be accepted b
 ```
 As you can see, we've used attribute **"barChart"**, set name's attribute into **first column** to define bar category and **second column** defines bar value.
 
-{sample}BCT\_BarChart\_1{sample}
+{sample}BCT\_BarChart\_01{sample}
 
 <a name="multi_categorized"/>
 ### Multi-series bar chart
@@ -208,7 +208,7 @@ As we do in single-series bar sample above we need to convert this table into JS
 
 As we now have multi-series chart we don't want to set **type** for each series individually (there can be much more than two series in multi-series chart), so we add **anychart.barChart()** attribute to **chart**. Now all series in chart will be **Bar** type by default.
 
-{sample}BCT\_BarChart\_2{sample}
+{sample}BCT\_BarChart\_02{sample}
 
 <a name="axes"/>
 ## Axes managemen
@@ -229,7 +229,7 @@ chart.yAxis(0).orientation('top');
 
 And here is the demonstration of this feature on the Single-series sample:
 
-{sample}BCT\_BarChart\_3{sample}
+{sample}BCT\_BarChart\_03{sample}
 
 to top
 
@@ -242,7 +242,7 @@ AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is control
 chart.yScale().inverted(true);
 ```
 
-{sample}BCT\_BarChart\_4{sample}
+{sample}BCT\_BarChart\_04{sample}
 
 to top
 
@@ -257,7 +257,7 @@ chart.yScale().minimum('-200000').maximum('800000')
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
 
-{sample}BCT\_BarChart\_5{sample}
+{sample}BCT\_BarChart\_05{sample}
 
 to top
 
@@ -308,7 +308,7 @@ Using such settings we've created a style that defines bars of Gold color, rathe
 
 Now we will take a sample single-series chart described above, define style in JSON.
 
-{sample}BCT\_BarChart\_6{sample}
+{sample}BCT\_BarChart\_06{sample}
 
 <a name="working_with_labels_and_tooltips"/>
 ## Working with data labels and tooltips
@@ -320,7 +320,7 @@ If you want to configure data labels and tooltips for all series - you should do
 
 When formatting data labels text we will use **.textFormatter** to show month name. Otherwise sales will be displayed here. 
 
-{sample}BCT\_BarChart\_7{sample}
+{sample}BCT\_BarChart\_07{sample}
 
 * **Related Help Topics:**
 
@@ -340,11 +340,11 @@ to top
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **".fill"** attribute in the **series** method. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
 
-{sample}BCT\_BarChart\_8{sample}
+{sample}BCT\_BarChart\_08{sample}
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximum one. As you see it is very easy to do by setting **fill** attribute for **point** node.
 
-{sample}BCT\_BarChart\_9{sample}
+{sample}BCT\_BarChart\_09{sample}
 
 **Important Note:**
 

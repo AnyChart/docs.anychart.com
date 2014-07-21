@@ -29,25 +29,60 @@ The Japanese candlestick chart is another way of displaying market price data, w
 <a name="how_to_create_chart"/>
 ## Chart building
 
-OHLC chart uses four values, so we need to pass opening, high, low and closing price values to chart, this should be done using open, high, low, close attributes of <point> node:
-
-XML Syntax
-XML Code
-Plain code
-01
-<point name="28-Aug-07" open="511.53" high="514.98" low="505.79" close="506.40" />
-
+OHLC chart uses four values
+```
+'28-Aug-07', 511.53, 514.98, 505.79, 506.40
+```
 <a name="single_series"/>
 ### Single-Series OHLC Chart
 
 Let's see single-series OHLC chart created using the following data - ACME Corp. stock price changes through one week:
 
-Day	Open	High	Low	Close
-28-Aug-07	511.53	514.98	505.79	506.40
-29-Aug-07	507.84	513.30	507.23	512.88
-30-Aug-07	512.36	515.40	510.58	511.40
-31-Aug-07	513.10	516.50	511.47	515.25
-4-Sep-07	515.02	528.00	514.62	525.15
+
+<table width="337" border="1" class="dtTABLE">
+<tbody><tr>
+<th width="125">Day</th>
+<th width="38">Open</th>
+<th width="46">High</th>	
+<th width="43">Low</th>		
+<th width="51">Close</th>			
+</tr>
+<tr>
+<td>28-Aug-07</td>
+<td>511.53</td>
+<td>514.98</td>
+<td>505.79</td>
+<td>506.40</td>			
+</tr>
+<tr>
+<td>29-Aug-07</td>
+<td>507.84</td>
+<td>513.30</td>
+<td>507.23</td>
+<td>512.88</td>			
+</tr>
+<tr>
+<td>30-Aug-07</td>
+<td>512.36</td>
+<td>515.40</td>
+<td>510.58</td>
+<td>511.40</td>			
+</tr>
+<tr>
+<td>31-Aug-07</td>
+<td>513.10</td>
+<td>516.50</td>
+<td>511.47</td>
+<td>515.25</td>			
+</tr>
+<tr>
+<td>4-Sep-07</td>
+<td>515.02</td>
+<td>528.00</td>
+<td>514.62</td>
+<td>525.15</td>			
+</tr>
+</tbody></table>
 Now we need to convert this data table into XML, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data with categories that hold days names. Each point in series represents one day and open, high, low, close prices. Converted XML Data looks like:
 
 XML Syntax
@@ -78,7 +113,7 @@ Here it is - AnyChart can now visualize your data. Look at the chart sample belo
 Live Sample:  Sample Single-Series OHLC Chart
 
 <a name="multi_categorized"/>
-## Multi-Series OHLC chart
+### Multi-Series OHLC chart
 
 To compare two or more data rows you have to use multi-series OHLC charts as it shown in the sample below.
 
@@ -133,21 +168,21 @@ As we now have multi-series chart we don't want to set type for each series indi
 Live Sample:  Sample Multi-Series Open High Low Close Chart
 
 <a name="multi_by_series"/>
-## Multi-Series OHLC Chart grouped by series
+### Multi-Series OHLC Chart grouped by series
 
 Sometimes it is useful to visualize comparison in a different way - group values be series. You don't have to reformat your data to do this - all you need to do is to switch plot_type attribute to "CategorizedBySeriesVertical". Look at the resulting chart below:
 
 Live Sample:  Sample Multi-Series gruoped by Series Open High Low Close Chart
 
-to top
-
-Axes management
+<a name="axes"/>
+## Axes management
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in Working with Axes tutorial, in this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
 to top
 
-Positioning
+<a name="position"/>
+### Positioning
 
 With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position attribute of <y_axis> or <x_axis> nodes.
 
@@ -170,7 +205,8 @@ Live Sample:  Axes Position Sample Single-Series OHLC Chart
 
 to top
 
-Logarithmic
+<a name="logarithmic"/>
+### Logarithmic
 
 AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by axis <scale>:
 
@@ -187,9 +223,8 @@ And here is the demonstration of Logarithmic Y Axis on slightly modified the Sin
 
 Live Sample:  Axis Logarithmic Sample Single-Series HLOC Chart
 
-to top
-
-Minimum and Maximum values control
+<a name="min_max"/>
+### Minimum and Maximum values control
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting maximum and minimum attributes of <scale> node:
 
@@ -206,9 +241,8 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 Live Sample:  Scale Maximum and Minimum Values Sample Single-Series OHLC Chart
 
-to top
-
-Using styles
+<a name="using_styles"/>
+## Using styles
 
 In this section we will describe main parts of OHLC chart style and demonstrate how style can be created and applied. Also you will see list of predefined styles.
 
@@ -217,9 +251,8 @@ The main idea of styles is to segregate visualization and data definition. Visua
 OHLC chart style can be configured in <ohlc_style> and <ohlc_series> nodes.
 Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when selected, when user moves cursor over an element, etc. More information about these features can be found in Interactivity tutorial.
 
-to top
-
-Simple style
+<a name="simple_style"/>
+### Simple style
 
 Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an XML structure:
 
@@ -264,9 +297,8 @@ Now we will take a sample single series chart described above, define style in X
 
 Live Sample:  Sample Simple Style for OHLC chart
 
-to top
-
-Application of different styles to chart elements
+<a name="several_styles"/>
+### Application of different styles to chart elements
 
 Now we will demonstrate how to apply different styles to different series and data elements. To do it we will use multi-series sample that was demonstrated above and create two more styles: "style2" and "style3", both inherited from the "style1".
 
@@ -330,9 +362,8 @@ And, as a result here is an example of these styles usage:
 
 Live Sample:  Sample OHLC chart - Application of different styles to chart elements
 
-to top
-
-Working with data labels and tooltips
+<a name="working_with_labels_and_tooltips"/>
+## Working with data labels and tooltips
 
 In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.
 
@@ -353,13 +384,15 @@ Full Keywords reference and formatting guide:Labels and tooltips
 Full reference of data labels settings can be found in XML Reference, particularly <label_style> and <label> nodes.
 to top
 
-Working with colors and color palettes
+<a name="colors"/>
+## Working with colors and color palettes
 
 AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can use your own palettes or palettes shipped with AnyChart. Also you can set and apply the color to exact data series or data point.
 
 to top
 
-Setting colors to the elements
+<a name="color_setting"/>
+### Setting colors to the elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set "color" attribute in the <series> node. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
 
@@ -377,7 +410,8 @@ Different ways of setting colors of elements
 Advanced coloring techniques in Styles tutorial
 to top
 
-Color palettes
+<a name="color_palettes"/>
+### Color palettes
 
 AnyChart allows to apply color palettes to all series or to the exact series. In the first case each next series will take each next color from palette. If the number of the colors in palette is less than the number of series - palette will be looped. If you have only one series it will be colored by the first color in the palette. To apply palette to all series we have to set "palette" attribute in <data> node. Here it is:
 
@@ -389,7 +423,8 @@ Live Sample:  Sample OHLC chart - Working with palettes - Setting Palettes to th
 
 In the samples above we have shown usage of predefined palettes only, but AnyChart allows to create your own custom palettes. To learn more about it read Palettes tutorial.
 
-Advanced OHLC Chart sample - OHLC, Line and Range Area Combination
+<a name="advanced-ohlc-stock-charting"/>
+## Advanced OHLC Chart sample - OHLC, Line and Range Area Combination
 
 In the real world application Open-High-Low-Close rarely used alone, in technical analysis they are often combined with other chart types, such as Lines (to show moving average), Range Areas (to show "Bollinger bands"), and column charts (to show trading volume).
 

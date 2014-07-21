@@ -1,3 +1,4 @@
+anychart.onDocumentReady(function() {
 var dataSet = new anychart.data.Set([
     ['January', '10000', '12000'],
     ['February', '12000', '15000'],
@@ -12,3 +13,4 @@ var dataSet = new anychart.data.Set([
   chart.area(seriesData_1);
   chart.area(seriesData_2);
   chart.draw();
+  });

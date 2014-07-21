@@ -1,3 +1,4 @@
+anychart.onDocumentReady(function() {
    var data = new anychart.data.Set([
   ['January', 10000],
   ['February', 12000],
@@ -14,3 +15,4 @@ chart.area(data)
   .hoverHatchFill('diagonalbrick', 'black');
   chart.yScale().minimum('8000').maximum('20001');
 chart.container('container').draw();
+});

@@ -1,4 +1,4 @@
-
+anychart.onDocumentReady(function() {
     var data = new anychart.data.Set([
         ['January', 10000],
         ['February', 12000],
@@ -13,3 +13,4 @@
     });
     series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
     chart.container('container').draw();
+    });

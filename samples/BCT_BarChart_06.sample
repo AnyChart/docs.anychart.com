@@ -1,3 +1,4 @@
+anychart.onDocumentReady(function() {
   var data = new anychart.data.Set([
     ['Department Stores1', 637166],
     ['Discount Stores', 721630],
@@ -15,3 +16,4 @@ chart.bar(data)
   .hoverHatchFill('diagonalbrick', 'darkred');
   chart.container('container');
   chart.draw();
+  });

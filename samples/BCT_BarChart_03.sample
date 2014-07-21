@@ -1,3 +1,4 @@
+anychart.onDocumentReady(function() {
   var data = new anychart.data.Set([
     ['Department Stores1', 637166],
     ['Discount Stores', 721630],
@@ -6,5 +7,7 @@
   ]);
 chart = anychart.barChart(data);
 chart.bar(data);
-chart.yScale().inverted(true);
+chart.xAxis(0).orientation('right');
+chart.yAxis(0).orientation('top');
 chart.container('container').draw();
+});

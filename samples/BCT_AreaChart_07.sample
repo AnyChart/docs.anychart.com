@@ -1,4 +1,5 @@
-var data = new anychart.data.Set([
+anychart.onDocumentReady(function() {
+ var data = new anychart.data.Set([
       ['January', 10000],
       ['February', 12000],
       ['March', 18000],
@@ -7,5 +8,6 @@ var data = new anychart.data.Set([
     ]);
 chart = anychart.areaChart(data);
 chart.splineArea(data);
-chart.yScale().inverted(true);
+chart.yScale().minimum('0').maximum('50000')
 chart.container('container').draw();
+});
