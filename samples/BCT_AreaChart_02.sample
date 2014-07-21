@@ -6,7 +6,7 @@ var data = new anychart.data.Set([
       ['April', 11000],
       ['May', 9000]
     ]);
-chart = anychart.areaChart(data);
+chart = anychart.areaChart();
 chart.splineArea(data);
 chart.container('container').draw();
 });
