@@ -6,7 +6,7 @@ anychart.onDocumentReady(function() {
   ['April', 11000],
   ['May', 9000]
 ]);
-chart = anychart.areaChart(data);
+chart = anychart.areaChart();
 chart.area(data)
   .fill('Gold')
   .hoverFill("darkred")

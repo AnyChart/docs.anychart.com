@@ -5,7 +5,7 @@ anychart.onDocumentReady(function() {
     ['Men\'s/Women\'s Specialty Stores', 148662],
     ['All other outlets', 90000]
   ]);
-chart = anychart.barChart(data);
+chart = anychart.barChart();
 chart.bar(data);
 chart.xAxis(0).orientation('right');
 chart.yAxis(0).orientation('top');

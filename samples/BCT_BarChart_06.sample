@@ -7,7 +7,7 @@ anychart.onDocumentReady(function() {
     ['All other outlets', 90000]
   ]);
 
-  chart = anychart.barChart(data);
+  chart = anychart.barChart();
 chart.bar(data)
   .fill('Gold')
   .hoverStroke("darkred", 4, 1)

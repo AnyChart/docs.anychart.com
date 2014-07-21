@@ -6,7 +6,7 @@ anychart.onDocumentReady(function() {
         ['April', 11000],
         ['May', 9000]
     ]);
-    chart = anychart.areaChart(data);
+    chart = anychart.areaChart();
     var series= chart.area(data);
     series.labels().enabled(true).rotation(90).textFormatter(function(point){
         return point.x;

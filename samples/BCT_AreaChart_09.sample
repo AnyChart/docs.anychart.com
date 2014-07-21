@@ -6,7 +6,7 @@ var data = new anychart.data.Set([
         {name: 'April', y: 11000},
         {name: 'May', y: 9000}
     ]);
-    chart = anychart.areaChart(data);
+    chart = anychart.areaChart();
     chart.area(data).fill({
             src: 'http://static.anychart.com/anychart_site_header.png',
             mode: acgraph.vector.ImageFillMode.TILE

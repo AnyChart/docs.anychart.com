@@ -5,7 +5,7 @@ anychart.onDocumentReady(function() {
     ['Men\'s/Women\'s Specialty Stores', 148662],
     ['All other outlets', 90000]
   ]);
-chart = anychart.barChart(data);
+chart = anychart.barChart();
 chart.bar(data);
 chart.yScale().minimum('-200000').maximum('800000');
 chart.container('container').draw();

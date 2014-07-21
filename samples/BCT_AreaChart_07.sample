@@ -6,7 +6,7 @@ anychart.onDocumentReady(function() {
       ['April', 11000],
       ['May', 9000]
     ]);
-chart = anychart.areaChart(data);
+chart = anychart.areaChart();
 chart.splineArea(data);
 chart.yScale().minimum('0').maximum('50000')
 chart.container('container').draw();
