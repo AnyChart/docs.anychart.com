@@ -29,10 +29,16 @@ anychart.onDocumentReady(function() {
   series = chart.column(Sales2003);
     setupSeriesLabels(series);
     series.hoverFill('#333333');
-    series.tooltip().enabled(false);
+    series.tooltip().enabled(true).title().enabled(true).text('Information');
+     series.tooltip().enabled(true).textFormatter(function() {
+    return 'Manager: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2003';
+  });
   series = chart.column(Sales2004);
  setupSeriesLabels(series);
     series.hoverFill('#333333');
-    series.tooltip().enabled(false);
+series.tooltip().enabled(true).title().enabled(true).text('Information');
+     series.tooltip().enabled(true).textFormatter(function() {
+    return 'Manager: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2004';
+  });
   chart.draw();
 });
