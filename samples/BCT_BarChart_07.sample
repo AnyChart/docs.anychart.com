@@ -23,12 +23,12 @@ anychart.onDocumentReady(function() {
     series.tooltip().enabled(true).textFormatter(function() {
     return 'Chanel: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2003';
   });
-    series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
+    series.tooltip().enabled(true).title().enabled(true).text('Information');
   series = chart.bar(Sales2004);
     series.labels().enabled(true).offsetX(20).textFormatter(function(point){
         return point.value;
     });
-    series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
+    series.tooltip().enabled(true).title().enabled(true).text('Information');
      series.tooltip().enabled(true).textFormatter(function() {
     return 'Chanel: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2004';
   });

@@ -311,22 +311,20 @@ In this section we will explain how to add and configure data labels and tooltip
 If you want to configure data labels and tooltips for all series - you should do that in **.labels** and **.tooltip** methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the right of the bars, also, we will format labels so they show only the value corresponding to the bar and tooltip will show detailed description.
 
 
-When formatting data labels text we will use **.textFormatter** to show month name. Otherwise sales will be displayed here. 
+When formatting data labels text we will use **.textFormatter** to choose the column we need information from. 
 
 {sample}BCT\_BarChart\_07{sample}
-
+<!--
 * **Related Help Topics:**
 
 Learn more about labels and tooltips in Labels and tooltips
 Full Keywords reference and formatting guide: Labels and tooltips
-
+-->
 
 <a name="colors"/>
-## Working with colors and color palettes
+## Working with colors
 
-AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can use your own palettes or palettes shipped with AnyChart. Also you can set and apply the color to exact data series or data point.
-
-to top
+AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors.
 
 <a name="color_setting"/>
 ### Setting colors to the elements
@@ -341,13 +339,12 @@ In the sample below we will see how we can colorize individual points. We have c
 
 **Important Note:**
 
-AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)" or "AliceBlue" or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
+AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)" or "AliceBlue" or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. <!--  But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
 
-* Different ways of setting colors of elements
-to top
+* Different ways of setting colors of elements  -->
 
 <a name="hatches"/>
-## Working with hatch fills and hatch palettes
+## Working with hatch fills
 
 AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings and palettes. To see whole range of available hatch types see Hatch tutorial.
 
@@ -359,8 +356,4 @@ to top
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting "hatch_type" attribute for **series**.
 
 {sample}BCT\_BarChart\_10{sample}
-
-to top
-
-
-Current Page Online URL: Bar chart
+<!--    rent Page Online URL: Bar chart -->
