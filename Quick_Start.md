@@ -72,7 +72,8 @@ You can copy this to a file on your computer and open it in your browser to disp
 ## Further Steps
 ### Learn more
 * Explore [JavaScript API Reference](http://api.anychart.com/)
-* See [Playground demos](http://playground.anychart.com/)  
+* See [Playground demos](http://playground.anychart.com/)
+
 ### Subscribe
 * Follow us on [Twitter](https://twitter.com/intent/follow?&screen_name=anychart&original_referer=http%3A%2F%2Fdocs.anychart.com)
 * Read the [blog](http://www.anychart.com/blog/)
