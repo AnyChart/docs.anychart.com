@@ -5,8 +5,6 @@
   * [Single-Series bar chart](#single_series)
   * [Multi-Series bar chart](#multi_categorized)
   * [Multi-Series bar chart grouped by series](#multi_by_series)
-  * [3D bar chart](#3d_bar)
-  * [3D bar chart clustered by Z Axis](#3d_bar_clustered)
 * [Axes management](#axes)
   * [Positioning](#position)
   * [Inversion](#inversion)
@@ -36,7 +34,7 @@ Consider using a bar chart when:
 <a name="how_to_create_bar_chart"/>
 ## Chart building
 
-Depending on data model and the visualization purpose the bar chart may contain single series or multi series. AnyChart solution allows to build both 2D (two-dimensional) and 3D (three-dimensional) bar charts.
+Depending on data model and the visualization purpose the bar chart may contain single series or multi series.
 
 <a name="single_series"/>
 ### Single-Series Bar Chart
@@ -220,7 +218,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **yAxis** or **xAxis** position attribute.
 
-Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion settings in Axes Positioning and Inverting Templates.
+Positioning depends on plot type and inversion of axes<!--, you will find list of all possible positioning and inversion settings in Axes Positioning and Inverting Templates-->.
 
 ```
 chart.xAxis(0).orientation('right');
@@ -243,8 +241,6 @@ chart.yScale().inverted(true);
 ```
 
 {sample}BCT\_BarChart\_04{sample}
-
-to top
 
 <a name="min_max"/>
 ### Minimum and Maximum values control
@@ -274,26 +270,23 @@ Here is a sample of multi-series bar chart with **xPointPosition** set to 0.5.
 
 {sample}BCT\_BarChart\_11{sample}
 
-to top
-
 <a name="using_styles"/>
 ## Using styles
 
-In this section we will describe main parts of bar chart style and demonstrate how style can be created and applied. Also you will see list of predefined styles.
+In this section we will describe main parts of bar chart style and demonstrate how style can be applied.
 
-The main idea of styles is to segregate visualization and data definition. Visual appearance of bars is defined using certain styles and then you just apply the style to the certain data elements. Style can be applied to data series, data category or single bar.
+The main idea of styles is to segregate visualization and data definition. Visual appearance of bars is defined using certain styles and then you just apply the style to the certain data elements. Style can be applied to data series or single bar.
 
 On the image below you can see what bar_style consists of: fill (including solid color fill, hatch fill, image fill and gradient fill), border and effects applied to whole bar.
 
 ![](http://www.anychart.com/products/anychart/docs/users-guide/img/horz_bar_style_diagram.jpg)
 
-Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when selected, when user moves cursor over an element, etc.
-to top
+Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when user moves cursor over an element, etc.
 
 <a name="simple_style"/>
 ### Simple style
 
-Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an JSON structure:
+Now, let's look how to apply a simple style to the chart. As we've already said style consists of several elements, here is an JSON structure:
 
 ```
 chart.bar(data)
