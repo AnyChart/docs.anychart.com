@@ -1,3 +1,7 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
+anychart.onDocumentReady(function() {
   var data = new anychart.data.Set([
     ['P1', 132],
     ['P2', 124],
@@ -15,3 +19,4 @@
   chart.column(data).fill('#C6D1A5');
 
 chart.container('container').draw();
+});

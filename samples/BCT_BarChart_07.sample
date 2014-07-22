@@ -1,3 +1,6 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
 anychart.onDocumentReady(function() {
   var data = new anychart.data.Set([
     ['Department Stores', 637166, 737166],

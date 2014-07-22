@@ -1,3 +1,7 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
+
 anychart.onDocumentReady(function() {
   //create data set on our data
   var data = new anychart.data.Set([

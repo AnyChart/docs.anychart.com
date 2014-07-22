@@ -1,3 +1,7 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
+anychart.onDocumentReady(function() {
   var data = new anychart.data.Set([
     ['P1', 132, 102, 72, 65, 68],
     ['P2', 124, 89, 44, 38, 57]
@@ -25,3 +29,4 @@
   
   chart.container('container');
   chart.draw();
+  });
