@@ -13,10 +13,9 @@
 * [Using styles](#using_styles)
   * [Simple style](#simple_style)
 * [Working with data labels and tooltips](#working_with_labels_and_tooltips)
-* [Working with colors and color palettes](#colors)
+* [Working with colors](#colors)
   * [Setting colors to the elements](#color_setting)
-  * [Color palettes](#color_palettes)
-* [Working with hatch fills and hatch palettes](#hatches)
+* [Working with hatch fills](#hatches)
   * [Setting hatch fills to the elements](#hatch_setting)
 
 <a name="overview"/>
