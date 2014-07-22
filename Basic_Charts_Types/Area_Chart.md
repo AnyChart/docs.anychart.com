@@ -14,10 +14,9 @@
   * [Application of an image as a chart color](#image_styles)
 * [Working with data labels and tooltips](#working_with_labels_and_tooltips)
 * [Using markers](#using_markers)
-* [Working with colors and color palettes](#colors)
-* [Working with hatch fills and hatch palettes](#hatches)
+<!-- * [Working with colors](#colors)    -->
+* [Working with hatch fills](#hatches)
   * [Setting hatch fills to the elements](#hatch_setting)
-  * [Hatch palettes](#hatch_palettes)
 
 <a name="overview"/>
 ## Overview
@@ -94,7 +93,7 @@ In terms of AnyChart data model we have one series of data (Sales) with categori
       ['April', 11000],
       ['May', 9000]
  ]);
-  chart = anychart.areaChart(data);
+ chart = anychart.areaChart();
  chart.area(data);
 ```
 As you can see, we've created Data Sets. Every object is a point, which has some attributes.
@@ -117,7 +116,7 @@ For better look and feel of your charts you can use SplineArea chart type:
    ['April', 11000],
    ['May', 9000]
  ]);
- chart = anychart.areaChart(data);
+ chart = anychart.areaChart();
  chart.splineArea(data);
 ```
 
@@ -216,7 +215,7 @@ As we do in single series area sample above we need to convert this table into J
   chart = anychart.areaChart();
 ```
 
-As we now have multi-series chart we don't want to set **charttype** for each series individually (there can be much more than two series in multi-series chart), so we set **chart** as **anychart.areaChart()**. Now all series in chart will be of Area type by default.
+As we now have multi-series chart we don't want to set **type of chart** for each series individually (there can be much more than two series in multi-series chart), so we set **chart** as **anychart.areaChart()**. Now all series in chart will be of Area type by default.
 
 {sample}BCT\_AreaChart\_03{sample}
 
@@ -230,7 +229,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position with `orientation()` method of **yAxis** or **xAxis** instances.
 
-Positioning depends on plot type and inversion of axes, you will find list of all possible positining and inversion settings in Axes Positioning.
+Positioning depends on plot type and inversion of axes<!--, you will find list of all possible positining and inversion settings in Axes Positioning-->.
 
 ```
   chart.xAxis(0).orientation('top');
@@ -270,9 +269,9 @@ And here is the demonstration of maximum and minimum values on the Single-series
 <a name="using_style"/>
 ## Using styles
 
-In this section we will describe main parts of area chart style and demonstrate how style can be created and applied. Also you will see list of predefined styles.
+In this section we will describe main parts of area chart style and ways to adjust it.
 
-The main idea of styles is to segregate visualization and data definition. Visual appearance of areas is defined using certain styles and then you just apply the style to the certain data elements. Style can be applied to data series, data category or single data point.
+The main idea of styles is to segregate visualization and data definition. Visual appearance of areas is defined using certain styles and then you just apply the style to the certain data elements.
 
 Area chart style can be configured in **.fill()** method. On the image below you can see what area_style consists of: fill (including solid color fill, hatch fill, image fill and gradient fill), area line and effects applied to whole area.
 
@@ -283,7 +282,7 @@ Also, styles are used to make charts interactive, you can define how elements wi
 <a name="simple_style"/>
 ### Simple style
 
-Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an JSON structure:
+Now, let's look how to create a simple for the chart. As we've already said style consists of several elements, here is an JSON structure:
 
 ```
 chart.area(data)
@@ -293,9 +292,9 @@ chart.area(data)
   .hatchFill('diagonalbrick', 'gray')
   .hoverHatchFill('diagonalbrick', 'black');
 ```
-Using such settings we've created a style that defines area of Gold color, rather thick area line, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it's hatch will be highlighted with a black and chart will be filled with darkred.
+Using such settings we've created a style that defines area of Gold color, rather thick area line, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over the chart it's hatch will be highlighted with a black and chart will be filled with darkred.
 
-Now we will take a sample single series chart described above, define style in JSON and apply it to all chart elements
+Now we will apply the style to the chart:
 
 {sample}BCT\_AreaChart\_08{sample}
 
@@ -305,7 +304,7 @@ Now we will take a sample single series chart described above, define style in J
 Color is not the only way to disign a chart. In this instance we will demonstrate how to use picture as a common color alternative.  
 ```
     chart.area(data).fill({
-            src: 'http://static.anychart.com/kitty.png',
+            src: 'http://static.anychart.com/anychart_site_header.png',
             mode: acgraph.vector.ImageFillMode.TILE
         })
 ```
@@ -347,31 +346,27 @@ And here is a result - March is the most successful month and we are showing thi
 
 {sample}BCT\_AreaChart\_10{sample}
 
-Related help topics:
+<!--Related help topics:
 
 Full reference of marker style can be found in XML Reference, particularly <area_series><marker_settings> and <marker_style> method.
-
-<a name="colors"/>
-## Working with colors and color palettes
-
-AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can use your own palettes or palettes shipped with AnyChart. Also you can set and apply the color to exact data series or data point.
-
+-->
 <a name="hatches"/>
-## Working with hatch fills and hatch palettes
+## Working with hatch fills
 
-AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings and palettes. To see whole range of available hatch types see Hatch tutorial.
+AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings. <!-- To see whole range of available hatch types see Hatch tutorial. -->
 
 <a name="hatch_setting"/>
 ### Setting hatch fills to the elements
 
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting **hatch_type** for **".hatchFill"** method.
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch_type for **".hatchFill"** method.
 ```
-  chart.splineArea(seriesData_1).hatchFill('horizontalbrick');
-  chart.splineArea(seriesData_2).hatchFill('zigzag');
+.hatchFill('soliddiamond')
+.hatchFill('forwarddiagonal')
+.hatchFill('backwarddiagonal');
 ```
 
 {sample}BCT\_AreaChart\_12{sample}
 
 
 
-Current Page Online URL: Area Chart
+<!--    Current Page Online URL: Area Chart -->

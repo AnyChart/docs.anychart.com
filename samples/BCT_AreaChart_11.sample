@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
     ]);
     chart = anychart.areaChart();
     var series= chart.area(data);
-    series.labels().enabled(true).rotation(90).textFormatter(function(point){
+    series.labels().enabled(true).rotation(90).offsetY(15).offsetX(-5).textFormatter(function(point){
         return point.x;
     });
     series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
