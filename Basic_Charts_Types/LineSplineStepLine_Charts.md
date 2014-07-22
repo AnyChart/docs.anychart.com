@@ -5,23 +5,17 @@
   * [Single-Series Line chart](#single_series)
   * [Single-Series Spline chart](#single_series_spline)
   * [Step Line chart](#step_line)
-<!--  * [Shift Step Line](#step_line_shift)     -->
   * [Multi-Series Line chart](#multi_categorized)
-<!--  * [Multi-Series Line chart grouped by series](#multi_by_series)       -->>
 * [Axes management](#axes)
   * [Positioning](#position)
   * [Inversion](#inversion)
   * [Minimum and Maximum values control](#min_max)
 * [Using styles](#using_styles)
   * [Simple style sample](#simple_style)
-<!--  * [Application of different styles to chart elements](#several_styles)        -->
 * [Working with data labels and tooltips](#working_with_labels_and_tooltips)
 * [Using markers](#using_markers)
 * [Working with colors <!--and color palettes-->](#colors)
   * [Setting colors to the elements](#color_setting)
-<!--  * [Color palettes](#color_palettes)   -->
- <!--<li class="main"><a href="#3d_line">3D Line chart</a></li> -->                                                                                                           
-  <!--  <li class="main"><a href="#predefined_styles">Predefined Styles </a></li> -->                                                                                
 
 <a name="overview"/>
 ## Overview
