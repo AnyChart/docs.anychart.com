@@ -3,7 +3,7 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-var dataSet = new anychart.data.Set([
+var dataSet = anychart.data.set([
     ['P1', '1274', 'missing', 'missing'],
     ['P2', '1397', 'missing', 'missing'],
     ['P3', '1255', 'missing', 'missing'],

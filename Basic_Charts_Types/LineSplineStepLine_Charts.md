@@ -97,7 +97,7 @@ $9000
 Now we need to convert this data table into JSON, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data (Sales) with categories that hold months names. Each point in series represents one month and sales volume. Converted JSON Data looks like:
 
 ```
-  var data = new anychart.data.Set([
+  var data = anychart.data.set([
     ['January', 10000],
     ['February', 12000],
     ['March', 18000],
@@ -117,7 +117,7 @@ As you can see, we've specified chart's type with **anychart.lineChart()** metho
 For better look and feel of your charts you can use Spline chart type:
 
 ```
-  var data = new anychart.data.Set([
+  var data = anychart.data.set([
     ['January', 10000],
     ['February', 12000],
     ['March', 18000],
@@ -137,7 +137,7 @@ Here is the same chart as shown above, but in Spline mode:
 Step line chart series display data points connected with Horizontal or Vertical segments. 
 
 ```
-  var data = new anychart.data.Set([
+  var data = anychart.data.set([
     ['January', 10000],
     ['February', 12000],
     ['March', 18000],
@@ -249,7 +249,7 @@ $14000
 As we do in single series line sample above we need to convert this table into JSON, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
 
 ```
- var dataSet = new anychart.data.Set([
+ var dataSet = anychart.data.set([
      ['January', '10000', '12000'],
      ['February', '12000', '15000'],
      ['March', '18000', '16000'],

@@ -2,7 +2,7 @@
   :is_new false
   :exports "chart"}
 anychart.onDocumentReady(function() {
-  var data = new anychart.data.Set([
+  var data = anychart.data.set([
     ['P1', 132],
     ['P2', 124],
     ['P3', 102],

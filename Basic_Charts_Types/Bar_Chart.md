@@ -94,7 +94,7 @@ $90.000
 Now we need to convert this data table into JSON, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data (Sales) with categories that hold Retail channels names. Each point in series represents one channels and sales amount through this channel. Converted XML Data looks like:
 
 ```
- var data = new anychart.data.Set([
+ var data = anychart.data.set([
     ['Department Stores1', 637166],
     ['Discount Stores', 721630],
     ['Men\'s/Women\'s Specialty Stores', 148662],
@@ -188,7 +188,7 @@ $89.000
 As we do in single-series bar sample above we need to convert this table into JSON, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
 
 ```
-  var data = new anychart.data.Set([
+  var data = anychart.data.set([
     ['Department Stores1', 637166, 737166],
     ['Discount Stores', 721630, 537166],
     ['Men\'s/Women\'s Specialty Stores', 148662, 188662],

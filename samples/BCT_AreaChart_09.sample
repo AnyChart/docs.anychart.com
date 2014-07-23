@@ -2,7 +2,7 @@
   :is_new false
   :exports "chart"}
 anychart.onDocumentReady(function() {
-var data = new anychart.data.Set([
+var data = anychart.data.set([
         {name: 'January', y: 10000},
         {name: 'February', y: 12000},
         {name: 'March', y: 18000},

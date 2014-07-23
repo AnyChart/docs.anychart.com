@@ -171,7 +171,7 @@ $19000
 
 As we do in single series column sample above we need to convert this table into JSON, the only difference between these two samples is the fact that now we have two series of data - one series for each quarter, and we give proper names to each series:
 ```
- var data = new anychart.data.Set([
+ var data = anychart.data.set([
     ['John' , 10000, 12000],
     ['Jake' , 12000, 15000],
     ['Peter' , 18000, 16000],

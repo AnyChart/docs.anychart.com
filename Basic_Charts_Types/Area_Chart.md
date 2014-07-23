@@ -86,7 +86,7 @@ Now we need to convert this data table into JSON, this format will be accepted b
 In terms of AnyChart data model we have one series of data (Sales) with categories that hold months names. Each point in series represents one month and sales volume. Converted JSON Data looks like:
 
 ```
- new anychart.data.Set([
+ anychart.data.set([
       ['January', 10000],
       ['February', 12000],
       ['March', 18000],
@@ -109,7 +109,7 @@ Here it is - AnyChart can now visualize your data. Look at the chart sample belo
 For better look and feel of your charts you can use SplineArea chart type:
 
 ```
- new anychart.data.Set([
+ anychart.data.set([
    ['January', 10000],
    ['February', 12000],
    ['March', 18000],
@@ -203,7 +203,7 @@ $14000
 As we do in single series area sample above we need to convert this table into JSON, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
 
 ```
-  var dataSet = new anychart.data.Set([
+  var dataSet = anychart.data.set([
     ['January', '10000', '12000'],
     ['February', '12000', '15000'],
     ['March', '18000', '16000'],

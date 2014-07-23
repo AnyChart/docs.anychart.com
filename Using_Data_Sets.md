@@ -42,7 +42,7 @@ var data = [
 ];
 
 // create a data set  
-var dataSet = new anychart.data.Set(data);
+var dataSet = anychart.data.set(data);
 
 // create a pie chart using the data set
 var pieChart = anychart.pieChart(dataSet);  
@@ -66,7 +66,7 @@ var data = [
 ];
 
 // create a data set
-var dataSet = new anychart.data.Set(data);
+var dataSet = anychart.data.set(data);
 
 // create a pie chart using the data set 
 var pieChart = anychart.pieChart(dataSet);
@@ -92,7 +92,7 @@ var data = [
 ];
 
 // create a data set
-var dataSet = new anychart.data.Set(data);
+var dataSet = anychart.data.set(data);
 
 // create a line chart using the data set 
 var lineChart = anychart.lineChart(dataSet);
@@ -112,7 +112,7 @@ var data = [
   ["2014/6/30",  28,  25,  {value: 27, marker: "square", somePointMeta: "some text"]  //     6
 ]
 // create a data set
-var dataSet = new anychart.data.Set(data);
+var dataSet = anychart.data.set(data);
 
 // create a line chart using the data set 
 var lineChart = anychart.lineChart(dataSet);
@@ -133,7 +133,7 @@ var data = [
   ["2014/6/30",  28,  25,  27]  //     5
 ]
 // create a data set
-var dataSet = new anychart.data.Set(data);
+var dataSet = anychart.data.set(data);
 
 // create a line chart using the data set 
 var lineChart = anychart.lineChart(dataSet);

@@ -2,7 +2,7 @@
   :is_new false
   :exports "chart"}
 anychart.onDocumentReady(function() {
-  var data = new anychart.data.Set([
+  var data = anychart.data.set([
     ['Department Stores', 637166, 737166],
     ['Discount Stores', 721630, 537166],
     ['Men\'s/Women\'s Specialty Stores', 148662, 188662],

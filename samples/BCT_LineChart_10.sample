@@ -3,7 +3,7 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-  var data = new anychart.data.Set([
+  var data = anychart.data.set([
     ['January', 10000],
     ['February', 12000],
     {x: 'March', value: 18000, marker:{type:'star5', fill:'gold', size: 12}, hoverMarker: {size: 22}},

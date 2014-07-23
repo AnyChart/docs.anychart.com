@@ -96,16 +96,13 @@ Here it is - AnyChart can now visualize your data. Look at the chart sample belo
 <a name="single_series_doughnut"/>
 ### Single Series Doughnut Chart
 
-Donut chart is all the same as Pie chart, and all you need to do to switch to it: change plot_type="Doughnut"
-
-XML Syntax
-XML Code
-Plain code
-01
-<chart plot_type="Doughnut" />
+Donut chart is all the same as Pie chart, and all you need to do to switch to it: add **'chart.innerRadius()'**
+```
+  chart.innerRadius('30%');
+```
 And here is the same data as above, displayed as a Single Series Doughnut chart:
 
-Live Sample:  Sample Single-Series Donut Chart
+{sample}BCT\_PieDoughnut\_02{sample}
 
 <a name="multi_pie"/>
 ### Multi-series pie chart
@@ -122,42 +119,38 @@ Juvenile Specialty Stores	 $78.662	$178.662
 All other outlets	 $90.000	$89.000
 As we do in single-series pie sample above we need to convert this table into XML, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
 
-XML Syntax
-XML Code
-Plain code
-01
-<data>
-02
-  <series name="Year 2003">
-03
-    <point name="Department Stores" y="637166" />
-04
-    <point name="Discount Stores" y="721630" />
-05
-    <point name="Men's/Women's Specialty Stores" y="148662" />
-06
-    <point name="Juvenile Specialty Stores" y="78662" />
-07
-    <point name="All other outlets" y="90000" />
-08
-  </series>
-09
-  <series name="Year 2004">
-10
-    <point name="Department Stores" y="737166" />
-11
-    <point name="Discount Stores" y="537166" />
-12
-    <point name="Men's/Women's Specialty Stores" y="188662" />
-13
-    <point name="Juvenile Specialty Stores" y="178662" />
-14
-    <point name="All other outlets" y="89000" />
-15
-  </series>
-16
-</data>
- 
+<table width="536" border="1" class="dtTABLE">
+<tbody><tr>
+<th width="227">Retail Channel</th>
+<th width="141">Year 2003 Sales </th>
+<th width="141">Year 2004 Sales </th>
+</tr>
+<tr>
+<td>Department Stores</td>
+<td>$637.166</td>
+<td>$737.166</td>
+</tr>
+<tr>
+<td>Discount Stores</td>
+<td> $721.630</td>
+<td>$537.166</td>
+</tr>
+<tr>
+<td>Men's/Women's Specialty Stores</td>
+<td> $148.662</td>
+<td>$188.662</td>
+</tr>
+<tr>
+<td>Juvenile Specialty Stores</td>
+<td> $78.662</td>
+<td>$178.662</td>
+</tr>
+<tr>
+<td>All other outlets</td>
+<td> $90.000</td>
+<td>$89.000</td>
+</tr>
+</tbody></table> 
 
 Live Sample:  Sample Multi-series pie chart
 
