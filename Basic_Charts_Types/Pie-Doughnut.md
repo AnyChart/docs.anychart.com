@@ -1,27 +1,23 @@
 # Pie and Donut Chart
                                                                
-* [Overview](#overview)                                                              
-* [Chart building](#how_to_create_pie_chart)                                           
-  * [Single-Series Pie chart](#single_series)                                            
-  * [Single-Series Donut chart](#single_series_doughnut)                                 
-  * [Multi-Series Pie chart](#multi_pie)                                                                                                                                                                
-  * [Multi-Series Donut chart](#multi_donut)                                                
-    * [Controlling inner radius of the donut](#donut_inner_radius)                                                    
-* [Slices Starting Angle](#starting_angle)                                           
-* [Slices Sorting](#sorting)                                                         
-* [Exploded Slices](#exploded)                                                       
-* [Using styles](#using_styles)                                                      
-  * [Simple style sample](#simple_style)                                                                                                                                               
-  * [Application of different styles to chart elements](#several_styles)                                                                                                                    
-* [Working with data labels and tooltips](#working_with_labels_and_tooltips)                                                                                                    
-  * [Working with labels connectors](#label_connectors)                        
-* [Using markers](#using_markers)                                                                                                                                                                 
-* [Working with colors and color palettes](#colors)                               
-  * [Setting colors to the elements](#color_setting)                                   
-  * [Color palettes](#color_palettes)                                                     
-* [Working with hatch fills and hatch palettes](#hatches)                                                                                                                         
-  * [Setting hatch fills to the elements](#hatch_setting)                                                                                                                         
-  * [Hatch palettes](#hatch_palettes)                                             
+* [Overview](#overview)
+* [Chart building](#how_to_create_pie_chart)
+  * [Single-Series Pie chart](#single_series)
+  * [Single-Series Donut chart](#single_series_doughnut)
+* [Slices Sorting](#sorting)
+* [Exploded Slices](#exploded)
+* [Using styles](#using_styles)
+  * [Simple style sample](#simple_style)
+  * [Application of different styles to chart elements](#several_styles)
+* [Working with data labels and tooltips](#working_with_labels_and_tooltips)
+  * [Working with labels connectors](#label_connectors)
+* [Using markers](#using_markers)
+* [Working with colors and color palettes](#colors)
+  * [Setting colors to the elements](#color_setting)
+  * [Color palettes](#color_palettes)
+* [Working with hatch fills and hatch palettes](#hatches)
+  * [Setting hatch fills to the elements](#hatch_setting)
+  * [Hatch palettes](#hatch_palettes)
 
 <a name="overview"/>
 ## Overview
@@ -37,7 +33,7 @@ Consider using a single series pie chart when:
 * The categories represent parts of the whole.
 Data that is arranged in several columns or rows only can be plotted in a multi series pie chart. When you create a Pie chart with multiple data series, the first data series is placed in the center of the pie. Each successive series forms a ring on the pie. Keep in mind that although a data item may appear larger on the outside of the ring than one on a ring toward the center of the chart, the size is proportional to the values within the series.
 
-Doughnut chart are functionally identical to pie charts, it also has single-series and multi-series versions, the only difference is that it has a hole in the middle.
+Doughnut chart are functionally identical to pie charts, the only difference is that it has a hole in the middle.
 
 <a name="how_to_create_pie_chart"/>
 ## Chart building
