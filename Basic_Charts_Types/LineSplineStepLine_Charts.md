@@ -14,7 +14,7 @@
   * [Simple style sample](#simple_style)
 * [Working with data labels and tooltips](#working_with_labels_and_tooltips)
 * [Using markers](#using_markers)
-* [Working with colors <!--and color palettes-->](#colors)
+* [Working with colors](#colors)
   * [Setting colors to the elements](#color_setting)
 
 <a name="overview"/>
