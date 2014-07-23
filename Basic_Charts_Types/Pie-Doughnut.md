@@ -91,7 +91,7 @@ As you can see, we've created **anychart.pieChart()** node. First column defines
 
 Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on it to see preview and full configured JSON in playground.
 
-{sample}BCT\_PieDoughnut\_01{sample}
+{sample}BCT\_PieDoughnutChart\_01{sample}
 
 <a name="single_series_doughnut"/>
 ### Single Series Doughnut Chart
@@ -102,7 +102,7 @@ Donut chart is all the same as Pie chart, and all you need to do to switch to it
 ```
 And here is the same data as above, displayed as a Single Series Doughnut chart:
 
-{sample}BCT\_PieDoughnut\_02{sample}
+{sample}BCT\_PieDoughnutChart\_02{sample}
 
 <a name="multi_pie"/>
 ### Multi-series pie chart
