@@ -31,7 +31,6 @@ Consider using a single series pie chart when:
 * Almost none of the values that you want to plot are zero values.
 * You don't have more than seven categories.
 * The categories represent parts of the whole.
-Data that is arranged in several columns or rows only can be plotted in a multi series pie chart. When you create a Pie chart with multiple data series, the first data series is placed in the center of the pie. Each successive series forms a ring on the pie. Keep in mind that although a data item may appear larger on the outside of the ring than one on a ring toward the center of the chart, the size is proportional to the values within the series.
 
 Doughnut chart are functionally identical to pie charts, the only difference is that it has a hole in the middle.
 
@@ -100,179 +99,44 @@ And here is the same data as above, displayed as a Single Series Doughnut chart:
 
 {sample}BCT\_PieDoughnutChart\_02{sample}
 
-<a name="multi_pie"/>
-### Multi-series pie chart
-
-To compare two or more data rows you have to use multi-series pie charts as it shown in the sample below.
-
-Let's compare year 2003 sales to year 2004 sales:
-
-Retail Channel	Year 2003 Sales	Year 2004 Sales
-Department Stores	$637.166	$737.166
-Discount Stores	 $721.630	$537.166
-Men's/Women's Specialty Stores	 $148.662	$188.662
-Juvenile Specialty Stores	 $78.662	$178.662
-All other outlets	 $90.000	$89.000
-As we do in single-series pie sample above we need to convert this table into XML, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
-
-<table width="536" border="1" class="dtTABLE">
-<tbody><tr>
-<th width="227">Retail Channel</th>
-<th width="141">Year 2003 Sales </th>
-<th width="141">Year 2004 Sales </th>
-</tr>
-<tr>
-<td>Department Stores</td>
-<td>$637.166</td>
-<td>$737.166</td>
-</tr>
-<tr>
-<td>Discount Stores</td>
-<td> $721.630</td>
-<td>$537.166</td>
-</tr>
-<tr>
-<td>Men's/Women's Specialty Stores</td>
-<td> $148.662</td>
-<td>$188.662</td>
-</tr>
-<tr>
-<td>Juvenile Specialty Stores</td>
-<td> $78.662</td>
-<td>$178.662</td>
-</tr>
-<tr>
-<td>All other outlets</td>
-<td> $90.000</td>
-<td>$89.000</td>
-</tr>
-</tbody></table> 
-
-Live Sample:  Sample Multi-series pie chart
-
-<a name="multi_donut"/>
-### Multi-Series Doughnut Chart
-
-Donut charts are more likely to be used as multi-series, than Pie charts. Switching is easy: just change the plot_type="Doughnut":
-
-XML Syntax
-XML Code
-Plain code
-01
-<chart plot_type="Doughnut" />
-And here is the same data as above, displayed as a Multi-Series Doughnut chart:
-
-Live Sample:  Sample Multi-series Doughnut chart
-
-<a name="donut_inner_radius"/>
-#### Setting inner radius of the donut
-
-You can set the inner radius of the donut in percents of Pie radius, by using inner_radius attribute of pie_series node
-
-XML Syntax
-XML Code
-Plain code
-01
-<pie_series inner_radius="50" />
-Here is a sample multi-series data with inner radius set to 50:
-
-Live Sample:  Sample Multi-series Doughnut chart inner radius
-
-<a name="starting_angle"/>
-### Slices Starting Angle
-
-You can set starting angle for the first slice for all pie charts or for the given series, in the sample below multiseries pie chart is shown with identical series, but they have a different starting angle:
-
-XML Syntax
-XML Code
-Plain code
-01
-<chart>
-02
-  <data_plot_settings>
-03
-    <pie_series start_angle="0" />
-04
-  </data_plot_settings>
-05
-  <data>
-06
-    <series name="2000" start_angle="90">
-07
-      <point name="Men" y="49" />
-08
-      <point name="Women" y="51" />
-09
-    </series>
-10
-    <series name="2001">
-11
-      <point name="Men" y="49" />
-12
-      <point name="Women" y="51" />
-13
-    </series>
-14
-  </data>
-15
-</chart>
- 
-
-Live Sample:  Sample Multi-series Pie Chart Start Angle
-
 <a name="sorting"/>
 ## Slices Sorting
 
-If you want you can sort the series in Pie and Donut Chart - Ascending or Descending, this feature is controlled using sort attribute of pie_series. In the sample below three pie charts with identical series are shown, first isn't sorted, the second is sorted ascending and the third - descending.
+If you want you can sort the series in Pie and Donut Chart - Ascending or Descending, this feature is controlled using **sort** attribute. In the sample below three pie charts with identical series are shown, first isn't sorted, the second is sorted ascending and the third - descending.
 
-Live Sample:  Sample Pie Chart Slices Sorting
+{sample}BCT\_PieDoughnutChart\_03{sample}
 
 <a name="exploded"/>
 ## Exploded Slices
 
-You can set pie and donut chart slices to be exploded when user clicks on it and you can set certain slices to be exploded be default, this can be done both in 3d and 2d mode.
+You can set pie and donut chart slices to be exploded when user clicks on it and you can set certain slices to be exploded by default.
 
-To enable/disable and tune slices exploding use explode_on_click and explode attributes of <pie_series>. explode attribute defines how far slices are exploded, this value is set in percents of pie radius ("10" stands for 10% of pie radius).
+To enable/disable and tune slices exploding use **explode** attributes. Explode attribute defines how far slices are exploded, this value is set in px.
 
-XML Syntax
-XML Code
-Plain code
-01
-<pie_series explode_on_click="True" explode="10" />
-If you want pie to be exploded on start use exploded attribute of series node:
+```
+  chart.explode(30);
+```
 
-XML Syntax
-XML Code
-Plain code
-01
-<series exploded="True" />
 Te explode only one slice set exploded to a point:
 
-XML Syntax
-XML Code
-Plain code
-01
-<point name="A" y="56" exploded="True" />
+```
+  chart.explodeSlice(0, true);
+```
 Sample chart below is exploded by default, you can launch the live sample and click on slices to move them in place.
 
-Live Sample:  Sample Single-Series Pie Chart 2
+{sample}BCT\_PieDoughnutChart\_04{sample}
 
 <a name="using_styles"/>
 ## Using styles
 
-In this section we will describe main parts of pie chart style and demonstrate how style can be created and applied. Also you will see list of predefined styles.
+In this section we will describe main parts of pie chart style and demonstrate how style can be applied. 
 
-The main idea of styles is to segregate visualization and data definition. Visual appearance of pies is defined using certain styles and then you just apply the style to the certain data elements. Style can be applied to data series, data category or single slice.
-
-Pie chart style is configured in <pie_style> and <pie_series> nodes.
-Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when selected, when user moves cursor over an element, etc. More information about these features can be found in Interactivity tutorial.
-
-to top
+Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when user moves cursor over an element, etc. <--More information about these features can be found in Interactivity tutorial.-->
 
 <a name="simple_style"/>
 ### Simple style
 
-Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an XML structure:
+Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an JSON structure:
 
 XML Syntax
 XML Code
