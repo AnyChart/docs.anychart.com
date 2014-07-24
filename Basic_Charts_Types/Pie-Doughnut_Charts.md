@@ -8,16 +8,13 @@
 * [Exploded Slices](#exploded)
 * [Using styles](#using_styles)
   * [Simple style sample](#simple_style)
-  * [Application of different styles to chart elements](#several_styles)
 * [Working with data labels and tooltips](#working_with_labels_and_tooltips)
-  * [Working with labels connectors](#label_connectors)
-* [Using markers](#using_markers)
-* [Working with colors and color palettes](#colors)
+<!--  * [Working with labels connectors](#label_connectors)-->
+<!--* [Using markers](#using_markers)-->
+* [Working with colors](#colors)
   * [Setting colors to the elements](#color_setting)
-  * [Color palettes](#color_palettes)
-* [Working with hatch fills and hatch palettes](#hatches)
+* [Working with hatch fills](#hatches)
   * [Setting hatch fills to the elements](#hatch_setting)
-  * [Hatch palettes](#hatch_palettes)
 
 <a name="overview"/>
 ## Overview
@@ -111,7 +108,7 @@ If you want you can sort the series in Pie and Donut Chart - Ascending or Descen
 
 You can set pie and donut chart slices to be exploded when user clicks on it and you can set certain slices to be exploded by default.
 
-To enable/disable and tune slices exploding use **explode** attributes. Explode attribute defines how far slices are exploded, this value is set in px.
+**Explode** attribute defines how far slices are exploded. To disable exploding, set **explode** value to 0.
 
 ```
   chart.explode(30);
@@ -137,140 +134,38 @@ Also, styles are used to make charts interactive, you can define how elements wi
 ### Simple style
 
 Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an JSON structure:
+```
+chart.fill('Gold')
+  .hoverFill("darkred")
+  .stroke('#56561a', 10);
+  chart.container('container');
+  chart.draw();
+```
 
-XML Syntax
-XML Code
-Plain code
-01
-<pie_style name="style1">
-02
-  <fill type="Solid" color="Gold" opacity="1" />
-03
-  <border thickness="4" color="Rgb(86,86,26)" />
-04
-  <hatch_fill enabled="True" type="DiagonalBrick" color="Gray" />
-05
-  <effects>
-06
-    <bevel enabled="true" highlight_opacity="0.4" shadow_opacity="0.4" distance="2" />
-07
-    <drop_shadow enabled="true" opacity="0.3" />
-08
-  </effects>
-09
-  <states>
-10
-    <hover>
-11
-      <border color="DarkRed" thickness="6" />
-12
-      <hatch_fill color="DarkRed" />
-13
-    </hover>
-14
-  </states>
-15
-</pie_style>
-Using such settings we've created a style that defines slices of Gold color, rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed thick border and hatch fill colored DarkRed too.
+Using such settings we've created a style that defines slices of Gold color<--, rather thick border, hatch filled with DiagonalBrick and a couple of effects-->. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed<!-- thick border and hatch fill colored DarkRed too-->.
 
-Now we will take a sample single-series chart described above, define style in XML and apply it to all chart elements, using <pie_series style="style1"/>
-
-Live Sample:  Sample Simple Style for Pie chart
-
-<a name="several_styles"/>
-### Application of different styles to chart elements
-
-Now we will demonstrate how to apply different styles to different series and slices. To do it we will use multi-series sample that was demonstrated above and create two more styles: "style2" and "style3", both inherited from the "style1".
-
-"style1" will be applied to "Year 2003 " series, "style2" will be applied to "Year 2004" series and "style3" will be applied to the pie with a highest value (Note - we will find highest value and set its style manually in this sample. But with AnyChart it is possible to do that automatically using Thresholds, read more about it in Thresholds tutorial).
-
-So - the definitions of the styles are:
-
-Style 1:
-
-XML Syntax
-XML Code
-Plain code
-01
-<pie_style name="style1">
-02
-  <fill type="Solid" color="Gold" opacity="1" />
-03
-  <border thickness="4" color="Rgb(86,86,26)" />
-04
-  <hatch_fill enabled="True" type="DiagonalBrick" color="Gray" />
-05
-  <effects>
-06
-    <bevel enabled="true" highlight_opacity="0.4" shadow_opacity="0.4" distance="2" />
-07
-    <drop_shadow enabled="true" opacity="0.3" />
-08
-  </effects>
-09
-  <states>
-10
-    <hover>
-11
-      <border color="DarkRed" thickness="6" />
-12
-      <hatch_fill color="DarkRed" />
-13
-    </hover>
-14
-  </states>
-15
-</pie_style>
-Style 2:
-This style is inherited from "style1" and the only thing changed is a color of the fill: from "Gold" to "Rgb(180,180,255)". We've used styles inheritance to avoid duplication of the common settings.
-
-XML Syntax
-XML Code
-Plain code
-01
-<pie_style name="style2" parent="style1">
-02
-  <fill color="Rgb(180,180,255)" />
-03
-</pie_style>
-Style 3:
-This style is also inherited from "style1" and the new color of the fill is "Rgb(255,170,170)". And again we've used styles inheritance.
-
-XML Syntax
-XML Code
-Plain code
-01
-<pie_style name="style3" parent="style1">
-02
-  <fill color="Rgb(255,170,170)" />
-03
-</pie_style>
-And, as a result here is an example of these styles usage:
-
-Live Sample:  Sample Pie chart - Application of different styles to chart elements
+{sample}BCT\_PieDoughnutChart\_05{sample}
 
 <a name="working_with_labels_and_tooltips"/>
 ## Working with data labels and tooltips
 
-In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.
+In this section we will explain how to add and configure data labels and tooltips. 
+<!--Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
 
-If you want to configure data labels and tooltips for all series - you should do that in <label_settings> and <tooltip_settings> sub-nodes of <pie_series> node. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear inside of the slices, also, we will format labels so they show only the percentage corresponding to the slices and tooltip will show detailed description.
+If you want to configure data labels and tooltips for all series - you should do that in **.labels** and **.tooltip** sub-nodes of <pie_series> node. You can tune their visual appearance, positioning and format.
+Let's do that in the following example: we will make data labels appear inside of the slices, also, we will format labels so they show only the percentage corresponding to the slices and tooltip will show detailed description.
  
-When formatting data labels text and tooltip we will use formatting keywords: 
-{%Name} - to show sales retail channel,
-{%YValue} - to show sales,
-{%SeriesName} - to show period (year),
-{%YPercentOfSeries} - to show every retail channel sales percentage to total sales per year.
 
-Live Sample:  Sample Pie chart - Working with data labels and tooltips
+When formatting data labels text we will use **.textFormatter** to choose the column we need information from. 
 
+{sample}BCT\_PieDoughnutChart\_07{sample}
+<!--
 Related Help Topics:
 
 Learn more about labels and tooltips in Labels and tooltips
 Full Keywords reference and formatting guide:Labels and tooltips
 Full reference of data labels settings can be found in XML Reference, particularly <label_style> and <label_settings> nodes.
-to top
-
+--><!--
 <a name="label_connectors"/>
 ### Working with labels connectors
 
@@ -294,7 +189,7 @@ Live Sample:  Sample Pie chart - Working with labels connectors
 And here is a sample multi-series chart with connectors:
 
 Live Sample:  Sample Pie chart - Working with multiseries labels connectors
-
+--><!--
 <a name="using_markers"/>
 ## Using markers
 
@@ -345,31 +240,19 @@ Related help topics:
 
 You can read more about working with markers in Markers tutorial.
 Full reference of marker style can be found in XMLReference, particularly <marker_style> node.
-to top
-
+-->
 <a name="colors"/>
-## Working with colors and color palettes
+## Working with colors
 
-AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can use your own palettes or palettes shipped with AnyChart. Also you can set and apply the color to exact data series or data point.
+AnyChart uses default colors to colorize data elements of chart automatically even if you have not define special colors. Also you can set and apply the color to exact data series or data point.
 
 <a name="color_setting"/>
 ### Setting colors to the elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set "color" attribute in the <series> node. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **".fill"** attribute. In the sample below we'll color each series to different color. Here is the sample:
 
-Live Sample:  Sample Pie chart - Setting colors to the elements
-
-In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximum one. As you see it is very easy to do by setting "color" attribute for <point> node.
-
-Live Sample:  Sample Pie chart - Setting colors to the series
-
-Important Note:
-
-AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "Rgb(180,77,77)" you can set "HSV(?,?,?)" or "HTMLConstant" or "#HEXCode"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
-
-Different ways of setting colors of elements
-Advanced coloring techniques in Styles tutorial
-
+{sample}BCT\_PieDoughnutChart\_06{sample}
+<!--
 <a name="hatches"/>
 ## Working with hatch fills and hatch palettes
 
@@ -382,4 +265,4 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 
 Live Sample:  Sample Pie chart - Setting hatch palette to the series
 
-Current Page Online URL: Pie and Donut Chart
+Current Page Online URL: Pie and Donut Chart-->
