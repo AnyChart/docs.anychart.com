@@ -2,8 +2,8 @@
                                                                
 * [Overview](#overview)
 * [Chart building](#how_to_create_pie_chart)
-  * [Single-Series Pie chart](#single_series)
-  * [Single-Series Donut chart](#single_series_doughnut)
+  * [Pie chart](#single_series)
+  * [Donut chart](#single_series_doughnut)
 * [Slices Sorting](#sorting)
 * [Exploded Slices](#exploded)
 * [Using styles](#using_styles)
@@ -19,9 +19,9 @@
 <a name="overview"/>
 ## Overview
 
-Data that is arranged in one column or row only can be plotted in a single series pie chart. Single series pie charts show the size of items in one data series, proportional to the sum of the items. The data points in a pie chart are displayed as a percentage of the whole pie.
+Data that is arranged in one column or row only can be plotted in a pie chart. Pie charts show the size of items in one data series, proportional to the sum of the items. The data points in a pie chart are displayed as a percentage of the whole pie.
 
-Consider using a single series pie chart when:
+Consider using a pie chart when:
 
 * You only have one data series that you want to plot.
 * None of the values that you want to plot are negative.
@@ -34,12 +34,12 @@ Doughnut chart are functionally identical to pie charts, the only difference is 
 <a name="how_to_create_pie_chart"/>
 ## Chart building
 
-Depending on data model and the visualization purpose the pie chart may contain single series or multi series. If only one series is supplied - a chart will be single-series, several series supplied - chart will be multi-series.
+Pie chart contains only single series.
 
 <a name="single_series"/>
-### Single-Series Pie Chart
+### Pie Chart
 
-Let's see single series pie chart created using the following data - sales of ACME Corp. apparel through different retail channels in one year:
+Let's see pie chart created using the following data - sales of ACME Corp. apparel through different retail channels in one year:
 
 <table width="328" border="1" class="dtTABLE">
 <tbody><tr>
@@ -86,13 +86,13 @@ Here it is - AnyChart can now visualize your data. Look at the chart sample belo
 {sample}BCT\_PieDoughnutChart\_01{sample}
 
 <a name="single_series_doughnut"/>
-### Single Series Doughnut Chart
+### Doughnut Chart
 
 Donut chart is all the same as Pie chart, and all you need to do to switch to it: add **'chart.innerRadius()'**
 ```
   chart.innerRadius('30%');
 ```
-And here is the same data as above, displayed as a Single Series Doughnut chart:
+And here is the same data as above, displayed as a Doughnut chart:
 
 {sample}BCT\_PieDoughnutChart\_02{sample}
 
@@ -182,7 +182,7 @@ Plain code
   <connector enabled="True" color="Black" opacity="1" thickness="1" />
 04
 </pie_series>
-Here is a sample single-series chart with connectors:
+Here is a sample of Pie chart with connectors:
 
 Live Sample:  Sample Pie chart - Working with labels connectors
 
