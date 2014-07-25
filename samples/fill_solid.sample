@@ -2,8 +2,8 @@ var stage = acgraph.create(400, 200).container('container');
 stage.path()
         .moveTo(stage.width() / 2, 0)
         .lineTo(stage.width() / 2, stage.height());
-    var bg = new anychart.elements.Label().background();
-    var lbl = new anychart.elements.Label()
+    var bg = anychart.elements.label().background();
+    var lbl = anychart.elements.label()
         .parentBounds(new anychart.math.Rect(0, 0, stage.width()/2, stage.height()))
         .width(stage.width() / 3)
         .height(stage.height() - 20)
@@ -13,7 +13,7 @@ stage.path()
     lbl.background().enabled(true);
     lbl.container(stage).draw();
 
-    lbl = new anychart.elements.Label()
+    lbl = anychart.elements.label()
         .parentBounds(new anychart.math.Rect(stage.width()/2, 0, stage.width()/2, stage.height()))
         .width(stage.width() / 3)
         .height(stage.height() - 20)

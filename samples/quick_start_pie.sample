@@ -2,7 +2,7 @@
   :is_new false
   :exports "chart"}
 
-chart = new anychart.pie.Chart([
+chart = anychart.pieChart([
 ['Chocolate paste', 5],
 ['White honey', 2],
 ['Strawberry jam', 2],

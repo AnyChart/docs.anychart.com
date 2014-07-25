@@ -1,5 +1,5 @@
 var stage = acgraph.create(400, 200).container('container');
-var bg = new anychart.elements.Background()
+var bg = anychart.elements.background()
     .fill(['black', 'white'], .5, .5, null, 1, 0.23, 0.81)
     .container(stage)
     .draw();
