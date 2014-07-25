@@ -334,10 +334,10 @@ chart.line(data)
   .markers(null)
   .hoverStroke('darkred', 4);
 ```
-Using such settings we've created a style that defines line of Gold color, rather thick line and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed thick line.
+<!--Using such settings we've created a style that defines line of Gold color, rather thick line and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed thick line.
 
 Now we will take a sample single series chart described above, define style in JSON and apply it to all chart elements, using <line_series style="style1"/>
-
+-->
 {sample}BCT\_LineChart\_08{sample}
 
 <a name="working_with_labels_and_tooltips"/>
