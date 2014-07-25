@@ -4,7 +4,7 @@ stage.path()
         .lineTo(stage.width() / 2, stage.height());
     var bg = anychart.elements.label().background();
     var lbl = anychart.elements.label()
-        .parentBounds(anychart.math.Rect(0, 0, stage.width()/2, stage.height()))
+        .parentBounds(anychart.math.rect(0, 0, stage.width()/2, stage.height()))
         .width(stage.width() / 3)
         .height(stage.height() - 20)
         .background(bg.fill('yellow'))
@@ -14,7 +14,7 @@ stage.path()
     lbl.container(stage).draw();
 
     lbl = anychart.elements.label()
-        .parentBounds(anychart.math.Rect(stage.width()/2, 0, stage.width()/2, stage.height()))
+        .parentBounds(anychart.math.rect(stage.width()/2, 0, stage.width()/2, stage.height()))
         .width(stage.width() / 3)
         .height(stage.height() - 20)
         .background(bg.fill('yellow 0.2'))

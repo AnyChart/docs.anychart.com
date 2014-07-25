@@ -102,7 +102,7 @@ This can be shown in the following way:
 .fill({
     keys: ['.1 red', '.5 green', '.9 blue'],
     angle: -45,
-    mode: anychart.math.Rect(150, 70, 100, 50),
+    mode: anychart.math.rect(150, 70, 100, 50),
     opacity: 1
 });
 ```
@@ -119,7 +119,7 @@ If the container size in gradient settings are larger than the filled element
 .fill({
     keys: ['.1 red', '.5 green', '.9 blue'],
     angle: -45,
-    mode: anychart.math.Rect(5, 0, 395, 200),
+    mode: anychart.math.rect(5, 0, 395, 200),
     opacity: 1
 })
 ```
@@ -162,7 +162,7 @@ E.g., figure with defined fill area:
 {sample}fill\_radialG\_usos{sample}
 
 ```
-.fill(['black', 'white'], .5, .5, anychart.math.Rect(0, 0, 400, 400), 1, .5, .7)
+.fill(['black', 'white'], .5, .5, anychart.math.rect(0, 0, 400, 400), 1, .5, .7)
 ```
 
 ### [1.4. Image fill](id:image-fill)
