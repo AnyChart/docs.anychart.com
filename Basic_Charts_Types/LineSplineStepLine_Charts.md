@@ -21,8 +21,7 @@
 ## Overview
 
 Data that is arranged in columns or rows on a worksheet can be plotted in a line chart. Line charts can display continuous data over time, set against a common scale, and are therefore ideal for showing trends in data at equal intervals. In a line chart, category data is distributed evenly along the horizontal axis, and all value data is distributed evenly along the vertical axis.
-
-
+<br/>
 You should use a line chart if your category labels are text, and are representing evenly spaced values such as months, quarters, or fiscal years. You should also use a line chart if you have a few evenly spaced numerical labels, especially years. If you have more than ten numerical labels, use a Scatter Line Chart instead.
 
 
