@@ -1,0 +1,49 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+  //create data set on our data
+  var dataSet = anychart.data.set([
+["Winter", 12000, 12000, 10000],
+["Spring", 13000, 12000, 17000],
+["Summer", 25000, 15000, 19000],
+["Autumn", 16000, 16000, 16000]
+  ]);
+
+  //map data for the first series, take x from the zero column and value from the first column of data set
+  var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+
+  //map data for the second series, take x from the zero column and value from the second column of data set
+  var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+
+  //map data for the third series, take x from the zero column and value from the third column of data set
+  var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
+
+  //map data for the fourth series, take x from the zero column and value from the fourth column of data set
+  var seriesData_4 = dataSet.mapAs({x: [0], value: [4]});
+
+  //create bar chart
+  chart = anychart.barChart();
+
+  //force chart to stack values by Y scale.
+  chart.yScale().stackMode('value');
+
+  //set container id for the chart
+  chart.container('container');
+
+  //temp variable to store series instance
+  var series;
+
+  //create first series with mapped data
+  series = chart.bar(seriesData_1);
+
+  //create second series with mapped data
+  series = chart.bar(seriesData_2);
+  //create third series with mapped data
+  series = chart.bar(seriesData_3);
+  //create fourth series with mapped data
+  series = chart.bar(seriesData_4);
+  //initiate chart drawing
+  chart.draw();
+});
