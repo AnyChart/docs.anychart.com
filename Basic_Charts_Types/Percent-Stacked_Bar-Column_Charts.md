@@ -31,7 +31,7 @@ Now we have to tell Y Axis to display these series in as stacked columns:
 ```
 Everything is ready, here is a sample stacked column chart:
 
-{sample}BCT_Percent-Stacked\_Bar-Column\_Charts\_01{sample}
+{sample}BCT_Percent-Stacked\_Bar-column\_Charts\_01{sample}
 
 <a name="stacked-bar"/>
 ## Stacked Bar Chart
@@ -51,7 +51,7 @@ Also, tooltips can be enabled/disabled by adjusting **tooltip()** method:
 ```
 Here is a sample stacked bar chart:
 
-{sample}BCT_Percent-Stacked\_Bar-Column\_Charts\_02{sample}
+{sample}BCT_Percent-Stacked\_Bar-column\_Charts\_02{sample}
 <!--
 
 3D Stacked Column Chart
