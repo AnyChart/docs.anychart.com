@@ -3,10 +3,13 @@
  * [Overview](#overview)
  * [Chart building](#how_to_create_chart)
  * [Stacked Bar](#stacked-bar)
+<!-- * [Adding "%" to axis labels](#percent) -->
 
 <a name="overview"/>
 ## Overview
-Data that is arranged in columns or rows on a worksheet can be plotted in a bar chart. Bar charts illustrate comparisons among individual items.
+Data that is arranged in columns or rows on a worksheet can be plotted in a bar chart. Bar charts illustrate comparisons among individual items. 
+
+100% stacked bar charts compares the percentage each value contributes to a total across categories.
 
 <a name="how_to_create_chart"/>
 ## Chart Building
@@ -24,11 +27,11 @@ So, we have three series of data - one series for each product, and we give prop
 ```
 Now we have to tell Y Axis to display these series in as stacked columns:
 ```
-  chart.yScale().stackMode('value');
+  chart.yScale().stackMode('percent');
 ```
 Everything is ready, here is a sample stacked column chart:
 
-{sample}BCT_Stacked\_Bar-Column\_Charts\_02{sample}
+{sample}BCT_Percent-Stacked\_Bar-Column\_Charts\_01{sample}
 
 <a name="stacked-bar"/>
 ## Stacked Bar Chart
@@ -48,7 +51,7 @@ Also, tooltips can be enabled/disabled by adjusting **tooltip()** method:
 ```
 Here is a sample stacked bar chart:
 
-{sample}BCT_Stacked\_Bar-Column\_Charts\_01{sample}
+{sample}BCT_Percent-Stacked\_Bar-Column\_Charts\_02{sample}
 <!--
 
 3D Stacked Column Chart
@@ -61,4 +64,7 @@ Plain code
 01
 <data_plot_settings enable_3d_mode="True" />
 The sample of 3D Column chart at a glance:
--->
+
+Live Sample:  Sample 3D Stacked Column Chart
+
+Current Page Online URL: Stacked Bar/Column Chart-->

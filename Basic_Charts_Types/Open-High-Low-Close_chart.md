@@ -179,8 +179,6 @@ Live Sample:  Sample Multi-Series gruoped by Series Open High Low Close Chart
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in Working with Axes tutorial, in this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
-to top
-
 <a name="position"/>
 ### Positioning
 
@@ -202,8 +200,6 @@ Plain code
 And here is the demonstration of this feature on the Single-series sample:
 
 Live Sample:  Axes Position Sample Single-Series OHLC Chart
-
-to top
 
 <a name="logarithmic"/>
 ### Logarithmic
@@ -382,14 +378,11 @@ Related Help Topics:
 Learn more about labels and tooltips in Labels and tooltips
 Full Keywords reference and formatting guide:Labels and tooltips
 Full reference of data labels settings can be found in XML Reference, particularly <label_style> and <label> nodes.
-to top
 
 <a name="colors"/>
 ## Working with colors and color palettes
 
 AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can use your own palettes or palettes shipped with AnyChart. Also you can set and apply the color to exact data series or data point.
-
-to top
 
 <a name="color_setting"/>
 ### Setting colors to the elements
@@ -408,7 +401,6 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 
 Different ways of setting colors of elements
 Advanced coloring techniques in Styles tutorial
-to top
 
 <a name="color_palettes"/>
 ### Color palettes
@@ -433,9 +425,5 @@ AnyChart provides most of features that developer needs to create a complex fina
  
 
 Live Sample:  Sample OHLC chart - Advanced usage - Area Line Combination Report Dashboard
-
- 
-
-to top
 
 Current Page Online URL: Open High Low Close (OHLC) Chart

@@ -150,8 +150,6 @@ Step line chart series display data points connected with Horizontal or Vertical
 Here is the same chart as shown above, but in both StepLineForward and StepLineBackward modes:
 
 {sample}BCT\_LineChart\_03{sample}
-
-to top
 <!--
 <a name="step_line_shift"/>
 ### Shift Step Line Chart
@@ -166,8 +164,6 @@ Plain code
 This allows you to create chart like this:
 
 Live Sample:  Sample Shift Step Line Chart
-
-to top
 -->
 
 <a name="multi_categorized"/>

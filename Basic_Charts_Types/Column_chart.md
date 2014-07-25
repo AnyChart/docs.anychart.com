@@ -103,8 +103,6 @@ Now we need to convert this data table into JSON, this format will be accepted b
 
 {sample}BCT\_ColumnChart\_01{sample}
 
-to top
-
 <a name="multi_categorized"/>
 ### Multi-Series column chart
 
@@ -183,8 +181,6 @@ As we now have multi-series chart we don't want to set type for each series indi
 
 {sample}BCT\_ColumnChart\_02{sample}
 
-to top
-
 <a name="axes"/>
 ## Axes management
 
@@ -204,8 +200,6 @@ Positioning depends on plot type and inversion of axes, you will find list of al
 Look at the demonstration of this feature on the Single-series sample:
 
 {sample}BCT\_ColumnChart\_03{sample}
-
-to top
 
 <a name="inversion"/>
 ### Inversion

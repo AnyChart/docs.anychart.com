@@ -228,8 +228,6 @@ And here is the demonstration of this feature on the Single-series sample:
 
 {sample}BCT\_BarChart\_03{sample}
 
-to top
-
 <a name="inversion"/>
 ### Inversion
 
@@ -253,8 +251,6 @@ chart.yScale().minimum('-200000').maximum('800000')
 And here is the demonstration of maximum and minimum values on the Single-series sample:
 
 {sample}BCT\_BarChart\_05{sample}
-
-to top
 
 <a name="setup_padding"/>
 ## Paddings between bars and bar groups
@@ -346,8 +342,6 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 ## Working with hatch fills
 
 AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings and palettes. To see whole range of available hatch types see Hatch tutorial.
-
-to top
 
 <a name="hatch_setting"/>
 ### Setting hatch fills to the elements

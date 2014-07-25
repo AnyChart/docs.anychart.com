@@ -3,6 +3,7 @@
  * [Overview](#overview)
  * [Chart building](#how_to_create_chart)
  * [Spline Stacked Area](#spline-stacked-area)
+ * [Step Stacked Area](#step-stacked-area)
 
 <a name="overview"/>
 ## Overview
@@ -36,7 +37,7 @@ And set "Area" as a default series type:
 
 {sample}BCT_Stacked\_Area-SplineArea\_Charts\_01{sample}
 
-<a name="how_to_create_chart"/>
+<a name="spline-stacked-area"/>
 ## Spline Stacked Area
 
 Just change default series type to "SplineArea" and get your data displayed in more appealing way:
@@ -62,5 +63,18 @@ Plain code
 Here is a sample spline stacked area chart:
 
 {sample}BCT_Stacked\_Area-SplineArea\_Charts\_02{sample}
+
+<a name="step-stacked-area"/>
+## Step Stacked Area
+
+Just change default series type to "stepArea" and get your data displayed in more comparable way:
+
+```
+  chart.stepArea(seriesData_1);
+```
+
+Here is a sample step stacked area chart:
+
+{sample}BCT_Stacked\_Area-SplineArea\_Charts\_03{sample}
 <!--
 Current Page Online URL: Stacked Line/Spline/StepLine Chart-->
