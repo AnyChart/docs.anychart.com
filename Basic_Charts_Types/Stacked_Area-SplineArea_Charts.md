@@ -11,7 +11,7 @@ Data that is arranged in columns or rows on a worksheet can be plotted in an are
 Stacked area charts are multi series area charts that display the trend of the contribution of each value over time or categories.
 
 <a name="how_to_create_chart"/>
-Chart Building
+## Chart Building
 
 As stacked charts should show contribution of different components to the total, we will demonstrate them on an imaginable ACME FastFood, Corp. sales. Let's assume that it sells Ice Cream, Chocolate Bar and Coke all through the year.
 
@@ -36,7 +36,8 @@ And set "Area" as a default series type:
 
 {sample}BCT_Stacked\_Area-SplineArea\_Charts\_01{sample}
 
-Spline Stacked Area
+<a name="how_to_create_chart"/>
+## Spline Stacked Area
 
 Just change default series type to "SplineArea" and get your data displayed in more appealing way:
 
@@ -57,9 +58,9 @@ Plain code
 04
   </tooltip_settings>
 05
-</area_series>
+</area_series>-->
 Here is a sample spline stacked area chart:
--->
+
 {sample}BCT_Stacked\_Area-SplineArea\_Charts\_02{sample}
 <!--
 Current Page Online URL: Stacked Line/Spline/StepLine Chart-->
