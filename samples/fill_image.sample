@@ -9,7 +9,7 @@
                 mode: acgraph.vector.ImageFillMode.STRETCH
             })
             .stroke('1 #000')
-            .bounds(new anychart.math.Rect(2, 18, stage.width() / 2 - 4, stage.height() - 22))
+            .bounds(anychart.math.Rect(2, 18, stage.width() / 2 - 4, stage.height() - 22))
             .container(stage)
             .draw();
     stage.text(stage.width() / 2 + 20, 0, 'Pattern image');
@@ -19,6 +19,6 @@
                 mode: acgraph.vector.ImageFillMode.TILE
             })
             .stroke('1 #000')
-            .bounds(new anychart.math.Rect(stage.width() / 2 + 2, 18, stage.width() / 2 - 4, stage.height() - 22))
+            .bounds(anychart.math.Rect(stage.width() / 2 + 2, 18, stage.width() / 2 - 4, stage.height() - 22))
             .container(stage)
             .draw();
