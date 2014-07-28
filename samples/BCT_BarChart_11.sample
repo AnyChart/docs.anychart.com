@@ -1,4 +1,8 @@
-  var data = new anychart.data.Set([
+{:tags []
+  :is_new false
+  :exports "chart"}
+anychart.onDocumentReady(function() {
+  var data = anychart.data.set([
     ['Department Stores1', 637166, 737166],
     ['Discount Stores', 721630, 537166],
     ['Men\'s/Women\'s Specialty Stores', 148662, 188662],
@@ -18,3 +22,4 @@
 
   chart.container('container');
   chart.draw();
+  });

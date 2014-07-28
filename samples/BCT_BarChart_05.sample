@@ -1,10 +1,15 @@
-  var data = new anychart.data.Set([
+{:tags []
+  :is_new false
+  :exports "chart"}
+anychart.onDocumentReady(function() {
+  var data = anychart.data.set([
     ['Department Stores1', 637166],
     ['Discount Stores', 721630],
     ['Men\'s/Women\'s Specialty Stores', 148662],
     ['All other outlets', 90000]
   ]);
-chart = anychart.barChart(data);
+chart = anychart.barChart();
 chart.bar(data);
 chart.yScale().minimum('-200000').maximum('800000');
 chart.container('container').draw();
+});

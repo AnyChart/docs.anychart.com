@@ -1,9 +1,0 @@
-  var data = new anychart.data.Set([
-    ['Department Stores1', 637166],
-    ['Discount Stores', 721630],
-    ['Men\'s/Women\'s Specialty Stores', 148662],
-    ['All other outlets', 90000]
-  ]);
-chart = anychart.barChart(data);
-chart.bar(data);
-chart.container('container').draw();

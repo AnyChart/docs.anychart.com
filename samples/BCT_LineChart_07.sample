@@ -1,17 +1,20 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
 anychart.onDocumentReady(function() {
 
-  var data = new anychart.data.Set([
-    ['January', 10000],
-    ['February', 12000],
-    ['March', 18000],
-    ['April', 11000],
-    ['May', 9000]
-  ]);
-  chart = anychart.lineChart();
+     var data = anychart.data.set([
+       ['January', 10000],
+       ['February', 12000],
+       ['March', 18000],
+       ['April', 11000],
+       ['May', 9000]
+     ]);
+     chart = anychart.lineChart();
 
-  chart.yScale().minimum('0').maximum('50000');
+     chart.yScale().minimum('0').maximum('50000');
 
-  chart.container('container');
-  chart.spline(data);
-  chart.draw();
-});
+     chart.container('container');
+     chart.spline(data);
+     chart.draw();
+   });

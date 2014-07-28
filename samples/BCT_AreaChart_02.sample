@@ -11,6 +11,5 @@ var data = anychart.data.set([
     ]);
 chart = anychart.areaChart();
 chart.splineArea(data);
-chart.marker('March, 18000').type('star').size(12).fill('Gold');
 chart.container('container').draw();
 });

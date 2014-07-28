@@ -1,0 +1,46 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
+
+anychart.onDocumentReady(function() {
+var data = anychart.data.set([
+    ['Department Stores', 637166],
+    ['Discount Stores', 721630],
+    ['Men\'s/Women\'s Stores', 148662],
+    ['Juvenile Specialty Stores', 78662],
+    ['All other outlets', 90000]
+  ]);
+stage = acgraph.create('100%', '100%', 'container');
+
+  var title = anychart.elements.title();
+  title.parentBounds(0, 0, "100%", "10%")
+    .text('Slices Sorting Sample')
+    .container(stage)
+    .draw();
+
+  var pie = anychart.pieChart(data);
+  pie.title().text('No sorting');
+  pie.bounds(0, '10%', '33.3%', '50%');
+  pie.legend().enabled(false);
+  pie.background().stroke('#CCCCCC');
+  pie.container(stage);
+  pie.draw();
+
+  var pie_asc = anychart.pieChart(data);
+  pie_asc.title().text('Ascendian');
+  pie_asc.sort('asc');
+  pie_asc.bounds('33.3%', '10%', '33.3%', '50%');
+  pie_asc.legend().enabled(false);
+  pie_asc.background().stroke('#CCCCCC');
+  pie_asc.container(stage);
+  pie_asc.draw();
+
+  var pie_desc = anychart.pieChart(data);
+  pie_desc.title().text('Descending');
+  pie_desc.sort('desc');
+  pie_desc.bounds('66.6%', '10%', '33.3%', '50%');
+  pie_desc.legend().enabled(false);
+  pie_desc.background().stroke('#CCCCCC');
+  pie_desc.container(stage);
+  pie_desc.draw();
+  });

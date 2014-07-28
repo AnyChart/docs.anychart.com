@@ -1,0 +1,25 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
+
+anychart.onDocumentReady(function() {
+ chart = anychart.pieChart([
+    ['Department Stores', 637166],
+    ['Discount Stores', 721630],
+    ['Men\'s/Women\'s Stores', 148662],
+    ['Juvenile Specialty Stores', 78662],
+    ['All other outlets', 90000]
+  ]);
+  //set container id for the chart
+  chart.container('container');
+
+  //set chart title text settings
+  chart.title().text('Pie Chart');
+
+  //enable legend title and title separator
+  chart.legend().enabled(false);
+  chart.explode(30);
+  chart.explodeSlice(0, true);
+  chart.explodeSlice(4, true);
+  chart.draw();
+});

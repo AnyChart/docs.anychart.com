@@ -1,4 +1,9 @@
-var dataSet = new anychart.data.Set([
+{:tags []
+  :is_new false
+  :exports "chart"}
+anychart.onDocumentReady(function() {
+
+var dataSet = anychart.data.set([
     ['P1', '1274', 'missing', 'missing'],
     ['P2', '1397', 'missing', 'missing'],
     ['P3', '1255', 'missing', 'missing'],
@@ -23,12 +28,10 @@ var dataSet = new anychart.data.Set([
 
   chart.container('container');
   
-  var lineSeries = chart.splineArea(seriesData_1).hatchFill('soliddiamond');
+  var lineSeries = chart.splineArea(seriesData_1).hatchFill('soliddiamond').fill('#EEEEEE');
 
-  chart.splineArea(seriesData_2).hatchFill('forwarddiagonal');
+  chart.splineArea(seriesData_2).hatchFill('forwarddiagonal').fill('#EEEEEE');
 
-  var splineArea = chart.splineArea(seriesData_3);
-  splineArea.fill('#2AD62A 0.7');      //setup custom series color with opacity
-  splineArea.hoverFill('#2AD62A 0.7'); //setup custom series hover color with opacity
-  splineArea.hatchFill('backwarddiagonal');
+  var splineArea = chart.splineArea(seriesData_3).fill('#EEEEEE').hatchFill('backwarddiagonal');
   chart.draw();
+  });

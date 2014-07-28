@@ -1,4 +1,8 @@
-  var data = new anychart.data.Set([
+{:tags []
+  :is_new false
+  :exports "chart"}
+anychart.onDocumentReady(function() {
+  var data = anychart.data.set([
     ['Department Stores', 637166, 737166],
     ['Discount Stores', 721630, 537166],
     ['Men\'s/Women\'s Specialty Stores', 148662, 188662],
@@ -19,13 +23,14 @@
     series.tooltip().enabled(true).textFormatter(function() {
     return 'Chanel: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2003';
   });
-    series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
+    series.tooltip().enabled(true).title().enabled(true).text('Information');
   series = chart.bar(Sales2004);
     series.labels().enabled(true).offsetX(20).textFormatter(function(point){
         return point.value;
     });
-    series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
+    series.tooltip().enabled(true).title().enabled(true).text('Information');
      series.tooltip().enabled(true).textFormatter(function() {
     return 'Chanel: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2004';
   });
     chart.container('container').draw();
+    });

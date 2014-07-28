@@ -1,7 +1,10 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
 anychart.onDocumentReady(function() {
   chart = anychart.columnChart();
   chart.container('container');
- var data = new anychart.data.Set([
+ var data = anychart.data.set([
     ['John' , 10000, 12000],
     ['Jake' , 12000, 15000],
     ['Peter' , 18000, 16000],
@@ -26,10 +29,16 @@ anychart.onDocumentReady(function() {
   series = chart.column(Sales2003);
     setupSeriesLabels(series);
     series.hoverFill('#333333');
-    series.tooltip().enabled(false);
+    series.tooltip().enabled(true).title().enabled(true).text('Information');
+     series.tooltip().enabled(true).textFormatter(function() {
+    return 'Manager: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2003';
+  });
   series = chart.column(Sales2004);
  setupSeriesLabels(series);
     series.hoverFill('#333333');
-    series.tooltip().enabled(false);
+series.tooltip().enabled(true).title().enabled(true).text('Information');
+     series.tooltip().enabled(true).textFormatter(function() {
+    return 'Manager: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2004';
+  });
   chart.draw();
 });

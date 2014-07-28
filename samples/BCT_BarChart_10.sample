@@ -1,4 +1,8 @@
-  var data = new anychart.data.Set([
+{:tags []
+  :is_new false
+  :exports "chart"}
+anychart.onDocumentReady(function() {
+  var data = anychart.data.set([
     ['P1', 14, 24, 34, 42, 50],
     ['P2', 19, 26, 39, 45, 61],
     ['P3', 27, 38, 35, 41, 58]
@@ -34,3 +38,4 @@
   chart.yScale().maximum('65');
   chart.container('container');
   chart.draw();
+  });

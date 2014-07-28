@@ -1,3 +1,6 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
 anychart.onDocumentReady(function() {
    chart = anychart.columnChart();
    chart.container('container');

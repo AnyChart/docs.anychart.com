@@ -1,3 +1,6 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
 anychart.onDocumentReady(function() {
   chart = anychart.columnChart();
   chart.container('container');
@@ -9,6 +12,6 @@ anychart.onDocumentReady(function() {
     ['James' , 11000],
     ['Mary' , 9000]
   ]);
-  chart.marker('Peter, 18000').type('star').size(12).fill('Gold');
+  chart.marker('Peter, 18000').type('star').size(12).fill('Gold').hoverSize(16);
   chart.draw();
 });

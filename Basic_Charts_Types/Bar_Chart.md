@@ -5,8 +5,6 @@
   * [Single-Series bar chart](#single_series)
   * [Multi-Series bar chart](#multi_categorized)
   * [Multi-Series bar chart grouped by series](#multi_by_series)
-  * [3D bar chart](#3d_bar)
-  * [3D bar chart clustered by Z Axis](#3d_bar_clustered)
 * [Axes management](#axes)
   * [Positioning](#position)
   * [Inversion](#inversion)
@@ -15,10 +13,9 @@
 * [Using styles](#using_styles)
   * [Simple style](#simple_style)
 * [Working with data labels and tooltips](#working_with_labels_and_tooltips)
-* [Working with colors and color palettes](#colors)
+* [Working with colors](#colors)
   * [Setting colors to the elements](#color_setting)
-  * [Color palettes](#color_palettes)
-* [Working with hatch fills and hatch palettes](#hatches)
+* [Working with hatch fills](#hatches)
   * [Setting hatch fills to the elements](#hatch_setting)
 
 <a name="overview"/>
@@ -36,7 +33,7 @@ Consider using a bar chart when:
 <a name="how_to_create_bar_chart"/>
 ## Chart building
 
-Depending on data model and the visualization purpose the bar chart may contain single series or multi series. AnyChart solution allows to build both 2D (two-dimensional) and 3D (three-dimensional) bar charts.
+Depending on data model and the visualization purpose the bar chart may contain single series or multi series.
 
 <a name="single_series"/>
 ### Single-Series Bar Chart
@@ -97,7 +94,7 @@ $90.000
 Now we need to convert this data table into JSON, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data (Sales) with categories that hold Retail channels names. Each point in series represents one channels and sales amount through this channel. Converted XML Data looks like:
 
 ```
- var data = new anychart.data.Set([
+ var data = anychart.data.set([
     ['Department Stores1', 637166],
     ['Discount Stores', 721630],
     ['Men\'s/Women\'s Specialty Stores', 148662],
@@ -108,7 +105,7 @@ Now we need to convert this data table into JSON, this format will be accepted b
 ```
 As you can see, we've used attribute **"barChart"**, set name's attribute into **first column** to define bar category and **second column** defines bar value.
 
-{sample}BCT\_BarChart\_1{sample}
+{sample}BCT\_BarChart\_01{sample}
 
 <a name="multi_categorized"/>
 ### Multi-series bar chart
@@ -191,7 +188,7 @@ $89.000
 As we do in single-series bar sample above we need to convert this table into JSON, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
 
 ```
-  var data = new anychart.data.Set([
+  var data = anychart.data.set([
     ['Department Stores1', 637166, 737166],
     ['Discount Stores', 721630, 537166],
     ['Men\'s/Women\'s Specialty Stores', 148662, 188662],
@@ -208,7 +205,7 @@ As we do in single-series bar sample above we need to convert this table into JS
 
 As we now have multi-series chart we don't want to set **type** for each series individually (there can be much more than two series in multi-series chart), so we add **anychart.barChart()** attribute to **chart**. Now all series in chart will be **Bar** type by default.
 
-{sample}BCT\_BarChart\_2{sample}
+{sample}BCT\_BarChart\_02{sample}
 
 <a name="axes"/>
 ## Axes managemen
@@ -220,7 +217,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **yAxis** or **xAxis** position attribute.
 
-Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion settings in Axes Positioning and Inverting Templates.
+Positioning depends on plot type and inversion of axes<!--, you will find list of all possible positioning and inversion settings in Axes Positioning and Inverting Templates-->.
 
 ```
 chart.xAxis(0).orientation('right');
@@ -229,9 +226,7 @@ chart.yAxis(0).orientation('top');
 
 And here is the demonstration of this feature on the Single-series sample:
 
-{sample}BCT\_BarChart\_3{sample}
-
-to top
+{sample}BCT\_BarChart\_03{sample}
 
 <a name="inversion"/>
 ### Inversion
@@ -242,9 +237,7 @@ AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is control
 chart.yScale().inverted(true);
 ```
 
-{sample}BCT\_BarChart\_4{sample}
-
-to top
+{sample}BCT\_BarChart\_04{sample}
 
 <a name="min_max"/>
 ### Minimum and Maximum values control
@@ -257,9 +250,7 @@ chart.yScale().minimum('-200000').maximum('800000')
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
 
-{sample}BCT\_BarChart\_5{sample}
-
-to top
+{sample}BCT\_BarChart\_05{sample}
 
 <a name="setup_padding"/>
 ## Paddings between bars and bar groups
@@ -274,26 +265,23 @@ Here is a sample of multi-series bar chart with **xPointPosition** set to 0.5.
 
 {sample}BCT\_BarChart\_11{sample}
 
-to top
-
 <a name="using_styles"/>
 ## Using styles
 
-In this section we will describe main parts of bar chart style and demonstrate how style can be created and applied. Also you will see list of predefined styles.
+In this section we will describe main parts of bar chart style and demonstrate how style can be applied.
 
-The main idea of styles is to segregate visualization and data definition. Visual appearance of bars is defined using certain styles and then you just apply the style to the certain data elements. Style can be applied to data series, data category or single bar.
+The main idea of styles is to segregate visualization and data definition. Visual appearance of bars is defined using certain styles and then you just apply the style to the certain data elements. Style can be applied to data series or single bar.
 
 On the image below you can see what bar_style consists of: fill (including solid color fill, hatch fill, image fill and gradient fill), border and effects applied to whole bar.
 
 ![](http://www.anychart.com/products/anychart/docs/users-guide/img/horz_bar_style_diagram.jpg)
 
-Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when selected, when user moves cursor over an element, etc.
-to top
+Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when user moves cursor over an element, etc.
 
 <a name="simple_style"/>
 ### Simple style
 
-Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an JSON structure:
+Now, let's look how to apply a simple style to the chart. As we've already said style consists of several elements, here is an JSON structure:
 
 ```
 chart.bar(data)
@@ -308,7 +296,7 @@ Using such settings we've created a style that defines bars of Gold color, rathe
 
 Now we will take a sample single-series chart described above, define style in JSON.
 
-{sample}BCT\_BarChart\_6{sample}
+{sample}BCT\_BarChart\_06{sample}
 
 <a name="working_with_labels_and_tooltips"/>
 ## Working with data labels and tooltips
@@ -318,47 +306,42 @@ In this section we will explain how to add and configure data labels and tooltip
 If you want to configure data labels and tooltips for all series - you should do that in **.labels** and **.tooltip** methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the right of the bars, also, we will format labels so they show only the value corresponding to the bar and tooltip will show detailed description.
 
 
-When formatting data labels text we will use **.textFormatter** to show month name. Otherwise sales will be displayed here. 
+When formatting data labels text we will use **.textFormatter** to choose the column we need information from. 
 
-{sample}BCT\_BarChart\_7{sample}
-
+{sample}BCT\_BarChart\_07{sample}
+<!--
 * **Related Help Topics:**
 
 Learn more about labels and tooltips in Labels and tooltips
 Full Keywords reference and formatting guide: Labels and tooltips
-
+-->
 
 <a name="colors"/>
-## Working with colors and color palettes
+## Working with colors
 
-AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can use your own palettes or palettes shipped with AnyChart. Also you can set and apply the color to exact data series or data point.
-
-to top
+AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors.
 
 <a name="color_setting"/>
 ### Setting colors to the elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **".fill"** attribute in the **series** method. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
 
-{sample}BCT\_BarChart\_8{sample}
+{sample}BCT\_BarChart\_08{sample}
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximum one. As you see it is very easy to do by setting **fill** attribute for **point** node.
 
-{sample}BCT\_BarChart\_9{sample}
+{sample}BCT\_BarChart\_09{sample}
 
 **Important Note:**
 
-AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)" or "AliceBlue" or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
+AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)" or "AliceBlue" or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. <!--  But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
 
-* Different ways of setting colors of elements
-to top
+* Different ways of setting colors of elements  -->
 
 <a name="hatches"/>
-## Working with hatch fills and hatch palettes
+## Working with hatch fills
 
 AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings and palettes. To see whole range of available hatch types see Hatch tutorial.
-
-to top
 
 <a name="hatch_setting"/>
 ### Setting hatch fills to the elements
@@ -366,8 +349,4 @@ to top
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting "hatch_type" attribute for **series**.
 
 {sample}BCT\_BarChart\_10{sample}
-
-to top
-
-
-Current Page Online URL: Bar chart
+<!--    rent Page Online URL: Bar chart -->

@@ -1,0 +1,14 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
+anychart.onDocumentReady(function() {
+  var data = anychart.data.set([
+    ['Department Stores1', 637166],
+    ['Discount Stores', 721630],
+    ['Men\'s/Women\'s Specialty Stores', 148662],
+    ['All other outlets', 90000]
+  ]);
+chart = anychart.barChart();
+chart.bar(data);
+chart.container('container').draw();
+});
