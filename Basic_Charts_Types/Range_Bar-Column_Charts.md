@@ -41,7 +41,7 @@ This sample shows how range bars can be used to chart temperature averages, the 
 
 In the sample below we formatted start and end values, colored cylinders as we need and here it is - waterfall chart is displayed.
 
-Live Sample:  Sample Range Cyllinder chart - Waterfall chart
+{sample}BCT_range\_Bar-Column\_Charts\_02{sample}
 
 <a name="configuration"/>
 ## Configuration
