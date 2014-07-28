@@ -95,7 +95,7 @@ var data = [
 var dataSet = anychart.data.set(data);
 
 // create a line chart using the data set 
-var lineChart = anychart.lineChart(dataSet);
+var lineChart = lineChart.apply(null, anychart.data.mapAsTable(dataSet));
 
 // initiate chart drawing
 lineChart.draw();
@@ -115,7 +115,7 @@ var data = [
 var dataSet = anychart.data.set(data);
 
 // create a line chart using the data set 
-var lineChart = anychart.lineChart(dataSet);
+var lineChart = lineChart.apply(null, anychart.data.mapAsTable(dataSet));
 
 // initiate chart drawing
 lineChart.draw();
@@ -136,7 +136,7 @@ var data = [
 var dataSet = anychart.data.set(data);
 
 // create a line chart using the data set 
-var lineChart = anychart.lineChart(dataSet);
+var lineChart = lineChart.apply(null, anychart.data.mapAsTable(dataSet));
 
 // initiate chart drawing
 lineChart.draw();

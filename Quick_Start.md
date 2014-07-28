@@ -25,7 +25,7 @@ Example:
 ```
 <script>
     anychart.onDocumentLoad(function() {
-        var chart = new anychart.pie.Chart([ //create an instance of pie chart with data
+        var chart = anychart.pieChart([ //create an instance of pie chart with data
             ['Chocolate paste', 5],
             ['White honey', 2],
             ['Strawberry jam', 2],
@@ -48,10 +48,10 @@ You can copy this to a file on your computer and open it in your browser to disp
 ```
 <!doctype html>
 <head>
-    <script src="cdn.anychart.com/js/anychart.min.js" type="text/javascript"></script> 
+    <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
     <script>
         anychart.onDocumentLoad(function() {
-            var chart = new anychart.pie.Chart([ //create an instance of pie chart with data
+            var chart = anychart.pieChart([ //create an instance of pie chart with data
                 ['Chocolate paste', 5],
                 ['White honey', 2],
                 ['Strawberry jam', 2],
