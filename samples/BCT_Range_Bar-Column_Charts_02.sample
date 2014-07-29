@@ -1,0 +1,20 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+  chart = anychart.columnChart();
+
+  chart.container('container');
+
+  chart.title().text('Range Bar Chart');
+
+chart.rangeColumn([
+{x: 'Initial', high: 100, low: 0, fill: 'green'},
+{x: 'Deposit', high: 200, low: 100, fill: 'green'},
+{x: 'Withdrawal', high: 200, low: 60, fill: 'red'},
+{x: 'Balance', high: 0, low: 60, fill: 'red'}
+     ]);
+
+  chart.draw();
+});
