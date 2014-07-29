@@ -34,14 +34,15 @@ chart.rangeBar([
 
 This sample shows how range bars can be used to chart temperature averages, the data is taken from UK weather stations 1971-2000 averages statistics:
 
-{sample}BCT_range\_Bar-Column\_Charts\_01{sample}
+{sample}BCT_Range\_Bar-Column\_Charts\_01{sample}
 
 <a name="waterfall"/>
 ## Waterfall Chart Sample
 
 In the sample below we formatted start and end values, colored cylinders as we need and here it is - waterfall chart is displayed.
 
-{sample}BCT_range\_Bar-Column\_Charts\_02{sample}
+{sample}BCT_Range\_Bar-Column\_Charts\_02{sample}
+
 <!--
 <a name="configuration"/>
 ## Configuration
