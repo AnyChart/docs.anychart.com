@@ -27,7 +27,7 @@ Depending on data model and the visualization purpose the area chart may contain
 <a name="single_series"/>
 ### Single Series Line Area Chart
 
-Let's see single-series area chart created using the following data: sales of ACME Corp. through several months in one year:
+Let's see single series area chart created using the following data: sales of ACME Corp. through several months in one year:
 
 <table width="200px" style=" text-align:left; vertical-align:middle; border: 1px solid #cccccc; border-collapse: collapse;">
 <tr>
