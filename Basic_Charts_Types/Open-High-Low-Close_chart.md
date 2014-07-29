@@ -22,9 +22,15 @@
 <a name="overview"/>
 ## Overview
 
-An open-high-low-close chart (also known as OHLC, HLOC chart) is a type of chart typically used to illustrate movements in the price of a financial instrument over time. Each vertical line on the chart shows the price range (the highest and lowest prices) over one unit of time, e.g. one day or one hour. Tick marks project from each side of the line indicating the opening price (e.g. for a daily bar chart this would be the starting price for that day) on the left, and the closing price for that time period on the right. The bars may be shown in different hues depending on whether prices rose or fell in that period.
+An open-high-low-close chart (also known as OHLC, HLOC chart) is a type of chart typically used to illustrate movements in the price of a 
+financial instrument over time. Each vertical line on the chart shows the price range (the highest and lowest prices) over one unit of time, 
+e.g. one day or one hour. Tick marks project from each side of the line indicating the opening price (e.g. for a daily bar chart this would 
+be the starting price for that day) on the left, and the closing price for that time period on the right. The bars may be shown in different 
+hues depending on whether prices rose or fell in that period.
 
-The Japanese candlestick chart is another way of displaying market price data, with the opening and closing prices defining a rectangle within the range for each time unit. Both charts show the exact same data, i.e. the opening, high, low, and closing prices during a particular time frame. Some traders find the candlestick chart easier to read.
+The Japanese candlestick chart is another way of displaying market price data, with the opening and closing prices defining a rectangle within 
+the range for each time unit. Both charts show the exact same data, i.e. the opening, high, low, and closing prices during a particular time frame. 
+Some traders find the candlestick chart easier to read.
 
 <a name="how_to_create_chart"/>
 ## Chart building
@@ -83,32 +89,22 @@ Let's see single-series OHLC chart created using the following data - ACME Corp.
 <td>525.15</td>			
 </tr>
 </tbody></table>
-Now we need to convert this data table into XML, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data with categories that hold days names. Each point in series represents one day and open, high, low, close prices. Converted XML Data looks like:
+Now we need to convert this data table into JSON, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data with categories that hold days names. Each point in series represents one day and open, high, low, close prices. Converted JSON Data looks like:
 
-XML Syntax
-XML Code
-Plain code
-01
-<data>
-02
-  <series name="ACME" type="OHLC">
-03
-    <point name="28-Aug-07" open="511.53" high="514.98" low="505.79" close="506.40" />
-04
-    <point name="29-Aug-07" open="507.84" high="513.30" low="507.23" close="512.88" />
-05
-    <point name="30-Aug-07" open="512.36" high="515.40" low="510.58" close="511.40" />
-06
-    <point name="31-Aug-07" open="513.10" high="516.50" low="511.47" close="515.25" />
-07
-    <point name="4-Sep-07" open="515.02" high="528.00" low="514.62" close="525.15" />
-08
-  </series>
-09
-</data>
-As you can see, we've created one <series> node, specified its type="OHLC", added several <point> nodes and set name attribute that defines category and open, high, low, close attributes that define values.
+```
+     var data = [
+['28-Aug-07', 511.53, 514.98, 505.79, 506.40],
+['29-Aug-07', 507.84, 513.30, 507.23, 512.88],
+['30-Aug-07', 512.36, 515.40, 510.58, 511.40],
+['31-Aug-07', 513.10, 516.50, 511.47, 515.25],
+['4-Sep-07', 515.02, 528.00, 514.62, 525.15]
+      ];
+      chart = anychart.areaChart();
+      chart.ohlc(data);
+```
+As you can see, we've specified chart type as **OHLC**, added several <point> nodes and set name attribute that defines category and open, high, low, close attributes that define values.
 
-Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on on it to see Live Flash Chart preview and full configured XML.
+Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on on it to see this example in background.
 
 Live Sample:  Sample Single-Series OHLC Chart
 
@@ -118,51 +114,84 @@ Live Sample:  Sample Single-Series OHLC Chart
 To compare two or more data rows you have to use multi-series OHLC charts as it shown in the sample below.
 
 Let's compare ACME Corp. and Duff Brewing Corp. stock prices sales:
-
-Company	ACME Corp.	Duff Brewery Corp.
-Day	Open	High	Low	Close	Open	High	Low	Close
-28-Aug-07	511.53	514.98	505.79	506.40	522.95	523.10	522.50	522.52
-29-Aug-07	507.84	513.30	507.23	512.88	522.60	522.69	522.27	522.55
-30-Aug-07	512.36	515.40	510.58	511.40	522.49	522.91	522.38	522.61
-31-Aug-07	513.10	516.50	511.47	515.25	522.81	522.83	522.51	522.73
-4-Sep-07	515.02	528.00	514.62	525.15	523.30	524.50	523.20	523.97
+<table width="287" border="1" class="dtTABLE">
+<tbody><tr>
+<th width="75">Company</th>
+<th colspan="4">ACME Corp.</th>
+<th colspan="4">Duff Brewery Corp.</th>
+</tr>
+<tr>
+<th width="75">Day</th>
+<th width="46">Open</th>
+<th width="46">High</th>	
+<th width="46">Low</th>		
+<th width="46">Close</th>			
+<th width="46">Open</th>
+<th width="46">High</th>	
+<th width="46">Low</th>		
+<th width="46">Close</th>			
+</tr>
+<tr>
+<td>28-Aug-07</td>
+<td>511.53</td>
+<td>514.98</td>
+<td>505.79</td>
+<td>506.40</td>			
+<td>522.95</td>
+<td>523.10</td>
+<td>522.50</td>
+<td>522.52</td>			
+</tr>
+<tr>
+<td>29-Aug-07</td>
+<td>507.84</td>
+<td>513.30</td>
+<td>507.23</td>
+<td>512.88</td>			
+<td>522.60</td>
+<td>522.69</td>
+<td>522.27</td>
+<td>522.55</td>			
+</tr>
+<tr>
+<td>30-Aug-07</td>
+<td>512.36</td>
+<td>515.40</td>
+<td>510.58</td>
+<td>511.40</td>			
+<td>522.49</td>
+<td>522.91</td>
+<td>522.38</td>
+<td>522.61</td>			
+</tr>
+<tr>
+<td>31-Aug-07</td>
+<td>513.10</td>
+<td>516.50</td>
+<td>511.47</td>
+<td>515.25</td>		
+<td>522.81</td>
+<td>522.83</td>
+<td>522.51</td>
+<td>522.73</td>			
+</tr>
+<tr>
+<td>4-Sep-07</td>
+<td>515.02</td>
+<td>528.00</td>
+<td>514.62</td>
+<td>525.15</td>		
+<td>523.30</td>
+<td>524.50</td>
+<td>523.20</td>
+<td>523.97</td>			
+</tr>
+</tbody></table>
 As we do in single series sample above we need to convert this table into XML, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
 
-XML Syntax
-XML Code
-Plain code
-01
-<data>
-02
-  <series name="ACME">
-03
-    <point name="28-Aug-07" open="511.53" high="514.98" low="505.79" close="506.40" />
-04
-    <point name="29-Aug-07" open="507.84" high="513.30" low="507.23" close="512.88" />
-05
-    <point name="30-Aug-07" open="512.36" high="515.40" low="510.58" close="511.40" />
-06
-    <point name="31-Aug-07" open="513.10" high="516.50" low="511.47" close="515.25" />
-07
-    <point name="4-Sep-07" open="515.02" high="528.00" low="514.62" close="525.15" />
-08
-  </series>
-09
-  <series name="Duff">
-10
-    <point name="28-Aug-07" open="522.95" high="523.10" low="522.50" close="522.52" />
-11
-    <point name="29-Aug-07" open="522.60" high="522.69" low="522.27" close="522.55" />
-12
-    <point name="30-Aug-07" open="522.49" high="522.91" low="522.38" close="522.61" />
-13
-    <point name="31-Aug-07" open="522.81" high="522.83" low="522.51" close="522.73" />
-14
-    <point name="4-Sep-07" open="523.30" high="524.50" low="523.20" close="523.97" />
-15
-  </series>
-16
-</data>
+```
+
+```
 As we now have multi-series chart we don't want to set type for each series individually (there can be much more than two series in multi-series chart), so we add <data_plot_settings default_series_type="OHLC"/> node to <chart>. Now all series in chart will be of OHLC type by default.
 
 Live Sample:  Sample Multi-Series Open High Low Close Chart

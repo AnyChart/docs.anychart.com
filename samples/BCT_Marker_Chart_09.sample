@@ -1,0 +1,34 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+  chart = anychart.cartesian.chart();
+
+  chart.xAxis();
+
+  chart.yAxis();
+
+  chart.grid()
+      .evenFill('none')
+      .oddFill('none')
+      .direction(anychart.utils.Direction.VERTICAL);
+
+data = anychart.data.set([
+   ['P!', 132],
+   ['P2', 124],
+   ['P3', 102],
+   ['P4', 119],
+   ['P5', 169],
+   {x: 'P6', value: 237, fill: 'Rgb(77,180,77)'},
+   ['P7', 120],
+   ['P8', 99],
+   {x: 'P9', value: 44, fill: 'Rgb(180,77,77)'},
+   ['P10', 59]
+  ]);
+  markerchart = chart.marker(data);
+ markerchart.fill('#C6D1A5');
+  chart.container('container');
+
+  chart.draw();
+});

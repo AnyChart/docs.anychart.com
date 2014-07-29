@@ -4,7 +4,7 @@
  * [Chart building](#how_to_create_range_chart)
  * [Temperature range chart sample](#temperature)
  * [Waterfall chart sample](#waterfall)
- * [Configuration](#configuration)
+<!-- * [Configuration](#configuration)-->
 
 <a name="overview"/>
 ## Overview
@@ -42,7 +42,7 @@ This sample shows how range bars can be used to chart temperature averages, the 
 In the sample below we formatted start and end values, colored cylinders as we need and here it is - waterfall chart is displayed.
 
 {sample}BCT_range\_Bar-Column\_Charts\_02{sample}
-
+<!--
 <a name="configuration"/>
 ## Configuration
 
@@ -110,3 +110,4 @@ Plain code
 And again, here is a sample resulting chart:
 
 Live Sample:  Sample Range chart - Waterfall chart with style
+-->

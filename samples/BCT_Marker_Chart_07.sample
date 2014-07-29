@@ -1,0 +1,44 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+  chart = anychart.cartesian.chart();
+
+  chart.xAxis();
+
+  chart.yAxis();
+
+  chart.grid()
+      .evenFill('none')
+      .oddFill('none')
+      .direction(anychart.utils.Direction.VERTICAL);
+
+data = anychart.data.set([
+   ['2000', 1100],
+   ['2001', 880],
+   ['2002', 1100],
+   ['2003', 1500],
+   ['2004', 921],
+   ['2005', 1000],
+   ['2006', 1400]
+  ]);
+
+  markerchart = chart.marker(data);
+
+  markerchart.labels()
+  .enabled(true)
+  .rotation(-90)
+  .offsetY(-25)
+  .offsetX(-5);
+
+  markerchart.tooltip()
+  .enabled(true)
+  .title()
+  .enabled(true)
+  .text('Your Tooltip Title');
+
+  chart.container('container');
+
+  chart.draw();
+});

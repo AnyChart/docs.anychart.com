@@ -1,0 +1,41 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+  chart = anychart.cartesian.chart();
+
+  chart.xAxis();
+
+  chart.yAxis();
+
+  chart.grid()
+      .evenFill('none')
+      .oddFill('none')
+      .direction(anychart.utils.Direction.VERTICAL);
+
+data = anychart.data.set([
+   ['P1', 178, 165, 154, 143, 132],
+   ['P2', 167, 153, 144, 133, 122],
+   ]);
+  var data1 = data.mapAs({x: [0], value: [1]});
+  var data2 = data.mapAs({x: [0], value: [2]});
+  var data3 = data.mapAs({x: [0], value: [3]});
+  var data4 = data.mapAs({x: [0], value: [4]});
+  var data5 = data.mapAs({x: [0], value: [5]});
+
+ var series;
+  series = chart.marker(data1);
+  series.fill('#4A55C7');
+  series = chart.marker(data2);
+  series.fill('#5EBD9B');
+  series = chart.marker(data3);
+  series.fill('#B04A8A');
+  series = chart.marker(data4);
+  series.fill('#C7894A');
+  series = chart.marker(data5);
+  series.fill('#BCBD46');
+  chart.container('container');
+
+  chart.draw();
+});
