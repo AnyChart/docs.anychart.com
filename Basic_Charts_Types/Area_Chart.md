@@ -322,7 +322,7 @@ When formatting data labels text we will use **.textFormatter** to show month na
 {sample}BCT\_AreaChart\_11{sample}
 
 <a name="using_markers"/>
-## Using markers
+## Markers
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including areas.
 
