@@ -2,26 +2,26 @@
      :is_new false
      :exports "chart"}
 
-   anychart.onDocumentReady(function() {
-    chart = anychart.pieChart([
-       ['Department Stores', 637166],
-       ['Discount Stores', 721630],
-       ['Men\'s/Women\'s Stores', 148662],
-       ['Juvenile Specialty Stores', 78662],
-       ['All other outlets', 90000]
-     ]);
-   chart.labels()
-   .enabled(true)
-   .offsetX(20)
-   .textFormatter(function(point){
-       return point.value;
-     })
-     .fontColor('black')
-     .fontSize(15);
-     chart.tooltip().enabled(true).contentFormatter(function() {
-       return 'Chanel: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2003';
-     });
-     chart.tooltip().enabled(true).title().enabled(true).text('Information');
-     chart.container('container');
-     chart.draw();
-   });
+anychart.onDocumentReady(function() {
+  chart = anychart.pieChart([
+     ['Department Stores', 637166],
+     ['Discount Stores', 721630],
+     ['Men\'s/Women\'s Stores', 148662],
+     ['Juvenile Specialty Stores', 78662],
+     ['All other outlets', 90000]
+  ]);
+  chart.labels()
+  .enabled(true)
+  .offsetX(20)
+  .textFormatter(function(point){
+    return point.value;
+  })
+    .fontColor('black')
+    .fontSize(15);
+  chart.tooltip().enabled(true).contentFormatter(function() {
+    return 'Chanel: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2003';
+  });
+  chart.tooltip().enabled(true).title().enabled(true).text('Information');
+  chart.container('container');
+  chart.draw();
+});

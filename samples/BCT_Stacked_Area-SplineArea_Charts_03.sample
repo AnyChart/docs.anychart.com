@@ -3,45 +3,29 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  //create data set on our data
   var dataSet = anychart.data.set([
-["Winter", 12000, 12000, 10000],
-["Spring", 13000, 12000, 17000],
-["Summer", 25000, 15000, 19000],
-["Autumn", 16000, 16000, 16000]
+    ["Winter", 12000, 12000, 10000],
+    ["Spring", 13000, 12000, 17000],
+    ["Summer", 25000, 15000, 19000],
+    ["Autumn", 16000, 16000, 16000]
   ]);
 
-  //map data for the first series, take x from the zero column and value from the first column of data set
   var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
-
-  //map data for the second series, take x from the zero column and value from the second column of data set
   var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
-
-  //map data for the third series, take x from the zero column and value from the third column of data set
   var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
 
-  //create area chart
   chart = anychart.areaChart();
 
-  //set container id for the chart
   chart.container('container');
 
-  //set chart title text settings
   chart.title().text('Stacked Area Chart');
 
-  //force chart to stack series values
   chart.yScale().stackMode('value');
 
-  //create first series on mapped data
   chart.stepArea(seriesData_1);
-
-  //create second series on mapped data
   chart.stepArea(seriesData_2);
-
-  //create third series on mapped data
   chart.stepArea(seriesData_3);
 
 
-  //initiate chart drawing
   chart.draw();
 });
