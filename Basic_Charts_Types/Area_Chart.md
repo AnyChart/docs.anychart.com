@@ -2,9 +2,9 @@
 
 * [Overview](#overview)
 * [Chart](#chart)
-  * [Single-Series Area Chart](#single_series)
-  * [Single-Series Spline Area Chart](#single_series_spline)
-  * [Multi-Series Area Chart](#multi_series)
+  * [Single Series Area Chart](#single_series)
+  * [Single Series Spline Area Chart](#single_series_spline)
+  * [Multi-series Area Chart](#multi_series)
 * [Axes](#axes)
   * [Positioning](#position)
   * [Inversion](#inversion)
@@ -14,7 +14,6 @@
   * [Image Fill](#visualization_image_fill)
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Markers](#markers)
-<!-- * [Working with colors](#colors)    -->
 * [Hatch Fill](#hatches)
 
 <a name="overview"/>
@@ -22,13 +21,13 @@
 Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts emphasize the magnitude of change over time, and can be used to draw attention to the total value across a trend. For example, data that represents profit over time can be plotted in an area chart to emphasize the total profit.
 
 <a name="chart"/>
-## Chart Building
+## Chart
 Depending on data model and the visualization purpose the area chart may contain one series or several series.
 
 <a name="single_series"/>
-### Single-Series Line Area Chart
+### Single Series Line Area Chart
 
-Let's see single-series area chart created using the following data: sales of ACME Corp. through several months in one year:
+Let's see single series area chart created using the following data: sales of ACME Corp. through several months in one year:
 
 <table width="200px" style=" text-align:left; vertical-align:middle; border: 1px solid #cccccc; border-collapse: collapse;">
 <tr>
@@ -102,7 +101,7 @@ Here it is: AnyChart can now visualize your data. Look at the chart sample below
 {sample}BCT\_AreaChart\_01{sample}
 
 <a name="single_series_spline"/>
-### Single-Series Spline Area Chart
+### Single Series Spline Area Chart
 
 For better look and feel of your charts you can use SplineArea chart type:
 
@@ -123,7 +122,7 @@ Here is the same chart as shown above, but in Spline mode:
 {sample}BCT\_AreaChart\_02{sample}
 
 <a name="multi_series"/>
-### Multi-Series area chart
+### Multi-series Area Chart
 
 To compare two or more data sets you have to use multi-series area charts as it is shown in the sample below.
 
@@ -323,7 +322,7 @@ When formatting data labels text we will use **.textFormatter** to show month na
 {sample}BCT\_AreaChart\_10{sample}
 
 <a name="using_markers"/>
-## Using markers
+## Markers
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including areas.
 
