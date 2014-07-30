@@ -4,14 +4,14 @@ Quick Start
 ## 3 simple steps to start using AnyChart
 ###1. Include AnyChart into your web page
 Include the JavaScript file in the `<head>` section of your web page.  
-You can use CDN as shown below or visit [download page](./Downloading_AnyChart).  
+You can use CDN as shown below or visit the [download page](./Downloading_AnyChart).  
 ```
 <head>
     <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
 </head>
 ```
-###2. Create container for the chart
-Add a block-based HTML Element into your  page, set `id`, `width` and `height` attributes. AnyChart uses 100% of the container if other behaviour is not specified. 
+###2. Create a container for the chart
+Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. AnyChart uses 100% of the container if other behaviour is not specified. 
 Example:
 ```
 <body>
