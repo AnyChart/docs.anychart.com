@@ -10,8 +10,7 @@ var data = anychart.data.set([
       ['May', 9000]
     ]);
 chart = anychart.areaChart();
-  chart.xAxis(0).orientation('top');
-  chart.yAxis(0).orientation('right');
-chart.area(data);
+chart.splineArea(data);
+chart.yScale().inverted(true);
 chart.container('container').draw();
 });

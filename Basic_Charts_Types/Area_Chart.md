@@ -239,7 +239,7 @@ Positioning depends on plot type and inversion of axes.
 
 And here is the demonstration of this feature on the Single-series sample:
 
-{sample}BCT\_AreaChart\_05{sample}
+{sample}BCT\_AreaChart\_04{sample}
 
 <a name="inversion"/>
 ### Inversion
@@ -252,7 +252,7 @@ AnyChart allows you to invert any axis: Y, X or any extra axis. Inversion is con
 
 And here is the demonstration of Y Axis inversion on the Single-series sample:
 
-{sample}BCT\_AreaChart\_06{sample}
+{sample}BCT\_AreaChart\_05{sample}
 
 <a name="min_max"/>
 ### Minimum and Maximum
@@ -265,7 +265,7 @@ chart.yScale().minimum('0').maximum('50000');
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
 
-{sample}BCT\_AreaChart\_07{sample}
+{sample}BCT\_AreaChart\_06{sample}
 
 <a name="visualization"/>
 ## Visualization
@@ -289,7 +289,7 @@ Using such settings we've created a look that defines area of Gold color, rather
 
 Now we will apply the style to the chart:
 
-{sample}BCT\_AreaChart\_08{sample}
+{sample}BCT\_AreaChart\_07{sample}
 
 <a name="visualization_image_fill"/>
 ### Image fill
@@ -302,7 +302,7 @@ Color is not the only way to design a chart. In this sample we will demonstrate 
         })
 ```
 
-{sample}BCT\_AreaChart\_09{sample}
+{sample}BCT\_AreaChart\_08{sample}
 
 <a name="labels_and_tooltips"/>
 ## Labels and Tooltips
@@ -320,7 +320,7 @@ When formatting data labels text we will use **.textFormatter** to show month na
     });
     series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
 ```
-{sample}BCT\_AreaChart\_11{sample}
+{sample}BCT\_AreaChart\_10{sample}
 
 <a name="using_markers"/>
 ## Using markers
@@ -337,7 +337,7 @@ chart.marker('March, 18000').type('star').size(12).fill('Gold');
 
 And here is a result - March is the most successful month and we are showing this on the chart:
 
-{sample}BCT\_AreaChart\_10{sample}
+{sample}BCT\_AreaChart\_09{sample}
 
 
 <a name="hatches"/>
@@ -352,5 +352,5 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 .hatchFill('backwarddiagonal');
 ```
 
-{sample}BCT\_AreaChart\_12{sample}
+{sample}BCT\_AreaChart\_11{sample}
 

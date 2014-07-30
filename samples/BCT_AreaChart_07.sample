@@ -3,15 +3,20 @@
   :exports "chart"}
 
 anychart.onDocumentReady(function() {
- var data = anychart.data.set([
-      ['January', 10000],
-      ['February', 12000],
-      ['March', 18000],
-      ['April', 11000],
-      ['May', 9000]
-    ]);
+   var data = anychart.data.set([
+  ['January', 10000],
+  ['February', 12000],
+  ['March', 18000],
+  ['April', 11000],
+  ['May', 9000]
+]);
 chart = anychart.areaChart();
-chart.splineArea(data);
-chart.yScale().minimum('0').maximum('50000')
+chart.area(data)
+  .fill('Gold')
+  .hoverFill("darkred")
+  .stroke('#56561a', 4, 0.4)
+  .hatchFill('diagonalbrick', 'gray')
+  .hoverHatchFill('diagonalbrick', 'black');
+  chart.yScale().minimum('8000').maximum('20001');
 chart.container('container').draw();
 });
