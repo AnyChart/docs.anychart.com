@@ -16,16 +16,17 @@ anychart.onDocumentReady(function() {
    .stroke('black 0.075')
    .direction(anychart.utils.Direction.VERTICAL);
  data = anychart.data.set([
-   ['P1', 178, 165, 154, 143, 132],
-   ['P2', 167, 153, 144, 133, 122],
+   ['P1', 14, 24, 34, 42, 50],
+   ['P2', 19, 26, 39, 45, 61],
+   ['P3', 27, 38, 35, 41, 58]
    ]);
-  var data1 = data.mapAs({x: [0], value: [1]});
-  var data2 = data.mapAs({x: [0], value: [2]});
+  var data1 = data.mapAs({x: [0], value: [5]});
+  var data2 = data.mapAs({x: [0], value: [4]});
   var data3 = data.mapAs({x: [0], value: [3]});
-  var data4 = data.mapAs({x: [0], value: [4]});
-  var data5 = data.mapAs({x: [0], value: [5]});
+  var data4 = data.mapAs({x: [0], value: [2]});
+  var data5 = data.mapAs({x: [0], value: [1]});
  chart.marker(data1)
-   .hoverHatchFill('diagonalcross')
+   .hatchFill('diagonalcross')
    .hoverSize(30)
    .size(20)
    .fill('#EEEEEE')

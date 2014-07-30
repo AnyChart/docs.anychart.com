@@ -324,4 +324,4 @@ AnyChart technology allows printing of charts. Some color printers print colors 
 
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 2 data points in each. For every series we've applied different hatch fills by setting **hatchFill** attribute.
 
-Live Sample:  Sample Marker chart - Setting hatch palette to the series
+{sample}BCT\_Marker\_Chart\_10{sample}
