@@ -351,6 +351,5 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 .hatchFill('forwarddiagonal')
 .hatchFill('backwarddiagonal');
 ```
-
 {sample}BCT\_AreaChart\_11{sample}
 
