@@ -4,7 +4,7 @@
 anychart.onDocumentReady(function() {
   chart = anychart.columnChart();
   chart.container('container');
- var data = anychart.data.set([
+  var data = anychart.data.set([
     ['John' , 10000, 12000],
     ['Jake' , 12000, 15000],
     ['Peter' , 18000, 16000],
@@ -14,9 +14,9 @@ anychart.onDocumentReady(function() {
   var Sales2003 = data.mapAs({x: [0], value: [1]});
   var Sales2004 = data.mapAs({x: [0], value: [2]});
   
-    var series;
+  var series;
     
-      var setupSeriesLabels = function(series) {
+  var setupSeriesLabels = function(series) {
     var seriesLabels = series.labels();
     seriesLabels.enabled(true);
     seriesLabels.position('center');
@@ -27,18 +27,20 @@ anychart.onDocumentReady(function() {
   };
     
   series = chart.column(Sales2003);
-    setupSeriesLabels(series);
-    series.hoverFill('#333333');
-    series.tooltip().enabled(true).title().enabled(true).text('Information');
-     series.tooltip().enabled(true).textFormatter(function() {
+  setupSeriesLabels(series);
+  series.hoverFill('#333333');
+  series.tooltip().enabled(true).title().enabled(true).text('Information');
+  series.tooltip().enabled(true).contentFormatter(function() {
     return 'Manager: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2003';
   });
+
   series = chart.column(Sales2004);
- setupSeriesLabels(series);
-    series.hoverFill('#333333');
-series.tooltip().enabled(true).title().enabled(true).text('Information');
-     series.tooltip().enabled(true).textFormatter(function() {
+  setupSeriesLabels(series);
+  series.hoverFill('#333333');
+  series.tooltip().enabled(true).title().enabled(true).text('Information');
+  series.tooltip().enabled(true).contentFormatter(function() {
     return 'Manager: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2004';
   });
+
   chart.draw();
 });

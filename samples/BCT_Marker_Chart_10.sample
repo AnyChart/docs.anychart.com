@@ -6,11 +6,16 @@ anychart.onDocumentReady(function() {
   chart = anychart.cartesian.chart();
   chart.xAxis();
   chart.yAxis();
-  chart.grid()
-    .evenFill('none')
-    .oddFill('none')
-    .direction(anychart.utils.Direction.VERTICAL);
-data = anychart.data.set([
+
+ chart.grid()
+   .direction(anychart.utils.Direction.HORIZONTAL);
+
+ chart.minorGrid()
+   .evenFill('none')
+   .oddFill('none')
+   .stroke('black 0.075')
+   .direction(anychart.utils.Direction.VERTICAL);
+ data = anychart.data.set([
    ['P1', 178, 165, 154, 143, 132],
    ['P2', 167, 153, 144, 133, 122],
    ]);
@@ -20,34 +25,34 @@ data = anychart.data.set([
   var data4 = data.mapAs({x: [0], value: [4]});
   var data5 = data.mapAs({x: [0], value: [5]});
  chart.marker(data1)
-    .hoverHatchFill('diagonalcross')
-    .hoverSize(30)
-    .size(20)
-    .fill('#EEEEEE')
-    .type('star5');
+   .hoverHatchFill('diagonalcross')
+   .hoverSize(30)
+   .size(20)
+   .fill('#EEEEEE')
+   .type('star5');
  chart.marker(data2)
-    .hoverSize(30)
-    .size(20)
-    .fill('#EEEEEE')
-    .hatchFill('diagonalbrick')
-    .type('star4');
+   .hoverSize(30)
+   .size(20)
+   .fill('#EEEEEE')
+   .hatchFill('diagonalbrick')
+   .type('star4');
  series = chart.marker(data3)
-    .hoverSize(30)
-    .size(20)
-    .fill('#EEEEEE')
-    .hatchFill('zigzag');
+   .hoverSize(30)
+   .size(20)
+   .fill('#EEEEEE')
+   .hatchFill('zigzag');
  series = chart.marker(data4)
-    .hoverSize(30)
-    .size(20)
-    .fill('#EEEEEE')
-    .hatchFill('checkerboard')
-    .type('square');
+   .hoverSize(30)
+   .size(20)
+   .fill('#EEEEEE')
+   .hatchFill('checkerboard')
+   .type('square');
  series = chart.marker(data5)
-    .hoverSize(30)
-    .size(20)
-    .fill('#EEEEEE')
-    .hatchFill('percent30')
-    .type('circle');
+   .hoverSize(30)
+   .size(20)
+   .fill('#EEEEEE')
+   .hatchFill('percent30')
+   .type('circle');
  chart.container('container');
 
  chart.draw();
