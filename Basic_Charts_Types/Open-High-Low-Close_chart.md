@@ -1,7 +1,7 @@
 # Open High Low Close (OHLC) Chart
 
 * [Overview](#overview)
-* [Chart Building](#create)
+* [Chart](#create)
   * [Single Series](#single)
   * [Multi-series](#multi)
 * [Axes management](#axes)
@@ -12,7 +12,7 @@
   * [Simple style sample](#simple_style)
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Colors](#colors)
-  * [Setting colors to the elements](#color_setting)
+  * [Colorizing elements](#color_setting)
 * [Advanced OHLC Chart sample - OHLC, Line and Range Area Combination](#advanced-ohlc-stock-charting)
 
 <a name="overview"/>
@@ -29,7 +29,7 @@ the range for each time unit. Both charts show the exact same data, i.e. the ope
 Some traders find the candlestick chart easier to read.
 
 <a name="create"/>
-## Chart building
+## Chart
 
 OHLC chart uses four values
 ```
@@ -39,7 +39,6 @@ OHLC chart uses four values
 ### Single-Series
 
 Let's see single-series OHLC chart created using the following data - ACME Corp. stock price changes through one week:
-
 
 <table width="337" border="1" class="dtTABLE">
 <tbody><tr>
@@ -291,7 +290,7 @@ Full reference of data labels settings can be found in XML Reference, particular
 AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can use your own palettes or palettes shipped with AnyChart. Also you can set and apply the color to exact data series or data point.
 
 <a name="color_setting"/>
-### Setting colors to the elements
+### Colorizing elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set "color". In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
 
@@ -304,9 +303,6 @@ In the sample below we will see how we can colorize individual points. We have c
 Important Note:
 
 AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "Rgb(180,77,77)" you can set "HSV(?,?,?)" or "HTMLConstant" or "#HEXCode"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
-
-Different ways of setting colors of elements
-Advanced coloring techniques in Styles tutorial
 
 <a name="advanced-ohlc-stock-charting"/>
 ## Advanced OHLC Chart sample - OHLC, Line and Range Area Combination

@@ -73,7 +73,7 @@ anychart.onDocumentReady(function() {
   var seriesData_2 = dataSet.mapAs({x: [0], open: [3], high: [4], low: [5], close: [6]});
   var seriesData_3 = dataSet.mapAs({x: [0], value: [7]});
 
-  chart = anychart.columnChart();
+  chart = anychart.lineChart();
 
   chart.container(stage);
   chart.yScale().inverted(true);
@@ -86,10 +86,11 @@ anychart.onDocumentReady(function() {
 
   chart.title().text('ACME Corp. Stock Prices: 11.05.07 - 07.08.07');
   chart.bounds(0, 0, '100%', '70%');
-  chart.draw();
   chart.xAxis().staggerLines(1);
+  chart.xAxis().title().enabled(false);
+  chart.draw();
 
-  columnChart = anychart.areaChart();
+  columnChart = anychart.columnChart();
   columnChart.container(stage);
 
   columnChart.column([
@@ -159,5 +160,6 @@ anychart.onDocumentReady(function() {
   columnChart.xAxis().staggerLines(1);
   columnChart.title().enabled(false);
   columnChart.bounds(0, '70%', '100%', '30%');
+  columnChart.xAxis().title().enabled(false);
   columnChart.draw();
 });
