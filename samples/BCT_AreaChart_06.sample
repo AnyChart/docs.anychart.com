@@ -12,6 +12,6 @@ anychart.onDocumentReady(function() {
     ]);
 chart = anychart.areaChart();
 chart.splineArea(data);
-chart.yScale().minimum('0').maximum('50000')
+chart.yScale().minimum('0').maximum('50000');
 chart.container('container').draw();
 });
