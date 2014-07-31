@@ -1,0 +1,26 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+  var data = [
+     ['White', 507, 511, 506, 510],
+     ['Black', 510, 511, 506, 507],
+     ['Long lower shadow', 508.5, 511, 506, 510],
+     ['Long upper shadow', 508.5, 511, 506, 507],
+     ['Hammer', 510, 511, 506, 511],
+     ['Inverted hammer', 507, 511, 506,506],
+     ['Spinning top white', 508, 511, 506, 509],
+     ['Spinning top black', 509, 511, 506, 508],
+     ['Doji', 508.5, 510, 507, 508.5],
+     ['Long legged doji', 508.5, 511, 506, 508.5],
+     ['Dragonfly doji', 511, 511, 506, 511],
+     ['Gravestone doji', 506, 511, 506, 506],
+     ['Marubozu white', 506, 511, 506, 511],
+     ['Marubozu black', 511, 511, 506, 506]
+  ];
+  chart = anychart.lineChart();
+  chart.candlestick(data);
+  chart.container('container');
+  chart.draw();
+});
