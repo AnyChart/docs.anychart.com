@@ -158,6 +158,7 @@ anychart.onDocumentReady(function() {
   ]);
   columnChart.yScale().inverted(false);
   columnChart.xAxis().staggerLines(1);
+  columnChart.yAxis().staggerLines(1);
   columnChart.title().enabled(false);
   columnChart.bounds(0, '70%', '100%', '30%');
   columnChart.xAxis().title().enabled(false);

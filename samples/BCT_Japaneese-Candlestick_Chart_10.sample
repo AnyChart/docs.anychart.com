@@ -81,7 +81,7 @@ anychart.onDocumentReady(function() {
   var rangeAreaSeria = chart.rangeSplineArea(seriesData_1);
   rangeAreaSeria.fill('lightblue 0.7');
   rangeAreaSeria.hoverFill('lightblue 0.7');
-  chart.ohlc(seriesData_2).color('green').tooltip().enabled(false);
+  chart.candlestick(seriesData_2).color('green').tooltip().enabled(false);
   chart.spline(seriesData_3).markers(null).stroke('red');
 
   chart.title().text('ACME Corp. Stock Prices: 11.05.07 - 07.08.07');

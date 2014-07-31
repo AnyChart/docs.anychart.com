@@ -200,8 +200,6 @@ As we do in single series sample above we need to convert this table into XML, t
 ['4-Sep-07', 523.30, 524.50, 523.20, 523.97]
       ]);
 ```
-As we now have multi-series chart we don't want to set type for each series individually (there can be much more than two series in multi-series chart), so we add <data_plot_settings default_series_type="OHLC"/> node to <chart>. Now all series in chart will be of OHLC type by default.
-
 {sample}BCT\_OHLC\_Chart\_02{sample}
 
 <a name="axes"/>
@@ -287,7 +285,7 @@ Full reference of data labels settings can be found in XML Reference, particular
 <a name="colors"/>
 ## Colors
 
-AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can use your own palettes or palettes shipped with AnyChart. Also you can set and apply the color to exact data series or data point.
+AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can apply the color to exact data series or data point.
 
 <a name="color_setting"/>
 ### Colorizing elements
@@ -300,7 +298,7 @@ In the sample below we will see how we can colorize individual points. We have c
 
 {sample}BCT\_OHLC\_Chart\_09{sample}
 
-Important Note:
+**Important Note:**
 
 AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "Rgb(180,77,77)" you can set "HSV(?,?,?)" or "HTMLConstant" or "#HEXCode"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
 

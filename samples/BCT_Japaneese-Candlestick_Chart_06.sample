@@ -11,7 +11,7 @@ anychart.onDocumentReady(function() {
     ['4-Sep-07', 515.02, 528.00, 514.62, 525.15]
   ];
   chart = anychart.areaChart();
-  chart.ohlc(data)
+  chart.candlestick(data)
   .fallingStroke('red', 3)
   .risingStroke('green', 3)
   .hoverFallingStroke('darkred', 5)

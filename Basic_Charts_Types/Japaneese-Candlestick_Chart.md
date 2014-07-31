@@ -253,232 +253,127 @@ Let's compare ACME Corp. and Duff Brewing Corp. stock prices sales:
 </tr>
 </tbody></table>
 As we do in single series sample above we need to convert this table into XML, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
+```
+      chart.candlestick([
+['28-Aug-07', 511.53, 514.98, 505.79, 506.40],
+['29-Aug-07', 507.84, 513.30, 507.23, 512.88],
+['30-Aug-07', 512.36, 515.40, 510.58, 511.40],
+['31-Aug-07', 513.10, 516.50, 511.47, 515.25],
+['4-Sep-07', 515.02, 528.00, 514.62, 525.15]
+      ]);
+      chart.candlestick([
+['28-Aug-07', 522.95, 523.10, 522.50, 522.52],
+['29-Aug-07', 522.60, 522.69, 522.27, 522.55],
+['30-Aug-07', 522.49, 522.91, 522.38, 522.61],
+['31-Aug-07', 522.81, 522.83, 522.51, 522.73],
+['4-Sep-07', 523.30, 524.50, 523.20, 523.97]
+      ]);
+```
+{sample}BCT\_Japaneese-Candlestick\_Chart\_02{sample}
 
-XML Syntax
-XML Code
-Plain code
-01
-<data>
-02
-  <series name="ACME">
-03
-    <point name="28-Aug-07" open="511.53" high="514.98" low="505.79" close="506.40" />
-04
-    <point name="29-Aug-07" open="507.84" high="513.30" low="507.23" close="512.88" />
-05
-    <point name="30-Aug-07" open="512.36" high="515.40" low="510.58" close="511.40" />
-06
-    <point name="31-Aug-07" open="513.10" high="516.50" low="511.47" close="515.25" />
-07
-    <point name="4-Sep-07" open="515.02" high="528.00" low="514.62" close="525.15" />
-08
-  </series>
-09
-  <series name="Duff">
-10
-    <point name="28-Aug-07" open="522.95" high="523.10" low="522.50" close="522.52" />
-11
-    <point name="29-Aug-07" open="522.60" high="522.69" low="522.27" close="522.55" />
-12
-    <point name="30-Aug-07" open="522.49" high="522.91" low="522.38" close="522.61" />
-13
-    <point name="31-Aug-07" open="522.81" high="522.83" low="522.51" close="522.73" />
-14
-    <point name="4-Sep-07" open="523.30" high="524.50" low="523.20" close="523.97" />
-15
-  </series>
-16
-</data>
-As we now have multi-series chart we don't want to set type for each series individually (there can be much more than two series in multi-series chart), so we add <data_plot_settings default_series_type="Candlestick"/> node to <chart>. Now all series in chart will be of Candlestick type by default.
-
-Live Sample:  Sample Multi-Series Candlestick Chart
 <a name="axes"/>
 ## Axes management
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in Working with Axes tutorial, in this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and much more. In this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 <a name="position"/>
 ### Positioning
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position attribute of <y_axis> or <x_axis> nodes.
-
-Positioning depends on plot type and inversion of axes, you will find list of all possible positining and inversion settings in Axes Positioning and Inverting Templates.
-
-XML Syntax
-XML Code
-Plain code
-01
-<axes>
-02
-  <y_axis position="Opposite" />
-03
-  <x_axis position="Opposite" />
-04
-</axes>
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **orientation** method of **yAxis** or **xAxis** attributes.
+```
+  chart.xAxis(0).orientation('top');
+  chart.yAxis(0).orientation('right');
+```
 And here is the demonstration of this feature on the Single-series sample:
 
-Live Sample:  Axes Position Sample Single-Series Candlestick Chart
+{sample}BCT\_Japaneese-Candlestick\_Chart\_03{sample}
+
 <a name="logarithmic"/>
 ### Logarithmic
 
-AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by axis <scale>:
-
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <scale type="Logarithmic" />
-03
-</y_axis>
+AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by **scale**:
+```
+  logScale = anychart.scales.log();
+  logScale.minimum(0.1).maximum(100);
+  chart.yScale(logScale);
+```
 And here is the demonstration of Logarithmic Y Axis on slightly modified the Single-series sample:
 
-Live Sample:  Axis Logarithmic Sample Single-Series Japaneese Candlestick Chart
+{sample}BCT\_Japaneese-Candlestick\_Chart\_04{sample}
+
 <a name="min_max"/>
 ### Minimum and Maximum values control
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting maximum and minimum attributes of <scale> node:
-
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <scale minimum="505" maximum="530" />
-03
-</y_axis>
+By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting maximum and minimum attributes of yScale method:
+```
+chart.yScale().minimum('505').maximum('530')
+```
 And here is the demonstration of maximum and minimum values on the Single-series sample:
 
-Live Sample:  Scale Maximum and Minimum Values Sample Single-Series Candlestick Chart
+{sample}BCT\_Japaneese-Candlestick\_Chart\_05{sample}
 
-<a name="visualization"/>
+<a name="Visualization"/>
 ## Visualization
 
-In this section we will describe main parts of Candlestick chart style and demonstrate how style can be created and applied. Also you will see list of predefined styles.
-
-The main idea of styles is to segregate visualization and data definition. Visual appearance of lines is defined using certain styles and then you just apply the style to the certain data elements. Style can be applied to data series, data category or single data point.
-
-Candlestick chart style can be configured in <candlestick_style> and <candlestick_series> nodes.
-Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when selected, when user moves cursor over an element, etc. More information about these features can be found in Interactivity tutorial.
+In this section we will describe main parts of candlestick chart visualization and ways to adjust it. Also you will see list of predefined styles.  Visual appearance of candlestick is defined using certain methods. The most important for candlestick methods are **fallingStroke()**, **risingStroke()** and **.color()**.
 
 <a name="simple_style"/>
-### Simple style
+### Basic sample
 
-Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an XML structure:
+Now, let's look how to adjust candlestick appearance:
 
-XML Syntax
-XML Code
-Plain code
-01
-<candlestick_style name="style1">
-02
-  <line caps="none" />
-03
-  <up>
-04
-    <fill type="Solid" color="White" />
-05
-  </up>
-06
-  <down>
-07
-    <fill type="Solid" color="Black" />
-08
-  </down>
-09
-  <effects>
-10
-    <bevel enabled="true" highlight_opacity="0.4" shadow_opacity="0.4" distance="2" />
-11
-    <drop_shadow enabled="true" opacity="0.3" />
-12
-  </effects>
-13
-  <states>
-14
-    <hover>
-15
-      <border enabled="true" thickness="3" color="Red" />
-16
-    </hover>
-17
-  </states>
-18
-</candlestick_style>
-Using such settings we've created a style that defines how candlestick will be colored when price goes up (<up> node and how when it goes down (<down> node), and a couple of effects applied. Also, we've defined that when user will move cursor over an element border will become rather thick and their color will turn to Red.
+```
+chart.candlestick(data)
+  .fallingStroke('red', 3)
+  .risingStroke('green', 3)
+  .hoverFallingStroke('darkred', 5)
+  .hoverRisingStroke('darkgreen', 5);
+```
+Using these settings we've set red color for every falling candlestick point and green color for every rising candlestick point. Also, our rising candlestick points have dark green color, if mouse is over, as well as all falling points have dark red color, if mouse is over. Thickness of strokes was adjusted too. It's 3 px for all points and 5px if mouse over. 
 
-Now we will take a sample single series chart described above, define style in XML and apply it to all chart elements, using <candlestick_series style="style1"/>
+{sample}BCT\_Japaneese-Candlestick\_Chart\_06{sample}
 
-Live Sample:  Sample Simple Style for Candlestick chart
 <a name="labels_and_tooltips"/>
 ## Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.
 
-If you want to configure data labels and tooltips for all series - you should do that in <label> and <tooltip> sub-nodes of <candlestick_series> node. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
+If you want to configure data labels and tooltips for all series - you should do that with **labels()** and **tooltip()** methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
 
-When formatting data labels text and tooltip we will use formatting keywords: 
-{%Open} - to show opening price,
-{%High} - to show highest price,
-{%Low} - to show lowest price,
-{%Close} - to show closing price.
+When formatting data labels text and tooltip we can use contentFormatter and textFormatter.
 
-Live Sample:  Sample Japaneese Candlestick chart - Working with data labels and tooltips
-
+{sample}BCT\_Japaneese-Candlestick\_Chart\_07{sample}
+<!--
 Related Help Topics:
 
 Learn more about labels and tooltips in Labels and tooltips
 Full Keywords reference and formatting guide:Labels and tooltips
 Full reference of data labels settings can be found in XML Reference, particularly <label_style> and <label> nodes.
+-->
 <a name="colors"/>
 ## Colors
 
-AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can use your own palettes or palettes shipped with AnyChart. Also you can set and apply the color to exact data series or data point.
+AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can apply the color to exact data series or data point.
 
 <a name="color_setting"/>
-### Setting colors to the elements
+### Colorizing elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set "color" attribute in the <series> node. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set "color". In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
 
-Live Sample:  Sample Candlestick chart - Setting colors to the elements
+{sample}BCT\_Japaneese-Candlestick\_Chart\_08{sample}
 
-In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. As you see it is very easy to do by setting "color" attribute for <point> node.
+In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. As you see it is very easy to do by setting "fallingStroke" and "risingStroke" attribute for point.
 
-Live Sample:  Sample Candlestick chart - Setting colors to the series
+{sample}BCT\_Japaneese-Candlestick\_Chart\_09{sample}
 
-Important Note:
+**Important Note:**
 
 AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "Rgb(180,77,77)" you can set "HSV(?,?,?)" or "HTMLConstant" or "#HEXCode"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
 
-Different ways of setting colors of elements
-Advanced coloring techniques in Styles tutorial
-to top
+<a name="advanced-candlestick-stock-charting"/>
+## Advanced Candlestick Chart sample - Candlestick, Line and Range Area Combination
 
-Color palettes
-
-AnyChart allows to apply color palettes to all series or to the exact series. In the first case each next series will take each next color from palette. If the number of the colors in palette is less than the number of series - palette will be looped. If you have only one series it will be colored by the first color in the palette. To apply palette to all series we have to set "palette" attribute in <data> node. Here it is:
-
-Live Sample:  Sample Candlestick chart - Setting Palette to all series
-
-When you have one series only, sometimes it is useful to color each point in series. You can do it by setting color of each point individually or you can apply a palette. For sure the second method is easier and more useful. To apply palette to the exact series you should set "palette" attribute for exact <series> node.
-
-Live Sample:  Sample Candlestick chart - Working with palettes - Setting Palettes to the certain series
-
-In the samples above we have shown usage of predefined palettes only, but AnyChart allows to create your own custom palettes. To learn more about it read Palettes tutorial.
-
-Advanced Candlestick Chart sample - Japanese Candlestick, Line and Range Area Combination
-
-In the real world application Candlestick rarely used alone, in technical analysis they are often combined with other chart types, such as Lines (to show moving average), Range Areas (to show "Bollinger bands"), and column charts (to show trading volume).
+In the real world application Open-High-Low-Close rarely used alone, in technical analysis they are often combined with other chart types, such as Lines (to show **moving average**), Range Areas (to show **"Bollinger bands"**), and column charts (to show **trading volume**).
 
 AnyChart provides most of features that developer needs to create a complex financial chart, this includes Combination charts, Dashboards and Interactivity features. The sample below shows a typical stock trading report and it can be used as a starting point in your integration of AnyChart into Financial/Trading/Reporting application.
 
- 
-
-Live Sample:  Sample Candlestick chart - Advanced usage - Candlestick Area Line Combination Report Dashboard
-
- 
-
-to top
-
-Current Page Online URL: Japanese Candlestick Chart
+{sample}BCT\_Japaneese-Candlestick\_Chart\_10{sample}

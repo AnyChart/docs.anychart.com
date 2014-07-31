@@ -11,7 +11,7 @@ anychart.onDocumentReady(function() {
     ['4-Sep-07', 20, 52.00, 5.62, 20]
   ];
   chart = anychart.areaChart();
-  chart.ohlc(data);
+  chart.candlestick(data);
   var logScale = anychart.scales.log();
   logScale.minimum(0.1).maximum(100);
   chart.yScale(logScale);

@@ -16,11 +16,11 @@ anychart.onDocumentReady(function() {
 
   chart = anychart.areaChart();
   chart.container('container');
-  chart.ohlc(seriesData_1).xPointPosition(0.5).color('#BCBD46');
-  chart.ohlc(seriesData_2).xPointPosition(0.5).color('#C7894A');
-  chart.ohlc(seriesData_3).xPointPosition(0.5).color('#B04A8A');
-  chart.ohlc(seriesData_4).xPointPosition(0.5).color('#5EBD9B');
-  chart.ohlc(seriesData_5).xPointPosition(0.5).color('#4A55C7');
+  chart.candlestick(seriesData_1).xPointPosition(0.5).color('#BCBD46');
+  chart.candlestick(seriesData_2).xPointPosition(0.5).color('#C7894A');
+  chart.candlestick(seriesData_3).xPointPosition(0.5).color('#B04A8A');
+  chart.candlestick(seriesData_4).xPointPosition(0.5).color('#5EBD9B');
+  chart.candlestick(seriesData_5).xPointPosition(0.5).color('#4A55C7');
 
   chart.draw();
 });
