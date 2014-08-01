@@ -28,7 +28,7 @@ Some traders find the candlestick chart easier to read, than [Open-High-Low-Clos
 <a name="create"/>
 ## Chart building
 
-Candlestick chart uses four values, so we need to pass opening, high, low and closing price values to chart, this should be done setting **open**, **high**, **low**, **close** attributes into second. third, fourth and fifth columns:
+Candlestick chart uses four values, so we need to pass opening, high, low and closing price values to chart, this should be done setting **open**, **high**, **low**, **close** attributes into second, third, fourth and fifth columns:
 
 ```
    ['White', 507, 511, 506, 510]
@@ -175,6 +175,7 @@ Here it is - AnyChart can now visualize your data. Look at the chart sample belo
 ### Multi-Series
 
 To compare two or more data rows you have to use multi-series candlestick charts as it shown in the sample below.
+
 
 Let's compare ACME Corp. and Duff Brewing Corp. stock prices sales:
 <table width="287" border="1" class="dtTABLE">
