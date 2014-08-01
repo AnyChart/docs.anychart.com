@@ -1,6 +1,7 @@
 {:tags []
      :is_new false
-     :exports "chart"}
+     :exports "chart"
+     :name "lol"}
 
 anychart.onDocumentReady(function() {
   var data = [

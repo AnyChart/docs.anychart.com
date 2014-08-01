@@ -9,7 +9,7 @@
   * [Logarithmic Scale](#logarithmic)                                                                                     
   * [Minimum and Maximum values control](#min_max)                                                                        
 * [Visualization](#visualization)                                                                                         
-  * [Simple style sample](#simple_style)                                                                                  
+  * [Basic sample](#basic_style)                                                                                  
 * [Labels and Tooltips](#labels_and_tooltips)                                                                                                                                                                                                                                                                                   	
 * [Colors](#colors)                                                                                                       	
   * [Setting colors to the elements](#color_setting)                                                                                                                                                                                                                         
@@ -314,7 +314,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 In this section we will describe main parts of candlestick chart visualization and ways to adjust it. Also you will see list of predefined styles.  Visual appearance of candlestick is defined using certain methods. The most important for candlestick methods are **fallingStroke()**, **risingStroke()**, **.risingFill()** and **.fallingFill()**.
 
-<a name="simple_style"/>
+<a name="basic_style"/>
 ### Basic sample
 
 Now, let's look how to adjust candlestick appearance:
