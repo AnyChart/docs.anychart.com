@@ -359,7 +359,7 @@ Let's demonstrate how to apply different colors to different data series. To app
 
 {sample}BCT\_Japaneese-Candlestick\_Chart\_08{sample}
 
-In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. As you see it is very easy to do by setting "fallingStroke" and "risingStroke" attribute for point.
+In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set **"Rgb(180,77,77)"** color for minimum point and **"Rgb(77,180,77)"** for the maximal one. As you see it is very easy to do by setting "fallingStroke" and "risingStroke" attribute for point.
 
 {sample}BCT\_Japaneese-Candlestick\_Chart\_09{sample}
 
