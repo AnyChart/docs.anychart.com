@@ -13,7 +13,7 @@ anychart.onDocumentReady(function() {
   chart = anychart.financialChart();
   chart.xScale(anychart.scales.ordinal());
   chart.candlestick(data);
-  chart.yScale().minimum('505').maximum('530');
+  chart.yScale().minimum('505').maximum('530')ticks().interval(5);
   chart.container('container');
   chart.draw();
 });
