@@ -128,7 +128,7 @@ Sample chart below is exploded by default, you can launch the live sample and cl
 
 In this section we will describe main parts of pie chart style and demonstrate how style can be applied. 
 
-Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when user moves cursor over an element, etc. <--More information about these features can be found in Interactivity tutorial.-->
+Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when user moves cursor over an element, etc. <!--More information about these features can be found in Interactivity tutorial.-->
 
 <a name="simple_style"/>
 ### Simple style

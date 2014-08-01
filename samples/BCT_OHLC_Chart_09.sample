@@ -10,7 +10,8 @@ anychart.onDocumentReady(function() {
     {x: '31-Aug-07', open: 513.10, high: 516.50, low: 511.47, close: 515.25},
     {x: '4-Sep-07', open: 515.02, high: 528.00, low: 514.62, close: 525.15, risingStroke: 'Rgb(180,77,77)'}
   ];
-  chart = anychart.areaChart();
+  chart = anychart.financialChart();
+  chart.xScale(anychart.scales.ordinal());
   chart.ohlc(data).color('#C6D1A5');
   chart.container('container');
   chart.draw();

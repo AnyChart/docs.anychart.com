@@ -14,7 +14,8 @@ anychart.onDocumentReady(function() {
   var seriesData_4 = data.mapAs({x: [0], open: [13], high: [14], low: [15], close: [16]});
   var seriesData_5 = data.mapAs({x: [0], open: [17], high: [18], low: [19], close: [20]});
 
-  chart = anychart.areaChart();
+  chart = anychart.financialChart();
+  chart.xScale(anychart.scales.ordinal());
   chart.container('container');
   chart.ohlc(seriesData_1).xPointPosition(0.5).pointWidth('60%').color('#BCBD46');
   chart.ohlc(seriesData_2).xPointPosition(0.5).pointWidth('60%').color('#C7894A');

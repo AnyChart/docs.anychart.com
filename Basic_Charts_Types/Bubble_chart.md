@@ -1,7 +1,7 @@
 # Bubble Chart                                                                                     
                                                                                     
 * [Overview](#overview)                        
-* [Chart building](#how_to_create_chart)             
+* [Chart](#chart)             
   * [Single-Series bubble chart categorized vertically](#single_series_vertical)         
   * [Single-Series bubble chart categorized horizontally](#single_series_horizontal)
   * [Single-Series bubble chart scatter plot](#single_series_scatterplot)
@@ -32,7 +32,7 @@
 <a name="overview"/>
 ## Overview
 
-A Bubble chart is a variation of a Scatter chart in which the data points are replaced with bubbles. A Bubble chart can be used instead of a Scatter chart if your data has three data series, each of which contains a set of values. In AnyChart Bubble chart can be plotted not only on the scatter plot, but on categorized plot as well.
+A Bubble chart is a variation of a Scatter chart in which the data points are replaced with bubbles. A Bubble chart can be used instead of a <!--[link in need]-->Scatter chart<!--[link]--> if your data has three data series, each of which contains a set of values. In AnyChart Bubble chart can be plotted not only on the scatter plot, but on categorized plot as well.
 
 Bubble charts are often used to present financial data. Use a Bubble chart when you want specific values to be more visually represented in your chart by different bubble sizes.
 
@@ -40,7 +40,7 @@ Bubble charts are popular tools for identifying and illustrating industry cluste
 
 to top
 
-<a name="how_to_create_chart"/>
+<a name="chart"/>
 ## Chart building
 
 Depending on data model and the visualization purpose the bar chart may contain single series or multi series. As bubble chart need 3 values to show bubbles - you need to pass this data to chart:
@@ -62,57 +62,29 @@ When using Bubble chart on a categorized plot:
 
 Let's see single series bubble chart created using the sample data - ACME Corp. sales data for the three different products, we will compare a number of units sold and profit using a bubble chart:
 
-<table width="300px" style=" text-align:left; vertical-align:middle; border: 1px solid #cccccc; border-collapse: collapse;">
-<tr>
-<th width="100px" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
-Product
-</th>
-<th width="100px" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
-Units	
-</th>
-<th width="100px" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
-Profit
-</th>
+<table width="376" border="1" class="dtTABLE">
+<tbody><tr>
+<th width="214"><b>Product</b></th>
+<th width="70"><b>Units</b></th>
+<th width="70"><b>Profit</b></th>	
 </tr>
 <tr>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-Product A
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-637
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$6
-</td>
+<td>Product A </td>
+<td>637</td>
+<td>$6</td>	
 </tr>
 <tr>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-Product B
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-	72
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-	$14
-</td>
+<td>Product B </td>
+<td>72</td>
+<td>$14</td>	
 </tr>
 <tr>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-Product C
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-	48
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-	$10
-</td>
+<td>Product C </td>
+<td>48</td>
+<td>$10</td>
 </tr>
-</table>
-Product	Units	Profit
-Product A	637	$6
-Product B	72	$14
-Product C	48	$10
-Now we need to convert this data table into XML, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data (Sales) with categories that hold Product names. Each point in series represents product, units sold and a profit amount. Converted XML Data looks like:
+</tbody></table>
+Now we need to convert this data table into acceptable format, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data (Sales) with categories that hold Product names. Each point in series represents product, units sold and a profit amount. Converted XML Data looks like:
 
 XML Syntax
 XML Code

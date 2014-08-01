@@ -3,7 +3,8 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  chart = anychart.areaChart();
+  chart = anychart.financialChart();
+  chart.xScale(anychart.scales.ordinal());
   chart.candlestick([
     ['28-Aug-07', 511.53, 514.98, 505.79, 506.40],
     ['29-Aug-07', 507.84, 513.30, 507.23, 512.88],

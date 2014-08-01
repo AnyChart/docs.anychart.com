@@ -10,7 +10,8 @@ anychart.onDocumentReady(function() {
     ['31-Aug-07', 51.10, 51.50, 5.47, 9],
     ['4-Sep-07', 20, 52.00, 5.62, 20]
   ];
-  chart = anychart.areaChart();
+  chart = anychart.financialChart();
+  chart.xScale(anychart.scales.ordinal());
   chart.candlestick(data);
   var logScale = anychart.scales.log();
   logScale.minimum(0.1).maximum(100);
