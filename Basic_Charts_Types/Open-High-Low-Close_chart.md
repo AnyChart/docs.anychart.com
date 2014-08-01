@@ -9,7 +9,7 @@
   * [Logarithmic Scale](#logarithmic)
   * [Minimum and Maximum values control](#min_max)
 * [Visualization](#visualization)
-  * [Simple style sample](#simple_style)
+  * [Basic sample](#basic_style)
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Colors](#colors)
   * [Colorizing elements](#color_setting)
@@ -249,7 +249,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 In this section we will describe main parts of OHLC chart visualization and ways to adjust it. Also you will see list of predefined styles.  Visual appearance of OHLC is defined using certain methods. The most important for OHLC methods are **fallingStroke()** and **risingStroke()**.
 
-<a name="simple_style"/>
+<a name="basic_style"/>
 ### Basic sample
 
 Now, let's look how to adjust OHLC appearance:
@@ -272,7 +272,7 @@ In this section we will explain how to add and configure data labels and tooltip
 
 If you want to configure data labels and tooltips for all series - you should do that with **labels()** and **tooltip()** methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
 
-When formatting data labels text and tooltip we can use contentFormatter and textFormatter.
+When formatting data labels text and tooltip we can use **contentFormatter()** and **textFormatter()**.
 
 {sample}BCT\_OHLC\_Chart\_07{sample}
 <!--

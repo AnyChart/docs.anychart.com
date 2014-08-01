@@ -12,10 +12,12 @@ anychart.onDocumentReady(function() {
   ];
   chart = anychart.areaChart();
   chart.candlestick(data)
-  .fallingStroke('red', 3)
-  .risingStroke('green', 3)
-  .hoverFallingStroke('darkred', 5)
-  .hoverRisingStroke('darkgreen', 5);
+    .fallingStroke('black', 1)
+    .risingStroke('black', 1)
+    .hoverFallingStroke('red', 3)
+    .hoverRisingStroke('red', 3)
+    .fallingFill('black')
+    .risingFill('white');
   chart.container('container');
   chart.draw();
 });

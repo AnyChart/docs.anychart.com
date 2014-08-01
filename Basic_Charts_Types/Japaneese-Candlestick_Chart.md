@@ -176,7 +176,6 @@ Here it is - AnyChart can now visualize your data. Look at the chart sample belo
 
 To compare two or more data rows you have to use multi-series candlestick charts as it shown in the sample below.
 
-
 Let's compare ACME Corp. and Duff Brewing Corp. stock prices sales:
 <table width="287" border="1" class="dtTABLE">
 <tbody><tr>
@@ -251,7 +250,7 @@ Let's compare ACME Corp. and Duff Brewing Corp. stock prices sales:
 <td>523.97</td>			
 </tr>
 </tbody></table>
-As we do in single series sample above we need to convert this table into XML, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
+As we do in single series sample above we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have two data sets - one for each year:
 ```
       chart.candlestick([
 ['28-Aug-07', 511.53, 514.98, 505.79, 506.40],
@@ -313,7 +312,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 <a name="Visualization"/>
 ## Visualization
 
-In this section we will describe main parts of candlestick chart visualization and ways to adjust it. Also you will see list of predefined styles.  Visual appearance of candlestick is defined using certain methods. The most important for candlestick methods are **fallingStroke()**, **risingStroke()** and **.color()**.
+In this section we will describe main parts of candlestick chart visualization and ways to adjust it. Also you will see list of predefined styles.  Visual appearance of candlestick is defined using certain methods. The most important for candlestick methods are **fallingStroke()**, **risingStroke()**, **.risingFill()** and **.fallingFill()**.
 
 <a name="simple_style"/>
 ### Basic sample
@@ -338,7 +337,7 @@ In this section we will explain how to add and configure data labels and tooltip
 
 If you want to configure data labels and tooltips for all series - you should do that with **labels()** and **tooltip()** methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
 
-When formatting data labels text and tooltip we can use contentFormatter and textFormatter.
+When formatting data labels text and tooltip we can use **contentFormatter** and **textFormatter**.
 
 {sample}BCT\_Japaneese-Candlestick\_Chart\_07{sample}
 <!--
