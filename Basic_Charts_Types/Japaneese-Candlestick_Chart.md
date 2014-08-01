@@ -24,11 +24,11 @@ The Japanese candlestick chart a style of bar-chart used primarily to describe p
 
 Candlesticks are usually composed of the body (black or white), an upper and a lower shadow (wick). The wick illustrates the highest and lowest traded prices of a stock, and the body the opening and closing trades. If the stock went up, the body is white, with the opening price at the bottom of the body and the closing price at the top. If the stock went down, the body is black, with the opening price at the top and the closing price at the bottom. A candlestick need not have either a body or a wick.
 
-Some traders find the candlestick chart easier to read, than Open-High-Low-Close charts.
+Some traders find the candlestick chart easier to read, than [Open-High-Low-Close charts](Open-High-Low-Close_chart).
 <a name="create"/>
 ## Chart building
 
-Candlestick chart uses four values, so we need to pass opening, high, low and closing price values to chart, this should be done using open, high, low, close attributes of <point> node:
+Candlestick chart uses four values, so we need to pass opening, high, low and closing price values to chart, this should be done setting **open**, **high**, **low**, **close** attributes into second. third, fourth and fifth columns:
 
 ```
    ['White', 507, 511, 506, 510]
@@ -40,11 +40,11 @@ Let's see single-series candlestick chart created using an imaginable price rang
 
 <table width="319" border="1" class="dtTABLE">
 <tbody><tr>
-<th width="133">Pattern</th>
-<th width="38">Open</th>
-<th width="38">High</th>	
-<th width="38">Low</th>		
-<th width="38">Close</th>			
+<th width="133"><b>Pattern</b></th>
+<th width="38"><b>Open</b></th>
+<th width="38"><b>High</b></th>	
+<th width="38"><b>Low</b></th>		
+<th width="38"><b>Close</b></th>			
 </tr>
 <tr>
 <td>White </td>
@@ -177,24 +177,22 @@ Here it is - AnyChart can now visualize your data. Look at the chart sample belo
 To compare two or more data rows you have to use multi-series candlestick charts as it shown in the sample below.
 
 Let's compare ACME Corp. and Duff Brewing Corp. stock prices sales:
-
-Let's compare ACME Corp. and Duff Brewing Corp. stock prices sales:
 <table width="287" border="1" class="dtTABLE">
 <tbody><tr>
-<th width="75">Company</th>
-<th colspan="4">ACME Corp.</th>
-<th colspan="4">Duff Brewery Corp.</th>
+<th width="75"><b>Company</b></th>
+<th colspan="4"><b>ACME Corp</b>.</th>
+<th colspan="4"><b>Duff Brewery Corp</b>.</th>
 </tr>
 <tr>
-<th width="75">Day</th>
-<th width="46">Open</th>
-<th width="46">High</th>	
-<th width="46">Low</th>		
-<th width="46">Close</th>			
-<th width="46">Open</th>
-<th width="46">High</th>	
-<th width="46">Low</th>		
-<th width="46">Close</th>			
+<th width="75"><b>Day</b></th>
+<th width="46"><b>Open</b></th>
+<th width="46"><b>High</b></th>	
+<th width="46"><b>Low</b></th>		
+<th width="46"><b>Close</b></th>			
+<th width="46"><b>Open</b></th>
+<th width="46"><b>High</b></th>	
+<th width="46"><b>Low</b></th>		
+<th width="46"><b>Close</b></th>			
 </tr>
 <tr>
 <td>28-Aug-07</td>

@@ -20,7 +20,11 @@ anychart.onDocumentReady(function() {
      ['Marubozu black', 511, 511, 506, 506]
   ];
   chart = anychart.lineChart();
-  chart.candlestick(data);
+  chart.candlestick(data)
+    .fallingFill('black')
+    .fallingStroke('black')
+    .risingFill('white')
+    .risingStroke('black');
   chart.container('container');
   chart.draw();
 });
