@@ -2,12 +2,8 @@
                                                                                     
 * [Overview](#overview)                        
 * [Chart](#chart)             
-  * [Single-Series bubble chart categorized vertically](#single_series_vertical)         
-  * [Single-Series bubble chart categorized horizontally](#single_series_horizontal)
-  * [Single-Series bubble chart scatter plot](#single_series_scatterplot)
+  * [Single-Series bubble chart](#single_series)
   * [Multi-Series bubble chart](#multi_categorized)                  
-  * [Multi-Series bubble chart grouped by series](#multi_by_series)                                
-  * [Multi-Series bubble chart scatter plot](#multi_series_scatterplot)       
 * [Controlling Bubbles size](#size)                                                                                                   
   * [Bubbles minimum and maximum size](#size)                    
   * [Size multiplier](#size)                                                                                             
@@ -57,8 +53,8 @@ When using Bubble chart on a categorized plot:
 ['December', 6, 17]
 ```
 
-<a name="single_series_vertical"/>
-### Single-Series Bubble Chart - Categorized Vertically
+<a name="single_series"/>
+### Single-Series Bubble Chart
 
 Let's see single series bubble chart created using the sample data - ACME Corp. sales data for the three different products, we will compare a number of units sold and profit using a bubble chart:
 
@@ -86,53 +82,18 @@ Let's see single series bubble chart created using the sample data - ACME Corp. 
 </tbody></table>
 Now we need to convert this data table into acceptable format, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data (Sales) with categories that hold Product names. Each point in series represents product, units sold and a profit amount. Converted XML Data looks like:
 
-XML Syntax
-XML Code
-Plain code
-01
-<data>
-02
-  <series name="ACME" type="Bubble">
-03
-    <point name="Product A" y="637" size="6" />
-04
-    <point name="Product B" y="72" size="14" />
-05
-    <point name="Product C" y="48" size="10" />
-06
-  </series>
-07
-</data>
-As you can see, we've created one <series> node, specified its type="Bubble", added several <point> nodes and set name attribute that defines bar category and y attribute that defines bar value.
+```
+chart.bubble([
+    ['Product A', 637, 6],
+    ['Product B', 472, 14],
+    ['Product C', 48, 10]
+  ]).minimumSize(2).maximumSize(40);
+```
+As you can see, we've categoriesed chart ad **bubble**, set attribute that defines bar category into first and second columns and attribute that defines bubble size into third one.
 
-Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on on it to see Live Flash Chart preview and full configured XML.
+Here it is - AnyChart can now visualize your data. You can launch it in playground and modify it.
 
-Live Sample:  Sample Single-Series Bubble Chart Vertical
-
-to top
-
-<a name="single_series_horizontal"/>
-### Single-Series Bubble Chart - Categorized Horizontally
-
-If you want to use long names of the products - you may consider building a horizontally oriented bubble chart. To do this you need to set plot_type attribute of chart node to "CategorizedHorizontal":
-
-XML Syntax
-XML Code
-Plain code
-01
-<chart plot_type="CategorizedHorizontal" />
-Here it is, we've added a couple of products with long names to the data set and switched an orientation:
-
-Live Sample:  Sample Single-Series Bubble Chart Horizontal
-
-to top
-
-<a name="single_series_scatterplot"/>
-### Single-Series bubble chart scatter plot
-
-The sample of bubble chart in scatter plot can be found in Scatter Charts Tutorial.
-
-to top
+{sample}BCT\_Bubble\_Chart\_01{sample}
 
 <a name="multi_categorized"/>
 ### Multi-series bubble chart
@@ -142,139 +103,51 @@ To compare two or more data rows you have to use multi-series bar charts as it s
 Let's compare year 2003 sales to year 2004 product sales:
 
 <table width="536" border="1" class="dtTABLE">
-<tbody>
-<tr>
-<th width="227" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
-Year
-</th>
-<th width="141" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;" colspan="2">
-Year 2003 Sales
-</th>  
-<th width="141" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;" colspan="2">
-Year 2004 Sales
-</th>
+<tbody><tr>
+<th width="227">Year</th>
+<th width="141" colspan="2">Year 2003 Sales</th>  
+<th width="141" colspan="2">Year 2004 Sales</th>
 </tr>
 <tr>
-<th width="227" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
-Product
-</th>
-<th width="141" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
-Units
-</th>  
-<th width="141" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
-Profit
-</th>    
-<th width="141" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
-Units
-</th>  
-<th width="141" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
-Profit
-</th>    
+<th width="227">Product</th>
+<th width="141">Units</th>  
+<th width="141">Profit</th>    
+<th width="141">Units</th>  
+<th width="141">Profit</th>    
 </tr>  
 <tr>
-<td>
-Product A
-</td>
-<td>
-637
-</td>
-<td>
-$6
-</td>	
-<td>
-630
-</td>
-<td>
-$12
-</td>	
+<td>Product A</td>
+<td>637</td>
+<td>$6</td>	
+<td>630</td>
+<td>$12</td>	
 </tr>
 <tr>
-<td>
-Product B
-</td>
-<td>
-72
-</td>
-<td>
-$14
-</td>
-<td>
-32
-</td>
-<td>
-$10
-</td>
+<td>Product B</td>
+<td>72</td>
+<td>$14</td>	
+<td>32</td>
+<td>$10</td>	
 </tr>
 <tr>
-<td>
-Product C
-</td>
-<td>
-48
-</td>
-<td>
-$10
-</td>
-<td>
-48
-</td>
-<td>
-$20
-</td>
+<td>Product C</td>
+<td>48</td>
+<td>$10</td>
+<td>48</td>
+<td>$20</td>
 </tr>
-</tbody>
-</table>
-
-As we do in single-series bubble sample above we need to convert this table into XML, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
-
-XML Syntax
-XML Code
-Plain code
-01
-<data>
-02
-  <series name="Year 2004" type="Bubble">
-03
-    <point name="Product A" y="630" size="12" />
-04
-    <point name="Product B" y="32" size="10" />
-05
-    <point name="Product C" y="48" size="20" />
-06
-  </series>
-07
-  <series name="Year 2003" type="Bubble">
-08
-    <point name="Product A" y="637" size="6" />
-09
-    <point name="Product B" y="72" size="14" />
-10
-    <point name="Product C" y="48" size="10" />
-11
-  </series>
-12
-</data>
-As we now have multi-series chart we don't want to set type for each series individually (there can be much more than two series in multi-series chart), so we add <data_plot_settings default_series_type="Bubble"/> node to <chart>. Now all series in chart will be of Bubble type by default.
-
-Live Sample:  Sample Multi-series Bubble chart
-
-to top
-
-<a name="multi_by_series"/>
-### Multi-Series Bubble Chart grouped by series
-
-Sometimes it is useful to visualize comparison in a different way - group bars be series. In our sample it means that we want to compare sales in each year. You don't have to reformat your data to do this - all you need to do is to switch plot_type attribute to "CategorizedBySeriesVertical". Look at the resulting chart below:
-
-Live Sample:  Sample Multi-Series Bubble Chart grouped by series
-
-to top
-
-<a name="multi_series_scatterplot"/>
-### Multi-Series bubble chart scatter plot
-
-The sample of bubble chart in scatter plot can be found in Scatter Charts Tutorial.
-
-to top
+</tbody></table>
+As we do in single-series bubble sample above we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have bigger data and we have to **MapAs()** it.
+```lesser
+var dataSet = anychart.data.set([
+    ['Product A', 637, 6, 630, 12],
+    ['Product B', 72, 14, 32, 10],
+    ['Product C', 48, 10, 48, 20]
+  ]);
+  var seriesData_1 = dataSet.mapAs({x: [0], value: [1], size:[2]});
+  var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
+```
+{sample}BCT\_Bubble\_Chart\_02{sample}
 
 <a name="size"/>
 ## Controlling Bubbles size
@@ -282,14 +155,11 @@ to top
 <a name="size-minimum-maximum"/>
 ### Bubbles minimum and maximum size
 
-Bubbles minimum and maximum size can be controlled using maximum_bubble_size and minimum_bubble_size attributes of <bubble_series> node. Both of them can be set in percents of a lesser dataplot side (this can be width or height) and in pixels:
-
-XML Syntax
-XML Code
-Plain code
-01
-<bubble_series maximum_bubble_size="20%" minimum_bubble_size="10%" />
-When you set maximum_bubble_size="20%" - AnyChart will make diameters of bubble(s) with a biggest size equal to 20% the lesser of two: width or the height of data plot.
+Bubbles minimum and maximum size can be controlled using **maximumSize()** and **minimumSize()** attributes. Both of them can be set in percents of a lesser dataplot side (this can be width or height) and in pixels:
+```
+chart.maximumSize(25).minimumSize(1);
+```
+When you set **maximumSize('20%')** - AnyChart will make diameters of bubble(s) with a biggest size equal to 20% the lesser of two: width or the height of data plot.
 
 Here is the sample when bubbles are size in percents, as specified above:
 
