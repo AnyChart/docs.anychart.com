@@ -7,7 +7,7 @@
 * [Axes management](#axes)                                                                                                	
   * [Positioning](#position)                                                                                              
   * [Logarithmic Scale](#logarithmic)                                                                                     
-  * [Minimum and Maximum values control](#min_max)                                                                        
+  * [Minimum and Maximum values](#min_max)                                                                        
 * [Visualization](#visualization)                                                                                         
   * [Basic sample](#basic_style)                                                                                  
 * [Labels and Tooltips](#labels_and_tooltips)                                                                                                                                                                                                                                                                                   	
@@ -299,7 +299,7 @@ And here is the demonstration of Logarithmic Y Axis on slightly modified the Sin
 {sample}BCT\_Japaneese-Candlestick\_Chart\_04{sample}
 
 <a name="min_max"/>
-### Minimum and Maximum values control
+### Minimum and Maximum values
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting maximum and minimum attributes of yScale method:
 ```
@@ -320,11 +320,13 @@ In this section we will describe main parts of candlestick chart visualization a
 Now, let's look how to adjust candlestick appearance:
 
 ```
-chart.candlestick(data)
-  .fallingStroke('red', 3)
-  .risingStroke('green', 3)
-  .hoverFallingStroke('darkred', 5)
-  .hoverRisingStroke('darkgreen', 5);
+ chart.candlestick(data)
+    .fallingStroke('black', 1)
+    .risingStroke('black', 1)
+    .hoverFallingStroke('red', 3)
+    .hoverRisingStroke('red', 3)
+    .fallingFill('black')
+    .risingFill('white');
 ```
 Using these settings we've set red color for every falling candlestick point and green color for every rising candlestick point. Also, our rising candlestick points have dark green color, if mouse is over, as well as all falling points have dark red color, if mouse is over. Thickness of strokes was adjusted too. It's 3 px for all points and 5px if mouse over. 
 

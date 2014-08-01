@@ -7,7 +7,7 @@
 * [Axes management](#axes)
   * [Positioning](#position)
   * [Logarithmic Scale](#logarithmic)
-  * [Minimum and Maximum values control](#min_max)
+  * [Minimum and Maximum values](#min_max)
 * [Visualization](#visualization)
   * [Basic sample](#basic_style)
 * [Labels and Tooltips](#labels_and_tooltips)
@@ -18,13 +18,13 @@
 <a name="overview"/>
 ## Overview
 
-An open-high-low-close chart (also known as OHLC, HLOC chart) is a type of chart typically used to illustrate movements in the price of a 
+An **open-high-low-close** chart (also known as **OHLC**, **HLOC** chart) is a type of chart typically used to illustrate movements in the price of a 
 financial instrument over time. Each vertical line on the chart shows the price range (the highest and lowest prices) over one unit of time, 
 e.g. one day or one hour. Tick marks project from each side of the line indicating the opening price (e.g. for a daily bar chart this would 
 be the starting price for that day) on the left, and the closing price for that time period on the right. The bars may be shown in different 
 hues depending on whether prices rose or fell in that period.
 
-The Japanese candlestick chart is another way of displaying market price data, with the opening and closing prices defining a rectangle within 
+The [Japanese candlestick chart](Japaneese-Candlestick_Chart) is another way of displaying market price data, with the opening and closing prices defining a rectangle within 
 the range for each time unit. Both charts show the exact same data, i.e. the opening, high, low, and closing prices during a particular time frame. 
 Some traders find the candlestick chart easier to read.
 
@@ -42,11 +42,11 @@ Let's see single-series OHLC chart created using the following data - ACME Corp.
 
 <table width="337" border="1" class="dtTABLE">
 <tbody><tr>
-<th width="125">Day</th>
-<th width="38">Open</th>
-<th width="46">High</th>	
-<th width="43">Low</th>		
-<th width="51">Close</th>			
+<th width="125"><b>Day</b></th>
+<th width="38"><b>Open</b></th>
+<th width="46"><b>High</b></th>	
+<th width="43"><b>Low</b></th>		
+<th width="51"><b>Close</b></th>			
 </tr>
 <tr>
 <td>28-Aug-07</td>
@@ -111,20 +111,20 @@ To compare two or more data rows you have to use multi-series OHLC charts as it 
 Let's compare ACME Corp. and Duff Brewing Corp. stock prices sales:
 <table width="287" border="1" class="dtTABLE">
 <tbody><tr>
-<th width="75">Company</th>
-<th colspan="4">ACME Corp.</th>
-<th colspan="4">Duff Brewery Corp.</th>
+<th width="75"><b>Company</b></th>
+<th colspan="4"><b>ACME Corp.</b></th>
+<th colspan="4"><b>Duff Brewery Corp.</b></th>
 </tr>
 <tr>
-<th width="75">Day</th>
-<th width="46">Open</th>
-<th width="46">High</th>	
-<th width="46">Low</th>		
-<th width="46">Close</th>			
-<th width="46">Open</th>
-<th width="46">High</th>	
-<th width="46">Low</th>		
-<th width="46">Close</th>			
+<th width="75"><b>Day</b></th>
+<th width="46"><b>Open</b></th>
+<th width="46"><b>High</b></th>	
+<th width="46"><b>Low</b></th>		
+<th width="46"><b>Close</b></th>			
+<th width="46"><b>Open</b></th>
+<th width="46"><b>High</b></th>	
+<th width="46"><b>Low</b></th>		
+<th width="46"><b>Close</b></th>			
 </tr>
 <tr>
 <td>28-Aug-07</td>
@@ -182,8 +182,7 @@ Let's compare ACME Corp. and Duff Brewing Corp. stock prices sales:
 <td>523.97</td>			
 </tr>
 </tbody></table>
-As we do in single series sample above we need to convert this table into XML, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
-
+As we do in single series sample above we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have two data sets - one for each year:
 ```
       chart.ohlc([
 ['28-Aug-07', 511.53, 514.98, 505.79, 506.40],
@@ -210,7 +209,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 <a name="position"/>
 ### Positioning
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **orientation** method of **yAxis** or **xAxis** attributes.
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **orientation()** method of **yAxis()** or **xAxis()** attributes.
 ```
   chart.xAxis(0).orientation('top');
   chart.yAxis(0).orientation('right');
@@ -233,9 +232,9 @@ And here is the demonstration of Logarithmic Y Axis on slightly modified the Sin
 {sample}BCT\_OHLC\_Chart\_04{sample}
 
 <a name="min_max"/>
-### Minimum and Maximum values control
+### Minimum and Maximum values
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting maximum and minimum attributes of **yScale** method:
+By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting **maximum()** and **minimum()** attributes of **yScale** method:
 
 ```
 chart.yScale().minimum('505').maximum('530')
@@ -290,11 +289,11 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 <a name="color_setting"/>
 ### Colorizing elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set "color". In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **color()**. In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
 
 {sample}BCT\_OHLC\_Chart\_08{sample}
 
-In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. As you see it is very easy to do by setting "fallingStroke" and "risingStroke" attribute for point.
+In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set **"Rgb(180,77,77)"** color for minimum point and **"Rgb(77,180,77)"** for the maximal one. As you see it is very easy to do by setting **fallingStroke()** and **risingStroke()** attribute for point.
 
 {sample}BCT\_OHLC\_Chart\_09{sample}
 
@@ -310,5 +309,3 @@ In the real world application Open-High-Low-Close rarely used alone, in technica
 AnyChart provides most of features that developer needs to create a complex financial chart, this includes Combination charts, Dashboards and Interactivity features. The sample below shows a typical stock trading report and it can be used as a starting point in your integration of AnyChart into Financial/Trading/Reporting application.
 
 {sample}BCT\_OHLC\_Chart\_10{sample}
-
-Current Page Online URL: Open High Low Close (OHLC) Chart
