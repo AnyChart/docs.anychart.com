@@ -2,7 +2,8 @@
                                                                                     
 * [Overview](#overview)
 * [Chart](#chart)
-  * [Single-Series bubble chart](#single_series)* [Multi-Series bubble chart](#multi_categorized)
+  * [Single-Series bubble chart](#single_series)
+  * [Multi-Series bubble chart](#multi_categorized)
 * [Controlling Bubbles size](#size)
   * [Bubbles minimum and maximum size](#size)
   <!--* [Size multiplier](#size)-->
