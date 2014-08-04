@@ -4,18 +4,14 @@
 
 anychart.onDocumentReady(function() {
   var container ='container';
-  var dataSet = anychart.data.set([
-    ['Product A', 637, 6, 630, 12],
-    ['Product B', 72, 14, 32, 10],
-    ['Product C', 48, 10, 48, 20]
-  ]);
-  var seriesData_1 = dataSet.mapAs({x: [0], value: [1], size:[2]});
-  var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
-
   chart = anychart.lineChart();
-
-  chart.bubble(seriesData_2).maximumSize(25).minimumSize(1);
-  chart.bubble(seriesData_1).maximumSize(25).minimumSize(1);
+  chart.bubble([
+    ['Product A', 637, 6],
+    ['Product B', 472, 14],
+    ['Product С', 48, 20],
+    ['Product D', 348, 18],
+    ['Product E', 100, 10]
+  ]).minimumSize('10%').maximumSize('20%');
   chart.container('container');
   chart.draw();
 });

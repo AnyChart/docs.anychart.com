@@ -1,29 +1,24 @@
 # Bubble Chart                                                                                     
                                                                                     
-* [Overview](#overview)                        
-* [Chart](#chart)             
-  * [Single-Series bubble chart](#single_series)
-  * [Multi-Series bubble chart](#multi_categorized)                  
-* [Controlling Bubbles size](#size)                                                                                                   
-  * [Bubbles minimum and maximum size](#size)                    
-  * [Size multiplier](#size)                                                                                             
-* [Axes management](#axes)                                                                                                               
-  * [Preventing bubbles overlapping](#overlap)                     
-  * [Positioning](#position)                    
-  * [Inversion](#inversion)                 
-  * [Minimum and Maximum values control](#min_max)                                                                                               
-* [Using styles](#using_styles)                                                                                                     
-  * [Simple style sample](#simple_style)                    
-  * [Application of different styles to chart elements](#several_styles)                  
-  * [Predefined styles](#predefined_styles)                                                                                               
-* [Working with data labels and tooltips](#working_with_labels_and_tooltips)  
-* [Using markers](#using_markers)                     
-* [Working with colors and color palettes](#colors)                                                                                           
-  * [Setting colors to the elements](#color_setting)               
-  * [Color palettes](#color_palettes)                                                                                             
-* [Working with hatch fills and hatch palettes](#hatches)                                                                                              
-  * [Setting hatch fills to the elements](#hatch_setting)               
-  * [Hatch palettes](#hatch_palettes)                                                                                                                                                    
+* [Overview](#overview)
+* [Chart](#chart)
+  * [Single-Series bubble chart](#single_series)* [Multi-Series bubble chart](#multi_categorized)
+* [Controlling Bubbles size](#size)
+  * [Bubbles minimum and maximum size](#size)
+  <!--* [Size multiplier](#size)
+* [Axes management](#axes)* [Positioning](#position)
+  * [Inversion](#inversion)
+  * [Minimum and Maximum values control](#min_max)
+* [Visualization](#visualization)
+  * [Basic sample](#visualization_simple_style)
+* [Labels and Tooltips](#labels_and_tooltips)
+* [Using markers](#using_markers)
+* [Working with colors and color palettes](#colors)
+  * [Setting colors to the elements](#color_setting)
+  * [Color palettes](#color_palettes)
+* [Working with hatch fills and hatch palettes](#hatches)
+  * [Setting hatch fills to the elements](#hatch_setting)
+  * [Hatch palettes](#hatch_palettes)
  
 <a name="overview"/>
 ## Overview
@@ -34,7 +29,6 @@ Bubble charts are often used to present financial data. Use a Bubble chart when 
 
 Bubble charts are popular tools for identifying and illustrating industry clusters. Essentially, these charts allow four different variables to be plotted within the same graph, making it easy to assess relative economic performance. Because they allow visual comparisons of well-understood measures, bubble charts are often used for pinpointing priority industries that should receive attention from a state economic development agency.
 
-to top
 
 <a name="chart"/>
 ## Chart building
@@ -138,7 +132,8 @@ Let's compare year 2003 sales to year 2004 product sales:
 </tr>
 </tbody></table>
 As we do in single-series bubble sample above we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have bigger data and we have to **MapAs()** it.
-```lesser
+
+```
 var dataSet = anychart.data.set([
     ['Product A', 637, 6, 630, 12],
     ['Product B', 72, 14, 32, 10],
@@ -163,21 +158,17 @@ When you set **maximumSize('20%')** - AnyChart will make diameters of bubble(s) 
 
 Here is the sample when bubbles are size in percents, as specified above:
 
-Live Sample:  Sample Single-Series Bubble Chart Size in Percents
+{sample}BCT\_Bubble\_Chart\_03{sample}
 
 And in this sample when bubbles are sized in pixels:
 
-XML Syntax
-XML Code
-Plain code
-01
-<bubble_series maximum_bubble_size="100" minimum_bubble_size="10" />
+```
+chart.maximumSize(100).minimumSize(10);
+```
 Note again, that setting size in pixels may lead to the nasty results when chart is resized.
 
-Live Sample:  Sample Single-Series Bubble Chart Size in Pixels
-
-to top
-
+{sample}BCT\_Bubble\_Chart\_04{sample}
+<!--
 <a name="size-multiplier"/>
 ### Size multiplier
 
@@ -209,255 +200,73 @@ Live Sample:  Sample Bubble Chart Size Multiplier Percents
 
 Note: if bubble_size_multiplier is used - maximum_bubble_size and minimum_bubble_size are ignored.
 to top
-
+-->
 <a name="axes"/>
 ## Axes management
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in Working with Axes tutorial, in this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
-
-to top
-
-<a name="overlap"/>
-### Preventing bubbles overlapping
-
-One special axes function that may be useful wen creating bubble chart is scale mode. If you set scaled mode to "SortedOverlay" - the bigger bubbles will always be displayed under the smaller bubbles and chart may become more readable.
-
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <scale mode="SortedOverlay" />
-03
-</y_axis>
-On the sample below we will display two multiseries bubble charts - one will use normal scale mode and another - "SortedOverlay", and both will be using the same data.
-
-Live Sample:  Axes Scale Overlay Sample Single-Series Bubble Chart Dashboard
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. <!--All axis features are described in Working with Axes tutorial,-->In this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
 <a name="position"/>
 ### Positioning
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position attribute of <y_axis> or <x_axis> nodes.
-
-Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion settings in Axes Positioning and Inverting Templates.
-
-XML Syntax
-XML Code
-Plain code
-01
-<axes>
-02
-  <y_axis position="Normal" />
-03
-  <x_axis position="Opposite" />
-04
-</axes>
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **orientation()** method of **yAxis()** or **xAxis()** attributes.
+<!--Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion settings in Axes Positioning and Inverting Templates.-->
+```
+  chart.xAxis(0).orientation('top');
+  chart.yAxis(0).orientation('right');
+```
 And here is the demonstration of this feature on the Single-series sample:
-
-Live Sample:  Axes Position Sample Single-Series Bubble Chart
-
-to top
+{sample}BCT\_Bubble\_Chart\_05{sample}
 
 <a name="inversion"/>
 ### Inversion
 
 AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis <scale>:
-
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <scale inverted="True" />
-03
-</y_axis>
+```
+chart.yScale().inverted(true);
+```
 And here is the demonstration of Y Axis inversion on the Single-series sample:
-
-Live Sample:  Axis Inversion Sample Single-Series Bubble Chart
-
-to top
+{sample}BCT\_Bubble\_Chart\_06{sample}
 
 <a name="min_max"/>
 ### Minimum and Maximum values control
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 0, and maximum is 700. You can control these values by setting maximum and minimum attributes of <scale> node:
 
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <scale minimum="-10" maximum="1000" />
-03
-</y_axis>
+By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 0, and maximum is 800. You can control these values by setting maximum and minimum attributes of yScale method. As far as you want to adjusted the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
+```
+  chart.yScale().minimum('-100').maximum('1000').ticks().interval(100);
+```
 And here is the demonstration of maximum and minimum values on the Single-series sample:
 
-Live Sample:  Scale Maximum and Minimum Values Sample Single-Series Bubble Chart
+{sample}BCT\_Bubble\_Chart\_07{sample}
 
-to top
+<a name="visualization"/>
+## Visualization
 
-<a name="using_styles"/>
-## Using styles
+In this section we will describe main parts of bubble chart visualization and ways to adjust it. Visual appearance of bubbles is defined using certain methods. For bubble chart the main thing is **.fill()** method.
 
-In this section we will describe main parts of bubble chart style and demonstrate how style can be created and applied. Also you will see list of predefined styles.
+<a name="visualization_simple_style"/>
+### Basic sample
 
-The main idea of styles is to segregate visualization and data definition. Visual appearance of bubbles is defined using certain styles and then you just apply the style to the certain data elements. Style can be applied to data series, data category or single bubble.
+Now, let's look how to change the look of an Area. Here is a basic sample:
+```
+    .fill('gold')
+    .hatchFill('diagonalbrick', 'gray')
+    .hoverHatchFill('diagonalbrick', 'darkred')
+    .stroke("Rgb(86,86,26)", 4)
+    .hoverStroke("darkred", 6);
+```
+Using such settings we've created a style that defines bubbles of Gold color, rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a darkred thick border and hatch fill colored darkred too.
 
-Bubble chart style is configured in <bubble_style> and <bubble_series> nodes.
-Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when selected, when user moves cursor over an element, etc. More information about these features can be found in Interactivity tutorial.
+Now we will apply this style to the chart
+{sample}BCT\_Bubble\_Chart\_08{sample}
 
-to top
+<a name="labels_and_tooltips"/>
+## Labels and Tooltips
 
-<a name="simple_style"/>
-### Simple style
-
-Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an XML structure:
-
-XML Syntax
-XML Code
-Plain code
-01
-<bubble_style name="style1">
-02
-  <fill type="Solid" color="Gold" opacity="1" />
-03
-  <border thickness="4" color="Rgb(86,86,26)" />
-04
-  <hatch_fill enabled="True" type="DiagonalBrick" color="Gray" />
-05
-  <effects>
-06
-    <bevel enabled="true" highlight_opacity="0.4" shadow_opacity="0.4" distance="2" />
-07
-    <drop_shadow enabled="true" opacity="0.3" />
-08
-  </effects>
-09
-  <states>
-10
-    <hover>
-11
-      <border color="DarkRed" thickness="6" />
-12
-      <hatch_fill color="DarkRed" />
-13
-    </hover>
-14
-  </states>
-15
-</bubble_style>
-Using such settings we've created a style that defines bubbles of Gold color, rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed thick border and hatch fill colored DarkRed too.
-
-Now we will take a sample single-series chart described above, define style in XML and apply it to all chart elements, using <bubble_series style="style1"/>
-
-Live Sample:  Sample Simple Style for Bubble chart
-
-to top
-
-<a name="several_styles"/>
-### Application of different styles to chart elements
-
-Now we will demonstrate how to apply different styles to different series and bubbles. To do it we will use multi-series sample that was demonstrated above and create two more styles: "style2" and "style3", both inherited from the "style1".
-
-"style1" will be applied to "Year 2003 " series, "style2" will be applied to "Year 2004" series and "style3" will be applied to the bubble with a biggest size (Note - we will find highest value and set its style manually in this sample. But with AnyChart it is possible to do that automatically using Thresholds, read more about it in Thresholds tutorial).
-
-So - the definitions of the styles are:
-
-Style 1:
-
-XML Syntax
-XML Code
-Plain code
-01
-<bubble_style name="style1">
-02
-  <fill type="Solid" color="Gold" opacity="1" />
-03
-  <border thickness="4" color="Rgb(86,86,26)" />
-04
-  <hatch_fill enabled="True" type="DiagonalBrick" color="Gray" />
-05
-  <effects>
-06
-    <bevel enabled="true" highlight_opacity="0.4" shadow_opacity="0.4" distance="2" />
-07
-    <drop_shadow enabled="true" opacity="0.3" />
-08
-  </effects>
-09
-  <states>
-10
-    <hover>
-11
-      <border color="DarkRed" thickness="6" />
-12
-      <hatch_fill color="DarkRed" />
-13
-    </hover>
-14
-  </states>
-15
-</bubble_style>
-Style 2:
-This style is inherited from "style1" and the only thing changed is a color of the fill: from "Gold" to "Rgb(180,180,255)". We've used styles inheritance to avoid duplication of the common settings.
-
-XML Syntax
-XML Code
-Plain code
-01
-<bubble_style name="style2" parent="style1">
-02
-  <fill color="Rgb(180,180,255)" />
-03
-</bubble_style>
-Style 3:
-This style is also inherited from "style1" and the new color of the fill is "Rgb(255,170,170)". And again we've used styles inheritance.
-
-XML Syntax
-XML Code
-Plain code
-01
-<bubble_style name="style3" parent="style1">
-02
-  <fill color="Rgb(255,170,170)" />
-03
-</bubble_style>
-And, as a result here is an example of these styles usage:
-
-Live Sample:  Sample Bubble chart - Application of different styles to chart elements
-
-to top
-
-<a name="predefined_styles"/>
-## Predefined styles
-
-There are several predefined styles that you can use and modify with help of styles inheritance (setting them as a parent styles for your styles). On the picture below you can see how these styles will change an appearance of the bubbles and their names: "Default", "Flat", "Transparent" and "Aqua".
-
-
-
-Note:
-When you are inheriting from"Aqua" style you can change only the color, opacity, hatch-fill and effects of the bubble.
-
-You can read more about styles and their usage in Styles tutorial.
-Full reference of bubble chart style can be found in XML Reference, particularly <bubble_style> and <bubble_series> nodes.
-General things about tuning visual appearance, working with borders, colors, fills, etc. - can be found in Visual Appearance Section
-to top
-
-<a name="working_with_labels_and_tooltips"/>
-## Working with data labels and tooltips
-
-In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.
-
-If you want to configure data labels and tooltips for all series - you should do that in <label_settings> and <tooltip_settings> sub-nodes of <bar_series> node. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the right of the bars, also, we will format labels so they show only the value corresponding to the bar and tooltip will show detailed description.
-
-When formatting data labels text and tooltip we will use formatting keywords: 
-{%CategoryName} - to show product name,
-{%YValue} - to show units,
-{%SeriesName} - to show period (year),
-{%BubbleSize} - to show Profit.
+In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and Tooltips.
+If you want to configure data labels and tooltips for all series - you should do that in .labels and .tooltip methods. You can tune their visual appearance, positioning and format.
+When formatting data labels text we will use .textFormatter to show Y axes value. Otherwise X axes will be displayed here.
 
 Live Sample:  Sample Bubble chart - Working with data labels and tooltips
 

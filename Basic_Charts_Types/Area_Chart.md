@@ -10,7 +10,7 @@
   * [Inversion](#inversion)
   * [Minimum and Maximum Values](#min_max)
 * [Visualization](#visualization)
-  * [Basic Sample](#visualization_simple_style)
+  * [Basic Sample](#visualization_basic_sample)
   * [Image Fill](#visualization_image_fill)
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Markers](#markers)
@@ -284,7 +284,7 @@ chart.area(data)
   .hatchFill('diagonalbrick', 'gray')
   .hoverHatchFill('diagonalbrick', 'black');
 ```
-Using such settings we've created a look that defines area of Gold color, rather thick area line, hatch filled with DiagonalBrick. Also, we've defined that when user will move cursor over the chart it's hatch will be highlighted with a black and chart will be filled with darkred.
+Using such settings we've created a look that defines area of Gold color, rather thick border line, hatch filled with DiagonalBrick. Also, we've defined that when user will move cursor over the chart it's hatch will be highlighted with a black and chart will be filled with darkred.
 
 Now we will apply the style to the chart:
 
