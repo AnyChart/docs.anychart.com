@@ -4,7 +4,6 @@
 * [Chart building](#how_to_create_bar_chart)
   * [Single-Series bar chart](#single_series)
   * [Multi-Series bar chart](#multi_categorized)
-  * [Multi-Series bar chart grouped by series](#multi_by_series)
 * [Axes management](#axes)
   * [Positioning](#position)
   * [Inversion](#inversion)
@@ -18,7 +17,6 @@
 * [Working with hatch fills](#hatches)
   * [Setting hatch fills to the elements](#hatch_setting)
 
-<a name="overview"/>
 ## Overview
 
 A bar chart, is a chart with rectangular bars of lengths usually proportional to the magnitudes or frequencies of what they represent. Although the bars can be horizontally or vertically oriented, we call vertically oriented charts - column charts and study them in a Column Chart Help section.

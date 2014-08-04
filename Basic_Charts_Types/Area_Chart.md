@@ -16,15 +16,12 @@
 * [Markers](#markers)
 * [Hatch Fill](#hatches)
 
-<a name="overview"/>
 ## Overview
 Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts emphasize the magnitude of change over time, and can be used to draw attention to the total value across a trend. For example, data that represents profit over time can be plotted in an area chart to emphasize the total profit.
 
-<a name="chart"/>
 ## Chart
 Depending on data model and the visualization purpose the area chart may contain one series or several series.
 
-<a name="single_series"/>
 ### Single Series Line Area Chart
 
 Let's see single series area chart created using the following data: sales of ACME Corp. through several months in one year:
@@ -100,7 +97,6 @@ Here it is: AnyChart can now visualize your data. Look at the chart sample below
 
 {sample}BCT\_AreaChart\_01{sample}
 
-
 ### Single Series Spline Area Chart
 
 For better look and feel of your charts you can use SplineArea chart type:
@@ -121,7 +117,6 @@ Here is the same chart as shown above, but in Spline mode:
 
 {sample}BCT\_AreaChart\_02{sample}
 
-<a name="multi_series"/>
 ### Multi-series Area Chart
 
 To compare two or more data sets you have to use multi-series area charts as it is shown in the sample below.
@@ -219,12 +214,10 @@ As we now have multi-series chart we don't want to set **type of chart** for eac
 
 {sample}BCT\_AreaChart\_03{sample}
 
-<a name="Axes"/>
 ## Axes
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in Axes tutorial, in this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
-<a name="position"/>
 ### Positioning
 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust position with **orientation()** method of **yAxis** or **xAxis** instances.
@@ -240,7 +233,6 @@ And here is the demonstration of this feature on the Single-series sample:
 
 {sample}BCT\_AreaChart\_04{sample}
 
-<a name="inversion"/>
 ### Inversion
 
 AnyChart allows you to invert any axis: Y, X or any extra axis. Inversion is controlled by axis **.inverted()**:
@@ -253,7 +245,6 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 {sample}BCT\_AreaChart\_05{sample}
 
-<a name="min_max"/>
 ### Minimum and Maximum
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting **.maximum()** and **.minimum()**. :
@@ -266,7 +257,6 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 {sample}BCT\_AreaChart\_06{sample}
 
-<a name="visualization"/>
 ## Visualization
 
 In this section we will describe main parts of area chart visualization and ways to adjust it. Visual appearance of areas is defined using certain methods. For Area chart the main thing is the **.fill()** method. 
@@ -301,7 +291,6 @@ Color is not the only way to design a chart. In this sample we will demonstrate 
 
 {sample}BCT\_AreaChart\_08{sample}
 
-<a name="labels_and_tooltips"/>
 ## Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and Tooltips.
@@ -319,7 +308,6 @@ When formatting data labels text we will use **.textFormatter** to show month na
 ```
 {sample}BCT\_AreaChart\_10{sample}
 
-<a name="using_markers"/>
 ## Markers
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including areas.
@@ -336,8 +324,6 @@ And here is a result - March is the most successful month and we are showing thi
 
 {sample}BCT\_AreaChart\_09{sample}
 
-
-<a name="hatches"/>
 ## Hatch fills
 
 AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings. 
@@ -349,4 +335,3 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 .hatchFill('backwarddiagonal');
 ```
 {sample}BCT\_AreaChart\_11{sample}
-
