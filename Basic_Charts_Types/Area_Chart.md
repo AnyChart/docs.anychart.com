@@ -2,7 +2,7 @@
 
 * [Overview](#overview)
 * [Chart](#chart)
-  * [Single Series Area Chart](#single_series)
+  * [Single Series Area Chart](#single_series_area_chart)
   * [Single Series Spline Area Chart](#single_series_spline_area_chart)
   * [Multi-series Area Chart](#multi_series)
 * [Axes](#axes)
@@ -14,7 +14,7 @@
   * [Image Fill](#image_fill)
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Markers](#markers)
-* [Hatch Fill](#hatches)
+* [Hatch Fill](#hatch_fills)
 
 ## Overview
 Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts emphasize the magnitude of change over time, and can be used to draw attention to the total value across a trend. For example, data that represents profit over time can be plotted in an area chart to emphasize the total profit.
