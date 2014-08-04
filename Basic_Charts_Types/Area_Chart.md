@@ -22,7 +22,7 @@ Data that is arranged in columns or rows on a worksheet can be plotted in an are
 ## Chart
 Depending on data model and the visualization purpose the area chart may contain one series or several series.
 
-### Single Series Line Area Chart
+### Single Series Area Chart
 
 Let's see single series area chart created using the following data: sales of ACME Corp. through several months in one year:
 
