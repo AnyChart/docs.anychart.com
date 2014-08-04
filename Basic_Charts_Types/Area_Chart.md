@@ -8,7 +8,7 @@
 * [Axes](#axes)
   * [Positioning](#position)
   * [Inversion](#inversion)
-  * [Minimum and Maximum Values](#min_max)
+  * [Minimum and Maximum Values](#minimum_and_maximum_values)
 * [Visualization](#visualization)
   * [Basic Sample](#basic_sample)
   * [Image Fill](#image_fill)
@@ -117,6 +117,7 @@ Here is the same chart as shown above, but in Spline mode:
 
 {sample}BCT\_AreaChart\_02{sample}
 
+<a name="multi_series"/>
 ### Multi-series Area Chart
 
 To compare two or more data sets you have to use multi-series area charts as it is shown in the sample below.
