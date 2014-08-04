@@ -13,13 +13,10 @@
 * [Visualization](#visualization)
   * [Basic sample](#visualization_simple_style)
 * [Labels and Tooltips](#labels_and_tooltips)
-* [Using markers](#using_markers)
-* [Working with colors and color palettes](#colors)
-  * [Setting colors to the elements](#color_setting)
-  * [Color palettes](#color_palettes)
-* [Working with hatch fills and hatch palettes](#hatches)
-  * [Setting hatch fills to the elements](#hatch_setting)
-  * [Hatch palettes](#hatch_palettes)
+* [Markers](#markers)
+* [Colors](#colors)
+  * [Colorizing elements](#color_setting)
+* [Hatch fills](#hatches)
  
 <a name="overview"/>
 ## Overview
@@ -269,137 +266,63 @@ In this section we will explain how to add and configure data labels and tooltip
 If you want to configure data labels and tooltips for all series - you should do that in .labels and .tooltip methods. You can tune their visual appearance, positioning and format.
 When formatting data labels text we will use .textFormatter to show Y axes value. Otherwise X axes will be displayed here.
 
-Live Sample:  Sample Bubble chart - Working with data labels and tooltips
-
+{sample}BCT\_Bubble\_Chart\_09{sample}
+<!--
 Related Help Topics:
 
 Learn more about labels and tooltips in Labels and tooltips
 Full Keywords reference and formatting guide:Labels and tooltips
 Full reference of data labels settings can be found in XML Reference, particularly <label_style> and <label_settings> nodes.
 to top
-
-<a name="using_markers"/>
-## Using markers
+--><!--
+<a name="markers"/>
+## Markers
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including bubbles.
 
 In the sample below we will take single-series data described above and mark the biggest bubble in series with a "Star5" of the "Gold" color.
 
-To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 16 pixels in normal state, and make it bigger (22 pixels) when user moves cursor over an element.
+To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 12 pixels in normal state, and make it bigger (22 pixels) when user moves cursor over an element.
 
-Marker style "myMarker":
-
-XML Syntax
-XML Code
-Plain code
-01
-<marker_style name="myMarker" color="Gold">
-02
-  <marker type="Star5" size="16" />
-03
-  <states>
-04
-    <hover>
-05
-      <marker size="22" />
-06
-    </hover>
-07
-  </states>
-08
-</marker_style>
-To apply marker to the certain we need to create <marker> sub-node in <point> and add 
-<marker enabled="True" style="myMarker"/>
-
-XML Syntax
-XML Code
-Plain code
-01
-<point name="Product B" y="172" size="14">
-02
-  <marker enabled="True" style="myMarker" />
-03
-</point>
-And here is a result - the best product for ACME Corp. is Product B and we show this on the chart:
-
-Live Sample:  Sample Bubble chart - Working with markers
-
-Related help topics:
+```
+{ x: 'Product B', value: 172, size: 14, marker:{type:'star5', fill:'gold', size: 12}, hoverMarker: {size: 22}},
+``` 
+And here is a result - March is the most successful month and we are showing this on the chart:
+{sample}BCT\_Bubble\_Chart\_10{sample}-->
+<!--Related help topics:
 
 You can read more about working with markers in Markers tutorial.
 Full reference of marker style can be found in XML Reference, particularly <marker_style> node.
 to top
-
+-->
 <a name="colors"/>
-## Working with colors and color palettes
+## Colors
 
-AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can use your own palettes or palettes shipped with AnyChart. Also you can set and apply the color to exact data series or data point.
-
-to top
+AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can apply the color to exact data series or data point.
 
 <a name="color_setting"/>
-### Setting colors to the elements
+### Colorizing elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set "color" attribute in the <series> node. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set color(). In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
 
-Live Sample:  Sample Bubble chart - Setting colors to the elements
+{sample}BCT\_Bubble\_Chart\_10{sample}
 
-In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximum one. As you see it is very easy to do by setting "color" attribute for <point> node.
+In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximum one.  As you see it is very easy to do by setting **fill()** attribute for point.
 
-Live Sample:  Sample Bubble chart - Setting colors to the series
+{sample}BCT\_Bubble\_Chart\_11{sample}
 
-Important Note:
+**Important Note:**
 
-AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "Rgb(180,77,77)" you can set "HSV(?,?,?)" or "HTMLConstant" or "#HEXCode"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
+AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "Rgb(180,77,77)" you can set "HSV(?,?,?)" or "HTMLConstant" or "#HEXCode"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods.<!-- But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
 
 Different ways of setting colors of elements
 Advanced coloring techniques in Styles tutorial
-to top
-
-<a name="color_palettes"/>
-### Color palettes
-
-AnyChart allows to apply color palettes to all series or to the exact series. In the first case each next series will take each next color from palette. If the number of the colors in palette is less than the number of series - palette will be looped. If you have only one series it will be colored by the first color in the palette. To apply palette to all series we have to set "palette" attribute in <data> node. Here it is:
-
-Live Sample:  Sample Bubble chart - Setting Palette to all series
-
-When you have one series only, sometimes it is useful to color each point in series. You can do it by setting color of each point individually or you can apply a palette. For sure the second method is easier and more useful. To apply palette to the exact series you should set "palette" attribute for exact <series> node.
-
-Live Sample:  Sample Bubble chart - Working with palettes - Setting Palettes to the certain series
-
-In the samples above we have shown usage of predefined palettes only, but AnyChart allows to create your own custom palettes. To learn more about it read Palettes tutorial.
-
-to top
-
+-->
 <a name="hatches"/>
-## Working with hatch fills and hatch palettes
+## Hatch fills
 
 AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings and palettes. To see whole range of available hatch types see Hatch tutorial.
 
-to top
-
-<a name="hatch_setting"/>
-### Setting hatch fills to the elements
-
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting "hatch_type" attribute for <series> node. Also we've changed hatch type for last element in 5th series by setting "hatch_type" attribute for <point> node.
 
-Live Sample:  Sample Bubble chart - Setting hatch palette to the series
-
-to top
-
-<a name="hatch_palettes"/>
-### Hatch palettes
-
-When you have a lot of points or series it is very useful to use hatch palettes. Methods of working with hatch palette is very similar to color palette. You can apply hatch palette to all series or to exact series. In the first case each next series will take each next hatch type from palette. If the number of hatch types in palette is less than number of series - palette will be looped. If you have only one series each point will take the first hatch type from the palette. To apply palette to all series we have to set "hatch_palette" attribute in <data> node. Here it is:
-
-Live Sample:  Sample Bubble chart - Setting hatch fills to the series
-
-When you have one series only you can can apply hatch palette to this series. To do it you should set "hatch_palette" attribute for <series> node. See the sample below:
-
-Live Sample:  Sample Bubble chart - Setting hatch fills to the certain series
-
-In the samples above we have shown usage of predefined hatch palettes only, but AnyChart allows to create your own custom hatch palettes. To learn more about it read Hatch and hatch palettes .
-
-to top
-
-Current Page Online URL: Bubble Chart
+{sample}BCT\_Bubble\_Chart\_12{sample}

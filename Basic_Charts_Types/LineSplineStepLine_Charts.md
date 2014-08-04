@@ -365,7 +365,7 @@ In the sample below we will take single-series data described above and mark the
 To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 12 pixels in normal state, and make it bigger (16 pixels) when user moves cursor over an element.
 
 ```
- {x: 'March', value: 18000, marker:{type:'star5', fill:'gold', size: 12} hoverMarker: {size: 22}}
+ {x: 'March', value: 18000, marker:{type:'star5', fill:'gold', size: 12}, hoverMarker: {size: 22}}
 ```
 And here is a result - March is the most successful month and we are showing this on the chart:
 

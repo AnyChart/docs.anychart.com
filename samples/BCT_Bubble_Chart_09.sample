@@ -1,0 +1,47 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+  var container ='container';
+  var data = anychart.data.set([
+    ['Product A', 437, 6, 637, 6],
+    ['Product B', 172, 14, 472, 17],
+    ['Product С', 548, 10, 48, 10]
+  ]);
+  var seriesData_1 = data.mapAs({x: [0], value: [1], size:[2]});
+  var seriesData_2 = data.mapAs({x: [0], value: [3], size:[4]});
+  chart = anychart.lineChart();
+  series = chart.bubble(seriesData_1);
+  series.minimumSize(10).maximumSize(30);
+  series.labels()
+    .enabled(true)
+    .anchor('bottom')
+    .position('top')
+    .fontSize(15)
+    .fontWeight('bold')
+    .textFormatter(function(point){
+        return point.value + '.00';
+    });
+  series.tooltip().enabled(true).title().enabled(true).text('Information');
+  series.tooltip().enabled(true).contentFormatter(function() {
+         return 'Sales: ' + this.x + '\n' + 'Unit: ' + this.value + '.00' + '\n' + 'Year: 2004' + '\n' + 'Profit: ' + '$' + this.size + '.00';
+    });
+  series = chart.bubble(seriesData_2);
+  series.minimumSize(10).maximumSize(30);
+  series.labels()
+    .enabled(true)
+    .anchor('bottom')
+    .position('top')
+    .fontSize(15)
+    .fontWeight('bold')
+    .textFormatter(function(point){
+        return point.value + '.00';
+    });
+  series.tooltip().enabled(true).title().enabled(true).text('Information');
+  series.tooltip().enabled(true).contentFormatter(function() {
+         return 'Sales: ' + this.x + '\n' + 'Unit: ' + '.00' + '\n' + 'Year: 2004' + '\n' + 'Profit: ' + '$' + this.value + '.00';
+    });
+  chart.container('container');
+  chart.draw();
+});
