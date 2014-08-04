@@ -5,7 +5,7 @@
   * [Single-Series bubble chart](#single_series)* [Multi-Series bubble chart](#multi_categorized)
 * [Controlling Bubbles size](#size)
   * [Bubbles minimum and maximum size](#size)
-  <!--* [Size multiplier](#size)
+  <!--* [Size multiplier](#size)-->
 * [Axes management](#axes)* [Positioning](#position)
   * [Inversion](#inversion)
   * [Minimum and Maximum values control](#min_max)
