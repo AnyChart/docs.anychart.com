@@ -3,7 +3,7 @@
 * [Overview](#overview)
 * [Chart](#chart)
   * [Single Series Area Chart](#single_series)
-  * [Single Series Spline Area Chart](#single_series_spline)
+  * [Single Series Spline Area Chart](#single_series_spline_area_chart)
   * [Multi-series Area Chart](#multi_series)
 * [Axes](#axes)
   * [Positioning](#position)
@@ -100,7 +100,7 @@ Here it is: AnyChart can now visualize your data. Look at the chart sample below
 
 {sample}BCT\_AreaChart\_01{sample}
 
-<a name="single_series_spline"/>
+
 ### Single Series Spline Area Chart
 
 For better look and feel of your charts you can use SplineArea chart type:
