@@ -227,7 +227,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 <a name="position"/>
 ### Positioning
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust position with `orientation()` method of **yAxis** or **xAxis** instances.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust position with **orientation()** method of **yAxis** or **xAxis** instances.
 
 Positioning depends on plot type and inversion of axes.
 
@@ -243,7 +243,7 @@ And here is the demonstration of this feature on the Single-series sample:
 <a name="inversion"/>
 ### Inversion
 
-AnyChart allows you to invert any axis: Y, X or any extra axis. Inversion is controlled by axis `.inverted()`:
+AnyChart allows you to invert any axis: Y, X or any extra axis. Inversion is controlled by axis **.inverted()**:
 
 ```
   chart.yScale().inverted(true);
@@ -256,7 +256,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 <a name="min_max"/>
 ### Minimum and Maximum
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting **.maximum** and **.minimum**:
+By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting **.maximum()** and **.minimum()**. :
 
 ```
 chart.yScale().minimum('0').maximum('50000');

@@ -13,8 +13,7 @@
 <!--* [Using markers](#using_markers)-->
 * [Working with colors](#colors)
   * [Setting colors to the elements](#color_setting)
-* [Working with hatch fills](#hatches)
-  * [Setting hatch fills to the elements](#hatch_setting)
+* [Hatch fills](#hatches)
 
 <a name="overview"/>
 ## Overview
@@ -252,17 +251,12 @@ AnyChart uses default colors to colorize data elements of chart automatically ev
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **".fill"** attribute. In the sample below we'll color each series to different color. Here is the sample:
 
 {sample}BCT\_PieDoughnutChart\_06{sample}
-<!--
+
 <a name="hatches"/>
-## Working with hatch fills and hatch palettes
+## Hatch fills
 
-AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings and palettes. To see whole range of available hatch types see Hatch tutorial.
+AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings.<!-- To see whole range of available hatch types see Hatch tutorial.-->
 
-<a name="hatch_setting"/>
-### Setting hatch fills to the elements
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 10 series. For every series we've applied different hatch fills by setting **.hatchFill()** attribute for each of them.
 
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting "hatch_type" attribute for <series> node. Also we've changed hatch type for last element in 5th series by setting "hatch_type" attribute for <point> node.
-
-Live Sample:  Sample Pie chart - Setting hatch palette to the series
-
-Current Page Online URL: Pie and Donut Chart-->
+{sample}BCT\_PieDoughnutChart\_08{sample}

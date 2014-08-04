@@ -10,7 +10,7 @@ var data = anychart.data.set([
     ['Juvenile Specialty Stores', 78662],
     ['All other outlets', 90000]
   ]);
-stage = acgraph.create('100%', '100%', 'container');
+stage = acgraph.create('container');
 
   var title = anychart.elements.title();
   title.parentBounds(0, 0, "100%", "10%")
