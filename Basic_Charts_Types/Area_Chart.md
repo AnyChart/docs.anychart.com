@@ -10,8 +10,8 @@
   * [Inversion](#inversion)
   * [Minimum and Maximum Values](#min_max)
 * [Visualization](#visualization)
-  * [Basic Sample](#visualization_basic_sample)
-  * [Image Fill](#visualization_image_fill)
+  * [Basic Sample](#basic_sample)
+  * [Image Fill](#image_fill)
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Markers](#markers)
 * [Hatch Fill](#hatches)
@@ -271,7 +271,6 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 In this section we will describe main parts of area chart visualization and ways to adjust it. Visual appearance of areas is defined using certain methods. For Area chart the main thing is the **.fill()** method. 
 
-<a name="visualization_basic_sample"/>
 ### Basic sample
 
 Now, let's look how to change the look of an Area.  Here is a basic sample:
@@ -290,7 +289,6 @@ Now we will apply the style to the chart:
 
 {sample}BCT\_AreaChart\_07{sample}
 
-<a name="visualization_image_fill"/>
 ### Image fill
 
 Color is not the only way to design a chart. In this sample we will demonstrate how to use picture as a fill:  
