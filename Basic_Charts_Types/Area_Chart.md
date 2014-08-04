@@ -8,7 +8,7 @@
 * [Axes](#axes)
   * [Positioning](#position)
   * [Inversion](#inversion)
-  * [Minimum and Maximum Values](#minimum_and_maximum_values)
+  * [Minimum and Maximum](#minimum_and_maximum)
 * [Visualization](#visualization)
   * [Basic Sample](#basic_sample)
   * [Image Fill](#image_fill)
