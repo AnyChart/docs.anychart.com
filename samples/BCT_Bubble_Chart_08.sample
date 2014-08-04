@@ -1,0 +1,22 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+  var container ='container';
+  chart = anychart.lineChart();
+  chart.bubble([
+    ['Product A', 637, 6],
+    ['Product B', 472, 14],
+    ['Product С', 48, 10]
+  ])
+    .minimumSize(10)
+    .maximumSize(30)
+    .fill('gold')
+    .hatchFill('diagonalbrick', 'gray')
+    .hoverHatchFill('diagonalbrick', 'darkred')
+    .stroke("Rgb(86,86,26)", 4)
+    .hoverStroke("darkred", 6);
+  chart.container('container');
+  chart.draw();
+});
