@@ -1,39 +1,36 @@
 # Column Chart
 
 * [Overview](#overview)
-* [Chart building](#how_to_create_column_chart)
-  * [Single-Series column chart](#single_series)
-  * [Multi-Series column chart](#multi_categorized)
-  * [Multi-Series column chart grouped by series](#multi_by_series)
-* [Axes manageme](#axes)
+* [Chart](#chart)
+  * [Single Series Column Chart](#single_series)
+  * [Multi-series Column Chart](#multi_categorized)
+* [Axes](#axes)
   * [Position](#position)
-  * [Inversio](#inversion)
-  * [Minimum and Maximum values control](#min_max)
-* [Padding between columns and column groups](#setup_padding)
-* [Using styles](#using_styles)
-  * [Simple style sample](#simple_style)
-  * [Application of different styles to chart elements](#several_styles)
-* [Working with data labels and tooltips](#working_with_labels_and_tooltips)
-* [Using markers](#using_markers)
-* [Working with colors](#colors)
-  * [Setting colors to the elements](#color_setting)
-* [Working with hatch fills](#hatches)
-  * [Setting hatch fills to the elements](#hatch_setting)
+  * [Inversion](#inversion)
+  * [Minimum and Maximum](#min_max)
+* [Padding](#padding)
+* [Visualization](#visualization)
+  * [Basic Sample](#basic_sample)
+* [Labels and Tooltips](#labels_and_tooltips)
+* [Markers](#markers)
+* [Colors](#colors)
+  * [Colorizing Elements](#color_setting)
+* [Hatch Fills](#hatches)
 
 <a name="overview"/>
 ## Overview                                                                                                                             
 
-A column chart, also known as a bar chart, is a chart with rectangular bars of lengths usually proportional to the magnitudes or frequencies of what they represent. The bars can be horizontally or vertically oriented. The column chart is vertically oriented bars. If you want to build horizontally oriented bar charts, please go to: [Bar Chart](Bar_Chart) Help section.
+A column chart, also known as a bar chart, is a chart with rectangular bars of lengths usually proportional to the magnitudes or frequencies of what they represent. The bars can be horizontally or vertically oriented. The column chart is vertically oriented bars. If you want to build horizontally oriented bar charts, please go to: [Bar Chart](Bar_Chart) section.
 
 Column charts are useful for showing data changes over a period of time or for illustrating comparisons among items. In column charts, categories are typically organized along the horizontal axis and values along the vertical axis.
 
-<a name="how_to_create_column_chart"/>
-## Chart building
+<a name="chart"/>
+## Chart
 
 Depending on data model and the visualization purpose the column chart may contain single series or multi series.
 
 <a name="single_series"/>
-### Single-Series Column Chart
+### Single Series Column Chart
 
 Let's look at the single-series column chart created using the following data - sales of several managers in one quarter:
 
@@ -104,7 +101,7 @@ Now we need to convert this data table into JSON, this format will be accepted b
 {sample}BCT\_ColumnChart\_01{sample}
 
 <a name="multi_categorized"/>
-### Multi-Series column chart
+### Multi-series Column Chart
 
 To compare two or more data rows you have to use multi-series column charts as it is shown in the sample below.
 
@@ -182,7 +179,7 @@ As we now have multi-series chart we don't want to set type for each series indi
 {sample}BCT\_ColumnChart\_02{sample}
 
 <a name="axes"/>
-## Axes management
+## Axes
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings. <--All axis features are described in Working with Axes tutorial,--> In this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
@@ -214,7 +211,7 @@ Look at the demonstration of Y Axis inversion on the Single-series sample:
 {sample}BCT\_ColumnChart\_04{sample}
 
 <a name="min_max"/>
-### Minimum and Maximum values control
+### Minimum and Maximum
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see it on the scale inversion chart sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting maximum and minimum attributes of <scale> node:
 
@@ -225,8 +222,8 @@ Look at the demonstration of maximum and minimum values on the Single-series sam
 
 {sample}BCT\_ColumnChart\_05{sample}
 
-<a name="setup_padding"/>
-## Padding between columns and column groups
+<a name="padding"/>
+## Padding
 
 The special thing about column charts are the paddings between columns and column groups (in multi-series charts), on the picture below you can see what are these paddings:
 
@@ -238,8 +235,8 @@ Here is a sample of multi-series column chart with **barsPadding()** and **barGr
 
 {sample}BCT\_ColumnChart\_06{sample}
 
-<a name="using_styles"/>
-## Using styles
+<a name="visualization"/>
+## Visualization
 
 In this section we will describe main parts of column chart style and demonstrate how style can be applied.
 
@@ -251,8 +248,8 @@ On the image below you can see what **Chart** can be decorated with: fill (inclu
 
 Styles are also used to make charts interactive, you can define how elements will be displayed by default, when selected, when user moves cursor over an element, etc.
 
-<a name="simple_style"/>
-### Simple style
+<a name="basic_sample"/>
+### Basic Sample
 
 Now, let's find out how to create a simple style and apply it to the chart. As we've already told style consists of several elements, here is an JSON structure:
 
@@ -276,8 +273,8 @@ Now we will take a sample single series chart described above and apply it to al
 
 {sample}BCT\_ColumnChart\_07{sample}
 
-<a name="working_with_labels_and_tooltips"/>
-## Working with data labels and tooltips
+<a name="labels_and_tooltips"/>
+## Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips.<!--  Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips tutorials.  -->
 
@@ -287,8 +284,8 @@ When formatting data labels text we will use adjusted **.textFormatter** to show
 
 {sample}BCT\_ColumnChart\_08{sample}
 
-<a name="using_markers"/>
-## Using markers
+<a name="markers"/>
+## Markers
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including columns.
 
@@ -304,12 +301,12 @@ And here is a result - Peter sold more than others and we are showing this on th
 {sample}BCT\_ColumnChart\_09{sample}
 
 <a name="colors"/>
-## Working with colors
+## Colors
 
 AnyChart uses default color palette to colorize data elements of chart automatically even if you have not defined special colors.
 
 <a name="color_setting"/>
-### Setting colors to the elements
+### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **".fill"** attribute in the **series** method. In the sample below we have 5 series with sample data and we'll color each series in different color. Here is the sample:
 
@@ -326,12 +323,10 @@ AnyChart seriously takes care of visualization and users convenience - that is w
   * Color management-->
 
 <a name="hatches"/>
-## Working with hatch fills
+## Hatch Fills
 
 AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings.<!-- To see the whole range of available hatch types see Hatch tutorial.-->
 
-<a name="hatch_setting"/>
-### Setting hatch fills to the elements
 
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting "hatch_type" attribute for **series**.
 
