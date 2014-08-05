@@ -21,22 +21,18 @@
 ## Overview
 
 Data that is arranged in columns or rows on a worksheet can be plotted in a line chart. Line charts can display continuous data over time, set against a common scale, and are therefore ideal for showing trends in data at equal intervals. In a line chart, category data is distributed evenly along the horizontal axis, and all value data is distributed evenly along the vertical axis.
-<br/>
+<br/><br/>
 You should use a line chart if your category labels are text, and are representing evenly spaced values such as months, quarters, or fiscal years. You should also use a line chart if you have a few evenly spaced numerical labels, especially years.
-
-
+<br/><br/>
 [Line](#single_series) and [line with markers](#using_markers) Displayed with or without markers to indicate individual data values, line charts are useful to show trends over time or ordered categories, especially when there are many data points and the order in which they are presented is important. If there are many categories or the values are approximate, you should use a line chart without markers.
-
-
+<br/><br/>
 Stacked line and stacked line with markers Displayed with or without markers to indicate individual data values, stacked line charts are useful to show the trend of the contribution of each value over time or ordered categories. If there are many categories or the values are approximate, you should use a stacked line chart without markers. 
 <br/><br/>
 **Tip:** For a better presentation of this type of data, you may want to consider using a stacked area chart instead.
-
-
+<br/><br/>
 100% stacked line and 100% stacked line with markers Displayed with or without markers to indicate individual data values, 100% stacked line charts are useful to show the trend of the percentage each value contributes over time or ordered categories. If there are many categories or the values are approximate, you should use a 100% stacked line chart without markers.
-
+<br/><br/>
 **Tip:** For a better presentation of this type of data, you may want to consider using a 100% stacked area chart instead.
-
 
 <a name="chart"/>
 ## Chart
