@@ -2,21 +2,21 @@
                                                                                     
 * [Overview](#overview)
 * [Chart](#chart)
-  * [Single-Series bubble chart](#single_series)
-  * [Multi-Series bubble chart](#multi_categorized)
-* [Controlling Bubbles size](#size)
-  * [Bubbles minimum and maximum size](#size)
-  <!--* [Size multiplier](#size)-->
-* [Axes management](#axes)* [Positioning](#position)
+  * [Single Series Bubble Chart](#single_series)
+  * [Multi-series Bubble Chart](#multi_categorized)
+* [Controlling Bubbles Size](#size)
+  * [Bubbles Minimum and Maximum Size](#size)
+* [Axes](#axes)
+  * [Positioning](#position)
   * [Inversion](#inversion)
-  * [Minimum and Maximum values control](#min_max)
+  * [Minimum and Maximum](#min_max)
 * [Visualization](#visualization)
-  * [Basic sample](#visualization_simple_style)
+  * [Basic Sample](#Basic_Sample)
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Markers](#markers)
 * [Colors](#colors)
-  * [Colorizing elements](#color_setting)
-* [Hatch fills](#hatches)
+  * [Colorizing Elements](#color_setting)
+* [Hatch Fills](#hatches)
  
 <a name="overview"/>
 ## Overview
@@ -29,7 +29,7 @@ Bubble charts are popular tools for identifying and illustrating industry cluste
 
 
 <a name="chart"/>
-## Chart building
+## Chart
 
 Depending on data model and the visualization purpose the bar chart may contain single series or multi series. As bubble chart need 3 values to show bubbles - you need to pass this data to chart:
 
@@ -46,7 +46,7 @@ When using Bubble chart on a categorized plot:
 ```
 
 <a name="single_series"/>
-### Single-Series Bubble Chart
+### Single Series Bubble Chart
 
 Let's see single series bubble chart created using the sample data - ACME Corp. sales data for the three different products, we will compare a number of units sold and profit using a bubble chart:
 
@@ -88,7 +88,7 @@ Here it is - AnyChart can now visualize your data. You can launch it in playgrou
 {sample}BCT\_Bubble\_Chart\_01{sample}
 
 <a name="multi_categorized"/>
-### Multi-series bubble chart
+### Multi-series Bubble Chart
 
 To compare two or more data rows you have to use multi-series bar charts as it shown in the sample below.
 
@@ -143,10 +143,10 @@ var dataSet = anychart.data.set([
 {sample}BCT\_Bubble\_Chart\_02{sample}
 
 <a name="size"/>
-## Controlling Bubbles size
+## Controlling Bubbles Size
 
 <a name="size-minimum-maximum"/>
-### Bubbles minimum and maximum size
+### Bubbles Minimum and Maximum Size
 
 Bubbles minimum and maximum size can be controlled using **maximumSize()** and **minimumSize()** attributes. Both of them can be set in percents of a lesser dataplot side (this can be width or height) and in pixels:
 ```
@@ -200,7 +200,7 @@ Note: if bubble_size_multiplier is used - maximum_bubble_size and minimum_bubble
 to top
 -->
 <a name="axes"/>
-## Axes management
+## Axes
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. <!--All axis features are described in Working with Axes tutorial,-->In this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
@@ -227,8 +227,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 {sample}BCT\_Bubble\_Chart\_06{sample}
 
 <a name="min_max"/>
-### Minimum and Maximum values control
-
+### Minimum and Maximum
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 0, and maximum is 800. You can control these values by setting maximum and minimum attributes of yScale method. As far as you want to adjusted the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 ```
@@ -243,8 +242,8 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 In this section we will describe main parts of bubble chart visualization and ways to adjust it. Visual appearance of bubbles is defined using certain methods. For bubble chart the main thing is **.fill()** method.
 
-<a name="visualization_simple_style"/>
-### Basic sample
+<a name="basic_sample"/>
+### Basic Sample
 
 Now, let's look how to change the look of an Area. Here is a basic sample:
 ```
@@ -301,7 +300,7 @@ to top
 AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can apply the color to exact data series or data point.
 
 <a name="color_setting"/>
-### Colorizing elements
+### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set color(). In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
 
@@ -319,7 +318,7 @@ Different ways of setting colors of elements
 Advanced coloring techniques in Styles tutorial
 -->
 <a name="hatches"/>
-## Hatch fills
+## Hatch Fills
 
 AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings and palettes. To see whole range of available hatch types see Hatch tutorial.
 

@@ -2,19 +2,19 @@
 
 * [Overview](#overview)                                         
 * [Chart](#chart)
-  * [Single Series bar chart](#single_series)
-  * [Multi-series bar chart](#multi_categorized)
+  * [Single Series Bar Chart](#single_series)
+  * [Multi-series Bar Chart](#multi_categorized)
 * [Axes](#axes)
   * [Positioning](#position)
   * [Inversion](#inversion)
-  * [Minimum and Maximum values control](#min_max)
-* [Paddings between bars and bar groups](#setup_padding)
+  * [Minimum and Maximum](#min_max)
+* [Paddings](#padding)
 * [Visualization](#visualization)
   * [Basic Sample](#basic_sample)
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Colors](#colors)
-  * [Colorizing elements](#color_setting)
-* [Hatch fills](#hatches)
+  * [Colorizing Elements](#color_setting)
+* [Hatch Fills](#hatches)
 
 ## Overview
 
@@ -105,7 +105,7 @@ As you can see, we've used attribute **"barChart"**, set name's attribute into *
 {sample}BCT\_BarChart\_01{sample}
 
 <a name="multi_categorized"/>
-### Multi-series bar chart
+### Multi-series Bar Chart
 
 To compare two or more data rows you have to use multi-series bar charts as it shown in the sample below.
 
@@ -237,7 +237,7 @@ chart.yScale().inverted(true);
 {sample}BCT\_BarChart\_04{sample}
 
 <a name="min_max"/>
-### Minimum and Maximum values control
+### Minimum and Maximum
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 0.0, and maximum is 800.000. You can control these values by setting **.maximum** and **.minimum** attributes of scale method:
 
@@ -250,7 +250,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 {sample}BCT\_BarChart\_05{sample}
 
 <a name="setup_padding"/>
-## Paddings between bars and bar groups
+## Paddings
 
 The special thing about bar charts are the paddings between bars and bar groups (in multi-series charts), on the picture below you can see what are these paddings:
 
@@ -276,7 +276,7 @@ On the image below you can see what bar_style consists of: fill (including solid
 Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when user moves cursor over an element, etc.
 
 <a name="basic_sample"/>
-### Basic sample
+### Basic Sample
 
 Now, let's look how to apply a simple style to the chart. As we've already said style consists of several elements, here is an JSON structure:
 
@@ -319,7 +319,7 @@ Full Keywords reference and formatting guide: Labels and tooltips
 AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors.
 
 <a name="color_setting"/>
-### Colorizing elements
+### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **".fill"** attribute in the **series** method. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
 
@@ -336,7 +336,7 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 * Different ways of setting colors of elements  -->
 
 <a name="hatches"/>
-## Hatch fills
+## Hatch Fills
 
 AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings.<!-- To see whole range of available hatch types see Hatch tutorial.-->
 
