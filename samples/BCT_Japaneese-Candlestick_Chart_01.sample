@@ -19,7 +19,7 @@ anychart.onDocumentReady(function() {
      ['Marubozu white', 506, 511, 506, 511],
      ['Marubozu black', 511, 511, 506, 506]
   ];
-  chart = anychart.financialChart();
+  chart = anychart.lineChart();
   chart.xScale(anychart.scales.ordinal());
   chart.candlestick(data)
     .fallingFill('black')

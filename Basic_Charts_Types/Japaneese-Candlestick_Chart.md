@@ -276,7 +276,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 <a name="position"/>
 ### Positioning
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **orientation** method of **yAxis** or **xAxis** attributes.
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **orientation()** method of **yAxis()** or **xAxis()** attributes.
 ```
   chart.xAxis(0).orientation('top');
   chart.yAxis(0).orientation('right');
@@ -335,11 +335,11 @@ Using these settings we've set red color for every falling candlestick point and
 <a name="labels_and_tooltips"/>
 ## Labels and Tooltips
 
-In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.
+In this section we will explain how to add and configure data labels and tooltips.<!-- Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
 
-If you want to configure data labels and tooltips for all series - you should do that with **labels()** and **tooltip()** methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
+If you want to configure data labels and tooltips for all series - you should do that with **.labels()** and **.tooltip()** methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
 
-When formatting data labels text and tooltip we can use **contentFormatter** and **textFormatter**.
+When formatting data labels text and tooltip we can use **.contentFormatter()** and **.textFormatter()**.
 
 {sample}BCT\_Japaneese-Candlestick\_Chart\_07{sample}
 <!--
@@ -357,11 +357,11 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 <a name="color_setting"/>
 ### Colorizing Elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set "color". In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **.color()**. In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
 
 {sample}BCT\_Japaneese-Candlestick\_Chart\_08{sample}
 
-In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set **"Rgb(180,77,77)"** color for minimum point and **"Rgb(77,180,77)"** for the maximal one. As you see it is very easy to do by setting **"fallingStroke()"** and **"risingStroke()"** attributes for point.
+In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set **"Rgb(180,77,77)"** color for minimum point and **"Rgb(77,180,77)"** for the maximal one. As you see it is very easy to do by setting **"fallingFill()"** and **"risingFill()"** attributes for point.
 
 {sample}BCT\_Japaneese-Candlestick\_Chart\_09{sample}
 
