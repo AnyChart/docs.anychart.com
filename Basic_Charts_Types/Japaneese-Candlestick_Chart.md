@@ -1,19 +1,19 @@
 # Japanese Candlestick Chart
                                                                                                               
 * [Overview](#overview)                                                                                                   
-* [Chart Building](#create)                                                                                               
+* [Chart](#create)                                                                                               
   * [Single Series](#single)                                                                                              
   * [Multi-series](#multi)                                                                                                
-* [Axes management](#axes)                                                                                                	
+* [Axes](#axes)                                                                                                	
   * [Positioning](#position)                                                                                              
-  * [Logarithmic Scale](#logarithmic)                                                                                     
-  * [Minimum and Maximum values](#min_max)                                                                        
+  * [Logarithmic](#logarithmic)                                                                                     
+  * [Minimum and Maximum](#min_max)                                                                        
 * [Visualization](#visualization)                                                                                         
-  * [Basic sample](#basic_style)                                                                                  
+  * [Basic Sample](#basic_style)                                                                                  
 * [Labels and Tooltips](#labels_and_tooltips)                                                                                                                                                                                                                                                                                   	
 * [Colors](#colors)                                                                                                       	
   * [Setting colors to the elements](#color_setting)                                                                                                                                                                                                                         
-* [Advanced Candlestick Chart sample - Candlestick, Line and Range Area Combination](#advanced-candlestick-stock-charting)                                                                                                                                                                                                                                
+* [Advanced Candlestick Chart Sample - Candlestick, Line and Range Area Combination](#advanced-candlestick-stock-charting)                                                                                                                                                                                                                                
 
 <a name="overview"/>
 ## Overview
@@ -26,7 +26,7 @@ Candlesticks are usually composed of the body (black or white), an upper and a l
 
 Some traders find the candlestick chart easier to read, than [Open-High-Low-Close charts](Open-High-Low-Close_chart).
 <a name="create"/>
-## Chart building
+## Chart
 
 Candlestick chart uses four values, so we need to pass opening, high, low and closing price values to chart, this should be done setting **open**, **high**, **low**, **close** attributes into second, third, fourth and fifth columns:
 
@@ -34,7 +34,7 @@ Candlestick chart uses four values, so we need to pass opening, high, low and cl
    ['White', 507, 511, 506, 510]
 ```
 <a name="single"/>
-### Single-Series
+### Single Series
 
 Let's see single-series candlestick chart created using an imaginable price ranges that will show candlestick's basic patterns:
 
@@ -172,7 +172,7 @@ Here it is - AnyChart can now visualize your data. Look at the chart sample belo
 {sample}BCT\_Japaneese-Candlestick\_Chart\_01{sample}
 
 <a name="multi"/>
-### Multi-Series
+### Multi-series
 
 To compare two or more data rows you have to use multi-series candlestick charts as it shown in the sample below.
 
@@ -270,7 +270,7 @@ As we do in single series sample above we need to convert this table into accept
 {sample}BCT\_Japaneese-Candlestick\_Chart\_02{sample}
 
 <a name="axes"/>
-## Axes management
+## Axes
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and much more. In this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 <a name="position"/>
@@ -299,7 +299,7 @@ And here is the demonstration of Logarithmic Y Axis on slightly modified the Sin
 {sample}BCT\_Japaneese-Candlestick\_Chart\_04{sample}
 
 <a name="min_max"/>
-### Minimum and Maximum values
+### Minimum and Maximum
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting maximum and minimum attributes of yScale method. As far as you want to adjusted the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 ```
@@ -315,7 +315,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 In this section we will describe main parts of candlestick chart visualization and ways to adjust it. Also you will see list of predefined styles.  Visual appearance of candlestick is defined using certain methods. The most important for candlestick methods are **fallingStroke()**, **risingStroke()**, **.risingFill()** and **.fallingFill()**.
 
 <a name="basic_style"/>
-### Basic sample
+### Basic Sample
 
 Now, let's look how to adjust candlestick appearance:
 
@@ -370,7 +370,7 @@ In the sample below we will see how we can colorize individual points. We have c
 AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "Rgb(180,77,77)" you can set "HSV(?,?,?)" or "HTMLConstant" or "#HEXCode"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
 
 <a name="advanced-candlestick-stock-charting"/>
-## Advanced Candlestick Chart sample - Candlestick, Line and Range Area Combination
+## Advanced Candlestick Chart Sample - Candlestick, Line and Range Area Combination
 
 In the real world application Open-High-Low-Close rarely used alone, in technical analysis they are often combined with other chart types, such as Lines (to show **moving average**), Range Areas (to show **"Bollinger bands"**), and column charts (to show **trading volume**).
 
