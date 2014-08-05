@@ -31,7 +31,7 @@ Also "RangeLineArea" or "RangeSpineArea" series type should be specified.
 
 This sample shows how range s can be used to chart temperature averages, the data is taken from UK weather stations 1971-2000 averages statistics:
 
-{sample}BCT_range\_Area-SplineArea\_Charts\_01{sample}
+{sample}BCT_Range\_Area-SplineArea\_Charts\_01{sample}
 
 <a name="configuration"/>
 ## Configuration
@@ -50,4 +50,4 @@ Here is the way of changing upper and lower markers:
   ]).markers().enabled(true);
 ```
 Here is the result of application of these settings to the sample data:
-{sample}BCT_range\_Area-SplineArea\_Charts\_02{sample}
+{sample}BCT_Range\_Area-SplineArea\_Charts\_02{sample}

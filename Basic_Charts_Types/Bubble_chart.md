@@ -4,16 +4,14 @@
 * [Chart](#chart)
   * [Single Series Bubble Chart](#single_series)
   * [Multi-series Bubble Chart](#multi_categorized)
-* [Controlling Bubbles Size](#size)
-  * [Bubbles Minimum and Maximum Size](#size)
+* [Bubbles Minimum and Maximum Size](#size)
 * [Axes](#axes)
   * [Positioning](#position)
   * [Inversion](#inversion)
   * [Minimum and Maximum](#min_max)
 * [Visualization](#visualization)
-  * [Basic Sample](#Basic_Sample)
+  * [Basic Sample](#basic_sample)
 * [Labels and Tooltips](#labels_and_tooltips)
-* [Markers](#markers)
 * [Colors](#colors)
   * [Colorizing Elements](#color_setting)
 * [Hatch Fills](#hatches)
@@ -21,7 +19,7 @@
 <a name="overview"/>
 ## Overview
 
-A Bubble chart is a variation of a Scatter chart in which the data points are replaced with bubbles. A Bubble chart can be used instead of a <!--[link in need]-->Scatter chart<!--[link]--> if your data has three data series, each of which contains a set of values. In AnyChart Bubble chart can be plotted not only on the scatter plot, but on categorized plot as well.
+A Bubble chart is a variation of a Scatter chart in which the data points are replaced with bubbles.
 
 Bubble charts are often used to present financial data. Use a Bubble chart when you want specific values to be more visually represented in your chart by different bubble sizes.
 
@@ -96,16 +94,16 @@ Let's compare year 2003 sales to year 2004 product sales:
 
 <table width="536" border="1" class="dtTABLE">
 <tbody><tr>
-<th width="227">Year</th>
-<th width="141" colspan="2">Year 2003 Sales</th>  
-<th width="141" colspan="2">Year 2004 Sales</th>
+<th width="227"><b>Year</b></th>
+<th width="141" colspan="2"><b>Year 2003 Sales</b></th>  
+<th width="141" colspan="2"><b>Year 2004 Sales</b></th>
 </tr>
 <tr>
-<th width="227">Product</th>
-<th width="141">Units</th>  
-<th width="141">Profit</th>    
-<th width="141">Units</th>  
-<th width="141">Profit</th>    
+<th width="227"><b>Product</b></th>
+<th width="141"><b>Units</b></th>  
+<th width="141"><b>Profit</b></th>    
+<th width="141"><b>Units</b></th>  
+<th width="141"><b>Profit</b></th>    
 </tr>  
 <tr>
 <td>Product A</td>
@@ -143,16 +141,13 @@ var dataSet = anychart.data.set([
 {sample}BCT\_Bubble\_Chart\_02{sample}
 
 <a name="size"/>
-## Controlling Bubbles Size
-
-<a name="size-minimum-maximum"/>
 ### Bubbles Minimum and Maximum Size
 
 Bubbles minimum and maximum size can be controlled using **maximumSize()** and **minimumSize()** attributes. Both of them can be set in percents of a lesser dataplot side (this can be width or height) and in pixels:
 ```
 chart.maximumSize(25).minimumSize(1);
 ```
-When you set **maximumSize('20%')** - AnyChart will make diameters of bubble(s) with a biggest size equal to 20% the lesser of two: width or the height of data plot.
+When you set **.maximumSize('20%')** - AnyChart will make diameters of bubble(s) with a biggest size equal to 20% the lesser of two: width or the height of data plot.
 
 Here is the sample when bubbles are size in percents, as specified above:
 
@@ -166,39 +161,7 @@ chart.maximumSize(100).minimumSize(10);
 Note again, that setting size in pixels may lead to the nasty results when chart is resized.
 
 {sample}BCT\_Bubble\_Chart\_04{sample}
-<!--
-<a name="size-multiplier"/>
-### Size multiplier
 
-Size multiplier parameter allows you to control the size of the bubbles in other way: define the coefficient of bubble sizing. Each bubble will be drawn on the plot with and its actual diameter will be bubble_size_multiplier multiplied by size.
-
-bubble_size_multiplier can be set in pixels or in percents. Here is a sample setting to 10 pixels:
-
-XML Syntax
-XML Code
-Plain code
-01
-<bubble_series bubble_size_multiplier="10" />
-Sample dashboard with bubble_size_multiplier set to 4:
-
-Live Sample:  Sample Bubble Chart Size use multiplier
-
-In the sample above bubbles can be compared in different plots because the multiplier is set to the same pixel value in both charts.
-
-Here is a sample setting to 1%:
-
-XML Syntax
-XML Code
-Plain code
-01
-<bubble_series bubble_size_multiplier="1%" />
-Sample dashboard with the same data and layout as above, but bubble_size_multiplier set to 1%, as you see - you can't compare bubbles in the charts with different width/height:
-
-Live Sample:  Sample Bubble Chart Size Multiplier Percents
-
-Note: if bubble_size_multiplier is used - maximum_bubble_size and minimum_bubble_size are ignored.
-to top
--->
 <a name="axes"/>
 ## Axes
 
@@ -207,7 +170,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 <a name="position"/>
 ### Positioning
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **orientation()** method of **yAxis()** or **xAxis()** attributes.
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** method of **.yAxis()** or **.xAxis()** attributes.
 <!--Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion settings in Axes Positioning and Inverting Templates.-->
 ```
   chart.xAxis(0).orientation('top');
@@ -229,7 +192,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 <a name="min_max"/>
 ### Minimum and Maximum
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 0, and maximum is 800. You can control these values by setting maximum and minimum attributes of yScale method. As far as you want to adjusted the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
+By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 0, and maximum is 1000. You can control these values by setting maximum and minimum attributes of yScale method. As far as you want to adjusted the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 ```
   chart.yScale().minimum('-100').maximum('1000').ticks().interval(100);
 ```
@@ -322,6 +285,6 @@ Advanced coloring techniques in Styles tutorial
 
 AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings and palettes. To see whole range of available hatch types see Hatch tutorial.
 
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting "hatch_type" attribute for <series> node. Also we've changed hatch type for last element in 5th series by setting "hatch_type" attribute for <point> node.
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting **.hatchFill()** attribute.
 
 {sample}BCT\_Bubble\_Chart\_12{sample}
