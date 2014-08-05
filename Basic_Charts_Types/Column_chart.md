@@ -181,12 +181,12 @@ As we now have multi-series chart we don't want to set type for each series indi
 <a name="axes"/>
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings. <--All axis features are described in Working with Axes tutorial,--> In this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings. <!--All axis features are described in Working with Axes tutorial,--> In this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
 <a name="position"/>
 ### Positioning
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust `orientation()` method of **yAxis** or **xAxis** instances.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **orientation()** method of **yAxis** or **xAxis** instances.
 
 Positioning depends on plot type and inversion of axes, you will find list of all possible positining and inversion settings in Axes Positioning and Inverting Templates.
 
@@ -201,7 +201,7 @@ Look at the demonstration of this feature on the Single-series sample:
 <a name="inversion"/>
 ### Inversion
 
-AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis **<scale>**:
+AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis **.inverted()**:
 
 ```
   chart.yScale().inverted(true);
@@ -213,7 +213,7 @@ Look at the demonstration of Y Axis inversion on the Single-series sample:
 <a name="min_max"/>
 ### Minimum and Maximum
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see it on the scale inversion chart sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting maximum and minimum attributes of <scale> node:
+By default AnyChart calculates axis minimum and maximum automatically, you can see it on the scale inversion chart sample above: minimal value on the Y Axis is 6.000, and maximum is 21.000. You can control these values by setting maximum and minimum attributes of <scale> node:
 
 ```
 chart.yScale().minimum('0').maximum('50000');
@@ -229,9 +229,9 @@ The special thing about column charts are the paddings between columns and colum
 
 ![](http://www.anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
 
-If you want to set these paddings you need to set **barsPadding()** or **barGroupsPadding()** attributes in **chart**. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For example, if you set **barsPadding()** to 0.5 - the space between two columns will be equal to the half of each column width. If you want to have no padding between columns or groups you should set **barsPadding()** and **barGroupsPadding()** to 0.
+If you want to set these paddings you need to set **.barsPadding()** or **.barGroupsPadding()** attributes in **.chart**. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For example, if you set **.barsPadding()** to 0.5 - the space between two columns will be equal to the half of each column width. If you want to have no padding between columns or groups you should set **.barsPadding()** and **.barGroupsPadding()** to 0.
 
-Here is a sample of multi-series column chart with **barsPadding()** and **barGroupsPadding()** set to -0.1 and 2, accordingly, negative **barsPadding()** leads to columns overlay and large **barGroupsPadding()** moves column groups away from each other:
+Here is a sample of multi-series column chart with **.barsPadding()** and **.barGroupsPadding()** set to -0.1 and 2, accordingly, negative **.barsPadding()** leads to columns overlay and large **.barGroupsPadding()** moves column groups away from each other:
 
 {sample}BCT\_ColumnChart\_06{sample}
 
@@ -246,12 +246,12 @@ On the image below you can see what **Chart** can be decorated with: fill (inclu
 
 ![](http://www.anychart.com/products/anychart/docs/users-guide/img/column_styles_diagram.gif)
 
-Styles are also used to make charts interactive, you can define how elements will be displayed by default, when selected, when user moves cursor over an element, etc.
+Styles are also used to make charts interactive, you can define how elements will be displayed by default and when user moves cursor over an element.
 
 <a name="basic_sample"/>
 ### Basic Sample
 
-Now, let's find out how to create a simple style and apply it to the chart. As we've already told style consists of several elements, here is an JSON structure:
+Now, let's find out how to create a simple style and apply it to the chart. As we've already told style consists of several elements, here is a structure:
 
 ```
   chart.column([
@@ -278,9 +278,9 @@ Now we will take a sample single series chart described above and apply it to al
 
 In this section we will explain how to add and configure data labels and tooltips.<!--  Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips tutorials.  -->
 
-If you want to configure data labels and tooltips for all series - you should do that in **labels()** and **tooltip()** attributes of **series** method. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear in the center of the columns, format labels so they show only the value corresponding to the column and tooltip will show detailed description.
+If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip()** attributes of **series** method. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear in the center of the columns, format labels so they show only the value corresponding to the column and tooltip will show detailed description.
 
-When formatting data labels text we will use adjusted **.textFormatter** to show Y Axis value. Otherwise label displays  X Axis value.
+When formatting data labels text we will use adjusted **.textFormatter()** to show Y Axis value. Otherwise label displays  X Axis value.
 
 {sample}BCT\_ColumnChart\_08{sample}
 
@@ -308,7 +308,7 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 <a name="color_setting"/>
 ### Colorizing Elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **".fill"** attribute in the **series** method. In the sample below we have 5 series with sample data and we'll color each series in different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **.fill()** attribute in the **series** method. In the sample below we have 5 series with sample data and we'll color each series in different color. Here is the sample:
 
 {sample}BCT\_ColumnChart\_10{sample}
 
@@ -316,7 +316,7 @@ In the sample below we will see how we can colorize individual points. We have c
 
 {sample}BCT\_ColumnChart\_11{sample}
 
-Important Note:
+ **Important Note:**
 
 AnyChart seriously takes care of visualization and users convenience - that is why we have a number of ways to set colors, for example, instead of "Rgb(180,77,77)" you can set "HSB" or "HTMLConstant" or "#HEXCode"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this it is not all about colors in AnyChart.<!--: read more about setting colors below and in the following Help Sections:
 
@@ -328,6 +328,6 @@ AnyChart seriously takes care of visualization and users convenience - that is w
 AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings.<!-- To see the whole range of available hatch types see Hatch tutorial.-->
 
 
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting "hatch_type" attribute for **series**.
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting "hatch_type" attribute for series.
 
 {sample}BCT\_ColumnChart\_12{sample}
