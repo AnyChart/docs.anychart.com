@@ -249,7 +249,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 {sample}BCT\_BarChart\_05{sample}
 
-<a name="setup_padding"/>
+<a name="padding"/>
 ## Paddings
 
 The special thing about bar charts are the paddings between bars and bar groups (in multi-series charts), on the picture below you can see what are these paddings:

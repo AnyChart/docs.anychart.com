@@ -12,7 +12,7 @@
   * [Basic Sample](#basic_style)                                                                                  
 * [Labels and Tooltips](#labels_and_tooltips)                                                                                                                                                                                                                                                                                   	
 * [Colors](#colors)                                                                                                       	
-  * [Setting colors to the elements](#color_setting)                                                                                                                                                                                                                         
+  * [Colorizing Elements](#color_setting)                                                                                                                                                                                                                         
 * [Advanced Candlestick Chart Sample - Candlestick, Line and Range Area Combination](#advanced-candlestick-stock-charting)                                                                                                                                                                                                                                
 
 <a name="overview"/>
@@ -355,7 +355,7 @@ Full reference of data labels settings can be found in XML Reference, particular
 AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can apply the color to exact data series or data point.
 
 <a name="color_setting"/>
-### Colorizing elements
+### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set "color". In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
 
