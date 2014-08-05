@@ -3,7 +3,7 @@
 * [Overview](#overview)
 * [Chart](#chart)
   * [Single Series Line Chart](#single_series)
-  * [Single Series Spline Chart](#single_series_spline)
+  * [Single Series Spline Chart](#single_series_spline_chart)
   * [Step Line Chart](#step_line)
   * [Multi-series Line Chart](#multi_categorized)
 * [Axes](#axes)
@@ -115,7 +115,7 @@ As you can see, we've specified chart's type with **anychart.lineChart()** metho
 
 {sample}BCT\_LineChart\_01{sample}
 
-<a name="single_series_spline"/>
+<a name="single_series_spline_chart"/>
 ### Single Series Spline Chart
 
 For better look and feel of your charts you can use Spline chart type:
