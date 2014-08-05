@@ -313,6 +313,7 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 [Link in need]Different ways of setting colors of elements[liink in need]
 Advanced coloring techniques in [link in need]Styles tutorial[link in need]-->
 
+<a name="hatches"/>
 ## Hatch Fills
 
 AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings and palettes. <!--To see whole range of available hatch types see [Link in need]Hatch tutorial.[Link]-->
