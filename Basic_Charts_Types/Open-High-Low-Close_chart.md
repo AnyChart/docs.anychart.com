@@ -4,7 +4,7 @@
 * [Chart](#create)
   * [Single Series](#single)
   * [Multi-series](#multi)
-* [Axes management](#axes)
+* [Axes](#axes)
   * [Positioning](#position)
   * [Logarithmic Scale](#logarithmic)
   * [Minimum and Maximum values](#min_max)
@@ -202,7 +202,7 @@ As we do in single series sample above we need to convert this table into accept
 {sample}BCT\_OHLC\_Chart\_02{sample}
 
 <a name="axes"/>
-## Axes management
+## Axes
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and much more. <!--All axis features are described in [Link in need]Working with Axes tutorial.[Link] -->In this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
