@@ -1,25 +1,24 @@
 #Bar Chart
 
 * [Overview](#overview)                                         
-* [Chart building](#how_to_create_bar_chart)
-  * [Single-Series bar chart](#single_series)
-  * [Multi-Series bar chart](#multi_categorized)
-* [Axes management](#axes)
+* [Chart](#chart)
+  * [Single Series bar chart](#single_series)
+  * [Multi-series bar chart](#multi_categorized)
+* [Axes](#axes)
   * [Positioning](#position)
   * [Inversion](#inversion)
   * [Minimum and Maximum values control](#min_max)
 * [Paddings between bars and bar groups](#setup_padding)
-* [Using styles](#using_styles)
-  * [Simple style](#simple_style)
-* [Working with data labels and tooltips](#working_with_labels_and_tooltips)
-* [Working with colors](#colors)
-  * [Setting colors to the elements](#color_setting)
-* [Working with hatch fills](#hatches)
-  * [Setting hatch fills to the elements](#hatch_setting)
+* [Visualization](#visualization)
+  * [Basic Sample](#basic_sample)
+* [Labels and Tooltips](#labels_and_tooltips)
+* [Colors](#colors)
+  * [Colorizing elements](#color_setting)
+* [Hatch fills](#hatches)
 
 ## Overview
 
-A bar chart, is a chart with rectangular bars of lengths usually proportional to the magnitudes or frequencies of what they represent. Although the bars can be horizontally or vertically oriented, we call vertically oriented charts - column charts and study them in a Column Chart Help section.
+A bar chart, is a chart with rectangular bars of lengths usually proportional to the magnitudes or frequencies of what they represent. Although the bars can be horizontally or vertically oriented, we call vertically oriented charts - column charts and study them in a [Column Chart](Column_Chart) section.
 
 Bar charts are useful for showing data changes over a period of time or for illustrating comparisons among items. In bar charts, categories are typically organized along the vertical axis and values along the horizontal axis.
 
@@ -28,13 +27,13 @@ Consider using a bar chart when:
 * The axis labels are long.
 * The values that are shown are durations.
 
-<a name="how_to_create_bar_chart"/>
-## Chart building
+<a name="chart"/>
+## Chart
 
 Depending on data model and the visualization purpose the bar chart may contain single series or multi series.
 
 <a name="single_series"/>
-### Single-Series Bar Chart
+### Single Series Bar Chart
 
 Let's see single series bar chart created using the following data - sales of ACME Corp. apparel through different retail channels in one year:
 
@@ -206,7 +205,7 @@ As we now have multi-series chart we don't want to set **type** for each series 
 {sample}BCT\_BarChart\_02{sample}
 
 <a name="axes"/>
-## Axes managemen
+## Axes
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in Axes Basics , Axes Scales and Extra Axes tutorial, in this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
@@ -263,8 +262,8 @@ Here is a sample of multi-series bar chart with **xPointPosition** set to 0.5.
 
 {sample}BCT\_BarChart\_11{sample}
 
-<a name="using_styles"/>
-## Using styles
+<a name="visualization"/>
+## Visualization
 
 In this section we will describe main parts of bar chart style and demonstrate how style can be applied.
 
@@ -276,8 +275,8 @@ On the image below you can see what bar_style consists of: fill (including solid
 
 Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when user moves cursor over an element, etc.
 
-<a name="simple_style"/>
-### Simple style
+<a name="basic_sample"/>
+### Basic sample
 
 Now, let's look how to apply a simple style to the chart. As we've already said style consists of several elements, here is an JSON structure:
 
@@ -296,8 +295,8 @@ Now we will take a sample single-series chart described above, define style in J
 
 {sample}BCT\_BarChart\_06{sample}
 
-<a name="working_with_labels_and_tooltips"/>
-## Working with data labels and tooltips
+<a name="labels_and_tooltips"/>
+## Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips tutorials.
 
@@ -315,12 +314,12 @@ Full Keywords reference and formatting guide: Labels and tooltips
 -->
 
 <a name="colors"/>
-## Working with colors
+## Colors
 
 AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors.
 
 <a name="color_setting"/>
-### Setting colors to the elements
+### Colorizing elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **".fill"** attribute in the **series** method. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
 
@@ -337,14 +336,11 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 * Different ways of setting colors of elements  -->
 
 <a name="hatches"/>
-## Working with hatch fills
+## Hatch fills
 
-AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings and palettes. To see whole range of available hatch types see Hatch tutorial.
+AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings.<!-- To see whole range of available hatch types see Hatch tutorial.-->
 
-<a name="hatch_setting"/>
-### Setting hatch fills to the elements
 
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting "hatch_type" attribute for **series**.
 
 {sample}BCT\_BarChart\_10{sample}
-<!--    rent Page Online URL: Bar chart -->
