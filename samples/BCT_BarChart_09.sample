@@ -3,20 +3,30 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
   var data = anychart.data.set([
-    ['P1', 132],
-    ['P2', 124],
-    ['P3', 102],
-    ['P4', 119],
-    ['P5', 169],
-    {x: 'P6', value: 237, fill: 'Rgb(77,180,77)'},
-    ['P7', 120],
-    ['P8', 99],
-    {x: 'P9', value: 44, fill: '#B44D4D'},
-    ['P10', 59]
+    ['P1', 132, 102, 72, 65, 68],
+    ['P2', 124, 89, 44, 38, 57]
   ]);
 
+  var data1 = data.mapAs({x: [0], value: [1]});
+  var data2 = data.mapAs({x: [0], value: [2]});
+  var data3 = data.mapAs({x: [0], value: [3]});
+  var data4 = data.mapAs({x: [0], value: [4]});
+  var data5 = data.mapAs({x: [0], value: [5]});
+  
   chart = anychart.barChart();
-  chart.bar(data).fill('#C6D1A5');
 
-chart.container('container').draw();
-});
+  var series;
+  series = chart.bar(data1);
+  series.fill('#4A55C7');
+  series = chart.bar(data2);
+  series.fill('#5EBD9B');
+  series = chart.bar(data3);
+  series.fill('#B04A8A');
+  series = chart.bar(data4);
+  series.fill('#C7894A');
+  series = chart.bar(data5);
+  series.fill('#BCBD46');
+  
+  chart.container('container');
+  chart.draw();
+  });

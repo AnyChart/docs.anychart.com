@@ -13,9 +13,9 @@ anychart.onDocumentReady(function() {
   ]);
   var Sales2003 = data.mapAs({x: [0], value: [1]});
   var Sales2004 = data.mapAs({x: [0], value: [2]});
-  
+
   var series;
-    
+
   var setupSeriesLabels = function(series) {
     var seriesLabels = series.labels();
     seriesLabels.enabled(true);
@@ -25,7 +25,7 @@ anychart.onDocumentReady(function() {
     seriesLabels.fontColor('white');
     seriesLabels.fontWeight('bold');
   };
-    
+
   series = chart.column(Sales2003);
   setupSeriesLabels(series);
   series.hoverFill('#333333');

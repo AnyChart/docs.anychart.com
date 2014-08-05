@@ -12,6 +12,7 @@
 * [Visualization](#visualization)
   * [Basic Sample](#basic_sample)
 * [Labels and Tooltips](#labels_and_tooltips)
+* [Markers](#markers)
 * [Colors](#colors)
   * [Colorizing Elements](#color_setting)
 * [Hatch Fills](#hatches)
@@ -260,7 +261,7 @@ If you want to set these paddings you need to set **PointPosition** in **bar_ser
 
 Here is a sample of multi-series bar chart with **xPointPosition** set to 0.5.
 
-{sample}BCT\_BarChart\_11{sample}
+{sample}BCT\_BarChart\_12{sample}
 
 <a name="visualization"/>
 ## Visualization
@@ -312,6 +313,19 @@ When formatting data labels text we will use **.textFormatter** to choose the co
 Learn more about labels and tooltips in Labels and tooltips
 Full Keywords reference and formatting guide: Labels and tooltips
 -->
+<a name="markers">
+## Markers
+Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including bars.
+
+In the sample below we will take single-series data described above and mark the biggest bar in series with a "Star5" of the "Gold" color.
+
+To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 12 pixels in normal state, and make it bigger (12 pixels) when user moves cursor over an element.
+```
+    {x: 'Men\'s/Women\'s Specialty Stores', value: 148662, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}}
+```
+And here is a result - the best retail channel for ACME Corp. is Discount Stores and we show this on the chart
+
+{sample}BCT\_BarChart\_08{sample}
 
 <a name="colors"/>
 ## Colors
@@ -323,11 +337,11 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **".fill"** attribute in the **series** method. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
 
-{sample}BCT\_BarChart\_08{sample}
+{sample}BCT\_BarChart\_09{sample}
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximum one. As you see it is very easy to do by setting **fill** attribute for **point** node.
 
-{sample}BCT\_BarChart\_09{sample}
+{sample}BCT\_BarChart\_10{sample}
 
 **Important Note:**
 
@@ -343,4 +357,4 @@ AnyChart technology allows printing of charts. Some color printers print colors 
 
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting "hatch_type" attribute for **series**.
 
-{sample}BCT\_BarChart\_10{sample}
+{sample}BCT\_BarChart\_11{sample}

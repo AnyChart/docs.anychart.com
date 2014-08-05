@@ -294,7 +294,7 @@ In the sample below we will take single-series data described above and mark the
 To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 12 pixels in normal state, and make it bigger (12 pixels) when user moves cursor over an element.
 
 ```
-chart.marker('Peter, 18000').type('star').size(12).fill('Gold');
+{x: 'Peter', value: 18000, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}}
 ```
 And here is a result - Peter sold more than others and we are showing this on the chart:
 

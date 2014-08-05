@@ -27,11 +27,11 @@ You should use a line chart if your category labels are text, and are representi
 [Line](#single_series) and [line with markers](#using_markers) Displayed with or without markers to indicate individual data values, line charts are useful to show trends over time or ordered categories, especially when there are many data points and the order in which they are presented is important. If there are many categories or the values are approximate, you should use a line chart without markers.
 <br/><br/>
 Stacked line and stacked line with markers Displayed with or without markers to indicate individual data values, stacked line charts are useful to show the trend of the contribution of each value over time or ordered categories. If there are many categories or the values are approximate, you should use a stacked line chart without markers. 
+
+**Tip:** For a better presentation of this type of data, you may want to consider using a [stacked area](Stacked_Area-SplineArea_Charts) chart instead.
 <br/><br/>
-**Tip:** For a better presentation of this type of data, you may want to consider using a stacked area chart instead.
-<br/><br/>
-100% stacked line and 100% stacked line with markers Displayed with or without markers to indicate individual data values, 100% stacked line charts are useful to show the trend of the percentage each value contributes over time or ordered categories. If there are many categories or the values are approximate, you should use a 100% stacked line chart without markers.
-<br/><br/>
+100% stacked line and 100% stacked line with markers Displayed with or without markers to indicate individual data values, 100% stacked line charts are useful to show the trend of the percentage each value contributes over time or ordered categories. If there are many categories or the values are approximate, you should use a [100% stacked line chart](Percent-Stacked_Area-SplineArea_Charts) without markers.
+
 **Tip:** For a better presentation of this type of data, you may want to consider using a 100% stacked area chart instead.
 
 <a name="chart"/>
@@ -44,56 +44,32 @@ Depending on data model and the visualization purpose the line chart may contain
 
 Let's see single-series line chart created using the following data - sales of ACME Corp. through several months in one year:
 
-<table width="200px" style=" text-align:left; vertical-align:middle; border: 1px solid #cccccc; border-collapse: collapse;">
-<tr>
-<th width="100px" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
-Month
-</th>
-<th width="100px" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
-Sales
-</th>
+<table width="287" border="1" class="dtTABLE">
+<tbody><tr>
+<th width="88"><b>Month</b></th>
+<th width="88"><b>Sales</b></th>
 </tr>
 <tr>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-January
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$10000
-</td>
+<td>January</td>
+<td>$10000</td>
 </tr>
 <tr>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-February
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$12000
-</td>
+<td>February</td>
+<td> $12000</td>
 </tr>
 <tr>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-March
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$18000
-</td>
+<td>March</td>
+<td> $18000</td>
 </tr>
 <tr>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-April
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$11000
-</td>
+<td>April</td>
+<td> $11000</td>
 </tr>
 <tr>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-May
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$9000
-</td>
+<td>May</td>
+<td> $9000</td>
 </tr>
-</table>
+</tbody></table>
 Now we need to convert this data table into acceptable format, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data (Sales) with categories that hold months names. Each point in series represents one month and sales volume. Converted Data looks like:
 
 ```
@@ -147,7 +123,7 @@ Step line chart series display data points connected with Horizontal or Vertical
   chart = anychart.lineChart();
   chart.stepLine(data);
 ```
-Here is the same chart as shown above, but in both StepLineForward and StepLineBackward modes:
+Here is the same chart as shown above, but in Step Line mode:
 
 {sample}BCT\_LineChart\_03{sample}
 
@@ -158,77 +134,40 @@ To compare two or more data rows you have to use multi-series line charts as it 
 
 Let's compare 2003 sales to 2004 sales:
 
-<table width="300px" style=" text-align:left; vertical-align:middle; border: 1px solid #cccccc; border-collapse: collapse;">
-<tr>
-<th width="100px" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
-Month
-</th>
-<th width="100px" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
-2003 Sales
-</th>
-<th width="100px" style="background: url('http://anychart.com/products/anychart/docs/img/header_back.gif') repeat-x scroll 0 top #ebecee;border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;border-top: 1px solid #D0D0D0;padding: 3px;padding-left: 10px;padding-right: 10px;text-align: left;vertical-align: middle;color: #222222;font-size: 11px;">
-2004 Sales
-</th>
+<table width="375" border="1" class="dtTABLE">
+<tbody><tr>
+<th width="88"><b>Month</b></th>
+<th width="88"><b>2003 Sales</b></th>
+<th width="88"><b>2004 Sales</b></th>	
 </tr>
 <tr>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-January
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$10000
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$12000
-</td>
+<td>January</td>
+<td>$10000</td>
+<td>$12000</td>	
 </tr>
 <tr>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-February
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$12000
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$15000
-</td>
+<td>February</td>
+<td> $12000</td>
+<td> $15000</td>	
 </tr>
 <tr>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-March
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$18000
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$16000
-</td>
+<td>March</td>
+<td> $18000</td>
+<td> $16000</td>	
 </tr>
 <tr>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-April
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$11000
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$15000
-</td>
+<td>April</td>
+<td> $11000</td>
+<td> $15000</td>	
 </tr>
 <tr>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-May
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$9000
-</td>
-<td style="border: 1px solid;border-color: #D0D0D0;text-align: left;vertical-align: top;padding-left: 10px;padding-top: 8px;padding-right: 10px;padding-bottom: 8px;line-height: 18px;color: #333333;">
-$14000
-</td>
+<td>May</td>
+<td> $9000</td>
+<td> $14000</td>	
 </tr>
-</table>
+</tbody></table>
 
-As we do in single series line sample above we need to convert this table into JSON, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
-
+As we do in single series line sample above we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
 ```
  var dataSet = anychart.data.set([
      ['January', '10000', '12000'],
@@ -255,7 +194,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 <a name="position"/>
 ### Positioning
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust position with `orientation()` method of **yAxis** or **xAxis** instances.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust position with **orientation()** method of **.yAxis()** or **.xAxis()** instances.
 
 Positioning depends on plot type and inversion of axes, you will find list of all possible positining and inversion settings in Axes Positioning.
 
@@ -271,7 +210,7 @@ And here is the demonstration of this feature on the Single-series sample:
 <a name="inversion"/>
 ### Inversion
 
-AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis `.inverted()`:
+AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis **.inverted()**:
 
 ```
   chart.yScale().inverted(true);
@@ -284,7 +223,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 <a name="min_max"/>
 ### Minimum and Maximum
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting **.maximum** and **.minimum** attributes of the method:
+By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting **.maximum()** and **.minimum()** attributes of the method:
 
 ```
 chart.yScale().minimum('0').maximum('50000');
@@ -307,7 +246,7 @@ Also, styles are used to make charts interactive, you can define how elements wi
 <a name="basic_sample"/>
 ### Basic Sample
 
-Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an JSON structure:
+Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an acceptable structure:
 
 ```
 chart.line(data)
@@ -326,7 +265,7 @@ Now we will take a sample single series chart described above, define style in J
 
 In this section we will explain how to add and configure data labels and tooltips.<!-- Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
 
-If you want to configure data labels and tooltips for all series - you should do that in **.labels** and **.tooltip** methods. You can tune their visual appearance, positioning and format.  Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
+If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip()** methods. You can tune their visual appearance, positioning and format.  Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
 
 {sample}BCT\_LineChart\_09{sample}
 
@@ -360,7 +299,7 @@ Full reference of marker style can be found in XML Reference, particularly <mark
 <a name="colors"/>
 ## Colors
 
-AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can use your own palettes or palettes shipped with AnyChart. Also you can set and apply the color to exact data series or data point.
+AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can set and apply the color to exact data series or data point.
 
 <a name="color_setting"/>
 ### Colorizing Elements

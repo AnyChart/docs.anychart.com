@@ -8,10 +8,9 @@ anychart.onDocumentReady(function() {
   chart.column([
     ['John' , 10000],
     ['Jake' , 12000],
-    ['Peter' , 18000],
+    {x: 'Peter', value: 18000, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}},
     ['James' , 11000],
     ['Mary' , 9000]
   ]);
-  chart.marker('Peter, 18000').type('star').size(12).fill('Gold').hoverSize(16);
   chart.draw();
 });
