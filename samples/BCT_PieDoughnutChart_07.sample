@@ -12,12 +12,8 @@ anychart.onDocumentReady(function() {
   ]);
   chart.labels()
   .enabled(true)
-  .offsetX(20)
-  .textFormatter(function(point){
-    return point.value;
-  })
-    .fontColor('black')
-    .fontSize(15);
+  .fontColor('black')
+  .fontWeight('bold');
   chart.tooltip().enabled(true).contentFormatter(function() {
     return 'Chanel: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2003';
   });

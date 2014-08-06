@@ -11,8 +11,11 @@ anychart.onDocumentReady(function() {
     ['All other outlets', 90000]
   ]);
 chart.fill('Gold')
-  .hoverFill("darkred")
-  .stroke('#56561a', 10);
+  .hoverHatchFill('diagonalbrick', 'darkred')
+  .stroke('4 Rgb(86,86,26)')
+  .hoverStroke('4 darkred')
+  .hatchFill('diagonalbrick', 'gray');
+  chart.labels().enabled(false);
   chart.container('container');
   chart.draw();
 });

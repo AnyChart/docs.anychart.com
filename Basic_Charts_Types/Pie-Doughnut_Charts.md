@@ -42,8 +42,8 @@ Let's see pie chart created using the following data - sales of ACME Corp. appar
 
 <table width="328" border="1" class="dtTABLE">
 <tbody><tr>
-<th width="210">Retail Channel</th>
-<th width="102">Sales  </th>
+<th width="210"><b>Retail Channel</b></th>
+<th width="102"><b>Sales</b></th>
 </tr>
 <tr>
 <td>Department Stores</td>
@@ -66,8 +66,8 @@ Let's see pie chart created using the following data - sales of ACME Corp. appar
 <td> $90.000</td>
 </tr>
 </tbody></table>
-Now we need to convert this data table into JSON, this format will be accepted by AnyChart. In terms of AnyChart data model 
-we have one series of data (Sales) with categories that hold Retail channels names. Converted JSON Data looks like:
+Now we need to convert this data table into js, this format will be accepted by AnyChart. In terms of AnyChart data model 
+we have one series of data (Sales) with categories that hold Retail channels names. Converted js Data looks like:
 ```
  chart = anychart.pieChart([
     ['Department Stores', 637166],
@@ -79,8 +79,8 @@ we have one series of data (Sales) with categories that hold Retail channels nam
 ```
 
 As you can see, we've created **anychart.pieChart()** node. First column defines category and other one defines slice value.
-
-Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on it to see preview and full configured JSON in playground.
+<br/><br/>
+Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on it to see preview and full configured data in playground.
 
 {sample}BCT\_PieDoughnutChart\_01{sample}
 
@@ -132,16 +132,16 @@ Also, styles are used to make charts interactive, you can define how elements wi
 <a name="basic_sample"/>
 ### Basic Sample
 
-Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an JSON structure:
+Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is a structure:
 ```
 chart.fill('Gold')
-  .hoverFill("darkred")
-  .stroke('#56561a', 10);
-  chart.container('container');
-  chart.draw();
+  .hoverHatchFill('diagonalbrick', 'darkred')
+  .stroke('4 Rgb(86,86,26)')
+  .hoverStroke('4 darkred')
+  .hatchFill('diagonalbrick', 'gray');
 ```
 
-Using such settings we've created a style that defines slices of Gold color<--, rather thick border, hatch filled with DiagonalBrick and a couple of effects-->. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed<!-- thick border and hatch fill colored DarkRed too-->.
+Using such settings we've created a style that defines slices of Gold color, rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element border and hatch fill will be highlighted with a DarkRed.
 
 {sample}BCT\_PieDoughnutChart\_05{sample}
 
@@ -151,11 +151,11 @@ Using such settings we've created a style that defines slices of Gold color<--, 
 In this section we will explain how to add and configure data labels and tooltips. 
 <!--Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
 
-If you want to configure data labels and tooltips for all series - you should do that in **.labels** and **.tooltip** sub-nodes of <pie_series> node. You can tune their visual appearance, positioning and format.
+If you want to configure data labels and tooltips for all series - you should do that with **.labels()** and **.tooltip()** methods. You can tune their visual appearance, positioning and format.
 Let's do that in the following example: we will make data labels appear inside of the slices, also, we will format labels so they show only the percentage corresponding to the slices and tooltip will show detailed description.
  
 
-When formatting data labels text we will use **.textFormatter** to choose the column we need information from. 
+When formatting data labels text we will use **.textFormatter()** to choose the column we need information from. 
 
 {sample}BCT\_PieDoughnutChart\_07{sample}
 <!--
@@ -248,7 +248,7 @@ AnyChart uses default colors to colorize data elements of chart automatically ev
 <a name="color_setting"/>
 ### Colorizing Elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **".fill"** attribute. In the sample below we'll color each series to different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **.fill()** attribute. In the sample below we'll color each series to different color. Here is the sample:
 
 {sample}BCT\_PieDoughnutChart\_06{sample}
 
