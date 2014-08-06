@@ -2,10 +2,10 @@
   :is_new false
   :exports "chart"}
 anychart.onDocumentReady(function() {
-  chart = anychart.columnChart();
+  chart = anychart.barChart();
   chart.container('container');
   chart.title().text('Column Chart');
-  chart.column([
+  chart.bar([
     ['John' , 10000],
     ['Jake' , 12000],
     {x: 'Peter', value: 18000, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}},

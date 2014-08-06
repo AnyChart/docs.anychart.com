@@ -1,19 +1,19 @@
 # Pie and Donut Chart
                                                                
 * [Overview](#overview)
-* [Chart building](#how_to_create_pie_chart)
-  * [Pie chart](#single_series)
-  * [Donut chart](#single_series_doughnut)
+* [Chart](#chart)
+  * [Pie Chart](#pie_chart)
+  * [Doughnut Chart](#doughnut_chart)
 * [Slices Sorting](#sorting)
 * [Exploded Slices](#exploded)
-* [Using styles](#using_styles)
-  * [Simple style sample](#simple_style)
-* [Working with data labels and tooltips](#working_with_labels_and_tooltips)
+* [Visualization](#visualization)
+  * [Basic Sample](#basic_sample)
+* [Labels and Tooltips](#labels_and_tooltips)
 <!--  * [Working with labels connectors](#label_connectors)-->
 <!--* [Using markers](#using_markers)-->
-* [Working with colors](#colors)
-  * [Setting colors to the elements](#color_setting)
-* [Hatch fills](#hatches)
+* [Colors](#colors)
+  * [Colorizing Elements](#color_setting)
+* [Hatch Fills](#hatches)
 
 <a name="overview"/>
 ## Overview
@@ -30,12 +30,12 @@ Consider using a pie chart when:
 
 Doughnut chart are functionally identical to pie charts, the only difference is that it has a hole in the middle.
 
-<a name="how_to_create_pie_chart"/>
-## Chart building
+<a name="chart"/>
+## Chart
 
 Pie chart contains only single series.
 
-<a name="single_series"/>
+<a name="pie_chart"/>
 ### Pie Chart
 
 Let's see pie chart created using the following data - sales of ACME Corp. apparel through different retail channels in one year:
@@ -84,7 +84,7 @@ Here it is - AnyChart can now visualize your data. Look at the chart sample belo
 
 {sample}BCT\_PieDoughnutChart\_01{sample}
 
-<a name="single_series_doughnut"/>
+<a name="doughnut_chart"/>
 ### Doughnut Chart
 
 Donut chart is all the same as Pie chart, and all you need to do to switch to it: add **'chart.innerRadius()'**
@@ -122,15 +122,15 @@ Sample chart below is exploded by default, you can launch the live sample and cl
 
 {sample}BCT\_PieDoughnutChart\_04{sample}
 
-<a name="using_styles"/>
-## Using styles
+<a name="visualization"/>
+## Visualization
 
 In this section we will describe main parts of pie chart style and demonstrate how style can be applied. 
 
 Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when user moves cursor over an element, etc. <!--More information about these features can be found in Interactivity tutorial.-->
 
-<a name="simple_style"/>
-### Simple style
+<a name="basic_sample"/>
+### Basic Sample
 
 Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an JSON structure:
 ```
@@ -146,7 +146,7 @@ Using such settings we've created a style that defines slices of Gold color<--, 
 {sample}BCT\_PieDoughnutChart\_05{sample}
 
 <a name="working_with_labels_and_tooltips"/>
-## Working with data labels and tooltips
+## Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips. 
 <!--Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
@@ -241,19 +241,19 @@ You can read more about working with markers in Markers tutorial.
 Full reference of marker style can be found in XMLReference, particularly <marker_style> node.
 -->
 <a name="colors"/>
-## Working with colors
+## Colors
 
 AnyChart uses default colors to colorize data elements of chart automatically even if you have not define special colors. Also you can set and apply the color to exact data series or data point.
 
 <a name="color_setting"/>
-### Setting colors to the elements
+### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **".fill"** attribute. In the sample below we'll color each series to different color. Here is the sample:
 
 {sample}BCT\_PieDoughnutChart\_06{sample}
 
 <a name="hatches"/>
-## Hatch fills
+## Hatch Fills
 
 AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings.<!-- To see whole range of available hatch types see Hatch tutorial.-->
 
