@@ -1,7 +1,7 @@
 # Stacked Line/Spline Charts
 
  * [Overview](#overview)
- * [Chart building](#how_to_create_chart)
+ * [Chart](#chart)
  * [Spline Stacked Area](#spline-stacked-area)
  * [Step Stacked Area](#step-stacked-area)
 
@@ -11,8 +11,8 @@ Data that is arranged in columns or rows on a worksheet can be plotted in an are
 
 Stacked area charts are multi series area charts that display the trend of the contribution of each value over time or categories.
 
-<a name="how_to_create_chart"/>
-## Chart Building
+<a name="chart"/>
+## Chart
 
 As stacked charts should show contribution of different components to the total, we will demonstrate them on an imaginable ACME FastFood, Corp. sales. Let's assume that it sells Ice Cream, Chocolate Bar and Coke all through the year.
 

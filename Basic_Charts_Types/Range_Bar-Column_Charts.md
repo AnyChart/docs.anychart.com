@@ -1,9 +1,9 @@
 # Range Column/Bar chart
                                                                          
  * [Overview](#overview)
- * [Chart building](#how_to_create_range_chart)
- * [Temperature range chart sample](#temperature)
- * [Waterfall chart sample](#waterfall)
+ * [Chart](#chart)
+ * [Temperature Range Chart Sample](#temperature)
+ * [Waterfall Chart Sample](#waterfall)
 <!-- * [Configuration](#configuration)-->
 
 <a name="overview"/>
@@ -14,8 +14,8 @@ Sometimes range charts are referred as "floating" column/bar charts. Some data m
 
 Also you can create Waterfall charts, which are a special type of Floating Column Charts. A typical waterfall chart shows how an initial value is increased and decreased by a series of intermediate values, leading to a final value.
 
-<a name="how_to_create_range_chart"/> 
-## Chart Building
+<a name="chart"/> 
+## Chart
 
 As range bar charts have to define lower and upper bound of bars - you have to specify these two values using **"low"** and **"high"** attributes.
 
@@ -30,7 +30,7 @@ chart.rangeBar([
 ```
 
 <a name="temperature"/> 
-## Temperature Range Cylinder chart sample
+## Temperature Range Chart Sample
 
 This sample shows how range bars can be used to chart temperature averages, the data is taken from UK weather stations 1971-2000 averages statistics:
 
