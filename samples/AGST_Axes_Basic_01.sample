@@ -1,0 +1,22 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+anychart.onDocumentReady(function() {
+  var data = anychart.data.set([
+    ['January', 10000],
+    ['February', 12000],
+    ['March', 18000],
+    ['April', 11000],
+    ['May', 9000]
+  ]);
+  chart = anychart.areaChart(data);
+  chart.title().enabled(false);
+  chart.container('container').draw();
+  var max = chart.yScale().maximum();
+  var min = chart.yScale().minimum();
+  chart.yAxis().title().align('bottom');
+  chart.yAxis(0).orientation('right');
+  chart.xAxis().title().text('Sample X axis name').fontWeight('400');
+  chart.yAxis().title().text('Y axis from ' + min + ' to ' + max);
+  chart.yAxis().enabled(false).enabled(true);
+});

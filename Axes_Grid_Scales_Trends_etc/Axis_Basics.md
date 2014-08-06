@@ -25,79 +25,37 @@ In AnyChart axes are used to control values or arguments scales, grids, axes lab
 * To learn more about Date/Time Scale - Date/Time Axes
 
 In this section we will demonstrate most of the axes visualization options, which are the same for Y and X and Extra axes.
-Define an axis
 
-If you want to control any of the axes settings - you should do that in <axes> sub-node of <chart_settings> node:
+<a name="definition"/>
+## Define an Axis
 
-XML Syntax
-XML Code
-Plain code
-01
-<chart_setttings>
-02
-  <axes>
-03
-    <x_axis />
-04
-    <y_axis />
-05
-    <extra>
-06
-      <y_axis name="y2" />
-07
-    </extra>
-08
-  </axes>
-09
-</chart_setttings>
-to top
+If you want to control any of the axes settings - you should do that though **Axis** method:
 
-Setting axis title
+```
+  chart.xAxis().title().enabled(true).text('Sample X axis name');
+```
+<a name="title"/>
+## Setting Axis Title
 
-You can define a title of any axis, you can control its position, font and use keywords, when specifying text. Full reference of parameters can be found in XML Reference: <y_axis><title> or <x_axis><title>. Here is a sample titles definition:
+You can define a title of any axis, you can control its position and font <!--and use keywords-->, when specifying text. Full reference of parameters can be found in Reference: **.yAxis().title()** or **.xAxis().title()**. Here is a sample titles definition:
 
-XML Syntax
-XML Code
-Plain code
-01
-<axes>
-02
-  <x_axis>
-03
-    <title>
-04
-      <text><![CDATA[Sample X axis name]]></text>
-05
-      <font bold="Yes" />
-06
-    </title>
-07
-  </x_axis>
-08
-  <y_axis position="Opposite">
-09
-    <title align="Near">
-10
-      <text><![CDATA[Y axis from %DataPlotYMax to %DataPlotYMin]]></text>
-11
-    </title>
-12
-  </y_axis>
-13
-</axes>
-As you can see, we've set titles both to X and Y axis, made X axis title bold, aligned Y axis and used {%DataPlotYMax} and %DataPlotYMin keywords.
+```
+var max = chart.yScale().maximum();
+var min = chart.yScale().minimum();
+chart.yAxis().title().align('bottom');
+chart.yAxis(0).orientation('right');
+chart.xAxis().title().text('Sample X axis name').fontWeight('400');
+chart.yAxis().title().text('Y axis from ' + min + ' to ' + max);
+```
+
+As you can see, we've set titles both to X and Y axis <!--made X axis title bold-->and aligned Y axis <!--and used {%DataPlotYMax} and %DataPlotYMin keywords-->.
 
 Full reference of available keywords is available in the end of this article: Keywords reference.
 
 General formatting questions are answered in Text Formatting and Keywords section.
 
 Learn how to format keywords in Number Formatting section.
-
- 
-
-Live Sample:  Axes Titles Sample
-
-to top
+{sample}AGST\_Axes\_Basic\_01{sample}
 
 Axes position
 
