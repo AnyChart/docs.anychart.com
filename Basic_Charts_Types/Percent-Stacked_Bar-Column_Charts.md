@@ -1,7 +1,7 @@
 # Stacked Bar/Column Charts
 
  * [Overview](#overview)
- * [Chart building](#how_to_create_chart)
+ * [Chart](#chart)
  * [Stacked Bar](#stacked-bar)
 <!-- * [Adding "%" to axis labels](#percent) -->
 
@@ -11,8 +11,8 @@ Data that is arranged in columns or rows on a worksheet can be plotted in a bar 
 
 100% stacked bar charts compares the percentage each value contributes to a total across categories.
 
-<a name="how_to_create_chart"/>
-## Chart Building
+<a name="chart"/>
+## Chart
 
 As stacked charts should show contribution of different components to the total, we will demonstrate them on an imaginable ACME FastFood, Corp. sales. Let's assume that it sells Ice Cream, Chocolate Bar and Coke all through the year.
 
@@ -44,7 +44,7 @@ Just change "columnChart" to "barChart" and get your data displayed as a bar cha
   series = chart.column(seriesData_3);
   series = chart.column(seriesData_4);
 ```
-Also, tooltips can be enabled/disabled by adjusting **tooltip()** method:
+Also, tooltips can be enabled/disabled by adjusting **.tooltip()** method:
 ```
   series = chart.column(seriesData_1);
   series.tooltip().enabled(false);

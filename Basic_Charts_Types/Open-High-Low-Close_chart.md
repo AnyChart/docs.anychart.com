@@ -23,7 +23,7 @@ financial instrument over time. Each vertical line on the chart shows the price 
 e.g. one day or one hour. Tick marks project from each side of the line indicating the opening price (e.g. for a daily bar chart this would 
 be the starting price for that day) on the left, and the closing price for that time period on the right. The bars may be shown in different 
 hues depending on whether prices rose or fell in that period.
-
+<br/><br/>
 The [Japanese candlestick chart](Japaneese-Candlestick_Chart) is another way of displaying market price data, with the opening and closing prices defining a rectangle within 
 the range for each time unit. Both charts show the exact same data, i.e. the opening, high, low, and closing prices during a particular time frame. 
 Some traders find the candlestick chart easier to read.
@@ -84,7 +84,7 @@ Let's see single-series OHLC chart created using the following data - ACME Corp.
 <td>525.15</td>			
 </tr>
 </tbody></table>
-Now we need to convert this data table into JSON, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data with categories that hold days names. Each point in series represents one day and open, high, low, close prices. Converted JSON Data looks like:
+Now we need to convert this data table into acceptable format. In terms of AnyChart data model we have one series of data with categories that hold days names. Each point in series represents one day and open, high, low, close prices. Converted Data looks like:
 
 ```
      var data = [
@@ -97,7 +97,7 @@ Now we need to convert this data table into JSON, this format will be accepted b
       chart = anychart.areaChart();
       chart.ohlc(data);
 ```
-As you can see, we've specified chart type as **OHLC**, added several <point> nodes and set name attribute that defines category and open, high, low, close attributes that define values.
+As you can see, we've specified chart type as **OHLC** and set name attribute that defines category and open, high, low, close attributes that define values.
 
 Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on on it to see this example in background.
 
@@ -209,7 +209,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 <a name="position"/>
 ### Positioning
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **orientation()** method of **yAxis()** or **xAxis()** attributes.
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** method of **.yAxis()** or **.xAxis()** attributes.
 ```
   chart.xAxis(0).orientation('top');
   chart.yAxis(0).orientation('right');
@@ -245,7 +245,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 <a name="Visualization"/>
 ## Visualization
 
-In this section we will describe main parts of OHLC chart visualization and ways to adjust it. Also you will see list of predefined styles.  Visual appearance of OHLC is defined using certain methods. The most important for OHLC methods are **fallingStroke()** and **risingStroke()**.
+In this section we will describe main parts of OHLC chart visualization and ways to adjust it. Also you will see list of predefined styles.  Visual appearance of OHLC is defined using certain methods. The most important for OHLC methods are **.fallingStroke()** and **.risingStroke()**.
 
 <a name="basic_style"/>
 ### Basic sample
@@ -268,9 +268,9 @@ Using these settings we've set red color for every falling OHLC point and green 
 
 In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.
 
-If you want to configure data labels and tooltips for all series - you should do that with **labels()** and **tooltip()** methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
+If you want to configure data labels and tooltips for all series - you should do that with **.labels()** and **.tooltip()** methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
 
-When formatting data labels text and tooltip we can use **contentFormatter()** and **textFormatter()**.
+When formatting data labels text and tooltip we can use **.contentFormatter()** and **.textFormatter()**.
 
 {sample}BCT\_OHLC\_Chart\_07{sample}
 <!--
@@ -288,11 +288,11 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 <a name="color_setting"/>
 ### Colorizing elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **color()**. In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **.color()**. In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
 
 {sample}BCT\_OHLC\_Chart\_08{sample}
 
-In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set **"Rgb(180,77,77)"** color for minimum point and **"Rgb(77,180,77)"** for the maximal one. As you see it is very easy to do by setting **fallingStroke()** and **risingStroke()** attributes for point.
+In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. As you see it is very easy to do by setting **.fallingStroke()** and **.risingStroke()** attributes for point.
 
 {sample}BCT\_OHLC\_Chart\_09{sample}
 

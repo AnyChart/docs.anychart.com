@@ -6,7 +6,7 @@
   * [Multi-series](#multi)                                                                                                
 * [Axes](#axes)                                                                                                	
   * [Positioning](#position)                                                                                              
-  * [Logarithmic](#logarithmic)                                                                                     
+  * [Logarithmic Scale](#logarithmic)                                                                                     
   * [Minimum and Maximum](#min_max)                                                                        
 * [Visualization](#visualization)                                                                                         
   * [Basic Sample](#basic_style)                                                                                  
@@ -286,7 +286,7 @@ And here is the demonstration of this feature on the Single-series sample:
 {sample}BCT\_Japaneese-Candlestick\_Chart\_03{sample}
 
 <a name="logarithmic"/>
-### Logarithmic
+### Logarithmic Scale
 
 AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by **scale**:
 ```

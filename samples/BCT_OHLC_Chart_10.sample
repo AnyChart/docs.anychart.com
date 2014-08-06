@@ -3,7 +3,7 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  stage = acgraph.create('100%', '100%', 'container');
+  stage = acgraph.create('container');
   var dataSet = anychart.data.set([
     ["08.07.07", 22.258032033902, 25.4889359321959, 22.75, 23.7, 22.69, 23.44, 23.335],
     ["08.06.07", 22.2381666799343, 25.3786666401314, 23.03, 23.15, 22.44, 22.97, 23.285],
