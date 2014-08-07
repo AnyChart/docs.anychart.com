@@ -19,7 +19,7 @@ stage = acgraph.create('container');
 
   var chart = anychart.columnChart();
   chart.title().text('Tickmarks Outside');
-  chart.bounds(0, '15%', '50%', '45%');
+  chart.bounds(0, '15%', '50%', '85%');
   chart.background().stroke('#CCCCCC');
   chart.xAxis().title().enabled(false);
   chart.yAxis().title().enabled(false);
@@ -37,7 +37,7 @@ stage = acgraph.create('container');
 
   var LineChart = anychart.lineChart(data);
   LineChart.title().text('Tickmarks Inside');
-  LineChart.bounds('50%', '15%', '50%', '45%');
+  LineChart.bounds('50%', '15%', '50%', '85%');
   LineChart.background().stroke('#CCCCCC');
   LineChart.xAxis().title().enabled(false);
   LineChart.yAxis().title().enabled(false);
