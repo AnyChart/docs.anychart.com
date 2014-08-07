@@ -1,0 +1,20 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+anychart.onDocumentReady(function() {
+  var data = anychart.data.set([
+    ['P1', 16, 20],
+    ['P2', 12, 18],
+    ['P3', 9, 14]
+  ]);
+  var Sales2003 = data.mapAs({x: [0], value: [1]});
+  var Sales2004 = data.mapAs({x: [0], value: [2]});
+  chart = anychart.columnChart();
+  var series;
+  series = chart.column(Sales2003);
+  series = chart.column(Sales2004);
+    chart.grid(1).direction('horizontal').evenFill('white').oddFill('rgb(244,245,255');
+  chart.minorGrid().direction('horizontal');
+  chart.yScale().ticks().interval(2);
+  chart.container('container').draw();
+});

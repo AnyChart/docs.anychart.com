@@ -1,0 +1,56 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+anychart.onDocumentReady(function() {
+  var data = anychart.data.set([
+    ['P1', 16, 20],
+    ['P2', 12, 18],
+    ['P3', 9, 14]
+  ]);
+  var Sales2003 = data.mapAs({x: [0], value: [1]});
+  var Sales2004 = data.mapAs({x: [0], value: [2]});
+stage = acgraph.create('container');
+
+  var title = anychart.elements.title();
+  title.parentBounds(0, 0, "100%", "10%")
+    .text('Ticks Position')
+    .container(stage)
+    .draw();
+
+  var chart = anychart.columnChart();
+  chart.title().text('Tickmarks Outside');
+  chart.bounds(0, '15%', '50%', '45%');
+  chart.background().stroke('#CCCCCC');
+  chart.xAxis().title().enabled(false);
+  chart.yAxis().title().enabled(false);
+  chart.yAxis().minorTicks().position('outside');
+  chart.yAxis().ticks().position('outside');
+  chart.xAxis().ticks().position('outside');
+  chart.minorGrid(null);
+  chart.grid(0, null).grid(1, null);
+  chart.yScale().ticks().interval(5);
+  var series;
+  series = chart.column(Sales2003);
+  series = chart.column(Sales2004);
+  chart.container(stage);
+  chart.draw();
+
+  var LineChart = anychart.lineChart(data);
+  LineChart.title().text('Tickmarks Inside');
+  LineChart.bounds('50%', '15%', '50%', '45%');
+  LineChart.background().stroke('#CCCCCC');
+  LineChart.xAxis().title().enabled(false);
+  LineChart.yAxis().title().enabled(false);
+  LineChart.yAxis().minorTicks().position('inside');
+  LineChart.yAxis().ticks().position('inside');
+  LineChart.xAxis().ticks().position('inside');
+  LineChart.minorGrid(null);
+  LineChart.grid(0, null).grid(1, null);
+  LineChart.yScale().ticks().interval(5);
+  var LineSeries;
+  LineSeries = LineChart.line(Sales2003);
+  LineSeries = LineChart.line(Sales2004);
+  LineChart.container(stage);
+  LineChart.draw();
+
+});

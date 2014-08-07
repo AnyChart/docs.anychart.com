@@ -12,7 +12,7 @@
   * [Major and Minor](#grids)
   * [Dashed Grid Lines](#dashed)
   * [Interlaced grid](#interlace)
-* [Keywords Reference](#keywords)
+<!--* [Keywords Reference](#keywords)-->
 
 <a name="overview"/>
 ## Overview
@@ -50,259 +50,141 @@ chart.yAxis().title().text('Y axis from ' + min + ' to ' + max);
 
 As you can see, we've set titles both to X and Y axis <!--made X axis title bold-->and aligned Y axis <!--and used {%DataPlotYMax} and %DataPlotYMin keywords-->.
 
-Full reference of available keywords is available in the end of this article: Keywords reference.
+<!--Full reference of available keywords is available in the end of this article: Keywords reference.
 
 General formatting questions are answered in Text Formatting and Keywords section.
 
-Learn how to format keywords in Number Formatting section.
+Learn how to format keywords in Number Formatting section.-->
+
 {sample}AGST\_Axes\_Basic\_01{sample}
 
-Axes position
+<a name="position"/>
+## Axes Position
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position attribute of <y_axis> or <x_axis> nodes. Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion settings in Axes Positioning and Inverting Templates.
-
-XML Syntax
-XML Code
-Plain code
-01
-<axes>
-02
-  <y_axis position="Opposite" />
-03
-  <x_axis position="Normal" />
-04
-</axes>
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position attribute of **.yAxis()** or **.xAxis()** methods. Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion settings in [Axes Positioning and Inverting Templates](Axes-Positioning).
+```
+chart.xAxis(0).orientation('top);
+chart.yAxis(0).orientation('right');
+```
 And here is the demonstration of this feature on the Single-series column chart:
 
-Live Sample:  Axes Position Sample
+{sample}AGST\_Axes\_Basic\_02{sample}
+<a name="labels"/>
+## Axes Labels
 
-to top
-
-Axes labels
-
-To enable axes labels you need to specify <labels enabled="true"/> sub-node in desired axis node. You can specify how labels should look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
-
-Learn more about axes labels formatting in Axes Labels Tutorial
-
+To enable axes labels you need to specify **.labeles().enabled(true)** in desired axis. You can specify how labels should look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
+<br/><br/>
+Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Tutorial)
+<br/><br/>
 Look at the demonstration of possible labels display modes: "Normal" and "Stager".
-
-Labels normal mode
-
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <labels display_mode="Normal" />
-03
-</y_axis>
- 
-
-Live Sample:  Axis Labels Sample - Normal mode
+<br/><br/>
+```
+  chart.xAxis().staggerMode(false);
+```
+{sample}AGST\_Axes\_Basic\_03{sample}
 
 Rotated labels:
+```
+  chart.yAxis().labels().enabled(true).rotation(90);
+  chart.xAxis().labels().enabled(true).rotation(90);
+```
 
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <labels display_mode="Normal" rotation="90" />
-03
-</y_axis>
+Live Sample:  Axis Labels Sample - Normal Mode rotated by 90
+
+{sample}AGST\_Axes\_Basic\_04{sample}
+
+```  
+  chart.yAxis().staggerMode(true);
+  chart.yAxis().staggerLines(2);
+  chart.xAxis().staggerMode(true);
+  chart.xAxis().staggerLines(2);
+```
  
 
-Live Sample:  Axis Labels Sample - Normal Mode rotatated to 90
+{sample}AGST\_Axes\_Basic\_05{sample}
 
-Make labels staggered:
 
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <labels display_mode="Stager" />
-03
-</y_axis>
- 
+<a name="axis-lines"/>
+## Axis lines
 
-Live Sample:  Axis Labels Sample - Stager Mode
+It is possible to tune visual appearance of axis segment line and zero line. To do this you need to use **.lineMarker()** with default settings.
 
-to top
+```
+  chart.lineMarker().stroke('2 red');    
+```
+As in any line, you can make it gradient, change opacity and thickness using **stroke()** method. <!--[Link in need]Read more about lines in [Borders and Lines](Lines-Border-Settings):[/link]-->
 
-Axis lines
+{sample}AGST\_Axes\_Basic\_06{sample}
 
-It is possible to tune visual appearance of axis segment line and zero line. To do this you need to specify line settings in <line> and <zero_line> sub-nodes of axis node.
+<a name="tickmarks"/>
+## Axis Tickmarks
 
-XML Syntax
-XML Code
-Plain code
-01
-<axes>
-02
-  <y_axis>
-03
-    <line color="Red" />
-04
-    <zero_line color="Red" />
-05
-  </y_axis>
-06
-  <x_axis>
-07
-    <line_style color="Red" />
-08
-    <zero_line_style color="Red" />
-09
-  </x_axis>
-10
-</axes>
-As in any line, you can make them gradient, change opacity and thickness, read more about lines in Borders and Lines:
+Tickmarks are the small marks used to represent a point on an axis scale, there are major and minor ticks, first used to indicate major step of an axis scale, second - minor step. You can control their appearance and position. To enable/disable ticks set **.enabled(true)** or **.enabled(false)** to **.ticks()** or **.minorTicks()**
 
-Live Sample:  Axis Line and Zero Line Sample
+```
+minorTicks().enabled(true)
+ticks().enabled(false)
+```
+Ticks can be placed **inside** or **outside** relatively to axis line. These features are controlled by **.position()** attributes:
 
-to top
-
-Axis tickmarks
-
-Tickmarks are the small marks used to represent a point on an axis scale, there are major and minor tickmarks, first used to indicate major step of an axis scale, second - minor step. You can control their appearance and position. To enable/disable tickmarks set enabled="True" or enabled = "false" to <major_tickmark> or <minor_tickmark>
-
-XML Syntax
-XML Code
-Plain code
-01
-<axes>
-02
-  <y_axis>
-03
-    <major_tickmark enabled="True" />
-04
-    <minor_tickmark enabled="False" />
-05
-  </y_axis>
-06
-</axes>
-Tickmarks can be placed "inside", "outside" and "opposite" relatively to axis line. These features are controlled by inside, outside and opposite attributes:
-
-XML Syntax
-XML Code
-Plain code
-01
-<axes>
-02
-  <y_axis>
-03
-    <major_tickmark enabled="True" outside="True" inside="False" opposite="False" />
-04
-    <minor_tickmark enabled="False" outside="False" inside="True" opposite="False" />
-05
-  </y_axis>
-06
-</axes>
+```
+  chart.yAxis().ticks().position('outside');
+  chart.xAxis().ticks().position('inside');
+```
 The dashboard below shows how these settings work:
 
-Live Sample:  Tickmarks Position Sample
+{sample}AGST\_Axes\_Basic\_07{sample}
 
-to top
 
-Grid configuration
+<a name="grids"/>
+## Grid configuration
+<a name="grids"/>
+### Major and Minor Grids
 
-Major and Minor Grids
+There are two types of grids in AnyChart - major grid and minor grid, which correspond to [major and minor scale steps](Axes-Scales). To enable grid you have to specify:
 
-There are two types of grids in AnyChart - major grid and minor grid, which correspond to major and minor scale steps. To enable grid you have to specify:
-
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <major_grid enabled="True" />
-03
-  <minor_grid enabled="True" />
-04
-</y_axis>
+```
+  chart.minorGrid().enabled(true);
+  chart.grid().enabled(true);
+```
 For each grid you can define line style:
 
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <major_grid enabled="True">
-03
-    <line color="Black" />
-04
-  </major_grid>
-05
-  <minor_grid enabled="True">
-06
-    <line color="Black" opacity="0.5" dashed="True" />
-07
-  </minor_grid>
-08
-</y_axis>
+```
+ chart.grid().stroke('black');
+ chart.minorGrid().stroke('black 0.5');
+```
 That's how simple grid will look like:
 
-Live Sample:  Simple Grids Sample
+{sample}AGST\_Axes\_Basic\_08{sample}
 
 to top
-
-Dashed Grids
+<a name="dashed"/>
+### Dashed Grids
 
 You can also make your grid lines dashed:
 
-XML Syntax
-XML Code
-Plain code
-01
-<major_grid enabled="True">
-02
-  <line color="Black" opacity="0.2" dashed="True" dash_length="5" space_length="5" />
-03
-</major_grid>
+```
+  chart.minorGrid().stroke({color: 'black', dash: '5 2 5', opacity: 0.2}).direction('horizontal');
+```
 And create chart like this:
 
-Live Sample:  Simple Dashed Grids Sample
+{sample}AGST\_Axes\_Basic\_09{sample}
 
-to top
+<a name="interlace"/>
+### Even and Odd fills
 
-Interlaced Grids
+You can use this method with both major and minor grids. To do this you need to set **.oddFill()** or/and **.evenFill()** attributes in corresponding grid. Fill can be gradient, image and/or hatch as well as any other fill.
 
-You can make both major and minor grids interlaced. To do this you need to set interlaced="True" attribute in corresponding grid nodes and specify even and/or odd fills. Fill can be gradient, image and/or hatch as well as any other fill.
+```
+    chart.grid(1).direction('horizontal').evenFill('white').oddFill('rgb(244,245,255');
+```
 
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <major_grid enabled="True" interlaced="True">
-03
-    <interlaced_fills>
-04
-      <even>
-05
-        <fill color="rgb(244,245,255)" opacity="0.5" />
-06
-      </even>
-07
-    </interlaced_fills>
-08
-  </major_grid>
-09
-</y_axis>
 That's how simple interlaced grid will look like:
 
-Live Sample:  Interlaced Grids Sample
-
-to top
-
-Keywords Reference
+{sample}AGST\_Axes\_Basic\_10{sample}
+<!--
+<a name="keywords"/>
+### Keywords Reference
 
 This table list all built-in keywords that can be used in axes titles formatting.
 
@@ -346,8 +228,4 @@ Keyword	Description
 {%AxisMedian}	The median value of all points in series that are bound to this axis.
 {%AxisMode}	The mode value of all points in series that are bound to this axis.
 {%AxisName}	The name of the axis.
- 
-
-to top
-
-Current Page Online URL: Axes basics
+ -->

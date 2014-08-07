@@ -3,13 +3,13 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
   var data = anychart.data.set([
-    ['January', 10000],
-    ['February', 12000],
-    ['March', 18000],
-    ['April', 11000],
-    ['May', 9000]
+    ['A', 637166],
+    ['B', 721630],
+    ['C', 148662],
+    ['D', 78662],
+    ['E', 90000]
   ]);
-  chart = anychart.areaChart(data);
+  chart = anychart.columnChart(data);
   chart.title().enabled(false);
   chart.container('container').draw();
   var max = chart.yScale().maximum();
