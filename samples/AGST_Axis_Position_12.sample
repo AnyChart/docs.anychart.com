@@ -1,0 +1,21 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+anychart.onDocumentReady(function() {
+chart = anychart.cartesian.chart();
+var data = anychart.data.set([
+    ['A', 4],
+    ['B', 3],
+    ['C', 2],
+    ['D', 1]
+    ]);
+chart.column(data);
+chart.yAxis().orientation('right');
+chart.xAxis().orientation('top');
+chart.xScale().inverted(true);
+chart.xAxis().ticks().enabled(false);
+chart.yAxis().minorTicks().enabled(false);
+chart.yAxis().ticks().enabled(false);
+chart.container('container');
+chart.draw();
+});
