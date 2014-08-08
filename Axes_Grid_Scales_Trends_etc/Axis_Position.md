@@ -29,64 +29,6 @@ chart.yScale().inverted(true);
 chart.xScale().inverted(true);
 ```
 
-<table>
-<tbody><tr>
-<td class="number"><code>01</code></td>
-<td class="content"><code class="plain">&lt;</code><code class="keyword">axes</code><code class="plain">&gt;</code></td>
-</tr>
-</tbody></table></div><div class="line alt1">
-<table>
-<tbody><tr>
-<td class="number"><code>02</code></td>
-<td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">y_axis</code> <code class="color1">position</code><code class="plain">=</code><code class="string">"Normal"</code><code class="plain">&gt;</code></td>
-</tr>
-</tbody></table></div><div class="line alt2">
-<table>
-<tbody><tr>
-<td class="number"><code>03</code></td>
-<td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">scale</code> <code class="color1">inverted</code><code class="plain">=</code><code class="string">"False"</code><code class="plain"> /&gt;</code></td>
-</tr>
-</tbody></table></div><div class="line alt1">
-<table>
-<tbody><tr>
-<td class="number"><code>04</code></td>
-<td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">&lt;/</code><code class="keyword">y_axis</code><code class="plain">&gt;</code></td>
-</tr>
-</tbody></table></div><div class="line alt2">
-<table>
-<tbody><tr>
-<td class="number"><code>05</code></td>
-<td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">x_axis</code> <code class="color1">position</code><code class="plain">=</code><code class="string">"Normal"</code><code class="plain">&gt;</code></td>
-</tr>
-</tbody></table></div><div class="line alt1">
-<table>
-<tbody><tr>
-<td class="number"><code>06</code></td>
-<td class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain">&lt;</code><code class="keyword">scale</code> <code class="color1">inverted</code><code class="plain">=</code><code class="string">"False"</code><code class="plain"> /&gt;</code></td>
-</tr>
-</tbody></table></div><div class="line alt2">
-<table>
-<tbody><tr>
-<td class="number"><code>07</code></td>
-<td class="content"><code class="spaces">&nbsp;&nbsp;</code><code class="plain">&lt;/</code><code class="keyword">x_axis</code><code class="plain">&gt;</code></td>
-</tr>
-</tbody></table></div><div class="line alt1">
-<table>
-<tbody><tr>
-<td class="number"><code>08</code></td>
-<td class="content"><code class="plain">&lt;/</code><code class="keyword">axes</code><code class="plain">&gt;</code></td>
-</tr>
-</tbody></table></div></div></div></div>
-<div id="xml-code-plain-0" style="display:none"><textarea spellcheck="false">&lt;axes&gt;
-&lt;y_axis position="Normal"&gt;
-&lt;scale inverted="False" /&gt;
-&lt;/y_axis&gt;
-&lt;x_axis position="Normal"&gt;
-&lt;scale inverted="False" /&gt;
-&lt;/x_axis&gt;
-&lt;/axes&gt;</textarea></div>
-</div>
-</div>
 </td>
 </tr>
 <tr>
