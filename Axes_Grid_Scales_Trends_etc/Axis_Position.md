@@ -20,24 +20,15 @@ Though these settings are demonstrated using Bar/Column charts - they work for a
 <th width="280"><b>JS Settings</b></th>
 </tr>
 <tr>
-<td>{sample}AGST\_Additional\_Axes\_01{sample}</td>
+<td>
+{sample}AGST\_Axis\_Position\_01{sample}
+</td>
 <td>
 ```
 chart.yScale().inverted(true);
 chart.xScale().inverted(true);
 ```
 
-<div class="xmlSpoiler" rel="0">
-<div class="title clicked"><div>XML Syntax</div></div>
-<div class="spoilerContent tabs ui-tabs ui-widget ui-widget-content ui-corner-all"><ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
-<li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#xml-code-0">XML Code</a></li>
-</ul>
-<div class="code-menu">
-<a href="#"><img alt="Plain code" src="./img/view-plain.png" onmouseover="this.src='./img/view-plain_hover.png'" onmouseout="this.src='./img/view-plain.png'"></a> 
-</div>
-<div id="xml-code-0"><div class="syntaxhighlighter">
-<div class="bar"></div>
-<div class="lines"><div class="line alt2">
 <table>
 <tbody><tr>
 <td class="number"><code>01</code></td>
