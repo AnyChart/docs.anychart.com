@@ -17,7 +17,7 @@ anychart.onDocumentReady(function() {
   chart.yAxis(2).orientation('right').title().text('Axis title');
   chart.yAxis(3).orientation('right').title().text('Axis title');
   chart.yScale().ticks().interval(100000);
-   chart.xAxis().title().text('Sample X axis name').fontWeight('400');
+  chart.xAxis().title().text('Sample X axis name').fontWeight('400');
   chart.yAxis().enabled(false).enabled(true);
-   chart.container('container').draw();
+  chart.container('container').draw();
 });
