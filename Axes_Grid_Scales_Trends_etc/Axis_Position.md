@@ -3,6 +3,7 @@
               
 * [Overview](#overview)
 * [Column Mode](#vertical)
+* [Bar Mode](#horizontal)
 
 <a name="overview"/>
 ## Overview
@@ -247,6 +248,8 @@ chart.yAxis().ticks().enabled(false);
 </tbody>
 </table>
 
+<a name="horizontal"/>
+##Bar Mode
 x-Axis isn't restricted in only buy Top and Bottom positions. It can by placed on the Left or Right sides. So can y-Axis be placed on the top or bottom. Tis option enabled by default in Bar charts. 
 Here are some samples of Bar chart Axes position
 
