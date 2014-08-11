@@ -26,6 +26,7 @@ Though these settings are demonstrated using Bar/Column charts - they work for a
 </td>
 <td>
 ```
+chart.column(data);
 chart.xAxis().ticks().enabled(false);
 chart.yAxis().minorTicks().enabled(false);
 chart.yAxis().ticks().enabled(false);
@@ -38,6 +39,7 @@ chart.yAxis().ticks().enabled(false);
 </td>
 <td>
 ```
+chart.column(data);
 chart.xAxis().ticks().enabled(false);
 chart.yAxis().minorTicks().enabled(false);
 chart.yAxis().ticks().enabled(false);
@@ -51,6 +53,7 @@ chart.xScale().inverted(true);
 </td>
 <td>
 ```
+chart.column(data);
 chart.xAxis().orientation('top');
 chart.xAxis().ticks().enabled(false);
 chart.yAxis().minorTicks().enabled(false);
@@ -64,6 +67,7 @@ chart.yAxis().ticks().enabled(false);
 </td>
 <td>
 ```
+chart.column(data);
 chart.xAxis().orientation('top');
 chart.xScale().inverted(true);
 chart.xAxis().ticks().enabled(false);
@@ -78,6 +82,7 @@ chart.yAxis().ticks().enabled(false);
 </td>
 <td>
 ```
+chart.column(data);
 chart.yScale().inverted(true);
 chart.xAxis().ticks().enabled(false);
 chart.yAxis().minorTicks().enabled(false);
@@ -91,6 +96,7 @@ chart.yAxis().ticks().enabled(false);
 </td>
 <td>
 ```
+chart.column(data);
 chart.yScale().inverted(true);
 chart.xScale().inverted(true);
 chart.xAxis().ticks().enabled(false);
@@ -105,6 +111,7 @@ chart.yAxis().ticks().enabled(false);
 </td>
 <td>
 ```
+chart.column(data);
 chart.yScale().inverted(true);
 chart.xAxis().orientation('top');
 chart.xAxis().ticks().enabled(false);
@@ -119,6 +126,7 @@ chart.yAxis().ticks().enabled(false);
 </td>
 <td>
 ```
+chart.column(data);
 chart.yScale().inverted(true);
 chart.xScale().inverted(true);
 chart.xAxis().orientation('top');
@@ -134,6 +142,7 @@ chart.yAxis().ticks().enabled(false);
 </td>
 <td>
 ```
+chart.column(data);
 chart.yAxis().orientation('right');
 chart.xAxis().ticks().enabled(false);
 chart.yAxis().minorTicks().enabled(false);
@@ -147,6 +156,7 @@ chart.yAxis().ticks().enabled(false);
 </td>
 <td>
 ```
+chart.column(data);
 chart.xScale().inverted(true);
 chart.yAxis().orientation('right');
 chart.xAxis().ticks().enabled(false);
@@ -161,6 +171,7 @@ chart.yAxis().ticks().enabled(false);
 </td>
 <td>
 ```
+chart.column(data);
 chart.yAxis().orientation('right');
 chart.xAxis().orientation('top');
 chart.xAxis().ticks().enabled(false);
@@ -175,6 +186,7 @@ chart.yAxis().ticks().enabled(false);
 </td>
 <td>
 ```
+chart.column(data);
 chart.yAxis().orientation('right');
 chart.xAxis().orientation('top');
 chart.xScale().inverted(true);
@@ -190,6 +202,7 @@ chart.yAxis().ticks().enabled(false);
 </td>
 <td>
 ```
+chart.column(data);
 chart.yAxis().orientation('right');
 chart.xAxis().orientation('top');
 chart.yScale().inverted(true);
@@ -205,6 +218,7 @@ chart.yAxis().ticks().enabled(false);
 </td>
 <td>
 ```
+chart.column(data);
 chart.yAxis().orientation('right');
 chart.yScale().inverted(true);
 chart.xScale().inverted(true);
@@ -220,6 +234,7 @@ chart.yAxis().ticks().enabled(false);
 </td>
 <td>
 ```
+chart.column(data);
 chart.yAxis().orientation('right');
 chart.xAxis().orientation('top');
 chart.yScale().inverted(true);
@@ -235,6 +250,7 @@ chart.yAxis().ticks().enabled(false);
 </td>
 <td>
 ```
+chart.column(data);
 chart.yAxis().orientation('right');
 chart.xAxis().orientation('top');
 chart.yScale().inverted(true);
