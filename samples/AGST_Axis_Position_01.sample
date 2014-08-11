@@ -2,7 +2,8 @@
      :is_new false
      :exports "chart"}
 anychart.onDocumentReady(function() {
-stage = acgraph.create('container', 400, 200);
+document.getElementById('container').style.width = '400px';
+document.getElementById('container').style.height = '200px';
 chart = anychart.cartesian.chart();
 var data = anychart.data.set([
     ['A', 4],
