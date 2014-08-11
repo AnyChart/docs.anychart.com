@@ -7,7 +7,7 @@
 <a name="overview"/>
 ## Overview
    
-Positioning depends on plot type and inversion of axes, below you will find all possible Axes Positioning and Inverting XML Settings with demonstration preview.
+Positioning depends on plot type and inversion of axes, below you will find all possible Axes Positioning and Inverting JS Settings with demonstration preview.
 
 Though these settings are demonstrated using Bar/Column charts - they work for all other chart types.
 
@@ -205,6 +205,7 @@ chart.yAxis().ticks().enabled(false);
 <td>
 ```
 chart.yAxis().orientation('right');
+chart.yScale().inverted(true);
 chart.xScale().inverted(true);
 chart.xAxis().ticks().enabled(false);
 chart.yAxis().minorTicks().enabled(false);
@@ -219,8 +220,8 @@ chart.yAxis().ticks().enabled(false);
 <td>
 ```
 chart.yAxis().orientation('right');
+chart.xAxis().orientation('top');
 chart.yScale().inverted(true);
-chart.xScale().inverted(true);
 chart.xAxis().ticks().enabled(false);
 chart.yAxis().minorTicks().enabled(false);
 chart.yAxis().ticks().enabled(false);
@@ -236,6 +237,79 @@ chart.yAxis().ticks().enabled(false);
 chart.yAxis().orientation('right');
 chart.xAxis().orientation('top');
 chart.yScale().inverted(true);
+chart.xScale().inverted(true);
+chart.xAxis().ticks().enabled(false);
+chart.yAxis().minorTicks().enabled(false);
+chart.yAxis().ticks().enabled(false);
+```
+</td>
+</tr>
+</tbody>
+</table>
+
+x-Axis isn't restricted in only buy Top and Bottom positions. It can by placed on the Left or Right sides. So can y-Axis be placed on the top or bottom. Tis option enabled by default in Bar charts. 
+Here are some samples of Bar chart Axes position
+
+<table width="700" border="1" class="dtTABLE">
+<tbody><tr>
+<th width="420"><b>Preview</b></th>
+<th width="280"><b>JS Settings</b></th>
+</tr>
+<tr>
+<td>
+{sample}AGST\_Axis\_Position\_17{sample}
+</td>
+<td>
+```
+chart.bar(data);
+chart.xAxis().ticks().enabled(false);
+chart.yAxis().minorTicks().enabled(false);
+chart.yAxis().ticks().enabled(false);
+```
+</td>
+</tr>
+<tr>
+<td>
+{sample}AGST\_Axis\_Position\_18{sample}
+</td>
+<td>
+```
+chart.bar(data);
+chart.yScale().inverted(true);
+chart.xScale().inverted(true);
+chart.xAxis().ticks().enabled(false);
+chart.yAxis().minorTicks().enabled(false);
+chart.yAxis().ticks().enabled(false);
+```
+</td>
+</tr>
+<tr>
+<td>
+{sample}AGST\_Axis\_Position\_19{sample}
+</td>
+<td>
+```
+chart.bar(data);
+chart.yAxis().orientation('right');
+chart.xAxis().orientation('top');
+chart.xAxis().ticks().enabled(false);
+chart.yAxis().minorTicks().enabled(false);
+chart.yAxis().ticks().enabled(false);
+
+```
+</td>
+</tr>
+<tr>
+<td>
+{sample}AGST\_Axis\_Position\_20{sample}
+</td>
+<td>
+```
+chart.bar(data);
+chart.yAxis().orientation('right');
+chart.xAxis().orientation('top');
+chart.yScale().inverted(true);
+chart.xScale().inverted(true);
 chart.xAxis().ticks().enabled(false);
 chart.yAxis().minorTicks().enabled(false);
 chart.yAxis().ticks().enabled(false);
