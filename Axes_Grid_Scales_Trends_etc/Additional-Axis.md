@@ -39,7 +39,7 @@ Here is the sample of the chart that will be show when three additional y axes a
 
 Another example of multiple axes use is multiple Y Axes along with multiple X Axes, which may be very useful in certain areas:
 
-Live Sample:  additional X Axes Simple Sample
+{sample}AGST\_Additional\_Axes\_02{sample}
 
 to top
 <a name="tuning"/>

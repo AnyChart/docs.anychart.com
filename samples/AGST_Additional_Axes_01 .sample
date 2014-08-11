@@ -10,7 +10,7 @@ anychart.onDocumentReady(function() {
     ['E', 90000]
   ]);
   chart = anychart.columnChart(data);
-  chart.title().enabled(true).text('Extra Axes Simple Sample');
+  chart.title().text('Extra Axes Simple Sample');
   var max = chart.yScale().maximum();
   var min = chart.yScale().minimum();
   chart.yAxis(1).orientation('right').title().text('Axis title');
