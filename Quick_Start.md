@@ -1,4 +1,4 @@
-{:priority 100}
+{:index 1}
 Quick Start
 ===========
   
