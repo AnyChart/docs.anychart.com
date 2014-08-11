@@ -41,11 +41,10 @@ Another example of multiple axes use is multiple Y Axes along with multiple X Ax
 
 {sample}AGST\_Additional\_Axes\_02{sample}
 
-to top
 <a name="tuning"/>
 ## Tuning additional axes
 
-If you want to change any settings of additional axes you can that just the same way as basic X and Y axes are configured, see Axes basics and Axes Scale for the details:
+If you want to change any settings of additional axes you can do that just the same way as basic X and Y axes are configured, see [Axes basics](Axis_Basics) and [Axes Scale](Axis_Scale) for the details:
 
 XML Syntax
 XML Code
