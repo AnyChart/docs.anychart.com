@@ -101,8 +101,8 @@ anychart.onDocumentReady(function() {
         [21000, 0.00004762]
     ]);
     var blackLine = chart.line(secondData);
-  chart.grid(0).stroke('gray 0.8').direction('vertical');
-  chart.grid(1).stroke('gray 0.8').direction('horizontal');
+    chart.grid(0).stroke('gray 0.8').direction('vertical');
+    chart.grid(1).stroke('gray 0.8').direction('horizontal');
 
     var extraYAxis = chart.yAxis(1);
     extraYAxis.orientation('right').scale(extraYScale);
@@ -111,14 +111,20 @@ anychart.onDocumentReady(function() {
     extraXAxis.orientation('top').staggerMode(false).scale(extraXScale  );
 
     blackLine.yScale(extraYScale).xScale(extraXScale);
-    blackLine.markers().size(2).fill('red 0.2').stroke('black 0.5', 5);
-    blackLine.hoverMarkers().size(3).fill('black').stroke('black', 4);
+    blackLine.markers().size(1).fill('black').stroke(null);
+    blackLine.hoverMarkers().size(3).fill('black').stroke('black');
     blackLine.stroke('#000', 3);
+    blackLine.tooltip().enabled(true).contentFormatter(function() {
+    return '(x,y) = (' + this.x + '.00,' + this.value + ')';
+  });
 
-    redLine.markers().size(2).fill('red 0.2').stroke(null);
-    redLine.hoverMarkers().size(3).fill('red').stroke('red', 4);
+    redLine.markers().size(1).fill('red').stroke(null);
+    redLine.hoverMarkers().size(3).fill('red').stroke('red');
     redLine.stroke('red', 3);
-
+    redLine.tooltip().content().fontColor('red');
+    redLine.tooltip().enabled(true).contentFormatter(function() {
+    return '(x,y) = (' + this.x + '.00,' + this.value + ')';
+  });
 
     chart.xAxis().stroke('red');
     chart.xAxis().ticks().stroke('red');
