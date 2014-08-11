@@ -97,7 +97,7 @@ Live Sample:  Axis Labels Sample - Normal Mode rotated by 90
   chart.yAxis().staggerMode(true);
   chart.yAxis().staggerLines(2);
   chart.xAxis().staggerMode(true);
-  chart.xAxis().staggerLines(2);
+  chart.xAxis().staggerLines(3);
 ```
  
 
