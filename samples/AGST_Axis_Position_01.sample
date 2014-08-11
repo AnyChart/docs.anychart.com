@@ -15,6 +15,6 @@ chart.column(data);
 chart.xAxis().ticks().enabled(false);
 chart.yAxis().minorTicks().enabled(false);
 chart.yAxis().ticks().enabled(false);
-chart.container(stage);
+chart.container('container');
 chart.draw();
 });
