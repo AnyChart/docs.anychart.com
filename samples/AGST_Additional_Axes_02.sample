@@ -6,7 +6,7 @@ anychart.onDocumentReady(function() {
 
     chart.container('container');
 
-    chart.title().enabled(true).text('Extra X and Y Axes Simple Sample');
+    chart.title().text('Extra X and Y Axes Simple Sample');
 
     chart.xScale(anychart.scales.linear());
     chart.xScale().minimum(-10);
