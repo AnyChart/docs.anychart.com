@@ -6,8 +6,12 @@ anychart.onDocumentReady(function() {
 
     var extraXScale = anychart.scales.linear();
     extraXScale.minimum(-1000);
-
+    extraXScale.ticks().interval(5000);
     chart = anychart.lineChart();
+
+
+    chart.title().enabled(true).text('Extra X and Y Axes Simple Sample');
+
     var firstData = anychart.data.set([
         [0, 2],
         [1, 0.720403074490853],
@@ -97,6 +101,8 @@ anychart.onDocumentReady(function() {
         [21000, 0.00004762]
     ]);
     var blackLine = chart.line(secondData);
+  chart.grid(0).stroke('gray 0.8').direction('vertical');
+  chart.grid(1).stroke('gray 0.8').direction('horizontal');
 
     var extraYAxis = chart.yAxis(1);
     extraYAxis.orientation('right').scale(extraYScale);
@@ -104,8 +110,15 @@ anychart.onDocumentReady(function() {
     var extraXAxis = chart.xAxis(1);
     extraXAxis.orientation('top').staggerMode(false).scale(extraXScale  );
 
-    blackLine.yScale(extraYScale).xScale(extraXScale).markers(null).stroke('#000');
-    redLine.markers(null).stroke('red');
+    blackLine.yScale(extraYScale).xScale(extraXScale);
+    blackLine.markers().size(2).fill('red 0.2').stroke('black 0.5', 5);
+    blackLine.hoverMarkers().size(3).fill('black').stroke('black', 4);
+    blackLine.stroke('#000', 3);
+
+    redLine.markers().size(2).fill('red 0.2').stroke(null);
+    redLine.hoverMarkers().size(3).fill('red').stroke('red', 4);
+    redLine.stroke('red', 3);
+
 
     chart.xAxis().stroke('red');
     chart.xAxis().ticks().stroke('red');
@@ -121,13 +134,13 @@ anychart.onDocumentReady(function() {
     chart.xScale().minimum(-10);
     chart.xScale().ticks().interval(10);
     chart.xScale().minorTicks().interval(2);
-  chart.grid(0).stroke('black').direction('vertical');
-  chart.grid(1).stroke('black').direction('horizontal');
     chart.minorGrid(0).direction('vertical')
-    .oddFill(null).evenFill(null);
+    .oddFill(null).evenFill(null).stroke('gray 0.3');
     chart.minorGrid(1).direction('horizontal')
-    .oddFill(null).evenFill(null);
+    .oddFill(null).evenFill(null).stroke('gray 0.3');
     chart.yScale().ticks().interval(0.5);
+    chart.xAxis(1).title().text('Time Sec');
+    chart.yAxis(1).title().text('Amplitude');
 
     chart.container('container');
     chart.draw();
