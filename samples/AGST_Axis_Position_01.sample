@@ -2,6 +2,7 @@
      :is_new false
      :exports "chart"}
 anychart.onDocumentReady(function() {
+stage = acgraph.create('container', 400, 200);
 chart = anychart.cartesian.chart();
 var data = anychart.data.set([
     ['A', 4],
@@ -13,6 +14,6 @@ chart.column(data);
 chart.xAxis().ticks().enabled(false);
 chart.yAxis().minorTicks().enabled(false);
 chart.yAxis().ticks().enabled(false);
-chart.container('container');
+chart.container(stage);
 chart.draw();
 });
