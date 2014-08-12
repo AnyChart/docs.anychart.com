@@ -46,89 +46,50 @@ Another example of multiple axes use is multiple Y Axes along with multiple X Ax
 
 If you want to change any settings of additional axes you can do that just the same way as basic X and Y axes are configured, see [Axes basics](Axis_Basics) and [Axes Scale](Axis_Scale) for the details:
 
-XML Syntax
-XML Code
-Plain code
-01
-<chart_setttings>
-02
-  <axes>
-03
-    <x_axis />
-04
-    <y_axis>
-05
-      <title>
-06
-        <text><![CDATA[Basic Y Axis]]></text>
-07
-      </title>
-08
-      <scale minimum="0" maximum="800000" />
-09
-    </y_axis>
-10
-    <extra>
-11
-      <y_axis name="y2" enabled="true">
-12
-        <title>
-13
-          <text><![CDATA[Extra Y Axis]]></text>
-14
-        </title>
-15
-        <scale minimum="800000" maximum="1600000" />
-16
-      </y_axis>
-17
-      <x_axis name="x2" enabled="true">
-18
-        <title>
-19
-          <text><![CDATA[Extra X Axis]]></text>
-20
-        </title>
-21
-        <scale minimum="800" maximum="1600" />
-22
-      </x_axis>
-23
-    </extra>
-24
-  </axes>
-25
-</chart_setttings>
+```
+    chart.yScale().minimum(0).maximum(800000);
+    chart.yScale().ticks().interval(100000);
+    chart.yScale().minorTicks().interval(20000);
+    var extraYScale = anychart.scales.linear();
+    extraYScale.minimum(800000).maximum(1600000);
+    extraYScale.ticks().interval(100000);
+    extraYScale.minorTicks().interval(20000);
+    var extraYAxis = chart.yAxis(1);
+    extraYAxis.orientation('right').scale(extraYScale).title().text('Extra Y Axis');
+    chart.yAxis().title().text('Basic Y Axes');
+```
 In the a sample below we will add one additional axis and set value ranges and titles for both basic Y axis and additional Y axis:
 
-Live Sample:  additional Axes Tuning Sample
+{sample}AGST\_Additional\_Axes\_03{sample}
 
 to top
 <a name="binding-series"/>
 ## Binding data series to additional axis
 
-To bind data series to the certain axis you should specify it in y_axis or x_axis attribute of <series> node, by default all series work with basic <y_axis> or <x_axis>:
+To bind data series to the certain axis you should specify it in **.yScale()** or **xScale()** attribute of the Series, by default all series work with basic **.yScale()** or **.xScale()**:
 
-XML Syntax
-XML Code
-Plain code
-01
-<data>
-02
-  <series y_axis="y2">
-03
-    <point name="A" y="1" />
-04
-    <point name="B" y="2" />
-05
-    <point name="C" y="3" />
-06
-  </series>
-07
-</data>
+```
+    var firstSeries = anychart.data.set([
+        ["A", 637166],
+        ["B", 721630],
+        ["C", 148662],
+        ["D", 78662],
+        ["E", 90000]
+    ]);
+    var secondSeries = anychart.data.set([
+        ["A", 95],
+        ["B", 97],
+        ["C", 96],
+        ["D", 70],
+        ["E", 35]
+    ]);
+    var columnSeries = chart.column(firstSeries);
+    var lineSeries = chart.line(secondSeries);
+    lineSeries.yScale(extraYScale);
+```
 In the a sample below we will add one additional axis with a range from 0 to 100 and and bind series of "Line" type to it:
 
-Live Sample:  additional Axes Binding Sample
+{sample}AGST\_Additional\_Axes\_04{sample}
 
 to top
 <a name="sample-comparing-units"/>

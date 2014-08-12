@@ -50,11 +50,10 @@ anychart.onDocumentReady(function() {
 
     //add and adjust extra X axis
     var extraXAxis = chart.xAxis(1);
-    extraXAxis.orientation('top').staggerMode(false).scale(extraXScale  );
+    extraXAxis.orientation('top').staggerMode(false).scale(extraXScale);
 
     //add extra Y scale
     var extraYScale = anychart.scales.linear();
-
 
     //add and adjust extra Y axis
     var extraYAxis = chart.yAxis(1);
@@ -152,9 +151,7 @@ anychart.onDocumentReady(function() {
 
     //Set and adjust data visualisation
 
-    var redSeries = chart.line(firstSeries);
     var blackSeries = chart.line(secondSeries);
-
     blackSeries.yScale(extraYScale).xScale(extraXScale);
     blackSeries.markers().size(1).fill('black').stroke(null);
     blackSeries.hoverMarkers().size(3).fill('black').stroke('black');
@@ -163,6 +160,7 @@ anychart.onDocumentReady(function() {
         return '(x,y) = (' + this.x + '.00,' + this.value + ')';
     });
 
+    var redSeries = chart.line(firstSeries);
     redSeries.markers().size(1).fill('red').stroke(null);
     redSeries.hoverMarkers().size(3).fill('red').stroke('red');
     redSeries.stroke('red', 3);

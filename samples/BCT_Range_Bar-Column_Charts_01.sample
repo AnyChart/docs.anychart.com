@@ -10,19 +10,19 @@ anychart.onDocumentReady(function() {
   chart.title().text('Range Bar Chart');
 
   chart.rangeBar([
-    { high: 0.6, low: 6.3},
-    { high: 0.7, low: 6.1},
-    { high: 1.9, low: 8.5},
-    { high: 3.1, low: 10.8},
-    { high: 5.7, low: 14.4},
-    { high: 8.4, low: 16.9},
-    { high: 10.6, low: 19.2},
-    { high: 10.5, low: 18.9},
-    { high: 8.5, low: 16.1},
-    { high: 6.0, low: 12.5},
-    { high: 3.0, low: 8.8},
-    { high: 1.5, low: 6.9},
-    { high: 5.1, low: 12.1}
+    { low: 0.6, high: 6.3},
+    { low: 0.7, high: 6.1},
+    { low: 1.9, high: 8.5},
+    { low: 3.1, high: 10.8},
+    { low: 5.7, high: 14.4},
+    { low: 8.4, high: 16.9},
+    { low: 10.6, high: 19.2},
+    { low: 10.5, high: 18.9},
+    { low: 8.5, high: 16.1},
+    { low: 6.0, high: 12.5},
+    { low: 3.0, high: 8.8},
+    { low: 1.5, high: 6.9},
+    { low: 5.1, high: 12.1}
   ]);
 
   chart.draw();

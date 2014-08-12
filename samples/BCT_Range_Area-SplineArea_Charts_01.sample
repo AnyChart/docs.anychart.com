@@ -8,18 +8,18 @@ anychart.onDocumentReady(function() {
 
   chart.container('container');
   chart.rangeArea([
-    {x: 'January', low: 6.1, high: 0.7},
-    {x: 'February', low: 6.3, high: 0.6},
-    {x: 'March', low: 8.5, high: 1.9},
-    {x: 'April', low: 10.8, high: 3.1},
-    {x: 'May', low: 14.4, high: 5.7},
-    {x: 'June', low: 16.9, high: 8.4},
-    {x: 'July', low: 19.2, high: 10.6},
-    {x: 'August', low: 18.9, high: 10.5},
-    {x: 'September', low: 16.1, high: 8.5},
-    {x: 'October', low: 12.5, high: 6.0},
-    {x: 'November', low: 8.8, high: 3.0},
-    {x: 'December', low: 6.9, high: 1.5}
+    {x: 'January', low: 0.7, high: 6.1},
+    {x: 'February', low: 0.6, high: 6.3},
+    {x: 'March', low: 1.9, high: 8.5},
+    {x: 'April', low: 3.1, high: 10.8},
+    {x: 'May', low: 5.7, high: 14.4},
+    {x: 'June', low: 8.4, high: 16.9},
+    {x: 'July', low: 10.6, high: 19.2},
+    {x: 'August', low: 10.5, high: 18.9},
+    {x: 'September', low: 8.5, high: 16.1},
+    {x: 'October', low: 6.0, high: 12.5},
+    {x: 'November', low: 3.0, high: 8.8},
+    {x: 'December', low: 1.5, high: 6.9}
   ]);
 
   chart.draw();
