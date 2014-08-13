@@ -19,7 +19,7 @@ Color opacity can be set in two ways:
     * Single value <code>fill('color **opacity**')</code>
  (one string value separated by space).
 
-{sample}fill_solid{sample}
+{sample}GS\_E\_fill\_solid{sample}
 
 ## Linear Gradient
 
@@ -44,14 +44,14 @@ Gradient key settings: `'position color opacity'` or
 
 E.g., two-step gradient:
 
-{sample}fill_linearGradient{sample}
+{sample}GS\_E\_fill_linearGradient{sample}
 
 ```
 .fill(['red', 'yellow'])
 ```
 E.g., multiple-key gradient:
 
-{sample}fill\_linearGradient\_m{sample}
+{sample}GS\_E\_fill\_linearGradient\_m{sample}
 
 ```
 .fill(['0.1 red', '.3 yellow', '.6 white', '.9 orange'])
@@ -77,7 +77,7 @@ In this mode the result angle will visually correspond the original setting,
 
 Please see the following illustration of how these modes work:
 
-{sample}fill\_linearG\_angle{sample}
+{sample}GS\_E\_fill\_linearG\_angle{sample}
 
 ```
 .fill(['0.4 black', '.6 white'], 45)
@@ -90,7 +90,7 @@ In this mode gradient settings are added by gradient size and
 
 This can be shown in the following way:
 
-{sample}fill\_linearG\_userspace{sample}
+{sample}GS\_E\_fill\_linearG\_userspace{sample}
 
 ```
 .fill({
@@ -107,7 +107,7 @@ Gradient settings are set by 'fill settings’, and this gradient fills
 If the container size in gradient settings are larger than the filled element
  size, it will result in the following:
 
-{sample}fill\_linearG\_userspace2{sample}
+{sample}GS\_E\_fill\_linearG\_userspace2{sample}
 
 ```
 .fill({
@@ -127,7 +127,7 @@ If the container size in gradient settings are larger than the filled element
 
 E.g., radial gradient fill with center location (0.5, 0.5):
 
-{sample}fill_radialG{sample}
+{sample}GS\_E\_fill_radialG{sample}
 
 ```
 .fill(['black', 'white'], .5, .5)
@@ -145,7 +145,7 @@ E.g., radial gradient fill with center location (0.5, 0.5):
 
 E.g., focal spot figure. Focal spot must lay within ellipse borders.
 
-{sample}fill\_radialG\_m{sample}
+{sample}GS\_E\_fill\_radialG\_m{sample}
 
 ```
 .fill(['black', 'white'], .5, .5, null, 1, 0.23, 0.81)
@@ -153,7 +153,7 @@ E.g., focal spot figure. Focal spot must lay within ellipse borders.
 
 E.g., figure with defined fill area:
 
-{sample}fill\_radialG\_usos{sample}
+{sample}GS\_E\_fill\_radialG\_usos{sample}
 
 ```
 .fill(['black', 'white'], .5, .5, anychart.math.rect(0, 0, 400, 400), 1, .5, .7)
@@ -166,7 +166,7 @@ To fill an element with picture, it is needed to pass to fill procedure the
 
 E.g.,
 
-{sample}fill_image{sample}
+{sample}GS\_E\_fill_image{sample}
 
 ```
 .fill({
