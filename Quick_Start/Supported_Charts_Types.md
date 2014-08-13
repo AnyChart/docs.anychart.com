@@ -1,3 +1,4 @@
+{:index 3}
 Supported charts types
 ======================
 AnyChart offers you a lot of chart types and their modifications and combinations, 

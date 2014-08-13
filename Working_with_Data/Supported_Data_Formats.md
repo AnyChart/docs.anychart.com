@@ -33,7 +33,7 @@ chart.draw();
 ```
 See also:  
 [JavaScript API Reference](http://api.anychart.com)  
-[Using Data Sets](./Using_Data_Sets)
+[Using Data Sets](./Working_with_Data/Using_Data_Sets)
 
 ###XML
 XML format is useful if you prefer the declarative style for chart configurations.  

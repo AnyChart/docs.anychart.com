@@ -1,4 +1,10 @@
-    var stage = acgraph.create(400, 200).container('container');
+{:tags []
+     :is_new false}
+
+anychart.onDocumentReady(function() {
+
+    var stage = acgraph.create('container');
+
     var fillSettings = {
         keys: ['.1 red', '.5 green', '.9 blue'],
         angle: -45,
@@ -28,3 +34,4 @@
     stage
             .rect(150, 70, 100, 50).stroke('3 black')
             .fill(fillSettings);
+});

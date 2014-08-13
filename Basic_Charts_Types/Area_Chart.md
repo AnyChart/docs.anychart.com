@@ -52,7 +52,7 @@ Let's see single series area chart created using the following data: sales of AC
 <td> $9000</td>
 </tr>
 </tbody></table>
-Now we need to convert this data table into the format that can be used by AnyChart. See more about formats in [Supported Data Formats](../Supported_Data_Formats) article.
+Now we need to convert this data table into the format that can be used by AnyChart. See more about formats in [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) article.
 In terms of AnyChart data model we have one series of data (Sales) with categories that hold months names. Each point in series represents one month and sales volume. We will use the basic and the easiest method of data setting, it looks like this:
 
 ```

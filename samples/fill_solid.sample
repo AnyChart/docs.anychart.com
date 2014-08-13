@@ -1,5 +1,10 @@
-var stage = acgraph.create(400, 200).container('container');
-stage.path()
+{:tags []
+     :is_new false}
+
+anychart.onDocumentReady(function() {
+
+    var stage = acgraph.create('container');
+    stage.path()
         .moveTo(stage.width() / 2, 0)
         .lineTo(stage.width() / 2, stage.height());
     var bg = anychart.elements.label().background();
@@ -22,3 +27,4 @@ stage.path()
         .padding(10);
     lbl.background().enabled(true);
     lbl.container(stage).draw();
+});
