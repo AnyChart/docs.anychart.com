@@ -65,7 +65,7 @@ anychart.onDocumentReady(function() {
     var markerSeries = chart.marker(data);
     markerSeries.tooltip().enabled(false);
     markerSeries.yScale(KelvinScale);
-    markerSeries.size(5);
+    markerSeries.size(5).hoverSize(7);
 
     chart.lineMarker().stroke('1 red').direction('horizontal').scale(CelsiumScale);
     chart.lineMarker(1).stroke('1 green').direction('horizontal').scale(FahrenheitScale);
