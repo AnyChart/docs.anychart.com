@@ -2,13 +2,65 @@
      :is_new false
      :exports "chart"}
 anychart.onDocumentReady(function() {
- var extraYScale = anychart.scales.linear();
+    chart = anychart.lineChart();
 
+    chart.container('container');
+
+    chart.title().text('Extra X and Y Axes Simple Sample');
+
+    //set xScale settings
+    chart.xScale(anychart.scales.linear());
+    chart.xScale().minimum(-10);
+    chart.xScale().ticks().interval(10);
+    chart.xScale().minorTicks().interval(2);
+
+    //set yScale settings
+    chart.yScale().ticks().interval(0.5);
+
+    //set yAxis settings
+    chart.yAxis().stroke('red').staggerMode(false);
+    chart.yAxis().ticks().stroke('red');
+    chart.yAxis().minorTicks().stroke('red');
+    chart.yAxis().labels().fontColor('red');
+    chart.yAxis().title().text('Amplitude').fontColor('red');
+    chart.yAxis(1).title().text('Amplitude');
+
+    //set xAxis settings
+    chart.xAxis().stroke('red');
+    chart.xAxis().ticks().stroke('red');
+    chart.xAxis().minorTicks().stroke('red');
+    chart.xAxis().labels().fontColor('red');
+    chart.xAxis().title().text('Time msec').fontColor('red');
+    chart.xAxis(1).title().text('Time Sec');
+
+    //set Grid settings
+    chart.grid(0).stroke('gray 0.8').direction('vertical');
+    chart.grid(1).stroke('gray 0.8').direction('horizontal');
+
+    //set minorGrid settings
+    chart.minorGrid(0).direction('vertical')
+        .oddFill(null).evenFill(null).stroke('gray 0.3');
+    chart.minorGrid(1).direction('horizontal')
+        .oddFill(null).evenFill(null).stroke('gray 0.3');
+
+    //add and adjust extra X scale
     var extraXScale = anychart.scales.linear();
     extraXScale.minimum(-1000);
+    extraXScale.ticks().interval(5000);
 
-    chart = anychart.lineChart();
-    var firstData = anychart.data.set([
+    //add and adjust extra X axis
+    var extraXAxis = chart.xAxis(1);
+    extraXAxis.orientation('top').staggerMode(false).scale(extraXScale);
+
+    //add extra Y scale
+    var extraYScale = anychart.scales.linear();
+
+    //add and adjust extra Y axis
+    var extraYAxis = chart.yAxis(1);
+    extraYAxis.orientation('right').scale(extraYScale);
+
+    //set first series of data
+    var firstSeries = anychart.data.set([
         [0, 2],
         [1, 0.720403074490853],
         [2, -0.416146836547142],
@@ -51,9 +103,9 @@ anychart.onDocumentReady(function() {
         [39, 0.0260139446204817],
         [40, -0.0635179106335488]
     ]);
-    var redLine = chart.line(firstData);
 
-    var secondData = anychart.data.set([
+    //set second series of data
+    var secondSeries = anychart.data.set([
         [1000, 0.00100000],
         [1500, 0.00066667],
         [2000, 0.00050000],
@@ -96,39 +148,26 @@ anychart.onDocumentReady(function() {
         [20500, 0.00004878],
         [21000, 0.00004762]
     ]);
-    var blackLine = chart.line(secondData);
 
-    var extraYAxis = chart.yAxis(1);
-    extraYAxis.orientation('right').scale(extraYScale);
+    //Set and adjust data visualisation
 
-    var extraXAxis = chart.xAxis(1);
-    extraXAxis.orientation('top').staggerMode(false).scale(extraXScale  );
+    var blackSeries = chart.line(secondSeries);
+    blackSeries.yScale(extraYScale).xScale(extraXScale);
+    blackSeries.markers().size(1).fill('black').stroke(null);
+    blackSeries.hoverMarkers().size(3).fill('black').stroke('black');
+    blackSeries.stroke('#000', 3);
+    blackSeries.tooltip().enabled(true).contentFormatter(function() {
+        return '(x,y) = (' + this.x + '.00,' + this.value + ')';
+    });
 
-    blackLine.yScale(extraYScale).xScale(extraXScale).markers(null).stroke('#000');
-    redLine.markers(null).stroke('red');
+    var redSeries = chart.line(firstSeries);
+    redSeries.markers().size(1).fill('red').stroke(null);
+    redSeries.hoverMarkers().size(3).fill('red').stroke('red');
+    redSeries.stroke('red', 3);
+    redSeries.tooltip().content().fontColor('red');
+    redSeries.tooltip().enabled(true).contentFormatter(function() {
+        return '(x,y) = (' + this.x + '.00,' + this.value + ')';
+    });
 
-    chart.xAxis().stroke('red');
-    chart.xAxis().ticks().stroke('red');
-    chart.xAxis().minorTicks().stroke('red');
-    chart.xAxis().labels().fontColor('red');
-    chart.xAxis().title().text('Time msec').fontColor('red');
-    chart.yAxis().stroke('red').staggerMode(false);
-    chart.yAxis().ticks().stroke('red');
-    chart.yAxis().minorTicks().stroke('red');
-    chart.yAxis().labels().fontColor('red');
-    chart.yAxis().title().text('Amplitude').fontColor('red');
-    chart.xScale(anychart.scales.linear());
-    chart.xScale().minimum(-10);
-    chart.xScale().ticks().interval(10);
-    chart.xScale().minorTicks().interval(2);
-  chart.grid(0).stroke('black').direction('vertical');
-  chart.grid(1).stroke('black').direction('horizontal');
-    chart.minorGrid(0).direction('vertical')
-    .oddFill(null).evenFill(null);
-    chart.minorGrid(1).direction('horizontal')
-    .oddFill(null).evenFill(null);
-    chart.yScale().ticks().interval(0.5);
-
-    chart.container('container');
     chart.draw();
 });

@@ -39,97 +39,57 @@ Here is the sample of the chart that will be show when three additional y axes a
 
 Another example of multiple axes use is multiple Y Axes along with multiple X Axes, which may be very useful in certain areas:
 
-Live Sample:  additional X Axes Simple Sample
+{sample}AGST\_Additional\_Axes\_02{sample}
 
-to top
 <a name="tuning"/>
 ## Tuning additional axes
 
-If you want to change any settings of additional axes you can that just the same way as basic X and Y axes are configured, see Axes basics and Axes Scale for the details:
+If you want to change any settings of additional axes you can do that just the same way as basic X and Y axes are configured, see [Axes basics](Axis_Basics) and [Axes Scale](Axis_Scale) for the details:
 
-XML Syntax
-XML Code
-Plain code
-01
-<chart_setttings>
-02
-  <axes>
-03
-    <x_axis />
-04
-    <y_axis>
-05
-      <title>
-06
-        <text><![CDATA[Basic Y Axis]]></text>
-07
-      </title>
-08
-      <scale minimum="0" maximum="800000" />
-09
-    </y_axis>
-10
-    <extra>
-11
-      <y_axis name="y2" enabled="true">
-12
-        <title>
-13
-          <text><![CDATA[Extra Y Axis]]></text>
-14
-        </title>
-15
-        <scale minimum="800000" maximum="1600000" />
-16
-      </y_axis>
-17
-      <x_axis name="x2" enabled="true">
-18
-        <title>
-19
-          <text><![CDATA[Extra X Axis]]></text>
-20
-        </title>
-21
-        <scale minimum="800" maximum="1600" />
-22
-      </x_axis>
-23
-    </extra>
-24
-  </axes>
-25
-</chart_setttings>
+```
+    chart.yScale().minimum(0).maximum(800000);
+    chart.yScale().ticks().interval(100000);
+    chart.yScale().minorTicks().interval(20000);
+    var extraYScale = anychart.scales.linear();
+    extraYScale.minimum(800000).maximum(1600000);
+    extraYScale.ticks().interval(100000);
+    extraYScale.minorTicks().interval(20000);
+    var extraYAxis = chart.yAxis(1);
+    extraYAxis.orientation('right').scale(extraYScale).title().text('Extra Y Axis');
+    chart.yAxis().title().text('Basic Y Axes');
+```
 In the a sample below we will add one additional axis and set value ranges and titles for both basic Y axis and additional Y axis:
 
-Live Sample:  additional Axes Tuning Sample
+{sample}AGST\_Additional\_Axes\_03{sample}
 
 to top
 <a name="binding-series"/>
 ## Binding data series to additional axis
 
-To bind data series to the certain axis you should specify it in y_axis or x_axis attribute of <series> node, by default all series work with basic <y_axis> or <x_axis>:
+To bind data series to the certain axis you should specify it in **.yScale()** or **xScale()** attribute of the Series, by default all series work with basic **.yScale()** or **.xScale()**:
 
-XML Syntax
-XML Code
-Plain code
-01
-<data>
-02
-  <series y_axis="y2">
-03
-    <point name="A" y="1" />
-04
-    <point name="B" y="2" />
-05
-    <point name="C" y="3" />
-06
-  </series>
-07
-</data>
+```
+    var firstSeries = anychart.data.set([
+        ["A", 637166],
+        ["B", 721630],
+        ["C", 148662],
+        ["D", 78662],
+        ["E", 90000]
+    ]);
+    var secondSeries = anychart.data.set([
+        ["A", 95],
+        ["B", 97],
+        ["C", 96],
+        ["D", 70],
+        ["E", 35]
+    ]);
+    var columnSeries = chart.column(firstSeries);
+    var lineSeries = chart.line(secondSeries);
+    lineSeries.yScale(extraYScale);
+```
 In the a sample below we will add one additional axis with a range from 0 to 100 and and bind series of "Line" type to it:
 
-Live Sample:  additional Axes Binding Sample
+{sample}AGST\_Additional\_Axes\_04{sample}
 
 to top
 <a name="sample-comparing-units"/>
@@ -137,133 +97,65 @@ to top
 
 Lets see how additional axes can be used to compare data in different units, for example we measure temperature an want to show Celsius, Fahrenheit and Kelvin scales. To do that we have to create three Y Axes - the basic one will be Celsius degrees, first additional axis - Fahrenheit and second additional axis - Kelvin:
 
-XML Syntax
-XML Code
-Plain code
-01
-<axes>
-02
-  <y_axis>
-03
-    <title>
-04
-      <text><![CDATA[Celsius]]></text>
-05
-    </title>
-06
-    <scale minimum="273.15" maximum="1668" />
-07
-  </y_axis>
-08
-  <extra>
-09
-    <y_axis name="Fahrenheit" enabled="true">
-10
-      <title>
-11
-        <text><![CDATA[Fahrenheit]]></text>
-12
-      </title>
-13
-      <scale minimum="459.67" maximum="3034" />
-14
-    </y_axis>
-15
-    <y_axis name="Kelvin" enabled="true">
-16
-      <title>
-17
-        <text><![CDATA[Kelvin]]></text>
-18
-      </title>
-19
-      <scale minimum="0" maximum="1941" />
-20
-    </y_axis>
-21
-  </extra>
-22
-</axes>
+```
+    var FahrenheitScale = anychart.scales.linear();
+    FahrenheitScale.minimum(-260).maximum(3000);
+    FahrenheitScale.ticks().interval(500);
+    var CelsiumScale = anychart.scales.linear();
+    CelsiumScale.minimum(-274)
+        .maximum(1500)
+        .ticks()
+            .interval(500);
+    CelsiumScale.minorTicks().interval(100);
+    var KelvinScale = anychart.scales.linear();
+    KelvinScale.minimum(0)
+        .maximum(2000)
+        .ticks()
+            .interval(500);
+    KelvinScale.minorTicks().interval(100);
+```
 We defined three axes and set absolute zero as a minimum value, and Titanium melting temperature as a maximum value. We will create one series of a "Marker" type and bind it to Kelvin scale:
 
-XML Syntax
-XML Code
-Plain code
-01
-<data>
-02
-  <series type="Marker" y_axis="Kelvin">
-03
-    <point name="Absolute Zero" y="0" />
-04
-    <point name="Lowest recorded surface temperature on Earth" y="184" />
-05
-    <point name="Celsius / Fahrenheit's 'cross-over' temperature" y="233.15" />
-06
-    <point name="Ice melts" y="273.15" />
-07
-    <point name="Average human body temperature" y="309.95" />
-08
-    <point name="Highest recorded surface temperature on Earth" y="331" />
-09
-    <point name="Water boils" y="373.1339" />
-10
-    <point name="Titanium melts" y="1941" />
-11
-  </series>
-12
-</data>
+```
+    ["Absolute Zero", 0],
+    ["Lowest recorded surface temperature on Earth", 184],
+    ["Celsius / Fahrenheit's 'cross-over' temperature", 233.15],
+    ["Ice melts", 273.15],
+    ["Average human body temperature", 309.95],
+    ["Highest recorded surface temperature on Earth", 331],
+    ["Water boils", 373.1339],
+    ["Titanium melts", 1941]
+    var markerSeries = chart.marker(data);
+```
 Here it is - a sample that shows different important temperatures:
 
-Live Sample:  additional Axes Units Comparison Sample
+{sample}AGST\_Additional\_Axes\_05{sample}
 
 to top
 <a name="sample-different-data"/>
 ## Multi axes sample for showing different data on the same plot
 
-Lets see how additional axes can be used to show different data on the same plot: we will plot a US Debt amount in dollars and in percents of GDP. We need to create to axes:
+Lets see how additional axes can be used to show different data on the same plot: we will plot a US Debt amount in dollars and in percents of GDP. We need to create one additional Axis adjust both basic and additional Axes:
+```
+    chart.yScale().minimum(0).maximum(12000000000000).ticks().interval(2000000000000);
+    chart.yAxis().title().text('Debt');
+    chart.yAxis(1).title().text('GDP');
+    chart.yAxis().labels().textFormatter(function(){
+        var value = (this.value/1000000000000);
+                if (value > 0)
+                    value = (this.value/1000000000000) + ' 000 bil.';
+                return '$' + value;
+    });
+    chart.yAxis(1).labels().textFormatter(function(){
+        return this.value + '%';
+    });
+    var extraYScale = anychart.scales.linear();
+    extraYScale.minimum(0).maximum(140).ticks().interval(20);
+    var extraYAxis = chart.yAxis(1);
+    extraYAxis.orientation('right').scale(extraYScale);
+```
+We defined two axes and will create one series of a **Column** type to show debt and bind it to **yAxis**, one series of a **Line** type to show percentage changes.
 
-XML Syntax
-XML Code
-Plain code
-01
-<axes>
-02
-  <y_axis>
-03
-    <title>
-04
-      <text><![CDATA[Debt]]></text>
-05
-    </title>
-06
-    <scale minimum="0" maximum="12000000000000" />
-07
-  </y_axis>
-08
-  <extra>
-09
-    <y_axis name="gdp">
-10
-      <title>
-11
-        <text><![CDATA[% GDP]]></text>
-12
-      </title>
-13
-      <scale minimum="0" maximum="140" />
-14
-    </y_axis>
-15
-  </extra>
-16
-</axes>
-We defined two axes and will create one series of a "Bar" type to show debt and bind it to <y_axis>, one series of a "Line" type to show percentage changes.
+Here it is - a sample chart comparing the US debt, in dark red, to the debts percent of GDP, in blue.
 
-Here it is - a sample chart comparing the US debt, in red, to the debts percent of GDP, in blue.
-
-Live Sample:  Extra Axes Different Data Comparison Sample
-
-to top
-
-Current Page Online URL: Extra Axes Tutorial
+{sample}AGST\_Additional\_Axes\_06{sample}
