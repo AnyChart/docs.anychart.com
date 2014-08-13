@@ -1,4 +1,11 @@
-var stage = acgraph.create(400, 200).container('container');
-stage
-    .rect(0, 0, stage.width(), stage.height())
-    .fill(['red', 'yellow']);
+{:tags []
+     :is_new false}
+
+anychart.onDocumentReady(function() {
+
+    var stage = acgraph.create('container');
+
+    stage
+        .rect(0, 0, stage.width(), stage.height())
+        .fill(['red', 'yellow']);
+});
