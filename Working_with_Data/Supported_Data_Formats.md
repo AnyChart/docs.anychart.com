@@ -14,7 +14,7 @@ Each of the ways has some strengths and weaknesses, but in general we recommend 
 ###JavaScript API
 JavaScript API is most useful when you need to Create, Read, Update, and Delete data points dynamically. 
 
-We recommend to use [Data Sets](./Using_Data_Sets) when you work using JS API, but you can also pass data directly to a chart by creating a function:
+We recommend to use [Data Sets](./Working_with_Data/Using_Data_Sets) when you work using JS API, but you can also pass data directly to a chart by creating a function:
 ```
 // create a pie chart
 var chart = anychart.pieChart([
@@ -33,7 +33,7 @@ chart.draw();
 ```
 See also:  
 [JavaScript API Reference](http://api.anychart.com)  
-[Using Data Sets](./Using_Data_Sets)
+[Using Data Sets](./Working_with_Data/Using_Data_Sets)
 
 ###XML
 XML format is useful if you prefer the declarative style for chart configurations.  
@@ -63,7 +63,7 @@ chart.container('container');
 chart.draw();
 ```
 See also:  
-[Using Data Sets](./Using_Data_Sets)
+[Using Data Sets](./Working_with_Data/Using_Data_Sets)
 
 ###JSON
 JSON basically has the same purpose and drawbacks as the XML format. We recommend everyone to use JavaScript API - it just has a little bit less perfect performance and is less flexible in terms of customization.
@@ -92,7 +92,7 @@ chart.container('container');
 chart.draw();
 ```
 See also:  
-[Using Data Sets](./Using_Data_Sets)
+[Using Data Sets](./Working_with_Data/Using_Data_Sets)
 
 ###CSV  
 CSV is obviously the best solution when you need to minimize the size of data input. Using it is as easy as any other way, but CSV also lacks flexibility that JS API way has.
@@ -121,5 +121,5 @@ chart.area(csvString);
 chart.draw();
 ```
 See also:  
-[Using Data Sets](./Using_Data_Sets)
+[Using Data Sets](./Working_with_Data/Using_Data_Sets)
 
