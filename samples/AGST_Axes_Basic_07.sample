@@ -60,7 +60,7 @@ anychart.onDocumentReady(function() {
 
     LineChart.title().text('Tickmarks Inside');
 
-    /setting chart's size and position
+    //setting chart's size and position
     LineChart.bounds('50%', '15%', '50%', '85%');
 
     LineChart.background().stroke('#CCCCCC');
