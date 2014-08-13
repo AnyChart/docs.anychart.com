@@ -5,6 +5,14 @@
 anychart.onDocumentReady(function() {
 
     var stage = acgraph.create('container');
+
+    anychart.elements.background()
+        .fill('none')
+        .stroke('orange', 5, '5 5')
+        .bounds(anychart.math.rect(22, 18, 2 * stage.width() - 44, stage.height() / 3 - 22))
+        .container(stage)
+        .draw();
+
     var step = 30;
     stage.path()
         .moveTo(20, 20)
