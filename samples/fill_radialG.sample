@@ -1,5 +1,12 @@
-var stage = acgraph.create(400, 200).container('container');
-var bg = anychart.elements.background()
-    .fill(['black', 'white'], .5, .5)
-    .container(stage)
-    .draw();
+{:tags []
+     :is_new false}
+
+anychart.onDocumentReady(function() {
+
+    var stage = acgraph.create('container');
+    var bg = anychart.elements.background()
+        .fill(['black', 'white'], .5, .5)
+        .container(stage)
+        .draw();
+
+});
