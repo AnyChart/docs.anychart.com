@@ -18,7 +18,7 @@
     otherParams ...
  }
 ```
-Подробнее читайте в статье [Elements Fill](../Elements_Fill)
+Подробнее читайте в статье [Elements Fill](Elements_Fill)
 
 Stroke color is set similar to fill procedure. 
 The setting supports fill with:
