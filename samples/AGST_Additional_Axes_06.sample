@@ -193,10 +193,10 @@ anychart.onDocumentReady(function() {
         [2004, 7379052696330],
         [2005, 7932709661723],
         [2006, 8506973899215],
-        { x: 2007, value: 9350102000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1'},
-        { x: 2008, value: 9948640000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1'},
-        { x: 2009, value: 10543521000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1'},
-        { x: 2010, value: 11137297000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1'}
+        { x: 2007, value: 9350102000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1', stroke: 'black', hoverStroke: 'black'},
+        { x: 2008, value: 9948640000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1', stroke: 'black', hoverStroke: 'black'},
+        { x: 2009, value: 10543521000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1', stroke: 'black', hoverStroke: 'black'},
+        { x: 2010, value: 11137297000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1', stroke: 'black', hoverStroke: 'black'}
     ]);
 
     //Set and adjust data visualisation
@@ -213,7 +213,8 @@ anychart.onDocumentReady(function() {
     var columnSeries = chart.column(secondSeries);
     columnSeries.fill('darkred')
         .stroke('black', 1)
-        .hoverFill('#444444');
+        .hoverStroke('white', 1)
+        .hoverFill('darkred');
     columnSeries.tooltip().enabled(true).contentFormatter(function() {
         var value = (this.value/1000000000).toFixed(0);
         if (value > 999)
