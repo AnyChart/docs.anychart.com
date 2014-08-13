@@ -2,18 +2,28 @@
      :is_new false
      :exports "chart"}
 anychart.onDocumentReady(function() {
-chart = anychart.cartesian.chart();
-var data = anychart.data.set([
-    ['A', 4],
-    ['B', 3],
-    ['C', 2],
-    ['D', 1]
+
+    //define chart
+    chart = anychart.cartesian.chart();
+
+    //setting data
+    var data = anychart.data.set([
+        ['A', 4],
+        ['B', 3],
+        ['C', 2],
+        ['D', 1]
     ]);
-chart.column(data);
-chart.xAxis().orientation('top');
-chart.xAxis().ticks().enabled(false);
-chart.yAxis().minorTicks().enabled(false);
-chart.yAxis().ticks().enabled(false);
-chart.container('container');
-chart.draw();
+
+    //define chart type
+    chart.column(data);
+
+    //position of x axis changer. Now x is on the top
+    chart.xAxis().orientation('top');
+
+    //disabling all ticks
+    chart.xAxis().ticks().enabled(false);
+    chart.yAxis().minorTicks().enabled(false);
+    chart.yAxis().ticks().enabled(false);
+
+    chart.container('container').draw();
 });
