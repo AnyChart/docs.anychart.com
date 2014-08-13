@@ -1,18 +1,74 @@
 # Element stroke settings.
-* [1. Line thickness and dash settings](#thickness-dashed)
-* [2. Color fill settings: Solid color, linear/radial gradient](#color)
+* [Line color](#line_color_setting)
+* [Line thickness](#line_thickness)
+* [Line dash](#line_dash_settings)
+* [Line join and cap](#Line_join_and_cap)
 
-## Line thickness and dash settings
-Inking thickness is set by a value in pixels similar to the gradient key setting
- `thickness color opacity`, or by a separate object: 
-
- ```
+## Line color settings
+Настройки цвета линии можно задать несколькими способами:
+* через отдельный параметр: 
+ `stroke(colorSettings, otherParams...)`
+* в строке (by one value): 
+ `'thickness colorSetting'`
+* в объекте (by one value):
+```
  {
-     position: ,
-     color: ,
-     opacity:
+    color: value,
+    opacity: value,
+    otherParams ...
  }
- ```
+```
+Подробнее читайте в статье [Elements Fill](Elements_Fill)
+
+Stroke color is set similar to fill procedure. 
+The setting supports fill with:
+* solid color
+* linear gradient
+* radial gradient
+
+Image fill **not supported**.
+
+E.g., stroke color fill:
+
+{sample}GS\_E\_stroke_color{sample}
+
+```
+.stroke({
+  keys: ['.1 red', 'white'],
+  cx: .5,
+  cy: .5,
+  fx: .3,
+  fy: .4
+}, 4)
+```
+
+## Line thickness
+Настройки толщины линии можно задать несколькими способами:
+* через отдельный параметр: 
+ `stroke(colorSettings, thickness, otherParams...)`
+* в строке (by one value): 
+ `'thickness colorSetting'`
+* в объекте (by one value):
+```
+ {
+    thickness: value,
+    otherParams ...
+ }
+```
+
+{sample}GS\_E\_stroke_thickness{sample}
+
+## Line dash settings
+Настройки dash можно задать думя способами:
+* через отдельный параметр:
+ `stroke(colorSettings, thickness, dashSetting, otherParams...)`
+* в объекте (by one value):
+```
+ {
+    dash: value,
+    otherParams ...
+ }
+```
 
 Dash settings are set by the string with figures separated by spaces.
  This string will be used as dash pattern. That means, if  string value is
@@ -24,31 +80,23 @@ Every odd-numbered figure is a dash length, and every even-numbered figure is a
 
 E.g.,
 
-{sample}stroke_dashed{sample}
+{sample}GS\_E\_stroke_dashed{sample}
 
 ```
 .stroke('yellow', 5, '5 5 10')
 ```
 
-## Color fill settings: solid color, gradient
-Stroke color is set similar to fill procedure. 
-The setting supports fill with:
-* solid color
-* linear gradient
-* radial gradient
-
-Image fill **not supported**.
-
-E.g., stroke color fill:
-
-{sample}stroke_color{sample}
-
+## Line join and cap
+Настройки corners задаются через два пару (lineJoin, lineCap) и задать ее можно
+думя способами:
+* через отдельный параметр:
+ `stroke(colorSettings, thickness, dashSetting, lineJoin, lineCap)`
+* в объекте (by one value):
 ```
-.stroke({
-  keys: ['.1 red', 'white'],
-  cx: .5,
-  cy: .5,
-  fx: .3,
-  fy: .4
-}, 4)
+ {
+    lineJoin: value,
+    lineCap: value,
+    otherParams ...
+ }
 ```
+{sample}GS\_E\_stroke\_cap\_join{sample}
