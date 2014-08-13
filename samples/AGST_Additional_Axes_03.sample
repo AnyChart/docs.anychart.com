@@ -6,7 +6,7 @@ anychart.onDocumentReady(function() {
 
     chart.container('container');
 
-    chart.title().enabled(true).text('Extra Axes Simple Sample');
+    chart.title().text('Extra Axes Simple Sample');
 
     chart.yScale().minimum(0).maximum(800000);
     chart.yScale().ticks().interval(100000);

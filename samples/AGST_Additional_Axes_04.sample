@@ -6,7 +6,7 @@ anychart.onDocumentReady(function() {
 
     chart.container('container');
 
-    chart.title().enabled(true).text('Extra Axes Binding Sample');
+    chart.title().text('Extra Axes Binding Sample');
 
     //set yScale settings
     chart.yScale().ticks().interval(100000);

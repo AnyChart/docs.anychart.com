@@ -6,7 +6,7 @@ anychart.onDocumentReady(function() {
 
     chart.container('container');
 
-    chart.title().enabled(true).text('Extra Axes Units Comparison Sample');
+    chart.title().text('Extra Axes Units Comparison Sample');
 
     //set xScale settings
     chart.xScale(anychart.scales.linear());

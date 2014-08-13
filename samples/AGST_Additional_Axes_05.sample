@@ -5,6 +5,8 @@ anychart.onDocumentReady(function() {
 
     chart = anychart.cartesian.chart();
 
+    chart.title().enabled(true).text('Extra Axes Units Comparison Sample');
+
     //additional axes settings
     var FahrenheitScale = anychart.scales.linear();
     FahrenheitScale.minimum(-260).maximum(3000);
