@@ -6,36 +6,37 @@ anychart.onDocumentReady(function() {
 
     chart.container('container');
 
+    //setting title
     chart.title().text('Extra Axes Simple Sample');
 
     chart.yScale().minimum(0).maximum(800000);
     chart.yScale().ticks().interval(100000);
     chart.yScale().minorTicks().interval(20000);
 
-    //add extra Y scale
+    //adding extra Y scale
     var extraYScale = anychart.scales.linear();
     extraYScale.minimum(800000).maximum(1600000);
     extraYScale.ticks().interval(100000);
     extraYScale.minorTicks().interval(20000);
 
-    //add and adjust extra Y axis
+    //adding and adjust extra Y axis
     var extraYAxis = chart.yAxis(1);
     extraYAxis.orientation('right').scale(extraYScale).title().text('Extra Y Axis');
 
-    //set Axis title
+    //setting Axis title
     chart.yAxis().title().text('Basic Y Axes');
 
-    //adjust Grid
+    //adjusting Grid
     chart.grid(0).stroke('gray 0.8').direction('vertical');
     chart.grid(1).stroke('gray 0.8').direction('horizontal');
 
-    //set minorGrid settings
+    //setting minorGrid settings
     chart.minorGrid(0).direction('horizontal')
         .oddFill(null).evenFill(null).stroke('gray 0.3');
     chart.minorGrid(1).direction('vertical')
         .oddFill(null).evenFill(null).stroke('gray 0.3');
 
-    //set first series of data
+    //setting first series of data
     var data = anychart.data.set([
         ["A", 637166],
         ["B", 721630],
@@ -44,9 +45,10 @@ anychart.onDocumentReady(function() {
         ["E", 90000]
     ]);
 
-     var columnChart = chart.column(data);
+    var columnChart = chart.column(data);
 
     columnChart.tooltip().enabled(false);
+
     columnChart.hoverFill('#444444');
 
     chart.draw();

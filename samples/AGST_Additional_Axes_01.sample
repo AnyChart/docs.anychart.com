@@ -13,14 +13,18 @@ anychart.onDocumentReady(function() {
 
     chart = anychart.columnChart(data);
 
+    //title settings
     chart.title().text('Extra Axes Simple Sample');
 
+    //adjusting xAxis title
     chart.xAxis().title().text('Sample X axis name').fontWeight('400');
 
+    //adjusting yAxes titles
     chart.yAxis(1).orientation('right').title().text('Axis title');
     chart.yAxis(2).orientation('right').title().text('Axis title');
     chart.yAxis(3).orientation('right').title().text('Axis title');
 
+    //adjusting major ticks' interval
     chart.yScale().ticks().interval(100000);
 
     chart.container('container').draw();
