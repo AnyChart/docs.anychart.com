@@ -154,8 +154,8 @@ Lets see how additional axes can be used to show different data on the same plot
     var extraYAxis = chart.yAxis(1);
     extraYAxis.orientation('right').scale(extraYScale);
 ```
-We defined two axes and will create one series of a "Bar" type to show debt and bind it to <y_axis>, one series of a "Line" type to show percentage changes.
+We defined two axes and will create one series of a **Column** type to show debt and bind it to **yAxis**, one series of a **Line** type to show percentage changes.
 
-Here it is - a sample chart comparing the US debt, in red, to the debts percent of GDP, in blue.
+Here it is - a sample chart comparing the US debt, in dark red, to the debts percent of GDP, in blue.
 
 {sample}AGST\_Additional\_Axes\_06{sample}
