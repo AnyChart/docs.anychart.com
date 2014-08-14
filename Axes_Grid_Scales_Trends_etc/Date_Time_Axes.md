@@ -4,7 +4,7 @@
 * [Overview](#overview)
 * [Creating DateTime Axes](#create)
   * [Sample Range Bar With Y DateTime Axis](#range)
-* [Major and Minor Interval Units](#units)
+* [Major and Minor Interval Ticks](#ticks)
   * [Sample Scatter Line Chart with Y DateTime Axis](#sample)
 
 <a name="overview"/>
@@ -97,15 +97,16 @@ That's it - chart with DateTime Y Axis is ready:
 
 {sample}AGST\_DateTime\_Axes\_01{sample}
 
-Major and Minor Interval Units
+<a name="ticks"/>
+## Major and Minor Interval Ticks
 
-For datetime axes you can set Major and Minor Interval Units using major_interval_unit and minor_interval_unit attributes of <scale> node:
+For datetime axes you can set Major and Minor Ticks using **.ticks().interval()** and **.minorTicks().interval()** attributes of scale:
+```
+    chart.yScale().ticks().interval(1);
+    chart.yScale().minorTicks().interval(0, 2);
+```
+Ticks can define years, months, days, hours, minutes and seconds. //////я тут тупой\\\\\\
 
-XML Syntax
-XML Code
-Plain code
-01
-<scale major_interval_unit="Year" minor_interval_unit="Month" type="DateTime" />
 This units define what inits should be used for minor and major steps, when you use minor_interval and major_interval attrubutes together with units attributes - interval are used as multipliers, for example these settings mean that Major Step is two years and Minor Step is a quarter:
 
 XML Syntax

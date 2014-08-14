@@ -11,6 +11,8 @@ anychart.onDocumentReady(function() {
 
     //setting y scale type as dateTime and adjusting minimum and maximum values
     chart.yScale(anychart.scales.dateTime().minimum(new Date('1999-01-01')).maximum(new Date('2005-01-01')));
+    chart.yScale().ticks().interval(1);
+    chart.yScale().minorTicks().interval(0, 2);
 
     //setting data
     chart.rangeBar([
