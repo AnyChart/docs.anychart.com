@@ -188,7 +188,6 @@ chart.yAxis().ticks().enabled(false);
 ```
 chart.column(data);
 chart.yAxis().orientation('right');
-chart.xAxis().orientation('top');
 chart.xScale().inverted(true);
 chart.xAxis().ticks().enabled(false);
 chart.yAxis().minorTicks().enabled(false);

@@ -3,6 +3,9 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
+    //define chart
+    chart = anychart.cartesian.chart();
+
     //setting data
     var data = anychart.data.set([
         ['A', 4],

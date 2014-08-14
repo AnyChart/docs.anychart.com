@@ -3,6 +3,9 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
+    //define chart
+    chart = anychart.cartesian.chart();
+
     //setting data
     var data = anychart.data.set([
         ['A', 4],
@@ -16,9 +19,6 @@ anychart.onDocumentReady(function() {
 
     //position of y axis changer. Now y is on the right
     chart.yAxis().orientation('right');
-
-    //position of x axis changer. Now x is on the top
-    chart.xAxis().orientation('top');
 
     //inverts y scale. Now all elements has inverted (from right to left) direction
     chart.yScale().inverted(true);
