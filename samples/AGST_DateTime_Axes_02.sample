@@ -1,0 +1,22 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+anychart.onDocumentReady(function() {
+  chart = anychart.lineChart();
+  chart.container('container');
+
+  var logScale = anychart.scales.log();
+  logScale.minimum(1).minorTicks().mode('logarithmic');
+  chart.yScale(logScale);
+
+  //create first series with mapped data
+  var series = chart.line([
+        {value: 1.172, x: '09/2003'},
+        {value: 1.916, x: '09/2004'},
+        {value: 5.57, x: '09/2005'},
+        {value: 15.0, x: '09/2006'},
+        {value: 144, x: '09/2007'},
+        ]);
+  chart.draw();
+});
+});
