@@ -105,29 +105,12 @@ For datetime axes you can set Major and Minor Ticks using **.ticks().interval()*
     chart.yScale().ticks().interval(1);
     chart.yScale().minorTicks().interval(0, 2);
 ```
-Ticks can define years, months, days, hours, minutes and seconds. //////я тут тупой\\\\\\
+Ticks can define years, months, days, hours, minutes and seconds. The order of defining ticks is: **years interval**, **months interval**, **days interval**, **hours interval**, **minutes interval**, **seconds interval**. The order is quite strict. You may not define following intervals of the one, you need, but you have to define previous ones as 0. If you want to define more, than one instance of intervals, just adjust the one, you need.
 
-This units define what inits should be used for minor and major steps, when you use minor_interval and major_interval attrubutes together with units attributes - interval are used as multipliers, for example these settings mean that Major Step is two years and Minor Step is a quarter:
+<a name="sample"/>
+## Sample Scatter Line Chart with Y DateTime Axis
 
-XML Syntax
-XML Code
-Plain code
-01
-<scale type="DateTime" major_interval="2" minor_interval="3" major_interval_unit="Year" minor_interval_unit="Month" />
-This feature will be demonstrated in the next sample.
+In this sample we will create a Line Chart with DateTime X Axis and set major and minor interval ticks and intervals. Y Axis will be Logarithmic - to show small values in the first years and big values in last year.
 
-to top
-
-Sample Scatter Line Chart with Y DateTime Axis
-
-In this sample we will create a Scatter Line Chart with DateTime X Axis and set major and minor interval units and intervals. Y Axis will be Logarithmic - to show small values in the first years and big values in last year.
-
-The chart gets data input as unix time and shows ACME Corp. sales data for 5 years:
 
 Live Sample:  Date Time Axes Scatter Line
-
-to top
-
-to top
-
-Current Page Online URL: Date/Time Axes
