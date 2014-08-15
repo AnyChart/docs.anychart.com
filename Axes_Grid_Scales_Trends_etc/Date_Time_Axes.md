@@ -9,7 +9,6 @@
 
 <a name="overview"/>
 ## Overview
-Overview
 
 You can use Date/Time values as input data for chart, moreover - you can localize input data format so you don't have to reformat it before setting it.<!-- Read more about it in [link in need datetime-input.html ]Date Time Input Tutorial[/link].-->
 <br/><br/>
@@ -112,5 +111,6 @@ Ticks can define years, months, days, hours, minutes and seconds. The order of d
 
 In this sample we will create a Line Chart with DateTime X Axis and set major and minor interval ticks and intervals. Y Axis will be Logarithmic - to show small values in the first years and big values in last year.
 
+{sample}AGST\_DateTime\_Axes\_02{sample}
 
 Live Sample:  Date Time Axes Scatter Line

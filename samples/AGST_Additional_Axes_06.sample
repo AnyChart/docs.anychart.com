@@ -210,10 +210,10 @@ anychart.onDocumentReady(function() {
     });
 
     var columnSeries = chart.column(secondSeries);
-    columnSeries.fill('darkred')
+    columnSeries.fill(['red', 'darkred'], -90)
         .stroke('black', 1)
         .hoverStroke('white', 1)
-        .hoverFill('darkred');
+        .hoverFill(['red', 'darkred'], -90);
     columnSeries.tooltip().enabled(true).contentFormatter(function() {
         var value = (this.value/1000000000).toFixed(0);
         if (value > 999)
