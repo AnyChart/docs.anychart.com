@@ -10,13 +10,13 @@ anychart.onDocumentReady(function() {
   chart.yAxis();
 
  chart.grid()
-        .layout(anychart.utils.layout.HORIZONTAL);
+        .layout('horizontal');
 
     chart.minorGrid()
         .evenFill('none')
         .oddFill('none')
         .stroke('black 0.075')
-        .layout(anychart.utils.layout.VERTICAL);
+        .layout('vertical');
 
 data = anychart.data.set([
    ['2000', 1100],

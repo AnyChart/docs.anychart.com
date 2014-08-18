@@ -8,13 +8,13 @@ anychart.onDocumentReady(function() {
   chart.yAxis();
 
  chart.grid()
-   .layout(anychart.utils.layout.HORIZONTAL);
+   .layout('horizontal');
 
  chart.minorGrid()
    .evenFill('none')
    .oddFill('none')
    .stroke('black 0.075')
-   .layout(anychart.utils.layout.VERTICAL);
+   .layout('vertical');
  data = anychart.data.set([
    ['P1', 14, 24, 34, 42, 50],
    ['P2', 19, 26, 39, 45, 61],
