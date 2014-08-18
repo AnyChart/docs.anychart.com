@@ -151,7 +151,7 @@ In the sample below you can see how offsets settings affects chart, the chart to
 
 {sample}AGST\_Axes\_Scale\_08{sample}
 
-<a name="min-max-values"/>
+<a name="inverted"/>
 ## Inverted Scale
 
 If you want to display scale in an inverted mode, to display bigger values to the bottom of the chart - you need to set **.inverted()** attribute to "true"
