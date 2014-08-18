@@ -15,13 +15,13 @@ anychart.onDocumentReady(function() {
   chart.yAxis();
 
     chart.grid()
-        .direction(anychart.utils.Direction.HORIZONTAL);
+        .layout(anychart.utils.layout.HORIZONTAL);
 
     chart.minorGrid()
         .evenFill('none')
         .oddFill('none')
         .stroke('black 0.075')
-        .direction(anychart.utils.Direction.VERTICAL);
+        .layout(anychart.utils.layout.VERTICAL);
 
   chart.marker([
      [2000, 1100],

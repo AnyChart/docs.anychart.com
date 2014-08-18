@@ -46,7 +46,7 @@ anychart.onDocumentReady(function() {
     //adding grid
     chart.grid()
         .stroke('black')
-        .direction('vertical')
+        .layout('vertical')
         .evenFill(null)
         .oddFill(null);
 
@@ -69,8 +69,8 @@ anychart.onDocumentReady(function() {
     markerSeries.yScale(KelvinScale);
     markerSeries.size(5).hoverSize(7);
 
-    chart.lineMarker().stroke('1 red').direction('horizontal').scale(CelsiumScale);
-    chart.lineMarker(1).stroke('1 green').direction('horizontal').scale(FahrenheitScale);
+    chart.lineMarker().stroke('1 red').layout('horizontal').scale(CelsiumScale);
+    chart.lineMarker(1).stroke('1 green').layout('horizontal').scale(FahrenheitScale);
 
     chart.container('container');
     chart.draw();

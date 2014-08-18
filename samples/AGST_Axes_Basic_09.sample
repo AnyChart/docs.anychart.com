@@ -21,9 +21,9 @@ anychart.onDocumentReady(function() {
     series = chart.column(Sales2004);
 
     //adjusting major and minor grids
-    chart.grid(0).stroke('black').direction('vertical');
-    chart.grid(1).stroke('black').direction('horizontal');
-    chart.minorGrid().stroke({color: 'black', dash: '5 2 5', opacity: 0.2}).direction('horizontal');
+    chart.grid(0).stroke('black').layout('vertical');
+    chart.grid(1).stroke('black').layout('horizontal');
+    chart.minorGrid().stroke({color: 'black', dash: '5 2 5', opacity: 0.2}).layout('horizontal');
 
     //setting major ticks interval on y scale
     chart.yScale().ticks().interval(2);

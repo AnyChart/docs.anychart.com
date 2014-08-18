@@ -42,8 +42,8 @@ anychart.onDocumentReady(function() {
     chart.xAxis().title().enabled(false);
 
     //set Grid settings
-    chart.grid(0).stroke('gray 0.8').direction('horizontal');
-    chart.grid(1).stroke('gray 0.8').direction('vertical');
+    chart.grid(0).stroke('gray 0.8').layout('horizontal');
+    chart.grid(1).stroke('gray 0.8').layout('vertical');
 
     //disable minorGrid
     chart.minorGrid(null);

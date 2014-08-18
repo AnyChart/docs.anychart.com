@@ -4,10 +4,10 @@
 anychart.onDocumentReady(function() {
 
     //define chart
-    chart = anychart.barChart();
+    chart = anychart.columnChart();
 
     //setting chart title
-    chart.title().text('X113 Destroyer Development Plan');
+    chart.title().text('Date/Time scale sample');
 
     //setting y scale type as dateTime and adjusting minimum and maximum values
     chart.yScale(anychart.scales.dateTime().minimum(new Date('1999-01-01')).maximum(new Date('2005-01-01')));
@@ -15,7 +15,7 @@ anychart.onDocumentReady(function() {
     chart.yScale().minorTicks().interval(0, 2);
 
     //setting data
-    chart.rangeBar([
+    chart.rangeColumn([
         {x: 'Development', low: new Date('2000-01-01'), high: new Date('2002-02-15')},
         {x: 'Internal Testing', low: new Date('2001-06-01'), high: new Date('2003-07-01'), fill: 'red'},
         {x: 'Field Tests', low: new Date('2002-02-25'), high: new Date('2003-07-01'), fill: 'green'},
@@ -30,9 +30,8 @@ anychart.onDocumentReady(function() {
             return date.toLocaleDateString('en-US', options);
         });
 
-    //setting axes titles and position
-    chart.yAxis().orientation('top').title().text('Time Plan');
-    chart.xAxis().title().text('Tasks');
+    //setting axis title
+    chart.yAxis().title().text('Date/Time Scale');
 
     chart.container('container').draw();
 });

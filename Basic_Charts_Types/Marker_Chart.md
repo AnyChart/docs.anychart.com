@@ -73,7 +73,7 @@ Now we need to convert this data table into js format, this format will be accep
   chart.grid()
       .evenFill('none')
       .oddFill('none')
-      .direction(anychart.utils.Direction.VERTICAL);
+      .layout(anychart.utils.layout.VERTICAL);
   chart.marker([
    ['2000', 1100],
    ['2001', 880],

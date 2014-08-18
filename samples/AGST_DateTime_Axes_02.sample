@@ -18,5 +18,10 @@ anychart.onDocumentReady(function() {
         {value: 15.0, x: '09/2006'},
         {value: 144, x: '09/2007'},
         ]);
-  chart.draw();
+
+  series.tooltip().enabled(true).contentFormatter(function() {
+        var value = (this.value).toFixed(0);
+        return 'Value: $' + value + ' mil. \n' + this.x ;
+    });
+      chart.draw();
 });

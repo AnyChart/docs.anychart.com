@@ -164,7 +164,7 @@ to top
 You can also make your grid lines dashed:
 
 ```
-  chart.minorGrid().stroke({color: 'black', dash: '5 2 5', opacity: 0.2}).direction('horizontal');
+  chart.minorGrid().stroke({color: 'black', dash: '5 2 5', opacity: 0.2}).layout('horizontal');
 ```
 And create chart like this:
 
@@ -176,7 +176,7 @@ And create chart like this:
 You can use this method with both major and minor grids. To do this you need to set **.oddFill()** or/and **.evenFill()** attributes in corresponding grid. Fill can be gradient, image and/or hatch as well as any other fill.
 
 ```
-    chart.grid(1).direction('horizontal').evenFill('white').oddFill('rgb(244,245,255');
+    chart.grid(1).layout('horizontal').evenFill('white').oddFill('rgb(244,245,255');
 ```
 
 That's how simple interlaced grid will look like:
