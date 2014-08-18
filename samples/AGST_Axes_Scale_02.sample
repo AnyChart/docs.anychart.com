@@ -22,8 +22,7 @@ anychart.onDocumentReady(function() {
         ['C', 1000],
         ['D', 78],
         ['E', 90]
-    ]).hoverFill('#444444')
-        .tooltip().enabled(false);
+    ]).hoverFill('#444444');
 
     chart.container('container').draw();
 
