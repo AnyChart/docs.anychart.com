@@ -2,10 +2,10 @@
               
 * [Overview](#overview)                                                                          
 * [Definition](#definition)
-* [Tuning extra axes](#tuning)
-* [Binding data series to additional axis](#binding-series)
-* [Multi axes sample for comparing units](#sample-comparing-units)
-* [Multi axes sample for showing different data on the same plot](#sample-different-data)
+* [Tuning Additional Axes](#tuning)
+* [Binding Data Series to Additional Axis](#binding-series)
+* [Multi Axes Sample for Comparing Units](#sample-comparing-units)
+* [Multi Axes Sample for Showing Different Data on the Same Plot](#sample-different-data)
  
 <a name="overview"/>
 ## Overview
@@ -23,7 +23,7 @@ Consider using multiple axes when you need:
 * Show data measured in different units on the same plot, for example: gross domestic product (GDP) volume and GDP growth rate (GDP will be in billions and rate in percents)
 
 <a name="definition"/>
-## Define an additional axis
+## Define an Additional Axis
 
 If you want to define an additional axis all you need to do is to set index to it, and place as many **.yAxis()** or **.xAxis()** methods into it:
 
@@ -42,7 +42,7 @@ Another example of multiple axes use is multiple Y Axes along with multiple X Ax
 {sample}AGST\_Additional\_Axes\_02{sample}
 
 <a name="tuning"/>
-## Tuning additional axes
+## Tuning Additional Axes
 
 If you want to change any settings of additional axes you can do that just the same way as basic X and Y axes are configured, see [Axes basics](Axis_Basics) and [Axes Scale](Axis_Scale) for the details:
 
@@ -64,7 +64,7 @@ In the a sample below we will add one additional axis and set value ranges and t
 
 to top
 <a name="binding-series"/>
-## Binding data series to additional axis
+## Binding Data Series to Additional Axis
 
 To bind data series to the certain axis you should specify it in **.yScale()** or **xScale()** attribute of the Series, by default all series work with basic **.yScale()** or **.xScale()**:
 
@@ -93,7 +93,7 @@ In the a sample below we will add one additional axis with a range from 0 to 100
 
 to top
 <a name="sample-comparing-units"/>
-## Multi axes sample for comparing units
+## Multi Axes Sample for Comparing Units
 
 Lets see how additional axes can be used to compare data in different units, for example we measure temperature an want to show Celsius, Fahrenheit and Kelvin scales. To do that we have to create three Y Axes - the basic one will be Celsius degrees, first additional axis - Fahrenheit and second additional axis - Kelvin:
 
@@ -133,7 +133,7 @@ Here it is - a sample that shows different important temperatures:
 
 to top
 <a name="sample-different-data"/>
-## Multi axes sample for showing different data on the same plot
+## Multi Axes Sample for Showing Different Data on the Same Plot
 
 Lets see how additional axes can be used to show different data on the same plot: we will plot a US Debt amount in dollars and in percents of GDP. We need to create one additional Axis adjust both basic and additional Axes:
 ```

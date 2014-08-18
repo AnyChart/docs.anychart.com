@@ -8,7 +8,7 @@
   * [Ordinal Scale](#ordinal)
   * [Date Time Scale](#date)
 * [Scale Stacked Mode](#mode)                                                                                           	 
-* [Minimum and Maximum scale values](#min-max-values)         
+* [Minimum and Maximum Scale Values](#min-max-values)         
 * [Minor and Major Ticks Interval](#intervals)              
 * [Minimum and Maximum Gap](#gap)     
 * [Inverted Scale](#inverted)               

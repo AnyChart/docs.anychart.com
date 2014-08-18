@@ -6,12 +6,12 @@
 * [Title](#title)
 * [Position](#position)
 * [Labels](#labels)
-* [Axis line and Zero line](#axis-lines)
+* [Axis line](#axis-lines)
 * [Tickmarks](#tickmarks)
 * [Grids](#grids)
   * [Major and Minor](#grids)
   * [Dashed Grid Lines](#dashed)
-  * [Interlaced grid](#interlace)
+  * [Even and Odd fills](#interlace)
 <!--* [Keywords Reference](#keywords)-->
 
 <a name="overview"/>
@@ -35,7 +35,7 @@ If you want to control any of the axes settings - you should do that though **Ax
   chart.xAxis().title().enabled(true).text('Sample X axis name');
 ```
 <a name="title"/>
-## Setting Axis Title
+## Title
 
 You can define a title of any axis, you can control its position and font <!--and use keywords-->, when specifying text. Full reference of parameters can be found in Reference: **.yAxis().title()** or **.xAxis().title()**. Here is a sample titles definition:
 
@@ -89,7 +89,6 @@ Rotated labels:
   chart.xAxis().labels().enabled(true).rotation(90);
 ```
 
-Live Sample:  Axis Labels Sample - Normal Mode rotated by 90
 
 {sample}AGST\_Axes\_Basic\_04{sample}
 
@@ -105,7 +104,7 @@ Live Sample:  Axis Labels Sample - Normal Mode rotated by 90
 
 
 <a name="axis-lines"/>
-## Axis lines
+## Axis Lines
 
 It is possible to tune visual appearance of axis segment line and zero line. To do this you need to use **.lineMarker()** with default settings.
 
@@ -137,7 +136,7 @@ The dashboard below shows how these settings work:
 
 
 <a name="grids"/>
-## Grid configuration
+## Grid
 <a name="grids"/>
 ### Major and Minor Grids
 
@@ -159,7 +158,7 @@ That's how simple grid will look like:
 
 to top
 <a name="dashed"/>
-### Dashed Grids
+### Dashed Grid Lines
 
 You can also make your grid lines dashed:
 
