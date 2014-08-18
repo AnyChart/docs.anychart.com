@@ -8,9 +8,9 @@ anychart.onDocumentReady(function() {
 
     //setteing data
     var data = anychart.data.set([
-        ['C' , 15],
-        ['D' , 45],
-        ['E' , 25]
+        ['C', 15],
+        ['D', 45],
+        ['E', 25]
     ]);
     chart.column(data).hoverFill('#444444');
 
