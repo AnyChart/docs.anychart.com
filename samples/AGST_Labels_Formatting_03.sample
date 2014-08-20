@@ -12,7 +12,7 @@ anychart.onDocumentReady(function() {
         ['March' , 10000],
         ['April' , 11000],
         ['May' , 19000]
-    ]);
+    ]).tooltip().enabled(true);
 
     chart.yScale().minimum(8000).maximum(20000).ticks().interval(2000);
 

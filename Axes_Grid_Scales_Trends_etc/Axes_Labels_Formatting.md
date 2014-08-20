@@ -101,19 +101,8 @@ Here is a sample of financial chart with euro and dollar axes. Dollar based axis
 <a name="max-char"/>
 ### Setting Maximum of Visible Characters
 
-If the value (a number or a text) is to large, you may want to limit the number of characters using maxChar keyword. This parameters sets the maximal number of symbols, that are displayed. For example if the length of the string in {%Token} is greater than maxChar, then it will be trimmed and symbols set in maxCharFinalChars (by default "...") are shown at the end (this is done to show explicitly, that string is trimmed). If the number of characters in {%Token} is less than or equal to maxChar, then {%Token} is displayed as is.
+If the value (a number or a text) is to large, you may want to limit the number of characters. Here is the previous sample with x axis labels symbols limited to 3.
 
-If you don't want to show anything when value is trimmed - just set maxCharFinalChars to nothing.
-
-Sample setting maximum of visible characters to 5 and no final characters:
-
-```
-    chart.xAxis().labels().textFormatter(function(){
-        var value = this.value;
-        value = value.substr(0, 3);
-        return value;
-    });
-```
 {sample}AGST\_Labels\_Formatting\_03{sample}
 
 <a name="visual-appearance"/>
@@ -121,106 +110,46 @@ Sample setting maximum of visible characters to 5 and no final characters:
 
 You can tune visual appearance of axes labels according to your chart design. Label visual settings consist of background settings (which include margins and border), font settings and effects.
 
-In general you can learn more about these settings in: Background tutorial, Fonts tutorial and Effects tutorial, in this section we will cover the basics that allow to tune labels appearance and some special features (Multi-line labels).
+<!--In general you can learn more about these settings in: [links need]Background tutorial, Fonts tutorial and Effects tutorial.[/links]--> In this section we will cover the basics that allow to tune labels appearance and some special features (Multi-line labels).
 
-to top
 <a name="font"/>
 ## Font
 
-Font settings of labels are configured using <font> subnode of <labels> node, you can specify size, face and color or set the text to HTML mode, also, you can add effects to be applied to the text:
+Font settings of labels are configured using multiple attributes. You can specify size, face and color or set the text to HTML mode, also, you can add effects to be applied to the text:
 
-XML Syntax
-XML Code
-Plain code
-01
-<labels>
-02
-  <font family="Courier" size="12" color="Red" bold="True" italic="False" underline="False" render_as_html="False">
-03
-    <effects enabled="true">
-04
-      <drop_shadow enabled="true" />
-05
-    </effects>
-06
-  </font>
-07
-</labels>
-Note: there are some special things you should know about font setting when working with Rotated labels, please study them and learn more about fonts in AnyChart in Fonts tutorial.
+```
+    chart.xAxis().labels().fontFamily('Courier').fontSize(12).fontColor('red').fontWeight('bold').useHTML(false);
+```
 
-You can look at font settings at work in the sample below.
+<!--Note: there are some special things you should know about font setting when working with [link]Rotated labels[/link], please study them and learn more about fonts in [link]AnyChart in Fonts tutorial[/link].-->
+
+You can look at font settings at work in the [sample below](#sample).
 
 <a name="multiline-labels"/>
 ### Multi Line Labels and Align
 
-With AnyChart it is possible to create multi-line labels and you can controls their alignment, it is useful, for example, when you want to specify label values in different scales:
+With AnyChart it is possible to control labels' alignment. It is useful, for example, when you want to set multiple label values on one scale:
 
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <labels text_align="Left">
-03
-    <format><![CDATA[$ {%Value}{numDecimals:2}
-04
-€ {%Value}{numDecimals:2,scale:(1.4095)|()}]]></format>
-05
-  </labels>
-06
-</y_axis>
-to top
+```
+chart.yAxis().labels().hAlign('right');
+```
 
 <a name="background"/>
 ### Background
 
-As stated in the beginning of this section - you can learn more about background settings in Background tutorial, and here we will demonstrate the most usual task - enabling/disabling background and configuring labels border.
+<!--As stated in the beginning of this section - you can learn more about background settings in [link]Background tutorial[/link], and here we will demonstrate the most usual task - enabling/disabling background and configuring labels border.-->
 
-Labels background is configured in <background> subnode of <labels> node, here are sample settings - background is disabled for Y-Axis labels and only a border is enabled for X-Axis labels:
+Labels background is configured with **background()** method of **labels**. Here are sample settings - background is enabled for xAxis and only stroke method was adjusted:
 
-XML Syntax
-XML Code
-Plain code
-01
-<axes>
-02
-  <y_axis>
-03
-    <labels>
-04
-      <background enabled="false" />
-05
-    </labels>
-06
-  </y_axis>
-07
-  <x_axis>
-08
-    <labels>
-09
-      <background enabled="True">
-10
-        <fill enabled="false" />
-11
-        <border enabled="True" />
-12
-      </background>
-13
-    </labels>
-14
-  </x_axis>
-15
-</axes>
- 
+```   
+    chart.xAxis().labels().background().enabled(true).stroke('blue');
+```
 
-to top
 
 In this sample we will demonstrate labels background settings, multi-line labels and align and font settings:
 
-Live Sample:  Sample Axes Labels Visual Settings
-
- 
+<a name="sample"/>
+{sample}AGST\_Labels\_Formatting\_04{sample}
 
 <a name="positioning"/>
 ## Positioning
