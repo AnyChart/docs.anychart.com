@@ -3,6 +3,8 @@
   :exports "chart"}
 
 anychart.onDocumentReady(function() {
+
+    //data
     var dataSet = anychart.data.set([
         ['January', '12000', '10000'],
         ['February', '15000', '12000'],
@@ -10,11 +12,21 @@ anychart.onDocumentReady(function() {
         ['April', '15000', '11000'],
         ['May', '14000', '9000'],
     ]);
+
+    //remap data
     var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
     var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+
+    //chart type
     chart = anychart.areaChart();
-    chart.container('container');
+
+    //set title
+    chart.title().text('Multi-series Area Chart')
+
+    //using data in series
     chart.area(seriesData_1).name('2004');
     chart.area(seriesData_2).name('2005');
-    chart.draw();
+
+    //draw chart
+    chart.container('container').draw();
 });

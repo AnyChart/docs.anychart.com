@@ -16,7 +16,6 @@ anychart.onDocumentReady(function() {
         ["Russian Federation", 138739888],
         ["Japan", 126475664]
     ]);
-    chart.yScale().minorTicks().interval(2000000000);
 
     //adjusting labels
     chart.yScale().ticks().interval(200000000);
@@ -35,6 +34,7 @@ anychart.onDocumentReady(function() {
 
     //force labels to hide value, if the previous one is too big, set text position to center
     chart.xAxis().overlapMode(false).labels().hAlign('center').width(130);
+    chart.yAxis().minorTicks().enabled(false);
     chart.xAxis().staggerLines(1);
     chart.draw();
 });

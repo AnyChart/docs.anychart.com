@@ -2,16 +2,29 @@
   :is_new false
   :exports "chart"}
 anychart.onDocumentReady(function() {
-var data = anychart.data.set([
-      ['January', 10000],
-      ['February', 12000],
-      ['March', 18000],
-      ['April', 11000],
-      ['May', 9000]
+
+    //data
+    var data = anychart.data.set([
+        ['January', 10000],
+        ['February', 12000],
+        ['March', 18000],
+        ['April', 11000],
+        ['May', 9000]
     ]);
-chart = anychart.areaChart();
-  chart.xAxis(0).orientation('top');
-  chart.yAxis(0).orientation('right');
-chart.area(data);
-chart.container('container').draw();
+
+    //chart type
+    chart = anychart.areaChart();
+
+    //set title
+    chart.title().text('Adjusted Axes Orientation');
+
+    //adjust axes orientation
+    chart.xAxis(0).orientation('top');
+    chart.yAxis(0).orientation('right');
+
+    //set data
+    chart.area(data);
+
+    //draw chart
+    chart.container('container').draw();
 });

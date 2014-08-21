@@ -2,6 +2,8 @@
   :is_new false
   :exports "chart"}
 anychart.onDocumentReady(function() {
+
+    //data
     var data = anychart.data.set([
         ['January', 10000],
         ['February', 12000],
@@ -9,11 +11,24 @@ anychart.onDocumentReady(function() {
         ['April', 11000],
         ['May', 9000]
     ]);
+
+    //chart type
     chart = anychart.areaChart();
+
+    //title
+    chart.title().text('Labels')
+
+    //set data
     var series= chart.area(data);
+
+    //set and adjust labels
     series.labels().enabled(true).rotation(90).offsetY(15).offsetX(-5).textFormatter(function(point){
         return point.x;
     });
+
+    //set and adjust tooltips
     series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
+
+    //draw chart
     chart.container('container').draw();
-    });
+});

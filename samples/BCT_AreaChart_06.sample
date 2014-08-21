@@ -3,15 +3,28 @@
   :exports "chart"}
 
 anychart.onDocumentReady(function() {
- var data = anychart.data.set([
-      ['January', 10000],
-      ['February', 12000],
-      ['March', 18000],
-      ['April', 11000],
-      ['May', 9000]
+
+    //data
+    var data = anychart.data.set([
+        ['January', 10000],
+        ['February', 12000],
+        ['March', 18000],
+        ['April', 11000],
+        ['May', 9000]
     ]);
-chart = anychart.areaChart();
-chart.splineArea(data);
-chart.yScale().minimum('0').maximum('50000');
-chart.container('container').draw();
+
+    //chart type
+    chart = anychart.areaChart();
+
+    //set title
+    chart.title().text('Adjusting Minimum and Maximum Value')
+
+    //define chart type
+    chart.splineArea(data);
+
+    //set minimum and maximum value for y scale
+    chart.yScale().minimum('0').maximum('50000');
+
+    //draw chart
+    chart.container('container').draw();
 });
