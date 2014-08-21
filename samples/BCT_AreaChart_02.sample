@@ -2,14 +2,25 @@
   :is_new false
   :exports "chart"}
 anychart.onDocumentReady(function() {
-var data = anychart.data.set([
-      ['January', 10000],
-      ['February', 12000],
-      ['March', 18000],
-      ['April', 11000],
-      ['May', 9000]
+
+    //data
+    var data = anychart.data.set([
+        ['January', 10000],
+        ['February', 12000],
+        ['March', 18000],
+        ['April', 11000],
+        ['May', 9000]
     ]);
-chart = anychart.areaChart();
-chart.splineArea(data);
-chart.container('container').draw();
+
+    //setting chart type
+    chart = anychart.areaChart();
+
+    //set title
+    chart.title().text('Spline Chart');
+
+    //set data and define chart type
+    chart.splineArea(data);
+
+    //draw chart
+    chart.container('container').draw();
 });
