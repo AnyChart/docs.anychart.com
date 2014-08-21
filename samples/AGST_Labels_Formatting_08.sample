@@ -34,7 +34,7 @@ anychart.onDocumentReady(function() {
     });
 
     //force labels to hide value, if the previous one is too big, set text position to center
-    chart.xAxis().overlapMode(false)labels().hAlign('center').width(130);
+    chart.xAxis().overlapMode(false).labels().hAlign('center').width(130);
     chart.xAxis().staggerLines(1);
     chart.draw();
 });
