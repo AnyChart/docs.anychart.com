@@ -1,46 +1,24 @@
 # Element hatch fill
+* [Overview](#overview)
 * [Hatch fill presets](#hatch_fill_presets)
     * [Color settings](#color_settings)
     * [Thickness settings](#thickness_settings)
     * [Size settings](#size_settings)
 * [Pattern settings](#pattern_settings)
 
+## Overview
+Заливка штриховкой очень полезна в ситуациях, когда выделение цветом не работает, например, в ситуациях
+затрудненного цветовосприятия, а именно:
+ * черно-белые принты страниц (в печатных изданиях)
+ * черно-белые усройства (e-books)
+ * проблемы со зрением (дальтонизм)
+ 
+Люди часто, вставляя визуализацию в свои книги, документы, сайты не задумываются о вышеописаных проблемах.
+А у нас есть инструменты для того, чтобы это избежать.
 
 ## Hatch Fill presets
-Hatch это заливка pattern по предустановкам. Полный список предустановок:
-
-* BACKWARD_DIAGONAL	
-* FORWARD_DIAGONAL	
-* HORIZONTAL	
-* VERTICAL	
-* DASHED_BACKWARD_DIAGONAL	
-* GRID	
-* DASHED_FORWARD_DIAGONAL	
-* DASHED_HORIZONTAL	
-* DASHED_VERTICAL	
-* DIAGONAL_CROSS	
-* DIAGONAL_BRICK	
-* DIVOT	
-* HORIZONTAL_BRICK	
-* VERTICAL_BRICK	
-* CHECKER_BOARD	
-* CONFETTI	
-* PLAID	
-* SOLID_DIAMOND	
-* ZIG_ZAG	
-* WEAVE	
-* PERCENT_05	
-* PERCENT_10	
-* PERCENT_20	
-* PERCENT_25	
-* PERCENT_30	
-* PERCENT_40	
-* PERCENT_50	
-* PERCENT_60	
-* PERCENT_70	
-* PERCENT_75	
-* PERCENT_80	
-* PERCENT_90
+Hatch это заливка pattern по предустановкам. Полный список предустановок можно посмотреть 
+[в документации.](http://api.anychart.com/7.1.0/anychart.graphics.vector.HatchFill.html#HatchFillType)
 
 Что бы залить элемент hatch, надо просто указать строковое значение. 
 ```
