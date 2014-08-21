@@ -18,6 +18,10 @@ anychart.onDocumentReady(function() {
     //setting title
     chart.title().text('Area chart');
 
+    //set axes titles
+    chart.xAxis().title().text('Month');
+    chart.yAxis().title().text('Sales');
+
     //set data
     chart.area(data);
 

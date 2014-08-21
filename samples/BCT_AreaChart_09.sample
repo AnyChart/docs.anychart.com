@@ -17,7 +17,11 @@ anychart.onDocumentReady(function() {
     chart = anychart.areaChart();
 
     //title
-    chart.title().text('Markers')
+    chart.title().text('Markers');
+
+    //set axes titles
+    chart.xAxis().title().text('Month');
+    chart.yAxis().title().text('Sales');
 
     //define chart type
     chart.splineArea(data);

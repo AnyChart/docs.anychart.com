@@ -17,7 +17,11 @@ anychart.onDocumentReady(function() {
     chart = anychart.areaChart();
 
     //set title
-    chart.title().text('Visualization')
+    chart.title().text('Visualization');
+
+    //set axes titles
+    chart.xAxis().title().text('Month');
+    chart.yAxis().title().text('Sales');
 
     //setting data and adjusting chart visual appearance
     chart.area(data)

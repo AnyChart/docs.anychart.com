@@ -2,23 +2,32 @@
   :is_new false
   :exports "chart"}
 anychart.onDocumentReady(function() {
-  var data = anychart.data.set([
-    ['Department Stores1', 637166, 737166],
-    ['Discount Stores', 721630, 537166],
-    ['Men\'s/Women\'s Specialty Stores', 148662, 188662],
-    ['Juvenile Specialty Stores', 78662, 178662],
-    ['All other outlets', 90000, 89000]
-  ]);
 
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
+    //data
+    var data = anychart.data.set([
+        ['Department Stores1', 637166, 737166],
+        ['Discount Stores', 721630, 537166],
+        ['Men\'s/Women\'s Specialty Stores', 148662, 188662],
+        ['Juvenile Specialty Stores', 78662, 178662],
+        ['All other outlets', 90000, 89000]
+    ]);
 
-  chart = anychart.barChart();
+    //remapping data
+    var Sales2003 = data.mapAs({x: [0], value: [1]});
+    var Sales2004 = data.mapAs({x: [0], value: [2]});
 
-  var series;
-  series = chart.bar(Sales2003);
-  series = chart.bar(Sales2004);
+    //define chart type
+    chart = anychart.barChart();
 
-  chart.container('container');
-  chart.draw();
-  });
+    //set axes titles
+    chart.xAxis().title().text('Retail Channel');
+    chart.yAxis().title().text('Sales');
+
+    //set data series
+    var series;
+    series = chart.bar(Sales2003);
+    series = chart.bar(Sales2004);
+
+    //draw chart
+    chart.container('container').draw();
+});

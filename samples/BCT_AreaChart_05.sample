@@ -16,7 +16,11 @@ anychart.onDocumentReady(function() {
     chart = anychart.areaChart();
 
     //set title
-    chart.title().text('Y Scale Insertion')
+    chart.title().text('Y Scale Insertion');
+
+    //set axes titles
+    chart.xAxis().title().text('Month');
+    chart.yAxis().title().text('Sales');
 
     //define chart type
     chart.splineArea(data);

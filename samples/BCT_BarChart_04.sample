@@ -2,14 +2,32 @@
   :is_new false
   :exports "chart"}
 anychart.onDocumentReady(function() {
-  var data = anychart.data.set([
-    ['Department Stores1', 637166],
-    ['Discount Stores', 721630],
-    ['Men\'s/Women\'s Specialty Stores', 148662],
-    ['All other outlets', 90000]
-  ]);
-chart = anychart.barChart();
-chart.bar(data);
-chart.yScale().inverted(true);
-chart.container('container').draw();
+
+    //data
+    var data = anychart.data.set([
+        ['Department Stores1', 637166],
+        ['Discount Stores', 721630],
+        ['Men\'s/Women\'s Specialty Stores', 148662],
+        ['All other outlets', 90000]
+    ]);
+
+    //chart type
+    chart = anychart.barChart();
+
+    //set title
+    chart.title().text('Inverted Axis Direction');
+
+    //set axes titles
+    chart.xAxis().title().text('Retail Channel');
+    chart.yAxis().title().text('Sales');
+
+
+    //set data
+    chart.bar(data);
+
+    //change y scale direction
+    chart.yScale().inverted(true);
+
+    //draw chart
+    chart.container('container').draw();
 });

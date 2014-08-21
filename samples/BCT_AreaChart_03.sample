@@ -23,6 +23,10 @@ anychart.onDocumentReady(function() {
     //set title
     chart.title().text('Multi-series Area Chart')
 
+    //set axes titles
+    chart.xAxis().title().text('Month');
+    chart.yAxis().title().text('Sales');
+
     //using data in series
     chart.area(seriesData_1).name('2004');
     chart.area(seriesData_2).name('2005');

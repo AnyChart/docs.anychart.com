@@ -18,6 +18,10 @@ anychart.onDocumentReady(function() {
     //set title
     chart.title().text('Adjusted Axes Orientation');
 
+    //set axes titles
+    chart.xAxis().title().text('Month');
+    chart.yAxis().title().text('Sales');
+
     //adjust axes orientation
     chart.xAxis(0).orientation('top');
     chart.yAxis(0).orientation('right');

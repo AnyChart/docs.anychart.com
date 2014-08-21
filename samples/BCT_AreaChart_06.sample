@@ -17,7 +17,11 @@ anychart.onDocumentReady(function() {
     chart = anychart.areaChart();
 
     //set title
-    chart.title().text('Adjusting Minimum and Maximum Value')
+    chart.title().text('Adjusting Minimum and Maximum Value');
+
+    //set axes titles
+    chart.xAxis().title().text('Month');
+    chart.yAxis().title().text('Sales');
 
     //define chart type
     chart.splineArea(data);

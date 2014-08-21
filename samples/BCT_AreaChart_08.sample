@@ -16,7 +16,11 @@ anychart.onDocumentReady(function() {
     chart = anychart.areaChart();
 
     //chart title
-    chart.title().text('Image fill')
+    chart.title().text('Image fill');
+
+    //set axes titles
+    chart.xAxis().title().text('Retail Channel');
+    chart.yAxis().title().text('Sales');
 
     //adjust chart fill mode and set picture instead of color
     chart.area(data).fill({
