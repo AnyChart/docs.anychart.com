@@ -15,7 +15,7 @@
    *[Padding](#padding)
    *[Rotated Labels ](#rotated)
    *[Stagger Mode ](#stagger)
- *[First, Last and Crossing Labels](#first-last-crossing-labels)
+ *[First and Last <!--and Crossing--> Labels](#first-last-crossing-labels)
  *[Y-Axis Labels: Fixed Width](#y-axis-labels-fixed-width)
  *[X-Axis Labels: Fixed Width and Text Wrapping](#x-axis-labels-wrapping-width)               
  <!--*[Keywords Reference ](#keywords)
@@ -159,92 +159,54 @@ AnyChart gives you a number of options to control the position of axes labels, d
 <a name="labels-align"/>
 ### Labels Align
 
-To specify how labels are aligned you need to set align attribute of <labels> node, its possible values are: "Inside", "Outside" and "Center". These values are given relative to axis position and work the same way on both Horizontal and Vertical charts.
+To specify how labels are aligned you need to set **hAlign()** and **vAling()** attributes **labels()**. **hAlign** possible values are: "left", "start", "center", "end" and "right". As for **vAlign()** values, it can be: "top", "middle" and "bottom". 
 
-Also, when using non-rotated and non-staggered labels you can change the position attribute and make labels appear inside of the data plot area, to do that set position="Inside".
+Also, you can change the position attribute and make labels appear inside of the data plot area, to do that set **offsetX()** for yAxis and **offsetY()** for xAxis.
 
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <labels align="Inside" position="Inside" />
-03
-</y_axis>
-to top
+```
+    chart.yAxis().labels().offsetX(30);
+```
 
 <a name="padding"/>
 ### Padding
 
-If you want to change the padding between axis and labels - use padding attribute (the value in Pixels):
+If you want to change the labels background size and text position inside background - use padding attribute (the value in Pixels). Padding may contain up to 4 values: Top&Bottom&Left&Right, Right&Left, Bottom, Left. It is not necessary to set all 4 values. Just remember, that each value has more priority, than the previous one.
 
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <labels padding="10" />
-03
-</y_axis>
-to top
+```
+    chart.yAxis().labels().padding(0,0,2,3)
+```
 
 <a name="rotated"/>
 ### Rotated Labels
 
-One of the most useful features of label positioning is ability to show rotated labels. To rotate labels just set angle of rotation in rotation attribute of <labels> node:
+One of the most useful features of label positioning is ability to show rotated labels. To rotate labels just set angle of rotation in rotation attribute:
 
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <labels rotation="90" />
-03
-</y_axis>
-Note: certain limitations are applied when using rotated texts in AnyChart, read more about them in Fonts tutorial.
-
-to top
+```
+    chart.yAxis().labels().rotation(90)
+```
 
 <a name="stagger"/>
 ### Stagger Mode
 
-When you have a lot of long labels, you may find useful to use "Stager" display mode for labels, this may work particularly good on X-Axis, when labels contain category names:
+When you have a lot of long labels, you may find useful to use **staggerLines()** display mode for labels, this may work particularly good on xAxis, when labels contain category names:
 
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <labels display_mode="Stager" />
-03
-</y_axis>
+```
+    chart.xAxis().staggerLines(2);
+```
 Here is a sample dashboard showing the most of positioning labels settings:
-
-Live Sample:  Sample Axes Labels Position Settings
-
-to top
+<a name="dashbord"/>
+{sample}AGST\_Labels\_Formatting\_05{sample}
 
 <a name="first-last-crossing-labels"/>
-## First, Last and Crossing labels
+## First and Last <!--and Crossing--> labels
 
-There are special attributes that give you a control over such special labels as: First (minimal value) label on the axis, Last label (maximal value) and Cross label (crossing with perpendicular axis value). You can force them to be shown or hide them using appropriate attributes: show_first_label, show_last_label and show_cross_label.
+There are special attributes that give you a control over such special labels as: First (minimal value) label on the axis and Last label (maximal value). You can force them to be shown or hide them using appropriate attributes: **drawFirstLabel()**, **drawLastLable()** <!-- and show_cross_label-->.
 
-Turning off the last the first label is shown on the dashboard above in "Labels Inside" Line chart.
-
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <labels show_first_label="False" show_last_label="False" show_cross_label="True" />
-03
-</y_axis>
-to top
+Turning off the last the first label is shown on the [dashboard above](#dashbord) in "Labels Inside" Line chart.
+```
+    labelsInside.xAxis().drawFirstLabel(false);
+    labelsInside.xAxis().drawLastLabel(false);
+```
 
 <a name="y-axis-labels-fixed-width"/>
 ## Y-Axis Labels: Fixed Width
@@ -253,56 +215,41 @@ You can set fixed width for Y-Axis labels. If label content doesn't fit - text i
 
 This function may be of great use when you use Dashboards and you want to sync several charts left and/or right border, which is especially needed when they are displayed in a column and share the same X-Axis arguments.
 
-To set the width you should use width attribute in <labels> node, which accepts positive integer values in pixels:
+To set the width you should use **width()** attribute for **labels()**, which accepts positive integer values in pixels:
 
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <labels width="50" />
-03
-</y_axis>
+```
+    chart.yAxis().labels().width(50)
+```
 Sample dashboard shows two charts with values in completely different ranges: upper charts shows up to hundreds of thousands and the one beneath shows only hundreds and as the result charts aren't synced to the left:
 
-Live Sample:  Y-Axis Labels width is calculated automatically
+{sample}AGST\_Labels\_Formatting\_06{sample}
 
 And now the same data with Y-Axis label width set to 70 pixels, which results in synced left border:
 
-Live Sample:  Y-Axis Labels width is set to 70 pixels
-
-to top
+{sample}AGST\_Labels\_Formatting\_07{sample}
 
 <a name="x-axis-labels-wrapping-width"/>
 ## X-Axis Labels: Fixed Width and Text Wrapping
 
-Sometimes you may encounter situation when point names (which are used as arguments and are displayed in X-Axis labels) are too long and chart engine removes some of them because they don't fit the chart size — it may be undesired result and it can be avoided in several ways, like allowing labels to overlap (using allow_overlap attribute in <labels> node) or using maxChar keyword in formatting, but you can also set fixed width and make them wrap.
+Sometimes you may encounter situation when point names (which are used as arguments and are displayed in X-Axis labels) are too long and chart engine removes some of them because they don't fit the chart size — it may be undesired result and it can be avoided in several ways, like allowing labels to overlap (changing value for axis **overlapMode**) <!--or using maxChar keyword in formatting-->, but you can also set fixed width and make them wrap.
 
-To set the fixed width you have to use width attribute in <labels> element:
+To set the fixed width you have to use **width()** attribute in **labels()** element:
 
-XML Syntax
-XML Code
-Plain code
-01
-<x_axis>
-02
-  <labels width="60" />
-03
-</x_axis>
+```
+    chart.xAxis().labels().width(60)
+```
+
 The following example demonstrates standard behavior of the X-Axis labels. As you can see long labels cause component to skip several labels in order to prevent overlapping:
 
-Live Sample:  X-Axis Labels width is not set - no wrapping
+{sample}AGST\_Labels\_Formatting\_08{sample}
 
 Exactly the same configuration but the labels width is set manually to 60 pixels. In this case, component wraps texts in order to fit in the width set:
 
-Live Sample:  X-Axis Labels width is set to 60 pixels
+{sample}AGST\_Labels\_Formatting\_09{sample}
 
-This works as well for other plot types. The following example demonstrates the same data displayed on CategorizedHorizontal plot. In order to align multiline text to the right side text_align attribute is set to Right:
+This works as well for other plot types. The following example demonstrates the same data displayed on CategorizedHorizontal plot. In order to align multiline text to the right side **hAlign()** attribute is set to right:
 
-Live Sample:  X-Axis Labels width is set to 60 pixels on CategorizedHorizontal plot type
-
-to top
+{sample}AGST\_Labels\_Formatting\_10{sample}
 
 <!--
 Keywords reference
