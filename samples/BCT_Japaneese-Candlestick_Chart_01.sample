@@ -30,6 +30,9 @@ anychart.onDocumentReady(function() {
     chart.xAxis().title().enabled(false);
     chart.yAxis().title().enabled(false);
 
+    //rotate x axis labels
+    chart.xAxis().labels().rotation(-90);
+
     //adjust x scale type
     chart.xScale(anychart.scales.ordinal());
 
@@ -38,7 +41,8 @@ anychart.onDocumentReady(function() {
         .fallingFill('black')
         .fallingStroke('black')
         .risingFill('white')
-        .risingStroke('black');
+        .risingStroke('black')
+        .tooltip().enabled(false);
 
     //draw
     chart.container('container').draw();
