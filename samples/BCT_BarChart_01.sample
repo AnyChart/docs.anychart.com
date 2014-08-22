@@ -14,6 +14,14 @@ anychart.onDocumentReady(function() {
     //chart type
     chart = anychart.barChart();
 
+    //set title
+    chart.title().text('Bar Chart');
+
+
+    //set axes titles
+    chart.xAxis().title().text('Retail Channel');
+    chart.yAxis().title().text('Sales');
+
     //set data
     chart.bar(data);
 

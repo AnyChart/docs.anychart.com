@@ -19,6 +19,10 @@ anychart.onDocumentReady(function() {
     //define chart type
     chart = anychart.barChart();
 
+    //set title
+    chart.title().text('Multi-series Bar Chart');
+
+
     //set axes titles
     chart.xAxis().title().text('Retail Channel');
     chart.yAxis().title().text('Sales');

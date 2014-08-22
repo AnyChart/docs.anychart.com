@@ -2,19 +2,26 @@
   :is_new false
   :exports "chart"}
 anychart.onDocumentReady(function() {
-  chart = anychart.columnChart();
-  chart.container('container');
- var data = anychart.data.set([
-    ['John' , 10000, 12000],
-    ['Jake' , 12000, 15000],
-    ['Peter' , 18000, 16000],
-    ['James' , 11000, 13000],
-    ['Mary' , 9000, 19000]
-  ]);
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
-    var series;
-  series = chart.column(Sales2003);
-  series = chart.column(Sales2004);
-  chart.draw();
+
+    //chart type
+    chart = anychart.columnChart();
+
+    var data = anychart.data.set([
+        ['John' , 10000, 12000],
+        ['Jake' , 12000, 15000],
+        ['Peter' , 18000, 16000],
+        ['James' , 11000, 13000],
+        ['Mary' , 9000, 19000]
+    ]);
+
+    //remap data
+    var Sales2003 = data.mapAs({x: [0], value: [1]});
+    var Sales2004 = data.mapAs({x: [0], value: [2]});
+
+    //set series data
+    series = chart.column(Sales2003);
+    series = chart.column(Sales2004);
+
+    //draw
+    chart.container('container').draw();
 });
