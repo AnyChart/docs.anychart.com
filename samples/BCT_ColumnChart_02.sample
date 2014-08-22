@@ -6,6 +6,13 @@ anychart.onDocumentReady(function() {
     //chart type
     chart = anychart.columnChart();
 
+    //set title
+    chart.title().text('Multi-series Column Chart');
+
+    //set axes titles
+    chart.xAxis().title().text('Manager');
+    chart.yAxis().title().text('Sales');
+
     var data = anychart.data.set([
         ['John' , 10000, 12000],
         ['Jake' , 12000, 15000],

@@ -2,17 +2,30 @@
   :is_new false
   :exports "chart"}
 anychart.onDocumentReady(function() {
-  chart = anychart.columnChart();
-  chart.container('container');
-  chart.title().text('Column Chart');
-  chart.column([
-    ['John' , 10000],
-    ['Jake' , 12000],
-    ['Peter' , 18000],
-    ['James' , 11000],
-    ['Mary' , 9000]
-  ]);
+
+    //chart type
+    chart = anychart.columnChart();
+
+    //set title
+    chart.title().text('Axes Management');
+
+    //set axes titles
+    chart.xAxis().title().text('Manager');
+    chart.yAxis().title().text('Sales');
+
+    //set data
+    chart.column([
+        ['John' , 10000],
+        ['Jake' , 12000],
+        ['Peter' , 18000],
+        ['James' , 11000],
+        ['Mary' , 9000]
+    ]);
+
+    //axes position adjuster
     chart.xAxis(0).orientation('top');
-  chart.yAxis(0).orientation('right');
-  chart.draw();
+    chart.yAxis(0).orientation('right');
+
+    //draw
+    chart.container('container').draw();
 });

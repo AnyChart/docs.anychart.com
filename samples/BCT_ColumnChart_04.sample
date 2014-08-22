@@ -2,16 +2,28 @@
   :is_new false
   :exports "chart"}
 anychart.onDocumentReady(function() {
-  chart = anychart.columnChart();
-  chart.container('container');
-  chart.title().text('Column Chart');
-  chart.column([
-    ['John' , 10000],
-    ['Jake' , 12000],
-    ['Peter' , 18000],
-    ['James' , 11000],
-    ['Mary' , 9000]
-  ]);
-chart.yScale().inverted(true);
-  chart.draw();
+
+    //chart type
+    chart = anychart.columnChart();
+
+    //set title
+    chart.title().text('Scale Management');
+
+    //set axes titles
+    chart.xAxis().title().text('Manager');
+    chart.yAxis().title().text('Sales');
+
+    chart.column([
+        ['John' , 10000],
+        ['Jake' , 12000],
+        ['Peter' , 18000],
+        ['James' , 11000],
+        ['Mary' , 9000]
+    ]);
+
+    //adjust y scale
+    chart.yScale().inverted(true);
+
+    //draw
+    chart.container('container').draw();
 });
