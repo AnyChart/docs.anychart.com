@@ -15,12 +15,11 @@ anychart.onDocumentReady(function() {
     chart = anychart.barChart();
 
     //chart title
-    chart.title().text(''Minimum and Maximum Scale Value');
+    chart.title().text('Minimum and Maximum Scale Value');
 
     //set axes titles
     chart.xAxis().title().text('Retail Channel');
     chart.yAxis().title().text('Sales');
-
 
     //set data
     chart.bar(data);
