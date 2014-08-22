@@ -227,8 +227,8 @@ Now, let's look how to apply a simple style to the chart. As we've already said 
 ```
 chart.bar(data)
   .fill('Gold')
-  .hoverStroke("darkred", 4, 1)
-  .stroke('#56561a', 4, 1)
+  .hoverStroke("darkred", 4)
+  .stroke('#56561a', 4)
   .hatchFill('diagonalbrick', 'gray')
   .hoverHatchFill('diagonalbrick', 'darkred');
 ```

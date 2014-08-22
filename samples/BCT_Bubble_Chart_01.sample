@@ -3,15 +3,24 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  var container ='container';
 
-  chart = anychart.lineChart();
+    //chart type
+    chart = anychart.lineChart();
 
-  chart.bubble([
-    ['Product A', 4, 10],
-    ['Product B', 5, 6],
-    ['Product C', 6, 17]
-  ]).minimumSize(2).maximumSize(40);
-  chart.container('container');
-  chart.draw();
+    //set title
+    chart.title().text('Bubble chart');
+
+    //set axes titles
+    chart.xAxis().title().text('Products');
+    chart.yAxis().title().text('Units Sold');
+
+    //define chart type
+    chart.bubble([
+        ['Product A', 4, 10],
+        ['Product B', 5, 6],
+        ['Product C', 6, 17]
+    ]).minimumSize(2).maximumSize(40);
+
+    //draw
+    chart.container('container')chart.draw();
 });

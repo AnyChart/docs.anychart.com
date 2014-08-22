@@ -25,8 +25,8 @@ anychart.onDocumentReady(function() {
     //set data and adjust visualization
     chart.bar(data)
         .fill('Gold')
-        .hoverStroke("darkred", 4, 1)
-        .stroke('#56561a', 4, 1)
+        .hoverStroke("darkred", 4)
+        .stroke('#56561a', 4)
         .hatchFill('diagonalbrick', 'gray')
         .hoverHatchFill('diagonalbrick', 'darkred');
 

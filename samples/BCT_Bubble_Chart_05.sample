@@ -3,15 +3,28 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  var container ='container';
-  chart = anychart.lineChart();
-  chart.bubble([
-    ['Product A', 637, 6],
-    ['Product B', 472, 14],
-    ['Product С', 48, 10]
-  ]).minimumSize(10).maximumSize(30);
-  chart.xAxis(0).orientation('top');
-  chart.yAxis(0).orientation('right');
-  chart.container('container');
-  chart.draw();
+
+    //chart type
+    chart = anychart.lineChart();
+
+    //set title
+    chart.title().text('Axes Management');
+
+    //set axes titles
+    chart.xAxis().title().text('Products');
+    chart.yAxis().title().text('Sales');
+
+    //set data
+    chart.bubble([
+        ['Product A', 637, 6],
+        ['Product B', 472, 14],
+        ['Product С', 48, 10]
+    ]).minimumSize(10).maximumSize(30);
+
+    //adjust axes position
+    chart.xAxis(0).orientation('top');
+    chart.yAxis(0).orientation('right');
+
+    //draw
+    chart.container('container').draw();
 });

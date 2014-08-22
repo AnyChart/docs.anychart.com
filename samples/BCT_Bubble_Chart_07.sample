@@ -3,14 +3,27 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  var container ='container';
-  chart = anychart.lineChart();
-  chart.bubble([
-    ['Product A', 637, 6],
-    ['Product B', 472, 14],
-    ['Product С', 48, 10]
-  ]).minimumSize(10).maximumSize(30);
-  chart.yScale().minimum('-100').maximum('1000').ticks().interval(100);
-  chart.container('container');
-  chart.draw();
+
+    //chart type
+    chart = anychart.lineChart();
+
+    //set title
+    chart.title().text('Fixed Minimum amd Maximum Scale Value');
+
+    //set axes titles
+    chart.xAxis().title().text('Products');
+    chart.yAxis().title().text('Sales');
+
+    //set data
+    chart.bubble([
+        ['Product A', 637, 6],
+        ['Product B', 472, 14],
+        ['Product С', 48, 10]
+    ]).minimumSize(10).maximumSize(30);
+
+    //adjust minimum and maximum y scale value
+    chart.yScale().minimum('-100').maximum('1000').ticks().interval(100);
+
+    //draw
+    chart.container('container').draw();
 });

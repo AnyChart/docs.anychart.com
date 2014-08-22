@@ -19,6 +19,13 @@ anychart.onDocumentReady(function() {
     //chart type
     chart = anychart.barChart();
 
+    //set title
+    chart.title().text('Labels and Tooltips');
+
+    //set axes titles
+    chart.xAxis().title().text('Retail Channel');
+    chart.yAxis().title().text('Sales');
+
     var series;
 
     //set first series data

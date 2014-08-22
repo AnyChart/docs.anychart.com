@@ -2,9 +2,18 @@
   :is_new false
   :exports "chart"}
 anychart.onDocumentReady(function() {
+
+    //chart type
     chart = anychart.barChart();
-    chart.container('container');
-    chart.title().text('Column Chart');
+
+    //set title
+    chart.title().text('Marker settings');
+
+    //set axes titles
+    chart.xAxis().title().text('Retail Channel');
+    chart.yAxis().title().text('Sales');
+
+    //set data
     chart.bar([
         ['John' , 10000],
         ['Jake' , 12000],
@@ -12,5 +21,7 @@ anychart.onDocumentReady(function() {
         ['James' , 11000],
         ['Mary' , 9000]
     ]);
-    chart.draw();
+
+    //draw
+    chart.container('container').draw();
 });

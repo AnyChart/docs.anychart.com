@@ -265,7 +265,7 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 <a name="color_setting"/>
 ### Colorizing Elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set color(). In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **color()**. In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
 
 {sample}BCT\_Bubble\_Chart\_10{sample}
 
