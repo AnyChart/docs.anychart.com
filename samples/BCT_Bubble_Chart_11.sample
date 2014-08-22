@@ -3,7 +3,7 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-    
+
     //chart type
     chart = anychart.lineChart();
 
