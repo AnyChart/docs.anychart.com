@@ -3,7 +3,7 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  chart = anychart.cartesian.chart();
+  chart = anychart.cartesianChart();
 
   chart.xAxis();
 
