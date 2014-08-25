@@ -19,6 +19,9 @@ anychart.onDocumentReady(function() {
     //chart type
     chart = anychart.barChart();
 
+    //chart title
+    chart.title().text('Paddings');
+
     //set series data
     var series;
     series = chart.bar(Sales2003);

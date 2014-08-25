@@ -21,6 +21,9 @@ anychart.onDocumentReady(function() {
     //chart type
     chart = anychart.lineChart();
 
+    //chart title
+    chart.title().text('Hatches');
+
     //set series data and adjust hatch
     series = chart.bubble(seriesData_1)
         .minimumSize(10)
