@@ -33,5 +33,6 @@ anychart.onDocumentReady(function() {
     chart.candlestick(seriesData_4).xPointPosition(0.5).pointWidth('60%').color('#5EBD9B');
     chart.candlestick(seriesData_5).xPointPosition(0.5).pointWidth('60%').color('#4A55C7');
 
+    //draw
     chart.container('container').draw();
 });
