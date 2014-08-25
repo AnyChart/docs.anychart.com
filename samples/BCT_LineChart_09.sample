@@ -26,7 +26,7 @@ anychart.onDocumentReady(function() {
     chart.yScale().minimum('0').maximum('20000');
 
     //set data
-    series - chart.spline(data)
+    series = chart.spline(data);
 
     //adjust labels
     series.labels()
