@@ -3,16 +3,30 @@
   :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  //create data set on our data
-  var data = anychart.data.set([
-    ['January', 10000],
-    ['February', 12000],
-    ['March', 18000],
-    ['April', 11000],
-    ['May', 9000]
-  ]);
-  chart = anychart.lineChart();
-  chart.container('container');
-  chart.spline(data);
-  chart.draw();
+
+    //data
+    var data = anychart.data.set([
+        ['January', 10000],
+        ['February', 12000],
+        ['March', 18000],
+        ['April', 11000],
+        ['May', 9000]
+    ]);
+
+
+    //chart type
+    chart = anychart.lineChart();
+
+    //title
+    chart.title().text('Spline chart');
+
+    //set axes titles
+    chart.xAxis().title().text('Sales');
+    chart.yAxis().title().text('Month');
+
+    //set data and define chart
+    chart.spline(data);
+
+    //draw
+    chart.container('container').draw();
 });

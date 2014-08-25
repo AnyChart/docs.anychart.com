@@ -26,7 +26,7 @@ anychart.onDocumentReady(function() {
     //adjust x scale type
     chart.xScale(anychart.scales.ordinal());
 
-    //set color
+    //set color and daat
     chart.candlestick(data).color('#C6D1A5');
 
     //draw

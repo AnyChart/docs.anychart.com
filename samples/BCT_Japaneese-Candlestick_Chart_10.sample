@@ -191,12 +191,22 @@ anychart.onDocumentReady(function() {
     //second stage settings
     columnChart.title().enabled(false);
     columnChart.bounds(0, '70%', '100%', '30%');
-    columnChart.xAxis().staggerLines(1);
-    columnChart.yAxis().staggerLines(1);
+
+    //adjust axes labels view
+    columnChart.xAxis().staggerLines(1).labels().enabled(false);
+    columnChart.yAxis().staggerLines(1).labels().textFormatter(function(){
+        var value = this.value;
+        if (value > 0)
+        value = value/1000000;
+        return value;
+    });
 
     //disable axes titles
     columnChart.xAxis().title().enabled(false);
     columnChart.yAxis().title().enabled(false);
+
+    //adjust x axis internal
+    columnChart.xScale().ticks().interval(11);
 
     //draw second stage
     columnChart.draw();

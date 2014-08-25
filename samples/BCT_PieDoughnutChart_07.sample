@@ -3,21 +3,33 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  chart = anychart.pieChart([
-     ['Department Stores', 637166],
-     ['Discount Stores', 721630],
-     ['Men\'s/Women\'s Stores', 148662],
-     ['Juvenile Specialty Stores', 78662],
-     ['All other outlets', 90000]
-  ]);
-  chart.labels()
-  .enabled(true)
-  .fontColor('black')
-  .fontWeight('bold');
-  chart.tooltip().enabled(true).contentFormatter(function() {
-    return 'Chanel: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2003';
-  });
-  chart.tooltip().enabled(true).title().enabled(true).text('Information');
-  chart.container('container');
-  chart.draw();
+
+    //set data and chart type
+    chart = anychart.pieChart([
+        ['Department Stores', 637166],
+        ['Discount Stores', 721630],
+        ['Men\'s/Women\'s Stores', 148662],
+        ['Juvenile Specialty Stores', 78662],
+        ['All other outlets', 90000]
+    ]);
+
+    //chart title
+    chart.title().text('Labels and Tooltips');
+
+    //set labels
+    chart.labels()
+        .enabled(true)
+        .fontColor('black')
+        .fontWeight('bold');
+
+    //set tooltips
+    chart.tooltip().enabled(true).contentFormatter(function() {
+        return 'Chanel: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2003';
+    });
+
+    //set tooltip title
+    chart.tooltip().enabled(true).title().enabled(true).text('Information');
+
+    //draw
+    chart.container('container').draw();
 });

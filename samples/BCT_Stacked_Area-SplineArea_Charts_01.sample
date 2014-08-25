@@ -3,29 +3,34 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  //create data set on our data
-  var dataSet = anychart.data.set([
-    ["Winter", 12000, 12000, 10000],
-    ["Spring", 13000, 12000, 17000],
-    ["Summer", 25000, 15000, 19000],
-    ["Autumn", 16000, 16000, 16000]
-  ]);
 
-  var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
-  var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
-  var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
+    //data
+    var dataSet = anychart.data.set([
+        ["Winter", 12000, 12000, 10000],
+        ["Spring", 13000, 12000, 17000],
+        ["Summer", 25000, 15000, 19000],
+        ["Autumn", 16000, 16000, 16000]
+    ]);
 
-  chart = anychart.areaChart();
+    //map data for each series
+    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+    var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+    var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
 
-  chart.container('container');
+    //chart type
+    chart = anychart.areaChart();
 
-  chart.title().text('Stacked Area Chart');
+    //chart title
+    chart.title().text('Stacked Area Chart');
 
-  chart.yScale().stackMode('value');
+    //set stack mode
+    chart.yScale().stackMode('value');
 
-  chart.area(seriesData_1);
-  chart.area(seriesData_2);
-  chart.area(seriesData_3);
+    //set data for each series
+    chart.area(seriesData_1);
+    chart.area(seriesData_2);
+    chart.area(seriesData_3);
 
-  chart.draw();
+    //draw
+    chart.container('container').draw();
 });

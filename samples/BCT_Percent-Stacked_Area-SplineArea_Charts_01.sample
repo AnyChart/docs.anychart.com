@@ -4,49 +4,42 @@
 
 anychart.onDocumentReady(function() {
   //create data set on our data
-  var dataSet = anychart.data.set([
-["Winter", 12000, 12000, 10000],
-["Spring", 13000, 12000, 17000],
-["Summer", 25000, 15000, 19000],
-["Autumn", 16000, 16000, 16000]
-  ]);
+    var dataSet = anychart.data.set([
+        ["Winter", 12000, 12000, 10000],
+        ["Spring", 13000, 12000, 17000],
+        ["Summer", 25000, 15000, 19000],
+        ["Autumn", 16000, 16000, 16000]
+    ]);
 
-  //map data for the first series, take x from the zero column and value from the first column of data set
-  var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+    //map data for the first series, take x from the zero column and value from the first column of data set
+    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
 
-  //map data for the second series, take x from the zero column and value from the second column of data set
-  var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+    //map data for the second series, take x from the zero column and value from the second column of data set
+    var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
 
-  //map data for the second series, take x from the zero column and value from the third column of data set
-  var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
+    //map data for the second series, take x from the zero column and value from the third column of data set
+    var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
 
-  //create area chart
-  chart = anychart.areaChart();
+    //chart type
+    chart = anychart.areaChart();
 
-  //set container id for the chart
-  chart.container('container');
+    //set chart Y scale settings
+    chart.yScale().stackMode('percent');
 
-  //set chart Y scale settings
-  chart.yScale().stackMode('percent');
-      
-  //set yAxis labels formatting, force it to add % to values
-  chart.yAxis(0).labels().textFormatter(function(info) {
-    return info.value + '%';
-  });
+    //set yAxis labels formatting, force it to add % to values
+    chart.yAxis(0).labels().textFormatter(function(info) {
+      return info.value + '%';
+    });
 
-  //using fill function we can create a pretty gradient for the series
-  //note that we using series sourceColor here, which can be configured separately for each series by 'color' method
-  
+    //create first area series on mapped data and specify series fill function
+    chart.area(seriesData_1);
 
-  //create first area series on mapped data and specify series fill function
-  chart.area(seriesData_1);
+    //create second area series on mapped data and specify series fill function
+    chart.area(seriesData_2);
 
-  //create second area series on mapped data and specify series fill function
-  chart.area(seriesData_2);
+    //create third area series on mapped data, specify series fill function and color
+    chart.area(seriesData_3);
 
-  //create third area series on mapped data, specify series fill function and color
-  chart.area(seriesData_3);
-
-  //initiate chart drawing
-  chart.draw();
+    //draw
+    chart.container('container').draw();
 });

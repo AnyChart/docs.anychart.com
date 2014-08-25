@@ -3,34 +3,41 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  chart = anychart.cartesianChart();
 
-  chart.xAxis();
+    //chart type
+    chart = anychart.cartesianChart();
 
-  chart.yAxis();
+    //set title
+    chart.title().text('Visualization');
 
- chart.grid()
-        .layout('horizontal');
+    //draw axes and set titles
+    chart.xAxis().title('Year');
+    chart.yAxis().title('Box office');
 
+    //draw grid
+    chart.grid().layout('horizontal');
+
+    //draw minor grid and adjust
     chart.minorGrid()
         .evenFill('none')
         .oddFill('none')
         .stroke('black 0.075')
         .layout('vertical');
 
-  chart.marker([
-   ['2000', 1100],
-   ['2001', 880],
-   ['2002', 1100],
-   ['2003', 1500],
-   ['2004', 921],
-   ['2005', 1000],
-   ['2006', 1400]
-  ])
-  .fill('gold')
-  .hoverFill('darkred')
-  .hoverStroke(0)
-  .hoverSize(20);
+    //define chart type, set data and adjust visualisation
+    chart.marker([
+        ['2000', 1100],
+        ['2001', 880],
+        ['2002', 1100],
+        ['2003', 1500],
+        ['2004', 921],
+        ['2005', 1000],
+        ['2006', 1400]
+    ])
+        .fill('gold')
+        .hoverFill('darkred')
+        .hoverStroke(0)
+        .hoverSize(20);
 
   chart.container('container');
 
