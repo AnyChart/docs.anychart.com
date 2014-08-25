@@ -20,7 +20,7 @@ anychart.onDocumentReady(function() {
         ['P13', 'missing', '1623', 'missing']
     ]);
 
-    //remap data
+    //map data for the each series
     var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
     var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
     var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
@@ -36,6 +36,6 @@ anychart.onDocumentReady(function() {
     var series_2 = chart.splineArea(seriesData_2).hatchFill('forwarddiagonal').fill('#EEEEEE');
     var series_3 = chart.splineArea(seriesData_3).fill('#EEEEEE').hatchFill('backwarddiagonal');
 
-    //chart draw
+    //draw
     chart.container('container').draw();
   });

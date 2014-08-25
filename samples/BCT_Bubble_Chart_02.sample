@@ -11,7 +11,7 @@ anychart.onDocumentReady(function() {
         ['Product C', 48, 10, 48, 20]
     ]);
 
-    //remap data
+    //map data for the each series
     var seriesData_1 = dataSet.mapAs({x: [0], value: [1], size:[2]});
     var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
 

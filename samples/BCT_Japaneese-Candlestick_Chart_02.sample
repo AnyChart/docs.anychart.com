@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
     chart = anychart.financialChart();
 
     //chart title
-    chart.title().text('Multi-series')
+    chart.title().text('Multi-series');
 
     //adjust x scale type
     chart.xScale(anychart.scales.ordinal());
@@ -20,15 +20,7 @@ anychart.onDocumentReady(function() {
         ['30-Aug-07', 512.36, 515.40, 510.58, 511.40],
         ['31-Aug-07', 513.10, 516.50, 511.47, 515.25],
         ['4-Sep-07', 515.02, 528.00, 514.62, 525.15]
-    ]).xPointPosition(0.5)
-        .tooltip().contentFormatter(function(){
-            return 'Corporation: ACME' + '\n' +
-                  'Date: ' + this.x + '\n' +
-                  'Open: ' + this.open + '\n' +
-                  'High: ' + this.high + '\n' +
-                  'Low: ' + this.low + '\n' +
-                  'Close: ' + this.close;
-        });
+    ]).xPointPosition(0.5);
 
     //set second series data and tooltips
     chart.candlestick([
@@ -37,15 +29,11 @@ anychart.onDocumentReady(function() {
         ['30-Aug-07', 522.49, 522.91, 522.38, 522.61],
         ['31-Aug-07', 522.81, 522.83, 522.51, 522.73],
         ['4-Sep-07', 523.30, 524.50, 523.20, 523.97]
-    ]).xPointPosition(0.5)
-        .tooltip().contentFormatter(function(){
-            return 'Corporation: Duff Brewery' + '\n' +
-                  'Date: ' + this.x + '\n' +
-                  'Open: ' + this.open + '\n' +
-                  'High: ' + this.high + '\n' +
-                  'Low: ' + this.low + '\n' +
-                  'Close: ' + this.close;
-        });
+    ]).xPointPosition(0.5);
+
+    //set axes title
+    chart.xAxis().title().text('Day');
+    chart.yAxis().title().text('Price');
 
     //draw
     chart.container('container').draw();
