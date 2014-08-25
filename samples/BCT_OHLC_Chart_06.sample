@@ -27,9 +27,7 @@ anychart.onDocumentReady(function() {
         .fallingStroke('black', 1)
         .risingStroke('black', 1)
         .hoverFallingStroke('red', 3)
-        .hoverRisingStroke('red', 3)
-        .fallingFill('black')
-        .risingFill('white');
+        .hoverRisingStroke('red', 3);
 
     //set axes title
     chart.xAxis().title().text('Day');

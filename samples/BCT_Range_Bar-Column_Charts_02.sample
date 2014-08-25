@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
     chart = anychart.columnChart();
 
     //chart title
-    chart.title().text('Range Bar Chart');
+    chart.title().text('Waterfall Chart');
 
     //set data and define chart type
     chart.rangeColumn([
