@@ -7,7 +7,7 @@ anychart.onDocumentReady(function() {
     chart = anychart.columnChart();
 
     //set title
-    chart.title().text('Column Chart');
+    chart.title().text('Labels and Tooltips');
 
     //set axes titles
     chart.xAxis().title().text('Manager');
