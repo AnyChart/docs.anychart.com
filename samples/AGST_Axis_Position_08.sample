@@ -2,10 +2,10 @@
      :is_new false
      :exports "chart"}
 anychart.onDocumentReady(function() {
-chart = anychart.cartesian.chart();
+chart = anychart.cartesianChart();
 
     //define chart
-    chart = anychart.cartesian.chart();
+    chart = anychart.cartesianChart();
 
     //setting data
     var data = anychart.data.set([
