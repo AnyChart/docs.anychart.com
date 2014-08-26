@@ -15,8 +15,12 @@ anychart.onDocumentReady(function() {
     //chart type
     chart = anychart.areaChart();
 
+    //set axes titles
+    chart.xAxis().title().text('Month');
+    chart.yAxis().title().text('Sales');
+
     //title
-    chart.title().text('Labels')
+    chart.title().text('Labels and Tooltips');
 
     //set data
     var series= chart.area(data);
@@ -27,7 +31,10 @@ anychart.onDocumentReady(function() {
     });
 
     //set and adjust tooltips
-    series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
+    series.tooltip().title().enabled(true).text('Information');
+    series.tooltip().contentFormatter(function(){
+        return 'Month: ' + this.x + '\nSales: ' + this.value
+    });
 
     //draw chart
     chart.container('container').draw();
