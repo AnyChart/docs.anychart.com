@@ -38,13 +38,12 @@ anychart.onDocumentReady(function() {
     //disables legend
     insideLabels.legend().enabled(false);
 
-    //set chart labels
+    //set and adjust chart labels
     insideLabels.labels()
         .enabled(true)
         .fontColor('white')
-        .fontWeight('bold');
-    //set labels position
-    insideLabels.labelsPosition('in');
+        .fontWeight('bold')
+        .position('inside');
 
     //prevent tooltips from using HTML
     insideLabels.tooltip().content().useHtml(false);
@@ -75,9 +74,8 @@ anychart.onDocumentReady(function() {
     outsideLabels.labels()
         .enabled(true)
         .fontColor('black')
-        .fontWeight('bold');
-    //set labels position
-    outsideLabels.labelsPosition('out');
+        .fontWeight('bold')
+        .position('outside');
 
     //force tooltips to use HTML even though it is enabled by default
     outsideLabels.tooltip().content().useHtml(true);
