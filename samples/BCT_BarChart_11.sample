@@ -10,7 +10,7 @@ anychart.onDocumentReady(function() {
         ['P3', 27, 38, 35, 41, 58]
     ]);
 
-    //remap data
+    //map data for the each series
     var data_1 = data.mapAs({x: [0], value: [1]});
     var data_2 = data.mapAs({x: [0], value: [2]});
     var data_3 = data.mapAs({x: [0], value: [3]});

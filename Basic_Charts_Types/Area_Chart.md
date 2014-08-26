@@ -56,15 +56,15 @@ Now we need to convert this data table into the format that can be used by AnyCh
 In terms of AnyChart data model we have one series of data (Sales) with categories that hold months names. Each point in series represents one month and sales volume. We will use the basic and the easiest method of data setting, it looks like this:
 
 ```
- anychart.data.set([
-      ['January', 10000],
-      ['February', 12000],
-      ['March', 18000],
-      ['April', 11000],
-      ['May', 9000]
- ]);
- chart = anychart.areaChart();
- chart.area(data);
+    anychart.data.set([
+        ['January', 10000],
+        ['February', 12000],
+        ['March', 18000],
+        ['April', 11000],
+        ['May', 9000]
+    ]);
+    chart = anychart.areaChart();
+    chart.area(data);
 ```
 As you can see, we've created a Data Set. Every object is a point, each has some attributes. The first column is as category and the second column is a value.
 
@@ -77,13 +77,13 @@ Here it is: AnyChart can now visualize your data. Look at the chart sample below
 For better look and feel of your charts you can use SplineArea chart type:
 
 ```
- anychart.data.set([
-   ['January', 10000],
-   ['February', 12000],
-   ['March', 18000],
-   ['April', 11000],
-   ['May', 9000]
- ]);
+    anychart.data.set([
+        ['January', 10000],
+        ['February', 12000],
+        ['March', 18000],
+        ['April', 11000],
+        ['May', 9000]
+    ]);
  chart = anychart.areaChart();
  chart.splineArea(data);
 ```
@@ -137,19 +137,17 @@ Let's compare 2003 sales to 2004 sales:
 As we do in single series area sample above we need to convert this table AnyChart format, the only difference between these two samples is the fact that now we have two series of the data: one series for each year, and we give proper names to each series:
 
 ```
-  var dataSet = anychart.data.set([
-    ['January', '10000', '12000'],
-    ['February', '12000', '15000'],
-    ['March', '18000', '16000'],
-    ['April', '11000', '15000'],
-    ['May', '9000', '14000'],
-  ]);
-  var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
-  var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
-  chart = anychart.areaChart();
-  chart.container('container');
-  chart.area(seriesData_1).name('2004');
-  chart.area(seriesData_2).name('2005');
+    var dataSet = anychart.data.set([
+        ['January', '10000', '12000'],
+        ['February', '12000', '15000'],
+        ['March', '18000', '16000'],
+        ['April', '11000', '15000'],
+        ['May', '9000', '14000'],
+    ]);
+    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+    var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+    chart.area(seriesData_1).name('2004');
+    chart.area(seriesData_2).name('2005');
 ```
 
 As we now have multi-series chart we don't want to set **type of chart** for each series individually (there can be much more than two series in multi-series chart), so we set **chart** as **anychart.areaChart()**. Now all series in the chart will be of Area type by default.
@@ -167,8 +165,8 @@ With AnyChart you can place axes to any side of the chart, all you need to do is
 Positioning depends on plot type and inversion of axes.
 
 ```
-  chart.xAxis(0).orientation('top');
-  chart.yAxis(0).orientation('right');
+    chart.xAxis(0).orientation('top');
+    chart.yAxis(0).orientation('right');
 ```
 
 And here is the demonstration of this feature on the Single-series sample:
@@ -192,7 +190,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting **.maximum()** and **.minimum()**. :
 
 ```
-chart.yScale().minimum('0').maximum('50000');
+    chart.yScale().minimum('0').maximum('50000');
 ```
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
@@ -208,12 +206,12 @@ In this section we will describe main parts of area chart visualization and ways
 Now, let's look how to change the look of an Area.  Here is a basic sample:
 
 ```
-chart.area(data)
-  .fill('Gold')
-  .hoverFill("darkred")
-  .stroke('#56561a', 4, 0.4)
-  .hatchFill('diagonalbrick', 'gray')
-  .hoverHatchFill('diagonalbrick', 'black');
+    chart.area(data)
+        .fill('Gold')
+        .hoverFill("darkred")
+        .stroke('#56561a', 4, 0.4)
+        .hatchFill('diagonalbrick', 'gray')
+        .hoverHatchFill('diagonalbrick', 'black');
 ```
 Using such settings we've created a look that defines area of Gold color, rather thick border line, hatch filled with DiagonalBrick. Also, we've defined that when user will move cursor over the chart it's hatch will be highlighted with a black and chart will be filled with darkred.
 
@@ -226,9 +224,9 @@ Now we will apply the style to the chart:
 Color is not the only way to design a chart. In this sample we will demonstrate how to use picture as a fill:  
 ```
     chart.area(data).fill({
-            src: 'http://static.anychart.com/anychart_site_header.png',
-            mode: acgraph.vector.ImageFillMode.TILE
-        })
+        src: 'http://static.anychart.com/anychart_site_header.png',
+        mode: acgraph.vector.ImageFillMode.TILE
+    })
 ```
 
 {sample}BCT\_AreaChart\_08{sample}
@@ -244,7 +242,7 @@ When formatting data labels text we will use **.textFormatter** to show month na
 ```
     var series= chart.bar(data);
     series.labels().enabled(true).rotation(90).textFormatter(function(point){
-        return point.x;
+            return point.x;
     });
     series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
 ```

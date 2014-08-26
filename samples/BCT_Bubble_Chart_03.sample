@@ -10,6 +10,10 @@ anychart.onDocumentReady(function() {
     //set title
     chart.title().text('Bubble Series');
 
+    //set axes titles
+    chart.xAxis().title().text('Products');
+    chart.yAxis().title().text('Sales');
+
     //set data
     chart.bubble([
         ['Product A', 637, 6],

@@ -7,7 +7,7 @@ anychart.onDocumentReady(function() {
     chart = anychart.columnChart();
 
     //set title
-    chart.title().text('Chart title');
+    chart.title().text('Padding');
 
     //set data
     chart.column([10000, 12000]);

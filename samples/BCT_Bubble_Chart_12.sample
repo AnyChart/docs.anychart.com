@@ -11,7 +11,7 @@ anychart.onDocumentReady(function() {
         ['P3', 27, 3, 38, 3, 35, 2, 41, 2, 58, 2]
     ]);
 
-    //remap data
+    //map data for the each series
     var seriesData_1 = data.mapAs({x: [0], value: [1], size:[2]});
     var seriesData_2 = data.mapAs({x: [0], value: [3], size:[4]});
     var seriesData_3 = data.mapAs({x: [0], value: [5], size:[6]});
@@ -20,6 +20,9 @@ anychart.onDocumentReady(function() {
 
     //chart type
     chart = anychart.lineChart();
+
+    //chart title
+    chart.title().text('Hatches');
 
     //set series data and adjust hatch
     series = chart.bubble(seriesData_1)

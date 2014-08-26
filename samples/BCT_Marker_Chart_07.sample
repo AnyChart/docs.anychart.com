@@ -3,46 +3,53 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  chart = anychart.cartesianChart();
 
-  chart.xAxis();
+    //chart type
+    chart = anychart.cartesianChart();
 
-  chart.yAxis();
+    //set title
+    chart.title().text('Labels and Tooltips');
 
- chart.grid()
-        .layout('horizontal');
+    //draw axes and set titles
+    chart.xAxis().title('Year');
+    chart.yAxis().title('Box office');
 
+    //draw grid
+    chart.grid().layout('horizontal');
+
+    //draw minor grid and adjust
     chart.minorGrid()
         .evenFill('none')
         .oddFill('none')
         .stroke('black 0.075')
         .layout('vertical');
 
-data = anychart.data.set([
-   ['2000', 1100],
-   ['2001', 880],
-   ['2002', 1100],
-   ['2003', 1500],
-   ['2004', 921],
-   ['2005', 1000],
-   ['2006', 1400]
-  ]);
+    //data
+    data = anychart.data.set([
+        ['2000', 1100],
+        ['2001', 880],
+        ['2002', 1100],
+        ['2003', 1500],
+        ['2004', 921],
+        ['2005', 1000],
+        ['2006', 1400]
+    ]);
 
-  markerchart = chart.marker(data);
+    //set data
+    markerchart = chart.marker(data);
 
-  markerchart.labels()
-  .enabled(true)
-  .rotation(-90)
-  .offsetY(-25)
-  .offsetX(-5);
+    //enable and adjust labels
+    markerchart.labels()
+        .enabled(true)
+        .rotation(-90)
+        .offsetY(-25)
+        .offsetX(-5);
 
-  markerchart.tooltip()
-  .enabled(true)
-  .title()
-  .enabled(true)
-  .text('Your Tooltip Title');
+    //adjust tooltips
+    markerchart.tooltip().contentFormatter(function(){
+        return 'Month: ' + this.x + '\nSales: ' + this.value ;
+    });
 
-  chart.container('container');
-
-  chart.draw();
+    //draw
+    chart.container('container').draw();
 });
