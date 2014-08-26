@@ -5,7 +5,7 @@ anychart.onDocumentReady(function() {
 
     //data
     var data = anychart.data.set([
-        ['Department Stores1', 637166],
+        ['Department Stores', 637166],
         ['Discount Stores', 721630],
         ['Men\'s/Women\'s Specialty Stores', 148662],
         ['All other outlets', 90000]
