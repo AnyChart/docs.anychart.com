@@ -4,32 +4,91 @@
 
 anychart.onDocumentReady(function() {
 
-    //set data and chart type
-    chart = anychart.pieChart([
+    //data
+    var data = anychart.data.set([
         ['Department Stores', 637166],
         ['Discount Stores', 721630],
         ['Men\'s/Women\'s Stores', 148662],
         ['Juvenile Specialty Stores', 78662],
         ['All other outlets', 90000]
     ]);
+    //set stage
+    stage = acgraph.create('container');
+
+
+    //main title
+    var title = anychart.elements.title();
+    //ttile position
+    title.parentBounds(0, 0, '100%', '10%')
+        .text('Labels and Tooltips')
+        .fontSize(20)
+        .container(stage)
+        .draw();
+
+    //first chart
+    var insideLabels = anychart.pieChart(data);
 
     //chart title
-    chart.title().text('Labels and Tooltips');
+    insideLabels.title().text('Inside Labels \n Tooltips don\'t use HTML').hAlign('center');
 
-    //set labels
-    chart.labels()
+    //chart size and position
+    insideLabels.bounds(0, '10%', '50%', '80%');
+    //current stage stroke
+    insideLabels.background().stroke('#CCCCCC');
+    //disables legend
+    insideLabels.legend().enabled(false);
+
+    //set chart labels
+    insideLabels.labels()
+        .enabled(true)
+        .fontColor('white')
+        .fontWeight('bold');
+    //set labels position
+    insideLabels.labelsPosition('in');
+
+    //prevent tooltips from using HTML
+    insideLabels.tooltip().content().useHtml(false);
+    //adjust tooltips content
+    insideLabels.tooltip().contentFormatter(function() {
+        return 'Chanel: ' + this.x + '\n Sales: ' + this.value + '\n Period: Year 2003';
+    });
+    //set tooltip title
+    insideLabels.tooltip().title().enabled(true).text('Information');
+
+    //draw chart
+    insideLabels.container(stage).draw();
+
+
+    //second chart
+    var outsideLabels = anychart.pieChart(data);
+
+    //chart title
+    outsideLabels.title().text('Outside Labels \n Tooltips use HTML').hAlign('center');
+    //chart size and position
+    outsideLabels.bounds('50%', '10%', '50%', '80%');
+    //current stage stroke
+    outsideLabels.background().stroke('#CCCCCC');
+    //disables legend
+    outsideLabels.legend().enabled(false);
+
+    //set chart labels
+    outsideLabels.labels()
         .enabled(true)
         .fontColor('black')
         .fontWeight('bold');
+    //set labels position
+    outsideLabels.labelsPosition('out');
 
-    //set tooltips
-    chart.tooltip().enabled(true).contentFormatter(function() {
-        return 'Chanel: ' + this.x + '\n' + 'Sales: ' + this.value + '\n' + 'Period: Year 2003';
+    //force tooltips to use HTML even though it is enabled by default
+    outsideLabels.tooltip().content().useHtml(true);
+    //adjust tooltips content
+    outsideLabels.tooltip().contentFormatter(function() {
+        return 'Chanel: ' + this.x + '<br/> Sales: ' + this.value + '<br/> Period: Year 2003';
     });
-
     //set tooltip title
-    chart.tooltip().enabled(true).title().enabled(true).text('Information');
+    outsideLabels.tooltip().title().enabled(true).text('Information');
 
-    //draw
-    chart.container('container').draw();
+    //draw chart
+    outsideLabels.container(stage).draw();
+
 });

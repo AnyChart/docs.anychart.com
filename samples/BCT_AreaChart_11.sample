@@ -29,7 +29,7 @@ anychart.onDocumentReady(function() {
     chart = anychart.areaChart();
 
     //set title
-    chart.title().text('Hatches')
+    chart.title().text('Hatches');
 
     //set data and adjust series
     var series_1 = chart.splineArea(seriesData_1).hatchFill('soliddiamond').fill('#EEEEEE');

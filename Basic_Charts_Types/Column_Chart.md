@@ -89,13 +89,13 @@ Mary
 Now we need to convert this data table into JSON, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data (Sales) with categories that hold managers names. Each point in series represents one manager and his/her sales. Converted JSON Data looks like:
 
 ```
-  chart.column([
-    ['John' , 10000],
-    ['Jake' , 12000],
-    ['Peter' , 18000],
-    ['James' , 11000],
-    ['Mary' , 9000]
-  ]);
+    chart.column([
+        ['John' , 10000],
+        ['Jake' , 12000],
+        ['Peter' , 18000],
+        ['James' , 11000],
+        ['Mary' , 9000]
+    ]);
 ```
 
 {sample}BCT\_ColumnChart\_01{sample}
@@ -166,13 +166,13 @@ $19000
 
 As we do in single series column sample above we need to convert this table into JSON, the only difference between these two samples is the fact that now we have two series of data - one series for each quarter, and we give proper names to each series:
 ```
- var data = anychart.data.set([
-    ['John' , 10000, 12000],
-    ['Jake' , 12000, 15000],
-    ['Peter' , 18000, 16000],
-    ['James' , 11000, 13000],
-    ['Mary' , 9000, 19000]
-  ]);
+    var data = anychart.data.set([
+        ['John' , 10000, 12000],
+        ['Jake' , 12000, 15000],
+        ['Peter' , 18000, 16000],
+        ['James' , 11000, 13000],
+        ['Mary' , 9000, 19000]
+    ]);
 ```
 As we now have multi-series chart we don't want to set type for each series individually (there can be much more than two series in multi-series chart), so we add `anychart.columnChart()` to **chart**. Now all series in chart will be of Bar type by default.
 
@@ -191,8 +191,8 @@ With AnyChart you can place axes to any side of the chart, all you need to do is
 Positioning depends on plot type and inversion of axes, you will find list of all possible positining and inversion settings in Axes Positioning and Inverting Templates.
 
 ```
-  chart.xAxis(0).orientation('top');
-  chart.yAxis(0).orientation('right');
+    chart.xAxis(0).orientation('top');
+    chart.yAxis(0).orientation('right');
 ```
 Look at the demonstration of this feature on the Single-series sample:
 
@@ -204,7 +204,7 @@ Look at the demonstration of this feature on the Single-series sample:
 AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis **.inverted()**:
 
 ```
-  chart.yScale().inverted(true);
+    chart.yScale().inverted(true);
 ```
 Look at the demonstration of Y Axis inversion on the Single-series sample:
 
@@ -216,7 +216,7 @@ Look at the demonstration of Y Axis inversion on the Single-series sample:
 By default AnyChart calculates axis minimum and maximum automatically, you can see it on the scale inversion chart sample above: minimal value on the Y Axis is 6.000, and maximum is 21.000. You can control these values by setting maximum and minimum attributes of <scale> node:
 
 ```
-chart.yScale().minimum('0').maximum('50000');
+    chart.yScale().minimum('0').maximum('50000');
 ```
 Look at the demonstration of maximum and minimum values on the Single-series sample:
 
@@ -254,18 +254,18 @@ Styles are also used to make charts interactive, you can define how elements wil
 Now, let's find out how to create a simple style and apply it to the chart. As we've already told style consists of several elements, here is a structure:
 
 ```
-  chart.column([
-    ['John' , 10000],
-    ['Jake' , 12000],
-    ['Peter' , 18000],
-    ['James' , 11000],
-    ['Mary' , 9000]
-  ]).fill('Gold')
-  .hoverStroke("darkred", 4)
-  .stroke('#56561a', 4)
-  .hatchFill('diagonalbrick', 'gray')
-  .hoverHatchFill('diagonalbrick', 'darkred');
-  chart.draw();
+    chart.column([
+        ['John' , 10000],
+        ['Jake' , 12000],
+        ['Peter' , 18000],
+        ['James' , 11000],
+        ['Mary' , 9000]
+    ]).fill('Gold')
+        .hoverStroke("darkred", 4)
+        .stroke('#56561a', 4)
+        .hatchFill('diagonalbrick', 'gray')
+        .hoverHatchFill('diagonalbrick', 'darkred');
+    chart.draw();
 ```
 Using such settings we've created a style that defines columns of Gold color, rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed thick border and hatch fill colored DarkRed too.
 
@@ -294,7 +294,7 @@ In the sample below we will take single-series data described above and mark the
 To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 12 pixels in normal state, and make it bigger (12 pixels) when user moves cursor over an element.
 
 ```
-{x: 'Peter', value: 18000, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}}
+    {x: 'Peter', value: 18000, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}}
 ```
 And here is a result - Peter sold more than others and we are showing this on the chart:
 

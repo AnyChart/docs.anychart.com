@@ -270,8 +270,8 @@ AnyChart technology allows printing of charts. Some color printers print colors 
 
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch_type for **".hatchFill"** method.
 ```
-.hatchFill('soliddiamond')
-.hatchFill('forwarddiagonal')
-.hatchFill('backwarddiagonal');
+    .hatchFill('soliddiamond')
+    .hatchFill('forwarddiagonal')
+    .hatchFill('backwarddiagonal');
 ```
 {sample}BCT\_AreaChart\_11{sample}

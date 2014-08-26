@@ -19,11 +19,11 @@ As range area charts have to define lower and upper bound of area - you have to 
 Also "RangeLineArea" or "RangeSpineArea" series type should be specified.
 
 ```
-  chart.rangeArea([
-    {low: 6.1, high: 0.7},
-    {low: 6.3, high: 0.6},
-    {low: 8.5, high: 1.9},
-]);
+    chart.rangeArea([
+        {low: 6.1, high: 0.7},
+        {low: 6.3, high: 0.6},
+        {low: 8.5, high: 1.9},
+    ]);
 ```
 
 <a name="temperature-range"/>
@@ -42,12 +42,12 @@ So, to configure them we use **rangeArea** node that hold label and marker setti
 Here is the way of changing upper markers:
 
 ```
-  chart.rangeSplineArea([
-{x: "A", low:0, high: 100},
-{x: "B", low:100, high: 200},
-{x: "C", low:60, high: 200},
-{x: "D", low:0, high: 60}
-  ]).markers().enabled(true);
+    chart.rangeSplineArea([
+        {x: "A", low:0, high: 100},
+        {x: "B", low:100, high: 200},
+        {x: "C", low:60, high: 200},
+        {x: "D", low:0, high: 60}
+    ]).markers().enabled(true);
 ```
 Here is the result of application of these settings to the sample data:
 {sample}BCT_Range\_Area-SplineArea\_Charts\_02{sample}

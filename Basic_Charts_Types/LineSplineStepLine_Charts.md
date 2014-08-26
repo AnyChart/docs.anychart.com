@@ -73,15 +73,15 @@ Let's see single-series line chart created using the following data - sales of A
 Now we need to convert this data table into acceptable format, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data (Sales) with categories that hold months names. Each point in series represents one month and sales volume. Converted Data looks like:
 
 ```
-  var data = anychart.data.set([
-    ['January', 10000],
-    ['February', 12000],
-    ['March', 18000],
-    ['April', 11000],
-    ['May', 9000]
-  ]);
-  chart = anychart.lineChart();
-  chart.line(data);
+    var data = anychart.data.set([
+        ['January', 10000],
+        ['February', 12000],
+        ['March', 18000],
+        ['April', 11000],
+        ['May', 9000]
+    ]);
+    chart = anychart.lineChart();
+    chart.line(data);
 ```
 As you can see, we've specified chart's type with **anychart.lineChart()** method, defined data source with **chart.line(data)** and set data with **anychart.data.Set()**.
 
@@ -93,15 +93,15 @@ As you can see, we've specified chart's type with **anychart.lineChart()** metho
 For better look and feel of your charts you can use Spline chart type:
 
 ```
-  var data = anychart.data.set([
-    ['January', 10000],
-    ['February', 12000],
-    ['March', 18000],
-    ['April', 11000],
-    ['May', 9000]
-  ]);
-  chart = anychart.lineChart();
-  chart.spline(data);
+    var data = anychart.data.set([
+        ['January', 10000],
+        ['February', 12000],
+        ['March', 18000],
+        ['April', 11000],
+        ['May', 9000]
+    ]);
+    chart = anychart.lineChart();
+    chart.spline(data);
 ```
 Here is the same chart as shown above, but in Spline mode:
 
@@ -113,15 +113,15 @@ Here is the same chart as shown above, but in Spline mode:
 Step line chart series display data points connected with Horizontal or Vertical segments. 
 
 ```
-  var data = anychart.data.set([
-    ['January', 10000],
-    ['February', 12000],
-    ['March', 18000],
-    ['April', 11000],
-    ['May', 9000]
-  ]);
-  chart = anychart.lineChart();
-  chart.stepLine(data);
+    var data = anychart.data.set([
+        ['January', 10000],
+        ['February', 12000],
+        ['March', 18000],
+        ['April', 11000],
+        ['May', 9000]
+    ]);
+    chart = anychart.lineChart();
+    chart.stepLine(data);
 ```
 Here is the same chart as shown above, but in Step Line mode:
 
@@ -169,18 +169,18 @@ Let's compare 2003 sales to 2004 sales:
 
 As we do in single series line sample above we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
 ```
- var dataSet = anychart.data.set([
-     ['January', '10000', '12000'],
-     ['February', '12000', '15000'],
-     ['March', '18000', '16000'],
-     ['April', '11000', '15000'],
-     ['May', '9000', '14000'],
-   ]);
-   var seriesData_2 = dataSet.mapAs({x: [0], value: [1]});
-   var seriesData_1 = dataSet.mapAs({x: [0], value: [2]});
-   chart = anychart.lineChart();
-   chart.line(seriesData_1);
-   chart.line(seriesData_2);
+    var dataSet = anychart.data.set([
+        ['January', '10000', '12000'],
+        ['February', '12000', '15000'],
+        ['March', '18000', '16000'],
+        ['April', '11000', '15000'],
+        ['May', '9000', '14000'],
+    ]);
+    var seriesData_2 = dataSet.mapAs({x: [0], value: [1]});
+    var seriesData_1 = dataSet.mapAs({x: [0], value: [2]});
+    chart = anychart.lineChart();
+    chart.line(seriesData_1);
+    chart.line(seriesData_2);
 ```
 As we now have multi-series chart we don't want to set type for each series individually (there can be much more than two series in multi-series chart), so we add 'anychart.lineChart()' node to **chart**. Now all series in chart will be of Line type by default.
 
@@ -199,8 +199,8 @@ With AnyChart you can place axes to any side of the chart, all you need to do is
 Positioning depends on plot type and inversion of axes, you will find list of all possible positining and inversion settings in Axes Positioning.
 
 ```
-  chart.xAxis(0).orientation('top');
-  chart.yAxis(0).orientation('right');
+    chart.xAxis(0).orientation('top');
+    chart.yAxis(0).orientation('right');
 ```
 
 And here is the demonstration of this feature on the Single-series sample:
@@ -213,7 +213,7 @@ And here is the demonstration of this feature on the Single-series sample:
 AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis **.inverted()**:
 
 ```
-  chart.yScale().inverted(true);
+    chart.yScale().inverted(true);
 ```
 
 And here is the demonstration of Y Axis inversion on the Single-series sample:
@@ -226,7 +226,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting **.maximum()** and **.minimum()** attributes of the method:
 
 ```
-chart.yScale().minimum('0').maximum('50000');
+    chart.yScale().minimum('0').maximum('50000');
 ```
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
@@ -249,10 +249,10 @@ Also, styles are used to make charts interactive, you can define how elements wi
 Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an acceptable structure:
 
 ```
-chart.line(data)
-  .stroke('Rgb(86,86,26)', 4)
-  .markers(null)
-  .hoverStroke('darkred', 4);
+    chart.line(data)
+        .stroke('Rgb(86,86,26)', 4)
+        .markers(null)
+        .hoverStroke('darkred', 4);
 ```
 <!--Using such settings we've created a style that defines line of Gold color, rather thick line and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed thick line.
 
@@ -285,7 +285,7 @@ In the sample below we will take single-series data described above and mark the
 To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 12 pixels in normal state, and make it bigger (16 pixels) when user moves cursor over an element.
 
 ```
- {x: 'March', value: 18000, marker:{type:'star5', fill:'gold', size: 12}, hoverMarker: {size: 22}}
+    {x: 'March', value: 18000, marker:{type:'star5', fill:'gold', size: 12}, hoverMarker: {size: 22}}
 ```
 And here is a result - March is the most successful month and we are showing this on the chart:
 
