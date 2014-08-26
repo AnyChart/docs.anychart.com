@@ -155,7 +155,7 @@ If you want to configure data labels and tooltips for all series - you should do
 Let's do that in the following example: we will make data labels appear inside of the slices, also, we will format labels so they show only the percentage corresponding to the slices and tooltip will show detailed description.
  
 
-When formatting data labels text we will use **.textFormatter()** to choose the column we need information from. 
+When formatting tooltips, we will use **.contentFormatter()** to adjust source of content and visual appearance. To control labels position we may use **.position()** method. Here is a sample of 
 
 {sample}BCT\_PieDoughnutChart\_07{sample}
 <!--
