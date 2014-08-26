@@ -18,7 +18,7 @@ anychart.onDocumentReady(function() {
     chart.bubble([
         ['Product A', 637, 6],
         ['Product B', 472, 14],
-        ['Product С', 48, 10]
+        ['Product C', 48, 10]
     ]).minimumSize(10).maximumSize(30);
 
     //adjust Y scale

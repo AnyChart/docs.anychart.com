@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
     var data = anychart.data.set([
         ['Product A', 437, 6, 637, 6],
         ['Product B', 172, 14, 472, 17],
-        ['Product С', 548, 10, 48, 10]
+        ['Product C', 548, 10, 48, 10]
     ]);
 
     //remap data
