@@ -10,6 +10,10 @@ anychart.onDocumentReady(function() {
     //chart title
     chart.title().text('Range Bar Chart');
 
+    //set axes title
+    chart.xAxis().title().enabled(false);
+    chart.yAxis().title().enabled(false);
+
     //set data
     chart.rangeBar([
         { low: 0.6, high: 6.3},

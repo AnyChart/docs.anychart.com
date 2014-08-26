@@ -18,6 +18,13 @@ anychart.onDocumentReady(function() {
     //chart type
     chart = anychart.lineChart();
 
+    //set title
+    chart.title().text('Labels and Tooltips');
+
+    //set axes titles
+    chart.xAxis().title().text('Products');
+    chart.yAxis().title().text('Sales');
+
     //set series data
     series = chart.bubble(seriesData_1);
 

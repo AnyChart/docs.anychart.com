@@ -29,6 +29,7 @@ anychart.onDocumentReady(function() {
     pie.bounds(0, '10%', '33.3%', '50%');
     pie.legend().enabled(false);
     pie.background().stroke('#CCCCCC');
+    pie.labels().fontSize(9);
     pie.container(stage);
     pie.draw();
 
@@ -40,6 +41,7 @@ anychart.onDocumentReady(function() {
     pie_asc.bounds('33.3%', '10%', '33.3%', '50%');
     pie_asc.legend().enabled(false);
     pie_asc.background().stroke('#CCCCCC');
+    pie_asc.labels().fontSize(9);
     pie_asc.container(stage);
     pie_asc.draw();
 
@@ -51,6 +53,7 @@ anychart.onDocumentReady(function() {
     pie_desc.bounds('66.6%', '10%', '33.3%', '50%');
     pie_desc.legend().enabled(false);
     pie_desc.background().stroke('#CCCCCC');
+    pie_desc.labels().fontSize(9);
     pie_desc.container(stage);
     pie_desc.draw();
 });

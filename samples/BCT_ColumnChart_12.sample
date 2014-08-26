@@ -20,6 +20,8 @@ anychart.onDocumentReady(function() {
     //chart type
     chart = anychart.columnChart();
 
+    chart.title().text('Hatches');
+
     //set series data and hatch
     series = chart.column(data_1)
         .fill('#EEEEEE')
@@ -36,9 +38,6 @@ anychart.onDocumentReady(function() {
     series = chart.column(data_5)
         .fill('#EEEEEE')
         .hatchFill('percent30');
-
-    //adjust y scale amximum value
-    chart.yScale().maximum('65');
 
     //draw
     chart.container('container').draw();

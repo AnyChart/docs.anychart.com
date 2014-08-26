@@ -23,6 +23,13 @@ anychart.onDocumentReady(function() {
     //chart type
     chart = anychart.areaChart();
 
+    //chart title
+    chart.title().text('Percent Stacked Area Chart');
+
+    //set axes title
+    chart.xAxis().title().text('Season');
+    chart.yAxis().title().text('Percent');
+
     //set chart Y scale settings
     chart.yScale().stackMode('percent');
 

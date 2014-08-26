@@ -10,6 +10,10 @@ anychart.onDocumentReady(function() {
     //chart title
     chart.title().text('Range Spline Area Chart');
 
+    //set axes title
+    chart.xAxis().title().enabled(false);
+    chart.yAxis().title().enabled(false);
+
     //set data and define chart type
     chart.rangeSplineArea([
         {x: "A", low:0, high: 100},

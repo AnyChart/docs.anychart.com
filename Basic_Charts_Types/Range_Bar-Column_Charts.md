@@ -39,7 +39,7 @@ This sample shows how range bars can be used to chart temperature averages, the 
 <a name="waterfall"/>
 ## Waterfall Chart Sample
 
-In the sample below we formatted start and end values, colored cylinders as we need and here it is - waterfall chart is displayed.
+In the sample below we formatted start and end values, here we will colorize chart as we need. Here it is - waterfall chart is displayed.
 
 {sample}BCT_Range\_Bar-Column\_Charts\_02{sample}
 

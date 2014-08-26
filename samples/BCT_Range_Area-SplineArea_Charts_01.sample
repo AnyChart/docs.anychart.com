@@ -10,6 +10,10 @@ anychart.onDocumentReady(function() {
     //chart title
     chart.title().text('Range Area Chart');
 
+    //set axes title
+    chart.xAxis().title().text('Month');
+    chart.yAxis().title().text('Temperature');
+
     //set data and define chart type
     chart.rangeArea([
         {x: 'January', low: 0.7, high: 6.1},

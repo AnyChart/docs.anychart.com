@@ -24,6 +24,13 @@ anychart.onDocumentReady(function() {
     //create area chart
     chart = anychart.areaChart();
 
+    //chart title
+    chart.title().text('Percent Stacked Spline Area Chart');
+
+    //set axes title
+    chart.xAxis().title().text('Season');
+    chart.yAxis().title().text('Percent');
+
     //set container id for the chart
     chart.container('container');
 
