@@ -34,7 +34,7 @@ anychart.onDocumentReady(function() {
     //chart size and position
     insideLabels.bounds(0, '10%', '50%', '80%');
     //current stage stroke
-    insideLabels.background().stroke('#CCCCCC');
+    insideLabels.background().stroke('white').fill('white');
     //disables legend
     insideLabels.legend().enabled(false);
 
@@ -67,7 +67,7 @@ anychart.onDocumentReady(function() {
     //chart size and position
     outsideLabels.bounds('50%', '10%', '50%', '80%');
     //current stage stroke
-    outsideLabels.background().stroke('#CCCCCC');
+    outsideLabels.background().stroke('white').fill('white');
     //disables legend
     outsideLabels.legend().enabled(false);
 
