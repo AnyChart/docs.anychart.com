@@ -1,10 +1,9 @@
 # Element stroke settings.
-* [Line color](#line_color_setting)
+* [Line color](#line_color_settings)
 * [Line thickness](#line_thickness)
 * [Line dash](#line_dash_settings)
-* [Line join and cap](#Line_join_and_cap)
+* [Line join and cap](#line_join_and_cap)
 
-<a name="line_color_setting"/>
 ## Line color settings
 Stoke color can be set in several ways:
 * using a parameter: 
@@ -100,3 +99,11 @@ Line join and cap settins are set in two ways:
  }
 ```
 {sample}GS\_E\_stroke\_cap\_join{sample}
+```
+.stroke({
+  color: 'blue',
+  thickness: 15,
+  lineJoin: 'bevel',
+  lineCap: 'round'
+})
+```
