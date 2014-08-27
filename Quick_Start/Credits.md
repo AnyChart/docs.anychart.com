@@ -55,9 +55,9 @@ Logo picture of the credits can be adjusted as well. Use **.logoScr()** method t
 ### Position
 
 Credits position can be adjusted only through css commands. There are three classes you can set properties to: **anychart-credits** for changing position of the whole credits, **anychart-credits-logo** for changing logo position and **anychart-credits-text** changing credits text position. 
-
+<br/><br/>
+CSS code:
 ```
-CSS code
     .anychart-credits {
         left: 10px !important;
         width: 200px !important;
