@@ -7,10 +7,10 @@ For example, here is some data about a weather in three cities, and we want to s
 <table border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th width="90"><b>Date</b></th>
-<th width="90"><b>New York</b></th>	
-<th width="105"><b>San Francisco</b></th>
-<th width="105"><b>Los Angeles</b></th>
+<th><b>Date</b></th>
+<th><b>New York</b></th>	
+<th><b>San Francisco</b></th>
+<th><b>Los Angeles</b></th>
 </tr>
 <tr>
 <td>2014/6/25</td>
