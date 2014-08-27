@@ -23,7 +23,7 @@ anychart.onDocumentReady(function() {
     ]);
 
     //chart type
-    chart = anychart.lineChart();
+    chart = anychart.financialChart();
 
     //disabling titles
     chart.title().enabled(false);
@@ -31,7 +31,9 @@ anychart.onDocumentReady(function() {
     chart.yAxis().title().enabled(false);
 
     //rotate x axis labels
-    chart.xAxis().labels().rotation(-90);
+    chart.xAxis().labels().rotation(-90).textFormatter(function(){
+        return this.value;
+    });
 
     //adjust x scale type
     chart.xScale(anychart.scales.ordinal());
