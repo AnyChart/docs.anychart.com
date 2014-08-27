@@ -112,7 +112,7 @@ If the container size in gradient settings are larger than the filled element si
 1. _Gradient keys_, just like in linear gradient,
 2. _Center location_, which is set by a number from 0 to 1 as a percentage ratio from the container dimensions.
 
-E.g., radial gradient fill with center location (0.5, 0.5):
+Radial gradient fill with center location (0.5, 0.5):
 
 {sample}GS\_E\_fill_radialG{sample}
 
