@@ -50,8 +50,6 @@ For example, here is some data about a weather in three cities, and we want to s
 </tr>
 </tbody>
 </table>
-```
-```
 In many cases you are forced to create three sets to create a line chart with three series:
 
 <table border="1" class="dtTABLE">
