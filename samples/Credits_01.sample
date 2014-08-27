@@ -6,12 +6,14 @@ anychart.onDocumentReady(function() {
 
     var chart = anychart.columnChart([10, 1, 7, 10]);
 
-    //licence key
-    anychart.licenseKey('AnyChart-95048498-10629dd6');
-    //credits are enabled by default. The only exception is this very playground site.
+    //put your license key here and uncomment the next line
+    //anychart.licenseKey('COPY-PASTE-YOUR-LICENSE-KEY');
+    
+    //credits are enabled by default. The only exception is our  playground site. You can remove  next line in production.
     chart.credits().enabled(true);
+    
     //new text for credits
-    chart.credits().text('Changed credits');
+    chart.credits().text('My company');
 
     //draw
     chart.container('container').draw();
