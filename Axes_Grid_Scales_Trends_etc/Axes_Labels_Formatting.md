@@ -66,8 +66,8 @@ To add prefix or postfix to the label you just need to adjust **return** method 
 
 ```
     function(){
-            return this.value + 'USD'
-        }
+        return this.value + 'USD'
+    }
 ```
 <a name="number-formatting"/>
 ### Number Formatting
@@ -131,7 +131,7 @@ You can look at font settings at work in the [sample below](#sample).
 With AnyChart it is possible to control labels' alignment. It is useful, for example, when you want to set multiple label values on one scale:
 
 ```
-chart.yAxis().labels().hAlign('right');
+    chart.yAxis().labels().hAlign('right');
 ```
 
 <a name="background"/>

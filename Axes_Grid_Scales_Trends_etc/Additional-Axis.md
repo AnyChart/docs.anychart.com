@@ -28,9 +28,9 @@ Consider using multiple axes when you need:
 If you want to define an additional axis all you need to do is to set index to it, and place as many **.yAxis()** or **.xAxis()** methods into it:
 
 ```
-  chart.yAxis(1).orientation('right').title().text('Axis title');
-  chart.yAxis(2).orientation('right').title().text('Axis title');
-  chart.yAxis(3).orientation('right').title().text('Axis title');
+    chart.yAxis(1).orientation('right').title().text('Axis title');
+    chart.yAxis(2).orientation('right').title().text('Axis title');
+    chart.yAxis(3).orientation('right').title().text('Axis title');
 ```
 
 Here is the sample of the chart that will be show when three additional y axes are added and almost no configuration is done, as you can see three additional axes are drawn on the right side of data plot and their maximum and minimum values are calculated automatically (and they are the same as main Y axis have):
