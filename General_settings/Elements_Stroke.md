@@ -4,6 +4,7 @@
 * [Line dash](#line_dash_settings)
 * [Line join and cap](#Line_join_and_cap)
 
+<a name="line_color_setting"/>
 ## Line color settings
 Настройки цвета линии можно задать несколькими способами:
 * через отдельный параметр: 
