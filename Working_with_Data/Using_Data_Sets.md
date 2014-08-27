@@ -55,22 +55,23 @@ In many cases you are forced to create three sets to create a line chart with th
 <table border="1" class="dtTABLE">
 <tbody>
 <tr>   
-<td><b>Date</b>  
-</td>
-<td>
+<th><b>Date</b>  
+</th>
+<th>
 <b>New York</b>  
-</td>
-<td>
+</th>
+<th>
 <b>Date</b>
-</td>
-<td>
+</th>
+<th>
 <b>San Francisco</b>
-<td>
+</th>
+<th>
 <b>Date</b>
-</td>
-<td>
+</th>
+<th>
 <b>Los Angeles</b>
-</td>
+</th>
 </tr>
 <tr>   
 <td>2014/6/25 </td>
