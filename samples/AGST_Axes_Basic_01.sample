@@ -26,7 +26,7 @@ anychart.onDocumentReady(function() {
     chart.xAxis().title().text('Sample X axis name').fontWeight('400');
 
     chart.yAxis().title().align('bottom');
-    chart.yAxis(0).orientation('right');
+    chart.yAxis().orientation('right');
     chart.yAxis().title().text('Y axis from ' + min + ' to ' + max);
     chart.yAxis().enabled(false).enabled(true);
 });

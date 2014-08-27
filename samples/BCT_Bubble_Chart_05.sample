@@ -22,8 +22,8 @@ anychart.onDocumentReady(function() {
     ]).minimumSize(10).maximumSize(30);
 
     //adjust axes position
-    chart.xAxis(0).orientation('top');
-    chart.yAxis(0).orientation('right');
+    chart.xAxis().orientation('top');
+    chart.yAxis().orientation('right');
 
     //draw
     chart.container('container').draw();
