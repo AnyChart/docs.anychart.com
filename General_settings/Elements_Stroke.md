@@ -33,8 +33,8 @@ For example, that's how you do stroke color fill:
 
 ```
 // Solid color
-
 .stroke('5 orange .7')
+
 // Linear gradient
 .stroke(['red', 'blue'], 15)
 
