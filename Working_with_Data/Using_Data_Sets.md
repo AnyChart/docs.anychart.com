@@ -173,8 +173,9 @@ In many cases you are forced to create three sets to create a line chart with th
 <td>
 27
 </td>
-</tr> 
-```
+</tr>
+</tbody> 
+</table>
 In simple cases it is not so difficult and you can allow some data duplication. But when you start to create something complex, like a dashboard – it may become a pain, especially when you need to append, update or remove some data from all sets to sync them.  
 
 To avoid this we recommend to use Data Sets, which are the natural representation of a table, a view or a database query result.
