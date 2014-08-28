@@ -5,10 +5,9 @@ Downloading AnyChart
 ###Downloading
 Compressed copies of the latest AnyChart 7.x for development and production can be downloaded for use on your server or local PC.  
 To download these files, right-click the links below and select "Save as..." from the menu.
-  
-  
-* <a href="http://cdn.anychart.com/js/latest/anychart.min.js">AnyChart for production</a>
-* <a href="http://cdn.anychart.com/js/latest/anychart.dev.min.js">AnyChart for development</a>
+* Production edition - [anychart.min.js](http://cdn.anychart.com/js/7.1.0/anychart.min.js) (145Kb gzip)
+* Development edition - [anychart.dev.min.js](http://cdn.anychart.com/js/7.1.0/anychart.dev.min.js) (147Kb gzip)  
+* Binaries package - [anychart.zip](http://cdn.anychart.com/zip/7.1.0/anychart.zip) (360Kb)  
 
 
 ###Using AnyChart with a CDN
@@ -23,7 +22,13 @@ To use AnyChart CDN, simply reference the file directly from http://cdn.anychart
         <script src="//cdn.anychart.com/js/latest/anychart.min.js"></script>
     </script>
 ```
-  
+<!--
+### Differences between production and developers editions
+--> 
+
+<!--
+### Binaries package content
+-->  
   
 <!--
 ###Custom build of AnyChart
