@@ -6,6 +6,8 @@
    * [URL](#link)
    * [Logo](#logo)
    * [Position](#position)
+   * [Disable](#disable)
+   * [License](#license)
 
 <a name="overview"/>
 ## Overview
@@ -15,10 +17,10 @@ Credits is a kind of watermark in any chart. It consists of a text, an alternati
 <a name="text"/>
 ### Text
 
-Text of a credits by can be changed by using **.text()** method. 
+Сredits text can be changed by using **.text()** method: 
 
 ```
-    chart.credits().text('Changed credits');
+    chart.credits().text('My Company');
 ```
 {sample}Credits\_01{sample}
 
@@ -51,10 +53,9 @@ Logo picture of the credits can be adjusted as well. Use **.logoScr()** method t
 ```
 {sample}Credits\_04{sample}
 
-<a name="logo"/>
 ### Position
 
-Credits position can be adjusted only through css commands. There are three classes you can set properties to: **anychart-credits** for changing position of the whole credits, **anychart-credits-logo** for changing logo position and **anychart-credits-text** changing credits text position. 
+Credits position can be adjusted only through CSS. There are three classes you can set properties to: **anychart-credits** to change credits position, **anychart-credits-logo** to change logo position and **anychart-credits-text** to change credits text position. 
 <br/><br/>
 CSS code:
 ```
@@ -71,3 +72,18 @@ CSS code:
         left: auto !important;
     }
 ```
+
+### Disable
+
+To disable credits just put this in your code, but remember: it will work only if you have a [license key](#license).
+```
+    chart.credits().enabled(false);
+```
+
+### License
+
+When you purchase a license to AnyChart 7 you receive an access to your customer area and a license key. AnyChart trial is fully functional, but your are limited in the ways you can use trial version and you can not [remove credits](#disable) from the charts. To register your copy and enable credits removal put this in your code in the very beginning:
+```
+    anychart.licenseKey('YOUR-LICENSE-KEY');
+```
+To purchase a license proceed to [Buy AnyChart](http://www.anychart.com/buy/) page.
