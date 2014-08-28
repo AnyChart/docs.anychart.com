@@ -10,7 +10,7 @@
 <a name="overview"/>
 ## Overview
 
-Credits is a part of any chart. Consist of a text, an alternative text (or a tooltip), URL and a picture and places at the right bottom corner of any chart. Any of four credits parts can be customized. To adjust credits you have to [buy a licence key](http://www.anychart.com/buy/)
+Credits is a kind of watermark in any chart. It consists of a text, an alternative text (or a tooltip), URL and a picture and places at the right bottom corner of any chart. Any of four credits parts can be customized. To adjust credits you have to [buy a licence key](http://www.anychart.com/buy/)
 
 <a name="text"/>
 ### Text
