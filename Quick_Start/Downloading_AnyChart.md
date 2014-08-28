@@ -29,11 +29,11 @@ Developers edition contains functionality debug functionality, which may be usef
 ### Binaries package content
 Binaries package contains all resources that you may need to work with AnyChary.  
 See detailed structure below.  
-* demos - Contains chart gallery adapted to work in offline
-* js - JavaScript binary folder
-  * anychart.min.js - production edition
-  * anychart.dev.min.js - development edition
-* index.html - Binaries package index
+* _demos/_ - Contains chart gallery adapted to work in offline
+* _js/_ - JavaScript binary folder
+  * _anychart.min.js_ - production edition
+  * _anychart.dev.min.js_ - development edition
+* _index.html_ - Binaries package index
   
 <!--
 ###Custom build of AnyChart
