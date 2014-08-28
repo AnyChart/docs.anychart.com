@@ -266,26 +266,6 @@ As a result we will create a chart with 3 line series:
 
 {sample}WD\_Using\_Data\_Sets\_03{sample}
 
-As shown in previous paragraphs, if you want to specify any point properties manually, you can use an `Object` as a cell value:
-```
-var data = [ 
-   // column 0    1    2    3
-  ["2014/6/25",  28,  23,  {value: 28, marker: "circle", somePointMeta: "some text"], // row 1
-  ["2014/6/26",  26,  21,  {value: 26, marker: "square", somePointMeta: "some text"], //     2
-  ["2014/6/27",  27,  19,  {value: 26, marker: "circle", somePointMeta: "some text"], //     3
-  ["2014/6/28",  25,  21,  {value: 27, marker: "square", somePointMeta: "some text"], //     4
-  ["2014/6/29",  29,  22,  {value: 28, marker: "circle", somePointMeta: "some text"], //     5
-  ["2014/6/30",  28,  25,  {value: 27, marker: "square", somePointMeta: "some text"]  //     6
-]
-// create a data set
-var dataSet = anychart.data.set(data);
-
-// create a line chart using the data set 
-var lineChart = lineChart.apply(null, anychart.data.mapAsTable(dataSet));
-
-// initiate chart drawing
-lineChart.draw();
-```
 ###Data Mapping
 Data mapping is useful (and must have) option when you want to show the same data in different ways, for example in different charts, grouped or sorted differently.
 ```
@@ -319,6 +299,8 @@ pieChart.draw();
 
 We map zero column of the Data Set as X, and the first column of the Data Set as value.  
 Result of the `mapAs` call very similar to the Data Set itself, you can use it in the any chart or series create function exactly as any Data Set.  
+
+{sample}WD\_Using\_Data\_Sets\_04{sample}
 You can learn more about Data Mapping in the appropriate article.
 <!--
 See also:  
