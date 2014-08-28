@@ -27,7 +27,7 @@ anychart.onDocumentReady(function() {
     //set axes title
     chart.xAxis().title().text('Month');
     chart.yAxis().title().text('Temperature');
-    
+
     //set stack mode
     chart.yScale().stackMode('value');
 

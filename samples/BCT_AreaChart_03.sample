@@ -21,7 +21,7 @@ anychart.onDocumentReady(function() {
     chart = anychart.areaChart();
 
     //set title
-    chart.title().text('Multi-series Area Chart')
+    chart.title().text('Multi-series Area Chart');
 
     //set axes titles
     chart.xAxis().title().text('Month');

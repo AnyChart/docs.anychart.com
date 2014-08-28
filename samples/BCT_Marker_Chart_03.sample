@@ -13,8 +13,8 @@ anychart.onDocumentReady(function() {
     //draw axes and set titles and adjust position
     chart.xAxis().title('Year');
     chart.yAxis().title('Box office');
-    chart.xAxis(0).orientation('top');
-    chart.yAxis(0).orientation('right');
+    chart.xAxis().orientation('top');
+    chart.yAxis().orientation('right');
 
     //draw grid
     chart.grid().layout('horizontal');

@@ -17,8 +17,8 @@ anychart.onDocumentReady(function() {
     chart.title().enabled(false);
 
     //axes orientation adjusting
-    chart.yAxis(0).orientation('right');
-    chart.xAxis(0).orientation('top');
+    chart.yAxis().orientation('right');
+    chart.xAxis().orientation('top');
 
     //axes titles adjusting
     chart.xAxis().title().text('X Axis title on the top');

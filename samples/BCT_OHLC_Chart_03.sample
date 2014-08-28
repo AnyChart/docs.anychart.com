@@ -26,8 +26,8 @@ anychart.onDocumentReady(function() {
     chart.ohlc(data);
 
     //adjust x and y axes position and title
-    chart.xAxis(0).orientation('top').title().text('Day');
-    chart.yAxis(0).orientation('right').title().text('Price');
+    chart.xAxis().orientation('top').title().text('Day');
+    chart.yAxis().orientation('right').title().text('Price');
 
     //draw
     chart.container('container').draw();

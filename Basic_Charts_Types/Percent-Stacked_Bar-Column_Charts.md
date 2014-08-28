@@ -18,16 +18,16 @@ As stacked charts should show contribution of different components to the total,
 
 So, we have three series of data - one series for each product, and we give proper names to each series:
 ```
-  var dataSet = anychart.data.set([
-["Winter", 12000, 12000, 10000],  
-["Spring", 13000, 12000, 17000],  
-["Summer", 25000, 15000, 19000],  
-["Autumn", 16000, 16000, 16000]   
-  ]);
+    var dataSet = anychart.data.set([
+        ["Winter", 12000, 12000, 10000],  
+        ["Spring", 13000, 12000, 17000],  
+        ["Summer", 25000, 15000, 19000],  
+        ["Autumn", 16000, 16000, 16000]   
+    ]);
 ```
 Now we have to tell Y Axis to display these series in as stacked columns:
 ```
-  chart.yScale().stackMode('percent');
+    chart.yScale().stackMode('percent');
 ```
 Everything is ready, here is a sample stacked column chart:
 
@@ -38,16 +38,16 @@ Everything is ready, here is a sample stacked column chart:
 
 Just change "columnChart" to "barChart" and get your data displayed as a bar chart:
 ```
-  chart = anychart.columnChart();
- series = chart.column(seriesData_1);
-  series = chart.column(seriesData_2);
-  series = chart.column(seriesData_3);
-  series = chart.column(seriesData_4);
+    chart = anychart.columnChart();
+    series = chart.column(seriesData_1);
+    series = chart.column(seriesData_2);
+    series = chart.column(seriesData_3);
+    series = chart.column(seriesData_4);
 ```
 Also, tooltips can be enabled/disabled by adjusting **.tooltip()** method:
 ```
-  series = chart.column(seriesData_1);
-  series.tooltip().enabled(false);
+    series = chart.column(seriesData_1);
+    series.tooltip().enabled(false);
 ```
 Here is a sample stacked bar chart:
 

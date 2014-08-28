@@ -6,7 +6,7 @@
   * [Single Series Spline Area Chart](#single_series_spline_area_chart)
   * [Multi-series Area Chart](#multi_series)
 * [Axes](#axes)
-  * [Positioning](#position)
+  * [Position](#position)
   * [Inversion](#inversion)
   * [Minimum and Maximum](#minimum_and_maximum)
 * [Visualization](#visualization)
@@ -158,7 +158,7 @@ As we now have multi-series chart we don't want to set **type of chart** for eac
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in Axes tutorial, in this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
-### Positioning
+### Position
 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust position with **orientation()** method of **yAxis** or **xAxis** instances.
 
@@ -270,8 +270,8 @@ AnyChart technology allows printing of charts. Some color printers print colors 
 
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch_type for **".hatchFill"** method.
 ```
-.hatchFill('soliddiamond')
-.hatchFill('forwarddiagonal')
-.hatchFill('backwarddiagonal');
+    .hatchFill('soliddiamond')
+    .hatchFill('forwarddiagonal')
+    .hatchFill('backwarddiagonal');
 ```
 {sample}BCT\_AreaChart\_11{sample}

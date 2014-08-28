@@ -23,8 +23,8 @@ anychart.onDocumentReady(function() {
     chart.yAxis().title().text('Month');
 
     //adjust axes position
-    chart.xAxis(0).orientation('top');
-    chart.yAxis(0).orientation('right');
+    chart.xAxis().orientation('top');
+    chart.yAxis().orientation('right');
 
     //set date
     chart.spline(data);
