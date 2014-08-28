@@ -208,6 +208,8 @@ pieChart.container('container');
 // initiate chart drawing
 pieChart.draw();
 ```
+{sample}WD\_Using\_Data\_Sets\_01{sample}
+
 ####Object
 If you want to specify point properties explicitly, you can use an `Object` as a row.  
 ```
@@ -232,29 +234,38 @@ pieChart.container('container');
 // initiate chart drawing
 pieChart.draw();
 ```
+
+{sample}WD\_Using\_Data\_Sets\_02{sample}
+
 ####Array
 If you want to create more than one series or a chart with similar data, it is recommended to use `Array` as a row. Zero column values of the each row will represent series X (argument), each of the following columns value will represent a series value.  
 As a result we will create a chart with 3 line series:  
 ```
-var data = [ 
-   // column 0    1    2    3
-  ["2014/6/25",  28,  23,  28], // row 1
-  ["2014/6/26",  26,  21,  26], //     2
-  ["2014/6/27",  27,  19,  26], //     3
-  ["2014/6/28",  25,  21,  27], //     4
-  ["2014/6/29",  29,  22,  28], //     5
-  ["2014/6/30",  28,  25,  27]  //     6
-];
+ var data = [
+        // column 0    1    2    3
+        ["2014/6/25",  28,  23,  28], // row 1
+        ["2014/6/26",  26,  21,  26], //     2
+        ["2014/6/27",  27,  19,  26], //     3
+        ["2014/6/28",  25,  21,  27], //     4
+        ["2014/6/29",  29,  22,  28], //     5
+        ["2014/6/30",  28,  25,  27]  //     6
+    ];
 
-// create a data set
-var dataSet = anychart.data.set(data);
+    //create mapping list on one data set
+    var dataMappingList = anychart.data.mapAsTable(data);
 
-// create a line chart using the data set 
-var lineChart = lineChart.apply(null, anychart.data.mapAsTable(dataSet));
+    //create line chart
+    var lineChart = anychart.lineChart.apply(null, dataMappingList);
+  
+    //set container
+    lineChart.container('container');
 
-// initiate chart drawing
-lineChart.draw();
+    // initiate chart drawing
+    lineChart.draw();
 ```
+
+{sample}WD\_Using\_Data\_Sets\_03{sample}
+
 As shown in previous paragraphs, if you want to specify any point properties manually, you can use an `Object` as a cell value:
 ```
 var data = [ 
