@@ -24,16 +24,15 @@ To use AnyChart CDN, simply reference the file directly from http://cdn.anychart
 ```
 
 ### Differences between production and developers editions
-Developers edition contains functionality debug functionality, which may be useful to debug you code in old browser version (IE6 e.g).
-Also it provide some log information in console, such as misconfiguration warnings. 
+Developers edition contains functionality debug functionality, which may be useful to debug you code in old browser version (IE6 e.g). Also it provide some log information in console, such as misconfiguration warnings. 
 
 ### Binaries package content
 Binaries package contains all resources that you may need to work with AnyChary.  
 See detailed structure below.  
 * demos - Contains chart gallery adapted to work in offline
 * js - JavaScript binary folder
-** anychart.min.js - production edition
-** anychart.dev.min.js - development edition
+  * anychart.min.js - production edition
+  * anychart.dev.min.js - development edition
 * index.html - Binaries package index
   
 <!--
