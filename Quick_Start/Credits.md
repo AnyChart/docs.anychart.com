@@ -2,24 +2,17 @@
 
  * [Overview](#overview)
    * [Text](#text)
-   * [Alternative Text](#alternative)
-   * [URL](#link)
+   * [Tooltip](#tooltip)
+   * [URL](#url)
    * [Logo](#logo)
    * [Position](#position)
    * [Disable](#disable)
    * [License](#license)
 
-<a name="overview"/>
 ## Overview
 
-Credits is a kind of watermark in any chart. It consists of a 4 elements: 
- * text
- * alternative text
- * URL 
- * picture 
- By default credits places at the right bottom corner of any chart. Any of four credits parts can be customized. To adjust credits you have to [buy a licence key](http://www.anychart.com/buy/)
+Credits is a watermark in the bottom right corner of any chart. It consists of four elements: text, tooltip (alt), URL and picture. By default credits are placed at the bottom right corner of any chart. Any part of credits can be customized if you have a license. You can purchase a license at [AnyChart Website](http://www.anychart.com/buy/)
 
-<a name="text"/>
 ### Text
 
 Сredits text can be changed by using **.text()** method: 
@@ -29,29 +22,26 @@ Credits is a kind of watermark in any chart. It consists of a 4 elements:
 ```
 {sample}Credits\_01{sample}
 
-<a name="alternative"/>
-### Alternative Text
+### Tooltip
 
-Alternative text or a Tooltip is a text user sees, while hovering credits. This tip can be adjusted with **.alt()** method.
+Tooltip shown when when credits are hovered. It can be adjusted with **.alt()** method.
 
 ```
     chart.credits().alt('Custom alternative text.');
 ```
 {sample}Credits\_02{sample}
 
-<a name="link"/>
 ### URL
 
-Credits always has a URL. Buy default it's link to [AnyChart Site](http://www.anychart.com/), but as far as you have licence key, you may adjust it with **.url()** method.
+Credits act as a link. By default it is link to [AnyChart Site](http://www.anychart.com/). You can it with **.url()** method.
 
 ```
     chart.credits().url('http://www.anychart.com/buy/');
 ```
 {sample}Credits\_03{sample}
 
-<a name="logo"/>
 ### Logo
-Logo picture of the credits can be adjusted as well. Use **.logoScr()** method to set custom image
+Logo picture can be adjusted as well. Use **.logoScr()** method to set custom image
 
 ```
     chart.credits().logoSrc('http://static.anychart.com/github.png');
