@@ -46,9 +46,7 @@ anychart.onDocumentReady(function() {
                 .fontSize(13)
                 .fontColor('blue')
                 .offsetX(5)
-                .layout('horizontal')
                 .fontFamily('Courier')
-                .useHtml(true)
                 .text('Center');
 
     //set red marker

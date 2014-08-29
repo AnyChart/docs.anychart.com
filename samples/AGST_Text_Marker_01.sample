@@ -57,7 +57,6 @@ anychart.onDocumentReady(function() {
                 .anchor('leftcenter')
                 .fontSize(13)
                 .offsetX(5)
-                .layout('horizontal')
                 .fontFamily('Courier')
                 .text('Historical Maximum');
 
