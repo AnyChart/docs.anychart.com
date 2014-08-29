@@ -2,9 +2,8 @@
      :is_new false
      :exports "chart"}
 anychart.onDocumentReady(function() {
-    chart = anychart.lineChart();
 
-    chart.container('container');
+    chart = anychart.lineChart();
 
     chart.title().text('Extra X and Y Axes Simple Sample');
 
@@ -172,5 +171,5 @@ anychart.onDocumentReady(function() {
     //adding red ling to emphasize zero of extra axis
     chart.lineMarker(1).stroke('1 red').layout('vertical').scale(extraXScale);
 
-    chart.draw();
+    chart.container('container').draw();
 });

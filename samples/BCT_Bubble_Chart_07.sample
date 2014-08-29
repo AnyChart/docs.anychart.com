@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
     chart = anychart.lineChart();
 
     //set title
-    chart.title().text('Fixed Minimum amd Maximum Scale Value');
+    chart.title().text('Fixed Minimum and Maximum Scale Value');
 
     //set axes titles
     chart.xAxis().title().text('Products');
@@ -18,7 +18,7 @@ anychart.onDocumentReady(function() {
     chart.bubble([
         ['Product A', 637, 6],
         ['Product B', 472, 14],
-        ['Product С', 48, 10]
+        ['Product C', 48, 10]
     ]).minimumSize(10).maximumSize(30);
 
     //adjust minimum and maximum y scale value

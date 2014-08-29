@@ -23,8 +23,8 @@ anychart.onDocumentReady(function() {
     chart.yAxis().title().text('Sales');
 
     //adjust axes orientation
-    chart.xAxis(0).orientation('top');
-    chart.yAxis(0).orientation('right');
+    chart.xAxis().orientation('top');
+    chart.yAxis().orientation('right');
 
     //set data
     chart.area(data);

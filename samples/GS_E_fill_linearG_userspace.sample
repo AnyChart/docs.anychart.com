@@ -16,17 +16,17 @@ anychart.onDocumentReady(function() {
             .rect(0, 0, stage.width(), stage.height())
             .fill(fillSettings);
     fillSettings.opacity = 1;
-    stage.text(20, 3, 'figure 1');
+    stage.text(20, 3, 'shape 1');
     anychart.elements.background()
             .fill(fillSettings)
             .bounds(anychart.math.rect(20, 20, 100, 70))
             .container(stage).draw();
-    stage.text(20, 3, 'figure 2');
+    stage.text(20, 3, 'shape 2');
     anychart.elements.background()
             .fill(fillSettings)
             .bounds(anychart.math.rect(60, 140, 70, 50))
             .container(stage).draw();
-    stage.text(270, 73, 'figure 3');
+    stage.text(270, 73, 'shape 3');
     anychart.elements.background()
             .fill(fillSettings)
             .bounds(anychart.math.rect(270, 93, 100, 100))

@@ -18,12 +18,12 @@ anychart.onDocumentReady(function() {
     chart.bubble([
         ['Product A', 637, 6],
         ['Product B', 472, 14],
-        ['Product С', 48, 10]
+        ['Product C', 48, 10]
     ]).minimumSize(10).maximumSize(30);
 
     //adjust axes position
-    chart.xAxis(0).orientation('top');
-    chart.yAxis(0).orientation('right');
+    chart.xAxis().orientation('top');
+    chart.yAxis().orientation('right');
 
     //draw
     chart.container('container').draw();

@@ -13,7 +13,7 @@ anychart.onDocumentReady(function() {
     chart.yScale(anychart.scales.linear());
 
     //y axis title setter
-    chart.yAxis().title().text('This Axis has \'liner\' type');
+    chart.yAxis().title().text('This Axis has \'linear\' type');
 
     //setting data
     chart.column([

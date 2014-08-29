@@ -34,13 +34,13 @@ Depending on data model and the visualization purpose the bar chart may contain 
 When using Bubble chart on a scatter plot:
 
 ```
- [10, 63, 20]
+    [10, 63, 20]
 ```
 
 When using Bubble chart on a categorized plot:
 
 ```
-['December', 6, 17]
+    ['December', 6, 17]
 ```
 
 <a name="single_series"/>
@@ -73,11 +73,11 @@ Let's see single series bubble chart created using the sample data - ACME Corp. 
 Now we need to convert this data table into acceptable format, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data (Sales) with categories that hold Product names. Each point in series represents product, units sold and a profit amount. Converted XML Data looks like:
 
 ```
-chart.bubble([
-    ['Product A', 637, 6],
-    ['Product B', 472, 14],
-    ['Product C', 48, 10]
-  ]).minimumSize(2).maximumSize(40);
+    chart.bubble([
+        ['Product A', 637, 6],
+        ['Product B', 472, 14],
+        ['Product C', 48, 10]
+    ]).minimumSize(2).maximumSize(40);
 ```
 As you can see, we've categoriesed chart ad **bubble**, set attribute that defines bar category into first and second columns and attribute that defines bubble size into third one.
 
@@ -130,13 +130,13 @@ Let's compare year 2003 sales to year 2004 product sales:
 As we do in single-series bubble sample above we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have bigger data and we have to **MapAs()** it.
 
 ```
-var dataSet = anychart.data.set([
-    ['Product A', 637, 6, 630, 12],
-    ['Product B', 72, 14, 32, 10],
-    ['Product C', 48, 10, 48, 20]
-  ]);
-  var seriesData_1 = dataSet.mapAs({x: [0], value: [1], size:[2]});
-  var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
+    var dataSet = anychart.data.set([
+        ['Product A', 637, 6, 630, 12],
+        ['Product B', 72, 14, 32, 10],
+        ['Product C', 48, 10, 48, 20]
+    ]);
+    var seriesData_1 = dataSet.mapAs({x: [0], value: [1], size:[2]});
+    var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
 ```
 {sample}BCT\_Bubble\_Chart\_02{sample}
 
@@ -145,7 +145,7 @@ var dataSet = anychart.data.set([
 
 Bubbles minimum and maximum size can be controlled using **maximumSize()** and **minimumSize()** attributes. Both of them can be set in percents of a lesser dataplot side (this can be width or height) and in pixels:
 ```
-chart.maximumSize(25).minimumSize(1);
+    chart.maximumSize(25).minimumSize(1);
 ```
 When you set **.maximumSize('20%')** - AnyChart will make diameters of bubble(s) with a biggest size equal to 20% the lesser of two: width or the height of data plot.
 
@@ -156,7 +156,7 @@ Here is the sample when bubbles are size in percents, as specified above:
 And in this sample when bubbles are sized in pixels:
 
 ```
-chart.maximumSize(100).minimumSize(10);
+    chart.maximumSize(100).minimumSize(10);
 ```
 Note again, that setting size in pixels may lead to the nasty results when chart is resized.
 
@@ -173,8 +173,8 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** method of **.yAxis()** or **.xAxis()** attributes.
 <!--Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion settings in Axes Positioning and Inverting Templates.-->
 ```
-  chart.xAxis(0).orientation('top');
-  chart.yAxis(0).orientation('right');
+    chart.xAxis(0).orientation('top');
+    chart.yAxis(0).orientation('right');
 ```
 And here is the demonstration of this feature on the Single-series sample:
 {sample}BCT\_Bubble\_Chart\_05{sample}
@@ -184,7 +184,7 @@ And here is the demonstration of this feature on the Single-series sample:
 
 AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis <scale>:
 ```
-chart.yScale().inverted(true);
+    chart.yScale().inverted(true);
 ```
 And here is the demonstration of Y Axis inversion on the Single-series sample:
 {sample}BCT\_Bubble\_Chart\_06{sample}
@@ -194,7 +194,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 0, and maximum is 1000. You can control these values by setting maximum and minimum attributes of yScale method. As far as you want to adjusted the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 ```
-  chart.yScale().minimum('-100').maximum('1000').ticks().interval(100);
+    chart.yScale().minimum('-100').maximum('1000').ticks().interval(100);
 ```
 And here is the demonstration of maximum and minimum values on the Single-series sample:
 

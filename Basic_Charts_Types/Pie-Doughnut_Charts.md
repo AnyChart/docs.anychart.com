@@ -69,13 +69,13 @@ Let's see pie chart created using the following data - sales of ACME Corp. appar
 Now we need to convert this data table into js, this format will be accepted by AnyChart. In terms of AnyChart data model 
 we have one series of data (Sales) with categories that hold Retail channels names. Converted js Data looks like:
 ```
- chart = anychart.pieChart([
-    ['Department Stores', 637166],
-    ['Discount Stores', 721630],
-    ['Men\'s/Women\'s Stores', 148662],
-    ['Juvenile Specialty Stores', 78662],
-    ['All other outlets', 90000]
-  ]);
+    chart = anychart.pieChart([
+        ['Department Stores', 637166],
+        ['Discount Stores', 721630],
+        ['Men\'s/Women\'s Stores', 148662],
+        ['Juvenile Specialty Stores', 78662],
+        ['All other outlets', 90000]
+    ]);
 ```
 
 As you can see, we've created **anychart.pieChart()** node. First column defines category and other one defines slice value.
@@ -89,7 +89,7 @@ Here it is - AnyChart can now visualize your data. Look at the chart sample belo
 
 Donut chart is all the same as Pie chart, and all you need to do to switch to it: add **'chart.innerRadius()'**
 ```
-  chart.innerRadius('30%');
+    chart.innerRadius('30%');
 ```
 And here is the same data as above, displayed as a Doughnut chart:
 
@@ -110,13 +110,13 @@ You can set pie and donut chart slices to be exploded when user clicks on it and
 **Explode** attribute defines how far slices are exploded. To disable exploding, set **explode** value to 0.
 
 ```
-  chart.explode(30);
+    chart.explode(30);
 ```
 
 Te explode only one slice set exploded to a point:
 
 ```
-  chart.explodeSlice(0, true);
+    chart.explodeSlice(0, true);
 ```
 Sample chart below is exploded by default, you can launch the live sample and click on slices to move them in place.
 
@@ -134,11 +134,11 @@ Also, styles are used to make charts interactive, you can define how elements wi
 
 Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is a structure:
 ```
-chart.fill('Gold')
-  .hoverHatchFill('diagonalbrick', 'darkred')
-  .stroke('4 Rgb(86,86,26)')
-  .hoverStroke('4 darkred')
-  .hatchFill('diagonalbrick', 'gray');
+    chart.fill('Gold')
+        .hoverHatchFill('diagonalbrick', 'darkred')
+        .stroke('4 Rgb(86,86,26)')
+        .hoverStroke('4 darkred')
+        .hatchFill('diagonalbrick', 'gray');
 ```
 
 Using such settings we've created a style that defines slices of Gold color, rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element border and hatch fill will be highlighted with a DarkRed.
@@ -155,7 +155,7 @@ If you want to configure data labels and tooltips for all series - you should do
 Let's do that in the following example: we will make data labels appear inside of the slices, also, we will format labels so they show only the percentage corresponding to the slices and tooltip will show detailed description.
  
 
-When formatting data labels text we will use **.textFormatter()** to choose the column we need information from. 
+When formatting tooltips, we will use **.contentFormatter()** to adjust source of content and visual appearance. To control labels position we may use **.position()** method. Here is a sample of 
 
 {sample}BCT\_PieDoughnutChart\_07{sample}
 <!--

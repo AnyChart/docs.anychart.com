@@ -3,20 +3,32 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-  var data = anychart.data.set([
-    ['January', 10000],
-    ['February', 12000],
-    ['March', 18000],
-    ['April', 11000],
-    ['May', 9000]
-  ]);
-  chart = anychart.lineChart();
+    //data
+    var data = anychart.data.set([
+        ['January', 10000],
+        ['February', 12000],
+        ['March', 18000],
+        ['April', 11000],
+        ['May', 9000]
+    ]);
 
-  chart.xAxis(0).orientation('top');
-  chart.yAxis(0).orientation('right');
+    //cahrt type
+    chart = anychart.lineChart();
 
-  chart.container('container');
-  chart.spline(data);
+    //title
+    chart.title().text('Axes Management');
 
-  chart.draw();
+    //set axes titles
+    chart.xAxis().title().text('Sales');
+    chart.yAxis().title().text('Month');
+
+    //adjust axes position
+    chart.xAxis().orientation('top');
+    chart.yAxis().orientation('right');
+
+    //set date
+    chart.spline(data);
+
+    //draw
+    chart.container('container').draw();
 });

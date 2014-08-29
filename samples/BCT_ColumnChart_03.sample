@@ -23,8 +23,8 @@ anychart.onDocumentReady(function() {
     ]);
 
     //axes position adjuster
-    chart.xAxis(0).orientation('top');
-    chart.yAxis(0).orientation('right');
+    chart.xAxis().orientation('top');
+    chart.yAxis().orientation('right');
 
     //draw
     chart.container('container').draw();

@@ -13,7 +13,7 @@ anychart.onDocumentReady(function() {
         ['May', '14000', '9000'],
     ]);
 
-    //remap data
+    //map data for the each series
     var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
     var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
 
@@ -21,7 +21,7 @@ anychart.onDocumentReady(function() {
     chart = anychart.areaChart();
 
     //set title
-    chart.title().text('Multi-series Area Chart')
+    chart.title().text('Multi-series Area Chart');
 
     //set axes titles
     chart.xAxis().title().text('Month');

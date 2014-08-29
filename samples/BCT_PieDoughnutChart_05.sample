@@ -3,19 +3,29 @@
   :exports "chart"}
 
 anychart.onDocumentReady(function() {
- chart = anychart.pieChart([
-    ['Department Stores', 637166],
-    ['Discount Stores', 721630],
-    ['Men\'s/Women\'s Stores', 148662],
-    ['Juvenile Specialty Stores', 78662],
-    ['All other outlets', 90000]
-  ]);
-chart.fill('Gold')
-  .hoverHatchFill('diagonalbrick', 'darkred')
-  .stroke('4 Rgb(86,86,26)')
-  .hoverStroke('4 darkred')
-  .hatchFill('diagonalbrick', 'gray');
-  chart.labels().enabled(false);
-  chart.container('container');
-  chart.draw();
+
+    //set chart type and set data
+    chart = anychart.pieChart([
+        ['Department Stores', 637166],
+        ['Discount Stores', 721630],
+        ['Men\'s/Women\'s Stores', 148662],
+        ['Juvenile Specialty Stores', 78662],
+        ['All other outlets', 90000]
+    ]);
+
+    //chart title
+    chart.title().text('Visualization');
+
+    //adjust visualization
+    chart.fill('Gold')
+        .hoverHatchFill('diagonalbrick', 'darkred')
+        .stroke('4 Rgb(86,86,26)')
+        .hoverStroke('4 darkred')
+        .hatchFill('diagonalbrick', 'gray');
+
+    //disable legend
+    chart.labels().enabled(false);
+
+    //draw
+    chart.container('container').draw();
 });
