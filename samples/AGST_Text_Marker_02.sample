@@ -37,39 +37,39 @@ anychart.onDocumentReady(function() {
     //y scale title
     chart.yAxis().title().text('Sales');
 
-    //set marker
+    //first marker
     chart.textMarker()
-                .scale(chart.yScale())
-                .value(14000)
-                .align('center')
-                .anchor('center')
-                .fontSize(13)
-                .fontColor('blue')
-                .offsetX(5)
-                .fontFamily('Courier')
-                .text('Center');
+        .scale(chart.yScale())
+        .value(14000)
+        .align('center')
+        .anchor('center')
+        .fontSize(13)
+        .fontColor('blue')
+        .offsetX(5)
+        .fontFamily('Courier')
+        .text('Center');
 
-    //set red marker
+    //second marker
     chart.textMarker(1)
-                .scale(chart.yScale())
-                .value(19000)
-                .text('Axis')
-                .align('NEAR')
-                .anchor('rightcenter')
-                .fontSize(13)
-                .offsetX(50)
-                .fontColor('red');
+        .scale(chart.yScale())
+        .value(19000)
+        .text('Axis')
+        .align('NEAR')
+        .anchor('rightcenter')
+        .fontSize(13)
+        .offsetX(50)
+        .fontColor('red');
 
-    //set green marker
+    //third marker
     chart.textMarker(2)
-                .scale(chart.yScale())
-                .value(9000)
-                .text('Far')
-                .align('far')
-                .anchor('rightcenter')
-                .fontSize(13)
-                .offsetX(10)
-                .fontColor('green');
+        .scale(chart.yScale())
+        .value(9000)
+        .text('Far')
+        .align('far')
+        .anchor('rightcenter')
+        .fontSize(13)
+        .offsetX(10)
+        .fontColor('green');
 
     //draw
     chart.container('container').draw();

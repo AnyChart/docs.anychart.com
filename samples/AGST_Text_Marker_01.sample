@@ -51,46 +51,46 @@ anychart.onDocumentReady(function() {
 
     //set marker
     chart.textMarker()
-                .scale(chart.yScale())
-                .value(18000)
-                .align('NEAR')
-                .anchor('leftcenter')
-                .fontSize(13)
-                .offsetX(5)
-                .fontFamily('Courier')
-                .text('Historical Maximum');
+        .scale(chart.yScale())
+        .value(18000)
+        .align('NEAR')
+        .anchor('leftcenter')
+        .fontSize(13)
+        .offsetX(5)
+        .fontFamily('Courier')
+        .text('Historical Maximum');
 
     //set red marker
     chart.textMarker(1)
-                .scale(chart.yScale())
-                .value(18000)
-                .text('High')
-                .align('NEAR')
-                .anchor('rightcenter')
-                .fontSize(13)
-                .offsetX(50)
-                .fontColor('red');
+        .scale(chart.yScale())
+        .value(18000)
+        .text('High')
+        .align('NEAR')
+        .anchor('rightcenter')
+        .fontSize(13)
+        .offsetX(50)
+        .fontColor('red');
 
     //set green marker
     chart.textMarker(2)
-                .scale(chart.yScale())
-                .value(10000)
-                .text('Low')
-                .align('NEAR')
-                .anchor('rightcenter')
-                .fontSize(13)
-                .offsetX(50)
-                .fontColor('green');
+        .scale(chart.yScale())
+        .value(10000)
+        .text('Low')
+        .align('NEAR')
+        .anchor('rightcenter')
+        .fontSize(13)
+        .offsetX(50)
+        .fontColor('green');
 
     //set text marker on the right
     chart.textMarker(3)
-                .scale(additionalScale)
-                .value(8)
-                .text('8.00')
-                .align('FAR')
-                .anchor('leftcenter')
-                .fontSize(13)
-                .offsetX(10);
+        .scale(additionalScale)
+        .value(8)
+        .text('8.00')
+        .align('FAR')
+        .anchor('leftcenter')
+        .fontSize(13)
+        .offsetX(10);
 
     //draw
     chart.container('container').draw();
