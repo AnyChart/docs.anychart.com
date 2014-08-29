@@ -88,6 +88,7 @@ anychart.onDocumentReady(function() {
         .offsetX(10)
         .value(5000)
         .fontColor('black')
+        .fontWeight(400)
         .text('Severe')
         .fontSize(12);
     //draw
