@@ -51,7 +51,7 @@ Linear scale type is a default type for yScale in most charts. Values for this s
 A logarithmic scale is a scale of measurement that uses the logarithm of a physical quantity instead of the quantity itself. Presentation of data on a logarithmic scale can be helpful when the data covers a large range of values the logarithm reduces this to a more manageable range. <!--You can set any positive number as a logarithm base using log_base attribute.-->
 
 ```
-  chart.yScale(anychart.scales.log());
+    chart.yScale(anychart.scales.log());
 ```
 
 In the sample below **A = 637.166**, **B = 721.630**, and **C=1.000**, **D=78**, **E = 90**
@@ -74,7 +74,7 @@ Ordinal scale type is a default type for xScale in most charts. Values for this 
 A dateTime scale is a scale of measurement that is based on the **UTC Date** format, but accepts variety of data formats. Presentation of data on a dateTime scale can be helpful for displaying time lines and time intervals. More information about data formats and usage is in [Date/Time tutorial](Date_Time_Axes).
 
 ```
-  chart.yScale(anychart.scales.dateTime());
+    chart.yScale(anychart.scales.dateTime());
 ```
 
 {sample}AGST\_Axes\_Scale\_04{sample}

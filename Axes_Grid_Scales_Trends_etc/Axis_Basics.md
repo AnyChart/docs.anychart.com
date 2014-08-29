@@ -40,12 +40,12 @@ If you want to control any of the axes settings - you should do that though **Ax
 You can define a title of any axis, you can control its position and font <!--and use keywords-->, when specifying text. Full reference of parameters can be found in Reference: **.yAxis().title()** or **.xAxis().title()**. Here is a sample titles definition:
 
 ```
-var max = chart.yScale().maximum();
-var min = chart.yScale().minimum();
-chart.yAxis().title().align('bottom');
-chart.yAxis(0).orientation('right');
-chart.xAxis().title().text('Sample X axis name').fontWeight('400');
-chart.yAxis().title().text('Y axis from ' + min + ' to ' + max);
+    var max = chart.yScale().maximum();
+    var min = chart.yScale().minimum();
+    chart.yAxis().title().align('bottom');
+    chart.yAxis(0).orientation('right');
+    chart.xAxis().title().text('Sample X axis name').fontWeight('400');
+    chart.yAxis().title().text('Y axis from ' + min + ' to ' + max);
 ```
 
 As you can see, we've set titles both to X and Y axis <!--made X axis title bold-->and aligned Y axis <!--and used {%DataPlotYMax} and %DataPlotYMin keywords-->.
