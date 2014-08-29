@@ -3,7 +3,7 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    chart = anychart.cartesian.chart();
+    chart = anychart.cartesianChart();
 
     chart.title().enabled(true).text('Extra Axes Units Comparison Sample');
 
