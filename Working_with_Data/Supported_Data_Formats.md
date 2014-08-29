@@ -2,7 +2,7 @@ Supported Data Formats
 =================
 
 ###Introduction
-AnyChart supports four ways to set data to your charts. All of them has some pros and cons, and you can choose which to use depending on the task you have at hand. These ways are:
+AnyChart supports four ways to set data to your charts. All of them have some pros and cons, and you can choose which to use depending on the task you have at hand. These ways are:
 * JavaScript API
 * XML
 * JSON
