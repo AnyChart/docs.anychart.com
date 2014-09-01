@@ -7,20 +7,12 @@
 * [Pattern settings](#pattern_settings)
 
 ## Overview
-Заливка штриховкой очень полезна в ситуациях, когда выделение цветом не работает, например, в ситуациях
-затрудненного цветовосприятия, а именно:
- * черно-белые принты страниц (в печатных изданиях)
- * черно-белые усройства (e-books)
- * проблемы со зрением (дальтонизм)
- 
-Люди часто, вставляя визуализацию в свои книги, документы, сайты не задумываются о вышеописаных проблемах.
-А у нас есть инструменты для того, чтобы это избежать.
+Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers and in e-books. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind.
 
-## Hatch Fill presets
-Hatch это заливка pattern по предустановкам. Полный список предустановок можно посмотреть 
-[в документации.](http://api.anychart.com/7.1.0/anychart.graphics.vector.HatchFill.html#HatchFillType)
+## Hatch fill presets
+We provide several preset hatch fills, full list is available in the [API reference.](http://api.anychart.com/7.1.0/anychart.graphics.vector.HatchFill.html#HatchFillType)
 
-Что бы залить элемент hatch, надо просто указать строковое значение. 
+To creat a hatch fill you simply set the required string constant: 
 ```
     .hatchFill('percent60');
 ```
@@ -30,19 +22,11 @@ Hatch это заливка pattern по предустановкам. Полн�
 
 ### Color settings
 
-The most simple fill is solid color fill. 
-Color can be set in the following formats:
-* Hex
-* RGB
-* HSL
-* HTML color name
-
-Color opacity can be set in two ways:
+If needed you, can color the hatch, using Hex, RGB, HSL or HTML color name with the opacity. Color opacity can be set in two ways:
 * RGBA, HSLA modificators;
 * Dedicated parameter:
     * Call function with the parameters <code>fill(_color_, _**opacity**_);</code>
-    * Single value <code>fill('color **opacity**')</code>
- (one string value separated by space).
+    * Single value <code>fill('color **opacity**')</code> (one string value separated by space).
 
 ```
     .hatchFill('diamiond', '#CC8800 0.8');
@@ -51,7 +35,7 @@ Color opacity can be set in two ways:
 {sample}GS\_E\_hatch\_color{sample}
 
 ### Thickness settings
-Так же можно задать толщину hatch числом через специальный параметр.
+Hatch lines thickness is set using thickness parameter:
 
 ```
     .hatchFill(hatchType, color, thickness);
@@ -60,7 +44,7 @@ Color opacity can be set in two ways:
 {sample}GS\_E\_hatch\_thickness{sample}
 
 ### Size settings
-Так же можно задать размер hatch числом через специальный параметр, для того, что бы немного видоизменить hatch.
+Also, you can modify hatch using size parameter, which changes the size of the pattern:
 
 ```
     .hatchFill(hatchType, color, thickness, size);
@@ -69,19 +53,19 @@ Color opacity can be set in two ways:
 {sample}GS\_E\_hatch\_size{sample}
 
 ## Pattern settings
-Для того, что бы сделать pattern заливку элемента, надо лишь определить pattern. 
+If you are not satisfied with presets, you can create your own pattern, here an example: 
 
 ```
-  // инициализируем паттер в указаной области
+  // initialize pattern
   var pattern = stage.pattern(new acgraph.math.Rect(0,0,stage.width(),stage.height()));
-  // задаем настройки для окружностей
+  // circles settings
   var circles = {
     cx: stage.width()/2,
     cy: stage.height()/2,
     step : 5
   };
   var max_circle_radius = Math.max(stage.width(), stage.height())/2;
-  // рисуем окружности на всю область
+  // draw circles
   for (var i = 0; i < max_circle_radius; i++){
     pattern.circle(circles.cx, circles.cy, circles.step*i).fill('none').stroke('1 blue 0.9');
   }

@@ -2,10 +2,10 @@ Supported Data Formats
 =================
 
 ###Introduction
-AnyChart supports four ways to set data to your charts. All of them has some pros and cons, and you can choose which to use depending on the task you have at hand. These ways are:
+AnyChart supports four ways to set data to your charts. All of them have some pros and cons, and you can choose which to use depending on the task you have at hand. These ways are:
 * JavaScript API
 * XML
-* JSON
+* JSONha
 * CSV
 
 Each of the ways has some strengths and weaknesses, but in general we recommend everyone to use JavaScript API – this way gives the most flexibility in most of the cases.
@@ -33,7 +33,7 @@ chart.draw();
 ```
 See also:  
 [JavaScript API Reference](http://api.anychart.com)  
-[Using Data Sets](./Working_with_Data/Using_Data_Sets)
+[Using Data Sets](./Using_Data_Sets)
 
 ###XML
 XML format is useful if you prefer the declarative style for chart configurations.  

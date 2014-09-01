@@ -8,15 +8,22 @@ anychart.onDocumentReady(function() {
     var data = anychart.data.set([
         ['Product A', 437, 6, 637, 6],
         ['Product B', 172, 14, 472, 17],
-        ['Product С', 548, 10, 48, 10]
+        ['Product C', 548, 10, 48, 10]
     ]);
 
-    //remap data
+    //map data for the each series
     var seriesData_1 = data.mapAs({x: [0], value: [1], size:[2]});
     var seriesData_2 = data.mapAs({x: [0], value: [3], size:[4]});
 
     //chart type
     chart = anychart.lineChart();
+
+    //set title
+    chart.title().text('Labels and Tooltips');
+
+    //set axes titles
+    chart.xAxis().title().text('Products');
+    chart.yAxis().title().text('Sales');
 
     //set series data
     series = chart.bubble(seriesData_1);

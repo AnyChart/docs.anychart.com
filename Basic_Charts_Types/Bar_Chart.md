@@ -70,14 +70,14 @@ Let's see single series bar chart created using the following data - sales of AC
 Now we need to convert this data table into JSON, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data (Sales) with categories that hold Retail channels names. Each point in series represents one channels and sales amount through this channel. Converted XML Data looks like:
 
 ```
- var data = anychart.data.set([
-    ['Department Stores1', 637166],
-    ['Discount Stores', 721630],
-    ['Men\'s/Women\'s Specialty Stores', 148662],
-    ['All other outlets', 90000]
-  ]);
-  chart = anychart.barChart(data);
-  chart.bar(data);
+    var data = anychart.data.set([
+        ['Department Stores1', 637166],
+        ['Discount Stores', 721630],
+        ['Men\'s/Women\'s Specialty Stores', 148662],
+        ['All other outlets', 90000]
+    ]);
+    chart = anychart.barChart(data);
+    chart.bar(data);
 ```
 As you can see, we've used attribute **"barChart"**, set name's attribute into **first column** to define bar category and **second column** defines bar value.
 
@@ -129,19 +129,19 @@ Let's compare year 2003 sales to year 2004 sales:
 As we do in single-series bar sample above we need to convert this table into JSON, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
 
 ```
-  var data = anychart.data.set([
-    ['Department Stores1', 637166, 737166],
-    ['Discount Stores', 721630, 537166],
-    ['Men\'s/Women\'s Specialty Stores', 148662, 188662],
-    ['Juvenile Specialty Stores', 78662, 178662],
-    ['All other outlets', 90000, 89000]
-  ]);
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
-  chart = anychart.barChart();
-  var series;
-  series = chart.bar(Sales2003);
-  series = chart.bar(Sales2004);
+    var data = anychart.data.set([
+        ['Department Stores1', 637166, 737166],
+        ['Discount Stores', 721630, 537166],
+        ['Men\'s/Women\'s Specialty Stores', 148662, 188662],
+        ['Juvenile Specialty Stores', 78662, 178662],
+        ['All other outlets', 90000, 89000]
+    ]);
+    var Sales2003 = data.mapAs({x: [0], value: [1]});
+    var Sales2004 = data.mapAs({x: [0], value: [2]});
+    chart = anychart.barChart();
+    var series;
+    series = chart.bar(Sales2003);
+    series = chart.bar(Sales2004);
 ```
 
 As we now have multi-series chart we don't want to set **type** for each series individually (there can be much more than two series in multi-series chart), so we add **anychart.barChart()** attribute to **chart**. Now all series in chart will be **Bar** type by default.
@@ -161,8 +161,8 @@ With AnyChart you can place axes to any side of the chart, all you need to do is
 Positioning depends on plot type and inversion of axes<!--, you will find list of all possible positioning and inversion settings in Axes Positioning and Inverting Templates-->.
 
 ```
-chart.xAxis(0).orientation('right');
-chart.yAxis(0).orientation('top');
+    chart.xAxis(0).orientation('right');
+    chart.yAxis(0).orientation('top');
 ```
 
 And here is the demonstration of this feature on the Single-series sample:
@@ -175,7 +175,7 @@ And here is the demonstration of this feature on the Single-series sample:
 AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis **scale().inverted()**:
 
 ```
-chart.yScale().inverted(true);
+    chart.yScale().inverted(true);
 ```
 
 {sample}BCT\_BarChart\_04{sample}
@@ -186,7 +186,7 @@ chart.yScale().inverted(true);
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 0.0, and maximum is 800.000. You can control these values by setting **.maximum** and **.minimum** attributes of scale method:
 
 ```
-chart.yScale().minimum('-200000').maximum('800000')
+    chart.yScale().minimum('-200000').maximum('800000')
 ```
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
@@ -225,12 +225,12 @@ Also, styles are used to make charts interactive, you can define how elements wi
 Now, let's look how to apply a simple style to the chart. As we've already said style consists of several elements, here is an JSON structure:
 
 ```
-chart.bar(data)
-  .fill('Gold')
-  .hoverStroke("darkred", 4)
-  .stroke('#56561a', 4)
-  .hatchFill('diagonalbrick', 'gray')
-  .hoverHatchFill('diagonalbrick', 'darkred');
+    chart.bar(data)
+        .fill('Gold')
+        .hoverStroke("darkred", 4)
+        .stroke('#56561a', 4)
+        .hatchFill('diagonalbrick', 'gray')
+        .hoverHatchFill('diagonalbrick', 'darkred');
 ```
 
 Using such settings we've created a style that defines bars of Gold color, rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed thick border and hatch fill colored DarkRed too.

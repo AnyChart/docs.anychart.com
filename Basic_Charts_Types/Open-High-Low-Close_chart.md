@@ -87,15 +87,15 @@ Let's see single-series OHLC chart created using the following data - ACME Corp.
 Now we need to convert this data table into acceptable format. In terms of AnyChart data model we have one series of data with categories that hold days names. Each point in series represents one day and open, high, low, close prices. Converted Data looks like:
 
 ```
-     var data = [
-['28-Aug-07', 511.53, 514.98, 505.79, 506.40],
-['29-Aug-07', 507.84, 513.30, 507.23, 512.88],
-['30-Aug-07', 512.36, 515.40, 510.58, 511.40],
-['31-Aug-07', 513.10, 516.50, 511.47, 515.25],
-['4-Sep-07', 515.02, 528.00, 514.62, 525.15]
-      ];
-      chart = anychart.areaChart();
-      chart.ohlc(data);
+    var data = [
+        ['28-Aug-07', 511.53, 514.98, 505.79, 506.40],
+        ['29-Aug-07', 507.84, 513.30, 507.23, 512.88],
+        ['30-Aug-07', 512.36, 515.40, 510.58, 511.40],
+        ['31-Aug-07', 513.10, 516.50, 511.47, 515.25],
+        ['4-Sep-07', 515.02, 528.00, 514.62, 525.15]
+    ];
+    chart = anychart.areaChart();
+    chart.ohlc(data);
 ```
 As you can see, we've specified chart type as **OHLC** and set name attribute that defines category and open, high, low, close attributes that define values.
 
@@ -184,20 +184,20 @@ Let's compare ACME Corp. and Duff Brewing Corp. stock prices sales:
 </tbody></table>
 As we do in single series sample above we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have two data sets - one for each year:
 ```
-      chart.ohlc([
-['28-Aug-07', 511.53, 514.98, 505.79, 506.40],
-['29-Aug-07', 507.84, 513.30, 507.23, 512.88],
-['30-Aug-07', 512.36, 515.40, 510.58, 511.40],
-['31-Aug-07', 513.10, 516.50, 511.47, 515.25],
-['4-Sep-07', 515.02, 528.00, 514.62, 525.15]
-      ]);
-      chart.ohlc([
-['28-Aug-07', 522.95, 523.10, 522.50, 522.52],
-['29-Aug-07', 522.60, 522.69, 522.27, 522.55],
-['30-Aug-07', 522.49, 522.91, 522.38, 522.61],
-['31-Aug-07', 522.81, 522.83, 522.51, 522.73],
-['4-Sep-07', 523.30, 524.50, 523.20, 523.97]
-      ]);
+    chart.ohlc([
+        ['28-Aug-07', 511.53, 514.98, 505.79, 506.40],
+        ['29-Aug-07', 507.84, 513.30, 507.23, 512.88],
+        ['30-Aug-07', 512.36, 515.40, 510.58, 511.40],
+        ['31-Aug-07', 513.10, 516.50, 511.47, 515.25],
+        ['4-Sep-07', 515.02, 528.00, 514.62, 525.15]
+    ]);
+    chart.ohlc([
+        ['28-Aug-07', 522.95, 523.10, 522.50, 522.52],
+        ['29-Aug-07', 522.60, 522.69, 522.27, 522.55],
+        ['30-Aug-07', 522.49, 522.91, 522.38, 522.61],
+        ['31-Aug-07', 522.81, 522.83, 522.51, 522.73],
+        ['4-Sep-07', 523.30, 524.50, 523.20, 523.97]
+    ]);
 ```
 {sample}BCT\_OHLC\_Chart\_02{sample}
 
@@ -211,8 +211,8 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** method of **.yAxis()** or **.xAxis()** attributes.
 ```
-  chart.xAxis(0).orientation('top');
-  chart.yAxis(0).orientation('right');
+    chart.xAxis(0).orientation('top');
+    chart.yAxis(0).orientation('right');
 ```
 And here is the demonstration of this feature on the Single-series sample:
 
@@ -223,9 +223,9 @@ And here is the demonstration of this feature on the Single-series sample:
 
 AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by **scale**:
 ```
-  logScale = anychart.scales.log();
-  logScale.minimum(0.1).maximum(100);
-  chart.yScale(logScale);
+    logScale = anychart.scales.log();
+    logScale.minimum(0.1).maximum(100);
+    chart.yScale(logScale);
 ```
 And here is the demonstration of Logarithmic Y Axis on slightly modified the Single-series sample:
 
@@ -236,7 +236,7 @@ And here is the demonstration of Logarithmic Y Axis on slightly modified the Sin
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting maximum and minimum attributes of yScale method. As far as you want to adjusted the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 ```
-chart.yScale().minimum('505').maximum('530')ticks().interval(5)
+    chart.yScale().minimum('505').maximum('530')ticks().interval(5)
 ```
 And here is the demonstration of maximum and minimum values on the Single-series sample:
 
@@ -253,11 +253,11 @@ In this section we will describe main parts of OHLC chart visualization and ways
 Now, let's look how to adjust OHLC appearance:
 
 ```
-chart.ohlc(data)
-  .fallingStroke('red', 3)
-  .risingStroke('green', 3)
-  .hoverFallingStroke('darkred', 5)
-  .hoverRisingStroke('darkgreen', 5);
+    chart.ohlc(data)
+        .fallingStroke('red', 3)
+        .risingStroke('green', 3)
+        .hoverFallingStroke('darkred', 5)
+        .hoverRisingStroke('darkgreen', 5);
 ```
 Using these settings we've set red color for every falling OHLC point and green color for every rising OHLC point. Also, our rising OHLC points have dark green color, if mouse is over, as well as all falling points have dark red color, if mouse is over. Thickness of strokes was adjusted too. It's 3 px for all points and 5px if mouse over. 
 

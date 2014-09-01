@@ -3,15 +3,16 @@
   :exports "chart"}
 
 anychart.onDocumentReady(function() {
- chart = anychart.pieChart([
-    ['Department Stores', 637166],
-    ['Discount Stores', 721630],
-    ['Men\'s/Women\'s Stores', 148662],
-    ['Juvenile Specialty Stores', 78662],
-    ['All other outlets', 90000]
-  ]);
 
-  chart.container('container');
+    //set data and define chart type
+    chart = anychart.pieChart([
+        ['Department Stores', 637166],
+        ['Discount Stores', 721630],
+        ['Men\'s/Women\'s Stores', 148662],
+        ['Juvenile Specialty Stores', 78662],
+        ['All other outlets', 90000]
+    ]);
 
-  chart.draw();
+    //draw
+    chart.container('container').draw();
 });

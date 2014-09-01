@@ -68,20 +68,21 @@ Let's see single-series marker chart created using the following data - ACME Mov
 Now we need to convert this data table into js format, this format will be accepted by AnyChart. In terms of AnyChart first column represents year and second one contains total income of Box office. Converted Data looks like:
 
 ```
-  chart.xAxis();
-  chart.yAxis();
-  chart.grid()
-      .evenFill('none')
-      .oddFill('none')
-      .layout(anychart.utils.layout.VERTICAL);
-  chart.marker([
-   ['2000', 1100],
-   ['2001', 880],
-   ['2002', 1100],
-   ['2003', 1500],
-   ['2004', 921],
-   ['2005', 1000],
-   ['2006', 1400]
+    chart.xAxis().title('Year');
+    chart.yAxis().title('Box office');
+    chart.grid()
+        .evenFill('none')
+        .oddFill('none')
+        .layout(anychart.utils.layout.VERTICAL);
+    chart.marker([
+        ['2000', 1100],
+        ['2001', 880],
+        ['2002', 1100],
+        ['2003', 1500],
+        ['2004', 921],
+        ['2005', 1000],
+        ['2006', 1400]
+    ]);
 ```
 As you can see, we've specified chart type as Marker.
 
@@ -171,24 +172,24 @@ Let's compare ACME Movies box office to other studios:
 </tbody></table>
 As we do in single series line sample above we need to convert this table into js format, the only difference between these two samples is the fact that now we have several series of data - one series for each studio(we will show here only two series):
 ```
-  chart.marker([
-     [2000, 1100],
- [2001, 880],
- [2002, 1100],
- [2003, 1500],
- [2004, 921],
- [2005, 1000],
- [2006, 1400]
-  ]);
-  chart.marker([
-    [2000, 1000], 
- [2001, 950],  
- [2002, 800],  
- [2003, 1000], 
- [2004, 890],  
- [2005, 1000], 
- [2006, 800],  
-  ]);
+    chart.marker([
+        [2000, 1100],
+        [2001, 880],
+        [2002, 1100],
+        [2003, 1500],
+        [2004, 921],
+        [2005, 1000],
+        [2006, 1400]
+    ]);
+    chart.marker([
+        [2000, 1000], 
+        [2001, 950],  
+        [2002, 800],  
+        [2003, 1000], 
+        [2004, 890],  
+        [2005, 1000], 
+        [2006, 800],  
+    ]);
 ```
 
 {sample}BCT\_Marker\_Chart\_02{sample}
@@ -224,7 +225,7 @@ And here is the demonstration of this feature on the Single-series sample:
 AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by **scale().inverted()**:
 
 ```
-chart.yScale().inverted(true);
+    chart.yScale().inverted(true);
 ```
 And here is the demonstration of Y Axis inversion on the Single-series sample:
 
@@ -235,7 +236,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 800, and maximum is 1600. You can control these values by setting maximum and minimum attributes of <scale> node:
 ```
-chart.yScale().minimum('0').maximum('1800');
+    chart.yScale().minimum('0').maximum('1800');
 ```
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
@@ -251,19 +252,18 @@ In this section we will describe main parts of marker chart visualization and wa
 
 Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is an js structure:
 ```
-  chart.marker([
-   ['2000', 1100],
-   ['2001', 880],
-   ['2002', 1100],
-   ['2003', 1500],
-   ['2004', 921],
-   ['2005', 1000],
-   ['2006', 1400]
-  ])
-  .fill('gold')
-  .hoverFill('darkred')
-  .hoverStroke(0)
-  .hoverSize(20);
+    chart.marker([
+        ['2000', 1100],
+        ['2001', 880],
+        ['2002', 1100],
+        ['2003', 1500],
+        ['2004', 921],
+        ['2005', 1000],
+        ['2006', 1400]
+    ]).fill('gold')
+        .hoverFill('darkred')
+        .hoverStroke(0)
+        .hoverSize(20);
 ```
 Using such settings we've defined markers of Gold color and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed and made bigger.
 

@@ -34,5 +34,6 @@ anychart.onDocumentReady(function() {
     chart.yAxis().orientation('top').title().text('Time Plan');
     chart.xAxis().title().text('Tasks');
 
+    //draw
     chart.container('container').draw();
 });

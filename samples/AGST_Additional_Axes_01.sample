@@ -3,6 +3,7 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
+    //data
     var data = anychart.data.set([
         ['A', 637166],
         ['B', 721630],
@@ -11,6 +12,7 @@ anychart.onDocumentReady(function() {
         ['E', 90000]
     ]);
 
+    //set data and chart type
     chart = anychart.columnChart(data);
 
     //title settings
@@ -27,5 +29,6 @@ anychart.onDocumentReady(function() {
     //adjusting major ticks' interval
     chart.yScale().ticks().interval(100000);
 
+    //draw
     chart.container('container').draw();
 });

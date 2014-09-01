@@ -22,11 +22,11 @@ As range bar charts have to define lower and upper bound of bars - you have to s
 Also "RangeBar" series type should be specified.
 
 ```
-chart.rangeBar([
-{ high: 0.6, low: 6.3},
-{ high: 0.7, low: 6.1},
-{ high: 1.9, low: 8.5},
-     ]);
+    chart.rangeBar([
+        { high: 0.6, low: 6.3},
+        { high: 0.7, low: 6.1},
+        { high: 1.9, low: 8.5},
+    ]);
 ```
 
 <a name="temperature"/> 
@@ -39,7 +39,7 @@ This sample shows how range bars can be used to chart temperature averages, the 
 <a name="waterfall"/>
 ## Waterfall Chart Sample
 
-In the sample below we formatted start and end values, colored cylinders as we need and here it is - waterfall chart is displayed.
+In the sample below we formatted start and end values, here we will colorize chart as we need. Here it is - waterfall chart is displayed.
 
 {sample}BCT_Range\_Bar-Column\_Charts\_02{sample}
 
