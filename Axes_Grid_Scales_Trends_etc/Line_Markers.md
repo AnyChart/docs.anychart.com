@@ -56,12 +56,12 @@ To add line marker you need to use **lineMarker()** method and set **.scale()**,
 
 The sample below shows horizontal lines, that indicates minimum and maximum value.
 
-{sample}AGST\_Range\_Marker\_01{sample}
+{sample}AGST\_Line\_Marker\_01{sample}
 
 <a name="combine"/>
 ## Combine Line and Text Markers
 
 In some cases it's much more useful to combine line and text markers for emphasizing particular data.
 
-{sample}AGST\_Range\_Marker\_02{sample}
+{sample}AGST\_Line\_Marker\_02{sample}
 
