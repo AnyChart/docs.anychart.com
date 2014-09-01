@@ -66,6 +66,6 @@ As far as range marker has method **.fill()**, you can also use gradient and ima
             opacity: 0.5
         });
 ```
-Sample below shows semitransparent filled range with with disabled minimum and maximum lines.
+Sample below shows semitransparent filled range.
 
 {sample}AGST\_Range\_Marker\_03{sample}
