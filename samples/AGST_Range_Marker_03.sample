@@ -37,37 +37,27 @@ anychart.onDocumentReady(function() {
     //y scale title
     chart.yAxis().title().text('Sales');
 
-    //set green
-    chart.rangeMarker()
-        .scale(chart.yScale())
-        .from(20000)
-        .to(30000)
-        .fill('green 0.5');
-
-    //set red marker
-    chart.rangeMarker(1)
-        .scale(chart.yScale())
-        .fill('gold 0.5')
-        .from(10000)
-        .to(20000);
-
     //set green marker
     chart.rangeMarker(2)
         .scale(chart.yScale())
         .from(0)
-        .to(10000)
-        .fill('red 0.5');
+        .to(30000)
+        .fill({
+            keys: ['.1 green', '.5 yellow', '.9 red'],
+            angle: -90,
+            opacity: 0.5
+        });
 
     //set left text marker
     chart.textMarker()
         .scale(chart.yScale())
-        .align('near')
-        .anchor('leftcenter')
+        .align('center')
+        .anchor('center')
         .offsetX(10)
         .value(25000)
-        .fontColor('white')
-        .text('Good: [20,000.00 - 30,000.00]')
-        .fontSize(20);
+        .text('Good')
+        .fontSize(15)
+        .fontWeight(600);
 
     //set text marker at the center
     chart.textMarker(1)
@@ -76,21 +66,22 @@ anychart.onDocumentReady(function() {
         .anchor('center')
         .offsetX(10)
         .value(15000)
-        .fontColor('black')
-        .text('Average \n [20,000.00 - 30,000.00]')
-        .fontSize(20);
+        .text('Average')
+        .fontSize(15)
+        .fontWeight(600);
 
     //set text marker at the center
     chart.textMarker(2)
         .scale(chart.yScale())
-        .align('far')
-        .anchor('rightcenter')
+        .align('center')
+        .anchor('center')
         .offsetX(10)
         .value(5000)
         .fontColor('black')
-        .fontWeight(400)
         .text('Severe')
-        .fontSize(12);
+        .fontSize(12)
+        .fontWeight(600);
+
     //draw
     chart.container('container').draw();
 });

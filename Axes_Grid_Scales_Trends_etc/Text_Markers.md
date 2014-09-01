@@ -1,4 +1,4 @@
-# Text MArkers
+# Text Markers
 
               
 * [Overview](#overview)
@@ -8,7 +8,7 @@
 <a name="overview"/>
 ## Overview
 
-TExt Markers are useful when you want to place custom texts or description with or instead of axes values labels.
+Text Markers are useful when you want to place custom texts or description with or instead of axes values labels.
 
 You can add text markers to any place of a chart.
 
