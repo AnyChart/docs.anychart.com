@@ -121,7 +121,7 @@ Font settings of labels are configured using multiple attributes. You can specif
     chart.xAxis().labels().fontFamily('Courier').fontSize(12).fontColor('red').fontWeight('bold').useHTML(false);
 ```
 
-<!--Note: there are some special things you should know about font setting when working with [link]Rotated labels[/link], please study them and learn more about fonts in [link]AnyChart in Fonts tutorial[/link].-->
+<!--Note: there are some special things you should know about font setting when working with [Rotated labels](#rotated), please study them and learn more about fonts in [link]AnyChart in Fonts tutorial[/link].-->
 
 You can look at font settings at work in the [sample below](#sample).
 

@@ -47,7 +47,7 @@ anychart.onDocumentReady(function() {
         .fontColor('red')
         .text('Maximum')
         .offsetY(-20)
-        .fontSize(20);
+        .fontSize(15);
 
     //set highest line marker
     chart.lineMarker()
@@ -65,7 +65,7 @@ anychart.onDocumentReady(function() {
         .offsetY(-20)
         .fontColor('blue')
         .text('Center')
-        .fontSize(20);
+        .fontSize(15);
 
     //set center line marker
     chart.lineMarker(1)
@@ -84,7 +84,7 @@ anychart.onDocumentReady(function() {
         .fontColor('green')
         .fontWeight(400)
         .text('Minimum')
-        .fontSize(12);
+        .fontSize(15);
 
     //set lowest line marker
     chart.lineMarker(2)
