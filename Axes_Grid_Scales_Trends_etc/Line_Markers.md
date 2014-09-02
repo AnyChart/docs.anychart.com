@@ -17,7 +17,7 @@ You can add custom line markers to any scale, both x scale, y scale and addition
 <a name="setting"/>
 ## Setting Line Marker
 
-To add line marker you need to use **lineMarker()** method and set **.scale()**, **.fill()** and **.layout()** attributes.
+To add line marker you need to use **.lineMarker()** method and set **.scale()**, **.fill()** and **.layout()** attributes.
 
 ```
     chart.textMarker(1)

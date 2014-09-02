@@ -15,7 +15,7 @@
    * [Padding](#padding)
    * [Rotated Labels ](#rotated)
    * [Stagger Mode ](#stagger)
- * [First and Last <!--and Crossing--> Labels](#first-last-crossing-labels)
+ * [First and Last<!--and Crossing--> Labels](#first-last-crossing-labels)
  * [Y-Axis Labels: Fixed Width](#y-axis-labels-fixed-width)
  * [X-Axis Labels: Fixed Width and Text Wrapping](#x-axis-labels-wrapping-width)               
  <!--*[Keywords Reference ](#keywords)
@@ -46,7 +46,7 @@ In the sample below a line chart with Y-Axis, X-Axis and Secondary Y-Axis is sho
 
 In order to make chart readable and understandable it is very important to format axes labels in a proper way, for example: add "$" prefix if values are given in dollars or add "°F" postfix if values are given in Fahrenheit degrees.
 <br/><br/>
-You have a full control over the axis labels in **textFormatter()** subnode of **labels()** node.
+You have a full control over the axis labels in **.textFormatter()** subnode of **.labels()** node.
 <br/><br/>
 <!--To make text formatting easier AnyChart has a special mechanism called Keywords. Every keyword is a unique token that can be specified in <format> node in a following way: {%KeywordName}, for example {%Value} or {%AxisName}. Before displaying text every keyword is replaced by a corresponding value. Full reference of available keywords can be found in the end of this tutorial:[link in need]Keywords reference[/link].-->
 
@@ -139,7 +139,7 @@ With AnyChart it is possible to control labels' alignment. It is useful, for exa
 
 <!--As stated in the beginning of this section - you can learn more about background settings in [link]Background tutorial[/link], and here we will demonstrate the most usual task - enabling/disabling background and configuring labels border.-->
 
-Labels background is configured with **background()** method of **labels**. Here are sample settings - background is enabled for xAxis and only stroke method was adjusted:
+Labels background is configured with **.background()** method of **.labels()**. Here are sample settings - background is enabled for xAxis and only stroke method was adjusted:
 
 ```   
     chart.xAxis().labels().background().enabled(true).stroke('blue');
@@ -159,9 +159,9 @@ AnyChart gives you a number of options to control the position of axes labels, d
 <a name="labels-align"/>
 ### Labels Align
 
-To specify how labels are aligned you need to set **hAlign()** and **vAling()** attributes **labels()**. **hAlign** possible values are: "left", "start", "center", "end" and "right". As for **vAlign()** values, it can be: "top", "middle" and "bottom". 
+To specify how labels are aligned you need to set **.hAlign()** and **.vAling()** attributes **.labels()**. **.hAlign** possible values are: "left", "start", "center", "end" and "right". As for **.vAlign()** values, it can be: "top", "middle" and "bottom". 
 
-Also, you can change the position attribute and make labels appear inside of the data plot area, to do that set **offsetX()** for yAxis and **offsetY()** for xAxis.
+Also, you can change the position attribute and make labels appear inside of the data plot area, to do that set **.offsetX()** for yAxis and **.offsetY()** for xAxis.
 
 ```
     chart.yAxis().labels().offsetX(30);
@@ -188,7 +188,7 @@ One of the most useful features of label positioning is ability to show rotated 
 <a name="stagger"/>
 ### Stagger Mode
 
-When you have a lot of long labels, you may find useful to use **staggerLines()** display mode for labels, this may work particularly good on xAxis, when labels contain category names:
+When you have a lot of long labels, you may find useful to use **.staggerLines()** display mode for labels, this may work particularly good on xAxis, when labels contain category names:
 
 ```
     chart.xAxis().staggerLines(2);
@@ -200,7 +200,7 @@ Here is a sample dashboard showing the most of positioning labels settings:
 <a name="first-last-crossing-labels"/>
 ## First and Last <!--and Crossing--> labels
 
-There are special attributes that give you a control over such special labels as: First (minimal value) label on the axis and Last label (maximal value). You can force them to be shown or hide them using appropriate attributes: **drawFirstLabel()**, **drawLastLable()** <!-- and show_cross_label-->.
+There are special attributes that give you a control over such special labels as: First (minimal value) label on the axis and Last label (maximal value). You can force them to be shown or hide them using appropriate attributes: **.drawFirstLabel()**, **.drawLastLable()** <!-- and show_cross_label-->.
 
 Turning off the last the first label is shown on the [dashboard above](#dashbord) in "Labels Inside" Line chart.
 ```
@@ -215,7 +215,7 @@ You can set fixed width for Y-Axis labels. If label content doesn't fit - text i
 
 This function may be of great use when you use Dashboards and you want to sync several charts left and/or right border, which is especially needed when they are displayed in a column and share the same X-Axis arguments.
 
-To set the width you should use **width()** attribute for **labels()**, which accepts positive integer values in pixels:
+To set the width you should use **.width()** attribute for **.labels()**, which accepts positive integer values in pixels:
 
 ```
     chart.yAxis().labels().width(50)
@@ -233,7 +233,7 @@ And now the same data with Y-Axis label width set to 70 pixels, which results in
 
 Sometimes you may encounter situation when point names (which are used as arguments and are displayed in X-Axis labels) are too long and chart engine removes some of them because they don't fit the chart size — it may be undesired result and it can be avoided in several ways, like allowing labels to overlap (changing value for axis **overlapMode**) <!--or using maxChar keyword in formatting-->, but you can also set fixed width and make them wrap.
 
-To set the fixed width you have to use **width()** attribute in **labels()** element:
+To set the fixed width you have to use **.width()** attribute in **.labels()** element:
 
 ```
     chart.xAxis().labels().width(60)

@@ -17,7 +17,7 @@ You can add text markers to any place of a chart.
 
 These text markers are just custom text placed on chart.
 
-To add custom text you need to create **textMarker()** and set **.value()**, **scale()** and **.text()**.You may use other options, but previous three are compulsory.
+To add custom text you need to create **.textMarker()** and set **.value()**, **.scale()** and **.text()**.You may use other options, but previous three are compulsory.
 
 ```
     chart.textMarker()
@@ -35,7 +35,7 @@ Sample below shows several variants of Text Marker usage: marking up values (Hig
 
 You can configure text marker placement, font, anchor and text of any custom text.
 
-You can use **.value()**, **.align()**, **.anchor()**, **.fontSize()**, **.offsetX()**, **offsetY()**, **.text()**
+You can use **.value()**, **.align()**, **.anchor()**, **.fontSize()**, **.offsetX()**, **.offsetY()**, **.text()**
 
 Markers placement is controlled using **.align()** attribute, possible values are: "Near", "Center", "Far".
 

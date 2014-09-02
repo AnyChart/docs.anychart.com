@@ -5,6 +5,9 @@ anychart.onDocumentReady(function() {
 
     chart = anychart.lineChart();
 
+    //chart title
+    chart.title().text('Enable/Disable Axes Labels');
+
     //disable x axis labels and title adjusting
     chart.xAxis().labels().enabled(false);
     chart.xAxis().title().text('X-Axis without labels');
@@ -13,6 +16,7 @@ anychart.onDocumentReady(function() {
     chart.yAxis().title().text('Y-Axis with labels');
     chart.yAxis(1).orientation('right').title().text('Secondary Y-Axis with labels');
 
+    //data
     var data = anychart.data.set([
         ['January', 10000],
         ['February', 12000],
@@ -21,7 +25,9 @@ anychart.onDocumentReady(function() {
         ['May', 19000]
     ]);
 
+    //set data
     chart.line(data);
 
+    //draw chart
     chart.container('container').draw();
 });

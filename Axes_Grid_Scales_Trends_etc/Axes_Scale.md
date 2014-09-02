@@ -163,7 +163,6 @@ Sample inverted scale chart:
 
 {sample}AGST\_Axes\_Scale\_09{sample}
 
-to top
 <!--
 Crossing axis value
 

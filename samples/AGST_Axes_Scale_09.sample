@@ -6,6 +6,9 @@ anychart.onDocumentReady(function() {
     //define chart type
     chart = anychart.columnChart();
 
+    //chart title
+    chart.title().text('Inverted Scale');
+
     //setteing data
     var data = anychart.data.set([
         ['C', 15],
