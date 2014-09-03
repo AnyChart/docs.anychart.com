@@ -70,6 +70,7 @@ anychart.onDocumentReady(function() {
         ["P5", 74]
     ]);
 
+    //draw
     secondChart.container(stage);
     secondChart.draw();
 

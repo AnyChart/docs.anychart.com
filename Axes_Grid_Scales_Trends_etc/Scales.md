@@ -11,7 +11,8 @@
 * [Minimum and Maximum Scale Values](#min-max-values)         
 * [Minor and Major Ticks Interval](#intervals)              
 * [Minimum and Maximum Gap](#gap)     
-* [Inverted Scale](#inverted)               
+* [Inverted Scale](#inverted)
+* [One Scale for Different Charts](#crosschart-scale)
 <!--* [Crossing value](#crossing)-->  
 <!--* [Base value](#base-value)-->                   
 
@@ -43,7 +44,7 @@ Linear scale type is a default type for yScale in most charts. Values for this s
 ```
     chart.xScale(anychart.scales.linear());
 ```
-{sample}AGST\_Axes\_Scale\_01{sample}
+{sample}AGST\_Scales\_01{sample}
 
 <a name="logarithmic"/>
 ### Logarithmic Scale
@@ -56,7 +57,7 @@ A logarithmic scale is a scale of measurement that uses the logarithm of a physi
 
 In the sample below **A = 637.166**, **B = 721.630**, and **C=1.000**, **D=78**, **E = 90**
 
-{sample}AGST\_Axes\_Scale\_02{sample}
+{sample}AGST\_Scales\_02{sample}
 
 <a name="ordinal"/>
 ### Ordinal Scale
@@ -66,7 +67,7 @@ Ordinal scale type is a default type for xScale in most charts. Values for this 
 ```
     chart.xScale(anychart.scales.ordinal());
 ```
-{sample}AGST\_Axes\_Scale\_03{sample}
+{sample}AGST\_Scales\_03{sample}
 
 <a name="date"/>
 ### Date Time Scale
@@ -77,7 +78,7 @@ A dateTime scale is a scale of measurement that is based on the **UTC Date** for
     chart.yScale(anychart.scales.dateTime());
 ```
 
-{sample}AGST\_Axes\_Scale\_04{sample}
+{sample}AGST\_Scales\_04{sample}
 
 <a name="mode"/>
 ## Scale Stacked Mode
@@ -111,7 +112,7 @@ To change scale mode you need to set **.stackMode()** attribute. Possible attrib
 
 In the sample below stacked and percent stacked scales are demonstrated on the same data sets:
 
-{sample}AGST\_Axes\_Scale\_05{sample}
+{sample}AGST\_Scales\_05{sample}
 
 <a name="min-max-values"/>
 ## Minimum and Maximum Scale Values
@@ -124,7 +125,7 @@ For any scale, but ordinal, you can set maximum and/or minimum values, which are
 
 Not that if will set maximum value lesser than chart elements values, or minimum bigger than them - these elements will be cut, and you will see only a part of them or will not see them at all.
 
-{sample}AGST\_Axes\_Scale\_06{sample}
+{sample}AGST\_Scales\_06{sample}
 
 <a name="min-max-values"/>
 ## Major and Minor Ticks Intervals
@@ -137,7 +138,7 @@ For any scale, but ordinal, you can set major and minor ticks intervals, which a
 ```
 In the sample below you can see how interval settings affects grids, ticks and labels.
 
-{sample}AGST\_Axes\_Scale\_07{sample}
+{sample}AGST\_Scales\_07{sample}
 
 <a name="gap"/>
 ## Maximum and Minimum Gap
@@ -149,7 +150,7 @@ For any axis scale you can set minimum and maximum offsets. Maximum and minimum 
 ```
 In the sample below you can see how offsets settings affects chart, the chart to the left has minimum and maximum offsets set to 0.5, the chart to the right has all the same settings, but offsets are not set. Note that offsets are ignored when maximum or minimum scale values are specified.
 
-{sample}AGST\_Axes\_Scale\_08{sample}
+{sample}AGST\_Scales\_08{sample}
 
 <a name="inverted"/>
 ## Inverted Scale
@@ -161,7 +162,14 @@ If you want to display scale in an inverted mode, to display bigger values to th
 ```
 Sample inverted scale chart:
 
-{sample}AGST\_Axes\_Scale\_09{sample}
+{sample}AGST\_Scales\_09{sample}
+
+<a name="crosschart-scale"/>
+## One Scale for Different Charts
+
+Scale calculates values and in many cases it is very useful to adjust settings of one scale and then use it for multiple charts. in example below we will create custom scale, adjust it and apply it for 2 charts. Click "launch in playground" to see the code
+
+{sample}AGST\_Scales\_10{sample}
 
 <!--
 Crossing axis value

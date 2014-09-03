@@ -34,5 +34,7 @@ anychart.onDocumentReady(function() {
     chart.xAxis().labels().hAlign('center').width(60).hAlign('right');
     chart.yAxis().minorTicks().enabled(false);
     chart.xAxis().staggerLines(1);
+
+    //draw chart
     chart.draw();
 });

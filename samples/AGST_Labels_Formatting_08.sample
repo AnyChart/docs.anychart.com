@@ -36,5 +36,7 @@ anychart.onDocumentReady(function() {
     chart.xAxis().overlapMode(false).labels().hAlign('center').width(130);
     chart.yAxis().minorTicks().enabled(false);
     chart.xAxis().staggerLines(1);
+
+    //draw chart
     chart.draw();
 });
