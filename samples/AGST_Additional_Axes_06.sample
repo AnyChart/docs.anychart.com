@@ -39,7 +39,11 @@ anychart.onDocumentReady(function() {
         return this.value + '%';
     });
 
+    //disable x axis title
     chart.xAxis().title().enabled(false);
+
+    //enabling x axis stagger mode
+    chart.xAxis().staggerMode(true).labels().width(52).hAlign('center');
 
     //set Grid settings
     chart.grid(0).stroke('gray 0.8').layout('horizontal');

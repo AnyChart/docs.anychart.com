@@ -165,7 +165,8 @@ anychart.onDocumentReady(function() {
     redSeries.stroke('red', 3);
     redSeries.tooltip().content().fontColor('red');
     redSeries.tooltip().enabled(true).contentFormatter(function() {
-        return '(x,y) = (' + this.x + '.00,' + this.value + ')';
+        var value = this.value;
+        return '(x,y) = (' + this.x + '.00,' + value.toFixed(2) + ')';
     });
 
     //adding red ling to emphasize zero of extra axis

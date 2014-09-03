@@ -1,4 +1,4 @@
-# Axes Scales
+# Scales
                                                                    
                                                                    
 * [Overview](#overview)                                               	
@@ -17,16 +17,16 @@
 
 <a name="overview"/>
 ## Overview
-Axis scale allows you to control such features as minimum and maximum scale values, offsets, scale inversion, intervals, scale type and so on for a single axis. To create more axes - please read [Additional axes](Additional-Axis) first. To adjust axes display - please see: [Axes Basics tutorial](Axis_Basics).
+Scales allow you to control such features as minimum and maximum scale values, offsets, scale inversion, intervals, scale type and so on for a single axis. To create more axes - please read [Additional axes](Additional-Axis) first. To adjust axes display - please see: [Axes Basics tutorial](Axis_Basics).
 
-In this section we will explain axis scale options, which are almost the same for all axes.
+In this section we will explain main scales options.
 
 If you want to control any of scale settings - you should do that throw **scale()** method.
 
 <a name="type"/>
 ## Scale Type
 
-There are four types of scale in AnyChart: **"Linear"**, **"Logarithmic"**, **"Ordinal"** and **"DatiTime"**. To set scale type specify it after **anychart.scales** and write after dot the one, you need.
+There are four types of scale in AnyChart: **"Linear"**, **"Logarithmic"**, **"Ordinal"** and **"DateTime"**. To set scale type specify it after **anychart.scales()** and write after dot the one, you need.
 
 ```
     chart.xScale(anychart.scales.linear());
@@ -82,7 +82,7 @@ A dateTime scale is a scale of measurement that is based on the **UTC Date** for
 <a name="mode"/>
 ## Scale Stacked Mode
 
-Scale mode defines some additional behavior of an axes. In the table below all modes are listed and their applicability to different chart types:
+Scale mode defines some additional behavior of a chart. In the table below all modes are listed and their applicability to different chart types:
 
 <table width="481" border="1" class="dtTABLE">
 <tbody><tr>
@@ -116,7 +116,7 @@ In the sample below stacked and percent stacked scales are demonstrated on the s
 <a name="min-max-values"/>
 ## Minimum and Maximum Scale Values
 
-For any axis scale you can set maximum and/or minimum values, which are calculated automatically by default.
+For any scale, but ordinal, you can set maximum and/or minimum values, which are calculated automatically by default.
 
 ```
     chart.yScale().minimum(-50).maximum(100);
@@ -129,7 +129,7 @@ Not that if will set maximum value lesser than chart elements values, or minimum
 <a name="min-max-values"/>
 ## Major and Minor Ticks Intervals
 
-For any axis scale you can set major and minor ticks intervals, which are calculated automatically by default. Major and minor ticks intervals are axis steps, which define where axis labels (major interval), axis ticks (major and minor, correspondingly) and major and minor grids are displayed.
+For any scale, but ordinal, you can set major and minor ticks intervals, which are calculated automatically by default. Major and minor ticks intervals are axis steps, which define where axis labels (major interval), axis ticks (major and minor, correspondingly) and major and minor grids are displayed.
 
 ```
     chart.yScale().ticks().interval(10);

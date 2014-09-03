@@ -10,7 +10,7 @@
 <a name="overview"/>
 ## Overview
    
-In AnyChart axes are used to control values or arguments scales, grids, axes labels, lines and tickmarks. You can add multiple X and Y axes to your charts with AnyChart.
+In AnyChart scales control axes ticks, values, grid, lines, axes labels position and tickmarks. You can add multiple X and Y axes to your charts with AnyChart.
 <br/><br/>
 This note will describe how to use the multi axis feature of AnyChart. With this feature an arbitrary number of axes can be added to the chart. AnyChart itself doesn't impose any restrictions on the number of additional axes but from a practical concern it is most likely very difficult to interpret a chart with more than 2-3 additional axes.
 <br/><br/>
@@ -28,9 +28,9 @@ Consider using multiple axes when you need:
 If you want to define an additional axis all you need to do is to set index to it, and place as many **.yAxis()** or **.xAxis()** methods into it:
 
 ```
-    chart.yAxis(1).orientation('right').title().text('Axis title');
-    chart.yAxis(2).orientation('right').title().text('Axis title');
-    chart.yAxis(3).orientation('right').title().text('Axis title');
+    chart.yAxis(1).orientation('right').title().text('First additional axis');
+    chart.yAxis(2).orientation('right').title().text('Second additional axis');
+    chart.yAxis(3).orientation('right').title().text('Third additional axis');
 ```
 
 Here is the sample of the chart that will be show when three additional y axes are added and almost no configuration is done, as you can see three additional axes are drawn on the right side of data plot and their maximum and minimum values are calculated automatically (and they are the same as main Y axis have):
@@ -62,11 +62,10 @@ In the a sample below we will add one additional axis and set value ranges and t
 
 {sample}AGST\_Additional\_Axes\_03{sample}
 
-to top
 <a name="binding-series"/>
 ## Binding Data Series to Additional Axis
 
-To bind data series to the certain axis you should specify it in **.yScale()** or **xScale()** attribute of the Series, by default all series work with basic **.yScale()** or **.xScale()**:
+To bind data series to the certain axis you should specify it in **series.yScale()** or **series.xScale()** attribute.By default all series work with **chart.yScale()** or **chart.xScale()**:
 
 ```
     var firstSeries = anychart.data.set([
@@ -76,6 +75,7 @@ To bind data series to the certain axis you should specify it in **.yScale()** o
         ["D", 78662],
         ["E", 90000]
     ]);
+    
     var secondSeries = anychart.data.set([
         ["A", 95],
         ["B", 97],
@@ -83,6 +83,7 @@ To bind data series to the certain axis you should specify it in **.yScale()** o
         ["D", 70],
         ["E", 35]
     ]);
+    
     var columnSeries = chart.column(firstSeries);
     var lineSeries = chart.line(secondSeries);
     lineSeries.yScale(extraYScale);
@@ -91,7 +92,6 @@ In the a sample below we will add one additional axis with a range from 0 to 100
 
 {sample}AGST\_Additional\_Axes\_04{sample}
 
-to top
 <a name="sample-comparing-units"/>
 ## Multi Axes Sample for Comparing Units
 
@@ -131,7 +131,6 @@ Here it is - a sample that shows different important temperatures:
 
 {sample}AGST\_Additional\_Axes\_05{sample}
 
-to top
 <a name="sample-different-data"/>
 ## Multi Axes Sample for Showing Different Data on the Same Plot
 

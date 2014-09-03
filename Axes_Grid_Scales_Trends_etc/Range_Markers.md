@@ -17,7 +17,7 @@ You can add Range Markers on any scale, both x scale, y scale and additional sca
 <a name="range"/>
 ## Setting Range
 
-To add range marker you need to use **rangeMarker()** method. Each range marker has several compulsory attributes: **.scale()**, **.from()**, **.to()** and **.fill()**. If you want to bound range marker to a horizontal scale, you have to set **.layout(vertical)**. Otherwise it would be horizontal.
+To add range marker you need to use **.rangeMarker()** method. Each range marker has several compulsory attributes: **.scale()**, **.from()**, **.to()** and **.fill()**. If you want to bound range marker to a horizontal scale, you have to set **.layout(vertical)**. Otherwise it would be horizontal.
 
 ```
     chart.rangeMarker()
