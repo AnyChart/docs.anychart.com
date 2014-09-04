@@ -1,8 +1,8 @@
 # Background                                                                                 
                                                                                     
 * [Overview](#overview)                                      
-* [Border Settings](#border)                                 
-* [Fill Settings](#fill)            
+* [Stroke Settings](#stroke)                                 
+* [Fill Settings](#fill)
   * [Solid Fill](#solid-fill)         
   * [Gradient Fill](#gradient-fill)                  
   * [Image Fill](#image-fill)                           
@@ -13,79 +13,41 @@
 ## Overview
 In this tutorial we will explain in details how to configure background in AnyChart.
 
-Background consists of fill, border, border corners and inside margins. These element are configured using **.fill()**, **.border()** and **.corners()** attributes.
+Background consists of fill, stroke and border corners. These element are configured using **.fill()**, **.border()** and **.corners()** attributes.
 
 Background is used in chart titles, labels, tooltips, chart background, data plot, and many more, but they are configured the same way.
 
 Below you will find the reference of most important attributes of the mentioned nodes and see the demonstration of theirs settings.
 
-<a name="border"/>
-## Border Settings
+<a name="stroke"/>
+## Stroke Settings
 
-Border is configured using **.border()** attributes. Border can be of **"Solid"**, **"Dashed"** and **"Gradient"** type. If type is **"Solid"**, then color is specified using color attribute; to configure **"Gradient"** you have to use gradient keys. Dashed orders have to be set with special keys too.
+Border is configured using **.stroke()** attributes. Border can be of **"Solid"**, **"Dashed"** and **"Gradient"** type. If type is **"Solid"**, then color is specified using color attribute; to configure **"Gradient"** you have to use gradient keys. Dashed orders have to be set with special keys too.
 
-Typical solid border settings look like:
+Typical solid stroke settings look like:
 
-XML Syntax
-XML Code
-Plain code
-01
-<border enabled="True" thickness="1" type="Solid" color="Black" opacity="0.5" />
-Typical gradient border settings look like:
+```
+  chart.background().stroke('5 red');
+```
+Typical gradient stroke settings look like:
+```
+  chart.background().stroke({
+    keys: ['.1 red', '.5 yellow', '.9 blue'],
+    angle: 45,
+    thickness: 5
+  });
+```
+Typical dashed stroke settings look like:
+```
+    chart.background().stroke({color: 'red', dash: '5 2 5', thickness: 5});
+```
 
-XML Syntax
-XML Code
-Plain code
-01
-<border enabled="True" thickness="2" type="Gradient">
-02
-  <gradient type="Linear">
-03
-    <key position="0" color="Green" opacity="0.5" />
-04
-    <key position="1" color="Blue" opacity="1" />
-05
-  </gradient>
-06
-</border>
-On the chart below typical solid border settings are applied to data plot background and typical gradient border is set to chart background. Application is made like that:
+On the chart below you may see 3 different stroke types and dashboard without stroke.
 
-XML Syntax
-XML Code
-Plain code
-01
-<chart_settings>
-02
-  <chart_background>
-03
-    <border enabled="True" thickness="2" type="Gradient">
-04
-      <gradient type="Linear">
-05
-        <key position="0" color="Green" opacity="0.5" />
-06
-        <key position="1" color="Blue" opacity="1" />
-07
-      </gradient>
-08
-    </border>
-09
-  </chart_background>
-10
-  <data_plot_background>
-11
-    <border enabled="True" thickness="1" type="Solid" color="Black" opacity="0.5" />
-12
-  </data_plot_background>
-13
-</chart_settings>
- 
+{sample}GAS\_Background\_01{sample}
 
-Live Sample:  Background Border Sample
-
-to top
-
-Fill Settings
+<a name="fill"/>
+##Fill Settings
 
 With AnyChart you it is possible to color background with a solid color, with a gradient transition or fill it with an image. Fill is configured in the <fill> node and depending on the type it has different settings. Note that hatch fill is not a fill type - it is a separate entity and can be combined with any fill type.
 
