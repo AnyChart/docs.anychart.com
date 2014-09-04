@@ -188,7 +188,7 @@ For each grid you can define line style:
 ```
 That's how simple grid will look like:
 
-{sample}AGST\_Axes\_Basic\_08{sample}
+{sample}AGST\_Scales\_10{sample}
 
 to top
 <a name="dashed"/>
@@ -201,7 +201,7 @@ You can also make your grid lines dashed:
 ```
 And create chart like this:
 
-{sample}AGST\_Axes\_Basic\_09{sample}
+{sample}AGST\_Scales\_11{sample}
 
 <a name="interlace"/>
 ### Even and Odd fills
@@ -214,14 +214,14 @@ You can use this method with both major and minor grids. To do this you need to 
 
 That's how simple interlaced grid will look like:
 
-{sample}AGST\_Axes\_Basic\_10{sample}
+{sample}AGST\_Scales\_12{sample}
 
 <a name="crosschart-scale"/>
 ## One Scale for Different Charts
 
 Scale calculates values and in many cases it is very useful to adjust settings of one scale and then use it for multiple charts. in example below we will create custom scale, adjust it and apply it for 2 charts. Click "launch in playground" to see the code
 
-{sample}AGST\_Scales\_10{sample}
+{sample}AGST\_Scales\_13{sample}
 
 <!--
 Crossing axis value
