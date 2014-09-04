@@ -12,6 +12,10 @@
 * [Minor and Major Ticks Interval](#intervals)              
 * [Minimum and Maximum Gap](#gap)     
 * [Inverted Scale](#inverted)
+* [Grids](#grids)
+  * [Major and Minor](#grids)
+  * [Dashed Grid Lines](#dashed)
+  * [Even and Odd fills](#interlace)
 * [One Scale for Different Charts](#crosschart-scale)
 <!--* [Crossing value](#crossing)-->  
 <!--* [Base value](#base-value)-->                   
@@ -163,6 +167,54 @@ If you want to display scale in an inverted mode, to display bigger values to th
 Sample inverted scale chart:
 
 {sample}AGST\_Scales\_09{sample}
+
+
+<a name="grids"/>
+## Grid
+<a name="grids"/>
+### Major and Minor Grids
+
+There are two types of grids in AnyChart - major grid and minor grid, which correspond to [major and minor scale steps](Axes-Scales). To enable grid you have to specify:
+
+```
+  chart.minorGrid().enabled(true);
+  chart.grid().enabled(true);
+```
+For each grid you can define line style:
+
+```
+ chart.grid().stroke('black');
+ chart.minorGrid().stroke('black 0.5');
+```
+That's how simple grid will look like:
+
+{sample}AGST\_Axes\_Basic\_08{sample}
+
+to top
+<a name="dashed"/>
+### Dashed Grid Lines
+
+You can also make your grid lines dashed:
+
+```
+  chart.minorGrid().stroke({color: 'black', dash: '5 2 5', opacity: 0.2}).layout('horizontal');
+```
+And create chart like this:
+
+{sample}AGST\_Axes\_Basic\_09{sample}
+
+<a name="interlace"/>
+### Even and Odd fills
+
+You can use this method with both major and minor grids. To do this you need to set **.oddFill()** or/and **.evenFill()** attributes in corresponding grid. Fill can be gradient, image and/or hatch as well as any other fill.
+
+```
+    chart.grid(1).layout('horizontal').evenFill('white').oddFill('rgb(244,245,255');
+```
+
+That's how simple interlaced grid will look like:
+
+{sample}AGST\_Axes\_Basic\_10{sample}
 
 <a name="crosschart-scale"/>
 ## One Scale for Different Charts
