@@ -49,25 +49,23 @@ On the chart below you may see 3 different stroke types and dashboard without st
 <a name="fill"/>
 ## Fill Settings
 
-With AnyChart you it is possible to color background with a solid color, with a gradient transition or fill it with an image. Fill is configured in the **.fill()** attribute and depending on the type it has different settings.
+With AnyChart it is possible to color background with a solid color, with a gradient transition or fill it with an image. Fill is configured in the **.fill()** attribute and depending on the type it has different settings.
 
 <a name="solid-fill"/>
 ### Solid Fill
 
-When fill type is set to "Solid", background is filled with one color and you can control this color opacity. Colors can be defined with any of the methods described in Color management tutorial. Typical solid fill settings are:
+When fill type is set to "Solid", background is filled with one color and you can control this color opacity.<!-- Colors can be defined with any of the methods described in [Linl in need]]Color management tutorial[/link].--> Typical solid fill settings are:
 
-XML Syntax
-XML Code
-Plain code
-01
-<fill type="Solid" color="RoyalBlue" opacity="0.5" />
+```
+    chart.background().fill('gold');
+```
+
 In the sample below chart, data plot and chart title backgrounds are colored with a solid fill:
 
-Live Sample:  Background Solid Fill Sample
+{sample}GAS\_Background\_02{sample}
 
-to top
-
-Gradient Fill
+<a name="gradient-fill"/>
+### Gradient Fill
 
 AnyChart allows to create Gradient fills for any background. To create gradient fill you need to set type="Gradient" and configure gradient settings in <gradient> sub-node.
 
@@ -75,21 +73,12 @@ There are two types of gradient fills - "Linear" and "Radial"
 
 Typical gradient border settings look like:
 
-XML Syntax
-XML Code
-Plain code
-01
-<fill enabled="True" type="Gradient">
-02
-  <gradient type="Linear">
-03
-    <key position="0" color="Green" opacity="0.5" />
-04
-    <key position="1" color="Blue" opacity="1" />
-05
-  </gradient>
-06
-</fill>
+``` 
+    chart.background().fill({
+        keys: ['.1 lightblue', '.7 blue', '.9 darkblue'],
+        angle: -130,
+    });
+```
 The sample below demonstrates how gradient fill can be used to create really attractive area chart, if you will take a closer look at this chart configuration XML you will see that sometimes color is defined as "DarkColor(#1D8BD1)" or "DarkColor(%Color)" - these are color transformation functions and color parameters, to understand what they are and how they can be used please refer to Color management tutorial.
 
 Live Sample:  Background Linear Gradient Fill Sample
