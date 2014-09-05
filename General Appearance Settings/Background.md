@@ -47,13 +47,12 @@ On the chart below you may see 3 different stroke types and dashboard without st
 {sample}GAS\_Background\_01{sample}
 
 <a name="fill"/>
-##Fill Settings
+## Fill Settings
 
-With AnyChart you it is possible to color background with a solid color, with a gradient transition or fill it with an image. Fill is configured in the <fill> node and depending on the type it has different settings. Note that hatch fill is not a fill type - it is a separate entity and can be combined with any fill type.
+With AnyChart you it is possible to color background with a solid color, with a gradient transition or fill it with an image. Fill is configured in the **.fill()** attribute and depending on the type it has different settings.
 
-to top
-
-Solid Fill
+<a name="solid-fill"/>
+### Solid Fill
 
 When fill type is set to "Solid", background is filled with one color and you can control this color opacity. Colors can be defined with any of the methods described in Color management tutorial. Typical solid fill settings are:
 
