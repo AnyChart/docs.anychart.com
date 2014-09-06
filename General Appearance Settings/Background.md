@@ -79,19 +79,18 @@ Typical gradient border settings look like:
         angle: -130,
     });
 ```
-The sample below demonstrates how gradient fill can be used to create really attractive area chart, if you will take a closer look at this chart configuration XML you will see that sometimes color is defined as "DarkColor(#1D8BD1)" or "DarkColor(%Color)" - these are color transformation functions and color parameters, to understand what they are and how they can be used please refer to Color management tutorial.
+The sample below demonstrates how gradient fill can be used to create really attractive area chart.
 
-Live Sample:  Background Linear Gradient Fill Sample
+{sample}GAS\_Background\_03{sample}
 
 The same sample, but with radial gradient fill:
 
-Live Sample:  Background Radial Gradient Fill Sample
+{sample}GAS\_Background\_04{sample}
 
-to top
+<a name="image-fill"/>
+### Image Fill
 
-Image Fill
-
-Image fill allows you to set an image as a background, an image can be stretched, tiled or fit by proportions. Supported image formats are JPEG, GIF, PNG.
+Image fill allows you to set an image as a background, an image can be **stretched**, **tiled** or fit by **proportions**. Supported image formats are JPEG, GIF, PNG.
 
 Typical image background settings are:
 
