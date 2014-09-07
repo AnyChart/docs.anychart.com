@@ -64,7 +64,7 @@ anychart.onDocumentReady(function() {
         //set corner type
         .cornerType('round')
         //apply corner type only for top-left (set 10px radius) and bottom-right (set 30px radius) corners.
-        .corners(10, 0, 30, 0);
+        .corners(10, 0, 10, 0);
 
     //disable axes titles
     roundCornersChart.yAxis().title().enabled(false);
