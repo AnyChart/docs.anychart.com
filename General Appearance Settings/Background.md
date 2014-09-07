@@ -1,13 +1,13 @@
 # Background                                                                                 
-                                                                                    
-* [Overview](#overview)                                      
-* [Stroke Settings](#stroke)                                 
+
+* [Overview](#overview)
+* [Stroke Settings](#stroke)
 * [Fill Settings](#fill)
-  * [Solid Fill](#solid-fill)         
-  * [Gradient Fill](#gradient-fill)                  
-  * [Image Fill](#image-fill)                           
-* [Corners Settings](#corners)                                
-* [Inside Margins Settings](#margins)                          
+  * [Solid Fill](#solid-fill)
+  * [Gradient Fill](#gradient-fill)
+  * [Image Fill](#image-fill)
+* [Corners Settings](#corners)
+<!--* [Inside Margins Settings](#margins)-->                          
                                                            
 <a name="overview"/>
 ## Overview
@@ -94,84 +94,44 @@ Image fill allows you to set an image as a background, an image can be **stretch
 
 Typical image background settings are:
 
-XML Syntax
-XML Code
-Plain code
-01
-<fill enabled="True" type="Image" image_url="sample.jpg" image_mode="Tile" />
-In the sample below chart background is filled with a JPEG image:
+```
+    chart.background().fill({
+        src: 'http://static.anychart.com/underwater.jpg',
+        mode: acgraph.vector.ImageFillMode.FILL
+    });
+```
 
-Live Sample:  Background Image Fill Sample
+{sample}GAS\_Background\_05{sample}
 
-to top
+<a name="corners"/>
+## Corners Settings
 
-Resources Path
+You can adjust the shape of borders corners, there are 4 types for corners: **"Square"**(none), **"Rounded"**, **"Cut"** and **"RoundedInner"**. Appearance of these types is shown on the image below:
 
-By the way: you can configure path for loading external resources - like images. In the sample above we've set:
-
-XML Syntax
-XML Code
-Plain code
-01
-<?xml version="1.0" encoding="UTF-8"?>
-02
-<anychart>
-03
-  <settings>
-04
-    <resources path="../img/" path_type="relativeToSWF" />
-05
-  </settings>
-06
-</anychart>
-This way we've told AnyChart where it should look for images and were able to set only: image_url="image_fill.jpg" in image fill settings. Path type can be: "RelativeToHTML", "RelativeToSWF", "Absolute".
-
-to top
-
-Hatch-Fill Settings
-
-Hatch fill covers background with the given repeating pattern of the defined size, these fills are extremely useful for black and white printing and for those who are color-blind.
-
-XML Syntax
-XML Code
-Plain code
-01
-<hatch_fill enabled="True" type="Confetti" pattern_size="5" color="Black" thickness="1" />
-In the sample below chart and data plot backgrounds are filled with the different hatch fills:
-
-Live Sample:  Background Hatch-Fill Sample
-
-to top
-
-Corners Settings
-
-You can adjust the shape of borders corners, there are 4 types for corners: "Square", "Rounded", "Cut" and "RoundedInner". Appearance of these types is shown on the image below:
-
-
+![http://anychart.com/products/anychart/docs/users-guide/img/corners_table.png]
 
 For "Rounded", "Cut" and "RoundedInner" types you can control not only a shape, but also a radius of "rounding" or "cutting" for all corners, or given corners.
 
 Typical settings for "rounding" all corners are:
 
-XML Syntax
-XML Code
-Plain code
-01
-<corners type="Rounded" all="10" />
-To set only left top corner shape to "Cut" type settings like this should be used:
+```
+    chart.background().stroke('3 red')
+        .cornerType('round')
+        .corners(10);
+```
+Also, it is possible to choose radius of any corner. Just set four number for every corner in this order: top-left, top-right, bottom-left, bottom-right corner. If a radius set to 0, no effect would be applied. Setting for bottom-right and bottom-left corners adjusting:
+```
+    chart.background().stroke('black')
+        .cornerType('cut')
+        .corners(0, 0, 5, 5);
+```
 
-XML Syntax
-XML Code
-Plain code
-01
-<corners type="Cut" all="0" left_top="10" />
 The dashboard below demonstrates all possible corners types:
 
-Live Sample:  Background Corners Sample
-
-to top
-
-Inside margins
+{sample}GAS\_Background\_06{sample}
+<!--
+<a name="margins"/>
+## Inside margins
 
 If you want to increase or decrease the spaces between border and background content (texts, chart, etc.) you can do that setting inside margins. Margins are measured in pixels. Every side margin can be set individually, "all" attribute is used to set them all together. Note that every individual settings override "all" value.
 
@@ -211,4 +171,4 @@ Live Sample:  Background Effects Sample
 
 to top
 
-Current Page Online URL: Background Configuration Tut
+Current Page Online URL: Background Configuration Tut-->

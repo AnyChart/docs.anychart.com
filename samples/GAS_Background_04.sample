@@ -32,24 +32,16 @@ anychart.onDocumentReady(function() {
         {x: "P20", value: 28}
     ]);
 
-    //set data
     series = chart.splineArea(data);
-
-    //adjust data visualization
-    series.fill('yellow 0.7').hoverFill('red');series.markers().enabled(true).fill('yellow');
+    series.fill('darkred 0.8').hoverFill('red').stroke('red');
+    series.markers().enabled(true).fill('red');
     series.hoverMarkers().enabled(true).fill('white').stroke('gray');
 
     //adjust title background fill
-    chart.title().text('Gradient Background Fill').background().enabled(true).fill('gold');
+    chart.title().text('Radial Gradient Background Fill').background().enabled(true).fill('gold');
 
     //adjust chart background fill
-    chart.background().fill({
-        //set colors position
-        keys: ['.1 lightblue', '.7 blue', '.9 darkblue'],
-        //set angle of colors drawing
-        angle: -130,
-
-    });
+    chart.background().fill(['.5 lightblue', '.9 blue', 'darkblue'], 0.5, 0.5, -130);
 
     //adjust axes strokes, labels and ticks
     chart.xAxis().stroke('white').labels().fontColor('white');
@@ -68,9 +60,9 @@ anychart.onDocumentReady(function() {
     chart.yAxis().title().enabled(false);
 
     //adjust grid
-    chart.grid(0).stroke('white').evenFill('white 0.4').oddFill('white 0.4').layout('horizontal');
-    chart.minorGrid().stroke('white');
-    chart.grid(1).stroke('white').layout('vertical');
+    chart.grid(0).stroke('#333333').evenFill('white 0.2').oddFill('white 0.2').layout('horizontal');
+    chart.minorGrid().stroke('while');
+    chart.grid(1).stroke('#333333').layout('vertical');
 
     //draw
     chart.container('container').draw();
