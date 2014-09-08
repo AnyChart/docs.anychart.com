@@ -11,7 +11,7 @@
                           
 <a name="overview"/>
 ## Overview
-Knowledge about line and border configuration parameters is very important, because AnyChart allows to configure almost any line you can see on the chart: Lines in charts, Grids, Chart, Tooltips and Labels borders, and even Tickmark Lines.
+Knowledge about line and stroke configuration parameters is very important, because AnyChart allows to configure almost any line you can see on the chart: Lines in charts, Grids, Chart, Tooltips and Labels strokes, and even Tickmark Lines.
 
 The name of the method is always **.line()** or **.stroke()**.
 In this tutorial all line attributes and features are described.
