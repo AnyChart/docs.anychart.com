@@ -6,8 +6,7 @@
   * [Solid Fill](#solid-fill)
   * [Gradient Fill](#gradient-fill)
   * [Image Fill](#image-fill)
-* [Corners Settings](#corners)
-<!--* [Inside Margins Settings](#margins)-->                          
+* [Corners Settings](#corners)                         
                                                            
 <a name="overview"/>
 ## Overview
@@ -129,46 +128,3 @@ Also, it is possible to choose radius of any corner. Just set four number for ev
 The dashboard below demonstrates all possible corners types:
 
 {sample}GAS\_Background\_06{sample}
-<!--
-<a name="margins"/>
-## Inside margins
-
-If you want to increase or decrease the spaces between border and background content (texts, chart, etc.) you can do that setting inside margins. Margins are measured in pixels. Every side margin can be set individually, "all" attribute is used to set them all together. Note that every individual settings override "all" value.
-
-Typical settings for inside margins are:
-
-XML Syntax
-XML Code
-Plain code
-01
-<inside_margin left="5" top="5" right="5" bottom="5" all="10" />
-In the sample below we will adjust margins for chart title and for chart itself.
-
-Live Sample:  Background Margins Sample
-
-to top
-
-Using Effects
-
-You can apply one or several effects to background, to that you should specify <effects> node and add required effects sub-nodes. To learn more about effects, please refer to Using Effects Tutorial .
-
-Typical effects settings are:
-
-XML Syntax
-XML Code
-Plain code
-01
-<effects>
-02
-  <glow enabled="true" color="Red" blur_x="20" blur_y="20" opacity="0.5" />
-03
-  <drop_shadow enabled="true" />
-04
-</effects>
-Below you can see a sample of glow effect application to chart background.
-
-Live Sample:  Background Effects Sample
-
-to top
-
-Current Page Online URL: Background Configuration Tut-->

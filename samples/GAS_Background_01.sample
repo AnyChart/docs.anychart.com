@@ -116,7 +116,7 @@ anychart.onDocumentReady(function() {
     dashedStrokeChart.draw();
 
 
-    //chat with labels inside
+    //chat with disabled stroke
     var disabledStrokeSeries = anychart.columnChart();
 
     disabledStrokeSeries.title().text('Disabled Stroke');
@@ -126,7 +126,7 @@ anychart.onDocumentReady(function() {
     disabledStrokeSeries.xAxis().title().enabled(false);
     disabledStrokeSeries.yAxis().title().enabled(false);
     
-    //disabling labels for axes
+    //disabling labels and ticks for axes
     disabledStrokeSeries.yAxis().labels().enabled(false);
     disabledStrokeSeries.yAxis().ticks().enabled(false);
     disabledStrokeSeries.yAxis().minorTicks().enabled(false);

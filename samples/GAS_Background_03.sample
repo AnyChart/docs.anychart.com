@@ -48,7 +48,6 @@ anychart.onDocumentReady(function() {
         keys: ['.1 lightblue', '.7 blue', '.9 darkblue'],
         //set angle of colors drawing
         angle: -130,
-
     });
 
     //adjust axes strokes, labels and ticks
