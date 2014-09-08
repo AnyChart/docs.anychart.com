@@ -107,7 +107,7 @@ Typical image background settings are:
 
 You can adjust the shape of borders corners, there are 4 types for corners: **"Square"**(none), **"Rounded"**, **"Cut"** and **"RoundedInner"**. Appearance of these types is shown on the image below:
 
-![http://anychart.com/products/anychart/docs/users-guide/img/corners_table.png]
+![](http://anychart.com/products/anychart/docs/users-guide/img/corners_table.png)
 
 For "Rounded", "Cut" and "RoundedInner" types you can control not only a shape, but also a radius of "rounding" or "cutting" for all corners, or given corners.
 

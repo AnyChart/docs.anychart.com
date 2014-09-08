@@ -107,8 +107,8 @@ Caps and joints are special parameters that define how line endings and bends ar
 
 The caps attribute specifies the caps style to use in drawing lines. You can specify the following three types of caps: **"none"**(or "butt"), **"round"** and **"square"**, as the following example shows:
 
-![http://www.anychart.com/products/anychart/docs/users-guide/img/linecap.jpg]
+![](http://www.anychart.com/products/anychart/docs/users-guide/img/linecap.jpg)
 
 The joint attribute specifies the joint style to use in drawing lines. It supports three types of joints: **"miter", **"round"**, and **"bevel"**, as the following example shows:
 
-![http://www.anychart.com/products/anychart/docs/users-guide/img/linejoin.jpg]
+![](http://www.anychart.com/products/anychart/docs/users-guide/img/linejoin.jpg)
