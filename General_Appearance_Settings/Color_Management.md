@@ -81,9 +81,22 @@ LightColor function is used to return for sure a color that is lighter than a gi
 
 Sample: LightColor(Red) = LightColor(RGB(255,0,0)) = LightColor(#FF0000) = #FF5959
 
-Input color	LightColor
-\#FF0000	 	#FF5959	 
-DarkColor
+<table width="700" class="dtTABLE">
+<tbody>
+<tr>
+<th colspan="2">Input color</th>
+<th colspan="2">LightColor</th>		
+</tr>
+<tr>
+<td width="66">#FF0000</td>
+<td width="270" bgcolor="#FF0000">&nbsp;</td>
+<td width="66">#FF5959</td>		
+<td width="270" bgcolor="#FF5959">&nbsp;</td>		
+</tr>
+</tbody>
+</table>
+
+### DarkColor
 
 (Red) = a50000
 
