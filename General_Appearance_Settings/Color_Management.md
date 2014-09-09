@@ -6,9 +6,9 @@
   * [RGB Macro](#rgb_macro)
   * [Web-Colors](#web_colors)
 * [Color Transformation](#color_transformation)
-  *[Light Color](#light)
-  *[Dark Color](#dark)
-  *[Blend](#blend)
+  * [Light Color](#light)
+  * [Dark Color](#dark)
+  * [Blend](#blend)
 <a name="overview"/>
 ## Overview
 AnyChart allows you to set color of any element of the chart, and moreover - it provides a very user/designer/developer friendly mechanism of color setting. Web-developers usually work with Hexadecimal or Web-Colors, desktop developer use RGB or HSB notation. AnyChart supports all this formats and gives user the way for built-in color transformation.

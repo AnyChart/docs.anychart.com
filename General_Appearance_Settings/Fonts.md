@@ -16,7 +16,7 @@ The texts have [built-in formatting settings](#settings) (like <b>bold</b>, <i>i
 
 All text elements, except of legend items and tooltips can be rotated, there are some special things you should know about text rotation - they are covered below in Text Rotation section.
 
-<a name="overview"/>
+<a name="settings"/>
 ## Basic Fonts Settings
 
 Following attributes controls appearance of the text: **fontFamily()**, **.fontSize()**, **.fontWeight()**, **.fontStyle()**, underline, color and render_as_html. Typical font settings:
@@ -29,18 +29,14 @@ Following attributes controls appearance of the text: **fontFamily()**, **.fontS
     .useHTML(false)
 ```
 
-<font family="Tahoma" color="Black" size="12" bold="True" italic="False" underline="False" render_as_html="False" />
 These settings are applied to the given all text within text field, if you want to do more complex formatting (only part of the text is bold, for example) - consider using HTML formatting.
 
 Simple text formatting is shown in International Symbols Support Sample below.
 
-to top
-
-International Symbols Support
+<a name="international"/>
+## International Symbols Support
 
 Only few words (and a sample) about using International Symbols in AnyChart - AnyChart supports a total Internationalization.
-
-All you need to do to use non-latin symbols in titles, labels, tooltips, legend or else - just use them in <format> or <text> nodes and make sure that you XML files are UTF-8 encoded.
 
 This is sample chart with labels, tooltips and legend in English, French, Portuguese, Spanish, Russian, Chinese and Norwegian.
 
