@@ -6,7 +6,9 @@
   * [RGB Macro](#rgb_macro)
   * [Web-Colors](#web_colors)
 * [Color Transformation](#color_transformation)
-
+  *[Light Color](#light)
+  *[Dark Color](#dark)
+  *[Blend](#blend)
 <a name="overview"/>
 ## Overview
 AnyChart allows you to set color of any element of the chart, and moreover - it provides a very user/designer/developer friendly mechanism of color setting. Web-developers usually work with Hexadecimal or Web-Colors, desktop developer use RGB or HSB notation. AnyChart supports all this formats and gives user the way for built-in color transformation.
@@ -75,6 +77,7 @@ To make design easier - AnyChart Provides several color transformation functions
 </tbody>
 </table>
 
+<a name="light"/>
 ### LightColor
 
 LightColor function is used to return for sure a color that is lighter than a given, for example, if input color is Black - we will get some non-black color, that can be used for highlighting element. Input color can be specified in any of the specified above.
@@ -101,6 +104,7 @@ Common LghtColor sample:
 
 {sample}GAS\_Color\_Management\_01{sample}
 
+<a name="dark"/>
 ### DarkColor
 
 (Red) = a50000
@@ -129,6 +133,7 @@ Common DarkColor sample:
 
 {sample}GAS\_Color\_Management\_02{sample}
 
+<a name="blend"/>
 ### Blend
 
 Blend function allows you to mix two colors with a given ratio, it gives even wider control over getting a right tone.
