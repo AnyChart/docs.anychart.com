@@ -92,7 +92,7 @@ DarkColor function is used to return for sure a color that is darker than a give
 Sample: DarkColor(Red) = DarkColor(RGB(255,0,0)) = DarkColor(#FF0000) = #A50000
 
 Input color	DarkColor
-#FF0000	 	#A50000	 
+\#FF0000	 	#A50000	 
 Blend
 
 Blend function allows you to mix two colors with a given ratio, it gives even wider control over getting a right tone.
