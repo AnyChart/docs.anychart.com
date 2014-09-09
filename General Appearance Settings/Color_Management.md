@@ -4,7 +4,6 @@
 * [Color Formats](#color_formats)
   * [Hexadecimal](#hexadecimal)
   * [RGB Macro](#rgb_macro)
-  * [HSB Macro](#hsb_macro)
   * [Web-Colors](#web_colors)
 * [Color Transformation](#color_transformation)
 
@@ -41,38 +40,42 @@ This format, just as Hexadecimal, sets color using three components: red, green 
     .fontColor('rgb(0,0,255)');
 ```
 
-<a name="hsb_macro"/>
-### HSB Macro
+<a name="web_colors"/>
+### Web-Colors
 
-HSB sets color in Hue-Saturation-Brightness color space. Syntax: HSB(hue,saturation,brightness), where hue – varies from 0 to 360, saturation – from 0 to 100, and brightness - 0 to 100. Sample colors: HSB(0,100,100) – Red color, HSB(60,100,100) – yellow color, HSB(0,0,100) – white, etc.
+Also you can use Web-Color constants. For example: "Red", "Gold", "RoyalBlue", etc. Table with full list of color constants, along with their hexadecimal, RGB and HSB you can find on [Web-Color Constants Table](Colors_table).
 
-XML Syntax
-XML Code
-Plain code
-01
-<font color="HSB(240,100,50)" />
-to top
+```
+    .fontColor('Blue);
+```
 
-Web-Colors
-
-Also you can use Web-Color constants. For example: "Red", "Gold", "RoyalBlue", etc. Table with full list of color constants, along with their hexadecimal, RGB and HSB you can find on Web-Color Constants Table.
-
-XML Syntax
-XML Code
-Plain code
-01
-<font color="Blue" />
-to top
-
-Color Transformation
+<a name="color_transformation"/>
+## Color Transformation
 
 To make design easier - AnyChart Provides several color transformation functions, below you will find their reference and a sample of their usage in creation of you own style for Column charts.
 
-Function	Description
-LightColor(Color)	Returns Lighter color than given
-DarkColor(Color)	Returns Darker color than given
-Blend(Color1, Color2, Ratio)	Blend two colors with a given Ratio
-LightColor
+<table class="dtTABLE">
+<tbody>
+<tr>
+<th width="411">Function</th>
+<th width="277">Description</th>		
+</tr>
+<tr>
+<td>LightColor(Color)</td>
+<td>Returns Lighter color than given </td>
+</tr>
+<tr>
+<td>DarkColor(Color)</td>
+<td>Returns Darker color than given </td>
+</tr>
+<tr>
+<td>Blend(Color1, Color2, Ratio)</td>
+<td>Blend two colors with a given Ratio</td>
+</tr>
+</tbody>
+</table>
+
+### LightColor
 
 LightColor function is used to return for sure a color that is lighter than a given, for example, if input color is Black - we will get some non-black color, that can be used for highlighting element. Input color can be specified in any of the specified above.
 
