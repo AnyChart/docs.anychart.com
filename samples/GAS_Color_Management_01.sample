@@ -5,10 +5,10 @@ anychart.onDocumentReady(function() {
 
 var color1 = '#FF0000';
 
-//Variable for controlling color blend
+//Variable for controlling color enlightenment
 var colorIndex = 0;
 
-//color blending function
+//color lightning function
 function colorizer(){
     var mixColor1 = anychart.color.lighten(color1, colorIndex);
     colorIndex = colorIndex + 0.2;

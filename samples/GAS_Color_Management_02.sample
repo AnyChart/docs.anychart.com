@@ -5,7 +5,7 @@ anychart.onDocumentReady(function() {
 
 var color1 = '#FF0000';
 
-//Variable for controlling color blend
+//Variable for controlling color darkness
 var colorIndex = 0;
 
 //color darken function
