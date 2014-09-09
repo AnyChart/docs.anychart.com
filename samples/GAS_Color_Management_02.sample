@@ -33,7 +33,7 @@ function colorizer(){
     chart.column(data).tooltip().contentFormatter(function(){
         var mixColor2 = anychart.color.darken(color1, (this.index * 0.2));
         return 'Input Color: ' + color1
-            + '\nBlend Ration: ' + this.index * 2 / 10
+            + '\nDarken Ration: ' + this.index * 2 / 10
             + '\nResult: ' + mixColor2;
     });
 
