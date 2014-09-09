@@ -42,30 +42,22 @@ This is sample chart with labels, tooltips and legend in English, French, Portug
 
 Live Sample:  Font Sample International Symbols
 
- 
+{sample}GAS\_Background\_01{sample}
 
-to top
+<a name="html-texts"/>
+## Using HTML formatting
 
-Using HTML formatting
+If you want to do a complex formatting of the text - consider using HTML formatting. To enable it you have to set **.useHTML(true)**:
 
-If you want to do a complex formatting of the text - consider using HTML formatting. To enable it you have to set render_as_html = "True" in <font> node. Then you need to use CDATA section with HTML tags within <format> or <text> nodes:
+```
+  series.labels().useHtml(true).textFormatter(funtuion(){
+    return '<b>Name: </b>' + this.x ;
+  })
+```
 
-XML Syntax
-XML Code
-Plain code
-01
-<label_settings>
-02
-  <font render_as_html="True" />
-03
-  <format><![CDATA[%cbegin <b>Name:</b> {%Name} %cend]]></format>
-04
-</label_settings>
-to top
+<a name="supported-tags"/>
+### Supported HTML tags
 
-Supported HTML tags
-
- 
 
 Tag	Description
 Bold tag	 The <b> tag renders text as bold. A bold typeface must be available for the font used.
