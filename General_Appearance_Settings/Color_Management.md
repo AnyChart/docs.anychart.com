@@ -78,9 +78,9 @@ To make design easier - AnyChart Provides several color transformation functions
 ### LightColor
 
 LightColor function is used to return for sure a color that is lighter than a given, for example, if input color is Black - we will get some non-black color, that can be used for highlighting element. Input color can be specified in any of the specified above.
-
+<br/>
 Sample: LightColor(Red) = LightColor(RGB(255,0,0)) = LightColor(#FF0000) = #FF5959
-
+<br/><br/>
 <table width="700" class="dtTABLE">
 <tbody>
 <tr>
