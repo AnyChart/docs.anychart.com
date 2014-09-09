@@ -79,12 +79,15 @@ To make design easier - AnyChart Provides several color transformation functions
 
 LightColor function is used to return for sure a color that is lighter than a given, for example, if input color is Black - we will get some non-black color, that can be used for highlighting element. Input color can be specified in any of the specified above.
 <br/>
-Sample: LightColor(Red) = LightColor(RGB(255,0,0)) = LightColor(#FF0000) = #FF5959
+Common LghtColor sample:
+```
+    anychart.color.lighten('#FF0000', 0.2)
+```
 <br/><br/>
 <table width="700" class="dtTABLE">
 <tbody>
 <tr>
-<th colspan="2">Input color</th>
+<th colspan="2"><b>Input color</b></th>
 <th colspan="2">LightColor</th>		
 </tr>
 <tr>
@@ -96,121 +99,86 @@ Sample: LightColor(Red) = LightColor(RGB(255,0,0)) = LightColor(#FF0000) = #FF59
 </tbody>
 </table>
 
+{sample}GAS\_Color\_Management\_01{sample}
+
 ### DarkColor
 
 (Red) = a50000
 
 DarkColor function is used to return for sure a color that is darker than a given, for example, if input color is White - we will get some non-white color, that can be used for outlining an element. Input color can be specified in any of the specified above.
+<br/><br/>
+Common DarkColor sample:
+```
+    anychart.color.darken('#FF0000', 0.2)
+```
+<br/><br/>
+<table width="700" class="dtTABLE">
+<tbody>
+<tr>
+<th colspan="2">Input color</th>
+<th colspan="2">DarkColor</th>		
+</tr>
+<tr>
+<td width="66">#FF0000</td>
+<td width="270" bgcolor="#FF0000">&nbsp;</td>
+<td width="66">#A50000</td>		
+<td width="270" bgcolor="#A50000">&nbsp;</td>		
+</tr>
+</tbody>
+</table>
 
-Sample: DarkColor(Red) = DarkColor(RGB(255,0,0)) = DarkColor(#FF0000) = #A50000
+{sample}GAS\_Color\_Management\_02{sample}
 
-Input color	DarkColor
-\#FF0000	 	#A50000	 
-Blend
+### Blend
 
 Blend function allows you to mix two colors with a given ratio, it gives even wider control over getting a right tone.
+<br/><br/>
+Common blend sample:
+```
+var color1 = [255, 0, 0];
+var color2 = [0, 0, 255];
 
-Sample: Blend(Red, Green, 0.5) = #7F4000
-
-Input color	Blend color	Ratio	Result Color
-#FF0000	 	#008000	 	0 (full mixture)	#008000	 
-#FF0000	 	#008000	 	0.5	#7F4000	 
-#FF0000	 	#008000	 	1 (no mixture)	#FF0000	 
-Sample Column Chart Style Using Color Functions
-
-In this sample we will use Color transformations to create a style for Column chart. The idea is that we will use a palette, that contains basic colors, and all states (hover, pushed, selected, etc.) - will use color transformations.
-
-Note: %Color keyword is used in styles to get the Color of the element, this color may be set using palette or directly to point or series. In the sample you can see that in style we do modify only an "abstract" color - having no knowledge what color will be set to a column. This allows us to create some kind of "universal" style: however some would not look nice when using this style, for example: "White" - cause there is no color lighter than "White", so it is not possible to highlight it. So you should keep this in mind when creating your own palettes.
-
-Sample Style definition: Style "ColorFunctions":
-
-We will define style for Column charts named "ColorFunctions" in which colors of a fill and background will be defined for all states: normal, hovered, pushed, selected, selected hovered and how points with a missing value, that was interpolated by AnyChart should be displayed:
-
-XML Syntax
-XML Code
-Plain code
-01
-<bar_style name="ColorFunctions">
-02
-  <border type="Solid" color="DarkColor(%Color)" thickness="1" />
-03
-  <effects enabled="false" />
-04
-  <states>
-05
-    <normal>
-06
-      <fill type="Solid" color="%Color" opacity="1" />
-07
-      <effects enabled="false" />
-08
-    </normal>
-09
-    <hover>
-10
-      <fill type="Solid" color="LightColor(%Color)" opacity="1" />
-11
-      <effects enabled="false" />
-12
-    </hover>
-13
-    <pushed>
-14
-      <fill type="Solid" color="DarkColor(%Color)" opacity="1" />
-15
-      <border type="Solid" color="Black" thickness="2" />
-16
-      <effects enabled="true">
-17
-        <bevel enabled="true" />
-18
-      </effects>
-19
-    </pushed>
-20
-    <selected_normal>
-21
-      <fill type="Solid" color="LightColor(%Color)" opacity="1" />
-22
-      <hatch_fill enabled="True" color="DarkColor(%Color)" />
-23
-    </selected_normal>
-24
-    <selected_hover>
-25
-      <fill type="Solid" color="LightColor(%Color)" opacity="1" />
-26
-      <hatch_fill enabled="True" color="%Color" />
-27
-    </selected_hover>
-28
-    <missing>
-29
-      <fill type="Gradient" opacity="1">
-30
-        <gradient angle="45">
-31
-          <key position="0" color="LightColor(%Color)" />
-32
-          <key position="0.5" color="White" />
-33
-          <key position="1" color="LightColor(%Color)" />
-34
-        </gradient>
-35
-      </fill>
-36
-      <hatch_fill enabled="false" />
-37
-    </missing>
-38
-  </states>
-39
-</bar_style>
- 
-
-Live Sample:  Sample Single-Series Column Chart with Color Management Functions
-
-to top
-
-Current Page Online URL: Color Management
+function colorizer(){
+    var mixColor1 = anychart.color.blend(color1, color2, 0.2);
+    return 'rgb(' + mixColor1.join(',') + ')';
+}
+```
+<br/><br/>
+<table width="700" class="dtTABLE">
+<tbody><tr>
+<th colspan="2">Input color</th>
+<th colspan="2">Blend color</th>		
+<th>Ratio</th>				
+<th colspan="2">Result Color</th>		
+</tr>
+<tr>
+<td width="100">#FF0000</td>
+<td width="100" bgcolor="#FF0000">&nbsp;</td>
+<td width="100">#008000</td>		
+<td width="100" bgcolor="#008000">&nbsp;</td>		
+<td width="100">0 (full mixture) </td>		
+<td width="100">#008000</td>		
+<td width="100" bgcolor="#008000">&nbsp;</td>		
+</tr>
+<tr>
+<td>#FF0000</td>
+<td bgcolor="#FF0000">&nbsp;</td>
+<td>#008000</td>
+<td bgcolor="#008000">&nbsp;</td>
+<td>0.5 </td>
+<td>#7F4000</td>
+<td bgcolor="#7F4000">&nbsp;</td>
+</tr>
+<tr>
+<td>#FF0000</td>
+<td bgcolor="#FF0000">&nbsp;</td>
+<td>#008000</td>
+<td bgcolor="#008000">&nbsp;</td>
+<td>1 (no mixture) </td>
+<td>#FF0000</td>
+<td bgcolor="#FF0000">&nbsp;</td>
+</tr>
+</tbody></table>		
+	 
+In the sample below a function pluses 0.2 to a blend ration for each column:
+{sample}GAS\_Color\_Management\_03{sample}
