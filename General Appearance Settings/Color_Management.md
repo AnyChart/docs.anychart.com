@@ -82,7 +82,7 @@ LightColor function is used to return for sure a color that is lighter than a gi
 Sample: LightColor(Red) = LightColor(RGB(255,0,0)) = LightColor(#FF0000) = #FF5959
 
 Input color	LightColor
-#FF0000	 	#FF5959	 
+\#FF0000	 	#FF5959	 
 DarkColor
 
 (Red) = a50000
