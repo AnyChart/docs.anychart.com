@@ -6,7 +6,6 @@
 * [Using HTML formatting](#html-texts)
   * [Supported HTML tags](#supported-tags)
 * [Text Rotation](#rotation)
-* [Text Effects](#effects)
 
 <a name="overview"/>
 ## Overview
@@ -102,56 +101,14 @@ If you want to do a complex formatting of the text - consider using HTML formatt
 
 The sample Pie chart below demonstrates all available tags in slice labels formatting:
 
-Live Sample:  Html labels text formattin sample
+{sample}GAS\_Background\_01{sample}
 
- 
+<a name="supported-tags"/>
+## Text Rotation
 
-to top
+All text elements, except of legend items and tooltips can be rotated, rotation is set using **.rotation()** attribute, for example to rotate x axis Labels you have to set:
 
-Text Rotation
-
-All text elements, except of legend items and tooltips can be rotated, rotation is set using rotation attribute of an appropriate node, for example to rotate X-Axis Labels you have to set:
-
-XML Syntax
-XML Code
-Plain code
-01
-<axes>
-02
-  <x_axis>
-03
-    <labels rotation="90" />
-04
-  </x_axis>
-05
-</axes>
-Important note: AnyChart recommends you to use rotation angles divisible by 90 - when these angles are used you will always get a required label properly displayed - no matter what font family or character set is used.
-
-to top
-
-Text Effects
-
-You can apply the effects to Text. Effects are described in Effects tutorial. Typical effects settings are:
-
-XML Syntax
-XML Code
-Plain code
-01
-<font>
-02
-  <effects enabled="True">
-03
-    <drop_shadow enabled="True" />
-04
-  </effects>
-05
-</font>
-Here is a sample of Aqua styled pie chat with labels on slices. Labels text drops shadow on the slices:
-
-Live Sample:  Font effects sample Pie chart
-
- 
-
-to top
-
-Current Page Online URL: Fonts Tutorial
+```
+  chart.xAxis().labels().rotation(90);
+```
+**Important note:** AnyChart recommends you to use rotation angles divisible by 90 - when these angles are used you will always get a required label properly displayed - no matter what font family or character set is used.
