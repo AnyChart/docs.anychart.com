@@ -41,7 +41,7 @@ This is sample chart with labels, tooltips and legend in English, French, Portug
 
 Live Sample:  Font Sample International Symbols
 
-{sample}GAS\_Background\_01{sample}
+{sample}GAS\_Fonts\_01{sample}
 
 <a name="html-texts"/>
 ## Using HTML formatting
@@ -101,7 +101,7 @@ If you want to do a complex formatting of the text - consider using HTML formatt
 
 The sample Pie chart below demonstrates all available tags in slice labels formatting:
 
-{sample}GAS\_Background\_01{sample}
+{sample}GAS\_Fonts\_02{sample}
 
 <a name="supported-tags"/>
 ## Text Rotation
