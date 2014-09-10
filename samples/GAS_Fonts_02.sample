@@ -1,0 +1,33 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+anychart.onDocumentReady(function() {
+  var customAttributes = {
+    Men: "<u><a style=\'font-size:16 px;\'><b>Men</b></a> - 50.3%</u><br> <i>For every 100 girls, 105 boys are born, but males have a higher risk of dying than females, both in childhood and at adult ages.</i>",
+    Women: "<u><a style=\'font-size:16 px;\'><b>Women</b></a> - 49.7%</u><br>The number of men and women in the world is roughly equal, though men hold a slight lead with 101 men for 100 women."
+  };
+
+  //set data and define chart type
+  var data = anychart.data.set([
+    {x: 'Men', value: 50.3},
+    {x: 'Women', value: 49.7}
+  ]);
+
+
+  chart = anychart.pieChart(data);
+  //set chart labels
+  chart.labels()
+      .enabled(true)
+      .fontColor('black')
+      .fontWeight(400)
+      .width(100)
+      .position('outside')
+      .useHtml(true)
+      .textFormatter(function() {
+        return customAttributes[this.x];
+      });
+
+  chart.title().text('HTML Text Formatting Sample');
+  //draw
+  chart.container('container').draw();
+});

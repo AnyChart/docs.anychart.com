@@ -59,18 +59,46 @@ If you want to do a complex formatting of the text - consider using HTML formatt
 ### Supported HTML tags
 
 
-Tag	Description
-Bold tag	 The <b> tag renders text as bold. A bold typeface must be available for the font used.
-Break tag	The <br> tag creates a line break in the text field. You must set the text field to be a multi line text field to use this tag.
-Font tag	 The <font> tag specifies a font or list of fonts to display the text.The font tag supports the following attributes:
-color - All AnyChart Color values are supported.
-face - Specifies the name of the font to use.
-size - Specifies the size of the font. You can use absolute pixel sizes, such as 16 or 18, or relative point sizes, such as +2 or -4.
-Italic tag	 The <i> tag displays the tagged text in italics. An italic typeface must be available for the font used.
-Paragraph tag	 The <p> tag creates a new paragraph. You must set the text field to be a multi line text field to use this tag. The <p> tag supports the following attributes:
-align - Specifies alignment of text within the paragraph; valid values are left, right, justify, and center.
-Underline tag	 The <u> tag underlines the tagged text.
-to top
+<table class="dtTABLE" width="700">
+<tbody>
+<tr>
+<th width="101">Tag</th>
+<th width="587">Description</th>		
+</tr>
+<tr>
+<td width="101">Bold tag </td>
+<td width="587"> The <strong>&lt;b&gt;</strong> tag renders text as bold. A bold typeface must be available for the font used.</td>		
+</tr>
+<tr>
+<td> Break tag</td>
+<td>The <b>&lt;br&gt;</b> tag creates a line break in the text field. You must set the text field to be a multi line text field to use this tag.</td>
+</tr>
+<tr>
+<td> Font tag	</td>
+<td> The <b>&lt;font&gt;</b> tag specifies a font or list of fonts to display the text.The font tag supports the following attributes:
+<ul>
+<li> <b>color</b> - All AnyChart Color values are supported. </li>
+<li> <b>face</b> - Specifies the name of the font to use.</li>
+<li> <b>size</b> - Specifies the size of the font. You can use absolute pixel sizes, such as 16 or 18, or relative point sizes, such as +2 or -4. </li>
+</ul></td>
+</tr>
+<tr>
+<td> Italic tag</td>
+<td> The <b>&lt;i&gt;</b> tag displays the tagged text in italics. An italic typeface must be available for the font used.</td>
+</tr>
+<tr>
+<td> Paragraph tag</td>
+<td> The <b>&lt;p&gt;</b> tag creates a new paragraph. You must set the text field to be a multi line text field to use this tag. The <b>&lt;p&gt;</b> tag supports the following attributes:
+<ul>
+<li> <strong>align</strong> - Specifies alignment of text within the paragraph; valid values are <b>left</b>, <b>right</b>, <b>justify</b>, and <b>center</b>. </li>
+</ul></td>
+</tr>
+<tr>
+<td> Underline tag</td>
+<td> The <b>&lt;u&gt;</b> tag underlines the tagged text.</td>
+</tr>
+</tbody>
+</table>
 
 The sample Pie chart below demonstrates all available tags in slice labels formatting:
 

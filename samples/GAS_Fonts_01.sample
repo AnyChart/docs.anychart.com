@@ -17,22 +17,30 @@ anychart.onDocumentReady(function() {
     //chart type
     chart = anychart.columnChart();
 
+    //title
     chart.title().text('International Simbols Support');
 
-    //set data and set additionla information in tooltip
+    //set data
     series = chart.column(data);
+
+    //adjust tooltip content
     series.tooltip().contentFormatter(function(){
         return 'Language: ' + this.x + '\nArticles: ' + this.value;
     });
 
+    //adjust tooltip font
+    series.tooltip().content().fontWeight(400).fontFamily('Tahoma').fontSize(12);
+
+    //adjust labels
     series.labels()
         .enabled(true)
         .position('topcenter')
         .anchor('centerLeft')
         .offsetX(-10)
-//        .fontcolor(function(){return this.fill})
+        .offsetY(-5)
         .rotation(-90)
         .textFormatter(function(){return this.x});
+
     //draw
     chart.container('container').draw();
 });
