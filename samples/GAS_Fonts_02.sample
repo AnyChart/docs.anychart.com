@@ -5,7 +5,7 @@ anychart.onDocumentReady(function() {
 
     //variable of additional information in labeles
     var customAttributes = {
-        Men: "<br> <i>For every 100 girls, <br/>105 boys are born, but males have a higher <br/>risk of dying than <br/>females, both in <br/>childhood and at adult ages.</i>",
+        Men: "<br> <i>For every 100 girls, <br/>105 boys are born, but males have a higher <br/>risk of dying than <br/>females, both in <br/>childhood and at adult <br/>ages.</i>",
         Women: "<br>The number of men <br/> and women in the <br/>world is roughly equal, though men hold a <br/>slight lead with 101 <br/>men for 100 women."
     };
 
