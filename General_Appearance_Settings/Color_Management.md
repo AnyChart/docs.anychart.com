@@ -9,6 +9,7 @@
   * [Light Color](#light)
   * [Dark Color](#dark)
   * [Blend](#blend)
+
 <a name="overview"/>
 ## Overview
 AnyChart allows you to set color of any element of the chart, and moreover - it provides a very user/designer/developer friendly mechanism of color setting. Web-developers usually work with Hexadecimal or Web-Colors, desktop developer use RGB or HSB notation. AnyChart supports all this formats and gives user the way for built-in color transformation.
@@ -16,11 +17,10 @@ AnyChart allows you to set color of any element of the chart, and moreover - it 
 <a name="color_formats"/>
 ## Color Formats
 
-As it was said above AnyChart supports the following color setting notation, which means - you can use any of them when setting a value of **.color()**, **.fill()**, etc attribute in any node:
+As it was said above AnyChart supports the following color setting notation, which means - you can use any of them when setting a value of **.color()**, **.fill()**, and other attributes in any node:
 
 * Hexadecimal (html-like)
 * Red Green Blue
-* Hue Saturation Brightness
 * Web-Color Constants
 
 <a name="hexadecimal"/>
@@ -107,8 +107,6 @@ Common LghtColor sample:
 <a name="dark"/>
 ### DarkColor
 
-(Red) = a50000
-
 DarkColor function is used to return for sure a color that is darker than a given, for example, if input color is White - we will get some non-white color, that can be used for outlining an element. Input color can be specified in any of the specified above.
 <br/><br/>
 Common DarkColor sample:
@@ -138,7 +136,7 @@ Common DarkColor sample:
 
 Blend function allows you to mix two colors with a given ratio, it gives even wider control over getting a right tone.
 <br/><br/>
-Common blend sample:
+Common blend color settings:
 ```
 var color1 = [255, 0, 0];
 var color2 = [0, 0, 255];
