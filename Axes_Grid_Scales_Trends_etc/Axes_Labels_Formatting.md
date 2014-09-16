@@ -1,3 +1,4 @@
+{:index 3}
 # Axes Labels Formatting
 
  * [Overview](#overview)
