@@ -54,7 +54,7 @@ anychart.onDocumentReady(function() {
     chart.yAxis().staggerMode(true);
     chart.yAxis().staggerLines(2);
     chart.xAxis().staggerMode(true);
-    chart.xAxis().staggerLines(3);
+    chart.xAxis().staggerLines(2);
 
     chart.container('container').draw();
 });

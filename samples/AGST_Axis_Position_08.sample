@@ -7,6 +7,8 @@ chart = anychart.cartesianChart();
     //define chart
     chart = anychart.cartesianChart();
 
+    chart.margin().bottom(30).right(30);
+
     //setting data
     var data = anychart.data.set([
         ['A', 4],

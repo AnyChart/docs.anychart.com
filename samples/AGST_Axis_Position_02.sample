@@ -6,6 +6,8 @@ anychart.onDocumentReady(function() {
     //define chart
     chart = anychart.cartesianChart();
 
+    chart.margin().top(30).right(30);
+
     //setting data
     var data = anychart.data.set([
         ['A', 4],
