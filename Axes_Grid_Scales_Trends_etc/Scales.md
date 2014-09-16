@@ -10,7 +10,7 @@
   * [Date Time Scale](#date)
 * [Scale Stacked Mode](#mode)                                                                                           	 
 * [Minimum and Maximum Scale Values](#min-max-values)         
-* [Minor and Major Ticks Interval](#intervals)              
+* [Minor and Major Ticks Interval](#min-max-values)              
 * [Minimum and Maximum Gap](#gap)     
 * [Inverted Scale](#inverted)
 * [Grids](#grids)
@@ -175,7 +175,7 @@ Sample inverted scale chart:
 <a name="grids"/>
 ### Major and Minor Grids
 
-There are two types of grids in AnyChart - major grid and minor grid, which correspond to [major and minor scale steps](Axes-Scales). To enable grid you have to specify:
+There are two types of grids in AnyChart - major grid and minor grid, which correspond to [major and minor scale steps](Scales). To enable grid you have to specify:
 
 ```
   chart.minorGrid().enabled(true);
@@ -191,7 +191,6 @@ That's how simple grid will look like:
 
 {sample}AGST\_Scales\_10{sample}
 
-to top
 <a name="dashed"/>
 ### Dashed Grid Lines
 
