@@ -22,9 +22,15 @@ anychart.onDocumentReady(function() {
     chart.xAxis().title().text('Sample X axis name').fontWeight('400');
 
     //adjusting yAxes titles
-    chart.yAxis(1).orientation('right').title().text('First additional axis');
-    chart.yAxis(2).orientation('right').title().text('Second additional axis');
-    chart.yAxis(3).orientation('right').title().text('Third additional axis');
+    chart.yAxis(1).orientation('right')
+        .title()
+            .text('First additional axis');
+    chart.yAxis(2).orientation('right')
+        .title()
+            .text('Second additional axis');
+    chart.yAxis(3).orientation('right')
+        .title()
+            .text('Third additional axis');
 
     //adjusting major ticks' interval
     chart.yScale().ticks().interval(100000);
