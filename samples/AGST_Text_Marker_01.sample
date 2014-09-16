@@ -16,9 +16,12 @@ anychart.onDocumentReady(function() {
     var chart = anychart.columnChart();
 
     //set data
-    chart.column(data).hoverFill('#444444').tooltip().contentFormatter(function(){
-        return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
-    });
+    chart.column(data)
+        .hoverFill('#444444')
+        .tooltip()
+            .contentFormatter(function(){
+                return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
+            });
 
     //disable title
     chart.title().enabled(false);

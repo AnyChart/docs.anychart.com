@@ -14,7 +14,10 @@ anychart.onDocumentReady(function() {
 
     //adjusting y axis title and setting additional axis
     chart.yAxis().title().text('Y-Axis with labels');
-    chart.yAxis(1).orientation('right').title().text('Secondary Y-Axis with labels');
+    chart.yAxis(1)
+        .orientation('right')
+        .title()
+            .text('Secondary Y-Axis with labels');
 
     //data
     var data = anychart.data.set([

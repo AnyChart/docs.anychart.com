@@ -21,7 +21,10 @@ anychart.onDocumentReady(function() {
 
     //adding and adjust extra Y axis
     var extraYAxis = chart.yAxis(1);
-    extraYAxis.orientation('right').scale(extraYScale).title().text('Extra Y Axis');
+    extraYAxis.orientation('right')
+        .scale(extraYScale)
+        .title()
+            .text('Extra Y Axis');
 
     //setting Axis title
     chart.yAxis().title().text('Basic Y Axes');

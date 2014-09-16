@@ -26,12 +26,19 @@ anychart.onDocumentReady(function() {
     var series= chart.area(data);
 
     //set and adjust labels
-    series.labels().enabled(true).rotation(90).offsetY(15).offsetX(-5).textFormatter(function(point){
-        return point.x;
-    });
+    series.labels()
+        .enabled(true)
+        .rotation(90)
+        .offsetY(15)
+        .offsetX(-5)
+        .textFormatter(function(point){
+            return point.x;
+        });
 
     //set and adjust tooltips
-    series.tooltip().title().enabled(true).text('Information');
+    series.tooltip().title()
+        .enabled(true)
+        .text('Information');
     series.tooltip().contentFormatter(function(){
         return 'Month: ' + this.x + '\nSales: ' + this.value
     });
