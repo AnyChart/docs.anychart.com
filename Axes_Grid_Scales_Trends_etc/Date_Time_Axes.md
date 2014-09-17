@@ -3,28 +3,23 @@
 
               
 * [Overview](#overview)
-* [Creating DateTime Axes](#create)
+* [Declare](#declare)
   * [Sample Range Bar With Y DateTime Axis](#range)
 * [Major and Minor Interval Ticks](#ticks)
   * [Sample Line Chart with Y DateTime Axis](#sample)
 
-<a name="overview"/>
 ## Overview
 
-You can use Date/Time values as input data for chart, moreover - you can localize input data format so you don't have to reformat it before setting it.<!-- Read more about it in [link in need datetime-input.html ]Date Time Input Tutorial[/link].-->
-<br/><br/>
-To utilize these input features you should use Date Time Axes. In this tutorial we will show how to do this.
-<a name="create"/>
-## Creating DateTime Axes
+You can use Date/Time values as input data for chart using Date Time Axes. In this tutorial we will show how to do this.
+
+## Declare
 
 You can make both X and/or Y axis a DateTime axis, to do that, set scale type to DateTime:
 
 ```
     chart.yScale(anychart.scales.dateTime());
 ```
-<!--Before starting to create chart based on datetime values, you should study [Link in need datetime-input]DateTime Input Tutorial[/link], in which this input data formatting is explained.-->
 
-<a name="range"/>
 ### Sample Range Bar With Y DateTime Axis
 
 Lets create a simple Range Bar chart with DateTime Y Axis. For the first we have to choose data to be shown:
@@ -109,6 +104,7 @@ For datetime axes you can set Major and Minor Ticks using **.ticks()** and **.mi
     chart.yScale().ticks().interval(1);
     chart.yScale().minorTicks().interval(0, 2);
 ```
+
 Ticks can define years, months, days, hours, minutes and seconds. The order of defining ticks is: **years interval**, **months interval**, **days interval**, **hours interval**, **minutes interval**, **seconds interval**. The order is quite strict. You may not define following intervals of the one, you need, but you have to define previous ones as 0. If you want to define more, than one instance of intervals, just adjust the one, you need.
 
 <a name="sample"/>
