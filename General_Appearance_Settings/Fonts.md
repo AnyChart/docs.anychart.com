@@ -5,7 +5,7 @@
 * [International Symbols](#international_symbols)
 * [HTML](#html)
   * [Supported tags](#supported-tags)
-* [Text Rotation](#rotation)
+* [Text Rotation](#text_rotation)
 
 ## Overview
 
