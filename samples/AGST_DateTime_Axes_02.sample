@@ -2,7 +2,12 @@
      :is_new false
      :exports "chart"}
 anychart.onDocumentReady(function() {
+
+    //chart type
     chart = anychart.lineChart();
+
+    //chart title
+    chart.title().text('Line Chart DateTime Scale');
 
     //create custom logarithmic scale
     var logScale = anychart.scales.log();
@@ -37,13 +42,17 @@ anychart.onDocumentReady(function() {
     });
 
     // adjust axis labels
-    chart.xAxis().staggerLines(1).labels().textFormatter(function(){
-        var value = new Date(this.value);
-        var date = this.x;
-        var options = {year: 'numeric', month: 'numeric'};
-        var transformedDate =  value.toLocaleDateString('en-US', options);
-        return transformedDate;
-    });
+    chart.xAxis().staggerLines(1)
+        .labels()
+            .hAlign('center')
+            .width(50)
+            .textFormatter(function(){
+                var value = new Date(this.value);
+                var date = this.x;
+                var options = {year: 'numeric', month: 'numeric'};
+                var transformedDate =  value.toLocaleDateString('en-US', options);
+                return transformedDate;
+            });
 
     //draw
     chart.container('container').draw();

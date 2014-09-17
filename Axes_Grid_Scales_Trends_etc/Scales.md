@@ -10,7 +10,7 @@
   * [Date Time Scale](#date)
 * [Scale Stacked Mode](#mode)                                                                                           	 
 * [Minimum and Maximum Scale Values](#min-max-values)         
-* [Minor and Major Ticks Interval](#min-max-values)              
+* [Minor and Major Ticks Interval](#min-max-ticks)              
 * [Minimum and Maximum Gap](#gap)     
 * [Inverted Scale](#inverted)
 * [Grids](#grids)
@@ -132,7 +132,7 @@ Not that if will set maximum value lesser than chart elements values, or minimum
 
 {sample}AGST\_Scales\_06{sample}
 
-<a name="min-max-values"/>
+<a name="min-max-ticks"/>
 ## Major and Minor Ticks Intervals
 
 For any scale, but ordinal, you can set major and minor ticks intervals, which are calculated automatically by default. Major and minor ticks intervals are axis steps, which define where axis labels (major interval), axis ticks (major and minor, correspondingly) and major and minor grids are displayed.

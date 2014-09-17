@@ -6,7 +6,7 @@
 * [Creating DateTime Axes](#create)
   * [Sample Range Bar With Y DateTime Axis](#range)
 * [Major and Minor Interval Ticks](#ticks)
-  * [Sample Scatter Line Chart with Y DateTime Axis](#sample)
+  * [Sample Line Chart with Y DateTime Axis](#sample)
 
 <a name="overview"/>
 ## Overview
@@ -108,7 +108,7 @@ For datetime axes you can set Major and Minor Ticks using **.ticks().interval()*
 Ticks can define years, months, days, hours, minutes and seconds. The order of defining ticks is: **years interval**, **months interval**, **days interval**, **hours interval**, **minutes interval**, **seconds interval**. The order is quite strict. You may not define following intervals of the one, you need, but you have to define previous ones as 0. If you want to define more, than one instance of intervals, just adjust the one, you need.
 
 <a name="sample"/>
-## Sample Scatter Line Chart with Y DateTime Axis
+## Sample Line Chart with Y DateTime Axis
 
 In this sample we will create a Line Chart with DateTime X Axis and set major and minor interval ticks and intervals. Y Axis will be Logarithmic - to show small values in the first years and big values in last year.
 
