@@ -117,7 +117,7 @@ In the sample below stacked and percent stacked scales are demonstrated on the s
 {sample}AGST\_Scales\_05{sample}
 
 <a name="minimum_and_maximum"/>
-## Minimum and Maximum Scale Values
+## Minimum and Maximum
 
 For any scale, but ordinal, you can set maximum and/or minimum values which are calculated automatically by default.
 
