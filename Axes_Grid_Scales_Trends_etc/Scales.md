@@ -15,7 +15,7 @@
 * [Inversion](#inversion)
 * [Grids](#grids)
   * [Major and Minor](#grids)
-  * [Dashed Grid](#dashed_grid)
+  * [Dashed Grid](#dashed)
   * [Even and Odd Fills](#interlace)
 * [One Scale for Different Charts](#crosschart-scale)
 <!--* [Crossing value](#crossing)-->  
