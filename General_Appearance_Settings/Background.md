@@ -1,34 +1,33 @@
 # Background                                                                                 
 
 * [Overview](#overview)
-* [Stroke Settings](#stroke)
-* [Fill Settings](#fill)
-  * [Solid Fill](#solid-fill)
-  * [Gradient Fill](#gradient-fill)
-  * [Image Fill](#image-fill)
+* [Stroke](#stroke)
+* [Fill](#fill)
+  * [Solid](#solid)
+  * [Gradient](#gradient)
+  * [Image](#image)
 * [Corners Settings](#corners)                         
-                                                           
-<a name="overview"/>
+
 ## Overview
+
 In this tutorial we will explain in details how to configure background in AnyChart.
 
-Background consists of fill, stroke and border corners. These element are configured using **.fill()**, **.border()** and **.corners()** attributes.
+Background consists of fill, stroke and border corners. These element are configured using **.fill()**, **.border()** and **.corners()** attributes. Background is used in chart titles, labels, tooltips, chart background, data plot, and many more, and they all are configured the same way.
 
-Background is used in chart titles, labels, tooltips, chart background, data plot, and many more, but they are configured the same way.
+Below you will find the reference of the most important parameters of the mentioned methods and see the demonstration of theirs settings.
 
-Below you will find the reference of most important attributes of the mentioned nodes and see the demonstration of theirs settings.
+## Stroke
 
-<a name="stroke"/>
-## Stroke Settings
+Border is configured using **.stroke()** method. Stroke can be **"Solid"**, **"Dashed"** and **"Gradient"**. If type is **"Solid"**, then color is specified using color attribute; to configure **"Gradient"** you have to use gradient keys. Dashed borders have to be set with special keys too.
 
-Border is configured using **.stroke()** attributes. Border can be of **"Solid"**, **"Dashed"** and **"Gradient"** type. If type is **"Solid"**, then color is specified using color attribute; to configure **"Gradient"** you have to use gradient keys. Dashed orders have to be set with special keys too.
-
-Typical solid stroke settings look like:
+Sample solid stroke settings:
 
 ```
   chart.background().stroke('5 red');
 ```
-Typical gradient stroke settings look like:
+
+Sample gradient stroke settings:
+
 ```
   chart.background().stroke({
     keys: ['.1 red', '.5 yellow', '.9 blue'],
@@ -36,41 +35,36 @@ Typical gradient stroke settings look like:
     thickness: 5
   });
 ```
-Typical dashed stroke settings look like:
+
+Sample dashed stroke settings:
+
 ```
     chart.background().stroke({color: 'red', dash: '5 2 5', thickness: 5});
 ```
 
-On the chart below you may see 3 different stroke types and dashboard without stroke.
+On the chart below you can see 3 different border types and a chart without a border.
 
 {sample}GAS\_Background\_01{sample}
 
-<a name="fill"/>
-## Fill Settings
+## Fill
 
-With AnyChart it is possible to color background with a solid color, with a gradient transition or fill it with an image. Fill is configured in the **.fill()** attribute and depending on the type it has different settings.
+With AnyChart it is possible to color background with a solid color, with a gradient transition or fill it with an image. Fill is configured using **.fill()** method and depending on the type it has different parameters.
 
-<a name="solid-fill"/>
-### Solid Fill
+### Solid
 
-When fill type is set to "Solid", background is filled with one color and you can control this color opacity.<!-- Colors can be defined with any of the methods described in [Linl in need]]Color management tutorial[/link].--> Typical solid fill settings are:
+When fill type is set to "Solid", background is filled with one color and you can control this color opacity.<!-- Colors can be defined with any of the methods described in [Linl in need]]Color management tutorial[/link].--> Sample solid fill:
 
 ```
     chart.background().fill('gold');
 ```
 
-In the sample below chart, data plot and chart title backgrounds are colored with a solid fill:
+In the sample below a chart, a data plot and a chart title backgrounds are colored with a solid fill:
 
 {sample}GAS\_Background\_02{sample}
 
-<a name="gradient-fill"/>
-### Gradient Fill
+### Gradient
 
-AnyChart allows to create Gradient fills for any background. To create gradient fill you need to set type="Gradient" and configure gradient settings in <gradient> sub-node.
-
-There are two types of gradient fills - "Linear" and "Radial"
-
-Typical gradient border settings look like:
+AnyChart allows to create Gradient fills for any background. There are two types of gradient fills - "Linear" and "Radial". Sample gradient background:
 
 ``` 
     chart.background().fill({
@@ -78,6 +72,7 @@ Typical gradient border settings look like:
         angle: -130,
     });
 ```
+
 The sample below demonstrates how gradient fill can be used to create really attractive area chart.
 
 {sample}GAS\_Background\_03{sample}
@@ -86,12 +81,9 @@ The same sample, but with radial gradient fill:
 
 {sample}GAS\_Background\_04{sample}
 
-<a name="image-fill"/>
-### Image Fill
+### Image
 
-Image fill allows you to set an image as a background, an image can be **stretched**, **tiled** or fit by **proportions**. Supported image formats are JPEG, GIF, PNG.
-
-Typical image background settings are:
+Image fill allows you to set an image as a background. An image can be **stretched**, **tiled** or fit by **proportions**. Supported image formats are JPEG, GIF, PNG. Sample image background:
 
 ```
     chart.background().fill({
@@ -102,23 +94,22 @@ Typical image background settings are:
 
 {sample}GAS\_Background\_05{sample}
 
-<a name="corners"/>
 ## Corners Settings
 
-You can adjust the shape of borders corners, there are 4 types for corners: **"Square"**(none), **"Rounded"**, **"Cut"** and **"RoundedInner"**. Appearance of these types is shown on the image below:
+You can adjust the shape of borders corners, there are 4 types for corners: **"Square"**, **"Rounded"**, **"Cut"** and **"RoundedInner"**. Appearance of these types is shown on the image below:
 
 ![](http://anychart.com/products/anychart/docs/users-guide/img/corners_table.png)
 
-For "Rounded", "Cut" and "RoundedInner" types you can control not only a shape, but also a radius of "rounding" or "cutting" for all corners, or given corners.
-
-Typical settings for "rounding" all corners are:
+For "Rounded", "Cut" and "RoundedInner" types you can control not only the shape, but also a radius of "rounding" or "cutting" for all corners, or given corners. Sample settings for "rounding" all corners:
 
 ```
     chart.background().stroke('3 red')
         .cornerType('round')
         .corners(10);
 ```
-Also, it is possible to choose radius of any corner. Just set four number for every corner in this order: top-left, top-right, bottom-left, bottom-right corner. If a radius set to 0, no effect would be applied. Setting for bottom-right and bottom-left corners adjusting:
+
+Also, it is possible to choose radius of any corner. Just set four number for every corner in this order: top-left, top-right, bottom-left, bottom-right corner. If a radius set to 0, no effect will be applied. Settings for bottom-right and bottom-left corners:
+
 ```
     chart.background().stroke('black')
         .cornerType('cut')

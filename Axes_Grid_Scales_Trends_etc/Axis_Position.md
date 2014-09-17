@@ -3,17 +3,15 @@
 
               
 * [Overview](#overview)
-* [Column Mode](#vertical)
+* [Column Mode](#column_mode)
 * [Bar Mode](#horizontal)
 
-<a name="overview"/>
 ## Overview
    
 Positioning depends on plot type and inversion of axes, below you will find all possible Axes Positioning and Inverting JS Settings with demonstration preview.
 
 Though these settings are demonstrated using Bar/Column charts - they work for all other chart types.
 
-<a name="vertical"/>
 ## Column Mode
 
 <table width="700" border="1" class="dtTABLE">
