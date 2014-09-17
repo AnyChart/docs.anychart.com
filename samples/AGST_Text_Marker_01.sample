@@ -16,9 +16,12 @@ anychart.onDocumentReady(function() {
     var chart = anychart.columnChart();
 
     //set data
-    chart.column(data).hoverFill('#444444').tooltip().contentFormatter(function(){
-        return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
-    });
+    chart.column(data)
+        .hoverFill('#444444')
+        .tooltip()
+            .contentFormatter(function(){
+                return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
+            });
 
     //disable title
     chart.title().enabled(false);
@@ -53,7 +56,7 @@ anychart.onDocumentReady(function() {
     chart.textMarker()
         .scale(chart.yScale())
         .value(18000)
-        .align('NEAR')
+        .align('left')
         .anchor('leftcenter')
         .fontSize(13)
         .offsetX(5)
@@ -65,7 +68,7 @@ anychart.onDocumentReady(function() {
         .scale(chart.yScale())
         .value(18000)
         .text('High')
-        .align('NEAR')
+        .align('left')
         .anchor('rightcenter')
         .fontSize(13)
         .offsetX(50)
@@ -76,7 +79,7 @@ anychart.onDocumentReady(function() {
         .scale(chart.yScale())
         .value(10000)
         .text('Low')
-        .align('NEAR')
+        .align('left')
         .anchor('rightcenter')
         .fontSize(13)
         .offsetX(50)
@@ -87,7 +90,7 @@ anychart.onDocumentReady(function() {
         .scale(additionalScale)
         .value(8)
         .text('8.00')
-        .align('FAR')
+        .align('right')
         .anchor('leftcenter')
         .fontSize(13)
         .offsetX(10);

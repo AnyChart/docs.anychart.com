@@ -2,12 +2,14 @@
 # Scales
                                                                    
                                                                    
-* [Overview](#overview)                                               	* [Types](#types)                             
+* [Overview](#overview)                                               	
+* [Types](#types)                             
   * [Linear](#linear)                 
   * [Logarithmic](#logarithmic)
   * [Ordinal](#ordinal)
   * [Date Time](#date_time)
-* [Stack Mode](#stack_mode)                                                                                      	* [Minimum and Maximum](#minimum_and_maximum)         
+* [Stack Mode](#stack_mode)                                                                                      	
+* [Minimum and Maximum](#minimum_and_maximum)         
 * [Minor and Major Ticks](#intervals)              
 * [Minimum and Maximum Gap](#gap)     
 * [Inversion](#inversion)
@@ -169,7 +171,7 @@ Sample inverted scale chart:
 ## Grids
 ### Major and Minor Grids
 
-There are two types of grids in AnyChart - major grid and minor grid, which correspond to [major and minor scale steps](Axes-Scales). To enable grid you have to specify:
+There are two types of grids in AnyChart - major grid and minor grid, which correspond to [major and minor scale steps](Scales). To enable grid you have to specify:
 
 ```
   chart.minorGrid().enabled(true);
