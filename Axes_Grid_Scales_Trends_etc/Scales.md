@@ -171,7 +171,7 @@ Sample inverted scale chart:
 ## Grids
 ### Major and Minor Grids
 
-There are two types of grids in AnyChart - major grid and minor grid, which correspond to [major and minor scale steps](Scales). To enable grid you have to specify:
+There are two types of grids in AnyChart - major grid and minor grid. To enable grid you have to specify:
 
 ```
   chart.minorGrid().enabled(true);

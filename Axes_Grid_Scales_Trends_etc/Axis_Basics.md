@@ -14,7 +14,7 @@
    
 In AnyChart axes are used to control values or arguments scales, grids, axes labels, lines and tick marks.
    
-* To know what scale options are available - please see: [Axes scale tutorial](Scales)
+* To know what scale options are available - please see: [Scale tutorial](Scales)
 * To learn how to create additional axes - [Additional axes](Additional-Axis)
 * To learn how to configure axes labels - [Axes Labels](Axes_Labels_Formatting)
 * To learn more about Date/Time Scale - [Date/Time Axes](Date_Time_Axes)
