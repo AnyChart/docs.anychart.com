@@ -10,12 +10,12 @@
   * [Date Time](#date_time)
 * [Stack Mode](#stack_mode)                                                                                      	
 * [Minimum and Maximum](#minimum_and_maximum)         
-* [Minor and Major Ticks](#intervals)              
+* [Minor and Major Ticks](#min-max-ticks)              
 * [Minimum and Maximum Gap](#gap)     
 * [Inversion](#inversion)
 * [Grids](#grids)
   * [Major and Minor](#grids)
-  * [Dashed Grid](#dashed_grid)
+  * [Dashed Grid](#dashed)
   * [Even and Odd Fills](#interlace)
 * [One Scale for Different Charts](#crosschart-scale)
 <!--* [Crossing value](#crossing)-->  
@@ -116,8 +116,8 @@ In the sample below stacked and percent stacked scales are demonstrated on the s
 
 {sample}AGST\_Scales\_05{sample}
 
-<a name="min-max-values"/>
-## Minimum and Maximum Scale Values
+<a name="minimum_and_maximum"/>
+## Minimum and Maximum
 
 For any scale, but ordinal, you can set maximum and/or minimum values which are calculated automatically by default.
 
@@ -125,11 +125,11 @@ For any scale, but ordinal, you can set maximum and/or minimum values which are 
     chart.yScale().minimum(-50).maximum(100);
 ```
 
-Note, if will set maximum value lesser than chart elements values, or minimum greater than them - these elements will be cut, and you will see only a part of them or will not see them at all.
+Note, if you will set maximum value lesser than chart elements values, or minimum greater than them - these elements will be cut, and you will see only a part of them or will not see them at all.
 
 {sample}AGST\_Scales\_06{sample}
 
-<a name="min-max-values"/>
+<a name="min-max-ticks"/>
 ## Major and Minor Ticks Intervals
 
 For any scale, but ordinal, you can set major and minor ticks intervals, which are calculated automatically by default. Major and minor ticks intervals are axis steps, which define where axis labels (major interval), axis ticks (major and minor, correspondingly) and major and minor grids are displayed.
@@ -171,7 +171,7 @@ Sample inverted scale chart:
 ## Grids
 ### Major and Minor Grids
 
-There are two types of grids in AnyChart - major grid and minor grid, which correspond to [major and minor scale steps](Scales). To enable grid you have to specify:
+There are two types of grids in AnyChart - major grid and minor grid. To enable grid you have to specify:
 
 ```
   chart.minorGrid().enabled(true);

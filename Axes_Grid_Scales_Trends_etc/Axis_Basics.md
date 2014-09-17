@@ -1,7 +1,6 @@
 {:index 1}
 # Axes Basics
 
-              
 * [Overview](#overview)
 * [Declaration](#declaration)
 * [Title](#title)
@@ -11,10 +10,10 @@
 * [Tickmarks](#tickmarks)
 
 ## Overview
+
+In AnyChart axes are used to control grids, axes labels, lines and tick marks.
    
-In AnyChart axes are used to control values or arguments scales, grids, axes labels, lines and tick marks.
-   
-* To know what scale options are available - please see: [Axes scale tutorial](Scales)
+* To know what scale options are available - please see: [Scale tutorial](Scales)
 * To learn how to create additional axes - [Additional axes](Additional-Axis)
 * To learn how to configure axes labels - [Axes Labels](Axes_Labels_Formatting)
 * To learn more about Date/Time Scale - [Date/Time Axes](Date_Time_Axes)
@@ -23,7 +22,7 @@ In this section we will demonstrate most of the axes visualization options, whic
 
 ## Declaration
 
-If you want to control any of the axes settings - you should do that though **Axis** method:
+If you want to control any of the axes settings - you should do that using **Axis** methods:
 
 ```
   chart.xAxis().title().enabled(true).text('Sample X axis name');
@@ -61,13 +60,13 @@ chart.xAxis(0).orientation('top);
 chart.yAxis(0).orientation('right');
 ```
 
-And here is the demonstration of this feature on the Single-series column chart:
+And here is the demonstration of this feature on the Single series column chart:
 
 {sample}AGST\_Axes\_Basic\_02{sample}
 
 ## Labels
 
-To enable axes labels you need to specify **.labeles().enabled(true)** in desired axis. You can specify how labels should look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
+To enable axes labels you need to specify **.labels().enabled(true)** in desired axis. You can specify how labels should look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
 
 Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Tutorial)
 
@@ -97,7 +96,7 @@ Rotated labels:
 
 {sample}AGST\_Axes\_Basic\_05{sample}
 
-## Axis Lines
+## Axis Line
 
 It is possible to tune visual appearance of axis segment line and zero line. To do this you need to use **.lineMarker()** with default settings.
 
@@ -118,7 +117,7 @@ minorTicks().enabled(true)
 ticks().enabled(false)
 ```
 
-Ticks can be placed **inside** or **outside** relatively to axis line. These features are controlled by **.position()** attributes:
+Ticks can be placed **inside** or **outside** relatively to the axis line. These features are controlled by **.position()** attributes:
 
 ```
   chart.yAxis().ticks().position('outside');

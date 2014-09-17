@@ -1,14 +1,13 @@
 {:index 2}
 # Axes Position
 
-              
 * [Overview](#overview)
 * [Column Mode](#column_mode)
 * [Bar Mode](#horizontal)
 
 ## Overview
    
-Positioning depends on plot type and inversion of axes, below you will find all possible Axes Positioning and Inverting JS Settings with demonstration preview.
+Positioning depends on plot type and inversion of axes, below you will find all possible axes positioning and inverting JS Settings with demonstration preview.
 
 Though these settings are demonstrated using Bar/Column charts - they work for all other chart types.
 

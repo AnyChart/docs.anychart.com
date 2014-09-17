@@ -4,7 +4,7 @@
 * [Overview](#overview)
 * [Declare](#declare)
 * [Range and Text Markers](#range_and_text_markers)
-* [Advanced Visualization](#advanced)
+* [Advanced Visualization](#advanced_visualization)
 
 ## Overview
 

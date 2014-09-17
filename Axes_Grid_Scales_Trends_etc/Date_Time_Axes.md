@@ -4,13 +4,13 @@
               
 * [Overview](#overview)
 * [Declare](#declare)
+  * [Sample Range Bar With Y DateTime Axis](#range)
 * [Major and Minor Interval Ticks](#ticks)
+  * [Sample Line Chart with Y DateTime Axis](#sample)
 
 ## Overview
 
-You can use Date/Time values as input data for chart, moreover - you can localize input data format so you don't have to reformat it before setting it.
-
-To utilize these input features you should use Date Time Axes. In this tutorial we will show how to do this.
+You can use Date/Time values as input data for chart using Date Time Axes. In this tutorial we will show how to do this.
 
 ## Declare
 
@@ -91,7 +91,6 @@ Thats it - all we have to add are axes and chart titles and put all we've done t
     chart.yAxis().orientation('top').title().text('Time Plan');
     chart.xAxis().title().text('Tasks');
 ```
-
 That's it - chart with DateTime Y Axis is ready:
 
 {sample}AGST\_DateTime\_Axes\_01{sample}
@@ -106,10 +105,11 @@ For datetime axes you can set Major and Minor Ticks using **.ticks()** and **.mi
     chart.yScale().minorTicks().interval(0, 2);
 ```
 
-Ticks can define years, months, days, hours, minutes and seconds. The order of defining ticks is: **years interval**, **months interval**, **days interval**, **hours interval**, **minutes interval**, **seconds interval**. The order is strict. You may not define following intervals of the one, you need, but you have to define previous ones as 0. If you want to define more, than one instance of intervals, just adjust the one, you need.
+Ticks can define years, months, days, hours, minutes and seconds. The order of defining ticks is: **years interval**, **months interval**, **days interval**, **hours interval**, **minutes interval**, **seconds interval**. The order is quite strict. You may not define following intervals of the one, you need, but you have to define previous ones as 0. If you want to define more, than one instance of intervals, just adjust the one, you need.
 
-## Sample Scatter Line Chart with Y DateTime Axis
+<a name="sample"/>
+## Sample Line Chart with Y DateTime Axis
 
-In this sample we will create a Line Chart with DateTime X Axis and set major and minor interval ticks and intervals. Y Axis will be Logarithmic - to show small values in the first years and big values in the last year.
+In this sample we will create a Line Chart with DateTime X Axis and set major and minor interval ticks and intervals. Y Axis will be Logarithmic - to show small values in the first years and big values in last year.
 
 {sample}AGST\_DateTime\_Axes\_02{sample}
