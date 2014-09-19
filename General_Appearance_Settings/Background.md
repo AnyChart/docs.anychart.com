@@ -6,7 +6,7 @@
   * [Solid](#solid)
   * [Gradient](#gradient)
   * [Image](#image)
-* [Corners Settings](#corners)                         
+* [Corners Settings](#corners_settings)                         
 
 ## Overview
 

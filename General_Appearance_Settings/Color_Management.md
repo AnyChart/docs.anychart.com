@@ -1,5 +1,5 @@
 # Color Management
-                                                   
+
 * [Overview](#overview)
 * [Color Formats](#color_formats)
   * [Hexadecimal](#hexadecimal)
