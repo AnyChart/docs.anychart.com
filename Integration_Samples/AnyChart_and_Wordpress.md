@@ -6,9 +6,12 @@ As far as WordPress is one of the most popular Content Management Systems, this 
 
 All necessary information, about first steps in AnyChart usage can be found in our [Quick Start](../Quick_Start/Quick_Start) page.
 
-There are several ways of including AnyChart into web page. The easiest one is inserting JavaScript into page text. 
 
 
+
+## Overview
+There are several ways of including AnyChart into web page: without installation of any plugins, with disabling WordPress smart insert and with inserting all scripts into head tag of a page.
+Also, as far as we may need data from other domain, we shall overview AJAX data request form. All mentioned points will be described below
 
 
 ## Including AnyChart into WordPress without any plugins
