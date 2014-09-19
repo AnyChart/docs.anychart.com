@@ -4,13 +4,6 @@ Inserting Charts into WordPress controlled Sites
   
 As far as WordPress is one of the most popular Content Management Systems, this page is fully devoted to all feature and aspects of AnyChart usage in WordPress controlled sites.
 
-
-
-I need MORE SPACE
-
-
-
-
 All necessary information, about first steps in AnyChart usage can be found in our [Quick Start](../Quick_Start/Quick_Start) page.
 
 There are several ways of including AnyChart into web page. The easiest one is inserting JavaScript into page text. 
