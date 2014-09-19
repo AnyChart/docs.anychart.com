@@ -10,12 +10,15 @@ There are several ways of including AnyChart into web page. The easiest one is i
 
 ## Including AnyChart into WordPress without any plugins
 
-So, first you'll have to open page editor and switch into Text Editing Mode and insert AnyChart JS, data and container.
+So, first you'll have to open page editor and switch into Text Editing Mode and insert AnyChart JS, data and container. Chart container may be any size, by if there are no style settings for container, it would have zero height and zero width. 
 <br/><br/>
 ![](http://cdn.anychart.com/images/wordpress/no_plugins.png)
-That's all. Now you may preview the page. Chart is already in it
+Now the page is ready to be published. Let's preview and check, if everything looks fine and if there are no mistakes in data.
 <br/><br/>
 ![](http://cdn.anychart.com/images/wordpress/preview.png)
+<br/><br/>
+EveryThing looks perfect. Page is ready to be used.
+<br/><br/>
 **Note:** Script tag with data have to contain no empty Lines. If there are any, WordPress will replace them with \<p> tag and all data would be corrupted. Ways of avoiding data corruption will be presented below.
  
 ## Chart data with disabled smart insert
