@@ -11,9 +11,9 @@ There are several ways of including AnyChart into web page. The easiest one is i
 ## Including AnyChart into WordPress without any plugins
 
 So, first you'll have to open page editor and switch into Text Editing Mode and insert AnyChart JS, data and container.
-[](http://cdn.anychart.com/images/wordpress/no_plugins.png)
+![](http://cdn.anychart.com/images/wordpress/no_plugins.png)
 That's all. Now you may preview the page. Chart is already in it
-[](http://cdn.anychart.com/images/wordpress/preview.png)
+![](http://cdn.anychart.com/images/wordpress/preview.png)
 **Note:** Script tag with data have to contain no empty Lines. If there are any, WordPress will replace them with \<p> tag and all data would be corrupted. Ways of avoiding data corruption will be presented below.
  
 ## Chart data with disabled smart insert
@@ -21,21 +21,21 @@ That's all. Now you may preview the page. Chart is already in it
 WordPress provides you with variate of plugins for disabling smart insert. In the sample below was used "Raw HTML" plugin, but which of the smart insert disabling plugins was used plays no roll.
 
 First of all. we have to install and activate plugin.
-[](http://cdn.anychart.com/images/wordpress/pluging_activation.png)
+![](http://cdn.anychart.com/images/wordpress/pluging_activation.png)
 
 After plugin activation. wrap data script with data into \[raw]...\[/raw] tag. Now you are free to use any number of empty lines you want. It will make no difference for chart visualisation but it may be of great help for feather data adjusting in this very chart, if there is a need.
 
-[](http://cdn.anychart.com/images/wordpress/raw_html.png)
+![](http://cdn.anychart.com/images/wordpress/raw_html.png)
 
 ## Inserting AnyChart into Head of a Page
 
 AnyChart can be used in any part of a page, but we do recommend to set data and JS link into a head of a page. There are quite a few plugin for inserting scripts into head. In the sample was used "Header and Footer Scripts" plugin. It can insert scripts in head for one page, or for the whole site. In the sample used both functions.
 
 As the first step, insert AnyChart JS into head of every page, as it is shown below
-[](http://cdn.anychart.com/images/wordpress/header_plugin.png)
+![](http://cdn.anychart.com/images/wordpress/header_plugin.png)
 
 At the second Step insert data for chart into the head of a page with a chart 
-[](http://cdn.anychart.com/images/wordpress/header_script.png)
+![](http://cdn.anychart.com/images/wordpress/header_script.png)
 
 The chart is ready.
 
