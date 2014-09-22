@@ -3,7 +3,7 @@
 * [Overview](#overview)
 * [Declaration](#declaration)
 * [Tuning](#tuning)
-* [Binding Series](#binding-series)
+* [Binding Series](#binding_series)
 * [Multi Axes Sample for Comparing Units](#multi-axes-sample-for-comparing-units)
 * [Multi Axes Sample for Showing Different Data on the Same Plot](#multi-axes-sample-for-showing-different-data-on-the-same-plot)
  
