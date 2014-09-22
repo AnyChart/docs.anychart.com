@@ -41,7 +41,7 @@ anychart.onDocumentReady(function() {
     chart.title().enabled(false);
 
     //set y scale ticks interval
-    chart.yScale().ticks().interval(2000);
+    chart.yScale().minimum(0).ticks().interval(2000);
 
     //adjust y axis labels
     chart.yAxis().labels().textFormatter(function(){
@@ -72,7 +72,7 @@ anychart.onDocumentReady(function() {
         .value(9000)
         .text('Lowest')
         .align('NEAR')
-        .anchor('rightcenter')
+        .anchor('rightbottom')
         .fontSize(13)
         .offsetX(30)
         .fontColor('green');
@@ -83,7 +83,7 @@ anychart.onDocumentReady(function() {
         .value(19000)
         .text('Highest')
         .align('NEAR')
-        .anchor('rightcenter')
+        .anchor('rightbottom')
         .fontSize(13)
         .offsetX(30)
         .fontColor('red');

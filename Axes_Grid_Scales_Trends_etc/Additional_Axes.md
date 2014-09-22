@@ -1,19 +1,20 @@
 # Additional Axes
               
 * [Overview](#overview)                                                                          
-* [Definition](#definition)
-* [Tuning Additional Axes](#tuning)
-* [Binding Data Series to Additional Axis](#binding-series)
+* [Declaration](#declaration)
+* [Tuning](#tuning)
+* [Binding Series](#binding-series)
 * [Multi Axes Sample for Comparing Units](#sample-comparing-units)
 * [Multi Axes Sample for Showing Different Data on the Same Plot](#sample-different-data)
  
+<a name="overview"/>
 ## Overview
    
-In AnyChart scales control axes ticks, values, grid, lines, axes labels position and tickmarks. You can add multiple X and Y axes to your charts with AnyChart.  
+In AnyChart scales control axes ticks, values, grid, lines, axes labels position and tickmarks. You can add multiple X and Y axes to your charts with AnyChart.
 
-This note will describe how to use the multi axis feature of AnyChart. With this feature an arbitrary number of axes can be added to the chart. AnyChart itself doesn't impose any restrictions on the number of additional axes but from a practical concern it is most likely very difficult to interpret a chart with more than 2-3 additional axes.  
+This article describes how to use the multi axis feature of AnyChart. With this feature an arbitrary number of axes can be added to the chart. AnyChart itself doesn't impose any restrictions on the number of additional axes but from a practical concern it is most likely very difficult to interpret a chart with more than 2-3 additional axes.
 
-Consider using multiple axes when you need:  
+Consider using multiple axes when you need:
 
 * Compare data point values in different units, for example: Celsius against Fahrenheit degrees, kilopascal (KPa) or hectopascal (HPa) against millimeters or inches of mercury (mmHg or inHg), different currencies (USD against EUR), etc.
 
@@ -21,10 +22,9 @@ Consider using multiple axes when you need:
 
 * Show data measured in different units on the same plot, for example: gross domestic product (GDP) volume and GDP growth rate (GDP will be in billions and rate in percents)
 
+## Declaration
 
-## Definition
-
-If you want to define an additional axis all you need to do is to set index to it, and place as many **.yAxis()** or **.xAxis()** methods into it:
+If you want to declare an additional axis all you need to do is to set index to it, and place as many **.yAxis()** or **.xAxis()** methods into it:
 
 ```
     chart.yAxis(1).orientation('right').title().text('First additional axis');
@@ -32,7 +32,7 @@ If you want to define an additional axis all you need to do is to set index to i
     chart.yAxis(3).orientation('right').title().text('Third additional axis');
 ```
 
-Here is the sample of the chart that will be show when three additional y axes are added and almost no configuration is done, as you can see three additional axes are drawn on the right side of data plot and their maximum and minimum values are calculated automatically (and they are the same as main Y axis have):
+Here is the sample of the chart that shows three additional Y axes and almost no configuration is done, as you can see three additional axes are drawn on the right side of data plot and their maximum and minimum values are calculated automatically (and they are the same as main Y axis have):
 
 {sample}AGST\_Additional\_Axes\_01{sample}
 
@@ -40,8 +40,7 @@ Another example of multiple axes use is multiple Y Axes along with multiple X Ax
 
 {sample}AGST\_Additional\_Axes\_02{sample}
 
-<a name="tuning"/>
-## Tuning Additional Axes
+## Tuning
 
 If you want to change any settings of additional axes you can do that just the same way as basic X and Y axes are configured, see [Axes basics](Axis_Basics) and [Axes Scale](Axis_Scale) for the details:
 
@@ -61,10 +60,9 @@ In the a sample below we will add one additional axis and set value ranges and t
 
 {sample}AGST\_Additional\_Axes\_03{sample}
 
-<a name="binding-series"/>
-## Binding Data Series to Additional Axis
+## Binding Series
 
-To bind data series to the certain axis you should specify it in **series.yScale()** or **series.xScale()** attribute.By default all series work with **chart.yScale()** or **chart.xScale()**:
+To bind data series to the certain axis you should specify it in **series.yScale()** or **series.xScale()** attribute. By default all series work with **chart.yScale()** or **chart.xScale()**:
 
 ```
     var firstSeries = anychart.data.set([
@@ -87,7 +85,8 @@ To bind data series to the certain axis you should specify it in **series.yScale
     var lineSeries = chart.line(secondSeries);
     lineSeries.yScale(extraYScale);
 ```
-In the a sample below we will add one additional axis with a range from 0 to 100 and and bind series of "Line" type to it:
+
+In the a sample below we add one additional axis with a range from 0 to 100 and and bind series of "Line" type to it:
 
 {sample}AGST\_Additional\_Axes\_04{sample}
 
@@ -113,6 +112,7 @@ Lets see how additional axes can be used to compare data in different units, for
             .interval(500);
     KelvinScale.minorTicks().interval(100);
 ```
+
 We defined three axes and set absolute zero as a minimum value, and Titanium melting temperature as a maximum value. We will create one series of a "Marker" type and bind it to Kelvin scale:
 
 ```
@@ -126,6 +126,7 @@ We defined three axes and set absolute zero as a minimum value, and Titanium mel
     ["Titanium melts", 1941]
     var markerSeries = chart.marker(data);
 ```
+
 Here it is - a sample that shows different important temperatures:
 
 {sample}AGST\_Additional\_Axes\_05{sample}
@@ -134,6 +135,7 @@ Here it is - a sample that shows different important temperatures:
 ## Multi Axes Sample for Showing Different Data on the Same Plot
 
 Lets see how additional axes can be used to show different data on the same plot: we will plot a US Debt amount in dollars and in percents of GDP. We need to create one additional Axis adjust both basic and additional Axes:
+
 ```
     chart.yScale().minimum(0).maximum(12000000000000).ticks().interval(2000000000000);
     chart.yAxis().title().text('Debt');
@@ -152,6 +154,7 @@ Lets see how additional axes can be used to show different data on the same plot
     var extraYAxis = chart.yAxis(1);
     extraYAxis.orientation('right').scale(extraYScale);
 ```
+
 We defined two axes and will create one series of a **Column** type to show debt and bind it to **yAxis**, one series of a **Line** type to show percentage changes.
 
 Here it is - a sample chart comparing the US debt, in dark red, to the debts percent of GDP, in blue.

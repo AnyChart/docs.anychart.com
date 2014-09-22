@@ -4,7 +4,7 @@
 anychart.onDocumentReady(function() {
 
     //defining chart type
-    chart = anychart.columnChart();
+    chart = anychart.lineChart();
 
     //title setter
     chart.title().text('Logarithmic scale sample');
@@ -16,13 +16,13 @@ anychart.onDocumentReady(function() {
     chart.yAxis().title().text('This Axis has \'Logarithmic\' type');
 
     //setting data
-    chart.column([
+    chart.spline([
         ['A', 637166],
         ['B', 721630],
         ['C', 1000],
         ['D', 78],
         ['E', 90]
-    ]).hoverFill('#444444');
+    ]);
 
     chart.container('container').draw();
 

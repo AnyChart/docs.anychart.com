@@ -1,19 +1,16 @@
+{:index 9}
 # Text Markers
 
               
 * [Overview](#overview)
-* [Adding Text Marker](#adding)
-* [Configuring Text Marker](#config)
+* [Declare](#declare)
+* [Settings](#settings)
 
-<a name="overview"/>
 ## Overview
 
-Text Markers are useful when you want to place custom texts or description with or instead of axes values labels.
+Text Markers are useful when you want to place custom texts or description with or instead of axes values labels. You can add text markers to any place of a chart.
 
-You can add text markers to any place of a chart.
-
-<a name="adding"/>
-## Adding Text Marker
+## Declare
 
 These text markers are just custom text placed on chart.
 
@@ -30,14 +27,11 @@ Sample below shows several variants of Text Marker usage: marking up values (Hig
 
 {sample}AGST\_Text\_Marker\_01{sample}
 
-<a name="config"/>
-## Configuring Text Marker
+## Settings
 
-You can configure text marker placement, font, anchor and text of any custom text.
+You can configure text marker placement, font, anchor and text of any custom text using **.value()**, **.align()**, **.anchor()**, **.fontSize()**, **.offsetX()**, **.offsetY()**, **.text()** methods.
 
-You can use **.value()**, **.align()**, **.anchor()**, **.fontSize()**, **.offsetX()**, **.offsetY()**, **.text()**
-
-Markers placement is controlled using **.align()** attribute, possible values are: "Near", "Center", "Far".
+Markers placement is controlled using **.align()** method, possible values are: "Near", "Center", "Far".
 
 ```
     chart.textMarker(2)

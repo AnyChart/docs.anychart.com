@@ -27,7 +27,7 @@ Credits is a watermark in the bottom right corner of any chart. It consists of f
 Tooltip shown when when credits are hovered. It can be adjusted with **.alt()** method.
 
 ```
-    chart.credits().alt('Custom alternative text.');
+    chart.credits().alt('Custom tooltip');
 ```
 {sample}Credits\_02{sample}
 
