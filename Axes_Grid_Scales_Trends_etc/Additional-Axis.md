@@ -7,14 +7,13 @@
 * [Multi Axes Sample for Comparing Units](#sample-comparing-units)
 * [Multi Axes Sample for Showing Different Data on the Same Plot](#sample-different-data)
  
-<a name="overview"/>
 ## Overview
    
-In AnyChart scales control axes ticks, values, grid, lines, axes labels position and tickmarks. You can add multiple X and Y axes to your charts with AnyChart.
-<br/><br/>
-This note will describe how to use the multi axis feature of AnyChart. With this feature an arbitrary number of axes can be added to the chart. AnyChart itself doesn't impose any restrictions on the number of additional axes but from a practical concern it is most likely very difficult to interpret a chart with more than 2-3 additional axes.
-<br/><br/>
-Consider using multiple axes when you need:
+In AnyChart scales control axes ticks, values, grid, lines, axes labels position and tickmarks. You can add multiple X and Y axes to your charts with AnyChart.  
+
+This note will describe how to use the multi axis feature of AnyChart. With this feature an arbitrary number of axes can be added to the chart. AnyChart itself doesn't impose any restrictions on the number of additional axes but from a practical concern it is most likely very difficult to interpret a chart with more than 2-3 additional axes.  
+
+Consider using multiple axes when you need:  
 
 * Compare data point values in different units, for example: Celsius against Fahrenheit degrees, kilopascal (KPa) or hectopascal (HPa) against millimeters or inches of mercury (mmHg or inHg), different currencies (USD against EUR), etc.
 
@@ -22,8 +21,8 @@ Consider using multiple axes when you need:
 
 * Show data measured in different units on the same plot, for example: gross domestic product (GDP) volume and GDP growth rate (GDP will be in billions and rate in percents)
 
-<a name="definition"/>
-## Define an Additional Axis
+
+## Definition
 
 If you want to define an additional axis all you need to do is to set index to it, and place as many **.yAxis()** or **.xAxis()** methods into it:
 
