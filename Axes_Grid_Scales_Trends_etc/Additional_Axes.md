@@ -12,7 +12,9 @@
    
 In AnyChart scales control axes ticks, values, grid, lines, axes labels position and tickmarks. You can add multiple X and Y axes to your charts with AnyChart.  
 
+
 This article describes how to use the multi axis feature of AnyChart. With this feature an arbitrary number of axes can be added to the chart. AnyChart itself doesn't impose any restrictions on the number of additional axes but from a practical concern it is most likely very difficult to interpret a chart with more than 2-3 additional axes.  
+
 
 Consider using multiple axes when you need:
 
