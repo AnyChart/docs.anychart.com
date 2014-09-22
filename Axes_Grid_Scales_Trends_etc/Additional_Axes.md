@@ -4,12 +4,12 @@
 * [Declaration](#declaration)
 * [Tuning](#tuning)
 * [Binding Series](#binding_series)
-* [Multi Axes Sample for Comparing Units](#multi-axes-sample-for-comparing-units)
-* [Multi Axes Sample for Showing Different Data on the Same Plot](#multi-axes-sample-for-showing-different-data-on-the-same-plot)
+* [Multi Axes Sample for Comparing Units](#multi_axes_sample_for_comparing_units)
+* [Multi Axes Sample for Showing Different Data on the Same Plot](#multi_axes_sample_for_showing_different_data_on_the_same_plot)
  
  
 ## Overview
-   
+  
 In AnyChart scales control axes ticks, values, grid, lines, axes labels position and tickmarks. You can add multiple X and Y axes to your charts with AnyChart.  
   
   
@@ -58,6 +58,7 @@ If you want to change any settings of additional axes you can do that just the s
     extraYAxis.orientation('right').scale(extraYScale).title().text('Extra Y Axis');
     chart.yAxis().title().text('Basic Y Axes');
 ```
+
 In the a sample below we will add one additional axis and set value ranges and titles for both basic Y axis and additional Y axis:
 
 {sample}AGST\_Additional\_Axes\_03{sample}
@@ -92,7 +93,6 @@ In the a sample below we add one additional axis with a range from 0 to 100 and 
 
 {sample}AGST\_Additional\_Axes\_04{sample}
 
-<a name="sample-comparing-units"/>
 ## Multi Axes Sample for Comparing Units
 
 Lets see how additional axes can be used to compare data in different units, for example we measure temperature an want to show Celsius, Fahrenheit and Kelvin scales. To do that we have to create three Y Axes - the basic one will be Celsius degrees, first additional axis - Fahrenheit and second additional axis - Kelvin:
