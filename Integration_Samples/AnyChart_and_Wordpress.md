@@ -10,7 +10,10 @@ All necessary information, about first steps in AnyChart usage can be found in o
 
 
 ## Overview
-There are several ways of including AnyChart into web page: without installation of any plugins, with disabling WordPress smart insert and with inserting all scripts into head tag of a page.
+There are several ways of including AnyChart into web page: 
+ * without installation of any plugins, 
+ * with disabling WordPress smart insert and 
+ * with inserting all scripts into head tag of a page.
 Also, as far as we may need data from other domain, we shall overview AJAX data request form. All mentioned points will be described below
 
 
