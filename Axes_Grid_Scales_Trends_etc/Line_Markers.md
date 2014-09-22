@@ -9,14 +9,16 @@
 ## Overview
 
 Line markers are lines bound to a scale and require a value to be drawn at.
-
-These lines are useful when you need to highlight some value(s) on an axis. If you need to highlight value with text, not line, please take look at [Text Markers](Text_Markers) article.
-
+  
+These lines are useful when you need to highlight some value(s) on an axis. If you need to highlight value with text, 
+not line, please take look at [Text Markers](Text_Markers) article.
+  
 You can add custom line markers to any scale, both x scale, y scale and additional scales.
 
 ## Declare
 
-To add line marker you need to use **.lineMarker()** method and tune it using **.scale()**, **.fill()** and **.layout()** methods:
+To add line marker you need to use **.lineMarker()** method and tune it using **.scale()**, **.fill()** and 
+**.layout()** methods:
 
 ```
     chart.lineMarker()

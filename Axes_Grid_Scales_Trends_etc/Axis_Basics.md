@@ -66,7 +66,8 @@ And here is the demonstration of this feature on the Single series column chart:
 
 ## Labels
 
-To enable axes labels you need to specify **.labels().enabled(true)** in desired axis. You can specify how labels should look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
+To enable axes labels you need to specify **.labels().enabled(true)** in desired axis. You can specify how labels should 
+look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
 
 Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Tutorial)
 
@@ -98,13 +99,15 @@ Rotated labels:
 
 ## Axis Line
 
-It is possible to tune visual appearance of axis segment line and zero line. To do this you need to use **.lineMarker()** with default settings.
+It is possible to tune visual appearance of axis segment line and zero line. To do this you need to use 
+**.lineMarker()** with default settings.
 
 ```
   chart.lineMarker().stroke('2 red');    
 ```
 
-As in any line, you can make it gradient, change opacity and thickness using **stroke()** method. <!--[Link in need]Read more about lines in [Borders and Lines](Lines-Border-Settings):[/link]-->
+As in any line, you can make it gradient, change opacity and thickness using **stroke()** method. 
+<!--[Link in need]Read more about lines in [Borders and Lines](Lines-Border-Settings):[/link]-->
 
 {sample}AGST\_Axes\_Basic\_06{sample}
 

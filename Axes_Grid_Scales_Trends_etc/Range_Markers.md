@@ -8,11 +8,15 @@
 
 ## Overview
 
-Range Markers (sometimes referred as areas or zones) are colored areas bound to a scale, that are drawn through data plot. These areas are useful when you need to name a highlight some value(s) on axis. You can add Range Markers on any scale, both x scale, y scale and additional scale.
+Range Markers (sometimes referred as areas or zones) are colored areas bound to a scale, that are drawn through data 
+plot. These areas are useful when you need to name a highlight some value(s) on axis. You can add Range Markers on any 
+scale, both x scale, y scale and additional scale.
 
 ## Declare
 
-To add range marker you need to use **.rangeMarker()** method. Each range marker has several compulsory properties set by **.scale()**, **.from()**, **.to()** and **.fill()** methods. If you want to bound range marker to a horizontal scale, you have to set **.layout(vertical)**. Otherwise it will be horizontal.
+To add range marker you need to use **.rangeMarker()** method. Each range marker has several compulsory properties set 
+by **.scale()**, **.from()**, **.to()** and **.fill()** methods. If you want to bound range marker to a horizontal 
+scale, you have to set **.layout(vertical)**. Otherwise it will be horizontal.
 
 ```
     chart.rangeMarker()
@@ -40,13 +44,15 @@ The sample below shows horizontal axes ranges.
 
 ## Range and Text Markers
 
-Combination of range and text markers may be very useful to emphasize certain information or to set a kind of comment or mark some kind of data.
+Combination of range and text markers may be very useful to emphasize certain information or to set a kind of comment 
+or mark some kind of data.
 
 {sample}AGST\_Range\_Marker\_02{sample}
 
 ## Advanced Visualization
 
-As far as range marker has method **.fill()**, you can also use gradient and image fills of range to achieve desired style of your charts.
+As far as range marker has method **.fill()**, you can also use gradient and image fills of range to achieve desired 
+style of your charts.
 
 ```
     chart.rangeMarker(2)
