@@ -1,11 +1,11 @@
 # Additional Axes
-              
-* [Overview](#overview)                                                                          
+
+* [Overview](#overview)
 * [Declaration](#declaration)
 * [Tuning](#tuning)
 * [Binding Series](#binding-series)
-* [Multi Axes Sample for Comparing Units](#sample-comparing-units)
-* [Multi Axes Sample for Showing Different Data on the Same Plot](#sample-different-data)
+* [Multi Axes Sample for Comparing Units](#multi-axes-sample-for-comparing-units)
+* [Multi Axes Sample for Showing Different Data on the Same Plot](#multi-axes-sample-for-showing-different-data-on-the-same-plot)
  
  
 ## Overview
@@ -133,7 +133,6 @@ Here it is - a sample that shows different important temperatures:
 
 {sample}AGST\_Additional\_Axes\_05{sample}
 
-<a name="sample-different-data"/>
 ## Multi Axes Sample for Showing Different Data on the Same Plot
 
 Lets see how additional axes can be used to show different data on the same plot: we will plot a US Debt amount in dollars and in percents of GDP. We need to create one additional Axis adjust both basic and additional Axes:
