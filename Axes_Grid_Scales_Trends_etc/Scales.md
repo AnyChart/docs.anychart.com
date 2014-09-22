@@ -1,16 +1,15 @@
 {:index 5}
 # Scales
-                                                                   
-                                                                   
-* [Overview](#overview)                                               	
-* [Types](#types)                             
-  * [Linear](#linear)                 
+
+* [Overview](#overview)
+* [Types](#types)
+  * [Linear](#linear) 
   * [Logarithmic](#logarithmic)
   * [Ordinal](#ordinal)
   * [Date Time](#date_time)
-* [Stack Mode](#stack_mode)                                                                                      	
-* [Minimum and Maximum](#minimum_and_maximum)         
-* [Minor and Major Ticks](#min-max-ticks)              
+* [Stack Mode](#stack_mode)
+* [Minimum and Maximum](#minimum_and_maximum) 
+* [Minor and Major Ticks](#min-max-ticks) 
 * [Minimum and Maximum Gap](#gap)     
 * [Inversion](#inversion)
 * [Grids](#grids)
@@ -23,7 +22,9 @@
 
 ## Overview
 
-Scales allow you to control such features as minimum and maximum scale values, offsets, scale inversion, intervals, scale type and so on for a single axis. To create additional axes - please read [Additional axes](Additional-Axis) first. To adjust axes display - please see: [Axes Basics tutorial](Axis_Basics).
+Scales allow you to control such features as minimum and maximum scale values, offsets, scale inversion, intervals, 
+scale type and so on for a single axis. To create additional axes - please read [Additional axes](Additional-Axis) 
+first. To adjust axes display - please see: [Axes Basics tutorial](Axis_Basics).
 
 In this section we will explain main scales options.
 
@@ -31,7 +32,8 @@ If you want to control any of scale settings - you should do that using **scale(
 
 ## Types
 
-There are four types of scales in AnyChart: **"Linear"**, **"Logarithmic"**, **"Ordinal"** and **"DateTime"**. To set scale type use appropriate constructor:
+There are four types of scales in AnyChart: **"Linear"**, **"Logarithmic"**, **"Ordinal"** and **"DateTime"**. To set 
+scale type use appropriate constructor:
 
 ```
     chart.xScale(anychart.scales.linear());
@@ -43,7 +45,8 @@ Note: working with extra axes is explained in [Additional Axes Tutorial](Additio
 
 ### Linear
 
-Linear scale type is a default type for yScale in most charts. Values for this scale should be numbers and scale intervals will be evenly distributed along the axis. This type of scale is used when values fall within one reasonable range.
+Linear scale type is a default type for yScale in most charts. Values for this scale should be numbers and scale 
+intervals will be evenly distributed along the axis. This type of scale is used when values fall within one reasonable range.
 
 ```
     chart.xScale(anychart.scales.linear());
@@ -53,7 +56,10 @@ Linear scale type is a default type for yScale in most charts. Values for this s
 
 ### Logarithmic
 
-A logarithmic scale is a scale of measurement that uses the logarithm of a physical quantity instead of the quantity itself. Presentation of data on a logarithmic scale can be helpful when the data covers a large range of values the logarithm reduces this to a more manageable range. <!--You can set any positive number as a logarithm base using log_base attribute.-->
+A logarithmic scale is a scale of measurement that uses the logarithm of a physical quantity instead of the quantity 
+itself. Presentation of data on a logarithmic scale can be helpful when the data covers a large range of values the 
+logarithm reduces this to a more manageable range. 
+<!--You can set any positive number as a logarithm base using log_base attribute.-->
 
 ```
     chart.yScale(anychart.scales.log());
@@ -65,7 +71,8 @@ In the sample below **A = 637.166**, **B = 721.630**, and **C=1.000**, **D=78**,
 
 ### Ordinal
 
-Ordinal scale type is a default type for xScale in most charts. Values for this scale should be of string type and scale intervals will be set automatic.
+Ordinal scale type is a default type for xScale in most charts. Values for this scale should be of string type and 
+scale intervals will be set automatic.
 
 ```
     chart.xScale(anychart.scales.ordinal());
@@ -74,7 +81,9 @@ Ordinal scale type is a default type for xScale in most charts. Values for this 
 
 ### Date Time
 
-A dateTime scale is a scale of measurement that is based on the **UTC Date** format, but accepts variety of data formats. Presentation of data on a dateTime scale can be helpful for displaying time lines and time intervals. More information about data formats and usage is in [Date/Time tutorial](Date_Time_Axes).
+A dateTime scale is a scale of measurement that is based on the **UTC Date** format, but accepts variety of data 
+formats. Presentation of data on a dateTime scale can be helpful for displaying time lines and time intervals. More 
+information about data formats and usage is in [Date/Time tutorial](Date_Time_Axes).
 
 ```
     chart.yScale(anychart.scales.dateTime());
@@ -84,7 +93,8 @@ A dateTime scale is a scale of measurement that is based on the **UTC Date** for
 
 ## Stack Mode
 
-Scale mode defines some additional behavior of a chart. In the table below all modes are listed and their applicability to different chart types:
+Scale mode defines some additional behavior of a chart. In the table below all modes are listed and their 
+applicability to different chart types:
 
 <table width="481" border="1" class="dtTABLE">
 <tbody><tr>
@@ -125,14 +135,17 @@ For any scale, but ordinal, you can set maximum and/or minimum values which are 
     chart.yScale().minimum(-50).maximum(100);
 ```
 
-Note, if you will set maximum value lesser than chart elements values, or minimum greater than them - these elements will be cut, and you will see only a part of them or will not see them at all.
+Note, if you will set maximum value lesser than chart elements values, or minimum greater than them - these elements 
+will be cut, and you will see only a part of them or will not see them at all.
 
 {sample}AGST\_Scales\_06{sample}
 
 <a name="min-max-ticks"/>
 ## Major and Minor Ticks Intervals
 
-For any scale, but ordinal, you can set major and minor ticks intervals, which are calculated automatically by default. Major and minor ticks intervals are axis steps, which define where axis labels (major interval), axis ticks (major and minor, correspondingly) and major and minor grids are displayed.
+For any scale, but ordinal, you can set major and minor ticks intervals, which are calculated automatically by default. 
+Major and minor ticks intervals are axis steps, which define where axis labels (major interval), axis ticks (major and 
+minor, correspondingly) and major and minor grids are displayed.
 
 ```
     chart.yScale().ticks().interval(10);
@@ -146,13 +159,16 @@ In the sample below you can see how interval settings affects grids, ticks and l
 <a name="gap"/>
 ## Maximum and Minimum Gap
 
-For any axis scale you can set minimum and maximum offsets. Maximum and minimum offsets are the spacing between maximum or minimum axis scale values and they are set as a ratio to the maximum and minimum scale values.
+For any axis scale you can set minimum and maximum offsets. Maximum and minimum offsets are the spacing between maximum 
+or minimum axis scale values and they are set as a ratio to the maximum and minimum scale values.
 
 ```
     chart.yScale().minimumGap(0.5).maximumGap(0.5);
 ```
 
-In the sample below you can see how offsets settings affects chart, the chart to the left has minimum and maximum offsets set to 0.5, the chart to the right has all the same settings, but offsets are not set. Note that offsets are ignored when maximum or minimum scale values are specified.
+In the sample below you can see how offsets settings affects chart, the chart to the left has minimum and maximum 
+offsets set to 0.5, the chart to the right has all the same settings, but offsets are not set. Note that offsets are 
+ignored when maximum or minimum scale values are specified.
 
 {sample}AGST\_Scales\_08{sample}
 

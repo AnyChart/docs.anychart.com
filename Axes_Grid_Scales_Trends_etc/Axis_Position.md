@@ -3,12 +3,13 @@
 
 * [Overview](#overview)
 * [Column Mode](#column_mode)
-* [Bar Mode](#horizontal)
+* [Bar Mode](#bar_mode)
 
 ## Overview
    
-Positioning depends on plot type and inversion of axes, below you will find all possible axes positioning and inverting JS Settings with demonstration preview.
-
+Positioning depends on plot type and inversion of axes, below you will find all possible axes positioning and inverting 
+JS Settings with demonstration preview.
+  
 Though these settings are demonstrated using Bar/Column charts - they work for all other chart types.
 
 ## Column Mode
@@ -261,9 +262,10 @@ chart.yAxis().ticks().enabled(false);
 </tbody>
 </table>
 
-<a name="horizontal"/>
 ##Bar Mode
-x-Axis isn't restricted in only buy Top and Bottom positions. It can by placed on the Left or Right sides. So can y-Axis be placed on the top or bottom. Tis option enabled by default in Bar charts. 
+x-Axis isn't restricted in only buy Top and Bottom positions. It can by placed on the Left or Right sides. So can 
+y-Axis be placed on the top or bottom. Tis option enabled by default in Bar charts. 
+  
 Here are some samples of Bar chart Axes position
 
 <table width="700" border="1" class="dtTABLE">

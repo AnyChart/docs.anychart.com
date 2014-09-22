@@ -17,8 +17,8 @@
    * [Rotation](#rotation)
    * [Stagger Mode](#stagger_mode)
  * [First and Last Labels](#first_and_last_labels)
- * [Y-Axis Labels: Fixed Width](#y-axis-labels-fixed-width)
- * [X-Axis Labels: Fixed Width and Text Wrapping](#x-axis-labels-wrapping-width)               
+ * [Y-Axis Labels: Fixed Width](#y-axis_labels-fixed-width)
+ * [X-Axis Labels: Fixed Width and Text Wrapping](#x-axis-labels-wrapping-width)
 
 ## Overview
 
@@ -29,7 +29,8 @@ In this tutorial all major settings and features of axes labels are described.
 ## Enable or Disable
 
 Each axis in AnyChart has its own labels settings, these settings can be configured in labels sub node of the givne axis. 
-By default labels for all axes are enabled. You can enable or disable labels for the given axis using enabled method of **labels()** method:
+By default labels for all axes are enabled. You can enable or disable labels for the given axis using enabled method of 
+**labels()** method:
 
 ```
     chart.xAxis.labels().enabled(false)
@@ -43,7 +44,7 @@ In the sample below a line chart with Y-Axis, X-Axis and Secondary Y-Axis is sho
 
 In order to make chart readable and understandable it is very important to format axes labels in a proper way, for example: 
 add "$" prefix if values are given in dollars or add "°F" postfix if values are given in Fahrenheit degrees.
-
+  
 You have a full control over the axis labels in **.textFormatter()** subnode of **.labels()** node.
   
 <!--To make text formatting easier AnyChart has a special mechanism called Keywords. Every keyword is a unique token that 
@@ -215,7 +216,7 @@ Turning off the last the first label is shown on the [dashboard above](#dashbord
     labelsInside.xAxis().drawLastLabel(false);
 ```
 
-<a name="y-axis-labels-fixed-width"/>
+<a name="y-axis_labels-fixed-width"/>
 ## Y-Axis Labels: Fixed Width
 
 You can set fixed width for Y-Axis labels. If label content doesn't fit - text is automatically wrapped.

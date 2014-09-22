@@ -28,8 +28,8 @@ Lets create a simple Range Bar chart with DateTime Y Axis. For the first we have
 <tbody>
 <tr>
 <th width="145">Task Name</th>
-<th width="237">Task Start</th>		
-<th width="302">Task End</th>				
+<th width="237">Task Start</th>
+<th width="302">Task End</th>
 </tr>
 <tr>
 <td>Development</td>
@@ -105,11 +105,15 @@ For datetime axes you can set Major and Minor Ticks using **.ticks()** and **.mi
     chart.yScale().minorTicks().interval(0, 2);
 ```
 
-Ticks can define years, months, days, hours, minutes and seconds. The order of defining ticks is: **years interval**, **months interval**, **days interval**, **hours interval**, **minutes interval**, **seconds interval**. The order is quite strict. You may not define following intervals of the one, you need, but you have to define previous ones as 0. If you want to define more, than one instance of intervals, just adjust the one, you need.
+Ticks can define years, months, days, hours, minutes and seconds. The order of defining ticks is: **years interval**, 
+**months interval**, **days interval**, **hours interval**, **minutes interval**, **seconds interval**. The order is 
+quite strict. You may not define following intervals of the one, you need, but you have to define previous ones as 0. 
+If you want to define more, than one instance of intervals, just adjust the one, you need.
 
 <a name="sample"/>
 ## Sample Line Chart with Y DateTime Axis
 
-In this sample we will create a Line Chart with DateTime X Axis and set major and minor interval ticks and intervals. Y Axis will be Logarithmic - to show small values in the first years and big values in last year.
+In this sample we will create a Line Chart with DateTime X Axis and set major and minor interval ticks and intervals. Y 
+Axis will be Logarithmic - to show small values in the first years and big values in last year.
 
 {sample}AGST\_DateTime\_Axes\_02{sample}
