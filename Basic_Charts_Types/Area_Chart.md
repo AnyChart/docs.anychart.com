@@ -52,8 +52,12 @@ Let's see single series area chart created using the following data: sales of AC
 <td> $9000</td>
 </tr>
 </tbody></table>
-Now we need to convert this data table into the format that can be used by AnyChart. See more about formats in [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) article.
-In terms of AnyChart data model we have one series of data (Sales) with categories that hold months names. Each point in series represents one month and sales volume. We will use the basic and the easiest method of data setting, it looks like this:
+Now we need to convert this data table into the format that can be used by AnyChart. See more about formats in 
+[Supported Data Formats](../Working_with_Data/Supported_Data_Formats) article.
+  
+In terms of AnyChart data model we have one series of data (Sales) with categories that hold months names. Each point 
+in series represents one month and sales volume. We will use the basic and the easiest method of data setting, it looks 
+like this:
 
 ```
     anychart.data.set([
@@ -66,9 +70,11 @@ In terms of AnyChart data model we have one series of data (Sales) with categori
     chart = anychart.areaChart();
     chart.area(data);
 ```
-As you can see, we've created a Data Set. Every object is a point, each has some attributes. The first column is as category and the second column is a value.
-
-Here it is: AnyChart can now visualize your data. Look at the chart sample below and click on "Launch in playground" to see the full source code, alter and play with the sample or download it.
+As you can see, we've created a Data Set. Every object is a point, each has some attributes. The first column is as 
+category and the second column is a value.
+  
+Here it is: AnyChart can now visualize your data. Look at the chart sample below and click on "Launch in playground" 
+to see the full source code, alter and play with the sample or download it.
 
 {sample}BCT\_AreaChart\_01{sample}
 
@@ -96,7 +102,7 @@ Here is the same chart as shown above, but in Spline mode:
 ### Multi-series Area Chart
 
 To compare two or more data sets you have to use multi-series area charts as it is shown in the sample below.
-
+  
 Let's compare 2003 sales to 2004 sales:
 
 <table width="375" border="1" class="dtTABLE">
@@ -104,37 +110,39 @@ Let's compare 2003 sales to 2004 sales:
 <tr>
 <th width="88"><b>Month</b></th>
 <th width="88"><b>2003 Sales</b></th>
-<th width="88"><b>2004 Sales</b></th>	
+<th width="88"><b>2004 Sales</b></th>
 </tr>
 <tr>
 <td>January</td>
 <td>$10000</td>
-<td>$12000</td>	
+<td>$12000</td>
 </tr>
 <tr>
 <td>February</td>
 <td> $12000</td>
-<td> $15000</td>	
+<td> $15000</td>
 </tr>
 <tr>
 <td>March</td>
 <td> $18000</td>
-<td> $16000</td>	
+<td> $16000</td>
 </tr>
 <tr>
 <td>April</td>
 <td> $11000</td>
-<td> $15000</td>	
+<td> $15000</td>
 </tr>
 <tr>
 <td>May</td>
 <td> $9000</td>
-<td> $14000</td>	
+<td> $14000</td>
 </tr>
 </tbody>
 </table>
 
-As we do in single series area sample above we need to convert this table AnyChart format, the only difference between these two samples is the fact that now we have two series of the data: one series for each year, and we give proper names to each series:
+As we do in single series area sample above we need to convert this table AnyChart format, the only difference between 
+these two samples is the fact that now we have two series of the data: one series for each year, and we give proper 
+names to each series:
 
 ```
     var dataSet = anychart.data.set([
@@ -150,17 +158,23 @@ As we do in single series area sample above we need to convert this table AnyCha
     chart.area(seriesData_2).name('2005');
 ```
 
-As we now have multi-series chart we don't want to set **type of chart** for each series individually (there can be much more than two series in multi-series chart), so we set **chart** as **anychart.areaChart()**. Now all series in the chart will be of Area type by default.
+As we now have multi-series chart we don't want to set **type of chart** for each series individually (there can be 
+much more than two series in multi-series chart), so we set **chart** as **anychart.areaChart()**. Now all series in 
+the chart will be of Area type by default.
 
 {sample}BCT\_AreaChart\_03{sample}
 
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in Axes tutorial, in this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
+scale and settings and many more. All axis features are described in Axes tutorial, in this section we will quickly 
+demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be 
+controlled.
 
 ### Position
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust position with **orientation()** method of **yAxis** or **xAxis** instances.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust position with 
+**orientation()** method of **yAxis** or **xAxis** instances.
 
 Positioning depends on plot type and inversion of axes.
 
