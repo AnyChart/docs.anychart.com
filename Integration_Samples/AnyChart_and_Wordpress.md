@@ -2,14 +2,30 @@
 Inserting Charts into WordPress controlled Sites 
 ===========
   
-As far as WordPress is one of the most popular Content Management Systems, this page is fully devoted to all feature 
-and aspects of AnyChart usage in WordPress controlled sites.
+As far as WordPress is one of the most popular Content Management Systems on the net, here is an article about main 
+features and aspects of AnyChart usage in WordPress controlled sites.
   
 All necessary information, about first steps in AnyChart usage can be found in our 
 [Quick Start](../Quick_Start/Quick_Start) page.
 
 ## Overview
-There are several ways of including AnyChart into web page: 
+
+Data visualisation is fast developing internet industry. Data visualisation rooted almost into any aspect of our life. 
+As far as it's the most effective way of presenting information, every presentation and every information dashboard 
+requires visualized information. Moreover, pretty designed dashboard makes any web-page even more beautiful.
+  
+<!--нагло спиздил с главной страницы-->
+AnyChart is a flexible JavaScript (HTML5) based solution that allows you to create interactive and great looking 
+charts. It is a cross-browser and cross-platform charting solution intended for everybody who deals with creation of 
+dashboard, reporting, analytics, statistical, financial or any other data visualization solutions. PCs, Macs, iPhones, 
+iPads, Android devices - AnyChart works everywhere, you'll get the same experience across any devices and browsers! 
+  
+Visualized data looks good as on a page of any blog writer, as it is ion the page of a big company, such as microsoft 
+or oracle
+
+## Integration AnyChart into a Page
+
+There are several ways of including AnyChart into a web page: 
  * without installation of any plugins, 
  * with disabling WordPress smart insert and 
  * with inserting all scripts into head tag of a page.
