@@ -39,10 +39,13 @@ be described below
 ## Including AnyChart into WordPress without any plugins
 
 So, first you'll have to open page editor and switch into Text Editing Mode and insert AnyChart JS, data and container 
-(all three main parts are in green frames). Chart container may be any size, by if there are no style settings for 
-container, it would have zero height and zero width.
+(all three main parts are in green frames).
   
 ![](http://cdn.anychart.com/images/wordpress/no_plugins.png)
+**Note:** Chart container may be any size, but if there are no style settings for container, it would have zero height 
+and zero width.
+  
+    
 Now the page is ready to be published. Let's preview and check, if everything looks fine and if there are no mistakes 
 in data.
   
