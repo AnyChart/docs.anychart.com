@@ -45,22 +45,22 @@ So, first you'll have to open page editor and switch into Text Editing Mode and 
 **Note:** Chart container may be any size, but if there are no style settings for container, it would have zero height 
 and zero width.
   
-    
+  
 Now the page is ready to be published. Let's preview and check, if everything looks fine and if there are no mistakes 
 in data.
   
 ![](http://cdn.anychart.com/images/wordpress/preview.png)
   
-EveryThing looks perfect. Page is ready to be used.
+Everything looks perfect. Page is ready to be used.
   
 **Note:** Script tag with data have to contain no empty Lines. If there are any, WordPress will replace them with \<p> 
 tag and all data would be corrupted. Ways of avoiding data corruption will be presented below.
- 
+
 ## Chart data with disabled smart insert
 
 WordPress provides you with variate of plugins for disabling smart insert. In the sample below was used "Raw HTML" 
 plugin, but which of the smart insert disabling plugins was used plays no roll.
-
+  
 First of all. we have to install and activate plugin.
   
 ![](http://cdn.anychart.com/images/wordpress/pluging_activation.png)
