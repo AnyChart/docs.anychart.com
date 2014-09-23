@@ -14,11 +14,13 @@ Data visualisation is fast developing internet industry. Data visualisation root
 As far as it's the most effective way of presenting information, every presentation and every information dashboard 
 requires visualized information. Moreover, pretty designed dashboard makes any web-page even more beautiful.
   
+  
 <!--нагло спиздил с главной страницы-->
 AnyChart is a flexible JavaScript (HTML5) based solution that allows you to create interactive and great looking 
 charts. It is a cross-browser and cross-platform charting solution intended for everybody who deals with creation of 
 dashboard, reporting, analytics, statistical, financial or any other data visualization solutions. PCs, Macs, iPhones, 
 iPads, Android devices - AnyChart works everywhere, you'll get the same experience across any devices and browsers! 
+  
   
 Visualized data looks good as on a page of any blog writer, as it is ion the page of a big company, such as microsoft 
 or oracle
