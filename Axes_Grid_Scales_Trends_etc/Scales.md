@@ -9,16 +9,16 @@
   * [Date Time](#date_time)
 * [Stack Mode](#stack_mode)
 * [Minimum and Maximum](#minimum_and_maximum) 
-* [Minor and Major Ticks](#min-max-ticks) 
-* [Minimum and Maximum Gap](#gap)     
+* [Minor and Major Ticks](#minor_and_major_ticks) 
+* [Minimum and Maximum Gap](#minimum_and_maximum_gap)
 * [Inversion](#inversion)
 * [Grids](#grids)
-  * [Major and Minor](#grids)
-  * [Dashed Grid](#dashed)
-  * [Even and Odd Fills](#interlace)
-* [One Scale for Different Charts](#crosschart-scale)
-<!--* [Crossing value](#crossing)-->  
-<!--* [Base value](#base-value)-->                   
+  * [Major and Minor](#major_and_minor)
+  * [Dashed Grid](#dashed_grid)
+  * [Even and Odd Fills](#even_and_odd_fills)
+* [One Scale for Different Charts](#one_scale_for_different_charts)
+<!--* [Crossing value](#crossing)-->
+<!--* [Base value](#base-value)-->
 
 ## Overview
 
@@ -46,7 +46,8 @@ Note: working with extra axes is explained in [Additional Axes Tutorial](Additio
 ### Linear
 
 Linear scale type is a default type for yScale in most charts. Values for this scale should be numbers and scale 
-intervals will be evenly distributed along the axis. This type of scale is used when values fall within one reasonable range.
+intervals will be evenly distributed along the axis. This type of scale is used when values fall within one reasonable 
+range.
 
 ```
     chart.xScale(anychart.scales.linear());
@@ -126,7 +127,6 @@ In the sample below stacked and percent stacked scales are demonstrated on the s
 
 {sample}AGST\_Scales\_05{sample}
 
-<a name="minimum_and_maximum"/>
 ## Minimum and Maximum
 
 For any scale, but ordinal, you can set maximum and/or minimum values which are calculated automatically by default.
@@ -140,7 +140,6 @@ will be cut, and you will see only a part of them or will not see them at all.
 
 {sample}AGST\_Scales\_06{sample}
 
-<a name="min-max-ticks"/>
 ## Major and Minor Ticks Intervals
 
 For any scale, but ordinal, you can set major and minor ticks intervals, which are calculated automatically by default. 
@@ -156,7 +155,6 @@ In the sample below you can see how interval settings affects grids, ticks and l
 
 {sample}AGST\_Scales\_07{sample}
 
-<a name="gap"/>
 ## Maximum and Minimum Gap
 
 For any axis scale you can set minimum and maximum offsets. Maximum and minimum offsets are the spacing between maximum 
@@ -205,20 +203,18 @@ That's how simple grid will look like:
 
 {sample}AGST\_Scales\_10{sample}
 
-<a name="dashed"/>
 ### Dashed Grid Lines
 
 You can also make your grid lines dashed:
 
 ```
-  chart.minorGrid().stroke({color: 'black', dash: '5 2 5', opacity: 0.2}).layout('horizontal');
+    chart.minorGrid().stroke({color: 'black', dash: '5 2 5', opacity: 0.2}).layout('horizontal');
 ```
 
 And create chart like this:
 
 {sample}AGST\_Scales\_11{sample}
 
-<a name="interlace"/>
 ### Even and Odd fills
 
 You can use this method with both major and minor grids. To do this you need to set **.oddFill()** or/and **.evenFill()** methods in the corresponding grid. Fill can be gradient, image and/or hatch as well as any other fill.
@@ -231,7 +227,6 @@ That's how simple interlaced grid looks like:
 
 {sample}AGST\_Scales\_12{sample}
 
-<a name="crosschart-scale"/>
 ## One Scale for Different Charts
 
 Scale calculates values and in many cases it is very useful to adjust settings of one scale and then use it for multiple charts. in example below we will create custom scale, adjust it and apply it for 2 charts. Click "launch in playground" to see the code
