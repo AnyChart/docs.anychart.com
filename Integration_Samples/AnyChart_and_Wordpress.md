@@ -18,8 +18,7 @@ requires visualized information. Moreover, pretty designed dashboard makes any w
 Visualized data looks good as on a page of any blog writer, as it does on the page of a big company, such as microsoft 
 or oracle.
   
-  
-<!--нагло спиздил с главной страницы-->
+
 AnyChart is a flexible JavaScript (HTML5) based solution that allows you to create interactive and great looking 
 charts. It is a cross-browser and cross-platform charting solution intended for everybody who deals with creation of 
 dashboard, reporting, analytics, statistical, financial or any other data visualization solutions. PCs, Macs, iPhones, 
@@ -60,9 +59,9 @@ tag and all data would be corrupted. Ways of avoiding data corruption will be pr
 
 ## Chart data with disabled smart insert
 
-Previous sample of AnyChart usage is quite continent. But in most cases, we may need a bit more. A simple dividing data 
-into paragraphs may help you to get the purpose of any line in your data in no time. Very desirable <!-- !!!! -->object 
-in some cases. It doesn't take much, to achieve this goal. 
+Previous sample of AnyChart usage is quite convenient. But in most cases, we may need a bit more. A simple dividing data 
+into paragraphs may help you to get the function of any line in your data in no time. Comments are very desirable in 
+some cases. It doesn't take much, to achieve this goal. 
   
 WordPress provides you with variate of plugins for disabling smart insert. In the sample below was used "Raw HTML" 
 plugin, but which of the smart insert disabling plugins was used plays no roll.
@@ -80,16 +79,18 @@ adjusting in this very chart, if there is a need.
 ## Inserting AnyChart into Head of a Page
 
 AnyChart can be used in any part of a page, but we do recommend to set data and JS link into a head tag of a page. 
-There are quite a few plugin for inserting scripts into head. In the sample was used "Header and Footer Scripts" plugin.
+There are quite a few plugin for inserting scripts into head. In the sample below was used "Header and Footer Scripts" plugin.
  It can insert scripts in head for one page, or for the whole site. In the sample used both functions.
   
 As the first step, insert AnyChart JS into head of every page, as it is shown below:
   
 ![](http://cdn.anychart.com/images/wordpress/header_plugin.png)
   
-
 At the second Step insert data for chart into the head of a page with a chart 
   
 ![](http://cdn.anychart.com/images/wordpress/header_script.png)
   
 The chart is ready.
+  
+  In common, AnyChart link and container setting are set at the header for any page of a site could contain chart 
+without unnecessary manipulations and data can be placed in a head of a page.
