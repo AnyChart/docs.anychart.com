@@ -39,12 +39,12 @@ There are several ways of including AnyChart into a web page:
  * with disabling WordPress smart insert and 
  * with inserting all scripts into head tag of a page.
   
-Also, as far as we may need data from other domain, we shall overview AJAX data request form. All mentioned points will 
-be described below
+Also, as far as we may need data from other domain, we shall overview AJAX data request form. All mentioned points are 
+described below
 
 ### Including AnyChart into WordPress without Any Plugins
 
-AnyChart complies all standards, that's why there are no problems with using it on any web-page or in any project. As 
+AnyChart complies all standards, which leads to avoiding any problems with using it on any web-page or in any project. As 
 for WordPress, it would take you few steps, to insert it into page. First you'll have to open page editor and switch 
 into Text Editing Mode and insert AnyChart JS, data and container.
 
@@ -111,9 +111,12 @@ without unnecessary manipulations and data can be placed in a head of a page.
 As far as AnyChart is based on JavaScript, it is possible to use any JavaScript feature. One of the most popular is 
 requesting data from JSON file. A JSON file may be on any domain, any public host. The easiest way to get JSON and 
 parse it is through jQuary library. Below is a sample of getting and parsing  data of the [JSON file](http://cdn.anychart.com/data/wordpress_article_data.json)
-  (img)
+  
+(img)
+  
 As you can see, we've used ajax post request to get data, adjusted some settings and started AnyChart function after 
 successful getting of the data. 
   
+  (img)
   
 As a result, we may see a pretty chart, based on data from JSON file.
