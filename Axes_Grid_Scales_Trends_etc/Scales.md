@@ -14,7 +14,7 @@
 * [Inversion](#inversion)
 * [Grids](#grids)
   * [Major and Minor](#major_and_minor)
-  * [Dashed Grid](#dashed_grid)
+  * [Dashed](#dashed)
   * [Even and Odd Fills](#even_and_odd_fills)
 * [One Scale for Different Charts](#one_scale_for_different_charts)
 <!--* [Crossing value](#crossing)-->
@@ -140,7 +140,7 @@ will be cut, and you will see only a part of them or will not see them at all.
 
 {sample}AGST\_Scales\_06{sample}
 
-## Major and Minor Ticks Intervals
+## Minor and Major Ticks
 
 For any scale, but ordinal, you can set major and minor ticks intervals, which are calculated automatically by default. 
 Major and minor ticks intervals are axis steps, which define where axis labels (major interval), axis ticks (major and 
@@ -155,7 +155,7 @@ In the sample below you can see how interval settings affects grids, ticks and l
 
 {sample}AGST\_Scales\_07{sample}
 
-## Maximum and Minimum Gap
+## Minimum and Maximum Gap
 
 For any axis scale you can set minimum and maximum offsets. Maximum and minimum offsets are the spacing between maximum 
 or minimum axis scale values and they are set as a ratio to the maximum and minimum scale values.
@@ -183,7 +183,7 @@ Sample inverted scale chart:
 {sample}AGST\_Scales\_09{sample}
 
 ## Grids
-### Major and Minor Grids
+### Major and Minor
 
 There are two types of grids in AnyChart - major grid and minor grid. To enable grid you have to specify:
 
@@ -203,7 +203,7 @@ That's how simple grid will look like:
 
 {sample}AGST\_Scales\_10{sample}
 
-### Dashed Grid Lines
+### Dashed
 
 You can also make your grid lines dashed:
 
