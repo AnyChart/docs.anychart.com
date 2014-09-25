@@ -18,15 +18,15 @@ All necessary information, about first steps in AnyChart usage can be found on o
 
 ## Overview
 
-Data visualisation is fast developing internet industry. Data visualisation rooted almost into any aspect of our life. 
+Data visualisation is fast developing internet industry. It has rooted almost into any aspect of our life. 
 As far as it's the most effective way of presenting information, every presentation and every information dashboard 
 requires visualized information. Moreover, pretty designed dashboard makes any web-page even more beautiful.
   
   
-Visualized data looks as good on a page of any blog writer, as it does on the page of a big company, such as Microsoft 
+Visualized data looks as good on a page of a blog writer, as it does on a page of a big company, such as Microsoft 
 or Oracle.
   
-
+  
 AnyChart is a flexible JavaScript (HTML5) based solution that allows you to create interactive and great looking 
 charts. It is a cross-browser and cross-platform charting solution intended for everybody who deals with creation of 
 dashboard, reporting, analytics, statistical, financial or any other data visualization solutions. PCs, Macs, iPhones, 
@@ -44,15 +44,16 @@ described below
 
 ### Including AnyChart into WordPress without Any Plugins
 
-AnyChart complies all standards, which leads to avoiding any problems with using it on any web-page or in any project. As 
-for WordPress, it would take you few steps, to insert it into page. First you'll have to open page editor and switch 
-into Text Editing Mode and insert AnyChart JS, data and container.
+AnyChart complies all standards, which leads to avoiding any problems with integration into any web-page or in any project. As 
+for WordPress, it would take you few steps, to insert AnzChart into a page. First you'll have to open **page editor** and switch 
+into **Text Editing Mode** and insert AnyChart JS, some data and set chart container.
 
 ![](http://cdn.anychart.com/images/wordpress/no_plugins.png)
 
 **Note:** Chart container may be any size, but if there are no style settings for container, it would have zero height 
 and zero width.
-
+  
+  
 That were minimum requests. What can be simpler? Now the page is ready to be published. Let's preview and check, if 
 everything looks fine and if there are no mistakes in data.
 
@@ -62,12 +63,12 @@ Everything looks perfect. the page is ready.
   
   
 **Note:** Script tag with data have to contain no empty Lines. If there are any, WordPress will replace them with \<p> 
-tag and all data would be corrupted. Ways of avoiding data corruption will be presented below.
+tag and all data would be corrupted. Some ways of avoiding data corruption are presented below.
 
 ### Chart Data with Disabled Smart Insert
 
 Previous sample of AnyChart usage is quite convenient. But in most cases, we may need a bit more. A simple dividing data 
-into paragraphs may help you to get the function of any line in your data in no time. Comments are very desirable in 
+into paragraphs may help to get the functionality of any line in your data in no time. Comments are very desirable in 
 some cases. It doesn't take much, to achieve this goal. 
   
   
@@ -80,8 +81,8 @@ First of all. we have to install and activate plugin.
 ![](http://cdn.anychart.com/images/wordpress/pluging_activation.png)
 
 After plugin activation. wrap data script with data into \[raw]...\[/raw] tag. Now you are free to use any number of 
-empty lines you want. It will make no difference for chart visualisation but it may be of great help for feather data 
-adjusting in this very chart, if there is a need.
+empty lines you want. It will make no difference for chart visualisation but it may be of a great help for feather data 
+adjusting in this very chart.
 
 ![](http://cdn.anychart.com/images/wordpress/raw_html.png)
 
@@ -96,7 +97,7 @@ As the first step, insert AnyChart JS into head of every page, as it is shown be
 
 ![](http://cdn.anychart.com/images/wordpress/header_plugin.png)
 
-At the second Step insert data for chart into the head of a page with a chart 
+At the second Step insert chart data into the head of a page with a chart 
 
 ![](http://cdn.anychart.com/images/wordpress/header_script.png)
 

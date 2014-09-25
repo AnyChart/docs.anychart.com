@@ -4,9 +4,9 @@
               
 * [Overview](#overview)
 * [Declare](#declare)
-  * [Sample Range Bar With Y DateTime Axis](#range)
-* [Major and Minor Interval Ticks](#ticks)
-  * [Sample Line Chart with Y DateTime Axis](#sample)
+  * [Sample Range Bar With Y DateTime Axis](#sample_range_bar_with_y_datetime_axis)
+* [Major and Minor Interval Ticks](#major_and_minor_interval_ticks)
+  * [Sample Line Chart with Y DateTime Axis](#sample_line_chart_with_y_datetime_axis)
 
 ## Overview
 
@@ -95,7 +95,6 @@ That's it - chart with DateTime Y Axis is ready:
 
 {sample}AGST\_DateTime\_Axes\_01{sample}
 
-<a name="ticks"/>
 ## Major and Minor Interval Ticks
 
 For datetime axes you can set Major and Minor Ticks using **.ticks()** and **.minorTicks()** methods of scale:
@@ -110,7 +109,6 @@ Ticks can define years, months, days, hours, minutes and seconds. The order of d
 quite strict. You may not define following intervals of the one, you need, but you have to define previous ones as 0. 
 If you want to define more, than one instance of intervals, just adjust the one, you need.
 
-<a name="sample"/>
 ## Sample Line Chart with Y DateTime Axis
 
 In this sample we will create a Line Chart with DateTime X Axis and set major and minor interval ticks and intervals. Y 
