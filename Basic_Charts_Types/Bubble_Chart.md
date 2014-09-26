@@ -181,7 +181,9 @@ Note again, that setting size in pixels may lead to the nasty results when chart
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, 
 axis scale and settings and many more. All axis features are described in 
-[Axes Basics](../Axes_Grid_Scales_Trends_etc/Axis_Basics) tutorial. In this section we will quickly demonstrate how 
+[Axes Basics](../Axes_Grid_Scales_Trends_etc/Axis_Basics) tutorial. 
+  
+In this section we will quickly demonstrate how 
 axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
 ### Positioning
@@ -196,37 +198,46 @@ settings in [Axes Positioning](../Axes_Grid_Scales_Trends_etc/Axis_Position) tut
     chart.xAxis(0).orientation('top');
     chart.yAxis(0).orientation('right');
 ```
+
 And here is the demonstration of this feature on the Single-series sample:
 {sample}BCT\_Bubble\_Chart\_05{sample}
 
 ### Inversion
 
 AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis <scale>:
+
 ```
     chart.yScale().inverted(true);
 ```
+
 And here is the demonstration of Y Axis inversion on the Single-series sample:
+
 {sample}BCT\_Bubble\_Chart\_06{sample}
 
 ### Minimum and Maximum
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 0, and maximum is 1000. You can control these values by setting maximum and minimum attributes of yScale method. As far as you want to adjusted the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
+By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart 
+sample above: minimal value on the Y Axis is 0, and maximum is 1000. You can control these values by setting maximum 
+and minimum attributes of yScale method. As far as you want to adjusted the scale, it's desirable to set 
+**.ticks().interval()** as well, in case default interval is twisted:
+
 ```
     chart.yScale().minimum('-100').maximum('1000').ticks().interval(100);
 ```
+
 And here is the demonstration of maximum and minimum values on the Single-series sample:
 
 {sample}BCT\_Bubble\_Chart\_07{sample}
 
-<a name="visualization"/>
 ## Visualization
 
-In this section we will describe main parts of bubble chart visualization and ways to adjust it. Visual appearance of bubbles is defined using certain methods. For bubble chart the main thing is **.fill()** method.
+In this section we will describe main parts of bubble chart visualization and ways to adjust it. Visual appearance of 
+bubbles is defined using certain methods. For bubble chart the main thing is **.fill()** method.
 
-<a name="basic_sample"/>
 ### Basic Sample
 
 Now, let's look how to change the look of an Area. Here is a basic sample:
+
 ```
     .fill('gold')
     .hatchFill('diagonalbrick', 'gray')
@@ -234,21 +245,31 @@ Now, let's look how to change the look of an Area. Here is a basic sample:
     .stroke("Rgb(86,86,26)", 4)
     .hoverStroke("darkred", 6);
 ```
-Using such settings we've created a style that defines bubbles of Gold color, rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a darkred thick border and hatch fill colored darkred too.
+
+Using such settings we've created a style that defines bubbles of Gold color, rather thick border, hatch filled with 
+DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it will be 
+highlighted with a darkred thick border and hatch fill colored darkened too.
 
 Now we will apply this style to the chart
+
 {sample}BCT\_Bubble\_Chart\_08{sample}
 
-<a name="labels_and_tooltips"/>
 ## Labels and Tooltips
 
-In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and Tooltips.
-If you want to configure data labels and tooltips for all series - you should do that in .labels and .tooltip methods. You can tune their visual appearance, positioning and format.
-When formatting data labels text we will use .textFormatter to show Y axes value. Otherwise X axes will be displayed here.
+In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and 
+tuning visual appearance for them can be found in Labels and Tooltips.
+  
+  
+If you want to configure data labels and tooltips for all series - you should do that in .labels and .tooltip methods. 
+You can tune their visual appearance, positioning and format.
+  
+  
+When formatting data labels text we will use .textFormatter to show Y axes value. Otherwise X axes will be displayed 
+here.
 
 {sample}BCT\_Bubble\_Chart\_09{sample}
 <!--
-Related Help Topics:
+**Related Help Topics:**
 
 Learn more about labels and tooltips in Labels and tooltips
 Full Keywords reference and formatting guide:Labels and tooltips

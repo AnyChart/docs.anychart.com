@@ -169,8 +169,8 @@ minimum and maximum values can be controlled.
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **yAxis** or **xAxis** 
 position attribute.
 
-Positioning depends on plot type and inversion of axes<!--, you will find list of all possible positioning and 
-inversion settings in Axes Positioning and Inverting Templates-->.
+Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and 
+inversion settings in [Axes Positioning](../Axes_Grid_Scales_Trends_etc/Axis_Position) Templates.
 
 ```
     chart.xAxis(0).orientation('right');
@@ -325,18 +325,18 @@ As you see it is very easy to do by setting **fill** attribute for **point** nod
 AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set 
 colors, for example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)" or "AliceBlue" or "#F0F8FF"- and the 
 color will be the same. Depending on your system/site/application design you may need - and use - any of this color 
-setting methods. <!--  But even this is not everything about colors in AnyChart: read more about setting colors below 
+setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below 
 and in the following Help Sections:
 
-* Different ways of setting colors of elements  -->
+* Different ways of [setting colors](../General_Appearance_Settings/Color_Management) of elements
 
 ## Hatch Fills
 
 AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard 
 to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart 
 has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who 
-are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings.<!-- 
-To see whole range of available hatch types see Hatch tutorial.-->
+are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings. 
+To see whole range of available hatch types see [Hatch Fill](../General_Appearance_Settings/Hatch_Fill) tutorial.
   
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 
 chart with 5 series with 3 data points in each. For every series we've applied different hatch fill types.

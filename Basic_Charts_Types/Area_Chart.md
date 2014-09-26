@@ -173,9 +173,9 @@ the chart will be of Area type by default.
 ## Axes
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
-scale and settings and many more. All axis features are described in Axes tutorial, in this section we will quickly 
-demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be 
-controlled.
+scale and settings and many more. All axis features are described in 
+[Axes tutorial](../Axes_Grid_Scales_Trends_etc/Axis_Basics), in this section we will quickly demonstrate how axis 
+position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
 ### Position
 
