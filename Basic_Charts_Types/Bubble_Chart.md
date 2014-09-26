@@ -1,36 +1,40 @@
-# Bubble Chart                                                                                     
-                                                                                    
+# Bubble Chart
+
 * [Overview](#overview)
 * [Chart](#chart)
-  * [Single Series Bubble Chart](#single_series)
-  * [Multi-series Bubble Chart](#multi_categorized)
-* [Bubbles Minimum and Maximum Size](#size)
+ * [Single Series](#single_series)
+ * [Multi-series](#multi-series)
+* [Size](#size)
 * [Axes](#axes)
-  * [Positioning](#position)
-  * [Inversion](#inversion)
-  * [Minimum and Maximum](#min_max)
+ * [Positioning](#position)
+ * [Inversion](#inversion)
+ * [Minimum and Maximum](#minimum_and_maximum)
 * [Visualization](#visualization)
-  * [Basic Sample](#basic_sample)
+ * [Basic Sample](#basic_sample)
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Colors](#colors)
-  * [Colorizing Elements](#color_setting)
+ * [Colorizing Elements](#color_setting)
 * [Hatch Fills](#hatches)
  
-<a name="overview"/>
 ## Overview
 
 A Bubble chart is a variation of a Scatter chart in which the data points are replaced with bubbles.
+  
+  
+Bubble charts are often used to present financial data. Use a Bubble chart when you want specific values to be more 
+visually represented in your chart by different bubble sizes.
+  
+  
+Bubble charts are popular tools for identifying and illustrating industry clusters. Essentially, these charts allow four
+ different variables to be plotted within the same graph, making it easy to assess relative economic performance. 
+Because they allow visual comparisons of well-understood measures, bubble charts are often used for pinpointing 
+priority industries that should receive attention from a state economic development agency.
 
-Bubble charts are often used to present financial data. Use a Bubble chart when you want specific values to be more visually represented in your chart by different bubble sizes.
-
-Bubble charts are popular tools for identifying and illustrating industry clusters. Essentially, these charts allow four different variables to be plotted within the same graph, making it easy to assess relative economic performance. Because they allow visual comparisons of well-understood measures, bubble charts are often used for pinpointing priority industries that should receive attention from a state economic development agency.
-
-
-<a name="chart"/>
 ## Chart
 
-Depending on data model and the visualization purpose the bar chart may contain single series or multi series. As bubble chart need 3 values to show bubbles - you need to pass this data to chart:
-
+Depending on data model and the visualization purpose the bar chart may contain single series or multi series. As 
+bubble chart need 3 values to show bubbles - you need to pass this data to chart:
+  
 When using Bubble chart on a scatter plot:
 
 ```
@@ -43,10 +47,10 @@ When using Bubble chart on a categorized plot:
     ['December', 6, 17]
 ```
 
-<a name="single_series"/>
-### Single Series Bubble Chart
+### Single Series
 
-Let's see single series bubble chart created using the sample data - ACME Corp. sales data for the three different products, we will compare a number of units sold and profit using a bubble chart:
+Let's see single series bubble chart created using the sample data - ACME Corp. sales data for the three different 
+products, we will compare a number of units sold and profit using a bubble chart:
 
 <table width="376" border="1" class="dtTABLE">
 <tbody><tr>
@@ -70,7 +74,10 @@ Let's see single series bubble chart created using the sample data - ACME Corp. 
 <td>$10</td>
 </tr>
 </tbody></table>
-Now we need to convert this data table into acceptable format, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data (Sales) with categories that hold Product names. Each point in series represents product, units sold and a profit amount. Converted XML Data looks like:
+
+Now we need to convert this data table into acceptable format, this format will be accepted by AnyChart. In terms of 
+AnyChart data model we have one series of data (Sales) with categories that hold Product names. Each point in series 
+represents product, units sold and a profit amount. Converted data looks like:
 
 ```
     chart.bubble([
@@ -79,14 +86,15 @@ Now we need to convert this data table into acceptable format, this format will 
         ['Product C', 48, 10]
     ]).minimumSize(2).maximumSize(40);
 ```
-As you can see, we've categoriesed chart ad **bubble**, set attribute that defines bar category into first and second columns and attribute that defines bubble size into third one.
+
+As you can see, we've categoriesed chart ad **bubble**, set attribute that defines bar category into first and second 
+columns and attribute that defines bubble size into third one.
 
 Here it is - AnyChart can now visualize your data. You can launch it in playground and modify it.
 
 {sample}BCT\_Bubble\_Chart\_01{sample}
 
-<a name="multi_categorized"/>
-### Multi-series Bubble Chart
+### Multi-series
 
 To compare two or more data rows you have to use multi-series bar charts as it shown in the sample below.
 
@@ -108,16 +116,16 @@ Let's compare year 2003 sales to year 2004 product sales:
 <tr>
 <td>Product A</td>
 <td>637</td>
-<td>$6</td>	
+<td>$6</td>
 <td>630</td>
-<td>$12</td>	
+<td>$12</td>
 </tr>
 <tr>
 <td>Product B</td>
 <td>72</td>
-<td>$14</td>	
+<td>$14</td>
 <td>32</td>
-<td>$10</td>	
+<td>$10</td>
 </tr>
 <tr>
 <td>Product C</td>
@@ -127,7 +135,9 @@ Let's compare year 2003 sales to year 2004 product sales:
 <td>$20</td>
 </tr>
 </tbody></table>
-As we do in single-series bubble sample above we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have bigger data and we have to **MapAs()** it.
+
+As we do in single-series bubble sample above we need to convert this table into acceptable format, the only difference 
+between these two samples is the fact that now we have bigger data and we have to **MapAs()** it.
 
 ```
     var dataSet = anychart.data.set([
@@ -138,17 +148,22 @@ As we do in single-series bubble sample above we need to convert this table into
     var seriesData_1 = dataSet.mapAs({x: [0], value: [1], size:[2]});
     var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
 ```
+
 {sample}BCT\_Bubble\_Chart\_02{sample}
 
-<a name="size"/>
-### Bubbles Minimum and Maximum Size
+### Size
 
-Bubbles minimum and maximum size can be controlled using **maximumSize()** and **minimumSize()** attributes. Both of them can be set in percents of a lesser dataplot side (this can be width or height) and in pixels:
+Bubbles minimum and maximum size can be controlled using **maximumSize()** and **minimumSize()** attributes. Both of 
+them can be set in percents of a lesser dataplot side (this can be width or height) and in pixels:
+
 ```
     chart.maximumSize(25).minimumSize(1);
 ```
-When you set **.maximumSize('20%')** - AnyChart will make diameters of bubble(s) with a biggest size equal to 20% the lesser of two: width or the height of data plot.
 
+When you set **.maximumSize('20%')** - AnyChart will make diameters of bubble(s) with a biggest size equal to 20% the 
+lesser of two: width or the height of data plot.
+  
+  
 Here is the sample when bubbles are size in percents, as specified above:
 
 {sample}BCT\_Bubble\_Chart\_03{sample}
@@ -162,16 +177,21 @@ Note again, that setting size in pixels may lead to the nasty results when chart
 
 {sample}BCT\_Bubble\_Chart\_04{sample}
 
-<a name="axes"/>
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. <!--All axis features are described in Working with Axes tutorial,-->In this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, 
+axis scale and settings and many more. All axis features are described in 
+[Axes Basics](../Axes_Grid_Scales_Trends_etc/Axis_Basics) tutorial. In this section we will quickly demonstrate how 
+axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
-<a name="position"/>
 ### Positioning
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** method of **.yAxis()** or **.xAxis()** attributes.
-<!--Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion settings in Axes Positioning and Inverting Templates.-->
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** method 
+of **.yAxis()** or **.xAxis()** attributes.
+  
+Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion 
+settings in [Axes Positioning](../Axes_Grid_Scales_Trends_etc/Axis_Position) tutorial.
+
 ```
     chart.xAxis(0).orientation('top');
     chart.yAxis(0).orientation('right');
@@ -179,7 +199,6 @@ With AnyChart you can place axes to any side if the chart, all you need to do is
 And here is the demonstration of this feature on the Single-series sample:
 {sample}BCT\_Bubble\_Chart\_05{sample}
 
-<a name="inversion"/>
 ### Inversion
 
 AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis <scale>:
@@ -189,7 +208,6 @@ AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is control
 And here is the demonstration of Y Axis inversion on the Single-series sample:
 {sample}BCT\_Bubble\_Chart\_06{sample}
 
-<a name="min_max"/>
 ### Minimum and Maximum
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 0, and maximum is 1000. You can control these values by setting maximum and minimum attributes of yScale method. As far as you want to adjusted the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
