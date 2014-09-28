@@ -404,7 +404,8 @@ point.
 {sample}BCT\_Japaneese-Candlestick\_Chart\_09{sample}
 
 **Important Note:**
-
+  
+  
 AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set 
 colors, for example, instead of "Rgb(180,77,77)" you can set "HSV(?,?,?)" or "HTMLConstant" or "#HEXCode"- and the 
 color will be the same. Depending on your system/site/application design you may need - and use - any of this color 
@@ -413,8 +414,13 @@ the following Help Sections:
 
 ## Advanced Candlestick Chart Sample - Candlestick, Line and Range Area Combination
 
-In the real world application Open-High-Low-Close rarely used alone, in technical analysis they are often combined with other chart types, such as Lines (to show **moving average**), Range Areas (to show **"Bollinger bands"**), and column charts (to show **trading volume**).
-
-AnyChart provides most of features that developer needs to create a complex financial chart, this includes Combination charts, Dashboards and Interactivity features. The sample below shows a typical stock trading report and it can be used as a starting point in your integration of AnyChart into Financial/Trading/Reporting application.
+In the real world application Open-High-Low-Close rarely used alone, in technical analysis they are often combined with 
+other chart types, such as Lines (to show **moving average**), Range Areas (to show **"Bollinger bands"**), and column 
+charts (to show **trading volume**).
+  
+  
+AnyChart provides most of features that developer needs to create a complex financial chart, this includes Combination 
+charts, Dashboards and Interactivity features. The sample below shows a typical stock trading report and it can be used 
+as a starting point in your integration of AnyChart into Financial/Trading/Reporting application.
 
 {sample}BCT\_Japaneese-Candlestick\_Chart\_10{sample}
