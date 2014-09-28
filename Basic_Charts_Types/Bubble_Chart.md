@@ -12,9 +12,10 @@
 * [Visualization](#visualization)
  * [Basic Sample](#basic_sample)
 * [Labels and Tooltips](#labels_and_tooltips)
+* [Markers](#markers)
 * [Colors](#colors)
- * [Colorizing Elements](#color_setting)
-* [Hatch Fills](#hatches)
+ * [Colorizing Elements](#colorizing_elements)
+* [Hatch Fills](#hatch_fills)
  
 ## Overview
 
@@ -273,57 +274,86 @@ here.
 
 Learn more about labels and tooltips in Labels and tooltips
 Full Keywords reference and formatting guide:Labels and tooltips
-Full reference of data labels settings can be found in XML Reference, particularly <label_style> and <label_settings> nodes.
+Full reference of data labels settings can be found in XML Reference, particularly <label_style> and <label_settings> 
+nodes.
 to top
---><!--
-<a name="markers"/>
+-->
+
 ## Markers
 
-Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including bubbles.
-
-In the sample below we will take single-series data described above and mark the biggest bubble in series with a "Star5" of the "Gold" color.
-
-To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 12 pixels in normal state, and make it bigger (22 pixels) when user moves cursor over an element.
+Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. 
+AnyChart allows to add markers to any data element including bubbles.
+  
+  
+In the sample below we will take single-series data described above and mark the biggest bubble in series with a 
+"Star5" of the "Gold" color.
+  
+  
+To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 12 pixels in 
+normal state, and make it bigger (22 pixels) when user moves cursor over an element.
 
 ```
-{ x: 'Product B', value: 172, size: 14, marker:{type:'star5', fill:'gold', size: 12}, hoverMarker: {size: 22}},
+        {x: "Product B", y: 172, size: 14, marker: {
+            enabled: true, 
+            type: 'star5', 
+            fill: 'gold', 
+            position: 'centerTop', 
+            size: 10
+        }, hoverMarker: {
+            size: 18
+        }},
 ``` 
-And here is a result - March is the most successful month and we are showing this on the chart:
-{sample}BCT\_Bubble\_Chart\_10{sample}-->
+
+And here is a result - the best product for ACME Corp. is Product B and we show this on the chart:
+
+{sample}BCT\_Bubble\_Chart\_13{sample}
 <!--Related help topics:
 
 You can read more about working with markers in Markers tutorial.
 Full reference of marker style can be found in XML Reference, particularly <marker_style> node.
 to top
 -->
-<a name="colors"/>
+
 ## Colors
 
-AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define special colors. But you can apply the color to exact data series or data point.
+AnyChart uses default color palette to colorize data elements of chart automatically even if you have not define 
+special colors. But you can apply the color to exact data series or data point.
 
-<a name="color_setting"/>
 ### Colorizing Elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set **color()**. In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we 
+need to set **color()**. In the sample below we have 5 series with sample data and we'll color each series into 
+different color. Here is the sample:
 
 {sample}BCT\_Bubble\_Chart\_10{sample}
 
-In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximum one.  As you see it is very easy to do by setting **fill()** attribute for point.
+In the sample below we will see how we can colorize individual points. We have chart with one series and predefined 
+color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximum one. 
+As you see it is very easy to do by setting **fill()** attribute for point.
 
 {sample}BCT\_Bubble\_Chart\_11{sample}
 
 **Important Note:**
-
-AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "Rgb(180,77,77)" you can set "HSV(?,?,?)" or "HTMLConstant" or "#HEXCode"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods.<!-- But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
+AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set 
+colors, for example, instead of "Rgb(180,77,77)" you can set "HSV(?,?,?)" or "HTMLConstant" or "#HEXCode"- and the 
+color will be the same. Depending on your system/site/application design you may need - and use - any of this color 
+setting methods.<!-- But even this is not everything about colors in AnyChart: read more about setting colors below 
+and in the following Help Sections:
 
 Different ways of setting colors of elements
 Advanced coloring techniques in Styles tutorial
 -->
-<a name="hatches"/>
+
 ## Hatch Fills
 
-AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings and palettes. To see whole range of available hatch types see Hatch tutorial.
+AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is 
+hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. 
+AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for 
+those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own 
+settings and palettes. To see whole range of available hatch types see Hatch tutorial.
 
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting **.hatchFill()** attribute.
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 
+chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting 
+**.hatchFill()** attribute.
 
 {sample}BCT\_Bubble\_Chart\_12{sample}
