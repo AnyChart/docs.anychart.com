@@ -42,7 +42,7 @@ Range area charts are configured and tuned almost the same way as usual Area cha
  have to Y values (high and low point) - we have two tooltips, two labels, two markers and two lines-->.
   
   
-So, to configure them we use **rangeArea** node that hold label and marker settings.
+So, to configure them we use **rangeArea** parameter that hold label and marker settings.
   
   
 Here is the way of changing upper markers:

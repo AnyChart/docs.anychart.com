@@ -28,7 +28,8 @@ In this tutorial all major settings and features of axes labels are described.
 
 ## Enable or Disable
 
-Each axis in AnyChart has its own labels settings, these settings can be configured in labels sub node of the givne axis. 
+Each axis in AnyChart has its own labels settings, these settings can be configured in labels sub parameter of the given 
+axis. 
 By default labels for all axes are enabled. You can enable or disable labels for the given axis using enabled method of 
 **labels()** method:
 
@@ -45,7 +46,7 @@ In the sample below a line chart with Y-Axis, X-Axis and Secondary Y-Axis is sho
 In order to make chart readable and understandable it is very important to format axes labels in a proper way, for example: 
 add "$" prefix if values are given in dollars or add "°F" postfix if values are given in Fahrenheit degrees.
   
-You have a full control over the axis labels in **.textFormatter()** subnode of **.labels()** node.
+You have a full control over the axis labels in **.textFormatter()** parameter of **.labels()** method.
   
 <!--To make text formatting easier AnyChart has a special mechanism called Keywords. Every keyword is a unique token that 
 can be specified in <format> node in a following way: {%KeywordName}, for example {%Value} or {%AxisName}. Before displaying 

@@ -316,7 +316,7 @@ we'll color each series to different color. Here is the sample:
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined 
 color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximum one. 
-As you see it is very easy to do by setting **fill** attribute for **point** node.
+As you see it is very easy to do by setting **fill** method for **point** parameter.
 
 {sample}BCT\_BarChart\_10{sample}
 

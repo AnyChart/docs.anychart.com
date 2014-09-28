@@ -209,7 +209,8 @@ proper names to each series:
 ```
 
 As we now have multi-series chart we don't want to set type for each series individually (there can be much more than 
-two series in multi-series chart), so we add 'anychart.lineChart()' node to **chart**. Now all series in chart will be 
+two series in multi-series chart), so we add 'anychart.lineChart()' parameter to **chart**. Now all series in chart will
+ be 
 of Line type by default.
 
 {sample}BCT\_LineChart\_04{sample}

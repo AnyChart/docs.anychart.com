@@ -83,8 +83,8 @@ model we have one series of data (Sales) with categories that hold Retail channe
     ]);
 ```
 
-As you can see, we've created **anychart.pieChart()** node. First column defines category and other one defines slice 
-value.
+As you can see, we've created **anychart.pieChart()** parameter. First column defines category and other one defines 
+slice value.
   
   
 Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on it to see preview and 

@@ -218,7 +218,7 @@ position can be adjusted, how axis scale can be inverted and how minimum and max
 ### Positioning
 
 With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position attribute of 
-**yAxis** or **xAxis** nodes.
+**yAxis** or **xAxis** parameter.
   
   
 Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion 
@@ -249,7 +249,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart 
 sample above: minimal value on the Y Axis is 800, and maximum is 1600. You can control these values by setting maximum 
-and minimum attributes of <scale> node:
+and minimum attributes of a scale() parameter:
 
 ```
     chart.yScale().minimum('0').maximum('1800');
