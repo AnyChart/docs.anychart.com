@@ -2,18 +2,20 @@
 
  * [Overview](#overview)
  * [Chart](#chart)
- * [Stacked Bar](#stacked-bar)
+ * [Stacked Bar](#stacked_bar)
 
-<a name="overview"/>
 ## Overview
-Data that is arranged in columns or rows on a worksheet can be plotted in a bar chart. Bar charts illustrate comparisons among individual items.
+Data that is arranged in columns or rows on a worksheet can be plotted in a bar chart. Bar charts illustrate comparisons
+ among individual items.
 
-<a name="chart"/>
 ## Chart
 
-As stacked charts should show contribution of different components to the total, we will demonstrate them on an imaginable ACME FastFood, Corp. sales. Let's assume that it sells Ice Cream, Chocolate Bar and Coke all through the year.
+As stacked charts should show contribution of different components to the total, we will demonstrate them on an 
+imaginable ACME FastFood, Corp. sales. Let's assume that it sells Ice Cream, Chocolate Bar and Coke all through the 
+year.
 
 So, we have three series of data - one series for each product, and we give proper names to each series:
+
 ```
     var dataSet = anychart.data.set([
         ["Winter", 12000, 12000, 10000],  
@@ -22,18 +24,21 @@ So, we have three series of data - one series for each product, and we give prop
         ["Autumn", 16000, 16000, 16000]   
     ]);
 ```
+
 Now we have to tell Y Axis to display these series in as stacked columns:
+
 ```
   chart.yScale().stackMode('value');
 ```
+
 Everything is ready, here is a sample stacked column chart:
 
 {sample}BCT_Stacked\_Bar-Column\_Charts\_02{sample}
 
-<a name="stacked-bar"/>
-## Stacked Bar Chart
+## Stacked Bar
 
 Just change "columnChart" to "barChart" and get your data displayed as a bar chart:
+
 ```
     chart = anychart.columnChart();
     series = chart.column(seriesData_1);
@@ -41,11 +46,14 @@ Just change "columnChart" to "barChart" and get your data displayed as a bar cha
     series = chart.column(seriesData_3);
     series = chart.column(seriesData_4);
 ```
+
 Also, tooltips can be enabled/disabled by adjusting **.tooltip()** method:
+
 ```
     series = chart.column(seriesData_1);
     series.tooltip().enabled(false);
 ```
+
 Here is a sample stacked bar chart:
 
 {sample}BCT_Stacked\_Bar-Column\_Charts\_01{sample}
