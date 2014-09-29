@@ -48,7 +48,7 @@ AnyChart complies all standards, which leads to avoiding any problems with integ
 for WordPress, it would take you few steps, to insert AnzChart into a page. First you'll have to open **page editor** and switch 
 into **Text Editing Mode** and insert AnyChart JS, some data and set chart container.
 
-![](https://www.dropbox.com/s/l7kcmtx6rpzu90d/no_plugins.PNG)
+![](https://photos-2.dropbox.com/t/1/AACeJRihykr5LXHzddDiJ-ms7TkOP9VkznjbbrkTR35seA/12/272497567/png/1024x768/3/1411966800/0/2/no_plugins.PNG/eIXAMiSdn0ufUkuq2wZb_b3cKfahm66XTQzG5YDu2Js)
 
 **Note:** Chart container may be any size, but if there are no style settings for container, it would have zero height 
 and zero width.
