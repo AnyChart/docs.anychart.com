@@ -54,7 +54,7 @@ var xmlString = '<xml>' +
               '</xml>';
               
 // create a chart from xml config              
-var chart = anychart.xml(xmlString);
+var chart = anychart.fromXml(xmlString);
 
 // set container id for the chart
 chart.container('container');
