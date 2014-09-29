@@ -79,7 +79,6 @@ anychart.onDocumentReady(function() {
     staggerLabels.background().stroke('#CCCCCC');
     staggerLabels.xAxis().title().enabled(false);
     staggerLabels.yAxis().title().enabled(false);
-    staggerLabels.yScale().ticks().interval(1);
 
     //enabling stagger mode
     staggerLabels.xAxis().staggerMode(true);
