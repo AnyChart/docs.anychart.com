@@ -66,7 +66,7 @@ everything looks fine and if there are no mistakes in data.
 Everything looks perfect. the page is ready.
   
   
-**Note:** Script tag with data have to contain no empty Lines. If there are any, WordPress will replace them with \<p> 
+**Note:** Script tag with data have to contain no empty Lines. If there are any, WordPress will replace them with <p\> 
 tag and all data would be corrupted. Some ways of avoiding data corruption are presented below.
 
 ### Chart Data with Disabled Smart Insert
