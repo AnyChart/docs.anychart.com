@@ -47,7 +47,8 @@ described below
 AnyChart complies all standards, which leads to avoiding any problems with integration into any web-page or in any project. As 
 for WordPress, it would take you few steps, to insert AnzChart into a page. First you'll have to open **page editor** and switch 
 into **Text Editing Mode** and insert AnyChart JS, some data and set chart container.
-
+  
+  
 ![](https://photos-2.dropbox.com/t/1/AACeJRihykr5LXHzddDiJ-ms7TkOP9VkznjbbrkTR35seA/12/272497567/png/1024x768/3/1411966800/0/2/no_plugins.PNG/eIXAMiSdn0ufUkuq2wZb_b3cKfahm66XTQzG5YDu2Js)
 
 **Note:** Chart container may be any size, but if there are no style settings for container, it would have zero height 
@@ -56,7 +57,8 @@ and zero width.
   
 That were minimum requests. What can be simpler? Now the page is ready to be published. Let's preview and check, if 
 everything looks fine and if there are no mistakes in data.
-
+  
+  
 ![](https://photos-6.dropbox.com/t/1/AACNtVWzhQTqJAyWt2MsCagFRNH1NYDiYwvIYvZXyEyuGQ/12/272497567/png/1024x768/3/1411966800/0/2/preview.PNG/C3bypdoYwKnU5_sUTUvvUID2xBv0LWsPN57m4myFVhk)
 
 Everything looks perfect. the page is ready.
@@ -77,13 +79,15 @@ plugin, but which of the smart insert disabling plugins was used plays no roll.
   
   
 First of all, we have to install and activate plugin.
-
+  
+  
 ![](https://photos-4.dropbox.com/t/1/AADhSjo4Lj2bRfOutOAlDC5QBagiWNthg6QBc6UsHDlblg/12/272497567/png/1024x768/3/1411966800/0/2/pluging_activation.PNG/ogUhcbujMT8dDzMlfBwNCVc-uZW1mDveSw68Y3fLVi4)
 
 After plugin activation. wrap data script with data into \[raw]...\[/raw] tag. Now you are free to use any number of 
 empty lines you want. It will make no difference for chart visualisation but it may be of a great help for feather data 
 adjusting in this very chart.
-
+  
+  
 ![](https://photos-6.dropbox.com/t/1/AABFbFeZFcqH49JwbzgqhZkWgy9hTjmSP2NyTnk55turCw/12/272497567/png/1024x768/3/1411966800/0/2/raw_HTML.PNG/bFK_lYhE06kp6JbPgbRCKB3tgyTvRR9_VD7F2XWH8s4)
 
 ### Inserting AnyChart into Head of a Page
@@ -94,11 +98,13 @@ plugin. It can insert scripts in head for one page, or for the whole site. In th
   
   
 As the first step, insert AnyChart JS into head of every page, as it is shown below:
-
+  
+  
 ![](https://photos-4.dropbox.com/t/1/AAAnIhkGcrfXbaE9DqakWQwWiXwB7J69tBllgX9S5Gz1uA/12/272497567/png/1024x768/3/1411966800/0/2/Header_pluging.PNG/0RZo1d716M7BQMXujZ7qO2TH7BESia7_ibYVLP_pyLA)
 
 At the second Step insert chart data into the head of a page with a chart 
-
+  
+  
 ![](https://photos-2.dropbox.com/t/1/AADCwjsrvFvdNMfx0vn8xDEmcbOkay-Z20VVx_RYsUJ2-w/12/272497567/png/1024x768/3/1411966800/0/2/Script_in_header.PNG/T6ORrMkbrJLFQRaV8D5fb1h0Is9HnoW__CecTS-7zqA)
 
 The chart is ready.
@@ -113,10 +119,13 @@ As far as AnyChart is based on JavaScript, it is possible to use any JavaScript 
 requesting data from JSON file. A JSON file may be on any domain, any public host. The easiest way to get JSON and 
 parse it is through jQuary library. Below is a sample of getting and parsing  data of the [JSON file](http://cdn.anychart.com/data/wordpress_article_data.json)
   
+  
 ![](https://photos-4.dropbox.com/t/1/AACJTC8FSdsBbxrQfatWRjTx1W0kMItzSc4l-hF2kHlPlg/12/272497567/png/1024x768/3/1411966800/0/2/json.PNG/KHUUTHeAfAiSaLeLU9_rtwr9yX7ymZD4xUsK9DsB7rk)
+  
   
 As you can see, we've used ajax post request to get data, adjusted some settings and started AnyChart function after 
 successful getting of the data. 
+  
   
 ![](https://photos-5.dropbox.com/t/1/AADmFhjDFaqNYIFTOb27zHE2dzFfe0pWnumvbtfEhtrOFw/12/272497567/png/1024x768/3/1411966800/0/2/JSON_preview.PNG/5AyeuAONjDWyqhhzScsbq6zz0mOOfwX6vbS7IUF3v6s)
   
