@@ -78,7 +78,7 @@ plugin, but which of the smart insert disabling plugins was used plays no roll.
   
 First of all. we have to install and activate plugin.
 
-![]("https://photos-4.dropbox.com/t/1/AADhSjo4Lj2bRfOutOAlDC5QBagiWNthg6QBc6UsHDlblg/12/272497567/png/1024x768/3/1411966800/0/2/pluging_activation.PNG/ogUhcbujMT8dDzMlfBwNCVc-uZW1mDveSw68Y3fLVi4)
+![](https://photos-4.dropbox.com/t/1/AADhSjo4Lj2bRfOutOAlDC5QBagiWNthg6QBc6UsHDlblg/12/272497567/png/1024x768/3/1411966800/0/2/pluging_activation.PNG/ogUhcbujMT8dDzMlfBwNCVc-uZW1mDveSw68Y3fLVi4)
 
 After plugin activation. wrap data script with data into \[raw]...\[/raw] tag. Now you are free to use any number of 
 empty lines you want. It will make no difference for chart visualisation but it may be of a great help for feather data 
