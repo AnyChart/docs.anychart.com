@@ -60,7 +60,7 @@ That were minimum requests. What can be simpler? Now the page is ready to be pub
 everything looks fine and if there are no mistakes in data.
   
   
-![](https://photos-6.dropbox.com/t/1/AACNtVWzhQTqJAyWt2MsCagFRNH1NYDiYwvIYvZXyEyuGQ/12/272497567/png/1024x768/3/1411966800/0/2/preview.PNG/C3bypdoYwKnU5_sUTUvvUID2xBv0LWsPN57m4myFVhk)
+![](https://photos-3.dropbox.com/t/1/AAD3Lb89OXaLj2N461vETCCVatQO06DghDQdIHoieJmknA/12/272497567/png/1024x768/3/1411984800/0/2/preview.PNG/jbb4gJ1t7es9AZgLB5DHRbusrm34q9e747pZgfpL2_c)
   
   
 Everything looks perfect. the page is ready.
