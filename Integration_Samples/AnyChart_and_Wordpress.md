@@ -4,7 +4,7 @@ Inserting Charts into WordPress Controlled Site
   
 * [Overview](#overview)
 * [Integration](#integration)
- * [Including AnyChart into WordPress without Any Plugins](including_anychart_into_wordpress_without_any_plugins)
+ * [Including AnyChart into WordPress without Any Plugins](#including_anychart_into_wordpress_without_any_plugins)
  * [Chart Data with Disabled Smart Insert](#chart_data_with_disabled_smart_insert)
  * [Inserting AnyChart into Head of a Page](#inserting_anychart_into_head_of_a_page)
  * [Requesting Data from JSON File](#requesting_data_from_json_file)

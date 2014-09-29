@@ -25,10 +25,10 @@ Though these settings are demonstrated using Bar/Column charts - they work for a
 </td>
 <td>
 ```
-chart.column(data);
-chart.xAxis().ticks().enabled(false);
-chart.yAxis().minorTicks().enabled(false);
-chart.yAxis().ticks().enabled(false);
+chart.xAxis().orientation('bottom');
+chart.yAxis().orientation('left');
+chart.xScale().inverted(false);
+chart.yScale().inverted(false);
 ```
 </td>
 </tr>
