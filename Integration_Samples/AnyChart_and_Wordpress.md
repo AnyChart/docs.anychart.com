@@ -60,13 +60,13 @@ That were minimum requests. What can be simpler? Now the page is ready to be pub
 everything looks fine and if there are no mistakes in data.
   
   
-![](https://photos-3.dropbox.com/t/1/AAD3Lb89OXaLj2N461vETCCVatQO06DghDQdIHoieJmknA/12/272497567/png/1024x768/3/1411984800/0/2/preview.PNG/jbb4gJ1t7es9AZgLB5DHRbusrm34q9e747pZgfpL2_c)
+![]("https://photos-2.dropbox.com/t/1/AADQ95GSd6RdCB0mjt8OyYu6def_xVwdgD2GcpboKrwGnQ/12/272497567/png/1024x768/3/1411984800/0/2/preview.PNG/B6JGL_oOZS93MI6f-toej-t-kkaBojn8VbJ7XxF7fqI)
   
   
 Everything looks perfect. the page is ready.
   
   
-**Note:** Script tag with data have to contain no empty Lines. If there are any, WordPress will replace them with /<p> 
+**Note:** Script tag with data have to contain no empty Lines. If there are any, WordPress will replace them with <p> 
 tag and all data would be corrupted. Some ways of avoiding data corruption are presented below.
 
 ### Chart Data with Disabled Smart Insert
@@ -91,7 +91,7 @@ empty lines you want. It will make no difference for chart visualisation but it 
 adjusting in this very chart.
   
   
-![](https://photos-6.dropbox.com/t/1/AABFbFeZFcqH49JwbzgqhZkWgy9hTjmSP2NyTnk55turCw/12/272497567/png/1024x768/3/1411966800/0/2/raw_HTML.PNG/bFK_lYhE06kp6JbPgbRCKB3tgyTvRR9_VD7F2XWH8s4)
+![](https://photos-5.dropbox.com/t/1/AADoXB3hWBUFdJUTsO1jLYhb87UOWl7QgURblZ8iJfgzAw/12/272497567/png/1024x768/3/1411984800/0/2/raw_HTML.PNG/APjIruBCJGqQZK7KzYMoRgmDuKi6kQKZgulWuMDbMYY)
   
   
 ### Inserting AnyChart into Head of a Page
