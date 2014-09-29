@@ -82,13 +82,30 @@ anychart.onDocumentReady(function() {
     staggerLabels.yScale().ticks().interval(1);
 
     //enabling stagger mode
-    staggerLabels.yAxis().staggerMode(true);
+    staggerLabels.xAxis().staggerMode(true);
 
     //adjusting settings for stager mode
-    staggerLabels.yAxis().staggerLines(2);
+    staggerLabels.xAxis().staggerLines(2);
 
-    firstNormalSeries = staggerLabels.column(seriesData_1);
-    secondNormalSeries = staggerLabels.column(seriesData_2);
+    //data set for stagger mode sample
+    var staggerData = anychart.data.set([
+        ['P1', 16, 20],
+        ['P2', 12, 18],
+        ['P3', 9, 14],
+        ['P4', 13, 15],
+        ['P5', 19, 16],
+        ['P6', 14, 10],
+        ['P7', 11, 22],
+        ['P8', 17, 11],
+        ['P9', 9, 14]
+    ]);
+
+    //data remapping for stagger sample
+    var staggerSeriesData_1 = staggerData.mapAs({x: [0], value: [1]});
+    var staggerSeriesData_2 = staggerData.mapAs({x: [0], value: [2]});
+
+    firstNormalSeries = staggerLabels.column(staggerSeriesData_1);
+    secondNormalSeries = staggerLabels.column(staggerSeriesData_2);
 
     staggerLabels.container(stage);
     staggerLabels.draw();

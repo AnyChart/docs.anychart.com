@@ -50,9 +50,7 @@ anychart.onDocumentReady(function() {
     //adjusting major ticks
     chart.yScale().ticks().interval(25);
 
-    //adjusting axes mode
-    chart.yAxis().staggerMode(true);
-    chart.yAxis().staggerLines(2);
+    //adjusting axis mode
     chart.xAxis().staggerMode(true);
     chart.xAxis().staggerLines(2);
 
