@@ -50,7 +50,8 @@ into **Text Editing Mode** and insert AnyChart JS, some data and set chart conta
   
   
 ![](https://photos-2.dropbox.com/t/1/AACeJRihykr5LXHzddDiJ-ms7TkOP9VkznjbbrkTR35seA/12/272497567/png/1024x768/3/1411966800/0/2/no_plugins.PNG/eIXAMiSdn0ufUkuq2wZb_b3cKfahm66XTQzG5YDu2Js)
-
+  
+  
 **Note:** Chart container may be any size, but if there are no style settings for container, it would have zero height 
 and zero width.
   
@@ -60,7 +61,8 @@ everything looks fine and if there are no mistakes in data.
   
   
 ![](https://photos-6.dropbox.com/t/1/AACNtVWzhQTqJAyWt2MsCagFRNH1NYDiYwvIYvZXyEyuGQ/12/272497567/png/1024x768/3/1411966800/0/2/preview.PNG/C3bypdoYwKnU5_sUTUvvUID2xBv0LWsPN57m4myFVhk)
-
+  
+  
 Everything looks perfect. the page is ready.
   
   
@@ -82,14 +84,16 @@ First of all, we have to install and activate plugin.
   
   
 ![](https://photos-4.dropbox.com/t/1/AADhSjo4Lj2bRfOutOAlDC5QBagiWNthg6QBc6UsHDlblg/12/272497567/png/1024x768/3/1411966800/0/2/pluging_activation.PNG/ogUhcbujMT8dDzMlfBwNCVc-uZW1mDveSw68Y3fLVi4)
-
+  
+  
 After plugin activation. wrap data script with data into \[raw]...\[/raw] tag. Now you are free to use any number of 
 empty lines you want. It will make no difference for chart visualisation but it may be of a great help for feather data 
 adjusting in this very chart.
   
   
 ![](https://photos-6.dropbox.com/t/1/AABFbFeZFcqH49JwbzgqhZkWgy9hTjmSP2NyTnk55turCw/12/272497567/png/1024x768/3/1411966800/0/2/raw_HTML.PNG/bFK_lYhE06kp6JbPgbRCKB3tgyTvRR9_VD7F2XWH8s4)
-
+  
+  
 ### Inserting AnyChart into Head of a Page
 
 AnyChart can be used in any part of a page, but we do recommend to set data and JS link into a head tag of a page. 
@@ -101,12 +105,14 @@ As the first step, insert AnyChart JS into head of every page, as it is shown be
   
   
 ![](https://photos-4.dropbox.com/t/1/AAAnIhkGcrfXbaE9DqakWQwWiXwB7J69tBllgX9S5Gz1uA/12/272497567/png/1024x768/3/1411966800/0/2/Header_pluging.PNG/0RZo1d716M7BQMXujZ7qO2TH7BESia7_ibYVLP_pyLA)
-
+  
+  
 At the second Step insert chart data into the head of a page with a chart 
   
   
 ![](https://photos-2.dropbox.com/t/1/AADCwjsrvFvdNMfx0vn8xDEmcbOkay-Z20VVx_RYsUJ2-w/12/272497567/png/1024x768/3/1411966800/0/2/Script_in_header.PNG/T6ORrMkbrJLFQRaV8D5fb1h0Is9HnoW__CecTS-7zqA)
-
+  
+  
 The chart is ready.
   
   
@@ -128,5 +134,6 @@ successful getting of the data.
   
   
 ![](https://photos-5.dropbox.com/t/1/AADmFhjDFaqNYIFTOb27zHE2dzFfe0pWnumvbtfEhtrOFw/12/272497567/png/1024x768/3/1411966800/0/2/JSON_preview.PNG/5AyeuAONjDWyqhhzScsbq6zz0mOOfwX6vbS7IUF3v6s)
+  
   
 As a result, we may see a pretty chart, based on data from JSON file.
