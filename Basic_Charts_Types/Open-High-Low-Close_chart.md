@@ -25,7 +25,7 @@ side of the line indicating the opening price (e.g. for a daily bar chart this w
  on whether prices rose or fell in that period.
   
   
-The [Japanese candlestick chart](Japaneese-Candlestick_Chart) is another way of displaying market price data, with the 
+The [Japanese candlestick chart](Japaneese_Candlestick_Chart) is another way of displaying market price data, with the 
 opening and closing prices defining a rectangle within the range for each time unit. Both charts show the exact same 
 data, i.e. the opening, high, low, and closing prices during a particular time frame. 
 Some traders find the candlestick chart easier to read.
