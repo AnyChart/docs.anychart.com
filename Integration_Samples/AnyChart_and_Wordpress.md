@@ -76,7 +76,7 @@ WordPress provides you with variate of plugins for disabling smart insert. In th
 plugin, but which of the smart insert disabling plugins was used plays no roll.
   
   
-First of all. we have to install and activate plugin.
+First of all, we have to install and activate plugin.
 
 ![](https://photos-4.dropbox.com/t/1/AADhSjo4Lj2bRfOutOAlDC5QBagiWNthg6QBc6UsHDlblg/12/272497567/png/1024x768/3/1411966800/0/2/pluging_activation.PNG/ogUhcbujMT8dDzMlfBwNCVc-uZW1mDveSw68Y3fLVi4)
 
@@ -84,7 +84,7 @@ After plugin activation. wrap data script with data into \[raw]...\[/raw] tag. N
 empty lines you want. It will make no difference for chart visualisation but it may be of a great help for feather data 
 adjusting in this very chart.
 
-![](http://cdn.anychart.com/images/wordpress/raw_html.png)
+![](https://photos-6.dropbox.com/t/1/AABFbFeZFcqH49JwbzgqhZkWgy9hTjmSP2NyTnk55turCw/12/272497567/png/1024x768/3/1411966800/0/2/raw_HTML.PNG/bFK_lYhE06kp6JbPgbRCKB3tgyTvRR9_VD7F2XWH8s4)
 
 ### Inserting AnyChart into Head of a Page
 
@@ -95,11 +95,11 @@ plugin. It can insert scripts in head for one page, or for the whole site. In th
   
 As the first step, insert AnyChart JS into head of every page, as it is shown below:
 
-![](http://cdn.anychart.com/images/wordpress/header_plugin.png)
+![](https://photos-4.dropbox.com/t/1/AAAnIhkGcrfXbaE9DqakWQwWiXwB7J69tBllgX9S5Gz1uA/12/272497567/png/1024x768/3/1411966800/0/2/Header_pluging.PNG/0RZo1d716M7BQMXujZ7qO2TH7BESia7_ibYVLP_pyLA)
 
 At the second Step insert chart data into the head of a page with a chart 
 
-![](http://cdn.anychart.com/images/wordpress/header_script.png)
+![](https://photos-2.dropbox.com/t/1/AADCwjsrvFvdNMfx0vn8xDEmcbOkay-Z20VVx_RYsUJ2-w/12/272497567/png/1024x768/3/1411966800/0/2/Script_in_header.PNG/T6ORrMkbrJLFQRaV8D5fb1h0Is9HnoW__CecTS-7zqA)
 
 The chart is ready.
   
@@ -113,11 +113,11 @@ As far as AnyChart is based on JavaScript, it is possible to use any JavaScript 
 requesting data from JSON file. A JSON file may be on any domain, any public host. The easiest way to get JSON and 
 parse it is through jQuary library. Below is a sample of getting and parsing  data of the [JSON file](http://cdn.anychart.com/data/wordpress_article_data.json)
   
-(img)
+![](https://photos-4.dropbox.com/t/1/AACJTC8FSdsBbxrQfatWRjTx1W0kMItzSc4l-hF2kHlPlg/12/272497567/png/1024x768/3/1411966800/0/2/json.PNG/KHUUTHeAfAiSaLeLU9_rtwr9yX7ymZD4xUsK9DsB7rk)
   
 As you can see, we've used ajax post request to get data, adjusted some settings and started AnyChart function after 
 successful getting of the data. 
   
-  (img)
+![](https://photos-5.dropbox.com/t/1/AADmFhjDFaqNYIFTOb27zHE2dzFfe0pWnumvbtfEhtrOFw/12/272497567/png/1024x768/3/1411966800/0/2/JSON_preview.PNG/5AyeuAONjDWyqhhzScsbq6zz0mOOfwX6vbS7IUF3v6s)
   
 As a result, we may see a pretty chart, based on data from JSON file.
