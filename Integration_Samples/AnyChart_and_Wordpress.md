@@ -57,7 +57,7 @@ and zero width.
 That were minimum requests. What can be simpler? Now the page is ready to be published. Let's preview and check, if 
 everything looks fine and if there are no mistakes in data.
 
-![](http://cdn.anychart.com/images/wordpress/preview.png)
+![](https://photos-6.dropbox.com/t/1/AACNtVWzhQTqJAyWt2MsCagFRNH1NYDiYwvIYvZXyEyuGQ/12/272497567/png/1024x768/3/1411966800/0/2/preview.PNG/C3bypdoYwKnU5_sUTUvvUID2xBv0LWsPN57m4myFVhk)
 
 Everything looks perfect. the page is ready.
   
