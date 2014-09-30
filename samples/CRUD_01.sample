@@ -1,0 +1,69 @@
+anychart.onDocumentReady(function() {
+  var dataSet = anychart.data.set([
+    {x: 'P1', value: 10},
+    {x: 'P2', value: 20},
+    {x: 'P3', value: 15},
+    {x: 'P4', value: 10},
+    {x: 'P5', value: 15}
+  ]);
+
+
+  stage = acgraph.create('container');
+
+  chart = anychart.columnChart();
+  chart.column(dataSet);
+  chart.bounds(0, 0, "100%", "80%");
+  chart.container(stage);
+  chart.draw();
+  
+  var buttoncontainer=document.createElement('div');
+  buttoncontainer.style.position = 'absolute';
+  buttoncontainer.style.zIndex = 999;
+  buttoncontainer.style.width = '100%';
+  buttoncontainer.style.backgroundColor = 'black';
+  buttoncontainer.style.bottom = 0;
+  buttoncontainer.style.right = 0;
+  buttoncontainer.innerHTML = '<input  id="nameSetter" type="text"><a style="color:red">Name</a>'+
+  ' <br/> '+
+  '<input id="valueSetter" type="number" maxlength="2" min="9" max="75"><a style="color:red">Value</a><br/>'+
+  '<a id="lol" style="color:red">fuck the system</a>';
+  buttoncontainer.style.height = (document.getElementById('container').offsetHeight * 0.2) + 'px';
+  document.getElementById('container').appendChild(buttoncontainer);
+  
+  document.getElementById('lol').onclick = function(){
+     CRUD(dataSet);
+  };
+});
+var indexSetter = 5;
+var valueSetter = 11;
+var newname = document.getElementById('nameSetter').value;
+var newvalue = document.getElementById('valueSetter').value;
+function CRUD(dataSet) {
+    if (newname === ''){
+        indexSetter++;
+        if (newvalue === ''){
+            valueSetter++;
+            dataSet.append({x: 'P'+indexSetter, value: valueSetter});
+            newvalue = '10';
+            newname = '';
+        }
+        else
+        {
+            dataSet.append({x: 'P'+indexSetter, value: newvalue});
+            newvalue = '10';
+            newname = '';
+        }
+    }
+    else{
+        if(newvalue === ''){
+            dataSet.append({x: newname, value: valueSetter});
+            newvalue = '';
+            newname = '';
+        }
+        else{
+            dataSet.append({x: newname, value: newvalue});
+            newvalue = '10';
+            newname = '';
+        }
+    }
+}

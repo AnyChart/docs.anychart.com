@@ -18,7 +18,7 @@ All necessary information, about first steps in AnyChart usage can be found on o
 
 ## Overview
 
-Data visualisation is fast developing internet industry. It has rooted almost into any aspect of our life. 
+Data visualisation is a fast developing internet industry. It has rooted almost into any aspect of our life. 
 As far as it's the most effective way of presenting information, every presentation and every information dashboard 
 requires visualized information. Moreover, pretty designed dashboard makes any web-page even more beautiful.
   
@@ -27,7 +27,7 @@ Visualized data looks as good on a page of a blog writer, as it does on a page o
 or Oracle.
   
   
-AnyChart is a flexible JavaScript (HTML5) based solution that allows you to create interactive and great looking 
+AnyChart is a flexible JavaScript (HTML5) based solution which allows you to create interactive and great looking 
 charts. It is a cross-browser and cross-platform charting solution intended for everybody who deals with creation of 
 dashboard, reporting, analytics, statistical, financial or any other data visualization solutions. PCs, Macs, iPhones, 
 iPads, Android devices - AnyChart works everywhere, you'll get the same experience across any devices and browsers! 
