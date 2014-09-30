@@ -33,6 +33,9 @@ anychart.onDocumentReady(function() {
     //set color and data
     chart.ohlc(data).color('#C6D1A5');
 
+     //set x axis lables width for the better outlook
+     chart.xAxis().labels().width(60);
+
     //draw
     chart.container('container').draw();
 });

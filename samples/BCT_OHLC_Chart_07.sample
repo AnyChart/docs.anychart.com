@@ -66,5 +66,11 @@ anychart.onDocumentReady(function() {
     chart.xAxis().title().text('Day');
     chart.yAxis().title().text('Price');
 
+    //set x axis lables width for the better outlook
+    chart.xAxis().labels().width(80);
+
+    //set x axis lables width for the better outlook
+    chart.xAxis().labels().width(60);
+
     chart.container('container').draw();
 });

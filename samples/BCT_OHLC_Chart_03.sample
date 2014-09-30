@@ -33,6 +33,9 @@ anychart.onDocumentReady(function() {
     chart.xAxis().orientation('top').title().text('Day');
     chart.yAxis().orientation('right').title().text('Price');
 
+    //set x axis lables width for the better outlook
+    chart.xAxis().labels().width(60);
+
     //draw
     chart.container('container').draw();
 });
