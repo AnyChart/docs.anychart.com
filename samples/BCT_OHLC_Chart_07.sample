@@ -34,11 +34,28 @@ anychart.onDocumentReady(function() {
         .anchor('top')
         .position('centerBottom')
         .fontSize(15)
-        .fontWeight('bold');
+        .fontWeight('bold')
+        .textFormatter(function(){
+                    var date = this.x;
+                    var options = {
+                        year: 'numeric',
+                        month: 'numeric',
+                        day: 'numeric'
+                    };
+                    var transformedDate =  date.toLocaleDateString('en-US', options);
+                    return transformedDate;
+                });
 
     series.tooltip()
         .contentFormatter(function() {
-            return 'ACME Corporation \n Date: ' + this.x + '\n' +
+        var date = this.x;
+        var options = {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric'
+        };
+        var transformedDate =  date.toLocaleDateString('en-US', options);
+            return 'ACME Corporation \n Date: ' + transformedDate + '\n' +
             'Open: ' + this.open + '\n' +
             'High: ' + this.high + '\n' +
             'Low: ' + this.low + '\n' +
