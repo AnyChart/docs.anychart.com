@@ -3,95 +3,46 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
+
+  //data
   var dataSet = anychart.data.set([
     {x: 'P1', value: 10},
-    {x: 'P2', value: 20},
+    {x: 'P2', value: 2},
     {x: 'P3', value: 15},
     {x: 'P4', value: 10},
     {x: 'P5', value: 15}
   ]);
 
+  //set chart type
+  chart = anychart.areaChart();
 
-  stage = acgraph.create('container');
+  //set data
+  var area = chart.splineArea(dataSet);
 
-  chart = anychart.columnChart();
-  chart.column(dataSet);
-  chart.bounds(0, 0, "100%", "80%");
-  chart.container(stage);
-  chart.draw();
-  
-  var buttoncontainer=document.createElement('div');
-  buttoncontainer.style.position = 'absolute';
-  buttoncontainer.style.zIndex = 999;
-  buttoncontainer.style.width = '100%';
-  buttoncontainer.style.backgroundColor = 'black';
-  buttoncontainer.style.bottom = 0;
-  buttoncontainer.style.right = 0;
-  buttoncontainer.style.textAlign = 'center';
-  buttoncontainer.innerHTML = '<a style="width: 60px; color:red">Name: </a><input  id="nameSetter" type="text" style="width:200px">'+
-  ' <br/> '+
-  '<a style="width: 60px; color:red">Value: </a><input id="valueSetter" type="number" maxlength="2" min="9" max="75" style="width:200px"><br/>'+
-  '<a id="lol" style="color:red">Append</a>';
-  buttoncontainer.style.height = (document.getElementById('container').offsetHeight * 0.2) + 'px';
-  document.getElementById('container').appendChild(buttoncontainer);
-  
-  document.getElementById('lol').onclick = function(){
-     CRUD(dataSet);
-  };
+  //first index for new point
+  var indexSetter = 6;
+
+  //set listener on chart
+  area.listen(
+
+    //listener type
+    anychart.enums.EventType.POINT_CLICK,
+
+    //function, if listener triggers
+    function(e) {
+      //append data
+      dataSet.append({
+
+        //x value
+        x: 'new P' + indexSetter,
+
+        //random value from 1 to 100
+        value : Math.floor((Math.random() * 100)+ 1)
+      });
+      indexSetter++;
+    }
+  );
+
+  //set container and draw chart
+  chart.container('container').draw();
 });
-var indexSetter = 5;
-var valueSetter = 11;
-var newname = document.getElementById('nameSetter');
-var newvalue = document.getElementById('valueSetter');
-function CRUD(dataSet) {
-    
-    //check name field
-    if (newname.value === ''){
-        
-        //for empty name field
-        indexSetter++;
-        
-        //if value field is empty
-        if (newvalue.value === ''){
-            
-            //for empty field
-            valueSetter++;
-            dataSet.append({x: 'P'+indexSetter, value: valueSetter});
-            
-            newvalue.setAttribute('value', 10);
-            newname.setAttribute('value', 'P' + (indexSetter + 1));
-        }
-        else
-        {
-            
-            //for not empty value field
-            dataSet.append({x: 'P'+indexSetter, value: newvalue.value});
-            newvalue.setAttribute('value', (newvalue.value * 1 +1));
-            newname.setAttribute('value', 'P' + (indexSetter + 1));
-        }
-        indexSetter++;
-    }
-    else{
-        
-        //for not empty name field
-        if(newvalue.value === ''){
-            
-            //for empty value field
-            dataSet.append({x: newname.value, value: valueSetter});
-            
-            newvalue.setAttribute('value', 10);
-            newname.setAttribute('value', 'P' + (indexSetter + 1));
-            indexSetter++;
-        }
-        else{
-            //for every field filled
-            dataSet.append({x: newname.value, value: newvalue.value});
-            newvalue.setAttribute('value', (newvalue.getAttribute('value')*1 + 1));
-            newname.setAttribute('value', 'P' + (indexSetter + 1));
-            indexSetter++;
-        }
-    }
-    newvalue.value = newvalue.getAttribute('value');
-    newname.value = newname.getAttribute('value');
-//    alert(newname.getAttribute('value') + '\n' + newvalue.getAttribute('value'));
-}

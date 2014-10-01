@@ -29,11 +29,16 @@ This article shows how to solve each of this tasks and features examples for all
 
 ### Create
 
-AnyChart allow to adjust chart at any moment. To add an element into chart, use **.append()** 
+AnyChart allows to adjust chart at any moment even after drawing. The most simple case is adding new point. To add
+ an element into chart, use **.append()** method
+
 ```
     dataSet.append({x: 'P6', value: 20});
 ```
 
-We can set an event trigger on any element. Here is a sample with adding column on click on a button.
+We can set an event trigger on any element. Here is a sample with adding point after click on a areaChart
 
 {sample}CRUD\_01{sample}
+
+### Read
+
