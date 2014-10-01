@@ -70,9 +70,9 @@ retail channels in one year:
 </tbody>
 </table>
 
-Now we need to convert this data table into JSON, this format will be accepted by AnyChart. In terms of AnyChart data 
-model we have one series of data (Sales) with categories that hold Retail channels names. Each point in series 
-represents one channels and sales amount through this channel. Converted data looks like:
+Now we need to convert this data. In terms of AnyChart data model we have one series of data (Sales) with categories
+ that hold Retail channels names. Each point in series represents one channels and sales amount through this channel
+ . Converted data looks like:
 
 ```
     var data = anychart.data.set([

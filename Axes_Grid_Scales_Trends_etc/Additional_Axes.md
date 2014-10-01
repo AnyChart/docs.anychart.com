@@ -59,13 +59,15 @@ If you want to change any settings of additional axes you can do that just the s
     chart.yAxis().title().text('Basic Y Axes');
 ```
 
-In the a sample below we will add one additional axis and set value ranges and titles for both basic Y axis and additional Y axis:
+In the a sample below we will add one additional axis and set value ranges and titles for both basic Y axis and 
+additional Y axis:
 
 {sample}AGST\_Additional\_Axes\_03{sample}
 
 ## Binding Series
 
-To bind data series to the certain axis you should specify it in **series.yScale()** or **series.xScale()** attribute. By default all series work with **chart.yScale()** or **chart.xScale()**:
+To bind data series to the certain axis you should specify it in **series.yScale()** or **series.xScale()** 
+attribute. By default all series work with **chart.yScale()** or **chart.xScale()**:
 
 ```
     var firstSeries = anychart.data.set([
@@ -95,7 +97,9 @@ In the a sample below we add one additional axis with a range from 0 to 100 and 
 
 ## Multi Axes Sample for Comparing Units
 
-Lets see how additional axes can be used to compare data in different units, for example we measure temperature an want to show Celsius, Fahrenheit and Kelvin scales. To do that we have to create three Y Axes - the basic one will be Celsius degrees, first additional axis - Fahrenheit and second additional axis - Kelvin:
+Lets see how additional axes can be used to compare data in different units, for example we measure temperature an 
+want to show Celsius, Fahrenheit and Kelvin scales. To do that we have to create three Y Axes - the basic one will be
+ Celsius degrees, first additional axis - Fahrenheit and second additional axis - Kelvin:
 
 ```
     var FahrenheitScale = anychart.scales.linear();
@@ -115,7 +119,8 @@ Lets see how additional axes can be used to compare data in different units, for
     KelvinScale.minorTicks().interval(100);
 ```
 
-We defined three axes and set absolute zero as a minimum value, and Titanium melting temperature as a maximum value. We will create one series of a "Marker" type and bind it to Kelvin scale:
+We defined three axes and set absolute zero as a minimum value, and Titanium melting temperature as a maximum value. 
+We will create one series of a "Marker" type and bind it to Kelvin scale:
 
 ```
     ["Absolute Zero", 0],
@@ -135,7 +140,8 @@ Here it is - a sample that shows different important temperatures:
 
 ## Multi Axes Sample for Showing Different Data on the Same Plot
 
-Lets see how additional axes can be used to show different data on the same plot: we will plot a US Debt amount in dollars and in percents of GDP. We need to create one additional Axis adjust both basic and additional Axes:
+Lets see how additional axes can be used to show different data on the same plot: we will plot a US Debt amount in 
+dollars and in percents of GDP. We need to create one additional Axis adjust both basic and additional Axes:
 
 ```
     chart.yScale().minimum(0).maximum(12000000000000).ticks().interval(2000000000000);
@@ -156,7 +162,8 @@ Lets see how additional axes can be used to show different data on the same plot
     extraYAxis.orientation('right').scale(extraYScale);
 ```
 
-We defined two axes and will create one series of a **Column** type to show debt and bind it to **yAxis**, one series of a **Line** type to show percentage changes.
+We defined two axes and will create one series of a **Column** type to show debt and bind it to **yAxis**, 
+one series of a **Line** type to show percentage changes.
 
 Here it is - a sample chart comparing the US debt, in dark red, to the debts percent of GDP, in blue.
 

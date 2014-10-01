@@ -22,8 +22,8 @@ anychart.onDocumentReady(function() {
 
     //adjust x scale type
     chart.xScale()
-        //.minimum(new Date ('27-Aug-07'))
-        //.maximum(new Date ('5-Sep-07'))
+        .minimum(new Date ('27-Aug-07'))
+        .maximum(new Date ('5-Sep-07'))
         .ticks()
             .interval(0,0,1);
 
