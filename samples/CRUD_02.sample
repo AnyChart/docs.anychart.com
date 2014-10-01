@@ -14,34 +14,23 @@ anychart.onDocumentReady(function() {
   ]);
 
   //set chart type
-  chart = anychart.areaChart();
-
-  chart.title().text('Click on Chart to Add a Point ');
+  chart = anychart.columnChart();
 
   //set data
-  var area = chart.splineArea(dataSet);
+  var column = chart.column(dataSet);
 
-  //first index for new point
-  var indexSetter = 6;
+  var view = dataSet.mapAs();
 
   //set listener on chart
-  area.listen(
+  column.listen(
 
     //listener type
     anychart.enums.EventType.POINT_CLICK,
 
     //function, if listener triggers
     function(e) {
-      //append data
-      dataSet.append({
-
-        //x value
-        x: 'new P' + indexSetter,
-
-        //random value from 1 to 100
-        value : Math.floor((Math.random() * 100)+ 1)
-      });
-      indexSetter++;
+        var info = view.get(e.pointIndex, 'value');
+        alert(info);
     }
   );
 
