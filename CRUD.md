@@ -29,6 +29,11 @@ This article shows how to solve each of this tasks and features examples for all
 
 ### Create
 
-AnyChart allow to adjust chart at any moment. We can set an event trigger on an element. Here is a sample with adding
- column on click on a button.
+AnyChart allow to adjust chart at any moment. To add an element into chart, use **.append()** 
+```
+    dataSet.append({x: 'P6', value: 20});
+```
 
+We can set an event trigger on any element. Here is a sample with adding column on click on a button.
+
+{sample}CRUD\_01{sample}
