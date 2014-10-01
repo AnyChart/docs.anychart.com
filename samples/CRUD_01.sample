@@ -1,3 +1,7 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
 anychart.onDocumentReady(function() {
   var dataSet = anychart.data.set([
     {x: 'P1', value: 10},
@@ -32,7 +36,15 @@ anychart.onDocumentReady(function() {
   document.getElementById('container').appendChild(buttoncontainer);
   
   document.getElementById('lol').onclick = function(){
-     
+     CRUD(dataSet);
+  };
+});
+var indexSetter = 5;
+var valueSetter = 11;
+var newname = document.getElementById('nameSetter');
+var newvalue = document.getElementById('valueSetter');
+function CRUD(dataSet) {
+    
     //check name field
     if (newname.value === ''){
         
@@ -81,9 +93,5 @@ anychart.onDocumentReady(function() {
     }
     newvalue.value = newvalue.getAttribute('value');
     newname.value = newname.getAttribute('value');
-  };
-});
-var indexSetter = 5;
-var valueSetter = 11;
-var newname = document.getElementById('nameSetter');
-var newvalue = document.getElementById('valueSetter');
+//    alert(newname.getAttribute('value') + '\n' + newvalue.getAttribute('value'));
+}
