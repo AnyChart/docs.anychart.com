@@ -24,11 +24,66 @@ anychart.onDocumentReady(function() {
   buttoncontainer.style.bottom = 0;
   buttoncontainer.style.right = 0;
   buttoncontainer.style.textAlign = 'center';
-  buttoncontainer.innerHTML = '<a id="lol" style="color:red">Append</a>';
+  buttoncontainer.innerHTML = '<a style="width: 60px; color:red">Name: </a><input  id="nameSetter" type="text" style="width:200px">'+
+  ' <br/> '+
+  '<a style="width: 60px; color:red">Value: </a><input id="valueSetter" type="number" maxlength="2" min="9" max="75" style="width:200px"><br/>'+
+  '<a id="lol" style="color:red">Append</a>';
   buttoncontainer.style.height = (document.getElementById('container').offsetHeight * 0.2) + 'px';
   document.getElementById('container').appendChild(buttoncontainer);
   
   document.getElementById('lol').onclick = function(){
-     dataSet.append({x: 'P', value: 30});
+     
+    //check name field
+    if (newname.value === ''){
+        
+        //for empty name field
+        indexSetter++;
+        
+        //if value field is empty
+        if (newvalue.value === ''){
+            
+            //for empty field
+            valueSetter++;
+            dataSet.append({x: 'P'+indexSetter, value: valueSetter});
+            
+            newvalue.setAttribute('value', 10);
+            newname.setAttribute('value', 'P' + (indexSetter + 1));
+        }
+        else
+        {
+            
+            //for not empty value field
+            dataSet.append({x: 'P'+indexSetter, value: newvalue.value});
+            newvalue.setAttribute('value', (newvalue.value * 1 +1));
+            newname.setAttribute('value', 'P' + (indexSetter + 1));
+        }
+        indexSetter++;
+    }
+    else{
+        
+        //for not empty name field
+        if(newvalue.value === ''){
+            
+            //for empty value field
+            dataSet.append({x: newname.value, value: valueSetter});
+            
+            newvalue.setAttribute('value', 10);
+            newname.setAttribute('value', 'P' + (indexSetter + 1));
+            indexSetter++;
+        }
+        else{
+            //for every field filled
+            dataSet.append({x: newname.value, value: newvalue.value});
+            newvalue.setAttribute('value', (newvalue.getAttribute('value')*1 + 1));
+            newname.setAttribute('value', 'P' + (indexSetter + 1));
+            indexSetter++;
+        }
+    }
+    newvalue.value = newvalue.getAttribute('value');
+    newname.value = newname.getAttribute('value');
   };
 });
+var indexSetter = 5;
+var valueSetter = 11;
+var newname = document.getElementById('nameSetter');
+var newvalue = document.getElementById('valueSetter');
