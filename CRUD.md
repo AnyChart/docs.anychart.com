@@ -42,4 +42,6 @@ We can set an event trigger on any element. Here is a sample with adding point a
 
 ### Read
 
-Data can be 
+Adding custom data is quite nice function, but it requires much more then that for a creating useful dashboard. Any 
+point may contain any meta information. A full description of data is available on click in chart below.
+
