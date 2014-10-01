@@ -23,10 +23,11 @@ anychart.onDocumentReady(function() {
   buttoncontainer.style.backgroundColor = 'black';
   buttoncontainer.style.bottom = 0;
   buttoncontainer.style.right = 0;
-  buttoncontainer.innerHTML = '<input  id="nameSetter" type="text"><a style="color:red">Name</a>'+
+  buttoncontainer.style.textAlign = 'center';
+  buttoncontainer.innerHTML = '<a style="width: 60px; color:red">Name: </a><input  id="nameSetter" type="text" style="width:200px">'+
   ' <br/> '+
-  '<input id="valueSetter" type="number" maxlength="2" min="9" max="75"><a style="color:red">Value</a><br/>'+
-  '<a id="lol" style="color:red">fuck the system</a>';
+  '<a style="width: 60px; color:red">Value: </a><input id="valueSetter" type="number" maxlength="2" min="9" max="75" style="width:200px"><br/>'+
+  '<a id="lol" style="color:red">Append</a>';
   buttoncontainer.style.height = (document.getElementById('container').offsetHeight * 0.2) + 'px';
   document.getElementById('container').appendChild(buttoncontainer);
   
@@ -36,34 +37,57 @@ anychart.onDocumentReady(function() {
 });
 var indexSetter = 5;
 var valueSetter = 11;
-var newname = document.getElementById('nameSetter').value;
-var newvalue = document.getElementById('valueSetter').value;
+var newname = document.getElementById('nameSetter');
+var newvalue = document.getElementById('valueSetter');
 function CRUD(dataSet) {
-    if (newname === ''){
+    
+    //check name field
+    if (newname.value === ''){
+        
+        //for empty name field
         indexSetter++;
-        if (newvalue === ''){
+        
+        //if value field is empty
+        if (newvalue.value === ''){
+            
+            //for empty field
             valueSetter++;
             dataSet.append({x: 'P'+indexSetter, value: valueSetter});
-            newvalue = '10';
-            newname = '';
+            
+            newvalue.setAttribute('value', 10);
+            newname.setAttribute('value', 'P' + (indexSetter + 1));
         }
         else
         {
-            dataSet.append({x: 'P'+indexSetter, value: newvalue});
-            newvalue = '10';
-            newname = '';
+            
+            //for not empty value field
+            dataSet.append({x: 'P'+indexSetter, value: newvalue.value});
+            newvalue.setAttribute('value', (newvalue.value * 1 +1));
+            newname.setAttribute('value', 'P' + (indexSetter + 1));
         }
+        indexSetter++;
     }
     else{
-        if(newvalue === ''){
-            dataSet.append({x: newname, value: valueSetter});
-            newvalue = '';
-            newname = '';
+        
+        //for not empty name field
+        if(newvalue.value === ''){
+            
+            //for empty value field
+            dataSet.append({x: newname.value, value: valueSetter});
+            
+            newvalue.setAttribute('value', 10);
+            newname.setAttribute('value', 'P' + (indexSetter + 1));
+            indexSetter++;
         }
         else{
-            dataSet.append({x: newname, value: newvalue});
-            newvalue = '10';
-            newname = '';
+            //for every field filled
+            dataSet.append({x: newname.value, value: newvalue.value});
+            newvalue.setAttribute('value', (newvalue.getAttribute('value')*1 + 1));
+            newname.setAttribute('value', 'P' + (indexSetter + 1));
+            indexSetter++;
         }
     }
+    newvalue.value = newvalue.getAttribute('value');
+    newname.value = newname.getAttribute('value');
+//    alert(newname.getAttribute('value') + '\n' + newvalue.getAttribute('value'));
 }

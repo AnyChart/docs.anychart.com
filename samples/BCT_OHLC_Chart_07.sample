@@ -33,7 +33,8 @@ anychart.onDocumentReady(function() {
         .enabled(true)
         .anchor('top')
         .position('centerBottom')
-        .fontSize(15)
+        .fontSize(12)
+        .offsetY(3)
         .fontWeight('bold')
         .textFormatter(function(){
                     var date = this.x;
