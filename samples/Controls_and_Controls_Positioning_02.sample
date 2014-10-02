@@ -22,19 +22,24 @@ anychart.onDocumentReady(function() {
     //title
     chart.title().enabled(false)
 
+    chart.yAxis()
+        .orientation("left")
+        .scale(
+            chart.yAxis().scale()
+        )
+        .title().text('LeftCenter');
+
     chart.yAxis(1)
         .orientation("right")
         .scale(
             chart.yAxis().scale()
         )
-        .title().text('Right Center')
+        .title().text('RightCenter');
 
-
-
-    //adjust y scale direction
+     //adjust y scale direction
     chart.yScale().inverted(false);
 
-    //set daat
+     //set daat
     chart.line(data);
 
     //draw
