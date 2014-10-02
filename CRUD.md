@@ -50,3 +50,10 @@ column click.
 
 ### Update
 
+Updating data in real time or is a data flow determines for which time or event data item is to be adjusted. AnyChart
+ data can be adjusted through **.set()** method. 
+  
+  
+Sample below demonstrates adding 5 to a column on click.
+
+{sample}CRUD\_03{sample}
