@@ -34,7 +34,8 @@ anychart.onDocumentReady(function() {
             {
                 text: data[index].x,
                 iconType: 'square',
-                iconFill: palette[index]
+                iconFill: palette[index],
+                meta: data[index].value
             }
         )
     }
@@ -72,8 +73,16 @@ anychart.onDocumentReady(function() {
     //set data
     var series = chart.bar(data);
 
+   // var info = data.get(e.pointIndex, 'value');
+
+
     series.tooltip().contentFormatter(function(point){
         return point.value.toFixed(2).toString();
+    });
+
+    customLegend.tooltip().contentFormatter(function(e){
+        console.log(e);
+        return e.meta.toString();
     });
 
     //chart.background(null);
