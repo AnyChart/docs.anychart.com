@@ -26,7 +26,7 @@ There are several types of controls that you can add to AnyChart, you can create
 multiple legends, add custom labels or images.
 
 ##Control Types
-
+<!--
 Type/Node	Description	Multiple	Charts	Maps
 Label 
 <label>	Adds a text with background to a chart or map.	Yes	Yes	Yes
@@ -51,7 +51,7 @@ Zoom Panel
 Custom Map Regions Label
 <map_region_label>	Custom Map Labels for Small regions	Yes	No	Yes
 to top
-
+-->
 ##Positioning controls
 
 There are two groups of control which are positioned in a little bit different way: first group consists of .title(), 
@@ -60,7 +60,7 @@ and the second group - all the rest controls.
   
 Here is the list of attributes that are used to configure control position <!-- - they are also described in XML 
 Reference, in appropriate control node description.-->
-
+<!--
 Node	Attribute	Description
 <controls>	align_top_by	When inside_dataplot="false" this attributes defines alignment base for all controls with position set to "Top|Bottom|Left|Right" accordingly, can be "Chart" or
 "Dataplot".
@@ -93,7 +93,7 @@ right
 top
 bottom
 to top
-
+-->
 ##Title
 
 Title is created to cover basic annotating needs. This control can be placed to the right, to the left, 
@@ -114,6 +114,8 @@ and when position is Fixed - it is not possible.
 
 On the sample chart below legend placed inside of the data plot can be moved, and custom labels in the 
 corners of the chart - can't.
+
+{sample}Controls\_and\_Controls\_Positioning\_01{sample}
 
 Live Sample:  Sample Controls Fixed and Float
 
