@@ -22,6 +22,49 @@ anychart.onDocumentReady(function() {
     //title
     chart.title().enabled(false)
 
+    customTitle = anychart.elements.title();
+    customTitle.enabled(true);
+    customTitle.orientation('bottom').align('left');
+    customTitle.zIndex(1);
+    customTitle.text('LeftBottom');
+
+    customTitle1 = anychart.elements.title();
+    customTitle1.enabled(true);
+    customTitle1.orientation('bottom').align('right');
+    customTitle1.zIndex(1);
+    customTitle1.text('RightBottom');
+
+    customTitle2 = anychart.elements.title();
+    customTitle2.enabled(true);
+    customTitle2.orientation('top').align('left');
+    customTitle2.zIndex(1);
+    customTitle2.text('LeftTop');
+
+    customTitle3 = anychart.elements.title();
+    customTitle3.enabled(true);
+    customTitle3.orientation('top').align('right');
+    customTitle3.zIndex(1);
+    customTitle3.text('RightTop');
+
+    customTitle4 = anychart.elements.title();
+    customTitle4.enabled(true);
+    customTitle4.orientation('bottom').align('right');
+    customTitle4.zIndex(1);
+    customTitle4.text('RightBottom');
+
+    customTitle5 = anychart.elements.title();
+    customTitle5.enabled(true);
+    customTitle5.orientation('top').align('center');
+    customTitle5.zIndex(1);
+    customTitle5.text('CenterTop');
+
+    customTitle6 = anychart.elements.title();
+    customTitle6.enabled(true);
+    customTitle6.orientation('bottom').align('center');
+    customTitle6.zIndex(1);
+    customTitle6.text('CenterBottom');
+
+
     chart.yAxis()
         .orientation("left")
         .scale(
@@ -39,7 +82,90 @@ anychart.onDocumentReady(function() {
      //adjust y scale direction
     chart.yScale().inverted(false);
 
-     //set daat
+    chart.listen(
+        'chartDraw',
+        function (e){
+
+            customTitle.parentBounds(anychart.math.rect(
+                   0,
+                   0,
+                   chart.container().width(),
+                   chart.container().height()-20
+                )
+            );
+            customTitle.container(chart.container());
+            customTitle.draw();
+        });
+
+    chart.listen(
+        'chartDraw',
+        function (e){
+
+            customTitle.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle.container(chart.container());
+            customTitle.draw();
+
+            customTitle1.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle2.container(chart.container());
+            customTitle2.draw();
+
+            customTitle3.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle3.container(chart.container());
+            customTitle3.draw();
+
+
+            customTitle4.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle4.container(chart.container());
+            customTitle4.draw();
+
+             customTitle5.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle5.container(chart.container());
+            customTitle5.draw();
+
+           customTitle6.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle6.container(chart.container());
+            customTitle6.draw();
+
+
+        });
+
+    //set daat
     chart.line(data);
 
     //draw
