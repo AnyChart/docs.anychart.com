@@ -41,7 +41,7 @@ anychart.onDocumentReady(function() {
   infoContainer.style.transition = '0.5s';
   infoContainer.style.textAlign = 'center';
   infoContainer.style.border = '3px solid #444444';
-  infoContainer.style.borderRadius = '7px 0 7px 7px';
+  infoContainer.style.borderRadius = '7px 7px 7px 7px';
   infoContainer.onclick = function() {
       infoContainer.style.top = (-250) + 'px';
   };
