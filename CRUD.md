@@ -42,3 +42,11 @@ We can set an event trigger on any element. Here is a sample with adding point a
 
 ### Read
 
+Adding custom data is quite nice function, but it requires much more then that for a creating useful dashboard. Any 
+point may contain any meta information. Additional information (comparison with the previous year) is available on a 
+column click.
+
+{sample}CRUD\_02{sample}
+
+### Update
+

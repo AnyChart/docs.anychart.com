@@ -1,0 +1,72 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+anychart.onDocumentReady(function() {
+
+  //data
+  var dataSet = anychart.data.set([
+    {x: 'Facebook', value: 103.42, yoy: 27},
+    {x: 'Google Search', value: 75.98, yoy: 37},
+    {x: 'Google Play', value: 73.67, yoy: 28},
+    {x: 'YouTube', value: 71.96, yoy: 27},
+    {x: 'Google Maps', value: 68.58, yoy: 14},
+    {x: 'Gmail', value: 64.41, yoy: 29},
+    {x: 'Instagram', value: 31.99, yoy: 66},
+    {x: 'Maps (Apple)', value: 31.89, yoy: 64},
+    {x: 'Stocks', value: 30.78, yoy: 32},
+    {x: 'Twitter', value: 30.76, yoy: 36}
+  ]);
+
+  //set chart type
+  chart = anychart.columnChart();
+
+  chart.title().text('Top 10 Smartphone Applications' + '\n' + 'of 2013').hAlign('center');
+
+  chart.xAxis().title().enabled(false);
+  //set data
+  var column = chart.column(dataSet);
+
+  var view = dataSet.mapAs();
+
+  var infoContainer = document.createElement('div');
+  infoContainer.style.top = (-250) + 'px';
+  infoContainer.style.right = 0;
+  infoContainer.style.width = 'auto';
+  infoContainer.style.height = 'auto';
+  infoContainer.style.backgroundColor = '#444444';
+  infoContainer.style.color = 'white';
+  infoContainer.style.position = 'absolute';
+  //infoContainer.style.dislpay = 'none';
+  infoContainer.style.zIndex = 2;
+  infoContainer.style.transition = '0.5s';
+  infoContainer.style.textAlign = 'center';
+  infoContainer.style.border = '3px solid #444444';
+  infoContainer.style.borderRadius = '7px 0 7px 7px';
+  infoContainer.onclick = function() {
+      infoContainer.style.top = (-250) + 'px';
+  };
+
+  container.appendChild(infoContainer);
+
+  //set listener on chart
+  column.listen(
+
+    //listener type
+    anychart.enums.EventType.POINT_CLICK,
+
+    //function, if listener triggers
+    function(e) {
+        var info = view.get(e.pointIndex, 'value');
+        infoContainer.style.top = 0;
+        infoContainer.innerHTML = 'Application Name: <b>' +
+        view.get(e.pointIndex, 'x') +
+        '</b><br/>Average Unique Users: <b>' +
+        view.get(e.pointIndex, 'value') +
+        '</b> millions<br/>Year Over Year: <b>' +
+        view.get(e.pointIndex, 'yoy') + '%</b>' ;
+    }
+  );
+
+  //set container and draw chart
+  chart.container('container').draw();
+});

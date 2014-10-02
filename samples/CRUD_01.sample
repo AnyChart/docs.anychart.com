@@ -16,6 +16,8 @@ anychart.onDocumentReady(function() {
   //set chart type
   chart = anychart.areaChart();
 
+  chart.title().text('Click on Chart to Add a Point ');
+
   //set data
   var area = chart.splineArea(dataSet);
 
