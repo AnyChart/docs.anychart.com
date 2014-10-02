@@ -1,0 +1,42 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+anychart.onDocumentReady(function() {
+
+          var data = [
+        {x: '1995', value: 41},
+        {x: '1996', value: 12},
+        {x: '1998', value: 17},
+        {x: '1999', value: 6},
+        {x: '2000', value: 7},
+        {x: '2001', value: 5.5},
+        {x: '2002', value: 5},
+        {x: '2003', value: 3},
+        {x: '2004', value: 4.5},
+        {x: '2005', value: 4},
+    ];
+
+    //chart type
+    chart = anychart.lineChart();
+
+    //title
+    chart.title().enabled(false)
+
+    chart.yAxis(1)
+        .orientation("right")
+        .scale(
+            chart.yAxis().scale()
+        )
+        .title().text('Right Center')
+
+
+
+    //adjust y scale direction
+    chart.yScale().inverted(false);
+
+    //set daat
+    chart.line(data);
+
+    //draw
+    chart.container('container').draw();
+});
