@@ -1,7 +1,7 @@
 {:tags []
      :is_new false
      :exports "chart"}
-     
+
 var customLegend, chart;
 anychart.onDocumentReady(function() {
 
@@ -18,6 +18,7 @@ anychart.onDocumentReady(function() {
         {x: "Plasttic Molding", value: 4.5},
         {x: "Other", value: 4},
     ];
+
     //set stage
     stage = acgraph.create('container');
 
@@ -75,18 +76,32 @@ anychart.onDocumentReady(function() {
         return point.value.toFixed(2).toString();
     });
 
-    chart.background(null);
+    //chart.background(null);
     chart.listen(
         'chartDraw',
         function (e){
-            customLegend.parentBounds(anychart.math.rect(0, 0, chart.container().width(), chart.container().height()-20));
+            customLegend.parentBounds(
+                anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
             customLegend.container(chart.container());
             customLegend.draw();
-            customTitle.parentBounds(anychart.math.rect(0, 0, chart.container().width(), chart.container().height()-20));
+            customTitle.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
             customTitle.container(chart.container());
             customTitle.draw();
         });
 
+    // bounds settings
     chart.bounds(0, 0, '100%', '90%');
     //set container and draw chart
     chart.container(stage).draw();
