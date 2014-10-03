@@ -1,6 +1,7 @@
 {:tags []
      :is_new false
      :exports "chart"}
+
 anychart.onDocumentReady(function() {
 
           var data = [
@@ -165,9 +166,109 @@ anychart.onDocumentReady(function() {
 
         });
 
-    //set daat
+    //set margin
+    chart.margin('5px');
+
+    //set padding
+    chart.padding('30px');
+
+    //set chart background
+    chart.background('null');
+
+    //set data
     chart.line(data);
 
     //draw
     chart.container('container').draw();
+
+    //set TextMarker
+    chart.textMarker(1)
+        //.scale(chart.yScale())
+        //.value(9000)
+        .text('CenterBottom')
+        .align('center')
+        .anchor('centerbottom')
+        .fontSize(11)
+        .offsetX(1)
+        .fontColor('black');
+
+    chart.textMarker(2)
+        .scale(chart.yScale())
+        .value(9000)
+        .text('CenterTop')
+        .align('center')
+        .anchor('centertop')
+        .fontSize(11)
+        .offsetX(2)
+        .fontColor('black');
+
+     chart.textMarker(3)
+        .scale(chart.yScale())
+        .value((chart.yScale().maximum() + chart.yScale().minimum()) / 2)
+        .text('CenterDataPlot')
+        .align('center')
+        .anchor('center')
+        .fontSize(11)
+        .offsetX(4)
+        .fontColor('black');
+
+    chart.textMarker(4)
+        //.scale(chart.yScale())
+        .value(9000)
+        .text('LeftTop')
+        .align('left')
+        .anchor('lefttop')
+        .fontSize(11)
+        .offsetX(3)
+        .fontColor('black');
+
+    chart.textMarker(5)
+        //.scale(chart.yScale())
+        //.value(9000)
+        .text('LeftBottom')
+        .align('left')
+        .anchor('leftbottom')
+        .fontSize(11)
+        .offsetX(4)
+        .fontColor('black');
+
+    chart.textMarker(6)
+        .scale(chart.yScale())
+        .value((chart.yScale().maximum() + chart.yScale().minimum()) / 2)
+        .text('LeftCenter')
+        .align('left')
+        .anchor('leftbottom')
+        .fontSize(11)
+        .offsetX(4)
+        .fontColor('black');
+
+     chart.textMarker(7)
+        //.scale(chart.yScale())
+        //.value(9000)
+        .text('RightBottom')
+        .align('right')
+        .anchor('rightbottom')
+        .fontSize(11)
+        .offsetX(4)
+        .fontColor('black');
+
+    chart.textMarker(8)
+        //.scale(chart.yScale())
+        .value(9000)
+        .text('RightTop')
+        .align('right')
+        .anchor('righttop')
+        .fontSize(11)
+        .offsetX(4)
+        .fontColor('black');
+
+    chart.textMarker(9)
+        .scale(chart.yScale())
+        .value((chart.yScale().maximum() + chart.yScale().minimum()) / 2)
+        .text('RightCenter')
+        .align('right')
+        .anchor('rightcenter')
+        .fontSize(11)
+        .offsetX(4)
+        .fontColor('black');
 });
