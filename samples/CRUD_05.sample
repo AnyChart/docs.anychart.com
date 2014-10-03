@@ -1,0 +1,57 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+anychart.onDocumentReady(function() {
+
+  //data
+  var dataSet = anychart.data.set([
+    {x: 'P1', value: 10},
+    {x: 'P2', value: 2},
+    {x: 'P3', value: 15},
+    {x: 'P4', value: 10},
+    {x: 'P5', value: 15}
+  ]);
+
+  //set chart type
+  chart = anychart.columnChart();
+
+  chart.title().text('Click on Chart to Add a Point ');
+
+  //set data
+  var area = chart.column(dataSet);
+
+  //first index for new point
+  var indexSetter = 5;
+  var randomIndex = 1
+
+  //set listener on chart
+  area.listen(
+
+    //listener type
+    anychart.enums.EventType.POINT_CLICK,
+
+    //function, if listener triggers
+    function(e) {
+
+      var view = dataSet().mapAs();
+      view.set(randomIndex, 'fill:', '');
+
+      //get random position in range of chart length
+      randomIndex = Math.floor((Math.random() * indexSetter) + 1);
+      //append data
+      dataSet.insert({
+
+        //x value
+        x: 'P' + (randomIndex+1),
+
+        //random value from 1 to 100
+        value : Math.floor((Math.random() * 100)+ 1),
+        fill: 'red',
+      }, randomIndex);
+      indexSetter++;
+    }
+  );
+
+  //set container and draw chart
+  chart.container('container').draw();
+});

@@ -2,11 +2,11 @@
 # Create Read Update Delete Data Manipulation
 
 * [Overview](#overview)
-* [Declaration](#declaration)
-* [Title](#title)
-* [Position](#position)
-* [Labels](#labels)
-* [Axis line](#axis_line)
+* [Create](#create)
+* [Read](#read)
+* [Update](#update)
+* [Delete](#delete)
+* [Insert](#insert)
 * [Tickmarks](#tickmarks)
 
 ## Overview
@@ -40,6 +40,10 @@ We can set an event trigger on any element. Here is a sample with adding point a
 
 {sample}CRUD\_01{sample}
 
+**Note:**
+Append method helps to add information at the end of the data set. To add information into any desirable position study
+ [**.insert** method section}(#insert) below.
+
 ### Read
 
 Adding custom data is quite nice function, but it requires much more then that for a creating useful dashboard. Any 
@@ -57,3 +61,20 @@ Updating data in real time or is a data flow determines for which time or event 
 Sample below demonstrates adding 5 to a column on click.
 
 {sample}CRUD\_03{sample}
+
+### Delete
+
+As far as we can add data, we can remove it too. Use **.remove()** method to delete a row from data.
+
+```
+    dataset.remove(0); //removes first row in dataset
+```
+
+Sample below demonstrates data removing. After click on any column removes the first one. 
+
+{sample}CRUD\_04{sample}
+
+### Insert
+
+Method **.insert()** is very similar to the **.append()** method, but adds information into any position. Sample 
+below illustrates 
