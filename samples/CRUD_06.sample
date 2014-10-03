@@ -1,0 +1,109 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+anychart.onDocumentReady(function() {
+
+  //data
+  var dataSet = anychart.data.set([
+    {x: 'P1', value: 200},
+    {x: 'P2', value: 2},
+    {x: 'P3', value: 15},
+    {x: 'P4', value: 10},
+    {x: 'P5', value: 15},
+    {x: 'P6', value: 2},
+    {x: 'P7', value: 15},
+    {x: 'P8', value: 200},
+    {x: 'P9', value: 2},
+    {x: 'P10', value: 15},
+    {x: 'P11', value: 10},
+    {x: 'P12', value: 15},
+    {x: 'P13', value: 2},
+    {x: 'P14', value: 15},
+    {x: 'P15', value: 200},
+    {x: 'P16', value: 2},
+    {x: 'P17', value: 15},
+    {x: 'P18', value: 10},
+    {x: 'P19', value: 15},
+    {x: 'P20', value: 200},
+  ]);
+
+  //set chart type
+  chart = anychart.lineChart();
+
+  chart.title().text('Click on Chart to Add a Point ');
+
+
+  //set data
+  var area = chart.spline(dataSet).markers(null);
+
+  //first index for new point
+  var indexSetter = 6;
+
+  //set listener on chart
+   //function, if listener triggers
+
+
+  chart.padding().right(80);
+
+  //set container and draw chart
+  chart.container('container').draw();
+
+  //create new button
+  var infoContainer = document.createElement('div');
+
+  //set button style
+  infoContainer.style.top = (0) + 'px';
+  infoContainer.style.right = 0;
+  infoContainer.style.width = 'auto';
+  infoContainer.style.height = 'auto';
+  infoContainer.style.backgroundColor = '#444444';
+  infoContainer.style.color = 'white';
+  infoContainer.style.position = 'absolute';
+  infoContainer.style.zIndex = 2;
+  infoContainer.style.transition = '0.5s';
+  infoContainer.style.textAlign = 'center';
+  infoContainer.style.border = '3px solid #444444';
+  infoContainer.style.borderRadius = '7px 7px 7px 7px';
+  infoContainer.style.fontSize = '18px';
+  infoContainer.innerHTML = 'Start' + '\n' + 'stream';
+  infoContainer.onclick = function() {
+    startStream();
+  };
+  container.appendChild(infoContainer);
+
+  function startStream() {
+
+    //adjust button content
+    infoContainer.innerHTML = 'Stop' + '\n' + 'stream';
+
+    //set interval of data stream
+    var myVar = setInterval(
+
+      //data streaming itself
+      function(e) {
+
+        //append data
+        dataSet.insert({
+
+          //x value
+          x: 'P' + indexSetter,
+
+          //random value from 1 to 100
+          value : Math.floor((Math.random() * 500)+ 1)
+        },
+        20);    //function interval
+
+        dataSet.remove(0);
+        indexSetter++;
+      }, 200
+    );
+
+    infoContainer.onclick = function(){
+      clearInterval(myVar);
+      infoContainer.onclick = function() {
+        startStream();
+      };
+    infoContainer.innerHTML = 'Start' + '\n' + 'stream';
+    };
+  }
+});

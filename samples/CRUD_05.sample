@@ -21,8 +21,10 @@ anychart.onDocumentReady(function() {
   var area = chart.column(dataSet);
 
   //first index for new point
-  var indexSetter = 5;
-  var randomIndex = 1
+  var indexSetter = 6;
+
+  //variable for renaming columns after insert
+  var oldRandomIndex = indexSetter+1;
 
   //set listener on chart
   area.listen(
@@ -32,23 +34,43 @@ anychart.onDocumentReady(function() {
 
     //function, if listener triggers
     function(e) {
+      var view = dataSet.mapAs();
 
-      var view = dataSet().mapAs();
-      view.set(randomIndex, 'fill:', '');
+      view.set(
+        oldRandomIndex-1,       //get previosly inserted column
+        'fill',                 //get parameter to update
+        ''                      //disables red fill color
+      );
+      view.set(
+        oldRandomIndex-1,       //get previosly inserted column
+        'x',                    //get parameter to adjust
+        'P' + oldRandomIndex    //set proper name
+      );
 
       //get random position in range of chart length
-      randomIndex = Math.floor((Math.random() * indexSetter) + 1);
-      //append data
-      dataSet.insert({
+      var randomIndex = Math.floor((Math.random() * (indexSetter)) + 1);
 
-        //x value
-        x: 'P' + (randomIndex+1),
+      //insert data
+      dataSet.insert(
+        {
+          x: 'P' + (randomIndex),                       //set name
+          value : Math.floor((Math.random() * 100)+ 1), //set random value in range 1 - 100
+          fill: 'red',                                  //set red color to define inserted column from others
+        },
+        randomIndex-1                                     //position for inserting column
+      );
 
-        //random value from 1 to 100
-        value : Math.floor((Math.random() * 100)+ 1),
-        fill: 'red',
-      }, randomIndex);
+      //get all columns after inserted one and change x value
+      for(var indexCounter = randomIndex; indexCounter < indexSetter; indexCounter++){
+        view.set(
+          (indexCounter),         //column index
+          'x',                    //parameter to adjust
+          'P' + (indexCounter+1)  //set as new parameter
+        );
+      }
+
       indexSetter++;
+      oldRandomIndex = randomIndex; //set variable to adjust at next click
     }
   );
 

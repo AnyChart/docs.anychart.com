@@ -2,12 +2,12 @@
 # Create Read Update Delete Data Manipulation
 
 * [Overview](#overview)
-* [Create](#create)
-* [Read](#read)
-* [Update](#update)
-* [Delete](#delete)
-* [Insert](#insert)
-* [Tickmarks](#tickmarks)
+ * [Create](#create)
+ * [Read](#read)
+ * [Update](#update)
+ * [Delete](#delete)
+ * [Insert](#insert)
+* [Data Stream](#data_stream)
 
 ## Overview
 
@@ -76,5 +76,25 @@ Sample below demonstrates data removing. After click on any column removes the f
 
 ### Insert
 
-Method **.insert()** is very similar to the **.append()** method, but adds information into any position. Sample 
-below illustrates 
+Method **.insert()** is very similar to the **.append()** method, but adds information into any position. 
+
+```
+    dataSet.insert(
+        {x: 'new P', value : 50},   //new data to set
+        2                           //row to insert data
+    )
+```
+
+Sample below illustrates inserting column into random position and set red color to it.
+
+{sample}CRUD\_05{sample}
+
+## Data Stream
+
+Data Stream is a data flow determines for which time which data item is scheduled to enter or leave. For streaming 
+data we can use 2 methods described above: **append()** and **remove()**. In the sample below we create chart and a 
+button and set event on button's click, which appends a new data point with random value and removes first data 
+point.
+
+{sample}CRUD\_06{sample}
+ 
