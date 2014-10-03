@@ -14,7 +14,7 @@ anychart.onDocumentReady(function() {
         {x: '2002', value: 5},
         {x: '2003', value: 3},
         {x: '2004', value: 4.5},
-        {x: '2005', value: 4},
+        //{x: '2005', value: 4},
     ];
 
     //chart type
@@ -65,23 +65,39 @@ anychart.onDocumentReady(function() {
     customTitle6.zIndex(1);
     customTitle6.text('CenterBottom');
 
+    customTitle7 = anychart.elements.title();
+    customTitle7.enabled(true);
+    customTitle7./*orientation('bottom')*/align('left');
+    customTitle7.zIndex(1);
+    customTitle7.text('LeftCenter');
 
+    customTitle8 = anychart.elements.title();
+    customTitle8.enabled(true);
+    customTitle8./*orientation('bottom')*/align('right');
+    customTitle8.zIndex(1);
+    customTitle8.text('RightCenter');
+
+    // Axes settings
     chart.yAxis()
         .orientation("left")
         .scale(
             chart.yAxis().scale()
-        )
-        .title().text('LeftCenter');
+        );
+     chart.title().enabled(false);
 
     chart.yAxis(1)
         .orientation("right")
         .scale(
             chart.yAxis().scale()
-        )
-        .title().text('RightCenter');
+        );
+    chart.title().enabled(false);
+
+    chart.yAxis().labels().textFormatter(function(){
+        return this.value.toFixed(2);
+    });
 
      //adjust y scale direction
-    chart.yScale().inverted(false);
+    chart.yScale().inverted(false).ticks().interval(10);
 
     chart.listen(
         'chartDraw',
@@ -163,7 +179,28 @@ anychart.onDocumentReady(function() {
             customTitle6.container(chart.container());
             customTitle6.draw();
 
+            customTitle7.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle7.container(chart.container());
+            customTitle7.padding().top((chart.container().height() -16) / 2);
+            customTitle7.draw();
 
+
+            customTitle8.parentBounds(anychart.math.rect(
+                    0,
+                    0,
+                    chart.container().width(),
+                    chart.container().height()-20
+                )
+            );
+            customTitle8.container(chart.container());
+            customTitle8.padding().top((chart.container().height() -16) / 2);
+            customTitle8.draw();
         });
 
     //set margin
@@ -173,7 +210,7 @@ anychart.onDocumentReady(function() {
     chart.padding('30px');
 
     //set chart background
-    chart.background('null');
+    chart.background(null);
 
     //set data
     chart.line(data);
