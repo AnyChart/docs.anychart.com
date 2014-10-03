@@ -42,7 +42,7 @@ We can set an event trigger on any element. Here is a sample with adding point a
 
 **Note:**
 Append method helps to add information at the end of the data set. To add information into any desirable position study
- [**.insert** method section](#insert) below.
+ [.insert() method section](#insert) below.
 
 ### Read
 
