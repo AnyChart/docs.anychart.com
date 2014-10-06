@@ -28,6 +28,9 @@ anychart.onDocumentReady(function() {
     Series_2003.yAxis().orientation('right').title().enabled(false);
     Series_2003.xAxis().title().text('Year 2003');
 
+    //set scale minimum
+    Series_2003.yScale().minimum(0);
+
     //set stage
     Series_2003.container(stage);
 
@@ -52,6 +55,9 @@ anychart.onDocumentReady(function() {
     //adjust axes settings
     Series_2004.yAxis().title().text('Sales');
     Series_2004.xAxis().title().text('Year 2004');
+
+    //set scale minimum
+    Series_2004.yScale().minimum(0);
 
     //set container
     Series_2004.container(stage);

@@ -2,11 +2,11 @@
      :is_new false
      :exports "chart"}
 anychart.onDocumentReady(function() {
-    chart = anychart.columnChart();
+    chart = anychart.areaChart();
 
     chart.title().text('Axes Labels Enable/Disable Sample');
 
-    chart.column([
+    chart.area([
         ['January' , 10000],
         ['February' , 12000],
         ['March' , 10000],

@@ -9,6 +9,10 @@ anychart.onDocumentReady(function() {
     //chart title
     chart.title().text('Inverted Scale');
 
+    //set scale minimum
+    chart.yScale().minimum(0);
+
+
     //setteing data
     var data = anychart.data.set([
         ['C', 15],

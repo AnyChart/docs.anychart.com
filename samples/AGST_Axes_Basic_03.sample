@@ -7,7 +7,13 @@ anychart.onDocumentReady(function() {
   var data = anychart.data.set([
     ['P1', 16, 20],
     ['P2', 12, 18],
-    ['P3', 9, 14]
+    ['P3', 19, 14],
+    ['P4', 17, 20],
+    ['P5', 11, 18],
+    ['P6', 14, 14],
+    ['P7', 13, 20],
+    ['P8', 10, 18],
+    ['P9', 15, 14]
   ]);
 
   //data remapping
@@ -15,6 +21,9 @@ anychart.onDocumentReady(function() {
   var Sales2004 = data.mapAs({x: [0], value: [2]});
 
   chart = anychart.columnChart();
+
+  //set scale minimum
+  chart.yScale().minimum(0);
 
   chart.title().text('Normal labels');
 

@@ -46,6 +46,8 @@ anychart.onDocumentReady(function() {
     defaultCornersChart.yAxis().title().enabled(false);
     defaultCornersChart.xAxis().title().enabled(false);
 
+    //set scale minimum
+    defaultCornersChart.yScale().minimum(0);
 
     //setting data into series
     firstNormalSeries = defaultCornersChart.column(seriesData_1);
@@ -73,6 +75,9 @@ anychart.onDocumentReady(function() {
     //set data
     firstNormalSeries = roundCornersChart.column(seriesData_1);
     secondNormalSeries = roundCornersChart.column(seriesData_2);
+
+    //set scale minimum
+    roundCornersChart.yScale().minimum(0);
 
     //draw chart
     roundCornersChart.container(stage);
@@ -105,6 +110,9 @@ anychart.onDocumentReady(function() {
     firstNormalSeries = roundInnerCornersChart.column(seriesData_1);
     secondNormalSeries = roundInnerCornersChart.column(seriesData_2);
 
+    //set scale minimum
+    roundInnerCornersChart.yScale().minimum(0);
+
     //draw chart
     roundInnerCornersChart.container(stage);
     roundInnerCornersChart.draw();
@@ -132,6 +140,8 @@ anychart.onDocumentReady(function() {
     cutCornerChart.xAxis().title().enabled(false);
     cutCornerChart.yAxis().title().enabled(false);
 
+    //set scale minimum
+    cutCornerChart.yScale().minimum(0);
 
     //setting data
     firstlineSeries = cutCornerChart.column(seriesData_1);

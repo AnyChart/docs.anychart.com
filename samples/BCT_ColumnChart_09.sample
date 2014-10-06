@@ -13,6 +13,9 @@ anychart.onDocumentReady(function() {
     chart.xAxis().title().text('Manager');
     chart.yAxis().title().text('Sales');
 
+    //set scale minimum
+    chart.yScale().minimum(0);
+
     //set data
     chart.column([
         ['John' , 10000],
