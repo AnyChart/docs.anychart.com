@@ -82,6 +82,18 @@ retail channels in 2003 and 2004 years:
 As far as there are 5 retail channels there are 5 different bullet charts on one dashboard. Main bar is relevant to 
 2003 year sales, darker range is relevant to 2004 year sales and lighter range is relevant to the maximum of sales at
 ever sold in the channel per year.
+  
+  
+Data above have to be transferred into acceptable format for AnyChart. Simple data for Bullet chart looks like: 
 
+```
+    chart = anychart.bulletChart([{value: 637.166}]);
+    chart.range().from(0).to(737.166);
+    chart.range(1).from(737.166).to(957.309);
+    chart.container('container').draw();
+```
+
+Here is a sample with all 5 bullet chart on one dashboard.
 
 {sample}BCT\_Bullet\_Chart\_01{sample}
+
