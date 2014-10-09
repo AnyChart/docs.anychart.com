@@ -28,5 +28,8 @@ anychart.onDocumentReady(function() {
     //setting major ticks interval on y scale
     chart.yScale().ticks().interval(2);
 
+    //set scale minimum
+    chart.yScale().minimum(0);
+
     chart.container('container').draw();
 });

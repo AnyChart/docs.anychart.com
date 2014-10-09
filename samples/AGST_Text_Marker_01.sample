@@ -13,10 +13,10 @@ anychart.onDocumentReady(function() {
     ]);
 
     //chart type
-    var chart = anychart.columnChart();
+    var chart = anychart.areaChart();
 
     //set data
-    chart.column(data)
+    chart.area(data)
         .hoverFill('#444444')
         .tooltip()
             .contentFormatter(function(){

@@ -9,6 +9,9 @@ anychart.onDocumentReady(function() {
     //set title
     chart.title().text('Padding');
 
+    //set scale minimum
+    chart.yScale().minimum(0);
+
     //set data
     chart.column([10000, 12000]);
     chart.column([12000, 15000]);
