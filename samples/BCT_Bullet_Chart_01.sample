@@ -15,7 +15,7 @@ anychart.onDocumentReady(function() {
   // Set chart layout
   chart_1.layout('horizontal');
   //chart title
-  chart_1.title().text('Department\nStore').width('20%');
+  chart_1.title().text('Department Store');
   // Create chart ranges
   chart_1.range().from(0).to(737.166);
   chart_1.range(1).from(737.166).to(957.309);
@@ -31,7 +31,7 @@ anychart.onDocumentReady(function() {
   // Set chart layout
   chart_2.layout('horizontal');
   //chart title
-  chart_2.title().text('Discount\nStores').width('20%');
+  chart_2.title().text('Discount Stores');
   // Create chart ranges
   chart_2.range().from(0).to(537.166);
   chart_2.range(1).from(537.166).to(879.252);
@@ -47,7 +47,7 @@ anychart.onDocumentReady(function() {
   // Set chart layout
   chart_3.layout('horizontal');
   //chart title
-  chart_3.title().text('Men\'s/Women\'s\nSpecialty\nStores').width('20%');
+  chart_3.title().text('Men\'s/Women\'s Specialty Stores');
   // Create chart ranges
   chart_3.range().from(0).to(188.662);
   chart_3.range(1).from(188.662).to(512.203);
@@ -63,7 +63,7 @@ anychart.onDocumentReady(function() {
   // Set chart layout
   chart_4.layout('horizontal');
   //chart title
-  chart_4.title().text('Juvenile\nSpecialty\nStores').width('20%');
+  chart_4.title().text('Juvenile Specialty Stores');
   // Create chart ranges
   chart_4.range().from(0).to(178.662);
   // Initiate chart drawing
@@ -78,7 +78,7 @@ anychart.onDocumentReady(function() {
   // Set chart layout
   chart_5.layout('horizontal');
   //chart title
-  chart_5.title().text('All other\noutlets').width('20%');
+  chart_5.title().text('All other outlets');
   // Create chart ranges
   chart_5.range().from(0).to(89);
   chart_5.range(1).from(0).to(124.812);
