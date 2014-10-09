@@ -83,3 +83,5 @@ As far as there are 5 retail channels there are 5 different bullet charts on one
 2003 year sales, darker range is relevant to 2004 year sales and lighter range is relevant to the maximum of sales at
 ever sold in the channel per year.
 
+
+{sample}BCT\_Bullet\_Chart\_01{sample}
