@@ -6,7 +6,7 @@
   * [Single Series Spline Area Chart](#single_series_spline_area_chart)
   * [Multi-series](#multi-series)
 * [Axes](#axes)
-  * [Position](#position)
+  * [Orientation](#orientation)
   * [Inversion](#inversion)
   * [Minimum and Maximum](#minimum_and_maximum)
 * [Visualization](#visualization)
@@ -175,11 +175,11 @@ the chart will be of Area type by default.
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
 scale and settings and many more. All axis features are described in 
 [Axes tutorial](../Axes_Grid_Scales_Trends_etc/Axis_Basics), in this section we will quickly demonstrate how axis 
-position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
-### Position
+### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust position with 
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with 
 **orientation()** method of **yAxis** or **xAxis** instances.
   
 Positioning depends on plot type and inversion of axes.

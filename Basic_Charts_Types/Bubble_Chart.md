@@ -6,7 +6,7 @@
  * [Multi-series](#multi-series)
 * [Size](#size)
 * [Axes](#axes)
- * [Positioning](#position)
+ * [Positioning](#orientation)
  * [Inversion](#inversion)
  * [Minimum and Maximum](#minimum_and_maximum)
 * [Visualization](#visualization)
@@ -185,7 +185,7 @@ axis scale and settings and many more. All axis features are described in
 [Axes Basics](../Axes_Grid_Scales_Trends_etc/Axis_Basics) tutorial. 
   
 In this section we will quickly demonstrate how 
-axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+axis orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
 ### Positioning
 

@@ -5,7 +5,7 @@
  * [Single Series](#single_series)
  * [Multi-series](#multi-series)
 * [Axes](#axes)
- * [Positioning](#position)
+ * [Positioning](#orientation)
  * [Inversion](#inversion)
  * [Minimum and Maximum](#minimum_and_maximum)
 * [Padding](#padding)
@@ -161,13 +161,13 @@ chart will be **Bar** type by default.
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
 scale and settings and many more. All axis features are described in Axes Basics , Axes Scales and Extra Axes tutorial, 
-in this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how 
+in this section we will quickly demonstrate how axis orientation can be adjusted, how axis scale can be inverted and how 
 minimum and maximum values can be controlled.
 
 ### Positioning
 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **yAxis** or **xAxis** 
-position attribute.
+orientation attribute.
 
 Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and 
 inversion settings in [Axes Positioning](../Axes_Grid_Scales_Trends_etc/Axis_Position) Templates.
