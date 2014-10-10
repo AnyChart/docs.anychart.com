@@ -35,65 +35,31 @@ most meaningful presentation of the data in the least amount of space.
 Bullet Chart consist of a main bar of key measure and a range bar of comparative measure. 
   
   
-Let's create a simple bullet chart. Data for the chart is base on the sales of ACME Corp. apparel through different 
-retail channels in 2003 and 2004 years:
-
-<table width="536" border="1" class="dtTABLE">
-<tbody>
-<tr>
-<th width="227"><b>Retail Channel</b></th>
-<th width="141"><b>Year 2003 Sales</b></th>
-<th width="141"><b>Year 2004 Sales</b></th>
-<th width="141"><b>Fixed Maximum</b>
-</tr>
-<tr>
-<td>Department Stores</td>
-<td>$637.166</td>
-<td>$737.166</td>
-<td>$957.309</td>
-</tr>
-<tr>
-<td>Discount Stores</td>
-<td> $721.630</td>
-<td>$537.166</td>
-<td>$879.252</td>
-</tr>
-<tr>
-<td>Men's/Women's Specialty Stores</td>
-<td> $148.662</td>
-<td>$188.662</td>
-<td>$512.203</td>
-</tr>
-<tr>
-<td>Juvenile Specialty Stores</td>
-<td> $78.662</td>
-<td>$178.662</td>
-<td>$178.662</td>
-</tr>
-<tr>
-<td>All other outlets</td>
-<td> $90.000</td>
-<td>$89.000</td>
-<td>$124.812</td>
-</tr>
-</tbody>
-</table>
-
-As far as there are 5 retail channels there are 5 different bullet charts on one dashboard. Main bar is relevant to 
-2003 year sales, darker range is relevant to 2004 year sales and lighter range is relevant to the maximum of sales at
-ever sold in the channel per year.
-  
-  
-Data above have to be transferred into acceptable format for AnyChart. Simple data for Bullet chart looks like: 
+Let's create a simple Bullet Chart. Main bar represents 2005 Revenue and range bar represents maximum annual income 
+ever fixed in the company. Data set for the chart is below
 
 ```
-    chart = anychart.bulletChart([{value: 637.166}]);
-    chart.range().from(0).to(737.166);
-    chart.range(1).from(737.166).to(957.309);
-    chart.container('container').draw();
+  // Create bullet chart
+  var chart = anychart.bulletChart([
+    {value: 637.166}                  //2005 revenue
+  ]);
+  chart.range().from(0).to(737.166);  //maximum annual  income ever fixed
 ```
-
-Here is a sample with all 5 bullet chart on one dashboard.
 
 {sample}BCT\_Bullet\_Chart\_01{sample}
+
+## Layout
+
+Bullet Chart was designed to represent data in the most effective and use minimum space for it. Layout is controlled 
+by **.layout()** parameter. Here is a sample of code with both horizontal and vertical layouts.
+
+```
+    chart_1.layout('vertical');
+    chart_2.layout('horizontal');
+```
+Here is the sample with both horizontal and vertical layouts.
+
+{sample}BCT\_Bullet\_Chart\_02{sample}
+
+## Axis
 
