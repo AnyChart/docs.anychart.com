@@ -8,10 +8,10 @@ anychart.onDocumentReady(function() {
   var chart = anychart.bulletChart([{value: 5}]);
 
   // chart container
-  chart.container('contaoiner');
+  chart.container('container');
 
   // Chart title
-  chart.title().text('Inverted/nChart');
+  chart.title().text('Inverted\nChart');
 
   // Set chart size and position settings
   chart.bounds(0, '35%', '100%', '30%');
