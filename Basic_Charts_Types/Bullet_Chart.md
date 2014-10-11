@@ -63,3 +63,28 @@ Here is the sample with both horizontal and vertical layouts.
 
 ## Axis
 
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
+scale and settings. All axis features are described in [Axes Basics](../Axes_Grid_Scales_Trends_etc/Axis_Basics) 
+tutorial, In this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted 
+and how minimum and maximum values can be controlled. 
+  
+  
+**Note:** In most cases chart has at least two axes, but Bullet Chart always represents only one data series and 
+there is no need in two axes.
+
+## Orientation
+
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **orientation()** method of 
+**.axis()** attributes.
+  
+  
+Orientation depends on the layout of a chart. For horizontal layout axis orientation parameter can be set only *top* 
+or *bottom*. As for vertical layout, axis orientation parameter may be only *left* or *right*
+
+```
+    chart.axis().orientation('top');
+```
+
+Here is a sample with data from dashboard above with only change of axis orientation
+
+{sample}BCT\_Bullet\_Chart\_03{sample}
