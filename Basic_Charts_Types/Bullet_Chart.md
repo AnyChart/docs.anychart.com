@@ -72,7 +72,7 @@ and how minimum and maximum values can be controlled.
 **Note:** In most cases chart has at least two axes, but Bullet Chart always represents only one data series and 
 there is no need in two axes.
 
-## Orientation
+### Orientation
 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **orientation()** method of 
 **.axis()** attributes.
@@ -88,3 +88,15 @@ or *bottom*. As for vertical layout, axis orientation parameter may be only *lef
 Here is a sample with data from dashboard above with only change of axis orientation
 
 {sample}BCT\_Bullet\_Chart\_03{sample}
+
+### Inversion
+
+AnyChart allows to invert any axis on a dashboard. Inversion is controlled by axis **scale().inverted()** parameter:
+
+```
+    chart.scale().inverted(true);
+```
+
+Below is a demonstration of horizontal bullet chart with inverted axis. 
+
+{sample}BCT\_Bullet\_Chart\_04{sample}
