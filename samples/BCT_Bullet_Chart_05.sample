@@ -5,20 +5,24 @@
 anychart.onDocumentReady(function() {
 
   // Create bullet chart
-  var chart = anychart.bulletChart([{value: 225}]);
+  var chart = anychart.bulletChart([{value: 5}]);
 
-  // Set chart to render on stage
+  // chart container
   chart.container('container');
+
+  // Chart title
+  chart.title().text('Inverted\nChart');
 
   // Set chart size and position settings
   chart.bounds(0, '35%', '100%', '30%');
 
+  // Invert scale
+  chart.scale().inverted(true);
+
   // Create chart ranges
-  chart.range().from(0).to(100);
-  chart.range(1).from(100).to(150);
-  chart.range(2).from(150).to(200);
-  chart.range(3).from(200).to(250);
-  chart.range(4).from(250).to(300);
+  chart.range().from(0).to(5);
+  chart.range(1).from(5).to(10);
+  chart.range(2).from(10).to(15);
 
   // Initiate chart drawing
   chart.draw();

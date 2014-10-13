@@ -48,6 +48,23 @@ ever fixed in the company. Data set for the chart is below
 
 {sample}BCT\_Bullet\_Chart\_01{sample}
 
+## Ranges
+
+Ranges or range bar in Bullet chart is a qualitative categories encoder (such as bad, satisfactory, 
+and good). They are variables of color intensity rather than of hue. Ranges are controlled by **.range()** method and 
+have two compulsory parameters: **.from()** and **.to()**. 
+
+```
+  chart.range().from(0).to(10);
+```
+
+Here is a sample with 5 ranges on one bullet chart:
+
+{sample}BCT\_Bullet\_Chart\_02{sample}
+
+**Note:** to avoid complexity that cannot be perceived efficiently and to maintain a clear distinction between the 
+colors, you shouldn't exceed five ranges on one chart.
+
 ## Layout
 
 Bullet Chart was designed to represent data in the most effective and use minimum space for it. Layout is controlled 
@@ -59,7 +76,7 @@ by **.layout()** parameter. Here is a sample of code with both horizontal and ve
 ```
 Here is the sample with both horizontal and vertical layouts.
 
-{sample}BCT\_Bullet\_Chart\_02{sample}
+{sample}BCT\_Bullet\_Chart\_03{sample}
 
 ## Axis
 
@@ -87,7 +104,7 @@ or *bottom*. As for vertical layout, axis orientation parameter may be only *lef
 
 Here is a sample with data from dashboard above with only change of axis orientation
 
-{sample}BCT\_Bullet\_Chart\_03{sample}
+{sample}BCT\_Bullet\_Chart\_04{sample}
 
 ### Inversion
 
@@ -99,4 +116,23 @@ AnyChart allows to invert any axis on a dashboard. Inversion is controlled by ax
 
 Below is a demonstration of horizontal bullet chart with inverted axis. 
 
-{sample}BCT\_Bullet\_Chart\_04{sample}
+{sample}BCT\_Bullet\_Chart\_05{sample}
+
+### Minimum and Maximum
+
+By default AnyChart calculates axis minimum and maximum automatically, you can see it on the scale inversion chart 
+sample above: minimal value on the Y Axis is 0, and maximum is 15. You can control these values by setting 
+maximum and minimum attributes of the scale:
+
+```
+    chart.yScale().minimum(-5).maximum(20);
+```
+
+Look at the demonstration of maximum and minimum values on the Single-series sample:
+
+{sample}BCT\_Bullet\_Chart\_06{sample}
+
+## Markers
+
+Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. 
+AnyChart allows to add markers to any data element including columns.
