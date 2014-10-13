@@ -7,7 +7,7 @@ anychart.onDocumentReady(function() {
   // Create bullet chart
   var chart = anychart.bulletChart([{value: 7}]);
 
-  // chart container
+  // Set chart container
   chart.container('container');
 
   // Chart title
