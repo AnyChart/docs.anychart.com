@@ -14,7 +14,7 @@ anychart.onDocumentReady(function() {
   chart.bounds(0, '35%', '100%', '30%');
 
   // Set title
-  chart.title().text('Markers');
+  chart.title().text('Colors');
 
   // Create chart ranges
   chart.range().from(0).to(100);
