@@ -14,7 +14,7 @@ anychart.onDocumentReady(function() {
   chart.bounds(0, '35%', '100%', '30%');
 
   // Set title
-  chart.title().text('Ranges');
+  chart.title().text('Markers');
 
   // Create chart ranges
   chart.range().from(0).to(100);
@@ -22,6 +22,9 @@ anychart.onDocumentReady(function() {
   chart.range(2).from(150).to(200);
   chart.range(3).from(200).to(250);
   chart.range(4).from(250).to(300);
+
+  // set ranges colors
+  chart.rangePalette(['#ffc658', '#ffd382', '#ffe0a8', '#ffe9c2', '#fff8e6']);
 
   // Initiate chart drawing
   chart.draw();

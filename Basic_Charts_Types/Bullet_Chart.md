@@ -1,4 +1,4 @@
-# Bubble Chart
+# Bullet Chart
 
 * [Overview](#overview)
 * [Chart](#chart)
@@ -71,8 +71,8 @@ Bullet Chart was designed to represent data in the most effective and use minimu
 by **.layout()** parameter. Here is a sample of code with both horizontal and vertical layouts.
 
 ```
-    chart_1.layout('vertical');
-    chart_2.layout('horizontal');
+  chart_1.layout('vertical');
+  chart_2.layout('horizontal');
 ```
 Here is the sample with both horizontal and vertical layouts.
 
@@ -99,7 +99,7 @@ Orientation depends on the layout of a chart. For horizontal layout axis orienta
 or *bottom*. As for vertical layout, axis orientation parameter may be only *left* or *right*
 
 ```
-    chart.axis().orientation('top');
+  chart.axis().orientation('top');
 ```
 
 Here is a sample with data from dashboard above with only change of axis orientation
@@ -111,7 +111,7 @@ Here is a sample with data from dashboard above with only change of axis orienta
 AnyChart allows to invert any axis on a dashboard. Inversion is controlled by axis **scale().inverted()** parameter:
 
 ```
-    chart.scale().inverted(true);
+  chart.scale().inverted(true);
 ```
 
 Below is a demonstration of horizontal bullet chart with inverted axis. 
@@ -125,7 +125,7 @@ sample above: minimal value on the Y Axis is 0, and maximum is 15. You can contr
 maximum and minimum attributes of the scale:
 
 ```
-    chart.yScale().minimum(-5).maximum(20);
+  chart.yScale().minimum(-5).maximum(20);
 ```
 
 Look at the demonstration of maximum and minimum values on the Single-series sample:
@@ -134,5 +134,27 @@ Look at the demonstration of maximum and minimum values on the Single-series sam
 
 ## Markers
 
-Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. 
-AnyChart allows to add markers to any data element including columns.
+Marker is an object with a specified shape, size, and color or an image used to encode any comparative measures. 
+Markers are controlled through data. Here is a sample of a bullet chart with two markers.
+
+```
+  var chart = anychart.bulletChart([
+    {value: 225},                               // main quantity bar 
+    {value: 275, type: 'ellipse', fill: 'gold'} // ellipse shaped marker
+  ]);
+```
+
+{sample}BCT\_Bullet\_Chart\_07{sample}
+
+**Note:** to avoid complexity we recommend to limit markers number to two. 
+
+## Colors
+
+Bullet Chart ranges use variables of color intensity rather than of hue. Ranges color can ba controlled with 
+**.rangePalette()**
+
+```
+  chart.rangePalette(['#ffc658', '#ffd382', '#ffe0a8', '#ffe9c2', '#fff8e6']);
+```
+
+{sample}BCT\_Bullet\_Chart\_07{sample}

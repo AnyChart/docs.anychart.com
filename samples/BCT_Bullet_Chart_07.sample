@@ -5,7 +5,11 @@
 anychart.onDocumentReady(function() {
 
   // Create bullet chart
-  var chart = anychart.bulletChart([{value: 225}]);
+  var chart = anychart.bulletChart([
+    {value: 225},                               // main quantity bar
+    {value: 200, type: 'line'},                 // line shaped marker
+    {value: 275, type: 'x', stroke: 'red'}      // X shaped marker
+  ]);
 
   // Set chart to render on stage
   chart.container('container');
@@ -14,7 +18,7 @@ anychart.onDocumentReady(function() {
   chart.bounds(0, '35%', '100%', '30%');
 
   // Set title
-  chart.title().text('Ranges');
+  chart.title().text('Markers');
 
   // Create chart ranges
   chart.range().from(0).to(100);
