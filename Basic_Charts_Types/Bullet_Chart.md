@@ -148,7 +148,7 @@ Bullet Chart ranges use variables of color intensity rather than of hue. 
 **.rangePalette()**
 
 ```
-  chart.rangePalette(['#ffc658', '#ffd382', '#ffe0a8', '#ffe9c2', '#fff8e6']);
+  chart.rangePalette(['#ffa058', '#ffb082', '#ffc0a8', '#ffd0c2', '#ffe0e6']);
 ```
 
 {sample}BCT\_Bullet\_Chart\_08{sample}
