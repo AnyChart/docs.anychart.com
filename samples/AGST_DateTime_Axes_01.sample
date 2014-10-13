@@ -25,7 +25,7 @@ anychart.onDocumentReady(function() {
     //adjusting labels for dateTime scale. Otherwise it would be the number of milliseconds between the date and midnight January 1 1970
     chart.yAxis().labels()
         .textFormatter(function(value) {
-            var date = Date.UTC(value['value']);
+            var date = Date.UTC(value['tickValue']);
             var options = {year: 'numeric'};
             return date.toLocaleDateString('en-US', options);
         });

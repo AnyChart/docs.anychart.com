@@ -10,16 +10,16 @@ anychart.onDocumentReady(function() {
     chart.title().text('Date/Time scale sample');
 
     //setting y scale type as dateTime and adjusting minimum and maximum values
-    chart.yScale(anychart.scales.dateTime().minimum(new Date('1999-01-01')).maximum(new Date('2005-01-01')));
+    chart.yScale(anychart.scales.dateTime().minimum(Date.UTC(1999)).maximum(Date.UTC(2005)));
     chart.yScale().ticks().interval(1);
     chart.yScale().minorTicks().interval(0, 2);
 
     //setting data
     chart.rangeColumn([
-        {x: 'Development', low: new Date('2000-01-01'), high: new Date('2002-02-15')},
-        {x: 'Internal Testing', low: new Date('2001-06-01'), high: new Date('2003-07-01'), fill: 'red'},
-        {x: 'Field Tests', low: new Date('2002-02-25'), high: new Date('2003-07-01'), fill: 'green'},
-        {x: 'Licensing', low: new Date('2003-07-01'), high: new Date('2004-07-01'), fill: 'yellow'}
+        {x: 'Development', low: Date.UTC(2000), high: Date.UTC(2002, 1, 14)},
+        {x: 'Internal Testing', low: Date.UTC(2001, 5), high: Date.UTC(2003, 6), fill: 'red'},
+        {x: 'Field Tests', low: Date.UTC(2002, 1, 24), high: Date.UTC(2003, 6), fill: 'green'},
+        {x: 'Licensing', low: Date.UTC(2003, 6), high: Date.UTC(2004, 6), fill: 'yellow'}
     ]).hoverFill('#444444').stroke('gray 0.8').tooltip().enabled(false);
 
     //adjusting labels for dateTime scale. Otherwise it would be the number of milliseconds between the date and midnight January 1 1970
