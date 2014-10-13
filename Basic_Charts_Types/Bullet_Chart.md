@@ -126,10 +126,14 @@ Look at the demonstration of maximum and minimum values on the Single-series sam
 
 {sample}BCT\_Bullet\_Chart\_06{sample}
 
-## Markers
+## Markersa
 
 Marker is an object with a specified shape, size, and color or an image used to encode any comparative measures. 
 Markers are controlled through data. Here is a sample of a bullet chart with two markers.
+
+### Type
+
+Bullet charts have 4 types of markers: *bar*, *X*, *line*, *ellipse*. 
 
 ```
   var chart = anychart.bulletChart([
