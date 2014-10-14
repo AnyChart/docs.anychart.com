@@ -149,9 +149,21 @@ is responsible for the size of a marker.
   
 Here is a sample of an ellipse sharped marker with blue stroke, gold inner color and a size 0.7 size of a chart. 
 
+```
+  var chart = anychart.bulletChart([
+    {value: 225},
+    {value: 290,          // set marker position
+      type: 'ellipse',    // set ellipse as marker type
+      fill: 'gold',       // set gold inner color 
+      stroke: '2 blue',   // set border width 2px and border color
+      gap: 0.3            // set marker size 
+    }
+  ])
+```
+
 {sample}BCT\_Bullet\_Chart\_08{sample}
 
-**Note:** to avoid complexity we recommend to limit markers number to two. 
+**Note:** to avoid complexity we recommend to limit markers number to two.
 
 ## Colors
 
