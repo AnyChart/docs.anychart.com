@@ -202,7 +202,7 @@ With AnyChart you can place axes to any side of the chart, all you need to do is
   
   
 Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion 
-settings in Axes Positioning and Inverting Templates.
+settings in [Axes Orientation](../Axes_Grid_Scales_Trends_etc/Axis_Orientation) tutorial.
 
 ```
     chart.xAxis(0).orientation('top');

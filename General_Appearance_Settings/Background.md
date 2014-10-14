@@ -1,4 +1,4 @@
-# Background                                                                                 
+# Background
 
 * [Overview](#overview)
 * [Stroke](#stroke)
@@ -6,7 +6,7 @@
   * [Solid](#solid)
   * [Gradient](#gradient)
   * [Image](#image)
-* [Corners Settings](#corners_settings)                         
+* [Corners Settings](#corners_settings)
 
 ## Overview
 
@@ -18,7 +18,8 @@ Below you will find the reference of the most important parameters of the mentio
 
 ## Stroke
 
-Border is configured using **.stroke()** method. Stroke can be **"Solid"**, **"Dashed"** and **"Gradient"**. If type is **"Solid"**, then color is specified using color attribute; to configure **"Gradient"** you have to use gradient keys. Dashed borders have to be set with special keys too.
+Border is configured using **.stroke()** parameter. Stroke can be **"Solid"**, **"Dashed"** and **"Gradient"**. If type
+ is **"Solid"**, then color is specified using color attribute; to configure **"Gradient"** you have to use gradient keys. Dashed borders have to be set with special keys too.
 
 Sample solid stroke settings:
 
