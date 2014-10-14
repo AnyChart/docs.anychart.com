@@ -85,7 +85,7 @@ Now we need to convert this data. In terms of AnyChart data model we have one se
     chart.bar(data);
 ```
 
-As you can see, we've used attribute **"barChart"**, set name's attribute into **first column** to define bar category 
+As you can see, we've used method **.barChart()**, set name's attribute into **first column** to define bar category 
 and **second column** defines bar value.
 
 {sample}BCT\_BarChart\_01{sample}
@@ -152,7 +152,7 @@ each series:
 ```
 
 As we now have multi-series chart we don't want to set **type** for each series individually (there can be much more 
-than two series in multi-series chart), so we add **anychart.barChart()** attribute to **chart**. Now all series in 
+than two series in multi-series chart), so we add **anychart.barChart()** method to **chart**. Now all series in 
 chart will be **Bar** type by default.
 
 {sample}BCT\_BarChart\_02{sample}
@@ -166,8 +166,8 @@ minimum and maximum values can be controlled.
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **yAxis** or **xAxis** 
-orientation attribute.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **.orientation()** 
+parameter of **.yAxis()** or **.xAxis()** methods.
 
 Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and 
 inversion settings in [Axes Positioning](../Axes_Grid_Scales_Trends_etc/Axis_Position) Templates.

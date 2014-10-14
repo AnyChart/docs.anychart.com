@@ -23,7 +23,7 @@ shows how an initial value is increased and decreased by a series of intermediat
 ## Chart
 
 As range bar charts have to define lower and upper bound of bars - you have to specify these two values using **"low"**
- and **"high"** attributes.
+ and **"high"** parameters.
   
   
 Also "RangeBar" series type should be specified.

@@ -34,7 +34,7 @@ Some traders find the candlestick chart easier to read, than [Open-High-Low-Clos
 ## Chart
 
 Candlestick chart uses four values, so we need to pass opening, high, low and closing price values to chart, this 
-should be done setting **open**, **high**, **low**, **close** attributes into second, third, fourth and fifth columns:
+should be done setting **open**, **high**, **low**, **close** parameters into second, third, fourth and fifth columns:
 
 ```
    ['White', 507, 511, 506, 510]
@@ -175,7 +175,7 @@ Now we need to convert this data into acceptable format.
 ```
 
 As you can see, we've specified chart as "Candlestick". Each series of data contains **column name, open, high, low and 
-close** attributes.
+close** parameters.
   
   
 Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on on it to see it's java 
@@ -398,7 +398,7 @@ different color. Here is the sample:
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined 
 color for all elements. We will set **"Rgb(180,77,77)"** color for minimum point and **"Rgb(77,180,77)"** for the 
-maximal one. As you see it is very easy to do by setting **"fallingFill()"** and **"risingFill()"** attributes for 
+maximal one. As you see it is very easy to do by setting **"fallingFill()"** and **"risingFill()"** parameters for a 
 point.
 
 {sample}BCT\_Japaneese-Candlestick\_Chart\_09{sample}

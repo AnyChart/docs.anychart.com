@@ -353,7 +353,7 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 ### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we 
-need to set "stroke" attribute for a series. In the sample below we have 5 series with sample data and we'll 
+need to set ".stroke()" parameter for a series. In the sample below we have 5 series with sample data and we'll 
 color each series to different color. Here is the sample:
 
 {sample}BCT\_LineChart\_11{sample}

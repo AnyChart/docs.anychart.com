@@ -88,8 +88,8 @@ represents product, units sold and a profit amount. Converted data looks like:
     ]).minimumSize(2).maximumSize(40);
 ```
 
-As you can see, we've categoriesed chart ad **bubble**, set attribute that defines bar category into first and second 
-columns and attribute that defines bubble size into third one.
+As you can see, we've categoriesed chart at **bubble()** method, set parameters that defines bar category into first 
+and second columns and parameter that defines bubble size into third one.
 
 Here it is - AnyChart can now visualize your data. You can launch it in playground and modify it.
 
@@ -154,7 +154,7 @@ between these two samples is the fact that now we have bigger data and we have t
 
 ### Size
 
-Bubbles minimum and maximum size can be controlled using **maximumSize()** and **minimumSize()** attributes. Both of 
+Bubbles minimum and maximum size can be controlled using **.maximumSize()** and **.minimumSize()** parameters. Both of 
 them can be set in percents of a lesser dataplot side (this can be width or height) and in pixels:
 
 ```
@@ -329,7 +329,7 @@ different color. Here is the sample:
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined 
 color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximum one. 
-As you see it is very easy to do by setting **fill()** attribute for point.
+As you see it is very easy to do by setting **.fill()** parameter for point.
 
 {sample}BCT\_Bubble\_Chart\_11{sample}
 
@@ -354,6 +354,6 @@ settings and palettes. To see whole range of available hatch types see Hatch tut
 
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 
 chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting 
-**.hatchFill()** attribute.
+**.hatchFill()** parameter.
 
 {sample}BCT\_Bubble\_Chart\_12{sample}

@@ -118,7 +118,7 @@ Below is a demonstration of horizontal bullet chart with inverted axis.
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see it on the scale inversion chart 
 sample above: minimal value on the Y Axis is 0, and maximum is 15. You can control these values by setting 
-maximum and minimum attributes of the scale:
+**.maximum()** and **.minimum()** parameters of the scale:
 
 ```
   chart.yScale().minimum(-5).maximum(20);

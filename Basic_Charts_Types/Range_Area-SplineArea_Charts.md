@@ -17,7 +17,7 @@ value to a maximum value.
 ## Chart
 
 As range area charts have to define lower and upper bound of area - you have to specify these two values in each column 
-using **"low"** and **"high"** attributes.
+using **"low"** and **"high"** parameters.
   
   
 Also "RangeLineArea" or "RangeSpineArea" series type should be specified.

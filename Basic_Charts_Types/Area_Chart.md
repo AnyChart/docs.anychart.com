@@ -76,7 +76,7 @@ like this:
     chart.area(data);
 ```
 
-As you can see, we've created a Data Set. Every object is a point, each has some attributes. The first column is as 
+As you can see, we've created a Data Set. Every object is a point, each has some parameters. The first column is as 
 category and the second column is a value.
   
   

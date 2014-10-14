@@ -248,8 +248,8 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 ### Minimum and Maximum
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart 
-sample above: minimal value on the Y Axis is 800, and maximum is 1600. You can control these values by setting maximum 
-and minimum attributes of a scale() parameter:
+sample above: minimal value on the Y Axis is 800, and maximum is 1600. You can control these values by setting 
+**.maximum()** and **..minimum()** parameters of a **.scale()** method:
 
 ```
     chart.yScale().minimum('0').maximum('1800');
@@ -319,14 +319,14 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 ### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we 
-need to set **.fill()** attribute in the **chart.marker()**. In the sample below we have 5 series with sample data and 
-we'll color each series to different color. Here is the sample:
+need to set **.fill()** parameters in the **.marker()** method. In the sample below we have 5 series with sample data 
+and we'll color each series to different color. Here is the sample:
 
 {sample}BCT\_Marker\_Chart\_08{sample}
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined 
 color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. 
-As you see it is very easy to do by setting **.fill()** attribute for the point.
+As you see it is very easy to do by setting **.fill()** parameter for the point.
 
 {sample}BCT\_Marker\_Chart\_09{sample}
 
@@ -352,6 +352,6 @@ palettes. To see whole range of available hatch types see [Hatch tutorial](../Ge
   
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 
 chart with 5 series with 2 data points in each. For every series we've applied different hatch fills by setting 
-**.hatchFill()** attribute.
+**.hatchFill()** parameter.
 
 {sample}BCT\_Marker\_Chart\_10{sample}

@@ -228,7 +228,7 @@ Look at the demonstration of Y Axis inversion on the Single-series sample:
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see it on the scale inversion chart 
 sample above: minimal value on the Y Axis is 6.000, and maximum is 21.000. You can control these values by setting 
-maximum and minimum attributes of the scale:
+**.maximum()** and **.minimum()** parameters of the scale:
 
 ```
     chart.yScale().minimum('0').maximum('50000');
@@ -245,8 +245,8 @@ the picture below you can see what are these paddings:
 
 ![](http://www.anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
 
-If you want to set these paddings you need to set **.barsPadding()** or **.barGroupsPadding()** attributes in 
-**.chart**. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For 
+If you want to set these paddings you need to set **.barsPadding()** or **.barGroupsPadding()** parameters in 
+**chart**. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For 
 example, if you set **.barsPadding()** to 0.5 - the space between two columns will be equal to the half of each column 
 width. If you want to have no padding between columns or groups you should set **.barsPadding()** and 
 **.barGroupsPadding()** to 0.
@@ -311,7 +311,7 @@ and tuning visual appearance for them can be found in Labels and tooltips tutori
   
   
 If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and 
-**.tooltip()** attributes of **series**. You can tune their visual appearance, positioning and format. Let's do 
+**.tooltip()** methods of **series**. You can tune their visual appearance, positioning and format. Let's do 
 that in the following example: we will make data labels appear in the center of the columns, format labels so they show 
 only the value corresponding to the column and tooltip will show detailed description.
   
@@ -349,7 +349,7 @@ special colors.
 ### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we 
-need to set **.fill()** attribute in the **series**. In the sample below we have 5 series with sample data and 
+need to set **.fill()** parameters in the **series**. In the sample below we have 5 series with sample data and 
 we'll color each series in different color. Here is the sample:
 
 {sample}BCT\_ColumnChart\_10{sample}
@@ -379,6 +379,6 @@ are color blind. Hatch fill is fully-independent structure, it doesn't rely on c
   
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 
 chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting 
-"hatch_type" attribute for series.
+**.hatchType()** parameter for series.
 
 {sample}BCT\_ColumnChart\_12{sample}
