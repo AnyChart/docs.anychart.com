@@ -141,6 +141,9 @@ Here is a sample with all marker types:
 
 {sample}BCT\_Bullet\_Chart\_07{sample}
 
+**Note:** This chart contains 3 markers in one data set. It was done for demonstration purpose. But to avoid complexity
+ we recommend to **limit markers number to two**.
+
 ### Style
 
 For clearer distinction between markers it is very useful to adjust style settings of markers. There are three 
@@ -165,15 +168,19 @@ Here is a sample of an ellipse sharped marker with blue stroke, gold inner color
 
 {sample}BCT\_Bullet\_Chart\_08{sample}
 
-**Note:** to avoid complexity we recommend to limit markers number to two.
-
 ## Colors
 
 Bullet Chart ranges use variables of color intensity rather than of hue. Ranges color can ba controlled with 
 **.rangePalette()**
 
 ```
-  chart.rangePalette(['#ffa058', '#ffb082', '#ffc0a8', '#ffd0c2', '#ffe0e6']);
+  chart.rangePalette([
+    '#ffa058',  // first range color
+    '#ffb082',  // second range color
+    '#ffc0a8',  // third range color
+    '#ffd0c2',  // forth range color
+    '#ffe0e6'   // fifth range color
+  ]);
 ```
 
 {sample}BCT\_Bullet\_Chart\_09{sample}
