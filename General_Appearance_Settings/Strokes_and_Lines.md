@@ -1,4 +1,4 @@
-# Strokes and Lines                                                                              
+# Strokes and Lines
 
 * [Overview](#overview)
 * [Basics](#basics)
@@ -8,7 +8,7 @@
 * [Dashed Lines](#dashed_lines)
 * [Line Opacity](#line_opacity)
 * [Caps and Joints](#caps_and_joints)
-                          
+
 ## Overview
 
 Knowledge about line and stroke configuration parameters is very important, because AnyChart allows to configure almost any line you can see on the chart: Lines in charts, grids, tooltips and labels, and even tickmark lines.
