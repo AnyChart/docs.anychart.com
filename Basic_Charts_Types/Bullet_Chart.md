@@ -141,6 +141,13 @@ Here is a sample with all marker types:
 
 ### Style
 
+For clearer distinction between markers it is very useful to adjust style settings of markers. There are three 
+parameters of a marker to control and adjust visualization: **.fill()**, **.stroke()** and **.gap()**. Fill parameter
+ is responsible for inner color of a marker, stroke is responsible for the color of a border line and gar parameter 
+is responsible for the size of a marker.
+  
+  
+Here is a sample of an ellipse sharped marker with blue stroke, gold inner color and a size 0.7 size of a chart. 
 
 {sample}BCT\_Bullet\_Chart\_08{sample}
 
