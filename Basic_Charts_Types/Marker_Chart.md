@@ -6,7 +6,7 @@
   * [Multi-series](#multi-series)
 <!--  * [Scatter Marker chart](#marker_scatterplot) -->
  * [Axes](#axes)
-  * [Positioning](#position)
+  * [Orientation](#orientation)
   * [Inversion](#inversion)
   * [Minimum and Maximum](#minimum_and_maximum)
  * [Visualization](#visualization)
@@ -213,15 +213,15 @@ The sample of scatter marker chart can be found in Scatter Charts Tutorial.
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
 scale and settings and many more. All axis features are described in 
 [Axes Basic](../Axes_Grid_Scales_Trends_etc/Axis_Basics) tutorial, in this section we will quickly demonstrate how axis 
-position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
-### Positioning
+### Orientation
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position attribute of 
-**yAxis** or **xAxis** parameter.
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** parameter
+ of **.yAxis()** or **.xAxis()** methods.
   
   
-Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion 
+Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and inversion 
 settings in Axes Positioning and Inverting Templates.
 
 ```
@@ -262,7 +262,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 ## Visualization
 
 In this section we will describe main parts of marker chart visualization and ways to adjust it. Visual appearance of 
-areas is defined using certain methods. For Marker chart the main thing is the **.fill()** method.
+areas is defined using certain methods. For Marker chart the main thing is the **.fill()** parameter.
 
 ### Basic Sample
 

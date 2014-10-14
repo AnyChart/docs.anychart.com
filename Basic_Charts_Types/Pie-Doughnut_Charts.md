@@ -175,7 +175,7 @@ labels so they show only the percentage corresponding to the slices and tooltip 
   
   
 When formatting tooltips, we will use **.contentFormatter()** to adjust source of content and visual appearance. 
-To control labels position we may use **.position()** method. Here is a sample of two charts with the same data and 
+To control labels position we may use **.position()** parameter. Here is a sample of two charts with the same data and 
 different labels positions.
 
 {sample}BCT\_PieDoughnutChart\_07{sample}

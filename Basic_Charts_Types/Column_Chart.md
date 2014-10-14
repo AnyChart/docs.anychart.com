@@ -5,7 +5,7 @@
   * [Single Series](#single_series)
   * [Multi-series](#multi-series)
 * [Axes](#axes)
-  * [Position](#position)
+  * [Orientation](#orientation)
   * [Inversion](#inversion)
   * [Minimum and Maximum](#minimum_and_maximum)
 * [Padding](#padding)
@@ -192,16 +192,16 @@ Bar type by default.
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
 scale and settings. All axis features are described in [Axes Basics](../Axes_Grid_Scales_Trends_etc/Axis_Basics) 
-tutorial, In this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted 
-and how minimum and maximum values can be controlled.
+tutorial, In this section we will quickly demonstrate how axis orientation can be adjusted, 
+how axis scale can be inverted and how minimum and maximum values can be controlled.
 
-### Positioning
+### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **orientation()** method of 
-**yAxis** or **xAxis** instances.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **.orientation()** parameter
+ of **.yAxis()** or **.xAxis()** methods.
   
   
-Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion 
+Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion 
 settings in Axes Positioning and Inverting Templates.
 
 ```
@@ -311,7 +311,7 @@ and tuning visual appearance for them can be found in Labels and tooltips tutori
   
   
 If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and 
-**.tooltip()** attributes of **series** method. You can tune their visual appearance, positioning and format. Let's do 
+**.tooltip()** attributes of **series**. You can tune their visual appearance, positioning and format. Let's do 
 that in the following example: we will make data labels appear in the center of the columns, format labels so they show 
 only the value corresponding to the column and tooltip will show detailed description.
   
@@ -349,14 +349,14 @@ special colors.
 ### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we 
-need to set **.fill()** attribute in the **series** method. In the sample below we have 5 series with sample data and 
+need to set **.fill()** attribute in the **series**. In the sample below we have 5 series with sample data and 
 we'll color each series in different color. Here is the sample:
 
 {sample}BCT\_ColumnChart\_10{sample}
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined 
 color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. 
-As you see it is very easy to do by setting **".fill()"** method for **point** parameter.
+As you see it is very easy to do by setting **".fill()"** method for a **point**.
 
 {sample}BCT\_ColumnChart\_11{sample}
 

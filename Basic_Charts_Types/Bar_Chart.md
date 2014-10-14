@@ -5,7 +5,7 @@
  * [Single Series](#single_series)
  * [Multi-series](#multi-series)
 * [Axes](#axes)
- * [Positioning](#orientation)
+ * [Orientation](#orientation)
  * [Inversion](#inversion)
  * [Minimum and Maximum](#minimum_and_maximum)
 * [Padding](#padding)
@@ -164,12 +164,12 @@ scale and settings and many more. All axis features are described in Axes Basics
 in this section we will quickly demonstrate how axis orientation can be adjusted, how axis scale can be inverted and how 
 minimum and maximum values can be controlled.
 
-### Positioning
+### Orientation
 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **yAxis** or **xAxis** 
 orientation attribute.
 
-Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and 
+Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and 
 inversion settings in [Axes Positioning](../Axes_Grid_Scales_Trends_etc/Axis_Position) Templates.
 
 ```
@@ -195,7 +195,7 @@ AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is control
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart 
 sample above: minimal value on the Y Axis is 0.0, and maximum is 800.000. You can control these values by setting 
-**.maximum** and **.minimum** attributes of scale method:
+**.maximum()** and **.minimum()** parameters of scale method:
 
 ```
     chart.yScale().minimum('-200000').maximum('800000')
@@ -265,10 +265,10 @@ In this section we will explain how to add and configure data labels and tooltip
 tuning visual appearance for them can be found in Labels and tooltips tutorials.
   
   
-If you want to configure data labels and tooltips for all series - you should do that in **.labels** and **.tooltip** 
-methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will 
-make data labels appear to the right of the bars, also, we will format labels so they show only the value corresponding
- to the bar and tooltip will show detailed description.
+If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip
+()** methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: 
+we will make data labels appear to the right of the bars, also, we will format labels so they show only the value 
+corresponding to the bar and tooltip will show detailed description.
   
   
 When formatting data labels text we will use **.textFormatter** to choose the column we need information from. 
@@ -309,14 +309,14 @@ special colors.
 ### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we 
-need to set **".fill"** attribute in the **series** method. In the sample below we have 5 series with sample data and 
+need to set **".fill"** parameter in the **series**. In the sample below we have 5 series with sample data and 
 we'll color each series to different color. Here is the sample:
 
 {sample}BCT\_BarChart\_09{sample}
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined 
 color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximum one. 
-As you see it is very easy to do by setting **fill** method for **point** parameter.
+As you see it is very easy to do by setting **fill()** parameter of a point.
 
 {sample}BCT\_BarChart\_10{sample}
 

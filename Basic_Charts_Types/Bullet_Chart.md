@@ -87,8 +87,8 @@ there is no need in two axes.
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **orientation()** method of 
-**.axis()** attributes.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **orientation()** parameter
+ of **.axis()** method.
   
   
 Orientation depends on the layout of a chart. For horizontal layout axis orientation parameter can be set only *top* 

@@ -6,7 +6,7 @@
  * [Multi-series](#multi-series)
 * [Size](#size)
 * [Axes](#axes)
- * [Positioning](#orientation)
+ * [Orientation](#orientation)
  * [Inversion](#inversion)
  * [Minimum and Maximum](#minimum_and_maximum)
 * [Visualization](#visualization)
@@ -187,12 +187,12 @@ axis scale and settings and many more. All axis features are described in
 In this section we will quickly demonstrate how 
 axis orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
-### Positioning
+### Orientation
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** method 
-of **.yAxis()** or **.xAxis()** attributes.
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** 
+parameter of **.yAxis()** or **.xAxis()** methods.
   
-Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion 
+Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and inversion 
 settings in [Axes Positioning](../Axes_Grid_Scales_Trends_etc/Axis_Position) tutorial.
 
 ```
@@ -218,9 +218,9 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 ### Minimum and Maximum
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart 
-sample above: minimal value on the Y Axis is 0, and maximum is 1000. You can control these values by setting maximum 
-and minimum attributes of yScale method. As far as you want to adjusted the scale, it's desirable to set 
-**.ticks().interval()** as well, in case default interval is twisted:
+sample above: minimal value on the Y Axis is 0, and maximum is 1000. You can control these values by setting **
+.maximum()** and **.minimum()** parameters of **.yScale()** method. As far as you want to adjusted the scale, 
+it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 
 ```
     chart.yScale().minimum('-100').maximum('1000').ticks().interval(100);
@@ -233,7 +233,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 ## Visualization
 
 In this section we will describe main parts of bubble chart visualization and ways to adjust it. Visual appearance of 
-bubbles is defined using certain methods. For bubble chart the main thing is **.fill()** method.
+bubbles is defined using certain methods. For bubble chart the main thing is **.fill()** parameter.
 
 ### Basic Sample
 
@@ -261,8 +261,8 @@ In this section we will explain how to add and configure data labels and tooltip
 tuning visual appearance for them can be found in Labels and Tooltips.
   
   
-If you want to configure data labels and tooltips for all series - you should do that in .labels and .tooltip methods. 
-You can tune their visual appearance, positioning and format.
+If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip
+()** methods. You can tune their visual appearance, positioning and format.
   
   
 When formatting data labels text we will use .textFormatter to show Y axes value. Otherwise X axes will be displayed 

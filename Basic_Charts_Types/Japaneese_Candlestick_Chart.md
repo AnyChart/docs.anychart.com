@@ -5,7 +5,7 @@
   * [Single Series](#single_series)
   * [Multi-series](#multi-series)
 * [Axes](#axes)
-  * [Positioning](#position)
+  * [Orientation](#orientation)
   * [Logarithmic Scale](#logarithmic_scale)
   * [Minimum and Maximum](#minimum_and_maximum)
 * [Visualization](#visualization)
@@ -289,13 +289,13 @@ between these two samples is the fact that now we have two data sets - one for e
 ## Axes
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
-scale and settings and much more. In this section we will quickly demonstrate how axis position can be adjusted, how 
+scale and settings and much more. In this section we will quickly demonstrate how axis orientation can be adjusted, how 
 axis scale can be inverted and how minimum and maximum values can be controlled.
 
-### Positioning
+### Orientation
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **orientation()** method of 
-**yAxis()** or **xAxis()** attributes.
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **orientation()** parameter
+ of **yAxis()** or **xAxis()** methods.
 
 ```
     chart.xAxis(0).orientation('top');
@@ -323,9 +323,9 @@ And here is the demonstration of Logarithmic Y Axis on slightly modified the Sin
 ### Minimum and Maximum
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart 
-sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting maximum 
-and minimum attributes of yScale method. As far as you want to adjusted the scale, it's desirable to set 
-**.ticks().interval()** as well, in case default interval is twisted:
+sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting **
+.maximum()** and **.minimum()** parameters of **.yScale()** method. As far as you want to adjusted the scale, 
+it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 
 ```
     chart.yScale().minimum('505').maximum('530')ticks().interval(5)
@@ -338,8 +338,8 @@ And here is the demonstration of maximum and minimum values on the Single-series
 ## Visualization
 
 In this section we will describe main parts of candlestick chart visualization and ways to adjust it. Also you will see 
-list of predefined styles.  Visual appearance of candlestick is defined using certain methods. The most important for 
-candlestick methods are **fallingStroke()**, **risingStroke()**, **.risingFill()** and **.fallingFill()**.
+list of predefined styles. Visual appearance of candlestick is defined using certain parameters. The most important for 
+candlestick parameters are **.fallingStroke()**, **.risingStroke()**, **.risingFill()** and **.fallingFill()**.
 
 ### Basic Sample
 
