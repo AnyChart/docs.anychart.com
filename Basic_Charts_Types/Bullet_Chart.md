@@ -4,11 +4,13 @@
 * [Chart](#chart)
 * [Ranges](#ranges)
 * [Layout](#layout)
-* [Axes](#axes)
+* [Axis](#axis)
  * [Orientation](#orientation)
  * [Inversion](#inversion)
  * [Minimum and Maximum](#minimum_and_maximum)
 * [Markers](#markers)
+ * [Type](#type)
+ * [Style](#style)
 * [Colors](#colors)
  
 ## Overview
