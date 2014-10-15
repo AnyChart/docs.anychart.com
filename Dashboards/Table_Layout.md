@@ -2,20 +2,17 @@
 # Table Layout
 
  * [Overview](#overview)
- * [Visualization](#visualization)
-  * [Fill](#fill)
-   * [Table](#table)
-   * [Even and Odd Rows](#even_and_odd_rows)
-   * [Cell](#cell)
-  * [Border](#border)
+ * [Fill](#fill)
+  * [Table](#table)
+  * [Even and Odd Rows](#even_and_odd_rows)
+  * [Cell](#cell)
+ * [Border](#border)
  
 ##Overview
 
 Table layout
 
-## Visualization
-
-### Fill
+## Fill
 
 With AnyChart it is possible to color background of any cell with a solid color, with a gradient transition or fill 
 it with an image. It can be achieved with **.fill()** parameter.
@@ -23,7 +20,7 @@ it with an image. It can be achieved with **.fill()** parameter.
   
 This section contains information on colorizing the whole table and each of the cells separately.
 
-#### Table
+### Table
 
 Background for all the table can be configurated with **.cellFill()** parameter.
 
@@ -33,7 +30,7 @@ Background for all the table can be configurated with **.cellFill()** parameter.
 
 {sample}Table\_Layout\_05{sample}
 
-#### Even and Odd Rows
+### Even and Odd Rows
 
 As a more advanced way of controlling table's background color there are parameters to adjust colors of even and/or 
 odd row in the table. Parameter **.cellEvenFill()** is responsible for the background color of even rows and **.cellOddFill**
@@ -48,18 +45,19 @@ Here is the sample with "rgb(233, 234, 237)" background color for all cells in e
 
 {sample}Table\_Layout\_06{sample}
 
-#### Cell
+### Cell
 
 Style for a certain cell controls with parameter **.fill()**. by this parameter should be applied to the cell itself.
 
 ```
-  var cell = table.getCell(2,4);  // get cell in third column and in fifth row
-  cell.fill('gold');              // set gold color as a background for the cell 
+  var cell = table.getCell(3,1);  // get cell in fourth row and in second column
+  cell.fill('gold');              // set gold color as a background for the cell
+
 ```
 
 {sample}Table\_Layout\_07{sample}
 
-### Border
+## Border
 
 Border is a part of a table. It visually divides whole table into separate cells as well as wraps these cells. As any part of chart it can be configured and all settings can be adjusted. In this section there are just several demonstration samples. Full information on borders and lines settings can be found in [Strokes and Lines](../General_Appearance_Settings/Strokes_and_Lines) tutorial.
   
