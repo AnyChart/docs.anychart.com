@@ -25,3 +25,16 @@ and length for gaps is 2 pixels.
 ```
 
 {sample}Table\_Layout\_03{sample}
+
+As far as content for each cell can be absolutely different, style for each of the cells can be set individually as 
+well. 
+  
+  
+Let's get dataset from the previous sample and adjust style for the first cell in the second row.
+
+```
+  var cell = table.getCell(0,1);
+  cell.border(['red', 'blue', 'green'], 5);
+```
+
+{sample}Table\_Layout\_04{sample}

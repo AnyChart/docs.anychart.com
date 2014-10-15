@@ -20,6 +20,14 @@ anychart.onDocumentReady(function() {
         [5, 6, 7]
     ]);
 
+    // get cell from the first column and second row
+    var cell = table.getCell(0,1);
+
+    cell.border({
+      keys: ['red', 'blue', 'green'], //set leaner color
+      thickness: 5                    //set thickness
+    });
+
     //set table container and initiate draw
     table.container('container').draw();
 });
