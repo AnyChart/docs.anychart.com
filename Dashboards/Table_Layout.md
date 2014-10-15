@@ -17,10 +17,11 @@ Table layout
 
 ### Fill
 
-With AnyChart it is possible to color background of any cell with a solid color, with a gradient transition or fill it with an image. It can be achieved with **.fill()** parameter.
+With AnyChart it is possible to color background of any cell with a solid color, with a gradient transition or fill 
+it with an image. It can be achieved with **.fill()** parameter.
   
   
-This section contains information on colorizing the whole table and each of the cells seperatly.
+This section contains information on colorizing the whole table and each of the cells separately.
 
 #### Table
 
@@ -43,7 +44,7 @@ is responsible for the background color of all odd rows.
   table.cellOddFill('lightgreen');
 ```
 
-Here is the sample with "rgb(233, 234, 237)" background color for all cells in even row and "rgb(102, 143, 169)" color for all  cells in odd row.
+Here is the sample with "rgb(233, 234, 237)" background color for all cells in even row and "rgb(102, 143, 169)" color for all cells in odd row.
 
 {sample}Table\_Layout\_06{sample}
 
@@ -56,7 +57,7 @@ Style for a certain cell controls with parameter **.fill()**. by this parameter 
   cell.fill('gold');              // set gold color as a background for the cell 
 ```
 
-{sample}Table\_Layout\_06{sample}
+{sample}Table\_Layout\_07{sample}
 
 ### Border
 
@@ -71,7 +72,7 @@ Sample below demonstrates the configuration for red dashed line with 3px thickne
   table.cellBorder('red', 8, '5 2');
 ```
 
-{sample}Table\_Layout\_07{sample}
+{sample}Table\_Layout\_08{sample}
 
 As far as content for each cell can be absolutely different, style for each of the cells can be set individually as well. 
   
@@ -83,9 +84,9 @@ Let's get dataset from the previous sample and adjust style for the first cell i
   cell.border(['red', 'blue', 'green'], 5);
 ```
 
-{sample}Table\_Layout\_08{sample}
+{sample}Table\_Layout\_09{sample}
 
-**Note:** As far as any cell has 4 borders, there is a way to controle style for each of them. Parameters **.topBorder()**, **.leftBorder()**, **.bottomBorder()** and **.rightBorder()** controles style for each of 4 cell's border. 
+**Note:** As far as any cell has 4 borders, there is a way to control style for each of them. Parameters **.topBorder()**, **.leftBorder()**, **.bottomBorder()** and **.rightBorder()** controls style for each of 4 cell's border. 
   
   
-Moreover, there are 4 parameters to controle each of the border for every cell in a table. **.cellTopBorder()**, **.cellLeftBorder()**, **.cellBottomBorder()** and **.cellRightBorder()** adjust style of a border for each cell in table.
+Moreover, there are 4 parameters to control each of the border for every cell in a table. **.cellTopBorder()**, **.cellLeftBorder()**, **.cellBottomBorder()** and **.cellRightBorder()** adjust style of a border for each cell in table.
