@@ -15,7 +15,7 @@ anychart.onDocumentReady(function() {
     ]);
 
     //set background color
-    table.cellFill('#555555');
+    table.cellFill('lightgreen');
 
     //set table container and initiate draw
     table.container('container').draw();

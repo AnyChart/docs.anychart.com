@@ -17,7 +17,10 @@ anychart.onDocumentReady(function() {
         [17, 18, 19]
     ]);
 
+    //set background color for all cells in even rows
     table.cellEvenFill('rgb(233, 234, 237)');
+
+    //set background color
     table.cellOddFill('rgb(102, 143, 169)');
 
     //set table container and initiate draw

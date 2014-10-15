@@ -24,7 +24,7 @@ This section contains information on colorizing the whole table and each of the 
 Background for all the table can be configurated with **.cellFill()** parameter.
 
 ```
-  table.cellFill('#444444');
+  table.cellFill('lightgreen');
 ```
 
 {sample}Table\_Layout\_05{sample}
@@ -44,7 +44,16 @@ Here is the sample with "rgb(233, 234, 237)" background color for all cells in e
 
 {sample}Table\_Layout\_06{sample}
 
+#### Cell
 
+Style for a certain cell controls with parameter **.fill()**. by this parameter should be applied to the cell itself.
+
+```
+  var cell = table.getCell(2,4);  // get cell in third column and in fifth row
+  cell.fill('gold');              // set gold color as a background for the cell 
+```
+
+{sample}Table\_Layout\_06{sample}
 
 ### Border
 

@@ -7,18 +7,21 @@ anychart.onDocumentReady(function() {
     //create table
     var table = anychart.elements.table();
 
-    //set style
-    table.cellBorder(
-      'red',  //color
-      3,      //thickness
-      '5 2'   //dash and gap length
-    );
-
     //set table content
     table.contents([
         [1, 2, 3],
-        [5, 6, 7]
+        [5, 6, 7],
+        [8, 9, 10],
+        [11, 12, 13],
+        [14, 15, 16],
+        [17, 18, 19]
     ]);
+
+    //set background color
+    table.cellFill('lightgreen');
+
+    var cell = table.getCell(2,4);  // get cell in third column and in fifth row
+    cell.fill('gold');              // set gold color as a background for the cell
 
     //set table container and initiate draw
     table.container('container').draw();
