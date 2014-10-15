@@ -15,10 +15,12 @@ part of chart it can be configured and all settings can be adjusted. In this sec
 demonstration samples. Full information on borders and lines settings can be found in [Strokes and Lines](../General_Appearance_Settings/Strokes_and_Lines) tutorial.
   
   
-In this section revealed all methods of controlling borders of different parts of table and borders of the table 
-itself. 
+In this section revealed all methods of controlling borders in a table. 
+Parameter **.cellBorder()** provides an opportunity to set desirably configured border for all cells in a table. 
+Sample below demonstrates the configuration for red dashed line with 3px thickness. Dashes have length of 5 pixels 
+and length for gaps is 2 pixels.
 
-### Table
-
-Table may 
-
+ ```
+  table.cellBorder('red', 8, '5 2');
+ ```
+ 
