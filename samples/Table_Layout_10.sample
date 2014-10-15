@@ -20,8 +20,11 @@ anychart.onDocumentReady(function() {
     //set background color
     table.cellFill('lightgreen');
 
-    var cell = table.getCell(2,4);  // get cell in third column and in fifth row
+    var cell = table.getCell(1,1);  // get cell in third column and in fifth row
     cell.fill('gold');              // set gold color as a background for the cell
+
+    cell.colSpan(2);                // connects one column from the right with the cell
+    cell.rowSpan(5);                // connects four rows below with the cell
 
     //set table container and initiate draw
     table.container('container').draw();

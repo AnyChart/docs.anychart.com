@@ -7,6 +7,7 @@
   * [Even and Odd Rows](#even_and_odd_rows)
   * [Cell](#cell)
  * [Border](#border)
+ * [Span](#span)
  
 ##Overview
 
@@ -90,3 +91,19 @@ Let's get dataset from the previous sample and adjust style for the first cell i
   
   
 Moreover, there are 4 parameters to control each of the border for every cell in a table. **.cellTopBorder()**, **.cellLeftBorder()**, **.cellBottomBorder()** and **.cellRightBorder()** adjust style of a border for each cell in table.
+
+## Span
+
+In some cases it is desirable to enlarge a cell by uniting it with one or several cells from near by. 
+There are two parameters for spanning several cells into one. **.rowSpan()** below from the cell in a column and **
+.colSpan()** unites cells in the row on the right side from the cell.
+
+```
+  cell.colSpan(3);  // unites 3 cells in one row into one
+  cell.rowSpan(2);  // unites 2 cells in one column into one
+```
+
+Sample below demonstrates connection of two columns and five rows into one cell.
+
+
+

@@ -17,7 +17,7 @@ anychart.onDocumentReady(function() {
     //set table content
     table.contents([
         [1, 2, 3],
-        [5, 6, 7]
+        [4, 5, 6]
     ]);
 
     // get cell from the first column and second row
