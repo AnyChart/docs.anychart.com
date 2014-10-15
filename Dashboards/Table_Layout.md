@@ -29,9 +29,10 @@ Background for all the table can be configurated with **.cellFill()** parameter.
 
 {sample}Table\_Layout\_02{sample}
 
-#### Even Cells
+#### Even and Odd Rows
 
-In 
+As a more advanced way of controlling table's background color there are parameters to adjust colors of even and/or 
+odd row in the table. Parameter **.cellEvenFill()** is responsible for the background color of even rows and **.
 
 ### Border
 
