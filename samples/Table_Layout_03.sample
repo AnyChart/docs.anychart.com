@@ -1,0 +1,18 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+    var table = anychart.elements.table();
+    table.cellBorder(
+      'red',  //color
+      3,      //thickness
+      '5 2'   //dash and gap length
+    );
+    table.contents([
+        [1, 2, 3],
+        [5, 6, 7]
+    ]);
+    table.cellEvenFill('green 0.2');
+    table.container('container').draw();
+});

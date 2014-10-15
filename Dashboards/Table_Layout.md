@@ -20,7 +20,8 @@ Parameter **.cellBorder()** provides an opportunity to set desirably configured 
 Sample below demonstrates the configuration for red dashed line with 3px thickness. Dashes have length of 5 pixels 
 and length for gaps is 2 pixels.
 
- ```
+```
   table.cellBorder('red', 8, '5 2');
- ```
- 
+```
+
+{sample}Table\_Layout\_03{sample}
