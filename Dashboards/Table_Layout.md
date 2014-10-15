@@ -18,7 +18,9 @@ With AnyChart it is possible to color background of any cell with a solid color,
 it with an image. It can be achieved with **.fill()** parameter.
   
   
-This section contains information on colorizing the whole table and each of the cells separately.
+This section contains information on colorizing the whole table and each of the cells separately. To find out all 
+possible ways of controlling background color of an element, please see [background controlling](#../General_Appearance_Settings/Background)
+ tutorial
 
 ### Table
 
@@ -67,7 +69,7 @@ Parameter **.cellBorder()** provides an opportunity to set desirably configured 
 Sample below demonstrates the configuration for red dashed line with 3px thickness. Dashes have length of 5 pixels and length for gaps is 2 pixels.
 
 ```
-  table.cellBorder('red', 8, '5 2');
+  table.cellBorder('red', 3, '5 2');
 ```
 
 {sample}Table\_Layout\_08{sample}
