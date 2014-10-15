@@ -4,6 +4,9 @@
  * [Overview](#overview)
  * [Visualization](#visualization)
   * [Fill](#fill)
+   * [Table](#table)
+   * [Even and Odd Rows](#even_and_odd_rows)
+   * [Cell](#cell)
   * [Border](#border)
  
 ##Overview
