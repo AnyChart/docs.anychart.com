@@ -1,0 +1,21 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+
+    //create table
+    var table = anychart.elements.table();
+
+    //set table content
+    table.contents([
+        [1, 2, 3],
+        [5, 6, 7]
+    ]);
+
+    //set background color
+    table.cellFill('#444444');
+
+    //set table container and initiate draw
+    table.container('container').draw();
+});
