@@ -91,7 +91,7 @@ empty lines you want. It will make no difference for chart visualisation but it 
 adjusting in this very chart.
   
   
-![](http://cs624320.vk.me/v624320947/2a4b/sQRRy3BoBsk.jpg)
+![](https://pp.vk.me/c625427/v625427947/5853/atwXSSytyNA.jpg)
   
   
 ### Inserting AnyChart into Head of a Page
