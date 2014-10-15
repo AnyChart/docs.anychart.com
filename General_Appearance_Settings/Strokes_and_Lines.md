@@ -107,6 +107,7 @@ The caps attribute specifies the caps style to use in drawing lines. You can spe
 
 ![](http://static.anychart.com/linecap.jpg)
 
-The joint attribute specifies the joint style to use in drawing lines. It supports three types of joints: **"miter", **"round"**, and **"bevel"**, as the following example shows:
+The joint attribute specifies the joint style to use in drawing lines. It supports three types of joints: **"miter"**,
+ **"round"**, and **"bevel"**, as the following example shows:
 
 ![](http://static.anychart.com/linejoin.jpg)
