@@ -38,3 +38,10 @@ Let's get dataset from the previous sample and adjust style for the first cell i
 ```
 
 {sample}Table\_Layout\_04{sample}
+
+**Note:** As far as any cell has 4 borders, there is a way to controle style for each of them. Parameters 
+**.topBorder()**, **.leftBorder()**, **.bottomBorder()** and **.rightBorder()** controles style for each of 4 cell's border. 
+  
+  
+Moreover, there are 4 parameters to controle each of the border for every cell in a table. **.cellTopBorder()**, 
+**.cellLeftBorder()**, **.cellBottomBorder()** and **.cellRightBorder()** adjust style of a border for each cell in table
