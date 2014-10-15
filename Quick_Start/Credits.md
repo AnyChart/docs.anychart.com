@@ -33,7 +33,7 @@ Tooltip shown when when credits are hovered. It can be adjusted with **.alt()** 
 
 ### URL
 
-Credits act as a link. By default it is link to [AnyChart Site](http://www.anychart.com/). You can it with **.url()** method.
+Credits act as a link. By default it is linked to [AnyChart Site](http://www.anychart.com/). You can change it this using **.url()** method.
 
 ```
     chart.credits().url('http://www.anychart.com/buy/');
