@@ -27,12 +27,24 @@ Background for all the table can be configurated with **.cellFill()** parameter.
   table.cellFill('#444444');
 ```
 
-{sample}Table\_Layout\_02{sample}
+{sample}Table\_Layout\_05{sample}
 
 #### Even and Odd Rows
 
 As a more advanced way of controlling table's background color there are parameters to adjust colors of even and/or 
-odd row in the table. Parameter **.cellEvenFill()** is responsible for the background color of even rows and **.
+odd row in the table. Parameter **.cellEvenFill()** is responsible for the background color of even rows and **.cellOddFill**
+is responsible for the background color of all odd rows.
+
+```
+  table.cellEvenFill('darkgreen');
+  table.cellOddFill('lightgreen');
+```
+
+Here is the sample with "rgb(233, 234, 237)" background color for all cells in even row and "rgb(102, 143, 169)" color for all  cells in odd row.
+
+{sample}Table\_Layout\_06{sample}
+
+
 
 ### Border
 
@@ -47,7 +59,7 @@ Sample below demonstrates the configuration for red dashed line with 3px thickne
   table.cellBorder('red', 8, '5 2');
 ```
 
-{sample}Table\_Layout\_03{sample}
+{sample}Table\_Layout\_07{sample}
 
 As far as content for each cell can be absolutely different, style for each of the cells can be set individually as well. 
   
@@ -59,7 +71,7 @@ Let's get dataset from the previous sample and adjust style for the first cell i
   cell.border(['red', 'blue', 'green'], 5);
 ```
 
-{sample}Table\_Layout\_04{sample}
+{sample}Table\_Layout\_08{sample}
 
 **Note:** As far as any cell has 4 borders, there is a way to controle style for each of them. Parameters **.topBorder()**, **.leftBorder()**, **.bottomBorder()** and **.rightBorder()** controles style for each of 4 cell's border. 
   
