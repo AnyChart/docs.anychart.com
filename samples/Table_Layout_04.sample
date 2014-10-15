@@ -21,11 +21,11 @@ anychart.onDocumentReady(function() {
     ]);
 
     // get cell from the first column and second row
-    var cell = table.getCell(0,1);
+    var cell = table.getCell(1,0);
 
     cell.border({
-      keys: ['red', 'blue', 'green'], //set leaner color
-      thickness: 5                    //set thickness
+      keys: ['.1 red', '.2 blue', '.3 green'],  //set leaner color
+      thickness: 5                              //set thickness
     });
 
     //set table container and initiate draw
