@@ -2,23 +2,45 @@
 # Table Layout
 
  * [Overview](#overview)
- * [Border](#border)
+ * [Visualization](#visualization)
+  * [Fill](#fill)
+  * [Border](#border)
  
 ##Overview
 
 Table layout
 
-## Borders
+## Visualization
 
-Border is a part of a table. It visually divides whole table into separate cells as well as wraps these cells. As any 
-part of chart it can be configured and all settings can be adjusted. In this section there are just several 
-demonstration samples. Full information on borders and lines settings can be found in [Strokes and Lines](../General_Appearance_Settings/Strokes_and_Lines) tutorial.
+### Fill
+
+With AnyChart it is possible to color background of any cell with a solid color, with a gradient transition or fill it with an image. It can be achieved with **.fill()** parameter.
+  
+  
+This section contains information on colorizing the whole table and each of the cells seperatly.
+
+#### Table
+
+Background for all the table can be configurated with **.cellFill()** parameter.
+
+```
+  table.cellFill('#444444');
+```
+
+{sample}Table\_Layout\_02{sample}
+
+#### Even Cells
+
+In 
+
+### Border
+
+Border is a part of a table. It visually divides whole table into separate cells as well as wraps these cells. As any part of chart it can be configured and all settings can be adjusted. In this section there are just several demonstration samples. Full information on borders and lines settings can be found in [Strokes and Lines](../General_Appearance_Settings/Strokes_and_Lines) tutorial.
   
   
 In this section revealed all methods of controlling borders in a table. 
-Parameter **.cellBorder()** provides an opportunity to set desirably configured border for all cells in a table. 
-Sample below demonstrates the configuration for red dashed line with 3px thickness. Dashes have length of 5 pixels 
-and length for gaps is 2 pixels.
+Parameter **.cellBorder()** provides an opportunity to set desirably configured border for all cells in a table.
+Sample below demonstrates the configuration for red dashed line with 3px thickness. Dashes have length of 5 pixels and length for gaps is 2 pixels.
 
 ```
   table.cellBorder('red', 8, '5 2');
@@ -26,8 +48,7 @@ and length for gaps is 2 pixels.
 
 {sample}Table\_Layout\_03{sample}
 
-As far as content for each cell can be absolutely different, style for each of the cells can be set individually as 
-well. 
+As far as content for each cell can be absolutely different, style for each of the cells can be set individually as well. 
   
   
 Let's get dataset from the previous sample and adjust style for the first cell in the second row.
