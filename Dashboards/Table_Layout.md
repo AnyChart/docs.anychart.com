@@ -1,7 +1,8 @@
-{:index 3}
 # Table Layout
 
  * [Overview](#overview)
+ * [Chart](#chart)
+ * [Content](#content)
  * [Fill](#fill)
   * [Table](#table)
   * [Even and Odd Rows](#even_and_odd_rows)
@@ -9,9 +10,63 @@
  * [Border](#border)
  * [Span](#span)
  
-##Overview
+## Overview
 
 Table layout
+
+## Chart
+
+Table Layout helps to manage several elements within the limits of one chart container. Table may help to control 
+visual appearance and logic structure of data.
+  
+
+
+
+## Content
+
+Table layout may contain simple text in a format of a label as well as any visual element of AnyChart. 
+  
+  
+Let's create a simple table with two chart. Each of them represent annual income of the same company in different years.
+First row contains only labels and second one only pie charts
+
+```
+  //create table
+  var table = anychart.elements.table();
+  
+  //set table content
+  table.contents([
+      [
+          // Create first lable
+          anychart.elements.label()
+          //text setter
+          .text(          
+              income2003.title().text()   //get text from the chart
+          )
+          //adhust position and visual settings
+          .position('center')
+          .anchor('center')
+          .fontSize(20)
+          , 
+          
+          // Create second lable
+          anychart.elements.label()
+          //text setter
+          .text(
+              income2004.title().text()   //text getter from chart.
+          )
+          //adhust position and visual settings
+          .position('center')
+          .anchor('center')
+          .fontSize(20)
+      ],
+      [income2003, income2004]
+  ]);
+```
+
+{sample}Table\_Layout\_01{sample}
+
+
 
 ## Fill
 
@@ -62,7 +117,9 @@ Style for a certain cell controls with parameter **.fill()**. by this parameter 
 
 ## Border
 
-Border is a part of a table. It visually divides whole table into separate cells as well as wraps these cells. As any part of chart it can be configured and all settings can be adjusted. In this section there are just several demonstration samples. Full information on borders and lines settings can be found in [Strokes and Lines](../General_Appearance_Settings/Strokes_and_Lines) tutorial.
+Border is a part of a table. It visually divides whole table into separate cells as well as wraps these cells. As any
+ part of chart it can be configured and all settings can be adjusted. In this section there are just several
+ demonstration samples. Full information on borders and lines settings can be found in [Strokes and Lines](../General_Appearance_Settings/Strokes_and_Lines) tutorial.
   
   
 In this section revealed all methods of controlling borders in a table. 
@@ -104,6 +161,8 @@ There are two parameters for spanning several cells into one. **.rowSpan()** bel
 ```
 
 Sample below demonstrates connection of two columns and five rows into one cell.
+
+{sample}Table\_Layout\_10{sample}
 
 
 

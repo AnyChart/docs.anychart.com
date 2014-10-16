@@ -76,7 +76,7 @@ like this:
     chart.area(data);
 ```
 
-As you can see, we've created a Data Set. Every object is a point, each has some attributes. The first column is as 
+As you can see, we've created a Data Set. Every object is a point, each has some parameters. The first column is as 
 category and the second column is a value.
   
   
@@ -180,7 +180,7 @@ orientation can be adjusted, how axis scale can be inverted and how minimum and 
 ### Orientation
 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with 
-**orientation()** method of **yAxis** or **xAxis** instances.
+**.orientation()** parameter of **.yAxis()** or **.xAxis()** method.
   
 Positioning depends on plot type and inversion of axes.
 
@@ -263,8 +263,8 @@ Color is not the only way to design a chart. In this sample we will demonstrate 
 In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and 
 tuning visual appearance for them can be found in Labels and Tooltips.
 
-If you want to configure data labels and tooltips for all series - you should do that in **.labels** and **.tooltip** 
-methods. You can tune their visual appearance, positioning and format. 
+If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip
+()** methods. You can tune their visual appearance, positioning and format. 
 
 When formatting data labels text we will use **.textFormatter** to show month name. Otherwise sales will be displayed 
 here. 
@@ -307,7 +307,7 @@ color blind. Hatch fill is fully-independent structure, it doesn't rely on color
 
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 
 chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting 
-hatch type for **".hatchFill"** method.
+hatch type for **".hatchFill()"** parameter.
 
 ```
     .hatchFill('soliddiamond')
