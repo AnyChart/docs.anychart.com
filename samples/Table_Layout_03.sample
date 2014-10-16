@@ -26,38 +26,23 @@ anychart.onDocumentReady(function() {
     income2004.title().text('2005 Income').enabled(false);
     income2004.background().enabled(false);
 
+    //create and adjust label for the first column
+    label_1 = anychart.elements.label().text(income2003.title().text()).position('center').anchor('center').fontSize(20);
+
+    //create and adjust label for the second column
+    label_2 = anychart.elements.label().text(income2004.title().text()).position('center').anchor('center').fontSize(20);
+
     //create table
     var table = anychart.elements.table();
 
     //set table content
     table.contents([
-        [
-            // Create first lable
-            anychart.elements.label()
-            //text setter
-            .text(
-                income2003.title().text()   //get text from the chart
-            )
-            //adhust position and visual settings
-            .position('center')
-            .anchor('center')
-            .fontSize(20)
-            ,
-
-            // Create second lable
-            anychart.elements.label()
-            //text setter
-            .text(
-                income2004.title().text()   //text getter from chart.
-            )
-            //adhust position and visual settings
-            .position('center')
-            .anchor('center')
-            .fontSize(20)
-        ],
-        [income2003, income2004]
+        [label_1, income2003],
+        [label_2, income2004]
     ]);
 
+    // get first row and set 40 px height
+    table.colWidth(0, 150);
 
     //set table container and initiate draw
     table.container('container').draw();

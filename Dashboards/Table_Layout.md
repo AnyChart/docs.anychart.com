@@ -3,6 +3,9 @@
  * [Overview](#overview)
  * [Chart](#chart)
  * [Content](#content)
+ * [Row Height](#row_hight)
+ * [Column Width](#column_width)
+ * [Padding](#padding)
  * [Fill](#fill)
   * [Table](#table)
   * [Even and Odd Rows](#even_and_odd_rows)
@@ -12,16 +15,13 @@
  
 ## Overview
 
-Table layout
+Table layout is a kind of a dashboard, which provides clear and effective way of positioning data on plot. 
 
 ## Chart
 
 Table Layout helps to manage several elements within the limits of one chart container. Table may help to control 
 visual appearance and logic structure of data.
   
-
-
-
 ## Content
 
 Table layout may contain simple text in a format of a label as well as any visual element of AnyChart. 
@@ -66,7 +66,26 @@ First row contains only labels and second one only pie charts
 
 {sample}Table\_Layout\_01{sample}
 
+## Row Height
 
+AnyChart provides a special **.rowHieght()** parameter for controlling height of exact row in the table.
+
+```
+    table.rowHeight(1, 300);
+```
+
+{sample}Table\_Layout\_02{sample}
+
+## Column Width
+
+For controlling width of the whple column, **.colWidth()** parameter is perfect match. below is a sample of 
+this parameter usage.
+
+```
+    table.colWidth(0, 70)
+```
+
+{sample}Table\_Layout\_03{sample}
 
 ## Fill
 
