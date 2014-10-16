@@ -91,7 +91,7 @@ empty lines you want. It will make no difference for chart visualisation but it 
 adjusting in this very chart.
   
   
-![](http://cs624320.vk.me/v624320947/2a4b/sQRRy3BoBsk.jpg)
+![](https://pp.vk.me/c625427/v625427947/5853/atwXSSytyNA.jpg)
   
   
 ### Inserting AnyChart into Head of a Page
@@ -123,10 +123,10 @@ without unnecessary manipulations and data can be placed in a head of a page.
 
 As far as AnyChart is based on JavaScript, it is possible to use any JavaScript feature. One of the most popular is 
 requesting data from JSON file. A JSON file may be on any domain, any public host. The easiest way to get JSON and 
-parse it is through jQuary library. Below is a sample of getting and parsing  data of the [JSON file](http://cdn.anychart.com/data/wordpress_article_data.json)
+parse it is through jQuary library. Below is a sample of getting and parsing  data of the [JSON file](http://static.anychart.com/data/wordpress_article_data.json)
   
   
-![](http://cs624320.vk.me/v624320947/2a23/rKvHxB1uqqg.jpg)
+![](https://pp.vk.me/c625427/v625427947/5723/Mx7_-8LM2Y8.jpg)
   
   
 As you can see, we've used ajax post request to get data, adjusted some settings and started AnyChart function after 
