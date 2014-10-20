@@ -19,7 +19,7 @@ anychart.onDocumentReady(function() {
 
     income2003 = anychart.pieChart(seriesData_1);
     income2003.legend().enabled(false);
-    income2003.title().text('2003 Income').enabled(false);
+    income2003.title().text('2005 Income').enabled(false);
     income2003.background().enabled(false);
     income2004 = anychart.pieChart(seriesData_2);
     income2004.legend().enabled(false);
