@@ -15,6 +15,7 @@
  * [Text Settings](#text_settings)
  * [Common Elements](#common_element)
  * [Title](#title)
+ * [Advanced Title](#advanced_title)
  
 ## Overview
 
@@ -231,4 +232,6 @@ As far as title on a dashboard contains the main idea of a dashboard, it is vita
 . Here is a sample with simple title at the top of the dashboard and table layout dashboard below.
 
 {sample}Table\_Layout\_13{sample}
+
+## Advanced Title
 
