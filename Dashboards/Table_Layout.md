@@ -90,7 +90,13 @@ this parameter usage.
 ## Padding
 
 Table Layout provides several parameters to adjust Table Layout visual appearance. For preventing content sticking to 
-the cell's edges 
+the cell's edges. Here is a sample with 10 px padding from every border for the whole table.
+
+```
+    table.cellPadding('20%');
+```
+
+{sample}Table\_Layout\_04{sample}
 
 ## Fill
 
