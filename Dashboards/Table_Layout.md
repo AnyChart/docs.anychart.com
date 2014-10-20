@@ -12,6 +12,7 @@
   * [Cell](#cell)
  * [Border](#border)
  * [Span](#span)
+ * [Text Settings](#text_settings)
  
 ## Overview
 
@@ -194,5 +195,19 @@ Sample below demonstrates connection of two columns and five rows into one cell.
 
 {sample}Table\_Layout\_10{sample}
 
+## Text Settings
 
+Table layout may contain simple text in several cells. For avoiding setting same parameters for several cells it is 
+more convenient to apply these parameters to the whole table with **.cellTextFactory()** parameter. 
 
+```
+    var textSettings = anychart.elements.labelsFactory();
+    textSettings.vAlign('center')
+    textSettings.hAlign('center')
+    textSettings.fontSize(20);
+    textSettings.fontWeight(900);
+    textSettings.fontColor('red');
+    table.cellTextFactory(textSettings);
+```
+
+{sample}Table\_Layout\_11{sample}

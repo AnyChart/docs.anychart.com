@@ -19,40 +19,30 @@ anychart.onDocumentReady(function() {
 
     income2003 = anychart.pieChart(seriesData_1);
     income2003.legend().enabled(false);
-    income2003.labels().position('outside').fontColor('black');
     income2003.title().text('2003 Income').enabled(false);
     income2003.background().enabled(false);
     income2004 = anychart.pieChart(seriesData_2);
     income2004.legend().enabled(false);
-    income2004.labels().position('outside').fontColor('black');
     income2004.title().text('2005 Income').enabled(false);
     income2004.background().enabled(false);
-
-    //create and adjust label for the first column
-    label_1 = anychart.elements.label()
-        .text(income2003.title().text())
-        .position('center')
-        .anchor('center')
-        .fontSize(20);
-
-    //create and adjust label for the second column
-    label_2 = anychart.elements.label()
-        .text(income2004.title().text())
-        .position('center')
-        .anchor('center')
-        .fontSize(20);
 
     //create table
     var table = anychart.elements.table();
 
     //set table content
     table.contents([
-        [label_1, label_2],
+        [income2003.title().text(), income2004.title().text()],
         [income2003, income2004]
     ]);
 
-    //set cell padding
-    table.cellPadding('20%');
+    var textSettings = anychart.elements.labelsFactory();
+    textSettings.vAlign('center');
+    textSettings.hAlign('center');
+    textSettings.fontSize(20);
+    textSettings.fontWeight(600);
+    textSettings.fontColor('red');
+    table.cellTextFactory(textSettings);
+
 
     //set table container and initiate draw
     table.container('container').draw();
