@@ -230,3 +230,5 @@ Here is a sample of table layout dashboard with two charts using common custom y
 As far as title on a dashboard contains the main idea of a dashboard, it is vital to configure it's visual appearance
 . Here is a sample with simple title at the top of the dashboard and table layout dashboard below.
 
+{sample}Table\_Layout\_13{sample}
+

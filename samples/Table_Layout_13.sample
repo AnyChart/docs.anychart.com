@@ -34,21 +34,21 @@ anychart.onDocumentReady(function() {
     var seriesData_7 = dataSet.mapAs({x: [0], value: [7]});
 
     //chat type
-    chart1 = anychart.lineChart(seriesData_1);
-    chart2 = anychart.lineChart(seriesData_2);
-    chart3 = anychart.lineChart(seriesData_3);
-    chart4 = anychart.lineChart(seriesData_4);
-    chart5 = anychart.lineChart(seriesData_5);
-    chart6 = anychart.lineChart(seriesData_6);
-    chart7 = anychart.lineChart(seriesData_7);
+    chart1 = anychart.lineChart();
+    chart2 = anychart.lineChart();
+    chart3 = anychart.lineChart();
+    chart4 = anychart.lineChart();
+    chart5 = anychart.lineChart();
+    chart6 = anychart.lineChart();
+    chart7 = anychart.lineChart();
 
-    chart1 = anychart.lineChart(seriesData_1);
-    chart2 = anychart.lineChart(seriesData_2);
-    chart3 = anychart.lineChart(seriesData_3);
-    chart4 = anychart.lineChart(seriesData_4);
-    chart5 = anychart.lineChart(seriesData_5);
-    chart6 = anychart.lineChart(seriesData_6);
-    chart7 = anychart.lineChart(seriesData_7);
+    series1 = chart1.line(seriesData_1).markers(null).stroke('black');
+    series2 = chart2.line(seriesData_2).markers(null).stroke('black');
+    series3 = chart3.line(seriesData_3).markers(null).stroke('black');
+    series4 = chart4.line(seriesData_4).markers(null).stroke('black');
+    series5 = chart5.line(seriesData_5).markers(null).stroke('black');
+    series6 = chart6.line(seriesData_6).markers(null).stroke('black');
+    series7 = chart7.line(seriesData_7).markers(null).stroke('black');
 
     //title
     chart1.title().text('Network').enabled(false);
@@ -123,25 +123,26 @@ anychart.onDocumentReady(function() {
 
     var textSettings = anychart.elements.labelsFactory();
     textSettings.vAlign('center');
-    textSettings.hAlign('center');
-    textSettings.fontSize(20);
+    textSettings.hAlign('left');
+    textSettings.fontSize(18);
     textSettings.fontWeight(600);
     table.cellTextFactory(textSettings);
 
     //table.rowHeight(0,40);
 
-    customTitle5 = anychart.elements.title();
-    customTitle5.enabled(true);
-    customTitle5.orientation('top').align('left');
-    customTitle5.zIndex(1);
-    customTitle5.fontColor('#86cf38');
-    customTitle5.fontSize(25);
-    customTitle5.fontWeight(400);
-    customTitle5.text('System Availability');
-    customTitle5.container(stage);
-    customTitle5.draw();
+    customTitle = anychart.elements.title();
+    customTitle.enabled(true);
+    customTitle.orientation('top').align('left');
+    customTitle.zIndex(1);
+    customTitle.fontColor('#86cf38');
+    customTitle.fontSize(25);
+    customTitle.fontWeight(400);
+    customTitle.text('System Availability');
+    customTitle.container(stage);
+    customTitle.draw();
 
-    table.bounds(customTitle5.getRemainingBounds());
+    table.bounds(customTitle.getRemainingBounds());
+    table.cellBorder('gray 0.3', 2)
 
     //set table container and initiate draw
     table.container(stage).draw();
