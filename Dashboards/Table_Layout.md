@@ -89,7 +89,8 @@ this parameter usage.
 
 ## Padding
 
-Table Layout provides several parameters For preventing content sticking to the edges
+Table Layout provides several parameters to adjust Table Layout visual appearance. For preventing content sticking to 
+the cell's edges 
 
 ## Fill
 

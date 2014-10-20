@@ -27,7 +27,7 @@ anychart.onDocumentReady(function() {
     income2004.background().enabled(false);
 
     //create and adjust label for the first column
-    label_1 = anychart.elements.label().text('2005 Income').position('center').anchor('center').fontSize(20);
+    label_1 = anychart.elements.label().text(income2003.title().text()).position('center').anchor('center').fontSize(20);
 
     //create and adjust label for the second column
     label_2 = anychart.elements.label().text(income2004.title().text()).position('center').anchor('center').fontSize(20);
