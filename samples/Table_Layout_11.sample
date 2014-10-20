@@ -35,12 +35,17 @@ anychart.onDocumentReady(function() {
         [income2003, income2004]
     ]);
 
+    //create method for using text adjusting parameters
     var textSettings = anychart.elements.labelsFactory();
+
+    //set parameters
     textSettings.vAlign('center');
     textSettings.hAlign('center');
     textSettings.fontSize(20);
     textSettings.fontWeight(600);
     textSettings.fontColor('red');
+
+    //apply parameters to the table
     table.cellTextFactory(textSettings);
 
 

@@ -13,6 +13,8 @@
  * [Border](#border)
  * [Span](#span)
  * [Text Settings](#text_settings)
+ * [Common Elements](#common_element)
+ * [Title](#title)
  
 ## Overview
 
@@ -211,3 +213,18 @@ more convenient to apply these parameters to the whole table with **.cellTextFac
 ```
 
 {sample}Table\_Layout\_11{sample}
+
+## Common Elements
+
+ Table layout dashboard may contain several charts. For visualization sake different chart may use common elements. 
+ One of the most popular common elements is scale. As far as scale calculates values, 
+ common scale may be used in comparative purposes.
+   
+   
+ Here is a sample of table layout dashboard with two charts using common custom y scale. 
+ 
+{sample}Table\_Layout\_12{sample}
+
+## Title
+
+As far as title on a dashboard contains the main idea of a dashboard contains 
