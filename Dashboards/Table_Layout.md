@@ -89,7 +89,7 @@ this parameter usage.
 
 ## Padding
 
-For preventing content sticking to the adjes 
+Table Layout provides several parameters For preventing content sticking to the edges
 
 ## Fill
 
