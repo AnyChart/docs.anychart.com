@@ -4,11 +4,13 @@
 * [Chart](#chart)
 * [Ranges](#ranges)
 * [Layout](#layout)
-* [Axes](#axes)
+* [Axis](#axis)
  * [Orientation](#orientation)
  * [Inversion](#inversion)
  * [Minimum and Maximum](#minimum_and_maximum)
 * [Markers](#markers)
+ * [Type](#type)
+ * [Style](#style)
 * [Colors](#colors)
  
 ## Overview
@@ -85,8 +87,8 @@ there is no need in two axes.
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **orientation()** method of 
-**.axis()** attributes.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **orientation()** parameter
+ of **.axis()** method.
   
   
 Orientation depends on the layout of a chart. For horizontal layout axis orientation parameter can be set only *top* 
@@ -116,7 +118,7 @@ Below is a demonstration of horizontal bullet chart with inverted axis.
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see it on the scale inversion chart 
 sample above: minimal value on the Y Axis is 0, and maximum is 15. You can control these values by setting 
-maximum and minimum attributes of the scale:
+**.maximum()** and **.minimum()** parameters of the scale:
 
 ```
   chart.yScale().minimum(-5).maximum(20);
@@ -139,12 +141,32 @@ Here is a sample with all marker types:
 
 {sample}BCT\_Bullet\_Chart\_07{sample}
 
+**Note:** This chart contains 3 markers in one data set. It was done for demonstration purpose. But to avoid complexity
+ we recommend to **limit markers number to two**.
+
 ### Style
 
+For clearer distinction between markers it is very useful to adjust style settings of markers. There are three 
+parameters of a marker to control and adjust visualization: **.fill()**, **.stroke()** and **.gap()**. Fill parameter
+ is responsible for inner color of a marker, stroke is responsible for the color of a border line and gar parameter 
+is responsible for the size of a marker.
+  
+  
+Here is a sample of an ellipse sharped marker with blue stroke, gold inner color and a size 0.7 size of a chart. 
+
+```
+  var chart = anychart.bulletChart([
+    {value: 225},
+    {value: 290,          // set marker position
+      type: 'ellipse',    // set ellipse as marker type
+      fill: 'gold',       // set gold inner color 
+      stroke: '2 blue',   // set border width 2px and border color
+      gap: 0.3            // set marker size 
+    }
+  ])
+```
 
 {sample}BCT\_Bullet\_Chart\_08{sample}
-
-**Note:** to avoid complexity we recommend to limit markers number to two. 
 
 ## Colors
 
@@ -152,7 +174,13 @@ Bullet Chart ranges use variables of color intensity rather than of hue. 
 **.rangePalette()**
 
 ```
-  chart.rangePalette(['#ffa058', '#ffb082', '#ffc0a8', '#ffd0c2', '#ffe0e6']);
+  chart.rangePalette([
+    '#ffa058',  // first range color
+    '#ffb082',  // second range color
+    '#ffc0a8',  // third range color
+    '#ffd0c2',  // forth range color
+    '#ffe0e6'   // fifth range color
+  ]);
 ```
 
 {sample}BCT\_Bullet\_Chart\_09{sample}

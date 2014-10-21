@@ -1,5 +1,5 @@
 {:index 2}
-# Axes Position
+# Axes Orientation
 
 * [Overview](#overview)
 * [Column Mode](#column_mode)
@@ -7,7 +7,7 @@
 
 ## Overview
    
-Positioning depends on plot type and inversion of axes, below you will find all possible axes positioning and inverting 
+Positioning depends on plot type and inversion of axes, below you will find all possible axes orientation and inverting 
 JS Settings with demonstration preview.
   
 Though these settings are demonstrated using Bar/Column charts - they work for all other chart types.
@@ -231,10 +231,10 @@ chart.yScale().inverted(true);
 </table>
 
 ##Bar Mode
-x-Axis isn't restricted in only buy Top and Bottom positions. It can by placed on the Left or Right sides. So can 
-y-Axis be placed on the top or bottom. Tis option enabled by default in Bar charts. 
+x-Axis isn't restricted in only by Top and Bottom orientation. It can by placed on the Left or Right sides. So can 
+y-Axis be placed on the top or bottom. This option enabled by default in Bar charts. 
   
-Here are some samples of Bar chart Axes position
+Here are some samples of Bar chart Axes orientation
 
 <table width="700" border="1" class="dtTABLE">
 <tbody><tr>

@@ -5,7 +5,7 @@
   * [Single Series](#single_series)
   * [Multi-series](#multi-series)
 * [Axes](#axes)
-  * [Positioning](#position)
+  * [Orientation](#orientation)
   * [Logarithmic Scale](#logarithmic_scale)
   * [Minimum and Maximum](#minimum_and_maximum)
 * [Visualization](#visualization)
@@ -103,8 +103,8 @@ Converted Data looks like:
     chart.ohlc(data);
 ```
 
-As you can see, we've specified chart type as **OHLC** and set name attribute that defines category and open, high, low,
- close attributes that define values.
+As you can see, we've specified chart type as **OHLC** and set name, open, high, low,
+ close parameters.
   
   
 Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on on it to see this example
@@ -219,12 +219,12 @@ As we do in single series sample above we need to convert this table into accept
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
 scale and settings and much more. All axis features are described in 
 [Axes Basics](../Axes_Grid_Scales_Trends_etc/Axis_Basics) tutorial. In this section we will quickly demonstrate how 
-axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+axis orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
 ### Positioning
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** method of 
-**.yAxis()** or **.xAxis()** attributes.
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** parameter
+ of **.yAxis()** or **.xAxis()** methods.
 
 ```
     chart.xAxis(0).orientation('top');
@@ -237,7 +237,7 @@ And here is the demonstration of this feature on the Single-series sample:
 
 ### Logarithmic Scale
 
-AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by **scale**:
+AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by **.scale()**:
 
 ```
     logScale = anychart.scales.log();
@@ -252,9 +252,9 @@ And here is the demonstration of Logarithmic Y Axis on slightly modified the Sin
 ### Minimum and Maximum
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart 
-sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting maximum 
-and minimum attributes of yScale method. As far as you want to adjusted the scale, it's desirable to set 
-**.ticks().interval()** as well, in case default interval is twisted:
+sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting **
+.maximum()** and **.minimum()** parameters of **.yScale()** method. As far as you want to adjusted the scale, 
+it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 
 ```
     chart.yScale().minimum('505').maximum('530')ticks().interval(5)
@@ -267,8 +267,8 @@ And here is the demonstration of maximum and minimum values on the Single-series
 ## Visualization
 
 In this section we will describe main parts of OHLC chart visualization and ways to adjust it. Also you will see list 
-of predefined styles.  Visual appearance of OHLC is defined using certain methods. The most important for OHLC methods 
-are **.fallingStroke()** and **.risingStroke()**.
+of predefined styles.  Visual appearance of OHLC is defined using certain methods and parameters. The most important 
+for OHLC parameters are **.fallingStroke()** and **.risingStroke()**.
 
 ### Basic sample
 
@@ -326,7 +326,7 @@ different color. Here is the sample:
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined 
 color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. 
-As you see it is very easy to do by setting **.fallingStroke()** and **.risingStroke()** attributes for point.
+As you see it is very easy to do by setting **.fallingStroke()** and **.risingStroke()** parameter for point.
 
 {sample}BCT\_OHLC\_Chart\_09{sample}
 

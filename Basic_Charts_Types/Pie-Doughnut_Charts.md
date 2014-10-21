@@ -108,8 +108,8 @@ And here is the same data as above, displayed as a Doughnut chart:
 ## Slices Sorting
 
 If you want you can sort the series in Pie and Donut Chart - Ascending or Descending, this feature is controlled using 
-**sort** attribute. In the sample below three pie charts with identical series are shown, first isn't sorted, the second
- is sorted ascending and the third - descending.
+**.sort()** parameter. In the sample below three pie charts with identical series are shown, first isn't sorted, 
+the second is sorted ascending and the third - descending.
 
 {sample}BCT\_PieDoughnutChart\_03{sample}
 
@@ -119,7 +119,7 @@ You can set pie and donut chart slices to be exploded when user clicks on it and
 exploded by default.
   
   
-**Explode** attribute defines how far slices are exploded. To disable exploding, set **explode** value to 0.
+**Explode** parameter defines how far slices are exploded. To disable exploding, set **explode** value to 0.
 
 ```
     chart.explode(30);
@@ -175,7 +175,7 @@ labels so they show only the percentage corresponding to the slices and tooltip 
   
   
 When formatting tooltips, we will use **.contentFormatter()** to adjust source of content and visual appearance. 
-To control labels position we may use **.position()** method. Here is a sample of two charts with the same data and 
+To control labels position we may use **.position()** parameter. Here is a sample of two charts with the same data and 
 different labels positions.
 
 {sample}BCT\_PieDoughnutChart\_07{sample}
@@ -270,7 +270,7 @@ colors. Also you can set and apply the color to exact data series or data point.
 ### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need
- to set **.fill()** attribute. In the sample below we'll color each series to different color. Here is the sample:
+ to set **.fill()** parameter. In the sample below we'll color each series to different color. Here is the sample:
 
 {sample}BCT\_PieDoughnutChart\_06{sample}
 
@@ -284,7 +284,7 @@ are color blind. Hatch fill is fully-independent structure, it doesn't rely on c
   
   
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 
-chart with 10 series. For every series we've applied different hatch fills by setting **.hatchFill()** attribute for 
+chart with 10 series. For every series we've applied different hatch fills by setting **.hatchFill()** parameter for 
 each of them.
 
 {sample}BCT\_PieDoughnutChart\_08{sample}

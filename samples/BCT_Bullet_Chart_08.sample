@@ -6,9 +6,13 @@ anychart.onDocumentReady(function() {
 
   // Create bullet chart
   var chart = anychart.bulletChart([
-    {value: 225},                               // main quantity bar
-    {value: 200, type: 'line'},                 // line shaped marker
-    {value: 275, type: 'x', stroke: 'red'}      // X shaped marker
+    {value: 225},
+    {value: 290,          // set marker position
+      type: 'ellipse',    // set ellipse as marker type
+      fill: 'gold',       // set gold inner color 
+      stroke: '2 blue',   // set border width 2px and border color
+      gap: 0.3            // set marker size 
+    }
   ]);
 
   // Set chart container
@@ -29,5 +33,4 @@ anychart.onDocumentReady(function() {
 
   // Initiate chart drawing
   chart.draw();
-
 });

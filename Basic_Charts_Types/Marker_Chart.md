@@ -6,7 +6,7 @@
   * [Multi-series](#multi-series)
 <!--  * [Scatter Marker chart](#marker_scatterplot) -->
  * [Axes](#axes)
-  * [Positioning](#position)
+  * [Orientation](#orientation)
   * [Inversion](#inversion)
   * [Minimum and Maximum](#minimum_and_maximum)
  * [Visualization](#visualization)
@@ -213,16 +213,16 @@ The sample of scatter marker chart can be found in Scatter Charts Tutorial.
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
 scale and settings and many more. All axis features are described in 
 [Axes Basic](../Axes_Grid_Scales_Trends_etc/Axis_Basics) tutorial, in this section we will quickly demonstrate how axis 
-position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
-### Positioning
+### Orientation
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position attribute of 
-**yAxis** or **xAxis** parameter.
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** parameter
+ of **.yAxis()** or **.xAxis()** methods.
   
   
-Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion 
-settings in Axes Positioning and Inverting Templates.
+Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and inversion 
+settings in [Axes Orientation](../Axes_Grid_Scales_Trends_etc/Axis_Orientation) tutorial.
 
 ```
     chart.xAxis(0).orientation('top');
@@ -248,8 +248,8 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 ### Minimum and Maximum
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart 
-sample above: minimal value on the Y Axis is 800, and maximum is 1600. You can control these values by setting maximum 
-and minimum attributes of a scale() parameter:
+sample above: minimal value on the Y Axis is 800, and maximum is 1600. You can control these values by setting 
+**.maximum()** and **..minimum()** parameters of a **.scale()** method:
 
 ```
     chart.yScale().minimum('0').maximum('1800');
@@ -262,7 +262,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 ## Visualization
 
 In this section we will describe main parts of marker chart visualization and ways to adjust it. Visual appearance of 
-areas is defined using certain methods. For Marker chart the main thing is the **.fill()** method.
+areas is defined using certain methods. For Marker chart the main thing is the **.fill()** parameter.
 
 ### Basic Sample
 
@@ -319,14 +319,14 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 ### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we 
-need to set **.fill()** attribute in the **chart.marker()**. In the sample below we have 5 series with sample data and 
-we'll color each series to different color. Here is the sample:
+need to set **.fill()** parameters in the **.marker()** method. In the sample below we have 5 series with sample data 
+and we'll color each series to different color. Here is the sample:
 
 {sample}BCT\_Marker\_Chart\_08{sample}
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined 
 color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. 
-As you see it is very easy to do by setting **.fill()** attribute for the point.
+As you see it is very easy to do by setting **.fill()** parameter for the point.
 
 {sample}BCT\_Marker\_Chart\_09{sample}
 
@@ -352,6 +352,6 @@ palettes. To see whole range of available hatch types see [Hatch tutorial](../Ge
   
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 
 chart with 5 series with 2 data points in each. For every series we've applied different hatch fills by setting 
-**.hatchFill()** attribute.
+**.hatchFill()** parameter.
 
 {sample}BCT\_Marker\_Chart\_10{sample}

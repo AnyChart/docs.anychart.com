@@ -7,7 +7,7 @@ anychart.onDocumentReady(function() {
   // Create bullet chart
   var chart = anychart.bulletChart([{value: 225}]);
 
-  // Set chart to render on stage
+  // Set chart container
   chart.container('container');
 
   // Set chart size and position settings

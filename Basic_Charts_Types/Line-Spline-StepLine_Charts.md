@@ -7,7 +7,7 @@
   * [Single Series Step Line Chart](#single_series_step_line_chart)
   * [Multi-series Line Chart](#multi-series_line_chart)
 * [Axes](#axes)
-  * [Positioning](#position)
+  * [Orientation](#orientation)
   * [Inversion](#inversion)
   * [Minimum and Maximum](#minimum_and_maximum)
 * [Visualization](#visualization)
@@ -106,7 +106,7 @@ represents one month and sales volume. Converted Data looks like:
 ```
 
 As you can see, we've specified chart's type with **anychart.lineChart()** method, defined data source with 
-**chart.line(data)** and set data with **anychart.data.Set()**.
+**chart.line(data)** and set data with **anychart.data.set()**.
 
 {sample}BCT\_LineChart\_01{sample}
 
@@ -219,17 +219,17 @@ of Line type by default.
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
 scale and settings and many more. All axis features are described in Working with Axes tutorial, in this section we will
- quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum 
+ quickly demonstrate how axis orientation can be adjusted, how axis scale can be inverted and how minimum and maximum 
 values can be controlled.
 
 ### Positioning
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust position with 
-**orientation()** method of **.yAxis()** or **.xAxis()** instances.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with 
+**orientation()** parameter of **.yAxis()** or **.xAxis()** methods.
   
   
-Positioning depends on plot type and inversion of axes, you will find list of all possible positining and inversion 
-settings in Axes Positioning.
+Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and inversion 
+settings in[Axes Orientation](../Axes_Grid_Scales_Trends_etc/Axis_Orientation) tutorial.
 
 ```
     chart.xAxis(0).orientation('top');
@@ -256,7 +256,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart 
 sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting 
-**.maximum()** and **.minimum()** attributes of the method:
+**.maximum()** and **.minimum()** parameters of **.yScale()** method:
 
 ```
     chart.yScale().minimum('0').maximum('50000');
@@ -353,7 +353,7 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 ### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we 
-need to set "stroke" attribute for a series. In the sample below we have 5 series with sample data and we'll 
+need to set ".stroke()" parameter for a series. In the sample below we have 5 series with sample data and we'll 
 color each series to different color. Here is the sample:
 
 {sample}BCT\_LineChart\_11{sample}
