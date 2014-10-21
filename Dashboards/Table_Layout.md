@@ -182,7 +182,15 @@ Title represents the main idea of a Dashboard. But in some cases simple text can
 
 ### Header row
 
+Title may represent information for the whole dashboard, but for parts of dashboard it may require to format several 
+titles. One of the most convenient way of configuring titles is setting desirable configuration for the first row of 
+the table layout. 
+  
+  
+Here is a sample with text settings, applied only for the first (head) row of a table layout dashboard.
 сделать кастомный форматтер текстов и назначить его для каждой ячейки первой строки. 
+
+{sample}Table\_Layout\_15{sample}
 
 ### Common Elements
 

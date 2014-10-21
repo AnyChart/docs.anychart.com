@@ -59,7 +59,7 @@ anychart.onDocumentReady(function() {
   series5 = chart5.line(seriesData_5).markers(null).stroke('black');
   series6 = chart6.line(seriesData_6).markers(null).stroke('black');
   series7 = chart7.line(seriesData_7).markers(null).stroke('black');
-  
+
   //title
   chart1.title().text('Network').enabled(false);
   chart2.title().text('ERP').enabled(false);
@@ -220,6 +220,7 @@ anychart.onDocumentReady(function() {
 
   //set table content
   table.contents([
+    ['Last 12 month', 'System', 'Availability %'],
     [chart1, chart1.title().text(), bullet1],
     [chart2, chart2.title().text(), bullet2],
     [chart3, chart3.title().text(), bullet3],
@@ -235,6 +236,16 @@ anychart.onDocumentReady(function() {
   textSettings.fontSize(17);
   textSettings.fontWeight(600);
   table.cellTextFactory(textSettings);
+
+  table.rowHeight(0, 30)
+
+  for (var cols = 0; cols<table.colsCount(); cols++){
+    table.getCell(0, cols).content().vAlign('center');
+    table.getCell(0, cols).content().hAlign('center');
+    table.getCell(0, cols).content().fontSize(12);
+    table.getCell(0, cols).content().fontWeight(400);
+    table.getCell(0, cols).content().fontFamily = 'verdana, helvetica, arial, sans-serif';
+  }
 
   table.bounds(customTitle.getRemainingBounds());
   table.cellBorder('gray 0.2', 2);
