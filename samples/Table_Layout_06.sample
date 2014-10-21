@@ -122,6 +122,13 @@ anychart.onDocumentReady(function() {
   //set background color
   table.cellOddFill('rgb(102, 143, 169)');
 
+
+  var textSettings = anychart.elements.labelsFactory();
+  textSettings.vAlign('center');
+  textSettings.fontSize(15);
+  textSettings.fontWeight(500);
+  table.cellTextFactory(textSettings);
+
   //set table container and initiate draw
   table.container('container').draw();
 });
