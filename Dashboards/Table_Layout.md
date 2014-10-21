@@ -27,11 +27,11 @@ visual appearance and logic structure of data.
   
 ## Content
 
-Содержимым яйчейки таблицы может быть:
-    * Текстовая строка или число (автоматически преобразуются в лейбл)
-    * Any visual element of AnyChart (Legend, LegendItem, Label, Title, etc)
-    * Любой чарт (pie, cartesian etc)
-    * Любая серия данных (например, anychart.cartesian.series.Area)
+A cell in table layout dashboard may contain: 
+ * String with simple text or a number
+ * Any visual element of AnyChart (Legend, LegendItem, Label, Title, etc)
+ * Any type of a chart (pie, cartesian, etc)
+ * Any data series (for instance, anychart.cartesian.series.Area)
     
 Let's create a simple table with two chart. Each of them represent annual income of the same company in different years.
 First row contains only labels and second one only pie charts
@@ -40,14 +40,16 @@ First row contains only labels and second one only pie charts
 
 ## Visual settings
 
-К настройкам внезнего вида относится:
-    * Ширина колонок и высота строк
-    * Cell padding & text settings
-    * Fill
-    * Border
-    * Cols and rows span
+Visual settings control:
+ * Columns width and rows height
+ * Cell padding & text settings
+ * Fill
+ * Border
+ * Cols and rows span
 
 ### Cells width and height
+
+Table layout consist of multiple cells. Any concrete cell (and all cells together) can be customised in any  
 
 ### Fill
 
@@ -167,14 +169,16 @@ Sample below demonstrates connection of two columns and five rows into one cell.
 
 ### Title
 
-As far as title on a dashboard contains the main idea of a dashboard, it is vital to configure it's visual appearance
-. Here is a sample with simple title at the top of the dashboard and table layout dashboard below.
+As far as title on a dashboard contains the main idea of a dashboard, it is vital to configure it's visual appearance. Here is a sample with simple title at the top of the dashboard and table layout dashboard below.
 
 {sample}Table\_Layout\_13{sample}
 
 ### Advanced Title
 
-татйл с легендой
+Title represents the main idea of a Dashboard. But in some cases simple text can't provide desirable instruments for representing data. Here is a sample of advanced title configuration.
+
+{sample}Table\_Layout\_14{sample}
+
 
 ### Header row
 

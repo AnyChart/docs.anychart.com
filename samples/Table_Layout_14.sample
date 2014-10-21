@@ -107,12 +107,68 @@ anychart.onDocumentReady(function() {
     chart7.yAxis().enabled(false);
 
 
+
+    var HCCPUData = anychart.data.set([
+      ['2014/10/15 00:00', 98],
+      ['2014/10/15 01:00', 99],
+      ['2014/10/15 02:00', 95],
+      ['2014/10/15 03:00', 93],
+      ['2014/10/15 04:00', 92],
+      ['2014/10/15 05:00', 90],
+      ['2014/10/15 06:00', 85],
+      ['2014/10/15 07:00', 84],
+      ['2014/10/15 08:00', 87],
+      ['2014/10/15 09:00', 90],
+      ['2014/10/15 10:00', 86],
+      ['2014/10/15 11:00', 84],
+      ['2014/10/15 12:00', 80],
+      ['2014/10/15 13:00', 76],
+      ['2014/10/15 14:00', 78],
+      ['2014/10/15 15:00', 80],
+      ['2014/10/15 16:00', 85],
+      ['2014/10/15 17:00', 86],
+      ['2014/10/15 18:00', 90],
+      ['2014/10/15 19:00', 94],
+      ['2014/10/15 20:00', 97],
+      ['2014/10/15 21:00', 97],
+      ['2014/10/15 22:00', 98],
+      ['2014/10/15 23:00', 97]
+    ]);
+    var HCCPURanges = [0, 80, 90, 100];
+
+    var CPU = HCCPUData.mapAs({x: [0], value: [1]});
+
+    chartCPU = anychart.lineChart();
+
+    chartCPU.xAxis().enabled(false);
+    chartCPU.yAxis().enabled(false);
+    chartCPU.grid().enabled(false);
+    chartCPU.grid(1).enabled(false);
+    chartCPU.minorGrid().enabled(false);
+    chartCPU.title().text('CPU').enabled(false);
+
+    seriesCPU = chartCPU.line(CPU).markers(null).stroke('black');
+
+    bulletCPU = anychart.bulletChart([{value: 89}]);
+    // Set chart size and position settings
+    bulletCPU.bounds(0, 0, '100%', '100%');
+    alert(bulletCPU.height());
+    // Set chart layout
+    bulletCPU.layout('horizontal');
+    bulletCPU.axis().enabled(false);
+    bulletCPU.title().enabled(false);
+    bulletCPU.range().from(0).to(80).fill('#CCCCCC');
+    bulletCPU.range(1).from(80).to(90).fill('#AAAAAA').gap(3);
+    bulletCPU.range(2).from(90).to(100).fill('#888888');
+
+
+
     //create table
     var table = anychart.elements.table();
 
     //set table content
     table.contents([
-        [chart1, chart1.title().text()],
+        [chartCPU, chartCPU.title().text(), bulletCPU],
         [chart2, chart2.title().text()],
         [chart3, chart3.title().text()],
         [chart4, chart4.title().text()],
@@ -128,6 +184,8 @@ anychart.onDocumentReady(function() {
     textSettings.fontWeight(600);
     table.cellTextFactory(textSettings);
 
+    //table.rowHeight(0,40);
+
     customTitle = anychart.elements.title();
     customTitle.enabled(true);
     customTitle.orientation('top').align('left');
@@ -139,10 +197,7 @@ anychart.onDocumentReady(function() {
     customTitle.container(stage);
     customTitle.draw();
 
-    //get title borders and place table at the left space
     table.bounds(customTitle.getRemainingBounds());
-
-    //adjust tables border visualisation
     table.cellBorder('gray 0.3', 2)
 
     //set table container and initiate draw
