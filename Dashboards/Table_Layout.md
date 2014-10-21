@@ -32,7 +32,8 @@ A cell in table layout dashboard may contain:
  * Any visual element of AnyChart (Legend, LegendItem, Label, Title, etc)
  * Any type of a chart (pie, cartesian, etc)
  * Any data series (for instance, anychart.cartesian.series.Area)
-    
+  
+  
 Let's create a simple table with two chart. Each of them represent annual income of the same company in different years.
 First row contains only labels and second one only pie charts
 
@@ -49,7 +50,26 @@ Visual settings control:
 
 ### Cells width and height
 
-Table layout consist of multiple cells. Any concrete cell (and all cells together) can be customised in any  
+Table layout consist of multiple cells and each of them may contain different type of information. In most cases same
+ kind of data placed in one row or one column. Anychart provides **.rowHeight()** parameter for adjusting height of a 
+row and **.colWidth()** parameter for controlling width of a column.
+  
+  
+Sample below demonstrates controlling the height of the first row.
+
+```
+  table.rowHeight(1, 40);
+```
+
+{sample}Table\_Layout\_02{sample}
+
+Controlling width of a concrete column is performed in a similar way, which is represented below:
+
+```
+  table.colWidth(1, 300)
+```
+
+{sample}Table\_Layout\_03{sample}
 
 ### Fill
 
@@ -138,13 +158,13 @@ Table layout may contain simple text in several cells. For avoiding setting same
 more convenient to apply these parameters to the whole table with **.cellTextFactory()** parameter. 
 
 ```
-    var textSettings = anychart.elements.labelsFactory();
-    textSettings.vAlign('center')
-    textSettings.hAlign('center')
-    textSettings.fontSize(20);
-    textSettings.fontWeight(900);
-    textSettings.fontColor('red');
-    table.cellTextFactory(textSettings);
+  var textSettings = anychart.elements.labelsFactory();
+  textSettings.vAlign('center')
+  textSettings.hAlign('center')
+  textSettings.fontSize(20);
+  textSettings.fontWeight(900);
+  textSettings.fontColor('red');
+  table.cellTextFactory(textSettings);
 ```
 
 {sample}Table\_Layout\_11{sample}
@@ -188,7 +208,6 @@ the table layout.
   
   
 Here is a sample with text settings, applied only for the first (head) row of a table layout dashboard.
-сделать кастомный форматтер текстов и назначить его для каждой ячейки первой строки. 
 
 {sample}Table\_Layout\_15{sample}
 

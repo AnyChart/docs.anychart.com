@@ -128,7 +128,7 @@ anychart.onDocumentReady(function() {
   bullet1.title().orientation('right').text('96.8%');
   bullet1.scale().minimum(85);
   bullet1.margin().top('20%').bottom('20%').left(1);
-  bullet1.padding().top(1).bottom(1).right(0);
+  bullet1.padding().top(1).bottom(1).right(0).left(2);
 
   bullet2 = anychart.bulletChart([
     {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
@@ -142,7 +142,7 @@ anychart.onDocumentReady(function() {
   bullet2.title().orientation('right').text('96.8%');
   bullet2.scale().minimum(85);
   bullet2.margin().top('20%').bottom('20%').left(1);
-  bullet2.padding().top(1).bottom(1).right(0);
+  bullet2.padding().top(1).bottom(1).right(0).left(2);
 
   bullet3 = anychart.bulletChart([
     {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
@@ -156,7 +156,7 @@ anychart.onDocumentReady(function() {
   bullet3.title().orientation('right').text('96.8%');
   bullet3.scale().minimum(85);
   bullet3.margin().top('20%').bottom('20%').left(1);
-  bullet3.padding().top(1).bottom(1).right(0);
+  bullet3.padding().top(1).bottom(1).right(0).left(2);
 
   bullet4 = anychart.bulletChart([
     {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
@@ -170,7 +170,7 @@ anychart.onDocumentReady(function() {
   bullet4.title().orientation('right').text('96.8%');
   bullet4.scale().minimum(85);
   bullet4.margin().top('20%').bottom('20%').left(1);
-  bullet4.padding().top(1).bottom(1).right(0);
+  bullet4.padding().top(1).bottom(1).right(0).left(2);
 
   bullet5 = anychart.bulletChart([
     {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
@@ -184,7 +184,7 @@ anychart.onDocumentReady(function() {
   bullet5.title().orientation('right').text('96.8%');
   bullet5.scale().minimum(85);
   bullet5.margin().top('20%').bottom('20%').left(1);
-  bullet5.padding().top(1).bottom(1).right(0);
+  bullet5.padding().top(1).bottom(1).right(0).left(2);
 
   bullet6 = anychart.bulletChart([
     {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
@@ -198,7 +198,7 @@ anychart.onDocumentReady(function() {
   bullet6.title().orientation('right').text('96.8%');
   bullet6.scale().minimum(85);
   bullet6.margin().top('20%').bottom('20%').left(1);
-  bullet6.padding().top(1).bottom(1).right(0);
+  bullet6.padding().top(1).bottom(1).right(0).left(2);
 
   bullet7 = anychart.bulletChart([
     {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
@@ -212,7 +212,7 @@ anychart.onDocumentReady(function() {
   bullet7.title().orientation('right').text('96.8%');
   bullet7.scale().minimum(85);
   bullet7.margin().top('20%').bottom('20%').left(1);
-  bullet7.padding().top(1).bottom(1).right(0);
+  bullet7.padding().top(1).bottom(1).right(0).left(2);
 
 
   //create table
