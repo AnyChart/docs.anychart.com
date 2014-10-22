@@ -2,16 +2,16 @@
 
 * [Overview](#overview)
 * [Content](#content)
-* [Visual settings](#visual_settings)
-  * [Cells width and height](#cells_width_and_height)
+* [Visual Settings](#visual_settings)
+  * [Cells Width and Height](#cells_width_and_height)
   * [Fill](#fill)
   * [Border](#border)
-  * [Text settings and padding](#text_settings_and_padding)
-  * [Cols and rows span](#cols_and_rows_span)
-* [Using table](#using_table)
+  * [Text Settings and Padding](#text_settings_and_padding)
+  * [Cols and Rows Span](#cols_and_rows_span)
+* [Using Table](#using_table)
   * [Title](#title)
   * [Advanced Title](#advanced_title)
-  * [Header row](#header_row)
+  * [Header Row](#header_row)
   * [Common Elements](#common_element)
  
 ## Overview
@@ -38,7 +38,7 @@ First row contains only labels and second one only pie charts
 
 {sample}Table\_Layout\_01{sample}
 
-## Visual settings
+## Visual Settings
 
 Visual settings control:
  * Columns width and rows height
@@ -47,7 +47,7 @@ Visual settings control:
  * Border
  * Cols and rows span
 
-### Cells width and height
+### Cells Width and Height
 
 Table layout consist of multiple cells and each of them may contain different type of information. In most cases same
  kind of data placed in one row or one column. Anychart provides **.rowHeight()** parameter for adjusting height of a 
@@ -105,7 +105,7 @@ Here is the sample with "rgb(233, 234, 237)" background color for all cells in e
 
 {sample}Table\_Layout\_06{sample}
 
-#### Cell fill
+#### Cell Fill
 
 For emphasizing attention on one of the cells, it can be colorized in unique way. Background color of a certain cell is controlled by parameter **.fill()**. and it should be applied to the cell itself.
 
@@ -150,7 +150,7 @@ Let's get dataset from the previous sample and adjust style for the first cell i
   
 Moreover, there are 4 parameters to control each of the border for every cell in a table. **.cellTopBorder()**, **.cellLeftBorder()**, **.cellBottomBorder()** and **.cellRightBorder()** adjust style of a border for each cell in table.
 
-### Text Settings and padding
+### Text Settings and Padding
 
 Table layout may contain simple text in several cells. For avoiding setting same parameters for several cells it is 
 more convenient to apply these parameters to the whole table with **.cellTextFactory()** parameter. 
@@ -192,7 +192,7 @@ Sample below demonstrates connection of two cells in first row into one cell.
 {sample}Table\_Layout\_10{sample}
 
 
-## Using table
+## Using Table
 
 ### Title
 
@@ -205,7 +205,6 @@ As far as title on a dashboard contains the main idea of a dashboard, it is vita
 Title represents the main idea of a Dashboard. But in some cases simple text can't provide desirable instruments for representing data. Here is a sample of advanced title configuration.
 
 {sample}Table\_Layout\_14{sample}
-
 
 ### Header row
 
