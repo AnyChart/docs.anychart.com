@@ -108,12 +108,11 @@ Here is the sample with "rgb(233, 234, 237)" background color for all cells in e
 
 #### Cell fill
 
-Style for a certain cell controls with parameter **.fill()**. by this parameter should be applied to the cell itself.
+For emphasizing attention on one of the cells, it can be colorized in unique way. Background color of a certain cell is controlled by parameter **.fill()**. and it should be applied to the cell itself.
 
 ```
-  var cell = table.getCell(3,1);  // get cell in fourth row and in second column
+  var cell = table.getCell(0,1);  // get first row in second column
   cell.fill('gold');              // set gold color as a background for the cell
-
 ```
 
 {sample}Table\_Layout\_07{sample}
