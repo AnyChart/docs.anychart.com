@@ -123,6 +123,12 @@ anychart.onDocumentReady(function() {
     '5 2'   //dash and gap length
   );
 
+  var textSettings = anychart.elements.labelsFactory();
+  textSettings.vAlign('center');
+  textSettings.fontSize(15);
+  textSettings.fontWeight(600);
+  table.cellTextFactory(textSettings);
+
   //set table container and initiate draw
   table.container('container').draw();
 });

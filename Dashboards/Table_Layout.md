@@ -3,17 +3,16 @@
 * [Overview](#overview)
 * [Content](#content)
 * [Visual settings](#visual_settings)
-    * [Cells width and height](#cells_width_and_height)
-    * [Fill](#fill)
-    * [Border](#border)
-    * [Text settings and padding](#text_settings_and_padding)
-    * [Cols and rows span](#cols_and_rows_span)
+  * [Cells width and height](#cells_width_and_height)
+  * [Fill](#fill)
+  * [Border](#border)
+  * [Text settings and padding](#text_settings_and_padding)
+  * [Cols and rows span](#cols_and_rows_span)
 * [Using table](#using_table)
-    * [Title](#title)
-    * [Advanced Title](#advanced_title)
-    * [Header row](#header_row)
-    * [Common Elements](#common_element)
-        
+  * [Title](#title)
+  * [Advanced Title](#advanced_title)
+  * [Header row](#header_row)
+  * [Common Elements](#common_element)
  
 ## Overview
 

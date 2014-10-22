@@ -119,7 +119,7 @@ anychart.onDocumentReady(function() {
   //set style
   table.cellBorder(
     'red',  //color
-    3,      //thickness
+    2,      //thickness
     '5 2'   //dash and gap length
   );
 
@@ -130,6 +130,13 @@ anychart.onDocumentReady(function() {
     keys: ['.1 red', '.2 blue', '.3 green'],  //set leaner color
     thickness: 5                              //set thickness
   });
+
+
+  var textSettings = anychart.elements.labelsFactory();
+  textSettings.vAlign('center');
+  textSettings.fontSize(15);
+  textSettings.fontWeight(600);
+  table.cellTextFactory(textSettings);
 
   //set table container and initiate draw
   table.container('container').draw();

@@ -122,7 +122,6 @@ anychart.onDocumentReady(function() {
   //set background color
   table.cellOddFill('rgb(102, 143, 169)');
 
-
   var textSettings = anychart.elements.labelsFactory();
   textSettings.vAlign('center');
   textSettings.fontSize(15);
