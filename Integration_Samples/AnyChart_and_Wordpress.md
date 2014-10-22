@@ -10,8 +10,7 @@ Adding Charts into WordPress
  * [Requesting Data from JSON File](#requesting_data_from_json_file)
   
   
-WordPress is one of the most popular Content Management Systems out there, here is an article about main 
-features and aspects of AnyChart usage in WordPress controlled sites.
+WordPress is one of the most popular Content Management Systems out there, here is an article about main features and aspects of AnyChart usage in WordPress controlled sites.
   
 All necessary information, about first steps in AnyChart usage can be found on our  [Quick Start](../Quick_Start/Quick_Start) page.
 
@@ -22,8 +21,7 @@ As far as it's one of the most effective way of presenting information, every pr
   
 Visualized data looks as good on a page of a blog writer, as it does on a page of a big company, such as Microsoft or Oracle.
   
-AnyChart is a flexible JavaScript (HTML5) based solution which allows you to create interactive and great looking  charts. It is a cross-browser and cross-platform charting solution intended for everybody who deals with creation of  dashboard, reporting, analytics, statistical, financial or any other data visualization solutions. PCs, Macs, iPhones, 
-iPads, Android devices - AnyChart works everywhere, you'll get the same experience across any devices and browsers! 
+AnyChart is a flexible JavaScript (HTML5) based solution which allows you to create interactive and great looking  charts. It is a cross-browser and cross-platform charting solution intended for everybody who deals with creation of  dashboard, reporting, analytics, statistical, financial or any other data visualization solutions. PCs, Macs, iPhones, iPads, Android devices - AnyChart works everywhere, you'll get the same experience across any devices and browsers! 
 
 ## Integration
 
@@ -36,7 +34,7 @@ Also, as far as we may need data from other domain, we shall overview AJAX data 
 
 ### Including AnyChart into WordPress without Any Plugins
 
-AnyChart complies all standards, which leads to avoiding any problems with integration into any web-page or in any project. Asfor WordPress, it would take you few steps to insert AnzChart into a page. First you'll have to open **page editor** and switch into **Text Editing Mode** and insert AnyChart JS, some data and set chart container.
+AnyChart complies all standards, which leads to avoiding any problems with integration into any web-page or in any project. Asfor WordPress, it would take you few steps to insert AnyChart into a page. First you'll have to open **page editor** and switch into **Text Editing Mode** and insert AnyChart JS, some data and set chart container.
   
   
 ![](http://cs624320.vk.me/v624320947/2a33/cTHQT-3NOjE.jpg)
@@ -54,7 +52,7 @@ everything looks fine and if there are any mistakes in data.
 Everything looks perfect, the page is ready.
   
   
-**Note:** Script tag with data have to contain no empty Lines. If there are any, WordPress will replace them with &lt;p&gt; tag and all data will be corrupted. Some ways of avoiding data corruption are presented below.
+**Note:** Script tag with data have to contain no empty lines. If there are any, WordPress will replace them with &lt;p&gt; tag and all data will be corrupted. Some ways of avoiding data corruption are presented below.
 
 ### Chart Data with Disabled Smart Insert
 
@@ -63,20 +61,14 @@ Previous sample of AnyChart usage is quite convenient. But in most cases, we may
 WordPress provides you with a number of plugins to disable smart insert. In the sample below we used "Raw HTML" 
 plugin, but id doesn't matter which of smart insert disabling plugins is used.
   
-  
 First of all, we have to install and activate plugin.
   
-  
 ![](http://cs624320.vk.me/v624320947/2a3b/mLa14vSx8qY.jpg)
-  
-  
+
 After plugin activation. wrap data script with data into \[raw]...\[/raw] tag. Now you are free to use any number of 
-empty lines you want. It will make no difference for chart visualisation but it may be of a great help for feather data 
-adjusting in this very chart.
-  
-  
+empty lines you want. It will make no difference for chart visualisation but it may be of a great help for feather data adjusting in this very chart.
+
 ![](https://pp.vk.me/c625427/v625427947/5853/atwXSSytyNA.jpg)
-  
   
 ### Inserting AnyChart into Head of a Page
 
@@ -87,7 +79,7 @@ As the first step, insert AnyChart JS into head of every page, as it is shown be
   
 ![](http://cs624320.vk.me/v624320947/2a53/filH2a7m6NA.jpg)
   
-At the second Step insert chart data into the head of a page with a chart 
+At the second step insert chart data into the head of a page with a chart 
   
 ![](http://cs624320.vk.me/v624320947/2a5b/zmelVycMBn0.jpg)
   
