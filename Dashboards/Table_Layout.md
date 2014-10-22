@@ -178,7 +178,7 @@ There are two parameters for spanning several cells into one. **.rowSpan()** bel
   cell.rowSpan(2);  // unites 2 cells in one column into one
 ```
 
-Sample below demonstrates connection of two columns and five rows into one cell.
+Sample below demonstrates connection of two cells in first row into one cell.
 
 {sample}Table\_Layout\_10{sample}
 

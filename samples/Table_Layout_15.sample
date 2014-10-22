@@ -242,9 +242,10 @@ anychart.onDocumentReady(function() {
   for (var cols = 0; cols<table.colsCount(); cols++){
     table.getCell(0, cols).content().vAlign('center');
     table.getCell(0, cols).content().hAlign('center');
-    table.getCell(0, cols).content().fontSize(12);
-    table.getCell(0, cols).content().fontWeight(400);
+    table.getCell(0, cols).content().fontSize(14);
+    table.getCell(0, cols).content().fontWeight(600);
     table.getCell(0, cols).content().fontFamily = 'verdana, helvetica, arial, sans-serif';
+    table.getCell(0, cols).fill('#444444').content().fontColor('#FFFFFF')
   }
 
   table.bounds(customTitle.getRemainingBounds());

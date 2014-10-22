@@ -25,7 +25,7 @@ anychart.onDocumentReady(function() {
     income2004 = anychart.pieChart(seriesData_2);
     income2004.legend().enabled(false);
     income2004.labels().position('outside').fontColor('black');
-    income2004.title().text('2005 Income').enabled(false);
+    income2004.title().text('2004 Income').enabled(false);
     income2004.background().enabled(false);
 
     //create and adjust label for the first column
