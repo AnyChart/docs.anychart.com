@@ -65,7 +65,7 @@ anychart.onDocumentReady(function() {
         .scale(chart.yScale())
         .value(9000)
         .text('right')
-        .align('far')
+        .align('right')
         .anchor('rightcenter')
         .fontSize(13)
         .offsetX(10)
