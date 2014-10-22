@@ -170,8 +170,7 @@ more convenient to apply these parameters to the whole table with **.cellTextFac
 ### Span
 
 In some cases it is desirable to enlarge a cell by uniting it with one or several cells from near by. 
-There are two parameters for spanning several cells into one. **.rowSpan()** below from the cell in a column and **
-.colSpan()** unites cells in the row on the right side from the cell.
+There are two parameters for spanning several cells into one. **.rowSpan()** below from the cell in a column and **.colSpan()** unites cells in the row on the right side from the cell.
 
 ```
   cell.colSpan(3);  // unites 3 cells in one row into one
