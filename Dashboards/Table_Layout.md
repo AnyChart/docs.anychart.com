@@ -31,12 +31,6 @@ A cell in table layout dashboard may contain:
  * Any visual element of AnyChart (Legend, LegendItem, Label, Title, etc)
  * Any type of a chart (pie, cartesian, etc)
  * Any data series (for instance, anychart.cartesian.series.Area)
-  
-  
-Let's create a simple table with two chart. Each of them represent annual income of the same company in different years.
-First row contains only labels and second one only pie charts
-
-{sample}Table\_Layout\_01{sample}
 
 ## Visual Settings
 
@@ -54,21 +48,14 @@ Table layout consist of multiple cells and each of them may contain different ty
 row and **.colWidth()** parameter for controlling width of a column.
   
   
-Sample below demonstrates controlling the height of the first row.
+Sample below demonstrates controlling the height of the first row and width of the second column
 
 ```
-  table.rowHeight(1, 40);
+  table.rowHeight(0, 30);   // Get first row and set height 30px
+  table.colWidth(1, 150);   // Get second column and set width 150 px
 ```
 
-{sample}Table\_Layout\_02{sample}
-
-Controlling width of a concrete column is performed in a similar way, which is represented below:
-
-```
-  table.colWidth(1, 300)
-```
-
-{sample}Table\_Layout\_03{sample}
+{sample}Table\_Layout\_01{sample}
 
 ### Fill
 
@@ -82,13 +69,13 @@ possible ways of controlling background color of an element, please see [backgro
 
 #### Table fill
 
-Background for all the table can be configurated with **.cellFill()** parameter.
+Background for all the table can be configured with **.cellFill()** parameter.
 
 ```
-  table.cellFill('lightgreen');
+  table.cellFill('lightyellow');
 ```
 
-{sample}Table\_Layout\_05{sample}
+{sample}Table\_Layout\_02{sample}
 
 #### Even and Odd Rows
 
@@ -103,18 +90,16 @@ is responsible for the background color of all odd rows.
 
 Here is the sample with "rgb(233, 234, 237)" background color for all cells in even row and "rgb(102, 143, 169)" color for all cells in odd row.
 
-{sample}Table\_Layout\_06{sample}
+{sample}Table\_Layout\_03{sample}
 
 #### Cell Fill
 
 For emphasizing attention on one of the cells, it can be colorized in unique way. Background color of a certain cell is controlled by parameter **.fill()**. and it should be applied to the cell itself.
 
 ```
-  var cell = table.getCell(0,1);  // get first row in second column
-  cell.fill('gold');              // set gold color as a background for the cell
+  var cell = table.getCell(0,1);  // Get first row in second column
+  cell.fill('gold');              // Set gold color as a background for the cell
 ```
-
-{sample}Table\_Layout\_07{sample}
 
 ### Border
 
@@ -124,26 +109,40 @@ Border is a part of a table. It visually divides whole table into separate cells
   
   
 In this section revealed all methods of controlling borders in a table. 
-Parameter **.cellBorder()** provides an opportunity to set desirably configured border for all cells in a table.
-Sample below demonstrates the configuration for red dashed line with 3px thickness. Dashes have length of 5 pixels and length for gaps is 2 pixels.
-
-```
-  table.cellBorder('red', 3, '5 2');
-```
-
-{sample}Table\_Layout\_08{sample}
-
-As far as content for each cell can be absolutely different, style for each of the cells can be set individually as well. 
+Parameter **.cellBorder()** provides an opportunity to set desirably configured border for all cells in a table. As 
+far as content for each cell can be absolutely different, style for each of the cells can be set individually as well. 
   
   
-Let's get dataset from the previous sample and adjust style for the first cell in the second row.
+Sample below demonstrates setting gray stroke for the whole chart, set thickness equal to 2 px and makes it dashed, 
+with 5 px dashes and 2 pixel gaps. Moreover, to cells have red stroke, which emphasize them (these two cells 
+represents systems with unacceptable availability). 
 
 ```
-  var cell = table.getCell(0,1);
-  cell.border(['red', 'blue', 'green'], 5);
+  //set style
+  table.cellBorder(
+    'gray',     // Color
+    2,          // Thickness
+    '5 2'       // Dash and gap length
+  );
+  
+  // get cell from the second column and second row
+  var cell = table.getCell(1,1);
+  
+  cell.border({
+    keys: ['red'],  // Set leaner color
+    thickness: 3    // Set thickness
+  });
+  
+  //get cell from second column and fourth row
+  var cell_1 = table.getCell(3, 1);
+  
+  cell_1.border({
+    keys: ['red'],  // Set leaner color
+    thickness: 3    // Set thickness
+  });
 ```
 
-{sample}Table\_Layout\_09{sample}
+{sample}Table\_Layout\_04{sample}
 
 **Note:** As far as any cell has 4 borders, there is a way to control style for each of them. Parameters **.topBorder()**, **.leftBorder()**, **.bottomBorder()** and **.rightBorder()** controls style for each of 4 cell's border. 
   
@@ -163,19 +162,20 @@ cell's borders. For preventing such situations there is **.padding()** parameter
 Sample below demonstrates controlling text settings and using padding  
 
 ```
+  // Text settings
   var textSettings = anychart.elements.labelsFactory();
-  textSettings.vAlign('center')
-  textSettings.hAlign('center')
-  textSettings.fontSize(20);
-  textSettings.fontWeight(900);
-  textSettings.fontColor('red');
-  table.cellTextFactory(textSettings);
+  textSettings.vAlign('center');        // Vertical position
+  textSettings.hAlign('left');          // Horizontal position
+  textSettings.fontSize(18);            // Text size
+  textSettings.fontColor('darkred');    // Text Color
+  textSettings.fontWeight(500);         // Text thickness
+  table.cellTextFactory(textSettings);  // Applying settings 
   
   //set cell padding
-  table.cellPadding('20%');
+  table.padding('20%').left('20%');     // Set padding
 ```
 
-{sample}Table\_Layout\_11{sample}
+{sample}Table\_Layout\_05{sample}
 
 ### Span
 
@@ -184,12 +184,12 @@ There are two parameters for spanning several cells into one. **.rowSpan()** bel
 
 ```
   cell.colSpan(3);  // unites 3 cells in one row into one
-  cell.rowSpan(2);  // unites 2 cells in one column into one
+  cell.rowSpan(5);  // unites 2 cells in one column into one
 ```
 
-Sample below demonstrates connection of two cells in first row into one cell.
+Sample below demonstrates connection of several cells into one cell and position a chart into it.
 
-{sample}Table\_Layout\_10{sample}
+{sample}Table\_Layout\_06{sample}
 
 
 ## Using Table
@@ -198,13 +198,13 @@ Sample below demonstrates connection of two cells in first row into one cell.
 
 As far as title on a dashboard contains the main idea of a dashboard, it is vital to configure it's visual appearance. Here is a sample with simple title at the top of the dashboard and table layout dashboard below.
 
-{sample}Table\_Layout\_13{sample}
+{sample}Table\_Layout\_07{sample}
 
 ### Advanced Title
 
 Title represents the main idea of a Dashboard. But in some cases simple text can't provide desirable instruments for representing data. Here is a sample of advanced title configuration.
 
-{sample}Table\_Layout\_14{sample}
+{sample}Table\_Layout\_08{sample}
 
 ### Header row
 
@@ -215,7 +215,7 @@ the table layout.
   
 Here is a sample with text settings, applied only for the first (head) row of a table layout dashboard.
 
-{sample}Table\_Layout\_15{sample}
+{sample}Table\_Layout\_09{sample}
 
 ### Common Elements
 
@@ -224,6 +224,6 @@ One of the most popular common elements is scale. As far as scale calculates val
 common scale may be used in comparative purposes.
   
   
-Here is a sample of table layout dashboard with two charts using common custom y scale. 
+Here is a sample of table layout dashboard with two charts using common custom x scale. 
 
-{sample}Table\_Layout\_12{sample}
+{sample}Table\_Layout\_10{sample}

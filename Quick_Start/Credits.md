@@ -1,4 +1,4 @@
-# Stacked Bar/Column Charts
+# Credits
 
  * [Overview](#overview)
    * [Text](#text)

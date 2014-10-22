@@ -77,6 +77,14 @@ anychart.onDocumentReady(function() {
   chart6.background().enabled(false);
   chart7.background().enabled(false);
 
+  chart1.margin(0).padding(0);
+  chart2.margin(0).padding(0);
+  chart3.margin(0).padding(0);
+  chart4.margin(0).padding(0);
+  chart5.margin(0).padding(0);
+  chart6.margin(0).padding(0);
+  chart7.margin(0).padding(0);
+
   chart1.grid().enabled(false);
   chart2.grid().enabled(false);
   chart3.grid().enabled(false);

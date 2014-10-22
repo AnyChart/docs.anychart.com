@@ -4,6 +4,20 @@
 
 anychart.onDocumentReady(function() {
 
+  //set stage
+  stage = acgraph.create('container');
+
+  customTitle = anychart.elements.title();
+  customTitle.enabled(true);
+  customTitle.orientation('top').align('left');
+  customTitle.zIndex(1);
+  customTitle.fontColor('#86cf38');
+  customTitle.fontSize(25);
+  customTitle.fontWeight(400);
+  customTitle.text('System Availability');
+  customTitle.container(stage);
+  customTitle.draw();
+
   //data
   var dataSet = anychart.data.set([
     ['2014/10', 100, 100, 100, 100, 100, 100, 100],
@@ -45,7 +59,7 @@ anychart.onDocumentReady(function() {
   series5 = chart5.line(seriesData_5).markers(null).stroke('black');
   series6 = chart6.line(seriesData_6).markers(null).stroke('black');
   series7 = chart7.line(seriesData_7).markers(null).stroke('black');
-
+  
   //title
   chart1.title().text('Network').enabled(false);
   chart2.title().text('ERP').enabled(false);
@@ -102,33 +116,189 @@ anychart.onDocumentReady(function() {
   chart7.xAxis().enabled(false);
   chart7.yAxis().enabled(false);
 
+  bullet1 = anychart.bulletChart([
+    {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
+    {value: 99, type: 'bar', gap: 1.9, fill: 'white'},
+    {value: 98.6, type: 'line', gap: 1.8},
+    {value: 85, type: 'line', gap: 2, fill: '#CCCCCC'}
+  ]);
+  bullet1.bounds(0, 0, '100%', '100%');
+  bullet1.layout('horizontal');
+  bullet1.axis().enabled(false);
+  bullet1.title().orientation('right').text('96.8%');
+  bullet1.scale().minimum(85);
+  bullet1.margin().top('20%').bottom('20%').left(1);
+  bullet1.padding().top(1).bottom(1).right(0).left(2);
+
+  bullet2 = anychart.bulletChart([
+    {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
+    {value: 98, type: 'bar', gap: 1.9, fill: 'white'},
+    {value: 98.6, type: 'line', gap: 1.8},
+    {value: 85, type: 'line', gap: 2, fill: '#CCCCCC'}
+  ]);
+  bullet2.bounds(0, 0, '100%', '100%');
+  bullet2.layout('horizontal');
+  bullet2.axis().enabled(false);
+  bullet2.title().orientation('right').text('96.8%');
+  bullet2.scale().minimum(85);
+  bullet2.margin().top('20%').bottom('20%').left(1);
+  bullet2.padding().top(1).bottom(1).right(0).left(2);
+
+  bullet3 = anychart.bulletChart([
+    {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
+    {value: 98, type: 'bar', gap: 1.9, fill: 'white'},
+    {value: 96.3, type: 'line', gap: 1.8},
+    {value: 85, type: 'line', gap: 2, fill: '#CCCCCC'}
+  ]);
+  bullet3.bounds(0, 0, '100%', '100%');
+  bullet3.layout('horizontal');
+  bullet3.axis().enabled(false);
+  bullet3.title().orientation('right').text('96.8%');
+  bullet3.scale().minimum(85);
+  bullet3.margin().top('20%').bottom('20%').left(1);
+  bullet3.padding().top(1).bottom(1).right(0).left(2);
+
+  bullet4 = anychart.bulletChart([
+    {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
+    {value: 98, type: 'bar', gap: 1.9, fill: 'white'},
+    {value: 98.6, type: 'line', gap: 1.8},
+    {value: 85, type: 'line', gap: 2, fill: '#CCCCCC'}
+  ]);
+  bullet4.bounds(0, 0, '100%', '100%');
+  bullet4.layout('horizontal');
+  bullet4.axis().enabled(false);
+  bullet4.title().orientation('right').text('96.8%');
+  bullet4.scale().minimum(85);
+  bullet4.margin().top('20%').bottom('20%').left(1);
+  bullet4.padding().top(1).bottom(1).right(0).left(2);
+
+  bullet5 = anychart.bulletChart([
+    {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
+    {value: 98, type: 'bar', gap: 1.9, fill: 'white'},
+    {value: 98.6, type: 'line', gap: 1.8},
+    {value: 85, type: 'line', gap: 2, fill: '#CCCCCC'}
+  ]);
+  bullet5.bounds(0, 0, '100%', '100%');
+  bullet5.layout('horizontal');
+  bullet5.axis().enabled(false);
+  bullet5.title().orientation('right').text('96.8%');
+  bullet5.scale().minimum(85);
+  bullet5.margin().top('20%').bottom('20%').left(1);
+  bullet5.padding().top(1).bottom(1).right(0).left(2);
+
+  bullet6 = anychart.bulletChart([
+    {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
+    {value: 96, type: 'bar', gap: 1.9, fill: 'white'},
+    {value: 98.6, type: 'line', gap: 1.8},
+    {value: 85, type: 'line', gap: 2, fill: '#CCCCCC'}
+  ]);
+  bullet6.bounds(0, 0, '100%', '100%');
+  bullet6.layout('horizontal');
+  bullet6.axis().enabled(false);
+  bullet6.title().orientation('right').text('96.8%');
+  bullet6.scale().minimum(85);
+  bullet6.margin().top('20%').bottom('20%').left(1);
+  bullet6.padding().top(1).bottom(1).right(0).left(2);
+
+  bullet7 = anychart.bulletChart([
+    {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
+    {value: 93, type: 'bar', gap: 1.9, fill: 'white'},
+    {value: 98.6, type: 'line', gap: 1.8},
+    {value: 85, type: 'line', gap: 2, fill: '#CCCCCC'}
+  ]);
+  bullet7.bounds(0, 0, '100%', '100%');
+  bullet7.layout('horizontal');
+  bullet7.axis().enabled(false);
+  bullet7.title().orientation('right').text('96.8%');
+  bullet7.scale().minimum(85);
+  bullet7.margin().top('20%').bottom('20%').left(1);
+  bullet7.padding().top(1).bottom(1).right(0).left(2);
+
+
   //create table
   var table = anychart.elements.table();
 
   //set table content
   table.contents([
-    [chart1, chart1.title().text()],
-    [chart2, chart2.title().text()],
-    [chart3, chart3.title().text()],
-    [chart4, chart4.title().text()],
-    [chart5, chart5.title().text()],
-    [chart6, chart6.title().text()],
-    [chart7, chart7.title().text()]
+    [chart1, chart1.title().text(), bullet1],
+    [chart2, chart2.title().text(), bullet2],
+    [chart3, chart3.title().text(), bullet3],
+    [chart4, chart4.title().text(), bullet4],
+    [chart5, chart5.title().text(), bullet5],
+    [chart6, chart6.title().text(), bullet6],
+    [chart7, chart7.title().text(), bullet7]
   ]);
-
-  //set style
-  table.cellBorder(
-    'red',  //color
-    3,      //thickness
-    '5 2'   //dash and gap length
-  );
 
   var textSettings = anychart.elements.labelsFactory();
   textSettings.vAlign('center');
-  textSettings.fontSize(15);
+  textSettings.hAlign('left');
+  textSettings.fontSize(17);
   textSettings.fontWeight(600);
   table.cellTextFactory(textSettings);
 
+  table.bounds(customTitle.getRemainingBounds());
+  table.cellBorder('gray 0.2', 2);
+
   //set table container and initiate draw
-  table.container('container').draw();
+  table.container(stage).draw();
+
+  //legend settings
+  customLegend = anychart.elements.legend();
+  customLegend.enabled(true);
+  customLegend.title().enabled(false);
+  customLegend.titleSeparator().enabled(false);
+  customLegend.paginator().enabled(false);
+  customLegend.itemsLayout('horizontal');
+  customLegend.itemsProvider([
+    {
+      'index': 0,
+      'text': 'Actual',
+      'iconType': function(path, size) {
+        path.clear();
+        var x = Math.round(size / 2);
+        var y = Math.round(size / 2);
+        var height = size * 0.6;
+        path.clear()
+            .moveTo(x, y - height / 2)
+            .lineTo(x, y + height / 2)
+            .lineTo(x + 2, y + height / 2)
+            .lineTo(x + 2, y - height / 2)
+            .close();
+      },
+      'iconStroke': 'none',
+      'iconFill': '#000'
+    },
+    {
+      'index': 1,
+      'text': 'Acceptable',
+      'iconType': function(path, size) {
+        path.clear();
+        var x = Math.round(size / 2);
+        var y = Math.round(size / 2);
+        var height = size * 0.8;
+        path.clear()
+            .moveTo(x - 2, y - height / 2)
+            .lineTo(x - 2, y + height / 2)
+            .lineTo(x + 3, y + height / 2)
+            .lineTo(x + 3, y - height / 2)
+            .close();
+      },
+      'iconStroke': 'none',
+      'iconFill': '#ccc'
+    }
+  ]);
+  customLegend.background().enabled(false);
+  customLegend.position('right').align('top');
+  customLegend.zIndex(2);
+  customLegend.margin().top(20);
+  customLegend.parentBounds(
+    anychart.math.rect(
+      0,
+      0,
+      customTitle.container().width(),
+      customTitle.container().height()
+    )
+  );
+  customLegend.container(stage);
+  customLegend.draw();
 });
