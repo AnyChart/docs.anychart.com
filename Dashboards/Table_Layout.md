@@ -154,6 +154,13 @@ Moreover, there are 4 parameters to control each of the border for every cell in
 
 Table layout may contain simple text in several cells. For avoiding setting same parameters for several cells it is 
 more convenient to apply these parameters to the whole table with **.cellTextFactory()** parameter. 
+  
+  
+Cells are not limited in content type and amount of data, which may lead to a problem of content sticking to the 
+cell's borders. For preventing such situations there is **.padding()** parameter for controlling content position. 
+  
+  
+Sample below demonstrates controlling text settings and using padding  
 
 ```
   var textSettings = anychart.elements.labelsFactory();
@@ -163,6 +170,9 @@ more convenient to apply these parameters to the whole table with **.cellTextFac
   textSettings.fontWeight(900);
   textSettings.fontColor('red');
   table.cellTextFactory(textSettings);
+  
+  //set cell padding
+  table.cellPadding('20%');
 ```
 
 {sample}Table\_Layout\_11{sample}
