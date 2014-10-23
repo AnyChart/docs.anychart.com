@@ -200,11 +200,6 @@ As far as title on a dashboard contains the main idea of a dashboard, it is vita
 
 {sample}Table\_Layout\_07{sample}
 
-### Advanced Title
-
-Title represents the main idea of a Dashboard. But in some cases simple text can't provide desirable instruments for representing data. Here is a sample of advanced title configuration.
-
-{sample}Table\_Layout\_08{sample}
 
 ### Header row
 
