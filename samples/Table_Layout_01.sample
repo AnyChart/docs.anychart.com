@@ -364,13 +364,10 @@ anychart.onDocumentReady(function() {
     table.top(title.getRemainingBounds().getTop()+10);
 
     table.rowHeight(0, 30);   // Get first row and set height 30px
-    table.colWidth(1, 150);   // Get second column and set width 150 px
+    table.colWidth(1, 160);   // Get second column and set width 160 px
 
 
-    table.rowHeight(8, 30);
     table.colWidth(3, 60);
-    table.colWidth(1, 160);
-
     table.cellTextFactory()
         .padding(0)
         .vAlign('center')
