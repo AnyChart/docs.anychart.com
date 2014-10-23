@@ -344,24 +344,9 @@ anychart.onDocumentReady(function() {
     var tableHeight = (contents.length - 1) * 24 + 20;
     var reportBounds = anychart.math.rect(0, 0, 600, tableHeight + titleHeight);
 
-    var title = anychart.elements.title();
-    title.container(container);
-    title.parentBounds(reportBounds);
-    title.fontFamily('verdana, helvetica, arial, sans-serif');
-    title.fontWeight('normal');
-    title.text('<span style="color:#86cf38; font-size: 16px;">System Availability</span> <span style="color: #666666; font-size: 10px; font-weight: normal;">(last 30 days)</span>');
-    title.orientation('top');
-    title.align('left');
-    title.vAlign('bottom');
-    title.margin(0);
-    title.padding(0);
-    title.height(titleHeight);
-    title.useHtml(true);
-    title.draw();
 
     var table = anychart.elements.table();
     table.contents(contents);
-    table.top(title.getRemainingBounds().getTop()+10);
     table.rowHeight(0, 20);
     table.rowHeight(8, 30);
     table.colWidth(3, 60);

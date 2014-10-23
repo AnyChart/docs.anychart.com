@@ -374,10 +374,6 @@ anychart.onDocumentReady(function() {
         .hAlign('left')
         .fontSize(13);
 
-    setupRowProp(table, 0, 'fill', '#444444');
-    setupRowProp(table, 0, ['content', 'vAlign'], 'bottom');
-    setupRowProp(table, 0, ['padding', 'bottom'], 2);
-    setupRowProp(table, 0, ['content', 'fontColor'], '#FFFFFF');
     setupColProp(table, 2, 'padding', [5, 5, 5, 5], true);
     setupColProp(table, 3, ['content', 'hAlign'], 'left', true);
     table.getCell(table.rowsCount() - 1, 2).padding(0, 2, 5);

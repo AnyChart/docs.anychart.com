@@ -11,7 +11,7 @@
 * [Using Table](#using_table)
   * [Title](#title)
   * [Header Row](#header_row)
-  * [Common Elements](#common_element)
+  * [Common Elements](#common_elements)
  
 ## Overview
 

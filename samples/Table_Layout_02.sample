@@ -352,8 +352,6 @@ anychart.onDocumentReady(function() {
     table.colWidth(3, 60);
     table.colWidth(1, 160);
 
-    table.cellBorder(null);
-
     table.cellFill('#D5D84B');
 
     table.cellTextFactory()
