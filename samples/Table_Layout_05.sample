@@ -346,7 +346,6 @@ anychart.onDocumentReady(function() {
 
     var table = anychart.elements.table();
     table.contents(contents);
-    table.top(title.getRemainingBounds().getTop()+10);
     table.rowHeight(0, 20);
     table.rowHeight(8, 30);
     table.colWidth(3, 60);
