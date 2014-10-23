@@ -274,7 +274,7 @@ anychart.onDocumentReady(function() {
   }
 
   table.bounds(customTitle.getRemainingBounds());
-  table.cellBorder('gray 0.2', 2);
+  table.cellBorder(null);
 
   //set table container and initiate draw
   table.container(stage).draw();

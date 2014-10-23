@@ -38,7 +38,7 @@ ever reached in the company. Data set for the chart is below
   var chart = anychart.bulletChart([
     {value: 637.166}                  //2005 revenue
   ]);
-  chart.range().from(0).to(737.166);  //maximum annual  income ever
+  chart.range().from(0).to(737.166);  //maximum annual income ever
 ```
 
 {sample}BCT\_Bullet\_Chart\_01{sample}
@@ -77,12 +77,14 @@ Here is the sample with both horizontal and vertical layouts.
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings. All axis features are described in [Axes Basics](../Axes_Grid_Scales_Trends_etc/Axis_Basics) tutorial, In this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted  and how minimum and maximum values can be set. 
   
+  
 **Note:** In most cases chart has at least two axes, but Bullet Chart always represents only one data series and  there is no need in two axes.
 
 ### Orientation
 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **orientation()** of
  **.axis()**.
+  
   
 Orientation depends on the layout of a chart. For horizontal layout axis orientation parameter can be set only *top* 
 or *bottom*. As for vertical layout, axis orientation parameter may be only *left* or *right*
@@ -138,7 +140,8 @@ Here is a sample with all marker types:
 ### Style
 
 For clearer distinction between markers it is very useful to adjust style settings of markers. There are three things in a marker to control and adjust: **.fill()**, **.stroke()** and **.gap()**. Fill method is responsible for inner color of a marker, stroke is responsible for the color of a border line and gap method is responsible for the size of a marker.
-
+  
+  
 Here is a sample of an ellipse sharped marker with blue stroke, gold inner color and a size 0.7 size of a chart. 
 
 ```

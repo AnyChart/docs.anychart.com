@@ -14,7 +14,7 @@ scale, both x scale, y scale and additional scale.
 
 ## Declare
 
-To add range marker you need to use **.rangeMarker()** method. Each range marker has several compulsory properties set 
+To add range marker you need to use **.rangeMarker()** method. Each range marker has several mandatory properties set 
 by **.scale()**, **.from()**, **.to()** and **.fill()** methods. If you want to bound range marker to a horizontal 
 scale, you have to set **.layout(vertical)**. Otherwise it will be horizontal.
 

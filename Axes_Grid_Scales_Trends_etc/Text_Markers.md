@@ -14,7 +14,8 @@ Text Markers are useful when you want to place custom texts or description with 
 
 These text markers are just custom text placed on chart.
 
-To add custom text you need to create **.textMarker()** and set **.value()**, **.scale()** and **.text()**.You may use other options, but previous three are compulsory.
+To add custom text you need to create **.textMarker()** and set **.value()**, **.scale()** and **.text()**.You may 
+use other options, but previous three are mandatory.
 
 ```
     chart.textMarker()

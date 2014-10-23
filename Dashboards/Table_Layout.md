@@ -224,7 +224,7 @@ One of the most popular common elements is scale. As far as scale calculates val
 common scale may be used in comparative purposes.
   
   
-Here is a sample of table layout dashboard with all bullet charts using same scale and custom title uses the scale as
+Here is a sample of table layout dashboard with all bullet charts using same scale and custom axis uses the scale as
  well.
 
 {sample}Table\_Layout\_10{sample}
