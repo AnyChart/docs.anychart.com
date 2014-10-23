@@ -376,7 +376,7 @@ anychart.onDocumentReady(function() {
 
     var legendParentBounds = anychart.math.rect(reportBounds.left, 0, stage.width()-25, titleHeight+2);
     var legend = anychart.elements.legend();
-    legend.fontSize('12px');
+    legend.fontSize('10px');
     legend.itemsLayout('horizontal');
     legend.itemsProvider([
       {
