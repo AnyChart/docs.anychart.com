@@ -48,7 +48,7 @@ ever fixed in the company. Data set for the chart is below
 
 Ranges or range bar in Bullet chart is a qualitative categories encoder (such as bad, satisfactory, 
 and good). They are variables of color intensity rather than of hue. Ranges are controlled by **.range()** method and 
-have two compulsory parameters: **.from()** and **.to()**. 
+have two mandatory parameters: **.from()** and **.to()**. 
 
 ```
   chart.range().from(0).to(10);
