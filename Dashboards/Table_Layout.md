@@ -162,17 +162,13 @@ cell's borders. For preventing such situations there is **.padding()** parameter
 Sample below demonstrates controlling text settings and using padding  
 
 ```
-  // Text settings
-  var textSettings = anychart.elements.labelsFactory();
-  textSettings.vAlign('center');        // Vertical position
-  textSettings.hAlign('left');          // Horizontal position
-  textSettings.fontSize(18);            // Text size
-  textSettings.fontColor('darkred');    // Text Color
-  textSettings.fontWeight(500);         // Text thickness
-  table.cellTextFactory(textSettings);  // Applying settings 
-  
-  //set cell padding
-  table.padding('20%').left('20%');     // Set padding
+  table.cellTextFactory()
+   .padding(0)
+   .vAlign('center')
+   .hAlign('left')
+   .fontWeight(600)
+   .fontSize(13)
+   .fontColor('red');
 ```
 
 {sample}Table\_Layout\_05{sample}

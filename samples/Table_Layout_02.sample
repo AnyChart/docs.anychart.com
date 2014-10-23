@@ -4,256 +4,423 @@
 
 anychart.onDocumentReady(function() {
 
-  //set stage
-  stage = acgraph.create('container');
+  // region data
+  // columns are: ['System', 'Month', 'Availability']
+  var SARawData = [
+    ['Network', '2014/10', 100],
+    ['Network', '2014/09', 97],
+    ['Network', '2014/08', 98],
+    ['Network', '2014/07', 98],
+    ['Network', '2014/06', 99],
+    ['Network', '2014/05', 100],
+    ['Network', '2014/04', 99],
+    ['Network', '2014/03', 98],
+    ['Network', '2014/02', 98],
+    ['Network', '2014/01', 97],
+    ['Network', '2013/12', 99],
+    ['Network', '2013/11', 100],
+    ['ERP', '2014/10', 100],
+    ['ERP', '2014/09', 97],
+    ['ERP', '2014/08', 98],
+    ['ERP', '2014/07', 98],
+    ['ERP', '2014/06', 99],
+    ['ERP', '2014/05', 100],
+    ['ERP', '2014/04', 99],
+    ['ERP', '2014/03', 98],
+    ['ERP', '2014/02', 98],
+    ['ERP', '2014/01', 97],
+    ['ERP', '2013/12', 99],
+    ['ERP', '2013/11', 100],
+    ['Data Warehouse', '2014/10', 100],
+    ['Data Warehouse', '2014/09', 97],
+    ['Data Warehouse', '2014/08', 70],
+    ['Data Warehouse', '2014/07', 98],
+    ['Data Warehouse', '2014/06', 99],
+    ['Data Warehouse', '2014/05', 100],
+    ['Data Warehouse', '2014/04', 99],
+    ['Data Warehouse', '2014/03', 98],
+    ['Data Warehouse', '2014/02', 98],
+    ['Data Warehouse', '2014/01', 97],
+    ['Data Warehouse', '2013/12', 99],
+    ['Data Warehouse', '2013/11', 100],
+    ['Web Site', '2014/10', 100],
+    ['Web Site', '2014/09', 97],
+    ['Web Site', '2014/08', 98],
+    ['Web Site', '2014/07', 98],
+    ['Web Site', '2014/06', 99],
+    ['Web Site', '2014/05', 100],
+    ['Web Site', '2014/04', 99],
+    ['Web Site', '2014/03', 98],
+    ['Web Site', '2014/02', 98],
+    ['Web Site', '2014/01', 97],
+    ['Web Site', '2013/12', 99],
+    ['Web Site', '2013/11', 100],
+    ['Email', '2014/10', 100],
+    ['Email', '2014/09', 97],
+    ['Email', '2014/08', 98],
+    ['Email', '2014/07', 98],
+    ['Email', '2014/06', 99],
+    ['Email', '2014/05', 100],
+    ['Email', '2014/04', 99],
+    ['Email', '2014/03', 98],
+    ['Email', '2014/02', 98],
+    ['Email', '2014/01', 97],
+    ['Email', '2013/12', 99],
+    ['Email', '2013/11', 100],
+    ['HR', '2014/10', 100],
+    ['HR', '2014/09', 97],
+    ['HR', '2014/08', 98],
+    ['HR', '2014/07', 98],
+    ['HR', '2014/06', 99],
+    ['HR', '2014/05', 100],
+    ['HR', '2014/04', 99],
+    ['HR', '2014/03', 98],
+    ['HR', '2014/02', 98],
+    ['HR', '2014/01', 97],
+    ['HR', '2013/12', 99],
+    ['HR', '2013/11', 100],
+    ['Problem Tracking', '2014/10', 100],
+    ['Problem Tracking', '2014/09', 97],
+    ['Problem Tracking', '2014/08', 98],
+    ['Problem Tracking', '2014/07', 98],
+    ['Problem Tracking', '2014/06', 99],
+    ['Problem Tracking', '2014/05', 100],
+    ['Problem Tracking', '2014/04', 99],
+    ['Problem Tracking', '2014/03', 98],
+    ['Problem Tracking', '2014/02', 98],
+    ['Problem Tracking', '2014/01', 97],
+    ['Problem Tracking', '2013/12', 99],
+    ['Problem Tracking', '2013/11', 100]
+  ];
+  var SAAcceptedAvailability = {
+    'Network': 99,
+    'ERP': 98,
+    'Data Warehouse': 98,
+    'Web Site': 98,
+    'Email': 98,
+    'HR': 96,
+    'Problem Tracking': 93
+  };
 
-  customTitle = anychart.elements.title();
-  customTitle.enabled(true);
-  customTitle.orientation('top').align('left');
-  customTitle.zIndex(1);
-  customTitle.fontColor('#86cf38');
-  customTitle.fontSize(25);
-  customTitle.fontWeight(400);
-  customTitle.text('System Availability');
-  customTitle.container(stage);
-  customTitle.draw();
+  var Today = '2014/10/15';
+  // endregion
 
-  //data
-  var dataSet = anychart.data.set([
-    ['2014/10', 100, 100, 100, 100, 100, 100, 100],
-    ['2014/09', 97, 97, 97, 97, 97, 97, 97],
-    ['2014/08', 98, 98, 70, 98, 98, 98, 98],
-    ['2014/07', 98, 98, 98, 98, 98, 98, 98],
-    ['2014/06', 99, 99, 99, 99, 99, 99, 99],
-    ['2014/05', 100, 100, 100, 100, 100, 100, 100],
-    ['2014/04', 99, 99, 99, 99, 99, 99, 99],
-    ['2014/03', 98, 98, 98, 98, 98, 98, 98],
-    ['2014/02', 98, 98, 98, 98, 98, 98, 98],
-    ['2014/01', 97, 97, 97, 97, 97, 97, 97],
-    ['2013/12', 99, 99, 99, 99, 99, 99, 99],
-    ['2013/11', 100, 100, 100, 100, 100, 100, 100]
-  ]);
+  // region utility methods to ease up some routines
+  /**
+   * Utility function to setup property to a whole row.
+   * @param {anychart.elements.Table} table Table to setup row for.
+   * @param {number} rowIndex Row index.
+   * @param {!Array.<string>|string} propNameOrChain Property name to access, like 'border' or chain of property names
+   *    to access, e.g. ['content', 'fontSize']. Note: no checking on valid results is done, so it's up to you to
+   *    ensure property existence.
+   * @param {*|Array.<*>} propValueOrArray Value to set.
+   */
+  function setupRowProp(table, rowIndex, propNameOrChain, propValueOrArray) {
+    if (rowIndex >= table.rowsCount()) return;
+    if (typeof propNameOrChain == 'string') propNameOrChain = [propNameOrChain];
+    var chainLastIndex = propNameOrChain.length - 1;
+    for (var i = 0; i < table.colsCount(); i++) {
+      var prop = table.getCell(rowIndex, i);
+      for (var j = 0; j < chainLastIndex; j++) {
+        prop = prop[propNameOrChain[j]]();
+        if (!prop) break;
+      }
+      if (!prop) continue;
+      if (typeof propValueOrArray != 'string' && typeof propValueOrArray.length == 'number')
+        prop[propNameOrChain[chainLastIndex]].apply(prop, propValueOrArray);
+      else
+        prop[propNameOrChain[chainLastIndex]](propValueOrArray);
+    }
+  }
 
-  //map data for the each series
-  var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
-  var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
-  var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
-  var seriesData_4 = dataSet.mapAs({x: [0], value: [4]});
-  var seriesData_5 = dataSet.mapAs({x: [0], value: [5]});
-  var seriesData_6 = dataSet.mapAs({x: [0], value: [6]});
-  var seriesData_7 = dataSet.mapAs({x: [0], value: [7]});
+  /**
+   * Utility function to setup property to a whole column.
+   * @param {anychart.elements.Table} table Table to setup row for.
+   * @param {number} colIndex Row index.
+   * @param {!Array.<string>|string} propNameOrChain Property name to access, like 'border' or chain of property names
+   *    to access, e.g. ['content', 'fontSize']. Note: no checking on valid results is done, so it's up to you to
+   *    ensure property existence.
+   * @param {*|Array.<*>} propValueOrArray Value to set.
+   * @param {boolean=} opt_skipFirstRow Set true to skip first row.
+   */
+  function setupColProp(table, colIndex, propNameOrChain, propValueOrArray, opt_skipFirstRow) {
+    if (colIndex >= table.colsCount()) return;
+    if (typeof propNameOrChain == 'string') propNameOrChain = [propNameOrChain];
+    var chainLastIndex = propNameOrChain.length - 1;
+    for (var i = opt_skipFirstRow ? 1 : 0; i < table.rowsCount(); i++) {
+      var prop = table.getCell(i, colIndex);
+      for (var j = 0; j < chainLastIndex; j++) {
+        prop = prop[propNameOrChain[j]]();
+        if (!prop) break;
+      }
+      if (!prop) continue;
+      if (typeof propValueOrArray != 'string' && typeof propValueOrArray.length == 'number')
+        prop[propNameOrChain[chainLastIndex]].apply(prop, propValueOrArray);
+      else
+        prop[propNameOrChain[chainLastIndex]](propValueOrArray);
+    }
+  }
 
-  //chat type
-  chart1 = anychart.lineChart();
-  chart2 = anychart.lineChart();
-  chart3 = anychart.lineChart();
-  chart4 = anychart.lineChart();
-  chart5 = anychart.lineChart();
-  chart6 = anychart.lineChart();
-  chart7 = anychart.lineChart();
+  /**
+   * Utility function to calculate the sum of field values over a view.
+   * @param {anychart.data.View} view
+   * @param {string} fieldName
+   * @return {number}
+   */
+  function calcSum(view, fieldName) {
+    // calculating average
+    var sum = 0;
+    var count = 0;
+    // we iterate over the view and sum up the field value
+    var iter = view.getIterator();
+    while (iter.advance()) {
+      count++;
+      sum += iter.get(fieldName);
+    }
+    return sum;
+  }
 
-  series1 = chart1.line(seriesData_1).markers(null).stroke('black');
-  series2 = chart2.line(seriesData_2).markers(null).stroke('black');
-  series3 = chart3.line(seriesData_3).markers(null).stroke('black');
-  series4 = chart4.line(seriesData_4).markers(null).stroke('black');
-  series5 = chart5.line(seriesData_5).markers(null).stroke('black');
-  series6 = chart6.line(seriesData_6).markers(null).stroke('black');
-  series7 = chart7.line(seriesData_7).markers(null).stroke('black');
+  /**
+   * Utility function to calculate the average value of the field over a view.
+   * @param {anychart.data.View} view
+   * @param {string} fieldName
+   * @return {number}
+   */
+  function calcAvg(view, fieldName) {
+    return calcSum(view, fieldName) / view.getIterator().getRowsCount();
+  }
 
-  chart1.margin(0).padding(0);
-  chart2.margin(0).padding(0);
-  chart3.margin(0).padding(0);
-  chart4.margin(0).padding(0);
-  chart5.margin(0).padding(0);
-  chart6.margin(0).padding(0);
-  chart7.margin(0).padding(0);
+  /**
+   * Creates a small tight date time scale (no gaps at all outside of the range).
+   * @return {anychart.scales.DateTime}
+   */
+  function createTightDTScale() {
+    // removing gaps and ticks to make the line fill the horizontal space of the cell
+    return anychart.scales.dateTime()
+        .minimumGap(0)
+        .maximumGap(0)
+        .ticks([]);
+  }
 
-  //title
-  chart1.title().text('Network').enabled(false);
-  chart2.title().text('ERP').enabled(false);
-  chart3.title().text('Data Warehouse').enabled(false);
-  chart4.title().text('Web Site').enabled(false);
-  chart5.title().text('Email').enabled(false);
-  chart6.title().text('HR').enabled(false);
-  chart7.title().text('Problem Tracking').enabled(false);
+  /**
+   * Short way to add thousand separators to the number.
+   * @param {number} value
+   * @param {number=} opt_decimalDigits
+   * @return {string}
+   */
+  function formatNumber(value, opt_decimalDigits) {
+    return value.toFixed(opt_decimalDigits || 2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+  }
 
-  chart1.background().enabled(false);
-  chart2.background().enabled(false);
-  chart3.background().enabled(false);
-  chart4.background().enabled(false);
-  chart5.background().enabled(false);
-  chart6.background().enabled(false);
-  chart7.background().enabled(false);
+  function formatDate(value) {
+    var m = value.getMonth() + 1;
+    if (m < 10) m = '0' + m;
+    var d = value.getDate();
+    if (d < 10) d = '0' + d;
+    var y = value.getFullYear() - 2000;
+    return m + '/' + d + '/' + y;
+  }
 
-  chart1.grid().enabled(false);
-  chart2.grid().enabled(false);
-  chart3.grid().enabled(false);
-  chart4.grid().enabled(false);
-  chart5.grid().enabled(false);
-  chart6.grid().enabled(false);
-  chart7.grid().enabled(false);
+  /**
+   * Returns difference between two dates in days. Result is positive, if date2 is later than date1.
+   * @param {Date} date1
+   * @param {Date} date2
+   * @return {number}
+   */
+  function getDiffInDays(date1, date2) {
+    function isLeapYear(year) {
+      // Leap year logic; the 4-100-400 rule
+      return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
+    }
+    function getNumberOfDaysInMonth(year, month) {
+      switch (month) {
+        case 1:
+          return isLeapYear(year) ? 29 : 28;
+        case 3:
+        case 5:
+        case 8:
+        case 10:
+          return 30;
+      }
+      return 31;
+    }
+    function getNumberOfDaysInYear(year) {
+      return isLeapYear(year) ? 366 : 365;
+    }
+    var sign = 1;
+    if (date1.getTime() > date2.getTime()) {
+      var tmp = date1;
+      date1 = date2;
+      date2 = tmp;
+      sign = -1;
+    }
+    var y1 = date1.getUTCFullYear();
+    var y2 = date2.getUTCFullYear();
+    var m1 = date1.getUTCMonth();
+    var m2 = date2.getUTCMonth();
+    var d1 = date1.getUTCDate();
+    var d2 = date2.getUTCDate();
+    var res = 0, i;
+    if (y1 < y2) {
+      for (i = y1 + 1; i < y2; i++)
+        res += getNumberOfDaysInYear(i);
+      for (i = m1 + 1; i < 12; i++)
+        res += getNumberOfDaysInMonth(y1, i);
+      for (i = 0; i < m2; i++)
+        res += getNumberOfDaysInMonth(y2, i);
+      res += getNumberOfDaysInMonth(y1, m1) - d1;
+      res += d2;
+    } else if (m1 < m2) {
+      for (i = m1 + 1; i < m2; i++)
+        res += getNumberOfDaysInMonth(y1, i);
+      res += getNumberOfDaysInMonth(y1, m1) - d1;
+      res += d2;
+    } else {
+      res += d2 - d1;
+    }
+    return res * sign;
+  }
+  // endregion
 
-  chart1.grid(1).enabled(false);
-  chart2.grid(1).enabled(false);
-  chart3.grid(1).enabled(false);
-  chart4.grid(1).enabled(false);
-  chart5.grid(1).enabled(false);
-  chart6.grid(1).enabled(false);
-  chart7.grid(1).enabled(false);
+  anychart.fontFamily = 'verdana, helvetica, arial, sans-serif';
 
-  chart1.minorGrid().enabled(false);
-  chart2.minorGrid().enabled(false);
-  chart3.minorGrid().enabled(false);
-  chart4.minorGrid().enabled(false);
-  chart5.minorGrid().enabled(false);
-  chart6.minorGrid().enabled(false);
-  chart7.minorGrid().enabled(false);
+  function formSAReport(rawData, acceptedAvail) {
+    // we are not going to need different mapping on the raw data, so we map it at the same time
+    // we use 'System' and 'Availability' fields in our calculations and 'x' and 'value' fields are used by the charts.
+    var rawView = anychart.data.set(rawData).mapAs({'System': [0], 'Availability': [2], 'x': [1], 'value': [2]});
 
-  chart1.xAxis().enabled(false);
-  chart1.yAxis().enabled(false);
-  chart2.xAxis().enabled(false);
-  chart2.yAxis().enabled(false);
-  chart3.xAxis().enabled(false);
-  chart3.yAxis().enabled(false);
-  chart4.xAxis().enabled(false);
-  chart4.yAxis().enabled(false);
-  chart5.xAxis().enabled(false);
-  chart5.yAxis().enabled(false);
-  chart6.xAxis().enabled(false);
-  chart6.yAxis().enabled(false);
-  chart7.xAxis().enabled(false);
-  chart7.yAxis().enabled(false);
+    // we need this to create filtering functions
+    function filterBySystem(system) {
+      return function(value) {
+        return system == value;
+      }
+    }
 
-  bullet1 = anychart.bulletChart([
-    {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
-    {value: 99, type: 'bar', gap: 1.9, fill: 'white'},
-    {value: 98.6, type: 'line', gap: 1.8},
-    {value: 85, type: 'line', gap: 2, fill: '#CCCCCC'}
-  ]);
-  bullet1.bounds(0, 0, '100%', '100%');
-  bullet1.layout('horizontal');
-  bullet1.axis().enabled(false);
-  bullet1.title().orientation('right').text('96.8%');
-  bullet1.scale().minimum(85);
-  bullet1.margin().top('20%').bottom('20%').left(1);
-  bullet1.padding().top(1).bottom(1).right(0).left(2);
+    // we use common scales for charts in columns to make them comparable
+    var bulletScale = anychart.scales.linear();
+    // settings manual minimum and maximum to show the range we need.
+    bulletScale.minimum(85).maximum(100);
 
-  bullet2 = anychart.bulletChart([
-    {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
-    {value: 98, type: 'bar', gap: 1.9, fill: 'white'},
-    {value: 98.6, type: 'line', gap: 1.8},
-    {value: 85, type: 'line', gap: 2, fill: '#CCCCCC'}
-  ]);
-  bullet2.bounds(0, 0, '100%', '100%');
-  bullet2.layout('horizontal');
-  bullet2.axis().enabled(false);
-  bullet2.title().orientation('right').text('96.8%');
-  bullet2.scale().minimum(85);
-  bullet2.margin().top('20%').bottom('20%').left(1);
-  bullet2.padding().top(1).bottom(1).right(0).left(2);
-
-  bullet3 = anychart.bulletChart([
-    {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
-    {value: 98, type: 'bar', gap: 1.9, fill: 'white'},
-    {value: 96.3, type: 'line', gap: 1.8},
-    {value: 85, type: 'line', gap: 2, fill: '#CCCCCC'}
-  ]);
-  bullet3.bounds(0, 0, '100%', '100%');
-  bullet3.layout('horizontal');
-  bullet3.axis().enabled(false);
-  bullet3.title().orientation('right').text('96.8%');
-  bullet3.scale().minimum(85);
-  bullet3.margin().top('20%').bottom('20%').left(1);
-  bullet3.padding().top(1).bottom(1).right(0).left(2);
-
-  bullet4 = anychart.bulletChart([
-    {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
-    {value: 98, type: 'bar', gap: 1.9, fill: 'white'},
-    {value: 98.6, type: 'line', gap: 1.8},
-    {value: 85, type: 'line', gap: 2, fill: '#CCCCCC'}
-  ]);
-  bullet4.bounds(0, 0, '100%', '100%');
-  bullet4.layout('horizontal');
-  bullet4.axis().enabled(false);
-  bullet4.title().orientation('right').text('96.8%');
-  bullet4.scale().minimum(85);
-  bullet4.margin().top('20%').bottom('20%').left(1);
-  bullet4.padding().top(1).bottom(1).right(0).left(2);
-
-  bullet5 = anychart.bulletChart([
-    {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
-    {value: 98, type: 'bar', gap: 1.9, fill: 'white'},
-    {value: 98.6, type: 'line', gap: 1.8},
-    {value: 85, type: 'line', gap: 2, fill: '#CCCCCC'}
-  ]);
-  bullet5.bounds(0, 0, '100%', '100%');
-  bullet5.layout('horizontal');
-  bullet5.axis().enabled(false);
-  bullet5.title().orientation('right').text('96.8%');
-  bullet5.scale().minimum(85);
-  bullet5.margin().top('20%').bottom('20%').left(1);
-  bullet5.padding().top(1).bottom(1).right(0).left(2);
-
-  bullet6 = anychart.bulletChart([
-    {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
-    {value: 96, type: 'bar', gap: 1.9, fill: 'white'},
-    {value: 98.6, type: 'line', gap: 1.8},
-    {value: 85, type: 'line', gap: 2, fill: '#CCCCCC'}
-  ]);
-  bullet6.bounds(0, 0, '100%', '100%');
-  bullet6.layout('horizontal');
-  bullet6.axis().enabled(false);
-  bullet6.title().orientation('right').text('96.8%');
-  bullet6.scale().minimum(85);
-  bullet6.margin().top('20%').bottom('20%').left(1);
-  bullet6.padding().top(1).bottom(1).right(0).left(2);
-
-  bullet7 = anychart.bulletChart([
-    {value: 100, gap: 2, type: 'bar', fill: '#CCCCCC'},
-    {value: 93, type: 'bar', gap: 1.9, fill: 'white'},
-    {value: 98.6, type: 'line', gap: 1.8},
-    {value: 85, type: 'line', gap: 2, fill: '#CCCCCC'}
-  ]);
-  bullet7.bounds(0, 0, '100%', '100%');
-  bullet7.layout('horizontal');
-  bullet7.axis().enabled(false);
-  bullet7.title().orientation('right').text('96.8%');
-  bullet7.scale().minimum(85);
-  bullet7.margin().top('20%').bottom('20%').left(1);
-  bullet7.padding().top(1).bottom(1).right(0).left(2);
+    var lineScale = createTightDTScale();
 
 
-  //create table
-  var table = anychart.elements.table();
+    // preparing report data
+    var contents = [['Last 12 Month', 'System', 'Availability %', null]];
+    // forming a row for each system
+    for (var system in acceptedAvail) {
+      var row = [];
 
-  //set table content
-  table.contents([
-    ['Last 12 month', 'System', 'Availability %'],
-    [chart1, chart1.title().text(), bullet1],
-    [chart2, chart2.title().text(), bullet2],
-    [chart3, chart3.title().text(), bullet3],
-    [chart4, chart4.title().text(), bullet4],
-    [chart5, chart5.title().text(), bullet5],
-    [chart6, chart6.title().text(), bullet6],
-    [chart7, chart7.title().text(), bullet7]
-  ]);
+      // preparing data for the row
+      var systemData = rawView.filter('System', filterBySystem(system));
+      var avgAvail = calcAvg(systemData, 'Availability');
 
-  var textSettings = anychart.elements.labelsFactory();
-  textSettings.vAlign('center');
-  textSettings.hAlign('left');
-  textSettings.fontSize(17);
-  textSettings.fontColor('black');
-  textSettings.fontWeight(600);
-  table.cellTextFactory(textSettings);
-
-  //set background color
-  table.cellFill('lightyellow');
+      // we will need one line chart per system
+      // we don't need any other chart elements besides the chart line, so we can use line series directly here.
+      var line = anychart.cartesian.series.line(systemData);
+      // we set come line properties to make it look better and also we set the common x scale
+      line.stroke('2 #000');
+      line.xScale(lineScale);
 
 
-  table.bounds(customTitle.getRemainingBounds());
-  table.cellBorder('gray 0.2', 2);
+      // we will also need one bullet chart per system
+      var bullet = anychart.bullet.chart([{'value': avgAvail, 'type': 'line', gap: 0.4}]);
+      bullet.range(0).from(acceptedAvail[system]).to(100).fill('#ccc');
+      bullet.scale(bulletScale);
+      bullet.title().enabled(false);
+      bullet.axis().enabled(false);
+      bullet.background().enabled(true).stroke('#ccc').fill('#fff');
+      bullet.padding(0);
+      bullet.margin(0);
 
-  //set table container and initiate draw
-  table.container(stage).draw();
+      row[0] = line;
+      row[1] = system;
+      row[2] = bullet;
+      row[3] = avgAvail.toFixed(1) + '%';
+      contents.push(row);
+    }
 
+    var container = anychart.graphics.layer();
+    var titleHeight = 20;
+    var tableHeight = (contents.length - 1) * 24 + 20;
+    var reportBounds = anychart.math.rect(0, 0, 600, tableHeight + titleHeight);
+
+    var title = anychart.elements.title();
+    title.container(container);
+    title.parentBounds(reportBounds);
+    title.fontFamily('verdana, helvetica, arial, sans-serif');
+    title.fontWeight('normal');
+    title.text('<span style="color:#86cf38; font-size: 16px;">System Availability</span> <span style="color: #666666; font-size: 10px; font-weight: normal;">(last 30 days)</span>');
+    title.orientation('top');
+    title.align('left');
+    title.vAlign('bottom');
+    title.margin(0);
+    title.padding(0);
+    title.height(titleHeight);
+    title.useHtml(true);
+    title.draw();
+
+    var table = anychart.elements.table();
+    table.contents(contents);
+    table.top(title.getRemainingBounds().getTop()+10);
+    table.rowHeight(0, 20);
+    table.rowHeight(8, 30);
+    table.colWidth(3, 60);
+    table.colWidth(1, 160);
+
+    table.cellBorder(null);
+
+    table.cellFill('lightyellow');
+
+    table.cellTextFactory()
+        .padding(0)
+        .vAlign('center')
+        .hAlign('left')
+        .fontSize(13);
+
+    setupRowProp(table, 0, 'fill', '#444444');
+    setupRowProp(table, 0, ['content', 'vAlign'], 'bottom');
+    setupRowProp(table, 0, ['padding', 'bottom'], 2);
+    setupRowProp(table, 0, ['content', 'fontColor'], '#FFFFFF');
+    setupColProp(table, 2, 'padding', [5, 5, 5, 5], true);
+    setupColProp(table, 3, ['content', 'hAlign'], 'left', true);
+    table.getCell(table.rowsCount() - 1, 2).padding(0, 2, 5);
+    table.getCell(0, 2).colSpan(2).content().hAlign('right');
+    table.container(stage);
+
+    table.draw();
+    return {
+      'report': container,
+      'bounds': reportBounds
+    };
+  }
+
+  var stage = anychart.graphics.create('container');
+  stage.suspend();
+
+  var titleHeight = 40;
+
+  var title1 = anychart.elements.title();
+
+
+  var formattedToday = (new Date(Today)).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
+
+  var leftColumnReports = [
+    formSAReport(SARawData, SAAcceptedAvailability),
+  ];
+
+  var top = 0;
+  var left = 10;
+  var width = 0;
+  var report, bounds, i;
+  for (i = 0; i < leftColumnReports.length; i++) {
+    report = leftColumnReports[i]['report'];
+    bounds = leftColumnReports[i]['bounds'];
+    //stage.rect(left, top, bounds.width, bounds.height);
+    report.parent(stage);
+    report.translate(left, top);
+    top += bounds.height;
+    width = Math.max(width, bounds.width);
+  }
+
+  stage.resume();
 });
