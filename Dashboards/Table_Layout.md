@@ -10,7 +10,6 @@
   * [Cols and Rows Span](#cols_and_rows_span)
 * [Using Table](#using_table)
   * [Title](#title)
-  * [Advanced Title](#advanced_title)
   * [Header Row](#header_row)
   * [Common Elements](#common_element)
  
