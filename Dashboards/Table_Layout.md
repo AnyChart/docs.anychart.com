@@ -178,8 +178,8 @@ In some cases it is desirable to enlarge a cell by uniting it with one or severa
 There are two parameters for spanning several cells into one. **.rowSpan()** below from the cell in a column and **.colSpan()** unites cells in the row on the right side from the cell.
 
 ```
-  cell.colSpan(3);  // unites 3 cells in one row into one
-  cell.rowSpan(4);  // unites 4 cells in one column into one
+  cell.colSpan(4);  // unites 4 cells into one row
+  cell.rowSpan(3);  // unites 3 cells into one column
 ```
 
 Sample below demonstrates connection of several cells into one cell and position a chart into it.

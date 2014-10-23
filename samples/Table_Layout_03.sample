@@ -368,7 +368,6 @@ anychart.onDocumentReady(function() {
     setupColProp(table, 2, 'padding', [5, 5, 5, 5], true);
     setupColProp(table, 3, ['content', 'hAlign'], 'left', true);
     table.getCell(table.rowsCount() - 1, 2).padding(0, 2, 5);
-    table.getCell(0, 2).colSpan(2).content().hAlign('right');
     table.container(stage);
 
     table.draw();
