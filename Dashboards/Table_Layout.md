@@ -71,7 +71,7 @@ possible ways of controlling background color of an element, please see [backgro
 Background for all the table can be configured with **.cellFill()** parameter.
 
 ```
-  table.cellFill('lightyellow');
+  table.cellFill('#D5D84B');
 ```
 
 {sample}Table\_Layout\_02{sample}
@@ -97,7 +97,7 @@ For emphasizing attention on one of the cells, it can be colorized in unique way
 
 ```
   var cell = table.getCell(0,1);  // Get first row in second column
-  cell.fill('gold');              // Set gold color as a background for the cell
+  cell.fill('#E0E43A');           // Set gold color as a background for the cell
 ```
 
 ### Border
@@ -179,7 +179,7 @@ There are two parameters for spanning several cells into one. **.rowSpan()** bel
 
 ```
   cell.colSpan(3);  // unites 3 cells in one row into one
-  cell.rowSpan(5);  // unites 2 cells in one column into one
+  cell.rowSpan(4);  // unites 4 cells in one column into one
 ```
 
 Sample below demonstrates connection of several cells into one cell and position a chart into it.
@@ -214,7 +214,6 @@ One of the most popular common elements is scale. As far as scale calculates val
 common scale may be used in comparative purposes.
   
   
-Here is a sample of table layout dashboard with all bullet charts using same scale and custom axis uses the scale as
- well.
+Here is a sample of table layout dashboard with all bullet charts using same scale and custom axis uses the scale as well.
 
 {sample}Table\_Layout\_10{sample}

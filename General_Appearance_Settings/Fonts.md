@@ -4,7 +4,7 @@
 * [Basic Settings](#basic_settings)
 * [International Symbols](#international_symbols)
 * [HTML](#html)
-  * [Supported tags](#supported-tags)
+  * [Supported tags](#supported_tags)
 * [Text Rotation](#text_rotation)
 
 ## Overview

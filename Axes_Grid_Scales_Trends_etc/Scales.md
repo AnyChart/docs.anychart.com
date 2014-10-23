@@ -23,7 +23,7 @@
 ## Overview
 
 Scales allow you to control such features as minimum and maximum scale values, offsets, scale inversion, intervals, 
-scale type and so on for a single axis. To create additional axes - please read [Additional axes](Additional-Axis) 
+scale type and so on for a single axis. To create additional axes - please read [Additional axis](Additional-Axes) 
 first. To adjust axes display - please see: [Axes Basics tutorial](Axis_Basics).
 
 In this section we will explain main scales options.
