@@ -102,88 +102,6 @@ anychart.onDocumentReady(function() {
     'Problem Tracking': 93
   };
 
-  var DNT6MonthAvgData = [
-    [0, 153324],
-    [1, 145225],
-    [2, 104978],
-    [3, 43465],
-    [4, 12647],
-    [5, 38766],
-    [6, 67343],
-    [7, 158097],
-    [8, 198630],
-    [9, 196786],
-    [10, 187905],
-    [11, 149784],
-    [12, 127896],
-    [13, 147225],
-    [14, 136120],
-    [15, 126890],
-    [16, 106456],
-    [17, 136804],
-    [18, 67845],
-    [19, 46587],
-    [20, 22678],
-    [21, 13479],
-    [22, 46789],
-    [23, 176098]
-  ];
-  // DNT for last week.
-  var DNTWeekAvgData = [
-    [0, 164324],
-    [1, 145225],
-    [2, 104978],
-    [3, 43465],
-    [4, 12647],
-    [5, 38766],
-    [6, 67343],
-    [7, 158097],
-    [8, 198630],
-    [9, 196786],
-    [10, 187905],
-    [11, 149784],
-    [12, 127896],
-    [13, 147225],
-    [14, 136120],
-    [15, 126890],
-    [16, 106456],
-    [17, 136804],
-    [18, 67845],
-    [19, 46587],
-    [20, 22678],
-    [21, 13479],
-    [22, 46789],
-    [23, 176098]
-  ];
-  // DNT for yesterday.
-  var DNTYesterdayData = [
-    [0, 176456],
-    [1, 157951],
-    [2, 114978],
-    [3, 44645],
-    [4, 14636],
-    [5, 39123],
-    [6, 68234],
-    [7, 162234],
-    [8, 199630],
-    [9, 197146],
-    [10, 187905],
-    [11, 149784],
-    [12, 127896],
-    [13, 147225],
-    [14, 136120],
-    [15, 126890],
-    [16, 106456],
-    [17, 136804],
-    [18, 67845],
-    [19, 46587],
-    [20, 22678],
-    [21, 13479],
-    [22, 46789],
-    [23, 176098]
-  ];
-
-
   var Today = '2014/10/15';
   // endregion
 
@@ -366,7 +284,7 @@ anychart.onDocumentReady(function() {
 
   anychart.fontFamily = 'verdana, helvetica, arial, sans-serif';
 
-  function formSAReport(rawData, acceptedAvailabilities, sixMonthsData, weekData, yesterdayData) {
+  function formSAReport(rawData, acceptedAvail) {
     // we are not going to need different mapping on the raw data, so we map it at the same time
     // we use 'System' and 'Availability' fields in our calculations and 'x' and 'value' fields are used by the charts.
     var rawView = anychart.data.set(rawData).mapAs({'System': [0], 'Availability': [2], 'x': [1], 'value': [2]});
@@ -441,122 +359,17 @@ anychart.onDocumentReady(function() {
     title.useHtml(true);
     title.draw();
 
-    function formDNTReport(sixMonthsData, weekData, yesterdayData) {
-      var container = anychart.graphics.layer();
-      var titleHeight = 20;
-      var chartHeight = 150;
-      var reportBounds = anychart.math.rect(0, 0, 435, chartHeight + titleHeight);
-
-      var title = anychart.elements.title();
-      title.container(container);
-      title.parentBounds(reportBounds);
-      title.fontFamily('verdana, helvetica, arial, sans-serif');
-      title.fontWeight('normal');
-      title.text('<span style="color:#86cf38; font-size: 15px;">Daily Network Traffic</span> <span style="color: #666666; font-size: 10px; font-weight: normal;">(kilobytes)</span>');
-      title.orientation('top');
-      title.align('left');
-      title.vAlign('bottom');
-      title.margin(0);
-      title.padding(0, 0, 2, 0);
-      title.height(titleHeight);
-      title.useHtml(true);
-      title.draw();
-
-      container.path().moveTo(0, titleHeight).lineTo(reportBounds.width, titleHeight).stroke('2 #ccc');
-
-      var chart = anychart.cartesianChart();
-
-      var xAxisScale = anychart.scales.dateTime();
-      xAxisScale.minimum(Date.UTC(0, 0, 0, 0));
-      xAxisScale.maximum(Date.UTC(0, 0, 1, 0));
-      xAxisScale.ticks().count(5);
-      xAxisScale.minorTicks().interval(0, 0, 0, 1);
-      chart.xAxis().title().enabled(false);
-      chart.xAxis().staggerMode(false).overlapMode('allow');
-      chart.xAxis().labels().enabled(true).textFormatter(function(value) {
-        var date = new Date(value['tickValue']);
-        var h = (date.getUTCHours() % 12) || 12;
-        if (date.getUTCHours() == 0 && date.getUTCDay() == 0)
-          return h + '\nAM';
-        else if (date.getUTCHours() == 12)
-          return h + '\nPM';
-        else
-          return h;
-      });
-      chart.xAxis().minorLabels().enabled(true).textFormatter(function(value) {
-        var date = new Date(value['tickValue']);
-        var h = date.getUTCHours() % 12;
-        return h || 12;
-      });
-      chart.xAxis().minorTicks().length(0);
-      chart.xAxis().ticks().length(0).stroke('#ccc');
-      chart.xAxis().stroke('#ccc');
-      chart.xAxis().scale(xAxisScale);
-      chart.xAxis(1).stroke('#ccc');
-      chart.xAxis(1).ticks().enabled(false);
-      chart.xAxis(1).minorTicks().enabled(false);
-      chart.xAxis(1).title().enabled(false);
-      chart.xAxis(1).labels().enabled(false);
-      chart.xAxis(1).minorLabels().enabled(false);
-      chart.xAxis(1).orientation('top');
-      chart.yScale().maximumGap(0).minimumGap(0);
-      chart.yAxis().title().enabled(false);
-      chart.yAxis().minorTicks().enabled(false);
-      chart.yAxis().labels().textFormatter(function(value) {
-        return (value['tickValue'] / 1000).toFixed(0) + 'K';
-      });
-      chart.yAxis().stroke('#ccc');
-      chart.yAxis().ticks().stroke('#ccc');
-      chart.grid().layout('vertical').scale(xAxisScale).oddFill(null).evenFill(null);
-      chart.container(container);
-      chart.left(0);
-      chart.top(titleHeight);
-      chart.width(reportBounds.width);
-      chart.height(chartHeight);
-      chart.palette(['#aaa', '#666', '#000']);
-      var line1 = chart.line(sixMonthsData);
-      line1.name('Daily mean for last 6 month');
-      line1.markers().enabled(false);
-      var line2 = chart.line(weekData);
-      line2.name('Daily mean for last 7 days');
-      line2.markers().enabled(false);
-      var line3 = chart.line(yesterdayData);
-      line3.name('Yesterday');
-      line3.markers().enabled(false);
-      var legend = chart.legend();
-      legend.enabled(true);
-      legend.fontSize('10px');
-      legend.itemsLayout('horizontal');
-      legend.iconTextSpacing(3);
-      legend.container(container);
-      legend.title().enabled(false);
-      legend.titleSeparator().enabled(false);
-      legend.paginator().enabled(false);
-      legend.align('center');
-      legend.position('top');
-      legend.padding(0, 0, 2, 0);
-      legend.margin(3);
-      legend.background().enabled(false);
-      legend.itemsSpacing(4);
-
-      return chart;
-    }
-
-    var lastLine = formDNTReport(sixMonthsData, weekData, yesterdayData);
-
-    contents.push([lastLine, null, null, null]);
-
     var table = anychart.elements.table();
     table.contents(contents);
     table.top(title.getRemainingBounds().getTop()+10);
-    table.rowHeight(0, 20);
+
+    table.rowHeight(0, 30);   // Get first row and set height 30px
+    table.colWidth(1, 150);   // Get second column and set width 150 px
+
+
     table.rowHeight(8, 30);
     table.colWidth(3, 60);
     table.colWidth(1, 160);
-
-    table.cellBorder(null);
-
-    table.cellFill('lightyellow');
 
     table.cellTextFactory()
         .padding(0)
@@ -564,10 +377,8 @@ anychart.onDocumentReady(function() {
         .hAlign('left')
         .fontSize(13);
 
-    setupRowProp(table, 0, 'fill', '#444444');
     setupRowProp(table, 0, ['content', 'vAlign'], 'bottom');
     setupRowProp(table, 0, ['padding', 'bottom'], 2);
-    setupRowProp(table, 0, ['content', 'fontColor'], '#FFFFFF');
     setupColProp(table, 2, 'padding', [5, 5, 5, 5], true);
     setupColProp(table, 3, ['content', 'hAlign'], 'left', true);
     table.getCell(table.rowsCount() - 1, 2).padding(0, 2, 5);
@@ -592,7 +403,7 @@ anychart.onDocumentReady(function() {
   var formattedToday = (new Date(Today)).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
 
   var leftColumnReports = [
-    formSAReport(SARawData, SAAcceptedAvailability, DNT6MonthAvgData, DNTWeekAvgData, DNTYesterdayData)
+    formSAReport(SARawData, SAAcceptedAvailability),
   ];
 
   var top = 0;
