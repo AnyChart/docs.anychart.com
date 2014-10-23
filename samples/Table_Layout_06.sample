@@ -368,7 +368,7 @@ anychart.onDocumentReady(function() {
 
   anychart.fontFamily = 'verdana, helvetica, arial, sans-serif';
 
-  function formSAReport(rawData, acceptedAvail) {
+  function formSAReport(rawData, acceptedAvail, sixMonthsData, weekData, yesterdayData) {
     // we are not going to need different mapping on the raw data, so we map it at the same time
     // we use 'System' and 'Availability' fields in our calculations and 'x' and 'value' fields are used by the charts.
     var rawView = anychart.data.set(rawData).mapAs({'System': [0], 'Availability': [2], 'x': [1], 'value': [2]});
