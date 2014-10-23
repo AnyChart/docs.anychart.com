@@ -12,6 +12,7 @@ with a links to tutorials where you can find out how to create them (with the sa
 <tr><td>Area Chart</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Bar Chart</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Bubble Chart</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Bullet Chart</td><td>Yes</td><td>No</td></tr>
 <tr><td>Candlestick Chart</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Column Chart</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Donut Chart</td><td>Yes</td><td>Yes</td></tr>
@@ -27,9 +28,5 @@ with a links to tutorials where you can find out how to create them (with the sa
 <tr><td>Spline Chart</td><td>Yes</td><td>Yes</td></tr>    
 <tr><td>Spline-Area Chart</td><td>Yes</td><td>Yes</td></tr> 
 <tr><td>Step-Area Chart</td><td>Yes</td><td>Yes</td></tr> 
-<tr><td>Step-Line Chart</td><td>Yes</td><td>Yes</td></tr>                                 
+<tr><td>Step-Line Chart</td><td>Yes</td><td>Yes</td></tr>                                                                  
 </table>
-
-
-
-
