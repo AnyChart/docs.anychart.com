@@ -1,7 +1,7 @@
 # Table Layout
 
 * [Overview](#overview)
-* [Table_Content](#table_content)
+* [Table Content](#table_content)
 * [Visual Settings](#visual_settings)
   * [Cells Width and Height](#cells_width_and_height)
   * [Fill](#fill)
