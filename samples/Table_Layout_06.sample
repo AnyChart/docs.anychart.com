@@ -399,6 +399,15 @@ anychart.onDocumentReady(function() {
       var line = anychart.cartesian.series.line(systemData);
       // we set come line properties to make it look better and also we set the common x scale
       line.stroke('2 #000');
+      line.tooltip().contentFormatter(function(e){
+        var d = new Date(e.x);
+        var options = {
+          year: 'numeric',
+          month: 'long'
+        };
+        var transformedDate =  d.toLocaleDateString('en-US', options);
+        return transformedDate;
+      });
       line.xScale(lineScale);
 
 
