@@ -1,7 +1,7 @@
 # Table Layout
 
 * [Overview](#overview)
-* [Table Content](#table_content)
+* [Acceptable Content](#acceptable_content)
 * [Visual Settings](#visual_settings)
   * [Cells Width and Height](#cells_width_and_height)
   * [Fill](#fill)
@@ -23,7 +23,7 @@ instantaneous and informed decisions to be made at a glance.
 Table Layout helps to manage several elements within the limits of one chart container. Table may help to control 
 visual appearance and logic structure of data.
 
-## Table Content
+## Acceptable Content
 
 A cell in table layout dashboard may contain: 
  * String with simple text or a number
