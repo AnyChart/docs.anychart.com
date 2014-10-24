@@ -361,7 +361,7 @@ anychart.onDocumentReady(function() {
     table.colWidth(3, 60);
     table.colWidth(1, 160);
 
-    table.cellFill('#D5D84B');
+    table.cellFill('#BFF4C2');
 
     table.cellTextFactory()
         .padding(0)
