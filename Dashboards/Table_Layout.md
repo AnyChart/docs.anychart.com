@@ -22,7 +22,7 @@ instantaneous and informed decisions to be made at a glance.
 
 Table Layout helps to manage several elements within the limits of one chart container. Table may help to control 
 visual appearance and logic structure of data.
-  
+
 ## Content
 
 A cell in table layout dashboard may contain: 

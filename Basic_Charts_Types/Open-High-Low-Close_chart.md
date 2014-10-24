@@ -12,7 +12,7 @@
   * [Basic sample](#basic_sample)
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Colors](#colors)
-  * [Colorizing elements](#color_setting)
+  * [Colorizing elements](#colorizing_elements)
 * [Advanced OHLC Chart sample - OHLC, Line and Range Area Combination](#advanced_ohlc_chart_sample_-_ohlc,_line_and_range_area_combination)
 
 ## Overview
@@ -221,7 +221,7 @@ scale and settings and much more. All axis features are described in
 [Axes Basics](../Axes_Grid_Scales_Trends_etc/Axis_Basics) tutorial. In this section we will quickly demonstrate how 
 axis orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
-### Positioning
+### Orientation
 
 With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** parameter
  of **.yAxis()** or **.xAxis()** methods.
