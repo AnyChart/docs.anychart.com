@@ -365,7 +365,7 @@ anychart.onDocumentReady(function() {
         .hAlign('left')
         .fontSize(13);
 
-    setupColProp(table, 2, 'padding', [5, 5, 5, 5], true);
+    setupColProp(table, 2, 'padding', [10], true);
     setupColProp(table, 3, ['content', 'hAlign'], 'left', true);
     table.container(stage);
 
