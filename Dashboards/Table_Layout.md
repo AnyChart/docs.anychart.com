@@ -7,7 +7,7 @@
   * [Fill](#fill)
   * [Border](#border)
   * [Text Settings and Padding](#text_settings_and_padding)
-  * [Cols and Rows Span](#cols_and_rows_span)
+  * [Span](#span)
 * [Using Table](#using_table)
   * [Title](#title)
   * [Header Row](#header_row)
