@@ -63,7 +63,7 @@ it with an image. It can be achieved with **.fill()** parameter.
   
   
 This section contains information on colorizing the whole table and each of the cells separately. To find out all 
-possible ways of controlling background color of an element, please see [background controlling](#../General_Appearance_Settings/Background)
+possible ways of controlling background color of an element, please see [background controlling](../General_Appearance_Settings/Background)
  tutorial
 
 #### Table fill
@@ -79,8 +79,7 @@ Background for all the table can be configured with **.cellFill()** parameter.
 #### Even and Odd Rows
 
 As a more advanced way of controlling table's background color there are parameters to adjust colors of even and/or 
-odd row in the table. Parameter **.cellEvenFill()** is responsible for the background color of even rows and **.cellOddFill**
-is responsible for the background color of all odd rows.
+odd row in the table. Parameter **.cellEvenFill()** is responsible for the background color of even rows and **.cellOddFill()** is responsible for the background color of all odd rows.
 
 ```
   table.cellEvenFill('darkgreen');
