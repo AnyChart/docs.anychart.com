@@ -89,10 +89,8 @@ Rotated labels:
 {sample}AGST\_Axes\_Basic\_04{sample}
 
 ```  
-  chart.yAxis().staggerMode(true);
-  chart.yAxis().staggerLines(2);
-  chart.xAxis().staggerMode(true);
-  chart.xAxis().staggerLines(3);
+  chart.xAxis().staggerMode(true);  //enables stagger mode
+  chart.xAxis().staggerLines(2);    //set the number of lines for labels
 ```
 
 {sample}AGST\_Axes\_Basic\_05{sample}
