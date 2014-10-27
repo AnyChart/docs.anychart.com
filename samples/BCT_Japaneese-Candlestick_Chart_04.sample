@@ -6,11 +6,11 @@ anychart.onDocumentReady(function() {
 
     //data
     var data = [
-        {x: new Date ('28-Aug-07'),open: 50.53, high:50.98, low:0.79, close:5.40},
-        {x: new Date ('29-Aug-07'),open: 10.84, high:50.30, low:5.23, close:5.88},
-        {x: new Date ('30-Aug-07'),open: 6.36,  high:50.40, low:5.58, close:50.40},
-        {x: new Date ('31-Aug-07'),open: 51.10, high:51.50, low:5.47, close:9},
-        {x: new Date ('4-Sep-07'), open: 20,    high:52.00, low:5.62, close:20}
+        {x: Date.UTC(2007, 7, 27), open: 50.53, high:50.98, low:0.79, close:5.40},
+        {x: Date.UTC(2007, 7, 28), open: 10.84, high:50.30, low:5.23, close:5.88},
+        {x: Date.UTC(2007, 7, 29), open: 6.36,  high:50.40, low:5.58, close:50.40},
+        {x: Date.UTC(2007, 7, 30), open: 51.10, high:51.50, low:5.47, close:9},
+        {x: Date.UTC(2007, 8, 4),  open: 20,    high:52.00, low:5.62, close:20}
     ];
 
     //chart type
@@ -29,8 +29,8 @@ anychart.onDocumentReady(function() {
 
      //adjust x scale type
     chart.xScale()
-        .minimum(new Date ('27-Aug-07'))
-        .maximum(new Date ('5-Sep-07'))
+        .minimum(Date.UTC(2007, 7, 26))
+        .maximum(Date.UTC(2007, 8, 5))
         .ticks()
             .interval(0,0,1);
 
