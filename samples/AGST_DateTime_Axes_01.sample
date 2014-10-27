@@ -16,10 +16,10 @@ anychart.onDocumentReady(function() {
 
     //setting data
     chart.rangeBar([
-        {x: 'Development', low: new Date('2000-01-01'), high: new Date('2002-02-15')},
-        {x: 'Internal Testing', low: new Date('2001-06-01'), high: new Date('2003-07-01'), fill: 'red'},
-        {x: 'Field Tests', low: new Date('2002-02-25'), high: new Date('2003-07-01'), fill: 'green'},
-        {x: 'Licensing', low: new Date('2003-07-01'), high: new Date('2004-07-01'), fill: 'yellow'}
+        {x: 'Development', low: Date.UTC(2000, 01, 01), high: Date.UTC(2002, 02, 15)},
+        {x: 'Internal Testing', low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01), fill: 'red'},
+        {x: 'Field Tests', low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01), fill: 'green'},
+        {x: 'Licensing', low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01), fill: 'yellow'}
     ]).hoverFill('#444444').stroke('gray 0.8').tooltip().enabled(false);
 
     //adjusting labels for dateTime scale. Otherwise it would be the number of milliseconds between the date and midnight January 1 1970

@@ -24,17 +24,17 @@ anychart.onDocumentReady(function() {
     chart.xScale(dateTimeScale);
 
     var series = chart.line([
-        {value: 1.172, x: new Date('2003-09-14')},
-        {value: 1.916, x: new Date('2004-09-13')},
-        {value: 5.57, x: new Date('2005-09-13')},
-        {value: 15.0, x: new Date('2006-09-13')},
-        {value: 144, x: new Date('2007-09-13')},
+        {value: 1.172, x: Date.UTC(2003, 09, 14)},
+        {value: 1.916, x: Date.UTC(2004, 09, 13)},
+        {value: 5.57, x: Date.UTC(2005, 09, 13)},
+        {value: 15.0, x: Date.UTC(2006, 09, 13)},
+        {value: 144, x: Date.UTC(2007, 09, 13)},
     ]);
 
     //adjust tooltips
     series.tooltip().enabled(true).contentFormatter(function() {
         var value = (this.value).toFixed(0);
-        var date = this.x;
+        var date = new Date(this.x);
         var options = {year: 'numeric', month: 'numeric', day: 'numeric'};
         var transformedDate =  date.toLocaleDateString('en-US', options);
 
