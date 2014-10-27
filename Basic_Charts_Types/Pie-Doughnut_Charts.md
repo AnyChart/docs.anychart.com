@@ -4,8 +4,8 @@
 * [Chart](#chart)
   * [Pie Chart](#pie_chart)
   * [Doughnut Chart](#doughnut_chart)
-* [Slices Sorting](#sorting)
-* [Exploded Slices](#exploded)
+* [Slices Sorting](#slices_sorting)
+* [Exploded Slices](#exploded_slices)
 * [Visualization](#visualization)
   * [Basic Sample](#basic_sample)
 * [Labels and Tooltips](#labels_and_tooltips)
@@ -104,7 +104,6 @@ And here is the same data as above, displayed as a Doughnut chart:
 
 {sample}BCT\_PieDoughnutChart\_02{sample}
 
-<a name="sorting"/>
 ## Slices Sorting
 
 If you want you can sort the series in Pie and Donut Chart - Ascending or Descending, this feature is controlled using 

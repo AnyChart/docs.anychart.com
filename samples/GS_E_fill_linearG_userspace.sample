@@ -21,7 +21,7 @@ anychart.onDocumentReady(function() {
             .fill(fillSettings)
             .bounds(anychart.math.rect(20, 20, 100, 70))
             .container(stage).draw();
-    stage.text(20, 3, 'shape 2');
+    stage.text(60, 125, 'shape 2');
     anychart.elements.background()
             .fill(fillSettings)
             .bounds(anychart.math.rect(60, 140, 70, 50))

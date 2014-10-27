@@ -1,5 +1,5 @@
 {:index 1}
-# Axes Basics
+# Axis Basics
 
 * [Overview](#overview)
 * [Declaration](#declaration)
@@ -53,11 +53,12 @@ Learn how to format keywords in Number Formatting section.-->
 
 ## Position
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position attribute of **.yAxis()** or **.xAxis()** methods. Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion settings in [Axes Positioning and Inverting Templates](Axes-Positioning).
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position attribute of **
+.yAxis()** or **.xAxis()** methods. Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion settings in [Axes Positioning and Inverting Templates](Axis_Orientation).
 
 ```
-chart.xAxis(0).orientation('top);
-chart.yAxis(0).orientation('right');
+  chart.xAxis(0).orientation('top');
+  chart.yAxis(0).orientation('right');
 ```
 
 And here is the demonstration of this feature on the Single series column chart:
@@ -69,7 +70,7 @@ And here is the demonstration of this feature on the Single series column chart:
 To enable axes labels you need to specify **.labels().enabled(true)** in desired axis. You can specify how labels should 
 look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
 
-Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Tutorial)
+Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Formatting)
 
 Look at the demonstration of possible labels display modes: "Normal" and "Stager".
 
@@ -89,10 +90,8 @@ Rotated labels:
 {sample}AGST\_Axes\_Basic\_04{sample}
 
 ```  
-  chart.yAxis().staggerMode(true);
-  chart.yAxis().staggerLines(2);
-  chart.xAxis().staggerMode(true);
-  chart.xAxis().staggerLines(3);
+  chart.xAxis().staggerMode(true);  //enables stagger mode
+  chart.xAxis().staggerLines(2);    //set the number of lines for labels
 ```
 
 {sample}AGST\_Axes\_Basic\_05{sample}

@@ -18,7 +18,7 @@ Stoke color can be set in several ways:
     otherParams ...
  }
 ```
-Read more about color settings in [Elements Fill](Elements_Fill) article.
+Read more about color settings in [Elements Fill](Fill) article.
 
 Stroke color is set similar to fill procedure. The setting supports fill with:
 * Solid color,

@@ -90,7 +90,7 @@ and **second column** defines bar value.
 
 {sample}BCT\_BarChart\_01{sample}
 
-### Multi-series Bar Chart
+### Multi-series
 
 To compare two or more data rows you have to use multi-series bar charts as it shown in the sample below.
 
@@ -170,7 +170,7 @@ With AnyChart you can place axes to any side of the chart, all you need to do is
 parameter of **.yAxis()** or **.xAxis()** methods.
 
 Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and 
-inversion settings in [Axes Positioning](../Axes_Grid_Scales_Trends_etc/Axis_Position) Templates.
+inversion settings in [Axes Orientation](../Axes_Grid_Scales_Trends_etc/Axis_Orientation) Templates.
 
 ```
     chart.xAxis(0).orientation('right');

@@ -2,7 +2,7 @@
 
  * [Overview](#overview)
  * [Chart](#chart)
- * [Temperature Range Chart Sample](#temperature_range_chart_sample)
+ * [Temperature Range Area Chart Sample](#temperature_range_area_chart_sample)
  * [Configuration](#configuration)
 
 ## Overview

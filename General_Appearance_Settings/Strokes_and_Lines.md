@@ -42,7 +42,7 @@ Solid color type is default for any object of Anychart and you don't need to use
     series.stroke('red');
 ```
 
-## Gradient Fill
+## Gradient Color
 
 To color a line with a gradient transition you should set color keys, opacity, angle of coloring and stroke thickness. <!--Color keys can be found in [Link in need]Coloring methods[/Link]-->
 
