@@ -36,7 +36,7 @@ If you want to declare an additional axis all you need to do is to set index to 
 
 Here is the sample of the chart that shows three additional Y axes and almost no configuration is done, as you can see three additional axes are drawn on the right side of data plot and their maximum and minimum values are calculated automatically (and they are the same as main Y axis have):
 
-{sample}AGST\_Additional\_Axes\_01{sample}
+{sample :width 100 :height 100}AGST\_Additional\_Axes\_01{sample}
 
 Another example of multiple axes use is multiple Y Axes along with multiple X Axes, which may be very useful in certain areas:
 
