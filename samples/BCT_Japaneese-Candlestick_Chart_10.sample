@@ -82,6 +82,7 @@ anychart.onDocumentReady(function() {
 
     //adjust x scale
     chart.xScale()
+        .inverted(true)
         .minimum(Date.UTC(2007, 05, 10))
         .maximum(Date.UTC(2007, 08, 08))
         .ticks()
