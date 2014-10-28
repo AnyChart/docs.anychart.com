@@ -99,7 +99,7 @@ That's it - all we have to add are axes and chart titles and put all we've done 
         .orientation('top')                                         // set y axis position
         .title()
             .text('Time Plan');                                     // set y axis title
-    chart.xAxis().title().text('Tasks');                \           // set x axis title
+    chart.xAxis().title().text('Tasks');                            // set x axis title
 ```
 That's it - chart with DateTime Y Axis is ready:
 
