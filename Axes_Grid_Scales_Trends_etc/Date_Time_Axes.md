@@ -76,7 +76,7 @@ Now we need to create data for range bars. Here it is:
 Now we will create DateTime Y Axis and set it to show process in years (explained later):
 
 ```
-chart.yScale(anychart.scales.dateTime().minimum(new Date('1999-01-01')).maximum(new Date('2005-01-01')));
+chart.yScale(anychart.scales.dateTime());
 ```
 
 That's it - all we have to add are axes and chart titles and put all we've done together:
