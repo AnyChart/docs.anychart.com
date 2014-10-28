@@ -54,20 +54,22 @@ Lets create a simple Range Bar chart with DateTime Y Axis. For the first we have
 </tbody>
 </table>
 
-Data is collected, now we define scale minimum and maximum:
+Data is collected, now we adjust settings for ticks on the scale:
 
 ```
-chart.yScale(anychart.scales.dateTime().minimum(new Date('1999-01-01')).maximum(new Date('2005-01-01')));
+    chart.yScale(anychart.scales.dateTime());
+    chart.yScale().ticks().interval(1);
+    chart.yScale().minorTicks().interval(0, 2);
 ```
 
-Now we need to create data for range bars, here it is:
+Now we need to create data for range bars. Here it is:
 
 ```    
     chart.rangeBar([
-        {x: 'Development', low: new Date('2000-01-01'), high: new Date('2002-02-15')},
-        {x: 'Internal Testing', low: new Date('2001-06-01'), high: new Date('2003-07-01')},
-        {x: 'Field Tests', low: new Date('2002-02-25'), high: new Date('2003-07-01')},
-        {x: 'Licensing', low: new Date('2003-07-01'), high: new Date('2004-07-01')'}
+        {x: 'Development', low: Date.UTC(2000, 01, 01), high: Date.UTC(2002, 02, 15)},
+        {x: 'Internal Testing', low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01)},
+        {x: 'Field Tests', low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01)},
+        {x: 'Licensing', low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01)}
     ]);
 ```
 
@@ -77,19 +79,27 @@ Now we will create DateTime Y Axis and set it to show process in years (explaine
 chart.yScale(anychart.scales.dateTime().minimum(new Date('1999-01-01')).maximum(new Date('2005-01-01')));
 ```
 
-Thats it - all we have to add are axes and chart titles and put all we've done together:
+That's it - all we have to add are axes and chart titles and put all we've done together:
 
 ```
-    chart.title().text('X113 Destroyer Development Plan');
-    chart.yScale(anychart.scales.dateTime().minimum(new Date('1999-01-01')).maximum(new Date('2005-01-01')));
+    chart.title().text('X113 Destroyer Development Plan');          // set chart title
+    chart.yScale(anychart.scales.dateTime());                       // set yScale type
+    chart.yScale().ticks().interval(1);                             // set interval for major ticks equal to one year
+    chart.yScale().minorTicks().interval(0, 2);                     // set interval for minor ticks equal to two months
+    
+    //set data
     chart.rangeBar([
-        {x: 'Development', low: new Date('2000-01-01'), high: new Date('2002-02-15')},
-        {x: 'Internal Testing', low: new Date('2001-06-01'), high: new Date('2003-07-01')},
-        {x: 'Field Tests', low: new Date('2002-02-25'), high: new Date('2003-07-01')},
-        {x: 'Licensing', low: new Date('2003-07-01'), high: new Date('2004-07-01')}
+        {x: 'Development', low: Date.UTC(2000, 01, 01), high: Date.UTC(2002, 02, 15)},
+        {x: 'Internal Testing', low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01)},
+        {x: 'Field Tests', low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01)},
+        {x: 'Licensing', low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01)}
     ]);
-    chart.yAxis().orientation('top').title().text('Time Plan');
-    chart.xAxis().title().text('Tasks');
+    
+    chart.yAxis()
+        .orientation('top')                                         // set y axis position
+        .title()
+            .text('Time Plan');                                     // set y axis title
+    chart.xAxis().title().text('Tasks');                \           // set x axis title
 ```
 That's it - chart with DateTime Y Axis is ready:
 
