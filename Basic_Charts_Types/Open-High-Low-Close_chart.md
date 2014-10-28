@@ -35,7 +35,7 @@ Some traders find the candlestick chart easier to read.
 OHLC chart uses four values
 
 ```
-'28-Aug-07', 511.53, 514.98, 505.79, 506.40
+    {x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
 ```
 
 ### Single Series
@@ -93,11 +93,11 @@ Converted Data looks like:
 
 ```
     var data = [
-        ['28-Aug-07', 511.53, 514.98, 505.79, 506.40],
-        ['29-Aug-07', 507.84, 513.30, 507.23, 512.88],
-        ['30-Aug-07', 512.36, 515.40, 510.58, 511.40],
-        ['31-Aug-07', 513.10, 516.50, 511.47, 515.25],
-        ['4-Sep-07', 515.02, 528.00, 514.62, 525.15]
+        {x: Date.UTC(2007, 8, 28), open:511.53, high:514.98, low:505.79, close:506.40},
+        {x: Date.UTC(2007, 8, 29), open:507.84, high:513.30, low:507.23, close:512.88},
+        {x: Date.UTC(2007, 8, 30), open:512.36, high:515.40, low:510.58, close:511.40},
+        {x: Date.UTC(2007, 8, 31), open:513.10, high:516.50, low:511.47, close:515.25},
+        {x: Date.UTC(2007, 9, 4), open:515.02, high:528.00, low:514.62, close:525.15}
     ];
     chart = anychart.areaChart();
     chart.ohlc(data);
