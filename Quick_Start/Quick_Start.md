@@ -73,7 +73,6 @@ You can copy this to a file on your computer and open it in your browser to disp
 ### Learn more
 * Explore [JavaScript API Reference](http://api.anychart.com/)
 * See [Playground demos](http://playground.anychart.com/)
-* Check {api:anychart#barChart}bar{api}
 
 ### Subscribe
 * Follow us on [Facebook](https://www.facebook.com/AnyCharts) and [Twitter](https://twitter.com/intent/follow?&screen_name=anychart&original_referer=http%3A%2F%2Fdocs.anychart.com)
