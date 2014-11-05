@@ -53,7 +53,8 @@ With AnyChart it is possible to color background with a solid color, with a grad
 
 ### Solid
 
-When fill type is set to "Solid", background is filled with one color and you can control this color opacity.<!-- Colors can be defined with any of the methods described in [Linl in need]]Color management tutorial[/link].--> Sample solid fill:
+When fill type is set to "Solid", background is filled with one color and you can control this color opacity. Colors
+can be defined with any of the methods described in [Color management tutorial](Color_Management).Sample solid fill:
 
 ```
     chart.background().fill('gold');

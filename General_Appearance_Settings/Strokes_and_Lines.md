@@ -36,7 +36,8 @@ There are two types of line coloring "Solid" and "Gradient"
 
 ## Solid Color
 
-Solid color type is default for any object of Anychart and you don't need to use any special settings to apply Solid color. <!--For more information see [Link in need]Coloring methods[/Link]-->
+Solid color type is default for any object of Anychart and you don't need to use any special settings to apply Solid
+color. For more information see [Color Management](Color_Management) article.
 
 ```
     series.stroke('red');

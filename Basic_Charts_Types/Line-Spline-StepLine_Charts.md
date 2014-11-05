@@ -357,4 +357,3 @@ need to set ".stroke()" parameter for a series. In the sample below we have 5 se
 color each series to different color. Here is the sample:
 
 {sample}BCT\_LineChart\_11{sample}
-<!--Current Page Online URL: Line Chart-->

@@ -117,7 +117,8 @@ with x axis labels symbols limited to 3.
 You can tune visual appearance of axes labels according to your chart design. Label visual settings consist of background 
 settings (which include margins and border), font settings and effects.
   
-<!--In general you can learn more about these settings in: [links need]Background tutorial, Fonts tutorial and Effects tutorial.[/links]--> 
+In general you can learn more about these settings in: [Background tutorial](../General_Appearance_Settings/Background), [Fonts tutorial](../General_Appearance_Settings/Fonts)<!-- and Effects
+tutorial[/links]-->.
 In this section we will cover the basics that allow to tune labels appearance and some special features (Multi-line labels).
 
 ## Font
@@ -140,8 +141,8 @@ With AnyChart it is possible to control labels' alignment. It is useful, for exa
 
 ### Background
 
-<!--As stated in the beginning of this section - you can learn more about background settings in [link]Background tutorial[/link], 
-and here we will demonstrate the most usual task - enabling/disabling background and configuring labels border.-->
+As stated in the beginning of this section - you can learn more about background settings in [Background tutorial](../General_Appearance_Settings/Background),
+and here we will demonstrate the most usual task - enabling/disabling background and configuring labels border.
 
 Labels background is configured with **.background()** method of **.labels()**. Here are sample settings - background is 
 enabled for xAxis and only stroke method is adjusted:
