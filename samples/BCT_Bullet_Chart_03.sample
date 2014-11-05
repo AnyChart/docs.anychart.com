@@ -11,7 +11,7 @@ anychart.onDocumentReady(function() {
   // Set chart to render on stage
   verticalChart.container(stage);
   // Chart title
-  verticalChart.title().text('Vertical Layout').hAlign('center');
+  verticalChart.title().text('Vertical\nLayout').hAlign('center');
   // Set chart size and position settings
   verticalChart.bounds('75%', 0, '25%', '100%');
   // Set chart layout

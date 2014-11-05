@@ -16,7 +16,7 @@
 ## Overview
 
 Table layout is a kind of a dashboard tools, which provides clear and effective way of positioning data on plot.
-Dashboard is "an easy to read, often single page, real-time user interface, showing a graphical presentation of
+Dashboard is an easy to read, often single page, real-time user interface, showing a graphical presentation of
 the current status (snapshot) and historical trends of an organization’s key performance indicators to enable
 instantaneous and informed decisions to be made at a glance.
 
@@ -47,7 +47,7 @@ Table layout consist of multiple cells and each of them may contain different ty
 row and **.colWidth()** parameter for controlling width of a column.
   
   
-Sample below demonstrates controlling the height of the first row and width of the second column
+Sample below demonstrates height controlling of the first row and width of the second column.
 
 ```
   table.rowHeight(0, 30);   // Get first row and set height 30px
