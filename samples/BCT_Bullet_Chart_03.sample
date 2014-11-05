@@ -13,7 +13,7 @@ anychart.onDocumentReady(function() {
   // Chart title
   verticalChart.title().text('Vertical Layout').hAlign('center');
   // Set chart size and position settings
-  verticalChart.bounds('80%', 0, '25%', '100%');
+  verticalChart.bounds('75%', 0, '25%', '100%');
   // Set chart layout
   verticalChart.layout('vertical');
   // Create chart ranges
