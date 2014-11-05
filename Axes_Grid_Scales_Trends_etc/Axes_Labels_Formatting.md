@@ -119,6 +119,8 @@ settings (which include margins and border), font settings and effects.
   
 In general you can learn more about these settings in: [Background tutorial](../General_Appearance_Settings/Background), [Fonts tutorial](../General_Appearance_Settings/Fonts)<!-- and Effects
 tutorial[/links]-->.
+
+  
 In this section we will cover the basics that allow to tune labels appearance and some special features (Multi-line labels).
 
 ## Font
