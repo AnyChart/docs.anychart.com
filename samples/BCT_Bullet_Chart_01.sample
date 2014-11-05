@@ -18,6 +18,9 @@ anychart.onDocumentReady(function() {
   // Create chart ranges
   chart.range().from(0).to(737.166);  //maximum annual income
 
+  // set maximum value for scale equal to the maximum value of the range marker
+  chart.scale().maximum(chart.range().to());
+
   // Initiate chart drawing
   chart.container('container').draw();
 });

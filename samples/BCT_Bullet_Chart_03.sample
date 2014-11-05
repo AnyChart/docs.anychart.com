@@ -11,9 +11,9 @@ anychart.onDocumentReady(function() {
   // Set chart to render on stage
   verticalChart.container(stage);
   // Chart title
-  verticalChart.title().text('Vertical Layout');
+  verticalChart.title().text('Vertical Layout').hAlign('center');
   // Set chart size and position settings
-  verticalChart.bounds('70%', 0, '30%', '100%');
+  verticalChart.bounds('80%', 0, '20%', '100%');
   // Set chart layout
   verticalChart.layout('vertical');
   // Create chart ranges
@@ -28,11 +28,11 @@ anychart.onDocumentReady(function() {
   // Set chart to render on stage
   horizontalChart.container(stage);
   // Set chart size and position settings
-  horizontalChart.bounds(0, '35%', '70%', '30%');
+  horizontalChart.bounds(0, '35%', '80%', '30%');
   // Set chart layout
   horizontalChart.layout('horizontal');
   // Chart title
-  horizontalChart.title().text('Horizontal\nLayout');
+  horizontalChart.title().text('Horizontal\nLayout').hAlign('center');
   // Create chart ranges
   horizontalChart.range().from(0).to(5);
   horizontalChart.range(1).from(5).to(10);
