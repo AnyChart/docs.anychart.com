@@ -1,0 +1,36 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+  var tree = anychart.data.tree([
+  {},
+  {name: 'Node 1'},
+  {name: 'Parent Node', children:[
+     {name: 'Child Node 1'},
+     {name: 'Child Node 2'},
+    ]},
+]);
+  stage = acgraph.create('container', '100%', '100%');
+  dataGrid = anychart.elements.dataGrid();
+  dataGrid.container(stage);
+  dataGrid.data(tree);
+
+  dataGrid.listen('signal', dataGrid.draw, false, dataGrid);
+  dataGrid.column(1).width(250);
+
+
+  dataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
+
+
+  dataGrid.draw();
+});
+function labelTextSettingsOverrider(label, dataItem) {
+  if (!dataItem.getParent()) {
+    label.fontColor('#0055aa').fontWeight('bold').fontSize(12).fontStyle('italic');
+  } else {
+    if (dataItem.numChildren()) {
+      label.fontColor('#559955').fontWeight('bold').fontStyle('italic');
+    }
+  }
+}

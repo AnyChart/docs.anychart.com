@@ -60,6 +60,7 @@ representing data division.
 
 
 
+
  which implementing this ADT that simulates a hierarchical tree structure, with a root value and subtrees of children, represented as a set of linked nodes.
 . for   of presenting data throw hierarchical tree structure, with a root value and subtrees of children,
 represented as a set of linked nodes. Tree structure is very flexible thus convenient for demonstration parameters ,
