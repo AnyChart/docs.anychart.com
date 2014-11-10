@@ -16,7 +16,7 @@ anychart.onDocumentReady(function() {
   //set chart type
   chart = anychart.areaChart();
 
-  chart.title().text('Click on Chart to Add a Point ');
+  chart.title().text('Click on the Button to Append a Point ');
 
   //set data
   var area = chart.splineArea(dataSet);
@@ -24,26 +24,44 @@ anychart.onDocumentReady(function() {
   //first index for new point
   var indexSetter = 6;
 
-  //set listener on chart
-  area.listen(
+  //create new button
+  var triggerButton = document.createElement('div');
 
-    //listener type
-    anychart.enums.EventType.POINT_CLICK,
+  //set button style
+  triggerButton.style.top = '5px';
+  triggerButton.style.right = '5px';
+  triggerButton.style.width = 'auto';
+  triggerButton.style.height = 'auto';
+  triggerButton.style.backgroundColor = '#444444';
+  triggerButton.style.color = 'white';
+  triggerButton.style.position = 'absolute';
+  triggerButton.style.zIndex = 2;
+  triggerButton.style.transition = '0.5s';
+  triggerButton.style.textAlign = 'center';
+  triggerButton.style.border = '3px solid #444444';
+  triggerButton.style.borderRadius = '7px 7px 7px 7px';
+  triggerButton.style.fontSize = '18px';
+  triggerButton.innerHTML = 'Append Point';
+  triggerButton.onclick = function() {
+    addPoint();
+  };
 
-    //function, if listener triggers
-    function(e) {
-      //append data
-      dataSet.append({
+  //append button to container
+  container.appendChild(triggerButton);
 
-        //x value
-        x: 'new P' + indexSetter,
+  //function, if listener triggers
+  function addPoint(e) {
+    //append data
+    dataSet.append({
 
-        //random value from 1 to 100
-        value : Math.floor((Math.random() * 100)+ 1)
-      });
-      indexSetter++;
-    }
-  );
+      //x value
+      x: 'new P' + indexSetter,
+
+      //random value from 1 to 100
+      value : Math.floor((Math.random() * 100)+ 1)
+    });
+    indexSetter++;
+  }
 
   //set container and draw chart
   chart.container('container').draw();

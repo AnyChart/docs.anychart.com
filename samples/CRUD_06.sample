@@ -44,29 +44,29 @@ anychart.onDocumentReady(function() {
   chart.container('container').draw();
 
   //create new button
-  var infoContainer = document.createElement('div');
+  var streamButton = document.createElement('div');
 
   //set button style
-  infoContainer.style.top = 0;
-  infoContainer.style.right = 0;
-  infoContainer.style.width = 'auto';
-  infoContainer.style.height = 'auto';
-  infoContainer.style.backgroundColor = '#444444';
-  infoContainer.style.color = 'white';
-  infoContainer.style.position = 'absolute';
-  infoContainer.style.zIndex = 2;
-  infoContainer.style.transition = '0.5s';
-  infoContainer.style.textAlign = 'center';
-  infoContainer.style.border = '3px solid #444444';
-  infoContainer.style.borderRadius = '7px 7px 7px 7px';
-  infoContainer.style.fontSize = '18px';
-  infoContainer.innerHTML = 'Start' + '\n' + 'stream';
-  infoContainer.onclick = function() {
+  streamButton.style.top = 0;
+  streamButton.style.right = 0;
+  streamButton.style.width = 'auto';
+  streamButton.style.height = 'auto';
+  streamButton.style.backgroundColor = '#444444';
+  streamButton.style.color = 'white';
+  streamButton.style.position = 'absolute';
+  streamButton.style.zIndex = 2;
+  streamButton.style.transition = '0.5s';
+  streamButton.style.textAlign = 'center';
+  streamButton.style.border = '3px solid #444444';
+  streamButton.style.borderRadius = '7px 7px 7px 7px';
+  streamButton.style.fontSize = '18px';
+  streamButton.innerHTML = 'Start' + '\n' + 'stream';
+  streamButton.onclick = function() {
     startStream();
   };
 
   //append button to container
-  container.appendChild(infoContainer);
+  container.appendChild(streamButton);
 
   //first index for new point
   var indexSetter = 21;
@@ -74,7 +74,7 @@ anychart.onDocumentReady(function() {
   function startStream() {
 
     //adjust button content
-    infoContainer.innerHTML = 'Stop' + '\n' + 'stream';
+    streamButton.innerHTML = 'Stop' + '\n' + 'stream';
 
     //set interval of data stream
     var myVar = setInterval(
@@ -98,14 +98,14 @@ anychart.onDocumentReady(function() {
       }, 200            //interval
     );
 
-    infoContainer.onclick = function(){
+    streamButton.onclick = function(){
 
       //clears interval which stops streaming
       clearInterval(myVar);
-      infoContainer.onclick = function() {
+      streamButton.onclick = function() {
         startStream();
       };
-    infoContainer.innerHTML = 'Start' + '\n' + 'stream';
+    streamButton.innerHTML = 'Start' + '\n' + 'stream';
     };
   }
 });

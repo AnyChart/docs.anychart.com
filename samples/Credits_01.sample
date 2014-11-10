@@ -13,7 +13,7 @@ anychart.onDocumentReady(function() {
     chart.credits().enabled(true);
     
     //new text for credits
-    chart.credits().text('My company');
+    chart.credits().text('Company');
 
     //draw
     chart.container('container').draw();
