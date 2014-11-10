@@ -35,7 +35,7 @@ AnyChart allows to adjust chart at any moment after it is displayed. The most si
     dataSet.append({x: 'P6', value: 20});
 ```
 
-We can set an event handler on any element. Here is a sample with adding point after click on an areaChart
+Here is a sample with the button which adds a point on a click.
 
 {sample}CRUD\_01{sample}
 
@@ -45,7 +45,9 @@ Append method helps to add information at the end of the data set. To add inform
 
 ### Read
 
-Adding custom data is nice function, but much more then that is required to creating useful chart or dashboard. Any  point may contain meta information. Additional information (comparison with the previous year in this case) is available on a column click.
+Adding custom data is nice function, but much more then that is required to creating useful chart or dashboard. Any
+point may contain meta information. Additional information (comparison with the previous year in this case) is
+available on hovering a column.
 
 {sample}CRUD\_02{sample}
 
@@ -78,7 +80,7 @@ Sample below demonstrates removing data. After clicking on any column, the first
     )
 ```
 
-Sample below illustrates inserting column into a random position and sets colors it red.
+Sample below illustrates of inserting new column into a random position and colorizing it with red.
 
 {sample}CRUD\_05{sample}
 
