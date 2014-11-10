@@ -4,6 +4,7 @@ Data Tree
 
 * [Overview](#overview)
 * [Usage](#usage)
+* [Data Manipulation](#data_manipulation)
 
 ## Overview
 
@@ -13,7 +14,9 @@ simplifies data adjusting and improve data organization.
 
 ## Usage
 
-The most common case of using data tree is data grid. 
+The most common case of using data tree is data grid. Data grid represents hierarchy of data. Here is a sample
+representing data division.
+
 
 
 
