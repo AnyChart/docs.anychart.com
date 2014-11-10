@@ -17,6 +17,9 @@ simplifies data adjusting and improve data organization.
 The most common case of using data tree is data grid. Data grid represents hierarchy of data. Here is a sample
 representing data division.
 
+{sample}Data\_Tree\_01{sample}
+
+Data grid is a part of 
 
 
 
