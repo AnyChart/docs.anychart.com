@@ -72,5 +72,5 @@ click on a button.
 {sample}Data\_Tree\_02{sample}
 
 Adding a child is quite useful method for adjusting data in real time and visualizing  actual processes.
-Nevertheless, adding only one child at a time may appear to be ineffective for managing data. For advanced managing
-data 
+Nevertheless, adding only one child at a time may appear to be ineffective for managing data. Transferring prepared
+data into tree may 
