@@ -26,9 +26,6 @@ anychart.onDocumentReady(function() {
   // set style for second column
   treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
 
-  // draw chart
-  treeDataGrid.container(stage).top(30).height(stage.height()).width('100%').draw();
-
   //create new button
   var triggerButton = document.createElement('div');
 
@@ -53,6 +50,9 @@ anychart.onDocumentReady(function() {
 
   //append button to container
   container.appendChild(triggerButton);
+
+  // draw chart
+  treeDataGrid.container(stage).top(triggerButton.offsetHeight + 7).height(stage.height()).width('100%').draw();
 
   var title = anychart.elements.title();
   title.parentBounds(0, 0, "100%", 30)

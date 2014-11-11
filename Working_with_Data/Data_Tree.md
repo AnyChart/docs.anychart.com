@@ -14,30 +14,40 @@ simplifies data adjusting and improve data organization.
 
 ## Usage
 
-The most common case of using data tree is data grid. Data grid represents hierarchy of data. Here is a sample
-representing data division.
-
+The most common case of using data tree is data grid. Data grid represents hierarchy of data. In sake of
+convenience AnyChart accept two methods of setting data tree: through table and through tree. Code below demonstrates
+ setting same data through both methods.
 
 ```
 	//Data set through tree method
-	var treeType = anychart.data.tree([
-    {name: 'Node 1'},
-    {name: 'Parent Node', children:[
-      {name: 'Child Node 1'},
-      {name: 'Child Node 2'},
-    ]},
-    {name: 'Node 2'}
-  ], anychart.enums.TreeFillingMethod.AS_TREE);
+	var treeType = anychart.data.tree(
+    // section with raw data in a tree format
+	  [
+      {name: 'Node 1'},
+      {name: 'Parent Node', children:[
+        {name: 'Child Node 1'},
+        {name: 'Child Node 2'},
+      ]},
+      {name: 'Node 2'}
+    ],
+    anychart.enums.TreeFillingMethod.AS_TREE  // data type settings
+  );
 
   //Data set through table method
-	var treeType = anychart.data.tree([
-    {name: 'Node 1', id: 1},
-    {name: 'Parent Node', id: 2},
-    {name: 'Child Node 1', parent: 2, id: 3},
-    {name: 'Child Node 2', parent: 2, id: 4},
-    {name: 'Node 2', id: 5}
-  ], anychart.enums.TreeFillingMethod.AS_TABLE);
+	var treeType = anychart.data.tree(
+	  // section with raw data in a table format
+	  [
+      {name: 'Node 1', id: 1},
+      {name: 'Parent Node', id: 2},
+      {name: 'Child Node 1', parent: 2, id: 3},
+      {name: 'Child Node 2', parent: 2, id: 4},
+      {name: 'Node 2', id: 5}
+    ],
+    anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
+  );
 ```
+
+Here is a sample with the result of proceeding data from the code above.
 
 {sample}Data\_Tree\_01{sample}
 
@@ -56,6 +66,8 @@ This operations may be proceeded for root elements as well as for children of a 
 
 ### Create
 
-Data in a tree may be added through several methods. Sample below demonstrates adding of
+Data in a tree may be added through several methods. Sample below demonstrates adding of a child into data grid on
+click on a button.
 
 {sample}Data\_Tree\_02{sample}
+
