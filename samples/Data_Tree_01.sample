@@ -3,28 +3,34 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
+
+  // Data Tree
   var tree = anychart.data.tree([
-  {},
-  {name: 'Node 1'},
-  {name: 'Parent Node', children:[
+    {name: 'Node 1'},
+    {name: 'Parent Node', children:[
      {name: 'Child Node 1'},
      {name: 'Child Node 2'},
     ]},
-]);
-  stage = acgraph.create('container', '100%', '100%');
+    {name: 'Node 2'}
+  ]);
+
+  //create Data Grid
   dataGrid = anychart.elements.dataGrid();
-  dataGrid.container(stage);
-  dataGrid.data(tree);
 
+  //set Data Tree
+  dataGrid.data(tree).titleHeight(20);
+
+  //create button for Parent node
   dataGrid.listen('signal', dataGrid.draw, false, dataGrid);
-  dataGrid.column(1).width(250);
 
-
+  // set style for second column
   dataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
 
-
-  dataGrid.draw();
+  // draw chart
+  dataGrid.container('container').draw();
 });
+
+// style setter
 function labelTextSettingsOverrider(label, dataItem) {
   if (!dataItem.getParent()) {
     label.fontColor('#0055aa').fontWeight('bold').fontSize(12).fontStyle('italic');
