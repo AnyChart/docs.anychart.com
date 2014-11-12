@@ -19,10 +19,10 @@ convenience AnyChart accept two methods of setting data tree: through table and 
  setting same data through both methods.
 
 ```
-	//Data set through tree method
-	var treeType = anychart.data.tree(
+  //Data set through tree method
+  var treeType = anychart.data.tree(
     // section with raw data in a tree format
-	  [
+    [
       {name: 'Node 1'},
       {name: 'Parent Node', children:[
         {name: 'Child Node 1'},
@@ -34,9 +34,9 @@ convenience AnyChart accept two methods of setting data tree: through table and 
   );
 
   //Data set through table method
-	var treeType = anychart.data.tree(
-	  // section with raw data in a table format
-	  [
+  var treeType = anychart.data.tree(
+    // section with raw data in a table format
+    [
       {name: 'Node 1', id: 1},
       {name: 'Parent Node', id: 2},
       {name: 'Child Node 1', parent: 2, id: 3},
@@ -96,10 +96,17 @@ Sample below demonstrates adding data on click on a button
 
 {sample}Data\_Tree\_03{sample}
 
+### Update
+
+Every node in data tree may be updated. The node should be gotten first to proceed information adjustment. Sample
+
 ### Delete
 
-As far as we can add data, we can remove it too. Use **.removeChild()** method to delete a row from data set.
+As far as we can add data, we can remove it too. Use **.removeChild()** method to delete an item from data set.
 
 ```
-  
+  tree.removeChildAt(0); // remove first element in data tree
 ```
+
+Sample below demonstrates removing first element in data tree
+
