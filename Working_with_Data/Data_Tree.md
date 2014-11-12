@@ -93,3 +93,13 @@ and type of new data
 ```
 
 Sample below demonstrates adding data on click on a button
+
+{sample}Data\_Tree\_03{sample}
+
+### Delete
+
+As far as we can add data, we can remove it too. Use **.removeChild()** method to delete a row from data set.
+
+```
+  
+```
