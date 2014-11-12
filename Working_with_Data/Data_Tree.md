@@ -73,4 +73,23 @@ click on a button.
 
 Adding a child is quite useful method for adjusting data in real time and visualizing  actual processes.
 Nevertheless, adding only one child at a time may appear to be ineffective for managing data. Transferring prepared
-data into tree may 
+data with predefined hierarchy is advanced way managing data in a tree. Method **.addData()** requires data to add
+and type of new data
+
+```
+  // data to add
+  var newData = [
+    {name: 'new Node 1', id: '6'},
+    {name: 'new Parent Node', id: '7'},
+    {name: 'new Node 3', id: '8'},
+    {name: 'new Child Node', parent: 7, id: '9'}
+  ];
+
+  // adding data
+  tree.addData(
+    newData,                                  // data
+    anychart.enums.TreeFillingMethod.AS_TABLE // data type
+  );
+```
+
+Sample below demonstrates adding data on click on a button
