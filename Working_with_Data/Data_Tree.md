@@ -116,5 +116,6 @@ As far as we can add data, we can remove it too. Use **.removeChild()** method t
   tree.removeChildAt(0); // remove first element in data tree
 ```
 
-Sample below demonstrates removing first element in data tree
+Sample below demonstrates removing first element in the data tree.
 
+{sample}Data\_Tree\_04{sample}
