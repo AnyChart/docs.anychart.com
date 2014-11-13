@@ -74,7 +74,7 @@ click on a button.
 Adding a child is quite useful method for adjusting data in real time and visualizing  actual processes.
 Nevertheless, adding only one child at a time may appear to be ineffective for managing data. Transferring prepared
 data with predefined hierarchy is advanced way managing data in a tree. Method **.addData()** requires data to add
-and type of new data
+and type of new data.
 
 ```
   // data to add
@@ -92,13 +92,21 @@ and type of new data
   );
 ```
 
-Sample below demonstrates adding data on click on a button
+Sample below demonstrates adding data on click on a button.
 
 {sample}Data\_Tree\_03{sample}
+
+### Read
+
+Data tree item may have unlimited number of data field thus it requires methods for reading data from any field and
+item search through field value. **.get()** method reads required field of an item. Sample below demonstrates
+representation of additional information on click on a button.
 
 ### Update
 
 Every node in data tree may be updated. The node should be gotten first to proceed information adjustment. Sample
+below illustrates adding 5 to a value.
+
 
 ### Delete
 
