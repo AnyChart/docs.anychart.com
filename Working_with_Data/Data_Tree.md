@@ -100,7 +100,9 @@ Sample below demonstrates adding data on click on a button.
 
 Data tree item may have unlimited number of data field thus it requires methods for reading data from any field and
 item search through field value. **.get()** method reads required field of an item. Sample below demonstrates
-representation of additional information on click on a button.
+two data grids with data from the same data tree, but third column represents different fields of each node.
+
+
 
 ### Update
 

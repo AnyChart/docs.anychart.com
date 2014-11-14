@@ -1,0 +1,51 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+anychart.onDocumentReady(function() {
+
+  var tree = anychart.data.tree([
+    {name: 'Node 1', id: '1'},
+    {name: 'Node 2', id: '2'},
+    {name: 'Node 3', id: '3'},
+    {name: 'Node 4', id: '4'},
+    {name: 'Node 5', id: '5'}
+  ], anychart.enums.TreeFillingMethod.AS_TABLE);
+
+  stage = acgraph.create('container');
+
+  //create Data Grid
+  treeDataGrid = anychart.elements.dataGrid();
+
+  //set Data Tree
+  treeDataGrid.data(tree).titleHeight(20);
+
+  //create button for Parent node
+  treeDataGrid.listen('signal', treeDataGrid.draw, false, treeDataGrid);
+
+  // set style for second column
+  treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
+
+  // draw chart
+  treeDataGrid.container(stage).top(triggerButton.offsetHeight + 7).height(stage.height()).width('100%').draw();
+
+  var title = anychart.elements.title();
+  title.parentBounds(0, 0, "100%", 30)
+        .text('Click on Button to Remove First Element')
+        .container(stage)
+        .draw();
+
+  function addPoint(){
+    tree.removeChildAt(0);
+  }
+});
+
+// style setter
+function labelTextSettingsOverrider(label, dataItem) {
+  if (!dataItem.getParent()) {
+    label.fontColor('#0055aa').fontWeight('bold').fontSize(12).fontStyle('italic');
+  } else {
+    if (dataItem.numChildren()) {
+      label.fontColor('#559955').fontWeight('bold').fontStyle('italic');
+    }
+  }
+}
