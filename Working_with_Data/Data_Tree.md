@@ -5,6 +5,11 @@ Data Tree
 * [Overview](#overview)
 * [Usage](#usage)
 * [Data Manipulation](#data_manipulation)
+ * [Create](#create)
+ * [Read](#read)
+ * [Update](#update)
+ * [Delete](#dalete)
+
 
 ## Overview
 
