@@ -102,12 +102,14 @@ Data tree item may have unlimited number of data field thus it requires methods 
 item search through field value. **.get()** method reads required field of an item. Sample below demonstrates
 two data grids with data from the same data tree, but third column represents different fields of each node.
 
-
+{sample}Data\_Tree\_06{sample}
 
 ### Update
 
 Every node in data tree may be updated. The node should be gotten first to proceed information adjustment. Sample
-below illustrates adding 5 to a value.
+below illustrates adding 1000 to a value of the third node.
+
+{sample}Data\_Tree\_07{sample}
 
 
 ### Delete
