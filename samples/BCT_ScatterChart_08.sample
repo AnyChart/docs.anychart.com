@@ -6,10 +6,7 @@ anychart.onDocumentReady(function() {
 
   var chart = anychart.scatterChart();
 
-  chart.title()
-    .useHtml(true)
-    .fontWeight(400)
-    .text('<a style="font-weight: 900;">Springfield\'s Clusters</a><br><a style="font-weight:400; color: green; font-size: 14px">Green bubble: LQ< 0.95;</a> <a style="color: red; font-size: 14px">Red bubble: LQ > 1.1149</a> ')
+  chart.title().text('Springfield\'s Clusters\nLables and Tooltips Settings')
     .hAlign('center');
 
   chart.grid(0)
@@ -91,7 +88,10 @@ anychart.onDocumentReady(function() {
       .fontSize(14)
       .fontWeight(900)
       .textFormatter(function(){
-        return view.get(this.index, 'name');
+        return view.get(
+          this.index,           // index of a current point is used to get row with point's data
+          'name'                // field to display
+        );
       });
 
   // set tooltips
