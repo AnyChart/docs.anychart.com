@@ -76,7 +76,11 @@ Let's take the following data tables to be plotted as XY-Line and XY-Spline char
 <td>-1</td>
 <td>-1</td>
 </tr>
-<tr><td>0	0	0	0
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
 <tr>
 <td>1</td>
 <td>1</td>
@@ -106,8 +110,8 @@ Converted data from the table is represented below:
     [2, 4]
   ]);
 
-  //data for spline line series
-  chart.spline([
+  //data for the second line series
+  chart.line([
     [-2, -4],
     [-1, -1],
     [0, 0],
@@ -128,24 +132,33 @@ Scatter Bubble Charts are widely used in many analytical studies an it is one of
 As we've said Bubble charts can be used to plot up to 4 different variables on the single plot:
 
 ```
-  chart.buble([
+  chart.bubble([
     {name: 'Point 1', x: 10, y: 20, size: 10},
-    {name: 'Point 2', x: 10, y: 20, size: 10},
-  ])
+    {name: 'Point 2', x: 20, y: 30, size: 20}
+  ]).fill('red');
+
+  chart.bubble([
+    {name: 'Point 3', x: '20', y: '30', size: '18' }
+  ]).fill('green');
 ```
 
-In the XMl above we've created two data series of Bubble type, colored these series with Red and Green colors and set x, y and size attributes in <point> nodes.
+Above is a demonstration of two data series of Bubble type, colored these series with Red and Green colors and set x, y and size.
+
 
 In the sample below we will apply these knowledge to plot a real sample of cluster analysis charting:
 
+
 We illustrate industry cluster relationships for the 17 "Springfield" targeted industry clusters. The following four variables are plotted in this single graphic:
 
-1. Average cluster wages: on the x-axis (horizontal)
-2. Growth in jobs; on the y-axis (vertical)
-3. Employment size of the industry; indicated by the size of the bubble
-4. The industry’s location quotient; indicated by the color of the bubble
 
+ * 1. Average cluster wages: on the x-axis (horizontal)
+ * 2. Growth in jobs; on the y-axis (vertical)
+ * 3. Employment size of the industry; indicated by the size of the bubble
+ * 4. The industry’s location quotient; indicated by the color of the bubble
+
+  
 With user-defined demarcations, location quotients show whether a state or region is more specialized (>1.1149), less specialized (<0.95) or as specialized in a particular industry as is the nation or the reference region. In this graphic, clusters in which the state is more specialized than the nation are shown in red, clusters with less specialization are shown in green, while clusters with average specialization are shown in blue.
+
 
 Live Sample:  Sample Scatter Bubble Charts for Cluster Analysis
 
