@@ -263,10 +263,9 @@ Color is not the only way to design a chart. In this sample we will demonstrate 
 In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and 
 tuning visual appearance for them can be found in Labels and Tooltips.
 
-If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip
-()** methods. You can tune their visual appearance, positioning and format. 
+If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip()** methods. You can tune their visual appearance, positioning and format.
 
-When formatting data labels text we will use **.textFormatter** to show month name. Otherwise sales will be displayed 
+When formatting data labels text we will use **.textFormatter()** to show month name. Otherwise sales will be displayed
 here. 
 
 ```

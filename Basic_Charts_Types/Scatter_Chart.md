@@ -160,7 +160,7 @@ We illustrate industry cluster relationships for the 17 "Springfield" targeted i
 With user-defined demarcations, location quotients show whether a state or region is more specialized (>1.1149), less
  specialized (<0.95) or as specialized in a particular industry as is the nation or the reference region. In this
  graphic, clusters in which the state is more specialized than the nation are shown in red, clusters with less
- specialization are shown in green, while clusters with average specialization are shown in blue.
+ specialization then nation's are shown in green, while clusters with average specialization are shown in blue.
 
 {sample}BCT\_ScatterChart\_02{sample}
 
@@ -248,24 +248,30 @@ AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled b
 
   var logScaleX = anychart.scales.log();  // create logarithmic scale
   logScaleX.minimum(0.1).maximum(10000);  // set parameters for the scale
-  chart.yScale(logScaleX);                // use logarithmic scale as X scale of the chart
+  chart.xScale(logScaleX);                // use logarithmic scale as X scale of the chart
 ```
 
-And here is the demonstration of Logarithmic Y Axis on Line chart sample - using of both X an Y logarithmic axes allowed us to plot data within hundreds and within thousands on the same plot:
+And here is the demonstration of Logarithmic Y Scale on Line chart sample - using of both X an Y logarithmic axes
+allowed us to plot data within hundreds and within thousands on the same plot:
 
-Live Sample:  Axis Logarithmic Sample Scatter Line Chart
+{sample}BCT\_ScatterChart\_07{sample}
 
-to top
+## Working with data labels and tooltips
 
-Working with data labels and tooltips
+In this section we will explain how to add and configure data labels and tooltips. <!--Full explanation of formatting
+and tuning visual appearance for them can be found in Labels and Tooltips.-->
 
-In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.
+If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip()** methods. You can tune their visual appearance, positioning and format.
 
-If you want to configure data labels and tooltips for all series - you should do that in <label> and <tooltip> sub-nodes of <line_series>, <marker_series> or <bubble_series> nodes. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
+When formatting data labels text we will use **.textFormatter()** to show month name. Otherwise sales will be displayed
+here.
 
-When formatting data labels text and tooltip we will use formatting keywords:
-{%YValue} - to show Y value,
-{%XValue} - to show X value,
-{%Name} - to show point name.
+```
+    var series= chart.bar(data);
+    series.labels().enabled(true).rotation(90).textFormatter(function(point){
+            return point.x;
+    });
+    series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
+```
 
-Live Sample:  Sample Scatter Chart - Working with data labels and tooltips
+{sample}BCT\_AreaChart\_10{sample}
