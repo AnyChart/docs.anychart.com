@@ -163,7 +163,9 @@ With user-defined demarcations, location quotients show whether a state or regio
 
 Scatter Point or Marker chart is used to plot a scatter plot (scatter diagram or scatter graph). It is a chart used to display values for two variables. The data is displayed as a collection of points, each having one coordinate on the horizontal axis and one on the vertical axis.
 
+
 A scatter plot does not specify dependent or independent variables. Either type of variable can be plotted on either axis. Scatter plots represent the association (not causation) between two variables.
+
 
 To plot a scatter diagram using AnyChart you should use **Marker** series type along with **anychart.scatterChart()**:
 
