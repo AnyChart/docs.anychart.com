@@ -1,0 +1,89 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
+
+anychart.onDocumentReady(function() {
+
+    var chart = anychart.scatterChart();
+    chart.title()
+        .useHtml(true)
+        .fontWeight(400)
+        .text('<a style="font-weight: 900;">Springfield\'s Clusters</a><br><a style="font-weight:400; color: green; font-size: 14px">Green bubble: LQ< 0.95;</a> <a style="color: red; font-size: 14px">Red bubble: LQ > 1.1149</a> ')
+        .hAlign('center');
+
+    chart.grid(0)
+        .oddFill('#F9F9F9')
+        .evenFill('#FFFFFF')
+        .layout(anychart.enums.Layout.HORIZONTAL);
+
+    chart.minorGrid(0)
+        .evenFill('none')
+        .oddFill('none')
+        .stroke('black 0.1')
+        .layout(anychart.enums.Layout.HORIZONTAL);
+
+    chart.grid(1)
+        .evenFill('none')
+        .oddFill('none')
+        .layout(anychart.enums.Layout.VERTICAL);
+
+    chart.minorGrid(1)
+        .evenFill('none')
+        .oddFill('none')
+        .stroke('black 0.1')
+        .layout(anychart.enums.Layout.VERTICAL);
+
+            // y scale settings
+            chart.yScale()
+                    .minimum(-250)
+                    .maximum(100)
+                    .ticks()
+                        .interval(50);
+
+            // adjust y axis labels representation
+            chart.yAxis().labels().textFormatter(function(){
+                return this.value + '%'
+            });
+
+            chart.yAxis().title().text('Job Growth');
+
+            // x scale settings
+            chart.xScale()
+                    .minimum(20000)
+                    .maximum(70000)
+                    .ticks()
+                        .interval(10000);
+
+            //adjust x axis labels representation
+            chart.xAxis().labels().textFormatter(function(){
+                return '$' + this.value / 1000 + ',000'
+            });
+
+            chart.xAxis().title().text('Wages');
+
+            //data for line series
+            chart.bubble([
+                {name:"Printing", x:"38000", y:"-95", size:"1"},
+                {name:"Chem, Rubber, Placitcs", x:"46000", y:"-80", size:"2"},
+                {name:"BioMedical", x:"66000", y:"75", size:"2"},
+                {name:"Food Processing", x:"37000", y:"-25", size:"3.2"},
+                {name:"Metals", x:"41000", y:"-140", size:"3.5"},
+                {name:"Life Sciences", x:"40000", y:    "50", size:"5"},
+                {name:"Health Care", x:"38000", y:"45", size:"5"}
+            ]).fill('red').minimumSize(10).maximumSize(30).stroke('darkred');
+
+           chart.bubble([
+               {name:"Vehicle and vehicle equip.", x:"48000", y:"-190", size:"1"},
+               {name:"Electronics", x:"51000", y:"-220", size:"2"},
+               {name:"Info & Communications", x:"57000", y:"-40", size:"3"},
+               {name:"Business & Financials", x:"44000", y:"-20", size:"5"}
+           ]).fill('green').minimumSize(10).maximumSize(30).stroke('darkgreen');
+
+           chart.bubble([
+               {name:"Education", x:"36000", y:"55", size:"4.5"},
+               {name:"Metals Fab.", x:"42000", y:"-160", size:"4.5"},
+               {name: "Agriculture", x:"26000", y:"5", size:"4"}
+           ]).fill('blue').minimumSize(10).maximumSize(30).stroke('darkblue');
+
+            chart.container('container').draw();
+});
