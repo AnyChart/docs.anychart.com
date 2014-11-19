@@ -120,7 +120,7 @@ Converted data from the table is represented below:
   ]);
 ```
 
-As you can see we've created to series one of "Line" type, the second of "Spline" type. Now, we just set <chart plot_type="Scatter">, as mentioned above and scatter chart are ready to be displayed:
+As you can see we've created to series one of "Line" type, the second of "Spline" type. Now, we just set **anychart.scatterChart()**, as mentioned above and scatter chart are ready to be displayed:
 
 {sample}BCT\_ScatterChart\_01{sample}
 
@@ -157,130 +157,100 @@ We illustrate industry cluster relationships for the 17 "Springfield" targeted i
  * 4. The industry’s location quotient; indicated by the color of the bubble
 
   
-With user-defined demarcations, location quotients show whether a state or region is more specialized (>1.1149), less specialized (<0.95) or as specialized in a particular industry as is the nation or the reference region. In this graphic, clusters in which the state is more specialized than the nation are shown in red, clusters with less specialization are shown in green, while clusters with average specialization are shown in blue.
+With user-defined demarcations, location quotients show whether a state or region is more specialized (>1.1149), less
+ specialized (<0.95) or as specialized in a particular industry as is the nation or the reference region. In this
+ graphic, clusters in which the state is more specialized than the nation are shown in red, clusters with less
+ specialization are shown in green, while clusters with average specialization are shown in blue.
 
+{sample}BCT\_ScatterChart\_02{sample}
 
-Live Sample:  Sample Scatter Bubble Charts for Cluster Analysis
-
-Please notice that we've used a number of AnyChart Features to build this pretty complex chart:
-
-Axes labels were formatted ($ and % signs)
-Axes minimum and maximum were specified
-Tooltips are used to show detailed Bubble description
-Legend is added and it is formatted to show series and points - move the mouse over the legend elements and corresponding bubbles will be highlighted.
-Hatch fill and border is changed on hover
-Subtitle is formatted using HTML
-Scatter Point (Marker) Chart
+### Scatter Marker Chart
 
 Scatter Point or Marker chart is used to plot a scatter plot (scatter diagram or scatter graph). It is a chart used to display values for two variables. The data is displayed as a collection of points, each having one coordinate on the horizontal axis and one on the vertical axis.
 
 A scatter plot does not specify dependent or independent variables. Either type of variable can be plotted on either axis. Scatter plots represent the association (not causation) between two variables.
 
-To plot a scatter diagram using AnyChart you should use Marker series type when plot_type="Scatter":
+To plot a scatter diagram using AnyChart you should use **Marker** series type along with **anychart.scatterChart()**:
 
-XML Syntax
-XML Code
-Plain code
-01
-<series type="Marker">
-02
-  <point x="2" y="10" />
-03
-  <point x="2" y="20" />
-04
-  <point x="3" y="0" />
-05
-  <point x="13" y="0" />
-06
-</series>
+```
+  var chart = anychart.scatterChart();
+
+  chart.marker([
+    {2, 10},
+    {2, 20},
+    {3, 0},
+    {13, 0}
+  ])
+```
+
 In the sample below we will plot waiting time between eruptions and the duration of the eruption for the Old Faithful geyser in Yellowstone National Park, Wyoming, USA. This chart suggests there are generally two "types" of eruptions: short-wait-short-duration, and long-wait-long-duration.
 
 We will also draw a "best-fit" straight line through the data, calculated using linear regression method.
 
-Live Sample:  Sample Scatter Graph Charts
+{sample}BCT\_ScatterChart\_03{sample}
 
-to top
+## Axes management
 
-Axes management
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis
+scale and settings and many more. All axis features are described in
+[Axes tutorial](../Axes_Grid_Scales_Trends_etc/Axis_Basics), in this section we will quickly demonstrate how axis
+orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in Working with Axes tutorial, in this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+### Orientation
 
-to top
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **.orientation()**
+parameter of **.yAxis()** or **.xAxis()** methods.
 
-Positioning
+Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and
+inversion settings in [Axes Orientation](../Axes_Grid_Scales_Trends_etc/Axis_Orientation) Templates.
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position attribute of <y_axis> or <x_axis> nodes.
+```
+    chart.xAxis().orientation('right');
+    chart.yAxis().orientation('top');
+```
 
-Positioning depends on plot type and inversion of axes, you will find list of all possible positining and inversion settings in Axes Positioning and Inverting Templates.
+{sample}BCT\_ScatterChart\_04{sample}
 
-XML Syntax
-XML Code
-Plain code
-01
-<axes>
-02
-  <y_axis position="Opposite" />
-03
-  <x_axis position="Opposite" />
-04
-</axes>
-And here is the demonstration of this feature on the Line/Spline sample:
+### Inversion
 
-Live Sample:  Axes Position Sample Single-Series Scatter Line Chart
+AnyChart allows you to invert any axis: Y, X or any extra axis. Inversion is controlled by axis **.inverted()**:
 
-to top
+```
+  chart.yScale().inverted(true);
+```
 
-Inversion
+And here is the demonstration of Y and X Axis inversion on the Marker sample:
 
-AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis <scale>:
+{sample}BCT\_ScatterChart\_05{sample}
 
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <scale inverted="True" />
-03
-</y_axis>
-And here is the demonstration of X and Y Axis inversion on the Marker chart sample:
+### Minimum and Maximum values control
 
-Live Sample:  Axis Inversion Sample Single-Series Scatter Marker Chart
+By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart
+sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting
+**.maximum()** and **.minimum()**. :
 
-to top
+```
+    chart.yScale().minimum('-20').maximum('30');
+```
 
-Minimum and Maximum values control
+And here is the demonstration of maximum and minimum values on the Line sample:
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is -5, and maximum is 5. You can control these values by setting maximum and minimum attributes of <scale> node:
+{sample}BCT\_ScatterChart\_06{sample}
 
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <scale minimum="-20" maximum="30" />
-03
-</y_axis>
-And here is the demonstration of maximum and minimum values on the Line/Spline sample:
+### Logarithmic
 
-Live Sample:  Scale Maximum and Minimum Values Sample Scatter Line and Spline Chart
+AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by **scale**:
 
-to top
+```
+  var logScaleY = anychart.scales.log();  // create logarithmic scale
+  logScaleY.minimum(0.1).maximum(10000);  // set parameters for the scale
+  chart.yScale(logScaleY);                // use logarithmic scale as Y scale of the chart
 
-Logarithmic
+  var logScaleX = anychart.scales.log();  // create logarithmic scale
+  logScaleX.minimum(0.1).maximum(10000);  // set parameters for the scale
+  chart.yScale(logScaleX);                // use logarithmic scale as X scale of the chart
+```
 
-AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by axis <scale>:
-
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <scale type="Logarithmic" />
-03
-</y_axis>
 And here is the demonstration of Logarithmic Y Axis on Line chart sample - using of both X an Y logarithmic axes allowed us to plot data within hundreds and within thousands on the same plot:
 
 Live Sample:  Axis Logarithmic Sample Scatter Line Chart

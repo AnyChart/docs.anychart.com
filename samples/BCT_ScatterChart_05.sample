@@ -36,8 +36,13 @@ anychart.onDocumentReady(function() {
         .stroke('black 0.1')
         .layout(anychart.enums.Layout.VERTICAL);
 
+
+    // adjust inversion of both scales
+    chart.xScale().inverted(true);
+    chart.yScale().inverted(true);
+
     //data for top line series
-    chart.line([
+    chart.marker([
         [-2, 4],
         [-1, 1],
         [0, 0],
@@ -46,7 +51,7 @@ anychart.onDocumentReady(function() {
     ]);
 
     //data for bottom line series
-    chart.line([
+    chart.marker([
         [-2, -4],
         [-1, -1],
         [0, 0],

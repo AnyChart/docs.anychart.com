@@ -36,6 +36,9 @@ anychart.onDocumentReady(function() {
         .stroke('black 0.1')
         .layout(anychart.enums.Layout.VERTICAL);
 
+    // adjust inversion of both scales
+    chart.yScale().minimum(-20).maximum(30);
+
     //data for top line series
     chart.line([
         [-2, 4],
