@@ -33,48 +33,50 @@ anychart.onDocumentReady(function() {
         .stroke('black 0.1')
         .layout(anychart.enums.Layout.VERTICAL);
 
-            // y scale settings
-            chart.yScale()
-                    .minimum(-250)
-                    .maximum(100)
-                    .ticks()
-                        .interval(50);
+    // y scale settings
+    chart.yScale()
+        .minimum(-250)
+        .maximum(100)
+        .ticks()
+            .interval(50);
 
-            // adjust y axis labels representation
-            chart.yAxis().labels().textFormatter(function(){
-                return this.value + '%'
-            });
+    // adjust y axis labels representation
+    chart.yAxis().labels().textFormatter(function(){
+        return this.value + '%'
+    });
 
-            chart.yAxis().title().text('Job Growth');
+    chart.yAxis().title().text('Job Growth');
 
-            // x scale settings
-            chart.xScale()
-                    .minimum(20000)
-                    .maximum(70000)
-                    .ticks()
-                        .interval(10000);
+    // x scale settings
+    chart.xScale()
+        .minimum(20000)
+        .maximum(70000)
+        .ticks()
+            .interval(10000);
 
-            //adjust x axis labels representation
-            chart.xAxis().labels().textFormatter(function(){
-                return '$' + this.value / 1000 + ',000'
-            });
+    //adjust x axis labels representation
+    chart.xAxis().labels().textFormatter(function(){
+        return '$' + this.value / 1000 + ',000'
+    });
 
-            chart.xAxis().title().text('Wages');
+    chart.xAxis().title().text('Wages');
 
-            var data = anychart.data.set([
-                {name: 'Education', x:60000, y:-70, size: 2},
-                {name: 'Metals Fab.', x: 42000, y:-160, size: 5},
-                {name: 'Agriculture', x: 26000, y: -100, size 4}
-            ]);
+    var data = anychart.data.set([
+        {name: 'Education', x:60000, y:-70, size: 2},
+        {name: 'Metals Fab.', x: 42000, y:-160, size: 5},
+        {name: 'Agriculture', x: 26000, y: -100, size 4}
+    ]);
 
-            //data for line series
-            chart.bubble(data).fill('red')
-              .minimumSize(10)
-              .maximumSize(30)
-              .stroke('darkred')
-              .tooltip().contentFormatter(function(){
-                console.log(this);
-              });
+    var view = data.mapAs();
 
-            chart.container('container').draw();
+    //data for line series
+    chart.bubble(data).fill('blue')
+        .minimumSize(10)
+        .maximumSize(30)
+        .stroke('darkred')
+        .labels().textFormatter(function(){
+            return view.get(this.index, 'name');
+        });
+
+    chart.container('container').draw();
 });

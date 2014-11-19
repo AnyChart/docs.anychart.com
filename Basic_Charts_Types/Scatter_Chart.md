@@ -94,7 +94,6 @@ Let's take the following data tables to be plotted as XY-Line and XY-Spline char
 <td>-4</td>
 <tr>
 
-
 Converted data from the table is represented below:
 
 ```
@@ -274,4 +273,4 @@ here.
     series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
 ```
 
-{sample}BCT\_AreaChart\_10{sample}
+{sample}BCT\_ScatterChart\_08{sample}
