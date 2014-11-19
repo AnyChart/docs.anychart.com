@@ -266,11 +266,13 @@ When formatting data labels text we will use **.textFormatter()** to show month 
 here.
 
 ```
-    var series= chart.bar(data);
-    series.labels().enabled(true).rotation(90).textFormatter(function(point){
-            return point.x;
-    });
-    series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
+  // set labels
+  chart.bubble(data).labels().textFormatter(function(){
+    return view.get(
+      this.index,           // index of a current point is used to get row with point's data
+      'name'                // field to display
+    );
+  });
 ```
 
 {sample}BCT\_ScatterChart\_08{sample}

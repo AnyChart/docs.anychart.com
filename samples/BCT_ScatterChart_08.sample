@@ -59,7 +59,7 @@ anychart.onDocumentReady(function() {
 
   chart.xAxis().title().text('Wages');
 
-	// data for chart
+  // data for chart
   var data = anychart.data.set([
     {name: 'Education', x:60000, y:-70, size: 2},
     {name: 'Metals Fab.', x: 42000, y:-160, size: 5},
