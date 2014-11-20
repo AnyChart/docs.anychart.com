@@ -1,21 +1,16 @@
-# Column Chart
+# Scatter Chart
 
 * [Overview](#overview)
 * [Chart](#chart)
-  * [Single Series](#single_series)
-  * [Multi-series](#multi-series)
+  * [Line Chart](#line_chart)
+  * [Bubble Chart](#bubble_chart)
+  * [Marker Chart](#marker_chart)
 * [Axes](#axes)
   * [Orientation](#orientation)
   * [Inversion](#inversion)
   * [Minimum and Maximum](#minimum_and_maximum)
-* [Padding](#padding)
-* [Visualization](#visualization)
-  * [Basic Sample](#basic_sample)
+  * [Logarithmic](#logarithmic)
 * [Labels and Tooltips](#labels_and_tooltips)
-* [Markers](#markers)
-* [Colors](#colors)
-  * [Colorizing Elements](#colorizing_elements)
-* [Hatch Fills](#hatch_fills)
 
 ## Overview
 
@@ -27,6 +22,7 @@ A scatter chart has two value axes, showing one set of numerical data along the 
 
 
 Consider using a scatter chart when:
+
 
  * You want to change the scale of the horizontal axis.
  * You want to make that axis a logarithmic scale.
@@ -45,7 +41,7 @@ Bubble charts. To start the creation of Scatter chart you need use **.scatterCha
   var chart = anychart.scatterChart();
 ```
 
-## XY Line and Spline Chart
+### Line Chart
 
 As Scatter charts are plotted using two values you always need to specify both x and y attributes in <point> node.
 
@@ -94,7 +90,6 @@ Let's take the following data tables to be plotted as XY-Line and XY-Spline char
 <td>-4</td>
 <tr>
 
-
 Converted data from the table is represented below:
 
 ```
@@ -124,7 +119,7 @@ As you can see we've created to series one of "Line" type, the second of "Spline
 
 {sample}BCT\_ScatterChart\_01{sample}
 
-### Scatter Bubble Chart
+### Bubble Chart
 
 Scatter Bubble Charts are widely used in many analytical studies an it is one of the popular tools for identifying and illustrating industry clusters. Essentially, these charts allow four different variables to be plotted within the same graph, making it easy to assess relative economic performance.
 
@@ -164,11 +159,13 @@ With user-defined demarcations, location quotients show whether a state or regio
 
 {sample}BCT\_ScatterChart\_02{sample}
 
-### Scatter Marker Chart
+### Marker Chart
 
 Scatter Point or Marker chart is used to plot a scatter plot (scatter diagram or scatter graph). It is a chart used to display values for two variables. The data is displayed as a collection of points, each having one coordinate on the horizontal axis and one on the vertical axis.
 
+
 A scatter plot does not specify dependent or independent variables. Either type of variable can be plotted on either axis. Scatter plots represent the association (not causation) between two variables.
+
 
 To plot a scatter diagram using AnyChart you should use **Marker** series type along with **anychart.scatterChart()**:
 
@@ -185,11 +182,12 @@ To plot a scatter diagram using AnyChart you should use **Marker** series type a
 
 In the sample below we will plot waiting time between eruptions and the duration of the eruption for the Old Faithful geyser in Yellowstone National Park, Wyoming, USA. This chart suggests there are generally two "types" of eruptions: short-wait-short-duration, and long-wait-long-duration.
 
+
 We will also draw a "best-fit" straight line through the data, calculated using linear regression method.
 
 {sample}BCT\_ScatterChart\_03{sample}
 
-## Axes management
+## Axes
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis
 scale and settings and many more. All axis features are described in
@@ -200,6 +198,7 @@ orientation can be adjusted, how axis scale can be inverted and how minimum and 
 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **.orientation()**
 parameter of **.yAxis()** or **.xAxis()** methods.
+
 
 Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and
 inversion settings in [Axes Orientation](../Axes_Grid_Scales_Trends_etc/Axis_Orientation) Templates.
@@ -223,7 +222,7 @@ And here is the demonstration of Y and X Axis inversion on the Marker sample:
 
 {sample}BCT\_ScatterChart\_05{sample}
 
-### Minimum and Maximum values control
+### Minimum and Maximum
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart
 sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting
@@ -256,22 +255,26 @@ allowed us to plot data within hundreds and within thousands on the same plot:
 
 {sample}BCT\_ScatterChart\_07{sample}
 
-## Working with data labels and tooltips
+## Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips. <!--Full explanation of formatting
 and tuning visual appearance for them can be found in Labels and Tooltips.-->
 
+
 If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip()** methods. You can tune their visual appearance, positioning and format.
+
 
 When formatting data labels text we will use **.textFormatter()** to show month name. Otherwise sales will be displayed
 here.
 
 ```
-    var series= chart.bar(data);
-    series.labels().enabled(true).rotation(90).textFormatter(function(point){
-            return point.x;
-    });
-    series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
+  // set labels
+  chart.bubble(data).labels().textFormatter(function(){
+    return view.get(
+      this.index,           // index of a current point is used to get row with point's data
+      'name'                // field to display
+    );
+  });
 ```
 
-{sample}BCT\_AreaChart\_10{sample}
+{sample}BCT\_ScatterChart\_08{sample}
