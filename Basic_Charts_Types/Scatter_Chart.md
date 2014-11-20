@@ -43,49 +43,61 @@ Bubble charts. To start the creation of Scatter chart you need use **.scatterCha
 
 ### Line Chart
 
-As Scatter charts are plotted using two values you always need to specify both x and y attributes in <point> node.
+As Scatter charts are plotted using two values you always need to specify both x and y.
 
 
-Let's take the following data tables to be plotted as XY-Line and XY-Spline charts (a graphs of x=y2 and x=-y2):
+Let's take the following data tables to be plotted on the scatter chart as the first line:
 
 <table border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th width="160"><b>Line</b></th>
-<th width="160"><b>Spline</b></th>
-</tr>
-<tr>
-<td width="80">x</td>
-<td width="80">y</td>
 <td width="80">x</td>
 <td width="80">y</td>
 </tr>
 <tr>
 <td>-2</td>
 <td>4</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<tr>
+<td>1</td>
+<td>1</td>
+<tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<tr>
+
+And here is the data for the second line:
+
+<table border="1" class="dtTABLE">
+<tbody>
+<tr>
+<td width="80">x</td>
+<td width="80">y</td>
+</tr>
+<tr>
 <td>-2</td>
 <td>-4</td>
 </tr>
 <tr>
 <td>-1</td>
-<td>1</td>
-<td>-1</td>
 <td>-1</td>
 </tr>
 <tr>
 <td>0</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
 <tr>
-<td>1</td>
-<td>1</td>
 <td>1</td>
 <td>-1</td>
 <tr>
 <tr>
-<td>2</td>
-<td>4</td>
 <td>2</td>
 <td>-4</td>
 <tr>
