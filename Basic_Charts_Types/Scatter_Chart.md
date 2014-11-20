@@ -52,11 +52,11 @@ As Scatter charts are plotted using two values you always need to specify both x
 
 Let's take the following data tables to be plotted as XY-Line and XY-Spline charts (a graphs of x=y2 and x=-y2):
 
-<table width="536" border="1" class="dtTABLE">
+<table border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th><b>Line</b></th>
-<th><b>Spline</b></th>
+<th width="160"><b>Line</b></th>
+<th width="160"><b>Spline</b></th>
 </tr>
 <tr>
 <td width="80">x</td>
