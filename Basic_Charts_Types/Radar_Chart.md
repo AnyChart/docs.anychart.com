@@ -1,4 +1,4 @@
-#Bar Chart
+# Radar Chart
 
 * [Overview](#overview)
 * [Chart](#chart)
@@ -70,97 +70,33 @@ Here is a sample of the radar chart radius size set manually:
 
 ### Start angle
 
-By default radar starts drawing from the top center point (0°), but you can change this using start_angle attribute in <radar> node:
+By default radar starts drawing from the top center point (0°), but you can change this using **.startAngle()**
+parameter:
 
-XML Syntax
-XML Code
-Plain code
-01
-<data_plot_settings>
-02
-  <radar start_angle="90" />
-03
-</data_plot_settings>
+```
+  chart.startAngle(90);
+```
+
 Sample chart with starting angle shifted to 90°:
 
-Live Sample:  Radar Chart Start Angle Sample
+{sample}BCT\_RadarChart\_03{sample}
 
-to top
+### Plot background
 
-Using polar coordinates
+You can change radar background using **.background()** method, learn more about this method at [Background settings tutorial](../General_Appearance_Settings/Background).
 
-Radar chart supports polar coordinates, which allow you to join lines using arcs, to enable this mode set use_polar_coords="true":
+```
+  chart.background()
+    .enabled(true)                                  //enables background
+    .fill({
+      keys: ['.1 white', '.7 gray', '.9 darkgray'], //set gradient colors
+      angle: -130                                   //set angle of colors drawing
+    });
+```
 
-XML Syntax
-XML Code
-Plain code
-01
-<data_plot_settings>
-02
-  <radar use_polar_coords="true" />
-03
-</data_plot_settings>
-Here is a sample chart where points are joined with arcs:
-
-Live Sample:  Radar chart polar X-axis Sample
-
-Note: if you need Polar Chart, refer to Polar Chart article.
-to top
-
-Draw grid lines as circles
-
-Grid lines can be drawn both as "spider web" or circles, to draw them as circles set drawing_style="Circle" (the default is "Polygon"):
-
-XML Syntax
-XML Code
-Plain code
-01
-<data_plot_settings>
-02
-  <radar drawing_style="Circle" />
-03
-</data_plot_settings>
-Note: even if the grid of is disabled - axis itself is drawn as circle.
-Here is a sample chart with grid displayed as circles:
-
-Live Sample:  Radar Chart X-axis circle grid lines
-
-to top
-
-Plot background
-
-You can change radar background using <background> node, learn more about this node at Background settings tutorial.
-
-XML Syntax
-XML Code
-Plain code
-01
-<radar>
-02
-  <background>
-03
-    <fill type="Gradient">
-04
-      <gradient type="Radial" focal_point="-0.7" angle="45">
-05
-        <key color="#ffffff" position="0" opacity="0.5" />
-06
-        <key color="DarkColor(gray)" position="0.7" opacity="0.5" />
-07
-      </gradient>
-08
-    </fill>
-09
-    <border thickness="3" enabled="true" color="black" opacity="0.7" />
-10
-  </background>
-11
-</radar>
 Sample radar chart with tuned background:
 
-Live Sample:  Radar Chart Plot background Sample
-
-to top
+{sample}BCT\_RadarChart\_04{sample}
 
 Border settings
 
@@ -199,60 +135,7 @@ Live Sample:  Radar Chart Plot border
 
 to top
 
-Data under axes
-
-Another special feature of Radar chart is an ability to set whether data series are displayed under or above axes lines. This is set using display_data_mode attribute, which can be either "AboveAxes" (default) or "UnderAxes".
-
-XML Syntax
-XML Code
-Plain code
-01
-<data_plot_settings>
-02
-  <radar display_data_mode="UnderAxes" />
-03
-</data_plot_settings>
-Sample chart with data series displayed under axes lines:
-
-Live Sample:  Radar Chart axis under data sample
-
-to top
-
-Closed and open contour
-
-By default all series are close - the last point is joined with the first one. You can disjoin any series by setting close_contour attribute of <series> node to false:
-
-XML Syntax
-XML Code
-Plain code
-01
-<series close_contour="false">
-02
-  <point name="Greeting Cards" y="65" />
-03
-  <point name="Plush Toys" y="21" />
-04
-  <point name="Romantic Dinner" y="44" />
-05
-  <point name="Perfume/Cologne" y="12" />
-06
-  <point name="Candy" y="38" />
-07
-  <point name="Jewelry" y="11" />
-08
-  <point name="Flowers" y="32" />
-09
-  <point name="Gift Cards" y="29" />
-10
-  <point name="Other Gifts" y="17" />
-11
-</series>
-Sample chart with disjointed line:
-
-Live Sample:  Radar Chart close series line sample
-
-to top
-
+## Axis Settings
 X axis settings
 
 This section tells how to configure Х axis and its elements, such as tick marks, grid and labels.

@@ -1,0 +1,34 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
+
+anychart.onDocumentReady(function() {
+
+  //data for chart
+  var dataSet = anychart.data.set([
+        ['Product A', 90],
+        ['Product B', 65],
+        ['Product C', 73],
+        ['Product D', 88],
+        ['Product E', 75],
+        ['Product F', 100],
+      ]);
+
+  //chart type
+  chart = anychart.radarChart();
+
+  //chart title
+  chart.title().text('Start Angle 90°');
+
+  //set start angle of the chart
+  chart.startAngle(90);
+
+  //disable minor ticks
+  chart.yAxis().enabled(true).minorTicks().enabled(false);
+
+  //set data and adjust visualisation
+  chart.area(dataSet).fill('red 0.4').stroke('darkred');
+
+  //draw chart
+  chart.container('container').draw();
+});

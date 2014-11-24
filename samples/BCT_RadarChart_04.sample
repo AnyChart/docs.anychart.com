@@ -1,0 +1,44 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
+
+anychart.onDocumentReady(function() {
+
+  //data for chart
+  var dataSet = anychart.data.set([
+        ['Product A', 90],
+        ['Product B', 65],
+        ['Product C', 73],
+        ['Product D', 88],
+        ['Product E', 75],
+        ['Product F', 100],
+      ]);
+
+  //chart type
+  chart = anychart.radarChart();
+
+  //chart title
+  chart.title().text('Gradient Background for Radar Chart');
+
+  //disable minor ticks
+  chart.yAxis().enabled(true).minorTicks().enabled(false);
+
+  //set background color
+  chart.background()
+    .enabled(true)
+    .fill({
+      keys: ['.1 gray 0.01', '.7 gray 0.3', '.9 gray'], //set colors position
+      angle: -130                                       //set angle of colors drawing
+    });
+
+  //disable fill of grids for observing background visualization
+  chart.grid(0).oddFill(null).evenFill(null);
+  chart.grid(1).oddFill(null).evenFill(null);
+
+  //set data and adjust visualisation
+  var series = chart.area(dataSet);
+  series.fill('red 0.4').stroke('darkred');
+
+  //draw chart
+  chart.container('container').draw();
+});

@@ -28,7 +28,7 @@ anychart.onDocumentReady(function() {
         {value: 1.916, x: Date.UTC(2004, 09, 13)},
         {value: 5.57, x: Date.UTC(2005, 09, 13)},
         {value: 15.0, x: Date.UTC(2006, 09, 13)},
-        {value: 144, x: Date.UTC(2007, 09, 13)},
+        {value: 144, x: Date.UTC(2007, 09, 13)}
     ]);
 
     //adjust tooltips
