@@ -28,7 +28,7 @@ AnyChart allows to display three types of series on Radar chart: Line, Area and 
 Radar chart:
 
 ```
-    chart = anychart.radarChart()
+    chart = anychart.radarChart();
 
     chart.line([
         {name: "Administration", y="22"},
@@ -37,7 +37,7 @@ Radar chart:
         {name: "Research", y="12"},
         {name: "Support", y="38"},
         {name: "Development", y="47"}
-    ])
+    ]);
 ```
 
 As you can see each point is represented by category set using name attribute and value set using y attribute.
@@ -52,39 +52,23 @@ Radar plot has several distinctive configuration options, which are presented in
 
 ### Radius size
 
-Radar plot has several distinctive configuration options, which are presented in this section: chart radius settings, chart rotation and background settings.
+By default AnyChart calculates radius of radar chart automatically, but this parameter may be set manually. Radar chart radius is controlled by maximum and minimum size of Y scale and may be set throught **.yScale().minimum().maximum()** mathod.
 
-Radius size
+```
+  //set chart type
+  var chart = anychart.radarChart();
 
-Radar plot radius can be set absolute or relative. To use absolute settings you need to set fixed_radius="true" in <radar> node, and set radius in pixels, for example: radius="120"
+  //set radar radius
+  chart.yScale()
+    .maximum(120) //set maximum radius of radar chart
+    .minimum(50); //set minimum radius of radar chart
+```
 
-XML Syntax
-XML Code
-Plain code
-01
-<data_plot_settings>
-02
-  <radar fixed_radius="true" radius="120" />
-03
-</data_plot_settings>
-Here is a sample of the radar chart with fixed radius:
+Here is a sample of the radar chart radius size set manually:
 
-Live Sample:  Radar Chart Fixed radius
+{sample}BCT\_RadarChart\_02{sample}
 
-You can also set radius in percents, relative to chart height and width, to do so you have to set, for example: radius="50%"
-
-XML Syntax
-XML Code
-Plain code
-01
-<radar fixed_radius="true" radius="50%" />
-Sample chart with radius set to 85%:
-
-Live Sample:  Radar Chart Percent radius
-
-to top
-
-Start angle
+### Start angle
 
 By default radar starts drawing from the top center point (0°), but you can change this using start_angle attribute in <radar> node:
 
