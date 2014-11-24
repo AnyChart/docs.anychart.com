@@ -76,7 +76,7 @@ This way is not the only one to set stroke thickness. Here is the code with thic
 You can make line or grid line dashed and tune dash properties:
 
 ```
-    series.stroke({color: 'red', dash: '2 2'});
+    series.stroke({color: 'yellow', dash: '2 2'});
 ```
 
 {sample}GAS\_Strokes\_and\_Lines\_02{sample}

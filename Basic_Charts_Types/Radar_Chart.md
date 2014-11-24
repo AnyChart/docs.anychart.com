@@ -21,11 +21,12 @@
 
 A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables represented on axes starting from the same point. The relative position and angle of the axes is typically uninformative.
 
+
 The radar chart is also known as web chart, spider chart, star chart, cobweb chart, star plot, irregular polygon, polar chart, or kiviat diagram.
+
 ## Chart
 
-AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to set **anychart.polarChart()** to display
-Radar chart:
+AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to set **anychart.polarChart()** to display Radar chart:
 
 ```
     chart = anychart.radarChart();
@@ -135,12 +136,83 @@ Live Sample:  Radar Chart Plot border
 
 to top
 
-## Axis Settings
-X axis settings
+## Axes
 
-This section tells how to configure Х axis and its elements, such as tick marks, grid and labels.
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis
+scale and settings and many more. All axis features are described in
+[Axes tutorial](../Axes_Grid_Scales_Trends_etc/Axis_Basics).
 
-X axis enable/disable
+// Add information on topic content
+
+
+### Stroke
+
+Axis stroke appearance is controlled by **.stroke()** parameter.
+
+```
+  // set chart type
+  var chart = anychart.radarChart();
+
+  // adjust y axis visualization
+  chart.yAxis().stroke('2 red');  // set stroke thickness equal to 2px and set red color to the stroke
+```
+
+More information on possible stroke settings may be found in [Strokes and Lines tutorial](../General_Appearance_Settings/Strokes_and_Lines).
+
+
+Here is a sample of tuned X and Y axes. Y axis has dashed red stroke and X axis has stroke colorized with gradient
+color.
+
+{sample}BCT\_RadarChart\_05{sample}
+
+### Inversion
+
+AnyChart allows to invert any axis. Inversion is controlled by axis **.inverted()** parameter:
+
+```
+    chart.yScale().inverted(true);
+```
+Look at the demonstration of Y Axis inversion on the sample below:
+
+{sample}BCT\_RadarChart\_06{sample}
+
+### Logarithmic Scale
+
+AnyChart allows to make Y axis logarithmic. Scale type is controlled by **.scale()** parameter.
+
+```
+    var logScale = anychart.scales.log();   // create logarithmic scale
+    logScale.minimum(0.1).maximum(10000);   // set minimum and maximum value for the scale
+    chart.yScale(logScale);                 // set logarithmic scale as y scale for the chart
+```
+
+And here is the demonstration of Logarithmic Y Axis on a simple radar with area series:
+
+{sample}BCT\_RadarChart\_07{sample}
+
+### Stacked Mode
+
+Multiple area series may be presented with usage of stacked mode for Y scale. Stacked mode helps to visualize data in
+ a convenient way for comparing different data series which shares one of the values. Use **.stackMode()** method to
+ enable stacked mode.
+
+```
+  //set chart type
+  var chart = anychart.radarChart();
+
+  //enable stacked mode for y scale
+  chart.yScale().stackMode('value');
+```
+
+{sample}BCT\_RadarChart\_08{sample}
+
+
+
+
+
+
+
+
 
 To turn X axis on or off use enabled attribute of <x_axis> node - setting it to false hides all visible components of X axis:
 

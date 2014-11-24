@@ -23,21 +23,11 @@ anychart.onDocumentReady(function() {
   //disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);
 
-  //set background color
-  chart.background()
-    .enabled(true)
-    .fill({
-      keys: ['.1 white', '.5 lightblue', '0.8 lightblue', 'blue'],  //set colors position
-      angle: -130                                                   //set angle of colors drawing
-    });
-
-  //disable fill of grids for observing background visualization
-  chart.grid(0).oddFill(null).evenFill(null).stroke('black');
-  chart.grid(1).oddFill(null).evenFill(null).stroke('black');
+  //set y Scale inversion
+  chart.yScale().inverted(true);
 
   //set data and adjust visualisation
-  var series = chart.area(dataSet);
-  series.fill('red 0.4').stroke('darkred');
+  var series = chart.line(dataSet);
 
   //draw chart
   chart.container('container').draw();

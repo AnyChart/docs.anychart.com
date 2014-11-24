@@ -12,7 +12,7 @@ anychart.onDocumentReady(function() {
         ['Product C', 73],
         ['Product D', 88],
         ['Product E', 75],
-        ['Product F', 100],
+        ['Product F', 100]
       ]);
 
   //chart type

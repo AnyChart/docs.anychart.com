@@ -1,0 +1,32 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
+
+anychart.onDocumentReady(function() {
+
+  //data for chart
+  var dataSet = anychart.data.set([
+        ['Product A', 8000],
+        ['Product B', 650],
+        ['Product C', 3912],
+        ['Product D', 265],
+        ['Product E', 50],
+        ['Product F', 1000]
+      ]);
+
+  //chart type
+  chart = anychart.radarChart();
+
+  //chart title
+  chart.title().text('Radar Chart with Logarithmic Scale');
+
+  var logScale = anychart.scales.log();     // create logarithmic scale
+  logScale.minimum(10).maximum(10000);      // set minimum and maximum value for the scale
+  chart.yScale(logScale);                   // set logarithmic scale as y scale for the chart
+
+  //set data and adjust visualisation
+  chart.area(dataSet).fill('red 0.4').stroke('darkred');
+
+  //draw chart
+  chart.container('container').draw();
+});
