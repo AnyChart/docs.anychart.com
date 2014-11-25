@@ -14,7 +14,7 @@ anychart.onDocumentReady(function() {
   stage = acgraph.create('container');
 
   //create Data Grid
-  treeDataGrid = anychart.elements.dataGrid();
+  treeDataGrid = anychart.ui.dataGrid();
 
   //set Data Tree
   treeDataGrid.data(tree).titleHeight(20);
@@ -28,7 +28,7 @@ anychart.onDocumentReady(function() {
   // draw chart
   treeDataGrid.container(stage).top(triggerButton.offsetHeight + 7).height(stage.height()).width('100%').draw();
 
-  var title = anychart.elements.title();
+  var title = anychart.ui.title();
   title.parentBounds(0, 0, "100%", 30)
         .text('Click on Button to Remove First Element')
         .container(stage)

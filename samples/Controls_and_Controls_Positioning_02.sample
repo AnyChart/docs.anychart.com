@@ -23,55 +23,55 @@ anychart.onDocumentReady(function() {
     //title
     chart.title().enabled(false)
 
-    customTitle = anychart.elements.title();
+    customTitle = anychart.ui.title();
     customTitle.enabled(true);
     customTitle.orientation('bottom').align('left');
     customTitle.zIndex(1);
     customTitle.text('LeftBottom');
 
-    customTitle1 = anychart.elements.title();
+    customTitle1 = anychart.ui.title();
     customTitle1.enabled(true);
     customTitle1.orientation('bottom').align('right');
     customTitle1.zIndex(1);
     customTitle1.text('RightBottom');
 
-    customTitle2 = anychart.elements.title();
+    customTitle2 = anychart.ui.title();
     customTitle2.enabled(true);
     customTitle2.orientation('top').align('left');
     customTitle2.zIndex(1);
     customTitle2.text('LeftTop');
 
-    customTitle3 = anychart.elements.title();
+    customTitle3 = anychart.ui.title();
     customTitle3.enabled(true);
     customTitle3.orientation('top').align('right');
     customTitle3.zIndex(1);
     customTitle3.text('RightTop');
 
-    customTitle4 = anychart.elements.title();
+    customTitle4 = anychart.ui.title();
     customTitle4.enabled(true);
     customTitle4.orientation('bottom').align('right');
     customTitle4.zIndex(1);
     customTitle4.text('RightBottom');
 
-    customTitle5 = anychart.elements.title();
+    customTitle5 = anychart.ui.title();
     customTitle5.enabled(true);
     customTitle5.orientation('top').align('center');
     customTitle5.zIndex(1);
     customTitle5.text('CenterTop');
 
-    customTitle6 = anychart.elements.title();
+    customTitle6 = anychart.ui.title();
     customTitle6.enabled(true);
     customTitle6.orientation('bottom').align('center');
     customTitle6.zIndex(1);
     customTitle6.text('CenterBottom');
 
-    customTitle7 = anychart.elements.title();
+    customTitle7 = anychart.ui.title();
     customTitle7.enabled(true);
     customTitle7./*orientation('bottom')*/align('left');
     customTitle7.zIndex(1);
     customTitle7.text('LeftCenter');
 
-    customTitle8 = anychart.elements.title();
+    customTitle8 = anychart.ui.title();
     customTitle8.enabled(true);
     customTitle8./*orientation('bottom')*/align('right');
     customTitle8.zIndex(1);

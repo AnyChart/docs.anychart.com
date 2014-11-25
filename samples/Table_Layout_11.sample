@@ -29,7 +29,7 @@ anychart.onDocumentReady(function() {
   income2004.background().enabled(false);
 
   //create table
-  var table = anychart.elements.table();
+  var table = anychart.ui.table();
 
   //set table content
   table.contents([
@@ -38,7 +38,7 @@ anychart.onDocumentReady(function() {
   ]);
 
   //create method for using text adjusting parameters
-  var textSettings = anychart.elements.labelsFactory();
+  var textSettings = anychart.ui.labelsFactory();
 
   //set parameters
   textSettings.vAlign('center');
