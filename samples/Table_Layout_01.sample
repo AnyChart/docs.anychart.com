@@ -108,7 +108,7 @@ anychart.onDocumentReady(function() {
   // region utility methods to ease up some routines
   /**
    * Utility function to setup property to a whole row.
-   * @param {anychart.elements.Table} table Table to setup row for.
+   * @param {anychart.ui.Table} table Table to setup row for.
    * @param {number} rowIndex Row index.
    * @param {!Array.<string>|string} propNameOrChain Property name to access, like 'border' or chain of property names
    *    to access, e.g. ['content', 'fontSize']. Note: no checking on valid results is done, so it's up to you to
@@ -135,7 +135,7 @@ anychart.onDocumentReady(function() {
 
   /**
    * Utility function to setup property to a whole column.
-   * @param {anychart.elements.Table} table Table to setup row for.
+   * @param {anychart.ui.Table} table Table to setup row for.
    * @param {number} colIndex Row index.
    * @param {!Array.<string>|string} propNameOrChain Property name to access, like 'border' or chain of property names
    *    to access, e.g. ['content', 'fontSize']. Note: no checking on valid results is done, so it's up to you to
@@ -353,7 +353,7 @@ anychart.onDocumentReady(function() {
     var tableHeight = (contents.length - 1) * 24 + 20;
     var reportBounds = anychart.math.rect(0, 0, 600, tableHeight + titleHeight);
 
-    var table = anychart.elements.table();
+    var table = anychart.ui.table();
     table.contents(contents);
 
     table.rowHeight(0, 30);   // Get first row and set height 30px
@@ -386,7 +386,7 @@ anychart.onDocumentReady(function() {
 
   var titleHeight = 40;
 
-  var title1 = anychart.elements.title();
+  var title1 = anychart.ui.title();
 
 
   var formattedToday = (new Date(Today)).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});

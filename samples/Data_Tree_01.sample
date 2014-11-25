@@ -15,7 +15,7 @@ anychart.onDocumentReady(function() {
   ]);
 
   //create Data Grid
-  dataGrid = anychart.elements.dataGrid();
+  dataGrid = anychart.ui.dataGrid();
 
   //set Data Tree
   dataGrid.data(tree).titleHeight(20);

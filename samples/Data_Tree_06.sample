@@ -14,7 +14,7 @@ anychart.onDocumentReady(function() {
   stage = acgraph.create('container');
 
   //create Data Grid
-  treeDataGrid = anychart.elements.dataGrid();
+  treeDataGrid = anychart.ui.dataGrid();
 
   //set Data Tree
   treeDataGrid.data(tree).titleHeight(20);
@@ -31,7 +31,7 @@ anychart.onDocumentReady(function() {
         return item.get('year 2004');
   });
 
-  rightTreeDataGrid = anychart.elements.dataGrid();
+  rightTreeDataGrid = anychart.ui.dataGrid();
 
   //set Data Tree
   rightTreeDataGrid.data(tree).titleHeight(20);
@@ -59,7 +59,7 @@ anychart.onDocumentReady(function() {
   .container(stage)
   .top(37).left('50%').width('50%').draw();
 
-  var title = anychart.elements.title();
+  var title = anychart.ui.title();
   title.parentBounds(0, 0, "100%", 30)
         .text('Click on button to add Data into Data Tree')
         .container(stage)

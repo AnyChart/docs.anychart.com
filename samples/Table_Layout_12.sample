@@ -51,7 +51,7 @@ anychart.onDocumentReady(function() {
 
 
     //create table
-    var table = anychart.elements.table();
+    var table = anychart.ui.table();
 
     //set table content
     table.contents([
@@ -59,7 +59,7 @@ anychart.onDocumentReady(function() {
         [Series_2003, Series_2004]
     ]);
 
-    var textSettings = anychart.elements.labelsFactory();
+    var textSettings = anychart.ui.labelsFactory();
     textSettings.vAlign('center');
     textSettings.hAlign('center');
     textSettings.fontSize(20);

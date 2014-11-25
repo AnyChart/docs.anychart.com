@@ -17,7 +17,7 @@ anychart.onDocumentReady(function() {
 
 
     //main title
-    var title = anychart.elements.title();
+    var title = anychart.ui.title();
     //ttile position
     title.parentBounds(0, 0, '100%', '10%')
         .text('Labels and Tooltips')

@@ -8,8 +8,8 @@ anychart.onDocumentReady(function() {
     stage.path()
         .moveTo(stage.width() / 2, 0)
         .lineTo(stage.width() / 2, stage.height());
-    var bg = anychart.elements.label().background();
-    var lbl = anychart.elements.label()
+    var bg = anychart.ui.label().background();
+    var lbl = anychart.ui.label()
         .parentBounds(anychart.math.rect(0, 0, stage.width()/2, stage.height()))
         .width(stage.width() / 3)
         .height(stage.height() - 20)
@@ -19,7 +19,7 @@ anychart.onDocumentReady(function() {
     lbl.background().enabled(true);
     lbl.container(stage).draw();
 
-    lbl = anychart.elements.label()
+    lbl = anychart.ui.label()
         .parentBounds(anychart.math.rect(stage.width()/2, 0, stage.width()/2, stage.height()))
         .width(stage.width() / 3)
         .height(stage.height() - 20)

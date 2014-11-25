@@ -7,7 +7,7 @@ anychart.onDocumentReady(function() {
   //set stage
   stage = acgraph.create('container');
 
-  customTitle = anychart.elements.title();
+  customTitle = anychart.ui.title();
   customTitle.enabled(true);
   customTitle.orientation('top').align('left');
   customTitle.zIndex(1);
@@ -216,7 +216,7 @@ anychart.onDocumentReady(function() {
 
 
   //create table
-  var table = anychart.elements.table();
+  var table = anychart.ui.table();
 
   //set table content
   table.contents([
@@ -229,7 +229,7 @@ anychart.onDocumentReady(function() {
     [chart7, chart7.title().text(), bullet7]
   ]);
 
-  var textSettings = anychart.elements.labelsFactory();
+  var textSettings = anychart.ui.labelsFactory();
   textSettings.vAlign('center');
   textSettings.hAlign('left');
   textSettings.fontSize(17);
@@ -243,7 +243,7 @@ anychart.onDocumentReady(function() {
   table.container(stage).draw();
 
   //legend settings
-  customLegend = anychart.elements.legend();
+  customLegend = anychart.ui.legend();
   customLegend.enabled(true);
   customLegend.title().enabled(false);
   customLegend.titleSeparator().enabled(false);

@@ -108,7 +108,7 @@ anychart.onDocumentReady(function() {
 
 
     //create table
-    var table = anychart.elements.table();
+    var table = anychart.ui.table();
 
     //set table content
     table.contents([
@@ -121,14 +121,14 @@ anychart.onDocumentReady(function() {
         [chart7, chart7.title().text()]
     ]);
 
-    var textSettings = anychart.elements.labelsFactory();
+    var textSettings = anychart.ui.labelsFactory();
     textSettings.vAlign('center');
     textSettings.hAlign('left');
     textSettings.fontSize(18);
     textSettings.fontWeight(600);
     table.cellTextFactory(textSettings);
 
-    customTitle = anychart.elements.title();
+    customTitle = anychart.ui.title();
     customTitle.enabled(true);
     customTitle.orientation('top').align('left');
     customTitle.zIndex(1);

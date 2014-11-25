@@ -188,7 +188,7 @@ anychart.onDocumentReady(function() {
   // region utility methods to ease up some routines
   /**
    * Utility function to setup property to a whole row.
-   * @param {anychart.elements.Table} table Table to setup row for.
+   * @param {anychart.ui.Table} table Table to setup row for.
    * @param {number} rowIndex Row index.
    * @param {!Array.<string>|string} propNameOrChain Property name to access, like 'border' or chain of property names
    *    to access, e.g. ['content', 'fontSize']. Note: no checking on valid results is done, so it's up to you to
@@ -215,7 +215,7 @@ anychart.onDocumentReady(function() {
 
    /**
     * Utility function to setup property to a whole column.
-    * @param {anychart.elements.Table} table Table to setup row for.
+    * @param {anychart.ui.Table} table Table to setup row for.
     * @param {number} colIndex Row index.
     * @param {!Array.<string>|string} propNameOrChain Property name to access, like 'border' or chain of property names
     *    to access, e.g. ['content', 'fontSize']. Note: no checking on valid results is done, so it's up to you to
@@ -433,7 +433,7 @@ anychart.onDocumentReady(function() {
     var tableHeight = (contents.length - 1) * 24 + 20;
     var reportBounds = anychart.math.rect(0, 0, 600, tableHeight + titleHeight);
 
-    var chartTitle = anychart.elements.title();
+    var chartTitle = anychart.ui.title();
     chartTitle.fontFamily('verdana, helvetica, arial, sans-serif');
     chartTitle.fontWeight('normal');
     chartTitle.text('<span style="color:#86cf38; font-size: 15px;">Daily Network Traffic</span> <span style="color: #666666; font-size: 10px; font-weight: normal;">(kilobytes)</span>');
@@ -506,7 +506,7 @@ anychart.onDocumentReady(function() {
     contents.push([null, null, null, null]);
 
 
-    var table = anychart.elements.table();
+    var table = anychart.ui.table();
     table.contents(contents);
     table.rowHeight(0, 20);
     table.rowHeight(8, 30);

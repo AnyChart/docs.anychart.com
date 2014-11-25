@@ -6,7 +6,7 @@ anychart.onDocumentReady(function() {
 
     var stage = acgraph.create('container');
 
-    anychart.elements.background()
+    anychart.ui.background()
         .fill('none')
         .stroke('orange', 5, '5 5')
         .bounds(anychart.math.rect(22, 2*stage.height() / 3 - 20, stage.width() - 44, stage.height() / 3 - 22))

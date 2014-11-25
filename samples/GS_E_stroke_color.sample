@@ -5,19 +5,19 @@
 anychart.onDocumentReady(function() {
 
     var stage = acgraph.create('container');
-    anychart.elements.background()
+    anychart.ui.background()
         .fill('none')
         .stroke('5 orange .7')
         .bounds(anychart.math.rect(22, 18, stage.width() - 44, stage.height() / 3 - 22))
         .container(stage)
         .draw();
-    anychart.elements.background()
+    anychart.ui.background()
         .fill('none')
         .stroke(['red', 'blue'], 15)
         .bounds(anychart.math.rect(22, stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 - 22))
         .container(stage)
         .draw();
-    anychart.elements.background()
+    anychart.ui.background()
         .fill('none')
         .stroke({
           keys: ['.1 red', 'white'],

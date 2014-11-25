@@ -74,7 +74,7 @@ first column represents year and second one contains total income of Box office.
     chart.grid()
         .evenFill('none')
         .oddFill('none')
-        .layout(anychart.utils.layout.VERTICAL);
+        .layout(anychart.enums.Layout.VERTICAL);
     chart.marker([
         ['2000', 1100],
         ['2001', 880],

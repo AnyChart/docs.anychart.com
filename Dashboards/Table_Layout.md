@@ -29,7 +29,7 @@ A cell in table layout dashboard may contain:
  * String with simple text or a number
  * Any visual element of AnyChart (Legend, LegendItem, Label, Title, etc)
  * Any type of a chart (pie, cartesian, etc)
- * Any data series (for instance, anychart.cartesian.series.Area)
+ * Any data series (for instance, anychart.cartesian.series.Line)
 
 ## Visual Settings
 

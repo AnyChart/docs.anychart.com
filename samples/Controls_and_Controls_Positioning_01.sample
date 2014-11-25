@@ -23,7 +23,7 @@ anychart.onDocumentReady(function() {
     stage = acgraph.create('container');
 
     //create color palette
-    var palette = anychart.utils.distinctColorPalette().colors();
+    var palette = anychart.palettes.distinctColors().colors();
 
     //legend colors setting
     var legendItems = [];
@@ -41,14 +41,14 @@ anychart.onDocumentReady(function() {
     }
 
     //legend settings
-    customLegend = anychart.elements.legend();
+    customLegend = anychart.ui.legend();
     customLegend.enabled(true);
     customLegend.itemsLayout('vertical');
     customLegend.itemsProvider(legendItems);
     customLegend.position('right').align('bottom');
     customLegend.zIndex(1);
 
-    customTitle = anychart.elements.title();
+    customTitle = anychart.ui.title();
     customTitle.enabled(true);
     customTitle.orientation('bottom').align('left');
     customTitle.zIndex(1);

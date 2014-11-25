@@ -17,7 +17,7 @@ anychart.onDocumentReady(function() {
     stage = acgraph.create('container');
 
     //setting main title
-    var title = anychart.elements.title();
+    var title = anychart.ui.title();
 
     //setting position for container with main label
     title.parentBounds(0, 0, "100%", "10%")
