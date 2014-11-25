@@ -4,34 +4,74 @@
 
 anychart.onDocumentReady(function() {
 
-    //data for chart
-    var dataSet = anychart.data.set([
-          {x: "January", value: "12000"},
-          {x: "February", value: "15000"},
-          {x: "March", value: "16000"},
-          {x: "April", value: "15000"},
-          {x: "May", value: "14000"}
-        ]);
 
-    //chart type
-    chart = anychart.radarChart();
+  //create stage
+  var stage = acgraph.create('container');
 
-    //chart title
-    chart.title().text('Start Angle 90°');
+  //data for chart
+  var dataSet = anychart.data.set([
+        ['Product A', 90],
+        ['Product B', 65],
+        ['Product C', 73],
+        ['Product D', 88],
+        ['Product E', 75],
+        ['Product F', 100]
+      ]);
 
-    //disable minor ticks
-    chart.yAxis().enabled(true).minorTicks().enabled(false);
+  //chart type
+  chart1 = anychart.radarChart();
 
-    //set data and adjust visualisation
-    var series = chart.area(dataSet).fill('red 0.4').stroke('darkred');
+  //chart title
+  chart1.title().text('Circuit Grid');
 
-    //enable labels
-    series.labels().enabled(true);
+  //disable minor ticks
+  chart1.yAxis().enabled(true).minorTicks().enabled(false);
 
-    series.tooltip().contentFormatter(function(){
-      return 'Month: ' + this.x + '\nSales: ' + this.value + '\nYear: 2003';
-    });
+  //set data and adjust visualisation
+  chart1.area(dataSet).stroke('yellow').fill('gold 0.8');
 
-    //draw chart
-    chart.container('container').draw();
+  chart1.grid(0)
+    .evenFill(null)
+    .oddFill(null)
+    .layout('radial');
+
+  chart1.grid(1)
+    .evenFill('red 0.6')
+    .oddFill('darkred 0.6')
+    .layout('curcuit');
+
+  //set chart size and position
+  chart1.bounds(0, 0, '50%', '100%');
+
+  //draw chart
+  chart1.container(stage).draw();
+
+
+  chart2 = anychart.radarChart();
+
+  //chart title
+  chart2.title().text('Gradient Background for Radar Chart');
+
+  //disable minor ticks
+  chart2.yAxis().enabled(true).minorTicks().enabled(false);
+
+  chart2.grid(0)
+    .evenFill('red 0.6')
+    .oddFill('darkred 0.6')
+    .layout('radial');
+
+  chart2.grid(1)
+    .evenFill(null)
+    .oddFill(null)
+    .layout('curcuit');
+
+  //set data and adjust visualisation
+  chart2.area(dataSet).stroke('yellow').fill('gold 0.8');
+
+  //set chart size and position
+  chart2.bounds('50%', 0, '50%', '100%');
+
+  //draw chart
+  chart2.container(stage).draw();
+
 });

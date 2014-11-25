@@ -206,6 +206,26 @@ Multiple area series may be presented with usage of stacked mode for Y scale. St
 
 {sample}BCT\_RadarChart\_08{sample}
 
+## Visualisation
+
+In this section we will describe main parts of radar chart style and demonstrate how style can be applied.
+
+
+The main idea of styles is to segregate visualization and data definition. Visual appearance of columns is defined
+using certain methods.
+
+### Grid
+
+Radar grid is a combination of circuit and radial grids. Grid visual appearance can be controlled with several
+parameters:
+
+```
+```
+full info 
+
+
+Sample below demonstrates two radar charts with adjusted visualisation of the first type of grid as well as of the
+second.
 
 
 

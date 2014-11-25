@@ -25,7 +25,7 @@ anychart.onDocumentReady(function() {
   chart.title().text('Radar Chart with Logarithmic Scale');
 
   // enables stacked mode
-  chart.yScale().stackedMode('value');
+  chart.yScale().stackMode('value');
 
   //set data for series
   chart.area(data1);
