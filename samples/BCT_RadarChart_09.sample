@@ -1,0 +1,37 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
+
+anychart.onDocumentReady(function() {
+
+    //data for chart
+    var dataSet = anychart.data.set([
+          {x: "January", value: "12000"},
+          {x: "February", value: "15000"},
+          {x: "March", value: "16000"},
+          {x: "April", value: "15000"},
+          {x: "May", value: "14000"}
+        ]);
+
+    //chart type
+    chart = anychart.radarChart();
+
+    //chart title
+    chart.title().text('Start Angle 90°');
+
+    //disable minor ticks
+    chart.yAxis().enabled(true).minorTicks().enabled(false);
+
+    //set data and adjust visualisation
+    var series = chart.area(dataSet).fill('red 0.4').stroke('darkred');
+
+    //enable labels
+    series.labels().enabled(true);
+
+    series.tooltip().contentFormatter(function(){
+      return 'Month: ' + this.x + '\nSales: ' + this.value + '\nYear: 2003';
+    });
+
+    //draw chart
+    chart.container('container').draw();
+});
