@@ -220,12 +220,23 @@ Radar grid is a combination of circuit and radial grids. Grid visual appearance 
 parameters:
 
 ```
+  //chart type
+  var chart = anychart.radarChart();
+
+  chart.grid(0).
+    .oddFill('red')       //colorizing odd cells in the grid
+    .evenFill('darkred')  //colorizing even cells in the grid
+    .layout('radial');    //set layout type
 ```
-full info 
+
+**Note:** full information on grid settings can be found in [grid section of Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#grids)
 
 
-Sample below demonstrates two radar charts with adjusted visualisation of the first type of grid as well as of the
-second.
+Sample below demonstrates two radar charts with adjusted visualisation of the radial type of grid as well as of the
+circuit one.
+
+{sample}BCT\_RadarChart\_09{sample}
+
 
 
 

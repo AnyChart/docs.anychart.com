@@ -22,7 +22,7 @@ anychart.onDocumentReady(function() {
   chart1 = anychart.radarChart();
 
   //chart title
-  chart1.title().text('Circuit Grid');
+  chart1.title().text('Curcuit Grid Adjustment');
 
   //disable minor ticks
   chart1.yAxis().enabled(true).minorTicks().enabled(false);
@@ -50,7 +50,7 @@ anychart.onDocumentReady(function() {
   chart2 = anychart.radarChart();
 
   //chart title
-  chart2.title().text('Gradient Background for Radar Chart');
+  chart2.title().text('Radial Grid Adjustment');
 
   //disable minor ticks
   chart2.yAxis().enabled(true).minorTicks().enabled(false);
