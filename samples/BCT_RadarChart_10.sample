@@ -1,0 +1,41 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
+
+anychart.onDocumentReady(function() {
+
+  //data for chart
+  var dataSet = anychart.data.set([
+        ['Product A', 90],
+        ['Product B', 65],
+        ['Product C', 73],
+        ['Product D', 88],
+        ['Product E', 75],
+        ['Product F', 100]
+      ]);
+
+  //chart type
+  chart = anychart.radarChart();
+
+  //chart title
+  chart.title().text('Labels and Tooltips');
+
+  //disable minor ticks
+  chart.yAxis().enabled(true).minorTicks().enabled(false);
+
+  //set data and adjust visualisation
+  var series = chart.area(dataSet);
+  series
+    .stroke('darkblue')
+    .fill('lightblue 0.8')
+    .labels()
+        .enabled(true)
+        .fontWeight(900);
+
+  series.tooltip().content().fontWeight(400);
+  series.tooltip().contentFormatter(function(){
+     var percent = this.value / (this.sum / 100);
+     return 'Month: ' + this.x + '\nSales: ' + this.value + '$' + '\nYear: 2003' + '\nPercent: ' + percent.toFixed(2) + '%';
+  });
+  chart.container('container').draw();
+});

@@ -200,11 +200,17 @@ Multiple area series may be presented with usage of stacked mode for Y scale. St
   //set chart type
   var chart = anychart.radarChart();
 
-  //enable stacked mode for y scale
+  //set stacked mod
   chart.yScale().stackMode('value');
 ```
 
 {sample}BCT\_RadarChart\_08{sample}
+
+Percent stacked mode calculates the proportion of each point to the category sum and uses this percentage as a value.
+ To enable this mode use **.stackMode('percent')** parameter
+
+{sample}BCT\_RadarChart\_11{sample}
+
 
 ## Visualisation
 
