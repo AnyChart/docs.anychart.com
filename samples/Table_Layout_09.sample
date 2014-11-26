@@ -332,7 +332,7 @@ anychart.onDocumentReady(function() {
 
 
       // we will also need one bullet chart per system
-      var bullet = anychart.bullet.chart([{'value': avgAvail, 'type': 'line', gap: 0.4}]);
+      var bullet = anychart.bullet([{'value': avgAvail, 'type': 'line', gap: 0.4}]);
       bullet.range(0).from(acceptedAvail[system]).to(100).fill('#ccc');
       bullet.scale(bulletScale);
       bullet.title().enabled(false);
