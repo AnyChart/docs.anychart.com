@@ -237,7 +237,37 @@ circuit one.
 
 {sample}BCT\_RadarChart\_09{sample}
 
+### Labels and Tooltips
 
+In this section we will explain how to add and configure data labels and tooltips.<!-- Full explanation of formatting
+and tuning visual appearance for them can be found in Labels and Tooltips.-->
+
+If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip()** methods. You can tune their visual appearance, positioning and format.
+
+When formatting data labels text we will use **.textFormatter()** to show month name. Otherwise sales will be displayed
+here.
+
+```
+    //chart type
+    var chart = anychart.radarChart();
+
+    //setting data
+    var series= chart.area(data);
+
+    //setting labels
+    series.labels()
+        .enabled(true)                    //enables labels
+        .textFormatter(function(point){
+            return point.x;               //setting content
+    });
+
+    //setting tooltips
+    series.tooltip().contentFormatter(function(){
+        return this.x;                    //setting content
+    });
+```
+
+{sample}BCT\_RadarChart\_10{sample}
 
 
 
