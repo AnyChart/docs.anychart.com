@@ -347,7 +347,7 @@ anychart.onDocumentReady(function() {
       row[3] = avgAvail.toFixed(1) + '%';
       contents.push(row);
     }
-    var axis = anychart.ui.axis();
+    var axis = anychart.axes.linear();
     axis.scale(bulletScale);
     axis.orientation('bottom');
     axis.staggerMode(false);
