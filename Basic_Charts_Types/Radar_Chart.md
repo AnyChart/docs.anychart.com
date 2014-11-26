@@ -5,7 +5,7 @@
 * [Configuration](#configuration)
  * [Radius size](#radius_size)
  * [Start angle](#start_angle)
- * [Plot background](plot_background)
+ * [Plot background](#plot_background)
 * [Axes](#axes)
  * [Stroke](#stroke)
  * [Inversion](#inversion)

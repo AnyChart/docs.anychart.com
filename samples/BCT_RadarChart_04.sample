@@ -3,6 +3,7 @@
   :exports "chart"}
 
 anychart.onDocumentReady(function() {
+var stage = acgraph.create('container');
 
   //data for chart
   var dataSet = anychart.data.set([
@@ -26,19 +27,24 @@ anychart.onDocumentReady(function() {
   //set background color
   chart.background()
     .enabled(true)
-    .fill({
-      keys: ['.1 white', '.5 lightblue', '0.8 lightblue', 'blue'],  //set colors position
-      angle: -130                                                   //set angle of colors drawing
-    });
+    .fill('white');
 
+    var fillSettings = {
+        keys: ['.35 white', '.9 gray'],
+        angle: -135,
+        mode: anychart.math.rect(chart.bounds())
+    };
+    stage
+            .rect(0, 0, stage.width(), stage.height())
+            .fill(fillSettings);
   //disable fill of grids for observing background visualization
-  chart.grid(0).oddFill(null).evenFill(null).stroke('black');
+  chart.grid(0).oddFill(fillSettings).evenFill(fillSettings).stroke('black');
   chart.grid(1).oddFill(null).evenFill(null).stroke('black');
 
   //set data and adjust visualisation
   var series = chart.area(dataSet);
   series.fill('red 0.4').stroke('darkred');
-
+  
   //draw chart
-  chart.container('container').draw();
+  chart.container(stage).draw();
 });
