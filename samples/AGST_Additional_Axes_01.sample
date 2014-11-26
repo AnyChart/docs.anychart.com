@@ -1,4 +1,4 @@
-{:tags ['column', 'axis']
+{:tags ["column" "axis"]
      :is_new false
      :exports "chart"}
 anychart.onDocumentReady(function() {
