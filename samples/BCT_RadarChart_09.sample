@@ -30,12 +30,12 @@ anychart.onDocumentReady(function() {
   //set data and adjust visualisation
   chart1.area(dataSet).stroke('yellow').fill('gold 0.8');
 
-  chart1.grid(0)
+  chart1.grid(1)
     .evenFill(null)
     .oddFill(null)
     .layout('radial');
 
-  chart1.grid(1)
+  chart1.grid(0)
     .evenFill('red 0.6')
     .oddFill('darkred 0.6')
     .layout('curcuit');

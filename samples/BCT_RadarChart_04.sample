@@ -32,11 +32,9 @@ var stage = acgraph.create('container');
     var fillSettings = {
         keys: ['.35 white', '.9 gray'],
         angle: -135,
-        mode: anychart.math.rect(chart.bounds())
+        mode: chart.bounds()
     };
-    stage
-            .rect(0, 0, stage.width(), stage.height())
-            .fill(fillSettings);
+
   //disable fill of grids for observing background visualization
   chart.grid(0).oddFill(fillSettings).evenFill(fillSettings).stroke('black');
   chart.grid(1).oddFill(null).evenFill(null).stroke('black');

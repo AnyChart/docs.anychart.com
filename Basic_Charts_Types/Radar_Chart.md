@@ -11,6 +11,7 @@
  * [Inversion](#inversion)
  * [Logarithmic Scale](#logarithmic_scale)
  * [Stacked Mode](#stacked_mode)
+ * [Labels Settings](#labels_settings)
 * [Visualization](#visualisation)
  * [Grid](#grid)
  * [Labels and Tooltips](#labels_and_tooltips)
@@ -27,15 +28,17 @@ The radar chart is also known as web chart, spider chart, star chart, cobweb cha
 AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to set **anychart.polarChart()** to display Radar chart:
 
 ```
+    //chart type
     chart = anychart.radarChart();
 
+    // series type and data setting
     chart.line([
-        {name: "Administration", y="22"},
-        {name: "Sales", y="34"},
-        {name: "Marketing", y="16"},
-        {name: "Research", y="12"},
-        {name: "Support", y="38"},
-        {name: "Development", y="47"}
+        {x: "Administration", value: 22},
+        {x: "Sales",          value: 34},
+        {x: "Marketing",      value: 16},
+        {x: "Research",       value: 12},
+        {x: "Support",        value: 38},
+        {x: "Development",    value: 47}
     ]);
 ```
 
@@ -51,7 +54,7 @@ Radar plot has several distinctive configuration options, which are presented in
 
 ### Radius size
 
-By default AnyChart calculates radius of radar chart automatically, but this parameter may be set manually. Radar chart radius is controlled by maximum and minimum size of Y scale and may be set throught **.yScale().minimum().maximum()** mathod.
+By default AnyChart calculates radius of radar chart automatically, but this parameter may be set manually. Radar chart radius is controlled by maximum and minimum size of Y scale and may be set through **.yScale().minimum().maximum()** methods.
 
 ```
   //set chart type
@@ -61,6 +64,17 @@ By default AnyChart calculates radius of radar chart automatically, but this par
   chart.yScale()
     .maximum(120) //set maximum radius of radar chart
     .minimum(50); //set minimum radius of radar chart
+```
+
+Advanced radius settings includes additional settings for ticks interval on the radius. As far as radius is controled
+ by y scale, full information on radius controlling may be found in [Scales tutorial](../Axes_Grid_Scales_Trends_etc/Scales)
+
+```
+  //set chart type
+  var chart = anychart.radarChart();
+
+  //set radar ticks interval equal to 10
+  chart.yScale().ticks().interval(10);
 ```
 
 Here is a sample of the radar chart radius size set manually:
@@ -96,43 +110,6 @@ You can change radar background using **.background()** method, learn more about
 Sample radar chart with tuned background:
 
 {sample}BCT\_RadarChart\_04{sample}
-
-Border settings
-
-Radar border consists of two different lines: <border> of <background> node described above, and X-axis setting - <line> node:
-
-XML Syntax
-XML Code
-Plain code
-01
-<chart_settings>
-02
-  <axes>
-03
-    <x_axis>
-04
-      <line enabled="true" thickness="4" type="Gradient">
-05
-        <gradient>
-06
-          <key color="white" />
-07
-          <key color="black" />
-08
-        </gradient>
-09
-      </line>
-10
-    </x_axis>
-11
-  </axes>
-12
-</chart_settings>
-Sample below shows Х-axis line width and background border are set to 4 pixels:
-
-Live Sample:  Radar Chart Plot border
-
-to top
 
 ## Axes
 
@@ -209,6 +186,51 @@ Percent stacked mode calculates the proportion of each point to the category sum
 
 {sample}BCT\_RadarChart\_11{sample}
 
+### Labels Settings
+
+You can easily tune visual appearance of axes labels as well as adjust labels length.
+
+In the sample below all names are limited to the length of 3:
+
+```
+  //chart type
+  var chart = anychaty.radarChart();
+
+  chart.xAxis().labels()
+    .textFormatter(function(){
+
+      //get value of the label
+      var fullValue = this.value;
+
+      if (longValue.length > 3){
+        myValue = longValue.substr(0, 3) + '..';    //adjust value
+      }
+      else{
+        myValue = fullValue;                        //return untouched value
+      }
+      return myValue;                               //return new value
+    });
+```
+
+{sample}BCT\_RadarChart\_12{sample}
+
+You can change labels background. Learn more about background configuration in [Background settings tutorial](#../General_Appearance_Settings/Background).
+
+```
+  //axes settings
+  chart.xAxis()
+    .labels()                   //settings for labels
+      .padding(5)               //set padding for labels
+      .fontWeight(900)          //set font weight for labels
+      .background()             //background settings
+        .enabled(true)          //enable background
+        .fill('lightblue')      //background fill
+        .stroke('blue')         //stroke color
+        .cornerType('round')    //corner type
+        .corners(5);            //corner size
+```
+
+{sample}BCT\_RadarChart\_13{sample}
 
 ## Visualisation
 
