@@ -4,21 +4,11 @@
 
 anychart.onDocumentReady(function() {
 
-  //data for chart
-  var dataSet = anychart.data.set([
-        ['Product A', 90],
-        ['Product B', 65],
-        ['Product C', 73],
-        ['Product D', 88],
-        ['Product E', 75],
-        ['Product F', 100]
-      ]);
-
   //chart type
   chart = anychart.radarChart();
 
   //chart title
-  chart.title().text('Gradient Background for Radar Chart');
+  chart.title().text('Tuning Axes');
 
   //disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);
@@ -35,9 +25,15 @@ anychart.onDocumentReady(function() {
     color: '#9900FF'                                        // set stroke color
   });
 
-  //set data and adjust visualisation
-  var series = chart.area(dataSet);
-  series.fill('red 0.4').stroke('darkred');
+  //set data and type of series
+  var series = chart.line(
+    {x: "Administration", value:"22"},
+    {x: "Sales", value:"34"},
+    {x: "Marketing", value:"16"},
+    {x: "Research", value:"12"},
+    {x: "Support", value:"38"},
+    {x: "Development", value:"47"}
+  );
 
   //draw chart
   chart.container('container').draw();

@@ -7,19 +7,18 @@ var stage = acgraph.create('container');
 
   //data for chart
   var dataSet = anychart.data.set([
-        ['Product A', 90],
-        ['Product B', 65],
-        ['Product C', 73],
-        ['Product D', 88],
-        ['Product E', 75],
-        ['Product F', 100]
+    ["New Zealand",  26],
+    ["Australia",    24],
+    ["France",       22],
+    ["South Africa", 14],
+    ["Samoa",        8]
       ]);
 
   //chart type
   chart = anychart.radarChart();
 
   //chart title
-  chart.title().text('Gradient Background for Radar Chart');
+  chart.title().text('Rugby World Cup Overall Record 1987-2003 W Top 5 country');
 
   //disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);

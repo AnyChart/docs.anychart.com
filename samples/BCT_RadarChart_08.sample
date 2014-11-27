@@ -22,15 +22,15 @@ anychart.onDocumentReady(function() {
   chart = anychart.radarChart();
 
   //chart title
-  chart.title().text('Radar Chart with Logarithmic Scale');
+  chart.title().text('Radar Chart with Value Stacked Mode');
 
   // enables stacked mode
   chart.yScale().stackMode('value');
 
   //set data for series
-  chart.area(data1);
-  chart.area(data2);
-  chart.area(data3);
+  chart.area(data1).fill('lightblue 0.4');
+  chart.area(data2).fill('red 0.4');
+  chart.area(data3).fill('green 0.4');
 
   //draw chart
   chart.container('container').draw();

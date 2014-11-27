@@ -6,28 +6,30 @@ anychart.onDocumentReady(function() {
 
   //data for chart
   var dataSet = anychart.data.set([
-        ['Product A', 90],
-        ['Product B', 65],
-        ['Product C', 73],
-        ['Product D', 88],
-        ['Product E', 75],
-        ['Product F', 100]
-      ]);
+    ["Greeting Cards", 65],
+    ["Plush Toys", 21],
+    ["Romantic Dinner", 44],
+    ["Perfume/Cologne", 12],
+    ["Candy", 38],
+    ["Jewelry", 11],
+    ["Flowers", 32],
+    ["Gift Cards", 29],
+    ["Other Gifts", 17]
+  ]);
 
   //chart type
   chart = anychart.radarChart();
 
   //chart title
-  chart.title().text('Start Angle 90°');
+  chart.title().text('Most Popular Ways to Celebrate Valentine’s Day');
 
   //set start angle of the chart
   chart.startAngle(90);
 
-  //disable minor ticks
-  chart.yAxis().enabled(true).minorTicks().enabled(false);
-
   //set data and adjust visualisation
-  chart.area(dataSet).fill('red 0.4').stroke('darkred');
+  var series = chart.line(dataSet)
+  series.tooltip().enabled(false);
+  series.markers().enabled(true);
 
   //draw chart
   chart.container('container').draw();

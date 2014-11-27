@@ -16,7 +16,7 @@ anychart.onDocumentReady(function() {
         {x: "Research", value:"12"},
         {x: "Support", value:"38"},
         {x: "Development", value:"47"}
-    ]).name('hue');
+    ]);
 
     chart.container('container').draw();
 });

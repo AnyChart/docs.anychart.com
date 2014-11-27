@@ -18,7 +18,7 @@ anychart.onDocumentReady(function() {
   chart = anychart.radarChart();
 
   //chart title
-  chart.title().text('Gradient Background for Radar Chart');
+  chart.title().text('Inverted Radar Scale');
 
   //disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);
