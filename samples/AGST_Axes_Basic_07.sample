@@ -23,7 +23,7 @@ anychart.onDocumentReady(function() {
         .draw();
 
     //first chart
-    var chart = anychart.columnChart();
+    chart = = anychart.columnChart();
 
     chart.title().text('Tickmarks Outside');
 

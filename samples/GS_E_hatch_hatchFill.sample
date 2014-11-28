@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    var stage = acgraph.create('container');
+    stage = acgraph.create('container');
 
     // define data
     var data = [
@@ -15,7 +15,7 @@ anychart.onDocumentReady(function() {
         ['A5', 213, 150]
     ];
     // create chart
-    var chart = anychart.barChart();
+    chart = = anychart.barChart();
 
     var series = anychart.data.mapAsTable(data, 'value');
     chart.bar(series[0]).hatchFill('verticalbrick');

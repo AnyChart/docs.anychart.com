@@ -11,14 +11,14 @@ anychart.onDocumentReady(function() {
     ]);
 
     //map data for the each series
-    var chart1 = data.mapAs({x: [0], value: [1], fill: [6]});
-    var chart2 = data.mapAs({x: [0], value: [2], fill: [6]});
-    var chart3 = data.mapAs({x: [0], value: [3], fill: [6]});
-    var chart4 = data.mapAs({x: [0], value: [4], fill: [6]});
-    var chart5 = data.mapAs({x: [0], value: [5], fill: [6]});
+    chart =1 = data.mapAs({x: [0], value: [1], fill: [6]});
+    chart =2 = data.mapAs({x: [0], value: [2], fill: [6]});
+    chart =3 = data.mapAs({x: [0], value: [3], fill: [6]});
+    chart =4 = data.mapAs({x: [0], value: [4], fill: [6]});
+    chart =5 = data.mapAs({x: [0], value: [5], fill: [6]});
 
     //chart type
-    var chart = anychart.columnChart();
+    chart = = anychart.columnChart();
 
     //set data
     chart.column(chart1).tooltip().contentFormatter(function(){

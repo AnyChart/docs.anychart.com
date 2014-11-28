@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    var chart = anychart.scatterChart();
+    chart = = anychart.scatterChart();
       chart.title().text('Sample Scatter Graph');
 
       chart.xScale().minimum(1.5).maximum(5.5).ticks().interval(1);

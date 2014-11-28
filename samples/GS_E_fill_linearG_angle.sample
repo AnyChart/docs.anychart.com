@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    var stage = acgraph.create('container');
+    stage = acgraph.create('container');
     stage.text(stage.width() / 12, 3, 'no angle preservation (45\u00b0)');
     anychart.ui.background()
             .fill(['0.4 black', '.6 white'], 45)

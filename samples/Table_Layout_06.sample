@@ -433,7 +433,7 @@ anychart.onDocumentReady(function() {
     var tableHeight = (contents.length - 1) * 24 + 20;
     var reportBounds = anychart.math.rect(0, 0, 600, tableHeight + titleHeight);
 
-    var chartTitle = anychart.ui.title();
+    chart =Title = anychart.ui.title();
     chartTitle.fontFamily('verdana, helvetica, arial, sans-serif');
     chartTitle.fontWeight('normal');
     chartTitle.text('<span style="color:#86cf38; font-size: 15px;">Daily Network Traffic</span> <span style="color: #666666; font-size: 10px; font-weight: normal;">(kilobytes)</span>');
@@ -444,7 +444,7 @@ anychart.onDocumentReady(function() {
     chartTitle.padding(0, 0, 2, 0);
     chartTitle.useHtml(true);
 
-    var chart = anychart.cartesianChart();
+    chart = = anychart.cartesianChart();
     chart.title(chartTitle);
     var xAxisScale = anychart.scales.dateTime();
     xAxisScale.minimum(Date.UTC(0, 0, 0, 0));
@@ -538,7 +538,7 @@ anychart.onDocumentReady(function() {
   }
 
 
-  var stage = anychart.graphics.create('container');
+  stage = anychart.graphics.create('container');
   stage.suspend();
 
   var leftColumnReports = [

@@ -3,7 +3,7 @@
 
 anychart.onDocumentReady(function() {
 
-    var stage = acgraph.create('container');
+    stage = acgraph.create('container');
     stage.rect(1,1,50,50).parent(stage).fill('red').stroke('black');
     stage.render();
 

@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    var chart = anychart.columnChart([10, 1, 7, 10]);
+    chart = = anychart.columnChart([10, 1, 7, 10]);
 
     //put your license key here and uncomment the next line
     //anychart.licenseKey('COPY-PASTE-YOUR-LICENSE-KEY');
