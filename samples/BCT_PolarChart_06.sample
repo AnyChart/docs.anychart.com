@@ -1,0 +1,34 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
+
+anychart.onDocumentReady(function() {
+
+  //data for chart
+  var dataSet = anychart.data.set([
+    [1, 90],
+    [2, 65],
+    [3, 73],
+    [4, 88],
+    [5, 75],
+    [6, 100]
+  ]);
+
+  //chart type
+  chart = anychart.polar();
+
+  //chart title
+  chart.title().text('Inverted Polar Scale');
+
+  //disable minor ticks
+  chart.yAxis().enabled(true).minorTicks().enabled(false);
+
+  //set y Scale inversion
+  chart.yScale().inverted(true);
+
+  //set data and adjust visualisation
+  var series = chart.line(dataSet);
+
+  //draw chart
+  chart.container('container').draw();
+});
