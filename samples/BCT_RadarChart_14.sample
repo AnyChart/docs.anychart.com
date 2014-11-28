@@ -26,15 +26,15 @@ anychart.onDocumentReady(function() {
   ]).fill('red 0.7').stroke('darkred');
 
   chart.line([
-    {x: "Product A", value: 1222"},
-    {x: "Product B", value: 2431"},
-    {x: "Product C", value: 3624"},
-    {x: "Product D", value: 5243"},
-    {x: "Product E", value: 6813"},
-    {x: "Product F", value: 5321"},
-    {x: "Product G", value: 1567"},
-    {x: "Product H", value: 3876"},
-    {x: "Product I", value: 2187"}
+    {x: "Product A", value: 1222},
+    {x: "Product B", value: 2431},
+    {x: "Product C", value: 3624},
+    {x: "Product D", value: 5243},
+    {x: "Product E", value: 6813},
+    {x: "Product F", value: 5321},
+    {x: "Product G", value: 1567},
+    {x: "Product H", value: 3876},
+    {x: "Product I", value: 2187}
   ]).stroke('lightblue');
 
   chart.marker([
