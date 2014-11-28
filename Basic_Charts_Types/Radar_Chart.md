@@ -49,7 +49,7 @@ Here is a basic Radar sample:
 
 {sample}BCT\_RadarChart\_01{sample}
 
-## Configurations
+## Configuration
 
 Radar plot has several distinctive configuration options, which are presented in this section: chart radius settings, chart rotation and background settings.
 
