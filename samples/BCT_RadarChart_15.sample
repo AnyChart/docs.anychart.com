@@ -35,7 +35,7 @@ anychart.onDocumentReady(function() {
       .minorTicks()         //settings for minor ticks
         .enabled(false);    //hide minor ticks
 
-  chart.line(dataSet);
+  chart.area(dataSet).fill('lightblue 0.7');
 
   chart.grid(0).evenFill('white').oddFill('white');
 
