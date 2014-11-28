@@ -10,11 +10,11 @@ anychart.onDocumentReady(function() {
     ]);
 
     //map data for the each series
-    chart =1 = data.mapAs({x: [0], value: [1]});
-    chart =2 = data.mapAs({x: [0], value: [2]});
-    chart =3 = data.mapAs({x: [0], value: [3]});
-    chart =4 = data.mapAs({x: [0], value: [4]});
-    chart =5 = data.mapAs({x: [0], value: [5]});
+    var chart1 = data.mapAs({x: [0], value: [1]});
+    var chart2 = data.mapAs({x: [0], value: [2]});
+    var chart3 = data.mapAs({x: [0], value: [3]});
+    var chart4 = data.mapAs({x: [0], value: [4]});
+    var chart5 = data.mapAs({x: [0], value: [5]});
 
     //chart type
     chart = anychart.columnChart();
