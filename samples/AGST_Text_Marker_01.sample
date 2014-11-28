@@ -13,7 +13,7 @@ anychart.onDocumentReady(function() {
     ]);
 
     //chart type
-    chart = = anychart.areaChart();
+    chart = anychart.areaChart();
 
     //set data
     chart.area(data)

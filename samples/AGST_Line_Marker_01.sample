@@ -18,7 +18,7 @@ anychart.onDocumentReady(function() {
     chart =5 = data.mapAs({x: [0], value: [5], fill: [6]});
 
     //chart type
-    chart = = anychart.columnChart();
+    chart = anychart.columnChart();
 
     //set data
     chart.column(chart1).tooltip().contentFormatter(function(){

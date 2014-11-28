@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-  chart = = anychart.scatterChart();
+  chart = anychart.scatterChart();
 
   chart.title().text('Springfield\'s Clusters\nLables and Tooltips Settings')
     .hAlign('center');

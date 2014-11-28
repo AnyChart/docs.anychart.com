@@ -20,7 +20,7 @@ anychart.onDocumentReady(function() {
     ];
 
     //set stage
-    stage = acgraph.create('container');
+    stage = anychart.graphics.create('container');
 
     //create color palette
     var palette = anychart.palettes.distinctColors().colors();

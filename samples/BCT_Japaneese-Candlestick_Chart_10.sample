@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
     //enable stages for multiple charts
-    stage = acgraph.create('container');
+    stage = anychart.graphics.create('container');
 
     //data
     var dataSet = anychart.data.set([

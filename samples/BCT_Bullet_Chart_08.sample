@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
   // Create bullet chart
-  chart = = anychart.bulletChart([
+  chart = anychart.bulletChart([
     {value: 225},
     {value: 290,          // set marker position
       type: 'ellipse',    // set ellipse as marker type

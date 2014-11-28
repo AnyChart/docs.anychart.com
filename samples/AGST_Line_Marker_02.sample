@@ -14,7 +14,7 @@ anychart.onDocumentReady(function() {
     ]);
 
     //chart type
-    chart = = anychart.lineChart();
+    chart = anychart.lineChart();
 
     //set data
     chart.line(data).hoverStroke('red').tooltip().contentFormatter(function(){

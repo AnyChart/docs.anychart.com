@@ -13,7 +13,7 @@ anychart.onDocumentReady(function() {
         ['All other outlets', 90000]
     ]);
     //set stage
-    stage = acgraph.create('container');
+    stage = anychart.graphics.create('container');
 
 
     //main title

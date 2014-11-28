@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
   // Create bullet chart
-  chart = = anychart.bulletChart([
+  chart = anychart.bulletChart([
     {value: 225},                 // main marker in a shape of a bar
     {value: 240, type: 'line'},   // line shaped marker
     {value: 275, type: 'x'},      // X shaped marker

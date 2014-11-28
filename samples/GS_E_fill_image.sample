@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    stage = acgraph.create('container');
+    stage = anychart.graphics.create('container');
     stage.path()
             .moveTo(stage.width() / 2, 0)
             .lineTo(stage.width() / 2, stage.height());

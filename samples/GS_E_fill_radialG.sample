@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    stage = acgraph.create('container');
+    stage = anychart.graphics.create('container');
     var bg = anychart.ui.background()
         .fill(['black', 'white'], .5, .5)
         .container(stage)

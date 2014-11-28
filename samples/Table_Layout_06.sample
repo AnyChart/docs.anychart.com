@@ -444,7 +444,7 @@ anychart.onDocumentReady(function() {
     chartTitle.padding(0, 0, 2, 0);
     chartTitle.useHtml(true);
 
-    chart = = anychart.cartesianChart();
+    chart = anychart.cartesianChart();
     chart.title(chartTitle);
     var xAxisScale = anychart.scales.dateTime();
     xAxisScale.minimum(Date.UTC(0, 0, 0, 0));

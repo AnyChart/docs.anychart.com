@@ -14,7 +14,7 @@ anychart.onDocumentReady(function() {
     ]);
 
     //set stage
-    stage = acgraph.create('container');
+    stage = anychart.graphics.create('container');
 
     //set title and it's position
     var title = anychart.ui.title();

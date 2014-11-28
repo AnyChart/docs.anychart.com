@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
     //chart type
-    chart = = anychart.scatterChart();
+    chart = anychart.scatterChart();
 
     //chart title
     chart.title().text('Sample Scatter Line and Spline Chart');

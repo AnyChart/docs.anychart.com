@@ -3,7 +3,7 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    stage = acgraph.create('container');
+    stage = anychart.graphics.create('container');
 
     //setting main title
     var title = anychart.ui.title();
