@@ -7,8 +7,10 @@ anychart.onDocumentReady(function() {
     //chart type
     chart = anychart.radarChart();
 
+    //chart title
     chart.title().text('Spending');
 
+    //series type and data set
     chart.line([
         {x: "Administration", value:"22"},
         {x: "Sales", value:"34"},
@@ -18,5 +20,6 @@ anychart.onDocumentReady(function() {
         {x: "Development", value:"47"}
     ]);
 
+    //draw chart
     chart.container('container').draw();
 });

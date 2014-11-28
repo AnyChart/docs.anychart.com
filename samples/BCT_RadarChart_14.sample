@@ -13,6 +13,7 @@ anychart.onDocumentReady(function() {
   //background fill
   chart.background().enabled(true).fill('#EEEEEE');
 
+  //set data and adjust visual settings
   chart.area([
     {x: "Product A", value: 722},
     {x: "Product B", value: 1431},

@@ -28,7 +28,11 @@ anychart.onDocumentReady(function() {
 
   //set data and adjust visualisation
   var series = chart.line(dataSet)
+
+  //disable tooltips
   series.tooltip().enabled(false);
+
+  //enable markers on series
   series.markers().enabled(true);
 
   //draw chart

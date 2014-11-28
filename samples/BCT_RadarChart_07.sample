@@ -24,7 +24,7 @@ anychart.onDocumentReady(function() {
   chart.title().text('Radar Chart with Logarithmic Scale');
 
   var logScale = anychart.scales.log();     // create logarithmic scale
-  logScale.minimum(10).maximum(100000);      // set minimum and maximum value for the scale
+  logScale.minimum(10).maximum(100000);     // set minimum and maximum value for the scale
   chart.yScale(logScale);                   // set logarithmic scale as y scale for the chart
 
   //set data and adjust visualisation

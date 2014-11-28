@@ -36,26 +36,27 @@ anychart.onDocumentReady(function() {
   chart.yAxis().enabled(true).minorTicks().enabled(false);
 
 
-    chart.xAxis().labels()
-      .fontWeight(900)
-      .textFormatter(function(){
-        var longValue = this.value;
+  chart.xAxis().labels()
+    .fontWeight(900)              //set labels font
+    .textFormatter(function(){    //set labels content
+      var longValue = this.value;
 
-        //check label width
-        if (longValue.length > 3){
-          myValue = longValue.substr(0, 3) + '...';
-        }
-        else{
-          myValue = longValue;
-        }
+      //check label width
+      if (longValue.length > 3){
+        myValue = longValue.substr(0, 3) + '...';
+      }
+      else{
+        myValue = longValue;
+      }
 
-        //return adjuster value
-        return myValue;
-    });
+      //return adjuster value
+      return myValue;
+  });
 
-
-  //set data and adjust visualisation
+  //set series data
   var goldSeries = chart.line(gold);
+
+  //series visual settings
   goldSeries
     .stroke('3 gold')
     .tooltip()
@@ -97,7 +98,7 @@ anychart.onDocumentReady(function() {
         .content()
         .fontColor('black');
 
-
+  //grid settings
   chart.grid(0).evenFill('white').oddFill('white');
 
   //draw chart

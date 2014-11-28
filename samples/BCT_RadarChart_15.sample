@@ -35,8 +35,10 @@ anychart.onDocumentReady(function() {
       .minorTicks()         //settings for minor ticks
         .enabled(false);    //hide minor ticks
 
+  //set data and visual appearance
   chart.area(dataSet).fill('lightblue 0.7');
 
+  //set grid visual appearance
   chart.grid(0).evenFill('white').oddFill('white');
 
   //draw chart

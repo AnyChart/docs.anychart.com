@@ -6,13 +6,13 @@ anychart.onDocumentReady(function() {
 
   //data for chart
   var dataSet = anychart.data.set([
-        ['Product A', 90,  32,  58],
-        ['Product B', 65,  73,  42],
-        ['Product C', 73,  23,  95],
-        ['Product D', 88,  82,  41],
-        ['Product E', 75,  30,  71],
-        ['Product F', 100, 100, 80]
-      ]);
+    ['Product A', 90,  32,  58],
+    ['Product B', 65,  73,  42],
+    ['Product C', 73,  23,  95],
+    ['Product D', 88,  82,  41],
+    ['Product E', 75,  30,  71],
+    ['Product F', 100, 100, 80]
+  ]);
 
   var data1 = dataSet.mapAs({x: [0], value: [1]});
   var data2 = dataSet.mapAs({x: [0], value: [2]});

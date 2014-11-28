@@ -6,13 +6,13 @@ anychart.onDocumentReady(function() {
 
   //data for chart
   var dataSet = anychart.data.set([
-        ['Product A', 90],
-        ['Product B', 65],
-        ['Product C', 73],
-        ['Product D', 88],
-        ['Product E', 75],
-        ['Product F', 100]
-      ]);
+    ['Product A', 90],
+    ['Product B', 65],
+    ['Product C', 73],
+    ['Product D', 88],
+    ['Product E', 75],
+    ['Product F', 100]
+  ]);
 
   //chart type
   chart = anychart.radarChart();
@@ -23,19 +23,24 @@ anychart.onDocumentReady(function() {
   //disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);
 
-  //set data and adjust visualisation
+  //set series data
   var series = chart.area(dataSet);
-  series
-    .stroke('darkblue')
-    .fill('lightblue 0.8')
-    .labels()
-        .enabled(true)
-        .fontWeight(900);
 
-  series.tooltip().content().fontWeight(400);
-  series.tooltip().contentFormatter(function(){
+  //set series visualisation
+  series
+    .stroke('darkblue')     //stroke color
+    .fill('lightblue 0.8')  //fill color
+    .labels()               //labels settings
+        .enabled(true)      //enable labels
+        .fontWeight(900);   //labels font weight
+
+  //visual setting for tooltips
+  series.tooltip().content().fontWeight(400);     //settings for tooltip content font
+  series.tooltip().contentFormatter(function(){   //adjust tooltip content
      var percent = this.value / (this.sum / 100);
      return 'Month: ' + this.x + '\nSales: ' + this.value + '$' + '\nYear: 2003' + '\nPercent: ' + percent.toFixed(2) + '%';
   });
+
+  //draw chart
   chart.container('container').draw();
 });
