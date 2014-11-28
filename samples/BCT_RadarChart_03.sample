@@ -27,7 +27,7 @@ anychart.onDocumentReady(function() {
   chart.startAngle(90);
 
   //set data and adjust visualisation
-  var series = chart.line(dataSet)
+  var series = chart.line(dataSet);
 
   //disable tooltips
   series.tooltip().enabled(false);

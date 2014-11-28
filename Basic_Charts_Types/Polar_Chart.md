@@ -1,4 +1,4 @@
-# Radar Chart
+# Polar Chart
 
 * [Overview](#overview)
 * [Chart](#chart)
@@ -19,18 +19,16 @@
 
 ## Overview
 
-A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables represented on axes starting from the same point. The relative position and angle of the axes is typically uninformative.
-
-
-The radar chart is also known as web chart, spider chart, star chart, cobweb chart, star plot, irregular polygon, or kiviat diagram.
+Polar chart plot allows to draw scatter chart using polar coordinate system, which is is a two-dimensional coordinate system in which each point on a plane is determined by a distance from a fixed point and an angle from a fixed direction.
 
 ## Chart
 
-AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to set **anychart.radarChart()** to display Radar chart:
+AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to set **anychart
+.polarChart()** to display Polar chart:
 
 ```
     //chart type
-    chart = anychart.radarChart();
+    chart = anychart.polarChart();
 
     // series type and data setting
     chart.line([
@@ -47,7 +45,7 @@ As you can see each point is represented by category set using name attribute an
 
 Here is a basic Radar sample:
 
-{sample}BCT\_RadarChart\_01{sample}
+{sample}BCT\_PolarChart\_01{sample}
 
 ## Configuration
 

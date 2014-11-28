@@ -86,7 +86,7 @@ anychart.onDocumentReady(function() {
       .anchor('topCenter')
       .fontColor('blue')
       .fontSize(14)
-      .fontWeight(900)
+      .fontWeight(400)
       .textFormatter(function(){
         return view.get(
           this.index,           // index of a current point is used to get row with point's data

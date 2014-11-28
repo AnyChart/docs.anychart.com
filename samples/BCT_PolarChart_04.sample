@@ -8,21 +8,40 @@ anychart.onDocumentReady(function() {
 
   //data for chart
   var dataSet = anychart.data.set([
-    ["New Zealand",  26],
-    ["Australia",    24],
-    ["France",       22],
-    ["South Africa", 14],
-    ["Samoa",        8]
+    [0, 80],
+    [3, 0],
+    [6, 80],
+    [9, 0],
+    [12, 80],
+    [15, 0],
+    [18, 80],
+    [21, 0],
+    [24, 0],
+    [3, 80],
+    [6, 0],
+    [9, 80],
+    [12, 0],
+    [15, 80],
+    [18, 0],
+    [21, 80],
+    [24, 0],
+    [21, 0]
   ]);
 
   //chart type
-  chart = anychart.radarChart();
+  chart = anychart.polarChart();
 
   //chart title
-  chart.title().text('Rugby World Cup Overall Record 1987-2003 W Top 5 country');
+  chart.title().text('Polar Chart Plot Background Sample');
 
   //disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);
+
+  //set ticks interval for y scale
+  chart.xScale().ticks().interval(5);
+
+  //andjust content and visualisation of labels
+  chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + '.00'});
 
   //set background color
   chart.background()
@@ -40,8 +59,8 @@ anychart.onDocumentReady(function() {
   chart.grid(0).oddFill(fillSettings).evenFill(fillSettings).stroke('black');
   chart.grid(1).oddFill(null).evenFill(null).stroke('black');
 
-  //set data and adjust visualisation
-  var series = chart.line(dataSet).markers().enabled(true);
+  //set data
+  var series = chart.line(dataSet);
   
   //draw chart
   chart.container(stage).draw();
