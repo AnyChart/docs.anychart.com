@@ -433,7 +433,7 @@ anychart.onDocumentReady(function() {
     var tableHeight = (contents.length - 1) * 24 + 20;
     var reportBounds = anychart.math.rect(0, 0, 600, tableHeight + titleHeight);
 
-    chart =Title = anychart.ui.title();
+    var chartTitle = anychart.ui.title();
     chartTitle.fontFamily('verdana, helvetica, arial, sans-serif');
     chartTitle.fontWeight('normal');
     chartTitle.text('<span style="color:#86cf38; font-size: 15px;">Daily Network Traffic</span> <span style="color: #666666; font-size: 10px; font-weight: normal;">(kilobytes)</span>');
