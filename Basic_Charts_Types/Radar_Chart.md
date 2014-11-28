@@ -204,7 +204,7 @@ In the sample below all names are limited to the length of 3:
       var fullValue = this.value;
 
       if (longValue.length > 3){
-        myValue = longValue.substr(0, 3) + '..';    //adjust value
+        myValue = longValue.substr(0, 3) + '...';   //adjust value
       }
       else{
         myValue = fullValue;                        //return untouched value
@@ -232,6 +232,16 @@ You can change labels background. Learn more about background configuration in [
 ```
 
 {sample}BCT\_RadarChart\_13{sample}
+
+You can hide first and/or last labels using **.drawFirstLabel()** and **.drawLastLabel()** parameters:
+
+```
+  chart.yAxis()
+    .drawFirstLabel(false)  //hides first label of y Axis
+    .drawLastLabel(false);  //hides last label of y Axis
+```
+
+{sample}BCT\_RadarChart\_15{sample}
 
 ## Visualisation
 

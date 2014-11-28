@@ -43,7 +43,7 @@ anychart.onDocumentReady(function() {
 
         //check label width
         if (longValue.length > 3){
-          myValue = longValue.substr(0, 3) + '..';
+          myValue = longValue.substr(0, 3) + '...';
         }
         else{
           myValue = longValue;
