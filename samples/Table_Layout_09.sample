@@ -458,7 +458,7 @@ anychart.onDocumentReady(function() {
 
 
 
-  var stage = anychart.graphics.create('container');
+  stage = anychart.graphics.create('container');
   stage.suspend();
 
   var titleHeight = 40;

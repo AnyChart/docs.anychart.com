@@ -11,7 +11,7 @@ anychart.onDocumentReady(function() {
     {name: 'Node 2', id: '5'}
   ], anychart.enums.TreeFillingMethod.AS_TABLE);
 
-  stage = acgraph.create('container');
+  stage = anychart.graphics.create('container');
 
   //create Data Grid
   treeDataGrid = anychart.ui.dataGrid();

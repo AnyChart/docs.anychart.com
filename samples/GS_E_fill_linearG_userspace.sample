@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    var stage = acgraph.create('container');
+    stage = anychart.graphics.create('container');
 
     var fillSettings = {
         keys: ['.1 red', '.5 green', '.9 blue'],

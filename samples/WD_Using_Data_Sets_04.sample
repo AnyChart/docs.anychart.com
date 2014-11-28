@@ -17,7 +17,7 @@ anychart.onDocumentReady(function() {
   var dataSet = anychart.data.set(data);
 
   //set stage
-  stage = acgraph.create('container');
+  stage = anychart.graphics.create('container');
 
   // create a line chart using the data set
   var lineChart = anychart.lineChart.apply(null, anychart.data.mapAsTable(data));

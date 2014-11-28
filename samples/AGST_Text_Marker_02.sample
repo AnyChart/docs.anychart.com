@@ -13,7 +13,7 @@ anychart.onDocumentReady(function() {
     ]);
 
     //chart type
-    var chart = anychart.lineChart();
+    chart = anychart.lineChart();
 
     //set data
     chart.line(data).tooltip().contentFormatter(function(){

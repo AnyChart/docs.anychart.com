@@ -14,7 +14,7 @@ anychart.onDocumentReady(function() {
     var seriesData_1 = data.mapAs({x: [0], value: [1]});
     var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
-    stage = acgraph.create('container');
+    stage = anychart.graphics.create('container');
 
     //setting main title
     var title = anychart.ui.title();

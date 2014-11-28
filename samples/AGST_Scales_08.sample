@@ -10,7 +10,7 @@ anychart.onDocumentReady(function() {
         ['E', 25]
     ]);
 
-    stage = acgraph.create('container');
+    stage = anychart.graphics.create('container');
 
     //setting basic title
     var title = anychart.ui.title();

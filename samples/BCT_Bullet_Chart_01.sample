@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
   // Create bullet chart
-  var chart = anychart.bulletChart([
+  chart = anychart.bulletChart([
     {value: 637.166}                    //2005 income
   ]);
 

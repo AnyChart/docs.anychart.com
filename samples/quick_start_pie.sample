@@ -2,9 +2,6 @@
   :is_new false
   :exports "chart"}
 
-{:tags []
-     :is_new false}
-
 anychart.onDocumentReady(function() {
 
     chart = anychart.pieChart([

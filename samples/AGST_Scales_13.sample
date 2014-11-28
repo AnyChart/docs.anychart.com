@@ -4,7 +4,7 @@
 anychart.onDocumentReady(function() {
 
     //set stage
-    stage = acgraph.create('container');
+    stage = anychart.graphics.create('container');
 
     //custom scale
     var customScale = anychart.scales.linear();
