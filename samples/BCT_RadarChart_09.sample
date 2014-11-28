@@ -4,19 +4,18 @@
 
 anychart.onDocumentReady(function() {
 
-
   //create stage
   stage = acgraph.create('container');
 
   //data for chart
   var dataSet = anychart.data.set([
-        ['Product A', 90],
-        ['Product B', 65],
-        ['Product C', 73],
-        ['Product D', 88],
-        ['Product E', 75],
-        ['Product F', 100]
-      ]);
+    ['Product A', 90],
+    ['Product B', 65],
+    ['Product C', 73],
+    ['Product D', 88],
+    ['Product E', 75],
+    ['Product F', 100]
+  ]);
 
   //chart type
   chart1 = anychart.radarChart();
@@ -30,23 +29,26 @@ anychart.onDocumentReady(function() {
   //set data and adjust visualisation
   chart1.area(dataSet).stroke('yellow').fill('gold 0.8');
 
-  chart1.grid(0)
+  chart1.grid(1)
     .evenFill(null)
     .oddFill(null)
-    .layout('radial');
+    .layout('radial')
+    .stroke('white');
 
-  chart1.grid(1)
+  chart1.grid(0)
     .evenFill('red 0.6')
     .oddFill('darkred 0.6')
-    .layout('curcuit');
+    .layout('curcuit')
+    .stroke('white');
 
   //set chart size and position
   chart1.bounds(0, 0, '50%', '100%');
 
-  //draw chart
+  //set container and draw chart
   chart1.container(stage).draw();
 
 
+  //create second chart
   chart2 = anychart.radarChart();
 
   //chart title
@@ -58,12 +60,14 @@ anychart.onDocumentReady(function() {
   chart2.grid(0)
     .evenFill('red 0.6')
     .oddFill('darkred 0.6')
-    .layout('radial');
+    .layout('radial')
+    .stroke('white');
 
   chart2.grid(1)
     .evenFill(null)
     .oddFill(null)
-    .layout('curcuit');
+    .layout('curcuit')
+    .stroke('white');
 
   //set data and adjust visualisation
   chart2.area(dataSet).stroke('yellow').fill('gold 0.8');
@@ -71,7 +75,7 @@ anychart.onDocumentReady(function() {
   //set chart size and position
   chart2.bounds('50%', 0, '50%', '100%');
 
-  //draw chart
+  //set container and draw chart
   chart2.container(stage).draw();
 
 });

@@ -14,7 +14,6 @@ anychart.onDocumentReady(function() {
     ['Product F', 100, 100, 80]
   ]);
 
-  //map data
   var data1 = dataSet.mapAs({x: [0], value: [1]});
   var data2 = dataSet.mapAs({x: [0], value: [2]});
   var data3 = dataSet.mapAs({x: [0], value: [3]});
@@ -23,15 +22,15 @@ anychart.onDocumentReady(function() {
   chart = anychart.radarChart();
 
   //chart title
-  chart.title().text('Radar Chart with Value Stacked Mode');
+  chart.title().text('Radar Chart with Percent Stacked Mode');
 
   // enables stacked mode
-  chart.yScale().stackMode('value');
+  chart.yScale().stackMode('percent');
 
   //set data for series
   chart.area(data1).fill('lightblue 0.7');
   chart.area(data2).fill('red 0.7');
-  chart.area(data3).fill('green 0.7');
+  chart.area(data3).fill('lightgreen 0.7');
 
   //draw chart
   chart.container('container').draw();
