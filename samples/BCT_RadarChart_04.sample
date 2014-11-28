@@ -39,8 +39,7 @@ var stage = acgraph.create('container');
   chart.grid(1).oddFill(null).evenFill(null).stroke('black');
 
   //set data and adjust visualisation
-  var series = chart.area(dataSet);
-  series.fill('red 0.4').stroke('darkred');
+  var series = chart.line(dataSet).markers().enabled(true);
   
   //draw chart
   chart.container(stage).draw();

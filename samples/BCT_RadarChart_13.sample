@@ -52,11 +52,11 @@ anychart.onDocumentReady(function() {
   //set data and adjust visualisation
   var series = chart.area(dataSet);
   series
-    .stroke('2 blue')               //area border color
+    .stroke('2 #11aaff')            //area border color
     .fill('lightblue 0.5')          //area fill color
     .markers()                      //marker settings
         .enabled(true)              //enables markers
-        .fill('blue');              //markers color
+        .fill('#11aaff');           //markers color
 
   //grid settings
   chart.grid(0).evenFill('white').oddFill('white');

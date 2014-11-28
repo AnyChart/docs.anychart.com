@@ -28,9 +28,9 @@ anychart.onDocumentReady(function() {
   chart.yScale().stackMode('value');
 
   //set data for series
-  chart.area(data1).fill('lightblue 0.4');
-  chart.area(data2).fill('red 0.4');
-  chart.area(data3).fill('green 0.4');
+  chart.area(data1).fill('lightblue 0.7');
+  chart.area(data2).fill('red 0.7');
+  chart.area(data3).fill('green 0.7');
 
   //draw chart
   chart.container('container').draw();

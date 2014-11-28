@@ -1,0 +1,57 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
+
+anychart.onDocumentReady(function() {
+
+  //chart type
+  chart = anychart.radarChart();
+
+  //chart title
+  chart.title().text('Radar Series Types');
+
+  //background fill
+  chart.background().enabled(true).fill('#EEEEEE');
+
+  chart.area([
+    {"Product A", 722},
+    {"Product B", 1431},
+    {"Product C", 1624},
+    {"Product D", 1243},
+    {"Product E", 1813},
+    {"Product F", 1321},
+    {"Product G", 567},
+    {"Product H", 1876},
+    {"Product I", 1187}
+  ]).fill('red 0.7').stroke('darkred');
+
+  chart.line([
+    {x: "Product A", 1222"},
+    {x: "Product B", 2431"},
+    {x: "Product C", 3624"},
+    {x: "Product D", 5243"},
+    {x: "Product E", 6813"},
+    {x: "Product F", 5321"},
+    {x: "Product G", 1567"},
+    {x: "Product H", 3876"},
+    {x: "Product I", 2187"}
+  ]).stroke('lightblue');
+
+  chart.marker([
+    {x: "Product A", 1422},
+    {x: "Product B", 2231},
+    {x: "Product C", 3124},
+    {x: "Product D", 5543},
+    {x: "Product E", 6113},
+    {x: "Product F", 5521},
+    {x: "Product G", 567},
+    {x: "Product H", 3176},
+    {x: "Product I", 3187}
+  ]).fill('lightgreen').stroke('green');
+
+  //grid settings
+  chart.grid(0).evenFill('white').oddFill('white');
+
+  //draw chart
+  chart.container('container').draw();
+});

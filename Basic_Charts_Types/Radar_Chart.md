@@ -15,6 +15,7 @@
 * [Visualization](#visualisation)
  * [Grid](#grid)
  * [Labels and Tooltips](#labels_and_tooltips)
+* [Series Types](#series_types)
 
 ## Overview
 
@@ -294,3 +295,9 @@ here.
 ```
 
 {sample}BCT\_RadarChart\_10{sample}
+
+## Series Types
+
+Radar chart supports: Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
+
+{sample}BCT\_RadarChart\_14{sample}
