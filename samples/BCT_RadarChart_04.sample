@@ -3,7 +3,8 @@
   :exports "chart"}
 
 anychart.onDocumentReady(function() {
-var stage = acgraph.create('container');
+
+  stage = acgraph.create('container');
 
   //data for chart
   var dataSet = anychart.data.set([

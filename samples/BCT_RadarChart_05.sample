@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
   chart = anychart.radarChart();
 
   //chart title
-  chart.title().text('Tuning Axes');
+  chart.title().text('Tuning Axes Visualization');
 
   //disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);
