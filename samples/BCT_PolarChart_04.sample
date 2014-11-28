@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-  var stage = acgraph.create('container');
+  stage = acgraph.create('container');
 
   //data for chart
   var dataSet = anychart.data.set([
@@ -38,10 +38,16 @@ anychart.onDocumentReady(function() {
   chart.yAxis().enabled(true).minorTicks().enabled(false);
 
   //set ticks interval for y scale
-  chart.xScale().ticks().interval(5);
+  chart.xScale().maximum(24).ticks().interval(4);
 
-  //andjust content and visualisation of labels
-  chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + '.00'});
+  //adjust content and visualisation of labels
+  chart.xAxis()
+    .labels()
+    .fontWeight(900)
+    .textFormatter(
+      function(){
+        return this.value + '.00';
+      });
 
   //set background color
   chart.background()
@@ -50,9 +56,9 @@ anychart.onDocumentReady(function() {
 
   //fill set
     var fillSettings = {
-        keys: ['.35 white', '.9 gray'],
-        angle: -135,
-        mode: chart.bounds()
+      keys: ['.35 white', '.9 gray'],
+      angle: -135,
+      mode: chart.bounds()
     };
 
   //apply fill set

@@ -40,7 +40,7 @@ anychart.onDocumentReady(function() {
   //set data
   chart.line(dataSet).tooltip().enabled(false);
 
-  //andjust content and visualisation of labels
+  //adjust content and visualisation of labels
   chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + '.00'});
 
   //grid settings
