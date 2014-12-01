@@ -373,7 +373,7 @@ anychart.onDocumentReady(function() {
   ]);
 
   //chart type
-  chart1 = anychart.polarChart();
+  chart1 = anychart.polar();
 
   //chart title
   chart1.title().text('Curcuit Grid Adjustment');
@@ -408,7 +408,7 @@ anychart.onDocumentReady(function() {
 
 
   //create second chart
-  chart2 = anychart.polarChart();
+  chart2 = anychart.polar();
 
   //chart title
   chart2.title().text('Radial Grid Adjustment');

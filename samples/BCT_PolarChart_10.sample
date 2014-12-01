@@ -28,15 +28,15 @@ anychart.onDocumentReady(function() {
 
   //set series visualisation
   series
-    .stroke('darkblue')     //stroke color
-    .fill('lightblue 0.8')  //fill color
-    .labels()               //labels settings
-        .enabled(true)      //enable labels
-        .fontWeight(900);   //labels font weight
+    .stroke('darkblue')                             //stroke color
+    .fill('lightblue 0.8')                          //fill color
+    .labels()                                       //labels settings
+      .enabled(true)                                //enable labels
+      .fontWeight(900);                             //labels font weight
 
   //visual setting for tooltips
-  series.tooltip().content().fontWeight(400);     //settings for tooltip content font
-  series.tooltip().contentFormatter(function(){   //adjust tooltip content
+  series.tooltip().content().fontWeight(400);       //settings for tooltip content font
+  series.tooltip().contentFormatter(function(){     //adjust tooltip content
      var percent = this.value / (this.sum / 100);
      return 'Value: ' + this.value + '\nPercent: ' + percent.toFixed(2) + '%';
   });

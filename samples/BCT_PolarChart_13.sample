@@ -52,7 +52,6 @@ anychart.onDocumentReady(function() {
   //set ticks interval for y scale
   chart.xScale().maximum(24).ticks().interval(4);
 
-
   //set data and adjust visualisation
   var series = chart.area(dataSet);
   series

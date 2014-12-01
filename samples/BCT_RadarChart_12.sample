@@ -24,7 +24,7 @@ anychart.onDocumentReady(function() {
   var bronze = dataSet.mapAs({x: [0], value: [3]});
 
   //chart type
-  chart = anychart.radarChart();
+  chart = anychart.radar();
 
   //chart title
   chart.title().text('Olympic medals Sydney 2000 (most recent) by country');

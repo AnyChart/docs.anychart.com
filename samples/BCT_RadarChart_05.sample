@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
   //chart type
-  chart = anychart.radarChart();
+  chart = anychart.radar();
 
   //chart title
   chart.title().text('Tuning Axes Visualization');
@@ -14,15 +14,15 @@ anychart.onDocumentReady(function() {
   chart.yAxis().enabled(true).minorTicks().enabled(false);
 
   chart.xAxis().stroke({
-    keys: ['.2 red', '.4 darkred', '0.6 blue', '0.8 green'],// set colors position
-    angle: -25,                                             // set angle of colors drawing
-    thickness: 4                                            // set thickness
+    keys: ['.2 red', '.4 darkred', '0.6 blue', '0.8 green'],  // set colors position
+    angle: -25,                                               // set angle of colors drawing
+    thickness: 4                                              // set thickness
   });
 
   chart.yAxis().stroke({
-    dash: '7 3',                                            // makes stroke dashed
-    thickness: 2,                                           // set stroke thickness
-    color: '#9900FF'                                        // set stroke color
+    dash: '7 3',                                              // makes stroke dashed
+    thickness: 2,                                             // set stroke thickness
+    color: '#9900FF'                                          // set stroke color
   });
 
   //set data and type of series

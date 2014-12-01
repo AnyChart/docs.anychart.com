@@ -18,7 +18,7 @@ anychart.onDocumentReady(function() {
   ]);
 
   //chart type
-  chart1 = anychart.radarChart();
+  chart1 = anychart.radar();
 
   //chart title
   chart1.title().text('Curcuit Grid Adjustment');
@@ -49,7 +49,7 @@ anychart.onDocumentReady(function() {
 
 
   //create second chart
-  chart2 = anychart.radarChart();
+  chart2 = anychart.radar();
 
   //chart title
   chart2.title().text('Radial Grid Adjustment');

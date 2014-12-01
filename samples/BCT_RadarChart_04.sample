@@ -16,7 +16,7 @@ anychart.onDocumentReady(function() {
   ]);
 
   //chart type
-  chart = anychart.radarChart();
+  chart = anychart.radar();
 
   //chart title
   chart.title().text('Rugby World Cup Overall Record 1987-2003 W Top 5 country');
@@ -30,11 +30,11 @@ anychart.onDocumentReady(function() {
     .fill('white');
 
   //fill set
-    var fillSettings = {
-        keys: ['.35 white', '.9 gray'],
-        angle: -135,
-        mode: chart.bounds()
-    };
+  var fillSettings = {
+    keys: ['.35 white', '.9 gray'],
+    angle: -135,
+    mode: chart.bounds()
+  };
 
   //apply fill set
   chart.grid(0).oddFill(fillSettings).evenFill(fillSettings).stroke('black');

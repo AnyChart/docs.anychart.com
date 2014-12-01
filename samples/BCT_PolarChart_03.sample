@@ -16,7 +16,7 @@ anychart.onDocumentReady(function() {
   ]);
 
   //chart type
-  chart = anychart.polarChart();
+  chart = anychart.polar();
 
   //chart title
   chart.title().text('Polar Chart Start Angle Sample');

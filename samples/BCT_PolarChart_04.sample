@@ -29,7 +29,7 @@ anychart.onDocumentReady(function() {
   ]);
 
   //chart type
-  chart = anychart.polarChart();
+  chart = anychart.polar();
 
   //chart title
   chart.title().text('Polar Chart Plot Background Sample');
@@ -50,16 +50,14 @@ anychart.onDocumentReady(function() {
       });
 
   //set background color
-  chart.background()
-    .enabled(true)
-    .fill('white');
+  chart.background().enabled(true).fill('white');
 
   //fill set
-    var fillSettings = {
-      keys: ['.35 white', '.9 gray'],
-      angle: -135,
-      mode: chart.bounds()
-    };
+  var fillSettings = {
+    keys: ['.35 white', '.9 gray'],
+    angle: -135,
+    mode: chart.bounds()
+  };
 
   //apply fill set
   chart.grid(0).oddFill(fillSettings).evenFill(fillSettings).stroke('black');
