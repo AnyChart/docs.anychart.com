@@ -66,7 +66,7 @@ By default AnyChart calculates radius of polar chart automatically, but this par
   //set polar radius
   chart.yScale()
     .maximum(120) //set maximum radius of polar chart
-    .minimum(50); //set minimum radius of polar chart
+    .minimum(0); //set minimum radius of polar chart
 ```
 
 Advanced radius settings includes additional settings for ticks interval on the radius. As far as radius is controled
@@ -77,7 +77,7 @@ Advanced radius settings includes additional settings for ticks interval on the 
   var chart = anychart.polar();
 
   //set polar ticks interval equal to 10
-  chart.yScale().ticks().interval(10);
+  chart.yScale().ticks().interval(20);
 ```
 
 Here is a sample of the polar chart radius size set manually:

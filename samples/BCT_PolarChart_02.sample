@@ -27,7 +27,7 @@ anychart.onDocumentReady(function() {
   //set chart radius
   chart.yScale()
     .minimum(0)        //minimum radius value
-    .maximum(120)       //maximum radius value
+    .maximum(120)      //maximum radius value
     .ticks()
         .interval(10);  //set ticks interval
 
