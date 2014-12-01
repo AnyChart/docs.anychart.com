@@ -78,7 +78,7 @@ Advanced radius settings includes additional settings for ticks interval on the 
 
 Here is a sample of the radar chart radius size set manually:
 
-{sample}BCT\_RadarChart\_02{sample}
+{sample}BCT\_PolarChart\_02{sample}
 
 ### Start angle
 
@@ -91,7 +91,7 @@ parameter:
 
 Sample chart with starting angle shifted to 90°:
 
-{sample}BCT\_RadarChart\_03{sample}
+{sample}BCT\_PolarChart\_03{sample}
 
 ### Plot background
 
@@ -108,7 +108,7 @@ You can change radar background using **.background()** method, learn more about
 
 Sample radar chart with tuned background:
 
-{sample}BCT\_RadarChart\_04{sample}
+{sample}BCT\_PolarChart\_04{sample}
 
 ## Axes
 
@@ -137,7 +137,7 @@ More information on possible stroke settings may be found in [Strokes and Lines 
 Here is a sample of tuned X and Y axes. Y axis has dashed red stroke and X axis has stroke colorized with gradient
 color.
 
-{sample}BCT\_RadarChart\_05{sample}
+{sample}BCT\_PolarChart\_05{sample}
 
 ### Inversion
 
@@ -148,7 +148,7 @@ AnyChart allows to invert any axis. Inversion is controlled by axis **.inverted(
 ```
 Look at the demonstration of Y Axis inversion on the sample below:
 
-{sample}BCT\_RadarChart\_06{sample}
+{sample}BCT\_PolarChart\_06{sample}
 
 ### Logarithmic Scale
 
@@ -162,7 +162,7 @@ AnyChart allows to make Y axis logarithmic. Scale type is controlled by **.scale
 
 And here is the demonstration of Logarithmic Y Axis on a simple radar with area series:
 
-{sample}BCT\_RadarChart\_07{sample}
+{sample}BCT\_PolarChart\_07{sample}
 
 ### Stacked Mode
 
@@ -178,12 +178,12 @@ Multiple area series may be presented with usage of stacked mode for Y scale. St
   chart.yScale().stackMode('value');
 ```
 
-{sample}BCT\_RadarChart\_08{sample}
+{sample}BCT\_PolarChart\_08{sample}
 
 Percent stacked mode calculates the proportion of each point to the category sum and uses this percentage as a value.
  To enable this mode use **.stackMode('percent')** parameter
 
-{sample}BCT\_RadarChart\_11{sample}
+{sample}BCT\_PolarChart\_11{sample}
 
 ### Labels Settings
 
@@ -211,7 +211,7 @@ In the sample below all names are limited to the length of 3:
     });
 ```
 
-{sample}BCT\_RadarChart\_12{sample}
+{sample}BCT\_PolarChart\_12{sample}
 
 You can change labels background. Learn more about background configuration in [Background settings tutorial](#../General_Appearance_Settings/Background).
 
@@ -229,7 +229,7 @@ You can change labels background. Learn more about background configuration in [
         .corners(5);            //corner size
 ```
 
-{sample}BCT\_RadarChart\_13{sample}
+{sample}BCT\_PolarChart\_13{sample}
 
 You can hide first and/or last labels using **.drawFirstLabel()** and **.drawLastLabel()** parameters:
 
@@ -239,7 +239,7 @@ You can hide first and/or last labels using **.drawFirstLabel()** and **.drawLas
     .drawLastLabel(false);  //hides last label of y Axis
 ```
 
-{sample}BCT\_RadarChart\_15{sample}
+{sample}BCT\_PolarChart\_15{sample}
 
 ## Visualisation
 
@@ -270,7 +270,7 @@ parameters:
 Sample below demonstrates two radar charts with adjusted visualisation of the radial type of grid as well as of the
 circuit one.
 
-{sample}BCT\_RadarChart\_09{sample}
+{sample}BCT\_PolarChart\_09{sample}
 
 ### Labels and Tooltips
 
@@ -302,10 +302,10 @@ here.
     });
 ```
 
-{sample}BCT\_RadarChart\_10{sample}
+{sample}BCT\_PolarChart\_10{sample}
 
 ## Series Types
 
 Radar chart supports: Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
 
-{sample}BCT\_RadarChart\_14{sample}
+{sample}BCT\_PolarChart\_14{sample}
