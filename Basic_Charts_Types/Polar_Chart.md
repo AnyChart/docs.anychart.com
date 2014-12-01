@@ -70,7 +70,7 @@ Advanced radius settings includes additional settings for ticks interval on the 
 
 ```
   //set chart type
-  var chart = anychart.radarChart();
+  var chart = anychart.polar();
 
   //set radar ticks interval equal to 10
   chart.yScale().ticks().interval(10);
@@ -125,7 +125,7 @@ Axis stroke appearance is controlled by **.stroke()** parameter.
 
 ```
   // set chart type
-  var chart = anychart.radarChart();
+  var chart = anychart.polar();
 
   // adjust y axis visualization
   chart.yAxis().stroke('2 red');  // set stroke thickness equal to 2px and set red color to the stroke
@@ -172,7 +172,7 @@ Multiple area series may be presented with usage of stacked mode for Y scale. St
 
 ```
   //set chart type
-  var chart = anychart.radarChart();
+  var chart = anychart.polar();
 
   //set stacked mod
   chart.yScale().stackMode('value');
@@ -193,7 +193,7 @@ In the sample below all names are limited to the length of 3:
 
 ```
   //chart type
-  var chart = anychaty.radarChart();
+  var chart = anychaty.polar();
 
   chart.xAxis().labels()
     .textFormatter(function(){
@@ -256,7 +256,7 @@ parameters:
 
 ```
   //chart type
-  var chart = anychart.radarChart();
+  var chart = anychart.polar();
 
   chart.grid(0).
     .oddFill('red')       //colorizing odd cells in the grid
@@ -284,7 +284,7 @@ here.
 
 ```
     //chart type
-    var chart = anychart.radarChart();
+    var chart = anychart.polar();
 
     //setting data
     var series= chart.area(data);
