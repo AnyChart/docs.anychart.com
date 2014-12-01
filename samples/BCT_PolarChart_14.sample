@@ -13,6 +13,9 @@ anychart.onDocumentReady(function() {
   //background fill
   chart.background().enabled(true).fill('#EEEEEE');
 
+  //scale settings
+  chart.xScale().maximum(100);
+
   //set data and adjust visual settings
   chart.area([
     {x: 0, value: 0},

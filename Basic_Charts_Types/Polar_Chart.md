@@ -10,7 +10,6 @@
  * [Stroke](#stroke)
  * [Inversion](#inversion)
  * [Logarithmic Scale](#logarithmic_scale)
- * [Stacked Mode](#stacked_mode)
  * [Labels Settings](#labels_settings)
 * [Visualization](#visualisation)
  * [Grid](#grid)
@@ -23,46 +22,51 @@ Polar chart plot allows to draw scatter chart using polar coordinate system, whi
 
 ## Chart
 
-AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to set **anychart
-.polarChart()** to display Polar chart:
+AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to set **anychart.polar()** to display Polar chart:
 
 ```
     //chart type
-    chart = anychart.polarChart();
+    chart = anychart.polar();
 
     // series type and data setting
     chart.line([
-        {x: "Administration", value: 22},
-        {x: "Sales",          value: 34},
-        {x: "Marketing",      value: 16},
-        {x: "Research",       value: 12},
-        {x: "Support",        value: 38},
-        {x: "Development",    value: 47}
+        {x: 0, value: 0},
+        {x: 10, value: 1},
+        {x: 20, value: 2},
+        {x: 30, value: 3},
+        {x: 40, value: 4},
+        {x: 50, value: 5},
+        {x: 60, value: 6},
+        {x: 70, value: 7},
+        {x: 80, value: 8},
+        {x: 90, value: 9},
+        {x: 100, value: 10}
     ]);
 ```
 
 As you can see each point is represented by category set using name attribute and value set using y attribute.
 
-Here is a basic Radar sample:
+Here is a basic Polar sample:
 
 {sample}BCT\_PolarChart\_01{sample}
 
 ## Configuration
 
-Radar plot has several distinctive configuration options, which are presented in this section: chart radius settings, chart rotation and background settings.
+Polar plot has several distinctive configuration options, which are presented in this section: chart radius settings,
+chart rotation and background settings.
 
 ### Radius size
 
-By default AnyChart calculates radius of radar chart automatically, but this parameter may be set manually. Radar chart radius is controlled by maximum and minimum size of Y scale and may be set through **.yScale().minimum().maximum()** methods.
+By default AnyChart calculates radius of polar chart automatically, but this parameter may be set manually. Polar chart radius is controlled by maximum and minimum size of Y scale and may be set through **.yScale().minimum().maximum()** methods.
 
 ```
   //set chart type
-  var chart = anychart.radarChart();
+  var chart = anychart.polar();
 
-  //set radar radius
+  //set polar radius
   chart.yScale()
-    .maximum(120) //set maximum radius of radar chart
-    .minimum(50); //set minimum radius of radar chart
+    .maximum(120) //set maximum radius of polar chart
+    .minimum(50); //set minimum radius of polar chart
 ```
 
 Advanced radius settings includes additional settings for ticks interval on the radius. As far as radius is controled
@@ -72,17 +76,17 @@ Advanced radius settings includes additional settings for ticks interval on the 
   //set chart type
   var chart = anychart.polar();
 
-  //set radar ticks interval equal to 10
+  //set polar ticks interval equal to 10
   chart.yScale().ticks().interval(10);
 ```
 
-Here is a sample of the radar chart radius size set manually:
+Here is a sample of the polar chart radius size set manually:
 
 {sample}BCT\_PolarChart\_02{sample}
 
 ### Start angle
 
-By default radar starts drawing from the top center point (0°), but you can change this using **.startAngle()**
+By default polar starts drawing from the top center point (0°), but you can change this using **.startAngle()**
 parameter:
 
 ```
@@ -95,7 +99,7 @@ Sample chart with starting angle shifted to 90°:
 
 ### Plot background
 
-You can change radar background using **.background()** method, learn more about this method at [Background settings tutorial](../General_Appearance_Settings/Background).
+You can change polar background using **.background()** method, learn more about this method at [Background settings tutorial](../General_Appearance_Settings/Background).
 
 ```
   chart.background()
@@ -106,7 +110,7 @@ You can change radar background using **.background()** method, learn more about
     });
 ```
 
-Sample radar chart with tuned background:
+Sample polar chart with tuned background:
 
 {sample}BCT\_PolarChart\_04{sample}
 
@@ -146,7 +150,7 @@ AnyChart allows to invert any axis. Inversion is controlled by axis **.inverted(
 ```
     chart.yScale().inverted(true);
 ```
-Look at the demonstration of Y Axis inversion on the sample below:
+Take a look at the demonstration of Y Axis inversion on the sample below:
 
 {sample}BCT\_PolarChart\_06{sample}
 
@@ -160,30 +164,9 @@ AnyChart allows to make Y axis logarithmic. Scale type is controlled by **.scale
     chart.yScale(logScale);                 // set logarithmic scale as y scale for the chart
 ```
 
-And here is the demonstration of Logarithmic Y Axis on a simple radar with area series:
+And here is the demonstration of Logarithmic Y Axis on a simple polar with area series:
 
 {sample}BCT\_PolarChart\_07{sample}
-
-### Stacked Mode
-
-Multiple area series may be presented with usage of stacked mode for Y scale. Stacked mode helps to visualize data in
- a convenient way for comparing different data series which shares one of the values. Use **.stackMode()** method to
- enable stacked mode.
-
-```
-  //set chart type
-  var chart = anychart.polar();
-
-  //set stacked mod
-  chart.yScale().stackMode('value');
-```
-
-{sample}BCT\_PolarChart\_08{sample}
-
-Percent stacked mode calculates the proportion of each point to the category sum and uses this percentage as a value.
- To enable this mode use **.stackMode('percent')** parameter
-
-{sample}BCT\_PolarChart\_11{sample}
 
 ### Labels Settings
 
@@ -243,7 +226,7 @@ You can hide first and/or last labels using **.drawFirstLabel()** and **.drawLas
 
 ## Visualisation
 
-In this section we will describe main parts of radar chart style and demonstrate how style can be applied.
+In this section we will describe main parts of polar chart style and demonstrate how style can be applied.
 
 
 The main idea of styles is to segregate visualization and data definition. Visual appearance of columns is defined
@@ -251,7 +234,7 @@ using certain methods.
 
 ### Grid
 
-Radar grid is a combination of circuit and radial grids. Grid visual appearance can be controlled with several
+Polar grid is a combination of circuit and radial grids. Grid visual appearance can be controlled with several
 parameters:
 
 ```
@@ -267,7 +250,7 @@ parameters:
 **Note:** full information on grid settings can be found in [grid section of Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#grids)
 
 
-Sample below demonstrates two radar charts with adjusted visualisation of the radial type of grid as well as of the
+Sample below demonstrates two polar charts with adjusted visualisation of the radial type of grid as well as of the
 circuit one.
 
 {sample}BCT\_PolarChart\_09{sample}
@@ -306,6 +289,6 @@ here.
 
 ## Series Types
 
-Radar chart supports: Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
+Polar chart supports: Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
 
 {sample}BCT\_PolarChart\_14{sample}

@@ -29,7 +29,7 @@ anychart.onDocumentReady(function() {
   });
 
   //set data and type of series
-  var series = chart.line([
+  chart.line([
     {x: 2.9, value: 191},
     {x: 3.1, value: 42},
     {x: 4, value: 20},
@@ -40,7 +40,7 @@ anychart.onDocumentReady(function() {
     {x: 7.9, value: 41},
     {x: 8.8, value: 120},
     {x: 9.2, value: 51}
-  ]);
+  ]).tooltip().enabled(false);
 
   //draw chart
   chart.container('container').draw();
