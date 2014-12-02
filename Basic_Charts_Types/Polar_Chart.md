@@ -299,6 +299,7 @@ Polar chart supports: Line, Area and Marker series types. You can learn how to c
 
 ## Missing Points
 
-Polar Chart allows to omit one or several points in data. To miss point set 'missing' into **value** field.
+Polar Chart allows to omit one or several points in data. To miss point set 'missing' into **value** field. On the
+sample below points from 60 to 70 are missing.
 
 {sample}BCT\_PolarChart\_14{sample}
