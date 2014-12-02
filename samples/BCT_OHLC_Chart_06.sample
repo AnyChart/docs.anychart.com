@@ -38,7 +38,14 @@ anychart.onDocumentReady(function() {
     chart.yAxis().title().text('Price');
 
     //set x axis lables width for the better outlook
-    chart.xAxis().labels().width(60);
+    chart.xAxis().labels().width(60).textFormatter(function(value){
+      var date = new Date(value['tickValue']);
+      var options = {
+        month: 'long',
+        day: 'numeric',
+      };
+      return date.toLocaleDateString('en-US', options);
+    });
 
     //draw
     chart.container('container').draw();

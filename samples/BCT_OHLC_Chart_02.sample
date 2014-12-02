@@ -37,6 +37,14 @@ anychart.onDocumentReady(function() {
 
     //set axes title
     chart.xAxis().title().text('Day');
+    chart.xAxis().labels().textFormatter(function(value){
+        var date = new Date(value['tickValue']);
+        var options = {
+          month: 'long',
+          day: 'numeric',
+        };
+        return date.toLocaleDateString('en-US', options);
+      });
     chart.yAxis().title().text('Price');
 
     //draw
