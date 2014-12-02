@@ -34,7 +34,7 @@ anychart.onDocumentReady(function() {
     chart.ohlc(data).color('#C6D1A5');
 
      //set x axis lables width for the better outlook
-     chart.xAxis().labels(.staggerLines(1).textFormatter(function(value){
+     chart.xAxis().labels().staggerLines(1).textFormatter(function(value){
        var date = new Date(value['tickValue']);
        var options = {
          month: 'long',
