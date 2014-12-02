@@ -15,6 +15,7 @@
  * [Grid](#grid)
  * [Labels and Tooltips](#labels_and_tooltips)
 * [Series Types](#series_types)
+* [Missing Points](#missing_points)
 
 ## Overview
 
@@ -295,3 +296,9 @@ here.
 Polar chart supports: Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
 
 {sample}BCT\_PolarChart\_13{sample}
+
+## Missing Points
+
+Polar Chart allows to omit one or several points in data. To miss point set 'missing' into **value** field.
+
+{sample}BCT\_PolarChart\_14{sample}

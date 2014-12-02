@@ -7,10 +7,10 @@ anychart.onDocumentReady(function() {
   //data for chart
   var dataSet = anychart.data.set([
     [3.7, 93],
-    [3.7, 67],
+    [3.701, 67],
     [4.8, 85],
     [5.7, 93],
-    [5.7, 67],
+    [5.701, 67],
     [6.8, 85]
   ]);
 
