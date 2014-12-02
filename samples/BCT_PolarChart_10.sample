@@ -6,40 +6,49 @@ anychart.onDocumentReady(function() {
 
   //data for chart
   var dataSet = anychart.data.set([
-    [3.7, 93],
-    [3.7, 67],
-    [4.8, 85],
-    [5.7, 93],
-    [5.7, 67],
-    [6.8, 85]
+    [0, 80],
+    [3, 0],
+    [6, 80],
+    [9, 0],
+    [12, 80],
+    [15, 0],
+    [18, 80],
+    [21, 0],
+    [24, 0],
+    [3, 80],
+    [6, 0],
+    [9, 80],
+    [12, 0],
+    [15, 80],
+    [18, 0],
+    [21, 80],
+    [24, 0],
+    [21, 0]
   ]);
 
   //chart type
   chart = anychart.polar();
 
   //chart title
-  chart.title().text('Labels and Tooltips');
+  chart.title().text('Disable First & Last Labels of Y Axis');
 
-  //disable minor ticks
-  chart.yAxis().enabled(true).minorTicks().enabled(false);
+  //set background
+  chart.background().enabled(true).fill('#EEEEEE');
 
-  //set series data
-  var series = chart.area(dataSet);
+  //set ticks interval for y scale
+  chart.xScale().maximum(24).ticks().interval(4);
 
-  //set series visualisation
-  series
-    .stroke('darkblue')                             //stroke color
-    .fill('lightblue 0.8')                          //fill color
-    .labels()                                       //labels settings
-      .enabled(true)                                //enable labels
-      .fontWeight(900);                             //labels font weight
+  chart.yAxis()             //adjust y axis settings
+    .drawFirstLabel(false)  //disable first label
+    .drawLastLabel(false)   //disable last label
+      .minorTicks()         //settings for minor ticks
+        .enabled(false);    //hide minor ticks
 
-  //visual setting for tooltips
-  series.tooltip().content().fontWeight(400);       //settings for tooltip content font
-  series.tooltip().contentFormatter(function(){     //adjust tooltip content
-     var percent = this.value / (this.sum / 100);
-     return 'Value: ' + this.value + '\nPercent: ' + percent.toFixed(2) + '%';
-  });
+  //set data and visual appearance
+  chart.area(dataSet).fill('lightblue 0.7');
+
+  //set grid visual appearance
+  chart.grid(0).evenFill('white').oddFill('white');
 
   //draw chart
   chart.container('container').draw();

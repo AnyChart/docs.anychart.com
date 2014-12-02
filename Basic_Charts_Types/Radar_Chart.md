@@ -26,11 +26,11 @@ The radar chart is also known as web chart, spider chart, star chart, cobweb cha
 
 ## Chart
 
-AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to set **anychart.radarChart()** to display Radar chart:
+AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to set **anychart.radar()** to display Radar chart:
 
 ```
   //chart type
-  chart = anychart.radarChart();
+  chart = anychart.radar();
 
   // series type and data setting
   chart.line([
@@ -55,7 +55,7 @@ Radar plot has several distinctive configuration options, which are presented in
 
 ### Radius size
 
-By default AnyChart calculates radius of radar chart automatically, but this parameter may be set manually. Radar chart radius is controlled by maximum and minimum size of Y scale and may be set through **.yScale().minimum().maximum()** methods.
+By default AnyChart calculates radius of radar chart automatically, but this parameter may be set manually. Radar chart radius is controlled by maximum and minimum values of Y scale and may be set through **.yScale().minimum()** and **yScale().maximum()** methods.
 
 ```
   //set chart type
@@ -68,7 +68,7 @@ By default AnyChart calculates radius of radar chart automatically, but this par
 ```
 
 Advanced radius settings includes additional settings for ticks interval on the radius. As far as radius is controled
- by y scale, full information on radius controlling may be found in [Scales tutorial](../Axes_Grid_Scales_Trends_etc/Scales)
+ by y scale, full information on radius controlling may be found in [Scales tutorial](../Axes_Grid_Scales_Trends_etc/Scales#minimum_and_maximum)
 
 ```
   //set chart type
@@ -146,7 +146,7 @@ color.
 AnyChart allows to invert any axis. Inversion is controlled by axis **.inverted()** parameter:
 
 ```
-    chart.yScale().inverted(true);
+  chart.yScale().inverted(true);
 ```
 Look at the demonstration of Y Axis inversion on the sample below:
 
@@ -154,12 +154,14 @@ Look at the demonstration of Y Axis inversion on the sample below:
 
 ### Logarithmic Scale
 
-AnyChart allows to make Y axis logarithmic. Scale type is controlled by **.scale()** parameter.
+Data for charts may have great range of numeric values. In sake of visual appearance of data on the plot it is
+recommended to use logarithmic scale. Scale type may be set with **.scale()** method. More information on scale types
+ can be found in [Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#types)
 
 ```
-    var logScale = anychart.scales.log();   // create logarithmic scale
-    logScale.minimum(0.1).maximum(10000);   // set minimum and maximum value for the scale
-    chart.yScale(logScale);                 // set logarithmic scale as y scale for the chart
+  var logScale = anychart.scales.log();   // create logarithmic scale
+  logScale.minimum(0.1).maximum(10000);   // set minimum and maximum value for the scale
+  chart.yScale(logScale);                 // set logarithmic scale as y scale for the chart
 ```
 
 And here is the demonstration of Logarithmic Y Axis on a simple radar with area series:
@@ -185,7 +187,7 @@ Multiple area series may be presented with usage of stacked mode for Y scale. St
 Percent stacked mode calculates the proportion of each point to the category sum and uses this percentage as a value.
  To enable this mode use **.stackMode('percent')** parameter
 
-{sample}BCT\_RadarChart\_11{sample}
+{sample}BCT\_RadarChart\_09{sample}
 
 ### Labels Settings
 
@@ -213,7 +215,7 @@ In the sample below all names are limited to the length of 3:
     });
 ```
 
-{sample}BCT\_RadarChart\_12{sample}
+{sample}BCT\_RadarChart\_10{sample}
 
 You can change labels background. Learn more about background configuration in [Background settings tutorial](#../General_Appearance_Settings/Background).
 
@@ -231,7 +233,7 @@ You can change labels background. Learn more about background configuration in [
         .corners(5);            //corner size
 ```
 
-{sample}BCT\_RadarChart\_13{sample}
+{sample}BCT\_RadarChart\_11{sample}
 
 You can hide first and/or last labels using **.drawFirstLabel()** and **.drawLastLabel()** parameters:
 
@@ -241,7 +243,7 @@ You can hide first and/or last labels using **.drawFirstLabel()** and **.drawLas
     .drawLastLabel(false);  //hides last label of y Axis
 ```
 
-{sample}BCT\_RadarChart\_15{sample}
+{sample}BCT\_RadarChart\_12{sample}
 
 ## Visualisation
 
@@ -272,7 +274,7 @@ parameters:
 Sample below demonstrates two radar charts with adjusted visualisation of the radial type of grid as well as of the
 circuit one.
 
-{sample}BCT\_RadarChart\_09{sample}
+{sample}BCT\_RadarChart\_13{sample}
 
 ### Labels and Tooltips
 
@@ -285,29 +287,29 @@ When formatting data labels text we will use **.textFormatter()** to show month 
 here.
 
 ```
-    //chart type
-    var chart = anychart.radarChart();
+  //chart type
+  var chart = anychart.radarChart();
 
-    //setting data
-    var series= chart.area(data);
+  //setting data
+  var series= chart.area(data);
 
-    //setting labels
-    series.labels()
-        .enabled(true)                    //enables labels
-        .textFormatter(function(point){
-            return point.x;               //setting content
+  //setting labels
+  series.labels()
+    .enabled(true)                              //enables labels
+    .textFormatter(function(point){
+      return point.x;                           //setting content
     });
 
-    //setting tooltips
-    series.tooltip().contentFormatter(function(){
-        return this.x;                    //setting content
-    });
+  //setting tooltips
+  series.tooltip().contentFormatter(function(){
+    return this.x;                              //setting content
+  });
 ```
 
-{sample}BCT\_RadarChart\_10{sample}
+{sample}BCT\_RadarChart\_14{sample}
 
 ## Series Types
 
 Radar chart supports: Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
 
-{sample}BCT\_RadarChart\_14{sample}
+{sample}BCT\_RadarChart\_15{sample}

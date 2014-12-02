@@ -31,7 +31,7 @@ anychart.onDocumentReady(function() {
   //set data for series
   chart.area(data1).fill('lightblue 0.7');
   chart.area(data2).fill('red 0.7');
-  chart.area(data3).fill('green 0.7');
+  chart.area(data3).fill('lightgreen 0.7');
 
   //draw chart
   chart.container('container').draw();

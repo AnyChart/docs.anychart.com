@@ -4,54 +4,42 @@
 
 anychart.onDocumentReady(function() {
 
+  //data for chart
+  var dataSet = anychart.data.set([
+    ['Product A', 90],
+    ['Product B', 65],
+    ['Product C', 73],
+    ['Product D', 88],
+    ['Product E', 75],
+    ['Product F', 100]
+  ]);
+
   //chart type
   chart = anychart.radar();
 
   //chart title
-  chart.title().text('Radar Series Types');
+  chart.title().text('Labels and Tooltips');
 
-  //background fill
-  chart.background().enabled(true).fill('#EEEEEE');
+  //disable minor ticks
+  chart.yAxis().enabled(true).minorTicks().enabled(false);
 
-  //set data and adjust visual settings
-  chart.area([
-    {x: "Product A", value: 722},
-    {x: "Product B", value: 1431},
-    {x: "Product C", value: 1624},
-    {x: "Product D", value: 1243},
-    {x: "Product E", value: 1813},
-    {x: "Product F", value: 1321},
-    {x: "Product G", value: 567},
-    {x: "Product H", value: 1876},
-    {x: "Product I", value: 1187}
-  ]).fill('red 0.7').stroke('darkred');
+  //set series data
+  var series = chart.area(dataSet);
 
-  chart.line([
-    {x: "Product A", value: 1222},
-    {x: "Product B", value: 2431},
-    {x: "Product C", value: 3624},
-    {x: "Product D", value: 5243},
-    {x: "Product E", value: 6813},
-    {x: "Product F", value: 5321},
-    {x: "Product G", value: 1567},
-    {x: "Product H", value: 3876},
-    {x: "Product I", value: 2187}
-  ]).stroke('lightblue');
+  //set series visualisation
+  series
+    .stroke('darkblue')     //stroke color
+    .fill('lightblue 0.8')  //fill color
+    .labels()               //labels settings
+      .enabled(true)        //enable labels
+      .fontWeight(900);     //labels font weight
 
-  chart.marker([
-    {x: "Product A", value: 1422},
-    {x: "Product B", value: 2231},
-    {x: "Product C", value: 3124},
-    {x: "Product D", value: 5543},
-    {x: "Product E", value: 6113},
-    {x: "Product F", value: 5521},
-    {x: "Product G", value: 567},
-    {x: "Product H", value: 3176},
-    {x: "Product I", value: 3187}
-  ]).fill('lightgreen').stroke('green');
-
-  //grid settings
-  chart.grid(0).evenFill('white').oddFill('white');
+  //visual setting for tooltips
+  series.tooltip().content().fontWeight(400);       //settings for tooltip content font
+  series.tooltip().contentFormatter(function(){     //adjust tooltip content
+     var percent = this.value / (this.sum / 100);
+     return 'Month: ' + this.x + '\nSales: ' + this.value + '$' + '\nYear: 2003' + '\nPercent: ' + percent.toFixed(2) + '%';
+  });
 
   //draw chart
   chart.container('container').draw();

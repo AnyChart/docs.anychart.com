@@ -22,26 +22,27 @@ Polar chart plot allows to draw scatter chart using polar coordinate system, whi
 
 ## Chart
 
-AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to set **anychart.polar()** to display Polar chart:
+AnyChart allows to display three types of series on Polar chart: Line, Area and Marker. You need to set **anychart.polar
+()** to display Polar chart:
 
 ```
-    //chart type
-    chart = anychart.polar();
+  //chart type
+  chart = anychart.polar();
 
-    // series type and data setting
-    chart.line([
-        {x: 0, value: 0},
-        {x: 10, value: 1},
-        {x: 20, value: 2},
-        {x: 30, value: 3},
-        {x: 40, value: 4},
-        {x: 50, value: 5},
-        {x: 60, value: 6},
-        {x: 70, value: 7},
-        {x: 80, value: 8},
-        {x: 90, value: 9},
-        {x: 100, value: 10}
-    ]);
+  // series type and data setting
+  chart.line([
+    {x: 0, value: 0},
+    {x: 10, value: 1},
+    {x: 20, value: 2},
+    {x: 30, value: 3},
+    {x: 40, value: 4},
+    {x: 50, value: 5},
+    {x: 60, value: 6},
+    {x: 70, value: 7},
+    {x: 80, value: 8},
+    {x: 90, value: 9},
+    {x: 100, value: 10}
+  ]);
 ```
 
 As you can see each point is represented by category set using name attribute and value set using y attribute.
@@ -156,12 +157,14 @@ Take a look at the demonstration of Y Axis inversion on the sample below:
 
 ### Logarithmic Scale
 
-AnyChart allows to make Y axis logarithmic. Scale type is controlled by **.scale()** parameter.
+Data for charts may have great range of numeric values. In sake of visual appearance of data on the plot it is
+recommended to use logarithmic scale. Scale type may be set with **.scale()** method. More information on scale types
+ can be found in [Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#types)
 
 ```
-    var logScale = anychart.scales.log();   // create logarithmic scale
-    logScale.minimum(0.1).maximum(10000);   // set minimum and maximum value for the scale
-    chart.yScale(logScale);                 // set logarithmic scale as y scale for the chart
+  var logScale = anychart.scales.log();   // create logarithmic scale
+  logScale.minimum(0.1).maximum(10000);   // set minimum and maximum value for the scale
+  chart.yScale(logScale);                 // set logarithmic scale as y scale for the chart
 ```
 
 And here is the demonstration of Logarithmic Y Axis on a simple polar with area series:
@@ -194,7 +197,7 @@ In the sample below all names are limited to the length of 3:
     });
 ```
 
-{sample}BCT\_PolarChart\_12{sample}
+{sample}BCT\_PolarChart\_08{sample}
 
 You can change labels background. Learn more about background configuration in [Background settings tutorial](#../General_Appearance_Settings/Background).
 
@@ -212,7 +215,7 @@ You can change labels background. Learn more about background configuration in [
         .corners(5);            //corner size
 ```
 
-{sample}BCT\_PolarChart\_13{sample}
+{sample}BCT\_PolarChart\_09{sample}
 
 You can hide first and/or last labels using **.drawFirstLabel()** and **.drawLastLabel()** parameters:
 
@@ -222,7 +225,7 @@ You can hide first and/or last labels using **.drawFirstLabel()** and **.drawLas
     .drawLastLabel(false);  //hides last label of y Axis
 ```
 
-{sample}BCT\_PolarChart\_15{sample}
+{sample}BCT\_PolarChart\_10{sample}
 
 ## Visualisation
 
@@ -253,7 +256,7 @@ parameters:
 Sample below demonstrates two polar charts with adjusted visualisation of the radial type of grid as well as of the
 circuit one.
 
-{sample}BCT\_PolarChart\_09{sample}
+{sample}BCT\_PolarChart\_11{sample}
 
 ### Labels and Tooltips
 
@@ -266,29 +269,29 @@ When formatting data labels text we will use **.textFormatter()** to show month 
 here.
 
 ```
-    //chart type
-    var chart = anychart.polar();
+  //chart type
+  var chart = anychart.polar();
 
-    //setting data
-    var series= chart.area(data);
+  //setting data
+  var series= chart.area(data);
 
-    //setting labels
-    series.labels()
-        .enabled(true)                    //enables labels
-        .textFormatter(function(point){
-            return point.x;               //setting content
-    });
+  //setting labels
+  series.labels()
+    .enabled(true)                    //enables labels
+    .textFormatter(function(point){
+      return point.x;                 //setting content
+  });
 
-    //setting tooltips
-    series.tooltip().contentFormatter(function(){
-        return this.x;                    //setting content
-    });
+  //setting tooltips
+  series.tooltip().contentFormatter(function(){
+    return this.x;                    //setting content
+  });
 ```
 
-{sample}BCT\_PolarChart\_10{sample}
+{sample}BCT\_PolarChart\_12{sample}
 
 ## Series Types
 
 Polar chart supports: Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
 
-{sample}BCT\_PolarChart\_14{sample}
+{sample}BCT\_PolarChart\_13{sample}
