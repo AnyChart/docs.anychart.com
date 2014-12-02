@@ -29,21 +29,21 @@ The radar chart is also known as web chart, spider chart, star chart, cobweb cha
 AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to set **anychart.radarChart()** to display Radar chart:
 
 ```
-    //chart type
-    chart = anychart.radarChart();
+  //chart type
+  chart = anychart.radarChart();
 
-    // series type and data setting
-    chart.line([
-        {x: "Administration", value: 22},
-        {x: "Sales",          value: 34},
-        {x: "Marketing",      value: 16},
-        {x: "Research",       value: 12},
-        {x: "Support",        value: 38},
-        {x: "Development",    value: 47}
-    ]);
+  // series type and data setting
+  chart.line([
+    {x: "Administration", value: 22},
+    {x: "Sales",          value: 34},
+    {x: "Marketing",      value: 16},
+    {x: "Research",       value: 12},
+    {x: "Support",        value: 38},
+    {x: "Development",    value: 47}
+  ]);
 ```
 
-As you can see each point is represented by category set using name attribute and value set using y attribute.
+As you can see each point is represented through **x** and **value** parameters.
 
 Here is a basic Radar sample:
 
