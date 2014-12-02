@@ -4,11 +4,11 @@
 anychart.onDocumentReady(function() {
 
   var tree = anychart.data.tree([
-    {name: 'Node 1', id: '1'},
-    {name: 'Node 2', id: '2'},
-    {name: 'Node 3', id: '3'},
-    {name: 'Node 4', id: '4'},
-    {name: 'Node 5', id: '5'}
+    {'name': 'January', 'id': '1', 'year 2004': '12000', 'year 2005': '18000'},
+    {'name': 'Parent Node', 'id': '2', 'year 2004': '15000', 'year 2005': '10000'},
+    {'name': 'Child Node 1', 'parent': '2', 'id': '3', 'year 2004': '16000', 'year 2005': '18000'},
+    {'name': 'Child Node 2', 'parent': '2', 'id': '4', meta: 'MyMeta', 'year 2004': '15000', 'year 2005': '11000'},
+    {'name': 'Node 2', 'id': '5', 'year 2004': '14000', 'year 2005': '9000'}
   ], anychart.enums.TreeFillingMethod.AS_TABLE);
 
   stage = anychart.graphics.create('container');
@@ -24,44 +24,31 @@ anychart.onDocumentReady(function() {
 
   // set style for second column
   treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
+  var column2004 = treeDataGrid.column(2);
+  column2004.title().text('Year 2004');         //set title for the second column
+  column2004.width(100);                        //set width for the second column
+  column2004.textFormatter(function(item) {     //format data
+    return item.get('year 2004');               //set name of the field with required data
+  });
 
-  //create new button
-  var triggerButton = document.createElement('div');
-
-  //set button style
-  triggerButton.style.top = '5px';
-  triggerButton.style.right = '5px';
-  triggerButton.style.width = 'auto';
-  triggerButton.style.height = 'auto';
-  triggerButton.style.backgroundColor = '#444444';
-  triggerButton.style.color = 'white';
-  triggerButton.style.position = 'absolute';
-  triggerButton.style.zIndex = 2;
-  triggerButton.style.transition = '0.5s';
-  triggerButton.style.textAlign = 'center';
-  triggerButton.style.border = '3px solid #444444';
-  triggerButton.style.borderRadius = '7px 7px 7px 7px';
-  triggerButton.style.fontSize = '18px';
-  triggerButton.innerHTML = 'Remove';
-  triggerButton.onclick = function() {
-    addPoint();
-  };
-
-  //append button to container
-  container.appendChild(triggerButton);
+  // set style for second column
+  treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
+  var column2005 = treeDataGrid.column(3);
+  column2005.title().text('Year 2005');         //set title for the third column
+  column2005.width(100);                        //set width for the third column
+  column2005.textFormatter(function(item) {     //format data
+    return item.get('year 2005');               //set name of the field with required data
+  });
 
   // draw chart
-  treeDataGrid.container(stage).top(triggerButton.offsetHeight + 7).height(stage.height()).width('100%').draw();
+  treeDataGrid.container(stage).top(37).draw();
+
 
   var title = anychart.ui.title();
   title.parentBounds(0, 0, "100%", 30)
-        .text('Click on Button to Remove First Element')
-        .container(stage)
-        .draw();
-
-  function addPoint(){
-    tree.removeChildAt(0);
-  }
+    .text('Click on button to add Data into Data Tree')
+    .container(stage)
+    .draw();
 });
 
 // style setter
