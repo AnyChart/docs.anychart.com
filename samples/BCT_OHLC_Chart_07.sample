@@ -67,7 +67,7 @@ anychart.onDocumentReady(function() {
     chart.yAxis().title().text('Price');
 
     //set x axis lables width for the better outlook
-    chart.xAxis().labels().staggerLines(1).textFormatter(function(value){
+    chart.xAxis().staggerLines(1).labels().textFormatter(function(value){
       var date = new Date(value['tickValue']);
       var options = {
         month: 'long',
