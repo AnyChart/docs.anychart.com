@@ -28,6 +28,7 @@ anychart.onDocumentReady(function() {
 
   //set series visualisation
   series
+    .drawFirstLabel(false)
     .stroke('darkblue')                             //stroke color
     .fill('lightblue 0.8')                          //fill color
     .labels()                                       //labels settings
