@@ -21,14 +21,13 @@ anychart.onDocumentReady(function() {
   chart.title().text('Labels and Tooltips');
 
   //disable minor ticks
-  chart.yAxis().enabled(true).minorTicks().enabled(false);
+  chart.yAxis().enabled(true).drawFirstLabel(false).minorTicks().enabled(false);
 
   //set series data
   var series = chart.area(dataSet);
 
   //set series visualisation
   series
-    .drawFirstLabel(false)
     .stroke('darkblue')                             //stroke color
     .fill('lightblue 0.8')                          //fill color
     .labels()                                       //labels settings
