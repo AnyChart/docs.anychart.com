@@ -15,14 +15,14 @@ The texts have [built-in formatting settings](#settings) (like <b>bold</b>, <i>i
 
 ## Basic Settings
 
-Following methods control appearance of the text: **fontFamily()**, **.fontSize()**, **.fontWeight()**, **.fontStyle()**, **.useHTML()**.
+Following methods control appearance of the text: **fontFamily()**, **.fontSize()**, **.fontWeight()**, **.fontStyle()**, **.useHtml()**.
 
 ```
     .fontColor('Red')
     .fontFamyle('Tahoma')
     .fontSize(12)
     .fontStyle('normal')
-    .useHTML(false)
+    .useHtml(false)
 ```
 
 These settings are applied to the given all text within text field, if you want to do more complex formatting (only part of the text is bold, for example) - consider using HTML formatting.
@@ -39,7 +39,7 @@ This is sample chart with labels, tooltips and legend in English, French, Portug
 
 ## HTML
 
-If you want to do a complex formatting of the text - consider using HTML formatting. To enable it you have to set **.useHTML(true)**:
+If you want to do a complex formatting of the text - consider using HTML formatting. To enable it you have to set **.useHtml(true)**:
 
 ```
   series.labels().useHtml(true).textFormatter(function(){
