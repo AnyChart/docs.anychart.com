@@ -6,7 +6,7 @@ anychart.onDocumentReady(function() {
 
   chart = anychart.scatterChart();
 
-  chart.title().text('Springfield\'s Clusters\nLables and Tooltips Settings')
+  chart.title().text('Springfield\'s Clusters\nLabels and Tooltips Settings')
     .hAlign('center');
 
   chart.grid(0)
@@ -73,19 +73,19 @@ anychart.onDocumentReady(function() {
   var bubble = chart.bubble(data);
 
   // set labels and adjust visualization
-  bubble.fill('blue')
-    .hoverFill('#999999')
+  bubble.fill('DodgerBlue')
+    .hoverFill('DodgerBlue')
     .hoverHatchFill('zigzag')
     .minimumSize(10)
     .maximumSize(30)
-    .stroke('darkblue')
+    .stroke(anychart.color.darken('DodgerBlue'))
     .hoverStroke('#000000')
     .labels()
       .enabled(true)
       .position('bottom')
       .anchor('topCenter')
-      .fontColor('blue')
-      .fontSize(14)
+      .fontColor(anychart.color.darken('DodgerBlue'))
+      .fontSize(12)
       .fontWeight(400)
       .textFormatter(function(){
         return view.get(
