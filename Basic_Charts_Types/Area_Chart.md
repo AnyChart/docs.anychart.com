@@ -182,7 +182,7 @@ orientation can be adjusted, how axis scale can be inverted and how minimum and 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with 
 **.orientation()** parameter of **.yAxis()** or **.xAxis()** method.
   
-Positioning depends on plot type and inversion of axes.
+Axes position depends on plot type, orientation and inversion of axes.
 
 ```
     chart.xAxis(0).orientation('top');

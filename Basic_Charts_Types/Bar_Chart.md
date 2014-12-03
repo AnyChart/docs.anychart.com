@@ -169,7 +169,7 @@ minimum and maximum values can be controlled.
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **.orientation()** 
 parameter of **.yAxis()** or **.xAxis()** methods.
 
-Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and 
+Position depends on plot type and inversion of axes, you will find list of all possible orientation and
 inversion settings in [Axes Orientation](../Axes_Grid_Scales_Trends_etc/Axis_Orientation) Templates.
 
 ```
@@ -212,7 +212,7 @@ picture below you can see what are these paddings:
 
 ![](http://www.anychart.com/products/anychart/docs/users-guide/img/horz_bar_padding.jpg)
 
-If you want to set these paddings you need to set **PointPosition** in **bar_series**. Paddings are measured as a 
+If you want to set these paddings you need to set **PointPosition()** in **bar_series**. Paddings are measured as a
 ratio to bar width (bars widths are calculated automatically). For example, if you set **xPointPosition to 0.5** - the 
 space between two bars will be equal to the half of each bar width. If you want to have no padding between bars 
 **xPointPosition** to 0.

@@ -7,7 +7,7 @@
 
 ## Overview
    
-Positioning depends on plot type and inversion of axes, below you will find all possible axes orientation and inverting 
+Orientation depends on plot type and inversion of axes, below you will find all possible axes orientation and inverting
 JS Settings with demonstration preview.
   
 Though these settings are demonstrated using Bar/Column charts - they work for all other chart types.

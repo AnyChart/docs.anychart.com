@@ -4,7 +4,7 @@
 * [Overview](#overview)
 * [Declaration](#declaration)
 * [Title](#title)
-* [Position](#position)
+* [Orientation](#orientation)
 * [Labels](#labels)
 * [Axis line](#axis_line)
 * [Tickmarks](#tickmarks)
@@ -51,9 +51,9 @@ Learn how to format keywords in Number Formatting section.-->
 
 {sample}AGST\_Axes\_Basic\_01{sample}
 
-## Position
+## Orientation
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust position attribute of **.yAxis()** or **.xAxis()** methods. Positioning depends on plot type and inversion of axes, you will find list of all possible positioning and inversion settings in [Axes Positioning and Inverting Templates](Axis_Orientation).
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** parameter of **.yAxis()** or **.xAxis()** methods. Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Positioning and Inverting Templates](Axis_Orientation).
 
 ```
   chart.xAxis(0).orientation('top');
