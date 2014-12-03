@@ -128,7 +128,7 @@ In this section we will cover the basics that allow to tune labels appearance an
 Font settings of labels are configured as any text. You can specify size, face and color or set the text to HTML mode:
 
 ```
-    chart.xAxis().labels().fontFamily('Courier').fontSize(12).fontColor('red').fontWeight('bold').useHTML(false);
+    chart.xAxis().labels().fontFamily('Courier').fontSize(12).fontColor('red').fontWeight('bold').useHtml(false);
 ```
 
 You can look at font settings at work in the [sample below](#sample).
