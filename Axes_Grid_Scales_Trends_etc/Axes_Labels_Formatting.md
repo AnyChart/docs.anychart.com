@@ -204,7 +204,7 @@ work particularly good on xAxis, when labels contain category names, you can set
 ```
 
 Here is a sample dashboard showing the most of positioning labels settings:
-<a name="dashboard"/></a>
+<a name="dashboard"/>
 
 {sample}AGST\_Labels\_Formatting\_05{sample}
 
