@@ -155,7 +155,7 @@ enabled for xAxis and only stroke method is adjusted:
 
 In this sample we will demonstrate labels background settings, multi-line labels and align and font settings:
 
-<a name="sample"/>
+<a name="sample"/></a>
 {sample}AGST\_Labels\_Formatting\_04{sample}
 
 ## Positioning
