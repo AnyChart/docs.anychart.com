@@ -21,7 +21,7 @@ anychart.onDocumentReady(function() {
   chart1 = anychart.radar();
 
   // chart title
-  chart1.title().text('Curcuit Grid Adjustment');
+  chart1.title().text('Circular Grid Adjustment');
 
   // disable minor ticks
   chart1.yAxis().enabled(true).minorTicks().enabled(false);

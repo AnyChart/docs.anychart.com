@@ -106,8 +106,7 @@ Axis stroke appearance is controlled by **.stroke()** parameter.
 More information on possible stroke settings may be found in [Strokes and Lines tutorial](../General_Appearance_Settings/Strokes_and_Lines).
 
 
-Here is a sample of tuned X and Y axes. Y axis has dashed red stroke and X axis has stroke colorized with gradient
-color.
+Here is a sample of tuned X and Y axes. Y axis has dashed red stroke and X axis has stroke colored with gradient.
 
 {sample}BCT\_PolarChart\_05{sample}
 
@@ -118,14 +117,14 @@ AnyChart allows to invert any axis. Inversion is controlled by axis **.inverted(
 ```
     chart.yScale().inverted(true);
 ```
-Take a look at the demonstration of Y Axis inversion on the sample below:
+Take a look at the demonstration of Y Axis inversion in the sample below:
 
 {sample}BCT\_PolarChart\_06{sample}
 
 ### Logarithmic Scale
 
-Data for charts may have great range of numeric values. In sake of visual appearance of data on the plot it is
-recommended to use logarithmic scale. Scale type may be set with **.scale()** method. More information on scale types
+Data for charts may have great range of numeric values. For the sake of visual appearance of data on the plot it is
+recommended to use logarithmic scale. Scale type can be set with **.scale()** method. More information on scale types
  can be found in [Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#types)
 
 ```
@@ -205,7 +204,7 @@ using certain methods.
 
 ### Grid
 
-Polar grid is a combination of circuit and radial grids. Grid visual appearance can be controlled with several
+Polar grid is a combination of circular and radial grids. Grid visual appearance can be controlled with several
 parameters:
 
 ```
@@ -213,8 +212,8 @@ parameters:
   var chart = anychart.polar();
 
   chart.grid(0).
-    .oddFill('red')       // colorizing odd cells in the grid
-    .evenFill('darkred')  // colorizing even cells in the grid
+    .oddFill('red')       // coloring odd cells in the grid
+    .evenFill('darkred')  // coloring even cells in the grid
     .layout('radial');    // set layout type
 ```
 

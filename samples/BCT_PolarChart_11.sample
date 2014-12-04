@@ -376,7 +376,7 @@ anychart.onDocumentReady(function() {
   chart1 = anychart.polar();
 
   // chart title
-  chart1.title().text('Curcuit Grid Adjustment');
+  chart1.title().text('Circular Grid Adjustment');
 
   // scales settings
   chart1.yScale().ticks().interval(0.3);
