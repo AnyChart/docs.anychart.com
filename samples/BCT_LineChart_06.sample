@@ -3,7 +3,7 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         ['January', 10000],
         ['February', 12000],
@@ -12,23 +12,23 @@ anychart.onDocumentReady(function() {
         ['May', 9000]
     ]);
 
-    //cahrt type
+    // cahrt type
     chart = anychart.lineChart();
 
-    //title
+    // title
     chart.title().text('Axes Management');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Sales');
     chart.yAxis().title().text('Month');
 
-    //adjust axes position
+    // adjust axes position
     chart.xAxis().orientation('top');
     chart.yAxis().orientation('right');
 
-    //set date
+    // set date
     chart.spline(data);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

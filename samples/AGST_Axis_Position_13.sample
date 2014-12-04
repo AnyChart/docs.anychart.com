@@ -3,12 +3,12 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //define chart
+    // define chart
     chart = anychart.cartesianChart();
 
     chart.margin().top(30).left(30);
 
-    //setting data
+    // setting data
     var data = anychart.data.set([
         ['A', 4],
         ['B', 3],
@@ -16,16 +16,16 @@ anychart.onDocumentReady(function() {
         ['D', 1]
     ]);
 
-    //define chart type
+    // define chart type
     chart.column(data);
 
-    //position of y axis changer. Now y is on the right
+    // position of y axis changer. Now y is on the right
     chart.yAxis().orientation('right');
 
-    //inverts y scale. Now all elements has inverted (from right to left) direction
+    // inverts y scale. Now all elements has inverted (from right to left) direction
     chart.yScale().inverted(true);
 
-    //disabling all ticks
+    // disabling all ticks
     chart.xAxis().ticks().enabled(false);
     chart.yAxis().minorTicks().enabled(false);
     chart.yAxis().ticks().enabled(false);

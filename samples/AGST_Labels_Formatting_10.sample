@@ -5,10 +5,10 @@ anychart.onDocumentReady(function() {
     chart = anychart.barChart();
     chart.container('container');
 
-    //setting title
+    // setting title
     chart.title().text('X-Axis labels: width is not defined (no wrapping)');
 
-    //seting data
+    // seting data
     chart.bar([
         ["People's Republic of China", 1336717952],
         ["India", 1189172864],
@@ -17,7 +17,7 @@ anychart.onDocumentReady(function() {
         ["Japan", 126475664]
     ]);
 
-    //adjusting labels
+    // adjusting labels
     chart.yScale().ticks().interval(200000000);
     chart.yAxis().labels().textFormatter(function(){
         var value = this.value;
@@ -38,6 +38,6 @@ anychart.onDocumentReady(function() {
     chart.yAxis().minorTicks().enabled(false);
     chart.xAxis().staggerLines(1);
 
-    //draw chart
+    // draw chart
     chart.draw();
 });

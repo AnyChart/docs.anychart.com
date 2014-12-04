@@ -3,7 +3,7 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         ['January', 10000],
         ['February', 12000],
@@ -12,19 +12,19 @@ anychart.onDocumentReady(function() {
         ['May', 9000]
     ]);
 
-    //setting chart type
+    // setting chart type
     chart = anychart.areaChart();
 
-    //set title
+    // set title
     chart.title().text('Spline Chart');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Month');
     chart.yAxis().title().text('Sales');
 
-    //set data and define chart type
+    // set data and define chart type
     chart.splineArea(data);
 
-    //draw chart
+    // draw chart
     chart.container('container').draw();
 });

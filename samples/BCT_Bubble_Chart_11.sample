@@ -4,13 +4,13 @@
 
 anychart.onDocumentReady(function() {
 
-    //chart type
+    // chart type
     chart = anychart.lineChart();
 
-    //set title
+    // set title
     chart.title().text('Minimum and Maximum value colorizing');
 
-    //data
+    // data
     var data = anychart.data.set([
         ['P1', 132, 1],
         ['P2', 124, 2],
@@ -24,9 +24,9 @@ anychart.onDocumentReady(function() {
         ['P10', 59, 2]
     ]);
 
-    //set data
+    // set data
     chart.bubble(data).minimumSize(10).maximumSize(30);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

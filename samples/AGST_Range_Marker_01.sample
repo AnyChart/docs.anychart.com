@@ -3,7 +3,7 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         [2005, 10000],
         [2006, 12000],
@@ -12,52 +12,52 @@ anychart.onDocumentReady(function() {
         [2009, 29000]
     ]);
 
-    //chart type
+    // chart type
     chart = anychart.columnChart();
 
-    //set data
+    // set data
     chart.column(data).hoverFill('#444444').tooltip().contentFormatter(function(){
         return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
     });
 
-    //disable title
+    // disable title
     chart.title().enabled(false);
 
-    //set y scale ticks interval
+    // set y scale ticks interval
     chart.yScale().minimum(0).maximum(30000).ticks().interval(5000);
 
-    //disable x axis title
+    // disable x axis title
     chart.xAxis().title().enabled(false);
 
-    //adjust y axis labels
+    // adjust y axis labels
     chart.yAxis().labels().textFormatter(function(){
         return '$' + this.value/1000 + ',000';
     });
 
-    //y scale title
+    // y scale title
     chart.yAxis().title().text('Sales');
 
-    //set green marker
+    // set green marker
     chart.rangeMarker()
         .scale(chart.yScale())
         .from(20000)
         .to(30000)
         .fill('green 0.5');
 
-    //set yellow marker
+    // set yellow marker
     chart.rangeMarker(1)
         .scale(chart.yScale())
         .fill('gold 0.5')
         .from(10000)
         .to(20000);
 
-    //set red marker
+    // set red marker
     chart.rangeMarker(2)
         .scale(chart.yScale())
         .from(0)
         .to(10000)
         .fill('red 0.5');
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

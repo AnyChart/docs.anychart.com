@@ -3,7 +3,7 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-  //data
+  // data
   var dataSet = anychart.data.set([
     {x: 'P1', value: 10},
     {x: 'P2', value: 2},
@@ -12,32 +12,32 @@ anychart.onDocumentReady(function() {
     {x: 'P5', value: 15}
   ]);
 
-  //set chart type
+  // set chart type
   chart = anychart.columnChart();
 
   chart.title().text('Remove Column on click');
 
   chart.xAxis().title().enabled(false);
-  //set data
+  // set data
   var column = chart.column(dataSet);
 
-  //index for preventing oll columns elimination
+  // index for preventing oll columns elimination
   var columnIndex = 4;
 
-  //set listener on chart
+  // set listener on chart
   column.listen(
 
-    //listener type
+    // listener type
     anychart.enums.EventType.POINT_CLICK,
 
-    //function, if listener triggers
+    // function, if listener triggers
     function(e) {
         if(columnIndex > 0)
-        dataSet.remove(0);   //remove fist column
+        dataSet.remove(0);   // remove fist column
         columnIndex--;
     }
   );
 
-  //set container and draw chart
+  // set container and draw chart
   chart.container('container').draw();
 });

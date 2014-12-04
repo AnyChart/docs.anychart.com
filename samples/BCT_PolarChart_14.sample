@@ -6,13 +6,13 @@ anychart.onDocumentReady(function() {
 
   var data = [];
 
-  //variable to limit points creation
+  // variable to limit points creation
   var pointsCount = 100;
 
-  //create 100 points
+  // create 100 points
   for (var points = 0; points<pointsCount; points=points+0.1){
 
-    //for points in range from 60 to 70 create missing points
+    // for points in range from 60 to 70 create missing points
     if (points > 60){
       if (points<70){
           data.push([points, 'missing']);
@@ -26,29 +26,29 @@ anychart.onDocumentReady(function() {
   }
 
 
-  //data for chart
+  // data for chart
   var dataSet = anychart.data.set(data);
 
-  //chart type
+  // chart type
   chart = anychart.polar();
 
-  //chart title
+  // chart title
   chart.title().text('Custom Radius size');
 
-  //set chart radius
+  // set chart radius
   chart.yScale()
-    .minimum(0)        //minimum radius value
-    .maximum(pointsCount*10 + 50)       //maximum radius value
+    .minimum(0)        // minimum radius value
+    .maximum(pointsCount*10 + 50)       // maximum radius value
     .ticks()
-        .interval(pointsCount - 1);     //set ticks interval
+        .interval(pointsCount - 1);     // set ticks interval
 
-  //x scale interval settings
+  // x scale interval settings
   chart.xScale().maximum(pointsCount).ticks().interval(10);
 
-  //disable minor ticks
+  // disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);
 
-  //set data
+  // set data
   var series = chart.line(dataSet).stroke('2 royalblue');
   series.markers().size(1).stroke('0 royalblue');
   series.hoverMarkers().size(1);
@@ -56,13 +56,13 @@ anychart.onDocumentReady(function() {
       return 'X: ' + this.x.toFixed(1) + '\nValue: ' + this.value.toFixed(0);
   });
 
-  //adjust content and visualisation of labels
+  // adjust content and visualisation of labels
   chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + '.00'});
 
-  //grid settings
+  // grid settings
   chart.grid(0).evenFill(null).oddFill(null);
   chart.grid(1).evenFill(null).oddFill(null);
 
-  //draw chart
+  // draw chart
   chart.container('container').draw();
 });

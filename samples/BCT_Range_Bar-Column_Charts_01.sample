@@ -4,17 +4,17 @@
 
 anychart.onDocumentReady(function() {
 
-    //chart type
+    // chart type
     chart = anychart.barChart();
 
-    //chart title
+    // chart title
     chart.title().text('Range Bar Chart');
 
-    //set axes title
+    // set axes title
     chart.xAxis().title().enabled(false);
     chart.yAxis().title().enabled(false);
 
-    //set data
+    // set data
     chart.rangeBar([
         { low: 0.6, high: 6.3},
         { low: 0.7, high: 6.1},
@@ -31,6 +31,6 @@ anychart.onDocumentReady(function() {
         { low: 5.1, high: 12.1}
     ]);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

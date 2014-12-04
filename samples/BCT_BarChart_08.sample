@@ -3,17 +3,17 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //chart type
+    // chart type
     chart = anychart.barChart();
 
-    //set title
+    // set title
     chart.title().text('Marker settings');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Retail Channel');
     chart.yAxis().title().text('Sales');
 
-    //set data
+    // set data
     chart.bar([
         ['John' , 10000],
         ['Jake' , 12000],
@@ -22,6 +22,6 @@ anychart.onDocumentReady(function() {
         ['Mary' , 9000]
     ]);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

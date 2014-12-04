@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    //set data and chart type
+    // set data and chart type
     chart = anychart.pieChart([
         ['Department Stores', 637166],
         ['Discount Stores', 721630],
@@ -15,9 +15,9 @@ anychart.onDocumentReady(function() {
 
     chart.title().text('Doughnut Chart');
 
-    //set radius inside pie chart to turn it into doughnut chart
+    // set radius inside pie chart to turn it into doughnut chart
     chart.innerRadius('30%');
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

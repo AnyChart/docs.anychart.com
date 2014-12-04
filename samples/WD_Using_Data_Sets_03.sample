@@ -13,13 +13,13 @@ anychart.onDocumentReady(function() {
         ["2014/6/30",  28,  25,  27]  //     6
     ];
 
-    //create mapping list on one data set
+    // create mapping list on one data set
     var dataMappingList = anychart.data.mapAsTable(data);
 
-    //create line chart
+    // create line chart
     var lineChart = anychart.lineChart.apply(null, dataMappingList);
 
-    //set container
+    // set container
     lineChart.container('container');
 
     // initiate chart drawing

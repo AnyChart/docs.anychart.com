@@ -3,7 +3,7 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         ['January', 12000],
         ['February', 15000],
@@ -12,23 +12,23 @@ anychart.onDocumentReady(function() {
         ['May', 14000]
     ]);
 
-    //chart type
+    // chart type
     chart = anychart.lineChart();
 
-    //title
+    // title
     chart.title().text('Labels');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Sales');
     chart.yAxis().title().text('Month');
 
-    //set minimum and maximum y scale value
+    // set minimum and maximum y scale value
     chart.yScale().minimum('0').maximum('20000');
 
-    //set data
+    // set data
     series = chart.spline(data);
 
-    //adjust labels
+    // adjust labels
     series.labels()
         .enabled(true)
         .fontWeight('bold')
@@ -37,12 +37,12 @@ anychart.onDocumentReady(function() {
         .offsetX(-15)
         .offsetY(-10);
 
-    //adjust tooltips
+    // adjust tooltips
     series.tooltip().contentFormatter(function(){
         var value = this.value;
         return 'Month:' + this.x + '\nSales: ' + (value/1000) + '\'000.00' + '\nPeriod: 2003';
     });
 
-    //draw
+    // draw
     chart.container('container').draw();
 })

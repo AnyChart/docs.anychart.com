@@ -3,7 +3,7 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         ['Department Stores', 637166, 737166],
         ['Discount Stores', 721630, 537166],
@@ -12,30 +12,30 @@ anychart.onDocumentReady(function() {
         ['All other outlets', 90000, 89000]
     ]);
 
-    //map data for the each series
+    // map data for the each series
     var Sales2003 = data.mapAs({x: [0], value: [1]});
     var Sales2004 = data.mapAs({x: [0], value: [2]});
 
-    //chart type
+    // chart type
     chart = anychart.barChart();
 
-    //chart title
+    // chart title
     chart.title().text('Paddings');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Retail Channel');
     chart.yAxis().title().text('Sales');
 
-    //set series data
+    // set series data
     var series;
     series = chart.bar(Sales2003);
 
-    //adjust series position
+    // adjust series position
     series.xPointPosition(0.5);
 
-    //second series data
+    // second series data
     series = chart.bar(Sales2004);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

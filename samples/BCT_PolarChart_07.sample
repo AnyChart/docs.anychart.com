@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-  //data for chart
+  // data for chart
   var dataSet = anychart.data.set([
     [10, 10],
     [20, 50],
@@ -19,22 +19,22 @@ anychart.onDocumentReady(function() {
     [30, 220]
   ]);
 
-  //chart type
+  // chart type
   chart = anychart.polar();
 
-  //chart title
+  // chart title
   chart.title().text('Polar Chart with Logarithmic Scale');
 
   var logScale = anychart.scales.log();     // create logarithmic scale
   logScale.minimum(10);                     // set minimum value for the scale
   chart.yScale(logScale);                   // set logarithmic scale as y scale for the chart
 
-  //x scale settings
+  // x scale settings
   chart.xScale().maximum(80).ticks().interval(10);
 
-  //set data and adjust visualisation
+  // set data and adjust visualisation
   chart.line(dataSet).closed(false).tooltip().enabled(true);
 
-  //draw chart
+  // draw chart
   chart.container('container').draw();
 });

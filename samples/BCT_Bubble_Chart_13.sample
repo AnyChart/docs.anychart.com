@@ -4,17 +4,17 @@
 
 anychart.onDocumentReady(function() {
 
-    //chart type
+    // chart type
     chart = anychart.lineChart();
 
-    //set title
+    // set title
     chart.title().text('Markers');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Products');
     chart.yAxis().title().text('Sales');
 
-    //set data
+    // set data
     chart.bubble([
         {x: "Product A", y: 437, size: 6},
         {x: "Product B", y: 172, size: 14, marker: {
@@ -29,6 +29,6 @@ anychart.onDocumentReady(function() {
         {x: "Product C", y: 548, size: 10}
     ]).minimumSize(10).maximumSize(30);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

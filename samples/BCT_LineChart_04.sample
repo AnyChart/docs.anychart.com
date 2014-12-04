@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var dataSet = anychart.data.set([
         ['January', '10000', '12000'],
         ['February', '12000', '15000'],
@@ -13,24 +13,24 @@ anychart.onDocumentReady(function() {
         ['May', '9000', '14000'],
     ]);
 
-    //map data for the each series
+    // map data for the each series
     var seriesData_2 = dataSet.mapAs({x: [0], value: [1]});
     var seriesData_1 = dataSet.mapAs({x: [0], value: [2]});
 
-    //chat type
+    // chat type
     chart = anychart.lineChart();
 
-    //title
+    // title
     chart.title().text('Multi-series Line Chart');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Sales');
     chart.yAxis().title().text('Month');
 
-    //set series data
+    // set series data
     chart.line(seriesData_1);
     chart.line(seriesData_2);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

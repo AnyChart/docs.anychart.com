@@ -4,27 +4,27 @@
 
 anychart.onDocumentReady(function() {
 
-    //chart type
+    // chart type
     chart = anychart.cartesianChart();
 
-    //set title
+    // set title
     chart.title().text('Minimum and Maximum Value Colorizing');
 
-    //draw axes and set titles
+    // draw axes and set titles
     chart.xAxis().title('Year');
     chart.yAxis().title('Box office');
 
-    //draw grid
+    // draw grid
     chart.grid().layout('horizontal');
 
-    //draw minor grid and adjust
+    // draw minor grid and adjust
     chart.minorGrid()
         .evenFill('none')
         .oddFill('none')
         .stroke('black 0.075')
         .layout('vertical');
 
-    //data
+    // data
     data = anychart.data.set([
         ['P!', 132],
         ['P2', 124],
@@ -38,12 +38,12 @@ anychart.onDocumentReady(function() {
         ['P10', 59]
     ]);
 
-    //set data
+    // set data
     markerchart = chart.marker(data);
 
-    //set color
+    // set color
     markerchart.fill('#C6D1A5');
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

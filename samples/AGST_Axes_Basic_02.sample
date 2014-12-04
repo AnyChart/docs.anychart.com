@@ -3,7 +3,7 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //setting data
+    // setting data
     var data = anychart.data.set([
         ['A', 637166],
         ['B', 721630],
@@ -16,11 +16,11 @@ anychart.onDocumentReady(function() {
 
     chart.title().enabled(false);
 
-    //axes orientation adjusting
+    // axes orientation adjusting
     chart.yAxis().orientation('right');
     chart.xAxis().orientation('top');
 
-    //axes titles adjusting
+    // axes titles adjusting
     chart.xAxis().title().text('X Axis title on the top');
     chart.yAxis().title().text('Y Axis title on the right');
 

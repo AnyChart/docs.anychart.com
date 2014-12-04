@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-  //data
+  // data
   var dataSet = anychart.data.set([
     {x: 'P1', value: 10},
     {x: 'P2', value: 9},
@@ -14,33 +14,33 @@ anychart.onDocumentReady(function() {
     {x: 'P6', value: 13}
   ]);
 
-  //set chart type
+  // set chart type
   chart = anychart.columnChart();
 
   chart.title().text('Click on Column to Add a 5 to it\'s value ');
 
-  //set data
+  // set data
   var column = chart.column(dataSet);
 
-  //remap data
+  // remap data
   var view = dataSet.mapAs();
 
-  //set listener on chart
+  // set listener on chart
   column.listen(
 
-    //listener type
+    // listener type
     anychart.enums.EventType.POINT_CLICK,
 
-    //function, if listener triggers
+    // function, if listener triggers
     function(e) {
         view.set(
-            e.pointIndex,   //get index of clicked column
-            'value',        //get parameter to update
-            view.get(e.pointIndex, 'value') + 5 //parameter updating
+            e.pointIndex,   // get index of clicked column
+            'value',        // get parameter to update
+            view.get(e.pointIndex, 'value') + 5 // parameter updating
         );
     }
   );
 
-  //set container and draw chart
+  // set container and draw chart
   chart.container('container').draw();
 });

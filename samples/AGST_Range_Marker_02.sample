@@ -3,7 +3,7 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         [2005, 10000],
         [2006, 12000],
@@ -12,53 +12,53 @@ anychart.onDocumentReady(function() {
         [2009, 29000]
     ]);
 
-    //chart type
+    // chart type
     chart = anychart.lineChart();
 
-    //set data
+    // set data
     chart.line(data).hoverStroke('red').tooltip().contentFormatter(function(){
         return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
     });
 
-    //disable title
+    // disable title
     chart.title().enabled(false);
 
-    //set y scale ticks interval
+    // set y scale ticks interval
     chart.yScale().minimum(0).maximum(30000).ticks().interval(5000);
 
-    //disable x axis title
+    // disable x axis title
     chart.xAxis().title().enabled(false);
 
-    //adjust y axis labels
+    // adjust y axis labels
     chart.yAxis().labels().textFormatter(function(){
         return '$' + this.value/1000 + ',000';
     });
 
-    //y scale title
+    // y scale title
     chart.yAxis().title().text('Sales');
 
-    //set green
+    // set green
     chart.rangeMarker()
         .scale(chart.yScale())
         .from(20000)
         .to(30000)
         .fill('green 0.5');
 
-    //set red marker
+    // set red marker
     chart.rangeMarker(1)
         .scale(chart.yScale())
         .fill('gold 0.5')
         .from(10000)
         .to(20000);
 
-    //set green marker
+    // set green marker
     chart.rangeMarker(2)
         .scale(chart.yScale())
         .from(0)
         .to(10000)
         .fill('red 0.5');
 
-    //set left text marker
+    // set left text marker
     chart.textMarker()
         .scale(chart.yScale())
         .align('near')
@@ -69,7 +69,7 @@ anychart.onDocumentReady(function() {
         .text('Good: [20,000.00 - 30,000.00]')
         .fontSize(20);
 
-    //set text marker at the center
+    // set text marker at the center
     chart.textMarker(1)
         .scale(chart.yScale())
         .align('center')
@@ -80,7 +80,7 @@ anychart.onDocumentReady(function() {
         .text('Average \n [20,000.00 - 30,000.00]')
         .fontSize(20);
 
-    //set text marker at the center
+    // set text marker at the center
     chart.textMarker(2)
         .scale(chart.yScale())
         .align('far')
@@ -91,6 +91,6 @@ anychart.onDocumentReady(function() {
         .fontWeight(400)
         .text('Severe')
         .fontSize(12);
-    //draw
+    // draw
     chart.container('container').draw();
 });

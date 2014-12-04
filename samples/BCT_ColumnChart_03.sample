@@ -3,20 +3,20 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //chart type
+    // chart type
     chart = anychart.columnChart();
 
-    //set title
+    // set title
     chart.title().text('Axes Management');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Manager');
     chart.yAxis().title().text('Sales');
 
-    //set scale minimum
+    // set scale minimum
     chart.yScale().minimum(0);
 
-    //set data
+    // set data
     chart.column([
         ['John' , 10000],
         ['Jake' , 12000],
@@ -25,10 +25,10 @@ anychart.onDocumentReady(function() {
         ['Mary' , 9000]
     ]);
 
-    //axes position adjuster
+    // axes position adjuster
     chart.xAxis().orientation('top');
     chart.yAxis().orientation('right');
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

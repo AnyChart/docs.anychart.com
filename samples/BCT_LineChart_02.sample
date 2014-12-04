@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         ['January', 10000],
         ['February', 12000],
@@ -14,19 +14,19 @@ anychart.onDocumentReady(function() {
     ]);
 
 
-    //chart type
+    // chart type
     chart = anychart.lineChart();
 
-    //title
+    // title
     chart.title().text('Spline chart');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Sales');
     chart.yAxis().title().text('Month');
 
-    //set data and define chart
+    // set data and define chart
     chart.spline(data);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

@@ -416,7 +416,7 @@ anychart.onDocumentReady(function() {
   for (i = 0; i < leftColumnReports.length; i++) {
     report = leftColumnReports[i]['report'];
     bounds = leftColumnReports[i]['bounds'];
-    //stage.rect(left, top, bounds.width, bounds.height);
+    // stage.rect(left, top, bounds.width, bounds.height);
     report.parent(stage);
     report.translate(left, top);
     top += bounds.height;

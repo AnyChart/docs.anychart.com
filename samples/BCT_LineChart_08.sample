@@ -3,7 +3,7 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         ['January', 10000],
         ['February', 12000],
@@ -12,22 +12,22 @@ anychart.onDocumentReady(function() {
         ['May', 9000]
     ]);
 
-    //chart type
+    // chart type
     chart = anychart.lineChart();
 
-    //title
+    // title
     chart.title().text('Visualization');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Sales');
     chart.yAxis().title().text('Month');
 
-    //set data and adjust visualization
+    // set data and adjust visualization
     chart.line(data)
         .stroke('Rgb(86,86,26)', 4)
         .markers(null)
         .hoverStroke('darkred', 4);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

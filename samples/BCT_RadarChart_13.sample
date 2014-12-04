@@ -4,10 +4,10 @@
 
 anychart.onDocumentReady(function() {
 
-  //create stage
+  // create stage
   stage = anychart.graphics.create('container');
 
-  //data for chart
+  // data for chart
   var dataSet = anychart.data.set([
     ['Product A', 90],
     ['Product B', 65],
@@ -17,16 +17,16 @@ anychart.onDocumentReady(function() {
     ['Product F', 100]
   ]);
 
-  //chart type
+  // chart type
   chart1 = anychart.radar();
 
-  //chart title
+  // chart title
   chart1.title().text('Curcuit Grid Adjustment');
 
-  //disable minor ticks
+  // disable minor ticks
   chart1.yAxis().enabled(true).minorTicks().enabled(false);
 
-  //set data and adjust visualisation
+  // set data and adjust visualisation
   chart1.area(dataSet).stroke('yellow').fill('gold 0.8');
 
   chart1.grid(1)
@@ -41,20 +41,20 @@ anychart.onDocumentReady(function() {
     .layout('curcuit')
     .stroke('white');
 
-  //set chart size and position
+  // set chart size and position
   chart1.bounds(0, 0, '50%', '100%');
 
-  //set container and draw chart
+  // set container and draw chart
   chart1.container(stage).draw();
 
 
-  //create second chart
+  // create second chart
   chart2 = anychart.radar();
 
-  //chart title
+  // chart title
   chart2.title().text('Radial Grid Adjustment');
 
-  //disable minor ticks
+  // disable minor ticks
   chart2.yAxis().enabled(true).minorTicks().enabled(false);
 
   chart2.grid(0)
@@ -69,13 +69,13 @@ anychart.onDocumentReady(function() {
     .layout('curcuit')
     .stroke('white');
 
-  //set data and adjust visualisation
+  // set data and adjust visualisation
   chart2.area(dataSet).stroke('yellow').fill('gold 0.8');
 
-  //set chart size and position
+  // set chart size and position
   chart2.bounds('50%', 0, '50%', '100%');
 
-  //set container and draw chart
+  // set container and draw chart
   chart2.container(stage).draw();
 
 });

@@ -7,16 +7,16 @@ anychart.onDocumentReady(function() {
 
     chart.title().text('Extra X and Y Axes Simple Sample');
 
-    //setting xScale settings
+    // setting xScale settings
     chart.xScale(anychart.scales.linear());
     chart.xScale().minimum(-10);
     chart.xScale().ticks().interval(10);
     chart.xScale().minorTicks().interval(2);
 
-    //setting yScale settings
+    // setting yScale settings
     chart.yScale().ticks().interval(0.5);
 
-    //set yAxis settings
+    // set yAxis settings
     chart.yAxis().stroke('red').staggerMode(false);
     chart.yAxis().ticks().stroke('red');
     chart.yAxis().minorTicks().stroke('red');
@@ -24,7 +24,7 @@ anychart.onDocumentReady(function() {
     chart.yAxis().title().text('Amplitude').fontColor('red');
     chart.yAxis(1).title().text('Amplitude');
 
-    //setting xAxis settings
+    // setting xAxis settings
     chart.xAxis().stroke('red');
     chart.xAxis().ticks().stroke('red');
     chart.xAxis().minorTicks().stroke('red');
@@ -32,33 +32,33 @@ anychart.onDocumentReady(function() {
     chart.xAxis().title().text('Time msec').fontColor('red');
     chart.xAxis(1).title().text('Time Sec');
 
-    //setting Grid settings
+    // setting Grid settings
     chart.grid(0).stroke('gray 0.8').layout('vertical');
     chart.grid(1).stroke('gray 0.8').layout('horizontal');
 
-    //setting minorGrid settings
+    // setting minorGrid settings
     chart.minorGrid(0).layout('vertical')
         .oddFill(null).evenFill(null).stroke('gray 0.3');
     chart.minorGrid(1).layout('horizontal')
         .oddFill(null).evenFill(null).stroke('gray 0.3');
 
-    //adding and adjusting extra X scale
+    // adding and adjusting extra X scale
     var extraXScale = anychart.scales.linear();
     extraXScale.minimum(-1000);
     extraXScale.ticks().interval(5000);
 
-    //adding and adjusting extra X axis
+    // adding and adjusting extra X axis
     var extraXAxis = chart.xAxis(1);
     extraXAxis.orientation('top').staggerMode(false).scale(extraXScale);
 
-    //adding extra Y scale
+    // adding extra Y scale
     var extraYScale = anychart.scales.linear();
 
-    //adding and adjusting extra Y axis
+    // adding and adjusting extra Y axis
     var extraYAxis = chart.yAxis(1);
     extraYAxis.orientation('right').scale(extraYScale);
 
-    //setting first series of data
+    // setting first series of data
     var firstSeries = anychart.data.set([
         [0, 2],
         [1, 0.720403074490853],
@@ -103,7 +103,7 @@ anychart.onDocumentReady(function() {
         [40, -0.0635179106335488]
     ]);
 
-    //setting second series of data
+    // setting second series of data
     var secondSeries = anychart.data.set([
         [1000, 0.00100000],
         [1500, 0.00066667],
@@ -148,7 +148,7 @@ anychart.onDocumentReady(function() {
         [21000, 0.00004762]
     ]);
 
-    //setting and adjusting data visualisation
+    // setting and adjusting data visualisation
 
     var blackSeries = chart.line(secondSeries);
     blackSeries.yScale(extraYScale).xScale(extraXScale);
@@ -169,7 +169,7 @@ anychart.onDocumentReady(function() {
         return '(x,y) = (' + this.x + '.00,' + value.toFixed(2) + ')';
     });
 
-    //adding red ling to emphasize zero of extra axis
+    // adding red ling to emphasize zero of extra axis
     chart.lineMarker(1).stroke('1 red').layout('vertical').scale(extraXScale);
 
     chart.container('container').draw();

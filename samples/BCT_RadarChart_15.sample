@@ -4,16 +4,16 @@
 
 anychart.onDocumentReady(function() {
 
-  //chart type
+  // chart type
   chart = anychart.radar();
 
-  //chart title
+  // chart title
   chart.title().text('Radar Series Types');
 
-  //background fill
+  // background fill
   chart.background().enabled(true).fill('#EEEEEE');
 
-  //set data and adjust visual settings
+  // set data and adjust visual settings
   chart.area([
     {x: "Product A", value: 722},
     {x: "Product B", value: 1431},
@@ -64,9 +64,9 @@ anychart.onDocumentReady(function() {
       return this.x + '\n' + this.value;
     });
 
-  //grid settings
+  // grid settings
   chart.grid(0).evenFill('white').oddFill('white');
 
-  //draw chart
+  // draw chart
   chart.container('container').draw();
 });

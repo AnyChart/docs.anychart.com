@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         ['January', 10000],
         ['February', 12000],
@@ -13,19 +13,19 @@ anychart.onDocumentReady(function() {
         ['May', 9000]
     ]);
 
-    //chart type
+    // chart type
     chart = anychart.lineChart();
     
-    //title
+    // title
     chart.title().text('Line Chart');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Sales');
     chart.yAxis().title().text('Month');
 
-    //set data
+    // set data
     chart.line(data);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

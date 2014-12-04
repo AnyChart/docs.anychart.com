@@ -3,17 +3,17 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //chart type
+    // chart type
     chart = anychart.columnChart();
 
-    //set title
+    // set title
     chart.title().text('Multi-series Column Chart');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Manager');
     chart.yAxis().title().text('Sales');
 
-    //set scale minimum
+    // set scale minimum
     chart.yScale().minimum(0);
 
     var data = anychart.data.set([
@@ -24,14 +24,14 @@ anychart.onDocumentReady(function() {
         ['Mary' , 9000, 19000]
     ]);
 
-    //map data for the each series
+    // map data for the each series
     var Sales2003 = data.mapAs({x: [0], value: [1]});
     var Sales2004 = data.mapAs({x: [0], value: [2]});
 
-    //set series data
+    // set series data
     series = chart.column(Sales2003);
     series = chart.column(Sales2004);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

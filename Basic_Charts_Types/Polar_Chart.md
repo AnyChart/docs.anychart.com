@@ -3,7 +3,6 @@
 * [Overview](#overview)
 * [Chart](#chart)
 * [Configuration](#configuration)
- * [Radius size](#radius_size)
  * [Start angle](#start_angle)
  * [Plot background](#plot_background)
 * [Axes](#axes)
@@ -27,7 +26,7 @@ AnyChart allows to display three types of series on Polar chart: Line, Area and 
 ()** to display Polar chart:
 
 ```
-  //chart type
+  // chart type
   chart = anychart.polar();
 
   // series type and data setting
@@ -54,37 +53,7 @@ Here is a basic Polar sample:
 
 ## Configuration
 
-Polar plot has several distinctive configuration options, which are presented in this section: chart radius settings,
-chart rotation and background settings.
-
-### Radius size
-
-By default AnyChart calculates radius of polar chart automatically, but this parameter may be set manually. Polar chart radius is controlled by maximum and minimum size of Y scale and may be set through **.yScale().minimum().maximum()** methods.
-
-```
-  //set chart type
-  var chart = anychart.polar();
-
-  //set polar radius
-  chart.yScale()
-    .maximum(120) //set maximum radius of polar chart
-    .minimum(0); //set minimum radius of polar chart
-```
-
-Advanced radius settings includes additional settings for ticks interval on the radius. As far as radius is controled
- by y scale, full information on radius controlling may be found in [Scales tutorial](../Axes_Grid_Scales_Trends_etc/Scales)
-
-```
-  //set chart type
-  var chart = anychart.polar();
-
-  //set polar ticks interval equal to 10
-  chart.yScale().ticks().interval(20);
-```
-
-Here is a sample of the polar chart radius size set manually:
-
-{sample}BCT\_PolarChart\_02{sample}
+Polar plot has several distinctive configuration options, which are presented in this section: chart rotation and background settings.
 
 ### Start angle
 
@@ -105,10 +74,10 @@ You can change polar background using **.background()** method, learn more about
 
 ```
   chart.background()
-    .enabled(true)                                  //enables background
+    .enabled(true)                                  // enables background
     .fill({
-      keys: ['.1 white', '.7 gray', '.9 darkgray'], //set gradient colors
-      angle: -130                                   //set angle of colors drawing
+      keys: ['.1 white', '.7 gray', '.9 darkgray'], // set gradient colors
+      angle: -130                                   // set angle of colors drawing
     });
 ```
 
@@ -121,9 +90,6 @@ Sample polar chart with tuned background:
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis
 scale and settings and many more. All axis features are described in
 [Axes tutorial](../Axes_Grid_Scales_Trends_etc/Axis_Basics).
-
-// Add information on topic content
-
 
 ### Stroke
 
@@ -179,22 +145,23 @@ You can easily tune visual appearance of axes labels as well as adjust labels le
 In the sample below all names are limited to the length of 3:
 
 ```
-  //chart type
+  // chart type
   var chart = anychaty.polar();
 
+  // set y axis labels position and format content
+  chart.yAxis().labels().offsetX(12).textFormatter(function(){
+    var value = this.value.toFixed(1);
+    if (value<0)                                            // check if axis value is negative
+      value = '(' + (this.value * (-1)).toFixed(1) + ')';   // set negative values into brackets and minus sign
+     return value.toString();
+  });
+
+  // settings for x axis labels
   chart.xAxis().labels()
+    .padding(5)                   // set labels padding
+    .fontWeight(900)              // set font weight for labels
     .textFormatter(function(){
-
-      //get value of the label
-      var fullValue = this.value;
-
-      if (longValue.length > 3){
-        myValue = longValue.substr(0, 3) + '...';   //adjust value
-      }
-      else{
-        myValue = fullValue;                        //return untouched value
-      }
-      return myValue;                               //return new value
+      return this.value + '°';    // add '°' to every label of x axis
     });
 ```
 
@@ -203,17 +170,17 @@ In the sample below all names are limited to the length of 3:
 You can change labels background. Learn more about background configuration in [Background settings tutorial](#../General_Appearance_Settings/Background).
 
 ```
-  //axes settings
+  // axes settings
   chart.xAxis()
-    .labels()                   //settings for labels
-      .padding(5)               //set padding for labels
-      .fontWeight(900)          //set font weight for labels
-      .background()             //background settings
-        .enabled(true)          //enable background
-        .fill('lightblue')      //background fill
-        .stroke('blue')         //stroke color
-        .cornerType('round')    //corner type
-        .corners(5);            //corner size
+    .labels()                   // settings for labels
+      .padding(5)               // set padding for labels
+      .fontWeight(900)          // set font weight for labels
+      .background()             // background settings
+        .enabled(true)          // enable background
+        .fill('lightblue')      // background fill
+        .stroke('blue')         // stroke color
+        .cornerType('round')    // corner type
+        .corners(5);            // corner size
 ```
 
 {sample}BCT\_PolarChart\_09{sample}
@@ -222,8 +189,8 @@ You can hide first and/or last labels using **.drawFirstLabel()** and **.drawLas
 
 ```
   chart.yAxis()
-    .drawFirstLabel(false)  //hides first label of y Axis
-    .drawLastLabel(false);  //hides last label of y Axis
+    .drawFirstLabel(false)  // hides first label of y Axis
+    .drawLastLabel(false);  // hides last label of y Axis
 ```
 
 {sample}BCT\_PolarChart\_10{sample}
@@ -242,13 +209,13 @@ Polar grid is a combination of circuit and radial grids. Grid visual appearance 
 parameters:
 
 ```
-  //chart type
+  // chart type
   var chart = anychart.polar();
 
   chart.grid(0).
-    .oddFill('red')       //colorizing odd cells in the grid
-    .evenFill('darkred')  //colorizing even cells in the grid
-    .layout('radial');    //set layout type
+    .oddFill('red')       // colorizing odd cells in the grid
+    .evenFill('darkred')  // colorizing even cells in the grid
+    .layout('radial');    // set layout type
 ```
 
 **Note:** full information on grid settings can be found in [grid section of Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#grids)
@@ -270,22 +237,23 @@ When formatting data labels text we will use **.textFormatter()** to show month 
 here.
 
 ```
-  //chart type
+  // chart type
   var chart = anychart.polar();
 
-  //setting data
-  var series= chart.area(data);
 
-  //setting labels
-  series.labels()
-    .enabled(true)                    //enables labels
-    .textFormatter(function(point){
-      return point.x;                 //setting content
-  });
+  // set series visualisation
+  series
+    .stroke('darkblue')                             // stroke color
+    .fill('lightblue 0.8')                          // fill color
+    .labels()                                       // labels settings
+      .enabled(true)                                // enable labels
+      .fontWeight(900);                             // labels font weight
 
-  //setting tooltips
-  series.tooltip().contentFormatter(function(){
-    return this.x;                    //setting content
+  // visual setting for tooltips
+  series.tooltip().content().fontWeight(400);                                   // settings for tooltip content font
+  series.tooltip().contentFormatter(function(){                                 // adjust tooltip content
+     var percent = this.value / (this.sum / 100);                               // get value and find percent
+     return 'Value: ' + this.value + '\nPercent: ' + percent.toFixed(2) + '%';  // display value of the point and found percent
   });
 ```
 

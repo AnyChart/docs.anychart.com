@@ -362,10 +362,10 @@ anychart.onDocumentReady(function() {
 
     table.cellBorder(null);
 
-    //set background color for all cells in even rows
+    // set background color for all cells in even rows
     table.cellEvenFill('rgb(233, 234, 237)');
 
-    //set background color
+    // set background color
     table.cellOddFill('rgb(102, 143, 169)');
 
     table.cellTextFactory()
@@ -406,7 +406,7 @@ anychart.onDocumentReady(function() {
   for (i = 0; i < leftColumnReports.length; i++) {
     report = leftColumnReports[i]['report'];
     bounds = leftColumnReports[i]['bounds'];
-    //stage.rect(left, top, bounds.width, bounds.height);
+    // stage.rect(left, top, bounds.width, bounds.height);
     report.parent(stage);
     report.translate(left, top);
     top += bounds.height;

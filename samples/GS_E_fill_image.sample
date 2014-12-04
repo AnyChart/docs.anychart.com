@@ -11,7 +11,7 @@ anychart.onDocumentReady(function() {
     stage.text(20, 0, 'Stretch image');
     anychart.ui.background()
             .fill({
-                src: 'http://static.anychart.com/kitty.png',
+                src: 'http:// static.anychart.com/kitty.png',
                 mode: acgraph.vector.ImageFillMode.STRETCH
             })
             .stroke('1 #000')
@@ -21,7 +21,7 @@ anychart.onDocumentReady(function() {
     stage.text(stage.width() / 2 + 20, 0, 'Pattern image');
     anychart.ui.background()
             .fill({
-                src: 'http://static.anychart.com/kitty.png',
+                src: 'http:// static.anychart.com/kitty.png',
                 mode: acgraph.vector.ImageFillMode.TILE
             })
             .stroke('1 #000')

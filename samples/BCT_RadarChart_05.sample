@@ -4,13 +4,13 @@
 
 anychart.onDocumentReady(function() {
 
-  //chart type
+  // chart type
   chart = anychart.radar();
 
-  //chart title
+  // chart title
   chart.title().text('Tuning Axes Visualization');
 
-  //disable minor ticks
+  // disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);
 
   chart.xAxis().stroke({
@@ -25,7 +25,7 @@ anychart.onDocumentReady(function() {
     color: '#9900FF'                                          // set stroke color
   });
 
-  //set data and type of series
+  // set data and type of series
   var series = chart.line([
     {x: "Administration", value:22},
     {x: "Sales", value:34},
@@ -35,6 +35,6 @@ anychart.onDocumentReady(function() {
     {x: "Development", value:47}
   ]);
 
-  //draw chart
+  // draw chart
   chart.container('container').draw();
 });

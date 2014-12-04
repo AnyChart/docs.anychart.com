@@ -377,7 +377,7 @@ anychart.onDocumentReady(function() {
     thickness: 3    // Set thickness
   });
 
-  //get cell from second column and fourth row
+  // get cell from second column and fourth row
   var cell_1 = table.getCell(3, 1);
 
   cell_1.border({
@@ -424,7 +424,7 @@ anychart.onDocumentReady(function() {
   for (i = 0; i < leftColumnReports.length; i++) {
     report = leftColumnReports[i]['report'];
     bounds = leftColumnReports[i]['bounds'];
-    //stage.rect(left, top, bounds.width, bounds.height);
+    // stage.rect(left, top, bounds.width, bounds.height);
     report.parent(stage);
     report.translate(left, top);
     top += bounds.height;

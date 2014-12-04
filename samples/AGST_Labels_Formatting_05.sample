@@ -3,72 +3,72 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data set
+    // data set
     var data = anychart.data.set([
         ['P1', 16, 20],
         ['P2', 12, 18],
         ['P3', 9, 14]
     ]);
 
-    //data remapping
+    // data remapping
     var seriesData_1 = data.mapAs({x: [0], value: [1]});
     var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
     stage = anychart.graphics.create('container');
 
-    //setting main title
+    // setting main title
     var title = anychart.ui.title();
 
-    //setting position for container with main label
+    // setting position for container with main label
     title.parentBounds(0, 0, "100%", "10%")
         .text('Main Labels Settings')
         .container(stage)
         .draw();
 
 
-    //Chart without labels adjusting
+    // Chart without labels adjusting
     var normalLabels = anychart.columnChart();
 
-    //setting title
+    // setting title
     normalLabels.title().text('Normal labels');
 
-    //setting stroke for chart contaoner
+    // setting stroke for chart contaoner
     normalLabels.background().stroke('#CCCCCC');
 
-    //setting position and bounds
+    // setting position and bounds
     normalLabels.bounds(0, '10%', '33.3%', '55%');
 
-    //set scale minimum
+    // set scale minimum
     normalLabels.yScale().minimum(0);
 
 
-    //disabling titles for Axes
+    // disabling titles for Axes
     normalLabels.yAxis().title().enabled(false);
     normalLabels.xAxis().title().enabled(false);
 
 
-    //setting data into series
+    // setting data into series
     firstNormalSeries = normalLabels.column(seriesData_1);
     secondNormalSeries = normalLabels.column(seriesData_2);
 
-    //draw container
+    // draw container
     normalLabels.container(stage);
     normalLabels.draw();
 
 
-    //chart with rotated labels
+    // chart with rotated labels
     var rotatedLabels = anychart.columnChart();
     rotatedLabels.title().text('Rotated labels');
     rotatedLabels.bounds('33.3%', '10%', '33.3%', '55%');
     rotatedLabels.background().stroke('#CCCCCC');
 
-    //set scale minimum
+    // set scale minimum
     rotatedLabels.yScale().minimum(0);
 
     rotatedLabels.yAxis().title().enabled(false);
     rotatedLabels.xAxis().title().enabled(false);
 
-    //rotating labels
+    // rotating labels
     rotatedLabels.xAxis().labels().rotation(-90);
     rotatedLabels.yAxis().labels().rotation(-90);
 
@@ -79,7 +79,7 @@ anychart.onDocumentReady(function() {
     rotatedLabels.draw();
 
 
-    //chart with stagger mode
+    // chart with stagger mode
     var staggerLabels = anychart.columnChart();
     staggerLabels.title().text('Stagger Labels');
     staggerLabels.bounds('66.6%', '10%', '33.3%', '55%');
@@ -87,17 +87,17 @@ anychart.onDocumentReady(function() {
     staggerLabels.xAxis().title().enabled(false);
     staggerLabels.yAxis().title().enabled(false);
 
-    //enabling stagger mode
+    // enabling stagger mode
     staggerLabels.xAxis().staggerMode(true);
 
-    //set scale minimum
+    // set scale minimum
     staggerLabels.yScale().minimum(0);
 
 
-    //adjusting settings for stager mode
+    // adjusting settings for stager mode
     staggerLabels.xAxis().staggerLines(2);
 
-    //data set for stagger mode sample
+    // data set for stagger mode sample
     var staggerData = anychart.data.set([
         ['P1', 16, 20],
         ['P2', 12, 18],
@@ -110,7 +110,7 @@ anychart.onDocumentReady(function() {
         ['P9', 9, 14]
     ]);
 
-    //data remapping for stagger sample
+    // data remapping for stagger sample
     var staggerSeriesData_1 = staggerData.mapAs({x: [0], value: [1]});
     var staggerSeriesData_2 = staggerData.mapAs({x: [0], value: [2]});
 
@@ -121,10 +121,10 @@ anychart.onDocumentReady(function() {
     staggerLabels.draw();
 
 
-    //chat with labels inside
+    // chat with labels inside
     var labelsInside = anychart.lineChart();
 
-    //setting data
+    // setting data
     labelsInside.line([
         [-4, 16],
         [-2, 20],
@@ -141,22 +141,22 @@ anychart.onDocumentReady(function() {
     labelsInside.xAxis().title().enabled(false);
     labelsInside.yAxis().title().enabled(false);
 
-    //adjusting scales
+    // adjusting scales
     labelsInside.xScale(anychart.scales.linear());
     labelsInside.yScale(anychart.scales.linear().maximum(23).minimum(13));
     labelsInside.yScale().ticks().interval(3);
     labelsInside.xScale().ticks().interval(1);
 
-    //setting labels a bit higher and andjusting it's values
+    // setting labels a bit higher and andjusting it's values
     labelsInside.xAxis().labels().offsetY(-25).textFormatter(function(){
         return this.value + '.00';
     });
 
-    //disabling first and last labels
+    // disabling first and last labels
     labelsInside.xAxis().drawFirstLabel(false);
     labelsInside.xAxis().drawLastLabel(false);
 
-    //disabling labels for y axis
+    // disabling labels for y axis
     labelsInside.yAxis().labels().enabled(false);
 
     labelsInside.container(stage);

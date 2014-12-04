@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         [1990, 10000],
         [1991, 12000],
@@ -13,32 +13,32 @@ anychart.onDocumentReady(function() {
         [1994, 9000]
     ]);
 
-    //chart type
+    // chart type
     chart = anychart.lineChart();
 
-    //set data
+    // set data
     chart.line(data).hoverStroke('red').tooltip().contentFormatter(function(){
         return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
     });
 
-    //disable title
+    // disable title
     chart.title().enabled(false);
 
-    //set y scale ticks interval
+    // set y scale ticks interval
     chart.yScale().minimum(8000).maximum(20000).ticks().interval(2000);
 
-    //disable x axis title
+    // disable x axis title
     chart.xAxis().title().enabled(false);
 
-    //adjust y axis labels
+    // adjust y axis labels
     chart.yAxis().labels().textFormatter(function(){
         return '$' + this.value/1000 + ',000';
     });
 
-    //y scale title
+    // y scale title
     chart.yAxis().title().text('Sales');
 
-    //set highest text marker
+    // set highest text marker
     chart.textMarker()
         .scale(chart.yScale())
         .align('near')
@@ -50,14 +50,14 @@ anychart.onDocumentReady(function() {
         .offsetX(5)
         .fontSize(17);
 
-    //set highest line marker
+    // set highest line marker
     chart.lineMarker()
         .scale(chart.yScale())
         .layout('horizontal')
         .stroke('2 red')
         .value(18000);
 
-    //set text marker at the center
+    // set text marker at the center
     chart.textMarker(1)
         .scale(chart.yScale())
         .align('center')
@@ -68,14 +68,14 @@ anychart.onDocumentReady(function() {
         .text('Center')
         .fontSize(17);
 
-    //set center line marker
+    // set center line marker
     chart.lineMarker(1)
         .scale(chart.yScale())
         .layout('horizontal')
         .stroke('2 blue')
         .value(14000);
 
-    //set lowest text marker
+    // set lowest text marker
     chart.textMarker(2)
         .scale(chart.yScale())
         .align('far')
@@ -88,13 +88,13 @@ anychart.onDocumentReady(function() {
         .text('Minimum')
         .fontSize(17);
 
-    //set lowest line marker
+    // set lowest line marker
     chart.lineMarker(2)
         .scale(chart.yScale())
         .layout('horizontal')
         .stroke('2 green')
         .value(9000);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

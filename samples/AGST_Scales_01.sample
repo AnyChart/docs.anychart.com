@@ -3,19 +3,19 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //defining chart type
+    // defining chart type
     chart = anychart.columnChart();
 
-    //title setter
+    // title setter
     chart.title().text('Linear scale sample');
 
-    //setting yScale type as liner. Even knowing it's liner by default
+    // setting yScale type as liner. Even knowing it's liner by default
     chart.yScale(anychart.scales.linear());
 
-    //y axis title setter
+    // y axis title setter
     chart.yAxis().title().text('This Axis has \'linear\' type');
 
-    //setting data
+    // setting data
     chart.column([
         ['A', 637166],
         ['B', 721630],

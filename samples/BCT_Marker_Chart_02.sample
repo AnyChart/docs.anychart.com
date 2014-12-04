@@ -4,27 +4,27 @@
 
 anychart.onDocumentReady(function() {
 
-    //chart type
+    // chart type
     chart = anychart.cartesianChart();
 
-    //chart title
+    // chart title
     chart.title().text('Multi-Series Marker Chart');
 
-    //draw axes and set titles
+    // draw axes and set titles
     chart.xAxis().title('Year');
     chart.yAxis().title('Box office');
 
-    //draw grid
+    // draw grid
     chart.grid().layout('horizontal');
 
-    //draw minor grid and adjust
+    // draw minor grid and adjust
     chart.minorGrid()
         .evenFill('none')
         .oddFill('none')
         .stroke('black 0.075')
         .layout('vertical');
 
-    //set data for each series
+    // set data for each series
     chart.marker([
         [2000, 1100],
         [2001, 880],
@@ -80,6 +80,6 @@ anychart.onDocumentReady(function() {
         [2006, 1050]
     ]);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

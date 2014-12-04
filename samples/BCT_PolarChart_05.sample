@@ -4,16 +4,16 @@
 
 anychart.onDocumentReady(function() {
 
-  //chart type
+  // chart type
   chart = anychart.polar();
 
-  //chart title
+  // chart title
   chart.title().text('Tuning Axes Visualization');
 
-  //disable minor ticks
+  // disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);
 
-  //set start angle for the chart
+  // set start angle for the chart
   chart.startAngle(270);
 
   chart.xAxis().stroke({
@@ -28,7 +28,7 @@ anychart.onDocumentReady(function() {
     color: '#9900FF'                                        // set stroke color
   });
 
-  //set data and type of series
+  // set data and type of series
   chart.line([
     {x: 2.9, value: 191},
     {x: 3.1, value: 42},
@@ -42,6 +42,6 @@ anychart.onDocumentReady(function() {
     {x: 9.2, value: 51}
   ]).tooltip().enabled(false);
 
-  //draw chart
+  // draw chart
   chart.container('container').draw();
 });

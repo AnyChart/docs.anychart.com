@@ -4,27 +4,27 @@
 
 anychart.onDocumentReady(function() {
 
-    //chart type
+    // chart type
     chart = anychart.cartesianChart();
 
-    //set title
+    // set title
     chart.title().text('Visualization');
 
-    //draw axes and set titles
+    // draw axes and set titles
     chart.xAxis().title('Year');
     chart.yAxis().title('Box office');
 
-    //draw grid
+    // draw grid
     chart.grid().layout('horizontal');
 
-    //draw minor grid and adjust
+    // draw minor grid and adjust
     chart.minorGrid()
         .evenFill('none')
         .oddFill('none')
         .stroke('black 0.075')
         .layout('vertical');
 
-    //define chart type, set data and adjust visualisation
+    // define chart type, set data and adjust visualisation
     chart.marker([
         ['2000', 1100],
         ['2001', 880],

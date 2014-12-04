@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-  //data for chart
+  // data for chart
   var dataSet = anychart.data.set([
     ['Product A', 90],
     ['Product B', 65],
@@ -14,25 +14,25 @@ anychart.onDocumentReady(function() {
     ['Product F', 100]
   ]);
 
-  //chart type
+  // chart type
   chart = anychart.radar();
 
-  //chart title
+  // chart title
   chart.title().text('Custom Radius size');
 
-  //set chart radius
+  // set chart radius
   chart.yScale()
-    .minimum(50)        //minimum radius value
-    .maximum(120)       //maximum radius value
+    .minimum(50)        // minimum radius value
+    .maximum(120)       // maximum radius value
     .ticks()
-      .interval(10);  //set ticks interval
+      .interval(10);  // set ticks interval
 
-  //disable minor ticks
+  // disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);
 
-  //set data and adjust visualisation
+  // set data and adjust visualisation
   chart.area(dataSet).fill('red 0.4').stroke('darkred');
 
-  //draw chart
+  // draw chart
   chart.container('container').draw();
 });

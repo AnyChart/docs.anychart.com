@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-  //data for chart
+  // data for chart
   var dataSet = anychart.data.set([
     ["Product A", 222],
     ["Product B", 2431],
@@ -17,19 +17,19 @@ anychart.onDocumentReady(function() {
     ["Product I", 2187]
   ]);
 
-  //chart type
+  // chart type
   chart = anychart.radar();
 
-  //chart title
+  // chart title
   chart.title().text('Radar Chart with Logarithmic Scale');
 
   var logScale = anychart.scales.log();     // create logarithmic scale
   logScale.minimum(10).maximum(100000);     // set minimum and maximum value for the scale
   chart.yScale(logScale);                   // set logarithmic scale as y scale for the chart
 
-  //set data and adjust visualisation
+  // set data and adjust visualisation
   chart.area(dataSet).fill('lightblue 0.7').stroke('blue');
 
-  //draw chart
+  // draw chart
   chart.container('container').draw();
 });

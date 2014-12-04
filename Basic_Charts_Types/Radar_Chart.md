@@ -3,7 +3,6 @@
 * [Overview](#overview)
 * [Chart](#chart)
 * [Configuration](#configuration)
- * [Radius size](#radius_size)
  * [Start angle](#start_angle)
  * [Plot background](#plot_background)
 * [Axes](#axes)
@@ -51,36 +50,7 @@ Here is a basic Radar sample:
 
 ## Configuration
 
-Radar plot has several distinctive configuration options, which are presented in this section: chart radius settings, chart rotation and background settings.
-
-### Radius size
-
-By default AnyChart calculates radius of radar chart automatically, but this parameter may be set manually. Radar chart radius is controlled by maximum and minimum values of Y scale and may be set through **.yScale().minimum()** and **yScale().maximum()** methods.
-
-```
-  //set chart type
-  var chart = anychart.radarChart();
-
-  //set radar radius
-  chart.yScale()
-    .maximum(120) //set maximum radius of radar chart
-    .minimum(50); //set minimum radius of radar chart
-```
-
-Advanced radius settings includes additional settings for ticks interval on the radius. As far as radius is controled
- by y scale, full information on radius controlling may be found in [Scales tutorial](../Axes_Grid_Scales_Trends_etc/Scales#minimum_and_maximum)
-
-```
-  //set chart type
-  var chart = anychart.radarChart();
-
-  //set radar ticks interval equal to 10
-  chart.yScale().ticks().interval(10);
-```
-
-Here is a sample of the radar chart radius size set manually:
-
-{sample}BCT\_RadarChart\_02{sample}
+Radar plot has several distinctive configuration options, which are presented in this section: chart rotation and background settings.
 
 ### Start angle
 

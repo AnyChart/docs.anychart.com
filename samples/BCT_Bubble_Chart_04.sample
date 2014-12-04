@@ -4,13 +4,13 @@
 
 anychart.onDocumentReady(function() {
 
-    //chart type
+    // chart type
     chart = anychart.lineChart();
 
-    //set title
+    // set title
     chart.title().text('Maximum and Minimum Size');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Products');
     chart.yAxis().title().text('Sales');
 

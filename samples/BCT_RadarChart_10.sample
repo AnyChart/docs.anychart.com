@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-  //data for chart
+  // data for chart
   var dataSet = anychart.data.set([
     ["Australia", 16, 25, 17],
     ["Cuba", 11, 11, 7],
@@ -18,30 +18,30 @@ anychart.onDocumentReady(function() {
     ["Romania", 11, 6, 9]
   ]);
 
-  //map data
+  // map data
   var gold = dataSet.mapAs({x: [0], value: [1]});
   var silver = dataSet.mapAs({x: [0], value: [2]});
   var bronze = dataSet.mapAs({x: [0], value: [3]});
 
-  //chart type
+  // chart type
   chart = anychart.radar();
 
-  //chart title
+  // chart title
   chart.title().text('Olympic medals Sydney 2000 (most recent) by country');
 
-  //set background
+  // set background
   chart.background().enabled(true).fill('#EEEEEE');
 
-  //disable minor ticks
+  // disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);
 
 
   chart.xAxis().labels()
-    .fontWeight(900)              //set labels font
-    .textFormatter(function(){    //set labels content
+    .fontWeight(900)              // set labels font
+    .textFormatter(function(){    // set labels content
       var longValue = this.value;
 
-      //check label width
+      // check label width
       if (longValue.length > 3){
         myValue = longValue.substr(0, 3) + '...';
       }
@@ -49,14 +49,14 @@ anychart.onDocumentReady(function() {
         myValue = longValue;
       }
 
-      //return adjuster value
+      // return adjuster value
       return myValue;
   });
 
-  //set series data
+  // set series data
   var goldSeries = chart.line(gold);
 
-  //series visual settings
+  // series visual settings
   goldSeries
     .stroke('3 gold')
     .tooltip()
@@ -98,9 +98,9 @@ anychart.onDocumentReady(function() {
         .content()
         .fontColor('black');
 
-  //grid settings
+  // grid settings
   chart.grid(0).evenFill('white').oddFill('white');
 
-  //draw chart
+  // draw chart
   chart.container('container').draw();
 });

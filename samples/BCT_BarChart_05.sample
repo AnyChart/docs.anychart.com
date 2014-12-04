@@ -3,7 +3,7 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         ['Department Stores', 637166],
         ['Discount Stores', 721630],
@@ -11,22 +11,22 @@ anychart.onDocumentReady(function() {
         ['All other outlets', 90000]
     ]);
 
-    //chart type
+    // chart type
     chart = anychart.barChart();
 
-    //chart title
+    // chart title
     chart.title().text('Minimum and Maximum Scale Value');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Retail Channel');
     chart.yAxis().title().text('Sales');
 
-    //set data
+    // set data
     chart.bar(data);
 
-    //adjust minimum and maximum y scale value
+    // adjust minimum and maximum y scale value
     chart.yScale().minimum('-200000').maximum('800000');
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

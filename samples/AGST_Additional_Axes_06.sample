@@ -8,27 +8,27 @@ anychart.onDocumentReady(function() {
 
     chart.title().text('Extra Axes Units Comparison Sample');
 
-    //setting xScale settings
+    // setting xScale settings
     chart.xScale(anychart.scales.linear());
     chart.xScale().minimum(1940).maximum(2010);
     chart.xScale().ticks().interval(5);
 
-    //setting yScale settings
+    // setting yScale settings
     chart.yScale().minimum(0).maximum(12000000000000).ticks().interval(2000000000000);
 
-    //adding and adjusting extra Y scale
+    // adding and adjusting extra Y scale
     var extraYScale = anychart.scales.linear();
     extraYScale.minimum(0).maximum(140).ticks().interval(20);
 
-    //adding and adjusting extra Y axis
+    // adding and adjusting extra Y axis
     var extraYAxis = chart.yAxis(1);
     extraYAxis.orientation('right').scale(extraYScale);
 
-    //setting yAxes titles
+    // setting yAxes titles
     chart.yAxis().title().text('Debt');
     chart.yAxis(1).title().text('GDP');
 
-    //yAxes labels text adjusting
+    // yAxes labels text adjusting
     chart.yAxis().labels().textFormatter(function(){
         var value = (this.value/1000000000000);
         if (value > 0)
@@ -39,20 +39,20 @@ anychart.onDocumentReady(function() {
         return this.value + '%';
     });
 
-    //disable x axis title
+    // disable x axis title
     chart.xAxis().title().enabled(false);
 
-    //enabling x axis stagger mode
+    // enabling x axis stagger mode
     chart.xAxis().staggerMode(true).labels().width(52).hAlign('center');
 
-    //set Grid settings
+    // set Grid settings
     chart.grid(0).stroke('gray 0.8').layout('horizontal');
     chart.grid(1).stroke('gray 0.8').layout('vertical');
 
-    //disable minorGrid
+    // disable minorGrid
     chart.minorGrid(null);
 
-    //setting first series of data
+    // setting first series of data
     var firstSeries = anychart.data.set([
         [1940, 52.4],
         [1941, 50.5],
@@ -127,7 +127,7 @@ anychart.onDocumentReady(function() {
         [2010, 70]
     ]);
 
-    //setting second series of data
+    // setting second series of data
     var secondSeries = anychart.data.set([
         [1940, 45500000000],
         [1941, 56500000000],
@@ -202,7 +202,7 @@ anychart.onDocumentReady(function() {
         { x: 2010, value: 11137297000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1', stroke: 'black', hoverStroke: 'black'}
     ]);
 
-    //adjusting data visualisation
+    // adjusting data visualisation
 
     var lineSeries = chart.line(firstSeries);
     lineSeries.yScale(extraYScale);

@@ -14,13 +14,13 @@ anychart.onDocumentReady(function() {
     {name: 'Node 2'}
   ]);
 
-  //create Data Grid
+  // create Data Grid
   dataGrid = anychart.ui.dataGrid();
 
-  //set Data Tree
+  // set Data Tree
   dataGrid.data(tree).titleHeight(20);
 
-  //create button for Parent node
+  // create button for Parent node
   dataGrid.listen('signal', dataGrid.draw, false, dataGrid);
 
   // set style for second column

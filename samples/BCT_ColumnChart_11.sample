@@ -3,7 +3,7 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         ['P1', 132],
         ['P2', 124],
@@ -17,14 +17,14 @@ anychart.onDocumentReady(function() {
         ['P10', 59]
     ]);
 
-    //chart type
+    // chart type
     chart = anychart.columnChart();
 
     chart.title().text('Set Minimum and Maximum Value Color');
 
-    //set data and color
+    // set data and color
     chart.column(data).fill('#C6D1A5');
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

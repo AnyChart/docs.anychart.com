@@ -16,16 +16,16 @@ anychart.onDocumentReady(function() {
 
     chart.yScale().minimum(8000).maximum(20000).ticks().interval(2000);
 
-    //set function to format y axis labels
+    // set function to format y axis labels
     chart.yAxis().labels().textFormatter(dollarFormatter);
-    //set y axis title
+    // set y axis title
     chart.yAxis().title().text('Revenue in US Dollars');
 
-    //adjust additional axis
+    // adjust additional axis
     chart.yAxis(1).orientation('right');
     chart.yAxis(1).title().text('Revenue in Euros');
 
-    //formats labels of additional axis
+    // formats labels of additional axis
     chart.yAxis(1).labels().textFormatter(function(){
         var value = this.value;
         // scale of USD
@@ -44,7 +44,7 @@ anychart.onDocumentReady(function() {
 
     chart.xAxis().title().text('Month');
 
-    //limits length of x axis labels to 3 or less
+    // limits length of x axis labels to 3 or less
     chart.xAxis().labels().textFormatter(function(){
         var value = this.value;
         value = value.substr(0, 3);

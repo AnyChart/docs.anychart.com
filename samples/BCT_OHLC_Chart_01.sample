@@ -5,7 +5,7 @@
 
 anychart.onDocumentReady(function() {
 
-  //data
+  // data
   var data = [
     {x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
     {x: Date.UTC(2007, 7, 29), open:507.84, high:513.30, low:507.23, close:512.88},
@@ -14,27 +14,27 @@ anychart.onDocumentReady(function() {
     {x: Date.UTC(2007, 8, 4), open:515.02, high:528.00, low:514.62, close:525.15}
   ];
 
-  //chart type
+  // chart type
   chart = anychart.financialChart();
 
-  //set axes title
+  // set axes title
   chart.xAxis().title().text('Day');
   chart.yAxis().title().text('Price');
 
-  //chart title
+  // chart title
   chart.title().text('Open High Low Close (OHLC) Chart');
 
-  //adjust x scale type
+  // adjust x scale type
   chart.xScale()
     .minimum(Date.UTC(2007, 7, 27))
     .maximum(Date.UTC(2007, 8, 5))
     .ticks()
       .interval(0,0,1);
 
-  //set data and define chart type
+  // set data and define chart type
   chart.ohlc(data);
 
-  //set x axis lables width for the better outlook
+  // set x axis lables width for the better outlook
   chart.xAxis().staggerLines(1).labels().textFormatter(function(value){
     var date = new Date(value['tickValue']);
     var options = {
@@ -44,6 +44,6 @@ anychart.onDocumentReady(function() {
     return date.toLocaleDateString('en-US', options);
   });
 
-  //draw
+  // draw
   chart.container('container').draw();
 });

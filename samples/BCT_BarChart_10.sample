@@ -3,7 +3,7 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         ['P1', 132],
         ['P2', 124],
@@ -17,13 +17,13 @@ anychart.onDocumentReady(function() {
         ['P10', 59]
     ]);
 
-    //chart type
+    // chart type
     chart = anychart.barChart();
 
-    //set title
+    // set title
     chart.title().text('Color for a Particular Point');
 
-    //set data and adjust color
+    // set data and adjust color
     chart.bar(data).fill('#C6D1A5');
 
     chart.container('container').draw();

@@ -3,7 +3,7 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data and fill color settings
+    // data and fill color settings
     var data = anychart.data.set([
         {x: 'English', value: 2022776, color: 'RoyalBlue'},
         {x: 'Français', value: 561753, fill: 'red'},
@@ -14,24 +14,24 @@ anychart.onDocumentReady(function() {
         {x: 'Norsk (bokmål)', value: 133410, fill: 'yellow'},
     ]);
 
-    //chart type
+    // chart type
     chart = anychart.columnChart();
 
-    //title
+    // title
     chart.title().text('International Simbols Support');
 
-    //set data
+    // set data
     series = chart.column(data);
 
-    //adjust tooltip content
+    // adjust tooltip content
     series.tooltip().contentFormatter(function(){
         return 'Language: ' + this.x + '\nArticles: ' + this.value;
     });
 
-    //adjust tooltip font
+    // adjust tooltip font
     series.tooltip().content().fontWeight(400).fontFamily('Tahoma').fontSize(12);
 
-    //adjust labels
+    // adjust labels
     series.labels()
         .enabled(true)
         .position('topcenter')
@@ -41,6 +41,6 @@ anychart.onDocumentReady(function() {
         .rotation(-90)
         .textFormatter(function(){return this.x});
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

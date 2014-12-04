@@ -52,7 +52,7 @@ anychart.onDocumentReady(function() {
     .ticks()
       .interval(10000);
 
-  //adjust x axis labels representation
+  // adjust x axis labels representation
   chart.xAxis().labels().textFormatter(function(){
     return '$' + this.value / 1000 + ',000'
   });
@@ -66,10 +66,10 @@ anychart.onDocumentReady(function() {
     {name: 'Agriculture', x: 26000, y: -100, size: 4}
   ]);
 
-  //map data for future usage
+  // map data for future usage
   var view = data.mapAs();
 
-  //data for line series
+  // data for line series
   var bubble = chart.bubble(data);
 
   // set labels and adjust visualization

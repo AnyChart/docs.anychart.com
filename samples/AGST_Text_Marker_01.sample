@@ -3,7 +3,7 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         [2000, 10000],
         [2001, 12000],
@@ -12,10 +12,10 @@ anychart.onDocumentReady(function() {
         [2004, 9000]
     ]);
 
-    //chart type
+    // chart type
     chart = anychart.areaChart();
 
-    //set data
+    // set data
     chart.area(data)
         .hoverFill('#444444')
         .tooltip()
@@ -23,17 +23,17 @@ anychart.onDocumentReady(function() {
                 return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
             });
 
-    //disable title
+    // disable title
     chart.title().enabled(false);
 
-    //set y scale ticks interval
+    // set y scale ticks interval
     chart.yScale().ticks().interval(2000);
 
-    //custom scale
+    // custom scale
     var additionalScale = anychart.scales.linear();
-    //set ticks interval
+    // set ticks interval
     additionalScale.minimum(0).maximum(10).ticks().interval(1);
-    //apply custom scale
+    // apply custom scale
     chart.yAxis(1)
         .orientation('right')
         .scale(additionalScale)
@@ -41,18 +41,18 @@ anychart.onDocumentReady(function() {
         .title('Sales Pts')
         .labels().enabled(false);
 
-    //disable x axis title
+    // disable x axis title
     chart.xAxis().title().enabled(false);
 
-    //adjust y axis labels
+    // adjust y axis labels
     chart.yAxis().labels().textFormatter(function(){
         return '$' + this.value/1000 + ',000';
     });
 
-    //y axis title
+    // y axis title
     chart.yAxis().title().text('Sales');
 
-    //set marker
+    // set marker
     chart.textMarker()
         .scale(chart.yScale())
         .value(18000)
@@ -63,7 +63,7 @@ anychart.onDocumentReady(function() {
         .fontFamily('Courier')
         .text('Historical Maximum');
 
-    //set red marker
+    // set red marker
     chart.textMarker(1)
         .scale(chart.yScale())
         .value(18000)
@@ -74,7 +74,7 @@ anychart.onDocumentReady(function() {
         .offsetX(50)
         .fontColor('red');
 
-    //set green marker
+    // set green marker
     chart.textMarker(2)
         .scale(chart.yScale())
         .value(10000)
@@ -85,7 +85,7 @@ anychart.onDocumentReady(function() {
         .offsetX(50)
         .fontColor('green');
 
-    //set text marker on the right
+    // set text marker on the right
     chart.textMarker(3)
         .scale(additionalScale)
         .value(8)
@@ -95,6 +95,6 @@ anychart.onDocumentReady(function() {
         .fontSize(13)
         .offsetX(10);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

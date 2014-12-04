@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    //set data and chart type
+    // set data and chart type
     chart = anychart.pieChart([
         {x: 'P1', value: 232, hatchFill: 'diagonalcross', fill: '#EEEEEE'},
         {x: 'P2', value: 224, hatchFill: 'zigzag', fill: '#EEEEEE'},
@@ -18,12 +18,12 @@ anychart.onDocumentReady(function() {
         {x: 'P10', value: 317, hatchFill: 'weave', fill: '#EEEEEE'}
     ]);
 
-    //chart title
+    // chart title
     chart.title().text('Hatches');
 
-    //disable labels
+    // disable labels
     chart.labels().enabled(false);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

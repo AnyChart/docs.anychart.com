@@ -5,10 +5,10 @@
 anychart.onDocumentReady(function() {
 
 
-    //set stage
+    // set stage
     stage = anychart.graphics.create('container');
 
-    //data
+    // data
     var dataSet = anychart.data.set([
     ['2014/10', 100, 100, 100, 100, 100, 100, 100],
     ['2014/09', 97, 97, 97, 97, 97, 97, 97],
@@ -24,7 +24,7 @@ anychart.onDocumentReady(function() {
     ['2013/11', 100, 100, 100, 100, 100, 100, 100]
     ]);
 
-    //map data for the each series
+    // map data for the each series
     var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
     var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
     var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
@@ -33,7 +33,7 @@ anychart.onDocumentReady(function() {
     var seriesData_6 = dataSet.mapAs({x: [0], value: [6]});
     var seriesData_7 = dataSet.mapAs({x: [0], value: [7]});
 
-    //chat type
+    // chat type
     chart1 = anychart.lineChart();
     chart2 = anychart.lineChart();
     chart3 = anychart.lineChart();
@@ -50,7 +50,7 @@ anychart.onDocumentReady(function() {
     series6 = chart6.line(seriesData_6).markers(null).stroke('black');
     series7 = chart7.line(seriesData_7).markers(null).stroke('black');
 
-    //title
+    // title
     chart1.title().text('Network').enabled(false);
     chart2.title().text('ERP').enabled(false);
     chart3.title().text('Data Warehouse').enabled(false);
@@ -107,10 +107,10 @@ anychart.onDocumentReady(function() {
     chart7.yAxis().enabled(false);
 
 
-    //create table
+    // create table
     var table = anychart.ui.table();
 
-    //set table content
+    // set table content
     table.contents([
         [chart1, chart1.title().text()],
         [chart2, chart2.title().text()],
@@ -139,13 +139,13 @@ anychart.onDocumentReady(function() {
     customTitle.container(stage);
     customTitle.draw();
 
-    //get title borders and place table at the left space
+    // get title borders and place table at the left space
     table.bounds(customTitle.getRemainingBounds());
 
-    //adjust tables border visualisation
+    // adjust tables border visualisation
     table.cellBorder('gray 0.3', 2)
 
-    //set table container and initiate draw
+    // set table container and initiate draw
     table.container(stage).draw();
 
 });

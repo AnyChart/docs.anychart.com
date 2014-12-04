@@ -4,32 +4,32 @@
 
 anychart.onDocumentReady(function() {
 
-  //chart type
+  // chart type
   chart = anychart.scatterChart();
 
-  //chart title
+  // chart title
   chart.title().text('Sample Scatter Line and Spline Chart');
 
-  //Horizontal grid settings
+  // Horizontal grid settings
   chart.grid(0)
     .oddFill('#F9F9F9')
     .evenFill('#FFFFFF')
     .layout(anychart.enums.Layout.HORIZONTAL);
 
-  //Horizontal minor grid settings
+  // Horizontal minor grid settings
   chart.minorGrid(0)
     .evenFill('none')
     .oddFill('none')
     .stroke('black 0.1')
     .layout(anychart.enums.Layout.HORIZONTAL);
 
-  //Vertical grid settings
+  // Vertical grid settings
   chart.grid(1)
     .evenFill('none')
     .oddFill('none')
     .layout(anychart.enums.Layout.VERTICAL);
 
-  //Vertical minor grid settings
+  // Vertical minor grid settings
   chart.minorGrid(1)
     .evenFill('none')
     .oddFill('none')
@@ -39,7 +39,7 @@ anychart.onDocumentReady(function() {
   // adjust inversion of both scales
   chart.yScale().minimum(-20).maximum(30);
 
-  //data for top line series
+  // data for top line series
   chart.line([
     [-2, 4],
     [-1, 1],
@@ -48,7 +48,7 @@ anychart.onDocumentReady(function() {
     [2, 4]
   ]);
 
-  //data for bottom line series
+  // data for bottom line series
   chart.line([
     [-2, -4],
     [-1, -1],

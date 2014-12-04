@@ -4,19 +4,19 @@
 
 anychart.onDocumentReady(function() {
 
-    //set data and chart type
+    // set data and chart type
     chart = anychart.pieChart([
         {name: 'Department Stores', value: 637166, fill: 'Rgb(77,180,77)'},
         {name: 'Discount Stores', value: 721630, fill:'Rgb(180,77,77)'},
         {name: 'Men\'s/Women\'s Stores', value: 148662, fill:'#C6D1A5'}
     ]);
 
-    //chart title
+    // chart title
     chart.title().text('Colors');
 
-    //disable legend
+    // disable legend
     chart.labels().enabled(false);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

@@ -4,19 +4,19 @@
 
 anychart.onDocumentReady(function() {
 
-  //chart type
+  // chart type
   chart = anychart.polar();
 
-  //chart title
+  // chart title
   chart.title().text('Polar Series Types');
 
-  //background fill
+  // background fill
   chart.background().enabled(true).fill('#EEEEEE');
 
-  //scale settings
+  // scale settings
   chart.xScale().maximum(100);
 
-  //set data and adjust visual settings
+  // set data and adjust visual settings
   chart.area([
     {x: 0, value: 0},
     {x: 50, value: 100},
@@ -37,9 +37,9 @@ anychart.onDocumentReady(function() {
     {x: 80, value: 45}
   ]).fill('lightgreen').stroke('green');
 
-  //grid settings
+  // grid settings
   chart.grid(0).evenFill('white').oddFill('white');
 
-  //draw chart
+  // draw chart
   chart.container('container').draw();
 });

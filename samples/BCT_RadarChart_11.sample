@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-  //data for chart
+  // data for chart
   var dataSet = anychart.data.set([
     ["P1", 162],
     ["P2", 134],
@@ -28,39 +28,39 @@ anychart.onDocumentReady(function() {
     ["P20", 184]
   ]);
 
-  //chart type
+  // chart type
   chart = anychart.radar();
 
-  //chart title
+  // chart title
   chart.title().text('Radar chart - x axis labels background');
 
-  //background fill
+  // background fill
   chart.background().enabled(true).fill('#EEEEEE');
 
   chart.xAxis()
     .labels()
-      .padding(5)                 //set paddings for labels
-      .fontWeight(900)            //set font weight for labels
-      .background()               //axes background settings
-        .enabled(true)            //enable background
-        .fill('lightblue')        //background fill
-        .stroke('blue')           //stroke color
-        .cornerType('round')      //corner type
-        .corners(5);              //corner size
+      .padding(5)                 // set paddings for labels
+      .fontWeight(900)            // set font weight for labels
+      .background()               // axes background settings
+        .enabled(true)            // enable background
+        .fill('lightblue')        // background fill
+        .stroke('blue')           // stroke color
+        .cornerType('round')      // corner type
+        .corners(5);              // corner size
 
 
-  //set data and adjust visualisation
+  // set data and adjust visualisation
   var series = chart.area(dataSet);
   series
-    .stroke('2 #11aaff')            //area border color
-    .fill('lightblue 0.5')          //area fill color
-    .markers()                      //marker settings
-      .enabled(true)                //enables markers
-      .fill('#11aaff');             //markers color
+    .stroke('2 #11aaff')            // area border color
+    .fill('lightblue 0.5')          // area fill color
+    .markers()                      // marker settings
+      .enabled(true)                // enables markers
+      .fill('#11aaff');             // markers color
 
-  //grid settings
+  // grid settings
   chart.grid(0).evenFill('white').oddFill('white');
 
-  //draw chart
+  // draw chart
   chart.container('container').draw();
 });

@@ -13,22 +13,22 @@ anychart.onDocumentReady(function() {
 
   stage = anychart.graphics.create('container');
 
-  //create Data Grid
+  // create Data Grid
   treeDataGrid = anychart.ui.dataGrid();
 
-  //set Data Tree
+  // set Data Tree
   treeDataGrid.data(tree).titleHeight(20);
 
-  //create button for Parent node
+  // create button for Parent node
   treeDataGrid.listen('signal', treeDataGrid.draw, false, treeDataGrid);
 
   // set style for second column
   treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
 
-  //create new button
+  // create new button
   var triggerButton = document.createElement('div');
 
-  //set button style
+  // set button style
   triggerButton.style.top = '5px';
   triggerButton.style.right = '5px';
   triggerButton.style.width = 'auto';
@@ -48,7 +48,7 @@ anychart.onDocumentReady(function() {
     removePoint();
   };
 
-  //append button to container
+  // append button to container
   container.appendChild(triggerButton);
 
   // draw chart
@@ -60,14 +60,14 @@ anychart.onDocumentReady(function() {
     .container(stage)
     .draw();
 
-  //custom variable with the number of children
+  // custom variable with the number of children
   var childNum = tree.numChildren();
 
   function removePoint(){
-    //check if there any children
+    // check if there any children
     if (childNum>0)
-      tree.removeChildAt(0);  //remove child
-    childNum--;               //reduce number of children in custom variable
+      tree.removeChildAt(0);  // remove child
+    childNum--;               // reduce number of children in custom variable
   }
 });
 

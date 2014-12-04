@@ -3,7 +3,7 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-  //data
+  // data
   var dataSet = anychart.data.set([
     {x: 'P1', value: 100},
     {x: 'P2', value: 200},
@@ -27,12 +27,12 @@ anychart.onDocumentReady(function() {
     {x: 'P20', value: 200},
   ]);
 
-  //set chart type
+  // set chart type
   chart = anychart.lineChart();
 
   chart.title().text('Click on Chart to Add a Point ');
 
-  //set data
+  // set data
   var area = chart.spline(dataSet).markers(null);
 
   chart.padding().right(80);
@@ -40,13 +40,13 @@ anychart.onDocumentReady(function() {
   // disable stagger mode. Only one line for x axis labels
   chart.xAxis().staggerMode(false);
 
-  //set container and draw chart
+  // set container and draw chart
   chart.container('container').draw();
 
-  //create new button
+  // create new button
   var streamButton = document.createElement('div');
 
-  //set button style
+  // set button style
   streamButton.style.top = 0;
   streamButton.style.right = 0;
   streamButton.style.width = 'auto';
@@ -65,42 +65,42 @@ anychart.onDocumentReady(function() {
     startStream();
   };
 
-  //append button to container
+  // append button to container
   container.appendChild(streamButton);
 
-  //first index for new point
+  // first index for new point
   var indexSetter = 21;
 
   function startStream() {
 
-    //adjust button content
+    // adjust button content
     streamButton.innerHTML = 'Stop' + '\n' + 'stream';
 
-    //set interval of data stream
+    // set interval of data stream
     var myVar = setInterval(
 
-      //data streaming itself
+      // data streaming itself
       function(e) {
 
-        //append data
+        // append data
         dataSet.append({
 
-          //x value
+          // x value
           x: 'P' + indexSetter,
 
-          //random value from 1 to 500
+          // random value from 1 to 500
           value : Math.floor((Math.random() * 500)+ 1)
         });
 
-        //removes first point
+        // removes first point
         dataSet.remove(0);
         indexSetter++;
-      }, 200            //interval
+      }, 200            // interval
     );
 
     streamButton.onclick = function(){
 
-      //clears interval which stops streaming
+      // clears interval which stops streaming
       clearInterval(myVar);
       streamButton.onclick = function() {
         startStream();

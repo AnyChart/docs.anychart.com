@@ -4,27 +4,27 @@
 
 anychart.onDocumentReady(function() {
 
-    //chart type
+    // chart type
     chart = anychart.cartesianChart();
 
-    //set title
+    // set title
     chart.title().text('Labels and Tooltips');
 
-    //draw axes and set titles
+    // draw axes and set titles
     chart.xAxis().title('Year');
     chart.yAxis().title('Box office');
 
-    //draw grid
+    // draw grid
     chart.grid().layout('horizontal');
 
-    //draw minor grid and adjust
+    // draw minor grid and adjust
     chart.minorGrid()
         .evenFill('none')
         .oddFill('none')
         .stroke('black 0.075')
         .layout('vertical');
 
-    //data
+    // data
     data = anychart.data.set([
         ['2000', 1100],
         ['2001', 880],
@@ -35,21 +35,21 @@ anychart.onDocumentReady(function() {
         ['2006', 1400]
     ]);
 
-    //set data
+    // set data
     markerchart = chart.marker(data);
 
-    //enable and adjust labels
+    // enable and adjust labels
     markerchart.labels()
         .enabled(true)
         .rotation(-90)
         .offsetY(-25)
         .offsetX(-5);
 
-    //adjust tooltips
+    // adjust tooltips
     markerchart.tooltip().contentFormatter(function(){
         return 'Month: ' + this.x + '\nSales: ' + this.value ;
     });
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

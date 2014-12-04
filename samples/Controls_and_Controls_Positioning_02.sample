@@ -14,13 +14,13 @@ anychart.onDocumentReady(function() {
         {x: '2002', value: 5},
         {x: '2003', value: 3},
         {x: '2004', value: 4.5},
-        //{x: '2005', value: 4},
+        // {x: '2005', value: 4},
     ];
 
-    //chart type
+    // chart type
     chart = anychart.lineChart();
 
-    //title
+    // title
     chart.title().enabled(false)
 
     customTitle = anychart.ui.title();
@@ -96,7 +96,7 @@ anychart.onDocumentReady(function() {
         return this.value.toFixed(2);
     });
 
-     //adjust y scale direction
+     // adjust y scale direction
     chart.yScale().inverted(false).ticks().interval(10);
 
     chart.listen(
@@ -203,25 +203,25 @@ anychart.onDocumentReady(function() {
             customTitle8.draw();
         });
 
-    //set margin
+    // set margin
     chart.margin('5px');
 
-    //set padding
+    // set padding
     chart.padding('30px');
 
-    //set chart background
+    // set chart background
     chart.background(null);
 
-    //set data
+    // set data
     chart.line(data);
 
-    //draw
+    // draw
     chart.container('container').draw();
 
-    //set TextMarker
+    // set TextMarker
     chart.textMarker(1)
-        //.scale(chart.yScale())
-        //.value(9000)
+        // .scale(chart.yScale())
+        // .value(9000)
         .text('CenterBottom')
         .align('center')
         .anchor('centerbottom')
@@ -250,7 +250,7 @@ anychart.onDocumentReady(function() {
         .fontColor('black');
 
     chart.textMarker(4)
-        //.scale(chart.yScale())
+        // .scale(chart.yScale())
         .value(9000)
         .text('LeftTop')
         .align('left')
@@ -260,8 +260,8 @@ anychart.onDocumentReady(function() {
         .fontColor('black');
 
     chart.textMarker(5)
-        //.scale(chart.yScale())
-        //.value(9000)
+        // .scale(chart.yScale())
+        // .value(9000)
         .text('LeftBottom')
         .align('left')
         .anchor('leftbottom')
@@ -280,8 +280,8 @@ anychart.onDocumentReady(function() {
         .fontColor('black');
 
      chart.textMarker(7)
-        //.scale(chart.yScale())
-        //.value(9000)
+        // .scale(chart.yScale())
+        // .value(9000)
         .text('RightBottom')
         .align('right')
         .anchor('rightbottom')
@@ -290,7 +290,7 @@ anychart.onDocumentReady(function() {
         .fontColor('black');
 
     chart.textMarker(8)
-        //.scale(chart.yScale())
+        // .scale(chart.yScale())
         .value(9000)
         .text('RightTop')
         .align('right')

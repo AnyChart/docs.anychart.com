@@ -3,26 +3,26 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var dataSet = anychart.data.set([
         ['P1', '178', '165', '154', '143', '132'],
         ['P2', '167', '153', '144', '133', '122']
     ]);
 
-    //map data for each series
+    // map data for each series
     var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
     var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
     var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
     var seriesData_4 = dataSet.mapAs({x: [0], value: [4]});
     var seriesData_5 = dataSet.mapAs({x: [0], value: [5]});
 
-    //chart type
+    // chart type
     chart = anychart.lineChart();
 
-    //title
+    // title
     chart.title().text('Visualization');
 
-    //set stroke color and markers for each series
+    // set stroke color and markers for each series
     chart.line(seriesData_1)
         .stroke('#bcbd46')
         .markers().fill('#bcbd46').stroke('#bcbd46');
@@ -39,6 +39,6 @@ anychart.onDocumentReady(function() {
         .stroke('#4a55c7')
         .markers().fill('#4a55c7').stroke('#4a55c7');
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

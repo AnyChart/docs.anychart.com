@@ -4,32 +4,32 @@
 
 anychart.onDocumentReady(function() {
 
-  //chart type
+  // chart type
   chart = anychart.scatterChart();
 
-  //chart title
+  // chart title
   chart.title().text('Logarithmic Axes Sample');
 
-  //Horizontal grid settings
+  // Horizontal grid settings
   chart.grid(0)
    .oddFill('#F9F9F9')
    .evenFill('#FFFFFF')
    .layout(anychart.enums.Layout.HORIZONTAL);
 
-  //Horizontal minor grid settings
+  // Horizontal minor grid settings
   chart.minorGrid(0)
     .evenFill('none')
     .oddFill('none')
     .stroke('black 0.1')
     .layout(anychart.enums.Layout.HORIZONTAL);
 
-  //Vertical grid settings
+  // Vertical grid settings
   chart.grid(1)
     .evenFill('none')
     .oddFill('none')
     .layout(anychart.enums.Layout.VERTICAL);
 
-  //Vertical minor grid settings
+  // Vertical minor grid settings
   chart.minorGrid(1)
     .evenFill('none')
     .oddFill('none')
@@ -44,7 +44,7 @@ anychart.onDocumentReady(function() {
   logScaleX.minimum(0.1).maximum(10000);  // set parameters for the scale
   chart.xScale(logScaleX);                // use logarithmic scale as X scale of the chart
 
-  //data for top line series
+  // data for top line series
   chart.line([
     [10, 100],
     [20, 40],
@@ -53,7 +53,7 @@ anychart.onDocumentReady(function() {
     [50, 10]
   ]);
 
-  //data for bottom line series
+  // data for bottom line series
   chart.line([
     [1000, 1000],
     [2000, 4000],

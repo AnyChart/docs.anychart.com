@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = ([
         ['White', 507, 511, 506, 510],
         ['Black', 510, 511, 506, 507],
@@ -22,23 +22,23 @@ anychart.onDocumentReady(function() {
         ['Marubozu black', 511, 511, 506, 506]
     ]);
 
-    //chart type
+    // chart type
     chart = anychart.financialChart();
 
-    //disabling titles
+    // disabling titles
     chart.title().enabled(false);
     chart.xAxis().title().enabled(false);
     chart.yAxis().title().enabled(false);
 
-    //rotate x axis labels
+    // rotate x axis labels
     chart.xAxis().labels().rotation(-90).textFormatter(function(){
         return this.value;
     });
 
-    //adjust x scale type
+    // adjust x scale type
     chart.xScale(anychart.scales.ordinal());
 
-    //set data and adjust colors
+    // set data and adjust colors
     chart.candlestick(data)
         .fallingFill('black')
         .fallingStroke('black')
@@ -46,6 +46,6 @@ anychart.onDocumentReady(function() {
         .risingStroke('black')
         .tooltip().enabled(false);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

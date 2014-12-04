@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-  //data
+  // data
   var dataSet = anychart.data.set([
     {x: 'P1', value: 10},
     {x: 'P2', value: 2},
@@ -13,21 +13,21 @@ anychart.onDocumentReady(function() {
     {x: 'P5', value: 15}
   ]);
 
-  //set chart type
+  // set chart type
   chart = anychart.areaChart();
 
   chart.title().text('Click on the Button to Append a Point ');
 
-  //set data
+  // set data
   var area = chart.splineArea(dataSet);
 
-  //first index for new point
+  // first index for new point
   var indexSetter = 6;
 
-  //create new button
+  // create new button
   var triggerButton = document.createElement('div');
 
-  //set button style
+  // set button style
   triggerButton.style.top = '5px';
   triggerButton.style.right = '5px';
   triggerButton.style.width = 'auto';
@@ -46,23 +46,23 @@ anychart.onDocumentReady(function() {
     addPoint();
   };
 
-  //append button to container
+  // append button to container
   container.appendChild(triggerButton);
 
-  //function, if listener triggers
+  // function, if listener triggers
   function addPoint(e) {
-    //append data
+    // append data
     dataSet.append({
 
-      //x value
+      // x value
       x: 'new P' + indexSetter,
 
-      //random value from 1 to 100
+      // random value from 1 to 100
       value : Math.floor((Math.random() * 100)+ 1)
     });
     indexSetter++;
   }
 
-  //set container and draw chart
+  // set container and draw chart
   chart.container('container').draw();
 });

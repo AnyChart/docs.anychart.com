@@ -3,7 +3,7 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //setting data
+    // setting data
     var data = anychart.data.set([
         ['A', 637166],
         ['B', 721630],
@@ -18,11 +18,11 @@ anychart.onDocumentReady(function() {
 
     chart.container('container').draw();
 
-    //minimum and maximum yScale value getters
+    // minimum and maximum yScale value getters
     var max = chart.yScale().maximum();
     var min = chart.yScale().minimum();
 
-    //adjusting Axes
+    // adjusting Axes
     chart.xAxis().title().text('Sample X axis name').fontWeight('400');
 
     chart.yAxis().title().align('bottom');

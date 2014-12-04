@@ -54,7 +54,7 @@ anychart.onDocumentReady(function() {
     .ticks()
       .interval(10000);
 
-  //adjust x axis labels representation
+  // adjust x axis labels representation
   chart.xAxis().labels().textFormatter(function(){
     return '$' + this.value / 1000 + ',000'
   });
@@ -80,7 +80,7 @@ anychart.onDocumentReady(function() {
     {name:"Business & Financials", x:"44000", y:"-20", size:"5"}
   ]).fill('LightGreen').minimumSize(10).maximumSize(30).stroke(anychart.color.darken('LightGreen', 0.2));
 
-  //data for clusters with average specialization
+  // data for clusters with average specialization
   chart.bubble([
     {name:"Education", x:"36000", y:"55", size:"4.5"},
     {name:"Metals Fab.", x:"42000", y:"-160", size:"4.5"},

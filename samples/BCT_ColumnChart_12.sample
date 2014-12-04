@@ -3,26 +3,26 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         ['P1', 14, 24, 34, 42, 50],
         ['P2', 19, 26, 39, 45, 61],
         ['P3', 27, 38, 35, 41, 58]
     ]);
 
-    //data remap
+    // data remap
     var data_1 = data.mapAs({x: [0], value: [1]});
     var data_2 = data.mapAs({x: [0], value: [2]});
     var data_3 = data.mapAs({x: [0], value: [3]});
     var data_4 = data.mapAs({x: [0], value: [4]});
     var data_5 = data.mapAs({x: [0], value: [5]});
 
-    //chart type
+    // chart type
     chart = anychart.columnChart();
 
     chart.title().text('Hatches');
 
-    //set series data and hatch
+    // set series data and hatch
     series = chart.column(data_1)
         .fill('#EEEEEE')
         .hatchFill('diagonalcross');
@@ -39,6 +39,6 @@ anychart.onDocumentReady(function() {
         .fill('#EEEEEE')
         .hatchFill('percent30');
 
-    //draw
+    // draw
     chart.container('container').draw();
   });

@@ -3,7 +3,7 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         ['A', 637166],
         ['B', 721630],
@@ -12,16 +12,16 @@ anychart.onDocumentReady(function() {
         ['E', 90000]
     ]);
 
-    //set data and chart type
+    // set data and chart type
     chart = anychart.columnChart(data);
 
-    //title settings
+    // title settings
     chart.title().text('Extra Axes Simple Sample');
 
-    //adjusting xAxis title
+    // adjusting xAxis title
     chart.xAxis().title().text('Sample X axis name').fontWeight('400');
 
-    //adjusting yAxes titles
+    // adjusting yAxes titles
     chart.yAxis(1).orientation('right')
         .title()
             .text('First additional axis');
@@ -32,9 +32,9 @@ anychart.onDocumentReady(function() {
         .title()
             .text('Third additional axis');
 
-    //adjusting major ticks' interval
+    // adjusting major ticks' interval
     chart.yScale().ticks().interval(100000);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

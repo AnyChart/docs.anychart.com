@@ -3,7 +3,7 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         ['Department Stores', 637166],
         ['Discount Stores', 721630],
@@ -11,23 +11,23 @@ anychart.onDocumentReady(function() {
         ['All other outlets', 90000]
     ]);
 
-    //chart type
+    // chart type
     chart = anychart.barChart();
 
-    //set title
+    // set title
     chart.title().text('Inverted Axis Direction');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Retail Channel');
     chart.yAxis().title().text('Sales');
 
 
-    //set data
+    // set data
     chart.bar(data);
 
-    //change y scale direction
+    // change y scale direction
     chart.yScale().inverted(true);
 
-    //draw chart
+    // draw chart
     chart.container('container').draw();
 });

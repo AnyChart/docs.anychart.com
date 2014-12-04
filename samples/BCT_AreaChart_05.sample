@@ -3,7 +3,7 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         ['January', 10000],
         ['February', 12000],
@@ -12,22 +12,22 @@ anychart.onDocumentReady(function() {
         ['May', 9000]
     ]);
 
-    //chart type
+    // chart type
     chart = anychart.areaChart();
 
-    //set title
+    // set title
     chart.title().text('Y Scale Insertion');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Month');
     chart.yAxis().title().text('Sales');
 
-    //define chart type
+    // define chart type
     chart.splineArea(data);
 
-    //adjust y scale
+    // adjust y scale
     chart.yScale().inverted(true);
 
-    //draw chart
+    // draw chart
     chart.container('container').draw();
 });

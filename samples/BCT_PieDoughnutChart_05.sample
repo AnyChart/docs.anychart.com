@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    //set chart type and set data
+    // set chart type and set data
     chart = anychart.pieChart([
         ['Department Stores', 637166],
         ['Discount Stores', 721630],
@@ -13,19 +13,19 @@ anychart.onDocumentReady(function() {
         ['All other outlets', 90000]
     ]);
 
-    //chart title
+    // chart title
     chart.title().text('Visualization');
 
-    //adjust visualization
+    // adjust visualization
     chart.fill('Gold')
         .hoverHatchFill('diagonalbrick', 'darkred')
         .stroke('4 Rgb(86,86,26)')
         .hoverStroke('4 darkred')
         .hatchFill('diagonalbrick', 'gray');
 
-    //disable legend
+    // disable legend
     chart.labels().enabled(false);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

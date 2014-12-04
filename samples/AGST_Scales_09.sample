@@ -3,17 +3,17 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //define chart type
+    // define chart type
     chart = anychart.columnChart();
 
-    //chart title
+    // chart title
     chart.title().text('Inverted Scale');
 
-    //set scale minimum
+    // set scale minimum
     chart.yScale().minimum(0);
 
 
-    //setteing data
+    // setteing data
     var data = anychart.data.set([
         ['C', 15],
         ['D', 45],
@@ -21,7 +21,7 @@ anychart.onDocumentReady(function() {
     ]);
     chart.column(data).hoverFill('#444444');
 
-    //setting yScale invertion
+    // setting yScale invertion
     chart.yScale().inverted(true);
 
     chart.container('container').draw();

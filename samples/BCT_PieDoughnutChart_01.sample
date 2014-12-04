@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    //set data and define chart type
+    // set data and define chart type
     chart = anychart.pieChart([
         ['Department Stores', 637166],
         ['Discount Stores', 721630],
@@ -13,6 +13,6 @@ anychart.onDocumentReady(function() {
         ['All other outlets', 90000]
     ]);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

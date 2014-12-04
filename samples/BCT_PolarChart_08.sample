@@ -4,46 +4,42 @@
 
 anychart.onDocumentReady(function() {
 
-  //chart type
+  // chart type
   chart = anychart.polar();
 
-  //chart title
+  // chart title
   chart.title().text('Axes labels settings');
 
-  //set background
+  // set background
   chart.background().enabled(true).fill('#EEEEEE');
 
-  chart.xScale()      //x scale settings
-    .maximum(360)     //x scale maximum value
-    .ticks()          //ticks settings
-      .interval(30);  //set ticks intervals on x scale
+  chart.xScale()      // x scale settings
+    .maximum(360)     // x scale maximum value
+    .ticks()          // ticks settings
+      .interval(30);  // set ticks intervals on x scale
 
-  //set y scale minimum value
+  // set y scale minimum value
   chart.yScale().minimum(-1);
 
-  //disable minor ticks
+  // disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);
 
-  //set y axis labels position and format content
+  // set y axis labels position and format content
   chart.yAxis().labels().offsetX(12).textFormatter(function(){
     var value = this.value.toFixed(1);
-    if (value<0)
-      value = '(' + (this.value * (-1)).toFixed(1) + ')';
+    if (value<0)                                            // check if axis value is negative
+      value = '(' + (this.value * (-1)).toFixed(1) + ')';   // set negative values into brackets and minus sign
      return value.toString();
   });
 
-
   chart.xAxis().labels()
-    .padding(5)                 //set labels padding
-    .fontWeight(900)            //set font weight for labels
-    .background()               //axes background settings
-      .enabled(true)            //enable background
-      .fill('lightblue')        //background fill
-      .stroke('blue')           //stroke color
-      .cornerType('round')      //corner type
-      .corners(5);              //corner size
+    .padding(5)                 // set labels padding
+    .fontWeight(900)            // set font weight for labels
+    .textFormatter(function(){
+      return this.value + '°';  // add '°' to every label of x axis
+    });
 
-  //set data for first series
+  // set data for first series
   var series1 = chart.line([
     {x: 0, value: 0},
     {x: 1, value: 0.017452406},
@@ -406,12 +402,12 @@ anychart.onDocumentReady(function() {
     {x: 358, value: -0.034899497},
     {x: 359, value: -0.017452406},
     {x: 360, value: -2.4503E-16}
-  ]).stroke('2 #11aaff');            //area border color
+  ]).stroke('2 #11aaff');            // area border color
 
-  //disable markers
+  // disable markers
   series1.markers().enabled(false);
 
-  //set data for the second series
+  // set data for the second series
   series2 = chart.line([
     {x: 0, value: 1},
     {x: 1, value: 0.999847695},
@@ -776,9 +772,9 @@ anychart.onDocumentReady(function() {
     {x: 360, value: 1}
   ]).markers().enabled(false);
 
-  //grid settings
+  // grid settings
   chart.grid(0).evenFill('white').oddFill('white');
 
-  //draw chart
+  // draw chart
   chart.container('container').draw();
 });

@@ -4,17 +4,17 @@
 
 anychart.onDocumentReady(function() {
 
-  //chart type
+  // chart type
   chart = anychart.areaChart();
 
-  //chart title
+  // chart title
   chart.title().text('Range Area Chart');
 
-  //set axes title
+  // set axes title
   chart.xAxis().title().text('Month');
   chart.yAxis().title().text('Temperature');
 
-  //set data and define chart type
+  // set data and define chart type
   chart.rangeArea([
     {x: 'January', low: 0.7, high: 6.1},
     {x: 'February', low: 0.6, high: 6.3},
@@ -30,6 +30,6 @@ anychart.onDocumentReady(function() {
     {x: 'December', low: 1.5, high: 6.9}
   ]);
 
-  //draw
+  // draw
   chart.container('container').draw();
 });

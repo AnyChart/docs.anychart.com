@@ -4,17 +4,17 @@
 
 anychart.onDocumentReady(function() {
 
-    //chart type
+    // chart type
     chart = anychart.areaChart();
 
-    //chart title
+    // chart title
     chart.title().text('Range Spline Area Chart');
 
-    //set axes title
+    // set axes title
     chart.xAxis().title().enabled(false);
     chart.yAxis().title().enabled(false);
 
-    //set data and define chart type
+    // set data and define chart type
     chart.rangeSplineArea([
         {x: "A", low:0, high: 100},
         {x: "B", low:100, high: 200},
@@ -22,6 +22,6 @@ anychart.onDocumentReady(function() {
         {x: "D", low:0, high: 60}
     ]).markers().enabled(true);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

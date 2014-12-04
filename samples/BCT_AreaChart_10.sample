@@ -3,7 +3,7 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = anychart.data.set([
         ['January', 10000],
         ['February', 12000],
@@ -12,20 +12,20 @@ anychart.onDocumentReady(function() {
         ['May', 9000]
     ]);
 
-    //chart type
+    // chart type
     chart = anychart.areaChart();
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Month');
     chart.yAxis().title().text('Sales');
 
-    //title
+    // title
     chart.title().text('Labels and Tooltips');
 
-    //set data
+    // set data
     var series= chart.area(data);
 
-    //set and adjust labels
+    // set and adjust labels
     series.labels()
         .enabled(true)
         .rotation(90)
@@ -35,7 +35,7 @@ anychart.onDocumentReady(function() {
             return point.x;
         });
 
-    //set and adjust tooltips
+    // set and adjust tooltips
     series.tooltip().title()
         .enabled(true)
         .text('Information');
@@ -43,6 +43,6 @@ anychart.onDocumentReady(function() {
         return 'Month: ' + this.x + '\nSales: ' + this.value
     });
 
-    //draw chart
+    // draw chart
     chart.container('container').draw();
 });

@@ -4,13 +4,13 @@
 
 anychart.onDocumentReady(function() {
 
-  //chart type
+  // chart type
   chart = anychart.polar();
 
-  //chart title
+  // chart title
   chart.title().text('Polar Chart');
 
-  //series type and data set
+  // series type and data set
   chart.line([
     {x: 0, value: 0},
     {x: 10, value: 1},
@@ -25,17 +25,17 @@ anychart.onDocumentReady(function() {
     {x: 100, value: 10}
   ]).tooltip().enabled(false);
 
-  chart.xScale()      //settings for x scale
-    .maximum(100)     //set maximum value of x scale
-    .ticks()          //settings for x scale ticks
-      .interval(10);  //x scale ticks interval
+  chart.xScale()      // settings for x scale
+    .maximum(100)     // set maximum value of x scale
+    .ticks()          // settings for x scale ticks
+      .interval(10);  // x scale ticks interval
 
-  //set ticks interval for y scale
+  // set ticks interval for y scale
   chart.yScale().ticks().interval(2);
 
-  //adjust content and visualisation of labels
+  // adjust content and visualisation of labels
   chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + '.00'});
 
-  //draw chart
+  // draw chart
   chart.container('container').draw();
 });

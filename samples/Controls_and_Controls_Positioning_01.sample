@@ -5,7 +5,7 @@
 var customLegend, chart;
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var data = [
         {x: "Metallcutting", value: 41},
         {x: "Metal Forming", value: 12},
@@ -19,13 +19,13 @@ anychart.onDocumentReady(function() {
         {x: "Other", value: 4},
     ];
 
-    //set stage
+    // set stage
     stage = anychart.graphics.create('container');
 
-    //create color palette
+    // create color palette
     var palette = anychart.palettes.distinctColors().colors();
 
-    //legend colors setting
+    // legend colors setting
     var legendItems = [];
 
     for (var index in data){
@@ -40,7 +40,7 @@ anychart.onDocumentReady(function() {
         )
     }
 
-    //legend settings
+    // legend settings
     customLegend = anychart.ui.legend();
     customLegend.enabled(true);
     customLegend.itemsLayout('vertical');
@@ -54,12 +54,12 @@ anychart.onDocumentReady(function() {
     customTitle.zIndex(1);
     customTitle.text('Call Jake Homer at +1 (555) 212-85-06 for the details');
 
-    //chart type
+    // chart type
     chart = anychart.barChart();
     chart.title().text('Legal Notice').align("right");
 
 
-    //disable Axes Titels
+    // disable Axes Titels
     chart.xAxis().title().enabled(false);
     chart.yAxis().title().enabled(false);
 
@@ -67,10 +67,10 @@ anychart.onDocumentReady(function() {
        return this.value + '%';
     });
 
-    //set ticks interval
+    // set ticks interval
     chart.yScale().ticks().interval(5);
 
-    //set data
+    // set data
     var series = chart.bar(data);
 
    // var info = data.get(e.pointIndex, 'value');
@@ -85,7 +85,7 @@ anychart.onDocumentReady(function() {
         return e.meta.toString();
     });
 
-    //chart.background(null);
+    // chart.background(null);
     chart.listen(
         'chartDraw',
         function (e){
@@ -112,7 +112,7 @@ anychart.onDocumentReady(function() {
 
     // bounds settings
     chart.bounds(0, 0, '100%', '90%');
-    //set container and draw chart
+    // set container and draw chart
     chart.container(stage).draw();
 
 });

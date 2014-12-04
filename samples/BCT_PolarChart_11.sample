@@ -4,10 +4,10 @@
 
 anychart.onDocumentReady(function() {
 
-  //create stage
+  // create stage
   stage = anychart.graphics.create('container');
 
-  //data for chart
+  // data for chart
   var dataSet = anychart.data.set([
     [0, 0],
     [1, 0.0785],
@@ -372,20 +372,20 @@ anychart.onDocumentReady(function() {
     [360, 0]
   ]);
 
-  //chart type
+  // chart type
   chart1 = anychart.polar();
 
-  //chart title
+  // chart title
   chart1.title().text('Curcuit Grid Adjustment');
 
-  //scales settings
+  // scales settings
   chart1.yScale().ticks().interval(0.3);
   chart1.xScale().maximum(360).ticks().interval(20);
 
-  //disable minor ticks
+  // disable minor ticks
   chart1.yAxis().enabled(true).minorTicks().enabled(false);
 
-  //set data and adjust visualisation
+  // set data and adjust visualisation
   chart1.line(dataSet).stroke('4 blue .7').markers().enabled(false);
 
   chart1.grid(1)
@@ -400,27 +400,27 @@ anychart.onDocumentReady(function() {
     .layout('curcuit')
     .stroke('white');
 
-  //set chart size and position
+  // set chart size and position
   chart1.bounds(0, 0, '50%', '100%');
 
-  //set container and draw chart
+  // set container and draw chart
   chart1.container(stage).draw();
 
 
-  //create second chart
+  // create second chart
   chart2 = anychart.polar();
 
-  //chart title
+  // chart title
   chart2.title().text('Radial Grid Adjustment');
 
-  //disable minor ticks
+  // disable minor ticks
   chart2.yAxis().enabled(true).minorTicks().enabled(false);
 
-  //setting scales
+  // setting scales
   chart2.yScale().ticks().interval(0.3);
   chart2.xScale().maximum(360).ticks().interval(20);
 
-  //grid visualization settings
+  // grid visualization settings
   chart2.grid(0)
     .evenFill('white 0.6')
     .oddFill('lightgray 0.6')
@@ -433,13 +433,12 @@ anychart.onDocumentReady(function() {
     .layout('curcuit')
     .stroke('gray 0.7');
 
-  //set data and adjust visualisation
+  // set data and adjust visualisation
   chart2.line(dataSet).stroke('4 blue .7').markers().enabled(false);
 
-  //set chart size and position
+  // set chart size and position
   chart2.bounds('50%', 0, '50%', '100%');
 
-  //set container and draw chart
+  // set container and draw chart
   chart2.container(stage).draw();
-
 });

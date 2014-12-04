@@ -4,29 +4,29 @@
 
 anychart.onDocumentReady(function() {
 
-    //chart type
+    // chart type
     chart = anychart.cartesianChart();
 
-    //set title
+    // set title
     chart.title().text('Axes Management');
 
-    //draw axes and set titles and adjust position
+    // draw axes and set titles and adjust position
     chart.xAxis().title('Year');
     chart.yAxis().title('Box office');
     chart.xAxis().orientation('top');
     chart.yAxis().orientation('right');
 
-    //draw grid
+    // draw grid
     chart.grid().layout('horizontal');
 
-    //draw minor grid and adjust
+    // draw minor grid and adjust
     chart.minorGrid()
         .evenFill('none')
         .oddFill('none')
         .stroke('black 0.075')
         .layout('vertical');
 
-    //define chart and set data
+    // define chart and set data
     chart.marker([
         ['2000', 1100],
         ['2001', 880],
@@ -37,6 +37,6 @@ anychart.onDocumentReady(function() {
         ['2006', 1400]
     ]);
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

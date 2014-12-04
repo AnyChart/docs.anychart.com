@@ -6,15 +6,15 @@ anychart.onDocumentReady(function() {
 
     chart = anychart.columnChart([10, 1, 7, 10]);
 
-    //put your license key here and uncomment the next line
-    //anychart.licenseKey('COPY-PASTE-YOUR-LICENSE-KEY');
+    // put your license key here and uncomment the next line
+    // anychart.licenseKey('COPY-PASTE-YOUR-LICENSE-KEY');
     
-    //credits are enabled by default. The only exception is our  playground site. You can remove  next line in production.
+    // credits are enabled by default. The only exception is our  playground site. You can remove  next line in production.
     chart.credits().enabled(true);
     
-    //new text for credits
+    // new text for credits
     chart.credits().text('Company');
 
-    //draw
+    // draw
     chart.container('container').draw();
 });

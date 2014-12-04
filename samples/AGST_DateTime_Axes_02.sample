@@ -3,24 +3,24 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-  //chart type
+  // chart type
   chart = anychart.lineChart();
 
-  //chart title
+  // chart title
   chart.title().text('Line Chart DateTime Scale');
 
-  //create custom logarithmic scale
+  // create custom logarithmic scale
   var logScale = anychart.scales.log();
   logScale.minimum(1).minorTicks().mode('logarithmic');
 
-  //apply custom scale to y scale
+  // apply custom scale to y scale
   chart.yScale(logScale);
 
-  //create custom Date Time scale
+  // create custom Date Time scale
   var dateTimeScale = anychart.scales.dateTime();
   dateTimeScale.ticks().interval(0, 6);
 
-  //apply Date Time scale
+  // apply Date Time scale
   chart.xScale(dateTimeScale);
 
   var series = chart.line([
@@ -31,7 +31,7 @@ anychart.onDocumentReady(function() {
     {value: 144, x: Date.UTC(2007, 09, 13)}
   ]);
 
-  //adjust tooltips
+  // adjust tooltips
   series.tooltip().enabled(true).contentFormatter(function() {
     var value = (this.value).toFixed(0);
     var date = new Date(this.x);
@@ -54,6 +54,6 @@ anychart.onDocumentReady(function() {
             return date.toLocaleDateString('en-US', options);
           });
 
-  //draw
+  // draw
   chart.container('container').draw();
 });

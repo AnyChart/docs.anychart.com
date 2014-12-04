@@ -7,7 +7,7 @@ anychart.onDocumentReady(function() {
 
     chart.title().enabled(true).text('Extra Axes Units Comparison Sample');
 
-    //additional axes settings
+    // additional axes settings
     var FahrenheitScale = anychart.scales.linear();
     FahrenheitScale.minimum(-260).maximum(3000);
     FahrenheitScale.ticks().interval(500);
@@ -26,7 +26,7 @@ anychart.onDocumentReady(function() {
             .interval(500);
     KelvinScale.minorTicks().interval(100);
 
-    //adjusting axes
+    // adjusting axes
     chart.yAxis().title().text('Celsium');
     chart.yAxis().scale(CelsiumScale);
     chart.xAxis().labels().rotation(-90);
@@ -43,14 +43,14 @@ anychart.onDocumentReady(function() {
         .title()
             .text('Fahrenheit');
 
-    //adding grid
+    // adding grid
     chart.grid()
         .stroke('black')
         .layout('vertical')
         .evenFill(null)
         .oddFill(null);
 
-    //setting data
+    // setting data
     var data = anychart.data.set([
         ["Absolute Zero", 0],
         ["Lowest recorded surface temperature on Earth", 184],
@@ -62,7 +62,7 @@ anychart.onDocumentReady(function() {
         ["Titanium melts", 1941]
     ]);
 
-    //setting and adjusting data visualisation
+    // setting and adjusting data visualisation
 
     var markerSeries = chart.marker(data);
     markerSeries.tooltip().enabled(false);

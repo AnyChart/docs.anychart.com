@@ -4,10 +4,10 @@
 
 anychart.onDocumentReady(function() {
 
-    //enable stages for multiple charts
+    // enable stages for multiple charts
     stage = anychart.graphics.create('container');
 
-    //data
+    // data
     var dataSet = anychart.data.set([
         [Date.UTC(2007, 08, 07), 22.258032033902, 25.4889359321959, 22.75, 23.7, 22.69, 23.44, 23.335],
         [Date.UTC(2007, 08, 06), 22.2381666799343, 25.3786666401314, 23.03, 23.15, 22.44, 22.97, 23.285],
@@ -72,15 +72,15 @@ anychart.onDocumentReady(function() {
         [Date.UTC(2007, 05, 11), 27.1574611912334, 31.5540776175331, 29.62, 30.08, 29.53, 30.05, 28.623]
     ]);
 
-    //mar data for each series
+    // mar data for each series
     var seriesData_1 = dataSet.mapAs({x: [0], low: [1], high: [2]});
     var seriesData_2 = dataSet.mapAs({x: [0], open: [3], high: [4], low: [5], close: [6]});
     var seriesData_3 = dataSet.mapAs({x: [0], value: [7]});
 
-    //chart type
+    // chart type
     chart = anychart.financialChart();
 
-    //adjust x scale
+    // adjust x scale
     chart.xScale()
         .inverted(true)
         .minimum(Date.UTC(2007, 05, 10))
@@ -88,23 +88,23 @@ anychart.onDocumentReady(function() {
         .ticks()
             .interval(0,0,7);
 
-    //adjust y scale for first stage
+    // adjust y scale for first stage
     chart.yScale().inverted(true);
 
-    //draw candlestick chart
+    // draw candlestick chart
     chart.container(stage);
 
-    //set type and data for first chart
+    // set type and data for first chart
     var rangeAreaSeria = chart.rangeSplineArea(seriesData_1);
 
-    //set second data color and opacity
+    // set second data color and opacity
     rangeAreaSeria.fill('lightblue 0.7');
     rangeAreaSeria.hoverFill('lightblue 0.7');
 
-    //set data and type for second chart
+    // set data and type for second chart
     chart.candlestick(seriesData_2).color('green').tooltip().enabled(false);
 
-    //set data and type for third chart
+    // set data and type for third chart
     chart.spline(seriesData_3).markers(null).stroke('red').tooltip().contentFormatter(function(){
         var date = new Date(this.x);
         var options = {
@@ -116,25 +116,25 @@ anychart.onDocumentReady(function() {
         return transformedDate + '\n' + this.value;
     });
 
-    //set title and position for the first stage
+    // set title and position for the first stage
     chart.title().text('ACME Corp. Stock Prices: 11.05.07 - 07.08.07');
     chart.bounds(0, 0, '100%', '70%');
     chart.xAxis().staggerLines(1);
 
-    //disable axes titles
+    // disable axes titles
     chart.xAxis().title().enabled(false);
     chart.yAxis().title().enabled(false);
 
-    //draw fist stage
+    // draw fist stage
     chart.draw();
 
-    //second chart type
+    // second chart type
     columnChart = anychart.columnChart();
 
-    //new stage for a chart
+    // new stage for a chart
     columnChart.container(stage);
 
-    //set chart type and data
+    // set chart type and data
     columnChart.column([
         ['07.08.07', 20075300],
         ['06.08.07', 28948000],
@@ -199,11 +199,11 @@ anychart.onDocumentReady(function() {
         ['11.05.07', 13838800]
     ]);
 
-    //second stage settings
+    // second stage settings
     columnChart.title().enabled(false);
     columnChart.bounds(0, '70%', '100%', '30%');
 
-    //adjust axes labels view
+    // adjust axes labels view
     columnChart.xAxis().staggerLines(1).labels().enabled(false);
     columnChart.yAxis().staggerLines(1).labels().textFormatter(function(){
         var value = this.value;
@@ -212,13 +212,13 @@ anychart.onDocumentReady(function() {
         return value;
     });
 
-    //disable axes titles
+    // disable axes titles
     columnChart.xAxis().title().enabled(false);
     columnChart.yAxis().title().enabled(false);
 
-    //adjust x axis internal
+    // adjust x axis internal
     columnChart.xScale().ticks().interval(11);
 
-    //draw second stage
+    // draw second stage
     columnChart.draw();
 });

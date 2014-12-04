@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-    //data
+    // data
     var dataSet = anychart.data.set([
         ['January', '12000', '10000'],
         ['February', '15000', '12000'],
@@ -13,24 +13,24 @@ anychart.onDocumentReady(function() {
         ['May', '14000', '9000'],
     ]);
 
-    //map data for the each series
+    // map data for the each series
     var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
     var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
 
-    //chart type
+    // chart type
     chart = anychart.areaChart();
 
-    //set title
+    // set title
     chart.title().text('Multi-series Area Chart');
 
-    //set axes titles
+    // set axes titles
     chart.xAxis().title().text('Month');
     chart.yAxis().title().text('Sales');
 
-    //using data in series
+    // using data in series
     chart.area(seriesData_1).name('2004');
     chart.area(seriesData_2).name('2005');
 
-    //draw chart
+    // draw chart
     chart.container('container').draw();
 });

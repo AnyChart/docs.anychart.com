@@ -8,19 +8,19 @@ anychart.onDocumentReady(function() {
 
     chart.title().text('Extra Axes Binding Sample');
 
-    //setting yScale settings
+    // setting yScale settings
     chart.yScale().ticks().interval(100000);
     chart.yScale().minorTicks().interval(20000);
 
-    //setting yAxis settings
+    // setting yAxis settings
     chart.yAxis().title().text('Basic Y Axis');
     chart.yAxis(1).title().text('Extra Y Axis');
 
-    //setting Grid settings
+    // setting Grid settings
     chart.grid(0).stroke('gray 0.8').layout('vertical');
     chart.grid(1).stroke('gray 0.8').layout('horizontal');
 
-    //setting minorGrid settings
+    // setting minorGrid settings
     chart.minorGrid(0)
         .layout('vertical')
         .oddFill(null)
@@ -32,17 +32,17 @@ anychart.onDocumentReady(function() {
         .evenFill(null)
         .stroke('gray 0.3');
 
-    //adding extra Y scale
+    // adding extra Y scale
     var extraYScale = anychart.scales.linear();
     extraYScale.ticks().interval(10);
     extraYScale.minorTicks().interval(2);
     extraYScale.minimum(0).maximum(100);
 
-    //adding and adjust extra Y axis
+    // adding and adjust extra Y axis
     var extraYAxis = chart.yAxis(1);
     extraYAxis.orientation('right').scale(extraYScale);
 
-    //setting first series of data
+    // setting first series of data
     var firstSeries = anychart.data.set([
         ["A", 637166],
         ["B", 721630],
@@ -51,7 +51,7 @@ anychart.onDocumentReady(function() {
         ["E", 90000]
     ]);
 
-    //setting second series of data
+    // setting second series of data
     var secondSeries = anychart.data.set([
         ["A", 95],
         ["B", 97],
@@ -60,7 +60,7 @@ anychart.onDocumentReady(function() {
         ["E", 35]
     ]);
 
-    //setting and adjusting data visualisation
+    // setting and adjusting data visualisation
     var columnSeries = chart.column(firstSeries);
     var lineSeries = chart.line(secondSeries);
 

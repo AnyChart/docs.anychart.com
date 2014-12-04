@@ -3,19 +3,19 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    //defining chart type
+    // defining chart type
     chart = anychart.columnChart();
 
-    //title setter
+    // title setter
     chart.title().text('Ordinal scale sample');
 
-    //setting xScale type as ordinal. Even knowing the fact, that it's ordinal by default
+    // setting xScale type as ordinal. Even knowing the fact, that it's ordinal by default
     chart.xScale(anychart.scales.ordinal());
 
-    //x axis title setter
+    // x axis title setter
     chart.xAxis().title().text('This Axis has \'ordinal\' type');
 
-    //setting data
+    // setting data
     chart.column([
         ['A', 637166],
         ['B', 721630],

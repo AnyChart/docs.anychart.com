@@ -5,33 +5,33 @@ anychart.onDocumentReady(function() {
 
     stage = anychart.graphics.create('container');
 
-    //setting main title
+    // setting main title
     var title = anychart.ui.title();
 
-    //setting position for container with main label
+    // setting position for container with main label
     title.parentBounds(0, 0, "100%", "10%")
         .text('Y-Axis Labels: width is set to 70 pixels')
         .container(stage)
         .draw();
 
 
-    //first chart
+    // first chart
     var firstChart = anychart.columnChart();
 
-    //disabling title
+    // disabling title
     firstChart.title().enabled(false);
 
-    //setting stroke for chart contaoner
+    // setting stroke for chart contaoner
     firstChart.background().stroke('#CCCCCC');
 
-    //setting position and bounds
+    // setting position and bounds
     firstChart.bounds(0, '10%', '100%', '45%');
 
-    //disabling titles for Axes
+    // disabling titles for Axes
     firstChart.yAxis().title().enabled(false);
     firstChart.xAxis().title().enabled(false);
 
-    //formatting labels value using function
+    // formatting labels value using function
     firstChart.yAxis().labels().width(70).hAlign('right').textFormatter(valueAdjuster);
 
     firstChart.column([
@@ -42,24 +42,24 @@ anychart.onDocumentReady(function() {
         ['P5', 161294]
     ]);
 
-    //draw container
+    // draw container
     firstChart.container(stage);
     firstChart.draw();
 
 
-    //second chart
+    // second chart
     var secondChart = anychart.columnChart();
 
-    //disabling title and adjusting chart container position
+    // disabling title and adjusting chart container position
     secondChart.title().enabled(false);
     secondChart.bounds(0, '55%', '100%', '45%');
     secondChart.background().stroke('#CCCCCC');
 
-    //disabling axes titles
+    // disabling axes titles
     secondChart.yAxis().title().enabled(false);
     secondChart.xAxis().title().enabled(false);
 
-    //adjusting axis labels using function
+    // adjusting axis labels using function
     secondChart.yAxis().labels().width(70).hAlign('right').textFormatter(valueAdjuster);
 
     secondChart.column([
@@ -70,11 +70,11 @@ anychart.onDocumentReady(function() {
         ["P5", 74]
     ]);
 
-    //draw
+    // draw
     secondChart.container(stage);
     secondChart.draw();
 
-    //the function to format labels
+    // the function to format labels
     function valueAdjuster() {
         var value = this.value;
          value = value.toFixed(2);

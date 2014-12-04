@@ -17,7 +17,7 @@ anychart.onDocumentReady(function() {
   // Set chart layout
   verticalChart.layout('vertical');
 
-  //adjust axis position
+  // adjust axis position
   verticalChart.axis().orientation('right');
 
   // Create chart ranges
@@ -36,7 +36,7 @@ anychart.onDocumentReady(function() {
   // Set chart layout
   horizontalChart.layout('horizontal');
 
-  //adjust axis position
+  // adjust axis position
   horizontalChart.axis().orientation('top');
 
   // Chart title
