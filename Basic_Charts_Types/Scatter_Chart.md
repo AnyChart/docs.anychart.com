@@ -14,15 +14,13 @@
 
 ## Overview
 
-Data that is arranged in columns and rows can be plotted in an XY (Scatter) chart. Scatter charts show the
-relationships among the numeric values in several data series, or plots two groups of numbers as one series of XY coordinates.
+Scatter charts show the relationships among the numeric values in several data series, or plots two groups of numbers as one series of XY coordinates.
 
+A scatter chart has two value axes, showing one set of numerical data along the horizontal axis (X axis) and another along the vertical axis (Y axis). It combines these values into single data points and displays them in uneven intervals, or clusters. Scatter charts are commonly used for displaying and comparing numeric values, such as scientific, statistical, and engineering data.
 
 A scatter chart has two value axes, showing one set of numerical data along the horizontal axis (x-axis) and another along the vertical axis (y-axis). It combines these values into single data points and displays them in uneven intervals, or clusters. Scatter charts are commonly used for displaying and comparing numeric values, such as scientific, statistical, and engineering data.
 
-
 Consider using a scatter chart when:
-
 
  * You want to change the scale of the horizontal axis.
  * You want to make that axis a logarithmic scale.
@@ -34,8 +32,8 @@ Consider using a scatter chart when:
 
 ## Chart
 
-Depending on your task, with AnyChart, you can plot the following types on a Scatter plot: Line, Spline, Marker and
-Bubble charts. To start the creation of Scatter chart you need use **.scatterChart()** method.
+Depending on your task you can plot the following types on a Scatter plot: Line, Spline, Marker and
+Bubble charts. To start the creation of Scatter chart you need create chart using **.scatterChart()** method.
 
 ```
   var chart = anychart.scatterChart();
@@ -45,70 +43,76 @@ Bubble charts. To start the creation of Scatter chart you need use **.scatterCha
 
 As Scatter charts are plotted using two values you always need to specify both x and y.
 
+Let's take the following data table to be plotted on the scatter chart as the first line:
 
 Let's take the following data tables to be plotted on the scatter chart as the first line:
 
 <table border="1" class="dtTABLE">
-<tbody>
-<tr>
-<td width="80">x</td>
-<td width="80">y</td>
-</tr>
-<tr>
-<td>-2</td>
-<td>4</td>
-</tr>
-<tr>
-<td>-1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>0</td>
-<td>0</td>
-<tr>
-<td>1</td>
-<td>1</td>
-<tr>
-<tr>
-<td>2</td>
-<td>4</td>
-<tr>
+ <tbody>
+  <tr>
+   <th width="80">x</th>
+   <th width="80">y</th>
+  </tr>
+  <tr>
+   <td>-2</td>
+   <td>4</td>
+  </tr>
+  <tr>
+   <td>-1</td>
+   <td>1</td>
+  </tr>
+  <tr>
+   <td>0</td>
+   <td>0</td>
+  </tr>
+   <td>1</td>
+   <td>1</td>
+  </tr>
+  <tr>
+   <td>2</td>
+   <td>4</td>
+  </tr>
+ </tbody>
+</table>
 
 And here is the data for the second line:
 
 <table border="1" class="dtTABLE">
-<tbody>
+ <tbody>
+  <tr>
+   <th width="80">x</th>
+   <th width="80">y</th>
+  </tr>
+  <tr>
+   <td>-2</td>
+   <td>-4</td>
+  </tr>
+  <tr>
+   <td>-1</td>
+   <td>-1</td>
+  </tr>
+  <tr>
+   <td>0</td>
+   <td>0</td>
+  </tr>
+   <td>1</td>
+   <td>-1</td>
+  </tr>
+  <tr>
 <tr>
-<td width="80">x</td>
-<td width="80">y</td>
-</tr>
-<tr>
-<td>-2</td>
-<td>-4</td>
-</tr>
-<tr>
-<td>-1</td>
-<td>-1</td>
-</tr>
-<tr>
-<td>0</td>
-<td>0</td>
-<tr>
-<td>1</td>
-<td>-1</td>
-<tr>
-<tr>
-<td>2</td>
-<td>-4</td>
-<tr>
+   <td>2</td>
+   <td>-4</td>
+  </tr>
+ </tbody>
+</table>
 
-Converted data from the table is represented below:
+Converted data from the tables is represented below:
 
 ```
   // set chart type
   var chart = anychart.scatterChart();
 
-  // data for line series
+  // data for the first line series
   chart.line ([
     [-2, 4],
     [-1, 1],
@@ -127,16 +131,13 @@ Converted data from the table is represented below:
   ]);
 ```
 
-As you can see we've created to series one of "Line" type, the second of "Spline" type. Now, we just set **anychart.scatterChart()**, as mentioned above and scatter chart are ready to be displayed:
+As you can see we've created two Line series on the scatter plot:
 
 {sample}BCT\_ScatterChart\_01{sample}
 
 ### Bubble Chart
 
-Scatter Bubble Charts are widely used in many analytical studies an it is one of the popular tools for identifying and illustrating industry clusters. Essentially, these charts allow four different variables to be plotted within the same graph, making it easy to assess relative economic performance.
-
-
-As we've said Bubble charts can be used to plot up to 4 different variables on the single plot:
+Scatter Bubble Charts are widely used in many analytical studies an it is one of the popular tools for identifying and illustrating industry clusters. Essentially, these charts allow four different variables to be plotted within the same graph, making it easy to assess relative economic performance. Bubble charts can be used to plot up to 4 different variables on the single plot:
 
 ```
   chart.bubble([
@@ -149,14 +150,11 @@ As we've said Bubble charts can be used to plot up to 4 different variables on t
   ]).fill('green');
 ```
 
-Above is a demonstration of two data series of Bubble type, colored these series with Red and Green colors and set x, y and size.
-
+Above is a demonstration of two data series of Bubble type, colored with Red and Green colors and set x, y and size.
 
 In the sample below we will apply these knowledge to plot a real sample of cluster analysis charting:
 
-
 We illustrate industry cluster relationships for the 17 "Springfield" targeted industry clusters. The following four variables are plotted in this single graphic:
-
 
  * 1. Average cluster wages: on the x-axis (horizontal)
  * 2. Growth in jobs; on the y-axis (vertical)
@@ -164,20 +162,13 @@ We illustrate industry cluster relationships for the 17 "Springfield" targeted i
  * 4. The industry’s location quotient; indicated by the color of the bubble
 
   
-With user-defined demarcations, location quotients show whether a state or region is more specialized (>1.1149), less
- specialized (<0.95) or as specialized in a particular industry as is the nation or the reference region. In this
- graphic, clusters in which the state is more specialized than the nation are shown in red, clusters with less
- specialization then nation's are shown in green, while clusters with average specialization are shown in blue.
-
 {sample}BCT\_ScatterChart\_02{sample}
 
 ### Marker Chart
 
 Scatter Point or Marker chart is used to plot a scatter plot (scatter diagram or scatter graph). It is a chart used to display values for two variables. The data is displayed as a collection of points, each having one coordinate on the horizontal axis and one on the vertical axis.
 
-
 A scatter plot does not specify dependent or independent variables. Either type of variable can be plotted on either axis. Scatter plots represent the association (not causation) between two variables.
-
 
 To plot a scatter diagram using AnyChart you should use **Marker** series type along with **anychart.scatterChart()**:
 
@@ -194,23 +185,17 @@ To plot a scatter diagram using AnyChart you should use **Marker** series type a
 
 In the sample below we will plot waiting time between eruptions and the duration of the eruption for the Old Faithful geyser in Yellowstone National Park, Wyoming, USA. This chart suggests there are generally two "types" of eruptions: short-wait-short-duration, and long-wait-long-duration.
 
-
 We will also draw a "best-fit" straight line through the data, calculated using linear regression method.
 
 {sample}BCT\_ScatterChart\_03{sample}
 
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis
-scale and settings and many more. All axis features are described in
-[Axes tutorial](../Axes_Grid_Scales_Trends_etc/Axis_Basics), in this section we will quickly demonstrate how axis
-orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in [Axes tutorial](../Axes_Grid_Scales_Trends_etc/Axis_Basics), in this section we will quickly demonstrate how axis orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **.orientation()**
-parameter of **.yAxis()** or **.xAxis()** methods.
-
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **.orientation()** in **.yAxis()** or **.xAxis()**.
 
 Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and
 inversion settings in [Axes Orientation](../Axes_Grid_Scales_Trends_etc/Axis_Orientation) Templates.
@@ -237,7 +222,7 @@ And here is the demonstration of Y and X Axis inversion on the Marker sample:
 ### Minimum and Maximum
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart
-sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting
+sample above: minimal value on the Y Axis is -5, and maximum is 5. You can control these values by setting
 **.maximum()** and **.minimum()**. :
 
 ```
@@ -269,21 +254,13 @@ allowed us to plot data within hundreds and within thousands on the same plot:
 
 ## Labels and Tooltips
 
-In this section we will explain how to add and configure data labels and tooltips. <!--Full explanation of formatting
-and tuning visual appearance for them can be found in Labels and Tooltips.-->
-
-
 If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip()** methods. You can tune their visual appearance, positioning and format.
-
-
-When formatting data labels text we will use **.textFormatter()** to show month name. Otherwise sales will be displayed
-here.
 
 ```
   // set labels
   chart.bubble(data).labels().textFormatter(function(){
     return view.get(
-      this.index,           // index of a current point is used to get row with point's data
+      this.index,           // index of a current point is used to get row with point’s data
       'name'                // field to display
     );
   });
