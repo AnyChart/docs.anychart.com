@@ -28,7 +28,7 @@ The radar chart is also known as web chart, spider chart, star chart, cobweb cha
 AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to set **anychart.radar()** to display Radar chart:
 
 ```
-  //chart type
+  // chart type
   chart = anychart.radar();
 
   // series type and data setting
@@ -141,21 +141,21 @@ And here is the demonstration of Logarithmic Y Axis on a simple radar with area 
 ### Stacked Mode
 
 Multiple area series may be presented with usage of stacked mode for Y scale. Stacked mode helps to visualize data in
- a convenient way for comparing different data series which shares one of the values. Use **.stackMode()** method to
+ a convenient way for comparing different data series which shares one of the values. Use **.stackMode()** parameter to
  enable stacked mode.
 
 ```
-  //set chart type
+  // set chart type
   var chart = anychart.radarChart();
 
-  //set stacked mod
+  // set stacked mod
   chart.yScale().stackMode('value');
 ```
 
 {sample}BCT\_RadarChart\_08{sample}
 
 Percent stacked mode calculates the proportion of each point to the category sum and uses this percentage as a value.
- To enable this mode use **.stackMode('percent')** parameter
+ To enable this mode use **.stackMode('percent')** parameter.
 
 {sample}BCT\_RadarChart\_09{sample}
 
@@ -166,22 +166,22 @@ You can easily tune visual appearance of axes labels as well as adjust labels le
 In the sample below all names are limited to the length of 3:
 
 ```
-  //chart type
+  // chart type
   var chart = anychaty.radarChart();
 
   chart.xAxis().labels()
     .textFormatter(function(){
 
-      //get value of the label
+      // get value of the label
       var fullValue = this.value;
 
       if (longValue.length > 3){
-        myValue = longValue.substr(0, 3) + '...';   //adjust value
+        myValue = longValue.substr(0, 3) + '...';   // adjust value
       }
       else{
-        myValue = fullValue;                        //return untouched value
+        myValue = fullValue;                        // return untouched value
       }
-      return myValue;                               //return new value
+      return myValue;                               // return new value
     });
 ```
 
@@ -190,17 +190,17 @@ In the sample below all names are limited to the length of 3:
 You can change labels background. Learn more about background configuration in [Background settings tutorial](#../General_Appearance_Settings/Background).
 
 ```
-  //axes settings
+  // axes settings
   chart.xAxis()
-    .labels()                   //settings for labels
-      .padding(5)               //set padding for labels
-      .fontWeight(900)          //set font weight for labels
-      .background()             //background settings
-        .enabled(true)          //enable background
-        .fill('lightblue')      //background fill
-        .stroke('blue')         //stroke color
-        .cornerType('round')    //corner type
-        .corners(5);            //corner size
+    .labels()                   // settings for labels
+      .padding(5)               // set padding for labels
+      .fontWeight(900)          // set font weight for labels
+      .background()             // background settings
+        .enabled(true)          // enable background
+        .fill('lightblue')      // background fill
+        .stroke('blue')         // stroke color
+        .cornerType('round')    // corner type
+        .corners(5);            // corner size
 ```
 
 {sample}BCT\_RadarChart\_11{sample}
@@ -229,13 +229,13 @@ Radar grid is a combination of circuit and radial grids. Grid visual appearance 
 parameters:
 
 ```
-  //chart type
+  // chart type
   var chart = anychart.radarChart();
 
   chart.grid(0).
-    .oddFill('red')       //colorizing odd cells in the grid
-    .evenFill('darkred')  //colorizing even cells in the grid
-    .layout('radial');    //set layout type
+    .oddFill('red')       // colorizing odd cells in the grid
+    .evenFill('darkred')  // colorizing even cells in the grid
+    .layout('radial');    // set layout type
 ```
 
 **Note:** full information on grid settings can be found in [grid section of Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#grids)
@@ -257,22 +257,22 @@ When formatting data labels text we will use **.textFormatter()** to show month 
 here.
 
 ```
-  //chart type
+  // chart type
   var chart = anychart.radarChart();
 
-  //setting data
+  // setting data
   var series= chart.area(data);
 
-  //setting labels
+  // setting labels
   series.labels()
-    .enabled(true)                              //enables labels
+    .enabled(true)                              // enables labels
     .textFormatter(function(point){
-      return point.x;                           //setting content
+      return point.x;                           // setting content
     });
 
-  //setting tooltips
+  // setting tooltips
   series.tooltip().contentFormatter(function(){
-    return this.x;                              //setting content
+    return this.x;                              // setting content
   });
 ```
 

@@ -203,9 +203,8 @@ work particularly good on xAxis, when labels contain category names, you can set
     chart.xAxis().staggerLines(2);
 ```
 
-Here is a sample dashboard showing the most of positioning labels settings:
+Here is a sample dashboard showing the most of positioning labels settings:<a name="dashboard"/>
 
-<a name="dashboard"/>
 {sample}AGST\_Labels\_Formatting\_05{sample}
 
 ## First and Last labels

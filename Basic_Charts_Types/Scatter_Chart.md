@@ -105,10 +105,10 @@ And here is the data for the second line:
 Converted data from the table is represented below:
 
 ```
-  //set chart type
+  // set chart type
   var chart = anychart.scatterChart();
 
-  //data for line series
+  // data for line series
   chart.line ([
     [-2, 4],
     [-1, 1],
@@ -117,7 +117,7 @@ Converted data from the table is represented below:
     [2, 4]
   ]);
 
-  //data for the second line series
+  // data for the second line series
   chart.line([
     [-2, -4],
     [-1, -1],
