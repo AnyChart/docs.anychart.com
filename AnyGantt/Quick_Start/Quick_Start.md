@@ -2,7 +2,7 @@
 Quick Start
 ===========
   
-## 3 simple steps to start using GanttChart
+## 3 simple steps to start using Gantt Chart
 ###1. Include Gantt into your web page
 Include the JavaScript file in the `<head>` section of your web page.  
 You can use CDN as shown below or visit the [download page](./Downloading_AnyChart).
@@ -23,7 +23,7 @@ Example:
 ```  
 ###3. Create a chart
 Add the JavaScript tag `<script>` with the following code anywhere in the  page. 
-This code example uses JavaScript API to create a chart, but you also can use JSON or XML format. See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about supported formats.
+This code example uses JavaScript API to create a chart<!--, but you also can use JSON or XML format. See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about supported formats-->.
 Example:
 
 ```
