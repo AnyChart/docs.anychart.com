@@ -23,7 +23,7 @@ Example:
 ```  
 ###3. Create a chart
 Add the JavaScript tag `<script>` with the following code anywhere in the  page. 
-This code example uses JavaScript API to create a chart, but you also can use JSON or XML format. See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about supported formats.
+This code example uses JavaScript API to create a chart, but you also can use JSON or XML format. <!--See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about supported formats.-->
 Example:
 
 ```
@@ -45,7 +45,7 @@ Example:
 ## The result
 ###See the result
 After all these steps you should have the following result. This example, like any other on our site, can be launched and explored using the samples playground.
-{sample}quick\_start\_pie{sample}
+{sample}Gantt\_Chart{sample}
 ###Full source code
 You can copy this to a file on your computer and open it in your browser to display the pie chart shown above:  
 ```

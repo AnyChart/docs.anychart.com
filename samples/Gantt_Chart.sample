@@ -1,0 +1,136 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function(){
+
+  // data tree settings
+  var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TABLE);
+
+  // chart type
+  var chart = anychart.ganttResource();
+
+  // chart container
+  chart.container('container');
+
+  // chart position
+  chart.bounds(0, 0, '100%', '100%');
+
+  // chart data
+  chart.data(treeData);
+
+  // data tree width
+  chart.splitterPosition(170);
+
+  var dataGrid = chart.getDataGrid();
+
+  // settings for first column
+  dataGrid.column(0).width(30).title().text('#');
+
+  // settings for the second column
+  dataGrid.column(1).width(140).textFormatter(function(item) {
+    return item.get('name');
+  }).title().text('Person');
+
+  // initiate drawing
+  chart.draw();
+
+  // area to display by default
+  chart.zoomTo(1171036800000, 1176908400000);
+});
+
+// data
+var data = [
+  {
+    "id": "1",
+    "name": "Alex Exler",
+    "periods": [
+      {"id": "1_1", "start": 1171468800000, "end": 1171987200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "1_2", "start": 1174921200000, "end": 1175612400000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "1_3", "start": 1177599600000, "end": 1178550000000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "1_4", "start": 1182092400000, "end": 1182697200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "1_5", "start": 1183647600000, "end": 1183906800000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "1_6", "start": 1186412400000, "end": 1187708400000, "style": "yellow", "fill": {"angle": 90, "keys": [{"color": "#959663", "position": 0}, {"color": "#989967", "position": 0.38}, {"color": "#FEFFAB", "position": 1}]}},
+      {"id": "1_7", "start": 1190646000000, "end": 1191337200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "1_8", "start": 1193760000000, "end": 1194192000000, "style": "red", "fill": {"angle": 90, "keys": [{"color": "#963E3E", "position": 0}, {"color": "#994949", "position": 0.38}, {"color": "#FF9191", "position": 1}]}},
+      {"id": "1_9", "start": 1196870400000, "end": 1197302400000, "style": "yellow", "fill": {"angle": 90, "keys": [{"color": "#959663", "position": 0}, {"color": "#989967", "position": 0.38}, {"color": "#FEFFAB", "position": 1}]}},
+      {"id": "1_10", "start": 1201017600000, "end": 1201449600000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "1_11", "start": 1207148400000, "end": 1207666800000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "1_12", "start": 1209913200000, "end": 1210518000000, "style": "red", "fill": {"angle": 90, "keys": [{"color": "#963E3E", "position": 0}, {"color": "#994949", "position": 0.38}, {"color": "#FF9191", "position": 1}]}},
+      {"id": "1_13", "start": 1213542000000, "end": 1213801200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "1_14", "start": 1214838000000, "end": 1215356400000, "style": "red", "fill": {"angle": 90, "keys": [{"color": "#963E3E", "position": 0}, {"color": "#994949", "position": 0.38}, {"color": "#FF9191", "position": 1}]}},
+      {"id": "1_15", "start": 1216566000000, "end": 1216911600000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "1_16", "start": 1218380400000, "end": 1219330800000, "style": "red", "fill": {"angle": 90, "keys": [{"color": "#963E3E", "position": 0}, {"color": "#994949", "position": 0.38}, {"color": "#FF9191", "position": 1}]}},
+      {"id": "1_17", "start": 1222182000000, "end": 1222614000000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "1_18", "start": 1225728000000, "end": 1226851200000, "style": "yellow", "fill": {"angle": 90, "keys": [{"color": "#959663", "position": 0}, {"color": "#989967", "position": 0.38}, {"color": "#FEFFAB", "position": 1}]}},
+      {"id": "1_19", "start": 1229356800000, "end": 1229961600000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
+  },
+  {
+    "id": "2",
+    "name": "Philip Kineyko",
+    "periods": [
+      {"id": "2_1", "start": 1173024000000, "end": 1173715200000, "style": "yellow", "fill": {"angle": 90, "keys": [{"color": "#959663", "position": 0}, {"color": "#989967", "position": 0.38}, {"color": "#FEFFAB", "position": 1}]}},
+      {"id": "2_2", "start": 1173888000000, "end": 1174406400000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "2_3", "start": 1176994800000, "end": 1177945200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "2_4", "start": 1180364400000, "end": 1180882800000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "2_5", "start": 1182956400000, "end": 1183647600000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
+  },
+  {
+    "id": "3",
+    "name": "Luke Liakos",
+    "periods": [
+      {"id": "3_1", "start": 1169740800000, "end": 1170172800000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "3_2", "start": 1171987200000, "end": 1172505600000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "3_3", "start": 1175439600000, "end": 1176217200000, "style": "yellow", "fill": {"angle": 90, "keys": [{"color": "#959663", "position": 0}, {"color": "#989967", "position": 0.38}, {"color": "#FEFFAB", "position": 1}]}},
+      {"id": "3_4", "start": 1176908400000, "end": 1178463600000, "style": "yellow", "fill": {"angle": 90, "keys": [{"color": "#959663", "position": 0}, {"color": "#989967", "position": 0.38}, {"color": "#FEFFAB", "position": 1}]}},
+      {"id": "3_5", "start": 1180364400000, "end": 1180537200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "3_6", "start": 1184684400000, "end": 1185721200000, "style": "yellow", "fill": {"angle": 90, "keys": [{"color": "#959663", "position": 0}, {"color": "#989967", "position": 0.38}, {"color": "#FEFFAB", "position": 1}]}},
+      {"id": "3_7", "start": 1187535600000, "end": 1188226800000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "3_8", "start": 1189350000000, "end": 1190041200000, "style": "red", "fill": {"angle": 90, "keys": [{"color": "#963E3E", "position": 0}, {"color": "#994949", "position": 0.38}, {"color": "#FF9191", "position": 1}]}},
+      {"id": "3_9", "start": 1190559600000, "end": 1191250800000, "style": "yellow", "fill": {"angle": 90, "keys": [{"color": "#959663", "position": 0}, {"color": "#989967", "position": 0.38}, {"color": "#FEFFAB", "position": 1}]}},
+      {"id": "3_10", "start": 1193065200000, "end": 1193846400000, "style": "red", "fill": {"angle": 90, "keys": [{"color": "#963E3E", "position": 0}, {"color": "#994949", "position": 0.38}, {"color": "#FF9191", "position": 1}]}},
+      {"id": "3_11", "start": 1197561600000, "end": 1197907200000, "style": "red", "fill": {"angle": 90, "keys": [{"color": "#963E3E", "position": 0}, {"color": "#994949", "position": 0.38}, {"color": "#FF9191", "position": 1}]}},
+      {"id": "3_12", "start": 1199376000000, "end": 1200240000000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "3_13", "start": 1202140800000, "end": 1202745600000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "3_14", "start": 1207580400000, "end": 1208098800000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "3_15", "start": 1211900400000, "end": 1212418800000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "3_16", "start": 1215702000000, "end": 1215961200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "3_17", "start": 1218985200000, "end": 1219158000000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
+  },
+  {
+    "id": "4",
+    "name": "Judy Penfold",
+    "periods": [
+      {"id": "4_1", "start": 1171814400000, "end": 1172419200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "4_2", "start": 1173628800000, "end": 1174320000000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "4_3", "start": 1177945200000, "end": 1178463600000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "4_4", "start": 1181228400000, "end": 1181833200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "4_5", "start": 1185807600000, "end": 1186326000000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "4_6", "start": 1190214000000, "end": 1190818800000, "style": "red", "fill": {"angle": 90, "keys": [{"color": "#963E3E", "position": 0}, {"color": "#994949", "position": 0.38}, {"color": "#FF9191", "position": 1}]}}]
+  },
+  {
+    "id": "5",
+    "name": "Patricia Darmon",
+    "periods": [
+      {"id": "5_1", "start": 1171296000000, "end": 1171382400000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_2", "start": 1174233600000, "end": 1174579200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_3", "start": 1176303600000, "end": 1176822000000, "style": "yellow", "fill": {"angle": 90, "keys": [{"color": "#959663", "position": 0}, {"color": "#989967", "position": 0.38}, {"color": "#FEFFAB", "position": 1}]}},
+      {"id": "5_4", "start": 1177858800000, "end": 1178031600000, "style": "red", "fill": {"angle": 90, "keys": [{"color": "#963E3E", "position": 0}, {"color": "#994949", "position": 0.38}, {"color": "#FF9191", "position": 1}]}},
+      {"id": "5_5", "start": 1181574000000, "end": 1182265200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_6", "start": 1185462000000, "end": 1186066800000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_7", "start": 1190127600000, "end": 1190905200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_8", "start": 1194278400000, "end": 1195142400000, "style": "red", "fill": {"angle": 90, "keys": [{"color": "#963E3E", "position": 0}, {"color": "#994949", "position": 0.38}, {"color": "#FF9191", "position": 1}]}},
+      {"id": "5_9", "start": 1196265600000, "end": 1196611200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_10", "start": 1197388800000, "end": 1197561600000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_11", "start": 1200844800000, "end": 1201017600000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_12", "start": 1202313600000, "end": 1203004800000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_13", "start": 1205251200000, "end": 1205769600000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_14", "start": 1207494000000, "end": 1208185200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_15", "start": 1212678000000, "end": 1213282800000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_16", "start": 1215442800000, "end": 1216220400000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_17", "start": 1216566000000, "end": 1217170800000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_18", "start": 1220799600000, "end": 1221404400000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_19", "start": 1223823600000, "end": 1223996400000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}},
+      {"id": "5_20", "start": 1227801600000, "end": 1228752000000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
+  }
+];
