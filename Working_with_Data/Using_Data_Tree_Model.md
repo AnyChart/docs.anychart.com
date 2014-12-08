@@ -13,9 +13,7 @@ Using Data Tree Model
 
 ## Overview
 
-Tree Data is quite useful way of implementing data which assume
-tree like hierarchy with parent/child division. Such structure visualize data nodes connections thus
-simplifies data adjusting, improves data organization and provides advanced opportunities of data manipulation.
+Tree Data is quite useful way of implementing data which assume tree like hierarchy with parent/child division. Such structure visualize data nodes connections thus simplifies data adjusting, improves data organization and provides advanced opportunities of data manipulation.
 
 ## Usage
 

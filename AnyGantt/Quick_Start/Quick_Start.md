@@ -2,7 +2,7 @@
 Quick Start
 ===========
   
-## 3 simple steps to start using GanttChart
+## 4 simple steps to start using GanttChart
 ###1. Include Gantt into your web page
 Include the JavaScript file in the `<head>` section of your web page.  
 You can use CDN as shown below or visit the [download page](./Downloading_AnyChart).
@@ -20,8 +20,53 @@ Example:
 <body>
     <div id="container" style="width: 500px; height: 400px;"></div>
 </body>
-```  
-###3. Create a chart
+```
+###3. Prepare your Data
+
+Comparing with AnyChart, AnyGantt provides much more ways of working with data (such as setting tree like hierarchy with parent/child division), thus it requires preparing data before usage.
+
+```
+var data = [
+  {
+    "id": "1",
+    "name": "Phase 1 - Strategic Plan",
+    "periods": [
+      {"id": "1_1", "start": 1171468800000, "end": 1171987200000, "fill": "green"}]
+  },
+  {
+    "id": "2",
+    "name": "Self-Assessment",
+    "periods": [
+      {"id": "2_1", "start": 1173024000000, "end": 1173715200000, "fill": "yellow"}]
+  },
+  {
+    "id": "3",
+    "name": "Define business vision",
+    "periods": [
+      {"id": "3_1", "start": 1169740800000, "end": 1170172800000, "fill": "green"}]
+  },
+  {
+    "id": "4",
+    "name": "Identify available skills, information and support",
+    "periods": [
+      {"id": "4_1", "start": 1171814400000, "end": 1172419200000, "fill": "green"}]
+  },
+  {
+    "id": "5",
+    "name": "Decide whether to proceed",
+    "periods": [
+      {"id": "5_1", "start": 1171296000000, "end": 1171382400000, "fill": "green"}]
+  },
+  {
+    "id": "6",
+    "name": "Define the Opportunity",
+    "periods": [
+      {"id": "6_1", "start": 1173628800000, "end": 1174320000000, "fill": "green"}]
+  }
+];
+```
+
+###4. Create a chart
 Add the JavaScript tag `<script>` with the following code anywhere in the  page. 
 This code example uses JavaScript API to create a chart, but you also can use JSON or XML format. <!--See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about supported formats.-->
 Example:
@@ -46,51 +91,6 @@ anychart.onDocumentReady(function(){
   // set container and initiate drawing
   chart.container('container').draw();
 });
-
-// data
-var data = [
-  {
-    "id": "1",
-    "name": "Phase 1 - Strategic Plan",
-    "periods": [
-      {"id": "1_1", "start": 1171468800000, "end": 1171987200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
-  },
-  {
-    "id": "2",
-    "parent": "1",
-    "name": "Self-Assessment",
-    "periods": [
-      {"id": "2_1", "start": 1173024000000, "end": 1173715200000, "style": "yellow", "fill": {"angle": 90, "keys": [{"color": "#959663", "position": 0}, {"color": "#989967", "position": 0.38}, {"color": "#FEFFAB", "position": 1}]}}]
-  },
-  {
-    "id": "3",
-    "name": "Define business vision",
-    "parent": "2",
-    "periods": [
-      {"id": "3_1", "start": 1169740800000, "end": 1170172800000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
-  },
-  {
-    "id": "4",
-    "name": "Identify available skills, information and support",
-    "parent": "2",
-    "periods": [
-      {"id": "4_1", "start": 1171814400000, "end": 1172419200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
-  },
-  {
-    "id": "5",
-    "name": "Decide whether to proceed",
-    "parent": "2",
-    "periods": [
-      {"id": "5_1", "start": 1171296000000, "end": 1171382400000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
-  },
-  {
-    "id": "6",
-    "name": "Define the Opportunity",
-    "parent": "1",
-    "periods": [
-      {"id": "6_1", "start": 1173628800000, "end": 1174320000000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
-  }
-];
 </script>
 ```
   
