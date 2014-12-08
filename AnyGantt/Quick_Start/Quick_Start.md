@@ -130,42 +130,37 @@ You can copy this to a file on your computer and open it in your browser to disp
           "id": "1",
           "name": "Phase 1 - Strategic Plan",
           "periods": [
-            {"id": "1_1", "start": 1171468800000, "end": 1171987200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
+            {"id": "1_1", "start": 1171468800000, "end": 1171987200000, "fill": "green"}]
         },
         {
           "id": "2",
-          "parent": "1",
           "name": "Self-Assessment",
           "periods": [
-            {"id": "2_1", "start": 1173024000000, "end": 1173715200000, "style": "yellow", "fill": {"angle": 90, "keys": [{"color": "#959663", "position": 0}, {"color": "#989967", "position": 0.38}, {"color": "#FEFFAB", "position": 1}]}}]
+            {"id": "2_1", "start": 1173024000000, "end": 1173715200000, "fill": "yellow"}]
         },
         {
           "id": "3",
           "name": "Define business vision",
-          "parent": "2",
           "periods": [
-            {"id": "3_1", "start": 1169740800000, "end": 1170172800000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
+            {"id": "3_1", "start": 1169740800000, "end": 1170172800000, "fill": "green"}]
         },
         {
           "id": "4",
           "name": "Identify available skills, information and support",
-          "parent": "2",
           "periods": [
-            {"id": "4_1", "start": 1171814400000, "end": 1172419200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
+            {"id": "4_1", "start": 1171814400000, "end": 1172419200000, "fill": "green"}]
         },
         {
           "id": "5",
           "name": "Decide whether to proceed",
-          "parent": "2",
           "periods": [
-            {"id": "5_1", "start": 1171296000000, "end": 1171382400000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
+            {"id": "5_1", "start": 1171296000000, "end": 1171382400000, "fill": "green"}]
         },
         {
           "id": "6",
           "name": "Define the Opportunity",
-          "parent": "1",
           "periods": [
-            {"id": "6_1", "start": 1173628800000, "end": 1174320000000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
+            {"id": "6_1", "start": 1173628800000, "end": 1174320000000, "fill": "green"}]
         }
       ];
     </script>
@@ -175,12 +170,3 @@ You can copy this to a file on your computer and open it in your browser to disp
 </body>
 </html>
 ```
-  
-## Further Steps
-### Learn more
-* Explore [JavaScript API Reference](http://api.anychart.com/)
-* See [Playground demos](http://playground.anychart.com/)
-
-### Subscribe
-* Follow us on [Facebook](https://www.facebook.com/AnyCharts) and [Twitter](https://twitter.com/intent/follow?&screen_name=anychart&original_referer=http%3A%2F%2Fdocs.anychart.com)
-* Read the [blog](http://www.anychart.com/blog/)
