@@ -35,9 +35,8 @@ anychart.onDocumentReady(function(){
   chart.bounds(0, 0, '100%', '100%');                   // chart position
   chart.data(treeData);                                 // chart data
   chart.splitterPosition(170);                          // data tree width
-  var dataGrid = chart.getDataGrid();                   // 
-  // settings for first column
-  dataGrid.column(0).width(30).title().text('#');
+  var dataGrid = chart.getDataGrid();                   // create data grid
+  dataGrid.column(0).width(30).title().text('#');       //  settings for first column
 
   // settings for the second column
   dataGrid.column(1).width(140).textFormatter(function(item) {
@@ -106,87 +105,69 @@ You can copy this to a file on your computer and open it in your browser to disp
 <head>
     <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
     <script>
-        anychart.onDocumentReady(function(){
+      anychart.onDocumentReady(function(){
+        // data tree settings
+        var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TABLE);
+        var chart = anychart.ganttResource();                 // chart type
+        chart.bounds(0, 0, '100%', '100%');                   // chart position
+        chart.data(treeData);                                 // chart data
+        chart.splitterPosition(170);                          // data tree width
+        var dataGrid = chart.getDataGrid();                   // create data grid
+        dataGrid.column(0).width(30).title().text('#');       //  settings for first column
 
-          // data tree settings
-          var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TABLE);
+        // settings for the second column
+        dataGrid.column(1).width(140).textFormatter(function(item) {
+          return item.get('name');
+        }).title().text('Person');
 
-          // chart type
-          var chart = anychart.ganttResource();
+        // set container and initiate drawing
+        chart.container('container').draw();
+      });
 
-          // chart container
-          chart.container('container');
-
-          // chart position
-          chart.bounds(0, 0, '100%', '100%');
-
-          // chart data
-          chart.data(treeData);
-
-          // data tree width
-          chart.splitterPosition(170);
-
-          var dataGrid = chart.getDataGrid();
-
-          // settings for first column
-          dataGrid.column(0).width(30).title().text('#');
-
-          // settings for the second column
-          dataGrid.column(1).width(140).textFormatter(function(item) {
-            return item.get('name');
-          }).title().text('Person');
-
-          // initiate drawing
-          chart.draw();
-
-          // area to display by default
-          chart.zoomTo(1171036800000, 1176908400000);
-        });
-
-        // data
-        var data = [
-          {
-            "id": "1",
-            "name": "Phase 1 - Strategic Plan",
-            "periods": [
-              {"id": "1_1", "start": 1171468800000, "end": 1171987200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
-          },
-          {
-            "id": "2",
-            "parent": "1",
-            "name": "Self-Assessment",
-            "periods": [
-              {"id": "2_1", "start": 1173024000000, "end": 1173715200000, "style": "yellow", "fill": {"angle": 90, "keys": [{"color": "#959663", "position": 0}, {"color": "#989967", "position": 0.38}, {"color": "#FEFFAB", "position": 1}]}}]
-          },
-          {
-            "id": "3",
-            "name": "Define business vision",
-            "parent": "2",
-            "periods": [
-              {"id": "3_1", "start": 1169740800000, "end": 1170172800000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
-          },
-          {
-            "id": "4",
-            "name": "Identify available skills, information and support",
-            "parent": "2",
-            "periods": [
-              {"id": "4_1", "start": 1171814400000, "end": 1172419200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
-          },
-          {
-            "id": "5",
-            "name": "Decide whether to proceed",
-            "parent": "2",
-            "periods": [
-              {"id": "5_1", "start": 1171296000000, "end": 1171382400000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
-          },
-          {
-            "id": "6",
-            "name": "Define the Opportunity",
-            "parent": "1",
-            "periods": [
-              {"id": "6_1", "start": 1173628800000, "end": 1174320000000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
-          }
-        ];
+      // data
+      var data = [
+        {
+          "id": "1",
+          "name": "Phase 1 - Strategic Plan",
+          "periods": [
+            {"id": "1_1", "start": 1171468800000, "end": 1171987200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
+        },
+        {
+          "id": "2",
+          "parent": "1",
+          "name": "Self-Assessment",
+          "periods": [
+            {"id": "2_1", "start": 1173024000000, "end": 1173715200000, "style": "yellow", "fill": {"angle": 90, "keys": [{"color": "#959663", "position": 0}, {"color": "#989967", "position": 0.38}, {"color": "#FEFFAB", "position": 1}]}}]
+        },
+        {
+          "id": "3",
+          "name": "Define business vision",
+          "parent": "2",
+          "periods": [
+            {"id": "3_1", "start": 1169740800000, "end": 1170172800000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
+        },
+        {
+          "id": "4",
+          "name": "Identify available skills, information and support",
+          "parent": "2",
+          "periods": [
+            {"id": "4_1", "start": 1171814400000, "end": 1172419200000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
+        },
+        {
+          "id": "5",
+          "name": "Decide whether to proceed",
+          "parent": "2",
+          "periods": [
+            {"id": "5_1", "start": 1171296000000, "end": 1171382400000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
+        },
+        {
+          "id": "6",
+          "name": "Define the Opportunity",
+          "parent": "1",
+          "periods": [
+            {"id": "6_1", "start": 1173628800000, "end": 1174320000000, "style": "green", "fill": {"angle": 90, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "#B4FFAB", "position": 1}]}}]
+        }
+      ];
     </script>
 </head>
 <body>
