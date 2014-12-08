@@ -66,7 +66,7 @@ Data Manipulation includes CRUD operations, such as:
  * Removing - you can remove any point from a data set.
 
 
-This operations may be proceeded for root elements as well as for children of a node. Tutorial on CRUD operations for
+This operations can be performed on root elements as well as for children of a node. Tutorial on CRUD operations for
  **.set()** method can be found in [Data Manipulation article](Data_Manipulation).
 
 ### Create
@@ -103,9 +103,9 @@ Sample below demonstrates adding data on click on a button.
 
 ### Read
 
-Data tree item may have unlimited number of data field thus it requires methods for reading data from any field and
+Data tree item may have unlimited number of data fields thus it requires methods for reading data from any field and
 item search through field value. **.get()** method reads required field of an item. Sample below demonstrates
-two data grids with data from the same data tree, but third column represents different fields of each node.
+reading data grids with data from the same data tree, but third column represents different fields of each node.
 
 {sample}Data\_Tree\_04{sample}
 

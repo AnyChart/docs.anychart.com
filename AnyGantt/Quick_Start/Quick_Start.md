@@ -29,27 +29,13 @@ Example:
 ```
 <script>
 anychart.onDocumentReady(function(){
-
   // data tree settings
   var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TABLE);
-
-  // chart type
-  var chart = anychart.ganttResource();
-
-  // chart container
-  chart.container('container');
-
-  // chart position
-  chart.bounds(0, 0, '100%', '100%');
-
-  // chart data
-  chart.data(treeData);
-
-  // data tree width
-  chart.splitterPosition(170);
-
-  var dataGrid = chart.getDataGrid();
-
+  var chart = anychart.ganttResource();                 // chart type
+  chart.bounds(0, 0, '100%', '100%');                   // chart position
+  chart.data(treeData);                                 // chart data
+  chart.splitterPosition(170);                          // data tree width
+  var dataGrid = chart.getDataGrid();                   // 
   // settings for first column
   dataGrid.column(0).width(30).title().text('#');
 
@@ -58,11 +44,8 @@ anychart.onDocumentReady(function(){
     return item.get('name');
   }).title().text('Person');
 
-  // initiate drawing
-  chart.draw();
-
-  // area to display by default
-  chart.zoomTo(1171036800000, 1176908400000);
+  // set container and initiate drawing
+  chart.container('container').draw();
 });
 
 // data
