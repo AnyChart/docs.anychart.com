@@ -105,7 +105,7 @@ Sample below demonstrates adding data on click on a button.
 
 Data tree item may have unlimited number of data fields thus it requires methods for reading data from any field and
 item search through field value. **.get()** method reads required field of an item. Sample below demonstrates
-reading data grids with data from the same data tree, but third column represents different fields of each node.
+data grid with custom columns. Each of them read data from custom field Data of data grid.
 
 {sample}Data\_Tree\_04{sample}
 
