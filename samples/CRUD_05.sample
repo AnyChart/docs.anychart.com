@@ -42,6 +42,7 @@ anychart.onDocumentReady(function() {
   triggerButton.style.border = '3px solid #444444';
   triggerButton.style.borderRadius = '7px 7px 7px 7px';
   triggerButton.style.fontSize = '18px';
+  triggerButton.style.cursor = 'pointer';
   triggerButton.innerHTML = 'Add Point';
   triggerButton.onclick = function() {
     addPoint();

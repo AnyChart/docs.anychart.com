@@ -61,6 +61,7 @@ anychart.onDocumentReady(function() {
   streamButton.style.borderRadius = '7px 7px 7px 7px';
   streamButton.style.fontSize = '18px';
   streamButton.innerHTML = 'Start' + '\n' + 'stream';
+  streamButton.style.cursor = 'pointer';
   streamButton.onclick = function() {
     startStream();
   };
