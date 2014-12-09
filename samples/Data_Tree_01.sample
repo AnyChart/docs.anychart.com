@@ -27,7 +27,7 @@ anychart.onDocumentReady(function() {
   dataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
 
   // draw chart
-  dataGrid.container('container').draw();
+  dataGrid.container('container').height('50%').draw();
 });
 
 // style setter
