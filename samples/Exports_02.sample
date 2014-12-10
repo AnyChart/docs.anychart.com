@@ -40,6 +40,10 @@ anychart.onDocumentReady(function() {
   // set chart bounds
   chart.bounds(0, 0, chart.container().width()-35, chart.container().height());
 
+  // disable axes titles
+  chart.xAxis().title().enabled(false);
+  chart.yAxis().title().enabled(false);
+
   // initiate chart drawing
   chart.draw();
 
