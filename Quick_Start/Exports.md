@@ -17,3 +17,15 @@ AnyChart supports tree image-file formats: **SVG**, **PNG**, **JPG** and documen
 Here is a sample with buttons which represent each of methods mentioned above.
 
 {sample}Exports\_01{sample}
+
+##Chart Printing
+
+As a way of chart exporting AnyChart allows to print chart at any time using method **.print()**.
+
+```
+  chart.print();  // this method will print your chart
+```
+
+Sample below demonstrates chart printing after click on a button
+
+{sample}Exports\_02{sample}
