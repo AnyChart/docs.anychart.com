@@ -3,6 +3,7 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
+  // data
   data = [
     {x: 'Chocolate paste', value: 5},
     {x: 'White honey', value: 2},
@@ -10,24 +11,36 @@ anychart.onDocumentReady(function() {
     {x: 'Сondensed milk', value: 1},
   ];
 
+  // create default palette
   var palette = anychart.palettes.distinctColors().colors();
 
-  var chart = anychart.barChart();
-
+  // color elements
   for (var index in data){
       data[index].fill = palette[index];
   }
 
+  //set chart type
+  var chart = anychart.barChart();
+
+  // set data
   var series = chart.bar(data);
 
+  // disable tooltips
   series.tooltip().enabled(false);
 
+  // disable background
   chart.background().enabled(false);
 
+  //set chart title
   chart.title().text('The kind of pancakes preferred at the Sochi 2014 Olympic Games').hAlign('center');
+
+  // set chart container
   chart.container('container');
 
+  // set chart bounds
   chart.bounds(0, 0, chart.container().width()-35, chart.container().height());
+
+  // initiate chart drawing
   chart.draw();
 
   // create new buttons
@@ -71,6 +84,7 @@ anychart.onDocumentReady(function() {
 
   var custombuttons = document.getElementsByClassName('custombutton');
 
+  // set style for all buttons
   for (var i = 0; i<custombuttons.length; i++){
     // set button style
     custombuttons[i].style.top = 45*i + 'px';
