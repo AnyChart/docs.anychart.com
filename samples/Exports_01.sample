@@ -41,8 +41,8 @@ anychart.onDocumentReady(function() {
   jpgButton.className = 'custombutton';
   pdfButton.className = 'custombutton';
 
-  svgButton.innerHTML = 'PNG';
-  pngButton.innerHTML = 'SVG';
+  svgButton.innerHTML = 'SVG';
+  pngButton.innerHTML = 'PNG';
   jpgButton.innerHTML = 'JPG';
   pdfButton.innerHTML = 'PDF';
 
