@@ -52,7 +52,7 @@ anychart.onDocumentReady(function() {
   container.appendChild(triggerButton);
 
   // draw chart
-  treeDataGrid.container(stage).top(triggerButton.offsetHeight + 7).height(stage.height()/2).width('100%').draw();
+  treeDataGrid.container(stage).top(triggerButton.offsetHeight + 7).width('100%').draw();
 
   // set container height
   treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.titleHeight()+1);
