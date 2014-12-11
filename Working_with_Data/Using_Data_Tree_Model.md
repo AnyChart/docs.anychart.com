@@ -97,7 +97,7 @@ and type of new data.
 
 Sample below demonstrates adding data on click on a button.
 
-{sample}Data\_Tree\_03{sample}
+{sample :width 600 :height 250}Data\_Tree\_03{sample}
 
 ### Read
 
@@ -125,4 +125,4 @@ As far as we can add data, we can remove it too. Use **.removeChild()** method t
 
 Sample below demonstrates removing first element in the data tree.
 
-{sample :height 165}Data\_Tree\_06{sample}
+{sample :width 600 :height 165}Data\_Tree\_06{sample}
