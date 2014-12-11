@@ -53,7 +53,7 @@ anychart.onDocumentReady(function() {
 
   // draw chart
   treeDataGrid.container(stage).top(triggerButton.offsetHeight + 7).height(stage.height()/2).width('100%').draw();
-
+  treeDataGrid.container().height(161);
   var title = anychart.ui.title();
   title.parentBounds(0, 0, "100%", 30)
     .text('Click on Button to Remove First Element')
@@ -65,8 +65,12 @@ anychart.onDocumentReady(function() {
 
   function removePoint(){
     // check if there any children
-    if (childNum>0)
+    if (childNum>0){
       tree.removeChildAt(0);  // remove child
+
+      // change container size for the sake of visual appearance
+      treeDataGrid.container().height(treeDataGrid.container().height()-21);
+    }
     childNum--;               // reduce number of children in custom variable
   }
 });

@@ -34,7 +34,7 @@ anychart.onDocumentReady(function() {
   // disable axes titles
   chart.xAxis().title().enabled(false);
   chart.yAxis().title().enabled(false);
-  
+
   //set chart title
   chart.title().text('The kind of pancakes preferred at the Sochi 2014 Olympic Games').hAlign('center');
 

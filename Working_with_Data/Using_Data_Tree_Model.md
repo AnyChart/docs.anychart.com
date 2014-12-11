@@ -125,4 +125,4 @@ As far as we can add data, we can remove it too. Use **.removeChild()** method t
 
 Sample below demonstrates removing first element in the data tree.
 
-{sample}Data\_Tree\_06{sample}
+{sample :height 165}Data\_Tree\_06{sample}
