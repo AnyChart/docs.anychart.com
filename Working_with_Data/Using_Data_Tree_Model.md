@@ -52,7 +52,7 @@ convenience AnyChart accept two methods of setting data tree: through table and 
 
 Here is a sample with the result of proceeding data from the code above.
 
-{sample}Data\_Tree\_01{sample}
+{sample :width 690 :height 300}Data\_Tree\_01{sample}
 
 ## Data Manipulation
 
@@ -97,7 +97,7 @@ and type of new data.
 
 Sample below demonstrates adding data on click on a button.
 
-{sample :width 700 :height 350}Data\_Tree\_03{sample}
+{sample :width 690 :height 300}Data\_Tree\_03{sample}
 
 ### Read
 
@@ -112,7 +112,7 @@ data grid with custom columns. Each of them read data from custom field Data of 
 Every node in data tree may be updated. The node should be gotten first to proceed information adjustment. Sample
 below illustrates adding 1000 to a value of the third node.
 
-{sample}Data\_Tree\_05{sample}
+{sample :width 690 :height 300}Data\_Tree\_05{sample}
 
 
 ### Delete
@@ -125,4 +125,4 @@ As far as we can add data, we can remove it too. Use **.removeChild()** method t
 
 Sample below demonstrates removing first element in the data tree.
 
-{sample :width 800 :height 365}Data\_Tree\_06{sample}
+{sample :width 690 :height 300}Data\_Tree\_06{sample}
