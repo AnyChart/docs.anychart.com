@@ -27,7 +27,9 @@ anychart.onDocumentReady(function() {
   dataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
 
   // draw chart
-  dataGrid.container('container').height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.titleHeight()+1).draw();
+  dataGrid.container('container').draw();
+
+  dataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.titleHeight()+1);
 
   // get height of all children of the tree
   function fullChildrenHeight() {
@@ -44,7 +46,7 @@ anychart.onDocumentReady(function() {
 
       // if item height is undefined
       if (currentHeight !== void 0){
-        height += (curentHeight + 1);
+        height += (currentHeight + 1);
       } else {
         // if height of current item is undefined, default height is 20px + 1px row space
         height +=21;

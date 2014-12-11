@@ -72,7 +72,7 @@ anychart.onDocumentReady(function() {
       tree.removeChildAt(0);  // remove child
 
       // change container size for the sake of visual appearance
-      treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.titleHeight()+1;
+      treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.titleHeight()+1);
     }
     childNum--;               // reduce number of children in custom variable
   }
@@ -92,7 +92,7 @@ anychart.onDocumentReady(function() {
 
       // if item height is undefined
       if (currentHeight !== void 0){
-        height += (curentHeight + 1);
+        height += (currentHeight + 1);
       } else {
         // if height of current item is undefined, default height is 20px + 1px row space
         height +=21;
