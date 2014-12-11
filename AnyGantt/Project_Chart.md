@@ -18,6 +18,8 @@ Project Gantt Chart is intended for showing a progress of completion of a single
 // chart init
 ```
 
+{sample}GANTT\_Chart\_01{sample}
+
 ## Hierarchy
 
 Hierarchy can be set in two ways
