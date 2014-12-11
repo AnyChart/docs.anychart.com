@@ -41,7 +41,7 @@ anychart.onDocumentReady(function() {
   });
 
   // draw chart
-  treeDataGrid.container(stage).height('50%').top(37).draw();
+  treeDataGrid.container(stage).height(127).top(37).draw();
 
 
   var title = anychart.ui.title();
