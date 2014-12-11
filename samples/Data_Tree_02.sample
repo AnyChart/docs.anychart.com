@@ -60,9 +60,9 @@ anychart.onDocumentReady(function() {
 
   var title = anychart.ui.title();
   title.parentBounds(0, 0, "100%", 30)
-        .text('Different Data From the Same Tree')
-        .container(stage)
-        .draw();
+    .text('Different Data From the Same Tree')
+    .container(stage)
+    .draw();
 
   var nodeCount = 3;
 
@@ -74,6 +74,7 @@ anychart.onDocumentReady(function() {
     treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.titleHeight()+1);
   }
 
+  // get height of all children in the tree
   function fullChildrenHeight () {
     var height = 0;
     var traverser = tree.getTraverser();

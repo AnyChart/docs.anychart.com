@@ -52,7 +52,7 @@ convenience AnyChart accept two methods of setting data tree: through table and 
 
 Here is a sample with the result of proceeding data from the code above.
 
-{sample :width 690 :height 300}Data\_Tree\_01{sample}
+{sample :width 690 :height 180}Data\_Tree\_01{sample}
 
 ## Data Manipulation
 
@@ -72,7 +72,7 @@ This operations can be performed on root elements as well as for children of a n
 Data in a tree may be added through several methods. Sample below demonstrates adding of a child into data grid on
 click on a button.
 
-{sample}Data\_Tree\_02{sample}
+{sample :width 690 :height 400}Data\_Tree\_02{sample}
 
 Adding a child is quite useful method for adjusting data in real time and visualizing  actual processes.
 Nevertheless, adding only one child at a time may appear to be ineffective for managing data. Transferring prepared
@@ -97,7 +97,7 @@ and type of new data.
 
 Sample below demonstrates adding data on click on a button.
 
-{sample :width 690 :height 300}Data\_Tree\_03{sample}
+{sample :width 690 :height 270}Data\_Tree\_03{sample}
 
 ### Read
 
@@ -105,14 +105,14 @@ Data tree item may have unlimited number of data fields thus it requires methods
 item search through field value. **.get()** method reads required field of an item. Sample below demonstrates
 data grid with custom columns. Each of them read data from custom field Data of data grid.
 
-{sample}Data\_Tree\_04{sample}
+{sample :width 690 :height 200}Data\_Tree\_04{sample}
 
 ### Update
 
 Every node in data tree may be updated. The node should be gotten first to proceed information adjustment. Sample
 below illustrates adding 1000 to a value of the third node.
 
-{sample :width 690 :height 300}Data\_Tree\_05{sample}
+{sample :width 690 :height 200}Data\_Tree\_05{sample}
 
 
 ### Delete
@@ -125,4 +125,4 @@ As far as we can add data, we can remove it too. Use **.removeChild()** method t
 
 Sample below demonstrates removing first element in the data tree.
 
-{sample :width 690 :height 300}Data\_Tree\_06{sample}
+{sample :width 690 :height 200}Data\_Tree\_06{sample}
