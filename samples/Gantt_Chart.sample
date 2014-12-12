@@ -8,7 +8,7 @@ anychart.onDocumentReady(function(){
   var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TABLE);
 
   // chart type
-  var chart = anychart.ganttResource();
+  var chart = anychart.ganttProject();
 
   // chart container
   chart.container('container');
@@ -30,7 +30,7 @@ anychart.onDocumentReady(function(){
   // settings for the second column
   dataGrid.column(1).width(140).textFormatter(function(item) {
     return item.get('name');
-  }).title().text('Person');
+  }).title().text('Plan');
 
   // initiate drawing
   chart.draw();
