@@ -8,7 +8,7 @@ anychart.onDocumentReady(function(){
   var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 
   // chart type
-  var chart = anychart.ganttResource();
+  chart = anychart.ganttProject();
 
   // chart container
   chart.container('container');
