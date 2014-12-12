@@ -18,12 +18,11 @@
 
 ## Overview
 
-Polar chart plot allows to draw scatter chart using polar coordinate system, which is is a two-dimensional coordinate system in which each point on a plane is determined by a distance from a fixed point and an angle from a fixed direction.
+Polar chart plot allows to draw scatter chart using the polar coordinate system, which is a two-dimensional coordinate system in which each point on a plane is determined by a distance from a fixed point and an angle from a fixed direction.
 
 ## Chart
 
-AnyChart allows to display three types of series on Polar chart: Line, Area and Marker. You need to set **anychart.polar
-()** to display Polar chart:
+AnyChart allows to display three types of series on a Polar chart: Line, Area and Marker. You need to create a chart using **anychart.polar()** method to display Polar chart:
 
 ```
   // chart type
@@ -45,7 +44,7 @@ AnyChart allows to display three types of series on Polar chart: Line, Area and 
   ]);
 ```
 
-As you can see each point is represented by category set using name attribute and value set using y attribute.
+As you can see each point is represented by category set using x field and value set using y field.
 
 Here is a basic Polar sample:
 
@@ -53,7 +52,7 @@ Here is a basic Polar sample:
 
 ## Configuration
 
-Polar plot has several distinctive configuration options, which are presented in this section: chart rotation and background settings.
+Polar plot has several distinctive configuration options which are presented in this section: chart rotation and background settings.
 
 ### Start angle
 
@@ -87,9 +86,7 @@ Sample polar chart with tuned background:
 
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis
-scale and settings and many more. All axis features are described in
-[Axes tutorial](../Axes_Grid_Scales_Trends_etc/Axis_Basics).
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in [Axes tutorial](../Axes_Grid_Scales_Trends_etc/Axis_Basics).
 
 ### Stroke
 
@@ -103,10 +100,9 @@ Axis stroke appearance is controlled by **.stroke()** parameter.
   chart.yAxis().stroke('2 red');  // set stroke thickness equal to 2px and set red color to the stroke
 ```
 
-More information on possible stroke settings may be found in [Strokes and Lines tutorial](../General_Appearance_Settings/Strokes_and_Lines).
+More information on possible stroke settings can be found in [Strokes and Lines tutorial](../General_Appearance_Settings/Strokes_and_Lines).
 
-
-Here is a sample of tuned X and Y axes. Y axis has dashed red stroke and X axis has stroke colored with gradient.
+Here is a sample of tuned X and Y axes. Y axis has a dashed red stroke and X axis has a stroke colored with gradient.
 
 {sample}BCT\_PolarChart\_05{sample}
 
@@ -117,15 +113,13 @@ AnyChart allows to invert any axis. Inversion is controlled by axis **.inverted(
 ```
     chart.yScale().inverted(true);
 ```
-Take a look at the demonstration of Y Axis inversion in the sample below:
+Take a look at the demonstration of Y Axis inversion on the sample below:
 
 {sample}BCT\_PolarChart\_06{sample}
 
 ### Logarithmic Scale
 
-Data for charts may have great range of numeric values. For the sake of visual appearance of data on the plot it is
-recommended to use logarithmic scale. Scale type can be set with **.scale()** method. More information on scale types
- can be found in [Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#types)
+Logarithmic scale can be used in polar charts, scale type is set using **.scale()** method. More information on scale types can be found in [Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#types)
 
 ```
   var logScale = anychart.scales.log();   // create logarithmic scale
@@ -139,9 +133,7 @@ And here is the demonstration of Logarithmic Y Axis on a simple polar with area 
 
 ### Labels Settings
 
-You can easily tune visual appearance of axes labels as well as adjust labels length.
-
-In the sample below all names are limited to the length of 3:
+AnyChart allows to customise Axes Labels in any required way. Below is a sample of tuned x and y axes. X axis labels have **°** after the value and Y axis has its negative values set in brackets.
 
 ```
   // chart type
@@ -220,20 +212,17 @@ parameters:
 **Note:** full information on grid settings can be found in [grid section of Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#grids)
 
 
-Sample below demonstrates two polar charts with adjusted visualisation of the radial type of grid as well as of the
-circuit one.
+Sample below demonstrates two polar charts with adjusted visualisation of the radial type of grid as well as of the circular one.
 
 {sample}BCT\_PolarChart\_11{sample}
 
 ### Labels and Tooltips
 
-In this section we will explain how to add and configure data labels and tooltips.<!-- Full explanation of formatting
-and tuning visual appearance for them can be found in Labels and Tooltips.-->
+In this section we will explain how to add and configure data labels and tooltips.
 
 If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip()** methods. You can tune their visual appearance, positioning and format.
 
-When formatting data labels text we will use **.textFormatter()** to show month name. Otherwise sales will be displayed
-here.
+Next sample demonstrates bold series labels which display value of a point and tooltip shows detailed description.
 
 ```
   // chart type
@@ -266,7 +255,6 @@ Polar chart supports: Line, Area and Marker series types. You can learn how to c
 
 ## Missing Points
 
-Polar Chart allows to omit one or several points in data. To miss point set 'missing' into **value** field. On the
-sample below points from 60 to 70 are missing.
+Polar Chart allows to omit one or several points in a data set. To miss a point set 'missing' into **value** field. On the sample below points from 60 to 70 are missing.
 
 {sample}BCT\_PolarChart\_14{sample}

@@ -20,12 +20,11 @@
 
 A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables represented on axes starting from the same point. The relative position and angle of the axes is typically uninformative.
 
-
 The radar chart is also known as web chart, spider chart, star chart, cobweb chart, star plot, irregular polygon, or kiviat diagram.
 
 ## Chart
 
-AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to set **anychart.radar()** to display Radar chart:
+AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to create chart using **anychart.radar()** method to display Radar chart:
 
 ```
   // chart type
@@ -42,7 +41,7 @@ AnyChart allows to display three types of series on Radar chart: Line, Area and 
   ]);
 ```
 
-As you can see each point is represented through **x** and **value** parameters.
+As you can see each point is represented with **x** and **value** fields.
 
 Here is a basic Radar sample:
 
@@ -71,10 +70,10 @@ You can change radar background using **.background()** method, learn more about
 
 ```
   chart.background()
-    .enabled(true)                                  //enables background
+    .enabled(true)                                  // enables background
     .fill({
-      keys: ['.1 white', '.7 gray', '.9 darkgray'], //set gradient colors
-      angle: -130                                   //set angle of colors drawing
+      keys: ['.1 white', '.7 gray', '.9 darkgray'], // set gradient colors
+      angle: -130                                   // set angle of colors drawing
     });
 ```
 
@@ -84,12 +83,7 @@ Sample radar chart with tuned background:
 
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis
-scale and settings and many more. All axis features are described in
-[Axes tutorial](../Axes_Grid_Scales_Trends_etc/Axis_Basics).
-
-// Add information on topic content
-
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in [Axes tutorial](../Axes_Grid_Scales_Trends_etc/Axis_Basics).
 
 ### Stroke
 
@@ -103,7 +97,7 @@ Axis stroke appearance is controlled by **.stroke()** parameter.
   chart.yAxis().stroke('2 red');  // set stroke thickness equal to 2px and set red color to the stroke
 ```
 
-More information on possible stroke settings may be found in [Strokes and Lines tutorial](../General_Appearance_Settings/Strokes_and_Lines).
+More information on possible stroke settings can be found in [Strokes and Lines tutorial](../General_Appearance_Settings/Strokes_and_Lines).
 
 
 Here is a sample of tuned X and Y axes. Y axis has dashed red stroke and X axis has stroke colored with gradient.
@@ -112,7 +106,7 @@ Here is a sample of tuned X and Y axes. Y axis has dashed red stroke and X axis 
 
 ### Inversion
 
-AnyChart allows to invert any axis. Inversion is controlled by axis **.inverted()** parameter:
+AnyChart allows to invert any axis. Inversion is controlled by axis **.inverted()** method:
 
 ```
   chart.yScale().inverted(true);
@@ -123,10 +117,7 @@ Look at the demonstration of Y Axis inversion in the sample below:
 
 ### Logarithmic Scale
 
-Data for charts may have great range of numeric values. For the sake of visual appearance of data on the plot
-it is recommended to use logarithmic scale. Scale type can be set with **.scale()** method. More information on scale
- types
- can be found in [Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#types)
+Logarithmic scale type is set using **.scale()** method. More information on scale types can be found in [Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#types)
 
 ```
   var logScale = anychart.scales.log();   // create logarithmic scale
@@ -140,9 +131,7 @@ And here is the demonstration of Logarithmic Y Axis on a simple radar with area 
 
 ### Stacked Mode
 
-Multiple area series may be presented with usage of stacked mode for Y scale. Stacked mode helps to visualize data in
- a convenient way for comparing different data series which shares one of the values. Use **.stackMode()** parameter to
- enable stacked mode.
+Multiple area series can be presented with usage of stacked mode for Y scale. Stacked mode helps to visualize data in a convenient way for comparing different data series which shares one of the values. Use **.stackMode()** parameter to enable stacked mode.
 
 ```
   // set chart type
@@ -154,8 +143,7 @@ Multiple area series may be presented with usage of stacked mode for Y scale. St
 
 {sample}BCT\_RadarChart\_08{sample}
 
-Percent stacked mode calculates the proportion of each point to the category sum and uses this percentage as a value.
- To enable this mode use **.stackMode('percent')** parameter.
+Percent stacked mode calculates the proportion of each point to the category sum and uses this percentage as a value. To enable this mode set **.stackMode('percent')**.
 
 {sample}BCT\_RadarChart\_09{sample}
 
@@ -179,7 +167,7 @@ In the sample below all names are limited to the length of 3:
         myValue = longValue.substr(0, 3) + '...';   // adjust value
       }
       else{
-        myValue = fullValue;                        // return untouched value
+        myValue = fullValue;                        // return full value
       }
       return myValue;                               // return new value
     });
@@ -190,7 +178,7 @@ In the sample below all names are limited to the length of 3:
 You can change labels background. Learn more about background configuration in [Background settings tutorial](#../General_Appearance_Settings/Background).
 
 ```
-  // axes settings
+  //axes settings
   chart.xAxis()
     .labels()                   // settings for labels
       .padding(5)               // set padding for labels
@@ -205,56 +193,46 @@ You can change labels background. Learn more about background configuration in [
 
 {sample}BCT\_RadarChart\_11{sample}
 
-You can hide first and/or last labels using **.drawFirstLabel()** and **.drawLastLabel()** parameters:
+You can hide the first and/or the last labels using **.drawFirstLabel()** and **.drawLastLabel()** parameters:
 
 ```
   chart.yAxis()
-    .drawFirstLabel(false)  //hides first label of y Axis
-    .drawLastLabel(false);  //hides last label of y Axis
+    .drawFirstLabel(false)  // hides the first label of y Axis
+    .drawLastLabel(false);  // hides the last label of y Axis
 ```
 
 {sample}BCT\_RadarChart\_12{sample}
 
 ## Visualisation
 
-In this section we will describe main parts of radar chart style and demonstrate how style can be applied.
-
-
-The main idea of styles is to segregate visualization and data definition. Visual appearance of columns is defined
-using certain methods.
-
 ### Grid
 
-Radar grid is a combination of circular and radial grids. Grid visual appearance can be controlled with several
-parameters:
+Radar grid is a combination of circular and radial grids. Grid visual appearance is set using several
+methods:
 
 ```
   // chart type
   var chart = anychart.radarChart();
 
   chart.grid(0).
-    .oddFill('red')       // coloring odd cells in the grid
-    .evenFill('darkred')  // coloring even cells in the grid
+    .oddFill('red')       // color odd cells in the grid
+    .evenFill('darkred')  // color even cells in the grid
     .layout('radial');    // set layout type
 ```
 
-**Note:** full information on grid settings can be found in [grid section of Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#grids)
+**Note:** full information on grid settings can be found in [Grid section of Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#grids)
 
 
 Sample below demonstrates two radar charts with adjusted visualisation of the radial type of grid as well as of the
-circuit one.
+circular one.
 
 {sample}BCT\_RadarChart\_13{sample}
 
 ### Labels and Tooltips
 
-In this section we will explain how to add and configure data labels and tooltips.<!-- Full explanation of formatting
-and tuning visual appearance for them can be found in Labels and Tooltips.-->
+In this section we will explain how to add and configure data labels and tooltips.
 
 If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip()** methods. You can tune their visual appearance, positioning and format.
-
-When formatting data labels text we will use **.textFormatter()** to show month name. Otherwise sales will be displayed
-here.
 
 ```
   // chart type
@@ -280,6 +258,6 @@ here.
 
 ## Series Types
 
-Radar chart supports: Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
+Radar chart supports Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
 
 {sample}BCT\_RadarChart\_15{sample}
