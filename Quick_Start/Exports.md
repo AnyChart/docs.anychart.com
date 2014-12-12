@@ -1,9 +1,7 @@
 {:index 3}
 Exports
 ======================
-AnyChart allows to save charts in different formats. It may be an image or pdf file. This article is fully devoted to all possible means of saving and even printing AnyChart.
-
-##Supported output Formats
+AnyChart allows to save charts in different formats. It may be an image or pdf file.
 
 AnyChart supports tree image-file formats: **SVG**, **PNG**, **JPG** and document-file format format: **PDF**. Any chart can be exported into each of these formats. All methods for all of this export formats are represented below:
 
