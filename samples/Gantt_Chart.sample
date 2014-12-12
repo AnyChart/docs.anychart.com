@@ -45,38 +45,40 @@ function getData() {
   {
     "id": "1",
     "name": "Phase 1 - Strategic Plan",
-    "actualStart": 1171468800000,
-    "actualEnd": 1171987200000
-  },
-  {
-    "id": "2",
-    "name": "Self-Assessment",
-    "actualStart": 1173024000000,
-    "actualEnd": 1173715200000
-  },
-  {
-    "id": "3",
-    "name": "Define business vision",
-    "actualStart": 1169740800000,
-    "actualEnd": 1170172800000
-  },
-  {
-    "id": "4",
-    "name": "Identify available skills, information and support",
-    "actualStart": 1171814400000,
-    "actualEnd": 1172419200000
-  },
-  {
-    "id": "5",
-    "name": "Decide whether to proceed",
-    "actualStart": 1171296000000,
-    "actualEnd": 1171382400000
-  },
-  {
-    "id": "6",
-    "name": "Define the Opportunity",
-    "actualStart": 1173628800000,
-    "actualEnd": 1174320000000
+    "actualStart": Date.UTC(2007, 0, 25),
+    "actualEnd": Date.UTC(2007, 2, 14),
+    children: [
+      {
+        "id": "2",
+        "name": "Self-Assessment",
+        "actualStart": 1173024000000,
+        "actualEnd": 1173715200000
+      },
+      {
+        "id": "3",
+        "name": "Define business vision",
+        "actualStart": 1169740800000,
+        "actualEnd": 1170172800000
+      },
+      {
+        "id": "4",
+        "name": "Identify available skills, information and support",
+        "actualStart": 1171814400000,
+        "actualEnd": 1172419200000
+      },
+      {
+        "id": "5",
+        "name": "Decide whether to proceed",
+        "actualStart": 1171296000000,
+        "actualEnd": 1171382400000
+      },
+      {
+        "id": "6",
+        "name": "Define the Opportunity",
+        "actualStart": 1173628800000,
+        "actualEnd": 1174320000000
+      }
+    ]
   }
   ];
 }
