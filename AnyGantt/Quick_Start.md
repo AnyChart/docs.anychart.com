@@ -29,40 +29,31 @@ AnyGantt provides opportunity  much more ways of working with data (such as sett
 function getData() {
   return [
   {
-    "id": "1",
-    "name": "Phase 1 - Strategic Plan",
-    "actualStart": 1171468800000,
-    "actualEnd": 1171987200000
-  },
-  {
-    "id": "2",
-    "name": "Self-Assessment",
-    "actualStart": 1173024000000,
-    "actualEnd": 1173715200000
-  },
-  {
-    "id": "3",
-    "name": "Define business vision",
-    "actualStart": 1169740800000,
-    "actualEnd": 1170172800000
-  },
-  {
-    "id": "4",
-    "name": "Identify available skills, information and support",
-    "actualStart": 1171814400000,
-    "actualEnd": 1172419200000
-  },
-  {
-    "id": "5",
-    "name": "Decide whether to proceed",
-    "actualStart": 1171296000000,
-    "actualEnd": 1171382400000
-  },
-  {
-    "id": "6",
-    "name": "Define the Opportunity",
-    "actualStart": 1173628800000,
-    "actualEnd": 1174320000000
+    "name": "Activities",
+    "actualStart": Date.UTC(2007, 0, 25),
+    "actualEnd": Date.UTC(2007, 2, 14),
+    "children": [
+      {
+        "name": "Draft plan",
+        "actualStart": Date.UTC(2007, 0, 25),
+        "actualEnd": Date.UTC(2007, 1, 3)
+      },
+      {
+        "name": "Board meeting",
+        "actualStart": Date.UTC(2007, 1, 4),
+        "actualEnd": Date.UTC(2007, 1, 4)
+      },
+      {
+        "name": "Research option",
+        "actualStart": Date.UTC(2007, 1, 4),
+        "actualEnd": Date.UTC(2007, 1, 24)
+      },
+      {
+        "name": "Final plan",
+        "actualStart": Date.UTC(2007, 1, 24),
+        "actualEnd": Date.UTC(2007, 2, 14)
+      }
+    ]
   }
   ];
 }
@@ -77,21 +68,11 @@ Example:
 <script>
 anychart.onDocumentReady(function(){
   // data tree settings
-  var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
-  var chart = anychart.ganttProject();                  // chart type
-  chart.bounds(0, 0, '100%', '100%');                   // chart position
-  chart.data(treeData);                                 // chart data
-  chart.splitterPosition(170);                          // data tree width
-  var dataGrid = chart.getDataGrid();                   // create data grid
-  dataGrid.column(0).width(30).title().text('#');       // settings for first column
-
-  // settings for the second column
-  dataGrid.column(1).width(140).textFormatter(function(item) {
-    return item.get('name');
-  }).title().text('Plan');
-
-  // set container and initiate drawing
-  chart.container('container').draw();
+  var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TREE);
+  var chart = anychart.ganttProject();      // chart type
+  chart.data(treeData);                     // chart data
+  var dataGrid = chart.getDataGrid();       // create data grid
+  chart.container('container').draw();      // set container and initiate drawing
 });
 </script>
 ```
@@ -99,7 +80,7 @@ anychart.onDocumentReady(function(){
 ## The result
 ###See the result
 After all these steps you should have the following result. This example, like any other on our site, can be launched and explored using the samples playground.
-{sample}Gantt\_Chart{sample}
+{sample :width 690 :height 200}Gantt\_Chart{sample}
 ###Full source code
 You can copy this to a file on your computer and open it in your browser to display the Gantt Chart shown above:
 ```
@@ -131,28 +112,30 @@ You can copy this to a file on your computer and open it in your browser to disp
       return [
       {
         "name": "Activities",
-        "actualStart": 1171468800000,
-        "actualEnd": 1171987200000
-      },
-      {
-        "name": "Draft plan",
-        "actualStart": 1173024000000,
-        "actualEnd": 1173715200000
-      },
-      {
-        "name": "Board meeting",
-        "actualStart": 1169740800000,
-        "actualEnd": 1170172800000
-      },
-      {
-        "name": "Research option",
-        "actualStart": 1171814400000,
-        "actualEnd": 1172419200000
-      },
-      {
-        "name": "Final plan",
-        "actualStart": 1171296000000,
-        "actualEnd": 1171382400000
+        "actualStart": Date.UTC(2007, 0, 25),
+        "actualEnd": Date.UTC(2007, 2, 14),
+        "children": [
+          {
+            "name": "Draft plan",
+            "actualStart": Date.UTC(2007, 0, 25),
+            "actualEnd": Date.UTC(2007, 1, 3)
+          },
+          {
+            "name": "Board meeting",
+            "actualStart": Date.UTC(2007, 1, 4),
+            "actualEnd": Date.UTC(2007, 1, 4)
+          },
+          {
+            "name": "Research option",
+            "actualStart": Date.UTC(2007, 1, 4),
+            "actualEnd": Date.UTC(2007, 1, 24)
+          },
+          {
+            "name": "Final plan",
+            "actualStart": Date.UTC(2007, 1, 24),
+            "actualEnd": Date.UTC(2007, 2, 14)
+          }
+        ]
       }
       ];
     }
