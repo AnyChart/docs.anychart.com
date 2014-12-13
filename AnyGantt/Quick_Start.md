@@ -80,7 +80,7 @@ anychart.onDocumentReady(function(){
 ## The result
 ###See the result
 After all these steps you should have the following result. This example, like any other on our site, can be launched and explored using the samples playground.
-{sample :width 690 :height 190}Gantt\_Chart{sample}
+{sample :width 690 :height 180}Gantt\_Chart{sample}
 ###Full source code
 You can copy this to a file on your computer and open it in your browser to display the Gantt Chart shown above:
 ```
