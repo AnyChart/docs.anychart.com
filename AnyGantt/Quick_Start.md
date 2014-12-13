@@ -1,5 +1,5 @@
 {:index 1}
-Quick Start
+Gantt Chart Quick Start
 ===========
   
 ## 4 Simple Steps to Start Using Gantt Chart
