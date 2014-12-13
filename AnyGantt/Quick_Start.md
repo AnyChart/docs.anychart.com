@@ -23,7 +23,7 @@ Example:
 ```
 ###3. Prepare your Data
 
-AnyGantt provides opportunity  much more ways of working with data (such as setting tree like hierarchy with parent/child division), thus it requires preparing data before usage.
+Gantt Chart provides quite a few opportunities to work with data (such as setting tree like hierarchy with parent/child division), thus it requires preparing data before usage.
 
 ```
 function getData() {
