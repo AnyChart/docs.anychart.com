@@ -75,7 +75,7 @@ To make design easier - AnyChart Provides several color transformation functions
 
 ### Light Color
 
-*.lighten()* function is used to return for sure a color that is lighter than a given, for example, if input color is Black - we will get some non-black color, that can be used for highlighting element. Input color can be specified in any of the specified above.
+{api:anychart.color#lighten}**.lighten()**{api} function is used to return for sure a color that is lighter than a given, for example, if input color is Black - we will get some non-black color, that can be used for highlighting element. Input color can be specified in any of the specified above.
 
 ```
     anychart.color.lighten('#FF0000', 0.2)
@@ -100,7 +100,7 @@ To make design easier - AnyChart Provides several color transformation functions
 
 ### Dark Color
 
-**.darken()** function is used to return for sure a color that is darker than a given, for example, if input color is White - we will get some non-white color, that can be used for outlining an element. Input color can be specified in any of the specified above.
+{api:anychart.color#darken}**.darken()**{api} function is used to return for sure a color that is darker than a given, for example, if input color is White - we will get some non-white color, that can be used for outlining an element. Input color can be specified in any of the specified above.
 
 ```
     anychart.color.darken('#FF0000', 0.2)
@@ -125,7 +125,7 @@ To make design easier - AnyChart Provides several color transformation functions
 
 ### Blend
 
-*.blend()* function allows you to mix two colors with a given ratio, it gives even wider control over getting the right tone.
+{api:anychart.color#blend}**.blend()**{api} function allows you to mix two colors with a given ratio, it gives even wider control over getting the right tone.
 
 ```
 var color1 = [255, 0, 0];

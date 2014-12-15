@@ -12,13 +12,13 @@
 
 In this tutorial we will explain in details how to configure background in AnyChart.
 
-Background consists of fill, stroke and border corners. These element are configured using {api:anychart.core.ui.Background#fill}**.fill()**{api}, **.border()** and **.corners()** attributes. Background is used in chart titles, labels, tooltips, chart background, data plot, and many more, and they all are configured the same way.
+Background consists of fill, stroke and border corners. These element are configured using {api:anychart.core.ui.Background#fill}**.fill()**{api}, {api:anychart.core.ui.Background#border}**.border()**{api} and {api:anychart.core.ui.Background#corners}**.corners()**{api} attributes. Background is used in chart titles, labels, tooltips, chart background, data plot, and many more, and they all are configured the same way.
 
 Below you will find the reference of the most important parameters of the mentioned methods and see the demonstration of theirs settings.
 
 ## Stroke
 
-Border is configured using **.stroke()** parameter. Stroke can be **"Solid"**, **"Dashed"** and **"Gradient"**. If type
+Border is configured using {api:anychart.core.ui.Background#stroke}**.stroke()**{api} parameter. Stroke can be **"Solid"**, **"Dashed"** and **"Gradient"**. If type
  is **"Solid"**, then color is specified using color attribute; to configure **"Gradient"** you have to use gradient keys. Dashed borders have to be set with special keys too.
 
 Sample solid stroke settings:
@@ -49,7 +49,7 @@ On the chart below you can see 3 different border types and a chart without a bo
 
 ## Fill
 
-With AnyChart it is possible to color background with a solid color, with a gradient transition or fill it with an image. Fill is configured using **.fill()** method and depending on the type it has different parameters.
+With AnyChart it is possible to color background with a solid color, with a gradient transition or fill it with an image. Fill is configured using {api:anychart.core.ui.Background#fill}**.fill()**{api} method and depending on the type it has different parameters.
 
 ### Solid
 
