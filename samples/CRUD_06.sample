@@ -19,12 +19,7 @@ anychart.onDocumentReady(function() {
     {x: 'P12', value: 195},
     {x: 'P13', value: 22},
     {x: 'P14', value: 175},
-    {x: 'P15', value: 120},
-    {x: 'P16', value: 92},
-    {x: 'P17', value: 75},
-    {x: 'P18', value: 30},
-    {x: 'P19', value: 157},
-    {x: 'P20', value: 200},
+    {x: 'P15', value: 120}
   ]);
 
   // set chart type
