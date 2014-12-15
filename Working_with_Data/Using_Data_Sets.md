@@ -7,111 +7,111 @@ For example, here is some data about a weather in three cities, and we want to s
 
 <table border="1" class="dtTABLE">
 <tbody>
-  <tr>
-    <th><b>Date</b></th>
-    <th><b>New York</b></th>	
-    <th><b>San Francisco</b></th>
-    <th><b>Los Angeles</b></th>
-  </tr>
-  <tr>
-    <td>2014/6/25</td>
-    <td>28</td>
-    <td>23</td>
-    <td>28</td>	
-  </tr>
-  <tr>
-    <td>2014/6/26</td>
-    <td>26</td>
-    <td>21</td>
-    <td>26</td>	
-  </tr>
-  <tr>
-    <td>2014/6/27</td>
-    <td>27</td>
-    <td>19</td>
-    <td>26</td>		
-  </tr>
-  <tr>
-    <td>2014/6/28</td>
-    <td>25</td>
-    <td>21</td>
-    <td>27</td>		
-  </tr>
-  <tr>
-    <td>2014/6/29</td>
-    <td>29</td>
-    <td>22</td>
-    <td>28</td>		
-  </tr>
-  <tr>
-    <td>2014/6/30</td>
-    <td>28</td>
-    <td>25</td>
-    <td>27</td>		
-  </tr>
-  </tbody>
+<tr>
+<th><b>Date</b></th>
+<th><b>New York</b></th>	
+<th><b>San Francisco</b></th>
+<th><b>Los Angeles</b></th>
+</tr>
+<tr>
+<td>2014/6/25</td>
+<td>28</td>
+<td>23</td>
+<td>28</td>	
+</tr>
+<tr>
+<td>2014/6/26</td>
+<td>26</td>
+<td>21</td>
+<td>26</td>	
+</tr>
+<tr>
+<td>2014/6/27</td>
+<td>27</td>
+<td>19</td>
+<td>26</td>		
+</tr>
+<tr>
+<td>2014/6/28</td>
+<td>25</td>
+<td>21</td>
+<td>27</td>		
+</tr>
+<tr>
+<td>2014/6/29</td>
+<td>29</td>
+<td>22</td>
+<td>28</td>		
+</tr>
+<tr>
+<td>2014/6/30</td>
+<td>28</td>
+<td>25</td>
+<td>27</td>		
+</tr>
+</tbody>
 </table>
   
 In many cases you are forced to create three sets to create a line chart with three series:
 
 <table border="1" class="dtTABLE">
 <tbody>
-  <tr>   
-    <th><b>Date</b>  </th>
-    <th><b>New York</b>  </th>
-    <th><b>Date</b></th>
-    <th><b>San Francisco</b></th>
-    <th><b>Date</b></th>
-    <th><b>Los Angeles</b></th>
-  </tr>
-  <tr>   
-    <td>2014/6/25 </td>
-    <td>28</td>
-    <td>2014/6/25</td>
-    <td>23</td>
-    <td>2014/6/25</td>
-    <td>28</td>
-  </tr>
-  <tr>   
-    <td>2014/6/26</td>
-    <td>26</td>
-    <td>2014/6/26</td>
-    <td>21</td>
-    <td>2014/6/26</td>
-    <td>26</td>
-  </tr>
-  <tr>   
-    <td>2014/6/27 </td>
-    <td>27</td>
-    <td>2014/6/27</td>
-    <td>19</td>
-    <td>2014/6/27</td>
-    <td>26</td>
-  </tr>
-  <tr>   
-    <td>2014/6/28 </td>
-    <td>25</td>
-    <td>2014/6/28</td>
-    <td>21</td>
-    <td>2014/6/28</td>
-    <td>27</td>
-  </tr>
-  <tr>   
-    <td>2014/6/29</td>
-    <td>29</td>
-    <td>2014/6/29</td>
-    <td>22</td>
-    <td>2014/6/29</td>
-    <td>28</td>
-  </tr>
-  <tr>   
-    <td>2014/6/30 </td>
-    <td>28</td>
-    <td>2014/6/30</td>
-    <td>25</td>
-    <td>2014/6/30</td>
-    <td>27</td>
-  </tr>
+<tr>   
+<th><b>Date</b>  </th>
+<th><b>New York</b>  </th>
+<th><b>Date</b></th>
+<th><b>San Francisco</b></th>
+<th><b>Date</b></th>
+<th><b>Los Angeles</b></th>
+</tr>
+<tr>   
+<td>2014/6/25 </td>
+<td>28</td>
+<td>2014/6/25</td>
+<td>23</td>
+<td>2014/6/25</td>
+<td>28</td>
+</tr>
+<tr>   
+<td>2014/6/26</td>
+<td>26</td>
+<td>2014/6/26</td>
+<td>21</td>
+<td>2014/6/26</td>
+<td>26</td>
+</tr>
+<tr>   
+<td>2014/6/27 </td>
+<td>27</td>
+<td>2014/6/27</td>
+<td>19</td>
+<td>2014/6/27</td>
+<td>26</td>
+</tr>
+<tr>   
+<td>2014/6/28 </td>
+<td>25</td>
+<td>2014/6/28</td>
+<td>21</td>
+<td>2014/6/28</td>
+<td>27</td>
+</tr>
+<tr>   
+<td>2014/6/29</td>
+<td>29</td>
+<td>2014/6/29</td>
+<td>22</td>
+<td>2014/6/29</td>
+<td>28</td>
+</tr>
+<tr>   
+<td>2014/6/30 </td>
+<td>28</td>
+<td>2014/6/30</td>
+<td>25</td>
+<td>2014/6/30</td>
+<td>27</td>
+</tr>
 </tbody> 
 </table>
 In simple cases it is not so difficult and you can allow some data duplication. But when you start to create something complex, like a dashboard – it may become a pain, especially when you need to append, update or remove some data from all sets to sync them.  
