@@ -16,7 +16,7 @@ AnyChart allows you to set color of any element of the chart, and moreover - it 
 
 ## Color Formats
 
-As it is said above AnyChart supports the following color setting notation, which means you can use any of them when setting a value of **.color()**, **.fill()**, and other attributes in any method:
+As it is said above AnyChart supports the following color setting notation, which means you can use any of them when setting a value of {api:anychart.color}**.color()**{api}, **.fill()**, and other attributes in any method:
 
 * Hexadecimal (html-like)
 * Red Green Blue

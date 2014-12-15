@@ -165,7 +165,7 @@ names to each series:
 ```
 
 As we now have multi-series chart we don't want to set **type of chart** for each series individually (there can be 
-much more than two series in multi-series chart), so we set **chart** as **anychart.areaChart()**. Now all series in 
+much more than two series in multi-series chart), so we set **chart** as {api:anychart#area}**anychart.areaChart()**{api}. Now all series in
 the chart will be of Area type by default.
 
 {sample}BCT\_AreaChart\_03{sample}
@@ -180,7 +180,7 @@ orientation can be adjusted, how axis scale can be inverted and how minimum and 
 ### Orientation
 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with 
-**.orientation()** parameter of **.yAxis()** or **.xAxis()** method.
+{api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.core.axes.Linear}**.yAxis()**{api} or {api:anychart.core.axes.Linear}**.xAxis()**{api} method.
   
 Axes position depends on plot type, orientation and inversion of axes.
 
