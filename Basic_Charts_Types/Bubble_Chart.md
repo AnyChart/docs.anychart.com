@@ -182,7 +182,7 @@ Note again, that setting size in pixels may lead to the nasty results when chart
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, 
 axis scale and settings and many more. All axis features are described in 
-[Axes Basics](../Axes_Grid_Scales_Trends_etc/Axis_Basics) tutorial. 
+[Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial.
   
 In this section we will quickly demonstrate how 
 axis orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
@@ -193,7 +193,7 @@ With AnyChart you can place axes to any side if the chart, all you need to do is
 parameter of **.yAxis()** or **.xAxis()** methods.
   
 Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and inversion 
-settings in [Axis Orientation](../Axes_Grid_Scales_Trends_etc/Axis_Orientation) tutorial.
+settings in [Axis Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
 
 ```
     chart.xAxis(0).orientation('top');

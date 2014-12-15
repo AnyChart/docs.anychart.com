@@ -279,7 +279,7 @@ AnyChart technology allows printing of charts. Some color printers print colors 
 to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart 
 has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who 
 are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings. To
- see whole range of available hatch types see [Hatch](../General_Appearance_Settings/Hatch_Fill) tutorial.
+ see whole range of available hatch types see [Hatch](../Appearance_Settings/Hatch_Fill) tutorial.
   
   
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 

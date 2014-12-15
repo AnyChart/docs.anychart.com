@@ -212,7 +212,7 @@ The sample of scatter marker chart can be found in Scatter Charts Tutorial.
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
 scale and settings and many more. All axis features are described in 
-[Axes Basic](../Axes_Grid_Scales_Trends_etc/Axis_Basics) tutorial, in this section we will quickly demonstrate how axis 
+[Axes Basic](../Axes_and_Grids/Axis_Basics) tutorial, in this section we will quickly demonstrate how axis
 orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
 ### Orientation
@@ -222,7 +222,7 @@ With AnyChart you can place axes to any side if the chart, all you need to do is
   
   
 Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and inversion 
-settings in [Axes Orientation](../Axes_Grid_Scales_Trends_etc/Axis_Orientation) tutorial.
+settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
 
 ```
     chart.xAxis(0).orientation('top');
@@ -338,7 +338,7 @@ color will be the same. Depending on your system/site/application design you may
 setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and 
 in the following Help Sections:
 
-[Different ways of setting colors of elements](../General_Appearance_Settings/Color_Management)
+[Different ways of setting colors of elements](../Appearance_Settings/Color_Management)
 <!--Advanced coloring techniques in [link in need]Styles tutorial[link in need]-->
 
 ## Hatch Fills
@@ -347,7 +347,7 @@ AnyChart technology allows printing of charts. Some color printers print colors 
 to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart 
 has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who 
 are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings and 
-palettes. To see whole range of available hatch types see [Hatch tutorial](../General_Appearance_Settings/Hatch_Fill).
+palettes. To see whole range of available hatch types see [Hatch tutorial](../Appearance_Settings/Hatch_Fill).
   
   
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 

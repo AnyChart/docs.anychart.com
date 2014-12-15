@@ -69,7 +69,7 @@ Sample chart with starting angle shifted to 90°:
 
 ### Plot background
 
-You can change polar background using **.background()** method, learn more about this method at [Background settings tutorial](../General_Appearance_Settings/Background).
+You can change polar background using **.background()** method, learn more about this method at [Background settings tutorial](../Appearance_Settings/Background).
 
 ```
   chart.background()
@@ -86,7 +86,7 @@ Sample polar chart with tuned background:
 
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in [Axes tutorial](../Axes_Grid_Scales_Trends_etc/Axis_Basics).
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in [Axes tutorial](../Axes_and_Grids/Axis_Basics).
 
 ### Stroke
 
@@ -100,7 +100,7 @@ Axis stroke appearance is controlled by **.stroke()** parameter.
   chart.yAxis().stroke('2 red');  // set stroke thickness equal to 2px and set red color to the stroke
 ```
 
-More information on possible stroke settings can be found in [Strokes and Lines tutorial](../General_Appearance_Settings/Strokes_and_Lines).
+More information on possible stroke settings can be found in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines).
 
 Here is a sample of tuned X and Y axes. Y axis has a dashed red stroke and X axis has a stroke colored with gradient.
 
@@ -119,7 +119,7 @@ Take a look at the demonstration of Y Axis inversion on the sample below:
 
 ### Logarithmic Scale
 
-Logarithmic scale can be used in polar charts, scale type is set using **.scale()** method. More information on scale types can be found in [Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#types)
+Logarithmic scale can be used in polar charts, scale type is set using **.scale()** method. More information on scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
 
 ```
   var logScale = anychart.scales.log();   // create logarithmic scale
@@ -158,7 +158,7 @@ AnyChart allows to customise Axes Labels in any required way. Below is a sample 
 
 {sample}BCT\_PolarChart\_08{sample}
 
-You can change labels background. Learn more about background configuration in [Background settings tutorial](#../General_Appearance_Settings/Background).
+You can change labels background. Learn more about background configuration in [Background settings tutorial](#../Appearance_Settings/Background).
 
 ```
   // axes settings
@@ -209,7 +209,7 @@ parameters:
     .layout('radial');    // set layout type
 ```
 
-**Note:** full information on grid settings can be found in [grid section of Scale tutorial](../Axes_Grid_Scales_Trends_etc/Scales#grids)
+**Note:** full information on grid settings can be found in [grid section of Scale tutorial](../Axes_and_Grids/Scales#grids)
 
 
 Sample below demonstrates two polar charts with adjusted visualisation of the radial type of grid as well as of the circular one.

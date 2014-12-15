@@ -75,7 +75,7 @@ Here is the sample with both horizontal and vertical layouts.
 
 ## Axis
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings. All axis features are described in [Axes Basics](../Axes_Grid_Scales_Trends_etc/Axis_Basics) tutorial, In this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted  and how minimum and maximum values can be set. 
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings. All axis features are described in [Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial, In this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted  and how minimum and maximum values can be set.
   
   
 **Note:** In most cases chart has at least two axes, but Bullet Chart always represents only one data series and  there is no need in two axes.

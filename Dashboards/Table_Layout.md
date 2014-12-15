@@ -63,7 +63,7 @@ it with an image. It can be achieved with **.fill()** parameter.
   
   
 This section contains information on colorizing the whole table and each of the cells separately. To find out all 
-possible ways of controlling background color of an element, please see [background controlling](../General_Appearance_Settings/Background)
+possible ways of controlling background color of an element, please see [background controlling](../Appearance_Settings/Background)
  tutorial
 
 #### Table fill
@@ -103,7 +103,7 @@ For emphasizing attention on one of the cells, it can be colorized in unique way
 
 Border is a part of a table. It visually divides whole table into separate cells as well as wraps these cells. As any
  part of chart it can be configured and all settings can be adjusted. In this section there are just several
- demonstration samples. Full information on borders and lines settings can be found in [Strokes and Lines](../General_Appearance_Settings/Strokes_and_Lines) tutorial.
+ demonstration samples. Full information on borders and lines settings can be found in [Strokes and Lines](../Appearance_Settings/Strokes_and_Lines) tutorial.
   
   
 In this section revealed all methods of controlling borders in a table. 

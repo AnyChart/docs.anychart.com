@@ -219,7 +219,7 @@ As we do in single series sample above we need to convert this table into accept
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
 scale and settings and much more. All axis features are described in 
-[Axes Basics](../Axes_Grid_Scales_Trends_etc/Axis_Basics) tutorial. In this section we will quickly demonstrate how 
+[Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial. In this section we will quickly demonstrate how
 axis orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
 ### Orientation
