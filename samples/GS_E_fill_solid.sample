@@ -8,12 +8,11 @@ anychart.onDocumentReady(function() {
     stage.path()
         .moveTo(stage.width() / 2, 0)
         .lineTo(stage.width() / 2, stage.height());
-    var bg = anychart.ui.label().background();
     var lbl = anychart.ui.label()
         .parentBounds(anychart.math.rect(0, 0, stage.width()/2, stage.height()))
         .width(stage.width() / 3)
         .height(stage.height() - 20)
-        .background(bg.fill('yellow'))
+        .background({fill:'yellow'})
         .text('fill: yellow\nopacity: 1')
         .padding(10);
     lbl.background().enabled(true);
@@ -23,7 +22,7 @@ anychart.onDocumentReady(function() {
         .parentBounds(anychart.math.rect(stage.width()/2, 0, stage.width()/2, stage.height()))
         .width(stage.width() / 3)
         .height(stage.height() - 20)
-        .background(bg.fill('yellow 0.2'))
+        .background({fill:'yellow 0.2'})
         .text('fill: yellow\nopacity: 0.2')
         .padding(10);
     lbl.background().enabled(true);
