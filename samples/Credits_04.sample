@@ -12,7 +12,7 @@ anychart.onDocumentReady(function() {
     chart.credits().enabled(true);
 
     // custom logo src
-    chart.credits().logoSrc('http:// static.anychart.com/github.png');
+    chart.credits().logoSrc('http://static.anychart.com/github.png');
 
     // draw
     chart.container('container').draw();

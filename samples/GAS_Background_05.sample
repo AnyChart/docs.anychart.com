@@ -27,7 +27,7 @@ anychart.onDocumentReady(function() {
 
     // set chart background
     chart.background().fill({
-        src: 'http:// static.anychart.com/underwater.jpg',
+        src: 'http://static.anychart.com/underwater.jpg',
         mode: acgraph.vector.ImageFillMode.FIT_MAX
     });
 
