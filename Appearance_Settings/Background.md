@@ -12,7 +12,7 @@
 
 In this tutorial we will explain in details how to configure background in AnyChart.
 
-Background consists of fill, stroke and border corners. These element are configured using {api:anychart.core.ui.Background#fill}**.fill()**{api}, {api:anychart.core.ui.Background#border}**.border()**{api} and {api:anychart.core.ui.Background#corners}**.corners()**{api} attributes. Background is used in chart titles, labels, tooltips, chart background, data plot, and many more, and they all are configured the same way.
+Background consists of fill, stroke and border corners. These element are configured using {api:anychart.core.ui.Background#fill}**.fill()**{api}, {api:anychart.core.ui.Background#corners}**.corners()**{api} and {api:anychart.core.ui.Background#corners}**.corners()**{api} attributes. Background is used in chart titles, labels, tooltips, chart background, data plot, and many more, and they all are configured the same way.
 
 Below you will find the reference of the most important parameters of the mentioned methods and see the demonstration of theirs settings.
 
