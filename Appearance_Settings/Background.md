@@ -18,7 +18,7 @@ Below you will find the reference of the most important parameters of the mentio
 
 ## Stroke
 
-Border is configured using {api:anychart.core.ui.Background#stroke}**.stroke()**{api} parameter. Stroke can be **"Solid"**, **"Dashed"** and **"Gradient"**. If type
+Border is configured using **.stroke()** parameter. Stroke can be **"Solid"**, **"Dashed"** and **"Gradient"**. If type
  is **"Solid"**, then color is specified using color attribute; to configure **"Gradient"** you have to use gradient keys. Dashed borders have to be set with special keys too.
 
 Sample solid stroke settings:
