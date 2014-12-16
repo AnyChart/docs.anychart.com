@@ -32,7 +32,7 @@ anychart.onDocumentReady(function() {
       .interval(0,0,1);
 
   // set data and define chart type
-  chart.ohlc(data);
+  var series = chart.ohlc(data);
 
   // set x axis lables width for the better outlook
   chart.xAxis().staggerLines(1).labels().textFormatter(function(value){
@@ -46,4 +46,7 @@ anychart.onDocumentReady(function() {
 
   // draw
   chart.container('container').draw();
+
+  // limit width of each point in series
+  series.pointWidth(chart.container().width()/15);
 });
