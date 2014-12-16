@@ -8,10 +8,10 @@ For example, here is some data about a weather in three cities, and we want to s
 <table border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th><b>Date</b></th>
-<th><b>New York</b></th>	
-<th><b>San Francisco</b></th>
-<th><b>Los Angeles</b></th>
+<th>Date</th>
+<th>New York</th>	
+<th>San Francisco</th>
+<th>Los Angeles</th>
 </tr>
 <tr>
 <td>2014/6/25</td>
@@ -52,132 +52,69 @@ For example, here is some data about a weather in three cities, and we want to s
 </tbody>
 </table>
   
-In many cases you are forced to create three sets to create a line chart with three series:  
+In many cases you are forced to create three sets to create a line chart with three series:
+
 <table border="1" class="dtTABLE">
 <tbody>
 <tr>   
-<th><b>Date</b>  
-</th>
-<th>
-<b>New York</b>  
-</th>
-<th>
-<b>Date</b>
-</th>
-<th>
-<b>San Francisco</b>
-</th>
-<th>
-<b>Date</b>
-</th>
-<th>
-<b>Los Angeles</b>
-</th>
+<th>Date</th>
+<th>New York</th>
+<th>Date</b></th>
+<th>San Francisco</th>
+<th>Date</th>
+<th>Los Angeles</th>
 </tr>
 <tr>   
 <td>2014/6/25 </td>
-<td>
-28 
-</td>
-<td>
-2014/6/25
-</td>
-<td>
-23</td>
-<td>
-2014/6/25
-</td>
-<td>
-28
-</td>
+<td>28</td>
+<td>2014/6/25</td>
+<td>23</td>
+<td>2014/6/25</td>
+<td>28</td>
 </tr>
 <tr>   
-<td>2014/6/26 </td>
-<td>
-26 
-</td>
-<td>
-2014/6/26
-</td>
-<td>
-21</td>
-<td>
-2014/6/26
-</td>
-<td>
-26
-</td>
+<td>2014/6/26</td>
+<td>26</td>
+<td>2014/6/26</td>
+<td>21</td>
+<td>2014/6/26</td>
+<td>26</td>
 </tr>
 <tr>   
 <td>2014/6/27 </td>
-<td>
-27 
-</td>
-<td>
-2014/6/27
-</td>
-<td>
-19</td>
-<td>
-2014/6/27
-</td>
-<td>
-26
-</td>
+<td>27</td>
+<td>2014/6/27</td>
+<td>19</td>
+<td>2014/6/27</td>
+<td>26</td>
 </tr>
 <tr>   
 <td>2014/6/28 </td>
-<td>
-25 
-</td>
-<td>
-2014/6/28
-</td>
-<td>
-21</td>
-<td>
-2014/6/28
-</td>
-<td>
-27
-</td>
+<td>25</td>
+<td>2014/6/28</td>
+<td>21</td>
+<td>2014/6/28</td>
+<td>27</td>
 </tr>
 <tr>   
-<td>2014/6/29 </td>
-<td>
-29 
-</td>
-<td>
-2014/6/29
-</td>
-<td>
-22</td>
-<td>
-2014/6/29
-</td>
-<td>
-28
-</td>
+<td>2014/6/29</td>
+<td>29</td>
+<td>2014/6/29</td>
+<td>22</td>
+<td>2014/6/29</td>
+<td>28</td>
 </tr>
 <tr>   
 <td>2014/6/30 </td>
-<td>
-28 
-</td>
-<td>
-2014/6/30
-</td>
-<td>
-25</td>
-<td>
-2014/6/30
-</td>
-<td>
-27
-</td>
+<td>28</td>
+<td>2014/6/30</td>
+<td>25</td>
+<td>2014/6/30</td>
+<td>27</td>
 </tr>
 </tbody> 
 </table>
+
 In simple cases it is not so difficult and you can allow some data duplication. But when you start to create something complex, like a dashboard – it may become a pain, especially when you need to append, update or remove some data from all sets to sync them.  
 
 To avoid this we recommend to use Data Sets, which are the natural representation of a table, a view or a database query result.
@@ -302,25 +239,3 @@ We map zero column of the Data Set as X, and the first column of the Data Set as
 Result of the `mapAs` call very similar to the Data Set itself, you can use it in the any chart or series create function exactly as any Data Set.  
 
 {sample}WD\_Using\_Data\_Sets\_04{sample}
-You can learn more about Data Mapping in the appropriate article.
-<!--
-See also:  
-<a href="./Advanced_Data_Mapping_features">Advanced Data Mapping features</a>  
-<a href="#">Multiple Charts layout</a>  
-<a href="#">Series and Point Meta Data</a>
--->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
