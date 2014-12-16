@@ -23,7 +23,7 @@
 ## Overview
 
 Scales allow you to control such features as minimum and maximum scale values, offsets, scale inversion, intervals, 
-scale type and so on for a single axis. To create additional axes - please read [Additional axis](Additional_Axes) 
+scale type and so on for a single axis. To create additional axes - please read [Additional axes](Additional_Axes)
 first. To adjust axes display - please see: [Axes Basics tutorial](Axis_Basics).
 
 In this section we will explain main scales options.
@@ -41,7 +41,7 @@ scale type use appropriate constructor:
     chart.yScale(newScale);
 ```
 
-Note: working with extra axes is explained in [Additional Axes Tutorial](Additional-Axis)
+Note: working with extra axes is explained in [Additional Axes Tutorial](Additional_Axes)
 
 ### Linear
 

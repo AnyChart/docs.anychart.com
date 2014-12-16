@@ -20,11 +20,14 @@ with a links to tutorials where you can find out how to create them (with the sa
 <tr><td>Marker Chart</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>OHLC Chart</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Pie Chart</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Polar Chart</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Radar Chart</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Range Area Chart</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Range Bar Chart</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Range Column Chart</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Range Spline-Area Chart</td><td>Yes</td><td>Yes</td</tr>
 <tr><td>Range Step-Area Chart</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Scatter Chart</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Spline Chart</td><td>Yes</td><td>Yes</td></tr>    
 <tr><td>Spline-Area Chart</td><td>Yes</td><td>Yes</td></tr> 
 <tr><td>Step-Area Chart</td><td>Yes</td><td>Yes</td></tr> 

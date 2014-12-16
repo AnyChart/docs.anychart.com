@@ -5,7 +5,7 @@ Gantt Chart Quick Start
 ## 4 Simple Steps to Start Using Gantt Chart
 ###1. Include Gantt Chart into Your Web Page
 Include the JavaScript file in the `<head>` section of your web page.  
-You can use CDN as shown below or visit the [download page](./Downloading_AnyChart).
+You can use CDN as shown below or visit the [download page](../Quick_Start/Downloading_AnyChart).
 
 ```
 <head>

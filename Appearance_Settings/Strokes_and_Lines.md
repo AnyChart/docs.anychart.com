@@ -7,7 +7,7 @@
 * [Line Thickness](#line_thickness)
 * [Dashed Lines](#dashed_lines)
 * [Line Opacity](#line_opacity)
-* [Caps and Joints](#caps_and_joints)
+<!--* [Caps and Joints](#caps_and_joints)-->
 
 ## Overview
 
@@ -99,7 +99,7 @@ Opacity through object:
         opacity: 0.8
     });
 ```
-
+<!--
 ## Caps and Joints
 
 Caps and joints are special parameters that define how line endings and bends are drawn.
@@ -111,4 +111,4 @@ The caps attribute specifies the caps style to use in drawing lines. You can spe
 The joint attribute specifies the joint style to use in drawing lines. It supports three types of joints: **"miter"**,
  **"round"**, and **"bevel"**, as the following example shows:
 
-![](http://static.anychart.com/linejoin.jpg)
+![](http://static.anychart.com/linejoin.jpg)-->

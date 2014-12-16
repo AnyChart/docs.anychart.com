@@ -8,7 +8,7 @@ Using Data Tree Model
  * [Create](#create)
  * [Read](#read)
  * [Update](#update)
- * [Delete](#dalete)
+ * [Delete](#delete)
 
 
 ## Overview
