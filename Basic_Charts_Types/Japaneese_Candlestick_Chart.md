@@ -324,8 +324,7 @@ And here is the demonstration of Logarithmic Y Axis on slightly modified the Sin
 ### Minimum and Maximum
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart 
-sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting **
-.maximum()** and **.minimum()** parameters of **.yScale()** method. As far as you want to adjusted the scale, 
+sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting **.maximum()** and **.minimum()** parameters of **.yScale()** method. As far as you want to adjusted the scale,
 it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 
 ```

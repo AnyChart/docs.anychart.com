@@ -14,8 +14,8 @@ The most simple fill is solid color fill.  Color can be set in the following for
 Color opacity can be set in two ways:
 * RGBA, HSLA modificators;
 * Dedicated parameter:
-    * Call function with the parameters <code>fill(_color_, _**opacity**_);</code>
-    * Single value <code>fill('color **opacity**')</code> (one string value separated by space).
+    * Call function with the parameters <code>{api:anychart.graphics.vector.Fill}fill{api}(_color_, _**opacity**_);</code>
+    * Single value <code>{api:anychart.graphics.vector.Fill}fill{api}('color **opacity**')</code> (one string value separated by space).
 
 {sample}GS\_E\_fill\_solid{sample}
 
