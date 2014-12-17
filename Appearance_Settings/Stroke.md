@@ -20,10 +20,10 @@ Stoke color can be set in several ways:
 ```
 Read more about color settings in [Elements Fill](Fill) article.
 
-Stroke color is set similar to fill procedure. The setting supports fill with:
-* Solid color,
-* Linear gradient,
-* Radial gradient.
+Stroke color is set similar to fill procedure. The setting supports {api:anychart.graphics.vector.Fill}fill{api} with:
+* {api:anychart.graphics.vector.SolidFill}Solid color{api},
+* {api:anychart.graphics.vector.LinearGradientFill}Linear gradient{api},
+* {api:anychart.graphics.vector.RadialGradientFill}Radial gradient{api}.
 
 Image fill **not supported**.
 
@@ -87,7 +87,7 @@ Every number in an odd position is a dash length, and every number in an even po
 ```
 
 ## Line join and cap
-Line join and cap settins are set in two ways:
+Line {api:anychart.graphics.vector.SolidStroke}join and cap{api} settins are set in two ways:
 * using a parameter:
  `stroke(colorSettings, thickness, dashSetting, lineJoin, lineCap)`
 * as an Object:

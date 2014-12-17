@@ -13,7 +13,7 @@
 
 Knowledge about line and stroke configuration parameters is very important, because AnyChart allows to configure almost any line you can see on the chart: Lines in charts, grids, tooltips and labels, and even tickmark lines.
 
-The name of the method is always **.line()** or **.stroke()**. In this tutorial all line parameters and features are described.
+The name of the method is always {api:anychart.axisMarkers.Line}**.line()** {api}or {api:anychart.graphics.vector.Stroke}**.stroke()**{api}. In this tutorial all line parameters and features are described.
 
 ## Basics
 

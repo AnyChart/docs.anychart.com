@@ -15,7 +15,7 @@ The texts have [built-in formatting settings](#settings) (like <b>bold</b>, <i>i
 
 ## Basic Settings
 
-Following methods control appearance of the text: **fontFamily()**, **.fontSize()**, **.fontWeight()**, **.fontStyle()**, **.useHtml()**.
+Following methods control appearance of the text: {api:anychart.graphics.vector.Text#fontFamily}**fontFamily()**{api}, {api:anychart.graphics.vector.Text#fontSize}**.fontSize()**{api}, {api:anychart.graphics.vector.Text#fontWeight}**.fontWeight()**{api}, {api:anychart.graphics.vector.Text#fontStyle}**.fontStyle()**{api}, {api:anychart.graphics.vector.Text#htmlText}**.useHtml()**{api}.
 
 ```
     .fontColor('Red')
@@ -39,7 +39,7 @@ This is sample chart with labels, tooltips and legend in English, French, Portug
 
 ## HTML
 
-If you want to do a complex formatting of the text - consider using HTML formatting. To enable it you have to set **.useHtml(true)**:
+If you want to do a complex formatting of the text - consider using HTML formatting. To enable it you have to set {api:anychart.graphics.vector.Text#htmlText}**.useHtml(true)**{api}:
 
 ```
   series.labels().useHtml(true).textFormatter(function(){
@@ -96,7 +96,7 @@ The sample Pie chart below demonstrates all available tags in slice labels forma
 
 ## Text Rotation
 
-All text elements, except of legend items and tooltips can be rotated, rotation is set using **.rotation()** attribute, for example, to rotate x axis Labels you have to set:
+All text elements, except of legend items and tooltips can be rotated, rotation is set using {api:anychart.core.axisMarkers.Text#rotation}**.rotation()**{api} attribute, for example, to rotate x axis Labels you have to set:
 
 ```
   chart.xAxis().labels().rotation(90);

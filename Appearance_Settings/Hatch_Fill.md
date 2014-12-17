@@ -25,8 +25,8 @@ To creat a hatch fill you simply set the required string constant:
 If needed you, can color the hatch, using Hex, RGB, HSL or HTML color name with the opacity. Color opacity can be set in two ways:
 * RGBA, HSLA modificators;
 * Dedicated parameter:
-    * Call function with the parameters <code>fill(_color_, _**opacity**_);</code>
-    * Single value <code>fill('color **opacity**')</code> (one string value separated by space).
+    * Call function with the parameters <code>{api:anychart.graphics.vector.Fill}fill{api}(_color_, _**opacity**_);</code>
+    * Single value <code>{api:anychart.graphics.vector.Fill}fill{api}('color **opacity**')</code> (one string value separated by space).
 
 ```
     .hatchFill('diamiond', '#CC8800 0.8');
