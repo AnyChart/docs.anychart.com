@@ -33,6 +33,7 @@ anychart.onDocumentReady(function() {
     .enabled(true)
     .anchor('top')
     .position('centerBottom')
+    .offsetY(0)
     .fontSize(12)
     .fontWeight(600)
     .textFormatter(function(){
