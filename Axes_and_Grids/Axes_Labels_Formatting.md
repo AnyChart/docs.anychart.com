@@ -31,10 +31,10 @@ In this tutorial all major settings and features of axes labels are described.
 Each axis in AnyChart has its own labels settings, these settings can be configured in labels sub parameter of the given 
 axis. 
 By default labels for all axes are enabled. You can enable or disable labels for the given axis using enabled method of 
-**labels()** method:
+{api:anychart.core.axes.Linear#labels}**labels()**{api} method:
 
 ```
-    chart.xAxis.labels().enabled(false)
+  chart.xAxis.labels().enabled(false)
 ```
 
 In the sample below a line chart with Y-Axis, X-Axis and Secondary Y-Axis is shown, with labels enabled for both Y Axes and disabled for X-Axis:
@@ -46,7 +46,7 @@ In the sample below a line chart with Y-Axis, X-Axis and Secondary Y-Axis is sho
 In order to make chart readable and understandable it is very important to format axes labels in a proper way, for example: 
 add "$" prefix if values are given in dollars or add "°F" postfix if values are given in Fahrenheit degrees.
   
-You have a full control over the axis labels in **.textFormatter()** parameter of **.labels()** method.
+You have a full control over the axis labels in {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} parameter of {api:anychart.core.axes.Linear#labels}**labels()**{api} method.
   
 <!--To make text formatting easier AnyChart has a special mechanism called Keywords. Every keyword is a unique token that 
 can be specified in <format> node in a following way: {%KeywordName}, for example {%Value} or {%AxisName}. Before displaying 
@@ -56,22 +56,22 @@ this tutorial:[link in need]Keywords reference[/link].-->
 <!--The main keyword you should know to format labels is {%Value} - it stands for the axis value that corresponds to the 
 label (labels are drawn near the major tickmark that correspond to major interval - see Axes Scales and Axes Basics for more).-->
 
-TextFormatter always works with **function()**. By default labels show values of the axis and default textFormatter is:
+TextFormatter always works with function. By default labels show values of the axis and default textFormatter is:
 
 ```
-    function(){
-        return this.value
-    }
+  function(){
+    return this.value
+  }
 ```
 
 ### Prefixes and Postfixes
 
-To add prefix or postfix to the label you just need to adjust **return** method of your function:
+To add prefix or postfix to the label you just need to adjust **return** of your function:
 
 ```
-    function(){
-        return this.value + 'USD'
-    }
+  function(){
+    return this.value + 'USD'
+  }
 ```
 
 ### Number Formatting
@@ -83,24 +83,24 @@ Here is a sample of financial chart with euro and dollar axes. Dollar based axis
 value from dollar and transfer it into euro. Some separators were added to adjust x axes labels visual appearance
 
 ```
-    chart.yAxis().labels().textFormatter(dollarFormatter);
-    chart.yAxis().title().text('Revenue in US Dollars');
-    chart.yAxis(1).orientation('right');
-    chart.yAxis(1).title().text('Revenue in Euros');
-    chart.yAxis(1).labels().textFormatter(function(){
-        var value = this.value;
-        value = value*0.7094716;
-        value = value.toFixed(2);
-        var num = value.split('.');
-        if (num[0].length> 3)
-            num[0] = num[0].substr(0, num[0].length-3) + '\'' + num[0].substr(num[0].length-3, 3);
-        value = num.join('.');
-        return '€ ' + value;
-    });
-    chart.xAxis().title().text('Month');
-    function dollarFormatter() {
-        return '$' + (this.value/1000) + ' 000 USD';  
-    }
+  chart.yAxis().labels().textFormatter(dollarFormatter);
+  chart.yAxis().title().text('Revenue in US Dollars');
+  chart.yAxis(1).orientation('right');
+  chart.yAxis(1).title().text('Revenue in Euros');
+  chart.yAxis(1).labels().textFormatter(function(){
+    var value = this.value;
+    value = value*0.7094716;
+    value = value.toFixed(2);
+    var num = value.split('.');
+    if (num[0].length> 3)
+      num[0] = num[0].substr(0, num[0].length-3) + '\'' + num[0].substr(num[0].length-3, 3);
+    value = num.join('.');
+    return '€ ' + value;
+  });
+  chart.xAxis().title().text('Month');
+  function dollarFormatter() {
+    return '$' + (this.value/1000) + ' 000 USD';
+  }
 ```
 
 {sample}AGST\_Labels\_Formatting\_02{sample}
@@ -117,8 +117,7 @@ with x axis labels symbols limited to 3.
 You can tune visual appearance of axes labels according to your chart design. Label visual settings consist of background 
 settings (which include margins and border), font settings and effects.
   
-In general you can learn more about these settings in: [Background tutorial](../Appearance_Settings/Background), [Fonts tutorial](../Appearance_Settings/Fonts)<!-- and Effects
-tutorial[/links]-->.
+In general you can learn more about these settings in: [Background tutorial](../Appearance_Settings/Background), [Fonts tutorial](../Appearance_Settings/Fonts)<!-- and Effects tutorial[/links]-->.
 
   
 In this section we will cover the basics that allow to tune labels appearance and some special features (Multi-line labels).
@@ -128,7 +127,7 @@ In this section we will cover the basics that allow to tune labels appearance an
 Font settings of labels are configured as any text. You can specify size, face and color or set the text to HTML mode:
 
 ```
-    chart.xAxis().labels().fontFamily('Courier').fontSize(12).fontColor('red').fontWeight('bold').useHtml(false);
+  chart.xAxis().labels().fontFamily('Courier').fontSize(12).fontColor('red').fontWeight('bold').useHtml(false);
 ```
 
 You can look at font settings at work in the [sample below](#sample).
@@ -138,7 +137,7 @@ You can look at font settings at work in the [sample below](#sample).
 With AnyChart it is possible to control labels' alignment. It is useful, for example, when you want to set multiple label values on one scale:
 
 ```
-    chart.yAxis().labels().hAlign('right');
+  chart.yAxis().labels().hAlign('right');
 ```
 
 ### Background
@@ -146,11 +145,10 @@ With AnyChart it is possible to control labels' alignment. It is useful, for exa
 As stated in the beginning of this section - you can learn more about background settings in [Background tutorial](../Appearance_Settings/Background),
 and here we will demonstrate the most usual task - enabling/disabling background and configuring labels border.
 
-Labels background is configured with **.background()** method of **.labels()**. Here are sample settings - background is 
-enabled for xAxis and only stroke method is adjusted:
+Labels background is configured with (api:anychart.core.ui.Label#background)**.background()**{api} method of {api:anychart.core.axes.Linear#labels}**labels()**{api}. Here are sample settings - background is enabled for xAxis and only stroke method is adjusted:
 
 ```   
-    chart.xAxis().labels().background().enabled(true).stroke('blue');
+  chart.xAxis().labels().background().enabled(true).stroke('blue');
 ```
 
 In this sample we will demonstrate labels background settings, multi-line labels and align and font settings:
@@ -165,42 +163,38 @@ choose where and how labels should be placed, whether they should be rotated or 
 
 ### Labels Align
 
-To specify how labels are aligned you need to set **.hAlign()** and **.vAlign()** attributes **.labels()**. **.hAlign** 
-possible values are: "left", "start", "center", "end" and "right". As for **.vAlign()** values, it can be: "top", "middle" and "bottom". 
+To specify how labels are aligned you need to set {api:anychart.graphics.vector.Text#hAlign}**.hAlign()**{api} and {api:anychart.graphics.vector.Text#vAlign}**.vAlign()**{api} attributes of {api:anychart.core.axes.Linear#labels}**.labels()**{api}. {api:anychart.graphics.vector.Text#hAlign}**.hAlign()**{api} possible values are: "left", "start", "center", "end" and "right". As for {api:anychart.graphics.vector.Text#vAlign}**.vAlign()**{api} values, it can be: "top", "middle" and "bottom".
   
-Also, you can change the position attribute and make labels appear inside of the data plot area, to do that set **.offsetX()** 
-for yAxis and **.offsetY()** for xAxis.
+Also, you can change the position attribute and make labels appear inside of the data plot area, to do that set {api:anychart.core.ui.Label#offsetX}**.offsetX()**{api} for yAxis and {api:anychart.core.ui.Label#offsetY}**.offsetY()**{api} for xAxis.
 
 ```
-    chart.yAxis().labels().offsetX(30);
+  chart.yAxis().labels().offsetX(30);
 ```
 
 ### Padding
 
-If you want to change the labels background size and text position inside background - use padding attribute (the value in Pixels). 
-Padding may contain up to 4 values: Top&Bottom&Left&Right, Right&Left, Bottom, Left. It is not necessary to set all 4 values. 
+If you want to change the labels background size and text position inside background - use padding attribute (the value in Pixels).
+Padding may contain up to 4 values: Top&Bottom&Left&Right, Right&Left, Bottom, Left. It is not necessary to set all 4 values.
 Just remember, that each value has more priority, than the previous one.
 
 ```
-    chart.yAxis().labels().padding(0,0,2,3)
+  chart.yAxis().labels().padding(0,0,2,3)
 ```
 
 ### Rotation
 
-One of the most useful features of label positioning is ability to show rotated labels. To rotate labels just set angle 
-of rotation in rotation method:
+One of the most useful features of label positioning is ability to show rotated labels. To rotate labels just set angle of rotation in rotation method:
 
 ```
-    chart.yAxis().labels().rotation(90)
+  chart.yAxis().labels().rotation(90)
 ```
 
 ### Stagger Mode
 
-When you have a lot of long labels, you may find useful to use **.staggerLines()** display mode for labels, this may 
-work particularly good on xAxis, when labels contain category names, you can sett how many stagger lines there may be:
+When you have a lot of long labels, you may find useful to use {api:anychart.core.axes.Linear#staggerLines}**.staggerLines()**{api} display mode for labels, this may work particularly good on xAxis, when labels contain category names, you can sett how many stagger lines there may be:
 
 ```
-    chart.xAxis().staggerLines(2);
+  chart.xAxis().staggerLines(2);
 ```
 
 Here is a sample dashboard showing the most of positioning labels settings:
@@ -211,13 +205,13 @@ Here is a sample dashboard showing the most of positioning labels settings:
 ## First and Last labels
 
 There are special methods that give you a control over such special labels as: First (minimal value) label on the axis 
-and Last label (maximal value). You can force them to be shown or hide them using appropriate methods: **.drawFirstLabel()**, **.drawLastLabel()**.
+and Last label (maximal value). You can force them to be shown or hide them using appropriate methods: {api:anychart.core.axes.Linear#drawFirstLabel}**.drawFirstLabel()**{api}, {api:anychart.core.axes.Linear#drawLastLabel}**.drawLastLabel()**{api}.
   
 Turning off the last the first label is shown on the [dashboard above](#dashbord) in "Labels Inside" Line chart.
 
 ```
-    labelsInside.xAxis().drawFirstLabel(false);
-    labelsInside.xAxis().drawLastLabel(false);
+  labelsInside.xAxis().drawFirstLabel(false);
+  labelsInside.xAxis().drawLastLabel(false);
 ```
 
 <a name="y-axis_labels-fixed-width"/>
@@ -228,10 +222,10 @@ You can set fixed width for Y-Axis labels. If label content doesn't fit - text i
 This function may be of great use when you use Dashboards and you want to sync several charts left and/or right border, 
 which is especially needed when they are displayed in a column and share the same X-Axis arguments.
   
-To set the width you should use **.width()** attribute for **.labels()**, which accepts positive integer values in pixels:
+To set the width you should use {api:anychart.core.ui.Label#width}**.width()**{api} attribute for {api:anychart.core.ui.Label}**.labels()**{api}, which accepts positive integer values in pixels:
 
 ```
-    chart.yAxis().labels().width(50)
+  chart.yAxis().labels().width(50)
 ```
 
 Sample dashboard shows two charts with values in completely different ranges: upper charts shows up to hundreds of 
@@ -248,13 +242,13 @@ And now the same data with Y-Axis label width set to 70 pixels, which results in
 
 Sometimes you may encounter situation when point names (which are used as arguments and are displayed in X-Axis labels) 
 are too long and chart engine removes some of them because they don't fit the chart size — it may be undesired result 
-and it can be avoided in several ways, like allowing labels to overlap (changing value for axis **overlapMode**) 
+and it can be avoided in several ways, like allowing labels to overlap (changing value for axis {api:anychart.core.axes.Linear#overlapMode}**overlapMode**{api})
 <!--or using maxChar keyword in formatting-->, but you can also set fixed width and make them wrap.
   
-To set the fixed width you have to use **.width()** attribute in **.labels()** element:
+To set the fixed width you have to use {api:anychart.core.ui.Label#width}**.width()**{api} attribute in {api:anychart.core.ui.Label}**.labels()**{api} element:
 
 ```
-    chart.xAxis().labels().width(60)
+  chart.xAxis().labels().width(60)
 ```
 
 The following example demonstrates standard behavior of the X-Axis labels. As you can see long labels cause component 
@@ -267,7 +261,6 @@ in order to fit in the width set:
 
 {sample}AGST\_Labels\_Formatting\_09{sample}
 
-This works as well for other plot types. The following example demonstrates the same data displayed on a bar chart. In 
-order to align multiline text to the right side **hAlign()** attribute is set to right:
+This works as well for other plot types. The following example demonstrates the same data displayed on a bar chart. In order to align multiline text to the right side {api:anychart.graphics.vector.Text#hAlign}**.hAlign()**{api} attribute is set to right:
 
 {sample}AGST\_Labels\_Formatting\_10{sample}

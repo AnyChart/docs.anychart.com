@@ -26,12 +26,12 @@ Consider using multiple axes when you need:
 
 ## Declaration
 
-If you want to declare an additional axis all you need to do is to set index to it, and place as many **.yAxis()** or **.xAxis()** methods into it:
+If you want to declare an additional axis all you need to do is to set index to it, and place as many {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods into it:
 
 ```
-    chart.yAxis(1).orientation('right').title().text('First additional axis');
-    chart.yAxis(2).orientation('right').title().text('Second additional axis');
-    chart.yAxis(3).orientation('right').title().text('Third additional axis');
+  chart.yAxis(1).orientation('right').title().text('First additional axis');
+  chart.yAxis(2).orientation('right').title().text('Second additional axis');
+  chart.yAxis(3).orientation('right').title().text('Third additional axis');
 ```
 
 Here is the sample of the chart that shows three additional Y axes and almost no configuration is done, as you can see three additional axes are drawn on the right side of data plot and their maximum and minimum values are calculated automatically (and they are the same as main Y axis have):
@@ -66,8 +66,7 @@ additional Y axis:
 
 ## Binding Series
 
-To bind data series to the certain axis you should specify it in **series.yScale()** or **series.xScale()** 
-attribute. By default all series work with **chart.yScale()** or **chart.xScale()**:
+To bind data series to the certain axis you should specify it in {api:anychart.core.cartesian.series.Base#yScale}**series.yScale()**{api} or {api:anychart.core.cartesian.series.Base#xScale}**series.xScale()**{api} attribute. By default all series work with {api:anychart.charts.Cartesian#yScale}**chart.yScale()**{api} or {api:anychart.charts.Cartesian#xScale}**chart.xScale()**{api}:
 
 ```
     var firstSeries = anychart.data.set([
@@ -91,7 +90,7 @@ attribute. By default all series work with **chart.yScale()** or **chart.xScale(
     lineSeries.yScale(extraYScale);
 ```
 
-In the a sample below we add one additional axis with a range from 0 to 100 and and bind series of "Line" type to it:
+In the a sample below we add one additional axis with a range from 0 to 100 and bind series of "Line" type to it:
 
 {sample}AGST\_Additional\_Axes\_04{sample}
 

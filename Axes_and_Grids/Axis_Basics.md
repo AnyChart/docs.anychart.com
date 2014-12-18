@@ -22,7 +22,7 @@ In this section we will demonstrate most of the axes visualization options, whic
 
 ## Declaration
 
-If you want to control any of the axes settings - you should do that using **Axis** methods:
+If you want to control any of the axes settings - you should do that using {api:anychart.core.axes}**Axis**{api} methods:
 
 ```
   chart.xAxis().title().enabled(true).text('Sample X axis name');
@@ -30,7 +30,7 @@ If you want to control any of the axes settings - you should do that using **Axi
 
 ## Title
 
-You can define a title of any axis, you can control its position and font <!--and use keywords-->, when specifying text. Full reference of parameters can be found in Reference: **.yAxis().title()** or **.xAxis().title()**. Here is a sample titles definition:
+You can define a title of any axis, you can control its position and font <!--and use keywords-->, when specifying text. Full reference of parameters can be found in Reference: {api:anychart.core.axes.Linear#title}**.yAxis().title()**{api} or {api:anychart.core.axes.Linear#title}**.xAxis().title()**{api}. Here is a sample titles definition:
 
 ```
     var max = chart.yScale().maximum();
@@ -53,7 +53,7 @@ Learn how to format keywords in Number Formatting section.-->
 
 ## Orientation
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** parameter of **.yAxis()** or **.xAxis()** methods. Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Positioning and Inverting Templates](Axis_Orientation).
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods. Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Positioning and Inverting Templates](Axis_Orientation).
 
 ```
   chart.xAxis(0).orientation('top');
@@ -66,7 +66,7 @@ And here is the demonstration of this feature on the Single series column chart:
 
 ## Labels
 
-To enable axes labels you need to specify **.labels().enabled(true)** in desired axis. You can specify how labels should 
+To enable axes labels you need to specify {api:anychart.core.ui.LabelsFactory#enabled}**.labels().enabled(true)**{api} in desired axis. You can specify how labels should
 look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
 
 Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Formatting)
@@ -98,20 +98,20 @@ Rotated labels:
 ## Axis Line
 
 It is possible to tune visual appearance of axis segment line and zero line. To do this you need to use 
-**.lineMarker()** with default settings.
+{api:anychart.charts.Cartesian#lineMarker}**.lineMarker()**{api} with default settings.
 
 ```
   chart.lineMarker().stroke('2 red');    
 ```
 
-As in any line, you can make it gradient, change opacity and thickness using **stroke()** method. 
+As in any line, you can make it gradient, change opacity and thickness using {api:anychart.core.axes.Linear#stroke}**stroke()**{api} method.
 Read more about lines in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines)
 
 {sample}AGST\_Axes\_Basic\_06{sample}
 
 ## Tickmarks
 
-Tickmarks are the small marks used to represent a point on an axis scale, there are major and minor ticks, first used to indicate major step of an axis scale, second - minor step. You can control their appearance and position. To enable/disable ticks set **.enabled(true)** or **.enabled(false)** to **.ticks()** or **.minorTicks()**
+Tickmarks are the small marks used to represent a point on an axis scale, there are major and minor ticks, first used to indicate major step of an axis scale, second - minor step. You can control their appearance and position. To enable/disable ticks set **.enabled(true)** or **.enabled(false)** to {api:anychart.core.axes.Linear#ticks}**.ticks()**{api} or {api:anychart.core.axes.Linear#minorTicks}**.minorTicks()**{api}
 
 ```
 minorTicks().enabled(true)

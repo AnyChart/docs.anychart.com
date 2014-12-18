@@ -83,21 +83,21 @@ You can make line or grid line dashed and tune dash properties:
 
 ## Line Opacity
 
-To change the opacity of a line use **.opacity()** attribute. The value is set as a ratio: 1 stands for opaque, and 0 - for transparent line. Opacity may be set though line and through object:
+To change the opacity of a line use **opacity** attribute. The value is set as a ratio: 1 stands for opaque, and 0 - for transparent line. Opacity may be set though line and through object:
 
 Opacity through line:
 
 ```
-    series.stroke('red 0.8');
+  series.stroke('red 0.8');
 ```
 
 Opacity through object:
 
 ```
-    series.stroke({
-        color: 'red', 
-        opacity: 0.8
-    });
+  series.stroke({
+    color: 'red',
+    opacity: 0.8
+  });
 ```
 
 ## Caps and Joints
