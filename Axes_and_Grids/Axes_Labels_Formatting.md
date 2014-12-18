@@ -173,7 +173,7 @@ Also, you can change the position attribute and make labels appear inside of the
 
 ### Padding
 
-If you want to change the labels background size and text position inside background - use padding attribute (the value in Pixels).
+If you want to change the labels background size and text position inside background - use {api:anychart.core.ui.Label#padding}**padding()**{api} parameter (the value in Pixels).
 Padding may contain up to 4 values: Top&Bottom&Left&Right, Right&Left, Bottom, Left. It is not necessary to set all 4 values.
 Just remember, that each value has more priority, than the previous one.
 
