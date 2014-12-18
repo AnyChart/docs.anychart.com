@@ -7,10 +7,9 @@
 
 ## Overview
    
-Orientation depends on plot type and inversion of axes, below you will find all possible axes orientation and inverting
-JS Settings with demonstration preview.
+Orientation depends on plot type and inversion of axes, below you will find all possible axes {api:anychart.core.axes.Linear#orientation}orientation{api} and inverting JS Settings with demonstration preview.
   
-Though these settings are demonstrated using Bar/Column charts - they work for all other chart types.
+Though these settings are demonstrated using {api:anychart.core.cartesian.series.Bar}Bar{api}/{api:anychart.core.cartesian.series.Column}Column{api} charts - they work for all other chart types.
 
 ## Column Mode
 
@@ -231,8 +230,7 @@ chart.yScale().inverted(true);
 </table>
 
 ##Bar Mode
-x-Axis isn't restricted in only by Top and Bottom orientation. It can by placed on the Left or Right sides. So can 
-y-Axis be placed on the top or bottom. This option enabled by default in Bar charts. 
+{api:anychart.charts.Cartesian#xAxis}x-Axis{api} isn't restricted in only by Top and Bottom orientation. It can by placed on the Left or Right sides. So can {api:anychart.charts.Cartesian#yAxis}y-Axis{api} be placed on the top or bottom. This option enabled by default in {api:anychart.core.cartesian.series.Bar}Bar{api} charts.
   
 Here are some samples of Bar chart Axes orientation
 
