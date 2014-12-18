@@ -23,11 +23,10 @@ Example:
 ```
 ###3. Prepare your Data
 
-Gantt Chart provides quite a few opportunities to work with data (such as setting tree like hierarchy with parent/child division), thus it requires preparing data before usage.
+Gantt Chart provides quite a few opportunities to work with data (such as setting tree like hierarchy with parent/child division), thus it requires preparing data before usage. Raw data set for Gantt chart may look like this:
 
 ```
-function getData() {
-  return [
+ var rawData = [
   {
     "name": "Activities",
     "actualStart": Date.UTC(2007, 0, 25),
@@ -54,9 +53,7 @@ function getData() {
         "actualEnd": Date.UTC(2007, 2, 14)
       }
     ]
-  }
-  ];
-}
+  }];
 ```
 
 ###4. Create a chart
@@ -67,11 +64,39 @@ Example:
 ```
 <script>
 anychart.onDocumentReady(function(){
+ var rawData = [
+  {
+    "name": "Activities",
+    "actualStart": Date.UTC(2007, 0, 25),
+    "actualEnd": Date.UTC(2007, 2, 14),
+    "children": [
+      {
+        "name": "Draft plan",
+        "actualStart": Date.UTC(2007, 0, 25),
+        "actualEnd": Date.UTC(2007, 1, 3)
+      },
+      {
+        "name": "Board meeting",
+        "actualStart": Date.UTC(2007, 1, 4),
+        "actualEnd": Date.UTC(2007, 1, 4)
+      },
+      {
+        "name": "Research option",
+        "actualStart": Date.UTC(2007, 1, 4),
+        "actualEnd": Date.UTC(2007, 1, 24)
+      },
+      {
+        "name": "Final plan",
+        "actualStart": Date.UTC(2007, 1, 24),
+        "actualEnd": Date.UTC(2007, 2, 14)
+      }
+    ]
+  }];
+  
   // data tree settings
-  var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TREE);
+  var treeData = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
   var chart = anychart.ganttProject();      // chart type
   chart.data(treeData);                     // chart data
-  var dataGrid = chart.getDataGrid();       // create data grid
   chart.container('container').draw();      // set container and initiate drawing
 });
 </script>
@@ -80,7 +105,7 @@ anychart.onDocumentReady(function(){
 ## The result
 ###See the result
 After all these steps you should have the following result. This example, like any other on our site, can be launched and explored using the samples playground.
-{sample :width 690 :height 180}Gantt\_Chart{sample}
+{sample :width 690 :height 180}GANTT\_Basic\_Sample.md{sample}
 ###Full source code
 You can copy this to a file on your computer and open it in your browser to display the Gantt Chart shown above:
 ```
@@ -88,57 +113,56 @@ You can copy this to a file on your computer and open it in your browser to disp
 <head>
   <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
   <script>
-    anychart.onDocumentReady(function(){
-      // data tree settings
-      var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
-      var chart = anychart.ganttProject();                  // chart type
-      chart.bounds(0, 0, '100%', '100%');                   // chart position
-      chart.data(treeData);                                 // chart data
-      chart.splitterPosition(170);                          // data tree width
-      var dataGrid = chart.getDataGrid();                   // create data grid
-      dataGrid.column(0).width(30).title().text('#');       // settings for first column
-
-      // settings for the second column
-      dataGrid.column(1).width(140).textFormatter(function(item) {
-        return item.get('name');
-      }).title().text('Plan');
-
-      // set container and initiate drawing
-      chart.container('container').draw();
-    });
-
-    // data
-    function getData() {
-      return [
-      {
-        "name": "Activities",
-        "actualStart": Date.UTC(2007, 0, 25),
-        "actualEnd": Date.UTC(2007, 2, 14),
-        "children": [
-          {
-            "name": "Draft plan",
-            "actualStart": Date.UTC(2007, 0, 25),
-            "actualEnd": Date.UTC(2007, 1, 3)
-          },
-          {
-            "name": "Board meeting",
-            "actualStart": Date.UTC(2007, 1, 4),
-            "actualEnd": Date.UTC(2007, 1, 4)
-          },
-          {
-            "name": "Research option",
-            "actualStart": Date.UTC(2007, 1, 4),
-            "actualEnd": Date.UTC(2007, 1, 24)
-          },
-          {
-            "name": "Final plan",
-            "actualStart": Date.UTC(2007, 1, 24),
-            "actualEnd": Date.UTC(2007, 2, 14)
-          }
-        ]
-      }
-      ];
-    }
+	anychart.onDocumentReady(function(){
+	
+	    var rawData = [
+	      {
+	        "name": "Activities",
+	        "actualStart": Date.UTC(2007, 0, 25),
+	        "actualEnd": Date.UTC(2007, 2, 14),
+	        "children": [
+	          {
+	            "name": "Draft plan",
+	            "actualStart": Date.UTC(2007, 0, 25),
+	            "actualEnd": Date.UTC(2007, 1, 3)
+	          },
+	          {
+	            "name": "Board meeting",
+	            "actualStart": Date.UTC(2007, 1, 4),
+	            "actualEnd": Date.UTC(2007, 1, 4)
+	          },
+	          {
+	            "name": "Research option",
+	            "actualStart": Date.UTC(2007, 1, 4),
+	            "actualEnd": Date.UTC(2007, 1, 24)
+	          },
+	          {
+	            "name": "Final plan",
+	            "actualStart": Date.UTC(2007, 1, 24),
+	            "actualEnd": Date.UTC(2007, 2, 14)
+	          }
+	        ]
+	      }];
+	
+	  // tree data settings
+	  var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TREE);
+	
+	  // chart type
+	  chart = anychart.ganttProject();
+	
+	  // chart container
+	  chart.container('container');
+	
+	  // set chart data
+	  chart.data(treeData);
+	
+	  // initiate drawing
+	  chart.draw();
+	  
+	  // show all items 
+	  chart.fitAll();
+	
+	});
   </script>
 </head>
 <body>
