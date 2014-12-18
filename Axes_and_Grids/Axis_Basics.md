@@ -118,7 +118,7 @@ minorTicks().enabled(true)
 ticks().enabled(false)
 ```
 
-Ticks can be placed **inside** or **outside** relatively to the axis line. These features are controlled by **.position()** attributes:
+Ticks can be placed **inside** or **outside** relatively to the axis line. These features are controlled by {api:anychart.core.axes.Ticks#position}**.position()**{api} attributes:
 
 ```
   chart.yAxis().ticks().position('outside');
