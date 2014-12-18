@@ -119,7 +119,7 @@ want to show Celsius, Fahrenheit and Kelvin scales. To do that we have to create
 ```
 
 We defined three axes and set absolute zero as a minimum value, and Titanium melting temperature as a maximum value. 
-We will create one series of a "Marker" type and bind it to Kelvin scale:
+We will create one series of a {api:anychart.core.cartesian.series.Marker}"Marker"{api} type and bind it to Kelvin scale:
 
 ```
     ["Absolute Zero", 0],
@@ -161,8 +161,8 @@ dollars and in percents of GDP. We need to create one additional Axis adjust bot
     extraYAxis.orientation('right').scale(extraYScale);
 ```
 
-We defined two axes and will create one series of a **Column** type to show debt and bind it to **yAxis**, 
-one series of a **Line** type to show percentage changes.
+We defined two axes and will create one series of a {api:anychart.core.cartesian.series.Column}**Column**{api} type to show debt and bind it to **yAxis**,
+one series of a {api:anychart.core.cartesian.series.Line}**Line**{api} type to show percentage changes.
 
 Here it is - a sample chart comparing the US debt, in dark red, to the debts percent of GDP, in blue.
 
