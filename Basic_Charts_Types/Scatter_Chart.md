@@ -33,7 +33,7 @@ Consider using a scatter chart when:
 ## Chart
 
 Depending on your task you can plot the following types on a Scatter plot: Line, Spline, Marker and
-Bubble charts. To start the creation of Scatter chart you need create chart using **.scatterChart()** method.
+Bubble charts. To start the creation of Scatter chart you need create chart using {api:anychart.charts.Scatter}**.scatterChart()**{api} method.
 
 ```
   var chart = anychart.scatterChart();
@@ -170,7 +170,7 @@ Scatter Point or Marker chart is used to plot a scatter plot (scatter diagram or
 
 A scatter plot does not specify dependent or independent variables. Either type of variable can be plotted on either axis. Scatter plots represent the association (not causation) between two variables.
 
-To plot a scatter diagram using AnyChart you should use **Marker** series type along with **anychart.scatterChart()**:
+To plot a scatter diagram using AnyChart you should use {api:anychart.charts.Scatter#marker}**Marker**{api} series type along with {api:anychart.charts.Scatter}**anychart.scatterChart()**{api}:
 
 ```
   var chart = anychart.scatterChart();
@@ -195,7 +195,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **.orientation()** in **.yAxis()** or **.xAxis()**.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.enums.Orientation}**.orientation()**{api} in {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api}.
 
 Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and
 inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) Templates.
@@ -235,7 +235,7 @@ And here is the demonstration of maximum and minimum values on the Line sample:
 
 ### Logarithmic
 
-AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by **scale**:
+AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by {api:anychart.scales.Logarithmic}**scale**{api}:
 
 ```
   var logScaleY = anychart.scales.log();  // create logarithmic scale
