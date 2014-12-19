@@ -47,7 +47,7 @@ And set "Area" as a default series type:
 
 ## Spline Stacked Area
 
-Just change default series type to "SplineArea" and get your data displayed in more appealing way:
+Just change default series type to {api:anychart.core.cartesian.series.SplineArea}"SplineArea"{api} and get your data displayed in more appealing way:
 
 ```
     chart.splineArea(seriesData_1);
