@@ -14,10 +14,10 @@ You can use Date/Time values as input data for chart using Date Time Axes. In th
 
 ## Declare
 
-You can make both X and/or Y axis a DateTime axis, to do that, set scale type to DateTime:
+You can make both X and/or Y axis a DateTime axis, to do that, set scale type to {api:anychart.scales.DateTime}DateTime{api}:
 
 ```
-    chart.yScale(anychart.scales.dateTime());
+  chart.yScale(anychart.scales.dateTime());
 ```
 
 ### Sample Range Bar With Y DateTime Axis
@@ -64,13 +64,13 @@ Data is collected, now we adjust settings for ticks on the scale:
 
 Now we need to create data for range bars. Here it is:
 
-```    
-    chart.rangeBar([
-        {x: 'Development', low: Date.UTC(2000, 01, 01), high: Date.UTC(2002, 02, 15)},
-        {x: 'Internal Testing', low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01)},
-        {x: 'Field Tests', low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01)},
-        {x: 'Licensing', low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01)}
-    ]);
+```
+  chart.rangeBar([
+    {x: 'Development', low: Date.UTC(2000, 01, 01), high: Date.UTC(2002, 02, 15)},
+    {x: 'Internal Testing', low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01)},
+    {x: 'Field Tests', low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01)},
+    {x: 'Licensing', low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01)}
+  ]);
 ```
 
 Now we will create DateTime Y Axis and set it to show process in years (explained later):
@@ -107,7 +107,7 @@ That's it - chart with DateTime Y Axis is ready:
 
 ## Major and Minor Interval Ticks
 
-For datetime axes you can set Major and Minor Ticks using **.ticks()** and **.minorTicks()** methods of scale:
+For datetime axes you can set Major and Minor Ticks using {api:anychart.scales.DateTime#ticks}**.ticks()**{api} and {api:anychart.scales.DateTime#minorTicks}**.minorTicks()**{api} methods of scale:
 
 ```
     chart.yScale().ticks().interval(1);
