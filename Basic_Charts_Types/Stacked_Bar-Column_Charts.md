@@ -47,7 +47,7 @@ Just change "columnChart" to "barChart" and get your data displayed as a bar cha
     series = chart.column(seriesData_4);
 ```
 
-Also, tooltips can be enabled/disabled by adjusting **.tooltip()** method:
+Also, tooltips can be enabled/disabled by adjusting {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} method:
 
 ```
     series = chart.column(seriesData_1);
