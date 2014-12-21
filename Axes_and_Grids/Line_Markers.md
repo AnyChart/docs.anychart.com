@@ -17,8 +17,7 @@ You can add custom line markers to any scale, both x scale, y scale and addition
 
 ## Declare
 
-To add line marker you need to use **.lineMarker()** method and tune it using **.scale()**, **.fill()** and 
-**.layout()** methods:
+To add line marker you need to use {api:anychart.charts.Cartesian#lineMarker}**.lineMarker()**{api} method and tune it using {api:anychart.core.axisMarkers.Line#scale}**.scale()**{api}, {api:anychart.core.axisMarkers.Line#stroke}**.stroke()**{api} and {api:anychart.core.axisMarkers.Line#layout}**.layout()**{api} parameters:
 
 ```
     chart.lineMarker()
