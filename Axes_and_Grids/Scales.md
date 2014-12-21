@@ -28,11 +28,11 @@ first. To adjust axes display - please see: [Axes Basics tutorial](Axis_Basics).
 
 In this section we will explain main scales options.
 
-If you want to control any of scale settings - you should do that using **scale()** method.
+If you want to control any of scale settings - you should do that using {api:anychart.scales}**scale()**{api} method.
 
 ## Types
 
-There are four types of scales in AnyChart: **"Linear"**, **"Logarithmic"**, **"Ordinal"** and **"DateTime"**. To set 
+There are four types of scales in AnyChart: {api:anychart.scales.Linear}**"Linear"**{api}, {api:anychart.scales.Logarithmic}**"Logarithmic"**{api}, {api:anychart.scales.Ordinal}**"Ordinal"**{api} and {api:anychart.scales.DateTime}**"DateTime"**{api}. To set
 scale type use appropriate constructor:
 
 ```
@@ -116,7 +116,7 @@ applicability to different chart types:
 </tr>
 </tbody></table>
 
-To change scale mode you need to set **.stackMode()** attribute. Possible attributes are: **value** and **percent**.
+To change scale mode you need to set {api:anychart.enums.ScaleStackMode}**.stackMode()**{api} attribute. Possible attributes are: **value** and **percent**.
 
 ```
     chart.yScale().stackMode('value'); 
@@ -185,14 +185,14 @@ Sample inverted scale chart:
 ## Grids
 ### Major and Minor
 
-There are two types of grids in AnyChart - major grid and minor grid. To enable grid you have to specify:
+There are two types of grids in AnyChart - {api:anychart.charts.Cartesian#grid}major grid{api} and {api:anychart.charts.Cartesian#minorGrid}minor grid{api}. To enable grid you have to specify:
 
 ```
   chart.minorGrid().enabled(true);
   chart.grid().enabled(true);
 ```
 
-For each grid you can define line style:
+For each grid you can define {api:anychart.grids.Linear#stroke}line style{api}:
 
 ```
  chart.grid().stroke('black');
@@ -217,7 +217,7 @@ And create chart like this:
 
 ### Even and Odd fills
 
-You can use this method with both major and minor grids. To do this you need to set **.oddFill()** or/and **.evenFill()** methods in the corresponding grid. Fill can be gradient, image and/or hatch as well as any other fill.
+You can use this method with both major and minor grids. To do this you need to set {api:anychart.core.grids.Linear#oddFill}**.oddFill()**{api} or/and {api:anychart.core.grids.Linear#evenFill}**.evenFill()**{api} methods in the corresponding grid. Fill can be gradient, image and/or hatch as well as any other fill.
 
 ```
     chart.grid(1).layout('horizontal').evenFill('white').oddFill('rgb(244,245,255');
