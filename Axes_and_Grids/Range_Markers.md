@@ -14,9 +14,7 @@ scale, both x scale, y scale and additional scale.
 
 ## Declare
 
-To add range marker you need to use **.rangeMarker()** method. Each range marker has several mandatory properties set 
-by **.scale()**, **.from()**, **.to()** and **.fill()** methods. If you want to bound range marker to a horizontal 
-scale, you have to set **.layout(vertical)**. Otherwise it will be horizontal.
+To add range marker you need to use {api:anychart.axisMarkers.Range}**.rangeMarker()**{api} method. Each range marker has several mandatory properties set by {api:anychart.axisMarkers.Range#scale}**.scale()**{api}, {api:anychart.axisMarkers.Range#from}**.from()**{api}, {api:anychart.axisMarkers.Range#to}**.to()**{api} and {api:anychart.axisMarkers.Range#fill}**.fill()**{api} methods. If you want to bound range marker to a horizontal scale, you have to set {api:anychart.axisMarkers.Range#layout}**.layout(vertical)**{api}. Otherwise it will be horizontal.
 
 ```
     chart.rangeMarker()
