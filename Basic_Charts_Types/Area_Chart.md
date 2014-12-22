@@ -221,8 +221,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 ## Visualization
 
-In this section we will describe main parts of area chart visualization and ways to adjust it. Visual appearance of 
-areas is defined using certain methods. For Area chart the main thing is the **.fill()** method. 
+In this section we will describe main parts of area chart visualization and ways to adjust it. Visual appearance of areas is defined using certain methods. For Area chart the main thing is the {api:anychart.graphics.vector.Fill}**.fill()**{api} method.
 
 ### Basic sample
 
@@ -237,9 +236,7 @@ Now, let's look how to change the look of an Area.  Here is a basic sample:
         .hoverHatchFill('diagonalbrick', 'black');
 ```
 
-Using such settings we've created a look that defines area of Gold color, rather thick border line, hatch filled with 
-DiagonalBrick. Also, we've defined that when user will move cursor over the chart it's hatch will be highlighted with a
- black and chart will be filled with darkred.
+Using such settings we've created a look that defines area of Gold color, rather thick border line, hatch filled with DiagonalBrick. Also, we've defined that when user will move cursor over the chart it's hatch will be highlighted with a black and chart will be filled with darkred.
 
 Now we will apply the style to the chart:
 
@@ -260,13 +257,11 @@ Color is not the only way to design a chart. In this sample we will demonstrate 
 
 ## Labels and Tooltips
 
-In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and 
-tuning visual appearance for them can be found in Labels and Tooltips.
+In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and Tooltips.
 
-If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip()** methods. You can tune their visual appearance, positioning and format.
+If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format.
 
-When formatting data labels text we will use **.textFormatter()** to show month name. Otherwise sales will be displayed
-here. 
+When formatting data labels text we will use {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} to show month name. Otherwise sales will be displayed here.
 
 ```
     var series= chart.bar(data);
