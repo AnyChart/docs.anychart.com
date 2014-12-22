@@ -207,9 +207,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 ### Minimum and Maximum
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart 
-sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting 
-**.maximum()** and **.minimum()**. :
+By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting **.maximum()** and **.minimum()**. :
 
 ```
     chart.yScale().minimum('0').maximum('50000');
@@ -244,7 +242,7 @@ Now we will apply the style to the chart:
 
 ### Image fill
 
-Color is not the only way to design a chart. In this sample we will demonstrate how to use picture as a fill:  
+Color is not the only way to design a chart. In this sample we will demonstrate how to use picture as a fill:
 
 ```
     chart.area(data).fill({
@@ -275,12 +273,10 @@ When formatting data labels text we will use {api:anychart.core.ui.LabelsFactory
 
 ## Markers
 
-Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. 
-AnyChart allows to add markers to any data element including areas.
+Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including areas.
   
   
-In the sample below we will take single-series data described above and mark the highest point in series with a 
-**"Star"** of the **"Gold"** color.
+In the sample below we will take single-series data described above and mark the highest point in series with a **"Star"** of the **"Gold"** color.
 
 To make marker visually appealing we will tell AnyChart to set marker size to 12 pixels.
 
@@ -299,9 +295,7 @@ to identify similar colors. Also it is impossible to identify colors on prints o
 very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are 
 color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings. 
 
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 
-chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting 
-hatch type for **".hatchFill()"** parameter.
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch type for {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
 
 ```
     .hatchFill('soliddiamond')
