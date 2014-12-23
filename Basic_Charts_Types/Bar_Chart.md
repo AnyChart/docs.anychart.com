@@ -253,7 +253,6 @@ Learn more about labels and tooltips in Labels and tooltips
 Full Keywords reference and formatting guide: Labels and tooltips
 -->
 
-<script>alert('hui')</script>
 ## Markers
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including bars.
