@@ -6,25 +6,22 @@
 <!-- * [Adding "%" to axis labels](#percent) -->
 
 ## Overview
-Data that is arranged in columns or rows on a worksheet can be plotted in a bar chart. Bar charts illustrate comparisons
- among individual items. 
+Data that is arranged in columns or rows on a worksheet can be plotted in a bar chart. Bar charts illustrate comparisons among individual items.
 
 100% stacked bar charts compares the percentage each value contributes to a total across categories.
 
 ## Chart
 
-As stacked charts should show contribution of different components to the total, we will demonstrate them on an 
-imaginable ACME FastFood, Corp. sales. Let's assume that it sells Ice Cream, Chocolate Bar and Coke all through the 
-year.
+As stacked charts should show contribution of different components to the total, we will demonstrate them on an imaginable ACME FastFood, Corp. sales. Let's assume that it sells Ice Cream, Chocolate Bar and Coke all through the year.
 
 So, we have three series of data - one series for each product, and we give proper names to each series:
 
 ```
     var dataSet = anychart.data.set([
-        ["Winter", 12000, 12000, 10000],  
-        ["Spring", 13000, 12000, 17000],  
-        ["Summer", 25000, 15000, 19000],  
-        ["Autumn", 16000, 16000, 16000]   
+        ["Winter", 12000, 12000, 10000],
+        ["Spring", 13000, 12000, 17000],
+        ["Summer", 25000, 15000, 19000],
+        ["Autumn", 16000, 16000, 16000]
     ]);
 ```
 
@@ -50,7 +47,7 @@ Just change "columnChart" to "barChart" and get your data displayed as a bar cha
     series = chart.column(seriesData_4);
 ```
 
-Also, tooltips can be enabled/disabled by adjusting **.tooltip()** method:
+Also, tooltips can be enabled/disabled by adjusting {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} method:
 
 ```
     series = chart.column(seriesData_1);
