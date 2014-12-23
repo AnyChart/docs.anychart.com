@@ -53,5 +53,5 @@ anychart.onDocumentReady(function() {
   series.pointWidth(chart.container().width()/15);
 
   //draw
-  chat.draw();
+  chart.draw();
 });
