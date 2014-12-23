@@ -22,7 +22,7 @@ Polar chart plot allows to draw scatter chart using the polar coordinate system,
 
 ## Chart
 
-AnyChart allows to display three types of series on a Polar chart: Line, Area and Marker. You need to create a chart using **anychart.polar()** method to display Polar chart:
+AnyChart allows to display three types of series on a Polar chart: Line, Area and Marker. You need to create a chart using {api:anychart.charts.Polar}**anychart.polar()**{api} method to display Polar chart:
 
 ```
   // chart type
@@ -44,7 +44,7 @@ AnyChart allows to display three types of series on a Polar chart: Line, Area an
   ]);
 ```
 
-As you can see each point is represented by category set using x field and value set using y field.
+As you can see each point is represented with **x** and **value** fields.
 
 Here is a basic Polar sample:
 
@@ -56,8 +56,7 @@ Polar plot has several distinctive configuration options which are presented in 
 
 ### Start angle
 
-By default polar starts drawing from the top center point (0°), but you can change this using **.startAngle()**
-parameter:
+By default polar starts drawing from the top center point (0°), but you can change this using {api:anychart.charts.Polar#startAngle}**.startAngle()**{api} parameter:
 
 ```
   chart.startAngle(90);
@@ -69,7 +68,7 @@ Sample chart with starting angle shifted to 90°:
 
 ### Plot background
 
-You can change polar background using **.background()** method, learn more about this method at [Background settings tutorial](../Appearance_Settings/Background).
+You can change polar background using {api:anychart.core.ui.Background}**.background()**{api} method, learn more about this method at [Background settings tutorial](../Appearance_Settings/Background).
 
 ```
   chart.background()
@@ -90,7 +89,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 ### Stroke
 
-Axis stroke appearance is controlled by **.stroke()** parameter.
+Axis stroke appearance is controlled by {api:anychart.core.grids.Polar#stroke}**.stroke()**{api} parameter.
 
 ```
   // set chart type
@@ -176,7 +175,7 @@ You can change labels background. Learn more about background configuration in [
 
 {sample}BCT\_PolarChart\_09{sample}
 
-You can hide first and/or last labels using **.drawFirstLabel()** and **.drawLastLabel()** parameters:
+You can hide first and/or last labels using {api:anychart.core.axes.Radial#drawFirstLabel}**.drawFirstLabel()**{api} and {api:anychart.core.axes.Radial#drawLastLabel}**.drawLastLabel()**{api} parameters:
 
 ```
   chart.yAxis()
@@ -191,13 +190,11 @@ You can hide first and/or last labels using **.drawFirstLabel()** and **.drawLas
 In this section we will describe main parts of polar chart style and demonstrate how style can be applied.
 
 
-The main idea of styles is to segregate visualization and data definition. Visual appearance of columns is defined
-using certain methods.
+The main idea of styles is to segregate visualization and data definition. Visual appearance of columns is defined using certain methods.
 
 ### Grid
 
-Polar grid is a combination of circular and radial grids. Grid visual appearance can be controlled with several
-parameters:
+Polar grid is a combination of circular and radial grids. Grid visual appearance can be controlled with several parameters:
 
 ```
   // chart type
@@ -220,7 +217,7 @@ Sample below demonstrates two polar charts with adjusted visualisation of the ra
 
 In this section we will explain how to add and configure data labels and tooltips.
 
-If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip()** methods. You can tune their visual appearance, positioning and format.
+If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.core.polar.series.Base#labels}**.labels()**{api} and {api:anychart.core.polar.series.Base#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format.
 
 Next sample demonstrates bold series labels which display value of a point and tooltip shows detailed description.
 
