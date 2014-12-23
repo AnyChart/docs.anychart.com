@@ -24,7 +24,7 @@ The radar chart is also known as web chart, spider chart, star chart, cobweb cha
 
 ## Chart
 
-AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to create chart using **anychart.radar()** method to display Radar chart:
+AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to create chart using {api:anychart.charts.Radar}**anychart.radar()**{api} method to display Radar chart:
 
 ```
   // chart type
@@ -53,8 +53,7 @@ Radar plot has several distinctive configuration options, which are presented in
 
 ### Start angle
 
-By default radar starts drawing from the top center point (0°), but you can change this using **.startAngle()**
-parameter:
+By default radar starts drawing from the top center point (0°), but you can change this using {api:anychart.charts.Radar#startAngle}**.startAngle()**{api} parameter:
 
 ```
   chart.startAngle(90);
@@ -66,7 +65,7 @@ Sample chart with starting angle shifted to 90°:
 
 ### Plot background
 
-You can change radar background using **.background()** method, learn more about this method at [Background settings tutorial](../Appearance_Settings/Background).
+You can change radar background using {api:anychart.core.ui.Background}**.background()**{api} method, learn more about this method at [Background settings tutorial](../Appearance_Settings/Background).
 
 ```
   chart.background()
@@ -87,7 +86,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 ### Stroke
 
-Axis stroke appearance is controlled by **.stroke()** parameter.
+Axis stroke appearance is controlled by {api:anychart.core.axes.Radar#stroke}**.stroke()**{api} parameter.
 
 ```
   // set chart type
@@ -117,7 +116,7 @@ Look at the demonstration of Y Axis inversion in the sample below:
 
 ### Logarithmic Scale
 
-Logarithmic scale type is set using **.scale()** method. More information on scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
+Logarithmic scale type is set using {api:anychart.scales.Logarithmic}**.scale()**{api} method. More information on scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
 
 ```
   var logScale = anychart.scales.log();   // create logarithmic scale
@@ -131,7 +130,7 @@ And here is the demonstration of Logarithmic Y Axis on a simple radar with area 
 
 ### Stacked Mode
 
-Multiple area series can be presented with usage of stacked mode for Y scale. Stacked mode helps to visualize data in a convenient way for comparing different data series which shares one of the values. Use **.stackMode()** parameter to enable stacked mode.
+Multiple area series can be presented with usage of stacked mode for Y scale. Stacked mode helps to visualize data in a convenient way for comparing different data series which shares one of the values. Use {api:anychart.enums.ScaleStackMode}**.stackMode()**{api} parameter to enable stacked mode.
 
 ```
   // set chart type
@@ -143,7 +142,7 @@ Multiple area series can be presented with usage of stacked mode for Y scale. St
 
 {sample}BCT\_RadarChart\_08{sample}
 
-Percent stacked mode calculates the proportion of each point to the category sum and uses this percentage as a value. To enable this mode set **.stackMode('percent')**.
+Percent stacked mode calculates the proportion of each point to the category sum and uses this percentage as a value. To enable this mode set {api:anychart.enums.ScaleStackMode#PERCENT}**.stackMode('percent')**{api}.
 
 {sample}BCT\_RadarChart\_09{sample}
 
@@ -193,7 +192,7 @@ You can change labels background. Learn more about background configuration in [
 
 {sample}BCT\_RadarChart\_11{sample}
 
-You can hide the first and/or the last labels using **.drawFirstLabel()** and **.drawLastLabel()** parameters:
+You can hide the first and/or the last labels using {api:anychart.core.axes.Linear#drawFirstLabel}**.drawFirstLabel()**{api} and {api:anychart.core.axes.Linear#drawLastLabel}**.drawLastLabel()**{api} parameters:
 
 ```
   chart.yAxis()
@@ -223,8 +222,7 @@ methods:
 **Note:** full information on grid settings can be found in [Grid section of Scale tutorial](../Axes_and_Grids/Scales#grids)
 
 
-Sample below demonstrates two radar charts with adjusted visualisation of the radial type of grid as well as of the
-circular one.
+Sample below demonstrates two radar charts with adjusted visualisation of the radial type of grid as well as of the circular one.
 
 {sample}BCT\_RadarChart\_13{sample}
 
@@ -232,7 +230,7 @@ circular one.
 
 In this section we will explain how to add and configure data labels and tooltips.
 
-If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip()** methods. You can tune their visual appearance, positioning and format.
+If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.core.polar.series.Base#labels}**.labels()**{api} and {api:anychart.core.polar.series.Base#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format.
 
 ```
   // chart type
