@@ -51,9 +51,12 @@ anychart.onDocumentReady(function() {
     return date.toLocaleDateString('en-US', options);
   });
 
-  // draw
-  chart.container('container').draw();
+  // set container
+  chart.container('container');
 
   // limit width of each point in series
   series.pointWidth(chart.container().width()/15);
+
+  // draw chart
+  chart.draw();
 });

@@ -77,8 +77,10 @@ anychart.onDocumentReady(function() {
     return date.toLocaleDateString('en-US', options);
   });
 
-  chart.container('container').draw();
+  chart.container('container');
 
   // limit width of each point in series
   series.pointWidth(chart.container().width()/15);
+
+  chart.draw();
 });
