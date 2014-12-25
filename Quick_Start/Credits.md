@@ -15,7 +15,7 @@ Credits is a watermark in the bottom right corner of any chart. It consists of f
 
 ### Text
 
-Сredits text can be changed by using **.text()** method: 
+Сredits text can be changed by using {api:anychart.core.ui.Credits#text}**.text()**{api} method:
 
 ```
     chart.credits().text('My Company');
@@ -24,7 +24,7 @@ Credits is a watermark in the bottom right corner of any chart. It consists of f
 
 ### Tooltip
 
-Tooltip shown when when credits are hovered. It can be adjusted with **.alt()** method.
+Tooltip shown when when credits are hovered. It can be adjusted with {api:anychart.core.ui.Credits#alt}**.alt()**{api} method.
 
 ```
     chart.credits().alt('Custom tooltip');
@@ -33,7 +33,7 @@ Tooltip shown when when credits are hovered. It can be adjusted with **.alt()** 
 
 ### URL
 
-Credits act as a link. By default it is linked to [AnyChart Site](http://www.anychart.com/). You can change it this using **.url()** method.
+Credits act as a link. By default it is linked to [AnyChart Site](http://www.anychart.com/). You can change it this using {api:anychart.core.ui.Credits#url}**.url()**{api} method.
 
 ```
     chart.credits().url('http://www.anychart.com/buy/');
@@ -41,7 +41,7 @@ Credits act as a link. By default it is linked to [AnyChart Site](http://www.any
 {sample}Credits\_03{sample}
 
 ### Logo
-Logo picture can be adjusted as well. Use **.logoScr()** method to set custom image
+Logo picture can be adjusted as well. Use {api:anychart.core.ui.Credits#logoScr}**.logoScr()**{api} method to set custom image
 
 ```
     chart.credits().logoSrc('http://static.anychart.com/github.png');
