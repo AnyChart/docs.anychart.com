@@ -217,8 +217,7 @@ orientation can be adjusted, how axis scale can be inverted and how minimum and 
 
 ### Orientation
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** parameter
- of **.yAxis()** or **.xAxis()** methods.
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
   
   
 Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and inversion 
@@ -249,7 +248,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart 
 sample above: minimal value on the Y Axis is 800, and maximum is 1600. You can control these values by setting 
-**.maximum()** and **..minimum()** parameters of a **.scale()** method:
+**.maximum()** and **..minimum()** parameters of a {api:anychart.charts.Cartesian#yScale}**.scale()**{api} method:
 
 ```
     chart.yScale().minimum('0').maximum('1800');
@@ -261,8 +260,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 ## Visualization
 
-In this section we will describe main parts of marker chart visualization and ways to adjust it. Visual appearance of 
-areas is defined using certain methods. For Marker chart the main thing is the **.fill()** parameter.
+In this section we will describe main parts of marker chart visualization and ways to adjust it. Visual appearance of areas is defined using certain methods. For Marker chart the main thing is the {api:anychart.core.radar.series.Base#fill}**.fill()**{api} parameter.
 
 ### Basic Sample
 
@@ -296,10 +294,7 @@ In this section we will explain how to add and configure data labels and tooltip
 and tuning visual appearance for them can be found in Labels and tooltips-->.
   
   
-If you want to configure data labels and tooltips for all series - you should do that using **.labels()** and 
-**.tooltip()** methods. You can tune their visual appearance, positioning and format. Let's do that in the following 
-example: we will make data labels appear to the top of the data points, also, we will format labels so they show only 
-the value corresponding to the point and tooltip will show detailed description.
+If you want to configure data labels and tooltips for all series - you should do that using {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
 
 {sample}BCT\_Marker\_Chart\_07{sample}
 
@@ -319,14 +314,14 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 ### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we 
-need to set **.fill()** parameters in the **.marker()** method. In the sample below we have 5 series with sample data 
+need to set {api:anychart.core.radar.series.Base#fill}**.fill()**{api} parameters in the {api:anychart.core.ui.MarkersFactory}**.marker()**{api} method. In the sample below we have 5 series with sample data
 and we'll color each series to different color. Here is the sample:
 
 {sample}BCT\_Marker\_Chart\_08{sample}
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined 
 color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. 
-As you see it is very easy to do by setting **.fill()** parameter for the point.
+As you see it is very easy to do by setting {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter for the point.
 
 {sample}BCT\_Marker\_Chart\_09{sample}
 
@@ -352,6 +347,6 @@ palettes. To see whole range of available hatch types see [Hatch tutorial](../Ap
   
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 
 chart with 5 series with 2 data points in each. For every series we've applied different hatch fills by setting 
-**.hatchFill()** parameter.
+{api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
 
 {sample}BCT\_Marker\_Chart\_10{sample}
