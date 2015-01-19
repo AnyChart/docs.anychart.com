@@ -282,7 +282,7 @@ Let's demonstrate how to apply different colors to different data series. To app
 {sample}BCT\_BarChart\_09{sample}
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximum one.
-As you see it is very easy to do by setting **fill()** parameter of a point.
+As you see it is very easy to do by setting {api:anychart.graphics.vector.Fill}**fill()**{api} parameter of a point.
 
 {sample}BCT\_BarChart\_10{sample}
 
