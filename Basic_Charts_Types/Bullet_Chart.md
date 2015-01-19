@@ -46,8 +46,7 @@ ever reached in the company. Data set for the chart is below
 ## Ranges
 
 Ranges or range bar in Bullet chart is a qualitative categories representation (such as bad, satisfactory, 
-and good). They are variables of color intensity rather than of hue. Ranges are controlled by **.range()** method and 
-have two mandatory parameters set by **.from()** and **.to()** methods. 
+and good). They are variables of color intensity rather than of hue. Ranges are controlled by {api:anychart.charts.Bullet#range}**.range()**{api} method and have two mandatory parameters set by **.from()** and **.to()** methods.
 
 ```
   chart.range().from(0).to(10);
@@ -62,8 +61,8 @@ colors you shouldn't exceed five ranges on one chart.
 
 ## Layout
 
-Bullet Chart was designed to represent data in the most effective and use minimum space for it. Layout is controlled 
-by **.layout()** parameter. Here is a sample of code with both horizontal and vertical layouts.
+Bullet Chart was designed to represent data in the most effective way and use minimum space for it. Layout is controlled
+by {api:anychart.charts.Bullet#layout}**.layout()**{api} parameter. Here is a sample of code with both horizontal and vertical layouts.
 
 ```
   chart_1.layout('vertical');
@@ -82,8 +81,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **orientation()** of
- **.axis()**.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}**orientation()**{api} of {api:anychart.charts.Bullet#axis}**.axis()**{api}.
   
   
 Orientation depends on the layout of a chart. For horizontal layout axis orientation parameter can be set only *top* 
