@@ -297,7 +297,7 @@ Let's demonstrate how to apply different colors to different data series. To app
 {sample}BCT\_OHLC\_Chart\_08{sample}
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one.
-As you see it is very easy to do by setting **.fallingStroke()** and **.risingStroke()** parameter for point.
+As you see it is very easy to do by setting {api:anychart.core.cartesian.series.OHLC#fallingStroke}**.fallingStroke()**{api} and {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api} parameter for point.
 
 {sample}BCT\_OHLC\_Chart\_09{sample}
 
