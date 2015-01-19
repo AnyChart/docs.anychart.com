@@ -29,7 +29,7 @@ This article shows how to solve each of these tasks and features examples for al
 
 ### Create
 
-AnyChart allows to adjust chart at any moment after it is displayed. The most simple case is adding a new point. To add an element into a data set, use **.append()** method
+AnyChart allows to adjust chart at any moment after it is displayed. The most simple case is adding a new point. To add an element into a data set, use {api:anychart.data.Set#append}**.append()**{api} method
 
 ```
     dataSet.append({x: 'P6', value: 20});
@@ -53,13 +53,13 @@ available on hovering a column.
 
 ### Update
 
-Updating data is AnyChart data set is done usinf **.set()** method.  Sample below demonstrates adding 5 to a column on click.
+Updating data is AnyChart data set is done usinf {api:anychart.data#set}**.set()**{api} method.  Sample below demonstrates adding 5 to a column on click.
 
 {sample}CRUD\_03{sample}
 
 ### Delete
 
-As far as we can add data, we can remove it too. Use **.remove()** method to delete a row from data set.
+As far as we can add data, we can remove it too. Use {api:anychart.data.Set#remove}**.remove()**{api} method to delete a row from data set.
 
 ```
     dataset.remove(0); // removes first row in dataset
@@ -71,7 +71,7 @@ Sample below demonstrates removing data. After clicking on any column, the first
 
 ### Insert
 
-**.insert()** method is very similar to the **.append()** method, but adds information into any position. 
+{api:anychart.data.Set#insert}**.insert()**{api} method is very similar to the {api:anychart.data.Set#append}**.append()**{api} method, but adds information into any position.
 
 ```
     dataSet.insert(
@@ -86,9 +86,7 @@ Sample below illustrates of inserting new column into a random position and colo
 
 ## Data Stream
 
-Data Streaming is basically adding and/or removing points sequentially, usually by timer. To stream data we can use two methods described above: **append()** and **remove()**. In the sample below we create a chart and a 
-button and set event on button click which appends a new data point with random value and removes first data 
-point.
+Data Streaming is basically adding and/or removing points sequentially, usually by timer. To stream data we can use two methods described above: {api:anychart.data.Set#append}**.append()**{api} and {api:anychart.data.Set#remove}**.remove()**{api}. In the sample below we create a chart and a button and set event on button click which appends a new data point with random value and removes first data point.
 
 {sample}CRUD\_06{sample}
  
