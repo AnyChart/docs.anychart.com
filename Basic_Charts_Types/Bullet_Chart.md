@@ -127,7 +127,7 @@ Markers are controlled through data. Here is a sample of a bullet chart with two
 
 ### Type
 
-Bullet charts have 4 types of marker: *bar*, *X*, *line*, *ellipse*. 
+Bullet charts have 4 types of marker: {api:anychart.enums.BulletMarkerType#BAR}*bar*{api}, {api:anychart.enums.BulletMarkerType#X}*X*{api}, {api:anychart.enums.BulletMarkerType#LINE}*line*{api}, {api:anychart.enums.BulletMarkerType#ELLIPSE}*ellipse*{api}.
 
 Here is a sample with all marker types:
 
@@ -158,7 +158,7 @@ Here is a sample of an ellipse sharped marker with blue stroke, gold inner color
 
 ## Colors
 
-Bullet Chart ranges use variables of color intensity rather than of hue. Ranges color are controlled using **.rangePalette()** method:
+Bullet Chart ranges use variables of color intensity rather than of hue. Ranges color are controlled using {api:anychart.charts.Bullet#rangePalette}**.rangePalette()**{api} method:
 
 ```
   chart.rangePalette([
