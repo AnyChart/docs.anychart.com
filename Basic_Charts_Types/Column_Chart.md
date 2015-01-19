@@ -25,8 +25,7 @@ is vertically oriented bars. If you want to build horizontally oriented bar char
  section.
   
   
-Column charts are useful for showing data changes over a period of time or for illustrating comparisons among items. In 
-column charts, categories are typically organized along the horizontal axis and values along the vertical axis.
+Column charts are useful for showing data changes over a period of time or for illustrating comparisons among items. In column charts, categories are typically organized along the horizontal axis and values along the vertical axis.
 
 ## Chart
 
@@ -88,9 +87,7 @@ Mary
 </tr>
 </table>
 
-Now we need to convert this data table into acceptable format. In terms of AnyChart data
-model we have one series of data (Sales) with categories that hold managers names. Each point in series represents one 
-manager and his/her sales. Converted Data looks like:
+Now we need to convert this data table into acceptable format. In terms of AnyChart data model we have one series of data (Sales) with categories that hold managers names. Each point in series represents one manager and his/her sales. Converted Data looks like:
 
 ```
     chart.column([
@@ -182,25 +179,19 @@ names to each series:
     ]);
 ```
 
-As we now have multi-series chart we don't want to set type for each series individually (there can be much more than 
-two series in multi-series chart), so we add {api:anychart.core.cartesian.series.Column}**anychart.columnChart()**{api} to **chart**. Now all series in chart will be of Column type by default.
+As we now have multi-series chart we don't want to set type for each series individually (there can be much more than two series in multi-series chart), so we add {api:anychart.core.cartesian.series.Column}**anychart.columnChart()**{api} to **chart**. Now all series in chart will be of Column type by default.
 
 {sample}BCT\_ColumnChart\_02{sample}
 
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
-scale and settings. All axis features are described in [Axes Basics](../Axes_and_Grids/Axis_Basics)
-tutorial, In this section we will quickly demonstrate how axis orientation can be adjusted, 
-how axis scale can be inverted and how minimum and maximum values can be controlled.
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis  scale and settings. All axis features are described in [Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial, In this section we will quickly demonstrate how axis orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
 ### Orientation
 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.enums.Orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
-  
-  
-Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion 
-settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
+
+Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
 
 ```
     chart.xAxis(0).orientation('top');
@@ -246,9 +237,7 @@ the picture below you can see what are these paddings:
 If you want to set these paddings you need to set {api:anychart.charts.Cartesian#barsPadding}**.barsPadding()**{api} or {api:anychart.charts.Cartesian#barGroupsPadding}**.barGroupsPadding()**{api} parameters in **chart**. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For example, if you set **.barsPadding()** to 0.5 - the space between two columns will be equal to the half of each column width. If you want to have no padding between columns or groups you should set **.barsPadding()** and **.barGroupsPadding()** to 0.
   
   
-Here is a sample of multi-series column chart with **.barsPadding()** and **.barGroupsPadding()** set to -0.1 and 2, 
-accordingly, negative **.barsPadding()** leads to columns overlay and large **.barGroupsPadding()** moves column groups 
-away from each other:
+Here is a sample of multi-series column chart with **.barsPadding()** and **.barGroupsPadding()** set to -0.1 and 2, accordingly, negative **.barsPadding()** leads to columns overlay and large **.barGroupsPadding()** moves column groups away from each other:
 
 {sample}BCT\_ColumnChart\_06{sample}
 
@@ -256,23 +245,18 @@ away from each other:
 
 In this section we will describe main parts of column chart style and demonstrate how style can be applied.
   
-  
 The main idea of styles is to segregate visualization and data definition. Visual appearance of columns is defined 
 using certain styles. Style can be applied to all column charts or single column.
-  
-  
-On the image below you can see what **Chart** can be decorated with: fill (including solid color fill, hatch fill, 
-image fill and gradient fill), border and effects applied to whole column.
+
+On the image below you can see what **Chart** can be decorated with: fill (including solid color fill, hatch fill,  image fill and gradient fill), border and effects applied to whole column.
 
 ![](http://www.anychart.com/products/anychart/docs/users-guide/img/column_styles_diagram.gif)
 
-Styles are also used to make charts interactive, you can define how elements will be displayed by default and when user 
-moves cursor over an element.
+Styles are also used to make charts interactive, you can define how elements will be displayed by default and when user moves cursor over an element.
 
 ### Basic Sample
 
-Now, let's find out how to create a simple style and apply it to the chart. As we've already told style consists of 
-several elements, here is a structure:
+Now, let's find out how to create a simple style and apply it to the chart. As we've already told style consists of several elements, here is a structure:
 
 ```
     chart.column([
@@ -289,11 +273,8 @@ several elements, here is a structure:
     chart.draw();
 ```
 
-Using such settings we've created a style that defines columns of Gold color, rather thick border, hatch filled with 
-DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it will be 
-highlighted with a DarkRed thick border and hatch fill colored DarkRed too.
-  
-  
+Using such settings we've created a style that defines columns of Gold color, rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed thick border and hatch fill colored DarkRed too.
+
 Now we will take a sample single series chart described above and apply it to all chart elements.
 
 {sample}BCT\_ColumnChart\_07{sample}
@@ -316,14 +297,10 @@ displays  X Axis value.
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. 
 AnyChart allows to add markers to any data element including columns.
-  
-  
-In the sample below we will take single-series data described above and mark the highest column in series with a "Star5"
- of the "Gold" color.
-  
-  
-To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 12 pixels in 
-normal state, and make it bigger (12 pixels) when user moves cursor over an element.
+
+In the sample below we will take single-series data described above and mark the highest column in series with a "Star5" of the "Gold" color.
+
+To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 12 pixels in normal state, and make it bigger (12 pixels) when user moves cursor over an element.
 
 ```
     {x: 'Peter', value: 18000, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}}
@@ -334,8 +311,7 @@ And here is a result - Peter sold more than others and we are showing this on th
 
 ## Colors
 
-AnyChart uses default color palette to colorize data elements of chart automatically even if you have not defined 
-special colors.
+AnyChart uses default color palette to colorize data elements of chart automatically even if you have not defined special colors.
 
 ### Colorizing Elements
 
@@ -349,23 +325,14 @@ In the sample below we will see how we can colorize individual points. We have c
 
  **Important Note:**
 AnyChart seriously takes care of visualization and users convenience - that is why we have a number of ways to set 
-colors, for example, instead of "Rgb(180,77,77)" you can set "HSB" or "HTMLConstant" or "#HEXCode"- and the color will 
-be the same. Depending on your system/site/application design you may need - and use - any of this color setting 
-methods. But even this it is not all about colors in AnyChart. Read more about setting colors below and in the 
-following Help Sections:
+colors, for example, instead of "Rgb(180,77,77)" you can set "HSB" or "HTMLConstant" or "#HEXCode"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this it is not all about colors in AnyChart. Read more about setting colors below and in the following Help Sections:
   * [Color management](../Appearance_Settings/Color_Management)
 
 ## Hatch Fills
 
-AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard 
-to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart 
-has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who 
-are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings. To
- see the whole range of available hatch types see [Hatch](../Appearance_Settings/Hatch_Fill) tutorial.
+AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings. To see the whole range of available hatch types see [Hatch](../Appearance_Settings/Hatch_Fill) tutorial.
   
   
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 
-chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting 
-{api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter for series.
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter for series.
 
 {sample}BCT\_ColumnChart\_12{sample}
