@@ -14,7 +14,7 @@
   * [Image Fill](#image_fill)
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Markers](#markers)
-* [Hatch Fill](#hatch_fills)
+* [Hatch Fills](#hatch_fills)
 
 ## Overview
 
@@ -221,7 +221,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 In this section we will describe main parts of area chart visualization and ways to adjust it. Visual appearance of areas is defined using certain methods. For Area chart the main thing is the {api:anychart.graphics.vector.Fill}**.fill()**{api} method.
 
-### Basic sample
+### Basic Sample
 
 Now, let's look how to change the look of an Area.  Here is a basic sample:
 
@@ -240,7 +240,7 @@ Now we will apply the style to the chart:
 
 {sample}BCT\_AreaChart\_07{sample}
 
-### Image fill
+### Image Fill
 
 Color is not the only way to design a chart. In this sample we will demonstrate how to use picture as a fill:
 
@@ -288,7 +288,7 @@ And here is a result - March is the most successful month and we are showing thi
 
 {sample}BCT\_AreaChart\_09{sample}
 
-## Hatch fills
+## Hatch Fills
 
 AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard 
 to identify similar colors. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has 
