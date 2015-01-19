@@ -313,13 +313,13 @@ special colors. But you can apply the color to exact data series or data point.
 ### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we 
-need to set {api:anychart.graphics.vector.Fill}**.fill()**{api}. In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
+need to set {api:anychart.core.radar.series.Base#fill}**.fill()**{api}. In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
 
 {sample}BCT\_Bubble\_Chart\_10{sample}
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined 
 color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximum one. 
-As you see it is very easy to do by setting **.fill()** parameter for point.
+As you see it is very easy to do by setting {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter for point.
 
 {sample}BCT\_Bubble\_Chart\_11{sample}
 
