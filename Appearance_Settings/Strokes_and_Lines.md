@@ -13,7 +13,7 @@
 
 Knowledge about line and stroke configuration parameters is very important, because AnyChart allows to configure almost any line you can see on the chart: Lines in charts, grids, tooltips and labels, and even tickmark lines.
 
-The name of the method is always {api:anychart.axisMarkers.Line}**.line()** {api}or {api:anychart.graphics.vector.Stroke}**.stroke()**{api}. In this tutorial all line parameters and features are described.
+The name of the method is always {api:anychart.axisMarkers.Line}**.line()**{api} or {api:anychart.graphics.vector.Stroke}**.stroke()**{api}. In this tutorial all line parameters and features are described.
 
 ## Basics
 
@@ -104,11 +104,10 @@ Opacity through object:
 
 Caps and joints are special parameters that define how line endings and bends are drawn.
 
-The caps attribute specifies the caps style to use in drawing lines. You can specify the following three types of caps: **"none"** (or "butt"), **"round"** and **"square"**, as the following example shows:
+The caps attribute specifies the caps style to use in drawing lines. You can specify the following three types of caps: {api:anychart.graphics.vector.StrokeLineCap#BUTT}**"none"**{api} (or "butt"), {api:anychart.graphics.vector.StrokeLineCap#ROUND}**"round"**{api} and {api:anychart.graphics.vector.StrokeLineCap#SQUARE}**"square"**{api}, as the following example shows:
 
 ![](http://static.anychart.com/linecap.jpg)
 
-The joint attribute specifies the joint style to use in drawing lines. It supports three types of joints: **"miter"**,
- **"round"**, and **"bevel"**, as the following example shows:
+The joint attribute specifies the joint style to use in drawing lines. It supports three types of joints: {api:anychart.graphics.vector.StrokeLineJoin#MITER}**"miter"**{api}, {api:anychart.graphics.vector.StrokeLineJoin#ROUND}**"round"**{api}, and {api:anychart.graphics.vector.StrokeLineJoin#BEVEL}**"bevel"**{api}, as the following example shows:
 
 ![](http://static.anychart.com/linejoin.jpg)
