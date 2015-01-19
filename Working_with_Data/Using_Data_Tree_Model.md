@@ -65,7 +65,7 @@ Data Manipulation includes CRUD operations, such as:
 
 
 This operations can be performed on root elements as well as for children of a node. Tutorial on CRUD operations for
- **.set()** method can be found in [Data Manipulation article](Data_Manipulation).
+ {api:anychart.data.Set}**.set()**{api} method can be found in [Data Manipulation article](Data_Manipulation).
 
 ### Create
 
@@ -76,8 +76,7 @@ click on a button.
 
 Adding a child is quite useful method for adjusting data in real time and visualizing  actual processes.
 Nevertheless, adding only one child at a time may appear to be ineffective for managing data. Transferring prepared
-data with predefined hierarchy is advanced way managing data in a tree. Method **.addData()** requires data to add
-and type of new data.
+data with predefined hierarchy is advanced way managing data in a tree. Method {api:anychart.data.Tree#addData}**.addData()**{api} requires data to add and type of new data.
 
 ```
   // data to add
@@ -102,8 +101,7 @@ Sample below demonstrates adding data on click on a button.
 ### Read
 
 Data tree item may have unlimited number of data fields thus it requires methods for reading data from any field and
-item search through field value. **.get()** method reads required field of an item. Sample below demonstrates
-data grid with custom columns. Each of them read data from custom field Data of data grid.
+item search through field value. {api:anychart.data.Tree.DataItem#get}**.get()**{api} method reads required field of an item. Sample below demonstrates data grid with custom columns. Each of them read data from custom field Data of data grid.
 
 {sample :width 690 :height 200}Data\_Tree\_04{sample}
 
@@ -117,7 +115,7 @@ below illustrates adding 1000 to a value of the third node.
 
 ### Delete
 
-As far as we can add data, we can remove it too. Use **.removeChild()** method to delete an item from data set.
+As far as we can add data, we can remove it too. Use {api:anychart.data.Tree#removeChild}**.removeChild()**{api} method to delete an item from data set.
 
 ```
   tree.removeChildAt(0); // remove first element in data tree
