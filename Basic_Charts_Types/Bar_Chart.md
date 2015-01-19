@@ -197,7 +197,7 @@ The special thing about bar charts are the paddings between bars and bar groups 
 
 ![](http://www.anychart.com/products/anychart/docs/users-guide/img/horz_bar_padding.jpg)
 
-If you want to set these paddings you need to set {api:anychart.core.cartesian.series.Base#xPointPosition}**PointPosition()**{api} in **bar_series**. Paddings are measured as a ratio to bar width (bars widths are calculated automatically). For example, if you set **xPointPosition to 0.5** - the space between two bars will be equal to the half of each bar width. If you want to have no padding between bars **xPointPosition** to 0.
+If you want to set these paddings you need to set {api:anychart.core.cartesian.series.Base#xPointPosition}**xPointPosition()**{api} in **bar_series**. Paddings are measured as a ratio to bar width (bars widths are calculated automatically). For example, if you set **xPointPosition to 0.5** - the space between two bars will be equal to the half of each bar width. If you want to have no padding between bars **xPointPosition** to 0.
 
 Here is a sample of multi-series bar chart with **xPointPosition** set to 0.5.
 
