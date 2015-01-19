@@ -1,4 +1,4 @@
-#Resource Chart
+#Project Chart
 
 * [Overview](#overview)
 * [Chart](#chart)
