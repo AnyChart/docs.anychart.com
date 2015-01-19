@@ -41,7 +41,7 @@ Credits act as a link. By default it is linked to [AnyChart Site](http://www.any
 {sample}Credits\_03{sample}
 
 ### Logo
-Logo picture can be adjusted as well. Use {api:anychart.core.ui.Credits#logoScr}**.logoScr()**{api} method to set custom image
+Logo picture can be adjusted as well. Use {api:anychart.core.ui.Credits#logoSrc}**.logoScr()**{api} method to set custom image
 
 ```
     chart.credits().logoSrc('http://static.anychart.com/github.png');
