@@ -185,7 +185,7 @@ axis orientation can be adjusted, how axis scale can be inverted and how minimum
 
 ### Orientation
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
   
 Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and inversion 
 settings in [Axis Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
