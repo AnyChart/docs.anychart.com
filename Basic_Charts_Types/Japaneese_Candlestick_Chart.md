@@ -17,9 +17,7 @@
 
 ## Overview
 
-The Japanese candlestick chart a style of bar-chart used primarily to describe price movements of an equity over time. 
-It is a combination of a line-chart and a bar-chart, in that each bar represents the range of price movement over a 
-given time interval. It is most often used in technical analysis of equity and currency price patterns.
+The Japanese candlestick chart a style of bar-chart used primarily to describe price movements of an equity over time. It is a combination of a line-chart and a bar-chart, in that each bar represents the range of price movement over a given time interval. It is most often used in technical analysis of equity and currency price patterns.
   
   
 Candlesticks are usually composed of the body (black or white), an upper and a lower shadow (wick). The wick 
@@ -42,8 +40,7 @@ should be done setting **open**, **high**, **low**, **close** parameters into se
 
 ### Single Series
 
-Let's see single-series candlestick chart created using an imaginable price ranges that will show candlestick's basic 
-patterns:
+Let's see single-series candlestick chart created using an imaginable price ranges that will show candlestick's basic patterns:
 
 <table width="319" border="1" class="dtTABLE">
 <tbody><tr>
@@ -295,8 +292,7 @@ axis scale can be inverted and how minimum and maximum values can be controlled.
 
 ### Orientation
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **orientation()** parameter
- of **yAxis()** or **xAxis()** methods.
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}**orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**yAxis()**{api} or {api:anychart.charts.Cartesian#yAxis}**xAxis()**{api} methods.
 
 ```
     chart.xAxis(0).orientation('top');
@@ -309,7 +305,7 @@ And here is the demonstration of this feature on the Single-series sample:
 
 ### Logarithmic Scale
 
-AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by **scale**:
+AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by {api:anychart.scales}**scale**{api}:
 
 ```
     logScale = anychart.scales.log();
@@ -324,7 +320,7 @@ And here is the demonstration of Logarithmic Y Axis on slightly modified the Sin
 ### Minimum and Maximum
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart 
-sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting **.maximum()** and **.minimum()** parameters of **.yScale()** method. As far as you want to adjusted the scale,
+sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting **.maximum()** and **.minimum()** parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjusted the scale,
 it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 
 ```
@@ -337,9 +333,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 ## Visualization
 
-In this section we will describe main parts of candlestick chart visualization and ways to adjust it. Also you will see 
-list of predefined styles. Visual appearance of candlestick is defined using certain parameters. The most important for 
-candlestick parameters are **.fallingStroke()**, **.risingStroke()**, **.risingFill()** and **.fallingFill()**.
+In this section we will describe main parts of candlestick chart visualization and ways to adjust it. Also you will see list of predefined styles. Visual appearance of candlestick is defined using certain parameters. The most important for candlestick parameters are {api:anychart.core.cartesian.series.Candlestick#fallingStroke}**.fallingStroke()**{api}, {api:anychart.core.cartesian.series.Candlestick#risingStroke}**.risingStroke()**, {api:anychart.core.cartesian.series.Candlestick#risingFill}**.risingFill()**{api} and {api:anychart.core.cartesian.series.Candlestick#fallingFill}**.fallingFill()**{api}.
 
 ### Basic Sample
 
@@ -372,7 +366,7 @@ If you want to configure data labels and tooltips for all series - you should do
 example: we will make data labels appear to the top of the data points, also, we will format labels so they show only 
 the value corresponding to the point and tooltip will show detailed description.
 
-When formatting data labels text and tooltip we can use **.contentFormatter()** and **.textFormatter()**.
+When formatting data labels text and tooltip we can use {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} and {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api}.
 
 {sample}BCT\_Japaneese-Candlestick\_Chart\_07{sample}
 <!--
@@ -390,16 +384,11 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 ### Colorizing Elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we 
-need to set **.color()**. In the sample below we have 5 series with sample data and we'll color each series into 
-different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.core.cartesian.series.Base#color}**.color()**{api}. In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
 
 {sample}BCT\_Japaneese-Candlestick\_Chart\_08{sample}
 
-In the sample below we will see how we can colorize individual points. We have chart with one series and predefined 
-color for all elements. We will set **"Rgb(180,77,77)"** color for minimum point and **"Rgb(77,180,77)"** for the 
-maximal one. As you see it is very easy to do by setting **"fallingFill()"** and **"risingFill()"** parameters for a 
-point.
+In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set **"Rgb(180,77,77)"** color for minimum point and **"Rgb(77,180,77)"** for the maximal one. As you see it is very easy to do by setting {api:anychart.core.cartesian.series.Candlestick#fallingFill}**fallingFill()**{api} and {api:anychart.core.cartesian.series.Candlestick#risingFill}**risingFill()**{api} parameters for a point.
 
 {sample}BCT\_Japaneese-Candlestick\_Chart\_09{sample}
 
