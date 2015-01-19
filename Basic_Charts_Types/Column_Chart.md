@@ -88,9 +88,9 @@ Mary
 </tr>
 </table>
 
-Now we need to convert this data table into JSON, this format will be accepted by AnyChart. In terms of AnyChart data 
+Now we need to convert this data table into acceptable format. In terms of AnyChart data
 model we have one series of data (Sales) with categories that hold managers names. Each point in series represents one 
-manager and his/her sales. Converted JSON Data looks like:
+manager and his/her sales. Converted Data looks like:
 
 ```
     chart.column([
@@ -183,8 +183,7 @@ names to each series:
 ```
 
 As we now have multi-series chart we don't want to set type for each series individually (there can be much more than 
-two series in multi-series chart), so we add `anychart.columnChart()` to **chart**. Now all series in chart will be of 
-Bar type by default.
+two series in multi-series chart), so we add {api:anychart.core.cartesian.series.Column}**anychart.columnChart()**{api} to **chart**. Now all series in chart will be of Column type by default.
 
 {sample}BCT\_ColumnChart\_02{sample}
 
@@ -197,8 +196,7 @@ how axis scale can be inverted and how minimum and maximum values can be control
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust **.orientation()** parameter
- of **.yAxis()** or **.xAxis()** methods.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.enums.Orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
   
   
 Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion 
@@ -245,11 +243,7 @@ the picture below you can see what are these paddings:
 
 ![](http://www.anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
 
-If you want to set these paddings you need to set **.barsPadding()** or **.barGroupsPadding()** parameters in 
-**chart**. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For 
-example, if you set **.barsPadding()** to 0.5 - the space between two columns will be equal to the half of each column 
-width. If you want to have no padding between columns or groups you should set **.barsPadding()** and 
-**.barGroupsPadding()** to 0.
+If you want to set these paddings you need to set {api:anychart.charts.Cartesian#barsPadding}**.barsPadding()**{api} or {api:anychart.charts.Cartesian#barGroupsPadding}**.barGroupsPadding()**{api} parameters in **chart**. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For example, if you set **.barsPadding()** to 0.5 - the space between two columns will be equal to the half of each column width. If you want to have no padding between columns or groups you should set **.barsPadding()** and **.barGroupsPadding()** to 0.
   
   
 Here is a sample of multi-series column chart with **.barsPadding()** and **.barGroupsPadding()** set to -0.1 and 2, 
@@ -310,10 +304,7 @@ In this section we will explain how to add and configure data labels and tooltip
 and tuning visual appearance for them can be found in Labels and tooltips tutorials.  -->
   
   
-If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and 
-**.tooltip()** methods of **series**. You can tune their visual appearance, positioning and format. Let's do 
-that in the following example: we will make data labels appear in the center of the columns, format labels so they show 
-only the value corresponding to the column and tooltip will show detailed description.
+If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods of **series**. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear in the center of the columns, format labels so they show only the value corresponding to the column and tooltip will show detailed description.
   
   
 When formatting data labels text we will use adjusted **.textFormatter()** to show Y Axis value. Otherwise label 
@@ -348,15 +339,11 @@ special colors.
 
 ### Colorizing Elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we 
-need to set **.fill()** parameters in the **series**. In the sample below we have 5 series with sample data and 
-we'll color each series in different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.graphics.vector.Fill}**.fill()**{api} parameters in the {api:anychart.core.cartesian.series}**series**{api}. In the sample below we have 5 series with sample data and we'll color each series in different color. Here is the sample:
 
 {sample}BCT\_ColumnChart\_10{sample}
 
-In the sample below we will see how we can colorize individual points. We have chart with one series and predefined 
-color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. 
-As you see it is very easy to do by setting **".fill()"** method for a **point**.
+In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. As you see it is very easy to do by setting {api:anychart.graphics.vector.Fill}**".fill()"**{api} method for a **point**.
 
 {sample}BCT\_ColumnChart\_11{sample}
 
@@ -379,6 +366,6 @@ are color blind. Hatch fill is fully-independent structure, it doesn't rely on c
   
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 
 chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting 
-**.hatchType()** parameter for series.
+{api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter for series.
 
 {sample}BCT\_ColumnChart\_12{sample}
