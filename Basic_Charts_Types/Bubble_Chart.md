@@ -343,6 +343,6 @@ settings and palettes. To see whole range of available hatch types see Hatch tut
 
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 
 chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting 
-{api:anychart.core.radar.series.Base#hatchFill}**.hatchFill()**{api} parameter.
+{api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
 
 {sample}BCT\_Bubble\_Chart\_12{sample}
