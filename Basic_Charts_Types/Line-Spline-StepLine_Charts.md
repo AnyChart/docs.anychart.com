@@ -19,39 +19,24 @@
 
 ## Overview
 
-Data that is arranged in columns or rows on a worksheet can be plotted in a line chart. Line charts can display 
-continuous data over time, set against a common scale, and are therefore ideal for showing trends in data at equal 
-intervals. In a line chart, category data is distributed evenly along the horizontal axis, and all value data is 
-distributed evenly along the vertical axis.
+Data that is arranged in columns or rows on a worksheet can be plotted in a line chart. Line charts can display continuous data over time, set against a common scale, and are therefore ideal for showing trends in data at equal intervals. In a line chart, category data is distributed evenly along the horizontal axis, and all value data is distributed evenly along the vertical axis.
   
   
-You should use a line chart if your category labels are text, and are representing evenly spaced values such as months, 
-quarters, or fiscal years. You should also use a line chart if you have a few evenly spaced numerical labels, especially
- years.
+You should use a line chart if your category labels are text, and are representing evenly spaced values such as months, quarters, or fiscal years. You should also use a line chart if you have a few evenly spaced numerical labels, especially years.
   
   
-[Line](#single_series_line_chart) and [line with markers](#markers) Displayed with or without markers to indicate 
-individual data values, line charts are useful to show trends over time or ordered categories, especially when there 
-are many data points and the order in which they are presented is important. If there are many categories or the values 
-are approximate, you should use a line chart without markers.
+[Line](#single_series_line_chart) and [line with markers](#markers) Displayed with or without markers to indicate individual data values, line charts are useful to show trends over time or ordered categories, especially when there are many data points and the order in which they are presented is important. If there are many categories or the values are approximate, you should use a line chart without markers.
   
   
-Stacked line and stacked line with markers Displayed with or without markers to indicate individual data values, 
-stacked line charts are useful to show the trend of the contribution of each value over time or ordered categories. If 
-there are many categories or the values are approximate, you should use a stacked line chart without markers. 
+Stacked line and stacked line with markers Displayed with or without markers to indicate individual data values, stacked line charts are useful to show the trend of the contribution of each value over time or ordered categories. If there are many categories or the values are approximate, you should use a stacked line chart without markers.
   
   
-**Tip:** For a better presentation of this type of data, you may want to consider using a 
-[stacked area](Stacked_Area-SplineArea_Charts) chart instead.
+**Tip:** For a better presentation of this type of data, you may want to consider using a [stacked area](Stacked_Area-SplineArea_Charts) chart instead.
   
   
-100% stacked line and 100% stacked line with markers Displayed with or without markers to indicate individual data 
-values, 100% stacked line charts are useful to show the trend of the percentage each value contributes over time or 
-ordered categories. If there are many categories or the values are approximate, you should use a 
-[100% stacked line chart](Percent_Stacked_Area-SplineArea_Charts) without markers.
+100% stacked line and 100% stacked line with markers Displayed with or without markers to indicate individual data values, 100% stacked line charts are useful to show the trend of the percentage each value contributes over time or ordered categories. If there are many categories or the values are approximate, you should use a [100% stacked line chart](Percent_Stacked_Area-SplineArea_Charts) without markers.
 
-**Tip:** For a better presentation of this type of data, you may want to consider using a 100% stacked area chart 
-instead.
+**Tip:** For a better presentation of this type of data, you may want to consider using a 100% stacked area chart instead.
 
 ## Chart
 
@@ -59,8 +44,7 @@ Depending on data model and the visualization purpose the line chart may contain
 
 ### Single Series Line Chart
 
-Let's see single-series line chart created using the following data - sales of ACME Corp. through several months in one 
-year:
+Let's see single-series line chart created using the following data - sales of ACME Corp. through several months in one year:
 
 <table width="287" border="1" class="dtTABLE">
 <tbody><tr>
@@ -89,9 +73,7 @@ year:
 </tr>
 </tbody></table>
 
-Now we need to convert this data table into acceptable format, this format will be accepted by AnyChart. In terms of 
-AnyChart data model we have one series of data (Sales) with categories that hold months names. Each point in series 
-represents one month and sales volume. Converted Data looks like:
+Now we need to convert this data table into acceptable format, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data (Sales) with categories that hold months names. Each point in series represents one month and sales volume. Converted Data looks like:
 
 ```
     var data = anychart.data.set([
@@ -105,8 +87,7 @@ represents one month and sales volume. Converted Data looks like:
     chart.line(data);
 ```
 
-As you can see, we've specified chart's type with **anychart.lineChart()** method, defined data source with 
-**chart.line(data)** and set data with **anychart.data.set()**.
+As you can see, we've specified chart's type with {api:anychart.core.cartesian.series.Line}**anychart.lineChart()**{api} method, defined data source with {api:anychart.charts.Cartesian#line}**chart.line(data)**{api} and set data with {api:anychart.data.Set}**anychart.data.set()**{api}.
 
 {sample}BCT\_LineChart\_01{sample}
 
@@ -189,9 +170,7 @@ Let's compare 2003 sales to 2004 sales:
 </tr>
 </tbody></table>
 
-As we do in single series line sample above we need to convert this table into acceptable format, the only difference 
-between these two samples is the fact that now we have two series of data - one series for each year, and we give 
-proper names to each series:
+As we do in single series line sample above we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
 
 ```
     var dataSet = anychart.data.set([
@@ -209,9 +188,7 @@ proper names to each series:
 ```
 
 As we now have multi-series chart we don't want to set type for each series individually (there can be much more than 
-two series in multi-series chart), so we add 'anychart.lineChart()' parameter to **chart**. Now all series in chart will
- be 
-of Line type by default.
+two series in multi-series chart), so we add {api:anychart.core.cartesian.series.Line}**anychart.lineChart()**{api} parameter to **chart**. Now all series in chart will be of Line type by default.
 
 {sample}BCT\_LineChart\_04{sample}
 
@@ -224,8 +201,7 @@ values can be controlled.
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with 
-**orientation()** parameter of **.yAxis()** or **.xAxis()** methods.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
   
   
 Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and inversion 
@@ -256,7 +232,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart 
 sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting 
-**.maximum()** and **.minimum()** parameters of **.yScale()** method:
+**.maximum()** and **.minimum()** parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method:
 
 ```
     chart.yScale().minimum('0').maximum('50000');
@@ -289,25 +265,18 @@ Now, let's look how to create a simple style and apply it to the chart. As we've
         .hoverStroke('darkred', 4);
 ```
 
-Using such settings we've defined line of Gold color, rather thick line and a couple of effects. Also, we've 
-defined that when user will move cursor over an element it will be highlighted with a DarkRed 
-thick line.
+Using such settings we've defined line of Gold color, rather thick line and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed thick line.
 <!--
-Now we will take a sample single series chart described above, define style in JSON and apply it to all chart elements, 
-using <line_series style="style1"/>
+Now we will take a sample single series chart described above, define style in JSON and apply it to all chart elements, using <line_series style="style1"/>
 -->
 {sample}BCT\_LineChart\_08{sample}
 
 ## Labels and Tooltips
 
-In this section we will explain how to add and configure data labels and tooltips.<!-- Full explanation of formatting 
-and tuning visual appearance for them can be found in Labels and tooltips.-->
+In this section we will explain how to add and configure data labels and tooltips.<!-- Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
   
-  
-If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and 
-**.tooltip()** methods. You can tune their visual appearance, positioning and format.  Let's do that in the following 
-example: we will make data labels appear to the top of the data points, also, we will format labels so they show only 
-the value corresponding to the point and tooltip will show detailed description.
+
+If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format.  Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
 
 {sample}BCT\_LineChart\_09{sample}
 
@@ -353,7 +322,6 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 ### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we 
-need to set ".stroke()" parameter for a series. In the sample below we have 5 series with sample data and we'll 
-color each series to different color. Here is the sample:
+need to set {api:anychart.graphics.vector.Stroke}**.stroke()**{api} parameter for a series. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
 
 {sample}BCT\_LineChart\_11{sample}
