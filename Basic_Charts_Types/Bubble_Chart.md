@@ -26,10 +26,8 @@ Bubble charts are often used to present financial data. Use a Bubble chart when 
 visually represented in your chart by different bubble sizes.
   
   
-Bubble charts are popular tools for identifying and illustrating industry clusters. Essentially, these charts allow four
- different variables to be plotted within the same graph, making it easy to assess relative economic performance. 
-Because they allow visual comparisons of well-understood measures, bubble charts are often used for pinpointing 
-priority industries that should receive attention from a state economic development agency.
+Bubble charts are popular tools for identifying and illustrating industry clusters. Essentially, these charts allow four different variables to be plotted within the same graph, making it easy to assess relative economic performance.
+Because they allow visual comparisons of well-understood measures, bubble charts are often used for pinpointing priority industries that should receive attention from a state economic development agency.
 
 ## Chart
 
@@ -88,8 +86,7 @@ represents product, units sold and a profit amount. Converted data looks like:
     ]).minimumSize(2).maximumSize(40);
 ```
 
-As you can see, we've categoriesed chart at **bubble()** method, set parameters that defines bar category into first 
-and second columns and parameter that defines bubble size into third one.
+As you can see, we've categorised chart at {api:anychart.charts.Cartesian#bubble}**bubble()**{api} method, set parameters that defines bar category into first and second columns and parameter that defines bubble size into third one.
 
 Here it is - AnyChart can now visualize your data. You can launch it in playground and modify it.
 
@@ -137,8 +134,7 @@ Let's compare year 2003 sales to year 2004 product sales:
 </tr>
 </tbody></table>
 
-As we do in single-series bubble sample above we need to convert this table into acceptable format, the only difference 
-between these two samples is the fact that now we have bigger data and we have to **MapAs()** it.
+As we do in single-series bubble sample above we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have bigger data and we have to {api:anychart.data.Set#mapAs}**mapAs()**{api} it.
 
 ```
     var dataSet = anychart.data.set([
@@ -154,8 +150,7 @@ between these two samples is the fact that now we have bigger data and we have t
 
 ### Size
 
-Bubbles minimum and maximum size can be controlled using **.maximumSize()** and **.minimumSize()** parameters. Both of 
-them can be set in percents of a lesser dataplot side (this can be width or height) and in pixels:
+Bubbles minimum and maximum size can be controlled using {api:anychart.core.cartesian.series.Bubble#maximumSize}**.maximumSize()**{api} and {api:anychart.core.cartesian.series.Bubble#minimumSize}**.minimumSize()**{api} parameters. Both of them can be set in percents of a lesser dataplot side (this can be width or height) and in pixels:
 
 ```
     chart.maximumSize(25).minimumSize(1);
@@ -189,8 +184,7 @@ axis orientation can be adjusted, how axis scale can be inverted and how minimum
 
 ### Orientation
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust **.orientation()** 
-parameter of **.yAxis()** or **.xAxis()** methods.
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
   
 Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and inversion 
 settings in [Axis Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
@@ -217,10 +211,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 ### Minimum and Maximum
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart 
-sample above: minimal value on the Y Axis is 0, and maximum is 1000. You can control these values by setting **
-.maximum()** and **.minimum()** parameters of **.yScale()** method. As far as you want to adjusted the scale, 
-it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
+By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 0, and maximum is 1000. You can control these values by setting **.maximum()** and **.minimum()** parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjusted the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 
 ```
     chart.yScale().minimum('-100').maximum('1000').ticks().interval(100);
@@ -233,7 +224,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 ## Visualization
 
 In this section we will describe main parts of bubble chart visualization and ways to adjust it. Visual appearance of 
-bubbles is defined using certain methods. For bubble chart the main thing is **.fill()** parameter.
+bubbles is defined using certain methods. For bubble chart the main thing is {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter.
 
 ### Basic Sample
 
@@ -261,8 +252,7 @@ In this section we will explain how to add and configure data labels and tooltip
 tuning visual appearance for them can be found in Labels and Tooltips.
   
   
-If you want to configure data labels and tooltips for all series - you should do that in **.labels()** and **.tooltip
-()** methods. You can tune their visual appearance, positioning and format.
+If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format.
   
   
 When formatting data labels text we will use .textFormatter to show Y axes value. Otherwise X axes will be displayed 
@@ -322,8 +312,7 @@ special colors. But you can apply the color to exact data series or data point.
 ### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we 
-need to set **color()**. In the sample below we have 5 series with sample data and we'll color each series into 
-different color. Here is the sample:
+need to set {api:anychart.graphics.vector.Fill}**.fill()**{api}. In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
 
 {sample}BCT\_Bubble\_Chart\_10{sample}
 
@@ -354,6 +343,6 @@ settings and palettes. To see whole range of available hatch types see Hatch tut
 
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have 
 chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting 
-**.hatchFill()** parameter.
+{api:anychart.core.radar.series.Base#hatchFill}**.hatchFill()**{api} parameter.
 
 {sample}BCT\_Bubble\_Chart\_12{sample}
