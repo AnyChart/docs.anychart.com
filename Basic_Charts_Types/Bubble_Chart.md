@@ -32,7 +32,8 @@ Because they allow visual comparisons of well-understood measures, bubble charts
 ## Chart
 
 Depending on data model and the visualization purpose the bar chart may contain single series or multi series. As 
-bubble chart need 3 values to show bubbles - you need to pass this data to chart:
+bubble chart need 3 values to show bubbles - you need to pass this data to chart. Here are two samples of data formatting:
+
   
 When using Bubble chart on a scatter plot:
 
