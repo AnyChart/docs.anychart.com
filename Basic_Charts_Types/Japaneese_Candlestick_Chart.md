@@ -171,8 +171,7 @@ Now we need to convert this data into acceptable format.
     ];
 ```
 
-As you can see, we've specified chart as "Candlestick". Each series of data contains **column name, open, high, low and 
-close** parameters.
+As you can see, we've specified chart as "Candlestick". Each series of data contains **column name, open, high, low and close** parameters.
   
   
 Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on on it to see it's java 
@@ -333,7 +332,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 ## Visualization
 
-In this section we will describe main parts of candlestick chart visualization and ways to adjust it. Also you will see list of predefined styles. Visual appearance of candlestick is defined using certain parameters. The most important for candlestick parameters are {api:anychart.core.cartesian.series.Candlestick#fallingStroke}**.fallingStroke()**{api}, {api:anychart.core.cartesian.series.Candlestick#risingStroke}**.risingStroke()**, {api:anychart.core.cartesian.series.Candlestick#risingFill}**.risingFill()**{api} and {api:anychart.core.cartesian.series.Candlestick#fallingFill}**.fallingFill()**{api}.
+In this section we will describe main parts of candlestick chart visualization and ways to adjust it. Also you will see list of predefined styles. Visual appearance of candlestick is defined using certain parameters. The most important for candlestick parameters are {api:anychart.core.cartesian.series.Candlestick#fallingStroke}**.fallingStroke()**{api}, {api:anychart.core.cartesian.series.Candlestick#risingStroke}**.risingStroke()**{api}, {api:anychart.core.cartesian.series.Candlestick#risingFill}**.risingFill()**{api} and {api:anychart.core.cartesian.series.Candlestick#fallingFill}**.fallingFill()**{api}.
 
 ### Basic Sample
 
