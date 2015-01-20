@@ -161,8 +161,7 @@ dollars and in percents of GDP. We need to create one additional Axis adjust bot
     extraYAxis.orientation('right').scale(extraYScale);
 ```
 
-We defined two axes and will create one series of a {api:anychart.core.cartesian.series.Column}**Column**{api} type to show debt and bind it to **yAxis**,
-one series of a {api:anychart.core.cartesian.series.Line}**Line**{api} type to show percentage changes.
+We defined two axes and will create one series of a {api:anychart.core.cartesian.series.Column}**Column**{api} type to show debt and bind it to {api:anychart.charts.Cartesian#yAxis}**yAxis**{api}, one series of a {api:anychart.core.cartesian.series.Line}**Line**{api} type to show percentage changes.
 
 Here it is - a sample chart comparing the US debt, in dark red, to the debts percent of GDP, in blue.
 

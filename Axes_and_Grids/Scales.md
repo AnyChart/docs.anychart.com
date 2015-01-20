@@ -215,7 +215,7 @@ And create chart like this:
 
 {sample}AGST\_Scales\_11{sample}
 
-### Even and Odd fills
+### Even and Odd Fills
 
 You can use this method with both major and minor grids. To do this you need to set {api:anychart.core.grids.Linear#oddFill}**.oddFill()**{api} or/and {api:anychart.core.grids.Linear#evenFill}**.evenFill()**{api} methods in the corresponding grid. Fill can be gradient, image and/or hatch as well as any other fill.
 

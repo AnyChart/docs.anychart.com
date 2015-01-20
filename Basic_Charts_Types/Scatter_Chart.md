@@ -43,8 +43,6 @@ Bubble charts. To start the creation of Scatter chart you need create chart usin
 
 As Scatter charts are plotted using two values you always need to specify both x and y.
 
-Let's take the following data table to be plotted on the scatter chart as the first line:
-
 Let's take the following data tables to be plotted on the scatter chart as the first line:
 
 <table border="1" class="dtTABLE">

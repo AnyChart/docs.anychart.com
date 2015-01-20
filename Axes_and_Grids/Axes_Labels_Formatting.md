@@ -12,7 +12,7 @@
    * [Multiline](#multiline)
    * [Background](#background)
  * [Positioning](#positioning)
-   * [Labels Align ](#labels_align)
+   * [Labels Align](#labels_align)
    * [Padding](#padding)
    * [Rotation](#rotation)
    * [Stagger Mode](#stagger_mode)
@@ -202,12 +202,12 @@ Here is a sample dashboard showing the most of positioning labels settings:
 <a name="dashboard"/></a>
 {sample}AGST\_Labels\_Formatting\_05{sample}
 
-## First and Last labels
+## First and Last Labels
 
 There are special methods that give you a control over such special labels as: First (minimal value) label on the axis 
 and Last label (maximal value). You can force them to be shown or hide them using appropriate methods: {api:anychart.core.axes.Linear#drawFirstLabel}**.drawFirstLabel()**{api}, {api:anychart.core.axes.Linear#drawLastLabel}**.drawLastLabel()**{api}.
   
-Turning off the last the first label is shown on the [dashboard above](#dashbord) in "Labels Inside" Line chart.
+Turning off the last the first label is shown on the [dashboard above](#dashboard) in "Labels Inside" Line chart.
 
 ```
   labelsInside.xAxis().drawFirstLabel(false);

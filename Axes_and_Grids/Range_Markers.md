@@ -49,8 +49,7 @@ or mark some kind of data.
 
 ## Advanced Visualization
 
-As far as range marker has method **.fill()**, you can also use gradient and image fills of range to achieve desired 
-style of your charts.
+As far as range marker has method {api:anychart.graphics.vector.Fill}**.fill()**{api}, you can also use gradient and image fills of range to achieve desired style of your charts.
 
 ```
     chart.rangeMarker(2)
