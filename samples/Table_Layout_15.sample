@@ -21,9 +21,17 @@ anychart.onDocumentReady(function() {
     [Date.UTC(2014, 7),  99.3, 99.0, 95.5, 99.5, 99.2, 98.5, 95.0],
     [Date.UTC(2014, 8),  99.5, 98.9, 96.7, 99.6, 99.2, 98.7, 94.8],
     [Date.UTC(2014, 9),  99.7, 99.3, 96.9, 99.7, 99.3, 98.8, 94.4],
-    //[null             ,    99,   98,   98,   98,   98,   96,   93]
   ]);
 
+  var AcceptedAvailability = anychart.data.set([
+    ['Network', 99],
+    ['ERP', 98],
+    ['Data Warehouse', 98],
+    ['Web Site', 98],
+    ['Email', 98],
+    ['HR', 96],
+    ['Problem Tracking', 93]
+  ]);
 
   // create table
   var table = anychart.ui.table();
@@ -32,7 +40,12 @@ anychart.onDocumentReady(function() {
   var lineScale = createTightDTScale();
 
   for(var i= 0; i<7; i++){
-    contents.push([newLine(i), newBullet(i),'lol']);
+    contents.push(
+        [newLine(i),
+        AcceptedAvailability.row(i)[0],
+        newBullet(i),
+        AcceptedAvailability.row(i)[1]]
+    );
   }
 
   // set table content
@@ -68,20 +81,20 @@ anychart.onDocumentReady(function() {
     return line;
   }
 
-  // we use common scales for charts in columns to make them comparable
-  var bulletScale = anychart.scales.linear();
-  // settings manual minimum and maximum to show the range we need.
-  bulletScale.minimum(85).maximum(100);
-
   // create new bullet chart
   function newBullet (i) {
+    // we use common scales for charts in columns to make them comparable
+    var bulletScale = anychart.scales.linear();
+    // settings manual minimum and maximum to show the range we need.
+    bulletScale.minimum(85).maximum(100);
+
     var bulletData = 0;
     for (var rowCounter = 0; rowCounter<(data.getRowsCount() - 1);rowCounter++){
       bulletData += data.row(rowCounter)[i+1];
     }
     //alert(bulletData/data.getRowsCount());
     var bullet = anychart.bullet([{'value': bulletData/(data.getRowsCount() - 1), 'type': 'line', gap: 0.4}]);
-    bullet.range(0).from(data.row(data.getRowsCount()-1)[i+1]).to(100).fill('#ccc');
+    bullet.range(0).from(AcceptedAvailability.row(i)[1]).to(100).fill('#ccc');
     bullet.scale(bulletScale);
     bullet.title().enabled(false);
     bullet.axis().enabled(false);
