@@ -58,10 +58,7 @@ anychart.onDocumentReady(function() {
 
   function createTightDTScale() {
     // removing gaps and ticks to make the line fill the horizontal space of the cell
-    return anychart.scales.dateTime()
-        .minimumGap(0)
-        .maximumGap(0)
-        .ticks([]);
+    return anychart.scales.dateTime().minimumGap(0).maximumGap(0).ticks([]);
   }
 
   // create new line chart
