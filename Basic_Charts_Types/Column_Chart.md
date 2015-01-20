@@ -307,8 +307,7 @@ and tuning visual appearance for them can be found in Labels and tooltips tutori
 If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods of **series**. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear in the center of the columns, format labels so they show only the value corresponding to the column and tooltip will show detailed description.
   
   
-When formatting data labels text we will use adjusted **.textFormatter()** to show Y Axis value. Otherwise label 
-displays  X Axis value.
+When formatting data labels text we will use adjusted {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} to show Y Axis value. Otherwise label displays X Axis value.
 
 {sample}BCT\_ColumnChart\_08{sample}
 
