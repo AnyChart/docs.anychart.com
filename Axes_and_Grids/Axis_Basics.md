@@ -6,7 +6,7 @@
 * [Title](#title)
 * [Orientation](#orientation)
 * [Labels](#labels)
-* [Axis line](#axis_line)
+* [Axis Line](#axis_line)
 * [Tickmarks](#tickmarks)
 
 ## Overview
