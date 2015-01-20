@@ -10,7 +10,7 @@
  * [Inversion](#inversion)
  * [Logarithmic Scale](#logarithmic_scale)
  * [Labels Settings](#labels_settings)
-* [Visualization](#visualisation)
+* [Visualization](#visualization)
  * [Grid](#grid)
  * [Labels and Tooltips](#labels_and_tooltips)
 * [Series Types](#series_types)
@@ -118,7 +118,7 @@ Take a look at the demonstration of Y Axis inversion on the sample below:
 
 ### Logarithmic Scale
 
-Logarithmic scale can be used in polar charts, scale type is set using **.scale()** method. More information on scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
+Logarithmic scale can be used in polar charts, scale type is set using {api:anychart.scales}**.scale()**{api} method. More information on scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
 
 ```
   var logScale = anychart.scales.log();   // create logarithmic scale
@@ -157,7 +157,7 @@ AnyChart allows to customise Axes Labels in any required way. Below is a sample 
 
 {sample}BCT\_PolarChart\_08{sample}
 
-You can change labels background. Learn more about background configuration in [Background settings tutorial](#../Appearance_Settings/Background).
+You can change labels background. Learn more about background configuration in [Background settings tutorial](../Appearance_Settings/Background).
 
 ```
   // axes settings
@@ -185,7 +185,7 @@ You can hide first and/or last labels using {api:anychart.core.axes.Radial#drawF
 
 {sample}BCT\_PolarChart\_10{sample}
 
-## Visualisation
+## Visualization
 
 In this section we will describe main parts of polar chart style and demonstrate how style can be applied.
 
