@@ -11,7 +11,7 @@
  * [Logarithmic Scale](#logarithmic_scale)
  * [Stacked Mode](#stacked_mode)
  * [Labels Settings](#labels_settings)
-* [Visualization](#visualisation)
+* [Visualization](#visualization)
  * [Grid](#grid)
  * [Labels and Tooltips](#labels_and_tooltips)
 * [Series Types](#series_types)
@@ -174,7 +174,7 @@ In the sample below all names are limited to the length of 3:
 
 {sample}BCT\_RadarChart\_10{sample}
 
-You can change labels background. Learn more about background configuration in [Background settings tutorial](#../Appearance_Settings/Background).
+You can change labels background. Learn more about background configuration in [Background settings tutorial](../Appearance_Settings/Background).
 
 ```
   //axes settings
@@ -202,7 +202,7 @@ You can hide the first and/or the last labels using {api:anychart.core.axes.Line
 
 {sample}BCT\_RadarChart\_12{sample}
 
-## Visualisation
+## Visualization
 
 ### Grid
 
