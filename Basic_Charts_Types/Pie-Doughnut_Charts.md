@@ -152,7 +152,7 @@ Using such settings we've created a style that defines slices of Gold color, rat
 In this section we will explain how to add and configure data labels and tooltips. 
 <!--Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
 
-If you want to configure data labels and tooltips for all series - you should do that with {api:anychart.charts.Pie#labels}**.labels()**{api} and **.tooltip()** methods. You can tune their visual appearance, positioning and format.
+If you want to configure data labels and tooltips for all series - you should do that with {api:anychart.charts.Pie#labels}**.labels()**{api} and {api:anychart.charts.Pie#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format.
   
   
 Let's do that in the following example: we will make data labels appear inside of the slices, also, we will format labels so they show only the percentage corresponding to the slices and tooltip will show detailed description.
