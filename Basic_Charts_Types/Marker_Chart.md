@@ -260,7 +260,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 ## Visualization
 
-In this section we will describe main parts of marker chart visualization and ways to adjust it. Visual appearance of areas is defined using certain methods. For Marker chart the main thing is the {api:anychart.core.radar.series.Base#fill}**.fill()**{api} parameter.
+In this section we will describe main parts of marker chart visualization and ways to adjust it. Visual appearance of areas is defined using certain methods. For Marker chart the main thing is the {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter.
 
 ### Basic Sample
 
@@ -314,7 +314,7 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 ### Colorizing Elements
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we 
-need to set {api:anychart.core.radar.series.Base#fill}**.fill()**{api} parameters in the {api:anychart.core.ui.MarkersFactory}**.marker()**{api} method. In the sample below we have 5 series with sample data
+need to set {api:anychart.graphics.vector.Fill}**.fill()**{api} parameters in the {api:anychart.core.ui.MarkersFactory}**.marker()**{api} method. In the sample below we have 5 series with sample data
 and we'll color each series to different color. Here is the sample:
 
 {sample}BCT\_Marker\_Chart\_08{sample}
