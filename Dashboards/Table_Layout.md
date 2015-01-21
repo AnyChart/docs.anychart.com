@@ -50,8 +50,8 @@ row and **.colWidth()** parameter for controlling width of a column.
 Sample below demonstrates height controlling of the first row and width of the second column.
 
 ```
-  table.rowHeight(0, 30);   // Get first row and set height 30px
-  table.colWidth(1, 150);   // Get second column and set width 150 px
+  table.rowHeight(0, 40);   // Get first row and set height 40px
+  table.colWidth(1, 160);   // Get second column and set width 160 px
 ```
 
 {sample}Table\_Layout\_01{sample}
@@ -204,7 +204,7 @@ the table layout.
   
 Here is a sample with text settings, applied only for the first (head) row of a table layout dashboard.
 
-{sample}Table\_Layout\_09{sample}
+{sample}Table\_Layout\_08{sample}
 
 ### Common Elements
 
@@ -215,4 +215,4 @@ common scale may be used in comparative purposes.
   
 Here is a sample of table layout dashboard with all bullet charts using same scale and custom axis uses the scale as well.
 
-{sample}Table\_Layout\_10{sample}
+{sample}Table\_Layout\_09{sample}
