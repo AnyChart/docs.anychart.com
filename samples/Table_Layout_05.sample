@@ -32,9 +32,10 @@ anychart.onDocumentReady(function() {
 
   table.cellFill('#FFFFE0');   // Set table background color
 
-  //set border style
+  // set border style
   table.cellBorder('gray',2,'5 2');
 
+  // adjust text visual appearance
   table.cellTextFactory()
     .padding(10)
     .vAlign('center')

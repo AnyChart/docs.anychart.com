@@ -42,27 +42,24 @@ anychart.onDocumentReady(function() {
   table.rowHeight(0, 40);   // Get first row and set height 40px
   table.colWidth(1, 160);   // Get second column and set width 160 px
 
-  table.cellFill('#FFFFE0');   // Set table background color
+  // set table background color
+  table.cellFill('#FFFFE0');
 
-  //set style
+  // set style for table borders
   table.cellBorder(
-    'gray',     // Color
-    2,          // Thickness
+    'gray',     // Border color
+    2,          // Border thickness
     '5 2'       // Dash and gap length
   );
 
-  // get cell from the second column and second row
-  var cell = table.getCell(1,1);
-
-  cell.border({
-    keys: ['red'],  // Set leaner color
-    thickness: 3    // Set thickness
+  // adjust border of the cell from the second column and second row
+  table.getCell(1,1).border({
+    keys: ['red'],  // Set color
+    thickness: 3    // Set border thickness
   });
 
-  //get cell from second column and fourth row
-  var cell_1 = table.getCell(3, 1);
-
-  cell_1.border({
+  // adjust border of the cell from second column and fourth row
+  table.getCell(3, 1).border({
     keys: ['red'],  // Set leaner color
     thickness: 3    // Set thickness
   });

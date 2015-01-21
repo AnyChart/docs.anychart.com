@@ -38,6 +38,7 @@ anychart.onDocumentReady(function() {
   table.rowHeight(0, 40);   // Get first row and set height 40px
   table.colWidth(1, 160);   // Get second column and set width 160 px
 
+  // set colors for ever and odd rows
   table.cellEvenFill('rgb(102, 143, 169)');
   table.cellOddFill('rgb(233, 234, 237)');
 

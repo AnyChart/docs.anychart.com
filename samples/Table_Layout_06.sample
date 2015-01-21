@@ -17,15 +17,19 @@ anychart.onDocumentReady(function() {
       'This cell got custom width and custom height',
       'This cell got default width and custom height'
     ],[
-      null,
+      null, // this cell will be spanned with the cell from first column and first row
       'This cell spanes a cell from the right column',
-      'This cell got default width and default height'
+      null  // this cell will be spanned with the cell from the second column and second row
     ],[
-      null,
+      null, // this cell will be spanned with the cell from first column and first row
       'This cell got custom width and default height',
       'This cell got default width and default height'
     ]
   ]);
+
+  // span cells
+  table.getCell(1,1).colSpan(2);
+  table.getCell(0, 0).rowSpan(3);
 
   table.rowHeight(0, 60);   // Get first row and set height 40px
   table.colWidth(1, 180);   // Get second column and set width 160 px
@@ -41,10 +45,6 @@ anychart.onDocumentReady(function() {
     .fontWeight(600)
     .fontSize(11)
     .fontColor('red');
-
-  table.getCell(1,1).colSpan(2);
-
-  table.getCell(0, 0).rowSpan(3);
 
   // set table container and initiate draw
   table.container(stage).draw();
