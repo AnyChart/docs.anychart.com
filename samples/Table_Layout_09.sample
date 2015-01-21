@@ -83,6 +83,7 @@ anychart.onDocumentReady(function() {
   table.getCell(0,0).fill('#444444').content().fontColor('#FFF');
   table.getCell(0,1).fill('#444444').content().fontColor('#FFF');
   table.getCell(0,2).fill('#444444').colSpan(2).content().fontColor('#FFF').hAlign('right');
+  table.getCell(8,2).padding().right(9).left(9);
 
   // visual settings for text in table
   table.cellTextFactory().vAlign('center').hAlign('center').fontWeight(600).fontSize(12);
