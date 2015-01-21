@@ -195,7 +195,7 @@ As far as title on a dashboard contains the main idea of a dashboard, it is vita
 {sample}Table\_Layout\_07{sample}
 
 
-### Header row
+### Header Row
 
 Title may represent information for the whole dashboard, but for parts of dashboard it may require to format several 
 titles. One of the most convenient way of configuring titles is setting desirable configuration for the first row of 
