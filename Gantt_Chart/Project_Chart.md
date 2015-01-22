@@ -19,6 +19,7 @@ Here is a simple sample to illustrate how to create a project chart:
 
 {sample :width 690 :height 180}GANTT\_Basic\_Sample{sample}
 
+
 All common additional information is available [here](Quick_Start).
 
 ## Hierarchy
@@ -109,7 +110,7 @@ You can control if the summary task is expanded or collapsed using these methods
 **expandTask(taskID)** Expands one task.
 **collapseTask(taskID)** Collapses one task.
 
-{sample :width 690 :height 500}GANTT\_Chart\_02{sample}
+{sample :width 750 :height 260}GANTT\_Chart\_02{sample}
 
 ## Task Progress
 
@@ -125,7 +126,7 @@ Tracking progress can be complicated but you can show percent complete using pro
 },
 ```
 
-{sample}несколько тасков, один с прогресс баром{sample}
+{sample_}несколько тасков, один с прогресс баром{_sample}
 
 ## Actual and Planned
 
@@ -143,7 +144,7 @@ Sometimes a task is taking longer than was planned, in this case it is useful to
     }
 ```
 
-{sample}некий сэмпл{sample}
+{sample_}некий сэмпл{_sample}
 
 ## Connectors
 
