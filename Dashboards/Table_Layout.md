@@ -15,13 +15,9 @@
 
 ## Overview
 
-Table layout is a kind of a dashboard tools, which provides clear and effective way of positioning data on plot.
-Dashboard is an easy to read, often single page, real-time user interface, showing a graphical presentation of
-the current status (snapshot) and historical trends of an organization’s key performance indicators to enable
-instantaneous and informed decisions to be made at a glance.
+Table layout is a kind of a dashboard tools, which provides clear and effective way of positioning data on plot. Dashboard is an easy to read, often single page, real-time user interface, showing a graphical presentation of the current status (snapshot) and historical trends of an organization’s key performance indicators to enable instantaneous and informed decisions to be made at a glance.
 
-Table Layout helps to manage several elements within the limits of one chart container. Table may help to control 
-visual appearance and logic structure of data.
+Table Layout helps to manage several elements within the limits of one chart container. Table may help to control visual appearance and logic structure of data.
 
 ## Acceptable Content
 
@@ -42,9 +38,7 @@ Visual settings control:
 
 ### Cells Width and Height
 
-Table layout consist of multiple cells and each of them may contain different type of information. In most cases same
- kind of data placed in one row or one column. Anychart provides **.rowHeight()** parameter for adjusting height of a 
-row and **.colWidth()** parameter for controlling width of a column.
+Table layout consist of multiple cells and each of them may contain different type of information. In most cases same kind of data placed in one row or one column. Anychart provides {api:anychart.core.ui.Table#rowHeight}**.rowHeight()**{api} parameter for adjusting height of a row and {api:anychart.core.ui.Table#colWidth}**.colWidth()**{api} parameter for controlling width of a column.
   
   
 Sample below demonstrates height controlling of the first row and width of the second column.
@@ -58,17 +52,14 @@ Sample below demonstrates height controlling of the first row and width of the s
 
 ### Fill
 
-With AnyChart it is possible to color background of any cell with a solid color, with a gradient transition or fill 
-it with an image. It can be achieved with **.fill()** parameter.
+With AnyChart it is possible to color background of any cell with a solid color, with a gradient transition or fill it with an image. It can be achieved with {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter.
   
   
-This section contains information on colorizing the whole table and each of the cells separately. To find out all 
-possible ways of controlling background color of an element, please see [background controlling](../Appearance_Settings/Background)
- tutorial
+This section contains information on colorizing the whole table and each of the cells separately. To find out all possible ways of controlling background color of an element, please see [background controlling](../Appearance_Settings/Background) tutorial
 
 #### Table fill
 
-Background for all the table can be configured with **.cellFill()** parameter.
+Background for all the table can be configured with {api:anychart.core.ui.Table#cellFill}**.cellFill()**{api} parameter.
 
 ```
   table.cellFill('#D5D84B');
@@ -78,8 +69,7 @@ Background for all the table can be configured with **.cellFill()** parameter.
 
 #### Even and Odd Rows
 
-As a more advanced way of controlling table's background color there are parameters to adjust colors of even and/or 
-odd row in the table. Parameter **.cellEvenFill()** is responsible for the background color of even rows and **.cellOddFill()** is responsible for the background color of all odd rows.
+As a more advanced way of controlling table's background color there are parameters to adjust colors of even and/or odd row in the table. Parameter {api:anychart.core.ui.Table#cellEvenFill}**.cellEvenFill()**{api} is responsible for the background color of even rows and {api:anychart.core.ui.Table#cellOddFill}**.cellOddFill()**{api} is responsible for the background color of all odd rows.
 
 ```
   table.cellEvenFill('darkgreen');
@@ -92,7 +82,7 @@ Here is the sample with "rgb(233, 234, 237)" background color for all cells in e
 
 #### Cell Fill
 
-For emphasizing attention on one of the cells, it can be colorized in unique way. Background color of a certain cell is controlled by parameter **.fill()**. and it should be applied to the cell itself.
+For emphasizing attention on one of the cells, it can be colorized in unique way. Background color of a certain cell is controlled by parameter {api:anychart.graphics.vector.Fill}**.fill()**{api}. and it should be applied to the cell itself.
 
 ```
   var cell = table.getCell(0,1);  // Get first row in second column
@@ -142,21 +132,21 @@ represents systems with unacceptable availability).
 
 {sample}Table\_Layout\_04{sample}
 
-**Note:** As far as any cell has 4 borders, there is a way to control style for each of them. Parameters **.topBorder()**, **.leftBorder()**, **.bottomBorder()** and **.rightBorder()** controls style for each of 4 cell's border. 
+**Note:** As far as any cell has 4 borders, there is a way to control style for each of them. Parameters {api:anychart.core.ui.Table.Cell#topBorder}**.topBorder()**{api}, {api:anychart.core.ui.Table.Cell#leftBorder}**.leftBorder()**{api}, {api:anychart.core.ui.Table.Cell#bottomBorder}**.bottomBorder()**{api} and {api:anychart.core.ui.Table.Cell#rightBorder}**.rightBorder()**{api} controls style for each of 4 cell's border.
   
   
-Moreover, there are 4 parameters to control each of the border for every cell in a table. **.cellTopBorder()**, **.cellLeftBorder()**, **.cellBottomBorder()** and **.cellRightBorder()** adjust style of a border for each cell in table.
+Moreover, there are 4 parameters to control each of the border for every cell in a table. {api:anychart.core.ui.Table#cellTopBorder}**.cellTopBorder()**{api}, {api:anychart.core.ui.Table#cellLeftBorder}**.cellLeftBorder()**{api}, {api:anychart.core.ui.Table#cellBottomBorder}**.cellBottomBorder()**{api} and {api:anychart.core.ui.Table#cellRightBorder}**.cellRightBorder()**{api} adjust style of a border for each cell in table.
 
 ### Text Settings and Padding
 
 Table layout may contain simple text in several cells. For avoiding setting same parameters for several cells it is 
-more convenient to apply these parameters to the whole table with **.cellTextFactory()** parameter. 
+more convenient to apply these parameters to the whole table with {api:anychart.core.ui.Table#cellTextFactory}**.cellTextFactory()**{api} parameter.
   
   
 Cells are not limited in content type and amount of data, which may lead to a problem of content sticking to the 
-cell's borders. For preventing such situations there is **.padding()** parameter for controlling content position. 
+cell's borders. For preventing such situations there is {api:anychart.core.ui.Table.Cell#padding}**.padding()**{api} parameter for controlling content position.
   
-  
+
 Sample below demonstrates controlling text settings and using padding  
 
 ```
@@ -174,7 +164,7 @@ Sample below demonstrates controlling text settings and using padding
 ### Span
 
 In some cases it is desirable to enlarge a cell by uniting it with one or several cells from near by. 
-There are two parameters for spanning several cells into one. **.rowSpan()** below from the cell in a column and **.colSpan()** unites cells in the row on the right side from the cell.
+There are two parameters for spanning several cells into one. {api:anychart.core.ui.Table.Cell#rowSpan}**.rowSpan()**{api} below from the cell in a column and {api:anychart.core.ui.Table.Cell#colSpan}**.colSpan()**{api} unites cells in the row on the right side from the cell.
 
 ```
   cell.colSpan(4);  // unites 4 cells into one row
