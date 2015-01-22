@@ -14,7 +14,7 @@ anychart.onDocumentReady(function() {
   table.contents([
     [
       'This cell spanes cells from two \nrows below',
-      'This cell got custom width and custom height',
+      'This cell got custom width and \ncustom height',
       'This cell got default width and \ncustom height'
     ],[
       null, // this cell will be spanned with the cell from first column and first row
@@ -22,7 +22,7 @@ anychart.onDocumentReady(function() {
       null  // this cell will be spanned with the cell from the second column and second row
     ],[
       null, // this cell will be spanned with the cell from first column and first row
-      'This cell got custom width and default height',
+      'This cell got custom width and \ndefault height',
       'This cell got default width and \ndefault height'
     ]
   ]);
