@@ -66,7 +66,7 @@ anychart.onDocumentReady(function() {
   table.cellBorder('2 #EEE').colWidth(1, 130).colWidth(3, 50).rowHeight(0, 20);
 
   // visual settings for the first row
-  table.getCell(0,0).fill('#444444').border('0').bottomBorder('2 #EEE').content().fontColor('#FFF').border(null).bottomBorder('2 #EEE');
+  table.getCell(0,0).fill('#444444').border('0').bottomBorder('2 #EEE').content().fontColor('#FFF');
   table.getCell(0,1).fill('#444444').border('0').bottomBorder('2 #EEE').content().fontColor('#FFF');
   table.getCell(0,2).fill('#444444').border('0').bottomBorder('2 #EEE').colSpan(2).content().fontColor('#FFF').hAlign('right');
 
