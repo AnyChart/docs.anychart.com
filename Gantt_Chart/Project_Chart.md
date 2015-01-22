@@ -110,7 +110,7 @@ You can control if the summary task is expanded or collapsed using these methods
 **expandTask(taskID)** Expands one task.
 **collapseTask(taskID)** Collapses one task.
 
-{sample :width 750 :height 260}GANTT\_Chart\_02{sample}
+{sample :width 780 :height 260}GANTT\_Chart\_02{sample}
 
 ## Task Progress
 
@@ -158,4 +158,4 @@ You can define connectors using these settings:
 {"id": "4", "name": "resolution", parent:"2", "actualStart": 400000, "actualEnd": 800000, "connectTo": "5", "connectorType": "FinishStart"},
 ```
 
-{sample}на все виды коннекторов{sample}
+{sample_}на все виды коннекторов{_sample}
