@@ -39,8 +39,8 @@ anychart.onDocumentReady(function() {
   table.colWidth(1, 160);   // Get second column and set width 160 px
 
   // set colors for ever and odd rows
-  table.cellEvenFill('rgb(102, 143, 169)');
-  table.cellOddFill('rgb(233, 234, 237)');
+  table.cellOddFill('rgb(102, 143, 169)');  // color for even rows
+  table.cellEvenFill('rgb(233, 234, 237)'); // color for odd row
 
   // set table container and initiate draw
   table.container(stage).draw();

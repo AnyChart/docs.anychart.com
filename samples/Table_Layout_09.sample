@@ -42,6 +42,9 @@ anychart.onDocumentReady(function() {
   // content for first row
   var contents = [['Last 12 Month', 'System', 'Availability %', null]];
 
+  // create one scale for all bullet charts and additional axis
+  var bulletScale = anychart.scales.linear().minimum(85).maximum(100);
+
 
   // Table settings
 
@@ -60,7 +63,7 @@ anychart.onDocumentReady(function() {
   }
 
   var axis = anychart.axes.linear();
-  axis.scale(anychart.scales.linear().minimum(85).maximum(100));
+  axis.scale(bulletScale);
   axis.orientation('bottom').staggerMode(false).stroke('#ccc');
   axis.minorTicks().enabled(false);
   axis.title().enabled(false);
@@ -122,7 +125,7 @@ anychart.onDocumentReady(function() {
     bullet.title().enabled(false);
     bullet.axis().enabled(false);
     bullet.background().enabled(true).stroke('#ccc').fill('#fff');
-    bullet.scale(anychart.scales.linear().minimum(85).maximum(100)).padding(0).margin(10);
+    bullet.scale(bulletScale).padding(0).margin(10);
     return bullet;
   }
 

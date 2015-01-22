@@ -72,8 +72,8 @@ Background for all the table can be configured with {api:anychart.core.ui.Table#
 As a more advanced way of controlling table's background color there are parameters to adjust colors of even and/or odd row in the table. Parameter {api:anychart.core.ui.Table#cellEvenFill}**.cellEvenFill()**{api} is responsible for the background color of even rows and {api:anychart.core.ui.Table#cellOddFill}**.cellOddFill()**{api} is responsible for the background color of all odd rows.
 
 ```
-  table.cellEvenFill('darkgreen');
-  table.cellOddFill('lightgreen');
+  table.cellOddFill('rgb(102, 143, 169)');  // color for even rows
+  table.cellEvenFill('rgb(233, 234, 237)'); // color for odd row
 ```
 
 Here is the sample with "rgb(233, 234, 237)" background color for all cells in even row and "rgb(102, 143, 169)" color for all cells in odd row.
@@ -100,9 +100,7 @@ In this section revealed all methods of controlling borders in a table.
 Parameter {api:anychart.core.ui.Table#cellBorder}**.cellBorder()**{api} provides an opportunity to set desirably configured border for all cells in a table. As far as content for each cell can be absolutely different, style for each of the cells can be set individually as well.
   
   
-Sample below demonstrates setting gray stroke for the whole chart, set thickness equal to 2 px and makes it dashed, 
-with 5 px dashes and 2 pixel gaps. Moreover, to cells have red stroke, which emphasize them (these two cells 
-represents systems with unacceptable availability). 
+Sample below demonstrates setting gray stroke for the whole chart, set thickness equal to 2 px and makes it dashed, with 5 px dashes and 2 pixel gaps. Moreover, to cells have red stroke, which emphasize them.
 
 ```
   //set style
@@ -159,7 +157,7 @@ Sample below demonstrates controlling text settings and using padding
 ### Span
 
 In some cases it is desirable to enlarge a cell by uniting it with one or several cells from near by. 
-There are two parameters for spanning several cells into one. {api:anychart.core.ui.Table.Cell#rowSpan}**.rowSpan()**{api} below from the cell in a column and {api:anychart.core.ui.Table.Cell#colSpan}**.colSpan()**{api} unites cells in the row on the right side from the cell.
+There are two parameters for spanning several cells into one. Parameter {api:anychart.core.ui.Table.Cell#rowSpan}**.rowSpan()**{api} unites the cell with cells below in the column and parameter {api:anychart.core.ui.Table.Cell#colSpan}**.colSpan()**{api} unites cells in the row on the right side from the cell.
 
 ```
   table.getCell(1,1).colSpan(2);  // span 2 cells in the row
