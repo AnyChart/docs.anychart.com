@@ -13,25 +13,25 @@ anychart.onDocumentReady(function() {
   // set table content
   table.contents([
     [
-      'This cell got default width and custom height',
+      'This cell got default width and custom \nheight',
       'This cell got custom width and custom height',
-      'This cell got default width and custom height'
+      'This cell got default width and custom \nheight'
     ],[
-      'This cell got default width and default height',
+      'This cell got default width and default \nheight',
       'This cell got custom width and default height',
-      'This cell got default width and default height'
+      'This cell got default width and default \nheight'
     ],[
-      'This cell got default width and default height',
+      'This cell got default width and default \nheight',
       'This cell got custom width and default height',
-      'This cell got default width and default height'
+      'This cell got default width and default \nheight'
     ],[
-      'This cell got default width and default height',
+      'This cell got default width and default \nheight',
       'This cell got custom width and default height',
-      'This cell got default width and default height'
+      'This cell got default width and default \nheight'
     ],[
-      'This cell got default width and default height',
+      'This cell got default width and default \nheight',
       'This cell got custom width and default height',
-      'This cell got default width and default height'
+      'This cell got default width and default \nheight'
     ]
   ]);
 

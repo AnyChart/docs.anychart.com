@@ -97,8 +97,7 @@ Border is a part of a table. It visually divides whole table into separate cells
   
   
 In this section revealed all methods of controlling borders in a table. 
-Parameter **.cellBorder()** provides an opportunity to set desirably configured border for all cells in a table. As 
-far as content for each cell can be absolutely different, style for each of the cells can be set individually as well. 
+Parameter {api:anychart.core.ui.Table#cellBorder}**.cellBorder()**{api} provides an opportunity to set desirably configured border for all cells in a table. As far as content for each cell can be absolutely different, style for each of the cells can be set individually as well.
   
   
 Sample below demonstrates setting gray stroke for the whole chart, set thickness equal to 2 px and makes it dashed, 
@@ -114,17 +113,13 @@ represents systems with unacceptable availability).
   );
   
   // get cell from the second column and second row
-  var cell = table.getCell(1,1);
-  
-  cell.border({
+  table.getCell(1,1).border({
     keys: ['red'],  // Set leaner color
     thickness: 3    // Set thickness
   });
   
   //get cell from second column and fourth row
-  var cell_1 = table.getCell(3, 1);
-  
-  cell_1.border({
+  table.getCell(3, 1).border({
     keys: ['red'],  // Set leaner color
     thickness: 3    // Set thickness
   });
@@ -167,8 +162,8 @@ In some cases it is desirable to enlarge a cell by uniting it with one or severa
 There are two parameters for spanning several cells into one. {api:anychart.core.ui.Table.Cell#rowSpan}**.rowSpan()**{api} below from the cell in a column and {api:anychart.core.ui.Table.Cell#colSpan}**.colSpan()**{api} unites cells in the row on the right side from the cell.
 
 ```
-  cell.colSpan(4);  // unites 4 cells into one row
-  cell.rowSpan(3);  // unites 3 cells into one column
+  table.getCell(1,1).colSpan(2);  // span 2 cells in the row
+  table.getCell(0, 0).rowSpan(3); // span 3 cells in the column
 ```
 
 Sample below demonstrates connection of several cells into one cell and position a chart into it.
