@@ -15,7 +15,7 @@ AnyChart provides variate of possibilities for translating data into Anychart Ja
 For feeding JSON files to anychart, use {api:anychart#fromJson}**.fromJSON()**{api} parameter.
 
 ```
-  var chart = anychart.fromJSON({/*put your JSON data in here*/});
+  var chart = anychart.fromJSON(/*put your JSON data in here*/);
 
   // set container and draw chart
   chart.container('container').draw();
