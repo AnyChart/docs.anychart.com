@@ -14,15 +14,15 @@ anychart.onDocumentReady(function() {
   table.contents([
     [
       'This cell got default width and \ncustom height',
-      'This cell got custom width and custom height',
+      'This cell got custom width \nand custom height',
       'This cell got default width and \ncustom height'
     ],[
       'This cell got default width and \ndefault height',
-      'This cell got custom width and default height',
+      'This cell got custom width \nand default height',
       'This cell got default width and \ndefault height'
     ],[
       'This cell got default width and \ndefault height',
-      'This cell got custom width and default height',
+      'This cell got custom width \nand default height',
       'This cell got default width and \ndefault height'
     ]
   ]);
