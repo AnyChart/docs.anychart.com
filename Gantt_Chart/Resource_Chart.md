@@ -26,28 +26,30 @@ Here is a sample demonstrates how to create simple Project Chart.
 
 As shown above every resource has a set of its own properties:
 
-...
+```
  "id": "1",
  "name": " Sarah Connor",
  "periods": [..]
-...
+```
 
 Each period has the id, name, start and end time.
 
-...
+```
  "periods": [
         {"id": "1_1", "start": 1171468800000, "end": 1171987200000},
         {"id": "1_2", "start": 1174921200000, "end": 1175612400000}
         ]
-...
+```
 
 Also you can define the view of the given period:
 
-...
+```
 //solid fill
 {"fill": "#FFFF00 0.7", "stroke": "none"},
 
 //gradient fill
 {"fill": {"angle": 0, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "red", "position": 1}]}},
+```
+
 
 {__sample :width 690 :height 180}разноцветный_пример{sample__}
