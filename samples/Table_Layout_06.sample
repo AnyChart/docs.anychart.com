@@ -13,26 +13,46 @@ anychart.onDocumentReady(function() {
   // set table content
   table.contents([
     [
-      'This cell spanes cells from two \nrows below',
-      'This cell got custom width and \ncustom height',
-      'This cell got default width and \ncustom height'
+      null,
+      null,
+      '2003 Sales',
+      '2004 Sales'
     ],[
-      null, // this cell will be spanned with the cell from first column and first row
-      'This cell spanes a cell from the right column',
-      null  // this cell will be spanned with the cell from the second column and second row
+      'Winter',
+      'January',
+      '$10000',
+      '$12000'
     ],[
-      null, // this cell will be spanned with the cell from first column and first row
-      'This cell got custom width and \ndefault height',
-      'This cell got default width and \ndefault height'
+      null,
+      'February',
+      '$12000',
+      '$15000'
+    ],[
+      'Spring',
+      'March',
+      '$18000',
+      '$16000'
+    ],[
+      null,
+      'April',
+      '$11000',
+      '$15000'
+    ],[
+      null,
+      'May',
+      '$9000',
+      '14000'
     ]
   ]);
 
   // span cells
-  table.getCell(1,1).colSpan(2);
-  table.getCell(0, 0).rowSpan(3);
+  table.getCell(1,0).rowSpan(2);
+  table.getCell(3,0).rowSpan(3);
+  table.getCell(0,0).colSpan(2);
 
-  table.rowHeight(0, 60);   // Get first row and set height 40px
-  table.colWidth(1, 180);   // Get second column and set width 160 px
+  table.rowHeight(0, 40);   // Get first row and set height 40px
+  table.colWidth(0, 70);    // Get first column and set width 70 px
+  table.colWidth(1, 70);    // Get second column and set width 70 px
 
   table.cellFill('#FFFFE0');   // Set table background color
 

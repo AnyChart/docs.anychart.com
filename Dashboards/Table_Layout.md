@@ -41,11 +41,11 @@ Visual settings control:
 Table layout consist of multiple cells and each of them may contain different type of information. In most cases same kind of data placed in one row or one column. Anychart provides {api:anychart.core.ui.Table#rowHeight}**.rowHeight()**{api} parameter for adjusting height of a row and {api:anychart.core.ui.Table#colWidth}**.colWidth()**{api} parameter for controlling width of a column.
   
   
-Sample below demonstrates height controlling of the first row and width of the second column.
+Sample below demonstrates height controlling of the first row and width of the first column.
 
 ```
   table.rowHeight(0, 40);   // Get first row and set height 40px
-  table.colWidth(1, 160);   // Get second column and set width 160 px
+  table.colWidth(0, 70);    // Get first column and set width 70 px
 ```
 
 {sample}Table\_Layout\_01{sample}
@@ -160,11 +160,16 @@ In some cases it is desirable to enlarge a cell by uniting it with one or severa
 There are two parameters for spanning several cells into one. Parameter {api:anychart.core.ui.Table.Cell#rowSpan}**.rowSpan()**{api} unites the cell with cells below in the column and parameter {api:anychart.core.ui.Table.Cell#colSpan}**.colSpan()**{api} unites cells in the row on the right side from the cell.
 
 ```
+  // span cells
+  table.getCell(1,0).rowSpan(2);  // span two cells into one row
+  table.getCell(3,0).rowSpan(3);  // span tree cells into one row
+  table.getCell(0,0).colSpan(2);  // span 2 cells 
+
   table.getCell(1,1).colSpan(2);  // span 2 cells in the row
   table.getCell(0, 0).rowSpan(3); // span 3 cells in the column
 ```
 
-Sample below demonstrates connection of several cells into one cell and position a chart into it.
+Sample below demonstrates connection of two cells in first row into one and connection of cells in first column according to season.
 
 {sample}Table\_Layout\_06{sample}
 

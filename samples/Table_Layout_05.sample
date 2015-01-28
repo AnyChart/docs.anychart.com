@@ -13,22 +13,35 @@ anychart.onDocumentReady(function() {
   // set table content
   table.contents([
     [
-      'This cell got default width and \ncustom height',
-      'This cell got custom width \nand custom height',
-      'This cell got default width and \ncustom height'
+      null,
+      '2003 Sales',
+      '2004 Sales'
     ],[
-      'This cell got default width and \ndefault height',
-      'This cell got custom width \nand default height',
-      'This cell got default width and \ndefault height'
+      'January',
+      '$10000',
+      '$12000'
     ],[
-      'This cell got default width and \ndefault height',
-      'This cell got custom width \nand default height',
-      'This cell got default width and \ndefault height'
+      'February',
+      '$12000',
+      '$15000'
+    ],[
+      'March',
+      '$18000',
+      '$16000'
+    ],[
+      'April',
+      '$11000',
+      '$15000'
+    ],
+    [
+      'May',
+      '$9000',
+      '14000'
     ]
   ]);
 
-  table.rowHeight(0, 60);   // Get first row and set height 40px
-  table.colWidth(1, 170);   // Get second column and set width 160 px
+  table.rowHeight(0, 40);   // Get first row and set height 40px
+  table.colWidth(0, 70);    // Get first column and set width 70 px
 
   table.cellFill('#FFFFE0');   // Set table background color
 
