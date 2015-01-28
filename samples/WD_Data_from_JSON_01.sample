@@ -4,15 +4,32 @@
 
 anychart.onDocumentReady(function() {
 
-    chart = anychart.columnChart([10, 1, 7, 10]);
+  // JSON data
+  var json = {
+    // chart settings
+    "chart": {
+      // chart type
+      "type": "column",
+      // series settings
+      "series": [{
+        // series data
+        "data": [
+          {"x": "P1", "value": "128.14"},
+          {"x": "P2", "value": "112.61"},
+          {"x": "P3", "value": "163.21"},
+          {"x": "P4", "value": "229.98"},
+          {"x": "P5", "value": "90.54"}
+        ]
+      }],
 
-    // licence key
-    anychart.licenseKey('AnyChart-95048498-10629dd6');
-    // credits are enabled by default. The only exception is this very playground site.
-    chart.credits().enabled(true);
-    // alternative text
-    chart.credits().alt('Custom alternative text.');
+      // chart container
+      "container": "container"
+    }
+  };
 
-    // draw
-    chart.container('container').draw();
+  // get JSON data
+  var chart = anychart.fromJson(json);
+
+  // draw chart
+  chart.draw();
 });

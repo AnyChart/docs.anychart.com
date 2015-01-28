@@ -21,4 +21,29 @@ For feeding JSON files to anychart, use {api:anychart#fromJson}**.fromJSON()**{a
   chart.container('container').draw();
 ```
 
+Snippet above demonstrates getting data from JSON but avoid illuminating JSON structure itself. Snippet below represents simple structure of acceptable JSON.
+
+```
+    // JSON data
+    var json = {
+      // chart settings
+      "chart": {
+        // chart type
+        "type": "column",
+        // series settings
+        "series": [{
+          // series data
+          "data": [
+            {"x": "P1", "value": "128.14"},
+            {"x": "P2", "value": "112.61"},
+            {"x": "P3", "value": "163.21"},
+            {"x": "P4", "value": "229.98"},
+            {"x": "P5", "value": "90.54"}
+          ]
+        }],
+        // chart container
+        "container": "container"
+      }
+    };
+```
 
