@@ -13,30 +13,35 @@ anychart.onDocumentReady(function() {
   // set table content
   table.contents([
     [
-      'This cell got default width and custom \nheight',
-      'This cell got custom width and custom height',
-      'This cell got default width and custom \nheight'
+      null,
+      '2003 Sales',
+      '2004 Sales'
     ],[
-      'This cell got default width and default \nheight',
-      'This cell got custom width and default height',
-      'This cell got default width and default \nheight'
+      'January',
+      '$10000',
+      '$12000'
     ],[
-      'This cell got default width and default \nheight',
-      'This cell got custom width and default height',
-      'This cell got default width and default \nheight'
+      'February',
+      '$12000',
+      '$15000'
     ],[
-      'This cell got default width and default \nheight',
-      'This cell got custom width and default height',
-      'This cell got default width and default \nheight'
+      'March',
+      '$18000',
+      '$16000'
     ],[
-      'This cell got default width and default \nheight',
-      'This cell got custom width and default height',
-      'This cell got default width and default \nheight'
+      'April',
+      '$11000',
+      '$15000'
+    ],
+    [
+      'May',
+      '$9000',
+      '14000'
     ]
   ]);
 
   table.rowHeight(0, 40);   // Get first row and set height 40px
-  table.colWidth(1, 160);   // Get second column and set width 160 px
+  table.colWidth(0, 70);    // Get first column and set width 70 px
 
   // set colors for ever and odd rows
   table.cellOddFill('rgb(102, 143, 169)');  // color for even rows
