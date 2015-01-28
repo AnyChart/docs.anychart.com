@@ -175,7 +175,7 @@ Sample below demonstrates connection of several cells into one cell and position
 
 As far as title on a dashboard contains the main idea of a dashboard, it is vital to configure it's visual appearance. Here is a sample with simple title at the top of the dashboard and table layout dashboard below.
 
-{sample}Table\_Layout\_07{sample}
+{sample :width 690 :height 300}Table\_Layout\_07{sample}
 
 
 ### Header Row
@@ -187,7 +187,7 @@ the table layout.
   
 Here is a sample with text settings, applied only for the first (head) row of a table layout dashboard.
 
-{sample}Table\_Layout\_08{sample}
+{sample :width 690 :height 300}Table\_Layout\_08{sample}
 
 ### Common Elements
 
@@ -198,4 +198,4 @@ common scale may be used in comparative purposes.
   
 Here is a sample of table layout dashboard with all bullet charts using same scale and custom axis uses the scale as well.
 
-{sample}Table\_Layout\_09{sample}
+{sample :width 690 :height 325}Table\_Layout\_09{sample}
