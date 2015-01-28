@@ -48,8 +48,7 @@ Also you can define the view of the given period:
 {"fill": "#FFFF00 0.7", "stroke": "none"},
 
 //gradient fill
-{"fill": {"angle": 0, "keys": [{"color": "#689663", "position": 0}, {"color": "#6B9866", "position": 0.38}, {"color": "red", "position": 1}]}},
+{"fill": {"angle": 0, "keys": [{"color": "orange", "position": 0}, {"color": "#6B9866", "position": 0.5}, {"color": "red", "position": 1}]}},
 ```
 
-
-{__sample :width 690 :height 180}разноцветный_пример{sample__}
+{sample :width 690 :height 180}GANTT\_\Chart\_03{sample}
