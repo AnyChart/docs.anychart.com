@@ -41,7 +41,7 @@ anychart.onDocumentReady(function() {
       null,
       'May',
       '$9000',
-      '14000'
+      '$14000'
     ]
   ]);
 
