@@ -35,7 +35,7 @@ chart.splitterPosition(150);
   //initiate chart drawing
   chart.draw();
 
-  chart.fitAll();
+  chart.fitToTask('2');
 
 });
 
@@ -44,50 +44,37 @@ function getData() {
     {
       'id': '1',
       'name': 'Task 1',
-      'actualStart': Date.UTC(2008, 7, 5),
+      'actualStart': Date.UTC(2008, 7, 1),
       'actualEnd': Date.UTC(2008, 7, 12),
-      'baselineStart': Date.UTC(2008, 7, 6),
-      'baselineEnd': Date.UTC(2008, 7, 10),
+      'progressValue': '100%',
     },
     {
       'id': '2',
       'name': 'Task 2',
-      'actualStart': Date.UTC(2008, 7, 9),
+      'actualStart': Date.UTC(2008, 7, 2),
       'actualEnd': Date.UTC(2008, 7, 13),
-      'baselineStart': Date.UTC(2008, 7, 6),
-      'baselineEnd': Date.UTC(2008, 7, 10),
+      'progressValue': '75%',
     },
     {
       'id': '3',
       'name': 'Task 3',
-      'actualStart': Date.UTC(2008, 7, 11),
-      'actualEnd': Date.UTC(2008, 7, 20),
-      'baselineStart': Date.UTC(2008, 7, 9),
-      'baselineEnd': Date.UTC(2008, 7, 19),
+      'actualStart': Date.UTC(2008, 7, 3),
+      'actualEnd': Date.UTC(2008, 7, 15),
+      'progressValue': '50%',
     },
     {
       'id': '4',
       'name': 'Task 4',
-      'actualStart': Date.UTC(2008, 7, 8),
-      'actualEnd': Date.UTC(2008, 7, 15),
-      'baselineStart': Date.UTC(2008, 7, 6),
-      'baselineEnd': Date.UTC(2008, 7, 12),
+      'actualStart': Date.UTC(2008, 7, 5),
+      'actualEnd': Date.UTC(2008, 7, 14),
+      'progressValue': '25%',
     },
     {
       'id': '5',
       'name': 'Task 5',
       'actualStart': Date.UTC(2008, 7, 7),
-      'actualEnd': Date.UTC(2008, 7, 16),
-      'baselineStart': Date.UTC(2008, 7, 5),
-      'baselineEnd': Date.UTC(2008, 7, 13),
-    },
-    {
-      'id': '6',
-      'name': 'Task 6',
-      'actualStart': Date.UTC(2008, 7, 13),
-      'actualEnd': Date.UTC(2008, 7, 19),
-      'baselineStart': Date.UTC(2008, 7, 11),
-      'baselineEnd': Date.UTC(2008, 7, 16),
-    },
+      'actualEnd': Date.UTC(2008, 7, 10),
+      'progressValue': '0%',
+    }
   ];
 }
