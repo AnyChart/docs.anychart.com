@@ -12,7 +12,7 @@ Resources Gantt Chart is one of two types of Gantt Charts. It is intended for sh
 
 ## Chart
 
-The Recource Gantt Chart creation is the same as Project Chart except you should define the chat type:
+The Recource Gantt Chart creation is the same as Project Chart except you should define the resource chat type:
 
 ```
 //create project gantt chart
