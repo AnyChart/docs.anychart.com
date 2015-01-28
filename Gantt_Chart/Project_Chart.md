@@ -126,7 +126,7 @@ Tracking progress can be complicated but you can show percent complete using pro
 },
 ```
 
-{sample :width 780 :height 260}GANTT\_Chart\_05{sample}
+{sample :width 780 :height 220}GANTT\_Chart\_05{sample}
 
 ## Actual and Planned
 
