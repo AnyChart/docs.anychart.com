@@ -126,7 +126,7 @@ Tracking progress can be complicated but you can show percent complete using pro
 },
 ```
 
-{sample :width 780 :height 260}GANTT\_Chart\_04sample}
+{sample :width 780 :height 260}GANTT\_Chart\_05{sample}
 
 ## Actual and Planned
 
@@ -158,4 +158,4 @@ You can define connectors using these settings:
 {"id": "4", "name": "resolution", parent:"2", "actualStart": 400000, "actualEnd": 800000, "connectTo": "5", "connectorType": "FinishStart"},
 ```
 
-{sample :width 690 :height 180}GANTT\_Chart\_04{sample}
+{sample :width 690 :height 180}GANTT\_Chart\_06{sample}
