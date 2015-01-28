@@ -59,7 +59,7 @@ Hierarchy can be set in two ways: by table and by structure. In both samples bel
  }
 ```
 
-Read more about handling tree data at: {Using Data Tree Model}(Using_Data_Tree_Model) section.
+Read more about handling tree data at: [Using Data Tree Model](Using_Data_Tree_Model) section.
 
 ## Tasks Types
 
