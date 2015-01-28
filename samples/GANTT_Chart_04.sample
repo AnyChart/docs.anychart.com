@@ -1,0 +1,93 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+  //create data tree on our data
+  var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+
+  //create project gantt chart
+  chart = anychart.ganttProject();
+
+  //set container id for the chart
+  chart.container('container');
+
+  //set data for the chart
+  chart.data(treeData);
+
+  //get chart data grid link to set column settings
+  var dataGrid = chart.getDataGrid();
+
+chart.splitterPosition(150);
+
+  //set first column settings
+  var firstColumn = dataGrid.column(0);
+  firstColumn.cellTextSettings().hAlign('center');
+  firstColumn.width(35);
+
+
+  var secondColumn = dataGrid.column(1);
+  secondColumn.cellTextSettings().hAlign('left');
+  secondColumn.textFormatter(function(item) {
+    return item.get('name');
+  });
+
+  //initiate chart drawing
+  chart.draw();
+
+  chart.fitAll();
+
+});
+
+function getData() {
+  return [
+    {
+      'id': '1',
+      'name': 'Task 1',
+      'actualStart': Date.UTC(2008, 5, 7),
+      'actualEnd': Date.UTC(2008, 12, 7),
+      'baselineStart': Date.UTC(2008, 6, 7),
+      'baselineEnd': Date.UTC(2008, 10, 7),
+    },
+    {
+      'id': '2',
+      'name': 'Task 2',
+      'actualStart': Date.UTC(2008, 9, 7),
+      'actualEnd': Date.UTC(2008, 13, 7),
+      'baselineStart': Date.UTC(2008, 6, 7),
+      'baselineEnd': Date.UTC(2008, 10, 7),
+    },
+    {
+      'id': '3',
+      'name': 'Task 3',
+      'actualStart': Date.UTC(2008, 11, 7),
+      'actualEnd': Date.UTC(2008, 20, 7),
+      'baselineStart': Date.UTC(2008, 9, 7),
+      'baselineEnd': Date.UTC(2008, 19, 7),
+    },
+    {
+      'id': '4',
+      'name': 'Task 4',
+      'actualStart': Date.UTC(2008, 8, 7),
+      'actualEnd': Date.UTC(2008, 15, 7),
+      'baselineStart': Date.UTC(2008, 6, 7),
+      'baselineEnd': Date.UTC(2008, 12, 7),
+    },
+    {
+      'id': '5',
+      'name': 'Task 5',
+      'actualStart': Date.UTC(2008, 7, 7),
+      'actualEnd': Date.UTC(2008, 16, 7),
+      'baselineStart': Date.UTC(2008, 5, 7),
+      'baselineEnd': Date.UTC(2008, 13, 7),
+    },
+    {
+      'id': '6',
+      'name': 'Task 6',
+      'actualStart': Date.UTC(2008, 13, 7),
+      'actualEnd': Date.UTC(2008, 19, 7),
+      'baselineStart': Date.UTC(2008, 11, 7),
+      'baselineEnd': Date.UTC(2008, 16, 7),
+    },
+  ];
+}

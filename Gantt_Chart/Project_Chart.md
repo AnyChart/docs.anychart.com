@@ -126,7 +126,7 @@ Tracking progress can be complicated but you can show percent complete using pro
 },
 ```
 
-{sample_}несколько тасков, один с прогресс баром{_sample}
+{sample :width 780 :height 260}GANTT\_Chart\_04sample}
 
 ## Actual and Planned
 
@@ -144,7 +144,7 @@ Sometimes a task is taking longer than was planned, in this case it is useful to
     }
 ```
 
-{sample_}некий сэмпл{_sample}
+{sample :width 690 :height 180}GANTT\_Chart\_04{sample}
 
 ## Connectors
 
@@ -158,4 +158,4 @@ You can define connectors using these settings:
 {"id": "4", "name": "resolution", parent:"2", "actualStart": 400000, "actualEnd": 800000, "connectTo": "5", "connectorType": "FinishStart"},
 ```
 
-{sample_}на все виды коннекторов{_sample}
+{sample :width 690 :height 180}GANTT\_Chart\_04{sample}

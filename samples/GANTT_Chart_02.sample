@@ -82,7 +82,7 @@ anychart.onDocumentReady(function(){
     custombuttons[i].style.width = '195px';
     custombuttons[i].style.height = 'auto';
     custombuttons[i].style.backgroundColor = 'white';
-    custombuttons[i].style.color = 'blue';
+    custombuttons[i].style.color = 'black';
     custombuttons[i].style.fontFamily = chart.title().fontFamily();
     custombuttons[i].style.position = 'absolute';
     custombuttons[i].style.zIndex = 2;
