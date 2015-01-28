@@ -51,4 +51,4 @@ Also you can define the view of the given period:
 {"fill": {"angle": 0, "keys": [{"color": "orange", "position": 0}, {"color": "#6B9866", "position": 0.5}, {"color": "red", "position": 1}]}},
 ```
 
-{sample :width 690 :height 180}GANTT\_\Chart\_03{sample}
+{sample :width 690 :height 180}GANTT\_Chart\_03{sample}
