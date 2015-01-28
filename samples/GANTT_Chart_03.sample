@@ -1,0 +1,50 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+  //create data tree on our data
+  var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+
+  //create project gantt chart
+  chart = anychart.ganttResource();
+
+  //set container id for the chart
+  chart.container('container');
+
+  //set data for the chart
+  chart.data(treeData);
+
+  //set start splitter position settings
+  chart.splitterPosition(320);
+
+  //get chart data grid link to set column settings
+  var dataGrid = chart.getDataGrid();
+
+  //initiate chart drawing
+  chart.draw();
+
+  //zoom chart to specified date
+  chart.fitAll();
+});
+
+function getData() {
+  return [
+    {
+      "id": "1",
+      "name": "Server 1",
+      "periods": [
+        {"id": "1_1", "fill": "blue 0.7", "stroke": "none", "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 3, 2)},
+        {"id": "1_2", "fill": "red 0.7", "stroke": "black 0.7", "start": Date.UTC(2013, 3, 2), "end": Date.UTC(2013, 4, 5)}
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Server 1",
+      "periods": [
+        {"id": "2_1", "fill": "none", "stroke": {'color': 'black', 'dash': '2 10'}, "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 3, 20)},
+        {"id": "2_2", "fill": {"angle": 0, "keys": [{"color": "#689663", "position": 0}, {"color": "red", "position": 0.5}, {"color": "#B4FFAB", "position": 1}]}, "stroke": "black 0.7", "start": Date.UTC(2013, 3, 20), "end": Date.UTC(2013, 4, 5)}
+      ]
+    }
+  ];
+}
