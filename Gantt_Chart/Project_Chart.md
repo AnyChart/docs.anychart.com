@@ -128,10 +128,30 @@ The tasks types are not explicitly defined, but they have a different behavior.
 
 You can control if the summary task is expanded or collapsed using these methods:
 
-**expandAll()**. Allows to expand all tasks.
-**collapseAll()** Uses to collapse all tasks.
-**expandTask(taskID)** Expands one task.
-**collapseTask(taskID)** Collapses one task.
+<table border="1" class="dtTABLE">
+<tbody>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>{api:anychart.charts.Gantt#expandAll}**expandAll()**{api}</td>
+<td>Allows to expand all tasks.</td>
+</tr>
+<tr>
+<td>{api:anychart.charts.Gantt#collapseAll}**collapseAll()**{api}</td>
+<td>Used to collapse all tasks.</td>
+</tr>
+<tr>
+<td>{api:anychart.charts.Gantt#expandTask}**expandTask(taskID)**{api}</td>
+<td>Expands one task.</td>
+</tr>
+<tr>
+<td>{api:anychart.charts.Gantt#collapseTask}**collapseTask(taskID)**{api}</td>
+<td>Collapses one task.</td>
+</tr>
+</tbody>
+</table>
 
 {sample :width 780 :height 260}GANTT\_Chart\_02{sample}
 

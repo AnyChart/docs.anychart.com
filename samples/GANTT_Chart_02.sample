@@ -67,10 +67,10 @@ anychart.onDocumentReady(function(){
   };
 
   // append button to container
-  container.appendChild(expandAllButton);
-  container.appendChild(collapseAllButton);
-  container.appendChild(expandLast);
   container.appendChild(collapseLast);
+  container.appendChild(expandLast);
+  container.appendChild(collapseAllButton);
+  container.appendChild(expandAllButton);
 
   var custombuttons = document.getElementsByClassName('custombutton');
 
@@ -78,8 +78,8 @@ anychart.onDocumentReady(function(){
   for (var i = 0; i<custombuttons.length; i++){
     // set button style
     custombuttons[i].style.top = '210px';
-    custombuttons[i].style.left = 200*i + 'px';
-    custombuttons[i].style.width = '195px';
+    custombuttons[i].style.left = 180*i + 'px';
+    custombuttons[i].style.width = '170px';
     custombuttons[i].style.height = 'auto';
     custombuttons[i].style.backgroundColor = 'white';
     custombuttons[i].style.color = 'black';
@@ -88,7 +88,7 @@ anychart.onDocumentReady(function(){
     custombuttons[i].style.zIndex = 2;
     custombuttons[i].style.transition = '0.5s';
     custombuttons[i].style.textAlign = 'center';
-    custombuttons[i].style.border = '3px solid #444444';
+    custombuttons[i].style.border = '2px solid #444444';
     custombuttons[i].style.borderRadius = '7px 7px 7px 7px';
     custombuttons[i].style.fontSize = '18px';
     custombuttons[i].style.cursor = 'pointer';
