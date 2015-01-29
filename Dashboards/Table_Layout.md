@@ -48,7 +48,7 @@ Sample below demonstrates height controlling of the first row and width of the f
   table.colWidth(0, 70);    // Get first column and set width 70 px
 ```
 
-{sample}Table\_Layout\_01{sample}
+{sample :width 690 :height 200}Table\_Layout\_01{sample}
 
 ### Fill
 
@@ -65,7 +65,7 @@ Background for all the table can be configured with {api:anychart.core.ui.Table#
   table.cellFill('#D5D84B');
 ```
 
-{sample}Table\_Layout\_02{sample}
+{sample :width 690 :height 200}Table\_Layout\_02{sample}
 
 #### Even and Odd Rows
 
@@ -78,7 +78,7 @@ As a more advanced way of controlling table's background color there are paramet
 
 Here is the sample with "rgb(233, 234, 237)" background color for all cells in even row and "rgb(102, 143, 169)" color for all cells in odd row.
 
-{sample}Table\_Layout\_03{sample}
+{sample :width 690 :height 200}Table\_Layout\_03{sample}
 
 #### Cell Fill
 
@@ -123,7 +123,7 @@ Sample below demonstrates setting gray stroke for the whole chart, set thickness
   });
 ```
 
-{sample}Table\_Layout\_04{sample}
+{sample :width 690 :height 200}Table\_Layout\_04{sample}
 
 **Note:** As far as any cell has 4 borders, there is a way to control style for each of them. Parameters {api:anychart.core.ui.Table.Cell#topBorder}**.topBorder()**{api}, {api:anychart.core.ui.Table.Cell#leftBorder}**.leftBorder()**{api}, {api:anychart.core.ui.Table.Cell#bottomBorder}**.bottomBorder()**{api} and {api:anychart.core.ui.Table.Cell#rightBorder}**.rightBorder()**{api} controls style for each of 4 cell's border.
   
@@ -152,7 +152,7 @@ Sample below demonstrates controlling text settings and using padding
    .fontColor('red');
 ```
 
-{sample}Table\_Layout\_05{sample}
+{sample :width 690 :height 200}Table\_Layout\_05{sample}
 
 ### Span
 
@@ -171,7 +171,7 @@ There are two parameters for spanning several cells into one. Parameter {api:any
 
 Sample below demonstrates connection of two cells in first row into one and connection of cells in first column according to season.
 
-{sample}Table\_Layout\_06{sample}
+{sample :width 690 :height 200}Table\_Layout\_06{sample}
 
 
 ## Using Table
