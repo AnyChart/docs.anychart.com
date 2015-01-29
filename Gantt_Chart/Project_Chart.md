@@ -11,20 +11,25 @@
 
 ## Overview
 
-Project Gantt Chart is intended for showing a progress of completion of a single task or a group of tasks, taking into consideration their planned time periods and actual ones.
+Project Gantt Chart is intended for showing a progress of completion of a single task or a group of tasks, taking into consideration their planned and actual time periods, along with a progress made, tasks hierarchy and order.
 
 ## Chart
+
+To create Project Gantt Chart you should use the {api:anychart#ganttProject}**anychart.ganttProject()**{api} method.
+
+```
+// chart type
+chart = anychart.ganttProject();
+```
 
 Here is a simple sample to illustrate how to create a project chart:
 
 {sample :width 690 :height 180}GANTT\_Basic\_Sample{sample}
 
 
-All common additional information is available [here](Quick_Start).
-
 ## Hierarchy
 
-Hierarchy can be set in two ways: by table and by structure. In both samples below node "first" is the parent of node "second".
+[Tree data model](Using_Data_Tree_Model) is used in Project Gantt Charts to define a data hierarchy. It can be set in two ways: by table and by structure. In both samples below node "first" is the parent of node "second".
 
 ```
 // hierarchy 1 by table
@@ -71,9 +76,27 @@ There are following types of tasks in Project Gantt Chart: Normal, Parent and Mi
 
 **Milestone**. It is some sort or waypoint that indicates some major event. Its start time is always equal to its end time.
 
+<table border="1" class="dtTABLE">
+<tbody>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Normal</td>
+<td>This is a task that has start time, end time, and doesn't include any other tasks (isn't a parent of any other task).</td>
+</tr>
+<tr>
+<td>Parent</td>
+<td>This is a task that has both start and end time and also has some tasks inside it (is a "parent" of some tasks)</td>
+</tr>
+</tbody>
+</table>
+
+The tasks types are not explicitly defined, but they have a different behavior.
+
 ```
     //how to create the tasks
-    function getData() {
       return [
       {
         "name": "parent",
@@ -114,7 +137,7 @@ You can control if the summary task is expanded or collapsed using these methods
 
 ## Task Progress
 
-Tracking progress can be complicated but you can show percent complete using progress bar. To use it you need to provide the required value of the "progressValue" in node.
+Tracking progress can be complicated, but you can show percent complete using progress bar. To use it you need to provide the required value of the "progressValue".
 
 ```
 // progress in data
@@ -135,13 +158,13 @@ Sometimes a task is taking longer than was planned, in this case it is useful to
 ```
 // planned and actual in data
 {
-      'name': "revision",
-      'actualStart': Date.UTC(2010, 5, 1, 8),
-      'actualEnd': Date.UTC(2010, 5, 24, 18),
-      'progressValue': '41%',
-      'baselineStart': Date.UTC(2010, 4, 29, 9),
-      'baselineEnd': Date.UTC(2010, 5, 27, 18),
-    }
+    'name': "revision",
+    'actualStart': Date.UTC(2010, 5, 1, 8),
+    'actualEnd': Date.UTC(2010, 5, 24, 18),
+    'progressValue': '41%',
+    'baselineStart': Date.UTC(2010, 4, 29, 9),
+    'baselineEnd': Date.UTC(2010, 5, 27, 18),
+}
 ```
 
 {sample :width 690 :height 180}GANTT\_Chart\_04{sample}
