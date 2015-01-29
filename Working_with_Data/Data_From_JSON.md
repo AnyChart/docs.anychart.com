@@ -79,4 +79,48 @@ Charts with multiple series are not much different from the charts with single o
 
 ## Axis
 
-Setting custom data from JSON file is
+Data from JSON may contain all possible settings for controlling chart grid, axis line along with tick marks and labels, axis scale and other visual appearance settings. In this section we will quickly demonstrate how axis orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+
+### Orientation
+
+
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.enums.Orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
+
+Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
+
+```
+  // x axes settings
+  "xAxes": [{
+    "orientation": "top"
+  }],
+
+  // y axes settings
+  "yAxes": [{
+    "orientation": "right"
+  }]
+```
+
+Look at the demonstration of this feature on the Single-series sample:
+
+{sample}WD\_Data\_from\_JSON\_03{sample}
+
+### Inversion
+
+AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is controlled by axis **.inverted()**:
+
+```
+  // y scale settings
+  "yScale": [{
+    "inverted": true
+  }],
+```
+Look at the demonstration of Y Axis inversion on the Single-series sample:
+
+{sample}WD\_Data\_from\_JSON\_04{sample}
+
+## Logarithmic Scale
+
+Logarithmic scale can be used for improving visual appearance of data with great range of values.
+
+```
+```
