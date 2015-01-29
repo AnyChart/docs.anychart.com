@@ -70,12 +70,6 @@ Read more about handling tree data at: [Using Data Tree Model](Using_Data_Tree_M
 
 There are following types of tasks in Project Gantt Chart: Normal, Parent and Milestone.
 
-**Normal**. This is a task that has start time, end time, and doesn't include any other tasks (isn't a parent of any other task).
-
-**Parent**. This is a task that has both start and end time and also has some tasks inside it (is a "parent" of some tasks)
-
-**Milestone**. It is some sort or waypoint that indicates some major event. Its start time is always equal to its end time.
-
 <table border="1" class="dtTABLE">
 <tbody>
 <tr>
@@ -89,6 +83,10 @@ There are following types of tasks in Project Gantt Chart: Normal, Parent and Mi
 <tr>
 <td>Parent</td>
 <td>This is a task that has both start and end time and also has some tasks inside it (is a "parent" of some tasks)</td>
+</tr>
+<tr>
+<td>Milestone</td>
+<td>It is some sort or waypoint that indicates some major event. Its start time is always equal to its end time.</td>
 </tr>
 </tbody>
 </table>
@@ -123,6 +121,8 @@ The tasks types are not explicitly defined, but they have a different behavior.
       ];
     }
 ```
+
+{sample :width 690 :height 180}GANTT\_Chart\_07{sample}
 
 ## Expand/Collapse control
 
