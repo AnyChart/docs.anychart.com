@@ -20,7 +20,7 @@ anychart.onDocumentReady(function(){
   chart.data(treeData);
 
   // data tree width
-  chart.splitterPosition(170);
+  chart.splitterPosition(190);
 
   var dataGrid = chart.getDataGrid();
 
@@ -78,8 +78,8 @@ anychart.onDocumentReady(function(){
   for (var i = 0; i<custombuttons.length; i++){
     // set button style
     custombuttons[i].style.top = '210px';
-    custombuttons[i].style.left = 180*i + 'px';
-    custombuttons[i].style.width = '170px';
+    custombuttons[i].style.left = 170*i + 'px';
+    custombuttons[i].style.width = '165px';
     custombuttons[i].style.height = 'auto';
     custombuttons[i].style.backgroundColor = 'white';
     custombuttons[i].style.color = 'black';
@@ -121,12 +121,12 @@ function getData() {
       },
       {
         "id": '5',
-        "name": "plan",
+        "name": " innovation activities",
         "actualStart": Date.UTC(2007, 1, 24),
         "actualEnd": Date.UTC(2007, 2, 14),
         "children": [
             {
-                "name": "Final plan",
+                "name": "Improvement research",
                 "actualStart": Date.UTC(2007, 1, 24),
                 "actualEnd": Date.UTC(2007, 2, 14)
       }
