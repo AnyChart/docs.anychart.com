@@ -118,9 +118,19 @@ Look at the demonstration of Y Axis inversion on the Single-series sample:
 
 {sample}WD\_Data\_from\_JSON\_04{sample}
 
-## Logarithmic Scale
+### Logarithmic Scale
 
 Logarithmic scale can be used for improving visual appearance of data with great range of values.
 
 ```
+  "yScale": {
+    "type": "log"
+  }
 ```
+
+{sample}WD\_Data\_from\_JSON\_05{sample}
+
+More information on scales can be found in [Scales article](../Axes_and_Grids/Scales).
+
+## Visualization
+

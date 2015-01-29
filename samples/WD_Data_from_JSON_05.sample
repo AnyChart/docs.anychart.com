@@ -1,0 +1,50 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+
+  // JSON data
+  var json = {
+    // chart settings
+    "chart": {
+      // chart type
+      "type": "column",
+      // chart title
+      "title": "inverted Scale",
+      // series settings
+      "series": [{
+        // first series data
+        "data": [
+          {"x": "P1", "value": 637166},
+          {"x": "P2", "value": 721630},
+          {"x": "P3", "value": 1000},
+          {"x": "P4", "value": 78},
+          {"x": "P5", "value": 90}
+        ]
+      }],
+
+      // y scale settings
+      "yScale": {
+        // set logarithmic scale type
+        "type": "log",
+      },
+
+      // y axes settings
+      "yAxes":[{
+        "title":{
+          "text": "This axis is bounded to logarithmic scale"
+        }
+      }],
+
+      // chart container
+      "container": "container"
+    }
+  };
+
+  // get JSON data
+  var chart = anychart.fromJson(json);
+
+  // draw chart
+  chart.draw();
+});
