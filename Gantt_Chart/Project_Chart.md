@@ -172,13 +172,13 @@ Tracking progress can be complicated, but you can show percent complete using pr
 
 Let's demonstrate how to apply different settings to progress bar for custom visualisation.
 
-'''
+```
     'progressValue': "17%",
     'progress':{
         'fill': 'blue',
         'label': {'value': 'progress value'}
     ,
-'''
+```
 
 ## Actual and Planned
 
@@ -226,11 +226,10 @@ To configure how actual or baseline bar looks like you need to set the "fill" va
 ## Connectors
 
 If there is a need to add an additional connection between tasks, you can define connectors with these settings:
-
 <br>{api:anychart.enums.GanttDataFields#CONNECTOR_TYPE}**connectorType**{api}. It can belong to one of four types: StartStart, StartFinish, FinishStart, FinishFinish
 <br>{api:anychart.enums.GanttDataFields#CONNECT_TO}**connectTo(taskID)**{api}. It defines another node which will be connected with the first. For this purpose use the "id" value.
 
-Types of task connectors:
+<br>Types of task connectors:
 <table border="1" class="dtTABLE">
 <tbody>
 <tr>
