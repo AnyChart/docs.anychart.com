@@ -48,10 +48,10 @@ anychart.onDocumentReady(function(){
   expandLast.className = 'custombutton';
   collapseLast.className = 'custombutton';
 
-  expandAllButton.innerHTML = 'expand all tasks';
-  collapseAllButton.innerHTML = 'collapse all tasks';
-  expandLast.innerHTML = 'expand number 5';
-  collapseLast.innerHTML = 'collapse number 5';
+  expandAllButton.innerHTML = 'expand all';
+  collapseAllButton.innerHTML = 'collapse all';
+  expandLast.innerHTML = 'expand 5';
+  collapseLast.innerHTML = 'collapse 5';
 
   expandAllButton.onclick = function() {
       chart.expandAll();

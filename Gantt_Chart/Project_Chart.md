@@ -119,7 +119,6 @@ The tasks types are not explicitly defined, but they have a different behavior.
         ]
       }
       ];
-    }
 ```
 
 {sample :width 690 :height 180}GANTT\_Chart\_07{sample}
@@ -181,7 +180,6 @@ Sometimes a task is taking longer than was planned, in this case it is useful to
     'name': "revision",
     'actualStart': Date.UTC(2010, 5, 1, 8),
     'actualEnd': Date.UTC(2010, 5, 24, 18),
-    'progressValue': '41%',
     'baselineStart': Date.UTC(2010, 4, 29, 9),
     'baselineEnd': Date.UTC(2010, 5, 27, 18),
 }
@@ -189,16 +187,66 @@ Sometimes a task is taking longer than was planned, in this case it is useful to
 
 {sample :width 690 :height 180}GANTT\_Chart\_04{sample}
 
+To configure how actual or baseline bar looks like you need to set the "fill" value in appropriate properties.
+
+```
+// planned and actual in data
+{
+    'name': "revision",
+    'actualStart': Date.UTC(2010, 5, 1, 8),
+    'actualEnd': Date.UTC(2010, 5, 24, 18),
+    'actual':
+    'baselineStart': Date.UTC(2010, 4, 29, 9),
+    'baselineEnd': Date.UTC(2010, 5, 27, 18),
+    'baseline':
+}
+```
+
+
 ## Connectors
 
-You can define connectors using these settings:
+If there is a need to add an additional connection between tasks, you can define connectors using these settings:
 
-**connectorType**. It can belong to one of four types: StartStart, StartFinish, FinishStart, FinishFinish
-**connectTo**. It defines another node which will be connected with the first. For this purpose use the "id" value.
+**{api:anychart.enums.GanttDataFields#CONNECTOR_TYPE}**connectorType**{api}**. It can belong to one of four types: StartStart, StartFinish, FinishStart, FinishFinish
+**{api:anychart.enums.GanttDataFields#CONNECT_TO}**connectTo**{api}**. It defines another node which will be connected with the first. For this purpose use the "id" value.
+
+Types of task connectors:
+<table border="1" class="dtTABLE">
+<tbody>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>StartStart</td>
+<td>used in case when the second can’t start until the first task starts</td>
+</tr>
+<tr>
+<td>StartFinish</td>
+<td>the second task can’t finish until the first begins. </td>
+</tr>
+<tr>
+<td>FinishStart</td>
+<td>the second task can’t start until the first is done. </td>
+</tr>
+<tr>
+<td>FinishFinish</td>
+<td>the second task can’t finish until the first task is done.</td>
+</tr>
+</tbody>
+</table>
+
 
 ```
 // connectors in data
 {"id": "4", "name": "resolution", parent:"2", "actualStart": 400000, "actualEnd": 800000, "connectTo": "5", "connectorType": "FinishStart"},
 ```
+
+Also it is possible to configure the connector view:
+
+'''
+//dashed line
+
+'''
 
 {sample :width 690 :height 180}GANTT\_Chart\_06{sample}
