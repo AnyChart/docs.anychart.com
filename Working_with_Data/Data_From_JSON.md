@@ -83,7 +83,6 @@ Data from JSON may contain all possible settings for controlling chart grid, axi
 
 ### Orientation
 
-
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.enums.Orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
 
 Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
@@ -134,3 +133,73 @@ More information on scales can be found in [Scales article](../Axes_and_Grids/Sc
 
 ## Visualization
 
+In this section we will describe main parts of charts visual appearance using JSON.
+
+```
+  "fill":"gold",
+  "stroke": "gray",
+  "hoverStroke": "darkred",
+  "hatchFill": {
+    "type": "diagonalbrick",
+    "color": "gray"
+  },
+  "hoverHatchFill":{
+    "type:": "diagonalbrick",
+    "color": "darkred"
+  }
+```
+
+Using such settings we've created a style that defines columns of Gold color with gray border and hatch filled with DiagonalBrick. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed border and hatch fill colored DarkRed too.
+Now we will take a sample single series chart described above and apply it to all chart elements.
+
+{sample}WD\_Data\_from\_JSON\_06{sample}
+
+### Markers
+
+Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including columns.
+
+
+In the sample below we will take single-series data described above and mark the highest column in series with a "Star5" of the "Gold" color.
+
+
+To make marker visually appealing we will create a style, that will tell AnyChart to set marker size to 12 pixels in normal state, and make it bigger (12 pixels) when user moves cursor over an element.
+
+```
+  "series": [{
+    "data": [
+      {"x": "P1", "value": "128.14"},
+      {"x": "P2", "value": "112.61"},
+      {"x": "P3", "value": "163.21"},
+      {"x": "P4", "value": "229.98",
+        // marker settings
+        marker:{
+          type:'star5', // marker type
+          fill:'gold',  // marker color
+          size: 12,     // marker size
+          enabled: true // enable marker
+        },
+        // setting for marker on mouse over
+        hoverMarker: {
+          size: 22      // marker size
+        }
+      },
+      {"x": "P5", "value": "90.54"}
+    ],
+  }]
+```
+
+Result of this code is shown below
+
+{sample}WD\_Data\_from\_JSON\_07{sample}
+
+### Colors
+
+AnyChart uses default color palette to colorize data elements of chart automatically even if you have not defined special colors.
+
+### Coloring Series
+
+
+
+### Coloring elements
+
+## Hatch Fills
