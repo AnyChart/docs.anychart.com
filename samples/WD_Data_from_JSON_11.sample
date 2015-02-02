@@ -1,0 +1,103 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+  <!doctype html>
+  <html>
+  <head>
+    <!--Compiled JS-->
+  <!--<script src="../../../out/anychart.min.js"></script>-->
+
+    <!--Non Compiled JS-->
+  <script src="../../../contrib/closure-library/closure/goog/base.js"></script>
+  <script src="../../../src/deps.js"></script>
+  <script>
+  goog.require("anychart.modules.anychart");
+  </script>
+  <script>
+
+  anychart.onDocumentReady(function() {
+    var json = {
+      "chart": {
+        "container": "container",
+        "type": "column",
+        "title": "Pareto Chart of Late Arrivals by Reported Cause",
+        "scales": {
+          "linerScale": {
+            "type": "linear",
+            "minimum": "0",
+            "maximum": "184.8",
+            "ticks": {"interval": 16.8},
+            "minorTicks": {"interval": 8.4}
+          },
+          "ordinalScale": {
+            "type": "linear",
+            "minimum": "0",
+            "maximum": "110",
+            "ticks": {"interval": 10}
+          },
+          "customScale": {
+            "type": "ordinal",
+            "names": ["p1", "p2", "p3", "p4", "p5", "p6"],
+            "values": ["Traffic", "Child Care", "Transp.", "Weather", "Overslept", "Emergency"],
+            "minimum": "0",
+            "maximum": "110",
+            "ticks": {"interval": 10}
+          }
+        },
+        "yScale": "defaultScale",
+        "xScale": {"names": ["Traffic", "Child Care", "Transp.", "Weather", "Overslept", "Emergency"],
+          "ticks":(3)
+        },
+        "yAxes": [
+          {
+            //no custom settings for first yAxis
+          },
+          {
+            "title": "Secondary Y-Axis",
+            "orientation": "right",
+            "scale": "ordinalScale"
+          }
+        ],
+        "xAxes":[
+          {
+            //       "scale": "customScale"
+          },
+          {
+            "title": "Default Axis",
+            "orientation": "top",
+            "scale": "customScale",
+            "ticks": {
+              "enabled": true,
+              "stroke": "red"
+            }
+          }
+        ],
+        "series": [{
+          "seriesType": "column",
+          "yScale": "customScale_1",
+          "data": [56, 44.8, 27.2, 19.6, 11.4, 6.6]
+
+        }, {
+          "seriesType": "line",
+          "yScale": "customScale_1",
+          "data": [0, 35, 61, 77, 89, 100]
+        }]
+      }
+    };
+    var chart = anychart.fromJson(json);
+    chart.yAxis(1).labels().textFormatter(function(info) {
+      return info.value + "%";
+    });
+    console.log(chart.xAxis(1).scale());
+    chart.draw();
+  });
+  </script>
+  </head>
+  <body>
+  <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
+  </body>
+  </html>
+
+});

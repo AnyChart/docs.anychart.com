@@ -198,8 +198,34 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 ### Coloring Series
 
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.graphics.vector.Fill}**.fill()**{api} parameters in the {api:anychart.core.cartesian.series}**series**{api}. In the sample below we have 5 series with sample data and we'll color each series in different color. Here is the sample:
 
+{sample}WD\_Data\_from\_JSON\_08{sample}
 
 ### Coloring elements
 
+In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. As you see it is very easy to do by setting {api:anychart.graphics.vector.Fill}**".fill()"**{api} method for a **point**.
+
+In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. As you see it is very easy to do by setting {api:anychart.graphics.vector.Fill}**".fill()"**{api} method for a **point**.
+
+{sample}WD\_Data\_from\_JSON\_09{sample}
+
+ **Important Note:**
+AnyChart seriously takes care of visualization and users convenience - that is why we have a number of ways to set
+colors, for example, instead of "Rgb(180,77,77)" you can set "HSB" or "HTMLConstant" or "#HEXCode"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this it is not all about colors in AnyChart. Read more about setting colors below and in the following Help Sections:
+  * [Color management](../Appearance_Settings/Color_Management)
+
 ## Hatch Fills
+
+AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings. To see the whole range of available hatch types see [Hatch](../Appearance_Settings/Hatch_Fill) tutorial.
+
+
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter for series.
+
+{sample}WD\_Data\_from\_JSON\_10{sample}
+
+## Advanced Settings
+
+All mentioned settings in this articles were demonstrated on the column chart. Colum chart has multiple predefined parameters thus can't fully represent all variety of tunable settings and options. Next sample fixes this drawback. It demonstrates cartesian chart with several different series, customized axes, legend, scales and titles.
+
+{sample}WD\_Data\_from\_JSON\_11{sample}
