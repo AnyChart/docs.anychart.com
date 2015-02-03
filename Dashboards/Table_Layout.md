@@ -144,12 +144,12 @@ Sample below demonstrates controlling text settings and using padding
 
 ```
   table.cellTextFactory()
-   .padding(0)
-   .vAlign('center')
-   .hAlign('left')
-   .fontWeight(600)
-   .fontSize(13)
-   .fontColor('red');
+    .padding(10)          // set 10px padding from each border of every cell
+    .vAlign('center')     // set vertical align of the text
+    .hAlign('right')      // set horizontal align of the text
+    .fontWeight(600)      // set text font weight
+    .fontSize(11)         // set text font size
+    .fontColor('red');    // set text font color
 ```
 
 {sample :width 690 :height 200}Table\_Layout\_05{sample}

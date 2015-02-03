@@ -45,6 +45,9 @@ anychart.onDocumentReady(function() {
 
   table.cellFill('#BBB');   // Set table background color
 
+  // position text in each cell into center
+  table.cellTextFactory().vAlign('center').hAlign('center');
+
   // set table container and initiate draw
   table.container(stage).draw();
 });

@@ -50,12 +50,12 @@ anychart.onDocumentReady(function() {
 
   // adjust text visual appearance
   table.cellTextFactory()
-    .padding(10)
-    .vAlign('center')
-    .hAlign('left')
-    .fontWeight(600)
-    .fontSize(11)
-    .fontColor('red');
+    .padding(10)          // set 10px padding from each border of every cell
+    .vAlign('center')     // set vertical align of the text
+    .hAlign('right')      // set horizontal align of the text
+    .fontWeight(600)      // set text font weight
+    .fontSize(11)         // set text font size
+    .fontColor('red');    // set text font color
 
   // set table container and initiate draw
   table.container(stage).draw();

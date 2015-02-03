@@ -61,7 +61,7 @@ anychart.onDocumentReady(function() {
 
   table.cellTextFactory()
     .vAlign('center')
-    .hAlign('left')
+    .hAlign('center')
     .fontWeight(600)
     .fontSize(11)
     .fontColor('red');

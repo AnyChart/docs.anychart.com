@@ -65,6 +65,9 @@ anychart.onDocumentReady(function() {
     thickness: 3    // Set thickness
   });
 
+  // position text in each cell into center
+  table.cellTextFactory().vAlign('center').hAlign('center');
+
   // set table container and initiate draw
   table.container(stage).draw();
 });
