@@ -9,7 +9,7 @@ anychart.onDocumentReady(function() {
       // chart type
       "type": "column",
       // chart title
-      "title": "Set Point Color",
+      "title": "JSON Hatch Fill settings",
 
       // set series data and visual settings
       "series": [{

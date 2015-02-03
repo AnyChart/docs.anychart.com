@@ -9,7 +9,7 @@ anychart.onDocumentReady(function() {
       // chart type
       "type": "column",
       // chart title
-      "title": "JSON Visual Settings",
+      "title": "JSON Marker Settings",
 
       // series settings
       "series": [{

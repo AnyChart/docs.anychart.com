@@ -2,15 +2,22 @@
 # Getting Data from JSON
 
 * [Overview](#overview)
- * [Create](#create)
- * [Read](#read)
- * [Update](#update)
- * [Delete](#delete)
- * [Insert](#insert)
+* [Multiple Series](#multiple_series)
+* [Axis](#axis)
+ * [Orientation](#orientation)
+ * [Inversion](#inversion)
+ * [Logarithmic Scale](#logarithmic_scale)
+* [Visualization](#visualization)
+ * [Markers](#markers)
+ * [Colors](#colors)
+ * [Coloring Series](#coloring_series)
+ * [Coloring Elements](#coloring_elements)
+ * [Hatch Fills](#hatch_fills)
+ * [Advanced Settings](#advanced_settings)
 
 ## Overview
 
-AnyChart provides variate of possibilities for translating data into Anychart JavaScript library. Constant usage of java scrtipt solutions may appear to be unproductive in some cases. Aiming to makes our component more comfortable our partners, Anychart provides opportunities to use data from JSON file. This article is divided to usage of JSONs as source of information and chart style setter.
+AnyChart provides variate of possibilities for translating data into Anychart JavaScript library. Constant usage of java script solutions may appear to be unproductive in some cases. Aiming to makes our component more comfortable our partners, Anychart provides opportunities to use data from JSON file. This article is divided to usage of JSONs as source of information and chart style setter.
 
 For feeding JSON files to anychart, use {api:anychart#fromJson}**.fromJSON()**{api} parameter.
 
@@ -202,7 +209,7 @@ Let's demonstrate how to apply different colors to different data series. To app
 
 {sample}WD\_Data\_from\_JSON\_08{sample}
 
-### Coloring elements
+### Coloring Elements
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one. As you see it is very easy to do by setting {api:anychart.graphics.vector.Fill}**".fill()"**{api} method for a **point**.
 

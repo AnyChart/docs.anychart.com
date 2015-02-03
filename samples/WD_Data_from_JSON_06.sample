@@ -48,7 +48,7 @@ anychart.onDocumentReady(function() {
         // settings of the hatch fill on mouse over
         "hoverHatchFill":{
           // hatch fill type
-          "type:": "diagonalbrick",
+          "type": "diagonalbrick",
           // hatch fill color
           "color": "darkred"
         }

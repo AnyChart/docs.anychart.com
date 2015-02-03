@@ -11,7 +11,7 @@ anychart.onDocumentReady(function() {
       // chart type
       "type": "column",
       // chart title
-      "title": "inverted Scale",
+      "title": "Logarithmic Scale",
       // series settings
       "series": [{
         // first series data
@@ -27,7 +27,7 @@ anychart.onDocumentReady(function() {
       // y scale settings
       "yScale": {
         // set logarithmic scale type
-        "type": "log",
+        "type": "log"
       },
 
       // y axes settings

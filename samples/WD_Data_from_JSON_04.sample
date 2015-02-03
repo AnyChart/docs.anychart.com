@@ -11,7 +11,7 @@ anychart.onDocumentReady(function() {
       // chart type
       "type": "column",
       // chart title
-      "title": "inverted Scale",
+      "title": "Inverted Scale",
       // series settings
       "series": [{
         // first series data
