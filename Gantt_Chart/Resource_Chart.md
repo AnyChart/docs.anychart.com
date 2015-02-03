@@ -20,12 +20,12 @@ The Resource Gantt Chart creation is the same as Project Chart except you should
   chart = anychart.ganttResource();
 ```
 
-Here is a sample demonstrates how to create simple Project Chart.
+<br>Here is a sample demonstrates how to create simple Project Chart.
 {sample :width 690 :height 180}GANTT\_Chart\_01{sample}
 
 ## Expand/Collapse
 
-Also there is an ability to group resources using parent property to expand resources.
+Also there is an ability to expand resources using parent property.
 
 <table>
 <tbody>
@@ -51,7 +51,7 @@ Also there is an ability to group resources using parent property to expand reso
 </tbody>
 </table>
 
-Let's demonstrate this with some sample code:
+<br>Let's demonstrate this with some sample code:
 {sample :width 690 :height 180}GANTT\_Chart\_08{sample}
 
 ## Periods
@@ -64,7 +64,7 @@ As shown above every resource has a set of its own properties:
  "periods": [..]
 ```
 
-Each period has the id, name, start and end time.
+<br>Each period has the id, name, start and end time.
 
 ```
  "periods": [
@@ -73,7 +73,7 @@ Each period has the id, name, start and end time.
         ]
 ```
 
-Also you can define the view of the given period:
+<br>Also you can define the view of the given period:
 
 ```
 //solid fill
@@ -83,9 +83,9 @@ Also you can define the view of the given period:
 {"fill": {"angle": 0, "keys": [{"color": "orange", "position": 0}, {"color": "#6B9866", "position": 0.5}, {"color": "red", "position": 1}]}},
 ```
 
-{sample :width 710 :height 150}GANTT\_Chart\_03{sample}
+{sample :width 710 :height 190}GANTT\_Chart\_03{sample}
 
-As shown above, you may have some tasks that are associated with another task, for this purpose it is possible to use the "parent" property:
+<br>As shown above, you may have some tasks that are associated with another task, for this purpose it is possible to use the "parent" property:
 
 ```
 //the first resource is the parent of the second
