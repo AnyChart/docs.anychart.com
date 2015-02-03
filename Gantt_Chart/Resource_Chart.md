@@ -1,11 +1,9 @@
 # Resource Chart
 
-
 * [Overview](#overview)
 * [Chart](#chart)
 * [Expand/Collapse](#expand)
 * [Periods](#Periods)
-
 
 ## Overview
 
@@ -25,7 +23,7 @@ The Resource Gantt Chart creation is the same as Project Chart except you should
 
 ## Expand/Collapse
 
-<br>Also there is an ability to expand resources using parent property.
+Also there is an ability to expand resources using parent property.
 
 <table>
 <tbody>
@@ -51,7 +49,7 @@ The Resource Gantt Chart creation is the same as Project Chart except you should
 </tbody>
 </table>
 
-<br>Let's demonstrate this with some sample code:
+<br>Let's demonstrate these possibilities with some sample code:
 {sample :width 690 :height 180}GANTT\_Chart\_08{sample}
 
 ## Periods
@@ -85,7 +83,7 @@ As shown above every resource has a set of its own properties:
 
 {sample :width 710 :height 190}GANTT\_Chart\_03{sample}
 
-<br>As shown above, you may have some tasks that are associated with another task, for this purpose it is possible to use the "parent" property:
+<br>You may have some tasks that are associated with another task, for this purpose it is possible to use the "parent" property:
 
 ```
 //the first resource is the parent of the second
