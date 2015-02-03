@@ -60,7 +60,7 @@ var expandAllButton = document.createElement('div');
   // set style for all buttons
   for (var i = 0; i<custombuttons.length; i++){
     // set button style
-    custombuttons[i].style.top = '180px';
+    custombuttons[i].style.top = '170px';
     custombuttons[i].style.left = 170*i + 'px';
     custombuttons[i].style.width = '165px';
     custombuttons[i].style.height = 'auto';
