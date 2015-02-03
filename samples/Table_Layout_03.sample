@@ -47,6 +47,9 @@ anychart.onDocumentReady(function() {
   table.cellOddFill('rgb(102, 143, 169)');  // color for even rows
   table.cellEvenFill('rgb(233, 234, 237)'); // color for odd row
 
+  // position text in the center of each cell
+  table.cellTextFactory().vAlign('center').hAlign('center');
+
   // set table container and initiate draw
   table.container(stage).draw();
 });

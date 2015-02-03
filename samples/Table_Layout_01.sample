@@ -43,6 +43,9 @@ anychart.onDocumentReady(function() {
   table.rowHeight(0, 40);   // Get first row and set height 40px
   table.colWidth(0, 70);    // Get first column and set width 70 px
 
+  // position text in the center of each cell
+  table.cellTextFactory().vAlign('center').hAlign('center');
+
   // set table container and initiate draw
   table.container(stage).draw();
 });
