@@ -74,18 +74,17 @@ anychart.onDocumentReady(function() {
 
   // create new line chart
   function newLine(i){
-    var line = anychart.cartesian.series.line(Availability.mapAs({x: [0], value: [(i + 1)]}));
+    var line = anychart.sparkline(Availability.mapAs({x: [0], value: [(i + 1)]}));
 
     // adjust visualization
-    line.xScale(anychart.scales.dateTime().minimumGap(0).maximumGap(0).ticks([]))
-      .stroke('2 #000')
-      .tooltip()
-        .contentFormatter(function(e){
-          var d = new Date(e.x);
-          var options = {year: 'numeric', month: 'long'};
-          var transformedDate =  d.toLocaleDateString('en-US', options);
-          return transformedDate + '\n' + e.value + ' %';
-      });
+    line.xScale(
+      anychart.scales.dateTime()
+        .minimumGap(0)
+        .maximumGap(0)
+        .ticks([])
+      );
+    line.stroke('2 #000');
+
     return line;
   }
 
