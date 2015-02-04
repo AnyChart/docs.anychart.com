@@ -14,10 +14,11 @@
  * [Coloring Elements](#coloring_elements)
  * [Hatch Fills](#hatch_fills)
  * [Advanced Settings](#advanced_settings)
+ * [Supported Chart Types](#supported_chart_types)
 
 ## Overview
 
-AnyChart provides variate of possibilities for translating data into Anychart JavaScript library. Constant usage of java script solutions may appear to be unproductive in some cases. Aiming to makes our component more comfortable our partners, Anychart provides opportunities to use data from JSON file. This article is divided to usage of JSONs as source of information and chart style setter.
+AnyChart provides variate of possibilities for translating data into Anychart JavaScript library. Constant usage of java script solutions may appear to be unproductive and even impossible in some cases. Aiming to makes our component more comfortable for our partners, Anychart provides opportunities to use data from JSON file. This article is divided to usage of JSONs as source of information and chart style setter.
 
 For feeding JSON files to anychart, use {api:anychart#fromJson}**.fromJSON()**{api} parameter.
 
@@ -236,3 +237,9 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 All mentioned settings in this articles were demonstrated on the column chart. Colum chart has multiple predefined parameters thus can't fully represent all variety of tunable settings and options. Next sample fixes this drawback. It demonstrates cartesian chart with several different series, customized axes, legend, scales and titles.
 
 {sample}WD\_Data\_from\_JSON\_11{sample}
+
+## Supported Chart Types
+
+As far as JSON is just a way of setting data and chart configuration, any type of charts from list of [Supported Chart Types](../Quick_Start/Supported_Chart_Types). Here is a sample of polar chart with all configuration settings from JSON.
+
+{sample}WD\_Data\_from\_JSON\_12{sample}
