@@ -145,5 +145,5 @@ timeline.rowEvenFill('green .4');
 timeline.rowOddFill("#add8e6");
 ```
 
-<br>In the sample below the odd rows are colored with a solid fill as well as the odd rows.
+<br>In the sample below the odd rows are colored with a solid fill as well as the even rows.
 {sample :width 710 :height 210}GANTT\_Chart\_09{sample}
