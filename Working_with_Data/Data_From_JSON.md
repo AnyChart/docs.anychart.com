@@ -12,9 +12,9 @@
  * [Colors](#colors)
  * [Coloring Series](#coloring_series)
  * [Coloring Elements](#coloring_elements)
- * [Hatch Fills](#hatch_fills)
- * [Advanced Settings](#advanced_settings)
- * [Supported Chart Types](#supported_chart_types)
+* [Hatch Fills](#hatch_fills)
+* [Advanced Settings](#advanced_settings)
+* [Supported Chart Types](#supported_chart_types)
 
 ## Overview
 
