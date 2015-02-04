@@ -11,12 +11,7 @@ Data Grid - is one of the main parts of Gantt Chart. It usually contains main da
 
 ## General Settings
 
-By default, Gantt Chart displays two columns: rows counts and names of gantt elements (tasks or resources). Although it allows to configure a view of each column:
-
- ```
- //get the first column by index
- var firstColumn = dataGrid.column(0);
- ```
+By default, Gantt Chart displays two columns: rows counts and names of gantt elements (tasks or resources).
 
 ### Width
 
@@ -35,9 +30,9 @@ chart.splitterPosition(0);
 
 ### Expand/Collapse
 
-DataGrid supports hierarchical data representation, so if the data is complicated, the DataGrid will display expanded/collapsed icons next to each group header row. You are free to expand and collapse child groups to see more information.
+DataGrid supports hierarchical data representation, so if the data is complicated, the DataGrid will display expanded/collapsed icons next to each group header row. You are free to expand and collapse child groups to see more data.
 
-{sample :width 710 :height 210}GANTT\_Chart\_02{sample}
+{sample :width 710 :height 210}GANTT\_Chart\_08{sample}
 
 ### Columns
 
