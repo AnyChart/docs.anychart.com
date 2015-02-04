@@ -1,7 +1,7 @@
 # DataGrid and Timeline
 
 * [DataGrid](#datagrid)
- * [Overview](#overview)
+ * [DataGrid Overview](#overview)
  * [General Settings](#general_settings)
  * [Visual Appearance](#visual_appearance)
 * [Timeline](#timeline)
@@ -54,6 +54,8 @@ column.textFormatter(function(item) {
 <br>
 <b>ТУТ РЕЧЬ + ПРИМЕРЫ О СЛОЖНОМ ФОРМАТИРОВАНИИ КОЛОНОК. ну и допилить текст + пара примеров на всё вышесказанное</b>
 
+<br>ещё неплохо, вероятно, по тултипам проехаться краешком, пока статьи нет.
+
 ### Visual Appearance
 
 To change the background color these methods can be useful:
@@ -90,4 +92,5 @@ Timeline is configured to cover most of the cases and can be used as is, without
 
 ### General Settings
 
-про подобную заливку
+<br>про подобную заливку
+<br><br>в этом контексте можно рассказать про fitAll()и fitToTask()
