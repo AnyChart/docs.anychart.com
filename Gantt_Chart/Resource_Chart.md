@@ -3,7 +3,7 @@
 * [Overview](#overview)
 * [Chart](#chart)
 * [Expand/Collapse](#expand)
-* [Periods](#Periods)
+* [Periods](#periods)
 
 ## Overview
 

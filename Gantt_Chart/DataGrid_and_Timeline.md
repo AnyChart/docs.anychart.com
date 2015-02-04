@@ -8,12 +8,12 @@
  * [Timeline Overview](#tloverview)
  * [General Settings](#tlgeneral)
 
-
-## DataGrid Overview
+### DataGrid Overview
 
 Data Grid - is one of the main parts of Gantt Chart. It usually contains main data about tasks and resources of the project, it displays nesting (for a hierarchical model configuration).
 
-## General Settings
+### General Settings
+
 By default, Gantt Chart displays two columns: rows counts and names of gantt elements (tasks or resources). Although it allows to configure a view of each column:
 
  ```
@@ -54,7 +54,7 @@ column.textFormatter(function(item) {
 <br>
 <b>ТУТ РЕЧЬ + ПРИМЕРЫ О СЛОЖНОМ ФОРМАТИРОВАНИИ КОЛОНОК. ну и допилить текст + пара примеров на всё вышесказанное</b>
 
-## Visual Appearance
+### Visual Appearance
 
 To change the background color these methods can be useful:
 
@@ -83,8 +83,11 @@ dataGrid.rowFill('green .2');
 ```
 
 ## Timeline
-## Timeline Overview
 
- Timeline is configured to cover most of the cases and can be used as is, without any additional setting.
+### Timeline Overview
 
+Timeline is configured to cover most of the cases and can be used as is, without any additional setting.
 
+### General Settings
+
+про подобную заливку
