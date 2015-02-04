@@ -58,7 +58,7 @@ column.textFormatter(function(item) {
 
 ### Visual Appearance
 
-To change the background color these methods can be useful:
+These methods can be used to change the background color:
 
 <table>
 <tbody>

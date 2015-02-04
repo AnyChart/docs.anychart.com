@@ -53,7 +53,7 @@ function getData() {
       "name": "Server 2",
       "parent": "404",
       "periods": [
-        {"id": "2_1", "fill": "none", "stroke": {'color': 'green', dash: '2 2'}, "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 1, 22)},
+        {"id": "2_1", "fill": "none", "stroke": {'color': 'green'}, "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 1, 22)},
         {"id": "2_2" , "start": Date.UTC(2013, 1, 25), "end": Date.UTC(2013, 2, 5)}
       ]
     },
