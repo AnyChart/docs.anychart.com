@@ -15,7 +15,7 @@ By default, Gantt Chart displays two columns: rows counts and names of gantt ele
 
 ### Width
 
-<br>You can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} method:
+You can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} method:
 
 ```
 //set width to 100
