@@ -54,7 +54,7 @@ column.textFormatter(function(item) {
 <br>
 <b>ТУТ РЕЧЬ + ПРИМЕРЫ О СЛОЖНОМ ФОРМАТИРОВАНИИ КОЛОНОК. ну и допилить текст + пара примеров на всё вышесказанное</b>
 
-<br>ещё неплохо, вероятно, по тултипам проехаться краешком, пока статьи нет.
+<br><b>ещё неплохо, вероятно, по тултипам проехаться краешком, пока статьи нет.</b>
 
 ### Visual Appearance
 
@@ -93,4 +93,4 @@ Timeline is configured to cover most of the cases and can be used as is, without
 ### General Settings
 
 <br>про подобную заливку
-<br><br>в этом контексте можно рассказать про fitAll()и fitToTask()
+<br><br><b>в этом контексте можно рассказать про fitAll()и fitToTask()</b>
