@@ -22,7 +22,7 @@ By default, Gantt Chart displays two columns: rows counts and names of gantt ele
 chart.splitterPosition(100);
 ```
 
-Or hide it if the {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} gets zero:
+<br>Or hide it if the {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} gets zero:
 
 ```
 chart.splitterPosition(0);
