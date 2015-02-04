@@ -1,12 +1,12 @@
 # DataGrid and Timeline
 
 * [DataGrid](#dtoverview)
-** [Overview](#dtoverview)
-** [General Settings](#dtgeneral)
-** [Visual Appearance](#visual)
+ * [Overview](#dtoverview)
+ * [General Settings](#dtgeneral)
+ * [Visual Appearance](#visual)
 * [Timeline](#tloverview)
-** [Timeline Overview](#tloverview)
-** [General Settings](#tlgeneral)
+ * [Timeline Overview](#tloverview)
+ * [General Settings](#tlgeneral)
 
 
 ## DataGrid Overview
@@ -21,7 +21,7 @@ By default, Gantt Chart displays two columns: rows counts and names of gantt ele
  var firstColumn = dataGrid.column(0);
  ```
 
-You can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} method:
+<br>You can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} method:
 
 ```
 //set width to 100
@@ -43,7 +43,7 @@ var firstColumn = dataGrid.column(0);
 firstColumn.width(30);
 ```
 
-Column content is tuning as well as its title:
+<br>Column content is tuning as well as its title:
 
 ```
 //create a column contains all IDs
@@ -51,7 +51,7 @@ column.textFormatter(function(item) {
     return item.get('id');
 });
 ```
-
+<br>
 <b>ТУТ РЕЧЬ + ПРИМЕРЫ О СЛОЖНОМ ФОРМАТИРОВАНИИ КОЛОНОК. ну и допилить текст + пара примеров на всё вышесказанное</b>
 
 ## Visual Appearance
@@ -75,6 +75,7 @@ To change the background color these methods can be useful:
 </tbody>
 </table>
 
+<br>
 ```
 var dataGrid = chart.getDataGrid();
 dataGrid.backgroundFill('blue .4');
