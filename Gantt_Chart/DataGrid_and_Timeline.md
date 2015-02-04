@@ -1,12 +1,12 @@
 # DataGrid and Timeline
 
-* [DataGrid](#dtoverview)
- * [Overview](#dtoverview)
- * [General Settings](#dtgeneral)
- * [Visual Appearance](#visual)
-* [Timeline](#tloverview)
- * [Timeline Overview](#tloverview)
- * [General Settings](#tlgeneral)
+* [DataGrid](#datagrid)
+ * [Overview](#overview)
+ * [General Settings](#general_settings)
+ * [Visual Appearance](#visual_appearance)
+* [Timeline](#timeline)
+ * [Timeline Overview](#timeline_overview)
+ * [General Settings](#general_settings)
 
 ### DataGrid Overview
 

@@ -2,7 +2,7 @@
 
 * [Overview](#overview)
 * [Chart](#chart)
-* [Expand/Collapse](#expand)
+* [Expand/Collapse](#expand/collapse)
 * [Periods](#periods)
 
 ## Overview
@@ -50,7 +50,7 @@ Also there is an ability to expand resources using parent property.
 </table>
 
 <br>Let's demonstrate these possibilities with some sample code:
-{sample :width 690 :height 200}GANTT\_Chart\_08{sample}
+{sample :width 690 :height 210}GANTT\_Chart\_08{sample}
 
 ## Periods
 
