@@ -2,21 +2,26 @@
 
 Supported Data Formats
 =================
+ * [Introduction](#introduction)
+   * [JavaScript API](#JavaScript)
+   * [XML](#XML)
+   * [JSON](#JSON)
+   * [CSV](#CSV)
 
 ###Introduction
-AnyChart supports four ways to set data to your charts. All of them have some pros and cons, and you can choose which to use depending on the task you have at hand. These ways are:
+AnyChart supports 4 ways to set data to your charts. You can choose which one suits your task the best:
 * JavaScript API
 * XML
 * JSON
 * CSV
 
-Each of the ways has some strengths and weaknesses, but in general we recommend everyone to use JavaScript API – this way gives the most flexibility in most of the cases.
+Each way has some strengths and weaknesses, but we recommend JavaScript API – this option is generally the most flexible.
 
 
 ###JavaScript API
-JavaScript API is most useful when you need to Create, Read, Update, and Delete data points dynamically. 
+JavaScript API helps you the best when you need to Create, Read, Update, and Delete data points dynamically. 
 
-We recommend to use [Data Sets](./Using_Data_Sets) when you work using JS API, but you can also pass data directly to a chart by creating a function:
+We recommend to use [Data Sets](./Using_Data_Sets) when you work with JS API, but you can also pass data directly to a chart by creating a function:
 ```
 // create a pie chart
 var chart = anychart.pieChart([
@@ -38,9 +43,9 @@ See also:
 [Using Data Sets](./Using_Data_Sets)
 
 ###XML
-XML format is useful if you prefer the declarative style for chart configurations.  
-Also, all previous versions of AnyChart were XML-based, so this way of setting data may be what you got used to.  
-We still recommend everyone to use JavaScript API, but you can stick with the XML format – it just has a little bit less perfect performance and is less flexible in terms of customization.
+XML format is your choice if you prefer the declarative style for chart configurations.  
+Also, all previous versions of AnyChart were XML-based, so this way of setting data may be the one you've got used to.  
+XML format has a little bit less perfect performance and is not as flexible in terms of customization as JS API.
 ```
 // create an XML string
 var xmlString = '<xml>' +
@@ -68,7 +73,7 @@ See also:
 [Using Data Sets](./Using_Data_Sets)
 
 ###JSON
-JSON basically has the same purpose and drawbacks as the XML format. We recommend everyone to use JavaScript API - it just has a little bit less perfect performance and is less flexible in terms of customization.
+JSON basically has the same purpose and drawbacks as the XML format. JSON doesn't have as perfect performance as JS API and is less flexible also.
 ```
 // create json data
 var json = {
@@ -97,7 +102,7 @@ See also:
 [Using Data Sets](./Using_Data_Sets)
 
 ###CSV  
-CSV is obviously the best solution when you need to minimize the size of data input. Using it is as easy as any other way, but CSV also lacks flexibility that JS API way has.
+CSV is obviously the best solution when you need to minimize the size of data input. It is as easy in use as any other format, but CSV also lacks flexibility of JS API.
 ```
 // create CSV string
 var csvString = '2009-02-05,6764.81\n' +

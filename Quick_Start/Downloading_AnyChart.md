@@ -3,28 +3,28 @@ Downloading AnyChart
 ====================
   
 ###Downloading
-Latest AnyChart 7.x files can be downloaded from these locations. To download these files, right-click the links below and select "Save as..." from the context menu.
+We have produced 3 different options according to your needs or preferences.  To download the latest version of AnyChart, choose the most suitable option, right-click the link below and select "Save as..." from the context menu.
 * Production edition - [anychart.min.js](http://anychart.com/products/anychart7/download/?file=anychart.min.js&version=7.0.0) <span style="color:#898989;">(145Kb gzip)</span>
 * Development edition - [anychart.dev.min.js](http://anychart.com/products/anychart7/download/?file=anychart.dev.min.js&version=7.0.0) <span style="color:#898989;">(147Kb gzip)</span>  
 * Binaries package - [anychart.zip](http://anychart.com/products/anychart7/download/7.0.0/anychart.zip) <span style="color:#898989;">(360Kb)</span>  
 
 
 ###Using AnyChart with a CDN
-<a href="http://en.wikipedia.org/wiki/Content\_delivery\_network" target="_blank">CDN</a> can offer a performance benefit by hosting AnyChart on servers spread across the globe. This also offers an advantage that if the visitor to your web page has already downloaded a copy of AnyChart from the same CDN, it won't have to be downloaded again.
+<a href="http://en.wikipedia.org/wiki/Content\_delivery\_network" target="_blank">CDN</a> can offer a performance benefit by hosting AnyChart on servers spread across the world. As a consequence, another advantage of using CDN is no need for your customers in downloading AnyChart.
   
  
-To use AnyChart CDN, simply reference the file directly from http://cdn.anychart.com/ in the script tag:
+To use AnyChart CDN, simply reference the file from your page using the script tag:
 ```
     <script>
         <script src="//cdn.anychart.com/js/latest/anychart.min.js"></script>
     </script>
 ```
 
-### Differences between production and developers editions
-Developers edition contains  debug functionality, which may be useful to debug you code in old browser version (IE6 e.g). Also it provides some log information in console, such as misconfiguration warnings. 
+### Production vs development editions
+Developers' edition contains  debug functionality, which may be useful to debug your code in old browser version (IE6 e.g). Also it provides some log information in console, such as misconfiguration warnings. 
 
 ### Binaries package content
-Binaries package contains all resources you may need to work with AnyChary:  
+Binaries package contains all resources you may need to work with AnyChart:  
 * _demos/_ - chart gallery adapted to work offline,
 * _js/_ - JavaScript binaries folder,
   * _anychart.min.js_ - production edition,

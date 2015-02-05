@@ -18,7 +18,9 @@ anychart.onDocumentReady(function() {
 
     // create line chart
     var lineChart = anychart.lineChart.apply(null, dataMappingList);
-
+    lineChart.getSeries(0).name('NY');
+    lineChart.getSeries(1).name('SF');
+    lineChart.getSeries(2).name('LA');
     // set container
     lineChart.container('container');
 
