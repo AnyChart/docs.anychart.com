@@ -2,7 +2,7 @@
 Quick Start
 ===========
   
-## 3 simple steps to start using AnyChart
+## Getting started with AnyChart
 ###1. Include AnyChart into your web page
 Include the JavaScript file in the `<head>` section of your web page.  
 You can use CDN as shown below or visit the [download page](./Downloading_AnyChart).  
