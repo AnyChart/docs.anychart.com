@@ -1,0 +1,60 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+
+  // xml data
+  var xml = '<?xml version="1.0" encoding="utf-8"?>' +
+    '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
+      // set chart type, title and chart container
+      '<chart type="column" container="container" title="XML Adjust Series Color">' +
+        // chart series
+        '<series_list>'+
+          // series settings
+          '<series fill="#4A55C7">' +
+            // data set
+            '<data>' +
+              '<point x="P1" value="132"/>'+
+              '<point x="P2" value="124"/>'+
+            '</data>'+
+          '</series>'+
+          // series settings
+          '<series fill="#5EBD9B">' +
+            // data set
+            '<data>' +
+              '<point x="P1" value="102"/>'+
+              '<point x="P2" value="89"/>'+
+            '</data>'+
+          '</series>'+
+          // series settings
+          '<series fill="#B04A8A">' +
+            // data set
+            '<data>' +
+              '<point x="P1" value="72"/>'+
+              '<point x="P2" value="44"/>'+
+            '</data>'+
+          '</series>'+
+          // series settings
+          '<series fill="#C7894A">' +
+            // data set
+            '<data>' +
+              '<point x="P1" value="65"/>'+
+              '<point x="P2" value="38"/>'+
+            '</data>'+
+          '</series>'+
+          // series settings
+          '<series fill="#BCBD46">' +
+            // data set
+            '<data>' +
+              '<point x="P1" value="68"/>'+
+              '<point x="P2" value="57"/>'+
+            '</data>'+
+          '</series>'+
+        '</series_list>'+
+    '</chart>'+
+  '</anychart>';
+
+  var chart = anychart.fromXml(xml);
+  chart.draw();
+});
