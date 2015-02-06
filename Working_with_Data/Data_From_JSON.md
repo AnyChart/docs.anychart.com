@@ -1,16 +1,9 @@
 {:index 6}
 # Getting Data from JSON
 
-* [Overview](#overview)
- * [Create](#create)
- * [Read](#read)
- * [Update](#update)
- * [Delete](#delete)
- * [Insert](#insert)
-
 ## Overview
 
-AnyChart provides variate of possibilities for translating data into Anychart JavaScript library. Constant usage of javascrtipt solutions may appear to be unproductive in some cases. Aiming to makes our component more comfortable our parness, Anychart provides opportunities to use data from JSOM file. This article is divided to usage of JSONs as source of information and chart style setter.
+AnyChart provides a variety of ways for transforming data into Anychart JavaScript library. Using javascript solutions may be unproductive in some cases. Aiming to make our component more user-friendly, Anychart provides an opportunity to use JSON files. This article is dedicated to usage of JSONs as sources of information and chart style setters.
 
 For feeding JSON files to anychart, use {api:anychart#fromJson}**.fromJSON()**{api} parameter.
 
@@ -21,7 +14,7 @@ For feeding JSON files to anychart, use {api:anychart#fromJson}**.fromJSON()**{a
   chart.container('container').draw();
 ```
 
-Snippet above demonstrates getting data from JSON but avoid illuminating JSON structure itself. Snippet below represents simple structure of acceptable JSON.
+The snippet above demonstrates getting data from JSON without illuminating JSON structure itself. The code below represents simple structure of acceptable JSON.
 
 ```
     // JSON data

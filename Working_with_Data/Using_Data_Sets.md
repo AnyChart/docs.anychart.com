@@ -240,7 +240,7 @@ anychart.onDocumentReady(function() {
   // current stage stroke
   lineChart.background().stroke('white').fill('white');
 
-  // axes titles setter
+  // axis titles setter
   lineChart.xAxis().title().text('Date');
   lineChart.yAxis().title().text('Temperature');
   lineChart.yAxis().labels().textFormatter(function(){
@@ -269,7 +269,7 @@ anychart.onDocumentReady(function() {
     colChart.getSeries(1).name('SF');
     colChart.getSeries(2).name('LA');
     
-    // axes titles setter
+    // axis titles setter
   colChart.xAxis().title().text('Date');
   colChart.yAxis().title().text('Temperature');
   colChart.yAxis().labels().textFormatter(function(){
