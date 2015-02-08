@@ -234,7 +234,7 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 
 ## Advanced Settings
 
-All mentioned settings in this articles were demonstrated on the column chart. Colum chart has multiple predefined parameters thus can't fully represent all variety of tunable settings and options. Next sample fixes this drawback. It demonstrates cartesian chart with several different series, customized axes, legend, scales and titles.
+All mentioned settings in this articles were demonstrated on the column chart. Colum chart has multiple predefined parameters thus can't fully represent all variety of tunable settings and options. Next sample fixes this drawback. It demonstrates cartesian chart with several different series, customized axes, scales, grids and titles.
 
 {sample}WD\_Data\_from\_JSON\_11{sample}
 
