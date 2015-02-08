@@ -10,19 +10,19 @@ anychart.onDocumentReady(function() {
       // set chart type, title and chart container
       '<chart type="polar" container="container" title="Polar XML Chart">' +
         '<y_scale>'+
-          '<ticks interval="0.3">'+
+          '<ticks interval="0.3"/>'+
         '</y_scale>'+
         '<x_scale maximum="360">'+
-          '<ticks interval="20">'+
+          '<ticks interval="20"/>'+
         '</x_scale>'+
         '<grids>' +
           '<grid even_fill="white 0.9" odd_fill="lightgray 0.9" layout="curcuit" stroke="white"/>' +
-          '<grid even_fill="null" odd_fill="null" stroke="gray 0.8" layout="radial">'+
+          '<grid even_fill="null" odd_fill="null" stroke="gray 0.8" layout="radial"/>'+
         '</grids>' +
         // chart series
         '<series_list>'+
           // series settings
-          '<series type="line" stroke="3 blue .7" markers="false">' +
+          '<series series_type="line" stroke="3 blue .7" markers="false">' +
             // data set
             '<data>' +
               '<point x="0" value="0"/>'+
@@ -76,81 +76,81 @@ anychart.onDocumentReady(function() {
               '<point x="48" value="0.8817"/>'+
               '<point x="49" value="0.817"/>'+
               '<point x="50" value="0.75"/>'+
-              '<point x="51 value="0.681/>'+
-              '<point x="52 value="0.6101/>'+
-              '<point x="53 value="0.5376/>'+
-              '<point x="54 value="0.4635/>'+
-              '<point x="55 value="0.3882/>'+
-              '<point x="56 value="0.3119/>'+
-              '<point x="57 value="0.2347/>'+
-              '<point x="58 value="0.1568/>'+
-              '<point x="59 value="0.0785/>'+
-              '<point x="60 value="0/>'+
-              '<point x="61 value="0.0785/>'+
-              '<point x="62 value="0.1568/>'+
-              '<point x="63 value="0.2347/>'+
-              '<point x="64 value="0.3119/>'+
-              '<point x="65 value="0.3882/>'+
-              '<point x="66 value="0.4635/>'+
-              '<point x="67 value="0.5376/>'+
-              '<point x="68 value="0.6101/>'+
-              '<point x="69 value="0.681/>'+
-              '<point x="70 value="0.75/>'+
-              '<point x="71 value="0.817/>'+
-              '<point x="72 value="0.8817/>'+
-              '<point x="73 value="0.944/>'+
-              '<point x="74 value="1.0037/>'+
-              '<point x="75 value="1.0607/>'+
-              '<point x="76 value="1.1147/>'+
-              '<point x="77 value="1.1657/>'+
-              '<point x="78 value="1.2135/>'+
-              '<point x="79 value="1.258/>'+
-              '<point x="80 value="1.299/>'+
-              '<point x="81 value="1.3365/>'+
-              '<point x="82 value="1.3703/>'+
-              '<point x="83 value="1.4004/>'+
-              '<point x="84 value="1.4266/>'+
-              '<point x="85 value="1.4489/>'+
-              '<point x="86 value="1.4672/>'+
-              '<point x="87 value="1.4815/>'+
-              '<point x="88 value="1.4918/>'+
-              '<point x="89 value="1.4979/>'+
-              '<point x="90 value="1.5/>'+
-              '<point x="91 value="1.4979/>'+
-              '<point x="92 value="1.4918/>'+
-              '<point x="93 value="1.4815/>'+
-              '<point x="94 value="1.4672/>'+
-              '<point x="95 value="1.4489/>'+
-              '<point x="96 value="1.4266/>'+
-              '<point x="97 value="1.4004/>'+
-              '<point x="98 value="1.3703/>'+
-              '<point x="99 value="1.3365/>'+
-              '<point x="100 value="1.299/>'+
-              '<point x="101 value="1.258/>'+
-              '<point x="102 value="1.2135/>'+
-              '<point x="103 value="1.1657/>'+
-              '<point x="104 value="1.1147/>'+
-              '<point x="105 value="1.0607/>'+
-              '<point x="106 value="1.0037/>'+
-              '<point x="107 value="0.944/>'+
-              '<point x="108 value="0.8817/>'+
-              '<point x="109 value="0.817/>'+
-              '<point x="110 value="0.75/>'+
-              '<point x="111 value="0.681/>'+
-              '<point x="112 value="0.6101/>'+
-              '<point x="113 value="0.5376/>'+
-              '<point x="114 value="0.4635/>'+
-              '<point x="115 value="0.3882/>'+
-              '<point x="116 value="0.3119/>'+
-              '<point x="117 value="0.2347/>'+
-              '<point x="118 value="0.1568/>'+
-              '<point x="119 value="0.0785/>'+
-              '<point x="120 value="0/>'+
-              '<point x="121 value="0.0785/>'+
-              '<point x="122 value="0.1568/>'+
-              '<point x="123 value="0.2347/>'+
-              '<point x="124 value="0.3119/>'+
-              '<point x="125 value="0.3882/>'+
+              '<point x="51" value="0.681"/>'+
+              '<point x="52" value="0.6101"/>'+
+              '<point x="53" value="0.5376"/>'+
+              '<point x="54" value="0.4635"/>'+
+              '<point x="55" value="0.3882"/>'+
+              '<point x="56" value="0.3119"/>'+
+              '<point x="57" value="0.2347"/>'+
+              '<point x="58" value="0.1568"/>'+
+              '<point x="59" value="0.0785"/>'+
+              '<point x="60" value="0"/>'+
+              '<point x="61" value="0.0785"/>'+
+              '<point x="62" value="0.1568"/>'+
+              '<point x="63" value="0.2347"/>'+
+              '<point x="64" value="0.3119"/>'+
+              '<point x="65" value="0.3882"/>'+
+              '<point x="66" value="0.4635"/>'+
+              '<point x="67" value="0.5376"/>'+
+              '<point x="68" value="0.6101"/>'+
+              '<point x="69" value="0.681"/>'+
+              '<point x="70" value="0.75"/>'+
+              '<point x="71" value="0.817"/>'+
+              '<point x="72" value="0.8817"/>'+
+              '<point x="73" value="0.944"/>'+
+              '<point x="74" value="1.0037"/>'+
+              '<point x="75" value="1.0607"/>'+
+              '<point x="76" value="1.1147"/>'+
+              '<point x="77" value="1.1657"/>'+
+              '<point x="78" value="1.2135"/>'+
+              '<point x="79" value="1.258"/>'+
+              '<point x="80" value="1.299"/>'+
+              '<point x="81" value="1.3365"/>'+
+              '<point x="82" value="1.3703"/>'+
+              '<point x="83" value="1.4004"/>'+
+              '<point x="84" value="1.4266"/>'+
+              '<point x="85" value="1.4489"/>'+
+              '<point x="86" value="1.4672"/>'+
+              '<point x="87" value="1.4815"/>'+
+              '<point x="88" value="1.4918"/>'+
+              '<point x="89" value="1.4979"/>'+
+              '<point x="90" value="1.5"/>'+
+              '<point x="91" value="1.4979"/>'+
+              '<point x="92" value="1.4918"/>'+
+              '<point x="93" value="1.4815"/>'+
+              '<point x="94" value="1.4672"/>'+
+              '<point x="95" value="1.4489"/>'+
+              '<point x="96" value="1.4266"/>'+
+              '<point x="97" value="1.4004"/>'+
+              '<point x="98" value="1.3703"/>'+
+              '<point x="99" value="1.3365"/>'+
+              '<point x="100" value="1.299"/>'+
+              '<point x="101" value="1.258"/>'+
+              '<point x="102" value="1.2135"/>'+
+              '<point x="103" value="1.1657"/>'+
+              '<point x="104" value="1.1147"/>'+
+              '<point x="105" value="1.0607"/>'+
+              '<point x="106" value="1.0037"/>'+
+              '<point x="107" value="0.944"/>'+
+              '<point x="108" value="0.8817"/>'+
+              '<point x="109" value="0.817"/>'+
+              '<point x="110" value="0.75"/>'+
+              '<point x="111" value="0.681"/>'+
+              '<point x="112" value="0.6101"/>'+
+              '<point x="113" value="0.5376"/>'+
+              '<point x="114" value="0.4635"/>'+
+              '<point x="115" value="0.3882"/>'+
+              '<point x="116" value="0.3119"/>'+
+              '<point x="117" value="0.2347"/>'+
+              '<point x="118" value="0.1568"/>'+
+              '<point x="119" value="0.0785"/>'+
+              '<point x="120" value="0"/>'+
+              '<point x="121" value="0.0785"/>'+
+              '<point x="122" value="0.1568"/>'+
+              '<point x="123" value="0.2347"/>'+
+              '<point x="124" value="0.3119"/>'+
+              '<point x="125" value="0.3882"/>'+
               '<point x="126" value="0.4635"/>'+
               '<point x="127" value="0.5376"/>'+
               '<point x="128" value="0.6101"/>'+
