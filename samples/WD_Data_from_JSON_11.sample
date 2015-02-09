@@ -161,7 +161,7 @@ anychart.onDocumentReady(function() {
       // series settings
       "series": [{
         // set series type
-        "seriesType": "line",
+        "seriesType": "spline",
         // adjust markers visual settings
         "markers": {
           "size": 1,
@@ -234,7 +234,7 @@ anychart.onDocumentReady(function() {
         ]
       },{
         // series type
-        "seriesType": "line",
+        "seriesType": "spline",
         // markers visual appearance
         "markers": {
           "size": 1,
