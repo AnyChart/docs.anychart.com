@@ -24,12 +24,11 @@ that represents profit over time can be plotted in an area chart to emphasize th
 
 ## Chart
 
-Depending on data model and the visualization purpose the area chart may contain one series or several series.
+Depending on the data model and the visualization purpose the area chart may contain one or several series.
 
 ### Single Series Area Chart
 
-Let's see single series area chart created using the following data: sales of ACME Corp. through several months in one 
-year:
+Let's have a look at the single series area chart created using the following data: sales of ACME Corp. through several months in a year:
 
 <table width="287" border="1" class="dtTABLE">
 <tbody><tr>
@@ -61,7 +60,7 @@ Now we need to convert this data table into the format that can be used by AnyCh
 [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) article.
   
 In terms of AnyChart data model we have one series of data (Sales) with categories that hold months names. Each point 
-in series represents one month and sales volume. We will use the basic and the easiest method of data setting, it looks 
+in series represents monthly sales volume. We will use the easiest method of data setting, which looks 
 like this:
 
 ```
@@ -76,18 +75,18 @@ like this:
     chart.area(data);
 ```
 
-As you can see, we've created a Data Set. Every object is a point, each has some parameters. The first column is as 
-category and the second column is a value.
+As you can see, we've created a Data Set. Every object is a point with parameters. The first column is a 
+category and the second one is a value.
   
   
-Here it is: AnyChart can now visualize your data. Look at the chart sample below and click on "Launch in playground" 
+Here it is: now AnyChart can visualize your data. Look at the chart sample below and click on "Launch in playground" 
 to see the full source code, alter and play with the sample or download it.
 
 {sample}BCT\_AreaChart\_01{sample}
 
 ### Single Series Spline Area Chart
 
-For better look and feel of your charts you can use SplineArea chart type:
+For better look of your charts you can use SplineArea chart type:
 
 ```
     anychart.data.set([
@@ -107,7 +106,7 @@ Here is the same chart as shown above, but in Spline mode:
 
 ### Multi-series
 
-To compare two or more data sets you have to use multi-series area charts as it is shown in the sample below.
+To compare two or more data sets you should use multi-series area charts as it is shown in the sample below.
   
 Let's compare 2003 sales to 2004 sales:
 
@@ -146,7 +145,7 @@ Let's compare 2003 sales to 2004 sales:
 </tbody>
 </table>
 
-As we do in single series area sample above we need to convert this table AnyChart format, the only difference between 
+As we have done in single series area sample above we need to convert this table in AnyChart format, the only difference between 
 these two samples is the fact that now we have two series of the data: one series for each year, and we give proper 
 names to each series:
 
@@ -164,18 +163,17 @@ names to each series:
     chart.area(seriesData_2).name('2005');
 ```
 
-As we now have multi-series chart we don't want to set **type of chart** for each series individually (there can be 
-much more than two series in multi-series chart), so we set **chart** as {api:anychart#area}**anychart.areaChart()**{api}. Now all series in
+As now we have multi-series chart we don't want to set the **chart type** for each series individually (there can be 
+more than two series in a multi-series chart), so we set the **chart** as {api:anychart#area}**anychart.areaChart()**{api}. Now all series in
 the chart will be of Area type by default.
 
 {sample}BCT\_AreaChart\_03{sample}
 
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
-scale and settings and many more. All axis features are described in 
-[Axes tutorial](../Axes_and_Grids/Axis_Basics), in this section we will quickly demonstrate how axis
-orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+In AnyChart, axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
+scale, settings, etc. In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values, you can find all axis features in
+[Axes tutorial](../Axes_and_Grids/Axis_Basics).
 
 ### Orientation
 
@@ -189,13 +187,13 @@ Axes position depends on plot type, orientation and inversion of axes.
     chart.yAxis(0).orientation('right');
 ```
 
-And here is the demonstration of this feature on the Single-series sample:
+Here is the demonstration of this feature in the Single-series sample:
 
 {sample}BCT\_AreaChart\_04{sample}
 
 ### Inversion
 
-AnyChart allows you to invert any axis: Y, X or any extra axis. Inversion is controlled by axis **.inverted()**:
+AnyChart allows you to invert any axis (Y, X or any extra). Inversion is controlled by axis **.inverted()**:
 
 ```
   chart.yScale().inverted(true);
@@ -207,19 +205,19 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 ### Minimum and Maximum
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 8.000, and maximum is 20.000. You can control these values by setting **.maximum()** and **.minimum()**. :
+AnyChart calculates axis minimum and maximum automatically. You can see this on the scale inversion chart sample above: the minimal value on the Y Axis is 8.000, and the maximum is 20.000. You can control these values by setting **.maximum()** and **.minimum()**. :
 
 ```
     chart.yScale().minimum('0').maximum('50000');
 ```
 
-And here is the demonstration of maximum and minimum values on the Single-series sample:
+Here is the demonstration of maximum and minimum values in the Single-series sample:
 
 {sample}BCT\_AreaChart\_06{sample}
 
 ## Visualization
 
-In this section we will describe main parts of area chart visualization and ways to adjust it. Visual appearance of areas is defined using certain methods. For Area chart the main thing is the {api:anychart.graphics.vector.Fill}**.fill()**{api} method.
+In this section we will describe main parts of area chart visualization and ways to adjust it. Visual appearances of areas are defined using certain methods. For Area chart the main thing is the {api:anychart.graphics.vector.Fill}**.fill()**{api} method.
 
 ### Basic Sample
 
@@ -234,15 +232,15 @@ Now, let's look how to change the look of an Area.  Here is a basic sample:
         .hoverHatchFill('diagonalbrick', 'black');
 ```
 
-Using such settings we've created a look that defines area of Gold color, rather thick border line, hatch filled with DiagonalBrick. Also, we've defined that when user will move cursor over the chart it's hatch will be highlighted with a black and chart will be filled with darkred.
+Using such settings we've created a look with area colored in Gold, rather thick border line, hatch filled with DiagonalBrick. Also, we've defined that when user drags a mouse over the chart it's hatch will be highlighted with black and the chart will be filled with dark red.
 
-Now we will apply the style to the chart:
+Now let's apply this style to the chart:
 
 {sample}BCT\_AreaChart\_07{sample}
 
 ### Image Fill
 
-Color is not the only way to design a chart. In this sample we will demonstrate how to use picture as a fill:
+Color is not the only way to design a chart. In this sample we will demonstrate how to use a picture as a fill:
 
 ```
     chart.area(data).fill({
@@ -255,11 +253,11 @@ Color is not the only way to design a chart. In this sample we will demonstrate 
 
 ## Labels and Tooltips
 
-In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and Tooltips.
+In this section we will explain how to add and configure data labels and tooltips.
 
-If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format.
+If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
 
-When formatting data labels text we will use {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} to show month name. Otherwise sales will be displayed here.
+When formatting data labels' text we use {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method to show month's name. 
 
 ```
     var series= chart.bar(data);
@@ -273,29 +271,26 @@ When formatting data labels text we will use {api:anychart.core.ui.LabelsFactory
 
 ## Markers
 
-Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including areas.
+Marker is an object with a specified shape, size and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including areas.
   
   
-In the sample below we will take single-series data described above and mark the highest point in series with a **"Star"** of the **"Gold"** color.
+In the sample below we take single-series data described above and mark the highest point in series with a **"Star"** of the **"Gold"** color.
 
-To make marker visually appealing we will tell AnyChart to set marker size to 12 pixels.
+To make marker visually appealing we set its size to 12px.
 
 ```
     {x: 'March', value: 18000, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}},
 ```
 
-And here is a result - March is the most successful month and we are showing this on the chart:
+It can be clearly seen on the chart that March was the most successful month in sales:
 
 {sample}BCT\_AreaChart\_09{sample}
 
 ## Hatch Fills
 
-AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard 
-to identify similar colors. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has 
-very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are 
-color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings. 
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has very useful feature - hatch fillings, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
 
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch type for {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
+To demonstrate hatch fill feature we've prepared the following sample. As you can see, it is completely monochrome. We have a chart with 3 series, each with 5 data points. For every series we've applied different hatch fills by setting hatch type for {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
 
 ```
     .hatchFill('soliddiamond')
