@@ -62,30 +62,26 @@ Snippet above demonstrates getting data from XML but avoid illuminating XML stru
 Charts with multiple series are not much different from the charts with single one. Snippet below demonstrates main aspects of multi-series data from XML.
 
 ```
-  '<series_list>'+
-    // series settings
-    '<series>' +
-      // data for first series
-      '<data>' +
-        '<point x="P1" value="128.14"/>'+
-        '<point x="P2" value="112.61"/>'+
-        '<point x="P3" value="163.21"/>'+
-        '<point x="P4" value="229.98"/>'+
-        '<point x="P5" value="90.54"/>'+
-      '</data>'+
-    '</series>'+
-    // settings for the second series
-    '<series>' +
-      // data for second series
-      '<data>' +
-        '<point x="P1" value="90.54"/>'+
-        '<point x="P2" value="104.19"/>'+
-        '<point x="P3" value="150.67"/>'+
-        '<point x="P4" value="120.43"/>'+
-        '<point x="P5" value="200.34"/>'+
-      '</data>'+
-    '</series>'+
-  '</series_list>'
+  <series_list>
+    <series>
+      <data>
+        <point x="P1" value="128.14"/>
+        <point x="P2" value="112.61"/>
+        <point x="P3" value="163.21"/>
+        <point x="P4" value="229.98"/>
+        <point x="P5" value="90.54"/>
+      </data>
+    </series>
+    <series>
+      <data>
+        <point x="P1" value="90.54"/>
+        <point x="P2" value="104.19"/>
+        <point x="P3" value="150.67"/>
+        <point x="P4" value="120.43"/>
+        <point x="P5" value="200.34"/>
+      </data>
+    </series>
+  </series_list>
 ```
 
 {sample}WD\_Data\_from\_XML\_02{sample}
