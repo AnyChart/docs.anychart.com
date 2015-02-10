@@ -87,7 +87,7 @@ function customColumnTextFormatter(item)
 
 ### Column Width
 
-<br>You should use the <b>.width()</b> method for customizing the column width.
+You should use the <b>.width()</b> method for customizing the column width.
 
 ```
 //set column width to 30
