@@ -2,13 +2,13 @@
 
 * [Columns](#columns)
  * [Columns Set](#columns_set)
- * [Title](#title)
- * [Content](#content)
- * [Width](#width)
+ * [Column Title](#column_title)
+ * [Column Content](#column_content)
+ * [Column Width](#column_width)
 * [Visual Settings](#visual_settings)
  * [Interlaced mode](#interlaced_mode)
 * [General Settings](#general_settings)
- * [Width](#width)
+ * [DataGrid Width](#datagrid_width)
  * [Expand/Collapse](#expand/collapse)
 
 <br>Data Grid - is one of the main parts of Gantt Chart. It usually contains main data about tasks and resources of the project, it displays nesting (for a hierarchical model configuration).
@@ -29,9 +29,9 @@ dataGrid.column(4).width(100).textFormatter(function(item) {
   }).title().text('Resources');
 ```
 
- For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the <b>Content</b> topic.
+<br>For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the <b>Content</b> topic.
 
-<br> The sample below shows Resource Gantt Chart, note that the third column is created to show the start data value.
+<br> The sample below shows Resource Gantt Chart, note that the third column is created to display the start data value.
 {sample :width 710 :height 190}GANTT\_Chart\_10{sample}
 
 <br>The same for Project Gantt Chart. The next sample shows the datagrid with the actual start and actual end values.
@@ -47,7 +47,7 @@ dataGrid.column(4).width(100).textFormatter(function(item) {
 ```
 <br>{sample :width 710 :height 180}GANTT\_Chart\_12{sample}
 
-### Title
+### Column Title
 
 Each column has its own title, so it is possible to tune the visual appearance of data grid headers, e.g. set the custom title value:
 
@@ -58,9 +58,9 @@ title.fontWeight('bold').fontStyle('italic');
 title.hAlign('left');
 ```
 
-### Content
+### Column Content
 
-<br>Column content can be tuned as well as its title with the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method. It used to define a cell text value formatter, so you can pass your own custom function as an argument.
+Column content can be tuned as well as its title with the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method. It used to define a cell text value formatter, so you can pass your own custom function as an argument.
 ```
 //create a column contains all IDs
 column.textFormatter(function(item) {
@@ -85,7 +85,7 @@ function customColumnTextFormatter(item)
 }
 ```
 
-### Width
+### Column Width
 
 <br>You should use the <b>.width()</b> method for customizing the column width.
 
@@ -184,7 +184,7 @@ timeline.rowOddFill("#add8e6");
 
 ## General Settings
 
-### Width
+### DataGrid Width
 
 You can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} method:
 
