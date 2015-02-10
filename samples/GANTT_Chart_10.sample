@@ -28,8 +28,6 @@ anychart.onDocumentReady(function() {
 
 function customTextFormatter(item) {
   var periods = item.get(anychart.enums.GanttDataFields.PERIODS);
-
-  //format base line text
   if (periods) {
       var startTime = new Date(periods[0].start);
     return formatDate(startTime.getUTCMonth() + 1) + '/' +

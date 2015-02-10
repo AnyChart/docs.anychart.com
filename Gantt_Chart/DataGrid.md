@@ -1,77 +1,24 @@
 # DataGrid
 
+* [Columns](#columns)
+ * [Columns Set](#columns_set)
+ * [Title](#title)
+ * [Content](#content)
+ * [Width](#width)
+* [Visual Settings](#visual_settings)
+ * [Interlaced mode](#interlaced_mode)
 * [General Settings](#general_settings)
  * [Width](#width)
  * [Expand/Collapse](#expand/collapse)
-* [Columns](#columns)
- * [Using Custom Fields](#using_custom_fields)
-* [Visual Settings](#visual_settings)
- * [Interlaced mode](#interlaced_mode)
 
 <br>Data Grid - is one of the main parts of Gantt Chart. It usually contains main data about tasks and resources of the project, it displays nesting (for a hierarchical model configuration).
 
-## General Settings
-
-By default, Gantt Chart displays two columns: rows counts and names of Gantt elements (tasks or resources).
-
-### Width
-
-You can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} method:
-
-```
-//set width to 100
-chart.splitterPosition(100);
-```
-
-<br>Or hide it if the {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} gets zero:
-
-```
-chart.splitterPosition(0);
-```
-
-<br>{sample :width 710 :height 180}GANTT\_Chart\_13{sample}
-
-### Expand/Collapse
-
-DataGrid supports hierarchical data representation, so if the data is complicated, the DataGrid will display expanded/collapsed icons next to each group header row. You are free to expand and collapse child groups to see more data.
-
-{sample :width 710 :height 210}GANTT\_Chart\_08{sample}
-
-<br>Please note that expanded/collapsed buttons are located in the second DataGrid column near the group element name. Their appearance doesn't depend on the "name" field in data item, so you can leave this field empty or just set column settings to show only the buttons.
-
-```
-dataGrid.column(1).width(10).textFormatter(function(item) {
-    return '';
-  });
-```
-
-<br>{sample :width 710 :height 210}GANTT\_Chart\_14{sample}
-
 ## Columns
 
-As mentioned above every Gantt Chart has a predefined set of columns contains rows counts and elements names. It is possible to tune the visual appearance of data grid headers, e.g. set the custom title value:
+### Columns Set
 
-```
-var firstColumn = dataGrid.column(0);
-firstColumn.title('#');
-```
-
-<br>Or customize the column width:
-
-```
-//set column width to 30
-var firstColumn = dataGrid.column(0);
-firstColumn.width(30);
-```
-
-<br>Column content is tuning as well as its title:
-
-```
-//create a column contains all IDs
-column.textFormatter(function(item) {
-    return item.get('id');
-});
-```
+By default, Gantt Chart displays two columns: rows counts and names of Gantt elements (tasks or resources).
+{sample :width 710 :height 190}GANTT\_Basic\_Sample{sample}
 
 <br>Also you can <b>add</b> new column using the {api:anychart.core.ui.DataGrid#column}**.column()**{api} method:
 
@@ -82,15 +29,15 @@ dataGrid.column(4).width(100).textFormatter(function(item) {
   }).title().text('Resources');
 ```
 
+ For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the <b>Content</b> topic.
+
 <br> The sample below shows Resource Gantt Chart, note that the third column is created to show the start data value.
 {sample :width 710 :height 190}GANTT\_Chart\_10{sample}
 
 <br>The same for Project Gantt Chart. The next sample shows the datagrid with the actual start and actual end values.
 {sample :width 710 :height 200}GANTT\_Chart\_11{sample}
 
-### Using Custom Fields
-
-You also can create and display custom fields in data items:
+<br>You can create and display custom fields in data items:
 ```
     'id': '1',
     'name': 'Task 1',
@@ -99,6 +46,53 @@ You also can create and display custom fields in data items:
     'actualEnd': Date.UTC(2008, 7, 20)
 ```
 <br>{sample :width 710 :height 180}GANTT\_Chart\_12{sample}
+
+### Title
+
+Each column has its own title, so it is possible to tune the visual appearance of data grid headers, e.g. set the custom title value:
+
+```
+//set title values
+title.text("new column");
+title.fontWeight('bold').fontStyle('italic');
+title.hAlign('left');
+```
+
+### Content
+
+<br>Column content can be tuned as well as its title with the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method. It used to define a cell text value formatter, so you can pass your own custom function as an argument.
+```
+//create a column contains all IDs
+column.textFormatter(function(item) {
+    return item.get('id');
+});
+```
+
+<br>Or it can be more complicated as shown in example above:
+
+```
+//create the third column
+dataGrid.column(2).textFormatter(customColumnTextFormatter);
+
+//define a custom content with actual start values
+function customColumnTextFormatter(item)
+{
+  var field = item.get(anychart.enums.GanttDataFields.ACTUAL_START);
+
+  var actualStart = new Date(field);
+  return formatDate(actualStart.getUTCMonth() + 1) + '/' +
+      formatDate(actualStart.getUTCDate()) + '/' + actualStart.getUTCFullYear();
+}
+```
+
+### Width
+
+<br>You should use the <b>.width()</b> method for customizing the column width.
+
+```
+//set column width to 30
+dataGrid.column(0).width(30);
+```
 
 ## Visual Settings
 
@@ -187,3 +181,30 @@ timeline.rowOddFill("#add8e6");
 
 <br>In the sample below the odd rows are colored with a solid fill as well as the even rows.
 {sample :width 710 :height 210}GANTT\_Chart\_09{sample}
+
+## General Settings
+
+### Width
+
+You can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} method:
+
+```
+//set width to 100
+chart.splitterPosition(100);
+```
+
+### Expand/Collapse
+
+DataGrid supports hierarchical data representation, so if the data is complicated, the DataGrid will display expanded/collapsed icons next to each group header row. You are free to expand and collapse child groups to see more data.
+
+{sample :width 710 :height 210}GANTT\_Chart\_08{sample}
+
+<br>Please note that expanded/collapsed buttons are located in the second DataGrid column near the group element name. Their appearance doesn't depend on the "name" field in data item, so you can leave this field empty or just set column settings to show only the buttons.
+
+```
+dataGrid.column(1).width(10).textFormatter(function(item) {
+    return '';
+  });
+```
+
+<br>{sample :width 710 :height 210}GANTT\_Chart\_14{sample}
