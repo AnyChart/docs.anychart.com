@@ -70,8 +70,8 @@ function getData() {
       "name": "Resource 3",
       "parent": "main_2",
       "periods": [
-        {"id": "2_1", "start": Date.UTC(2013, 2, 10), "end": Date.UTC(2013, 2, 22)},
-        {"id": "2_2", "start": Date.UTC(2013, 2, 25), "end": Date.UTC(2013, 3, 5)}
+        {"id": "3_1", "start": Date.UTC(2013, 2, 10), "end": Date.UTC(2013, 2, 22)},
+        {"id": "3_2", "start": Date.UTC(2013, 2, 25), "end": Date.UTC(2013, 3, 5)}
       ]
     }
   ];

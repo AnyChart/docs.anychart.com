@@ -11,7 +11,7 @@ Data Grid - is one of the main parts of Gantt Chart. It usually contains main da
 
 ## General Settings
 
-By default, Gantt Chart displays two columns: rows counts and names of gantt elements (tasks or resources).
+By default, Gantt Chart displays two columns: rows counts and names of Gantt elements (tasks or resources).
 
 ### Width
 
@@ -28,7 +28,12 @@ chart.splitterPosition(100);
 chart.splitterPosition(0);
 ```
 
+<br>{sample :width 710 :height 210}GANTT\_Chart\_13{sample}
+
 ### Expand/Collapse
+
+о том, что можно убрать нэйм по необходимости, пример.
+
 
 DataGrid supports hierarchical data representation, so if the data is complicated, the DataGrid will display expanded/collapsed icons next to each group header row. You are free to expand and collapse child groups to see more data.
 
@@ -36,7 +41,7 @@ DataGrid supports hierarchical data representation, so if the data is complicate
 
 ### Columns
 
-<br>It is possible to tune the visual appearance of data grid headers, e.g. set the custom title value:
+As mentioned above every Gantt Chart has a predefined set of columns contains rows counts and elements names. It is possible to tune the visual appearance of data grid headers, e.g. set the custom title value:
 
 ```
 var firstColumn = dataGrid.column(0);
@@ -59,6 +64,34 @@ column.textFormatter(function(item) {
     return item.get('id');
 });
 ```
+
+<br>Also you can add new column using the {api:anychart.core.ui.DataGrid#column}**.column()**{api} method:
+
+```
+//create new column contains names
+dataGrid.column(4).width(100).textFormatter(function(item) {
+    return item.get('name');
+  }).title().text('Resources');
+```
+
+<br> The sample below shows Resource Gantt Chart, note that the third column is formatted to show Gantt start data.
+{sample :width 710 :height 210}GANTT\_Chart\_10{sample}
+
+<br>The same for Project Gantt Chart. The next sample shows the datagrid with the actual start and actual end values.
+{sample :width 710 :height 210}GANTT\_Chart\_11{sample}
+
+<br>You also can create and display custom fields in data items:
+```
+//
+{
+    'id': '1',
+    'name': 'Task 1',
+    'owner': 'Anthony Quayle',
+    'actualStart': Date.UTC(2008, 7, 9),
+    'actualEnd': Date.UTC(2008, 7, 20)
+},
+```
+<br>{sample :width 710 :height 210}GANTT\_Chart\_12{sample}
 
 ## Visual Settings
 
