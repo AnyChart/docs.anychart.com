@@ -40,22 +40,20 @@ anychart.onDocumentReady(function() {
     ]
   ]);
 
-  table.rowHeight(0, 40);   // Get first row and set height 40px
-  table.colWidth(0, 70);    // Get first column and set width 70 px
-
-  table.cellFill('#FFFFE0');   // Set table background color
+  table.rowHeight(0, 40);     // Get first row and set height 40px
+  table.colWidth(0, 70);      // Get first column and set width 70 px
 
   // set border style
-  table.cellBorder('gray',2,'5 2');
+  table.cellBorder('#CCCCCC',2,'5 2');
 
   // adjust text visual appearance
   table.cellTextFactory()
-    .padding(10)          // set 10px padding from each border of every cell
-    .vAlign('center')     // set vertical align of the text
-    .hAlign('right')      // set horizontal align of the text
-    .fontWeight(600)      // set text font weight
-    .fontSize(11)         // set text font size
-    .fontColor('red');    // set text font color
+    .padding(10)              // set 10px padding from each border of every cell
+    .vAlign('center')         // set vertical align of the text
+    .hAlign('right')          // set horizontal align of the text
+    .fontWeight(600)          // set text font weight
+    .fontSize(12)             // set text font size
+    .fontColor('#86cf38');    // set text font color
 
   // set table container and initiate draw
   table.container(stage).draw();

@@ -44,11 +44,20 @@ anychart.onDocumentReady(function() {
   table.colWidth(0, 70);    // Get first column and set width 70 px
 
   // set colors for ever and odd rows
-  table.cellOddFill('rgb(102, 143, 169)');  // color for even rows
-  table.cellEvenFill('rgb(233, 234, 237)'); // color for odd row
+  table.cellOddFill('#CCCCCC');  // color for even rows
+  table.cellEvenFill('#D6D6D6'); // color for odd row
 
-  // position text in each cell into center
-  table.cellTextFactory().vAlign('center').hAlign('center');
+  // adjust table border and position text in each cell into center
+  table.cellBorder('#B8B8B8').cellTextFactory().vAlign('center').hAlign('center');
+
+  // bold months and years in table
+  table.getCell(0, 1).content().fontWeight(900);
+  table.getCell(0, 2).content().fontWeight(900);
+  table.getCell(1, 0).content().fontWeight(900);
+  table.getCell(2, 0).content().fontWeight(900);
+  table.getCell(3, 0).content().fontWeight(900);
+  table.getCell(4, 0).content().fontWeight(900);
+  table.getCell(5, 0).content().fontWeight(900);
 
   // set table container and initiate draw
   table.container(stage).draw();

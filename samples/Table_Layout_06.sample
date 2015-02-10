@@ -54,17 +54,25 @@ anychart.onDocumentReady(function() {
   table.colWidth(0, 70);    // Get first column and set width 70 px
   table.colWidth(1, 70);    // Get second column and set width 70 px
 
-  table.cellFill('#FFFFE0');   // Set table background color
-
   //set border style
-  table.cellBorder('gray',2,'5 2');
+  table.cellBorder('#CCCCCC',2,'5 2');
 
   table.cellTextFactory()
     .vAlign('center')
     .hAlign('center')
-    .fontWeight(600)
-    .fontSize(11)
-    .fontColor('red');
+    .fontSize(12)
+    .fontColor('#86cf38');
+
+  // bold months and years in table
+  table.getCell(0, 2).content().fontWeight(900);
+  table.getCell(0, 3).content().fontWeight(900);
+  table.getCell(1, 1).content().fontWeight(900);
+  table.getCell(2, 1).content().fontWeight(900);
+  table.getCell(3, 1).content().fontWeight(900);
+  table.getCell(4, 1).content().fontWeight(900);
+  table.getCell(5, 1).content().fontWeight(900);
+  table.getCell(1, 0).content().fontWeight(900);
+  table.getCell(3, 0).content().fontWeight(900);
 
   // set table container and initiate draw
   table.container(stage).draw();
