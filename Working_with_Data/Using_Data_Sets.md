@@ -264,7 +264,7 @@ anychart.onDocumentReady(function() {
   // map x and value from the data set
   var colChart = anychart.columnChart.apply(null, anychart.data.mapAsTable(data));
   
-    //naming the chart's series (legend)
+    //naming the chart series (legend)
     colChart.getSeries(0).name('NY');
     colChart.getSeries(1).name('SF');
     colChart.getSeries(2).name('LA');
