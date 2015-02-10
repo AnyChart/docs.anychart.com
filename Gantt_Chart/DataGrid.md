@@ -3,7 +3,8 @@
 * [General Settings](#general_settings)
  * [Width](#width)
  * [Expand/Collapse](#expand/collapse)
- * [Columns](#columns)
+* [Columns](#columns)
+ * [Using Custom Fields][#using_custom_fields]
 * [Visual Settings](#visual_settings)
  * [Interlaced mode](#interlaced_mode)
 
@@ -32,14 +33,21 @@ chart.splitterPosition(0);
 
 ### Expand/Collapse
 
-о том, что можно убрать нэйм по необходимости, пример.
-
-
 DataGrid supports hierarchical data representation, so if the data is complicated, the DataGrid will display expanded/collapsed icons next to each group header row. You are free to expand and collapse child groups to see more data.
 
 {sample :width 710 :height 210}GANTT\_Chart\_08{sample}
 
-### Columns
+<br>Please note that expanded/collapsed buttons are located in the second DataGrid column near the group element name. Their appearance doesn't depend on the "name" field in data item, so you can leave this field empty or just set column settings to show only the buttons.
+
+```
+dataGrid.column(1).width(10).textFormatter(function(item) {
+    return '';
+  });
+```
+
+<br>{sample :width 710 :height 210}GANTT\_Chart\_14{sample}
+
+## Columns
 
 As mentioned above every Gantt Chart has a predefined set of columns contains rows counts and elements names. It is possible to tune the visual appearance of data grid headers, e.g. set the custom title value:
 
@@ -65,7 +73,7 @@ column.textFormatter(function(item) {
 });
 ```
 
-<br>Also you can add new column using the {api:anychart.core.ui.DataGrid#column}**.column()**{api} method:
+<br>Also you can <b>add</b> new column using the {api:anychart.core.ui.DataGrid#column}**.column()**{api} method:
 
 ```
 //create new column contains names
@@ -79,6 +87,8 @@ dataGrid.column(4).width(100).textFormatter(function(item) {
 
 <br>The same for Project Gantt Chart. The next sample shows the datagrid with the actual start and actual end values.
 {sample :width 710 :height 200}GANTT\_Chart\_11{sample}
+
+### Using Custom Fields
 
 <br>You also can create and display custom fields in data items:
 ```
