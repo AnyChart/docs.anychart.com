@@ -7,7 +7,7 @@
 * [Visual Settings](#visual_settings)
  * [Interlaced mode](#interlaced_mode)
 
-Data Grid - is one of the main parts of Gantt Chart. It usually contains main data about tasks and resources of the project, it displays nesting (for a hierarchical model configuration).
+<br>Data Grid - is one of the main parts of Gantt Chart. It usually contains main data about tasks and resources of the project, it displays nesting (for a hierarchical model configuration).
 
 ## General Settings
 
@@ -28,7 +28,7 @@ chart.splitterPosition(100);
 chart.splitterPosition(0);
 ```
 
-<br>{sample :width 710 :height 210}GANTT\_Chart\_13{sample}
+<br>{sample :width 710 :height 180}GANTT\_Chart\_13{sample}
 
 ### Expand/Collapse
 
@@ -74,24 +74,21 @@ dataGrid.column(4).width(100).textFormatter(function(item) {
   }).title().text('Resources');
 ```
 
-<br> The sample below shows Resource Gantt Chart, note that the third column is formatted to show Gantt start data.
-{sample :width 710 :height 210}GANTT\_Chart\_10{sample}
+<br> The sample below shows Resource Gantt Chart, note that the third column is created to show the start data value.
+{sample :width 710 :height 190}GANTT\_Chart\_10{sample}
 
 <br>The same for Project Gantt Chart. The next sample shows the datagrid with the actual start and actual end values.
-{sample :width 710 :height 210}GANTT\_Chart\_11{sample}
+{sample :width 710 :height 200}GANTT\_Chart\_11{sample}
 
 <br>You also can create and display custom fields in data items:
 ```
-//
-{
     'id': '1',
     'name': 'Task 1',
     'owner': 'Anthony Quayle',
     'actualStart': Date.UTC(2008, 7, 9),
     'actualEnd': Date.UTC(2008, 7, 20)
-},
 ```
-<br>{sample :width 710 :height 210}GANTT\_Chart\_12{sample}
+<br>{sample :width 710 :height 180}GANTT\_Chart\_12{sample}
 
 ## Visual Settings
 

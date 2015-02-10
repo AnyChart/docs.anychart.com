@@ -15,7 +15,7 @@ anychart.onDocumentReady(function() {
   //set data for the chart
   chart.data(treeData);
 
-  //set start splitteformatDate r position settings
+  //set start splitteformatDater position settings
   chart.splitterPosition(220);
 
   //get chart data grid link to set column settings
