@@ -276,7 +276,7 @@ Marker is an object with a specified shape, size and color or an image used to m
   
 In the sample below we take single-series data described above and mark the highest point in series with a **"Star"** of the **"Gold"** color.
 
-To make marker visually appealing we set its size to 12px.
+To make the marker more visually appealing we set its size to 12px.
 
 ```
     {x: 'March', value: 18000, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}},
@@ -288,9 +288,9 @@ It can be clearly seen on the chart that March was the most successful month in 
 
 ## Hatch Fills
 
-AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has very useful feature - hatch fillings, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fillings, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
 
-To demonstrate hatch fill feature we've prepared the following sample. As you can see, it is completely monochrome. We have a chart with 3 series, each with 5 data points. For every series we've applied different hatch fills by setting hatch type for {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
+To demonstrate hatch fill feature we've prepared the following sample. As you can see, it is completely monochrome. We have a chart with 3 series, each with 5 data points. For every series we've applied different hatch fills by setting hatch type for the{api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
 
 ```
     .hatchFill('soliddiamond')

@@ -11,20 +11,20 @@
 
 ## Overview
 
-Credit is a watermark in the right bottom corner of any chart. It consists of four elements: text, tooltip (alt), URL and picture. If you want to customize any part of credit placed in the chart you have put of your website, you can purchase a license at [AnyChart Website](http://www.anychart.com/buy/).
+Credits is a single object shown as a watermark in the right bottom corner of any chart. It consists of four elements: text, tooltip (alt), URL and picture. If you want to customize any part of credits placed in your chart, you can purchase a license at [AnyChart Website](http://www.anychart.com/buy/).
 
 ### Text
 
-Сredit's text can be changed by using {api:anychart.core.ui.Credits#text}**.text()**{api} method:
+Сredits's text can be changed by using {api:anychart.core.ui.Credits#text}**.text()**{api} method:
 
 ```
     chart.credits().text('My Company');
 ```
 {sample}Credits\_01{sample}
 
-### Prompt
+### Tooltip
 
-Prompt is shown when a credit is hovered. It can be adjusted with {api:anychart.core.ui.Credits#alt}**.alt()**{api} method.
+Tooltip is shown when a credits is hovered. It can be adjusted with {api:anychart.core.ui.Credits#alt}**.alt()**{api} method.
 
 ```
     chart.credits().alt('Custom tooltip');
@@ -33,7 +33,7 @@ Prompt is shown when a credit is hovered. It can be adjusted with {api:anychart.
 
 ### URL
 
-Credit acts as a link. By default is links to [AnyChart Site](http://www.anychart.com/). You can change it using {api:anychart.core.ui.Credits#url}**.url()**{api} method.
+Credits acts as a link. By default it links to [AnyChart Site](http://www.anychart.com/). You can change it using {api:anychart.core.ui.Credits#url}**.url()**{api} method.
 
 ```
     chart.credits().url('http://www.anychart.com/buy/');
@@ -77,7 +77,7 @@ To disable credits just put this in your code, but remember: it will work only i
 
 ### License
 
-When you purchase a license to AnyChart 7 you receive an access to your customer area and a license key. AnyChart trial is fully functional, but you are limited in the ways you can use trial version and you are unable to [remove credits](#disable) from the charts. To register your copy and enable credits removal put this in your code in the very beginning:
+When you purchase a license to AnyChart 7 you receive an access to your customer area and a license key. AnyChart trial is fully functional, but you are limited in the ways you can use trial version and you may not [remove credits](#disable) from the charts. To register your copy and enable credits removal put this in your code in the very beginning:
 ```
     anychart.licenseKey('YOUR-LICENSE-KEY');
 ```

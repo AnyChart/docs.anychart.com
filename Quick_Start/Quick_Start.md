@@ -3,7 +3,7 @@ Quick Start
 ===========
   
 ## Getting started with AnyChart
-Create an HTML file and give it the “index.htm” name if you want to make a new web page, or open your html file where the chart should be situated.
+Create an HTML file and give it the “index.htm” name if you want to make a new web page, or open your HTML file where the chart should be put.
 ###1. Include AnyChart into your web page
 Reference the JavaScript file in the `<head>` section of your web page.  
 You can use the link as shown below or download anychart.min.js from the [download page](./Downloading_AnyChart) and then put it into any folder of your site (you’ll have to use your own link in this case). 
@@ -22,7 +22,7 @@ Example:
 </body>
 ```  
 ###3. Create a chart
-Paste the JavaScript tag `<script>` with the following code anywhere in the “head” or “body” section. This code example uses JavaScript API to create a chart, but you also can use JSON or XML format. See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about available formats. Example:
+Put the JavaScript tag `<script>` with the following code anywhere in the “head” or “body” section. This code example uses JavaScript API to create a chart, but you also can use JSON or XML format. See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about available formats. Example:
 
 ```
 <script>
@@ -42,11 +42,11 @@ Paste the JavaScript tag `<script>` with the following code anywhere in the “h
   
 ## The result
 ###See the result
-After all these steps you should have the following result. You can launch this example further [here](http://playground.anychart.com/acdvf-docs/7.3.1/samples/quick_start_pie-plain).
+After all these steps you should have the following result. You can launch and explore this example further [here](http://playground.anychart.com/acdvf-docs/7.3.1/samples/quick_start_pie-plain).
 
 {sample}quick\_start\_pie{sample}
 ###Full source code
-That’s how your full web page code should look like:  
+Below this you can see how your full web page code should look like.
 ```
 <!doctype html>
 <head>
@@ -70,6 +70,9 @@ That’s how your full web page code should look like:
 </body>
 </html>
 ```
+
+Also, you can copy and paste this code to a file on your computer and run it in browser to see how it works.  
+
   
 ## Further Steps
 ### Learn more

@@ -152,7 +152,8 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.core.axes.Linear}**.yAxis()**{api} or {api:anychart.core.axes.Linear}**.xAxis()**{api} method.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} method.
+
 
 Position depends on plot type and inversion of axes, you will find the list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) templates.
 
@@ -224,7 +225,7 @@ Now, let's look how to apply a simple style to the chart. As we've already said,
         .hoverHatchFill('diagonalbrick', 'darkred');
 ```
 
-Using such settings we've created a style that colors bars in Gold, makes border rather thick, fills hatch with DiagonalBrick and a couple of effects. Also, we've defined that when user drags a mouse cursor over an element it will be highlighted with the dark red thick border and hatch fill colored  dark red too.
+Using such settings we've created a style that colors bars in Gold, makes the border rather thick, fills hatch with DiagonalBrick and a couple of effects. Also, we've defined that when user drags a mouse cursor over an element it will be highlighted with the dark red thick border and hatch fill colored dark red too.
 
 Now let's apply these setting to the sample shown above.
 
@@ -245,7 +246,7 @@ When formatting data labels' text we use {api:anychart.core.ui.LabelsFactory#tex
 <!--
 * **Related Help Topics:**
 
-Learn more about labels and tooltips in Labels and tooltips (ТУТ ДОЛЖНЫ БЫТЬ ССЫЛКИ? ТОГДА ГДЕ РАЗДЕЛЫ?0.0 НЕ НАШЛО)
+Learn more about labels and tooltips in Labels and tooltips 
 Full Keywords reference and formatting guide: Labels and tooltips
 -->
 
@@ -254,9 +255,9 @@ Full Keywords reference and formatting guide: Labels and tooltips
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including bars.
   
   
-In the sample below we take single-series data described above and mark the biggest bar in series with a **"Star"** of the **"Gold"** color.
+In the sample below we take single-series data described above and mark the biggest bar in series with a **"Star5"** of the **"Gold"** color.
   
-To make marker visually appealing we set its size to 12px.
+To make the marker more visually appealing we set its size to 12px.
 
 ```
     {x: 'Men\'s/Women\'s Specialty Stores', value: 148662, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}}
@@ -276,22 +277,22 @@ Now let's study how to apply different colors to different data series. To apply
 
 {sample}BCT\_BarChart\_09{sample}
 
-Look at the individual points we colorized in the sample below. We've got a chart with one series and predefined color for all elements. We set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximum one.
-As you see it is very easy to do by setting {api:anychart.graphics.vector.Fill}**fill()**{api} parameter of a point.
+Look at the individual points we colorized in the sample below. We've got a chart with one series and predefined color for all elements. We set "Rgb(180,77,77)" color for the minimum point and "Rgb(77,180,77)" for the maximum one.
+As you see it is very easy to do by setting a value for the {api:anychart.graphics.vector.Fill}**fill()**{api} parameter of a point.
 
 {sample}BCT\_BarChart\_10{sample}
 
 **Important Note:**
 
-AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)" or "AliceBlue" or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
+AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors. For example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)", or "AliceBlue", or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
 
 * Different ways of [setting colors](../Appearance_Settings/Color_Management) of elements
 
 ## Hatch Fills
 
-AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings.
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
 To see whole range of available hatch types see [Hatch Fill](../Appearance_Settings/Hatch_Fill) tutorial.
   
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5 series with 3 data points in each. For every series we've applied different hatch fill types.
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart a with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
 
 {sample}BCT\_BarChart\_11{sample}

@@ -8,7 +8,7 @@
  * [Update](#update)
  * [Delete](#delete)
  * [Insert](#insert)
-* [Data Streaming](#data_stream)
+* [Data Streaming](#data_streaming)
 
 ## Overview
 
@@ -18,12 +18,12 @@ AnyChart component gives you the ability to create, read, update and delete char
 You can solve the following tasks using some easy-in-use Java Script methods:
   
   
+ * Data-Stream - you can add some new data to the end of a data set while optional removing some data from its beginning. 
  * Add - you can add one or several points to the end of the data set.
  * Meta-add - you can add some metadata to the chart.
  * Update - you can change the values of the existing points.
  * Remove - you can remove any point from a data set.
  * Insert - you can add one or several points between the existing points.
- * Data-Stream - you can add some new data to the end of a data set while optional removing some data from its beginning. 
   
   
 This article shows how to solve each of these tasks.
