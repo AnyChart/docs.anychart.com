@@ -4,7 +4,7 @@
  * [Width](#width)
  * [Expand/Collapse](#expand/collapse)
 * [Columns](#columns)
- * [Using Custom Fields][#using_custom_fields]
+ * [Using Custom Fields](#using_custom_fields)
 * [Visual Settings](#visual_settings)
  * [Interlaced mode](#interlaced_mode)
 
@@ -90,7 +90,7 @@ dataGrid.column(4).width(100).textFormatter(function(item) {
 
 ### Using Custom Fields
 
-<br>You also can create and display custom fields in data items:
+You also can create and display custom fields in data items:
 ```
     'id': '1',
     'name': 'Task 1',
