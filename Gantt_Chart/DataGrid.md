@@ -68,7 +68,7 @@ column.textFormatter(function(item) {
 });
 ```
 
-<br>Or it can be more complicated as shown in example above:
+<br>Or it can be more complicated:
 
 ```
 //create the third column
