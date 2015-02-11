@@ -31,7 +31,7 @@ AnyChart provides {api:anychart#fromJson}**.fromJSON()**{api} for using data in 
   chart.container('container').draw();
 ```
 
-Setting data using JSON format is very similar to the way of setting data in JavaScript. The name of every in JSON config corresponds with the name of a method or parameter in JS.
+Setting data using JSON format is very similar to the way of setting data in JavaScript. The name of every in JSON config corresponds with the name of a method and parameter in JS.
 
 ```
   // JSON data
@@ -57,8 +57,10 @@ Setting data using JSON format is very similar to the way of setting data in Jav
   };
 ```
 
+JSON format has some peculiarities. JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the JSON structure very similar to JS. To find out any of requite method or parameter use {api:anychart}API{api}. 
 
-JSON format has some peculiarities
+
+
 
 AnyChart provides variate of possibilities for translating data into Anychart JavaScript library. Constant usage of java script solutions may appear to be unproductive and even impossible in some cases. Aiming to makes our component more comfortable for our partners, Anychart provides opportunities to use data from JSON file. This article is divided to usage of JSON format as source of information and chart style setter.
 
