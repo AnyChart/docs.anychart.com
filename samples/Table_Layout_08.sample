@@ -63,7 +63,7 @@ anychart.onDocumentReady(function() {
   table.contents(contents);
 
   // disable borders and adjust width of second and fourth column
-  table.cellBorder('2 #EEE').colWidth(1, 130).colWidth(3, 50).rowHeight(0, 20);
+  table.cellBorder('#B8B8B8').colWidth(1, 130).colWidth(3, 50).rowHeight(0, 20);
 
   // visual settings for the first row
   table.getCell(0,0).fill('#444444').border('0').bottomBorder('2 #EEE').content().fontColor('#FFF');

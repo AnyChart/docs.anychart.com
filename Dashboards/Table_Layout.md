@@ -62,7 +62,7 @@ This section contains information on colorizing the whole table and each of the 
 Background for all the table can be configured with {api:anychart.core.ui.Table#cellFill}**.cellFill()**{api} parameter.
 
 ```
-  table.cellFill('#D5D84B');
+  table.cellFill('#B8B8B8');
 ```
 
 {sample :width 690 :height 200}Table\_Layout\_02{sample}
@@ -72,11 +72,11 @@ Background for all the table can be configured with {api:anychart.core.ui.Table#
 As a more advanced way of controlling table's background color there are parameters to adjust colors of even and/or odd row in the table. Parameter {api:anychart.core.ui.Table#cellEvenFill}**.cellEvenFill()**{api} is responsible for the background color of even rows and {api:anychart.core.ui.Table#cellOddFill}**.cellOddFill()**{api} is responsible for the background color of all odd rows.
 
 ```
-  table.cellOddFill('rgb(102, 143, 169)');  // color for even rows
-  table.cellEvenFill('rgb(233, 234, 237)'); // color for odd row
+  table.cellOddFill('#F5F5F5');  // color for odd rows
+  table.cellEvenFill('#FFFFFF'); // color for even rows
 ```
 
-Here is the sample with "rgb(233, 234, 237)" background color for all cells in even row and "rgb(102, 143, 169)" color for all cells in odd row.
+Here is the sample with "#FFFFFF" background color for all cells in even rows and "#F5F5F5" color for all cells in odd rows.
 
 {sample :width 690 :height 200}Table\_Layout\_03{sample}
 
@@ -100,26 +100,26 @@ In this section revealed all methods of controlling borders in a table.
 Parameter {api:anychart.core.ui.Table#cellBorder}**.cellBorder()**{api} provides an opportunity to set desirably configured border for all cells in a table. As far as content for each cell can be absolutely different, style for each of the cells can be set individually as well.
   
   
-Sample below demonstrates setting gray stroke for the whole chart, set thickness equal to 2 px and makes it dashed, with 5 px dashes and 2 pixel gaps. Moreover, to cells have red stroke, which emphasize them.
+Sample below demonstrates setting gray stroke for the whole chart, set thickness equal to 1 px and makes it dashed, with 5 px dashes and 2 pixel gaps. Moreover, to cells have red stroke, which emphasize them.
 
 ```
   //set style
   table.cellBorder(
-    'gray',     // Color
-    2,          // Thickness
+    '#B8B8B8',  // Color
+    1,          // Thickness
     '5 2'       // Dash and gap length
   );
   
   // get cell from the second column and second row
   table.getCell(1,1).border({
-    keys: ['red'],  // Set leaner color
-    thickness: 3    // Set thickness
+    keys: ['#86cf38'],  // Set leaner color
+    thickness: 3        // Set thickness
   });
   
   //get cell from second column and fourth row
   table.getCell(3, 1).border({
-    keys: ['red'],  // Set leaner color
-    thickness: 3    // Set thickness
+    keys: ['#86cf38'],  // Set leaner color
+    thickness: 3        // Set thickness
   });
 ```
 
@@ -148,7 +148,7 @@ Sample below demonstrates controlling text settings and using padding
     .vAlign('center')     // set vertical align of the text
     .hAlign('right')      // set horizontal align of the text
     .fontWeight(600)      // set text font weight
-    .fontSize(11)         // set text font size
+    .fontSize(12)         // set text font size
     .fontColor('red');    // set text font color
 ```
 

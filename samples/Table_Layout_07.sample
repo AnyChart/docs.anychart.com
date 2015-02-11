@@ -61,7 +61,7 @@ anychart.onDocumentReady(function() {
   table.contents(contents);
 
   // disable borders and adjust width of second and fourth column
-  table.cellBorder('2 #EEE').colWidth(1, 130).colWidth(3, 50);
+  table.cellBorder('#B8B8B8').colWidth(1, 130).colWidth(3, 50);
 
   // visual settings for text in table
   table.cellTextFactory().vAlign('center').hAlign('center').fontWeight(600).fontSize(12);
