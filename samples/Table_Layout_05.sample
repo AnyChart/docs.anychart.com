@@ -44,7 +44,7 @@ anychart.onDocumentReady(function() {
   table.colWidth(0, 70);      // Get first column and set width 70 px
 
   // set border style
-  table.cellBorder('#CCCCCC',2,'5 2');
+  table.cellBorder('#B8B8B8');
 
   // adjust text visual appearance
   table.cellTextFactory()

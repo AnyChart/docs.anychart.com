@@ -40,10 +40,10 @@ anychart.onDocumentReady(function() {
     ]
   ]);
 
-  table.rowHeight(0, 40);   // Get first row and set height 40px
-  table.colWidth(0, 70);    // Get first column and set width 70 px
+  table.rowHeight(0, 40);       // Get first row and set height 40px
+  table.colWidth(0, 70);        // Get first column and set width 70 px
 
-  table.cellFill('#DADADA');   // Set table background color
+  table.cellFill('#E1E1E1');    // Set table background color
 
   // adjust table border and position text in each cell into center
   table.cellBorder('#B8B8B8').cellTextFactory().vAlign('center').hAlign('center');

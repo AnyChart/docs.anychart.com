@@ -44,8 +44,8 @@ anychart.onDocumentReady(function() {
   table.colWidth(0, 70);    // Get first column and set width 70 px
 
   // set colors for ever and odd rows
-  table.cellOddFill('#CCCCCC');  // color for even rows
-  table.cellEvenFill('#D6D6D6'); // color for odd row
+  table.cellOddFill('#F5F5F5');  // color for even rows
+  table.cellEvenFill('#FFFFFF'); // color for odd row
 
   // adjust table border and position text in each cell into center
   table.cellBorder('#B8B8B8').cellTextFactory().vAlign('center').hAlign('center');

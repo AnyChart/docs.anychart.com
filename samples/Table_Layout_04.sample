@@ -45,8 +45,8 @@ anychart.onDocumentReady(function() {
 
   // set style for table borders
   table.cellBorder(
-    '#CCCCCC',  // Border color
-    2,          // Border thickness
+    '#B8B8B8',  // Border color
+    1,          // Border thickness
     '5 2'       // Dash and gap length
   );
 
