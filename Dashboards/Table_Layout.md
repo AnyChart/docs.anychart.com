@@ -62,7 +62,7 @@ This section contains information on colorizing the whole table and each of the 
 Background for all the table can be configured with {api:anychart.core.ui.Table#cellFill}**.cellFill()**{api} parameter.
 
 ```
-  table.cellFill('#B8B8B8');
+  table.cellFill('#E1E1E1');
 ```
 
 {sample :width 690 :height 200}Table\_Layout\_02{sample}
