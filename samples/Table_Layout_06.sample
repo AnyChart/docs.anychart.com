@@ -60,8 +60,7 @@ anychart.onDocumentReady(function() {
   table.cellTextFactory()
     .vAlign('center')
     .hAlign('center')
-    .fontSize(12)
-    .fontColor('#86cf38');
+    .fontSize(12);
 
   // bold months and years in table
   table.getCell(0, 2).content().fontWeight(900);
