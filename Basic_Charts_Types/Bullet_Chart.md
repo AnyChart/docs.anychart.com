@@ -9,60 +9,60 @@
  * [Inversion](#inversion)
  * [Minimum and Maximum](#minimum_and_maximum)
 * [Markers](#markers)
- * [Type](#type)
+ * [Types](#types)
  * [Style](#style)
 * [Colors](#colors)
  
 ## Overview
 
-A Bullet Chart is a variation of [Bar Chart](Bar_Chart) designed to compare a single, primary measure (for example, 
-current year-to-date revenue) to one or more other measures to enrich its meaning (for example, 
-compared to a target), and displays it in the context of qualitative ranges of performance, such as poor, 
-satisfactory, and good. The qualitative ranges are displayed as varying intensities of a single hue to make them 
-discernible by those who are color blind and to restrict the use of colors on the dashboard to a minimum.
+A Bullet Chart is a variation of [Bar Chart](Bar_Chart) designed to compare a single, primary measure (for example, current year-to-date revenue) to one or more other measures to enrich its meaning (for example, compared to a target), and displays it in the context of qualitative ranges of performance, such as poor, satisfactory, and good. The qualitative ranges are displayed as blocks of one hue but with varying intensity, making them discernible by those who are color blind and to restrict the use of colors on the dashboard to a minimum.
   
   
-Bullet chart always uses only one data series, but a dashboard may contain several bullet charts at the same time. 
-This kind of charts can be of great help in some cases as far as it provides the clearest, 
-most meaningful presentation of the data in the least amount of space.
+Bullet chart always uses only one data series, but a dashboard may contain several bullet charts at the same time. This kind of charts can be of great help in some cases as far as it provides the clearest presentation of the data using less space.
 
 ## Chart
 
-Bullet Chart consist of a main bar of key measure and a range bar of comparative measure. 
+Bullet Chart consists of a main bar of key measure and a range bar of comparative measures. 
   
-Let's create a simple Bullet Chart. Main bar represents 2005 Revenue and range bar represents maximum annual income 
-ever reached in the company. Data set for the chart is below
+Let's create a simple Bullet Chart. The main bar represents 2005 revenue and the range bar represents maximum annual income ever been reached in the company. Data set for the chart is below
 
 ```
   // Create bullet chart
   var chart = anychart.bulletChart([
     {value: 637.166}                  //2005 revenue
   ]);
-  chart.range().from(0).to(750);  //maximum annual income ever
+  chart.range().from(0).to(750);  //maximum annual income ever 
 ```
 
 {sample}BCT\_Bullet\_Chart\_01{sample}
 
 ## Ranges
 
-Ranges or range bar in Bullet chart is a qualitative categories representation (such as bad, satisfactory, 
-and good). They are variables of color intensity rather than of hue. Ranges are controlled by {api:anychart.charts.Bullet#range}**.range()**{api} method and have two mandatory parameters set by {api:anychart.core.axisMarkers.Range#from}**.from()**{api} and {api:anychart.core.axisMarkers.Range#to}**.to()**{api} methods.
+Ranges or range bar in Bullet chart are qualitative categories representations (such as bad, satisfactory and good). They are variables of color intensity rather than of hue. Ranges are controlled by {api:anychart.charts.Bullet#range}**.range()**{api} method and have two mandatory parameters set by {api:anychart.core.axisMarkers.Range#from}**.from()**{api} and {api:anychart.core.axisMarkers.Range#to}**.to()**{api} methods.
 
 ```
-  chart.range().from(0).to(10);
+  chart.range(<number_of_a_range>).from(<value1>).to(<value2>);
 ```
 
 Here is a sample with 5 ranges on one bullet chart:
 
 {sample}BCT\_Bullet\_Chart\_02{sample}
 
-**Note:** to avoid complexity that cannot be perceived efficiently and to maintain a clear distinction between the 
-colors you shouldn't exceed five ranges on one chart.
+The code for the example above is the following:
+
+```
+  chart.range().from(0).to(100);
+  chart.range(1).from(100).to(150);
+  chart.range(2).from(150).to(200);
+  chart.range(3).from(200).to(250);
+  chart.range(4).from(250).to(300);
+```
+
+**Note:** to avoid complexity that cannot be perceived efficiently and to maintain a clear distinction between the colors it's better to exceed no more than three ranges on one chart.
 
 ## Layout
 
-Bullet Chart was designed to represent data in the most effective way and use minimum space for it. Layout is controlled
-by {api:anychart.charts.Bullet#layout}**.layout()**{api} parameter. Here is a sample of code with both horizontal and vertical layouts.
+Bullet Chart was designed to represent data in the most effective way using minimum space for it. Layout is controlled by {api:anychart.charts.Bullet#layout}**.layout()**{api} parameter. This parameter's setting code looks this way:
 
 ```
   chart_1.layout('vertical');
@@ -74,73 +74,73 @@ Here is the sample with both horizontal and vertical layouts.
 
 ## Axis
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings. All axis features are described in [Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial, In this section we will quickly demonstrate how axis position can be adjusted, how axis scale can be inverted  and how minimum and maximum values can be set.
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings. You can find more information about axis in [Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial. 
+
+In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
   
   
-**Note:** In most cases chart has at least two axes, but Bullet Chart always represents only one data series and  there is no need in two axes.
+**Note:** Usually a chart has at least two axes, but Bullet Chart always represents only one data series and there is no need in two axes.
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}**orientation()**{api} of {api:anychart.charts.Bullet#axis}**.axis()**{api}.
+With AnyChart you can place axis to any side of the chart, all you need to do is to adjust the {api:anychart.core.axes.Linear#orientation}**orientation()**{api} parameter of {api:anychart.charts.Bullet#axis}**.axis()**{api}.
   
   
-Orientation depends on the layout of a chart. For horizontal layout axis orientation parameter can be set only *top* 
-or *bottom*. As for vertical layout, axis orientation parameter may be only *left* or *right*
+Orientation depends on the layout of a chart. For horizontal layout axis orientation parameter can be set either *top* or *bottom*. As for vertical layout, axis orientation parameter may be set in *left* or *right*.
 
 ```
   chart.axis().orientation('top');
 ```
 
-Here is a sample with data from dashboard above with only a change of axis orientation
+Here is a sample with the data from dashboard above with an only change of axis orientation:
 
 {sample}BCT\_Bullet\_Chart\_04{sample}
 
 ### Inversion
 
-AnyChart allows to invert any axis on a dashboard. Inversion is controlled by axis **scale().inverted()** method:
+AnyChart allows to invert any axis on a dashboard. Inversion is to be set using the **scale().inverted()** method:
 
 ```
   chart.scale().inverted(true);
 ```
 
-Below is a demonstration of horizontal bullet chart with inverted axis. 
+Below this you can see a demonstration of a horizontal bullet chart with inverted axis. 
 
 {sample}BCT\_Bullet\_Chart\_05{sample}
 
 ### Minimum and Maximum
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see it on the scale inversion chart sample above: minimal value on the Y Axis is 0, and maximum is 15. You can control these values by setting 
-**.maximum()** and **.minimum()** of the scale:
+By default AnyChart calculates axis minimum and maximum automatically, as you can see on the scale inversion chart sample above: minimal value on the Y Axis is 0, and maximum is 15. You can change these values by setting them for the **.maximum()** and **.minimum()** parameters:
 
 ```
   chart.yScale().minimum(-5).maximum(20);
 ```
 
-Look at the demonstration of maximum and minimum values on the Single-series sample:
+Look at the demonstration of maximum and minimum values in the Single-series sample:
 
 {sample}BCT\_Bullet\_Chart\_06{sample}
 
 ## Markers
 
-Marker is an object with a specified shape, size, and color or an image used to represent any comparative measures. 
-Markers are controlled through data. Here is a sample of a bullet chart with two markers.
+Marker is an object with a specified shape, size and color or an image used to represent any comparative measures. 
+Markers are controlled through the data. You will find a plenty of examples with different types of markers below.
 
-### Type
+### Types
 
-Bullet charts have 4 types of marker: {api:anychart.enums.BulletMarkerType#BAR}*bar*{api}, {api:anychart.enums.BulletMarkerType#X}*X*{api}, {api:anychart.enums.BulletMarkerType#LINE}*line*{api}, {api:anychart.enums.BulletMarkerType#ELLIPSE}*ellipse*{api}.
+Bullet charts have 4 marker types: {api:anychart.enums.BulletMarkerType#BAR}*bar*{api}, {api:anychart.enums.BulletMarkerType#X}*X*{api}, {api:anychart.enums.BulletMarkerType#LINE}*line*{api}, {api:anychart.enums.BulletMarkerType#ELLIPSE}*ellipse*{api}. Note that the *bar* type is the same as the main bar in the Bullet Chart, so it's only three types you can really use as markers. 
 
-Here is a sample with all marker types:
+Here is the sample with all 4 marker types:
 
 {sample}BCT\_Bullet\_Chart\_07{sample}
 
-**Note:** This chart contains 3 markers in one data set. It was done for demonstration purpose. But to avoid complexity we recommend to **limit markers number to two**.
+**Note:** This chart contains all markers in one data set. It was done for demonstration purpose. It's highly recommended to **limit markers number to two** to avoid complexity.
 
 ### Style
 
-For clearer distinction between markers it is very useful to adjust style settings of markers. There are three things in a marker to control and adjust: **.fill()**, **.stroke()** and **.gap()**. Fill method is responsible for inner color of a marker, stroke is responsible for the color of a border line and gap method is responsible for the size of a marker.
+For clearer distinction between markers it is very useful to adjust style settings of markers. There are three things in a marker you can control and adjust: **.fill()**, **.stroke()** and **.gap()**. Fill method is responsible for inner color of a marker, stroke is responsible for the color of a border line and gap method is responsible for the size of a marker.
   
   
-Here is a sample of an ellipse sharped marker with blue stroke, gold inner color and a size 0.7 size of a chart. 
+Here is the sample of an ellipse sharped marker with blue stroke, gold inner color and a size 0.7 size of a chart. 
 
 ```
   var chart = anychart.bulletChart([
@@ -154,11 +154,13 @@ Here is a sample of an ellipse sharped marker with blue stroke, gold inner color
   ])
 ```
 
+**Note:** The **.gap()** value represents the distance from the border of the chart to the marker's border, not the exact size of the marker. So, the more this value is, the less is the diameter of the ellipse (the line's or rectangular's height).
+
 {sample}BCT\_Bullet\_Chart\_08{sample}
 
 ## Colors
 
-Bullet Chart ranges use variables of color intensity rather than of hue. Ranges color are controlled using {api:anychart.charts.Bullet#rangePalette}**.rangePalette()**{api} method:
+Bullet Chart ranges use variables of color intensity rather than of hue. Ranges' colors are controlled using {api:anychart.charts.Bullet#rangePalette}**.rangePalette()**{api} method:
 
 ```
   chart.rangePalette([

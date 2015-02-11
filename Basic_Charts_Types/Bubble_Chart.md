@@ -30,7 +30,7 @@ Because they allow visual comparisons of well-understood measures, bubble charts
 
 ## Chart
 
-Depending on data model and the visualization purpose the bar chart may contain single series or multi series. As 
+Depending on data model and the visualization purpose the bar chart may contain single or several series. As 
 bubble chart need 3 values to show bubbles - you need to pass this data to chart. Here are two samples of data formatting:
 
   
@@ -46,7 +46,7 @@ When using Bubble chart on a categorized plot:
     ['December', 6, 17]
 ```
 
-### Single Series
+### Single-Series
 
 Let's see single series bubble chart created using the sample data - ACME Corp. sales data for the three different 
 products, we will compare a number of units sold and profit using a bubble chart:
@@ -173,7 +173,7 @@ Note: this size setting type (in pixels) may lead to the nasty results when char
 
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. You can find more information about Axis in
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings, etc. You can find more information about axes in
 [Axis Basics](../Axes_and_Grids/Axis_Basics) tutorial.
   
 In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
@@ -333,6 +333,6 @@ Advanced coloring techniques in Styles tutorial
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
 To see whole range of available hatch types see [Hatch Fill](../Appearance_Settings/Hatch_Fill) tutorial.
   
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart a with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We've got a chart a with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
 
 {sample}BCT\_Bubble\_Chart\_12{sample}

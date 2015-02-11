@@ -31,9 +31,9 @@ Think of using a bar chart when:
 
 ## Chart
 
-Depending on the data model and visualization purpose the bar chart may be single or multi-series.
+Depending on the data model and visualization purpose the bar chart may be single- or multi-series.
 
-### Single Series
+### Single-Series
 
 Let's see single series bar chart created using the following data - sales of ACME Corp. made through different retail channels in one year:
 
@@ -148,11 +148,11 @@ As we now have multi-series chart we don't want to set **type** for each series 
 
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} method.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
 
 
 Position depends on plot type and inversion of axes, you will find the list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) templates.
@@ -178,7 +178,7 @@ AnyChart allows to invert any axis: Y, X or any extra. Inversion is controlled b
 
 ### Minimum and Maximum
 
-AnyChart calculates axis minimum and maximum automatically. You can see this on the scale inversion chart sample above: the minimal value on the Y Axis is 0.0, and the maximum is 800.000. You can control these values by setting **.maximum()** and **.minimum()**.:
+AnyChart calculates axis minimum and maximum automatically. You can see this on the scale inversion chart sample above: the minimal value of the Y-Axis is 0.0, and the maximum is 800.000. You can control these values by setting **.maximum()** and **.minimum()**.:
 
 ```
     chart.yScale().minimum('-200000').maximum('800000')
@@ -204,7 +204,7 @@ Here is a sample of multi-series bar chart with **xPointPosition** set to 0.5.
 
 In this section we will describe the main elements of a bar chart style and demonstrate how a style can be applied.
 
-The main idea of styles is to segregate visualization and data definition. Visual appearance of bars is defined using certain styles and then you just apply the style to the certain data elements. Style can be applied to a data series or a single bar.
+The main idea of styles is to segregate visualization and data definition. Visual appearance of bars is defined using certain styles and then you just apply the style to the certain data elements. The style can be applied to a data series or a single bar.
 
 On the image below you can see what a bar_style consists of: a variety of fill types, border and effects applied to whole bar.
 
@@ -238,8 +238,7 @@ In this section we will explain how to add and configure data labels and tooltip
 If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
 
 With the following example let's make data labels appear to the right from the bars, format them to show only the value corresponding to the bar and force tooltips to show detailed description.
-  
-  
+    
 When formatting data labels' text we use {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter**{api} to choose the column we need to get information from.
 
 {sample}BCT\_BarChart\_07{sample}
@@ -253,8 +252,7 @@ Full Keywords reference and formatting guide: Labels and tooltips
 ## Markers
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including bars.
-  
-  
+    
 In the sample below we take single-series data described above and mark the biggest bar in series with a **"Star5"** of the **"Gold"** color.
   
 To make the marker more visually appealing we set its size to 12px.
@@ -263,13 +261,13 @@ To make the marker more visually appealing we set its size to 12px.
     {x: 'Men\'s/Women\'s Specialty Stores', value: 148662, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}}
 ```
 
-And here is a result - the best retail channel for ACME Corp. is Discount Stores and can be easily seen on this chart
+And here is a result - the best retail channel for ACME Corp. is Discount Stores and can be easily seen on this chart.
 
 {sample}BCT\_BarChart\_08{sample}
 
 ## Colors
 
-AnyChart uses default color palette to colorize data elements of chart automatically if you have not define special colors.
+AnyChart uses default color palette to colorize data elements of chart automatically if you have not defined special colors.
 
 ### Colorizing Elements
 
