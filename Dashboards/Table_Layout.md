@@ -105,9 +105,9 @@ Sample below demonstrates setting gray stroke for the whole chart, set thickness
 ```
   //set style
   table.cellBorder(
-    '#B8B8B8',  // Color
-    1,          // Thickness
-    '5 2'       // Dash and gap length
+    '#B8B8B8',          // Color
+    1,                  // Thickness
+    '5 2'               // Dash and gap length
   );
   
   // get cell from the second column and second row
