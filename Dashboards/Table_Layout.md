@@ -149,7 +149,7 @@ Sample below demonstrates controlling text settings and using padding
     .hAlign('right')      // set horizontal align of the text
     .fontWeight(600)      // set text font weight
     .fontSize(12)         // set text font size
-    .fontColor('red');    // set text font color
+    .fontColor('#86cf38');// set text font color
 ```
 
 {sample :width 690 :height 200}Table\_Layout\_05{sample}
