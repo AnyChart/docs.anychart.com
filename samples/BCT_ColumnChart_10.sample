@@ -25,29 +25,29 @@ anychart.onDocumentReady(function() {
       //set chart legend settings
     chart.legend().enabled(true);
 
-    // set first series data and color
+     // set first series data and color
     series1 = chart.column(dataMap1);
-    series1.fill('#4A55C7');
+    series1.fill('#3333FF');
     series1.name('John');
 
     // set second series data and color
     series2 = chart.column(dataMap2);
-    series2.fill('#5EBD9B');
+    series2.fill('#660099');
     series2.name('Jake');
 
     // set third series data and color
     series3 = chart.column(dataMap3);
-    series3.fill('#B04A8A');
+    series3.fill('#CC6600');
     series3.name('Peter');
 
     // set forth series data and color
     series4 = chart.column(dataMap4);
-    series4.fill('#C7894A');
+    series4.fill('#FFCC33');
     series4.name('James');
 
     // set fifth series data and color
     series5 = chart.column(dataMap5);
-    series5.fill('#BCBD46');
+    series5.fill('#00aa00');
     series5.name('Mary');
 
     // draw

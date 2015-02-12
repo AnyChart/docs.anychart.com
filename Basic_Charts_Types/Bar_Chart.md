@@ -210,7 +210,7 @@ On the image below you can see what a bar_style consists of: a variety of fill t
 
 ![](http://www.anychart.com/products/anychart/docs/users-guide/img/horz_bar_style_diagram.jpg)
 
-Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when dragging the mouse, etc.
+Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when hovered, etc.
 
 ### Basic Sample
 
@@ -225,7 +225,7 @@ Now, let's look how to apply a simple style to the chart. As we've already said,
         .hoverHatchFill('diagonalbrick', 'darkred');
 ```
 
-Using such settings we've created a style that colors bars in Gold, makes the border rather thick, fills hatch with DiagonalBrick and a couple of effects. Also, we've defined that when user drags a mouse cursor over an element it will be highlighted with the dark red thick border and hatch fill colored dark red too.
+Using such settings we've created a style that colors bars in Gold, makes the border rather thick, fills hatch with DiagonalBrick and a couple of effects. Also, we've defined that when the element is hovered it will be highlighted with the dark red thick border and hatch fill colored dark red too.
 
 Now let's apply these setting to the sample shown above.
 

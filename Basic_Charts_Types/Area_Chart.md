@@ -232,7 +232,7 @@ Now, let's look how to change the look of an Area.  Here is a basic sample:
         .hoverHatchFill('diagonalbrick', 'black');
 ```
 
-Using such settings we've created a look with area colored in Gold, rather thick border line, hatch filled with DiagonalBrick. Also, we've defined that when user drags a mouse over the chart it's hatch will be highlighted with black and the chart will be filled with dark red.
+Using such settings we've created a look with area colored in Gold, rather thick border line, hatch filled with DiagonalBrick. Also, we've defined that when the area is hovered it's hatch will be highlighted with black and the chart will be filled with dark red.
 
 Now let's apply this style to the chart:
 

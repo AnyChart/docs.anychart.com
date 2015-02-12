@@ -31,11 +31,11 @@ anychart.onDocumentReady(function() {
             .interval(1);
 
     // set series data, adjust color and position
-    chart.candlestick(seriesData_1).xPointPosition(0.5).pointWidth('60%').color('#BCBD46');
-    chart.candlestick(seriesData_2).xPointPosition(0.5).pointWidth('60%').color('#C7894A');
-    chart.candlestick(seriesData_3).xPointPosition(0.5).pointWidth('60%').color('#B04A8A');
-    chart.candlestick(seriesData_4).xPointPosition(0.5).pointWidth('60%').color('#5EBD9B');
-    chart.candlestick(seriesData_5).xPointPosition(0.5).pointWidth('60%').color('#4A55C7');
+    chart.candlestick(seriesData_1).xPointPosition(0.5).pointWidth('60%').color('#3333FF');
+    chart.candlestick(seriesData_2).xPointPosition(0.5).pointWidth('60%').color('#660099');
+    chart.candlestick(seriesData_3).xPointPosition(0.5).pointWidth('60%').color('#CC6600');
+    chart.candlestick(seriesData_4).xPointPosition(0.5).pointWidth('60%').color('#FFCC33');
+    chart.candlestick(seriesData_5).xPointPosition(0.5).pointWidth('60%').color('#00aa00');
 
     // draw
     chart.container('container').draw();

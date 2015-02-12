@@ -19,16 +19,13 @@
 
 ## Overview
 
-Data that is arranged in columns or rows on a worksheet can be plotted in a line chart. Line charts can display continuous data over time, set against a common scale, and are therefore ideal for showing trends in data at equal intervals. In a line chart, category data is distributed evenly along the horizontal axis, and all value data is distributed evenly along the vertical axis.
+Data that is arranged in columns or rows on a worksheet can be plotted in a line chart. Line charts display continuous data over time, set against a common scale, and are therefore ideal for showing trends in data at equal intervals. In a line chart, categories are situated along the horizontal axis, and all value data is distributed along the vertical axis.  
   
+It's better to use a line chart if your category labels are textual and if they represent evenly spaced values such as months, quarters, or fiscal years.  
   
-You should use a line chart if your category labels are text, and are representing evenly spaced values such as months, quarters, or fiscal years. You should also use a line chart if you have a few evenly spaced numerical labels, especially years.
-  
-  
-[Line](#single_series_line_chart) and [line with markers](#markers) Displayed with or without markers to indicate individual data values, line charts are useful to show trends over time or ordered categories, especially when there are many data points and the order in which they are presented is important. If there are many categories or the values are approximate, you should use a line chart without markers.
-  
-  
-Stacked line and stacked line with markers Displayed with or without markers to indicate individual data values, stacked line charts are useful to show the trend of the contribution of each value over time or ordered categories. If there are many categories or the values are approximate, you should use a stacked line chart without markers.
+Displayed with or without markers to indicate individual data values, line charts are useful to show trends over time or ordered categories, especially when there are many data points and the order in which they are presented is important. If there are many categories or the values are approximate, you should use a line chart without markers.
+    
+Displayed with or without markers to indicate individual data values, stacked line charts are useful to show the trend of the contribution of each value over time or ordered categories. If there are many categories or the values are approximate, you should use a stacked line chart without markers.
   
   
 **Tip:** For a better presentation of this type of data, you may want to consider using a [stacked area](Stacked_Area-SplineArea_Charts) chart instead.

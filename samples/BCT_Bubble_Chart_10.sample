@@ -27,31 +27,31 @@ anychart.onDocumentReady(function() {
     series = chart.bubble(seriesData_1)
         .minimumSize(10)
         .maximumSize(30)
-        .fill('#4A55C7');
+        .fill('#3333FF');
 
     // set second series data and adjust color
     series = chart.bubble(seriesData_2)
         .minimumSize(10)
         .maximumSize(30)
-        .fill('#5EBD9B');
+        .fill('#660099');
 
     // set third series data and adjust color
     series = chart.bubble(seriesData_3)
         .minimumSize(10)
         .maximumSize(30)
-        .fill('#B04A8A');
+        .fill('#CC6600');
 
     // set forth series data and adjust color
     series = chart.bubble(seriesData_4)
         .minimumSize(10)
         .maximumSize(30)
-        .fill('#C7894A');
+        .fill('#FFCC33');
 
     // set forth series data and adjust color
     series = chart.bubble(seriesData_5)
         .minimumSize(10)
         .maximumSize(30)
-        .fill('#BCBD46');
+        .fill('#00aa00');
 
     // draw chart
     chart.container('container').draw();
