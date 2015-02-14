@@ -40,6 +40,11 @@ anychart.onDocumentReady(function() {
         }
       }],
 
+      // y scale settings
+      "yScale": {
+        "inverted": true
+      },
+
       // chart container
       "container": "container"
     }
