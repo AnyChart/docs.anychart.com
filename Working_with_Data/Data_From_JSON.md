@@ -2,26 +2,18 @@
 # Getting Data from JSON
 
 * [Overview](#overview)
-* [Multiple Series](#multiple_series)
-* [Axis](#axis)
- * [Orientation](#orientation)
- * [Inversion](#inversion)
- * [Logarithmic Scale](#logarithmic_scale)
-* [Visualization](#visualization)
- * [Markers](#markers)
- * [Colors](#colors)
- * [Coloring Series](#coloring_series)
- * [Coloring Elements](#coloring_elements)
-* [Hatch Fills](#hatch_fills)
-* [Advanced Settings](#advanced_settings)
-* [Supported Chart Types](#supported_chart_types)
+* [JSON vs JavaScript](#json_vs_javascript)
+* [Samples](#samples)
+ * [Data Sets](#data_sets)
+ * [CSV Data](#csv_data)
+* [Settings](#settings)
+ * [Axes](#axes)
+ * [Visualisation](#visualisation)
+ * [Complex](#complex)
 
 ## Overview
 
-AnyChart supports several ways of setting data. This article shows all aspects of using JSON format for AnyChart component. For the information on other ways of setting data see [Using Data Sets](Using_Data_Sets) and [Data From XML](Data_From_XML) articles.
-
-
-This article quickly demonstrates main aspects of JSON and last sample of this article demonstrates cartesian chart advanced settings.
+AnyChart supports several ways of setting data. This article quickly demonstrates main aspects of using JSON format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [Using Data Sets](Using_Data_Sets) and [Data From XML](Data_From_XML) articles.
 
 ## JSON vs JavaScript
 
