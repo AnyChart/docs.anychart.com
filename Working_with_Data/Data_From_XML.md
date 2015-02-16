@@ -2,19 +2,12 @@
 # Getting Data from XML
 
 * [Overview](#overview)
-* [Multiple Series](#multiple_series)
-* [Axis](#axis)
- * [Orientation](#orientation)
- * [Inversion](#inversion)
- * [Logarithmic Scale](#logarithmic_scale)
-* [Visualization](#visualization)
- * [Markers](#markers)
- * [Colors](#colors)
- * [Coloring Series](#coloring_series)
- * [Coloring Elements](#coloring_elements)
-* [Hatch Fills](#hatch_fills)
-* [Advanced Settings](#advanced_settings)
-* [Supported Chart Types](#supported_chart_types)
+* [JSON vs JavaScript](#json_vs_javascript)
+* [Data Sets](#data_sets)
+* [Settings](#settings)
+ * [Axes](#axes)
+ * [Visualisation](#visualisation)
+ * [Complex](#complex)
 
 ## Overview
 
@@ -22,13 +15,13 @@ AnyChart supports several ways of setting data. This article quickly demonstrate
 
 ## XML vs JavaScript
 
-AnyChart provides {api:anychart#fromXml}**.fromXML()**{api} for using data in XML format. Snippet below represent simple instance of setting data in XML format
+AnyChart provides {api:anychart#fromXml}**.fromXML()**{api} parameter for using data in XML format. Snippet below represent simple instance of setting data in XML format
 
 ```
   var chart = anychart.fromXML(/*put your XML data in here*/);
 
-  // set container and draw chart
-  chart.container('container').draw();
+  // draw chart
+  chart.draw();
 ```
 
 Setting data using XML format is very similar to the way of setting data in JavaScript. The name of each tag in XML config corresponds to the name of a method and names of parameters for tags correspond to parameter in JS.
@@ -59,9 +52,7 @@ Setting data using XML format is very similar to the way of setting data in Java
 
 **Note:** Use {api:anychart}AnyChart API{api} to adjust any parameter of a chart. XML config uses the same names as methods and parameters do and it is quite easy to set any required parameter with XML data set.
 
-## Samples
-
-### Data Sets
+## Data Sets
 
 XML data set can contain one or several series. Sample below demonstrates chart with several series from XML.
 
