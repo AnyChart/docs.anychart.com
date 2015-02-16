@@ -7,13 +7,24 @@ anychart.onDocumentReady(function() {
   // xml data
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
   '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
-    // set chart type and chart container
-    '<chart type="column" container="container">' +
-      // series for this chart
+    // set chart type, title and chart container
+    '<chart type="column" container="container" title="XML Scale Inversion">' +
+      // x axes setting
+      '<x_axes>'+
+        // adjust default x axis
+        '<axis orientation="top" title="false"/>'+
+      '</x_axes>'+
+      // y axes settings
+      '<y_axes>' +
+        // adjust default y axis
+        '<axis orientation="right" title="false"/>'+
+      '</y_axes>'+
+      // y scale setting
+      '<y_scale inverted="true"/>'+
+      // series settings
       '<series_list>'+
-        // series settings
         '<series>' +
-          // data for first series
+          // data set
           '<data>' +
             '<point x="P1" value="128.14"/>'+
             '<point x="P2" value="112.61"/>'+
@@ -22,21 +33,11 @@ anychart.onDocumentReady(function() {
             '<point x="P5" value="90.54"/>'+
           '</data>'+
         '</series>'+
-        '<series>' +
-          // data for second series
-          '<data>' +
-            '<point x="P1" value="90.54"/>'+
-            '<point x="P2" value="104.19"/>'+
-            '<point x="P3" value="150.67"/>'+
-            '<point x="P4" value="120.43"/>'+
-            '<point x="P5" value="200.34"/>'+
-          '</data>'+
-        '</series>'+
       '</series_list>'+
     '</chart>'+
   '</anychart>';
 
-  // get JSON data
+  // get XML data
   var chart = anychart.fromXml(xml);
 
   // draw chart
