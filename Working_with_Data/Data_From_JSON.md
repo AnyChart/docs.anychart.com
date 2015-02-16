@@ -17,13 +17,13 @@ AnyChart supports several ways of setting data. This article quickly demonstrate
 
 ## JSON vs JavaScript
 
-AnyChart provides {api:anychart#fromJson}**.fromJSON()**{api} for using data in JSON format. Snippet below represent simple instance of getting data from JSON format.
+AnyChart provides {api:anychart#fromJson}**.fromJSON()**{api} parameter for using data in JSON format. Snippet below represent simple instance of getting data from JSON format.
 
 ```
   var chart = anychart.fromJSON(/*put your JSON data in here*/);
 
-  // set container and draw chart
-  chart.container('container').draw();
+  // draw chart
+  chart.draw();
 ```
 
 Setting data using JSON format is very similar to the way of setting data in JavaScript. The name of every object in JSON config corresponds to the name of a method or parameter in JS.
@@ -87,7 +87,7 @@ JSON data set can contain one or several series. Sample below demonstrates chart
 
 ### CSV Data
 
-CSV format is easiest way to create data set. Here is a sample of CSV data set.
+CSV format is the easiest way to create plain data set. Here is a sample of CSV data set.
 
 ```
   // csv data set
@@ -106,11 +106,34 @@ CSV format is easiest way to create data set. Here is a sample of CSV data set.
 
 Data from JSON can contain all possible settings for controlling chart grid, axis line along with tick marks and labels, axis scale and other visual appearance settings. Sample below demonstrates setting axes names and adjusting scales orientation.
 
+```
+  // x axes settings
+  "xAxes": [{               // settings for default x axis
+    "orientation": "top",   // set axis position
+    "title":{               // settings for axis title
+      "enabled": false      // disable title
+    }
+  }],
+
+  // y axes settings
+  "yAxes": [{               // settings for default y axis
+    "orientation": "right", // set axis position
+    "title":{               // settings for axis title
+      "enabled": false      // disable title
+    }
+  }],
+
+  // y scale settings
+  "yScale": {
+    "inverted": true        // enable y scale inversion
+  }
+```
+
 {sample}WD\_Data\_from\_JSON\_03{sample}
 
 ### Visualisation
 
-Visual settings can be vital for a chart. JSON can contain almost any method and parameter for adjusting visual settings.
+Visual settings are vital for a chart. JSON can control any method and parameter of a chart to configure desirable chart appearance.
 
 ```
   "fill":"gold",
