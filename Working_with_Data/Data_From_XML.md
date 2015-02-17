@@ -15,41 +15,25 @@ AnyChart supports several ways of setting data. This article quickly demonstrate
 
 ## XML vs JavaScript
 
-AnyChart provides {api:anychart#fromXml}**.fromXML()**{api} parameter for using data in XML format. Snippet below represent simple instance of setting data in XML format
-
-```
-  var chart = anychart.fromXML(/*put your XML data in here*/);
-
-  // draw chart
-  chart.draw();
-```
-
-Setting data using XML format is very similar to the way of setting data in JavaScript. The name of each tag in XML config corresponds to the name of a method and names of parameters for tags correspond to parameter in JS.
+AnyChart provides {api:anychart#fromXml}**.fromXML()**{api} parameter for using data in XML format. Setting data using XML format is very similar to the way of setting data in JavaScript. The name of each tag in XML config corresponds to the name of a method and names of parameters for tags correspond to parameter in JS. Snippet below shows a samepl of setting data in XML format
 
 ```
   // xml data
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
     '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
-      // set chart type and chart container
-      '<chart type="scatter" container="container">' +
-        // series for this chart
-        '<series_list>'+
-          // series settings
-          '<series series_type="">' +
-            // data set
-            '<data>' +
-              '<point x=1 value=128.14/>'+
-              '<point x=2 value=112.61/>'+
-              '<point x=3 value=163.21/>'+
-              '<point x=4 value=229.98/>'+
-              '<point x=5 value=90.54/>'+
-              '<point x=6 value=170.90/>'+
-              '<point x=7 value=153.78/>'+
-            '</data>'+
-          '</series>'+
-        '</series_list>'+
+      '<chart type="pie" container="container" title="XML Sample Pie">' +
+         '<data>' +
+              '<point name="Apples" value="128.14" fill="Green"/>'+
+              '<point name="Oranges" value="128.14" fill="Orange"/>'+
+        '</data>'+
       '</chart>'+
     '</anychart>';
+
+  // set XML data to the chart
+  var chart = anychart.fromXml(xml);
+
+  // draw chart
+  chart.draw();
 ```
 
 {sample}WD\_Data\_from\_XML\_01{sample}
@@ -61,27 +45,27 @@ Setting data using XML format is very similar to the way of setting data in Java
 XML data set can contain one or several series. Sample below demonstrates chart with several series from XML.
 
 ```
-  // series for this chart
-  '<series_list>'+
-    // series settings
-    '<series series_type="line">' +
-      // data set
-      '<data>' +
-        '<point x="0" value="0"/>'+
-        '<point x="50" value="100"/>'+
-        '<point x="100" value="0"/>'+
-      '</data>'+
-    '</series>'+
-    // second series set
-    '<series series_type="line" stroke="red">' +
-      // data set
-      '<data>' +
-        '<point x="50" value="0"/>'+
-        '<point x="100" value="100"/>'+
-        '<point x="50" value="0"/>'+
-      '</data>'+
-    '</series>'+
-  '</series_list>'
+  <!-- series for this chart -->
+  <series_list>
+    <!-- series settings -->
+    <series series_type="line">
+      <!-- data set -->
+      <data>
+        <point x="0" value="0"/>
+        <point x="50" value="100"/>
+        <point x="100" value="0"/>
+      </data>
+    </series>
+  <!-- second series set -->
+    <series series_type="line" stroke="red">
+      <!-- data set -->
+      <data>
+        <point x="50" value="0"/>
+        <point x="100" value="100"/>
+        <point x="50" value="0"/>
+      </data>
+    </series>
+  </series_list>
 ```
 
 {sample}WD\_Data\_from\_XML\_02{sample}
