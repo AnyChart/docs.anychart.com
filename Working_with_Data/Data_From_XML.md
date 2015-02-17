@@ -53,7 +53,6 @@ Setting data using XML format is very similar to the way of setting data in Java
 ```
 
 {sample}WD\_Data\_from\_XML\_01{sample}
-<!-- Set scatter chart with single series here-->
 
 **Note:** Use {api:anychart}AnyChart API{api} to adjust any parameter of a chart. XML config uses the same names as methods and parameters do and it is quite easy to set any required parameter with XML data set. Also, XML uses snakeCase for names of tags and parameters and names of methods and parameters have to be transformed from camelCase to snakeCase. It requires to replace every capital letter with small letter and set underscore before this letter (e.g. hatch fill can be set with JS using "hatchFill" parameter and with XML using "hatch_fill" parameter).
 
