@@ -2,9 +2,9 @@
 
 * [Columns](#columns)
  * [Columns Set](#columns_set)
- * [Column Title](#column_title)
- * [Column Content](#column_content)
- * [Column Width](#column_width)
+ * [Title](#title)
+ * [Content](#content)
+ * [Width](#width)
 * [Visual Settings](#visual_settings)
  * [Interlaced mode](#interlaced_mode)
 * [General Settings](#general_settings)
@@ -20,7 +20,7 @@
 By default, Gantt Chart displays two columns: rows counts and names of Gantt elements (tasks or resources).
 {sample :width 710 :height 190}GANTT\_Basic\_Sample{sample}
 
-<br>Also you can <b>add</b> new column using the {api:anychart.core.ui.DataGrid#column}**.column()**{api} method:
+<br>The <b>set of columns</b> is set and defined using the {api:anychart.core.ui.DataGrid#column}**.column()**{api} method:
 
 ```
 //create new column contains names
@@ -29,12 +29,20 @@ dataGrid.column(4).width(100).textFormatter(function(item) {
   }).title().text('Resources');
 ```
 
-<br>For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the <b>Content</b> topic.
+Just see simple code below. You can create new columns using this method and their ids can assume different values that do not have to be consecutive.
+```
+//this code in fact creates only two columns
+var firstColumn = dataGrid.column(10);
+
+var secondColumn = dataGrid.column(20);
+```
+
+<br>For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the [Content](DataGrid#content) topic.
 
 <br> The sample below shows Resource Gantt Chart, note that the third column is created to display the start data value.
 {sample :width 710 :height 190}GANTT\_Chart\_10{sample}
 
-<br>The same for Project Gantt Chart. The next sample shows the datagrid with the actual start and actual end values.
+<br>The same for Project Gantt Chart. The next sample shows the data grid with the actual start and actual end values.
 {sample :width 710 :height 200}GANTT\_Chart\_11{sample}
 
 <br>You can create and display custom fields in data items:
@@ -47,7 +55,7 @@ dataGrid.column(4).width(100).textFormatter(function(item) {
 ```
 <br>{sample :width 710 :height 180}GANTT\_Chart\_12{sample}
 
-### Column Title
+### Title
 
 Each column has its own title, so it is possible to tune the visual appearance of data grid headers, e.g. set the custom title value:
 
@@ -58,7 +66,7 @@ title.fontWeight('bold').fontStyle('italic');
 title.hAlign('left');
 ```
 
-### Column Content
+### Content
 
 Column content can be tuned as well as its title with the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method. It used to define a cell text value formatter, so you can pass your own custom function as an argument.
 ```
@@ -85,7 +93,7 @@ function customColumnTextFormatter(item)
 }
 ```
 
-### Column Width
+### Width
 
 You should use the <b>.width()</b> method for customizing the column width.
 
@@ -93,6 +101,8 @@ You should use the <b>.width()</b> method for customizing the column width.
 //set column width to 30
 dataGrid.column(0).width(30);
 ```
+
+Also you can configure your Gantt Charts by simply dragging and dropping data grid splitter.
 
 ## Visual Settings
 
