@@ -44,7 +44,7 @@ AnyChart provides {api:anychart#fromXml}**.fromXML()**{api} parameter for using 
 
 XML data set can contain one or several series. Sample below demonstrates chart with several series from XML.
 
-```
+```xml
   <!-- series for this chart -->
   <series_list>
     <!-- series settings -->
