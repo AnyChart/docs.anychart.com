@@ -7,30 +7,17 @@ anychart.onDocumentReady(function() {
   // xml data
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
     '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
-      // set chart type and chart container
-      '<chart type="scatter" container="container">' +
-        // series for this chart
-        '<series_list>'+
-          // series settings
-          '<series series_type="line">' +
-            // data set
-            '<data>' +
-              '<point x="1" value="128.14"/>'+
-              '<point x="2" value="112.61"/>'+
-              '<point x="3" value="163.21"/>'+
-              '<point x="4" value="229.98"/>'+
-              '<point x="5" value="90.54"/>'+
-              '<point x="6" value="170.90"/>'+
-              '<point x="7" value="153.78"/>'+
-            '</data>'+
-          '</series>'+
-        '</series_list>'+
+      '<chart type="pie" container="container" title="XML Sample Pie">' +
+         '<data>' +
+              '<point name="Apples" value="128.14" fill="Green"/>'+
+              '<point name="Oranges" value="128.14" fill="Orange"/>'+
+        '</data>'+
       '</chart>'+
     '</anychart>';
-  
-  // get XML data
+
+  // set XML data to the chart
   var chart = anychart.fromXml(xml);
-  
+
   // draw chart
   chart.draw();
 });
