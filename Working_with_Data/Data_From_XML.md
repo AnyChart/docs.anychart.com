@@ -31,18 +31,20 @@ Setting data using XML format is very similar to the way of setting data in Java
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
     '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
       // set chart type and chart container
-      '<chart type="column" container="container">' +
+      '<chart type="scatter" container="container">' +
         // series for this chart
         '<series_list>'+
           // series settings
-          '<series>' +
+          '<series series_type="">' +
             // data set
             '<data>' +
-              '<point x="P1" value="128.14"/>'+
-              '<point x="P2" value="112.61"/>'+
-              '<point x="P3" value="163.21"/>'+
-              '<point x="P4" value="229.98"/>'+
-              '<point x="P5" value="90.54"/>'+
+              '<point x=1 value=128.14/>'+
+              '<point x=2 value=112.61/>'+
+              '<point x=3 value=163.21/>'+
+              '<point x=4 value=229.98/>'+
+              '<point x=5 value=90.54/>'+
+              '<point x=6 value=170.90/>'+
+              '<point x=7 value=153.78/>'+
             '</data>'+
           '</series>'+
         '</series_list>'+
@@ -50,6 +52,7 @@ Setting data using XML format is very similar to the way of setting data in Java
     '</anychart>';
 ```
 
+{sample}WD\_Data\_from\_XML\_01{sample}
 <!-- Set scatter chart with single series here-->
 
 **Note:** Use {api:anychart}AnyChart API{api} to adjust any parameter of a chart. XML config uses the same names as methods and parameters do and it is quite easy to set any required parameter with XML data set. Also, XML uses snakeCase for names of tags and parameters and names of methods and parameters have to be transformed from camelCase to snakeCase. It requires to replace every capital letter with small letter and set underscore before this letter (e.g. hatch fill can be set with JS using "hatchFill" parameter and with XML using "hatch_fill" parameter).
@@ -59,33 +62,30 @@ Setting data using XML format is very similar to the way of setting data in Java
 XML data set can contain one or several series. Sample below demonstrates chart with several series from XML.
 
 ```
-  // list of series for this chart
+  // series for this chart
   '<series_list>'+
     // series settings
-    '<series>' +
-      // data for first series
+    '<series series_type="line">' +
+      // data set
       '<data>' +
-        '<point x="P1" value="128.14"/>'+
-        '<point x="P2" value="112.61"/>'+
-        '<point x="P3" value="163.21"/>'+
-        '<point x="P4" value="229.98"/>'+
-        '<point x="P5" value="90.54"/>'+
+        '<point x="0" value="0"/>'+
+        '<point x="50" value="100"/>'+
+        '<point x="100" value="0"/>'+
       '</data>'+
     '</series>'+
-    '<series>' +
-      // data for second series
+    // second series set
+    '<series series_type="line" stroke="red">' +
+      // data set
       '<data>' +
-        '<point x="P1" value="90.54"/>'+
-        '<point x="P2" value="104.19"/>'+
-        '<point x="P3" value="150.67"/>'+
-        '<point x="P4" value="120.43"/>'+
-        '<point x="P5" value="200.34"/>'+
+        '<point x="50" value="0"/>'+
+        '<point x="100" value="100"/>'+
+        '<point x="50" value="0"/>'+
       '</data>'+
     '</series>'+
   '</series_list>'
 ```
 
-{sample}WD\_Data\_from\_XML\_01{sample}<!--replace with polar chart-->
+{sample}WD\_Data\_from\_XML\_02{sample}
 
 ## Settings
 
@@ -93,7 +93,7 @@ XML data set can contain one or several series. Sample below demonstrates chart 
 
 Data from XML can contain all possible settings for controlling chart grid, axis line along with tick marks and labels, axis scale and other visual appearance settings. Sample below demonstrates setting axes names and adjusting scales orientation.
 
-{sample}WD\_Data\_from\_XML\_02{sample}<!--replace with -->
+{sample}WD\_Data\_from\_XML\_03{sample}
 
 ### Visualisation
 
@@ -109,7 +109,7 @@ Visual settings can be vital for a chart. XML can contain almost any method and 
   '</series>'
 ```
 
-{sample}WD\_Data\_from\_XML\_04{sample}<!--replace with radar chart-->
+{sample}WD\_Data\_from\_XML\_04{sample}
 
 ### Complex
 

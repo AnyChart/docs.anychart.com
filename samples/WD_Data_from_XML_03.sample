@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
   '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
     // set chart type, title and chart container
-    '<chart type="column" container="container" title="XML Axes Settings">' +
+    '<chart type="column" container="container" title="XML Scale Inversion">' +
       // x axes setting
       '<x_axes>'+
         // adjust default x axis
@@ -19,9 +19,10 @@ anychart.onDocumentReady(function() {
         // adjust default y axis
         '<axis orientation="right" title="false"/>'+
       '</y_axes>'+
-      // series for the chart
+      // y scale setting
+      '<y_scale inverted="true"/>'+
+      // series settings
       '<series_list>'+
-        // series settings
         '<series>' +
           // data set
           '<data>' +
