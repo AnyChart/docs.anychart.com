@@ -119,7 +119,7 @@ Chart can contain any number of additional titles. These titles can be placed an
   customTitle.container(stage).draw();
 ```
 
-{sample}AS\_Titles\_05{sample}
+{sample}AS\_Titles\_06{sample}
 
 **Note:** chart elements draw in prescribed oder and we recommend to use **.draw()** method fo a custom title after drawing main chart.
 
