@@ -6,11 +6,11 @@
 * [Visualization]
  * [Position]
  * [Background]
- * [Font Settings]
+<!-- * [Font Settings]-->
+* [HTML in text]
 * [Additional Titles]
 * [Adding Links to Chart Titles]
 * [Adding Actions to Chart Titles]
-* [HTML in text]
 <!--* [Keywords Reference]-->
 
 
@@ -59,14 +59,70 @@ Title can be placed anywhere on the chart plot. Parameter {api:anychart.core.ui.
   chart.title().orientation('bottom');
 ```
 
+{sample}AS\_Titles\_03{sample}
+
 ### Background 
 
-You can tune background of a title. Use **.background()** method to configure  node and set enabled="True", in <background> node you can also configure borders, effects, corners, etc. as described in Background tutorial, in this section we will quickly demonstrate the use of background with chart titles.
+You can tune background of a title. Use {api:anychart.core.ui.Title#background}**.background()**{api} method to configure visual appearance of a background. Full information on adjusting background can be found in [Background](./Background) article.
 
+{sample}AS\_Titles\_04{sample}
+<!--
+### Text Settings
+
+Text is the main part of title itself. Text appearance can be tuned using {api:anychart.graphics.vector.Text}**.text()**{api} method.
+
+```
+  // tune text
+  chart.title().text()
+    .fontSize(12)             // set font size
+    .decoration('underline')  // underline text
+    .fontFamily('Tahoma');    // set font family
+```
+-->
+
+## HTML in Title
+
+You can use HTML formatted **.text()** parameter. Use **.useHtml()** parameter to enable HTML tags in title.
+
+```
+  chart.title()
+      .useHtml(true)      //enables HTML tags
+      .text(
+      'Sales Performance'+
+      '<br><a style="color:#0000FF; font-size: 10px;">'+
+      'according to annual report</a>'
+    );
+```
+
+{sample}AS\_Titles\_05{sample}
 
 ## Additional Titles
 
-Chart can contain any number of additional titles. These titles can be placed anywhere on chart plot.
+Chart can contain any number of additional titles. These titles can be placed anywhere on the plot.
+
+```
+  // create additional title
+  var customTitle = anychart.ui.title();
+  customTitle
+    .text('according to annual report') // set title text
+    .orientation('bottom')              // place title at the bottom
+    .align('right')                     // stick text to the right side
+    .fontSize(11)                       // set text size
+    .fontFamily('Tahoma')               // set font family
+    .fontWeight(400)                    // unbold title
+    .background()                       // background settings
+      .enabled(true)                    // eanble background
+      .fill(null)                       // disable fill
+      .stroke('#000000');               // set black border to title
+  
+  // set container and draw title
+  customTitle.container(stage).draw();
+```
+
+{sample}AS\_Titles\_05{sample}
+
+**Note:** chart elements draw in prescribed oder and we recommend to use **.draw()** method fo a custom title after drawing main chart.
+
 <!--
 
 Here is an example - notice that we've used some keywords ({%DataPlotYSum} to calculate all values-sales total on the plot) to create texts:
