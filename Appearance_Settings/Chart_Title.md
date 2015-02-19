@@ -9,8 +9,7 @@
 <!-- * [Font Settings]-->
 * [HTML in text]
 * [Additional Titles]
-* [Adding Links to Chart Titles]
-* [Adding Actions to Chart Titles]
+<!--* [Adding Events]-->
 <!--* [Keywords Reference]-->
 
 
@@ -111,7 +110,7 @@ Chart can contain any number of additional titles. These titles can be placed an
     .fontFamily('Tahoma')               // set font family
     .fontWeight(400)                    // unbold title
     .background()                       // background settings
-      .enabled(true)                    // eanble background
+      .enabled(true)                    // enable background
       .fill(null)                       // disable fill
       .stroke('#000000');               // set black border to title
   
@@ -122,6 +121,11 @@ Chart can contain any number of additional titles. These titles can be placed an
 {sample}AS\_Titles\_06{sample}
 
 **Note:** chart elements draw in prescribed oder and we recommend to use **.draw()** method fo a custom title after drawing main chart.
+
+<!--## Adding Events
+
+You can make your chart title interactive by adding event listeners of a different types. -->
+
 
 <!--
 
