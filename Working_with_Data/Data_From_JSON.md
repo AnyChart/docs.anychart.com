@@ -34,25 +34,44 @@ Setting data using JSON format is very similar to the way of setting data in Jav
     // chart settings
     "chart": {
       // chart type
-      "type": "column",
-      // series settings
-      "series": [{
-        // series data
-        "data": [
-          {"x": "P1", "value": "128.14"},
-          {"x": "P2", "value": "112.61"},
-          {"x": "P3", "value": "163.21"},
-          {"x": "P4", "value": "229.98"},
-          {"x": "P5", "value": "90.54"}
-        ]
-      }],
+      "type": "pie",
+      // chart data
+      "data": [
+        {"x": "Apples", "value": "128.14", fill: "green"},
+        {"x": "Oranges", "value": "128.14", fill: "orange"},
+      ],
       // chart container
       "container": "container"
     }
   };
 ```
 
-JSON format has some peculiarities. JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the JSON structure very similar to JS. To find out any of requite method or parameter use {api:anychart}API{api}. API supplies every parameter with a structure to invoke it. This structure is the same for JSON data set.
+{sample}WD\_Data\_from\_JSON\_01{sample}
+
+JSON format has some peculiarities. JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the JSON structure very similar to JS. To find out any of require method or parameter use {api:anychart}API{api}. API supplies every parameter with a structure to invoke it. This structure is the same for JSON data set. For instance, API provides {api:anychart#column}**column()**{api} method to create column chart.
+
+```
+  anychart.column(128.14, 112.61, 163.21, 229.98).container('container').draw();
+```
+
+The same chart can be created using JSON
+
+```
+  anychart.fromJson({
+      "chart": {
+        "type": "column",
+        "series":[{
+          "data": [128.14, 112.61, 163.21, 229.98],
+        }],
+        "container": "container"
+      }
+    }).draw();
+```
+
+As you can see, JSON format isn't limited only by setting chart type and data, but can set container for the chart. 
+  
+  
+Parameters of Y-Scale can be 
 
 ## Samples
 
@@ -83,7 +102,7 @@ JSON data set can contain one or several series. Sample below demonstrates chart
   }]
 ```
 
-{sample}WD\_Data\_from\_JSON\_01{sample}
+{sample}WD\_Data\_from\_JSON\_02{sample}
 
 ### CSV Data
 
@@ -98,7 +117,7 @@ CSV format is the easiest way to create plain data set. Here is a sample of CSV 
     'May, 9000\n';
 ```
 
-{sample}WD\_Data\_from\_JSON\_02{sample}
+{sample}WD\_Data\_from\_JSON\_03{sample}
 
 ## Settings
 
@@ -129,7 +148,7 @@ Data from JSON can contain all possible settings for controlling chart grid, axi
   }
 ```
 
-{sample}WD\_Data\_from\_JSON\_03{sample}
+{sample}WD\_Data\_from\_JSON\_04{sample}
 
 ### Visualisation
 
@@ -149,10 +168,10 @@ Visual settings are vital for a chart. JSON can control any method and parameter
   }
 ```
 
-{sample}WD\_Data\_from\_JSON\_04{sample}
+{sample}WD\_Data\_from\_JSON\_05{sample}
 
 ### Complex
 
 Previous samples demonstrate separate additional features. Next sample is a bit more complex. It demonstrates cartesian chart with several line series, customized axes, scales, grids and titles.
 
-{sample}WD\_Data\_from\_JSON\_05{sample}
+{sample}WD\_Data\_from\_JSON\_06{sample}

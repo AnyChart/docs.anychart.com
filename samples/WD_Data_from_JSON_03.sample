@@ -4,55 +4,26 @@
 
 anychart.onDocumentReady(function() {
 
-  // JSON data
-  var json = {
-    // chart settings
-    "chart": {
-      // chart type
-      "type": "column",
-      // chart title
-      "title": "Axes settings from JSON",
-      // series settings
-      "series": [{
-        // first series data
-        "data": [
-          {"x": "P1", "value": 128.14},
-          {"x": "P2", "value": 112.61},
-          {"x": "P3", "value": 163.21},
-          {"x": "P4", "value": 229.98},
-          {"x": "P5", "value": 90.54}
-        ]
-      }],
+  // data
+  var csvData = 'January, 10000\n'+
+    'February, 12000\n'+
+    'March, 18000\n'+
+    'April, 11000\n'+
+    'May, 9000\n';
 
-      // x axes settings
-      "xAxes": [{
-        "orientation": "top",
-        "title":{
-          "enabled": false
-        }
-      }],
+  // chart type
+  chart = anychart.lineChart();
 
-      // y axes settings
-      "yAxes": [{
-        "orientation": "right",
-        "title":{
-          "enabled": false
-        }
-      }],
+  // title
+  chart.title().text('Spline chart');
 
-      // y scale settings
-      "yScale": {
-        "inverted": true
-      },
+  // set axes titles
+  chart.xAxis().title().text('Sales');
+  chart.yAxis().title().text('Month');
 
-      // chart container
-      "container": "container"
-    }
-  };
+  // set data and define chart
+  chart.spline(csvData);
 
-  // get JSON data
-  var chart = anychart.fromJson(json);
-
-  // draw chart
-  chart.draw();
+  // draw
+  chart.container('container').draw();
 });
