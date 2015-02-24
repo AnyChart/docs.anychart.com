@@ -8,7 +8,7 @@
  * [CSV Data](#csv_data)
 * [Settings](#settings)
  * [Axes](#axes)
- * [Visualisation](#visualisation)
+ * [Visualization](#visualization)
  * [Complex](#complex)
 
 ## Overview
@@ -26,7 +26,7 @@ AnyChart provides {api:anychart#fromJson}**.fromJSON()**{api} parameter for usin
   chart.draw();
 ```
 
-Setting data using JSON format is very similar to the way of setting data in JavaScript. The name of every object in JSON config corresponds to the name of a method or parameter in JS.
+Setting data using JSON format is very similar to the way of setting data in JavaScript. The name of every object in JSON configuration corresponds to the name of a method or parameter in JS.
 
 ```
   // JSON data
@@ -53,7 +53,7 @@ Data set for pie chart
 JSON format has some peculiarities. JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the JSON structure very similar to JS. To find out any of require method or parameter use {api:anychart}API{api}. API supplies every parameter with a structure to invoke it. This structure is the same for JSON data set. For instance, API provides {api:anychart#column}**column()**{api} method to create column chart.
 
 ```
-  anychart.column(128.14, 112.61, 163.21, 229.98).container('container').draw();
+  anychart.column([128.14, 112.61, 163.21, 229.98]).container('container').draw();
 ```
 
 The same chart can be created using JSON
@@ -69,6 +69,8 @@ The same chart can be created using JSON
       }
     }).draw();
 ```
+
+**Note:** Pie chart can have only one data series, thus JSON configuration for pie chart requires no "series" object. 
 
 As you can see, JSON format isn't limited only by setting chart type and data, but can set container for the chart. 
   
@@ -95,8 +97,69 @@ The snippet below shows setting the same parameters using JSON
     }
 ```
 
-**Note:** Pie chart can have only one data series, thus JSON config for pie chart requires no "series" object. 
+As addition to the presented material, here is a table of main methods and parameters of JS data set comparing with JSON data set (full list of all the methods and parameters can be found in api).
 
+<table width="376" border="1" class="dtTABLE">
+<tbody><tr>
+<th width="100"></th>
+<th width="200"><b>JS Config</b></th>
+<th width="200"><b>JSON Config</b></th>	
+</tr>
+<tr>
+<td>Chart type</td>
+<td>
+```
+  // set chart type
+  var chart = anychart.line();
+  
+  // set series type
+  chart.spline(
+    // set series data
+    [
+      ['January', 10000],
+      ['February', 12000],
+      ['March', 18000],
+      ['April', 11000],
+      ['May', 9000]
+    ]);
+    
+    // set chart container
+    chart.container('container');
+```
+</td>
+<td>
+```
+  // set chart type
+  {chart: {type: "line",
+    
+    // set series type
+    series:[{seriesType: "spline",
+      // set series data
+      data: [
+        {x: "January", value: 10000},
+        {x: "February", value: 12000},
+        {x: "March", value: 18000},
+        {x: "April", value: 11000},
+        {x: "May", value: 9000}
+      ]}],
+    
+    // set chart container
+    "container": "container"
+  }};
+```
+</td>	
+</tr>
+<tr>
+<td>Product B </td>
+<td>72</td>
+<td>$14</td>	
+</tr>
+<tr>
+<td>Product C </td>
+<td>48</td>
+<td>$10</td>
+</tr>
+</tbody></table>
 
 ## Samples
 
@@ -175,7 +238,7 @@ Data from JSON can contain all possible settings for controlling chart grid, axi
 
 {sample}WD\_Data\_from\_JSON\_04{sample}
 
-### Visualisation
+### Visualization
 
 Visual settings are vital for a chart. JSON can control any method and parameter of a chart to configure desirable chart appearance.
 
@@ -201,5 +264,8 @@ Previous samples demonstrate separate additional features. Next sample is a bit 
 
 {sample}WD\_Data\_from\_JSON\_06{sample}
 
-## Data serialization
+## Data Serialization
 
+Predefined settings from JS format can be serialized into JSON format for the sake of convenient in future usage 
+
+**Note:** Parameters of text formatting can't be serialized and will be set by default in JSON format. 
