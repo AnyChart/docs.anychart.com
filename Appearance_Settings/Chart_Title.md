@@ -1,14 +1,14 @@
 # Titles
 
-* [Overview]
-* [Default Title]
-* [Settings Text]
-* [Visualization]
- * [Position]
- * [Background]
-<!-- * [Font Settings]-->
-* [HTML in text]
-* [Additional Titles]
+* [Overview](#overview)
+* [Default Title](#default_title)
+* [Settings Text](#settings_text)
+* [Visualization](#visualization)
+ * [Position](#position)
+ * [Background](#background)
+ * [Text Settings](#text_settings)
+* [HTML in Title](#html_in_title)
+* [Additional Titles](#additional_titles)
 <!--* [Adding Events]-->
 <!--* [Keywords Reference]-->
 
@@ -65,19 +65,19 @@ Title can be placed anywhere on the chart plot. Parameter {api:anychart.core.ui.
 You can tune background of a title. Use {api:anychart.core.ui.Title#background}**.background()**{api} method to configure visual appearance of a background. Full information on adjusting background can be found in [Background](./Background) article.
 
 {sample}AS\_Titles\_04{sample}
-<!--
+
 ### Text Settings
 
 Text is the main part of title itself. Text appearance can be tuned using {api:anychart.graphics.vector.Text}**.text()**{api} method.
 
 ```
   // tune text
-  chart.title().text()
-    .fontSize(12)             // set font size
-    .decoration('underline')  // underline text
-    .fontFamily('Tahoma');    // set font family
+  chart.title()
+    .text('Sales Performance')    // title text
+    .fontSize(12)                 // set font size
+    .fontDecoration('underline')  // underline text
+    .fontFamily('Tahoma');        // set font family
 ```
--->
 
 ## HTML in Title
 
@@ -89,7 +89,7 @@ You can use HTML formatted **.text()** parameter. Use **.useHtml()** parameter t
       .text(
       'Sales Performance'+
       '<br><a style="color:#0000FF; font-size: 10px;">'+
-      'according to annual report</a>'
+      'according to annual report</a>' С
     );
 ```
 
