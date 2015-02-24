@@ -6,16 +6,15 @@
 <!-- * [Adding "%" to axis labels](#percent)-->
 
 ## Overview
-Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts emphasize the magnitude of change over time, and can be used to draw attention to the total value across a trend.
-  
-  
-100% stacked area charts are multi series area charts that display the trend of the percentage each value contributes over time or categories.
+Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts are good at emphasizing the magnitude of changes over time, as well as at drawing attention to the total value across a trend.
+
+100% stacked area charts are multi-series area charts that display the trend of the percentage each value contributes over time or categories.
 
 ## Chart
 
-As stacked charts should show percent contribution of different components to the total, we will demonstrate them on an imaginable ACME FastFood, Corp. sales. Let's assume that it sells Ice Cream, Chocolate Bar and Coke all through the year.
+As stacked charts should show percent contribution of different components to the total, we will demonstrate them on sales of an imaginable ACME FastFood, Corp. Let's assume that it sells Ice Creams, Chocolate Bars and Coke all through the year.
 
-So, we have three series of data - one series for each product, and we give proper names to each series:
+So, we have three series of data - one series for each product. Categories will be seasons:
 
 ```
     var dataSet = anychart.data.set([
@@ -26,7 +25,7 @@ So, we have three series of data - one series for each product, and we give prop
     ]);
 ```
 
-Now we have to tell Y Axis to display these series in as percent stacked area:
+Now we have to tell Y-Axis to display these series in a percent stacked mode:
 
 ```
     chart.yScale().stackMode('percent');
@@ -38,13 +37,13 @@ And set "Area" as a default series type:
     chart = anychart.areaChart();
 ```
 
-Everything is ready, here is a sample percent stacked area chart:
+Everything is ready, let’s have a look on our sample of a percent stacked area chart:
 
 {sample}BCT_Percent-Stacked\_Area-SplineArea\_Charts\_01{sample}
 
 ## Spline Stacked Area
 
-Just change default series type to {api:anychart.core.cartesian.series.RangeSplineArea}"SplineArea"{api} and get your data displayed in more appealing way:
+This type of area chart makes your data look a bit more attractive: points and angles are replaced with a single spline. Just change default series type to {api:anychart.core.cartesian.series.RangeSplineArea}"SplineArea"{api} and get your data displayed in a more appealing way:
 
 ```
     chart.splineArea(seriesData_1);
@@ -65,7 +64,7 @@ Plain code
   </tooltip_settings>
 05
 </area_series>-->
-Here is a sample spline stacked area chart:
+Here is a sample of a spline stacked area chart:
 
 {sample}BCT_Percent-Stacked\_Area-SplineArea\_Charts\_02{sample}
 <!--

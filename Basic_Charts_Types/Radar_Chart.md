@@ -20,7 +20,7 @@
 
 A radar chart is a graphical method of displaying multivariate data in the form of a two-dimensional chart of three or more quantitative variables represented on axes starting from the same point. The relative position and angle of the axes is typically uninformative.
 
-The radar chart is also known as web chart, spider chart, star chart, cobweb chart, star plot, irregular polygon, or kiviat diagram.
+The radar chart is also known as a web chart, spider chart, star chart, cobweb chart, star plot, irregular polygon or kiviat diagram.
 
 ## Chart
 
@@ -49,7 +49,7 @@ Here is a basic Radar sample:
 
 ## Configuration
 
-Radar plot has several distinctive configuration options, which are presented in this section: chart rotation and background settings.
+Radar chart has several distinctive configuration options, which are presented in section "Chart rotation and background settings".
 
 ### Start angle
 
@@ -59,7 +59,7 @@ By default radar starts drawing from the top center point (0°), but you can cha
   chart.startAngle(90);
 ```
 
-Sample chart with starting angle shifted to 90°:
+Here is the radar chart sample with starting angle shifted to 90°:
 
 {sample}BCT\_RadarChart\_03{sample}
 
@@ -76,13 +76,13 @@ You can change radar background using {api:anychart.core.ui.Background}**.backgr
     });
 ```
 
-Sample radar chart with tuned background:
+Here is a Radar chart with tuned background:
 
 {sample}BCT\_RadarChart\_04{sample}
 
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in [Axes tutorial](../Axes_and_Grids/Axis_Basics).
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. All axis features are described in [Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial.
 
 ### Stroke
 
@@ -96,10 +96,10 @@ Axis stroke appearance is controlled by {api:anychart.core.axes.Radar#stroke}**.
   chart.yAxis().stroke('2 red');  // set stroke thickness equal to 2px and set red color to the stroke
 ```
 
-More information on possible stroke settings can be found in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines).
+More information about possible stroke settings can be found in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines).
 
 
-Here is a sample of tuned X and Y axes. Y axis has dashed red stroke and X axis has stroke colored with gradient.
+Here is a sample of a chart with tuned X and Y axes. Y-axis is stroked with dashed red and X-axis has a stroke colored with gradient.
 
 {sample}BCT\_RadarChart\_05{sample}
 
@@ -110,13 +110,13 @@ AnyChart allows to invert any axis. Inversion is controlled by axis **.inverted(
 ```
   chart.yScale().inverted(true);
 ```
-Look at the demonstration of Y Axis inversion in the sample below:
+Look at the demonstration of Y-Axis inversion in the sample below:
 
 {sample}BCT\_RadarChart\_06{sample}
 
 ### Logarithmic Scale
 
-Logarithmic scale type is set using {api:anychart.scales.Logarithmic}**.scale()**{api} method. More information on scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
+You can set a logarithmic scale type using {api:anychart.scales.Logarithmic}**.scale()**{api} method. More information about scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
 
 ```
   var logScale = anychart.scales.log();   // create logarithmic scale
@@ -124,13 +124,13 @@ Logarithmic scale type is set using {api:anychart.scales.Logarithmic}**.scale()*
   chart.yScale(logScale);                 // set logarithmic scale as y scale for the chart
 ```
 
-And here is the demonstration of Logarithmic Y Axis on a simple radar with area series:
+Here is the demonstration of Logarithmic Y-Axis on a simple radar with area series:
 
 {sample}BCT\_RadarChart\_07{sample}
 
 ### Stacked Mode
 
-Multiple area series can be presented with usage of stacked mode for Y scale. Stacked mode helps to visualize data in a convenient way for comparing different data series which shares one of the values. Use {api:anychart.enums.ScaleStackMode}**.stackMode()**{api} parameter to enable stacked mode.
+Multiple area series can be presented with usage of stacked mode for Y scale. Stacked mode helps to visualize data in a convenient way for comparing different data series which share one of the values. Use {api:anychart.enums.ScaleStackMode}**.stackMode()**{api} parameter to enable stacked mode.
 
 ```
   // set chart type
@@ -148,7 +148,7 @@ Percent stacked mode calculates the proportion of each point to the category sum
 
 ### Labels Settings
 
-You can easily tune visual appearance of axes labels as well as adjust labels length.
+You can easily tune visual appearance of axes' labels as well as adjust labels' length.
 
 In the sample below all names are limited to the length of 3:
 
@@ -174,7 +174,7 @@ In the sample below all names are limited to the length of 3:
 
 {sample}BCT\_RadarChart\_10{sample}
 
-You can change labels background. Learn more about background configuration in [Background settings tutorial](../Appearance_Settings/Background).
+You can change labels' background. Learn more about background configuration in [Background settings tutorial](../Appearance_Settings/Background).
 
 ```
   //axes settings
@@ -192,7 +192,7 @@ You can change labels background. Learn more about background configuration in [
 
 {sample}BCT\_RadarChart\_11{sample}
 
-You can hide the first and/or the last labels using {api:anychart.core.axes.Linear#drawFirstLabel}**.drawFirstLabel()**{api} and {api:anychart.core.axes.Linear#drawLastLabel}**.drawLastLabel()**{api} parameters:
+You can hide the first and/or the last use of labels {api:anychart.core.axes.Linear#drawFirstLabel}**.drawFirstLabel()**{api} and {api:anychart.core.axes.Linear#drawLastLabel}**.drawLastLabel()**{api} parameters:
 
 ```
   chart.yAxis()
@@ -206,8 +206,7 @@ You can hide the first and/or the last labels using {api:anychart.core.axes.Line
 
 ### Grid
 
-Radar grid is a combination of circular and radial grids. Grid visual appearance is set using several
-methods:
+Radar grid is a combination of circular and radial grids. Grid visual appearance can be set using several methods:
 
 ```
   // chart type
@@ -230,7 +229,7 @@ Sample below demonstrates two radar charts with adjusted visualisation of the ra
 
 In this section we will explain how to add and configure data labels and tooltips.
 
-If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.core.polar.series.Base#labels}**.labels()**{api} and {api:anychart.core.polar.series.Base#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format.
+If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.core.polar.series.Base#labels}**.labels()**{api} and {api:anychart.core.polar.series.Base#tooltip}**.tooltip()**{api} methods. You can tune visual appearance, positioning and format of labels and tooltips.
 
 ```
   // chart type

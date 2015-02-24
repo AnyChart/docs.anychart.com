@@ -7,19 +7,15 @@
 
 ## Overview
 
-The Range Line/Spline Area charts displays a range of data by plotting two Y values per data point. Each Y value used is
- drawn as the upper, and lower bounds of an area.
+The Range Line/Spline Area charts displays a range of data by plotting two Y values per data point. Each Y value used is drawn as the upper and the lower bounds of an area.
   
   
-Some data may look very nice and are easily understood in this form, in which an area spans a region from a minimum 
-value to a maximum value.
+Some data may look very nice and are easily understood in this form, in which an area spans a region from the minimum value to the maximum value.
 
 ## Chart
 
-As range area charts have to define lower and upper bound of area - you have to specify these two values in each column 
-using **"low"** and **"high"** parameters.
-  
-  
+As range area charts have to define lower and upper bounds of area - you have to specify these two values in each column using **"low"** and **"high"** parameters.
+    
 Also "RangeLineArea" or "RangeSpineArea" series type should be specified.
 
 ```
@@ -32,17 +28,16 @@ Also "RangeLineArea" or "RangeSpineArea" series type should be specified.
 
 ## Temperature Range Area Chart Sample
 
-This sample shows how range s can be used to chart temperature averages, the data is taken from UK weather stations 
-1971-2000 averages statistics:
+This sample shows how ranges can be used to chart temperature averages, the data is taken from UK average weather statistics from 1971 to 2000:
 
 {sample}BCT_Range\_Area-SplineArea\_Charts\_01{sample}
 
 ## Configuration
-Range area charts are configured and tuned almost the same way as usual Area charts<!--, with the only difference: as we
+Range area charts are configured and tuned almost the same way as usual Area charts.<!--, with the only difference: as we
  have to Y values (high and low point) - we have two tooltips, two labels, two markers and two lines-->.
   
   
-So, to configure them we use {api:anychart.core.cartesian.series.RangeArea}**rangeArea**{api} parameter that hold label and marker settings.
+So, to configure them we use the {api:anychart.core.cartesian.series.RangeArea}**rangeArea**{api} parameter that holds labels and markers settings.
   
   
 Here is the way of changing upper markers:
@@ -56,6 +51,6 @@ Here is the way of changing upper markers:
     ]).markers().enabled(true);
 ```
 
-Here is the result of application of these settings to the sample data:
+Here is the result of applying these settings to the sample data:
 
 {sample}BCT_Range\_Area-SplineArea\_Charts\_02{sample}
