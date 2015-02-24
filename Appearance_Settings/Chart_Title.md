@@ -89,7 +89,7 @@ You can use HTML formatted **.text()** parameter. Use **.useHtml()** parameter t
       .text(
       'Sales Performance'+
       '<br><a style="color:#0000FF; font-size: 10px;">'+
-      'according to annual report</a>' С
+      'according to annual report</a>'
     );
 ```
 
