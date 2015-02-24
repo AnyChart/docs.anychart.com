@@ -1,4 +1,4 @@
-# DataGrid
+#Data Grid
 
 * [Columns](#columns)
  * [Columns Set](#columns_set)
@@ -8,7 +8,7 @@
 * [Visual Settings](#visual_settings)
  * [Interlaced mode](#interlaced_mode)
 * [General Settings](#general_settings)
- * [DataGrid Width](#datagrid_width)
+ * [Data Grid Width](#data_grid_width)
  * [Expand/Collapse](#expand/collapse)
 
 <br>Data Grid - is one of the main parts of Gantt Chart. It usually contains main data about tasks and resources of the project, it displays nesting (for a hierarchical model configuration).
@@ -95,14 +95,12 @@ function customColumnTextFormatter(item)
 
 ### Width
 
-You should use the <b>.width()</b> method for customizing the column width.
+You should use the {api:anychart.core.ui.DataGrid.Column#width}**width()**{api} method for customizing the column width.
 
 ```
 //set column width to 30
 dataGrid.column(0).width(30);
 ```
-
-Also you can configure your Gantt Charts by simply dragging and dropping data grid splitter.
 
 ## Visual Settings
 
@@ -194,9 +192,9 @@ timeline.rowOddFill("#add8e6");
 
 ## General Settings
 
-### DataGrid Width
+### Data Grid Width
 
-You can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} method:
+It is possible to configure your Gantt Charts by simply dragging and dropping data grid splitter. Also you can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} method:
 
 ```
 //set width to 100
@@ -205,11 +203,11 @@ chart.splitterPosition(100);
 
 ### Expand/Collapse
 
-DataGrid supports hierarchical data representation, so if the data is complicated, the DataGrid will display expanded/collapsed icons next to each group header row. You are free to expand and collapse child groups to see more data.
+Data Grid supports hierarchical data representation, so if the data is complicated, the Data Grid will display expanded/collapsed icons next to each group header row. You are free to expand and collapse child groups to see more data.
 
 {sample :width 710 :height 210}GANTT\_Chart\_08{sample}
 
-<br>Please note that expanded/collapsed buttons are located in the second DataGrid column near the group element name. Their appearance doesn't depend on the "name" field in data item, so you can leave this field empty or just set column settings to show only the buttons.
+<br>Please note that expanded/collapsed buttons are located in the second Data Grid column near the group element name. Their appearance doesn't depend on the "name" field in data item, so you can leave this field empty or just set column settings to show only the buttons.
 
 ```
 dataGrid.column(1).width(10).textFormatter(function(item) {
