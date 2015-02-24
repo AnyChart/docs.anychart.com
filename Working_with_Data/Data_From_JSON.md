@@ -48,6 +48,8 @@ Setting data using JSON format is very similar to the way of setting data in Jav
 
 {sample}WD\_Data\_from\_JSON\_01{sample}
 
+Data set for pie chart 
+
 JSON format has some peculiarities. JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the JSON structure very similar to JS. To find out any of require method or parameter use {api:anychart}API{api}. API supplies every parameter with a structure to invoke it. This structure is the same for JSON data set. For instance, API provides {api:anychart#column}**column()**{api} method to create column chart.
 
 ```
@@ -71,7 +73,30 @@ The same chart can be created using JSON
 As you can see, JSON format isn't limited only by setting chart type and data, but can set container for the chart. 
   
   
-Parameters of Y-Scale can be 
+Parameters of Y-Scale should be applied using {api:anychart.charts.Cartesian#yScale}yScale(){api} method and should be invoked using code, similar to the snippet below
+
+```
+  // create chart and set it line type
+  var chart = anychart.line();
+  
+  chart.yScale()    // invoke y scale
+    .minimum(60)    // set minimum value 
+    .maximum(120);  // set maximum value
+```
+
+The snippet below shows setting the same parameters using JSON
+
+```
+  "chart": {          // create chart
+    "type": "line",   // set line type
+    "yScale": {       // invoke y scale
+      "minimum": 60,  // set minimum value
+      "maximum": 120  // set maximum value
+    }
+```
+
+**Note:** Pie chart can have only one data series, thus JSON config for pie chart requires no "series" object. 
+
 
 ## Samples
 
@@ -175,3 +200,6 @@ Visual settings are vital for a chart. JSON can control any method and parameter
 Previous samples demonstrate separate additional features. Next sample is a bit more complex. It demonstrates cartesian chart with several line series, customized axes, scales, grids and titles.
 
 {sample}WD\_Data\_from\_JSON\_06{sample}
+
+## Data serialization
+
