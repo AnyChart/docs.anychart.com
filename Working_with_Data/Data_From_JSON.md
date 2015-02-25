@@ -265,7 +265,7 @@ As addition to the presented material, here is a table of main methods and param
         {x: "April", value: 15000},
         {x: "May", value: 14000}
       ]},
-        
+    // type of the second series
     {seriesType: "splineArea",
       // data for the second series
       data:[{x: "January", value: 10000},
@@ -372,6 +372,7 @@ axes settings
 <td>
 Labels settings
 </td>
+<td>
 ```
 var chart = anychart.lineChart();
 
@@ -427,8 +428,8 @@ var chart = anychart.lineChart();
     chart.yAxis().title().text('Sales');
     chart.container('container')
 ```
-<td>
 </td>
+<td>
 ```
 {chart: { type: "line",
   
@@ -485,7 +486,6 @@ var chart = anychart.lineChart();
 }}
 ```
 <td>
-</td>
 </tr>
 </tbody></table>
 
