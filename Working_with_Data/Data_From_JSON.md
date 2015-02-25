@@ -101,9 +101,10 @@ As addition to the presented material, here is a table of main methods and param
 
 <table width="700" border="1" class="dtTABLE">
 <tbody>
-<tr><td>Chart Type</td></tr>
+<tr>
+<td>Chart Type</td>
+</tr>
 <tr><td style="padding: 0;">
-
 <table class="dtTABLE" style="border: 0;">
 <tbody>
 <th width="200" style="border-top: 0; border-left: 0;"><b>JS Config</b></th>
@@ -151,11 +152,15 @@ As addition to the presented material, here is a table of main methods and param
 ```
 </td>	
 </tr>
-</tbody></table>
-</td></tr>
-<tr><td>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>
 {sample}WD\_Data\_from\_JSON\_13{sample}
-</td></tr>
+</td>
+</tr>
 </tbody></table>
 
 <table width="700" border="1" class="dtTABLE">
