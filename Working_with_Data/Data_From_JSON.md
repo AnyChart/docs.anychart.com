@@ -131,7 +131,7 @@ As addition to the presented material, here is a table of main methods and param
     chart.container('container');
 ```
 </td>
-<td style="border-bottom: 0; border-right: 0;>
+<td style="border-bottom: 0; border-right: 0;">
 ```
   // set chart type
   {chart: {type: "line",
