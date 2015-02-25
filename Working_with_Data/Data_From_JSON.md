@@ -99,9 +99,65 @@ The snippet below shows setting the same parameters using JSON
 
 As addition to the presented material, here is a table of main methods and parameters of JS data set comparing with JSON data set (full list of all the methods and parameters can be found in api).
 
-<table width="376" border="1" class="dtTABLE">
-<tbody><tr>
-<th width="100"></th>
+<table width="700" border="1" class="dtTABLE">
+<tbody>
+<tr><td>Chart Type</td></tr>
+<tr><td>
+
+<table class="dtTABLE">
+<tbody>
+<th width="200"><b>JS Config</b></th>
+<th width="200"><b>JSON Config</b></th>	
+</tr>
+<tr>
+<td>
+```
+  // set chart type
+  var chart = anychart.line();
+  
+  // set series type
+  chart.spline(
+    // set series data
+    [
+      ['January', 10000],
+      ['February', 12000],
+      ['March', 18000],
+      ['April', 11000],
+      ['May', 9000]
+    ]);
+    
+    // set chart container
+    chart.container('container');
+```
+</td>
+<td>
+```
+  // set chart type
+  {chart: {type: "line",
+    
+    // set series type
+    series:[{seriesType: "spline",
+      // set series data
+      data: [
+        {x: "January", value: 10000},
+        {x: "February", value: 12000},
+        {x: "March", value: 18000},
+        {x: "April", value: 11000},
+        {x: "May", value: 9000}
+      ]}],
+    
+    // set chart container
+    container: "container"}}
+```
+</td>	
+</tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+
+<table width="700" border="1" class="dtTABLE">
+<tbody>
+<th/>
 <th width="200"><b>JS Config</b></th>
 <th width="200"><b>JSON Config</b></th>	
 </tr>
@@ -265,6 +321,7 @@ As addition to the presented material, here is a table of main methods and param
         {x: "April", value: 15000},
         {x: "May", value: 14000}
       ]},
+
     // type of the second series
     {seriesType: "splineArea",
       // data for the second series
