@@ -263,7 +263,8 @@ As addition to the presented material, here is a table of main methods and param
         {x: "February", value: 15000},
         {x: "March", value: 16000},
         {x: "April", value: 15000},
-        {x: "May", value: 14000}]},
+        {x: "May", value: 14000}
+      ]},
         
     {seriesType: "splineArea",
       // data for the second series
@@ -296,7 +297,6 @@ axes settings
         .maximum(100)
         .ticks()
             .interval(10);
-    // set minor ticks interval
     extraYScale.minorTicks().interval(2);
 
     // y axes settings
@@ -357,17 +357,14 @@ axes settings
         {x: "E", value: 90000}
       ]},{
         seriesType: "line",
-        data:[
-          {x: "A", value: 95},
+        data:[{x: "A", value: 95},
           {x: "B", value: 97},
           {x: "C", value: 96},
           {x: "D", value: 70},
           {x: "E", value: 35}],
-        yScale: "customYScale"  
-      }],
+        yScale: "customYScale"}],
       
-      container: "container"
-  }}
+      container: "container"}}
 ```
 </td>
 </tr>
@@ -376,10 +373,117 @@ axes settings
 Labels settings
 </td>
 ```
+var chart = anychart.lineChart();
 
+    // set range marker
+    chart.rangeMarker()
+        .scale(chart.yScale())
+        .from(0)
+        .to(30000)
+        .fill({
+            keys: ['.1 green', '.5 yellow', '.9 red'],
+            angle: -90,
+            opacity: 0.5
+        });
+
+    // set text marker at the top
+    chart.textMarker()
+        .scale(chart.yScale())
+        .offsetX(10)
+        .value(25000)
+        .text('Good')
+        .fontSize(15)
+        .fontWeight(600);
+
+    // set text marker at the center
+    chart.textMarker(1)
+        .scale(chart.yScale())
+        .offsetX(10)
+        .value(15000)
+        .text('Average')
+        .fontSize(15)
+        .fontWeight(600);
+
+    // set text marker at the bottom
+    chart.textMarker(2)
+        .scale(chart.yScale())
+        .offsetX(10)
+        .value(5000)
+        .text('Severe')
+        .fontSize(12)
+        .fontWeight(600);
+
+    // set data
+    chart.line([
+        [2005, 10000],
+        [2006, 12000],
+        [2007, 18000],
+        [2008, 19000],
+        [2009, 29000]
+    ]);
+    chart.title().enabled(false);
+    chart.yScale().minimum(0).maximum(30000);
+    chart.xAxis().title().enabled(false);
+    chart.yAxis().title().text('Sales');
+    chart.container('container')
 ```
 <td>
 </td>
+```
+{chart: { type: "line",
+  
+  // set range marker
+  rangeAxesMarkers: [{
+    scale: 1,
+    from: 0,
+    to: 30000,
+    fill: {
+      keys: [ ".1 green", ".5 yellow", ".9 red"],
+      angle: -90,
+      opacity: 0.5
+    }}],
+  
+  // set text marker at the top
+  "textAxesMarkers": [{
+      "scale": 1,
+      "offsetX": 10,
+      "value": 25000,
+      "fontSize": 15,
+      "text": "Good",
+      "fontWeight": 600},
+      
+    // set text marker at the center
+    {
+      "scale": 1,
+      "offsetX": 10,
+      "value": 15000,
+      "text": "Average",
+      "fontSize": 15,
+      "fontWeight": 600},
+      
+    // set text marker at the bottom
+    {
+      "scale": 1,
+      "offsetX": 10,
+      "value": 5000,
+      "text": "Severe",
+      "fontSize": 12,
+      "fontWeight": 600}],
+  
+  series: [{seriesType: "line",
+    data: [ {x: "2005", value: "10000"},
+            {x: "2006", value: "12000"},
+            {x: "2007", value: "18000"},
+            {x: "2008", value: "19000"},
+            {x: "2009", value: "29000"}
+  ]}],
+  title: {enabled: "false"},
+  yScale: {minimum: "0", maximum: "30000"},
+  xAxes: {title: {enabled: "false"}},
+  yAxes: {title: "Sales"},
+  container: "container"
+}}
+```
 <td>
 </td>
 </tr>
