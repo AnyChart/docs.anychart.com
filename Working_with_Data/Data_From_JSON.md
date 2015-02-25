@@ -102,15 +102,15 @@ As addition to the presented material, here is a table of main methods and param
 <table width="700" border="1" class="dtTABLE">
 <tbody>
 <tr><td>Chart Type</td></tr>
-<tr><td>
+<tr><td style="padding: 0;">
 
-<table class="dtTABLE">
+<table class="dtTABLE" style="border: 0;">
 <tbody>
-<th width="200"><b>JS Config</b></th>
-<th width="200"><b>JSON Config</b></th>	
+<th width="200" style="border-top: 0; border-left: 0;"><b>JS Config</b></th>
+<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
 </tr>
 <tr>
-<td>
+<td style="border-bottom: 0; border-left: 0;">
 ```
   // set chart type
   var chart = anychart.line();
@@ -130,7 +130,7 @@ As addition to the presented material, here is a table of main methods and param
     chart.container('container');
 ```
 </td>
-<td>
+<td style="border-bottom: 0; border-right: 0;>
 ```
   // set chart type
   {chart: {type: "line",
@@ -153,6 +153,9 @@ As addition to the presented material, here is a table of main methods and param
 </tr>
 </tbody></table>
 </td></tr>
+<tr><td>
+{sample}WD\_Data\_from\_JSON\_13{sample}
+</tr></td>
 </tbody></table>
 
 <table width="700" border="1" class="dtTABLE">
