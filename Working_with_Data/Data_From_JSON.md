@@ -471,6 +471,7 @@ var chart = anychart.lineChart();
       "fontSize": 12,
       "fontWeight": 600}],
   
+  // data set
   series: [{seriesType: "line",
     data: [ {x: "2005", value: "10000"},
             {x: "2006", value: "12000"},
@@ -482,8 +483,7 @@ var chart = anychart.lineChart();
   yScale: {minimum: "0", maximum: "30000"},
   xAxes: {title: {enabled: "false"}},
   yAxes: {title: "Sales"},
-  container: "container"
-}}
+  container: "container"}}
 ```
 <td>
 </tr>
