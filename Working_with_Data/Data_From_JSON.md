@@ -155,7 +155,7 @@ As addition to the presented material, here is a table of main methods and param
 </td></tr>
 <tr><td>
 {sample}WD\_Data\_from\_JSON\_13{sample}
-</tr></td>
+</td></tr>
 </tbody></table>
 
 <table width="700" border="1" class="dtTABLE">
