@@ -174,7 +174,7 @@ As addition to the presented material, here is a table of main methods and param
 </tr>
 <tr>
 <td>
-{sample}WD\_Data\_from\_JSON\_13{sample}
+{sample :width 650}WD\_Data\_from\_JSON\_13{sample}
 </td>
 </tr>
 </tbody></table>
@@ -277,7 +277,7 @@ chart.container('container');
 </tr>
 <tr>
 <td>
-{sample :width 677}WD\_Data\_from\_JSON\_14{sample}
+{sample :width 650}WD\_Data\_from\_JSON\_14{sample}
 </td>
 </tr>
 </tbody></table>
