@@ -187,7 +187,7 @@ As addition to the presented material, here is a table of main methods and param
 
 
 
-<table width="700" border="1" class="dtTABLE">
+<table width="600" border="1" class="dtTABLE">
 <tbody>
 <tr>
 <td>Chart Title</td>
@@ -277,7 +277,7 @@ chart.container('container');
 </tr>
 <tr>
 <td>
-{sample}WD\_Data\_from\_JSON\_14{sample}
+{sample :width 677}WD\_Data\_from\_JSON\_14{sample}
 </td>
 </tr>
 </tbody></table>
