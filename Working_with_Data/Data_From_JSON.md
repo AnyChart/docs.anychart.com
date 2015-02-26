@@ -174,7 +174,7 @@ As addition to the presented material, here is a table of main methods and param
 </tr>
 <tr>
 <td>
-{sample :width 676}WD\_Data\_from\_JSON\_13{sample}
+{sample :width 666}WD\_Data\_from\_JSON\_13{sample}
 </td>
 </tr>
 </tbody></table>
@@ -277,7 +277,7 @@ chart.container('container');
 </tr>
 <tr>
 <td>
-{sample :width 676}WD\_Data\_from\_JSON\_14{sample}
+{sample :width 666}WD\_Data\_from\_JSON\_14{sample}
 </td>
 </tr>
 </tbody></table>
@@ -372,7 +372,7 @@ chart.container('container');
 </tr>
 <tr>
 <td>
-{sample}WD\_Data\_from\_JSON\_15{sample}
+{sample :width 666}WD\_Data\_from\_JSON\_15{sample}
 </td>
 </tr>
 </tbody></table>
@@ -493,7 +493,7 @@ chart.container('container');
 </tr>
 <tr>
 <td>
-{sample}WD\_Data\_from\_JSON\_16{sample}
+{sample :width 666}WD\_Data\_from\_JSON\_16{sample}
 </td>
 </tr>
 </tbody></table>
@@ -576,7 +576,9 @@ chart.container('container');
       [2009, 29000]
   ]);
   chart.title().enabled(false);
-  chart.yScale().minimum(0).maximum(30000);
+  chart.yScale()
+    .minimum(0)
+    .maximum(30000);
   chart.xAxis().title().enabled(false);
   chart.yAxis().title().text('Sales');
   chart.container('container')
@@ -637,7 +639,9 @@ chart.container('container');
             {x: "2009", value: "29000"}
   ]}],
   title: {enabled: "false"},
-  yScale: {minimum: "0", maximum: "30000"},
+  yScale: {
+    minimum: "0", 
+    maximum: "30000"},
   xAxes: {title: {enabled: "false"}},
   yAxes: {title: "Sales"},
   container: "container"}}
@@ -650,7 +654,7 @@ chart.container('container');
 </tr>
 <tr>
 <td>
-{sample}WD\_Data\_from\_JSON\_17{sample}
+{sample :width 666}WD\_Data\_from\_JSON\_17{sample}
 </td>
 </tr>
 </tbody></table>
