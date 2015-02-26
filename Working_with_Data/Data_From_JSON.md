@@ -755,6 +755,4 @@ Predefined settings from JS format can be serialized into JSON format for the sa
 
 {sample}WD\_Data\_from\_JSON\_18{sample}
 
-
-
 **Note:** Parameters of text formatting can't be serialized and will be set by default in JSON format. 
