@@ -269,7 +269,7 @@ As addition to the presented material, here is a table of main methods and param
     // set chart container
     container: "container"}}
 ```
-</td>	
+</td>
 </tr>
 </tbody>
 </table>
@@ -751,6 +751,10 @@ Previous samples demonstrate separate additional features. Next sample is a bit 
 
 ## Data Serialization
 
-Predefined settings from JS format can be serialized into JSON format for the sake of convenient in future usage 
+Predefined settings from JS format can be serialized into JSON format for the sake of convenient in future usage. Method **.toJson()** transfers current chart settings into JSON object. This method creates an object, that contains all posible methods and parameters of the chart.
+
+{sample}WD\_Data\_from\_JSON\_18{sample}
+
+
 
 **Note:** Parameters of text formatting can't be serialized and will be set by default in JSON format. 
