@@ -202,72 +202,72 @@ As addition to the presented material, here is a table of main methods and param
 <tr>
 <td style="border-bottom: 0; border-left: 0;">
 ```
-  // set chart type
-  var chart = anychart.column();
-  
-  // title settings
-  chart.title()
-    // set title text
-    .text('Sales Performance')
-    // settings for title background
-    .background()
-      // enable background
-      .enabled(true)
-      // set background inner color
-      .fill('#FFD700')
-      // set background border
-      .stroke('#D8D8D8')
-      // set type of background corners
-      .cornerType('round')
-      // set corners size
-      .corners(10);
-  
-  // set series type
-  chart.column([
-    ['John', 10000],
-    ['Jake', 12000],
-    ['Peter', 18000],
-    ['James', 11000],
-    ['Mary', 9000]
-  ])
-  
-  // set chart container
-  chart.container('container');
+// set chart type
+var chart = anychart.column();
+
+// title settings
+chart.title()
+  // set title text
+  .text('Sales Performance')
+  // settings for title background
+  .background()
+    // enable background
+    .enabled(true)
+    // set background inner color
+    .fill('#FFD700')
+    // set background border
+    .stroke('#D8D8D8')
+    // set type of background corners
+    .cornerType('round')
+    // set corners size
+    .corners(10);
+
+// set series type
+chart.column([
+  ['John', 10000],
+  ['Jake', 12000],
+  ['Peter', 18000],
+  ['James', 11000],
+  ['Mary', 9000]
+])
+
+// set chart container
+chart.container('container');
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0;">
 ```
-  // set chart type
-  {chart: {type: "line",
-    
-    // title settings
-    title: {
-      // set title text
-      text: "Sales Performance",
-      // settings for title background
-      background: {
-        // enable background
-        enabled: "true",
-        // set background inner color
-        fill: "#FFD700",
-        // set background border
-        stroke: "#D8D8D8",
-        // set type of background corners
-        cornerType: "round",
-        // set corners size
-        corners: 10}},
-    
-    // set series type
-    series:[{seriesType: "column",
-      data: [{x: "January", value: 10000},
-        {x: "February", value: 12000},
-        {x: "March", value: 18000},
-        {x: "April", value: 11000},
-        {x: "May", value: 9000}]
-    }],
-    
-    // set chart container
-    container: "container"}}
+// set chart type
+{chart: {type: "line",
+  
+  // title settings
+  title: {
+    // set title text
+    text: "Sales Performance",
+    // settings for title background
+    background: {
+      // enable background
+      enabled: "true",
+      // set background inner color
+      fill: "#FFD700",
+      // set background border
+      stroke: "#D8D8D8",
+      // set type of background corners
+      cornerType: "round",
+      // set corners size
+      corners: 10}},
+  
+  // set series type
+  series:[{seriesType: "column",
+    data: [{x: "January", value: 10000},
+      {x: "February", value: 12000},
+      {x: "March", value: 18000},
+      {x: "April", value: 11000},
+      {x: "May", value: 9000}]
+  }],
+  
+  // set chart container
+  container: "container"}}
 ```
 </td>
 </tr>
