@@ -99,6 +99,21 @@ The snippet below shows setting the same parameters using JSON
 
 As addition to the presented material, here is a table of main methods and parameters of JS data set comparing with JSON data set (full list of all the methods and parameters can be found in api).
 
+
+
+
+
+
+
+
+<!--Chart type-->
+
+
+
+
+
+
+
 <table width="700" border="1" class="dtTABLE">
 <tbody>
 <tr>
@@ -107,6 +122,7 @@ As addition to the presented material, here is a table of main methods and param
 <tr><td style="padding: 0;">
 <table class="dtTABLE" style="border: 0;">
 <tbody>
+<tr>
 <th width="200" style="border-top: 0; border-left: 0;"><b>JS Config</b></th>
 <th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
 </tr>
@@ -150,7 +166,7 @@ As addition to the presented material, here is a table of main methods and param
     // set chart container
     container: "container"}}
 ```
-</td>	
+</td>
 </tr>
 </tbody>
 </table>
@@ -163,58 +179,28 @@ As addition to the presented material, here is a table of main methods and param
 </tr>
 </tbody></table>
 
+
+
+
+<!--Chart title-->
+
+
+
+
 <table width="700" border="1" class="dtTABLE">
 <tbody>
-<th/>
-<th width="200"><b>JS Config</b></th>
-<th width="200"><b>JSON Config</b></th>	
+<tr>
+<td>Chart Title</td>
+</tr>
+<tr><td style="padding: 0;">
+<table class="dtTABLE" style="border: 0;">
+<tbody>
+<tr>
+<th width="200" style="border-top: 0; border-left: 0;"><b>JS Config</b></th>
+<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
 </tr>
 <tr>
-<td>Chart type</td>
-<td>
-```
-  // set chart type
-  var chart = anychart.line();
-  
-  // set series type
-  chart.spline(
-    // set series data
-    [
-      ['January', 10000],
-      ['February', 12000],
-      ['March', 18000],
-      ['April', 11000],
-      ['May', 9000]
-    ]);
-    
-    // set chart container
-    chart.container('container');
-```
-</td>
-<td>
-```
-  // set chart type
-  {chart: {type: "line",
-    
-    // set series type
-    series:[{seriesType: "spline",
-      // set series data
-      data: [
-        {x: "January", value: 10000},
-        {x: "February", value: 12000},
-        {x: "March", value: 18000},
-        {x: "April", value: 11000},
-        {x: "May", value: 9000}
-      ]}],
-    
-    // set chart container
-    container: "container"}}
-```
-</td>	
-</tr>
-<tr>
-<td>Title</td>
-<td>
+<td style="border-bottom: 0; border-left: 0;">
 ```
   // set chart type
   var chart = anychart.column();
@@ -249,7 +235,7 @@ As addition to the presented material, here is a table of main methods and param
   chart.container('container');
 ```
 </td>
-<td>
+<td style="border-bottom: 0; border-right: 0;">
 ```
   // set chart type
   {chart: {type: "line",
@@ -285,9 +271,45 @@ As addition to the presented material, here is a table of main methods and param
 ```
 </td>	
 </tr>
+</tbody>
+</table>
+</td>
+</tr>
 <tr>
-<td>Multiple series</td>
 <td>
+{sample}WD\_Data\_from\_JSON\_14{sample}
+</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+
+<!--Multiple series-->
+
+
+
+
+
+
+
+
+<table width="700" border="1" class="dtTABLE">
+<tbody>
+<tr>
+<td>Chart Title</td>
+</tr>
+<tr><td style="padding: 0;">
+<table class="dtTABLE" style="border: 0;">
+<tbody>
+<tr>
+<th width="200" style="border-top: 0; border-left: 0;"><b>JS Config</b></th>
+<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
+</tr>
+<tr>
+<td style="border-bottom: 0; border-left: 0;">
 ```
   // set chart type
   var chart = anychart.area();
@@ -315,7 +337,7 @@ As addition to the presented material, here is a table of main methods and param
   chart.container('container');
 ```
 </td>
-<td>
+<td style="border-bottom: 0; border-right: 0;">
 ```
   // set chart type
   {chart:{type: "area",
@@ -342,19 +364,49 @@ As addition to the presented material, here is a table of main methods and param
     
     container: "container"}}
 ```
+</td>	
+</tr>
+</tbody>
+</table>
 </td>
 </tr>
 <tr>
 <td>
-axes settings
+{sample}WD\_Data\_from\_JSON\_15{sample}
 </td>
-<td>
+</tr>
+</tbody></table>
+
+
+
+
+<!--Axes settings-->
+
+
+
+
+
+
+<table width="700" border="1" class="dtTABLE">
+<tbody>
+<tr>
+<td>Chart Title</td>
+</tr>
+<tr><td style="padding: 0;">
+<table class="dtTABLE" style="border: 0;">
+<tbody>
+<tr>
+<th width="200" style="border-top: 0; border-left: 0;"><b>JS Config</b></th>
+<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
+</tr>
+<tr>
+<td style="border-bottom: 0; border-left: 0;">
 ```
     var chart = anychart.line();
     
     // set intervals of default y scale
     chart.yScale().ticks().interval(100000);
-
+    
     // settings for custom y scale
     var customYScale = anychart.scales.linear();
     customYScale
@@ -363,7 +415,7 @@ axes settings
         .ticks()
             .interval(10);
     extraYScale.minorTicks().interval(2);
-
+    
     // y axes settings
     chart.yAxis().title().text('Basic Y Axis');
     chart.yAxis(1)
@@ -371,7 +423,7 @@ axes settings
       .scale(customYScale)
       .title()
         .text('Extra Y Axis');
-
+    
     chart.column([
         ["A", 637166],
         ["B", 721630],
@@ -386,11 +438,11 @@ axes settings
         ["D", 70],
         ["E", 35]
     ]).yScale(customYScale);
-
-    chart.container('container') 
+    
+    chart.container('container')
 ```
 </td>
-<td>
+<td style="border-bottom: 0; border-right: 0;">
 ```
   {chart:{type: "line",
     
@@ -431,70 +483,100 @@ axes settings
       
       container: "container"}}
 ```
+</td>	
+</tr>
+</tbody>
+</table>
 </td>
 </tr>
 <tr>
 <td>
-Labels settings
+{sample}WD\_Data\_from\_JSON\_16{sample}
 </td>
-<td>
+</tr>
+</tbody></table>
+
+
+
+
+
+
+<!-- Labels settings-->
+
+
+
+
+<table width="700" border="1" class="dtTABLE">
+<tbody>
+<tr>
+<td>Chart Title</td>
+</tr>
+<tr><td style="padding: 0;">
+<table class="dtTABLE" style="border: 0;">
+<tbody>
+<tr>
+<th width="200" style="border-top: 0; border-left: 0;"><b>JS Config</b></th>
+<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
+</tr>
+<tr>
+<td style="border-bottom: 0; border-left: 0;">
 ```
-var chart = anychart.lineChart();
-
-    // set range marker
-    chart.rangeMarker()
-        .scale(chart.yScale())
-        .from(0)
-        .to(30000)
-        .fill({
-            keys: ['.1 green', '.5 yellow', '.9 red'],
-            angle: -90,
-            opacity: 0.5
-        });
-
-    // set text marker at the top
-    chart.textMarker()
-        .scale(chart.yScale())
-        .offsetX(10)
-        .value(25000)
-        .text('Good')
-        .fontSize(15)
-        .fontWeight(600);
-
-    // set text marker at the center
-    chart.textMarker(1)
-        .scale(chart.yScale())
-        .offsetX(10)
-        .value(15000)
-        .text('Average')
-        .fontSize(15)
-        .fontWeight(600);
-
-    // set text marker at the bottom
-    chart.textMarker(2)
-        .scale(chart.yScale())
-        .offsetX(10)
-        .value(5000)
-        .text('Severe')
-        .fontSize(12)
-        .fontWeight(600);
-
-    // set data
-    chart.line([
-        [2005, 10000],
-        [2006, 12000],
-        [2007, 18000],
-        [2008, 19000],
-        [2009, 29000]
-    ]);
-    chart.title().enabled(false);
-    chart.yScale().minimum(0).maximum(30000);
-    chart.xAxis().title().enabled(false);
-    chart.yAxis().title().text('Sales');
-    chart.container('container')
+  var chart = anychart.lineChart();
+  
+  // set range marker
+  chart.rangeMarker()
+      .scale(chart.yScale())
+      .from(0)
+      .to(30000)
+      .fill({
+          keys: ['.1 green', '.5 yellow', '.9 red'],
+          angle: -90,
+          opacity: 0.5
+      });
+  
+  // set text marker at the top
+  chart.textMarker()
+      .scale(chart.yScale())
+      .offsetX(10)
+      .value(25000)
+      .text('Good')
+      .fontSize(15)
+      .fontWeight(600);
+  
+  // set text marker at the center
+  chart.textMarker(1)
+      .scale(chart.yScale())
+      .offsetX(10)
+      .value(15000)
+      .text('Average')
+      .fontSize(15)
+      .fontWeight(600);
+  
+  // set text marker at the bottom
+  chart.textMarker(2)
+      .scale(chart.yScale())
+      .offsetX(10)
+      .value(5000)
+      .text('Severe')
+      .fontSize(12)
+      .fontWeight(600);
+  
+  // set data
+  chart.line([
+      [2005, 10000],
+      [2006, 12000],
+      [2007, 18000],
+      [2008, 19000],
+      [2009, 29000]
+  ]);
+  chart.title().enabled(false);
+  chart.yScale().minimum(0).maximum(30000);
+  chart.xAxis().title().enabled(false);
+  chart.yAxis().title().text('Sales');
+  chart.container('container')
 ```
 </td>
-<td>
+<td style="border-bottom: 0; border-right: 0;">
 ```
 {chart: { type: "line",
   
@@ -550,9 +632,19 @@ var chart = anychart.lineChart();
   yAxes: {title: "Sales"},
   container: "container"}}
 ```
+</td>	
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
 <td>
+{sample}WD\_Data\_from\_JSON\_17{sample}
+</td>
 </tr>
 </tbody></table>
+
 
 ## Samples
 
