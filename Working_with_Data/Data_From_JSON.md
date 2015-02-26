@@ -174,7 +174,7 @@ As addition to the presented material, here is a table of main methods and param
 </tr>
 <tr>
 <td>
-{sample :width 650}WD\_Data\_from\_JSON\_13{sample}
+{sample :width 676}WD\_Data\_from\_JSON\_13{sample}
 </td>
 </tr>
 </tbody></table>
@@ -200,7 +200,7 @@ As addition to the presented material, here is a table of main methods and param
 <th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
 </tr>
 <tr>
-<td style="border-bottom: 0; border-left: 0;">
+<td style="border-bottom: 0; border-left: 0; padding: 2px;">
 ```
 // set chart type
 var chart = anychart.column();
@@ -235,7 +235,7 @@ chart.column([
 chart.container('container');
 ```
 </td>
-<td style="border-bottom: 0; border-right: 0;">
+<td style="border-bottom: 0; border-right: 0; padding: 2px;">
 ```
 // set chart type
 {chart: {type: "line",
@@ -277,7 +277,7 @@ chart.container('container');
 </tr>
 <tr>
 <td>
-{sample :width 650}WD\_Data\_from\_JSON\_14{sample}
+{sample :width 676}WD\_Data\_from\_JSON\_14{sample}
 </td>
 </tr>
 </tbody></table>
@@ -309,7 +309,7 @@ chart.container('container');
 <th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
 </tr>
 <tr>
-<td style="border-bottom: 0; border-left: 0;">
+<td style="border-bottom: 0; border-left: 0; padding: 2px;">
 ```
   // set chart type
   var chart = anychart.area();
@@ -337,7 +337,7 @@ chart.container('container');
   chart.container('container');
 ```
 </td>
-<td style="border-bottom: 0; border-right: 0;">
+<td style="border-bottom: 0; border-right: 0; padding: 2px;">
 ```
   // set chart type
   {chart:{type: "area",
@@ -400,7 +400,7 @@ chart.container('container');
 <th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
 </tr>
 <tr>
-<td style="border-bottom: 0; border-left: 0;">
+<td style="border-bottom: 0; border-left: 0; padding: 2px;">
 ```
     var chart = anychart.line();
     
@@ -417,7 +417,8 @@ chart.container('container');
     extraYScale.minorTicks().interval(2);
     
     // y axes settings
-    chart.yAxis().title().text('Basic Y Axis');
+    chart.yAxis().title()
+      .text('Basic Y Axis');
     chart.yAxis(1)
       .orientation('right')
       .scale(customYScale)
@@ -442,7 +443,7 @@ chart.container('container');
     chart.container('container')
 ```
 </td>
-<td style="border-bottom: 0; border-right: 0;">
+<td style="border-bottom: 0; border-right: 0; padding: 2px;">
 ```
   {chart:{type: "line",
     
@@ -459,7 +460,8 @@ chart.container('container');
       minorTicks: {interval: 2} }},
     
     // y axes settings
-    yAxes: [{title: "Basic Y Axis"
+    yAxes: [{
+      title: "Basic Y Axis"
     },{
       orientation: "right",
       scale: "customYScale",
@@ -519,7 +521,7 @@ chart.container('container');
 <th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
 </tr>
 <tr>
-<td style="border-bottom: 0; border-left: 0;">
+<td style="border-bottom: 0; border-left: 0; padding: 2px;">
 ```
   var chart = anychart.lineChart();
   
@@ -529,7 +531,11 @@ chart.container('container');
       .from(0)
       .to(30000)
       .fill({
-          keys: ['.1 green', '.5 yellow', '.9 red'],
+          keys: [
+            '.1 green', 
+            '.5 yellow', 
+            '.9 red'
+          ],
           angle: -90,
           opacity: 0.5
       });
@@ -576,7 +582,7 @@ chart.container('container');
   chart.container('container')
 ```
 </td>
-<td style="border-bottom: 0; border-right: 0;">
+<td style="border-bottom: 0; border-right: 0; padding: 2px;">
 ```
 {chart: { type: "line",
   
@@ -586,7 +592,11 @@ chart.container('container');
     from: 0,
     to: 30000,
     fill: {
-      keys: [ ".1 green", ".5 yellow", ".9 red"],
+      keys: [ 
+        ".1 green", 
+        ".5 yellow", 
+        ".9 red"
+      ],
       angle: -90,
       opacity: 0.5
     }}],
