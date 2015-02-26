@@ -1,0 +1,40 @@
+{:tags ["sparkline"]
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+    var stage = anychart.graphics.create('container');
+    
+  //create charts
+  chart1 = anychart.sparkline();
+  chart2 = anychart.sparkline();
+  chart3 = anychart.sparkline();
+
+  //set container id for the charts
+  chart1.container(stage);
+  chart2.container(stage);
+  chart3.container(stage);
+  
+  chart1.title().text('Reviews for matryoshka567 with no scale inverted');
+  chart2.title().text('Reviews for matryoshka567 with Y scale inverted');
+  chart3.title().text('Reviews for matryoshka567 with X scale inverted');
+
+  //create data for both charts
+  chart1.data([500,-100,340,200,-90,80,-70]);
+  chart2.data([1,3,1,5,0.5]);
+  chart3.data([1,3,1,5,0.5]);
+
+  //set charts dimensions and position
+  chart1.bounds(0, 0, 400, 40);
+  chart2.bounds(0, 25, 400, 40);
+  chart3.bounds(0, 50, 400, 40);
+  
+  //invert the scales
+  chart2.yScale.inverted(true);
+  chart3.xScale.inverted(true);
+   
+  //initiate chart drawing
+  chart1.draw();
+  chart2.draw();
+  chart3.draw();
+});
