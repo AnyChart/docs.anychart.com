@@ -129,42 +129,42 @@ As addition to the presented material, here is a table of main methods and param
 <tr>
 <td style="border-bottom: 0; border-left: 0;">
 ```
-  // set chart type
-  var chart = anychart.line();
+// set chart type
+var chart = anychart.line();
+
+// set series type
+chart.spline(
+  // set series data
+  [
+    ['January', 10000],
+    ['February', 12000],
+    ['March', 18000],
+    ['April', 11000],
+    ['May', 9000]
+  ]);
   
-  // set series type
-  chart.spline(
-    // set series data
-    [
-      ['January', 10000],
-      ['February', 12000],
-      ['March', 18000],
-      ['April', 11000],
-      ['May', 9000]
-    ]);
-    
-    // set chart container
-    chart.container('container');
+  // set chart container
+  chart.container('container');
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0;">
 ```
-  // set chart type
-  {chart: {type: "line",
-    
-    // set series type
-    series:[{seriesType: "spline",
-      // set series data
-      data: [
-        {x: "January", value: 10000},
-        {x: "February", value: 12000},
-        {x: "March", value: 18000},
-        {x: "April", value: 11000},
-        {x: "May", value: 9000}
-      ]}],
-    
-    // set chart container
-    container: "container"}}
+// set chart type
+{chart: {type: "line",
+  
+  // set series type
+  series:[{seriesType: "spline",
+    // set series data
+    data: [
+      {x: "January", value: 10000},
+      {x: "February", value: 12000},
+      {x: "March", value: 18000},
+      {x: "April", value: 11000},
+      {x: "May", value: 9000}
+    ]}],
+  
+  // set chart container
+  container: "container"}}
 ```
 </td>
 </tr>
@@ -311,58 +311,58 @@ chart.container('container');
 <tr>
 <td style="border-bottom: 0; border-left: 0; padding: 2px;">
 ```
-  // set chart type
-  var chart = anychart.area();
-  
-  // type of first series 
-  chart.area([
-    // data for first series
-    ['January', '12000'],
-    ['February', '15000'],
-    ['March', '16000'],
-    ['April', '15000'],
-    ['May', '14000']
-  ]);
-  
-  // type of second series
-  chart.splineArea([
-    // data for second series
-    ['January', '10000'],
-    ['February', '12000'],
-    ['March', '18000'],
-    ['April', '11000'],
-    ['May', '9000']
-  ]);
-  
-  chart.container('container');
+// set chart type
+var chart = anychart.area();
+
+// type of first series 
+chart.area([
+  // data for first series
+  ['January', '12000'],
+  ['February', '15000'],
+  ['March', '16000'],
+  ['April', '15000'],
+  ['May', '14000']
+]);
+
+// type of second series
+chart.splineArea([
+  // data for second series
+  ['January', '10000'],
+  ['February', '12000'],
+  ['March', '18000'],
+  ['April', '11000'],
+  ['May', '9000']
+]);
+
+chart.container('container');
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
 ```
-  // set chart type
-  {chart:{type: "area",
-    
-    // type of the first series
-    series:[{ seriesType: "area",
-      //data for first series
-      data:[{x:"January", value: 12000},
-        {x: "February", value: 15000},
-        {x: "March", value: 16000},
-        {x: "April", value: 15000},
-        {x: "May", value: 14000}
-      ]},
+// set chart type
+{chart:{type: "area",
+  
+  // type of the first series
+  series:[{ seriesType: "area",
+    //data for first series
+    data:[{x:"January", value: 12000},
+      {x: "February", value: 15000},
+      {x: "March", value: 16000},
+      {x: "April", value: 15000},
+      {x: "May", value: 14000}
+    ]},
 
-    // type of the second series
-    {seriesType: "splineArea",
-      // data for the second series
-      data:[{x: "January", value: 10000},
-        {x: "February", value: 12000},
-        {x: "March", value: 18000},
-        {x: "April", value: 11000},
-        {x: "May", value: 9000}]
-    }],
-    
-    container: "container"}}
+  // type of the second series
+  {seriesType: "splineArea",
+    // data for the second series
+    data:[{x: "January", value: 10000},
+      {x: "February", value: 12000},
+      {x: "March", value: 18000},
+      {x: "April", value: 11000},
+      {x: "May", value: 9000}]
+  }],
+  
+  container: "container"}}
 ```
 </td>	
 </tr>
@@ -402,88 +402,90 @@ chart.container('container');
 <tr>
 <td style="border-bottom: 0; border-left: 0; padding: 2px;">
 ```
-    var chart = anychart.line();
-    
-    // set intervals of default y scale
-    chart.yScale().ticks().interval(100000);
-    
-    // settings for custom y scale
-    var customYScale = anychart.scales.linear();
-    customYScale
-        .minimum(0)
-        .maximum(100)
-        .ticks()
-            .interval(10);
-    extraYScale.minorTicks().interval(2);
-    
-    // y axes settings
-    chart.yAxis().title()
-      .text('Basic Y Axis');
-    chart.yAxis(1)
-      .orientation('right')
-      .scale(customYScale)
-      .title()
-        .text('Extra Y Axis');
-    
-    chart.column([
-        ["A", 637166],
-        ["B", 721630],
-        ["C", 148662],
-        ["D", 78662],
-        ["E", 90000]
-    ]);
-    chart.line([
-        ["A", 95],
-        ["B", 97],
-        ["C", 96],
-        ["D", 70],
-        ["E", 35]
-    ]).yScale(customYScale);
-    
-    chart.container('container')
+var chart = anychart.line();
+
+// set intervals of default y scale
+chart.yScale().ticks()
+  .interval(100000);
+
+// settings for custom y scale
+var customYScale = anychart.scales.linear();
+customYScale
+    .minimum(0)
+    .maximum(100)
+    .ticks()
+        .interval(10);
+extraYScale.minorTicks().interval(2);
+
+// y axes settings
+chart.yAxis().title()
+  .text('Basic Y Axis');
+chart.yAxis(1)
+  .orientation('right')
+  .scale(customYScale)
+  .title()
+    .text('Extra Y Axis');
+
+chart.column([
+    ["A", 637166],
+    ["B", 721630],
+    ["C", 148662],
+    ["D", 78662],
+    ["E", 90000]
+]);
+chart.line([
+    ["A", 95],
+    ["B", 97],
+    ["C", 96],
+    ["D", 70],
+    ["E", 35]
+]).yScale(customYScale);
+
+chart.container('container')
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
 ```
-  {chart:{type: "line",
+{chart:{type: "line",
+  
+  // set interval of default y scale
+  yScale: {ticks: 
+    {interval: 100000}},
+  
+  // settings for custom y scale
+  scales: {"customYScale": { 
+    type: "linear",
+    minimum: 0,
+    maximum: 100,
+    ticks: {
+      interval: 10},
+    minorTicks: {interval: 2} }},
+  
+  // y axes settings
+  yAxes: [{
+    title: "Basic Y Axis"
+  },{
+    orientation: "right",
+    scale: "customYScale",
+    title:{
+      text: "Extra Y Axis"}}],
+  
+  series:[{seriesType: "column",
+    data: [{x: "A", value: 637166},
+      {x: "B", value: 721630},
+      {x: "C", value: 148662},
+      {x: "D", value: 78662},
+      {x: "E", value: 90000}
+    ]},{
+      seriesType: "line",
+      data:[{x: "A", value: 95},
+        {x: "B", value: 97},
+        {x: "C", value: 96},
+        {x: "D", value: 70},
+        {x: "E", value: 35}],
+      yScale: "customYScale"}],
     
-    // set interval of default y scale
-    yScale: {ticks: {interval: 100000}},
-    
-    // settings for custom y scale
-    scales: {"customYScale": { 
-      type: "linear",
-      minimum: 0,
-      maximum: 100,
-      ticks: {
-        interval: 10},
-      minorTicks: {interval: 2} }},
-    
-    // y axes settings
-    yAxes: [{
-      title: "Basic Y Axis"
-    },{
-      orientation: "right",
-      scale: "customYScale",
-      title:{
-        text: "Extra Y Axis"}}],
-    
-    series:[{seriesType: "column",
-      data: [{x: "A", value: 637166},
-        {x: "B", value: 721630},
-        {x: "C", value: 148662},
-        {x: "D", value: 78662},
-        {x: "E", value: 90000}
-      ]},{
-        seriesType: "line",
-        data:[{x: "A", value: 95},
-          {x: "B", value: 97},
-          {x: "C", value: 96},
-          {x: "D", value: 70},
-          {x: "E", value: 35}],
-        yScale: "customYScale"}],
-      
-      container: "container"}}
+    container: "container"}}
 ```
 </td>	
 </tr>
@@ -523,65 +525,65 @@ chart.container('container');
 <tr>
 <td style="border-bottom: 0; border-left: 0; padding: 2px;">
 ```
-  var chart = anychart.lineChart();
-  
-  // set range marker
-  chart.rangeMarker()
-      .scale(chart.yScale())
-      .from(0)
-      .to(30000)
-      .fill({
-          keys: [
-            '.1 green', 
-            '.5 yellow', 
-            '.9 red'
-          ],
-          angle: -90,
-          opacity: 0.5
-      });
-  
-  // set text marker at the top
-  chart.textMarker()
-      .scale(chart.yScale())
-      .offsetX(10)
-      .value(25000)
-      .text('Good')
-      .fontSize(15)
-      .fontWeight(600);
-  
-  // set text marker at the center
-  chart.textMarker(1)
-      .scale(chart.yScale())
-      .offsetX(10)
-      .value(15000)
-      .text('Average')
-      .fontSize(15)
-      .fontWeight(600);
-  
-  // set text marker at the bottom
-  chart.textMarker(2)
-      .scale(chart.yScale())
-      .offsetX(10)
-      .value(5000)
-      .text('Severe')
-      .fontSize(12)
-      .fontWeight(600);
-  
-  // set data
-  chart.line([
-      [2005, 10000],
-      [2006, 12000],
-      [2007, 18000],
-      [2008, 19000],
-      [2009, 29000]
-  ]);
-  chart.title().enabled(false);
-  chart.yScale()
-    .minimum(0)
-    .maximum(30000);
-  chart.xAxis().title().enabled(false);
-  chart.yAxis().title().text('Sales');
-  chart.container('container')
+var chart = anychart.lineChart();
+
+// set range marker
+chart.rangeMarker()
+    .scale(chart.yScale())
+    .from(0)
+    .to(30000)
+    .fill({
+        keys: [
+          '.1 green', 
+          '.5 yellow', 
+          '.9 red'
+        ],
+        angle: -90,
+        opacity: 0.5
+    });
+
+// set text marker at the top
+chart.textMarker()
+    .scale(chart.yScale())
+    .offsetX(10)
+    .value(25000)
+    .text('Good')
+    .fontSize(15)
+    .fontWeight(600);
+
+// set text marker at the center
+chart.textMarker(1)
+    .scale(chart.yScale())
+    .offsetX(10)
+    .value(15000)
+    .text('Average')
+    .fontSize(15)
+    .fontWeight(600);
+
+// set text marker at the bottom
+chart.textMarker(2)
+    .scale(chart.yScale())
+    .offsetX(10)
+    .value(5000)
+    .text('Severe')
+    .fontSize(12)
+    .fontWeight(600);
+
+// set data
+chart.line([
+    [2005, 10000],
+    [2006, 12000],
+    [2007, 18000],
+    [2008, 19000],
+    [2009, 29000]
+]);
+chart.title().enabled(false);
+chart.yScale()
+  .minimum(0)
+  .maximum(30000);
+chart.xAxis().title().enabled(false);
+chart.yAxis().title().text('Sales');
+chart.container('container')
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
