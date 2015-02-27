@@ -195,24 +195,70 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 Here you will find some information about main parts of  the sparkline chart style and see the demonstration of style applying.
 
-###Title
-<!--может, сюда про тайтл?--!>
-
-###Range
-
 ###MissedPoints
+
+Sometimes we need to show the absence of a value or we don't have enough data. In this case we define one of the data points as "miss":
+
+```
+  chart1.data([1.1371,1.1341, 'miss', 1.1132,1.1381,1.1371]);
+  chart2.data([1.5500,1.5458,1.5463, 'miss', 1.5397,1.5385]);
+```
+
+Now let's just connect the points surrounding the missing ones. We use the **.connectMissingPoints()** method for this:
+
+```
+chart2.data([1.5500,1.5458,1.5463, 'miss', 1.5397,1.5385]).connectMissingPoints(true);
+```
+In this sample you can see how it looks with a missing point and compare with a chart below, where this point is simply connected.
+
+{sample}BCT\_Sparkline\_07{sample}
 
 ###Clip
 
+If you wish not to accent the range of values but cut all unwanted ones off, use the **.clip** method. 
+
+```
+ chart.clip(new acgraph.math.Rect(x, y, width, height));
+```
+{sample}BCT\_Sparkline\_08{sample}
+
 ###Pointwidth
+
+For some reasons you may need to make your columns look thiner or wider. It is possible to variate the width of a column using the **.pointWidth()** method:
+
+```
+    chart1.pointWidth('50%');
+    chart2.pointWidth(25);
+```
+Note that you can define pointWidth values as percent or in pixels.
+This feature can be applied to Column and WinLoss Sparklines. Let's adjust columns in a couple of our previous examples:
+
+{sample}BCT\_Sparkline\_09{sample}
 
 ##Label
 
-##Marker
+##Markers
+
+Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. 
+AnyChart allows to add markers to any data element including lines.
+
+###RangeMarker
+
+Although being rather small, sparklines can be quite informative. Range is a light colored rectangle with its lowest and highest levels representing the least and the highest acceptable value, i.e. an acceptable number of defects while production.
+
+This is an example where we use the data about the Ebay seller. Let's define +50 as the maximum sum of negative and positive reviews for losing a "star" (and the minimum sum for going on with the current score).
+
+{sample}BCT\_Sparkline\_07{sample}
+
+
+###LineMarker
 
 ##Colors 
 
-###Stroke
+AnyChart uses default color palette to colorize data elements of chart automatically if you have not define special colors. But you can set and apply the color to exact data series or data point.
 
-###Fill
+### Colorizing Elements
+
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.graphics.vector.Stroke}**.stroke()**{api} parameter for Line or Area series and {api:anychart.graphics.vector.Fill}**.fill()**{api} for Column and WinLoss. In the sample below we have 5 charts of each type demonstrating the applied colors and fills. Here is the sample:
+
 
