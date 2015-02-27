@@ -1,4 +1,4 @@
-{:index 6}
+{:index 7}
 # Getting Data from JSON
 
 * [Overview](#overview)
@@ -10,6 +10,8 @@
  * [Axes](#axes)
  * [Visualization](#visualization)
  * [Complex](#complex)
+* [Data Serialization](#data_serialization)
+* [Schema](#schema)
 
 ## Overview
 
