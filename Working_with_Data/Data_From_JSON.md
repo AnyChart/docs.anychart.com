@@ -404,13 +404,13 @@ chart.container('container');
 ```
 var chart = anychart.line();
 
-// set intervals of default y scale
+// set intervals
 chart.yScale().ticks()
   .interval(100000);
 
-// settings for custom y scale
-var customYScale = anychart.scales.linear();
-customYScale
+// custom y scale
+var newScale = anychart.scales.linear();
+newScale
     .minimum(0)
     .maximum(100)
     .ticks()
@@ -422,7 +422,7 @@ chart.yAxis().title()
   .text('Basic Y Axis');
 chart.yAxis(1)
   .orientation('right')
-  .scale(customYScale)
+  .scale(newScale)
   .title()
     .text('Extra Y Axis');
 
@@ -439,7 +439,7 @@ chart.line([
     ["C", 96],
     ["D", 70],
     ["E", 35]
-]).yScale(customYScale);
+]).yScale(newScale);
 
 chart.container('container')
 ```
@@ -448,12 +448,12 @@ chart.container('container')
 ```
 {chart:{type: "line",
   
-  // set interval of default y scale
+  // set intervals
   yScale: {ticks: 
     {interval: 100000}},
   
-  // settings for custom y scale
-  scales: {"customYScale": { 
+  // custom y scale
+  scales: {"newScale": { 
     type: "linear",
     minimum: 0,
     maximum: 100,
@@ -466,7 +466,7 @@ chart.container('container')
     title: "Basic Y Axis"
   },{
     orientation: "right",
-    scale: "customYScale",
+    scale: "newScale",
     title:{
       text: "Extra Y Axis"}}],
   
@@ -483,7 +483,7 @@ chart.container('container')
         {x: "C", value: 96},
         {x: "D", value: 70},
         {x: "E", value: 35}],
-      yScale: "customYScale"}],
+      yScale: "newScale"}],
     
     container: "container"}}
 ```
@@ -767,8 +767,12 @@ Previous samples demonstrate separate additional features. Next sample is a bit 
 
 ## Data Serialization
 
-Predefined settings from JS format can be serialized into JSON format for the sake of convenient in future usage. Method **.toJson()** transfers current chart settings into JSON object. This method creates an object, that contains all posible methods and parameters of the chart.
+Predefined settings from JS format can be serialized into JSON format for the sake of convenient in future usage. Method **.toJson()** transfers current chart settings into JSON object. This method creates an object, that contains all possible methods and parameters of the chart.
 
 {sample}WD\_Data\_from\_JSON\_18{sample}
 
 **Note:** Parameters of text formatting can't be serialized and will be set by default in JSON format. 
+
+## Schema
+
+JSON Schema specifies a JSON-based format to define the structure of JSON data(visit [wikipedia.org](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JS methods and parameters of a chart. Main AnyChart JSON schema located [here](http://anychart.com/products/anychart7/shemas/7.3.1/json-schema.json). This file can be used to validate your own JSON structure. There quiet a few online JSON validators on the Internet (for instance: [jsonschemalint.com](http://jsonschemalint.com/)).
