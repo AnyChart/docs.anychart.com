@@ -529,53 +529,53 @@ var chart = anychart.lineChart();
 
 // set range marker
 chart.rangeMarker()
-    .scale(chart.yScale())
-    .from(0)
-    .to(30000)
-    .fill({
-        keys: [
-          '.1 green', 
-          '.5 yellow', 
-          '.9 red'
-        ],
-        angle: -90,
-        opacity: 0.5
-    });
+  .scale(chart.yScale())
+  .from(0)
+  .to(30000)
+  .fill({
+    keys: [
+      '.1 green', 
+      '.5 yellow', 
+      '.9 red'
+    ],
+    angle: -90,
+    opacity: 0.5
+  });
 
 // set text marker at the top
 chart.textMarker()
-    .scale(chart.yScale())
-    .offsetX(10)
-    .value(25000)
-    .text('Good')
-    .fontSize(15)
-    .fontWeight(600);
+  .scale(chart.yScale())
+  .offsetX(10)
+  .value(25000)
+  .text('Good')
+  .fontSize(15)
+  .fontWeight(600);
 
 // set text marker at the center
 chart.textMarker(1)
-    .scale(chart.yScale())
-    .offsetX(10)
-    .value(15000)
-    .text('Average')
-    .fontSize(15)
-    .fontWeight(600);
+  .scale(chart.yScale())
+  .offsetX(10)
+  .value(15000)
+  .text('Average')
+  .fontSize(15)
+  .fontWeight(600);
 
 // set text marker at the bottom
 chart.textMarker(2)
-    .scale(chart.yScale())
-    .offsetX(10)
-    .value(5000)
-    .text('Severe')
-    .fontSize(12)
-    .fontWeight(600);
+  .scale(chart.yScale())
+  .offsetX(10)
+  .value(5000)
+  .text('Severe')
+  .fontSize(12)
+  .fontWeight(600);
 
 // set data
 chart.line([
-    [2005, 10000],
-    [2006, 12000],
-    [2007, 18000],
-    [2008, 19000],
-    [2009, 29000]
+  [2005, 10000],
+  [2006, 12000],
+  [2007, 18000],
+  [2008, 19000],
+  [2009, 29000]
 ]);
 chart.title().enabled(false);
 chart.yScale()
