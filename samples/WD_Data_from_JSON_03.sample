@@ -3,27 +3,32 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-
-  // data
-  var csvData = 'January, 10000\n'+
-    'February, 12000\n'+
-    'March, 18000\n'+
-    'April, 11000\n'+
-    'May, 9000\n';
-
-  // chart type
-  chart = anychart.lineChart();
-
-  // title
-  chart.title().text('Spline chart');
-
-  // set axes titles
-  chart.xAxis().title().text('Sales');
-  chart.yAxis().title().text('Month');
-
-  // set data and define chart
-  chart.spline(csvData);
-
-  // draw
-  chart.container('container').draw();
+  
+  // set chart type
+  var json = {chart: {type: "line",
+    
+    // chart title
+    title: {text: "CSV data"},
+    
+    // set axes titles
+    xAxes: [{title: "Sales"}],
+    yAxes: [{title: "Month"}],
+    
+    // set series type
+    series:[{seriesType: "spline",
+    // set series data
+    data: [
+      '"January",'+10000+
+      '\n"February",'+12000+
+      '\n"March",'+18000+
+      '\n"April",'+11000+
+      '\n"May",'+9000
+    ]}],
+    
+    // set chart container
+    container: "container"}
+  };
+  
+  // draw chart
+  anychart.fromJson(json).draw();
 });

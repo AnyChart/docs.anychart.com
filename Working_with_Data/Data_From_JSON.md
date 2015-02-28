@@ -22,7 +22,7 @@ AnyChart supports several ways of setting data. This article quickly demonstrate
 AnyChart provides {api:anychart#fromJson}**.fromJSON()**{api} parameter for using data in JSON format. Snippet below represent simple instance of getting data from JSON format.
 
 ```
-  var chart = anychart.fromJSON(/*put your JSON data in here*/);
+  var chart = anychart.fromJson(/*put your JSON data in here*/);
 
   // draw chart
   chart.draw();
@@ -50,8 +50,6 @@ Setting data using JSON format is very similar to the way of setting data in Jav
 
 {sample}WD\_Data\_from\_JSON\_01{sample}
 
-Data set for pie chart 
-
 JSON format has some peculiarities. JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the JSON structure very similar to JS. To find out any of require method or parameter use {api:anychart}API{api}. API supplies every parameter with a structure to invoke it. This structure is the same for JSON data set. For instance, API provides {api:anychart#column}**column()**{api} method to create column chart.
 
 ```
@@ -72,7 +70,7 @@ The same chart can be created using JSON
     }).draw();
 ```
 
-**Note:** Pie chart can have only one data series, thus JSON configuration for pie chart requires no "series" object. 
+**Note:** Pie chart can have only one data series, thus JSON configuration for pie chart requires no **"series"** object. 
 
 As you can see, JSON format isn't limited only by setting chart type and data, but can set container for the chart. 
   
@@ -700,12 +698,16 @@ JSON data set can contain one or several series. Sample below demonstrates chart
 CSV format is the easiest way to create plain data set. Here is a sample of CSV data set.
 
 ```
-  // csv data set
-  var csvData = 'January, 10000\n'+
-    'February, 12000\n'+
-    'March, 18000\n'+
-    'April, 11000\n'+
-    'May, 9000\n';
+  // set series type
+      series:[{seriesType: "spline",
+      // set series data
+      data: [
+        '"January",'+10000+
+        '\n"February",'+12000+
+        '\n"March",'+18000+
+        '\n"April",'+11000+
+        '\n"May",'+9000
+      ]}],
 ```
 
 {sample}WD\_Data\_from\_JSON\_03{sample}
