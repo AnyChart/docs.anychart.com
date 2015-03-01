@@ -17,13 +17,13 @@ anychart.onDocumentReady(function() {
     // set series type
     series:[{seriesType: "spline",
     // set series data
-    data: [
+    data: 
       '"January",'+10000+
       '\n"February",'+12000+
       '\n"March",'+18000+
       '\n"April",'+11000+
       '\n"May",'+9000
-    ]}],
+    }],
     
     // set chart container
     container: "container"}
