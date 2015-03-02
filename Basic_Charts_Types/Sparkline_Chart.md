@@ -31,7 +31,7 @@ Let's build an example with 2 single-series line charts using the following data
 
 <table width="287" border="1" class="dtTABLE">
 <tbody>
-<tr><th colspan=2>EUR/USD</th></tr>
+<tr><th colspan=2><b>EUR/USD</b></th></tr>
 <tr>
 <th width="88"><b>Day</b></th>
 <th width="88"><b>Rate</b></th>
@@ -57,10 +57,10 @@ Let's build an example with 2 single-series line charts using the following data
 <td>1,1371</td>
 </tr>
 </tbody></table>
-
+<br>
 <table width="287" border="1" class="dtTABLE">
 <tbody>
-<tr><th colspan=2>GBP/USD</th></tr>
+<tr><th colspan=2><b>GBP/USD</b></th></tr>
 <tr>
 <th width="88"><b>Day</b></th>
 <th width="88"><b>Rate</b></th>
@@ -90,7 +90,6 @@ Let's build an example with 2 single-series line charts using the following data
 Now we need to convert this data table into an acceptable format. In terms of AnyChart data model we have one series of data (Sales) with categories that hold months names. Each point in series represents one month and sales volume. Converted Data looks like:
 
 ```
-anychart.onDocumentReady(function() {
     var stage = anychart.graphics.create('container');
     
   //create charts
@@ -112,7 +111,6 @@ anychart.onDocumentReady(function() {
   //initiate chart drawing
   chart1.draw();
   chart2.draw();
-});
  ```
   
 As you can see, we defined only the values, no categories are mentioned in the code. 
@@ -187,7 +185,7 @@ Sparklines have no axes to be shown, despite scales can be inverted. AnyChart al
 
 And here is the demonstration of Y Axis inversion on the Single-series sample:
 
-{sample}BCT\_Sparkline\_06{sample}
+{sample}BCT\_Sparkline\_Chart\_06{sample}
 
 <!--что-то здесь не так, почти ничто не инвертится--!>
 
@@ -211,7 +209,7 @@ chart2.data([1.5500,1.5458,1.5463, 'miss', 1.5397,1.5385]).connectMissingPoints(
 ```
 In this sample you can see how it looks with a missing point and compare with a chart below, where this point is simply connected.
 
-{sample}BCT\_Sparkline\_07{sample}
+{sample}BCT\_Sparkline\_Chart\_07{sample}
 
 ###Clip
 
@@ -220,7 +218,7 @@ If you wish not to accent the range of values but cut all unwanted ones off, use
 ```
  chart.clip(new acgraph.math.Rect(x, y, width, height));
 ```
-{sample}BCT\_Sparkline\_08{sample}
+{sample}BCT\_Sparkline\_Chart\_08{sample}
 
 ###Pointwidth
 
@@ -233,7 +231,7 @@ For some reasons you may need to make your columns look thiner or wider. It is p
 Note that you can define pointWidth values as percent or in pixels.
 This feature can be applied to Column and WinLoss Sparklines. Let's adjust columns in a couple of our previous examples:
 
-{sample}BCT\_Sparkline\_09{sample}
+{sample}BCT\_Sparkline\_Chart\_09{sample}
 
 ##Label
 
@@ -248,7 +246,7 @@ Although being rather small, sparklines can be quite informative. Range is a lig
 
 This is an example where we use the data about the Ebay seller. Let's define +50 as the maximum sum of negative and positive reviews for losing a "star" (and the minimum sum for going on with the current score).
 
-{sample}BCT\_Sparkline\_07{sample}
+{sample}BCT\_Sparkline\_Chart\_07{sample}
 
 
 ###LineMarker
