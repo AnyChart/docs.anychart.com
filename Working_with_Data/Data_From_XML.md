@@ -388,7 +388,7 @@ chart.splineArea([
 
 <!--Axes settings-->
 
-
+<!-- NEED FIXING-->
 
 
 
@@ -535,7 +535,9 @@ chart.container('container')
 <tr>
 <td style="border-bottom: 0; border-left: 0; padding: 2px;">
 ```
+
 var chart = anychart.lineChart();
+chart.container('container')
 
 // set range marker
 chart.rangeMarker()
@@ -543,13 +545,13 @@ chart.rangeMarker()
   .from(0)
   .to(30000)
   .fill({
+    angle: -90,
+    opacity: 0.5,
     keys: [
       '.1 green', 
       '.5 yellow', 
       '.9 red'
-    ],
-    angle: -90,
-    opacity: 0.5
+    ]
   });
 
 // set text marker at the top
@@ -593,72 +595,71 @@ chart.yScale()
   .maximum(30000);
 chart.xAxis().title().enabled(false);
 chart.yAxis().title().text('Sales');
-chart.container('container')
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
 ```
-{chart: { type: "line",
+'<?xml version="1.0" encoding="utf-8"?><anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
+// set chart type
+  '<chart type="line" '+
+  'container="container">'+
   
   // set range marker
-  rangeAxesMarkers: [{
-    scale: 1,
-    from: 0,
-    to: 30000,
-    fill: {
-      keys: [ 
-        ".1 green", 
-        ".5 yellow", 
-        ".9 red"
-      ],
-      angle: -90,
-      opacity: 0.5
-    }}],
+  '<range_axes_markers '+
+    'scale="1" '+
+    'from="0" '+
+    'to="30000">'+
+    '<fill '+
+      'angle="-90" '+
+      'opacity="0.5">'+
+        '<keys><key><![CDATA[.1 green]]></key>'+
+        '<key><![CDATA[.5 yellow]]></key>'+
+        '<key><![CDATA[.9 red]]></key></keys>'+
+    '</fill></range_axes_markers>'+
   
   // set text marker at the top
-  "textAxesMarkers": [{
-      "scale": 1,
-      "offsetX": 10,
-      "value": 25000,
-      "fontSize": 15,
-      "text": "Good",
-      "fontWeight": 600},
-      
-    // set text marker at the center
-    {
-      "scale": 1,
-      "offsetX": 10,
-      "value": 15000,
-      "text": "Average",
-      "fontSize": 15,
-      "fontWeight": 600},
-      
-    // set text marker at the bottom
-    {
-      "scale": 1,
-      "offsetX": 10,
-      "value": 5000,
-      "text": "Severe",
-      "fontSize": 12,
-      "fontWeight": 600}],
+  '</text_axes_markers>'+
+  '<text_axes_marker scale="1" '+
+    'offset_x="10" '+
+    'value="25000" '+
+    'font_size="15" '+
+    'text="Good" '+
+    'font_weight="600"/>'+
+  
+  // set text marker at the center
+  '<text_axes_marker '+
+    'scale="1" '+
+    'offset_x="10" '+
+    'value="15000" '+
+    'text="Average" '+
+    'font_size="15" '+
+    'font_weight="600"/>'+
+  
+  // set text marker at the bottom
+  '<text_axes_marker '+
+  'scale="1" '+
+  'offset_x="10" '+
+  'value="5000" '+
+  'text="Severe" '+
+  'font_size="12" '+
+  'font_weight="600"/></text_axes_markers>'+
   
   // data set
-  series: [{seriesType: "line",
-    data: [ {x: "2005", value: "10000"},
-            {x: "2006", value: "12000"},
-            {x: "2007", value: "18000"},
-            {x: "2008", value: "19000"},
-            {x: "2009", value: "29000"}
-  ]}],
-  title: {enabled: "false"},
-  yScale: {
-    minimum: "0", 
-    maximum: "30000"},
-  xAxes: {title: {enabled: "false"}},
-  yAxes: {title: "Sales"},
-  container: "container"}}
+  '<series_list><series series_type="line">'+
+  '<data><point x="2005" value="10000"/>'+
+    '<point x="2006" value="12000"/>'+
+    '<point x="2007" value="18000"/>'+
+    '<point x="2008" value="19000"/>'+
+    '<point x="2009" value="29000"/>'+
+  '</data></series></series_list>'+
+  '<title enabled="false"/>'+
+  '<y_scale '+
+    'minimum="0" '+ 
+    'maximum="30000"/>'+
+  '<x_axes><axis><title enabled="false"/></axis><x_axes>'+
+  '<y_axes title="Sales"/>';
 ```
-</td>	
+</td>
 </tr>
 </tbody>
 </table>
@@ -707,6 +708,21 @@ XML data set can contain one or several series. Sample below demonstrates chart 
 
 Data from XML can contain all possible settings for controlling chart grid, axis line along with tick marks and labels, axis scale and other visual appearance settings. Sample below demonstrates setting axes names and adjusting scales orientation.
 
+```xml
+  // x axes setting
+  <x_axes>
+    // adjust default x axis
+    <axis orientation="top" title="false"/>
+  </x_axes>
+  // y axes settings
+  <y_axes>
+    // adjust default y axis
+    <axis orientation="right" title="false"/>
+  </y_axes>
+  // y scale setting
+  <y_scale inverted="true"/>
+```
+
 {sample}WD\_Data\_from\_XML\_03{sample}
 
 ### Visualisation
@@ -715,12 +731,12 @@ Visual settings can be vital for a chart. XML can contain almost any method and 
 
 ```
   // series settings
-  '<series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonalbrick">' +
+  <series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonalbrick">
 
     // customize hover hatch fill
-    '<hover_hatch_fill type="diagonalbrick" color="darkred"/>'+
+    <hover_hatch_fill type="diagonalbrick" color="darkred"/>
 
-  '</series>'
+  </series>
 ```
 
 {sample}WD\_Data\_from\_XML\_04{sample}
@@ -730,3 +746,13 @@ Visual settings can be vital for a chart. XML can contain almost any method and 
 Previous samples demonstrate separate additional features. Next sample is a bit more complex. It demonstrates cartesian chart with several different series and customized chart elements.
 
 {sample}WD\_Data\_from\_XML\_05{sample}
+
+## Data Serialization
+
+Predefined settings from JS format can be serialized into XML format for the sake of convenient in future usage. Method **.toXml()** transfers current chart settings into JSON object. This method creates a string, that contains all possible methods and parameters of the chart in XML format.
+
+{sample}WD\_Data\_from\_XML\_13{sample}
+
+## Schema
+
+XML Schema specifies a XML-based format to define the structure of XML data(visit [wikipedia.org](http://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JS methods and parameters of a chart. Main AnyChart XML schema located [here](http://anychart.com/products/anychart7/shemas/7.3.1/xml-schema.xsd). This file can be used to validate your own XML structure. There quiet a few online XML validators on the Internet (for instance: [jsonschemalint.com](http://www.freeformatter.com/xml-validator-xsd.html)).
