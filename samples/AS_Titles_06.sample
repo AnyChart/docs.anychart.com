@@ -2,18 +2,20 @@
      :is_new false
      :exports "chart"}
 
-
 anychart.onDocumentReady(function() {
-  
-  stage = anychart.graphics.create('container');
   
   // set chart type
   chart = anychart.column();
   
+  // title settings
   chart.title()
-    .text('Sales Performance')  // set text for default title
-    .fontSize(12)               // set font size
-    .fontWeight(700);           // set font weight
+    .useHtml(true)      //enables HTML tags
+    .hAlign('center')   // place text in the center
+    .text(
+    'Sales Performance'+
+    '<br><a style="color:#0000FF; font-size: 10px;">'+
+    'according to annual report</a>'
+  );
   
   // data
   var data = anychart.data.set([
@@ -28,22 +30,5 @@ anychart.onDocumentReady(function() {
   chart.column(data);
   
   // draw chart
-  chart.container(stage).draw();
-  
-  // create additional title
-  var customTitle = anychart.ui.title();
-  customTitle
-    .text('according to annual report') // set title text
-    .orientation('bottom')              // place title at the bottom
-    .align('right')                     // stick text to the right side
-    .fontSize(11)                       // set text size
-    .fontFamily('Tahoma')               // set font family
-    .fontWeight(400)                    // unbold title
-    .background()                       // background settings
-      .enabled(true)                    // eanble background
-      .fill(null)                       // disable fill
-      .stroke('#000000');               // set black border to title
-  
-  // set container and draw title
-  customTitle.container(stage).draw();
+  chart.container('container').draw();
 });

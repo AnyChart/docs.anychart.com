@@ -68,7 +68,7 @@ You can tune background of a title. Use {api:anychart.core.ui.Title#background}*
 
 ### Text Settings
 
-Text is the main part of title itself. Text appearance can be tuned using {api:anychart.graphics.vector.Text}**.text()**{api} method.
+Text is the main part of title itself. Text appearance can be tuned similar way to the {api:anychart.graphics.vector.Text}**.text()**{api} method.
 
 ```
   // tune text
@@ -78,6 +78,8 @@ Text is the main part of title itself. Text appearance can be tuned using {api:a
     .fontDecoration('underline')  // underline text
     .fontFamily('Tahoma');        // set font family
 ```
+
+{sample}AS\_Titles\_05{sample}
 
 ## HTML in Title
 
@@ -93,7 +95,7 @@ You can use HTML formatted **.text()** parameter. Use **.useHtml()** parameter t
     );
 ```
 
-{sample}AS\_Titles\_05{sample}
+{sample}AS\_Titles\_06{sample}
 
 ## Additional Titles
 
@@ -118,7 +120,7 @@ Chart can contain any number of additional titles. These titles can be placed an
   customTitle.container(stage).draw();
 ```
 
-{sample}AS\_Titles\_06{sample}
+{sample}AS\_Titles\_07{sample}
 
 **Note:** chart elements draw in prescribed oder and we recommend to use **.draw()** method fo a custom title after drawing main chart.
 

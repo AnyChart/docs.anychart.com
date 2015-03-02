@@ -1,5 +1,5 @@
 {:tags []
-     :is_new false
+:is_new false
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
@@ -7,15 +7,12 @@ anychart.onDocumentReady(function() {
   // set chart type
   chart = anychart.column();
   
-  // title settings
+  // adjust chart settings
   chart.title()
-    .useHtml(true)      //enables HTML tags
-    .hAlign('center')   // place text in the center
-    .text(
-    'Sales Performance'+
-    '<br><a style="color:#0000FF; font-size: 10px;">'+
-    'according to annual report</a>'
-  );
+    .text('Sales Performance')  // set title text
+    .fontSize(12)                 // set font size
+    .fontDecoration('underline')  // underline text
+    .fontFamily('Tahoma');        // set font family
   
   // data
   var data = anychart.data.set([
@@ -25,10 +22,10 @@ anychart.onDocumentReady(function() {
     ['James', 11000],
     ['Mary', 9000]
   ]);
-  
+
   // set data
   chart.column(data);
-  
+
   // draw chart
   chart.container('container').draw();
 });
