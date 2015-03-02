@@ -49,7 +49,7 @@ anychart.onDocumentReady(function() {
   button.style.KhtmlUserSelect= 'none';
   button.style.WebkitUserSelect= 'none';
   button.style.userSelect= 'none';
-  button.innerHTML = 'Show<br/>JSON config';
+  button.innerHTML = 'Show<br/>XML config';
   button.onclick = function(){alert(chartXml)};
   body.appendChild(button);
 });
