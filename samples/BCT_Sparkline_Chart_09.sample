@@ -21,9 +21,9 @@ anychart.onDocumentReady(function() {
   chart2.data([500,-100,340,200,-90,80,-70]);
 
   //set charts dimensions and position
-  chart1.bounds(0, 0, 300, 40);
+  chart1.bounds(0, 0, 400, 40);
     chart1.type('column');    
-  chart2.bounds(0, 50, 300, 40);
+  chart2.bounds(0, 50, 400, 40);
     chart2.type('wl');
     
   //set width of the columns

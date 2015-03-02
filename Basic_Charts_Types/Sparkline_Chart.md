@@ -117,7 +117,7 @@ As you can see, we defined only the values, no categories are mentioned in the c
 
 That's how the charts will look like:
 
-{sample}BCT\_Sparkline\_Chart\_01{sample}
+{sample :width 500 :height 50}BCT\_Sparkline\_Chart\_01{sample}
 
 All titles are disabled by default, so we have to put them in visible mode and set.
 
@@ -131,7 +131,7 @@ All titles are disabled by default, so we have to put them in visible mode and s
  ```
 That's how it looks with titles:
 
-{sample}BCT\_Sparkline\_Chart\_02{sample}
+{sample :width 500 :height 50}BCT\_Sparkline\_Chart\_02{sample}
 
 ### Area Sparkline Chart
 
@@ -144,7 +144,7 @@ An area sparkline is a line sparkline with the area between its points and the h
 ```
 
 
-{sample}BCT\_Sparkline\_Chart\_03{sample}
+{sample :width 500 :height 50}BCT\_Sparkline\_Chart\_03{sample}
 
 ### Column Sparkline Chart
 
@@ -159,7 +159,7 @@ You can easily switch types:
 
 Currency rates are not the best example for Columns, so let's take sum of + and - reviews for an Ebay seller as an exapmle.
 
-{sample}BCT\_Sparkline\_Chart\_04{sample}
+{sample :width 500 :height 50}BCT\_Sparkline\_Chart\_04{sample}
 
 ### WinLoss Sparkline Chart
 
@@ -171,7 +171,7 @@ That's how we swap types:
   chart1.type('wl');
 ```
 
-{sample}BCT\_Sparkline\_Chart\_05{sample}
+{sample :width 500 :height 50}BCT\_Sparkline\_Chart\_05{sample}
 
 Note that there's no difference for a w/l chart how big the value is - only sign of the value means.
 
@@ -185,7 +185,7 @@ Sparklines have no axes to be shown, despite scales can be inverted. AnyChart al
 
 And here is the demonstration of Y Axis inversion on the Single-series sample:
 
-{sample}BCT\_Sparkline\_Chart\_06{sample}
+{sample :width 500 :height 50}BCT\_Sparkline\_Chart\_06{sample}
 
 <!--что-то здесь не так, почти ничто не инвертится--!>
 
@@ -209,7 +209,7 @@ chart2.data([1.5500,1.5458,1.5463, 'miss', 1.5397,1.5385]).connectMissingPoints(
 ```
 In this sample you can see how it looks with a missing point and compare with a chart below, where this point is simply connected.
 
-{sample}BCT\_Sparkline\_Chart\_07{sample}
+{sample :width 500 :height 200}BCT\_Sparkline\_Chart\_07{sample}
 
 ###Clip
 
@@ -218,7 +218,7 @@ If you wish not to accent the range of values but cut all unwanted ones off, use
 ```
  chart.clip(new acgraph.math.Rect(x, y, width, height));
 ```
-{sample}BCT\_Sparkline\_Chart\_08{sample}
+{sample :width 500 :height 200}BCT\_Sparkline\_Chart\_08{sample}
 
 ###Pointwidth
 
@@ -231,9 +231,29 @@ For some reasons you may need to make your columns look thiner or wider. It is p
 Note that you can define pointWidth values as percent or in pixels.
 This feature can be applied to Column and WinLoss Sparklines. Let's adjust columns in a couple of our previous examples:
 
-{sample}BCT\_Sparkline\_Chart\_09{sample}
+{sample :width 500 :height 100}BCT\_Sparkline\_Chart\_09{sample}
 
 ##Label
+
+In this section we will explain how to add and configure data labels. 
+
+If you want to configure data labels for all series - you should do that in the {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} method. You can tune their visual appearance, positioning and format.
+
+The following code enables only the general chart label, i.e. name:
+
+```
+    chart.label().enabled(true);
+```
+
+To enable the labels for the points, you shall write the following:
+
+```
+    chart.labels().enabled(true);
+```
+
+That's how it looks when we adjust the previous code for our sample:
+
+{sample :width 500 :height 120}BCT\_Sparkline\_Chart\_10{sample}
 
 ##Markers
 
@@ -242,14 +262,37 @@ AnyChart allows to add markers to any data element including lines.
 
 ###RangeMarker
 
-Although being rather small, sparklines can be quite informative. Range is a light colored rectangle with its lowest and highest levels representing the least and the highest acceptable value, i.e. an acceptable number of defects while production.
+Although being rather small, sparklines can be quite informative. Range is a light colored rectangle with its lowest and highest levels representing the least and the highest acceptable value, e.g. an acceptable number of defects while production.
 
-This is an example where we use the data about the Ebay seller. Let's define +50 as the maximum sum of negative and positive reviews for losing a "star" (and the minimum sum for going on with the current score).
+```
+chart.rangeMarker()
+    .scale(chart.yScale()) //you may change the scale
+    .from(<value1>)
+    .to(<value2>)
+    .fill('<color>');
+```
 
-{sample}BCT\_Sparkline\_Chart\_07{sample}
+This is an example where we use the data about the Ebay seller. Let's define +250 as the minimum sum of negative and positive reviews to get a new "star" and the maximum for saving the current score, and -10 as the maximum for losing a "star" and the minimum for saving the current score.
+
+{sample}BCT\_Sparkline\_Chart\_11{sample}
 
 
 ###LineMarker
+
+LineMarker is similar to RangeMarker, but there's no area to be shown with LineMarkers - only single lines, which can represent some limits.
+
+The following code will help you to add a LineMarker to your chart:
+
+```
+  chart.lineMarker()
+    .scale(chart.yScale()) //you may change the scale
+    .value(<value>);
+```
+
+That's how it all looks in the example:
+
+{sample}BCT\_Sparkline\_Chart\_12{sample}                                   
+ 
 
 ##Colors 
 
@@ -257,6 +300,18 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 ### Colorizing Elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.graphics.vector.Stroke}**.stroke()**{api} parameter for Line or Area series and {api:anychart.graphics.vector.Fill}**.fill()**{api} for Column and WinLoss. In the sample below we have 5 charts of each type demonstrating the applied colors and fills. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.graphics.vector.Stroke}**.stroke()**{api} parameter for Line or Area series and {api:anychart.graphics.vector.Fill}**.fill()**{api} for  Area, Column and WinLoss. In the sample below we have 4 charts of each type demonstrating the applied colors and fills. We have colored the maximum and the minimum values in the column chart and only negatives in winloss. Here is the sample:
 
+{sample}BCT\_Sparkline\_Chart\_13{sample}   
 
+The code for the example above is the following:
+
+```
+	//colorize our charts
+	chart1.stroke('red');
+	chart2.stroke('yellow');
+	chart2.fill('#996633');
+	chart3.maxFill('green');
+	chart3.minFill('red');
+	chart4.negativeFill('darkred');
+```
