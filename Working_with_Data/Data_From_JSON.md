@@ -4,11 +4,11 @@
 * [Overview](#overview)
 * [JSON vs JavaScript](#json_vs_javascript)
 * [Data Serialization](#data_serialization)
-* [Data Sets](#data_sets)
+* [Multiple Series](#multiple_series)
 * [Settings](#settings)
  * [Axes](#axes)
  * [Visualization](#visualization)
- * [Complex](#complex)
+* [Complex](#complex)
 * [Schema](#schema)
 
 ## Overview
@@ -17,7 +17,7 @@ AnyChart supports several ways of setting data. This article quickly demonstrate
 
 ## JSON vs JavaScript
 
-AnyChart provides {api:anychart#fromJson}**.fromJSON()**{api} parameter for using data in JSON format. Snippet below represent simple instance of getting data from JSON format.
+AnyChart provides {api:anychart#fromJson}**.fromJSON()**{api} parameter for using data in JSON format. Snippet below represents simple instance of getting data from JSON format.
 
 ```
   var chart = anychart.fromJson(/*put your JSON data in here*/);
@@ -48,7 +48,7 @@ Setting data using JSON format is very similar to the way of setting data in Jav
 
 {sample}WD\_Data\_from\_JSON\_01{sample}
 
-JSON format has some peculiarities. JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the JSON structure very similar to JS. To find out any of require method or parameter use {api:anychart}API{api}. API supplies every parameter with a structure to invoke it. This structure is the same for JSON data set. For instance, API provides {api:anychart#column}**column()**{api} method to create column chart.
+JSON format has some peculiarities. JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the JSON structure very similar to JS. To find out any required method or parameter use {api:anychart}API{api}. API supplies every parameter with a structure to invoke it. This structure is the same for JSON data set. For instance, API provides {api:anychart#column}**column()**{api} method to create column chart.
 
 ```
   anychart.column([128.14, 112.61, 163.21, 229.98]).container('container').draw();
@@ -96,21 +96,6 @@ The snippet below shows setting the same parameters using JSON
 ```
 
 As addition to the presented material, here is a table of main methods and parameters of JS data set comparing with JSON data set (full list of all the methods and parameters can be found in api).
-
-
-
-
-
-
-
-
-<!--Chart type-->
-
-
-
-
-
-
 
 <table width="700" border="1" class="dtTABLE">
 <tbody>
@@ -176,14 +161,6 @@ chart.spline(
 </td>
 </tr>
 </tbody></table>
-
-
-
-
-<!--Chart title-->
-
-
-
 
 <table width="600" border="1" class="dtTABLE">
 <tbody>
@@ -280,20 +257,6 @@ chart.container('container');
 </tr>
 </tbody></table>
 
-
-
-
-
-
-<!--Multiple series-->
-
-
-
-
-
-
-
-
 <table width="700" border="1" class="dtTABLE">
 <tbody>
 <tr>
@@ -374,16 +337,6 @@ chart.container('container');
 </td>
 </tr>
 </tbody></table>
-
-
-
-
-<!--Axes settings-->
-
-
-
-
-
 
 <table width="700" border="1" class="dtTABLE">
 <tbody>
@@ -503,16 +456,6 @@ chart.container('container')
 </td>
 </tr>
 </tbody></table>
-
-
-
-
-
-
-<!-- Labels settings-->
-
-
-
 
 <table width="700" border="1" class="dtTABLE">
 <tbody>
@@ -679,7 +622,7 @@ Predefined settings from JS format can be serialized into JSON format for the sa
 
 **Note:** Parameters of text formatting can't be serialized and will be set by default in JSON format. 
 
-## Data Sets
+## Multiple Series
 
 JSON data set can contain one or several series. Sample below demonstrates chart with several series from JSON.
 
@@ -759,7 +702,7 @@ Visual settings are vital for a chart. JSON can control any method and parameter
 
 {sample}WD\_Data\_from\_JSON\_05{sample}
 
-### Complex
+## Complex
 
 Previous samples demonstrate separate additional features. Next sample is a bit more complex. It demonstrates cartesian chart with several line series, customized axes, scales, grids and titles.
 
@@ -767,4 +710,7 @@ Previous samples demonstrate separate additional features. Next sample is a bit 
 
 ## Schema
 
-JSON Schema specifies a JSON-based format to define the structure of JSON data(visit [wikipedia.org](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JS methods and parameters of a chart. Main AnyChart JSON schema located [here](http://anychart.com/products/anychart7/shemas/7.3.1/json-schema.json). This file can be used to validate your own JSON structure. There quiet a few online JSON validators on the Internet (for instance: [jsonschemalint.com](http://jsonschemalint.com/)).
+JSON Schema specifies a JSON-based format to define the structure of JSON data(visit [wikipedia.org](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JS methods and parameters of a chart. Main AnyChart JSON schema locates [http://anychart.com/products/anychart7/shemas/7.3.1/json-schema.json](http://anychart.com/products/anychart7/shemas/7.3.1/json-schema.json). Version of the JSON schema must correspond to the AnyChart JS version. This file can be used to validate your own JSON structure. 
+  
+  
+There quiet a few online JSON validators on the Internet (for instance: [jsonschemalint.com](http://jsonschemalint.com/)).
