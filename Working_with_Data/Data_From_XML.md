@@ -133,6 +133,8 @@ As addition to the presented material, here is a table of main methods and param
 ```
 // set chart type
 var chart = anychart.line();
+// set chart container
+chart.container('container');
 
 // set series type
 chart.spline(
@@ -144,13 +146,11 @@ chart.spline(
     ['April', 11000],
     ['May', 9000]
   ]);
-  
-  // set chart container
-  chart.container('container');
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0;">
 ```
+// set chart type
 '<chart type="line" '+
 // set chart container
 'container="container">'+
@@ -204,6 +204,8 @@ chart.spline(
 ```
 // set chart type
 var chart = anychart.column();
+// set chart container
+chart.container('container');
 
 // title settings
 chart.title()
@@ -230,46 +232,40 @@ chart.column([
   ['James', 11000],
   ['Mary', 9000]
 ])
-
-// set chart container
-chart.container('container');
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
-```
+```xml
 // set chart type
-'<?xml version="1.0" encoding="utf-8"?><anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
-// set chart type
-  '<chart type="column" '+
-  
-  // set chart container
-  'container="container">'+
-  
-  // title settings
-  '<title '+
-    // set title text
-    'text="Sales Performance">'+
-    // settings for title background
-    '<background '+
-      // enable background
-      'enabled="true" '+
-      // set background inner color
-      'fill="#FFD700" '+
-      // set background border
-      'stroke="#D8D8D8" '+
-      // set type of background corners
-      'cornerType="round" '+
-      // set corners size
-      'corners="10"/></title>'+
+<chart type="column" 
+// set chart container
+container="container">
+
+// title settings
+<title 
+  // set title text
+  text="Sales Performance">
+  // settings for title background
+  <background 
+    // enable background
+    enabled="true" 
+    // set background inner color
+    fill="#FFD700" 
+    // set background border
+    stroke="#D8D8D8" 
+    // set type of background corners
+    cornerType="round" 
+    // set corners size
+    corners="10"/></title>
   
   // set series type
-  '<series_list><series series_type="column">'+
-    '<data><point x="January" value="10000"/>'+
-      <point x="February" value="12000"/>'+,
-      <point x="March" value="18000"/>'+,
-      <point x="April" value="11000"/>'+,
-      <point x="May" value="9000"/></data>'+
-  '</series></series_list></chart>'
+  <series_list><series series_type="column">
+    <data><point x="January" value="10000"/>
+      <point x="February" value="12000"/>
+      <point x="March" value="18000"/>
+      <point x="April" value="11000"/>
+      <point x="May" value="9000"/></data>
+  </series></series_list></chart>
 ```
 </td>
 </tr>
@@ -313,7 +309,6 @@ chart.container('container');
 <tr>
 <td style="border-bottom: 0; border-left: 0; padding: 2px;">
 ```
-
 // set chart type
 var chart = anychart.area();
 chart.container('container');
@@ -341,30 +336,29 @@ chart.splineArea([
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
 ```
-'<?xml version="1.0" encoding="utf-8"?><anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
 // set chart type
-  '<chart type="area" '+
-  'container="container">'+
+'<chart type="area" '+
+'container="container">'+
 
-  // type of the first series
-  '<series_list><series series_type="area">'+
-    //data for first series
-    '<data><point x="January" value="12000"/>'+
-      '<point x="February" value="15000"/>+
-      '<point x="March" value="16000"/>+
-      '<point x="April" value="15000"/>+
-      '<point x="May" value="14000"/>+
-    '</data></series>'+
+// type of the first series
+'<series_list><series series_type="area">'+
+  //data for first series
+  '<data><point x="January" value="12000"/>'+
+    '<point x="February" value="15000"/>+
+    '<point x="March" value="16000"/>+
+    '<point x="April" value="15000"/>+
+    '<point x="May" value="14000"/>+
+  '</data></series>'+
 
-  // type of the second series
-  '<series series_type="splineArea">'+
-    // data for the second series
-    '<data><point x="January" value="10000"/>'
-      '<point x="February" value="12000"/>'+
-      '<point x="March" value="18000"/>'+
-      '<point x="April" value="11000"/>'+
-      '<point x="May" value="9000"/></data>'+
-  '</series></series_list></chart>';
+// type of the second series
+'<series series_type="splineArea">'+
+  // data for the second series
+  '<data><point x="January" value="10000"/>'
+    '<point x="February" value="12000"/>'+
+    '<point x="March" value="18000"/>'+
+    '<point x="April" value="11000"/>'+
+    '<point x="May" value="9000"/></data>'+
+'</series></series_list></chart>';
 ```
 </td>	
 </tr>
@@ -404,8 +398,9 @@ chart.splineArea([
 <tr>
 <td style="border-bottom: 0; border-left: 0; padding: 2px;">
 ```
-
+// set chart type
 var chart = anychart.line();
+chart.container('container')
 
 // set intervals
 chart.yScale().ticks()
@@ -413,8 +408,7 @@ chart.yScale().ticks()
 
 // custom y scale
 var newScale = anychart.scales.linear();
-newScale
-    .minimum(0)
+newScale.minimum(0)
     .maximum(100)
     .ticks()
         .interval(10);
@@ -436,33 +430,31 @@ chart.column([
     ["D", 78662],
     ["E", 90000]
 ]);
-chart.line([
+var line = chart.line();
+line.yScale(newScale);
+line.data([
     ["A", 95],
     ["B", 97],
     ["C", 96],
     ["D", 70],
     ["E", 35]
-]).yScale(newScale);
-
-chart.container('container')
+]);
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
 ```
-'<?xml version="1.0" encoding="utf-8"?><anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
 // set chart type
-  '<chart type="line" '+
-  'container="container">'+
+'<chart type="line" '+
+'container="container">'+
   
   // set intervals
   '<y_scale><ticks '+ 
   'interval="100000"/></y_scale>'+
   
   // custom y scale
-  '<scales '+
-    '<scale type="linear" '+
+  '<scales><scale type="linear" '+
     'minimum="0" '+
-    'maximum="100"/>'+
+    'maximum="100">'+
     '<ticks '+
       'interval="10"/>'+
     '<minorTicks interval="2"/></scale></scales>'+
@@ -482,16 +474,16 @@ chart.container('container')
       '<point x="C" value="148662"/>'+
       '<point x="D" value="78662"/>'+
       '<point x="E" value="90000"/>'+
-    '</data><series>'+
-      '<series series_type="line">'+
-      '<data><point x="A" value="95"/>'+
-        <point x="B" value="97"/>'+
-        <point x="C" value="96"/>'+
-        <point x="D" value="70"/>'+
-        <point x="E" value="35"/>'+
-      yScale: "newScale"}],
-    
-    container: "container"}}
+    '</data></series>'+
+      '<series series_type="line" '+
+      'y_scale="0">'+
+        '<data>'+
+        '<point x="A" value="95"/>'+
+        '<point x="B" value="97"/>'+
+        '<point x="C" value="96"/>'+
+        '<point x="D" value="70"/>'+
+        '<point x="E" value="35"/>'+
+      '</data></series></series_list></chart>';
 ```
 </td>	
 </tr>
@@ -531,7 +523,7 @@ chart.container('container')
 <tr>
 <td style="border-bottom: 0; border-left: 0; padding: 2px;">
 ```
-
+// chart type
 var chart = anychart.lineChart();
 chart.container('container')
 
@@ -547,8 +539,7 @@ chart.rangeMarker()
       '.1 green', 
       '.5 yellow', 
       '.9 red'
-    ]
-  });
+    ]});
 
 // set text marker at the top
 chart.textMarker()
@@ -589,71 +580,75 @@ chart.title().enabled(false);
 chart.yScale()
   .minimum(0)
   .maximum(30000);
-chart.xAxis().title().enabled(false);
+chart.xAxis()
+  .title()
+    .enabled(false);
 chart.yAxis().title().text('Sales');
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
 ```
-'<?xml version="1.0" encoding="utf-8"?><anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
 // set chart type
-  '<chart type="line" '+
-  'container="container">'+
-  
-  // set range marker
-  '<range_axes_markers '+
-    'scale="1" '+
-    'from="0" '+
-    'to="30000">'+
-    '<fill '+
-      'angle="-90" '+
-      'opacity="0.5">'+
-        '<keys><key><![CDATA[.1 green]]></key>'+
-        '<key><![CDATA[.5 yellow]]></key>'+
-        '<key><![CDATA[.9 red]]></key></keys>'+
-    '</fill></range_axes_markers>'+
-  
-  // set text marker at the top
-  '</text_axes_markers>'+
-  '<text_axes_marker scale="1" '+
-    'offset_x="10" '+
-    'value="25000" '+
-    'font_size="15" '+
-    'text="Good" '+
-    'font_weight="600"/>'+
-  
-  // set text marker at the center
-  '<text_axes_marker '+
-    'scale="1" '+
-    'offset_x="10" '+
-    'value="15000" '+
-    'text="Average" '+
-    'font_size="15" '+
-    'font_weight="600"/>'+
-  
-  // set text marker at the bottom
-  '<text_axes_marker '+
-  'scale="1" '+
-  'offset_x="10" '+
-  'value="5000" '+
-  'text="Severe" '+
-  'font_size="12" '+
-  'font_weight="600"/></text_axes_markers>'+
-  
-  // data set
-  '<series_list><series series_type="line">'+
-  '<data><point x="2005" value="10000"/>'+
-    '<point x="2006" value="12000"/>'+
-    '<point x="2007" value="18000"/>'+
-    '<point x="2008" value="19000"/>'+
-    '<point x="2009" value="29000"/>'+
-  '</data></series></series_list>'+
-  '<title enabled="false"/>'+
-  '<y_scale '+
-    'minimum="0" '+ 
-    'maximum="30000"/>'+
-  '<x_axes><axis><title enabled="false"/></axis><x_axes>'+
-  '<y_axes title="Sales"/>';
+'<chart type="line" '+
+'container="container">'+
+ 
+ // set range marker
+ '<range_axes_markers><range_axes_marker '+
+   'scale="1" '+
+   'from="0" '+
+   'to="30000">'+
+   '<fill '+
+     'angle="-90" '+
+     'opacity="0.5">'+
+       '<keys>'+
+         '<key><![CDATA[.1 green]]></key>'+
+         '<key><![CDATA[.5 yellow]]></key>'+
+         '<key><![CDATA[.9 red]]></key></keys>'+
+   '</fill></range_axes_marker></range_axes_markers>'+
+ 
+ // set text marker at the top
+ '<text_axes_markers>'+
+ '<text_axes_marker scale="1" '+
+   'offset_x="10" '+
+   'value="25000" '+
+   'font_size="15" '+
+   'text="Good" '+
+   'font_weight="600"/>'+
+ 
+ // set text marker at the center
+ '<text_axes_marker '+
+   'scale="1" '+
+   'offset_x="10" '+
+   'value="15000" '+
+   'text="Average" '+
+   'font_size="15" '+
+   'font_weight="600"/>'+
+ 
+ // set text marker at the bottom
+ '<text_axes_marker '+
+ 'scale="1" '+
+ 'offset_x="10" '+
+ 'value="5000" '+
+ 'text="Severe" '+
+ 'font_size="12" '+
+ 'font_weight="600"/></text_axes_markers>'+
+ 
+ // data set
+ '<series_list><series series_type="line">'+
+ '<data><point x="2005" value="10000"/>'+
+   '<point x="2006" value="12000"/>'+
+   '<point x="2007" value="18000"/>'+
+   '<point x="2008" value="19000"/>'+
+   '<point x="2009" value="29000"/>'+
+ '</data></series></series_list>'+
+ '<title enabled="false"/>'+
+ '<y_scale '+
+   'minimum="0" '+ 
+   'maximum="30000"/>'+
+ '<x_axes><axis>'+
+   '<title enabled="false"/>'+
+   '</axis><x_axes>'+
+ '<y_axes title="Sales"/></chart>';
 ```
 </td>
 </tr>
