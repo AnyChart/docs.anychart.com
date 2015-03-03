@@ -400,7 +400,7 @@ chart.container('container');
 <th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
 </tr>
 <tr>
-<td style="border-bottom: 0; border-left: 0;>
+<td style="border-bottom: 0; border-left: 0;">
 ```
 var chart = anychart.line();
 
