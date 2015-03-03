@@ -3,13 +3,13 @@
 
 * [Overview](#overview)
 * [JSON vs JavaScript](#json_vs_javascript)
-* [Samples](#samples)
- * [Settings](#settings)
-  * [Axes](#axes)
-  * [Visualization](#visualization)
-  * [Complex](#complex)
- * [Data Serialization](#data_serialization)
- * [Schema](#schema)
+* [Data Serialization](#data_serialization)
+* [Multiple Series](#multiple_series)
+* [Settings](#settings)
+ * [Axes](#axes)
+ * [Visualization](#visualization)
+* [Complex](#complex)
+* [Schema](#schema)
 
 ## Overview
 
@@ -93,10 +93,8 @@ Parameters of Y-Scale should be applied using {api:anychart.charts.Cartesian#ySc
 The snippet below shows setting the same parameters using XML
 
 ```
-  '<?xml version="1.0" encoding="utf-8"?>' +
-        '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
-          '<chart type="column" container="container">' +
-            '<y_scale type="line" minimum="60" maximum="120"/>'
+  <chart type="column" container="container">
+    <y_scale type="line" minimum="60" maximum="120"/>
 ```
 
 As addition to the presented material, here is a table of main methods and parameters of JS data set comparing with JSON data set (full list of all the methods and parameters can be found in api).
@@ -159,12 +157,12 @@ chart.spline(
 '<series_list><series series_type="spline">'+
   // set series data
   '<data>'+
-    '<point x="January" value=10000/>'+
-    '<point x="February" value=12000/>'+
-    '<point x="March" value=18000/>'+
-    '<point x="April" value=11000/>'+
-    '<point x="May" value=9000/>'+
-  '</data></series><series_list></chart>'
+    '<point x="January" value="10000"/>'+
+    '<point x="February" value="12000"/>'+
+    '<point x="March" value="18000"/>'+
+    '<point x="April" value="11000"/>'+
+    '<point x="May" value="9000"/>'+
+  '</data></series></series_list></chart>'
 ```
 </td>
 </tr>
@@ -174,7 +172,7 @@ chart.spline(
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_13{sample}
+{sample :width 666}WD\_Data\_from\_XML\_14{sample}
 </td>
 </tr>
 </tbody></table>
@@ -275,7 +273,7 @@ container="container">
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_14{sample}
+{sample :width 666}WD\_Data\_from\_XML\_15{sample}
 </td>
 </tr>
 </tbody></table>
@@ -343,17 +341,17 @@ chart.splineArea([
 // type of the first series
 '<series_list><series series_type="area">'+
   //data for first series
-  '<data><point x="January" value="12000"/>'+
-    '<point x="February" value="15000"/>+
-    '<point x="March" value="16000"/>+
-    '<point x="April" value="15000"/>+
-    '<point x="May" value="14000"/>+
+  '<data><point x="January" value="12000"/>''+
+    '<point x="February" value="15000"/>'+
+    '<point x="March" value="16000"/>'+
+    '<point x="April" value="15000"/>'+
+    '<point x="May" value="14000"/>'+
   '</data></series>'+
 
 // type of the second series
 '<series series_type="splineArea">'+
   // data for the second series
-  '<data><point x="January" value="10000"/>'
+  '<data><point x="January" value="10000"/>'+
     '<point x="February" value="12000"/>'+
     '<point x="March" value="18000"/>'+
     '<point x="April" value="11000"/>'+
@@ -368,7 +366,7 @@ chart.splineArea([
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_15{sample}
+{sample :width 666}WD\_Data\_from\_XML\_16{sample}
 </td>
 </tr>
 </tbody></table>
@@ -377,8 +375,6 @@ chart.splineArea([
 
 
 <!--Axes settings-->
-
-<!-- NEED FIXING-->
 
 
 
@@ -493,7 +489,7 @@ line.data([
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_16{sample}
+{sample :width 666}WD\_Data\_from\_XML\_17{sample}
 </td>
 </tr>
 </tbody></table>
@@ -658,7 +654,7 @@ chart.yAxis().title().text('Sales');
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_17{sample}
+{sample :width 666}WD\_Data\_from\_XML\_18{sample}
 </td>
 </tr>
 </tbody></table>
@@ -692,6 +688,12 @@ XML data set can contain one or several series. Sample below demonstrates chart 
 ```
 
 {sample}WD\_Data\_from\_XML\_02{sample}
+
+## Data Serialization
+
+Predefined settings from JS format can be serialized into XML format for the sake of convenient in future usage. Method **.toXml()** transfers current chart settings into JSON object. This method creates a string, that contains all possible methods and parameters of the chart in XML format.
+
+{sample}WD\_Data\_from\_XML\_13{sample}
 
 ## Settings
 
@@ -732,18 +734,15 @@ Visual settings can be vital for a chart. XML can contain almost any method and 
 
 {sample}WD\_Data\_from\_XML\_04{sample}
 
-### Complex
+## Complex
 
 Previous samples demonstrate separate additional features. Next sample is a bit more complex. It demonstrates cartesian chart with several different series and customized chart elements.
 
 {sample}WD\_Data\_from\_XML\_05{sample}
 
-## Data Serialization
-
-Predefined settings from JS format can be serialized into XML format for the sake of convenient in future usage. Method **.toXml()** transfers current chart settings into JSON object. This method creates a string, that contains all possible methods and parameters of the chart in XML format.
-
-{sample}WD\_Data\_from\_XML\_13{sample}
-
 ## Schema
 
-XML Schema specifies a XML-based format to define the structure of XML data(visit [wikipedia.org](http://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JS methods and parameters of a chart. Main AnyChart XML schema located [here](http://anychart.com/products/anychart7/shemas/7.3.1/xml-schema.xsd). This file can be used to validate your own XML structure. There quiet a few online XML validators on the Internet (for instance: [www.freeformatter.com/xml-validator-xsd.html](http://www.freeformatter.com/xml-validator-xsd.html)).
+XML Schema specifies a XML-based format to define the structure of XML data(visit [wikipedia.org](http://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JS methods and parameters of a chart. Main AnyChart XML schema located  [http://anychart.com/products/anychart7/shemas/7.3.1/xml-schema.xsd](http://anychart.com/products/anychart7/shemas/7.3.1/xml-schema.xsd). This file can be used to validate your own XML structure. Version of the XML schema must correspond to the version of anychart JS.
+  
+  
+There quiet a few online XML validators on the Internet (for instance: [www.freeformatter.com/xml-validator-xsd.html](http://www.freeformatter.com/xml-validator-xsd.html)).
