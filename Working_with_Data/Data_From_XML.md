@@ -90,7 +90,7 @@ Parameters of Y-Scale should be applied using {api:anychart.charts.Cartesian#ySc
 
 The snippet below shows setting the same parameters using XML
 
-```
+```xml
   <chart type="column" container="container">
     <y_scale type="line" minimum="60" maximum="120"/>
 ```
@@ -130,22 +130,22 @@ chart.spline(
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0;">
-```
+```xml
 // set chart type
-'<chart type="line" '+
+<chart type="line" 
 // set chart container
-'container="container">'+
+container="container">
 
 // set series type
-'<series_list><series series_type="spline">'+
+<series_list><series series_type="spline">
   // set series data
-  '<data>'+
-    '<point x="January" value="10000"/>'+
-    '<point x="February" value="12000"/>'+
-    '<point x="March" value="18000"/>'+
-    '<point x="April" value="11000"/>'+
-    '<point x="May" value="9000"/>'+
-  '</data></series></series_list></chart>'
+  <data>
+    <point x="January" value="10000"/>
+    <point x="February" value="12000"/>
+    <point x="March" value="18000"/>
+    <point x="April" value="11000"/>
+    <point x="May" value="9000"/>
+  </data></series></series_list></chart>
 ```
 </td>
 </tr>
@@ -294,32 +294,32 @@ chart.splineArea([
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
-```
+```xml
 // set chart type
-'<chart type="area" '+
-'container="container">'+
+<chart type="area" 
+container="container">
 
 // type of the first series
-'<series_list><series series_type="area">'+
+<series_list><series series_type="area">
   //data for first series
-  '<data><point x="January" value="12000"/>''+
-    '<point x="February" value="15000"/>'+
-    '<point x="March" value="16000"/>'+
-    '<point x="April" value="15000"/>'+
-    '<point x="May" value="14000"/>'+
-  '</data></series>'+
+  <data><point x="January" value="12000"/>
+    <point x="February" value="15000"/>
+    <point x="March" value="16000"/>
+    <point x="April" value="15000"/>
+    <point x="May" value="14000"/>
+  </data></series>
 
 // type of the second series
-'<series series_type="splineArea">'+
+<series series_type="splineArea">
   // data for the second series
-  '<data><point x="January" value="10000"/>'+
-    '<point x="February" value="12000"/>'+
-    '<point x="March" value="18000"/>'+
-    '<point x="April" value="11000"/>'+
-    '<point x="May" value="9000"/></data>'+
-'</series></series_list></chart>';
+  <data><point x="January" value="10000"/>
+    <point x="February" value="12000"/>
+    <point x="March" value="18000"/>
+    <point x="April" value="11000"/>
+    <point x="May" value="9000"/></data>
+</series></series_list></chart>
 ```
-</td>	
+</td>
 </tr>
 </tbody>
 </table>
@@ -391,48 +391,48 @@ line.data([
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
-```
+```xml
 // set chart type
-'<chart type="line" '+
-'container="container">'+
+<chart type="line" 
+container="container">
   
   // set intervals
-  '<y_scale><ticks '+ 
-  'interval="100000"/></y_scale>'+
+  <y_scale><ticks 
+  interval="100000"/></y_scale>
   
   // custom y scale
-  '<scales><scale type="linear" '+
-    'minimum="0" '+
-    'maximum="100">'+
-    '<ticks '+
-      'interval="10"/>'+
-    '<minorTicks interval="2"/></scale></scales>'+
+  <scales><scale type="linear" 
+    minimum="0" 
+    maximum="100">
+    <ticks 
+      interval="10"/>
+    <minorTicks interval="2"/></scale></scales>
   
   // y axes settings
-  '<y_axes>'+
-    '<axis title="Basic Y Axis"/>'+
-    '<axis '+
-    'orientation="right" '+
-    'scale="newScale">'+
-    '<title '+
-      'text="Extra Y Axis"/></axis></y_axes>'+
+  <y_axes>
+    <axis title="Basic Y Axis"/>
+    <axis 
+    orientation="right" 
+    scale="newScale">
+    <title 
+      text="Extra Y Axis"/></axis></y_axes>
   
-  '<series_list><series series_type="column">'+
-    '<data><point x="A" value="637166"/>'+
-      '<point x="B" value="721630"/>'+
-      '<point x="C" value="148662"/>'+
-      '<point x="D" value="78662"/>'+
-      '<point x="E" value="90000"/>'+
-    '</data></series>'+
-      '<series series_type="line" '+
-      'y_scale="0">'+
-        '<data>'+
-        '<point x="A" value="95"/>'+
-        '<point x="B" value="97"/>'+
-        '<point x="C" value="96"/>'+
-        '<point x="D" value="70"/>'+
-        '<point x="E" value="35"/>'+
-      '</data></series></series_list></chart>';
+  <series_list><series series_type="column">
+    <data><point x="A" value="637166"/>
+      <point x="B" value="721630"/>
+      <point x="C" value="148662"/>
+      <point x="D" value="78662"/>
+      <point x="E" value="90000"/>
+    </data></series>
+      <series series_type="line" 
+      y_scale="0">
+        <data>
+        <point x="A" value="95"/>
+        <point x="B" value="97"/>
+        <point x="C" value="96"/>
+        <point x="D" value="70"/>
+        <point x="E" value="35"/>
+      </data></series></series_list></chart>
 ```
 </td>	
 </tr>
@@ -526,68 +526,68 @@ chart.yAxis().title().text('Sales');
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
-```
+```xml
 // set chart type
-'<chart type="line" '+
-'container="container">'+
+<chart type="line" 
+container="container">
  
  // set range marker
- '<range_axes_markers><range_axes_marker '+
-   'scale="1" '+
-   'from="0" '+
-   'to="30000">'+
-   '<fill '+
-     'angle="-90" '+
-     'opacity="0.5">'+
-       '<keys>'+
-         '<key><![CDATA[.1 green]]></key>'+
-         '<key><![CDATA[.5 yellow]]></key>'+
-         '<key><![CDATA[.9 red]]></key></keys>'+
-   '</fill></range_axes_marker></range_axes_markers>'+
+ <range_axes_markers><range_axes_marker 
+   scale="1" 
+   from="0" 
+   to="30000">
+   <fill 
+     angle="-90" 
+     opacity="0.5">
+       <keys>
+         <key><![CDATA[.1 green]]></key>
+         <key><![CDATA[.5 yellow]]></key>
+         <key><![CDATA[.9 red]]></key></keys>
+   </fill></range_axes_marker></range_axes_markers>
  
  // set text marker at the top
- '<text_axes_markers>'+
- '<text_axes_marker scale="1" '+
-   'offset_x="10" '+
-   'value="25000" '+
-   'font_size="15" '+
-   'text="Good" '+
-   'font_weight="600"/>'+
+ <text_axes_markers>
+ <text_axes_marker scale="1" 
+   offset_x="10" 
+   value="25000" 
+   font_size="15" 
+   text="Good" 
+   font_weight="600"/>
  
  // set text marker at the center
- '<text_axes_marker '+
-   'scale="1" '+
-   'offset_x="10" '+
-   'value="15000" '+
-   'text="Average" '+
-   'font_size="15" '+
-   'font_weight="600"/>'+
+ <text_axes_marker 
+   scale="1" 
+   offset_x="10" 
+   value="15000" 
+   text="Average" 
+   font_size="15" 
+   font_weight="600"/>
  
  // set text marker at the bottom
- '<text_axes_marker '+
- 'scale="1" '+
- 'offset_x="10" '+
- 'value="5000" '+
- 'text="Severe" '+
- 'font_size="12" '+
- 'font_weight="600"/></text_axes_markers>'+
+ <text_axes_marker 
+ scale="1" 
+ offset_x="10" 
+ value="5000" 
+ text="Severe" 
+ font_size="12" 
+ font_weight="600"/></text_axes_markers>
  
  // data set
- '<series_list><series series_type="line">'+
- '<data><point x="2005" value="10000"/>'+
-   '<point x="2006" value="12000"/>'+
-   '<point x="2007" value="18000"/>'+
-   '<point x="2008" value="19000"/>'+
-   '<point x="2009" value="29000"/>'+
- '</data></series></series_list>'+
- '<title enabled="false"/>'+
- '<y_scale '+
-   'minimum="0" '+ 
-   'maximum="30000"/>'+
- '<x_axes><axis>'+
-   '<title enabled="false"/>'+
-   '</axis><x_axes>'+
- '<y_axes title="Sales"/></chart>';
+ <series_list><series series_type="line">
+ <data><point x="2005" value="10000"/>
+   <point x="2006" value="12000"/>
+   <point x="2007" value="18000"/>
+   <point x="2008" value="19000"/>
+   <point x="2009" value="29000"/>
+ </data></series></series_list>
+ <title enabled="false"/>
+ <y_scale 
+   minimum="0" 
+   maximum="30000"/>
+ <x_axes><axis>
+   <title enabled="false"/>
+   </axis><x_axes>
+ <y_axes title="Sales"/></chart>
 ```
 </td>
 </tr>
