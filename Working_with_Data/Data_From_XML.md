@@ -49,7 +49,7 @@ Setting data using XML format is very similar to the way of setting data in Java
 
 {sample}WD\_Data\_from\_XML\_01{sample}
 
-**Note:** Use {api:anychart}AnyChart API{api} to adjust any parameter of a chart. XML config uses the same names as methods and parameters do and it is quite easy to set any required parameter with XML data set. Also, XML uses snakeCase for names of tags and parameters and names of methods and parameters have to be transformed from camelCase to snakeCase. It requires to replace every capital letter with small letter and set underscore before this letter (e.g. hatch fill can be set with JS using "hatchFill" parameter and with XML using "hatch_fill" parameter). {api:anychart}AnyChart API{api} supplies every parameter with a structure to invoke it. This structure is the same for XML data set. For instance, API provides {api:anychart#column}**column()**{api} method to create column chart.
+**Note:** Use {api:anychart}AnyChart API{api} to adjust any parameter of a chart. XML config uses the same names as methods and parameters do and it is quite easy to set any required parameter with XML data set. Also, XML uses [snakeCase](http://en.wikipedia.org/wiki/Snake_case) for names of tags and parameters and names of methods and parameters have to be transformed from [camelCase](http://en.wikipedia.org/wiki/CamelCase) to [snakeCase](http://en.wikipedia.org/wiki/Snake_case). It requires to replace every capital letter with small letter and set underscore before this letter (e.g. hatch fill can be set with JS using "hatchFill" parameter and with XML using "hatch_fill" parameter). {api:anychart}AnyChart API{api} supplies every parameter with a structure to invoke it. This structure is the same for XML data set. For instance, API provides {api:anychart#column}**column()**{api} method to create column chart.
 
 ```
   anychart.column([128.14, 112.61, 163.21, 229.98]).container('container').draw();
@@ -71,8 +71,6 @@ The same chart can be created using XML
       '</anychart>'
     ).draw();
 ```
-
-
 
 Data set for pie chart
 
@@ -98,21 +96,6 @@ The snippet below shows setting the same parameters using XML
 ```
 
 As addition to the presented material, here is a table of main methods and parameters of JS data set comparing with JSON data set (full list of all the methods and parameters can be found in api).
-
-
-
-
-
-
-
-
-<!--Chart type-->
-
-
-
-
-
-
 
 <table width="700" border="1" class="dtTABLE">
 <tbody>
@@ -176,14 +159,6 @@ chart.spline(
 </td>
 </tr>
 </tbody></table>
-
-
-
-
-<!--Chart title-->
-
-
-
 
 <table width="600" border="1" class="dtTABLE">
 <tbody>
@@ -278,20 +253,6 @@ container="container">
 </tr>
 </tbody></table>
 
-
-
-
-
-
-<!--Multiple series-->
-
-
-
-
-
-
-
-
 <table width="700" border="1" class="dtTABLE">
 <tbody>
 <tr>
@@ -370,14 +331,6 @@ chart.splineArea([
 </td>
 </tr>
 </tbody></table>
-
-
-
-
-<!--Axes settings-->
-
-
-
 
 <table width="700" border="1" class="dtTABLE">
 <tbody>
@@ -493,16 +446,6 @@ line.data([
 </td>
 </tr>
 </tbody></table>
-
-
-
-
-
-
-<!-- Labels settings-->
-
-
-
 
 <table width="700" border="1" class="dtTABLE">
 <tbody>
@@ -722,7 +665,7 @@ Data from XML can contain all possible settings for controlling chart grid, axis
 
 Visual settings can be vital for a chart. XML can contain almost any method and parameter for adjusting visual settings.
 
-```
+```xml
   // series settings
   <series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonalbrick">
 
