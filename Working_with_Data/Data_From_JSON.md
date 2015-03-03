@@ -209,7 +209,7 @@ var chart = anychart.column();
 chart.title()
   // set title text
   .text('Sales Performance')
-  // settings for title background
+  // title background settings
   .background()
     // enable background
     .enabled(true)
@@ -244,7 +244,7 @@ chart.container('container');
   title: {
     // set title text
     text: "Sales Performance",
-    // settings for title background
+    // title background settings
     background: {
       // enable background
       enabled: "true",
