@@ -411,11 +411,12 @@ chart.yScale().ticks()
 // custom y scale
 var newScale = anychart.scales.linear();
 newScale
-    .minimum(0)
-    .maximum(100)
-    .ticks()
-        .interval(10);
-extraYScale.minorTicks().interval(2);
+  .minimum(0)
+  .maximum(100)
+  .ticks()
+    .interval(10);
+extraYScale.minorTicks()
+  .interval(2);
 
 // y axes settings
 chart.yAxis().title()
@@ -426,20 +427,22 @@ chart.yAxis(1)
   .title()
     .text('Extra Y Axis');
 
-chart.column([
+chart.column(
+  anychart.data.set([
     ["A", 637166],
     ["B", 721630],
     ["C", 148662],
     ["D", 78662],
     ["E", 90000]
-]);
-chart.line([
-    ["A", 95],
-    ["B", 97],
-    ["C", 96],
-    ["D", 70],
-    ["E", 35]
-]).yScale(newScale);
+  ]));
+chart.line(
+  anychart.data.set([
+    ["A", 637166],
+    ["B", 721630],
+    ["C", 148662],
+    ["D", 78662],
+    ["E", 90000]]))
+  .yScale(newScale);
 
 chart.container('container')
 ```
@@ -459,7 +462,8 @@ chart.container('container')
     maximum: 100,
     ticks: {
       interval: 10},
-    minorTicks: {interval: 2} }},
+    minorTicks: {
+      interval: 2} }},
   
   // y axes settings
   yAxes: [{
@@ -471,14 +475,16 @@ chart.container('container')
       text: "Extra Y Axis"}}],
   
   series:[{seriesType: "column",
-    data: [{x: "A", value: 637166},
+    data: [
+      {x: "A", value: 637166},
       {x: "B", value: 721630},
       {x: "C", value: 148662},
       {x: "D", value: 78662},
       {x: "E", value: 90000}
     ]},{
       seriesType: "line",
-      data:[{x: "A", value: 95},
+      data:[
+        {x: "A", value: 95},
         {x: "B", value: 97},
         {x: "C", value: 96},
         {x: "D", value: 70},
