@@ -83,7 +83,7 @@ series.error().valueError('15%')
 
 <br>{sample}
 
-<b>Also it should be noted that you can do the same using the error() method {ссылка API}
+<br>Also it should be noted that you can do the same using the error() method {ссылка API}
 
 ```
 //to set the error value in pixels
