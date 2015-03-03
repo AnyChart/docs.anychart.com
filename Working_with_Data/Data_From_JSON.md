@@ -117,7 +117,7 @@ As addition to the presented material, here is a table of main methods and param
 <table width="700" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<td>Chart Type</td>
+<td style="text-align: center;"><b>Chart Type</b></td>
 </tr>
 <tr><td style="padding: 0;">
 <table class="dtTABLE" style="border: 0;">
@@ -190,7 +190,7 @@ chart.spline(
 <table width="600" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<td>Chart Title</td>
+<td style="text-align: center;"><b>Chart Title</b></td>
 </tr>
 <tr><td style="padding: 0;">
 <table class="dtTABLE" style="border: 0;">
@@ -200,7 +200,7 @@ chart.spline(
 <th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
 </tr>
 <tr>
-<td style="border-bottom: 0; border-left: 0; padding: 2px;">
+<td style="border-bottom: 0; border-left: 0;">
 ```
 // set chart type
 var chart = anychart.column();
@@ -213,11 +213,11 @@ chart.title()
   .background()
     // enable background
     .enabled(true)
-    // set background inner color
+    // background inner color
     .fill('#FFD700')
     // set background border
     .stroke('#D8D8D8')
-    // set type of background corners
+    // set background corners
     .cornerType('round')
     // set corners size
     .corners(10);
@@ -235,7 +235,7 @@ chart.column([
 chart.container('container');
 ```
 </td>
-<td style="border-bottom: 0; border-right: 0; padding: 2px;">
+<td style="border-bottom: 0; border-right: 0;">
 ```
 // set chart type
 {chart: {type: "line",
@@ -248,11 +248,11 @@ chart.container('container');
     background: {
       // enable background
       enabled: "true",
-      // set background inner color
+      // background inner color
       fill: "#FFD700",
       // set background border
       stroke: "#D8D8D8",
-      // set type of background corners
+      // set background corners
       cornerType: "round",
       // set corners size
       corners: 10}},
@@ -299,7 +299,7 @@ chart.container('container');
 <table width="700" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<td>Chart Title</td>
+<td style="text-align: center;"><b>Multiple Series</b></td>
 </tr>
 <tr><td style="padding: 0;">
 <table class="dtTABLE" style="border: 0;">
@@ -309,7 +309,7 @@ chart.container('container');
 <th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
 </tr>
 <tr>
-<td style="border-bottom: 0; border-left: 0; padding: 2px;">
+<td style="border-bottom: 0; border-left: 0;">
 ```
 // set chart type
 var chart = anychart.area();
@@ -337,7 +337,7 @@ chart.splineArea([
 chart.container('container');
 ```
 </td>
-<td style="border-bottom: 0; border-right: 0; padding: 2px;">
+<td style="border-bottom: 0; border-right: 0;">
 ```
 // set chart type
 {chart:{type: "area",
@@ -390,7 +390,7 @@ chart.container('container');
 <table width="700" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<td>Chart Title</td>
+<td style="text-align: center;"><b>Axes Settings</b></td>
 </tr>
 <tr><td style="padding: 0;">
 <table class="dtTABLE" style="border: 0;">
@@ -400,7 +400,7 @@ chart.container('container');
 <th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
 </tr>
 <tr>
-<td style="border-bottom: 0; border-left: 0; padding: 2px;">
+<td style="border-bottom: 0; border-left: 0;>
 ```
 var chart = anychart.line();
 
@@ -444,7 +444,7 @@ chart.line([
 chart.container('container')
 ```
 </td>
-<td style="border-bottom: 0; border-right: 0; padding: 2px;">
+<td style="border-bottom: 0; border-right: 0;">
 ```
 {chart:{type: "line",
   
@@ -513,7 +513,7 @@ chart.container('container')
 <table width="700" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<td>Chart Title</td>
+<td style="text-align: center;"><b>Labels Settings</b></td>
 </tr>
 <tr><td style="padding: 0;">
 <table class="dtTABLE" style="border: 0;">
@@ -523,11 +523,11 @@ chart.container('container')
 <th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
 </tr>
 <tr>
-<td style="border-bottom: 0; border-left: 0; padding: 2px;">
+<td style="border-bottom: 0; border-left: 0;">
 ```
 var chart = anychart.lineChart();
 
-// set range marker
+// range marker
 chart.rangeMarker()
   .scale(chart.yScale())
   .from(0)
@@ -542,7 +542,7 @@ chart.rangeMarker()
     opacity: 0.5
   });
 
-// set text marker at the top
+// text marker at the top
 chart.textMarker()
   .scale(chart.yScale())
   .offsetX(10)
@@ -551,7 +551,7 @@ chart.textMarker()
   .fontSize(15)
   .fontWeight(600);
 
-// set text marker at the center
+// text marker at the center
 chart.textMarker(1)
   .scale(chart.yScale())
   .offsetX(10)
@@ -560,7 +560,7 @@ chart.textMarker(1)
   .fontSize(15)
   .fontWeight(600);
 
-// set text marker at the bottom
+// text marker at the bottom
 chart.textMarker(2)
   .scale(chart.yScale())
   .offsetX(10)
@@ -581,12 +581,15 @@ chart.title().enabled(false);
 chart.yScale()
   .minimum(0)
   .maximum(30000);
-chart.xAxis().title().enabled(false);
-chart.yAxis().title().text('Sales');
+chart.xAxis()
+  .title()
+    .enabled(false);
+chart.yAxis()
+  .title().text('Sales');
 chart.container('container')
 ```
 </td>
-<td style="border-bottom: 0; border-right: 0; padding: 2px;">
+<td style="border-bottom: 0; border-right: 0;">
 ```
 {chart: { type: "line",
   
@@ -644,8 +647,11 @@ chart.container('container')
   yScale: {
     minimum: "0", 
     maximum: "30000"},
-  xAxes: {title: {enabled: "false"}},
-  yAxes: {title: "Sales"},
+  xAxes: {
+    title: {
+      enabled: "false"}},
+  yAxes: {
+    title: "Sales"},
   container: "container"}}
 ```
 </td>	
@@ -661,6 +667,13 @@ chart.container('container')
 </tr>
 </tbody></table>
 
+## Data Serialization
+
+Predefined settings from JS format can be serialized into JSON format for the sake of convenient in future usage. Method **.toJson()** transfers current chart settings into JSON object. This method creates an object, that contains all possible methods and parameters of the chart.
+
+{sample}WD\_Data\_from\_JSON\_18{sample}
+
+**Note:** Parameters of text formatting can't be serialized and will be set by default in JSON format. 
 
 ## Samples
 
@@ -768,14 +781,6 @@ Visual settings are vital for a chart. JSON can control any method and parameter
 Previous samples demonstrate separate additional features. Next sample is a bit more complex. It demonstrates cartesian chart with several line series, customized axes, scales, grids and titles.
 
 {sample}WD\_Data\_from\_JSON\_06{sample}
-
-## Data Serialization
-
-Predefined settings from JS format can be serialized into JSON format for the sake of convenient in future usage. Method **.toJson()** transfers current chart settings into JSON object. This method creates an object, that contains all possible methods and parameters of the chart.
-
-{sample}WD\_Data\_from\_JSON\_18{sample}
-
-**Note:** Parameters of text formatting can't be serialized and will be set by default in JSON format. 
 
 ## Schema
 
