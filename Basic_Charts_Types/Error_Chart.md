@@ -18,19 +18,22 @@ Error charts are defined as part of the series and are used on graphs to indicat
 Here is the supported series types you can use to create the error charts:
 
 <b>Cartesian</b>
-    <li>line</li>
-    <li>spline</li>
-    <li>stepline</li>
-    <li>area</li>
-    <li>splinearea</li>
-    <li>steparea</li>
-    <li>marker</li>
-    <li>column</li>
-    <li>bar</li>
+* line
+* spline
+* stepline
+* area
+* splinearea
+* steparea
+* marker
+* column
+* bar
 
 <b>Scatter</b>
-    <li>line</li>
-    <li>marker</li>
+
+* line
+* marker
+
+{тут ссылки и большие буквы}
 
 ## Chart
 
