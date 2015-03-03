@@ -18,7 +18,6 @@ Error charts are defined as part of the series and are used on graphs to indicat
 Here is the supported series types you can use to create the error charts:
 
 <b>Cartesian</b>
- <ul type="square">
     <li>line</li>
     <li>spline</li>
     <li>stepline</li>
@@ -28,13 +27,10 @@ Here is the supported series types you can use to create the error charts:
     <li>marker</li>
     <li>column</li>
     <li>bar</li>
-  </ul>
 
 <b>Scatter</b>
-  <ul type="square">
     <li>line</li>
     <li>marker</li>
-  </ul>
 
 ## Chart
 
@@ -51,9 +47,9 @@ var line = chart.line([4, 2, 3, 1]);
 line.error(1);
 ```
 
-To define an error, you need to use these properties:
+<br>To define an error, you need to use these properties:
 
-<table width="287" border="1" class="dtTABLE">
+<table width="400" border="1" class="dtTABLE">
 <tbody><tr>
 <th width="88"><b>Methods</b></th>
 <th width="88"><b>Description</b></th>
@@ -82,9 +78,9 @@ series.error().valueError(7);
 series.error().valueError('15%')
 ```
 
-{sample}
+<br>{sample}
 
-Also it should be noted that you can do the same using the error() method {ссылка API}
+<b>Also it should be noted that you can do the same using the error() method {ссылка API}
 
 ```
 //to set the error value in pixels
@@ -95,8 +91,7 @@ series.error('15%')
 ```
 
 <br>
-{sample}пример 1{sample}
-{sample}пример 2{sample}
+{samples}
 
 в примерах максимально раскрыть сочетания настроек. ну и вынести ключевой код перед ними
 
@@ -104,7 +99,7 @@ series.error('15%')
 
 Error can be displayed for the series x value, y value or both. To set the low and high values for the series x value, you should use the next methods:
 
-<table width="287" border="1" class="dtTABLE">
+<table width="400" border="1" class="dtTABLE">
 <tbody><tr>
 <th width="88"><b>Methods</b></th>
 <th width="88"><b>Description</b></th>
@@ -139,7 +134,7 @@ series.error().xError('15%')
 
 If you want to configure an error displaying - you should define the errorMode() method:
 
-<table width="287" border="1" class="dtTABLE">
+<table width="400" border="1" class="dtTABLE">
 <tbody><tr>
 <th width="88"><b>Value</b></th>
 <th width="88"><b>Description</b></th>
@@ -168,7 +163,7 @@ If you want to configure an error displaying - you should define the errorMode()
 
 There are some methods that allow you to configure an error view. If you want to customize the error width you should use these methods:
 
-<table width="287" border="1" class="dtTABLE">
+<table width="400" border="1" class="dtTABLE">
 <tbody><tr>
 <th width="88"><b>Method</b></th>
 <th width="88"><b>Description</b></th>
@@ -193,7 +188,7 @@ series.error().valueErrorWidth('6');
 
 <br>To change the error color you have to use these methods:
 
-<table width="287" border="1" class="dtTABLE">
+<table width="400" border="1" class="dtTABLE">
 <tbody><tr>
 <th width="88"><b>Method</b></th>
 <th width="88"><b>Description</b></th>
