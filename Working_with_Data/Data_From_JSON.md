@@ -4,9 +4,7 @@
 * [Overview](#overview)
 * [JSON vs JavaScript](#json_vs_javascript)
 * [Data Serialization](#data_serialization)
-* [Samples](#samples)
- * [Data Sets](#data_sets)
- * [CSV Data](#csv_data)
+* [Data Sets](#data_sets)
 * [Settings](#settings)
  * [Axes](#axes)
  * [Visualization](#visualization)
@@ -681,9 +679,7 @@ Predefined settings from JS format can be serialized into JSON format for the sa
 
 **Note:** Parameters of text formatting can't be serialized and will be set by default in JSON format. 
 
-## Samples
-
-### Data Sets
+## Data Sets
 
 JSON data set can contain one or several series. Sample below demonstrates chart with several series from JSON.
 
@@ -711,25 +707,6 @@ JSON data set can contain one or several series. Sample below demonstrates chart
 ```
 
 {sample}WD\_Data\_from\_JSON\_02{sample}
-
-### CSV Data
-
-CSV format is the easiest way to create plain data set. Here is a sample of CSV data set.
-
-```
-  // set series type
-      series:[{seriesType: "spline",
-      // set series data
-      data: [
-        '"January",'+10000+
-        '\n"February",'+12000+
-        '\n"March",'+18000+
-        '\n"April",'+11000+
-        '\n"May",'+9000
-      ]}],
-```
-
-{sample}WD\_Data\_from\_JSON\_03{sample}
 
 ## Settings
 
