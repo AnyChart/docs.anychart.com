@@ -4,8 +4,6 @@
 * [Overview](#overview)
 * [JSON vs JavaScript](#json_vs_javascript)
 * [Samples](#samples)
-  * [Data Sets](#data_sets)
-  * [CSV Data](#csv_data)
  * [Settings](#settings)
   * [Axes](#axes)
   * [Visualization](#visualization)
@@ -153,22 +151,20 @@ chart.spline(
 </td>
 <td style="border-bottom: 0; border-right: 0;">
 ```
-'<?xml version="1.0" encoding="utf-8"?><anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
-// set chart type
-  '<chart type="line" '+
-  // set chart container
-  'container="container">'+
-  
-  // set series type
-  '<series_list><series series_type="spline">'+
-    // set series data
-    '<data>'+
-      '<point x="January" value=10000/>'+
-      '<point x="February" value=12000/>'+
-      '<point x="March" value=18000/>'+
-      '<point x="April" value=11000/>'+
-      '<point x="May" value=9000/>'+
-    '</data></series><series_list></chart></anychart>'
+'<chart type="line" '+
+// set chart container
+'container="container">'+
+
+// set series type
+'<series_list><series series_type="spline">'+
+  // set series data
+  '<data>'+
+    '<point x="January" value=10000/>'+
+    '<point x="February" value=12000/>'+
+    '<point x="March" value=18000/>'+
+    '<point x="April" value=11000/>'+
+    '<point x="May" value=9000/>'+
+  '</data></series><series_list></chart>'
 ```
 </td>
 </tr>
