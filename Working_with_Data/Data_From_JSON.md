@@ -3,6 +3,7 @@
 
 * [Overview](#overview)
 * [JSON vs JavaScript](#json_vs_javascript)
+* [Data Serialization](#data_serialization)
 * [Samples](#samples)
  * [Data Sets](#data_sets)
  * [CSV Data](#csv_data)
@@ -10,7 +11,6 @@
  * [Axes](#axes)
  * [Visualization](#visualization)
  * [Complex](#complex)
-* [Data Serialization](#data_serialization)
 * [Schema](#schema)
 
 ## Overview
