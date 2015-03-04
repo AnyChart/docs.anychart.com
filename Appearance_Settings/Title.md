@@ -1,4 +1,4 @@
-# Titles
+# Title
 
 * [Overview](#overview)
 * [Default Title](#default_title)
@@ -9,7 +9,7 @@
  * [Text Settings](#text_settings)
 * [HTML in Title](#html_in_title)
 * [Additional Titles](#additional_titles)
-<!--* [Adding Events](#adding_events)-->
+* [Adding Events](#adding_events)
 
 
 ## Overview
@@ -122,7 +122,7 @@ Chart can contain any number of additional titles. These titles can be placed an
 {sample}AS\_Titles\_07{sample}
 
 **Note:** chart elements draw in prescribed oder and we recommend to use **.draw()** method fo a custom title after drawing main chart.
-<!--
+
 ## Adding Events
 
 You can make your chart title interactive by adding event listeners of a different types. Sample below represents {api:anychart.enums.EventType}pointClick{api} event, that triggers alert function.
@@ -131,4 +131,4 @@ You can make your chart title interactive by adding event listeners of a differe
 
 Here is advanced sample of using events in titles. In this sample we will show how chart footer can be used as "Back" button for self-drilldown charts. Click on bars to see detailed report on each sales manager and in detailed report click on "Back to Sales Manager Report" button in the bottom right corner of line chart to load initial chart.
 
-{sample}AS\_Titles\_08{sample}-->
+{sample}AS\_Titles\_08{sample}

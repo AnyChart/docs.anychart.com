@@ -6,6 +6,7 @@ anychart.onDocumentReady(function() {
   
   // set stage
   var stage = anychart.graphics.create('container');
+  var palette = anychart.palettes.distinctColors().colors();
   
   // data for each person
   var john = anychart.data.set([
@@ -34,9 +35,9 @@ anychart.onDocumentReady(function() {
   
   // data for column chart
   var data = anychart.data.set([
-    {x: 'John', value: summarizer(john), clickData: john},
-    {x: 'Jake', value: summarizer(jake), clickData: jake},
-    {x: 'Peter', value: summarizer(peter), clickData: peter}
+    {x: 'John', value: summarizer(john), clickData: john, fill: palette[0]},
+    {x: 'Jake', value: summarizer(jake), clickData: jake, fill: palette[1]},
+    {x: 'Peter', value: summarizer(peter), clickData: peter, fill: palette[2]}
   ]);
   
   var chart = anychart.column();
@@ -53,16 +54,20 @@ anychart.onDocumentReady(function() {
     
     // function, if listener triggers
     function(e) {
-      click(data.mapAs().get(e.pointIndex, 'clickData'), data.mapAs().get(e.pointIndex, 'x'));
+      click(
+        data.mapAs().get(e.pointIndex, 'clickData'),
+        data.mapAs().get(e.pointIndex, 'x'),
+        data.mapAs().get(e.pointIndex, 'fill')
+      );
     });
   
   // draw
   chart.container(stage).draw();
   
-  function click (fullData, name) {
+  function click (fullData, name, fill) {
     chart.dispose();
     chart = anychart.column();
-    column = chart.column(fullData);
+    column = chart.column(fullData).fill(fill);
     chart.title().text('Sales details for '+name);
     chart.container(stage);
     chart.draw();
@@ -75,25 +80,29 @@ anychart.onDocumentReady(function() {
         column.listen(
           anychart.enums.EventType.POINT_CLICK,
           function(e) {
-            click(data.mapAs().get(e.pointIndex, 'clickData'), data.mapAs().get(e.pointIndex, 'x'));
+            click(
+              data.mapAs().get(e.pointIndex, 'clickData'),
+              data.mapAs().get(e.pointIndex, 'x'),
+              data.mapAs().get(e.pointIndex, 'fill')
+            );
           }
         );
         chart.container(stage).draw();
-        customTitle.dispose()
+        customTitle.dispose();
       });
     
     var customTitle = anychart.ui.title();
     customTitle
       .text('Back to Sales Manager Report') // set title text
-      .orientation('bottom')              // place title at the bottom
-      .align('right')                     // stick text to the right side
-      .fontSize(11)                       // set text size
-      .fontFamily('Tahoma')               // set font family
-      .fontWeight(400)                    // unbold title
-      .background()                       // background settings
-      .enabled(true)                    // eanble background
-      .fill(null)                       // disable fill
-      .stroke('#000000');               // set black border to title
+      .orientation('bottom')                // place title at the bottom
+      .align('right')                       // stick text to the right side
+      .fontSize(11)                         // set text size
+      .fontFamily('Tahoma')                 // set font family
+      .fontWeight(400)                      // unbold title
+      .background()                         // background settings
+      .enabled(true)                      // eanble background
+      .fill(null)                         // disable fill
+      .stroke('#000000');                 // set black border to title
     
     // set container and draw title
     customTitle.container(stage).draw();
@@ -104,7 +113,11 @@ anychart.onDocumentReady(function() {
       column.listen(
         anychart.enums.EventType.POINT_CLICK,
         function(e) {
-          click(data.mapAs().get(e.pointIndex, 'clickData'), data.mapAs().get(e.pointIndex, 'x'));
+          click(
+            data.mapAs().get(e.pointIndex, 'clickData'),
+            data.mapAs().get(e.pointIndex, 'x'),
+            data.mapAs().get(e.pointIndex, 'fill')
+          );
         }
       );
       chart.container(stage).draw();
