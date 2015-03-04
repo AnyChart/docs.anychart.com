@@ -127,8 +127,8 @@ Chart can contain any number of additional titles. These titles can be placed an
 
 You can make your chart title interactive by adding event listeners of a different types. Sample below represents {api:anychart.enums.EventType}pointClick{api} event, that triggers alert function.
 
-{sample}AS\_Titles\_07{sample}
+{sample}AS\_Titles\_08{sample}
 
 Here is advanced sample of using events in titles. In this sample we will show how chart footer can be used as "Back" button for self-drilldown charts. Click on bars to see detailed report on each sales manager and in detailed report click on "Back to Sales Manager Report" button in the bottom right corner of line chart to load initial chart.
 
-{sample}AS\_Titles\_08{sample}
+{sample}AS\_Titles\_09{sample}
