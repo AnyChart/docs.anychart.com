@@ -387,7 +387,7 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 
 ## Advanced Candlestick Chart Sample - Candlestick, Line and Range Area Combination
 
-In fact, application Open-High-Low-Close rarely used alone, they are often combined with charts of other types, such as Lines (to show **moving average**), Range Areas (to show **"Bollinger bands"**), and Column Charts (to show **trading volume**).
+Japanese Candlestick Series are rarely used alone, in technical analysis they are often combined with charts of other types, such as Lines (to show **moving average**), Range Areas (to show **"Bollinger bands"**), and Column Charts (to show **trading volume**).
   
   
 AnyChart provides most of the features which might be necesary in creating a complex financial chart. This includes Combination charts, Dashboards and Interactivity features. The sample below shows a typical stock trading report and it can be used as a starting point in your integration of AnyChart into Financial/Trading/Reporting application.

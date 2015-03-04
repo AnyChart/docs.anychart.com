@@ -64,7 +64,7 @@ Let's see pie chart created using the following data - sales of ACME Corp. appar
 </tr>
 </tbody></table>
 
-Now we need to convert this data table into js to make it acceptable by AnyChart. In terms of AnyChart data model we’ve got one series of data (Sales) with categories that hold Retail channels names. The data in *.js format looks like:
+Now we need to convert this data table into js to make it acceptable by AnyChart. In terms of AnyChart data model we’ve got one series of data (Sales) with categories that hold Retail channels names. The data in JavaScript format looks like:
 
 ```
   chart = anychart.pieChart([
@@ -80,7 +80,7 @@ As you can see, we've created {api:anychart.charts.Pie}**anychart.pieChart()**{a
 
 Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on it to see preview and full configured data in the playground.
 
-{sample}BCT\_PieDoughnutChart\_01{sample}
+{sample}BCT\_PieDonutChart\_01{sample}
 
 ### Doughnut Chart
 
@@ -92,13 +92,13 @@ Donut chart is almost the same as Pie chart, the only difference is in appearanc
 
 And here is the same data as above in the form of a Donut chart:
 
-{sample}BCT\_PieDoughnutChart\_02{sample}
+{sample}BCT\_PieDonutChart\_02{sample}
 
 ## Slices Sorting
 
 In Pie/Donut charts, it is possible to sort the series by ascending or descending. This feature is controlled using {api:anychart.charts.Pie#sort}**.sort()**{api} parameter. In the sample below three pie charts with identical series are shown, first isn't sorted, the second is sorted ascending and the third - descending.
 
-{sample}BCT\_PieDoughnutChart\_03{sample}
+{sample}BCT\_PieDonutChart\_03{sample}
 
 
 ## Exploded Slices
@@ -115,12 +115,29 @@ You can set pie and donut chart slices to be exploded when user clicks on it and
 To explode only one slice set an “explode” value to a point:
 
 ```
-    chart.explodeSlice(0, true);
+    chart.explodeSlice(0, true); 
 ```
+The first parameter is the number of the slice and the second one is boolean responsible for activating the explosion. Note that number of the slice is to be counted from 0.
 
 Sample chart below is exploded by default, you can launch the live sample and click on slices to move them back to the center.
 
 {sample}BCT\_PieDoughnutChart\_04{sample}
+
+Also it's possible to define explosion with the data itself if you set the data as an object:
+
+
+```
+    chart = anychart.pieChart([
+        {'name':'Department Stores', 'value': 637166, 'exploded': true},
+        ['Discount Stores', 721630],
+        ['Men\'s/Women\'s Stores', 148662],
+        ['Juvenile Specialty Stores', 78662],
+        ['All other outlets', 90000]
+    ]);
+```
+
+{sample}BCT\_PieDonutChart\_05{sample}
+
 
 ## Visualization
 
@@ -145,7 +162,19 @@ Now, let's look how to create a simple style and apply it to the chart. As we've
 
 Using such settings we've created a style that defines slices of gold color with rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user moves cursor over an element its border and hatch fill will be highlighted with dark red color.
 
-{sample}BCT\_PieDoughnutChart\_05{sample}
+{sample}BCT\_PieDonutChart\_06{sample}
+
+### Aquastyle
+
+Our new 7.4.0 release of AnyChart suggests this complete style. We used soft colors and made the chart more like 3D using gradients. To set this style just add this stroke to your code:
+
+```
+     chart.fill('aquastyle');
+```
+
+That's how a chart with Aquastyle set looks like: 
+
+{sample}BCT\_PieDonutChart\_07{sample}
 
 ## Labels and Tooltips
 
@@ -158,7 +187,7 @@ Let's do that with the following example: we will make data labels to appear ins
 
 When formatting tooltips, we use  {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} to adjust source of content and visual appearance. To control labels’ position we may use  {api:anychart.core.ui.Label#position}**.position()**{api} parameter. Here is a sample of two charts with the same data and different labels positions.
 
-{sample}BCT\_PieDoughnutChart\_07{sample}
+{sample}BCT\_PieDonutChart\_08{sample}
 <!--
 Related Help Topics:
 
@@ -250,7 +279,7 @@ AnyChart uses default colors to colorize data elements of a chart automatically 
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set the {api:anychart.charts.Pie#fill}**.fill()**{api} parameter. In the sample below there are some series with sample data and we'll color each series to different color. Here is the sample:
 
-{sample}BCT\_PieDoughnutChart\_06{sample}
+{sample}BCT\_PieDonutChart\_09{sample}
 
 ## Hatch Fills
 
@@ -260,17 +289,17 @@ That’s how we did it in our code:
 
 ```
 chart = anychart.pieChart([
-{x: 'P1', value: 232, hatchFill: 'diagonalcross', fill: '#EEEEEE'},
-{x: 'P2', value: 224, hatchFill: 'zigzag', fill: '#EEEEEE'},
-{x: 'P3', value: 252, hatchFill: 'horizontal', fill: '#EEEEEE'},
-{x: 'P4', value: 219, hatchFill: 'vertical', fill: '#EEEEEE'},
-{x: 'P5', value: 169, hatchFill: 'dashedbackwarddiagonal', fill: '#EEEEEE'},
-{x: 'P6', value: 217, hatchFill: 'grid', fill: '#EEEEEE'},
-{x: 'P7', value: 175, hatchFill: 'dashedforwarddiagonal', fill: '#EEEEEE'},
-{x: 'P8', value: 199, hatchFill: 'dashedhorizontal', fill: '#EEEEEE'},
-{x: 'P9', value: 297, hatchFill: 'plaid', fill: '#EEEEEE'},
-{x: 'P10', value: 317, hatchFill: 'weave', fill: '#EEEEEE'}
-]);
+        {x: 'P1', value: 232, hatchFill: 'diagonalcross'},
+        {x: 'P2', value: 224, hatchFill: 'zigzag'},
+        {x: 'P3', value: 252, hatchFill: 'horizontal'},
+        {x: 'P4', value: 219, hatchFill: 'vertical'},
+        {x: 'P5', value: 169, hatchFill: 'dashedbackwarddiagonal'},
+        {x: 'P6', value: 217, hatchFill: 'grid'},
+        {x: 'P7', value: 175, hatchFill: 'dashedforwarddiagonal'},
+        {x: 'P8', value: 199, hatchFill: 'dashedhorizontal'},
+        {x: 'P9', value: 297, hatchFill: 'plaid'},
+        {x: 'P10', value: 317, hatchFill: 'weave'}
+    ]);
 ```
 
-{sample}BCT\_PieDoughnutChart\_08{sample}
+{sample}BCT\_PieDonutChart\_10{sample}

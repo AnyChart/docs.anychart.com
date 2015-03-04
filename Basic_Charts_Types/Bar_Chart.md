@@ -214,7 +214,7 @@ Also, styles are used to make charts interactive, you can define how elements wi
 
 ### Basic Sample
 
-Now, let's look how to apply a simple style to the chart. As we've already said, a style consists of several elements, here is the java structure:
+Now, let's look how to apply a simple style to the chart. As we've already said, a style consists of several elements, here is the javascript structure:
 
 ```
     chart.bar(data)

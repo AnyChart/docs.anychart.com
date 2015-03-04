@@ -37,7 +37,7 @@ And set "Area" as a default series type:
     chart = anychart.areaChart();
 ```
 
-Everything is ready, let’s have a look on our sample of a percent stacked area chart:
+Everything is ready, let’s have a look at our sample of a percent stacked area chart:
 
 {sample}BCT_Percent-Stacked\_Area-SplineArea\_Charts\_01{sample}
 

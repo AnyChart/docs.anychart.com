@@ -19,7 +19,7 @@
 
 ## Overview
 
-Data that is arranged in columns or rows on a worksheet can be plotted in a line chart. Line charts display continuous data over time, set against a common scale, and are therefore ideal for showing trends in data at equal intervals. In a line chart, categories are situated along the horizontal axis, and all value data is distributed along the vertical axis.  
+Data that is arranged in columns or rows on a worksheet can be plotted in a line chart. Line charts display continuous data over time, set against a common scale, and are therefore ideal for showing trends in data at equal intervals. In a line chart, categories are evenly distributed along the horizontal axis, and all value data is distributed along the vertical axis.  
   
 It's better to use a line chart if your category labels are textual and if they represent evenly spaced values such as months, quarters, or fiscal years.  
   
