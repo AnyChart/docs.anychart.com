@@ -31,63 +31,42 @@ Let's build an example with 2 single-series line charts using the following data
 
 <table width="287" border="1" class="dtTABLE">
 <tbody>
-<tr><th colspan=2><b>EUR/USD</b></th></tr>
 <tr>
-<th width="88"><b>Day</b></th>
-<th width="88"><b>Rate</b></th>
+<th rowspan=2 width="88"><b>Day</b></th>
+<th colspan=2 width="88"><b>Rate</b></th>
+</tr>
+<tr>
+<th><b>EUR/USD</b></th>
+<th><b>GBP/USD</b></th>
 </tr>
 <tr>
 <td>25.02</td>
 <td>1,1371</td>
-</tr>
-<tr>
-<td>24.02</td>
-<td>1,1341</td>
-</tr>
-<tr>
-<td>23.02</td>
-<td>1,1132</td>
-</tr>
-<tr>
-<td>21.02</td>
-<td>1,1381</td>
-</tr>
-<tr>
-<td>20.02</td>
-<td>1,1371</td>
-</tr>
-</tbody></table>
-<br>
-<table width="287" border="1" class="dtTABLE">
-<tbody>
-<tr><th colspan=2><b>GBP/USD</b></th></tr>
-<tr>
-<th width="88"><b>Day</b></th>
-<th width="88"><b>Rate</b></th>
-</tr>
-<tr>
-<td>25.02</td>
 <td>1,5500</td>
 </tr>
 <tr>
 <td>24.02</td>
+<td>1,1341</td>
 <td>1,5458</td>
 </tr>
 <tr>
 <td>23.02</td>
+<td>1,1132</td>
 <td>1,5463</td>
 </tr>
 <tr>
 <td>21.02</td>
+<td>1,1381</td>
 <td>1,5397</td>
 </tr>
 <tr>
 <td>20.02</td>
+<td>1,1371</td>
 <td>1,5385</td>
 </tr>
 </tbody></table>
 
-Now we need to convert this data table into an acceptable format. In terms of AnyChart data model we have one series of data (Sales) with categories that hold months names. Each point in series represents one month and sales volume. Converted Data looks like:
+Now we need to convert this data table into an acceptable format. In terms of AnyChart data model we have 2 charts with one series of data (rates) each with dates as categories. Each point in series represents one date and the rate. Converted Data looks like:
 
 ```
     var stage = anychart.graphics.create('container');
@@ -104,7 +83,7 @@ Now we need to convert this data table into an acceptable format. In terms of An
   chart1.data([1.1371,1.1341,1.1132,1.1381,1.1371]);
   chart2.data([1.5500,1.5458,1.5463,1.5397,1.5385]);
 
-  //set charts dimensions and postition
+  //set charts dimensions and position
   chart1.bounds(0, 0, 90, 20);
   chart2.bounds(0, 25, 90, 20);
   
@@ -177,7 +156,7 @@ Note that there's no difference for a w/l chart how big the value is - only sign
 
 ##Axes
 
-Sparklines have no axes to be shown, despite scales can be inverted. AnyChart allows to invert any scale: Y, X or any extra. Inversion is controlled by **.inverted()** method:
+Sparklines have no axes to be shown, but scales can be controlled. AnyChart allows to invert any scale: Y, X or any extra. Inversion is controlled by **.inverted()** method:
 
 ```
     chart.yScale().inverted(true);
@@ -193,7 +172,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 Here you will find some information about main parts of  the sparkline chart style and see the demonstration of style applying.
 
-###MissedPoints
+###Missed Points
 
 Sometimes we need to show the absence of a value or we don't have enough data. In this case we define one of the data points as "miss":
 
@@ -202,6 +181,7 @@ Sometimes we need to show the absence of a value or we don't have enough data. I
   chart2.data([1.5500,1.5458,1.5463, 'miss', 1.5397,1.5385]);
 ```
 
+There's no difference in what you write instead of the point you need to be missed. This only applies to strings - be careful and don't use numerical values here. 
 Now let's just connect the points surrounding the missing ones. We use the **.connectMissingPoints()** method for this:
 
 ```
@@ -255,6 +235,8 @@ That's how it looks when we adjust the previous code for our sample:
 
 {sample :width 600 :height 100}BCT\_Sparkline\_Chart\_10{sample}
 
+It is also possible to format the labels:
+
 ##Markers
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. 
@@ -267,9 +249,9 @@ Although being rather small, sparklines can be quite informative. Range is a lig
 ```
 chart.rangeMarker()
     .scale(chart.yScale()) //you may change the scale
-    .from(<value1>)
-    .to(<value2>)
-    .fill('<color>');
+    .from(-50) // the value of the minimum of the range
+    .to(250) // the value of the maximum of the range
+    .fill('black'); 
 ```
 
 This is an example where we use the data about the Ebay seller. Let's define +250 as the minimum sum of negative and positive reviews to get a new "star" and the maximum for saving the current score, and -10 as the maximum for losing a "star" and the minimum for saving the current score.
@@ -315,3 +297,9 @@ The code for the example above is the following:
 	chart3.minFill('red');
 	chart4.negativeFill('darkred');
 ```
+
+Actually, it's better to use color in Sparklines to put your customers' attention to some facts. You can emphasize the first and the last points, the max and the min ones, negative or normal points - this will make the comparison much easier.
+
+Let's colorize these points in the sample:
+
+{sample :width 600 :height 400}BCT\_Sparkline\_Chart\_14{sample} 
