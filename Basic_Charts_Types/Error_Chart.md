@@ -7,7 +7,6 @@
  * [Scatter Plot](#scatter_plot)
  * [Error Mode](#error_mode)
 * [Visualization](#visualization)
- * [Basic Sample](#basic_sample)
 
 ## Overview
 
