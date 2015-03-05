@@ -16,7 +16,7 @@ Error charts are defined as part of the series and are used on graphs to indicat
 
 Here is the supported series types you can use to create the error charts:
 
-<b>Cartesian</b>
+<br><b>Cartesian</b>
 * [Line](Line-Spline-StepLine_Charts#single_series_line_chart)
 * [Spline](Line-Spline-StepLine_Charts#single_series_spline_chart)
 * [StepLine](Line-Spline-StepLine_Charts#single_series_step_line_chart)
@@ -128,7 +128,7 @@ Error can be displayed for the series x value, y value or both. You should use a
 <br>And now we have an error defined on a scatter plot.
 {sample}Error\_Chart\_05{sample}
 
-<br>Y error value must be defined in pixels (fixed) or percentage of y value.
+<br>Y error value must be defined in pixels (fixed) or percentage of common value.
 ```
 //you can set the x error value in pixels
 series.error().xError(10);
@@ -144,7 +144,7 @@ series.error().xError('15%')
 
 If you want to configure an error displaying - you should define the errorMode() method:
 
-<table width="400" border="1" class="dtTABLE">
+<table width="430" border="1" class="dtTABLE">
 <tbody><tr>
 <th width="88"><b>Value</b></th>
 <th width="88"><b>Description</b></th>
