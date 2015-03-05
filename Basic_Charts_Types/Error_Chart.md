@@ -90,7 +90,7 @@ series.error().valueError('15%')
 <br>As you can see we've created an error on a chart using the settings listed in the above table:
 {sample}Error\_Chart\_01{sample}
 
-<br>Also it should be noted that you can do the same using the <b>error()</> method.
+<br>Also it should be noted that you can do the same using the <b>error()</b> method.
 
 ```
 //to set the error value in pixels
@@ -223,7 +223,7 @@ series.error().valueErrorWidth('6%');
 <br>Here is the demonstration of this feature on the Scatter Line Chart:
 {sample}Error\_Chart\_08{sample}
 
-<br>To change the error color you have to use these methods:
+<br>To change the error color you have to use the following settings:
 
 <table width="400" border="1" class="dtTABLE">
 <tbody><tr>
