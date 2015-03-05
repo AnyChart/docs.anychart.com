@@ -19,7 +19,7 @@ Extensible Markup Language (XML) is a simple, very flexible text format. Origina
 
 ## Schema
 
-XML Schema specifies a XML-based format to define the structure of XML data(visit [wikipedia.org](http://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. Main AnyChart XML schema located  [http://anychart.com/products/anychart7/shemas/7.3.1/xml-schema.xsd](http://anychart.com/products/anychart7/shemas/7.3.1/xml-schema.xsd). This file can be used to validate your own XML structure. Version of the XML schema must correspond to the version of anychart JS.
+XML Schema specifies a XML-based format to define the structure of XML data(visit [wikipedia.org](http://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. Main AnyChart XML schema located  [http://anychart.com/products/anychart7/schemas/7.3.1/xml-schema.xsd](http://anychart.com/products/anychart7/schemas/7.3.1/xml-schema.xsd). This file can be used to validate your own XML structure. Version of the XML schema must correspond to the version of anychart JS.
   
   
 There quiet a few online XML validators on the Internet (for instance: [www.freeformatter.com/xml-validator-xsd.html](http://www.freeformatter.com/xml-validator-xsd.html)).

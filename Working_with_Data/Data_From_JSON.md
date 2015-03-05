@@ -19,7 +19,7 @@ JSON (JavaScript Object Notation) is a lightweight data-interchange format. It i
 
 ## Schema
 
-JSON Schema specifies a JSON-based format to define the structure of JSON data(visit [wikipedia.org](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. Main AnyChart JSON schema locates [http://anychart.com/products/anychart7/shemas/7.3.1/json-schema.json](http://anychart.com/products/anychart7/shemas/7.3.1/json-schema.json). Version of the JSON schema must correspond to the AnyChart JavaScript version. This file can be used to validate your own JSON structure. 
+JSON Schema specifies a JSON-based format to define the structure of JSON data(visit [wikipedia.org](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. Main AnyChart JSON schema locates [http://anychart.com/products/anychart7/schemas/7.3.1/json-schema.json](http://anychart.com/products/anychart7/schemas/7.3.1/json-schema.json). Version of the JSON schema must correspond to the AnyChart JavaScript version. This file can be used to validate your own JSON structure. 
   
   
 There quiet a few online JSON validators on the Internet (for instance: [jsonschemalint.com](http://jsonschemalint.com/)).
