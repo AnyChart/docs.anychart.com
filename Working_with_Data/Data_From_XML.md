@@ -121,7 +121,7 @@ As addition to the presented material, here is a table of main methods and param
 <th width="200" style="border-top: 0; border-right: 0;"><b>XML Configuration</b></th>	
 </tr>
 <tr>
-<td style="border-bottom: 0; border-left: 0;">
+<td style="border-bottom: 0; border-left: 0; width: 50%;">
 ```
 // set chart type
 var chart = anychart.line();
@@ -147,7 +147,7 @@ chart.spline(
 <!-- set chart container -->
 container="container">
 
-// set series type
+<!-- set series type -->
 <series_list><series series_type="spline">
   <!-- set series data -->
   <data>
@@ -184,7 +184,7 @@ container="container">
 <th width="200" style="border-top: 0; border-right: 0;"><b>XML Configuration</b></th>	
 </tr>
 <tr>
-<td style="border-bottom: 0; border-left: 0; padding: 2px;">
+<td style="border-bottom: 0; border-left: 0; padding: 2px; width: 50%;">
 ```
 // set chart type
 var chart = anychart.column();
@@ -277,7 +277,7 @@ container="container">
 <th width="200" style="border-top: 0; border-right: 0;"><b>XML Configuration</b></th>	
 </tr>
 <tr>
-<td style="border-bottom: 0; border-left: 0; padding: 2px;">
+<td style="border-bottom: 0; border-left: 0; padding: 2px; width: 50%;">
 ```
 // set chart type
 var chart = anychart.area();
@@ -356,7 +356,7 @@ container="container">
 <th width="200" style="border-top: 0; border-right: 0;"><b>XML Configuration</b></th>	
 </tr>
 <tr>
-<td style="border-bottom: 0; border-left: 0; padding: 2px;">
+<td style="border-bottom: 0; border-left: 0; padding: 2px; width: 50%;">
 ```
 // set chart type
 var chart = anychart.line();
@@ -471,7 +471,7 @@ container="container">
 <th width="200" style="border-top: 0; border-right: 0;"><b>XML Configuration</b></th>	
 </tr>
 <tr>
-<td style="border-bottom: 0; border-left: 0; padding: 2px;">
+<td style="border-bottom: 0; border-left: 0; padding: 2px; width: 50%;">
 ```
 // chart type
 var chart = anychart.lineChart();
@@ -658,17 +658,17 @@ Predefined settings from JS format can be serialized into XML format for the sak
 Data from XML can contain all possible settings for controlling chart grid, axis line along with tick marks and labels, axis scale and other visual appearance settings. Sample below demonstrates setting axes names and adjusting scales orientation.
 
 ```xml
-  // x axes setting
+  <!-- x axes setting -->
   <x_axes>
-    // adjust default x axis
+    <!-- adjust default x axis -->
     <axis orientation="top" title="false"/>
   </x_axes>
-  // y axes settings
+  <!-- y axes settings -->
   <y_axes>
-    // adjust default y axis
+    <!-- adjust default y axis -->
     <axis orientation="right" title="false"/>
   </y_axes>
-  // y scale setting
+  <!-- y scale setting -->
   <y_scale inverted="true"/>
 ```
 
@@ -679,10 +679,10 @@ Data from XML can contain all possible settings for controlling chart grid, axis
 Visual settings can be vital for a chart. XML can contain almost any method and parameter for adjusting visual settings.
 
 ```xml
-  // series settings
+  <!-- series settings -->
   <series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonalbrick">
 
-    // customize hover hatch fill
+    <!-- customize hover hatch fill -->
     <hover_hatch_fill type="diagonalbrick" color="darkred"/>
 
   </series>
