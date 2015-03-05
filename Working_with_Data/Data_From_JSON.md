@@ -2,18 +2,27 @@
 # Getting Data from JSON
 
 * [Overview](#overview)
+* [Schema](#schema)
 * [JSON vs JavaScript](#json_vs_javascript)
-* [Data Serialization](#data_serialization)
+* [Serialization](#serialization)
 * [Multiple Series](#multiple_series)
 * [Settings](#settings)
  * [Axes](#axes)
  * [Visualization](#visualization)
 * [Complex](#complex)
-* [Schema](#schema)
 
 ## Overview
 
 AnyChart supports several ways of setting data. This article quickly demonstrates main aspects of using JSON format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [Using Data Sets](Using_Data_Sets) and [Data From XML](Data_From_XML) articles.
+
+JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. For more information visit [wikipedia.org](http://en.wikipedia.org/wiki/JSON)
+
+## Schema
+
+JSON Schema specifies a JSON-based format to define the structure of JSON data(visit [wikipedia.org](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. Main AnyChart JSON schema locates [http://anychart.com/products/anychart7/shemas/7.3.1/json-schema.json](http://anychart.com/products/anychart7/shemas/7.3.1/json-schema.json). Version of the JSON schema must correspond to the AnyChart JavaScript version. This file can be used to validate your own JSON structure. 
+  
+  
+There quiet a few online JSON validators on the Internet (for instance: [jsonschemalint.com](http://jsonschemalint.com/)).
 
 ## JSON vs JavaScript
 
@@ -95,19 +104,19 @@ The snippet below shows setting the same parameters using JSON
     }
 ```
 
-As addition to the presented material, here is a table of main methods and parameters of JS data set comparing with JSON data set (full list of all the methods and parameters can be found in api).
+As addition to the presented material, here is a table of main methods and parameters of JavaScript data set comparing with JSON data set (full list of all the methods and parameters can be found in API).
 
 <table width="700" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<td style="text-align: center;"><b>Chart Type</b></td>
+<th style="text-align: center;"><b>Chart Type</b></th>
 </tr>
 <tr><td style="padding: 0;">
 <table class="dtTABLE" style="border: 0;">
 <tbody>
 <tr>
-<th width="200" style="border-top: 0; border-left: 0;"><b>JS Config</b></th>
-<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
+<th width="200" style="border-top: 0; border-left: 0;"><b>JavaScript Configuration</b></th>
+<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Configuration</b></th>	
 </tr>
 <tr>
 <td style="border-bottom: 0; border-left: 0;">
@@ -165,14 +174,14 @@ chart.spline(
 <table width="600" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<td style="text-align: center;"><b>Chart Title</b></td>
+<th style="text-align: center;"><b>Chart Title</b></th>
 </tr>
 <tr><td style="padding: 0;">
 <table class="dtTABLE" style="border: 0;">
 <tbody>
 <tr>
-<th width="200" style="border-top: 0; border-left: 0;"><b>JS Config</b></th>
-<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
+<th width="200" style="border-top: 0; border-left: 0;"><b>JavaScript Configuration</b></th>
+<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Configuration</b></th>	
 </tr>
 <tr>
 <td style="border-bottom: 0; border-left: 0;">
@@ -260,14 +269,14 @@ chart.container('container');
 <table width="700" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<td style="text-align: center;"><b>Multiple Series</b></td>
+<th style="text-align: center;"><b>Multiple Series</b></th>
 </tr>
 <tr><td style="padding: 0;">
 <table class="dtTABLE" style="border: 0;">
 <tbody>
 <tr>
-<th width="200" style="border-top: 0; border-left: 0;"><b>JS Config</b></th>
-<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
+<th width="200" style="border-top: 0; border-left: 0;"><b>JavaScript Configuration</b></th>
+<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Configuration</b></th>	
 </tr>
 <tr>
 <td style="border-bottom: 0; border-left: 0;">
@@ -341,14 +350,14 @@ chart.container('container');
 <table width="700" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<td style="text-align: center;"><b>Axes Settings</b></td>
+<th style="text-align: center;"><b>Axes Settings</b></th>
 </tr>
 <tr><td style="padding: 0;">
 <table class="dtTABLE" style="border: 0;">
 <tbody>
 <tr>
-<th width="200" style="border-top: 0; border-left: 0;"><b>JS Config</b></th>
-<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
+<th width="200" style="border-top: 0; border-left: 0;"><b>JavaScript Configuration</b></th>
+<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Configuration</b></th>	
 </tr>
 <tr>
 <td style="border-bottom: 0; border-left: 0;">
@@ -460,14 +469,14 @@ chart.container('container')
 <table width="700" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<td style="text-align: center;"><b>Labels Settings</b></td>
+<th style="text-align: center;"><b>Labels Settings</b></th>
 </tr>
 <tr><td style="padding: 0;">
 <table class="dtTABLE" style="border: 0;">
 <tbody>
 <tr>
-<th width="200" style="border-top: 0; border-left: 0;"><b>JS Config</b></th>
-<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Config</b></th>	
+<th width="200" style="border-top: 0; border-left: 0;"><b>JavaScript Configuration</b></th>
+<th width="200" style="border-top: 0; border-right: 0;"><b>JSON Configuration</b></th>	
 </tr>
 <tr>
 <td style="border-bottom: 0; border-left: 0;">
@@ -614,13 +623,13 @@ chart.container('container')
 </tr>
 </tbody></table>
 
-## Data Serialization
+## Serialization
 
-Predefined settings from JS format can be serialized into JSON format for the sake of convenient in future usage. Method **.toJson()** transfers current chart settings into JSON object. This method creates an object, that contains all possible methods and parameters of the chart.
+Predefined settings from JavaScript format can be serialized into JSON format for the sake of convenient in future usage. Method **.toJson()** transfers current chart settings into JSON object. This method creates an object that contains all possible methods and parameters of the chart.
 
 {sample}WD\_Data\_from\_JSON\_18{sample}
 
-**Note:** Parameters of text formatting can't be serialized and will be set by default in JSON format. 
+**Note:** When label or tooltip text formatting function is redefined in JavaScript code - it can't be serialized.
 
 ## Multiple Series
 
@@ -707,10 +716,3 @@ Visual settings are vital for a chart. JSON can control any method and parameter
 Previous samples demonstrate separate additional features. Next sample is a bit more complex. It demonstrates cartesian chart with several line series, customized axes, scales, grids and titles.
 
 {sample}WD\_Data\_from\_JSON\_06{sample}
-
-## Schema
-
-JSON Schema specifies a JSON-based format to define the structure of JSON data(visit [wikipedia.org](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JS methods and parameters of a chart. Main AnyChart JSON schema locates [http://anychart.com/products/anychart7/shemas/7.3.1/json-schema.json](http://anychart.com/products/anychart7/shemas/7.3.1/json-schema.json). Version of the JSON schema must correspond to the AnyChart JS version. This file can be used to validate your own JSON structure. 
-  
-  
-There quiet a few online JSON validators on the Internet (for instance: [jsonschemalint.com](http://jsonschemalint.com/)).
