@@ -10,8 +10,9 @@
  * [Basic Sample](#basic_sample)
 * [Labels](#labels)
 * [Markers](#markers)
-* [Colors](#colors)
+* [Design](#design)
   * [Colorizing Elements](#colorizing_elements)
+  * [HatchFill](#hatchfill)
 
 ## Overview
 
@@ -235,8 +236,6 @@ That's how it looks when we adjust the previous code for our sample:
 
 {sample :width 600 :height 100}BCT\_Sparkline\_Chart\_10{sample}
 
-It is also possible to format the labels:
-
 ##Markers
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. 
@@ -276,7 +275,7 @@ That's how it all looks in the example:
 {sample :width 600 :height 100}BCT\_Sparkline\_Chart\_12{sample}                                   
  
 
-##Colors 
+##Design
 
 AnyChart uses default color palette to colorize data elements of chart automatically if you have not define special colors. But you can set and apply the color to exact data series or data point.
 
@@ -298,8 +297,65 @@ The code for the example above is the following:
 	chart4.negativeFill('darkred');
 ```
 
-Actually, it's better to use color in Sparklines to put your customers' attention to some facts. You can emphasize the first and the last points, the max and the min ones, negative or normal points - this will make the comparison much easier.
+Actually, it's better to use color in Sparklines to put your customers' attention to some facts, using charts of the same type. You can emphasize the first and the last points, the max and the min ones, negative or normal points - this will make the comparison much easier.
 
-Let's colorize these points in the sample:
+Let's have a look on two different line sparklines with negative points emphasized:
 
-{sample :width 600 :height 400}BCT\_Sparkline\_Chart\_14{sample} 
+{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_14{sample} 
+
+That's what we should write to color our negative points in green and stroke them in red:
+```
+	chart1.negativeMarkers().enabled(true).stroke('1 red').fill('green').size(3);
+	chart2.negativeMarkers().enabled(true).stroke('1 red').fill('green').size(3);
+```
+
+Now let's color the first and the last columns of two different column Sparklines:
+
+```
+  //colorize our charts
+  chart1.firstFill('darkRed');
+  chart1.lastFill('blue');
+  chart2.firstFill('blue');
+  chart2.lastFill('blue');
+```
+
+That's how it looks like on the board:
+
+{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_15{sample}
+
+You can add labels not to all points, but to the maximum and the minimum ones, like it is done in the example below:
+
+{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_16 {sample}
+
+You only need to enable the max or minLables to do it as in the sample above:
+
+```
+  chart.maxLabels().enabled(true);
+  chart.minLabels().enabled(true);
+```
+
+###HatchFill
+
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see Hatch Fill tutorial.
+Downwards you can see a couple of WinLoss Sparklines which we've colored with hatchFills using **.hatchFill()** parameter opposite to **fill()** parameter used to colorize the series and set all series in light grey color.
+
+```
+  //colorize our charts
+  chart1.negativeHatchFill('diagonal');
+  chart1.negativeFill('lightGray');
+  chart1.fill('lightGray');
+  chart2.negativeFill('lightGray');
+  chart2.negativeHatchFill('diagonal');
+  chart2.fill('lightGray');
+```
+
+{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_17 {sample}
+
+It's also possible to add a hatchfill to a point though the data. You need to define the data as the array in this case:
+
+```
+  chart2.data([{value: 20, hatchFill: {type: 'checkerboard'}}, 30, -10, {value: 20,hatchFill: {type: 'checkerboard'}}, -35, {value: -15, hatchFill: {type: 'checkerboard'}}, -40, 50]);
+```
+
+{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_18 {sample}
+
