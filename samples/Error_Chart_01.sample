@@ -1,0 +1,29 @@
+anychart.onDocumentReady(function() {
+  //create bar chart
+  chart = anychart.bar();
+
+  //set container id for the chart
+  chart.container('container');
+
+  var series = chart.bar([
+    ['P1', 189],
+    ['P2', 140],
+    ['P3', 177],
+    ['P4', 165],
+    ['P5', 154],
+    ['P6', 191],
+  ]);
+
+  //set a low value to 10
+  series.error().valueLowerError(10);
+
+  //set an upper value to 7
+  series.error().valueUpperError(7);
+
+  series.error().valueErrorStroke('2px #146192');
+
+  chart.yScale().minimum(0);
+
+  //initiate chart drawing
+  chart.draw();
+});

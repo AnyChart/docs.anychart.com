@@ -1,0 +1,28 @@
+anychart.onDocumentReady(function() {
+  chart = anychart.scatter();
+
+  //set container id for the chart
+  chart.container('container');
+
+  var series = chart.line([
+    [100, 300],
+    [110, 275],
+    [120, 490],
+    [130, 389],
+    [140, 414],
+    [150, 191],
+  ]);
+
+
+  series.error({
+            xError: 20,
+            valueError: '5%',
+        });
+
+  series.error()
+            .valueErrorStroke('2 red .9')
+            .xErrorStroke('4px green .4');
+
+  //initiate chart drawing
+  chart.draw();
+});

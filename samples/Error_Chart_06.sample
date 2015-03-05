@@ -1,0 +1,32 @@
+anychart.onDocumentReady(function() {
+  chart = anychart.scatter();
+
+  //set container id for the chart
+  chart.container('container');
+
+  var series = chart.marker([
+    [10, 140],
+    [20, 177],
+    [30, 154],
+    [50, 165],
+    [60, 189],
+    [70, 191],
+  ]);
+
+
+  series.error({
+            xLowerError: '9%',
+            xUpperError: 2,
+            valueUpperError: 7,
+            valueLowerError: '5%'
+        });
+
+  series.error().errorMode('none');
+
+
+
+  chart.yScale().minimum(0);
+
+  //initiate chart drawing
+  chart.draw();
+});
