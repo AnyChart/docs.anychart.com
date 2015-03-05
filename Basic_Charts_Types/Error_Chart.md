@@ -242,8 +242,8 @@ series.error().valueErrorWidth('6%');
 <br>Here is a simple code to illustrate how to apply these settings:
 ```
 series.error()
-                .xErrorStroke(['red', 'green'],2)
-                .valueErrorStroke(['green','blue'],2);
+            .valueErrorStroke('2 red .9')
+            .xErrorStroke('4px green .4');
 ```
 
 <br>Look at the chart sample below and click on it to see it's javascript source.
