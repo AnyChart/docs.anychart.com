@@ -325,7 +325,7 @@ That's how it looks like on the board:
 
 You can add labels not to all points, but to the maximum and the minimum ones, like it is done in the example below:
 
-{sample :width 700 :height 220}BCT\_Sparkline\_Chart\_16{sample}
+{sample :width 690 :height 240}BCT\_Sparkline\_Chart\_16{sample}
 
 You only need to enable the max or minLables to do it as in the sample above:
 
