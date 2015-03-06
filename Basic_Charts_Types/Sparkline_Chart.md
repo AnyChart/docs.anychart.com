@@ -97,7 +97,7 @@ As you can see, we defined only the values, no categories are mentioned in the c
 
 That's how the charts will look like:
 
-{sample :width 600 :height 50}BCT\_Sparkline\_Chart\_01{sample}
+{sample :width 688 :height 50}BCT\_Sparkline\_Chart\_01{sample}
 
 All titles are disabled by default, so we have to put them in visible mode and set.
 
@@ -111,7 +111,7 @@ All titles are disabled by default, so we have to put them in visible mode and s
  ```
 That's how it looks with titles:
 
-{sample :width 600 :height 50}BCT\_Sparkline\_Chart\_02{sample}
+{sample :width 688 :height 50}BCT\_Sparkline\_Chart\_02{sample}
 
 ### Area Sparkline Chart
 
@@ -124,7 +124,7 @@ An area sparkline is a line sparkline with the area between its points and the h
 ```
 
 
-{sample :width 600 :height 50}BCT\_Sparkline\_Chart\_03{sample}
+{sample :width 688 :height 50}BCT\_Sparkline\_Chart\_03{sample}
 
 ### Column Sparkline Chart
 
@@ -139,7 +139,7 @@ You can easily switch types:
 
 Currency rates are not the best example for Columns, so let's take sum of + and - reviews for an Ebay seller as an exapmle.
 
-{sample :width 600 :height 50}BCT\_Sparkline\_Chart\_04{sample}
+{sample :width 688 :height 50}BCT\_Sparkline\_Chart\_04{sample}
 
 ### WinLoss Sparkline Chart
 
@@ -151,7 +151,7 @@ That's how we swap types:
   chart1.type('wl');
 ```
 
-{sample :width 600 :height 50}BCT\_Sparkline\_Chart\_05{sample}
+{sample :width 688 :height 50}BCT\_Sparkline\_Chart\_05{sample}
 
 Note that there's no difference for a w/l chart how big the value is - only sign of the value means.
 
@@ -165,7 +165,7 @@ Sparklines have no axes to be shown, but scales can be controlled. AnyChart allo
 
 And here is the demonstration of Y Axis inversion on the Single-series sample:
 
-{sample :width 600 :height 50}BCT\_Sparkline\_Chart\_06{sample}
+{sample :width 688 :height 50}BCT\_Sparkline\_Chart\_06{sample}
 
 <!--что-то здесь не так, почти ничто не инвертится--!>
 
@@ -190,7 +190,7 @@ chart2.data([1.5500,1.5458,1.5463, 'miss', 1.5397,1.5385]).connectMissingPoints(
 ```
 In this sample you can see how it looks with a missing point and compare with a chart below, where this point is simply connected.
 
-{sample :width 600 :height 200}BCT\_Sparkline\_Chart\_07{sample}
+{sample :width 688 :height 200}BCT\_Sparkline\_Chart\_07{sample}
 
 ###Clip
 
@@ -199,7 +199,7 @@ If you wish not to accent the range of values but cut all unwanted ones off, use
 ```
  chart.clip(new acgraph.math.Rect(x, y, width, height));
 ```
-{sample :width 600 :height 200}BCT\_Sparkline\_Chart\_08{sample}
+{sample :width 688 :height 200}BCT\_Sparkline\_Chart\_08{sample}
 
 ###Pointwidth
 
@@ -212,7 +212,7 @@ For some reasons you may need to make your columns look thiner or wider. It is p
 Note that you can define pointWidth values as percent or in pixels.
 This feature can be applied to Column and WinLoss Sparklines. Let's adjust columns in a couple of our previous examples:
 
-{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_09{sample}
+{sample :width 688 :height 100}BCT\_Sparkline\_Chart\_09{sample}
 
 ##Label
 
@@ -234,7 +234,7 @@ To enable the labels for the points, you shall write the following:
 
 That's how it looks when we adjust the previous code for our sample:
 
-{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_10{sample}
+{sample :width 688 :height 100}BCT\_Sparkline\_Chart\_10{sample}
 
 ##Markers
 
@@ -255,7 +255,7 @@ chart.rangeMarker()
 
 This is an example where we use the data about the Ebay seller. Let's define +250 as the minimum sum of negative and positive reviews to get a new "star" and the maximum for saving the current score, and -10 as the maximum for losing a "star" and the minimum for saving the current score.
 
-{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_11{sample}
+{sample :width 688 :height 100}BCT\_Sparkline\_Chart\_11{sample}
 
 
 ###LineMarker
@@ -272,7 +272,7 @@ The following code will help you to add a LineMarker to your chart:
 
 That's how it all looks in the example:
 
-{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_12{sample}                                   
+{sample :width 688 :height 100}BCT\_Sparkline\_Chart\_12{sample}                                   
  
 
 ##Design
@@ -283,7 +283,7 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.graphics.vector.Stroke}**.stroke()**{api} parameter for Line or Area series and {api:anychart.graphics.vector.Fill}**.fill()**{api} for  Area, Column and WinLoss. In the sample below we have 4 charts of each type demonstrating the applied colors and fills. We have colored the maximum and the minimum values in the column chart and only negatives in winloss. Here is the sample:
 
-{sample :width 600 :height 200}BCT\_Sparkline\_Chart\_13{sample}   
+{sample :width 688 :height 200}BCT\_Sparkline\_Chart\_13{sample}   
 
 The code for the example above is the following:
 
@@ -301,7 +301,7 @@ Actually, it's better to use color in Sparklines to put your customers' attentio
 
 Let's have a look on two different line sparklines with negative points emphasized:
 
-{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_14{sample} 
+{sample :width 688 :height 100}BCT\_Sparkline\_Chart\_14{sample} 
 
 That's what we should write to color our negative points in green and stroke them in red:
 ```
@@ -321,11 +321,11 @@ Now let's color the first and the last columns of two different column Sparkline
 
 That's how it looks like on the board:
 
-{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_15{sample}
+{sample :width 688 :height 100}BCT\_Sparkline\_Chart\_15{sample}
 
 You can add labels not to all points, but to the maximum and the minimum ones, like it is done in the example below:
 
-{sample :width 690 :height 240}BCT\_Sparkline\_Chart\_16{sample}
+{sample :width 688 :height 240}BCT\_Sparkline\_Chart\_16{sample}
 
 You only need to enable the max or minLables to do it as in the sample above:
 
@@ -349,7 +349,7 @@ Downwards you can see a couple of WinLoss Sparklines which we've colored with ha
   chart2.fill('lightGray');
 ```
 
-{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_17{sample}
+{sample :width 688 :height 100}BCT\_Sparkline\_Chart\_17{sample}
 
 It's also possible to add a hatchfill to a point though the data. You need to define the data as the array in this case:
 
@@ -357,5 +357,5 @@ It's also possible to add a hatchfill to a point though the data. You need to de
   chart2.data([{value: 20, hatchFill: {type: 'checkerboard'}}, 30, -10, {value: 20,hatchFill: {type: 'checkerboard'}}, -35, {value: -15, hatchFill: {type: 'checkerboard'}}, -40, 50]);
 ```
 
-{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_18{sample}
+{sample :width 688 :height 100}BCT\_Sparkline\_Chart\_18{sample}
 
