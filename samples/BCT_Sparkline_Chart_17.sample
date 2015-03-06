@@ -20,7 +20,7 @@ anychart.onDocumentReady(function() {
 
   //create data for both charts
   chart1.data([-20, 30, 50, -10, 25, -50, 70, 10]);
-  chart2.data(20, 30, 0, 20, -35, -15, -40, 50]);
+  chart2.data([20, 30, 0, 20, -35, -15, -40, 50]);
   
   
   //set charts dimensions and position
