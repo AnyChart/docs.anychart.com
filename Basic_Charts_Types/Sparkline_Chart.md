@@ -325,7 +325,7 @@ That's how it looks like on the board:
 
 You can add labels not to all points, but to the maximum and the minimum ones, like it is done in the example below:
 
-{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_16 {sample}
+{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_16{sample}
 
 You only need to enable the max or minLables to do it as in the sample above:
 
@@ -349,7 +349,7 @@ Downwards you can see a couple of WinLoss Sparklines which we've colored with ha
   chart2.fill('lightGray');
 ```
 
-{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_17 {sample}
+{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_17{sample}
 
 It's also possible to add a hatchfill to a point though the data. You need to define the data as the array in this case:
 
@@ -357,5 +357,5 @@ It's also possible to add a hatchfill to a point though the data. You need to de
   chart2.data([{value: 20, hatchFill: {type: 'checkerboard'}}, 30, -10, {value: 20,hatchFill: {type: 'checkerboard'}}, -35, {value: -15, hatchFill: {type: 'checkerboard'}}, -40, 50]);
 ```
 
-{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_18 {sample}
+{sample :width 600 :height 100}BCT\_Sparkline\_Chart\_18{sample}
 
