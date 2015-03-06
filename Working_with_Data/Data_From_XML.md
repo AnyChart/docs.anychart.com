@@ -19,24 +19,11 @@ Extensible Markup Language (XML) is a simple, very flexible text format. Origina
 
 ## Schema
 
-XML Schema specifies a XML-based format to define the structure of XML data(visit [wikipedia.org](http://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. Main AnyChart XML schema located  [http://anychart.com/products/anychart7/schemas/7.3.1/xml-schema.xsd](http://anychart.com/products/anychart7/schemas/7.3.1/xml-schema.xsd). This file can be used to validate your own XML structure. Version of the XML schema must correspond to the version of anychart JS.
-  
-  
-There quiet a few online XML validators on the Internet (for instance: [www.freeformatter.com/xml-validator-xsd.html](http://www.freeformatter.com/xml-validator-xsd.html)).
-
+XML Schema specifies a XML-based format to define the structure of XML data(visit [wikipedia.org](http://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. (for instance: XML schema for AnyChart 7.3.1 version located [http://anychart.com/products/anychart7/schemas/7.3.1/xml-schema.xsd](http://anychart.com/products/anychart7/schemas/7.3.1/xml-schema.xsd)). Latest version of XML schema can be found using the link [http://anychart.com/products/anychart7/schemas/latest/xml-schema.xsd](http://anychart.com/products/anychart7/schemas/latest/xml-schema.xsd) This file can be used to validate your own XML structure. 
 
 ## XML vs JavaScript
 
-AnyChart provides {api:anychart#fromXml}**.fromXML()**{api} parameter for using data in XML format. 
-
-```
-  var chart = anychart.fromXml(/*place your XML data in here */);
-  
-  // draw chart 
-  chart.draw();
-```
-
-Setting data using XML format is very similar to the way of setting data in JavaScript. The name of each tag in XML configuration corresponds to the name of a method and names of parameters for tags correspond to parameter in JS. Snippet below shows a sample of setting data in XML format
+AnyChart provides {api:anychart#fromXml}**.fromXML()**{api} parameter for using data in XML format. Setting data using XML format is very similar to the way of setting data in JavaScript. The name of each tag in XML configuration corresponds to the name of a method and names of parameters for tags correspond to parameter in JS. Snippet below shows a sample of setting data in XML format
 
 ```
   // xml data
@@ -87,22 +74,16 @@ Data set for pie chart
 Pie chart can have only one series of data and requires no **<series></series>** tag. 
   
   
-Parameters of Y-Scale should be applied using {api:anychart.charts.Cartesian#yScale}yScale(){api} method and should be invoked using code, similar to the snippet below
-
-```
-  // create chart and set it line type
-  var chart = anychart.line();
-  
-  chart.yScale()    // invoke y scale
-    .minimum(60)    // set minimum value 
-    .maximum(120);  // set maximum value
-```
-
-The snippet below shows setting the same parameters using XML
+Parameters of Y-Scale should be applied using {api:anychart.charts.Cartesian#yScale}yScale(){api} method and should be invoked using code below
 
 ```xml
+  
+  <!-- set chart type and chart container -->
   <chart type="column" container="container">
+  
+    <!-- set scale type and anjust minimum & maximum values -->
     <y_scale type="line" minimum="60" maximum="120"/>
+    
   </chart>
 ```
 
@@ -722,7 +703,7 @@ XML data set can contain one or several series. Sample below demonstrates chart 
 
 ## Serialization
 
-Predefined settings from JS format can be serialized into XML format for the sake of convenient in future usage. Method **.toXml()** transfers current chart settings into XML string. This string contains all possible methods and parameters of the chart in XML format.
+Predefined settings from JS format can be serialized into XML format. Method **.toXml()** transfers current chart settings into XML string. This string contains all possible methods and parameters of the chart in XML format.
 
 {sample}WD\_Data\_from\_XML\_13{sample}
 

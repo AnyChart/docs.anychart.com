@@ -19,23 +19,11 @@ JSON (JavaScript Object Notation) is a lightweight data-interchange format. It i
 
 ## Schema
 
-JSON Schema specifies a JSON-based format to define the structure of JSON data(visit [wikipedia.org](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. Main AnyChart JSON schema locates [http://anychart.com/products/anychart7/schemas/7.3.1/json-schema.json](http://anychart.com/products/anychart7/schemas/7.3.1/json-schema.json). Version of the JSON schema must correspond to the AnyChart JavaScript version. This file can be used to validate your own JSON structure. 
-  
-  
-There quiet a few online JSON validators on the Internet (for instance: [jsonschemalint.com](http://jsonschemalint.com/)).
+JSON Schema specifies a JSON-based format to define the structure of JSON data(visit [wikipedia.org](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. JSON schema varies from version to version. Version of schema Main AnyChart JSON schema locates [http://anychart.com/products/anychart7/schemas/7.3.1/json-schema.json](http://anychart.com/products/anychart7/schemas/7.3.1/json-schema.json). Version of the JSON schema must correspond to the AnyChart JavaScript version. This file can be used to validate your own JSON structure. 
 
 ## JSON vs JavaScript
 
-AnyChart provides {api:anychart#fromJson}**.fromJSON()**{api} parameter for using data in JSON format. Snippet below represents simple instance of getting data from JSON format.
-
-```
-  var chart = anychart.fromJson(/*put your JSON data in here*/);
-
-  // draw chart
-  chart.draw();
-```
-
-Setting data using JSON format is very similar to the way of setting data in JavaScript. The name of every object in JSON configuration corresponds to the name of a method or parameter in JS.
+AnyChart provides {api:anychart#fromJson}**.fromJSON()**{api} parameter for using data in JSON format. Setting data using JSON format is very similar to the way of setting data in JavaScript. The name of every object in JSON configuration corresponds to the name of a method or parameter in JavaScript.
 
 ```
   // JSON data
@@ -82,18 +70,7 @@ The same chart can be created using JSON
 As you can see, JSON format isn't limited only by setting chart type and data, but can set container for the chart. 
   
   
-Parameters of Y-Scale should be applied using {api:anychart.charts.Cartesian#yScale}yScale(){api} method and should be invoked using code, similar to the snippet below
-
-```
-  // create chart and set it line type
-  var chart = anychart.line();
-  
-  chart.yScale()    // invoke y scale
-    .minimum(60)    // set minimum value 
-    .maximum(120);  // set maximum value
-```
-
-The snippet below shows setting the same parameters using JSON
+Parameters of Y-Scale should be applied using {api:anychart.charts.Cartesian#yScale}yScale(){api} method and should be invoked using code below
 
 ```
   "chart": {          // create chart
@@ -625,7 +602,7 @@ chart.container('container')
 
 ## Serialization
 
-Predefined settings from JavaScript format can be serialized into JSON format for the sake of convenient in future usage. Method **.toJson()** transfers current chart settings into JSON object. This method creates an object that contains all possible methods and parameters of the chart.
+Predefined settings from JavaScript format can be serialized into JSON format. Method **.toJson()** transfers current chart settings into JSON object. This method creates an object that contains all possible methods and parameters of the chart.
 
 {sample}WD\_Data\_from\_JSON\_18{sample}
 
