@@ -9,6 +9,7 @@
 * [Settings](#settings)
  * [Axes](#axes)
  * [Visualization](#visualization)
+* [Samples](#samples)
 * [Complex](#complex)
 
 ## Overview
@@ -19,7 +20,7 @@ JSON (JavaScript Object Notation) is a lightweight data-interchange format. It i
 
 ## Schema
 
-JSON Schema specifies a JSON-based format to define the structure of JSON data(visit [wikipedia.org](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. JSON schema varies from version to version. Version of schema Main AnyChart JSON schema locates [http://anychart.com/products/anychart7/schemas/7.3.1/json-schema.json](http://anychart.com/products/anychart7/schemas/7.3.1/json-schema.json). Version of the JSON schema must correspond to the AnyChart JavaScript version. This file can be used to validate your own JSON structure. 
+JSON Schema specifies a JSON-based format to define the structure of JSON data(visit [wikipedia.org](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. JSON schema varies from version to version. Schema for AnyChart 7.3.1 version is located [http://anychart.com/products/anychart7/schemas/7.3.1/json-schema.json](http://anychart.com/products/anychart7/schemas/7.3.1/json-schema.json). Version of the JSON schema must correspond to the AnyChart JavaScript version. The latest schema can always be found with [http://anychart.com/products/anychart7/schemas/latest/json-schema.json](http://anychart.com/products/anychart7/schemas/latest/json-schema.json)
 
 ## JSON vs JavaScript
 
@@ -45,7 +46,7 @@ AnyChart provides {api:anychart#fromJson}**.fromJSON()**{api} parameter for usin
 
 {sample}WD\_Data\_from\_JSON\_01{sample}
 
-JSON format has some peculiarities. JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the JSON structure very similar to JS. To find out any required method or parameter use {api:anychart}API{api}. API supplies every parameter with a structure to invoke it. This structure is the same for JSON data set. For instance, API provides {api:anychart#column}**column()**{api} method to create column chart.
+JSON format has some peculiarities. JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the JSON structure very similar to JS. To find out any required method or parameter use {api:anychart}API{api}. API supplies every parameter with a structure to invoke it. This structure is the same for JSON data set. For instance, API provides {api:anychart#column}**column()**{api} method to create column chart. 
 
 ```
   anychart.column([128.14, 112.61, 163.21, 229.98]).container('container').draw();
@@ -74,12 +75,105 @@ Parameters of Y-Scale should be applied using {api:anychart.charts.Cartesian#ySc
 
 ```
   "chart": {          // create chart
-    "type": "line",   // set line type
+    "type": "column", // set line type
     "yScale": {       // invoke y scale
-      "minimum": 60,  // set minimum value
-      "maximum": 120  // set maximum value
+      "minimum": 100, // set minimum value
+      "maximum": 350  // set maximum value
     }
+  }
 ```
+
+{sample}WD\_Data\_from\_JSON\_19{sample}
+
+## Serialization
+
+Predefined settings from JavaScript format can be serialized into JSON format. Method **.toJson()** transfers current chart settings into JSON object. This method creates an object that contains all possible methods and parameters of the chart.
+
+{sample}WD\_Data\_from\_JSON\_18{sample}
+
+**Note:** When label or tooltip text formatting function is redefined in JavaScript code - it can't be serialized.
+
+## Multiple Series
+
+JSON data set can contain one or several series. Sample below demonstrates chart with several series from JSON.
+
+```
+  // series settings
+  "series": [{
+    // first series data
+    "data": [
+      {"x": "P1", "value": "128.14"},
+      {"x": "P2", "value": "112.61"},
+      {"x": "P3", "value": "163.21"},
+      {"x": "P4", "value": "229.98"},
+      {"x": "P5", "value": "90.54"}
+    ]
+  },{
+    // second series data
+    "data": [
+      {"x": "P1", "value": "90.54"},
+      {"x": "P2", "value": "104.19"},
+      {"x": "P3", "value": "150.67"},
+      {"x": "P4", "value": "120.43"},
+      {"x": "P5", "value": "200.34"}
+    ]
+  }]
+```
+
+{sample}WD\_Data\_from\_JSON\_02{sample}
+
+## Settings
+
+### Axes
+
+Data from JSON can contain all possible settings for controlling chart grid, axis line along with tick marks and labels, axis scale and other visual appearance settings. Sample below demonstrates setting axes names and adjusting scales orientation.
+
+```
+  // x axes settings
+  "xAxes": [{               // settings for default x axis
+    "orientation": "top",   // set axis position
+    "title":{               // settings for axis title
+      "enabled": false      // disable title
+    }
+  }],
+
+  // y axes settings
+  "yAxes": [{               // settings for default y axis
+    "orientation": "right", // set axis position
+    "title":{               // settings for axis title
+      "enabled": false      // disable title
+    }
+  }],
+
+  // y scale settings
+  "yScale": {
+    "inverted": true        // enable y scale inversion
+  }
+```
+
+{sample}WD\_Data\_from\_JSON\_04{sample}
+
+### Visualization
+
+Visual settings are vital for a chart. JSON can control any method and parameter of a chart to configure desirable chart appearance.
+
+```
+  "fill":"gold",
+  "stroke": "gray",
+  "hoverStroke": "darkred",
+  "hatchFill": {
+    "type": "diagonalbrick",
+    "color": "gray"
+  },
+  "hoverHatchFill":{
+    "type:": "diagonalbrick",
+    "color": "darkred"
+  }
+```
+
+{sample}WD\_Data\_from\_JSON\_05{sample}
+
+## Samples
 
 As addition to the presented material, here is a table of main methods and parameters of JavaScript data set comparing with JSON data set (full list of all the methods and parameters can be found in API).
 
@@ -599,94 +693,6 @@ chart.container('container')
 </td>
 </tr>
 </tbody></table>
-
-## Serialization
-
-Predefined settings from JavaScript format can be serialized into JSON format. Method **.toJson()** transfers current chart settings into JSON object. This method creates an object that contains all possible methods and parameters of the chart.
-
-{sample}WD\_Data\_from\_JSON\_18{sample}
-
-**Note:** When label or tooltip text formatting function is redefined in JavaScript code - it can't be serialized.
-
-## Multiple Series
-
-JSON data set can contain one or several series. Sample below demonstrates chart with several series from JSON.
-
-```
-  // series settings
-  "series": [{
-    // first series data
-    "data": [
-      {"x": "P1", "value": "128.14"},
-      {"x": "P2", "value": "112.61"},
-      {"x": "P3", "value": "163.21"},
-      {"x": "P4", "value": "229.98"},
-      {"x": "P5", "value": "90.54"}
-    ]
-  },{
-    // second series data
-    "data": [
-      {"x": "P1", "value": "90.54"},
-      {"x": "P2", "value": "104.19"},
-      {"x": "P3", "value": "150.67"},
-      {"x": "P4", "value": "120.43"},
-      {"x": "P5", "value": "200.34"}
-    ]
-  }]
-```
-
-{sample}WD\_Data\_from\_JSON\_02{sample}
-
-## Settings
-
-### Axes
-
-Data from JSON can contain all possible settings for controlling chart grid, axis line along with tick marks and labels, axis scale and other visual appearance settings. Sample below demonstrates setting axes names and adjusting scales orientation.
-
-```
-  // x axes settings
-  "xAxes": [{               // settings for default x axis
-    "orientation": "top",   // set axis position
-    "title":{               // settings for axis title
-      "enabled": false      // disable title
-    }
-  }],
-
-  // y axes settings
-  "yAxes": [{               // settings for default y axis
-    "orientation": "right", // set axis position
-    "title":{               // settings for axis title
-      "enabled": false      // disable title
-    }
-  }],
-
-  // y scale settings
-  "yScale": {
-    "inverted": true        // enable y scale inversion
-  }
-```
-
-{sample}WD\_Data\_from\_JSON\_04{sample}
-
-### Visualization
-
-Visual settings are vital for a chart. JSON can control any method and parameter of a chart to configure desirable chart appearance.
-
-```
-  "fill":"gold",
-  "stroke": "gray",
-  "hoverStroke": "darkred",
-  "hatchFill": {
-    "type": "diagonalbrick",
-    "color": "gray"
-  },
-  "hoverHatchFill":{
-    "type:": "diagonalbrick",
-    "color": "darkred"
-  }
-```
-
-{sample}WD\_Data\_from\_JSON\_05{sample}
 
 ## Complex
 

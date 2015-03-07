@@ -9,6 +9,7 @@
 * [Settings](#settings)
  * [Axes](#axes)
  * [Visualization](#visualization)
+* [Samples](#samples)
 * [Complex](#complex)
 
 ## Overview
@@ -62,7 +63,12 @@ The same chart can be created using XML
         '<chart type="column" container="container">' +
           '<series_list>'+
             '<series type="column">'+
-              '<data>128.14, 112.61, 163.21, 229.98"/>'+
+              '<data>'+
+                '<point value="128.14"/>'+ 
+                '<point value="112.61"/>'+ 
+                '<point value="163.21"/>'+ 
+                '<point value="229.98"/>'+
+              '</data>'+
           '</series_list>'+
         '</chart>'+
       '</anychart>'
@@ -77,7 +83,6 @@ Pie chart can have only one series of data and requires no **<series></series>**
 Parameters of Y-Scale should be applied using {api:anychart.charts.Cartesian#yScale}yScale(){api} method and should be invoked using code below
 
 ```xml
-  
   <!-- set chart type and chart container -->
   <chart type="column" container="container">
   
@@ -86,6 +91,87 @@ Parameters of Y-Scale should be applied using {api:anychart.charts.Cartesian#ySc
     
   </chart>
 ```
+
+{sample}WD\_Data\_from\_XML\_19{sample}
+
+## Data Sets
+
+XML data set can contain one or several series. Sample below demonstrates chart with several series from XML.
+
+```xml
+  <!-- series for this chart -->
+  <series_list>
+    <!-- series settings -->
+    <series series_type="line">
+      <!-- data set -->
+      <data>
+        <point x="0" value="0"/>
+        <point x="50" value="100"/>
+        <point x="100" value="0"/>
+      </data>
+    </series>
+  <!-- second series set -->
+    <series series_type="line" stroke="red">
+      <!-- data set -->
+      <data>
+        <point x="50" value="0"/>
+        <point x="100" value="100"/>
+        <point x="50" value="0"/>
+      </data>
+    </series>
+  </series_list>
+```
+
+{sample}WD\_Data\_from\_XML\_02{sample}
+
+## Serialization
+
+Predefined settings from JS format can be serialized into XML format. Method **.toXml()** transfers current chart settings into XML string. This string contains all possible methods and parameters of the chart in XML format.
+
+{sample}WD\_Data\_from\_XML\_13{sample}
+
+**Note:** When label or tooltip text formatting function is redefined in JavaScript code - it can't be serialized.
+
+## Settings
+
+### Axes
+
+Data from XML can contain all possible settings for controlling chart grid, axis line along with tick marks and labels, axis scale and other visual appearance settings. Sample below demonstrates setting axes names and adjusting scales orientation.
+
+```xml
+  <!-- x axes setting -->
+  <x_axes>
+    <!-- adjust default x axis -->
+    <axis orientation="top" title="false"/>
+  </x_axes>
+  <!-- y axes settings -->
+  <y_axes>
+    <!-- adjust default y axis -->
+    <axis orientation="right" title="false"/>
+  </y_axes>
+  <!-- y scale setting -->
+  <y_scale inverted="true"/>
+```
+
+{sample}WD\_Data\_from\_XML\_03{sample}
+
+### Visualisation
+
+Visual settings can be vital for a chart. XML can contain almost any method and parameter for adjusting visual settings.
+
+```xml
+  <!-- series settings -->
+  <series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonalbrick">
+
+    <!-- customize hover hatch fill -->
+    <hover_hatch_fill type="diagonalbrick" color="darkred"/>
+
+  </series>
+```
+
+{sample}WD\_Data\_from\_XML\_04{sample}
+
+## Samples
 
 As addition to the presented material, here is a table of main methods and parameters of JavaScript data set comparing with XML data set (full list of all the methods and parameters can be found in API).
 
@@ -670,83 +756,6 @@ container="container">
 </td>
 </tr>
 </tbody></table>
-
-## Data Sets
-
-XML data set can contain one or several series. Sample below demonstrates chart with several series from XML.
-
-```xml
-  <!-- series for this chart -->
-  <series_list>
-    <!-- series settings -->
-    <series series_type="line">
-      <!-- data set -->
-      <data>
-        <point x="0" value="0"/>
-        <point x="50" value="100"/>
-        <point x="100" value="0"/>
-      </data>
-    </series>
-  <!-- second series set -->
-    <series series_type="line" stroke="red">
-      <!-- data set -->
-      <data>
-        <point x="50" value="0"/>
-        <point x="100" value="100"/>
-        <point x="50" value="0"/>
-      </data>
-    </series>
-  </series_list>
-```
-
-{sample}WD\_Data\_from\_XML\_02{sample}
-
-## Serialization
-
-Predefined settings from JS format can be serialized into XML format. Method **.toXml()** transfers current chart settings into XML string. This string contains all possible methods and parameters of the chart in XML format.
-
-{sample}WD\_Data\_from\_XML\_13{sample}
-
-**Note:** When label or tooltip text formatting function is redefined in JavaScript code - it can't be serialized.
-
-## Settings
-
-### Axes
-
-Data from XML can contain all possible settings for controlling chart grid, axis line along with tick marks and labels, axis scale and other visual appearance settings. Sample below demonstrates setting axes names and adjusting scales orientation.
-
-```xml
-  <!-- x axes setting -->
-  <x_axes>
-    <!-- adjust default x axis -->
-    <axis orientation="top" title="false"/>
-  </x_axes>
-  <!-- y axes settings -->
-  <y_axes>
-    <!-- adjust default y axis -->
-    <axis orientation="right" title="false"/>
-  </y_axes>
-  <!-- y scale setting -->
-  <y_scale inverted="true"/>
-```
-
-{sample}WD\_Data\_from\_XML\_03{sample}
-
-### Visualisation
-
-Visual settings can be vital for a chart. XML can contain almost any method and parameter for adjusting visual settings.
-
-```xml
-  <!-- series settings -->
-  <series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonalbrick">
-
-    <!-- customize hover hatch fill -->
-    <hover_hatch_fill type="diagonalbrick" color="darkred"/>
-
-  </series>
-```
-
-{sample}WD\_Data\_from\_XML\_04{sample}
 
 ## Complex
 
