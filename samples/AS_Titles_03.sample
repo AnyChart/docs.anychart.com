@@ -10,7 +10,8 @@ anychart.onDocumentReady(function() {
   // adjust chart settings
   chart.title()
     .text('Sales Performance')  // set title text
-    .orientation('bottom');     // place title into bottom of the chart 
+    .orientation('bottom')      // place title into bottom of the chart 
+    .align('left');             // stick title to the left side
   
   // data
   var data = anychart.data.set([

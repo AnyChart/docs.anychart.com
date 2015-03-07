@@ -8,9 +8,8 @@
  * [Background](#background)
  * [Text Settings](#text_settings)
 * [HTML in Title](#html_in_title)
-* [Additional Titles](#additional_titles)
-* [Adding Events](#adding_events)
-
+<!--* [Additional Titles](#additional_titles)-->
+<!--* [Adding Events](#adding_events)-->
 
 ## Overview
 
@@ -50,11 +49,13 @@ This section describes title visual appearance and ways to adjust it.
 
 ### Position
 
-Title can be placed anywhere on the chart plot. Parameter {api:anychart.core.ui.Title#orientation}**.orientation()**{api} controls title position on the plot. 
+Title can be placed anywhere on the chart plot. Parameter {api:anychart.core.ui.Title#orientation}**.orientation()**{api} sticks title to the side of the plot and parameter {api:anychart.core.ui.Title#align}**.align()**{api} controls alignment of the title. 
 
 ```
-  // set title position
-  chart.title().orientation('bottom');
+  // adjust title
+  chart.title()
+    .orientation('bottom')  // place title at the bottom
+    .align('left');         // stick title to the left
 ```
 
 {sample}AS\_Titles\_03{sample}
@@ -96,7 +97,7 @@ You can use HTML formatted **.text()** parameter. Use **.useHtml()** parameter t
 
 {sample}AS\_Titles\_06{sample}
 
-## Additional Titles
+<!--## Additional Titles
 
 Chart can contain any number of additional titles. These titles can be placed anywhere on the plot.
 
@@ -131,4 +132,4 @@ You can make your chart title interactive by adding event listeners of a differe
 
 Here is advanced sample of using events in titles. In this sample we will show how chart footer can be used as "Back" button for self-drilldown charts. Click on bars to see detailed report on each sales manager and in detailed report click on "Back to Sales Manager Report" button in the bottom right corner of line chart to load initial chart.
 
-{sample}AS\_Titles\_09{sample}
+{sample}AS\_Titles\_09{sample}-->
