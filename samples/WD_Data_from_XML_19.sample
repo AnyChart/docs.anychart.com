@@ -13,7 +13,7 @@ anychart.onDocumentReady(function() {
     '<chart type="column" container="container">' +
   
       '<!-- set scale type and anjust minimum & maximum values -->'+
-      '<y_scale type="line" minimum="60" maximum="120"/>'+
+      '<y_scale type="line" minimum="100" maximum="350"/>'+
     
       '<series_list>'+
         '<series type="column">'+
