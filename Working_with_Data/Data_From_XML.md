@@ -87,7 +87,7 @@ Parameters of Y-Scale should be applied using {api:anychart.charts.Cartesian#ySc
   <chart type="column" container="container">
   
     <!-- set scale type and anjust minimum & maximum values -->
-    <y_scale type="line" minimum="60" maximum="120"/>
+    <y_scale type="line" minimum="100" maximum="350"/>
     
   </chart>
 ```
