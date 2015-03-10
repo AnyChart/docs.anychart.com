@@ -25,7 +25,7 @@ JSON Schema specifies a JSON-based format to define the structure of JSON data (
 
 ## JSON vs JavaScript
 
-To load chart configuration in JSON format you should use {api:anychart#fromJson}**.fromJson()**{api} method. Setting data using JSON format is very similar to the way of setting data in JavaScript. The name of every object in JSON configuration corresponds to the name of a method or parameter in JavaScript. Snippet below demonstrates configuration of the simplest chart.
+To load chart configuration in JSON format you should use {api:anychart#fromJson}**.fromJson()**{api} method. Setting data using JSON format is very similar to the way of setting data in JavaScript. The name of every object in JSON configuration corresponds to the name of a method or parameter in JavaScript. Snippet below demonstrates configuration of the simple chart.
 
 ```
   // JSON data
@@ -50,14 +50,14 @@ To load chart configuration in JSON format you should use {api:anychart#fromJson
   chart.draw();
 ```
 
-And this configuration creates chart like the one below
+This configuration creates chart like the one below
 
 {sample}WD\_Data\_from\_JSON\_01{sample}
 
 **Note:** Pie chart can have only one data series, thus JSON configuration for pie chart requires no **"series"** object.
   
   
-JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the AnyChart JSON structure very similar to JavaScript configuration. To find out any required method or parameter use {api:anychart}AnyChart API{api}. API describes how every method and parameter are used. the structure is pretty much the same for JSON configuration. For example, you can find {api:anychart#column}**column()**{api} method in API to create column chart. 
+JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the AnyChart JSON structure very similar to JavaScript configuration. To find out any required method or parameter use {api:anychart}AnyChart API{api}. API describes how every method and parameter are used. The structure is pretty much the same for JSON configuration. For example, you can find {api:anychart#column}**column()**{api} method in API to create column chart. 
 
 ```
   anychart.column([128.14, 112.61, 163.21, 229.98]).container('container').draw();
