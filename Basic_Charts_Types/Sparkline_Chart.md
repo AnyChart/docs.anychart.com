@@ -2,17 +2,25 @@
 
 * [Overview](#overview)
 * [Chart](#chart)
- * [Single Series](#single_series)
-* [Scales](#scales)
+ * [Line](#line_sparkline_chart)
+ * [Area](#area_sparkline_chart)
+ * [Column](#column_sparkline_chart)
+ * [WinLoss](#winloss_sparkline_chart)
+* [Axes](#axes)
  * [Inversion](#inversion)
  * [Minimum and Maximum](#minimum_and_maximum)
-* [Visualization](#visualization)
- * [Basic Sample](#basic_sample)
+* [Visualisation](#visualization)
+ * [Missed Points](#missed_points)
+ * [Clip](#clip)
+ * [PointWidth](#pointwidth)
 * [Labels](#labels)
 * [Markers](#markers)
+	* [RangeMarker](#rangemarker)
+	* [LineMarker](#linemarker)
 * [Design](#design)
   * [Colorizing Elements](#colorizing_elements)
   * [HatchFill](#hatchfill)
+* [Layout](#layout)
 
 ## Overview
 
@@ -157,7 +165,11 @@ Note that there's no difference for a w/l chart how big the value is - only sign
 
 ##Axes
 
-Sparklines have no axes to be shown, but scales can be controlled. AnyChart allows to invert any scale: Y, X or any extra. Inversion is controlled by **.inverted()** method:
+Sparklines have no axes to be shown, but scales can be controlled. 
+
+###Inversion
+
+AnyChart allows to invert any scale: Y, X or any extra. Inversion is controlled by **.inverted()** method:
 
 ```
     chart.yScale().inverted(true);
@@ -234,7 +246,7 @@ To enable the labels for the points, you shall write the following:
 
 That's how it looks when we adjust the previous code for our sample:
 
-{sample :width 688 :height 100}BCT\_Sparkline\_Chart\_10{sample}
+{sample :width 688 :height 80}BCT\_Sparkline\_Chart\_10{sample}
 
 ##Markers
 
@@ -255,7 +267,7 @@ chart.rangeMarker()
 
 This is an example where we use the data about the Ebay seller. Let's define +250 as the minimum sum of negative and positive reviews to get a new "star" and the maximum for saving the current score, and -10 as the maximum for losing a "star" and the minimum for saving the current score.
 
-{sample :width 688 :height 100}BCT\_Sparkline\_Chart\_11{sample}
+{sample :width 688 :height 80}BCT\_Sparkline\_Chart\_11{sample}
 
 
 ###LineMarker
@@ -272,7 +284,7 @@ The following code will help you to add a LineMarker to your chart:
 
 That's how it all looks in the example:
 
-{sample :width 688 :height 100}BCT\_Sparkline\_Chart\_12{sample}                                   
+{sample :width 688 :height 80}BCT\_Sparkline\_Chart\_12{sample}                                   
  
 
 ##Design
@@ -351,11 +363,64 @@ Downwards you can see a couple of WinLoss Sparklines which we've colored with ha
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_17{sample}
 
-It's also possible to add a hatchfill to a point though the data. You need to define the data as the array in this case:
+It's also possible to add a hatchfill to a point though the data - if you need to emphasize how the same numbered points differ. You need to define the data as the array in this case:
 
 ```
   chart2.data([{value: 20, hatchFill: {type: 'checkerboard'}}, 30, -10, {value: 20,hatchFill: {type: 'checkerboard'}}, -35, {value: -15, hatchFill: {type: 'checkerboard'}}, -40, 50]);
 ```
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_18{sample}
+
+##Layout
+
+Sparklines are designed to be situated in a large quantity in a small place. We can do it through the stage using bounds (as done with the samples above):
+
+```
+//set container id for the charts
+chart1.container(stage);
+chart2.container(stage);
+ 
+//set charts dimensions and position
+chart1.bounds(0, 0, 90, 20); //parameters: left padding, top padding, width, height
+chart2.bounds(0, 25, 90, 20);
+```
+
+Another way to place a lot of sparklines is to use the AnyChart table:
+
+```
+ // create table
+  var table = anychart.ui.table();
+
+  // set table content
+  table.contents([
+    [
+      null,
+      'February 2015',
+      'June 2014'
+    ],[
+      'EUR/USD',
+      chart1,
+      chart4
+    ],[
+      'GBP/USD',
+      chart2,
+      chart5
+    ],[
+      'CNY/USD',
+      chart3,
+      chart6
+    ]
+  ]);
+
+  table.rowHeight(0, 40);   // Get first row and set height 40px
+  table.colWidth(0, 70);    // Get first column and set width 70 px
+
+  // adjust table border and position text in each cell into center
+  table.cellBorder('#B8B8B8').cellTextFactory().vAlign('center').hAlign('center');
+
+  // set table container and initiate draw
+  table.container(stage).draw();
+```
+
+{sample :width 688 :height 100}BCT\_Sparkline\_Chart\_19{sample}
 

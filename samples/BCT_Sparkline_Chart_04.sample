@@ -16,7 +16,7 @@ anychart.onDocumentReady(function() {
   chart1.data([500,-100,340,200,-90,80,-70]);
 
   //set charts dimensions and postition
-  chart1.bounds(0, 0, 300, 40);
+  chart1.bounds(0, 0, 300, 50);
     chart1.type('column');
   
   //initiate chart drawing
