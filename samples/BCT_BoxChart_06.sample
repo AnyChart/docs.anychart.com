@@ -2,6 +2,7 @@
      :is_new false
      :exports "chart"}
 	 
+
 anychart.onDocumentReady(function() {
   //chart data
   var data = [
@@ -28,6 +29,16 @@ anychart.onDocumentReady(function() {
   //set chart title text settings
   chart.title().text('ACME Corp. Salaries\nFebruary, 2015');
   chart.title().hAlign('center');
+  
+  //set axis orientation
+  chart.xAxis(0).orientation('top');
+  chart.yAxis(0).orientation('right');
+  
+  //invert vertical scale
+  chart.yScale().inverted(true);
+  
+  //set min and max
+  chart.yScale().minimum('900').maximum('9600').ticks().interval(300);
 
   //set axes titles settings
   chart.xAxis().title(false);
@@ -39,6 +50,14 @@ anychart.onDocumentReady(function() {
   //create box chart series with our data
   var series = chart.box(data);
   var series1 = chart.box(data1);
+  
+  //styling the series
+  series
+    .fill('Gold')
+    .hoverStroke("darkred", 4)
+    .stroke('#56561a', 4)
+    .hatchFill('diagonalbrick', 'gray')
+    .hoverHatchFill('diagonalbrick', 'darkred');
 
   //hide whisker
   series.whiskerWidth(0);

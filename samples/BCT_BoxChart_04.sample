@@ -28,6 +28,13 @@ anychart.onDocumentReady(function() {
   //set chart title text settings
   chart.title().text('ACME Corp. Salaries\nFebruary, 2015');
   chart.title().hAlign('center');
+  
+  //set axis orientation
+  chart.xAxis(0).orientation('top');
+  chart.yAxis(0).orientation('right');
+  
+  //invert vertical scale
+  chart.yScale().inverted(true);
 
   //set axes titles settings
   chart.xAxis().title(false);

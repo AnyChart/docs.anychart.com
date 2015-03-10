@@ -19,12 +19,12 @@ anychart.onDocumentReady(function() {
   chart.container('container');
 
   //set chart title text settings
-  chart.title().text('Oceanic Airlines Delays\nDecember, 2014');
+  chart.title().text('ACME Corp. Salaries\nFebruary, 2015');
   chart.title().hAlign('center');
 
   //set axes titles settings
   chart.xAxis().title(false);
-  chart.yAxis().title('Delay in minutes');
+  chart.yAxis().title('$ per month');
 
   //set chart yScale settings
   chart.yScale().maximumGap(0);

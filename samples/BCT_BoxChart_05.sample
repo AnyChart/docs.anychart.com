@@ -16,7 +16,7 @@ anychart.onDocumentReady(function() {
     {x: '2', low: 2500, q1: 3400, median: 3500, q3: 3600, high: 3700},
     {x: '3', low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000},
     {x: '4', low: 4000, q1: 5000, median: 5500, q3: 6000, high: 7000},
-    {x: '5', low: 8100, q1: 8400 , median: 8500, q3: 9000, high: 9500},
+    {x: '5', low: 8100, q1: 8400 ,median: 8500, q3: 9000, high: 9500},
   ];
 
   //create box chart
@@ -28,6 +28,16 @@ anychart.onDocumentReady(function() {
   //set chart title text settings
   chart.title().text('ACME Corp. Salaries\nFebruary, 2015');
   chart.title().hAlign('center');
+  
+  //set axis orientation
+  chart.xAxis(0).orientation('top');
+  chart.yAxis(0).orientation('right');
+  
+  //invert vertical scale
+  chart.yScale().inverted(true);
+  
+  //set min and max
+  chart.yScale().minimum('900').maximum('9600').ticks().interval(300);
 
   //set axes titles settings
   chart.xAxis().title(false);

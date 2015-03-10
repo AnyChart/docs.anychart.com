@@ -226,3 +226,109 @@ Only one string changes the view a lot:
 {sample}BCT\_BoxChart\_04{sample}
 
 ###Minimum and maximum
+
+In case your data values start far much more than from the beginning of the scale or end far from the point you really need to show and analyse, you may have no desire to keep any empty space in the chart. Then use this ability of AnyChart to set the minimum and the maximum values shown on the axis.
+ You can control these values by setting **.maximum()** and **.minimum()** parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjust the scale, set **.ticks().interval()** as well, in case the default interval is twisted:
+
+```
+    chart.yScale().minimum('-100').maximum('1000').ticks().interval(100);
+```
+
+And here is the demonstration of maximum and minimum values on the Single-series sample:
+
+{sample}BCT\_BoxChart\_05{sample}  
+
+##Visualization
+
+In this section we will describe the main elements of a box chart style and demonstrate how a style can be applied.
+The main idea of styles is to segregate visualization and data definition. Visual appearance of boxes is defined using certain styles and then you just apply the style to the certain data elements. The style can be applied to a data series or a single box.
+Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when hovered, etc.
+
+###Basic sample
+
+Now, let's look how to apply a simple style to the chart. As we've already said, a style consists of several elements, here is the javascript structure:
+
+```
+//create box chart series with our data
+var series = chart.box(data);
+var series1 = chart.box(data1);
+
+//set the style
+series 
+    .fill('Gold')
+    .hoverStroke("darkred", 4)
+    .stroke('#56561a', 4)
+    .hatchFill('diagonalbrick', 'gray')
+    .hoverHatchFill('diagonalbrick', 'darkred');
+```
+Using such settings we've created a style that colors boxes in Gold, makes the border rather thick, fills hatch with DiagonalBrick and a couple of effects. Also, we've defined that when the element is hovered it will be highlighted with the dark red thick border and hatch fill colored dark red too.
+Now let's apply these setting to the sample.
+
+{sample}BCT\_BoxChart\_06{sample}  
+
+##Labels and Tooltips
+
+In this section we will explain how to add and configure data labels and tooltips.
+If you want to configure data labels and tooltips for all series - you should use **.labels()** and **.tooltip()** methods. Adding attributes with values to these methods will change visual appearance, position and format of these elements.
+With the following example let's make data labels appear to the bottom from the boxes, format them to show only the value corresponding to the box and force tooltips to show detailed description.
+
+
+```
+   // adjust labels position for the first series
+    series.labels().enabled(true).anchor('leftCenter').position('rightCenter');
+
+    // adjust tooltips content for the first series
+    series.tooltip().contentFormatter(function() {
+    return 'Range: ' + this.x + '\n' + 'Medium: ' + (this.q3+this.q1)/2 + '\n' + 'Lowest: ' + this.lowest + '\n' +'Q1: ' + this.q1 + '\n' +'Median: ' + this.median + '\n' +'Q3: ' + this.q3 + '\n' +'Highest: ' +this.highest + '\n' +'Period: February 2015';
+    });
+   // adjust tooltip title for the first series
+    series.tooltip().enabled(true).title().enabled(true).text('Salaries in February 2015'+'\n'+'Information');
+
+```
+
+{sample}BCT\_BoxChart\_07{sample} 
+
+In both samples above we adjusted only the first series boxes' appearance to make it clear how does the chart look with no formatting and styling.
+
+##Markers
+
+Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including bars.
+In the sample below we take multi-series data described above and mark the biggest bar in series with a "Star5" of the "Gold" color.
+To make the marker more visually appealing we set its size to 12px.
+
+```
+{x: 'Men\'s/Women\'s Specialty Stores', value: 148662, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}}
+
+```
+
+And here is a result - the best retail channel for ACME Corp. is Discount Stores and can be easily noticed on this chart.
+
+{sample}BCT\_BoxChart\_08{sample}
+
+<!--оно ж таки однако не работает--!>
+
+##Colors
+
+AnyChart uses default color palette to colorize data elements of chart automatically if you have not defined special colors.
+
+###Colorizing elements
+  
+Now let's study how to apply different colors to different data series. To apply the color to the exact series we need to set the .fill() parameter in the series. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
+
+{sample}BCT\_BoxChart\_09{sample}
+
+Look at the individual points we colorized in the sample below. We've got a chart with one series and predefined color for all elements. We set "Rgb(180,77,77)" color for the minimum point and "Rgb(77,180,77)" for the maximum one. As you see it is very easy to do by setting a value for the fill() parameter of a point.
+
+{sample}BCT\_BoxChart\_10{sample}
+
+Important Note:
+AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors. For example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)", or "AliceBlue", or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
+Different ways of [setting colors]() of elements
+
+##Hatch Fills
+
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see Hatch Fill tutorial.
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart a with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch type for the .hatchFill() parameter.
+
+{sample}BCT\_BoxChart\_11{sample}
+
