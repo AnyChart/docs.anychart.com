@@ -238,6 +238,14 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 {sample}BCT\_BoxChart\_05{sample}  
 
+###Scale type
+
+It is possible to define  scale
+
+```
+```
+{sample}BCT\_BoxChart\_06{sample}
+
 ##Visualization
 
 In this section we will describe the main elements of a box chart style and demonstrate how a style can be applied.
@@ -264,7 +272,7 @@ series
 Using such settings we've created a style that colors boxes in Gold, makes the border rather thick, fills hatch with DiagonalBrick and a couple of effects. Also, we've defined that when the element is hovered it will be highlighted with the dark red thick border and hatch fill colored dark red too.
 Now let's apply these setting to the sample.
 
-{sample}BCT\_BoxChart\_06{sample}  
+{sample}BCT\_BoxChart\_07{sample}  
 
 ##Labels and Tooltips
 
@@ -286,7 +294,7 @@ With the following example let's make data labels appear to the bottom from the 
 
 ```
 
-{sample}BCT\_BoxChart\_07{sample} 
+{sample}BCT\_BoxChart\_08{sample} 
 
 In both samples above we adjusted only the first series boxes' appearance to make it clear how does the chart look with no formatting and styling.
 
@@ -303,7 +311,7 @@ To make the marker more visually appealing we set its size to 12px.
 
 And here is a result - the best retail channel for ACME Corp. is Discount Stores and can be easily noticed on this chart.
 
-{sample}BCT\_BoxChart\_08{sample}
+{sample}BCT\_BoxChart\_09{sample}
 
 <!--оно ж таки однако не работает--!>
 
@@ -313,13 +321,17 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 ###Colorizing elements
   
-Now let's study how to apply different colors to different data series. To apply the color to the exact series we need to set the .fill() parameter in the series. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
-
-{sample}BCT\_BoxChart\_09{sample}
-
-Look at the individual points we colorized in the sample below. We've got a chart with one series and predefined color for all elements. We set "Rgb(180,77,77)" color for the minimum point and "Rgb(77,180,77)" for the maximum one. As you see it is very easy to do by setting a value for the fill() parameter of a point.
+Now let's study how to apply different colors to different data series. To apply the color to the exact series we need to set the **.fill()** parameter in the series. In the sample below we compare salaries of 5 different ranges in December 2014, January and February 2015. Let's color each series to different color. Here is the sample:
 
 {sample}BCT\_BoxChart\_10{sample}
+
+Besides colorizing the whole series, we may define special color to the only box for some reasons. Look at the sample below. We've got a chart with one series and predefined color for all elements. We highlight the box with the lowest salary with "Rgb(220,37,50)" and the box with the highest salary with "Rgb(77,200,17)" for the maximum one. As you see it is very easy to do by setting a value for the **.fill()** parameter of a point while setting the data.
+
+```
+ {x: '1', low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000, fill: 'Rgb(220,37,50)'},
+```
+
+{sample}BCT\_BoxChart\_11{sample}
 
 Important Note:
 AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors. For example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)", or "AliceBlue", or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
@@ -330,5 +342,5 @@ Different ways of [setting colors]() of elements
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see Hatch Fill tutorial.
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart a with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch type for the .hatchFill() parameter.
 
-{sample}BCT\_BoxChart\_11{sample}
+{sample}BCT\_BoxChart\_12{sample}
 
