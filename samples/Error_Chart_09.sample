@@ -1,27 +1,19 @@
 anychart.onDocumentReady(function() {
-  chart = anychart.scatter();
+  chart = anychart.columnChart();
 
   //set container id for the chart
   chart.container('container');
 
-  var series = chart.line([
-    [100, 300],
-    [110, 275],
-    [120, 490],
-    [130, 389],
-    [140, 414],
-    [150, 191],
-  ]);
+  var series = chart.column([
+    {x: 'Viperia berus', y: 8, valueError: '4.4', valueErrorStroke: 'red'},
+    {x: 'Viperia ammodytes', y: 7.1, valueError: '2.6', valueErrorStroke: 'red'},
+    {x: 'Viperia aspis', y: 13.7, valueError: '4.6', valueErrorStroke: 'red'},
+    {x: 'Viperia latastei', 'y': 16.8, valueError: '5.5', valueErrorStroke: 'red'}
+  ]).fill('Green .8');
 
-
-  series.error({
-            xError: 20,
-            valueError: '5%',
-        });
-
-  series.error()
-            .valueErrorStroke('2 red .9')
-            .xErrorStroke('4px green .4');
+  chart.yAxis().title('Lethal Dose 50 (mg/mouse)');
+  chart.barGroupsPadding(3);
+  chart.yScale().minimum(0);
 
   //initiate chart drawing
   chart.draw();

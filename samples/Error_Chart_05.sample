@@ -10,12 +10,14 @@ anychart.onDocumentReady(function() {
     [30, 154],
     [50, 165],
     [60, 189],
-    [70, 191],
+    [70, 69],
+    [80, 120],
+    [90, 135]
   ]);
 
 
-  series.error().valueUpperError(10);
-  series.error().valueLowerError(15);
+  series.error().xUpperError(5);
+  series.error().xLowerError('7%');
 
   chart.yScale().minimum(0);
 

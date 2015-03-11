@@ -1,28 +1,31 @@
 anychart.onDocumentReady(function() {
   chart = anychart.scatter();
 
+
   //set container id for the chart
   chart.container('container');
 
   var series = chart.marker([
-    [10, 140],
-    [20, 177],
-    [30, 154],
-    [50, 165],
-    [60, 189],
-    [70, 191],
+    [1, 177],
+    [2, 154],
+    [3, 165],
+    [4, 179],
+    [5, 140]
   ]);
 
 
   series.error({
-            xLowerError: '9%',
+            xLowerError: '2%',
             xUpperError: 2,
-            valueUpperError: 7,
-            valueLowerError: '5%',
-            errorMode: 'x'
+            valueUpperError: 5,
+            valueLowerError: '3%',
+            errorMode: 'y'
         });
 
   chart.yScale().minimum(0);
+  
+  chart.xAxis().title('hours after treatment');
+  chart.yAxis().title('Mean Blood Pressure');
 
   //initiate chart drawing
   chart.draw();

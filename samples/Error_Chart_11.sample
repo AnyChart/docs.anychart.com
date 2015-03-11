@@ -16,8 +16,6 @@ anychart.onDocumentReady(function() {
 
   chart.xAxis().title('Price');
   chart.yAxis().title('Sales');
-  
-  series.error().errorMode('none');
 
   //initiate chart drawing
   chart.draw();
