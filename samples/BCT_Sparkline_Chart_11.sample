@@ -19,7 +19,7 @@ anychart.onDocumentReady(function() {
     .scale(chart1.yScale()) //you may change the scale
     .from(-50)
     .to(250)
-    .fill('black 0.5');
+    .fill('green 0.1');
     
   //set charts dimensions and position
   chart1.bounds(0, 0, 300, 80);
