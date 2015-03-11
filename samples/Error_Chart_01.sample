@@ -1,3 +1,6 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
 anychart.onDocumentReady(function() {
   //create bar chart
   chart = anychart.bar();
