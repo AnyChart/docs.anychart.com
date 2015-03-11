@@ -17,8 +17,8 @@ anychart.onDocumentReady(function() {
   series.error({
             xLowerError: '2%',
             xUpperError: 2,
-            valueUpperError: 5,
-            valueLowerError: '3%',
+            valueUpperError: 8,
+            valueLowerError: '4%',
             errorMode: 'y'
         });
 

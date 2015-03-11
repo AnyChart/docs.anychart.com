@@ -103,7 +103,7 @@ series.error().valueError('15%')
 <br>As you can see we've created the error bars on a chart using the settings listed in the above table:
 {sample}Error\_Chart\_01{sample}
 
-<br>Also it should be noted that you can do the same using the <b>error()</b> method.
+<br>Also it should be noted that you can do the same using the <b>error()</b> method. The sample below demonstrates how to apply a common error to a full data set.
 
 ```
 //set the error value in numbers
