@@ -14,7 +14,7 @@ anychart.onDocumentReady(function() {
   chart.yAxis().title('Lethal Dose 50 (mg/mouse)');
   chart.barGroupsPadding(3);
   chart.yScale().minimum(0);
-
+  chart.title('Studies Of Snake Venom');
   //initiate chart drawing
   chart.draw();
 });

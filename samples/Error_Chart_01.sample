@@ -21,7 +21,7 @@ anychart.onDocumentReady(function() {
   series.error().valueUpperError('10%');
 
   series.error().valueErrorStroke('2px #146192');
-
+  chart.title('Breakfast Cereals Sales');
   chart.xAxis().title('Groats');
   chart.yAxis().title('Price (dollars)');
 

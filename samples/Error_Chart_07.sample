@@ -22,9 +22,10 @@ anychart.onDocumentReady(function() {
             errorMode: 'y'
         });
 
-  chart.yScale().minimum(0);
+  chart.yScale().minimum(50);
   chart.xScale().maximum(6);
-  
+
+  chart.title('Scatter Marker Chart With Error Bars');
   chart.xAxis().title('Hours After Treatment');
   chart.yAxis().title('Mean Blood Pressure');
 
