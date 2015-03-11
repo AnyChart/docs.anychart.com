@@ -1,4 +1,4 @@
-#Error Bar Chart
+#Error Chart
 
 * [Overview](#overview)
 * [Supported Chart Types](#supported_chart_types)
@@ -10,7 +10,7 @@
 
 ## Overview
 
-Error bars are defined as part of the series and are used on graphs to indicate the error, or uncertainty in a reported measurement. Error bars often represent one standard deviation of uncertainty, one standard error (standard deviation of the sampling distribution of a statistic), or a certain confidence interval (e.g., a 95% interval).
+Error Charts are defined as part of the series and are used on graphs to indicate the error, or uncertainty in a reported measurement. Error bars often represent one standard deviation of uncertainty, one standard error (standard deviation of the sampling distribution of a statistic), or a certain confidence interval (e.g., a 95% interval).
 
 ## Supported Chart Types
 
