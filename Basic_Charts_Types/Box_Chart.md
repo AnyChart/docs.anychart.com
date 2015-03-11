@@ -240,10 +240,21 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 ###Scale type
 
-It is possible to define  scale
+There are four types of scales in AnyChart: "Linear", "Logarithmic", "Ordinal" and "DateTime". To set scale type use appropriate constructor:
 
 ```
+chart.xScale(anychart.scales.linear());
+newScale = anychart.scales.ordinal();
+chart.yScale(newScale);
 ```
+Linear scale is set be default, other scale types can be set using the code above. For example, if you prefer your vertical scale logarithmic, paste the following:
+
+```
+chart.yScale(anychart.scales.log());
+```
+
+That's how it will change your chart's appearance:
+
 {sample}BCT\_BoxChart\_06{sample}
 
 ##Visualization
@@ -340,7 +351,14 @@ Different ways of [setting colors]() of elements
 ##Hatch Fills
 
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see Hatch Fill tutorial.
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart a with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch type for the .hatchFill() parameter.
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart a with 3 series with 5 data points in each. For every series we've applied different hatch fills by setting hatch type for the **.hatchFill()** parameter:
+
+```
+  //hatch fill
+  series1.hatchFill('soliddiamond');
+  series2.hatchFill('forwarddiagonal');
+  series.hatchFill('backwarddiagonal');
+```
 
 {sample}BCT\_BoxChart\_12{sample}
 

@@ -2,7 +2,6 @@
      :is_new false
      :exports "chart"}
 	 
-
 anychart.onDocumentReady(function() {
   //chart data
   var data = [
@@ -17,7 +16,7 @@ anychart.onDocumentReady(function() {
     {x: '2', low: 2500, q1: 3400, median: 3500, q3: 3600, high: 3700},
     {x: '3', low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000},
     {x: '4', low: 4000, q1: 5000, median: 5500, q3: 6000, high: 7000},
-    {x: '5', low: 8100, q1: 8400 , median: 8500, q3: 9000, high: 9500},
+    {x: '5', low: 8100, q1: 8400 ,median: 8500, q3: 9000, high: 9500},
   ];
 
   //create box chart
@@ -46,18 +45,13 @@ anychart.onDocumentReady(function() {
 
   //set chart yScale settings
   chart.yScale().maximumGap(0);
+  
+  //set the scale in logarithmic type
+  chart.yScale(anychart.scales.log());
 
   //create box chart series with our data
   var series = chart.box(data);
   var series1 = chart.box(data1);
-  
-  //styling the series
-  series
-    .fill('Gold')
-    .hoverStroke("darkred", 4)
-    .stroke('#56561a', 4)
-    .hatchFill('diagonalbrick', 'gray')
-    .hoverHatchFill('diagonalbrick', 'darkred');
 
   //hide whisker
   series.whiskerWidth(0);
