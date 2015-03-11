@@ -12,7 +12,6 @@ anychart.onDocumentReady(function() {
     {x: '2009', value: 23, valueError: 1},
   ]);
 
-  chart.yScale().minimum(0);
   chart.title('Daily Temperature Averages By City');
   chart.xAxis().title('Year');
   chart.yAxis().title('Daily Temperature');

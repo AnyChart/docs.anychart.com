@@ -7,9 +7,9 @@ anychart.onDocumentReady(function() {
 
   var series = chart.marker([
     [1, 177],
-    [2, 154],
+    [2, 174],
     [3, 165],
-    [4, 179],
+    [4, 159],
     [5, 140]
   ]);
 
@@ -23,8 +23,9 @@ anychart.onDocumentReady(function() {
         });
 
   chart.yScale().minimum(0);
+  chart.xScale().maximum(6);
   
-  chart.xAxis().title('hours after treatment');
+  chart.xAxis().title('Hours After Treatment');
   chart.yAxis().title('Mean Blood Pressure');
 
   //initiate chart drawing

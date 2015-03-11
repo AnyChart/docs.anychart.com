@@ -142,7 +142,7 @@ Error bars can be displayed for the series x value, y value or both. You should 
 <br>And now we have an error defined on a scatter plot.
 {sample}Error\_Chart\_05{sample}
 
-<br>Y error value must be defined in numbers or percentage of common value.
+<br>X value error value must be defined in numbers or percentage of common value.
 ```
 //you can set the x error value
 series.error().xError(10);
@@ -156,7 +156,7 @@ series.error().xError('15%')
 
 <br>It is also possible to apply a separate error bar to each data point within a series on a scatter plot:
 
-{sample}Error\_Chart\_04{sample}
+{sample}Error\_Chart\_11{sample}
 
 ### Error Mode
 
@@ -185,7 +185,7 @@ If you want to specify the visibility of the upper and lower error values - you 
 </tr>
 </tbody></table>
 
-<br>Let's take a look at this part of code. As we can see the both error values are defined for some points, but since we configured the error mode as "none", nothing will be rendered.
+<br>Let's take a look at this part of code. As we can see the both error values are defined for some points (see the chart above), but since we configured the error mode as "none", nothing will be rendered.
 ```
   var series = chart.marker([
     {'x': 192, 'y': 9, 'xUpperError': '2%', 'xLowerError': '1%'},
