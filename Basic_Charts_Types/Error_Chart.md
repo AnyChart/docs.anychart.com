@@ -116,6 +116,11 @@ series.error('12%');
 <br>
 {sample}Error\_Chart\_02{sample}
 
+<br><b>Note:</b>
+You can show error bars for x values in the case of e.g. an error in measurement of the data set. Have a look at the section below to learn more how to define an error on a series x value.
+{sample}Error\_Chart\_12{sample}
+
+
 ### Scatter
 
 Error bars can be displayed for the series x value, y value or both. You should use an appropriate set of methods to set the low and high values for the series x error value:
