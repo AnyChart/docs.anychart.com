@@ -10,13 +10,13 @@
  * [Inversion](#inversion)
  * [Minimum and Maximum](#minimum_and_maximum)
 * [Visualisation](#visualization)
- * [Missed Points](#missed_points)
- * [Clip](#clip)
- * [PointWidth](#pointwidth)
+ * [Missing Points](#missing_points)
+ * [Point Width](#pointwidth)
 * [Labels](#labels)
 * [Markers](#markers)
-	* [RangeMarker](#rangemarker)
-	* [LineMarker](#linemarker)
+* [Axes Markers](#axes_markers)
+ * [RangeMarker](#rangemarker)
+ * [LineMarker](#linemarker)
 * [Design](#design)
   * [Colorizing Elements](#colorizing_elements)
   * [HatchFill](#hatchfill)
@@ -75,7 +75,7 @@ Let's build an example with 2 single-series line charts using the following data
 </tr>
 </tbody></table>
 
-Now we need to convert this data table into an acceptable format. In terms of AnyChart data model we have 2 charts with one series of data (rates) each with dates as categories. Each point in series represents one date and the rate. Converted Data looks like:
+Now we need to convert this data table into an acceptable format. In terms of AnyChart data model we have 2 charts with one series of data (rates) each with dates as categories. Each point in series represents one date and the rate. Converted data looks like:
 
 ```
     var stage = anychart.graphics.create('container');
@@ -107,7 +107,7 @@ That's how the charts will look like:
 
 {sample :width 688 :height 50}BCT\_Sparkline\_Chart\_01{sample}
 
-All titles are disabled by default, so we have to put them in visible mode and set.
+All titles are disabled by default, so we have to put them in visible mode.
 
 ```
   //setting the titles
@@ -136,7 +136,7 @@ An area sparkline is a line sparkline with the area between its points and the h
 
 ### Column Sparkline Chart
 
-A Column Sparkline is a kind of column chart with minimum funcionality enabled by default. This type of spaklines is worth using when we analyze something that might have negative values: for example, profit of a company, or sum of positive and negative review for a product.
+A Column Sparkline is a kind of column chart with minimum number of options enabled by default. This type of spaklines is worth using when we analyze something that might have negative values: for example, profit of a company, or sum of positive and negative review for a product.
 
 You can easily switch types: 
 
@@ -145,7 +145,7 @@ You can easily switch types:
   chart1.type('column');
 ```
 
-Currency rates are not the best example for Columns, so let's take sum of + and - reviews for an Ebay seller as an exapmle.
+Currency rates are not the best example for Columns, so let's take the sum of positive and negative reviews for an Ebay seller as an exapmle.
 
 {sample :width 688 :height 50}BCT\_Sparkline\_Chart\_04{sample}
 
@@ -165,7 +165,12 @@ Note that there's no difference for a w/l chart how big the value is - only sign
 
 ##Axes
 
-Sparklines have no axes to be shown, but scales can be controlled. 
+Sparklines have no axes to be shown, but scales can be controlled. It is possible to change the scale type (linear, logarithmic, ordinal or datetime): you only have to add a string to your code. 
+
+```
+chart.xScale(anychart.scales.ordinal());
+```
+This will easily change your linear scale to the ordinal type.
 
 ###Inversion
 
@@ -181,11 +186,13 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 <!--что-то здесь не так, почти ничто не инвертится--!>
 
+There are loads of actions you can do with the scales
+
 ##Visualisation
 
 Here you will find some information about main parts of  the sparkline chart style and see the demonstration of style applying.
 
-###Missed Points
+###Missing Points
 
 Sometimes we need to show the absence of a value or we don't have enough data. In this case we define one of the data points as "miss":
 
@@ -195,7 +202,7 @@ Sometimes we need to show the absence of a value or we don't have enough data. I
 ```
 
 There's no difference in what you write instead of the point you need to be missed. This only applies to strings - be careful and don't use numerical values here. 
-Now let's just connect the points surrounding the missing ones. We use the **.connectMissingPoints()** method for this:
+Now let's just connect the points surrounding the missing ones. We use the {api:anychart.graphics.vector.connectMissingPoints}**.connectMissingPoints()** method for this:
 
 ```
 chart2.data([1.5500,1.5458,1.5463, 'miss', 1.5397,1.5385]).connectMissingPoints(true);
@@ -204,16 +211,7 @@ In this sample you can see how it looks with a missing point and compare with a 
 
 {sample :width 688 :height 200}BCT\_Sparkline\_Chart\_07{sample}
 
-###Clip
-
-If you wish not to accent the range of values but cut all unwanted ones off, use the **.clip** method. 
-
-```
- chart.clip(new acgraph.math.Rect(x, y, width, height));
-```
-{sample :width 688 :height 200}BCT\_Sparkline\_Chart\_08{sample}
-
-###Pointwidth
+###Point width
 
 For some reasons you may need to make your columns look thiner or wider. It is possible to variate the width of a column using the **.pointWidth()** method:
 
@@ -253,6 +251,8 @@ That's how it looks when we adjust the previous code for our sample:
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. 
 AnyChart allows to add markers to any data element including lines.
 
+##Axes Markers
+
 ###RangeMarker
 
 Although being rather small, sparklines can be quite informative. Range is a light colored rectangle with its lowest and highest levels representing the least and the highest acceptable value, e.g. an acceptable number of defects while production.
@@ -279,7 +279,7 @@ The following code will help you to add a LineMarker to your chart:
 ```
   chart.lineMarker()
     .scale(chart.yScale()) //you may change the scale
-    .value(<value>);
+    .value(-50);
 ```
 
 That's how it all looks in the example:
@@ -349,7 +349,7 @@ You only need to enable the max or minLables to do it as in the sample above:
 ###HatchFill
 
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see Hatch Fill tutorial.
-Downwards you can see a couple of WinLoss Sparklines which we've colored with hatchFills using **.hatchFill()** parameter opposite to **fill()** parameter used to colorize the series and set all series in light grey color.
+Downwards you can see a couple of WinLoss Sparklines which we've colored with hatchFills using {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter opposite to **fill()** parameter used to colorize the series and set all series in light grey color.
 
 ```
   //colorize our charts
@@ -363,7 +363,7 @@ Downwards you can see a couple of WinLoss Sparklines which we've colored with ha
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_17{sample}
 
-It's also possible to add a hatchfill to a point though the data - if you need to emphasize how the same numbered points differ. You need to define the data as the array in this case:
+It's also possible to add a hatchfill to a point through the data - if you need to emphasize how the same numbered points differ. You need to define the data as the array in this case:
 
 ```
   chart2.data([{value: 20, hatchFill: {type: 'checkerboard'}}, 30, -10, {value: 20,hatchFill: {type: 'checkerboard'}}, -35, {value: -15, hatchFill: {type: 'checkerboard'}}, -40, 50]);
@@ -371,9 +371,11 @@ It's also possible to add a hatchfill to a point though the data - if you need t
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_18{sample}
 
+To learn more about hatch fills visit the [Hatch Tutorial](../Appearance_Settings/Hatch_Fill) page.
+
 ##Layout
 
-Sparklines are designed to be situated in a large quantity in a small place. We can do it through the stage using bounds (as done with the samples above):
+Sparklines are designed to fit a lot of them in tiny space. We can do it through the stage using bounds (as done with the samples above):
 
 ```
 //set container id for the charts
@@ -422,5 +424,5 @@ Another way to place a lot of sparklines is to use the AnyChart table:
   table.container(stage).draw();
 ```
 
-{sample :width 688 :height 100}BCT\_Sparkline\_Chart\_19{sample}
+{sample :width 688 :height 300}BCT\_Sparkline\_Chart\_19{sample}
 
