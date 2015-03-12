@@ -1,0 +1,64 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+
+  // xml data
+  var xml = '<?xml version="1.0" encoding="utf-8"?>' +
+    '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
+      // set chart type, title and chart container
+      '<chart type="column" container="container" title="XML Hatch Fill Settings">' +
+        // chart series
+        '<series_list>'+
+          // series settings
+          '<series color="#EEEEEE" hatch_fill="diagonalcross">' +
+            // data set
+            '<data>' +
+              '<point x="P1" value="14"/>'+
+              '<point x="P2" value="19"/>'+
+              '<point x="P3" value="27"/>'+
+            '</data>'+
+          '</series>'+
+          // series settings
+          '<series color="#EEEEEE" hatch_fill="diagonalbrick">' +
+            // data set
+            '<data>' +
+              '<point x="P1" value="24"/>'+
+              '<point x="P2" value="26"/>'+
+              '<point x="P3" value="38"/>'+
+            '</data>'+
+          '</series>'+
+          // series settings
+          '<series color="#EEEEEE" hatch_fill="zigzag">' +
+            // data set
+            '<data>' +
+              '<point x="P1" value="34"/>'+
+              '<point x="P2" value="39"/>'+
+              '<point x="P3" value="35"/>'+
+            '</data>'+
+          '</series>'+
+          // series settings
+          '<series color="#EEEEEE" hatch_fill="checkerboard">' +
+            // data set
+            '<data>' +
+              '<point x="P1" value="42"/>'+
+              '<point x="P2" value="45"/>'+
+              '<point x="P3" value="41"/>'+
+            '</data>'+
+          '</series>'+
+          // series settings
+          '<series color="#EEEEEE" hatch_fill="percent30">' +
+            // data set
+            '<data>' +
+              '<point x="P1" value="50"/>'+
+              '<point x="P2" value="61"/>'+
+              '<point x="P3" value="58"/>'+
+            '</data>'+
+          '</series>'+
+        '</series_list>'+
+      '</chart>'+
+    '</anychart>';
+  var chart = anychart.fromXml(xml);
+  chart.draw();
+});

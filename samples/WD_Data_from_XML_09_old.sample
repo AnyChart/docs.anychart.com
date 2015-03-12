@@ -1,0 +1,35 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+
+  // xml data
+  var xml = '<?xml version="1.0" encoding="utf-8"?>' +
+    '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
+      // set chart type, title and chart container
+      '<chart type="column" container="container" title="XML Adjust Point Color">' +
+        // chart series
+        '<series_list>'+
+          // series settings
+          '<series>' +
+            // data set
+            '<data>' +
+              '<point x="P1" value="132"/>'+
+              '<point x="P2" value="124"/>'+
+              '<point x="P3" value="102"/>'+
+              '<point x="P4" value="119"/>'+
+              '<point x="P5" value="169"/>'+
+              '<point x="P6" value="237" fill="Rgb(77,180,77)"/>'+  // set color for the point
+              '<point x="P7" value="120"/>'+
+              '<point x="P8" value="99"/>'+
+              '<point x="P9" value="44" fill="#B44D4D"/>'+          // set color for the point
+              '<point x="P10" value="59"/>'+
+            '</data>'+
+          '</series>'+
+        '</series_list>'+
+      '</chart>'+
+    '</anychart>';
+  var chart = anychart.fromXml(xml);
+  chart.draw();
+});

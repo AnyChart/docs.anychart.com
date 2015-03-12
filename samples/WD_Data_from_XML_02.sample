@@ -5,39 +5,26 @@
 anychart.onDocumentReady(function() {
   
   // xml data
-  var xml = '<?xml version="1.0" encoding="utf-8"?>' +
+  anychart.fromXml(
+    '<?xml version="1.0" encoding="utf-8"?>' +
     '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
-      // set chart type and chart container
-      '<chart type="polar" container="container">' +
-        // series for this chart
-        '<series_list>'+
-          // series settings
-          '<series series_type="line">' +
-            // data set
-            '<data>' +
-              '<point x="0" value="0"/>'+
-              '<point x="50" value="100"/>'+
-              '<point x="100" value="0"/>'+
-            '</data>'+
-          '</series>'+
-          // second series set
-          '<series series_type="line" stroke="red">' +
-            // data set
-            '<data>' +
-              '<point x="50" value="0"/>'+
-              '<point x="100" value="100"/>'+
-              '<point x="50" value="0"/>'+
-            '</data>'+
-          '</series>'+
+    
+    // set chart container and chart type
+    '<chart type="column" container="container">' +
+  
+      '<!-- set scale type and anjust minimum & maximum values -->'+
+      '<y_scale type="line" minimum="100" maximum="350"/>'+
+    
+      '<series_list>'+
+        '<series type="column">'+
+          '<data>'+
+            '<point value="128.14"/>'+
+            '<point value="112.61"/>'+
+            '<point value="163.21"/>'+
+            '<point value="229.98"/>'+
+          '</data>'+
         '</series_list>'+
-        // scales settings
-        '<x_scale maximum="100"/>'+
       '</chart>'+
-    '</anychart>';
-  
-  // get XML data
-  var chart = anychart.fromXml(xml);
-  
-  // draw chart
-  chart.draw();
+    '</anychart>'
+  ).draw();
 });

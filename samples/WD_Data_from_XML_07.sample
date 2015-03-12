@@ -3,37 +3,30 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-
-  // xml data
+  
+  // xml data                                           // JS equivalent
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
     '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
       // set chart type, title and chart container
-      '<chart type="column" container="container" title="XML Marker Settings">' +
-        // chart series
-        '<series_list>'+
-          // series settings
-          '<series>' +
-            // data set
-            '<data>' +
-              '<point x="P1" value="128.14"/>'+
-              '<point x="P2" value="112.61"/>'+
-              '<point x="P3" value="163.21"/>'+
-              '<point x="P4" value="229.98">'+
-                // marker settings
-                '<marker enabled="true" type="star5" fill="gold" size="12"/>'+
-                // marker settings on mouse over
-                '<hover_marker size="15"/>'+
-              '</point>'+
-              '<point x="P5" value="90.54"/>'+
-            '</data>'+
-          '</series>'+
-        '</series_list>'+
+      '<chart type="line" '+                            // var chart = anychart.line();
+      // set chart container
+      'container="container">'+                         // chart.container('container');
+
+        // set series type
+        '<series_list><series series_type="spline">'+   // chart.spline(
+            // set series data
+            '<data><point x="January" value="10000"/>'+ //  [["January", 10000],
+              '<point x="February" value="12000"/>'+    //    ["February", 12000],
+              '<point x="March" value="18000"/>'+       //    ["March", 18000], 
+              '<point x="April" value="11000"/>'+       //    ["April", 11000], 
+              '<point x="May" value="9000"/>'+          //    ["May", 9000]
+            '</data></series></series_list>'+           // ]);
       '</chart>'+
     '</anychart>';
-
+  
   // get XML data
   var chart = anychart.fromXml(xml);
-
+  
   // draw chart
   chart.draw();
 });

@@ -3,33 +3,38 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-
-  // xml data
+  
+  // xml data                                         // JS equivalent
   var xml = '<?xml version="1.0" encoding="utf-8"?>' +
     '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
       // set chart type, title and chart container
-      '<chart type="column" container="container" title="XML Adjust Point Color">' +
-        // chart series
-        '<series_list>'+
-          // series settings
-          '<series>' +
-            // data set
-            '<data>' +
-              '<point x="P1" value="132"/>'+
-              '<point x="P2" value="124"/>'+
-              '<point x="P3" value="102"/>'+
-              '<point x="P4" value="119"/>'+
-              '<point x="P5" value="169"/>'+
-              '<point x="P6" value="237" fill="Rgb(77,180,77)"/>'+  // set color for the point
-              '<point x="P7" value="120"/>'+
-              '<point x="P8" value="99"/>'+
-              '<point x="P9" value="44" fill="#B44D4D"/>'+          // set color for the point
-              '<point x="P10" value="59"/>'+
-            '</data>'+
-          '</series>'+
-        '</series_list>'+
-      '</chart>'+
+      '<chart type="area" '+                          // var chart = anychart.area();
+      'container="container">'+                       // chart.container('container');
+
+        // type of the first serie
+        '<series_list><series series_type="area">'+   // chart.area([
+          //data for first series
+          '<data><point x="January" value="12000"/>'+ //   ['January', '12000'],
+            '<point x="February" value="15000"/>'+    //   ['February', '15000'],
+            '<point x="March" value="16000"/>'+       //   ['March', '16000'],
+            '<point x="April" value="15000"/>'+       //   ['April', '15000'],
+            '<point x="May" value="14000"/>'+         //   ['May', '14000']
+          '</data></series>'+                         // ]);
+
+        // type of the second series
+        '<series series_type="splineArea">'+          // chart.splineArea([
+          // data for the second series
+          '<data><point x="January" value="10000"/>'+ //   ['January', '10000'],
+            '<point x="February" value="12000"/>'+    //   ['February', '12000'],
+            '<point x="March" value="18000"/>'+       //   ['March', '18000'],
+            '<point x="April" value="11000"/>'+       //   ['April', '11000'],
+            '<point x="May" value="9000"/></data>'+   //   ['May', '9000']
+        '</series></series_list></chart>'+            // ]);
     '</anychart>';
+  
+  // get XML data
   var chart = anychart.fromXml(xml);
+  
+  // draw chart
   chart.draw();
 });

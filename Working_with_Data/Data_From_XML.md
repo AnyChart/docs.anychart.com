@@ -14,17 +14,18 @@
 
 ## Overview
 
-AnyChart supports several ways of setting data. This article quickly demonstrates main aspects of using XML format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [Using Data Sets](Using_Data_Sets) and [Data From JSON](Data_From_JSON) articles.
-
-Extensible Markup Language (XML) is a simple, very flexible text format. Originally designed to meet the challenges of large-scale electronic publishing, XML is also playing an increasingly important role in the exchange of a wide variety of data on the Web and elsewhere. More information on XML can be found on [wikipedia.org](http://en.wikipedia.org/wiki/XML)
+AnyChart supports several ways of setting data. This article quickly demonstrates main aspects of using XML format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [Using Data Sets](Using_Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
+  
+  
+XML or Extensible Markup Language, is a markup language that defines a set of rules for encoding documents in a format which is both human-readable and machine-readable. Originally designed to meet the challenges of large-scale electronic publishing, XML is also playing an increasingly important role in the exchange of a wide variety of data on the Web and elsewhere. More information on XML can be found on [http://en.wikipedia.org/wiki/XML](http://en.wikipedia.org/wiki/XML)
 
 ## Schema
 
-XML Schema specifies a XML-based format to define the structure of XML data(visit [wikipedia.org](http://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. (for instance: XML schema for AnyChart 7.3.1 version located [http://anychart.com/products/anychart7/schemas/7.3.1/xml-schema.xsd](http://anychart.com/products/anychart7/schemas/7.3.1/xml-schema.xsd)). Latest version of XML schema can be found using the link [http://anychart.com/products/anychart7/schemas/latest/xml-schema.xsd](http://anychart.com/products/anychart7/schemas/latest/xml-schema.xsd) This file can be used to validate your own XML structure. 
+XML Schema specifies a XML-based format to define the structure of XML data (visit [http://en.wikipedia.org/wiki/XML_schema](http://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. (for instance, XML schema for AnyChart 7.3.1 version is located at [http://anychart.com/products/anychart7/schemas/7.3.1/xml-schema.xsd](http://anychart.com/products/anychart7/schemas/7.3.1/xml-schema.xsd)). Latest version of XML schema can be found at [http://anychart.com/products/anychart7/schemas/latest/xml-schema.xsd](http://anychart.com/products/anychart7/schemas/latest/xml-schema.xsd). This file can be used to validate your own XML structure. 
 
 ## XML vs JavaScript
 
-AnyChart provides {api:anychart#fromXml}**.fromXML()**{api} parameter for using data in XML format. Setting data using XML format is very similar to the way of setting data in JavaScript. The name of each tag in XML configuration corresponds to the name of a method and names of parameters for tags correspond to parameter in JS. Snippet below shows a sample of setting data in XML format
+To load chart configuration in XML format you should use {api:anychart#fromXml}**.fromXML()**{api} method. Setting data using XML format is very similar to the way of setting data in JavaScript. The name of each tag in XML configuration corresponds to the name of a method and names of parameters for tags correspond to parameter in JavaScript. Snippet below shows a sample of setting data in XML format for the simple chart.
 
 ```
   // xml data
@@ -45,9 +46,14 @@ AnyChart provides {api:anychart#fromXml}**.fromXML()**{api} parameter for using 
   chart.draw();
 ```
 
+This configuration creates chart like the one below
+
 {sample}WD\_Data\_from\_XML\_01{sample}
 
-**Note:** Use {api:anychart}AnyChart API{api} to adjust any parameter of a chart. XML configuration uses the same names as methods and parameters do and it is quite easy to set any required parameter with XML data set. Also, XML uses [snakeCase](http://en.wikipedia.org/wiki/Snake_case) for names of tags and parameters and names of methods and parameters have to be transformed from [camelCase](http://en.wikipedia.org/wiki/CamelCase) to [snakeCase](http://en.wikipedia.org/wiki/Snake_case). It requires to replace every capital letter with small letter and set underscore before this letter (e.g. hatch fill can be set with JavaScript using "hatchFill" parameter and with XML using "hatch_fill" parameter). {api:anychart}AnyChart API{api} supplies every parameter with a structure to invoke it. This structure is the same for XML data set. For instance, API provides {api:anychart#column}**column()**{api} method to create column chart.
+**Note:** Pie chart can have only one series of data and requires no **<series></series>** tag. 
+  
+  
+Use {api:anychart}AnyChart API{api} to adjust any parameter of a chart. XML configuration uses the same names as methods and parameters do and it is quite easy to set any required parameter with XML data set. Also, XML uses [snakeCase](http://en.wikipedia.org/wiki/Snake_case) for names of tags and parameters and names of methods and parameters have to be transformed from [camelCase](http://en.wikipedia.org/wiki/CamelCase) to [snakeCase](http://en.wikipedia.org/wiki/Snake_case). It requires to replace every capital letter with small letter and set underscore before this letter (e.g. hatch fill can be set with JavaScript using "hatchFill" parameter and with XML using "hatch_fill" parameter). {api:anychart}AnyChart API{api} describes how every method and parameter are used. The structure is pretty much the same for  XML configuration. For instance, you can find {api:anychart#column}**column()**{api} method in API to create column chart. 
 
 ```
   anychart.column([128.14, 112.61, 163.21, 229.98]).container('container').draw();
@@ -75,12 +81,21 @@ The same chart can be created using XML
     ).draw();
 ```
 
-Data set for pie chart
+As you can see, XML format isn't limited only to setting chart type and its data, but can set container for the chart as well.
+  
+  
+Another example: Y-Scale is configured using {api:anychart.charts.Cartesian#yScale}yScale(){api} method and in JavaScript you use code like this:
 
-Pie chart can have only one series of data and requires no **<series></series>** tag. 
+```
+  // set chart type
+  var chart = anychart.column();
   
-  
-Parameters of Y-Scale should be applied using {api:anychart.charts.Cartesian#yScale}yScale(){api} method and should be invoked using code below
+  chart.yScale()    // adjust y scale
+    .minimum(100)   // set minimum value
+    .maximum(350);  // set maximum value
+```
+
+and in XML format this looks like
 
 ```xml
   <!-- set chart type and chart container -->
@@ -92,11 +107,17 @@ Parameters of Y-Scale should be applied using {api:anychart.charts.Cartesian#ySc
   </chart>
 ```
 
-{sample}WD\_Data\_from\_XML\_19{sample}
+{sample}WD\_Data\_from\_XML\_02{sample}
 
-## Data Sets
+## Serialization
 
-XML data set can contain one or several series. Sample below demonstrates chart with several series from XML.
+Predefined settings from JavaScript format can be serialized into XML format. Method {api:anychart.core.Chart#toXml}**.toXml()**{api} transfers current chart settings into XML string. This string contains chart settings in XML format and can be used to store chart data and configuration but note, that when label or tooltip text formatting function is redefined in JavaScript code - it can't be serialized..
+
+{sample}WD\_Data\_from\_XML\_03{sample}
+
+## Multiple Series
+
+XML data set can contain one or several series - almost the same way you can do it in JavaScript. Sample below demonstrates chart with several series from XML.
 
 ```xml
   <!-- series for this chart -->
@@ -122,15 +143,9 @@ XML data set can contain one or several series. Sample below demonstrates chart 
   </series_list>
 ```
 
-{sample}WD\_Data\_from\_XML\_02{sample}
+Here is a sample setting two series using XML format.
 
-## Serialization
-
-Predefined settings from JS format can be serialized into XML format. Method **.toXml()** transfers current chart settings into XML string. This string contains all possible methods and parameters of the chart in XML format.
-
-{sample}WD\_Data\_from\_XML\_13{sample}
-
-**Note:** When label or tooltip text formatting function is redefined in JavaScript code - it can't be serialized.
+{sample}WD\_Data\_from\_XML\_04{sample}
 
 ## Settings
 
@@ -153,11 +168,13 @@ Data from XML can contain all possible settings for controlling chart grid, axis
   <y_scale inverted="true"/>
 ```
 
-{sample}WD\_Data\_from\_XML\_03{sample}
+Here is a sample of adjusted axes 
+
+{sample}WD\_Data\_from\_XML\_05{sample}
 
 ### Visualisation
 
-Visual settings can be vital for a chart. XML can contain almost any method and parameter for adjusting visual settings.
+Visual settings can be vital for a chart. XML can contain any method and parameter for adjusting visual settings. Here is configuration for column chart of golden color with brick hatch.
 
 ```xml
   <!-- series settings -->
@@ -169,11 +186,11 @@ Visual settings can be vital for a chart. XML can contain almost any method and 
   </series>
 ```
 
-{sample}WD\_Data\_from\_XML\_04{sample}
+{sample}WD\_Data\_from\_XML\_06{sample}
 
 ## Samples
 
-As addition to the presented material, here is a table of main methods and parameters of JavaScript data set comparing with XML data set (full list of all the methods and parameters can be found in API).
+As addition to the presented material, here is a table of main methods and parameters of JavaScript data set comparing with XML data set (full list of all the methods and parameters can be found in {api:anychart}API{api}).
 
 <table width="700" border="1" class="dtTABLE">
 <tbody>
@@ -241,7 +258,7 @@ container="container">
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_XML\_14{sample}
+{sample :width 666}WD\_Data\_from\_XML\_07{sample}
 </td>
 </tr>
 </tbody></table>
@@ -261,11 +278,6 @@ container="container">
 <tr>
 <td style="border-bottom: 0; border-left: 0; padding: 2px; width: 50%;">
 ```
-// set chart type
-var chart = anychart.column();
-// set chart container
-chart.container('container');
-
 // title settings
 chart.title()
   // set title text
@@ -282,61 +294,27 @@ chart.title()
     .cornerType('round')
     // set corners size
     .corners(10);
-
-
-// set series type
-
-chart.column(
-  [
-    ['January', 10000],
-    ['February', 12000],
-    ['March', 18000],
-    ['April', 11000],
-    ['May', 9000]
-  ]
-)
-
-
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
 ```xml
-<!-- set chart type -->
-<chart type="column" 
-<!-- set chart container -->
-container="container">
-
-  <!-- title settings -->
-  <title 
-    <!-- set title text -->
-    text="Sales Performance">
-    <!-- settings for title background -->
-    <background 
-      <!-- enable background -->
-      enabled="true" 
-      <!-- set background inner color -->
-      fill="#FFD700" 
-      <!-- set background border -->
-      stroke="#D8D8D8" 
-      <!-- set type of background corners -->
-      cornerType="round" 
-      <!-- set corners size -->
-      corners="10"/>
-  </title>
-  
-  <!-- set series type -->
-  <series_list>
-    <series series_type="column">
-      <data>
-        <point x="January" value="10000"/>
-        <point x="February" value="12000"/>
-        <point x="March" value="18000"/>
-        <point x="April" value="11000"/>
-        <point x="May" value="9000"/>
-      </data>
-    </series>
-  </series_list>
-</chart>
+<!-- title settings -->
+<title 
+  <!-- set title text -->
+  text="Sales Performance">
+  <!-- settings for title background -->
+  <background 
+    <!-- enable background -->
+    enabled="true" 
+    <!-- set background inner color -->
+    fill="#FFD700" 
+    <!-- set background border -->
+    stroke="#D8D8D8" 
+    <!-- set type of background corners -->
+    cornerType="round" 
+    <!-- set corners size -->
+    corners="10"/>
+</title>
 ```
 </td>
 </tr>
@@ -346,7 +324,7 @@ container="container">
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_XML\_15{sample}
+{sample :width 666}WD\_Data\_from\_XML\_08{sample}
 </td>
 </tr>
 </tbody></table>
@@ -439,7 +417,7 @@ container="container">
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_XML\_16{sample}
+{sample :width 666}WD\_Data\_from\_XML\_09{sample}
 </td>
 </tr>
 </tbody></table>
@@ -459,10 +437,6 @@ container="container">
 <tr>
 <td style="border-bottom: 0; border-left: 0; padding: 2px; width: 50%;">
 ```
-// set chart type
-var chart = anychart.line();
-chart.container('container')
-
 // set intervals
 chart.yScale()
   .ticks().interval(100000);
@@ -487,83 +461,34 @@ chart.yAxis(1).orientation('right')
   .title().text('Extra Y Axis');
 
 
-
-chart.column(
-  [
-    ["A", 637166],
-    ["B", 721630],
-    ["C", 148662],
-    ["D", 78662],
-    ["E", 90000]
-  ]
-);
-var line = chart.line();
-line.yScale(newScale);
-line.data([
-    ["A", 95],
-    ["B", 97],
-    ["C", 96],
-    ["D", 70],
-    ["E", 35]
-]);
-
-
-
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
 ```xml
-<!-- set chart type -->
-<chart type="line" 
-container="container">
+<!-- set intervals -->
+<y_scale>
+  <ticks interval="100000"/>
+</y_scale>
+
+<!-- custom y scale -->
+<scales>
+  <scale type="linear" 
+    minimum="0" 
+    maximum="100">
+    <ticks interval="10"/>
+    <minorTicks interval="2"/>
+  </scale>
+</scales>
+
+<!-- y axes settings -->
+<y_axes>
+  <axis title="Basic Y Axis"/>
   
-  <!-- set intervals -->
-  <y_scale>
-    <ticks interval="100000"/>
-  </y_scale>
-  
-  <!-- custom y scale -->
-  <scales>
-    <scale type="linear" 
-      minimum="0" 
-      maximum="100">
-      <ticks interval="10"/>
-      <minorTicks interval="2"/>
-    </scale>
-  </scales>
-  
-  <!-- y axes settings -->
-  <y_axes>
-    <axis title="Basic Y Axis"/>
-    
-    <axis orientation="right" 
-    scale="newScale">
-      <title text="Extra Y Axis"/>
-    </axis>
-  </y_axes>
-  
-  <series_list>
-    <series series_type="column">
-      <data>
-        <point x="A" value="637166"/>
-        <point x="B" value="721630"/>
-        <point x="C" value="148662"/>
-        <point x="D" value="78662"/>
-        <point x="E" value="90000"/>
-      </data>
-    </series>
-    <series series_type="line" 
-    y_scale="0">
-      <data>
-        <point x="A" value="95"/>
-        <point x="B" value="97"/>
-        <point x="C" value="96"/>
-        <point x="D" value="70"/>
-        <point x="E" value="35"/>
-      </data>
-    </series>
-  </series_list>
-</chart>
+  <axis orientation="right" 
+  scale="newScale">
+    <title text="Extra Y Axis"/>
+  </axis>
+</y_axes>
 ```
 </td>	
 </tr>
@@ -573,7 +498,7 @@ container="container">
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_XML\_17{sample}
+{sample :width 666}WD\_Data\_from\_XML\_10{sample}
 </td>
 </tr>
 </tbody></table>
@@ -593,10 +518,6 @@ container="container">
 <tr>
 <td style="border-bottom: 0; border-left: 0; padding: 2px; width: 50%;">
 ```
-// chart type
-var chart = anychart.lineChart();
-chart.container('container')
-
 // set range marker
 
 chart.rangeMarker()
@@ -642,38 +563,10 @@ chart.textMarker(2)
   .fontSize(12)
   .fontWeight(600);
 
-
-// set data
-
-chart.line(
-  [
-    [2005, 10000],
-    [2006, 12000],
-    [2007, 18000],
-    [2008, 19000],
-    [2009, 29000]
-  ]
-);
-
-chart.title().enabled(false);
-chart.yScale()
-  .minimum(0)
-  .maximum(30000);
-  
-chart.xAxis()
-  .title()
-    .enabled(false);
-
-chart.yAxis().title().text('Sales');
-
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
 ```xml
-<!-- set chart type -->
-<chart type="line" 
-container="container">
- 
   <!-- set range marker -->
   <range_axes_markers>
     <range_axes_marker 
@@ -719,30 +612,6 @@ container="container">
       font_size="12" 
       font_weight="600"/>
   </text_axes_markers>
-  
-  <!-- data set -->
-  <series_list>
-    <series series_type="line">
-      <data>
-        <point x="2005" value="10000"/>
-        <point x="2006" value="12000"/>
-        <point x="2007" value="18000"/>
-        <point x="2008" value="19000"/>
-        <point x="2009" value="29000"/>
-      </data>
-    </series>
-  </series_list>
-  <title enabled="false"/>
-  <y_scale 
-    minimum="0" 
-    maximum="30000"/>
-  <x_axes>
-    <axis>
-      <title enabled="false"/>
-    </axis>
-  <x_axes>
-  <y_axes title="Sales"/>
-</chart>
 ```
 </td>
 </tr>
@@ -752,7 +621,7 @@ container="container">
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_XML\_18{sample}
+{sample :width 666}WD\_Data\_from\_XML\_11{sample}
 </td>
 </tr>
 </tbody></table>
@@ -761,4 +630,4 @@ container="container">
 
 Previous samples demonstrate separate additional features. Next sample is a bit more complex. It demonstrates cartesian chart with several different series and customized chart elements.
 
-{sample}WD\_Data\_from\_XML\_05{sample}
+{sample}WD\_Data\_from\_XML\_12{sample}
