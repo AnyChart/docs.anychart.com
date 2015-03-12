@@ -56,15 +56,15 @@ line.error(1);
 <th width="88"><b>Description</b></th>
 </tr>
 <tr>
-<td>{anychart.core.utils.Error#valueError}**.valueError()**{api}</td>
+<td>{api:anychart.core.utils.Error#valueError}**.valueError()**{api}</td>
 <td>Used to set a common error value</td>
 </tr>
 <tr>
-<td>{anychart.core.utils.Error#valueLowerError}**.valueLowerError()**{api}</td>
+<td>{api:anychart.core.utils.Error#valueLowerError}**.valueLowerError()**{api}</td>
 <td>Used to set a lower error value</td>
 </tr>
 <tr>
-<td>{anychart.core.utils.Error#valueUpperError}**.valueUpperError()**{api}</td>
+<td>{api:anychart.core.utils.Error#valueUpperError}**.valueUpperError()**{api}</td>
 <td>Used to set an upper error value</td>
 </tr>
 </tbody></table>
@@ -132,15 +132,15 @@ Error bars can be displayed for the series x value, y value or both. You should 
 <th width="88"><b>Description</b></th>
 </tr>
 <tr>
-<td>{anychart.core.utils.Error#xError}**.xError()**{api}</td>
+<td>{api:anychart.core.utils.Error#xError}**.xError()**{api}</td>
 <td>Used to set a common series x error value</td>
 </tr>
 <tr>
-<td>{anychart.core.utils.Error#xLowerError}**.xLowerError()**{api}</td>
+<td>{api:anychart.core.utils.Error#xLowerError}**.xLowerError()**{api}</td>
 <td>Used to set a lower x error value</td>
 </tr>
 <tr>
-<td>{anychart.core.utils.Error#xUpperError}**.xUpperError()**{api}</td>
+<td>{api:anychart.core.utils.Error#xUpperError}**.xUpperError()**{api}</td>
 <td>Used to set an upper x error value</td>
 </tr>
 </tbody></table>
@@ -166,7 +166,7 @@ series.error().xError('15%')
 
 ### Error Mode
 
-If you want to specify the visibility of the upper and lower error values - you should use the {anychart.core.utils.Error#errorMode}**.errorMode()**{api} method:
+If you want to specify the visibility of the upper and lower error values - you should use the {api:anychart.core.utils.Error#errorMode}**.errorMode()**{api} method:
 
 <table width="430" border="1" class="dtTABLE">
 <tbody><tr>
@@ -231,11 +231,11 @@ AnyChart provides a few opportunities to configure an error view. If you want to
 <th width="88"><b>Description</b></th>
 </tr>
 <tr>
-<td>xErrorWidth</td>
+<td>{api:anychart.core.utils.Error#xErrorWidth}**.xErrorWidth()**{api}</td>
 <td>Used to set a series x value error width</td>
 </tr>
 <tr>
-<td>valueErrorWidth</td>
+<td>{api:anychart.core.utils.Error#valueErrorWidth}**.valueErrorWidth()**{api}</td>
 <td>Used to set an y value error width</td>
 </tr>
 </tbody></table>
@@ -257,11 +257,11 @@ series.error().valueErrorWidth('6%');
 <th width="88"><b>Description</b></th>
 </tr>
 <tr>
-<td>{anychart.core.utils.Error#xErrorStroke}**.xErrorStroke()**{api}</td>
+<td>{api:anychart.core.utils.Error#xErrorStroke}**.xErrorStroke()**{api}</td>
 <td>Used to configure an x error stroke</td>
 </tr>
 <tr>
-<td>{anychart.core.utils.Error#valueErrorStroke}**.valueErrorStroke()**{api}</td>
+<td>{api:anychart.core.utils.Error#valueErrorStroke}**.valueErrorStroke()**{api}</td>
 <td>Used to configre a series error stroke</td>
 </tr>
 </tbody></table>
