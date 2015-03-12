@@ -46,6 +46,7 @@ anychart.onDocumentReady(function() {
 
   chart.xAxis().title('Hours After Treatment');
   chart.yAxis().title('Mean Blood Pressure');
+  chart.title('Labels And Tooltips');
 
   //initiate chart drawing
   chart.draw();
