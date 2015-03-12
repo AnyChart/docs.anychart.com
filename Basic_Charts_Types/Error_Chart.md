@@ -281,7 +281,7 @@ series.error()
 
 {sample}Error\_Chart\_09{sample}
 
-# Labels And Tooltips
+## Labels And Tooltips
 
 If you want to configure data labels and tooltips to display information about the error bars - you should do that in <b>.labels()</b> and <b>.tooltip()</b> methods. You can tune their visual appearance, positioning and format.
 
