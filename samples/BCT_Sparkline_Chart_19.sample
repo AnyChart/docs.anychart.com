@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
   // set stage
-  stage = anychart.graphics.create('container','70%','40%');
+  stage = anychart.graphics.create('container');
 
 
 
