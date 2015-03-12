@@ -157,7 +157,7 @@ series.error().xError(10);
 series.error().xError('15%')
 ```
 
-<br>The same rules can be applied in case of scatter plot. Below is a demonstration of error defined with the foreground xError() method.
+<br>The same rules can be applied in case of scatter plot. Below is a demonstration of error defined with the foreground {api:anychart.core.utils.Error#xError}**.xError()**{api} method.
 {sample}Error\_Chart\_04{sample}
 
 <br>It is also possible to apply a separate error bar to each data point within a series on a scatter plot:
