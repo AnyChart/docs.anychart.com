@@ -11,7 +11,7 @@ anychart.onDocumentReady(function() {
       // chart type
       "type": "column",
       // chart title
-      "title": "Axes settings from JSON",
+      "title": "Inverted Scale",
       // series settings
       "series": [{
         // first series data
@@ -24,26 +24,10 @@ anychart.onDocumentReady(function() {
         ]
       }],
 
-      // x axes settings
-      "xAxes": [{
-        "orientation": "top",
-        "title":{
-          "enabled": false
-        }
-      }],
-
-      // y axes settings
-      "yAxes": [{
-        "orientation": "right",
-        "title":{
-          "enabled": false
-        }
-      }],
-
       // y scale settings
       "yScale": {
         "inverted": true
-      },
+      }],
 
       // chart container
       "container": "container"

@@ -3,56 +3,38 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  var json = {
-    // chart settings
-    "chart": {
-      // chart type
-      "type": "column",
-      // chart title
-      "title": "JSON Series Color",
+                                              // this column represents JS equivalents every JSON object
+  anychart.fromJson(
+    // set chart type
+    {chart: {type: "line",                    // var chart = anychart.column();
 
-      // set series data and color
-      "series": [{
-        "data": [
-          {"x": "P1", "value": "132"},
-          {"x": "P2", "value": "124"}
-        ],
-        "fill": "#4A55C7"
-        },
-        {
-          "data": [
-            {"x": "P1", "value": "102"},
-            {"x": "P2", "value": "89"}
-          ],
-          "fill": "#5EBD9B"
-        },
-        {
-          "data": [
-            {"x": "P1", "value": "72"},
-            {"x": "P2", "value": "44"}
-          ],
-          "fill": "#B04A8A"
-        },
-        {
-          "data": [
-            {"x": "P1", "value": "65"},
-            {"x": "P2", "value": "38"}
-          ],
-          "fill": "#C7894A"
-        },
-        {
-          "data": [
-            {"x": "P1", "value": "68"},
-            {"x": "P2", "value": "57"}
-          ],
-          "fill": "#BCBD46"
-        }
-      ],
+      // title settings
+      title: {                                // chart.title()
+        // set title text
+        text: "Sales Performance",            //   .text('Sales Performance')
+        // settings for title background
+        background: {                         //   .background()
+          // enable background
+          enabled: "true",                    //     .enabled(true)
+          // set background inner color
+          fill: "#FFD700",                    //     .fill('#FFD700')
+          // set background border
+          stroke: "#D8D8D8",                  //     .stroke('#D8D8D8')
+          // set type of background corners
+          cornerType: "round",                //     .cornerType('round')
+          // set corners size
+          corners: 10}},                      //     .corners(10);
 
-      // chart container
-      "container": "container"
-    }
-  };
-  var chart = anychart.fromJson(json);
-  chart.draw();
+      // set series type
+      series:[{seriesType: "column",          // chart.column([
+        data: [{x: "January", value: 10000},  //   ['John', 10000],
+          {x: "February", value: 12000},      //   ['Jake', 12000],
+          {x: "March", value: 18000},         //   ['Peter', 18000],
+          {x: "April", value: 11000},         //   ['James', 11000],
+          {x: "May", value: 9000}]            //   ['Mary', 9000]
+      }],                                     // ])
+
+      // set chart container
+      container: "container"}}                // chart.container('container');
+  ).draw();
 });

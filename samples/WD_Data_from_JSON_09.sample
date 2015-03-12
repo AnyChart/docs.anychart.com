@@ -3,37 +3,31 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  var json = {
-    // chart settings
-    "chart": {
-      // chart type
-      "type": "column",
-      // chart title
-      "title": "JSON Point Color",
-
-      // set series data
-      "series": [{
-        "data": [
-          {"x": "P1", "value": "132"},
-          {"x": "P2", "value": "124"},
-          {"x": "P3", "value": "102"},
-          {"x": "P4", "value": "119"},
-          {"x": "P5", "value": "169"},
-          {"x": "P6", "value": "237", "fill": "Rgb(77,180,77)"},  // set color for the point
-          {"x": "P7", "value": "120"},
-          {"x": "P8", "value": "99"},
-          {"x": "P9", "value": "44", "fill": "#B44D4D"},          // set color for the point
-          {"x": "P10", "value": "59"}
-        ],
-
-        // set color for the series
-        "fill": "#C6D1A5"
-      }],
-
-      // chart container
-      "container": "container"
-    }
-  };
-  var chart = anychart.fromJson(json);
-  chart.draw();
+                                              // this column represents JS equivalents every JSON object
+  anychart.fromJson(
+    // set chart type
+    {chart:{type: "area",                     // var chart = anychart.area();
+ 
+      // type of the first series 
+      series:[{ seriesType: "area",           // chart.area([
+        //data for first series
+        data:[{x:"January", value: 12000},    //   ['January', '12000'],
+          {x: "February", value: 15000},      //   ['February', '15000'],
+          {x: "March", value: 16000},         //   ['March', '16000'],
+          {x: "April", value: 15000},         //   ['April', '15000'],
+          {x: "May", value: 14000}            //   ['May', '14000']
+        ]},                                   // ]);
+ 
+        // type of the second series
+        {seriesType: "splineArea",            // chart.splineArea([
+          // data for the second series
+          data:[{x: "January", value: 10000}, //   ['January', '10000'],
+            {x: "February", value: 12000},    //   ['February', '12000'],
+            {x: "March", value: 18000},       //   ['March', '18000'],
+            {x: "April", value: 11000},       //   ['April', '11000'],
+            {x: "May", value: 9000}]          //   ['May', '9000']
+        }],                                   // ]);
+ 
+      container: "container"}}                // chart.container('container');
+  ).draw();
 });

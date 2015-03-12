@@ -3,43 +3,23 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-
+  
   // JSON data
-  var json = {
-    // chart settings
+  anychart.fromJson({
     "chart": {
-      // chart type
+      // chart type 
       "type": "column",
-      // set chart title
-      "title": 'JSON Data Set. Multiple Series',
-      // series settings
-      "series": [{
-        // first series data
-        "data": [
-          {"x": "P1", "value": "128.14"},
-          {"x": "P2", "value": "112.61"},
-          {"x": "P3", "value": "163.21"},
-          {"x": "P4", "value": "229.98"},
-          {"x": "P5", "value": "90.54"}
-        ]
-      },{
-        // second series data
-        "data": [
-          {"x": "P1", "value": "90.54"},
-          {"x": "P2", "value": "104.19"},
-          {"x": "P3", "value": "150.67"},
-          {"x": "P4", "value": "120.43"},
-          {"x": "P5", "value": "200.34"}
-        ]
+      "yScale": {       // invoke y scale
+        "minimum": 100, // set minimum value
+        "maximum": 350  // set maximum value
+      },
+      // chart series
+      "series":[{
+        // series data
+        "data": [128.14, 112.61, 163.21, 229.98],
       }],
       // chart container
       "container": "container"
     }
-  };
-
-  // get JSON data
-  var chart = anychart.fromJson(json);
-
-  // draw chart
-  chart.draw();
+  }).draw();
 });

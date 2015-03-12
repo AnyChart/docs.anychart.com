@@ -103,13 +103,13 @@ and in JSON format this looks like
   }
 ```
 
-{sample}WD\_Data\_from\_JSON\_19{sample}
+{sample}WD\_Data\_from\_JSON\_02{sample}
 
 ## Serialization
 
 Predefined settings from JavaScript format can be serialized into JSON format. Method {api:anychart.core.Chart#toJson}**.toJson()**{api} transfers current chart settings into JSON object. This method creates an object that contains all chart settings and it can be used to store chart data and configuration, but note, that when label or tooltip text formatting function is redefined in JavaScript code - it can't be serialized.
 
-{sample}WD\_Data\_from\_JSON\_18{sample}
+{sample}WD\_Data\_from\_JSON\_03{sample}
 
 ## Multiple Series
 
@@ -140,7 +140,7 @@ JSON data set can contain one or several series - almost the same way you can do
 
 and here is a sample with multiple series
 
-{sample}WD\_Data\_from\_JSON\_02{sample}
+{sample}WD\_Data\_from\_JSON\_04{sample}
 
 ## Settings
 
@@ -173,11 +173,11 @@ Data from JSON can contain all possible settings for controlling chart grid, axi
 
 Here is a sample with adjusted axes
 
-{sample}WD\_Data\_from\_JSON\_04{sample}
+{sample}WD\_Data\_from\_JSON\_05{sample}
 
 ### Visualization
 
-Visual settings are vital for a chart. JSON can control any method and parameter of a chart to configure desirable chart appearance. Here is configuration for column chart of golden color with brick hatches
+Visual settings are vital for a chart. JSON can control any method and parameter of a chart to configure desirable chart appearance. Here is configuration for column chart of golden color with brick hatch.
 
 ```
   "fill":"gold",
@@ -195,7 +195,7 @@ Visual settings are vital for a chart. JSON can control any method and parameter
 
 Sample with this configuration is below
 
-{sample}WD\_Data\_from\_JSON\_05{sample}
+{sample}WD\_Data\_from\_JSON\_06{sample}
 
 ## Samples
 
@@ -261,7 +261,7 @@ chart.spline(
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_13{sample}
+{sample :width 666}WD\_Data\_from\_JSON\_07{sample}
 </td>
 </tr>
 </tbody></table>
@@ -326,7 +326,7 @@ chart.title()
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_14{sample}
+{sample :width 666}WD\_Data\_from\_JSON\_08{sample}
 </td>
 </tr>
 </tbody></table>
@@ -407,7 +407,7 @@ chart.container('container');
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_15{sample}
+{sample :width 666}WD\_Data\_from\_JSON\_09{sample}
 </td>
 </tr>
 </tbody></table>
@@ -484,7 +484,7 @@ chart.yAxis(1)
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_16{sample}
+{sample :width 666}WD\_Data\_from\_JSON\_10{sample}
 </td>
 </tr>
 </tbody></table>
@@ -599,7 +599,7 @@ chart.textMarker(2)
 </tr>
 <tr>
 <td>
-{sample :width 666}WD\_Data\_from\_JSON\_17{sample}
+{sample :width 666}WD\_Data\_from\_JSON\_11{sample}
 </td>
 </tr>
 </tbody></table>
@@ -608,4 +608,4 @@ chart.textMarker(2)
 
 Previous samples demonstrate separate additional features. Next sample is a bit more complex. It demonstrates cartesian chart with several line series, customized axes, scales, grids and titles.
 
-{sample}WD\_Data\_from\_JSON\_06{sample}
+{sample}WD\_Data\_from\_JSON\_12{sample}

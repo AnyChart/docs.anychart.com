@@ -1,0 +1,34 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+  
+  // set chart type
+  var json = {chart: {type: "line",
+    
+    // chart title
+    title: {text: "CSV data"},
+    
+    // set axes titles
+    xAxes: [{title: "Sales"}],
+    yAxes: [{title: "Month"}],
+    
+    // set series type
+    series:[{seriesType: "spline",
+    // set series data
+    data: 
+      '"January",'+10000+
+      '\n"February",'+12000+
+      '\n"March",'+18000+
+      '\n"April",'+11000+
+      '\n"May",'+9000
+    }],
+    
+    // set chart container
+    container: "container"}
+  };
+  
+  // draw chart
+  anychart.fromJson(json).draw();
+});
