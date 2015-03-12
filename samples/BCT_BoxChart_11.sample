@@ -36,9 +36,6 @@ anychart.onDocumentReady(function() {
   series.whiskerWidth(0);
   series.hoverWhiskerWidth(0);
   
-  //colorizing
-  //series.1.fill('#F0F8FF');
-
   //initiate chart drawing
   chart.draw();
 });

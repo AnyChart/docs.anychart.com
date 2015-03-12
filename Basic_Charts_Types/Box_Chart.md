@@ -200,7 +200,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 ###Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust the **.orientation()** parameter of the **.yAxis()** or **.xAxis()** methods.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust the {api:anychart.enums.Orientation}**.orientation()**{api} parameter of the {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
 Position depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in Axes Orientation Templates.
 
 ```
@@ -288,7 +288,7 @@ Now let's apply these setting to the sample.
 ##Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips.
-If you want to configure data labels and tooltips for all series - you should use **.labels()** and **.tooltip()** methods. Adding attributes with values to these methods will change visual appearance, position and format of these elements.
+If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.polar.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. Adding attributes with values to these methods will change visual appearance, position and format of these elements.
 With the following example let's make data labels appear to the bottom from the boxes, format them to show only the value corresponding to the box and force tooltips to show detailed description.
 
 
@@ -332,11 +332,11 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 ###Colorizing elements
   
-Now let's study how to apply different colors to different data series. To apply the color to the exact series we need to set the **.fill()** parameter in the series. In the sample below we compare salaries of 5 different ranges in December 2014, January and February 2015. Let's color each series to different color. Here is the sample:
+Now let's study how to apply different colors to different data series. To apply the color to the exact series we need to set the {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter in the {api:anychart.core.cartesian.series}**series**{api}. In the sample below we compare salaries of 5 different ranges in December 2014, January and February 2015. Let's color each series to different color. Here is the sample:
 
 {sample}BCT\_BoxChart\_10{sample}
 
-Besides colorizing the whole series, we may define special color to the only box for some reasons. Look at the sample below. We've got a chart with one series and predefined color for all elements. We highlight the box with the lowest salary with "Rgb(220,37,50)" and the box with the highest salary with "Rgb(77,200,17)" for the maximum one. As you see it is very easy to do by setting a value for the **.fill()** parameter of a point while setting the data.
+Besides colorizing the whole series, we may define special color to the only box for some reasons. Look at the sample below. We've got a chart with one series and predefined color for all elements. We highlight the box with the lowest salary with "Rgb(220,37,50)" and the box with the highest salary with "Rgb(77,200,17)" for the maximum one. As you see it is very easy to do by setting a value for the {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter of a point while setting the data.
 
 ```
  {x: '1', low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000, fill: 'Rgb(220,37,50)'},
@@ -346,12 +346,13 @@ Besides colorizing the whole series, we may define special color to the only box
 
 Important Note:
 AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors. For example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)", or "AliceBlue", or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
-Different ways of [setting colors]() of elements
+
+* Different ways of [setting colors](../Appearance_Settings/Color_Management) of elements
 
 ##Hatch Fills
 
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see Hatch Fill tutorial.
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart a with 3 series with 5 data points in each. For every series we've applied different hatch fills by setting hatch type for the **.hatchFill()** parameter:
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart a with 3 series with 5 data points in each. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.graphics.vector.HatchFill}**.hatchFill()**{api} parameter:
 
 ```
   //hatch fill
