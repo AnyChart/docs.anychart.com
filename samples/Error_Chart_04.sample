@@ -1,3 +1,7 @@
+{:tags [error,bar]
+     :is_new false
+     :exports "chart"}
+
 anychart.onDocumentReady(function() {
   chart = anychart.scatter();
 
@@ -14,8 +18,9 @@ anychart.onDocumentReady(function() {
   ]);
 
 
-  series.error().valueUpperError(30).valueLowerError(25).valueError('10%');
+  series.error().xUpperError(30).xLowerError(25).xError('10%');
 
+  chart.title('Scatter Chart With Error Bars For The Y value');
   chart.yScale().minimum(0);
 
   //initiate chart drawing

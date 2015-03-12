@@ -7,6 +7,7 @@
  * [Scatter Plot](#scatter_plot)
  * [Error Mode](#error_mode)
 * [Visualization](#visualization)
+* [Labels And Tooltips](#labels_and_tooltips)
 
 ## Overview
 
@@ -55,15 +56,15 @@ line.error(1);
 <th width="88"><b>Description</b></th>
 </tr>
 <tr>
-<td>valueError</td>
+<td>{anychart.core.utils.Error#valueError}**.valueError()**{api}</td>
 <td>Used to set a common error value</td>
 </tr>
 <tr>
-<td>valueLowerError</td>
+<td>{anychart.core.utils.Error#valueLowerError}**.valueLowerError()**{api}</td>
 <td>Used to set a lower error value</td>
 </tr>
 <tr>
-<td>valueUpperError</td>
+<td>{anychart.core.utils.Error#valueUpperError}**.valueUpperError()**{api}</td>
 <td>Used to set an upper error value</td>
 </tr>
 </tbody></table>
@@ -131,15 +132,15 @@ Error bars can be displayed for the series x value, y value or both. You should 
 <th width="88"><b>Description</b></th>
 </tr>
 <tr>
-<td>xError</td>
+<td>{anychart.core.utils.Error#xError}**.xError()**{api}</td>
 <td>Used to set a common series x error value</td>
 </tr>
 <tr>
-<td>xLowerError</td>
+<td>{anychart.core.utils.Error#xLowerError}**.xLowerError()**{api}</td>
 <td>Used to set a lower x error value</td>
 </tr>
 <tr>
-<td>xUpperError</td>
+<td>{anychart.core.utils.Error#xUpperError}**.xUpperError()**{api}</td>
 <td>Used to set an upper x error value</td>
 </tr>
 </tbody></table>
@@ -165,7 +166,7 @@ series.error().xError('15%')
 
 ### Error Mode
 
-If you want to specify the visibility of the upper and lower error values - you should use the errorMode() method:
+If you want to specify the visibility of the upper and lower error values - you should use the {anychart.core.utils.Error#errorMode}**.errorMode()**{api} method:
 
 <table width="430" border="1" class="dtTABLE">
 <tbody><tr>
@@ -213,7 +214,7 @@ series.error({
             xUpperError: 2,
             valueUpperError: 5,
             valueLowerError: '3%',
-            errorMode: 'y'
+            errorMode: 'value'
         });
 ```
 
@@ -256,11 +257,11 @@ series.error().valueErrorWidth('6%');
 <th width="88"><b>Description</b></th>
 </tr>
 <tr>
-<td>xErrorStroke</td>
+<td>{anychart.core.utils.Error#xErrorStroke}**.xErrorStroke()**{api}</td>
 <td>Used to configure an x error stroke</td>
 </tr>
 <tr>
-<td>valueErrorStroke</td>
+<td>{anychart.core.utils.Error#valueErrorStroke}**.valueErrorStroke()**{api}</td>
 <td>Used to configre a series error stroke</td>
 </tr>
 </tbody></table>
@@ -279,3 +280,9 @@ series.error()
 <br>Look at the chart sample below and click on it to see it's javascript source.
 
 {sample}Error\_Chart\_09{sample}
+
+# Labels And Tooltips
+
+If you want to configure data labels and tooltips to display information about the error bars - you should do that in <b>.labels()</b> and <b>.tooltip()</b> methods. You can tune their visual appearance, positioning and format.
+
+{sample}Error\_Chart\_13{sample}
