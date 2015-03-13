@@ -41,11 +41,10 @@ anychart.onDocumentReady(function() {
     .hoverStroke("darkred", 2)
     .stroke('#56561a', 3)
     .hatchFill('diagonalbrick', 'white')
-    .hoverHatchFill('diagonalbrick', 'darkred');
-
+    .hoverHatchFill('diagonalbrick', 'darkred')
   //hide whisker
-  series.whiskerWidth(0);
-  series.hoverWhiskerWidth(0);
+    .whiskerWidth(0)
+    .hoverWhiskerWidth(0);
 
   //initiate chart drawing
   chart.draw();

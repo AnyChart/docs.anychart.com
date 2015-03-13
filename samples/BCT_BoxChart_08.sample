@@ -41,7 +41,10 @@ anychart.onDocumentReady(function() {
     .hoverStroke("darkred", 4)
     .stroke('#56561a', 4)
     .hatchFill('diagonalbrick', 'gray')
-    .hoverHatchFill('diagonalbrick', 'darkred');
+    .hoverHatchFill('diagonalbrick', 'darkred')
+  //hide whisker
+    .whiskerWidth(0)
+    .hoverWhiskerWidth(0);
   
    // adjust labels position for the first series
     series.labels().enabled(true).anchor('leftCenter').position('rightCenter');
@@ -53,9 +56,7 @@ anychart.onDocumentReady(function() {
    // adjust tooltip title for the first series
     series.tooltip().enabled(true).title().enabled(true).text('Salaries in February 2015'+'\n'+'Information');
 
-  //hide whisker
-  series.whiskerWidth(0);
-  series.hoverWhiskerWidth(0);
+
 
   //initiate chart drawing
   chart.draw();

@@ -39,10 +39,6 @@ anychart.onDocumentReady(function() {
   //create box chart series with our data
   var series = chart.box(data);
 
-  //hide whisker
-  series.whiskerWidth(0);
-  series.hoverWhiskerWidth(0);
-
   //initiate chart drawing
   chart.draw();
 });
