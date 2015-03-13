@@ -9,8 +9,8 @@
 * [Axes](#axes)
  * [Inversion](#inversion)
  * [Minimum and Maximum](#minimum_and_maximum)
+* [Missing Points](#missing_points)
 * [Visualisation](#visualization)
- * [Missing Points](#missing_points)
  * [Point Width](#pointwidth)
 * [Labels](#labels)
 * [Markers](#markers)
@@ -49,12 +49,12 @@ Let's build an example with 2 single-series line charts using the following data
 <th><b>GBP/USD</b></th>
 </tr>
 <tr>
-<td>25.02</td>
+<td>21.02</td>
 <td>1,1371</td>
 <td>1,5500</td>
 </tr>
 <tr>
-<td>24.02</td>
+<td>22.02</td>
 <td>1,1341</td>
 <td>1,5458</td>
 </tr>
@@ -64,12 +64,12 @@ Let's build an example with 2 single-series line charts using the following data
 <td>1,5463</td>
 </tr>
 <tr>
-<td>21.02</td>
+<td>24.02</td>
 <td>1,1381</td>
 <td>1,5397</td>
 </tr>
 <tr>
-<td>20.02</td>
+<td>25.02</td>
 <td>1,1371</td>
 <td>1,5385</td>
 </tr>
@@ -111,10 +111,8 @@ All titles are disabled by default, so we have to put them in visible mode.
 
 ```
   //setting the titles
-  chart1.title(true);
-  chart1.title().text('EUR/USD');
-  chart2.title(true);
-  chart2.title().text('GBP/USD');
+  chart1.title('EUR/USD');
+  chart2.title('GBP/USD');
 
  ```
 That's how it looks with titles:
@@ -145,7 +143,7 @@ You can easily switch types:
   chart1.type('column');
 ```
 
-Currency rates are not the best example for Columns, so let's take the sum of positive and negative reviews for an Ebay seller as an exapmle.
+Currency rates are not the best example for Columns, so let's take the sum of positive and negative reviews for an Ebay seller as an example.
 
 {sample :width 688 :height 50}BCT\_Sparkline\_Chart\_04{sample}
 
@@ -161,38 +159,24 @@ That's how we swap types:
 
 {sample :width 688 :height 50}BCT\_Sparkline\_Chart\_05{sample}
 
-Note that there's no difference for a w/l chart how big the value is - only sign of the value means.
+Note that there's no difference for a WinLoss chart how big the value is - only sign of the value means.
 
 ##Axes
 
-Sparklines have no axes to be shown, but scales can be controlled. It is possible to change the scale type (linear, logarithmic, ordinal or datetime): you only have to add a string to your code. 
+Axes in Sparklines are invisible, but still you can control the scales as you can do it with other chart types. You can invert any scale, change its orientation, change the scale type or define the minimum and the maximum values on a scale. For more information about scales look up the [Scales tutorial](../Axes_and_Grids/Scales). 
+
+Let's change the Y scale type to logarithmic and define the min and the max values for one chart and show the sparkline with the default scale below to make the  difference between the plain and the tuned charts clear:
 
 ```
-chart.xScale(anychart.scales.ordinal());
+  //change scales
+  chart1.yScale(anychart.scales.log());
+  chart1.yScale().minimum('79').maximum('10445');
 ```
-This will easily change your linear scale to the ordinal type.
-
-###Inversion
-
-AnyChart allows to invert any scale: Y, X or any extra. Inversion is controlled by **.inverted()** method:
-
-```
-    chart.yScale().inverted(true);
-```
-
-And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 {sample :width 688 :height 50}BCT\_Sparkline\_Chart\_06{sample}
+ 
 
-<!--что-то здесь не так, почти ничто не инвертится--!>
-
-There are loads of actions you can do with the scales
-
-##Visualisation
-
-Here you will find some information about main parts of  the sparkline chart style and see the demonstration of style applying.
-
-###Missing Points
+##Missing Points
 
 Sometimes we need to show the absence of a value or we don't have enough data. In this case we define one of the data points as "miss":
 
@@ -210,6 +194,10 @@ chart2.data([1.5500,1.5458,1.5463, 'miss', 1.5397,1.5385]).connectMissingPoints(
 In this sample you can see how it looks with a missing point and compare with a chart below, where this point is simply connected.
 
 {sample :width 688 :height 200}BCT\_Sparkline\_Chart\_07{sample}
+
+##Visualisation
+
+Here you will find some information about main parts of  the sparkline chart style and see the demonstration of style applying.
 
 ###Point width
 
@@ -245,11 +233,6 @@ To enable the labels for the points, you shall write the following:
 That's how it looks when we adjust the previous code for our sample:
 
 {sample :width 688 :height 80}BCT\_Sparkline\_Chart\_10{sample}
-
-##Markers
-
-Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. 
-AnyChart allows to add markers to any data element including lines.
 
 ##Axes Markers
 
@@ -348,7 +331,7 @@ You only need to enable the max or minLables to do it as in the sample above:
 
 ###HatchFill
 
-AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch Fill tutorial](.../Appearance_Settings/Hatch_Fill).
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch Fill tutorial](../Appearance_Settings/Hatch_Fill).
 Downwards you can see a couple of WinLoss Sparklines which we've colored with hatchFills using {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter opposite to [api: anychart.graphics.vector.Fill}**fill()**{api} parameter used to colorize the series and set all series in light grey color.
 
 ```
@@ -387,7 +370,7 @@ chart1.bounds(0, 0, 90, 20); //parameters: left padding, top padding, width, hei
 chart2.bounds(0, 25, 90, 20);
 ```
 
-Another way to place a lot of sparklines is to use the [AnyChart table](.../Dashboards/Table_Layout):
+Another way to place a lot of sparklines is to use the [AnyChart table](../Dashboards/Table_Layout):
 
 ```
  // create table
