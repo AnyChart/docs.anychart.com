@@ -3,6 +3,7 @@ Using Data Sets
 ===============
 ###Why do we need Data Sets?
 A situation when we need to analyze different data using the same set of values in the different series of one or different charts happens quite often. 
+
 For example, there is some information about the weather in three cities, and we have to show the difference on the line chart:
 
 <table border="1" class="dtTABLE">
@@ -52,9 +53,7 @@ For example, there is some information about the weather in three cities, and we
 </tbody>
 </table>
   
-Usually the solution is to create three sets for a line chart with three series:
-
-<table border="1" class="dtTABLE">
+Usually the solution is to create three sets for a line chart with three series:<br><table border="1" class="dtTABLE">
 <tbody>
 <tr>   
 <th>Date</th>
@@ -175,7 +174,8 @@ lineChart.draw();
 In this sample we specified the columns' names, the name of the chart and of the line and marked the lowest and the highest values.
 
 ####Array
-If you want to create more than one series on one chart or a chart with similar data, it is recommended to use `Array` as a row. Values of "column 0" of each row will represent series X (argument), each of the following columns value will represent a series value.  
+If you want to create more than one series on one chart or a chart with similar data, it is recommended to use `Array` as a row. Values of "column 0" of each row will represent series X (argument), each of the following columns value will represent a series value.
+
 As a result we will have a chart with 3 line series:  
 ```
 
