@@ -59,6 +59,9 @@ anychart.onDocumentReady(function() {
   table.getCell(4, 0).content().fontWeight(900);
   table.getCell(5, 0).content().fontWeight(900);
 
+  // position text in the center of each cell
+  table.cellTextFactory().vAlign('center').hAlign('center');
+
   // set table container and initiate draw
   table.container(stage).draw();
 });
