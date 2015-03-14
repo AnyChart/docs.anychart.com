@@ -53,7 +53,6 @@ For example, there is some information about the weather in three cities, and we
 </table>
   
 Usually the solution is to create three sets for a line chart with three series:
-
 <table border="1" class="dtTABLE">
 <tbody>
 <tr>   
