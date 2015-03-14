@@ -17,24 +17,21 @@
 
 ## Overview
 
-Data that is arranged in one column or row only can be plotted in a pie chart. Pie charts show the size of items in one data series, proportional to the sum of the items. The data points in a pie chart are displayed as a percentage of the whole pie.
-  
-  
-Consider using a pie chart when:
-  
-  
-* You only have one data series that you want to plot.
-* None of the values that you want to plot are negative.
-* Almost none of the values that you want to plot are zero values.
-* You don't have more than seven categories.
-* The categories represent parts of the whole.
-  
-  
-Doughnut chart are functionally identical to pie charts, the only difference is that it has a hole in the middle.
+Data that is arranged in a one column or an only row can be plotted in a pie chart. The data points in a pie chart are displayed as a percentage of the whole pie.
+
+Use a pie chart when:
+
+You only have one data series that you want to plot.
+None of the values that you want to plot are negative.
+Almost none of the values that you want to plot are zero values.
+You've got no more than seven categories.
+The categories represent parts of the whole.
+
+Donut chart are functionally identical to pie charts, the only difference is that the first one has a hole in the middle (which may be used, for example, as a place for the chart name).
 
 ## Chart
 
-Pie chart may contain only single series data and can be of two types: ordinary pie chart and doughnut chart.
+Pie chart may contain only single-series data and can be either ordinary pie chart or doughnut chart.
 
 ### Pie Chart
 
@@ -67,7 +64,7 @@ Let's see pie chart created using the following data - sales of ACME Corp. appar
 </tr>
 </tbody></table>
 
-Now we need to convert this data table into js, this format will be accepted by AnyChart. In terms of AnyChart data model we have one series of data (Sales) with categories that hold Retail channels names. Converted js Data looks like:
+Now we need to convert this data table into js to make it acceptable by AnyChart. In terms of AnyChart data model we’ve got one series of data (Sales) with categories that hold Retail channels names. The data in JavaScript format looks like:
 
 ```
   chart = anychart.pieChart([
@@ -79,30 +76,30 @@ Now we need to convert this data table into js, this format will be accepted by 
   ]);
 ```
 
-As you can see, we've created {api:anychart.charts.Pie}**anychart.pieChart()**{api} parameter. First column defines category and other one defines slice value.
-  
-  
-Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on it to see preview and full configured data in playground.
+As you can see, we've created {api:anychart.charts.Pie}**anychart.pieChart()**{api} parameter. First column defines category and another one defines slice value.
 
-{sample}BCT\_PieDoughnutChart\_01{sample}
+Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on it to see preview and full configured data in the playground.
+
+{sample}BCT\_PieDonutChart\_01{sample}
 
 ### Doughnut Chart
 
-Donut chart is all the same as Pie chart, and all you need to do to switch to it: add {api:anychart.charts.Pie#innerRadius}**'chart.innerRadius()'**{api}
+Donut chart is almost the same as Pie chart, the only difference is in appearance: Donut charts are with holes inside. All you need to do to switch between these two types is to add/delete  {api:anychart.charts.Pie#innerRadius}**'chart.innerRadius()'**{api}
 
 ```
   chart.innerRadius('30%');
 ```
 
-And here is the same data as above, displayed as a Doughnut chart:
+And here is the same data as above in the form of a Donut chart:
 
-{sample}BCT\_PieDoughnutChart\_02{sample}
+{sample}BCT\_PieDonutChart\_02{sample}
 
 ## Slices Sorting
 
-If you want you can sort the series in Pie and Donut Chart - Ascending or Descending, this feature is controlled using {api:anychart.charts.Pie#sort}**.sort()**{api} parameter. In the sample below three pie charts with identical series are shown, first isn't sorted, the second is sorted ascending and the third - descending.
+In Pie/Donut charts, it is possible to sort the series by ascending or descending. This feature is controlled using {api:anychart.charts.Pie#sort}**.sort()**{api} parameter. In the sample below three pie charts with identical series are shown, first isn't sorted, the second is sorted ascending and the third - descending.
 
-{sample}BCT\_PieDoughnutChart\_03{sample}
+{sample}BCT\_PieDonutChart\_03{sample}
+
 
 ## Exploded Slices
 
@@ -115,21 +112,41 @@ You can set pie and donut chart slices to be exploded when user clicks on it and
     chart.explode(30);
 ```
 
-To explode only one slice set exploded to a point:
+To explode only one slice set an “explode” value to a point:
 
 ```
-    chart.explodeSlice(0, true);
+    chart.explodeSlice(0, true); 
 ```
+The first parameter is the number of the slice and the second one is boolean responsible for activating the explosion. Note that number of the slice is to be counted from 0.
 
-Sample chart below is exploded by default, you can launch the live sample and click on slices to move them in place.
+Sample chart below is exploded by default, you can launch the live sample and click on slices to move them back to the center.
 
 {sample}BCT\_PieDoughnutChart\_04{sample}
 
+Also it's possible to define explosion with the data itself if you set the data as an object:
+
+
+```
+    chart = anychart.pieChart([
+        {'name':'Department Stores', 'value': 637166, 'exploded': true},
+        ['Discount Stores', 721630],
+        ['Men\'s/Women\'s Stores', 148662],
+        ['Juvenile Specialty Stores', 78662],
+        ['All other outlets', 90000]
+    ]);
+```
+
+{sample}BCT\_PieDonutChart\_05{sample}
+
+
 ## Visualization
 
-In this section we will describe main parts of pie chart style and demonstrate how style can be applied. 
+In this section we will describe the main parts of a pie chart style and demonstrate how to apply a style.
 
-Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when user moves cursor over an element, etc. <!--More information about these features can be found in Interactivity tutorial.-->
+Also, you can use styles to make charts interactive: you can define each element’s appearance and behavior by default, while hovered, etc.
+
+
+ <!--More information about these features can be found in Interactivity tutorial.-->
 
 ### Basic Sample
 
@@ -143,24 +160,34 @@ Now, let's look how to create a simple style and apply it to the chart. As we've
         .hatchFill('diagonalbrick', 'gray');
 ```
 
-Using such settings we've created a style that defines slices of Gold color, rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element border and hatch fill will be highlighted with a DarkRed.
+Using such settings we've created a style that defines slices of gold color with rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user moves cursor over an element its border and hatch fill will be highlighted with dark red color.
 
-{sample}BCT\_PieDoughnutChart\_05{sample}
+{sample}BCT\_PieDonutChart\_06{sample}
+
+### Aquastyle
+
+Our new 7.4.0 release of AnyChart suggests this complete style. We used soft colors and made the chart more like 3D using gradients. To set this style just add this stroke to your code:
+
+```
+     chart.fill('aquastyle');
+```
+
+That's how a chart with Aquastyle set looks like: 
+
+{sample}BCT\_PieDonutChart\_07{sample}
 
 ## Labels and Tooltips
 
-In this section we will explain how to add and configure data labels and tooltips. 
+In this section we will explain how to add and configure data labels and tooltips.
 <!--Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
+To configure data labels and tooltips for all series use {api:anychart.charts.Pie#labels}**.labels()**{api} and {api:anychart.charts.Pie#tooltip}**.tooltip()**{api} methods. These will help you to adjust visual appearance, positioning and format.
 
-If you want to configure data labels and tooltips for all series - you should do that with {api:anychart.charts.Pie#labels}**.labels()**{api} and {api:anychart.charts.Pie#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format.
-  
-  
-Let's do that in the following example: we will make data labels appear inside of the slices, also, we will format labels so they show only the percentage corresponding to the slices and tooltip will show detailed description.
-  
-  
-When formatting tooltips, we will use {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} to adjust source of content and visual appearance. To control labels position we may use {api:anychart.core.ui.Label#position}**.position()**{api} parameter. Here is a sample of two charts with the same data and different labels positions.
+Let's do that with the following example: we will make data labels to appear inside of the slices, format labels so they show only the percentage corresponding to the slices and tooltips to show detailed description.
 
-{sample}BCT\_PieDoughnutChart\_07{sample}
+
+When formatting tooltips, we use  {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} to adjust source of content and visual appearance. To control labels’ position we may use  {api:anychart.core.ui.Label#position}**.position()**{api} parameter. Here is a sample of two charts with the same data and different labels positions.
+
+{sample}BCT\_PieDonutChart\_08{sample}
 <!--
 Related Help Topics:
 
@@ -246,19 +273,33 @@ Full reference of marker style can be found in XMLReference, particularly <marke
 
 ## Colors
 
-AnyChart uses default colors to colorize data elements of chart automatically even if you have not define special colors. Also you can set and apply the color to exact data series or data point.
+AnyChart uses default colors to colorize data elements of a chart automatically if you have not defined special colors, though it allows you to specify colors for the points.
 
 ### Colorizing Elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.charts.Pie#fill}**.fill()**{api} parameter. In the sample below we'll color each series to different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set the {api:anychart.charts.Pie#fill}**.fill()**{api} parameter. In the sample below there are some series with sample data and we'll color each series to different color. Here is the sample:
 
-{sample}BCT\_PieDoughnutChart\_06{sample}
+{sample}BCT\_PieDonutChart\_09{sample}
 
 ## Hatch Fills
 
-AnyChart technology allows printing of charts. Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of b/w (monochrome) printers. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and it has own settings. To see whole range of available hatch types see [Hatch](../Appearance_Settings/Hatch_Fill) tutorial.
-  
-  
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 10 series. For every series we've applied different hatch fills by setting {api:anychart.charts.Pie#hatchFill}**.hatchFill()**{api} parameter for each of them.
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch](../Appearance_Settings/Hatch_Fill) tutorial tutorial.
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5-series with 2 data points in each. For every series we've applied different hatch fills by setting a hatch type for{api:anychart.charts.Pie#hatchFill}**.hatchFill()**{api} parameter.
+That’s how we did it in our code:
 
-{sample}BCT\_PieDoughnutChart\_08{sample}
+```
+chart = anychart.pieChart([
+        {x: 'P1', value: 232, hatchFill: 'diagonalcross'},
+        {x: 'P2', value: 224, hatchFill: 'zigzag'},
+        {x: 'P3', value: 252, hatchFill: 'horizontal'},
+        {x: 'P4', value: 219, hatchFill: 'vertical'},
+        {x: 'P5', value: 169, hatchFill: 'dashedbackwarddiagonal'},
+        {x: 'P6', value: 217, hatchFill: 'grid'},
+        {x: 'P7', value: 175, hatchFill: 'dashedforwarddiagonal'},
+        {x: 'P8', value: 199, hatchFill: 'dashedhorizontal'},
+        {x: 'P9', value: 297, hatchFill: 'plaid'},
+        {x: 'P10', value: 317, hatchFill: 'weave'}
+    ]);
+```
+
+{sample}BCT\_PieDonutChart\_10{sample}

@@ -8,22 +8,17 @@
 
 ## Overview
 
-The Range Column/Bar charts displays a range of data by plotting two Y values per data point. Each Y value used is 
-drawn as the upper, and lower bounds of a column/bar.
+The Range Column/Bar charts displays a range of data by plotting two Y values per data point. Each Y value used is drawn as the upper, and lower bounds of a column/bar.
   
   
-Sometimes range charts are referred as "floating" column/bar charts. Some data may look very nice and are easily 
-understood in this form, in which the column floats in the chart, spanning a region from a minimum value to a maximum 
-value.
+Sometimes range charts are referred as "floating" column/bar charts. Some data may look very nice and are easily understood in this form, in which the column floats in the chart, spanning a region from the minimum value to the maximum value.
   
   
-Also you can create Waterfall charts, which are a special type of Floating Column Charts. A typical waterfall chart 
-shows how an initial value is increased and decreased by a series of intermediate values, leading to a final value.
+Also you can create Waterfall charts - this type is a special type of Floating Column Charts. A typical waterfall chart shows how an initial value is increasing and decreasing by a series of intermediate values, leading to a final value.
 
 ## Chart
 
-As range bar charts have to define lower and upper bound of bars - you have to specify these two values using **"low"**
- and **"high"** parameters.
+As range bar charts have to define lower and upper bound of bars, you have to specify these two values using **"low"** and **"high"** parameters.
   
   
 Also "RangeBar" series type should be specified.
@@ -38,15 +33,13 @@ Also "RangeBar" series type should be specified.
 
 ## Temperature Range Chart Sample
 
-This sample shows how range bars can be used to chart temperature averages, the data is taken from UK weather stations 
-1971-2000 averages statistics:
+This sample shows how range bars can be used to chart temperature averages, the data is taken from UK average weather statistics from 1971 to 2000:
 
 {sample}BCT_Range\_Bar-Column\_Charts\_01{sample}
 
 ## Waterfall Chart Sample
 
-In the sample below we formatted start and end values, here we will colorize chart as we need. Here it is - waterfall 
-chart is displayed.
+In the sample below we formatted start and end values, here we will colorize chart as we need. Here it is - a Waterfall chart is displayed.
 
 {sample}BCT_Range\_Bar-Column\_Charts\_02{sample}
 
@@ -54,11 +47,11 @@ chart is displayed.
 <a name="configuration"/>
 ## Configuration
 
-All range charts are configured and tuned almost the same way as usual Bar or Column charts, with the only difference: as we have to Y values (start and end point) - we have two tooltips, two labels and two markers.
+All range charts are configured and tuned almost the same way as usual Bar or Column charts, with the only difference: as we have to tell a starting and an ending points to Y-axis, we have two tooltips, two labels and two markers.
 
-So, to configure them we defines chart as chart.rangeBar node and <bar_style>. <range_bar_series> contain <start_point> and <end_point> nodes that hold tooltip, label and marker settings for start and end points.
+So, to configure them we define chart as chart.rangeBar node and <bar_style>. <range_bar_series> contains <start_point> and <end_point> nodes that hold tooltip, label and marker settings for the starting and the ending points.
 
-For example we want to change markers to "Star" for all range bar series on the chart, for both start and end point:
+For example, we want to change markers to "Star" for all range bar series on the chart, for both start and end:
 
 XML Syntax
 XML Code

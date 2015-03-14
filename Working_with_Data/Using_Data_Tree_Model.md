@@ -13,13 +13,12 @@ Using Data Tree Model
 
 ## Overview
 
-Tree Data is quite useful way of implementing data which assume tree like hierarchy with parent/child division. Such structure visualize data nodes connections thus simplifies data adjusting, improves data organization and provides advanced opportunities of data manipulation.
+Tree Data is quite a useful way of implementing data where "tree" means an hierarchy with parent/child division. Such structure of visualizing data nodes connections simplifies data adjusting, improves data organization and provides advanced opportunities of data manipulation.
 
 ## Usage
 
-The most common case of using data tree is data grid. Data grid represents hierarchy of data. In sake of
-convenience AnyChart accept two methods of setting data tree: through table and through tree. Code below demonstrates
- setting same data through both methods.
+The most common case of using data tree is data grid. In sake of convenience AnyChart accepts two methods of setting data tree: through table and through tree. The code below demonstrates
+ setting the same data through both methods.
 
 ```
   //Data set through tree method
@@ -64,19 +63,18 @@ Data Manipulation includes CRUD operations, such as:
  * Removing - you can remove any point from a data set.
 
 
-This operations can be performed on root elements as well as for children of a node. Tutorial on CRUD operations for
+These operations can be performed on root elements as well as on children of a node. A tutorial for CRUD operations like
  {api:anychart.data.Set}**.set()**{api} method can be found in [Data Manipulation article](Data_Manipulation).
 
 ### Create
 
-Data in a tree may be added through several methods. Sample below demonstrates adding of a child into data grid on
-click on a button.
+You can add some data as a tree using several methods. Sample below demonstrates adding a child into data grid on a button click.
 
 {sample :width 690 :height 400}Data\_Tree\_02{sample}
 
-Adding a child is quite useful method for adjusting data in real time and visualizing  actual processes.
+Adding a child is quite a useful method of adjusting data in real time and visualizing actual processes.
 Nevertheless, adding only one child at a time may appear to be ineffective for managing data. Transferring prepared
-data with predefined hierarchy is advanced way managing data in a tree. Method {api:anychart.data.Tree#addData}**.addData()**{api} requires data to add and type of new data.
+data with predefined hierarchy is an advanced way of managing data in a tree.  You need the data type and the data itself to use the {api:anychart.data.Tree#addData}**.addData()**{api} method.
 
 ```
   // data to add
@@ -94,21 +92,30 @@ data with predefined hierarchy is advanced way managing data in a tree. Method {
   );
 ```
 
-Sample below demonstrates adding data on click on a button.
+You can see how it works on the sample below.
 
 {sample :width 690 :height 270}Data\_Tree\_03{sample}
 
 ### Read
 
-Data tree item may have unlimited number of data fields thus it requires methods for reading data from any field and
-item search through field value. {api:anychart.data.Tree.DataItem#get}**.get()**{api} method reads required field of an item. Sample below demonstrates data grid with custom columns. Each of them read data from custom field Data of data grid.
+Data tree item may have an unlimited number of data fields thus it requires methods for reading data from any field and item search through field value. The {api:anychart.data.Tree.DataItem#get}**.get()**{api} method gets a value of a specified field of an item. The sample below demonstrates data grid with custom columns. Each column reads data from custom fields of data grid ("year 2004", "year 2005"). The code below shows how to use this method.
+
+```
+return item.get('year 2004');               // get the value in a field "year 2004" of an item
+```
 
 {sample :width 690 :height 200}Data\_Tree\_04{sample}
 
 ### Update
 
-Every node in data tree may be updated. The node should be gotten first to proceed information adjustment. Sample
-below illustrates adding 1000 to a value of the third node.
+Every node in data tree may be updated. The node should be gotten first to proceed information adjustment. Below there is an illustration of adding 1000 to values of the third node.
+
+```
+// this part of a code is responsible for increasing the value of the third field "Value"
+function addValue(){
+    tree.getChildAt(2).set('value', (parseInt(tree.getChildAt(2).get('value')) + 1000 )*1+'');
+  }
+```
 
 {sample :width 690 :height 200}Data\_Tree\_05{sample}
 
@@ -121,6 +128,6 @@ As far as we can add data, we can remove it too. Use {api:anychart.data.Tree#rem
   tree.removeChildAt(0); // remove first element in data tree
 ```
 
-Sample below demonstrates removing first element in the data tree.
+The sample below demonstrates removing first element from the data tree.
 
 {sample :width 690 :height 200}Data\_Tree\_06{sample}

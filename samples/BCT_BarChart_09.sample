@@ -25,15 +25,15 @@ anychart.onDocumentReady(function() {
     // set series data and adjust color
     var series;
     series = chart.bar(data1);
-    series.fill('#4A55C7');
+    series.fill('#3333FF');
     series = chart.bar(data2);
-    series.fill('#5EBD9B');
+    series.fill('#660099');
     series = chart.bar(data3);
-    series.fill('#B04A8A');
+    series.fill('#CC6600');
     series = chart.bar(data4);
-    series.fill('#C7894A');
+    series.fill('#FFCC33');
     series = chart.bar(data5);
-    series.fill('#BCBD46');
+    series.fill('#00aa00');
   
     // draw
     chart.container('container').draw();

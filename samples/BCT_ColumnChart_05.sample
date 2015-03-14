@@ -23,7 +23,7 @@ anychart.onDocumentReady(function() {
     ]);
 
     // adjust min and max value
-    chart.yScale().minimum('0').maximum('50000');
+    chart.yScale().minimum('6000').maximum('20000');
 
     // draw
     chart.container('container').draw();

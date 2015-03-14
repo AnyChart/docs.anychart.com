@@ -3,28 +3,28 @@
   :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    // data
-    var data = anychart.data.set([
-        ['P1', 132],
-        ['P2', 124],
-        ['P3', 102],
-        ['P4', 119],
-        ['P5', 169],
-        {x: 'P6', value: 237, fill: 'Rgb(77,180,77)'},
-        ['P7', 120],
-        ['P8', 99],
-        {x: 'P9', value: 44, fill: '#B44D4D'},
-        ['P10', 59]
-    ]);
-
     // chart type
     chart = anychart.columnChart();
 
-    chart.title().text('Set Minimum and Maximum Value Color');
+    // chart title
+    chart.title().text('Marker');
 
-    // set data and color
-    chart.column(data).fill('#C6D1A5');
+    // set axes titles
+    chart.xAxis().title().text('Manager');
+    chart.yAxis().title().text('Sales');
 
-    // draw
+    // set scale minimum
+    chart.yScale().minimum(0);
+
+    // set data
+    chart.column([
+        ['John' , 10000],
+        ['Jake' , 12000],
+        {x: 'Peter', value: 18000, fill: 'Rgb(77,180,77)'},
+        ['James' , 11000],
+        {x:'Mary' , value: 9000, fill: '#B44D4D'}
+    ]);
+
+    // draw chart
     chart.container('container').draw();
 });

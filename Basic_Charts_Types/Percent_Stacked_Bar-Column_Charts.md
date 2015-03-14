@@ -8,13 +8,13 @@
 ## Overview
 Data that is arranged in columns or rows on a worksheet can be plotted in a bar chart. Bar charts illustrate comparisons among individual items.
 
-100% stacked bar charts compares the percentage each value contributes to a total across categories.
+100% stacked bar charts compare the percentage each value contributes to a total value across categories.
 
 ## Chart
 
-As stacked charts should show contribution of different components to the total, we will demonstrate them on an imaginable ACME FastFood, Corp. sales. Let's assume that it sells Ice Cream, Chocolate Bar and Coke all through the year.
+As stacked charts should show percent contribution of different components to the total, we will demonstrate them on sales of an imaginable ACME FastFood, Corp. Let's assume that it sells Ice Creams, Chocolate Bars and Coke all through the year.
 
-So, we have three series of data - one series for each product, and we give proper names to each series:
+So, we have three series of data - one series for each product, and seasons of a year will be shown as categories:
 
 ```
     var dataSet = anychart.data.set([
@@ -25,13 +25,13 @@ So, we have three series of data - one series for each product, and we give prop
     ]);
 ```
 
-Now we have to tell Y Axis to display these series in as stacked columns:
+Now we have to tell Y-Axis to display these series as stacked columns:
 
 ```
     chart.yScale().stackMode('percent');
 ```
 
-Everything is ready, here is a sample stacked column chart:
+Everything is ready! Here is a sample of a stacked column chart:
 
 {sample}BCT_Percent-Stacked\_Bar-column\_Charts\_01{sample}
 
@@ -54,7 +54,7 @@ Also, tooltips can be enabled/disabled by adjusting {api:anychart.core.cartesian
     series.tooltip().enabled(false);
 ```
 
-Here is a sample stacked bar chart:
+Here is a sample of a stacked bar chart:
 
 {sample}BCT_Percent-Stacked\_Bar-column\_Charts\_02{sample}
 <!--

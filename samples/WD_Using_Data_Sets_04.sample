@@ -1,7 +1,3 @@
-{:tags []
-     :is_new false
-     :exports "chart"}
-
 anychart.onDocumentReady(function() {
   var data = [
     // column 0    1    2    3
@@ -24,7 +20,7 @@ anychart.onDocumentReady(function() {
 
   // set container and position
   lineChart.container(stage);
-  lineChart.bounds(0, 0, '50%', '90%');
+  lineChart.bounds(0, 0, '100%', '50%');
 
   // current stage stroke
   lineChart.background().stroke('white').fill('white');
@@ -35,41 +31,53 @@ anychart.onDocumentReady(function() {
   lineChart.yAxis().labels().textFormatter(function(){
       return this.value + ' °C';
   });
-
+  //series titles setter
+    lineChart.getSeries(0).name('NY');
+    lineChart.getSeries(1).name('SF');
+    lineChart.getSeries(2).name('LA');
   // apply tooltip settings
   lineChart.getSeries(0).tooltip().contentFormatter(tooltipSetter);
   lineChart.getSeries(1).tooltip().contentFormatter(tooltipSetter);
   lineChart.getSeries(2).tooltip().contentFormatter(tooltipSetter);
 
-  // disable pie title
-  lineChart.title().enabled(false);
+  // naming the chart
+  lineChart.title('Weather in the USA');
 
   // initiate chart drawing
   lineChart.draw();
 
   // map x and value from the data set
-  var dataView = dataSet.mapAs({x: [0], value: [1]});
+  var colChart = anychart.columnChart.apply(null, anychart.data.mapAsTable(data));
+  
+    //naming the chart's series (legend)
+    colChart.getSeries(0).name('NY');
+    colChart.getSeries(1).name('SF');
+    colChart.getSeries(2).name('LA');
+    
+    // axes titles setter
+  colChart.xAxis().title().text('Date');
+  colChart.yAxis().title().text('Temperature');
+  colChart.yAxis().labels().textFormatter(function(){
+      return this.value + ' °C';
+  });
+  
+    // naming the chart
+    colChart.title('Weather in the USA');
+  
+      // set container and position
+  colChart.container(stage);
+  colChart.bounds(0, '50%', '100%', '50%');
+  
+    // current stage stroke
+  colChart.background().stroke('white').fill('white');
+  
+   // apply tooltip settings
+  colChart.getSeries(0).tooltip().contentFormatter(tooltipSetter);
+  colChart.getSeries(1).tooltip().contentFormatter(tooltipSetter);
+  colChart.getSeries(2).tooltip().contentFormatter(tooltipSetter);
 
-  // create a pie chart using mapped data set
-  var pieChart = anychart.pieChart(dataView);
-
-  // set pie chart container and position
-  pieChart.container(stage);
-  pieChart.bounds('50%', 0, '50%', '90%');
-
-  // apply tooltip settings
-  pieChart.tooltip().contentFormatter(tooltipSetter);
-  pieChart.tooltip().content().useHtml(false);
-
-
-  // current stage stroke
-  pieChart.background().stroke('white').fill('white');
-
-  // disable pie title
-  pieChart.title().enabled(false);
-
-  // initiate chart drawing
-  pieChart.draw();
+    // draw
+    colChart.draw();
 });
 
 // tooltip series settings

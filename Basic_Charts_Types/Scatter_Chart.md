@@ -14,21 +14,19 @@
 
 ## Overview
 
-Scatter charts show the relationships among the numeric values in several data series, or plots two groups of numbers as one series of XY coordinates.
+Scatter charts show the relationships among the numeric values in several data series, or between two groups of numbers as one series of XY coordinates.
 
-A scatter chart has two value axes, showing one set of numerical data along the horizontal axis (X axis) and another along the vertical axis (Y axis). It combines these values into single data points and displays them in uneven intervals, or clusters. Scatter charts are commonly used for displaying and comparing numeric values, such as scientific, statistical, and engineering data.
+A scatter chart has two value axes, showing one set of numerical data along the horizontal axis (X-axis) and another one along the vertical axis (Y axis). It combines these values into single data points and displays them in uneven intervals, or clusters. Scatter charts are commonly used for displaying and comparing numeric values, such as scientific, statistical and engineering data.
 
-A scatter chart has two value axes, showing one set of numerical data along the horizontal axis (x-axis) and another along the vertical axis (y-axis). It combines these values into single data points and displays them in uneven intervals, or clusters. Scatter charts are commonly used for displaying and comparing numeric values, such as scientific, statistical, and engineering data.
-
-Consider using a scatter chart when:
+Use a scatter chart when:
 
  * You want to change the scale of the horizontal axis.
- * You want to make that axis a logarithmic scale.
+ * You want to make that axis logarithmic.
  * Values for horizontal axis are not evenly spaced.
- * There are many data points on the horizontal axis.
- * You want to effectively display data that includes pairs or grouped sets of values and adjust the independent scales of a scatter chart to reveal more information about the grouped values.
+ * There are a lot of data points on the horizontal axis.
+ * You want an effective representation of data that includes pairs or groups of value sets and adjust the independent scales of a scatter chart to reveal more information about the grouped values.
  * You want to show similarities between large sets of data instead of differences between data points.
- * You want to compare large numbers of data points without regard to time—the more data that you include in a scatter chart, the better the comparisons that you can make.
+ * You want to compare large numbers of data points without regard to time — the more data you have in a scatter chart, the better comparisons you can make.
 
 ## Chart
 
@@ -43,7 +41,7 @@ Bubble charts. To start the creation of Scatter chart you need create chart usin
 
 As Scatter charts are plotted using two values you always need to specify both x and y.
 
-Let's take the following data tables to be plotted on the scatter chart as the first line:
+Let's take the following table as the source of data for the scatter chart as the first line:
 
 <table border="1" class="dtTABLE">
  <tbody>
@@ -135,7 +133,7 @@ As you can see we've created two Line series on the scatter plot:
 
 ### Bubble Chart
 
-Scatter Bubble Charts are widely used in many analytical studies an it is one of the popular tools for identifying and illustrating industry clusters. Essentially, these charts allow four different variables to be plotted within the same graph, making it easy to assess relative economic performance. Bubble charts can be used to plot up to 4 different variables on the single plot:
+Scatter Bubble Charts are widely used in many analytical studies as it is one of the popular tools for identifying and illustrating industry clusters. Essentially, these charts allow four different variables to be plotted within the same graph, making it easy to assess relative economic performance. Bubble charts can be used to plot up to 4 different variables on a single plot:
 
 ```
   chart.bubble([
@@ -148,9 +146,9 @@ Scatter Bubble Charts are widely used in many analytical studies an it is one of
   ]).fill('green');
 ```
 
-Above is a demonstration of two data series of Bubble type, colored with Red and Green colors and set x, y and size.
+Above there is a demonstration of two data series of Bubble type, colored with Red and Green colors and set x, y and size.
 
-In the sample below we will apply these knowledge to plot a real sample of cluster analysis charting:
+In the sample below we use these knowledge to make a real sample of cluster analysis charting.
 
 We illustrate industry cluster relationships for the 17 "Springfield" targeted industry clusters. The following four variables are plotted in this single graphic:
 
@@ -164,7 +162,7 @@ We illustrate industry cluster relationships for the 17 "Springfield" targeted i
 
 ### Marker Chart
 
-Scatter Point or Marker chart is used to plot a scatter plot (scatter diagram or scatter graph). It is a chart used to display values for two variables. The data is displayed as a collection of points, each having one coordinate on the horizontal axis and one on the vertical axis.
+Scatter Point or Marker chart is used to make a scatter plot (scatter diagram or scatter graph). It is a chart used to display values of two variables. The data is displayed as a collection of points, each having one coordinate on the horizontal axis and one on the vertical axis.
 
 A scatter plot does not specify dependent or independent variables. Either type of variable can be plotted on either axis. Scatter plots represent the association (not causation) between two variables.
 
@@ -181,7 +179,7 @@ To plot a scatter diagram using AnyChart you should use {api:anychart.charts.Sca
   ])
 ```
 
-In the sample below we will plot waiting time between eruptions and the duration of the eruption for the Old Faithful geyser in Yellowstone National Park, Wyoming, USA. This chart suggests there are generally two "types" of eruptions: short-wait-short-duration, and long-wait-long-duration.
+In the sample below we plot waiting time between eruptions and the duration of the eruptions for the Old Faithful geyser in Yellowstone National Park, Wyoming, USA. This chart suggests there are generally two "types" of eruptions: short-wait-short-duration, and long-wait-long-duration.
 
 We will also draw a "best-fit" straight line through the data, calculated using linear regression method.
 
@@ -189,14 +187,13 @@ We will also draw a "best-fit" straight line through the data, calculated using 
 
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in [Axes tutorial](../Axes_and_Grids/Axis_Basics), in this section we will quickly demonstrate how axis orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. All axis features are described in [Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial. In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.enums.Orientation}**.orientation()**{api} in {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api}.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.enums.Orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
 
-Positioning depends on plot type and inversion of axes, you will find list of all possible orientation and
-inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) Templates.
+Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
 
 ```
     chart.xAxis().orientation('right');
@@ -207,27 +204,26 @@ inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) Tem
 
 ### Inversion
 
-AnyChart allows you to invert any axis: Y, X or any extra axis. Inversion is controlled by axis **.inverted()**:
+AnyChart allows to invert any axis: Y, X or any extra. Inversion is controlled by axis **scale().inverted()**:
 
 ```
   chart.yScale().inverted(true);
 ```
 
-And here is the demonstration of Y and X Axis inversion on the Marker sample:
+And here is the demonstration of Y and X-Axis inversion in the Marker sample:
 
 {sample}BCT\_ScatterChart\_05{sample}
 
 ### Minimum and Maximum
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart
-sample above: minimal value on the Y Axis is -5, and maximum is 5. You can control these values by setting
-**.maximum()** and **.minimum()**. :
+By default AnyChart calculates axis the minimum and the maximum automatically. You can see this on the scale inversion chart sample above: the minimal value of the Y-Axis is -5, and maximum is 5. You can control these values by setting **.maximum()** and **.minimum()** parameters of the scale:
+
 
 ```
     chart.yScale().minimum('-20').maximum('30');
 ```
 
-And here is the demonstration of maximum and minimum values on the Line sample:
+And here is the demonstration of maximum and minimum values in the Line sample:
 
 {sample}BCT\_ScatterChart\_06{sample}
 
@@ -252,7 +248,7 @@ allowed us to plot data within hundreds and within thousands on the same plot:
 
 ## Labels and Tooltips
 
-If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.core.scatter.series.Base#labels}**.labels()**{api} and {api:anychart.core.scatter.series.Base#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format.
+If you want to configure data labels and tooltips for all series - you should use{api:anychart.core.scatter.series.Base#labels}**.labels()**{api} and {api:anychart.core.scatter.series.Base#tooltip}**.tooltip()**{api} methods. You can tune the visual appearance, positioning and format of labels and tooltips.
 
 ```
   // set labels

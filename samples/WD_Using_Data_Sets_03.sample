@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
     var data = [
         // column 0    1    2    3
-        ["2014/6/25",  28,  23,  28], // row 1
+        ["2014/6/25",  28,  23,  25], // row 1
         ["2014/6/26",  26,  21,  26], //     2
         ["2014/6/27",  27,  19,  26], //     3
         ["2014/6/28",  25,  21,  27], //     4
@@ -18,7 +18,9 @@ anychart.onDocumentReady(function() {
 
     // create line chart
     var lineChart = anychart.lineChart.apply(null, dataMappingList);
-
+    lineChart.getSeries(0).name('NY');
+    lineChart.getSeries(1).name('SF');
+    lineChart.getSeries(2).name('LA');
     // set container
     lineChart.container('container');
 
