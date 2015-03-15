@@ -3,7 +3,6 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  
   // set stage
   var stage = anychart.graphics.create('container');
   var palette = anychart.palettes.distinctColors().colors();
@@ -50,14 +49,14 @@ anychart.onDocumentReady(function() {
   column.listen(
     
     // listener type
-    anychart.enums.EventType.POINT_CLICK,
+    'click',
     
     // function, if listener triggers
     function(e) {
       click(
-        data.mapAs().get(e.pointIndex, 'clickData'),
-        data.mapAs().get(e.pointIndex, 'x'),
-        data.mapAs().get(e.pointIndex, 'fill')
+        data.mapAs().get((e.target).hoverStatus, 'clickData'),
+        data.mapAs().get((e.target).hoverStatus, 'x'),
+        data.mapAs().get((e.target).hoverStatus, 'fill')
       );
     });
   
@@ -66,30 +65,11 @@ anychart.onDocumentReady(function() {
   
   function click (fullData, name, fill) {
     chart.dispose();
-    chart = anychart.column();
-    column = chart.column(fullData).fill(fill);
+    chart = anychart.line();
+    chart.line(fullData).fill(fill);
     chart.title().text('Sales details for '+name);
     chart.container(stage);
     chart.draw();
-    column.listen(
-      anychart.enums.EventType.POINT_CLICK,
-      function(e){
-        chart = anychart.column();
-        chart.title().text('Sales Report');
-        var column = chart.column(data);
-        column.listen(
-          anychart.enums.EventType.POINT_CLICK,
-          function(e) {
-            click(
-              data.mapAs().get(e.pointIndex, 'clickData'),
-              data.mapAs().get(e.pointIndex, 'x'),
-              data.mapAs().get(e.pointIndex, 'fill')
-            );
-          }
-        );
-        chart.container(stage).draw();
-        customTitle.dispose();
-      });
     
     var customTitle = anychart.ui.title();
     customTitle
@@ -105,23 +85,24 @@ anychart.onDocumentReady(function() {
       .stroke('#000000');                 // set black border to title
     
     // set container and draw title
-    customTitle.container(stage).draw();
-    customTitle.listen('click', function(e){
+    customTitle.listen('click', function(){
       chart = anychart.column();
       chart.title().text('Sales Report');
       var column = chart.column(data);
       column.listen(
-        anychart.enums.EventType.POINT_CLICK,
+        'click',
         function(e) {
           click(
-            data.mapAs().get(e.pointIndex, 'clickData'),
-            data.mapAs().get(e.pointIndex, 'x'),
-            data.mapAs().get(e.pointIndex, 'fill')
+            data.mapAs().get((e.target).hoverStatus, 'clickData'),
+            data.mapAs().get((e.target).hoverStatus, 'x'),
+            data.mapAs().get((e.target).hoverStatus, 'fill')
           );
-        }
-      );
+        });
       chart.container(stage).draw();
       customTitle.dispose();
     });
+    
+    // draw custom title
+    customTitle.container(stage).draw();
   }
 });

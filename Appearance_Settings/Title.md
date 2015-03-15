@@ -8,8 +8,8 @@
  * [Background](#background)
  * [Text Settings](#text_settings)
 * [HTML in Title](#html_in_title)
-<!--* [Additional Titles](#additional_titles)-->
-<!--* [Adding Events](#adding_events)-->
+* [Additional Titles](#additional_titles)
+* [Adding Events](#adding_events)
 
 ## Overview
 
@@ -68,7 +68,7 @@ You can tune background of a title. Use {api:anychart.core.ui.Title#background}*
 
 ### Text Settings
 
-Text is the main part of title itself. Text appearance can be tuned similar way to the {api:anychart.graphics.vector.Text}**.text()**{api} method.
+Text is the main part of title itself. Text appearance can be tuned similar way to the {api:anychart.graphics.vector.Text}**.text()**{api} parameter.
 
 ```
   // tune text
@@ -97,7 +97,7 @@ You can use HTML formatted **.text()** parameter. Use **.useHtml()** parameter t
 
 {sample}AS\_Titles\_06{sample}
 
-<!--## Additional Titles
+## Additional Titles
 
 Chart can contain any number of additional titles. These titles can be placed anywhere on the plot.
 
@@ -126,10 +126,10 @@ Chart can contain any number of additional titles. These titles can be placed an
 
 ## Adding Events
 
-You can make your chart title interactive by adding event listeners of a different types. Sample below represents {api:anychart.enums.EventType}pointClick{api} event, that triggers alert function.
+You can make your chart title interactive by adding event listeners of a different types. Sample below represents {api:anychart.enums.EventType}pointClick{api} event, that triggers alert() function.
 
 {sample}AS\_Titles\_08{sample}
 
 Here is advanced sample of using events in titles. In this sample we will show how chart footer can be used as "Back" button for self-drilldown charts. Click on bars to see detailed report on each sales manager and in detailed report click on "Back to Sales Manager Report" button in the bottom right corner of line chart to load initial chart.
 
-{sample}AS\_Titles\_09{sample}-->
+{sample}AS\_Titles\_09{sample}

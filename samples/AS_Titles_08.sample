@@ -11,8 +11,9 @@ anychart.onDocumentReady(function() {
     .text('Click to alert')     // set text for default title
     // set event listener
     .listen(
-      anychart.enums.EventType.POINT_CLICK, 
-      function(){alert('Top Sales Manager is Peter!')
+      'click',      // set type of event
+      function(){   // set function
+        alert('Top Sales Manager is Peter!')
       }
     );
   
