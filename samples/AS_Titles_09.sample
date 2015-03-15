@@ -80,9 +80,9 @@ anychart.onDocumentReady(function() {
       .fontFamily('Tahoma')                 // set font family
       .fontWeight(400)                      // unbold title
       .background()                         // background settings
-      .enabled(true)                      // eanble background
-      .fill(null)                         // disable fill
-      .stroke('#000000');                 // set black border to title
+        .enabled(true)                      // eanble background
+        .fill(null)                         // disable fill
+        .stroke('#000000');                 // set black border to title
     
     // set container and draw title
     customTitle.listen('click', function(){

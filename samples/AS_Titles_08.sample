@@ -13,7 +13,7 @@ anychart.onDocumentReady(function() {
     .listen(
       'click',      // set type of event
       function(){   // set function
-        alert('Top Sales Manager is Peter!')
+        alert('Top Sales Manager is Peter!');
       }
     );
   
