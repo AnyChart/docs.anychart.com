@@ -17,7 +17,7 @@ Every chart in AnyChart can have one default title and unlimited number of addit
 
 ## Default Title
 
-Every chart has default title and this title can be enabled or disable using **.enabled()** parameter
+Every chart has default title and this title can be enabled or disable using {api:anychart.core.ui.Title#enabled}**.enabled()**{api} parameter
 
 ```
   // chart type
@@ -68,7 +68,7 @@ You can tune background of a title. Use {api:anychart.core.ui.Title#background}*
 
 ### Text Settings
 
-Text is the main part of title itself. Text appearance can be tuned similar way to the {api:anychart.graphics.vector.Text}**.text()**{api} parameter.
+Text is the main part of title itself. Visit {api:anychart.core.ui.Title}API{api} to find out all parameters for tuning visual appearance of a chart title.
 
 ```
   // tune text
@@ -83,7 +83,7 @@ Text is the main part of title itself. Text appearance can be tuned similar way 
 
 ## HTML in Title
 
-You can use HTML formatted **.text()** parameter. Use **.useHtml()** parameter to enable HTML tags in title.
+You can use HTML formatted text of a title. Use {api:anychart.core.ui.Title#useHtml}**.useHtml()**{api} parameter to enable HTML tags in title.
 
 ```
   chart.title()
