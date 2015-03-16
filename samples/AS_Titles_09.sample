@@ -66,7 +66,7 @@ anychart.onDocumentReady(function() {
   function click (fullData, name, fill) {
     chart.dispose();
     chart = anychart.line();
-    chart.line(fullData).fill(fill);
+    chart.line(fullData).stroke(fill);
     chart.title().text('Sales details for '+name);
     chart.container(stage);
     chart.draw();
