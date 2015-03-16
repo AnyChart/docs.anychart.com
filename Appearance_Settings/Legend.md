@@ -35,7 +35,7 @@ To enable such legend in your chart just enable it:
   chart.legend().enabled(true);
 ```
 
-{sample}GAS\_Legend\_01{sample}
+{sample}AS\_Legend\_01{sample}
 
 ## Title
 
@@ -45,17 +45,48 @@ Sometimes you need the title to a legend and sometimes it is superfluous: to ena
   chart.legend().title().enabled(true);
 ```
 
-To specify and format your own title for the legend use **.text()** parameter of a **.title()** method. For more information about title settings please refer to [Title](title).
+To specify and format your own title for the legend use {api:anychart.core.ui.Title#text}**.text()**{api} parameter of a {api:anychart.core.ui.Legend#title}**.title()**{api} method. For more information about title settings please refer to [Title](title).
 
 ```
-  var legendTitle = chart.legend().title();
-  
-  legendTitle.text('2004 - Quarters: ')
-    .fontFamily('Arial')
-    .fontColor('red')
-    .fontWeight(900)
+  chart.legend().title()
+    .enabled(true)              // enables legend title
+    .text('2004 - Quarters: ')  // set title text
+    .fontFamily('Arial')        // set font family
+    .fontColor('red')           // set title text color
+    .fontWeight(900)            // set text weight
+    .fontSize(16)               // set font size
+    .padding(5)                 // prevent sticking text to borders
     .background()
-      .enabled(true)
-      .fill(null)
-      .stroke('black');
+      .enabled(true)            // enables background of the legend title
+      .fill(null)               // disables background inner color
+      .stroke('black');         // set border of the title
+  
 ```
+
+Here is a sample bar chart with formatted title:
+
+{sample}AS\_Legend\_02{sample}
+
+## Positioning
+
+Depending on the layout and type of your chart you can position legend to a desired place using {api:anychart.core.ui.Legend#position}**.position()**{api} parameter of {api:anychart.core.ui.Legend}**.legend()**{api} method. 
+  
+  
+As addition to the {api:anychart.core.ui.Legend#position}**.position()**{api} parameter, parameter {api:anychart.core.ui.Legend#align}**.align()**{api} controls legend alignment.
+  
+  
+The space between data plot and legend is controlled using padding attribute.
+  
+  
+Sample Pie Chart with a legend of a fixed (150px - width, 30% of data plot height) size positioned to the "Left" of the chart, aligned to " Near", with padding of 0 pixels:
+
+{sample}AS\_Legend\_03{sample}
+
+* *Note:* possible values for **.align()** parameter are: *Left, Right, Top, Bottom and Center*. Also, possible values depend on the **.position()** parameter. With *Top* and *Bottom* legend position it is possible to use *Left, Right* and *Center* values of **.align()** parameter. For *Left* and *Right* values of **.position()** parameter it's possible to use *Top, Bottom* and *Center* values of **.align()** parameter.
+
+
+## Appearance
+
+### Background
+
+Legend background allows you to configure the border and the fill of the legend. Method {api:anychart.core.ui.Legend#background}**.background()**{api} controls background visual appearance. To learn more about background setting please study the background tutorial.
