@@ -2,6 +2,8 @@
      :is_new false
      :exports "chart"}	 
 
+	 
+
 anychart.onDocumentReady(function() {
   //chart data
   var data = [
@@ -35,16 +37,16 @@ anychart.onDocumentReady(function() {
   //create box chart series with our data
   var series = chart.box(data);
   
-  //styling the first series
-  series
-    .fill('Gold')
-    .hoverStroke("darkred", 4)
-    .stroke('#56561a', 4)
-    .hatchFill('diagonalbrick', 'gray')
-    .hoverHatchFill('diagonalbrick', 'darkred')
-  //hide whisker
-    .whiskerWidth(0)
-    .hoverWhiskerWidth(0);
+      //create style
+      series
+        .fill('#82BECA')
+        .stroke(null)
+        .stemStroke('#474747')
+        .medianStroke('2 #000');
+        
+   //hide whisker
+      series.whiskerWidth(0);
+      series.hoverWhiskerWidth(0);
   
    // adjust labels position for the first series
     series.labels().enabled(true).anchor('leftCenter').position('rightCenter');

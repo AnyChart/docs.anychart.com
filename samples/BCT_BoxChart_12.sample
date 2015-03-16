@@ -53,7 +53,11 @@ anychart.onDocumentReady(function() {
   //hatch fill
   series
      .hatchFill('backwarddiagonal')
-     .fill('#666666', 0.5);
+     .fill('#666666', 0.5)
+     .stroke(null)
+     .stemStroke('#474747')
+     .medianStroke('2 #000');
+  
   
   //initiate chart drawing
   chart.draw();

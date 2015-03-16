@@ -128,8 +128,11 @@ Now we're going to compare February 2015 salaries to January 2015 ones. Let's su
 <th width="88" colspan=2><b>Median</b></th>
 <th width="88" colspan=2><b>Third Quartile</b></th>
 <th width="88" colspan=2><b>Max Salary</b></th>
+<th width="88" colspan=2><b>Outliers</b></th>
 </tr>
 <tr>
+<td>January 2015</td>
+<td>February 2015</td>
 <td>January 2015</td>
 <td>February 2015</td>
 <td>January 2015</td>
@@ -153,6 +156,8 @@ Now we're going to compare February 2015 salaries to January 2015 ones. Let's su
 <td>$1800</td>
 <td>$2100</td>
 <td>$2000</td>
+<td>$2300<br>$1000</td>
+<td>--</td>
 </tr>
 <tr>
 <td>2</td>
@@ -166,6 +171,8 @@ Now we're going to compare February 2015 salaries to January 2015 ones. Let's su
 <td>$3900</td>
 <td>$3700</td>
 <td>$4000</td>
+<td>$4000<br>$2200</td>
+<td>--</td>
 </tr>
 <tr>
 <td>3</td>
@@ -179,6 +186,8 @@ Now we're going to compare February 2015 salaries to January 2015 ones. Let's su
 <td>$2900</td>
 <td>$3000</td>
 <td>$3000</td>
+<td>$3450<br>$1800</td>
+<td>--</td>
 </tr>
 <tr>
 <td>4</td>
@@ -192,6 +201,8 @@ Now we're going to compare February 2015 salaries to January 2015 ones. Let's su
 <td>$6500</td>
 <td>$7000</td>
 <td>$7000</td>
+<td>$7100<br>$3700</td>
+<td>--</td>
 </tr>
 <tr>
 <td>5</td>
@@ -205,6 +216,8 @@ Now we're going to compare February 2015 salaries to January 2015 ones. Let's su
 <td>$8800</td>
 <td>$9500</td>
 <td>$9000</td>
+<td>$9700<br>$7600<br>$4500</td>
+<td>--</td>
 </tr>
 </tbody></table>
 
@@ -236,14 +249,16 @@ That's how it looks like on a chart:
 
 {sample}BCT\_BoxChart\_02{sample}
 
+
+
 ##Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in Axes Basics, Axes Scales and Extra Axes tutorial, in this section we will quickly demonstrate how axis orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in [Axes Basics](../Axes_and_Grids/Axis_Basics), [Axes Scales](../Axes_and_Grids/Scales) and [Extra Axes tutorial](../Axes_and_Grids/Additional_Axes), in this section we will quickly demonstrate how axis orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
 ###Orientation
 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust the {api:anychart.enums.Orientation}**.orientation()**{api} parameter of the {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
-Position depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in Axes Orientation Templates.
+Position depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) Templates.
 
 ```
 chart.xAxis(0).orientation('right');
@@ -256,14 +271,14 @@ And here is the demonstration of this feature on the Single-series sample:
 
 ###Inversion
 
-AnyChart allows scale inversion. Just add the **.inverted** method to the scale you want to invert, for example:
+AnyChart allows scale inversion. Just add the {api:anychart.scales.Base#inverted}**.inverted()**{api} method to the scale you want to invert, for example:
  
 ```
   // adjust y scale
     chart.yScale().inverted(true);
 ```
 
-Only one string changes the view a lot:
+Only one line changes the view a lot:
 
 {sample}BCT\_BoxChart\_04{sample}
 
@@ -273,7 +288,7 @@ In case your data values start far much more than from the beginning of the scal
  You can control these values by setting **.maximum()** and **.minimum()** parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjust the scale, set **.ticks().interval()** as well, in case the default interval is twisted:
 
 ```
-    chart.yScale().minimum('-100').maximum('1000').ticks().interval(100);
+    chart.yScale().minimum('900').maximum('9600').ticks().interval(300);
 ```
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
@@ -310,22 +325,35 @@ Also, styles are used to make charts interactive, you can define how elements wi
 Now, let's look how to apply a simple style to the chart. As we've already said, a style consists of several elements, here is the javascript structure:
 
 ```
-//create box chart series with our data
-var series = chart.box(data);
-var series_1 = chart.box(data_1);
+      //set axes titles settings
+      chart.xAxis()
+         .title(false)
+         .stroke(colorAxis)
+         .stroke(colorAxis)
+         .labels().fontColor(colorAxis);
+      
+      chart.yAxis()
+      .title('$ per month')
+      .stroke(colorAxis)
+      .ticks().stroke(colorAxis);
+      chart.yAxis().title().fontWeight('normal').fontFamily('Verdana').fontSize('14px');
+      chart.yAxis().labels().fontColor(colorAxis);
+      chart.yAxis().title().fontColor(colorTitle);
+      chart.yAxis().minorTicks().stroke(colorAxis);
 
-//set the style
-series 
-    .fill('Gold')
-    .hoverStroke("darkred", 4)
-    .stroke('#56561a', 4)
-    .hatchFill('diagonalbrick', 'gray')
-    .hoverHatchFill('diagonalbrick', 'darkred')
-  //hide whisker
-    .whiskerWidth(0)
-    .hoverWhiskerWidth(0);
+      //create box chart series with our data
+      var series = chart.box(data);
+      series
+        .fill('#82BECA')
+        .stroke(null)
+        .stemStroke('#474747')
+        .medianStroke('2 #000');
+
+      //hide whisker
+      series.whiskerWidth(0);
+      series.hoverWhiskerWidth(0);
 ```
-Using such settings we've created a style that colors boxes in Gold, makes the border rather thick, fills hatch with DiagonalBrick and a couple of effects. Also, we've defined that when the element is hovered it will be highlighted with the dark red thick border and hatch fill colored dark red too. Two last lines makes whiskers invisible.
+Using such settings we've created a style that colors boxes in light Сeladon color, makes the border invisible, colors the median in black and changes the color and the font of the axes. Two last lines makes whiskers invisible.
 Now let's apply these setting to the sample.
 
 {sample}BCT\_BoxChart\_07{sample}  
@@ -334,7 +362,7 @@ Now let's apply these setting to the sample.
 
 In this section we will explain how to add and configure data labels and tooltips.
 If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.polar.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. Adding attributes with values to these methods will change visual appearance, position and format of these elements.
-With the following example let's make data labels appear to the bottom from the boxes, format them to show only the value corresponding to the box and force tooltips to show detailed description.
+With the following example let's make data labels appear to the top from the boxes, format them to show only the number of the range and force tooltips to show detailed description.
 
 
 ```
@@ -401,8 +429,6 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 
 ```
   //hatch fill
-  series_1.hatchFill('soliddiamond');
-  series_2.hatchFill('forwarddiagonal');
   series.hatchFill('backwarddiagonal');
 ```
 
