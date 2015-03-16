@@ -49,14 +49,14 @@ anychart.onDocumentReady(function() {
   column.listen(
     
     // listener type
-    'click',
+    'pointClick',
     
     // function, if listener triggers
     function(e) {
       click(
-        data.mapAs().get((e.target).hoverStatus, 'clickData'),
-        data.mapAs().get((e.target).hoverStatus, 'x'),
-        data.mapAs().get((e.target).hoverStatus, 'fill')
+        data.mapAs().get(e.pointIndex, 'clickData'),
+        data.mapAs().get(e.pointIndex, 'x'),
+        data.mapAs().get(e.pointIndex, 'fill')
       );
     });
   
@@ -90,12 +90,12 @@ anychart.onDocumentReady(function() {
       chart.title().text('Sales Report');
       var column = chart.column(data);
       column.listen(
-        'click',
+        'pointClick',
         function(e) {
           click(
-            data.mapAs().get((e.target).hoverStatus, 'clickData'),
-            data.mapAs().get((e.target).hoverStatus, 'x'),
-            data.mapAs().get((e.target).hoverStatus, 'fill')
+            data.mapAs().get(e.pointIndex, 'clickData'),
+            data.mapAs().get(e.pointIndex, 'x'),
+            data.mapAs().get(e.pointIndex, 'fill')
           );
         });
       chart.container(stage).draw();
