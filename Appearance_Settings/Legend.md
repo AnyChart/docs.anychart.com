@@ -60,7 +60,6 @@ To specify and format your own title for the legend use {api:anychart.core.ui.Ti
       .enabled(true)            // enables background of the legend title
       .fill(null)               // disables background inner color
       .stroke('black');         // set border of the title
-  
 ```
 
 Here is a sample bar chart with formatted title:
@@ -89,4 +88,9 @@ Sample Pie Chart with a legend of a fixed (150px - width, 30% of data plot heigh
 
 ### Background
 
-Legend background allows you to configure the border and the fill of the legend. Method {api:anychart.core.ui.Legend#background}**.background()**{api} controls background visual appearance. To learn more about background setting please study the background tutorial.
+Legend background allows you to configure the border and the fill of the legend. Method {api:anychart.core.ui.Legend#background}**.background()**{api} controls background visual appearance. To learn more about background setting please study the [background tutorial](Background).
+
+{sample}AS\_Legend\_04{sample}
+
+### Size
+
