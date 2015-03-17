@@ -2,16 +2,20 @@
 
 * [Overview](#overview)
 * [Chart](#chart)
- * [Single Series](#single_series)
- * [Multi-series](#multi-series)
-* [Axes](#axes)
- * [Inversion](#inversion)
+ * [Setting the data](#setting_the_data)
+* [Axis](#axis)
+ * [StartAngle and SweepAngle](#startangle_and_sweepangle)
+ * [Ticks](#ticks)
  * [Minimum and Maximum](#minimum_and_maximum)
+ * [Markers](#markers)
+ * [Labels](#labels)
+ * [AxisRange](#axisrange)
 * [Padding](#padding)
 * [Visualization](#visualization)
+ * [Pointers](#pointers)
+ * [Cap](#cap)
  * [Basic Sample](#basic_sample)
-* [Labels and Tooltips](#labels_and_tooltips)
-* [Markers](#markers)
+* [Labels](#labels)
 * [Colors](#colors)
   * [Colorizing Elements](#colorizing_elements)
 
@@ -29,46 +33,78 @@ Note: in this sample AnyChart.swf is used, but you can optimize the page with se
 
 ##Chart
 
-Depending on data model and the visualization purpose the bar chart may contain single series or multi series.
+Depending on data model and the visualization purpose the gauge may contain single series or multi series.
+Let's build a gauge that should look like a speedometer. Step by step, we will make our gauge to look more realistic.
 
-###Single Series
+###Setting the data
 
-Let's see single series bar chart created using the following data - sales of ACME Corp. apparel through different 
-retail channels in one year:
-
-<table width="328" border="1" class="dtTABLE">
-<tbody>
-<tr>
-<th width="210"><b>Retail Channel</b></th>
-<th width="102"><b>Sales  </b></th>
-</tr>
-<tr>
-<td>Department Stores</td>
-<td>$637.166</td>
-</tr>
-<tr>
-<td>Discount Stores</td>
-<td> $721.630</td>
-</tr>
-<tr>
-<td>Men's/Women's Specialty Stores</td>
-<td> $148.662</td>
-</tr>
-<tr>
-<td>Juvenile Specialty Stores</td>
-<td> $78.662</td>
-</tr>
-<tr>
-<td>All other outlets</td>
-<td> $90.000</td>
-</tr>
-</tbody>
-</table>
-
-Now we need to convert this data. In terms of AnyChart data model we have one series of data (Sales) with categories that hold Retail channels names. Each point in series represents one channels and sales amount through this channel. Converted data looks like:
+Let's start with a simple speedometer gauge. First of all, we need to set the data - the speed represented. Let it be 50mph:
 
 ```
-dataSet = anychart.data.set([81,34.5]);
+//create data set on our data
+  dataSet = anychart.data.set([81,34.5]);
+
+//chart type
+  gauge = anychart.circularGauge();
+```
+If we add a line that draws a chart, we'll see the plain frame with a cap in the center:
+```
+  // draw chart
+  gauge.container('container').draw();
 ```
 
-###Multi-series
+That's how it looks like in a sample:
+{sample}BCT\_Gauges\_01{sample}
+
+##Axis
+
+Axis in gauges are not the same as in the other basic chart types. There's no X- and Y-axis, the only axis that a gauge displays and uses is a circular axis that is situated along the frame.
+
+Let's enable the axis to see the changes we make:
+
+```
+//enable the axis
+  var axis = gauge.axis(0);
+```
+
+###StartAngle and SweepAngle
+
+Change the **.startAngle()** parameter to fix the angle you need axes to start from:
+
+```
+//set the angle
+  gauge.axis(0).startAngle(225);
+```  
+
+Axis can be limited setting the **.sweepAngle()** parameter: 
+
+```
+//set the angle
+  gauge.startAngle(225).sweepAngle(180);
+```
+
+###Ticks
+
+###Minimum and Maximum
+
+###Markers
+
+###Labels
+
+###AxisRange
+
+##Padding
+
+##Visualization
+
+###Pointers
+
+###Cap
+
+###Basic Sample
+
+##Labels
+
+##Colors
+
+###Colorizing Elements
