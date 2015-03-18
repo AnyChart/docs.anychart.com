@@ -5,9 +5,15 @@
 
 anychart.onDocumentReady(function() {
   //create data set on our data
-  dataSet = anychart.data.set([81,34.5]);
+  dataSet = anychart.data.set([50]);
 
+  //set the gauge type
   gauge = anychart.circularGauge();
+  
+  //link the data with the gauge
+  gauge.data(dataSet);
+  
+  //draw the chart
   gauge.container('container').draw();
 
 });
