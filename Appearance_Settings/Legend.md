@@ -1,7 +1,14 @@
 # Legend
 
 * [Overview](#overview)
-* [Enabling/Disabling Legend](#enabling/disabling_legend)
+* [Auto Legend](#auto_legend)
+* [Title](#title)
+* [Positioning](#positioning)
+* [Visualization](#visualization)
+ * [Background](#background)
+ * [Size](#size)
+* [Custom Item](#custom_item)
+* [Custom Legend](#custom_legend)
 
 ## Overview
 Legend is a table on a chart listing and explaining the symbols and colors used, usually along with series and/or point data point names and any other additional information that helps user to understand a chart. 
@@ -13,7 +20,7 @@ You can define where legend should be placed on the chart and even create "float
   
 In this article all legends features and setting are explained and demonstrated.
 
-## Enabling/Disabling Legend
+## Auto Legend 
 
 To enable legend you have to specify **.enable(true)** parameter of **.legend()** method:
 
@@ -25,10 +32,9 @@ To enable legend you have to specify **.enable(true)** parameter of **.legend()*
   chart.legend().enabled(true);
 ```
 
-## Easy Auto Legend 
-
 By default legend shows all series names with a symbol that shows the color and the type of the series.
-
+  
+  
 To enable such legend in your chart just enable it:
 
 ```
@@ -81,10 +87,12 @@ Sample Pie Chart with a legend of a fixed (150px - width, 30% of data plot heigh
 
 {sample}AS\_Legend\_03{sample}
 
-* *Note:* possible values for **.align()** parameter are: *Left, Right, Top, Bottom and Center*. Also, possible values depend on the **.position()** parameter. With *Top* and *Bottom* legend position it is possible to use *Left, Right* and *Center* values of **.align()** parameter. For *Left* and *Right* values of **.position()** parameter it's possible to use *Top, Bottom* and *Center* values of **.align()** parameter.
+*Note:* possible values for **.align()** parameter are: *Left, Right, Top, Bottom and Center*. Also, possible values depend on the **.position()** parameter. With *Top* and *Bottom* legend position it is possible to use *Left, Right* and *Center* values of **.align()** parameter. For *Left* and *Right* values of **.position()** parameter it's possible to use *Top, Bottom* and *Center* values of **.align()** parameter.
 
 
-## Appearance
+## Visualization
+
+As far as a legend is a part of a chart, its appearance should be tuned properly. Main aspects of legend visual appearance are described in this section.
 
 ### Background
 
@@ -94,3 +102,44 @@ Legend background allows you to configure the border and the fill of the legend.
 
 ### Size
 
+Legend size is controlled by {api:anychart.core.ui.Legend#height}**.height()**{api} and {api:anychart.core.ui.Legend#width}**.width()**{api} parameters. 
+
+```
+  chart.legend()
+    .height(140)  // set legend height equal to 140px 
+    .width(75)    // set legend width equal to 75px
+```
+
+Here is a sample with adjusted legend size
+
+{sample}AS\_Legend\_05{sample}
+
+## Custom Item
+
+When creating legend you can add your own items with any information you want to see on the legend, to do that use **itemsFormatter()** parameter. 
+
+```
+
+chart.legend()
+    .itemsFormatter(function(items){        // adjust legend items
+      items.push({                          // push into items array
+        text: 'item text '                  // set text of a new item
+      });
+      return items;                         // return items array
+    });
+
+```
+
+In the sample chart below we've used custom item, that adds *Total* data to legend.
+
+{sample}AS\_Legend\_06{sample}
+
+## Custom Legend
+
+AnyChart sets no limits to the amount of legends on one chart plot. Here is a snippet of creating custom legend on a chart plot 
+<!--
+```
+  var customLegend = anychart.ui.legend();
+  legend.itemsProvider(chart.data());
+  
+```-->
