@@ -275,4 +275,4 @@ AnyChart technology allows printing charts out. Some printers may render colors 
   
 To demonstrate hatch fill feature we've edited our speedometer, so now it's completely monochrome.
 
-{sample}BCT\_BarChart\_11{sample}
+{sample}BCT\_Gauges\_11{sample}
