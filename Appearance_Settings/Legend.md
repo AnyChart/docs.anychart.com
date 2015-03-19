@@ -72,6 +72,19 @@ Here is a sample bar chart with formatted title:
 
 {sample}AS\_Legend\_02{sample}
 
+## Easy Auto Legend for Single Series Charts
+
+If you are showing single series chart and want your legend to show all points names and values you should configure legend:
+
+```
+```
+
+<!--Short explanation: -->As you can see to create a legend for single series chart you have to set **categories** value for **.itemsSourceMode()** parameter.
+<!--created <items> subnode and placed <item source="Points"> node in it - to show all points from the chart. 
+Also we've specified a legend items format - to show Point Icon, Point Name and Value. And the last thing - we've set ignore_auto_item="True" - to force legend not to show series in legend.-->
+
+{sample}AS\_Legend\_08{sample}
+
 ## Positioning
 
 Depending on the layout and type of your chart you can position legend to a desired place using {api:anychart.core.ui.Legend#position}**.position()**{api} parameter of {api:anychart.core.ui.Legend}**.legend()**{api} method. 
@@ -136,10 +149,6 @@ In the sample chart below we've used custom item, that adds *Total* data to lege
 
 ## Custom Legend
 
-AnyChart sets no limits to the amount of legends on one chart plot. Here is a snippet of creating custom legend on a chart plot 
-<!--
-```
-  var customLegend = anychart.ui.legend();
-  legend.itemsProvider(chart.data());
-  
-```-->
+AnyChart sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart. 
+
+{sample}AS\_Legend\_07{sample}

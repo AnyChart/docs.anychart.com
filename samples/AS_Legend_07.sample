@@ -102,7 +102,7 @@ anychart.onDocumentReady(function() {
   chart.yAxis().title(null);
   
   // set title
-  chart.title().text('Legend Title Configuration');
+  chart.title().text('Custom Legend');
   
   // set data
   chart.column(Quarter1).name('Quarter 1');
@@ -112,24 +112,23 @@ anychart.onDocumentReady(function() {
   
   // legend settings
   chart.legend()
-    .enabled(true)            // enable legend
-    .position('right')        // set legend position
-    .align('top')             // set legent align
-    .itemsLayout('vertical'); // set items layout
-  chart.background(null);
+    .enabled(true)              // enable legend
+    .position('right')          // set legend position
+    .align('top')               // set legent align
+    .itemsLayout('vertical')    // set items layout
+    .background(null);          // disable legend background
+  
   // settings for legend title  
   chart.legend().title()
     .enabled(true)              // enables legend title
     .text('2004 - Quarters: ')  // set title text
-    .fontFamily('Arial')        // set font family
     .fontColor('red')           // set title text color
     .fontWeight(900)            // set text weight
-    .fontSize(16)               // set font size
     .padding(5)                 // prevent sticking text to borders
     .background()
-    .enabled(true)            // enables background of the legend title
-    .fill(null)               // disables background inner color
-    .stroke('black');         // set border of the title
+      .enabled(true)            // enables background of the legend title
+      .fill(null)               // disables background inner color
+      .stroke('black');         // set border of the title
   
   // prevent chart overlapping by legends
   chart.margin().bottom(stage.height() - johnLegend.getRemainingBounds().getHeight() - 10);
@@ -147,7 +146,6 @@ anychart.onDocumentReady(function() {
           chart.container().height()
         )
       );
-      johnLegend.container(chart.container());
       johnLegend.draw();
       jakeLegend.parentBounds(
         anychart.math.rect(
@@ -157,7 +155,6 @@ anychart.onDocumentReady(function() {
           chart.container().height()
         )
       );
-      jakeLegend.container(chart.container());
       jakeLegend.draw();
       peterLegend.parentBounds(
         anychart.math.rect(
@@ -167,7 +164,6 @@ anychart.onDocumentReady(function() {
           chart.container().height()
         )
       );
-      peterLegend.container(chart.container());
       peterLegend.draw();
     });
 });
