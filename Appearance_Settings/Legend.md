@@ -77,9 +77,12 @@ Here is a sample bar chart with formatted title:
 If you are showing single series chart and want your legend to show all points names and values you should configure legend:
 
 ```
+  chart.legend()
+    .enabled(true)                  // enable legend
+    .itemsSourceMode('categories'); // set source of legend items
 ```
 
-<!--Short explanation: -->As you can see to create a legend for single series chart you have to set **categories** value for **.itemsSourceMode()** parameter.
+<!--Short explanation: -->As you can see, to create a legend for single series chart you have to set **categories** value for **.itemsSourceMode()** parameter.
 <!--created <items> subnode and placed <item source="Points"> node in it - to show all points from the chart. 
 Also we've specified a legend items format - to show Point Icon, Point Name and Value. And the last thing - we've set ignore_auto_item="True" - to force legend not to show series in legend.-->
 
