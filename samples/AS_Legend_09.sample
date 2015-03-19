@@ -19,13 +19,13 @@ anychart.onDocumentReady(function() {
   chart.legend()
     .enabled(true)            // enables legend
     .height(140)              // set legend height
-    .width(95)                // set legend width
+    .width(105)               // set legend width
     .position('left')         // set legend position
     .align('top')             // set legend align
     .itemsLayout('vertical')  // legend items layout
     .paginator()              // paginator settings
       .layout('vertical')     // set paginator layout
-      .orientation('bottom'); // place paginator at the bottom of a legend
+      .orientation('left');   // place paginator at the left of a legend
   
   // draw
   chart.container('container').draw();
