@@ -7,6 +7,7 @@
 * [Visualization](#visualization)
  * [Background](#background)
  * [Size](#size)
+ * [Paging](#paging)
 * [Custom Item](#custom_item)
 * [Custom Legend](#custom_legend)
 
@@ -129,6 +130,26 @@ Legend size is controlled by {api:anychart.core.ui.Legend#height}**.height()**{a
 Here is a sample with adjusted legend size
 
 {sample}AS\_Legend\_05{sample}
+
+### Paging
+
+If legend items can't be displayed on a plot of a legend, {api:anychart.core.ui.Legend#paginator}paginator(){api} method controls legend page. Paginator can be placed anywhere inside the legend.
+
+```
+  // legend settings
+  chart.legend().enabled(true)
+    .paginator()
+      .layout('vertical')       // set paginator layout
+      .orientation('right')     // place paginator on the right
+```
+
+{sample}AS\_Legend\_09{sample}
+
+### Tooltip
+
+If you want to configure legend tooltips - you should do that using .tooltip() methods. You can tune its visual appearance and format. In the following sample we will format tooltips to show detailed description information.
+
+{sample}AS\_Legend\_10{sample}
 
 ## Custom Item
 
