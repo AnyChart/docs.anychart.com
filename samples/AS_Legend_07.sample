@@ -114,9 +114,10 @@ anychart.onDocumentReady(function() {
   chart.legend()
     .enabled(true)              // enable legend
     .position('right')          // set legend position
-    .align('top')               // set legent align
-    .itemsLayout('vertical')    // set items layout
-    .background(null);          // disable legend background
+    .align('top')               // set legend align
+    .itemsLayout('vertical');   // set items layout
+    
+  chart.background(null);        // disable chart background
   
   // settings for legend title  
   chart.legend().title()
