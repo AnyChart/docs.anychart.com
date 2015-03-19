@@ -32,14 +32,14 @@ anychart.onDocumentReady(function() {
   }
   for (var i1=1;i1<data.data()[1].length;i1++){
     jakeLegendItems.push({
-      text: data.data()[0][i1].toString(),  // text of item
+      text: data.data()[1][i1].toString(),  // text of item
       iconType: 'square',                   // type of icons
       iconFill: palette[i1-1]               // color of icons
     })
   }
   for (var i2=1;i2<data.data()[2].length;i2++){
     peterLegendItems.push({
-      text: data.data()[0][i2].toString(),  // text of item
+      text: data.data()[2][i2].toString(),  // text of item
       iconType: 'square',                   // type of icons
       iconFill: palette[i2-1]               // color of icons
     })
