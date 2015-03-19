@@ -79,15 +79,33 @@ anychart.onDocumentReady(function() {
         .position('outside')
         .radius(50);
     
-		//bar
+    //bar
     gauge.bar(0)
-        .axisIndex(1)
+        .axisIndex(0)
         .position('i')
         .dataIndex(1)
-        .width(3)
-        .radius(50)
+        .width(5)
+        .radius(100);
+        
+    //gap
+    gauge.cap()
+        .radius('6%');
+        
+    //gauge label
+    gauge.label()
+        .text('TOYOTA')
+        .anchor('center') //set the position of the label
+        .adjustFontSize(true)
+        .width('55%')
+        .height('7%')
         .zIndex(10);
         
+    //range
+    gauge.range()
+        .radius(70)
+        .from(0).to(120)
+        .endSize('18%');
+
 		//draw the chart
     gauge.container('container').draw();
 });

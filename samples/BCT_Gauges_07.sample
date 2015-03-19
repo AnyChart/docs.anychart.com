@@ -88,6 +88,10 @@ anychart.onDocumentReady(function() {
         .radius(50)
         .zIndex(10);
         
+    //cap
+    gauge.cap()
+        .radius('6%');
+
 		//draw the chart
     gauge.container('container').draw();
 });

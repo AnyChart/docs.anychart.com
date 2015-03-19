@@ -16,6 +16,7 @@
 * [Range](#range)
 * [Colors](#colors)
   * [Colorizing Elements](#colorizing_elements)
+* [Hatch Fills](#hatch_fills)
 
 
 
@@ -181,7 +182,6 @@ There are 4 different types of pointers avaliable: needle, knob, bar and marker.
         //needle
     gauge.needle(0)
         .enabled(true)
-        .stroke('1px rgba(2,2,2,.2)')
         .startRadius('-5%')
         .endRadius('80%')
         .middleRadius(0)
@@ -200,13 +200,12 @@ There are 4 different types of pointers avaliable: needle, knob, bar and marker.
     
     //bar
     gauge.bar(0)
-        .axisIndex(0)
+        .axisIndex(1)
         .position('i')
         .dataIndex(1)
-        .fill('#F0673B .9')
-        .stroke('#F0673B')
-        .width(5)
-        .radius(100);
+        .width(3)
+        .radius(50)
+        .zIndex(10);
 ```
 {sample}BCT\_Gauges\_06{sample}
 
@@ -214,28 +213,66 @@ Knob is a full-circular pointer that is usually used with the needle and designe
 
 ###Cap
 
+Cap in gauges has no practical meaning: its purpose is to make a gauge on screen to look more like a usual gauge. Let's enable it and fix to fit it to the look of the gauge.
 
-
+```
+ //cap
+    gauge.cap()
+        .radius('6%');
+```
+{sample}BCT\_Gauges\_07{sample}
 
 ##Label
 
-Like with any other chart type, we can set the chart label and adjust it:
+Like with any other chart type, we can set the chart label and adjust it. Let our speedometer be for the TOYOTA car:
 
 ```
-        //gauge label
+    //gauge label
     gauge.label()
-            .text('TOYOTA')
-            .anchor('center'); //set the position of the label
+        .text('TOYOTA')
+        .anchor('center') //set the position of the label
+        .adjustFontSize(true)
+        .width('55%')
+        .height('7%')
+        .zIndex(10);
 ```
+
+{sample}BCT\_Gauges\_08{sample}
 
 ##Range
 
 ```
+    //range
     gauge.range()
-        .radius(60)
-        .from(0).to(120);
+        .radius(70)
+        .from(0).to(120)
+        .endSize('18%');
 ```
+
+{sample}BCT\_Gauges\_09{sample}
 
 ##Colors
 
+AnyChart uses default color palette to colorize data elements of chart automatically if you have not define special colors.
+
 ###Colorizing Elements
+
+As you see, our speedometer does not look attractive at the moment. Let's colorize its elements to make the look of the speedometer more realistic and learn at once, how to apply different colors to different data. To apply the color to the exact element we need to set {api:anychart.graphics.vector.Fill}**.fill()**{api}  and {api:anychart.graphics.vector.Stroke}**.stroke()**{api} parameters or **.fontColor()** for the labels. Let's change the colors to the elements on our sample:
+
+{sample}BCT\_Gauges\_10{sample}
+
+In the sample above we have set the colors to the elements, besides that we have changed positions and sizes of several elements.
+
+**Important Note:**
+
+AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)" or "AliceBlue" or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
+
+* Different ways of [setting colors](../Appearance_Settings/Color_Management) of elements
+
+## Hatch Fills
+
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see the [Hatch Fill](../Appearance_Settings/Hatch_Fill) tutorial.
+  
+To demonstrate hatch fill feature we've edited our speedometer, so now it's completely monochrome.
+
+{sample}BCT\_BarChart\_11{sample}
