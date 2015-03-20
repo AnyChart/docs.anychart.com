@@ -49,8 +49,8 @@ When using Bubble chart on a categorized plot:
 ### Single-Series
 
 Let's see single series bubble chart created using the sample data - ACME Corp. sales data for the three different 
-products, we will compare a number of units sold and profit using a bubble chart:
-
+products, we will compare a number of units sold and profit using a bubble chart: 
+  
 <table width="376" border="1" class="dtTABLE">
 <tbody>
 <tr>
