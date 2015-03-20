@@ -56,7 +56,7 @@ For example, there is some information about the weather in three cities, and we
 Usually the solution is to create three sets for a line chart with three series:
 
 <table border="1" class="dtTABLE"><tbody>
-<tr>   
+<tr>
 <th>Date</th>
 <th>New York</th>
 <th>Date</b></th>
@@ -64,7 +64,7 @@ Usually the solution is to create three sets for a line chart with three series:
 <th>Date</th>
 <th>Los Angeles</th>
 </tr>
-<tr>   
+<tr>
 <td>2014/6/25</td>
 <td>28</td>
 <td>2014/6/25</td>
@@ -72,7 +72,7 @@ Usually the solution is to create three sets for a line chart with three series:
 <td>2014/6/25</td>
 <td>28</td>
 </tr>
-<tr>   
+<tr>
 <td>2014/6/26</td>
 <td>26</td>
 <td>2014/6/26</td>
@@ -80,7 +80,7 @@ Usually the solution is to create three sets for a line chart with three series:
 <td>2014/6/26</td>
 <td>26</td>
 </tr>
-<tr>   
+<tr>
 <td>2014/6/27 </td>
 <td>27</td>
 <td>2014/6/27</td>
@@ -96,7 +96,7 @@ Usually the solution is to create three sets for a line chart with three series:
 <td>2014/6/28</td>
 <td>27</td>
 </tr>
-<tr>   
+<tr>
 <td>2014/6/29</td>
 <td>29</td>
 <td>2014/6/29</td>
@@ -104,7 +104,7 @@ Usually the solution is to create three sets for a line chart with three series:
 <td>2014/6/29</td>
 <td>28</td>
 </tr>
-<tr>   
+<tr>
 <td>2014/6/30 </td>
 <td>28</td>
 <td>2014/6/30</td>
@@ -112,7 +112,7 @@ Usually the solution is to create three sets for a line chart with three series:
 <td>2014/6/30</td>
 <td>27</td>
 </tr>
-</tbody> 
+</tbody>
 </table>
 
 In simple cases it is rather simple and you can allow some data duplication. But creating something complex, like a dashboard, may become a real pain, especially when you need to append, update or remove some data from all sets to sync them.  
