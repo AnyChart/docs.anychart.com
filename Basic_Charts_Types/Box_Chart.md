@@ -123,12 +123,12 @@ Now we're going to compare February 2015 salaries to January 2015 ones. Let's su
 <table width="287" border="1" class="dtTABLE">
 <tbody><tr align=center>
 <th width="50" rowspan=2 align=center><b>Range</b></th>
-<th width="100" colspan=2><b>Min Salary, $</b></th>
-<th width="100" colspan=2><b>First Quartile, $</b></th>
-<th width="100" colspan=2><b>Median, $</b></th>
-<th width="100" colspan=2><b>Third Quartile, $</b></th>
-<th width="100" colspan=2><b>Max Salary, $</b></th>
-<th width="100" colspan=2><b>Outliers, $</b></th>
+<th width="105" colspan=2><b>Min Salary, $</b></th>
+<th width="105" colspan=2><b>First Quartile, $</b></th>
+<th width="105" colspan=2><b>Median, $</b></th>
+<th width="105" colspan=2><b>Third Quartile, $</b></th>
+<th width="105" colspan=2><b>Max Salary, $</b></th>
+<th width="105" colspan=2><b>Outliers, $</b></th>
 </tr>
 <tr align=center>
 <td>Jan 2015</td>
