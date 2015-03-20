@@ -101,15 +101,15 @@ Let's compare year 2003 sales to year 2004 product sales:
 <tbody>
 <tr>
 <th width="227"><b>Year</b></th>
-<th width="141" colspan="2"><b>Year 2003 Sales</b></th>  
+<th width="141" colspan="2"><b>Year 2003 Sales</b></th>
 <th width="141" colspan="2"><b>Year 2004 Sales</b></th>
 </tr>
 <tr>
 <th width="227"><b>Product</b></th>
-<th width="141"><b>Units</b></th>  
-<th width="141"><b>Profit</b></th>    
-<th width="141"><b>Units</b></th>  
-<th width="141"><b>Profit</b></th>    
+<th width="141"><b>Units</b></th>
+<th width="141"><b>Profit</b></th>
+<th width="141"><b>Units</b></th>
+<th width="141"><b>Profit</b></th>
 </tr>  
 <tr>
 <td>Product A</td>
