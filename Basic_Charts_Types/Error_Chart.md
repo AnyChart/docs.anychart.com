@@ -23,7 +23,7 @@ Here is the list of series compatible with error bars:
 
 ### Cartesian
 
-To start configuration of error bar you can go with error() method: (ссылка)
+To start configuration of error bar you can go with {api:anychart.core.cartesian.series.Base#error}**.error()**{api} method:
 
 ```
 //create chart
