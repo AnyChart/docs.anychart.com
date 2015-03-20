@@ -98,7 +98,8 @@ To compare two or more data rows you should use multi-series bar charts as shown
 Let's compare year 2003 sales to year 2004 product sales:
 
 <table width="536" border="1" class="dtTABLE">
-<tbody><tr>
+<tbody>
+<tr>
 <th width="227"><b>Year</b></th>
 <th width="141" colspan="2"><b>Year 2003 Sales</b></th>  
 <th width="141" colspan="2"><b>Year 2004 Sales</b></th>
