@@ -16,7 +16,6 @@
 * [Range](#range)
 * [Colors](#colors)
   * [Colorizing Elements](#colorizing_elements)
-* [Hatch Fills](#hatch_fills)
 
 
 
@@ -151,32 +150,13 @@ Look at the sample to make it clear:
 
 ##Visualization
 
-In this section we will talk about other elements of Gauges and demonstrate how a style can be applied.
-
-The main idea of styles is to segregate visualization and data definition. Visual appearance of any chart is defined using certain styles and then you just apply the style to the certain data elements.
-
-Also, styles are used to make charts interactive, so you can define how elements will behave by default, when hovered, etc.
-
-###Basic Sample
-
-Let's look what is a simple style. As we've already said  a style consists of several elements, here is an javascript structure:
-
-```
-//scale settings
-    axis.scale()
-        .minimum(0)
-        .maximum(120)
-        .ticks({interval: 10})
-        .minorTicks({interval: 1});
-```
-
-Actually, we have already done this before; put your attention to the form of the lines. This way of setting the parameters just makes the code easier to read and understand.
+In this section we will talk about other elements of Gauges and demonstrate how to apply them.
 
 ###Pointers
 
-As you may remember, we have defined some data at the beginning of the article, but there's still no data showm on any of the samples. That's because we haven't enabled a pointer yet.
+As you may remember, we have defined some data at the beginning of the article, but there's still no data shown on any of the samples. That's because we haven't enabled a pointer yet.
 
-There are 4 different types of pointers avaliable: needle, knob, bar and marker. Let's add the second axis and the second value in our dataSet to make some sense out of all these pointers:
+There are 4 different types of pointers avaliable: needle, knob, bar and marker. Knob is a full-circular pointer that is usually used with the needle and designed to look like a tuner of a part of electronics (audio, microwave, oven, etc.), so we don't describe it in here. Let's add the second axis and the second value in our dataSet to make some sense out of the rest pointers:
 
 ```
         //needle
@@ -191,7 +171,7 @@ There are 4 different types of pointers avaliable: needle, knob, bar and marker.
         
         //marker
     gauge.marker(0)
-        .axisIndex(1)
+        .axisIndex(1)   
         .dataIndex(1)
         .size(7)
         .type('triangledown')
@@ -209,11 +189,13 @@ There are 4 different types of pointers avaliable: needle, knob, bar and marker.
 ```
 {sample}BCT\_Gauges\_06{sample}
 
-Knob is a full-circular pointer that is usually used with the needle and designed to look like a tuner of a part of electronics (audio, microwave, oven, etc.), so we don't describe it in here. 
+To bind the pointers to the axis and data we want them to show, we use {api:}**.axisIndex()**{api} and {api:}**.dataIndex()**{api} methods. The value transmitted to the method is the number of axis or data accordingly.
+
+For more information look up the [Pointers and Data](../Gauges/Pointers_and_Data) tutorial.
 
 ###Cap
 
-Cap in gauges has no practical meaning: its purpose is to make a gauge on screen to look more like a usual gauge. Let's enable it and fix to fit it to the look of the gauge.
+Cap in gauges has no practical meaning: its purpose is to make an on-screen gauge to look more like a usual gauge. Let's enable and fix it to fit its look to the gauge.
 
 ```
  //cap
@@ -224,12 +206,12 @@ Cap in gauges has no practical meaning: its purpose is to make a gauge on screen
 
 ##Label
 
-Like with any other chart type, we can set the chart label and adjust it. Let our speedometer be for the TOYOTA car:
+Like with any other chart type, we can set the chart label and adjust it. Let our speedometer be for the car of Albany brand:
 
 ```
     //gauge label
     gauge.label()
-        .text('TOYOTA')
+        .text('ALBANY')
         .anchor('center') //set the position of the label
         .adjustFontSize(true)
         .width('55%')
@@ -269,10 +251,3 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 
 * Different ways of [setting colors](../Appearance_Settings/Color_Management) of elements
 
-## Hatch Fills
-
-AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see the [Hatch Fill](../Appearance_Settings/Hatch_Fill) tutorial.
-  
-To demonstrate hatch fill feature we've edited our speedometer, so now it's completely monochrome.
-
-{sample}BCT\_Gauges\_11{sample}

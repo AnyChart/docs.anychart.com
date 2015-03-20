@@ -109,7 +109,7 @@ anychart.onDocumentReady(function() {
         
     //gauge label
     gauge.label()
-        .text('TOYOTA')
+        .text('ALBANY')
         .fontColor('#666666')
         .anchor('center') //set the position of the label
         .fontSize(45)
