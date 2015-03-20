@@ -102,37 +102,34 @@ Let's compare year 2003 sales to year 2004 product sales:
 <table width="536" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th width="227"><b>Year</b></th>
-<th width="141" colspan="2"><b>Year 2003 Sales</b></th>  
-<th width="141" colspan="2"><b>Year 2004 Sales</b></th>
+<th width="227"><b>Retail Channel</b></th>
+<th width="141"><b>Year 2003 Sales</b></th>
+<th width="141"><b>Year 2004 Sales</b></th>
 </tr>
 <tr>
-<th width="227"><b>Product</b></th>
-<th width="141"><b>Units</b></th>  
-<th width="141"><b>Profit</b></th>    
-<th width="141"><b>Units</b></th>  
-<th width="141"><b>Profit</b></th>    
-</tr>  
-<tr>
-<td>Product A</td>
-<td>637</td>
-<td>$6</td>
-<td>630</td>
-<td>$12</td>
+<td>Department Stores</td>
+<td>$637.166</td>
+<td>$737.166</td>
 </tr>
 <tr>
-<td>Product B</td>
-<td>72</td>
-<td>$14</td>
-<td>32</td>
-<td>$10</td>
+<td>Discount Stores</td>
+<td> $721.630</td>
+<td>$537.166</td>
 </tr>
 <tr>
-<td>Product C</td>
-<td>48</td>
-<td>$10</td>
-<td>48</td>
-<td>$20</td>
+<td>Men's/Women's Specialty Stores</td>
+<td> $148.662</td>
+<td>$188.662</td>
+</tr>
+<tr>
+<td>Juvenile Specialty Stores</td>
+<td> $78.662</td>
+<td>$178.662</td>
+</tr>
+<tr>
+<td>All other outlets</td>
+<td> $90.000</td>
+<td>$89.000</td>
 </tr>
 </tbody>
 </table>
