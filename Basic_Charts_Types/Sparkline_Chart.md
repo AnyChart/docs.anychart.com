@@ -333,7 +333,7 @@ You can add labels not to all points, but to special ones, e.g. for the maximum 
 
 {sample :width 688 :height 240}BCT\_Sparkline\_Chart\_16{sample}
 
-Note that the min and the max values are counted themselves.
+Note that the min and the max values are counted by themselves.
 
 It's also possible to emphasize any other point besides the special ones. To colorize any normal point you should define the color for this point while setting the data:
 
