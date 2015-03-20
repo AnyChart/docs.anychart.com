@@ -52,27 +52,29 @@ Let's see single series bubble chart created using the sample data - ACME Corp. 
 products, we will compare a number of units sold and profit using a bubble chart:
 
 <table width="376" border="1" class="dtTABLE">
-<tbody><tr>
+<tbody>
+<tr>
 <th width="214"><b>Product</b></th>
 <th width="70"><b>Units</b></th>
-<th width="70"><b>Profit</b></th>	
+<th width="70"><b>Profit</b></th>
 </tr>
 <tr>
 <td>Product A </td>
 <td>637</td>
-<td>$6</td>	
+<td>$6</td>
 </tr>
 <tr>
 <td>Product B </td>
 <td>72</td>
-<td>$14</td>	
+<td>$14</td>
 </tr>
 <tr>
 <td>Product C </td>
 <td>48</td>
 <td>$10</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
 Now we need to convert this data table into format acceptable by AnyChart. In terms of 
 AnyChart data model, we have one series of data (Sales) with categories that hold Product names. Each point in series represents product, units sold and a profit amount. Converted data looks like:
@@ -132,7 +134,8 @@ Let's compare year 2003 sales to year 2004 product sales:
 <td>48</td>
 <td>$20</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
 As we did in single-series bubble sample above now we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have bigger data and we have to clarify which number means what, so we use the {api:anychart.data.Set#mapAs}**mapAs()**{api} method for it.
 
