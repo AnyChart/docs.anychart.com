@@ -12,14 +12,14 @@
 * [Custom Legend](#custom_legend)
 
 ## Overview
-Legend is a table on a chart listing and explaining the symbols and colors used, usually along with series and/or point data point names and any other additional information that helps user to understand a chart. 
+Legend is a table on a chart listing and explaining the symbols and colors used and with additional information that helps user to understand a chart. 
   
   
 In this article all legends features and setting are explained and demonstrated.
 
 ## Auto Legend 
 
-To enable legend you have to specify **.enable(true)** parameter of **.legend()** method:
+To enable legend you have to specify **.enable(true)** parameter of {api:anychart.core.ui.Legend}**.legend()**{api} method:
 
 ```
   // create chart
@@ -95,7 +95,7 @@ As an addition to the {api:anychart.core.ui.Legend#position}**.position()**{api}
 
 {sample}AS\_Legend\_04{sample}
 
-*Note:* possible values for **.align()** parameter are: *Left, Right, Top, Bottom and Center*. Also, possible values depend on the **.position()** parameter. With *Top* and *Bottom* legend position it is possible to use *Left, Right* and *Center* values of **.align()** parameter. For *Left* and *Right* values of **.position()** parameter it's possible to use *Top, Bottom* and *Center* values of **.align()** parameter.
+*Note:* possible values for {api:anychart.core.ui.Legend#align}**.align()**{api} parameter are: *Left, Right, Top, Bottom and Center*. Also, possible values depend on the {api:anychart.core.ui.Legend#position}**.position()**{api} parameter. With *Top* and *Bottom* legend position it is possible to use *Left, Right* and *Center* values of {api:anychart.core.ui.Legend#align}**.align()**{api} parameter. For *Left* and *Right* values of {api:anychart.core.ui.Legend#position}**.position()**{api} parameter it's possible to use *Top, Bottom* and *Center* values of {api:anychart.core.ui.Legend#align}**.align()**{api} parameter.
 
 ## Visualization
 
@@ -143,7 +143,7 @@ If legend items can't be displayed on a plot of a legend, {api:anychart.core.ui.
 
 ### Tooltip
 
-If you want to configure legend tooltips - you should do that using .tooltip() methods. You can tune its visual appearance and format. In the following sample we will format tooltips to show detailed description information.
+If you want to configure legend tooltips - you should do that using {api:anychart.core.ui.Legend#tooltip}**.tooltip(){api} methods. You can tune its visual appearance and format. In the following sample we will format tooltips to show detailed description information.
 
 {sample}AS\_Legend\_08{sample}
 
