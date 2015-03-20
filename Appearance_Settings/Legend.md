@@ -15,10 +15,6 @@
 Legend is a table on a chart listing and explaining the symbols and colors used, usually along with series and/or point data point names and any other additional information that helps user to understand a chart. 
   
   
-<!--In AnyChart Legend configuration is all the same for all chart types.-->
-You can define where legend should be placed on the chart and even create "floating" legend to save the space.
-  
-  
 In this article all legends features and setting are explained and demonstrated.
 
 ## Auto Legend 
@@ -46,7 +42,7 @@ To enable such legend in your chart just enable it:
 
 ## Title
 
-Sometimes you need the title to a legend and sometimes it is superfluous: to enable legend title you have to set **.enabled(true)** parameter of a legend title method as it is shown below
+Sometimes you need the title to a legend and sometimes it is superfluous: to enable legend title you have to set {api:anychart.core.ui.Title#enabled}**.enabled(true)**{api} parameter of a legend title method as it is shown below
 
 ```
   chart.legend().title().enabled(true);
@@ -69,7 +65,7 @@ To specify and format your own title for the legend use {api:anychart.core.ui.Ti
       .stroke('black');         // set border of the title
 ```
 
-Here is a sample bar chart with formatted title:
+Here is a sample bar chart and the legend has tuned title:
 
 {sample}AS\_Legend\_02{sample}
 
@@ -83,29 +79,23 @@ If you are showing single series chart and want your legend to show all points n
     .itemsSourceMode('categories'); // set source of legend items
 ```
 
-<!--Short explanation: -->As you can see, to create a legend for single series chart you have to set **categories** value for **.itemsSourceMode()** parameter.
-<!--created <items> subnode and placed <item source="Points"> node in it - to show all points from the chart. 
-Also we've specified a legend items format - to show Point Icon, Point Name and Value. And the last thing - we've set ignore_auto_item="True" - to force legend not to show series in legend.-->
+To create a legend for single series chart you just have to set **categories** value for **.itemsSourceMode()** parameter.
+  
+  
+In the live sample, please notice that when you move the mouse over an element in legend - point is highlighted:
 
-{sample}AS\_Legend\_08{sample}
+{sample}AS\_Legend\_03{sample}
 
 ## Positioning
 
 Depending on the layout and type of your chart you can position legend to a desired place using {api:anychart.core.ui.Legend#position}**.position()**{api} parameter of {api:anychart.core.ui.Legend}**.legend()**{api} method. 
   
   
-As addition to the {api:anychart.core.ui.Legend#position}**.position()**{api} parameter, parameter {api:anychart.core.ui.Legend#align}**.align()**{api} controls legend alignment.
-  
-  
-The space between data plot and legend is controlled using padding attribute.
-  
-  
-Sample Pie Chart with a legend of a fixed (150px - width, 30% of data plot height) size positioned to the "Left" of the chart, aligned to " Near", with padding of 0 pixels:
+As an addition to the {api:anychart.core.ui.Legend#position}**.position()**{api} parameter, parameter {api:anychart.core.ui.Legend#align}**.align()**{api} controls legend alignment.
 
-{sample}AS\_Legend\_03{sample}
+{sample}AS\_Legend\_04{sample}
 
 *Note:* possible values for **.align()** parameter are: *Left, Right, Top, Bottom and Center*. Also, possible values depend on the **.position()** parameter. With *Top* and *Bottom* legend position it is possible to use *Left, Right* and *Center* values of **.align()** parameter. For *Left* and *Right* values of **.position()** parameter it's possible to use *Top, Bottom* and *Center* values of **.align()** parameter.
-
 
 ## Visualization
 
@@ -113,13 +103,16 @@ As far as a legend is a part of a chart, its appearance should be tuned properly
 
 ### Background
 
-Legend background allows you to configure the border and the fill of the legend. Method {api:anychart.core.ui.Legend#background}**.background()**{api} controls background visual appearance. To learn more about background setting please study the [background tutorial](Background).
+Legend background allows you to configure the border and the inner color of the legend. Method {api:anychart.core.ui.Legend#background}**.background()**{api} controls background visual appearance. To learn more about background setting please study the [background tutorial](Background).
 
-{sample}AS\_Legend\_04{sample}
+{sample}AS\_Legend\_05{sample}
 
 ### Size
 
 Legend size is controlled by {api:anychart.core.ui.Legend#height}**.height()**{api} and {api:anychart.core.ui.Legend#width}**.width()**{api} parameters. 
+  
+  
+Sample Pie Chart with a legend of a fixed (75px - width, 140px height) size positioned to the *"Left"* of the chart, aligned to *"Top"*, with padding of 10 pixels:
 
 ```
   chart.legend()
@@ -129,7 +122,10 @@ Legend size is controlled by {api:anychart.core.ui.Legend#height}**.height()**{a
 
 Here is a sample with adjusted legend size
 
-{sample}AS\_Legend\_05{sample}
+{sample}AS\_Legend\_06{sample}
+
+*Note:* the space between data plot and legend is controlled using {api:anychart.core.ui.Legend#padding}**padding()**{api} parameter.
+
 
 ### Paging
 
@@ -143,13 +139,13 @@ If legend items can't be displayed on a plot of a legend, {api:anychart.core.ui.
       .orientation('right')     // place paginator on the right
 ```
 
-{sample}AS\_Legend\_09{sample}
+{sample}AS\_Legend\_07{sample}
 
 ### Tooltip
 
 If you want to configure legend tooltips - you should do that using .tooltip() methods. You can tune its visual appearance and format. In the following sample we will format tooltips to show detailed description information.
 
-{sample}AS\_Legend\_10{sample}
+{sample}AS\_Legend\_08{sample}
 
 ## Custom Item
 
@@ -169,10 +165,10 @@ chart.legend()
 
 In the sample chart below we've used custom item, that adds *Total* data to legend.
 
-{sample}AS\_Legend\_06{sample}
+{sample}AS\_Legend\_09{sample}
 
 ## Custom Legend
 
 AnyChart sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart. 
 
-{sample}AS\_Legend\_07{sample}
+{sample}AS\_Legend\_10{sample}

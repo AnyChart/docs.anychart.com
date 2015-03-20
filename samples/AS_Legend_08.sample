@@ -4,24 +4,38 @@
 
 anychart.onDocumentReady(function() {
   
-  //set chart type
-  var chart = anychart.column();
-  
-  // set data
-  chart.column([
-    {x: 'John', value: 10000},
-    {x: 'Jake', value: 12000},
-    {x: 'Peter', value: 16000}
+  // data
+  var data = anychart.data.set([
+    {x: "John", value: 10000},
+    {x: "Jake", value: 12000},
+    {x: "Peter", value: 16000},
+    {x: "Alex", value: 11000},
+    {x: "Tom", value: 13000},
+    {x: "Julia", value: 18000},
+    {x: "Mary", value: 9000}
   ]);
   
-  // set chart title
-  chart.title().text('Legend for Single Series');
+  // chart type
+  var chart = anychart.column();
+  
+  // set chart data
+  chart.column(data);
   
   // legend settings
   chart.legend()
-    .enabled(true)                  // enable legend
-    .itemsSourceMode('categories'); // set source of legend items
+    .enabled(true)                  // enables legend
+    .position('bottom')             // set legend position
+    .align('center')                // set legend align
+    .itemsSourceMode('categories')  // set source of legend items
+    .itemsLayout('horizontal')      // legend items layout
+    .tooltip()                      // tooltip settings
+      .contentFormatter(function(item){
+        console.log(item);
+        var tooltipText = 'Manager: ' + data3.mapAs().get(item.index, 'x') 
+        + '\nSales: ' + data3.mapAs().get(item.index, 'value');
+        return tooltipText; 
+    });
   
-  // set container and draw chart
+  // draw
   chart.container('container').draw();
 });

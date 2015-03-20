@@ -4,24 +4,24 @@
 
 anychart.onDocumentReady(function() {
   
-  // set data and define chart type
-  chart = anychart.pieChart([
-    {name: "John", value: 10000},
-    {name: "Jake", value: 12000},
-    {name: "Peter", value: 16000},
-    {name: "Alex", value: 11000},
-    {name: "Tom", value: 13000},
-    {name: "Julia", value: 18000},
-    {name: "Mary", value: 9000}
+  //set chart type
+  var chart = anychart.column();
   
+  // set data
+  chart.column([
+    {x: 'John', value: 10000},
+    {x: 'Jake', value: 12000},
+    {x: 'Peter', value: 16000}
   ]);
   
-  chart.legend()
-    .enabled(true)            // enables legend
-    .position('left')         // set legend position
-    .align('top')             // set legend align
-    .itemsLayout('vertical'); // set layout of legend items
+  // set chart title
+  chart.title().text('Legend for Single Series');
   
-  // draw chart
+  // legend settings
+  chart.legend()
+    .enabled(true)                  // enable legend
+    .itemsSourceMode('categories'); // set source of legend items
+  
+  // set container and draw chart
   chart.container('container').draw();
 });
