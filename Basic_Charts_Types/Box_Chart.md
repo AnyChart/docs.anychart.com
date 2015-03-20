@@ -121,102 +121,102 @@ To compare two or more data sets you have to use multi-series area charts as it 
 Now we're going to compare February 2015 salaries to January 2015 ones. Let's suppose January 2015 salaries as in the table below:
 
 <table width="287" border="1" class="dtTABLE">
-<tbody><tr>
-<th width="88" rowspan=2><b>Range</b></th>
-<th width="88" colspan=2><b>Min Salary</b></th>
-<th width="88" colspan=2><b>First Quartile</b></th>
-<th width="88" colspan=2><b>Median</b></th>
-<th width="88" colspan=2><b>Third Quartile</b></th>
-<th width="88" colspan=2><b>Max Salary</b></th>
-<th width="88" colspan=2><b>Outliers</b></th>
+<tbody><tr align=center>
+<th width="50" rowspan=2 align=center><b>Range</b></th>
+<th width="100" colspan=2><b>Min Salary,<br>$</b></th>
+<th width="100" colspan=2><b>First Quartile,<br>$</b></th>
+<th width="100" colspan=2><b>Median,<br>$</b></th>
+<th width="100" colspan=2><b>Third Quartile,<br>$</b></th>
+<th width="100" colspan=2><b>Max Salary,<br>$</b></th>
+<th width="100" colspan=2><b>Outliers,<br>$</b></th>
 </tr>
-<tr>
-<td>January 2015</td>
-<td>February 2015</td>
-<td>January 2015</td>
-<td>February 2015</td>
-<td>January 2015</td>
-<td>February 2015</td>
-<td>January 2015</td>
-<td>February 2015</td>
-<td>January 2015</td>
-<td>February 2015</td>
-<td>January 2015</td>
-<td>February 2015</td>
+<tr align=center>
+<td>Jan 2015</td>
+<td>Feb 2015</td>
+<td>Jan 2015</td>
+<td>Feb 2015</td>
+<td>Jan 2015</td>
+<td>Feb 2015</td>
+<td>Jan 2015</td>
+<td>Feb 2015</td>
+<td>Jan 2015</td>
+<td>Feb 2015</td>
+<td>Jan 2015</td>
+<td>Feb 2015</td>
 </tr>
 <tr>
 <td>1</td>
-<td>$1300</td>
-<td>$1000</td>
-<td>$1400</td>
-<td>$1050</td>
-<td>$1700</td>
-<td>$1200</td>
-<td>$2000</td>
-<td>$1800</td>
-<td>$2100</td>
-<td>$2000</td>
-<td>$2300<br>$1000</td>
+<td>1300</td>
+<td>1000</td>
+<td>1400</td>
+<td>1050</td>
+<td>1700</td>
+<td>1200</td>
+<td>2000</td>
+<td>1800</td>
+<td>2100</td>
+<td>2000</td>
+<td>2300<br>1000</td>
 <td>--</td>
 </tr>
 <tr>
 <td>2</td>
-<td>$2500</td>
-<td>$2500</td>
-<td>$3400</td>
-<td>$3000</td>
-<td>$3500</td>
-<td>$3800</td>
-<td>$3600</td>
-<td>$3900</td>
-<td>$3700</td>
-<td>$4000</td>
-<td>$4000<br>$2200</td>
+<td>2500</td>
+<td>2500</td>
+<td>3400</td>
+<td>3000</td>
+<td>3500</td>
+<td>3800</td>
+<td>3600</td>
+<td>3900</td>
+<td>3700</td>
+<td>4000</td>
+<td>4000<br>2200</td>
 <td>--</td>
 </tr>
 <tr>
 <td>3</td>
-<td>$2000</td>
-<td>$2000</td>
-<td>$2300</td>
-<td>$2300</td>
-<td>$2500</td>
-<td>$2500</td>
-<td>$2900</td>
-<td>$2900</td>
-<td>$3000</td>
-<td>$3000</td>
-<td>$3450<br>$1800</td>
+<td>2000</td>
+<td>2000</td>
+<td>2300</td>
+<td>2300</td>
+<td>2500</td>
+<td>2500</td>
+<td>2900</td>
+<td>2900</td>
+<td>3000</td>
+<td>3000</td>
+<td>3450<br>1800</td>
 <td>--</td>
 </tr>
 <tr>
 <td>4</td>
-<td>$4000</td>
-<td>$4000</td>
-<td>$5000</td>
-<td>$5000</td>
-<td>$5500</td>
-<td>$5500</td>
-<td>$6000</td>
-<td>$6500</td>
-<td>$7000</td>
-<td>$7000</td>
-<td>$7100<br>$3700</td>
+<td>4000</td>
+<td>4000</td>
+<td>5000</td>
+<td>5000</td>
+<td>5500</td>
+<td>5500</td>
+<td>6000</td>
+<td>6500</td>
+<td>7000</td>
+<td>7000</td>
+<td>7100<br>3700</td>
 <td>--</td>
 </tr>
 <tr>
 <td>5</td>
-<td>$8100</td>
-<td>$8000</td>
-<td>$8400</td>
-<td>$8400</td>
-<td>$8500</td>
-<td>$8500</td>
-<td>$9000</td>
-<td>$8800</td>
-<td>$9500</td>
-<td>$9000</td>
-<td>$9700<br>$7600<br>$4500</td>
+<td>8100</td>
+<td>8000</td>
+<td>8400</td>
+<td>8400</td>
+<td>8500</td>
+<td>8500</td>
+<td>9000</td>
+<td>8800</td>
+<td>9500</td>
+<td>9000</td>
+<td>9700<br>7600<br>4500</td>
 <td>--</td>
 </tr>
 </tbody></table>
@@ -285,7 +285,7 @@ Only one line changes the view a lot:
 ###Minimum and maximum
 
 In case your data values start far much more than from the beginning of the scale or end far from the point you really need to show and analyse, you may have no desire to keep any empty space in the chart. Then use this ability of AnyChart to set the minimum and the maximum values shown on the axis.
- You can control these values by setting **.maximum()** and **.minimum()** parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjust the scale, set **.ticks().interval()** as well, in case the default interval is twisted:
+ You can control these values by setting {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjust the scale, set {api:anychart.scales.ScatterTicks#interval}**.ticks().interval()**{api} as well, in case the default interval is twisted:
 
 ```
     chart.yScale().minimum('900').maximum('9600').ticks().interval(300);
@@ -353,7 +353,7 @@ Now, let's look how to apply a simple style to the chart. As we've already said,
       series.whiskerWidth(0);
       series.hoverWhiskerWidth(0);
 ```
-Using such settings we've created a style that colors boxes in light Сeladon color, makes the border invisible, colors the median in black and changes the color and the font of the axes. Two last lines makes whiskers invisible.
+Using such settings we've created a style that colors boxes in light Сeladon color, makes the border invisible, colors the median in black and changes the color and the font of the axes. Two last lines makes whiskers invisible. 
 Now let's apply these setting to the sample.
 
 {sample}BCT\_BoxChart\_07{sample}  
