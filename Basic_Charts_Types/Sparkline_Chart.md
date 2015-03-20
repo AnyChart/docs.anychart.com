@@ -292,9 +292,13 @@ The code for the example above is the following:
 	chart4.negativeFill('darkred');
 ```
 
-Actually, it's better to use color in Sparklines to put your customers' attention to some facts, using charts of the same type. You can emphasize the first and the last points, the max and the min ones, negative or normal points - this will make the comparison much easier.
+Actually, the main purpose of colorizing Sparklines is to put your customers' attention to some facts, using charts of the same type. You can emphasize the special points - this will make the comparison much easier.
 
-Let's have a look on two different line sparklines with negative points emphasized:
+Those special points are: the first, the last, the max, the min and negative ones. The rest are normal.
+
+Using the {api:anychart.graphics.vector.Stroke}**.stroke()**{api} and {api:anychart.graphics.vector.Fill}**.fill()**{api} paramenters, we can change these points' stroke and color accordingly. As a method of highlighting the point we can also enable labels, markers and hatchFills (see next paragraph for hatchFills).
+
+Let's have a look on two different line sparklines with negative points emphasized with color:
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_14{sample} 
 
@@ -310,24 +314,34 @@ Now let's color the first and the last columns of two different column Sparkline
   //colorize our charts
   chart1.firstFill('darkRed');
   chart1.lastFill('blue');
-  chart2.firstFill('blue');
+  chart2.firstFill('darkRed');
   chart2.lastFill('blue');
 ```
 
-That's how it looks like on the board:
+That's how it looks like on the board: 
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_15{sample}
 
-You can add labels not to all points, but to the maximum and the minimum ones, like it is done in the example below:
+You can add labels not to all points, but to special ones, e.g. for the maximum and the minimum ones, like it is done in the example below. You only need to enable the max and min lables:
+
+```
+  chart1.maxLabels().enabled(true);
+  chart1.minLabels().enabled(true);
+  chart2.maxLabels().enabled(true);
+  chart2.minLabels().enabled(true);
+```
 
 {sample :width 688 :height 240}BCT\_Sparkline\_Chart\_16{sample}
 
-You only need to enable the max or minLables to do it as in the sample above:
+Note that the min and the max values are counted themselves.
+
+It's also possible to emphasize any other point besides the special ones. To colorize any normal point you should define the color for this point while setting the data:
 
 ```
-  chart.maxLabels().enabled(true);
-  chart.minLabels().enabled(true);
+{x:'1', value:'25', fill:'green', size: '3'}, 
 ```
+
+{sample :width 688 :height 240}BCT\_Sparkline\_Chart\_20{sample}
 
 ###HatchFill
 
