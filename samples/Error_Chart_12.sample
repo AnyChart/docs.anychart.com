@@ -22,6 +22,7 @@ anychart.onDocumentReady(function() {
     [10, 15.78],
   ]);
 
+  series.size(7);
 
   series.error({
             xLowerError: '1%',

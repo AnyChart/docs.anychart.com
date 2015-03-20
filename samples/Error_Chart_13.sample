@@ -44,6 +44,8 @@ anychart.onDocumentReady(function() {
         + '\nerrorMode = ' + series.error().errorMode();
  });
 
+  series.size(7);
+
   chart.xAxis().title('Hours After Treatment');
   chart.yAxis().title('Mean Blood Pressure');
   chart.title('Labels And Tooltips');

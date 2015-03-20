@@ -26,6 +26,8 @@ anychart.onDocumentReady(function() {
             errorMode: 'value'
         });
 
+  series.size(7);
+
   chart.yScale().minimum(50);
   chart.xScale().maximum(6);
 

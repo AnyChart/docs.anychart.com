@@ -21,7 +21,9 @@ anychart.onDocumentReady(function() {
   chart.title('Market Demand Curve Without Error Bars');
   chart.xAxis().title('Price');
   chart.yAxis().title('Sales');
-  
+
+  series.size(7);
+
   series.error().errorMode('none');
 
   //initiate chart drawing
