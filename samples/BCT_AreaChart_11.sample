@@ -20,7 +20,7 @@ anychart.onDocumentReady(function() {
         ['P13', 'missing', 1623, 'missing']
     ]);
 
-    // map data for the each series
+    // map data for each series
     var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
     var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
     var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
