@@ -35,12 +35,12 @@ Let's see single series area chart created using the following data: salaries of
 
 <table width="700" border="1" class="dtTABLE">
 <tbody><tr>
-<th><b>Range</b></th>
-<th><b>Min Salary, $</b></th>
-<th><b>First Quartile, $</b></th>
-<th><b>Median, $</b></th>
-<th><b>Third Quartile, $</b></th>
-<th><b>Max Salary, $</b></th>
+<th width="50"><b>Range</b></th>
+<th width="130"><b>Min Salary, $</b></th>
+<th width="130"><b>First Quartile, $</b></th>
+<th width="130"><b>Median, $</b></th>
+<th width="130"><b>Third Quartile, $</b></th>
+<th width="130"><b>Max Salary, $</b></th>
 </tr>
 <tr>
 <td>1</td>
