@@ -314,14 +314,15 @@ Now let's color the first and the last columns of two different column Sparkline
 ```
   //colorize our charts
   chart1.firstFill('darkRed');
-  chart1.lastFill('blue');
+  chart1.lastFill('green');
   chart2.firstFill('darkRed');
-  chart2.lastFill('blue');
+  chart2.lastFill('green');
 ```
 
 That's how it looks like on the board: 
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_15{sample}
+You may notice that other points are now in one color. We've colored them in one low-opacity color to make the special points of the data more noticeable.
 
 You can add labels not to all points, but to special ones, e.g. for the maximum and the minimum ones, like it is done in the example below. You only need to enable the max and min lables:
 

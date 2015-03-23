@@ -29,11 +29,17 @@ anychart.onDocumentReady(function() {
   chart2.bounds(0, 50, 300, 40);
     chart2.type('column');  
 	
+ //color the rest points in the same low-opacity color to make the special points of the data more noticeable
+  chart1.fill('green .3');
+  chart1.negativeFill('green .3');
+  chart2.fill('green .3');
+  chart2.negativeFill('green .3');
+	
   //colorize our charts
   chart1.firstFill('darkRed');
-  chart1.lastFill('blue');
+  chart1.lastFill('green');
   chart2.firstFill('darkRed');
-  chart2.lastFill('blue');
+  chart2.lastFill('green');
   
   //initiate chart drawing
   chart1.draw();
