@@ -296,6 +296,7 @@ Actually, the main purpose of colorizing Sparklines is to put your customers' at
 
 Those special points are: the first, the last, the max, the min and negative ones. The rest are normal.
 
+
 Using the {api:anychart.graphics.vector.Stroke}**.stroke()**{api} and {api:anychart.graphics.vector.Fill}**.fill()**{api} paramenters, we can change these points' stroke and color accordingly. As a method of highlighting the point we can also enable labels, markers and hatchFills (see next paragraph for hatchFills).
 
 Let's have a look on two different line sparklines with negative points emphasized with color:
@@ -335,10 +336,13 @@ You can add labels not to all points, but to special ones, e.g. for the maximum 
 
 Note that the min and the max values are counted by themselves.
 
-It's also possible to emphasize any other point besides the special ones. To colorize any normal point you should define the color for this point while setting the data:
+
+It's also possible to emphasize any other point besides the special ones. To colorize any normal point, define the color for this point while setting the data:
 
 ```
-{x:'1', value:'25', fill:'green', size: '3'}, 
+//create data for both charts
+  chart1.data([-20, 30, 50, -10, {value:'25', fill:'green'}, -50, 70, 10]);
+  chart2.data([20, 30, -10, 20, {value:'-25', fill:'green'}, -5, -30, 50]);
 ```
 
 {sample :width 688 :height 240}BCT\_Sparkline\_Chart\_20{sample}

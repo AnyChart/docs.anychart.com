@@ -23,7 +23,7 @@ anychart.onDocumentReady(function() {
       30, 
       50, 
       -10, 
-      {value:'25', fill:'green', size: '3'}, 
+      {value:'25', fill:'green'}, 
       -50, 
       70, 
       10]);
@@ -32,11 +32,16 @@ anychart.onDocumentReady(function() {
       30,
       -10, 
       20, 
-      {value:'-25', fill:'green', size: '3'},
+      {value:'-25', fill:'green'},
       -5,
       -30,
       50]);
   
+  //color the rest points in the same low-opacity color to make the fifth point of the data more noticeable
+  chart1.fill('green .3');
+  chart1.negativeFill('green .3');
+  chart2.fill('green .3');
+  chart2.negativeFill('green .3');
   
   //set charts dimensions and position
   chart1.bounds(0, 0, 300, 120);

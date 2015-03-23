@@ -27,7 +27,7 @@ anychart.onDocumentReady(function() {
   
   //change scales
   chart1.yScale(anychart.scales.log());
-  chart1.yScale().minimum('79').maximum('10445');s
+  chart1.yScale().minimum('79').maximum('10445');
   
   //initiate chart drawing
   chart1.draw();
