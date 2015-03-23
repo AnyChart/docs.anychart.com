@@ -13,7 +13,7 @@
 
 ##Overview
 
-Pointers are elements of the Gauge charts, which are  necessary for the data representation. 
+Pointers are elements of the Gauge charts, which are necessary for the data representation. 
 
 
 ##Types
@@ -22,7 +22,52 @@ There are 4 different types of pointers avaliable: needle, knob, bar and marker.
 
 ###Bar
 
+Bar is a pointer that looks like a bold line (for Linear Gauges) or curve (for Circular Gauges) colored rather brightly. It is usually situated next to the axis and shown with the marker pointer.
+Below you can see a simple example Gauge with the bar pointer and the code for the example.
+
+{sample}BCT\_Pointers_and_Data\_Bar\_01{sample} 
+
+```
+		//bar
+    gauge.bar(0)
+        .width(3)
+        .radius(100);
+```
+
+On this sample we have defined only the width of the bar and its radius, but there's a lot of parameters to be adjusted. For example, a bar pointer can be colored with a single color or with a gradient, we can set the position of the bar according to the defined radius, tie it to the exact data point and axis, set the stroke.
+
+To tie the pointer to the axis use the {api}**.axisIndex()**{api} method. Note that the count starts from 0. There's no need in using this method if your chart contains an only axis.
+
+Let's enable one more axis and tie the bar pointer to the new axis:
+
+{sample}BCT\_Pointers_and_Data\_Bar\_02{sample} 
+
+To reach the result as in the sample above we need to add the following:
+
+```
+         gauge.bar(0).axisIndex(1);
+```
+
+To tell the pointer the value from the dataSet use the {api}**.dataIndex()**{api} method. Note that the count starts from 0. There's no need in using this method if you have an only value in your dataSet.
+
+Let's add the second point to the data and tie the bar pointer to the new data point:
+
+{sample}BCT\_Pointers_and_Data\_Bar\_03{sample} 
+
+```
+         gauge.bar(0).dataIndex(1);
+```
+Now let's look at the position of the bar according to its radius. As our bar is more than 1px width it can be positioned outside, in the center or inside the circle. To set the position use the **.poisition()** method. The value is to be "'o'" - outside, "'i'" - inside or "'c'" i center. Let's put our bar inside the circle of the defined radius:
+
+```
+         gauge.bar(0).position('i');
+```
+
+{sample}BCT\_Pointers_and_Data\_Bar\_04{sample} 
+
 ###Marker
+
+Marker is a pointer that looks to be used with a bar pointer. 
 
 ###Needle
 
