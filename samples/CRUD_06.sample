@@ -69,7 +69,7 @@ anychart.onDocumentReady(function() {
   container.appendChild(streamButton);
 
   // first index for new point
-  var indexSetter = 21;
+  var indexSetter = (dataSet.mapAs().getRowsCount())+1;
 
   function startStream() {
 
