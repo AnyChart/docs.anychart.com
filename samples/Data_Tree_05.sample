@@ -49,6 +49,10 @@ anychart.onDocumentReady(function() {
   triggerButton.style.borderRadius = '7px 7px 7px 7px';
   triggerButton.style.fontSize = '18px';
   triggerButton.style.cursor = 'pointer';
+  triggerButton.style.MozUserSelect= 'none';
+  triggerButton.style.KhtmlUserSelect= 'none';
+  triggerButton.style.WebkitUserSelect= 'none';
+  triggerButton.style.userSelect= 'none';
   triggerButton.innerHTML = 'Update';
   triggerButton.onclick = function() {
     addValue();
