@@ -35,7 +35,7 @@ Let's see single series area chart created using the following data: salaries of
 
 <table width="700" border="1" class="dtTABLE">
 <tbody><tr>
-<th width="50" style="padding-right:3px;"><b>№</b></th>
+<th width="50"><b>Range</b></th>
 <th width="130"><b>Min Salary, $</b></th>
 <th width="130"><b>First Quartile, $</b></th>
 <th width="130"><b>Median, $</b></th>
@@ -44,43 +44,43 @@ Let's see single series area chart created using the following data: salaries of
 </tr>
 <tr>
 <td>1</td>
-<td>$1000</td>
-<td>$1050</td>
-<td>$1200</td>
-<td>$1800</td>
-<td>$2000</td>
+<td>1000</td>
+<td>1050</td>
+<td>1200</td>
+<td>1800</td>
+<td>2000</td>
 </tr>
 <tr>
 <td>2</td>
-<td>$2500</td>
-<td>$3000</td>
-<td>$3800</td>
-<td>$3900</td>
-<td>$4000</td>
+<td>2500</td>
+<td>3000</td>
+<td>3800</td>
+<td>3900</td>
+<td>4000</td>
 </tr>
 <tr>
 <td>3</td>
-<td>$2000</td>
-<td>$2300</td>
-<td>$2500</td>
-<td>$2900</td>
-<td>$3000</td>
+<td>2000</td>
+<td>2300</td>
+<td>2500</td>
+<td>2900</td>
+<td>3000</td>
 </tr>
 <tr>
 <td>4</td>
-<td>$4000</td>
-<td>$5000</td>
-<td>$6000</td>
-<td>$6500</td>
-<td>$7000</td>
+<td>4000</td>
+<td>5000</td>
+<td>6000</td>
+<td>6500</td>
+<td>7000</td>
 </tr>
 <tr>
 <td>5</td>
-<td>$8000</td>
-<td>$8400</td>
-<td>$8500</td>
-<td>$8800</td>
-<td>$9000</td>
+<td>8000</td>
+<td>8400</td>
+<td>8500</td>
+<td>8800</td>
+<td>9000</td>
 </tr>
 </tbody></table>
 Now we need to convert this data table into the format that can be used by AnyChart. See more about formats in 
@@ -121,8 +121,8 @@ To compare two or more data sets you have to use multi-series area charts as it 
 Now we're going to compare February 2015 salaries to January 2015 ones. Let's suppose January 2015 salaries as in the table below:
 
 <table width="700" border="1" class="dtTABLE">
-<tbody><tr align=center>
-<th width="20" rowspan=2 align=center><b>Range</b></th>
+<tbody><tr style="text-align:center;">
+<th width="20" rowspan=2 style="padding-right:3px;"><b>№</b></th>
 <th colspan=2><b>Min Salary, $</b></th>
 <th colspan=2><b>First Quartile, $</b></th>
 <th colspan=2><b>Median, $</b></th>
