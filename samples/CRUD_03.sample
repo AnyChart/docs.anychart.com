@@ -34,8 +34,8 @@ anychart.onDocumentReady(function() {
     // function, if listener triggers
     function(e) {
         view.set(
-            e.pointIndex,   // get index of clicked column
-            'value',        // get parameter to update
+            e.pointIndex,                       // get index of clicked column
+            'value',                            // get parameter to update
             view.get(e.pointIndex, 'value') + 5 // parameter updating
         );
     }
