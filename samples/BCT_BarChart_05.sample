@@ -5,14 +5,14 @@ anychart.onDocumentReady(function() {
 
     // data
     var data = anychart.data.set([
-        ['Department Stores', 637166],
-        ['Discount Stores', 721630],
-        ['Men\'s/Women\'s Specialty Stores', 148662],
-        ['All other outlets', 90000]
+      ['Department Stores', 637166],
+      ['Discount Stores', 721630],
+      ['Men\'s/Women\'s Specialty Stores', 148662],
+      ['All other outlets', 90000]
     ]);
 
     // chart type
-    chart = anychart.barChart();
+    var chart = anychart.barChart();
 
     // chart title
     chart.title().text('Minimum and Maximum Scale Value');
