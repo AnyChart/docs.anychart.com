@@ -17,8 +17,8 @@ anychart.onDocumentReady(function() {
     // define chart type
     chart.bubble([
         ['Product A', 637, 6],
-		['Product B', 72, 14],
-		['Product C', 48, 10]
+		    ['Product B', 72, 14],
+		    ['Product C', 48, 10]
     ]).minimumSize(2).maximumSize(40);
 
     // draw
