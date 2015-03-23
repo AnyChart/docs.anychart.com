@@ -33,14 +33,14 @@ Depending on data model and the visualization purpose the box chart may contain 
 
 Let's see single series area chart created using the following data: salaries of ACME Corp. by ranges in February 2015:
 
-<table width="287" border="1" class="dtTABLE">
+<table width="700" border="1" class="dtTABLE">
 <tbody><tr>
-<th width="88"><b>Range</b></th>
-<th width="88"><b>Min Salary</b></th>
-<th width="88"><b>First Quartile</b></th>
-<th width="88"><b>Median</b></th>
-<th width="88"><b>Third Quartile</b></th>
-<th width="88"><b>Max Salary</b></th>
+<th><b>Range</b></th>
+<th><b>Min Salary, $</b></th>
+<th><b>First Quartile, $</b></th>
+<th><b>Median, $</b></th>
+<th><b>Third Quartile, $</b></th>
+<th><b>Max Salary, $</b></th>
 </tr>
 <tr>
 <td>1</td>
@@ -120,15 +120,15 @@ To compare two or more data sets you have to use multi-series area charts as it 
   
 Now we're going to compare February 2015 salaries to January 2015 ones. Let's suppose January 2015 salaries as in the table below:
 
-<table width="287" border="1" class="dtTABLE">
+<table width="700" border="1" class="dtTABLE">
 <tbody><tr align=center>
-<th width="50" rowspan=2 align=center><b>Range</b></th>
-<th width="105" colspan=2><b>Min Salary, $</b></th>
-<th width="105" colspan=2><b>First Quartile, $</b></th>
-<th width="105" colspan=2><b>Median, $</b></th>
-<th width="105" colspan=2><b>Third Quartile, $</b></th>
-<th width="105" colspan=2><b>Max Salary, $</b></th>
-<th width="105" colspan=2><b>Outliers, $</b></th>
+<th width="20" rowspan=2 align=center><b>Range</b></th>
+<th colspan=2><b>Min Salary, $</b></th>
+<th colspan=2><b>First Quartile, $</b></th>
+<th colspan=2><b>Median, $</b></th>
+<th colspan=2><b>Third Quartile, $</b></th>
+<th colspan=2><b>Max Salary, $</b></th>
+<th colspan=2><b>Outliers, $</b></th>
 </tr>
 <tr align=center>
 <td>Jan 2015</td>
