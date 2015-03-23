@@ -1,6 +1,7 @@
 {:tags []
      :is_new false
      :exports "chart"}
+
 anychart.onDocumentReady(function() {
 
   // data
@@ -28,7 +29,7 @@ anychart.onDocumentReady(function() {
   column.listen(
 
     // listener type
-    anychart.enums.EventType.POINT_CLICK,
+    'pointClick',
 
     // function, if listener triggers
     function(e) {
