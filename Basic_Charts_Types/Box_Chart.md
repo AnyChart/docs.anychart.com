@@ -35,7 +35,7 @@ Let's see single series area chart created using the following data: salaries of
 
 <table width="700" border="1" class="dtTABLE">
 <tbody><tr>
-<th width="50"><b>Range</b></th>
+<th width="50" style="padding-right:3px;"><b>№</b></th>
 <th width="130"><b>Min Salary, $</b></th>
 <th width="130"><b>First Quartile, $</b></th>
 <th width="130"><b>Median, $</b></th>
