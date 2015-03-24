@@ -54,6 +54,8 @@ anychart.onDocumentReady(function() {
     .color('#00aa00');
   
   chart.xScale().ticks().interval(1);
+  chart.xAxis().title().enabled(false);
+  chart.yAxis().title().enabled(false);
 
   // draw chart
   chart.container('container').draw();

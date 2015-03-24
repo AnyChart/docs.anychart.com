@@ -63,6 +63,8 @@ anychart.onDocumentReady(function() {
     .minimum(0)
     .maximum(4)
     .ticks().interval(1);
+  chart.xAxis().title().enabled(false);
+  chart.yAxis().title().enabled(false);
 
   // draw
   chart.container('container').draw();
