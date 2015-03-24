@@ -56,7 +56,7 @@ var secondColumn = dataGrid.column(20);
     'actualStart': Date.UTC(2008, 7, 9),
     'actualEnd': Date.UTC(2008, 7, 20)
 ```
-<br>{sample :width 710 :height 180}GANTT\_Chart\_12{sample}
+<br>{sample :width 710 :height 170}GANTT\_Chart\_12{sample}
 
 ### Title
 
@@ -191,7 +191,7 @@ timeline.rowOddFill("#add8e6");
 ```
 
 <br>In the sample below the odd rows are colored with a solid fill as well as the even rows.
-{sample :width 710 :height 210}GANTT\_Chart\_09{sample}
+{sample :width 710 :height 190}GANTT\_Chart\_09{sample}
 
 ## General Settings
 
@@ -204,8 +204,8 @@ By default Data Grid is turned on. If you need to show only timeline and timelin
 chart.dataGrid(false);
 ```
 
-And here is a simple illustration of this idea:
-{sample :width 710 :height 210}GANTT\_Chart\_15{sample}
+<br>And here is a simple illustration of this idea:
+{sample :width 710 :height 190}GANTT\_Chart\_15{sample}
 
 ### Data Grid Width
 
@@ -230,4 +230,4 @@ dataGrid.column(1).width(10).textFormatter(function(item) {
   });
 ```
 
-<br>{sample :width 710 :height 210}GANTT\_Chart\_14{sample}
+<br>{sample :width 710 :height 190}GANTT\_Chart\_14{sample}
