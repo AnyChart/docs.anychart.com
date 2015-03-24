@@ -425,5 +425,5 @@ Another way to place a lot of sparklines is to use the [AnyChart table](../Dashb
   table.container(stage).draw();
 ```
 
-{sample :width 688 :height 135}BCT\_Sparkline\_Chart\_19{sample}
+{sample :width 688 :height 100}BCT\_Sparkline\_Chart\_19{sample}
 
