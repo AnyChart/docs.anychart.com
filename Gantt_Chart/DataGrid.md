@@ -125,7 +125,7 @@ These methods can be used to change the background color:
 
 <br>
 ```
-var dataGrid = chart.getDataGrid();
+var dataGrid = chart.dataGrid();
 dataGrid.backgroundFill('blue .4');
 dataGrid.rowFill('green .2');
 ```
@@ -153,7 +153,7 @@ By default, the odd and the even fields are differentiated by their fill. To cha
 
 <br>
 ```
-var dataGrid = chart.getDataGrid();
+var dataGrid = chart.dataGrid();
 
 dataGrid.rowOddFill('#8a2be2 .2');
 dataGrid.rowEvenFill('#8a2be2 .4');

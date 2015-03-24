@@ -15,7 +15,7 @@ anychart.onDocumentReady(function() {
   chart.splitterPosition(80);
 
   //get chart data grid link to set column settings
-  var dataGrid = chart.getDataGrid();
+  var dataGrid = chart.dataGrid();
 
   dataGrid.column(1).width(10).textFormatter(function(item) {
  }).title().text('+/-');

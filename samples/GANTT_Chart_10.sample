@@ -19,7 +19,7 @@ anychart.onDocumentReady(function() {
   chart.splitterPosition(220);
 
   //get chart data grid link to set column settings
-  var dataGrid = chart.getDataGrid();
+  var dataGrid = chart.dataGrid();
 
   function formatDate(dateUnit) {
   if (dateUnit < 10) dateUnit = '0' + dateUnit;

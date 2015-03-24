@@ -19,7 +19,7 @@ anychart.onDocumentReady(function() {
   chart.splitterPosition(160);
 
   //get chart data grid link to set column settings
-  var dataGrid = chart.getDataGrid();
+  var dataGrid = chart.dataGrid();
 
   dataGrid.rowOddFill('#8a2be2 .2');
   dataGrid.rowEvenFill('#8a2be2 .4');

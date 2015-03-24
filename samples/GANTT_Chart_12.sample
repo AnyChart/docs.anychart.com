@@ -16,7 +16,7 @@ anychart.onDocumentReady(function() {
   chart.data(treeData);
 
   //get chart data grid link to set column settings
-  var dataGrid = chart.getDataGrid();
+  var dataGrid = chart.dataGrid();
 
 chart.splitterPosition(210);
 
