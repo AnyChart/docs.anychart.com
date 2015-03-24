@@ -85,7 +85,7 @@ You can use negative values also. In this case, the count will be as usual. Let'
 
 The gauge will look like the following:
 
-{sample}BCT\_Gauges_Circular\_02_1{sample}
+{sample}BCT\_Gauges_Circular\_02-1{sample}
 
 As shown above, now we've got a half-circular gauge. Now let's adjust our axis.
 

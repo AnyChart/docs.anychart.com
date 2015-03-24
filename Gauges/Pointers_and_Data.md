@@ -84,7 +84,7 @@ Marker is a pointer that looks to be used with a bar pointer.
 
 ###Connection with the Data
 
-#### dataIndex()
+#### Snap to Data
 When you apply for the {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} method, you change the value that will be represented by the pointer you add this method to. However, using this means only if you have more than one value in the dataSet, because the axis shows the first value fron your dataSet by default. So, there is no need in this method if your data looks like this:
 
 ```
@@ -109,7 +109,7 @@ gauge.marker(2)
 
 {sample}{sample}
 
-#### axisIndex()
+#### Snap to Axis
 
 ##Other
 
