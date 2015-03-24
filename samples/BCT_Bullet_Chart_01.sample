@@ -10,7 +10,7 @@ anychart.onDocumentReady(function() {
   ]);
 
   // Set chart size and position settings
-  chart.bounds(0, '35%', '100%', '30%');
+  chart.bounds(0, 0, '100%', 140);
 
   // chart title
   chart.title().text('Revenue');
