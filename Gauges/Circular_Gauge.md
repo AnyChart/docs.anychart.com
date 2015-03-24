@@ -95,9 +95,9 @@ In general, gauge scale settings is the same as the standard scale. You can find
 
 ###Axis
 
-Axis in gauges are not the same as in the other basic chart types. There's no X- and Y-axis, the only axis that a gauge displays and uses is a circular axis that is situated along the frame.
+Axis in gauges are not the same as in the other basic chart types. There's no X- and Y-axis, the only axis that a gauge displays and uses is a circular axis that is situated along the frame. Generally, axis in Gauges behaves like a series in other chart types. The Gauge can be multi-axes.
 
-Let's enable the axis to see the changes we make and set its width and radius at once:
+Let's enable the axis to see the changes we make and set its width and radius at once. To make it we use the {api:anychart.gauges.Circular.axis}**.radius()**{api} and the {api:anychart.gauges.Circular.axis}**.width()**{api} methods.
 
 ```
 	//axis settings
@@ -108,7 +108,7 @@ Let's enable the axis to see the changes we make and set its width and radius at
 
 ###Minimum and Maximum
 
-Let's limit the axis with the values we want to be displayed. Let it be from 0 to 120 mph:
+Let's limit the axis with the values we want to be displayed. To set the limits, we used the {api:anychart.scales.Linear#minimum}**.minimum()**{api} and the {api:anychart.scales.Linear#maximum}**.maximum()**{api} methods. Let it be from 0 to 120 mph:
 
 ```
 		//scale settings
@@ -121,9 +121,10 @@ So our gauge with the fixed axis will look the following way:
 
 {sample}BCT\_Gauges_Circular\_03{sample}
 
+
 ###Ticks
 
-At the moment our speedometer has only 4 ticks each 40 mph, that is not actually informative. Let's set major tickes each 10 mph and enable minor ticks.
+At the moment our speedometer has only 4 ticks each 40 mph, that is not actually informative. Let's set the limits for our ticks, make major tickes appear each 10 mph and enable minor ticks.
 
 ```
 		//scale settings
@@ -137,6 +138,8 @@ At the moment our speedometer has only 4 ticks each 40 mph, that is not actually
     axis.minorTicks()
         .enabled(true);
 ```
+
+To enable the ticks and set the interval we used the {api:anychart.scales.Linear#ticks}**.ticks()**{api} method and the {api:anychart.scales.Linear#minorTicks}**.minorTicks()**{api} for our minor ticks acordingly.
 
 {sample}BCT\_Gauges_Circular\_04{sample}
 
@@ -223,11 +226,13 @@ Like with any other chart type, we can set the chart label and adjust it. Let ou
     gauge.label()
         .text('ALBANY')
         .anchor('center') //set the position of the label
-        .adjustFontSize(true)
         .width('55%')
         .height('7%')
+        .adjustFontSize(true)
         .zIndex(10);
 ```
+
+Besides the label itself, we have to adjust its look. First of all, to put the label in the center of the gauge we use the {api:anychart.enums.Anchor}**.anchor()**{api} method. Then we have to change the size of the label, because it looks too small by default. For this we use the usual methods {api:anychart.core.ui.Label#width}**.width()**{api} and {api:anychart.core.ui.Label#height}**.height()**{api} and add the {api:anychart.core.ui.Label#adjustFontSize}**.adjustFontSize(){api}** method to make our label fit the defined parameters. Than we should put the name of the car company beside the cap to make the look of our chart more real. For that we use the {api:}**.zIndex()**{api} parameter.  
 
 {sample}BCT\_Gauges_Circular\_08{sample}
 

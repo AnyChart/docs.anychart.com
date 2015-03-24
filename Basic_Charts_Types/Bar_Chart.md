@@ -181,7 +181,7 @@ AnyChart allows to invert any axis: Y, X or any extra axis. Inversion is control
 
 ### Minimum and Maximum
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 0.0, and maximum is 800.000. You can control these values by setting **.maximum()** and **.minimum()** parameters of scale method:
+By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale inversion chart sample above: minimal value on the Y Axis is 0.0, and maximum is 800.000. You can control these values by setting {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters of scale method:
 
 ```
     chart.yScale().minimum('-200000').maximum('800000')
