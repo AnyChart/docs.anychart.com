@@ -5,15 +5,10 @@
 anychart.onDocumentReady(function() {
 
     // chart type
-    chart = anychart.lineChart();
+    chart = anychart.scatter();
 
     // set title
     chart.title().text('Maximum and Minimum Size');
-    
-    chart.xScale()
-      .minimum(0)
-      .maximum(6)
-      .ticks().interval(1);
     
     // adjust axes settings
     chart.xAxis()
@@ -29,6 +24,13 @@ anychart.onDocumentReady(function() {
         [4, 348, 18],
         [5, 100, 10]
     ]).minimumSize(10).maximumSize(100);
-
-    chart.container('container').draw();
+  
+  chart.xScale()
+    .minimum(0)
+    .maximum(6)
+    .ticks().interval(1);
+  
+  
+  
+  chart.container('container').draw();
 });

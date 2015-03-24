@@ -4,34 +4,34 @@
 
 anychart.onDocumentReady(function() {
 
-    // chart type
-    chart = anychart.lineChart();
+  // chart type
+  chart = anychart.scatter();
 
-    // set title
-    chart.title().text('Scales Management');
-    
-    chart.xScale()
-      .minimum(0)
-      .maximum(4)
-      .ticks().interval(1);
-    
-    // adjust axes settings
-    chart.xAxis()
-      .drawFirstLabel(false)
-      .drawLastLabel(false)
-      .title().text('Products');
-    chart.yAxis().title().text('Sales');
+  // set title
+  chart.title().text('Scales Management');
+  
+  // invert Y scale
+  chart.yScale().inverted(true);
+  
+  // set data
+  chart.bubble([
+    [1, 637, 6],
+    [2, 472, 14],
+    [3, 48, 10]
+  ]).minimumSize(10).maximumSize(30);
+  
+  // adjust axes settings
+  chart.yAxis().title().text('Sales');
+  chart.xAxis()
+    .drawFirstLabel(false)
+    .drawLastLabel(false)
+    .title().text('Products');
 
-    // set data
-    chart.bubble([
-        [1, 637, 6],
-        [2, 472, 14],
-        [3, 48, 10]
-    ]).minimumSize(10).maximumSize(30);
+  chart.xScale()
+    .minimum(0)
+    .maximum(4)
+    .ticks().interval(1);
 
-    // adjust Y scale
-    chart.yScale().inverted(true);
-
-    // draw
-    chart.container('container').draw();
+  // draw
+  chart.container('container').draw();
 });

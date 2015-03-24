@@ -4,39 +4,39 @@
 
 anychart.onDocumentReady(function() {
 
-    // data
-    var dataSet = anychart.data.set([
-        [1, 637, 6, 630, 12],
-        [2, 72, 14, 32, 10],
-        [3, 48, 10, 48, 20]
-    ]);
+  // data
+  var dataSet = anychart.data.set([
+    [1, 637, 6, 630, 12],
+    [2, 72, 14, 32, 10],
+    [3, 48, 10, 48, 20]
+  ]);
 
-    // map data for the each series
-    var seriesData_1 = dataSet.mapAs({x: [0], value: [1], size:[2]});
-    var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
+  // map data for the each series
+  var seriesData_1 = dataSet.mapAs({x: [0], value: [1], size:[2]});
+  var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
 
-    // chart type
-    chart = anychart.scatter();
+  // chart type
+  chart = anychart.scatter();
 
-    // set title
-    chart.title().text('Multi-series Bubble Chart');
+  // set title
+  chart.title().text('Multi-series Bubble Chart');
 
-    chart.xScale()
-      .minimum(0)
-      .maximum(4)
-      .ticks().interval(1);
+  // set series data
+  chart.bubble(seriesData_2).maximumSize(25).minimumSize(1);
+  chart.bubble(seriesData_1).maximumSize(25).minimumSize(1);
+
+  // adjust axes settings
+  chart.yAxis().title().text('Sales');
+  chart.xAxis()
+    .drawFirstLabel(false)
+    .drawLastLabel(false)
+    .title().text('Products');
+
+  chart.xScale()
+    .minimum(0)
+    .maximum(4)
+    .ticks().interval(1);
   
-    // adjust axes settings
-    chart.xAxis()
-      .drawFirstLabel(false)
-      .drawLastLabel(false)
-      .title().text('Products');
-    chart.yAxis().title().text('Sales');
-
-    // set series data
-    chart.bubble(seriesData_2).maximumSize(25).minimumSize(1);
-    chart.bubble(seriesData_1).maximumSize(25).minimumSize(1);
-
-    // draw
-    chart.container('container').draw();
+  // draw
+  chart.container('container').draw();
 });
