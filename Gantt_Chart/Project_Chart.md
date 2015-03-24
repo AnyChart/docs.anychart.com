@@ -233,7 +233,7 @@ If there is a need to add an additional connection between tasks, you can define
 <table border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th>Method</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 <tr>
