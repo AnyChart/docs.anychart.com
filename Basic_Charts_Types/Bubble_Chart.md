@@ -80,7 +80,7 @@ AnyChart data model, we have one series of data (Sales) with categories that hol
         [1, 637, 6],
         [2, 472, 14],
         [3, 48, 10]
-    ]).minimumSize(2).maximumSize(40);
+    ]).minimumSize(10).maximumSize(40);
 ```
 
 As you can see, we've categorised chart at {api:anychart.charts.Cartesian#bubble}**bubble()**{api} method, set parameters that defines categories in X-axis into first column, sales amount in Y-axis into second and parameter that defines bubble size (which is the same with the profit amount) into third one.
@@ -133,7 +133,7 @@ Let's compare year 2003 sales to year 2004 product sales:
 </tbody>
 </table>
 
-As we did in single-series bubble sample above now we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have bigger data and we have to clarify which number means what, so we use the {api:anychart.data.Set#mapAs}**mapAs()**{api} method for it.
+As we did in single-series bubble sample above now we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have bigger data and we have to clarify which number means what, so we use the {api:anychart.data.Set#mapAs}**mapAs()**{api} parameter for it.
 
 ```
     var dataSet = anychart.data.set([
@@ -152,10 +152,10 @@ As we did in single-series bubble sample above now we need to convert this table
 The min and the max size of bubbles can be controlled using {api:anychart.core.cartesian.series.Bubble#maximumSize}**.maximumSize()**{api} and {api:anychart.core.cartesian.series.Bubble#minimumSize}**.minimumSize()**{api} parameters. Both of them can be set either in pixels or in percents of a lesser chart side:
 
 ```
-    series.maximumSize(25).minimumSize(1);
+    series.maximumSize('75%').minimumSize('10%');
 ```
 
-When you set **.maximumSize('75%')** - AnyChart will make diameters of bubble(s) with a biggest size equal to 75% of width or the height, depends on which side is shorter.
+When you set {api:anychart.core.scatter.series.Bubble#maximumSize}**.maximumSize('75%')**{api} - AnyChart will make diameters of bubble(s) with a biggest size equal to 75% of width or the height, depends on which side is shorter.
   
   
 Here is the sample when bubbles are sized in percents, as specified above:
@@ -175,6 +175,7 @@ Note: this size setting type (in pixels) may lead to the nasty results when char
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings, etc. You can find more information about axes in
 [Axis Basics](../Axes_and_Grids/Axis_Basics) tutorial.
+  
   
 In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
 
@@ -241,8 +242,9 @@ Now let's apply this style to the chart.
 In this section we will explain how to add and configure data labels and tooltips.  
 
 If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
-
-With the following example let's make data labels appear to the right from the bars, format them to show only the value corresponding to the bar and force tooltips to show detailed description.
+  
+  
+With the following example let's make data labels appear to the top from each bubble, format them to show only the value corresponding to the bubble and force tooltips to show detailed description.
   
   
 When formatting data labels' text we use {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter**{api} to choose the column we need to get information from.
