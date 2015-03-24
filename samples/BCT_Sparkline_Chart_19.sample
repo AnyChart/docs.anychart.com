@@ -55,7 +55,7 @@ anychart.onDocumentReady(function() {
     ]
   ]);
 
-  table.rowHeight(0, '15%');   // Get first row and set height 15%
+  table.rowHeight(0, '25%');   // Get first row and set height 15%
   table.colWidth(0, 70);    // Get first column and set width 70 px
 
   // adjust table border and position text in each cell into center
