@@ -34,7 +34,7 @@ Let's create a simple Bullet Chart. The main bar represents 2005 revenue and the
   chart.range().from(0).to(750);      //maximum annual income ever 
 ```
 
-{sample :width 690 :height 150}BCT\_Bullet\_Chart\_01{sample}
+{sample :width 690 :height 130}BCT\_Bullet\_Chart\_01{sample}
 
 ## Ranges
 
