@@ -19,7 +19,7 @@
  
 ## Overview
 
-A Bubble chart is a variation of a Scatter chart where the data points are replaced with bubbles.
+A Bubble chart is a variation of a [Scatter chart](./Scatter_Chart) where the data points are replaced with bubbles.
   
   
 Bubble charts are often used to present financial data. Use a Bubble chart if you want to put more attention to the specific values in your chart by different bubble sizes.
