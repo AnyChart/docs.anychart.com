@@ -8,6 +8,7 @@
 * [Visual Settings](#visual_settings)
  * [Interlaced mode](#interlaced_mode)
 * [General Settings](#general_settings)
+ * [Turning On/Off](#turning_on/off)
  * [Data Grid Width](#data_grid_width)
  * [Expand/Collapse](#expand/collapse)
 
@@ -19,6 +20,8 @@
 
 By default, Gantt Chart displays two columns: rows counts and names of Gantt elements (tasks or resources).
 {sample :width 710 :height 190}GANTT\_Basic\_Sample{sample}
+
+You can disable data
 
 <br>The <b>set of columns</b> is set and defined using the {api:anychart.core.ui.DataGrid#column}**.column()**{api} method:
 
@@ -191,6 +194,18 @@ timeline.rowOddFill("#add8e6");
 {sample :width 710 :height 210}GANTT\_Chart\_09{sample}
 
 ## General Settings
+
+### Turning On/Off
+
+By default Data Grid is turned on. If you need to show only timeline and timeline plot - you cant turn Data Grid off using the {api:anychart.charts.Gantt#dataGrid}**.dataGrid()**{api} with <b>false</b> as the argument:
+
+```
+//disable data grid
+chart.dataGrid(false);
+```
+
+And here is a simple illustration of this idea:
+{sample :width 710 :height 210}GANTT\_Chart\_15{sample}
 
 ### Data Grid Width
 
