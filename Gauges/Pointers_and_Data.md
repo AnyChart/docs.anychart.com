@@ -25,7 +25,7 @@ There are 4 different types of pointers avaliable: needle, knob, bar and marker.
 Bar is a pointer that looks like a bold line (for Linear Gauges) or curve (for Circular Gauges) colored rather brightly. It is usually situated next to the axis and shown with the marker pointer.
 Below you can see a simple example Gauge with the bar pointer and the code for the example.
 
-{sample}BCT\_Pointers_and_Data\_Bar\_01{sample} 
+{sample}BCT\_Pointers-and-Data\_Bar\_01{sample} 
 
 ```
 		//bar
@@ -40,7 +40,7 @@ To snap the pointer to the axis use the {api:anychart.core.gauge.pointers.bar#ax
 
 Let's enable one more axis and snap the bar pointer to the new axis:
 
-{sample}BCT\_Pointers_and_Data\_Bar\_02{sample} 
+{sample}BCT\_Pointers-and-Data\_Bar\_02{sample} 
 
 To reach the result as in the sample above we need to add the following:
 
@@ -52,7 +52,7 @@ To tell the pointer the value from the dataSet use the {api:anychart.core.gauge.
 
 Let's add the second point to the data and snap the bar pointer to the new data point:
 
-{sample}BCT\_Pointers_and_Data\_Bar\_03{sample} 
+{sample}BCT\_Pointers-and-Data\_Bar\_03{sample} 
 
 ```
          gauge.bar(0).dataIndex(1);
@@ -69,7 +69,7 @@ It's possible to use only the first letters of the position as a value, e.g.:
          gauge.bar(0).position('i');
 ```
 
-{sample}BCT\_Pointers_and_Data\_Bar\_04{sample} 
+{sample}BCT\_Pointers-and-Data\_Bar\_04{sample} 
 
 
 ###Marker
