@@ -22,7 +22,7 @@ anychart.onDocumentReady(function() {
     [10, 15.78],
   ]);
 
-  series.size(7);
+  series.size(4).hoverSize(5);
 
   series.error({
             xLowerError: '1%',

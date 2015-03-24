@@ -18,7 +18,7 @@ anychart.onDocumentReady(function() {
     {'x': 83, 'y': 85, 'xUpperError': '3%', 'xLowerError': '5%', 'valueUpperError': '5%', 'valueLowerError': '2%'},
   ]);
 
-  series.size(7);
+  series.size(4).hoverSize(5);
 
   chart.title('Market Demand Curve With Error Bars');
   chart.xAxis().title('Price');
