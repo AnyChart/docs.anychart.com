@@ -6,9 +6,9 @@ anychart.onDocumentReady(function() {
 
     // data
     var data = anychart.data.set([
-        ['Product A', 437, 6, 637, 6],
-        ['Product B', 172, 14, 472, 17],
-        ['Product C', 548, 10, 48, 10]
+        [1, 437, 6, 637, 6],
+        [2, 172, 14, 472, 17],
+        [3, 548, 10, 48, 10]
     ]);
 
     // map data for the each series
@@ -16,23 +16,31 @@ anychart.onDocumentReady(function() {
     var seriesData_2 = data.mapAs({x: [0], value: [3], size:[4]});
 
     // chart type
-    chart = anychart.lineChart();
+    var chart = anychart.lineChart();
 
     // set title
     chart.title().text('Labels and Tooltips');
-
-    // set axes titles
-    chart.xAxis().title().text('Products');
+    
+    chart.xScale()
+      .minimum(0)
+      .maximum(4)
+      .ticks().interval(1);
+    
+    // adjust axes settings
+    chart.xAxis()
+      .drawFirstLabel(false)
+      .drawLastLabel(false)
+      .title().text('Products');
     chart.yAxis().title().text('Sales');
 
     // set series data
-    series = chart.bubble(seriesData_1);
+    var series1 = chart.bubble(seriesData_1);
 
     // set minimum and maximum bubble size
-    series.minimumSize(10).maximumSize(30);
+    series1.minimumSize(10).maximumSize(30);
 
     // set and adjust labels
-    series.labels()
+    series1.labels()
         .enabled(true)
         .anchor('bottom')
         .position('top')
@@ -43,21 +51,21 @@ anychart.onDocumentReady(function() {
         });
 
     // set tooltip title
-    series.tooltip().enabled(true).title().enabled(true).text('Information');
+    series1.tooltip().enabled(true).title().enabled(true).text('Information');
 
     // set and adjust tooltip content
-    series.tooltip().enabled(true).contentFormatter(function() {
+    series1.tooltip().enabled(true).contentFormatter(function() {
          return 'Sales: ' + this.x + '\n' + 'Unit: ' + this.value + '.00' + '\n' + 'Year: 2003' + '\n' + 'Profit: ' + '$' + this.size + '.00';
     });
 
     // set series data
-    series = chart.bubble(seriesData_2);
+    var series2 = chart.bubble(seriesData_2);
 
     // set minimum and maximum bubble size
-    series.minimumSize(10).maximumSize(30);
+    series2.minimumSize(10).maximumSize(30);
 
     // set and adjust labels
-    series.labels()
+    series2.labels()
         .enabled(true)
         .anchor('bottom')
         .position('top')
@@ -68,10 +76,10 @@ anychart.onDocumentReady(function() {
         });
 
     // set tooltip title
-    series.tooltip().enabled(true).title().enabled(true).text('Information');
+    series2.tooltip().enabled(true).title().enabled(true).text('Information');
 
     // set and adjust tooltip content
-    series.tooltip().enabled(true).contentFormatter(function() {
+    series2.tooltip().enabled(true).contentFormatter(function() {
          return 'Sales: ' + this.x + '\n' + 'Unit: ' + this.value + '.00' + '\n' + 'Year: 2004' + '\n' + 'Profit: ' + '$' + this.size + '.00';
     });
 

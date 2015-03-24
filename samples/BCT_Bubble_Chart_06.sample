@@ -9,16 +9,24 @@ anychart.onDocumentReady(function() {
 
     // set title
     chart.title().text('Scales Management');
-
-    // set axes titles
-    chart.xAxis().title().text('Products');
+    
+    chart.xScale()
+      .minimum(0)
+      .maximum(4)
+      .ticks().interval(1);
+    
+    // adjust axes settings
+    chart.xAxis()
+      .drawFirstLabel(false)
+      .drawLastLabel(false)
+      .title().text('Products');
     chart.yAxis().title().text('Sales');
 
     // set data
     chart.bubble([
-        ['Product A', 637, 6],
-        ['Product B', 472, 14],
-        ['Product C', 48, 10]
+        [1, 637, 6],
+        [2, 472, 14],
+        [3, 48, 10]
     ]).minimumSize(10).maximumSize(30);
 
     // adjust Y scale

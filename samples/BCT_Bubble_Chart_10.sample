@@ -19,6 +19,8 @@ anychart.onDocumentReady(function() {
 
     // chart type
     chart = anychart.lineChart();
+    
+    chart.xScale().ticks().interval(1);
 
     // set title
     chart.title().text('Colors');

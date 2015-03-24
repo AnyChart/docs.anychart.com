@@ -10,23 +10,37 @@ anychart.onDocumentReady(function() {
     // set title
     chart.title().text('Markers');
 
-    // set axes titles
-    chart.xAxis().title().text('Products');
+    chart.xScale()
+      .minimum(0)
+      .maximum(4)
+      .ticks().interval(1);
+
+    // adjust axes settings
+    chart.xAxis()
+      .drawFirstLabel(false)
+      .drawLastLabel(false)
+      .title().text('Products');
     chart.yAxis().title().text('Sales');
 
     // set data
     chart.bubble([
-        {x: "Product A", y: 437, size: 6},
-		{x: "Product B", y: 172, size: 14, marker: {
-            enabled: true, 
-            type: 'star5', 
-            fill: 'gold', 
-            position: 'centerTop', 
-            size: 10
-        }, hoverMarker: {
-            size: 18
-        }},        
-        {x: "Product C", y: 548, size: 10}
+      {x: "Product A", value: 437, size: 6},
+      {
+        x: "Product B", 
+        value: 172, 
+        size: 14, 
+        marker: {
+          enabled: true, 
+          type: 'star5', 
+          fill: 'gold', 
+          position: 'centerTop', 
+          size: 10
+        }, 
+        hoverMarker: {
+          size: 18
+        }
+      },
+      {x: "Product C", value: 548, size: 10}
     ]).minimumSize(10).maximumSize(30);
 
     // draw

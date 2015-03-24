@@ -9,24 +9,32 @@ anychart.onDocumentReady(function() {
 
     // set title
     chart.title().text('Visualization');
-
-    // set axes titles
-    chart.xAxis().title().text('Products');
+    
+    chart.xScale()
+      .minimum(0)
+      .maximum(4)
+      .ticks().interval(1);
+    
+    // adjust axes settings
+    chart.xAxis()
+      .drawFirstLabel(false)
+      .drawLastLabel(false)
+      .title().text('Products');
     chart.yAxis().title().text('Sales');
 
     // define chart type and set visualization
     chart.bubble([
-        ['Product A', 637, 6],
-        ['Product B', 472, 14],
-        ['Product C', 48, 10]
+      [1, 637, 6],
+      [2, 472, 14],
+      [3, 48, 10]
     ])
-        .minimumSize(10)
-        .maximumSize(30)
-        .fill('gold')
-        .hatchFill('diagonalbrick', 'gray')
-        .hoverHatchFill('diagonalbrick', 'darkred')
-        .stroke("Rgb(86,86,26)", 4)
-        .hoverStroke("darkred", 6);
+      .minimumSize(10)                              // maximum size of a bubble
+      .maximumSize(30)                              // minimum size of a bubble
+      .fill('gold')                                 // bubbles inner color
+      .stroke("Rgb(86,86,26)", 4)                   // bubbles border color
+      .hoverStroke("darkred", 6)                    // border color on mouse over
+      .hatchFill('diagonalbrick', 'gray')           // setting hatches 
+      .hoverHatchFill('diagonalbrick', 'darkred');  // hatches settings on mouse over
 
     // draw
     chart.container('container').draw();
