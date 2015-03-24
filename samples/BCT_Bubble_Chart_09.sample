@@ -43,7 +43,7 @@ anychart.onDocumentReady(function() {
 
   // set and adjust tooltip content
   series1.tooltip().enabled(true).contentFormatter(function() {
-    return 'Sales: ' + this.x +
+    return 'Sales: Product ' + this.x.toString() +
       '\nUnit: ' + this.value + '.00' +
       '\nYear: 2003' +
       '\nProfit: ' + '$' + this.size + '.00';
@@ -71,7 +71,7 @@ anychart.onDocumentReady(function() {
 
   // set and adjust tooltip content
   series2.tooltip().enabled(true).contentFormatter(function() {
-     return 'Sales: ' + this.x + 
+     return 'Sales: Product ' + this.x.toString() + 
        '\nUnit: ' + this.value + '.00' + 
        '\nYear: 2004' + 
        '\nProfit: $' + this.size + '.00';

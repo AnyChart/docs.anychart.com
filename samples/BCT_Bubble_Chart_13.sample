@@ -49,7 +49,7 @@ anychart.onDocumentReady(function() {
   chart.bubble(seriesData_4)
     .minimumSize(10)
     .maximumSize(30)
-    .fill('#EEEEEE')
+    .color('#EEEEEE')
     .hatchFill('checkerboard');
 
   // set series data and adjust hatch

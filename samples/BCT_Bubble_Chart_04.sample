@@ -23,7 +23,7 @@ anychart.onDocumentReady(function() {
         [3, 48, 20],
         [4, 348, 18],
         [5, 100, 10]
-    ]).minimumSize(10).maximumSize(100);
+    ]).minimumSize(15).maximumSize(60);
   
   chart.xScale()
     .minimum(0)

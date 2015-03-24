@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
   // chart type
-  chart = anychart.scattter();
+  chart = anychart.scatter();
 
   // set title
   chart.title().text('Bubble Series');
@@ -17,7 +17,7 @@ anychart.onDocumentReady(function() {
     [3, 48, 20],
     [4, 348, 18],
     [5, 100, 10]
-  ]).minimumSize('10%').maximumSize('20%');
+  ]).minimumSize('10%').maximumSize('75%');
 
   // adjust axes settings
   chart.yAxis().title().text('Sales');

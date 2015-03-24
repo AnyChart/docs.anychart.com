@@ -155,7 +155,7 @@ The min and the max size of bubbles can be controlled using {api:anychart.core.c
     series.maximumSize(25).minimumSize(1);
 ```
 
-When you set **.maximumSize('20%')** - AnyChart will make diameters of bubble(s) with a biggest size equal to 20% of width or the height, depends on which side is shorter.
+When you set **.maximumSize('75%')** - AnyChart will make diameters of bubble(s) with a biggest size equal to 75% of width or the height, depends on which side is shorter.
   
   
 Here is the sample when bubbles are sized in percents, as specified above:
@@ -165,7 +165,7 @@ Here is the sample when bubbles are sized in percents, as specified above:
 And in this sample when bubbles are sized in pixels:
 
 ```
-    series.maximumSize(100).minimumSize(10);
+    series.maximumSize(60).minimumSize(15);
 ```
 Note: this size setting type (in pixels) may lead to the nasty results when chart is resized.
 
