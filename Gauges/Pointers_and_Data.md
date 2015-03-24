@@ -45,18 +45,48 @@ Let's enable one more axis and snap the bar pointer to the new axis:
 To reach the result as in the sample above we need to add the following:
 
 ```
-         gauge.bar(0).axisIndex(1);
+		//second axis settings
+    var axis_1 = gauge.axis(1)
+        .radius(50)
+        .width(1);
+
+		//second scale settings
+    axis_1.scale()
+        .minimum(0)
+        .maximum(120)
+        .ticks({interval: 10})
+        .minorTicks({interval: 1});
+
+		//second ticks settings
+    axis_1.ticks()
+        .type('trapezoid')
+        .length('8');
+
+		//bar
+    gauge.bar(0)
+        .width(3)
+        .axisIndex(1)
+        .radius(50); //let;s change the radius to fit the bar to the axis_1
 ```
 
 To tell the pointer the value from the dataSet use the {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} method. Note that the count starts from 0. There's no need in using this method if you have an only value in your dataSet.
 
 Let's add the second point to the data and snap the bar pointer to the new data point:
 
+```
+		//add the second data point
+		 dataSet = anychart.data.set([50,35]);
+		...
+		//bar
+ 	     gauge.bar(0)
+     	   .width(3)
+     	   .axisIndex(1)
+		   .dataIndex(1) //change the index of the data point
+     	   .radius(50);
+```
+
 {sample}BCT\_Pointers-and-Data\_Bar\_03{sample} 
 
-```
-         gauge.bar(0).dataIndex(1);
-```
 Now let's look at the position of the bar according to its radius. As our bar is more than 1px width it can be positioned outside, in the center or inside the circle of the defined radius. To set the position use the {api:anychart.enums.GaugeSidePosition}**.position()**{api} method. The value is to be "outside", "inside" or "center". Let's put our bar inside the circle of the defined radius:
 
 ```
@@ -74,7 +104,27 @@ It's possible to use only the first letters of the position as a value, e.g.:
 
 ###Marker
 
-Marker is a pointer that looks to be used with a bar pointer. 
+Marker is a pointer that is more demonstrative when used with a bar pointer. It can be of a plenty types, which you can read about in [Marker tutorial](../Appearance_Settings/Markers). 
+Let's first enable a marker:
+
+```  
+         //marker
+    gauge.marker(0)
+        .enabled(true);
+```
+
+As any other elements, markers can be in a plural amount. Let's add the second marker and snap it to the data value we want it to point at and to the axis that should display this value. 
+
+```
+        //marker
+    gauge.marker(1)
+        .axisIndex(1)
+        .dataIndex(1);
+```
+
+Let's look at the example:
+
+{sample}BCT\_Pointers-and-Data\_Bar\_05{sample} 
 
 ###Needle
 

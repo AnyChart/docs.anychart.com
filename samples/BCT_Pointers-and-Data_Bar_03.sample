@@ -6,7 +6,7 @@
 anychart.onDocumentReady(function() {
     
 		//create data set on our data
-    dataSet = anychart.data.set([50]);
+    dataSet = anychart.data.set([50,34]);
     
 		//set the gauge type
     gauge = anychart.circularGauge();
@@ -38,12 +38,30 @@ anychart.onDocumentReady(function() {
     axis.minorTicks()
         .enabled(true)
         .length('1');
+		
+		//second axis settings
+    var axis_1 = gauge.axis(1)
+        .radius(50)
+        .width(1);
+
+		//second scale settings
+    axis_1.scale()
+        .minimum(0)
+        .maximum(120)
+        .ticks({interval: 10})
+        .minorTicks({interval: 1});
+
+		//second ticks settings
+    axis_1.ticks()
+        .type('trapezoid')
+        .length('8');
     
+		//bar
     gauge.bar(0)
         .width(3)
         .axisIndex(1)
 		.dataIndex(1)
-        .radius(60);
+        .radius(50);
         
 		//draw the chart
     gauge.container('container').draw();
