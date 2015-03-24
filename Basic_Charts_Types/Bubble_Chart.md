@@ -30,11 +30,10 @@ Because they allow visual comparisons of well-understood measures, bubble charts
 
 ## Chart
 
-Depending on data model and the visualization purpose the bar chart may contain single or several series. As 
-bubble chart need 3 values to show bubbles - you need to pass this data to chart. Here are two samples of data formatting:
+Depending on data model and the visualization purpose the bar chart may contain single or several series. As bubble chart needs 3 values to show bubbles - you need to pass this data to chart. Here are two samples of data formatting:
 
   
-When using Bubble chart on a scatter plot:
+When using Bubble chart on a [scatter plot](./Scatter_Chart):
 
 ```
     [10, 63, 20]
@@ -48,8 +47,7 @@ When using Bubble chart on a categorized plot:
 
 ### Single-Series
 
-Let's see single series bubble chart created using the sample data - ACME Corp. sales data for the three different 
-products, we will compare a number of units sold and profit using a bubble chart:
+Let's see single series bubble chart created using the sample data - ACME Corp. sales data for the three different products, we will compare a number of units sold and profit using a bubble chart:
 
 <table width="376" border="1" class="dtTABLE">
 <tbody><tr>
@@ -58,17 +56,17 @@ products, we will compare a number of units sold and profit using a bubble chart
 <th width="70"><b>Profit</b></th>	
 </tr>
 <tr>
-<td>Product A </td>
+<td>Product 1 </td>
 <td> 637 </td>
 <td> $6 </td>	
 </tr>
 <tr>
-<td>Product B </td>
-<td> 72 </td>
+<td>Product 2 </td>
+<td> 472 </td>
 <td> $14 </td>	
 </tr>
 <tr>
-<td>Product C </td>
+<td>Product 3 </td>
 <td> 48 </td>
 <td> $10 </td>
 </tr>
@@ -79,9 +77,9 @@ AnyChart data model, we have one series of data (Sales) with categories that hol
 
 ```
     chart.bubble([
-        ['Product A', 637, 6],
-        ['Product B', 72, 14],
-        ['Product C', 48, 10]
+        [1, 637, 6],
+        [2, 472, 14],
+        [3, 48, 10]
     ]).minimumSize(2).maximumSize(40);
 ```
 
@@ -110,23 +108,23 @@ Let's compare year 2003 sales to year 2004 product sales:
 <th width="141"><b>Profit</b></th>
 <th width="141"><b>Units</b></th>
 <th width="141"><b>Profit</b></th>
-</tr>  
+</tr>
 <tr>
-<td>Product A</td>
+<td>Product 1</td>
 <td>637</td>
 <td>$6</td>
 <td>630</td>
 <td>$12</td>
 </tr>
 <tr>
-<td>Product B</td>
+<td>Product 2</td>
 <td>72</td>
 <td>$14</td>
 <td>32</td>
 <td>$10</td>
 </tr>
 <tr>
-<td>Product C</td>
+<td>Product 3</td>
 <td>48</td>
 <td>$10</td>
 <td> 48</td>
@@ -139,9 +137,9 @@ As we did in single-series bubble sample above now we need to convert this table
 
 ```
     var dataSet = anychart.data.set([
-        ['Product A', 637, 6, 630, 12],
-        ['Product B', 72, 14, 32, 10],
-        ['Product C', 48, 10, 48, 20]
+        [1, 637, 6, 630, 12],
+        [2, 72, 14, 32, 10],
+        [3, 48, 10, 48, 20]
     ]);
     var seriesData_1 = dataSet.mapAs({x: [0], value: [1], size:[2]});
     var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
@@ -154,7 +152,7 @@ As we did in single-series bubble sample above now we need to convert this table
 The min and the max size of bubbles can be controlled using {api:anychart.core.cartesian.series.Bubble#maximumSize}**.maximumSize()**{api} and {api:anychart.core.cartesian.series.Bubble#minimumSize}**.minimumSize()**{api} parameters. Both of them can be set either in pixels or in percents of a lesser chart side:
 
 ```
-    chart.maximumSize(25).minimumSize(1);
+    series.maximumSize(25).minimumSize(1);
 ```
 
 When you set **.maximumSize('20%')** - AnyChart will make diameters of bubble(s) with a biggest size equal to 20% of width or the height, depends on which side is shorter.
@@ -167,7 +165,7 @@ Here is the sample when bubbles are sized in percents, as specified above:
 And in this sample when bubbles are sized in pixels:
 
 ```
-    chart.maximumSize(100).minimumSize(10);
+    series.maximumSize(100).minimumSize(10);
 ```
 Note: this size setting type (in pixels) may lead to the nasty results when chart is resized.
 
@@ -289,7 +287,7 @@ To make the marker more visually appealing we set its size to 12px in normal sta
 
 And here is a result - the best product for ACME Corp. is Product B and we show this on the chart:
 
-{sample}BCT\_Bubble\_Chart\_13{sample}
+{sample}BCT\_Bubble\_Chart\_10{sample}
 <!--Related help topics:
 
 You can read more about working with markers in Markers tutorial.
@@ -305,12 +303,12 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 Now let's study how to apply different colors to different data series. To apply the color to the exact series we need to set the {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter in the {api:anychart.core.cartesian.series}**series**{api}. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
 
-{sample}BCT\_Bubble\_Chart\_10{sample}
+{sample}BCT\_Bubble\_Chart\_11{sample}
 
 Look at the individual points we colorized in the sample below. We've got a chart with one series and predefined color for all elements. We set "Rgb(180,77,77)" color for the minimum point and "Rgb(77,180,77)" for the maximum one.
 As you see it is very easy to do by setting a value for the {api:anychart.graphics.vector.Fill}**fill()**{api} parameter of a point.
 
-{sample}BCT\_Bubble\_Chart\_11{sample}
+{sample}BCT\_Bubble\_Chart\_12{sample}
 
 
 **Important Note:**
@@ -337,4 +335,4 @@ To see whole range of available hatch types see [Hatch Fill](../Appearance_Setti
   
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We've got a chart a with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
 
-{sample}BCT\_Bubble\_Chart\_12{sample}
+{sample}BCT\_Bubble\_Chart\_13{sample}
