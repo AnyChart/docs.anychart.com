@@ -6,8 +6,8 @@ anychart.onDocumentReady(function() {
 
     // data
     var data = anychart.data.set([
-        ['P1', 132, 1, 102, 3, 72, 2, 65, 5, 68, 3],
-        ['P2', 124, 2, 89, 1, 44, 2, 38, 1, 57, 3]
+        [1, 132, 1, 102, 3, 72, 2, 65, 5, 68, 3],
+        [2, 124, 2, 89, 1, 44, 2, 38, 1, 57, 3]
     ]);
 
     // map data for the each series
@@ -24,34 +24,34 @@ anychart.onDocumentReady(function() {
     chart.title().text('Colors');
 
     // set first series data and adjust color
-    series = chart.bubble(seriesData_1)
+    chart.bubble(seriesData_1)
         .minimumSize(10)
         .maximumSize(30)
-        .fill('#3333FF');
+        .color('#3333FF');
 
     // set second series data and adjust color
-    series = chart.bubble(seriesData_2)
+    chart.bubble(seriesData_2)
         .minimumSize(10)
         .maximumSize(30)
-        .fill('#660099');
+        .color('#660099');
 
     // set third series data and adjust color
     series = chart.bubble(seriesData_3)
         .minimumSize(10)
         .maximumSize(30)
-        .fill('#CC6600');
+        .color('#CC6600');
 
     // set forth series data and adjust color
-    series = chart.bubble(seriesData_4)
+    chart.bubble(seriesData_4)
         .minimumSize(10)
         .maximumSize(30)
-        .fill('#FFCC33');
+        .color('#FFCC33');
 
     // set forth series data and adjust color
-    series = chart.bubble(seriesData_5)
+    chart.bubble(seriesData_5)
         .minimumSize(10)
         .maximumSize(30)
-        .fill('#00aa00');
+        .color('#00aa00');
 
     // draw chart
     chart.container('container').draw();
