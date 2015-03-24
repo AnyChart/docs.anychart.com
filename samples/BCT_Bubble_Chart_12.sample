@@ -6,9 +6,9 @@ anychart.onDocumentReady(function() {
 
     // data
     var data = anychart.data.set([
-        ['P1', 14, 2, 24, 2, 34, 2, 42, 2, 50, 2],
-        ['P2', 19, 2, 26, 1, 39, 2, 45, 2, 61, 2],
-        ['P3', 27, 3, 38, 3, 35, 2, 41, 2, 58, 2]
+        [1, 14, 2, 24, 2, 34, 2, 42, 2, 50, 2],
+        [2, 19, 2, 26, 1, 39, 2, 45, 2, 61, 2],
+        [3, 27, 3, 38, 3, 35, 2, 41, 2, 58, 2]
     ]);
 
     // map data for the each series
@@ -29,20 +29,20 @@ anychart.onDocumentReady(function() {
         .minimumSize(10)
         .maximumSize(30)
         .hatchFill('diagonalcross')
-        .fill('#EEEEEE');
+        .color('#EEEEEE');
 
     // set series data and adjust hatch
     series = chart.bubble(seriesData_2)
         .minimumSize(10)
         .maximumSize(30)
-        .fill('#EEEEEE')
+        .color('#EEEEEE')
         .hatchFill('diagonalbrick');
 
     // set series data and adjust hatch
     series = chart.bubble(seriesData_3)
         .minimumSize(10)
         .maximumSize(30)
-        .fill('#EEEEEE')
+        .color('#EEEEEE')
         .hatchFill('zigzag');
 
     // set series data and adjust hatch
@@ -56,8 +56,17 @@ anychart.onDocumentReady(function() {
     series = chart.bubble(seriesData_5)
         .minimumSize(10)
         .maximumSize(30)
-        .fill('#EEEEEE')
+        .color('#EEEEEE')
         .hatchFill('percent30');
+
+    chart.xScale()
+      .minimum(0)
+      .maximum(4)
+      .ticks().interval(1);
+
+    chart.xAxis()
+      .drawFirstLabel(false)
+      .drawLastLabel(false);
 
     // draw
     chart.container('container').draw();
