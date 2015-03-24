@@ -267,8 +267,7 @@ Marker is an object with a specified shape, size, and color or an image used to 
   
 In the sample below we take single-series data described above and mark the biggest bubble in series with a **"Star5"** of the **"Gold"** color.
   
-To make the marker more visually appealing we set its size to 12px in normal state and 22px when being hovered.
-
+To make the marker more visually appealing we set its size to 10px in normal state and 18px when being hovered.
 
 ```
   chart.bubble([
@@ -307,7 +306,7 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 ### Colorizing Elements
 
-Now let's study how to apply different colors to different data series. To apply the color to the exact series we need to set the {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter in the {api:anychart.core.cartesian.series}**series**{api}. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
+Now let's study how to apply different colors to different data series. To apply the color to the exact series we need to set the {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter in the {api:anychart.core.scatter.series}**series**{api}. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
 
 {sample}BCT\_Bubble\_Chart\_11{sample}
 
