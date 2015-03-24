@@ -31,10 +31,10 @@ Let's create a simple Bullet Chart. The main bar represents 2005 revenue and the
   var chart = anychart.bulletChart([
     {value: 637.166}                  //2005 revenue
   ]);
-  chart.range().from(0).to(750);  //maximum annual income ever 
+  chart.range().from(0).to(750);      //maximum annual income ever 
 ```
 
-{sample}BCT\_Bullet\_Chart\_01{sample}
+{sample :height 300}BCT\_Bullet\_Chart\_01{sample}
 
 ## Ranges
 
