@@ -207,7 +207,7 @@ AnyChart allows to invert any axis: Y, X or any extra. Inversion is controlled b
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 0, and maximum is 1000. You can control these values by setting **.maximum()** and **.minimum()** parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjusted the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 
 ```
-    chart.yScale().minimum('-100').maximum('1000').ticks().interval(100);
+    chart.yScale().minimum(-100).maximum(1000).ticks().interval(100);
 ```
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
@@ -269,19 +269,23 @@ To make the marker more visually appealing we set its size to 12px in normal sta
 
 
 ```
-        chart.bubble([
-        {x: "Product A", y: 437, size: 6},
-		{x: "Product B", y: 172, size: 14, marker: {
-            enabled: true, 
-            type: 'star5', 
-            fill: 'gold', 
-            position: 'centerTop', 
-            size: 10
-        }, hoverMarker: {
-            size: 18
-        }},        
-        {x: "Product C", y: 548, size: 10}
-    ]).minimumSize(10).maximumSize(30);
+  chart.bubble([
+    {x: 1, value: 437, size: 6},
+    {
+      x: 2,
+      value: 172,
+      size: 14,
+      marker: {
+        enabled: true, 
+        type: 'star5', 
+        fill: 'gold', 
+        position: 'centerTop', 
+        size: 10
+      },
+      hoverMarker: {size: 18}
+    },        
+    {x: 3, value: 548, size: 10}
+  ]).minimumSize(10).maximumSize(30);
 
 ``` 
 
@@ -297,7 +301,7 @@ to top
 
 ## Colors
 
-AnyChart uses default color palette to colorize data elements of chart automatically if you have not define special colors.
+AnyChart uses default color palette to colorize data elements of chart automatically if you have not defined special colors.
 
 ### Colorizing Elements
 
