@@ -21,8 +21,6 @@
 By default, Gantt Chart displays two columns: rows counts and names of Gantt elements (tasks or resources).
 {sample :width 710 :height 190}GANTT\_Basic\_Sample{sample}
 
-You can disable data
-
 <br>The <b>set of columns</b> is set and defined using the {api:anychart.core.ui.DataGrid#column}**.column()**{api} method:
 
 ```
