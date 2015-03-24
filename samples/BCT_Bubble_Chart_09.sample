@@ -88,6 +88,11 @@ anychart.onDocumentReady(function() {
     .drawLastLabel(false)
     .title().text('Products');
   chart.yAxis().title().text('Sales');
+  
+  // format x axis labels
+  chart.xAxis().labels().textFormatter(function(){
+    return 'Product ' + this.value.toString();
+  });
 
   // draw
   chart.container('container').draw();

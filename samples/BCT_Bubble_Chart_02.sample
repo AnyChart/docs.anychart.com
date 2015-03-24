@@ -22,8 +22,8 @@ anychart.onDocumentReady(function() {
   chart.title().text('Multi-series Bubble Chart');
 
   // set series data
-  chart.bubble(seriesData_2).maximumSize(25).minimumSize(1);
-  chart.bubble(seriesData_1).maximumSize(25).minimumSize(1);
+  chart.bubble(seriesData_2).maximumSize(45).minimumSize(10);
+  chart.bubble(seriesData_1).maximumSize(45).minimumSize(10);
 
   // adjust axes settings
   chart.yAxis().title().text('Sales');
