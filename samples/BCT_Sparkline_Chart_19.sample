@@ -5,9 +5,7 @@
 anychart.onDocumentReady(function() {
 
   // set stage
-  stage = anychart.graphics.create('container');
-
-
+  stage = anychart.graphics.create('container').height(100).width(200);
 
   //create charts
   chart1 = anychart.sparkline();
@@ -23,11 +21,6 @@ anychart.onDocumentReady(function() {
   chart4.height('100%');
   chart5.height('100%');
   chart6.height('100%');
-
-  //set container id for the charts
-  //chart1.container(stage);
-  //chart2.container(stage);
-  //setting the titles
 
   //create data for all charts
   chart1.data([1.1371,1.1341,1.1132,1.1381,1.1371]); //eur\usd feb
@@ -45,8 +38,8 @@ anychart.onDocumentReady(function() {
   table.contents([
     [
       null,
-      'February 2015',
-      'June 2014'
+      'June',
+      'July'
     ],[
       'EUR/USD',
       chart1,
@@ -62,7 +55,7 @@ anychart.onDocumentReady(function() {
     ]
   ]);
 
-  table.rowHeight(0, 40);   // Get first row and set height 40px
+  table.rowHeight(0, '15%');   // Get first row and set height 15%
   table.colWidth(0, 70);    // Get first column and set width 70 px
 
   // adjust table border and position text in each cell into center

@@ -238,7 +238,7 @@ That's how it looks when we adjust the previous code for our sample:
 
 ###RangeMarker
 
-Although being rather small, sparklines can be quite informative. Range is a light colored rectangle with its lowest and highest levels representing the least and the highest acceptable value, e.g. an acceptable number of defects while production.
+Although being rather small, sparklines can be quite informative. Range is a light colored rectangle with its lowest and highest levels representing the least and the highest acceptable value, e.g. an acceptable number of defects while production. To set any parameters to this marker, use the {api:anychart.core.axisMarkers.Range}**.rangeMarker()**{api} method.
 
 ```
 chart.rangeMarker()
@@ -255,7 +255,7 @@ This is an example where we use the data about the Ebay seller. Let's define +25
 
 ###LineMarker
 
-LineMarker is similar to RangeMarker, but there's no area to be shown with LineMarkers - only single lines, which can represent some limits.
+LineMarker is similar to RangeMarker, but there's no area to be shown with LineMarkers - only single lines, which can represent some limits. To set any parameters to this marker, use the {api:anychart.core.axisMarkers.Line}**.lineMarker()**{api} method.
 
 The following code will help you to add a LineMarker to your chart:
 
@@ -309,7 +309,7 @@ That's what we should write to color our negative points in green and stroke the
 	chart2.negativeMarkers().enabled(true).stroke('1 red').fill('green').size(3);
 ```
 
-Now let's color the first and the last columns of two different column Sparklines:
+Now let's color the first and the last columns of two different column Sparklines. For that we use special methods {api:anychart.charts.Sparkline#firstFill}**.firstFill()**{api} and {api:anychart.charts.Sparkline#lastFill}**.lastFill()**{api} accordingly:
 
 ```
   //colorize our charts
@@ -324,7 +324,7 @@ That's how it looks like on the board:
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_15{sample}
 You may notice that other points are now in one color. We've colored them in one low-opacity color to make the special points of the data more noticeable.
 
-You can add labels not to all points, but to special ones, e.g. for the maximum and the minimum ones, like it is done in the example below. You only need to enable the max and min lables:
+You can add labels not to all points, but to special ones, e.g. for the maximum and the minimum ones, like it is done in the example below. You only need to enable the max and min lables using the {api:anychart.charts.Sparkline#maxLables}**.maxLabels()**{api} and {api:anychart.charts.Sparkline#minLables}**.minLabels**{api} methods:
 
 ```
   chart1.maxLabels().enabled(true);
@@ -336,7 +336,6 @@ You can add labels not to all points, but to special ones, e.g. for the maximum 
 {sample :width 688 :height 240}BCT\_Sparkline\_Chart\_16{sample}
 
 Note that the min and the max values are counted by themselves.
-
 
 It's also possible to emphasize any other point besides the special ones. To colorize any normal point, define the color for this point while setting the data:
 
@@ -351,7 +350,7 @@ It's also possible to emphasize any other point besides the special ones. To col
 ###HatchFill
 
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch Fill tutorial](../Appearance_Settings/Hatch_Fill).
-Downwards you can see a couple of WinLoss Sparklines which we've colored with hatchFills using {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter opposite to [api: anychart.graphics.vector.Fill}**fill()**{api} parameter used to colorize the series and set all series in light grey color.
+Downwards you can see a couple of WinLoss Sparklines which we've colored with hatchFills using  special parameters such as {api:anychart.charts.Sparkline#negativeFill}**.negativeFill()**{api}, {api:api:anychart.charts.Sparkline#negativeHatchFill}**.negativeHatchFill**{api} parameter opposite to {api: anychart.graphics.vector.Fill}**fill()**{api} parameter used to colorize the series and set all series in light grey color.
 
 ```
   //colorize our charts
