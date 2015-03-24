@@ -91,7 +91,7 @@ There are following types of tasks in Project Gantt Chart: Normal, Parent and Mi
 </tbody>
 </table>
 
-The tasks types are not explicitly defined, but they have a different behavior.
+<br>The tasks types are not explicitly defined, but they have a different behavior.
 
 ```
     //how to create the tasks
@@ -127,7 +127,7 @@ The tasks types are not explicitly defined, but they have a different behavior.
 
 You can control if the summary task is expanded or collapsed using these methods:
 
-<table border="1" class="dtTABLE">
+<br><table border="1" class="dtTABLE">
 <tbody>
 <tr>
 <th>Method</th>
@@ -170,7 +170,7 @@ Tracking progress can be complicated, but you can show percent complete using pr
 
 {sample :width 780 :height 220}GANTT\_Chart\_05{sample}
 
-Let's demonstrate how to apply different settings to progress bar for custom visualisation.
+<br>Let's demonstrate how to apply different settings to progress bar for custom visualisation.
 
 ```
     'progressValue': "17%",
@@ -197,7 +197,7 @@ Sometimes a task is taking longer than was planned, in this case it is useful to
 
 {sample :width 690 :height 180}GANTT\_Chart\_04{sample}
 
-To configure how actual or baseline bar looks like you need to set the "fill" value in appropriate properties.
+<br>To configure how actual or baseline bar looks like you need to set the "fill" value in appropriate properties.
 
 ```
 // planned and actual in data
@@ -226,7 +226,7 @@ To configure how actual or baseline bar looks like you need to set the "fill" va
 ## Connectors
 
 If there is a need to add an additional connection between tasks, you can define connectors with these settings:
-<br>{api:anychart.enums.GanttDataFields#CONNECTOR_TYPE}**connectorType**{api}. It can belong to one of four types: StartStart, StartFinish, FinishStart, FinishFinish
+<br><br>{api:anychart.enums.GanttDataFields#CONNECTOR_TYPE}**connectorType**{api}. It can belong to one of four types: StartStart, StartFinish, FinishStart, FinishFinish
 <br>{api:anychart.enums.GanttDataFields#CONNECT_TO}**connectTo(taskID)**{api}. It defines another node which will be connected with the first. For this purpose use the "id" value.
 
 <br>Types of task connectors:
@@ -261,3 +261,16 @@ If there is a need to add an additional connection between tasks, you can define
 ```
 
 {sample :width 690 :height 180}GANTT\_Chart\_06{sample}
+
+<br>AnyChart give you an opportunity to describe how connector should be displayed. If you want to customize the connector view you should set the "fill" and "stroke" parameters in <b>connector</b>, where "stroke" defines a color of connector line and "fill" defines the color of connector arrow.
+
+```
+'connector': {
+            'stroke': {color: '#3300CC .2'},
+            'fill': {'color': '6600CC .5'}
+        }
+```
+
+In the sample below we have a Gantt Chart with simple data and we'll color each connector to different color. Here is the sample:
+
+{sample :width 690 :height 180}GANTT\_Chart\_16{sample}
