@@ -238,7 +238,7 @@ In this section we will describe the main elements of column chart style and dem
   
 The main idea of styles is to segregate visualization and data definition. Visual appearance of columns is defined using certain styles. The style can be applied to all column charts or a single column.
 
-On the image below you can see which elements the **Chart** can be decorated with: fill (including solid color fill, hatch fill, image fill and gradient fill), border and effects applied to whole column.
+On the image below you can see which elements of the chart can be decorated with: fill (including solid color fill, hatch fill, image fill and gradient fill), border and effects applied to whole column.
 
 ![](http://www.anychart.com/products/anychart/docs/users-guide/img/column_styles_diagram.gif)
 
@@ -249,18 +249,17 @@ Styles are also used to make charts interactive: you can define how elements wil
 Now, let's find out how to create a simple style and apply it to the chart. As we've already mentioned, style consists of several elements, like in the structure below:
 
 ```
-    chart.column([
-        ['John' , 10000],
-        ['Jake' , 12000],
-        ['Peter' , 18000],
-        ['James' , 11000],
-        ['Mary' , 9000]
-    ]).fill('Gold')
-        .hoverStroke("darkred", 4)
-        .stroke('#56561a', 4)
-        .hatchFill('diagonalbrick', 'gray')
-        .hoverHatchFill('diagonalbrick', 'darkred');
-    chart.draw();
+  var chart.column([
+    ['John' , 10000],
+    ['Jake' , 12000],
+    ['Peter' , 18000],
+    ['James' , 11000],
+    ['Mary' , 9000]
+  ]).fill('Gold')
+    .hoverStroke("darkred", 4)
+    .stroke('#56561a', 4)
+    .hatchFill('diagonalbrick', 'gray')
+    .hoverHatchFill('diagonalbrick', 'darkred');
 ```
 
 Using such settings we've created a style that defines columns of Gold color, rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed thick border and hatch fill colored DarkRed too.
@@ -290,7 +289,17 @@ In the sample below we take single-series data described above and mark the high
 To make marker visually appealing we set its size to 12 pixels in normal state, and 22px while hovered.
 
 ```
-    {x: 'Peter', value: 18000, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}}
+  {
+    x: 'Peter',             // set x
+    value: 18000,           // set value
+    marker:{                // marker settings
+      type:'star5',         // marker type
+      fill:'gold',          // marker color
+      size: 12,             // marker size
+      enabled: true         // initiate marker draw
+    },
+    hoverMarker: {size: 22} // adjust marker size on mouse over
+  },
 ```
 And here is a result - it's easy to notice that Peter sold more than others and we are showing this on the chart:
 
@@ -332,9 +341,9 @@ Here's a part of the code of the sample above:
     chart.legend().enabled(true);
 
     // set first series data and color
-    series1 = chart.column(dataMap1);
-    series1.fill('#4A55C7');
-    series1.name('John');
+    chart.column(dataMap1)
+      .fill('#4A55C7')
+      .name('John');
 
     //other series names, data and color are to be set similarly to the former
 

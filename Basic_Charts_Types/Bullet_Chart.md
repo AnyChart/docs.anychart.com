@@ -38,7 +38,7 @@ Let's create a simple Bullet Chart. The main bar represents 2005 revenue and the
 
 ## Ranges
 
-Ranges or range bar in Bullet chart are qualitative categories representations (such as bad, satisfactory and good). They are variables of color intensity rather than of hue. Ranges are controlled by {api:anychart.charts.Bullet#range}**.range()**{api} method and have two mandatory parameters set by {api:anychart.core.axisMarkers.Range#from}**.from()**{api} and {api:anychart.core.axisMarkers.Range#to}**.to()**{api} methods.
+Ranges or range bars in Bullet chart are qualitative categories representations (such as bad, satisfactory and good). They are variables of color intensity rather than of hue. Ranges are controlled by {api:anychart.charts.Bullet#range}**.range()**{api} method and have two mandatory parameters set by {api:anychart.core.axisMarkers.Range#from}**.from()**{api} and {api:anychart.core.axisMarkers.Range#to}**.to()**{api} methods.
 
 ```
   chart.range(<number_of_a_range>).from(<value1>).to(<value2>);
