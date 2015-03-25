@@ -1,30 +1,38 @@
 {:tags []
   :is_new false
   :exports "chart"}
+
 anychart.onDocumentReady(function() {
 
-    // chart type
-    chart = anychart.columnChart();
+  // chart type
+  chart = anychart.columnChart();
 
-    // chart title
-    chart.title().text('Marker');
+  // set data
+  chart.column([
+    ['John' , 10000],
+    ['Jake' , 12000],
+    {
+      x: 'Peter',             // set x
+      value: 18000,           // set value
+      marker:{                // marker settings
+        type:'star5',         // marker type
+        fill:'gold',          // marker color
+        size: 12,             // marker size
+        enabled: true         // initiate marker draw
+      },
+      hoverMarker: {size: 22} // adjust marker size on mouse over
+    },
+    ['James' , 11000],
+    ['Mary' , 9000]
+  ]);
 
-    // set axes titles
-    chart.xAxis().title().text('Manager');
-    chart.yAxis().title().text('Sales');
+  // chart title
+  chart.title().text('Marker');
 
-    // set scale minimum
-    chart.yScale().minimum(0);
+  // set axes titles
+  chart.xAxis().title().text('Manager');
+  chart.yAxis().title().text('Sales');
 
-    // set data
-    chart.column([
-        ['John' , 10000],
-        ['Jake' , 12000],
-        {x: 'Peter', value: 18000, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}},
-        ['James' , 11000],
-        ['Mary' , 9000]
-    ]);
-
-    // draw chart
-    chart.container('container').draw();
+  // draw chart
+  chart.container('container').draw();
 });
