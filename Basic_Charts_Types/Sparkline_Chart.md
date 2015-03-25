@@ -7,18 +7,15 @@
  * [Column](#column_sparkline_chart)
  * [WinLoss](#winloss_sparkline_chart)
 * [Axes](#axes)
- * [Inversion](#inversion)
- * [Minimum and Maximum](#minimum_and_maximum)
 * [Missing Points](#missing_points)
-* [Visualisation](#visualization)
- * [Point Width](#pointwidth)
+* [Visualisation](#visualisation)
+ * [Point Width](#point_width)
 * [Labels](#labels)
-* [Markers](#markers)
 * [Axes Markers](#axes_markers)
  * [RangeMarker](#rangemarker)
  * [LineMarker](#linemarker)
-* [Design](#design)
-  * [Colorizing Elements](#colorizing_elements)
+* [Colorizing elements](#colorizing_elements)
+  * [General](#general)
   * [HatchFill](#hatchfill)
 * [Layout](#layout)
 
@@ -212,7 +209,7 @@ This feature can be applied to Column and WinLoss Sparklines. Let's adjust colum
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_09{sample}
 
-##Label
+##Labels
 
 In this section we will explain how to add and configure data labels. 
 
@@ -270,11 +267,11 @@ That's how it all looks in the example:
 {sample :width 688 :height 80}BCT\_Sparkline\_Chart\_12{sample}                                   
  
 
-##Design
+##Colorizing elements
 
 AnyChart uses default color palette to colorize data elements of chart automatically if you have not define special colors. But you can set and apply the color to exact data series or data point.
 
-### Colorizing Elements
+### General
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.graphics.vector.Stroke}**.stroke()**{api} parameter for Line or Area series and {api:anychart.graphics.vector.Fill}**.fill()**{api} for  Area, Column and WinLoss. In the sample below we have 4 charts of each type demonstrating the applied colors and fills. We have colored the maximum and the minimum values in the column chart and only negatives in winloss. Here is the sample:
 
@@ -292,12 +289,68 @@ The code for the example above is the following:
 	chart4.negativeFill('darkred');
 ```
 
+####Special points 
+
 Actually, the main purpose of colorizing Sparklines is to put your customers' attention to some facts, using charts of the same type. You can emphasize the special points - this will make the comparison much easier.
 
 Those special points are: the first, the last, the max, the min and negative ones. The rest are normal.
 
+Here's a table of the methods avaliable for these points. You can find the description of the methods below.
 
-Using the {api:anychart.graphics.vector.Stroke}**.stroke()**{api} and {api:anychart.graphics.vector.Fill}**.fill()**{api} paramenters, we can change these points' stroke and color accordingly. As a method of highlighting the point we can also enable labels, markers and hatchFills (see next paragraph for hatchFills).
+<table width="700" border="1" class="dtTABLE">
+<tbody>
+<tr>
+<th width="140"><b></b></th>
+<th width="140"><b>Fill</b></th>
+<th width="140"><b>hatchFill</b></th>
+<th width="140"><b>Labels</b></th>
+<th width="140"><b>Markers</b></th>
+</tr>
+<tr>
+<td>first</td>
+<td>{api:anychart.charts.Sparkline#firstFill}**.firstFill**{api}</td>
+<td>{api:anychart.charts.Sparkline#firstHatchFill}**.firstHatchFill**{api}</td>
+<td>{api:anychart.charts.Sparkline#firstLabels}**.firstLabels**{api}</td>
+<td>{api:anychart.charts.Sparkline#firstMarkers}**.firstMarkers**{api}</td>
+</tr>
+<tr>
+<td>last</td>
+<td>{api:anychart.charts.Sparkline#lastFill}**.lastFill**{api}</td>
+<td>{api:anychart.charts.Sparkline#lastHatchFill}**.lastHatchFill**{api}</td>
+<td>{api:anychart.charts.Sparkline#lastLabels}**.lastLabels**{api}</td>
+<td>{api:anychart.charts.Sparkline#lastMarkers}**.lastMarkers**{api}</td>
+</tr>
+<tr>
+<td>max</td>
+<td>{api:anychart.charts.Sparkline#maxFill}**.maxFill**{api}</td>
+<td>{api:anychart.charts.Sparkline#maxHatchFill}**.maxHatchFill**{api}</td>
+<td>{api:anychart.charts.Sparkline#maxLabels}**.maxLabels**{api}</td>
+<td>{api:anychart.charts.Sparkline#maxMarkers}**.maxMarkers**{api}</td>
+</tr>
+<tr>
+<td>min</td>
+<td>{api:anychart.charts.Sparkline#minFill}**.minFill**{api}</td>
+<td>{api:anychart.charts.Sparkline#minHatchFill}**.minHatchFill**{api}</td>
+<td>{api:anychart.charts.Sparkline#minLabels}**.minLabels**{api}</td>
+<td>{api:anychart.charts.Sparkline#minMarkers}**.minMarkers**{api}</td>
+</tr>
+<tr>
+<td>negative</td>
+<td>{api:anychart.charts.Sparkline#negativeFill}**.negativeFill**{api}</td>
+<td>{api:anychart.charts.Sparkline#negativeHatchFill}**.negativeHatchFill**{api}</td>
+<td>{api:anychart.charts.Sparkline#negativeLabels}**.negativeLabels**{api}</td>
+<td>{api:anychart.charts.Sparkline#negativeMarkers}**.negativeMarkers**{api}</td>
+</tr>
+<tr>
+<td>all</td>
+<td>{api:anychart.charts.Sparkline#fill}**.fill**{api}</td>
+<td>{api:anychart.charts.Sparkline#hatchFill}**.hatchFill**{api}</td>
+<td>{api:anychart.charts.Sparkline#labels}**.labels**{api}</td>
+<td>{api:anychart.charts.Sparkline#markers}**.markers**{api}</td>
+</tr>
+</tbody></table>
+
+Using the {api:anychart.graphics.vector.Stroke}**.stroke()**{api} and {api:anychart.graphics.vector.Fill}**.fill()**{api} paramenters, we can change these points' stroke and color accordingly. As a method of highlighting the point we can also enable labels, markers and hatchFills (see next section for hatchFills).
 
 Let's have a look on two different line sparklines with negative points emphasized with color:
 
@@ -324,7 +377,7 @@ That's how it looks like on the board:
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_15{sample}
 You may notice that other points are now in one color. We've colored them in one low-opacity color to make the special points of the data more noticeable.
 
-You can add labels not to all points, but to special ones, e.g. for the maximum and the minimum ones, like it is done in the example below. You only need to enable the max and min lables using the {api:anychart.charts.Sparkline#maxLables}**.maxLabels()**{api} and {api:anychart.charts.Sparkline#minLables}**.minLabels**{api} methods:
+You can add labels not to all points, but to special ones, e.g. for the maximum and the minimum ones, like it is done in the example below. You only need to enable the max and the min lables using the {api:anychart.charts.Sparkline#maxLables}**.maxLabels()**{api} and {api:anychart.charts.Sparkline#minLables}**.minLabels**{api} methods:
 
 ```
   chart1.maxLabels().enabled(true);
@@ -336,6 +389,8 @@ You can add labels not to all points, but to special ones, e.g. for the maximum 
 {sample :width 688 :height 240}BCT\_Sparkline\_Chart\_16{sample}
 
 Note that the min and the max values are counted by themselves.
+
+####Any point
 
 It's also possible to emphasize any other point besides the special ones. To colorize any normal point, define the color for this point while setting the data:
 
