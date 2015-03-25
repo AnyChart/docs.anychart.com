@@ -70,6 +70,8 @@ anychart.onDocumentReady(function() {
   // set axes titles
   chart.xAxis().title().text('Manager');
   chart.yAxis().title().text('Sales');
+  
+  chart.yScale().minimum(0);
 
   // draw
   chart.container('container').draw();
