@@ -18,7 +18,7 @@ anychart.onDocumentReady(function() {
   chart.rangePalette(['#ffa058', '#ffb082', '#ffc0a8', '#ffd0c2', '#ffe0e6']);
 
   // Set chart size and position settings
-  chart.bounds(0, '35%', '100%', '30%');
+  chart.bounds(0, 0, '100%', 125);
 
   // Set title
   chart.title().text('Colors');

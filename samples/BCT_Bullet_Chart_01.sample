@@ -10,7 +10,7 @@ anychart.onDocumentReady(function() {
   ]);
   
   // Set chart ranges
-  chart.range().from(0).to(750);      // maximum annual income
+  chart.range().from(0).to(750);        // maximum annual income
 
   // Set chart size and position settings
   chart.bounds(0, 0, '100%', 125);
