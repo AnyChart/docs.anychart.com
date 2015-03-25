@@ -46,7 +46,7 @@ Ranges or range bar in Bullet chart are qualitative categories representations (
 
 Here is a sample with 5 ranges on one bullet chart:
 
-{sample}BCT\_Bullet\_Chart\_02{sample}
+{sample :width 690 :height 130}BCT\_Bullet\_Chart\_02{sample}
 
 The code for the example above is the following:
 
@@ -106,7 +106,7 @@ AnyChart allows to invert any axis on a dashboard. Inversion is to be set using 
 
 Below this you can see a demonstration of a horizontal bullet chart with inverted axis. 
 
-{sample}BCT\_Bullet\_Chart\_05{sample}
+{sample :width 690 :height 130}BCT\_Bullet\_Chart\_05{sample}
 
 ### Minimum and Maximum
 
@@ -118,7 +118,7 @@ By default AnyChart calculates axis minimum and maximum automatically, as you ca
 
 Look at the demonstration of maximum and minimum values in the Single-series sample:
 
-{sample}BCT\_Bullet\_Chart\_06{sample}
+{sample :width 690 :height 130}BCT\_Bullet\_Chart\_06{sample}
 
 ## Markers
 
@@ -131,7 +131,7 @@ Bullet charts have 4 marker types: {api:anychart.enums.BulletMarkerType#BAR}*bar
 
 Here is the sample with all 4 marker types:
 
-{sample}BCT\_Bullet\_Chart\_07{sample}
+{sample :width 690 :height 130}BCT\_Bullet\_Chart\_07{sample}
 
 **Note:** This chart contains all markers in one data set. It was done for demonstration purpose. It's highly recommended to **limit markers number to two** to avoid complexity.
 
@@ -156,7 +156,7 @@ Here is the sample of an ellipse sharped marker with blue stroke, gold inner col
 
 **Note:** The **.gap()** value represents the distance from the border of the chart to the marker's border, not the exact size of the marker. So, the more this value is, the less is the diameter of the ellipse (the line's or rectangular's height).
 
-{sample}BCT\_Bullet\_Chart\_08{sample}
+{sample :width 690 :height 130}BCT\_Bullet\_Chart\_08{sample}
 
 ## Colors
 
@@ -172,4 +172,4 @@ Bullet Chart ranges use variables of color intensity rather than of hue. 
   ]);
 ```
 
-{sample}BCT\_Bullet\_Chart\_09{sample}
+{sample :width 690 :height 130}BCT\_Bullet\_Chart\_09{sample}
