@@ -14,7 +14,7 @@ anychart.onDocumentReady(function() {
   ];
 
   // chart type
-  chart = anychart.financialChart();
+  var chart = anychart.financialChart();
 
   // chart title
   chart.title().text('Minimum and Maximum Value');
@@ -30,7 +30,7 @@ anychart.onDocumentReady(function() {
   var series = chart.candlestick(data);
 
   // set minimum and maximum y scale values and adjust intervals
-  chart.yScale().minimum('505').maximum('530').ticks().interval(5);
+  chart.yScale().minimum(505).maximum(530).ticks().interval(5);
 
   // set axes title
   chart.xAxis().title().text('Day');
