@@ -47,5 +47,4 @@ anychart.onDocumentReady(function() {
   horizontalChart.range(2).from(10).to(15);
   // Initiate chart drawing
   horizontalChart.draw();
-
 });

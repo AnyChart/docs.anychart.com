@@ -25,5 +25,4 @@ anychart.onDocumentReady(function() {
 
   // Initiate chart drawing
   chart.draw();
-
 });
