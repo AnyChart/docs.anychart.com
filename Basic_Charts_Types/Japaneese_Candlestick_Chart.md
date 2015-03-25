@@ -286,8 +286,8 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
 
 ```
-    chart.xAxis(0).orientation('top');
-    chart.yAxis(0).orientation('right');
+    chart.xAxis().orientation('top');
+    chart.yAxis().orientation('right');
 ```
 
 And this is the demonstration of this feature in the Single-series sample:
