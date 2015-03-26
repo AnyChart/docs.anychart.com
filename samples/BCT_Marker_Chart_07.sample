@@ -31,7 +31,7 @@ anychart.onDocumentReady(function() {
   chart.xScale()
     .minimum(1999)
     .maximum(2007)
-    .ticks.interval(1);
+    .ticks().interval(1);
   
   chart.container('container').draw();
 });
