@@ -71,7 +71,7 @@ Now we need to convert this data table into an acceptable format. In terms of An
         ['April', 11000],
         ['May', 9000]
     ]);
-    chart = anychart.lineChart();
+    var chart = anychart.lineChart();
     chart.line(data);
 ```
 
@@ -91,7 +91,7 @@ For better impression of your charts you can use the Spline chart type:
         ['April', 11000],
         ['May', 9000]
     ]);
-    chart = anychart.lineChart();
+    var chart = anychart.lineChart();
     chart.spline(data);
 ```
 
@@ -111,7 +111,7 @@ Step line chart series display data points connected with Horizontal or Vertical
         ['April', 11000],
         ['May', 9000]
     ]);
-    chart = anychart.lineChart();
+    var chart = anychart.lineChart();
     chart.stepLine(data);
 ```
 
@@ -170,7 +170,7 @@ As we did in single-series line sample above we need to convert this table into 
     ]);
     var seriesData_2 = dataSet.mapAs({x: [0], value: [1]});
     var seriesData_1 = dataSet.mapAs({x: [0], value: [2]});
-    chart = anychart.lineChart();
+    var chart = anychart.lineChart();
     chart.line(seriesData_1);
     chart.line(seriesData_2);
 ```
@@ -190,8 +190,8 @@ With AnyChart you can place axes to any side of the chart, all you need to do is
 The position depends on the plot type and inversion of axes. See list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
 
 ```
-    chart.xAxis(0).orientation('top');
-    chart.yAxis(0).orientation('right');
+    chart.xAxis().orientation('top');
+    chart.yAxis().orientation('right');
 ```
 
 Below this you can see the demonstration of this feature in the Single-series sample:
@@ -215,7 +215,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 AnyChart calculates axis minimum and maximum automatically. The minimal value on Y-Axis is 8.000, the maximum is 20.000, as you can see in the sample above. You can control these values by setting **.maximum()** and **.minimum()** parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method; let's look at what will happen if we define 0 and 50.000 as the min amd the max values on the Y-Axis:
 
 ```
-    chart.yScale().minimum('0').maximum('50000');
+    chart.yScale().minimum(0).maximum(50000);
 ```
 
 And here is the demonstration of setting the max and min values in the Single-series sample:
@@ -239,10 +239,25 @@ Also, styles are used to make charts interactive, so you can define how elements
 Now, let's look how to create a simple style and apply it to the chart. As we've already said a style consists of several elements, and its acceptable structure is given downwards:
 
 ```
-    chart.line(data)
-        .stroke('Rgb(86,86,26)', 4)
-        .markers(null)
-        .hoverStroke('darkred', 4);
+  // line settings
+  series.stroke(
+    'Rgb(86,86,26)',    // set line color
+    4                   // set line size
+  );
+
+  // marker settings
+  series.markers()
+    .enabled(true)      // enables markers
+    .type('star5')      // set marker type
+    .fill('gold')       // set marker inner color
+    .stroke('darkred')  // set marker border
+    .size(7);           // set marker size
+  
+  // settings for hovered marker
+  series.hoverMarkers()
+    .size(7)            // marker size
+    .fill('darkred')    // marker inner color
+    .stroke('gold');    // marker border
 ```
 
 Using such settings we've set the line in Gold color, made it rather thick and added a couple of effects. Also, we've defined that an element will be highlighted with a thick line of dark red  color when being hovered.
@@ -275,11 +290,20 @@ Marker is an object with a specified shape, size, and color or an image used to 
 
 In the sample below we take single-series data described above and mark the highest point in series with a "Star5" of the "Gold" color.
 
-To make marker visually appealing we set its size to 12 pixels in normal state, and 16px while hovered.
+To make marker visually appealing we set its size to 12 pixels in normal state, and 22px while hovered.
 
   
 ```
-    {x: 'March', value: 18000, marker:{type:'star5', fill:'gold', size: 12}, hoverMarker: {size: 22}}
+  {
+    x: 'March',
+    value: 18000,
+    marker:{                // marker settings
+      type:'star5',         // marker type
+      fill:'gold',          // marker inner color
+      size: 12              // marker size
+    }, 
+    hoverMarker: {size: 22} // marker size on mouse over
+  }
 ```
 
 And here is a result - March is the most profitable month and we are showing this on the chart:
