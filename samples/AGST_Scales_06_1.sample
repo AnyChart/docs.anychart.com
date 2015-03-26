@@ -3,31 +3,51 @@
      :exports "chart"}
 anychart.onDocumentReady(function() {
 
-    // define chart type
-    chart = anychart.columnChart();
+  // set stage
+  stage = anychart.graphics.create('container');
 
-    // chart title
-    chart.title().text('Soft Maximum and Soft Minimum Scale Value');
+  // create table
+  var table = anychart.ui.table();
+  table.rowHeight(0, '100%');
 
-    // setting data
-    var data = anychart.data.set([
-        ['C', 5, 100],
-        ['D', -250, 200],
-        ['E', 15, 15]
-    ]);
+  // setting data
+  var data = anychart.data.set([
+        ['C', 5],
+        ['D', -21],
+        ['E', 14]
+  ]);
 
-    // remapping data
-    var Sales2003 = data.mapAs({x: [0], value: [1]});
-    var Sales2004 = data.mapAs({x: [0], value: [2]});
+  // create charts
+  var chart_1 = anychart.columnChart(data);
+  var chart_2 = anychart.columnChart(data);
+  var chart_3 = anychart.columnChart(data);  
 
-    // setting series data
-    var series;
-    series = chart.column(Sales2003).hoverFill('#444444');
-    series = chart.column(Sales2004).hoverFill('#444444');
+  chart_2.yScale().minimum(-10).maximum(10);
+  chart_3.yScale().softMinimum(-25).softMaximum(25);
+
+  formatChart(chart_1);
+  formatChart(chart_2);
+  formatChart(chart_3);
+
+  // set table content
+  table.contents([
+    [
+      chart_1,
+      chart_2,
+      chart_3
+    ]
+  ]);
 
 
-    // adjusting y scale minimum and maximum values
-    chart.yScale().softMinimum(-50).softMaximum(100).ticks().interval(20);
+  // position text in the center of each cell
+  table.cellTextFactory().vAlign('center').hAlign('center');
 
-    chart.container('container').draw();
+  // set table container and initiate draw
+  table.container(stage).draw();
 });
+function formatChart(chart){
+    chart.title(false);
+    chart.xAxis().title(false);
+    chart.yAxis().title(false);
+    chart.yScale().minimumGap(0).maximumGap(0)
+};
