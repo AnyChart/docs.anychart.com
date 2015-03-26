@@ -9,6 +9,8 @@
   * [Date Time](#date_time)
 * [Stack Mode](#stack_mode)
 * [Minimum and Maximum](#minimum_and_maximum) 
+* [Soft Minimum and Soft Maximum](#soft_minimum_and_soft_maximum) 
+* [Stick to Zero](#stick_to_zero)
 * [Minor and Major Ticks](#minor_and_major_ticks) 
 * [Minimum and Maximum Gap](#minimum_and_maximum_gap)
 * [Inversion](#inversion)
@@ -140,11 +142,28 @@ will be cut, and you will see only a part of them or will not see them at all.
 
 {sample}AGST\_Scales\_06{sample}
 
+## Soft Minimum and Soft Maximum
+
+For any scale, but ordinal, you can set soft maximum and/or soft minimum values.
+
+```
+    chart.yScale().softMinimum(-50).softMaximum(100);
+```
+
+In some cases you may have no need to define solid minimum or maximum and need a scale to be autocalculated, but at the same time you may want a scale to remain in a certain range (i.e. "never go below zero" or "never go above 100"): that's the case when soft maximum and soft_minimum parameters help you.
+
+Sample below shows how soft minimum and soft maximum help to show data better than simple minimum and maximum.
+
+{sample}AGST\_Scales\_06\_1{sample}
+
+## Stick to Zero
+
+stickToZero() method allows to disable the default scale autocalculation behavior and always show include zero in scale range.
+
 ## Minor and Major Ticks
 
 For any scale, but ordinal, you can set major and minor ticks intervals, which are calculated automatically by default. 
-Major and minor ticks intervals are axis steps, which define where axis labels (major interval), axis ticks (major and 
-minor, correspondingly) and major and minor grids are displayed.
+Major and minor ticks intervals are axis steps, which define where axis labels (major interval), axis ticks (major and minor, correspondingly) and major and minor grids are displayed.
 
 ```
     chart.yScale().ticks().interval(10);
@@ -157,16 +176,14 @@ In the sample below you can see how interval settings affects grids, ticks and l
 
 ## Minimum and Maximum Gap
 
-For any axis scale you can set minimum and maximum offsets. Maximum and minimum offsets are the spacing between maximum 
-or minimum axis scale values and they are set as a ratio to the maximum and minimum scale values.
+For any axis scale you can set minimum and maximum offsets. Maximum and minimum offsets are the spacing between maximum or minimum axis scale values and they are set as a ratio to the maximum and minimum scale values.
 
 ```
     chart.yScale().minimumGap(0.5).maximumGap(0.5);
 ```
 
 In the sample below you can see how offsets settings affects chart, the chart to the left has minimum and maximum 
-offsets set to 0.5, the chart to the right has all the same settings, but offsets are not set. Note that offsets are 
-ignored when maximum or minimum scale values are specified.
+offsets set to 0.5, the chart to the right has all the same settings, but offsets are not set. Note that offsets are ignored when maximum or minimum scale values are specified.
 
 {sample}AGST\_Scales\_08{sample}
 
