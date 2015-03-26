@@ -12,10 +12,12 @@
  * [Point Width](#point_width)
 * [Labels](#labels)
 * [Axes Markers](#axes_markers)
- * [RangeMarker](#rangemarker)
- * [LineMarker](#linemarker)
+ * [Range Marker](#range_marker)
+ * [Line Marker](#line_marker)
 * [Colorizing elements](#colorizing_elements)
   * [General](#general)
+  * [Special Points](#special_points)
+  * [All Points](#special_points)
   * [HatchFill](#hatchfill)
 * [Layout](#layout)
 
@@ -233,7 +235,7 @@ That's how it looks when we adjust the previous code for our sample:
 
 ##Axes Markers
 
-###RangeMarker
+###Range Marker
 
 Although being rather small, sparklines can be quite informative. Range is a light colored rectangle with its lowest and highest levels representing the least and the highest acceptable value, e.g. an acceptable number of defects while production. To set any parameters to this marker, use the {api:anychart.core.axisMarkers.Range}**.rangeMarker()**{api} method.
 
@@ -250,11 +252,11 @@ This is an example where we use the data about the Ebay seller. Let's define +25
 {sample :width 688 :height 80}BCT\_Sparkline\_Chart\_11{sample}
 
 
-###LineMarker
+###Line Marker
 
-LineMarker is similar to RangeMarker, but there's no area to be shown with LineMarkers - only single lines, which can represent some limits. To set any parameters to this marker, use the {api:anychart.core.axisMarkers.Line}**.lineMarker()**{api} method.
+Line Marker is similar to Range Marker, but there's no area to be shown with Line Markers - only single lines, which can represent some limits. To set any parameters to this marker, use the {api:anychart.core.axisMarkers.Line}**.lineMarker()**{api} method.
 
-The following code will help you to add a LineMarker to your chart:
+The following code will help you to add a Line Marker to your chart:
 
 ```
   chart.lineMarker()
@@ -289,7 +291,7 @@ The code for the example above is the following:
 	chart4.negativeFill('darkred');
 ```
 
-####Special points 
+###Special points 
 
 Actually, the main purpose of colorizing Sparklines is to put your customers' attention to some facts, using charts of the same type. You can emphasize the special points - this will make the comparison much easier.
 
@@ -390,7 +392,7 @@ You can add labels not to all points, but to special ones, e.g. for the maximum 
 
 Note that the min and the max values are counted by themselves.
 
-####Any point
+###Any point
 
 It's also possible to emphasize any other point besides the special ones. To colorize any normal point, define the color for this point while setting the data:
 
