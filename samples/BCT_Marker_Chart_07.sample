@@ -6,9 +6,8 @@ anychart.onDocumentReady(function() {
 
   // chart type
   var chart = anychart.scatter();
-
-  // data
-  data = anychart.data.set([
+  // define chart type, set data and adjust visualisation
+  chart.marker([
     [2000, 1100],
     [2001, 880],
     [2002, 1100],
@@ -16,35 +15,23 @@ anychart.onDocumentReady(function() {
     [2004, 921],
     [2005, 1000],
     [2006, 1400]
-  ]);
-
-  // set data
-  markerchart = chart.marker(data);
-
-  // enable and adjust labels
-  markerchart.labels()
-    .enabled(true)
-    .anchor('bottomcenter')
-    .fontWeight(900)
-    .offsetY(10);
-
-  // adjust tooltips
-  markerchart.tooltip().contentFormatter(function(){
-      return 'Month: ' + this.x + '\nSales: ' + this.value ;
-  });
-    
+  ])
+    .fill('gold')
+    .hoverFill('darkred')
+    .hoverStroke(0)
+    .hoverSize(20);
+  
   // set title
-  chart.title().text('Labels and Tooltips');
+  chart.title().text('Visualization');
   
   // draw axes and set titles
   chart.xAxis().title('Year');
   chart.yAxis().title('Box office');
-  
+    
   chart.xScale()
     .minimum(1999)
     .maximum(2007)
-    .ticks().interval(1);
-    
-    // draw
+    .ticks.interval(1);
+  
   chart.container('container').draw();
 });

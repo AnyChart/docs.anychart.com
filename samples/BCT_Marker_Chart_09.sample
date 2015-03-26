@@ -9,34 +9,41 @@ anychart.onDocumentReady(function() {
 
   // data
   data = anychart.data.set([
-    [1, 132],
-    [2, 124],
-    [3, 102],
-    [4, 119],
-    [5, 169],
-    {x: 6, value: 237, fill: 'Rgb(77,180,77)'},
-    [7, 120],
-    [8, 99],
-    {x: 9, value: 44, fill: 'Rgb(180,77,77)'},
-    [10, 59]
+    [1, 178, 165, 154, 143, 132],
+    [2, 167, 153, 144, 133, 122]
   ]);
 
-  // set data
-  chart.marker(data)
-    .fill('#C6D1A5');
+  // map data for each series
+  var data1 = data.mapAs({x: [0], value: [1]});
+  var data2 = data.mapAs({x: [0], value: [2]});
+  var data3 = data.mapAs({x: [0], value: [3]});
+  var data4 = data.mapAs({x: [0], value: [4]});
+  var data5 = data.mapAs({x: [0], value: [5]});
 
+  // set data and color for each series
+  chart.marker(data1)
+    .fill('#4A55C7');
+  chart.marker(data2)
+    .fill('#5EBD9B');
+  chart.marker(data3)
+    .fill('#B04A8A');
+  chart.marker(data4)
+    .fill('#C7894A');
+  chart.marker(data5)
+    .fill('#BCBD46');
+  
   // set title
-  chart.title().text('Minimum and Maximum Value Colorizing');
-
+  chart.title().text('Colors');
+  
   // draw axes and set titles
   chart.xAxis().title('Year');
   chart.yAxis().title('Box office');
-    
+
   chart.xScale()
     .minimum(0)
-    .maximum(11)
+    .maximum(3)
     .ticks().interval(1);
 
-    // draw
+  // draw
   chart.container('container').draw();
 });
