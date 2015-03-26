@@ -17,7 +17,7 @@
 * [Colorizing elements](#colorizing_elements)
   * [General](#general)
   * [Special Points](#special_points)
-  * [All Points](#all_points)
+  * [Any Point](#any_point)
   * [HatchFill](#hatchfill)
 * [Layout](#layout)
 
