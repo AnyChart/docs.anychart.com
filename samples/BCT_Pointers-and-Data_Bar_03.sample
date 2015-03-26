@@ -6,7 +6,7 @@
 anychart.onDocumentReady(function() {
     
 		//create data set on our data
-    dataSet = anychart.data.set([50]);
+    dataSet = anychart.data.set([60]);
     
 		//set the gauge type
     gauge = anychart.circularGauge();
@@ -26,7 +26,7 @@ anychart.onDocumentReady(function() {
     axis.scale()
         .minimum(0)
         .maximum(360)
-        .ticks({interval: 10})
+        .ticks({interval: 20})
         .minorTicks({interval: 1});
 
 		//ticks settings

@@ -97,9 +97,13 @@ anychart.onDocumentReady(function() {
         .text('ALBANY')
         .anchor('center') //set the position of the label
         .adjustFontSize(true)
-        .width('55%')
-        .height('7%')
+        .hAlign('center')
+        .offsetY('15%')
+        .offsetX('50%')
+        .width('50%')
+        .height('10%')
         .zIndex(10);
+
         
     //range
     gauge.range()

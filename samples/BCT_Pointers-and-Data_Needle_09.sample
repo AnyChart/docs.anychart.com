@@ -38,11 +38,15 @@ anychart.onDocumentReady(function() {
     axis.minorTicks()
         .enabled(true)
         .length('1');
-    
-		//bar
-    gauge.bar(0)
-        .width(3)
-        .radius(100);
+		
+        //needle
+    gauge.needle(8)
+        .startRadius('0%')
+        .endRadius('80%')
+        .middleRadius('50%')
+        .startWidth(1)
+        .middleWidth(3)
+        .endWidth(0);
         
 		//draw the chart
     gauge.container('container').draw();

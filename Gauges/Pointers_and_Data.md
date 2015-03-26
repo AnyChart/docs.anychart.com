@@ -44,7 +44,7 @@ In the sample above we have only enabled the bar. Let's now change its width and
 ```
 {sample}BCT\_Pointers-and-Data\_Bar\_02{sample} 
 
-There's a lot of parameters to be adjusted else. For example, a bar pointer can be colored with a single color or with a gradient, we can set the position of the bar according to the defined radius, snap it to the exact data point and axis, set the stroke.
+There's a lot of parameters to be adjusted else. For example, a bar pointer can be colored with a single color or with a gradient, we can set the position of the bar according to the defined radius, snap it to the exact data point and axis, set the stroke. 
 
 Now let's look at the position of the bar according to its radius. As our bar is more than 1px width it can be positioned outside, in the center or inside the circle of the defined radius. To set the position use the {api:anychart.enums.GaugeSidePosition}**.position()**{api} method. The value is to be "outside", "inside" or "center". Let's put our bar inside the circle of the defined radius:
 
@@ -82,9 +82,67 @@ The marker size is rather small by default, so we need to use the {api:anychart.
 
 {sample}BCT\_Pointers-and-Data\_Marker\_04{sample} 
 
-It's not the best view when the marker covers the value on the axis, so now let's adjust the position of the marker according to the defined radius. 
+It's not the best view when the marker covers the value on the axis, so now let's adjust the position of the marker according to the circle of the default or defined radius. As with bars, the marker might be in its center, outside or inside it. Let's set the marker's position to outside and look how will it change the view: 
+
+```
+        //marker
+    gauge.marker(0)
+        .position('outside')
+        .size(7);
+```
+{sample}BCT\_Pointers-and-Data\_Marker\_05{sample} 
+
+Now our marker is outside the axis, but it doesn't point at the value. Let's change its type:
+
+```
+        //marker
+    gauge.marker(0)
+        .position('outside')
+		.triangledow
+        .size(7);
+```
+{sample}BCT\_Pointers-and-Data\_Marker\_06{sample} 
 
 ###Needle
+
+Let's now look at the needles - the most common pointer used with Gauges. 
+
+```
+        //needle
+    gauge.needle(0)
+        .enabled(true);
+```
+
+{sample}BCT\_Pointers-and-Data\_Needle\_07{sample} 
+
+Needle can be a thin stick or a pointer of a complex form - you can regulate its width using three similar methods: {api:anychart.core.gauge.pointers.needle#startWidth}**.startWidth()**{api}, {api:anychart.core.gauge.pointers.needle#middleWidth}**.middleWidth()**{api} and {api:anychart.core.gauge.pointers.needle#endWidth}**.endWidth()**{api}.
+
+Let's make our needle thiner to the end, wider to the center and a bit thiner to the start:
+
+```
+        //needle
+    gauge.needle(8)
+        .startWidth(1)
+        .middleWidth(3)
+        .endWidth(0);
+```
+
+{sample}BCT\_Pointers-and-Data\_Needle\_08{sample} 
+
+As we can see, the needle starts not from the gauge center. Let's adjust the start, the middle and the end of our needle with methods {api:anychart.core.gauge.pointers.needle#startRadius}**.startRadius()**{api}, {api:anychart.core.gauge.pointers.needle#middleRadius}**.middleRadius()**{api} and {api:anychart.core.gauge.pointers.needle#endRadius}**.endRadius()**{api}. The value transmitted to this method can be in pixels or percents.
+
+```
+        //needle
+    gauge.needle(8)
+        .startRadius('0%')
+        .endRadius('80%')
+        .middleRadius('50%')
+        .startWidth(1)
+        .middleWidth(3)
+        .endWidth(0);
+```
+
+{sample}BCT\_Pointers-and-Data\_Needle\_09{sample} 
 
 ###Knob
 
