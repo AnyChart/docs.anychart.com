@@ -4,52 +4,47 @@
 
 anychart.onDocumentReady(function() {
 
-    // chart type
-    chart = anychart.cartesianChart();
+  // chart type
+  var chart = anychart.scatter();
 
-    // set title
-    chart.title().text('Labels and Tooltips');
+  // data
+  data = anychart.data.set([
+    [2000, 1100],
+    [2001, 880],
+    [2002, 1100],
+    [2003, 1500],
+    [2004, 921],
+    [2005, 1000],
+    [2006, 1400]
+  ]);
 
-    // draw axes and set titles
-    chart.xAxis().title('Year');
-    chart.yAxis().title('Box office');
+  // set data
+  markerchart = chart.marker(data);
 
-    // draw grid
-    chart.grid().layout('horizontal');
+  // enable and adjust labels
+  markerchart.labels()
+    .enabled(true)
+    .anchor('bottomcenter')
+    .fontWeight(900)
+    .offsetY(10);
 
-    // draw minor grid and adjust
-    chart.minorGrid()
-        .evenFill('none')
-        .oddFill('none')
-        .stroke('black 0.075')
-        .layout('vertical');
-
-    // data
-    data = anychart.data.set([
-        ['2000', 1100],
-        ['2001', 880],
-        ['2002', 1100],
-        ['2003', 1500],
-        ['2004', 921],
-        ['2005', 1000],
-        ['2006', 1400]
-    ]);
-
-    // set data
-    markerchart = chart.marker(data);
-
-    // enable and adjust labels
-    markerchart.labels()
-        .enabled(true)
-        .rotation(-90)
-        .offsetY(-25)
-        .offsetX(-5);
-
-    // adjust tooltips
-    markerchart.tooltip().contentFormatter(function(){
-        return 'Month: ' + this.x + '\nSales: ' + this.value ;
-    });
-
+  // adjust tooltips
+  markerchart.tooltip().contentFormatter(function(){
+      return 'Month: ' + this.x + '\nSales: ' + this.value ;
+  });
+    
+  // set title
+  chart.title().text('Labels and Tooltips');
+  
+  // draw axes and set titles
+  chart.xAxis().title('Year');
+  chart.yAxis().title('Box office');
+  
+  chart.xScale()
+    .minimum(1999)
+    .maximum(2007)
+    .ticks().interval(1);
+    
     // draw
-    chart.container('container').draw();
+  chart.container('container').draw();
 });
