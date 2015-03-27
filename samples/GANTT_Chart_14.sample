@@ -20,19 +20,18 @@ anychart.onDocumentReady(function(){
   chart.data(treeData);
 
   // data tree width
-  chart.splitterPosition(180);
+  chart.splitterPosition(160);
 
   var dataGrid = chart.dataGrid();
-
-  // settings for first column
-  dataGrid.column(0).width(50).title().text('#');
 
   //enable buttons in the first column
   dataGrid.column(0).collapseExpandButtons(true);
 
-  //customize the data view
-  dataGrid.column(0).depthPaddingMultiplier(8);
-
+  // settings for the first column
+  dataGrid.column(0).width(25).textFormatter(function(item) {
+    return '';
+  }).title().text('#');
+  
   // settings for the second column
   dataGrid.column(1).width(135).textFormatter(function(item) {
     return item.get('name');
