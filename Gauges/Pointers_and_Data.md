@@ -8,7 +8,7 @@
  * [Knob](#knob)
 * [Visualization](#visualization)
  * [Connection with the Data](#connection_with_the_data)
-* [Other](#other)
+* [Colorizing](#colorizing)
 
 
 ##Overview
@@ -146,70 +146,202 @@ As we can see, the needle starts not from the gauge center. Let's adjust the sta
 
 ###Knob
 
+Knob is a full-curcle pointer that is nice to use with a needle or marker pointer. It looks like a switcher on microwaves or the audio tuner. You can see the example of the default enabled knob pointer below.
+
+{sample}BCT\_Pointers-and-Data\_Knob\_10{sample} 
+
+As you can see, this pointer is completely different from others. The first thing we'll adjust will be the number of the knob's projections (vertices). For that we use the {api}**.verticesCount()**{api} method. 
+
+```
+        //knob
+    gauge.knob(0)
+        .verticesCount(15);
+```
+
+{sample}BCT\_Pointers-and-Data\_Knob\_11{sample} 
+
+The curvature of vertices can be adjusted too. Use the {api}**.verticesCurvature()**{api} method and set the value from 0 to 1 (0.5 is set by default). The less the value is the more convex the vertices are. The more the value the more concave they are.
+
+```
+        //knob
+    gauge.knob(0)
+        .verticesCount(15)
+        .verticesCurvature(.1);
+```
+
+{sample}BCT\_Pointers-and-Data\_Knob\_12{sample} 
+
+The next feature we can adjust is the ratio, which spilts into the {api}**.topRatio()**{api} and {api}**.bottomRatio**(){api} methods. The values for these methods might be from 0 to 1 as well.
+
+```
+        //knob
+    gauge.knob(0)
+        .verticesCount(15)
+        .verticesCurvature(.1)
+        .topRatio(0)
+        .bottomRatio(1);
+```
+{sample}BCT\_Pointers-and-Data\_Knob\_13{sample} 
+
+If you set the {api}**.verticesCurvature()**{api} and the {api}**.bottomRatio**(){api} values to default (0.5), the vertices would look like triangles directed up from the knob:
+
+```
+        //knob
+    gauge.knob(0)
+        .verticesCount(15)
+        .verticesCurvature(.5)
+        .topRatio(0)
+        .bottomRatio(.5);
+```
+{sample}BCT\_Pointers-and-Data\_Knob\_14{sample} 
+
+If you set {api}**.verticesCurvature()**{api} and the {api}**.bottomRatio**(){api} values to default (0.5), the vertices would look like triangles directed down to the knob. Try to do it yourself, using the playground.
+
+The last feature avaliable at the moment for only the knob pointers is radius, which is split the same way as ratio. Use the {api}**.topRadius()**{api} and the {api}**.bottomRadius()**{api} methods to set the radius for the outer side (height of the vertices) and the inner side (depth of dimples) accordingly. For clearer representation let's get rid of the ratio settings.
+
+```
+        //knob
+    gauge.knob(0)
+        .verticesCount(15)
+        .verticesCurvature(.5)
+        .topRadius(80)
+        .bottomRadius(50);
+```
+
+{sample}BCT\_Pointers-and-Data\_Knob\_15{sample} 
+
 ##Visualization
+
+In this section you will find some general information related to all pointer types. 
 
 ###Connection with the Data
 
+By default, when a pointer is added to the gauge, it shows the first value from the DataSet (if you've got more than one) or the only one. In case you need the second pointer with the same value to display or you have more than one value in your dataSet and you need one of your pointers to show this particular value  different from the first one, you need to connect the data with the pointer in some way. On the other hand, the situation when you need to show any value from your dataSet on the axis which is not the only and the first might take place as well.
+
+These problems are to be easily resolved using the {api}**.dataIndex()**{api} and the {api}**.axisIndex**{api} methods. You can find more information about these methods below.
+
 #### Snap to Data
+
+In case you have more that one value in your dataset, you should use the {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} method to each pointer showing any other value but the first. Note that numeration of the values starts from 0. There's no need in use of this method if you have an only value in your dataSet.
+
+Let's add the second point to the data and enable two pointers: the bar and the marker. Let's snap the bar pointer to the new data point:
+
+```
+		//add the second data point
+		 dataSet = anychart.data.set([60,110]);
+
+        //marker
+    gauge.marker(0)
+        .enabled(true)
+        .dataIndex(0)
+        .size(7);
+        
+		//bar
+    gauge.bar(0)
+        .width(3)
+        .dataIndex(1);
+```
+
+{sample}BCT\_Pointers-and-Data\_16{sample} 
+
+When you apply for the {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} method, you change the value that will be represented by the pointer you add this method to. However, using this means only if you have more than one value in the dataSet and more than one axis, because the only axis shows the only (or the first) value from your dataSet by default. So, there is no need in this method if your chart has an only axis and your data looks like this:
+
+```
+		 dataSet = anychart.data.set([60]);
+```
+
+
+#### Snap to Axis
 
 To snap the pointer to the axis use the {api:anychart.core.gauge.pointers.bar#axisIndex}**.axisIndex()**{api} method. Note that the count starts from 0. There's no need in using this method if your chart contains an only axis.
 
-Let's enable one more axis and snap the bar pointer to the new axis:
+Let's enable one more axis and snap the bar pointer to this new axis:
 
-{sample}BCT\_Pointers-and-Data\_Bar\_02{sample} 
+{sample}BCT\_Pointers-and-Data\_17{sample} 
 
 To reach the result as in the sample above we need to add the following:
 
 ```
-		//second axis settings
+        //second axis settings
     var axis_1 = gauge.axis(1)
         .radius(50)
-        .width(1);
+        .width(3);
 
 		//second scale settings
     axis_1.scale()
         .minimum(0)
-        .maximum(120)
-        .ticks({interval: 10})
-        .minorTicks({interval: 1});
+        .maximum(300)
+        .ticks({interval: 30})
+        .minorTicks({interval: 10});
 
 		//second ticks settings
     axis_1.ticks()
         .type('trapezoid')
         .length('8');
 
+		//second minor ticks settings
+    axis_1.minorTicks()
+        .enabled(true)
+        .length('3');
+		
+        //marker
+    gauge.marker(0)
+        .enabled(true)
+        .dataIndex(0)
+        .axisIndex(0)
+        .size(7);
+        
 		//bar
     gauge.bar(0)
         .width(3)
-        .axisIndex(1)
-        .radius(50); //let;s change the radius to fit the bar to the axis_1
+        .dataIndex(0)
+        .axisIndex(1);
 ```
 
-In case you have more that one value in your dataset, you should use the {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} method to each pointer showing any other value but the first. Note that numeration of the values starts from 0. There's no need in use of this method if you have an only value in your dataSet.
+Let's add the second value to our dataSet and snap the bar pointer with the new value to the new axis:
 
-Let's add the second point to the data and snap the bar pointer to the new data point:
+```		//add the second data point
+		 dataSet = anychart.data.set([60,120]);
 
+        //bar
+    gauge.bar(0)
+        .width(3)
+        .dataIndex(1)
+        .axisIndex(1);
 ```
-		//add the second data point
-		 dataSet = anychart.data.set([50,35]);
-		...
-		//bar
- 	     gauge.bar(0)
-     	   .width(3)
-     	   .axisIndex(1)
-		   .dataIndex(1) //change the index of the data point
-     	   .radius(50);
+{sample}BCT\_Pointers-and-Data\_18{sample} 
+
+#### Multiple pointers
+
+You can add not only different pointers but the same. Look at the example below:
+
+{sample}BCT\_Pointers-and-Data\_19{sample}
+
+All we need to do is to change the value of the {api}**.marker()**{api} itself. This value means the pointer's numbers and counts from 0.
+
+```		//add the second data point
+		 dataSet = anychart.data.set([60,120,170]);
+
+        //marker_1
+    gauge.marker(0)
+        .enabled(true)
+        .dataIndex(0)
+        .axisIndex(0)
+        .size(5);
+        
+		//marker_2
+    gauge.marker(1)
+        .dataIndex(1)
+        .axisIndex(0)
+        .size(6);
+        
+        //marker_3
+    gauge.marker(2)
+        .dataIndex(2)
+        .axisIndex(0)
+        .size(7);
 ```
 
-{sample}BCT\_Pointers-and-Data\_Bar\_03{sample} 
+##Colorizing
 
-
-When you apply for the {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} method, you change the value that will be represented by the pointer you add this method to. However, using this means only if you have more than one value in the dataSet, because the axis shows the first value fron your dataSet by default. So, there is no need in this method if your data looks like this:
-
-
-
-#### Snap to Axis
-
-##Other
-
-//coloring
+*coming_soon*

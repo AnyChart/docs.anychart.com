@@ -226,13 +226,20 @@ Like with any other chart type, we can set the chart label and adjust it. Let ou
     gauge.label()
         .text('ALBANY')
         .anchor('center') //set the position of the label
-        .width('55%')
-        .height('7%')
         .adjustFontSize(true)
+        .hAlign('center')
+        .offsetY('15%')
+        .offsetX('50%')
+        .width('50%')
+        .height('10%')
         .zIndex(10);
 ```
 
-Besides the label itself, we have to adjust its look. First of all, to put the label in the center of the gauge we use the {api:anychart.enums.Anchor}**.anchor()**{api} method. Then we have to change the size of the label, because it looks too small by default. For this we use the usual methods {api:anychart.core.ui.Label#width}**.width()**{api} and {api:anychart.core.ui.Label#height}**.height()**{api} and add the {api:anychart.core.ui.Label#adjustFontSize}**.adjustFontSize(){api}** method to make our label fit the defined parameters. Than we should put the name of the car company beside the cap to make the look of our chart more real. For that we use the {api:}**.zIndex()**{api} parameter.  
+Besides the label itself, we have to adjust its look. First of all, to put the label in the center of the gauge we use the {api:anychart.enums.Anchor}**.anchor()**{api} method. Then we have to change the size of the label, because it looks too small by default. For this we use the usual methods {api:anychart.core.ui.Label#width}**.width()**{api} and {api:anychart.core.ui.Label#height}**.height()**{api} to set the bounds of the label area and add the {api:anychart.core.ui.Label#adjustFontSize}**.adjustFontSize(){api}** method to make our label fit the defined parameters. 
+
+Now let's put our label in the center of the area: use {api:anychart.graphics.vector.Text#hAlign}**.hAlign()**{api}. To shift the label a bit up we used the {api:anychart.core.ui.Label#offsetX}**.offsetX**{api} and {api:anychart.core.ui.Label#offsetY}**.offsetY**{api} methods.
+
+Then we should put the name of the car company beside the cap to make the look of our chart more real. For that we use the {api:}**.zIndex()**{api} parameter.  
 
 {sample}BCT\_Gauges_Circular\_08{sample}
 
