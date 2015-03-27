@@ -5,7 +5,7 @@
 * [Hierarchy](#hierarchy)
 * [Tasks Types](#tasks_types)
 * [Expand/Collapse control](#expand/collapse_control)
-* [Task Progress](#task+progress)
+* [Task Progress](#task_progress)
 * [Actual and Planned](#actual_and_planned)
 * [Connectors](#connectors)
 
