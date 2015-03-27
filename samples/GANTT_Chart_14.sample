@@ -1,69 +1,92 @@
-anychart.onDocumentReady(function() {
-  //create data tree on our data
-  var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+{:tags []
+     :is_new false
+     :exports "chart"}
 
-  //create resource gantt chart
-  chart = anychart.ganttResource();
+anychart.onDocumentReady(function(){
 
-  //set container id for the chart
+  // data tree settings
+  var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TREE);
+
+  // chart type
+  chart = anychart.ganttProject();
+
+  // chart container
   chart.container('container');
 
-  //set data for the chart
+  // chart position
+  chart.bounds(0, 0, '100%', '100%');
+
+  // chart data
   chart.data(treeData);
 
-  //set start splitter position settings
-  chart.splitterPosition(80);
+  // data tree width
+  chart.splitterPosition(190);
 
-  //get chart data grid link to set column settings
   var dataGrid = chart.dataGrid();
 
-  dataGrid.column(1).width(10).textFormatter(function(item) {
- }).title().text('+/-');
+  // settings for first column
+  dataGrid.column(0)
+    .width(50)
+    .title()
+    .text('#');
 
-  //initiate chart drawing
+  //enable buttons in the first column
+  dataGrid.column(0).collapseExpandButtons(true);
+
+  // settings for the second column
+  dataGrid.column(1).width(140).textFormatter(function(item) {
+    return item.get('name');
+  }).title().text('Plan');
+
+  //disable buttons in the second column
+  dataGrid.column(1).collapseExpandButtons(false);
+
+
+  // initiate drawing
   chart.draw();
 
-  //zoom chart to specified date
-  chart.fitAll();
+  // area to display by default
+  chart.zoomTo(Date.UTC(2007, 0, 1), Date.UTC(2007, 2, 29));
+
 });
 
+// data
 function getData() {
   return [
-    {
-      "id":'404',
-      "name": "office 404",
-    },
-    {
-      "id":'409',
-      "name": "office 409",
-    },
-    {
-      "id": "1",
-      "name": "Server 1",
-      "parent": "404",
-      "periods": [
-        {"id": "1_1", "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 1, 25)},
-        {"id": "1_2", "start": Date.UTC(2013, 2, 2), "end": Date.UTC(2013, 2, 15)},
-        {"id": "1_2", "start": Date.UTC(2013, 2, 20), "end": Date.UTC(2013, 3, 1)}
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Server 2",
-      "parent": "404",
-      "periods": [
-        {"id": "2_1", "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 1, 22)},
-        {"id": "2_2", "start": Date.UTC(2013, 1, 25), "end": Date.UTC(2013, 2, 5)}
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Server 3",
-      "parent": "409",
-      "periods": [
-        {"id": "3_1", "start": Date.UTC(2013, 2, 10), "end": Date.UTC(2013, 2, 22)},
-        {"id": "3_2", "start": Date.UTC(2013, 2, 25), "end": Date.UTC(2013, 3, 5)}
-      ]
-    }
+  {
+    "name": "Activities",
+    "actualStart": Date.UTC(2007, 0, 25),
+    "actualEnd": Date.UTC(2007, 2, 14),
+    "children": [
+      {
+        "name": "Draft plan",
+        "actualStart": Date.UTC(2007, 0, 25),
+        "actualEnd": Date.UTC(2007, 1, 3)
+      },
+      {
+        "name": "Board meeting",
+        "actualStart": Date.UTC(2007, 1, 4),
+        "actualEnd": Date.UTC(2007, 1, 4)
+      },
+      {
+        "name": "Research option",
+        "actualStart": Date.UTC(2007, 1, 4),
+        "actualEnd": Date.UTC(2007, 1, 24)
+      },
+      {
+        "id": '5',
+        "name": "Innovation activities",
+        "actualStart": Date.UTC(2007, 1, 24),
+        "actualEnd": Date.UTC(2007, 2, 14),
+        "children": [
+            {
+                "name": "Improvement research",
+                "actualStart": Date.UTC(2007, 1, 24),
+                "actualEnd": Date.UTC(2007, 2, 14)
+      }
+            ]
+      },
+    ]
+  }
   ];
 }

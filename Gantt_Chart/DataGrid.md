@@ -19,7 +19,7 @@
 ### Columns Set
 
 By default, Gantt Chart displays two columns: rows counts and names of Gantt elements (tasks or resources).
-{sample :width 710 :height 190}GANTT\_Basic\_Sample{sample}
+{sample :width 690 :height 190}GANTT\_Basic\_Sample{sample}
 
 <br>The <b>set of columns</b> is set and defined using the {api:anychart.core.ui.DataGrid#column}**.column()**{api} method:
 
@@ -41,10 +41,10 @@ var secondColumn = dataGrid.column(20);
 <br>For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the [Content](DataGrid#content) topic.
 
 <br> The sample below shows Resource Gantt Chart, note that the third column is created to display the start data value.
-{sample :width 710 :height 190}GANTT\_Chart\_10{sample}
+{sample :width 690 :height 190}GANTT\_Chart\_10{sample}
 
 <br>The same for Project Gantt Chart. The next sample shows the data grid with the actual start and actual end values.
-{sample :width 710 :height 200}GANTT\_Chart\_11{sample}
+{sample :width 690 :height 200}GANTT\_Chart\_11{sample}
 
 <br>You can create and display custom fields in data items:
 ```
@@ -54,7 +54,7 @@ var secondColumn = dataGrid.column(20);
     'actualStart': Date.UTC(2008, 7, 9),
     'actualEnd': Date.UTC(2008, 7, 20)
 ```
-<br>{sample :width 710 :height 170}GANTT\_Chart\_12{sample}
+<br>{sample :width 690 :height 170}GANTT\_Chart\_12{sample}
 
 ### Title
 
@@ -189,7 +189,7 @@ timeline.rowOddFill("#add8e6");
 ```
 
 <br>In the sample below the odd rows are colored with a solid fill as well as the even rows.
-{sample :width 710 :height 190}GANTT\_Chart\_09{sample}
+{sample :width 690 :height 190}GANTT\_Chart\_09{sample}
 
 ## General Settings
 
@@ -203,7 +203,7 @@ chart.dataGrid(false);
 ```
 
 <br>And here is a simple illustration of this idea:
-{sample :width 710 :height 190}GANTT\_Chart\_15{sample}
+{sample :width 690 :height 190}GANTT\_Chart\_15{sample}
 
 ### Data Grid Width
 
@@ -218,14 +218,13 @@ chart.splitterPosition(100);
 
 Data Grid supports hierarchical data representation, so if the data is complicated, the Data Grid will display expanded/collapsed icons next to each group header row. You are free to expand and collapse child groups to see more data.
 
-{sample :width 710 :height 210}GANTT\_Chart\_08{sample}
+{sample :width 690 :height 210}GANTT\_Chart\_08{sample}
 
-<br>Please note that expanded/collapsed buttons are located in the second Data Grid column near the group element name. Their appearance doesn't depend on the "name" field in data item, so you can leave this field empty or just set column settings to show only the buttons.
+<br>Please note that it is also possible to configure the expand/collapse button settings using the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons}**.collapseExpandButtons()**{api} method.
 
 ```
-dataGrid.column(1).width(10).textFormatter(function(item) {
-    return '';
-  });
+column.collapseExpandButtons(false);
 ```
 
-<br>{sample :width 710 :height 190}GANTT\_Chart\_14{sample}
+<br>In the example below we have disabled the default appearance of the expand/collapse buttons in the second column and put them into the first.
+{sample :width 690 :height 200}GANTT\_Chart\_14{sample}
