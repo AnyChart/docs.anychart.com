@@ -8,7 +8,8 @@
  * [Background](#background)
  * [Text Settings](#text_settings)
 * [HTML in Title](#html_in_title)
-<!--* [Additional Titles](#additional_titles)
+<!--
+* [Additional Titles](#additional_titles)
 * [Adding Events](#adding_events)-->
 
 ## Overview
