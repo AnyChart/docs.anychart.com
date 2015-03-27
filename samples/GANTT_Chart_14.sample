@@ -25,10 +25,7 @@ anychart.onDocumentReady(function(){
   var dataGrid = chart.dataGrid();
 
   // settings for first column
-  dataGrid.column(0)
-    .width(50)
-    .title()
-    .text('#');
+  dataGrid.column(0).width(50).title().text('#');
 
   //enable buttons in the first column
   dataGrid.column(0).collapseExpandButtons(true);
