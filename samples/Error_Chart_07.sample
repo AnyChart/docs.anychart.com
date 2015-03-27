@@ -20,10 +20,10 @@ anychart.onDocumentReady(function() {
 
   series.error({
             xLowerError: '2%',
-            xUpperError: 2,
+            xUpperError: '2%',
             valueUpperError: 8,
             valueLowerError: '4%',
-            errorMode: 'value'
+            mode: 'value'
         });
 
   series.size(4).hoverSize(5);

@@ -23,7 +23,7 @@ Here is the list of series compatible with error bars:
 
 ### Cartesian
 
-To start configuration of error bar you can go with {api:anychart.core.cartesian.series.Base#error}**.error()**{api} method:
+To start configuration of error bars you can go with {api:anychart.core.cartesian.series.Base#error}**.error()**{api} method:
 
 ```
 //create chart
@@ -188,18 +188,18 @@ If you want to specify the visibility of the upper and lower error values - you 
     {'x': 83, 'y': 85, 'xUpperError': '3%', 'xLowerError': '5%', 'valueUpperError': '5%', 'valueLowerError': '2%'},
   ]);
 
-series.error().errorMode('none');
+series.error().mode('none');
 ```
 <br>{sample}Error\_Chart\_06{sample}
 
-<br>Or you can use only 'y' error mode with the same error settings:
+<br>Or you can use only 'value' error mode with the same error settings:
 ```
 series.error({
             xLowerError: '2%',
-            xUpperError: 2,
+            xUpperError: '2%',
             valueUpperError: 5,
             valueLowerError: '3%',
-            errorMode: 'value'
+            mode: 'value'
         });
 ```
 

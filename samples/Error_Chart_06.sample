@@ -24,7 +24,7 @@ anychart.onDocumentReady(function() {
 
   series.size(7);
 
-  series.error().errorMode('none');
+  series.error().mode('none');
 
   //initiate chart drawing
   chart.draw();

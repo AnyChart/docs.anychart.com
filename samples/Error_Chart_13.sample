@@ -21,7 +21,7 @@ anychart.onDocumentReady(function() {
             xUpperError: 2,
             valueUpperError: 8,
             valueLowerError: '4%',
-            errorMode: 'value'
+            mode: 'value'
         });
 
   chart.yScale().minimum(0);
@@ -41,7 +41,7 @@ anychart.onDocumentReady(function() {
         + '\nvalueLowerError = ' + series.error().valueLowerError()
         + '\nxLowerError = ' + series.error().xLowerError()
         + '\nxUpperError = ' + series.error().xUpperError()
-        + '\nerrorMode = ' + series.error().errorMode();
+        + '\nerrorMode = ' + series.error().mode();
  });
 
   series.size(4).hoverSize(5);
