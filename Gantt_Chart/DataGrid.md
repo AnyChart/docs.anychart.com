@@ -226,5 +226,11 @@ Data Grid supports hierarchical data representation, so if the data is complicat
 column.collapseExpandButtons(false);
 ```
 
+<br>You should use the {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}**.depthPaddingMultiplier()**{api} method to customize the data view.
+
+```
+column.depthPaddingMultiplier(8);
+```
+
 <br>In the example below we have disabled the default appearance of the expand/collapse buttons in the second column and put them into the first.
 {sample :width 690 :height 200}GANTT\_Chart\_14{sample}
