@@ -44,7 +44,7 @@ Of course you can specify your own texts for titles using {api:anychart.core.ui.
 
 {sample}AS\_Titles\_02{sample}
 
-*Note*: there is even more simple way to set custom text for a title. Text can be set using **chart.title('Sales Performance')** method with no parameters.
+*Note:* there is even more simple way to set custom text for a title. Text can be set using **chart.title('Sales Performance')** method with no parameters.
 
 ## Visualization
 
