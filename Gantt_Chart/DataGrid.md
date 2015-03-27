@@ -226,7 +226,7 @@ Data Grid supports hierarchical data representation, so if the data is complicat
 column.collapseExpandButtons(false);
 ```
 
-<br>You should use the {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}**.depthPaddingMultiplier()**{api} method to customize the data view.
+<br>You can set the left padding in a cell depending on a tree data item's depth with {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}**.depthPaddingMultiplier()**{api} method to to customize the data view.
 
 ```
 column.depthPaddingMultiplier(8);
