@@ -20,7 +20,7 @@ anychart.onDocumentReady(function(){
   chart.data(treeData);
 
   // data tree width
-  chart.splitterPosition(190);
+  chart.splitterPosition(180);
 
   var dataGrid = chart.dataGrid();
 
@@ -30,14 +30,19 @@ anychart.onDocumentReady(function(){
   //enable buttons in the first column
   dataGrid.column(0).collapseExpandButtons(true);
 
+  //customize the data view
+  dataGrid.column(0).depthPaddingMultiplier(8);
+
   // settings for the second column
-  dataGrid.column(1).width(140).textFormatter(function(item) {
+  dataGrid.column(1).width(135).textFormatter(function(item) {
     return item.get('name');
   }).title().text('Plan');
 
   //disable buttons in the second column
   dataGrid.column(1).collapseExpandButtons(false);
 
+  //customize the data view
+  dataGrid.column(1).depthPaddingMultiplier(0);
 
   // initiate drawing
   chart.draw();

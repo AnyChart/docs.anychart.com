@@ -2,24 +2,7 @@
      :is_new false
      :exports "chart"}
 
-<!doctype html>
-<html>
-<head>
-  <script src="./anychart.min(3).js"></script>
-
-  <style>
-    html, body, #container {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
-</head>
-<body>
-    <div id="container"></div>
-    <script type="text/javascript">
-        anychart.onDocumentReady(function(){
+anychart.onDocumentReady(function(){
 
     var rawData = [
       {
@@ -71,6 +54,3 @@
   chart.fitAll();
 
 });
-    </script>
-</body>
-</html>
