@@ -17,7 +17,7 @@ Every chart in AnyChart can have one default title and unlimited number of addit
 
 ## Default Title
 
-Every chart has default title and this title can be enabled or disable using {api:anychart.core.ui.Title#enabled}**.enabled()**{api} parameter
+Every chart has default title and this title can be enabled or disabled using {api:anychart.core.ui.Title#enabled}**.enabled()**{api} parameter
 
 ```
   // chart type
@@ -42,6 +42,8 @@ Of course you can specify your own texts for titles using {api:anychart.core.ui.
 ```
 
 {sample}AS\_Titles\_02{sample}
+
+*Note*: there is even more simple way to set custom text for a title. Text can be set using **chart.title('Sales Performance')** method with no parameters.
 
 ## Visualization
 
@@ -68,7 +70,7 @@ You can tune background of a title. Use {api:anychart.core.ui.Title#background}*
 
 ### Text Settings
 
-Text is the main part of title itself. Visit {api:anychart.core.ui.Title}API{api} to find out all parameters for tuning visual appearance of a chart title.
+Text is the main part of a title. Visit {api:anychart.core.ui.Title}API{api} to find out all parameters for tuning visual appearance of a chart title.
 
 ```
   // tune text
@@ -83,7 +85,7 @@ Text is the main part of title itself. Visit {api:anychart.core.ui.Title}API{api
 
 ## HTML in Title
 
-You can use HTML formatted text of a title. Use {api:anychart.core.ui.Title#useHtml}**.useHtml()**{api} parameter to enable HTML tags in title.
+You can use HTML formatted text of a title. Use {api:anychart.core.ui.Title#useHtml}**.useHtml()**{api} parameter an option to use HTML tags in title text.
 
 ```
   chart.title()
@@ -122,7 +124,7 @@ Chart can contain any number of additional titles. These titles can be placed an
 
 {sample}AS\_Titles\_07{sample}
 
-**Note:** chart elements draw in prescribed oder and we recommend to use **.draw()** method fo a custom title after drawing main chart.
+**Note:** chart elements are drawn in a specific order and we recommend to use **.draw()** method for a custom title after the chart is drawn.
 
 ## Adding Events
 
@@ -130,6 +132,6 @@ You can make your chart title interactive by adding event listeners of a differe
 
 {sample}AS\_Titles\_08{sample}
 
-Here is advanced sample of using events in titles. In this sample we will show how chart footer can be used as "Back" button for self-drilldown charts. Click on bars to see detailed report on each sales manager and in detailed report click on "Back to Sales Manager Report" button in the bottom right corner of line chart to load initial chart.
+Here is the advanced sample of using events in titles. In this sample we will show how chart footer can be used as "Back" button for self-drilldown charts. Click on bars to see detailed report on each sales manager and in detailed report click "Back to Sales Manager Report" button in the bottom right corner of line chart to load an initial chart.
 
 {sample}AS\_Titles\_09{sample}
