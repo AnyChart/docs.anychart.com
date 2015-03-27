@@ -8,8 +8,8 @@
  * [Background](#background)
  * [Text Settings](#text_settings)
 * [HTML in Title](#html_in_title)
-* [Additional Titles](#additional_titles)
-* [Adding Events](#adding_events)
+<!--* [Additional Titles](#additional_titles)
+* [Adding Events](#adding_events)-->
 
 ## Overview
 
@@ -98,7 +98,7 @@ You can use HTML formatted text of a title. Use {api:anychart.core.ui.Title#useH
 ```
 
 {sample}AS\_Titles\_06{sample}
-
+<!--
 ## Additional Titles
 
 Chart can contain any number of additional titles. These titles can be placed anywhere on the plot.
@@ -134,4 +134,4 @@ You can make your chart title interactive by adding event listeners of a differe
 
 Here is the advanced sample of using events in titles. In this sample we will show how chart footer can be used as "Back" button for self-drilldown charts. Click on bars to see detailed report on each sales manager and in detailed report click "Back to Sales Manager Report" button in the bottom right corner of line chart to load an initial chart.
 
-{sample}AS\_Titles\_09{sample}
+{sample}AS\_Titles\_09{sample}-->
