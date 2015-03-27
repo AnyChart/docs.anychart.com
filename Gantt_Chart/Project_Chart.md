@@ -152,7 +152,7 @@ You can control if the summary task is expanded or collapsed using these methods
 </tbody>
 </table>
 
-{sample :width 780 :height 260}GANTT\_Chart\_02{sample}
+{sample :width 690 :height 260}GANTT\_Chart\_02{sample}
 
 ## Task Progress
 
@@ -168,7 +168,7 @@ Tracking progress can be complicated, but you can show percent complete using pr
 },
 ```
 
-{sample :width 780 :height 200}GANTT\_Chart\_05{sample}
+{sample :width 690 :height 200}GANTT\_Chart\_05{sample}
 
 <br>Let's demonstrate how to apply different settings to progress bar for custom visualisation.
 
@@ -260,7 +260,7 @@ If there is a need to add an additional connection between tasks, you can define
 {"id": "4", "name": "resolution", parent:"2", "actualStart": 400000, "actualEnd": 800000, "connectTo": "5", "connectorType": "FinishStart"},
 ```
 
-{sample :width 720 :height 170}GANTT\_Chart\_06{sample}
+{sample :width 690 :height 170}GANTT\_Chart\_06{sample}
 
 <br>AnyChart give you an opportunity to describe how connector should be displayed. If you want to customize the connector view you should set the "fill" and "stroke" parameters in <b>connector</b>, where "stroke" defines a color of connector line and "fill" defines the color of connector arrow.
 
@@ -273,4 +273,4 @@ If there is a need to add an additional connection between tasks, you can define
 
 In the sample below we have a Gantt Chart with simple data and we'll color each connector to different color. Here is the sample:
 
-{sample :width 720 :height 170}GANTT\_Chart\_16{sample}
+{sample :width 690 :height 170}GANTT\_Chart\_16{sample}
