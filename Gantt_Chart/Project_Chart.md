@@ -154,6 +154,15 @@ You can control if the summary task is expanded or collapsed using these methods
 
 {sample :width 690 :height 260}GANTT\_Chart\_02{sample}
 
+<br>It is also possible to configure the expand/collapse button settings using the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons}**.collapseExpandButtons()**{api} method.
+
+```
+column.collapseExpandButtons(false);
+```
+
+<br>In the example below we have disabled the default appearance of the expand/collapse buttons in the second column and put them into the first.
+{sample :width 690 :height 260}GANTT\_Chart\_17{sample}
+
 ## Task Progress
 
 Tracking progress can be complicated, but you can show percent complete using progress bar. To use it you need to provide the required value of the "progressValue".

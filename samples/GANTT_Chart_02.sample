@@ -121,7 +121,7 @@ function getData() {
       },
       {
         "id": '5',
-        "name": " innovation activities",
+        "name": "Innovation activities",
         "actualStart": Date.UTC(2007, 1, 24),
         "actualEnd": Date.UTC(2007, 2, 14),
         "children": [
