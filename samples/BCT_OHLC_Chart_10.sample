@@ -78,7 +78,7 @@ anychart.onDocumentReady(function() {
   var seriesData_3 = dataSet.mapAs({x: [0], value: [7]});
 
   // chart type
-  chart = anychart.financialChart();
+  var chart = anychart.financialChart();
 
   // adjust x scale
   chart.xScale()
@@ -129,13 +129,13 @@ anychart.onDocumentReady(function() {
   chart.yAxis().title().enabled(false);
   chart.yAxis().labels().textFormatter(function(){
     return this.value.toFixed(0).toString();
-  })
+  });
 
   // draw fist stage
   chart.draw();
 
   // second chart type
-  columnChart = anychart.columnChart();
+  var columnChart = anychart.columnChart();
 
   // new stage for a chart
   columnChart.container(stage);

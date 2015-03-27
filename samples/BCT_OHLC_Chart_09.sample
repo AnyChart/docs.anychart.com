@@ -14,7 +14,7 @@ anychart.onDocumentReady(function() {
   ];
 
   // chart type
-  chart = anychart.financialChart();
+  var chart = anychart.financialChart();
 
   // chart title
   chart.title().text('Minimum and Maximum Colors');

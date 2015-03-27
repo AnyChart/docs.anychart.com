@@ -15,7 +15,7 @@ anychart.onDocumentReady(function() {
   ];
 
   // chart type
-  chart = anychart.financialChart();
+  var chart = anychart.financialChart();
 
   // set axes title
   chart.xAxis().title().text('Day');
