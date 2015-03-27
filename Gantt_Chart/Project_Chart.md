@@ -4,8 +4,8 @@
 * [Chart](#chart)
 * [Hierarchy](#hierarchy)
 * [Tasks Types](#tasks_types)
-* [Expand/Collapse control](#expand)
-* [Task Progress](#progress)
+* [Expand/Collapse control](#expand/collapse_control)
+* [Task Progress](#task+progress)
 * [Actual and Planned](#actual_and_planned)
 * [Connectors](#connectors)
 
@@ -161,7 +161,7 @@ column.collapseExpandButtons(false);
 ```
 
 <br>In the example below we have disabled the default appearance of the expand/collapse buttons in the second column and put them into the first.
-{sample :width 690 :height 260}GANTT\_Chart\_17{sample}
+{sample :width 690 :height 200}GANTT\_Chart\_17{sample}
 
 ## Task Progress
 
