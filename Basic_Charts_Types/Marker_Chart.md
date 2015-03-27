@@ -189,7 +189,7 @@ As we did in single-series line sample above, now we need to convert this table 
 
 ### Marker Cartesian Plot
 
-All previous samples demonstrate marker series on scatter plot. Next sample shows how to customize cartesian plot to use marker series on it.
+All previous samples demonstrate marker series on scatter plot. Next sample shows customized cartesian plot with marker series on it.
 
 {sample}BCT\_Marker\_Chart\_03{sample}
 
@@ -234,8 +234,8 @@ AnyChart calculates axis minimum and maximum automatically. The minimal value on
 
 ```
   chart.yScale()
-    .minimum('0')       // minimum value
-    .maximum('1800');   // maximum value
+    .minimum(0)       // minimum value
+    .maximum(1800);   // maximum value
 ```
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
@@ -268,8 +268,6 @@ Now, let's make a simple style and apply it to the chart. As we've already said,
 Using such settings we've set Gold color for the markers and added a couple of effects. Also, we've defined that a marker will be highlighted with a dark red color and made bigger when hovered.
 
 {sample}BCT\_Marker\_Chart\_07{sample}
-
-<a name="labels_and_tooltips"/>
 
 ## Labels and Tooltips
 
