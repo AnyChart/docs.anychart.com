@@ -22,7 +22,7 @@ anychart.onDocumentReady(function(){
   // data tree width
   chart.splitterPosition(170);
 
-  var dataGrid = chart.getDataGrid();
+  var dataGrid = chart.dataGrid();
 
   // settings for first column
   dataGrid.column(0).width(30).title().text('#');
