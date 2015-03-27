@@ -9,7 +9,7 @@
 * [Actual and Planned](#actual_and_planned)
 * [Connectors](#connectors)
 
-## Overview Которое поправила Алиса
+## Overview
 
 Project Gantt Chart is intended for showing a progress of completion of a single task or a group of tasks, taking into consideration their planned and actual time periods, along with a progress made, tasks hierarchy and order.
 
