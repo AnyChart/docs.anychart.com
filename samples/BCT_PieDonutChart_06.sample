@@ -8,9 +8,9 @@ anychart.onDocumentReady(function() {
     chart = anychart.pieChart([
         ['Department Stores', 637166],
         ['Discount Stores', 721630],
-        ['Men\'s/Women\'s Stores', 148662],
+        ['Men\'s/Women\'s Stores', 248662],
         ['Juvenile Specialty Stores', 78662],
-        ['All other outlets', 90000]
+        ['All other outlets', 190000]
     ]);
 
     // chart title
@@ -24,7 +24,12 @@ anychart.onDocumentReady(function() {
         .hatchFill('diagonalbrick', 'gray');
 
     // disable legend
-    chart.labels().enabled(false);
+    chart.legend().enabled(false);
+
+    // labels
+    chart.labels().background(true).padding(5);
+    chart.labels().background().stroke('1 black').corners(5).cornerType('Round');
+
 
     // draw
     chart.container('container').draw();
