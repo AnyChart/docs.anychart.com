@@ -158,11 +158,12 @@ Sample below shows how soft minimum and soft maximum help to show data better th
 
 ## Stick to Zero
 
-stickToZero() method allows to disable the default scale autocalculation behavior and always show include zero in scale range.
+*stickToZero()* method allows to disable the default scale autocalculation behavior and always show include zero in scale range.
 
 ## Minor and Major Ticks
 
 For any scale, but ordinal, you can set major and minor ticks intervals, which are calculated automatically by default. 
+
 Major and minor ticks intervals are axis steps, which define where axis labels (major interval), axis ticks (major and minor, correspondingly) and major and minor grids are displayed.
 
 ```
