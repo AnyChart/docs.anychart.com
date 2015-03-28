@@ -1,24 +1,152 @@
 #Pointers and Data
 
 * [Overview](#overview)
+* [Connection with the Data](#connection_with_the_data)
+ * [Bind to Data](#bind_to_data)
+ * [Bind to Axis](#bind_to_axis)
+ * [Multiple pointers](#mulitple_pointers)
 * [Types](#types)
  * [Bar](#bar)
  * [Marker](#marker)
  * [Needle](#needle)
  * [Knob](#knob)
-* [Visualization](#visualization)
- * [Connection with the Data](#connection_with_the_data)
-* [Colorizing](#colorizing)
-
 
 ##Overview
 
 Pointers are elements of the Gauge charts, which are necessary for the data representation. 
 
+##Connection with the Data
+
+By default, when a pointer is added to the gauge, it shows the first value from the DataSet (if you've got more than one) or the only one. In case you need the second pointer with the same value to display or you have more than one value in your dataSet and you need one of your pointers to show this particular value  different from the first one, you need to connect the data with the pointer in some way. On the other hand, the situation when you need to show any value from your dataSet on the axis which is not the only and the first might take place as well.
+
+These problems are to be easily resolved using the {api}**.dataIndex()**{api} and the {api}**.axisIndex**{api} methods. You can find more information about these methods below.
+
+### Bind to Data
+
+In case you have more that one value in your dataset, you should use the {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} method to each pointer showing any other value but the first. Note that numeration of the values starts from 0. There's no need in use of this method if you have an only value in your dataSet.
+
+Let's add the second point to the data and enable two pointers: the bar and the marker. Let's bind the bar pointer to the new data point:
+
+```
+   //add the second data point
+   dataSet = anychart.data.set([60,110]);
+
+   //marker
+   gauge.marker(0)
+        .enabled(true)
+        .dataIndex(0)
+        .size(7);
+        
+    //bar
+    gauge.bar(0)
+        .width(3)
+        .dataIndex(1);
+```
+
+{sample}BCT\_Pointers-and-Data\_16{sample} 
+
+When you apply for the {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} method, you change the value that will be represented by the pointer you add this method to. However, using this means only if you have more than one value in the dataSet and more than one axis, because the only axis shows the only (or the first) value from your dataSet by default. So, there is no need in this method if your chart has an only axis and your data looks like this:
+
+```
+  dataSet = anychart.data.set([60]);
+```
+
+### Bind to Axis
+
+To bind the pointer to the axis use the {api:anychart.core.gauge.pointers.bar#axisIndex}**.axisIndex()**{api} method. Note that the count starts from 0. There's no need in using this method if your chart contains an only axis.
+
+Let's enable one more axis and bind the bar pointer to this new axis:
+
+{sample}BCT\_Pointers-and-Data\_17{sample} 
+
+To reach the result as in the sample above we need to add the following:
+
+```
+    // second axis settings
+    var axis_1 = gauge.axis(1)
+        .radius(50)
+        .width(3);
+
+    // second scale settings
+    axis_1.scale()
+        .minimum(0)
+        .maximum(300)
+        .ticks({interval: 30})
+        .minorTicks({interval: 10});
+
+    // second ticks settings
+    axis_1.ticks()
+        .type('trapezoid')
+        .length('8');
+
+    // second minor ticks settings
+    axis_1.minorTicks()
+        .enabled(true)
+        .length('3');
+		
+    // marker
+    gauge.marker(0)
+        .enabled(true)
+        .dataIndex(0)
+        .axisIndex(0)
+        .size(7);
+        
+    // bar
+    gauge.bar(0)
+        .width(3)
+        .dataIndex(0)
+        .axisIndex(1);
+```
+
+Let's add the second value to our dataSet and bind the bar pointer with the new value to the new axis:
+
+```		
+   // add the second data point
+   dataSet = anychart.data.set([60,120]);
+
+    // bar
+    gauge.bar(0)
+        .width(3)
+        .dataIndex(1)
+        .axisIndex(1);
+```
+{sample}BCT\_Pointers-and-Data\_18{sample} 
+
+### Multiple pointers
+
+You can add not only different pointers but the same. Look at the example below:
+
+{sample}BCT\_Pointers-and-Data\_19{sample}
+
+All we need to do is to change the value of the {api}**.marker()**{api} itself. This value means the pointer's numbers and counts from 0.
+
+```		
+  // add the second data point
+  dataSet = anychart.data.set([60,120,170]);
+  
+  // marker_1
+  gauge.marker(0)
+        .enabled(true)
+        .dataIndex(0)
+        .axisIndex(0)
+        .size(5);
+        
+  // marker_2
+  gauge.marker(1)
+        .dataIndex(1)
+        .axisIndex(0)
+        .size(6);
+        
+   // marker_3
+   gauge.marker(2)
+        .dataIndex(2)
+        .axisIndex(0)
+        .size(7);
+```
 
 ##Types
 
-There are 4 different types of pointers avaliable: bar, marker, needle and knob. 
+There are 4 different types of pointers avaliable: bar, marker, needle and knob. They all act as an entity that points to the value, but look different.
 
 ###Bar
 
@@ -28,7 +156,7 @@ Below you can see a simple example Gauge with the bar pointer and the code for t
 {sample}BCT\_Pointers-and-Data\_Bar\_01{sample} 
 
 ```
-		//bar
+    //bar
     gauge.bar(0).enabled(true);
 ```
 
@@ -36,7 +164,7 @@ In the sample above we have only enabled the bar. Let's now change its width and
 
 
 ```
-		//bar
+    //bar
     gauge.bar(0)
 		.enabled(true) //you can remove this if you add any parameters to the bar
 		.width(3)
@@ -63,7 +191,7 @@ It's possible to use only the first letters of the position as a value, e.g.:
 
 ###Marker
 
-Marker is a pointer that is more demonstrative when used with a bar pointer. It can be of a plenty types, which you can read about in [Marker tutorial](../Appearance_Settings/Markers). <!--должен же быть какой-то туториал по маркерам? оО или его нет оО--!>
+Marker is a pointer that is more demonstrative when used with a bar pointer. It can be of a plenty types, which you can read about in Marker tutorial. 
 Let's first enable a marker:
 
 ```  
@@ -74,7 +202,7 @@ Let's first enable a marker:
 The marker size is rather small by default, so we need to use the {api:anychart.core.gauge.pointers.marker#size}**.size()**{api} method to make the marker visible, so the code will look as below:
 
 ```  
-         //marker
+    //marker
     gauge.marker(0)
         .enabled(true)
         .size(7);
@@ -85,7 +213,7 @@ The marker size is rather small by default, so we need to use the {api:anychart.
 It's not the best view when the marker covers the value on the axis, so now let's adjust the position of the marker according to the circle of the default or defined radius. As with bars, the marker might be in its center, outside or inside it. Let's set the marker's position to outside and look how will it change the view: 
 
 ```
-        //marker
+    //marker
     gauge.marker(0)
         .position('outside')
         .size(7);
@@ -108,7 +236,7 @@ Now our marker is outside the axis, but it doesn't point at the value. Let's cha
 Let's now look at the needles - the most common pointer used with Gauges. 
 
 ```
-        //needle
+    //needle
     gauge.needle(0)
         .enabled(true);
 ```
@@ -120,7 +248,7 @@ Needle can be a thin stick or a pointer of a complex form - you can regulate its
 Let's make our needle thiner to the end, wider to the center and a bit thiner to the start:
 
 ```
-        //needle
+    //needle
     gauge.needle(8)
         .startWidth(1)
         .middleWidth(3)
@@ -132,7 +260,7 @@ Let's make our needle thiner to the end, wider to the center and a bit thiner to
 As we can see, the needle starts not from the gauge center. Let's adjust the start, the middle and the end of our needle with methods {api:anychart.core.gauge.pointers.needle#startRadius}**.startRadius()**{api}, {api:anychart.core.gauge.pointers.needle#middleRadius}**.middleRadius()**{api} and {api:anychart.core.gauge.pointers.needle#endRadius}**.endRadius()**{api}. The value transmitted to this method can be in pixels or percents.
 
 ```
-        //needle
+    //needle
     gauge.needle(8)
         .startRadius('0%')
         .endRadius('80%')
@@ -209,139 +337,3 @@ The last feature avaliable at the moment for only the knob pointers is radius, w
 ```
 
 {sample}BCT\_Pointers-and-Data\_Knob\_15{sample} 
-
-##Visualization
-
-In this section you will find some general information related to all pointer types. 
-
-###Connection with the Data
-
-By default, when a pointer is added to the gauge, it shows the first value from the DataSet (if you've got more than one) or the only one. In case you need the second pointer with the same value to display or you have more than one value in your dataSet and you need one of your pointers to show this particular value  different from the first one, you need to connect the data with the pointer in some way. On the other hand, the situation when you need to show any value from your dataSet on the axis which is not the only and the first might take place as well.
-
-These problems are to be easily resolved using the {api}**.dataIndex()**{api} and the {api}**.axisIndex**{api} methods. You can find more information about these methods below.
-
-#### Snap to Data
-
-In case you have more that one value in your dataset, you should use the {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} method to each pointer showing any other value but the first. Note that numeration of the values starts from 0. There's no need in use of this method if you have an only value in your dataSet.
-
-Let's add the second point to the data and enable two pointers: the bar and the marker. Let's snap the bar pointer to the new data point:
-
-```
-		//add the second data point
-		 dataSet = anychart.data.set([60,110]);
-
-        //marker
-    gauge.marker(0)
-        .enabled(true)
-        .dataIndex(0)
-        .size(7);
-        
-		//bar
-    gauge.bar(0)
-        .width(3)
-        .dataIndex(1);
-```
-
-{sample}BCT\_Pointers-and-Data\_16{sample} 
-
-When you apply for the {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} method, you change the value that will be represented by the pointer you add this method to. However, using this means only if you have more than one value in the dataSet and more than one axis, because the only axis shows the only (or the first) value from your dataSet by default. So, there is no need in this method if your chart has an only axis and your data looks like this:
-
-```
-		 dataSet = anychart.data.set([60]);
-```
-
-
-#### Snap to Axis
-
-To snap the pointer to the axis use the {api:anychart.core.gauge.pointers.bar#axisIndex}**.axisIndex()**{api} method. Note that the count starts from 0. There's no need in using this method if your chart contains an only axis.
-
-Let's enable one more axis and snap the bar pointer to this new axis:
-
-{sample}BCT\_Pointers-and-Data\_17{sample} 
-
-To reach the result as in the sample above we need to add the following:
-
-```
-        //second axis settings
-    var axis_1 = gauge.axis(1)
-        .radius(50)
-        .width(3);
-
-		//second scale settings
-    axis_1.scale()
-        .minimum(0)
-        .maximum(300)
-        .ticks({interval: 30})
-        .minorTicks({interval: 10});
-
-		//second ticks settings
-    axis_1.ticks()
-        .type('trapezoid')
-        .length('8');
-
-		//second minor ticks settings
-    axis_1.minorTicks()
-        .enabled(true)
-        .length('3');
-		
-        //marker
-    gauge.marker(0)
-        .enabled(true)
-        .dataIndex(0)
-        .axisIndex(0)
-        .size(7);
-        
-		//bar
-    gauge.bar(0)
-        .width(3)
-        .dataIndex(0)
-        .axisIndex(1);
-```
-
-Let's add the second value to our dataSet and snap the bar pointer with the new value to the new axis:
-
-```		//add the second data point
-		 dataSet = anychart.data.set([60,120]);
-
-        //bar
-    gauge.bar(0)
-        .width(3)
-        .dataIndex(1)
-        .axisIndex(1);
-```
-{sample}BCT\_Pointers-and-Data\_18{sample} 
-
-#### Multiple pointers
-
-You can add not only different pointers but the same. Look at the example below:
-
-{sample}BCT\_Pointers-and-Data\_19{sample}
-
-All we need to do is to change the value of the {api}**.marker()**{api} itself. This value means the pointer's numbers and counts from 0.
-
-```		//add the second data point
-		 dataSet = anychart.data.set([60,120,170]);
-
-        //marker_1
-    gauge.marker(0)
-        .enabled(true)
-        .dataIndex(0)
-        .axisIndex(0)
-        .size(5);
-        
-		//marker_2
-    gauge.marker(1)
-        .dataIndex(1)
-        .axisIndex(0)
-        .size(6);
-        
-        //marker_3
-    gauge.marker(2)
-        .dataIndex(2)
-        .axisIndex(0)
-        .size(7);
-```
-
-##Colorizing
-
-*coming_soon*
