@@ -6,20 +6,19 @@ anychart.onDocumentReady(function() {
 
     // set chart type and data
     chart = anychart.pieChart([
-        {'name':'Department Stores', 'value': 637166, 'exploded': true},
+        ['Department Stores', 637166],
         ['Discount Stores', 721630],
         ['Men\'s/Women\'s Stores', 148662],
         ['Juvenile Specialty Stores', 78662],
         ['All other outlets', 90000]
     ]);
     // set chart title text settings
-    chart.title().text('Exploded Slices');
+    chart.title().text('Aqua Style');
 
-    // disabling legend title and title separator
+    // disable legend
     chart.legend().enabled(false);
 
-    // set explosion range
-    chart.explode(70);
+    // set aqua style
     chart.fill('aquastyle');
 
     // draw
