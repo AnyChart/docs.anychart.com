@@ -8,33 +8,56 @@ anychart.onDocumentReady(function() {
 
   // create table
   var table = anychart.ui.table();
-  table.rowHeight(0, '100%');
+  table.rowHeight(0, '10%');
+  table.rowHeight(1, '45%');
+  table.rowHeight(2, '45%');
 
   // setting data
-  var data = anychart.data.set([
+  var data_1 = anychart.data.set([
         ['C', 5],
-        ['D', -21],
-        ['E', 14]
+        ['D', 21],
+        ['E', 34]
+  ]);
+
+  var data_2 = anychart.data.set([
+        ['C', 5],
+        ['D', 1],
+        ['E', 4]
   ]);
 
   // create charts
-  var chart_1 = anychart.columnChart(data);
-  var chart_2 = anychart.columnChart(data);
-  var chart_3 = anychart.columnChart(data);  
+  var chart_1 = anychart.columnChart(data_1);
+  var chart_2 = anychart.columnChart(data_1);
+  var chart_3 = anychart.columnChart(data_1);  
+  var chart_4 = anychart.columnChart(data_2);
+  var chart_5 = anychart.columnChart(data_2);
+  var chart_6 = anychart.columnChart(data_2);  
 
-  chart_2.yScale().minimum(-10).maximum(10);
-  chart_3.yScale().softMinimum(-25).softMaximum(25);
+  chart_2.yScale().maximum(10);
+  chart_3.yScale().softMaximum(10);
+
+  chart_5.yScale().maximum(10);
+  chart_6.yScale().softMaximum(10);
 
   formatChart(chart_1);
   formatChart(chart_2);
   formatChart(chart_3);
+  formatChart(chart_4);
+  formatChart(chart_5);
+  formatChart(chart_6);  
 
   // set table content
   table.contents([
+    ["Auto Calculation", ".maximum(10)","softMaximum(10)"],
     [
       chart_1,
       chart_2,
       chart_3
+    ],
+    [
+      chart_4,
+      chart_5,
+      chart_6
     ]
   ]);
 
@@ -49,5 +72,4 @@ function formatChart(chart){
     chart.title(false);
     chart.xAxis().title(false);
     chart.yAxis().title(false);
-    chart.yScale().minimumGap(0).maximumGap(0)
-};
+}
