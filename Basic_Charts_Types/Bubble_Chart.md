@@ -55,17 +55,17 @@ products, we will compare a number of units sold and profit using a bubble chart
 <tbody><tr>
 <th width="214"><b>Product</b></th>
 <th width="70"><b>Units</b></th>
-<th width="70"><b>Profit</b></th>	
+<th width="70"><b>Profit</b></th>
 </tr>
 <tr>
 <td>Product A </td>
 <td>637</td>
-<td>$6</td>	
+<td>$6</td>
 </tr>
 <tr>
 <td>Product B </td>
 <td>72</td>
-<td>$14</td>	
+<td>$14</td>
 </tr>
 <tr>
 <td>Product C </td>
@@ -105,11 +105,11 @@ Let's compare year 2003 sales to year 2004 product sales:
 </tr>
 <tr>
 <th width="227"><b>Product</b></th>
-<th width="141"><b>Units</b></th>  
-<th width="141"><b>Profit</b></th>    
-<th width="141"><b>Units</b></th>  
-<th width="141"><b>Profit</b></th>    
-</tr>  
+<th width="141"><b>Units</b></th>
+<th width="141"><b>Profit</b></th>
+<th width="141"><b>Units</b></th>
+<th width="141"><b>Profit</b></th>
+</tr>
 <tr>
 <td>Product A</td>
 <td>637</td>
