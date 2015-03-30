@@ -28,7 +28,7 @@ anychart.onDocumentReady(function() {
   pie.title().text('No sorting');
   pie.bounds(0, stage.height()*0.1, '33.3%', '90%');
   pie.legend().enabled(false);
-  pie.background().stroke('#CCCCCC');
+  pie.background(null);
   pie.labels().fontSize(9);
   pie.container(stage);
   pie.draw();
@@ -40,7 +40,7 @@ anychart.onDocumentReady(function() {
   pie_asc.sort('asc');
   pie_asc.bounds('33.3%', stage.height()*0.1, '33.3%', '90%');
   pie_asc.legend().enabled(false);
-  pie_asc.background().stroke('#CCCCCC');
+  pie_asc.background(null);
   pie_asc.labels().fontSize(9);
   pie_asc.container(stage);
   pie_asc.draw();
@@ -52,7 +52,7 @@ anychart.onDocumentReady(function() {
   pie_desc.sort('desc');
   pie_desc.bounds('66.6%', stage.height()*0.1, '33.3%', '90%');
   pie_desc.legend().enabled(false);
-  pie_desc.background().stroke('#CCCCCC');
+  pie_desc.background(null);
   pie_desc.labels().fontSize(9);
   pie_desc.container(stage);
   pie_desc.draw();
