@@ -150,7 +150,7 @@ series.error().xError('15%')
 
 ### Error Mode
 
-If you want to specify the visibility of the upper and lower error values - you should use the {api: anychart.core.utils.Error#mode}**.mode()**{api} method:
+If you want to specify the visibility of the upper and lower error values - you should use the {api:anychart.core.utils.Error#mode}**.mode()**{api} method:
 
 <table width="430" border="1" class="dtTABLE">
 <tbody><tr>

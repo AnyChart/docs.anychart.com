@@ -22,7 +22,7 @@ anychart.onDocumentReady(function() {
     chart.xAxis().title().text('Retail Channel');
     chart.yAxis().title().text('Sales');
 
-    // adjust chart fill mode and set picture instead of color
+    // adjust chart fill mode and set a picture instead of a color
     chart.area(data).fill({
             src: 'http://static.anychart.com/underwater.jpg',
             mode: acgraph.vector.ImageFillMode.STRETCH
