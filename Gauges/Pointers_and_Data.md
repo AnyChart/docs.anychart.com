@@ -19,11 +19,11 @@ Pointers are elements of the Gauge charts, which are necessary for the data repr
 
 By default, when a pointer is added to the gauge, it shows the first value from the DataSet (if you've got more than one) or the only one. In case you need the second pointer with the same value to display or you have more than one value in your dataSet and you need one of your pointers to show this particular value  different from the first one, you need to connect the data with the pointer in some way. On the other hand, the situation when you need to show any value from your dataSet on the axis which is not the only and the first might take place as well.
 
-These problems are to be easily resolved using the {api}**.dataIndex()**{api} and the {api}**.axisIndex**{api} methods. You can find more information about these methods below.
+These problems are to be easily resolved using the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} and the {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex**{api} methods. You can find more information about these methods below.
 
 ### Bind to Data
 
-In case you have more that one value in your dataset, you should use the {api:anychart.core.gauge.pointers.Base}**.dataIndex()**{api} method to each pointer showing any other value but the first. Note that numeration of the values starts from 0. There's no need in use of this method if you have an only value in your dataSet.
+In case you have more that one value in your dataset, you should use the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} method to each pointer showing any other value but the first. Note that numeration of the values starts from 0. There's no need in use of this method if you have an only value in your dataSet.
 
 Let's add the second point to the data and enable two pointers: the bar and the marker. Let's bind the bar pointer to the new data point:
 
@@ -45,7 +45,7 @@ Let's add the second point to the data and enable two pointers: the bar and the 
 
 {sample}BCT\_Pointers-and-Data\_16{sample} 
 
-When you apply for the {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} method, you change the value that will be represented by the pointer you add this method to. However, using this means only if you have more than one value in the dataSet and more than one axis, because the only axis shows the only (or the first) value from your dataSet by default. So, there is no need in this method if your chart has an only axis and your data looks like this:
+When you apply for the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} method, you change the value that will be represented by the pointer you add this method to. However, using this means only if you have more than one value in the dataSet and more than one axis, because the only axis shows the only (or the first) value from your dataSet by default. So, there is no need in this method if your chart has an only axis and your data looks like this:
 
 ```
   dataSet = anychart.data.set([60]);
@@ -53,7 +53,7 @@ When you apply for the {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIn
 
 ### Bind to Axis
 
-To bind the pointer to the axis use the {api:anychart.core.gauge.pointers.bar#axisIndex}**.axisIndex()**{api} method. Note that the count starts from 0. There's no need in using this method if your chart contains an only axis.
+To bind the pointer to the axis use the {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex()**{api} method. Note that the count starts from 0. There's no need in using this method if your chart contains an only axis.
 
 Let's enable one more axis and bind the bar pointer to this new axis:
 
@@ -118,7 +118,7 @@ You can add not only different pointers but the same. Look at the example below:
 
 {sample}BCT\_Pointers-and-Data\_19{sample}
 
-All we need to do is to change the value of the {api}**.marker()**{api} itself. This value means the pointer's numbers and counts from 0.
+All we need to do is to change the value of the {api:anychart.core.gauge.pointers.Marker}**.marker()**{api} itself. This value means the pointer's numbers and counts from 0.
 
 ```		
   // add the second data point
@@ -243,7 +243,7 @@ Let's now look at the needles - the most common pointer used with Gauges.
 
 {sample}BCT\_Pointers-and-Data\_Needle\_07{sample} 
 
-Needle can be a thin stick or a pointer of a complex form - you can regulate its width using three similar methods: {api:anychart.core.gauge.pointers.needle#startWidth}**.startWidth()**{api}, {api:anychart.core.gauge.pointers.needle#middleWidth}**.middleWidth()**{api} and {api:anychart.core.gauge.pointers.needle#endWidth}**.endWidth()**{api}.
+Needle can be a thin stick or a pointer of a complex form - you can regulate its width using three similar methods: {api:anychart.core.gauge.pointers.needle#startWidth}**.startWidth()**{api}, {api:anychart.core.gauge.pointers.Needle#middleWidth}**.middleWidth()**{api} and {api:anychart.core.gauge.pointers.Needle#endWidth}**.endWidth()**{api}.
 
 Let's make our needle thiner to the end, wider to the center and a bit thiner to the start:
 
@@ -257,7 +257,7 @@ Let's make our needle thiner to the end, wider to the center and a bit thiner to
 
 {sample}BCT\_Pointers-and-Data\_Needle\_08{sample} 
 
-As we can see, the needle starts not from the gauge center. Let's adjust the start, the middle and the end of our needle with methods {api:anychart.core.gauge.pointers.needle#startRadius}**.startRadius()**{api}, {api:anychart.core.gauge.pointers.needle#middleRadius}**.middleRadius()**{api} and {api:anychart.core.gauge.pointers.needle#endRadius}**.endRadius()**{api}. The value transmitted to this method can be in pixels or percents.
+As we can see, the needle starts not from the gauge center. Let's adjust the start, the middle and the end of our needle with methods {api:anychart.core.gauge.pointers.Needle#startRadius}**.startRadius()**{api}, {api:anychart.core.gauge.pointers.Needle#middleRadius}**.middleRadius()**{api} and {api:anychart.core.gauge.pointers.Needle#endRadius}**.endRadius()**{api}. The value transmitted to this method can be in pixels or percents.
 
 ```
     //needle
@@ -278,7 +278,7 @@ Knob is a full-curcle pointer that is nice to use with a needle or marker pointe
 
 {sample}BCT\_Pointers-and-Data\_Knob\_10{sample} 
 
-As you can see, this pointer is completely different from others. The first thing we'll adjust will be the number of the knob's projections (vertices). For that we use the {api}**.verticesCount()**{api} method. 
+As you can see, this pointer is completely different from others. The first thing we'll adjust will be the number of the knob's projections (vertices). For that we use the {api:anychart.core.gauge.pointers.Knob#verticesCount}**.verticesCount()**{api} method. 
 
 ```
         //knob
@@ -288,7 +288,7 @@ As you can see, this pointer is completely different from others. The first thin
 
 {sample}BCT\_Pointers-and-Data\_Knob\_11{sample} 
 
-The curvature of vertices can be adjusted too. Use the {api}**.verticesCurvature()**{api} method and set the value from 0 to 1 (0.5 is set by default). The less the value is the more convex the vertices are. The more the value the more concave they are.
+The curvature of vertices can be adjusted too. Use the {api:anychart.core.gauge.pointers.Knob#verticesCurvature}**.verticesCurvature()**{api} method and set the value from 0 to 1 (0.5 is set by default). The less the value is the more convex the vertices are. The more the value the more concave they are.
 
 ```
         //knob
@@ -299,7 +299,7 @@ The curvature of vertices can be adjusted too. Use the {api}**.verticesCurvature
 
 {sample}BCT\_Pointers-and-Data\_Knob\_12{sample} 
 
-The next feature we can adjust is the ratio, which spilts into the {api}**.topRatio()**{api} and {api}**.bottomRatio**(){api} methods. The values for these methods might be from 0 to 1 as well.
+The next feature we can adjust is the ratio, which spilts into the {api:anychart.core.gauge.pointers.Knob#topRatio}**.topRatio()**{api} and {api:anychart.core.gauge.pointers.Knob#bottomRatio}**.bottomRatio**(){api} methods. The values for these methods might be from 0 to 1 as well.
 
 ```
         //knob
@@ -311,7 +311,7 @@ The next feature we can adjust is the ratio, which spilts into the {api}**.topRa
 ```
 {sample}BCT\_Pointers-and-Data\_Knob\_13{sample} 
 
-If you set the {api}**.verticesCurvature()**{api} and the {api}**.bottomRatio**(){api} values to default (0.5), the vertices would look like triangles directed up from the knob:
+If you set the {api:anychart.core.gauge.pointers.Knob#verticesCurvature}**.verticesCurvature()**{api} and the {api:anychart.core.gauge.pointers.Knob#bottomRatio}**.bottomRatio**(){api} values to default (0.5), the vertices would look like triangles directed up from the knob:
 
 ```
         //knob
@@ -323,9 +323,9 @@ If you set the {api}**.verticesCurvature()**{api} and the {api}**.bottomRatio**(
 ```
 {sample}BCT\_Pointers-and-Data\_Knob\_14{sample} 
 
-If you set {api}**.verticesCurvature()**{api} and the {api}**.bottomRatio**(){api} values to default (0.5), the vertices would look like triangles directed down to the knob. Try to do it yourself, using the playground.
+If you set {api:anychart.core.gauge.pointers.Knob#verticesCurvature}**.verticesCurvature()**{api} and the {api:anychart.core.gauge.pointers.Knob#bottomRatio}**.bottomRatio**(){api} values to default (0.5), the vertices would look like triangles directed down to the knob. Try to do it yourself, using the playground.
 
-The last feature avaliable at the moment for only the knob pointers is radius, which is split the same way as ratio. Use the {api}**.topRadius()**{api} and the {api}**.bottomRadius()**{api} methods to set the radius for the outer side (height of the vertices) and the inner side (depth of dimples) accordingly. For clearer representation let's get rid of the ratio settings.
+The last feature avaliable at the moment for only the knob pointers is radius, which is split the same way as ratio. Use the {api:anychart.core.gauge.pointers.Knob#topRadius}**.topRadius()**{api} and the {api:anychart.core.gauge.pointers.Knob#bottomRadius}**.bottomRadius()**{api} methods to set the radius for the outer side (height of the vertices) and the inner side (depth of dimples) accordingly. For clearer representation let's get rid of the ratio settings.
 
 ```
         //knob
