@@ -25,7 +25,7 @@ anychart.onDocumentReady(function() {
     var seriesData_4 = dataSet.mapAs({x: [0], value: [4]});
 
     // create bar chart
-    chart = anychart.barChart();
+    var chart = anychart.barChart();
 
     // force chart to stack values by Y scale.
     chart.yScale().stackMode('percent');
@@ -41,24 +41,21 @@ anychart.onDocumentReady(function() {
     chart.yAxis().title().enabled(false);
 
     // set yAxis labels formatting, force it to add % to values
-    chart.yAxis(0).labels().textFormatter(function(info) {
+    chart.yAxis().labels().textFormatter(function(info) {
       return info.value + '%';
     });
 
-    // temp variable to store series instance
-    var series;
-
     // create first series with mapped data
-    series = chart.bar(seriesData_1);
+    chart.bar(seriesData_1);
 
     // create second series with mapped data
-    series = chart.bar(seriesData_2);
+    chart.bar(seriesData_2);
 
     // create third series with mapped data
-    series = chart.bar(seriesData_3);
+    chart.bar(seriesData_3);
 
     // create fourth series with mapped data
-    series = chart.bar(seriesData_4);
+    chart.bar(seriesData_4);
 
     // initiate chart drawing
     chart.draw();
