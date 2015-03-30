@@ -25,7 +25,7 @@ anychart.onDocumentReady(function() {
     // adjust chart fill mode and set picture instead of color
     chart.area(data).fill({
             src: 'http://static.anychart.com/underwater.jpg',
-            mode: acgraph.vector.ImageFillMode.TILE
+            mode: acgraph.vector.ImageFillMode.STRETCH
         });
 
     // draw chart
