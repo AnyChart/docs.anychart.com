@@ -23,7 +23,7 @@ These problems are to be easily resolved using the {api}**.dataIndex()**{api} an
 
 ### Bind to Data
 
-In case you have more that one value in your dataset, you should use the {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} method to each pointer showing any other value but the first. Note that numeration of the values starts from 0. There's no need in use of this method if you have an only value in your dataSet.
+In case you have more that one value in your dataset, you should use the {api:anychart.core.gauge.pointers.Base}**.dataIndex()**{api} method to each pointer showing any other value but the first. Note that numeration of the values starts from 0. There's no need in use of this method if you have an only value in your dataSet.
 
 Let's add the second point to the data and enable two pointers: the bar and the marker. Let's bind the bar pointer to the new data point:
 

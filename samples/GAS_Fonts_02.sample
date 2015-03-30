@@ -17,6 +17,9 @@ anychart.onDocumentReady(function() {
 
     // set data
     chart = anychart.pieChart(data);
+	
+	//the pie radius
+    chart.radius('170');
 
     // set chart labels
     chart.labels()
