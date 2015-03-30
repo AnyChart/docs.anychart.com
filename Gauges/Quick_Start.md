@@ -5,7 +5,7 @@ Gauges Quick Start
 ## Getting started with Gauges
 ###1. Include Gauges into Your Web Page
 Reference the JavaScript file in the <head> section of your web page.
-You can use the link as shown below or download anychart.min.js from the [download page](./Downloading_AnyChart) and then put it into any folder of your site (you’ll have to use your own link in this case).
+You can use the link as shown below or download anychart.min.js from the [download page](../Downloading_AnyChart) and then put it into any folder of your site (you’ll have to use your own link in this case).
 
 ```
 <head>
@@ -90,7 +90,7 @@ anychart.onDocumentReady(function() {
   
 ## The result
 ###See the result
-After all these steps you should have the following result. You can launch and explore this example further [here](../Gauges/sample_2).
+After all these steps you should have the following result. You can launch and explore this example further here:
 {sample :width 690 :height 180}GAUGE\_Basic\_Sample{sample}
 ###Full source code
 You can copy this to a file on your computer and open it in your browser to display the Gauge shown above:
