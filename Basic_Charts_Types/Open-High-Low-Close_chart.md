@@ -27,7 +27,13 @@ The [Japanese candlestick chart](Japaneese_Candlestick_Chart) is another way of 
 OHLC chart uses four values
 
 ```
-    {x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
+  {
+    x: Date.UTC(2007, 7, 28),   // position on x scale
+    open:511.53,                // opening value
+    high:514.98,                // the highest value
+    low:505.79,                 // the lowest value
+    close:506.40                // closing value
+  },
 ```
 
 ### Single Series
@@ -238,7 +244,7 @@ And here is the demonstration of Logarithmic Y Axis on slightly modified the Sin
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting **.maximum()** and **.minimum()** parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjusted the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 
 ```
-    chart.yScale().minimum('505').maximum('530')ticks().interval(5)
+    chart.yScale().minimum(505).maximum(530)ticks().interval(5)
 ```
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
@@ -257,13 +263,13 @@ Now, let's look how to adjust OHLC appearance:
 
 ```
     chart.ohlc(data)
-        .fallingStroke('red', 3)
-        .risingStroke('green', 3)
-        .hoverFallingStroke('darkred', 5)
-        .hoverRisingStroke('darkgreen', 5);
+        .fallingStroke('red', 1)
+        .risingStroke('green', 1)
+        .hoverFallingStroke('darkred', 3)
+        .hoverRisingStroke('darkgreen', 3);
 ```
 
-Using these settings we've set red color for every falling OHLC point and green color for every rising OHLC point. Also, our rising OHLC points have dark green color, if mouse is over, as well as all falling points have dark red color, if mouse is over. Thickness of strokes was adjusted too. It's 3 px for all points and 5px if mouse over.
+Using these settings we've set red color for every falling OHLC point and green color for every rising OHLC point. Also, our rising OHLC points have dark green color, if mouse is over, as well as all falling points have dark red color, if mouse is over. Thickness of strokes was adjusted too. It's 1 px for all points and 3px if mouse over.
 
 {sample}BCT\_OHLC\_Chart\_06{sample}
 
