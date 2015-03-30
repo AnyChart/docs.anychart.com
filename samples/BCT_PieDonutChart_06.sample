@@ -24,7 +24,7 @@ anychart.onDocumentReady(function() {
     .hatchFill('diagonalbrick', 'gray');
 
   // disable legend
-  chart.labels().enabled(false);
+  chart.legend().enabled(false);
   
   // labels
   chart.labels().background(true).padding(5);
