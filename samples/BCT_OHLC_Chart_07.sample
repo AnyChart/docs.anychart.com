@@ -32,7 +32,6 @@ anychart.onDocumentReady(function() {
   series.labels()
     .enabled(true)
     .anchor('top')
-    .offsetY(0)
     .position('centerBottom')
     .fontSize(12)
     .fontWeight(600)

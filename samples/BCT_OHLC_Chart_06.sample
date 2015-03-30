@@ -28,10 +28,10 @@ anychart.onDocumentReady(function() {
 
   // set data and adjust colors
   var series = chart.ohlc(data)
-    .fallingStroke('black', 1)
-    .risingStroke('black', 1)
-    .hoverFallingStroke('red', 3)
-    .hoverRisingStroke('red', 3);
+    .fallingStroke('red', 1)
+    .risingStroke('green', 1)
+    .hoverFallingStroke('darkred', 3)
+    .hoverRisingStroke('darkgreen', 3);
 
   // set axes title
   chart.xAxis().title().text('Day');
