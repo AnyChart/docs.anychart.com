@@ -124,7 +124,7 @@ anychart.onDocumentReady(function() {
     gauge.range({
       from: 0,
       to: 120,
-      fill: {keys: ['green', 'yellow', 'orange' , 'red']}
+      fill: {keys: ['green', 'yellow', 'orange' , 'red']},
       position: 'i',
       radius: 100,
       endSize: '3%',
