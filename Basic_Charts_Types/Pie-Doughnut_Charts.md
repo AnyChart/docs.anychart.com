@@ -98,7 +98,7 @@ And here is the same data as above in the form of a Donut chart:
 
 In Pie/Donut charts, it is possible to sort the series by ascending or descending. This feature is controlled using {api:anychart.charts.Pie#sort}**.sort()**{api} parameter. In the sample below three pie charts with identical series are shown, first isn't sorted, the second is sorted ascending and the third - descending.
 
-{sample}BCT\_PieDonutChart\_03{sample}
+{sample :width 690 :height 230}BCT\_PieDonutChart\_03{sample}
 
 
 ## Exploded Slices
@@ -121,7 +121,7 @@ The first parameter is the number of the slice and the second one is boolean res
 
 Sample chart below is exploded by default, you can launch the live sample and click on slices to move them back to the center.
 
-{sample}BCT\_PieDoughnutChart\_04{sample}
+{sample}BCT\_PieDonutChart\_04{sample}
 
 Also it's possible to define explosion with the data itself if you set the data as an object:
 

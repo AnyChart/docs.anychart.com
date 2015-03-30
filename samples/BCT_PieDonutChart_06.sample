@@ -25,7 +25,11 @@ anychart.onDocumentReady(function() {
 
   // disable legend
   chart.labels().enabled(false);
-
+  
+  // labels
+  chart.labels().background(true).padding(5);
+  chart.labels().background().stroke('1 black').corners(5).cornerType('Round');
+  
   // draw
   chart.container('container').draw();
 });

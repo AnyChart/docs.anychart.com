@@ -26,7 +26,7 @@ anychart.onDocumentReady(function() {
   // set position and data for the first pie
   var pie = anychart.pieChart(data);
   pie.title().text('No sorting');
-  pie.bounds(0, '10%', '33.3%', '50%');
+  pie.bounds(0, stage.height()*0.1, '33.3%', '90%');
   pie.legend().enabled(false);
   pie.background().stroke('#CCCCCC');
   pie.labels().fontSize(9);
@@ -38,7 +38,7 @@ anychart.onDocumentReady(function() {
   pie_asc.title().text('Ascending');
   // set sorting mode
   pie_asc.sort('asc');
-  pie_asc.bounds('33.3%', '10%', '33.3%', '50%');
+  pie_asc.bounds('33.3%', stage.height()*0.1, '33.3%', '90%');
   pie_asc.legend().enabled(false);
   pie_asc.background().stroke('#CCCCCC');
   pie_asc.labels().fontSize(9);
@@ -50,7 +50,7 @@ anychart.onDocumentReady(function() {
   pie_desc.title().text('Descending');
   // set sorting mode
   pie_desc.sort('desc');
-  pie_desc.bounds('66.6%', '10%', '33.3%', '50%');
+  pie_desc.bounds('66.6%', stage.height()*0.1, '33.3%', '90%');
   pie_desc.legend().enabled(false);
   pie_desc.background().stroke('#CCCCCC');
   pie_desc.labels().fontSize(9);
