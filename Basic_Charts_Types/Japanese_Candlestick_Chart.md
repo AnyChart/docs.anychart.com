@@ -23,7 +23,7 @@ The Japanese candlestick chart is a combination of a line chart and a bar chart 
 Candlesticks are usually consist of the body (black or white), an upper and a lower shadow (wick). The wick illustrates the highest and lowest traded prices of a stock, and the body represents the opening and closing trades. If the stock went up, the body is white, with the opening price at the bottom of the body and the closing price at the top. If the stock went down, the body is black, with the opening price at the top and the closing price at the bottom. It's not necessary for a candlestick to have either a body or a wick.
   
   
-Some traders find candlestick charts easier to read, than [Open-High-Low-Close charts](Open-High-Low-Close_chart).
+Some traders find candlestick charts easier to read, than [Open-High-Low-Close charts](OHLC_Chart).
 
 ## Chart
 
