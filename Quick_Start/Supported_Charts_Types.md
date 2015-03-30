@@ -13,7 +13,7 @@ with a links to tutorials where you can find out how to create them (with the sa
 <tr><td>[Bar Chart](../Basic_Charts_Types/Bar_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Bubble Chart](../Basic_Charts_Types/Bubble_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Bullet Chart](../Basic_Charts_Types/Bullet_Chart)</td><td>Yes</td><td>No</td></tr>
-<tr><td>[Candlestick Chart](../Basic_Charts_Types/Candlestick_Chart)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[Candlestick Chart](../Basic_Charts_Types/Japanese_Candlestick_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Circular Gauge](../Gauges/Circular_Gauge)</td><td></td><td></td></tr>
 <tr><td>[Column Chart](../Basic_Charts_Types/Column_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Donut Chart](../Basic_Charts_Types/Pie-Doughnut_Charts)</td><td>Yes</td><td>No</td></tr>
@@ -24,13 +24,13 @@ with a links to tutorials where you can find out how to create them (with the sa
 <tr><td>[OHLC Chart](../Basic_Charts_Types/OHLC_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Pie Chart](../Basic_Charts_Types/Pie-Doughnut_Charts)</td><td>Yes</td><td>No</td></tr>
 <tr><td>[Range Area Chart](../Basic_Charts_Types/Range_Area-SplineArea_Charts)</td><td>Yes</td><td>Yes</td></tr>
-<tr><td>[Range Bar Chart](../Basic_Charts_Types/Range_Bar-Column_Charts.md)</td><td>Yes</td><td>Yes</td></tr>
-<tr><td>[Range Column Chart](../Basic_Charts_Types/Range_Bar-Column_Charts.md)</td><td>Yes</td><td>Yes</td></tr>
-<tr><td>[Range Spline Area Chart](../Basic_Charts_Types/Range_Area-SplineArea_Charts.md)</td><td>Yes</td><td>Yes</td</tr>
-<tr><td>[Range Step Area Chart](../Basic_Charts_Types/Range_Area-SplineArea_Charts.md)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[Range Bar Chart](../Basic_Charts_Types/Range_Bar-Column_Charts)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[Range Column Chart](../Basic_Charts_Types/Range_Bar-Column_Charts)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[Range Spline Area Chart](../Basic_Charts_Types/Range_Area-SplineArea_Charts)</td><td>Yes</td><td>Yes</td</tr>
+<tr><td>[Range Step Area Chart](../Basic_Charts_Types/Range_Area-SplineArea_Charts)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Sparkline Chart](../Basic_Charts_Types/Sparkline_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Spline Chart](../Basic_Charts_Types/Line-Spline-StepLine_Charts)</td><td>Yes</td><td>Yes</td></tr>    
-<tr><td>[Spline Area Chart](../Basic_Charts_Types/Area_Chart.md)</td><td>Yes</td><td>Yes</td></tr> 
-<tr><td>[Step Area Chart](../Basic_Charts_Types/Area_Chart.md)</td><td>Yes</td><td>Yes</td></tr> 
+<tr><td>[Spline Area Chart](../Basic_Charts_Types/Area_Chart)</td><td>Yes</td><td>Yes</td></tr> 
+<tr><td>[Step Area Chart](../Basic_Charts_Types/Area_Chart)</td><td>Yes</td><td>Yes</td></tr> 
 <tr><td>[Step Line Chart](../Basic_Charts_Types/Line-Spline-StepLine_Charts)</td><td>Yes</td><td>Yes</td></tr>                                                            
 </table>
