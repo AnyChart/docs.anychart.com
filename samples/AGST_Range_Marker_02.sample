@@ -62,8 +62,8 @@ anychart.onDocumentReady(function() {
     chart.textMarker()
         .scale(chart.yScale())
         .align('near')
-        .anchor('leftcenter')
-        .offsetX(10)
+        //.anchor('leftcenter')
+        .offsetX(40)
         .value(25000)
         .fontColor('white')
         .text('Good: [20,000.00 - 30,000.00]')
@@ -74,7 +74,7 @@ anychart.onDocumentReady(function() {
         .scale(chart.yScale())
         .align('center')
         .anchor('center')
-        .offsetX(10)
+        .offsetX(0)
         .value(15000)
         .fontColor('black')
         .text('Average \n [20,000.00 - 30,000.00]')
@@ -85,12 +85,11 @@ anychart.onDocumentReady(function() {
         .scale(chart.yScale())
         .align('far')
         .anchor('rightcenter')
-        .offsetX(10)
+        .offsetX(50)
         .value(5000)
         .fontColor('black')
-        .fontWeight(400)
         .text('Severe')
-        .fontSize(12);
+        .fontSize(20);
     // draw
     chart.container('container').draw();
 });

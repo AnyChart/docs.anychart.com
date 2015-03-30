@@ -34,8 +34,7 @@ If you want to control any of scale settings - you should do that using {api:any
 
 ## Types
 
-There are four types of scales in AnyChart: {api:anychart.scales.Linear}**"Linear"**{api}, {api:anychart.scales.Logarithmic}**"Logarithmic"**{api}, {api:anychart.scales.Ordinal}**"Ordinal"**{api} and {api:anychart.scales.DateTime}**"DateTime"**{api}. To set
-scale type use appropriate constructor:
+There are four types of scales in AnyChart: {api:anychart.scales.Linear}**"Linear"**{api}, {api:anychart.scales.Logarithmic}**"Logarithmic"**{api}, {api:anychart.scales.Ordinal}**"Ordinal"**{api} and {api:anychart.scales.DateTime}**"DateTime"**{api}. To set scale type use appropriate constructor:
 
 ```
     chart.xScale(anychart.scales.linear());
@@ -43,7 +42,7 @@ scale type use appropriate constructor:
     chart.yScale(newScale);
 ```
 
-Note: working with extra axes is explained in [Additional Axes Tutorial](Additional-Axis)
+Note: working with extra axes is explained in [Additional Axes Tutorial](Additional_Axis)
 
 ### Linear
 
