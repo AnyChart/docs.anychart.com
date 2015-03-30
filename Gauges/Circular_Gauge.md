@@ -57,14 +57,14 @@ That's how it looks like in a sample:
 
 ##StartAngle and SweepAngle
 
-Change the {api:anychart.gauges.Circular}**.startAngle()**{api} parameter to fix the angle you need axes to start from:
+Change the {api:anychart.core.axes.Circular#startAngle}**.startAngle()**{api} parameter to fix the angle you need axes to start from:
 
 ```
 //set the angle
   axis.startAngle(270);
 ```  
 
-Axis can be limited setting the {api:anychart.gauges.Circular}**.sweepAngle()**{api} parameter (its value represents the angle which would be drawn): 
+Axis can be limited setting the {api:anychart.core.axes.Circular#sweepAngle}**.sweepAngle()**{api} parameter (its value represents the angle which would be drawn): 
 
 ```
 //set the angle
