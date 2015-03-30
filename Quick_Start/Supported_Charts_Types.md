@@ -13,7 +13,7 @@ with a links to tutorials where you can find out how to create them (with the sa
 <tr><td>Bar Chart</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Bubble Chart</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Bullet Chart</td><td>Yes</td><td>No</td></tr>
-<tr><td>Candlestick Chart</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[Candlestick Chart](../Basic_Charts_Types/Japaneese_Candlestick_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Column Chart</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Donut Chart</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>Line Chart</td><td>Yes</td><td>Yes</td></tr>
