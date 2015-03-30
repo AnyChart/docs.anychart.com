@@ -36,43 +36,37 @@ anychart.onDocumentReady(function() {
     [
       'May',
       '$9000',
-      '$14000'
+      '14000'
     ]
   ]);
 
   table.rowHeight(0, 40);   // Get first row and set height 40px
   table.colWidth(0, 70);    // Get first column and set width 70 px
 
+  // set table background color
+  table.cellFill('#FFFFE0');
+
   // set style for table borders
   table.cellBorder(
-    '#B8B8B8',  // Border color
-    1,          // Border thickness
+    'gray',     // Border color
+    2,          // Border thickness
     '5 2'       // Dash and gap length
   );
 
   // adjust border of the cell from the second column and second row
   table.getCell(1,1).border({
-    keys: ['#86cf38'],  // Set color
-    thickness: 3        // Set border thickness
+    keys: ['red'],  // Set color
+    thickness: 3    // Set border thickness
   });
 
   // adjust border of the cell from second column and fourth row
   table.getCell(3, 1).border({
-    keys: ['#86cf38'],  // Set leaner color
-    thickness: 3        // Set thickness
+    keys: ['red'],  // Set leaner color
+    thickness: 3    // Set thickness
   });
 
-  // position text in each cell into center
+  // position text in the center of each cell
   table.cellTextFactory().vAlign('center').hAlign('center');
-
-  // bold months and years in table
-  table.getCell(0, 1).content().fontWeight(900);
-  table.getCell(0, 2).content().fontWeight(900);
-  table.getCell(1, 0).content().fontWeight(900);
-  table.getCell(2, 0).content().fontWeight(900);
-  table.getCell(3, 0).content().fontWeight(900);
-  table.getCell(4, 0).content().fontWeight(900);
-  table.getCell(5, 0).content().fontWeight(900);
 
   // set table container and initiate draw
   table.container(stage).draw();

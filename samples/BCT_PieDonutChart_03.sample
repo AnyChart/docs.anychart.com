@@ -35,7 +35,7 @@ anychart.onDocumentReady(function() {
 
     // set position and data for the second pie
     var pie_asc = anychart.pieChart(data);
-    pie_asc.title().text('Ascendian');
+    pie_asc.title().text('Ascending');
     // set sorting mode
     pie_asc.sort('asc');
     pie_asc.bounds('33.3%', '10%', '33.3%', '50%');

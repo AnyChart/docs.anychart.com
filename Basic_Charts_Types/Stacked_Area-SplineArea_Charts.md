@@ -6,21 +6,15 @@
  * [Step Stacked Area](#step_stacked_area)
 
 ## Overview
-Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts emphasize the 
-magnitude of change over time, and can be used to draw attention to the total value across a trend.
+Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts are good at emphasizing the magnitude of changes over time, as well as at drawing attention to the total value across a trend.
   
-  
-Stacked area charts are multi series area charts that display the trend of the contribution of each value over time or 
-categories.
+Stacked area charts are multi-series area charts that display the trend  each value contribute over time or categories.
 
 ## Chart
 
-As stacked charts should show contribution of different components to the total, we will demonstrate them on an 
-imaginable ACME FastFood, Corp. sales. Let's assume that it sells Ice Cream, Chocolate Bar and Coke all through the 
-year.
+As stacked charts should show contribution of different components to the total, we will demonstrate them on sales of an imaginable ACME FastFood, Corp. Let's assume that it sells Ice Creams, Chocolate Bars and Coke all through the year.
   
-  
-So, we have three series of data - one series for each product, and we give proper names to each series:
+So, now we've got three series of data - one series for each product. Let's define categories as seasons of a year.
 
 ```
     var dataSet = anychart.data.set([
@@ -31,7 +25,7 @@ So, we have three series of data - one series for each product, and we give prop
     ]);
 ```
 
-Now we have to tell Y Axis to display these series in as stacked area:
+Now we have to tell Y-Axis to display these series in a stacked area:
 
 ```
     chart.yScale().stackMode('value');
@@ -47,6 +41,7 @@ And set "Area" as a default series type:
 
 ## Spline Stacked Area
 
+This type of area chart makes your data look a bit more attractive: points and angles are replaced with a single spline. Just change default series type to "SplineArea" and get your data displayed in a more appealing way.
 Just change default series type to {api:anychart.core.cartesian.series.SplineArea}"SplineArea"{api} and get your data displayed in more appealing way:
 
 ```

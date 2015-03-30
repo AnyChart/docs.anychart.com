@@ -1,6 +1,6 @@
 {:tags []
-  :is_new false
-  :exports "chart"}
+     :is_new false
+     :exports "chart"}
 
 anychart.onDocumentReady(function() {
 
@@ -12,19 +12,14 @@ anychart.onDocumentReady(function() {
         ['Juvenile Specialty Stores', 78662],
         ['All other outlets', 90000]
     ]);
-
     // set chart title text settings
-    chart.title().text('Exploded Slices');
+    chart.title().text('Aqua Style');
 
-    // disabling legend title and title separator
+    // disable legend
     chart.legend().enabled(false);
 
-    // set explosion range
-    chart.explode(30);
-
-    // get slices, which are exploded by default
-    chart.explodeSlice(0, true);
-    chart.explodeSlice(4, true);
+    // set aqua style
+    chart.fill('aquastyle');
 
     // draw
     chart.container('container').draw();

@@ -1,10 +1,9 @@
 {:index 3}
 Exports
 ======================
-AnyChart allows to save charts in different formats. It may be an image or pdf file.
+AnyChart allows to save charts in different formats: {api:anychart.graphics.vector.Stage#saveAsSVG}**SVG**{api}, {api:anychart.graphics.vector.Stage#saveAsPNG}**PNG**{api}, {api:anychart.graphics.vector.Stage#saveAsJPG}**JPG**{api} and {api:anychart.graphics.vector.Stage#saveAsPDF}**PDF**{api}.
 
-AnyChart supports tree image-file formats: {api:anychart.graphics.vector.Stage#saveAsSVG}**SVG**{api}, {api:anychart.graphics.vector.Stage#saveAsPNG}**PNG**{api}, {api:anychart.graphics.vector.Stage#saveAsJPG}**JPG**{api} and document-file format format: {api:anychart.graphics.vector.Stage#saveAsPDF}**PDF**{api}. Any chart can be exported into each of these formats. All methods for all of this export formats are represented below:
-
+To launch the export you need to use these methods as shown:
 ```
   chart.saveAsSVG(); // this method will save the chart in SVG format
   chart.saveAsPNG(); // this method will save the chart in PNG format
@@ -12,6 +11,6 @@ AnyChart supports tree image-file formats: {api:anychart.graphics.vector.Stage#s
   chart.saveAsPDF(); // this method will save the chart in PDF format
 ```
 
-Here is a sample with buttons which represent each of methods mentioned above.
+And here is a sample where you can see all methods in action:
 
 {sample}Exports\_01{sample}

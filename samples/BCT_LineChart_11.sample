@@ -5,8 +5,8 @@ anychart.onDocumentReady(function() {
 
     // data
     var dataSet = anychart.data.set([
-        ['P1', '178', '165', '154', '143', '132'],
-        ['P2', '167', '153', '144', '133', '122']
+        ['P1', 10, 20, 30, 40, 50],
+        ['P2', 20, 30, 40, 50, 60]
     ]);
 
     // map data for each series

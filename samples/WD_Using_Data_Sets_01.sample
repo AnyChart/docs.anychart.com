@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
   
   var data = [
-  // column 0
+    // column 0
     28,   //row 0
     26,   //    1
     27,   //    2

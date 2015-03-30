@@ -18,11 +18,11 @@
 
 ## Overview
 
-Polar chart plot allows to draw scatter chart using the polar coordinate system, which is a two-dimensional coordinate system in which each point on a plane is determined by a distance from a fixed point and an angle from a fixed direction.
+Polar chart plot allows to draw scatter chart using the polar coordinate system, which is a two-dimensional coordinate system where each point is determined by distance from a fixed point and angle from a fixed direction.
 
 ## Chart
 
-AnyChart allows to display three types of series on a Polar chart: Line, Area and Marker. You need to create a chart using {api:anychart.charts.Polar}**anychart.polar()**{api} method to display Polar chart:
+AnyChart allows to display three types of series on a Polar chart: Line, Area and Marker. You should create a chart using {api:anychart.charts.Polar}**anychart.polar()**{api} method to display Polar chart:
 
 ```
   // chart type
@@ -44,7 +44,7 @@ AnyChart allows to display three types of series on a Polar chart: Line, Area an
   ]);
 ```
 
-As you can see each point is represented with **x** and **value** fields.
+As you can see each point is represented with **x** and **value** fields, where x is an angle.
 
 Here is a basic Polar sample:
 
@@ -52,23 +52,23 @@ Here is a basic Polar sample:
 
 ## Configuration
 
-Polar plot has several distinctive configuration options which are presented in this section: chart rotation and background settings.
+Polar chart has several distinctive configuration options which are presented in section "Chart rotation and background settings".
 
 ### Start angle
 
-By default polar starts drawing from the top center point (0°), but you can change this using {api:anychart.charts.Polar#startAngle}**.startAngle()**{api} parameter:
+By default in Polar charts drawing starts from the top center point (0°), but you can change this using {api:anychart.charts.Polar#startAngle}**.startAngle()**{api} parameter:
 
 ```
   chart.startAngle(90);
 ```
 
-Sample chart with starting angle shifted to 90°:
+Below you can see our sample chart with starting angle shifted to 90°:
 
 {sample}BCT\_PolarChart\_03{sample}
 
 ### Plot background
 
-You can change polar background using {api:anychart.core.ui.Background}**.background()**{api} method, learn more about this method at [Background settings tutorial](../Appearance_Settings/Background).
+You can change polar background using {api:anychart.core.ui.Background}**.background()**{api} method. Learn more about it in [Background settings tutorial](../Appearance_Settings/Background).
 
 ```
   chart.background()
@@ -79,13 +79,13 @@ You can change polar background using {api:anychart.core.ui.Background}**.backgr
     });
 ```
 
-Sample polar chart with tuned background:
+Here is a sample of a polar chart with tuned background:
 
 {sample}BCT\_PolarChart\_04{sample}
 
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in [Axes tutorial](../Axes_and_Grids/Axis_Basics).
+In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. All axis features are described in [Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial.
 
 ### Stroke
 
@@ -118,7 +118,7 @@ Take a look at the demonstration of Y Axis inversion on the sample below:
 
 ### Logarithmic Scale
 
-Logarithmic scale can be used in polar charts, scale type is set using {api:anychart.scales}**.scale()**{api} method. More information on scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
+Logarithmic scale can be used in polar charts. You can set the scale type using {api:anychart.scales}**.scale()**{api} method. More information about scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
 
 ```
   var logScale = anychart.scales.log();   // create logarithmic scale
@@ -132,7 +132,7 @@ And here is the demonstration of Logarithmic Y Axis on a simple polar with area 
 
 ### Labels Settings
 
-AnyChart allows to customise Axes Labels in any required way. Below is a sample of tuned x and y axes. X axis labels have **°** after the value and Y axis has its negative values set in brackets.
+AnyChart allows to customise Axes Labels in any required way. Below there is a sample of tuned x and y axes. X-axis labels have **°** after the value and Y axis has its negative values set in brackets.
 
 ```
   // chart type
@@ -157,7 +157,7 @@ AnyChart allows to customise Axes Labels in any required way. Below is a sample 
 
 {sample}BCT\_PolarChart\_08{sample}
 
-You can change labels background. Learn more about background configuration in [Background settings tutorial](../Appearance_Settings/Background).
+You can change labels' background. Learn more about background configuration in [Background settings tutorial](../Appearance_Settings/Background).
 
 ```
   // axes settings
@@ -179,18 +179,17 @@ You can hide first and/or last labels using {api:anychart.core.axes.Radial#drawF
 
 ```
   chart.yAxis()
-    .drawFirstLabel(false)  // hides first label of y Axis
-    .drawLastLabel(false);  // hides last label of y Axis
+    .drawFirstLabel(false)  // hides first label of Y-Axis
+    .drawLastLabel(false);  // hides last label of Y-Axis
 ```
 
 {sample}BCT\_PolarChart\_10{sample}
 
 ## Visualization
 
-In this section we will describe main parts of polar chart style and demonstrate how style can be applied.
+In this section we will describe the main parts of a polar chart style and demonstrate how style can be applied.
 
-
-The main idea of styles is to segregate visualization and data definition. Visual appearance of columns is defined using certain methods.
+The main idea of styles is to segregate visualization and data definition. Visual appearance of columns can be defined using certain methods.
 
 ### Grid
 
@@ -206,18 +205,23 @@ Polar grid is a combination of circular and radial grids. Grid visual appearance
     .layout('radial');    // set layout type
 ```
 
-**Note:** full information on grid settings can be found in [grid section of Scale tutorial](../Axes_and_Grids/Scales#grids)
+**Note:** full information about grid settings can be found in [grid section of Scale tutorial](../Axes_and_Grids/Scales#grids)
 
 
-Sample below demonstrates two polar charts with adjusted visualisation of the radial type of grid as well as of the circular one.
+This sample below demonstrates two polar charts with adjusted visualisation of the radial type of grid as well as of the circular one.
 
 {sample}BCT\_PolarChart\_11{sample}
 
 ### Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips.
+<!--Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
+To configure data labels and tooltips for all series use {api:anychart.charts.Pie#labels}**.labels()**{api} and {api:anychart.charts.Pie#tooltip}**.tooltip()**{api} methods. These will help you to adjust visual appearance, positioning and format.
 
-If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.core.polar.series.Base#labels}**.labels()**{api} and {api:anychart.core.polar.series.Base#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format.
+Let's do that with the following example: we will make data labels to appear inside of the slices, format labels so they show only the percentage corresponding to the slices and tooltips to show detailed description.
+
+When formatting tooltips, we use  {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} to adjust source of content and visual appearance. To control labels’ position we may use  {api:anychart.core.ui.Label#position}**.position()**{api} parameter. Here is a sample of two charts with the same data and different labels positions.
+
 
 Next sample demonstrates bold series labels which display value of a point and tooltip shows detailed description.
 
@@ -246,12 +250,12 @@ Next sample demonstrates bold series labels which display value of a point and t
 
 ## Series Types
 
-Polar chart supports: Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
+Polar chart supports: Line, Area and Marker series types. You can learn how to change and configure styles of these types in following: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
 
 {sample}BCT\_PolarChart\_13{sample}
 
 ## Missing Points
 
-Polar Chart allows to omit one or several points in a data set. To miss a point set 'missing' into **value** field. On the sample below points from 60 to 70 are missing.
+Polar Chart allows to omit one or several points in a data set. To miss a point set 'missing' into  the **value** field. On the sample below points from 60 to 70 are missing.
 
 {sample}BCT\_PolarChart\_14{sample}

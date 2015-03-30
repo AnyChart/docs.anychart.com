@@ -5,40 +5,58 @@ anychart.onDocumentReady(function() {
 
     // data
     var data = anychart.data.set([
-        ['P1', 14, 24, 34, 42, 50],
-        ['P2', 19, 26, 39, 45, 61],
-        ['P3', 27, 38, 35, 41, 58]
+        ['First quarter', 10000, 12000, 18000, 11000, 9000],
+        ['Second quarter', 12000, 15000, 16000, 13000, 19000]
     ]);
 
-    // data remap
-    var data_1 = data.mapAs({x: [0], value: [1]});
-    var data_2 = data.mapAs({x: [0], value: [2]});
-    var data_3 = data.mapAs({x: [0], value: [3]});
-    var data_4 = data.mapAs({x: [0], value: [4]});
-    var data_5 = data.mapAs({x: [0], value: [5]});
+    // map data for the each series
+    var dataMap1 = data.mapAs({x: [0], value: [1]});
+    var dataMap2 = data.mapAs({x: [0], value: [2]});
+    var dataMap3 = data.mapAs({x: [0], value: [3]});
+    var dataMap4 = data.mapAs({x: [0], value: [4]});
+    var dataMap5 = data.mapAs({x: [0], value: [5]});
 
     // chart type
     chart = anychart.columnChart();
 
+    // set title
     chart.title().text('Hatches');
+    
+      //set chart legend settings
+    chart.legend().enabled(true);
 
-    // set series data and hatch
-    series = chart.column(data_1)
+
+    // set first series data and color
+    series = chart.column(dataMap1)
         .fill('#EEEEEE')
-        .hatchFill('diagonalcross');
-    series = chart.column(data_2)
+        .hatchFill('diagonalcross')
+        .name('John');
+        
+    // set second series data and color
+    series = chart.column(dataMap2)
         .fill('#EEEEEE')
-        .hatchFill('diagonalbrick');
-    series = chart.column(data_3)
+        .hatchFill('diagonalbrick')
+        .name('Jake');
+        
+    // set third series data and color
+    series = chart.column(dataMap3)
         .fill('#EEEEEE')
-        .hatchFill('zigzag');
-    series = chart.column(data_4)
+        .hatchFill('zigzag')
+        .name('Peter');
+        
+    // set forth series data and color
+    series = chart.column(dataMap4)
         .fill('#EEEEEE')
-        .hatchFill('checkerboard');
-    series = chart.column(data_5)
+        .hatchFill('checkerboard')
+        .name('James');
+        
+    // set fifth series data and color    
+    series = chart.column(dataMap5)
         .fill('#EEEEEE')
-        .hatchFill('percent30');
+        .hatchFill('percent30')
+        .name('Mary');
+        
 
     // draw
     chart.container('container').draw();
-  });
+});
