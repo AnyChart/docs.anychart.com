@@ -16,7 +16,7 @@ anychart.onDocumentReady(function() {
   ]);
 
   // chart type
-  chart = anychart.radar();
+  var chart = anychart.radar();
 
   // chart title
   chart.title().text('Rugby World Cup Overall Record 1987-2003 W Top 5 country');
@@ -41,7 +41,7 @@ anychart.onDocumentReady(function() {
   chart.grid(1).oddFill(null).evenFill(null).stroke('black');
 
   // set data and adjust visualisation
-  var series = chart.line(dataSet).markers().enabled(true);
+  chart.line(dataSet).markers().enabled(true);
   
   // draw chart
   chart.container(stage).draw();

@@ -19,7 +19,7 @@ anychart.onDocumentReady(function() {
   var data3 = dataSet.mapAs({x: [0], value: [3]});
 
   // chart type
-  chart = anychart.radar();
+  var chart = anychart.radar();
 
   // chart title
   chart.title().text('Radar Chart with Percent Stacked Mode');

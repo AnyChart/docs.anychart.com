@@ -15,7 +15,7 @@ anychart.onDocumentReady(function() {
   ]);
 
   // chart type
-  chart = anychart.radar();
+  var chart = anychart.radar();
 
   // chart title
   chart.title().text('Inverted Radar Scale');
@@ -27,7 +27,7 @@ anychart.onDocumentReady(function() {
   chart.yScale().inverted(true);
 
   // set data and adjust visualisation
-  var series = chart.line(dataSet);
+  chart.line(dataSet);
 
   // draw chart
   chart.container('container').draw();

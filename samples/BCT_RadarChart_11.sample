@@ -29,7 +29,7 @@ anychart.onDocumentReady(function() {
   ]);
 
   // chart type
-  chart = anychart.radar();
+  var chart = anychart.radar();
 
   // chart title
   chart.title().text('Radar chart - x axis labels background');
@@ -50,8 +50,7 @@ anychart.onDocumentReady(function() {
 
 
   // set data and adjust visualisation
-  var series = chart.area(dataSet);
-  series
+  chart.area(dataSet)
     .stroke('2 #11aaff')            // area border color
     .fill('lightblue 0.5')          // area fill color
     .markers()                      // marker settings

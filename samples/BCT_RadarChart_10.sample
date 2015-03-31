@@ -24,7 +24,7 @@ anychart.onDocumentReady(function() {
   var bronze = dataSet.mapAs({x: [0], value: [3]});
 
   // chart type
-  chart = anychart.radar();
+  var chart = anychart.radar();
 
   // chart title
   chart.title().text('Olympic medals Sydney 2000 (most recent) by country');
@@ -51,7 +51,7 @@ anychart.onDocumentReady(function() {
 
       // return adjuster value
       return myValue;
-  });
+    });
 
   // set series data
   var goldSeries = chart.line(gold);
@@ -60,42 +60,42 @@ anychart.onDocumentReady(function() {
   goldSeries
     .stroke('3 gold')
     .tooltip()
-        .contentFormatter(function(){
-            return this.x + '\nGold: ' + this.value;
-        })
-        .background()
+      .contentFormatter(function(){
+        return this.x + '\nGold: ' + this.value;
+      })
+      .background()
         .fill('gold 0.7');
   goldSeries
     .tooltip()
-        .content()
-        .fontColor('black');
+      .content()
+      .fontColor('black');
 
   silverSeries = chart.line(silver);
   silverSeries
     .stroke('3 silver')
     .tooltip()
-        .contentFormatter(function(){
-            return this.x + '\nGold: ' + this.value;
-        })
-        .background()
+      .contentFormatter(function(){
+        return this.x + '\nGold: ' + this.value;
+      })
+      .background()
         .fill('silver 0.7');
   goldSeries
     .tooltip()
-        .content()
+      .content()
         .fontColor('black');
 
-  seriesBronze = chart.line(bronze);
-  seriesBronze
+  bronzeSeries = chart.line(bronze);
+  bronzeSeries
     .stroke('3 #cc8800')
     .tooltip()
-        .contentFormatter(function(){
-            return this.x + '\nGold: ' + this.value;
-        })
-        .background()
+      .contentFormatter(function(){
+        return this.x + '\nGold: ' + this.value;
+      })
+      .background()
         .fill('#cc8800 0.7');
-  goldSeries
+  bronzeSeries
     .tooltip()
-        .content()
+      .content()
         .fontColor('black');
 
   // grid settings
