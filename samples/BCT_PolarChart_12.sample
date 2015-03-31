@@ -26,7 +26,7 @@ anychart.onDocumentReady(function() {
   // set series data
   var series = chart.area(dataSet);
   
-  // set series visualisation
+  // adjust series visual settings
   series
     .stroke('darkblue')                             // stroke color
     .fill('lightblue 0.8')                          // fill color
@@ -39,11 +39,14 @@ anychart.onDocumentReady(function() {
   
   // format tooltip content
   series.tooltip().contentFormatter(function(){
+    
+    // summarize all values
     var sum = 0;
     for (var i=0;i<dataSet.mapAs().getRowsCount();i++)
       sum +=dataSet.mapAs().get(i, 'value');
-    var percent = this.value / (sum / 100);
-    return 'Value: ' + this.value + '\nPercent: ' + percent.toFixed(2) + '%';
+    
+    // setting tooltip content
+    return 'Value: ' + this.value + '\nPercent: ' + (this.value/(sum/100)).toFixed(2) + '%';
   });
   
   // draw chart

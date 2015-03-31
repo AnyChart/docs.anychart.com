@@ -96,12 +96,12 @@ Axis stroke appearance is controlled by {api:anychart.core.grids.Polar#stroke}**
   var chart = anychart.polar();
 
   // adjust y axis visualization
-  chart.yAxis().stroke('2 red');  // set stroke thickness equal to 2px and set red color to the stroke
+  chart.yAxis().stroke('2 #9900FF');  // set stroke thickness equal to 2px and set custom color to the stroke
 ```
 
 More information on possible stroke settings can be found in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines).
 
-Here is a sample of tuned X and Y axes. Y axis has a dashed red stroke and X axis has a stroke colored with gradient.
+Here is a sample of tuned X and Y axes. Y axis has a dashed stroke and X axis has a stroke colored with gradient.
 
 {sample}BCT\_PolarChart\_05{sample}
 
@@ -122,7 +122,7 @@ Logarithmic scale can be used in polar charts. You can set the scale type using 
 
 ```
   var logScale = anychart.scales.log();   // create logarithmic scale
-  logScale.minimum(0.1).maximum(10000);   // set minimum and maximum value for the scale
+  logScale.minimum(10).maximum(10000);    // set minimum and maximum value for the scale
   chart.yScale(logScale);                 // set logarithmic scale as y scale for the chart
 ```
 
@@ -198,11 +198,12 @@ Polar grid is a combination of circular and radial grids. Grid visual appearance
 ```
   // chart type
   var chart = anychart.polar();
-
-  chart.grid(0).
-    .oddFill('red')       // coloring odd cells in the grid
-    .evenFill('darkred')  // coloring even cells in the grid
-    .layout('radial');    // set layout type
+  
+  chart.grid(0)
+    .evenFill('white 0.9')    // coloring odd cells of the grid
+    .oddFill('lightgray 0.9') // coloring even cells of the grid
+    .layout('curcuit')        // set layout type
+    .stroke('white');    
 ```
 
 **Note:** full information about grid settings can be found in [grid section of Scale tutorial](../Axes_and_Grids/Scales#grids)
@@ -218,31 +219,34 @@ In this section we will explain how to add and configure data labels and tooltip
 <!--Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
 To configure data labels and tooltips for all series use {api:anychart.charts.Pie#labels}**.labels()**{api} and {api:anychart.charts.Pie#tooltip}**.tooltip()**{api} methods. These will help you to adjust visual appearance, positioning and format.
 
-Let's do that with the following example: we will make data labels to appear inside of the slices, format labels so they show only the percentage corresponding to the slices and tooltips to show detailed description.
+Let's do that with the following example: we will make data labels bold, format labels so they show only the the value of the point and tooltips to show detailed description.
 
-When formatting tooltips, we use  {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} to adjust source of content and visual appearance. To control labels’ position we may use  {api:anychart.core.ui.Label#position}**.position()**{api} parameter. Here is a sample of two charts with the same data and different labels positions.
-
+When formatting tooltips, we use  {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} to adjust source of content and visual appearance. To control labels’ position we may use  {api:anychart.core.ui.Label#position}**.position()**{api} parameter.
 
 Next sample demonstrates bold series labels which display value of a point and tooltip shows detailed description.
 
 ```
-  // chart type
-  var chart = anychart.polar();
-
-
-  // set series visualisation
+  // adjust series visual settings
   series
     .stroke('darkblue')                             // stroke color
     .fill('lightblue 0.8')                          // fill color
     .labels()                                       // labels settings
       .enabled(true)                                // enable labels
       .fontWeight(900);                             // labels font weight
-
+  
   // visual setting for tooltips
-  series.tooltip().content().fontWeight(400);                                   // settings for tooltip content font
-  series.tooltip().contentFormatter(function(){                                 // adjust tooltip content
-     var percent = this.value / (this.sum / 100);                               // get value and find percent
-     return 'Value: ' + this.value + '\nPercent: ' + percent.toFixed(2) + '%';  // display value of the point and found percent
+  series.tooltip().content().fontWeight(400);       // settings for tooltip content font
+  
+  // format tooltip content
+  series.tooltip().contentFormatter(function(){
+    
+    // summarize all values
+    var sum = 0;
+    for (var i=0;i<dataSet.mapAs().getRowsCount();i++)
+      sum +=dataSet.mapAs().get(i, 'value');
+    
+    // setting tooltip content
+    return 'Value: ' + this.value + '\nPercent: ' + (this.value/(sum/100)).toFixed(2) + '%';
   });
 ```
 
