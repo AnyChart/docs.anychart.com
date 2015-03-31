@@ -93,13 +93,13 @@ Axis stroke appearance is controlled by {api:anychart.core.axes.Radar#stroke}**.
   var chart = anychart.radarChart();
 
   // adjust y axis visualization
-  chart.yAxis().stroke('2 red');  // set stroke thickness equal to 2px and set red color to the stroke
+  chart.yAxis().stroke('2 #9900FF');  // set stroke thickness equal to 2px and set custom stroke color
 ```
 
 More information about possible stroke settings can be found in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines).
 
 
-Here is a sample of a chart with tuned X and Y axes. Y-axis is stroked with dashed red and X-axis has a stroke colored with gradient.
+Here is a sample of a chart with tuned X and Y axes. Y-axis dashed stroke and X-axis has a stroke colored with gradient.
 
 {sample}BCT\_RadarChart\_05{sample}
 
@@ -120,7 +120,7 @@ You can set a logarithmic scale type using {api:anychart.scales.Logarithmic}**.s
 
 ```
   var logScale = anychart.scales.log();   // create logarithmic scale
-  logScale.minimum(0.1).maximum(10000);   // set minimum and maximum value for the scale
+  logScale.minimum(10).maximum(10000);    // set minimum and maximum value for the scale
   chart.yScale(logScale);                 // set logarithmic scale as y scale for the chart
 ```
 
@@ -250,6 +250,8 @@ If you want to configure data labels and tooltips for all series - you should do
     return this.x;                              // setting content
   });
 ```
+
+Sample below has more complex tooltip than snippet above. Click 'Launch in playground' to see format settings of a tooltip.
 
 {sample}BCT\_RadarChart\_14{sample}
 
