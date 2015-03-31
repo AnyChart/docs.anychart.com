@@ -16,7 +16,7 @@ anychart.onDocumentReady(function() {
   ]);
 
   // chart type
-  chart = anychart.polar();
+  var chart = anychart.polar();
 
   // chart title
   chart.title().text('Polar Chart Start Angle Sample');
@@ -24,11 +24,8 @@ anychart.onDocumentReady(function() {
   // set start angle of the chart
   chart.startAngle(90);
 
-  // set data and adjust visualisation
-  var series = chart.line(dataSet);
-
-  // disable tooltips
-  series.tooltip().enabled(false);
+  // set data and disable tooltip
+  chart.line(dataSet).tooltip().enabled(false);
 
   // x scale interval settings
   chart.xScale().maximum(9).ticks().interval(1);

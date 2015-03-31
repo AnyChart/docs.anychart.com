@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
   // chart type
-  chart = anychart.polar();
+  var chart = anychart.polar();
 
   // chart title
   chart.title().text('Inverted Y Scale');
@@ -28,7 +28,7 @@ anychart.onDocumentReady(function() {
   chart.xScale()        // settings for x scale
     .maximum(100)       // set maximum value of x scale
     .ticks()            // settings for x scale ticks
-        .interval(10);  // x scale ticks interval
+      .interval(10);  // x scale ticks interval
 
   // set ticks interval for y scale
   chart.yScale().inverted(true).ticks().interval(2);

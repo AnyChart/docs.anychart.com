@@ -3,29 +3,29 @@
   :exports "chart"}
 
 anychart.onDocumentReady(function() {
-
+  
   // data for chart
   var dataSet = anychart.data.set([
-    [3.7, 93],
-    [3.701, 67],
-    [4.8, 85],
-    [5.7, 93],
-    [5.701, 67],
-    [6.8, 85]
+    {x:3.7, value:93},
+    {x:3.701, value:67},
+    {x:4.8, value:85},
+    {x:5.7, value:93},
+    {x:5.701, value:67},
+    {x:6.8, value:85}
   ]);
-
+  
   // chart type
-  chart = anychart.polar();
-
+  var chart = anychart.polar();
+  
   // chart title
   chart.title().text('Labels and Tooltips');
-
+  
   // disable minor ticks
   chart.yAxis().enabled(true).drawFirstLabel(false).minorTicks().enabled(false);
-
+  
   // set series data
   var series = chart.area(dataSet);
-
+  
   // set series visualisation
   series
     .stroke('darkblue')                             // stroke color
@@ -33,14 +33,19 @@ anychart.onDocumentReady(function() {
     .labels()                                       // labels settings
       .enabled(true)                                // enable labels
       .fontWeight(900);                             // labels font weight
-
+  
   // visual setting for tooltips
-  series.tooltip().content().fontWeight(400);                                   // settings for tooltip content font
-  series.tooltip().contentFormatter(function(){                                 // adjust tooltip content
-     var percent = this.value / (this.sum / 100);
-     return 'Value: ' + this.value + '\nPercent: ' + percent.toFixed(2) + '%';  // display value of the point
+  series.tooltip().content().fontWeight(400);       // settings for tooltip content font
+  
+  // format tooltip content
+  series.tooltip().contentFormatter(function(){
+    var sum = 0;
+    for (var i=0;i<dataSet.mapAs().getRowsCount();i++)
+      sum +=dataSet.mapAs().get(i, 'value');
+    var percent = this.value / (sum / 100);
+    return 'Value: ' + this.value + '\nPercent: ' + percent.toFixed(2) + '%';
   });
-
+  
   // draw chart
   chart.container('container').draw();
 });
