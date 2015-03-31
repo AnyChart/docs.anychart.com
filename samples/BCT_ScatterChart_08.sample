@@ -4,32 +4,10 @@
 
 anychart.onDocumentReady(function() {
 
-  chart = anychart.scatterChart();
+  var chart = anychart.scatterChart();
 
   chart.title().text('Springfield\'s Clusters\nLabels and Tooltips Settings')
     .hAlign('center');
-
-  chart.grid(0)
-    .oddFill('#F9F9F9')
-    .evenFill('#FFFFFF')
-    .layout(anychart.enums.Layout.HORIZONTAL);
-
-  chart.minorGrid(0)
-    .evenFill('none')
-    .oddFill('none')
-    .stroke('black 0.1')
-    .layout(anychart.enums.Layout.HORIZONTAL);
-
-  chart.grid(1)
-    .evenFill('none')
-    .oddFill('none')
-    .layout(anychart.enums.Layout.VERTICAL);
-
-  chart.minorGrid(1)
-    .evenFill('none')
-    .oddFill('none')
-    .stroke('black 0.1')
-    .layout(anychart.enums.Layout.VERTICAL);
 
   // y scale settings
   chart.yScale()
