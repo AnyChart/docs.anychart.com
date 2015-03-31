@@ -17,7 +17,7 @@
 
 ## Overview
 
-Data that is arranged in a one column or an only row can be plotted in a pie chart. The data points in a pie chart are displayed as a percentage of the whole pie.
+Data that is arranged in a one column or an only row can be plotted on a pie chart. The data points in a pie chart are displayed as a percentage of the whole pie.
 
 Use a pie chart when:
 
