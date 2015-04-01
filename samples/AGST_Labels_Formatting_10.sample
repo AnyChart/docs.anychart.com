@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
   chart.container('container');
 
   // setting title
-  chart.title().text('X-Axis labels: width is not defined (no wrapping)');
+  chart.title().text('Y axis Labels stick to the right');
 
   // seting data
   chart.bar([

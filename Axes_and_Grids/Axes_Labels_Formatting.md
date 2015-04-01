@@ -6,7 +6,7 @@
  * [Formatting Labels](#formatting_labels)
    * [Prefixes and Postfixes](#prefixes_and_postfixes)
    * [Number Formatting](#number_formatting)
-   * [Label length](#label_length)
+   * [Label Length](#label_length)
  * [Visual Appearance](#visual_appearance)
    * [Font](#font)
    * [Multiline](#multiline)
@@ -66,12 +66,12 @@ TextFormatter always works with function. By default labels show values of the a
 
 ### Prefixes and Postfixes
 
-To add prefix or postfix to the label you just need to adjust **return** of your function:
+To add prefix or postfix to the label you just need to adjust **return** of your {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} function:
 
 ```
-  function(){
+  chart.yAxis().textFormatter(function(){
     return this.value + 'USD'
-  }
+  });
 ```
 
 ### Number Formatting
@@ -83,29 +83,37 @@ Here is a sample of financial chart with euro and dollar axes. Dollar based axis
 value from dollar and transfer it into euro. Some separators were added to adjust x axes labels visual appearance
 
 ```
-  chart.yAxis().labels().textFormatter(dollarFormatter);
+  chart.yAxis().labels().textFormatter(function(){
+    return '$' + (this.value/1000) + ' 000 USD';
+  });
   chart.yAxis().title().text('Revenue in US Dollars');
   chart.yAxis(1).orientation('right');
   chart.yAxis(1).title().text('Revenue in Euros');
   chart.yAxis(1).labels().textFormatter(function(){
     var value = this.value;
+    // scale of USD
     value = value*0.7094716;
+    // num decimal
     value = value.toFixed(2);
+    // thousand separator
     var num = value.split('.');
-    if (num[0].length> 3)
-      num[0] = num[0].substr(0, num[0].length-3) + '\'' + num[0].substr(num[0].length-3, 3);
+    var main = '';
+    for (var i=0;(i+1)*3<num[0].length;i++){
+      main = '\''+num[0].substr(num[0].length-(i+1)*3, 3) + main;
+      var tail = num[0].substr(0, num[0].length-(i+1)*3);
+    }
+    num[0]=tail+main;
+    // decimal Separator
     value = num.join('.');
+  
     return '€ ' + value;
   });
   chart.xAxis().title().text('Month');
-  function dollarFormatter() {
-    return '$' + (this.value/1000) + ' 000 USD';
-  }
 ```
 
 {sample}AGST\_Labels\_Formatting\_02{sample}
 
-### Label length
+### Label Length
 
 If the value (a number or a text) is to large, you may want to limit the number of characters. Here is the previous sample 
 with x axis labels symbols limited to 3.
@@ -127,7 +135,12 @@ In this section we will cover the basics that allow to tune labels appearance an
 Font settings of labels are configured as any text. You can specify size, face and color or set the text to HTML mode:
 
 ```
-  chart.xAxis().labels().fontFamily('Courier').fontSize(12).fontColor('red').fontWeight('bold').useHtml(false);
+  chart.xAxis().labels()
+    .fontFamily('Courier')
+    .fontSize(12)
+    .fontColor('red')
+    .fontWeight('bold')
+    .useHtml(false);
 ```
 
 You can look at font settings at work in the [sample below](#sample).
@@ -148,7 +161,10 @@ and here we will demonstrate the most usual task - enabling/disabling background
 Labels background is configured with (api:anychart.core.ui.Label#background)**.background()**{api} method of {api:anychart.core.axes.Linear#labels}**labels()**{api}. Here are sample settings - background is enabled for xAxis and only stroke method is adjusted:
 
 ```   
-  chart.xAxis().labels().background().enabled(true).stroke('blue');
+  chart.xAxis().labels()
+    .background()
+      .enabled(true)
+      .stroke('blue');
 ```
 
 In this sample we will demonstrate labels background settings, multi-line labels and align and font settings:
@@ -158,8 +174,7 @@ In this sample we will demonstrate labels background settings, multi-line labels
 
 ## Positioning
 
-AnyChart gives you a number of options to control the position of axes labels, depending on the values displayed - you can 
-choose where and how labels should be placed, whether they should be rotated or staggered and set alignment.
+AnyChart gives you a number of options to control the position of axes labels, depending on the values displayed - you can choose where and how labels should be placed, whether they should be rotated or staggered and set alignment.
 
 ### Labels Align
 

@@ -7,7 +7,7 @@ anychart.onDocumentReady(function() {
   chart.container('container');
 
   // setting title
-  chart.title().text('X-Axis labels: width is not defined (no wrapping)');
+  chart.title().text('X-Axis labels: width is 60px');
 
   // seting data
   chart.column([

@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
   chart.container('container');
 
   // setting title
-  chart.title().text('X-Axis labels: width is not defined (no wrapping)');
+  chart.title().text('X-Axis labels: width is 100% (no wrapping)');
 
   // seting data
   chart.column([
@@ -35,7 +35,7 @@ anychart.onDocumentReady(function() {
   });
 
   // force labels to hide value, if the previous one is too big, set text position to center
-  chart.xAxis().overlapMode(false).labels().hAlign('center').width(130);
+  chart.xAxis().overlapMode(false).labels().hAlign('center').width('100%');
   chart.yAxis().minorTicks().enabled(false);
   chart.xAxis().staggerLines(1);
 
