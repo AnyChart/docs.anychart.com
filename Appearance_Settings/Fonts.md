@@ -53,11 +53,11 @@ If you want to do a complex formatting of the text - consider using HTML formatt
 <tbody>
 <tr>
 <th width="101">Tag</th>
-<th width="587">Description</th>		
+<th width="587">Description</th>
 </tr>
 <tr>
 <td width="101">Bold tag </td>
-<td width="587"> The <strong>&lt;b&gt;</strong> tag renders text as bold. A bold typeface must be available for the font used.</td>		
+<td width="587"> The <strong>&lt;b&gt;</strong> tag renders text as bold. A bold typeface must be available for the font used.</td>
 </tr>
 <tr>
 <td>Break tag</td>
@@ -76,17 +76,17 @@ If you want to do a complex formatting of the text - consider using HTML formatt
 <td>Italic tag</td>
 <td>The <b>&lt;i&gt;</b> tag displays the tagged text in italics. An italic typeface must be available for the font used.</td>
 </tr>
-<tr>
+<!--<tr>
 <td>Paragraph tag</td>
 <td>The <b>&lt;p&gt;</b> tag creates a new paragraph. You must set the text field to be a multi line text field to use this tag. The <b>&lt;p&gt;</b> tag supports the following attributes:
 <ul>
 <li> <strong>align</strong> - Specifies alignment of text within the paragraph; valid values are <b>left</b>, <b>right</b>, <b>justify</b>, and <b>center</b>. </li>
 </ul></td>
-</tr>
-<tr>
+</tr>-->
+<!--<tr>
 <td>Underline tag</td>
 <td>The <b>&lt;u&gt;</b> tag underlines the tagged text.</td>
-</tr>
+</tr>-->
 </tbody>
 </table>
 

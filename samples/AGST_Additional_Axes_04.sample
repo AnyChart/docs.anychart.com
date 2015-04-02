@@ -2,7 +2,7 @@
      :is_new false
      :exports "chart"}
 
-ychart.onDocumentReady(function() {
+anychart.onDocumentReady(function() {
   
   var chart = anychart.lineChart();
 

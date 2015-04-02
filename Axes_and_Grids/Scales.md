@@ -208,7 +208,13 @@ That's how simple grid will look like:
 You can also make your grid lines dashed:
 
 ```
-    chart.minorGrid().stroke({color: 'black', dash: '5 2 5', opacity: 0.2}).layout('horizontal');
+  chart.minorGrid()
+    .stroke({
+      color: 'black',
+      dash: '5 2 5',
+      opacity: 0.2
+    })
+    .layout('horizontal');
 ```
 
 And create chart like this:
@@ -220,7 +226,10 @@ And create chart like this:
 You can use this method with both major and minor grids. To do this you need to set {api:anychart.core.grids.Linear#oddFill}**.oddFill()**{api} or/and {api:anychart.core.grids.Linear#evenFill}**.evenFill()**{api} methods in the corresponding grid. Fill can be gradient, image and/or hatch as well as any other fill.
 
 ```
-    chart.grid(1).layout('horizontal').evenFill('white').oddFill('rgb(244,245,255');
+    chart.grid(1)
+      .layout('horizontal')
+      .evenFill('white')            // color of even rows
+      .oddFill('rgb(244,245,255');  // color of odd rows
 ```
 
 That's how simple interlaced grid looks like:

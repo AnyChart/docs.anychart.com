@@ -83,5 +83,5 @@ anychart.onDocumentReady(function() {
     .scale(FahrenheitScale);
   
   chart.container('container');
-  chart.draw();
+  chart.padding(0,20,0,0).draw();
 });
