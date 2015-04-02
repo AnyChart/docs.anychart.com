@@ -294,6 +294,7 @@ chart.title()
     .cornerType('round')
     // set corners size
     .corners(10);
+    
 ```
 </td>
 <td style="border-bottom: 0; border-right: 0; padding: 2px;">
@@ -302,17 +303,17 @@ chart.title()
 <title 
   <!-- set title text -->
   text="Sales Performance">
-  <!-- settings for title background -->
+  <!-- title background -->
   <background 
     <!-- enable background -->
     enabled="true" 
-    <!-- set background inner color -->
+    <!-- background inner color -->
     fill="#FFD700" 
-    <!-- set background border -->
+    <!-- background border -->
     stroke="#D8D8D8" 
-    <!-- set type of background corners -->
+    <!--background corners -->
     cornerType="round" 
-    <!-- set corners size -->
+    <!-- corners size -->
     corners="10"/>
 </title>
 ```
