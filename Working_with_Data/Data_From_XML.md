@@ -486,7 +486,7 @@ chart.yAxis(1).orientation('right')
   <axis title="Basic Y Axis"/>
   
   <axis orientation="right" 
-  scale="newScale">
+  scale="0">
     <title text="Extra Y Axis"/>
   </axis>
 </y_axes>
