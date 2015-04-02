@@ -9,13 +9,13 @@ anychart.onDocumentReady(function() {
       // additional scales
       '<scales>'+
         // create custom scale
-        '<scale/>'+
+        '<scale minimum="0"/>'+
       '</scales>'+
       // y scale settings
       '<y_scale minimum="0"/>'+
       // y axes settings
       '<y_axes>'+
-        '<axis/>'+ //default axis
+        '<axis title="Basic axis"/>'+ //default axis
         // additional y axis settings
         '<axis title="Secondary Y-Axis" orientation="right" scale="0"/>'+
       '</y_axes>'+
