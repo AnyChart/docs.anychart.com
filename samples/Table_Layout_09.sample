@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
   // set stage
-  stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create('container');
 
   // Title settings
   var title = anychart.ui.title();
@@ -101,7 +101,6 @@ anychart.onDocumentReady(function() {
   function newLine(i){
     var line = anychart.sparkline(Availability.mapAs({x: [0], value: [(i + 1)]}));
 
-    // adjust visualization
     // adjust visualization
     line
       .stroke('2 #000')

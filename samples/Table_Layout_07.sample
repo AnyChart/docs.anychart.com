@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
   // set stage
-  stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create('container');
 
   // Title settings
   var title = anychart.ui.title();
@@ -117,11 +117,11 @@ anychart.onDocumentReady(function() {
         var y = Math.round(size / 2);
         var height = size * 0.6;
         path.clear()
-            .moveTo(x, y - height / 2)
-            .lineTo(x, y + height / 2)
-            .lineTo(x + 2, y + height / 2)
-            .lineTo(x + 2, y - height / 2)
-            .close();
+          .moveTo(x, y - height / 2)
+          .lineTo(x, y + height / 2)
+          .lineTo(x + 2, y + height / 2)
+          .lineTo(x + 2, y - height / 2)
+          .close();
       },
       'iconStroke': 'none',
       'iconFill': '#000'
@@ -135,11 +135,11 @@ anychart.onDocumentReady(function() {
         var y = Math.round(size / 2);
         var height = size * 0.8;
         path.clear()
-            .moveTo(x - 2, y - height / 2)
-            .lineTo(x - 2, y + height / 2)
-            .lineTo(x + 3, y + height / 2)
-            .lineTo(x + 3, y - height / 2)
-            .close();
+          .moveTo(x - 2, y - height / 2)
+          .lineTo(x - 2, y + height / 2)
+          .lineTo(x + 3, y + height / 2)
+          .lineTo(x + 3, y - height / 2)
+          .close();
       },
       'iconStroke': 'none',
       'iconFill': '#ccc'
