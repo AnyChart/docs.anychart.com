@@ -69,7 +69,12 @@ anychart.onDocumentReady(function() {
   
   // setting and adjusting data visualisation
   var markerSeries = chart.marker(data.mapAs({x: [1], value: [0]}));
-  markerSeries.tooltip().enabled(false);
+  markerSeries.tooltip().contentFormatter(function(){
+    return this.value+
+      '\nKelvin: '+ (this.x).toFixed(2) +
+      '\nCelsium: '+ (this.x - 273.15).toFixed(2) +
+      '\nFahrenheit: ' + ((this.x - 273.15)*1.8000 + 32).toFixed(2);
+  });
   markerSeries.xScale(KelvinScale).yScale(chart.yScale());
   markerSeries.size(5).hoverSize(7);
   
