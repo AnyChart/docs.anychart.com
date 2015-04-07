@@ -83,10 +83,10 @@ If you want to do a complex formatting of the text - consider using HTML formatt
 <li> <strong>align</strong> - Specifies alignment of text within the paragraph; valid values are <b>left</b>, <b>right</b>, <b>justify</b>, and <b>center</b>. </li>
 </ul></td>
 </tr>-->
-<!--<tr>
+<tr>
 <td>Underline tag</td>
 <td>The <b>&lt;u&gt;</b> tag underlines the tagged text.</td>
-</tr>-->
+</tr>
 </tbody>
 </table>
 
