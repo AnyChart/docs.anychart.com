@@ -1,6 +1,5 @@
 {:index 2}
 Downloading AnyChart
-====================
   
 ###Downloading
 To download the latest version of AnyChart, which contains the basic chart types, choose the most suitable option, right-click the link below and select "Save as..." from the context menu.
@@ -17,7 +16,6 @@ To download the latest version of AnyChart, which contains **all** products we h
 * Production edition - [anychart-bundle.min.js](http://cdn.anychart.com/js/latest/anychart-bundle.min.js) <span style="color:#898989;">(145Kb gzip)</span>
 * Development edition - [anychart-bundle.dev.min.js](http://anychart.com/products/anychart7/download/?file=anychart-bundle.dev.min.js&version=7.4.0) <span style="color:#898989;">(147Kb gzip)</span>  
 * Binaries package - [anychart-bundle.zip](http://anychart.com/products/anychart7/download/7.4.0/anychart-bundle.zip) <span style="color:#898989;">(360Kb)</span>  
-
 
 ###Using AnyChart with a CDN
 <a href="http://en.wikipedia.org/wiki/Content\_delivery\_network" target="_blank">CDN</a> offers hosts for AnyChart on servers spread across the world. As a consequence, the advantage of using CDN is no need for your customers in downloading AnyChart, which leads to faster page loading.
