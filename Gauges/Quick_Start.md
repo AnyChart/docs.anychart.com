@@ -5,7 +5,7 @@ Gauges Quick Start
 ## Getting started with Gauges
 ###1. Include Gauges into Your Web Page
 Reference the JavaScript file in the <head> section of your web page.
-You can use the link as shown below or download anychart.min.js from the [download page](./Downloading_AnyChart) and then put it into any folder of your site (you’ll have to use your own link in this case).
+You can use the link as shown below or download anychart.min.js from the [download page](../Quick_Start/Downloading_AnyChart) and then put it into any folder of your site (you’ll have to use your own link in this case).
 
 ```
 <head>
@@ -23,7 +23,7 @@ Example:
 ```
 ###3. Prepare your Data
 
-Gauges provide quite a few opportunities to work with data (such as setting tree like hierarchy with parent/child division), thus it requires preparing data before usage. Raw data set for the Gauge may look like this:
+Gauges provide quite a few opportunities to work with data (such as setting tree like hierarchy with parent/child division), thus it requires preparing data before usage. Raw data set for the Gauge may look like any of these:
 
 ```
 dataSet = anychart.data.set([81,34.5]);
@@ -44,29 +44,31 @@ Example:
 ```
 <script>
 anychart.onDocumentReady(function() {
-
+ 
   //create data set on our data
-  dataSet = anychart.data.set([81,34.5]);
-
+  dataSet = anychart.data.set([81, 34.5]);
+ 
   // chart type
   gauge = anychart.circularGauge();
-
+ 
   //set series padding
   gauge.data(dataSet).padding('4%');
-
-  //set axis
-  var axis = gauge.axis(0)
-      .minimum(0)
+ 
+  //set axis scale settings
+  var scale = gauge.axis().scale();
+  scale.minimum(0)
       .maximum(100)
-      .ticksInterval(10);
-
+      .ticks()
+      .interval(10);
+ 
   //set major axis ticks
+  var axis = gauge.axis();
   axis.ticks()
       .fill('white')
       .stroke('#888')
       .type('trapezoid')
       .length(20);
-	  
+ 
   //set minor axis ticks
   axis.minorTicks()
       .enabled(true)
@@ -74,14 +76,14 @@ anychart.onDocumentReady(function() {
       .stroke('#ccc')
       .type('trapezoid')
       .length(10);
-      
+ 
   //set the look of the bar that presents data
   gauge.bar(0)
       .position('i')
       .fill('#F0673B .9')
       .stroke('#F0673B')
       .radius(80);
-	  
+ 
   // draw chart
   gauge.container('container').draw();
 });
@@ -90,7 +92,7 @@ anychart.onDocumentReady(function() {
   
 ## The result
 ###See the result
-After all these steps you should have the following result. You can launch and explore this example further [here](../Gauges/sample_2).
+After all these steps you should have the following result. You can launch and explore this example further here:
 {sample :width 690 :height 180}GAUGE\_Basic\_Sample{sample}
 ###Full source code
 You can copy this to a file on your computer and open it in your browser to display the Gauge shown above:
@@ -112,29 +114,31 @@ You can copy this to a file on your computer and open it in your browser to disp
     <div id="container"></div>
     <script type="text/javascript">
 anychart.onDocumentReady(function() {
-
+ 
   //create data set on our data
-  dataSet = anychart.data.set([81,34.5]);
-
+  dataSet = anychart.data.set([81, 34.5]);
+ 
   // chart type
   gauge = anychart.circularGauge();
-
+ 
   //set series padding
   gauge.data(dataSet).padding('4%');
-
-  //set axis
-  var axis = gauge.axis(0)
-      .minimum(0)
+ 
+  //set axis scale settings
+  var scale = gauge.axis().scale();
+  scale.minimum(0)
       .maximum(100)
-      .ticksInterval(10);
-
+      .ticks()
+      .interval(10);
+ 
   //set major axis ticks
+  var axis = gauge.axis();
   axis.ticks()
       .fill('white')
       .stroke('#888')
       .type('trapezoid')
       .length(20);
-	  
+ 
   //set minor axis ticks
   axis.minorTicks()
       .enabled(true)
@@ -142,14 +146,14 @@ anychart.onDocumentReady(function() {
       .stroke('#ccc')
       .type('trapezoid')
       .length(10);
-      
+ 
   //set the look of the bar that presents data
   gauge.bar(0)
       .position('i')
       .fill('#F0673B .9')
       .stroke('#F0673B')
       .radius(80);
-	  
+ 
   // draw chart
   gauge.container('container').draw();
 });

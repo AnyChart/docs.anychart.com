@@ -53,18 +53,18 @@ If we add a line that draws a chart, we'll see the plain frame with a cap in the
 ```
 
 That's how it looks like in a sample:
-{sample}BCT\_Gauges_Circular\_01{sample}
+{sample}GAUGE\_Circular\_01{sample}
 
 ##StartAngle and SweepAngle
 
-Change the {api:anychart.gauges.Circular}**.startAngle()**{api} parameter to fix the angle you need axes to start from:
+Change the {api:anychart.core.axes.Circular#startAngle}**.startAngle()**{api} parameter to fix the angle you need axes to start from:
 
 ```
 //set the angle
   axis.startAngle(270);
 ```  
 
-Axis can be limited setting the {api:anychart.gauges.Circular}**.sweepAngle()**{api} parameter (its value represents the angle which would be drawn): 
+Axis can be limited setting the {api:anychart.core.axes.Circular#sweepAngle}**.sweepAngle()**{api} parameter (its value represents the angle which would be drawn): 
 
 ```
 //set the angle
@@ -73,7 +73,7 @@ Axis can be limited setting the {api:anychart.gauges.Circular}**.sweepAngle()**{
 
 Now, let's look at the sample and see what we've done:
 
-{sample}BCT\_Gauges_Circular\_02{sample}
+{sample}GAUGE\_Circular\_02{sample}
 
 
 You can use negative values also. In this case, the count will be as usual. Let's set our startAngle to -45 and the sweepAngle to -300:
@@ -85,7 +85,7 @@ You can use negative values also. In this case, the count will be as usual. Let'
 
 The gauge will look like the following:
 
-{sample}BCT\_Gauges_Circular\_02-1{sample}
+{sample}GAUGE\_Circular\_02-1{sample}
 
 As shown above, now we've got a half-circular gauge. Now let's adjust our axis.
 
@@ -97,7 +97,7 @@ In general, gauge scale settings is the same as the standard scale. You can find
 
 Axis in gauges are not the same as in the other basic chart types. There's no X- and Y-axis, the only axis that a gauge displays and uses is a circular axis that is situated along the frame. Generally, axis in Gauges behaves like a series in other chart types. The Gauge can be multi-axes.
 
-Let's enable the axis to see the changes we make and set its width and radius at once. To make it we use the {api:anychart.gauges.Circular.axis}**.radius()**{api} and the {api:anychart.gauges.Circular.axis}**.width()**{api} methods.
+Let's enable the axis to see the changes we make and set its width and radius at once. To make it we use the {api:anychart.core.axes.Circular#radius}**.radius()**{api} and the {api:anychart.core.axes.Circular#width}**.width()**{api} methods.
 
 ```
 	//axis settings
@@ -108,7 +108,7 @@ Let's enable the axis to see the changes we make and set its width and radius at
 
 ###Minimum and Maximum
 
-Let's limit the axis with the values we want to be displayed. To set the limits, we used the {api:anychart.scales.Linear#minimum}**.minimum()**{api} and the {api:anychart.scales.Linear#maximum}**.maximum()**{api} methods. Let it be from 0 to 120 mph:
+Let's limit the axis with the values we want to be displayed. To set the limits, we used the {api:anychart.scales.ScatterBase#minimum}**.minimum()**{api} and the {api:anychart.scales.ScatterBase#maximum}**.maximum()**{api} methods. Let it be from 0 to 120 mph:
 
 ```
 		//scale settings
@@ -119,7 +119,7 @@ Let's limit the axis with the values we want to be displayed. To set the limits,
 
 So our gauge with the fixed axis will look the following way:
 
-{sample}BCT\_Gauges_Circular\_03{sample}
+{sample}GAUGE\_Circular\_03{sample}
 
 
 ###Ticks
@@ -139,9 +139,9 @@ At the moment our speedometer has only 4 ticks each 40 mph, that is not actually
         .enabled(true);
 ```
 
-To enable the ticks and set the interval we used the {api:anychart.scales.Linear#ticks}**.ticks()**{api} method and the {api:anychart.scales.Linear#minorTicks}**.minorTicks()**{api} for our minor ticks acordingly.
+To enable the ticks and set the interval we used the {api:anychart.core.axes.Circular#ticks}**.ticks()**{api} method and the {api:anychart.core.axes.Circular#minorTicks}**.minorTicks()**{api} for our minor ticks acordingly.
 
-{sample}BCT\_Gauges_Circular\_04{sample}
+{sample}GAUGE\_Circular\_04{sample}
 
 It's easy to notice that there's no difference between major and minor ticks. Let's set them of the type and length that will emphasize the major ticks:
 
@@ -159,7 +159,7 @@ It's easy to notice that there's no difference between major and minor ticks. Le
 
 Look at the sample to make it clear:
 
-{sample}BCT\_Gauges_Circular\_05{sample}
+{sample}GAUGE\_Circular\_05{sample}
 
 ##Visualization
 
@@ -200,7 +200,7 @@ There are 4 different types of pointers avaliable: needle, knob, bar and marker.
         .radius(50)
         .zIndex(10);
 ```
-{sample}BCT\_Gauges_Circular\_06{sample}
+{sample}GAUGE\_Circular\_06{sample}
 
 To bind the pointers to the axis and data we want them to show, we use {api:anychart.core.gauge.pointers.bar#axisIndex}**.axisIndex()**{api} and {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} methods. The value transmitted to the method is the number of axis or data accordingly.
 
@@ -215,7 +215,7 @@ Cap in gauges has no practical meaning: its purpose is to make an on-screen gaug
     gauge.cap()
         .radius('6%');
 ```
-{sample}BCT\_Gauges_Circular\_07{sample}
+{sample}GAUGE\_Circular\_07{sample}
 
 ##Label
 
@@ -241,7 +241,7 @@ Now let's put our label in the center of the area: use {api:anychart.graphics.ve
 
 Then we should put the name of the car company beside the cap to make the look of our chart more real. For that we use the {api:}**.zIndex()**{api} parameter.  
 
-{sample}BCT\_Gauges_Circular\_08{sample}
+{sample}GAUGE\_Circular\_08{sample}
 
 ##Range
 
@@ -253,7 +253,7 @@ Then we should put the name of the car company beside the cap to make the look o
         .endSize('18%');
 ```
 
-{sample}BCT\_Gauges_Circular\_09{sample}
+{sample}GAUGE\_Circular\_09{sample}
 
 ##Colors
 
@@ -263,7 +263,7 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 As you see, our speedometer does not look attractive at the moment. Let's colorize its elements to make the look of the speedometer more realistic and learn at once, how to apply different colors to different data. To apply the color to the exact element we need to set {api:anychart.graphics.vector.Fill}**.fill()**{api}  and {api:anychart.graphics.vector.Stroke}**.stroke()**{api} parameters or {api:anychart.graphics.vector}**.fontColor()**{api} for the labels. Let's change the colors to the elements on our sample:
 
-{sample}BCT\_Gauges_Circular\_10{sample}
+{sample}GAUGE\_Circular\_10{sample}
 
 In the sample above we have set the colors to the elements, besides that we have changed positions and sizes of several elements.
 

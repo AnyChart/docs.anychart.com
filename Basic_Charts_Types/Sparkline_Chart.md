@@ -185,7 +185,7 @@ Sometimes we need to show the absence of a value or we don't have enough data. I
 ```
 
 There's no difference in what you write instead of the point you need to be missed. This only applies to strings - be careful and don't use numerical values here. 
-Now let's just connect the points surrounding the missing ones. We use the {api:anychart.core.scatter.series.Line.connectMissingPoints}**.connectMissingPoints()**{api} method for this:
+Now let's just connect the points surrounding the missing ones. We use the {api:anychart.charts.Sparkline#connectMissingPoints}**.connectMissingPoints()**{api} method for this:
 
 ```
 chart2.data([1.5500,1.5458,1.5463, 'miss', 1.5397,1.5385]).connectMissingPoints(true);
@@ -407,7 +407,7 @@ It's also possible to emphasize any other point besides the special ones. To col
 ###HatchFill
 
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch Fill tutorial](../Appearance_Settings/Hatch_Fill).
-Downwards you can see a couple of WinLoss Sparklines which we've colored with hatchFills using  special parameters such as {api:anychart.charts.Sparkline#negativeFill}**.negativeFill()**{api}, {api:api:anychart.charts.Sparkline#negativeHatchFill}**.negativeHatchFill**{api} parameter opposite to {api: anychart.graphics.vector.Fill}**fill()**{api} parameter used to colorize the series and set all series in light grey color.
+Downwards you can see a couple of WinLoss Sparklines which we've colored with hatchFills using  special parameters such as {api:anychart.charts.Sparkline#negativeFill}**.negativeFill()**{api}, {api:anychart.charts.Sparkline#negativeHatchFill}**.negativeHatchFill**{api} parameter opposite to {api:anychart.graphics.vector.Fill}**fill()**{api} parameter used to colorize the series and set all series in light grey color.
 
 ```
   //colorize our charts
