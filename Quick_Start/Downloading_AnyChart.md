@@ -4,9 +4,9 @@ Downloading AnyChart
   
 ###Downloading
 To download the latest version of AnyChart, choose the most suitable option, right-click the link below and select "Save as..." from the context menu.
-* Production edition - [anychart.min.js](http://anychart.com/products/anychart7/download/?file=anychart.min.js&version=7.0.0) <span style="color:#898989;">(145Kb gzip)</span>
-* Development edition - [anychart.dev.min.js](http://anychart.com/products/anychart7/download/?file=anychart.dev.min.js&version=7.0.0) <span style="color:#898989;">(147Kb gzip)</span>  
-* Binaries package - [anychart.zip](http://anychart.com/products/anychart7/download/7.0.0/anychart.zip) <span style="color:#898989;">(360Kb)</span>  
+* Production edition - [anychart.min.js](http://anychart.com/products/anychart7/download/?file=anychart.min.js&version=7.4.0) <span style="color:#898989;">(211Kb gzip)</span>
+* Development edition - [anychart.dev.min.js](http://anychart.com/products/anychart7/download/?file=anychart.dev.min.js&version=7.4.0) <span style="color:#898989;">(215Kb gzip)</span>
+* Binaries package - [anychart.zip](http://anychart.com/products/anychart7/download/7.4.0/anychart.zip) <span style="color:#898989;">(532Kb)</span>
 
 
 ###Using AnyChart with a CDN
