@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
   
   // set stage
-  stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create('container');
   
   // data
   var data = anychart.data.set([
@@ -39,6 +39,7 @@ anychart.onDocumentReady(function() {
   }
   for (var i2=1;i2<data.data()[2].length;i2++){
     peterLegendItems.push({
+      index: i2,
       text: data.data()[2][i2].toString(),  // text of item
       iconType: 'square',                   // type of icons
       iconFill: palette[i2-1]               // color of icons
@@ -56,9 +57,9 @@ anychart.onDocumentReady(function() {
   peterLegend.title().text('Peter').hAlign('center');
   
   // set legend items
-  johnLegend.itemsProvider(johnLegendItems);
-  jakeLegend.itemsProvider(jakeLegendItems);
-  peterLegend.itemsProvider(peterLegendItems);
+  johnLegend.itemsFormatter(function(){return johnLegendItems});
+  jakeLegend.itemsFormatter(function(){return jakeLegendItems});
+  peterLegend.itemsFormatter(function(){return peterLegendItems});
   
   // legends settings
   johnLegend
@@ -66,21 +67,52 @@ anychart.onDocumentReady(function() {
     .align('left')
     .zIndex(1)
     .enabled(true)
-    .itemsLayout('vertical');
+    .itemsLayout('vertical')
+    .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
+      event.preventDefault();
+      var item = event['item'];
+      item.disabled(!item.disabled());
+      if (chart.getSeries(event['index']).data().get(0, 'value') == 'missing')
+        chart.getSeries(event['index']).data().set(0, 'value', johnLegendItems[event['index']].text);
+      else
+        chart.getSeries(event['index']).data().set(0, 'value', 'missing');
+    });
   
   jakeLegend
     .position('bottom')
     .align('center')
     .zIndex(1)
     .enabled(true)
-    .itemsLayout('vertical');
+    .itemsLayout('vertical')
+    .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
+      event.preventDefault();
+      var item = event['item'];
+      item.disabled(!item.disabled());
+      if (chart.getSeries(event['index']).data().get(1, 'value') == 'missing')
+        chart.getSeries(event['index']).data().set(1, 'value', jakeLegendItems[event['index']].text);
+      else
+        chart.getSeries(event['index']).data().set(1, 'value', 'missing');
+    });
   
   peterLegend
     .position('bottom')
     .align('right')
     .zIndex(1)
     .enabled(true)
-    .itemsLayout('vertical');
+    .itemsLayout('vertical')
+    .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
+      event.preventDefault();
+      var item = event['item'];
+      item.disabled(!item.disabled());
+      if (chart.getSeries(event['index']).data().get(2, 'value') == 'missing')
+        chart.getSeries(event['index']).data().set(2, 'value', peterLegendItems[event['index']].text);
+      else
+        chart.getSeries(event['index']).data().set(2, 'value', 'missing');
+    });
+  peterLegend.tooltip().contentFormatter(function(){
+    console.log(this)
+  });
+  
   
   // draw legends
   johnLegend.container(stage).draw();
@@ -116,7 +148,7 @@ anychart.onDocumentReady(function() {
     .position('right')          // set legend position
     .align('top')               // set legend align
     .itemsLayout('vertical');   // set items layout
-    
+  
   chart.background(null);        // disable chart background
   
   // settings for legend title  
