@@ -2,6 +2,7 @@
 
 * [Overview](#overview)
 * [Auto Legend](#auto_legend)
+* [Easy Auto Legend for Single Series Charts](#easy_auto_legend_for_single_series_charts)
 * [Title](#title)
 * [Positioning](#positioning)
 * [Visualization](#visualization)
@@ -38,7 +39,26 @@ To enable such legend in your chart just enable it:
   chart.legend().enabled(true);
 ```
 
+In the live sample, please notice that when you move the mouse over the series name in legend - all series elements are highlighted
+
 {sample}AS\_Legend\_01{sample}
+
+## Easy Auto Legend for Single Series Charts
+
+If you are showing single series chart and want your legend to show all points names and values you should configure legend:
+
+```
+  chart.legend()
+    .enabled(true)                  // enable legend
+    .itemsSourceMode('categories'); // set source of legend items
+```
+
+To create a legend for single series chart you just have to set **categories** value for **.itemsSourceMode()** parameter.
+  
+  
+In the live sample, please notice that when you move the mouse over an element in legend - point is highlighted:
+
+{sample}AS\_Legend\_02{sample}
 
 ## Title
 
@@ -66,23 +86,6 @@ To specify and format your own title for the legend use {api:anychart.core.ui.Ti
 ```
 
 Here is a sample bar chart and the legend has tuned title:
-
-{sample}AS\_Legend\_02{sample}
-
-## Easy Auto Legend for Single Series Charts
-
-If you are showing single series chart and want your legend to show all points names and values you should configure legend:
-
-```
-  chart.legend()
-    .enabled(true)                  // enable legend
-    .itemsSourceMode('categories'); // set source of legend items
-```
-
-To create a legend for single series chart you just have to set **categories** value for **.itemsSourceMode()** parameter.
-  
-  
-In the live sample, please notice that when you move the mouse over an element in legend - point is highlighted:
 
 {sample}AS\_Legend\_03{sample}
 
@@ -140,13 +143,13 @@ If legend items can't be displayed on a plot of a legend, {api:anychart.core.ui.
 ```
 
 {sample}AS\_Legend\_07{sample}
-
+<!--
 ### Tooltip
 
 If you want to configure legend tooltips - you should do that using {api:anychart.core.ui.Legend#tooltip}**.tooltip(){api} methods. You can tune its visual appearance and format. In the following sample we will format tooltips to show detailed description information.
 
 {sample}AS\_Legend\_08{sample}
-
+-->
 ## Custom Item
 
 When creating legend you can add your own items with any information you want to see on the legend, to do that use **itemsFormatter()** parameter. 
