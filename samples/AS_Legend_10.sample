@@ -28,14 +28,14 @@ anychart.onDocumentReady(function() {
       text: data.data()[0][i0].toString(),  // text of item
       iconType: 'square',                   // type of icons
       iconFill: palette[i0-1]               // color of icons
-    })
+    });
   }
   for (var i1=1;i1<data.data()[1].length;i1++){
     jakeLegendItems.push({
       text: data.data()[1][i1].toString(),  // text of item
       iconType: 'square',                   // type of icons
       iconFill: palette[i1-1]               // color of icons
-    })
+    });
   }
   for (var i2=1;i2<data.data()[2].length;i2++){
     peterLegendItems.push({
@@ -71,11 +71,12 @@ anychart.onDocumentReady(function() {
     .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
       event.preventDefault();
       var item = event['item'];
+      var index = event['index'];
       item.disabled(!item.disabled());
-      if (chart.getSeries(event['index']).data().get(0, 'value') == 'missing')
-        chart.getSeries(event['index']).data().set(0, 'value', johnLegendItems[event['index']].text);
+      if (chart.getSeries(index).data().get(0, 'value') == 'missing')
+        chart.getSeries(index).data().set(0, 'value', johnLegendItems[index].text);
       else
-        chart.getSeries(event['index']).data().set(0, 'value', 'missing');
+        chart.getSeries(index).data().set(0, 'value', 'missing');
     });
   
   jakeLegend
@@ -87,11 +88,12 @@ anychart.onDocumentReady(function() {
     .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
       event.preventDefault();
       var item = event['item'];
+      var index = event['index'];
       item.disabled(!item.disabled());
-      if (chart.getSeries(event['index']).data().get(1, 'value') == 'missing')
-        chart.getSeries(event['index']).data().set(1, 'value', jakeLegendItems[event['index']].text);
+      if (chart.getSeries(index).data().get(1, 'value') == 'missing')
+        chart.getSeries(index).data().set(1, 'value', jakeLegendItems[index].text);
       else
-        chart.getSeries(event['index']).data().set(1, 'value', 'missing');
+        chart.getSeries(index).data().set(1, 'value', 'missing');
     });
   
   peterLegend
@@ -103,11 +105,12 @@ anychart.onDocumentReady(function() {
     .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
       event.preventDefault();
       var item = event['item'];
+      var index = event['index'];
       item.disabled(!item.disabled());
-      if (chart.getSeries(event['index']).data().get(2, 'value') == 'missing')
-        chart.getSeries(event['index']).data().set(2, 'value', peterLegendItems[event['index']].text);
+      if (chart.getSeries(index).data().get(2, 'value') == 'missing')
+        chart.getSeries(index).data().set(2, 'value', peterLegendItems[index].text);
       else
-        chart.getSeries(event['index']).data().set(2, 'value', 'missing');
+        chart.getSeries(index).data().set(2, 'value', 'missing');
     });
   peterLegend.tooltip().contentFormatter(function(){
     console.log(this)

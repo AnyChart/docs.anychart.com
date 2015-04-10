@@ -18,11 +18,10 @@ anychart.onDocumentReady(function() {
   // variable for total sales
   var total = 0;
   
-  for (var i = 0; i<dataSet.mapAs().getRowsCount();i++){
+  for (var i = 0; i<dataSet.mapAs().getRowsCount();i++)
     total+=dataSet.mapAs().get(i,'value');
-  }
   
-  chart = anychart.pieChart(dataSet);
+  var chart = anychart.pieChart(dataSet);
   
   // legend settings
   chart.legend()

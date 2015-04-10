@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
   
   // set data and define chart type
-  chart = anychart.pieChart([
+  var chart = anychart.pieChart([
     {name: "John", value: 10000},
     {name: "Jake", value: 12000},
     {name: "Peter", value: 16000},
