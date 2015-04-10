@@ -3,25 +3,53 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  
-  //set chart type
-  var chart = anychart.column();
-  
-  // set data
-  chart.column([
-    {x: 'John', value: 10000},
-    {x: 'Jake', value: 12000},
-    {x: 'Peter', value: 16000}
-  ]);
-  
-  // set chart title
-  chart.title().text('Legend for Single Series');
-  
-  // legend settings
-  chart.legend()
-    .enabled(true)                  // enable legend
-    .itemsSourceMode('categories'); // set source of legend items
-  
-  // set container and draw chart
-  chart.container('container').draw();
+    
+    // data
+    var data = anychart.data.set([
+        ['John',  10000, 12000, 20000, 16000],
+        ['Jake',  12000, 15000, 19000, 21000],
+        ['Peter', 16000, 17000, 21000, 22000]
+    ]);
+    
+    // map data
+    var Quarter1 = data.mapAs({x: [0], value: [1]});
+    var Quarter2 = data.mapAs({x: [0], value: [2]});
+    var Quarter3 = data.mapAs({x: [0], value: [3]});
+    var Quarter4 = data.mapAs({x: [0], value: [4]});
+    
+    // chart type
+    var chart = anychart.bar();
+    
+    // set title
+    chart.title().text('Legend Title Configuration');
+    
+    // set data
+    chart.bar(Quarter1).name('Quarter 1');
+    chart.bar(Quarter2).name('Quarter 2');
+    chart.bar(Quarter3).name('Quarter 3');
+    chart.bar(Quarter4).name('Quarter 4');
+    
+    // legend settings
+    chart.legend()
+      .enabled(true)            // enable legend
+      .position('right')        // set legend position
+      .align('top')             // set legent align
+      .itemsLayout('vertical'); // set items layout
+    
+    // settings for legend title  
+    chart.legend().title()
+      .enabled(true)              // enables legend title
+      .text('2004 - Quarters: ')  // set title text
+      .fontFamily('Arial')        // set font family
+      .fontColor('red')           // set title text color
+      .fontWeight(900)            // set text weight
+      .fontSize(16)               // set font size
+      .padding(5)                 // prevent sticking text to borders
+      .background()
+        .enabled(true)            // enables background of the legend title
+        .fill(null)               // disables background inner color
+        .stroke('black');         // set border of the title
+    
+    // draw chart
+    chart.container('container').draw();
 });

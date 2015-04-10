@@ -30,6 +30,8 @@ anychart.onDocumentReady(function() {
     .itemsLayout('horizontal')      // legend items layout
     .tooltip()                      // tooltip settings
       .contentFormatter(function(item){
+      for (var i=0;i<item.length;i++){
+        }
         console.log(item);
         var tooltipText = 'Manager: ' + data3.mapAs().get(item.index, 'x') 
         + '\nSales: ' + data3.mapAs().get(item.index, 'value');
