@@ -145,7 +145,7 @@ If legend items can't be displayed on a plot of a legend, {api:anychart.core.ui.
 
 {sample}AS\_Legend\_07{sample}
 
-### Adding markers symbol
+### Marker Symbol
 
 When you are working with line and spline chart you may use markers to distinguish different series. By default AnyChart shows marker symbols in legend - only color representation is used in a small line icon. If you want to tune markers in legend icons you have to adjust {api:anychart.core.ui.LegendItem}**legendItem()**{api} method. Sample code presented below.
 
