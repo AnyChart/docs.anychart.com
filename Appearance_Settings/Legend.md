@@ -46,7 +46,7 @@ In the live sample, please notice that when you move the mouse over the series n
 
 ## Easy Auto Legend for Single Series Charts
 
-If you are showing single series chart and want your legend to show all points names and values you should configure legend:
+If you are showing a single series chart and want your legend to show all points names and values you should configure legend:
 
 ```
   chart.legend()
@@ -162,7 +162,7 @@ When you are working with line and spline chart you may use markers to distingui
       .iconMarkerType('star6'); // set type of icon marker
 ```
 
-Here is a sample with different settings for marker of legend item.
+Here is a sample with different settings for a marker of legend item.
 
 {sample}AS\_Legend\_08{sample}
 
