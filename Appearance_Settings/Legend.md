@@ -9,6 +9,7 @@
  * [Background](#background)
  * [Size](#size)
  * [Paging](#paging)
+ * [Marker Symbol](#marker_symbol)
 * [Custom Item](#custom_item)
 * [Custom Legend](#custom_legend)
 
@@ -143,12 +144,32 @@ If legend items can't be displayed on a plot of a legend, {api:anychart.core.ui.
 ```
 
 {sample}AS\_Legend\_07{sample}
+
+### Adding markers symbol
+
+When you are working with line and spline chart you may use markers to distinguish different series. By default AnyChart shows marker symbols in legend - only color representation is used in a small line icon. If you want to tune markers in legend icons you have to adjust {api:anychart.core.ui.LegendItem}**legendItem()**{api} method. Sample code presented below.
+
+```
+  // chart data 
+  chart.line([
+    {x: "John", value: 16000},
+    {x: "Jake", value: 21000},
+    {x: "Peter", value: 22000}
+  ])
+    .legendItem()               // settings for legend item of the series
+      .iconMarkerFill('gold')   // set inner color of icon marker
+      .iconMarkerStroke('red')  // set border of icon marker
+      .iconMarkerType('star6'); // set type of icon marker
+```
+
+Here is a sample with different settings for marker of legend item.
+
+{sample}AS\_Legend\_08{sample}
+
 <!--
 ### Tooltip
 
 If you want to configure legend tooltips - you should do that using {api:anychart.core.ui.Legend#tooltip}**.tooltip(){api} methods. You can tune its visual appearance and format. In the following sample we will format tooltips to show detailed description information.
-
-{sample}AS\_Legend\_08{sample}
 -->
 ## Custom Item
 

@@ -4,40 +4,52 @@
 
 anychart.onDocumentReady(function() {
   
-  // data
-  var data = anychart.data.set([
+  // set chart type
+  var chart = anychart.line();
+  
+  chart.legend().enabled(true);
+  
+  // series data and series name
+  chart.line([
     {x: "John", value: 10000},
     {x: "Jake", value: 12000},
-    {x: "Peter", value: 16000},
-    {x: "Alex", value: 11000},
-    {x: "Tom", value: 13000},
-    {x: "Julia", value: 18000},
-    {x: "Mary", value: 9000}
-  ]);
+    {x: "Peter", value: 16000}
+  ]).name('default markers');
   
-  // chart type
-  var chart = anychart.column();
+  // set series data
+  chart.line([
+    {x: "John", value: 12000},
+    {x: "Jake", value: 15000},
+    {x: "Peter", value: 17000}
+  ])
+    .name("Custom series marker") // set series name
+    .markers()                    // adjust series marker
+      .type('star4');             // series marker type
   
-  // set chart data
-  chart.column(data);
+  // set series data
+  chart.line([
+    {x: "John", value: 20000},
+    {x: "Jake", value: 19000},
+    {x: "Peter", value: 21000}
+  ])
+    .name('custom legend marker type')  // series name
+    .legendItem()                       // settings for the series item in legend
+      .iconMarkerType('star5');         // series marker type in legend
   
-  // legend settings
-  chart.legend()
-    .enabled(true)                  // enables legend
-    .position('bottom')             // set legend position
-    .align('center')                // set legend align
-    .itemsSourceMode('categories')  // set source of legend items
-    .itemsLayout('horizontal')      // legend items layout
-    .tooltip()                      // tooltip settings
-      .contentFormatter(function(item){
-      for (var i=0;i<item.length;i++){
-        }
-        console.log(item);
-        var tooltipText = 'Manager: ' + data3.mapAs().get(item.index, 'x') 
-        + '\nSales: ' + data3.mapAs().get(item.index, 'value');
-        return tooltipText; 
-    });
+  // set series data
+  chart.line([
+    {x: "John", value: 16000},
+    {x: "Jake", value: 21000},
+    {x: "Peter", value: 22000}
+  ])
+    .name('customised legend marker') // set series name
+    .legendItem()                     // settings for the legend item of the series
+      .iconMarkerFill('gold')         // set inner color of series marker in legend
+      .iconMarkerStroke('red')        // set border of icon marker in legend
+      .iconMarkerType('star6');       // set type of icon marker in legend
   
-  // draw
+  chart.title().text('Tuning Marker of legend item');
+  
+  // draw chart
   chart.container('container').draw();
 });
