@@ -22,13 +22,13 @@ It manages visual appearance and logic structure of data.
 
 ##Enabling the stage
 
-To enable the stage we only need to change the define stage as a container:
+To enable the stage we only need to define stage as a container:
 
 ```
 var stage = anychart.graphics.create('container');
 ```
 
-This will make the stage with the width and height of the main container by default. To define these parameters, write them after the name of the container in brackets. 
+This will make the stage with the width and height of the main container by default. To change the default values of those parameters, write them after the name of the container in brackets. 
 For example, to define the new stage of 800px in width and 600px in height, write the following:
 
 ```
@@ -36,3 +36,5 @@ var stage = anychart.graphics.create('container', 800, 600);
 ```
 
 On a stage, you can position a lot of elements: not only the charts but figures such as rectangles, circles, etc.
+
+
