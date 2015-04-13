@@ -35,6 +35,20 @@ For example, to define the new stage of 800px in width and 600px in height, writ
 var stage = anychart.graphics.create('container', 800, 600);
 ```
 
-On a stage, you can position a lot of elements: not only the charts but figures such as rectangles, circles, etc.
+On a stage, you can position a lot of elements: not only the charts but figures such as rectangles, circles, lines, etc. Note that the center of the scale is in the left top corner of the monitor.
+Let's make a simple picture using stage instruments like circle and lines:
+
+```
+
+```
+{sample}DB\_Stage\_01{sample}
+
+Note that there's almost no figures besides rectangles and circles, but there are those elements of drawing like lines and arcs that allow you to draw anything you need. 
+Here we used zIndex to position one element over another, but it's possible to do the same using layers:
+
+```
+
+```
+{sample}DB\_Stage\_02{sample}
 
 

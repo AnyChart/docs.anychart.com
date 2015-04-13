@@ -1,0 +1,28 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+	 
+anychart.onDocumentReady(function() {
+
+    // set stage
+    stage = anychart.graphics.create('container');
+
+    //draw the circle
+    stage.circle(200, 200, 100).fill('red').stroke('3 green')
+                .zIndex(1);
+   
+   //draw the triangle
+    stage.path().moveTo(25, 300)
+                .lineTo(200, 0)
+                .lineTo(375, 300)
+                .close()
+                .fill('blue')
+                .zIndex(0)
+                .stroke('2px gold');
+                
+    //draw the wand in the middle
+    stage.path().moveTo(200,0)
+                .lineTo(200,300)
+                .stroke('2 white')
+                .zIndex(1);
+});
