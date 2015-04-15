@@ -6,25 +6,30 @@ anychart.onDocumentReady(function() {
 
     // set stage
     stage = anychart.graphics.create('container');
-
+    
+    // set layers
+    var layer_1 = stage.layer();
+    var layer_2 = stage.layer();
+    var layer_3 = stage.layer();
+    
+    //create a square besides the Deathly Hallows symbol
+    rect = layer_1.rect(25, 50, 350, 300).fill(['grey 0.5', 'grey 0']);
+    
     //draw the circle
-    stage.circle(200, 250, 100).fill(['grey 0.5', 'grey 0'])
-                .zIndex(1);
+    layer_2.circle(200, 250, 100).fill(['grey 0.3', 'grey 0']).stroke('3 black');
    
    //draw the triangle
-    stage.path().moveTo(25, 350)
+    layer_1.path().moveTo(25, 350)
                 .lineTo(200, 50)
                 .lineTo(375, 350)
                 .close()
                 .fill(['grey 0.3', 'grey 0'])
-                .zIndex(0)
                 .stroke('2px black');
                 
     //draw the wand in the middle
-    stage.path().moveTo(200,50)
+    layer_3.path().moveTo(200,50)
                 .lineTo(200,350)
-                .stroke('2 black')
-                .zIndex(1);
+                .stroke('2 black');
    
 
 });
