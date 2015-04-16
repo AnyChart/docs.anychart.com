@@ -8,98 +8,121 @@ anychart.onDocumentReady(function() {
     stage = anychart.graphics.create('container');
     
     // set layers of stage
-    var layer_1 = stage.layer(); //layer for the cube
-    var layer_2 = stage.layer(); //layer for the cylinder
-    var layer_3 = stage.layer(); //layer for the hexagonal prism
+    var layer_cube = stage.layer(); //layer for the cube
+    var layer_cylinder = stage.layer(); //layer for the cylinder
+    var layer_prism = stage.layer(); //layer for the hexagonal prism
     
     var fillSettings = {
-        keys: ['grey 0.5', 'white', 'white'],
+        keys: ['#888', '#f0f0f0', '#f0f0f0'],
         angle: 150,
         //mode: anychart.math.rect(5, 0, 195, 200),
     };
 
     //creating the cube
-    layer_1.path().moveTo(200, 200)
+                
+    var rect = anychart.math.rect(50, 250, 100, 200); 
+    var fill = {keys:['#666','#888', '#ccc'], angle:135, mode:rect}; 
+    var rect_2 = anychart.math.rect(50, 200, 200, 100);     
+    var fill_2 = {keys:['#666','#666', '#ccc'], angle:185, mode:rect_2};  
+    
+    layer_cube.path().moveTo(200, 200)
                 .lineTo(300, 250)
                 .lineTo(150, 300)
                 .lineTo(50, 250)
                 .close()
                 .fill(fillSettings)
-                .stroke('2px black');
+                .stroke(fill_2,1);      
                 
-    layer_1.path().moveTo(50, 250)
+    layer_cube.path().moveTo(50, 250)
                 .lineTo(150, 300)
                 .lineTo(150, 450)
                 .lineTo(50, 400)
                 .close()
-                .fill(['grey 0.7','white', 'white'], 135)
-                .stroke('2px black');
-                    
-    layer_1.path().moveTo(150, 300)
+                .fill(['#888','#f0f0f0', 'white'], 135)
+                .stroke(fill,1);
+                
+    layer_cube.path().moveTo(150, 300)
                 .lineTo(300, 250)
                 .lineTo(300, 400)
                 .lineTo(150, 450)
                 .close()
-                .fill('grey 0.7')
-                .stroke('2px black');
+                .fill('#999999')
+                .stroke('1px #666');
                 
     
     //creating the cylinder
-    layer_2.ellipse(50,50,150,30)
-                .fill(['white', 'white', '#CCCCCC'],-30)
+    var ellipse_top = layer_cylinder.ellipse(50,50,150,30)
+                .fill(['#f0f0f0', '#f0f0f0', '#aaa'],-30)
                 .zIndex(3);
-    layer_2.path().moveTo(-100, 50)
+                
+    var ellipse_body = layer_cylinder.path().moveTo(-100, 50)
                 .lineTo(-100, 350)
                 .arcTo(150, 30, 180, -180)
                 .lineTo(200, 50)
                 .arcTo(-150, 30, 180, 180)
                 .close()
-                .fill(['white', '#999999', '#888888'],-40)
-                .stroke('2px black');
-    layer_2.ellipse(50,50,150,30);
-    layer_2.translate(650,50);
-    layer_2.scale(0.3, 0.6, 0, 0);
+                .fill(['white', '#aaa', '#888'],-40)
+                .stroke('1px black')
+                .zIndex(2);
+                
+    var ellipse_shadow = layer_cylinder.path().moveTo(-45,375)
+                .lineTo(110,405)
+                .lineTo(315,373)
+                .lineTo(200,350)
+                .close()
+                .stroke(null)
+                .fill('grey');
     
+    //moving the cylinder
+    layer_cylinder.translate(650,50);
+    
+    //scaling the cylinder
+    layer_cylinder.scale(0.3, 0.6, 0, 0);
     
     //creating the prism
-    layer_3.path().moveTo(200,400)
+    layer_prism.path().moveTo(200,400)
                 .lineTo(215,460)
                 .lineTo(265,485)
                 .lineTo(300,435)
                 .lineTo(285,385)
                 .lineTo(230,365)
                 .close()
+                .stroke('1px #444')
                 .fill('grey');
                 
-    layer_3.path().moveTo(230,365)
+    layer_prism.path().moveTo(230,365)
                 .lineTo(400,300)
                 .lineTo(455,320)
                 .lineTo(285,385)
-                .fill('#999999')
+                .stroke('1px #666')
+                //.fill(['#fff','#fff', '#999','#888', '#888'], 225)
+                .fill('#999')
                 .close();
       
     //for the shadow            
-    layer_3.path().moveTo(360,315)
+    layer_prism.path().moveTo(360,315)
                 .lineTo(400,300)
                 .lineTo(455,320)
                 .lineTo(415,335)
-                .fill(400,300,420,320,['grey 0.5', 'white', 'white'])
+                .fill('#f0f0f0')
                 .stroke('null')
                 .zIndex(2)
                 .close();
                 
-    layer_3.path().moveTo(285,385)
+    layer_prism.path().moveTo(285,385)
                 .lineTo(300,435)
                 .lineTo(470,365)
+                .stroke('1px #666')
                 .lineTo(455,320)
                 .close()
-                .fill(['#999999', 'grey'],-55);
+                .fill('#777');
                    
-    layer_3.path().moveTo(300,435)
+    layer_prism.path().moveTo(300,435)
                 .lineTo(470,365)
                 .lineTo(445,415)
                 .lineTo(265,485)
+                .stroke('1px #777')
                 .close()
-                .fill('grey');
+                .fill('#666');
 
 });

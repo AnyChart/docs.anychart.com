@@ -99,12 +99,8 @@ The similar method {api:anychart.graphics.vector.Stage#addChildAt}**.addChildAt(
 The same thing is with removing elements. We use {api:anychart.graphics.vector.Element#remove}**.remove()**{api}
  to remove the element. As layers are elements themselves, so they can be put each into other. 
  
- Let's now make a more complicated example to show those features. 
-
- ```
-//figures
-
-```
+ Let's now make a more complicated example to show those features. Explore the sample in the playground to see the code.
+ 
 {sample}DB\_Stage\_04{sample}
 
 Here we used 3 different layers to build each figure and its shadows on each layer. Now if we remove any layer, it will look like we've removed a figure. 
