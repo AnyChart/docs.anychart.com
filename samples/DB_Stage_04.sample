@@ -7,6 +7,7 @@ anychart.onDocumentReady(function() {
     // set stage
     stage = anychart.graphics.create('container');
     
+    stage.scale(0.7, 0.7, 0, 0);
     // set layers of stage
     var layer_cube = stage.layer(); //layer for the cube
     var layer_cylinder = stage.layer(); //layer for the cylinder
@@ -71,13 +72,21 @@ anychart.onDocumentReady(function() {
                 .fill('#848484');
                 
                 
-    //var ellipse_shadow_prism = layer_cylinder.path().moveTo(580,470)
-      //          .lineTo(765,503)
-        //        .lineTo(515,550)
-          //      .lineTo(350,513)
-            //    .fill('#848484')
-              //  .stroke('null')
-                //.close();
+    var ellipse_shadow_prism_top = layer_cylinder.path().moveTo(520,485)
+                .lineTo(680,517)
+                .lineTo(465,558)
+                .lineTo(300,523)
+                .fill('#888')
+                .stroke(null)
+                .close();
+                
+    var ellipse_shadow_prism_middle = layer_cylinder.path().moveTo(680,520)
+                .lineTo(750,592)
+                .lineTo(515,640)
+                .lineTo(465,560)
+                .fill('#898989')
+                .stroke(null)
+                .close();
     
     //moving the cylinder
     layer_cylinder.translate(650,50);
@@ -126,10 +135,7 @@ anychart.onDocumentReady(function() {
                 
     var cube_shadow_prism = layer_5.path().moveTo(230, 365)
                 .lineTo(375, 310)
-                .lineTo(396, 318)
-                .lineTo(370, 328)
-                .lineTo(400, 340)
-                .lineTo(335, 365)
+                .lineTo(400, 320)
                 .lineTo(310, 355)
                 .lineTo(258, 375)
                 .close()
