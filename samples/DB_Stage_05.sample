@@ -60,7 +60,7 @@ anychart.onDocumentReady(function() {
                 
     var prism_shadow = layer_5.path().moveTo(445,415)
                 .lineTo(850,550)
-                .lineTo(350,550)
+                .lineTo(410,550)
                 .lineTo(265,485)
                 .close()
                 .fill(['#aaa','#ccc 0.5','white 0'],-90)
