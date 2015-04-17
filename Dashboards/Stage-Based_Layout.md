@@ -104,13 +104,25 @@ The same thing is with removing elements. We use {api:anychart.graphics.vector.E
 {sample}DB\_Stage\_04{sample}
 
 Here we used 3 different layers to build each figure and its shadows on each layer. Now if we remove any layer, it will look like we've removed a figure. 
-Let's use the {api:anychart.graphics.vector.Stage#removeChild}**.removeChild()**{api} method th remove the cylinder with its shadow.
-
- ```
-//-layer_2
+Let's use the {api:anychart.graphics.vector.Stage#removeChild}**.remove()**{api} method to remove the cylinder with its shadow.
 
 ```
+    //remove the cylinder layer
+    layer_cylinder.remove();
+```
 {sample}DB\_Stage\_05{sample}
+
+The situation would be different if we decided to remove the cube also. In this case we should have used the {api:anychart.graphics.vector.Element.removeChild()}**.removeChild()**{api} method to get rid of the big shadow under all objects which is situated on a separated layer.
+```
+    //remove the cylinder layer
+    layer_cylinder.remove();
+    
+    //remove the cube and shadows
+    layer_cube.remove();
+    layer_main_shadow.remove();
+    layer_5.removeChild(cube_shadow_prism);
+```
+{sample}DB\_Stage\_06{sample}
 
 
 

@@ -166,5 +166,8 @@ anychart.onDocumentReady(function() {
                 .stroke(null)
                 .fill(['#aaa','white'],270);
 
+    //remove the cylinder layer
+    layer_cylinder.remove();
+
 
 });

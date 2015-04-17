@@ -166,5 +166,12 @@ anychart.onDocumentReady(function() {
                 .stroke(null)
                 .fill(['#aaa','white'],270);
 
+    //remove the cylinder layer
+    layer_cylinder.remove();
+    
+    //remove the cube and shadows
+    layer_cube.remove();
+    layer_main_shadow.remove();
+    layer_5.removeChild(cube_shadow_prism);
 
 });
