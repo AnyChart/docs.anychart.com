@@ -17,12 +17,13 @@
 ## Overview
 
 All elements of our charts are drawn using graphics. So, the stage is a graphics tool, which helps to position a number of charts on one page. 
+Rendering capability of any chart components is based on anychart.graphics library, which is in charge of visual display. This display is 
 It manages visual appearance and logic structure of data.
 
 
 ##Enabling the stage
 
-To enable the stage we only need to define stage as a container:
+To create the stage we only need to define stage as a container:
 
 ```
 var stage = anychart.graphics.create('container');
