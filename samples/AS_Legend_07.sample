@@ -24,6 +24,7 @@ anychart.onDocumentReady(function() {
     .align('top')             // set legend align
     .itemsLayout('vertical')  // legend items layout
     .paginator()              // paginator settings
+      .padding(3)             // set padding for paginator
       .layout('vertical')     // set paginator layout
       .orientation('left');   // place paginator at the left of a legend
   
