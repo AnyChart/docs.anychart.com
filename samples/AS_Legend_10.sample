@@ -145,6 +145,7 @@ anychart.onDocumentReady(function() {
   
   // legend settings
   chart.legend()
+    .titleSeparator(true)       // draw line to separate title
     .enabled(true)              // enable legend
     .position('right')          // set legend position
     .align('top')               // set legend align
@@ -154,7 +155,6 @@ anychart.onDocumentReady(function() {
   
   // settings for legend title  
   chart.legend()
-    .titleSeparator(true)
     .title()
       .useHtml(true)
       .enabled(true)              // enables legend title

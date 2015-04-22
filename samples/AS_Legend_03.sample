@@ -31,25 +31,22 @@ anychart.onDocumentReady(function() {
     
     // legend settings
     chart.legend()
+      .titleSeparator(true)
       .enabled(true)            // enable legend
       .position('right')        // set legend position
       .align('top')             // set legent align
       .itemsLayout('vertical'); // set items layout
     
     // settings for legend title  
-    chart.legend().title()
-      .enabled(true)              // enables legend title
-      .text('2004 - Quarters: ')  // set title text
-      .fontFamily('Arial')        // set font family
-      .fontColor('red')           // set title text color
-      .fontWeight(900)            // set text weight
-      .fontSize(16)               // set font size
-      .padding(5)                 // prevent sticking text to borders
-      .background()
-        .enabled(true)            // enables background of the legend title
-        .fill(null)               // disables background inner color
-        .stroke('black');         // set border of the title
-    
-    // draw chart
+  // settings for legend title  
+  chart.legend().title()
+    .useHtml(true)
+    .enabled(true)              // enables legend title
+    .text('Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>')  // set title text
+    .fontSize(14)               // set font size
+    .hAlign('center');
+  
+  
+  // draw chart
     chart.container('container').draw();
 });
