@@ -55,7 +55,7 @@ If you are showing a single series chart and want your legend to show all points
     .itemsSourceMode('categories'); // set source of legend items
 ```
 
-To create a legend for single series chart you just have to set **categories** value for {api:anychart.core.ui.Legend#itemsSourceMode}**.itemsSourceMode()**{api} parameter.
+To create a legend for single series chart you just have to set **categories** value for {api:anychart.core.ui.Legend#itemsSourceMode}**.itemsSourceMode()**{api}.
 
 {sample}AS\_Legend\_02{sample}
 
@@ -67,7 +67,7 @@ Sometimes you need the title to a legend and sometimes it is superfluous: to ena
   chart.legend().title().enabled(true);
 ```
 
-To specify and format your own title for the legend use {api:anychart.core.ui.Title#text}**.text()**{api} method of a {api:anychart.core.ui.Legend#title}**.title()**{api}. For more information about title settings please refer to the  [Title](../Appearance_Settings/Title) article.
+To specify and format your own title for the legend use {api:anychart.core.ui.Title#text}**.text()**{api} method of a {api:anychart.core.ui.Legend#title}**.title()**{api}. For more information about title settings please refer to the [Title](../Appearance_Settings/Title) article.
 
 ```
   chart.legend().title()
@@ -97,7 +97,7 @@ As an addition to the {api:anychart.core.ui.Legend#position}**.position()**{api}
 
 {sample}AS\_Legend\_04{sample}
 
-*Note:* possible values that can be passed to the  {api:anychart.core.ui.Legend#align}**.align()**{api} method are: *Left, Right, Top, Bottom and Center*. Also, possible values depend on the {api:anychart.core.ui.Legend#position}**.position()**{api} parameter. With *Top* and *Bottom* legend position it is possible to use *Left, Right* and *Center* values of {api:anychart.core.ui.Legend#align}**.align()**{api} parameter. For *Left* and *Right* values of {api:anychart.core.ui.Legend#position}**.position()**{api} parameter it's possible to use *Top, Bottom* and *Center* values of {api:anychart.core.ui.Legend#align}**.align()**{api} parameter.
+*Note:* possible values that can be passed to the {api:anychart.core.ui.Legend#align}**.align()**{api} method are: *Left, Right, Top, Bottom and Center*. Also, possible values depend on the {api:anychart.core.ui.Legend#position}**.position()**{api} parameter. With *Top* and *Bottom* legend position it is possible to use *Left, Right* and *Center* parameters of {api:anychart.core.ui.Legend#align}**.align()**{api}. For *Left* and *Right* values of {api:anychart.core.ui.Legend#position}**.position()**{api} it's possible to use *Top, Bottom* and *Center* parameters of {api:anychart.core.ui.Legend#align}**.align()**{api} method.
 
 ## Visualization
 
