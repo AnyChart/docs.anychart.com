@@ -131,7 +131,7 @@ Here is a sample with adjusted legend size
 
 ### Paging
 
-If legend items can't be displayed on a plot of a legend, {api:anychart.core.ui.Legend#paginator}paginator(){api} method controls legend page. Paginator can be placed anywhere inside the legend.
+If legend items can't be displayed on a plot of a legend, **{api:anychart.core.ui.Legend#paginator}paginator(){api}** method controls legend page. Paginator can be placed anywhere inside the legend.
 
 ```
   // legend settings
@@ -168,7 +168,7 @@ Here is a sample with different settings for a marker of legend item.
 
 You can easily control series of the chart using chart legend. You can hide and show any of the series by clicking on the legend items. Here is a sample of column chart with four series. One of the series is already disabled. Click on the last legend item to show hidden series. 
 
-{sample}AS\_Legend\_11{sample}
+{sample}AS\_Legend\_09{sample}
 
 <!--
 ### Tooltip
@@ -177,7 +177,7 @@ If you want to configure legend tooltips - you should do that using {api:anychar
 -->
 ## Custom Item
 
-When creating legend you can add your own items with any information you want to see on the legend, to do that use **itemsFormatter()** parameter. 
+When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.ui.Legend#itemsFormatter}**itemsFormatter()**{api} parameter. 
 
 ```
 
@@ -193,10 +193,10 @@ chart.legend()
 
 In the sample chart below we've used custom item that adds *Total* data to legend.
 
-{sample}AS\_Legend\_09{sample}
+{sample}AS\_Legend\_10{sample}
 
 ## Custom Legend
 
 AnyChart sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart. 
 
-{sample}AS\_Legend\_10{sample}
+{sample}AS\_Legend\_11{sample}
