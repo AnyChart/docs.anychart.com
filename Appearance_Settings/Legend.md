@@ -69,12 +69,13 @@ Sometimes you need the title to a legend and sometimes it is superfluous: to ena
 
 To specify and format your own title for the legend use {api:anychart.core.ui.Title#text}**.text()**{api} method of a {api:anychart.core.ui.Legend#title}**.title()**{api}. For more information about title settings please refer to the [Title](../Appearance_Settings/Title) article.
 
-``chart.legend().title()
-      .useHtml(true)
-      .enabled(true)              // enables legend title
-      .text('Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>')
-      .fontSize(14)               // set font size
-      .hAlign('center');
+```
+  chart.legend().title()
+    .useHtml(true)
+    .enabled(true)              // enables legend title
+    .text('Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>')
+    .fontSize(14)               // set font size
+    .hAlign('center');
 ```
 
 Here is a sample bar chart and the legend has tuned title:
