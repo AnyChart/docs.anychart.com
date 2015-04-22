@@ -112,11 +112,9 @@ anychart.onDocumentReady(function() {
       else
         chart.getSeries(index).data().set(2, 'value', 'missing');
     });
-  peterLegend.tooltip().contentFormatter(function(){
-    console.log(this)
-  });
-  
-  
+
+
+
   // draw legends
   johnLegend.container(stage).draw();
   jakeLegend.container(stage).draw();
@@ -152,23 +150,21 @@ anychart.onDocumentReady(function() {
     .align('top')               // set legend align
     .itemsLayout('vertical');   // set items layout
   
-  chart.background(null);        // disable chart background
+  chart.background(null);       // disable chart background
   
   // settings for legend title  
-  chart.legend().title()
-    .enabled(true)              // enables legend title
-    .text('2004 - Quarters: ')  // set title text
-    .fontColor('red')           // set title text color
-    .fontWeight(900)            // set text weight
-    .padding(5)                 // prevent sticking text to borders
-    .background()
-      .enabled(true)            // enables background of the legend title
-      .fill(null)               // disables background inner color
-      .stroke('black');         // set border of the title
+  chart.legend()
+    .titleSeparator(true)
+    .title()
+      .useHtml(true)
+      .enabled(true)              // enables legend title
+      .text('Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>')  // set title text
+      .fontSize(14)               // set font size
+      .hAlign('center');
   
   // prevent chart overlapping by legends
   chart.margin().bottom(stage.height() - johnLegend.getRemainingBounds().getHeight() - 10);
-  
+  chart.yScale().minimum(0);
   // redraw legends if chart is redrawn
   chart.container(stage).draw();
   chart.listen(

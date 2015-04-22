@@ -10,6 +10,7 @@
  * [Size](#size)
  * [Paging](#paging)
  * [Marker Symbol](#marker_symbol)
+* [Series Management](#series_management)
 * [Custom Item](#custom_item)
 * [Custom Legend](#custom_legend)
 
@@ -21,7 +22,7 @@ In this article all legends features and setting are explained and demonstrated.
 
 ## Auto Legend 
 
-To enable legend you have to specify **.enable(true)** parameter of {api:anychart.core.ui.Legend}**.legend()**{api} method:
+To enable legend you have to specify {api:anychart.core.ui.Legend#enabled}**.enable(true)**{api} parameter of {api:anychart.core.ui.Legend}**.legend()**{api} method:
 
 ```
   // create chart
@@ -54,10 +55,7 @@ If you are showing a single series chart and want your legend to show all points
     .itemsSourceMode('categories'); // set source of legend items
 ```
 
-To create a legend for single series chart you just have to set **categories** value for **.itemsSourceMode()** parameter.
-  
-  
-In the live sample, please notice that when you move the mouse over an element in legend - point is highlighted:
+To create a legend for single series chart you just have to set **categories** value for {api:anychart.core.ui.Legend#itemsSourceMode}**.itemsSourceMode()**{api} parameter.
 
 {sample}AS\_Legend\_02{sample}
 
@@ -69,7 +67,7 @@ Sometimes you need the title to a legend and sometimes it is superfluous: to ena
   chart.legend().title().enabled(true);
 ```
 
-To specify and format your own title for the legend use {api:anychart.core.ui.Title#text}**.text()**{api} parameter of a {api:anychart.core.ui.Legend#title}**.title()**{api} method. For more information about title settings please refer to [Title](title).
+To specify and format your own title for the legend use {api:anychart.core.ui.Title#text}**.text()**{api} method of a {api:anychart.core.ui.Legend#title}**.title()**{api}. For more information about title settings please refer to the  [Title](../Appearance_Settings/Title) article.
 
 ```
   chart.legend().title()
@@ -92,14 +90,14 @@ Here is a sample bar chart and the legend has tuned title:
 
 ## Positioning
 
-Depending on the layout and type of your chart you can position legend to a desired place using {api:anychart.core.ui.Legend#position}**.position()**{api} parameter of {api:anychart.core.ui.Legend}**.legend()**{api} method. 
+Depending on the layout and type of your chart you can position legend to a desired place using {api:anychart.core.ui.Legend#position}**.position()**{api} method of {api:anychart.core.ui.Legend}**.legend()**{api}. 
   
   
-As an addition to the {api:anychart.core.ui.Legend#position}**.position()**{api} parameter, parameter {api:anychart.core.ui.Legend#align}**.align()**{api} controls legend alignment.
+As an addition to the {api:anychart.core.ui.Legend#position}**.position()**{api} method, method {api:anychart.core.ui.Legend#align}**.align()**{api} controls legend alignment.
 
 {sample}AS\_Legend\_04{sample}
 
-*Note:* possible values for {api:anychart.core.ui.Legend#align}**.align()**{api} parameter are: *Left, Right, Top, Bottom and Center*. Also, possible values depend on the {api:anychart.core.ui.Legend#position}**.position()**{api} parameter. With *Top* and *Bottom* legend position it is possible to use *Left, Right* and *Center* values of {api:anychart.core.ui.Legend#align}**.align()**{api} parameter. For *Left* and *Right* values of {api:anychart.core.ui.Legend#position}**.position()**{api} parameter it's possible to use *Top, Bottom* and *Center* values of {api:anychart.core.ui.Legend#align}**.align()**{api} parameter.
+*Note:* possible values that can be passed to the  {api:anychart.core.ui.Legend#align}**.align()**{api} method are: *Left, Right, Top, Bottom and Center*. Also, possible values depend on the {api:anychart.core.ui.Legend#position}**.position()**{api} parameter. With *Top* and *Bottom* legend position it is possible to use *Left, Right* and *Center* values of {api:anychart.core.ui.Legend#align}**.align()**{api} parameter. For *Left* and *Right* values of {api:anychart.core.ui.Legend#position}**.position()**{api} parameter it's possible to use *Top, Bottom* and *Center* values of {api:anychart.core.ui.Legend#align}**.align()**{api} parameter.
 
 ## Visualization
 
@@ -120,8 +118,8 @@ Sample Pie Chart with a legend of a fixed (75px - width, 140px height) size posi
 
 ```
   chart.legend()
-    .height(140)  // set legend height equal to 140px 
-    .width(75)    // set legend width equal to 75px
+    .height(140)  // set legend height to 140px 
+    .width(75)    // set legend width to 75px
 ```
 
 Here is a sample with adjusted legend size
@@ -166,6 +164,12 @@ Here is a sample with different settings for a marker of legend item.
 
 {sample}AS\_Legend\_08{sample}
 
+## Series Management
+
+You can easily control series of the chart using chart legend. You can hide and show any of the series by clicking on the legend items. Here is a sample of column chart with four series. One of the series is already disabled. Click on the last legend item to show hidden series. 
+
+{sample}AS\_Legend\_11{sample}
+
 <!--
 ### Tooltip
 
@@ -187,7 +191,7 @@ chart.legend()
 
 ```
 
-In the sample chart below we've used custom item, that adds *Total* data to legend.
+In the sample chart below we've used custom item that adds *Total* data to legend.
 
 {sample}AS\_Legend\_09{sample}
 
