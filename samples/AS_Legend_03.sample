@@ -47,7 +47,7 @@ anychart.onDocumentReady(function() {
   
   
   chart.xAxis().title('Sales');
-  chart.yAxis().ttile('Manager');
+  chart.yAxis().title('Manager');
   // draw chart
   chart.container('container').draw();
 });

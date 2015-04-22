@@ -69,19 +69,12 @@ Sometimes you need the title to a legend and sometimes it is superfluous: to ena
 
 To specify and format your own title for the legend use {api:anychart.core.ui.Title#text}**.text()**{api} method of a {api:anychart.core.ui.Legend#title}**.title()**{api}. For more information about title settings please refer to the [Title](../Appearance_Settings/Title) article.
 
-```
-  chart.legend().title()
-    .enabled(true)              // enables legend title
-    .text('2004 - Quarters: ')  // set title text
-    .fontFamily('Arial')        // set font family
-    .fontColor('red')           // set title text color
-    .fontWeight(900)            // set text weight
-    .fontSize(16)               // set font size
-    .padding(5)                 // prevent sticking text to borders
-    .background()
-      .enabled(true)            // enables background of the legend title
-      .fill(null)               // disables background inner color
-      .stroke('black');         // set border of the title
+``chart.legend().title()
+      .useHtml(true)
+      .enabled(true)              // enables legend title
+      .text('Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>')
+      .fontSize(14)               // set font size
+      .hAlign('center');
 ```
 
 Here is a sample bar chart and the legend has tuned title:
@@ -119,14 +112,14 @@ Sample Pie Chart with a legend of a fixed (75px - width, 140px height) size posi
 ```
   chart.legend()
     .height(140)  // set legend height to 140px 
-    .width(75)    // set legend width to 75px
+    .width(95)    // set legend width to 95px
 ```
 
 Here is a sample with adjusted legend size
 
 {sample}AS\_Legend\_06{sample}
 
-*Note:* the space between data plot and legend is controlled using {api:anychart.core.ui.Legend#padding}**padding()**{api} parameter.
+*Note:* the space between data plot and legend is controlled using {api:anychart.core.ui.Legend#padding}**padding()**{api} method.
 
 
 ### Paging
@@ -177,7 +170,7 @@ If you want to configure legend tooltips - you should do that using {api:anychar
 -->
 ## Custom Item
 
-When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.ui.Legend#itemsFormatter}**itemsFormatter()**{api} parameter. 
+When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.ui.Legend#itemsFormatter}**itemsFormatter()**{api} method. 
 
 ```
 
