@@ -107,46 +107,50 @@ anychart.onDocumentReady(function() {
     return bullet;
   }
   
+  
   // create legend
   var legend = anychart.ui.legend();
-  legend.itemsProvider([
-    {
-      'index': 0,
-      'text': 'Actual',
-      'iconType': function(path, size) {
-        path.clear();
-        var x = Math.round(size / 2);
-        var y = Math.round(size / 2);
-        var height = size * 0.6;
-        path.clear()
-          .moveTo(x, y - height / 2)
-          .lineTo(x, y + height / 2)
-          .lineTo(x + 2, y + height / 2)
-          .lineTo(x + 2, y - height / 2)
-          .close();
+  legend.itemsFormatter(function(){
+    var items = [
+      {
+        'index': 0,
+        'text': 'Actual',
+        'iconType': function(path, size) {
+          path.clear();
+          var x = Math.round(size / 2);
+          var y = Math.round(size / 2);
+          var height = size * 0.6;
+          path.clear()
+            .moveTo(x, y - height / 2)
+            .lineTo(x, y + height / 2)
+            .lineTo(x + 2, y + height / 2)
+            .lineTo(x + 2, y - height / 2)
+            .close();
+        },
+        'iconStroke': 'none',
+        'iconFill': '#000'
       },
-      'iconStroke': 'none',
-      'iconFill': '#000'
-    },
-    {
-      'index': 1,
-      'text': 'Acceptable',
-      'iconType': function(path, size) {
-        path.clear();
-        var x = Math.round(size / 2);
-        var y = Math.round(size / 2);
-        var height = size * 0.8;
-        path.clear()
-          .moveTo(x - 2, y - height / 2)
-          .lineTo(x - 2, y + height / 2)
-          .lineTo(x + 3, y + height / 2)
-          .lineTo(x + 3, y - height / 2)
-          .close();
-      },
-      'iconStroke': 'none',
-      'iconFill': '#ccc'
-    }
-  ]);
+      {
+        'index': 1,
+        'text': 'Acceptable',
+        'iconType': function(path, size) {
+          path.clear();
+          var x = Math.round(size / 2);
+          var y = Math.round(size / 2);
+          var height = size * 0.8;
+          path.clear()
+            .moveTo(x - 2, y - height / 2)
+            .lineTo(x - 2, y + height / 2)
+            .lineTo(x + 3, y + height / 2)
+            .lineTo(x + 3, y - height / 2)
+            .close();
+        },
+        'iconStroke': 'none',
+        'iconFill': '#ccc'
+      }
+    ];
+    return items;
+  });
   legend.title().enabled(false);
   legend.titleSeparator().enabled(false);
   legend.paginator().enabled(false);
