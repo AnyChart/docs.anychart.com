@@ -2,14 +2,15 @@
      :is_new false
      :exports "chart"}
 
-anychart.onDocumentReady(function() {
 
+anychart.onDocumentReady(function() {
+  
   // set stage
   var stage = anychart.graphics.create('container');
-
+  
   // create table
   var table = anychart.ui.table();
-
+  
   // set table content
   table.contents([
     [
@@ -39,13 +40,13 @@ anychart.onDocumentReady(function() {
       '14000'
     ]
   ]);
-
-  table.rowHeight(0, 40);   // Get first row and set height 40px
-  table.colWidth(0, 70);    // Get first column and set width 70 px
-
+  
+  table.getRow(0).height(40);   // Get first row and set height 40px
+  table.getCol(0).width(70);    // Get first column and set width 70 px
+  
   // position text in the center of each cell
-  table.cellTextFactory().vAlign('center').hAlign('center');
-
+  table.vAlign('center').hAlign('center');
+  
   // set table container and initiate draw
   table.container(stage).draw();
 });

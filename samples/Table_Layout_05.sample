@@ -3,13 +3,13 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-
+  
   // set stage
   var stage = anychart.graphics.create('container');
-
+  
   // create table
   var table = anychart.ui.table();
-
+  
   // set table content
   table.contents([
     [
@@ -39,24 +39,24 @@ anychart.onDocumentReady(function() {
       '14000'
     ]
   ]);
-
-  table.rowHeight(0, 40);   // Get first row and set height 40px
-  table.colWidth(0, 70);    // Get first column and set width 70 px
-
+  
+  table.getRow(0).height(40);   // Get first row and set height 40px
+  table.getCol(0).width(70);    // Get first column and set width 70 px
+  
   table.cellFill('#FFFFE0');   // Set table background color
-
+  
   // set border style
   table.cellBorder('gray',2,'5 2');
-
+  
   // adjust text visual appearance
-  table.cellTextFactory()
-    .padding(10)
+  table
+    .cellPadding(10)
     .vAlign('center')
     .hAlign('right')
     .fontWeight(600)
     .fontSize(11)
     .fontColor('red');
-
+  
   // set table container and initiate draw
   table.container(stage).draw();
 });

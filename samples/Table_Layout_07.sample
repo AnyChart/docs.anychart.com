@@ -3,17 +3,17 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-
+  
   // set stage
   var stage = anychart.graphics.create('container');
-
+  
   // Title settings
   var title = anychart.ui.title();
   title.fontFamily('verdana, helvetica, arial, sans-serif').fontWeight('normal');
   title.text('<span style="color:#86cf38; font-size: 16px;">System Availability</span> <span style="color: #666666; font-size: 10px; font-weight: normal;">(last 30 days)</span>');
   title.orientation('top').align('left').vAlign('bottom').margin(10).padding(0).height(20).useHtml(true);
   title.container(stage).draw();
-
+  
   // Data for charts in table
   var Availability = anychart.data.set([
     [Date.UTC(2013, 10), 98.6, 98.6, 95.3, 97.9, 99.0, 97.0, 96.1],
@@ -39,15 +39,15 @@ anychart.onDocumentReady(function() {
     ['Problem Tracking', 93]
   ]);
   var contents = [];
-
-
+  
+  
   // Table settings
-
+  
   // create table
   var table = anychart.ui.table();
-
+  
   table.top(title.getRemainingBounds().getTop());
-
+  
   for(var i= 0; i<7; i++){
     contents.push([
       newLine(i),                           // create line charts in the first column
@@ -56,40 +56,42 @@ anychart.onDocumentReady(function() {
       AcceptedAvailability.row(i)[1] + '%'  // get values for fourth column
     ]);
   }
-
+  
   // set table content
   table.contents(contents);
-
+  
   // disable borders and adjust width of second and fourth column
-  table.cellBorder('#B8B8B8').colWidth(1, 130).colWidth(3, 50);
-
+  table.cellBorder('#B8B8B8');
+  table.getCol(1).width(130);
+  table.getCol(3).width(50);
+  
   // visual settings for text in table
-  table.cellTextFactory().vAlign('center').hAlign('center').fontWeight(600).fontSize(12);
-
+  table.vAlign('center').hAlign('center').fontWeight(600).fontSize(12);
+  
   // set table container and initiate draw
   table.container(stage).draw();
-
-
+  
+  
   // Settings for table content
-
+  
   // create new sparkline chart
   function newLine(i){
     var line = anychart.sparkline(Availability.mapAs({x: [0], value: [(i + 1)]}));
-
+    
     // adjust visualization
     line
       .stroke('2 #000')
       .height('100%')
       .xScale(
-        anychart.scales.dateTime()
-          .minimumGap(0)
-          .maximumGap(0)
-          .ticks([])
-        );
-
+      anychart.scales.dateTime()
+        .minimumGap(0)
+        .maximumGap(0)
+        .ticks([])
+    );
+    
     return line;
   }
-
+  
   // create new bullet chart
   function newBullet (i) {
     var bulletData = 0;
@@ -104,7 +106,7 @@ anychart.onDocumentReady(function() {
     bullet.scale(anychart.scales.linear().minimum(85).maximum(100)).padding(0).margin(10);
     return bullet;
   }
-
+  
   // create legend
   var legend = anychart.ui.legend();
   legend.itemsProvider([
