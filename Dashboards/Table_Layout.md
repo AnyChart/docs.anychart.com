@@ -38,14 +38,19 @@ Visual settings control:
 
 ### Cells Width and Height
 
-Table layout consist of multiple cells and each of them may contain different type of information. In most cases same kind of data placed in one row or one column. Anychart provides {api:anychart.core.ui.Table#rowHeight}**.rowHeight()**{api} parameter for adjusting height of a row and {api:anychart.core.ui.Table#colWidth}**.colWidth()**{api} parameter for controlling width of a column.
+Table layout consist of multiple cells and each of them may contain different type of information. In most cases same kind of data placed in one row or one column. Anychart provides {api:anychart.ui.Table#getRow}**.getRow()**{api} method for working with a row and {api:anychart.ui.Table#getCol}**.getCol()**{api} method for working with a column of the table. Use {api:anychart.core.ui.table.Row#height}.height(){api} method to set height of the row and {api:anychart.core.ui.table.Column#width}.width(){api} to set width of the column.
   
   
 Sample below demonstrates height controlling of the first row and width of the first column.
 
 ```
-  table.rowHeight(0, 40);   // Get first row and set height 40px
-  table.colWidth(0, 70);    // Get first column and set width 70 px
+  table
+    .getRow(0)      // Get first row
+    .height(40);    // Set height 40px
+  
+  table
+    .getCol(0)      // Get first column
+    .width(70);     // Set width 70 px
 ```
 
 {sample :width 690 :height 200}Table\_Layout\_01{sample}
@@ -69,11 +74,11 @@ Background for all the table can be configured with {api:anychart.core.ui.Table#
 
 #### Even and Odd Rows
 
-As a more advanced way of controlling table's background color there are parameters to adjust colors of even and/or odd row in the table. Parameter {api:anychart.core.ui.Table#cellEvenFill}**.cellEvenFill()**{api} is responsible for the background color of even rows and {api:anychart.core.ui.Table#cellOddFill}**.cellOddFill()**{api} is responsible for the background color of all odd rows.
+As a more advanced way of controlling table's background color there are parameters to adjust colors of even and/or odd row in the table. Parameter {api:anychart.ui.Table#rowEvenFill}**.rowEvenFill()**{api} is responsible for the background color of even rows and {api:anychart.ui.Table#rowOddFill}**.rowOddFill()**{api} is responsible for the background color of all odd rows.
 
 ```
-  table.cellOddFill('#F5F5F5');  // color for odd rows
-  table.cellEvenFill('#FFFFFF'); // color for even rows
+  table.rowOddFill('#F5F5F5');  // color for odd rows
+  table.rowEvenFill('#FFFFFF'); // color for even rows
 ```
 
 Here is the sample with "#FFFFFF" background color for all cells in even rows and "#F5F5F5" color for all cells in odd rows.
@@ -125,26 +130,24 @@ Sample below demonstrates setting gray stroke for the whole chart, set thickness
 
 {sample :width 690 :height 200}Table\_Layout\_04{sample}
 
-**Note:** As far as any cell has 4 borders, there is a way to control style for each of them. Parameters {api:anychart.core.ui.Table.Cell#topBorder}**.topBorder()**{api}, {api:anychart.core.ui.Table.Cell#leftBorder}**.leftBorder()**{api}, {api:anychart.core.ui.Table.Cell#bottomBorder}**.bottomBorder()**{api} and {api:anychart.core.ui.Table.Cell#rightBorder}**.rightBorder()**{api} controls style for each of 4 cell's border.
+**Note:** As far as any cell has 4 borders, there is a way to control style for each of them. Parameters {api:anychart.core.ui.table.Border#top}**.border().top()**{api}, {api:anychart.core.ui.table.Border#left}**.border().left()**{api}, {api:anychart.core.ui.table.Border#bottom}**.border().bottom()**{api} and {api:anychart.core.ui.table.Border#right}**.border().right()**{api} of the {api:anychart.ui.Table#getCell}**.getCell()**{api} method controls style for each of 4 cell's border.
   
   
-Moreover, there are 4 parameters to control each of the border for every cell in a table. {api:anychart.core.ui.Table#cellTopBorder}**.cellTopBorder()**{api}, {api:anychart.core.ui.Table#cellLeftBorder}**.cellLeftBorder()**{api}, {api:anychart.core.ui.Table#cellBottomBorder}**.cellBottomBorder()**{api} and {api:anychart.core.ui.Table#cellRightBorder}**.cellRightBorder()**{api} adjust style of a border for each cell in table.
+Moreover, there are 4 methods to control each of the border for every cell in the table. {api:anychart.core.ui.table.Border#top}**.top()**{api}, {api:anychart.core.ui.table.Border#left}**.left()**{api}, {api:anychart.core.ui.table.Border#bottom}**.bottom()**{api} and {api:anychart.core.ui.table.Border#right}**.right()**{api} of {api:anychart.ui.Table#cellBorder}.cellBorder(){api} adjust style of a border for each cell in table. Also, these four methods can be applied to {api:anychart.ui.Table#border}.border(){api} of the table for tuning any border of the table.
 
 ### Text Settings and Padding
 
-Table layout may contain simple text in several cells. For avoiding setting same parameters for several cells it is 
-more convenient to apply these parameters to the whole table with {api:anychart.core.ui.Table#cellTextFactory}**.cellTextFactory()**{api} parameter.
+Table layout may contain simple text in several cells. Text settings can be applied to the cell of the table or to the whole table. 
   
   
-Cells are not limited in content type and amount of data, which may lead to a problem of content sticking to the 
-cell's borders. For preventing such situations there is {api:anychart.core.ui.Table.Cell#padding}**.padding()**{api} parameter for controlling content position.
+Cells are not limited in content type and amount of data, which may lead to a problem of content sticking to the cell's borders. For preventing such situations there is {api:anychart.ui.Table#cellPadding}**.cellPadding()**{api} parameter for controlling content position.
   
 
-Sample below demonstrates controlling text settings and using padding  
+Sample below demonstrates controlling text settings and using padding for the whole table
 
 ```
-  table.cellTextFactory()
-    .padding(10)            // set 10px padding from each border of every cell
+  table
+    .cellPadding(10)        // set 10px padding from each border of every cell
     .vAlign('center')       // set vertical align of the text
     .hAlign('right')        // set horizontal align of the text
     .fontWeight(600)        // set text font weight
@@ -156,8 +159,7 @@ Sample below demonstrates controlling text settings and using padding
 
 ### Span
 
-In some cases it is desirable to enlarge a cell by uniting it with one or several cells from near by. 
-There are two parameters for spanning several cells into one. Parameter {api:anychart.core.ui.Table.Cell#rowSpan}**.rowSpan()**{api} unites the cell with cells below in the column and parameter {api:anychart.core.ui.Table.Cell#colSpan}**.colSpan()**{api} unites cells in the row on the right side from the cell.
+In some cases it is desirable to enlarge a cell by uniting it with one or several cells from nearby. There are two parameters for spanning several cells into one. Parameter {api:anychart.core.ui.table.Cell#rowSpan}**.rowSpan()**{api} unites the cell with cells below in the column and parameter {api:anychart.core.ui.table.Cell#colSpan}**.colSpan()**{api} unites cells in the row on the right side from the cell.
 
 ```
   // span cells
