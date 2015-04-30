@@ -139,13 +139,13 @@ Here we used 3 different layers to build each chart.
 ##Custom elements
 
 Besides the advantage of using layers, there's one more thing that you can do with the stage - add some custom elements, e.g. lines, curves, circles and other shapes, like in the following example:
+
+{sample}DB\_Stage\_06{sample}
+
+Here we considered the biocenosis of a fir-tree. We have put the pics of animals, drawn the fir-tree and the lines leading to the charts using the stage graphics, - you can find more about graphics in our [Graphics](../Graphics/Basics) tutorial.
  
 ```
 	// remove the first layer
     layer_1.remove();
 	
 ```
-{sample}DB\_Stage\_05{sample}
-
-
-
