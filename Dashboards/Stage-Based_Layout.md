@@ -136,6 +136,16 @@ Note that the center of the stage coordinate system is in the left top corner of
 
 Here we used 3 different layers to build each chart.
 
+##Custom elements
+
+Besides the advantage of using layers, there's one more thing that you can do with the stage - add some custom elements, e.g. lines, curves, circles and other shapes, like in the following example:
+ 
+```
+	// remove the first layer
+    layer_1.remove();
+	
+```
+{sample}DB\_Stage\_05{sample}
 
 
 

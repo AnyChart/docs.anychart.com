@@ -1,177 +1,358 @@
 {:tags []
      :is_new false
      :exports "chart"}
-	 
-anychart.onDocumentReady(function() {
+	 	 
+anychart.onDocumentReady(function(){
 
     // set stage
     stage = anychart.graphics.create('container');
     
-    stage.scale(0.7, 0.7, 0, 0);
     // set layers of stage
-    var layer_cube = stage.layer(); //layer for the cube
-    var layer_cylinder = stage.layer(); //layer for the cylinder
-    var layer_prism = stage.layer(); //layer for the hexagonal prism
-    var layer_main_shadow = stage.layer(); //layer for the big shadow under the figures 
-    var layer_5 = stage.layer();
+    var layer_jay = stage.layer(); // layer for the top of the fir-tree
+    var layer_woodpecker = stage.layer(); // layer for the middle of the fir-tree
+    var layer_squirrel = stage.layer(); // layer for the bottom of the fir-tree
+    var layer_beetle = stage.layer(); // layer for the grass
+    var layer_mouse = stage.layer(); // layer for the trunk
 
-    //creating the cube
-                
-    var rect = anychart.math.rect(50, 250, 100, 200); 
-    var fill = {keys:['#666','#888', '#ccc'], angle:135, mode:rect}; 
-    var rect_2 = anychart.math.rect(50, 200, 200, 100);     
-    var fill_2 = {keys:['#666','#666', '#ccc'], angle:185, mode:rect_2};  
-    
-    var cube_top = layer_cube.path().moveTo(200, 200)
-                .lineTo(300, 250)
-                .lineTo(150, 300)
-                .lineTo(50, 250)
+    //creating the fir-tree using graphics
+    var ft_top = layer_jay.path().moveTo(175, 100)
+                .lineTo(250, 200)
+                .lineTo(100, 200)
                 .close()
-                .fill(['#888', '#f0f0f0', '#f0f0f0'],150)
-                .stroke(fill_2,1);      
+                .fill(['#197419', '#005A00', '#005A00'],-90);
                 
-    var cube_side = layer_cube.path().moveTo(50, 250)
-                .lineTo(150, 300)
-                .lineTo(150, 450)
-                .lineTo(50, 400)
+        layer_jay.zIndex(10);
+                
+    var ft_middle = layer_woodpecker.path().moveTo(175, 125)
+                .lineTo(280, 300)
+                .lineTo(70, 300)
                 .close()
-                .fill(['#999','#f0f0f0', 'white'], 135)
-                .stroke(fill,1);
+                .fill(['#003C00', '#005A00'],-90);
                 
-    var cube_back = layer_cube.path().moveTo(150, 300)
-                .lineTo(300, 250)
-                .lineTo(300, 400)
-                .lineTo(150, 450)
-                .close()
-                .fill('#aaa')
-                .stroke('1px #666');
-                
-    layer_cube.zIndex(1);
-    
-    //the shadow on a separate layer
-    var cube_shadow_prism = layer_5.path().moveTo(231, 365)
-                .lineTo(360, 315)
-                .lineTo(390, 325)
-                .lineTo(310, 355)
-                .lineTo(258, 375)
-                .close()
-                .fill('#888')
-                .stroke('none');
-                
-    var prism_shadow = layer_5.path().moveTo(445,415)
-                .lineTo(850,550)
-                .lineTo(410,550)
-                .lineTo(265,485)
-                .close()
-                .fill(['#aaa','#ccc 0.5','white 0'],-90)
-                .stroke(null);
-                
-    layer_5.zIndex(5);
-    
-    
-    //creating the cylinder
-    var ellipse_top = layer_cylinder.ellipse(50,50,150,30)
-                .fill(['#f0f0f0', '#f0f0f0', '#aaa'],-30)
-                .zIndex(3);
-                
-    var ellipse_body = layer_cylinder.path().moveTo(-100, 50)
-                .lineTo(-100, 350)
-                .arcTo(150, 30, 180, -180)
-                .lineTo(200, 50)
-                .arcTo(-150, 30, 180, 180)
-                .close()
-                .fill(['white', '#aaa', '#888'],-40)
-                .stroke('1px black')
-                .zIndex(2);
-                
-    var ellipse_shadow_cube = layer_cylinder.path().moveTo(-45,375)
-                .lineTo(110,405)
-                .lineTo(315,373)
-                .lineTo(200,350)
-                .close()
-                .stroke(null)
-                .fill('#848484');
-                
-                
-    var ellipse_shadow_prism_top = layer_cylinder.path().moveTo(520,485)
-                .lineTo(680,517)
-                .lineTo(465,558)
-                .lineTo(300,523)
-                .fill('#888')
-                .stroke(null)
-                .close();
-                
-    var ellipse_shadow_prism_middle = layer_cylinder.path().moveTo(680,520)
-                .lineTo(750,592)
-                .lineTo(515,640)
-                .lineTo(465,560)
-                .fill('#898989')
-                .stroke(null)
-                .close();
-    
-    //moving the cylinder
-    layer_cylinder.translate(650,50);
-    
-    //scaling the cylinder
-    layer_cylinder.scale(0.3, 0.6, 0, 0);
-    
-    layer_cylinder.zIndex(3);
-    
-    
-    //creating the prism
-    
-    var prism_hex_edge = layer_prism.path().moveTo(200,400)
-                .lineTo(215,460)
-                .lineTo(265,485)
-                .lineTo(300,435)
-                .lineTo(285,385)
-                .lineTo(230,365)
-                .close()
-                .stroke('1px #444')
-                .fill('#aaa');
+        layer_woodpecker.zIndex(8);
         
-    var prism_top_edge = layer_prism.path().moveTo(230,365)
-                .lineTo(400,300)
-                .lineTo(455,320)
-                .lineTo(285,385)
-                .stroke('1px #666')
-                .fill('#aaa')
-                .close();
-
-    var prism_middle_edge = layer_prism.path().moveTo(285,385)
-                .lineTo(300,435)
-                .lineTo(470,365)
-                .stroke('1px #666')
-                .lineTo(455,320)
+        
+    var ft_bottom = layer_squirrel.path().moveTo(175, 200)
+                .lineTo(310, 400)
+                .lineTo(40, 400)
                 .close()
-                .fill('#929292');
-                   
-    var prism_bottom_edge = layer_prism.path().moveTo(300,435)
-                .lineTo(470,365)
-                .lineTo(445,415)
-                .lineTo(265,485)
-                .stroke('1px #777')
-                .close()
-                .fill('#848484');
+                .fill(['#003C00','#003C00', '#005A00'],-90);
                 
-    layer_prism.zIndex(1);            
+        layer_squirrel.zIndex(6);
+        
+    var trunk = layer_beetle.rect(135,400,80,100).fill('#8B5A2B');
+    layer_beetle.zIndex(6);
     
+    var grass = layer_mouse.path().moveTo(130,515)
+                .lineTo(115,500)
+                .lineTo(120,520)
+                .lineTo(100,505)
+                .lineTo(110,525)
+                .lineTo(90,515)
+                .lineTo(105,530)
                 
-    //creating the big shadow under everything
-    layer_main_shadow.path().moveTo(50,400)
-                .lineTo(445,415)
-                .lineTo(850,550)
-                .lineTo(350,550)
-                .close()
-                .stroke(null)
-                .fill(['#aaa','white'],270);
+                .moveTo(230,515)
+                .lineTo(245,500)
+                .lineTo(240,520)
+                .lineTo(260,505)
+                .lineTo(250,525)
+                .lineTo(270,515)
+                .lineTo(255,530)
+                .stroke('green');
+                
+    // picture for the jay            
+    var jay_pic = layer_jay.circle(400,90,40)
+                .fill({
+                    src: 'http://static.anychart.com/images/graphics_stage_demo/jay.jpg',
+                    mode: acgraph.vector.ImageFillMode.FILL
+                });
+                
+    // the data for jay            
+    var dataSet_jay = [
+        ["1", 4, 0, 0],
+        ["2", 2, 1, 0],
+        ["3", 2, 1, 0],
+        ["4", 2, 0, 0],
+        ["5", 3, 1, 1],
+        ["6", 1, 1, 0],
+        ["7", 2, 0, 1],
+        ["8", 4, 2, 0],
+        ["9", 5, 1, 1],
+        ["10", 3, 1, 0]
+    ];
 
-    //remove the cylinder layer
-    layer_cylinder.remove();
+    // create mapping list on one data set
+    var seriesData_jay = anychart.data.mapAsTable(dataSet_jay);
+
+    // create line chart
+    var jay_chart = anychart.lineChart.apply(null, seriesData_jay);
+    jay_chart.getSeries(0).name('comes').markers(null);
+    jay_chart.getSeries(1).name('eats').markers(null);
+    jay_chart.getSeries(2).name('mates').markers(null);
     
-    //remove the cube and shadows
-    layer_cube.remove();
-    layer_main_shadow.remove();
-    layer_5.removeChild(cube_shadow_prism);
+    jay_chart.minorGrid(null);
+    jay_chart.grid(0, null).grid(1, null);
+    
+    jay_chart.yScale().minimum('-0.1').maximum('5');
+    jay_chart.yScale().ticks().interval(1);
+    jay_chart.yAxis().drawFirstLabel(false);
+    jay_chart.xAxis(false);
+    
+    jay_chart.bounds(450, 40, 250, 100);
+    jay_chart.yAxis().minorTicks(false);
+    // jay_chart.yAxis().overlapMode(true);
+    jay_chart.yAxis().title().enabled(false);
+    jay_chart.xAxis().title().enabled(false);
+    jay_chart.title().enabled(false);
+    jay_chart.background(null);
+    // set container
+    jay_chart.container(layer_jay);
+
+    // initiate chart drawing
+    jay_chart.draw();
+    
+    //create a line
+    layer_jay.path().moveTo(210,150)
+        .lineTo(300,90)
+        .lineTo(370,90)
+        .zIndex(-1);
+    
+    
+    
+    // a pic for the woodpecker
+    var woodpecker_pic = layer_woodpecker.circle(400,205,40)
+                .fill({
+                    src: 'http://static.anychart.com/images/graphics_stage_demo/woodpecker.jpg',
+                    mode: acgraph.vector.ImageFillMode.FILL
+                });
+                
+                
+    var dataSet_woodpecker = [
+        ["1", 4, 4, 0],
+        ["2", 6, 5, 0],
+        ["3", 2, 1, 0],
+        ["4", 2, 2, 0],
+        ["5", 0, 0, 0],
+        ["6", 3, 2, 1],
+        ["7", 6, 3, 2],
+        ["8", 4, 0, 0],
+        ["9", 5, 1, 1],
+        ["10", 3, 0, 0]
+    ];
+
+    // create mapping list on one data set
+    var seriesData_woodpecker = anychart.data.mapAsTable(dataSet_woodpecker);
+
+    // create line chart
+    var woodpecker_chart = anychart.lineChart.apply(null, seriesData_woodpecker);
+    woodpecker_chart.getSeries(0).name('comes').markers(null);
+    woodpecker_chart.getSeries(1).name('eats').markers(null);
+    woodpecker_chart.getSeries(2).name('mates').markers(null);
+    
+    woodpecker_chart.minorGrid(null);
+    woodpecker_chart.grid(0, null).grid(1, null);
+    
+    woodpecker_chart.yScale().minimum('-0.1').maximum('6');
+    woodpecker_chart.yScale().ticks().interval(2);
+    woodpecker_chart.yAxis().drawFirstLabel(false);
+    woodpecker_chart.xAxis(false);
+    
+    woodpecker_chart.bounds(450, 155, 250, 100);
+    woodpecker_chart.yAxis().minorTicks(false);
+    // woodpecker_chart.yAxis().overlapMode(true);
+    woodpecker_chart.yAxis().title().enabled(false);
+    woodpecker_chart.xAxis().title().enabled(false);
+    woodpecker_chart.title().enabled(false);
+    woodpecker_chart.background(null);
+    // set container
+    woodpecker_chart.container(layer_woodpecker);
+
+    // initiate chart drawing
+    woodpecker_chart.draw();
+    
+    //create a line
+    layer_woodpecker.path().moveTo(250,250)
+        .lineTo(300,200)
+        .lineTo(370,200)
+        .zIndex(-1);
+        
+        
+    
+    
+    
+    // a pic for the squirrel
+    var squirrel_pic = layer_squirrel.circle(400,320,40)
+                .fill({
+                    src: 'http://static.anychart.com/images/graphics_stage_demo/sqirrel.jpg',
+                    mode: acgraph.vector.ImageFillMode.FILL
+                });
+                
+                
+    var dataSet_squirrel = [
+        ["1", 3, 1, 1],
+        ["2", 2, 1, 0],
+        ["3", 4, 1, 1],
+        ["4", 4, 2, 0],
+        ["5", 1, 0, 0],
+        ["6", 0, 0, 0],
+        ["7", 2, 0, 1],
+        ["8", 4, 2, 0],
+        ["9", 2, 1, 1],
+        ["10", 5, 1, 0]
+    ];
+
+    // create mapping list on one data set
+    var seriesData_squirrel = anychart.data.mapAsTable(dataSet_squirrel);
+
+    // create line chart
+    var squirrel_chart = anychart.lineChart.apply(null, seriesData_squirrel);
+    squirrel_chart.getSeries(0).name('comes').markers(null);
+    squirrel_chart.getSeries(1).name('eats').markers(null);
+    squirrel_chart.getSeries(2).name('mates').markers(null);
+    
+    squirrel_chart.minorGrid(null);
+    squirrel_chart.grid(0, null).grid(1, null);
+    
+    squirrel_chart.yScale().minimum('-0.1').maximum('5');
+    squirrel_chart.yScale().ticks().interval(1);
+    squirrel_chart.yAxis().drawFirstLabel(false);
+    squirrel_chart.xAxis(false);
+    
+    squirrel_chart.bounds(450, 270, 250, 100);
+    squirrel_chart.yAxis().minorTicks(false);
+    // squirrel_chart.yAxis().overlapMode(true);
+    squirrel_chart.yAxis().title().enabled(false);
+    squirrel_chart.xAxis().title().enabled(false);
+    squirrel_chart.title().enabled(false);
+    squirrel_chart.background(null);
+    // set container
+    squirrel_chart.container(layer_squirrel);
+
+    // initiate chart drawing
+    squirrel_chart.draw();
+    
+    //create a line
+    layer_squirrel.path().moveTo(260,325)
+        .lineTo(370,325)
+        .zIndex(-1);
+    
+    
+    
+    
+    
+    // a pic for the beetle
+    var beetle_pic = layer_beetle.circle(400,435,40)
+                .fill({
+                    src: 'http://static.anychart.com/images/graphics_stage_demo/beetle.jpg',
+                    mode: acgraph.vector.ImageFillMode.FILL
+                });
+                
+                
+    var dataSet_beetle = [
+        ["1", 4, 4],
+        ["2", 9, 7],
+        ["3", 7, 1],
+        ["4", 1, 5],
+        ["5", 0, 1],
+        ["6", 8, 3],
+        ["7", 0, 0],
+        ["8", 2, 6],
+        ["9", 7, 1],
+        ["10", 3, 0]
+    ];
+
+    // create mapping list on one data set
+    var seriesData_beetle = anychart.data.mapAsTable(dataSet_beetle);
+
+    // create line chart
+    var beetle_chart = anychart.lineChart.apply(null, seriesData_beetle);
+    beetle_chart.getSeries(0).name('comes').markers(null);
+    beetle_chart.getSeries(1).name('leaves').markers(null);
+    
+    beetle_chart.minorGrid(null);
+    beetle_chart.grid(0, null).grid(1, null);
+    
+    beetle_chart.yScale().minimum('-0.1').maximum('9');
+    beetle_chart.yScale().ticks().interval(1);
+    beetle_chart.yAxis().drawFirstLabel(false);
+    beetle_chart.xAxis(false);
+    
+    beetle_chart.bounds(450, 385, 250, 100);
+    beetle_chart.yAxis().minorTicks(false);
+    // beetle_chart.yAxis().overlapMode(true);
+    beetle_chart.yAxis().title().enabled(false);
+    beetle_chart.xAxis().title().enabled(false);
+    beetle_chart.title().enabled(false);
+    beetle_chart.background(null);
+    // set container
+    beetle_chart.container(layer_squirrel);
+
+    // initiate chart drawing
+    beetle_chart.draw();
+    
+    //create a line
+    layer_beetle.path().moveTo(210,435)
+        .lineTo(370,435)
+        .zIndex(-1);
+    
+    
+    
+    
+    // a pic for the mouse
+    var mouse_pic = layer_mouse.circle(400,550,40)
+                .fill({
+                    src: 'http://static.anychart.com/images/graphics_stage_demo/mouse.jpg',
+                    mode: acgraph.vector.ImageFillMode.FILL
+                });
+                
+                
+    var dataSet_mouse = [
+        ["1", 10, 2, 4],
+        ["2", 11, 3, 0],
+        ["3", 8, 4, 2],
+        ["4", 12, 0, 0],
+        ["5", 10, 6, 1],
+        ["6", 10, 5, 0],
+        ["7", 7, 0, 3],
+        ["8", 8, 1, 0],
+        ["9", 9, 1, 1],
+        ["10", 8, 1, 0]
+    ];
+
+    // create mapping list on one data set
+    var seriesData_mouse = anychart.data.mapAsTable(dataSet_mouse);
+
+    // create line chart
+    var mouse_chart = anychart.lineChart.apply(null, seriesData_mouse);
+    mouse_chart.getSeries(0).name('comes').markers(null);
+    mouse_chart.getSeries(1).name('eats').markers(null);
+    mouse_chart.getSeries(2).name('mates').markers(null);
+    
+    mouse_chart.minorGrid(null);
+    mouse_chart.grid(0, null).grid(1, null);
+    
+    mouse_chart.yScale().minimum('-0.1').maximum('12');
+    mouse_chart.yScale().ticks().interval(1);
+    mouse_chart.yAxis().drawFirstLabel(false);
+    mouse_chart.xAxis(false);
+    
+    mouse_chart.bounds(450, 500, 250, 100);
+    mouse_chart.yAxis().minorTicks(false);
+    // mouse_chart.yAxis().overlapMode(true);
+    mouse_chart.yAxis().title().enabled(false);
+    mouse_chart.xAxis().title().enabled(false);
+    mouse_chart.title().enabled(false);
+    mouse_chart.background(null);
+    // set container
+    mouse_chart.container(layer_squirrel);
+
+    // initiate chart drawing
+    mouse_chart.draw();
+    
+    //create a line
+    layer_mouse.path().moveTo(210,500)
+        .lineTo(300,500)
+        .lineTo(370,570)
+        .zIndex(-1);    
 
 });
