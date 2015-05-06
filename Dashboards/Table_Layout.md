@@ -35,8 +35,6 @@ Visual settings control:
  * Fill
  * Border
  * Cols and rows span
- * Entire column
- * Entire row
 
 ### Fill
 
