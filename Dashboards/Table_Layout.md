@@ -41,25 +41,6 @@ Visual settings control:
  * Cols and rows span
  * Entire column
  * Entire row
-<!--
-### Cells Width and Height
-
-Table layout consist of multiple cells and each of them may contain different type of information. In most cases same kind of data placed in one row or one column. Anychart provides {api:anychart.ui.Table#getRow}**.getRow()**{api} method for working with a row and {api:anychart.ui.Table#getCol}**.getCol()**{api} method for working with a column of the table. Use {api:anychart.core.ui.table.Row#height}.height(){api} method to set height of the row and {api:anychart.core.ui.table.Column#width}.width(){api} to set width of the column.
-  
-  
-Sample below demonstrates height controlling of the first row and width of the first column.
-
-```
-  table
-    .getRow(0)      // Get first row
-    .height(40);    // Set height 40px
-  
-  table
-    .getCol(0)      // Get first column
-    .width(70);     // Set width 70 px
-```
-
-{sample :width 690 :height 200}Table\_Layout\_01{sample}-->
 
 ### Fill
 
