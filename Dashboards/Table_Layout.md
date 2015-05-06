@@ -3,11 +3,7 @@
 * [Overview](#overview)
 * [Acceptable Content](#acceptable_content)
 * [Visual Settings](#visual_settings)
-<!--  * [Cells Width and Height](#cells_width_and_height)-->
   * [Fill](#fill)
-<!--    * [Table Fill](#table_fill)
-  * [Even and Odd Rows](#even_and_odd_rows)
-  * [Cell Fill](#cell_fill)-->
   * [Row Settings](#row_settings)
   * [Column Settings](#column_settings)
   * [Border](#border)
@@ -57,7 +53,7 @@ Background for all the table can be configured with {api:anychart.core.ui.Table#
   table.cellFill('#E1E1E1');
 ```
 
-{sample :width 690 :height 200}Table\_Layout\_02{sample}
+{sample :width 690 :height 200}Table\_Layout\_01{sample}
 
 #### Even and Odd Rows
 
@@ -70,7 +66,7 @@ As a more advanced way of controlling table's background color there are paramet
 
 Here is the sample with "#FFFFFF" background color for all cells in even rows and "#F5F5F5" color for all cells in odd rows.
 
-{sample :width 690 :height 200}Table\_Layout\_03{sample}
+{sample :width 690 :height 200}Table\_Layout\_02{sample}
 
 #### Cell Fill
 
@@ -95,7 +91,7 @@ In most cases it is required to adjust settings for all cells in a row. For inst
 
 These settings makes the color of first row slightly darker and bold all the text in the row.
 
-{sample :width 690 :height 200}Table\_Layout\_16{sample}
+{sample :width 690 :height 200}Table\_Layout\_03{sample}
 
 ### Column Settings
 
@@ -110,7 +106,7 @@ You can adjust settings for a particular column as easy as you do it for a row. 
 
 We use such settings to set fixed width for the first column, make this column a bit darker and bold all the text in the column.
 
-{sample :width 690 :height 200}Table\_Layout\_17{sample}
+{sample :width 690 :height 200}Table\_Layout\_04{sample}
 
 ### Border
 
@@ -146,7 +142,7 @@ Sample below demonstrates setting gray stroke for the whole chart, set thickness
   });
 ```
 
-{sample :width 690 :height 200}Table\_Layout\_04{sample}
+{sample :width 690 :height 200}Table\_Layout\_05{sample}
 
 **Note:** As far as any cell has 4 borders, there is a way to control style for each of them. Parameters {api:anychart.core.ui.table.Border#top}**.border().top()**{api}, {api:anychart.core.ui.table.Border#left}**.border().left()**{api}, {api:anychart.core.ui.table.Border#bottom}**.border().bottom()**{api} and {api:anychart.core.ui.table.Border#right}**.border().right()**{api} of the {api:anychart.ui.Table#getCell}**.getCell()**{api} method controls style for each of 4 cell's borders.
   
@@ -173,7 +169,7 @@ Sample below demonstrates controlling text settings and using padding for the wh
     .fontColor('#86cf38');  // set text font color
 ```
 
-{sample :width 690 :height 200}Table\_Layout\_05{sample}
+{sample :width 690 :height 200}Table\_Layout\_06{sample}
 
 ### Span
 
@@ -191,7 +187,7 @@ In some cases it is desirable to enlarge a cell by uniting it with one or severa
 
 Sample below demonstrates connection of two cells in first row into one and connection of cells in first column according to season.
 
-{sample :width 690 :height 200}Table\_Layout\_06{sample}
+{sample :width 690 :height 200}Table\_Layout\_07{sample}
 
 ## Using Table
 
@@ -199,7 +195,7 @@ Sample below demonstrates connection of two cells in first row into one and conn
 
 As far as title on a dashboard contains the main idea of a dashboard, it is vital to configure it's visual appearance. Here is a sample with simple title at the top of the dashboard and table layout dashboard below.
 
-{sample :width 690 :height 300}Table\_Layout\_07{sample}
+{sample :width 690 :height 300}Table\_Layout\_08{sample}
 
 ### Header Row
 
@@ -208,7 +204,7 @@ Title may represent information for the whole dashboard, but for parts of dashbo
   
 Here is a sample with text settings, applied only for the first (head) row of a table layout dashboard.
 
-{sample :width 690 :height 300}Table\_Layout\_08{sample}
+{sample :width 690 :height 300}Table\_Layout\_09{sample}
 
 ### Common Elements
 
@@ -219,4 +215,4 @@ common scale may be used in comparative purposes.
   
 Here is a sample of table layout dashboard with all bullet charts using same scale and custom axis uses the scale as well.
 
-{sample :width 690 :height 325}Table\_Layout\_09{sample}
+{sample :width 690 :height 325}Table\_Layout\_10{sample}

@@ -38,9 +38,7 @@ anychart.onDocumentReady(function() {
     ['HR', 96],
     ['Problem Tracking', 93]
   ]);
-  
-  // content for first row
-  var contents = [['Last 12 Month', 'System', 'Availability %', null]];
+  var contents = [];
   
   
   // Table settings
@@ -66,14 +64,6 @@ anychart.onDocumentReady(function() {
   table.cellBorder('#B8B8B8');
   table.getCol(1).width(130);
   table.getCol(3).width(50);
-  table.getCell(0,2).colSpan(2).fontColor('#FFF').hAlign('right');
-  table.getRow(0)
-    .height(20)
-    .cellFill('#444444')
-    .fontColor('#FFF')
-    .cellBorder('#444444')
-    .border()
-      .bottom('2 #B8B8B8');
   
   // visual settings for text in table
   table.vAlign('center').hAlign('center').fontWeight(600).fontSize(12);
@@ -116,6 +106,7 @@ anychart.onDocumentReady(function() {
     bullet.scale(anychart.scales.linear().minimum(85).maximum(100)).padding(0).margin(10);
     return bullet;
   }
+  
   
   // create legend
   var legend = anychart.ui.legend();
