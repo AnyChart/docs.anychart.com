@@ -3,8 +3,13 @@
 * [Overview](#overview)
 * [Acceptable Content](#acceptable_content)
 * [Visual Settings](#visual_settings)
-  * [Cells Width and Height](#cells_width_and_height)
+<!--  * [Cells Width and Height](#cells_width_and_height)-->
   * [Fill](#fill)
+    * [Table Fill](#table_fill)
+    * [Even and Odd Rows](#even_and_odd_rows)
+    * [Cell Fill](#cell_fill)
+  * [Row Settings](#row_settings)
+  * [Column Settings](#column_settings)
   * [Border](#border)
   * [Text Settings and Padding](#text_settings_and_padding)
   * [Span](#span)
@@ -30,12 +35,13 @@ A cell in table layout dashboard may contain:
 ## Visual Settings
 
 Visual settings control:
- * Columns width and rows height
  * Cell padding & text settings
  * Fill
  * Border
  * Cols and rows span
-
+ * Entire column
+ * Entire row
+<!--
 ### Cells Width and Height
 
 Table layout consist of multiple cells and each of them may contain different type of information. In most cases same kind of data placed in one row or one column. Anychart provides {api:anychart.ui.Table#getRow}**.getRow()**{api} method for working with a row and {api:anychart.ui.Table#getCol}**.getCol()**{api} method for working with a column of the table. Use {api:anychart.core.ui.table.Row#height}.height(){api} method to set height of the row and {api:anychart.core.ui.table.Column#width}.width(){api} to set width of the column.
@@ -53,14 +59,14 @@ Sample below demonstrates height controlling of the first row and width of the f
     .width(70);     // Set width 70 px
 ```
 
-{sample :width 690 :height 200}Table\_Layout\_01{sample}
+{sample :width 690 :height 200}Table\_Layout\_01{sample}-->
 
 ### Fill
 
-With AnyChart it is possible to color background of any cell with a solid color, with a gradient transition or fill it with an image. It can be achieved with {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter.
+With AnyChart it is possible to color background of any cell with a solid color, with a gradient transition or fill it with an image. It can be achieved with {api:anychart.ui.Table#cellFill}**.cellFill()**{api} method.
   
   
-This section contains information on colorizing the whole table and each of the cells separately. To find out all possible ways of controlling background color of an element, please see [background controlling](../Appearance_Settings/Background) tutorial
+This section contains information on colorizing the whole table and each of the cells separately. To find out all possible ways of controlling background color, please see [Fill tutorial](../Appearance_Settings/Fill).
 
 #### Table fill
 
@@ -90,9 +96,40 @@ Here is the sample with "#FFFFFF" background color for all cells in even rows an
 For emphasizing attention on one of the cells, it can be colorized in unique way. Background color of a certain cell is controlled by parameter {api:anychart.graphics.vector.Fill}**.fill()**{api}. and it should be applied to the cell itself.
 
 ```
-  var cell = table.getCell(0,1);  // Get first row in second column
+  var cell = table.getCell(0,1);  // Get a cell from the first row in second column
   cell.fill('#E0E43A');           // Set gold color as a background for the cell
 ```
+
+### Row Settings
+
+In most cases it is required to adjust settings for all cells in a row. For instance, each cell of the first row can contain some explanations for every column of the table. Use .getRow() method to tune visual appearance of the whole row.
+
+```
+  // get the first row
+  var headerRow = table.getRow(0);
+  
+  // set style for the first row
+  headerRow.height(40).cellFill('#F5F5F5').fontWeight(900);
+```
+
+These settings makes the color of first row slightly darker and bold all the text in the row.
+
+{sample :width 690 :height 200}Table\_Layout\_16{sample}
+
+### Column Settings
+
+You can adjust settings for a particular column as easy as you do it for a row. Use .getCol() method to tune all the cells in the column.
+
+```
+  table.getCol(0)         // settings for the first column
+    .width(70)            // set width of the column
+    .cellFill('#F5F5F5')  // set background color for all cells in the column
+    .fontWeight(900);     // bold text in every cell of the column
+```
+
+We use such settings to set fixed width for the first column, make this column a bit darker and bold all the text in the column.
+
+{sample :width 690 :height 200}Table\_Layout\_17{sample}
 
 ### Border
 
@@ -130,10 +167,10 @@ Sample below demonstrates setting gray stroke for the whole chart, set thickness
 
 {sample :width 690 :height 200}Table\_Layout\_04{sample}
 
-**Note:** As far as any cell has 4 borders, there is a way to control style for each of them. Parameters {api:anychart.core.ui.table.Border#top}**.border().top()**{api}, {api:anychart.core.ui.table.Border#left}**.border().left()**{api}, {api:anychart.core.ui.table.Border#bottom}**.border().bottom()**{api} and {api:anychart.core.ui.table.Border#right}**.border().right()**{api} of the {api:anychart.ui.Table#getCell}**.getCell()**{api} method controls style for each of 4 cell's border.
+**Note:** As far as any cell has 4 borders, there is a way to control style for each of them. Parameters {api:anychart.core.ui.table.Border#top}**.border().top()**{api}, {api:anychart.core.ui.table.Border#left}**.border().left()**{api}, {api:anychart.core.ui.table.Border#bottom}**.border().bottom()**{api} and {api:anychart.core.ui.table.Border#right}**.border().right()**{api} of the {api:anychart.ui.Table#getCell}**.getCell()**{api} method controls style for each of 4 cell's borders.
   
   
-Moreover, there are 4 methods to control each of the border for every cell in the table. {api:anychart.core.ui.table.Border#top}**.top()**{api}, {api:anychart.core.ui.table.Border#left}**.left()**{api}, {api:anychart.core.ui.table.Border#bottom}**.bottom()**{api} and {api:anychart.core.ui.table.Border#right}**.right()**{api} of {api:anychart.ui.Table#cellBorder}.cellBorder(){api} adjust style of a border for each cell in table. Also, these four methods can be applied to {api:anychart.ui.Table#border}.border(){api} of the table for tuning any border of the table.
+Moreover, there are 4 methods to control each of the border for every cell in the table. {api:anychart.core.ui.table.Border#top}**.top()**{api}, {api:anychart.core.ui.table.Border#left}**.left()**{api}, {api:anychart.core.ui.table.Border#bottom}**.bottom()**{api} and {api:anychart.core.ui.table.Border#right}**.right()**{api} of {api:anychart.ui.Table#cellBorder}**.cellBorder()**{api} adjust style of a border for each cell in table. Also, these four methods can be applied to {api:anychart.ui.Table#border}.border(){api} of the table for tuning any border of the table.
 
 ### Text Settings and Padding
 
@@ -168,13 +205,12 @@ In some cases it is desirable to enlarge a cell by uniting it with one or severa
   table.getCell(0,0).colSpan(2);  // span 2 cells 
 
   table.getCell(1,1).colSpan(2);  // span 2 cells in the row
-  table.getCell(0, 0).rowSpan(3); // span 3 cells in the column
+  table.getCell(0,0).rowSpan(3);  // span 3 cells in the column
 ```
 
 Sample below demonstrates connection of two cells in first row into one and connection of cells in first column according to season.
 
 {sample :width 690 :height 200}Table\_Layout\_06{sample}
-
 
 ## Using Table
 
@@ -184,12 +220,9 @@ As far as title on a dashboard contains the main idea of a dashboard, it is vita
 
 {sample :width 690 :height 300}Table\_Layout\_07{sample}
 
-
 ### Header Row
 
-Title may represent information for the whole dashboard, but for parts of dashboard it may require to format several 
-titles. One of the most convenient way of configuring titles is setting desirable configuration for the first row of 
-the table layout. 
+Title may represent information for the whole dashboard, but for parts of dashboard it may require to format several titles. One of the most convenient way of configuring titles is setting desirable configuration for [the first row](#row_settings) of the table layout. 
   
   
 Here is a sample with text settings, applied only for the first (head) row of a table layout dashboard.
