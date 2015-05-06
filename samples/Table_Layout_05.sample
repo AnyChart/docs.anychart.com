@@ -50,7 +50,7 @@ anychart.onDocumentReady(function() {
   
   // adjust text visual appearance
   table
-    .cellPadding(10)
+    .cellPadding(5)
     .vAlign('center')
     .hAlign('right')
     .fontWeight(600)
