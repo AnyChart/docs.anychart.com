@@ -5,9 +5,9 @@
 * [Visual Settings](#visual_settings)
 <!--  * [Cells Width and Height](#cells_width_and_height)-->
   * [Fill](#fill)
-    * [Table Fill](#table_fill)
+<!--    * [Table Fill](#table_fill)
     * [Even and Odd Rows](#even_and_odd_rows)
-    * [Cell Fill](#cell_fill)
+    * [Cell Fill](#cell_fill)-->
   * [Row Settings](#row_settings)
   * [Column Settings](#column_settings)
   * [Border](#border)
