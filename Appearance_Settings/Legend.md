@@ -157,11 +157,11 @@ When you are working with line and spline chart you may use markers to distingui
 
 Here is a sample with different settings for a marker of legend item.
 
-{sample}AS\_Legend\_08{sample}
+{sample}AS\_Legend\_12{sample}
 
 ### Tooltip
 
-If you want to configure legend tooltips - you should do that using {api:anychart.core.ui.Legend#tooltip}**.tooltip(){api} methods. You can tune its visual appearance and format. In the following sample we will format tooltips of the legend to show detailed description information.
+If you want to configure legend tooltips - you should do that using {api:anychart.core.ui.Legend#tooltip}**.tooltip()**{api} methods. You can tune its visual appearance and format. In the following sample we will format tooltips of the legend to show detailed description information.
 
 {sample}AS\_Legend\_08{sample}
 
