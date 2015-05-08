@@ -11,11 +11,12 @@
  * [Paging](#paging)
  * [Marker Symbol](#marker_symbol)
 * [Series Management](#series_management)
+* [Tooltip](#tooltip)
 * [Custom Item](#custom_item)
 * [Custom Legend](#custom_legend)
 
 ## Overview
-Legend is a table on a chart listing and explaining the symbols and colors used and with additional information that helps user to understand a chart. 
+Legend is a table on a chart listing and explaining the symbols and colors used and with additional information that helps user to understand a chart.
   
   
 In this article all legends features and setting are explained and demonstrated.
@@ -158,17 +159,18 @@ Here is a sample with different settings for a marker of legend item.
 
 {sample}AS\_Legend\_08{sample}
 
+### Tooltip
+
+If you want to configure legend tooltips - you should do that using {api:anychart.core.ui.Legend#tooltip}**.tooltip(){api} methods. You can tune its visual appearance and format. In the following sample we will format tooltips of the legend to show detailed description information.
+
+{sample}AS\_Legend\_08{sample}
+
 ## Series Management
 
 You can easily control series of the chart using chart legend. You can hide and show any of the series by clicking on the legend items. Here is a sample of column chart with four series. One of the series is already disabled. Click on the last legend item to show hidden series. 
 
 {sample}AS\_Legend\_09{sample}
 
-<!--
-### Tooltip
-
-If you want to configure legend tooltips - you should do that using {api:anychart.core.ui.Legend#tooltip}**.tooltip(){api} methods. You can tune its visual appearance and format. In the following sample we will format tooltips to show detailed description information.
--->
 ## Custom Item
 
 When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.ui.Legend#itemsFormatter}**itemsFormatter()**{api} method. 
