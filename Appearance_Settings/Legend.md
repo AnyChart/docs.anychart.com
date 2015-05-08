@@ -157,19 +157,19 @@ When you are working with line and spline chart you may use markers to distingui
 
 Here is a sample with different settings for a marker of legend item.
 
-{sample}AS\_Legend\_12{sample}
+{sample}AS\_Legend\_08{sample}
 
 ### Tooltip
 
 If you want to configure legend tooltips - you should do that using {api:anychart.core.ui.Legend#tooltip}**.tooltip()**{api} methods. You can tune its visual appearance and format. In the following sample we will format tooltips of the legend to show detailed description information.
 
-{sample}AS\_Legend\_08{sample}
+{sample}AS\_Legend\_09{sample}
 
 ## Series Management
 
 You can easily control series of the chart using chart legend. You can hide and show any of the series by clicking on the legend items. Here is a sample of column chart with four series. One of the series is already disabled. Click on the last legend item to show hidden series. 
 
-{sample}AS\_Legend\_09{sample}
+{sample}AS\_Legend\_10{sample}
 
 ## Custom Item
 
@@ -189,10 +189,10 @@ chart.legend()
 
 In the sample chart below we've used custom item that adds *Total* data to legend.
 
-{sample}AS\_Legend\_10{sample}
+{sample}AS\_Legend\_11{sample}
 
 ## Custom Legend
 
 AnyChart sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart. 
 
-{sample}AS\_Legend\_11{sample}
+{sample}AS\_Legend\_12{sample}
