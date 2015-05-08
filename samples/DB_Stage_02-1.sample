@@ -7,8 +7,6 @@ anychart.onDocumentReady(function() {
     // set stage
     stage = anychart.graphics.create('container');
 
-//chart 1 
-
 	// set data
 	var data_1 = anychart.data.set([
 		['Green' , 10000, 30],
@@ -19,16 +17,13 @@ anychart.onDocumentReady(function() {
 	]);
 
 	// set data
-	var seriesData_1 = data_1.mapAs({x: [0], value: [1], fill: [3]});
+	var seriesData_1 = data_1.mapAs({x: [0], value: [1]});
 	var seriesData_2 = data_1.mapAs({x: [0], value: [2]});
-	var series_1_1 = chart_1.column(seriesData_1);
-	var series_1_2 = chart_1.column(seriesData_2);
 	
 	// set chart_1
     var chart_1 = anychart.column();
     
-    // set chart series
-    chart_1.column(seriesData_1);
+	var series_1_1 = chart_1.column(seriesData_1);
     
     //create scale for line series and extraYAxis
     //it force line series to not stuck values with over series
