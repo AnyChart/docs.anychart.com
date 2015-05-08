@@ -91,6 +91,10 @@ These settings makes the color of first row slightly darker and bold all the tex
 
 {sample :width 690 :height 200}Table\_Layout\_03{sample}
 
+#### Height
+
+Default height of the table is the height of the table's container. Fixed height of the table can be set using **.height()** parameter. If you want to have flexible table consider using **.minHeight()** and **.maxHeight()** methods. Moreover, these methods can be set for a row of the table.
+
 ### Column Settings
 
 You can adjust settings for a particular column as easy as you do it for a row. Use .getCol() method to tune all the cells in the column.
@@ -105,6 +109,10 @@ You can adjust settings for a particular column as easy as you do it for a row. 
 We use such settings to set fixed width for the first column, make this column a bit darker and bold all the text in the column.
 
 {sample :width 690 :height 200}Table\_Layout\_04{sample}
+
+#### Width
+
+Default width of the table is the width of the container. Fixed width of the table can be set using **.width()** parameter. If you want to have flexible table consider using **.minWidth()** and **.maxWidth()** methods. Moreover, these methods can be set for a column of the table.
 
 ### Border
 
