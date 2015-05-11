@@ -77,7 +77,7 @@ For emphasizing attention on one of the cells, it can be colorized in unique way
 
 ### Row Settings
 
-In most cases it is required to adjust settings for all cells in a row. For instance, each cell of the first row can contain some explanations for every column of the table. Use .getRow() method to tune visual appearance of the whole row.
+In most cases it is required to adjust settings for all cells in a row. For instance, each cell of the first row can contain some explanations for every column of the table. Use {api:anychart.ui.Table#getRow}**.getRow()**{api} method to tune visual appearance of the whole row.
 
 ```
   // get the first row
@@ -93,11 +93,11 @@ These settings makes the color of first row slightly darker and bold all the tex
 
 #### Height
 
-Default height of the table is the height of the table's container. Fixed height of the table can be set using **.height()** parameter. If you want to have flexible table consider using **.minHeight()** and **.maxHeight()** methods. Moreover, these methods can be set for a row of the table.
+Default height of the table is the height of the table's container. Fixed height of the table can be set using {api:anychart.core.ui.Table#height}**.height()**{api} parameter. If you want to have flexible table consider using {api:anychart.core.ui.Table#minHeight}**.minHeight()**{api} and {api:anychart.core.ui.Table#maxHeight}**.maxHeight()**{api} methods. Moreover, {api:anychart.core.ui.table.Row#height}**.height()**{api}, {api:anychart.core.ui.table.Row#minHeight}**.minHeight()**{api} and {api:anychart.core.ui.table.Row#maxHeight}**.maxHeight()**{api} methods can be set for each row of a table.
 
 ### Column Settings
 
-You can adjust settings for a particular column as easy as you do it for a row. Use .getCol() method to tune all the cells in the column.
+You can adjust settings for a particular column as easy as you do it for a row. Use {api:anychart.ui.Table#getCol}.getCol(){api} method to tune all the cells in the column.
 
 ```
   table.getCol(0)         // settings for the first column
@@ -112,7 +112,7 @@ We use such settings to set fixed width for the first column, make this column a
 
 #### Width
 
-Default width of the table is the width of the container. Fixed width of the table can be set using **.width()** parameter. If you want to have flexible table consider using **.minWidth()** and **.maxWidth()** methods. Moreover, these methods can be set for a column of the table.
+Default width of the table is the width of the container. Fixed width of the table can be set using {api:anychart.ui.Table#width}**.width()**{api} parameter. If you want to have flexible table consider using {api:anychart.ui.Table#minWidth}**.minWidth()**{api} and {api:anychart.ui.Table#maxWidth}**.maxWidth()**{api} methods. Moreover, {api:anychart.core.ui.table.Column#width}**.width()**{api}, {api:anychart.core.ui.table.Column#minWidth}**.minWidth()**{api} and {api:anychart.core.ui.table.Column#maxWidth}**.maxWidth()**{api} methods can be set for any column of a table.
 
 ### Border
 
