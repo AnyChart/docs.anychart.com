@@ -97,7 +97,7 @@ Default height of the table is the height of the table's container. Fixed height
 
 ### Column Settings
 
-You can adjust settings for a particular column as easy as you do it for a row. Use {api:anychart.ui.Table#getCol}.getCol(){api} method to tune all the cells in the column.
+You can adjust settings for a particular column as easy as you do it for a row. Use {api:anychart.ui.Table#getCol}**.getCol()**{api} method to tune all the cells in the column.
 
 ```
   table.getCol(0)         // settings for the first column
