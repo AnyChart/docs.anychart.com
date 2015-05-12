@@ -153,7 +153,7 @@ Sample below demonstrates setting gray stroke for the whole chart, set thickness
 **Note:** As far as any cell has 4 borders, there is a way to control style for each of them. Parameters {api:anychart.core.ui.table.Border#top}**.border().top()**{api}, {api:anychart.core.ui.table.Border#left}**.border().left()**{api}, {api:anychart.core.ui.table.Border#bottom}**.border().bottom()**{api} and {api:anychart.core.ui.table.Border#right}**.border().right()**{api} of the {api:anychart.ui.Table#getCell}**.getCell()**{api} method controls style for each of 4 cell's borders.
   
   
-Moreover, there are 4 methods to control each of the border for every cell in the table. {api:anychart.core.ui.table.Border#top}**.top()**{api}, {api:anychart.core.ui.table.Border#left}**.left()**{api}, {api:anychart.core.ui.table.Border#bottom}**.bottom()**{api} and {api:anychart.core.ui.table.Border#right}**.right()**{api} of {api:anychart.ui.Table#cellBorder}**.cellBorder()**{api} adjust style of a border for each cell in table. Also, these four methods can be applied to {api:anychart.ui.Table#border}.border(){api} of the table for tuning any border of the table.
+Moreover, there are 4 methods to control each of the border for every cell in the table. {api:anychart.core.ui.table.Border#top}**.top()**{api}, {api:anychart.core.ui.table.Border#left}**.left()**{api}, {api:anychart.core.ui.table.Border#bottom}**.bottom()**{api} and {api:anychart.core.ui.table.Border#right}**.right()**{api} of {api:anychart.ui.Table#cellBorder}**.cellBorder()**{api} adjust style of a border for each cell in table. Also, these four methods can be applied to {api:anychart.ui.Table#border}**.border()**{api} of the table for tuning any border of the table.
 
 ### Text Settings and Padding
 
