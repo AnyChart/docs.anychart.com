@@ -70,7 +70,7 @@ anychart.onDocumentReady(function() {
 
 	// set chart_2
 	var chart_2 = anychart.pie(data_2);
-//	chart_2.radius(70);
+	chart_2.radius(105);
 	chart_2.innerRadius('30%');
 	chart_2.fill('aquastyle');
 	chart_2.labels().fontSize(12);

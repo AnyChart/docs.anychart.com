@@ -2,6 +2,7 @@
      :is_new false
      :exports "chart"}
 	 	 
+	 	 
 anychart.onDocumentReady(function() {
 
     // set stage
@@ -48,7 +49,7 @@ anychart.onDocumentReady(function() {
 	chart_1.title('Popular Tea Types in the Tea House in May 2015');
 
 	// chart size and position
-	chart_1.bounds(0, 0, 420, 500);
+	chart_1.bounds(0, 0, 420, 450);
 
 	// draw
 	chart_1.container(stage).draw();
@@ -83,7 +84,7 @@ anychart.onDocumentReady(function() {
 	chart_2.legend().position('right');
 
 	// chart size and position
-	chart_2.bounds(420, 0, 245, 220);
+	chart_2.bounds(420, 0, 245, 200);
 
 	// draw
 	chart_2.container(stage).draw();
@@ -104,7 +105,7 @@ anychart.onDocumentReady(function() {
 	chart_3.title('The most popular daytimes');
 
 	// chart size and position
-	chart_3.bounds(420, 220, 245, 280);
+	chart_3.bounds(420, 200, 245, 250);
 	
     // axes names
     chart_3.yAxis().title('Sales');
