@@ -2,6 +2,7 @@
      :is_new false
      :exports "chart"}
 	 	 
+	 	 
 anychart.onDocumentReady(function() {
 
     // set stage
@@ -70,17 +71,21 @@ anychart.onDocumentReady(function() {
 
 	// set chart_2
 	var chart_2 = anychart.pie(data_2);
-	chart_2.radius(105);
+	chart_2.radius('45%');
 	chart_2.innerRadius('30%');
 	chart_2.fill('aquastyle');
 	chart_2.labels().fontSize(12);
+	chart_2.labels().adjustFontSize();
 	chart_2.labels().fontFamily('Georgia');
 	
 	chart_2.labels().fontColor('black');
 	chart_2.title('Confectionery sold in Tea House in May 2015');
 	
-	chart_2.legend().itemsLayout('vertical');
-	chart_2.legend().position('right');
+	chart_2.legend(false);
+//	chart_2.legend().itemsLayout('vertical');
+//	chart_2.legend().position('right');	
+//	chart_2.legend().height('60%');
+//	chart_2.legend().width('30%');
 
 	// chart size and position
 	chart_2.bounds('60%', 0, '35%', '40%');
@@ -101,7 +106,7 @@ anychart.onDocumentReady(function() {
 
 	// set chart_2
 	var chart_3 = anychart.bar(data_3);
-	chart_3.title('The most popular daytimes');
+	chart_3.title('The most popular hours');
 
 	// chart size and position
 	chart_3.bounds('60%', '40%', '35%', '60%');
