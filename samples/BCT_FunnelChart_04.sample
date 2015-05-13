@@ -32,6 +32,8 @@ anychart.onDocumentReady(function() {
       '<br><b>Quantity</b>: '+this.value;
   });
   
+  chart.title().text('Labels and Tooltip Settings');
+  
   // draw chart
   chart.container('container').draw();
 });

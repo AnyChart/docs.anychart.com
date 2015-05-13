@@ -22,6 +22,8 @@ anychart.onDocumentReady(function() {
     .hatchFill('diagonalbrick', 'darkred')    // set hatch type and color
     .hoverHatchFill('diagonalbrick', 'gold'); // adjust hatch type and color on hover
   
+  chart.title().text('Visualization');
+  
   // draw chart
   chart.container('container').draw();
 });

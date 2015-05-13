@@ -14,6 +14,8 @@ anychart.onDocumentReady(function() {
   
   // disable padding between parts of the chart
   chart.pointsPadding(0);
+  
+  chart.title().text('Disabled Padding');
 
   // draw chart
   chart.container('container').draw();

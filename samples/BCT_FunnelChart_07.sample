@@ -24,6 +24,8 @@ anychart.onDocumentReady(function() {
     return 'Hatch fill type\n'+this.name;
   });
   
+  chart.title().text('HatchFill Settings');
+  
   // draw chart
   chart.container('container').draw();
 });

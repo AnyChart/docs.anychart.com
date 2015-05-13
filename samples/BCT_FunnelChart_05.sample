@@ -25,6 +25,8 @@ anychart.onDocumentReady(function() {
     {name: 'Textbooks', value: 90000}
   ]);
   
+  chart.title().text('Marker Settings');
+  
   // draw chart
   chart.container('container').draw();
 });
