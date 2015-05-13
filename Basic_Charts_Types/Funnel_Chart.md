@@ -4,20 +4,18 @@
 * [Chart](#chart)
 * [Padding](#padding)
 * [Visualization](#visualization)
- * [Basic Sample](#basic_sample)
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Markers](#markers)
 * [Colors](#colors)
-  * [Colorizing Elements](#colorizing_elements)
 * [Hatch Fills](#hatch_fills)
 
 ## Overview
 
-Funnel charts are so-called Accumulation charts and they show percentage ratio. Funnel charts are often used to represent stages in a sales process and show the amount of potential revenue for each stage. This type of chart can also be useful in identifying potential problem areas in an organization’s sales processes. A funnel chart is similar to a stacked percent bar chart.
+Funnel charts are so-called Accumulation charts and they show percentage ratio. Funnel charts are often used to represent stages in a sales process and show the amount of potential revenue for each stage. This type of chart can also be useful in identifying potential problem areas in an organization’s sales processes. A funnel chart is similar to a [stacked percent column chart](../Basic_Charts_Types/Percent_Stacked_Bar-Column_Charts).
 
 ## Chart
 
-To create Funnel chart with AnyChart you have to set **.funnel()** method.
+To create Funnel chart with AnyChart you have to set {api:anychart#funnel}**.funnel()**{api} method.
 
 ```
 var chart = anychart.funnel();
@@ -71,7 +69,7 @@ You can see the funnel chart with this configuration below.
 
 ## Padding
 
-As you can see, each part of a funnel is separated from another with some space. The space between each part of funnel chart is controlled by a **.pointPadding()** parameter. Next sample of funnel chart has no spacing.
+As you can see, each part of a funnel is separated from another with some space. The space between each part of funnel chart is controlled by a {api:anychart.charts.Funnel#pointsPadding}**.pointsPadding()**{api} parameter. Next sample of funnel chart has no spacing.
 
 ```
   chart.pointSpacing(0);  // disable spacing between parts of the chart
@@ -81,25 +79,23 @@ Here is how the funnel chart without spacing looks like.
 
 {sample}BCT\_FunnelChart\_02{sample}
 
+*Note:* for controlling width of the funnel consider using {api:anychart.charts.Funnel#neckWidth}**.neckWidth()**{api} and {api:anychart.charts.Funnel#headWidth}**.headWidth()**{api} parameters to control each part of a funnel or {api:anychart.charts.Funnel#width}**.width()**{api} parameter to control the width of the whole funnel. Height of the funnel is controlled by {api:anychart.charts.Funnel#height}**.height()**{api} and {api:anychart.charts.Funnel#neckHeight}**.neckHeight()**{api} parameters.
+
 ## Visualization
 
-In this section we will describe main parts of funnel chart visualization and ways to adjust it. Visual appearances of funnels are defined using certain methods. For funnels chart the main thing is the **.fill()** method.
-
-### Basic Sample
-
-Now, let's look how to change the look of an Area. Here is a basic sample:
+In this section we will describe main parts of funnel chart visualization and ways to adjust it. Let's look how to apply a simple style to the chart.
 
 ```
   // define chart type and set data
   var chart = anychart.funnel(data);
   
   chart
-    .fill('gold')
-    .hoverFill('darkred')
-    .stroke('darkred')
-    .hoverStroke('gold')
-    .hatchFill('diagonalbrick', 'darkred')
-    .hoverHatchFill('diagonalbrick', 'gold');
+    .fill('gold')                             // set chart inner color
+    .hoverFill('darkred')                     // chart inner color on hover
+    .stroke('darkred')                        // chart stroke
+    .hoverStroke('gold')                      // chart stroke on hover
+    .hatchFill('diagonalbrick', 'darkred')    // set hatch type and color
+    .hoverHatchFill('diagonalbrick', 'gold'); // adjust hatch type and color on hover
 ```
 
 Using such settings we've created a funnel colored in Gold, dark red border and set DiagonalBrick hatch fill. Also, we've defined that when the funnel is hovered it's hatch will be highlighted with gold and the chart will be filled with dark red. Now let's apply this style to the chart:
@@ -109,7 +105,7 @@ Using such settings we've created a funnel colored in Gold, dark red border and 
 ## Labels and Tooltips
 
 In this section we will explain how to add and configure funnel labels and tooltips.
-Method **.labels()** is responsible for labels configuration and method **.tooltip()** controls tooltips of the funnel. With the following example let's make data labels appear to the right from the funnel using {api:anychart.enums.FunnelLabelsPosition}**position()**{api} method, format them to show name and value corresponding to the part of the funnel and force tooltips to show detailed description.
+Method {api:anychart.charts.Funnel#labels}**.labels()**{api} is responsible for labels configuration and method {api:anychart.charts.Funnel#tooltip}**.tooltip()**{api} controls tooltips of the funnel. With the following example let's make data labels appear to the right from the funnel using {api:anychart.enums.FunnelLabelsPosition}**position()**{api} method, format them to show name and value corresponding to the part of the funnel and force tooltips to show detailed description.
 
 {sample}BCT\_FunnelChart\_04{sample}
 
@@ -158,7 +154,10 @@ Let's demonstrate how to apply different colors to different parts of funnel. To
 
 ## Hatch Fills
 
-AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see Hatch tutorial tutorial. To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have funnel chart with 10 points in it. For every point we've applied different hatch fills parameter. That’s how we did it in our code:
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch tutorial](../Appearance_Settings/Hatch_Fill). 
+  
+  
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have funnel chart with 10 points in it. For every point we've applied different hatch fills parameter. That’s how we did it in our code:
 
 ```
   var chart = anychart.pieChart([

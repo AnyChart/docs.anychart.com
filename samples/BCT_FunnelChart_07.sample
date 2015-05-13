@@ -16,7 +16,7 @@ anychart.onDocumentReady(function() {
     {value: 199, hatchFill: 'dashedhorizontal', name: 'dashedhorizontal'},
     {value: 297, hatchFill: 'plaid', name: 'plaid'},
     {value: 317, hatchFill: 'weave', name: 'weave'}
-  ]).stroke(null).fill('#EEE');
+  ]).stroke('#888').fill('#EEE');
   
   chart.labels().enabled(false);
   
