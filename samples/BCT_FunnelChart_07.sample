@@ -5,20 +5,24 @@
 anychart.onDocumentReady(function() {
   
   // define chart type and set data
-  var chart = anychart.pieChart([
-    {value: 232, hatchFill: 'diagonalcross', fill: '#EEE', stroke: null},
-    {value: 224, hatchFill: 'zigzag', fill: '#EEE', stroke: null},
-    {value: 252, hatchFill: 'horizontal', fill: '#EEE', stroke: null},
-    {value: 219, hatchFill: 'vertical', fill: '#EEE', stroke: null},
-    {value: 169, hatchFill: 'dashedbackwarddiagonal', fill: '#EEE', stroke: null},
-    {value: 217, hatchFill: 'grid', fill: '#EEE', stroke: null},
-    {value: 175, hatchFill: 'dashedforwarddiagonal', fill: '#EEE', stroke: null},
-    {value: 199, hatchFill: 'dashedhorizontal', fill: '#EEE', stroke: null},
-    {value: 297, hatchFill: 'plaid', fill: '#EEE', stroke: null},
-    {value: 317, hatchFill: 'weave', fill: '#EEE', stroke: null}
-  ]);
+  var chart = anychart.funnel([
+    {value: 232, hatchFill: 'diagonalcross', name: 'diagonalcross'},
+    {value: 224, hatchFill: 'zigzag', name: 'zigzag'},
+    {value: 252, hatchFill: 'horizontal', name: 'horizontal'},
+    {value: 219, hatchFill: 'vertical', name: 'vertical'},
+    {value: 169, hatchFill: 'dashedbackwarddiagonal', name: 'dashedbackwarddiagonal'},
+    {value: 217, hatchFill: 'grid', name: 'grid'},
+    {value: 175, hatchFill: 'dashedforwarddiagonal', name: 'dashedforwarddiagonal'},
+    {value: 199, hatchFill: 'dashedhorizontal', name: 'dashedhorizontal'},
+    {value: 297, hatchFill: 'plaid', name: 'plaid'},
+    {value: 317, hatchFill: 'weave', name: 'weave'}
+  ]).stroke(null).fill('#EEE');
   
   chart.labels().enabled(false);
+  
+  chart.tooltip().contentFormatter(function(){
+    return 'Hatch fill type\n'+this.name;
+  });
   
   // draw chart
   chart.container('container').draw();

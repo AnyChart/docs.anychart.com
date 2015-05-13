@@ -162,17 +162,17 @@ AnyChart technology allows printing charts out. Some printers may render colors 
 
 ```
   var chart = anychart.pieChart([
-    // point value  hatch fill type                      inner color   disable border
-    {value: 232,    hatchFill: 'diagonalcross',          fill: '#EEE', stroke: null},
-    {value: 224,    hatchFill: 'zigzag',                 fill: '#EEE', stroke: null},
-    {value: 252,    hatchFill: 'horizontal',             fill: '#EEE', stroke: null},
-    {value: 219,    hatchFill: 'vertical',               fill: '#EEE', stroke: null},
-    {value: 169,    hatchFill: 'dashedbackwarddiagonal', fill: '#EEE', stroke: null},
-    {value: 217,    hatchFill: 'grid',                   fill: '#EEE', stroke: null},
-    {value: 175,    hatchFill: 'dashedforwarddiagonal',  fill: '#EEE', stroke: null},
-    {value: 199,    hatchFill: 'dashedhorizontal',       fill: '#EEE', stroke: null},
-    {value: 297,    hatchFill: 'plaid',                  fill: '#EEE', stroke: null},
-    {value: 317,    hatchFill: 'weave',                  fill: '#EEE', stroke: null}
+    // point value   hatch fill type
+    {value: 232,    hatchFill: 'diagonalcross'},
+    {value: 224,    hatchFill: 'zigzag'},
+    {value: 252,    hatchFill: 'horizontal'},
+    {value: 219,    hatchFill: 'vertical'},
+    {value: 169,    hatchFill: 'dashedbackwarddiagonal'},
+    {value: 217,    hatchFill: 'grid'},
+    {value: 175,    hatchFill: 'dashedforwarddiagonal'},
+    {value: 199,    hatchFill: 'dashedhorizontal'},
+    {value: 297,    hatchFill: 'plaid'},
+    {value: 317,    hatchFill: 'weave'}
   ]);
 ```
 
