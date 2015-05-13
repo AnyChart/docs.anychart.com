@@ -2,11 +2,15 @@
      :is_new false
      :exports "chart"}
 	 	 
-anychart.onDocumentReady(function(){
-
+anychart.onDocumentReady(function () {
     // set stage
     stage = anychart.graphics.create('container');
-    
+
+    // set colors for sample
+    var textColor = '#7c868e';
+    var lineColor = '#CECECE';
+    var chart_palette = anychart.palettes.distinctColors().colors(['#bc7c63', '#6594ad', '#585953']);
+
     // set layers of stage
     var layer_jay = stage.layer(); // layer for the top of the fir-tree
     var layer_woodpecker = stage.layer(); // layer for the middle of the fir-tree
@@ -16,59 +20,197 @@ anychart.onDocumentReady(function(){
 
     //creating the fir-tree using graphics
     var ft_top = layer_jay.path().moveTo(175, 100)
-                .lineTo(250, 200)
-                .lineTo(100, 200)
-                .close()
-                .fill(['#197419', '#005A00', '#005A00'],-90);
-                
-        layer_jay.zIndex(10);
-                
+            .lineTo(250, 200)
+            .lineTo(100, 200)
+            .close()
+            .zIndex(1)
+            .fill(['#197419', '#005A00', '#005A00'], -90);
+
+    var ft_top_under = layer_jay
+            .rect(100, 200, 150, 20)
+            .stroke(null)
+            .zIndex(0)
+        //  .fill(175,150,100,100,['black','black 0']);
+            .fill(['black 0.5', '#003800 0.2', '#003800 0'], -90);
+
+    ft_top_under.visible(false);
+
+    ft_top.listen('mouseOver', function () {
+        ft_top_under.visible(true);
+    });
+
+    ft_top.listen('mouseOut', function () {
+        ft_top_under.visible(false);
+    });
+
+    layer_jay.zIndex(10);
+
     var ft_middle = layer_woodpecker.path().moveTo(175, 125)
-                .lineTo(280, 300)
-                .lineTo(70, 300)
-                .close()
-                .fill(['#003C00', '#005A00'],-90);
-                
-        layer_woodpecker.zIndex(8);
-        
-        
+            .lineTo(280, 300)
+            .lineTo(70, 300)
+            .zIndex(1)
+            .close()
+            .fill(['#003C00', '#005A00'], -90);
+
+
+    var ft_middle_under = layer_woodpecker
+            .rect(70, 300, 210, 20)
+            .stroke(null)
+            .zIndex(0)
+        //  .fill(175,150,100,100,['black','black 0']);
+            .fill(['black 0.5', '#003800 0.2', '#003800 0'], -90);
+
+    ft_middle_under.visible(false);
+
+    ft_middle.listen('mouseOver', function () {
+        ft_middle_under.visible(true);
+    });
+
+    ft_middle.listen('mouseOut', function () {
+        ft_middle_under.visible(false);
+    });
+
+    layer_woodpecker.zIndex(8);
+
+
     var ft_bottom = layer_squirrel.path().moveTo(175, 200)
-                .lineTo(310, 400)
-                .lineTo(40, 400)
-                .close()
-                .fill(['#003C00','#003C00', '#005A00'],-90);
-                
-        layer_squirrel.zIndex(6);
-        
-    var trunk = layer_beetle.rect(135,400,80,100).fill('#8B5A2B');
-    layer_beetle.zIndex(6);
+            .lineTo(310, 400)
+            .lineTo(40, 400)
+            .close()
+            .zIndex(1)
+            .fill(['#003C00', '#003C00', '#005A00'], -90);
+
+
+    var ft_bottom_under = layer_squirrel
+            .rect(40, 400, 270, 20)
+            .stroke(null)
+            .zIndex(0)
+        //  .fill(175,150,100,100,['black','black 0']);
+            .fill(['black 0.5', '#003800 0.2', '#003800 0'], -90);
+
+    ft_bottom_under.visible(false);
+
+    ft_bottom.listen('mouseOver', function () {
+        ft_bottom_under.visible(true);
+    });
+
+    ft_bottom.listen('mouseOut', function () {
+        ft_bottom_under.visible(false);
+    });
+
+    layer_squirrel.zIndex(6);
+
+    var trunk = layer_beetle.rect(135, 400, 80, 100)
+            .zIndex(1)
+            .fill('#8B5A2B');
+
+    var ft_trunk_under = layer_beetle
+            .rect(135, 500, 80, 20)
+            .stroke(null)
+            .zIndex(0)
+        //  .fill(175,150,100,100,['black','black 0']);
+            .fill(['black 0.5', '#003800 0.2', '#003800 0'], -90);
+
+    ft_trunk_under.visible(false);
+
+    trunk.listen('mouseOver', function () {
+        ft_trunk_under.visible(true);
+    });
+
+    trunk.listen('mouseOut', function () {
+        ft_trunk_under.visible(false);
+    });
+
+    layer_beetle.zIndex(4);
+
+    var grass = layer_mouse.path().moveTo(130, 515)
+            .lineTo(115, 500)
+            .lineTo(120, 520)
+            .lineTo(100, 505)
+            .lineTo(110, 525)
+            .lineTo(90, 515)
+            .lineTo(105, 530)
+
+            .moveTo(230, 515)
+            .lineTo(245, 500)
+            .lineTo(240, 520)
+            .lineTo(260, 505)
+            .lineTo(250, 525)
+            .lineTo(270, 515)
+            .lineTo(255, 530)
+            .stroke('green');
+            
+            
+    var getLegend = function (items) {
+            var legend = anychart.ui.legend();
+            legend.fontSize('11px');
+            legend.fontFamily("'Verdana', Helvetica, Arial, sans-serif");
+            legend.itemsLayout('horizontal');
+            legend.fontColor(textColor);
+            legend.iconTextSpacing(0);
+            legend.align('right');
+            legend.position('bottom');
+            legend.padding(0);
+            legend.margin(0, 0, 7, 0);
+            legend.itemsSpacing(3);
+            legend.title().enabled(false);
+            legend.titleSeparator().enabled(false);
+            legend.paginator().enabled(false);
+            legend.background().enabled(false);
+            legend.items(items);
+            return legend
+        };
+    var chartLegend = getLegend([
+        {'index': 0, 'text': 'Comes', 'iconType': 'square', 'iconStroke': 'none', 'iconFill': '#bc7c63'},
+        {'index': 1, 'text': 'Eats', 'iconType': 'square', 'iconStroke': 'none', 'iconFill': '#6594ad'},
+        {'index': 2, 'text': 'Mates', 'iconType': 'square', 'iconStroke': 'none', 'iconFill': '#585953'}
+    ]);
     
-    var grass = layer_mouse.path().moveTo(130,515)
-                .lineTo(115,500)
-                .lineTo(120,520)
-                .lineTo(100,505)
-                .lineTo(110,525)
-                .lineTo(90,515)
-                .lineTo(105,530)
-                
-                .moveTo(230,515)
-                .lineTo(245,500)
-                .lineTo(240,520)
-                .lineTo(260,505)
-                .lineTo(250,525)
-                .lineTo(270,515)
-                .lineTo(255,530)
-                .stroke('green');
-                
-    // picture for the jay            
-    var jay_pic = layer_jay.circle(400,90,40)
-                .fill({
-                    src: 'http://static.anychart.com/images/graphics_stage_demo/jay.jpg',
-                    mode: acgraph.vector.ImageFillMode.FILL
-                });
-                
-    // the data for jay            
-    var dataSet_jay = [
+    chartLegend.container(layer_squirrel).draw();
+    
+
+    var draw_chart = function(container, data, bounds, l){
+        var chart = anychart.line();
+        chart.palette(chart_palette);
+        var comes_data = data.mapAs({x: [0], value: [1]});
+        chart.line(comes_data).markers(null);
+        var eats_data = data.mapAs({x: [0], value: [2]});
+        chart.line(eats_data).markers(null);
+        var mates_data = data.mapAs({x: [0], value: [3]});
+        chart.line(mates_data).markers(null);
+        chart.background(null);
+        chart.bounds(bounds);
+        chart.title().enabled(false);
+        chart.grid().enabled(false);
+        chart.minorGrid().enabled(false);
+        chart.grid(1).enabled(false);
+        chart.minorGrid(1).enabled(false);
+        chart.yScale().minimum('-0.1').maximum('12');
+        chart.yScale().ticks().interval(4);
+        chart.yAxis().stroke(lineColor);
+        chart.yAxis().ticks().stroke(lineColor);
+        chart.yAxis().title(false);
+        chart.yAxis().minorTicks(false);
+        chart.yAxis().labels().textSettings({
+                    fontFamily: "'Verdana', Helvetica, Arial, sans-serif",
+                    fontWeight: 'normal',
+                    fontSize: '11px',
+                    fontColor: textColor});
+        chart.yAxis().drawFirstLabel(false);
+        chart.xAxis(false);
+        chart.container(container);
+        chart.draw();
+    };
+
+    // jay
+    layer_jay.circle(400, 90, 40)
+            .stroke(lineColor)
+            .fill({
+                src: 'http://static.anychart.com/images/graphics_stage_demo/jay.jpg',
+                mode: acgraph.vector.ImageFillMode.FILL
+            });
+    layer_jay.text(350, 135, 'Garrulus glandarius').color(textColor);
+    var dataSet_jay = anychart.data.set([
         ["1", 4, 0, 0],
         ["2", 2, 1, 0],
         ["3", 2, 1, 0],
@@ -79,55 +221,23 @@ anychart.onDocumentReady(function(){
         ["8", 4, 2, 0],
         ["9", 5, 1, 1],
         ["10", 3, 1, 0]
-    ];
+    ]);
+    draw_chart(layer_jay, dataSet_jay, [450, 40, 250, 100], true);
+    layer_jay.path().moveTo(210, 150)
+            .stroke(lineColor)
+            .lineTo(300, 90)
+            .lineTo(370, 90)
+            .zIndex(-1);
 
-    // create mapping list on one data set
-    var seriesData_jay = anychart.data.mapAsTable(dataSet_jay);
-
-    // create line chart
-    var jay_chart = anychart.lineChart.apply(null, seriesData_jay);
-    jay_chart.getSeries(0).name('comes').markers(null);
-    jay_chart.getSeries(1).name('eats').markers(null);
-    jay_chart.getSeries(2).name('mates').markers(null);
-    
-    jay_chart.minorGrid(null);
-    jay_chart.grid(0, null).grid(1, null);
-    
-    jay_chart.yScale().minimum('-0.1').maximum('5');
-    jay_chart.yScale().ticks().interval(1);
-    jay_chart.yAxis().drawFirstLabel(false);
-    jay_chart.xAxis(false);
-    
-    jay_chart.bounds(450, 40, 250, 100);
-    jay_chart.yAxis().minorTicks(false);
-    // jay_chart.yAxis().overlapMode(true);
-    jay_chart.yAxis().title().enabled(false);
-    jay_chart.xAxis().title().enabled(false);
-    jay_chart.title().enabled(false);
-    jay_chart.background(null);
-    // set container
-    jay_chart.container(layer_jay);
-
-    // initiate chart drawing
-    jay_chart.draw();
-    
-    //create a line
-    layer_jay.path().moveTo(210,150)
-        .lineTo(300,90)
-        .lineTo(370,90)
-        .zIndex(-1);
-    
-    
-    
-    // a pic for the woodpecker
-    var woodpecker_pic = layer_woodpecker.circle(400,205,40)
-                .fill({
-                    src: 'http://static.anychart.com/images/graphics_stage_demo/woodpecker.jpg',
-                    mode: acgraph.vector.ImageFillMode.FILL
-                });
-                
-                
-    var dataSet_woodpecker = [
+    // woodpecker
+    layer_woodpecker.circle(400, 205, 40)
+            .stroke(lineColor)
+            .fill({
+                src: 'http://static.anychart.com/images/graphics_stage_demo/woodpecker.jpg',
+                mode: acgraph.vector.ImageFillMode.FILL
+            });
+    layer_woodpecker.text(350, 250, 'Dendrocopos analis').color(textColor);
+    var dataSet_woodpecker = anychart.data.set([
         ["1", 4, 4, 0],
         ["2", 6, 5, 0],
         ["3", 2, 1, 0],
@@ -138,57 +248,24 @@ anychart.onDocumentReady(function(){
         ["8", 4, 0, 0],
         ["9", 5, 1, 1],
         ["10", 3, 0, 0]
-    ];
+    ]);
+    layer_woodpecker.path().moveTo(250, 250)
+            .stroke(lineColor)
+            .lineTo(300, 200)
+            .lineTo(370, 200)
+            .zIndex(-1);
+    draw_chart(layer_woodpecker, dataSet_woodpecker, [450, 155, 250, 100], false);
 
-    // create mapping list on one data set
-    var seriesData_woodpecker = anychart.data.mapAsTable(dataSet_woodpecker);
 
-    // create line chart
-    var woodpecker_chart = anychart.lineChart.apply(null, seriesData_woodpecker);
-    woodpecker_chart.getSeries(0).name('comes').markers(null);
-    woodpecker_chart.getSeries(1).name('eats').markers(null);
-    woodpecker_chart.getSeries(2).name('mates').markers(null);
-    
-    woodpecker_chart.minorGrid(null);
-    woodpecker_chart.grid(0, null).grid(1, null);
-    
-    woodpecker_chart.yScale().minimum('-0.1').maximum('6');
-    woodpecker_chart.yScale().ticks().interval(2);
-    woodpecker_chart.yAxis().drawFirstLabel(false);
-    woodpecker_chart.xAxis(false);
-    
-    woodpecker_chart.bounds(450, 155, 250, 100);
-    woodpecker_chart.yAxis().minorTicks(false);
-    // woodpecker_chart.yAxis().overlapMode(true);
-    woodpecker_chart.yAxis().title().enabled(false);
-    woodpecker_chart.xAxis().title().enabled(false);
-    woodpecker_chart.title().enabled(false);
-    woodpecker_chart.background(null);
-    // set container
-    woodpecker_chart.container(layer_woodpecker);
-
-    // initiate chart drawing
-    woodpecker_chart.draw();
-    
-    //create a line
-    layer_woodpecker.path().moveTo(250,250)
-        .lineTo(300,200)
-        .lineTo(370,200)
-        .zIndex(-1);
-        
-        
-    
-    
-    
-    // a pic for the squirrel
-    var squirrel_pic = layer_squirrel.circle(400,320,40)
-                .fill({
-                    src: 'http://static.anychart.com/images/graphics_stage_demo/sqirrel.jpg',
-                    mode: acgraph.vector.ImageFillMode.FILL
-                });
-                
-                
-    var dataSet_squirrel = [
+    // squirrel
+    layer_squirrel.circle(400, 320, 40)
+            .stroke(lineColor)
+            .fill({
+                src: 'http://static.anychart.com/images/graphics_stage_demo/sqirrel.jpg',
+                mode: acgraph.vector.ImageFillMode.FILL
+            });
+    layer_squirrel.text(360, 365, 'Sciurus vulgaris').color(textColor);
+    var dataSet_squirrel = anychart.data.set([
         ["1", 3, 1, 1],
         ["2", 2, 1, 0],
         ["3", 4, 1, 1],
@@ -199,56 +276,22 @@ anychart.onDocumentReady(function(){
         ["8", 4, 2, 0],
         ["9", 2, 1, 1],
         ["10", 5, 1, 0]
-    ];
+    ]);
+    draw_chart(layer_squirrel, dataSet_squirrel, [450, 270, 250, 100], false);
+    layer_squirrel.path().moveTo(260, 325)
+            .stroke(lineColor)
+            .lineTo(370, 325)
+            .zIndex(-1);
 
-    // create mapping list on one data set
-    var seriesData_squirrel = anychart.data.mapAsTable(dataSet_squirrel);
-
-    // create line chart
-    var squirrel_chart = anychart.lineChart.apply(null, seriesData_squirrel);
-    squirrel_chart.getSeries(0).name('comes').markers(null);
-    squirrel_chart.getSeries(1).name('eats').markers(null);
-    squirrel_chart.getSeries(2).name('mates').markers(null);
-    
-    squirrel_chart.minorGrid(null);
-    squirrel_chart.grid(0, null).grid(1, null);
-    
-    squirrel_chart.yScale().minimum('-0.1').maximum('5');
-    squirrel_chart.yScale().ticks().interval(1);
-    squirrel_chart.yAxis().drawFirstLabel(false);
-    squirrel_chart.xAxis(false);
-    
-    squirrel_chart.bounds(450, 270, 250, 100);
-    squirrel_chart.yAxis().minorTicks(false);
-    // squirrel_chart.yAxis().overlapMode(true);
-    squirrel_chart.yAxis().title().enabled(false);
-    squirrel_chart.xAxis().title().enabled(false);
-    squirrel_chart.title().enabled(false);
-    squirrel_chart.background(null);
-    // set container
-    squirrel_chart.container(layer_squirrel);
-
-    // initiate chart drawing
-    squirrel_chart.draw();
-    
-    //create a line
-    layer_squirrel.path().moveTo(260,325)
-        .lineTo(370,325)
-        .zIndex(-1);
-    
-    
-    
-    
-    
-    // a pic for the beetle
-    var beetle_pic = layer_beetle.circle(400,435,40)
-                .fill({
-                    src: 'http://static.anychart.com/images/graphics_stage_demo/beetle.jpg',
-                    mode: acgraph.vector.ImageFillMode.FILL
-                });
-                
-                
-    var dataSet_beetle = [
+    // beetle
+    layer_beetle.circle(400, 435, 40)
+            .stroke(lineColor)
+            .fill({
+                src: 'http://static.anychart.com/images/graphics_stage_demo/beetle.jpg',
+                mode: acgraph.vector.ImageFillMode.FILL
+            });
+    layer_beetle.text(340, 480, 'Dendroctonus ponderosae').color('grey');
+    var dataSet_beetle = anychart.data.set([
         ["1", 4, 4],
         ["2", 9, 7],
         ["3", 7, 1],
@@ -259,54 +302,22 @@ anychart.onDocumentReady(function(){
         ["8", 2, 6],
         ["9", 7, 1],
         ["10", 3, 0]
-    ];
-
-    // create mapping list on one data set
-    var seriesData_beetle = anychart.data.mapAsTable(dataSet_beetle);
-
-    // create line chart
-    var beetle_chart = anychart.lineChart.apply(null, seriesData_beetle);
-    beetle_chart.getSeries(0).name('comes').markers(null);
-    beetle_chart.getSeries(1).name('leaves').markers(null);
-    
-    beetle_chart.minorGrid(null);
-    beetle_chart.grid(0, null).grid(1, null);
-    
-    beetle_chart.yScale().minimum('-0.1').maximum('9');
-    beetle_chart.yScale().ticks().interval(1);
-    beetle_chart.yAxis().drawFirstLabel(false);
-    beetle_chart.xAxis(false);
-    
-    beetle_chart.bounds(450, 385, 250, 100);
-    beetle_chart.yAxis().minorTicks(false);
-    // beetle_chart.yAxis().overlapMode(true);
-    beetle_chart.yAxis().title().enabled(false);
-    beetle_chart.xAxis().title().enabled(false);
-    beetle_chart.title().enabled(false);
-    beetle_chart.background(null);
-    // set container
-    beetle_chart.container(layer_squirrel);
-
-    // initiate chart drawing
-    beetle_chart.draw();
-    
-    //create a line
+    ]);
+    draw_chart(layer_beetle, dataSet_beetle, [450, 385, 250, 100], false);
     layer_beetle.path().moveTo(210,435)
+        .stroke(lineColor)
         .lineTo(370,435)
         .zIndex(-1);
-    
-    
-    
-    
-    // a pic for the mouse
-    var mouse_pic = layer_mouse.circle(400,550,40)
-                .fill({
-                    src: 'http://static.anychart.com/images/graphics_stage_demo/mouse.jpg',
-                    mode: acgraph.vector.ImageFillMode.FILL
-                });
-                
-                
-    var dataSet_mouse = [
+
+    // mouse
+    layer_mouse.circle(400, 550, 40)
+            .stroke(lineColor)
+            .fill({
+                src: 'http://static.anychart.com/images/graphics_stage_demo/mouse.jpg',
+                mode: acgraph.vector.ImageFillMode.FILL
+            });
+    layer_mouse.text(355, 595, 'Apodemus uralensis').color(textColor);
+    var dataSet_mouse = anychart.data.set([
         ["1", 10, 2, 4],
         ["2", 11, 3, 0],
         ["3", 8, 4, 2],
@@ -317,42 +328,12 @@ anychart.onDocumentReady(function(){
         ["8", 8, 1, 0],
         ["9", 9, 1, 1],
         ["10", 8, 1, 0]
-    ];
-
-    // create mapping list on one data set
-    var seriesData_mouse = anychart.data.mapAsTable(dataSet_mouse);
-
-    // create line chart
-    var mouse_chart = anychart.lineChart.apply(null, seriesData_mouse);
-    mouse_chart.getSeries(0).name('comes').markers(null);
-    mouse_chart.getSeries(1).name('eats').markers(null);
-    mouse_chart.getSeries(2).name('mates').markers(null);
-    
-    mouse_chart.minorGrid(null);
-    mouse_chart.grid(0, null).grid(1, null);
-    
-    mouse_chart.yScale().minimum('-0.1').maximum('12');
-    mouse_chart.yScale().ticks().interval(1);
-    mouse_chart.yAxis().drawFirstLabel(false);
-    mouse_chart.xAxis(false);
-    
-    mouse_chart.bounds(450, 500, 250, 100);
-    mouse_chart.yAxis().minorTicks(false);
-    // mouse_chart.yAxis().overlapMode(true);
-    mouse_chart.yAxis().title().enabled(false);
-    mouse_chart.xAxis().title().enabled(false);
-    mouse_chart.title().enabled(false);
-    mouse_chart.background(null);
-    // set container
-    mouse_chart.container(layer_squirrel);
-
-    // initiate chart drawing
-    mouse_chart.draw();
-    
-    //create a line
-    layer_mouse.path().moveTo(210,500)
-        .lineTo(300,500)
-        .lineTo(370,570)
-        .zIndex(-1);    
+    ]);
+    draw_chart(layer_mouse, dataSet_mouse, [450, 500, 250, 100], false);
+    layer_mouse.path().moveTo(210, 500)
+            .stroke(lineColor)
+            .lineTo(300, 500)
+            .lineTo(370, 570)
+            .zIndex(-1);
 
 });

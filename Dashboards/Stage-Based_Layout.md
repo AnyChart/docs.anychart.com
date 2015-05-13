@@ -147,7 +147,7 @@ Here we used 3 different layers to build each chart.
 
 Besides the advantage of using layers, there's one more thing that you can do with the stage - add some custom elements, e.g. lines, curves, circles and other shapes, like in the following example:
 
-{sample}DB\_Stage\_06{sample}
+{sample :width 688 :height 700}DB\_Stage\_06{sample}
 
 Here we considered the biocenosis of a fir-tree. We have put the pics of animals, drawn the fir-tree and the lines leading to the charts using the stage graphics, - you can find more about graphics in our [Graphics](../Graphics/Basics) tutorial.
  
@@ -156,3 +156,15 @@ Here we considered the biocenosis of a fir-tree. We have put the pics of animals
     layer_1.remove();
 	
 ```
+
+##Print
+
+To print the whole dashboard just add the {api}**.print()**{api} method to your stage. It will look like the following:
+
+```
+	// print
+    stage.print();
+	
+```
+
+{sample}DB\_Stage\_07{sample}
