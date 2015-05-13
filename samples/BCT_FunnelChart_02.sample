@@ -16,6 +16,9 @@ anychart.onDocumentReady(function() {
   chart.pointsPadding(0);
   
   chart.title().text('Disabled Padding');
+  
+  // set fixed width for the funnel
+  chart.headWidth(300).neckWidth(75);
 
   // draw chart
   chart.container('container').draw();
