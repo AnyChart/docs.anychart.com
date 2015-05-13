@@ -79,7 +79,7 @@ Here is how the funnel chart without spacing looks like.
 
 {sample}BCT\_FunnelChart\_02{sample}
 
-*Note:* for controlling width of the funnel consider using {api:anychart.charts.Funnel#neckWidth}**.neckWidth()**{api} and {api:anychart.charts.Funnel#headWidth}**.headWidth()**{api} parameters to control each part of a funnel or {api:anychart.charts.Funnel#width}**.width()**{api} parameter to control the width of the whole funnel. Height of the funnel is controlled by {api:anychart.charts.Funnel#height}**.height()**{api} and {api:anychart.charts.Funnel#neckHeight}**.neckHeight()**{api} parameters.
+*Note*: for controlling width of the funnel consider using {api:anychart.charts.Funnel#neckWidth}**.neckWidth()**{api} and {api:anychart.charts.Funnel#headWidth}**.headWidth()**{api} parameters to control each part of a funnel or {api:anychart.charts.Funnel#width}**.width()**{api} parameter to control the width of the whole funnel. Height of the funnel is controlled by {api:anychart.charts.Funnel#height}**.height()**{api} and {api:anychart.charts.Funnel#neckHeight}**.neckHeight()**{api} parameters.
 
 ## Visualization
 
