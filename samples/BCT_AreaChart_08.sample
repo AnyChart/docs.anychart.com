@@ -5,11 +5,11 @@ anychart.onDocumentReady(function() {
 
     // data
     var data = anychart.data.set([
-        {x: 'January', y: 10000},
-        {x: 'February', y: 12000},
-        {x: 'March', y: 18000},
-        {x: 'April', y: 11000},
-        {x: 'May', y: 9000}
+      {x: 'January', value: 10000},
+      {x: 'February', value: 12000},
+      {x: 'March', value: 18000},
+      {x: 'April', value: 11000},
+      {x: 'May', value: 9000}
     ]);
 
     // chart type

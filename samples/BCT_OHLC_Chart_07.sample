@@ -14,7 +14,7 @@ anychart.onDocumentReady(function() {
   ]);
 
   // chart type
-  chart = anychart.financialChart();
+  var chart = anychart.financialChart();
 
   // chart title
   chart.title().text('Labels and Tooltips');
@@ -27,12 +27,11 @@ anychart.onDocumentReady(function() {
       .interval(0,0,1);
 
   // set data
-  series = chart.ohlc(data);
+  var series = chart.ohlc(data);
 
   series.labels()
     .enabled(true)
     .anchor('top')
-    .offsetY(0)
     .position('centerBottom')
     .fontSize(12)
     .fontWeight(600)
@@ -56,11 +55,11 @@ anychart.onDocumentReady(function() {
         day: 'numeric'
       };
       var transformedDate =  date.toLocaleDateString('en-US', options);
-      return 'ACME Corporation \n Date: ' + transformedDate + '\n' +
-          'Open: ' + this.open + '\n' +
-          'High: ' + this.high + '\n' +
-          'Low: ' + this.low + '\n' +
-          'Close: ' + this.close;
+      return 'ACME Corporation \nDate: ' + transformedDate + 
+        '\nOpen: ' + this.open + 
+        '\nHigh: ' + this.high + 
+        '\nLow: ' + this.low + 
+        '\nClose: ' + this.close;
     });
 
   // set axes title
@@ -72,7 +71,7 @@ anychart.onDocumentReady(function() {
     var date = new Date(value['tickValue']);
     var options = {
       month: 'short',
-      day: 'numeric',
+      day: 'numeric'
     };
     return date.toLocaleDateString('en-US', options);
   });

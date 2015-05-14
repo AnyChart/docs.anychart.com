@@ -1,6 +1,7 @@
 {:tags []
      :is_new false
      :exports "chart"}
+
 anychart.onDocumentReady(function() {
 
   // data
@@ -14,21 +15,21 @@ anychart.onDocumentReady(function() {
 
   // set chart type
   chart = anychart.columnChart();
-
+  
   chart.title().text('Remove Column on click');
-
   chart.xAxis().title().enabled(false);
+  
   // set data
   var column = chart.column(dataSet);
 
   // index for preventing oll columns elimination
-  var columnIndex = 4;
+  var columnIndex = dataSet.mapAs().getRowsCount() - 1;
 
   // set listener on chart
   column.listen(
 
     // listener type
-    anychart.enums.EventType.POINT_CLICK,
+    'pointClick',
 
     // function, if listener triggers
     function(e) {

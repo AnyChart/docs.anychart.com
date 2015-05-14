@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
   // chart type
-  chart = anychart.polar();
+  var chart = anychart.polar();
 
   // chart title
   chart.title().text('Axes labels settings');
@@ -40,7 +40,7 @@ anychart.onDocumentReady(function() {
     });
 
   // set data for first series
-  var series1 = chart.line([
+  chart.line([
     {x: 0, value: 0},
     {x: 1, value: 0.017452406},
     {x: 2, value: 0.034899497},
@@ -402,13 +402,12 @@ anychart.onDocumentReady(function() {
     {x: 358, value: -0.034899497},
     {x: 359, value: -0.017452406},
     {x: 360, value: -2.4503E-16}
-  ]).stroke('2 #11aaff');            // area border color
-
-  // disable markers
-  series1.markers().enabled(false);
+  ])
+    .stroke('2 #11aaff')            // area border color
+    .markers().enabled(false);      // disable markers
 
   // set data for the second series
-  series2 = chart.line([
+  chart.line([
     {x: 0, value: 1},
     {x: 1, value: 0.999847695},
     {x: 2, value: 0.999390827},

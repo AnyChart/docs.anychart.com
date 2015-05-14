@@ -286,8 +286,8 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
 
 ```
-    chart.xAxis(0).orientation('top');
-    chart.yAxis(0).orientation('right');
+    chart.xAxis().orientation('top');
+    chart.yAxis().orientation('right');
 ```
 
 And this is the demonstration of this feature in the Single-series sample:
@@ -313,7 +313,7 @@ And this is the demonstration of making the Y-Axis Logarithmic in the slightly m
 AnyChart calculates axis minimum and maximum automatically. You can see this on the scale inversion chart sample above: the minimal value of the Y-Axis is 500, and the maximum is 535. You can control these values by setting **.maximum()** and **.minimum()** parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjust the  interval of the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 
 ```
-    chart.yScale().minimum('505').maximum('530')ticks().interval(5)
+    chart.yScale().minimum(505).maximum(530)ticks().interval(5)
 ```
 
 And here is the demonstration of setting the max and the min values in the Single-series sample:
@@ -375,7 +375,7 @@ Now let's study how to apply different colors to different data series. To apply
 Look at the individual points we colorized in the sample below. We've got a chart with one series and predefined color for all elements. We set "Rgb(180,77,77)" color for the minimum point and **"Rgb(77,180,77)"** for the maximum one.
 As you see it is very easy to do by setting a value for the {api:anychart.graphics.vector.Fill}**fill()**{api} **parameter of a point.
 
-In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set **"Rgb(180,77,77)"** color for minimum point and "Rgb(77,180,77)" for the maximal one. As you see it is very easy to do by setting {api:anychart.core.cartesian.series.Candlestick#fallingFill}**fallingFill()**{api} and {api:anychart.core.cartesian.series.Candlestick#risingFill}**risingFill()****{api} parameters for a point.
+In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set **"Rgb(180,77,77)"** color for minimum point and "Rgb(77,180,77)" for the maximal one. As you see it is very easy to do by setting {api:anychart.core.cartesian.series.Candlestick#fallingFill}**fallingFill()**{api} and {api:anychart.core.cartesian.series.Candlestick#risingFill}**risingFill()**{api} parameters for a point.
 
 {sample}BCT\_Japaneese-Candlestick\_Chart\_09{sample}
 

@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
     // chart type
-    chart = anychart.financialChart();
+    var chart = anychart.financialChart();
 
     // chart title
     chart.title().text('Multi-series');
@@ -41,7 +41,7 @@ anychart.onDocumentReady(function() {
         var date = new Date(value['tickValue']);
         var options = {
           month: 'short',
-          day: 'numeric',
+          day: 'numeric'
         };
         return date.toLocaleDateString('en-US', options);
       });

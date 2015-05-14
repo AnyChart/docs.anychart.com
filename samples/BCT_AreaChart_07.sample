@@ -6,11 +6,11 @@ anychart.onDocumentReady(function() {
 
     // data
     var data = anychart.data.set([
-        ['January', 10000],
-        ['February', 12000],
-        ['March', 18000],
-        ['April', 11000],
-        ['May', 9000]
+      ['January', 10000],
+      ['February', 12000],
+      ['March', 18000],
+      ['April', 11000],
+      ['May', 9000]
     ]);
 
     // chart type
@@ -31,7 +31,7 @@ anychart.onDocumentReady(function() {
         .hatchFill('diagonalbrick', 'gray')
         .hoverHatchFill('diagonalbrick', 'black');
 
-    chart.yScale().minimum('8000').maximum('20001');
+    chart.yScale().minimum(8000).maximum(20001);
 
     chart.container('container').draw();
 });

@@ -5,37 +5,41 @@ anychart.onDocumentReady(function() {
 
     // data
     var data = anychart.data.set([
-        ['Department Stores', 637166, 737166],
-        ['Discount Stores', 721630, 537166],
-        ['Men\'s/Women\'s Specialty Stores', 148662, 188662],
-        ['Juvenile Specialty Stores', 78662, 178662],
-        ['All other outlets', 90000, 89000]
+      ['P1', 14, 24, 34, 42, 50],
+      ['P2', 19, 26, 39, 45, 61],
+      ['P3', 27, 38, 35, 41, 58]
     ]);
 
     // map data for the each series
-    var Sales2003 = data.mapAs({x: [0], value: [1]});
-    var Sales2004 = data.mapAs({x: [0], value: [2]});
+    var data_1 = data.mapAs({x: [0], value: [1]});
+    var data_2 = data.mapAs({x: [0], value: [2]});
+    var data_3 = data.mapAs({x: [0], value: [3]});
+    var data_4 = data.mapAs({x: [0], value: [4]});
+    var data_5 = data.mapAs({x: [0], value: [5]});
 
     // chart type
-    chart = anychart.barChart();
+    var chart = anychart.barChart();
 
-    // chart title
-    chart.title().text('Paddings');
+    // set title
+    chart.title().text('Hatch Sample');
 
-    // set axes titles
-    chart.xAxis().title().text('Retail Channel');
-    chart.yAxis().title().text('Sales');
-
-    // set series data
-    var series;
-    series = chart.bar(Sales2003);
-
-    // adjust series position
-    series.xPointPosition(0.5);
-
-    // second series data
-    series = chart.bar(Sales2004);
-
-    // draw
+    // set data and adjust color/hatch
+    chart.bar(data_1)
+      .fill('#EEEEEE')
+      .hatchFill('diagonalcross');
+    chart.bar(data_2)
+      .fill('#EEEEEE')
+      .hatchFill('diagonalbrick');
+    chart.bar(data_3)
+      .fill('#EEEEEE')
+      .hatchFill('zigzag');
+    chart.bar(data_4)
+      .fill('#EEEEEE')
+      .hatchFill('checkerboard');
+    chart.bar(data_5)
+      .fill('#EEEEEE')
+      .hatchFill('percent30');
+  
+    chart.yScale().maximum(65);
     chart.container('container').draw();
 });

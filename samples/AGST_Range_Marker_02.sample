@@ -3,7 +3,7 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  
+
   // data
   var data = anychart.data.set([
     [2005, 10000],
@@ -18,7 +18,7 @@ anychart.onDocumentReady(function() {
   
   // set data
   chart.line(data).hoverStroke('red').tooltip().contentFormatter(function(){
-      return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
+    return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
   });
   
   // disable title
@@ -32,7 +32,7 @@ anychart.onDocumentReady(function() {
   
   // adjust y axis labels
   chart.yAxis().labels().textFormatter(function(){
-      return '$' + this.value/1000 + ',000';
+    return '$' + this.value/1000 + ',000';
   });
   
   // y scale title
@@ -78,7 +78,7 @@ anychart.onDocumentReady(function() {
     .value(15000)
     .fontColor('black')
     .hAlign('center')
-    .text('Average \n [20,000.00 - 30,000.00]')
+    .text('Average \n[20,000.00 - 30,000.00]')
     .fontSize(18);
   
   // set text marker at the center

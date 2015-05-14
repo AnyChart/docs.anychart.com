@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
   // chart type
-  chart = anychart.polar();
+  var chart = anychart.polar();
 
   // chart title
   chart.title().text('Tuning Axes Visualization');

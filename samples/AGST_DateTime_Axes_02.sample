@@ -1,10 +1,11 @@
 {:tags []
      :is_new false
      :exports "chart"}
+
 anychart.onDocumentReady(function() {
 
   // chart type
-  chart = anychart.lineChart();
+  var chart = anychart.lineChart();
 
   // chart title
   chart.title().text('Line Chart DateTime Scale');
@@ -42,17 +43,18 @@ anychart.onDocumentReady(function() {
   });
 
   // adjust axis labels
-  chart.xAxis().staggerLines(1)
-      .labels()
-          .hAlign('center')
-          .width(50)
-          .textFormatter(function(value){
-            var date = new Date(value['tickValue']);
-            var options = {
-              year: 'numeric'
-            };
-            return date.toLocaleDateString('en-US', options);
-          });
+  chart.xAxis()
+    .staggerLines(1)
+    .labels()
+      .hAlign('center')
+      .width(50)
+      .textFormatter(function(value){
+        var date = new Date(value['tickValue']);
+        var options = {
+          year: 'numeric'
+        };
+        return date.toLocaleDateString('en-US', options);
+      });
 
   // draw
   chart.container('container').draw();

@@ -13,9 +13,8 @@ anychart.onDocumentReady(function() {
         ['May', 9000]
     ]);
 
-
     // chart type
-    chart = anychart.lineChart();
+    var chart = anychart.lineChart();
 
     // title
     chart.title().text('Spline chart');

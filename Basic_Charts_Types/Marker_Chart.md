@@ -4,7 +4,7 @@
  * [Chart](#chart)
   * [Single Series](#single_series)
   * [Multi-series](#multi-series)
-<!--  * [Scatter Marker chart](#marker_scatterplot) -->
+  * [Marker Cartesian Plot](#marker_cartesian_plot)
  * [Axes](#axes)
   * [Orientation](#orientation)
   * [Inversion](#inversion)
@@ -66,21 +66,15 @@ Let's look at the single-series marker chart created using the following data - 
 Now we need to convert this data table into js format as it is acceptable by AnyChart. In terms of AnyChart first column represents year and second one contains total income of Box office. Converted Data looks like:
 
 ```
-    chart.xAxis().title('Year');
-    chart.yAxis().title('Box office');
-    chart.grid()
-        .evenFill('none')
-        .oddFill('none')
-        .layout(anychart.enums.Layout.VERTICAL);
-    chart.marker([
-        ['2000', 1100],
-        ['2001', 880],
-        ['2002', 1100],
-        ['2003', 1500],
-        ['2004', 921],
-        ['2005', 1000],
-        ['2006', 1400]
-    ]);
+  chart.marker([
+    [2000, 1100],
+    [2001, 880],
+    [2002, 1100],
+    [2003, 1500],
+    [2004, 921],
+    [2005, 1000],
+    [2006, 1400]
+  ]);
 ```
 
 This example shows what you can get from the code above. You may launch and explore this example further in our playground (to open it, click on the link in the top-to-right corner of the chart). 
@@ -171,34 +165,33 @@ Let's compare ACME Movies box office to other studios:
 As we did in single-series line sample above, now we need to convert this table into js format, the only difference between these two samples is several series of data (one series for each studio) opposite to the only series in the previous sample:
 
 ```
-    chart.marker([
-        [2000, 1100],
-        [2001, 880],
-        [2002, 1100],
-        [2003, 1500],
-        [2004, 921],
-        [2005, 1000],
-        [2006, 1400]
-    ]);
-    chart.marker([
-        [2000, 1000], 
-        [2001, 950],  
-        [2002, 800],  
-        [2003, 1000], 
-        [2004, 890],  
-        [2005, 1000], 
-        [2006, 800],  
-    ]);
+  chart.marker([
+    [2000, 1100],
+    [2001, 880],
+    [2002, 1100],
+    [2003, 1500],
+    [2004, 921],
+    [2005, 1000],
+    [2006, 1400]
+  ]);
+  chart.marker([
+    [2000, 1000], 
+    [2001, 950],  
+    [2002, 800],  
+    [2003, 1000], 
+    [2004, 890],  
+    [2005, 1000], 
+    [2006, 800],  
+  ]);
 ```
 
 {sample}BCT\_Marker\_Chart\_02{sample}
 
+### Marker Cartesian Plot
 
-<!--<a name="marker_scatterplot"/>
-### Marker scatter plot
+All previous samples demonstrate marker series on scatter plot. Next sample shows customized cartesian plot with marker series on it.
 
-The sample of scatter marker chart can be found in Scatter Charts Tutorial.
--->
+{sample}BCT\_Marker\_Chart\_03{sample}
 
 ## Axes
 
@@ -220,7 +213,7 @@ The position depends on the plot type and inversion of axes. See list of all pos
 
 And here is the demonstration of this feature in the Single-series sample:
 
-{sample}BCT\_Marker\_Chart\_03{sample}
+{sample}BCT\_Marker\_Chart\_04{sample}
 
 ### Inversion
 
@@ -232,7 +225,7 @@ AnyChart allows to invert any axis: Y, X or any other axis. Inversion is control
 
 And here is the demonstration of Y-Axis inversion in the Single-series sample:
 
-{sample}BCT\_Marker\_Chart\_04{sample}
+{sample}BCT\_Marker\_Chart\_05{sample}
 
 ### Minimum and Maximum
 
@@ -240,12 +233,14 @@ AnyChart calculates axis minimum and maximum automatically. The minimal value on
 
 
 ```
-    chart.yScale().minimum('0').maximum('1800');
+  chart.yScale()
+    .minimum(0)       // minimum value
+    .maximum(1800);   // maximum value
 ```
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
 
-{sample}BCT\_Marker\_Chart\_05{sample}
+{sample}BCT\_Marker\_Chart\_06{sample}
 
 ## Visualization
 
@@ -256,25 +251,23 @@ In this section we will describe main parts of marker chart visualization and wa
 Now, let's make a simple style and apply it to the chart. As we've already said, a style consists of several elements, like in this js structure below:
 
 ```
-    chart.marker([
-        ['2000', 1100],
-        ['2001', 880],
-        ['2002', 1100],
-        ['2003', 1500],
-        ['2004', 921],
-        ['2005', 1000],
-        ['2006', 1400]
-    ]).fill('gold')
-        .hoverFill('darkred')
-        .hoverStroke(0)
-        .hoverSize(20);
+  chart.marker([
+    [2000, 1100],
+    [2001, 880],
+    [2002, 1100],
+    [2003, 1500],
+    [2004, 921],
+    [2005, 1000],
+    [2006, 1400]
+  ]).fill('gold')
+    .hoverFill('darkred')
+    .hoverStroke(0)
+    .hoverSize(20);
 ```
 
 Using such settings we've set Gold color for the markers and added a couple of effects. Also, we've defined that a marker will be highlighted with a dark red color and made bigger when hovered.
 
-{sample}BCT\_Marker\_Chart\_06{sample}
-
-<a name="labels_and_tooltips"/>
+{sample}BCT\_Marker\_Chart\_07{sample}
 
 ## Labels and Tooltips
 
@@ -288,34 +281,34 @@ With the following example let's make data labels appear to the top from the dat
 Here's a part of a code used in the sample below. For more detailed code visit the playground.
 
 ```
-// data
-    data = anychart.data.set([
-        ['2000', 1100],
-        ['2001', 880],
-        ['2002', 1100],
-        ['2003', 1500],
-        ['2004', 921],
-        ['2005', 1000],
-        ['2006', 1400]
-    ]);
+  // data
+  data = anychart.data.set([
+      [2000, 1100],
+      [2001, 880],
+      [2002, 1100],
+      [2003, 1500],
+      [2004, 921],
+      [2005, 1000],
+      [2006, 1400]
+  ]);
 
-    // set data
-    markerchart = chart.marker(data);
+  // set data
+  var markerchart = chart.marker(data);
 
-    // enable and adjust labels
-    markerchart.labels()
-        .enabled(true)
-        .rotation(-90)
-        .offsetY(-25)
-        .offsetX(-5);
-
-    // adjust tooltips
-    markerchart.tooltip().contentFormatter(function(){
-        return 'Month: ' + this.x + '\nSales: ' + this.value ;
-    });
+  // enable and adjust labels
+  markerchart.labels()
+    .enabled(true)
+    .anchor('bottomcenter')
+    .fontWeight(900)
+    .offsetY(10);
+  
+  // adjust tooltips
+  markerchart.tooltip().contentFormatter(function(){
+    return 'Month: ' + this.x + '\nSales: ' + this.value ;
+  });
 ```
 
-{sample}BCT\_Marker\_Chart\_07{sample}
+{sample}BCT\_Marker\_Chart\_08{sample}
 
 <!--
 Related Help Topics:
@@ -333,58 +326,58 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.graphics.vector.Fill}**.fill()**{api} parameters in the {api:anychart.core.ui.MarkersFactory}**.marker()**{api} method. In the sample below we've got 5 series with sample data and we'll color each series to different color. Here is the sample:
 
-{sample}BCT\_Marker\_Chart\_08{sample}
+{sample}BCT\_Marker\_Chart\_09{sample}
 
 That's how a part of a code of the sample above looks like:
 
 ```
-// data
-    data = anychart.data.set([
-        ['P1', 178, 165, 154, 143, 132],
-        ['P2', 167, 153, 144, 133, 122],
-    ]);
+  // data
+  var data = anychart.data.set([
+    [1, 178, 165, 154, 143, 132],
+    [2, 167, 153, 144, 133, 122],
+  ]);
 
-    // map data for each series
-    var data1 = data.mapAs({x: [0], value: [1]});
-    var data2 = data.mapAs({x: [0], value: [2]});
-    var data3 = data.mapAs({x: [0], value: [3]});
-    var data4 = data.mapAs({x: [0], value: [4]});
-    var data5 = data.mapAs({x: [0], value: [5]});
+  // map data for each series
+  var data1 = data.mapAs({x: [0], value: [1]});
+  var data2 = data.mapAs({x: [0], value: [2]});
+  var data3 = data.mapAs({x: [0], value: [3]});
+  var data4 = data.mapAs({x: [0], value: [4]});
+  var data5 = data.mapAs({x: [0], value: [5]});
 
-    // set data and color for each series
-    series = chart.marker(data1);
-    series.fill('#4A55C7');
-    series = chart.marker(data2);
-    series.fill('#5EBD9B');
-    series = chart.marker(data3);
-    series.fill('#B04A8A');
-    series = chart.marker(data4);
-    series.fill('#C7894A');
-    series = chart.marker(data5);
-    series.fill('#BCBD46');
+  // set data and color for each series
+  chart.marker(data1)
+    .fill('#4A55C7');
+  chart.marker(data2)
+    .fill('#5EBD9B');
+  chart.marker(data3)
+    .fill('#B04A8A');
+  chart.marker(data4)
+    .fill('#C7894A');
+  chart.marker(data5)
+    .fill('#BCBD46');
 ```
 
 In the sample below we colorized individual points. We've got a chart with one series and predefined 
 color for all elements. Let's color the minimum and the maximum points in "Rgb(180,77,77)" and "Rgb(77,180,77)" accordingly. As you can see it is very easy to do by setting {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter for the point.
 
-{sample}BCT\_Marker\_Chart\_09{sample}
+{sample}BCT\_Marker\_Chart\_10{sample}
 
 That's how it was done:
 
 ```
-// data
-    data = anychart.data.set([
-        ['P!', 132],
-        ['P2', 124],
-        ['P3', 102],
-        ['P4', 119],
-        ['P5', 169],
-        {x: 'P6', value: 237, fill: 'Rgb(77,180,77)'},
-        ['P7', 120],
-        ['P8', 99],
-        {x: 'P9', value: 44, fill: 'Rgb(180,77,77)'},
-        ['P10', 59]
-    ]);
+  // data
+  data = anychart.data.set([
+    ['P!', 132],
+    ['P2', 124],
+    ['P3', 102],
+    ['P4', 119],
+    ['P5', 169],
+    {x: 'P6', value: 237, fill: 'Rgb(77,180,77)'},
+    ['P7', 120],
+    ['P8', 99],
+    {x: 'P9', value: 44, fill: 'Rgb(180,77,77)'},
+    ['P10', 59]
+  ]);
 ```
 
 Important Note:
@@ -404,30 +397,29 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 Here's a part of the code of the sample below:
 
 ```
- // data
-    data = anychart.data.set([
-        ['P1', 14, 24, 34, 42, 50],
-        ['P2', 19, 26, 39, 45, 61],
-        ['P3', 27, 38, 35, 41, 58]
-    ]);
+  // data
+  data = anychart.data.set([
+    [1, 14, 24, 34, 42, 50],
+    [2, 19, 26, 39, 45, 61],
+    [3, 27, 38, 35, 41, 58]
+  ]);
 
-    // map data for each series
-    var data1 = data.mapAs({x: [0], value: [5]});
-    var data2 = data.mapAs({x: [0], value: [4]});
-    var data3 = data.mapAs({x: [0], value: [3]});
-    var data4 = data.mapAs({x: [0], value: [2]});
-    var data5 = data.mapAs({x: [0], value: [1]});
+  // map data for each series
+  var data1 = data.mapAs({x: [0], value: [5]});
+  var data2 = data.mapAs({x: [0], value: [4]});
+  var data3 = data.mapAs({x: [0], value: [3]});
+  var data4 = data.mapAs({x: [0], value: [2]});
+  var data5 = data.mapAs({x: [0], value: [1]});
 
-    // set data for each series and adjust hatches and marker types
-    chart.marker(data1)
-        .hatchFill('diagonalcross')
-        .hoverSize(30)
-        .size(20)
-        .fill('#EEEEEE')
-        .type('star5');
-
+  // set data for each series and adjust hatches and marker types
+  chart.marker(data1)
+    .hatchFill('diagonalcross')
+    .hoverSize(30)
+    .size(20)
+    .fill('#EEEEEE')
+    .type('star5');
 ```
 
 That's how it looks like when we set all parameters for all series as for the first one:
 
-{sample}BCT\_Marker\_Chart\_10{sample}
+{sample}BCT\_Marker\_Chart\_11{sample}

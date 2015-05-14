@@ -28,7 +28,7 @@ anychart.onDocumentReady(function() {
   chart.title().text('Click on Chart to Add a Point ');
 
   // set data
-  var area = chart.spline(dataSet).markers(null);
+  chart.spline(dataSet).markers(null);
 
   chart.padding().right(80);
 
@@ -55,6 +55,10 @@ anychart.onDocumentReady(function() {
   streamButton.style.border = '3px solid #444444';
   streamButton.style.borderRadius = '7px 7px 7px 7px';
   streamButton.style.fontSize = '18px';
+  streamButton.style.MozUserSelect= 'none';
+  streamButton.style.KhtmlUserSelect= 'none';
+  streamButton.style.WebkitUserSelect= 'none';
+  streamButton.style.userSelect= 'none';
   streamButton.innerHTML = 'Start' + '\n' + 'stream';
   streamButton.style.cursor = 'pointer';
   streamButton.onclick = function() {
@@ -65,7 +69,7 @@ anychart.onDocumentReady(function() {
   container.appendChild(streamButton);
 
   // first index for new point
-  var indexSetter = 21;
+  var indexSetter = (dataSet.mapAs().getRowsCount())+1;
 
   function startStream() {
 

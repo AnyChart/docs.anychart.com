@@ -4,23 +4,32 @@
 
 anychart.onDocumentReady(function() {
 
-    // chart type
-    chart = anychart.lineChart();
+  // chart type
+  chart = anychart.scatter();
 
-    // set title
-    chart.title().text('Bubble chart');
+  // set title
+  chart.title().text('Bubble chart');
 
-    // set axes titles
-    chart.xAxis().title().text('Products');
-    chart.yAxis().title().text('Units Sold');
+  // define chart type
+  chart.bubble([
+    [1, 637, 6], 
+    [2, 472, 14], 
+    [3, 48, 10]
+  ]).minimumSize(10).maximumSize(40);
 
-    // define chart type
-    chart.bubble([
-        ['Product A', 637, 6],
-		['Product B', 72, 14],
-		['Product C', 48, 10]
-    ]).minimumSize(2).maximumSize(40);
+  // adjust axes titles
+  chart.xAxis()
+    .drawFirstLabel(false)      // hide first label
+    .drawLastLabel(false)       // hide last label
+    .title().text('Products');  // set axis title
+  chart.yAxis().title().text('Units Sold');
 
-    // draw
-    chart.container('container').draw();
+  // adjust x scale settings
+  chart.xScale()
+    .minimum(0)
+    .maximum(4)
+    .ticks().interval(1);
+
+  // draw
+  chart.container('container').draw();
 });

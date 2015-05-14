@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
   // Create stage for all charts
-  stage = anychart.graphics.create('container').height(400).width(600);
+  var stage = anychart.graphics.create('container').height(400).width(600);
 
   // Create bullet chart
   var verticalChart = anychart.bulletChart([{value: 7}]);
@@ -39,5 +39,4 @@ anychart.onDocumentReady(function() {
   horizontalChart.range(2).from(10).to(15);
   // Initiate chart drawing
   horizontalChart.draw();
-
 });

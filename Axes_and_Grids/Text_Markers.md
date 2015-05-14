@@ -31,18 +31,18 @@ Sample below shows several variants of Text Marker usage: marking up values (Hig
 
 You can configure text marker placement, font, anchor and text of any custom text using {api:anychart.core.axisMarkers.Text#value}**.value()**{api}, {api:anychart.core.axisMarkers.Text#align}**.align()**{api}, {api:anychart.core.axisMarkers.Text#anchor}**.anchor()**{api}, {api:anychart.graphics.vector.Text#fontSize}**.fontSize()**{api}, {api:anychart.core.axisMarkers.Text#offsetX}**.offsetX()**{api}, {api:anychart.core.axisMarkers.Text#offsetY}**.offsetY()**{api}, {api:anychart.core.axisMarkers.Text#text}**.text()**{api} methods.
 
-Markers placement is controlled using {api:anychart.enums.Align}**.align()**{api} method, possible values are: "Near", "Center", "Far".
+Markers placement is controlled using {api:anychart.enums.Align}**.align()**{api} parameter.
 
 ```
-    chart.textMarker(2)
-        .scale(chart.yScale())
-        .value(9000)
-        .text('Far')
-        .align('far')
-        .anchor('rightcenter')
-        .fontSize(13)
-        .offsetX(10)
-        .fontColor('green');
+  chart.textMarker(2)
+    .scale(chart.yScale())
+    .value(9000)
+    .text('Right')
+    .align('right')
+    .anchor('rightcenter')
+    .fontSize(13)
+    .offsetX(10)
+    .fontColor('green');
 ```
 
 In the sample below you can see different text markers positions and text formatting:

@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-  stage = acgraph.create('container');
+  var stage = acgraph.create('container');
 
   // data for chart
   var dataSet = anychart.data.set([
@@ -29,7 +29,7 @@ anychart.onDocumentReady(function() {
   ]);
 
   // chart type
-  chart = anychart.polar();
+  var chart = anychart.polar();
 
   // chart title
   chart.title().text('Polar Chart Plot Background Sample');
@@ -64,7 +64,7 @@ anychart.onDocumentReady(function() {
   chart.grid(1).oddFill(null).evenFill(null).stroke('black');
 
   // set data
-  var series = chart.line(dataSet).tooltip().enabled(false);
+  chart.line(dataSet).tooltip().enabled(false);
   
   // draw chart
   chart.container(stage).draw();

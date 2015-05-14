@@ -15,10 +15,10 @@ So, we have three series of data - one series for each product, and seasons of a
 
 ```
     var dataSet = anychart.data.set([
-        ["Winter", 12000, 12000, 10000],  
-        ["Spring", 13000, 12000, 17000],  
-        ["Summer", 25000, 15000, 19000],  
-        ["Autumn", 16000, 16000, 16000]   
+        ["Winter", 12000, 12000, 10000],
+        ["Spring", 13000, 12000, 17000],
+        ["Summer", 25000, 15000, 19000],
+        ["Autumn", 16000, 16000, 16000]
     ]);
 ```
 

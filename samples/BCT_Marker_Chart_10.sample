@@ -4,71 +4,39 @@
 
 anychart.onDocumentReady(function() {
 
-    // chart type
-    chart = anychart.cartesianChart();
+  // chart type
+  var chart = anychart.scatter();
 
-    // set title
-    chart.title().text('Hatches');
+  // data
+  data = anychart.data.set([
+    [1, 132],
+    [2, 124],
+    [3, 102],
+    [4, 119],
+    [5, 169],
+    {x: 6, value: 237, fill: 'Rgb(77,180,77)'},
+    [7, 120],
+    [8, 99],
+    {x: 9, value: 44, fill: 'Rgb(180,77,77)'},
+    [10, 59]
+  ]);
 
-    // draw axes and set titles
-    chart.xAxis().title('Year');
-    chart.yAxis().title('Box office');
+  // set data
+  chart.marker(data)
+    .fill('#C6D1A5');
 
-    // draw grid
-    chart.grid().layout('horizontal');
+  // set title
+  chart.title().text('Minimum and Maximum Value Colorizing');
 
-    // draw minor grid and adjust
-    chart.minorGrid()
-        .evenFill('none')
-        .oddFill('none')
-        .stroke('black 0.075')
-        .layout('vertical');
+  // draw axes and set titles
+  chart.xAxis().title('Year');
+  chart.yAxis().title('Box office');
+    
+  chart.xScale()
+    .minimum(0)
+    .maximum(11)
+    .ticks().interval(1);
 
-    // data
-    data = anychart.data.set([
-        ['P1', 14, 24, 34, 42, 50],
-        ['P2', 19, 26, 39, 45, 61],
-        ['P3', 27, 38, 35, 41, 58]
-    ]);
-
-    // map data for each series
-    var data1 = data.mapAs({x: [0], value: [5]});
-    var data2 = data.mapAs({x: [0], value: [4]});
-    var data3 = data.mapAs({x: [0], value: [3]});
-    var data4 = data.mapAs({x: [0], value: [2]});
-    var data5 = data.mapAs({x: [0], value: [1]});
-
-    // set data for each series and adjust hatches and marker types
-    chart.marker(data1)
-        .hatchFill('diagonalcross')
-        .hoverSize(30)
-        .size(20)
-        .fill('#EEEEEE')
-        .type('star5');
-    chart.marker(data2)
-        .hoverSize(30)
-        .size(20)
-        .fill('#EEEEEE')
-        .hatchFill('diagonalbrick')
-        .type('star4');
-    series = chart.marker(data3)
-        .hoverSize(30)
-        .size(20)
-        .fill('#EEEEEE')
-        .hatchFill('zigzag');
-    series = chart.marker(data4)
-        .hoverSize(30)
-        .size(20)
-        .fill('#EEEEEE')
-        .hatchFill('checkerboard')
-        .type('square');
-    series = chart.marker(data5)
-        .hoverSize(30)
-        .size(20)
-        .fill('#EEEEEE')
-        .hatchFill('percent30')
-        .type('circle');
-    chart.container('container');
-
-    chart.draw();
+    // draw
+  chart.container('container').draw();
 });

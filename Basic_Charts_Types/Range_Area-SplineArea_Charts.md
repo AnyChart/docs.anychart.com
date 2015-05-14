@@ -22,7 +22,7 @@ Also "RangeLineArea" or "RangeSpineArea" series type should be specified.
     chart.rangeArea([
         {low: 6.1, high: 0.7},
         {low: 6.3, high: 0.6},
-        {low: 8.5, high: 1.9},
+        {low: 8.5, high: 1.9}
     ]);
 ```
 

@@ -14,7 +14,7 @@ anychart.onDocumentReady(function() {
     ]);
 
     // chart type
-    chart = anychart.lineChart();
+    var chart = anychart.lineChart();
     
     // title
     chart.title().text('Line Chart');

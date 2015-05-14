@@ -9,7 +9,7 @@ anychart.onDocumentReady(function() {
     {'name': 'Node 1', 'rowHeight': 20},
     {'name': 'Parent Node', 'rowHeight': 20, children:[
       {'name': 'Child Node 1', 'rowHeight': 20},
-      {'name': 'Child Node 2', 'rowHeight': 20},
+      {'name': 'Child Node 2', 'rowHeight': 20}
     ]},
     {'name': 'Node 2', 'rowHeight': 20}
   ]);

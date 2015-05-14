@@ -156,11 +156,11 @@ names to each series:
 
 ```
     var dataSet = anychart.data.set([
-        ['January', '10000', '12000'],
-        ['February', '12000', '15000'],
-        ['March', '18000', '16000'],
-        ['April', '11000', '15000'],
-        ['May', '9000', '14000'],
+        ['January', 10000, 12000],
+        ['February', 12000, 15000],
+        ['March', 18000, 16000],
+        ['April', 11000, 15000],
+        ['May', 9000, 14000],
     ]);
     var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
     var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
@@ -213,7 +213,7 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 AnyChart calculates axis minimum and maximum automatically. You can see this on the scale inversion chart sample above: the minimal value on the Y Axis is 8.000, and the maximum is 20.000. You can control these values by setting **.maximum()** and **.minimum()**. :
 
 ```
-    chart.yScale().minimum('0').maximum('50000');
+    chart.yScale().minimum(0).maximum(50000);
 ```
 
 Here is the demonstration of maximum and minimum values in the Single-series sample:

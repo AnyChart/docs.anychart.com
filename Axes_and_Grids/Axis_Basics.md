@@ -33,15 +33,15 @@ If you want to control any of the axes settings - you should do that using {api:
 You can define a title of any axis, you can control its position and font <!--and use keywords-->, when specifying text. Full reference of parameters can be found in Reference: {api:anychart.core.axes.Linear#title}**.yAxis().title()**{api} or {api:anychart.core.axes.Linear#title}**.xAxis().title()**{api}. Here is a sample titles definition:
 
 ```
-    var max = chart.yScale().maximum();
-    var min = chart.yScale().minimum();
-    chart.yAxis().title().align('bottom');
-    chart.yAxis(0).orientation('right');
-    chart.xAxis().title().text('Sample X axis name').fontWeight('400');
-    chart.yAxis().title().text('Y axis from ' + min + ' to ' + max);
+  var max = chart.yScale().maximum();
+  var min = chart.yScale().minimum();
+  chart.yAxis().title().align('bottom');
+  chart.yAxis().orientation('right');
+  chart.xAxis().title().text('Sample X axis name').fontWeight('400');
+  chart.yAxis().title().text('Y axis from ' + min + ' to ' + max);
 ```
 
-As you can see, we've set titles both to X and Y axis <!--made X axis title bold-->and aligned Y axis <!--and used {%DataPlotYMax} and %DataPlotYMin keywords-->.
+As you can see, we've set titles both to X and Y axis and adjusted Y axis align<!--and used {%DataPlotYMax} and %DataPlotYMin keywords-->.
 
 <!--Full reference of available keywords is available in the end of this article: Keywords reference.
 
@@ -66,8 +66,7 @@ And here is the demonstration of this feature on the Single series column chart:
 
 ## Labels
 
-To enable axes labels you need to specify {api:anychart.core.ui.LabelsFactory#enabled}**.labels().enabled(true)**{api} in desired axis. You can specify how labels should
-look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
+To enable or disable axis labels you need to specify {api:anychart.core.ui.LabelsFactory#enabled}**.labels().enabled()**{api} parameter of an axis. You can specify how labels should look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
 
 Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Formatting)
 
@@ -82,8 +81,8 @@ Look at the demonstration of possible labels display modes: "Normal" and "Stager
 Rotated labels:
 
 ```
-  chart.yAxis().labels().enabled(true).rotation(90);
-  chart.xAxis().labels().enabled(true).rotation(90);
+  chart.yAxis().labels().enabled(true).rotation(-90);
+  chart.xAxis().labels().enabled(true).rotation(-90);
 ```
 
 {sample}AGST\_Axes\_Basic\_04{sample}
@@ -98,7 +97,7 @@ Rotated labels:
 ## Axis Line
 
 It is possible to tune visual appearance of axis segment line and zero line. To do this you need to use 
-{api:anychart.charts.Cartesian#lineMarker}**.lineMarker()**{api} with default settings.
+{api:anychart.charts.Cartesian#lineMarker}**.lineMarker()**{api} method.
 
 ```
   chart.lineMarker().stroke('2 red');    

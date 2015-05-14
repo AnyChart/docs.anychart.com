@@ -4,26 +4,38 @@
 
 anychart.onDocumentReady(function() {
 
-    // chart type
-    chart = anychart.lineChart();
+  // chart type
+  chart = anychart.scatter();
 
-    // set title
-    chart.title().text('Fixed Minimum and Maximum Scale Value');
+  // set title
+  chart.title().text('Fixed Minimum and Maximum Scale Value');
 
-    // set axes titles
-    chart.xAxis().title().text('Products');
-    chart.yAxis().title().text('Sales');
+  // adjust y scale
+  chart.yScale()
+    .minimum(-100)    // set minimum value
+    .maximum(1000)    // set maximum value
+    .ticks()          // adjust ticks settings
+      .interval(100); // set ticks interval
+  
+  // set data
+  chart.bubble([
+    [1, 637, 6],
+    [2, 472, 14],
+    [3, 48, 10]
+  ]).minimumSize(10).maximumSize(30);
+  
+  // adjust axes settings
+  chart.yAxis().title().text('Sales');
+  chart.xAxis()
+    .drawFirstLabel(false)
+    .drawLastLabel(false)
+    .title().text('Products');
 
-    // set data
-    chart.bubble([
-        ['Product A', 637, 6],
-        ['Product B', 472, 14],
-        ['Product C', 48, 10]
-    ]).minimumSize(10).maximumSize(30);
+  chart.xScale()
+    .minimum(0)
+    .maximum(4)
+    .ticks().interval(1);
 
-    // adjust minimum and maximum y scale value
-    chart.yScale().minimum('-100').maximum('1000').ticks().interval(100);
-
-    // draw
-    chart.container('container').draw();
+  // draw
+  chart.container('container').draw();
 });

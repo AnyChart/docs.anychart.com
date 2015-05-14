@@ -28,7 +28,7 @@ anychart.onDocumentReady(function() {
         '<axis title="Basic Y Axis"/>'+                   //   .text('Basic Y Axis');
         '<axis '+                                         // chart.yAxis(1)
         'orientation="right" '+                           //   .orientation('right')
-        'scale="newScale">'+                              //   .scale(newScale)
+        'scale="0">'+                                     //   .scale(newScale)
         '<title '+                                        //   .title()
         'text="Extra Y Axis"/></axis></y_axes>'+          //     .text('Extra Y Axis');
 

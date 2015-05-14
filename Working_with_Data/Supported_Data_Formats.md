@@ -69,7 +69,8 @@ chart.container('container');
 // initiate chart drawing
 chart.draw();
 ```
-See also:  
+See also:
+[Data From XML](./Data_From_XML)
 [Using Data Sets](./Using_Data_Sets)
 
 ###JSON
@@ -99,6 +100,7 @@ chart.container('container');
 chart.draw();
 ```
 See also:  
+[Data From JSON](./Data_From_JSON)
 [Using Data Sets](./Using_Data_Sets)
 
 ###CSV  

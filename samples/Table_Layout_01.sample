@@ -3,13 +3,13 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-
+  
   // set stage
-  stage = anychart.graphics.create('container');
-
+  var stage = anychart.graphics.create('container');
+  
   // create table
   var table = anychart.ui.table();
-
+  
   // set table content
   table.contents([
     [
@@ -36,16 +36,18 @@ anychart.onDocumentReady(function() {
     [
       'May',
       '$9000',
-      '14000'
+      '$14000'
     ]
   ]);
-
-  table.rowHeight(0, 40);   // Get first row and set height 40px
-  table.colWidth(0, 70);    // Get first column and set width 70 px
-
-  // position text in the center of each cell
-  table.cellTextFactory().vAlign('center').hAlign('center');
-
+  
+  table.getRow(0).height(40).fontWeight(900);       // Set first row height 40px and bold the text
+  table.getCol(0).width(70).fontWeight(900);        // Set first column width 70 px and bold the text
+  
+  table.cellFill('#E1E1E1');        // Set table background color
+  
+  // adjust table border and position text in each cell into center
+  table.cellBorder('#B8B8B8').vAlign('center').hAlign('center');
+  
   // set table container and initiate draw
   table.container(stage).draw();
 });

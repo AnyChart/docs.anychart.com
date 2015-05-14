@@ -3,17 +3,17 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-
+  
   // set stage
-  stage = anychart.graphics.create('container');
-
+  var stage = anychart.graphics.create('container');
+  
   // Title settings
   var title = anychart.ui.title();
   title.fontFamily('verdana, helvetica, arial, sans-serif').fontWeight('normal');
   title.text('<span style="color:#86cf38; font-size: 16px;">System Availability</span> <span style="color: #666666; font-size: 10px; font-weight: normal;">(last 30 days)</span>');
   title.orientation('top').align('left').vAlign('bottom').margin(10).padding(0).height(20).useHtml(true);
   title.container(stage).draw();
-
+  
   // Data for charts in table
   var Availability = anychart.data.set([
     [Date.UTC(2013, 10), 98.6, 98.6, 95.3, 97.9, 99.0, 97.0, 96.1],
@@ -38,21 +38,18 @@ anychart.onDocumentReady(function() {
     ['HR', 96],
     ['Problem Tracking', 93]
   ]);
-
+  
   // content for first row
   var contents = [['Last 12 Month', 'System', 'Availability %', null]];
-
-  // create one scale for all bullet charts and additional axis
-  var bulletScale = anychart.scales.linear().minimum(85).maximum(100);
-
-
+  
+  
   // Table settings
-
+  
   // create table
   var table = anychart.ui.table();
-
+  
   table.top(title.getRemainingBounds().getTop());
-
+  
   for(var i= 0; i<7; i++){
     contents.push([
       newLine(i),                           // create line charts in the first column
@@ -61,47 +58,36 @@ anychart.onDocumentReady(function() {
       AcceptedAvailability.row(i)[1] + '%'  // get values for fourth column
     ]);
   }
-
-  var axis = anychart.axes.linear();
-  axis.scale(bulletScale);
-  axis.orientation('bottom').staggerMode(false).stroke('#ccc');
-  axis.minorTicks().enabled(false);
-  axis.title().enabled(false);
-  axis.labels()
-    .fontSize('9px')
-    .textFormatter(function(value) {
-      return value['tickValue'] + '%';
-    });
-  axis.ticks().stroke('#ccc');
-
-  contents.push([null, null, axis, null]);
-
+  
   // set table content
   table.contents(contents);
-
+  
   // disable borders and adjust width of second and fourth column
-  table.cellBorder(null).colWidth(1, 130).colWidth(3, 50).rowHeight(0, 20).rowHeight(8, 25);
-
-  // visual settings for the first row
-  table.getCell(0,0).fill('#444444').content().fontColor('#FFF');
-  table.getCell(0,1).fill('#444444').content().fontColor('#FFF');
-  table.getCell(0,2).fill('#444444').colSpan(2).content().fontColor('#FFF').hAlign('right');
-  table.getCell(8,2).padding().right(9).left(9);
-
+  table.cellBorder('#B8B8B8');
+  table.getCol(1).width(130);
+  table.getCol(3).width(50);
+  table.getCell(0,2).colSpan(2).fontColor('#FFF').hAlign('right');
+  table.getRow(0)
+    .height(20)
+    .cellFill('#444444')
+    .fontColor('#FFF')
+    .cellBorder('#444444')
+    .border()
+      .bottom('2 #B8B8B8');
+  
   // visual settings for text in table
-  table.cellTextFactory().vAlign('center').hAlign('center').fontWeight(600).fontSize(12);
-
+  table.vAlign('center').hAlign('center').fontWeight(600).fontSize(12);
+  
   // set table container and initiate draw
   table.container(stage).draw();
-
-
+  
+  
   // Settings for table content
-
+  
   // create new sparkline chart
   function newLine(i){
     var line = anychart.sparkline(Availability.mapAs({x: [0], value: [(i + 1)]}));
-
-    // adjust visualization
+    
     // adjust visualization
     line
       .stroke('2 #000')
@@ -111,11 +97,11 @@ anychart.onDocumentReady(function() {
         .minimumGap(0)
         .maximumGap(0)
         .ticks([])
-      );
-
+    );
+    
     return line;
   }
-
+  
   // create new bullet chart
   function newBullet (i) {
     var bulletData = 0;
@@ -127,50 +113,53 @@ anychart.onDocumentReady(function() {
     bullet.title().enabled(false);
     bullet.axis().enabled(false);
     bullet.background().enabled(true).stroke('#ccc').fill('#fff');
-    bullet.scale(bulletScale).padding(0).margin(10);
+    bullet.scale(anychart.scales.linear().minimum(85).maximum(100)).padding(0).margin(10);
     return bullet;
   }
-
+  
   // create legend
   var legend = anychart.ui.legend();
-  legend.itemsProvider([
-    {
-      'index': 0,
-      'text': 'Actual',
-      'iconType': function(path, size) {
-        path.clear();
-        var x = Math.round(size / 2);
-        var y = Math.round(size / 2);
-        var height = size * 0.6;
-        path.clear()
+  legend.itemsFormatter(function(){
+    var items = [
+      {
+        'index': 0,
+        'text': 'Actual',
+        'iconType': function(path, size) {
+          path.clear();
+          var x = Math.round(size / 2);
+          var y = Math.round(size / 2);
+          var height = size * 0.6;
+          path.clear()
             .moveTo(x, y - height / 2)
             .lineTo(x, y + height / 2)
             .lineTo(x + 2, y + height / 2)
             .lineTo(x + 2, y - height / 2)
             .close();
+        },
+        'iconStroke': 'none',
+        'iconFill': '#000'
       },
-      'iconStroke': 'none',
-      'iconFill': '#000'
-    },
-    {
-      'index': 1,
-      'text': 'Acceptable',
-      'iconType': function(path, size) {
-        path.clear();
-        var x = Math.round(size / 2);
-        var y = Math.round(size / 2);
-        var height = size * 0.8;
-        path.clear()
+      {
+        'index': 1,
+        'text': 'Acceptable',
+        'iconType': function(path, size) {
+          path.clear();
+          var x = Math.round(size / 2);
+          var y = Math.round(size / 2);
+          var height = size * 0.8;
+          path.clear()
             .moveTo(x - 2, y - height / 2)
             .lineTo(x - 2, y + height / 2)
             .lineTo(x + 3, y + height / 2)
             .lineTo(x + 3, y - height / 2)
             .close();
-      },
-      'iconStroke': 'none',
-      'iconFill': '#ccc'
-    }
-  ]);
+        },
+        'iconStroke': 'none',
+        'iconFill': '#ccc'
+      }
+    ];
+    return items;
+  });
   legend.title().enabled(false);
   legend.titleSeparator().enabled(false);
   legend.paginator().enabled(false);

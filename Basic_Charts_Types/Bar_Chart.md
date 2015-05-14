@@ -136,10 +136,9 @@ As we do in single-series bar sample above we need to convert this data, the onl
     ]);
     var Sales2003 = data.mapAs({x: [0], value: [1]});
     var Sales2004 = data.mapAs({x: [0], value: [2]});
-    chart = anychart.barChart();
-    var series;
-    series = chart.bar(Sales2003);
-    series = chart.bar(Sales2004);
+    var chart = anychart.barChart();
+    chart.bar(Sales2003);
+    chart.bar(Sales2004);
 ```
 
 As we now have multi-series chart we don't want to set **type** for each series individually (there can be much more than two series in multi-series chart), so we add {api:anychart.core.cartesian.series.Bar}**anychart.barChart()**{api} method to **chart**. Now all series in chart will be **Bar** type by default.
@@ -181,7 +180,7 @@ AnyChart allows to invert any axis: Y, X or any extra. Inversion is controlled b
 AnyChart calculates axis minimum and maximum automatically. You can see this on the scale inversion chart sample above: the minimal value of the Y-Axis is 0.0, and the maximum is 800.000. You can control these values by setting **.maximum()** and **.minimum()**.:
 
 ```
-    chart.yScale().minimum('-200000').maximum('800000')
+    chart.yScale().minimum(-200000).maximum(800000)
 ```
 
 And here is the demonstration of maximum and minimum values in the Single-series sample:
@@ -198,7 +197,7 @@ If you want to set these paddings you need to set {api:anychart.core.cartesian.s
 
 Here is a sample of multi-series bar chart with **xPointPosition** set to 0.5.
 
-{sample}BCT\_BarChart\_12{sample}
+{sample}BCT\_BarChart\_06{sample}
 
 ## Visualization
 
@@ -229,7 +228,7 @@ Using such settings we've created a style that colors bars in Gold, makes the bo
 
 Now let's apply these setting to the sample shown above.
 
-{sample}BCT\_BarChart\_06{sample}
+{sample}BCT\_BarChart\_07{sample}
 
 ## Labels and Tooltips
 
@@ -241,7 +240,7 @@ With the following example let's make data labels appear to the right from the b
     
 When formatting data labels' text we use {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter**{api} to choose the column we need to get information from.
 
-{sample}BCT\_BarChart\_07{sample}
+{sample}BCT\_BarChart\_08{sample}
 <!--
 * **Related Help Topics:**
 
@@ -258,12 +257,22 @@ In the sample below we take single-series data described above and mark the bigg
 To make the marker more visually appealing we set its size to 12px.
 
 ```
-    {x: 'Men\'s/Women\'s Specialty Stores', value: 148662, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}}
+  {
+    x: 'Men\'s/Women\'s Specialty Stores',
+    value: 148662, 
+    marker:{
+      type:'star5',         // set marker type
+      fill:'gold',          // set marker color
+      size: 12,             // set marker size
+      enabled: true         // enable marker
+    }, 
+    hoverMarker: {size: 22} // set marker size on mouse over
+  }
 ```
 
 And here is a result - the best retail channel for ACME Corp. is Discount Stores and can be easily seen on this chart.
 
-{sample}BCT\_BarChart\_08{sample}
+{sample}BCT\_BarChart\_09{sample}
 
 ## Colors
 
@@ -273,12 +282,12 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 Now let's study how to apply different colors to different data series. To apply the color to the exact series we need to set the {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter in the {api:anychart.core.cartesian.series}**series**{api}. In the sample below we have 5 series with sample data and we'll color each series to different color. Here is the sample:
 
-{sample}BCT\_BarChart\_09{sample}
+{sample}BCT\_BarChart\_10{sample}
 
 Look at the individual points we colorized in the sample below. We've got a chart with one series and predefined color for all elements. We set "Rgb(180,77,77)" color for the minimum point and "Rgb(77,180,77)" for the maximum one.
 As you see it is very easy to do by setting a value for the {api:anychart.graphics.vector.Fill}**fill()**{api} parameter of a point.
 
-{sample}BCT\_BarChart\_10{sample}
+{sample}BCT\_BarChart\_11{sample}
 
 **Important Note:**
 
@@ -293,4 +302,4 @@ To see whole range of available hatch types see [Hatch Fill](../Appearance_Setti
   
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart a with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
 
-{sample}BCT\_BarChart\_11{sample}
+{sample}BCT\_BarChart\_12{sample}

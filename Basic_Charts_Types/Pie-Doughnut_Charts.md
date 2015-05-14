@@ -17,7 +17,7 @@
 
 ## Overview
 
-Data that is arranged in a one column or an only row can be plotted in a pie chart. The data points in a pie chart are displayed as a percentage of the whole pie.
+Data that is arranged in a one column or an only row can be plotted on a pie chart. The data points in a pie chart are displayed as a percentage of the whole pie.
 
 Use a pie chart when:
 
@@ -98,7 +98,7 @@ And here is the same data as above in the form of a Donut chart:
 
 In Pie/Donut charts, it is possible to sort the series by ascending or descending. This feature is controlled using {api:anychart.charts.Pie#sort}**.sort()**{api} parameter. In the sample below three pie charts with identical series are shown, first isn't sorted, the second is sorted ascending and the third - descending.
 
-{sample}BCT\_PieDonutChart\_03{sample}
+{sample :width 690 :height 230}BCT\_PieDonutChart\_03{sample}
 
 
 ## Exploded Slices

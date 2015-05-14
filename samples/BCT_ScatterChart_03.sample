@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
 
-  chart = anychart.scatterChart();
+  var chart = anychart.scatterChart();
   chart.title().text('Sample Scatter Graph');
 
   chart.xScale().minimum(1.5).maximum(5.5).ticks().interval(1);
@@ -13,28 +13,6 @@ anychart.onDocumentReady(function() {
   chart.yAxis(0).title().text('Waiting time between eruptions (Min)');
   chart.xAxis(0).title().text('Eruption duration (Min)');
   chart.xAxis(0).drawFirstLabel(false).drawLastLabel(false);
-
-  chart.grid(0)
-    .oddFill('#F9F9F9')
-    .evenFill('#FFFFFF')
-    .layout(anychart.enums.Layout.HORIZONTAL);
-
-  chart.minorGrid(0)
-    .evenFill('none')
-    .oddFill('none')
-    .stroke('black 0.1')
-    .layout(anychart.enums.Layout.HORIZONTAL);
-
-  chart.grid(1)
-    .evenFill('none')
-    .oddFill('none')
-    .layout(anychart.enums.Layout.VERTICAL);
-
-  chart.minorGrid(1)
-    .evenFill('none')
-    .oddFill('none')
-    .stroke('black 0.1')
-    .layout(anychart.enums.Layout.VERTICAL);
 
   var marker = chart.marker([
     [4.4, 78],

@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
   // chart type
-  chart = anychart.radar();
+  var chart = anychart.radar();
 
   // chart title
   chart.title().text('Tuning Axes Visualization');
@@ -26,7 +26,7 @@ anychart.onDocumentReady(function() {
   });
 
   // set data and type of series
-  var series = chart.line([
+  chart.line([
     {x: "Administration", value:22},
     {x: "Sales", value:34},
     {x: "Marketing", value:16},

@@ -56,7 +56,7 @@ Adding custom data is nice function, but charts have to be as useful and informa
         // receive all necessary information and summarize it in one variable
         var infoGetter = 'Application Name:<b>' +
         view.get(e.pointIndex, 'x') +
-        '</b><br/><a style="font-color: red;">Average</a> Unique Users: <b>' +
+        '</b><br/><a style="color: red;">Average</a> Unique Users: <b>' +
         view.get(e.pointIndex, 'value') +
         '</b> millions<br/>Year Over Year: <b>' +
         view.get(e.pointIndex, 'yoy') + '%</b>' ;
