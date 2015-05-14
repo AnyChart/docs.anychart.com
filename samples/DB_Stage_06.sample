@@ -2,338 +2,218 @@
      :is_new false
      :exports "chart"}
 	 	 
-anychart.onDocumentReady(function () {
-    // set stage
-    stage = anychart.graphics.create('container');
+    anychart.onDocumentReady(function () {
 
-    // set colors for sample
-    var textColor = '#7c868e';
-    var lineColor = '#CECECE';
-    var chart_palette = anychart.palettes.distinctColors().colors(['#bc7c63', '#6594ad', '#585953']);
+        // set stage
+        var stage = anychart.graphics.create('container');
 
-    // set layers of stage
-    var layer_jay = stage.layer(); // layer for the top of the fir-tree
-    var layer_woodpecker = stage.layer(); // layer for the middle of the fir-tree
-    var layer_squirrel = stage.layer(); // layer for the bottom of the fir-tree
-    var layer_beetle = stage.layer(); // layer for the grass
-    var layer_mouse = stage.layer(); // layer for the trunk
+        // set colors for sample
+        var textColor = '#7c868e';
+        var lineColor = '#CECECE';
+        var chart_palette = anychart.palettes.distinctColors().colors(['#bc7c63', '#6594ad', '#585953']);
 
-    //creating the fir-tree using graphics
-    var ft_top = layer_jay.path().moveTo(175, 100)
-            .lineTo(250, 200)
-            .lineTo(100, 200)
-            .close()
-            .zIndex(1)
-            .fill(['#197419', '#005A00', '#005A00'], -90);
+        // set layers of stage
+        var layer_jay = stage.layer(); // layer for the top of the fir-tree
+        var layer_woodpecker = stage.layer(); // layer for the middle of the fir-tree
+        var layer_squirrel = stage.layer(); // layer for the bottom of the fir-tree
+        var layer_beetle = stage.layer(); // layer for the grass
+        var layer_mouse = stage.layer(); // layer for the trunk
 
-    var ft_top_under = layer_jay
-            .rect(100, 200, 150, 20)
-            .stroke(null)
-            .zIndex(0)
-        //  .fill(175,150,100,100,['black','black 0']);
-            .fill(['black 0.5', '#003800 0.2', '#003800 0'], -90);
+        var draw_piece_of_tree = function(layer, points, color, z_index, rotation){
+            var piece = layer.path().moveTo(points[0][0], points[0][1]).zIndex(z_index).fill(color).stroke(null);
+            for (var i = 0; i < points.length; i++) {
+                piece.lineTo(points[i][0], points[i][1]);
+            }
 
-    ft_top_under.visible(false);
-
-    ft_top.listen('mouseOver', function () {
-        ft_top_under.visible(true);
-    });
-
-    ft_top.listen('mouseOut', function () {
-        ft_top_under.visible(false);
-    });
-
-    layer_jay.zIndex(10);
-
-    var ft_middle = layer_woodpecker.path().moveTo(175, 125)
-            .lineTo(280, 300)
-            .lineTo(70, 300)
-            .zIndex(1)
-            .close()
-            .fill(['#003C00', '#005A00'], -90);
-
-
-    var ft_middle_under = layer_woodpecker
-            .rect(70, 300, 210, 20)
-            .stroke(null)
-            .zIndex(0)
-        //  .fill(175,150,100,100,['black','black 0']);
-            .fill(['black 0.5', '#003800 0.2', '#003800 0'], -90);
-
-    ft_middle_under.visible(false);
-
-    ft_middle.listen('mouseOver', function () {
-        ft_middle_under.visible(true);
-    });
-
-    ft_middle.listen('mouseOut', function () {
-        ft_middle_under.visible(false);
-    });
-
-    layer_woodpecker.zIndex(8);
-
-
-    var ft_bottom = layer_squirrel.path().moveTo(175, 200)
-            .lineTo(310, 400)
-            .lineTo(40, 400)
-            .close()
-            .zIndex(1)
-            .fill(['#003C00', '#003C00', '#005A00'], -90);
-
-
-    var ft_bottom_under = layer_squirrel
-            .rect(40, 400, 270, 20)
-            .stroke(null)
-            .zIndex(0)
-        //  .fill(175,150,100,100,['black','black 0']);
-            .fill(['black 0.5', '#003800 0.2', '#003800 0'], -90);
-
-    ft_bottom_under.visible(false);
-
-    ft_bottom.listen('mouseOver', function () {
-        ft_bottom_under.visible(true);
-    });
-
-    ft_bottom.listen('mouseOut', function () {
-        ft_bottom_under.visible(false);
-    });
-
-    layer_squirrel.zIndex(6);
-
-    var trunk = layer_beetle.rect(135, 400, 80, 100)
-            .zIndex(1)
-            .fill('#8B5A2B');
-
-    var ft_trunk_under = layer_beetle
-            .rect(135, 500, 80, 20)
-            .stroke(null)
-            .zIndex(0)
-        //  .fill(175,150,100,100,['black','black 0']);
-            .fill(['black 0.5', '#003800 0.2', '#003800 0'], -90);
-
-    ft_trunk_under.visible(false);
-
-    trunk.listen('mouseOver', function () {
-        ft_trunk_under.visible(true);
-    });
-
-    trunk.listen('mouseOut', function () {
-        ft_trunk_under.visible(false);
-    });
-
-    layer_beetle.zIndex(4);
-
-    var grass = layer_mouse.path().moveTo(130, 515)
-            .lineTo(115, 500)
-            .lineTo(120, 520)
-            .lineTo(100, 505)
-            .lineTo(110, 525)
-            .lineTo(90, 515)
-            .lineTo(105, 530)
-
-            .moveTo(230, 515)
-            .lineTo(245, 500)
-            .lineTo(240, 520)
-            .lineTo(260, 505)
-            .lineTo(250, 525)
-            .lineTo(270, 515)
-            .lineTo(255, 530)
-            .stroke('green');
-            
-            
-    var getLegend = function (items) {
-            var legend = anychart.ui.legend();
-            legend.fontSize('11px');
-            legend.fontFamily("'Verdana', Helvetica, Arial, sans-serif");
-            legend.itemsLayout('horizontal');
-            legend.fontColor(textColor);
-            legend.iconTextSpacing(0);
-            legend.align('right');
-            legend.position('bottom');
-            legend.padding(0);
-            legend.margin(0, 0, 7, 0);
-            legend.itemsSpacing(3);
-            legend.title().enabled(false);
-            legend.titleSeparator().enabled(false);
-            legend.paginator().enabled(false);
-            legend.background().enabled(false);
-            legend.items(items);
-            return legend
+            if (rotation) piece.rotateByAnchor(rotation, 'center');
+            return piece;
         };
-    var chartLegend = getLegend([
-        {'index': 0, 'text': 'Comes', 'iconType': 'square', 'iconStroke': 'none', 'iconFill': '#bc7c63'},
-        {'index': 1, 'text': 'Eats', 'iconType': 'square', 'iconStroke': 'none', 'iconFill': '#6594ad'},
-        {'index': 2, 'text': 'Mates', 'iconType': 'square', 'iconStroke': 'none', 'iconFill': '#585953'}
-    ]);
-    
-    chartLegend.container(layer_squirrel).draw();
-    
 
-    var draw_chart = function(container, data, bounds, l){
-        var chart = anychart.line();
-        chart.palette(chart_palette);
-        var comes_data = data.mapAs({x: [0], value: [1]});
-        chart.line(comes_data).markers(null);
-        var eats_data = data.mapAs({x: [0], value: [2]});
-        chart.line(eats_data).markers(null);
-        var mates_data = data.mapAs({x: [0], value: [3]});
-        chart.line(mates_data).markers(null);
-        chart.background(null);
-        chart.bounds(bounds);
-        chart.title().enabled(false);
-        chart.grid().enabled(false);
-        chart.minorGrid().enabled(false);
-        chart.grid(1).enabled(false);
-        chart.minorGrid(1).enabled(false);
-        chart.yScale().minimum('-0.1').maximum('12');
-        chart.yScale().ticks().interval(4);
-        chart.yAxis().stroke(lineColor);
-        chart.yAxis().ticks().stroke(lineColor);
-        chart.yAxis().title(false);
-        chart.yAxis().minorTicks(false);
-        chart.yAxis().labels().textSettings({
-                    fontFamily: "'Verdana', Helvetica, Arial, sans-serif",
-                    fontWeight: 'normal',
-                    fontSize: '11px',
-                    fontColor: textColor});
-        chart.yAxis().drawFirstLabel(false);
-        chart.xAxis(false);
-        chart.container(container);
-        chart.draw();
-    };
+        var draw_piece_shadow = function(layer, points, color, z_index, rotation){
+            var piece = layer.path().moveTo(points[0][0], points[0][1]).zIndex(z_index).stroke(null);
+            for (var i = 0; i < points.length; i++) {
+                piece.lineTo(points[i][0], points[i][1]);
+            }
+            piece.fill([color + ' 0.5', color + ' 0.4', color + ' 0'], -90);
+            if (rotation) piece.rotateByAnchor(rotation, 'center');
+            return piece;
+        };
 
-    // jay
-    layer_jay.circle(400, 90, 40)
-            .stroke(lineColor)
-            .fill({
-                src: 'http://static.anychart.com/images/graphics_stage_demo/jay.jpg',
-                mode: acgraph.vector.ImageFillMode.FILL
+        var on_hover = function (piece, shadow) {
+            shadow.visible(false);
+            piece.listen('mouseOver', function () {
+                shadow.visible(true);
             });
-    layer_jay.text(350, 135, 'Garrulus glandarius').color(textColor);
-    var dataSet_jay = anychart.data.set([
-        ["1", 4, 0, 0],
-        ["2", 2, 1, 0],
-        ["3", 2, 1, 0],
-        ["4", 2, 0, 0],
-        ["5", 3, 1, 1],
-        ["6", 1, 1, 0],
-        ["7", 2, 0, 1],
-        ["8", 4, 2, 0],
-        ["9", 5, 1, 1],
-        ["10", 3, 1, 0]
-    ]);
-    draw_chart(layer_jay, dataSet_jay, [450, 40, 250, 100], true);
-    layer_jay.path().moveTo(210, 150)
-            .stroke(lineColor)
-            .lineTo(300, 90)
-            .lineTo(370, 90)
-            .zIndex(-1);
-
-    // woodpecker
-    layer_woodpecker.circle(400, 205, 40)
-            .stroke(lineColor)
-            .fill({
-                src: 'http://static.anychart.com/images/graphics_stage_demo/woodpecker.jpg',
-                mode: acgraph.vector.ImageFillMode.FILL
+            piece.listen('mouseOut', function () {
+                shadow.visible(false);
             });
-    layer_woodpecker.text(350, 250, 'Dendrocopos analis').color(textColor);
-    var dataSet_woodpecker = anychart.data.set([
-        ["1", 4, 4, 0],
-        ["2", 6, 5, 0],
-        ["3", 2, 1, 0],
-        ["4", 2, 2, 0],
-        ["5", 0, 0, 0],
-        ["6", 3, 2, 1],
-        ["7", 6, 3, 2],
-        ["8", 4, 0, 0],
-        ["9", 5, 1, 1],
-        ["10", 3, 0, 0]
-    ]);
-    layer_woodpecker.path().moveTo(250, 250)
-            .stroke(lineColor)
-            .lineTo(300, 200)
-            .lineTo(370, 200)
-            .zIndex(-1);
-    draw_chart(layer_woodpecker, dataSet_woodpecker, [450, 155, 250, 100], false);
+        };
 
+        var draw_chart = function(container, data, bounds){
+            var chart = anychart.line();
+            chart.palette(chart_palette);
+            var comes_data = data.mapAs({x: [0], value: [1]});
+            chart.line(comes_data).markers(null);
+            var eats_data = data.mapAs({x: [0], value: [2]});
+            chart.line(eats_data).markers(null);
+            var mates_data = data.mapAs({x: [0], value: [3]});
+            chart.line(mates_data).markers(null);
 
-    // squirrel
-    layer_squirrel.circle(400, 320, 40)
-            .stroke(lineColor)
-            .fill({
-                src: 'http://static.anychart.com/images/graphics_stage_demo/sqirrel.jpg',
-                mode: acgraph.vector.ImageFillMode.FILL
-            });
-    layer_squirrel.text(360, 365, 'Sciurus vulgaris').color(textColor);
-    var dataSet_squirrel = anychart.data.set([
-        ["1", 3, 1, 1],
-        ["2", 2, 1, 0],
-        ["3", 4, 1, 1],
-        ["4", 4, 2, 0],
-        ["5", 1, 0, 0],
-        ["6", 0, 0, 0],
-        ["7", 2, 0, 1],
-        ["8", 4, 2, 0],
-        ["9", 2, 1, 1],
-        ["10", 5, 1, 0]
-    ]);
-    draw_chart(layer_squirrel, dataSet_squirrel, [450, 270, 250, 100], false);
-    layer_squirrel.path().moveTo(260, 325)
-            .stroke(lineColor)
-            .lineTo(370, 325)
-            .zIndex(-1);
+            chart.background(null);
+            chart.bounds(bounds);
+            chart.title().enabled(false);
+            chart.grid().enabled(false);
+            chart.minorGrid().enabled(false);
+            chart.grid(1).enabled(false);
+            chart.minorGrid(1).enabled(false);
+            chart.yScale().minimum('-0.1').maximum('12');
+            chart.yScale().ticks().interval(4);
+            chart.yAxis().stroke(lineColor);
+            chart.yAxis().ticks().stroke(lineColor);
+            chart.yAxis().title(false);
+            chart.yAxis().minorTicks(false);
+            chart.yAxis().labels().textSettings({
+                        fontFamily: "'Verdana', Helvetica, Arial, sans-serif",
+                        fontWeight: 'normal',
+                        fontSize: '12px',
+                        fontColor: textColor});
+            chart.yAxis().drawFirstLabel(false);
+            chart.xAxis(false);
+            chart.container(container);
+            chart.draw();
+        };
 
-    // beetle
-    layer_beetle.circle(400, 435, 40)
-            .stroke(lineColor)
-            .fill({
-                src: 'http://static.anychart.com/images/graphics_stage_demo/beetle.jpg',
-                mode: acgraph.vector.ImageFillMode.FILL
-            });
-    layer_beetle.text(340, 480, 'Dendroctonus ponderosae').color('grey');
-    var dataSet_beetle = anychart.data.set([
-        ["1", 4, 4],
-        ["2", 9, 7],
-        ["3", 7, 1],
-        ["4", 1, 5],
-        ["5", 0, 1],
-        ["6", 8, 3],
-        ["7", 0, 0],
-        ["8", 2, 6],
-        ["9", 7, 1],
-        ["10", 3, 0]
-    ]);
-    draw_chart(layer_beetle, dataSet_beetle, [450, 385, 250, 100], false);
-    layer_beetle.path().moveTo(210,435)
-        .stroke(lineColor)
-        .lineTo(370,435)
-        .zIndex(-1);
+        var draw_line = function(layer, points, color, z_index){
+            var line = layer.path().moveTo(points[0][0], points[0][1]).stroke(color).zIndex(z_index);
+            for (var i = 0; i < points.length; i++) {
+                line.lineTo(points[i][0], points[i][1]);
+            }
+			return line;
+        };
 
-    // mouse
-    layer_mouse.circle(400, 550, 40)
-            .stroke(lineColor)
-            .fill({
-                src: 'http://static.anychart.com/images/graphics_stage_demo/mouse.jpg',
-                mode: acgraph.vector.ImageFillMode.FILL
-            });
-    layer_mouse.text(355, 595, 'Apodemus uralensis').color(textColor);
-    var dataSet_mouse = anychart.data.set([
-        ["1", 10, 2, 4],
-        ["2", 11, 3, 0],
-        ["3", 8, 4, 2],
-        ["4", 12, 0, 0],
-        ["5", 10, 6, 1],
-        ["6", 10, 5, 0],
-        ["7", 7, 0, 3],
-        ["8", 8, 1, 0],
-        ["9", 9, 1, 1],
-        ["10", 8, 1, 0]
-    ]);
-    draw_chart(layer_mouse, dataSet_mouse, [450, 500, 250, 100], false);
-    layer_mouse.path().moveTo(210, 500)
-            .stroke(lineColor)
-            .lineTo(300, 500)
-            .lineTo(370, 570)
-            .zIndex(-1);
+        var draw_picture = function (layer, radius, coordinates, color, pic_name) {
+            layer.circle(radius, coordinates[0], coordinates[1])
+                .stroke(color)
+                .fill({
+                    src: 'http://static.anychart.com/images/graphics_stage_demo/' + pic_name,
+                    mode: acgraph.vector.ImageFillMode.FILL
+                });
+            return layer;
+        };
 
-});
+        
+        // jay
+        var dataSet_jay = anychart.data.set([
+            ["1", 4, 0, 0],
+            ["2", 2, 1, 0],
+            ["3", 2, 1, 0],
+            ["4", 2, 0, 0],
+            ["5", 3, 1, 1],
+            ["6", 1, 1, 0],
+            ["7", 2, 0, 1],
+            ["8", 4, 2, 0],
+            ["9", 5, 1, 1],
+            ["10", 3, 1, 0]
+        ]);
+        layer_jay.text(350, 135, 'Garrulus glandarius').color(textColor);
+        var jay_pic = draw_picture(layer_jay, 400, [90, 40], lineColor, 'jay.jpg');
+        draw_line(layer_jay, [[210, 150], [300, 90], [370, 90]], lineColor, -1);
+        draw_chart(layer_jay, dataSet_jay, [450, 40, 250, 100]);
+        var top_tree_piece = draw_piece_of_tree(layer_jay, [[175, 80], [250, 200], [100, 200]], '#7cb342', 1, 5);
+        var top_tree_shadow = draw_piece_shadow(layer_jay, [[175, 80], [250, 250], [100, 250]], '#212121', -1, 5);
+        on_hover(top_tree_piece, top_tree_shadow);
+        layer_jay.zIndex(10);
+
+		
+        // woodpecker
+        var dataSet_woodpecker = anychart.data.set([
+            ["1", 4, 4, 0],
+            ["2", 6, 5, 0],
+            ["3", 2, 1, 0],
+            ["4", 2, 2, 0],
+            ["5", 0, 0, 0],
+            ["6", 3, 2, 1],
+            ["7", 6, 3, 2],
+            ["8", 4, 0, 0],
+            ["9", 5, 1, 1],
+            ["10", 3, 0, 0]
+        ]);
+        layer_woodpecker.text(350, 250, 'Dendrocopos analis').color(textColor);
+        var woodpecker_pic = draw_picture(layer_woodpecker, 400, [205, 40], lineColor, 'woodpecker.jpg');
+        draw_line(layer_woodpecker, [[250, 250], [300, 200], [370, 200]], lineColor, -1);
+        draw_chart(layer_woodpecker, dataSet_woodpecker, [450, 155, 250, 100]);
+		var middle_tree_piece = draw_piece_of_tree(layer_woodpecker, [[175, 125], [280, 300], [70, 300]], '#689f38', 1, 0);
+		var middle_tree_shadow = draw_piece_shadow(layer_woodpecker, [[175, 125], [280, 350], [70, 350]], '#212121', -1, 0);
+		on_hover(middle_tree_piece, middle_tree_shadow);
+		
+        layer_woodpecker.zIndex(8);
+
+		
+        // squirrel
+        var dataSet_squirrel = anychart.data.set([
+            ["1", 3, 1, 1],
+            ["2", 2, 1, 0],
+            ["3", 4, 1, 1],
+            ["4", 4, 2, 0],
+            ["5", 1, 0, 0],
+            ["6", 0, 0, 0],
+            ["7", 2, 0, 1],
+            ["8", 4, 2, 0],
+            ["9", 2, 1, 1],
+            ["10", 5, 1, 0]
+        ]);
+        layer_squirrel.text(360, 365, 'Sciurus vulgaris').color(textColor);
+        var squirrel_pic = draw_picture(layer_squirrel, 400, [320, 40], lineColor, 'sqirrel.jpg');
+        draw_line(layer_squirrel, [[260, 325], [370, 325]], lineColor, -1);
+        draw_chart(layer_squirrel, dataSet_squirrel, [450, 270, 250, 100]);
+		var bottom_tree_piece = draw_piece_of_tree(layer_squirrel, [[175, 220], [310, 420], [40, 420]], '#558b2f', 1, 0);
+		var bottom_tree_shadow = draw_piece_shadow(layer_squirrel, [[175, 220], [310, 470], [40, 470]], '#212121', -1, 0);
+		on_hover(bottom_tree_piece, bottom_tree_shadow);
+		
+        layer_squirrel.zIndex(6);
+
+		
+        // beetle
+        var dataSet_beetle = anychart.data.set([
+            ["1", 4, 4],
+            ["2", 9, 7],
+            ["3", 7, 1],
+            ["4", 1, 5],
+            ["5", 0, 1],
+            ["6", 8, 3],
+            ["7", 0, 0],
+            ["8", 2, 6],
+            ["9", 7, 1],
+            ["10", 3, 0]
+        ]);
+        layer_beetle.text(340, 480, 'Dendroctonus ponderosae').color(textColor);
+        var beetle_pic = draw_picture(layer_beetle, 400, [435, 40], lineColor, 'beetle.jpg');
+        draw_line(layer_beetle, [[210, 435], [370, 425]], lineColor, -1);
+        draw_chart(layer_beetle, dataSet_beetle, [450, 385, 250, 100]);
+		var trunk = draw_piece_of_tree(layer_beetle, [[135, 400], [215, 400], [215, 500], [135, 500], [135, 400]], '#6d4c41', 1, 0);
+		var trunk_shadow = draw_piece_shadow(layer_beetle, [[135, 400], [215, 400], [215, 550], [135, 550], [135, 400]], '#212121', -1, 0);
+        on_hover(trunk, trunk_shadow);
+		layer_beetle.zIndex(4);
+
+		
+        // mouse
+        var dataSet_mouse = anychart.data.set([
+            ["1", 10, 2, 4],
+            ["2", 11, 3, 0],
+            ["3", 8, 4, 2],
+            ["4", 12, 0, 0],
+            ["5", 10, 6, 1],
+            ["6", 10, 5, 0],
+            ["7", 7, 0, 3],
+            ["8", 8, 1, 0],
+            ["9", 9, 1, 1],
+            ["10", 8, 1, 0]
+        ]);
+        layer_mouse.text(355, 595, 'Apodemus uralensis').color(textColor);
+        var mouse_pic = draw_picture(layer_mouse, 400, [550, 40], lineColor, 'mouse.jpg');
+        draw_line(layer_mouse, [[210, 500], [300, 500], [370, 570]], lineColor, -1);
+        draw_chart(layer_mouse, dataSet_mouse, [450, 500, 250, 100]);
+		//draw_piece_of_tree(layer_mouse, [[130, 515], [115, 520], [100, 505], [110, 110], [90, 515], [105, 530]], '#33691e', 1, 0);
+		//draw_piece_of_tree(layer_mouse, [[230, 515], [245, 500], [240, 520], [260, 505], [250, 525], [270, 515], [255, 530]], '#33691e', 1, 0);
+        layer_mouse.zIndex(2);
+    });
