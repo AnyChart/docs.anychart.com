@@ -117,7 +117,7 @@ with x axis labels symbols limited to 3.
 You can tune visual appearance of axes labels according to your chart design. Label visual settings consist of background 
 settings (which include margins and border), font settings and effects.
   
-In general you can learn more about these settings in: [Background tutorial](../Appearance_Settings/Background), [Fonts tutorial](../Appearance_Settings/Fonts)<!-- and Effects tutorial[/links]-->.
+In general you can learn more about these settings in: [Background tutorial](../Appearance_Settings/Background), [Text Settings tutorial](../Appearance_Settings/Text_Settings)<!-- and Effects tutorial[/links]-->.
 
   
 In this section we will cover the basics that allow to tune labels appearance and some special features (Multi-line labels).

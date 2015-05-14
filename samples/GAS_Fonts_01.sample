@@ -15,13 +15,13 @@ anychart.onDocumentReady(function() {
     ]);
 
     // chart type
-    chart = anychart.columnChart();
+    var chart = anychart.columnChart();
 
     // title
     chart.title().text('International Simbols Support');
 
     // set data
-    series = chart.column(data);
+    var series = chart.column(data);
 
     // adjust tooltip content
     series.tooltip().contentFormatter(function(){
