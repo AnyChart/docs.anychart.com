@@ -1,4 +1,4 @@
-#Text Formatting
+#Text Formatters
 
 * [Overview](#overview)
 * [Default fields](#default_fields)
