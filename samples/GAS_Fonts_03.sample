@@ -6,8 +6,10 @@ anychart.onDocumentReady(function() {
   
   // set stage
   var stage = anychart.graphics.create('container');
+  
   // create table
   var table = anychart.ui.table();
+
   // set table content
   table.contents([
     [
@@ -134,6 +136,7 @@ anychart.onDocumentReady(function() {
   ]);
   
   // table settings
+  
   table.getRow(0).height(30);
   table.getRow(8).height(40);
   table.getRow(9).height(45);
