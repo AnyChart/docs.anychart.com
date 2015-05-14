@@ -89,14 +89,19 @@ to see the full source code, alter and play with the sample or download it.
 For better look of your charts you can use SplineArea chart type:
 
 ```
-    anychart.data.set([
+    // data
+    var data = anychart.data.set([
         ['January', 10000],
         ['February', 12000],
         ['March', 18000],
         ['April', 11000],
         ['May', 9000]
     ]);
+
+    // setting chart type
     chart = anychart.areaChart();
+	
+	// set data and define chart type
     chart.splineArea(data);
 ```
 
