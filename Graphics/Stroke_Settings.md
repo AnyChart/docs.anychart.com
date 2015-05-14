@@ -1,4 +1,4 @@
-# Stroke Settings.
+# Stroke Settings
 * [Stroke Color](#stroke_color)
 * [Stroke Thickness](#stroke_thickness)
 * [Dash](#dash)
