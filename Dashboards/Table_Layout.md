@@ -16,7 +16,7 @@
 
 ## Overview
 
-Table layout is a kind of a dashboard tools, which provides clear and effective way of positioning data on plot. Dashboard is an easy to read, often single page, real-time user interface, showing a graphical presentation of the current status (snapshot) and historical trends of an organization’s key performance indicators to enable instantaneous and informed decisions to be made at a glance.
+Table layout is a kind of dashboard tools, which provides clear and effective way of positioning data on plot. Dashboard is an easy to read, often single page, real-time user interface, showing a graphical presentation of the current status (snapshot) and historical trends of an organization’s key performance indicators to enable instantaneous and informed decisions to be made at a glance.
 
 Table Layout helps to manage several elements within the limits of one chart container. Table may help to control visual appearance and logic structure of data.
 
