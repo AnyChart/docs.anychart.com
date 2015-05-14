@@ -4,6 +4,13 @@
 * [Getting started with the stage](#getting_started_with_the_stage)
   * [Enabling the stage](#enabling_the_stage)
   * [Chart placement](#chart_placement)
+* [Layers](#layers)
+  * [Add](#add)
+  * [Remove](#remove)
+  * [Adapt](#adapt)
+* [Custom elements](#custom_elements)
+* [Print](#print)
+
   
 ## Overview
 
@@ -70,8 +77,94 @@ In case you need to place more than one chart, you can use bounds to adapt the d
 ```
 {sample}DB\_Stage\_02{sample}
 
-There are two ways of using bounds. If you define them in percents, your charts will resize each time the container is resized. If you define bounds in pixels, the charts will not change their dimensions along with the resized container. Let's see what we'll get if we define bounds in pixels:
+There are two ways of using bounds. If you define them in percent, your charts will resize each time the window they are opened in is resized. If you define bounds in pixels, the charts will not change their dimensions along with the resized window. Let's see what we'll get if we define bounds in pixels:
 
 {sample}DB\_Stage\_02-1{sample}
 
-Explore the code in the playground to understand the difference.
+Explore the whole code in the playground to understand the difference.
+
+
+When using stage, there's another way to place a number of charts next to each other. Using layers makes it easier to edit the dimensions of the charts and their location.
+
+##Layers
+
+Using layers makes it easier to operate with groups of elements. It's possible to transform, remove or add a plenty of elements with the only line. A workflow with AnyChart layers is organized quite similar to the same working process in Adobe Photoshop. You may edit a single layer with no changes made with other layers. This feature is rather helpful while creating dashboards.
+Look at the next sample. Here we've done the same as in the sample above, but using layers.
+
+```
+	// set layers
+    var layer_1 = stage.layer();
+    var layer_2 = stage.layer();
+	
+```
+{sample}DB\_Stage\_03{sample}
+
+Note that we can move charts using not only bounds but layer functions, such as {api:anychart.graphics.vector.Layer#translate}**.translate()**{api}, {api:anychart.graphics.vector.Layer#setPosition}**.setPosition()**{api}, etc. Look for the whole list in our Layer **{api:anychart.graphics.vector.Layer}API{api}**.
+
+###Add
+
+There are several options how to add a layer. You can see the first one in the sample above. The second way is to use the {api:anychart.graphics.vector.Stage#addChild}**.addChild()**{api} method to add an element to a stage or layer by its name if you have already created it using the AnyChart constructor. The similar method {api:anychart.graphics.vector.Stage#addChildAt}**.addChildAt()**{api} will allow you to put the new element between the existing layers or behind them by defining not only the name but the index for this element.
+
+```
+	//first way of adding a layer
+	var layer_1 = anychart.graphics.layer();
+    stage.addChild(layer_1); //for the first chart
+	
+	//second way of adding a layer
+    var layer_2 = stage.layer(); //for the second chart
+	
+```
+Try to edit any sample with layers in this way.
+
+###Remove
+
+We can simply get rid of layers - use {api:anychart.graphics.vector.Element.remove()}**.remove()**{api} for this.
+For example, let's remove the lowest layer from our last sample:
+
+```
+	// remove the first layer
+    layer_1.remove();
+	
+```
+{sample}DB\_Stage\_04{sample}
+
+###Adapt
+
+As it was mentioned before, layers might be transformed. For example, we use {api:anychart.graphics.vector.Element#translate}**.translate()**{api}
+ to change the layers' position, {api:anychart.graphics.vector.Element#rotate}**.rotate()**{api} 
+for rotating them and {api:anychart.graphics.vector.Element#scale}**.scale()**{api},
+ if we need to scale it some way.
+ 
+ Let's now make a more complicated example to show those features. Explore the sample in the playground to see the code.
+ 
+{sample}DB\_Stage\_05{sample}
+
+Note that the center of the stage coordinate system is in the left top corner of the monitor and the vertical scale of the stage is directed to the bottom of the screen.
+
+Here we used 3 different layers to build each chart.
+
+##Custom elements
+
+Besides the advantage of using layers, there's one more thing that you can do with the stage - add some custom elements, e.g. lines, curves, circles and other shapes, like in the following example:
+
+{sample :width 688 :height 700}DB\_Stage\_06{sample}
+
+Here we considered the biocenosis of a fir-tree. We have put the pics of animals, drawn the fir-tree and the lines leading to the charts using the stage graphics, - you can find more about graphics in our [Graphics](../Graphics/Basics) tutorial.
+ 
+```
+	// remove the first layer
+    layer_1.remove();
+	
+```
+
+##Print
+
+To print the whole dashboard just add the {api}**.print()**{api} method to your stage. It will look like the following:
+
+```
+	// print
+    stage.print();
+	
+```
+
+{sample}DB\_Stage\_07{sample}
