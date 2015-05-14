@@ -29,7 +29,7 @@ Here is a simple sample to illustrate how to create a project chart:
 
 ## Hierarchy
 
-[Tree data model](Using_Data_Tree_Model) is used in Project Gantt Charts to define a data hierarchy. It can be set in two ways: by table and by structure. In both samples below node "first" is the parent of node "second".
+[Tree data model](../Working_with_Data/Using_Data_Tree_Model) is used in Project Gantt Charts to define a data hierarchy. It can be set in two ways: by table and by structure. In both samples below node "first" is the parent of node "second".
 
 ```
 // hierarchy 1 by table

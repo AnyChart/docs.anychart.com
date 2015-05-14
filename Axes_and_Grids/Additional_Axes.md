@@ -44,7 +44,7 @@ Another example of multiple axes use is multiple Y Axes along with multiple X Ax
 
 ## Tuning
 
-If you want to change any settings of additional axes you can do that just the same way as basic X and Y axes are configured, see [Axes basics](Axis_Basics) and [Axes Scale](Axis_Scale) for the details:
+If you want to change any settings of additional axes you can do that just the same way as basic X and Y axes are configured, see [Axes basics](Axis_Basics) and [Axes Scale](Scales) for the details:
 
 ```
     chart.yScale().minimum(0).maximum(800000);

@@ -2,14 +2,13 @@
 Gantt Chart Quick Start
 ===========
   
-## 4 Simple Steps to Start Using Gantt Chart
+## Getting started with Gantt Chart
 ###1. Include Gantt Chart into Your Web Page
-Include the JavaScript file in the `<head>` section of your web page.  
-You can use CDN as shown below or visit the [download page](./Downloading_AnyChart).
+Include the JavaScript file in the `<head>` section of your web page - visit the [download page](../Quick_Start/Downloading_AnyChart) for those or use CDN as shown below.
 
 ```
 <head>
-    <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
+    <script src="http://cdn.anychart.com/js/latest/anygantt.min.js" type="text/javascript"></script> 
 </head>
 ```
 
@@ -111,7 +110,7 @@ You can copy this to a file on your computer and open it in your browser to disp
 ```
 <!doctype html>
 <head>
-  <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
+  <script src="//cdn.anychart.com/js/latest/anygantt.min.js" type="text/javascript"></script>
   <script>
 	anychart.onDocumentReady(function(){
 	
@@ -145,7 +144,7 @@ You can copy this to a file on your computer and open it in your browser to disp
 	      }];
 	
 	  // tree data settings
-	  var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TREE);
+	  var treeData = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
 	
 	  // chart type
 	  chart = anychart.ganttProject();
