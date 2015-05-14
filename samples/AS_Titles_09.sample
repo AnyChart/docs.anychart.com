@@ -81,7 +81,7 @@ anychart.onDocumentReady(function() {
       .fontWeight(400)                      // unbold title
       .background()                         // background settings
         .enabled(true)                      // eanble background
-        .fill(null)                         // disable fill
+        .fill('#FFFFFF')                    // disable fill
         .stroke('#000000');                 // set black border to title
     
     // set container and draw title
