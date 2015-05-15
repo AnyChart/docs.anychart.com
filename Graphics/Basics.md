@@ -67,7 +67,7 @@ There are three default shapes in graphics: circle, rectangle and ellipse. If yo
 
 ###Building the path 
 
-To draw more complicated shapes you should use the {api:anychart.graphics#path}path{api} method. 
+To draw more complicated shapes you should use the {api:anychart.graphics#path}**.path()**{api} method. 
 
 Using this, you will be able to draw any shape. Let's draw a triangle outside of the circle and a line inside the triangle.
 
@@ -92,7 +92,7 @@ Find more in our **{api:anychart.graphics.vector.Path}Path{api}** API.
  
 ###Coloring
 
-There are several ways of coloring the shapes and lines on a stage. To change the color of the stroke set the color as a parameter of **{api:anychart.graphics.vector.Shape#stroke}.stroke(){api}**,
+There are several ways of coloring the shapes and lines on a stage. To change the color of the stroke set the color as a parameter of {api:anychart.graphics.vector.Shape#stroke}**.stroke()**{api},
  as with other AnyChart components. The same is with filling the shapes: use **{api:anychart.graphics.vector.Shape#fill}.fill(){api}** to set the color. Let's make the stroke of red color 
  and fill the shapes with different colors in the sample above. Note that all shapes are transparent before being filled, so when we set colors we need to define the order of the shapes. 
  For this we use **{api:anychart.core.VisualBase#zIndex}.zIndex(){api}**;
@@ -105,7 +105,7 @@ There are several ways of coloring the shapes and lines on a stage. To change th
 ```
 {sample}GRAPHICS\_Basics\_03{sample}
 
-As you can see, here we painted the circle with a slight gradient. It can be done with the stroke too; in general, color settings on a stage are the same as with usual container. Visit the [Fill Guide](/Fill_Settings) or the [Stroke Guide](/Stroke_Settings) to know more about the colors.
+As you can see, here we painted the circle with a slight gradient. It can be done with the stroke too; in general, color settings on a stage are the same as with usual container. Visit the [Fill Guide](../Graphics/Fill_Settings) or the [Stroke Guide](../Graphics/Stroke_Settings) to know more about the colors.
 
 ##Layers
 

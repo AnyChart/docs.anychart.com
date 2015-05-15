@@ -49,7 +49,7 @@ The sample below shows a revenue chart with AnyChart logo in the left top corner
     .zIndex(chart.zIndex() + 1);                                // manage overlapping
 ```
 
-Using this settings will allow you to display chart like that:
+These settings will allow you to display chart the following way:
 
 {sample}AS\_Labels\_02{sample}
 

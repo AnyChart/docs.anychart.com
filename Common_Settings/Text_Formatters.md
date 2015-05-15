@@ -139,20 +139,16 @@ To add any parameter to the meta of the series, you need to set the parameter na
     // set first series data
     var series_1 = chart.ohlc([
         {x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
-        {x: Date.UTC(2007, 7, 29), open:507.84, high:513.30, low:507.23, close:512.88},
-        {x: Date.UTC(2007, 7, 30), open:512.36, high:515.40, low:510.58, close:511.40},
-        {x: Date.UTC(2007, 7, 31), open:513.10, high:516.50, low:511.47, close:515.25},
-        {x: Date.UTC(2007, 8, 2), open:515.02, high:528.00, low:514.62, close:525.15}
+        {x: Date.UTC(2007, 7, 30), open:517.36, high:518.40, low:516.58, close:516.80},
+        {x: Date.UTC(2007, 8, 1), open:513.10, high:516.50, low:511.47, close:515.25},
     ]).xPointPosition(0.5)
     .meta('company', 'ACME Corp.');
-
+     
     // set second series data
     var series_2 = chart.ohlc([
         {x: Date.UTC(2007, 7, 28), open: 522.95, high: 523.10, low: 522.50, close: 522.52},
-        {x: Date.UTC(2007, 7, 29), open: 522.60, high: 522.69, low: 522.27, close: 522.55},
-        {x: Date.UTC(2007, 7, 30), open: 522.49, high: 522.91, low: 522.38, close: 522.61},
-        {x: Date.UTC(2007, 7, 31), open: 522.81, high: 522.83, low: 522.51, close: 522.73},
-        {x: Date.UTC(2007, 8, 2),  open: 523.30, high: 524.50, low: 523.20, close: 523.97, label:{anchor:'top', position:'right', offsetX:30}}
+        {x: Date.UTC(2007, 7, 30), open: 524.49, high: 524.91, low: 524.38, close: 524.61},
+        {x: Date.UTC(2007, 8, 1), open: 518.81, high: 520.03, low: 517.51, close: 519.73}
     ]).xPointPosition(0.5)
     .meta('company', 'Duff B. Corp.');
 
