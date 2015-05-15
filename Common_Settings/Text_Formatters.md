@@ -3,9 +3,9 @@
 * [Overview](#overview)
 * [Default fields](#default_fields)
 * [Extra fields](#extra_fields)
- * [getDataValue](#getDataValue)
- * [getSeriesMeta](#getSeriesMeta)
- * [getStat](#getStat)
+ * [getDataValue](#getdatavalue)
+ * [getSeriesMeta](#getseriesmeta)
+ * [getStat](#getstat)
 
 
 ## Overview

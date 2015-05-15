@@ -12,7 +12,7 @@
   
 ## Overview
 
-If you have already used AnyChart or considered samples in our articles, you might have noticed the code like:
+If you have already used AnyChart or explored samples in our articles, you might have noticed the code like:
 
 ```
 // set stage
@@ -23,7 +23,9 @@ or like this:
 table.getCell(14,1).content().textWrap(anychart.graphics.vector.Text.TextWrap.NO_WRAP);
 ```
 
+
 These lines mean that the usage of anychart.graphics takes place in this or that sample. What is this anychart.graphics?
+
 
 Anychart.graphics is one of AnyChart components, the library which is capable for rendering and display. All charts are based on this library. It's not necessary to know how it works 
 to use AnyChart components, but if you want to use those options like drawing custom forms and use them as markers or create complicated dashboards, you should deal with some things.
@@ -48,7 +50,7 @@ Note that the center of the stage coordinate system is in the left top corner of
 ##Basic shapes and primitives
 
 On a stage, you can draw pictures using simple shapes, such as rectangles, circles, lines, etc. 
-Let's make a simple picture: let's put a "ball" into the "box" using stage instruments like circle and square:
+Let's make a simple picture: put a "ball" into the "box" using stage instruments like circle and square:
 
 ```
     //draw the circle
@@ -59,7 +61,7 @@ Let's make a simple picture: let's put a "ball" into the "box" using stage instr
 ```
 {sample}GRAPHICS\_Basics\_01{sample}
 
-There are three default shapes in graphics: circle, rectangle and ellipse. If you need to draw something more complicated, use the **{api:anychart.graphics#path}path{api}** method.
+There are three default shapes in graphics: circle, rectangle and ellipse. If you need to draw something more complicated, use the **{api:anychart.graphics#path}.path(){api}** method.
 
 ##Path
 
@@ -84,13 +86,13 @@ Using this, you will be able to draw any shape. Let's draw a triangle outside of
 
 As you can see, here we used the **{api:anychart.graphics.vector.Path#moveTo}.moveTo(){api}** function to define the starting point of drawing. To draw a line to the next 
 point we use the **{api:anychart.graphics.vector.Path#lineTo},lineTo(){api}** function. To define that we have finished with the particular figure we 
-use **{api:anychart.graphics.vector.Path#close}.close(){api}. 
+use **{api:anychart.graphics.vector.Path#close}.close(){api}**. 
 There are a lot of drawing functions, like **{api:anychart.graphics.vector.Path#arcTo}.arcTo(){api}** or **{api:anychart.graphics.vector.Path#curveTo}.curveTo(){api}**, that helps to draw arcs and curves.
 Find more in our **{api:anychart.graphics.vector.Path}Path{api}** API.
  
 ###Coloring
 
-There are several ways of coloring the shapes and lines on a stage. To change the color of the stroke set the color as a parameter of {api:anychart.graphics.vector.Shape#stroke}.stroke(){api}**,
+There are several ways of coloring the shapes and lines on a stage. To change the color of the stroke set the color as a parameter of **{api:anychart.graphics.vector.Shape#stroke}.stroke(){api}**,
  as with other AnyChart components. The same is with filling the shapes: use **{api:anychart.graphics.vector.Shape#fill}.fill(){api}** to set the color. Let's make the stroke of red color 
  and fill the shapes with different colors in the sample above. Note that all shapes are transparent before being filled, so when we set colors we need to define the order of the shapes. 
  For this we use **{api:anychart.core.VisualBase#zIndex}.zIndex(){api}**;
@@ -103,7 +105,7 @@ There are several ways of coloring the shapes and lines on a stage. To change th
 ```
 {sample}GRAPHICS\_Basics\_03{sample}
 
-As you can see, here we painted the circle with a slight gradient. It can be done with the stroke too; in general, color settings on a stage are the same as with usual container. Visit the [Fill Guide](../Appearance_Settings/Fill) or the [Stroke Guide](../Appearance_Settings/Stroke) to know more about the colors.
+As you can see, here we painted the circle with a slight gradient. It can be done with the stroke too; in general, color settings on a stage are the same as with usual container. Visit the [Fill Guide](/Fill_Settings) or the [Stroke Guide](/Stroke_Settings) to know more about the colors.
 
 ##Layers
 
