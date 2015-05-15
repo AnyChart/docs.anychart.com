@@ -50,7 +50,8 @@ x<br>seriesName<br>index<br>value<br>valueLowerError<br>valueUpperError<br>xLowe
 <td>x<br>open<br>high<br>low<br>close<br>seriesName<br>index</td>
 </tr>
 <tr>
-<td>Pie/Donut<br><!--Funnel--!></td>
+<td>Pie/Donut<br><!--Funnel--!>
+</td>
 <td>**Note!** As those types have an only series by default,<br> you should use the {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method with chart.label().<br>x<br>value<br>seriesName<br>index</td>
 </tr>
 </table>

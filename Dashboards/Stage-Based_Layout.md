@@ -20,11 +20,11 @@ To get an access to some useful settings of the stage we should do a custom crea
 ```
 Here we have defined the container for the stage simultaneously with enabling the stage. The following piece of code means the same:
 ```
-	var stage = anychart.graphics.create;
+	var stage = anychart.graphics.create();
 	stage.container('container');
 ```
 
-This will make the stage with the width and height of the main container by default. To change the default values of those parameters, write them after the name of the container in brackets. 
+This will make the stage of the main container's width and height by default. To change the default values of those parameters, write them after the name of the container in brackets. 
 For example, to define the new stage of 800px in width and 600px in height, write the following:
 
 ```
