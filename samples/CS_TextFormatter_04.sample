@@ -45,10 +45,10 @@ anychart.onDocumentReady(function() {
      
     //textFormatter
     series_1.labels().textFormatter(function(){
-        return('Company: '+this.getSeriesMeta('company')+'\nLowest: '+this.low+'\nHighest: '+this.high);
+        return('C: '+this.getSeriesMeta('company')+'\nL: '+this.low+'\nH: '+this.high);
     });
     series_2.labels().textFormatter(function(){
-        return('Company: '+this.getSeriesMeta('company')+'\nLowest: '+this.low+'\nHighest: '+this.high);
+        return('C: '+this.getSeriesMeta('company')+'\nL: '+this.low+'\nH: '+this.high);
     });
     
     //labels positioning

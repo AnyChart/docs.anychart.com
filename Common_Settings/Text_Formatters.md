@@ -90,10 +90,10 @@ This function can return more than one value. The sample below demonstrates it.
 ```
     //set the textFormatter
     series_1.labels().textFormatter(function(){
-        return('Size: '+this.size+', value: '+this.value+' ');
+        return('Size: '+this.size+', value: '+this.value);
     });
     series_2.labels().textFormatter(function(){
-        return('Size: '+this.size+', value: '+this.value+' ');
+        return('Size: '+this.size+', value: '+this.value);
     });
 
 ```
@@ -157,10 +157,10 @@ To add any parameter to the meta of the series, you need to set the parameter na
 
     //textFormatter
     series_1.labels().textFormatter(function(){
-        return('Company: '+this.getSeriesMeta('company')+'\nLowest: '+this.low+'\nHighest: '+this.high);
+        return('C: '+this.getSeriesMeta('company')+'\nL: '+this.low+'\nH: '+this.high);
     });
     series_2.labels().textFormatter(function(){
-        return('Company: '+this.getSeriesMeta('company')+'\nLowest: '+this.low+'\nHighest: '+this.high);
+        return('C: '+this.getSeriesMeta('company')+'\nL: '+this.low+'\nH: '+this.high);
     });
 
 ```

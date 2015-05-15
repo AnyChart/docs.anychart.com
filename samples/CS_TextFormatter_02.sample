@@ -35,10 +35,10 @@ anychart.onDocumentReady(function() {
 	
     //set the textFormatter
     series_1.labels().textFormatter(function(){
-    return('Size: '+this.size+', value: '+this.value+' ');
+    return('Size: '+this.size+', value: '+this.value);
     });
     series_2.labels().textFormatter(function(){
-    return('Size: '+this.size+', value: '+this.value+' ');
+    return('Size: '+this.size+', value: '+this.value);
 });
 	//positioning the labels
     series_1.labels().anchor('bottom');
