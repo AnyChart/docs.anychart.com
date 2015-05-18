@@ -2,6 +2,7 @@
 
 * [Overview](#overview)
 * [Chart](#chart)
+* [Neck and Head](#neck_and_head)
 * [Padding](#padding)
 * [Visualization](#visualization)
 * [Labels and Tooltips](#labels_and_tooltips)
