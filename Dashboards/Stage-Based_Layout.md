@@ -5,7 +5,7 @@
   * [Enabling the stage](#enabling_the_stage)
   * [Chart placement](#chart_placement)
 * [Layers](#layers)
-  * [Add/Remove](#add)/[Remove](#remove)
+  * [Add/Remove](#add_or_remove)
   * [Adapt](#adapt)
 * [Custom elements](#custom_elements)
 * [Print](#print)
@@ -87,42 +87,33 @@ When using stage, there's another way to place a number of charts next to each o
 
 ##Layers
 
-Using layers makes it easier to operate with groups of elements. It's possible to transform, remove or add a plenty of elements with the only line. A workflow with AnyChart layers is organized quite similar to the same working process in Adobe Photoshop. You may edit a single layer with no changes made with other layers. This feature is rather helpful while creating dashboards.
-Look at the next sample. Here we've done the same as in the sample above, but using layers.
+Using layers makes it easier to operate with groups of elements. It's possible to transform, remove or add a plenty of elements with the only line. 
+A workflow with AnyChart layers is organized quite similar to the same working process in Adobe Photoshop. You may edit a single layer with no changes made with other layers. 
+This feature is rather helpful while creating dashboards.
+Look at the next sample. Here we have four different same-positioned layers with different zIndexes, which swap places when changing their zIndexes on clicking the buttons. 
+Explore the sample in our playground to see the whole code.
 
-```
-	// set layers
-    var layer_1 = stage.layer();
-    var layer_2 = stage.layer();
-	
-```
 {sample}DB\_Stage\_03{sample}
-
-Note that we can move charts using not only bounds but layer functions, such as {api:anychart.graphics.vector.Layer#translate}**.translate()**{api}, {api:anychart.graphics.vector.Layer#setPosition}**.setPosition()**{api}, etc. Look for the whole list in our Layer **{api:anychart.graphics.vector.Layer}API{api}**.
 
 ###Add or Remove
 
-There are several options how to add a layer. You can see the first one in the sample above. The second way is to use the {api:anychart.graphics.vector.Stage#addChild}**.addChild()**{api} method to add an element to a stage or layer by its name if you have already created it using the AnyChart constructor. The similar method {api:anychart.graphics.vector.Stage#addChildAt}**.addChildAt()**{api} will allow you to put the new element between the existing layers or behind them by defining not only the name but the index for this element.
+There are several options how to add a layer. You can see the first one in the sample above. The second way is to use the {api:anychart.graphics.vector.Stage#addChild}**.addChild()**{api} 
+method to add an element to a stage or layer by its name if you have already created it using the AnyChart constructor. The similar method {api:anychart.graphics.vector.Stage#addChildAt}**.addChildAt()**{api} 
+will allow you to put the new element between the existing layers or behind them by defining not only the name but the index for this element.
+
+
+To remove a layer you can use one of those methods: {api:anychart.graphics.vector.Layer#remove}**.remove()**{api}, {api:anychart.graphics.vector.Layer#removeChild}**.removeChild()**{api} or {api:anychart.graphics.vector.Layer#removeChildAt}**.removeChildAt()**{api}.
+In this particular sample we use the {api:anychart.graphics.vector.Stage#addChild}**.addChild()**{api} and {api:anychart.graphics.vector.Layer#remove}**.remove()**{api} methods. 
+Each click on the "Add" button adds a layer with a red square, each click on the "Remove" button removes the last layer added. Explore the sample in the playground to see the whole code.
 
 ```
-	//first way of adding a layer
+	// add a layer
 	var layer_1 = anychart.graphics.layer();
-    stage.addChild(layer_1); //for the first chart
+    stage.addChild(layer_1); 
 	
-	//second way of adding a layer
-    var layer_2 = stage.layer(); //for the second chart
-	
-```
-Try to edit any sample with layers in this way.
-
-###Remove
-
-We can simply get rid of layers - use {api:anychart.graphics.vector.Element.remove()}**.remove()**{api} for this.
-For example, let's remove the lowest layer from our last sample:
-
-```
-	// remove the first layer
-    layer_1.remove();
+	// remove a layer
+    var layerToRemove = layers.pop();
+    if (layerToRemove) layerToRemove.remove();
 	
 ```
 {sample}DB\_Stage\_04{sample}
