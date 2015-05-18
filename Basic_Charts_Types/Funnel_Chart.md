@@ -67,6 +67,25 @@ You can see the funnel chart with this configuration below.
 
 {sample}BCT\_FunnelChart\_01{sample}
 
+## Neck and Head
+
+As you can see, any funnel consist of two parts: the higher part which called head and the lower part which called the neck. Size of these parts can be tuned separately. Using **.neckWidth()** and **.headWidth()** methods along with **.width()** method gives a full control over the width of the funnel. Height of the neck can be adjusted using **.neckHeight()** method and the height of the whole funnel can be set using **.height()** method.
+
+```
+  var chart = anychart.funnel(data);
+  
+  chart
+    .height('100%')     // set 100 percents height of the funnel
+    .width('100%')      // set 100 percents width of the funnel
+    .neckWidth(40)      // set neck width 40px
+    .neckHeight('50%')  // set neck height equal to half of the funnel's height
+    .headWidth(170);    // set neck width 170px
+```
+
+As you can see, you can set fixed or flexible size for any method that controls funnel size. Use number as a value for a method to define fixed size and string value to set size as a percentage of a container's size. Let's apply settings from above to a funnel.
+
+{sample}BCT\_FunnelChart\_08{sample}
+
 ## Padding
 
 As you can see, each part of a funnel is separated from another with some space. The space between each part of funnel chart is controlled by a {api:anychart.charts.Funnel#pointsPadding}**.pointsPadding()**{api} parameter. Next sample of funnel chart has no spacing.
@@ -78,8 +97,6 @@ As you can see, each part of a funnel is separated from another with some space.
 Here is how the funnel chart without spacing looks like.
 
 {sample}BCT\_FunnelChart\_02{sample}
-
-*Note*: for controlling width of the funnel consider using {api:anychart.charts.Funnel#neckWidth}**.neckWidth()**{api} and {api:anychart.charts.Funnel#headWidth}**.headWidth()**{api} parameters to control each part of a funnel or {api:anychart.charts.Funnel#width}**.width()**{api} parameter to control the width of the whole funnel. Height of the funnel is controlled by {api:anychart.charts.Funnel#height}**.height()**{api} and {api:anychart.charts.Funnel#neckHeight}**.neckHeight()**{api} parameters.
 
 ## Visualization
 
