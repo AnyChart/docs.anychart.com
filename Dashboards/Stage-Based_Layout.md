@@ -5,8 +5,7 @@
   * [Enabling the stage](#enabling_the_stage)
   * [Chart placement](#chart_placement)
 * [Layers](#layers)
-  * [Add](#add)
-  * [Remove](#remove)
+  * [Add/Remove](#add)/[Remove](#remove)
   * [Adapt](#adapt)
 * [Custom elements](#custom_elements)
 * [Print](#print)
@@ -101,7 +100,7 @@ Look at the next sample. Here we've done the same as in the sample above, but us
 
 Note that we can move charts using not only bounds but layer functions, such as {api:anychart.graphics.vector.Layer#translate}**.translate()**{api}, {api:anychart.graphics.vector.Layer#setPosition}**.setPosition()**{api}, etc. Look for the whole list in our Layer **{api:anychart.graphics.vector.Layer}API{api}**.
 
-###Add
+###Add or Remove
 
 There are several options how to add a layer. You can see the first one in the sample above. The second way is to use the {api:anychart.graphics.vector.Stage#addChild}**.addChild()**{api} method to add an element to a stage or layer by its name if you have already created it using the AnyChart constructor. The similar method {api:anychart.graphics.vector.Stage#addChildAt}**.addChildAt()**{api} will allow you to put the new element between the existing layers or behind them by defining not only the name but the index for this element.
 
