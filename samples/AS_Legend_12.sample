@@ -71,24 +71,15 @@ anychart.onDocumentReady(function() {
     .zIndex(1)
     .enabled(true)
     .itemsLayout('vertical')
-    .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
-      event.preventDefault();
-      var index = event['itemIndex'];
-      if (chart.getSeries(index).data().get(0, 'value') == 'missing'){
-        chart.getSeries(index).data().set(0, 'value', johnLegendItems[index].text);
-        johnLegendItems[index].fontColor = '#000';
-        johnLegendItems[index].iconFill = palette[index];
-        johnLegendItems[index].iconStroke = anychart.color.darken(palette[index], 0.2);
-        johnLegend.itemsFormatter(function(){return johnLegendItems});
-      }
-      else{
-        chart.getSeries(index).data().set(0, 'value', 'missing');
-        johnLegendItems[index].fontColor = '#999';
-        johnLegendItems[index].iconFill = '#999';
-        johnLegendItems[index].iconStroke = '#999';
-        johnLegend.itemsFormatter(function(){return johnLegendItems});
-      }
-    });
+    .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event){legendItemClick(event, johnLegend, johnLegendItems, 0)});
+  johnLegend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OVER, function(event) {
+    var index = event['itemIndex'];
+    chart.getSeries(index).data().set(0, 'fill', anychart.color.lighten(palette[index], 0.2));
+  });
+  johnLegend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OUT, function(event) {
+    var index = event['itemIndex'];
+    chart.getSeries(index).data().set(0, 'fill', palette[index]);
+  });
   
   jakeLegend
     .position('bottom')
@@ -96,24 +87,15 @@ anychart.onDocumentReady(function() {
     .zIndex(1)
     .enabled(true)
     .itemsLayout('vertical')
-    .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
-      event.preventDefault();
-      var index = event['itemIndex'];
-      if (chart.getSeries(index).data().get(1, 'value') == 'missing'){
-        chart.getSeries(index).data().set(1, 'value', jakeLegendItems[index].text);
-        jakeLegendItems[index].fontColor = '#000';
-        jakeLegendItems[index].iconFill = palette[index];
-        jakeLegendItems[index].iconStroke = anychart.color.darken(palette[index], 0.2);
-        jakeLegend.itemsFormatter(function(){return jakeLegendItems});
-      }
-      else{
-        chart.getSeries(index).data().set(1, 'value', 'missing');
-        jakeLegendItems[index].fontColor = '#999';
-        jakeLegendItems[index].iconFill = '#999';
-        jakeLegendItems[index].iconStroke = '#999';
-        jakeLegend.itemsFormatter(function(){return jakeLegendItems});
-      }
-    });
+    .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event){legendItemClick(event, jakeLegend, jakeLegendItems, 1)});
+  jakeLegend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OVER, function(event) {
+    var index = event['itemIndex'];
+    chart.getSeries(index).data().set(1, 'fill', anychart.color.lighten(palette[index], 0.2));
+  });
+  jakeLegend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OUT, function(event) {
+    var index = event['itemIndex'];
+    chart.getSeries(index).data().set(1, 'fill', palette[index]);
+  });
   
   peterLegend
     .position('bottom')
@@ -121,25 +103,34 @@ anychart.onDocumentReady(function() {
     .zIndex(1)
     .enabled(true)
     .itemsLayout('vertical')
-    .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
-      event.preventDefault();
-      var index = event['itemIndex'];
-      if (chart.getSeries(index).data().get(2, 'value') == 'missing'){
-        chart.getSeries(index).data().set(2, 'value', peterLegendItems[index].text);
-        peterLegendItems[index].fontColor = '#000';
-        peterLegendItems[index].iconFill = palette[index];
-        peterLegendItems[index].iconStroke = anychart.color.darken(palette[index], 0.2);
-        peterLegend.itemsFormatter(function(){return peterLegendItems});
-      }
-      else{
-        chart.getSeries(index).data().set(2, 'value', 'missing');
-        peterLegendItems[index].fontColor = '#999';
-        peterLegendItems[index].iconFill = '#999';
-        peterLegendItems[index].iconStroke = '#999';
-        peterLegend.itemsFormatter(function(){return peterLegendItems});
-      }
-    });
+    .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event){legendItemClick(event, peterLegend, peterLegendItems, 2)});
+  peterLegend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OVER, function(event) {
+    var index = event['itemIndex'];
+    chart.getSeries(index).data().set(2, 'fill', anychart.color.lighten(palette[index], 0.2));
+  });
+  peterLegend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OUT, function(event) {
+    var index = event['itemIndex'];
+    chart.getSeries(index).data().set(2, 'fill', palette[index]);
+  });
   
+  function legendItemClick(event, legend, items, series){
+    event.preventDefault();
+    var index = event['itemIndex'];
+    if (chart.getSeries(index).data().get(series, 'value') == 'missing'){
+      chart.getSeries(index).data().set(series, 'value', items[index].text);
+      items[index].fontColor = '#000';
+      items[index].iconFill = palette[index];
+      items[index].iconStroke = anychart.color.darken(palette[index], 0.2);
+      legend.itemsFormatter(function(){return items});
+    }
+    else{
+      chart.getSeries(index).data().set(series, 'value', 'missing');
+      items[index].fontColor = '#999';
+      items[index].iconFill = '#999';
+      items[index].iconStroke = '#999';
+      legend.itemsFormatter(function(){return items});
+    }
+  }
   
   
   // draw legends
@@ -147,28 +138,26 @@ anychart.onDocumentReady(function() {
   jakeLegend.container(stage).draw();
   peterLegend.container(stage).draw();
   
-  
-  
-  // map data
-  var Quarter1 = data.mapAs({x: [0], value: [1]});
-  var Quarter2 = data.mapAs({x: [0], value: [2]});
-  var Quarter3 = data.mapAs({x: [0], value: [3]});
-  var Quarter4 = data.mapAs({x: [0], value: [4]});
-  
   // chart type
   var chart = anychart.column();
+  
+  for(var seriesCount=1;seriesCount<data.data()[0].length;seriesCount++){
+    var seriesData = [];
+    for (pointsCount = 0;pointsCount<data.mapAs().getRowsCount();pointsCount++){
+      seriesData.push({
+        x: data.data()[pointsCount][0],
+        value: data.data()[pointsCount][seriesCount],
+        fill: palette[seriesCount-1]
+      });
+    }
+    chart.column(seriesData);
+  }
   
   chart.xAxis().title(null);
   chart.yAxis().title(null);
   
   // set title
   chart.title().text('Custom Legend');
-  
-  // set data
-  chart.column(Quarter1).name('Quarter 1');
-  chart.column(Quarter2).name('Quarter 2');
-  chart.column(Quarter3).name('Quarter 3');
-  chart.column(Quarter4).name('Quarter 4');
   
   // legend settings
   chart.legend()
