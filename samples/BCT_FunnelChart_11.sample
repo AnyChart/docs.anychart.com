@@ -22,8 +22,6 @@ anychart.onDocumentReady(function() {
     });
   chart.hoverLabels().fontWeight(900).background({enabled: true, stroke: '#FFF',fill:'#FFF'});
   
-  chart.bounds(stage.width()/2, 0, stage.width()/2, stage.height());
-  
   chart.title().text('Overlapping Labels');
   
   // set fixed width for the funnel
