@@ -5,6 +5,7 @@
 * [Neck and Head](#neck_and_head)
 * [Padding](#padding)
 * [Visualization](#visualization)
+* [Labels](#labels)
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Markers](#markers)
 * [Colors](#colors)
@@ -120,10 +121,71 @@ Using such settings we've created a funnel colored in Gold, dark red border and 
 
 {sample}BCT\_FunnelChart\_03{sample}
 
-## Labels and Tooltips
+## Labels
+ 
+Labels of a funnel are text boxes with additional information for presented data. You can tune labels using {api:anychart.charts.Funnel#labels}**.labels()**{api} method.
 
-In this section we will explain how to add and configure funnel labels and tooltips.
-Method {api:anychart.charts.Funnel#labels}**.labels()**{api} is responsible for labels configuration and method {api:anychart.charts.Funnel#tooltip}**.tooltip()**{api} controls tooltips of the funnel. With the following example let's make data labels appear to the right from the funnel using {api:anychart.enums.FunnelLabelsPosition}**position()**{api} method, format them to show name and value corresponding to the part of the funnel and force tooltips to show detailed description.
+### Connectors
+
+THe line that joins a label with a particular funnel point is called connector. You can tune connectors visual appearance using {api:anychart.charts.Funnel#connectorStroke}**.connectorsStroke()**{api} method. 
+
+```
+  var chart = anychart.funnel(data);
+
+  chart.connectorsStroke({
+    thickness: 2,   // set thickness of the connectors
+    color: '#444',  // set color of the connectors
+    dash: '4 2'     // set dashed connectors. Dashes are 4px and gaps are 2px
+  });
+```
+
+You can find more information about lines in [Line Settings tutorial](../Appearance_Settings/Lines_Settings). Here is the funnel with tuned connectors.
+
+{sample}BCT\_FunnelChart\_09{sample}
+
+### Position
+
+Position of the labels is controlled by {api:anychart.core.ui.LabelsFactory#position}**.position()**{api} method. There are five acceptable values for funnel labels:
+* **inside** - place labels inside each funnel point.
+* **outsideLeftInColumn** - place labels to the left of the funnel and align them in a column.
+* **outsideRightInColumn** - place labels to the right of the funnel and align them in a column.
+* **outsideLeft** - place labels to the left of the funnel.
+* **outsideRight** - place labels to the right of the funnel.
+
+If you are using **outsideLeft** or **outsideRight** you can adjust length of labels connectors. Use {api:anychart.charts.Funnel#connectorLength}**.connectorsLength()**{api} parameter to set custom length for all labels connectors.
+
+```
+  var chart = anychart.funnel(data);
+  
+  chart.labels()
+    .position('outsideRight');  // place labels to the right
+    
+  chart.connectorLength(25);    // set 25px connectors length
+```
+
+Using these settings we have set each label 25px to the right from the each funnel point. Using {api:anychart.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method we can adjust content for the labels.
+
+{sample}BCT\_FunnelChart\_10{sample}
+
+### Overlapping
+
+After adjusting content of the funnel labels some of them moved to prevent overlapping. You can control overlapping using {api:anychart.charts.Funnel#overlapMode}**.overlapMode()**{api}. Sample below demonstrates both **noOverlap** and **allowOverlap** states of labels.
+
+```
+var firstFunnel = anychart.funnel(data);
+firstFunnel.overlapMode('noOverlap')      // prevent labels overlapping
+
+var secondFunnel = anychart.funnel(data);
+secondFunnel.overlapMode('allowOverlap')  // allow labels overlapping
+```
+
+*Note:* if you want to hide connectors set **null** value for {api:anychart.charts.Funnel#connectorStroke}**.connectorsStroke()**{api} method.
+
+{sample}BCT\_FunnelChart\_11{sample}
+
+## Tooltip
+
+In this section we will explain how to tune funnel tooltip. Method {api:anychart.charts.Funnel#tooltip}**.tooltip()**{api} controls tooltip of the funnel. With the following example let's force tooltip to show detailed description of the funnel.
 
 {sample}BCT\_FunnelChart\_04{sample}
 

@@ -1,0 +1,60 @@
+{:tags []
+  :is_new false
+  :exports "chart"}
+
+anychart.onDocumentReady(function() {
+  
+  var data = [
+    {name: 'Fantasy', value: 637166},
+    {name: 'Science Fiction', value: 721630},
+    {name: 'Detective', value: 148662},
+    {name: 'Classics', value: 78662},
+    {name: 'Textbooks', value: 90000}
+  ];
+  
+  var stage = anychart.graphics.create('container');
+  
+  var firstFunnel = anychart.funnel(data);
+    
+  firstFunnel.overlapMode('noOverlap');   // prevent labels overlapping
+  
+  firstFunnel.labels()
+    .position('outsideRight')
+    .hAlign('center')
+    .textFormatter(function(){
+      return this.name+'\n'+this.value;
+    });
+  firstFunnel.hoverLabels().fontWeight(900);
+  
+  firstFunnel.bounds(0, 0, stage.width()/2, stage.height());
+  
+  firstFunnel.title().text('Labels without overlapping');
+  
+  // set fixed width for the funnel
+  firstFunnel.headWidth(250).neckWidth(50);
+  
+  // draw chart
+  firstFunnel.container(stage).draw();
+  
+  
+  var secondFunnel = anychart.funnel(data).overlapMode('allowOverlap');
+  
+  secondFunnel.connectorStroke(null).labels()
+    .position('outsideRightInColumn')
+    .hAlign('center')
+    .textFormatter(function(){
+      return this.name+'\n'+this.value;
+    });
+  secondFunnel.hoverLabels().fontWeight(900).background({enabled: true, stroke: '#FFF',fill:'#FFF'});
+  
+  secondFunnel.bounds(stage.width()/2, 0, stage.width()/2, stage.height());
+  
+  secondFunnel.title().text('Overlapping Labels');
+  
+  // set fixed width for the funnel
+  secondFunnel.headWidth(250).neckWidth(50);
+  
+  // draw chart
+  secondFunnel.container(stage).draw();
+  
+});

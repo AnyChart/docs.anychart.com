@@ -14,19 +14,14 @@ anychart.onDocumentReady(function() {
   
   var chart = anychart.funnel(data);
   
-  chart.labels().enabled(false);
+  chart.labels()
+    .position('outsideRight')   // place labels to the right
+    .hAlign('center')           // manage horizontal align
+    .textFormatter(function(){
+      return this.name+'\n'+this.value;
+    });
   
-  chart.tooltip().content()
-    .useHtml(true)
-    .fontWeight(400);
-  chart.tooltip().contentFormatter(function(){
-    return '<b>Year</b>: 2005'+
-      '<br><b>Store</b>: Nerds Inc.'+
-      '<br><b>Genre</b>: '+this.name+
-      '<br><b>Quantity</b>: '+this.value;
-  });
-  
-  chart.title().text('Tooltip Settings');
+  chart.connectorLength(25);    // set 25px connectors length
   
   // set fixed width for the funnel
   chart.headWidth(300).neckWidth(75);
