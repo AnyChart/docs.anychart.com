@@ -74,7 +74,7 @@ You can see the funnel chart with this configuration below.
 
 ## Neck and Head
 
-As you can see, any funnel consist of two parts: the higher part which called head and the lower part which called the neck. Size of these parts can be tuned separately. Using **.neckWidth()** and **.headWidth()** methods along with **.width()** method gives a full control over the width of the funnel. Height of the neck can be adjusted using **.neckHeight()** method and the height of the whole funnel can be set using **.height()** method.
+As you can see, any funnel consist of two parts: the higher part which called head and the lower part which called the neck. Size of these parts can be tuned separately. Using{api:anychart.charts.Funnel#neckWidth}**.neckWidth()**{api} and {api:anychart.charts.Funnel#headWidth}**.headWidth()**{api} methods along with {api:anychart.charts.Funnel#width}**.width()**{api} method gives a full control over the width of the funnel. Height of the neck can be adjusted using {api:anychart.charts.Funnel#neckHeight}**.neckHeight()**{api} method and the height of the whole funnel can be set using {api:anychart.charts.Funnel#neckWidth}**.height()**{api} method.
 
 ```
   var chart = anychart.funnel(data);
