@@ -21,7 +21,7 @@ anychart.onDocumentReady(function() {
       return this.name+'\n'+this.value;
     });
   
-  chart.connectorLength(25);    // set 25px connectors length
+  chart.connectorLength(45);    // set 45px connectors length
   
   // set fixed width for the funnel
   chart.headWidth(300).neckWidth(75);

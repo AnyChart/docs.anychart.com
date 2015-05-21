@@ -14,7 +14,7 @@ anychart.onDocumentReady(function() {
   
   var chart = anychart.funnel(data);
   
-  chart.connectorsStroke(
+  chart.connectorStroke(
     '2 #444', // set 2px thickness and #444 color
     1,        // set lines opacity
     '4 2'     // dashes and gaps settings

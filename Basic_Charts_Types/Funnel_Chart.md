@@ -90,7 +90,7 @@ As you can see, you can set fixed or flexible size for any method that controls 
 
 ## Padding
 
-As you can see, each part of a funnel is separated from another with some space. The space between each part of funnel chart is controlled by a {api:anychart.charts.Funnel#pointsPadding}**.pointsPadding()**{api} parameter. Next sample of funnel chart has no spacing.
+As you can see, each part of a funnel is separated from another with some space. The space between each part of funnel chart is controlled by a {api:anychart.charts.Funnel#pointsPadding}**.pointsPadding()**{api} parameter. Next sample of the funnel chart has no spacing.
 
 ```
   chart.pointSpacing(0);  // disable spacing between parts of the chart
@@ -132,7 +132,7 @@ THe line that joins a label with a particular funnel point is called connector. 
 ```
   var chart = anychart.funnel(data);
 
-  chart.connectorsStroke({
+  chart.connectorStroke({
     thickness: 2,   // set thickness of the connectors
     color: '#444',  // set color of the connectors
     dash: '4 2'     // set dashed connectors. Dashes are 4px and gaps are 2px
@@ -160,23 +160,20 @@ If you are using **outsideLeft** or **outsideRight** you can adjust length of la
   chart.labels()
     .position('outsideRight');  // place labels to the right
     
-  chart.connectorLength(25);    // set 25px connectors length
+  chart.connectorLength(45);    // set 45px connectors length
 ```
 
-Using these settings we have set each label 25px to the right from the each funnel point. Using {api:anychart.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method we can adjust content for the labels.
+Using these settings we have set each label 45px to the right from the each funnel point. Using {api:anychart.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method we can adjust content for the labels.
 
 {sample}BCT\_FunnelChart\_10{sample}
 
 ### Overlapping
 
-After adjusting content of the funnel labels some of them moved to prevent overlapping. You can control overlapping using {api:anychart.charts.Funnel#overlapMode}**.overlapMode()**{api}. Sample below demonstrates both **noOverlap** and **allowOverlap** states of labels.
+After adjusting content of the funnel labels some of them moved to prevent overlapping. You can control overlapping using {api:anychart.charts.Funnel#overlapMode}**.overlapMode()**{api}. Sample below demonstrates labels with allowed overlapping state.
 
 ```
-var firstFunnel = anychart.funnel(data);
-firstFunnel.overlapMode('noOverlap')      // prevent labels overlapping
-
-var secondFunnel = anychart.funnel(data);
-secondFunnel.overlapMode('allowOverlap')  // allow labels overlapping
+var chart = anychart.funnel(data);
+chart.overlapMode('allowOverlap')  // allow labels overlapping
 ```
 
 *Note:* if you want to hide connectors set **null** value for {api:anychart.charts.Funnel#connectorStroke}**.connectorsStroke()**{api} method.
