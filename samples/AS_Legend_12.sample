@@ -22,31 +22,24 @@ anychart.onDocumentReady(function() {
   var jakeLegendItems = [];
   var peterLegendItems = [];
   
-  // push settings into arrays of legend items
-  for (var i0=1;i0<data.data()[0].length;i0++){
-    johnLegendItems.push({
-      text: data.data()[0][i0].toString(),  // text of item
-      iconType: 'square',                   // type of icons
-      iconFill: palette[i0-1],              // color of icons
-      iconStroke: anychart.color.darken(palette[i0-1], 0.2)
-    });
-  }
-  for (var i1=1;i1<data.data()[1].length;i1++){
-    jakeLegendItems.push({
-      text: data.data()[1][i1].toString(),  // text of item
-      iconType: 'square',                   // type of icons
-      iconFill: palette[i1-1],              // color of icons
-      iconStroke: anychart.color.darken(palette[i1-1], 0.2)
-    });
-  }
-  for (var i2=1;i2<data.data()[2].length;i2++){
-    peterLegendItems.push({
-      index: i2,
-      text: data.data()[2][i2].toString(),  // text of item
-      iconType: 'square',                   // type of icons
-      iconFill: palette[i2-1],              // color of icons
-      iconStroke: anychart.color.darken(palette[i2-1], 0.2)
-    });
+  var legendsItemsArray = [
+    johnLegendItems,
+    jakeLegendItems,
+    peterLegendItems
+  ];
+  
+  for(var i=0;i<legendsItemsArray.length;i++){
+    for (var itemsCount=1;itemsCount<data.data()[i].length;itemsCount++){
+      
+      // push settings into arrays of legend items
+      legendsItemsArray[i].push({
+        text: data.data()[i][itemsCount].toString(),    // text of item
+        iconType: 'square',                             // type of icons
+        iconFill: palette[itemsCount-1],                // color of icons
+        iconStroke: anychart.color.darken(palette[itemsCount-1], 0.2)
+      });
+      
+    }
   }
   
   // custom legends
@@ -54,23 +47,33 @@ anychart.onDocumentReady(function() {
   var jakeLegend = anychart.ui.legend();
   var peterLegend = anychart.ui.legend();
   
-  // set legend titles
-  johnLegend.title().text('John').hAlign('center');
-  jakeLegend.title().text('Jake').hAlign('center');
-  peterLegend.title().text('Peter').hAlign('center');
+  var legendsArray = [
+    johnLegend,
+    jakeLegend,
+    peterLegend
+  ];
+  
+  for (var legendsCounter=0;legendsCounter<legendsArray.length;legendsCounter++){
+    // set legend titles
+    legendsArray[legendsCounter].title()
+      .text(data.data()[legendsCounter][0].toString())
+      .hAlign('center');
+    
+    // legend settings
+    legendsArray[legendsCounter]
+      .position('bottom')
+      .zIndex(1)
+      .enabled(true)
+      .itemsLayout('vertical');
+  }
   
   // set legend items
   johnLegend.itemsFormatter(function(){return johnLegendItems});
   jakeLegend.itemsFormatter(function(){return jakeLegendItems});
   peterLegend.itemsFormatter(function(){return peterLegendItems});
   
-  // legends settings
-  johnLegend
-    .position('bottom')
-    .align('left')
-    .zIndex(1)
-    .enabled(true)
-    .itemsLayout('vertical')
+  // legends aligment and custom events
+  johnLegend.align('left')
     .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event){legendItemClick(event, johnLegend, johnLegendItems, 0)});
   johnLegend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OVER, function(event) {
     var index = event['itemIndex'];
@@ -81,12 +84,7 @@ anychart.onDocumentReady(function() {
     chart.getSeries(index).data().set(0, 'fill', palette[index]);
   });
   
-  jakeLegend
-    .position('bottom')
-    .align('center')
-    .zIndex(1)
-    .enabled(true)
-    .itemsLayout('vertical')
+  jakeLegend.align('center')
     .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event){legendItemClick(event, jakeLegend, jakeLegendItems, 1)});
   jakeLegend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OVER, function(event) {
     var index = event['itemIndex'];
@@ -97,12 +95,7 @@ anychart.onDocumentReady(function() {
     chart.getSeries(index).data().set(1, 'fill', palette[index]);
   });
   
-  peterLegend
-    .position('bottom')
-    .align('right')
-    .zIndex(1)
-    .enabled(true)
-    .itemsLayout('vertical')
+  peterLegend.align('right')
     .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event){legendItemClick(event, peterLegend, peterLegendItems, 2)});
   peterLegend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OVER, function(event) {
     var index = event['itemIndex'];
@@ -113,6 +106,7 @@ anychart.onDocumentReady(function() {
     chart.getSeries(index).data().set(2, 'fill', palette[index]);
   });
   
+  // function for legend item click
   function legendItemClick(event, legend, items, series){
     event.preventDefault();
     var index = event['itemIndex'];
@@ -131,7 +125,6 @@ anychart.onDocumentReady(function() {
       legend.itemsFormatter(function(){return items});
     }
   }
-  
   
   // draw legends
   johnLegend.container(stage).draw();
@@ -186,32 +179,17 @@ anychart.onDocumentReady(function() {
   chart.listen(
     'chartDraw',
     function (){
-      johnLegend.parentBounds(
-        anychart.math.rect(
-          0,
-          0,
-          chart.container().width(),
-          chart.container().height()
-        )
+      // define legend bounds
+      var legendBounds = anychart.math.rect(
+        0,
+        0,
+        chart.container().width(),
+        chart.container().height()
       );
-      johnLegend.draw();
-      jakeLegend.parentBounds(
-        anychart.math.rect(
-          0,
-          0,
-          chart.container().width(),
-          chart.container().height()
-        )
-      );
-      jakeLegend.draw();
-      peterLegend.parentBounds(
-        anychart.math.rect(
-          0,
-          0,
-          chart.container().width(),
-          chart.container().height()
-        )
-      );
-      peterLegend.draw();
+      
+      // set bounds and draw legend
+      johnLegend.parentBounds(legendBounds).draw();
+      jakeLegend.parentBounds(legendBounds).draw();
+      peterLegend.parentBounds(legendBounds).draw();
     });
 });
