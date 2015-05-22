@@ -176,7 +176,6 @@ You can easily control series of the chart using chart legend. You can hide and 
 When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.ui.Legend#itemsFormatter}**itemsFormatter()**{api} method. 
 
 ```
-
 chart.legend()
     .itemsFormatter(function(items){        // adjust legend items
       items.push({                          // push into items array
@@ -184,7 +183,6 @@ chart.legend()
       });
       return items;                         // return items array
     });
-
 ```
 
 In the sample chart below we've used custom item that adds *Total* data to legend.
@@ -196,3 +194,36 @@ In the sample chart below we've used custom item that adds *Total* data to legen
 AnyChart sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart. 
 
 {sample}AS\_Legend\_12{sample}
+
+As you can see, one legend can contain different information from one chart. Moreover, one legend can contain information from several charts. To add several chart as a source for legend items use {api:anychart.ui.Legend#itemsSource}**.itemSource()**{api} method to set charts for legend content.
+
+```
+  // define charts
+  var chart2005 = anychart.column();
+  var chart2006 = anychart.column();
+  
+  // create custom legend
+  var legend = anychart.ui.legend();
+  legend.itemsSource([chart2005, chart2006]); // set sources for legend
+```
+
+{sample}AS\_Legend\_13{sample}
+
+You can attache an event to a legend items. Use **{api:anychart.core.ui.Legend#listen}.listen(){api}** method to set an event for a legend. List of possible event can be found in **{api:http://api.anychart.stg/develop/anychart.enums.EventType}API{api}**.
+  
+  
+Sample below demonstrate managing several series with one legend item.
+
+```
+  // create legend
+  var legend = anychart.ui.legend();
+
+  // enable and disable series on legend item click
+  legend.listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
+    var index = event['itemIndex'];
+    chart2005.getSeries(index).enabled(! chart2005.getSeries(index).enabled());
+    chart2006.getSeries(index).enabled(! chart2006.getSeries(index).enabled());
+  });
+```
+
+{sample}AS\_Legend\_14{sample}
