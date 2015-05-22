@@ -14,6 +14,8 @@
 * [Tooltip](#tooltip)
 * [Custom Item](#custom_item)
 * [Custom Legend](#custom_legend)
+* [One Legend for Several Charts](#one_legend_for_several_charts)
+* [One Legend for Several Series](#one_legend_for_several_series)
 
 ## Overview
 Legend is a table on a chart listing and explaining the symbols and colors used and with additional information that helps user to understand a chart.
@@ -23,7 +25,7 @@ In this article all legends features and setting are explained and demonstrated.
 
 ## Auto Legend 
 
-To enable legend you have to specify {api:anychart.core.ui.Legend#enabled}**.enable(true)**{api} parameter of {api:anychart.core.ui.Legend}**.legend()**{api} method:
+To enable legend you have to specify {api:anychart.core.ui.Legend#enabled}**.enabled(true)**{api} parameter of {api:anychart.core.ui.Legend}**.legend()**{api} method:
 
 ```
   // create chart
@@ -195,7 +197,9 @@ AnyChart sets no limits to the amount of legends on one chart plot. Legend can b
 
 {sample}AS\_Legend\_12{sample}
 
-As you can see, one legend can contain different information from one chart. Moreover, one legend can contain information from several charts. To add several chart into one legend use {api:anychart.ui.Legend#itemsSource}**.itemSource()**{api} method and define charts for legend's content.
+## One Legend for Several Charts
+
+As you can see, one legend can contain different information from one chart. Moreover, one legend can contain information from several charts. To add several chart into one legend use {api:anychart.ui.Legend#itemsSource}**.itemsSource()**{api} method and define charts for legend's content.
 
 ```
   // define charts
@@ -204,10 +208,12 @@ As you can see, one legend can contain different information from one chart. Mor
   
   // create custom legend
   var legend = anychart.ui.legend();
-  legend.itemsSource([chart2005, chart2006]); // set sources for legend
+  legend.itemsSource([chart2005, chart2006]); // set sources for legend items
 ```
 
 {sample}AS\_Legend\_13{sample}
+
+## One Legend for Several Series
 
 You can attache an event to a legend items. Use **{api:anychart.core.ui.Legend#listen}.listen(){api}** method to set an event for a legend. List of possible event can be found in **{api:http://api.anychart.stg/develop/anychart.enums.EventType}API{api}**.
 
@@ -217,7 +223,9 @@ You can attache an event to a legend items. Use **{api:anychart.core.ui.Legend#l
 
   // enable and disable series on legend item click
   legend.listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
+    // get item's index
     var index = event['itemIndex'];
+    // manage enabled/disabled state of the series
     chart2005.getSeries(index).enabled(! chart2005.getSeries(index).enabled());
     chart2006.getSeries(index).enabled(! chart2006.getSeries(index).enabled());
   });
