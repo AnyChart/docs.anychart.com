@@ -7,6 +7,7 @@ anychart.onDocumentReady(function() {
   // set stage
   var stage = anychart.graphics.create('container');
   
+  // chart data
   var data2005 = anychart.data.set([
     ['Quarter 1', 10000, 12000, 16000],
     ['Quarter 2', 12000, 15000, 17000],
@@ -24,22 +25,28 @@ anychart.onDocumentReady(function() {
   // get default color palette
   var palette = anychart.palettes.distinctColors().colors();
   
+  // create first chart
   var chart2005 = anychart.line();
   
+  // set chart series and tooltips
   chart2005.spline(data2005.mapAs({x: [0], value: [1]})).tooltip().contentFormatter(function(){return 'Name: Jhon\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
   chart2005.spline(data2005.mapAs({x: [0], value: [2]})).tooltip().contentFormatter(function(){return 'Name: Jake\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
   chart2005.spline(data2005.mapAs({x: [0], value: [3]})).tooltip().contentFormatter(function(){return 'Name: Peter\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
   
+  // create second chart
   var chart2006 = anychart.line();
   
+  // set chart series and tooltips
   chart2006.spline(data2006.mapAs({x: [0], value: [1]})).tooltip().contentFormatter(function(){return 'Name: Jhon\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
   chart2006.spline(data2006.mapAs({x: [0], value: [2]})).tooltip().contentFormatter(function(){return 'Name: Jake\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
   chart2006.spline(data2006.mapAs({x: [0], value: [3]})).tooltip().contentFormatter(function(){return 'Name: Peter\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
   
   
+  // create variables for legend
   var legendsItemsArray = [];
   var managersNames=['John','Jake','Peter'];
   
+  // create legend items from charts data
   for(var managers=1;managers<data2005.data()[0].length;managers++){
     var total2005 = 0;
     var total2006 = 0;
@@ -47,6 +54,7 @@ anychart.onDocumentReady(function() {
       total2005+=data2005.data()[quarter][managers];
       total2006+=data2006.data()[quarter][managers];
     }
+    // create items array for legend 
     legendsItemsArray.push({
       text: managersNames[managers-1],
       iconType: 'SPLINE',
@@ -58,30 +66,48 @@ anychart.onDocumentReady(function() {
     });
   }
   
+  // create custom legend
   var legend = anychart.ui.legend();
+  
+  // legend settings
   legend
-    .position('top')
-    .title().text('2005 - 2006 Sales').hAlign('center');
+    .position('top')              // legend position
+    .title()                      // legend title settings
+      .text('2005 - 2006 Sales')  // title text
+      .hAlign('center');          // title alignment
+  
+  // settings for legend tooltips
   legend.tooltip().content().useHtml(true).fontWeight(400);
-  legend.tooltip()
-    .contentFormatter(function(){
+  // set source of content for legend tooltips
+  legend.tooltip().contentFormatter(function(){
       return this.meta.legendText;
     });
+  
+  // set legend items from array
   legend.itemsFormatter(function(){return legendsItemsArray});
+  
+  // set legend events
   legend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OVER, function(event) {
+    // get item's index
     var index = event['itemIndex'];
+    // simulate hovering charts series
     chart2005.getSeries(index).stroke(anychart.color.lighten(palette[index], 0.2));
     chart2006.getSeries(index).stroke(anychart.color.lighten(palette[index], 0.2));
   });
   legend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OUT, function(event) {
+    // get item's index
     var index = event['itemIndex'];
+    // simulate unhovering charts series
     chart2005.getSeries(index).stroke(palette[index]);
     chart2006.getSeries(index).stroke(palette[index]);
   });
   legend.listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
+    // get item's index
     var index = event['itemIndex'];
+    // manage series
     chart2005.getSeries(index).enabled(! chart2005.getSeries(index).enabled());
     chart2006.getSeries(index).enabled(! chart2006.getSeries(index).enabled());
+    // manage clicked item visual appearance
     if (chart2005.getSeries(index).enabled() == true){
       legendsItemsArray[index].fontColor = '#000';
       legendsItemsArray[index].iconStroke = palette[index];
@@ -112,6 +138,7 @@ anychart.onDocumentReady(function() {
   chart2005.yAxis().title().enabled(false);
   chart2006.yAxis().title().enabled(false);
   
+  // redraw legend if the first chart is redrawn
   chart2005.listen(
     'chartDraw',
     function (){
