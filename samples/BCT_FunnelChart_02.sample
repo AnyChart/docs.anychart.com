@@ -4,22 +4,23 @@
 
 anychart.onDocumentReady(function() {
   
-  var chart = anychart.funnel([
+  var data = [
     {name: 'Fantasy', value: 637166},
     {name: 'Science Fiction', value: 721630},
     {name: 'Detective', value: 148662},
     {name: 'Classics', value: 78662},
     {name: 'Textbooks', value: 90000}
-  ]);
+  ];
   
-  // disable padding between parts of the chart
-  chart.pointsPadding(0);
+  var chart = anychart.funnel(data);
   
-  chart.title().text('Disabled Padding');
+  chart
+    .height('100%')     // set 100 percents height of the funnel
+    .width('100%')      // set 100 percents width of the funnel
+    .neckWidth(70)      // set neck width 70px
+    .neckHeight('50%')  // set neck height equal to half of the funnel's height
+    .headWidth(300);    // set neck width 300px
   
-  // set fixed width for the funnel
-  chart.headWidth(300).neckWidth(75);
-
   // draw chart
   chart.container('container').draw();
 });

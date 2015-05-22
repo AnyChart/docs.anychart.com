@@ -89,7 +89,7 @@ As you can see, any funnel consist of two parts: the higher part which called he
 
 As you can see, you can set fixed or flexible size for any method that controls funnel size. Use number as a value for a method to define fixed size and string value to set size as a percentage of a container's size. Let's apply settings from above to a funnel.
 
-{sample}BCT\_FunnelChart\_08{sample}
+{sample}BCT\_FunnelChart\_02{sample}
 
 ## Padding
 
@@ -101,7 +101,7 @@ As you can see, each part of a funnel is separated from another with some space.
 
 Here is how the funnel chart without spacing looks like.
 
-{sample}BCT\_FunnelChart\_02{sample}
+{sample}BCT\_FunnelChart\_03{sample}
 
 ## Visualization
 
@@ -122,7 +122,7 @@ In this section we will describe main parts of funnel chart visualization and wa
 
 Using such settings we've created a funnel colored in Gold, dark red border and set DiagonalBrick hatch fill. Also, we've defined that when the funnel is hovered it's hatch will be highlighted with gold and the chart will be filled with dark red. Now let's apply this style to the chart:
 
-{sample}BCT\_FunnelChart\_03{sample}
+{sample}BCT\_FunnelChart\_04{sample}
 
 ## Labels
  
@@ -144,7 +144,7 @@ THe line that joins a label with a particular funnel point is called connector. 
 
 You can find more information about lines in [Line Settings tutorial](../Appearance_Settings/Lines_Settings). Here is the funnel with tuned connectors.
 
-{sample}BCT\_FunnelChart\_09{sample}
+{sample}BCT\_FunnelChart\_05{sample}
 
 ### Position
 
@@ -168,7 +168,7 @@ If you are using **outsideLeft** or **outsideRight** you can adjust length of la
 
 Using these settings we have set each label 45px to the right from the each funnel point. Using {api:anychart.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method we can adjust content for the labels.
 
-{sample}BCT\_FunnelChart\_10{sample}
+{sample}BCT\_FunnelChart\_06{sample}
 
 ### Overlapping
 
@@ -181,13 +181,13 @@ chart.overlapMode('allowOverlap')  // allow labels overlapping
 
 *Note:* if you want to hide connectors set **null** value for {api:anychart.charts.Funnel#connectorStroke}**.connectorsStroke()**{api} method.
 
-{sample}BCT\_FunnelChart\_11{sample}
+{sample}BCT\_FunnelChart\_07{sample}
 
 ## Tooltip
 
 In this section we will explain how to tune funnel tooltip. Method {api:anychart.charts.Funnel#tooltip}**.tooltip()**{api} controls tooltip of the funnel. With the following example let's force tooltip to show detailed description of the funnel.
 
-{sample}BCT\_FunnelChart\_04{sample}
+{sample}BCT\_FunnelChart\_08{sample}
 
 ## Markers
 
@@ -224,13 +224,13 @@ To make marker visually appealing we set its size to 12 pixels in normal state, 
 
 And here is a result - it's easy to notice that Science Fiction is the most popular genre and we are showing this on the chart:
 
-{sample}BCT\_FunnelChart\_05{sample}
+{sample}BCT\_FunnelChart\_09{sample}
 
 ## Colors
 
 Let's demonstrate how to apply different colors to different parts of funnel. To apply the color to the exact point we need to set the fill parameter. In the sample below each point of the funnel chart has custom color.
 
-{sample}BCT\_FunnelChart\_06{sample}
+{sample}BCT\_FunnelChart\_10{sample}
 
 ## Hatch Fills
 
@@ -255,4 +255,4 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
   ]);
 ```
 
-{sample}BCT\_FunnelChart\_07{sample}
+{sample}BCT\_FunnelChart\_11{sample}

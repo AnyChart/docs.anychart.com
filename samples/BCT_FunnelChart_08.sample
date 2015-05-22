@@ -14,12 +14,22 @@ anychart.onDocumentReady(function() {
   
   var chart = anychart.funnel(data);
   
-  chart
-    .height('100%')     // set 100 percents height of the funnel
-    .width('100%')      // set 100 percents width of the funnel
-    .neckWidth(70)      // set neck width 70px
-    .neckHeight('50%')  // set neck height equal to half of the funnel's height
-    .headWidth(300);    // set neck width 300px
+  chart.labels().enabled(false);
+  
+  chart.tooltip().content()
+    .useHtml(true)
+    .fontWeight(400);
+  chart.tooltip().contentFormatter(function(){
+    return '<b>Year</b>: 2005'+
+      '<br><b>Store</b>: Nerds Inc.'+
+      '<br><b>Genre</b>: '+this.name+
+      '<br><b>Quantity</b>: '+this.value;
+  });
+  
+  chart.title().text('Tooltip Settings');
+  
+  // set fixed width for the funnel
+  chart.headWidth(300).neckWidth(75);
   
   // draw chart
   chart.container('container').draw();

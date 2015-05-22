@@ -4,26 +4,31 @@
 
 anychart.onDocumentReady(function() {
   
-  var data = [
+  var chart = anychart.funnel([
     {name: 'Fantasy', value: 637166},
-    {name: 'Science Fiction', value: 721630},
+    {
+      name: 'Science Fiction',
+      value: 721630,
+      marker:{              // marker settings
+        enabled: true,      // enable marker
+        type:'star5',       // marker type
+        fill:'gold',        // marker inner color
+        size: 12,           // marker size
+        position: 'center', // marker position
+        anchor: 'center'},  // marker anchor
+      hoverMarker: {
+        size: 15            // marker size if mouse is over
+      }
+    },
     {name: 'Detective', value: 148662},
     {name: 'Classics', value: 78662},
     {name: 'Textbooks', value: 90000}
-  ];
+  ]);
   
-  var chart = anychart.funnel(data);
-  
-  chart.connectorStroke(
-    '2 #444', // set 2px thickness and #444 color
-    1,        // set lines opacity
-    '4 2'     // dashes and gaps settings
-  );
+  chart.title().text('Marker Settings');
   
   // set fixed width for the funnel
   chart.headWidth(300).neckWidth(75);
-  
-  chart.title().text('Tuned Labels Connectors');
   
   // draw chart
   chart.container('container').draw();
