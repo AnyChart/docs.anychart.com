@@ -195,7 +195,7 @@ AnyChart sets no limits to the amount of legends on one chart plot. Legend can b
 
 {sample}AS\_Legend\_12{sample}
 
-As you can see, one legend can contain different information from one chart. Moreover, one legend can contain information from several charts. To add several chart as a source for legend items use {api:anychart.ui.Legend#itemsSource}**.itemSource()**{api} method to set charts for legend content.
+As you can see, one legend can contain different information from one chart. Moreover, one legend can contain information from several charts. To add several chart into one legend use {api:anychart.ui.Legend#itemsSource}**.itemSource()**{api} method and define charts for legend's content.
 
 ```
   // define charts
@@ -210,9 +210,6 @@ As you can see, one legend can contain different information from one chart. Mor
 {sample}AS\_Legend\_13{sample}
 
 You can attache an event to a legend items. Use **{api:anychart.core.ui.Legend#listen}.listen(){api}** method to set an event for a legend. List of possible event can be found in **{api:http://api.anychart.stg/develop/anychart.enums.EventType}API{api}**.
-  
-  
-Sample below demonstrate managing several series with one legend item.
 
 ```
   // create legend
@@ -225,5 +222,7 @@ Sample below demonstrate managing several series with one legend item.
     chart2006.getSeries(index).enabled(! chart2006.getSeries(index).enabled());
   });
 ```
+
+Sample below demonstrate managing several series with one legend item.
 
 {sample}AS\_Legend\_14{sample}
