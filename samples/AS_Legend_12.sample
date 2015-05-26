@@ -17,123 +17,84 @@ anychart.onDocumentReady(function() {
   // get default color palette
   var palette = anychart.palettes.distinctColors().colors();
   
-  // variables for legend items
-  var johnLegendItems = [];
-  var jakeLegendItems = [];
-  var peterLegendItems = [];
+  var legends = [];
+  // array of legends' alignments
+  var legendPositions = ['left','center','right'];
   
-  var legendsItemsArray = [
-    johnLegendItems,
-    jakeLegendItems,
-    peterLegendItems
-  ];
-  
-  for(var i=0;i<legendsItemsArray.length;i++){
-    for (var itemsCount=1;itemsCount<data.data()[i].length;itemsCount++){
-      
-      // push settings into arrays of legend items
-      legendsItemsArray[i].push({
-        text: data.data()[i][itemsCount].toString(),    // text of item
-        iconType: 'square',                             // type of icons
-        iconFill: palette[itemsCount-1],                // color of icons
+  for (var managers = 0; managers<data.mapAs().getRowsCount();managers++){
+    legends.push(anychart.ui.legend());                     // create a legend for every manager
+    var items=[];                                           // create items array for every manager
+    for (var itemsCount=1;itemsCount<data.data()[managers].length;itemsCount++){
+      items.push({
+        text: data.data()[managers][itemsCount].toString(), // text of item
+        iconType: 'square',                                 // type of icons
+        iconFill: palette[itemsCount-1],                    // color of icons
         iconStroke: anychart.color.darken(palette[itemsCount-1], 0.2)
       });
-      
     }
-  }
-  
-  // custom legends
-  var johnLegend = anychart.ui.legend();
-  var jakeLegend = anychart.ui.legend();
-  var peterLegend = anychart.ui.legend();
-  
-  var legendsArray = [
-    johnLegend,
-    jakeLegend,
-    peterLegend
-  ];
-  
-  for (var legendsCounter=0;legendsCounter<legendsArray.length;legendsCounter++){
-    // set legend titles
-    legendsArray[legendsCounter].title()
-      .text(data.data()[legendsCounter][0].toString())
-      .hAlign('center');
     
-    // legend settings
-    legendsArray[legendsCounter]
-      .position('bottom')
-      .zIndex(1)
-      .enabled(true)
-      .itemsLayout('vertical');
-  }
-  
-  // set legend items
-  johnLegend.itemsFormatter(function(){return johnLegendItems});
-  jakeLegend.itemsFormatter(function(){return jakeLegendItems});
-  peterLegend.itemsFormatter(function(){return peterLegendItems});
-  
-  // legends aligment and custom events
-  johnLegend.align('left')
-    .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event){legendItemClick(event, johnLegend, johnLegendItems, 0)});
-  johnLegend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OVER, function(event) {
-    var index = event['itemIndex'];
-    chart.getSeries(index).data().set(0, 'fill', anychart.color.lighten(palette[index], 0.2));
-  });
-  johnLegend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OUT, function(event) {
-    var index = event['itemIndex'];
-    chart.getSeries(index).data().set(0, 'fill', palette[index]);
-  });
-  
-  jakeLegend.align('center')
-    .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event){legendItemClick(event, jakeLegend, jakeLegendItems, 1)});
-  jakeLegend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OVER, function(event) {
-    var index = event['itemIndex'];
-    chart.getSeries(index).data().set(1, 'fill', anychart.color.lighten(palette[index], 0.2));
-  });
-  jakeLegend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OUT, function(event) {
-    var index = event['itemIndex'];
-    chart.getSeries(index).data().set(1, 'fill', palette[index]);
-  });
-  
-  peterLegend.align('right')
-    .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event){legendItemClick(event, peterLegend, peterLegendItems, 2)});
-  peterLegend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OVER, function(event) {
-    var index = event['itemIndex'];
-    chart.getSeries(index).data().set(2, 'fill', anychart.color.lighten(palette[index], 0.2));
-  });
-  peterLegend.listen(anychart.enums.EventType.LEGEND_ITEM_MOUSE_OUT, function(event) {
-    var index = event['itemIndex'];
-    chart.getSeries(index).data().set(2, 'fill', palette[index]);
-  });
-  
-  // function for legend item click
-  function legendItemClick(event, legend, items, series){
-    event.preventDefault();
-    var index = event['itemIndex'];
-    if (chart.getSeries(index).data().get(series, 'value') == 'missing'){
-      chart.getSeries(index).data().set(series, 'value', items[index].text);
-      items[index].fontColor = '#000';
-      items[index].iconFill = palette[index];
-      items[index].iconStroke = anychart.color.darken(palette[index], 0.2);
-      legend.itemsFormatter(function(){return items});
+    legends[managers]
+      .position('bottom')                                   // legends positions
+      .align(legendPositions[managers])                     // get alignment from array
+      .itemsLayout('vertical')                              // define items layout
+      .items(items)                                         // get items from array
+      .title({                                              // legend title settings
+        text:data.data()[managers][0].toString(),           // get legend title text from data
+        hAlign: 'center'                                    // place title text at the center
+      });
+    
+    // set legend listeners
+    listener(legends[managers], managers, items);
+    function listener(legend, manager, items) {
+      // event on mouse over item
+      legend.listen('legendItemMouseOver', function (event){
+        // get item index
+        var index = event['itemIndex'];
+        // make column color a bit lighter
+        chart.getSeries(index).data().set(manager, 'fill', anychart.color.lighten(palette[index], 0.2));
+      });
+      // event on mouse out from the item
+      legend.listen('legendItemMouseOut', function (event){
+        // get item index
+        var index = event['itemIndex'];
+        // restore default column color
+        chart.getSeries(index).data().set(manager, 'fill', palette[index]);
+      });
+      // event on item click
+      legend.listen('legendItemClick', function(event){
+        // get item index
+        var index = event['itemIndex'];
+        // if column is already hidden
+        if (chart.getSeries(index).data().get(manager, 'value') == 'missing'){
+          // restore column value
+          chart.getSeries(index).data().set(manager, 'value', items[index].text);
+          // restore item color
+          items[index].fontColor = '#000';
+          items[index].iconFill = palette[index];
+          items[index].iconStroke = anychart.color.darken(palette[index], 0.2);
+          legend.itemsFormatter(function(){return items});
+        }
+        else{
+          // hide column
+          chart.getSeries(index).data().set(manager, 'value', 'missing');
+          // make item gray
+          items[index].fontColor = '#999';
+          items[index].iconFill = '#999';
+          items[index].iconStroke = '#999';
+          legend.itemsFormatter(function(){return items});
+        }
+        legend.draw();
+      });
     }
-    else{
-      chart.getSeries(index).data().set(series, 'value', 'missing');
-      items[index].fontColor = '#999';
-      items[index].iconFill = '#999';
-      items[index].iconStroke = '#999';
-      legend.itemsFormatter(function(){return items});
-    }
+    
+    // draw every legend
+    legends[managers].container(stage).draw();
   }
-  
-  // draw legends
-  johnLegend.container(stage).draw();
-  jakeLegend.container(stage).draw();
-  peterLegend.container(stage).draw();
   
   // chart type
   var chart = anychart.column();
   
+  // manage data and create series
   for(var seriesCount=1;seriesCount<data.data()[0].length;seriesCount++){
     var seriesData = [];
     for (pointsCount = 0;pointsCount<data.mapAs().getRowsCount();pointsCount++){
@@ -146,50 +107,35 @@ anychart.onDocumentReady(function() {
     chart.column(seriesData).name('Quarter '+seriesCount);
   }
   
-  chart.xAxis().title(null);
-  chart.yAxis().title(null);
+  chart
+    .xAxis({title:{enabled: false}})  // disable x axis title
+    .yAxis({title:{enabled: false}})  // disable y axis title
+    .title({text:'Custom Legend'})    // set chart title
+    .background(null)                 // disable chart background
+    .legend({                         // settings for default chart legend
+      titleSeparator: true,           // enable title separator
+      enabled: true,                  // enable legend
+      position: 'right',              // set legend position
+      align:'top',                    // set legend alignment
+      itemsLayout: 'vertical',        // set items positions
+      title:{                         // settings for legend title
+        useHtml: true,                // force HTML usage
+        enabled: true,                // enable title
+        hAlign: 'center',             // place title at the center
+        fontSize: 14,                 // set title font size
+        text:'Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>'
+      }
+    })
+    .margin({                         // prevent legends overlapping
+      bottom: stage.height() - legends[0].getRemainingBounds().getHeight() - 10
+    })
+    .container(stage)                 // set chart container
+    .draw();                          // draw chart
   
-  // set title
-  chart.title().text('Custom Legend');
-  
-  // legend settings
-  chart.legend()
-    .titleSeparator(true)       // draw line to separate title
-    .enabled(true)              // enable legend
-    .position('right')          // set legend position
-    .align('top')               // set legend align
-    .itemsLayout('vertical');   // set items layout
-  
-  chart.background(null);       // disable chart background
-  
-  // settings for legend title
-  chart.legend()
-    .title()
-    .useHtml(true)
-    .enabled(true)              // enables legend title
-    .text('Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>')  // set title text
-    .fontSize(14)               // set font size
-    .hAlign('center');
-  
-  // prevent chart overlapping by legends
-  chart.margin().bottom(stage.height() - johnLegend.getRemainingBounds().getHeight() - 10);
-  chart.yScale().minimum(0);
-  // redraw legends if chart is redrawn
-  chart.container(stage).draw();
-  chart.listen(
-    'chartDraw',
-    function (){
-      // define legend bounds
-      var legendBounds = anychart.math.rect(
-        0,
-        0,
-        chart.container().width(),
-        chart.container().height()
-      );
-      
-      // set bounds and draw legend
-      johnLegend.parentBounds(legendBounds).draw();
-      jakeLegend.parentBounds(legendBounds).draw();
-      peterLegend.parentBounds(legendBounds).draw();
-    });
+  // redraw legends if the chart is redrawn
+  chart.listen('chartDraw',function (){
+    for (var i=0;i<legends.length;i++){
+      legends[i].parentBounds(anychart.math.rect(0,0,chart.container().width(),chart.container().height())).draw();
+    }
+  });
 });
