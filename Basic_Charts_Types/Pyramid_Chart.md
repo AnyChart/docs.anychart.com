@@ -81,7 +81,7 @@ Base of a pyramid is the largest horizontal line of the pyramid chart. In this s
 You can set base size in pixels or in percentage ratio. Use string value for {api:anychart.charts.Pyramid#baseWidth}**.baseWidth()**{api} to define flexible base size in percentage ratio.
 
 ```
-  var chart = anychart.funnel(data);
+  var chart = anychart.pyramid(data);
   
   chart.basWidth('50%') // set base width to 50% of the container width
 ```
