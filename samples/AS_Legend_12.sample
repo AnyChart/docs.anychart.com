@@ -51,7 +51,7 @@ anychart.onDocumentReady(function() {
         // get item index
         var index = event['itemIndex'];
         // make column color a bit lighter
-        chart.getSeries(index).data().set(manager, 'fill', anychart.color.lighten(palette[index], 0.2));
+        chart.getSeries(index).data().set(manager,'fill',anychart.color.lighten(palette[index],0.2));
       });
       // event on mouse out from the item
       legend.listen('legendItemMouseOut', function (event){
@@ -135,7 +135,9 @@ anychart.onDocumentReady(function() {
   // redraw legends if the chart is redrawn
   chart.listen('chartDraw',function (){
     for (var i=0;i<legends.length;i++){
-      legends[i].parentBounds(anychart.math.rect(0,0,chart.container().width(),chart.container().height())).draw();
+      legends[i].parentBounds(
+        anychart.math.rect(0,0,chart.container().width(),chart.container().height())
+      ).draw();
     }
   });
 });
