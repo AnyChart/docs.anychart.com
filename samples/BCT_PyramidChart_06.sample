@@ -23,9 +23,6 @@ anychart.onDocumentReady(function() {
   
   chart.connectorLength(45);    // set 45px connectors length
   
-  // set fixed width for the pyramid
-  chart.headWidth(300).neckWidth(75);
-  
   // draw chart
   chart.container('container').draw();
 });

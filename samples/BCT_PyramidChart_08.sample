@@ -28,9 +28,6 @@ anychart.onDocumentReady(function() {
   
   chart.title().text('Tooltip Settings');
   
-  // set fixed width for the pyramid
-  chart.headWidth(300).neckWidth(75);
-  
   // draw chart
   chart.container('container').draw();
 });

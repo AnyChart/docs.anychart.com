@@ -24,8 +24,8 @@ anychart.onDocumentReady(function() {
   
   chart.title().text('Overlapping Labels');
   
-  // set fixed width for the pyramid
-  chart.headWidth(250).neckWidth(50).background().enabled(false);
+  // disable chart background
+  chart.background().enabled(false);
   
   // draw chart
   chart.container('container').draw();

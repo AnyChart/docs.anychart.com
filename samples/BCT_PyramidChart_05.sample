@@ -20,9 +20,6 @@ anychart.onDocumentReady(function() {
     '4 2'     // dashes and gaps settings
   );
   
-  // set fixed width for the pyramid
-  chart.headWidth(300).neckWidth(75);
-  
   chart.title().text('Tuned Labels Connectors');
   
   // draw chart
