@@ -21,7 +21,7 @@ anychart.onDocumentReady(function() {
   );
   
   // set fixed width for the funnel
-  chart.headWidth(300).neckWidth(75);
+  chart.baseWidth(300).neckWidth(75);
   
   chart.title().text('Tuned Labels Connectors');
   

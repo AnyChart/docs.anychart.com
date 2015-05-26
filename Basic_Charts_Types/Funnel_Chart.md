@@ -74,7 +74,7 @@ You can see the funnel chart with this configuration below.
 
 ## Neck and Head
 
-As you can see, any funnel consist of two parts: the higher part which called head and the lower part which called the neck. Size of these parts can be tuned separately. Using{api:anychart.charts.Funnel#neckWidth}**.neckWidth()**{api} and {api:anychart.charts.Funnel#headWidth}**.headWidth()**{api} methods along with {api:anychart.charts.Funnel#width}**.width()**{api} method gives a full control over the width of the funnel. Height of the neck can be adjusted using {api:anychart.charts.Funnel#neckHeight}**.neckHeight()**{api} method and the height of the whole funnel can be set using {api:anychart.charts.Funnel#neckWidth}**.height()**{api} method.
+As you can see, any funnel consist of two parts: the higher part which called head or base and the lower part which called neck. Size of these parts can be tuned separately. Using{api:anychart.charts.Funnel#neckWidth}**.neckWidth()**{api} and {api:anychart.charts.Funnel#baseWidth}**.baseWidth()**{api} methods along with {api:anychart.charts.Funnel#width}**.width()**{api} method gives a full control over the width of the funnel. Height of the neck can be adjusted using {api:anychart.charts.Funnel#neckHeight}**.neckHeight()**{api} method and the height of the whole funnel can be set using {api:anychart.charts.Funnel#neckWidth}**.height()**{api} method.
 
 ```
   var chart = anychart.funnel(data);
@@ -84,7 +84,7 @@ As you can see, any funnel consist of two parts: the higher part which called he
     .width('100%')      // set 100 percents width of the funnel
     .neckWidth(40)      // set neck width 40px
     .neckHeight('50%')  // set neck height equal to half of the funnel's height
-    .headWidth(170);    // set neck width 170px
+    .baseWidth(170);    // set head width 170px
 ```
 
 As you can see, you can set fixed or flexible size for any method that controls funnel size. Use number as a value for a method to define fixed size and string value to set size as a percentage of a container's size. Let's apply settings from above to a funnel.

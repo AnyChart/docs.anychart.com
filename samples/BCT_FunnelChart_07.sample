@@ -25,7 +25,7 @@ anychart.onDocumentReady(function() {
   chart.title().text('Overlapping Labels');
   
   // set fixed width for the funnel
-  chart.headWidth(250).neckWidth(50).background().enabled(false);
+  chart.baseWidth(250).neckWidth(50).background().enabled(false);
   
   // draw chart
   chart.container('container').draw();
