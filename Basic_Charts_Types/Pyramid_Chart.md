@@ -253,7 +253,7 @@ AnyChart technology allows printing charts out. Some printers may render colors 
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have pyramid chart with 10 points in it. For every point we've applied different hatch fills parameter. That’s how we did it in our code:
 
 ```
-  var chart = anychart.pieChart([
+  var chart = anychart.pyramid([
     // point value   hatch fill type
     {value: 232,    hatchFill: 'diagonalcross'},
     {value: 224,    hatchFill: 'zigzag'},
