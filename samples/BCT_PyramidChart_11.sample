@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
   
   // define chart type and set data
-  var chart = anychart.piramid([
+  var chart = anychart.pyramid([
     {value: 232, hatchFill: 'diagonalcross', name: 'diagonalcross'},
     {value: 224, hatchFill: 'zigzag', name: 'zigzag'},
     {value: 252, hatchFill: 'horizontal', name: 'horizontal'},
