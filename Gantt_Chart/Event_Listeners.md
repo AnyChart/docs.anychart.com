@@ -62,8 +62,8 @@ These are events available for Gantt Chart:
 
 <br>Let's consider the example below. бла-бла
 
-<br>{sample}один-два сэмпла с парой/всеми событиями, инфу вынести наружу, чтобы понятно было, что будет происходить{sample}
+<br>{saample}один-два сэмпла с парой/всеми событиями, инфу вынести наружу, чтобы понятно было, что будет происходить{saample}
 
 <br>As mentioned earlier, our Gantt Chart allows to handle the information about an active row.
 
-<br>{sample}один-два сэмпла на тему разных выдираний из чарта{sample}
+<br>{saample}один-два сэмпла на тему разных выдираний из чарта{saample}
