@@ -13,7 +13,7 @@ AnyChart supports the possibility to handle Gantt Chart events. In this tutorial
 It is important to keep in mind that Resource Gantt Chart and Project Gantt Chart are almost identical in terms of data hierarchy. So the information presented below applies to both chart types, except some details.
 These are events available for Gantt Chart:
 
-<table>
+<br><table>
 <tbody>
 <tr>
 <td>Event</td>
@@ -40,7 +40,7 @@ These are events available for Gantt Chart:
 <td>Dispatched when mouse out event happened. Event returns all available data about an active row.</td>
 </tr>
 <tr>
-<td>rowMouesDown</td>
+<td>rowMouseDown</td>
 <td>Dispatched when mouse down event happened. Event returns all available data about an active row.</td>
 </tr>
 <tr>
@@ -54,7 +54,7 @@ These are events available for Gantt Chart:
 </tbody>
 </table>
 
-As far as you need to listen an event you should use this code to handle it:
+<br>As far as you need to listen an event you should use this code to handle it:
 
 ```
 //choose any event type from a table above:
@@ -65,9 +65,9 @@ chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
   });
 ```
 
-As you can see from the code above, it is possible to get some information from the event. In the matter of this, it should be noted that it contains are some useful fields. Here is list of supported types of information:
+<br>As you can see from the code above, it is possible to get some information from the event. In the matter of this, it should be noted that it contains are some useful fields. Here is list of supported types of information:
 
-<table>
+<br><table>
 <tbody>
 <tr>
 <td>Event Field</td>
@@ -95,18 +95,18 @@ As you can see from the code above, it is possible to get some information from 
 
 <br>In some cases you may have no need to handle different information. Here is the demonstration of this feature in the Resource Gantt Chart:
 
-можно итогом демку Сашину вставить, потому как симпатичена и полна
-http://demos.anychart.dev/demos/gantt/externalevents/external_events.min.html
+<br><br><br>можно итогом демку Сашину вставить, потому как симпатичена и полна
+http://demos.anychart.dev/demos/gantt/externalevents/external_events.min.html<br><br>
 
 ## Default Events
 
-<br>It is necessary to say a few words about the default behaviour. When you click on some row, events are dispatching in the following order:
-1) ROW_MOUSE_DOWN
-2) ROW_MOUSE_UP
-3) ROW_CLICK
-4) ROW_SELECT
+<br>It is necessary to say a few words about the default behaviour. E.g. when you click on some row, events are dispatching in the following order:
+<br>1) rowMouesDown
+<br>2) rowMouseUp
+<br>3) rowClick
+<br>4) rowSelect
 
-<table>
+<br><table>
 <tbody>
 <tr>
 <td>Event Type</td>
@@ -132,10 +132,10 @@ http://demos.anychart.dev/demos/gantt/externalevents/external_events.min.html
 </tbody>
 </table>
 
-To prevent from dispatching of these events you can use the special method:
+<br>To prevent from dispatching of these events you can use the special method:
 
 ```
 event.preventDefault();
 ```
 
-In this case these events won't be reported by chart. The sample above illustrates this idea.
+<br>In this case these events won't be reported by chart. The sample above illustrates this idea.
