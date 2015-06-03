@@ -57,7 +57,7 @@ These are events available for Gantt Chart:
 <br>As far as you need to listen an event you should use this code to handle it:
 
 ```
-//choose the event type from a table above:
+//choose an event type from table above:
 chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
     var msg = event['item'].get('name');
     if (event['period']) msg += '\nPeriod: ' + event['period']['id'];
