@@ -21,7 +21,7 @@ JSON or JavaScript Object Notation, is an open standard format that uses human-r
 
 ## Schema
 
-JSON Schema specifies a JSON-based format to define the structure of JSON data (visit [http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart 7.4.1 version is located at [http://anychart.com/schemas/7.4.1/json-schema.json](http://anychart.com/schemas/7.4.1/json-schema.json). Whenever you use AnyChart JSON schema - make sure its corresponds to the version of AnyChart. The latest schema can always be found at [http://anychart.com/products/anychart7/schemas/latest/json-schema.json](http://anychart.com/products/anychart7/schemas/latest/json-schema.json)
+JSON Schema specifies a JSON-based format to define the structure of JSON data (visit [http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart 7.4.1 version is located at [http://anychart.com/schemas/7.4.1/json-schema.json](http://anychart.com/schemas/7.4.1/json-schema.json). Whenever you use AnyChart JSON schema - make sure its corresponds to the version of AnyChart. The latest schema can always be found at [http://anychart.com/schemas/latest/json-schema.json](http://anychart.com/schemas/latest/json-schema.json)
 
 ## JSON vs JavaScript
 

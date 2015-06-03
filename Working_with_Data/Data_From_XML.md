@@ -21,7 +21,7 @@ XML or Extensible Markup Language, is a markup language that defines a set of ru
 
 ## Schema
 
-XML Schema specifies a XML-based format to define the structure of XML data (visit [http://en.wikipedia.org/wiki/XML_schema](http://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. (for instance, XML schema for AnyChart 7.4.1 version is located at [http://anychart.com/schemas/74.1/xml-schema.xsd](http://anychart.com/schemas/7.4.1/xml-schema.xsd)). Latest version of XML schema can be found at [http://anychart.com/products/anychart7/schemas/latest/xml-schema.xsd](http://anychart.com/products/anychart7/schemas/latest/xml-schema.xsd). This file can be used to validate your own XML structure.
+XML Schema specifies a XML-based format to define the structure of XML data (visit [http://en.wikipedia.org/wiki/XML_schema](http://en.wikipedia.org/wiki/XML_schema) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. (for instance, XML schema for AnyChart 7.4.1 version is located at [http://anychart.com/schemas/7.4.1/xml-schema.xsd](http://anychart.com/schemas/7.4.1/xml-schema.xsd)). Latest version of XML schema can be found at [http://anychart.com/schemas/latest/xml-schema.xsd](http://anychart.com/schemas/latest/xml-schema.xsd). This file can be used to validate your own XML structure.
 
 ## XML vs JavaScript
 
