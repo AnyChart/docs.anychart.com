@@ -6,7 +6,7 @@
 
 ##Overview
 
-AnyChart supports the possibility to handle Gantt Chart events. In this tutorial we will list all available events, explain when they are dispatched and what data is avaialble in them. There are also several samples showing how to create event handler and how to use data coming from AnyGantt. First, you need to create listener to handle the specific event. [Here](Common_Settings/Event_Listeners#listener_types) you can find more information about how to create these simply JavaScript functions.
+AnyChart supports the possibility to handle Gantt Chart events. In this tutorial we will list all available events, explain when they are dispatched and what data is avaialble in them. There are also a useful information about how to create event handler and how to use data coming from AnyGantt. First, you need to create listener to handle the specific event. [Here](Common_Settings/Event_Listeners#listener_types) you can find more information about how to create these simply JavaScript functions.
 
 ## Event Types
 
@@ -57,7 +57,7 @@ These are events available for Gantt Chart:
 <br>As far as you need to listen an event you should use this code to handle it:
 
 ```
-//choose any event type from a table above:
+//choose the event type from a table above:
 chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
     var msg = event['item'].get('name');
     if (event['period']) msg += '\nPeriod: ' + event['period']['id'];
