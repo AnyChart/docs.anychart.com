@@ -4,18 +4,27 @@
 	 	 
 anychart.onDocumentReady(function () {
             // set stage
-            var stage = anychart.graphics.create('container');
+            stage = anychart.graphics.create('container');
+            parentLayer = stage.layer();
 
-            var n = 3;
-            var m = true;
-            var c = true;
+            var position_number = 3;
+            var ifScaleClicked = true;
+            var counterRotation_1 = 0; //for the first layer
+            var counterRotation_2 = 0; //for the second layer
+            var counterRotation_3 = 0; //for the third layer
+            var counterRotation_4 = 0; //for the forth layer
+            var angle = 0;
 
             // set layers
-            var layer_1 = stage.layer(); //for the Winter Sales chart
+            layer_1 = parentLayer.layer(); //for the Winter Sales chart
             layer_1.zIndex(10);
-            var layer_2 = stage.layer(); //for the Spring Sales chart
-            var layer_3 = stage.layer(); //for the Summer Sales chart
-            var layer_4 = stage.layer(); //for the Fall Sales chart
+            var layer_2 = parentLayer.layer(); //for the Spring Sales chart
+            var layer_3 = parentLayer.layer(); //for the Summer Sales chart
+            var layer_4 = parentLayer.layer(); //for the Fall Sales chart
+            var layer_5 = parentLayer.layer(); //for the buttons Scale and Translate
+            layer_5.zIndex(100);
+            var layer_6 = parentLayer.layer(); //for the buttons Scale and Rotate
+            layer_6.zIndex(0);
 
             layer_2.zIndex(10);
             layer_3.zIndex(10);
@@ -130,77 +139,135 @@ anychart.onDocumentReady(function () {
 
             b1.onclick = function () {
                 stage.suspend();
-                if (n == 3) {
-                    if (m == true) {
-                        layer_1.scale(2, 2, 0.47, 0.47);
-                        layer_1.zIndex(90);
-                        layer_2.zIndex(10);
-                        layer_3.zIndex(10);
-                        layer_4.zIndex(10);
-                        b2.style.visibility = 'hidden';
-                        b3.style.visibility = 'visible';
-                        m = false;
-                    } else {
-                        layer_1.scale(0.5, 0.5, 0.47, 0.47);
-                        layer_1.zIndex(10);
-                        b2.style.visibility = 'visible';
-                        b3.style.visibility = 'hidden';
-                        m = true;
+
+                switch (position_number) {
+                    case 3:
+                        if (ifScaleClicked == true) {
+                            layer_1.scale(2, 2, 0.47, 0.47);
+                            layer_1.zIndex(90);
+                            layers_invisible(layer_2, layer_3, layer_4);
+
+                            b2.style.visibility = 'hidden';
+                            b3.style.visibility = 'visible';
+                            ifScaleClicked = false;
+                        } else {
+                            layers_back(layer_2, layer_3, layer_4);
+                            angle = counterRotation_1*90;
+                            counterRotation_1 = 0;
+                            layer_1.rotate(-angle, 500, 282);
+                            layer_1.scale(0.5, 0.5, 0.47, 0.47);
+                            layer_1.zIndex(10);
+                            b2.style.visibility = 'visible';
+                            b3.style.visibility = 'hidden';
+                            ifScaleClicked = true;
+                        }
+                        break;
+
+                    case 2:
+                        if (ifScaleClicked == true) {
+                            layer_4.scale(2, 2, 0.47, 0.47);
+                            layer_4.zIndex(90);
+                            layers_invisible(layer_1, layer_2, layer_3);
+                            b2.style.visibility = 'hidden';
+                            b3.style.visibility = 'visible';
+                            ifScaleClicked = false;
+                        } else {
+                            layers_back(layer_1, layer_2, layer_3);
+                            angle = counterRotation_4*90;
+                            counterRotation_4 = 0;
+                            layer_4.rotate(-angle, 500, 282);
+                            layer_4.scale(0.5, 0.5, 0.47, 0.47);
+                            layer_4.zIndex(10);
+                            b2.style.visibility = 'visible';
+                            b3.style.visibility = 'hidden';
+                            ifScaleClicked = true;
+                        }
+                        break;
+
+                    case 1:
+
+                        if (ifScaleClicked == true) {
+                            layer_3.scale(2, 2, 0.47, 0.47);
+                            layer_3.zIndex(90);
+                            layers_invisible(layer_2, layer_1, layer_4);
+                            b2.style.visibility = 'hidden';
+                            b3.style.visibility = 'visible';
+                            ifScaleClicked = false;
+                        } else {
+                            layers_back(layer_1, layer_2, layer_4);
+                            angle = counterRotation_3*90;
+                            layer_3.rotate(-angle, 500, 282);
+                            counterRotation_3 = 0;
+                            layer_3.scale(0.5, 0.5, 0.47, 0.47);
+                            layer_3.zIndex(10);
+                            b2.style.visibility = 'visible';
+                            b3.style.visibility = 'hidden';
+                            ifScaleClicked = true;
+                        }
+                        break;
+
+                    case 0:
+                        if (ifScaleClicked == true) {
+                            layer_2.scale(2, 2, 0.47, 0.47);
+                            layer_2.zIndex(90);
+                            layers_invisible(layer_1, layer_3, layer_4);
+                            b2.style.visibility = 'hidden';
+                            b3.style.visibility = 'visible';
+                            ifScaleClicked = false;
+                        } else {
+                            layers_back(layer_1, layer_3, layer_4);
+                            angle = counterRotation_2*90;
+                            counterRotation_2 = 0;
+                            layer_2.rotate(-angle, 500, 282);
+                            layer_2.scale(0.5, 0.5, 0.47, 0.47);
+                            layer_2.zIndex(10);
+                            b2.style.visibility = 'visible';
+                            b3.style.visibility = 'hidden';
+                            ifScaleClicked = true;
+                        }
+                        break;
+                }
+                stage.resume();
+            };
+
+
+            var b3 = document.createElement('button');
+            b3.innerHTML = 'Rotate';
+            container.appendChild(b3);
+            b3.style.position = 'absolute';
+            b3.style.left = '25px';
+            b3.style.top = '100px';
+            b3.style.width = '80px';
+            b3.onclick = function () {
+                stage.suspend();
+                if (position_number == 3) {
+                    layer_1.rotate(90, 500, 282);
+                    counterRotation_1 = counterRotation_1+1;
+                    if (counterRotation_1 == 4) {
+                        counterRotation_1 = 0;
                     }
-                } else if (n == 2) {
-                    if (m == true) {
-                        layer_4.scale(2, 2, 0.47, 0.47);
-                        layer_4.zIndex(90);
-                        layer_2.zIndex(10);
-                        layer_3.zIndex(10);
-                        layer_1.zIndex(10);
-                        b2.style.visibility = 'hidden';
-                        b3.style.visibility = 'visible';
-                        m = false;
-                    } else {
-                        layer_4.scale(0.5, 0.5, 0.47, 0.47);
-                        layer_4.zIndex(10);
-                        b2.style.visibility = 'visible';
-                        b3.style.visibility = 'hidden';
-                        m = true;
+                } else if (position_number == 2) {
+                    layer_4.rotate(90, 500, 282);
+                    counterRotation_4 = counterRotation_4+1;
+                    if (counterRotation_4 == 4) {
+                        counterRotation_4 = 0;
                     }
-                } else if (n == 1) {
-                    if (m == true) {
-                        layer_3.scale(2, 2, 0.47, 0.47);
-                        layer_3.zIndex(90);
-                        layer_2.zIndex(10);
-                        layer_1.zIndex(10);
-                        layer_4.zIndex(10);
-                        b2.style.visibility = 'hidden';
-                        b3.style.visibility = 'visible';
-                        m = false;
-                    } else {
-                        layer_3.scale(0.5, 0.5, 0.47, 0.47);
-                        layer_3.zIndex(10);
-                        b2.style.visibility = 'visible';
-                        b3.style.visibility = 'hidden';
-                        m = true;
+                } else if (position_number == 1) {
+                    layer_3.rotate(90, 500, 282);
+                    counterRotation_3 = counterRotation_3+1;
+                    if (counterRotation_3 == 4) {
+                        counterRotation_3 = 0;
                     }
-                } else if (n == 0) {
-                    if (m == true) {
-                        layer_2.scale(2, 2, 0.47, 0.47);
-                        layer_2.zIndex(90);
-                        layer_1.zIndex(10);
-                        layer_3.zIndex(10);
-                        layer_4.zIndex(10);
-                        b2.style.visibility = 'hidden';
-                        b3.style.visibility = 'visible';
-                        m = false;
-                    } else {
-                        layer_2.scale(0.5, 0.5, 0.47, 0.47);
-                        layer_2.zIndex(10);
-                        b2.style.visibility = 'visible';
-                        b3.style.visibility = 'hidden';
-                        m = true;
+                } else if (position_number == 0) {
+                    layer_2.rotate(90, 500, 282);
+                    counterRotation_2 = counterRotation_2+1;
+                    if (counterRotation_2 == 4) {
+                        counterRotation_2 = 0;
                     }
                 }
                 stage.resume();
             };
+
 
             var b2 = document.createElement('button');
             b2.innerHTML = 'Translate';
@@ -212,59 +279,46 @@ anychart.onDocumentReady(function () {
             b2.style.width = '80px';
             b2.onclick = function () {
                 stage.suspend();
-                if (n == 3) {
-                    layer_1.translate(376,0);
-                    layer_2.translate(-376,282).zIndex(90);
-                    layer_3.translate(376,0);
-                    layer_4.translate(-376,-282).zIndex(90);
-                } else if (n == 2) {
-                    layer_1.translate(-376,282).zIndex(90);
-                    layer_2.translate(376,0);
-                    layer_3.translate(-376,-282).zIndex(90);
-                    layer_4.translate(376,0);
-                } else if (n == 1) {
-                    layer_1.translate(376,0);
+                if (position_number == 3) {
+                    layer_1.translate(376, 0);
+                    layer_2.translate(-376, 282).zIndex(90);
+                    layer_3.translate(376, 0);
+                    layer_4.translate(-376, -282).zIndex(90);
+                } else if (position_number == 2) {
+                    layer_1.translate(-376, 282).zIndex(90);
+                    layer_2.translate(376, 0);
+                    layer_3.translate(-376, -282).zIndex(90);
+                    layer_4.translate(376, 0);
+                } else if (position_number == 1) {
+                    layer_1.translate(376, 0);
                     layer_2.translate(-376, -282).zIndex(90);
-                    layer_3.translate(376,0);
-                    layer_4.translate(-376,282).zIndex(90);
-                } else if (n == 0) {
-                    layer_1.translate(-376,-282);
-                    layer_2.translate(376,0).zIndex(90);
-                    layer_3.translate(-376,282);
-                    layer_4.translate(376,0).zIndex(90);
+                    layer_3.translate(376, 0);
+                    layer_4.translate(-376, 282).zIndex(90);
+                } else if (position_number == 0) {
+                    layer_1.translate(-376, -282);
+                    layer_2.translate(376, 0).zIndex(90);
+                    layer_3.translate(-376, 282);
+                    layer_4.translate(376, 0).zIndex(90);
                 }
-                console.log(n);
-                if (n == 0){
-                    n = 3;
+                if (position_number == 0) {
+                    position_number = 3;
                 } else {
-                    n = n - 1;
+                    position_number = position_number - 1;
                 }
                 stage.resume();
             };
 
+            function layers_invisible(layer1, layer2, layer3) {
+                layer1.remove();
+                layer2.remove();
+                layer3.remove();
+            }
 
-            var b3 = document.createElement('button');
-            b3.innerHTML = 'Rotate';
-            container.appendChild(b3);
-
-            b3.style.position = 'absolute';
-            b3.style.left = '25px';
-            b3.style.top = '100px';
-            b3.style.width = '80px';
-            b3.onclick = function () {
-                stage.suspend();
-                if (n == 3){
-                        layer_1.rotate(90,376,282);
-                } else if (n == 2) {
-                        layer_4.rotate(90,376,282);
-                } else if (n == 1) {
-                        layer_3.rotate(90,376,282);
-                } else if (n == 0) {
-                        layer_2.rotate(90,376,282);
-                }
-                stage.resume();
-            };;
-
+            function layers_back(layer1, layer2, layer3) {
+                layer1.parent(parentLayer);
+                layer2.parent(parentLayer);
+                layer3.parent(parentLayer);
+            }
 
 
         });
