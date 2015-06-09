@@ -7,13 +7,13 @@ anychart.onDocumentReady(function () {
             stage = anychart.graphics.create('container');
             parentLayer = stage.layer();
 
-            var position_number = 3;
-            var ifScaleClicked = true;
+            var position_number = 3;   //where on the stage the chart is placed
+            var ifScaleClicked = true; //was the button "Scale" clicked or not
             var counterRotation_1 = 0; //for the first layer
             var counterRotation_2 = 0; //for the second layer
             var counterRotation_3 = 0; //for the third layer
             var counterRotation_4 = 0; //for the forth layer
-            var angle = 0;
+            var angle = 0; 			   //angle of rotation
 
             // set layers
             layer_1 = parentLayer.layer(); //for the Winter Sales chart
@@ -25,7 +25,6 @@ anychart.onDocumentReady(function () {
             layer_5.zIndex(100);
             var layer_6 = parentLayer.layer(); //for the buttons Scale and Rotate
             layer_6.zIndex(0);
-
             layer_2.zIndex(10);
             layer_3.zIndex(10);
             layer_4.zIndex(10);
