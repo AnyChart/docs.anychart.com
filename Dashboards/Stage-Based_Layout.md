@@ -116,7 +116,7 @@ Each click on the "Add" button adds a layer with a red square, each click on the
     if (layerToRemove) layerToRemove.remove();
 	
 ```
-{sample}DB\_Stage\_04{sample}
+{sample :width 700 :height 500 }DB\_Stage\_04{sample}
 
 ###Adapt
 
