@@ -448,15 +448,15 @@ chart2.bounds(0, 25, 90, 20);
 Another way to place a lot of sparklines is to use the [AnyChart table](../Dashboards/Table_Layout):
 
 ```
- // create table
+  // create table
   var table = anychart.ui.table();
-
+ 
   // set table content
   table.contents([
     [
       null,
-      'February 2015',
-      'June 2014'
+      'February',
+      'June'
     ],[
       'EUR/USD',
       chart1,
@@ -471,15 +471,20 @@ Another way to place a lot of sparklines is to use the [AnyChart table](../Dashb
       chart6
     ]
   ]);
-
-  table.rowHeight(0, 40);   // Get first row and set height 40px
-  table.colWidth(0, 70);    // Get first column and set width 70 px
-
-  // adjust table border and position text in each cell into center
-  table.cellBorder('#B8B8B8').cellTextFactory().vAlign('center').hAlign('center');
-
+ 
+  table.getRow(0).height('25%');  // Get first row and set height 25%
+  table.getCol(0).width(70);      // Get first column and set width 70 px
+ 
+  table
+    .cellBorder('#B8B8B8')        // Adjust table border
+    .vAlign('center')             // Position text into the center
+    .hAlign('center')             // Position text into the center
+    .fontWeight(900)              // Bold text
+    .height(100)                  // Set table height
+    .width(200);                  // Set table width
+ 
   // set table container and initiate draw
-  table.container(stage).draw();
+  table.container('container').draw();
 ```
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_19{sample}
