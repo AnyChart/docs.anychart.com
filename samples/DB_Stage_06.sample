@@ -2,18 +2,7 @@
      :is_new false
      :exports "chart"}
 	 	 
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-    <script src="anychart.min.js"></script>
-
-    <script>
-
-
-
-        anychart.onDocumentReady(function () {
+anychart.onDocumentReady(function () {
 
             // set stage
             stage = anychart.graphics.create('container');
@@ -330,15 +319,3 @@
             on_hover_two_lower(beetle_line, beetle_line_shadow, beetle_pic, beetle_pic_shadow);
             on_hover_two_lower(mouse_line, mouse_line_shadow, mouse_pic, mouse_pic_shadow);
         });
-
-    </script>
-</head>
-
-<body>
-
-<div id="container" style="width: 800px; height: 600px; border: 1px solid blue"></div>
-
-
-
-</body>
-</html>
