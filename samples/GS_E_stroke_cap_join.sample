@@ -30,7 +30,7 @@ anychart.onDocumentReady(function() {
         lineJoin: 'bevel',
         lineCap: 'round'
     })
-    .bounds(anychart.math.rect(22, 2*stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 -20))
+    .bounds(anychart.math.rect(22, 2*stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 -20));
   
   line.container(stage).draw();
 });
