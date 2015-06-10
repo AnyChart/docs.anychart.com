@@ -5,17 +5,13 @@
 anychart.onDocumentReady(function() {
 
   // set data and chart type
-  var chart = anychart.pieChart([
+  chart = anychart.pieChart([
     {x: 'P1', value: 232, hatchFill: 'diagonalcross'},
     {x: 'P2', value: 224, hatchFill: 'zigzag'},
     {x: 'P3', value: 252, hatchFill: 'horizontal'},
     {x: 'P4', value: 219, hatchFill: 'vertical'},
     {x: 'P5', value: 169, hatchFill: 'dashedbackwarddiagonal'},
-    {x: 'P6', value: 217, hatchFill: 'grid'},
-    {x: 'P7', value: 175, hatchFill: 'dashedforwarddiagonal'},
-    {x: 'P8', value: 199, hatchFill: 'dashedhorizontal'},
-    {x: 'P9', value: 297, hatchFill: 'plaid'},
-    {x: 'P10', value: 317, hatchFill: 'weave'}
+    {x: 'P6', value: 217, hatchFill: 'grid'}
   ]);
 
   // chart title
