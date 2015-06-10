@@ -5,10 +5,10 @@
 anychart.onDocumentReady(function() {
 
   // chart type
-  chart = anychart.scatterChart();
+  var chart = anychart.scatterChart();
 
   // chart title
-  var chart.title().text('Sample Scatter Line and Spline Chart');
+  chart.title().text('Sample Scatter Line and Spline Chart');
 
   // adjust inversion of both scales
   chart.xScale().inverted(true);
