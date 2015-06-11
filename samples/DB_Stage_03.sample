@@ -28,7 +28,7 @@ anychart.onDocumentReady(function () {
             // chart type
             var chart_1 = anychart.column();
             chart_1.title('Winter Sales');
-            chart_1.padding(0, 0, 0, 100);
+            chart_1.padding(0, 0, 0, 115);
             var series_1 = chart_1.column(data_1);
             series_1.fill(data_1);
             series_1.stroke(null);
@@ -105,7 +105,6 @@ anychart.onDocumentReady(function () {
             container.appendChild(b1);
 
             b1.style.position = 'absolute';
-            b1.style.left = '25px';
             b1.style.top = '50px';
             b1.style.width = '120px';
 
@@ -125,7 +124,6 @@ anychart.onDocumentReady(function () {
             container.appendChild(b2);
 
             b2.style.position = 'absolute';
-            b2.style.left = '25px';
             b2.style.top = '100px';
             b2.style.width = '120px';
             b2.onclick = function() {
@@ -143,7 +141,6 @@ anychart.onDocumentReady(function () {
             container.appendChild(b3);
 
             b3.style.position = 'absolute';
-            b3.style.left = '25px';
             b3.style.top = '150px';
             b3.style.width = '120px';
             b3.onclick = function() {
@@ -161,7 +158,6 @@ anychart.onDocumentReady(function () {
             container.appendChild(b4);
 
             b4.style.position = 'absolute';
-            b4.style.left = '25px';
             b4.style.top = '200px';
             b4.style.width = '120px';
 
