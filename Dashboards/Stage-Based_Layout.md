@@ -116,7 +116,7 @@ Each click on the "Add" button adds a layer with a red square, each click on the
     if (layerToRemove) layerToRemove.remove();
 	
 ```
-{sample :width 700 :height 500 }DB\_Stage\_04{sample}
+{sample :width 688 :height 500 }DB\_Stage\_04{sample}
 
 ###Adapt
 
@@ -127,7 +127,7 @@ for rotating them and {api:anychart.graphics.vector.Element#scale}**.scale()**{a
  
  Let's now make a more complicated example to show those features. Explore the sample in the playground to see the code.
  
-{sample}DB\_Stage\_05{sample}
+{sample :width 688 :height 500 }DB\_Stage\_05{sample}
 
 Note that the center of the stage coordinate system is in the left top corner of the monitor and the vertical scale of the stage is directed to the bottom of the screen.
 

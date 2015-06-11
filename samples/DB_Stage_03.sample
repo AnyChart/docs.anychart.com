@@ -28,7 +28,7 @@ anychart.onDocumentReady(function () {
             // chart type
             var chart_1 = anychart.column();
             chart_1.title('Winter Sales');
-            chart_1.padding(0, 0, 0, 115);
+            chart_1.padding(0, 0, 0, 125);
             var series_1 = chart_1.column(data_1);
             series_1.fill(data_1);
             series_1.stroke(null);
@@ -49,7 +49,7 @@ anychart.onDocumentReady(function () {
             // set series data
             var chart_2 = anychart.column();
             chart_2.title('Spring Sales');
-            chart_2.padding(0, 0, 0, 100);
+            chart_2.padding(0, 0, 0, 125);
             var series_2 = chart_2.column(data_2);
             series_2.stroke(null);
 
@@ -69,7 +69,7 @@ anychart.onDocumentReady(function () {
             // set series data
             var chart_3 = anychart.column();
             chart_3.title('Summer Sales');
-            chart_3.padding(0, 0, 0, 100);
+            chart_3.padding(0, 0, 0, 125);
             var series_3 = chart_3.column(data_3);
             series_3.stroke(null);
 
@@ -88,7 +88,7 @@ anychart.onDocumentReady(function () {
             // set series data
             var chart_4 = anychart.column();
             chart_4.title('Fall Sales');
-            chart_4.padding(0, 0, 0, 100);
+            chart_4.padding(0, 0, 0, 125);
             var series_4 = chart_4.column(data_4);
             series_4.stroke(null);
 
