@@ -6,11 +6,15 @@
 
 ##Overview
 
-AnyChart supports the possibility to handle Gantt Chart events. In this tutorial we will list all available events, explain when they are dispatched and what data is avaialble in them. There are also a useful information about how to create event handler and how to use data coming from AnyGantt. First, you need to create listener to handle the specific event. [Here](Common_Settings/Event_Listeners#listener_types) you can find more information about how to create these simply JavaScript functions.
+AnyChart supports the possibility to handle Gantt Chart events. In this tutorial we will list all available events, 
+explain when they are dispatched and what data is avaialble in them. There are also a useful information about how to create 
+event handler and how to use data coming from AnyGantt. First, you need to create listener to handle the specific event. [Here](Common_Settings/Event_Listeners#listener_types) 
+you can find more information about how to create these simply JavaScript functions.
 
 ## Event Types
 
-It is important to keep in mind that Resource Gantt Chart and Project Gantt Chart are almost identical in terms of data hierarchy. So the information presented below applies to both chart types, except some details.
+It is important to keep in mind that Resource Gantt Chart and Project Gantt Chart are almost identical in terms of data hierarchy. 
+So the information presented below applies to both chart types, except some details.
 These are events available for Gantt Chart:
 
 <br><table>
@@ -65,7 +69,7 @@ chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
   });
 ```
 
-<br>As you can see from the code above, it is possible to get some information from the event. In the matter of this, it should be noted that it contains are some useful fields. Here is list of supported types of information:
+<br>As you can see from the code above, it is possible to get any information about the item from the event - it contains some useful fields. Here is a list of supported types of information:
 
 <br><table>
 <tbody>
@@ -95,8 +99,7 @@ chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
 
 <br>In some cases you may have no need to handle different information. Here is the demonstration of this feature in the Resource Gantt Chart:
 
-<br><br><br>можно итогом демку Сашину вставить, потому как симпатичена и полна
-http://demos.anychart.dev/demos/gantt/externalevents/external_events.min.html<br><br>
+{sample}GANTT\_Events\_01{sample}
 
 ## Default Events
 
