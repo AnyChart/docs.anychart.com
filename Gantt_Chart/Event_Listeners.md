@@ -103,10 +103,12 @@ chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
 
 ## Default Events
 
-<br>It is necessary to say a few words about the default behaviour. E.g. when you click on some row, events are dispatching in the following order:
-<br>1) rowMouesDown
+<br>When you click on a row or move the mouse over the row, there is some default actions take place. 
+
+Those events dispatch in the following order on every click:
+<br>1) rowMouseDown
 <br>2) rowMouseUp
-<br>3) rowClick
+<br>3) rowClick (which is the same as rowMouseDown + rowMouseUp)
 <br>4) rowSelect
 
 <br><table>
@@ -124,7 +126,7 @@ chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
 <td>Makes the row hovered.</td>
 </tr>
 <tr>
-<td>rowMouseDown</td>
+<td>rowMouseUp</td>
 <td>Makes the row selected.</td>
 </tr>
 <tr>
@@ -135,10 +137,13 @@ chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
 </tbody>
 </table>
 
-<br>To prevent from dispatching of these events you can use the special method:
+<br>To prevent from these events dispatching you can use the special method {api}**.preventDefault()**.{api}
 
 ```
 event.preventDefault();
 ```
 
-<br>In this case these events won't be reported by chart. The sample above illustrates this idea.
+<br>In this case these events won't be reported by the chart. Let's disable the default behaviour for the clicks. The sample below illustrates this idea.
+
+{sample}GANTT\_Events\_02{sample}
+
