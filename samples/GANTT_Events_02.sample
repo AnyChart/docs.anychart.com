@@ -1,0 +1,175 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+	 
+	anychart.onDocumentReady(function() {
+            var newData = getNewData();
+
+            //create data tree on our data
+            var treeData = anychart.data.tree(newData, anychart.enums.TreeFillingMethod.AS_TABLE);
+
+            //create project gantt chart
+            chart = anychart.ganttProject();
+            chart.title('Click on the row and see that nothing changes');
+
+            //set container id for the chart
+            chart.container('container');
+
+            //set data for the chart
+            chart.data(treeData);
+
+            //set start splitter position settings
+            chart.splitterPosition(320);
+
+            //get chart data grid link to set column settings
+            var dataGrid = chart.dataGrid();
+
+            //set first column settings
+            var firstColumn = dataGrid.column(1);
+            firstColumn.title('System Engineering');
+            firstColumn.width(140);
+            firstColumn.cellTextSettings().hAlign('left');
+            firstColumn.textFormatter(function(item) {
+                return item.get('name');
+            });
+            firstColumn.cellTextSettingsOverrider(labelTextSettingsOverrider);
+
+
+            //initiate chart drawing
+            chart.draw();
+
+            chart.zoomTo(Date.UTC(2008, 0, 31, 1, 36), Date.UTC(2008, 1, 15, 10, 3));
+
+            //--------------------------------------------------
+            // External events
+            //--------------------------------------------------
+            chart.listen(anychart.enums.EventType.ROW_CLICK, function(e) {
+                e.preventDefault();
+            });
+
+//
+//            chart.listen(anychart.enums.EventType.ROW_DBL_CLICK, function(e) {
+//                if (document.getElementById('pr_dbl_click').checked) e.preventDefault();
+//                var msg = e['item'].get('name');
+//                if (e['period']) msg += '\nPeriod: ' + e['period']['id'];
+//                log(anychart.enums.EventType.ROW_DBL_CLICK, msg);
+//            });
+//
+//            chart.listen(anychart.enums.EventType.ROW_MOUSE_OVER, function(e) {
+//                if (document.getElementById('pr_over').checked) e.preventDefault();
+//                var msg = e['item'].get('name');
+//                if (e['period']) msg += '\nPeriod: ' + e['period']['id'];
+//                log(anychart.enums.EventType.ROW_MOUSE_OVER, msg);
+//            });
+//
+//            chart.listen(anychart.enums.EventType.ROW_MOUSE_MOVE, function(e) {
+//                if (document.getElementById('pr_move').checked) e.preventDefault();
+//                var msg = e['item'].get('name');
+//                if (e['period']) msg += '\nPeriod: ' + e['period']['id'];
+//                log(anychart.enums.EventType.ROW_MOUSE_MOVE, msg);
+//            });
+//
+//            chart.listen(anychart.enums.EventType.ROW_MOUSE_OUT, function(e) {
+//                if (document.getElementById('pr_out').checked) e.preventDefault();
+//                var msg = e['item'].get('name');
+//                if (e['period']) msg += '\nPeriod: ' + e['period']['id'];
+//                log(anychart.enums.EventType.ROW_MOUSE_OUT, msg);
+//            });
+//
+//            chart.listen(anychart.enums.EventType.ROW_MOUSE_UP, function(e) {
+//                if (document.getElementById('pr_up').checked) e.preventDefault();
+//                var msg = e['item'].get('name');
+//                if (e['period']) msg += '\nPeriod: ' + e['period']['id'];
+//                log(anychart.enums.EventType.ROW_MOUSE_UP, msg);
+//            });
+//
+//            chart.listen(anychart.enums.EventType.ROW_MOUSE_DOWN, function(e) {
+//                var msg = e['item'].get('name');
+//                if (e['period']) msg += '\nPeriod: ' + e['period']['id'];
+//                log(anychart.enums.EventType.ROW_MOUSE_DOWN, msg);
+//            });
+
+        });
+
+
+
+
+        function labelTextSettingsOverrider(label, item) {
+            switch (item.get('type')) {
+                case 'main':
+                    label.fontColor('red').fontWeight('bold');
+                    break;
+                case 'first':
+                    label.fontColor('green').fontWeight('bold');
+                    break;
+                case 'second':
+                    label.fontColor('orange').fontWeight('bold');
+                    break;
+            }
+        }
+
+
+        function getNewData() {
+            return [
+                {
+                    'id': '1',
+                    'name': 'Revealing the problems',
+                    'rowHeight': 22,
+                    'collapsed': false
+                },
+                                            {
+                                'id': '2',
+                                'name': 'Survey',
+                                'parent': '1',
+                                'type': 'first',
+                                'rowHeight': 30,
+                                'progressValue': '80%',
+                                'actualStart': Date.UTC(2008, 0, 30, 16, 0),
+                                'actualEnd': Date.UTC(2008, 1, 4, 14, 18),
+                                'connectTo': '3',
+                                'connectorType': 'FinishStart'
+                            },
+                            {
+                                'id': '3',
+                                'name': 'Organization diagnostic',
+                                'parent': '1',
+                                'type': 'second',
+                                'rowHeight': 30,
+                                'progressValue': '20%',
+                                'actualStart': Date.UTC(2008, 0, 31, 0, 47),
+                                'actualEnd': Date.UTC(2008, 1, 5, 14, 18),
+                                'connectTo': '5',
+                                'connectorType': 'FinishStart'
+                            },
+                {
+                    'id': '4',
+                    'name': 'Requirement formation',
+                    'rowHeight': 22,
+                    'progressValue': '50%',
+                    'collapsed': true
+                },
+                            {
+                                'id': '5',
+                                'name': 'Diagram creating',
+                                'parent': '4',
+                                'type': 'first',
+                                'rowHeight': 30,
+                                'progressValue': '30%',
+                                'actualStart': Date.UTC(2008, 1, 5, 14, 18),
+                                'actualEnd': Date.UTC(2008, 1, 7, 14, 18),
+                                'connectTo': '6',
+                                'connectorType': 'FinishStart'
+                            },
+                            {
+                                'id': '6',
+                                'name': 'Documentation',
+                                'parent': '4',
+                                'type': 'second',
+                                'rowHeight': 30,
+                                'progressValue': '10%',
+                                'actualStart': Date.UTC(2008, 1, 6, 0, 47),
+                                'actualEnd': Date.UTC(2008, 1, 10, 14, 18)
+                            }
+
+            ];
+        }
