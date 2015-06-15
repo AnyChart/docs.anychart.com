@@ -163,8 +163,7 @@ To print the whole chart, graphics on stage or a dashboard just add the {api}**.
 	
 ```
 
-![]("http://sh.uploads.ru/Juq80.jpg")
-<a href="http://uploads.ru/GxuPW.jpg"><img src="http://sh.uploads.ru/t/GxuPW.jpg" border="0" /></a>
+<p align="center"><a href="http://static.anychart.com/images/browser_printing.jpg"><img width="700px" height="550px" src="http://static.anychart.com/images/browser_printing.jpg"></a></p>
 
 This method has two parameters, which can be set:
 <p>1. papersize - this param is US Letter by default. Here you should define a value from ISO standard (A5, C4, B3, etc.) or US metric system (US legal, US letter, etc.).  </p>
@@ -177,9 +176,10 @@ For example, in case we want to set a portrait layout and have a print of A4 for
 	
 ```
 ![]("http://sg.uploads.ru/tAucr.jpg")
+<p align="center"><a href="http://static.anychart.com/images/printing_01.jpg"><img width="700px" height="550px" src="http://static.anychart.com/images/printing_01.jpg"></a></p>
 
 Here you can see that the image of a chart is separated. That is because Javascript is not able to change your printer preferences, 
 so even if you have set the papersize and a layout for the chart, you'll have to do the same for the printer. You can find them to the left from the illustration of the future print.
 
-![]("http://sh.uploads.ru/GxuPW.jpg")
+<p align="center"><a href="http://static.anychart.com/images/printing_02.jpg"><img width="700px" height="550px" src="http://static.anychart.com/images/printing_02.jpg"></a></p>
 
