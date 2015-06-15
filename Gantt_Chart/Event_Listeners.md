@@ -3,13 +3,14 @@
 * [Overview](#overview)
 * [Event Types](#event_types)
 * [Default Events](#default_events)
+* [Prevent Defaults](#prevent_defaults)
 
 ##Overview
 
 AnyChart supports the possibility to handle Gantt Chart events. In this tutorial we will list all available events, 
-explain when they are dispatched and what data is avaialble in them. There are also a useful information about how to create 
-event handler and how to use data coming from AnyGantt. First, you need to create listener to handle the specific event. [Here](Common_Settings/Event_Listeners#listener_types) 
-you can find more information about how to create these simply JavaScript functions.
+explain when they are dispatched and what data is available in them. There is also some useful information about how to create an
+event handler and how to use the data coming from AnyGantt. First, you need to create a listener to handle the specific event. [Here](Common_Settings/Event_Listeners#listener_types) 
+you can find more information about creating these simply JavaScript functions.
 
 ## Event Types
 
@@ -103,39 +104,57 @@ chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
 
 ## Default Events
 
-<br>When you click on a row or move the mouse over the row, there is some default actions take place. 
+<br>When you click on a row or move the mouse over the row, there are some default actions take place. 
 
 Those events dispatch in the following order on every click:
-<br>1) rowMouseDown
-<br>2) rowMouseUp
-<br>3) rowClick (which is the same as rowMouseDown + rowMouseUp)
-<br>4) rowSelect
+<p>1) rowMouseDown</p>
+<p>2) rowMouseUp </p>
+<p>3) rowClick (which is the same as rowMouseDown + rowMouseUp) </p>
+<p>4) rowSelect </p>
 
-<br><table>
+<br>
+<table>
 <tbody>
+
 <tr>
 <td>Event Type</td>
 <td>Default Behaviour</td>
 </tr>
-<tr>
-<td>rowClick</td>
-<td>Makes the row selected.</td>
-</tr>
-<tr>
-<td>rowMouseOver</td>
-<td>Makes the row hovered.</td>
-</tr>
+
 <tr>
 <td>rowMouseUp</td>
 <td>Makes the row selected.</td>
 </tr>
+
+<tr>
+<td>rowClick</td>
+<td>Makes the row selected (contains rowMouseUp).</td>
+</tr>
+
 <tr>
 <td>rowDBlclick</td>
 <td>Сollapse/expand items.</td>
 </tr>
+
 <tr>
+<td>rowMouseMove</td>
+<td>Reports the hovered point state.</td>
+</tr>
+
+<tr>
+<td>rowMouseOver</td>
+<td>Makes the row hovered.</td>
+</tr>
+
+<tr>
+<td>rowMouseOut</td>
+<td>Unhovers the row.</td>
+</tr>
+
 </tbody>
 </table>
+
+## Prevent Defaults
 
 <br>To prevent from these events dispatching you can use the special method {api}**.preventDefault()**.{api}
 
@@ -146,4 +165,10 @@ event.preventDefault();
 <br>In this case these events won't be reported by the chart. Let's disable the default behaviour for the clicks. The sample below illustrates this idea.
 
 {sample}GANTT\_Events\_02{sample}
+```
+chart.listen(anychart.enums.EventType.ROW_CLICK, function(e) {
+                e.preventDefault();
+            });
+```
+
 
