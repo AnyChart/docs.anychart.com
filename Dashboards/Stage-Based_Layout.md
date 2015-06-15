@@ -149,7 +149,7 @@ Here we considered the biocenosis of a fir-tree. We have put the pics of animals
 
 ##Print
 
-Every browser has a printing function. We can print any page (in case it is not shelled from it) using this function, but it cannot guarantee that we'll get what we wanted. 
+Every browser has a printing function. We can print any page (in case it is not shelled from printing) using this function, but it cannot guarantee that we'll get what we wanted. 
 Prints made through standard browser printing mostly contains a lot of unnecessary information. So that's where AnyChart Printing helps.
 
 The main difference between standard printing and using the AnyChart Printing is the fact that the first one will print the whole page with all extra images and text while the second one
@@ -164,6 +164,7 @@ To print the whole chart, graphics on stage or a dashboard just add the {api}**.
 ```
 
 ![]("http://sh.uploads.ru/Juq80.jpg")
+<a href="http://uploads.ru/GxuPW.jpg"><img src="http://sh.uploads.ru/t/GxuPW.jpg" border="0" /></a>
 
 This method has two parameters, which can be set:
 <p>1. papersize - this param is US Letter by default. Here you should define a value from ISO standard (A5, C4, B3, etc.) or US metric system (US legal, US letter, etc.).  </p>
