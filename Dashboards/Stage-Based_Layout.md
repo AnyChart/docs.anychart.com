@@ -149,7 +149,13 @@ Here we considered the biocenosis of a fir-tree. We have put the pics of animals
 
 ##Print
 
-To print the whole dashboard just add the {api}**.print()**{api} method to your stage. It will look like the following:
+Every browser has a printing function. We can print any page (in case it is not shelled from it) using this function, but it cannot guarantee that we'll get what we wanted. 
+Prints made through standard browser printing mostly contains a lot of unnecessary information. So that's where AnyChart Printing helps.
+
+The main difference between standard printing and using the AnyChart Printing is the fact that the first one will print the whole page with all extra images and text while the second one
+allows to print an only chart with no useless information. 
+
+To print the whole chart, graphics on stage or a dashboard just add the {api}**.print()**{api} method to your container. It will look like the following:
 
 ```
 	// print
