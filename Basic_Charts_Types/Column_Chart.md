@@ -223,7 +223,7 @@ Look at the demonstration of the maximum and the minimum values in the Single-se
 
 The special thing about column charts are the paddings between columns and column groups (in multi-series charts). The picture below shows what are these paddings:
 
-![](http://www.anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
+![](http://6.anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
 
 If you want to set these paddings you need to set {api:anychart.charts.Cartesian#barsPadding}**.barsPadding()**{api} or {api:anychart.charts.Cartesian#barGroupsPadding}**.barGroupsPadding()**{api} parameters in the **chart**. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For example, if you set **.barsPadding()** to 0.5, the space between two columns will be equal to the half of each column width. If you don't want any padding between columns or groups you should set **.barsPadding()** and **.barGroupsPadding()** to 0.
   
