@@ -26,8 +26,8 @@ There are five listener methods in Anychart, each type for a special case. Read 
 
 ###listen()
 
-This listener type adds an event listener to an implementing object. You can add the {api:anychart.core.Base.listen}**.listen()**{api} method to an object more than once; each time it's added its key is returned.
-Look at the sample and its code. It's necessary to define the event type and the action to perform. 
+This listener type adds an event listener to an implementing object. You can add the {api:anychart.core.Base.listen}**.listen()**{api} method to an object more than once (but not to an event); each time it's added its key is returned.
+Look at the sample and through its code. It's necessary to define the event type and the action to perform. 
 
 ```
 	chart.listen('click', function(){
@@ -46,7 +46,7 @@ Look at the sample and its code. It's necessary to define the event type and the
 
 ###listenOnce()
 
-This listener type adds an event listener, that should react only once. It means that when the defined event happens for the first time, this listener reacts and then disables itself, so the action will not be performed for the second time.
+This listener type adds an event listener, that should react only once. It means that when the defined event happens for the first time, this listener reacts and then disables itself, so there will be no reaction when the event happens again.
 You can add the {api:anychart.core.Base#listenOnce}**.listenOnce()**{api} method to an object more than once; each time it's added its key is returned.
 It's necessary to define the event type and the action to perform to get any reaction on the event. 
 
@@ -73,14 +73,14 @@ You can add the {api:anychart.core.Base.removeAllListeners}**.removeAllListeners
 
 {sample}CMN\_Event\_Listener\_03{sample}
 
-Note that when you intend to add an unlistener of any type, you should do it through the listener. 
+Note that when you intend to stop listen to an only event or all of them, you should add an {api:anychart.core.Base#unlisten}**.unlisten()**{api} method from inside of the {api:anychart.core.Base#listen}**.listen()**{api} one. 
 
 
 ###unlisten()
 
-This listener type disables the particular listener added using the {api:anychart.core.Base.listen}**.listen()**{api} or {api:anychart.core.Base.listenOne**.listenOnce()**{api} methods. 
+This listener type disables the particular listener added using the {api:anychart.core.Base.listen}**.listen()**{api} or {api:anychart.core.Base.listenOnce}**.listenOnce()**{api} methods. 
 You can add the {api:anychart.core.Base.unlisten}**.unlisten()**{api} method to an object more than once. The method requires the same parameters as the listener which is removing with this.
-To stop listen to the particular action, use the listener for the action you want the unlistener to work, then add an unlistener and define the action you want to stop listen to as a parameter of this unlistener.
+To stop listen to the particular action, place an {api:anychart.core.Base.unlisten}**.unlisten**(){api} method to the event you\d like to stop listen to inside the {api:anychart.core.Base.listen}**.listen()**{api} method, enabled for any action.
 
 ```
 //create a function for what to listen and then unlisten

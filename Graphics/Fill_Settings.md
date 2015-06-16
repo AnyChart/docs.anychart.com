@@ -1,8 +1,8 @@
-# Element color fill settings.
-* [Solid color](#solid_color)
+# Fill Settings
+* [Solid Color](#solid_color)
 * [Linear Gradient](#linear_gradient)
 * [Radial Gradient](#radial_gradient)
-* [Image fill](#image_fill)
+* [Image Fill](#image_fill)
 
 ## Solid color
 The most simple fill is solid color fill.  Color can be set in the following formats:

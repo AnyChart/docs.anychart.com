@@ -9,9 +9,10 @@
 
 ## Overview
 
-You can control font of every text object in AnyChart. Working with fonts is the same for any method and in this tutorial all settings are explained.
+You can control the font settings of every text object in AnyChart. Working with fonts is the same for all methods. This tutorial will explain all possible settings.
 
-The texts have [built-in formatting settings](#basic_settings) (like <b>bold</b>, <i>italic</i>, <u>underline</u>, <font size="+1">size</font>, <font color="red">color</font> or <font face="Times New Roman, Times, serif">font family</font>). These settings are applied to all characters within a text element, use [HTML formatting](#html) if you need a complex formatting.
+There are [built-in font formatting settings](#basic_settings) (like <b>bold</b>, <i>italic</i>, <u>underline</u>, <font size="+1">size</font>, <font color="red">color</font> or <font face="Times New Roman, Times, serif">font family</font>). 
+These settings are applied to all characters within a text element; use [HTML formatting](#html) in case you need a complex formatting.
 
 ## Basic Settings
 
@@ -31,15 +32,15 @@ Simple text formatting is shown in International Symbols Support Sample below.
 
 ## International Symbols
 
-Only a few words (and a sample) about using International Symbols in AnyChart - AnyChart is totally international.
+There's no problem with using AnyChart if your language is not English - AnyChart is totally international.
 
-This is sample chart with labels, tooltips and legend in English, French, Portuguese, Spanish, Russian, Chinese and Norwegian.
+There are labels, tooltips and legend in English, French, Portuguese, Spanish, Russian, Chinese and Norwegian on the chart below.
 
 {sample}GAS\_Fonts\_01{sample}
 
 ## HTML
 
-If you want to do a complex formatting of the text - consider using HTML formatting. To enable it you have to set {api:anychart.graphics.vector.Text#htmlText}**.useHtml(true)**{api}:
+If you want to do a complex formatting of the text - consider using HTML formatting. To enable it set the {api:anychart.graphics.vector.Text#htmlText}**.useHtml()**{api} method in *true*:
 
 ```
   series.labels().useHtml(true).textFormatter(function(){
@@ -57,11 +58,11 @@ If you want to do a complex formatting of the text - consider using HTML formatt
 </tr>
 <tr>
 <td width="101">Bold tag </td>
-<td width="587"> The <strong>&lt;b&gt;</strong> tag renders text as bold. A bold typeface must be available for the font used.</td>
+<td width="587"> The <b>&lt;b&gt;</b> tag renders text as bold. A bold typeface must be available for the font used.</td>
 </tr>
 <tr>
 <td>Break tag</td>
-<td>The <b>&lt;br&gt;</b> tag creates a line break in the text field. You must set the text field to be a multi line text field to use this tag.</td>
+<td>The <b>&lt;br&gt;</b> tag creates a line break in the text field. You must set the multi line text field to use this tag.</td>
 </tr>
 <tr>
 <td>Span tag</td>
@@ -93,13 +94,13 @@ If you want to do a complex formatting of the text - consider using HTML formatt
 </tbody>
 </table>
 
-The sample Pie chart below demonstrates all available tags in slice labels formatting:
+The sample Pie chart below demonstrates all available tags on slice labels:
 
 {sample}GAS\_Fonts\_02{sample}
 
 ## Text Formatting
 
-Here is a table with all possible methods for controlling text.
+Here is a table with all possible methods for controlling the text view.
 
 <table class="dtTABLE" width="700">
 <tbody>
@@ -109,71 +110,71 @@ Here is a table with all possible methods for controlling text.
 </tr>
 <tr>
 <td>**{api:anychart.core.Text#textDirection}textDirection(){api}**</td>
-<td>direction method of the text defines text writing direction.</td>
+<td>defines text direction.</td>
 </tr>
 <tr>
 <td>**{api:anychart.core.Text#fontDecoration}fontDecoration(){api}**</td>
-<td>decoration method defines a line, that can be added to the text.</td>
+<td>defines the decoration line, that can be added to the text.</td>
 </tr>
 <tr>
 <td>**{api:anychart.core.Text#fontDecoration}fontVariant(){api}**</td>
-<td>fontVariant method reverses upper and low cases.</td>
+<td>reverses upper and low cases.</td>
 </tr>
 <tr>
 <td>**{api:anychart.core.Text#fontWeight}fontWeight(){api}**</td>
-<td>fontWeight method defines the boldness of the text.</td>
+<td>defines the weight of the text.</td>
 </tr>
 <tr>
 <td>**{api:anychart.core.Text#hAlign}hAlign(){api}**</td>
-<td>hAlign method defines text position in a horizontal plane.</td>
+<td>defines text position in a horizontal plane.</td>
 </tr>
 <tr>
 <td>**{api:anychart.graphics.vector.Text#height}height(){api}**</td>
-<td>height method defines height of text plot.</td>
+<td>defines the height of text plot.</td>
 </tr>
 <tr>
 <td>**{api:anychart.core.Text#letterSpacing}letterSpacing(){api}**</td>
-<td>letterSpacing method defines between each letter in the text.</td>
+<td>defines the space between each letter in the text.</td>
 </tr>
 <tr>
 <td>**{api:anychart.core.Text#lineHeight}lineHeight(){api}**</td>
-<td>lineHeight method defines height of each line of the text.</td>
+<td>defines the height of each line of the text.</td>
 </tr>
 <tr>
 <td>**{api:anychart.core.Text#fontOpacity}fontOpacity(){api}**</td>
-<td>opacity method defines transparency of the text.</td>
+<td>defines transparency of the text.</td>
 </tr>
 <tr>
 <td>**{api:anychart.graphics.vector.Text#rotation}rotation(){api}**</td>
-<td>rotation method defines the angle of text rotation.</td>
+<td>defines the angle of text rotation.</td>
 </tr>
 <tr>
 <td>**{api:anychart.core.Text#selectable}selectable(){api}**</td>
-<td>selectable method defines the possibility of selecting text.</td>
+<td>defines the possibility of selecting text.</td>
 </tr>
 <tr>
 <td>**{api:anychart.core.Text#textIndent}textIndent(){api}**</td>
-<td>textIndent method defines space at the beginning of the first line of the text.</td>
+<td>defines space at the beginning of the first line of each text paragraph.</td>
 </tr>
 <tr>
 <td>**{api:anychart.core.Text#textOverflow}textOverflow(){api}**</td>
-<td>textOverflow method defines rules for clipping overflowing text.</td>
+<td>defines rules for clipping overflowing text.</td>
 </tr>
 <tr>
 <td>**{api:anychart.core.Text#textWrap}textWrap(){api}**</td>
-<td>textWrap method defines rules for braking lines in the text.</td>
+<td>defines rules for breaking lines in the text.</td>
 </tr>
 <tr>
 <td>**{api:anychart.core.Text#vAlign}vAlign(){api}**</td>
-<td>vAlign method defines text position in a vertical plane.</td>
+<td>defines the text plot position in a vertical plane.</td>
 </tr>
 <tr>
 <td>**{api:anychart.graphics.vector.Text#width}width(){api}**</td>
-<td>width method defines width of text plot.</td>
+<td>defines the text plot width.</td>
 </tr>
 </tbody>
 </table>
 
-And here is a sample for demonstration using of these parameters:
+And here is a sample demonstrating the usage of these parameters:
 
 {sample :width 690 :height 680}GAS\_Fonts\_03{sample}

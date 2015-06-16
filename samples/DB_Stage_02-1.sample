@@ -4,6 +4,7 @@
 	 	 
 	 	 
 	 	 
+	 	 
 anychart.onDocumentReady(function() {
 
     // set stage
@@ -84,7 +85,7 @@ anychart.onDocumentReady(function() {
 	chart_2.legend(false);
 
 	// chart size and position
-	chart_2.bounds(420, 0, 245, 200);
+	chart_2.bounds(400, 0, 205, 200);
 
 	// draw
 	chart_2.container(stage).draw();
@@ -105,7 +106,7 @@ anychart.onDocumentReady(function() {
 	chart_3.title('The most popular hours');
 
 	// chart size and position
-	chart_3.bounds(420, 200, 245, 250);
+	chart_3.bounds(400, 200, 210, 250);
 	
     // axes names
     chart_3.yAxis().title('Sales');

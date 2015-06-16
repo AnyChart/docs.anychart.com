@@ -11,8 +11,7 @@ anychart.onDocumentReady(function() {
     {name: "Peter", value: 16000},
     {name: "Alex", value: 11000},
     {name: "Tom", value: 13000},
-    {name: "Julia", value: 18000},
-    {name: "Mary", value: 9000}
+    {name: "Julia", value: 18000}
   ]);
   
   // variable for total sales

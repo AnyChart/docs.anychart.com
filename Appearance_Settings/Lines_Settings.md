@@ -1,4 +1,4 @@
-# Strokes and Lines
+# Line Settings
 
 * [Overview](#overview)
 * [Basics](#basics)
@@ -7,13 +7,14 @@
 * [Line Thickness](#line_thickness)
 * [Dashed Lines](#dashed_lines)
 * [Line Opacity](#line_opacity)
-<!--* [Caps and Joints](#caps_and_joints)-->
 
 ## Overview
 
-Knowledge about line and stroke configuration parameters is very important, because AnyChart allows to configure almost any line you can see on the chart: Lines in charts, grids, tooltips and labels, and even tickmark lines.
+Knowledge about line configuration parameters is very important, because AnyChart allows to configure almost any line you can see on the chart: Lines in charts, grids, tooltips and labels, and even tickmark lines.
 
 The name of the method is always {api:anychart.axisMarkers.Line}**.line()**{api} or {api:anychart.graphics.vector.Stroke}**.stroke()**{api}. In this tutorial all line parameters and features are described.
+
+You can also refer to the detailed [Stroke API description](../Graphics/Stroke_Settings).
 
 ## Basics
 
@@ -36,8 +37,7 @@ There are two types of line coloring "Solid" and "Gradient"
 
 ## Solid Color
 
-Solid color type is default for any object of Anychart and you don't need to use any special settings to apply Solid
-color. For more information see [Color Management](Color_Management) article.
+Solid color type is default for any object of Anychart and you don't need to use any special settings to apply Solid color. For more information see [Color Management](Color_Management) article.
 
 ```
     series.stroke('red');
@@ -45,7 +45,7 @@ color. For more information see [Color Management](Color_Management) article.
 
 ## Gradient Color
 
-To color a line with a gradient transition you should set color keys, opacity, angle of coloring and stroke thickness. <!--Color keys can be found in [Link in need]Coloring methods[/Link]-->
+To color a line with a gradient transition you should set color keys, opacity, angle of coloring and stroke thickness.
 
 ```
     series.stroke({
@@ -99,15 +99,3 @@ Opacity through object:
     opacity: 0.8
   });
 ```
-<!--
-## Caps and Joints
-
-Caps and joints are special parameters that define how line endings and bends are drawn.
-
-The caps attribute specifies the caps style to use in drawing lines. You can specify the following three types of caps: {api:anychart.graphics.vector.StrokeLineCap#BUTT}**"none"**{api} (or "butt"), {api:anychart.graphics.vector.StrokeLineCap#ROUND}**"round"**{api} and {api:anychart.graphics.vector.StrokeLineCap#SQUARE}**"square"**{api}, as the following example shows:
-
-![](http://static.anychart.com/linecap.jpg)
-
-The joint attribute specifies the joint style to use in drawing lines. It supports three types of joints: {api:anychart.graphics.vector.StrokeLineJoin#MITER}**"miter"**{api}, {api:anychart.graphics.vector.StrokeLineJoin#ROUND}**"round"**{api}, and {api:anychart.graphics.vector.StrokeLineJoin#BEVEL}**"bevel"**{api}, as the following example shows:
-
-![](http://static.anychart.com/linejoin.jpg)-->

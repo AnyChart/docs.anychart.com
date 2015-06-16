@@ -3,7 +3,7 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  chart = anychart.markerChart();
+  chart = anychart.scatter();
 
 
   //set container id for the chart
@@ -19,17 +19,17 @@ anychart.onDocumentReady(function() {
     [7, 5.89],
     [8, 6.9],
     [9, 9.14],
-    [10, 15.78],
+    [10, 15.78]
   ]);
 
   series.size(4).hoverSize(5);
 
   series.error({
-            xLowerError: '1%',
-            xUpperError: '6%',
-            valueUpperError: '2%',
-            valueLowerError: '4%',
-        });
+    xLowerError: '1%',
+    xUpperError: '6%',
+    valueUpperError: '2%',
+    valueLowerError: '4%'
+  });
 
 
 

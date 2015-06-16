@@ -1,10 +1,10 @@
-# Element stroke settings.
-* [Line color](#line_color_settings)
-* [Line thickness](#line_thickness)
-* [Line dash](#line_dash_settings)
-* [Line join and cap](#line_join_and_cap)
+# Stroke Settings
+* [Stroke Color](#stroke_color)
+* [Stroke Thickness](#stroke_thickness)
+* [Dash](#dash)
+* [Join and Cap](#join_and_cap)
 
-## Line color settings
+## Stroke color
 Stoke color can be set in several ways:
 * using a parameter: 
  `stroke(colorSettings, otherParams...)`
@@ -18,7 +18,7 @@ Stoke color can be set in several ways:
     otherParams ...
  }
 ```
-Read more about color settings in [Elements Fill](Fill) article.
+Read more about color settings in [Fill Settings](Fill_Settings) article.
 
 Stroke color is set similar to fill procedure. The setting supports {api:anychart.graphics.vector.Fill}fill{api} with:
 * {api:anychart.graphics.vector.SolidFill}Solid color{api},
@@ -48,8 +48,8 @@ For example, that's how you do stroke color fill:
 }, 4)
 ```
 
-## Line thickness
-Line thickness can in several ways:
+## Stroke Thickness
+Stroke thickness can be set in several ways:
 * using a parameter: 
  `stroke(colorSettings, thickness, otherParams...)`
 * as a String: 
@@ -64,7 +64,7 @@ Line thickness can in several ways:
 
 {sample}GS\_E\_stroke_thickness{sample}
 
-## Line dash settings
+## Dash
 Dash settings can be set in two ways:
 * using a parameter:
  `stroke(colorSettings, thickness, dashSetting, otherParams...)`
@@ -86,8 +86,8 @@ Every number in an odd position is a dash length, and every number in an even po
 .stroke('yellow', 5, '5 5 10')
 ```
 
-## Line join and cap
-Line {api:anychart.graphics.vector.SolidStroke}join and cap{api} settins are set in two ways:
+## Join and Cap
+{api:anychart.graphics.vector.SolidStroke}Join and cap{api} settings are set in two ways:
 * using a parameter:
  `stroke(colorSettings, thickness, dashSetting, lineJoin, lineCap)`
 * as an Object:

@@ -8,7 +8,7 @@
 
 ## Overview
 
-Custom labels are text or image controls that can be placed anywhere on your chart or map to add descriptions or comments. Labels can be both text and image, they also can have actions attached.
+Custom labels are text or image elements that can be placed anywhere on your chart or map to add descriptions or comments. Labels also can have actions attached.
   
   
 <!--This article describes labels visualisation and interactivity settings - if you need to know about custom labels positioning, please study Controls and Controls Positioning.-->
@@ -16,15 +16,15 @@ Custom labels are text or image controls that can be placed anywhere on your cha
 
 ## Text Labels
 
-The sample below demonstrates a {api:anychart.ui.Label}label{api} placed in the right top corner and contains additional information on chart data.
+The sample below demonstrates a {api:anychart.ui.Label}label{api} placed in the right top corner, containing some information about the chart data.
 
 {sample}AS\_Labels\_01{sample}
 
 ## Image Labels
 
-If you want to use image as a label and you don't need any text on this image you have to use {api:anychart.graphics.vector.Stage}**.stage()**{api} and set {api:anychart.graphics.vector.Stage#image}**.image()**{api} method of the stage. 
+If you want to use image as a label and you don't need any text on this image, use {api:anychart.graphics.vector.Stage}**.stage()**{api} and define the image and its appearance settings using the {api:anychart.graphics.vector.Stage#image}**.image()**{api} method of the stage. 
 
-Sample chart below shows a revenue chart with AnyChart logo in the left top corner of data plot. The code should be similar to this one:
+The sample below shows a revenue chart with AnyChart logo in the left top corner of data plot. The code should be similar to this one:
 
 ```
   // create stage
@@ -49,7 +49,7 @@ Sample chart below shows a revenue chart with AnyChart logo in the left top corn
     .zIndex(chart.zIndex() + 1);                                // manage overlapping
 ```
 
-Using this settings will allow you to display chart like that:
+These settings will allow you to display chart the following way:
 
 {sample}AS\_Labels\_02{sample}
 

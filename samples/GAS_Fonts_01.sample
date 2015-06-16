@@ -28,7 +28,7 @@ anychart.onDocumentReady(function() {
   var chart = anychart.columnChart();
 
   // title
-  chart.title().text('International Simbols Support');
+  chart.title().text('International Symbols Support');
 
   // set data
   var series = chart.column(data);
