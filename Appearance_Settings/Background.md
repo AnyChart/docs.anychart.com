@@ -7,6 +7,7 @@
   * [Gradient](#gradient)
   * [Image](#image)
 * [Corners Settings](#corners_settings)
+* [Hatch fill](#hatch_fill)
 
 ## Overview
 
@@ -121,3 +122,35 @@ Also, it is possible to choose radius of any corner. Just set four number for ev
 The dashboard below demonstrates all possible corners types:
 
 {sample}GAS\_Background\_06{sample}
+
+
+## Hatch Fill
+
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, 
+so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors 
+on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white 
+display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
+  
+We've got a chart a with 5 series with 5 data points in each. For every series we've applied different hatch fills by setting hatch type through the 
+{api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
+As you can see, they can be either completely monochrome or colored.
+
+{sample}GAS\_Background\_07{sample}
+
+```
+            chart.bar(series[0])
+                    .color('white 0')
+                    .hatchFill('VERTICALBRICK');
+```
+ 
+ It is also possible to define the hatch type for each point, as we can do it with fills:
+ 
+ ```
+            chart.bar(series[0])
+                    .color('white 0')
+                    .hatchFill('VERTICALBRICK');
+```
+
+In the sample below there are all hatch types shown that are available in AnyChart. Explore the sample in the playground to see all these types' names.
+
+{sample}GAS\_Background\_08{sample}

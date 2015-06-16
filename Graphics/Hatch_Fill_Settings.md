@@ -7,22 +7,25 @@
 * [Pattern settings](#pattern_settings)
 
 ## Overview
-Some color printers print colors unpredictable and very often it is hard to identify similar colors. Also it is impossible to identify colors on prints of black and white (monochrome) printers and in e-books. AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind.
+Some color printers print colors unpredictable and sometimes it is quite hard to identify similar colors as different. 
+Also it is impossible to identify colors on prints of black and white (monochrome) printers and in e-books. 
+AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind.
 
 ## Hatch fill presets
-We provide several preset hatch fills, full list is available in the {api:anychart.graphics.vector.HatchFill#HatchFillType}API reference{api}.
+We provide a list of hatch fill presets, full list of them is available in the {api:anychart.graphics.vector.HatchFill#HatchFillType}API reference{api}.
 
-To create a hatch fill you simply set the required string constant: 
+In case of graphic elements, you need to set hatchFill through the **.fill()** method: 
 ```
-    .hatchFill('percent60');
+    .fill(acgraph.hatchFill('soliddiamond'));
 ```
 
 {sample}GS\_E\_hatch\_hatchFill{sample}
 
+Explore the sample in our playground too see how it works.
 
 ### Color settings
 
-If needed you, can color the hatch, using Hex, RGB, HSL or HTML color name with the opacity. Color opacity can be set in two ways:
+If needed, you can color the hatch using Hex, RGB, HSL or HTML color name with the opacity. Color opacity can be set in two ways:
 * RGBA, HSLA modificators;
 * Dedicated parameter:
     * Call function with the parameters <code>{api:anychart.graphics.vector.Fill}fill{api}(_color_, _**opacity**_);</code>

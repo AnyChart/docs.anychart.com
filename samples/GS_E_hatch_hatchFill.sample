@@ -2,25 +2,20 @@
      :is_new false
      :exports "chart"}
 
-anychart.onDocumentReady(function() {
+		anychart.onDocumentReady(function() {
 
-    stage = anychart.graphics.create('container');
+            stage = anychart.graphics.create('container');
 
-    // define data
-    var data = [
-        ['A1', 100, 200],
-        ['A2', 115, 101],
-        ['A3', 70, 60],
-        ['A4', 156, 98],
-        ['A5', 213, 150]
-    ];
-    // create chart
-    chart = anychart.barChart();
+            // create figures
+            var circle = stage.circle(200,200,100);
+            var rect = stage.rect(100,100,400,200);
+            var ellipse = stage.ellipse(400,200,100,50);
 
-    var series = anychart.data.mapAsTable(data, 'value');
-    chart.bar(series[0]).hatchFill('verticalbrick');
-    chart.bar(series[1]).hatchFill('percent60');
+            //fill them with hatch
+            circle.fill(acgraph.hatchFill('soliddiamond'));
+            rect.fill(acgraph.hatchFill('weave'));
+            ellipse.fill(acgraph.hatchFill('plaid'));
+            
+            chart.container(stage).draw();
 
-    chart.container(stage).draw();
-
-});
+        });
