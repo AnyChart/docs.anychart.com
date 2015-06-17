@@ -12,10 +12,8 @@ anychart.onDocumentReady(function() {
             var ellipse = stage.ellipse(400,200,100,50);
 
             //fill them with hatch
-            circle.fill(acgraph.hatchFill('soliddiamond', 'red'));
+            circle.fill(acgraph.hatchFill('diagonal', 'red'));
             rect.fill(acgraph.hatchFill('weave', 'green'));
             ellipse.fill(acgraph.hatchFill('plaid', 'gold 0.5'));
-            
-            chart.container(stage).draw();
 
         });

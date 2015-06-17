@@ -32,7 +32,8 @@ If needed, you can color the hatch using Hex, RGB, HSL or HTML color name with t
     * Single value <code>{api:anychart.graphics.vector.Fill}fill{api}('color **opacity**')</code> (one string value separated by space).
 
 ```
-    .hatchFill('diamiond', '#CC8800 0.8');
+            ellipse.fill(acgraph.hatchFill('plaid', 'gold 0.5'));
+
 ```
 
 {sample}GS\_E\_hatch\_color{sample}
@@ -41,16 +42,18 @@ If needed, you can color the hatch using Hex, RGB, HSL or HTML color name with t
 Hatch lines thickness is set using thickness parameter:
 
 ```
-    .hatchFill(hatchType, color, thickness);
+    circle.fill(acgraph.hatchFill('diagonal', 'red', 5.01));
 ```
 
 {sample}GS\_E\_hatch\_thickness{sample}
+
+Note that several types of hatchFill don't have stroke to define thickness.
 
 ### Size settings
 Also, you can modify hatch using size parameter, which changes the size of the pattern:
 
 ```
-    .hatchFill(hatchType, color, thickness, size);
+    ellipse.fill(acgraph.hatchFill('horizontal', 'gold 1.5', 2, 5));
 ```
 
 {sample}GS\_E\_hatch\_size{sample}
@@ -75,3 +78,8 @@ If you are not satisfied with presets, you can create your own pattern, here an 
 ```
 
 {sample}GS\_E\_hatch\_pattern{sample}
+
+Note that in case of using pattern you should create it as for a hatchFill, but define it as an object for the .fill() settings:
+```
+	ellipse.fill(pattern);
+```
