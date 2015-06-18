@@ -47,47 +47,6 @@
                 e.preventDefault();
             });
 
-//
-//            chart.listen(anychart.enums.EventType.ROW_DBL_CLICK, function(e) {
-//                if (document.getElementById('pr_dbl_click').checked) e.preventDefault();
-//                var msg = e['item'].get('name');
-//                if (e['period']) msg += '\nPeriod: ' + e['period']['id'];
-//                log(anychart.enums.EventType.ROW_DBL_CLICK, msg);
-//            });
-//
-//            chart.listen(anychart.enums.EventType.ROW_MOUSE_OVER, function(e) {
-//                if (document.getElementById('pr_over').checked) e.preventDefault();
-//                var msg = e['item'].get('name');
-//                if (e['period']) msg += '\nPeriod: ' + e['period']['id'];
-//                log(anychart.enums.EventType.ROW_MOUSE_OVER, msg);
-//            });
-//
-//            chart.listen(anychart.enums.EventType.ROW_MOUSE_MOVE, function(e) {
-//                if (document.getElementById('pr_move').checked) e.preventDefault();
-//                var msg = e['item'].get('name');
-//                if (e['period']) msg += '\nPeriod: ' + e['period']['id'];
-//                log(anychart.enums.EventType.ROW_MOUSE_MOVE, msg);
-//            });
-//
-//            chart.listen(anychart.enums.EventType.ROW_MOUSE_OUT, function(e) {
-//                if (document.getElementById('pr_out').checked) e.preventDefault();
-//                var msg = e['item'].get('name');
-//                if (e['period']) msg += '\nPeriod: ' + e['period']['id'];
-//                log(anychart.enums.EventType.ROW_MOUSE_OUT, msg);
-//            });
-//
-//            chart.listen(anychart.enums.EventType.ROW_MOUSE_UP, function(e) {
-//                if (document.getElementById('pr_up').checked) e.preventDefault();
-//                var msg = e['item'].get('name');
-//                if (e['period']) msg += '\nPeriod: ' + e['period']['id'];
-//                log(anychart.enums.EventType.ROW_MOUSE_UP, msg);
-//            });
-//
-//            chart.listen(anychart.enums.EventType.ROW_MOUSE_DOWN, function(e) {
-//                var msg = e['item'].get('name');
-//                if (e['period']) msg += '\nPeriod: ' + e['period']['id'];
-//                log(anychart.enums.EventType.ROW_MOUSE_DOWN, msg);
-//            });
 
         });
 
@@ -113,13 +72,13 @@
             return [
                 {
                     'id': '1',
-                    'name': 'Revealing the problems',
+                    'name': 'Project Management',
                     'rowHeight': 22,
                     'collapsed': false
                 },
                                             {
                                 'id': '2',
-                                'name': 'Survey',
+                                'name': 'Design and Engineer',
                                 'parent': '1',
                                 'type': 'first',
                                 'rowHeight': 30,
@@ -131,7 +90,7 @@
                             },
                             {
                                 'id': '3',
-                                'name': 'Organization diagnostic',
+                                'name': 'Obtain permits',
                                 'parent': '1',
                                 'type': 'second',
                                 'rowHeight': 30,
@@ -143,14 +102,14 @@
                             },
                 {
                     'id': '4',
-                    'name': 'Requirement formation',
+                    'name': 'Structural installation',
                     'rowHeight': 22,
                     'progressValue': '50%',
                     'collapsed': true
                 },
                             {
                                 'id': '5',
-                                'name': 'Diagram creating',
+                                'name': 'Install roof attachments',
                                 'parent': '4',
                                 'type': 'first',
                                 'rowHeight': 30,
@@ -162,7 +121,7 @@
                             },
                             {
                                 'id': '6',
-                                'name': 'Documentation',
+                                'name': 'Assemble racking',
                                 'parent': '4',
                                 'type': 'second',
                                 'rowHeight': 30,

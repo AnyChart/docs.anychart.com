@@ -72,13 +72,13 @@
             return [
                 {
                     'id': '1',
-                    'name': 'Revealing the problems',
+                    'name': 'Project Management',
                     'rowHeight': 22,
                     'collapsed': false
                 },
                                             {
                                 'id': '2',
-                                'name': 'Survey',
+                                'name': 'Design and engineer',
                                 'parent': '1',
                                 'type': 'first',
                                 'rowHeight': 30,
@@ -90,7 +90,7 @@
                             },
                             {
                                 'id': '3',
-                                'name': 'Organization diagnostic',
+                                'name': 'Obtain permits',
                                 'parent': '1',
                                 'type': 'second',
                                 'rowHeight': 30,
@@ -102,14 +102,14 @@
                             },
                 {
                     'id': '4',
-                    'name': 'Requirement formation',
+                    'name': 'Structural installation',
                     'rowHeight': 22,
                     'progressValue': '50%',
                     'collapsed': true
                 },
                             {
                                 'id': '5',
-                                'name': 'Diagram creating',
+                                'name': 'Install roof attachments',
                                 'parent': '4',
                                 'type': 'first',
                                 'rowHeight': 30,
@@ -121,7 +121,7 @@
                             },
                             {
                                 'id': '6',
-                                'name': 'Documentation',
+                                'name': 'Assemble racking',
                                 'parent': '4',
                                 'type': 'second',
                                 'rowHeight': 30,

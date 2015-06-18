@@ -20,46 +20,48 @@ These are events available for Gantt Chart:
 
 <br><table>
 <tbody>
-<tr>
+<th>
 <td>Event</td>
 <td>Description</td>
-</tr>
+</th>
 <tr>
 <td>rowClick</td>
-<td>Dispatched when mouse click event happened. Event returns all available data about an active row.</td>
+<td>Dispatched when mouse click event happened. </td>
 </tr>
 <tr>
 <td>rowDBlclick</td>
-<td>Dispatched when mouse double click event happened. Event returns all available data about an active row.</td>
+<td>Dispatched when mouse double click event happened.</td>
 </tr>
 <tr>
 <td>rowMouseMove</td>
-<td>Dispatched when mouse move event happened. Event returns all available data about an active row.</td>
+<td>Dispatched when mouse move event happened.</td>
 </tr>
 <tr>
 <td>rowMouseOver</td>
-<td>Dispatched when mouse over event happened. Event returns all available data about an active row.</td>
+<td>Dispatched when mouse over event happened.</td>
 </tr>
 <tr>
 <td>rowMouseOut</td>
-<td>Dispatched when mouse out event happened. Event returns all available data about an active row.</td>
+<td>Dispatched when mouse out event happened.</td>
 </tr>
 <tr>
 <td>rowMouseDown</td>
-<td>Dispatched when mouse down event happened. Event returns all available data about an active row.</td>
+<td>Dispatched when mouse down event happened.</td>
 </tr>
 <tr>
 <td>rowMouseUp</td>
-<td>Dispatched when mouse up event happened. Event returns all available data about an active row.</td>
+<td>Dispatched when mouse up event happened.</td>
 </tr>
 <tr>
 <td>rowSelect</td>
-<td>Dispatched when some row is selected. Event returns all available data about an active row.</td>
+<td>Dispatched when some row is selected.</td>
 </tr>
 </tbody>
 </table>
 
-<br>As far as you need to listen an event you should use this code to handle it:
+All events return all available data about an active row.
+
+<br>To listen an event use the code below:
 
 ```
 //choose an event type from table above:
@@ -74,33 +76,33 @@ chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
 
 <br><table>
 <tbody>
-<tr>
+<th>
 <td>Event Field</td>
 <td>Description</td>
+</th>
+<tr>
+<td>.item</td>
+<td>It is a [Data Item](Working_with_Data/Using_Data_Tree_Model) that displays the active row.</td>
 </tr>
 <tr>
-<td>event['item']</td>
-<td>It is a (Data Item)[Working_with_Data/Using_Data_Tree_Model] that displays the active row.</td>
-</tr>
-<tr>
-<td>event['hoveredIndex']</td>
+<td>.hoveredIndex</td>
 <td>Contains an index of active row.</td>
 </tr>
 <tr>
-<td>event['period']</td>
+<td>.period</td>
 <td>Contains an active period.</td>
 </tr>
 <tr>
-<td>event['periodIndex']</td>
+<td>.periodIndex</td>
 <td>Contains an index of active period.</td>
 </tr>
 <tr>
 </tbody>
 </table>
 
-<br>In some cases you may have no need to handle different information. Here is the demonstration of this feature in the Resource Gantt Chart:
+<br>This sample with Project Gantt Chart demonstrates the usage of this feature. Click on a row to change the Chart title:
 
-{sample}GANTT\_Events\_01{sample}
+{sample :width 700 :height 340 }GANTT\_Events\_01{sample}
 
 ## Default Events
 
@@ -116,10 +118,10 @@ Those events dispatch in the following order on every click:
 <table>
 <tbody>
 
-<tr>
+<th>
 <td>Event Type</td>
 <td>Default Behaviour</td>
-</tr>
+</th>
 
 <tr>
 <td>rowMouseUp</td>
@@ -164,7 +166,7 @@ event.preventDefault();
 
 <br>In this case these events won't be reported by the chart. Let's disable the default behaviour for the clicks. The sample below illustrates this idea.
 
-{sample}GANTT\_Events\_02{sample}
+{sample :width 700 :height 340 }GANTT\_Events\_02{sample}
 ```
 chart.listen(anychart.enums.EventType.ROW_CLICK, function(e) {
                 e.preventDefault();
