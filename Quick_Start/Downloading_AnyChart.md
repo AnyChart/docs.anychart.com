@@ -6,9 +6,9 @@ Downloading AnyChart
 ####AnyChart
 
 To download the latest version of AnyChart, which contains the basic chart types, choose the most suitable option and click the link below.
-* Production edition - [anychart.min.js](http://anychart.com/products/anychart7/download/?file=anychart.min.js&version=7.4.0) <span style="color:#898989;">(145Kb gzip)</span>
-* Development edition - [anychart.dev.min.js](http://anychart.com/products/anychart7/download/?file=anychart.dev.min.js&version=7.4.0) <span style="color:#898989;">(147Kb gzip)</span>  
-* Binaries package - [anychart.zip](http://anychart.com/products/anychart7/download/7.4.0/anychart.zip) <span style="color:#898989;">(360Kb)</span>  
+* Production edition - [anychart.min.js](http://anychart.com/products/anychart7/download/?file=anychart.min.js&version=7.5.0) <span style="color:#898989;">(145Kb gzip)</span>
+* Development edition - [anychart.dev.min.js](http://anychart.com/products/anychart7/download/?file=anychart.dev.min.js&version=7.5.0) <span style="color:#898989;">(147Kb gzip)</span>  
+* Binaries package - [anychart.zip](http://anychart.com/products/anychart7/download/7.5.0/anychart.zip) <span style="color:#898989;">(360Kb)</span>  
 
 ####AnyGantt
 
