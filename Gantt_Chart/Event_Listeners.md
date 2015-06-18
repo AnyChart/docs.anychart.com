@@ -20,10 +20,10 @@ These are events available for Gantt Chart:
 
 <br><table>
 <tbody>
-<th>
-<td>Event</td>
-<td>Description</td>
-</th>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
 <tr>
 <td>rowClick</td>
 <td>Dispatched when mouse click event happened. </td>
@@ -76,13 +76,13 @@ chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
 
 <br><table>
 <tbody>
-<th>
-<td>Event Field</td>
-<td>Description</td>
-</th>
+<tr>
+<th>Event Field</th>
+<th>Description</th>
+</tr>
 <tr>
 <td>.item</td>
-<td>It is a [Data Item](Working_with_Data/Using_Data_Tree_Model) that displays the active row.</td>
+<td>It is a [Data Item](../Working_with_Data/Using_Data_Tree_Model) that displays the active row.</td>
 </tr>
 <tr>
 <td>.hoveredIndex</td>
@@ -102,7 +102,7 @@ chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
 
 <br>This sample with Project Gantt Chart demonstrates the usage of this feature. Click on a row to change the Chart title:
 
-{sample :width 700 :height 340 }GANTT\_Events\_01{sample}
+{sample :width 700 :height 300 }GANTT\_Events\_01{sample}
 
 ## Default Events
 
@@ -118,10 +118,10 @@ Those events dispatch in the following order on every click:
 <table>
 <tbody>
 
-<th>
-<td>Event Type</td>
-<td>Default Behaviour</td>
-</th>
+<tr>
+<th>Event Type</th>
+<th>Default Behaviour</th>
+</tr>
 
 <tr>
 <td>rowMouseUp</td>
@@ -166,7 +166,7 @@ event.preventDefault();
 
 <br>In this case these events won't be reported by the chart. Let's disable the default behaviour for the clicks. The sample below illustrates this idea.
 
-{sample :width 700 :height 340 }GANTT\_Events\_02{sample}
+{sample :width 700 :height 300 }GANTT\_Events\_02{sample}
 ```
 chart.listen(anychart.enums.EventType.ROW_CLICK, function(e) {
                 e.preventDefault();
