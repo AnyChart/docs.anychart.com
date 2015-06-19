@@ -5,14 +5,14 @@
 anychart.onDocumentReady(function() {
 
   var tree = anychart.data.tree([
-    {name: 'Node 1', id: '1'},
-    {name: 'Node 2', id: '2'},
-    {name: 'Node 3', id: '3'},
-    {name: 'Node 4', id: '4'},
-    {name: 'Node 5', id: '5'}
+    {name: "Node 1", id: "1"},
+    {name: "Node 2", id: "2"},
+    {name: "Node 3", id: "3"},
+    {name: "Node 4", id: "4"},
+    {name: "Node 5", id: "5"}
   ], anychart.enums.TreeFillingMethod.AS_TABLE);
 
-  stage = anychart.graphics.create('container');
+  stage = anychart.graphics.create("container");
 
   // create Data Grid
   treeDataGrid = anychart.ui.dataGrid();
@@ -21,34 +21,34 @@ anychart.onDocumentReady(function() {
   treeDataGrid.data(tree).titleHeight(20);
 
   // create button for Parent node
-  treeDataGrid.listen('signal', treeDataGrid.draw, false, treeDataGrid);
+  treeDataGrid.listen("signal", treeDataGrid.draw, false, treeDataGrid);
 
   // set style for second column
   treeDataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
 
   // create new button
-  var triggerButton = document.createElement('div');
+  var triggerButton = document.createElement("div");
 
   // set button style
-  triggerButton.style.top = '5px';
-  triggerButton.style.right = '5px';
-  triggerButton.style.width = 'auto';
-  triggerButton.style.height = 'auto';
-  triggerButton.style.backgroundColor = '#444444';
-  triggerButton.style.color = 'white';
-  triggerButton.style.position = 'absolute';
+  triggerButton.style.top = "5px";
+  triggerButton.style.right = "5px";
+  triggerButton.style.width = "auto";
+  triggerButton.style.height = "auto";
+  triggerButton.style.backgroundColor = "#444444";
+  triggerButton.style.color = "white";
+  triggerButton.style.position = "absolute";
   triggerButton.style.zIndex = 2;
-  triggerButton.style.transition = '0.5s';
-  triggerButton.style.textAlign = 'center';
-  triggerButton.style.border = '3px solid #444444';
-  triggerButton.style.borderRadius = '7px 7px 7px 7px';
-  triggerButton.style.fontSize = '18px';
-  triggerButton.style.cursor = 'pointer';
-  triggerButton.style.MozUserSelect= 'none';
-  triggerButton.style.KhtmlUserSelect= 'none';
-  triggerButton.style.WebkitUserSelect= 'none';
-  triggerButton.style.userSelect= 'none';
-  triggerButton.innerHTML = 'Remove';
+  triggerButton.style.transition = "0.5s";
+  triggerButton.style.textAlign = "center";
+  triggerButton.style.border = "3px solid #444444";
+  triggerButton.style.borderRadius = "7px 7px 7px 7px";
+  triggerButton.style.fontSize = "18px";
+  triggerButton.style.cursor = "pointer";
+  triggerButton.style.MozUserSelect= "none";
+  triggerButton.style.KhtmlUserSelect= "none";
+  triggerButton.style.WebkitUserSelect= "none";
+  triggerButton.style.userSelect= "none";
+  triggerButton.innerHTML = "Remove";
   triggerButton.onclick = function() {
     removePoint();
   };
@@ -57,14 +57,14 @@ anychart.onDocumentReady(function() {
   container.appendChild(triggerButton);
 
   // draw chart
-  treeDataGrid.container(stage).top(triggerButton.offsetHeight + 7).width('100%').draw();
+  treeDataGrid.container(stage).top(triggerButton.offsetHeight + 7).width("100%").draw();
 
   // set container height
   treeDataGrid.container().height(fullChildrenHeight()+treeDataGrid.top()+treeDataGrid.titleHeight()+1);
 
   var title = anychart.ui.title();
   title.parentBounds(0, 0, "100%", 30)
-    .text('Click on Button to Remove First Element')
+    .text("Click on Button to Remove First Element")
     .container(stage)
     .draw();
 
@@ -110,10 +110,10 @@ anychart.onDocumentReady(function() {
 // style setter
 function labelTextSettingsOverrider(label, dataItem) {
   if (!dataItem.getParent()) {
-    label.fontColor('#0055aa').fontWeight('bold').fontSize(12).fontStyle('italic');
+    label.fontColor("#0055aa").fontWeight("bold").fontSize(12).fontStyle("italic");
   } else {
     if (dataItem.numChildren()) {
-      label.fontColor('#559955').fontWeight('bold').fontStyle('italic');
+      label.fontColor("#559955").fontWeight("bold").fontStyle("italic");
     }
   }
 }

@@ -12,8 +12,8 @@ anychart.onDocumentReady(function() {
     
     // data
     var data = anychart.data.set([
-        {x: 'Men', value: 50.3},
-        {x: 'Women', value: 49.7}
+        {x: "Men", value: 50.3},
+        {x: "Women", value: 49.7}
     ]);
     
     // set data
@@ -22,19 +22,19 @@ anychart.onDocumentReady(function() {
     // set chart labels
     chart.labels()
       .enabled(true)
-      .fontColor('black')
+      .fontColor("black")
       .fontWeight(400)
       .width(110)
-      .hAlign('center')
-      .position('outside')
+      .hAlign("center")
+      .position("outside")
       .useHtml(true)
       .textFormatter(function() {
-          return '<a style="text-decoration: underline; font-weight: 900;">' + this.x + ' — ' + this.value + '%</a>' + customAttributes[this.x];
+          return "<a style="text-decoration: underline; font-weight: 900;">" + this.x + " — " + this.value + "%</a>" + customAttributes[this.x];
       });
     
     // set title
-    chart.title().text('HTML Text Formatting Sample').fontSize(13);
+    chart.title().text("HTML Text Formatting Sample").fontSize(13);
     
     // draw
-    chart.container('container').draw();
+    chart.container("container").draw();
 });

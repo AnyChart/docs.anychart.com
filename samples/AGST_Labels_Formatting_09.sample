@@ -4,10 +4,10 @@
 
 anychart.onDocumentReady(function() {
   var chart = anychart.columnChart();
-  chart.container('container');
+  chart.container("container");
 
   // setting title
-  chart.title().text('X-Axis labels: width is 60px');
+  chart.title().text("X-Axis labels: width is 60px");
 
   // seting data
   chart.column([
@@ -24,15 +24,15 @@ anychart.onDocumentReady(function() {
     var value = this.value;
     if (value>1000000){
       if (value>999999999){
-        value = value/1000000000 + ' B ';
+        value = value/1000000000 + " B ";
       }
       else{
-        value = value/1000000 + ' M ';
+        value = value/1000000 + " M ";
       }
     }
     return value;
   });
-  chart.xAxis().labels().hAlign('center').width(60);
+  chart.xAxis().labels().hAlign("center").width(60);
   chart.yAxis().minorTicks().enabled(false);
   chart.xAxis().staggerLines(1);
 

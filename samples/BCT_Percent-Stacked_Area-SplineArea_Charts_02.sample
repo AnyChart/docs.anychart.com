@@ -25,21 +25,21 @@ anychart.onDocumentReady(function() {
     var chart = anychart.areaChart();
 
     // chart title
-    chart.title().text('Percent Stacked Spline Area Chart');
+    chart.title().text("Percent Stacked Spline Area Chart");
 
     // set axes title
-    chart.xAxis().title().text('Season');
-    chart.yAxis().title().text('Percent');
+    chart.xAxis().title().text("Season");
+    chart.yAxis().title().text("Percent");
 
     // set container id for the chart
-    chart.container('container');
+    chart.container("container");
 
     // set chart Y scale settings
-    chart.yScale().stackMode('percent');
+    chart.yScale().stackMode("percent");
 
     // set yAxis labels formatting, force it to add % to values
     chart.yAxis().labels().textFormatter(function(info) {
-      return info.value + '%';
+      return info.value + "%";
     });
 
     // create first area series on mapped data and specify series fill function

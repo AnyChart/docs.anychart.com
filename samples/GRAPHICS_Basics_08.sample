@@ -5,29 +5,29 @@
 anychart.onDocumentReady(function() {
 
 // set stage
-    stage = anychart.graphics.create('container');
+    stage = anychart.graphics.create("container");
     
     // data
     var data = anychart.data.set([
-        ['USA', 10, 8.5], //7-10 days off, depends on the state
-        ['Japan', 15, 18],
-        ['China', 7, 26,
+        ["USA", 10, 8.5], //7-10 days off, depends on the state
+        ["Japan", 15, 18],
+        ["China", 7, 26,
             {
                 enabled: true,
                 type: customMarkerDrawer,
-                fill: '#1D8BD1',
-                stroke: '#146192'
+                fill: "#1D8BD1",
+                stroke: "#146192"
                 
             }, {
                 enabled: true,
                 offsetX: 35,
                 offsetY: -20,
-                anchor: 'left',
-                fontColor: 'white',
+                anchor: "left",
+                fontColor: "white",
                 fontSize: 12,
             }],
-        ['UK', 16, 8],
-        ['France', 8, 10]
+        ["UK", 16, 8],
+        ["France", 8, 10]
     ]);
 
     // map data for the each series
@@ -38,11 +38,11 @@ anychart.onDocumentReady(function() {
     chart = anychart.barChart();
 
     // chart title
-    chart.title().text('Amount of official holidays and days off in different countries (2015)');
+    chart.title().text("Amount of official holidays and days off in different countries (2015)");
 
     // set axes titles
-    chart.xAxis().title().text('Country');
-    chart.yAxis().title().text('Days');
+    chart.xAxis().title().text("Country");
+    chart.yAxis().title().text("Days");
     chart.yScale().maximum(35);
     
     //enable the legend
@@ -53,16 +53,16 @@ anychart.onDocumentReady(function() {
     series = chart.bar(official_holidays);
     
     //set the series name which is displayed as 
-    series.name('Official holidays');
+    series.name("Official holidays");
 
     // adjust series position
     series.xPointPosition(0.5);
 
     // second series data
     series = chart.bar(days_off);
-    series.name('Days off');
+    series.name("Days off");
     series.labels().textFormatter(function() {
-       if (this.index == 2) return 'Lets go party!';
+       if (this.index == 2) return "Lets go party!";
        return this.value;
     });
 

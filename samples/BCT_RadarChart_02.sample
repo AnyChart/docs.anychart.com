@@ -6,19 +6,19 @@ anychart.onDocumentReady(function() {
 
   // data for chart
   var dataSet = anychart.data.set([
-    ['Product A', 90],
-    ['Product B', 65],
-    ['Product C', 73],
-    ['Product D', 88],
-    ['Product E', 75],
-    ['Product F', 100]
+    ["Product A", 90],
+    ["Product B", 65],
+    ["Product C", 73],
+    ["Product D", 88],
+    ["Product E", 75],
+    ["Product F", 100]
   ]);
 
   // chart type
   var chart = anychart.radar();
 
   // chart title
-  chart.title().text('Custom Radius size');
+  chart.title().text("Custom Radius size");
 
   // set chart radius
   chart.yScale()
@@ -31,8 +31,8 @@ anychart.onDocumentReady(function() {
   chart.yAxis().enabled(true).minorTicks().enabled(false);
 
   // set data and adjust visualisation
-  chart.area(dataSet).fill('red 0.4').stroke('darkred');
+  chart.area(dataSet).fill("red 0.4").stroke("darkred");
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

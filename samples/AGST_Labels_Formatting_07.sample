@@ -4,12 +4,12 @@
 
 anychart.onDocumentReady(function() {
 
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
 
   // title settings
   anychart.ui.title()
     .parentBounds(0, 0, stage.width(), stage.height()*0.1)
-    .text('Y-Axis Labels: width is set to 70 pixels')
+    .text("Y-Axis Labels: width is set to 70 pixels")
     .container(stage)
     .draw();
 
@@ -21,24 +21,24 @@ anychart.onDocumentReady(function() {
   firstChart.title().enabled(false);
 
   // setting stroke for chart contaoner
-  firstChart.background().stroke('#CCCCCC');
+  firstChart.background().stroke("#CCCCCC");
 
   // setting position and bounds
-  firstChart.bounds(0, '10%', '100%', '45%');
+  firstChart.bounds(0, "10%", "100%", "45%");
 
   // disabling titles for Axes
   firstChart.yAxis().title().enabled(false);
   firstChart.xAxis().title().enabled(false);
 
   // formatting labels value using function
-  firstChart.yAxis().labels().width(70).hAlign('right').textFormatter(valueAdjuster);
+  firstChart.yAxis().labels().width(70).hAlign("right").textFormatter(valueAdjuster);
 
   firstChart.column([
-      ['P1', 698712],
-      ['P2', 378162],
-      ['P3', 739123],
-      ['P4', 515632],
-      ['P5', 161294]
+      ["P1", 698712],
+      ["P2", 378162],
+      ["P3", 739123],
+      ["P4", 515632],
+      ["P5", 161294]
   ]);
 
   // draw container
@@ -51,15 +51,15 @@ anychart.onDocumentReady(function() {
 
   // disabling title and adjusting chart container position
   secondChart.title().enabled(false);
-  secondChart.bounds(0, '55%', '100%', '45%');
-  secondChart.background().stroke('#CCCCCC');
+  secondChart.bounds(0, "55%", "100%", "45%");
+  secondChart.background().stroke("#CCCCCC");
 
   // disabling axes titles
   secondChart.yAxis().title().enabled(false);
   secondChart.xAxis().title().enabled(false);
 
   // adjusting axis labels using function
-  secondChart.yAxis().labels().width(70).hAlign('right').textFormatter(valueAdjuster);
+  secondChart.yAxis().labels().width(70).hAlign("right").textFormatter(valueAdjuster);
 
   secondChart.column([
     ["P1", 12],
@@ -77,16 +77,16 @@ anychart.onDocumentReady(function() {
   function valueAdjuster() {
     var value = this.value;
     value = value.toFixed(2);
-    var num = value.split('.');
+    var num = value.split(".");
   
-    var main = '';
+    var main = "";
     for (var i=1;(i*3)<num[0].length;i++)
-      main = ','+num[0].substr(num[0].length-(i*3), 3) + main;
+      main = ","+num[0].substr(num[0].length-(i*3), 3) + main;
     var tail = num[0].substr(0, num[0].length-(main.length-main.length/4));
     num[0]=tail+main;
   
     // decimal Separator
-    value = num.join('.');
+    value = num.join(".");
     return value;
   }
 });

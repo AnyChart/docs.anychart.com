@@ -10,7 +10,7 @@ anychart.onDocumentReady(function() {
   chart = anychart.ganttProject();
 
   //set container id for the chart
-  chart.container('container');
+  chart.container("container");
 
   //set data for the chart
   chart.data(treeData);
@@ -22,14 +22,14 @@ chart.splitterPosition(150);
 
   //set first column settings
   var firstColumn = dataGrid.column(0);
-  firstColumn.cellTextSettings().hAlign('center');
+  firstColumn.cellTextSettings().hAlign("center");
   firstColumn.width(35);
 
 
   var secondColumn = dataGrid.column(1);
-  secondColumn.cellTextSettings().hAlign('left');
+  secondColumn.cellTextSettings().hAlign("left");
   secondColumn.textFormatter(function(item) {
-    return item.get('name');
+    return item.get("name");
   });
 
   //initiate chart drawing
@@ -42,37 +42,37 @@ chart.splitterPosition(150);
 function getData() {
   return [
     {
-      'id': '1',
-      'name': 'Task 1',
-      'actualStart': Date.UTC(2008, 7, 9),
-      'actualEnd': Date.UTC(2008, 7, 20)
+      "id": "1",
+      "name": "Task 1",
+      "actualStart": Date.UTC(2008, 7, 9),
+      "actualEnd": Date.UTC(2008, 7, 20)
     },
     {
-      'id': '2',
-      'name': 'Task 2',
-      'parent': '1',
-      'actualStart': Date.UTC(2008, 7, 9),
-      'actualEnd': Date.UTC(2008, 7, 13),
-      'connectorType': 'FinishStart',
-      'connectTo': '3'
+      "id": "2",
+      "name": "Task 2",
+      "parent": "1",
+      "actualStart": Date.UTC(2008, 7, 9),
+      "actualEnd": Date.UTC(2008, 7, 13),
+      "connectorType": "FinishStart",
+      "connectTo": "3"
     },
     {
-      'id': '3',
-      'name': 'Task 3',
-      'parent': '1',
-      'actualStart': Date.UTC(2008, 7, 14),
-      'actualEnd': Date.UTC(2008, 7, 15),
-      'connectorType': 'StartStart',
-      'connectTo': '4'
+      "id": "3",
+      "name": "Task 3",
+      "parent": "1",
+      "actualStart": Date.UTC(2008, 7, 14),
+      "actualEnd": Date.UTC(2008, 7, 15),
+      "connectorType": "StartStart",
+      "connectTo": "4"
     },
     {
-      'id': '4',
-      'name': 'Task 4',
-      'parent': '1',
-      'actualStart': Date.UTC(2008, 7, 15),
-      'actualEnd': Date.UTC(2008, 7, 20),
-      'connectorType': 'FinishFinish',
-      'connectTo': '3'
+      "id": "4",
+      "name": "Task 4",
+      "parent": "1",
+      "actualStart": Date.UTC(2008, 7, 15),
+      "actualEnd": Date.UTC(2008, 7, 20),
+      "connectorType": "FinishFinish",
+      "connectTo": "3"
     }
     ]
 }

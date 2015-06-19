@@ -6,12 +6,12 @@ anychart.onDocumentReady(function() {
 
 	// Data Tree
 	var tree = anychart.data.tree([
-		{'name': 'Node 1', 'rowHeight': 20},
-		{'name': 'Parent Node', 'rowHeight': 20, children:[
-			{'name': 'Child Node 1', 'rowHeight': 20},
-			{'name': 'Child Node 2', 'rowHeight': 20},
+		{"name": "Node 1", "rowHeight": 20},
+		{"name": "Parent Node", "rowHeight": 20, children:[
+			{"name": "Child Node 1", "rowHeight": 20},
+			{"name": "Child Node 2", "rowHeight": 20},
 		]},
-		{'name': 'Node 2', 'rowHeight': 20}
+		{"name": "Node 2", "rowHeight": 20}
 	]);
 
 	// create Data Grid
@@ -21,13 +21,13 @@ anychart.onDocumentReady(function() {
 	dataGrid.data(tree).titleHeight(20);
 
 	// create button for Parent node
-	dataGrid.listen('signal', dataGrid.draw, false, dataGrid);
+	dataGrid.listen("signal", dataGrid.draw, false, dataGrid);
 
 	// set style for second column
 	dataGrid.column(1).cellTextSettingsOverrider(labelTextSettingsOverrider);
 
 	// draw chart
-	dataGrid.container('container').draw();
+	dataGrid.container("container").draw();
 
 	dataGrid.container().height(fullChildrenHeight()+dataGrid.top()+dataGrid.titleHeight()+1);
 
@@ -59,10 +59,10 @@ anychart.onDocumentReady(function() {
 	// style setter
 	function labelTextSettingsOverrider(label, dataItem) {
 	if (!dataItem.getParent()) {
-		label.fontColor('#0055aa').fontWeight('bold').fontSize(12).fontStyle('italic');
+		label.fontColor("#0055aa").fontWeight("bold").fontSize(12).fontStyle("italic");
 	} else {
 		if (dataItem.numChildren()) {
-		label.fontColor('#559955').fontWeight('bold').fontStyle('italic');
+		label.fontColor("#559955").fontWeight("bold").fontStyle("italic");
 		}
 	}
 	}

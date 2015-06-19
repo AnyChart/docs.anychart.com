@@ -5,20 +5,20 @@
 anychart.onDocumentReady(function() {
   
   var data = [
-    {name: 'Fantasy', value: 637166},
-    {name: 'Science Fiction', value: 721630},
-    {name: 'Detective', value: 148662},
-    {name: 'Classics', value: 78662},
-    {name: 'Textbooks', value: 90000}
+    {name: "Fantasy", value: 637166},
+    {name: "Science Fiction", value: 721630},
+    {name: "Detective", value: 148662},
+    {name: "Classics", value: 78662},
+    {name: "Textbooks", value: 90000}
   ];
   
   var chart = anychart.funnel(data);
   
   chart.labels()
-    .position('outsideRight')   // place labels to the right
-    .hAlign('center')           // manage horizontal align
+    .position("outsideRight")   // place labels to the right
+    .hAlign("center")           // manage horizontal align
     .textFormatter(function(){
-      return this.name+'\n'+this.value;
+      return this.name+"\n"+this.value;
     });
   
   chart.connectorLength(45);    // set 45px connectors length
@@ -27,5 +27,5 @@ anychart.onDocumentReady(function() {
   chart.baseWidth(300).neckWidth(75);
   
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

@@ -16,13 +16,13 @@ anychart.onDocumentReady(function() {
   chart.range(2).from(10).to(15);
 
   // Chart title
-  chart.title().text('Inverted\nChart').hAlign('center');
+  chart.title().text("Inverted\nChart").hAlign("center");
 
   // Set chart size and position settings
-  chart.bounds(0, 0, '100%', 125);
+  chart.bounds(0, 0, "100%", 125);
   
   // chart container
-  chart.container('container');
+  chart.container("container");
 
   // Initiate chart drawing
   chart.draw();

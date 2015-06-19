@@ -36,7 +36,7 @@ anychart.onDocumentReady(function(){
   chart = anychart.ganttProject();
 
   // chart container
-  chart.container('container');
+  chart.container("container");
 
   // set chart data
   chart.data(treeData);

@@ -8,10 +8,10 @@ anychart.onDocumentReady(function() {
   var chart = anychart.radar();
 
   // chart title
-  chart.title().text('Radar Series Types');
+  chart.title().text("Radar Series Types");
 
   // background fill
-  chart.background().enabled(true).fill('#EEEEEE');
+  chart.background().enabled(true).fill("#EEEEEE");
 
   // set data and adjust visual settings
   chart.area([
@@ -25,10 +25,10 @@ anychart.onDocumentReady(function() {
     {x: "Product H", value: 1876},
     {x: "Product I", value: 1187}
   ])
-    .fill('red 0.7')
-    .stroke('darkred')
+    .fill("red 0.7")
+    .stroke("darkred")
     .tooltip().contentFormatter(function(){
-      return this.x + '\n' + this.value;
+      return this.x + "\n" + this.value;
     });
 
   chart.line([
@@ -42,9 +42,9 @@ anychart.onDocumentReady(function() {
     {x: "Product H", value: 3876},
     {x: "Product I", value: 2187}
   ])
-    .stroke('lightblue')
+    .stroke("lightblue")
     .tooltip().contentFormatter(function(){
-      return this.x + '\n' + this.value;
+      return this.x + "\n" + this.value;
     });
 
   chart.marker([
@@ -58,15 +58,15 @@ anychart.onDocumentReady(function() {
     {x: "Product H", value: 3176},
     {x: "Product I", value: 3187}
   ])
-    .fill('lightgreen')
-    .stroke('green')
+    .fill("lightgreen")
+    .stroke("green")
     .tooltip().contentFormatter(function(){
-      return this.x + '\n' + this.value;
+      return this.x + "\n" + this.value;
     });
 
   // grid settings
-  chart.grid(0).evenFill('white').oddFill('white');
+  chart.grid(0).evenFill("white").oddFill("white");
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

@@ -6,9 +6,9 @@ anychart.onDocumentReady(function() {
 
   // data set
   var data = anychart.data.set([
-    ['P1', 16, 20],
-    ['P2', 12, 18],
-    ['P3', 9, 14]
+    ["P1", 16, 20],
+    ["P2", 12, 18],
+    ["P3", 9, 14]
   ]);
 
   // map data for series
@@ -16,12 +16,12 @@ anychart.onDocumentReady(function() {
   var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
   // set stage
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
 
   // setting main title
   anychart.ui.title()
     .parentBounds(0, 0, stage.width(), stage.height()*0.1)
-    .text('Background Stroke Types')
+    .text("Background Stroke Types")
     .container(stage)
     .draw();
 
@@ -30,13 +30,13 @@ anychart.onDocumentReady(function() {
   var solidStrokeSeries = anychart.columnChart();
 
   // setting title
-  solidStrokeSeries.title().text('Solid Stroke');
+  solidStrokeSeries.title().text("Solid Stroke");
 
   // setting stroke for chart contaoner. It has solid type by default
-  solidStrokeSeries.background().stroke('5 red');
+  solidStrokeSeries.background().stroke("5 red");
 
   // setting position and bounds
-  solidStrokeSeries.bounds(0, '10%', '45%', '40%');
+  solidStrokeSeries.bounds(0, "10%", "45%", "40%");
 
   // disabling titles, labels and all ticks for Axes
   solidStrokeSeries.yAxis().enabled(false);
@@ -53,13 +53,13 @@ anychart.onDocumentReady(function() {
 
   // chart with gradient stroke
   var gradientStrokeChart = anychart.columnChart();
-  gradientStrokeChart.title().text('Gradient Stroke');
-  gradientStrokeChart.bounds('55%', '10%', '45%', '40%');
+  gradientStrokeChart.title().text("Gradient Stroke");
+  gradientStrokeChart.bounds("55%", "10%", "45%", "40%");
   
   // adjust stroke type and set color keys
   gradientStrokeChart.background().stroke({
     // set colors position
-    keys: ['.1 red', '.5 yellow', '.9 blue'],
+    keys: [".1 red", ".5 yellow", ".9 blue"],
     // set angle of colors drawing
     angle: 45,
     // set stroke thickness
@@ -81,11 +81,11 @@ anychart.onDocumentReady(function() {
 
   // chart with dashed stroke
   var dashedStrokeChart = anychart.columnChart();
-  dashedStrokeChart.title().text('Dashed Stroke');
-  dashedStrokeChart.bounds(0, '60%', '45%', '40%');
+  dashedStrokeChart.title().text("Dashed Stroke");
+  dashedStrokeChart.bounds(0, "60%", "45%", "40%");
 
   // adjust stroke type and dash settings
-  dashedStrokeChart.background().stroke({color: 'red', dash: '5 2 5', thickness: 5});
+  dashedStrokeChart.background().stroke({color: "red", dash: "5 2 5", thickness: 5});
   
   // disable axes
   dashedStrokeChart.xAxis().enabled(false);
@@ -101,8 +101,8 @@ anychart.onDocumentReady(function() {
   // chat with disabled stroke
   var disabledStrokeSeries = anychart.columnChart();
 
-  disabledStrokeSeries.title().text('Disabled Stroke');
-  disabledStrokeSeries.bounds('55%', '60%', '45%', '40%');
+  disabledStrokeSeries.title().text("Disabled Stroke");
+  disabledStrokeSeries.bounds("55%", "60%", "45%", "40%");
   disabledStrokeSeries.background().stroke(null);
 
   disabledStrokeSeries.xAxis().enabled(false);

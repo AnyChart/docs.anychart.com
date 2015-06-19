@@ -16,12 +16,12 @@ anychart.onDocumentReady(function() {
   
   chart.legend()
     .enabled(true)                          // enables legend
-    .position('left')                       // set legend position
-    .align('top')                           // set legend align
-    .itemsLayout('vertical')                // legend items layout
+    .position("left")                       // set legend position
+    .align("top")                           // set legend align
+    .itemsLayout("vertical")                // legend items layout
     .background()                           // background settings
-      .fill(['white', 'lightgreen'], -45);  // background inner color settings
+      .fill(["white", "lightgreen"], -45);  // background inner color settings
   
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

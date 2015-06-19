@@ -17,7 +17,7 @@ anychart.onDocumentReady(function() {
 
   // set data
   chart.line(data).tooltip().contentFormatter(function(){
-    return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
+    return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
   });
 
   // disable title
@@ -31,46 +31,46 @@ anychart.onDocumentReady(function() {
 
   // adjust y axis labels
   chart.yAxis().labels().textFormatter(function(){
-      return '$' + this.value/1000 + ',000';
+      return "$" + this.value/1000 + ",000";
   });
 
   // y scale title
-  chart.yAxis().title().text('Sales');
+  chart.yAxis().title().text("Sales");
 
   // first marker
   chart.textMarker()
     .scale(chart.yScale())
     .value(14000)
-    .align('center')
-    .anchor('center')
+    .align("center")
+    .anchor("center")
     .fontSize(13)
-    .fontColor('blue')
+    .fontColor("blue")
     .offsetX(5)
-    .fontFamily('Courier')
-    .text('Center');
+    .fontFamily("Courier")
+    .text("Center");
 
   // second marker
   chart.textMarker(1)
     .scale(chart.yScale())
     .value(19000)
-    .text('Axis')
-    .align('left')
-    .anchor('rightcenter')
+    .text("Axis")
+    .align("left")
+    .anchor("rightcenter")
     .fontSize(13)
     .offsetX(50)
-    .fontColor('red');
+    .fontColor("red");
 
   // third marker
   chart.textMarker(2)
     .scale(chart.yScale())
     .value(9000)
-    .text('right')
-    .align('right')
-    .anchor('rightcenter')
+    .text("right")
+    .align("right")
+    .anchor("rightcenter")
     .fontSize(13)
     .offsetX(10)
-    .fontColor('green');
+    .fontColor("green");
 
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

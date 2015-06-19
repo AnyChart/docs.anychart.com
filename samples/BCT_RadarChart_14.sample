@@ -6,19 +6,19 @@ anychart.onDocumentReady(function() {
 
   // data for chart
   var dataSet = anychart.data.set([
-    {x: 'Product A', value: 90},
-    {x: 'Product B', value: 65},
-    {x: 'Product C', value: 73},
-    {x: 'Product D', value: 88},
-    {x: 'Product E', value: 75},
-    {x: 'Product F', value: 100}
+    {x: "Product A", value: 90},
+    {x: "Product B", value: 65},
+    {x: "Product C", value: 73},
+    {x: "Product D", value: 88},
+    {x: "Product E", value: 75},
+    {x: "Product F", value: 100}
   ]);
 
   // chart type
   var chart = anychart.radar();
 
   // chart title
-  chart.title().text('Labels and Tooltips');
+  chart.title().text("Labels and Tooltips");
 
   // disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);
@@ -28,8 +28,8 @@ anychart.onDocumentReady(function() {
 
   // set series visualisation
   series
-    .stroke('darkblue')     // stroke color
-    .fill('lightblue 0.8')  // fill color
+    .stroke("darkblue")     // stroke color
+    .fill("lightblue 0.8")  // fill color
     .labels()               // labels settings
       .enabled(true)        // enable labels
       .fontWeight(900);     // labels font weight
@@ -41,14 +41,14 @@ anychart.onDocumentReady(function() {
     // summarize all values
     var sum = 0;
     for (var i=0;i<dataSet.mapAs().getRowsCount();i++)
-      sum +=dataSet.mapAs().get(i, 'value');
+      sum +=dataSet.mapAs().get(i, "value");
 
-    return 'Month: ' + this.x +
-      '\nSales: ' + this.value + '$' +
-      '\nYear: 2003' +
-      '\nPercent: ' + (this.value/(sum/100)).toFixed(2) + '%';
+    return "Month: " + this.x +
+      "\nSales: " + this.value + "$" +
+      "\nYear: 2003" +
+      "\nPercent: " + (this.value/(sum/100)).toFixed(2) + "%";
   });
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

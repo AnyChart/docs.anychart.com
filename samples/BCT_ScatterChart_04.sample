@@ -8,11 +8,11 @@ anychart.onDocumentReady(function() {
   var chart = anychart.scatterChart();
 
   // chart title
-  chart.title().text('Sample Scatter Line and Spline Chart');
+  chart.title().text("Sample Scatter Line and Spline Chart");
 
   // adjust position of axes
-  chart.xAxis().orientation('top');
-  chart.yAxis().orientation('right');
+  chart.xAxis().orientation("top");
+  chart.yAxis().orientation("right");
 
   // data for top line series
   chart.line([
@@ -32,5 +32,5 @@ anychart.onDocumentReady(function() {
     [2, -4]
   ]);
 
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

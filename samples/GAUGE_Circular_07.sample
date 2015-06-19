@@ -12,7 +12,7 @@ anychart.onDocumentReady(function() {
 
 		//gauge settings
     gauge.data(dataSet);
-    gauge.padding('10%');
+    gauge.padding("10%");
     gauge.startAngle(270);
     gauge.sweepAngle(180);
    
@@ -30,13 +30,13 @@ anychart.onDocumentReady(function() {
 
 		//ticks settings
     axis.ticks()
-        .type('trapezoid')
-        .length('8');
+        .type("trapezoid")
+        .length("8");
 
 		//minor ticks settings
     axis.minorTicks()
         .enabled(true)
-        .length('1');
+        .length("1");
         
         //second axis settings
     var axis_1 = gauge.axis(1)
@@ -52,37 +52,37 @@ anychart.onDocumentReady(function() {
 
 		//second ticks settings
     axis_1.ticks()
-        .type('trapezoid')
-        .length('8');
+        .type("trapezoid")
+        .length("8");
 
 		//second minor ticks settings
     axis_1.minorTicks()
         .enabled(true)
-        .length('3');
+        .length("3");
         
         //needle
     gauge.needle(0)
         .enabled(true)
-        .startRadius('-5%')
-        .endRadius('80%')
+        .startRadius("-5%")
+        .endRadius("80%")
         .middleRadius(0)
-        .startWidth('0.1%')
-        .endWidth('0.1%')
-        .middleWidth('5%');
+        .startWidth("0.1%")
+        .endWidth("0.1%")
+        .middleWidth("5%");
         
         //marker
     gauge.marker(0)
         .axisIndex(1)
         .dataIndex(1)
         .size(7)
-        .type('triangledown')
-        .position('outside')
+        .type("triangledown")
+        .position("outside")
         .radius(50);
     
 		//bar
     gauge.bar(0)
         .axisIndex(1)
-        .position('i')
+        .position("i")
         .dataIndex(1)
         .width(3)
         .radius(50)
@@ -90,8 +90,8 @@ anychart.onDocumentReady(function() {
         
     //cap
     gauge.cap()
-        .radius('6%');
+        .radius("6%");
 
 		//draw the chart
-    gauge.container('container').draw();
+    gauge.container("container").draw();
 });

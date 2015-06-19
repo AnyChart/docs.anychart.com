@@ -22,22 +22,22 @@ anychart.onDocumentReady(function() {
 
   // set data and color for each series
   chart.marker(data1)
-    .fill('#4A55C7');
+    .fill("#4A55C7");
   chart.marker(data2)
-    .fill('#5EBD9B');
+    .fill("#5EBD9B");
   chart.marker(data3)
-    .fill('#B04A8A');
+    .fill("#B04A8A");
   chart.marker(data4)
-    .fill('#C7894A');
+    .fill("#C7894A");
   chart.marker(data5)
-    .fill('#BCBD46');
+    .fill("#BCBD46");
   
   // set title
-  chart.title().text('Colors');
+  chart.title().text("Colors");
   
   // draw axes and set titles
-  chart.xAxis().title('Year');
-  chart.yAxis().title('Box office');
+  chart.xAxis().title("Year");
+  chart.yAxis().title("Box office");
 
   chart.xScale()
     .minimum(0)
@@ -45,5 +45,5 @@ anychart.onDocumentReady(function() {
     .ticks().interval(1);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

@@ -7,7 +7,7 @@ anychart.onDocumentReady(function() {
   gauge = anychart.circularGauge();
  
   //set series padding
-  gauge.data(dataSet).padding('4%');
+  gauge.data(dataSet).padding("4%");
  
   //set axis scale settings
   var scale = gauge.axis().scale();
@@ -19,26 +19,26 @@ anychart.onDocumentReady(function() {
   //set major axis ticks
   var axis = gauge.axis();
   axis.ticks()
-      .fill('white')
-      .stroke('#888')
-      .type('trapezoid')
+      .fill("white")
+      .stroke("#888")
+      .type("trapezoid")
       .length(20);
  
   //set minor axis ticks
   axis.minorTicks()
       .enabled(true)
-      .fill('white')
-      .stroke('#ccc')
-      .type('trapezoid')
+      .fill("white")
+      .stroke("#ccc")
+      .type("trapezoid")
       .length(10);
  
   //set the look of the bar that presents data
   gauge.bar(0)
-      .position('i')
-      .fill('#F0673B .9')
-      .stroke('#F0673B')
+      .position("i")
+      .fill("#F0673B .9")
+      .stroke("#F0673B")
       .radius(80);
  
   // draw chart
-  gauge.container('container').draw();
+  gauge.container("container").draw();
 });

@@ -4,7 +4,7 @@
 
 anychart.onDocumentReady(function() {
   
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
   
   var chart = anychart.pieChart([
     {x: "Product A", value: "9000"},
@@ -15,7 +15,7 @@ anychart.onDocumentReady(function() {
   ]);
   
   stage.image()
-    .src('http://static.anychart.com/images/logo_anychart.gif')
+    .src("http://static.anychart.com/images/logo_anychart.gif")
     .y(15)
     .x(25)
     .width(50)
@@ -23,9 +23,9 @@ anychart.onDocumentReady(function() {
     .zIndex(chart.zIndex() + 1);
 
   chart.tooltip().enabled(false);
-  chart.fill('aquastyle');
+  chart.fill("aquastyle");
   chart.labels()
-    .position('outside');
+    .position("outside");
   
   chart.legend().enabled(false);
 

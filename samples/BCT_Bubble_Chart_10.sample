@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
   chart = anychart.scatter();
 
   // set title
-  chart.title().text('Markers');
+  chart.title().text("Markers");
 
   // set data
   chart.bubble([
@@ -19,9 +19,9 @@ anychart.onDocumentReady(function() {
       size: 14, 
       marker: {
         enabled: true, 
-        type: 'star5', 
-        fill: 'gold', 
-        position: 'centerTop', 
+        type: "star5", 
+        fill: "gold", 
+        position: "centerTop", 
         size: 10
       }, 
       hoverMarker: {
@@ -40,9 +40,9 @@ anychart.onDocumentReady(function() {
   chart.xAxis()
     .drawFirstLabel(false)
     .drawLastLabel(false)
-    .title().text('Products');
-  chart.yAxis().title().text('Sales');
+    .title().text("Products");
+  chart.yAxis().title().text("Sales");
 
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

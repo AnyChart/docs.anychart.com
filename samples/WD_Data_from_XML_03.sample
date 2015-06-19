@@ -6,7 +6,7 @@ anychart.onDocumentReady(function() {
   // chart type
   chart = anychart.polar();
   
-  chart.title().text('Polar Chart');
+  chart.title().text("Polar Chart");
   
   chart.line([
     {x: 0, value: 0},
@@ -27,29 +27,29 @@ anychart.onDocumentReady(function() {
   chart.yScale().ticks().interval(2);
   
   chart.xAxis().labels().fontWeight(900);
-  chart.container('container').draw();
+  chart.container("container").draw();
   
   var chartXml = chart.toXml();
   
-  var body = document.getElementsByTagName('body')[0];
+  var body = document.getElementsByTagName("body")[0];
   
-  var button = document.createElement('div');
-  button.style.padding = '2px';
-  button.style.textAlign = 'center';
-  button.style.position = 'fixed';
-  button.style.top = '2px';
-  button.style.right = '2px';
-  button.style.backgroundColor = '#444444';
-  button.style.border = '1px solid #444444';
-  button.style.borderRadius = '5px';
-  button.style.color = 'white';
-  button.style.fontFamily = 'Tahoma';
-  button.style.cursor = 'pointer';
-  button.style.MozUserSelect= 'none';
-  button.style.KhtmlUserSelect= 'none';
-  button.style.WebkitUserSelect= 'none';
-  button.style.userSelect= 'none';
-  button.innerHTML = 'Show<br/>XML config';
+  var button = document.createElement("div");
+  button.style.padding = "2px";
+  button.style.textAlign = "center";
+  button.style.position = "fixed";
+  button.style.top = "2px";
+  button.style.right = "2px";
+  button.style.backgroundColor = "#444444";
+  button.style.border = "1px solid #444444";
+  button.style.borderRadius = "5px";
+  button.style.color = "white";
+  button.style.fontFamily = "Tahoma";
+  button.style.cursor = "pointer";
+  button.style.MozUserSelect= "none";
+  button.style.KhtmlUserSelect= "none";
+  button.style.WebkitUserSelect= "none";
+  button.style.userSelect= "none";
+  button.innerHTML = "Show<br/>XML config";
   button.onclick = function(){alert(chartXml)};
   body.appendChild(button);
 });

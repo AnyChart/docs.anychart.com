@@ -5,15 +5,15 @@ anychart.onDocumentReady(function() {
 
   // setting data
   var data = anychart.data.set([
-    ['P1', 16, 20],
-    ['P2', 12, 18],
-    ['P3', 19, 14],
-    ['P4', 17, 20],
-    ['P5', 11, 18],
-    ['P6', 14, 14],
-    ['P7', 13, 20],
-    ['P8', 10, 18],
-    ['P9', 15, 14]
+    ["P1", 16, 20],
+    ["P2", 12, 18],
+    ["P3", 19, 14],
+    ["P4", 17, 20],
+    ["P5", 11, 18],
+    ["P6", 14, 14],
+    ["P7", 13, 20],
+    ["P8", 10, 18],
+    ["P9", 15, 14]
   ]);
 
   // data remapping
@@ -25,7 +25,7 @@ anychart.onDocumentReady(function() {
   // set scale minimum
   chart.yScale().minimum(0);
 
-  chart.title().text('Normal labels');
+  chart.title().text("Normal labels");
 
   // series data
   chart.column(Sales2003);
@@ -35,5 +35,5 @@ anychart.onDocumentReady(function() {
   chart.yAxis().staggerMode(false);
   chart.xAxis().staggerMode(false);
 
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

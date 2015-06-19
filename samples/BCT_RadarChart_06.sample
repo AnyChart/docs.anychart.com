@@ -6,19 +6,19 @@ anychart.onDocumentReady(function() {
 
   // data for chart
   var dataSet = anychart.data.set([
-    ['Product A', 90],
-    ['Product B', 65],
-    ['Product C', 73],
-    ['Product D', 88],
-    ['Product E', 75],
-    ['Product F', 100]
+    ["Product A", 90],
+    ["Product B", 65],
+    ["Product C", 73],
+    ["Product D", 88],
+    ["Product E", 75],
+    ["Product F", 100]
   ]);
 
   // chart type
   var chart = anychart.radar();
 
   // chart title
-  chart.title().text('Inverted Radar Scale');
+  chart.title().text("Inverted Radar Scale");
 
   // disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);
@@ -30,5 +30,5 @@ anychart.onDocumentReady(function() {
   chart.line(dataSet);
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

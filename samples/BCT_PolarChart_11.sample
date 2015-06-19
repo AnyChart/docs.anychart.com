@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
   // create stage
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
 
   // data for chart
   var dataSet = anychart.data.set([
@@ -376,7 +376,7 @@ anychart.onDocumentReady(function() {
   var chart1 = anychart.polar();
 
   // chart title
-  chart1.title().text('Circular Grid Adjustment');
+  chart1.title().text("Circular Grid Adjustment");
 
   // scales settings
   chart1.yScale().ticks().interval(0.3);
@@ -386,22 +386,22 @@ anychart.onDocumentReady(function() {
   chart1.yAxis().enabled(true).minorTicks().enabled(false);
 
   // set data and adjust visualisation
-  chart1.line(dataSet).stroke('4 blue .7').markers().enabled(false);
+  chart1.line(dataSet).stroke("4 blue .7").markers().enabled(false);
 
   chart1.grid(1)
     .evenFill(null)
     .oddFill(null)
-    .layout('radial')
-    .stroke('gray 0.8');
+    .layout("radial")
+    .stroke("gray 0.8");
 
   chart1.grid(0)
-    .evenFill('white 0.9')
-    .oddFill('lightgray 0.9')
-    .layout('curcuit')
-    .stroke('white');
+    .evenFill("white 0.9")
+    .oddFill("lightgray 0.9")
+    .layout("curcuit")
+    .stroke("white");
 
   // set chart size and position
-  chart1.bounds(0, 0, '50%', '100%');
+  chart1.bounds(0, 0, "50%", "100%");
 
   // set container and draw chart
   chart1.container(stage).draw();
@@ -411,7 +411,7 @@ anychart.onDocumentReady(function() {
   var chart2 = anychart.polar();
 
   // chart title
-  chart2.title().text('Radial Grid Adjustment');
+  chart2.title().text("Radial Grid Adjustment");
 
   // disable minor ticks
   chart2.yAxis().enabled(true).minorTicks().enabled(false);
@@ -422,22 +422,22 @@ anychart.onDocumentReady(function() {
 
   // grid visualization settings
   chart2.grid(0)
-    .evenFill('white 0.6')
-    .oddFill('lightgray 0.6')
-    .layout('radial')
-    .stroke('gray');
+    .evenFill("white 0.6")
+    .oddFill("lightgray 0.6")
+    .layout("radial")
+    .stroke("gray");
 
   chart2.grid(1)
     .evenFill(null)
     .oddFill(null)
-    .layout('curcuit')
-    .stroke('gray 0.7');
+    .layout("curcuit")
+    .stroke("gray 0.7");
 
   // set data and adjust visualisation
-  chart2.line(dataSet).stroke('4 blue .7').markers().enabled(false);
+  chart2.line(dataSet).stroke("4 blue .7").markers().enabled(false);
 
   // set chart size and position
-  chart2.bounds('50%', 0, '50%', '100%');
+  chart2.bounds("50%", 0, "50%", "100%");
 
   // set container and draw chart
   chart2.container(stage).draw();

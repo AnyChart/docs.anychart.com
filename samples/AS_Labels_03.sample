@@ -5,21 +5,21 @@
 anychart.onDocumentReady(function() {
 
   var data = anychart.data.set([
-    {x: "Metallcutting",              value: 41,  fill: '#1D8BD1'},
-    {x: "Metal Forming",              value: 12,  fill: '#F1683C'},
-    {x: "Assembly",                   value: 17,  fill: '#2AD62A'},
-    {x: "Material Handling",          value: 6,   fill: '#DBDC25'},
-    {x: "Gaging/Inspection/testing",  value: 7,   fill: '#8FBC8B'},
-    {x: "Finishing Equipment",        value: 5.5, fill: '#D2B48C'},
-    {x: "Welding Equipment",          value: 5,   fill: '#FAF0E6'},
-    {x: "Heat Processing",            value: 3,   fill: '#20B2AA'},
-    {x: "Plastic Molding",            value: 4.5, fill: '#B0C4DE'},
-    {x: "Other",                      value: 4,   fill: '#DDA0DD'}
+    {x: "Metallcutting",              value: 41,  fill: "#1D8BD1"},
+    {x: "Metal Forming",              value: 12,  fill: "#F1683C"},
+    {x: "Assembly",                   value: 17,  fill: "#2AD62A"},
+    {x: "Material Handling",          value: 6,   fill: "#DBDC25"},
+    {x: "Gaging/Inspection/testing",  value: 7,   fill: "#8FBC8B"},
+    {x: "Finishing Equipment",        value: 5.5, fill: "#D2B48C"},
+    {x: "Welding Equipment",          value: 5,   fill: "#FAF0E6"},
+    {x: "Heat Processing",            value: 3,   fill: "#20B2AA"},
+    {x: "Plastic Molding",            value: 4.5, fill: "#B0C4DE"},
+    {x: "Other",                      value: 4,   fill: "#DDA0DD"}
   ]);
   
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
 
-  var titleText = '<a style="font-size:15px;"><u>2007 Capital Equipment Expenditures</u></a><br/><i>By Specific Machinery/Equipment Category *</i>';
+  var titleText = "<a style="font-size:15px;"><u>2007 Capital Equipment Expenditures</u></a><br/><i>By Specific Machinery/Equipment Category *</i>";
   
   // default chart
   var chart;
@@ -28,7 +28,7 @@ anychart.onDocumentReady(function() {
 
 
   // label for bar chart
-  var barlabel = stage.image('http://static.anychart.com/images/bar.gif');
+  var barlabel = stage.image("http://static.anychart.com/images/bar.gif");
 
   barlabel
     .width(25)
@@ -36,10 +36,10 @@ anychart.onDocumentReady(function() {
     .zIndex(chart.zIndex() + 1)
     .y(20);
 
-  barlabel.listen('click', drawBar);
+  barlabel.listen("click", drawBar);
 
   // label for column chart
-  var columnLabel = stage.image('http://static.anychart.com/images/column.png');
+  var columnLabel = stage.image("http://static.anychart.com/images/column.png");
   columnLabel
     .width(25)
     .height(25)
@@ -47,10 +47,10 @@ anychart.onDocumentReady(function() {
     .zIndex(chart.zIndex() + 1)
     .x(35);
 
-  columnLabel.listen('click', drawColumn);
+  columnLabel.listen("click", drawColumn);
   
   // label for pie chart
-  var pieLabel = stage.image('http://static.anychart.com/images/donut.gif');
+  var pieLabel = stage.image("http://static.anychart.com/images/donut.gif");
   pieLabel
     .width(25)
     .height(25)
@@ -58,11 +58,11 @@ anychart.onDocumentReady(function() {
     .zIndex(chart.zIndex() + 1)
     .x(70);
 
-  pieLabel.listen('click', drawPie);
+  pieLabel.listen("click", drawPie);
   
   
   function drawBar () {
-    if (chart!==null&&undefined&&'') 
+    if (chart!==null&&undefined&&"") 
       chart.dispose();
     
     chart = anychart.bar();
@@ -71,7 +71,7 @@ anychart.onDocumentReady(function() {
       .useHtml(true)
       .text(titleText)
       .fontWeight(900)
-      .hAlign('center');
+      .hAlign("center");
 
     chart.xAxis().title().enabled(false);
     chart.yAxis().title().enabled(false);
@@ -87,7 +87,7 @@ anychart.onDocumentReady(function() {
       .useHtml(true)
       .text(titleText)
       .fontWeight(900)
-      .hAlign('center');
+      .hAlign("center");
     
     chart.xAxis().title().enabled(false);
     chart.yAxis().title().enabled(false);
@@ -102,7 +102,7 @@ anychart.onDocumentReady(function() {
       .useHtml(true)
       .text(titleText)
       .fontWeight(900)
-      .hAlign('center');
+      .hAlign("center");
     
     chart.container(stage).draw();
   }

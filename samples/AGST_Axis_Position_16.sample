@@ -11,20 +11,20 @@ anychart.onDocumentReady(function() {
 
   // setting data
   var data = anychart.data.set([
-    ['A', 4],
-    ['B', 3],
-    ['C', 2],
-    ['D', 1]
+    ["A", 4],
+    ["B", 3],
+    ["C", 2],
+    ["D", 1]
   ]);
 
   // define chart type
   chart.column(data);
 
   // position of y axis changer. Now y is on the right
-  chart.yAxis().orientation('right');
+  chart.yAxis().orientation("right");
 
   // position of x axis changer. Now x is on the top
-  chart.xAxis().orientation('top');
+  chart.xAxis().orientation("top");
 
   // inverts y scale. Now all elements has inverted (from right to left) direction
   chart.yScale().inverted(true);
@@ -37,5 +37,5 @@ anychart.onDocumentReady(function() {
   chart.yAxis().minorTicks().enabled(false);
   chart.yAxis().ticks().enabled(false);
 
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

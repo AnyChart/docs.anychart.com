@@ -12,10 +12,10 @@ anychart.onDocumentReady(function() {
 
 		//gauge settings
     gauge.data(dataSet);
-    gauge.padding('10%');
+    gauge.padding("10%");
     gauge.startAngle(-45);
     gauge.sweepAngle(-300);
 
 		//draw the chart
-    gauge.container('container').draw();
+    gauge.container("container").draw();
 });

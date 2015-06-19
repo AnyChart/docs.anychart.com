@@ -23,7 +23,7 @@ anychart.onDocumentReady(function() {
   var chart = anychart.polar();
 
   // chart title
-  chart.title().text('Polar Chart with Logarithmic Scale');
+  chart.title().text("Polar Chart with Logarithmic Scale");
 
   var logScale = anychart.scales.log();     // create logarithmic scale
   logScale.minimum(10);                     // set minimum value for the scale
@@ -36,5 +36,5 @@ anychart.onDocumentReady(function() {
   chart.line(dataSet).closed(false).tooltip().enabled(true);
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

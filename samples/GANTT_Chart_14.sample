@@ -11,10 +11,10 @@ anychart.onDocumentReady(function(){
   chart = anychart.ganttProject();
 
   // chart container
-  chart.container('container');
+  chart.container("container");
 
   // chart position
-  chart.bounds(0, 0, '100%', '100%');
+  chart.bounds(0, 0, "100%", "100%");
 
   // chart data
   chart.data(treeData);
@@ -29,13 +29,13 @@ anychart.onDocumentReady(function(){
 
   // settings for the first column
   dataGrid.column(0).width(25).textFormatter(function(item) {
-    return '';
-  }).title().text('#');
+    return "";
+  }).title().text("#");
   
   // settings for the second column
   dataGrid.column(1).width(135).textFormatter(function(item) {
-    return item.get('name');
-  }).title().text('Plan');
+    return item.get("name");
+  }).title().text("Plan");
 
   //disable buttons in the second column
   dataGrid.column(1).collapseExpandButtons(false);
@@ -75,7 +75,7 @@ function getData() {
         "actualEnd": Date.UTC(2007, 1, 24)
       },
       {
-        "id": '5',
+        "id": "5",
         "name": "Innovation activities",
         "actualStart": Date.UTC(2007, 1, 24),
         "actualEnd": Date.UTC(2007, 2, 14),

@@ -5,21 +5,21 @@ anychart.onDocumentReady(function() {
 
     // data
     var data = anychart.data.set([
-      ['Department Stores', 637166],
-      ['Discount Stores', 721630],
-      ['Men\'s/Women\'s Specialty Stores', 148662],
-      ['All other outlets', 90000]
+      ["Department Stores", 637166],
+      ["Discount Stores", 721630],
+      ["Men\'s/Women\'s Specialty Stores", 148662],
+      ["All other outlets", 90000]
     ]);
 
     // chart type
     var chart = anychart.barChart();
 
     // set title
-    chart.title().text('Inverted Axis Direction');
+    chart.title().text("Inverted Axis Direction");
 
     // set axes titles
-    chart.xAxis().title().text('Retail Channel');
-    chart.yAxis().title().text('Sales');
+    chart.xAxis().title().text("Retail Channel");
+    chart.yAxis().title().text("Sales");
 
     // set data
     chart.bar(data);
@@ -28,5 +28,5 @@ anychart.onDocumentReady(function() {
     chart.yScale().inverted(true);
 
     // draw chart
-    chart.container('container').draw();
+    chart.container("container").draw();
 });

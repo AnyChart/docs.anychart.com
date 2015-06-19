@@ -22,7 +22,7 @@ anychart.onDocumentReady(function() {
   var chart = anychart.polar();
 
   // chart title
-  chart.title().text('Custom Radius size');
+  chart.title().text("Custom Radius size");
 
   // set chart radius
   chart.yScale()
@@ -41,12 +41,12 @@ anychart.onDocumentReady(function() {
   chart.line(dataSet).tooltip().enabled(false);
 
   // adjust content and visualisation of labels
-  chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + '.00'});
+  chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + ".00"});
 
   // grid settings
   chart.grid(0).evenFill(null).oddFill(null);
   chart.grid(1).evenFill(null).oddFill(null);
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

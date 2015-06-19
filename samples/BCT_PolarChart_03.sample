@@ -19,7 +19,7 @@ anychart.onDocumentReady(function() {
   var chart = anychart.polar();
 
   // chart title
-  chart.title().text('Polar Chart Start Angle Sample');
+  chart.title().text("Polar Chart Start Angle Sample");
 
   // set start angle of the chart
   chart.startAngle(90);
@@ -31,12 +31,12 @@ anychart.onDocumentReady(function() {
   chart.xScale().maximum(9).ticks().interval(1);
 
   // adjust content and visualisation of labels
-  chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + '.00'});
+  chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + ".00"});
 
   // grid settings
   chart.grid(0).evenFill(null).oddFill(null);
   chart.grid(1).evenFill(null).oddFill(null);
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

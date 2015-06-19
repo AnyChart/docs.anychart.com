@@ -16,22 +16,22 @@ anychart.onDocumentReady(function() {
     [2005, 1000],
     [2006, 1400]
   ])
-    .fill('gold')
-    .hoverFill('darkred')
+    .fill("gold")
+    .hoverFill("darkred")
     .hoverStroke(0)
     .hoverSize(20);
   
   // set title
-  chart.title().text('Visualization');
+  chart.title().text("Visualization");
   
   // draw axes and set titles
-  chart.xAxis().title('Year');
-  chart.yAxis().title('Box office');
+  chart.xAxis().title("Year");
+  chart.yAxis().title("Box office");
     
   chart.xScale()
     .minimum(1999)
     .maximum(2007)
     .ticks().interval(1);
   
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

@@ -11,10 +11,10 @@ anychart.onDocumentReady(function() {
 
   // setting data
   var data = anychart.data.set([
-    ['A', 4],
-    ['B', 3],
-    ['C', 2],
-    ['D', 1]
+    ["A", 4],
+    ["B", 3],
+    ["C", 2],
+    ["D", 1]
   ]);
 
   // define chart type
@@ -28,5 +28,5 @@ anychart.onDocumentReady(function() {
   chart.yAxis().minorTicks().enabled(false);
   chart.yAxis().ticks().enabled(false);
 
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

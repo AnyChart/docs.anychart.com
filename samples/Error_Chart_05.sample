@@ -6,7 +6,7 @@ anychart.onDocumentReady(function() {
   chart = anychart.scatter();
 
   //set container id for the chart
-  chart.container('container');
+  chart.container("container");
 
   var series = chart.line([
     [10, 140],
@@ -21,9 +21,9 @@ anychart.onDocumentReady(function() {
 
 
   series.error().xUpperError(5);
-  series.error().xLowerError('7%');
+  series.error().xLowerError("7%");
 
-  chart.title('Scatter Chart With Error Bars For The Y value');
+  chart.title("Scatter Chart With Error Bars For The Y value");
   chart.yScale().minimum(0);
 
   //initiate chart drawing

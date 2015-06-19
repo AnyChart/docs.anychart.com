@@ -5,11 +5,11 @@
 anychart.onDocumentReady(function() {
     // create data set on our data
     var dataSet = anychart.data.set([
-        ['P1', 297, 243, 235, 223],
-        ['P2', 184, 255, 156, 249],
-        ['P3', 136, 199, 177, 276],
-        ['P4', 142, 186, 242, 249],
-        ['P5', 228, 145, 267, 297]
+        ["P1", 297, 243, 235, 223],
+        ["P2", 184, 255, 156, 249],
+        ["P3", 136, 199, 177, 276],
+        ["P4", 142, 186, 242, 249],
+        ["P5", 228, 145, 267, 297]
     ]);
 
     // map data for the first series, take x from the zero column and value from the first column of data set
@@ -28,13 +28,13 @@ anychart.onDocumentReady(function() {
     var chart = anychart.columnChart();
 
     // force chart to stack values by Y scale.
-    chart.yScale().stackMode('percent');
+    chart.yScale().stackMode("percent");
 
     // set container id for the chart
-    chart.container('container');
+    chart.container("container");
 
     // set chart title text settings
-    chart.title().text('100% Stacked Column Chart');
+    chart.title().text("100% Stacked Column Chart");
 
     // disable axes title
     chart.xAxis().title().enabled(false);
@@ -43,7 +43,7 @@ anychart.onDocumentReady(function() {
 
     // set yAxis labels formatting, force it to add % to values
     chart.yAxis().labels().textFormatter(function(info) {
-      return info.value + '%';
+      return info.value + "%";
     });
 
     // create first series with mapped data

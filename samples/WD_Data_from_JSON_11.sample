@@ -13,7 +13,7 @@ anychart.onDocumentReady(function() {
         from: 0,                                      //   .from(0)
         to: 30000,                                    //   .to(30000)
         fill: {                                       //   .fill({
-          keys: [ ".1 green", ".5 yellow", ".9 red"], //     keys: ['.1 green', '.5 yellow', '.9 red'],
+          keys: [ ".1 green", ".5 yellow", ".9 red"], //     keys: [".1 green", ".5 yellow", ".9 red"],
           angle: -90,                                 //     angle: -90,
           opacity: 0.5                                //     opacity: 0.5
         }}],                                          //   });
@@ -23,7 +23,7 @@ anychart.onDocumentReady(function() {
         "scale": 1,                                   //   .scale(chart.yScale())
         "offsetX": 10,                                //   .offsetX(10)
         "value": 25000,                               //   .value(25000)
-        "fontSize": 15,                               //   .text('Good')
+        "fontSize": 15,                               //   .text("Good")
         "text": "Good",                               //   .fontSize(15)
         "fontWeight": 600},                           //   .fontWeight(600);
  
@@ -32,7 +32,7 @@ anychart.onDocumentReady(function() {
           "scale": 1,                                 //   .scale(chart.yScale())
           "offsetX": 10,                              //   .offsetX(10)
           "value": 15000,                             //   .value(15000)
-          "text": "Average",                          //   .text('Average')
+          "text": "Average",                          //   .text("Average")
           "fontSize": 15,                             //   .fontSize(15)
           "fontWeight": 600},                         //   .fontWeight(600);
  
@@ -41,7 +41,7 @@ anychart.onDocumentReady(function() {
           "scale": 1,                                 //   .scale(chart.yScale())
           "offsetX": 10,                              //   .offsetX(10)
           "value": 5000,                              //   .value(5000)
-          "text": "Severe",                           //   .text('Severe')
+          "text": "Severe",                           //   .text("Severe")
           "fontSize": 12,                             //   .fontSize(12)
           "fontWeight": 600}],                        //   .fontWeight(600);
  
@@ -56,7 +56,7 @@ anychart.onDocumentReady(function() {
       title: {enabled: "false"},                      // chart.title().enabled(false);
       yScale: {minimum: "0", maximum: "30000"},       // chart.yScale().minimum(0).maximum(30000);
       xAxes: {title: {enabled: "false"}},             // chart.xAxis().title().enabled(false);
-      yAxes: {title: "Sales"},                        // chart.yAxis().title().text('Sales');
-      container: "container"}}                        // chart.container('container')
+      yAxes: {title: "Sales"},                        // chart.yAxis().title().text("Sales");
+      container: "container"}}                        // chart.container("container")
   ).draw();
 });

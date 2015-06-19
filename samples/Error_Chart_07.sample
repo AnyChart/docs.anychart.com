@@ -7,7 +7,7 @@ anychart.onDocumentReady(function() {
 
 
   //set container id for the chart
-  chart.container('container');
+  chart.container("container");
 
   var series = chart.marker([
     [1, 177],
@@ -19,11 +19,11 @@ anychart.onDocumentReady(function() {
 
 
   series.error({
-            xLowerError: '2%',
-            xUpperError: '2%',
+            xLowerError: "2%",
+            xUpperError: "2%",
             valueUpperError: 8,
-            valueLowerError: '4%',
-            mode: 'value'
+            valueLowerError: "4%",
+            mode: "value"
         });
 
   series.size(4).hoverSize(5);
@@ -31,9 +31,9 @@ anychart.onDocumentReady(function() {
   chart.yScale().minimum(50);
   chart.xScale().maximum(6);
 
-  chart.title('Scatter Marker Chart With Error Bars');
-  chart.xAxis().title('Hours After Treatment');
-  chart.yAxis().title('Mean Blood Pressure');
+  chart.title("Scatter Marker Chart With Error Bars");
+  chart.xAxis().title("Hours After Treatment");
+  chart.yAxis().title("Mean Blood Pressure");
 
   //initiate chart drawing
   chart.draw();

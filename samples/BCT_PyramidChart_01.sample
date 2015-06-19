@@ -5,13 +5,13 @@
 anychart.onDocumentReady(function() {
   
   var chart = anychart.pyramid([
-    {name: 'Fantasy', value: 637166},
-    {name: 'Science Fiction', value: 721630},
-    {name: 'Detective', value: 148662},
-    {name: 'Classics', value: 78662},
-    {name: 'Textbooks', value: 90000}
+    {name: "Fantasy", value: 637166},
+    {name: "Science Fiction", value: 721630},
+    {name: "Detective", value: 148662},
+    {name: "Classics", value: 78662},
+    {name: "Textbooks", value: 90000}
   ]);
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

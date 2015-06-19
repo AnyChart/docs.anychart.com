@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
   chart = anychart.scatter();
 
   // set title
-  chart.title().text('Bubble chart');
+  chart.title().text("Bubble chart");
 
   // define chart type
   chart.bubble([
@@ -21,8 +21,8 @@ anychart.onDocumentReady(function() {
   chart.xAxis()
     .drawFirstLabel(false)      // hide first label
     .drawLastLabel(false)       // hide last label
-    .title().text('Products');  // set axis title
-  chart.yAxis().title().text('Units Sold');
+    .title().text("Products");  // set axis title
+  chart.yAxis().title().text("Units Sold");
 
   // adjust x scale settings
   chart.xScale()
@@ -31,5 +31,5 @@ anychart.onDocumentReady(function() {
     .ticks().interval(1);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
     var chart = anychart.financialChart();
 
     // chart title
-    chart.title().text('Multi-series');
+    chart.title().text("Multi-series");
 
     // adjust x scale type
     chart.xScale()
@@ -36,17 +36,17 @@ anychart.onDocumentReady(function() {
     ]).xPointPosition(0.5);
 
     // set axes title
-    chart.xAxis().title().text('Day');
+    chart.xAxis().title().text("Day");
     chart.xAxis().labels().textFormatter(function(value){
-        var date = new Date(value['tickValue']);
+        var date = new Date(value["tickValue"]);
         var options = {
-          month: 'short',
-          day: 'numeric'
+          month: "short",
+          day: "numeric"
         };
-        return date.toLocaleDateString('en-US', options);
+        return date.toLocaleDateString("en-US", options);
       });
-    chart.yAxis().title().text('Price');
+    chart.yAxis().title().text("Price");
 
     // draw
-    chart.container('container').draw();
+    chart.container("container").draw();
 });

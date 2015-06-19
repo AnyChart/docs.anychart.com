@@ -6,7 +6,7 @@ anychart.onDocumentReady(function() {
   
   var chart = anychart.cartesianChart();
   
-  chart.title().enabled(true).text('Extra Axes Units Comparison Sample');
+  chart.title().enabled(true).text("Extra Axes Units Comparison Sample");
   
   // additional axes settings
   var FahrenheitScale = anychart.scales.linear();
@@ -30,25 +30,25 @@ anychart.onDocumentReady(function() {
   chart.xAxis()
     .scale(FahrenheitScale)
     .title()
-    .text('Fahrenheit');
+    .text("Fahrenheit");
   
   // adjusting axes
-  chart.xAxis(1).title().text('Celsium');
+  chart.xAxis(1).title().text("Celsium");
   chart.xAxis(1)
-    .orientation('top')
+    .orientation("top")
     .scale(CelsiumScale);
   
   chart.xAxis(2)
     .scale(KelvinScale)
-    .orientation('top')
+    .orientation("top")
     .title()
-    .text('Kelvin');
+    .text("Kelvin");
   
   
   // adding grid
   chart.grid()
-    .stroke('black')
-    .layout('horizontal')
+    .stroke("black")
+    .layout("horizontal")
     .evenFill(null)
     .oddFill(null);
   
@@ -71,22 +71,22 @@ anychart.onDocumentReady(function() {
   var markerSeries = chart.marker(data.mapAs({x: [1], value: [0]}));
   markerSeries.tooltip().contentFormatter(function(){
     return this.value+
-      '\nKelvin: '+ (this.x).toFixed(2) +
-      '\nCelsium: '+ (this.x - 273.15).toFixed(2) +
-      '\nFahrenheit: ' + ((this.x - 273.15)*1.8000 + 32).toFixed(2);
+      "\nKelvin: "+ (this.x).toFixed(2) +
+      "\nCelsium: "+ (this.x - 273.15).toFixed(2) +
+      "\nFahrenheit: " + ((this.x - 273.15)*1.8000 + 32).toFixed(2);
   });
   markerSeries.xScale(KelvinScale).yScale(chart.yScale());
   markerSeries.size(5).hoverSize(7);
   
   chart.lineMarker()
-    .stroke('1 red')
-    .layout('vertical')
+    .stroke("1 red")
+    .layout("vertical")
     .scale(CelsiumScale);
   chart.lineMarker(1)
-    .stroke('1 green')
-    .layout('vertical')
+    .stroke("1 green")
+    .layout("vertical")
     .scale(FahrenheitScale);
   
-  chart.container('container');
+  chart.container("container");
   chart.padding(0,20,0,0).draw();
 });

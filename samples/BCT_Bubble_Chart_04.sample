@@ -8,14 +8,14 @@ anychart.onDocumentReady(function() {
     chart = anychart.scatter();
 
     // set title
-    chart.title().text('Maximum and Minimum Size');
+    chart.title().text("Maximum and Minimum Size");
     
     // adjust axes settings
     chart.xAxis()
       .drawFirstLabel(false)
       .drawLastLabel(false)
-      .title().text('Products');
-    chart.yAxis().title().text('Sales');
+      .title().text("Products");
+    chart.yAxis().title().text("Sales");
 
     chart.bubble([
         [1, 637, 6],
@@ -32,5 +32,5 @@ anychart.onDocumentReady(function() {
   
   
   
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

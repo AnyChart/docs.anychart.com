@@ -9,30 +9,30 @@ anychart.onDocumentReady(function() {
 
   // set data
   chart.column([
-    ['John' , 10000],
-    ['Jake' , 12000],
+    ["John" , 10000],
+    ["Jake" , 12000],
     {
-      x: 'Peter',             // set x
+      x: "Peter",             // set x
       value: 18000,           // set value
       marker:{                // marker settings
-        type:'star5',         // marker type
-        fill:'gold',          // marker color
+        type:"star5",         // marker type
+        fill:"gold",          // marker color
         size: 12,             // marker size
         enabled: true         // initiate marker draw
       },
       hoverMarker: {size: 22} // adjust marker size on mouse over
     },
-    ['James' , 11000],
-    ['Mary' , 9000]
+    ["James" , 11000],
+    ["Mary" , 9000]
   ]);
 
   // chart title
-  chart.title().text('Marker');
+  chart.title().text("Marker");
 
   // set axes titles
-  chart.xAxis().title().text('Manager');
-  chart.yAxis().title().text('Sales');
+  chart.xAxis().title().text("Manager");
+  chart.yAxis().title().text("Sales");
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

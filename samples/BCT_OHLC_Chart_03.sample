@@ -16,7 +16,7 @@ anychart.onDocumentReady(function() {
   var chart = anychart.financialChart();
 
   // chart title
-  chart.title().text('Axes Management');
+  chart.title().text("Axes Management");
 
   // adjust x scale type
   chart.xScale()
@@ -29,21 +29,21 @@ anychart.onDocumentReady(function() {
   var series = chart.ohlc(data);
 
   // adjust x and y axes position and title
-  chart.xAxis().orientation('top').title().text('Day');
-  chart.yAxis().orientation('right').title().text('Price');
+  chart.xAxis().orientation("top").title().text("Day");
+  chart.yAxis().orientation("right").title().text("Price");
 
   // set x axis lables width for the better outlook
   chart.xAxis().staggerLines(1).labels().textFormatter(function(value){
-    var date = new Date(value['tickValue']);
+    var date = new Date(value["tickValue"]);
     var options = {
-      month: 'short',
-      day: 'numeric'
+      month: "short",
+      day: "numeric"
     };
-    return date.toLocaleDateString('en-US', options);
+    return date.toLocaleDateString("en-US", options);
   });
 
   // set container
-  chart.container('container');
+  chart.container("container");
 
   // limit width of each point in series
   series.pointWidth(chart.container().width()/15);

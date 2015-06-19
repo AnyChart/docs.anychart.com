@@ -12,8 +12,8 @@ anychart.onDocumentReady(function() {
     chart.credits().enabled(true);
     
     // tooltip
-    chart.credits().alt('Custom tooltip.');
+    chart.credits().alt("Custom tooltip.");
 
     // draw
-    chart.container('container').draw();
+    chart.container("container").draw();
 });

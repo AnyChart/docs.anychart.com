@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
   var chart = anychart.polar();
 
   // chart title
-  chart.title().text('Inverted Y Scale');
+  chart.title().text("Inverted Y Scale");
 
   // series type and data set
   chart.line([
@@ -34,8 +34,8 @@ anychart.onDocumentReady(function() {
   chart.yScale().inverted(true).ticks().interval(2);
 
   // adjust content and visualisation of labels
-  chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + '.00'});
+  chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + ".00"});
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

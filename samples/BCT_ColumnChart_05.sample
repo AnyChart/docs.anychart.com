@@ -8,19 +8,19 @@ anychart.onDocumentReady(function() {
   chart = anychart.columnChart();
 
   // set title
-  chart.title().text('Scale Values Management');
+  chart.title().text("Scale Values Management");
 
   // set axes titles
-  chart.xAxis().title().text('Manager');
-  chart.yAxis().title().text('Sales');
+  chart.xAxis().title().text("Manager");
+  chart.yAxis().title().text("Sales");
 
   // set data
   chart.column([
-      ['John' , 10000],
-      ['Jake' , 12000],
-      ['Peter' , 18000],
-      ['James' , 11000],
-      ['Mary' , 9000]
+      ["John" , 10000],
+      ["Jake" , 12000],
+      ["Peter" , 18000],
+      ["James" , 11000],
+      ["Mary" , 9000]
   ]);
 
   // adjust min and max value
@@ -29,5 +29,5 @@ anychart.onDocumentReady(function() {
     .maximum(36000);  // set maximum value
 
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

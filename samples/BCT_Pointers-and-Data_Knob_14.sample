@@ -12,7 +12,7 @@ anychart.onDocumentReady(function() {
 
 		//gauge settings
     gauge.data(dataSet);
-    gauge.padding('10%');
+    gauge.padding("10%");
     gauge.startAngle(0);
     gauge.sweepAngle(360);
    
@@ -30,13 +30,13 @@ anychart.onDocumentReady(function() {
 
 		//ticks settings
     axis.ticks()
-        .type('trapezoid')
-        .length('8');
+        .type("trapezoid")
+        .length("8");
 
 		//minor ticks settings
     axis.minorTicks()
         .enabled(true)
-        .length('1');
+        .length("1");
 		
         //knob
     gauge.knob(0)
@@ -46,5 +46,5 @@ anychart.onDocumentReady(function() {
         .bottomRatio(.5);
         
 		//draw the chart
-    gauge.container('container').draw();
+    gauge.container("container").draw();
 });

@@ -72,6 +72,6 @@ anychart.onDocumentReady(function() {
       '</series_list>'+
     '</chart>'+
   '</anychart>';
-  chart = anychart.fromXml(xml);
+  var chart = anychart.fromXml(xml);
   chart.draw();
 });

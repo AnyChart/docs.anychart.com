@@ -22,42 +22,42 @@ anychart.onDocumentReady(function() {
   chart = anychart.scatter();
 
   // chart title
-  chart.title().text('Hatches');
+  chart.title().text("Hatches");
 
   // set series data and adjust hatch
   chart.bubble(seriesData_1)
     .minimumSize(10)
     .maximumSize(30)
-    .hatchFill('diagonalcross')
-    .color('#EEEEEE');
+    .hatchFill("diagonalcross")
+    .color("#EEEEEE");
 
   // set series data and adjust hatch
   chart.bubble(seriesData_2)
     .minimumSize(10)
     .maximumSize(30)
-    .color('#EEEEEE')
-    .hatchFill('diagonalbrick');
+    .color("#EEEEEE")
+    .hatchFill("diagonalbrick");
 
   // set series data and adjust hatch
   chart.bubble(seriesData_3)
     .minimumSize(10)
     .maximumSize(30)
-    .color('#EEEEEE')
-    .hatchFill('zigzag');
+    .color("#EEEEEE")
+    .hatchFill("zigzag");
 
   // set series data and adjust hatch
   chart.bubble(seriesData_4)
     .minimumSize(10)
     .maximumSize(30)
-    .color('#EEEEEE')
-    .hatchFill('checkerboard');
+    .color("#EEEEEE")
+    .hatchFill("checkerboard");
 
   // set series data and adjust hatch
   chart.bubble(seriesData_5)
     .minimumSize(10)
     .maximumSize(30)
-    .color('#EEEEEE')
-    .hatchFill('percent30');
+    .color("#EEEEEE")
+    .hatchFill("percent30");
 
   chart.xScale()
     .minimum(0)
@@ -67,5 +67,5 @@ anychart.onDocumentReady(function() {
   chart.yAxis().title().enabled(false);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

@@ -10,7 +10,7 @@ anychart.onDocumentReady(function() {
   chart = anychart.ganttResource();
 
   //set container id for the chart
-  chart.container('container');
+  chart.container("container");
 
   //set data for the chart
   chart.data(treeData);
@@ -21,12 +21,12 @@ anychart.onDocumentReady(function() {
   //get chart data grid link to set column settings
   var dataGrid = chart.dataGrid();
 
-  dataGrid.rowOddFill('#8a2be2 .2');
-  dataGrid.rowEvenFill('#8a2be2 .4');
+  dataGrid.rowOddFill("#8a2be2 .2");
+  dataGrid.rowEvenFill("#8a2be2 .4");
 
   var timeline = chart.getTimeline();
 
-  timeline.rowEvenFill('green .4');
+  timeline.rowEvenFill("green .4");
   timeline.rowOddFill("#add8e6");
 
   //initiate chart drawing
@@ -39,11 +39,11 @@ anychart.onDocumentReady(function() {
 function getData() {
   return [
     {
-      "id":'main_1',
+      "id":"main_1",
       "name": "Group 1",
     },
     {
-      "id":'main_2',
+      "id":"main_2",
       "name": "Group 2",
     },
     {

@@ -18,11 +18,11 @@ anychart.onDocumentReady(function() {
   var chart = anychart.financialChart();
 
   // set axes title
-  chart.xAxis().title().text('Day');
-  chart.yAxis().title().text('Price');
+  chart.xAxis().title().text("Day");
+  chart.yAxis().title().text("Price");
 
   // chart title
-  chart.title().text('Open High Low Close (OHLC) Chart');
+  chart.title().text("Open High Low Close (OHLC) Chart");
 
   // adjust x scale type
   chart.xScale()
@@ -36,16 +36,16 @@ anychart.onDocumentReady(function() {
 
   // set x axis lables width for the better outlook
   chart.xAxis().staggerLines(1).labels().textFormatter(function(value){
-    var date = new Date(value['tickValue']);
+    var date = new Date(value["tickValue"]);
     var options = {
-      day: 'numeric',
-      month: 'short'
+      day: "numeric",
+      month: "short"
     };
-    return date.toLocaleDateString('en-US', options);
+    return date.toLocaleDateString("en-US", options);
   });
 
   // set container
-  chart.container('container');
+  chart.container("container");
 
   // limit width of each point in series
   series.pointWidth(chart.container().width()/15);

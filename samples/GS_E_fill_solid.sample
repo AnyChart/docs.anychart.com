@@ -4,11 +4,11 @@
 
 anychart.onDocumentReady(function() {
   
-  stage = anychart.graphics.create('container');
+  stage = anychart.graphics.create("container");
   
   anychart.ui.background()
-    .fill('#FF6666')
-    .stroke('#FF6666')
+    .fill("#FF6666")
+    .stroke("#FF6666")
     .bounds(anychart.math.rect(0, stage.height()/3, stage.width(), stage.height()/3))
     .container(stage).draw();
   
@@ -26,19 +26,19 @@ anychart.onDocumentReady(function() {
     if(i>9){
       label.background(
         {
-          fill:'#b9b9b9',
+          fill:"#b9b9b9",
           enabled: true,
-          stroke:'#bbb'
+          stroke:"#bbb"
         })
-        .text('opacity: 1');
+        .text("opacity: 1");
     }else{
       label.background(
         {
-          fill:'#b9b9b9 0.'+i,
+          fill:"#b9b9b9 0."+i,
           enabled: true,
-          stroke:'#bbb'
+          stroke:"#bbb"
         })
-        .text('opacity: 0.'+(i));
+        .text("opacity: 0."+(i));
     }
     label.padding(10,5).container(stage).draw();
   }

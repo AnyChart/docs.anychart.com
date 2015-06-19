@@ -6,7 +6,7 @@
 anychart.onDocumentReady(function() {
 
     // set stage
-    stage = anychart.graphics.create('container');
+    stage = anychart.graphics.create("container");
     
     stage.scale(0.7, 0.7, 0, 0);
     // set layers of stage
@@ -19,16 +19,16 @@ anychart.onDocumentReady(function() {
     //creating the cube
                 
     var rect = anychart.math.rect(50, 250, 100, 200); 
-    var fill = {keys:['#666','#888', '#ccc'], angle:135, mode:rect}; 
+    var fill = {keys:["#666","#888", "#ccc"], angle:135, mode:rect}; 
     var rect_2 = anychart.math.rect(50, 200, 200, 100);     
-    var fill_2 = {keys:['#666','#666', '#ccc'], angle:185, mode:rect_2};  
+    var fill_2 = {keys:["#666","#666", "#ccc"], angle:185, mode:rect_2};  
     
     var cube_top = layer_cube.path().moveTo(200, 200)
                 .lineTo(300, 250)
                 .lineTo(150, 300)
                 .lineTo(50, 250)
                 .close()
-                .fill(['#888', '#f0f0f0', '#f0f0f0'],150)
+                .fill(["#888", "#f0f0f0", "#f0f0f0"],150)
                 .stroke(fill_2,1);      
                 
     var cube_side = layer_cube.path().moveTo(50, 250)
@@ -36,7 +36,7 @@ anychart.onDocumentReady(function() {
                 .lineTo(150, 450)
                 .lineTo(50, 400)
                 .close()
-                .fill(['#999','#f0f0f0', 'white'], 135)
+                .fill(["#999","#f0f0f0", "white"], 135)
                 .stroke(fill,1);
                 
     var cube_back = layer_cube.path().moveTo(150, 300)
@@ -44,8 +44,8 @@ anychart.onDocumentReady(function() {
                 .lineTo(300, 400)
                 .lineTo(150, 450)
                 .close()
-                .fill('#aaa')
-                .stroke('1px #666');
+                .fill("#aaa")
+                .stroke("1px #666");
                 
     layer_cube.zIndex(1);
     
@@ -62,15 +62,15 @@ anychart.onDocumentReady(function() {
                 .lineTo(255,480)
                 .lineTo(255,375)
                 .close()
-                .fill('#888')
-                .stroke('none');
+                .fill("#888")
+                .stroke("none");
                 
     var prism_shadow = layer_5.path().moveTo(445,415)
                 .lineTo(850,550)
                 .lineTo(410,550)
                 .lineTo(265,485)
                 .close()
-                .fill(['#aaa','#ccc 0.5','white 0'],-90)
+                .fill(["#aaa","#ccc 0.5","white 0"],-90)
                 .stroke(null);
                 
     layer_5.zIndex(5);
@@ -78,7 +78,7 @@ anychart.onDocumentReady(function() {
     
     //creating the cylinder
     var ellipse_top = layer_cylinder.ellipse(50,50,150,30)
-                .fill(['#f0f0f0', '#f0f0f0', '#aaa'],-30)
+                .fill(["#f0f0f0", "#f0f0f0", "#aaa"],-30)
                 .zIndex(3);
                 
     var ellipse_body = layer_cylinder.path().moveTo(-100, 50)
@@ -87,8 +87,8 @@ anychart.onDocumentReady(function() {
                 .lineTo(200, 50)
                 .arcTo(-150, 30, 180, 180)
                 .close()
-                .fill(['white', '#aaa', '#888'],-40)
-                .stroke('1px black')
+                .fill(["white", "#aaa", "#888"],-40)
+                .stroke("1px black")
                 .zIndex(2);
                 
     var ellipse_shadow_cube = layer_cylinder.path().moveTo(-45,375)
@@ -97,14 +97,14 @@ anychart.onDocumentReady(function() {
                 .lineTo(200,350)
                 .close()
                 .stroke(null)
-                .fill('#848484');
+                .fill("#848484");
                 
                 
     var ellipse_shadow_prism_top = layer_cylinder.path().moveTo(520,485)
                 .lineTo(680,517)
                 .lineTo(465,558)
                 .lineTo(300,523)
-                .fill('#888')
+                .fill("#888")
                 .stroke(null)
                 .close();
                 
@@ -112,7 +112,7 @@ anychart.onDocumentReady(function() {
                 .lineTo(750,592)
                 .lineTo(515,640)
                 .lineTo(465,560)
-                .fill('#898989')
+                .fill("#898989")
                 .stroke(null)
                 .close();
     
@@ -134,32 +134,32 @@ anychart.onDocumentReady(function() {
                 .lineTo(285,385)
                 .lineTo(230,365)
                 .close()
-                .stroke('1px #444')
-                .fill('#aaa');
+                .stroke("1px #444")
+                .fill("#aaa");
         
     var prism_top_edge = layer_prism.path().moveTo(230,365)
                 .lineTo(400,300)
                 .lineTo(455,320)
                 .lineTo(285,385)
-                .stroke('1px #666')
-                .fill('#aaa')
+                .stroke("1px #666")
+                .fill("#aaa")
                 .close();
 
     var prism_middle_edge = layer_prism.path().moveTo(285,385)
                 .lineTo(300,435)
                 .lineTo(470,365)
-                .stroke('1px #666')
+                .stroke("1px #666")
                 .lineTo(455,320)
                 .close()
-                .fill('#929292');
+                .fill("#929292");
                    
     var prism_bottom_edge = layer_prism.path().moveTo(300,435)
                 .lineTo(470,365)
                 .lineTo(445,415)
                 .lineTo(265,485)
-                .stroke('1px #777')
+                .stroke("1px #777")
                 .close()
-                .fill('#848484');
+                .fill("#848484");
                 
     layer_prism.zIndex(1);            
     
@@ -171,7 +171,7 @@ anychart.onDocumentReady(function() {
                 .lineTo(350,550)
                 .close()
                 .stroke(null)
-                .fill(['#aaa','white'],270);
+                .fill(["#aaa","white"],270);
 
 	//remove the cylinder layer
     layer_cylinder.remove();

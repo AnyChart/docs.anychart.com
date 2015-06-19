@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
   
   // create stage
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
   
   // Create bullet chart
   var chartB = anychart.bulletChart([
@@ -13,44 +13,44 @@ anychart.onDocumentReady(function() {
   ]);
   
   var chartL = anychart.bulletChart([
-    {value: 240, type: 'line'}    // line shaped marker
+    {value: 240, type: "line"}    // line shaped marker
   ]);
   
   var chartX = anychart.bulletChart([
-    {value: 275, type: 'x'}       // X shaped marker
+    {value: 275, type: "x"}       // X shaped marker
   ]);
   
   var chartE = anychart.bulletChart([
-    {value: 290, type: 'ellipse'} // ellipse shaped marker
+    {value: 290, type: "ellipse"} // ellipse shaped marker
   ]);
   
   chartB
     .container(stage)             // Set chart container
-    .bounds(0, 0, '100%', 120)    // Set chart size and position settings
+    .bounds(0, 0, "100%", 120)    // Set chart size and position settings
     .title()
       .width(90)                  // Set title width
-      .text('Bar Marker');        // Set chart title
+      .text("Bar Marker");        // Set chart title
   
   chartL
     .container(stage)             // Set chart container
-    .bounds(0, 120, '100%', 120)  // Set chart size and position settings
+    .bounds(0, 120, "100%", 120)  // Set chart size and position settings
     .title()
       .width(90)                  // Set title width
-      .text('Line Marker');       // Set chart title
+      .text("Line Marker");       // Set chart title
   
   chartX
     .container(stage)             // Set chart container
-    .bounds(0, 240, '100%', 120)  // Set chart size and position settings
+    .bounds(0, 240, "100%", 120)  // Set chart size and position settings
     .title()
       .width(90)                  // Set title width
-      .text('X Marker');          // Set chart title
+      .text("X Marker");          // Set chart title
   
   chartE
     .container(stage)             // Set chart container
-    .bounds(0, 360, '100%', 120)  // Set chart size and position settings
+    .bounds(0, 360, "100%", 120)  // Set chart size and position settings
     .title()
       .width(90)                  // Set title width
-      .text('Ellipse Marker');    // Set chart title
+      .text("Ellipse Marker");    // Set chart title
   
   // set bullet ranges
   chartSettings(chartB);

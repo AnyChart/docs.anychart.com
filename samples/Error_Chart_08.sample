@@ -6,7 +6,7 @@ anychart.onDocumentReady(function() {
   chart = anychart.scatter();
 
   //set container id for the chart
-  chart.container('container');
+  chart.container("container");
 
   var series = chart.line([
     [100, 300],
@@ -21,12 +21,12 @@ anychart.onDocumentReady(function() {
   series.error({
             xLowerError: 3,
             xUpperError: 4,
-            xErrorWidth: '30',
+            xErrorWidth: "30",
             valueUpperError: 15,
-            valueLowerError: '5%',
-            valueErrorWidth: '6%',
+            valueLowerError: "5%",
+            valueErrorWidth: "6%",
         });
-  chart.title('Scatter Line Chart With Modified Error Bars');
+  chart.title("Scatter Line Chart With Modified Error Bars");
   //initiate chart drawing
   chart.draw();
 });

@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
   var chart = anychart.columnChart();
 
   // chart title
-  chart.title().text('Inverted Scale');
+  chart.title().text("Inverted Scale");
 
   // set scale minimum
   chart.yScale().minimum(0);
@@ -16,15 +16,15 @@ anychart.onDocumentReady(function() {
 
   // setting data
   var data = anychart.data.set([
-    ['C', 15],
-    ['D', 45],
-    ['E', 25]
+    ["C", 15],
+    ["D", 45],
+    ["E", 25]
   ]);
 
-  chart.column(data).hoverFill('#444444');
+  chart.column(data).hoverFill("#444444");
 
   // setting yScale invertion
   chart.yScale().inverted(true);
 
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

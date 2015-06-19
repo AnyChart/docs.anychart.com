@@ -15,7 +15,7 @@ anychart.onDocumentReady(function() {
     // for points in range from 60 to 70 create missing points
     if (points > 60){
       if (points<70){
-          data.push([points, 'missing']);
+          data.push([points, "missing"]);
       }else{
           data.push([points, points*10]);
       }
@@ -33,7 +33,7 @@ anychart.onDocumentReady(function() {
   var chart = anychart.polar();
 
   // chart title
-  chart.title().text('Custom Radius size');
+  chart.title().text("Custom Radius size");
 
   // set chart radius
   chart.yScale()
@@ -49,20 +49,20 @@ anychart.onDocumentReady(function() {
   chart.yAxis().enabled(true).minorTicks().enabled(false);
 
   // set data
-  var series = chart.line(dataSet).stroke('2 royalblue');
-  series.markers().size(1).stroke('0 royalblue');
+  var series = chart.line(dataSet).stroke("2 royalblue");
+  series.markers().size(1).stroke("0 royalblue");
   series.hoverMarkers().size(1);
   series.tooltip().contentFormatter(function(){
-    return 'X: ' + this.x.toFixed(1) + '\nValue: ' + this.value.toFixed(0);
+    return "X: " + this.x.toFixed(1) + "\nValue: " + this.value.toFixed(0);
   });
 
   // adjust content and visualisation of labels
-  chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + '.00'});
+  chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + ".00"});
 
   // grid settings
   chart.grid(0).evenFill(null).oddFill(null);
   chart.grid(1).evenFill(null).oddFill(null);
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

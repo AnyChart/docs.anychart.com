@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
     // set stage
-    stage = anychart.graphics.create('container');
+    stage = anychart.graphics.create("container");
 
     //draw the circle
     stage.circle(200, 250, 100);

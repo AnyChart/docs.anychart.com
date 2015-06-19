@@ -21,14 +21,14 @@ anychart.onDocumentReady(function() {
   var chart = anychart.areaChart();
 
   // chart title
-  chart.title().text('Stacked Area Chart');
+  chart.title().text("Stacked Area Chart");
 
   // set axes title
-  chart.xAxis().title().text('Month');
-  chart.yAxis().title().text('Temperature');
+  chart.xAxis().title().text("Month");
+  chart.yAxis().title().text("Temperature");
   
   // set stack mode
-  chart.yScale().stackMode('value');
+  chart.yScale().stackMode("value");
 
   // set data for each series
   chart.area(seriesData_1);
@@ -36,5 +36,5 @@ anychart.onDocumentReady(function() {
   chart.area(seriesData_3);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

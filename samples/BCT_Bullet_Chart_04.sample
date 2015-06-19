@@ -4,21 +4,21 @@
 
 anychart.onDocumentReady(function() {
   // Create stage for all charts
-  var stage = anychart.graphics.create('container').height(400).width(600);
+  var stage = anychart.graphics.create("container").height(400).width(600);
 
   // Create bullet chart
   var verticalChart = anychart.bulletChart([{value: 5}]);
   // Set chart to render on stage
   verticalChart.container(stage);
   // Chart title
-  verticalChart.title().text('Axis at\nthe right').hAlign('center');
+  verticalChart.title().text("Axis at\nthe right").hAlign("center");
   // Set chart size and position settings
-  verticalChart.bounds('75%', 0, '25%', '100%');
+  verticalChart.bounds("75%", 0, "25%", "100%");
   // Set chart layout
-  verticalChart.layout('vertical');
+  verticalChart.layout("vertical");
 
   // adjust axis position
-  verticalChart.axis().orientation('right');
+  verticalChart.axis().orientation("right");
 
   // Create chart ranges
   verticalChart.range().from(0).to(5);
@@ -32,15 +32,15 @@ anychart.onDocumentReady(function() {
   // Set chart to render on stage
   horizontalChart.container(stage);
   // Set chart size and position settings
-  horizontalChart.bounds(0, '35%', '75%', '30%');
+  horizontalChart.bounds(0, "35%", "75%", "30%");
   // Set chart layout
-  horizontalChart.layout('horizontal');
+  horizontalChart.layout("horizontal");
 
   // adjust axis position
-  horizontalChart.axis().orientation('top');
+  horizontalChart.axis().orientation("top");
 
   // Chart title
-  horizontalChart.title().text('Axis at\nthe top').hAlign('center');
+  horizontalChart.title().text("Axis at\nthe top").hAlign("center");
   // Create chart ranges
   horizontalChart.range().from(0).to(5);
   horizontalChart.range(1).from(5).to(10);

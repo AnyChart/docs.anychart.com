@@ -7,21 +7,21 @@ anychart.onDocumentReady(function() {
   chart = anychart.bar();
 
   //set container id for the chart
-  chart.container('container');
+  chart.container("container");
 
   var series = chart.stepArea([
-    ['P1', 189],
-    ['P2', 140],
-    ['P3', 177],
-    ['P4', 165],
-    ['P5', 154],
-    ['P6', 191],
+    ["P1", 189],
+    ["P2", 140],
+    ["P3", 177],
+    ["P4", 165],
+    ["P5", 154],
+    ["P6", 191],
   ]);
 
   
   series.error().valueUpperError(2).valueLowerError(6).valueError(6);
   
-  series.error().valueErrorStroke('2px #146192');
+  series.error().valueErrorStroke("2px #146192");
 
   chart.yScale().minimum(0);
 

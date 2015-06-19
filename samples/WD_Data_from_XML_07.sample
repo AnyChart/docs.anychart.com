@@ -10,7 +10,7 @@ anychart.onDocumentReady(function() {
       // set chart type, title and chart container
       '<chart type="line" '+                            // var chart = anychart.line();
       // set chart container
-      'container="container">'+                         // chart.container('container');
+      'container="container">'+                         // chart.container("container");
 
         // set series type
         '<series_list><series series_type="spline">'+   // chart.spline(

@@ -6,9 +6,9 @@ anychart.onDocumentReady(function() {
 
   // setting data
   var data = anychart.data.set([
-    ['P1', 16, 20],
-    ['P2', 12, 18],
-    ['P3', 9, 14]
+    ["P1", 16, 20],
+    ["P2", 12, 18],
+    ["P3", 9, 14]
   ]);
 
   // remapping data
@@ -21,9 +21,9 @@ anychart.onDocumentReady(function() {
   chart.column(Sales2004);
 
   // adjusting major and minor grids
-  chart.grid(0).stroke('black').layout('vertical');
-  chart.grid(1).stroke('black').layout('horizontal');
-  chart.minorGrid().stroke({color: 'black', dash: '5 2 5', opacity: 0.2}).layout('horizontal');
+  chart.grid(0).stroke("black").layout("vertical");
+  chart.grid(1).stroke("black").layout("horizontal");
+  chart.minorGrid().stroke({color: "black", dash: "5 2 5", opacity: 0.2}).layout("horizontal");
 
   // setting major ticks interval on y scale
   chart.yScale().ticks().interval(2);
@@ -31,5 +31,5 @@ anychart.onDocumentReady(function() {
   // set scale minimum
   chart.yScale().minimum(0);
 
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

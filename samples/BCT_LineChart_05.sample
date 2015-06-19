@@ -6,11 +6,11 @@ anychart.onDocumentReady(function() {
 
   // data
   var data = anychart.data.set([
-    ['January', 10000],
-    ['February', 12000],
-    ['March', 18000],
-    ['April', 11000],
-    ['May', 9000]
+    ["January", 10000],
+    ["February", 12000],
+    ["March", 18000],
+    ["April", 11000],
+    ["May", 9000]
   ]);
 
   // chart type
@@ -23,12 +23,12 @@ anychart.onDocumentReady(function() {
   chart.line(data);
 
   // title
-  chart.title().text('Scales Management');
+  chart.title().text("Scales Management");
 
   // set axes titles
-  chart.xAxis().title().text('Sales');
-  chart.yAxis().title().text('Month');
+  chart.xAxis().title().text("Sales");
+  chart.yAxis().title().text("Month");
 
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

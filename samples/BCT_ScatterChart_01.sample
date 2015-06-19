@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
   var chart = anychart.scatterChart();
 
   // chart title
-  chart.title().text('Sample Scatter Line Chart');
+  chart.title().text("Sample Scatter Line Chart");
 
   // data for top line series
   chart.line([
@@ -30,5 +30,5 @@ anychart.onDocumentReady(function() {
   
   chart.xScale().ticks().interval(1);
 
-    chart.container('container').draw();
+    chart.container("container").draw();
 });

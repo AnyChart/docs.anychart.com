@@ -11,10 +11,10 @@ anychart.onDocumentReady(function(){
   var chart = anychart.ganttResource();
 
   // chart container
-  chart.container('container');
+  chart.container("container");
 
   // chart position
-  chart.bounds(0, 0, '100%', '100%');
+  chart.bounds(0, 0, "100%", "100%");
 
   // chart data
   chart.data(treeData);
@@ -25,12 +25,12 @@ anychart.onDocumentReady(function(){
   var dataGrid = chart.dataGrid();
 
   // settings for first column
-  dataGrid.column(0).width(30).title().text('#');
+  dataGrid.column(0).width(30).title().text("#");
 
   // settings for the second column
   dataGrid.column(1).width(140).textFormatter(function(item) {
-    return item.get('name');
-  }).title().text('Person');
+    return item.get("name");
+  }).title().text("Person");
 
   // initiate drawing
   chart.draw();

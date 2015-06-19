@@ -21,42 +21,42 @@ anychart.onDocumentReady(function() {
   chart = anychart.scatter();
   
   // set title
-  chart.title().text('Colors');
+  chart.title().text("Colors");
 
   // set first series data and adjust color
   chart.bubble(seriesData_1)
     .minimumSize(10)
     .maximumSize(30)
-    .color('#3333FF');
+    .color("#3333FF");
 
   // set second series data and adjust color
   chart.bubble(seriesData_2)
     .minimumSize(10)
     .maximumSize(30)
-    .color('#660099');
+    .color("#660099");
 
   // set third series data and adjust color
   series = chart.bubble(seriesData_3)
     .minimumSize(10)
     .maximumSize(30)
-    .color('#CC6600');
+    .color("#CC6600");
 
   // set forth series data and adjust color
   chart.bubble(seriesData_4)
     .minimumSize(10)
     .maximumSize(30)
-    .color('#FFCC33');
+    .color("#FFCC33");
 
   // set forth series data and adjust color
   chart.bubble(seriesData_5)
     .minimumSize(10)
     .maximumSize(30)
-    .color('#00aa00');
+    .color("#00aa00");
   
   chart.xScale().ticks().interval(1);
   chart.xAxis().title().enabled(false);
   chart.yAxis().title().enabled(false);
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

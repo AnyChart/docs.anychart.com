@@ -12,8 +12,8 @@ anychart.onDocumentReady(function() {
     chart.credits().enabled(true);
     
     // custom url
-    chart.credits().url('http://www.anychart.com/buy/');
+    chart.credits().url("http://www.anychart.com/buy/");
 
     // draw
-    chart.container('container').draw();
+    chart.container("container").draw();
 });

@@ -18,7 +18,7 @@ anychart.onDocumentReady(function() {
   var chart = anychart.polar();
   
   // chart title
-  chart.title().text('Labels and Tooltips');
+  chart.title().text("Labels and Tooltips");
   
   // disable minor ticks
   chart.yAxis().enabled(true).drawFirstLabel(false).minorTicks().enabled(false);
@@ -28,8 +28,8 @@ anychart.onDocumentReady(function() {
   
   // adjust series visual settings
   series
-    .stroke('darkblue')                             // stroke color
-    .fill('lightblue 0.8')                          // fill color
+    .stroke("darkblue")                             // stroke color
+    .fill("lightblue 0.8")                          // fill color
     .labels()                                       // labels settings
       .enabled(true)                                // enable labels
       .fontWeight(900);                             // labels font weight
@@ -43,12 +43,12 @@ anychart.onDocumentReady(function() {
     // summarize all values
     var sum = 0;
     for (var i=0;i<dataSet.mapAs().getRowsCount();i++)
-      sum +=dataSet.mapAs().get(i, 'value');
+      sum +=dataSet.mapAs().get(i, "value");
     
     // setting tooltip content
-    return 'Value: ' + this.value + '\nPercent: ' + (this.value/(sum/100)).toFixed(2) + '%';
+    return "Value: " + this.value + "\nPercent: " + (this.value/(sum/100)).toFixed(2) + "%";
   });
   
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

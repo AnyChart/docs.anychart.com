@@ -9,34 +9,34 @@ anychart.onDocumentReady(function() {
   
   // data
   chart.marker([
-    ['January', 1100],
-    ['February', 880],
-    ['March', 1100],
-    ['April', 1500],
-    ['May', 921]
+    ["January", 1100],
+    ["February", 880],
+    ["March", 1100],
+    ["April", 1500],
+    ["May", 921]
   ]);
   
   // set title
   chart.title()
-    .text('Marker Series on Cartesian Plot')
+    .text("Marker Series on Cartesian Plot")
     .enabled(true);
   
   // grid settings
-  chart.grid().layout('horizontal');
+  chart.grid().layout("horizontal");
   chart.grid(1)
     .evenFill(null)
     .oddFill(null)
-    .stroke('#B9B9B9')
-    .layout('vertical');
+    .stroke("#B9B9B9")
+    .layout("vertical");
   chart.minorGrid()
     .evenFill(null)
     .oddFill(null)
-    .stroke('#B9B9B9 0.5')
-    .layout('horizontal');
+    .stroke("#B9B9B9 0.5")
+    .layout("horizontal");
   
   // draw axes and set titles
-  chart.xAxis().title('Month');
-  chart.yAxis().title('Box Office');
+  chart.xAxis().title("Month");
+  chart.yAxis().title("Box Office");
   
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

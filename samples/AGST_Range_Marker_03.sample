@@ -17,8 +17,8 @@ anychart.onDocumentReady(function() {
   chart = anychart.lineChart();
 
   // set data
-  chart.line(data).hoverStroke('red').tooltip().contentFormatter(function(){
-    return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
+  chart.line(data).hoverStroke("red").tooltip().contentFormatter(function(){
+    return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
   });
 
   // disable title
@@ -32,11 +32,11 @@ anychart.onDocumentReady(function() {
 
   // adjust y axis labels
   chart.yAxis().labels().textFormatter(function(){
-    return '$' + this.value/1000 + ',000';
+    return "$" + this.value/1000 + ",000";
   });
 
   // y scale title
-  chart.yAxis().title().text('Sales');
+  chart.yAxis().title().text("Sales");
 
   // set green marker
   chart.rangeMarker(2)
@@ -44,7 +44,7 @@ anychart.onDocumentReady(function() {
     .from(0)
     .to(30000)
     .fill({
-      keys: ['.1 green', '.5 yellow', '.9 red'],
+      keys: [".1 green", ".5 yellow", ".9 red"],
       angle: -90,
       opacity: 0.5
     });
@@ -52,37 +52,37 @@ anychart.onDocumentReady(function() {
   // set left text marker
   chart.textMarker()
     .scale(chart.yScale())
-    .align('center')
-    .anchor('center')
+    .align("center")
+    .anchor("center")
     .offsetX(10)
     .value(25000)
-    .text('Good')
+    .text("Good")
     .fontSize(15)
     .fontWeight(600);
 
   // set text marker at the center
   chart.textMarker(1)
     .scale(chart.yScale())
-    .align('center')
-    .anchor('center')
+    .align("center")
+    .anchor("center")
     .offsetX(10)
     .value(15000)
-    .text('Average')
+    .text("Average")
     .fontSize(15)
     .fontWeight(600);
 
   // set text marker at the center
   chart.textMarker(2)
     .scale(chart.yScale())
-    .align('center')
-    .anchor('center')
+    .align("center")
+    .anchor("center")
     .offsetX(10)
     .value(5000)
-    .fontColor('black')
-    .text('Severe')
+    .fontColor("black")
+    .text("Severe")
     .fontSize(12)
     .fontWeight(600);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

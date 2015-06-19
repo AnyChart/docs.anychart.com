@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
     // set stage
-    stage = anychart.graphics.create('container');
+    stage = anychart.graphics.create("container");
     
     // set layers
     var layer_1 = anychart.graphics.layer();
@@ -15,13 +15,13 @@ anychart.onDocumentReady(function() {
 
     // set data_1
     var data_1 = [
-        ['Class A' , 16000],
-        ['Class B' , 12000],
-        ['Class C' , 17000],
-        ['Class D' , 11000],
-        ['Class E' , 13000],
-        ['Class F' , 13000],
-        ['Class G' , 12000]
+        ["Class A" , 16000],
+        ["Class B" , 12000],
+        ["Class C" , 17000],
+        ["Class D" , 11000],
+        ["Class E" , 13000],
+        ["Class F" , 13000],
+        ["Class G" , 12000]
     ];
 
     // set series data
@@ -41,7 +41,7 @@ anychart.onDocumentReady(function() {
      
 
     // chart size and position
-    chart_1.bounds(0, 0, '23.5%', '17%');
+    chart_1.bounds(0, 0, "23.5%", "17%");
 
     // draw
     chart_1.container(layer_1).draw();
@@ -52,8 +52,8 @@ anychart.onDocumentReady(function() {
 
     // set series data
     var chart_2 = anychart.column(data_1);
-    chart_2.title('Sales in April');
-    chart_2.xAxis().title(' ');
+    chart_2.title("Sales in April");
+    chart_2.xAxis().title(" ");
     chart_2.yAxis().title(null);
     
     chart_2.yAxis().minorTicks(false);
@@ -62,7 +62,7 @@ anychart.onDocumentReady(function() {
     chart_2.background(null);
 
     // chart size and position
-    chart_2.bounds(0, 0, '50%', '70%');
+    chart_2.bounds(0, 0, "50%", "70%");
 
     // draw
     chart_2.container(layer_2).draw();

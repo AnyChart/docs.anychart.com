@@ -4,23 +4,23 @@
 anychart.onDocumentReady(function() {
   
   // set stage
-  stage = anychart.graphics.create('container');
+  stage = anychart.graphics.create("container");
   
   // create table
   var table = anychart.ui.table();
-  table.getRow(0).height('10%');
+  table.getRow(0).height("10%");
   
   // setting data
   var data_1 = anychart.data.set([
-    ['C', 5],
-    ['D', 21],
-    ['E', 34]
+    ["C", 5],
+    ["D", 21],
+    ["E", 34]
   ]);
   
   var data_2 = anychart.data.set([
-    ['C', 5],
-    ['D', 1],
-    ['E', 4]
+    ["C", 5],
+    ["D", 1],
+    ["E", 4]
   ]);
   
   // create charts
@@ -61,7 +61,7 @@ anychart.onDocumentReady(function() {
   
   
   // position text in the center of each cell
-  table.vAlign('center').hAlign('center');
+  table.vAlign("center").hAlign("center");
   
   // set table container and initiate draw
   table.container(stage).draw();

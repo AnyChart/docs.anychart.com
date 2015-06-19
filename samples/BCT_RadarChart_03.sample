@@ -21,7 +21,7 @@ anychart.onDocumentReady(function() {
   var chart = anychart.radar();
 
   // chart title
-  chart.title().text('Most Popular Ways to Celebrate Valentine’s Day');
+  chart.title().text("Most Popular Ways to Celebrate Valentine’s Day");
 
   // set start angle of the chart
   chart.startAngle(90);
@@ -36,5 +36,5 @@ anychart.onDocumentReady(function() {
   series.markers().enabled(true);
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

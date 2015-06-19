@@ -17,10 +17,10 @@ anychart.onDocumentReady(function() {
   
   chart.legend()
     .enabled(true)            // enables legend
-    .position('left')         // set legend position
-    .align('top')             // set legend align
-    .itemsLayout('vertical'); // set layout of legend items
+    .position("left")         // set legend position
+    .align("top")             // set legend align
+    .itemsLayout("vertical"); // set layout of legend items
   
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

@@ -13,11 +13,11 @@ anychart.onDocumentReady(function() {
   chart.range().from(0).to(750);        // maximum annual income
 
   // Set chart size and position settings
-  chart.bounds(0, 0, '100%', 125);
+  chart.bounds(0, 0, "100%", 125);
 
   // chart title
-  chart.title().text('Revenue');
+  chart.title().text("Revenue");
 
   // Initiate chart drawing
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

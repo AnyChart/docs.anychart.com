@@ -10,7 +10,7 @@ anychart.onDocumentReady(function() {
   chart = anychart.ganttResource();
 
   //set container id for the chart
-  chart.container('container');
+  chart.container("container");
 
   //set data for the chart
   chart.data(treeData);
@@ -22,29 +22,29 @@ anychart.onDocumentReady(function() {
   var dataGrid = chart.dataGrid();
 
   function formatDate(dateUnit) {
-  if (dateUnit < 10) dateUnit = '0' + dateUnit;
-  return dateUnit + '';
+  if (dateUnit < 10) dateUnit = "0" + dateUnit;
+  return dateUnit + "";
 }
 
 function customTextFormatter(item) {
   var periods = item.get(anychart.enums.GanttDataFields.PERIODS);
   if (periods) {
       var startTime = new Date(periods[0].start);
-    return formatDate(startTime.getUTCMonth() + 1) + '/' +
-        formatDate(startTime.getUTCDate()) + '/' + startTime.getUTCFullYear()
+    return formatDate(startTime.getUTCMonth() + 1) + "/" +
+        formatDate(startTime.getUTCDate()) + "/" + startTime.getUTCFullYear()
   }
   else
    return "";
 }
 
-dataGrid.column(0).title().text('№');
+dataGrid.column(0).title().text("№");
 
 dataGrid.column(1).width(100).textFormatter(function(item) {
-    return item.get('name');
-  }).title().text('Resources');
+    return item.get("name");
+  }).title().text("Resources");
 
 var custom = dataGrid.column(2);
-  custom.title('Start Date');
+  custom.title("Start Date");
   custom.width(90);
   custom.textFormatter(customTextFormatter);
 
@@ -58,11 +58,11 @@ var custom = dataGrid.column(2);
 function getData() {
   return [
     {
-      "id":'main_1',
+      "id":"main_1",
       "name": "Group 1",
     },
     {
-      "id":'main_2',
+      "id":"main_2",
       "name": "Group 2",
     },
     {

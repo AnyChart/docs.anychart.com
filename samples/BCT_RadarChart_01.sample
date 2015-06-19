@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
   var chart = anychart.radar();
 
   // chart title
-  chart.title().text('Spending');
+  chart.title().text("Spending");
 
   // series type and data set
   chart.line([
@@ -21,5 +21,5 @@ anychart.onDocumentReady(function() {
   ]);
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

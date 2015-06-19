@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
   
   // set stage
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
   
   // create table
   var table = anychart.ui.table();
@@ -15,33 +15,33 @@ anychart.onDocumentReady(function() {
     [
       null,
       null,
-      '2003 Sales',
-      '2004 Sales'
+      "2003 Sales",
+      "2004 Sales"
     ],[
-      'Winter',
-      'January',
-      '$10000',
-      '$12000'
-    ],[
-      null,
-      'February',
-      '$12000',
-      '$15000'
-    ],[
-      'Spring',
-      'March',
-      '$18000',
-      '$16000'
+      "Winter",
+      "January",
+      "$10000",
+      "$12000"
     ],[
       null,
-      'April',
-      '$11000',
-      '$15000'
+      "February",
+      "$12000",
+      "$15000"
+    ],[
+      "Spring",
+      "March",
+      "$18000",
+      "$16000"
     ],[
       null,
-      'May',
-      '$9000',
-      '$14000'
+      "April",
+      "$11000",
+      "$15000"
+    ],[
+      null,
+      "May",
+      "$9000",
+      "$14000"
     ]
   ]);
   
@@ -55,9 +55,9 @@ anychart.onDocumentReady(function() {
   table.getCol(1).width(70).fontWeight(900);    // Set width 70 px for the second column and bold the text
   
   //set border style
-  table.cellBorder('#B8B8B8');
+  table.cellBorder("#B8B8B8");
   
-  table.vAlign('center').hAlign('center').fontSize(12);
+  table.vAlign("center").hAlign("center").fontSize(12);
   
   // set table container and initiate draw
   table.container(stage).draw();

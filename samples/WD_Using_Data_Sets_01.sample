@@ -20,7 +20,7 @@ anychart.onDocumentReady(function() {
   var pieChart = anychart.pieChart(dataSet);
 
   // set container id for the chart  
-  pieChart.container('container');
+  pieChart.container("container");
 
   // initiate chart drawing
   pieChart.draw();

@@ -4,19 +4,19 @@
 
 anychart.onDocumentReady(function() {
   
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
   anychart.ui.background()
-    .fill('none')
-    .stroke('orange', 15, null, 'round')
+    .fill("none")
+    .stroke("orange", 15, null, "round")
     .bounds(anychart.math.rect(22, 18, stage.width() - 44, stage.height() / 3 - 22))
     .container(stage)
     .draw();
   anychart.ui.background()
-    .fill('none')
+    .fill("none")
     .stroke({
-        color: 'grey',
+        color: "grey",
         thickness:15,
-        lineJoin: 'bevel'
+        lineJoin: "bevel"
     })
     .bounds(anychart.math.rect(22, stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 - 22))
     .container(stage)
@@ -25,10 +25,10 @@ anychart.onDocumentReady(function() {
   line
     .line([1, 1.8, 1.1, 2])
     .stroke({
-        color: 'blue',
+        color: "blue",
         thickness: 15,
-        lineJoin: 'bevel',
-        lineCap: 'round'
+        lineJoin: "bevel",
+        lineCap: "round"
     })
     .bounds(anychart.math.rect(22, 2*stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 -20));
   

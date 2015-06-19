@@ -5,18 +5,18 @@ anychart.onDocumentReady(function() {
 
   // setting data
   var data = anychart.data.set([
-    ['January', 200, 180],
-    ['February', 289, 290],
-    ['March', 197, 370],
-    ['April', 210, 400],
-    ['May', 220, 120],
-    ['June', 215, 214],
-    ['July', 209, 153],
-    ['August', 357, 257],
-    ['September', 333, 183],
-    ['October', 218, 236],
-    ['November', 289, 147],
-    ['December', 266, 368]
+    ["January", 200, 180],
+    ["February", 289, 290],
+    ["March", 197, 370],
+    ["April", 210, 400],
+    ["May", 220, 120],
+    ["June", 215, 214],
+    ["July", 209, 153],
+    ["August", 357, 257],
+    ["September", 333, 183],
+    ["October", 218, 236],
+    ["November", 289, 147],
+    ["December", 266, 368]
   ]);
 
   // data remapping
@@ -25,7 +25,7 @@ anychart.onDocumentReady(function() {
 
   var chart = anychart.columnChart();
 
-  chart.title().enabled(true).text('Stagger Labels');
+  chart.title().enabled(true).text("Stagger Labels");
 
   // series data
   chart.column(Sales2003);
@@ -35,5 +35,5 @@ anychart.onDocumentReady(function() {
   chart.xAxis().staggerMode(true);
   chart.xAxis().staggerLines(2);
 
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

@@ -9,7 +9,7 @@ anychart.onDocumentReady(function() {
     '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
       // set chart type
       '<chart type="line" '+                              // var chart = anychart.line();
-      'container="container">'+                           // chart.container('container');
+      'container="container">'+                           // chart.container("container");
 
         // set intervals
         '<y_scale><ticks '+                               // chart.yScale().ticks()
@@ -25,12 +25,12 @@ anychart.onDocumentReady(function() {
 
         // y axes settings
         '<y_axes>'+                                       // chart.yAxis().title()
-        '<axis title="Basic Y Axis"/>'+                   //   .text('Basic Y Axis');
+        '<axis title="Basic Y Axis"/>'+                   //   .text("Basic Y Axis");
         '<axis '+                                         // chart.yAxis(1)
-        'orientation="right" '+                           //   .orientation('right')
+        'orientation="right" '+                           //   .orientation("right")
         'scale="0">'+                                     //   .scale(newScale)
         '<title '+                                        //   .title()
-        'text="Extra Y Axis"/></axis></y_axes>'+          //     .text('Extra Y Axis');
+        'text="Extra Y Axis"/></axis></y_axes>'+          //     .text("Extra Y Axis");
 
         '<series_list><series series_type="column">'+     // chart.column([
           '<data><point x="A" value="637166"/>'+          //     ["A", 637166],

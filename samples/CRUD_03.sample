@@ -6,18 +6,18 @@ anychart.onDocumentReady(function() {
 
   // data
   var dataSet = anychart.data.set([
-    {x: 'P1', value: 10},
-    {x: 'P2', value: 9},
-    {x: 'P3', value: 15},
-    {x: 'P4', value: 10},
-    {x: 'P5', value: 15},
-    {x: 'P6', value: 13}
+    {x: "P1", value: 10},
+    {x: "P2", value: 9},
+    {x: "P3", value: 15},
+    {x: "P4", value: 10},
+    {x: "P5", value: 15},
+    {x: "P6", value: 13}
   ]);
 
   // set chart type
   chart = anychart.columnChart();
 
-  chart.title().text('Click on Column to Add a 5 to it\'s value ');
+  chart.title().text("Click on Column to Add a 5 to it\"s value ");
 
   // set data
   var column = chart.column(dataSet);
@@ -35,12 +35,12 @@ anychart.onDocumentReady(function() {
     function(e) {
         view.set(
             e.pointIndex,                       // get index of clicked column
-            'value',                            // get parameter to update
-            view.get(e.pointIndex, 'value') + 5 // parameter updating
+            "value",                            // get parameter to update
+            view.get(e.pointIndex, "value") + 5 // parameter updating
         );
     }
   );
 
   // set container and draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

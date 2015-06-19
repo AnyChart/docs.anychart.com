@@ -8,10 +8,10 @@ anychart.onDocumentReady(function() {
   var chart = anychart.polar();
 
   // chart title
-  chart.title().text('Axes labels settings');
+  chart.title().text("Axes labels settings");
 
   // set background
-  chart.background().enabled(true).fill('#EEEEEE');
+  chart.background().enabled(true).fill("#EEEEEE");
 
   chart.xScale()      // x scale settings
     .maximum(360)     // x scale maximum value
@@ -28,7 +28,7 @@ anychart.onDocumentReady(function() {
   chart.yAxis().labels().offsetX(12).textFormatter(function(){
     var value = this.value.toFixed(1);
     if (value<0)                                            // check if axis value is negative
-      value = '(' + (this.value * (-1)).toFixed(1) + ')';   // set negative values into brackets and minus sign
+      value = "(" + (this.value * (-1)).toFixed(1) + ")";   // set negative values into brackets and minus sign
      return value.toString();
   });
 
@@ -36,7 +36,7 @@ anychart.onDocumentReady(function() {
     .padding(5)                 // set labels padding
     .fontWeight(900)            // set font weight for labels
     .textFormatter(function(){
-      return this.value + '°';  // add '°' to every label of x axis
+      return this.value + "°";  // add '°' to every label of x axis
     });
 
   // set data for first series
@@ -403,7 +403,7 @@ anychart.onDocumentReady(function() {
     {x: 359, value: -0.017452406},
     {x: 360, value: -2.4503E-16}
   ])
-    .stroke('2 #11aaff')            // area border color
+    .stroke("2 #11aaff")            // area border color
     .markers().enabled(false);      // disable markers
 
   // set data for the second series
@@ -772,8 +772,8 @@ anychart.onDocumentReady(function() {
   ]).markers().enabled(false);
 
   // grid settings
-  chart.grid(0).evenFill('white').oddFill('white');
+  chart.grid(0).evenFill("white").oddFill("white");
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

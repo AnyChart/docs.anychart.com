@@ -19,34 +19,34 @@ anychart.onDocumentReady(function() {
   table.contents([
     [
       null,
-      'February',
-      'June'
+      "February",
+      "June"
     ],[
-      'EUR/USD',
+      "EUR/USD",
       chart1,
       chart4
     ],[
-      'GBP/USD',
+      "GBP/USD",
       chart2,
       chart5
     ],[
-      'CNY/USD',
+      "CNY/USD",
       chart3,
       chart6
     ]
   ]);
 
-  table.getRow(0).height('25%');  // Get first row and set height 25%
+  table.getRow(0).height("25%");  // Get first row and set height 25%
   table.getCol(0).width(70);      // Get first column and set width 70 px
 
   table
-    .cellBorder('#B8B8B8')        // Adjust table border
-    .vAlign('center')             // Position text into the center
-    .hAlign('center')             // Position text into the center
+    .cellBorder("#B8B8B8")        // Adjust table border
+    .vAlign("center")             // Position text into the center
+    .hAlign("center")             // Position text into the center
     .fontWeight(900)              // Bold text
     .height(100)                  // Set table height
     .width(200);                  // Set table width
 
   // set table container and initiate draw
-  table.container('container').draw();
+  table.container("container").draw();
 });

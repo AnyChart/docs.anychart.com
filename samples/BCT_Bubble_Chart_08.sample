@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
   chart = anychart.scatter();
 
   // set title
-  chart.title().text('Visualization');
+  chart.title().text("Visualization");
   
   // define chart type and set visualization
   chart.bubble([
@@ -18,18 +18,18 @@ anychart.onDocumentReady(function() {
   ])
     .minimumSize(10)                              // maximum size of a bubble
     .maximumSize(30)                              // minimum size of a bubble
-    .fill('gold')                                 // bubbles inner color
+    .fill("gold")                                 // bubbles inner color
     .stroke("Rgb(86,86,26)", 4)                   // bubbles border color
     .hoverStroke("darkred", 6)                    // border color on mouse over
-    .hatchFill('diagonalbrick', 'gray')           // setting hatches 
-    .hoverHatchFill('diagonalbrick', 'darkred');  // hatches settings on mouse over
+    .hatchFill("diagonalbrick", "gray")           // setting hatches 
+    .hoverHatchFill("diagonalbrick", "darkred");  // hatches settings on mouse over
 
   // adjust axes settings
-  chart.yAxis().title().text('Sales');
+  chart.yAxis().title().text("Sales");
   chart.xAxis()
     .drawFirstLabel(false)
     .drawLastLabel(false)
-    .title().text('Products');
+    .title().text("Products");
   
   chart.xScale()
     .minimum(0)
@@ -37,5 +37,5 @@ anychart.onDocumentReady(function() {
     .ticks().interval(1);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

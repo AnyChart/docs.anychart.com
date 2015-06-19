@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
   chart = anychart.scatter();
 
   // set title
-  chart.title().text('Scales Management');
+  chart.title().text("Scales Management");
   
   // invert Y scale
   chart.yScale().inverted(true);
@@ -21,11 +21,11 @@ anychart.onDocumentReady(function() {
   ]).minimumSize(10).maximumSize(30);
   
   // adjust axes settings
-  chart.yAxis().title().text('Sales');
+  chart.yAxis().title().text("Sales");
   chart.xAxis()
     .drawFirstLabel(false)
     .drawLastLabel(false)
-    .title().text('Products');
+    .title().text("Products");
 
   chart.xScale()
     .minimum(0)
@@ -33,5 +33,5 @@ anychart.onDocumentReady(function() {
     .ticks().interval(1);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

@@ -4,9 +4,9 @@
 
 anychart.onDocumentReady(function() {
 
-    stage = anychart.graphics.create('container');
+    stage = anychart.graphics.create("container");
 
     stage
         .rect(0, 0, stage.width(), stage.height())
-        .fill(['red', 'yellow']);
+        .fill(["red", "yellow"]);
 });

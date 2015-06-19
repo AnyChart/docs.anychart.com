@@ -8,13 +8,13 @@ anychart.onDocumentReady(function() {
   var chart = anychart.scatter();
 
   // set title
-  chart.title().text('Axes Management');
+  chart.title().text("Axes Management");
 
   // draw axes and set titles and adjust position
-  chart.xAxis().title('Year');
-  chart.yAxis().title('Box office');
-  chart.xAxis().orientation('top');
-  chart.yAxis().orientation('right');
+  chart.xAxis().title("Year");
+  chart.yAxis().title("Box office");
+  chart.xAxis().orientation("top");
+  chart.yAxis().orientation("right");
   
   // define chart and set data
   chart.marker([
@@ -33,5 +33,5 @@ anychart.onDocumentReady(function() {
     .ticks().interval(1);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

@@ -6,9 +6,9 @@ anychart.onDocumentReady(function() {
 
   var chart = anychart.lineChart();
 
-  chart.container('container');
+  chart.container("container");
 
-  chart.title().text('Extra Axes Units Comparison Sample');
+  chart.title().text("Extra Axes Units Comparison Sample");
 
   // setting xScale settings
   chart.xScale(anychart.scales.linear());
@@ -24,32 +24,32 @@ anychart.onDocumentReady(function() {
 
   // adding and adjusting extra Y axis
   var extraYAxis = chart.yAxis(1);
-  extraYAxis.orientation('right').scale(extraYScale);
+  extraYAxis.orientation("right").scale(extraYScale);
 
   // setting yAxes titles
-  chart.yAxis().title().text('Debt');
-  chart.yAxis(1).title().text('GDP');
+  chart.yAxis().title().text("Debt");
+  chart.yAxis(1).title().text("GDP");
 
   // yAxes labels text adjusting
   chart.yAxis().labels().textFormatter(function(){
     var value = (this.value/1000000000000);
     if (value > 0)
-      value = (this.value/1000000000000) + ' 000 bil.';
-    return '$' + value;
+      value = (this.value/1000000000000) + " 000 bil.";
+    return "$" + value;
   });
   chart.yAxis(1).labels().textFormatter(function(){
-    return this.value + '%';
+    return this.value + "%";
   });
 
   // disable x axis title
   chart.xAxis().title().enabled(false);
 
   // enabling x axis stagger mode
-  chart.xAxis().staggerMode(true).labels().width(52).hAlign('center');
+  chart.xAxis().staggerMode(true).labels().width(52).hAlign("center");
 
   // set Grid settings
-  chart.grid(0).stroke('gray 0.8').layout('horizontal');
-  chart.grid(1).stroke('gray 0.8').layout('vertical');
+  chart.grid(0).stroke("gray 0.8").layout("horizontal");
+  chart.grid(1).stroke("gray 0.8").layout("vertical");
 
   // disable minorGrid
   chart.minorGrid(null);
@@ -198,33 +198,33 @@ anychart.onDocumentReady(function() {
     [2004, 7379052696330],
     [2005, 7932709661723],
     [2006, 8506973899215],
-    { x: 2007, value: 9350102000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1', stroke: 'black', hoverStroke: 'black'},
-    { x: 2008, value: 9948640000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1', stroke: 'black', hoverStroke: 'black'},
-    { x: 2009, value: 10543521000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1', stroke: 'black', hoverStroke: 'black'},
-    { x: 2010, value: 11137297000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1', stroke: 'black', hoverStroke: 'black'}
+    { x: 2007, value: 9350102000000, hatchFill: "vertical", fill: "white 0.1", hoverFill: "white 0.1", stroke: "black", hoverStroke: "black"},
+    { x: 2008, value: 9948640000000, hatchFill: "vertical", fill: "white 0.1", hoverFill: "white 0.1", stroke: "black", hoverStroke: "black"},
+    { x: 2009, value: 10543521000000, hatchFill: "vertical", fill: "white 0.1", hoverFill: "white 0.1", stroke: "black", hoverStroke: "black"},
+    { x: 2010, value: 11137297000000, hatchFill: "vertical", fill: "white 0.1", hoverFill: "white 0.1", stroke: "black", hoverStroke: "black"}
   ]);
 
   // adjusting data visualisation
 
   var lineSeries = chart.line(firstSeries);
   lineSeries.yScale(extraYScale);
-  lineSeries.markers().size(1).fill('blue 0.5').stroke(null);
-  lineSeries.hoverMarkers().size(4).fill('blue 0.7').stroke('blue');
-  lineSeries.stroke('blue', 3);
+  lineSeries.markers().size(1).fill("blue 0.5").stroke(null);
+  lineSeries.hoverMarkers().size(4).fill("blue 0.7").stroke("blue");
+  lineSeries.stroke("blue", 3);
   lineSeries.tooltip().enabled(true).contentFormatter(function() {
-    return this.x + ' Year \n' + 'GDP - ' + this.value + '%' ;
+    return this.x + " Year \n" + "GDP - " + this.value + "%" ;
   });
 
   var columnSeries = chart.column(secondSeries);
-  columnSeries.fill(['red', 'darkred'], -90)
-    .stroke('black', 1)
-    .hoverStroke('white', 1)
-    .hoverFill(['red', 'darkred'], -90);
+  columnSeries.fill(["red", "darkred"], -90)
+    .stroke("black", 1)
+    .hoverStroke("white", 1)
+    .hoverFill(["red", "darkred"], -90);
   columnSeries.tooltip().enabled(true).contentFormatter(function() {
     var value = (this.value/1000000000).toFixed(0);
     if (value > 999)
-      value = ('' + value/1000).replace('.', ' ');
-    return this.x + ' Year \n' + 'Debt - $' + value + ' bil.' ;
+      value = ("" + value/1000).replace(".", " ");
+    return this.x + " Year \n" + "Debt - $" + value + " bil." ;
   });
 
   chart.draw();

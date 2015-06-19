@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
   var chart = anychart.areaChart();
 
   // chart title
-  chart.title().text('Range Spline Area Chart');
+  chart.title().text("Range Spline Area Chart");
 
   // set axes title
   chart.xAxis().title().enabled(false);
@@ -23,5 +23,5 @@ anychart.onDocumentReady(function() {
   ]).markers().enabled(true);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

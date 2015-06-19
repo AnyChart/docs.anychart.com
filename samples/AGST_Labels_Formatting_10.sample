@@ -5,10 +5,10 @@
 anychart.onDocumentReady(function() {
   var chart = anychart.barChart();
   
-  chart.container('container');
+  chart.container("container");
 
   // setting title
-  chart.title().text('Y axis Labels stick to the right');
+  chart.title().text("Y axis Labels stick to the right");
 
   // seting data
   chart.bar([
@@ -25,18 +25,18 @@ anychart.onDocumentReady(function() {
     var value = this.value;
     if (value>1000000){
       if (value>999999999){
-        value = value/1000000000 + ' B ';
+        value = value/1000000000 + " B ";
       }
       else{
-        value = value/1000000 + ' M ';
+        value = value/1000000 + " M ";
       }
     }
     return value;
   });
   chart.xAxis().labels()
-    .hAlign('center')
+    .hAlign("center")
     .width(60)
-    .hAlign('right');
+    .hAlign("right");
 
   chart.yAxis().minorTicks().enabled(false);
   chart.xAxis().staggerLines(1);

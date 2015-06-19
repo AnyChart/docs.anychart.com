@@ -15,13 +15,13 @@ anychart.onDocumentReady(function() {
   chart.range(4).from(250).to(300);
 
   // Set chart container
-  chart.container('container');
+  chart.container("container");
 
   // Set chart size and position settings
-  chart.bounds(0, 0, '100%', 125);
+  chart.bounds(0, 0, "100%", 125);
 
   // Set title
-  chart.title().text('Ranges');
+  chart.title().text("Ranges");
 
   // Initiate chart drawing
   chart.draw();

@@ -12,10 +12,10 @@ anychart.onDocumentReady(function() {
 
 		//gauge settings
     gauge.data(dataSet);
-    gauge.padding('10%');
+    gauge.padding("10%");
     gauge.startAngle(270);
     gauge.sweepAngle(180);
-    gauge.fill('black');
+    gauge.fill("black");
    
 		//axis settings
     var axis = gauge.axis()
@@ -31,25 +31,25 @@ anychart.onDocumentReady(function() {
 
 		//ticks settings
     axis.ticks()
-        .type('trapezoid')
-        .fill('white')
-        .length('9');
+        .type("trapezoid")
+        .fill("white")
+        .length("9");
 
 		//minor ticks settings
     axis.minorTicks()
         .enabled(true)
-        .fill('#999999')
-        .length('1.5');
+        .fill("#999999")
+        .length("1.5");
         
         //labels settings
     axis.labels()
-        .fontSize('24px')
-        .fontColor('white');
+        .fontSize("24px")
+        .fontColor("white");
         
         //second axis settings
     var axis_1 = gauge.axis(1)
         .radius(55)
-        .fill('white')
+        .fill("white")
         .width(0);
 
 		//second scale settings
@@ -61,53 +61,53 @@ anychart.onDocumentReady(function() {
         
 		//second ticks settings
     axis_1.ticks()
-        .type('trapezoid')
-        .fill('white')
-        .length('15');
+        .type("trapezoid")
+        .fill("white")
+        .length("15");
 
 		//second minor ticks settings
     axis_1.minorTicks()
         .enabled(true)
-        .fill('#999999')
-        .length('5');
+        .fill("#999999")
+        .length("5");
         
         //labels 2 settings
     axis_1.labels()
-        .fontSize('18px')
-        .fontColor('white');
+        .fontSize("18px")
+        .fontColor("white");
         
         //needle
     gauge.needle(0)
         .enabled(true)
-        .startRadius('0%')
-        .endRadius('80%')
+        .startRadius("0%")
+        .endRadius("80%")
         .middleRadius(0)
-        .startWidth('1%')
-        .endWidth('1%')
-        .fill('white')
-        .hatchFill({type:'percent60'})
-        .stroke('none')
-        .middleWidth('1%');
+        .startWidth("1%")
+        .endWidth("1%")
+        .fill("white")
+        .hatchFill({type:"percent60"})
+        .stroke("none")
+        .middleWidth("1%");
         
         //marker
     gauge.marker(0)
         .axisIndex(1)
         .dataIndex(1)
-        .fill('white')
-        .hatchFill({type:'verticalbrick'})
-        .stroke('null')
+        .fill("white")
+        .hatchFill({type:"verticalbrick"})
+        .stroke("null")
         .size(7)
-        .type('triangledown')
-        .position('outside')
+        .type("triangledown")
+        .position("outside")
         .radius(55);
     
     //bar
     gauge.bar(0)
         .axisIndex(1)
-        .position('i')
-        .fill('white')
-        .hatchFill({type:'verticalbrick'})
-        .stroke('null')
+        .position("i")
+        .fill("white")
+        .hatchFill({type:"verticalbrick"})
+        .stroke("null")
         .dataIndex(1)
         .width(3)
         .radius(60)
@@ -115,13 +115,13 @@ anychart.onDocumentReady(function() {
         
     //gap
     gauge.cap()
-        .radius('3%');
+        .radius("3%");
         
     //gauge label
     gauge.label()
-        .text('ALBANY')
-        .fontColor('white')
-        .anchor('center') //set the position of the label
+        .text("ALBANY")
+        .fontColor("white")
+        .anchor("center") //set the position of the label
         .fontSize(45)
         .zIndex(10);
         
@@ -129,15 +129,15 @@ anychart.onDocumentReady(function() {
     gauge.range({
       from: 0,
       to: 120,
-      fill: {keys: ['white', '#888888', '#333333' , 'black'], angle: -90},//remove angle after resolving the ticket
-      position: 'i',
+      fill: {keys: ["white", "#888888", "#333333" , "black"], angle: -90},//remove angle after resolving the ticket
+      position: "i",
       radius: 100,
-      endSize: '3%',
-      startSize:'3%',
+      endSize: "3%",
+      startSize:"3%",
       zIndex: 10
   });
 
 		//draw the chart
-    gauge.container('container').draw();
+    gauge.container("container").draw();
 });
 

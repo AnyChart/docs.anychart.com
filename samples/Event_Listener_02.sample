@@ -8,7 +8,7 @@ anychart.onDocumentReady(function() {
     chart = anychart.barChart();
 
     // chart title
-    chart.title().text('Range Bar Chart');
+    chart.title().text("Range Bar Chart");
 
     // set axes title
     chart.xAxis().title().enabled(false);
@@ -32,10 +32,10 @@ anychart.onDocumentReady(function() {
     ]);
     
     //adding a listener 
-    range.listenOnce('mouseover',function(){
-       range.fill('black');
+    range.listenOnce("mouseover",function(){
+       range.fill("black");
     });    
 
     // draw
-    chart.container('container').draw();
+    chart.container("container").draw();
 });

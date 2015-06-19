@@ -20,12 +20,12 @@ anychart.onDocumentReady(function() {
         minorTicks: {interval: 2} }},       // extraYScale.minorTicks().interval(2);
   
       // y axes settings
-      yAxes: [{title: "Basic Y Axis"        // chart.yAxis().title().text('Basic Y Axis');
+      yAxes: [{title: "Basic Y Axis"        // chart.yAxis().title().text("Basic Y Axis");
       },{                                   // chart.yAxis(1)
-        orientation: "right",               //   .orientation('right')
+        orientation: "right",               //   .orientation("right")
         scale: "customYScale",              //   .scale(customYScale)
         title:{                             //   .title()
-          text: "Extra Y Axis"}}],          //     .text('Extra Y Axis');
+          text: "Extra Y Axis"}}],          //     .text("Extra Y Axis");
   
       series:[{seriesType: "column",        // chart.column([
         data: [{x: "A", value: 637166},     //   ["A", 637166],
@@ -42,6 +42,6 @@ anychart.onDocumentReady(function() {
           {x: "E", value: 35}],             //   ["E", 35]
         yScale: "customYScale"}],           // ]).yScale(customYScale);
   
-      container: "container"}}              // chart.container('container')
+      container: "container"}}              // chart.container("container")
   ).draw();
 });

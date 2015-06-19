@@ -27,10 +27,10 @@ anychart.onDocumentReady(function() {
   var chart = anychart.radar();
 
   // chart title
-  chart.title().text('Olympic medals Sydney 2000 (most recent) by country');
+  chart.title().text("Olympic medals Sydney 2000 (most recent) by country");
 
   // set background
-  chart.background().enabled(true).fill('#EEEEEE');
+  chart.background().enabled(true).fill("#EEEEEE");
 
   // disable minor ticks
   chart.yAxis().enabled(true).minorTicks().enabled(false);
@@ -43,7 +43,7 @@ anychart.onDocumentReady(function() {
 
       // check label width
       if (longValue.length > 3){
-        myValue = longValue.substr(0, 3) + '...';
+        myValue = longValue.substr(0, 3) + "...";
       }
       else{
         myValue = longValue;
@@ -58,49 +58,49 @@ anychart.onDocumentReady(function() {
 
   // series visual settings
   goldSeries
-    .stroke('3 gold')
+    .stroke("3 gold")
     .tooltip()
       .contentFormatter(function(){
-        return this.x + '\nGold: ' + this.value;
+        return this.x + "\nGold: " + this.value;
       })
       .background()
-        .fill('gold 0.7');
+        .fill("gold 0.7");
   goldSeries
     .tooltip()
       .content()
-      .fontColor('black');
+      .fontColor("black");
 
   silverSeries = chart.line(silver);
   silverSeries
-    .stroke('3 silver')
+    .stroke("3 silver")
     .tooltip()
       .contentFormatter(function(){
-        return this.x + '\nGold: ' + this.value;
+        return this.x + "\nGold: " + this.value;
       })
       .background()
-        .fill('silver 0.7');
+        .fill("silver 0.7");
   goldSeries
     .tooltip()
       .content()
-        .fontColor('black');
+        .fontColor("black");
 
   bronzeSeries = chart.line(bronze);
   bronzeSeries
-    .stroke('3 #cc8800')
+    .stroke("3 #cc8800")
     .tooltip()
       .contentFormatter(function(){
-        return this.x + '\nGold: ' + this.value;
+        return this.x + "\nGold: " + this.value;
       })
       .background()
-        .fill('#cc8800 0.7');
+        .fill("#cc8800 0.7");
   bronzeSeries
     .tooltip()
       .content()
-        .fontColor('black');
+        .fontColor("black");
 
   // grid settings
-  chart.grid(0).evenFill('white').oddFill('white');
+  chart.grid(0).evenFill("white").oddFill("white");
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

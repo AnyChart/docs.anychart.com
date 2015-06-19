@@ -3,7 +3,7 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-    var stage = anychart.graphics.create('container');
+    var stage = anychart.graphics.create("container");
     
   //create charts
   chart1 = anychart.sparkline();
@@ -14,8 +14,8 @@ anychart.onDocumentReady(function() {
   chart2.container(stage);
   
   //setting the titles
-  chart1.title('EUR/USD');
-  chart2.title('GBP/USD');
+  chart1.title("EUR/USD");
+  chart2.title("GBP/USD");
 
   //create data for both charts
   chart1.data([1.1371,1.1341,1.1132,1.1381,1.1371]);
@@ -26,8 +26,8 @@ anychart.onDocumentReady(function() {
   chart2.bounds(0, 25, 200, 20);
   
   //set series type
-  chart1.type('area');
-  chart2.type('area');
+  chart1.type("area");
+  chart2.type("area");
   
   //initiate chart drawing
   chart1.draw();

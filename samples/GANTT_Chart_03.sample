@@ -10,7 +10,7 @@ anychart.onDocumentReady(function() {
   chart = anychart.ganttResource();
 
   //set container id for the chart
-  chart.container('container');
+  chart.container("container");
 
   //set data for the chart
   chart.data(treeData);
@@ -31,11 +31,11 @@ anychart.onDocumentReady(function() {
 function getData() {
   return [
     {
-      "id":'404',
+      "id":"404",
       "name": "office 404",
     },
     {
-      "id":'409',
+      "id":"409",
       "name": "office 409",
     },
     {
@@ -53,7 +53,7 @@ function getData() {
       "name": "Server 2",
       "parent": "404",
       "periods": [
-        {"id": "2_1", "fill": "none", "stroke": {'color': 'green'}, "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 1, 22)},
+        {"id": "2_1", "fill": "none", "stroke": {"color": "green"}, "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 1, 22)},
         {"id": "2_2" , "start": Date.UTC(2013, 1, 25), "end": Date.UTC(2013, 2, 5)}
       ]
     },

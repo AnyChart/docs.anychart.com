@@ -14,6 +14,6 @@ anychart.onDocumentReady(function() {
   gauge.data(dataSet);
   
   //draw the chart
-  gauge.container('container').draw();
+  gauge.container("container").draw();
 
 });

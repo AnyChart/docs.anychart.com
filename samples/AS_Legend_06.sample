@@ -19,13 +19,13 @@ anychart.onDocumentReady(function() {
     .enabled(true)            // enables legend
     .height(140)              // set legend height
     .width(95)                // set legend width
-    .position('left')         // set legend position
-    .align('top')             // set legend align
+    .position("left")         // set legend position
+    .align("top")             // set legend align
     .padding(10)              // set padding 10px
-    .itemsLayout('vertical')  // legend items layout
+    .itemsLayout("vertical")  // legend items layout
     .paginator()              // paginator settings
-      .orientation('bottom'); // place paginator at the bottom of a legend
+      .orientation("bottom"); // place paginator at the bottom of a legend
   
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

@@ -21,15 +21,15 @@ anychart.onDocumentReady(function() {
   var chart = anychart.radar();
 
   // chart title
-  chart.title().text('Radar Chart with Logarithmic Scale');
+  chart.title().text("Radar Chart with Logarithmic Scale");
 
   var logScale = anychart.scales.log();     // create logarithmic scale
   logScale.minimum(10).maximum(100000);     // set minimum and maximum value for the scale
   chart.yScale(logScale);                   // set logarithmic scale as y scale for the chart
 
   // set data and adjust visualisation
-  chart.area(dataSet).fill('lightblue 0.7').stroke('blue');
+  chart.area(dataSet).fill("lightblue 0.7").stroke("blue");
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

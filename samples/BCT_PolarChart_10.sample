@@ -30,10 +30,10 @@ anychart.onDocumentReady(function() {
   var chart = anychart.polar();
 
   // chart title
-  chart.title().text('Disable First & Last Labels of Y Axis');
+  chart.title().text("Disable First & Last Labels of Y Axis");
 
   // set background
-  chart.background().enabled(true).fill('#EEEEEE');
+  chart.background().enabled(true).fill("#EEEEEE");
 
   // set ticks interval for y scale
   chart.xScale().maximum(24).ticks().interval(4);
@@ -45,11 +45,11 @@ anychart.onDocumentReady(function() {
         .enabled(false);    // hide minor ticks
 
   // set data and visual appearance
-  chart.area(dataSet).fill('lightblue 0.7');
+  chart.area(dataSet).fill("lightblue 0.7");
 
   // set grid visual appearance
-  chart.grid(0).evenFill('white').oddFill('white');
+  chart.grid(0).evenFill("white").oddFill("white");
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

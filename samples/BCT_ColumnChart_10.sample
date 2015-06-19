@@ -6,8 +6,8 @@ anychart.onDocumentReady(function() {
 
   // data
   var data = anychart.data.set([
-    ['First quarter', 10000, 12000, 18000, 11000, 9000],
-    ['Second quarter', 12000, 15000, 16000, 13000, 19000]
+    ["First quarter", 10000, 12000, 18000, 11000, 9000],
+    ["Second quarter", 12000, 15000, 16000, 13000, 19000]
   ]);
 
   // map data for the each series
@@ -22,35 +22,35 @@ anychart.onDocumentReady(function() {
 
    // set first series data and color
   chart.column(dataMap1)
-    .fill('#3333FF')
-    .name('John');
+    .fill("#3333FF")
+    .name("John");
 
   // set second series data and color
   chart.column(dataMap2)
-    .fill('#660099')
-    .name('Jake');
+    .fill("#660099")
+    .name("Jake");
 
   // set third series data and color
   chart.column(dataMap3)
-    .fill('#CC6600')
-    .name('Peter');
+    .fill("#CC6600")
+    .name("Peter");
 
   // set forth series data and color
   chart.column(dataMap4)
-    .fill('#FFCC33')
-    .name('James');
+    .fill("#FFCC33")
+    .name("James");
 
   // set fifth series data and color
   chart.column(dataMap5)
-    .fill('#00aa00')
-    .name('Mary');
+    .fill("#00aa00")
+    .name("Mary");
 
   // set title
-  chart.title().text('Colorizing');
+  chart.title().text("Colorizing");
 
   //set chart legend settings
   chart.legend().enabled(true);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

@@ -5,32 +5,32 @@ anychart.onDocumentReady(function() {
 
     // data
     var data = anychart.data.set([
-      ['January', 10000],
-      ['February', 12000],
+      ["January", 10000],
+      ["February", 12000],
       // set and adjust marker
       {
-          x: 'March', 
+          x: "March", 
           value: 18000, 
-          marker:{type:'star5', fill:'gold', size: 12, enabled: true},
+          marker:{type:"star5", fill:"gold", size: 12, enabled: true},
           hoverMarker: {size: 22}
       },
-      ['April', 11000],
-      ['May', 9000]
+      ["April", 11000],
+      ["May", 9000]
     ]);
 
     // chart type
     chart = anychart.areaChart();
 
     // title
-    chart.title().text('Markers');
+    chart.title().text("Markers");
 
     // set axes titles
-    chart.xAxis().title().text('Month');
-    chart.yAxis().title().text('Sales');
+    chart.xAxis().title().text("Month");
+    chart.yAxis().title().text("Sales");
 
     // define chart type
     chart.splineArea(data);
 
     // draw chart
-    chart.container('container').draw();
+    chart.container("container").draw();
 });

@@ -21,7 +21,7 @@ anychart.onDocumentReady(function() {
     var chart = anychart.financialChart();
 
     // chart title
-    chart.title().text('Set Colors');
+    chart.title().text("Set Colors");
 
     // adjust x scale
     chart.xScale()
@@ -31,12 +31,12 @@ anychart.onDocumentReady(function() {
             .interval(1);
 
     // set series data, adjust color and position
-    chart.ohlc(seriesData_1).xPointPosition(0.5).pointWidth('60%').color('#BCBD46');
-    chart.ohlc(seriesData_2).xPointPosition(0.5).pointWidth('60%').color('#C7894A');
-    chart.ohlc(seriesData_3).xPointPosition(0.5).pointWidth('60%').color('#B04A8A');
-    chart.ohlc(seriesData_4).xPointPosition(0.5).pointWidth('60%').color('#5EBD9B');
-    chart.ohlc(seriesData_5).xPointPosition(0.5).pointWidth('60%').color('#4A55C7');
+    chart.ohlc(seriesData_1).xPointPosition(0.5).pointWidth("60%").color("#BCBD46");
+    chart.ohlc(seriesData_2).xPointPosition(0.5).pointWidth("60%").color("#C7894A");
+    chart.ohlc(seriesData_3).xPointPosition(0.5).pointWidth("60%").color("#B04A8A");
+    chart.ohlc(seriesData_4).xPointPosition(0.5).pointWidth("60%").color("#5EBD9B");
+    chart.ohlc(seriesData_5).xPointPosition(0.5).pointWidth("60%").color("#4A55C7");
 
     // draw
-    chart.container('container').draw();
+    chart.container("container").draw();
 });

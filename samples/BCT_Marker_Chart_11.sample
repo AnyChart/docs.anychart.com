@@ -23,46 +23,46 @@ anychart.onDocumentReady(function() {
 
   // set data for each series and adjust hatches and marker types
   chart.marker(data1)
-    .hatchFill('diagonalcross')
+    .hatchFill("diagonalcross")
     .hoverSize(30)
     .size(20)
-    .color('#EEEEEE')
-    .type('star5');
+    .color("#EEEEEE")
+    .type("star5");
   chart.marker(data2)
     .hoverSize(30)
     .size(20)
-    .color('#EEEEEE')
-    .hatchFill('diagonalbrick')
-    .type('star4');
+    .color("#EEEEEE")
+    .hatchFill("diagonalbrick")
+    .type("star4");
   chart.marker(data3)
     .hoverSize(30)
     .size(20)
-    .color('#EEEEEE')
-    .hatchFill('zigzag');
+    .color("#EEEEEE")
+    .hatchFill("zigzag");
   chart.marker(data4)
     .hoverSize(30)
     .size(20)
-    .color('#EEEEEE')
-    .hatchFill('checkerboard')
-    .type('square');
+    .color("#EEEEEE")
+    .hatchFill("checkerboard")
+    .type("square");
   chart.marker(data5)
     .hoverSize(30)
     .size(20)
-    .color('#EEEEEE')
-    .hatchFill('percent30')
-    .type('circle');
+    .color("#EEEEEE")
+    .hatchFill("percent30")
+    .type("circle");
   
   // set title
-  chart.title().text('Hatches');
+  chart.title().text("Hatches");
   
   // draw axes and set titles
-  chart.xAxis().title('Year');
-  chart.yAxis().title('Box office');
+  chart.xAxis().title("Year");
+  chart.yAxis().title("Box office");
     
   chart.xScale()
     .minimum(0)
     .maximum(4)
     .ticks().interval(1);
   
-  chart.container('container').draw();
+  chart.container("container").draw();
 });

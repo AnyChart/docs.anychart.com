@@ -6,21 +6,21 @@ anychart.onDocumentReady(function() {
 
   // data set
   var data = anychart.data.set([
-    ['P1', 16, 20],
-    ['P2', 12, 18],
-    ['P3', 9, 14]
+    ["P1", 16, 20],
+    ["P2", 12, 18],
+    ["P3", 9, 14]
   ]);
 
   // data remapping
   var seriesData_1 = data.mapAs({x: [0], value: [1]});
   var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
 
   // setting main title
   anychart.ui.title()
     .parentBounds(0, 0, stage.width(), stage.height()*0.1)
-    .text('Main Labels Settings')
+    .text("Main Labels Settings")
     .container(stage)
     .draw();
 
@@ -29,13 +29,13 @@ anychart.onDocumentReady(function() {
   var normalLabels = anychart.columnChart();
 
   // setting title
-  normalLabels.title().text('Normal labels');
+  normalLabels.title().text("Normal labels");
 
   // setting stroke for chart contaoner
-  normalLabels.background().stroke('#CCCCCC');
+  normalLabels.background().stroke("#CCCCCC");
 
   // setting position and bounds
-  normalLabels.bounds(0, '10%', '33.3%', '55%');
+  normalLabels.bounds(0, "10%", "33.3%", "55%");
 
   // set scale minimum
   normalLabels.yScale().minimum(0);
@@ -57,9 +57,9 @@ anychart.onDocumentReady(function() {
 
   // chart with rotated labels
   var rotatedLabels = anychart.columnChart();
-  rotatedLabels.title().text('Rotated labels');
-  rotatedLabels.bounds('33.3%', '10%', '33.3%', '55%');
-  rotatedLabels.background().stroke('#CCCCCC');
+  rotatedLabels.title().text("Rotated labels");
+  rotatedLabels.bounds("33.3%", "10%", "33.3%", "55%");
+  rotatedLabels.background().stroke("#CCCCCC");
 
   // set scale minimum
   rotatedLabels.yScale().minimum(0);
@@ -80,9 +80,9 @@ anychart.onDocumentReady(function() {
 
   // chart with stagger mode
   var staggerLabels = anychart.columnChart();
-  staggerLabels.title().text('Stagger Labels');
-  staggerLabels.bounds('66.6%', '10%', '33.3%', '55%');
-  staggerLabels.background().stroke('#CCCCCC');
+  staggerLabels.title().text("Stagger Labels");
+  staggerLabels.bounds("66.6%", "10%", "33.3%", "55%");
+  staggerLabels.background().stroke("#CCCCCC");
   staggerLabels.xAxis().title().enabled(false);
   staggerLabels.yAxis().title().enabled(false);
 
@@ -98,15 +98,15 @@ anychart.onDocumentReady(function() {
 
   // data set for stagger mode sample
   var staggerData = anychart.data.set([
-    ['P1', 16, 20],
-    ['P2', 12, 18],
-    ['P3', 9, 14],
-    ['P4', 13, 15],
-    ['P5', 19, 16],
-    ['P6', 14, 10],
-    ['P7', 11, 22],
-    ['P8', 17, 11],
-    ['P9', 9, 14]
+    ["P1", 16, 20],
+    ["P2", 12, 18],
+    ["P3", 9, 14],
+    ["P4", 13, 15],
+    ["P5", 19, 16],
+    ["P6", 14, 10],
+    ["P7", 11, 22],
+    ["P8", 17, 11],
+    ["P9", 9, 14]
   ]);
 
   // data remapping for stagger sample
@@ -133,9 +133,9 @@ anychart.onDocumentReady(function() {
     [4, 16]
   ]).tooltip().enabled(false);
 
-  labelsInside.title().text('Labels Inside');
-  labelsInside.bounds(0, '65%', '100%', '35%');
-  labelsInside.background().stroke('#CCCCCC');
+  labelsInside.title().text("Labels Inside");
+  labelsInside.bounds(0, "65%", "100%", "35%");
+  labelsInside.background().stroke("#CCCCCC");
 
   labelsInside.xAxis().title().enabled(false);
   labelsInside.yAxis().title().enabled(false);
@@ -148,7 +148,7 @@ anychart.onDocumentReady(function() {
 
   // setting labels a bit higher and andjusting it's values
   labelsInside.xAxis().labels().offsetY(-25).textFormatter(function(){
-    return this.value + '.00';
+    return this.value + ".00";
   });
 
   // disabling first and last labels
