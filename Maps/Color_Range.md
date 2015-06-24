@@ -9,13 +9,8 @@
  * [Bi-polar](#bi_polar) 
  * [Blended color progression](#blended_color_progression)
  * [Partial spectral color progression](#partial_spectral_color_progression) 
- - Single hue
- - Bi-polar
- - Blended hue color progression
- - Partial spectral color progression
- - Full-spectrum color progression
- - Value progression
- 
+ * [Full-spectrum color progression](#full_spectrum_color_progression)
+ * [Value progression](#value_progression) 
  
  ## Overview
  
@@ -27,29 +22,65 @@
  
  ## Types
  
- There are two types of ColorRange: Ordinal and Quantitative. The type of a ColorRange that will be used for your map depends on a scale type: it will be automatically chosen of Ordinal type
-  if the scale on your Map is ordinal; in any other case you'll get a Quantitative ColorRange.
+ There are two types of ColorRange: Ordinal and Quantitative. The type of a ColorRange that will be used for your map will be automatically chosen and it 
+ depends on a scale type: it will be ordinal if the scale on your Map is ordinal; in any other case you'll get a Quantitative ColorRange.
  
  ### Ordinal Color Range
  
  This type of ColorRange looks like a number of boxes with different colors. Colors of these boxes depend on the palette chosen according to the type of map and its data.
  
+ <img src = "http://static.anychart.com/images/ord_colorrange.jpg">
  
   ### Quantitative Color Range
  
  This type of ColorRange looks like a single bar colored with a gradient, where it colors depends on a chosen palette. 
  
+ <pic>
+ 
  ## Palette
  
- 
+ The palette used for the map forms its view and the quality of visualization, so it's rather important which colors will be used. 
+ Use method {api:anychart.palettes.RangeColors#colors}**.colors**{api} and define colors as an array.
+ In case of Ordinal ColorRange, you may use the **___** method to calculate the in-between colors.
+ Read the following information properly to chose the most suitable palette for your map.
  
  ### Single Hue
  
- Single Hue progression is a fade from a light shade of a chosen color to its dark shade. Usually, the darker the shade is, the higher value it represents.
- 
- To make the Palette of this type for a ColorRange, use **блаблабла**
+ Single Hue progression is a fade from a light shade of a chosen color to its dark shade. Usually, the darker the shade is, the higher value it represents. 
+ This palette type is usually used to show the difference in values of something common between some regions or in time.
  
  ### Bi-polar 
  
- Bi-polar progression is a fade from the first chosen color to the second one with white in the middle.
+ Bi-polar progression is a fade from the first chosen color to the second one with white in the middle. This is normally used when you need to show the change from
+ positive to negative values, or to show the mean value.
+ Complementary hue progressions are a type of bi-polar progression. This can be done with any of the complementary colors and will fade from each 
+ of the darker end point hues into a gray shade representing the middle. An example would be using blue and yellow as the two end points.
  
+ ### Blended color progression
+
+ This type of color progression is typically used to show elevation changes. 
+ It's more like a single hue type, but the difference between color are less sharp. This progression uses related hues to blend together the two end point hues. 
+ For example from yellow through orange to brown.
+ 
+ ### Partial color progression
+ 
+ Partial spectral hue progressions are used to map mixtures of two distinct sets of data. 
+ This ColorRange type looks like a gradient between two adjacent opponent hues and shows the magnitude of the mixing data classes.
+
+
+### Full-spectral color progression
+
+Full spectral progression contains all rainbow colors, from blue to red. This ColorRange type is usually used on relief maps and modern weather maps. 
+This progression is not recommended under other circumstances because some connections between a color and its meaning can seem confusing for users.
+
+
+### Value progression
+
+Value progression maps are monochromatic. Using the shades of gray between black and white makes it easy to print the map and is quite clear to understand.
+This type of ColorRange is one of the best ways to portray a magnitude message to the map audience. 
+
+
+
+
+
+
