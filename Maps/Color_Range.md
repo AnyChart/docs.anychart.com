@@ -33,7 +33,7 @@
  
   ### Quantitative Color Range
  
- This type of ColorRange looks like a single bar colored with a gradient, where it colors depends on a chosen palette. 
+ This type of ColorRange looks like a single bar colored with a gradient, where it colors depend on a chosen palette. 
  
  <pic>
  

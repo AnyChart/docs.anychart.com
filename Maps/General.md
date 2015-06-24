@@ -7,12 +7,11 @@
 ## Overview
 
 A map is a reflection of symbolic relationships between elements of some space, such as objects, regions and themes.
-
+<br>
 Some of the maps are static, two-dimensional, geometrically or approximately accurate representations of three-dimensional space, 
 while others are dynamic or interactive, even three-dimensional. Although most commonly used to depict geography, maps may represent 
 any space, real or imagined, without regard to context or scale; e.g. brain mapping, DNA mapping and extraterrestrial mapping.
-
-
+<br>
 Interactive Maps is a unique feature of AnyChart component that allows you to visualize geographical related data. We use the same swf file to render maps and charts - this allows you to combine maps and chart in the interactive dashboards and easily deploy both of them.
 
 
