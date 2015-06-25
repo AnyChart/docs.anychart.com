@@ -14,15 +14,34 @@ any space, real or imagined, without regard to context or scale; e.g. brain mapp
 <br>
 Interactive Maps is a unique feature of AnyChart component that allows you to visualize geographical related data. We use the same swf file to render maps and charts - this allows you to combine maps and chart in the interactive dashboards and easily deploy both of them.
 
+Use the following to create a new simple map:
+```
+	map = anychart.map();
+```
 
 ## Points
 
+A point contains some meta information about it and a single region or a number of them. 
+Точка - это один или несколько регионов плюс метаданные по этой точке.
+Связать регионы с точкой можно только явно, например:
+Одна точка - один регион. Дата сет содержит две точки, к первой привязан регион с id="RU", к второй регион с id="EU"
+var dataSet = anychart.data.set([
+    {name: "Point 1", data: "RU"},
+    {name: "Point 2", data: "EU"},
+]);
+Одна точка - несколько регионов. Дата сет содержит две точки, к первой привязаны регионы с id="RU_" + number, к второй регионы с id="EU_" + number
+var dataSet = anychart.data.set([
+    {name: "Point 1", data: ["RU_1", "RU_2", "RU_3"]},
+    {name: "Point 2", data: ["EU_1", "EU_2", "EU_3"]}
+]);
+Серия
+
 ## Series
 
-<table width="375" border="1" class="dtTABLE">
+<table border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th width="88"><b>Type</b></th>
+<th width="100"><b>Type</b></th>
 <th><b>Description</b></th>
 <th><b>Example</b></th>
 </tr>
