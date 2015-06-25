@@ -37,32 +37,116 @@ Depending on the data model and visualization purpose the bar chart may be singl
 
 Let's see single series bar chart created using the following data - sales of ACME Corp. made through different retail channels in one year:
 
-<table width="328" border="1" class="dtTABLE">
+<table width="490" border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th width="210"><b>Retail Channel</b></th>
-<th width="102"><b>Sales  </b></th>
+<th width="190"><strong>Name</strong></th>
+<th width="100"><strong>Options</strong></th>
+<th width="200"><strong>Description</strong></th>
 </tr>
+
 <tr>
-<td>Department Stores</td>
-<td>$637.166</td>
+<td>--help</td>
+<td></td>
+<td>Вызвает чипа и дейла!</td>
 </tr>
+
 <tr>
-<td>Discount Stores</td>
-<td> $721.630</td>
+<td>--script</td>
+<td></td>
+<td>Скрипт который рисует график, альтернатива --input-file</td>
 </tr>
+
 <tr>
-<td>Men's/Women's Specialty Stores</td>
-<td> $148.662</td>
+<td>--input-file</td>
+<td></td>
+<td>Файл со скриптом, который рисует график, альтернатива --script</td>
 </tr>
+
 <tr>
-<td>Juvenile Specialty Stores</td>
-<td> $78.662</td>
+<td>--iutput-file</td>
+<td></td>
+<td>Имя фала с результаом генерации, разрешение можно не укавзвать. Например: my-chart-image.png</td>
 </tr>
+
 <tr>
-<td>All other outlets</td>
-<td> $90.000</td>
+<td>--iutput-path</td>
+<td></td>
+<td>Папка куда положить результат</td>
 </tr>
+
+<tr>
+<td>--type</td>
+<td>svg, png, jpg, pdf</td>
+<td>Тип файла</td>
+</tr>
+
+<tr>
+<td>--container-id</td>
+<td></td>
+<td>Айдишник контейнера который будет создан в PhantomJS'е для чарта.</td>
+</tr>
+
+<tr>
+<td>--container-width</td>
+<td></td>
+<td>Ширина контейнера. Если задать размер контейтера сильно больше размера карники то качество картинки будет лучше.</td>
+</tr>
+
+<tr>
+<td>--container-height</td>
+<td></td>
+<td>Высота контейнера. Если задать размер контейтера сильно больше размера карники то качество картинки будет лучше.</td>
+</tr>
+
+<tr>
+<td>--image-width</td>
+<td></td>
+<td>Ширина картинки которая получится. не работает для pdf.</td>
+</tr>
+
+<tr>
+<td>--image-height</td>
+<td></td>
+<td>Высота картинки которая получится. не работает для pdf.</td>
+</tr>
+
+<tr>
+<td>--force-transparent-white</td>
+<td></td>
+<td>Если у чарта прозрачный бэкграунд, то мы можем форсануть его до белого.</td>
+</tr>
+
+<tr>
+<td>--jpg-quality</td>
+<td></td>
+<td>Качество картинки, от 0 до 1.</td>
+</tr>
+
+<tr>
+<td>--pdf-size</td>
+<td></td>
+<td>Размер pdf документа куда будет вставлен график</td>
+</tr>
+
+<tr>
+<td>--pdf-x</td>
+<td></td>
+<td>координаты графика в pdf документе</td>
+</tr>
+
+<tr>
+<td>--pdf-y</td>
+<td></td>
+<td>координаты графика в pdf документе</td>
+</tr>
+
+<tr>
+<td>--pdf-landscape</td>
+<td></td>
+<td>Ориентация pdf документа</td>
+</tr>
+
 </tbody>
 </table>
 
