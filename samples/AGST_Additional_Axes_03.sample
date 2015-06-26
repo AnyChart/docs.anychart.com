@@ -5,41 +5,56 @@
 anychart.onDocumentReady(function() {
   
   var chart = anychart.column();
-
-  chart.container("container");
-
+  
   // setting title
-  chart.title().text("Extra Axes Simple Sample");
+  chart.title("Extra Axes Simple Sample");
 
-  chart.yScale().minimum(0).maximum(800000);
-  chart.yScale().ticks().interval(100000);
-  chart.yScale().minorTicks().interval(20000);
+  var yScale = chart.yScale();
+  yScale.minimum(0);
+  yScale.maximum(800000);
+  var yScaleTicks = chart.yScale().ticks();
+  yScaleTicks.interval(100000);
+  var yScaleMinorTicks = chart.yScale().minorTicks();
+  yScaleMinorTicks.interval(20000);
 
   // adding extra Y scale
   var extraYScale = anychart.scales.linear();
-  extraYScale.minimum(800000).maximum(1600000);
-  extraYScale.ticks().interval(100000);
-  extraYScale.minorTicks().interval(20000);
+  extraYScale.minimum(800000);
+  extraYScale.maximum(1600000);
+  var eYScaleTicks = extraYScale.ticks();
+  eYScaleTicks.interval(100000);
+  var eYScaleMinorTicks = extraYScale.minorTicks();
+  eYScaleMinorTicks.interval(20000);
 
   // adding and adjust extra Y axis
-  chart.yAxis(1)
-    .orientation("right")
-    .scale(extraYScale)
-    .title()
-      .text("Extra Y Axis");
+  var extraYAxis = chart.yAxis(1);
+  extraYAxis.orientation("right");
+  extraYAxis.scale(extraYScale);
+  extraYAxis.title("Extra Y Axis");
 
-  // setting Axis title
-  chart.yAxis().title().text("Basic Y Axes");
+  // setting for y axis title
+  var yAxis = chart.yAxis(0);
+  yAxis.title('Basic Y Axes');
 
   // adjusting Grid
-  chart.grid(0).stroke("gray 0.8").layout("vertical");
-  chart.grid(1).stroke("gray 0.8").layout("horizontal");
+  var grid = chart.grid(0);
+  grid.stroke("gray 0.8");
+  grid.layout("vertical");
+  var grid1 = chart.grid(1);
+  grid1.stroke("gray 0.8");
+  grid1.layout("horizontal");
 
   // setting minorGrid settings
-  chart.minorGrid(0).layout("horizontal")
-    .oddFill(null).evenFill(null).stroke("gray 0.3");
-  chart.minorGrid(1).layout("vertical")
-    .oddFill(null).evenFill(null).stroke("gray 0.3");
+  var minorGrid = chart.minorGrid(0);
+  minorGrid.layout("horizontal");
+  minorGrid.oddFill(null);
+  minorGrid.evenFill(null);
+  minorGrid.stroke("gray 0.3");
+  var minorGrid1 = chart.minorGrid(1);
+  minorGrid1.layout("vertical");
+  minorGrid1.oddFill(null);
+  minorGrid1.evenFill(null);
+  minorGrid1.stroke("gray 0.3");
 
   // setting first series of data
   var data = anychart.data.set([
@@ -51,10 +66,9 @@ anychart.onDocumentReady(function() {
   ]);
 
   var columnChart = chart.column(data);
-
-  columnChart.tooltip().enabled(false);
-
+  columnChart.tooltip(false);
   columnChart.hoverFill("#444444");
-
+  
+  chart.container("container");
   chart.draw();
 });

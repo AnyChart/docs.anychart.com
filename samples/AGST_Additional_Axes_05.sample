@@ -4,53 +4,54 @@
 
 anychart.onDocumentReady(function() {
   
-  var chart = anychart.cartesianChart();
+  var chart = anychart.cartesian();
   
-  chart.title().enabled(true).text("Extra Axes Units Comparison Sample");
+  chart.title("Extra Axes Units Comparison Sample");
   
   // additional axes settings
-  var FahrenheitScale = anychart.scales.linear();
-  FahrenheitScale.minimum(-260).maximum(3000);
-  FahrenheitScale.ticks().interval(500);
+  var fahrenheitScale = anychart.scales.linear();
+  fahrenheitScale.minimum(-260);
+  fahrenheitScale.maximum(3000);
+  var fahrenheitTicks = fahrenheitScale.ticks();
+  fahrenheitTicks.interval(500);
   
-  var CelsiumScale = anychart.scales.linear();
-  CelsiumScale.minimum(-274)
-    .maximum(1500)
-    .ticks()
-    .interval(500);
-  CelsiumScale.minorTicks().interval(100);
+  var celsiumScale = anychart.scales.linear();
+  celsiumScale.minimum(-274);
+  celsiumScale.maximum(1500);
+  var celsiumTicks = celsiumScale.ticks();
+  celsiumTicks.interval(500);
+  var celsiumMinorTicks = celsiumScale.minorTicks();
+  celsiumMinorTicks.interval(100);
   
-  var KelvinScale = anychart.scales.linear();
-  KelvinScale.minimum(0)
-    .maximum(2000)
-    .ticks()
-    .interval(500);
-  KelvinScale.minorTicks().interval(100);
+  var kelvinScale = anychart.scales.linear();
+  kelvinScale.minimum(0);
+  kelvinScale.maximum(2000);
+  var kelvinTicks = kelvinScale.ticks();
+  kelvinTicks.interval(500);
+  var kelvinMinorTicks = kelvinScale.minorTicks();
+  kelvinMinorTicks.interval(100);
   
-  chart.xAxis()
-    .scale(FahrenheitScale)
-    .title()
-    .text("Fahrenheit");
+  var xAxis = chart.xAxis();
+  xAxis.scale(fahrenheitScale);
+  xAxis.title("Fahrenheit");
   
   // adjusting axes
-  chart.xAxis(1).title().text("Celsium");
-  chart.xAxis(1)
-    .orientation("top")
-    .scale(CelsiumScale);
+  var xAxis1 = chart.xAxis(1);
+  xAxis1.title("Celsium");
+  xAxis1.orientation("top");
+  xAxis1.scale(celsiumScale);
   
-  chart.xAxis(2)
-    .scale(KelvinScale)
-    .orientation("top")
-    .title()
-    .text("Kelvin");
-  
+  var xAxis2 = chart.xAxis(2);
+  xAxis2.scale(kelvinScale);
+  xAxis2.orientation("top");
+  xAxis2.title("Kelvin");
   
   // adding grid
-  chart.grid()
-    .stroke("black")
-    .layout("horizontal")
-    .evenFill(null)
-    .oddFill(null);
+  var grid = chart.grid();
+  grid.stroke("black");
+  grid.layout("horizontal");
+  grid.evenFill(null);
+  grid.oddFill(null);
   
   // setting data
   var data = anychart.data.set([
@@ -64,29 +65,34 @@ anychart.onDocumentReady(function() {
     ["Titanium melts", 1941]
   ]);
   chart.yScale(anychart.scales.ordinal());
-  chart.yScale().inverted(true);
-  chart.yAxis().title().enabled(false);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
+  var yAxisTitle = chart.yAxis().title();
+  yAxisTitle.enabled(false);
   
   // setting and adjusting data visualisation
   var markerSeries = chart.marker(data.mapAs({x: [1], value: [0]}));
-  markerSeries.tooltip().contentFormatter(function(){
+  var markerTooltip = markerSeries.tooltip();
+  markerTooltip.contentFormatter(function(){
     return this.value+
       "\nKelvin: "+ (this.x).toFixed(2) +
       "\nCelsium: "+ (this.x - 273.15).toFixed(2) +
       "\nFahrenheit: " + ((this.x - 273.15)*1.8000 + 32).toFixed(2);
   });
-  markerSeries.xScale(KelvinScale).yScale(chart.yScale());
-  markerSeries.size(5).hoverSize(7);
+  markerSeries.xScale(kelvinScale);
+  markerSeries.size(5);
+  markerSeries.hoverSize(7);
   
-  chart.lineMarker()
-    .stroke("1 red")
-    .layout("vertical")
-    .scale(CelsiumScale);
-  chart.lineMarker(1)
-    .stroke("1 green")
-    .layout("vertical")
-    .scale(FahrenheitScale);
+  var lineMarker = chart.lineMarker();
+  lineMarker.stroke("1 red");
+  lineMarker.layout("vertical");
+  lineMarker.scale(celsiumScale);
+  var lineMarker1 = chart.lineMarker(1);
+  lineMarker1.stroke("1 green");
+  lineMarker1.layout("vertical");
+  lineMarker1.scale(fahrenheitScale);
   
+  chart.padding(0,20,0,0);
   chart.container("container");
-  chart.padding(0,20,0,0).draw();
+  chart.draw();
 });

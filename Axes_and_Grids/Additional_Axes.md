@@ -29,9 +29,20 @@ Consider using multiple axes when you need:
 If you want to declare an additional axis all you need to do is to set index to it, and place as many {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods into it:
 
 ```
-  chart.yAxis(1).orientation('right').title().text('First additional axis');
-  chart.yAxis(2).orientation('right').title().text('Second additional axis');
-  chart.yAxis(3).orientation('right').title().text('Third additional axis');
+  // First additional axis
+  var yAxis1 = chart.yAxis(1);
+  yAxis1.orientation("right");
+  yAxis1.title("First additional axis");
+  
+  // Second additional axis
+  var yAxis2 = chart.yAxis(2);
+  yAxis2.orientation("right");
+  yAxis2.title("Second additional axis");
+  
+  // Third additional axis
+  var yAxis3 = chart.yAxis(3);
+  yAxis3.orientation("right");
+  yAxis3.title("Third additional axis");
 ```
 
 Here is the sample of the chart that shows three additional Y axes and almost no configuration is done, as you can see three additional axes are drawn on the right side of data plot and their maximum and minimum values are calculated automatically (and they are the same as main Y axis have):
@@ -47,16 +58,29 @@ Another example of multiple axes use is multiple Y Axes along with multiple X Ax
 If you want to change any settings of additional axes you can do that just the same way as basic X and Y axes are configured, see [Axes basics](Axis_Basics) and [Axes Scale](Scales) for the details:
 
 ```
-    chart.yScale().minimum(0).maximum(800000);
-    chart.yScale().ticks().interval(100000);
-    chart.yScale().minorTicks().interval(20000);
-    var extraYScale = anychart.scales.linear();
-    extraYScale.minimum(800000).maximum(1600000);
-    extraYScale.ticks().interval(100000);
-    extraYScale.minorTicks().interval(20000);
-    var extraYAxis = chart.yAxis(1);
-    extraYAxis.orientation('right').scale(extraYScale).title().text('Extra Y Axis');
-    chart.yAxis().title().text('Basic Y Axes');
+  // Tune default y scale
+  var yScale = chart.yScale();
+  yScale.minimum(0);
+  yScale.maximum(800000);
+  yScale.ticks({interval: 100000});
+  yScale.minorTicks({interval: 20000});
+  
+  // Create and tune additional y scale
+  var extraYScale = anychart.scales.linear();
+  extraYScale.minimum(800000);
+  extraYScale.maximum(1600000);
+  extraYScale.ticks({interval: 100000});
+  extraYScale.minorTicks({interval: 20000});
+  
+  // Create and tune additional y axis
+  var extraYAxis = chart.yAxis(1);
+  extraYAxis.orientation("r ight");
+  extraYAxis.scale(extraYScale);
+  extraYAxis.title("Extra Y Axis");
+  
+  // Tune default y axis
+  var yAxis = chart.yAxis(0);
+  yAxis.title('Basic Y Axes');
 ```
 
 In the a sample below we will add one additional axis and set value ranges and titles for both basic Y axis and 
@@ -69,25 +93,25 @@ additional Y axis:
 To bind data series to the certain axis you should specify it in {api:anychart.core.cartesian.series.Base#yScale}**series.yScale()**{api} or {api:anychart.core.cartesian.series.Base#xScale}**series.xScale()**{api} attribute. By default all series work with {api:anychart.charts.Cartesian#yScale}**chart.yScale()**{api} or {api:anychart.charts.Cartesian#xScale}**chart.xScale()**{api}:
 
 ```
-    var firstSeries = anychart.data.set([
-        ["A", 637166],
-        ["B", 721630],
-        ["C", 148662],
-        ["D", 78662],
-        ["E", 90000]
-    ]);
-    
-    var secondSeries = anychart.data.set([
-        ["A", 95],
-        ["B", 97],
-        ["C", 96],
-        ["D", 70],
-        ["E", 35]
-    ]);
-    
-    var columnSeries = chart.column(firstSeries);
-    var lineSeries = chart.line(secondSeries);
-    lineSeries.yScale(extraYScale);
+  var firstSeries = anychart.data.set([
+    ["A", 637166],
+    ["B", 721630],
+    ["C", 148662],
+    ["D", 78662],
+    ["E", 90000]
+  ]);
+  
+  var secondSeries = anychart.data.set([
+    ["A", 95],
+    ["B", 97],
+    ["C", 96],
+    ["D", 70],
+    ["E", 35]
+  ]);
+  
+  var columnSeries = chart.column(firstSeries);
+  var lineSeries = chart.line(secondSeries);
+  lineSeries.yScale(extraYScale);
 ```
 
 In the a sample below we add one additional axis with a range from 0 to 100 and bind series of "Line" type to it:
@@ -101,27 +125,35 @@ want to show Celsius, Fahrenheit and Kelvin scales. To do that we have to create
  Celsius degrees, first additional axis - Fahrenheit and second additional axis - Kelvin:
 
 ```
-    var FahrenheitScale = anychart.scales.linear();
-    FahrenheitScale.minimum(-260).maximum(3000);
-    FahrenheitScale.ticks().interval(500);
-    var CelsiumScale = anychart.scales.linear();
-    CelsiumScale.minimum(-274)
-        .maximum(1500)
-        .ticks()
-            .interval(500);
-    CelsiumScale.minorTicks().interval(100);
-    var KelvinScale = anychart.scales.linear();
-    KelvinScale.minimum(0)
-        .maximum(2000)
-        .ticks()
-            .interval(500);
-    KelvinScale.minorTicks().interval(100);
+  var fahrenheitScale = anychart.scales.linear();
+  fahrenheitScale.minimum(-260);
+  fahrenheitScale.maximum(3000);
+  var fahrenheitTicks = fahrenheitScale.ticks();
+  fahrenheitTicks.interval(500);
+  
+  var celsiumScale = anychart.scales.linear();
+  celsiumScale.minimum(-274);
+  celsiumScale.maximum(1500);
+  var celsiumTicks = celsiumScale.ticks();
+  celsiumTicks.interval(500);
+  var celsiumMinorTicks = celsiumScale.minorTicks();
+  celsiumMinorTicks.interval(100);
+  
+  var kelvinScale = anychart.scales.linear();
+  kelvinScale.minimum(0);
+  kelvinScale.maximum(2000);
+  var kelvinTicks = kelvinScale.ticks();
+  kelvinTicks.interval(500);
+  var kelvinMinorTicks = kelvinScale.minorTicks();
+  kelvinMinorTicks.interval(100);
+    
 ```
 
 We defined three axes and set absolute zero as a minimum value, and Titanium melting temperature as a maximum value. 
 We will create one series of a {api:anychart.core.cartesian.series.Marker}"Marker"{api} type and bind it to Kelvin scale:
 
 ```
+  var data = anychart.data.set([
     ["Absolute Zero", 0],
     ["Lowest recorded surface temperature on Earth", 184],
     ["Celsius / Fahrenheit's 'cross-over' temperature", 233.15],
@@ -130,7 +162,8 @@ We will create one series of a {api:anychart.core.cartesian.series.Marker}"Marke
     ["Highest recorded surface temperature on Earth", 331],
     ["Water boils", 373.1339],
     ["Titanium melts", 1941]
-    var markerSeries = chart.marker(data);
+  ]);
+  var markerSeries = chart.marker(data);
 ```
 
 Here it is - a sample that shows different important temperatures:
@@ -143,22 +176,38 @@ Lets see how additional axes can be used to show different data on the same plot
 dollars and in percents of GDP. We need to create one additional Axis adjust both basic and additional Axes:
 
 ```
-    chart.yScale().minimum(0).maximum(12000000000000).ticks().interval(2000000000000);
-    chart.yAxis().title().text('Debt');
-    chart.yAxis(1).title().text('GDP');
-    chart.yAxis().labels().textFormatter(function(){
-        var value = (this.value/1000000000000);
-                if (value > 0)
-                    value = (this.value/1000000000000) + ' 000 bil.';
-                return '$' + value;
-    });
-    chart.yAxis(1).labels().textFormatter(function(){
-        return this.value + '%';
-    });
-    var extraYScale = anychart.scales.linear();
-    extraYScale.minimum(0).maximum(140).ticks().interval(20);
+    var yScale = chart.yScale();
+    yScale.minimum(0);
+    yScale.maximum(12000000000000);
+    var yScaleTicks = chart.yScale().ticks();
+    yScaleTicks.interval(2000000000000);
+    
+    var yAxis = chart.yAxis(0);
+    yAxis.title("Debt");
     var extraYAxis = chart.yAxis(1);
-    extraYAxis.orientation('right').scale(extraYScale);
+    extraYAxis.title("GDP");
+    
+    var yLabels = chart.yAxis(0).labels();
+    yLabels.textFormatter(function(){
+      var value = (this.value/1000000000000);
+      if (value > 0)
+        value = (this.value/1000000000000) + " 000 bil.";
+      return "$" + value;
+    });
+    var yLabels1 = chart.yAxis(1).labels();
+    yLabels1.textFormatter(function(){
+      return this.value + "%";
+    });
+
+    var extraYScale = anychart.scales.linear();
+    extraYScale.minimum(0);
+    extraYScale.maximum(140);
+    var extraYScaleTicks = extraYScale.ticks();
+    extraYScaleTicks.interval(20);
+    
+    var extraYAxis = chart.yAxis(1);
+    extraYAxis.orientation("right");
+    extraYAxis.scale(extraYScale);
 ```
 
 We defined two axes and will create one series of a {api:anychart.core.cartesian.series.Column}**Column**{api} type to show debt and bind it to {api:anychart.charts.Cartesian#yAxis}**yAxis**{api}, one series of a {api:anychart.core.cartesian.series.Line}**Line**{api} type to show percentage changes.

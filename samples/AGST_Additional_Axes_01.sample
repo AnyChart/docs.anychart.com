@@ -17,24 +17,27 @@ anychart.onDocumentReady(function() {
   var chart = anychart.columnChart(data);
 
   // title settings
-  chart.title().text("Extra Axes Simple Sample");
+  chart.title("Extra Axes Simple Sample");
 
   // adjusting xAxis title
-  chart.xAxis().title().text("Sample X axis name").fontWeight("400");
+  var xAxisTitle = chart.xAxis().title();
+  xAxisTitle.text("Sample X axis name");
+  xAxisTitle.fontWeight("400");
 
   // adjusting yAxes titles
-  chart.yAxis(1).orientation("right")
-    .title()
-      .text("First additional axis");
-  chart.yAxis(2).orientation("right")
-    .title()
-      .text("Second additional axis");
-  chart.yAxis(3).orientation("right")
-    .title()
-      .text("Third additional axis");
+  var yAxis1 = chart.yAxis(1);
+  yAxis1.orientation("right");
+  yAxis1.title("First additional axis");
+  var yAxis2 = chart.yAxis(2);
+  yAxis2.orientation("right");
+  yAxis2.title("Second additional axis");
+  var yAxis3 = chart.yAxis(3);
+  yAxis3.orientation("right");
+  yAxis3.title("Third additional axis");
 
   // adjusting major ticks' interval
-  chart.yScale().ticks().interval(100000);
+  var ticks = chart.yScale().ticks();
+  ticks.interval(100000);
 
   // draw
   chart.container("container").draw();
