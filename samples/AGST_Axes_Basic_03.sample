@@ -23,17 +23,21 @@ anychart.onDocumentReady(function() {
   var chart = anychart.columnChart();
 
   // set scale minimum
-  chart.yScale().minimum(0);
+  var yScale = chart.yScale();
+  yScale.minimum(0);
 
-  chart.title().text("Normal labels");
+  chart.title("Normal labels");
 
   // series data
   chart.column(Sales2003);
   chart.column(Sales2004);
 
   // disabling stagger mode
-  chart.yAxis().staggerMode(false);
-  chart.xAxis().staggerMode(false);
+  var yAxis = chart.yAxis();
+  yAxis.staggerMode(false);
+  var xAxis = chart.xAxis();
+  xAxis.staggerMode(false);
 
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });

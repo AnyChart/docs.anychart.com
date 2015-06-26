@@ -14,15 +14,18 @@ anychart.onDocumentReady(function() {
 
   var chart = anychart.columnChart(data);
 
-  chart.title().enabled(false);
+  chart.title(false);
 
   // axes orientation adjusting
-  chart.yAxis().orientation("right");
-  chart.xAxis().orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
 
   // axes titles adjusting
-  chart.xAxis().title().text("X Axis title on the top");
-  chart.yAxis().title().text("Y Axis title on the right");
+  xAxis.title("X Axis title on the top");
+  yAxis.title("Y Axis title on the right");
 
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });

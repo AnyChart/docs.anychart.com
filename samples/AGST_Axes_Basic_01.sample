@@ -13,20 +13,25 @@ anychart.onDocumentReady(function() {
     ["E", 90000]
   ]);
   
-  var chart = anychart.columnChart(data);
+  var chart = anychart.column(data);
   
-  chart.title().enabled(false);
+  chart.title(false);
   
   // adjusting Axes
-  chart.xAxis().title().text("Sample X axis name").fontWeight("400");
+  var xTitle = chart.xAxis().title();
+  xTitle.text("Sample X axis name");
+  xTitle.fontWeight(400);
   
-  chart.yAxis().title().align("bottom");
-  chart.yAxis().orientation("right");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
   
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
   
+  // adjust y axis
+  var yTitle = chart.yAxis().title();
   var max = chart.yScale().maximum();
   var min = chart.yScale().minimum();
-  
-  chart.yAxis().title().text("Y axis from " + min + " to " + max);
+  yTitle.text("Y axis from " + min + " to " + max);
+  yTitle.align("bottom");
 });

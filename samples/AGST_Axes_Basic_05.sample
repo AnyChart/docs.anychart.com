@@ -25,15 +25,17 @@ anychart.onDocumentReady(function() {
 
   var chart = anychart.columnChart();
 
-  chart.title().enabled(true).text("Stagger Labels");
+  chart.title("Stagger Labels");
 
   // series data
   chart.column(Sales2003);
   chart.column(Sales2004);
 
   // adjusting axis mode
-  chart.xAxis().staggerMode(true);
-  chart.xAxis().staggerLines(2);
+  var xAxis = chart.xAxis();
+  xAxis.staggerMode(true);
+  xAxis.staggerLines(2);
 
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });

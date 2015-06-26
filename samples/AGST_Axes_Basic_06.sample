@@ -16,22 +16,26 @@ anychart.onDocumentReady(function() {
 
   var chart = anychart.columnChart();
 
-  chart.title().enabled(true).text("Axis Line and Zero Line Sample");
+  chart.title("Axis Line and Zero Line Sample");
 
   // setting line to emphasize zero point
-  chart.lineMarker().stroke("2 red");
+  var line = chart.lineMarker();
+  line.stroke("2 red");
 
   // series data
   chart.column(Sales2003);
   chart.column(Sales2004);
 
   // disabling axes titles
-  chart.xAxis().title().enabled(false);
-  chart.yAxis().title().enabled(false);
+  var xTitle = chart.xAxis().title();
+  xTitle.enabled(false);
+  var yTitle = chart.yAxis().title();
+  yTitle.enabled(false);
 
   // adjusting grid
   chart.minorGrid(null, null);
   chart.grid(null, null);
 
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });
