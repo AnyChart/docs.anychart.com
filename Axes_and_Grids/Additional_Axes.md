@@ -10,23 +10,23 @@
  
 ## Overview
   
-In AnyChart scales control axes ticks, values, grid, lines, axes labels position and tickmarks. You can add multiple X and Y axes to your charts with AnyChart.  
+In AnyChart scales control axes ticks, values, grid, line markers and tickmarks. You can add multiple X and Y axes to your charts with AnyChart.
   
   
 This article describes how to use the multi axis feature of AnyChart. With this feature an arbitrary number of axes can be added to the chart. AnyChart itself doesn't impose any restrictions on the number of additional axes but from a practical concern it is most likely very difficult to interpret a chart with more than 2-3 additional axes.  
   
   
 Consider using multiple axes when you need:
-
+  
 * Compare data point values in different units, for example: Celsius against Fahrenheit degrees, kilopascal (KPa) or hectopascal (HPa) against millimeters or inches of mercury (mmHg or inHg), different currencies (USD against EUR), etc.
-
+  
 * Show data from the different ranges on the same plot, for example: absolute stock price changes and sales volume (price will be in dollars and volume in millions of dollars)
-
+  
 * Show data measured in different units on the same plot, for example: gross domestic product (GDP) volume and GDP growth rate (GDP will be in billions and rate in percents)
 
 ## Declaration
 
-If you want to declare an additional axis all you need to do is to set index to it, and place as many {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods into it:
+If you want to declare an additional axis all you need to do is to set index to it, and set as many {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods as you want:
 
 ```
   // First additional axis
@@ -45,7 +45,7 @@ If you want to declare an additional axis all you need to do is to set index to 
   yAxis3.title("Third additional axis");
 ```
 
-Here is the sample of the chart that shows three additional Y axes and almost no configuration is done, as you can see three additional axes are drawn on the right side of data plot and their maximum and minimum values are calculated automatically (and they are the same as main Y axis have):
+Here is the sample of the chart that shows three additional Y axes and almost no configuration is done, as you can see three additional axes are drawn on the right side of data plot and their maximum and minimum values are calculated automatically (and they are the same as main Y axis):
 
 {sample}AGST\_Additional\_Axes\_01{sample}
 
@@ -55,7 +55,7 @@ Another example of multiple axes use is multiple Y Axes along with multiple X Ax
 
 ## Tuning
 
-If you want to change any settings of additional axes you can do that just the same way as basic X and Y axes are configured, see [Axes basics](Axis_Basics) and [Axes Scale](Scales) for the details:
+If you want to change any settings of additional axes you can do that just the same way as basic X and Y axes are configured, see [Axes basics](Axis_Basics) and [Scales](Scales) articles for the details:
 
 ```
   // Tune default y scale
@@ -83,8 +83,7 @@ If you want to change any settings of additional axes you can do that just the s
   yAxis.title('Basic Y Axes');
 ```
 
-In the a sample below we will add one additional axis and set value ranges and titles for both basic Y axis and 
-additional Y axis:
+In the a sample below we will add one additional axis and set value ranges and titles for both basic Y axis and additional Y axis:
 
 {sample}AGST\_Additional\_Axes\_03{sample}
 
@@ -120,33 +119,61 @@ In the a sample below we add one additional axis with a range from 0 to 100 and 
 
 ## Multi Axes Sample for Comparing Units
 
-Lets see how additional axes can be used to compare data in different units, for example we measure temperature an 
-want to show Celsius, Fahrenheit and Kelvin scales. To do that we have to create three Y Axes - the basic one will be
- Celsius degrees, first additional axis - Fahrenheit and second additional axis - Kelvin:
+Lets see how additional axes can be used to compare data in different units, for example we measure temperature and want to show Celsius, Fahrenheit and Kelvin scales. To do that we have to create three Y Axes - the basic one will be Celsius degrees, first additional axis - Fahrenheit and second additional axis - Kelvin:
 
 ```
+  // create scale for temperature in degrees kelvin
+  var kelvinScale = anychart.scales.linear();
+  // set scale minimum
+  kelvinScale.minimum(0);
+  // set scale maximum
+  kelvinScale.maximum(2000);
+  // scale ticks getter
+  var kelvinTicks = kelvinScale.ticks();
+  // set ticks interval
+  kelvinTicks.interval(500);
+  // minor ticks getter
+  var kelvinMinorTicks = kelvinScale.minorTicks();
+  // set minor ticks interval
+  kelvinMinorTicks.interval(100);
+  
+  // create scale for temperature in degrees fahrenheit
   var fahrenheitScale = anychart.scales.linear();
-  fahrenheitScale.minimum(-260);
-  fahrenheitScale.maximum(3000);
+  // set scale minimum value
+  fahrenheitScale.minimum(
+    // get kelvin scale minimum value and transform it into fahrenheit
+    (kelvinScale.minimum() - 273.15)*1.8 + 32
+  );
+  // set scale maximum value 
+  fahrenheitScale.maximum(
+    // get kelvin scale maximum value and transform it into fahrenheit
+    (kelvinScale.maximum() - 273.15)*1.8 + 32
+  );
+  // ticks getter
   var fahrenheitTicks = fahrenheitScale.ticks();
+  // set ticks interval
   fahrenheitTicks.interval(500);
   
-  var celsiumScale = anychart.scales.linear();
-  celsiumScale.minimum(-274);
-  celsiumScale.maximum(1500);
-  var celsiumTicks = celsiumScale.ticks();
-  celsiumTicks.interval(500);
-  var celsiumMinorTicks = celsiumScale.minorTicks();
-  celsiumMinorTicks.interval(100);
-  
-  var kelvinScale = anychart.scales.linear();
-  kelvinScale.minimum(0);
-  kelvinScale.maximum(2000);
-  var kelvinTicks = kelvinScale.ticks();
-  kelvinTicks.interval(500);
-  var kelvinMinorTicks = kelvinScale.minorTicks();
-  kelvinMinorTicks.interval(100);
-    
+  // create scale for temperature in degrees celsius
+  var celsiusScale = anychart.scales.linear();
+  // set scale minimum value
+  celsiusScale.minimum(
+    // get kelvin scale minimum value and transform it into celsius
+    kelvinScale.minimum() - 273.15
+  );
+  // set scale maximum value 
+  celsiusScale.maximum(
+    // get kelvin scale maximum value and transform it into celsius
+    kelvinScale.maximum() - 273.15
+  );
+  // ticks getter
+  var celsiusTicks = celsiusScale.ticks();
+  // set ticks interval
+  celsiusTicks.interval(500);
+  // minor ticks getter
+  var celsiusMinorTicks = celsiusScale.minorTicks();
+  // set minor ticks interval
+  celsiusMinorTicks.interval(100);
 ```
 
 We defined three axes and set absolute zero as a minimum value, and Titanium melting temperature as a maximum value. 
