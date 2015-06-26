@@ -23,13 +23,13 @@ anychart.onDocumentReady(function() {
   var fahrenheitTicks = fahrenheitScale.ticks();
   fahrenheitTicks.interval(500);
   
-  var celsiumScale = anychart.scales.linear();
-  celsiumScale.minimum(kelvinScale.minimum() - 273.15);
-  celsiumScale.maximum(kelvinScale.maximum() - 273.15);
-  var celsiumTicks = celsiumScale.ticks();
-  celsiumTicks.interval(500);
-  var celsiumMinorTicks = celsiumScale.minorTicks();
-  celsiumMinorTicks.interval(100);
+  var celsiusScale = anychart.scales.linear();
+  celsiusScale.minimum(kelvinScale.minimum() - 273.15);
+  celsiusScale.maximum(kelvinScale.maximum() - 273.15);
+  var celsiusTicks = celsiusScale.ticks();
+  celsiusTicks.interval(500);
+  var celsiusMinorTicks = celsiusScale.minorTicks();
+  celsiusMinorTicks.interval(100);
   
   var xAxis = chart.xAxis();
   xAxis.scale(fahrenheitScale);
@@ -39,11 +39,11 @@ anychart.onDocumentReady(function() {
   
   // adjusting axes
   var xAxis1 = chart.xAxis(1);
-  xAxis1.title("Celsium");
+  xAxis1.title("Celsius");
   xAxis1.orientation("top");
   xAxis1.drawFirstLabel(false);
   xAxis1.drawLastLabel(false);
-  xAxis1.scale(celsiumScale);
+  xAxis1.scale(celsiusScale);
   
   var xAxis2 = chart.xAxis(2);
   xAxis2.scale(kelvinScale);
@@ -80,7 +80,7 @@ anychart.onDocumentReady(function() {
   markerTooltip.contentFormatter(function(){
     return this.value+
       "\nKelvin: "+ (this.x).toFixed(2) +
-      "\nCelsium: "+ (this.x - 273.15).toFixed(2) +
+      "\nCelsius: "+ (this.x - 273.15).toFixed(2) +
       "\nFahrenheit: " + ((this.x - 273.15)*1.8000 + 32).toFixed(2);
   });
   markerSeries.xScale(kelvinScale);
@@ -90,7 +90,7 @@ anychart.onDocumentReady(function() {
   var lineMarker = chart.lineMarker();
   lineMarker.stroke("1 red");
   lineMarker.layout("vertical");
-  lineMarker.scale(celsiumScale);
+  lineMarker.scale(celsiusScale);
   var lineMarker1 = chart.lineMarker(1);
   lineMarker1.stroke("1 green");
   lineMarker1.layout("vertical");
