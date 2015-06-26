@@ -9,20 +9,6 @@ anychart.onDocumentReady(function() {
   chart.title("Extra Axes Units Comparison Sample");
   
   // additional axes settings
-  var fahrenheitScale = anychart.scales.linear();
-  fahrenheitScale.minimum(-260);
-  fahrenheitScale.maximum(3000);
-  var fahrenheitTicks = fahrenheitScale.ticks();
-  fahrenheitTicks.interval(500);
-  
-  var celsiumScale = anychart.scales.linear();
-  celsiumScale.minimum(-274);
-  celsiumScale.maximum(1500);
-  var celsiumTicks = celsiumScale.ticks();
-  celsiumTicks.interval(500);
-  var celsiumMinorTicks = celsiumScale.minorTicks();
-  celsiumMinorTicks.interval(100);
-  
   var kelvinScale = anychart.scales.linear();
   kelvinScale.minimum(0);
   kelvinScale.maximum(2000);
@@ -31,14 +17,32 @@ anychart.onDocumentReady(function() {
   var kelvinMinorTicks = kelvinScale.minorTicks();
   kelvinMinorTicks.interval(100);
   
+  var fahrenheitScale = anychart.scales.linear();
+  fahrenheitScale.minimum((kelvinScale.minimum() - 273.15)*1.8 + 32);
+  fahrenheitScale.maximum((kelvinScale.maximum() - 273.15)*1.8 + 32);
+  var fahrenheitTicks = fahrenheitScale.ticks();
+  fahrenheitTicks.interval(500);
+  
+  var celsiumScale = anychart.scales.linear();
+  celsiumScale.minimum(kelvinScale.minimum() - 273.15);
+  celsiumScale.maximum(kelvinScale.maximum() - 273.15);
+  var celsiumTicks = celsiumScale.ticks();
+  celsiumTicks.interval(500);
+  var celsiumMinorTicks = celsiumScale.minorTicks();
+  celsiumMinorTicks.interval(100);
+  
   var xAxis = chart.xAxis();
   xAxis.scale(fahrenheitScale);
+  xAxis.drawFirstLabel(false);
+  xAxis.drawLastLabel(false);
   xAxis.title("Fahrenheit");
   
   // adjusting axes
   var xAxis1 = chart.xAxis(1);
   xAxis1.title("Celsium");
   xAxis1.orientation("top");
+  xAxis1.drawFirstLabel(false);
+  xAxis1.drawLastLabel(false);
   xAxis1.scale(celsiumScale);
   
   var xAxis2 = chart.xAxis(2);
