@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
   // define chart
-  var chart = anychart.barChart();
+  var chart = anychart.bar();
 
   // setting chart title
   chart.title("X113 Destroyer Development Plan");

@@ -5,7 +5,7 @@
 anychart.onDocumentReady(function() {
 
   // chart type
-  var chart = anychart.lineChart();
+  var chart = anychart.line();
 
   // chart title
   chart.title("Line Chart DateTime Scale");
