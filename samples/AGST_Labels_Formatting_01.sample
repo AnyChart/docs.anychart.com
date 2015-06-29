@@ -4,21 +4,22 @@
 
 anychart.onDocumentReady(function() {
 
-  var chart = anychart.lineChart();
+  var chart = anychart.line();
 
   // chart title
-  chart.title().text("Enable/Disable Axes Labels");
+  chart.title("Enable/Disable Axes Labels");
 
   // disable x axis labels and title adjusting
-  chart.xAxis().labels().enabled(false);
-  chart.xAxis().title().text("X-Axis without labels");
+  var xAxis = chart.xAxis();
+  xAxis.labels(false);
+  xAxis.title("X-Axis without labels");
 
   // adjusting y axis title and setting additional axis
-  chart.yAxis().title().text("Y-Axis with labels");
-  chart.yAxis(1)
-    .orientation("right")
-    .title()
-      .text("Secondary Y-Axis with labels");
+  var yAxis = chart.yAxis(0);
+  yAxis.title("Y-Axis with labels");
+  var yAxis1 = chart.yAxis(1);
+  yAxis1.orientation("right");
+  yAxis1.title("Secondary Y-Axis with labels");
 
   // data
   var data = anychart.data.set([
@@ -33,5 +34,6 @@ anychart.onDocumentReady(function() {
   chart.line(data);
 
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });

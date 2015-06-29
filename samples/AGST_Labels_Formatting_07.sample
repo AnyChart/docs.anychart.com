@@ -7,31 +7,37 @@ anychart.onDocumentReady(function() {
   var stage = anychart.graphics.create("container");
 
   // title settings
-  anychart.ui.title()
-    .parentBounds(0, 0, stage.width(), stage.height()*0.1)
-    .text("Y-Axis Labels: width is set to 70 pixels")
-    .container(stage)
-    .draw();
+  var mainTitle = anychart.ui.title();
+  mainTitle.parentBounds(0, 0, stage.width(), stage.height()*0.1);
+  mainTitle.text("Y-Axis Labels: width is set to 70 pixels");
+  mainTitle.container(stage);
+  mainTitle.draw();
 
 
   // first chart
-  var firstChart = anychart.columnChart();
+  var firstChart = anychart.column();
 
   // disabling title
-  firstChart.title().enabled(false);
+  firstChart.title(false);
 
-  // setting stroke for chart contaoner
-  firstChart.background().stroke("#CCCCCC");
+  // setting stroke for chart container
+  var firstBackground = firstChart.background();
+  firstBackground.stroke("#CCCCCC");
 
   // setting position and bounds
   firstChart.bounds(0, "10%", "100%", "45%");
 
   // disabling titles for Axes
-  firstChart.yAxis().title().enabled(false);
-  firstChart.xAxis().title().enabled(false);
+  var yAxis = firstChart.yAxis();
+  yAxis.title(false);
+  var xAxis = firstChart.xAxis();
+  xAxis.title(false);
 
   // formatting labels value using function
-  firstChart.yAxis().labels().width(70).hAlign("right").textFormatter(valueAdjuster);
+  var firstLabels = firstChart.yAxis().labels();
+  firstLabels.width(70);
+  firstLabels.hAlign("right");
+  firstLabels.textFormatter(valueAdjuster);
 
   firstChart.column([
       ["P1", 698712],
@@ -47,19 +53,25 @@ anychart.onDocumentReady(function() {
 
 
   // second chart
-  var secondChart = anychart.columnChart();
+  var secondChart = anychart.column();
 
   // disabling title and adjusting chart container position
-  secondChart.title().enabled(false);
+  secondChart.title(false);
   secondChart.bounds(0, "55%", "100%", "45%");
-  secondChart.background().stroke("#CCCCCC");
+  var secondBackground = secondChart.background();
+  secondBackground.stroke("#CCCCCC");
 
   // disabling axes titles
-  secondChart.yAxis().title().enabled(false);
-  secondChart.xAxis().title().enabled(false);
+  var secondYAxis = secondChart.yAxis();
+  secondYAxis.title(false);
+  var secondXAxis = secondChart.xAxis();
+  secondXAxis.title(false);
 
   // adjusting axis labels using function
-  secondChart.yAxis().labels().width(70).hAlign("right").textFormatter(valueAdjuster);
+  var secondYLabels = secondChart.yAxis().labels();
+  secondYLabels.width(70);
+  secondYLabels.hAlign("right");
+  secondYLabels.textFormatter(valueAdjuster);
 
   secondChart.column([
     ["P1", 12],

@@ -3,12 +3,11 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
-  var chart = anychart.barChart();
   
-  chart.container("container");
+  var chart = anychart.bar();
 
   // setting title
-  chart.title().text("Y axis Labels stick to the right");
+  chart.title("Y axis Labels stick to the right");
 
   // seting data
   chart.bar([
@@ -20,8 +19,10 @@ anychart.onDocumentReady(function() {
   ]);
 
   // adjusting labels
-  chart.yScale().ticks().interval(200000000);
-  chart.yAxis().labels().textFormatter(function(){
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(200000000);
+  var yLabels = chart.yAxis().labels();
+  yLabels.textFormatter(function(){
     var value = this.value;
     if (value>1000000){
       if (value>999999999){
@@ -33,14 +34,18 @@ anychart.onDocumentReady(function() {
     }
     return value;
   });
-  chart.xAxis().labels()
-    .hAlign("center")
-    .width(60)
-    .hAlign("right");
+  var xLabels = chart.xAxis().labels();
+  xLabels.hAlign("center");
+  xLabels.width(60);
+  xLabels.hAlign("right");
 
-  chart.yAxis().minorTicks().enabled(false);
-  chart.xAxis().staggerLines(1);
+  var yMinorTicks = chart.yAxis().minorTicks();
+  yMinorTicks.enabled(false);
+  
+  var xAxis = chart.xAxis();
+  xAxis.staggerLines(1);
 
   // draw chart
+  chart.container("container");
   chart.draw();
 });

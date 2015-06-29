@@ -18,83 +18,47 @@ anychart.onDocumentReady(function() {
   var stage = anychart.graphics.create("container");
 
   // setting main title
-  anychart.ui.title()
-    .parentBounds(0, 0, stage.width(), stage.height()*0.1)
-    .text("Main Labels Settings")
-    .container(stage)
-    .draw();
-
+  var mainTitle = anychart.ui.title();
+  mainTitle.parentBounds(0, 0, stage.width(), stage.height()*0.1);
+  mainTitle.text("Main Labels Settings");
+  mainTitle.container(stage);
+  mainTitle.draw();
 
   // Chart without labels adjusting
-  var normalLabels = anychart.columnChart();
-
+  var normalLabels = anychart.column();
   // setting title
-  normalLabels.title().text("Normal labels");
-
-  // setting stroke for chart contaoner
-  normalLabels.background().stroke("#CCCCCC");
-
+  normalLabels.title("Normal labels");
   // setting position and bounds
   normalLabels.bounds(0, "10%", "33.3%", "55%");
-
-  // set scale minimum
-  normalLabels.yScale().minimum(0);
-
-
-  // disabling titles for Axes
-  normalLabels.yAxis().title().enabled(false);
-  normalLabels.xAxis().title().enabled(false);
-
-
   // setting series data
   normalLabels.column(seriesData_1);
   normalLabels.column(seriesData_2);
-
-  // draw container
-  normalLabels.container(stage);
-  normalLabels.draw();
+  chartSettings(normalLabels);
 
 
   // chart with rotated labels
-  var rotatedLabels = anychart.columnChart();
-  rotatedLabels.title().text("Rotated labels");
+  var rotatedLabels = anychart.column();
+  rotatedLabels.title("Rotated labels");
   rotatedLabels.bounds("33.3%", "10%", "33.3%", "55%");
-  rotatedLabels.background().stroke("#CCCCCC");
-
-  // set scale minimum
-  rotatedLabels.yScale().minimum(0);
-
-  rotatedLabels.yAxis().title().enabled(false);
-  rotatedLabels.xAxis().title().enabled(false);
-
   // rotating labels
-  rotatedLabels.xAxis().labels().rotation(-90);
-  rotatedLabels.yAxis().labels().rotation(-90);
-
+  var xRotatedLabels = rotatedLabels.xAxis().labels();
+  xRotatedLabels.rotation(-90);
+  var yRotatedLabels = rotatedLabels.yAxis().labels();
+  yRotatedLabels.rotation(-90);
   rotatedLabels.column(seriesData_1);
   rotatedLabels.column(seriesData_2);
-
-  rotatedLabels.container(stage);
-  rotatedLabels.draw();
+  chartSettings(rotatedLabels);
 
 
   // chart with stagger mode
-  var staggerLabels = anychart.columnChart();
-  staggerLabels.title().text("Stagger Labels");
+  var staggerLabels = anychart.column();
+  staggerLabels.title("Stagger Labels");
   staggerLabels.bounds("66.6%", "10%", "33.3%", "55%");
-  staggerLabels.background().stroke("#CCCCCC");
-  staggerLabels.xAxis().title().enabled(false);
-  staggerLabels.yAxis().title().enabled(false);
-
   // enabling stagger mode
-  staggerLabels.xAxis().staggerMode(true);
-
-  // set scale minimum
-  staggerLabels.yScale().minimum(0);
-
-
+  var xAxis = staggerLabels.xAxis();
+  xAxis.staggerMode(true);
   // adjusting settings for stager mode
-  staggerLabels.xAxis().staggerLines(2);
+  xAxis.staggerLines(2);
 
   // data set for stagger mode sample
   var staggerData = anychart.data.set([
@@ -112,52 +76,79 @@ anychart.onDocumentReady(function() {
   // data remapping for stagger sample
   var staggerSeriesData_1 = staggerData.mapAs({x: [0], value: [1]});
   var staggerSeriesData_2 = staggerData.mapAs({x: [0], value: [2]});
-
   staggerLabels.column(staggerSeriesData_1);
   staggerLabels.column(staggerSeriesData_2);
-
-  staggerLabels.container(stage);
-  staggerLabels.draw();
-
-
+  chartSettings(staggerLabels);
+  
   // chat with labels inside
-  var labelsInside = anychart.lineChart();
+  var labelsInside = anychart.line();
 
   // setting data
-  labelsInside.line([
+  var insideLabelsSeries = labelsInside.line([
     [-4, 16],
     [-2, 20],
     [-1, 15],
     [2, 20],
     [3, 18],
     [4, 16]
-  ]).tooltip().enabled(false);
+  ]);
+  insideLabelsSeries.tooltip(false);
 
-  labelsInside.title().text("Labels Inside");
+  labelsInside.title("Labels Inside");
   labelsInside.bounds(0, "65%", "100%", "35%");
-  labelsInside.background().stroke("#CCCCCC");
+  var background = labelsInside.background();
+  background.stroke("#CCCCCC");
 
-  labelsInside.xAxis().title().enabled(false);
-  labelsInside.yAxis().title().enabled(false);
+  var innerXAxis = labelsInside.xAxis();
+  innerXAxis.title(false);
+  var innerYAxis = labelsInside.yAxis();
+  innerYAxis.title(false);
 
   // adjusting scales
-  labelsInside.xScale(anychart.scales.linear());
-  labelsInside.yScale(anychart.scales.linear().maximum(23).minimum(13));
-  labelsInside.yScale().ticks().interval(3);
-  labelsInside.xScale().ticks().interval(1);
-
+  var xNewScale = anychart.scales.linear();
+  var xNewTicks = xNewScale.ticks();
+  xNewTicks.interval(1);
+  labelsInside.xScale(xNewScale);
+  var yNewScale = anychart.scales.linear();
+  yNewScale.maximum(23);
+  yNewScale.minimum(13);
+  var yNewTicks = yNewScale.ticks();
+  yNewTicks.interval(3);
+  labelsInside.yScale(yNewScale);
+  
   // setting labels a bit higher and andjusting it's values
-  labelsInside.xAxis().labels().offsetY(-25).textFormatter(function(){
+  var innerLabelsXAxisLabels = labelsInside.xAxis().labels();
+  innerLabelsXAxisLabels.offsetY(-25);
+  innerLabelsXAxisLabels.textFormatter(function(){
     return this.value + ".00";
   });
 
   // disabling first and last labels
-  labelsInside.xAxis().drawFirstLabel(false);
-  labelsInside.xAxis().drawLastLabel(false);
+  innerXAxis.drawFirstLabel(false);
+  innerXAxis.drawLastLabel(false);
 
   // disabling labels for y axis
-  labelsInside.yAxis().labels().enabled(false);
+  innerYAxis.labels(false);
 
   labelsInside.container(stage);
   labelsInside.draw();
+  
+  function chartSettings (chart){
+    // disable axes titles
+    var xTitle = chart.xAxis().title();
+    xTitle.enabled(false);
+    var yTitle = chart.yAxis().title();
+    yTitle.enabled(false);
+    
+    var yScale = chart.yScale();
+    yScale.minimum(0);
+    
+    // set background border
+    var chartBackground = chart.background();
+    chartBackground.stroke("#CCCCCC");
+    
+    // set container and draw chart
+    chart.container(stage);
+    chart.draw();
+  }
 });

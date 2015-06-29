@@ -4,9 +4,9 @@
 
 anychart.onDocumentReady(function() {
     
-  var chart = anychart.areaChart();
+  var chart = anychart.area();
 
-  chart.title().text("Axes Labels Visual Setting");
+  chart.title("Axes Labels Visual Setting");
 
   chart.area([
       ["January" , 10000],
@@ -16,26 +16,33 @@ anychart.onDocumentReady(function() {
       ["May" , 19000]
   ]);
 
-  chart.yScale().minimum(8000).maximum(20000).ticks().interval(2000);
+  var yScale = chart.yScale();
+  yScale.minimum(8000);
+  yScale.maximum(20000);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(2000);
 
   // set function to format y axis labels
-  chart.yAxis().labels()
-    .hAlign("right")
-    .textWrap(true)
-    .textFormatter(dollarFormatter);
+  var yLabels = chart.yAxis().labels();
+  yLabels.hAlign("right");
+  yLabels.textWrap(true);
+  yLabels.textFormatter(dollarFormatter);
   // set axes title
-  chart.yAxis().title().text("Revenue in US Dollars");
-  chart.xAxis().title().text("Month");
+  var yTitle = chart.yAxis().title();
+  yTitle.text("Revenue in US Dollars");
+  var xTitle = chart.xAxis().title();
+  xTitle.text("Month");
 
-  chart.xAxis().labels().fontFamily("Courier")
-    .useHtml(true)
-    .fontColor("red")
-    .fontWeight("bold")
-    .background()
-      .enabled(true)
-      .stroke("blue");
+  var xLabels = chart.xAxis().labels();
+  xLabels.fontFamily("Courier");
+  xLabels.useHtml(true);
+  xLabels.fontColor("red");
+  xLabels.fontWeight("bold");
+  var xLabelsBackground = chart.xAxis().labels().background();
+  xLabelsBackground.enabled(true);
+  xLabelsBackground.stroke("blue");
 
-  // function to addjust y axis labels
+  // function to adjust y axis labels
   function dollarFormatter() {
     var value = this.value*115.167569;
     value = value.toFixed(2);
@@ -53,5 +60,6 @@ anychart.onDocumentReady(function() {
     return "$" + (this.value/1000) + " 000.00 USD" + "\n¥ " + value;
   }
 
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });
