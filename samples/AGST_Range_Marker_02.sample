@@ -14,84 +14,95 @@ anychart.onDocumentReady(function() {
   ]);
   
   // chart type
-  chart = anychart.lineChart();
+  var chart = anychart.line();
   
   // set data
-  chart.line(data).hoverStroke("red").tooltip().contentFormatter(function(){
+  var series = chart.line(data);
+  series.hoverStroke("red");
+  var seriesTooltip = seriesTooltip.tooltip();
+  seriesTooltip.contentFormatter(function(){
     return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
   });
   
   // disable title
-  chart.title().enabled(false);
+  chart.title(false);
   
   // set y scale ticks interval
-  chart.yScale().minimum(0).maximum(30000).ticks().interval(5000);
+  var yScale = chart.yScale();
+  yScale.minimum(0);
+  yScale.maximum(30000);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(5000);
   
   // disable x axis title
-  chart.xAxis().title().enabled(false);
+  var xAxis = chart.xAxis();
+  xAxis.title(false);
   
   // adjust y axis labels
-  chart.yAxis().labels().textFormatter(function(){
+  var yLabels = chart.yAxis().labels();
+  yLabels.textFormatter(function(){
     return "$" + this.value/1000 + ",000";
   });
   
   // y scale title
-  chart.yAxis().title().text("Sales");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
   
   // set green
-  chart.rangeMarker()
-    .scale(chart.yScale())
-    .from(20000)
-    .to(30000)
-    .fill("green 0.5");
+  var rangeMarker = chart.rangeMarker(0);
+  rangeMarker.scale(chart.yScale());
+  rangeMarker.from(20000);
+  rangeMarker.to(30000);
+  rangeMarker.fill("green 0.5");
   
   // set red marker
-  chart.rangeMarker(1)
-    .scale(chart.yScale())
-    .fill("gold 0.5")
-    .from(10000)
-    .to(20000);
+  var rangeMarker1 = chart.rangeMarker(1);
+  rangeMarker1.scale(chart.yScale());
+  rangeMarker1.fill("gold 0.5");
+  rangeMarker1.from(10000);
+  rangeMarker1.to(20000);
   
   // set green marker
-  chart.rangeMarker(2)
-    .scale(chart.yScale())
-    .from(0)
-    .to(10000)
-    .fill("red 0.5");
+  var rangeMarker2 = chart.rangeMarker(2);
+  rangeMarker2.scale(chart.yScale());
+  rangeMarker2.from(0);
+  rangeMarker2.to(10000);
+  rangeMarker2.fill("red 0.5");
   
   // set left text marker
-  chart.textMarker()
-    .scale(chart.yScale())
-    .align("left")
-    .anchor("leftcenter")
-    .offsetX(5)
-    .value(25000)
-    .fontColor("white")
-    .text("Good: [20,000.00 - 30,000.00]")
-    .fontSize(20);
+  var textMarker = chart.textMarker(0);
+  textMarker.scale(chart.yScale());
+  textMarker.align("left");
+  textMarker.anchor("leftcenter");
+  textMarker.offsetX(5);
+  textMarker.value(25000);
+  textMarker.fontColor("white");
+  textMarker.text("Good: [20,000.00 - 30,000.00]");
+  textMarker.fontSize(20);
   
   // set text marker at the center
-  chart.textMarker(1)
-    .scale(chart.yScale())
-    .align("center")
-    .anchor("center")
-    .value(15000)
-    .fontColor("black")
-    .hAlign("center")
-    .text("Average \n[20,000.00 - 30,000.00]")
-    .fontSize(18);
+  var textMarker1 = chart.textMarker(1);
+  textMarker1.scale(chart.yScale());
+  textMarker1.align("center");
+  textMarker1.anchor("center");
+  textMarker1.value(15000);
+  textMarker1.fontColor("black");
+  textMarker1.hAlign("center");
+  textMarker1.text("Average \n[20,000.00 - 30,000.00]");
+  textMarker1.fontSize(18);
   
   // set text marker at the center
-  chart.textMarker(2)
-    .scale(chart.yScale())
-    .align("right")
-    .anchor("rightcenter")
-    .offsetX(5)
-    .value(5000)
-    .fontColor("black")
-    .text("Severe")
-    .fontSize(15);
+  var textMarker2 = chart.textMarker(2);
+  textMarker2.scale(chart.yScale());
+  textMarker2.align("right");
+  textMarker2.anchor("rightcenter");
+  textMarker2.offsetX(5);
+  textMarker2.value(5000);
+  textMarker2.fontColor("black");
+  textMarker2.text("Severe");
+  textMarker2.fontSize(15);
   
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });
