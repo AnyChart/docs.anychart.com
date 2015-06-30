@@ -20,17 +20,15 @@ You can add custom line markers to any scale, both x scale, y scale and addition
 To add line marker you need to use {api:anychart.charts.Cartesian#lineMarker}**.lineMarker()**{api} method and tune it using {api:anychart.core.axisMarkers.Line#scale}**.scale()**{api}, {api:anychart.core.axisMarkers.Line#stroke}**.stroke()**{api} and {api:anychart.core.axisMarkers.Line#layout}**.layout()**{api} parameters:
 
 ```
-    chart.lineMarker()
-        .stroke('green')
-        .layout('horizontal')
-        .scale(chart.yScale())
-        .value(9000);
-    
-    chart.lineMarker(1)
-        .stroke({color: 'red', dash: '7', opacity: 1})
-        .layout('horizontal')
-        .scale(chart.yScale())
-        .value(19000);
+  var firstMarker = chart.lineMarker();
+  firstMarker.stroke("green");
+  firstMarker.scale(chart.yScale());
+  firstMarker.value(9000);
+  
+  var secondMarker = chart.lineMarker(1);
+  secondMarker.stroke({color: "red", dash: "7", opacity: 1});
+  secondMarker.scale(chart.yScale());
+  secondMarker.value(19000);
 ```
 
 
