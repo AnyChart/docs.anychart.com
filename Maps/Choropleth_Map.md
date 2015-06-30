@@ -47,33 +47,59 @@ These 3 map types can all handle raw data (e.g., simple counts, totals) opposite
 
 ## Data Classes 
 
-How many classes does the map need? Each time the answer will be different, because the only thing that can help you to define the classes' number is the accuracy of the information 
+How many classes does a map need? Each time the answer will be different, because the only thing that can help you to define the classes' number is the accuracy of the information 
 you need your map to provide. Most choropleth maps are made with 5-7 data classes average. The more classes you use, the less is data generalization, 
-but this leads to the expense of legibility and 
-
-
-the associated risk of map reading errors since more colors are harder to see and print reliably (which is bad). 
-The key question is how much generalization do you want? A map with 3 classes/colors (e.g., low, medium, high) will be easy to see and remember, 
-but may gloss over some very important aspects of the data and create artificial geographic patterns by lumping many places into broad classes. 
-There is no ideal number of classes for a choropleth map, so experiment. Have a look at the distribution of your data in the histogram; 
-Are there obvious clusters within your data? If so, pick that number of classes and place those class breaks manually around those clusters (again, using the histogram).
+but this leads to the expense of legibility and increases the complexity of perception. Also, the more colors you use, the harder it will be to distinguish them all on prints.
+A map with only three classes is quite easy to understand, but it may hide some important aspects of the data. So there is no perfect number of classes.
 
 
 ### Classed Choropleth
 
+Classed Choropleth is a Choropleth Map, which scale is (and, consequently, a ColorRange is) Ordinal, so each class/color has some certain value bounds.
 
-Classification Method
-Just as there is no single correct number of classes, there is no single best way to classify you data into ranges. Look at the histogram (or scatterplot) to determine the "form" of your observations. Above all else the goal of data classification is to put places with similar rates in the same class and to separate places with very different rates into different classes. In other words, you're aiming to minimize within-class variance and maximize between-class variance.
 
-Equal interval divides the data into equal size classes (e.g., 0-10, 10-20, 20-30, etc.) and works best on data that is generally spread across the entire range. Avoid equal interval if your data are skewed to one end ("bunched up" or "clumpy").
+#### Classification Method
 
-Quantiles will create attractive maps that place an equal number of observations in each class: If you have 30 counties and 6 data classes, you'll have 5 counties in each class. The problem with quantiles is that you can end-up with classes that have very different numerical ranges (e.g., 1-4, 4-9, 9-250...the last class is huge). Quantile can also separate locations with very similar rates and group together places that have very different rates, which is very undesirable, so use the histogram to see if this is happening.
+The situation with classification is the same as with number of classes: there's no default about the way to classify the data into ranges.
+The main goal of classification is to unite territories with similar rates through coloring them in one shade or color. 
+<br><br> 
+There are three general ways to classify the data:
+<br><br>
 
-Natural Breaks is a kind of "optimal" classification scheme that finds class breaks that (for a given number of classes) will minimize within-class variance and maximize between-class differences. One drawback of this approach is each dataset generates a unique classification solution, and if you need to make comparison across maps, such as in an atlas or a series (e.g., one map each for 1980, 1990, 2000) you might want to use a single scheme that can be applied across all of the maps.
+- Equal interval 
+The data is divided into ranges of equal size (e.g., 0-100, 100-200, 200-300, etc.). This type is the best, when the data values are spread across the entire range,
+but has no sense, when the data values are spread unequally. 	
+
+- Quantiles 
+will create attractive maps that place an equal number of observations in each class. It means that if you have 20 territories on your map
+and 4 data classes, you'll get only 5 territories in each class. The problem 
+with quantiles is that there's no obvious borders between the less and the highest values, and classes may have very different numerical ranges, 
+e.g. 1-10, 10-20, 20-1200, 1200-1250, etc. Quantiles lead to having groups of places with very different rates, so use this only in specific situations.
+
+- Natural Breaks 
+This way is a kind of "optimal" classification scheme, when the value borders are set where the between-class difference is the biggest and 
+the difference between within-class values is the smallest.	
+	
+You can set the classes only by yourself, no matter which classification method you decided to use. The sample of classification is shown below.
+```
+ocs = anychart.scales.ordinalColor([
+  		{less: 80}, 
+  		{from: 80, to: 145}, 
+  		{from: 145, to: 210}, 
+		{greater: 210}
+	]);
+```
+
+To set the colors for each range use the **.colors()** method. The number of colors you define should be the same as the number of ranges you have defined before:
+```
+ ocs.colors(['#FF6363', '#FF3939', '#C50000', '#9B0000']);
+```
 
 
 ### Unclassed Choropleth
 
+Unclassed Choropleth is a Choropleth Map, which scale is (and, consequently, a ColorRange is) Linear, Logarithmic or DateTime.
+It means that there is no certain value bounds between colors, and a ColorRange looks like a single bar painted as a gradient 
 
 ## Advantages and Disadvantages
 
