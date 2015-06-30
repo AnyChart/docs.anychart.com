@@ -39,6 +39,32 @@ Example datasets appropriate for choropleths:
 
 <br><br>
 
+That's the code sample of a dataset. All points are set as objects, each has an "id" field and a "value" field. As you can see, the value might be set as a numeric value or you may define a random value.
+
+```
+var dataSet1 = anychart.data.set([
+                {'id': 'au-2557', 'value': 230},
+                {'id': 'au-wa', 'value': 200},
+                {'id': 'au-jb', 'value': 10)},
+                {'id': 'au-ns', 'value': random(0, 300)},
+                {'id': 'au-vi', 'value': 300},
+                {'id': 'au-nt', 'value': 332},
+                {'id': 'au-ts', 'value': 160},
+                {'id': 'au-ct', 'value': random(0, 300)},
+                {'id': 'au-sa', 'value': 30},
+                {'id': 'au-ql', 'value': random(0, 300)}
+            ]);
+```
+
+<br>
+
+To connect the data to the map and to define its type you may use the next constr
+```
+s1 = map.choropleth(dataSet1);
+```
+
+<br>
+
 If you are still in doubt about using a choropleth, check those which are a bit similar:
 - [Dot Density Maps](../Dot_Density_Map)
 - [Graduated/Proportional Symbol Maps](../Proportional_Symbol_Map)
@@ -58,31 +84,31 @@ A map with only three classes is quite easy to understand, but it may hide some 
 Classed Choropleth is a Choropleth Map, which scale is (and, consequently, a ColorRange is) Ordinal, so each class/color has some certain value bounds.
 
 
-#### Classification Method
+<!--Classification Method-->
 
 The situation with classification is the same as with number of classes: there's no default about the way to classify the data into ranges.
 The main goal of classification is to unite territories with similar rates through coloring them in one shade or color. 
 <br><br> 
-There are three general ways to classify the data:
+<!-- There are three general ways to classify the data: -->
 <br><br>
 
 - Equal interval 
 The data is divided into ranges of equal size (e.g., 0-100, 100-200, 200-300, etc.). This type is the best, when the data values are spread across the entire range,
 but has no sense, when the data values are spread unequally. 	
 
-- Quantiles 
-will create attractive maps that place an equal number of observations in each class. It means that if you have 20 territories on your map
+<!-- - Quantiles
+This way will create attractive maps that place an equal number of observations in each class. It means that if you have 20 territories on your map
 and 4 data classes, you'll get only 5 territories in each class. The problem 
 with quantiles is that there's no obvious borders between the less and the highest values, and classes may have very different numerical ranges, 
 e.g. 1-10, 10-20, 20-1200, 1200-1250, etc. Quantiles lead to having groups of places with very different rates, so use this only in specific situations.
 
 - Natural Breaks 
 This way is a kind of "optimal" classification scheme, when the value borders are set where the between-class difference is the biggest and 
-the difference between within-class values is the smallest.	
+the difference between within-class values is the smallest.	-->
 	
 You can set the classes only by yourself, no matter which classification method you decided to use. The sample of classification is shown below.
 ```
-ocs = anychart.scales.ordinalColor([
+ordinalColors = anychart.scales.ordinalColor([
   		{less: 80}, 
   		{from: 80, to: 145}, 
   		{from: 145, to: 210}, 
@@ -90,16 +116,17 @@ ocs = anychart.scales.ordinalColor([
 	]);
 ```
 
-To set the colors for each range use the **.colors()** method. The number of colors you define should be the same as the number of ranges you have defined before:
+To set the colors for each range use the **{api:anychart.palettes.RangeColors}.colors(){api}** method. The number of colors you define should be the same as the number of ranges you have defined before:
 ```
- ocs.colors(['#FF6363', '#FF3939', '#C50000', '#9B0000']);
+ordinalColors.colors(['#FF6363', '#FF3939', '#C50000', '#9B0000']);
 ```
-
 
 ### Unclassed Choropleth
 
 Unclassed Choropleth is a Choropleth Map, which scale is (and, consequently, a ColorRange is) Linear, Logarithmic or DateTime.
-It means that there is no certain value bounds between colors, and a ColorRange looks like a single bar painted as a gradient 
+It means that there is no certain value bounds between colors, and a ColorRange looks like a single bar painted as a gradient.
+<br>
+Read more about ColorRange [here](../Color_Range.md).
 
 ## Advantages and Disadvantages
 
