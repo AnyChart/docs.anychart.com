@@ -1,0 +1,54 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+
+  var randomExt = function(a, b) {
+    return Math.round(Math.random() * (b - a + 1) + a);
+  };
+
+  var dataSet1 = anychart.data.set([
+    {'id': 'au-2557', 'value': randomExt(0, 300)},
+    {'id': 'au-wa', 'value': randomExt(0, 300)},
+    {'id': 'au-jb', 'value': randomExt(0, 300)},
+    {'id': 'au-ns', 'value': randomExt(0, 300)},
+    {'id': 'au-vi', 'value': randomExt(0, 300)},
+    {'id': 'au-nt', 'value': randomExt(0, 300)},
+    {'id': 'au-ts', 'value': randomExt(0, 300)},
+    {'id': 'au-ct', 'value': randomExt(0, 300), labels: false},
+    {'id': 'au-sa', 'value': randomExt(0, 300)},
+    {'id': 'au-ql', 'value': randomExt(0, 300)}
+  ]);
+
+  var map = anychart.map();
+  map.geoData(Highcharts.maps["countries/au/au-all"]);
+
+  map.background('Gainsboro');				
+  map.title().useHtml(true).hAlign('center');
+  map.title('<span style="font-size: 18px;">Ordinal Color Scale <br> Single Hue Color Progression');	
+
+  var cr = map.colorRange();
+  cr.colorLineSize(15);
+  cr.align('center');
+  cr.stroke(null);
+  cr.ticks().stroke('rgb(216,216,216)');
+  cr.ticks().position('center').length(15);
+
+  s1 = map.choropleth(dataSet1);
+  s1.geoIdField('hc-key');
+  s1.stroke('#000 .3');
+  s1.selectFill('#5588ff');
+
+  ocs = anychart.scales.ordinalColor([
+  		{less: 80}, 
+  		{from: 80, to: 145}, 
+  		{from: 145, to: 210}, 
+		{greater: 210}
+	]);
+  ocs.colors(['rgb(253,225,86)','rgb(248,196,57)', 'rgb(244,168,19)', 'rgb(198,109,1)', 'rgb(152,58,0)']);
+  s1.colorScale(ocs);
+
+  map.container('container');
+  map.draw();
+});
