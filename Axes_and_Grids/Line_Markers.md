@@ -10,8 +10,7 @@
 
 Line markers are lines bound to a scale and require a value to be drawn at.
   
-These lines are useful when you need to highlight some value(s) on an axis. If you need to highlight value with text, 
-not line, please take look at [Text Markers](Text_Markers) article.
+These lines are useful when you need to highlight some value(s) on an axis. If you need to highlight value with text, not line, please take look at [Text Markers](Text_Markers) article.
   
 You can add custom line markers to any scale, both x scale, y scale and additional scales.
 
@@ -31,14 +30,13 @@ To add line marker you need to use {api:anychart.charts.Cartesian#lineMarker}**.
   secondMarker.value(19000);
 ```
 
-
 The sample below shows horizontal lines that indicate minimum and maximum value.
 
 {sample}AGST\_Line\_Marker\_01{sample}
 
 ## Line and Text Markers
 
-In some cases it is much more useful to combine line and text markers for emphasizing particular data, here is a sample:
+In some cases it is much more useful to combine line and text markers for emphasizing particular data. Here is a sample:
 
 {sample}AGST\_Line\_Marker\_02{sample}
 
