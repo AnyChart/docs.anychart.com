@@ -120,8 +120,8 @@ applicability to different chart types:
 To change scale mode you need to set {api:anychart.enums.ScaleStackMode}**.stackMode()**{api} attribute. Possible attributes are: **value** and **percent**.
 
 ```
-    chart.yScale().stackMode('value'); 
-    chart.yScale().stackMode('percent');     
+  var yScale = chart.yScale();
+  yScale.stackMode('percent');
 ```
 
 In the sample below stacked and percent stacked scales are demonstrated on the same data sets:
@@ -133,7 +133,9 @@ In the sample below stacked and percent stacked scales are demonstrated on the s
 For any scale, but ordinal, you can set maximum and/or minimum values which are calculated automatically by default.
 
 ```
-    chart.yScale().minimum(-50).maximum(100);
+  var yScale = chart.yScale();
+  yScale.minimum(-50);
+  yScale.maximum(100);
 ```
 
 Note, if you will set maximum value lesser than chart elements values, or minimum greater than them - these elements 
@@ -146,7 +148,9 @@ will be cut, and you will see only a part of them or will not see them at all.
 For any scale, but ordinal, you can set soft maximum and/or soft minimum values.
 
 ```
-    chart.yScale().softMinimum(-50).softMaximum(100);
+  var yScale = chart.yScale();
+  yScale.softMinimum(-50);
+  yScale.softMaximum(100);
 ```
 
 In some cases you may have no need to define solid minimum or maximum and need a scale to be autocalculated, but at the same time you may want a scale to remain in a certain range (i.e. "never go below zero" or "never go above 100"): that's the case when soft maximum and soft_minimum parameters help you.
@@ -166,8 +170,10 @@ For any scale, but ordinal, you can set major and minor ticks intervals, which a
 Major and minor ticks intervals are axis steps, which define where axis labels (major interval), axis ticks (major and minor, correspondingly) and major and minor grids are displayed.
 
 ```
-    chart.yScale().ticks().interval(10);
-    chart.yScale().minorTicks().interval(2);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(10);
+  var minorTicks = chart.yScale().minorTicks();
+  minorTicks.interval(2);
 ```
 
 In the sample below you can see how interval settings affects grids, ticks and labels.
@@ -179,7 +185,9 @@ In the sample below you can see how interval settings affects grids, ticks and l
 For any axis scale you can set minimum and maximum offsets. Maximum and minimum offsets are the spacing between maximum or minimum axis scale values and they are set as a ratio to the maximum and minimum scale values.
 
 ```
-    chart.yScale().minimumGap(0.5).maximumGap(0.5);
+  var yScale = chart.yScale();
+  yScale.minimumGap(0.5);
+  yScale.maximumGap(0.5);
 ```
 
 In the sample below you can see how offsets settings affects chart, the chart to the left has minimum and maximum 
@@ -192,7 +200,8 @@ offsets set to 0.5, the chart to the right has all the same settings, but offset
 If you want to display scale in an inverted mode use **.inverted()** method with "true" parameter.
 
 ```
-    chart.yScale().inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 ```
 
 Sample inverted scale chart:
@@ -205,15 +214,19 @@ Sample inverted scale chart:
 There are two types of grids in AnyChart - {api:anychart.charts.Cartesian#grid}major grid{api} and {api:anychart.charts.Cartesian#minorGrid}minor grid{api}. To enable grid you have to specify:
 
 ```
-  chart.minorGrid().enabled(true);
-  chart.grid().enabled(true);
+  var minorGrid = chart.minorGrid();
+  minorGrid.enabled(true);
+  var grid = chart.grid();
+  grid.enabled(true);
 ```
 
 For each grid you can define {api:anychart.grids.Linear#stroke}line style{api}:
 
 ```
- chart.grid().stroke('black');
- chart.minorGrid().stroke('black 0.5');
+  var grid = chart.grid();
+  grid.stroke('black');
+  var minorGrid = chart.minorGrid();
+  minorGrid.stroke('black 0.5');
 ```
 
 That's how simple grid will look like:
@@ -225,13 +238,13 @@ That's how simple grid will look like:
 You can also make your grid lines dashed:
 
 ```
-  chart.minorGrid()
-    .stroke({
-      color: 'black',
-      dash: '5 2 5',
-      opacity: 0.2
-    })
-    .layout('horizontal');
+  var minorGrid = chart.minorGrid();
+  minorGrid.stroke({
+    color: 'black',
+    dash: '5 2 5',
+    opacity: 0.2
+  });
+  minorGrid.layout('horizontal');
 ```
 
 And create chart like this:
@@ -243,10 +256,10 @@ And create chart like this:
 You can use this method with both major and minor grids. To do this you need to set {api:anychart.core.grids.Linear#oddFill}**.oddFill()**{api} or/and {api:anychart.core.grids.Linear#evenFill}**.evenFill()**{api} methods in the corresponding grid. Fill can be gradient, image and/or hatch as well as any other fill.
 
 ```
-    chart.grid(1)
-      .layout('horizontal')
-      .evenFill('white')            // color of even rows
-      .oddFill('rgb(244,245,255');  // color of odd rows
+  var grid = chart.grid()
+  grid.layout('horizontal')         // set grid layout
+  grid.evenFill('white')            // color of even rows
+  grid.oddFill('rgb(244,245,255');  // color of odd rows
 ```
 
 That's how simple interlaced grid looks like:

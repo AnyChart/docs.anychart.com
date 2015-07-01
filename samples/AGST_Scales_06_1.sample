@@ -4,11 +4,12 @@
 anychart.onDocumentReady(function() {
   
   // set stage
-  stage = anychart.graphics.create("container");
+  var stage = anychart.graphics.create("container");
   
   // create table
   var table = anychart.ui.table();
-  table.getRow(0).height("10%");
+  var firstRow = table.getRow(0);
+  firstRow.height("10%");
   
   // setting data
   var data_1 = anychart.data.set([
@@ -24,18 +25,22 @@ anychart.onDocumentReady(function() {
   ]);
   
   // create charts
-  var chart_1 = anychart.columnChart(data_1);
-  var chart_2 = anychart.columnChart(data_1);
-  var chart_3 = anychart.columnChart(data_1);
-  var chart_4 = anychart.columnChart(data_2);
-  var chart_5 = anychart.columnChart(data_2);
-  var chart_6 = anychart.columnChart(data_2);
+  var chart_1 = anychart.column(data_1);
+  var chart_2 = anychart.column(data_1);
+  var chart_3 = anychart.column(data_1);
+  var chart_4 = anychart.column(data_2);
+  var chart_5 = anychart.column(data_2);
+  var chart_6 = anychart.column(data_2);
   
-  chart_2.yScale().maximum(10);
-  chart_3.yScale().softMaximum(10);
+  var yScale2 = chart_2.yScale();
+  yScale2.maximum(10);
+  var yScale3 = chart_3.yScale();
+  yScale3.softMaximum(10);
   
-  chart_5.yScale().maximum(10);
-  chart_6.yScale().softMaximum(10);
+  var yScale5 = chart_5.yScale();
+  yScale5.maximum(10);
+  var yScale6 = chart_6.yScale();
+  yScale6.softMaximum(10);
   
   formatChart(chart_1);
   formatChart(chart_2);
@@ -61,13 +66,17 @@ anychart.onDocumentReady(function() {
   
   
   // position text in the center of each cell
-  table.vAlign("center").hAlign("center");
+  table.vAlign("center");
+  table.hAlign("center");
   
   // set table container and initiate draw
-  table.container(stage).draw();
+  table.container(stage);
+  table.draw();
 });
 function formatChart(chart){
   chart.title(false);
-  chart.xAxis().title(false);
-  chart.yAxis().title(false);
+  var xAxis = chart.xAxis();
+  xAxis.title(false);
+  var yAxis = chart.yAxis();
+  yAxis.title(false);
 }

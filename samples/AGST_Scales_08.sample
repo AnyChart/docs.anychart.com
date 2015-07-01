@@ -14,57 +14,70 @@ anychart.onDocumentReady(function() {
   var stage = anychart.graphics.create("container");
 
   // setting basic title
-  anychart.ui.title()
-    .parentBounds(0, 0, stage.width(), stage.height()*0.1)
-    .text("Minimum/Maximum Gap Samples")
-    .container(stage)
-    .draw();
+  var mainTitle = anychart.ui.title();
+  mainTitle.parentBounds(0, 0, stage.width(), stage.height()*0.1);
+  mainTitle.text("Minimum/Maximum Gap Samples");
+  mainTitle.container(stage);
+  mainTitle.draw();
 
   // first chart
-  var valueStackedMode = anychart.columnChart();
+  var valueStackedMode = anychart.column();
 
   // set chart title
-  valueStackedMode.title().text("Gap Sample");
+  valueStackedMode.title("Gap Sample");
 
   // setting chart's size and position
   valueStackedMode.bounds(0, "15%", "50%", "85%");
 
-  valueStackedMode.background().stroke("#CCCCCC");
+  var valueBackgorund = valueStackedMode.background();
+  valueBackgorund.stroke("#CCCCCC");
 
   // disable axes title
-  valueStackedMode.xAxis().title().enabled(false);
-  valueStackedMode.yAxis().title().enabled(false);
+  var valueXAxis = valueStackedMode.xAxis();
+  valueXAxis.title(false);
+  var valueYAxis = valueStackedMode.yAxis();
+  valueYAxis.title(false);
 
   // setting gaps
-  valueStackedMode.yScale().minorTicks().interval(2);
-  valueStackedMode.yScale().ticks().interval(10);
+  var valueYMinorTicks = valueStackedMode.yScale().minorTicks();
+  valueYMinorTicks.interval(2);
+  var valueYTicks = valueStackedMode.yScale().ticks();
+  valueYTicks.interval(10);
 
-  valueStackedMode.yScale().minimumGap(0.5).maximumGap(0.5);
+  var valueYScale = valueStackedMode.yScale();
+  valueYScale.minimumGap(0.5);
+  valueYScale.maximumGap(0.5);
 
-  valueStackedMode.column(data).hoverFill("#444444");
+  valueStackedMode.column(data);
+  
+  valueStackedMode.container(stage);
+  valueStackedMode.draw();
 
-  valueStackedMode.container(stage).draw();
 
+  var percentStackedMode = anychart.column();
 
-  var percentStackedMode = anychart.columnChart();
-
-  percentStackedMode.title().text("Sample without Gap");
+  percentStackedMode.title("Sample without Gap");
 
   // setting chart's size and position
   percentStackedMode.bounds("50%", "15%", "50%", "85%");
 
-  percentStackedMode.background().stroke("#CCCCCC");
+  var paecentBackground = percentStackedMode.background();
+  paecentBackground.stroke("#CCCCCC");
 
   // disable Axes titles
-  percentStackedMode.yAxis().title().enabled(false);
-  percentStackedMode.xAxis().title().enabled(false);
+  var percentYAxis = percentStackedMode.yAxis();
+  percentYAxis.title(false);
+  var percentXAxis = percentStackedMode.xAxis();
+  percentXAxis.title(false);
 
   // setting ticks
-  percentStackedMode.yScale().ticks().interval(10);
-  percentStackedMode.yScale().minorTicks().interval(2);
+  var percentYTicks = percentStackedMode.yScale().ticks();
+  percentYTicks.interval(10);
+  var percentYMinorTicks = percentStackedMode.yScale().minorTicks();
+  percentYMinorTicks.interval(2);
 
-  percentStackedMode.column(data).hoverFill("#444444");
+  percentStackedMode.column(data);
 
-  percentStackedMode.container(stage).draw();
-
+  percentStackedMode.container(stage);
+  percentStackedMode.draw();
 });

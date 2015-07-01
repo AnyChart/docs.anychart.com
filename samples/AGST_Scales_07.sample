@@ -5,10 +5,10 @@
 anychart.onDocumentReady(function() {
 
   // define chart type
-  var chart = anychart.columnChart();
+  var chart = anychart.column();
 
   // chart title
-  chart.title().text("Major and Minor Ticks");
+  chart.title("Major and Minor Ticks");
 
   // setteing data
   var data = anychart.data.set([
@@ -22,8 +22,8 @@ anychart.onDocumentReady(function() {
   var Sales2004 = data.mapAs({x: [0], value: [2]});
 
   // setting series data
-  chart.column(Sales2003).hoverFill("#444444");
-  chart.column(Sales2004).hoverFill("#444444");
+  chart.column(Sales2003);
+  chart.column(Sales2004);
 
   // setting data for line chart
   chart.line([
@@ -33,11 +33,16 @@ anychart.onDocumentReady(function() {
   ]);
 
   // adjusting y scale minimum and maximum values
-  chart.yScale().minimum(-50).maximum(100);
+  var yScale = chart.yScale();
+  yScale.minimum(-50);
+  yScale.maximum(100);
 
   // setting ticks and minor ticks
-  chart.yScale().ticks().interval(10);
-  chart.yScale().minorTicks().interval(2);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(10);
+  var yMinorTicks = chart.yScale().minorTicks();
+  yMinorTicks.interval(2);
 
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });

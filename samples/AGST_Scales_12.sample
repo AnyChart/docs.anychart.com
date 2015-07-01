@@ -15,20 +15,27 @@ anychart.onDocumentReady(function() {
   var Sales2003 = data.mapAs({x: [0], value: [1]});
   var Sales2004 = data.mapAs({x: [0], value: [2]});
 
-  var chart = anychart.columnChart();
+  var chart = anychart.column();
 
   chart.column(Sales2003);
   chart.column(Sales2004);
 
   // adjusting major and minor grids
-  chart.grid(1).layout("horizontal").evenFill("white").oddFill("rgb(244,245,255");
-  chart.minorGrid().layout("horizontal");
+  var grid = chart.grid(1);
+  grid.layout("horizontal");
+  grid.evenFill("#fff");
+  grid.oddFill("rgb(244,245,255");
+  var minorGrid = chart.minorGrid();
+  minorGrid.layout("horizontal");
 
   // setting major ticks interval on y scale
-  chart.yScale().ticks().interval(2);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(2);
 
   // set scale minimum
-  chart.yScale().minimum(0);
+  var yScale = chart.yScale();
+  yScale.minimum(0);
 
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });
