@@ -84,10 +84,10 @@ of the darker end point hues into a gray shade representing the middle. An examp
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/bi_polar_ord.png">
+<img src = "http://static.anychart.com/images/bi\_polar\_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/bi_polar_quant.png">
+<img src = "http://static.anychart.com/images/bi\_polar\_quant.png">
 </td>
 </tr>
 </tbody>
@@ -109,10 +109,10 @@ For example from yellow through orange to brown.
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/blended_c_progr_ord.png">
+<img src = "http://static.anychart.com/images/blended\_c\_progr\_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/blended_c_progr_quant.png">
+<img src = "http://static.anychart.com/images/blended\_c\_progr\_quant.png">
 </td>
 </tr>
 </tbody>
@@ -133,10 +133,10 @@ This ColorRange type looks like a gradient between two adjacent opponent hues an
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/partial_c_progr_ord.png">
+<img src = "http://static.anychart.com/images/partial\_c\_progr\_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/partial_c_progr_quant.png">
+<img src = "http://static.anychart.com/images/partial\_c\_progr\_quant.png">
 </td>
 </tr>
 </tbody>
@@ -158,10 +158,10 @@ This progression is not recommended under other circumstances because some conne
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/full_c_ord.png">
+<img src = "http://static.anychart.com/images/full\_c\_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/full_c_quant.png">
+<img src = "http://static.anychart.com/images/full\_c\_quant.png">
 </td>
 </tr>
 </tbody>
@@ -183,10 +183,10 @@ This type of ColorRange is one of the best ways to portray a magnitude message t
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/value_progr_ord.png">
+<img src = "http://static.anychart.com/images/value\_progr\_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/value_progr_quant.png">
+<img src = "http://static.anychart.com/images/value\_progr\_quant.png">
 </td>
 </tr>
 </tbody>
