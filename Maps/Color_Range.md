@@ -58,10 +58,10 @@ This palette type is usually used to show the difference in values of something 
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/single_hue_ord.jpg">
+<img src = "http://static.anychart.com/images/single_hue_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/single_hue_quant.jpg">
+<img src = "http://static.anychart.com/images/single_hue_quant.png">
 </td>
 </tr>
 </tbody>
@@ -84,10 +84,10 @@ of the darker end point hues into a gray shade representing the middle. An examp
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/bi_polar_ord.jpg">
+<img src = "http://static.anychart.com/images/bi_polar_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/bi_polar_quant.jpg">
+<img src = "http://static.anychart.com/images/bi_polar_quant.png">
 </td>
 </tr>
 </tbody>
@@ -109,10 +109,10 @@ For example from yellow through orange to brown.
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/blended_c_progr_ord.jpg">
+<img src = "http://static.anychart.com/images/blended_c_progr_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/blended_c_progr_quant.jpg">
+<img src = "http://static.anychart.com/images/blended_c_progr_quant.png">
 </td>
 </tr>
 </tbody>
@@ -133,10 +133,10 @@ This ColorRange type looks like a gradient between two adjacent opponent hues an
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/partial_c_progr_ord.jpg">
+<img src = "http://static.anychart.com/images/partial_c_progr_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/partial_c_progr_quant.jpg">
+<img src = "http://static.anychart.com/images/partial_c_progr_quant.png">
 </td>
 </tr>
 </tbody>
@@ -158,10 +158,10 @@ This progression is not recommended under other circumstances because some conne
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/full_spectral_ord.jpg">
+<img src = "http://static.anychart.com/images/full_c_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/full_spectral_quant.jpg">
+<img src = "http://static.anychart.com/images/full_c_quant.png">
 </td>
 </tr>
 </tbody>
@@ -170,7 +170,7 @@ This progression is not recommended under other circumstances because some conne
 
 ### Value progression
 
-Value progression maps are monochromatic. Using the shades of gray between black and white makes it easy to print the map and is quite clear to understand.
+Value progression maps are monochromatic. Using the shades of grey between black and white makes it easy to print the map and is quite clear to understand.
 This type of ColorRange is one of the best ways to portray a magnitude message to the map audience. 
 
 <br><br>
@@ -183,10 +183,10 @@ This type of ColorRange is one of the best ways to portray a magnitude message t
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/value_progr_ord.jpg">
+<img src = "http://static.anychart.com/images/value_progr_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/value_progr_quant.jpg">
+<img src = "http://static.anychart.com/images/value_progr_quant.png">
 </td>
 </tr>
 </tbody>

@@ -22,19 +22,24 @@ Use the following to create a new simple map:
 ## Points
 
 A point contains some meta information about it and a single region or a number of them. 
-Точка - это один или несколько регионов плюс метаданные по этой точке.
-Связать регионы с точкой можно только явно, например:
-Одна точка - один регион. Дата сет содержит две точки, к первой привязан регион с id="RU", к второй регион с id="EU"
+There are two ways of connecting points to regions:
+1) One point - one region. In this case, dataSet contains a number of points where each is connected to a particular id:
+```
 var dataSet = anychart.data.set([
-    {name: "Point 1", data: "RU"},
+    {name: "Point 1", data: "US"},
     {name: "Point 2", data: "EU"},
 ]);
-Одна точка - несколько регионов. Дата сет содержит две точки, к первой привязаны регионы с id="RU_" + number, к второй регионы с id="EU_" + number
+```
+The dataSet above contains two points, one of them is connected to the region with id "US", second one is connected to the "EU" id.
+
+2) One point - a plenty of regions. In this case, dataSet contains a number of points where each is connected with several regions.
+```
 var dataSet = anychart.data.set([
-    {name: "Point 1", data: ["RU_1", "RU_2", "RU_3"]},
+    {name: "Point 1", data: ["US_1", "US_2", "US_3"]},
     {name: "Point 2", data: ["EU_1", "EU_2", "EU_3"]}
 ]);
-Серия
+```
+This dataSet contains two points where each is connected with id "US_" + number, the second one has regions with id "EU_" + number.
 
 ## Series
 
