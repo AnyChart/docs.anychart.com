@@ -35,13 +35,12 @@ This type of ColorRange looks like a number of boxes with different colors. Colo
  
 This type of ColorRange looks like a single bar colored with a gradient, where it colors depend on a chosen palette. 
 <br><br>
-<img src = "">
+<img src = "http://static.anychart.com/images/quant_colorrange.jpg">
  
 ## Palette
  
 The palette used for the map forms its view and the quality of visualization, so it's rather important which colors will be used. 
 Use method {api:anychart.palettes.RangeColors#colors}**.colors**{api} and define colors as an array.
-In case of Ordinal ColorRange, you may use the **___** method to calculate the in-between colors.
 Read the following information properly to chose the most suitable palette for your map.
  
 ### Single Hue
@@ -59,10 +58,10 @@ This palette type is usually used to show the difference in values of something 
 </tr>
 <tr>
 <td>
-
+<img src = "http://static.anychart.com/images/single_hue_ord.jpg">
 </td>
 <td>
-
+<img src = "http://static.anychart.com/images/single_hue_quant.jpg">
 </td>
 </tr>
 </tbody>
@@ -85,10 +84,10 @@ of the darker end point hues into a gray shade representing the middle. An examp
 </tr>
 <tr>
 <td>
-
+<img src = "http://static.anychart.com/images/bi_polar_ord.jpg">
 </td>
 <td>
-
+<img src = "http://static.anychart.com/images/bi_polar_quant.jpg">
 </td>
 </tr>
 </tbody>
@@ -110,10 +109,10 @@ For example from yellow through orange to brown.
 </tr>
 <tr>
 <td>
-
+<img src = "http://static.anychart.com/images/blended_c_progr_ord.jpg">
 </td>
 <td>
-
+<img src = "http://static.anychart.com/images/blended_c_progr_quant.jpg">
 </td>
 </tr>
 </tbody>
@@ -134,10 +133,10 @@ This ColorRange type looks like a gradient between two adjacent opponent hues an
 </tr>
 <tr>
 <td>
-
+<img src = "http://static.anychart.com/images/partial_c_progr_ord.jpg">
 </td>
 <td>
-
+<img src = "http://static.anychart.com/images/partial_c_progr_quant.jpg">
 </td>
 </tr>
 </tbody>
@@ -159,10 +158,10 @@ This progression is not recommended under other circumstances because some conne
 </tr>
 <tr>
 <td>
-
+<img src = "http://static.anychart.com/images/full_spectral_ord.jpg">
 </td>
 <td>
-
+<img src = "http://static.anychart.com/images/full_spectral_quant.jpg">
 </td>
 </tr>
 </tbody>
@@ -184,10 +183,10 @@ This type of ColorRange is one of the best ways to portray a magnitude message t
 </tr>
 <tr>
 <td>
-
+<img src = "http://static.anychart.com/images/value_progr_ord.jpg">
 </td>
 <td>
-
+<img src = "http://static.anychart.com/images/value_progr_quant.jpg">
 </td>
 </tr>
 </tbody>
