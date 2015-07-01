@@ -24,9 +24,7 @@
 
 ## Overview
 
-Scales allow you to control such features as minimum and maximum scale values, offsets, scale inversion, intervals, 
-scale type and so on for a single axis. To create additional axes - please read [Additional axis](Additional_Axes) 
-first. To adjust axes display - please see: [Axes Basics tutorial](Axis_Basics).
+Scales allow you to control such features as minimum and maximum scale values, offsets, scale inversion, intervals, scale type and so on for a single axis. To create additional axes - please read [Additional axis](Additional_Axes) first. To adjust axes display - please see: [Axes Basics tutorial](Axis_Basics).
 
 In this section we will explain main scales options.
 
@@ -37,21 +35,20 @@ If you want to control any of scale settings - you should do that using {api:any
 There are four types of scales in AnyChart: {api:anychart.scales.Linear}**"Linear"**{api}, {api:anychart.scales.Logarithmic}**"Logarithmic"**{api}, {api:anychart.scales.Ordinal}**"Ordinal"**{api} and {api:anychart.scales.DateTime}**"DateTime"**{api}. To set scale type use appropriate constructor:
 
 ```
-    chart.xScale(anychart.scales.linear());
-    newScale = anychart.scales.ordinal();
-    chart.yScale(newScale);
+  chart.xScale(anychart.scales.linear());
+  
+  newScale = anychart.scales.ordinal();
+  chart.yScale(newScale);
 ```
 
 Note: working with extra axes is explained in [Additional Axes Tutorial](Additional_Axis)
 
 ### Linear
 
-Linear scale type is a default type for yScale in most charts. Values for this scale should be numbers and scale 
-intervals will be evenly distributed along the axis. This type of scale is used when values fall within one reasonable 
-range.
+Linear scale type is a default type for yScale in most charts. Values for this scale should be numbers and scale intervals will be evenly distributed along the axis. This type of scale is used when values fall within one reasonable range.
 
 ```
-    chart.xScale(anychart.scales.linear());
+  chart.xScale(anychart.scales.linear());
 ```
 
 {sample}AGST\_Scales\_01{sample}
@@ -95,8 +92,7 @@ information about data formats and usage is in [Date/Time tutorial](Date_Time_Ax
 
 ## Stack Mode
 
-Scale mode defines some additional behavior of a chart. In the table below all modes are listed and their 
-applicability to different chart types:
+Scale mode defines some additional behavior of a chart. In the table below all modes are listed and their applicability to different chart types:
 
 <table width="481" border="1" class="dtTABLE">
 <tbody><tr>
@@ -138,8 +134,7 @@ For any scale, but ordinal, you can set maximum and/or minimum values which are 
   yScale.maximum(100);
 ```
 
-Note, if you will set maximum value lesser than chart elements values, or minimum greater than them - these elements 
-will be cut, and you will see only a part of them or will not see them at all.
+Note, if you will set maximum value lesser than chart elements values, or minimum greater than them - these elements will be cut, and you will see only a part of them or will not see them at all.
 
 {sample}AGST\_Scales\_06{sample}
 
@@ -157,7 +152,7 @@ In some cases you may have no need to define solid minimum or maximum and need a
 
 Sample below shows how soft minimum and soft maximum help to show data better than simple minimum and maximum.
 
-{sample}AGST\_Scales\_06\_1{sample}
+{sample}AGST\_Scales\_07{sample}
 
 ## Stick to Zero
 
@@ -178,7 +173,7 @@ Major and minor ticks intervals are axis steps, which define where axis labels (
 
 In the sample below you can see how interval settings affects grids, ticks and labels.
 
-{sample}AGST\_Scales\_07{sample}
+{sample}AGST\_Scales\_08{sample}
 
 ## Minimum and Maximum Gap
 
@@ -193,7 +188,7 @@ For any axis scale you can set minimum and maximum offsets. Maximum and minimum 
 In the sample below you can see how offsets settings affects chart, the chart to the left has minimum and maximum 
 offsets set to 0.5, the chart to the right has all the same settings, but offsets are not set. Note that offsets are ignored when maximum or minimum scale values are specified.
 
-{sample}AGST\_Scales\_08{sample}
+{sample}AGST\_Scales\_09{sample}
 
 ## Inversion
 
@@ -206,7 +201,7 @@ If you want to display scale in an inverted mode use **.inverted()** method with
 
 Sample inverted scale chart:
 
-{sample}AGST\_Scales\_09{sample}
+{sample}AGST\_Scales\_10{sample}
 
 ## Grids
 ### Major and Minor
@@ -231,7 +226,7 @@ For each grid you can define {api:anychart.grids.Linear#stroke}line style{api}:
 
 That's how simple grid will look like:
 
-{sample}AGST\_Scales\_10{sample}
+{sample}AGST\_Scales\_11{sample}
 
 ### Dashed
 
@@ -249,7 +244,7 @@ You can also make your grid lines dashed:
 
 And create chart like this:
 
-{sample}AGST\_Scales\_11{sample}
+{sample}AGST\_Scales\_12{sample}
 
 ### Even and Odd Fills
 
@@ -264,13 +259,13 @@ You can use this method with both major and minor grids. To do this you need to 
 
 That's how simple interlaced grid looks like:
 
-{sample}AGST\_Scales\_12{sample}
+{sample}AGST\_Scales\_13{sample}
 
 ## One Scale for Different Charts
 
 Scale calculates values and in many cases it is very useful to adjust settings of one scale and then use it for multiple charts. in example below we will create custom scale, adjust it and apply it for 2 charts. Click "launch in playground" to see the code
 
-{sample}AGST\_Scales\_13{sample}
+{sample}AGST\_Scales\_14{sample}
 
 <!--
 Crossing axis value

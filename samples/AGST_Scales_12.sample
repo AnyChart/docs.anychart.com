@@ -21,11 +21,14 @@ anychart.onDocumentReady(function() {
   chart.column(Sales2004);
 
   // adjusting major and minor grids
-  var grid = chart.grid(1);
-  grid.layout("horizontal");
-  grid.evenFill("#fff");
-  grid.oddFill("rgb(244,245,255");
+  var grid = chart.grid(0);
+  grid.stroke("#000");
+  grid.layout("vertical");
+  var grid1 = chart.grid(1);
+  grid1.stroke("#000");
+  grid1.layout("horizontal");
   var minorGrid = chart.minorGrid();
+  minorGrid.stroke("#000 0.2", 1, "5 2 5");
   minorGrid.layout("horizontal");
 
   // setting major ticks interval on y scale

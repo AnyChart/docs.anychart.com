@@ -4,41 +4,28 @@
 
 anychart.onDocumentReady(function() {
 
-  // setting data
-  var data = anychart.data.set([
-    ["P1", 16, 20],
-    ["P2", 12, 18],
-    ["P3", 9, 14]
-  ]);
-
-  // remapping data
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
-
+  // define chart type
   var chart = anychart.column();
 
-  // series settings
-  chart.column(Sales2003);
-  chart.column(Sales2004);
-
-  // adjusting major and minor grids
-  var grid = chart.grid(0);
-  grid.stroke("#000");
-  grid.layout("vertical");
-  var grid1 = chart.grid(1);
-  grid1.stroke("#000");
-  grid1.layout("horizontal");
-  var minorGrid = chart.minorGrid();
-  minorGrid.stroke("#000 0.2");
-  minorGrid.layout("horizontal");
-
-  // setting major ticks interval on y scale
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(2);
+  // chart title
+  chart.title("Inverted Scale");
 
   // set scale minimum
   var yScale = chart.yScale();
   yScale.minimum(0);
+
+  // setting data
+  var data = anychart.data.set([
+    ["C", 15],
+    ["D", 45],
+    ["E", 25]
+  ]);
+
+  chart.column(data);
+
+  // setting yScale inversion
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 
   chart.container("container");
   chart.draw();

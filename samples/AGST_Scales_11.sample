@@ -17,6 +17,7 @@ anychart.onDocumentReady(function() {
 
   var chart = anychart.column();
 
+  // series settings
   chart.column(Sales2003);
   chart.column(Sales2004);
 
@@ -28,7 +29,7 @@ anychart.onDocumentReady(function() {
   grid1.stroke("#000");
   grid1.layout("horizontal");
   var minorGrid = chart.minorGrid();
-  minorGrid.stroke("#000 0.2", 1, "5 2 5");
+  minorGrid.stroke("#000 0.2");
   minorGrid.layout("horizontal");
 
   // setting major ticks interval on y scale
