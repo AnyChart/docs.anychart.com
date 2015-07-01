@@ -58,10 +58,10 @@ This palette type is usually used to show the difference in values of something 
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/single_hue_ord.png">
+<img src = "http://static.anychart.com/images/single\_hue\_ord.png">
 </td>
 <td>
-<img src = "http://static.anychart.com/images/single_hue_quant.png">
+<img src = "http://static.anychart.com/images/single\_hue\_quant.png">
 </td>
 </tr>
 </tbody>
