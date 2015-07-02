@@ -8,8 +8,8 @@
  * [Single Hue](#single_hue)
  * [Bi-polar](#bi_polar) 
  * [Blended color progression](#blended_color_progression)
- * [Partial spectral color progression](#partial_spectral_color_progression) 
- * [Full-spectrum color progression](#full_spectrum_color_progression)
+ * [Partial spectral color progression](#partial_color_progression) 
+ * [Full-spectral color progression](#full_spectral_color_progression)
  * [Value progression](#value_progression) 
  
 ## Overview
