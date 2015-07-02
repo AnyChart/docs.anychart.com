@@ -158,7 +158,7 @@ This progression is not recommended under other circumstances because some conne
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/full\_c\_ord.png">
+<img src = "../full\_c\_ord.png">
 </td>
 <td>
 <img src = "http://static.anychart.com/images/full\_c\_quant.png">
@@ -183,7 +183,7 @@ This type of ColorRange is one of the best ways to portray a magnitude message t
 </tr>
 <tr>
 <td>
-<img src = "http://static.anychart.com/images/value\_progr\_ord.png">
+<img src = "../value\_progr\_ord.png">
 </td>
 <td>
 <img src = "http://static.anychart.com/images/value\_progr\_quant.png">
