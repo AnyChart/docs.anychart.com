@@ -4,12 +4,12 @@
 * [Types](#types)
  * [Ordinal Color Range](#ordinal_color_range)
  * [Quantitative Color Range](#quantitative_color_range) 
-* [Palette](#Palette)
+* [Palette](#palette)
  * [Single Hue](#single_hue)
- * [Bi-polar](#bi_polar) 
+ * [Bi-polar](#bi-polar) 
  * [Blended color progression](#blended_color_progression)
  * [Partial spectral color progression](#partial_color_progression) 
- * [Full-spectral color progression](#full_spectral_color_progression)
+ * [Full-spectral color progression](#full-spectral_color_progression)
  * [Value progression](#value_progression) 
  
 ## Overview
