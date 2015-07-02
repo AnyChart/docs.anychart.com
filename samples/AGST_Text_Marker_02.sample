@@ -1,6 +1,7 @@
 {:tags []
      :is_new false
      :exports "chart"}
+
 anychart.onDocumentReady(function() {
 
   // data
@@ -13,64 +14,69 @@ anychart.onDocumentReady(function() {
   ]);
 
   // chart type
-  var chart = anychart.lineChart();
+  var chart = anychart.line();
 
   // set data
-  chart.line(data).tooltip().contentFormatter(function(){
+  var series = chart.line(data);
+  series.tooltip().contentFormatter(function(){
     return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
   });
 
   // disable title
-  chart.title().enabled(false);
+  chart.title(false);
 
   // set y scale ticks interval
-  chart.yScale().ticks().interval(2000);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(2000);
 
   // disable x axis title
-  chart.xAxis().title().enabled(false);
+  var xAxis = chart.xAxis();
+  xAxis.title(false);
 
   // adjust y axis labels
-  chart.yAxis().labels().textFormatter(function(){
-      return "$" + this.value/1000 + ",000";
+  var yLabels = chart.yAxis().labels();
+  yLabels.textFormatter(function(){
+    return "$" + this.value/1000 + ",000";
   });
 
   // y scale title
-  chart.yAxis().title().text("Sales");
+  chart.yAxis().title("Sales");
 
   // first marker
-  chart.textMarker()
-    .scale(chart.yScale())
-    .value(14000)
-    .align("center")
-    .anchor("center")
-    .fontSize(13)
-    .fontColor("blue")
-    .offsetX(5)
-    .fontFamily("Courier")
-    .text("Center");
+  var textMarker = chart.textMarker(0);
+  textMarker.scale(chart.yScale());
+  textMarker.value(14000);
+  textMarker.align("center");
+  textMarker.anchor("center");
+  textMarker.fontSize(13);
+  textMarker.fontColor("blue");
+  textMarker.offsetX(5);
+  textMarker.fontFamily("Courier");
+  textMarker.text("Center");
 
   // second marker
-  chart.textMarker(1)
-    .scale(chart.yScale())
-    .value(19000)
-    .text("Axis")
-    .align("left")
-    .anchor("rightcenter")
-    .fontSize(13)
-    .offsetX(50)
-    .fontColor("red");
+  var textMarker1 = chart.textMarker(1);
+  textMarker1.scale(chart.yScale());
+  textMarker1.value(19000);
+  textMarker1.text("Axis");
+  textMarker1.align("left");
+  textMarker1.anchor("rightcenter");
+  textMarker1.fontSize(13);
+  textMarker1.offsetX(50);
+  textMarker1.fontColor("red");
 
   // third marker
-  chart.textMarker(2)
-    .scale(chart.yScale())
-    .value(9000)
-    .text("right")
-    .align("right")
-    .anchor("rightcenter")
-    .fontSize(13)
-    .offsetX(10)
-    .fontColor("green");
+  var textMarker2 = chart.textMarker(2);
+  textMarker2.scale(chart.yScale());
+  textMarker2.value(9000);
+  textMarker2.text("right");
+  textMarker2.align("right");
+  textMarker2.anchor("rightcenter");
+  textMarker2.fontSize(13);
+  textMarker2.offsetX(10);
+  textMarker2.fontColor("green");
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });
