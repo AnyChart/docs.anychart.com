@@ -12,8 +12,7 @@ anychart.onDocumentReady(function() {
   mainTitle.text("Y-Axis Labels: width calculated automatically");
   mainTitle.container(stage);
   mainTitle.draw();
-
-
+  
   // first chart
   var firstChart = anychart.column();
 
