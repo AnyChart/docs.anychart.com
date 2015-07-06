@@ -1,0 +1,34 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    stage = anychart.graphics.create('container');
+
+    // define data
+    var data = [
+        ['A1', 100, 200],
+        ['A2', 115, 101],
+        ['A3', 70, 60],
+        ['A4', 156, 98],
+        ['A5', 213, 150]
+    ];
+    // create chart
+    chart = anychart.barChart();
+
+    var series = anychart.data.mapAsTable(data, 'value');
+    chart.bar(series[0]).hatchFill('verticalbrick');
+    chart.bar(series[1]).hatchFill('percent60');
+
+    chart.container(stage).draw();
+
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+  
+  // xml data
+  var xml = '<?xml version="1.0" encoding="utf-8"?>' +
+    '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
+      // set chart type and chart container
+      '<chart type="polar" container="container">' +
+        // series for this chart
+        '<series_list>'+
+          // series settings
+          '<series series_type="line">' +
+            // data set
+            '<data>' +
+              '<point x="0" value="0"/>'+
+              '<point x="50" value="100"/>'+
+              '<point x="100" value="0"/>'+
+            '</data>'+
+          '</series>'+
+          // second series set
+          '<series series_type="line" stroke="red">' +
+            // data set
+            '<data>' +
+              '<point x="50" value="0"/>'+
+              '<point x="100" value="100"/>'+
+              '<point x="50" value="0"/>'+
+            '</data>'+
+          '</series>'+
+        '</series_list>'+
+        // scales settings
+        '<x_scale maximum="100"/>'+
+      '</chart>'+
+    '</anychart>';
+  
+  // get XML data
+  var chart = anychart.fromXml(xml);
+  
+  // draw chart
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

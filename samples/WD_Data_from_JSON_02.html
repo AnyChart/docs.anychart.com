@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+  
+  // JSON data
+  anychart.fromJson({
+    "chart": {
+      // chart type 
+      "type": "column",
+      "yScale": {       // invoke y scale
+        "minimum": 100, // set minimum value
+        "maximum": 350  // set maximum value
+      },
+      // chart series
+      "series":[{
+        // series data
+        "data": [128.14, 112.61, 163.21, 229.98],
+      }],
+      // chart container
+      "container": "container"
+    }
+  }).draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

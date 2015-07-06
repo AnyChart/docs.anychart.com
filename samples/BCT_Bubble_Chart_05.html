@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // scatter type
+  chart = anychart.scatter();
+
+  // set title
+  chart.title().text('Axes Management');
+
+  // set data
+  chart.bubble([
+    [1, 637, 6],
+    [2, 472, 14],
+    [3, 48, 10]
+  ]).minimumSize(10).maximumSize(30);
+
+  // adjust axes position
+  chart.xAxis().orientation('top');
+  chart.yAxis().orientation('right');
+  
+  // adjust axes settings
+  chart.yAxis().title().text('Sales');
+  chart.xAxis()
+    .drawFirstLabel(false)
+    .drawLastLabel(false)
+    .title().text('Products');
+  
+  chart.xScale()
+    .minimum(0)
+    .maximum(4)
+    .ticks().interval(1);
+  
+  // draw
+  chart.container('container').draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

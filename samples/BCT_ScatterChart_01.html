@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // chart type
+  var chart = anychart.scatterChart();
+
+  // chart title
+  chart.title().text('Sample Scatter Line Chart');
+
+  // data for top line series
+  chart.line([
+    [-2, 4],
+    [-1, 1],
+    [0, 0],
+    [1, 1],
+    [2, 4]
+  ]);
+
+  // data for bottom line series
+  chart.line([
+    [-2, -4],
+    [-1, -1],
+    [0, 0],
+    [1, -1],
+    [2, -4]
+  ]);
+  
+  chart.xScale().ticks().interval(1);
+
+    chart.container('container').draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

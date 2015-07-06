@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // defining chart type
+  var chart = anychart.lineChart();
+
+  // title setter
+  chart.title().text('Logarithmic scale sample');
+
+  // setting yScale type as logarithmic.
+  chart.yScale(anychart.scales.log().minimum(10));
+
+  // y axis title setter
+  chart.yAxis().title().text('This Axis has \'Logarithmic\' type');
+
+  // setting data
+  chart.spline([
+    ['A', 637166],
+    ['B', 721630],
+    ['C', 1000],
+    ['D', 78],
+    ['E', 90]
+  ]);
+
+  chart.container('container').draw();
+
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

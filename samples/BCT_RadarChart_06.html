@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // data for chart
+  var dataSet = anychart.data.set([
+    ['Product A', 90],
+    ['Product B', 65],
+    ['Product C', 73],
+    ['Product D', 88],
+    ['Product E', 75],
+    ['Product F', 100]
+  ]);
+
+  // chart type
+  var chart = anychart.radar();
+
+  // chart title
+  chart.title().text('Inverted Radar Scale');
+
+  // disable minor ticks
+  chart.yAxis().enabled(true).minorTicks().enabled(false);
+
+  // set y Scale inversion
+  chart.yScale().inverted(true);
+
+  // set data and adjust visualisation
+  chart.line(dataSet);
+
+  // draw chart
+  chart.container('container').draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

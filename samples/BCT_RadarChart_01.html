@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // chart type
+  var chart = anychart.radar();
+
+  // chart title
+  chart.title().text('Spending');
+
+  // series type and data set
+  chart.line([
+    {x: "Administration", value:"22"},
+    {x: "Sales", value:"34"},
+    {x: "Marketing", value:"16"},
+    {x: "Research", value:"12"},
+    {x: "Support", value:"38"},
+    {x: "Development", value:"47"}
+  ]);
+
+  // draw chart
+  chart.container('container').draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

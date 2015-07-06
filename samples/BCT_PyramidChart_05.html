@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+  
+  var data = [
+    {name: 'Fantasy', value: 637166},
+    {name: 'Science Fiction', value: 721630},
+    {name: 'Detective', value: 148662},
+    {name: 'Classics', value: 78662},
+    {name: 'Textbooks', value: 90000}
+  ];
+  
+  var chart = anychart.pyramid(data);
+  
+  chart.connectorStroke(
+    '2 #444', // set 2px thickness and #444 color
+    1,        // set lines opacity
+    '4 2'     // dashes and gaps settings
+  );
+  
+  chart.title().text('Tuned Labels Connectors');
+  
+  // draw chart
+  chart.container('container').draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

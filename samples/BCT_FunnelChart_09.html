@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+  
+  var chart = anychart.funnel([
+    {name: 'Fantasy', value: 637166},
+    {
+      name: 'Science Fiction',
+      value: 721630,
+      marker:{              // marker settings
+        enabled: true,      // enable marker
+        type:'star5',       // marker type
+        fill:'gold',        // marker inner color
+        size: 12,           // marker size
+        position: 'center', // marker position
+        anchor: 'center'},  // marker anchor
+      hoverMarker: {
+        size: 15            // marker size if mouse is over
+      }
+    },
+    {name: 'Detective', value: 148662},
+    {name: 'Classics', value: 78662},
+    {name: 'Textbooks', value: 90000}
+  ]);
+  
+  chart.title().text('Marker Settings');
+  
+  // set fixed width for the funnel
+  chart.baseWidth(300).neckWidth(75);
+  
+  // draw chart
+  chart.container('container').draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

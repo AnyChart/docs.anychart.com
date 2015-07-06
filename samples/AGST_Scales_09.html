@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // define chart type
+  var chart = anychart.columnChart();
+
+  // chart title
+  chart.title().text('Inverted Scale');
+
+  // set scale minimum
+  chart.yScale().minimum(0);
+
+
+  // setting data
+  var data = anychart.data.set([
+    ['C', 15],
+    ['D', 45],
+    ['E', 25]
+  ]);
+
+  chart.column(data).hoverFill('#444444');
+
+  // setting yScale invertion
+  chart.yScale().inverted(true);
+
+  chart.container('container').draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
