@@ -40,13 +40,13 @@ The sample below shows a revenue chart with AnyChart logo in the left top corner
   ]);
   
   // create image label
-  stage.image()
-    .src('http://static.anychart.com/images/logo_anychart.gif') // set image source
-    .y(15)                                                      // set spacing from the top
-    .x(25)                                                      // set spacing from the left
-    .width(50)                                                  // set width of the image
-    .height(50)                                                 // set height of the image
-    .zIndex(chart.zIndex() + 1);                                // manage overlapping
+  var image = stage.image();
+  image.src("http://static.anychart.com/images/logo_anychart.gif"); // set image source
+  image.y(15);                                                      // set spacing from the top
+  image.x(25);                                                      // set spacing from the left
+  image.width(50);                                                  // set width of the image
+  image.height(50);                                                 // set height of the image
+  image.zIndex(chart.zIndex() + 1);                                 // manage overlapping
 ```
 
 These settings will allow you to display chart the following way:
@@ -62,21 +62,21 @@ Sample below will demonstrate you calling external function on image labels clic
 Note: In the previous sample we've used {api:anychart.ui.Label}**.label()**{api} without text but with an image as a background. For such cases you can use **{api:anychart.graphics.vector.Stage#image}.image(){api}** method.
 
 ```
-  stage.image()
-    .src('http://static.anychart.com/images/column.png')  // source of the image
-    .width(25)                                            // set width of the image
-    .height(25)                                           // set height of the image
-    .y(20)                                                // set spacing from the top
-    .zIndex(2)                                            // manage overlapping
-    .x(35);                                               // set spacing from the left
+  var image = stage.image();
+  image.src('http://static.anychart.com/images/column.png')  // source of the image
+  image.width(25)                                            // set width of the image
+  image.height(25)                                           // set height of the image
+  image.y(20)                                                // set spacing from the top
+  image.zIndex(2)                                            // manage overlapping
+  image.x(35);                                               // set spacing from the left
 ```
 
 To attach an action to the image you have to set **{api:anychart.graphics.vector.Image#listen}listen(){api}** method for the **{api:anychart.graphics.vector.Stage#image}.image(){api}**.<!-- Full list of available actions is described in Interactivity Article.-->
 
 ```
-  var myImage = stage.image()
-    .src('http://static.anychart.com/images/column.png')
-    .align('topleft');
+  var myImage = stage.image();
+  myImage.src('http://static.anychart.com/images/column.png');
+  myImage.align('topleft');
   
   myImage.listen(
     'click',                              // event type

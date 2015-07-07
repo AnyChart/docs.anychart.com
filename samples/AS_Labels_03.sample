@@ -19,7 +19,7 @@ anychart.onDocumentReady(function() {
   
   var stage = anychart.graphics.create("container");
 
-  var titleText = "<a style="font-size:15px;"><u>2007 Capital Equipment Expenditures</u></a><br/><i>By Specific Machinery/Equipment Category *</i>";
+  var titleText = '<a style="font-size:15px;"><u>2007 Capital Equipment Expenditures</u></a><br/><i>By Specific Machinery/Equipment Category *</i>';
   
   // default chart
   var chart;
@@ -30,33 +30,30 @@ anychart.onDocumentReady(function() {
   // label for bar chart
   var barlabel = stage.image("http://static.anychart.com/images/bar.gif");
 
-  barlabel
-    .width(25)
-    .height(25)
-    .zIndex(chart.zIndex() + 1)
-    .y(20);
+  barlabel.width(25);
+  barlabel.height(25);
+  barlabel.zIndex(chart.zIndex() + 1);
+  barlabel.y(20);
 
   barlabel.listen("click", drawBar);
 
   // label for column chart
   var columnLabel = stage.image("http://static.anychart.com/images/column.png");
-  columnLabel
-    .width(25)
-    .height(25)
-    .y(20)
-    .zIndex(chart.zIndex() + 1)
-    .x(35);
+  columnLabel.width(25);
+  columnLabel.height(25);
+  columnLabel.y(20);
+  columnLabel.zIndex(chart.zIndex() + 1);
+  columnLabel.x(35);
 
   columnLabel.listen("click", drawColumn);
   
   // label for pie chart
   var pieLabel = stage.image("http://static.anychart.com/images/donut.gif");
-  pieLabel
-    .width(25)
-    .height(25)
-    .y(20)
-    .zIndex(chart.zIndex() + 1)
-    .x(70);
+  pieLabel.width(25);
+  pieLabel.height(25);
+  pieLabel.y(20);
+  pieLabel.zIndex(chart.zIndex() + 1);
+  pieLabel.x(70);
 
   pieLabel.listen("click", drawPie);
   
@@ -66,44 +63,53 @@ anychart.onDocumentReady(function() {
       chart.dispose();
     
     chart = anychart.bar();
-    chart.bar(data).stroke(null);
-    chart.title()
-      .useHtml(true)
-      .text(titleText)
-      .fontWeight(900)
-      .hAlign("center");
+    var series = chart.bar(data);
+    series.stroke(null);
+    var title = chart.title();
+    title.useHtml(true);
+    title.text(titleText);
+    title.fontWeight(900);
+    title.hAlign("center");
 
-    chart.xAxis().title().enabled(false);
-    chart.yAxis().title().enabled(false);
+    var xAxis = chart.xAxis();
+    xAxis.title(false);
+    var yAxis = chart.yAxis();
+    yAxis.title(false);
 
-    chart.container(stage).draw();
+    chart.container(stage);
+    chrt.draw();
   }
   
   function drawColumn(){
     chart.dispose();
     chart = anychart.column();
-    chart.column(data).stroke(null);
-    chart.title()
-      .useHtml(true)
-      .text(titleText)
-      .fontWeight(900)
-      .hAlign("center");
+    var series = chart.column(data);
+    series.stroke(null);
+    var title = chart.title();
+    title.useHtml(true);
+    title.text(titleText);
+    title.fontWeight(900);
+    title.hAlign("center");
     
-    chart.xAxis().title().enabled(false);
-    chart.yAxis().title().enabled(false);
+    var xAxis = chart.xAxis();
+    xAxis.title(false);
+    var yAxis = chart.yAxis();
+    yAxis.title(false);
     
-    chart.container(stage).draw();
+    chart.container(stage);
+    chart.draw();
   }
   
   function drawPie(){
     chart.dispose();
     chart = anychart.pie(data);
-    chart.title()
-      .useHtml(true)
-      .text(titleText)
-      .fontWeight(900)
-      .hAlign("center");
+    var title = chart.title();
+    title.useHtml(true);
+    title.text(titleText);
+    title.fontWeight(900);
+    title.hAlign("center");
     
-    chart.container(stage).draw();
+    chart.container(stage);
+    chart.draw();
   }
 });
