@@ -229,7 +229,7 @@ java -D phantomjs.binary.path=PATH_TO_YOUR_PHANTOMJS -jar
 If you have decided to use your own server, use the **anychart.server()** method and set the address of your server as a parameter:
 
 ```
-anychart.server('http://localhost:2000')
+anychart.graphics.server('http://localhost:2000')
 ```
 
 ## Contribution 
