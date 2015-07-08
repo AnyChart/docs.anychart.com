@@ -15,13 +15,16 @@ anychart.onDocumentReady(function() {
   ]);
   
   // set chart title
-  chart.title().text("Legend for Single Series");
+  chart.title("Legend for Single Series");
   
   // legend settings
-  chart.legend()
-    .enabled(true)                  // enable legend
-    .itemsSourceMode("categories"); // set source of legend items
+  var legend = chart.legend();
+  // enable legend
+  legend.enabled(true);
+  // set source of legend items
+  legend.itemsSourceMode("categories");
   
   // set container and draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });

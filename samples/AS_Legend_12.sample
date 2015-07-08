@@ -55,9 +55,15 @@ anychart.onDocumentReady(function() {
   var peterLegend = anychart.ui.legend();
   
   // set legend titles
-  johnLegend.title().text("John").hAlign("center");
-  jakeLegend.title().text("Jake").hAlign("center");
-  peterLegend.title().text("Peter").hAlign("center");
+  var johnTitle = johnLegend.title();
+  johnTitle.text("John");
+  johnTitle.hAlign("center");
+  var jakeTitle = jakeLegend.title();
+  jakeTitle.text("Jake");
+  jakeTitle.hAlign("center");
+  var peterTitle = peterLegend.title();
+  peterTitle.text("Peter");
+  peterTitle.hAlign("center");
   
   // set legend items
   johnLegend.itemsFormatter(function(){return johnLegendItems});
@@ -65,88 +71,85 @@ anychart.onDocumentReady(function() {
   peterLegend.itemsFormatter(function(){return peterLegendItems});
   
   // legends settings
-  johnLegend
-    .position("bottom")
-    .align("left")
-    .zIndex(1)
-    .enabled(true)
-    .itemsLayout("vertical")
-    .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
-      event.preventDefault();
-      var index = event["itemIndex"];
-      if (chart.getSeries(index).data().get(0, "value") == "missing"){
-        chart.getSeries(index).data().set(0, "value", johnLegendItems[index].text);
-        johnLegendItems[index].fontColor = "#000";
-        johnLegendItems[index].iconFill = palette[index];
-        johnLegendItems[index].iconStroke = anychart.color.darken(palette[index], 0.2);
-        johnLegend.itemsFormatter(function(){return johnLegendItems});
-      }
-      else{
-        chart.getSeries(index).data().set(0, "value", "missing");
-        johnLegendItems[index].fontColor = "#999";
-        johnLegendItems[index].iconFill = "#999";
-        johnLegendItems[index].iconStroke = "#999";
-        johnLegend.itemsFormatter(function(){return johnLegendItems});
-      }
-    });
+  johnLegend.position("bottom");
+  johnLegend.align("left");
+  johnLegend.zIndex(1);
+  johnLegend.enabled(true);
+  johnLegend.itemsLayout("vertical");
+  johnLegend.listen('legendItemClick', function(event) {
+    event.preventDefault();
+    var index = event["itemIndex"];
+    if (chart.getSeries(index).data().get(0, "value") == "missing"){
+      chart.getSeries(index).data().set(0, "value", johnLegendItems[index].text);
+      johnLegendItems[index].fontColor = "#000";
+      johnLegendItems[index].iconFill = palette[index];
+      johnLegendItems[index].iconStroke = anychart.color.darken(palette[index], 0.2);
+      johnLegend.itemsFormatter(function(){return johnLegendItems});
+    }
+    else{
+      chart.getSeries(index).data().set(0, "value", "missing");
+      johnLegendItems[index].fontColor = "#999";
+      johnLegendItems[index].iconFill = "#999";
+      johnLegendItems[index].iconStroke = "#999";
+      johnLegend.itemsFormatter(function(){return johnLegendItems});
+    }
+  });
   
-  jakeLegend
-    .position("bottom")
-    .align("center")
-    .zIndex(1)
-    .enabled(true)
-    .itemsLayout("vertical")
-    .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
-      event.preventDefault();
-      var index = event["itemIndex"];
-      if (chart.getSeries(index).data().get(1, "value") == "missing"){
-        chart.getSeries(index).data().set(1, "value", jakeLegendItems[index].text);
-        jakeLegendItems[index].fontColor = "#000";
-        jakeLegendItems[index].iconFill = palette[index];
-        jakeLegendItems[index].iconStroke = anychart.color.darken(palette[index], 0.2);
-        jakeLegend.itemsFormatter(function(){return jakeLegendItems});
-      }
-      else{
-        chart.getSeries(index).data().set(1, "value", "missing");
-        jakeLegendItems[index].fontColor = "#999";
-        jakeLegendItems[index].iconFill = "#999";
-        jakeLegendItems[index].iconStroke = "#999";
-        jakeLegend.itemsFormatter(function(){return jakeLegendItems});
-      }
-    });
+  jakeLegend.position("bottom");
+  jakeLegend.align("center");
+  jakeLegend.zIndex(1);
+  jakeLegend.enabled(true);
+  jakeLegend.itemsLayout("vertical");
+  jakeLegend.listen('legendItemClick', function(event) {
+    event.preventDefault();
+    var index = event["itemIndex"];
+    if (chart.getSeries(index).data().get(1, "value") == "missing"){
+      chart.getSeries(index).data().set(1, "value", jakeLegendItems[index].text);
+      jakeLegendItems[index].fontColor = "#000";
+      jakeLegendItems[index].iconFill = palette[index];
+      jakeLegendItems[index].iconStroke = anychart.color.darken(palette[index], 0.2);
+      jakeLegend.itemsFormatter(function(){return jakeLegendItems});
+    }
+    else{
+      chart.getSeries(index).data().set(1, "value", "missing");
+      jakeLegendItems[index].fontColor = "#999";
+      jakeLegendItems[index].iconFill = "#999";
+      jakeLegendItems[index].iconStroke = "#999";
+      jakeLegend.itemsFormatter(function(){return jakeLegendItems});
+    }
+  });
   
-  peterLegend
-    .position("bottom")
-    .align("right")
-    .zIndex(1)
-    .enabled(true)
-    .itemsLayout("vertical")
-    .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
-      event.preventDefault();
-      var index = event["itemIndex"];
-      if (chart.getSeries(index).data().get(2, "value") == "missing"){
-        chart.getSeries(index).data().set(2, "value", peterLegendItems[index].text);
-        peterLegendItems[index].fontColor = "#000";
-        peterLegendItems[index].iconFill = palette[index];
-        peterLegendItems[index].iconStroke = anychart.color.darken(palette[index], 0.2);
-        peterLegend.itemsFormatter(function(){return peterLegendItems});
-      }
-      else{
-        chart.getSeries(index).data().set(2, "value", "missing");
-        peterLegendItems[index].fontColor = "#999";
-        peterLegendItems[index].iconFill = "#999";
-        peterLegendItems[index].iconStroke = "#999";
-        peterLegend.itemsFormatter(function(){return peterLegendItems});
-      }
-    });
-  
-  
+  peterLegend.position("bottom");
+  peterLegend.align("right");
+  peterLegend.zIndex(1);
+  peterLegend.enabled(true);
+  peterLegend.itemsLayout("vertical");
+  peterLegend.listen('legendItemClick', function(event) {
+    event.preventDefault();
+    var index = event["itemIndex"];
+    if (chart.getSeries(index).data().get(2, "value") == "missing"){
+      chart.getSeries(index).data().set(2, "value", peterLegendItems[index].text);
+      peterLegendItems[index].fontColor = "#000";
+      peterLegendItems[index].iconFill = palette[index];
+      peterLegendItems[index].iconStroke = anychart.color.darken(palette[index], 0.2);
+      peterLegend.itemsFormatter(function(){return peterLegendItems});
+    }
+    else{
+      chart.getSeries(index).data().set(2, "value", "missing");
+      peterLegendItems[index].fontColor = "#999";
+      peterLegendItems[index].iconFill = "#999";
+      peterLegendItems[index].iconStroke = "#999";
+      peterLegend.itemsFormatter(function(){return peterLegendItems});
+    }
+  });
   
   // draw legends
-  johnLegend.container(stage).draw();
-  jakeLegend.container(stage).draw();
-  peterLegend.container(stage).draw();
-  
+  johnLegend.container(stage);
+  johnLegend.draw();
+  jakeLegend.container(stage);
+  jakeLegend.draw();
+  peterLegend.container(stage);
+  peterLegend.draw();
   
   
   // map data
@@ -158,42 +161,59 @@ anychart.onDocumentReady(function() {
   // chart type
   var chart = anychart.column();
   
-  chart.xAxis().title(null);
-  chart.yAxis().title(null);
+  var xAxis = chart.xAxis();
+  xAxis.title(null);
+  var yAxis = chart.yAxis();
+  yAxis.title(null);
   
   // set title
-  chart.title().text("Custom Legend");
+  chart.title("Custom Legend");
   
   // set data
-  chart.column(Quarter1).name("Quarter 1");
-  chart.column(Quarter2).name("Quarter 2");
-  chart.column(Quarter3).name("Quarter 3");
-  chart.column(Quarter4).name("Quarter 4");
+  var series1 = chart.column(Quarter1);
+  series1.name("Quarter 1");
+  var series2 = chart.column(Quarter2);
+  series2.name("Quarter 2");
+  var series3 = chart.column(Quarter3);
+  series3.name("Quarter 3");
+  var series4 = chart.column(Quarter4);
+  series4.name("Quarter 4");
   
   // legend settings
-  chart.legend()
-    .titleSeparator(true)       // draw line to separate title
-    .enabled(true)              // enable legend
-    .position("right")          // set legend position
-    .align("top")               // set legend align
-    .itemsLayout("vertical");   // set items layout
+  var legend = chart.legend();
+  // draw line to separate title
+  legend.titleSeparator(true);
+  // enable legend
+  legend.enabled(true);
+  // set legend position
+  legend.position("right");
+  // set legend align
+  legend.align("top");
+  // set items layout
+  legend.itemsLayout("vertical");
   
-  chart.background(null);       // disable chart background
+  // disable chart background
+  chart.background(null);
   
   // settings for legend title  
-  chart.legend()
-    .title()
-    .useHtml(true)
-    .enabled(true)              // enables legend title
-    .text("Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>")  // set title text
-    .fontSize(14)               // set font size
-    .hAlign("center");
+  var legendTitle = chart.legend().title();
+  legendTitle.useHtml(true);
+  // enables legend title
+  legendTitle.enabled(true);
+  // set title text
+  legendTitle.text('Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>');
+  // set font size
+  legendTitle.fontSize(14);
+  legendTitle.hAlign("center");
   
   // prevent chart overlapping by legends
-  chart.margin().bottom(stage.height() - johnLegend.getRemainingBounds().getHeight() - 10);
-  chart.yScale().minimum(0);
+  var margin = chart.margin();
+  margin.bottom(stage.height() - johnLegend.getRemainingBounds().getHeight() - 10);
+  var yScale = chart.yScale();
+  yScale.minimum(0);
   // redraw legends if chart is redrawn
-  chart.container(stage).draw();
+  chart.container(stage);
+  chart.draw();
   chart.listen(
     "chartDraw",
     function (){

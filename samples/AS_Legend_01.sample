@@ -1,6 +1,7 @@
 {:tags []
      :is_new false
      :exports "chart"}
+
 anychart.onDocumentReady(function() {
   
   // data
@@ -19,17 +20,22 @@ anychart.onDocumentReady(function() {
   var chart = anychart.area();
   
   // set title
-  chart.title().text("Bar Chart");
+  chart.title("Bar Chart");
   
   // set data
-  chart.column(Quarter1).name("Quarter 1");
-  chart.area(Quarter2).name("Quarter 2");
-  chart.line(Quarter3).name("Quarter 3");
-  chart.spline(Quarter4).name("Quarter 4");
+  var series1 = chart.column(Quarter1);
+  series1.name("Quarter 1");
+  var series2 = chart.area(Quarter2);
+  series2.name("Quarter 2");
+  var series3 = chart.line(Quarter3);
+  series3.name("Quarter 3");
+  var series4 = chart.spline(Quarter4);
+  series4.name("Quarter 4");
   
   // enable lagend
-  chart.legend().enabled(true);
+  chart.legend(true);
   
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });

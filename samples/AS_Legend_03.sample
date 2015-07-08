@@ -21,33 +21,45 @@ anychart.onDocumentReady(function() {
   var chart = anychart.bar();
   
   // set title
-  chart.title().text("Legend Title Configuration");
+  chart.title("Legend Title Configuration");
   
   // set data
-  chart.bar(Quarter1).name("Quarter 1");
-  chart.bar(Quarter2).name("Quarter 2");
-  chart.bar(Quarter3).name("Quarter 3");
-  chart.bar(Quarter4).name("Quarter 4");
+  var series1 = chart.bar(Quarter1);
+  series1.name("Quarter 1");
+  var series2 = chart.bar(Quarter2);
+  series2.name("Quarter 2");
+  var series3 = chart.bar(Quarter3);
+  series3.name("Quarter 3");
+  var series4 = chart.bar(Quarter4);
+  series4.name("Quarter 4");
   
   // legend settings
-  chart.legend()
-    .titleSeparator(true)
-    .enabled(true)            // enable legend
-    .position("right")        // set legend position
-    .align("top")             // set legend align
-    .itemsLayout("vertical"); // set items layout
+  var legend = chart.legend();
+  legend.titleSeparator(true);
+  // enable legend
+  legend.enabled(true);
+  // set legend position
+  legend.position("right");
+  // set legend align
+  legend.align("top");
+  // set items layout
+  legend.itemsLayout("vertical"); 
   
   // settings for legend title  
-  chart.legend().title()
-    .useHtml(true)
-    .enabled(true)              // enables legend title
-    .text("Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>")
-    .fontSize(14)               // set font size
-    .hAlign("center");
+  var legendTitle = chart.legend().title();
+  legendTitle.useHtml(true);
+  // enables legend title
+  legendTitle.enabled(true)
+  legendTitle.text("Total se="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>")
+  // set font size
+  legendTitle.fontSize(14);
+  legendTitle.hAlign("center");
   
-  
-  chart.xAxis().title("Sales");
-  chart.yAxis().title("Manager");
+  var xAxis = chart.xAxis();
+  xAxis.title("Sales");
+  var yAxis = chart.yAxis();
+  yAxis.title("Manager");
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });

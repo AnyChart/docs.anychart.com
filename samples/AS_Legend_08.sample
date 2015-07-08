@@ -7,49 +7,62 @@ anychart.onDocumentReady(function() {
   // set chart type
   var chart = anychart.line();
   
-  chart.legend().enabled(true);
+  chart.legend(true);
   
   // series data and series name
-  chart.line([
+  var series1 = chart.line([
     {x: "John", value: 10000},
     {x: "Jake", value: 12000},
     {x: "Peter", value: 16000}
-  ]).name("default markers");
+  ]);
+  series1.name("default markers");
   
   // set series data
-  chart.line([
+  var series2 = chart.line([
     {x: "John", value: 12000},
     {x: "Jake", value: 15000},
     {x: "Peter", value: 17000}
-  ])
-    .name("Custom series marker") // set series name
-    .markers()                    // adjust series marker
-      .type("star4");             // series marker type
+  ]);
+  // set series name
+  series2.name("Custom series marker");
+  // adjust series marker
+  var markers2 = series2.markers();
+  // series marker type
+  markers2.type("star4");
   
   // set series data
-  chart.line([
+  var series3 = chart.line([
     {x: "John", value: 20000},
     {x: "Jake", value: 19000},
     {x: "Peter", value: 21000}
-  ])
-    .name("custom legend marker type")  // series name
-    .legendItem()                       // settings for the series item in legend
-      .iconMarkerType("star5");         // series marker type in legend
+  ]);
+  // series name
+  series3.name("custom legend marker type");
+  // settings for the series item in legend
+  var legendItems3 = series3.legendItem();
+  // series marker type in legend
+  legendItems3.iconMarkerType("star5");
   
   // set series data
-  chart.line([
+  var series4 = chart.line([
     {x: "John", value: 16000},
     {x: "Jake", value: 21000},
     {x: "Peter", value: 22000}
-  ])
-    .name("customised legend marker") // set series name
-    .legendItem()                     // settings for the legend item of the series
-      .iconMarkerFill("gold")         // set inner color of series marker in legend
-      .iconMarkerStroke("red")        // set border of icon marker in legend
-      .iconMarkerType("star6");       // set type of icon marker in legend
+  ]);
+  // set series name
+  series4.name("customised legend marker");
+  // settings for the legend item of the series
+  var legendItems4 = series4.legendItem();
+  // set inner color of series marker in legend
+  legendItems4.iconMarkerFill("gold");
+  // set border of icon marker in legend
+  legendItems4.iconMarkerStroke("red");
+  // set type of icon marker in legend
+  legendItems4.iconMarkerType("star6");
   
-  chart.title().text("Tuning Marker of legend item");
+  chart.title("Tuning Marker of legend item");
   
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });
