@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+  
+  // set chart type
+  chart = anychart.column();
+  
+  chart.title()
+    .text('Click to alert')     // set text for default title
+    // set event listener
+    .listen(
+      'click',      // set type of event
+      function(){   // set function
+        alert('Top Sales Manager is Peter!');
+      }
+    );
+  
+  // data
+  var data = anychart.data.set([
+    ['John', 10000],
+    ['Jake', 12000],
+    ['Peter', 18000],
+    ['James', 11000],
+    ['Mary', 9000]
+  ]);
+  
+  // set data
+  chart.column(data);
+  
+  // draw chart
+  chart.container('container').draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

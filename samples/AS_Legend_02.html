@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+  
+  //set chart type
+  var chart = anychart.column();
+  
+  // set data
+  chart.column([
+    {x: 'John', value: 10000},
+    {x: 'Jake', value: 12000},
+    {x: 'Peter', value: 16000}
+  ]);
+  
+  // set chart title
+  chart.title().text('Legend for Single Series');
+  
+  // legend settings
+  chart.legend()
+    .enabled(true)                  // enable legend
+    .itemsSourceMode('categories'); // set source of legend items
+  
+  // set container and draw chart
+  chart.container('container').draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

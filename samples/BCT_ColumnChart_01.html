@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // chart type
+  var chart = anychart.columnChart();
+    
+  // set data
+  chart.column([
+    ['John' , 10000],
+    ['Jake' , 12000],
+    ['Peter' , 18000],
+    ['James' , 11000],
+    ['Mary' , 9000]
+  ]);
+
+  // set title
+  chart.title().text('Column Chart');
+
+  // set axes titles
+  chart.xAxis().title().text('Manager');
+  chart.yAxis().title().text('Sales');
+
+  // draw
+  chart.container('container').draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

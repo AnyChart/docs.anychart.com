@@ -6,9 +6,9 @@ Downloading AnyChart
 ####AnyChart
 
 To download the latest version of AnyChart, which contains the basic chart types, choose the most suitable option and click the link below.
-* Production edition - [anychart.min.js](http://anychart.com/products/anychart7/download/?file=anychart.min.js&version=7.5.0) <span style="color:#898989;">(230Kb gzip)</span>
-* Development edition - [anychart.dev.min.js](http://anychart.com/products/anychart7/download/?file=anychart.dev.min.js&version=7.5.0) <span style="color:#898989;">(2.1Mb gzip)</span>  
-* Binaries package - [anychart.zip](http://anychart.com/products/anychart7/download/7.5.0/anychart.zip) <span style="color:#898989;">(360Kb)</span>  
+* Production edition - [anychart.min.js](http://anychart.com/products/anychart7/download/?file=anychart.min.js&version=7.5.1) <span style="color:#898989;">(230Kb gzip)</span>
+* Development edition - [anychart.dev.min.js](http://anychart.com/products/anychart7/download/?file=anychart.dev.min.js&version=7.5.1) <span style="color:#898989;">(2.1Mb gzip)</span>  
+* Binaries package - [anychart.zip](http://anychart.com/products/anychart7/download/7.5.1/anychart.zip) <span style="color:#898989;">(360Kb)</span>  
 
 ####AnyGantt
 
@@ -21,7 +21,7 @@ To download the latest version of AnyGantt, which contains **only** the gantt ch
 
 To download the latest version of AnyChart, which contains **all** products we have at the moment, choose the most suitable option and click the link below.
 * Production edition - [anychart-bundle.min.js](http://cdn.anychart.com/js/latest/anychart-bundle.min.js) <span style="color:#898989;">(259Kb gzip)</span>
-* Development edition - [anychart-bundle.dev.min.js](http://anychart.com/products/anychart7/download/?file=anychart-bundle.dev.min.js&version=7.5.0) <span style="color:#898989;">(264Kb gzip)</span>  
+* Development edition - [anychart-bundle.dev.min.js](http://cdn.anychart.com/js/latest/anychart-bundle.dev.min.js) <span style="color:#898989;">(264Kb gzip)</span>  
 
 ###Using AnyChart with a CDN
 <a href="http://en.wikipedia.org/wiki/Content\_delivery\_network" target="_blank">CDN</a> offers hosts for AnyChart on servers spread across the world. As a consequence, the advantage of using CDN is no need for your customers in downloading AnyChart, which leads to faster page loading.

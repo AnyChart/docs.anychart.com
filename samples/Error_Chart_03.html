@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="['error' 'bar']"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+  //create bar chart
+  chart = anychart.bar();
+
+  //set container id for the chart
+  chart.container('container');
+
+  var series = chart.stepArea([
+    ['P1', 189],
+    ['P2', 140],
+    ['P3', 177],
+    ['P4', 165],
+    ['P5', 154],
+    ['P6', 191],
+  ]);
+
+  
+  series.error().valueUpperError(2).valueLowerError(6).valueError(6);
+  
+  series.error().valueErrorStroke('2px #146192');
+
+  chart.yScale().minimum(0);
+
+  //initiate chart drawing
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

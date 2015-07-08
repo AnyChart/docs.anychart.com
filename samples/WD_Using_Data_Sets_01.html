@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+  
+  var data = [
+    // column 0
+    28,   //row 0
+    26,   //    1
+    27,   //    2
+    "25", //    3
+    "29"  //    4
+  ];
+
+  // create a data set  
+  var dataSet = anychart.data.set(data);
+
+  // create a pie chart using the data set
+  var pieChart = anychart.pieChart(dataSet);
+
+  // set container id for the chart  
+  pieChart.container('container');
+
+  // initiate chart drawing
+  pieChart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
