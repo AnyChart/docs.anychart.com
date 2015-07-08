@@ -6,23 +6,22 @@ Downloading AnyChart
 ####AnyChart
 
 To download the latest version of AnyChart, which contains the basic chart types, choose the most suitable option and click the link below.
-* Production edition - [anychart.min.js](http://anychart.com/products/anychart7/download/?file=anychart.min.js&version=7.4.0) <span style="color:#898989;">(145Kb gzip)</span>
-* Development edition - [anychart.dev.min.js](http://anychart.com/products/anychart7/download/?file=anychart.dev.min.js&version=7.4.0) <span style="color:#898989;">(147Kb gzip)</span>  
-* Binaries package - [anychart.zip](http://anychart.com/products/anychart7/download/7.4.0/anychart.zip) <span style="color:#898989;">(360Kb)</span>  
+* Production edition - [anychart.min.js](http://anychart.com/products/anychart7/download/?file=anychart.min.js&version=7.5.0) <span style="color:#898989;">(230Kb gzip)</span>
+* Development edition - [anychart.dev.min.js](http://anychart.com/products/anychart7/download/?file=anychart.dev.min.js&version=7.5.0) <span style="color:#898989;">(2.1Mb gzip)</span>  
+* Binaries package - [anychart.zip](http://anychart.com/products/anychart7/download/7.5.0/anychart.zip) <span style="color:#898989;">(360Kb)</span>  
 
 ####AnyGantt
 
 To download the latest version of AnyGantt, which contains **only** the gantt chart, choose the most suitable option and click the link below.
-* Production edition - [anygantt.min.js](http://anychart.com/products/anygantt7/download/?file=anygantt.min.js&version=7.4.0) <span style="color:#898989;">(145Kb gzip)</span>
-* Development edition - [anygantt.dev.min.js](http://anychart.com/products/anygantt7/download/?file=anygantt.dev.min.js&version=7.4.0) <span style="color:#898989;">(147Kb gzip)</span>  
-* Binaries package - [anygantt.zip](http://anychart.com/products/anygantt7/download/7.4.0/anygantt.zip) <span style="color:#898989;">(360Kb)</span>  
+* Production edition - [anygantt.min.js](http://anychart.com/products/anygantt7/download/?file=anygantt.min.js&version=7.5.0) <span style="color:#898989;">(185Kb gzip)</span>
+* Development edition - [anygantt.dev.min.js](http://anychart.com/products/anygantt7/download/?file=anygantt.dev.min.js&version=7.5.0) <span style="color:#898989;">(189Kb gzip)</span>  
+* Binaries package - [anygantt.zip](http://anychart.com/products/anygantt7/download/7.5.0/anygantt.zip) <span style="color:#898989;">(1.1Mb)</span>  
 
 ####All AnyChart Products
 
 To download the latest version of AnyChart, which contains **all** products we have at the moment, choose the most suitable option and click the link below.
-* Production edition - [anychart-bundle.min.js](http://cdn.anychart.com/js/latest/anychart-bundle.min.js) <span style="color:#898989;">(145Kb gzip)</span>
-* Development edition - [anychart-bundle.dev.min.js](http://anychart.com/products/anychart7/download/?file=anychart-bundle.dev.min.js&version=7.4.0) <span style="color:#898989;">(147Kb gzip)</span>  
-* Binaries package - [anychart-bundle.zip](http://anychart.com/products/anychart7/download/7.4.0/anychart-bundle.zip) <span style="color:#898989;">(360Kb)</span>  
+* Production edition - [anychart-bundle.min.js](http://cdn.anychart.com/js/latest/anychart-bundle.min.js) <span style="color:#898989;">(259Kb gzip)</span>
+* Development edition - [anychart-bundle.dev.min.js](http://anychart.com/products/anychart7/download/?file=anychart-bundle.dev.min.js&version=7.5.0) <span style="color:#898989;">(264Kb gzip)</span>  
 
 ###Using AnyChart with a CDN
 <a href="http://en.wikipedia.org/wiki/Content\_delivery\_network" target="_blank">CDN</a> offers hosts for AnyChart on servers spread across the world. As a consequence, the advantage of using CDN is no need for your customers in downloading AnyChart, which leads to faster page loading.
