@@ -2,18 +2,20 @@
      :is_new false
      :exports "chart"}
 
-
+# TODO осоьые условия
 anychart.onDocumentReady(function() {
   
-  stage = anychart.graphics.create("container");
+  var stage = anychart.graphics.create("container");
   
   // set chart type
-  chart = anychart.column();
+  var chart = anychart.column();
   
-  chart.title()
-    .text("Sales Performance")  // set text for default title
-    .fontSize(12)               // set font size
-    .fontWeight(700);           // set font weight
+  var title = chart.title();
+  // set text for default title
+  title.text("Sales Performance");
+  // set font size
+  title.fontSize(12);
+  title.fontWeight(700);           // set font weight
   
   // data
   var data = anychart.data.set([
@@ -28,22 +30,33 @@ anychart.onDocumentReady(function() {
   chart.column(data);
   
   // draw chart
-  chart.container(stage).draw();
+  chart.container(stage);
+  chart.draw();
   
   // create additional title
   var customTitle = anychart.ui.title();
-  customTitle
-    .text("according to annual report") // set title text
-    .orientation("bottom")              // place title at the bottom
-    .align("right")                     // stick text to the right side
-    .fontSize(11)                       // set text size
-    .fontFamily("Tahoma")               // set font family
-    .fontWeight(400)                    // unbold title
-    .background()                       // background settings
-      .enabled(true)                    // eanble background
-      .fill(null)                       // disable fill
-      .stroke("#000000");               // set black border to title
+  // set title text
+  customTitle.text("according to annual report");
+  // place title at the bottom
+  customTitle.orientation("bottom");
+  // stick text to the right side
+  customTitle.align("right");
+  // set text size
+  customTitle.fontSize(11);
+  // set font family
+  customTitle.fontFamily("Tahoma");
+  // unbold title
+  customTitle.fontWeight(400);
+  // background settings
+  var titleBackground = customTitle.background();
+  // eanble background
+  titleBackground.enabled(true);
+  // disable fill
+  titleBackground.fill(null);
+  // set black border to title
+  titleBackground.stroke("#000000");
   
   // set container and draw title
-  customTitle.container(stage).draw();
+  customTitle.container(stage);
+  customTitle.draw();
 });

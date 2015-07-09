@@ -5,17 +5,20 @@
 anychart.onDocumentReady(function() {
   
   // set chart type
-  chart = anychart.column();
+  var chart = anychart.column();
   
-  chart.title()
-    .text("Click to alert")     // set text for default title
-    // set event listener
-    .listen(
-      "click",      // set type of event
-      function(){   // set function
-        alert("Top Sales Manager is Peter!");
-      }
-    );
+  var title = chart.title();
+  // set text for default title
+  title.text("Click to alert");
+  // set event listener
+  title.listen(
+    // set type of event
+    "click",
+    // set function
+    function(){
+      alert("Top Sales Manager is Peter!");
+    }
+  );
   
   // data
   var data = anychart.data.set([
@@ -30,5 +33,6 @@ anychart.onDocumentReady(function() {
   chart.column(data);
   
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });

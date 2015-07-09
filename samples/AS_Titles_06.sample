@@ -5,15 +5,17 @@
 anychart.onDocumentReady(function() {
   
   // set chart type
-  chart = anychart.column();
+  var chart = anychart.column();
   
   // title settings
-  chart.title()
-    .useHtml(true)      //enables HTML tags
-    .hAlign("center")   // place text in the center
-    .text(
+  var title = chart.title();
+  //enables HTML tags
+  title.useHtml(true);
+  // place text in the center
+  title.hAlign("center");
+  title.text(
     "Sales Performance"+
-    "<br><a style="color:#0000FF; font-size: 10px;">"+
+    '<br><a style="color:#0000FF; font-size: 10px;">'+
     "according to annual report</a>"
   );
   
@@ -30,5 +32,6 @@ anychart.onDocumentReady(function() {
   chart.column(data);
   
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });

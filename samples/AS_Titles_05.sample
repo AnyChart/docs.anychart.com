@@ -5,14 +5,18 @@
 anychart.onDocumentReady(function() {
   
   // set chart type
-  chart = anychart.column();
+  var chart = anychart.column();
   
   // adjust chart settings
-  chart.title()
-    .text("Sales Performance")  // set title text
-    .fontSize(12)                 // set font size
-    .fontDecoration("underline")  // underline text
-    .fontFamily("Tahoma");        // set font family
+  var title = chart.title();
+  // set title text
+  title.text("Sales Performance");
+  // set font size
+  title.fontSize(12);
+  // underline text
+  title.fontDecoration("underline");
+  // set font family
+  title.fontFamily("Tahoma");
   
   // data
   var data = anychart.data.set([
@@ -27,5 +31,6 @@ anychart.onDocumentReady(function() {
   chart.column(data);
 
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });

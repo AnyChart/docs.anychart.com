@@ -5,17 +5,24 @@
 anychart.onDocumentReady(function() {
   
   // set chart type
-  chart = anychart.column();
+  var chart = anychart.column();
   
   // adjust chart settings
-  chart.title()
-    .text("Sales Performance")  // set title text
-    .background()               // settings for title background
-      .enabled(true)            // enable background
-      .fill("#FFD700")          // set background inner color
-      .stroke("#D8D8D8")        // set background border
-      .cornerType("round")      // set type of background corners
-      .corners(10);             // set corners size
+  var title = chart.title();
+  // set title text
+  title.text("Sales Performance");
+  // settings for title background
+  var titleBackground = chart.title().background();
+  // enable background
+  titleBackground.enabled(true);
+  // set background inner color
+  titleBackground.fill("#FFD700");
+  // set background border
+  titleBackground.stroke("#D8D8D8");
+  // set type of background corners
+  titleBackground.cornerType("round");
+  // set corners size
+  titleBackground.corners(10);
   
   // data
   var data = anychart.data.set([
@@ -30,5 +37,6 @@ anychart.onDocumentReady(function() {
   chart.column(data);
 
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });

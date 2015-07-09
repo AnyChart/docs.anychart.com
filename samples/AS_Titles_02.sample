@@ -5,10 +5,11 @@
 anychart.onDocumentReady(function() {
   
   // set chart type
-  chart = anychart.column();
+  var chart = anychart.column();
   
   // set title text
-  chart.title().text("Sales Performance");
+  var title = chart.title();
+  title.text("Sales Performance");
   
   // data
   var data = anychart.data.set([
@@ -23,5 +24,6 @@ anychart.onDocumentReady(function() {
   chart.column(data);
 
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });

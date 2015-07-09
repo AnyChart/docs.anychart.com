@@ -3,6 +3,7 @@
      :exports "chart"}
 
 anychart.onDocumentReady(function() {
+  
   // set stage
   var stage = anychart.graphics.create("container");
   var palette = anychart.palettes.distinctColors().colors();
@@ -41,7 +42,7 @@ anychart.onDocumentReady(function() {
   
   var chart = anychart.column();
   
-  chart.title().text("Sales Report");
+  chart.title("Sales Report");
   
   // set data and color
   var column = chart.column(data);
@@ -66,28 +67,38 @@ anychart.onDocumentReady(function() {
   function click (fullData, name, fill) {
     chart.dispose();
     chart = anychart.line();
-    chart.line(fullData).stroke(fill);
-    chart.title().text("Sales details for "+name);
+    var line = chart.line(fullData);
+    line.stroke(fill);
+    chart.title("Sales details for "+name);
     chart.container(stage);
     chart.draw();
     
     var customTitle = anychart.ui.title();
-    customTitle
-      .text("Back to Sales Manager Report") // set title text
-      .orientation("bottom")                // place title at the bottom
-      .align("right")                       // stick text to the right side
-      .fontSize(11)                         // set text size
-      .fontFamily("Tahoma")                 // set font family
-      .fontWeight(400)                      // unbold title
-      .background()                         // background settings
-        .enabled(true)                      // eanble background
-        .fill("#FFFFFF")                    // disable fill
-        .stroke("#000000");                 // set black border to title
+    // set title text
+    customTitle.text("Back to Sales Manager Report");
+    // place title at the bottom
+    customTitle.orientation("bottom");
+    // stick text to the right side
+    customTitle.align("right");
+    // set text size
+    customTitle.fontSize(11);
+    // set font family
+    customTitle.fontFamily("Tahoma");
+    // unbold title
+    customTitle.fontWeight(400);
+    // background settings
+    var titleBackground = customTitle.background();
+    // eanble background
+    titleBackground.enabled(true);
+    // disable fill
+    titleBackground.fill("#FFFFFF");
+    // set black border to title
+    titleBackground.stroke("#000000");
     
     // set container and draw title
     customTitle.listen("click", function(){
       chart = anychart.column();
-      chart.title().text("Sales Report");
+      chart.title("Sales Report");
       var column = chart.column(data);
       column.listen(
         "pointClick",
@@ -98,11 +109,13 @@ anychart.onDocumentReady(function() {
             data.mapAs().get(e.pointIndex, "fill")
           );
         });
-      chart.container(stage).draw();
+      chart.container(stage);
+      chart.draw();
       customTitle.dispose();
     });
     
     // draw custom title
-    customTitle.container(stage).draw();
+    customTitle.container(stage);
+    customTitle.draw();
   }
 });

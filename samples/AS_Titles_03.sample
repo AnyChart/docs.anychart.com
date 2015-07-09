@@ -5,13 +5,16 @@
 anychart.onDocumentReady(function() {
   
   // set chart type
-  chart = anychart.column();
+  var chart = anychart.column();
   
   // adjust chart settings
-  chart.title()
-    .text("Sales Performance")  // set title text
-    .orientation("bottom")      // place title into bottom of the chart 
-    .align("left");             // stick title to the left side
+  var title = chart.title();
+  // set title text
+  title.text("Sales Performance");
+  // place title into bottom of the chart
+  title.orientation("bottom");
+  // stick title to the left side
+  title.align("left");
   
   // data
   var data = anychart.data.set([
@@ -26,5 +29,6 @@ anychart.onDocumentReady(function() {
   chart.column(data);
 
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });

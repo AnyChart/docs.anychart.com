@@ -14,17 +14,19 @@ anychart.onDocumentReady(function() {
   ]);
   
   // set chart type
-  chart = anychart.column();
+  var chart = anychart.column();
   
   // enable chart title. Set .enabled(false) to disable title
-  chart.title().enabled(true);
+  var title = chart.title();
+  title.enabled(true);
   
   // set data
   chart.column(data);
   
   // set title text
-  chart.title().text("Default Title");
+  title.text("Default Title");
   
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });
