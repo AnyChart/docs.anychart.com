@@ -1,4 +1,4 @@
-{:tags [error,bar]
+{:tags ["error" "bar"]
      :is_new false
      :exports "chart"}
 
