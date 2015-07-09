@@ -32,7 +32,7 @@ Every chart has default title and this title can be enabled or disabled using {a
 
 ## Setting Text
 
-Of course you can specify your own texts for titles using {api:anychart.core.ui.Title#text}**.text()**{api} parameter, just like that:
+Of course you can specify your own texts for a title using {api:anychart.core.ui.Title#text}**.text()**{api} parameter, just like that:
 
 ```
   // set chart type
@@ -68,7 +68,7 @@ Title can be placed anywhere on the chart plot. Parameter {api:anychart.core.ui.
 
 ### Background 
 
-You can tune background of a title. Use {api:anychart.core.ui.Title#background}**.background()**{api} method to configure visual appearance of a background. Full information on adjusting background can be found in [Background](./Background) article.
+You can tune background of a title. Use {api:anychart.core.ui.Title#background}**.background()**{api} method to configure visual appearance of a background. Full information on adjusting background can be found in [Background](../Appearance_Settings/Background) article.
 
 {sample}AS\_Titles\_04{sample}
 
