@@ -2,18 +2,20 @@
 # Getting Data from JSON, XML or CSV
 
 * [Overview](#overview)
-* [JSON vs JavaScript](#json_vs_javascript)
-* [XML vs JavaScript](#xml_vs_javascript)
-* [CSV vs JavaScript](#csv_vs_javascript)
+* [From JavaScript to JSON](#from_javascript_to_json)
+ * [JSON Schema](#json_schema)
+* [From JavaScript to XML](#from_javascript_to_xml)
+ * [XML Schema](#xml_schema)
+* [From JavaScript to CSV](#from_javascript_to_csv)
 
 ## Overview
 
 AnyChart supports several ways of setting data. This article quickly demonstrates main aspects of using JSON, XML and CSV format in AnyChart Gantt. 
 
-The main difference between using any of these format types is that in JSON it is an object, in XML it is a string, and both of them may contain some extra information
-such as color and size settings or other design features. CSV format can be used to convert only the data, no extra information can be added in this case.
+The main difference between using any of these format types is that in JSON the chart configuration is presented as an object, in XML it is a string, and both of them may contain 
+some extra information, such as color and size settings or other design features. CSV format can be used to convert only the data, no extra information can be added in this case.
   
-## JSON vs JavaScript  
+## From JavaScript to JSON 
   
 JSON or JavaScript Object Notation, is an open standard format that uses human-readable text to transmit data objects consisting 
 of attribute-value pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML. 
@@ -23,158 +25,28 @@ You can use JSON to define the chart configuration with functions and other comp
 
 {sample}GANTT\_JXC\_01{sample}
 
-That's how the code of this sample is presented in JavaScript:
-```     
-anychart.onDocumentReady(function(){
+Explore the sample in playground to see the whole code in Javascript.
 
-    var rawData = [
-      {
-"name": "Activities",
-"actualStart": Date.UTC(2007, 0, 25),
-"actualEnd": Date.UTC(2007, 2, 14),
-"children": [
-  {
-    "name": "Draft plan",
-    "actualStart": Date.UTC(2007, 0, 25),
-    "actualEnd": Date.UTC(2007, 1, 3)
-  },
-  {
-    "name": "Board meeting",
-    "actualStart": Date.UTC(2007, 1, 4),
-    "actualEnd": Date.UTC(2007, 1, 4)
-  },
-  {
-    "name": "Research option",
-    "actualStart": Date.UTC(2007, 1, 4),
-    "actualEnd": Date.UTC(2007, 1, 24)
-  },
-  {
-    "name": "Final plan",
-    "actualStart": Date.UTC(2007, 1, 24),
-    "actualEnd": Date.UTC(2007, 2, 14)
-  }
-]
-      }];
+To transform the code from Javascript into JSON configuration object, you can go two ways: open the tab "JSON" 
+The sample below is the same simple Project Gantt, built with the use of JSON. Explore it in playground to see the whole code.
 
-  // tree data settings
-  var treeData = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
+And that's how the same chart's code will look like if converted to JSON (without configuration parameters and extra information). 
+It is necessary to define the chart type, container, data items and some parameters of dataGrid and timeLine to make the JSON config valid.
 
-  // chart type
-  chart = anychart.ganttProject();
+{sample}GANTT\_JXC\_02{sample}
 
-  // chart container
-  chart.container('container');
+### JSON Schema
 
-  // set chart data
-  chart.data(treeData);
-
-  // initiate drawing
-  chart.draw();
-  
-  console.log(chart.toJson());
-  
-  // show all items 
-  chart.fitAll();
-
-});
-```
-
-And that's how the same chart's code will look like if converted to JSON (without configuration parameters and extra information)
-
-```
-anychart.onDocumentReady(function() {
-
-            var json = {
-                "gantt": {
-                    "type": "project",
-                    "controller": {
-                        "isResourceChart": false,
-                        "treeData": {
-                            "children": [
-                                {
-                                    "treeDataItemData": {
-                                        "name": "Activities",
-                                        "actualStart": 1169683200000,
-                                        "actualEnd": 1173830400000
-                                    },
-                                    "treeDataItemMeta": {
-                                        "nc": true,
-                                        "depth": 0,
-                                        "index": 0,
-                                        "autoProgress": 0,
-                                        "autoStart": 1169683200000,
-                                        "autoEnd": 1173830400000
-                                    },
-                                    "children": [
-                                        {
-                                            "treeDataItemData": {
-                                                "name": "Draft plan",
-                                                "actualStart": 1169683200000,
-                                                "actualEnd": 1170460800000
-                                            },
-                                            "treeDataItemMeta": {
-                                                "nc": true,
-                                                "depth": 1,
-                                                "index": 1
-                                            }
-                                        },
-                                        {
-                                            "treeDataItemData": {
-                                                "name": "Board meeting",
-                                                "actualStart": 1170547200000,
-                                                "actualEnd": 1170547200000
-                                            },
-                                            "treeDataItemMeta": {
-                                                "nc": true,
-                                                "depth": 1,
-                                                "index": 2
-                                            }
-                                        },
-                                        {
-                                            "treeDataItemData": {
-                                                "name": "Research option",
-                                                "actualStart": 1170547200000,
-                                                "actualEnd": 1172275200000
-                                            },
-                                            "treeDataItemMeta": {
-                                                "nc": true,
-                                                "depth": 1,
-                                                "index": 3
-                                            }
-                                        },
-                                        {
-                                            "treeDataItemData": {
-                                                "name": "Final plan",
-                                                "actualStart": 1172275200000,
-                                                "actualEnd": 1173830400000
-                                            },
-                                            "treeDataItemMeta": {
-                                                "nc": true,
-                                                "depth": 1,
-                                                "index": 4
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    }
-                }
-            }
-
-        var chart = anychart.fromJson(json);
-
-        // set container id for the chart
-        chart.container('container');
-
-        // initiate chart drawing
-        chart.draw();
-
-        });
-```
+JSON Schema specifies a JSON-based format to define the structure of JSON data 
+(visit [http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) 
+for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. 
+AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart 7.3.1 version is located at 
+[http://anychart.com/products/anychart7/schemas/7.3.1/json-schema.json](http://anychart.com/products/anychart7/schemas/7.3.1/json-schema.json). 
+Whenever you use AnyChart JSON schema - make sure it suits the version of AnyChart. 
+The latest schema can always be found at [http://anychart.com/schemas/latest/json-schema.json](http://anychart.com/schemas/latest/json-schema.json) 
 
 
-## XML vs JavaScript  
+## From JavaScript to XMl  
 
 XML or Extensible Markup Language, is a markup language that defines a set of rules for encoding documents in a format which 
 is both human-readable and machine-readable. Originally designed to meet the challenges of large-scale electronic publishing, 
@@ -233,6 +105,15 @@ anychart.onDocumentReady(function() {
 
         });
 ```
+## Schema
+
+XML Schema specifies a XML-based format to define the structure of XML data 
+(visit [http://en.wikipedia.org/wiki/XML_schema](http://en.wikipedia.org/wiki/XML_schema) for more information). 
+All objects of this schema correspond to JavaScript methods and parameters of a chart. 
+(for instance, XML schema for AnyChart 7.3.1 version is located at 
+[http://anychart.com/products/anychart7/schemas/7.3.1/xml-schema.xsd](http://anychart.com/products/anychart7/schemas/7.3.1/xml-schema.xsd)). 
+Latest version of XML schema can be found at [http://anychart.com/schemas/latest/xml-schema.xml](http://anychart.com/schemas/latest/xml-schema.xml) 
+This file can also be used to validate your own XML structure. 
 
 
 ## CSV vs JavaScript  

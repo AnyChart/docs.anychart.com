@@ -1,0 +1,110 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+
+anychart.onDocumentReady(function () {
+
+            var json = {
+                "gantt": {
+                    "type": "project",
+                    "controller": {
+                        "isResourceChart": false,
+                        "treeData": {
+                            "children": [
+                                {
+                                    "treeDataItemData": {
+                                        "name": "Activities",
+                                        "actualStart": 1169683200000,
+                                        "actualEnd": 1173830400000
+                                    },
+                                    "treeDataItemMeta": {
+                                        "depth": 0,
+                                        "index": 0,
+                                        "autoProgress": 0,
+                                        "autoStart": 1169683200000,
+                                        "autoEnd": 1173830400000
+                                    },
+                                    "children": [
+                                        {
+                                            "treeDataItemData": {
+                                                "name": "Draft plan",
+                                                "actualStart": 1169683200000,
+                                                "actualEnd": 1170460800000
+                                            },
+                                            "treeDataItemMeta": {
+                                                "depth": 1,
+                                                "index": 1
+                                            }
+                                        },
+                                        {
+                                            "treeDataItemData": {
+                                                "name": "Board meeting",
+                                                "actualStart": 1170547200000,
+                                                "actualEnd": 1170547200000
+                                            },
+                                            "treeDataItemMeta": {
+                                                "depth": 1,
+                                                "index": 2
+                                            }
+                                        },
+                                        {
+                                            "treeDataItemData": {
+                                                "name": "Research option",
+                                                "actualStart": 1170547200000,
+                                                "actualEnd": 1172275200000
+                                            },
+                                            "treeDataItemMeta": {
+                                                "depth": 1,
+                                                "index": 3
+                                            }
+                                        },
+                                        {
+                                            "treeDataItemData": {
+                                                "name": "Final plan",
+                                                "actualStart": 1172275200000,
+                                                "actualEnd": 1173830400000
+                                            },
+                                            "treeDataItemMeta": {
+                                                "depth": 1,
+                                                "index": 4
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": [
+                                "id"
+                            ]
+                        },
+                        "verticalOffset": 0,
+                        "startIndex": 0
+                    },
+                    "dataGrid": {
+                        "columns": []
+                    },
+                    "timeline": {
+                        "scale": {
+                            "range": {
+                                "min": 1169641728000,
+                                "max": 1173871872000
+                            },
+                            "totalRange": {
+                                "min": 1169641728000,
+                                "max": 1173871872000
+                            }
+                        }
+                    }
+                    ,
+                    // chart container
+                    "container": "container"
+                }
+            }
+
+
+            var chart = anychart.fromJson(json);
+
+            // draw chart
+            chart.draw();
+
+        });
