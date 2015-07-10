@@ -6,8 +6,10 @@ anychart.onDocumentReady(function() {
 
   // define chart
   var chart = anychart.cartesianChart();
-
-  chart.margin().top(30).right(30);
+  
+  var margin = chart.margin();
+  margin.top(30);
+  margin.right(30);
 
   // setting data
   var data = anychart.data.set([
@@ -19,16 +21,23 @@ anychart.onDocumentReady(function() {
 
   // define chart type
   chart.bar(data);
+  
   // inverts y scale. Now all elements has inverted (from right to left) direction
-  chart.yScale().inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 
   // inverts x scale. Now all elements has inverted (from top to bottom) direction
-  chart.xScale().inverted(true);
+  var xScale = chart.xScale();
+  xScale.inverted(true);
 
   // disabling all ticks
-  chart.xAxis().ticks().enabled(false);
-  chart.yAxis().minorTicks().enabled(false);
-  chart.yAxis().ticks().enabled(false);
+  var xTicks = chart.xAxis().ticks();
+  xTicks.enabled(false);
+  var yMinorTicks = chart.yAxis().minorTicks();
+  yMinorTicks.enabled(false);
+  var yTicks = chart.yAxis().ticks();
+  yTicks.enabled(false);
 
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });

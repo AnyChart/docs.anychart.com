@@ -49,7 +49,7 @@ anychart.onDocumentReady(function() {
   customTitle.fontWeight(400);
   // background settings
   var titleBackground = customTitle.background();
-  // eanble background
+  // enable background
   titleBackground.enabled(true);
   // disable fill
   titleBackground.fill(null);
