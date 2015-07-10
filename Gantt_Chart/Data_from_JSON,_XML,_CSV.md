@@ -27,13 +27,87 @@ You can use JSON to define the chart configuration with functions and other comp
 
 Explore the sample in playground to see the whole code in Javascript.
 
-To transform the code from Javascript into JSON configuration object, you can go two ways: open the tab "JSON" 
+To transform the code from Javascript into JSON configuration object, you can go two ways: open the tab "JSON" in the playground or add the following line somewhere in the end of the code:
+
+```
+	// ask the console to convert this to json
+	console.log(chart.toJson());
+```
+
 The sample below is the same simple Project Gantt, built with the use of JSON. Explore it in playground to see the whole code.
 
-And that's how the same chart's code will look like if converted to JSON (without configuration parameters and extra information). 
-It is necessary to define the chart type, container, data items and some parameters of dataGrid and timeLine to make the JSON config valid.
-
 {sample}GANTT\_JXC\_02{sample}
+
+And that's how the code looks like in JSON. 
+It is necessary to define the chart type, container (or as in the example) and data items to make the JSON config valid.
+
+```
+var chart;
+
+        anychart.onDocumentReady(function() {
+
+            var json = {
+                "gantt": {
+                    "type": "project",
+                    "controller": {
+                        "treeData": {
+                            "children": [
+                                {
+                                    "treeDataItemData": {
+                                        "id": 1,
+                                        "name": "Activities" 	// actual start, actual end will be autocalculated here.
+                                    }, 							// All meta will be autocalculated as well
+                                    "children": [
+                                        {
+                                            "treeDataItemData": {
+                                                "id": 2,
+                                                "name": "Draft plan",
+                                                "actualStart": Date.UTC(2007, 0, 25, 8),   // This is for JSON only! For XML it still must be 1169683200000.
+                                                "actualEnd": 1170460800000
+                                            }
+                                        },
+                                        {
+                                            "treeDataItemData": {
+                                                "id": 3,
+                                                "name": "Board meeting",
+                                                "actualStart": 1170547200000,
+                                                "actualEnd": 1170547200000
+                                            }
+                                        },
+                                        {
+                                            "treeDataItemData": {
+                                                "id": 4,
+                                                "name": "Research option",
+                                                "actualStart": 1170547200000,
+                                                "actualEnd": 1172275200000
+                                            }
+                                        },
+                                        {
+                                            "treeDataItemData": {
+                                                "id": 5,
+                                                "name": "Final plan",
+                                                "actualStart": 1172275200000,
+                                                "actualEnd": 1173830400000
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            };
+
+            chart = anychart.fromJson(json);
+            chart.container('container');
+
+            // draw chart
+            chart.draw();
+
+        });
+```
+
+Note that you can set the date in UTC in JSON. In XML you still have to use numeric format.
 
 ### JSON Schema
 
@@ -59,52 +133,62 @@ You can use XML to define the chart configuration as a string. Let's take the sa
 anychart.onDocumentReady(function() {
 
             var xml =
-            '<anychart xmlns="http://anychart.com/schemas/7.5.0/xml-schema.xsd">'+
-            '<gantt enabled="true" type="project" header_height="70" row_hover_fill="#edf8ff" row_selected_fill="#d2eafa" splitter_position="30%">'+
-            '<controller is_resource_chart="false" vertical_offset="0" start_index="0">'+
-            '<tree_data>'+
-            '<children>'+
-            '<data_item>'+
-            '<tree_data_item_data name="Activities" actual_start="1169683200000" actual_end="1173830400000"/>'+
-            '<tree_data_item_meta nc="true" depth="0" index="0" auto_progress="0" auto_start="1169683200000" auto_end="1173830400000"/>'+
-            '<children>'+
-            '<data_item>'+
-            '<tree_data_item_data name="Draft plan" actual_start="1169683200000" actual_end="1170460800000"/>'+
-            '<tree_data_item_meta nc="true" depth="1" index="1"/>'+
-            '</data_item>'+
-            '<data_item>'+
-            '<tree_data_item_data name="Board meeting" actual_start="1170547200000" actual_end="1170547200000"/>'+
-            '<tree_data_item_meta nc="true" depth="1" index="2"/>'+
-            '</data_item>'+
-            '<data_item>'+
-            '<tree_data_item_data name="Research option" actual_start="1170547200000" actual_end="1172275200000"/>'+
-            '<tree_data_item_meta nc="true" depth="1" index="3"/>'+
-            '</data_item>'+
-            '<data_item>'+
-            '<tree_data_item_data name="Final plan" actual_start="1172275200000" actual_end="1173830400000"/>'+
-            '<tree_data_item_meta nc="true" depth="1" index="4"/>'+
-            '</data_item>'+
-            '</children>'+
-            '</data_item>'+
-            '</children>'+
-            '<index>'+
-            '<key><![CDATA[id]]></key>'+    // the index can be made for the id (as it is done here - by default) or for any other field
-            '</index>'+
-            '</tree_data>'+
-            '</controller>'+
-            '</gantt>'+
-            '</anychart>';
+                    '<anychart xmlns="http://anychart.com/schemas/7.5.0/xml-schema.xsd">'+
+                    '<gantt enabled="true" type="project" header_height="70" row_hover_fill="#edf8ff" row_selected_fill="#d2eafa" splitter_position="30%">'+
+                    '<controller is_resource_chart="false" vertical_offset="0" start_index="0">'+
+                    '<tree_data>'+
+                    '<children>'+
+                    '<data_item>'+
+                    '<tree_data_item_data name="Activities" actual_start="1169683200000" actual_end="1173830400000"/>'+
+                    '<tree_data_item_meta nc="true" depth="0" index="0" auto_progress="0" auto_start="1169683200000" auto_end="1173830400000"/>'+
+                    '<children>'+
+                    '<data_item>'+
+                    '<tree_data_item_data name="Draft plan" actual_start="1169683200000" actual_end="1170460800000"/>'+
+                    '<tree_data_item_meta nc="true" depth="1" index="1"/>'+
+                    '</data_item>'+
+                    '<data_item>'+
+                    '<tree_data_item_data name="Board meeting" actual_start="1170547200000" actual_end="1170547200000"/>'+
+                    '<tree_data_item_meta nc="true" depth="1" index="2"/>'+
+                    '</data_item>'+
+                    '<data_item>'+
+                    '<tree_data_item_data name="Research option" actual_start="1170547200000" actual_end="1172275200000"/>'+
+                    '<tree_data_item_meta nc="true" depth="1" index="3"/>'+
+                    '</data_item>'+
+                    '<data_item>'+
+                    '<tree_data_item_data name="Final plan" actual_start="1172275200000" actual_end="1173830400000"/>'+
+                    '<tree_data_item_meta nc="true" depth="1" index="4"/>'+
+                    '</data_item>'+
+                    '</children>'+
+                    '</data_item>'+
+                    '</children>'+
+                    '<index>'+
+                    '<key><![CDATA[id]]></key>'+    // the index can be made for the id (as it is done here - by default) or for any other field
+                    '</index>'+
+                    '</tree_data>'+
+                    '</controller>'+
+                    '</scale>'+
+                    '</timeline>'
+                    '</gantt>'+
+                    '</anychart>';
 
-        var chart = anychart.fromXml(xml);
+            var chart = anychart.fromXml(xml);
 
-        // set container id for the chart
-        chart.container('container');
+            // set container id for the chart
+            chart.container('container');
 
-        // initiate chart drawing
-        chart.draw();
+            // initiate chart drawing
+            chart.draw();
 
         });
 ```
+
+Note: in XML, you should set the whole code as a string object.
+
+The sample looks completely the same as the JSON-converted one.
+
+{sample}GANTT\_JXC\_03{sample}
+
+
 ## Schema
 
 XML Schema specifies a XML-based format to define the structure of XML data 
