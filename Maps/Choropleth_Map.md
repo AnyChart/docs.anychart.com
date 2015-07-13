@@ -46,19 +46,19 @@ var dataSet1 = anychart.data.set([
                 {'id': 'au-2557', 'value': 230},
                 {'id': 'au-wa', 'value': 200},
                 {'id': 'au-jb', 'value': 10)},
-                {'id': 'au-ns', 'value': random(0, 300)},
+                {'id': 'au-ns', 'value': 45},
                 {'id': 'au-vi', 'value': 300},
                 {'id': 'au-nt', 'value': 332},
                 {'id': 'au-ts', 'value': 160},
-                {'id': 'au-ct', 'value': random(0, 300)},
+                {'id': 'au-ct', 'value': 276},
                 {'id': 'au-sa', 'value': 30},
-                {'id': 'au-ql', 'value': random(0, 300)}
+                {'id': 'au-ql', 'value': 237}
             ]);
 ```
 
 <br>
 
-To connect the data to the map and to define its type you may use the next constr
+To connect the data to the map and to define its type you may use the next construction:
 ```
 s1 = map.choropleth(dataSet1);
 ```
