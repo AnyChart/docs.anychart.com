@@ -1,4 +1,4 @@
-#Maps
+#Choropleth Maps
 
 * [Choropleth Map](#choropleth_map)
 * [Data](#data)
@@ -12,7 +12,7 @@
 
 ## Choropleth Map
 
-These are maps, where areas are colored or shaded according to a prearranged key, each shading or colour type representing a range of values. 
+These are maps, where areas are colored or shaded according to a prearranged key. Each shade or colour represents a range of values. 
 Population density information, expressed as 'per mile²,' is appropriately represented using a choropleth map. 
 Choropleth maps are also appropriate for indicating differences in land use, like the amount of recreational land or type of forest cover.
 
@@ -90,9 +90,8 @@ The situation with classification is the same as with number of classes: there's
 The main goal of classification is to unite territories with similar rates through coloring them in one shade or color. 
 <br><br> 
 <!-- There are three general ways to classify the data: -->
-<br><br>
 
-- Equal interval 
+- Equal interval <br>
 The data is divided into ranges of equal size (e.g., 0-100, 100-200, 200-300, etc.). This type is the best, when the data values are spread across the entire range,
 but has no sense, when the data values are spread unequally. 	
 
