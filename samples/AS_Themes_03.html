@@ -6,56 +6,149 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
+
   // create variable for custom theme
   var customTheme = {
     // define settings for bar charts
-    "bar": {
-      "title": "Bar Chart",
+    "column":{
+      //"title": {
+      //  "enabled": false
+      //},
       "defaultXAxisSettings": {
-        "title": "Retail Channel"
+        "labels": {
+          // make all x labels 3 symbols long
+          "textFormatter": function(){
+            var value = this.value;
+            value = value.substr(0, 3);
+            return value
+          },
+          "title": "Month"
+        }
       },
+      "scales": [
+        // x scale settings
+        {
+          "type": "ordinal"
+        },
+        {
+          "type": "linear",
+          "minimum": 0,
+          "maximum": 120,
+          "ticks": {
+            "interval": 20
+          }
+        },
+        {
+          "type": "linear",
+          "minimum": 0,
+          "maximum": 900000,
+          "ticks:": {
+            "interval": 150000
+          }
+        }
+      ],
+      "yScale": 2,
       "defaultYAxisSettings": {
-        "title": 'Sales'
-      }
-    },
-    // settings for column charts
-    "column": {
-      "title": "Column Chart",
-      "defaultXAxisSettings": {
-        "title": "Retail Channel"
+        "scale": 2,
+        "orientation": "left",
+        "labels": {
+          "textFormatter": function(){
+            return "$"+this.value
+          }
+        }
       },
-      "defaultYAxisSettings": {
-        "title": 'Sales'
+      "yAxes": [
+        {},
+        {
+          "orientation": "right",
+          "scale": 1,
+          "drawLastLabel": false,
+          "labels": {
+            "textFormatter": function(){
+              return this.value + "%"
+            }
+          }
+        }
+      ],
+      "defaultSeriesSettings": {
+        "column":{
+          "labels": {
+            "enabled": true,
+            "fontColor": "#fff",
+            "position": "center",
+            "anchor": "center",
+            "rotation": -90,
+            "fontWeight": 900
+          },
+          "tooltip": {
+            "contentFormatter": function() {
+              return "Month: " + this.x + "\nIncome: " + this.value
+            }
+          }
+        }
+      },
+      "defaultGridSettings": {
+        "enabled": true,
+        "layout": "horizontal",
+        "oddFill": null,
+        "evenFill": null,
+        "stroke": "#cecece",
+        "zIndex": 11
       }
     }
   };
 
   // data
-  var data = anychart.data.set([
-    ["Department Stores", 637166],
-    ["Discount Stores", 721630],
-    ["Men's/Women's Specialty Stores", 148662],
-    ["All other outlets", 90000]
+  var firstHalf = anychart.data.set([
+    ["January",   537166, 639657],
+    ["February",  421630, 385923],
+    ["March",     648662, 284603],
+    ["April",     390000, 573921],
+    ["May",       584213, 192848],
+    ["June",      491842, 492747]
+  ]);
+
+  var secondHalf = anychart.data.set([
+    ["July",      617166, 237561],
+    ["August",    721630, 495714],
+    ["September", 248662, 375691],
+    ["October",   731284, 538164],
+    ["November",  542648, 695718],
+    ["December",  299742, 617394]
   ]);
 
   // apply custom theme
   anychart.theme(customTheme);
 
-  // set stage
-  var stage = anychart.graphics.create('container');
+  var table = anychart.ui.table();
+  table.contents([
+    ["Year 2005", null],
+    [
+      anychart.column(firstHalf.mapAs({x: [0], value: [1]})),
+      anychart.column(secondHalf.mapAs({x: [0], value: [1]}))
+    ],
+    ["Year 2006", null],
+    [
+      anychart.column(firstHalf.mapAs({x: [0], value: [2]})),
+      anychart.column(secondHalf.mapAs({x: [0], value: [2]}))
+    ]
+  ]);
+  var firstTitle = table.getRow(0);
+  firstTitle.height(30);
+  var firstTitleCell = table.getCell(0,0);
+  firstTitleCell.colSpan(2);
 
-  // set chart type
-  var bar = anychart.bar();
-  bar.bounds(0, 0, "100%", "50%");
-  bar.bar(data);
-  bar.container(stage);
-  bar.draw();
+  var secondTitle = table.getRow(2);
+  secondTitle.height(30);
+  var secondTitleCell = table.getCell(2,0);
+  secondTitleCell.colSpan(2);
 
-  var column = anychart.column();
-  column.column(data);
-  column.bounds(0, "50%", "100%", "50%");
-  column.container(stage);
-  column.draw();
+  table.vAlign("center");
+  table.hAlign("center");
+  table.cellBorder(null);
+  table.rowEvenFill("#efefef");
+  table.container("container");
+  table.draw();
 });</script>
 </head>
 <body>
