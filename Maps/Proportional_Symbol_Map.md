@@ -13,8 +13,8 @@
  * [Advantages](#advantages)
  * [Disadvantages](#disadvantages)
 
-
- 
+*coming_soon*
+<!-- 
 ## Proportional Symbol Map
 
 
@@ -37,3 +37,4 @@
 ## Advantages
 
 ## Disadvantages
+-->

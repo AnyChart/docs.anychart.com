@@ -10,7 +10,8 @@
  * [Advantages](#advantages)
  * [Disadvantages](#disadvantages)
 
-
+*coming_soon*
+<!--
 ## Isopleth Map
 
 ## Data
@@ -28,3 +29,5 @@
 ### Advantages
 
 ### Disadvantages
+
+-->
