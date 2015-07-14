@@ -23,7 +23,7 @@ For more information visit [http://en.wikipedia.org/wiki/JSON](http://en.wikiped
 
 You can use JSON to define the chart configuration with functions and other complicated structures. Look at the sample below:
 
-{sample}GANTT\_JXC\_01{sample}
+{sample :width 680 :height 180}GANTT\_JXC\_01{sample}
 
 Explore the sample in playground to see the whole code in Javascript.
 
@@ -36,7 +36,7 @@ To transform the code from Javascript into JSON configuration object, you can go
 
 The sample below is the same simple Project Gantt, built with the use of JSON. Explore it in playground to see the whole code.
 
-{sample}GANTT\_JXC\_02{sample}
+{sample :width 680 :height 180}GANTT\_JXC\_02{sample}
 
 And that's how the code looks like in JSON. 
 It is necessary to define the chart type, container (or as in the example) and data items to make the JSON config valid.
@@ -186,7 +186,7 @@ Note: in XML, you should set the whole code as a string object.
 
 The sample looks completely the same as the JSON-converted one.
 
-{sample}GANTT\_JXC\_03{sample}
+{sample :width 680 :height 180}GANTT\_JXC\_03{sample}
 
 
 ## Schema
@@ -210,17 +210,15 @@ to RFC 4180 (or any other standard), because so many programs support variations
 For example, a user may need to transfer information from a database program that stores data in a proprietary format, to a spreadsheet that uses a completely different format. The database program most likely can export its data as "CSV"; the exported CSV file can then be imported by the spreadsheet program.
 For more information visit [http://en.wikipedia.org/wiki/Comma-separated_values](http://en.wikipedia.org/wiki/CSV)
 
-If we take the above sample as an example, that's how the code for the Gantt Project chart will look like: <!--на данный момент тут такие вот портянки. неизвестно, когда будет поправлено все остальное и что-то здесь, что вроде как должно быть поправлено-->
+If we take the above sample as an example, that's how the part of code for the Gantt Project chart will look like: <!--на данный момент тут такие вот портянки. неизвестно, когда будет поправлено все остальное и что-то здесь, что вроде как должно быть поправлено-->
 ```
-anychart.onDocumentReady(function () {
-
-            var csvString =
-                    '0,0,Activities,1169683200000,1173830400000,,\n' +
-                    '1,1,Draft plan,1169683200000,1170460800000,0,\n' +
-                    '2,2,Board meeting,1170547200000,1170547200000,0,\n' +
-                    '3,3,Research option,1170547200000,1172275200000,0,\n' +
-                    '4,4,Final plan,1172275200000,1173830400000,0,\n'
-
+		var csvString =
+            '0,0,Activities,1169683200000,1173830400000,,\n' +
+            '1,1,Draft plan,1169683200000,1170460800000,0,\n' +
+            '2,2,Board meeting,1170547200000,1170547200000,0,\n' +
+            '3,3,Research option,1170547200000,1172275200000,0,\n' +
+            '4,4,Final plan,1172275200000,1173830400000,0,\n'
+ 
             var mapping = {
                 id: 0,
                 index: 1,
@@ -229,72 +227,19 @@ anychart.onDocumentReady(function () {
                 actualEnd: 4,
                 parent: 5
             };  
-
+ 
             var csvSettings = {
                 rowsSeparator: ',',
                 columnsSeparator: ';',
                 ignoreFirstRow: false
             };
-
+ 
             data = anychart.data.tree(csvString, mapping, csvSettings);
-            var dataGrid = anychart.ui.dataGrid();
-            dataGrid.container('container');
-            dataGrid.data(data);
-
-            var thirdColumn = dataGrid.column(2);
-            thirdColumn.title('Actual Start');
-            thirdColumn.width(100);
-            thirdColumn.textFormatter(thirdColumnTextFormatter);
-
-            // set fourth column settings
-            var fourthColumn = dataGrid.column(3);
-            fourthColumn.title().text('Actual End');
-            fourthColumn.width(100);
-            fourthColumn.textFormatter(fourthColumnTextFormatter);
-
-            dataGrid.draw();
-
-            dataGrid.listen('signal', dataGrid.draw, false, dataGrid);
-
-        });
-
-
-        //do pretty formatting for dates in third column
-        function thirdColumnTextFormatter(item) {
-            var field = item.get(anychart.enums.GanttDataFields.ACTUAL_START);
-
-            // format base line text
-            if (field) {
-                var actualStart = new Date(+field);
-                return formatDate(actualStart.getUTCMonth() + 1) + '/' +
-                        formatDate(actualStart.getUTCDate()) + '/' + actualStart.getUTCFullYear() + ' ' +
-                        formatDate(actualStart.getUTCHours()) + ':' +
-                        formatDate(actualStart.getUTCMinutes());
-            } else {
-                return '';
-            }
-        }
-
-        //do pretty formatting for dates in fourth column
-        function fourthColumnTextFormatter(item) {
-            var field = item.get(anychart.enums.GanttDataFields.ACTUAL_END);
-            if (field) {
-                var actualEnd = new Date(+field);
-                return formatDate((actualEnd.getUTCMonth() + 1)) + '/' +
-                        formatDate(actualEnd.getUTCDate()) + '/' + actualEnd.getUTCFullYear() + ' ' +
-                        formatDate(actualEnd.getUTCHours()) + ':' +
-                        formatDate(actualEnd.getUTCMinutes());
-            } else {
-                return '';
-            }
-        }
-
-        //do pretty formatting for passed date unit
-        function formatDate(dateUnit) {
-            if (dateUnit < 10) dateUnit = '0' + dateUnit;
-            return dateUnit + '';
-        }
 
 ```
+
+And there is the sample of the Project Gantt with CSV-formatted data:
+
+{sample :width 680 :height 180}GANTT\_JXC\_04{sample}
  
 As we can define not the whole chart configuration but only its data using the CSV format, we should help the data to parse correctly. That's why we need the "mapping" object - using it, we are able to tell the dataGrid to put the values from the CSV string into the right fields. The csvSettings is an object where we set the separators and tell about ignoring for some particular rows.
