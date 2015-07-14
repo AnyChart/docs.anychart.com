@@ -74,7 +74,27 @@ s1 = map.choropleth(dataSet1);
 {sample}Maps\_Choropleth\_01{sample}
 
 <br>
-As you can see, there's no visual difference between the districts. That's because we haven't defined the Color Range yet. Let's think about the data classification and define the colorRange.
+In the data above we haven't defined the value for some regions, but those regions themselves are defined. If we remove the lines with the regions we don't have information about,
+they will become of default background color, so it's better to set the stroke for them:
+```
+var dataSet = anychart.data.set([
+                {'id': 'AU.WA', 'value': 300},  // Western Australia
+                {'id': 'AU.NS', 'value': 240},  // New South Wales
+                {'id': 'AU.VI', 'value': 75},   // Victoria
+                {'id': 'AU.NT', 'value': 130},  // Northern Territory
+                {'id': 'AU.TS', 'value': 190},  // Tasmania
+                {'id': 'AU.CT', labels: false}, // Australian Capital Territory
+            ]);
+			
+// set the fill for the regions you haven't defined in the dataSet
+            map.unboundRegions().fill('green');
+```
+<br>
+Now, let's look at what we've got:
+<br>
+{sample}Maps\_Choropleth\_02{sample}
+<br>
+As you can see, there's no visual difference between the districts with different values. That's because we haven't defined the Color Range yet. Let's think about the data classification and define the colorRange.
 
 
 ## Data Classes 
@@ -130,7 +150,7 @@ ordinalScale.colors(['rgb(253,225,86)','rgb(248,196,57)', 'rgb(244,168,19)', 'rg
 
 That's how it all looks in the sample. Here we have changed the data a bit and removed the information about a plenty of regions - those ones are uncolored and stroked with green.
 
-{sample}Maps\_Choropleth\_02{sample}
+{sample}Maps\_Choropleth\_03{sample}
 
 ### Unclassed Choropleth
 
@@ -145,7 +165,7 @@ series.colorScale(anychart.scales.linearColor('#FFEBD6','#C40A0A'));
 <br>
 And there's the sample with the colorRange of linear type:
 
-{sample}Maps\_Choropleth\_03{sample}
+{sample}Maps\_Choropleth\_04{sample}
 
 <br>
 Read more about ColorRange [here](../Color_Range.md).
