@@ -25,7 +25,6 @@ You can use a choropleth map when your data:
 <br> 3) is something that can be measured anywhere in space (even 'zero' is a valid measurement). 
 
 <br>
-<br>
 
 For example, if our data is a count like a number of cats, this data type is not suitable for the choropleth, 
 but a number of cats per square mile is a statistical ratio which always has a value and, thus, is appropriate for choropleth maps.
@@ -37,15 +36,7 @@ Example datasets appropriate for choropleths:
 - map showing the percentage change in solved to unresolved cases from 1995 to 2015 in the UK;
 - world map of percentage of population over 90 years old, reported by Canada.
 
-<br><br>
-
-If you are still in doubt about using a choropleth, check those which are a bit similar:
-- [Dot Density Maps](../Dot_Density_Map)
-- [Graduated/Proportional Symbol Maps](../Proportional_Symbol_Map)
-- [Cartograms](../Cartogram)
-These 3 map types can all handle raw data (e.g., simple counts, totals) opposite to choropleths that require the standardized data.
-
-<br><br>
+<br>
 
 That's the code sample of a dataset. All points are set as objects, each has an "id" field and a "value" field. 
 The value might be set as a numeric value or you may define a random value.
@@ -114,12 +105,14 @@ Classed Choropleth is a Choropleth Map, which scale is (and, consequently, a Col
 
 The situation with classification is the same as with number of classes: there's no default about the way to classify the data into ranges.
 The main goal of classification is to unite territories with similar rates through coloring them in one shade or color. 
-<br><br> 
+<br>
 <!-- There are three general ways to classify the data: -->
 
-- Equal interval <br>
-The data is divided into ranges of equal size (e.g., 0-100, 100-200, 200-300, etc.). This type is the best, when the data values are spread across the entire range,
+<!-- - Equal interval <br> -->
+One of the most popular ways to classify the data is using equal intervals. The data is divided into ranges of equal size 
+(e.g., 0-100, 100-200, 200-300, etc.). This type is the best, when the data values are spread across the entire range,
 but has no sense, when the data values are spread unequally. 	
+<br>
 
 <!-- - Quantiles
 This way will create attractive maps that place an equal number of observations in each class. It means that if you have 20 territories on your map
@@ -131,7 +124,7 @@ e.g. 1-10, 10-20, 20-1200, 1200-1250, etc. Quantiles lead to having groups of pl
 This way is a kind of "optimal" classification scheme, when the value borders are set where the between-class difference is the biggest and 
 the difference between within-class values is the smallest.	-->
 	
-You can set the classes only by yourself, no matter which classification method you decided to use. The sample of classification is shown below.
+You can set the classes only by yourself<!--, no matter which classification method you decided to use-->. The sample of data classification is shown below.
 ```
 // making of the ordinal colorRange
             ordinalScale = anychart.scales.ordinalColor([
@@ -192,5 +185,14 @@ They give a false impression of abrupt change at the boundaries of shaded units.
 Choropleths are often not suitable for showing total values. Proportional symbols overlays (included on the choropleth map above) are one solution to this problem.
 It can be difficult to distinguish between different shades.
 Variations within map units are hidden, and for this reason smaller units are better than large ones.
+
+<br>
+
+If you are still in doubt about using a choropleth, check those which are a bit similar:
+- [Dot Density Maps](../Dot_Density_Map)
+- [Graduated/Proportional Symbol Maps](../Proportional_Symbol_Map)
+- [Cartograms](../Cartogram)
+<br>
+These 3 map types can all handle raw data (e.g., simple counts, totals) opposite to choropleths that require the standardized data.
 
 
