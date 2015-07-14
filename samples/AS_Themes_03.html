@@ -11,9 +11,6 @@
   var customTheme = {
     // define settings for bar charts
     "column":{
-      //"title": {
-      //  "enabled": false
-      //},
       "defaultXAxisSettings": {
         "labels": {
           // make all x labels 3 symbols long
@@ -26,7 +23,7 @@
         }
       },
       "scales": [
-        // x scale settings
+        // default x scale
         {
           "type": "ordinal"
         },
@@ -48,17 +45,18 @@
         }
       ],
       "yScale": 2,
-      "defaultYAxisSettings": {
-        "scale": 2,
-        "orientation": "left",
-        "labels": {
-          "textFormatter": function(){
-            return "$"+this.value
-          }
-        }
-      },
       "yAxes": [
-        {},
+        // settings for default y axis
+        {
+          "scale": 2,
+          "orientation": "left",
+          "labels": {
+            "textFormatter": function(){
+              return "$"+this.value
+            }
+          }
+        },
+        // settings for additional y axis
         {
           "orientation": "right",
           "scale": 1,
@@ -70,6 +68,7 @@
           }
         }
       ],
+      // series settings
       "defaultSeriesSettings": {
         "column":{
           "labels": {
@@ -86,14 +85,6 @@
             }
           }
         }
-      },
-      "defaultGridSettings": {
-        "enabled": true,
-        "layout": "horizontal",
-        "oddFill": null,
-        "evenFill": null,
-        "stroke": "#cecece",
-        "zIndex": 11
       }
     }
   };

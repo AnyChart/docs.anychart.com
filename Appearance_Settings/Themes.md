@@ -199,22 +199,6 @@ Below is a sample of two charts with minimal settings and a predefined theme wit
 
 ##Themes Use in Dashboard Mode
 
-In the sample below a table contain several charts. Most settings of these charts are predefined in them. It is very convenient as far as all these charts have many alike settings.
+In the sample below a table contain several charts. Most settings of these charts are predefined in them. It is very convenient as far as all these charts have many alike settings. Click "Launch in playground" to examine the code of the sample.
 
-
-{sample}AS\_Themes\_03{sample}
-
-
-Important note about dashboard mode: all templates for all the charts in dashboard mode will be taken from the path specified in <templates path=""> in a file where dashboard is defined, all paths from chart source files will be ignored.
-
-You can find a sample of templates usage in dashboards in Dashboard Creation Tutorial.
-
-Templates to modify Series Node
-
-You can change certina series setting using templates if you set the same name of the series both in chart and template.
-
-In the sample below chart contain two series: Test1 and Test2, by default they are colored in different colors from the palette and attached to main y axis:
-
-Live Sample:  Internal Template Series Settings Sample 0
-
-Now we create template that changes the type and attaches Test2 series to extra y axis:
+{sample :width 690 :height 680}AS\_Themes\_03{sample}
