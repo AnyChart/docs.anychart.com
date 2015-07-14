@@ -10,7 +10,7 @@ SHP-files that are the source of our maps.
 
 World Map is a general map of all countries and continents. It can be downloaded from [here](http://cdn.anychart.com/geodata/world/world.js) as the *.js file. 
 <br>
-To reference the JavaScript file, write the link inside a \<script\> tag in the \<head\> section of your web page.
+To reference the JavaScript file, write the link inside a "script" tag in the "head" section of your web page.
 
 ```
 <script src="http://cdn.anychart.com/geodata/countries/aus/australia.js"></script>
@@ -25,7 +25,7 @@ To reference the JavaScript file, write the link inside a \<script\> tag in the 
 
 [Here](http://cdn.anychart.com/geodata/countries/usa/usa_mainland.js) we've got a map of the whole United States.
 <br>
-To reference the JavaScript file, write the link inside a <script> tag in the <head> section of your web page.
+To reference the JavaScript file, write the link inside a "script" tag in the "head" section of your web page.
 
 ```
 <script src="http://cdn.anychart.com/geodata/countries/usa/usa_mainland.js"></script>
@@ -39,7 +39,7 @@ To reference the JavaScript file, write the link inside a <script> tag in the <h
 
 Find the JavaScript of the Australia Map [here](http://cdn.anychart.com/geodata/countries/aus/australia.js)
 <br>
-To reference the JavaScript file, write the link inside a <script> tag in the <head> section of your web page.
+To reference the JavaScript file, write the link inside a "script" tag in the "head" section of your web page.
 
 ```
 <script src="http://cdn.anychart.com/geodata/countries/aus/australia.js"></script>
