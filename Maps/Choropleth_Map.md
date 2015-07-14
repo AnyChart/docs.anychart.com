@@ -39,20 +39,28 @@ Example datasets appropriate for choropleths:
 
 <br><br>
 
-That's the code sample of a dataset. All points are set as objects, each has an "id" field and a "value" field. As you can see, the value might be set as a numeric value or you may define a random value.
+If you are still in doubt about using a choropleth, check those which are a bit similar:
+- [Dot Density Maps](../Dot_Density_Map)
+- [Graduated/Proportional Symbol Maps](../Proportional_Symbol_Map)
+- [Cartograms](../Cartogram)
+These 3 map types can all handle raw data (e.g., simple counts, totals) opposite to choropleths that require the standardized data.
+
+<br><br>
+
+That's the code sample of a dataset. All points are set as objects, each has an "id" field and a "value" field. 
+The value might be set as a numeric value or you may define a random value.
 
 ```
-var dataSet1 = anychart.data.set([
-                {'id': 'au-2557', 'value': 230},
-                {'id': 'au-wa', 'value': 200},
-                {'id': 'au-jb', 'value': 10)},
-                {'id': 'au-ns', 'value': 45},
-                {'id': 'au-vi', 'value': 300},
-                {'id': 'au-nt', 'value': 332},
-                {'id': 'au-ts', 'value': 160},
-                {'id': 'au-ct', 'value': 276},
-                {'id': 'au-sa', 'value': 30},
-                {'id': 'au-ql', 'value': 237}
+var dataSet = anychart.data.set([
+                {'id': 'AU.WA', 'value': 300},  // Western Australia
+                {'id': 'AU.JB'},                // Jervis Bay Territory
+                {'id': 'AU.NS', 'value': 240},  // New South Wales
+                {'id': 'AU.VI', 'value': 75},   // Victoria
+                {'id': 'AU.NT', 'value': 130},  // Northern Territory
+                {'id': 'AU.TS', 'value': 190},  // Tasmania
+                {'id': 'AU.CT', labels: false},  // Australian Capital Territory
+                {'id': 'AU.SA'},                // South Australia
+                {'id': 'AU.QL'}                 // Queensland
             ]);
 ```
 
@@ -63,21 +71,19 @@ To connect the data to the map and to define its type you may use the next const
 s1 = map.choropleth(dataSet1);
 ```
 
-<br>
+{sample}Maps\_Choropleth\_01{sample}
 
-If you are still in doubt about using a choropleth, check those which are a bit similar:
-- [Dot Density Maps](../Dot_Density_Map)
-- [Graduated/Proportional Symbol Maps](../Proportional_Symbol_Map)
-- [Cartograms](../Cartogram)
-These 3 map types can all handle raw data (e.g., simple counts, totals) opposite to choropleths that require the standardized data.
+<br>
+As you can see, there's no visual difference between the districts. That's because we haven't defined the Color Range yet. Let's think about the data classification and define the colorRange.
+
 
 ## Data Classes 
 
 How many classes does a map need? Each time the answer will be different, because the only thing that can help you to define the classes' number is the accuracy of the information 
 you need your map to provide. Most choropleth maps are made with 5-7 data classes average. The more classes you use, the less is data generalization, 
 but this leads to the expense of legibility and increases the complexity of perception. Also, the more colors you use, the harder it will be to distinguish them all on prints.
-A map with only three classes is quite easy to understand, but it may hide some important aspects of the data. So there is no perfect number of classes.
-
+A map with only three classes is quite easy to understand, but it may hide some important aspects of the data. So there is no perfect number of classes - there might be no classes at all
+if you use linear colrRange.
 
 ### Classed Choropleth
 
@@ -107,23 +113,40 @@ the difference between within-class values is the smallest.	-->
 	
 You can set the classes only by yourself, no matter which classification method you decided to use. The sample of classification is shown below.
 ```
-ordinalColors = anychart.scales.ordinalColor([
-  		{less: 80}, 
-  		{from: 80, to: 145}, 
-  		{from: 145, to: 210}, 
-		{greater: 210}
-	]);
+// making of the ordinal colorRange
+            ordinalScale = anychart.scales.ordinalColor([
+                {less: 100},
+                {from: 100, to: 150},
+                {from: 150, to: 200},
+                {from: 200, to: 350},
+                {greater:250}
+            ]);            
 ```
 
 To set the colors for each range use the **{api:anychart.palettes.RangeColors}.colors(){api}** method. The number of colors you define should be the same as the number of ranges you have defined before:
 ```
-ordinalColors.colors(['#FF6363', '#FF3939', '#C50000', '#9B0000']);
+ordinalScale.colors(['rgb(253,225,86)','rgb(248,196,57)', 'rgb(244,168,19)', 'rgb(198,109,1)', 'rgb(152,58,0)']);
 ```
+
+That's how it all looks in the sample. Here we have changed the data a bit and removed the information about a plenty of regions - those ones are uncolored and stroked with green.
+
+{sample}Maps\_Choropleth\_02{sample}
 
 ### Unclassed Choropleth
 
-Unclassed Choropleth is a Choropleth Map, which scale is (and, consequently, a ColorRange is) Linear, Logarithmic or DateTime.
+Unclassed Choropleth is a Choropleth Map, which scale is Linear, Logarithmic or DateTime, and, consequently, a ColorRange is Linear.
 It means that there is no certain value bounds between colors, and a ColorRange looks like a single bar painted as a gradient.
+It's necessary to define the first and the last colors, and the shades will be counted automatically. Use {api}**.colorScale()**{api} method to set the colors.
+<br>
+That's how it looks in a code:
+```
+series.colorScale(anychart.scales.linearColor('#FFEBD6','#C40A0A'));
+```
+<br>
+And there's the sample with the colorRange of linear type:
+
+{sample}Maps\_Choropleth\_03{sample}
+
 <br>
 Read more about ColorRange [here](../Color_Range.md).
 

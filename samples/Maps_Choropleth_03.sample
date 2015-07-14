@@ -28,6 +28,8 @@
 			// set the series
             var series = map.choropleth(dataSet);
             series.geoIdField('code_hasc');
+            series.stroke('#000 .3');
+            series.colorScale(anychart.scales.linearColor('#FFEBD6','#C40A0A'));
 			
 			// set the container
             map.container('container');
