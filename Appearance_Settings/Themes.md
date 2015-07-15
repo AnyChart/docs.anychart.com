@@ -6,33 +6,33 @@
 * [Internal Themes](#internal_themes)
 * [External Themes](#external_themes)
 * [Multiple Chart Types](#multiple_chart_types)
-* [Themes Use in Dashboard Mode]
+* [Themes Use in Dashboard Mode](#themes_use_in_dashboard_mode)
 
 ##Overview
 
-To simplify visual adjustment of charts AnyChart provides "AnyChart Themes" technique. Chart themes is a named preset for some of the chart settings.
+To simplify visual adjustment of charts AnyChart provides "AnyChart Themes" technique. Chart theme is a named preset for some of the chart settings.
   
   
-In this tutorial we will explain what themes can be used for and how they can be used.
+In this tutorial we will explain what themes are used for and how they are used.
   
 ###Themes Explained
   
-The main idea of themes is to segregate chart settings and data section for easy changing and/or reuse in another charts that should look the same way.
+The main idea of themes is to segregate chart settings and data section for easy changing and/or reuse settings in another charts that should look the same way.
   
   
-AnyChart provides two default themes and one of them the default them from sixth version of AnyChart.............
+AnyChart provides two default themes and one of them is the default them from AnyChart 5.x, 6.x    .............
   
   
-This type of chart will be widely used on your site, so you just store it in some js file and when you need such chart you just specify what them should be used - you don't need to configure chart again and copy-paste settings from one place to another.
+If this some chart type is used widely on your site, you can store settings in a js file and then use theme when needed - no need to configure chart again and copy-paste settings from one place to another.
 <!--
 Another example of themes use - you can create several themes that configure different chart look (colors, border, etc.), store them in a single file and then you can choose how chart should look like (depending on users choice, for example).
 -->
 ##Create Theme
 
-The best way to create a theme is to create variable with all desirable chart settings. Every possible them adjustment can be found in api.
+The best way to create a theme is to create variable with all desirable chart settings. Every possible theme adjustment can be found in {api:anychart#themes}**api**{api}.
   
   
-Suppose you will create such charts many times, and all of them will have the same axes and chart titles.
+Suppose you want to create such charts many times, and all of them will use the same axes and chart titles.
 
 ```
   // data
@@ -59,12 +59,12 @@ Suppose you will create such charts many times, and all of them will have the sa
   chart.bar(data);
 ```
 
-You can predefine these settings in themes and use it anytime you want with minimum code lines. Below is the snippet of variable that contains AnyChart theme.
+You can predefine these settings in theme and use it anytime you want. Below is the snippet of variable that contains AnyChart theme.
 
 ```
   // create variable for custom theme
   var customTheme = {
-    // define settings for bsr charts
+    // define settings for bar charts
     "bar": {
       // set chart title
       "title": "Bar Chart",
@@ -82,11 +82,11 @@ You can predefine these settings in themes and use it anytime you want with mini
   };
 ```
 
-Now, when simple them is ready we will learn where we can store them and how to apply them.
+Now, when simple theme is ready we will learn where we can store it and how to apply it.
 
 ##Internal Themes
 
-You can store your theme within chart code:
+You can store a theme right where your chart code is:
 
 ```
   // create variable for custom theme
@@ -131,13 +131,11 @@ Sample chart using internal theme, click "Launch in playground" to view JS setti
 
 ##External Themes
 
-Next, you can create a file with templates and use it to store settings for the chart.
-
-*Note:* Do not forget to set the link to the file with theme into the <head> tag of your page:
+Next, you can create a file with several themes and use it to store settings. In this case you need to reference this file in the page where your chart is using **script** tag.
 
 ```
   <head>
-    <!--Link to file with custom theme-->
+    <!--Link to file with the custom theme-->
     <script src="custom_theme.js"></script>
     <script>
       anychart.onDocumentReady(function() {
@@ -161,7 +159,7 @@ Next, you can create a file with templates and use it to store settings for the 
   </head>
 ```
 
-In this case the content of custom_theme.js should be similar to the snippet below
+The content of **custom_theme.js** should be something like to the snippet below:
 
 ```
   var customTheme = {
@@ -179,7 +177,7 @@ In this case the content of custom_theme.js should be similar to the snippet bel
 
 ##Multiple Chart Types
 
-As far as the main goal of AnyChart themes is to simplify the process of chart creation one theme can store settings for several chart types. 
+The main purpose of AnyChart Themes is to simplify the process of chart creation, so one theme can store settings for the different chart types. 
 
 ```
   var customTheme = {
@@ -194,12 +192,12 @@ As far as the main goal of AnyChart themes is to simplify the process of chart c
   };
 ```
 
-Below is a sample of two charts with minimal settings and a predefined theme with title settings.
+Sample below shows two charts with minimal settings, both of them use one theme with title settings.
 
-{sample}AS\_Themes\_02{sample}
+{sample :width 690 :height 630}AS\_Themes\_02{sample}
 
 ##Themes Use in Dashboard Mode
 
-In the sample below a table contain several charts. Most settings of these charts are predefined in them. It is very convenient as far as all these charts have many alike settings. Click "Launch in playground" to examine the code of the sample.
+In the sample below a table contains several charts. Settings for these charts are predefined in the theme. It is very convenient - these charts have many similar settings. Click "Launch in playground" to examine the code of the sample.
 
 {sample :width 690 :height 680}AS\_Themes\_03{sample}
