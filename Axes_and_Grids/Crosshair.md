@@ -20,7 +20,7 @@ Crosshair listens to the next events:<br>
  <br>
  Crosshairs can be used on all Cartesians (Area, Line, Bar, Column, etc.) and [Scatter Charts](../../Basic_Chart_Types/Scatter_Chart).
  
- ## How to use            
+## How to use            
  
 If you want to switch the Crosshair on, set the **.crosshair()** as true:
 ```
