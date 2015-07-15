@@ -23,7 +23,7 @@ For more information visit [http://en.wikipedia.org/wiki/JSON](http://en.wikiped
 
 You can use JSON to define the chart configuration with functions and other complicated structures. Look at the sample below:
 
-{sample :width 680 :height 180}GANTT\_JXC\_01{sample}
+{sample :width 680 :height 200}GANTT\_JXC\_01{sample}
 
 Explore the sample in playground to see the whole code in Javascript.
 
@@ -36,7 +36,7 @@ To transform the code from Javascript into JSON configuration object, you can go
 
 The sample below is the same simple Project Gantt, built with the use of JSON. Explore it in playground to see the whole code.
 
-{sample :width 680 :height 180}GANTT\_JXC\_02{sample}
+{sample :width 680 :height 200}GANTT\_JXC\_02{sample}
 
 And that's how the code looks like in JSON. 
 It is necessary to define the chart type, container (or as in the example) and data items to make the JSON config valid.
@@ -186,7 +186,7 @@ Note: in XML, you should set the whole code as a string object.
 
 The sample looks completely the same as the JSON-converted one.
 
-{sample :width 680 :height 180}GANTT\_JXC\_03{sample}
+{sample :width 680 :height 200}GANTT\_JXC\_03{sample}
 
 
 ## Schema
@@ -203,8 +203,8 @@ This file can also be used to validate your own XML structure.
 ## CSV vs JavaScript  
 
 CSV or Comma-Separated Values, is a common data exchange format that is widely supported by consumer, business, 
-and scientific applications. Among its most common uses is moving tabular data[3] between programs that natively 
-operate on incompatible (often proprietary and/or undocumented) formats.[1] This works despite lack of adherence 
+and scientific applications. Among its most common uses is moving tabular data between programs that natively 
+operate on incompatible (often proprietary and/or undocumented) formats. This works despite lack of adherence 
 to RFC 4180 (or any other standard), because so many programs support variations on the CSV format for data import.
 
 For example, a user may need to transfer information from a database program that stores data in a proprietary format, to a spreadsheet that uses a completely different format. The database program most likely can export its data as "CSV"; the exported CSV file can then be imported by the spreadsheet program.
@@ -240,6 +240,6 @@ If we take the above sample as an example, that's how the part of code for the G
 
 And there is the sample of the Project Gantt with CSV-formatted data:
 
-{sample :width 680 :height 180}GANTT\_JXC\_04{sample}
+{sample :width 680 :height 200}GANTT\_JXC\_04{sample}
  
 As we can define not the whole chart configuration but only its data using the CSV format, we should help the data to parse correctly. That's why we need the "mapping" object - using it, we are able to tell the dataGrid to put the values from the CSV string into the right fields. The csvSettings is an object where we set the separators and tell about ignoring for some particular rows.
