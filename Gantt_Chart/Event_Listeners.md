@@ -158,7 +158,7 @@ Those events dispatch in the following order on every click:
 
 ## Prevent Defaults
 
-<br>To prevent from these events dispatching you can use the special method {api}**.preventDefault()**.{api}
+<br>To prevent these events dispatching you can use the special method **.preventDefault()**.
 
 ```
 event.preventDefault();
