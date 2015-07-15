@@ -194,7 +194,7 @@ The main purpose of AnyChart Themes is to simplify the process of chart creation
 
 Sample below shows two charts with minimal settings, both of them use one theme with title settings.
 
-{sample :width 690 :height 650}AS\_Themes\_02{sample}
+{sample :width 690 :height 680}AS\_Themes\_02{sample}
 
 ##Themes Use in Dashboard Mode
 
