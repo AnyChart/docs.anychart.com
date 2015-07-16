@@ -7,6 +7,7 @@
 * [External Themes](#external_themes)
 * [Multiple Chart Types](#multiple_chart_types)
 * [Themes Use in Dashboard Mode](#themes_use_in_dashboard_mode)
+* [Redefine Theme](#redefine_theme)
 * [AnyChart 6.x, 7.0.0 to 7.5.1 look to AnyChart 7.6 Conversion](#anychart_6.x,_7.0.0_to_7.5.1_look_to_anychart_7.6_conversion)
 
 ##Overview
@@ -21,8 +22,12 @@ In this tutorial we will explain what themes are used for and how they are used.
 The main idea of themes is to segregate chart settings and data section for easy changing and/or reuse settings in another charts that should look the same way.
   
   
-AnyChart provides two default themes and one of them is the default them from AnyChart 5.x, 6.x    .............
-  
+AnyChart provides several default themes and one of them is the default them from AnyChart 5.x, 6.x. To use the old theme you have to set this theme in chart settings:
+
+<a name="old_theme"></a>
+```
+  anychart.theme(anychart.themes.v6);
+```
   
 If this some chart type is used widely on your site, you can store settings in a js file and then use theme when needed - no need to configure chart again and copy-paste settings from one place to another.
 <!--
@@ -203,6 +208,15 @@ In the sample below a table contains several charts. Settings for these charts a
 
 {sample :width 690 :height 680}AS\_Themes\_03{sample}
 
+##Redefine Theme
+
+There is very important aspect of themes in Dashboard mode: after the theme was defined in code every chart in the scope of the chart function uses this theme. To redefine theme to the default or to the new one you have to use {api:anychart#theme}**.theme()**{api} method again.
+
+```
+  // return default theme to the charts below
+  anychart.theme(anychart.themes.default);
+```
+
 ## AnyChart 6.x, 7.0.0 to 7.5.1 look to AnyChart 7.6 Conversion
 
 AnyChart 7.6 brings you brand new themes for the pleasure of your eyes. Along with new colors lots of default settings were added or adjusted. If you have never used AnyChart 7 before the realise of AnyChart 7.6 you can omit this section cause it will not effect you in any way. The ones how have already used AnyChart 7 may face some conflicts in chart settings. These conflicts don't influence the security of your page. The only aspect that might be impacted is the visual appearance of your charts which may be altered in very unexpected way. There are several simple solutions for this tiny nuisance:
@@ -211,7 +225,7 @@ AnyChart 7.6 brings you brand new themes for the pleasure of your eyes. Along wi
 1) use special **anychart.min.js** with the old them as default one (this js can be found in **binaries** folder in the downloaded AnyChart package).
   
   
-2) or you can simply use new **anychart.min.js** and set old them for your charts (this is the best way). 
+2) or you can simply use new **anychart.min.js** and [set old them for your charts](#old_theme) (this is the best way). 
   
   
 All in all, AnyChart team recommend you to use new AnyChart themes which will be developed further.
