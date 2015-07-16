@@ -98,7 +98,7 @@ And here is the same data as above in the form of a Donut chart:
 
 ### 3D Pie Chart
 
-Another version of pie is pie in 3d mode. Use {api:anychart#pie3d}**.pie3d()**{api} method to use 3d version of the pie.
+It is very easy to display the data from the sample above in 3D mode - just use {api:anychart#pie3d}**.pie3d()**{api} and the pie will become 3D.
 
 {sample}BCT\_Pie\_3d{sample}
 
@@ -204,7 +204,7 @@ You can place labels inside or outside pie slices using {api:anychart.ui.Label#p
   
 {sample}BCT\_PieDonutChart\_11{sample}
   
-THe line that joins a label with a slice od the pie is called connector. You can tune connectors visual appearance using {api:anychart.charts.Pie#connectorStroke}**.connectorStroke()**{api} method.
+The line that joins the label with the slice of the pie is called connector. You can tune connectors visual appearance using {api:anychart.charts.Pie#connectorStroke}**.connectorStroke()**{api} method.
 
 ```
   chart.connectorStroke(
