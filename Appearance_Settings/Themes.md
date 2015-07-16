@@ -203,11 +203,15 @@ In the sample below a table contains several charts. Settings for these charts a
 
 {sample :width 690 :height 680}AS\_Themes\_03{sample}
 
-<a name="conversion"></a>
 ## AnyChart 6.x, 7.0.0 to 7.5.1 look to AnyChart 7.6 Conversion
 
-AnyChart 7.6 brings you brand new themes for the pleasure of your eyes. Along with new colors lots of default settings were added or adjusted. If you have never used AnyChart before the realise of AnyChart 7.6 you can omit this section this section cause it will not concern you in any way. The ones how have already used AnyChart 7 may face some conflicts in settings. These conflicts don't influence the security of your page. The only aspect that might be impacted is the visual appearance of your charts which may be altered in very unexpected way. The solution for this tiny nuisance is simple:  
+AnyChart 7.6 brings you brand new themes for the pleasure of your eyes. Along with new colors lots of default settings were added or adjusted. If you have never used AnyChart 7 before the realise of AnyChart 7.6 you can omit this section cause it will not effect you in any way. The ones how have already used AnyChart 7 may face some conflicts in chart settings. These conflicts don't influence the security of your page. The only aspect that might be impacted is the visual appearance of your charts which may be altered in very unexpected way. There are several simple solutions for this tiny nuisance:
   
-1) Use special **anychart.min.js** with the old them as default one that can be found (this js can be found in **binaries** folder).  
   
-2) or you can simply use new anychart.min.js with predefined old them (this is the best way) and use new AnyChart themes in feather.
+1) use special **anychart.min.js** with the old them as default one (this js can be found in **binaries** folder in the downloaded AnyChart package).
+  
+  
+2) or you can simply use new **anychart.min.js** and set old them for your charts (this is the best way). 
+  
+  
+All in all, AnyChart team recommend you to use new AnyChart themes which will be developed further.
