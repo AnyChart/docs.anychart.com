@@ -10,8 +10,8 @@
 * [Visualization](#visualization)
   * [Basic Sample](#basic_sample)
 * [Labels and Tooltips](#labels_and_tooltips)
-  * [Labels](#label)
-  * [Tooltip](#tooltip)
+  * [Labels](#labels)
+  * [Tooltip](#tooltips)
 <!--* [Using markers](#using_markers)-->
 * [Colors](#colors)
   * [Colorizing Elements](#colorizing_elements)
@@ -221,7 +221,7 @@ You can find more information about lines in [Line Settings tutorial](../Appeara
 
 {sample}BCT\_PieDonutChart\_12{sample}
 
-###Tooltip
+###Tooltips
 
 In this section we will explain how to tune pie tooltip. Method {api:anychart.charts.Pie#tooltip}**.tooltip()**{api} controls tooltip of the pie. 
 
