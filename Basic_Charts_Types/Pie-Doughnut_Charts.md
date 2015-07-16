@@ -105,7 +105,7 @@ It is very easy to display the data from the sample above in 3D mode - just use 
 
 ##Start Angle
 
-You can set starting angle for the first slice for the pie using {api:anychart.charts.Pie#startAngle}**.startAngle()**{api} method. In the sample below the pie has 45 degree start angle.
+You can set starting angle for the first slice for the pie using {api:anychart.charts.Pie#startAngle}**.startAngle()**{api} method. In the sample below the start angle is shifted to 45°.
 
 ```
   chart.startAngle(45);
