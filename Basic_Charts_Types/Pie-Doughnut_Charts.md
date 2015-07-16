@@ -4,6 +4,7 @@
 * [Chart](#chart)
   * [Pie Chart](#pie_chart)
   * [Doughnut Chart](#doughnut_chart)
+  * [3D Pie Chart](#3d_pie_chart)
 * [Slices Sorting](#slices_sorting)
 * [Exploded Slices](#exploded_slices)
 * [Visualization](#visualization)
@@ -93,6 +94,12 @@ Donut chart is almost the same as Pie chart, the only difference is in appearanc
 And here is the same data as above in the form of a Donut chart:
 
 {sample}BCT\_PieDonutChart\_02{sample}
+
+### 3D Pie Chart
+
+Another version of pie is pie in 3d mode. Use {api:anychart#pie3d}**.pie3d()**{api} method to use 3d version of the pie.
+
+{sample}BCT\_Pie\_3d{sample}
 
 ## Slices Sorting
 
