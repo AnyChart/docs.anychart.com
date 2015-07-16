@@ -184,7 +184,7 @@ Using such settings we've created a style that defines slices of gold color with
 
 ### Aquastyle
 
-Our new 7.4.0 release of AnyChart suggests this complete style. We used soft colors and made the chart more like 3D using gradients. To set this style just add this stroke to your code:
+Since version 7.4.0 you can use so-called “Aquastyle” to color pie charts, set the following to get this effect:
 
 ```
      chart.fill('aquastyle');
