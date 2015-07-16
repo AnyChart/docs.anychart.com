@@ -5,6 +5,7 @@
   * [Pie Chart](#pie_chart)
   * [Doughnut Chart](#doughnut_chart)
   * [3D Pie Chart](#3d_pie_chart)
+* [Start Angle](#start_angle)
 * [Slices Sorting](#slices_sorting)
 * [Exploded Slices](#exploded_slices)
 * [Visualization](#visualization)
