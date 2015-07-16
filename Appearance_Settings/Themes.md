@@ -7,6 +7,7 @@
 * [External Themes](#external_themes)
 * [Multiple Chart Types](#multiple_chart_types)
 * [Themes Use in Dashboard Mode](#themes_use_in_dashboard_mode)
+* [AnyChart 6.x, 7.0.0 to 7.5.1 look to AnyChart 7.6 Conversion](#anychart_6.x,_7.0.0_to_7.5.1_look_to_anychart_7.6_conversion)
 
 ##Overview
 
@@ -201,3 +202,12 @@ Sample below shows two charts with minimal settings, both of them use one theme 
 In the sample below a table contains several charts. Settings for these charts are predefined in the theme. It is very convenient - these charts have many similar settings. Click "Launch in playground" to examine the code of the sample.
 
 {sample :width 690 :height 680}AS\_Themes\_03{sample}
+
+<a name="conversion"></a>
+## AnyChart 6.x, 7.0.0 to 7.5.1 look to AnyChart 7.6 Conversion
+
+AnyChart 7.6 brings you brand new themes for the pleasure of your eyes. Along with new colors lots of default settings were added or adjusted. If you have never used AnyChart before the realise of AnyChart 7.6 you can omit this section this section cause it will not concern you in any way. The ones how have already used AnyChart 7 may face some conflicts in settings. These conflicts don't influence the security of your page. The only aspect that might be impacted is the visual appearance of your charts which may be altered in very unexpected way. The solution for this tiny nuisance is simple:  
+  
+1) Use special **anychart.min.js** with the old them as default one that can be found (this js can be found in **binaries** folder).  
+  
+2) or you can simply use new anychart.min.js with predefined old them (this is the best way) and use new AnyChart themes in feather.
