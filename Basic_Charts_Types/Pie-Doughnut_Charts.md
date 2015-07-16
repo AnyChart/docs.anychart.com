@@ -102,6 +102,16 @@ It is very easy to display the data from the sample above in 3D mode - just use 
 
 {sample}BCT\_Pie\_3d{sample}
 
+##Start Angle
+
+You can set starting angle for the first slice for the pie using {api:anychart.charts.Pie#startAngle}**.startAngle()**{api} method. In the sample below the pie has 45 degree start angle.
+
+```
+  chart.startAngle(45);
+```
+
+{sample}BCT\_PieDonutChart\_13{sample}
+
 ## Slices Sorting
 
 In Pie/Donut charts, it is possible to sort the series by ascending or descending. This feature is controlled using {api:anychart.charts.Pie#sort}**.sort()**{api} parameter. In the sample below three pie charts with identical series are shown, first isn't sorted, the second is sorted ascending and the third - descending.

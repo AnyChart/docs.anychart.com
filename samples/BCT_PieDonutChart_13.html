@@ -8,7 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // set data and chart type
-  var chart = anychart.pie3d([
+  var chart = anychart.pie([
     {name: "Department Stores",         value: 637166},
     {name: "Discount Stores",           value: 721630},
     {name: "Men's/Women's Stores",      value: 148662},
@@ -16,11 +16,10 @@
     {name: "All other outlets",         value: 90000}
   ]);
 
-  chart.title("3D Pie Chart");
-
-  chart.background(null);
-
-  // draw
+  // rotate chart
+  chart.startAngle(45);
+      
+  chart.title("Tuned Start Angle");
   chart.container("container");
   chart.draw();
 });</script>
