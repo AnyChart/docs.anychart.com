@@ -10,7 +10,7 @@
 * [Visualization](#visualization)
   * [Basic Sample](#basic_sample)
 * [Labels and Tooltips](#labels_and_tooltips)
-<!--  * [Working with labels connectors](#label_connectors)-->
+< * [Labels Connectors](#label_connectors)
 <!--* [Using markers](#using_markers)-->
 * [Colors](#colors)
   * [Colorizing Elements](#colorizing_elements)
@@ -188,6 +188,37 @@ That's how a chart with Aquastyle set looks like:
 In this section we will explain how to add and configure data labels and tooltips.
 <!--Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
 To configure data labels and tooltips for all series use {api:anychart.charts.Pie#labels}**.labels()**{api} and {api:anychart.charts.Pie#tooltip}**.tooltip()**{api} methods. These will help you to adjust visual appearance, positioning and format.
+
+### Labels
+
+Labels are text boxes with additional information for presented data. You can tune labels using {api:anychart.charts.Pie#labels}**.labels()**{api} method.
+  
+You can place labels inside or outside pie slices using {api:anychart.ui.Label#position}**.position()**{api} method.
+
+```
+  var labels = chart.labels();
+  labels.position('outside');
+```
+  
+{sample}BCT\_PieDonutChart\_11{sample}
+  
+THe line that joins a label with a slice od the pie is called connector. You can tune connectors visual appearance using {api:anychart.charts.Pie#connectorStroke}**.connectorStroke()**{api} method.
+
+```
+  chart.connectorStroke(
+    // set 2px thickness and #444 color
+    "2 #444",
+    // set lines opacity
+    1,
+    // dashes and gaps settings
+    "4 2"
+  );
+```
+
+You can find more information about lines in [Line Settings tutorial](../Appearance_Settings/Lines_Settings). Here is the pie with tuned connectors.
+
+{sample}BCT\_PieDonutChart\_12{sample}
+
 
 Let's do that with the following example: we will make data labels to appear inside of the slices, format labels so they show only the percentage corresponding to the slices and tooltips to show detailed description.
 
