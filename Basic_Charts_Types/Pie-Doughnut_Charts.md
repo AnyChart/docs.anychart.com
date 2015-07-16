@@ -10,7 +10,8 @@
 * [Visualization](#visualization)
   * [Basic Sample](#basic_sample)
 * [Labels and Tooltips](#labels_and_tooltips)
-< * [Labels Connectors](#label_connectors)
+  * [Labels](#label)
+  * [Tooltip](#tooltip)
 <!--* [Using markers](#using_markers)-->
 * [Colors](#colors)
   * [Colorizing Elements](#colorizing_elements)
@@ -240,7 +241,7 @@ In this section we will explain how to tune pie tooltip. Method {api:anychart.ch
     var value = this.value
     
     // content to show
-    return 'Chanel: ' + name + '\nSales: ' + value + '\nPeriod: Year 2003';
+    return "Chanel: " + name + "\nSales: " + value + "\nPeriod: Year 2003";
   });
 ```
 
