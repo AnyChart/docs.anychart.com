@@ -193,6 +193,7 @@ To configure data labels and tooltips for all series use {api:anychart.charts.Pi
 
 Labels are text boxes with additional information for presented data. You can tune labels using {api:anychart.charts.Pie#labels}**.labels()**{api} method.
   
+  
 You can place labels inside or outside pie slices using {api:anychart.ui.Label#position}**.position()**{api} method.
 
 ```
@@ -219,11 +220,31 @@ You can find more information about lines in [Line Settings tutorial](../Appeara
 
 {sample}BCT\_PieDonutChart\_12{sample}
 
+###Tooltip
 
-Let's do that with the following example: we will make data labels to appear inside of the slices, format labels so they show only the percentage corresponding to the slices and tooltips to show detailed description.
+In this section we will explain how to tune pie tooltip. Method {api:anychart.charts.Pie#tooltip}**.tooltip()**{api} controls tooltip of the pie. 
 
+```
+  // get tooltip title
+  var tooltip = chart.tooltip();
+  
+  // set tooltip title text
+  tooltip.title("Information");
+  
+  // set tooltip content
+  tooltip.contentFormatter(function(){
+  
+    // get name of each slice
+    var name = this.name;
+    // get value of each slice
+    var value = this.value
+    
+    // content to show
+    return 'Chanel: ' + name + '\nSales: ' + value + '\nPeriod: Year 2003';
+  });
+```
 
-When formatting tooltips, we use  {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} to adjust source of content and visual appearance. To control labels’ position we may use  {api:anychart.core.ui.Label#position}**.position()**{api} parameter. Here is a sample of two charts with the same data and different labels positions.
+With the following example let's force tooltip to show detailed description for each pie slice.
 
 {sample}BCT\_PieDonutChart\_08{sample}
 <!--
@@ -232,30 +253,6 @@ Related Help Topics:
 Learn more about labels and tooltips in Labels and tooltips
 Full Keywords reference and formatting guide:Labels and tooltips
 Full reference of data labels settings can be found in XML Reference, particularly <label_style> and <label_settings> nodes.
---><!--
-<a name="label_connectors"/>
-### Working with labels connectors
-
-If you want pie slices labels to be shown outside of the chart, connected with slices using a smart non overlapping lines - you should change labels mode to "Outside" and configure connector line:
-
-XML Syntax
-XML Code
-Plain code
-01
-<pie_series>
-02
-  <label_settings mode="Outside" text_align="Center" />
-03
-  <connector enabled="True" color="Black" opacity="1" thickness="1" />
-04
-</pie_series>
-Here is a sample of Pie chart with connectors:
-
-Live Sample:  Sample Pie chart - Working with labels connectors
-
-And here is a sample multi-series chart with connectors:
-
-Live Sample:  Sample Pie chart - Working with multiseries labels connectors
 --><!--
 <a name="using_markers"/>
 ## Using markers

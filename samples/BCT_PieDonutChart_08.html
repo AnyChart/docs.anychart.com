@@ -9,88 +9,39 @@
 
   // data
   var data = anychart.data.set([
-    ['Department Stores', 637166],
-    ['Discount Stores', 721630],
-    ['Men\'s/Women\'s Stores', 148662],
-    ['Juvenile Specialty Stores', 78662],
-    ['All other outlets', 90000]
+    {name: "Department Stores",         value: 637166},
+    {name: "Discount Stores",           value: 721630},
+    {name: "Men's/Women's Stores",      value: 148662},
+    {name: "Juvenile Specialty Stores", value: 78662},
+    {name: "All other outlets",         value: 90000}
   ]);
-  // set stage
-  var stage = anychart.graphics.create('container');
-
-
-  // set main title
-  anychart.ui.title()
-    .parentBounds(0, 0, stage.width(), stage.height()*0.1)
-    .text('Labels and Tooltips')
-    .fontSize(20)
-    .container(stage)
-    .draw();
-
   // first chart
-  var firstPie = anychart.pieChart(data);
+  var chart = anychart.pieChart(data);
 
   // chart title
-  firstPie.title().text('Inside Labels \n Tooltips don\'t use HTML').hAlign('center');
+  chart.title("Pie Tooltip");
 
-  // chart size and position
-  firstPie.bounds(0, '10%', '50%', '80%');
-  // current stage stroke
-  firstPie.background().stroke('white').fill('white');
-  // disables legend
-  firstPie.legend().enabled(false);
+  // get tooltip title
+  var tooltip = chart.tooltip();
 
-  // set and adjust chart labels
-  firstPie.labels()
-    .enabled(true)
-    .fontColor('white')
-    .fontWeight('bold')
-    .position('inside');
+  // set tooltip title text
+  tooltip.title("Information");
 
-  // prevent tooltips from using HTML
-  firstPie.tooltip().content().useHtml(false);
-  // adjust tooltips content
-  firstPie.tooltip().contentFormatter(function() {
-    return 'Chanel: ' + this.x + '\nSales: ' + this.value + '\nPeriod: Year 2003';
+  // set tooltip content
+  tooltip.contentFormatter(function(){
+
+    // get name of each slice
+    var name = this.name;
+    // get value of each slice
+    var value = this.value;
+
+    // content to show
+    return 'Chanel: ' + name + '\nSales: ' + value + '\nPeriod: Year 2003';
   });
-  // set tooltip title
-  firstPie.tooltip().title().enabled(true).text('Information');
 
   // draw chart
-  firstPie.container(stage).draw();
-
-
-  // second chart
-  var secondPie = anychart.pieChart(data);
-
-  // chart title
-  secondPie.title().text('Outside Labels\nTooltips use HTML').hAlign('center');
-  // chart size and position
-  secondPie.bounds('50%', '10%', '50%', '80%');
-  // current stage stroke
-  secondPie.background().stroke('white').fill('white');
-  // disables legend
-  secondPie.legend().enabled(false);
-
-  // set chart labels
-  secondPie.labels()
-    .enabled(true)
-    .fontColor('black')
-    .fontWeight('bold')
-    .position('outside');
-
-  // force tooltips to use HTML even though it is enabled by default
-  secondPie.tooltip().content().useHtml(true);
-  // adjust tooltips content
-  secondPie.tooltip().contentFormatter(function() {
-    return 'Chanel: ' + this.x + '<br/>Sales: ' + this.value + '<br/>Period: Year 2003';
-  });
-  // set tooltip title
-  secondPie.tooltip().title().enabled(true).text('Information');
-
-  // draw chart
-  secondPie.container(stage).draw();
-
+  chart.container('container');
+  chart.draw();
 });</script>
 </head>
 <body>
