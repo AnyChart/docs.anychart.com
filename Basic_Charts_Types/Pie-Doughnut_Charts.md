@@ -11,7 +11,7 @@
   * [Basic Sample](#basic_sample)
 * [Labels and Tooltips](#labels_and_tooltips)
   * [Labels](#labels)
-  * [Tooltip](#tooltips)
+  * [Tooltips](#tooltips)
 <!--* [Using markers](#using_markers)-->
 * [Colors](#colors)
   * [Colorizing Elements](#colorizing_elements)
