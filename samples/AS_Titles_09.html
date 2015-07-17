@@ -1,0 +1,123 @@
+<html>
+<head>
+     <meta charset="UTF-8"/>
+     <meta name="tags" content="[]"/>
+     <meta name="index" content="1000"/>
+     <meta name="is-new" content="false"/>
+     <script x-export="chart">anychart.onDocumentReady(function() {
+  
+  // set stage
+  var stage = anychart.graphics.create("container");
+  var palette = anychart.palettes.distinctColors().colors();
+  
+  // data for each person
+  var john = anychart.data.set([
+    {x: "2001", value: 3000},
+    {x: "2002", value: 4000},
+    {x: "2003", value: 3000}
+  ]);
+  var jake = anychart.data.set([
+    {x: "2001", value: 2000},
+    {x: "2002", value: 4000},
+    {x: "2003", value: 6000}
+  ]);
+  var peter = anychart.data.set([
+    {x: "2001", value: 10000},
+    {x: "2002", value: 6000},
+    {x: "2003", value: 2000}
+  ]);
+  
+  function summarizer (salesData){
+    var personSales = 0;
+    for (var i=0;i<salesData.mapAs().getRowsCount();i++){
+      personSales+=salesData.mapAs().get(i, "value");
+    }
+    return personSales;
+  }
+  
+  // data for column chart
+  var data = anychart.data.set([
+    {x: "John", value: summarizer(john), clickData: john, fill: palette[0]},
+    {x: "Jake", value: summarizer(jake), clickData: jake, fill: palette[1]},
+    {x: "Peter", value: summarizer(peter), clickData: peter, fill: palette[2]}
+  ]);
+  
+  var chart = anychart.column();
+  
+  chart.title("Sales Report");
+  
+  // set data and color
+  var column = chart.column(data);
+  
+  column.listen(
+    
+    // listener type
+    "pointClick",
+    
+    // function, if listener triggers
+    function(e) {
+      click(
+        data.mapAs().get(e.pointIndex, "clickData"),
+        data.mapAs().get(e.pointIndex, "x"),
+        data.mapAs().get(e.pointIndex, "fill")
+      );
+    });
+  
+  // draw
+  chart.container(stage).draw();
+  
+  function click (fullData, name, fill) {
+    chart.dispose();
+    chart = anychart.line();
+    var line = chart.line(fullData);
+    line.stroke(fill);
+    chart.title("Sales details for "+name);
+    chart.container(stage);
+    chart.draw();
+    
+    var customTitle = anychart.ui.title();
+    // set title text
+    customTitle.text("Back to Sales Manager Report");
+    // place title at the bottom
+    customTitle.orientation("bottom");
+    // stick text to the right side
+    customTitle.align("right");
+    // set text size
+    customTitle.fontSize(11);
+    // set font family
+    customTitle.fontFamily("Tahoma");
+    // unbold title
+    customTitle.fontWeight(400);
+    // background settings
+    var titleBackground = customTitle.background();
+    // eanble background
+    titleBackground.enabled(true);
+    // disable fill
+    titleBackground.fill("#FFFFFF");
+    // set black border to title
+    titleBackground.stroke("#000000");
+    
+    // set container and draw title
+    customTitle.listen("click", function(){
+      chart = anychart.column();
+      chart.title("Sales Report");
+      var column = chart.column(data);
+      column.listen(
+        "pointClick",
+        function(e) {
+          click(
+            data.mapAs().get(e.pointIndex, "clickData"),
+            data.mapAs().get(e.pointIndex, "x"),
+            data.mapAs().get(e.pointIndex, "fill")
+          );
+        });
+      chart.container(stage);
+      chart.draw();
+      customTitle.dispose();
+    });
+    
+    // draw custom title
+    customTitle.container(stage);
+    customTitle.draw();
+  }
+});

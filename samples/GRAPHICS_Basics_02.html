@@ -1,0 +1,27 @@
+<html>
+<head>
+     <meta charset="UTF-8"/>
+     <meta name="tags" content="[]"/>
+     <meta name="index" content="1000"/>
+     <meta name="is-new" content="false"/>
+     <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // set stage
+    stage = anychart.graphics.create("container");
+
+    //draw the circle
+    stage.circle(200, 250, 100);
+   
+    //create a square behind the Deathly Hallows symbol
+    stage.rect(25, 50, 350, 300);
+	
+	   //draw the triangle
+    stage.path().moveTo(25, 350)
+                .lineTo(200, 50)
+                .lineTo(375, 350)
+                .close();
+                
+    //draw the wand in the middle
+    stage.path().moveTo(200,50)
+                .lineTo(200,350);
+});

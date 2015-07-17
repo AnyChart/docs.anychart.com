@@ -1,0 +1,37 @@
+<html>
+<head>
+     <meta charset="UTF-8"/>
+     <meta name="tags" content="[]"/>
+     <meta name="index" content="1000"/>
+     <meta name="is-new" content="false"/>
+     <script x-export="chart">anychart.onDocumentReady(function() {
+  
+  var stage = anychart.graphics.create("container");
+  
+  var chart = anychart.pie([
+    {x: "Product A", value: "9000"},
+    {x: "Product B", value: "5000"},
+    {x: "Product C", value: "1400"},
+    {x: "Product D", value: "590"},
+    {x: "Product E", value: "8813"}
+  ]);
+  
+  var image = stage.image();
+  image.src("http://static.anychart.com/images/logo_anychart.gif");
+  image.y(15);
+  image.x(25);
+  image.width(50);
+  image.height(50);
+  image.zIndex(chart.zIndex() + 1);
+
+  chart.tooltip(false);
+  chart.fill("aquastyle");
+  var labels = chart.labels();
+  labels.position("outside");
+  
+  chart.legend(false);
+
+  chart.title(false);
+  chart.container(stage);
+  chart.draw();
+});

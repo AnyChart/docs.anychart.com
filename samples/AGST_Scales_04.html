@@ -1,0 +1,50 @@
+<html>
+<head>
+     <meta charset="UTF-8"/>
+     <meta name="tags" content="[]"/>
+     <meta name="index" content="1000"/>
+     <meta name="is-new" content="false"/>
+     <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // define chart
+  var chart = anychart.columnChart();
+
+  // setting chart title
+  chart.title("Date/Time scale sample");
+
+  // setting y scale type as dateTime and adjusting minimum and maximum values
+  var dateScale = anychart.scales.dateTime();
+  dateScale.minimum(Date.UTC(1999, 00, 01));
+  dateScale.maximum(Date.UTC(2005, 00, 01));
+  chart.yScale(dateScale);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(1);
+  var yMinorTicks = chart.yScale().minorTicks();
+  yMinorTicks.interval(0, 2);
+
+  // setting data
+  var series = chart.rangeColumn([
+    {x: "Development", low: Date.UTC(2000, 01, 01), high: Date.UTC(2002, 02, 15)},
+    {x: "Internal Testing", low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01), fill: "red"},
+    {x: "Field Tests", low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01), fill: "green"},
+    {x: "Licensing", low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01), fill: "yellow"}
+  ]);
+  series.hoverFill("#444444");
+  series.stroke("gray 0.8");
+  series.tooltip(false);
+
+  // adjusting labels for dateTime scale. Otherwise it would be the number of milliseconds between the date and midnight January 1 1970
+  var yLabels = chart.yAxis().labels();
+  yLabels.textFormatter(function(value) {
+    var date = new Date(value["value"]);
+    var options = {year: "numeric"};
+    return date.toLocaleDateString("en-US", options);
+  });
+
+  // setting axis title
+  var yAxis = chart.yAxis();
+  yAxis.title("Date/Time Scale");
+
+  chart.container("container");
+  chart.draw();
+});

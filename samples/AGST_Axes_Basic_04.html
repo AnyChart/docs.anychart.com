@@ -1,0 +1,37 @@
+<html>
+<head>
+     <meta charset="UTF-8"/>
+     <meta name="tags" content="[]"/>
+     <meta name="index" content="1000"/>
+     <meta name="is-new" content="false"/>
+     <script x-export="chart">}
+anychart.onDocumentReady(function() {
+
+  // setting data
+  var data = anychart.data.set([
+    ["P1", 16, 20],
+    ["P2", 12, 18],
+    ["P3", 9, 14]
+  ]);
+
+  // remapping data
+  var Sales2003 = data.mapAs({x: [0], value: [1]});
+  var Sales2004 = data.mapAs({x: [0], value: [2]});
+
+  var chart = anychart.columnChart();
+
+  chart.title("Rotated labels");
+
+  // series data
+  chart.column(Sales2003);
+  chart.column(Sales2004);
+
+  // adjusting axes labels
+  var xLabels = chart.yAxis().labels();
+  xLabels.rotation(-90);
+  var yLabels = chart.xAxis().labels();
+  yLabels.rotation(-90);
+
+  chart.container("container");
+  chart.draw();
+});

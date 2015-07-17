@@ -1,0 +1,36 @@
+<html>
+<head>
+     <meta charset="UTF-8"/>
+     <meta name="tags" content="[]
+  :is_new false
+  :exports "chart"}
+anychart.onDocumentReady(function() {
+
+  // data
+  var data = anychart.data.set([
+    ["January", 10000],
+    ["February", 12000],
+    ["March", 18000],
+    ["April", 11000],
+    ["May", 9000]
+  ]);
+
+  // setting chart type
+  var chart = anychart.area();
+
+  // set title
+  chart.title("Spline Chart");
+
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Month");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
+
+  // set data and define chart type
+  chart.splineArea(data);
+
+  // draw chart
+  chart.container("container");
+  chart.draw();
+});

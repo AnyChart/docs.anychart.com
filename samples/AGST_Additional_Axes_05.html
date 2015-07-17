@@ -1,0 +1,109 @@
+<html>
+<head>
+     <meta charset="UTF-8"/>
+     <meta name="tags" content="[]"/>
+     <meta name="index" content="1000"/>
+     <meta name="is-new" content="false"/>
+     <script x-export="chart">anychart.onDocumentReady(function() {
+  
+  var chart = anychart.cartesian();
+  
+  chart.title("Extra Axes Units Comparison Sample");
+  
+  // additional axes settings
+  var kelvinScale = anychart.scales.linear();
+  kelvinScale.minimum(0);
+  kelvinScale.maximum(2000);
+  var kelvinTicks = kelvinScale.ticks();
+  kelvinTicks.interval(500);
+  var kelvinMinorTicks = kelvinScale.minorTicks();
+  kelvinMinorTicks.interval(100);
+  
+  var fahrenheitScale = anychart.scales.linear();
+  fahrenheitScale.minimum((kelvinScale.minimum() - 273.15)*1.8 + 32);
+  fahrenheitScale.maximum((kelvinScale.maximum() - 273.15)*1.8 + 32);
+  var fahrenheitTicks = fahrenheitScale.ticks();
+  fahrenheitTicks.interval(500);
+  
+  var celsiusScale = anychart.scales.linear();
+  celsiusScale.minimum(kelvinScale.minimum() - 273.15);
+  celsiusScale.maximum(kelvinScale.maximum() - 273.15);
+  var celsiusTicks = celsiusScale.ticks();
+  celsiusTicks.interval(500);
+  var celsiusMinorTicks = celsiusScale.minorTicks();
+  celsiusMinorTicks.interval(100);
+  
+  var xAxis = chart.xAxis();
+  xAxis.scale(fahrenheitScale);
+  xAxis.drawFirstLabel(false);
+  xAxis.drawLastLabel(false);
+  xAxis.title("Fahrenheit");
+  
+  // adjusting axes
+  var xAxis1 = chart.xAxis(1);
+  xAxis1.title("Celsius");
+  xAxis1.orientation("top");
+  xAxis1.drawFirstLabel(false);
+  xAxis1.drawLastLabel(false);
+  xAxis1.scale(celsiusScale);
+  
+  var xAxis2 = chart.xAxis(2);
+  xAxis2.scale(kelvinScale);
+  xAxis2.orientation("top");
+  xAxis2.title("Kelvin");
+  
+  // adding grid
+  var grid = chart.grid();
+  grid.stroke("black");
+  grid.layout("horizontal");
+  grid.evenFill(null);
+  grid.oddFill(null);
+  
+  // setting data
+  var data = anychart.data.set([
+    ["Absolute Zero", 0],
+    ["Lowest recorded surface temperature on Earth", 184],
+    ["Celsius / Fahrenheit's 'cross-over' temperature", 233.15],
+    ["Ice melts", 273.15],
+    ["Average human body temperature", 309.95],
+    ["Highest recorded surface temperature on Earth", 331],
+    ["Water boils", 373.1339],
+    ["Titanium melts", 1941]
+  ]);
+  chart.yScale(anychart.scales.ordinal());
+  var yScale = chart.yScale();
+  yScale.inverted(true);
+  var yAxisTitle = chart.yAxis().title();
+  yAxisTitle.enabled(false);
+  
+  // setting and adjusting data visualisation
+  var markerSeries = chart.marker(data.mapAs({x: [1], value: [0]}));
+  var markerTooltip = markerSeries.tooltip();
+  markerTooltip.contentFormatter(function(){
+    return this.value+
+      "\nKelvin: "+ (this.x).toFixed(2) +
+      "\nCelsius: "+ (this.x - 273.15).toFixed(2) +
+      "\nFahrenheit: " + ((this.x - 273.15)*1.8000 + 32).toFixed(2);
+  });
+  markerSeries.xScale(kelvinScale);
+  markerSeries.size(5);
+  markerSeries.hoverSize(7);
+  
+  var lineMarker = chart.lineMarker();
+  lineMarker.stroke("1 red");
+  lineMarker.layout("vertical");
+  lineMarker.scale(celsiusScale);
+  var lineMarker1 = chart.lineMarker(1);
+  lineMarker1.stroke("1 green");
+  lineMarker1.layout("vertical");
+  lineMarker1.scale(fahrenheitScale);
+  
+  chart.padding(0,20,0,0);
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
