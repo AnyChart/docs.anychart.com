@@ -24,9 +24,6 @@ The main idea of themes is to segregate chart settings and data section for easy
   
   
 If this some chart type is used widely on your site, you can store settings in a js file and then use theme when needed - no need to configure chart again and copy-paste settings from one place to another.
-  
-  
-Another example of templates use - you can store several themes in one place and create several groups of similar chart. Just [reset theme](#reset_theme) when you need to set new group of charts.
 
 ##Create Theme
 
