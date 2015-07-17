@@ -5,10 +5,12 @@
 * [Create Theme](#create_theme)
 * [Internal Themes](#internal_themes)
 * [External Themes](#external_themes)
+ * [Default Theme](#default_theme)
  * [Old Theme](#old_theme)
 * [Multiple Chart Types](#multiple_chart_types)
 * [Themes Use in Dashboard Mode](#themes_use_in_dashboard_mode)
 * [Reset Theme](#reset_theme)
+* [Global Settings, Defaults and Theme Reference](#global_settings,_defaults_and_theme_reference)
 * [AnyChart 6.x, 7.0.0 to 7.5.1 look to AnyChart 7.6 Conversion](#anychart_6.x,_7.0.0_to_7.5.1_look_to_anychart_7.6_conversion)
 
 ##Overview
@@ -239,7 +241,7 @@ Here is a list of global settings and defaults that can be defined in a theme:
 <table class="dtTABLE" width="700">
 <tbody>
 <tr>
-<th width="101">Method</th>
+<th width="101"><b>Method</b></th>
 <th width="587">Way to set</th>
 </tr>
 <tr>
@@ -338,4 +340,4 @@ If you are already using AnyChart 7.0 to 7.5.1, you may face some conflicts in c
 2. or you can simply use new **anychart.min.js** and [set old them for your charts](#old_theme) (this is the recommended way to solve this problem).
   
   
-*Note*: AnyChart recommends you to use new AnyChart theme, version 6 style will not be developed further and supported for the new chart types.
+**Note**: AnyChart recommends you to use new AnyChart theme, version 6 style will not be developed further and supported for the new chart types.
