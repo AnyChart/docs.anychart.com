@@ -9,6 +9,8 @@ You can print any chart at any time using **.print()** method.
   chart.print();  // this method will print your chart
 ```
 
+
+
 Sample below demonstrates chart printing:
 
 {sample}Exports\_02{sample}
