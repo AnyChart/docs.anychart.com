@@ -247,67 +247,67 @@ Here is a list of global settings and defaults that can be defined in a theme:
 </tr>
 <tr>
 <td>{api:anychart.core.Text#fontSize}fontSize{api}</td>
-<td>"{globalFontSettings": {"fontSize": ""}}</td>
+<td>{"globalFontSettings": {"fontSize": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#fontFamily}fontFamily{api}</td>
-<td>"{globalFontSettings": {"fontFamily": ""}}</td>
+<td>{"globalFontSettings": {"fontFamily": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#fontColor}fontColor{api}</td>
-<td>"{globalFontSettings": {"fontColor": ""}}</td>
+<td>{"globalFontSettings": {"fontColor": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#textDirection}textDirection{api}</td>
-<td>"{globalFontSettings": {"textDirection": ""}}</td>
+<td>{"globalFontSettings": {"textDirection": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#fontOpacity}fontOpacity{api}</td>
-<td>"{globalFontSettings": {"fontOpacity": ""}}</td>
+<td>{"globalFontSettings": {"fontOpacity": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#fontDecoration}fontDecoration{api}</td>
-<td>"{globalFontSettings": {"fontDecoration": ""}}</td>
+<td>{"globalFontSettings": {"fontDecoration": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#fontStyle}fontStyle{api}</td>
-<td>"{globalFontSettings": {"fontStyle": ""}}</td>
+<td>{"globalFontSettings": {"fontStyle": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#fontVariant}fontVariant{api}</td>
-<td>"{globalFontSettings": {"fontVariant": ""}}</td>
+<td>{"globalFontSettings": {"fontVariant": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#fontWeight}fontWeight{api}</td>
-<td>"{globalFontSettings": {"fontWeight": ""}}</td>
+<td>{"globalFontSettings": {"fontWeight": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#letterSpacing}letterSpacing{api}</td>
-<td>"{globalFontSettings": {"letterSpacing": ""}}</td>
+<td>{"globalFontSettings": {"letterSpacing": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#lineHeight}lineHeight{api}</td>
-<td>"{globalFontSettings": {"lineHeight": ""}}</td>
+<td>{"globalFontSettings": {"lineHeight": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#textIndent}textIndent{api}</td>
-<td>"{globalFontSettings": {"textIndent": ""}}</td>
+<td>{"globalFontSettings": {"textIndent": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#vAlign}vAlign{api}</td>
-<td>"{globalFontSettings": {"vAlign": ""}}</td>
+<td>{"globalFontSettings": {"vAlign": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#hAlign}hAlign{api}</td>
-<td>"{globalFontSettings": {"hAlign": ""}}</td>
+<td>{"globalFontSettings": {"hAlign": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#textWrap}textWrap{api}</td>
-<td>"{globalFontSettings": {"textWrap": ""}}</td>
+<td>{"globalFontSettings": {"textWrap": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#textOverflow}textOverflow{api}</td>
-<td>"{globalFontSettings": {"textOverflow": ""}}</td>
+<td>{"globalFontSettings": {"textOverflow": ""}}</td>
 </tr>
 <tr>
 <td>{api:anychart.charts.Cartesian#palette}palette{api}</td>
