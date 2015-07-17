@@ -175,7 +175,7 @@ The content of **custom_theme.js** should be something like to the snippet below
 
 ### Old Theme
   
-AnyChart provides several default themes along with the opportunity to [create custom themes](#create_theme). One of default them is the default one from AnyChart 5.x, 6.x. To use old theme you have to reference special file with the theme. This file has name **anychart_theme_v6.js** and it can be found in **binaries** folder in the downloaded AnyChart package. After referencing the file you can use {api:anychart#theme}**.theme()**{api} method with **anychart.themes.v6** parameter to apply old theme:
+AnyChart provides several default themes along with the opportunity to [create custom themes](#create_theme). One of default them is the default one from AnyChart 5.x, 6.x. To use old theme you have to reference special theme file with the name **anychart\_theme\_v6.js**. This file can be found in **binaries** folder in the downloaded AnyChart package. After referencing the file you can use {api:anychart#theme}**.theme()**{api} method with **anychart.themes.v6** parameter to apply old theme:
 
 <a name="old_theme"></a>
 ```
@@ -228,6 +228,7 @@ If you are already using AnyChart 7.0 to 7.5.1, you may face some conflicts in c
   
   
 1. use special **anychart\_theme\_v6.min.js** with the old theme to your charts as default one (this js file can be found in **binaries** folder in the downloaded AnyChart package).
+
 2. or you can simply use new **anychart.min.js** and [set old them for your charts](#old_theme) (this is the recommended way to solve this problem). 
   
   
