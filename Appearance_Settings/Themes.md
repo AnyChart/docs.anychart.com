@@ -5,9 +5,10 @@
 * [Create Theme](#create_theme)
 * [Internal Themes](#internal_themes)
 * [External Themes](#external_themes)
+ * [Old Theme](#old_theme)
 * [Multiple Chart Types](#multiple_chart_types)
 * [Themes Use in Dashboard Mode](#themes_use_in_dashboard_mode)
-* [Reset Theme](#redefine_theme)
+* [Reset Theme](#reset_theme)
 * [AnyChart 6.x, 7.0.0 to 7.5.1 look to AnyChart 7.6 Conversion](#anychart_6.x,_7.0.0_to_7.5.1_look_to_anychart_7.6_conversion)
 
 ##Overview
@@ -22,24 +23,11 @@ In this tutorial we will explain what themes are used for and how they are used.
 The main idea of themes is to segregate chart settings and data section for easy changing and/or reuse settings in another charts that should look the same way.
   
   
-AnyChart provides several default themes and one of them is the default them from AnyChart 5.x, 6.x. To use old theme to reference special **anychart.min.js** (this js can be found in **binaries** folder in the downloaded AnyChart package) and then 
-
-
-
-
-
-
-To use the old theme you have to set this theme in chart settings:
-
-<a name="old_theme"></a>
-```
-  anychart.theme(anychart.themes.v6);
-```
-  
 If this some chart type is used widely on your site, you can store settings in a js file and then use theme when needed - no need to configure chart again and copy-paste settings from one place to another.
-<!--
-Another example of themes use - you can create several themes that configure different chart look (colors, border, etc.), store them in a single file and then you can choose how chart should look like (depending on users choice, for example).
--->
+  
+  
+Another example of templates use - you can store several themes in one place and create several groups of similar chart. Just [reset theme](#reset_theme) when you need to set new group of charts.
+
 ##Create Theme
 
 The best way to create a theme is to create variable with all desirable chart settings. Every possible theme adjustment can be found in {api:anychart#themes}**api**{api}.
@@ -188,6 +176,16 @@ The content of **custom_theme.js** should be something like to the snippet below
   };
 ```
 
+### Old Theme
+  
+AnyChart provides several default themes along with the opportunity to [create custom themes](#create_theme). One of default them is the default one from AnyChart 5.x, 6.x. To use old theme you have to reference special file with the theme. This file has name **anychart_theme_v6.js** and it can be found in **binaries** folder in the downloaded AnyChart package. After referencing the file you can use {api:anychart#theme}**.theme()**{api} method with **anychart.themes.v6** parameter to apply old theme:
+
+<a name="old_theme"></a>
+```
+  // apply old theme
+  anychart.theme(anychart.themes.v6);
+```
+
 ##Multiple Chart Types
 
 The main purpose of AnyChart Themes is to simplify the process of chart creation, so one theme can store settings for the different chart types. 
@@ -229,11 +227,11 @@ There is one very important thing you need to remember when you work with themes
 Themes are introduced in AnyChart 7.6, along with new color scheme and changed default settings. If you have never used AnyChart 7 before the release version 7.6 you can ignore this section cause it does not affect you.
   
   
-If you are already using AnyChart 7.0 to 7.5.1, you may face some conflicts in chart settings after the upgrade. These conflicts are not critical, but the visual appearance of ypur charts can change unexpectedly. There are several solutions for this problem: 
+If you are already using AnyChart 7.0 to 7.5.1, you may face some conflicts in chart settings after the upgrade. These conflicts are not critical, but the visual appearance of your charts can change unexpectedly. There are several solutions for this problem: 
   
   
-1. use special **anychart.min.js** with the old them as default one (this js can be found in **binaries** folder in the downloaded AnyChart package).
-2. or you can simply use new **anychart.min.js** and [set old them for your charts](#old_theme) (this is the best way). 
+1. use special **anychart_theme_v6.min.js** with the old theme to your charts as default one (this js file can be found in **binaries** folder in the downloaded AnyChart package).
+2. or you can simply use new **anychart.min.js** and [set old them for your charts](#old_theme) (this is the recommended way to solve this problem). 
   
   
-All in all, AnyChart team recommend you to use new AnyChart themes which will be developed further.
+*Note:* AnyChart recommends you to use new AnyChart theme, version 6 style will not be developed further and supported for the new chart types.
