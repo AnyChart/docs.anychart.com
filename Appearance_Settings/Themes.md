@@ -245,6 +245,9 @@ Here is a list of global settings and defaults that can be defined in a theme:
 <th width="587"><b>Way to set</b></th>
 </tr>
 <tr>
+<th style="text-align:center;"><b>Font</b></th>
+</tr>
+<tr>
 <td>{api:anychart.core.Text#fontSize}fontSize{api}</td>
 <td>{"globalFontSettings": {"fontSize": ""}}</td>
 </tr>
@@ -309,6 +312,9 @@ Here is a list of global settings and defaults that can be defined in a theme:
 <td>{"globalFontSettings": {"textOverflow": ""}}</td>
 </tr>
 <tr>
+<th style="text-align:center;"><b>Palettes</b></th>
+</tr>
+<tr>
 <td>{api:anychart.charts.Cartesian#palette}palette{api}</td>
 <td>{"palette": {"type": "","items": []}}</td>
 </tr>
@@ -325,7 +331,7 @@ Here is a list of global settings and defaults that can be defined in a theme:
 
 Here is a sample of a dashboard with a column chart, pie chart and a radar with default font altered by the default node in a theme:
 
-{sample :width 690 :height 320}AS\_Themes\_04{sample}
+{sample :width 690 :height 220}AS\_Themes\_04{sample}
 
 
 ## AnyChart 6.x, 7.0.0 to 7.5.1 look to AnyChart 7.6 Conversion
@@ -336,8 +342,8 @@ Themes are introduced in AnyChart 7.6, along with new color scheme and changed d
 If you are already using AnyChart 7.0 to 7.5.1, you may face some conflicts in chart settings after the upgrade. These conflicts are not critical, but the visual appearance of your charts can change unexpectedly. There are several solutions for this problem: 
   
   
-1. use special **anychart\_theme\_v6.min.js** with the old theme to your charts as default one (this js file can be found in **binaries** folder in the downloaded AnyChart package).
-2. or you can simply use new **anychart.min.js** and [set old them for your charts](#old_theme) (this is the recommended way to solve this problem).
+* use special **anychart\_theme\_v6.min.js** with the old theme to your charts as default one (this js file can be found in **binaries** folder in the downloaded AnyChart package).
+* or you can simply use new **anychart.min.js** and [set old them for your charts](#old_theme) (this is the recommended way to solve this problem).
   
   
 **Note**: AnyChart recommends you to use new AnyChart theme, version 6 style will not be developed further and supported for the new chart types.
