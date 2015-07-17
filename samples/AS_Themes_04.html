@@ -18,10 +18,9 @@
 
   // data
   var data = anychart.data.set([
-    ["January",   537166],
-    ["February",  421630],
-    ["March",     648662],
-    ["April",     390000]
+    ["Alice",   33],
+    ["Bob",  33],
+    ["Jake",     34]
   ]);
 
   // apply custom theme
@@ -29,7 +28,11 @@
 
   var table = anychart.ui.table();
   table.contents([
-    [anychart.bar(data), anychart.pie(data), anychart.circularGauge(data)]
+    [
+      anychart.bar(data),
+      anychart.pie(data),
+      anychart.radar(data)
+    ]
   ]);
   table.container("container");
   table.draw();
