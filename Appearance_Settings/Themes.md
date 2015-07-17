@@ -323,9 +323,9 @@ Here is a list of global settings and defaults that can be defined in a theme:
 </tbody>
 </table>
 
-Here is a sample of a dashboard with a bar chart, pie chart and a radar with default font altered by the default node in a theme:
+Here is a sample of a dashboard with a column chart, pie chart and a radar with default font altered by the default node in a theme:
 
-{sample :width 690 :height 380}AS\_Themes\_04{sample}
+{sample :width 690 :height 320}AS\_Themes\_04{sample}
 
 
 ## AnyChart 6.x, 7.0.0 to 7.5.1 look to AnyChart 7.6 Conversion
