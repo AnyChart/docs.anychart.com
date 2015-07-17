@@ -187,7 +187,6 @@ This file can be found in **binaries** folder in the downloaded AnyChart package
   
 AnyChart provides several default themes along with the opportunity to [create custom themes](#create_theme). One of default them is the default one from AnyChart 5.x, 6.x. To use old theme you have to reference special theme file with the name **v6.theme.js**. This file can be found in **binaries** folder in the downloaded AnyChart package. After referencing the file you can use {api:anychart#theme}**.theme()**{api} method with **anychart.themes.v6** parameter to apply old theme:
 
-<a name="old_theme"></a>
 ```
   // apply old theme
   anychart.theme(anychart.themes.v6);
