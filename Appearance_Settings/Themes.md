@@ -27,7 +27,7 @@ If this some chart type is used widely on your site, you can store settings in a
 
 ##Create Theme
 
-The best way to create a theme is to create variable with all desirable chart settings. Every possible theme adjustment can be found in {api:anychart#themes}**api**{api}.
+The best way to create a theme is to create variable with all desirable chart settings. Every possible theme adjustment can be found in {api:anychart#themes}**API**{api}.
   
   
 Suppose you want to create such charts many times, and all of them will use the same axes and chart titles.
