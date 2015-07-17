@@ -311,15 +311,15 @@ Here is a list of global settings and defaults that can be defined in a theme:
 </tr>
 <tr>
 <td>{api:anychart.charts.Cartesian#palette}palette{api}</td>
-<td>"palette": {"type": "","items": []}</td>
+<td>{"palette": {"type": "","items": []}}</td>
 </tr>
 <tr>
 <td>{api:anychart.charts.Cartesian#hatchFillPalette}hatchFillPalette{api}</td>
-<td>"hatchFillPalette": {"items": {}}</td>
+<td>{"hatchFillPalette": {"items": {}}</td>
 </tr>
 <tr>
 <td>{api:anychart.charts.Cartesian#markerPalette}markerPalette{api}</td>
-<td>"markerPalette": {"items": {}}</td>
+<td>{"markerPalette": {"items": {}}</td>
 </tr>
 </tbody>
 </table>
