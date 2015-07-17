@@ -179,7 +179,8 @@ The content of **custom_theme.js** should be something like to the snippet below
 
 You can find **base.theme.js** in **binaries** folder in the downloaded AnyChart package.
 This file can be found in **binaries** folder in the downloaded AnyChart package. This file contains default AnyChart theme. You **DON'T NEED** to reference this file to use Default theme, it is built-in in the component, we provide this file only as a reference for a custom theme you may want to create yourself.
-
+  
+  
 **Note**: the theme you create need not contain all settings you see in a default theme - you need to tune only the settings you want to change or want them to be persistent no matter what.
 
 ### Old Theme
