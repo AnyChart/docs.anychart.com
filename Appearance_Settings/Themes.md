@@ -242,7 +242,7 @@ Here is a list of global settings and defaults that can be defined in a theme:
 <tbody>
 <tr>
 <th width="101"><b>Method</b></th>
-<th width="587">Way to set</th>
+<th width="587"><b>Way to set</b></th>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#fontSize}fontSize{api}</td>
