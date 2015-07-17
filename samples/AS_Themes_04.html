@@ -1,0 +1,41 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // create variable for custom theme
+  var customTheme = {
+    'globalFontSettings': {
+      'fontSize': 13,
+      'fontDecoration': 'underline',
+      'fontWeight': 400
+    }
+  };
+
+  // data
+  var data = anychart.data.set([
+    ["January",   537166],
+    ["February",  421630],
+    ["March",     648662],
+    ["April",     390000]
+  ]);
+
+  // apply custom theme
+  anychart.theme(customTheme);
+
+  var table = anychart.ui.table();
+  table.contents([
+    [anychart.bar(data), anychart.pie(data), anychart.gauge(data)]
+  ]);
+  table.container("container");
+  table.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

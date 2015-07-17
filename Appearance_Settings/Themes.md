@@ -173,9 +173,16 @@ The content of **custom_theme.js** should be something like to the snippet below
   };
 ```
 
+### Default Theme
+
+You can find **base.theme.js** in **binaries** folder in the downloaded AnyChart package.
+This file can be found in **binaries** folder in the downloaded AnyChart package. This file contains default AnyChart theme. You **DON'T NEED** to reference this file to use Default theme, it is built-in in the component, we provide this file only as a reference for a custom theme you may want to create yourself.
+
+**Note**: the theme you create need not contain all settings you see in a default theme - you need to tune only the settings you want to change or want them to be persistent no matter what.
+
 ### Old Theme
   
-AnyChart provides several default themes along with the opportunity to [create custom themes](#create_theme). One of default them is the default one from AnyChart 5.x, 6.x. To use old theme you have to reference special theme file with the name **anychart\_theme\_v6.js**. This file can be found in **binaries** folder in the downloaded AnyChart package. After referencing the file you can use {api:anychart#theme}**.theme()**{api} method with **anychart.themes.v6** parameter to apply old theme:
+AnyChart provides several default themes along with the opportunity to [create custom themes](#create_theme). One of default them is the default one from AnyChart 5.x, 6.x. To use old theme you have to reference special theme file with the name **v6.theme.js**. This file can be found in **binaries** folder in the downloaded AnyChart package. After referencing the file you can use {api:anychart#theme}**.theme()**{api} method with **anychart.themes.v6** parameter to apply old theme:
 
 <a name="old_theme"></a>
 ```
@@ -219,6 +226,106 @@ There is one very important thing you need to remember when you work with themes
   anychart.theme(anychart.themes.default);
 ```
 
+## Global Settings, Defaults and Theme Reference
+
+As you may have noticed, theme is basically chart settings done in JSON and its structure is almost identical to chart JSON settings, and can be described by JSON Scheme, you can read more about this at [JSON article](../Working_with_Data/Data_FromJSON#schema).
+  
+  
+But there are some very important characteristics and features in a theme: you can set defaults and global settings for some elements, and you can set default settings for a chart type.
+  
+  
+Here is a list of global settings and defaults that can be defined in a theme:
+
+<table class="dtTABLE" width="700">
+<tbody>
+<tr>
+<th width="101">Method</th>
+<th width="587">Way to set</th>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#fontSize}fontSize{api}</td>
+<td>"{globalFontSettings": {"fontSize": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#fontFamily}fontFamily{api}</td>
+<td>"{globalFontSettings": {"fontFamily": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#fontColor}fontColor{api}</td>
+<td>"{globalFontSettings": {"fontColor": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#textDirection}textDirection{api}</td>
+<td>"{globalFontSettings": {"textDirection": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#fontOpacity}fontOpacity{api}</td>
+<td>"{globalFontSettings": {"fontOpacity": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#fontDecoration}fontDecoration{api}</td>
+<td>"{globalFontSettings": {"fontDecoration": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#fontStyle}fontStyle{api}</td>
+<td>"{globalFontSettings": {"fontStyle": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#fontVariant}fontVariant{api}</td>
+<td>"{globalFontSettings": {"fontVariant": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#fontWeight}fontWeight{api}</td>
+<td>"{globalFontSettings": {"fontWeight": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#letterSpacing}letterSpacing{api}</td>
+<td>"{globalFontSettings": {"letterSpacing": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#lineHeight}lineHeight{api}</td>
+<td>"{globalFontSettings": {"lineHeight": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#textIndent}textIndent{api}</td>
+<td>"{globalFontSettings": {"textIndent": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#vAlign}vAlign{api}</td>
+<td>"{globalFontSettings": {"vAlign": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#hAlign}hAlign{api}</td>
+<td>"{globalFontSettings": {"hAlign": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#textWrap}textWrap{api}</td>
+<td>"{globalFontSettings": {"textWrap": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.core.Text#textOverflow}textOverflow{api}</td>
+<td>"{globalFontSettings": {"textOverflow": ""}}</td>
+</tr>
+<tr>
+<td>{api:anychart.charts.Cartesian#palette}palette{api}</td>
+<td>"palette": {"type": "","items": []}</td>
+</tr>
+<tr>
+<td>{api:anychart.charts.Cartesian#hatchFillPalette}hatchFillPalette{api}</td>
+<td>"hatchFillPalette": {"items": {}}</td>
+</tr>
+<tr>
+<td>{api:anychart.charts.Cartesian#markerPalette}markerPalette{api}</td>
+<td>"markerPalette": {"items": {}}</td>
+</tr>
+</tbody>
+</table>
+
+Here is a sample of a dashboard with a bar chart, pie chart and a gauge with default font altered by the default node in a theme:
+
+{sample :width 690 :height 380}AS\_Themes\_04{sample}
+
+
 ## AnyChart 6.x, 7.0.0 to 7.5.1 look to AnyChart 7.6 Conversion
 
 Themes are introduced in AnyChart 7.6, along with new color scheme and changed default settings. If you have never used AnyChart 7 before the release version 7.6 you can ignore this section cause it does not affect you.
@@ -231,4 +338,4 @@ If you are already using AnyChart 7.0 to 7.5.1, you may face some conflicts in c
 2. or you can simply use new **anychart.min.js** and [set old them for your charts](#old_theme) (this is the recommended way to solve this problem).
   
   
-*Note:* AnyChart recommends you to use new AnyChart theme, version 6 style will not be developed further and supported for the new chart types.
+*Note*: AnyChart recommends you to use new AnyChart theme, version 6 style will not be developed further and supported for the new chart types.
