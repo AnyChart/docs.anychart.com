@@ -228,12 +228,12 @@ If you are already using AnyChart 7.0 to 7.5.1, you may face some conflicts in c
   
   
 <ol>
-  <li>
-    use special **anychart\_theme\_v6.min.js** with the old theme to your charts as default one (this js file can be found in **binaries** folder in the downloaded AnyChart package).
-  </li>
-  <li>
-    or you can simply use new **anychart.min.js** and [set old them for your charts](#old_theme) (this is the recommended way to solve this problem).
-  </li>
+<li>
+  use special **anychart\_theme\_v6.min.js** with the old theme to your charts as default one (this js file can be found in **binaries** folder in the downloaded AnyChart package).
+</li>
+<li>
+  or you can simply use new **anychart.min.js** and [set old them for your charts](#old_theme) (this is the recommended way to solve this problem).
+</li>
 </ol>
   
   
