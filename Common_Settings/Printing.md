@@ -14,7 +14,8 @@ Although AnyChart is intended for creation interactive charts for web we provide
 You can print any chart at any time using {api:anychart.core.Chart#print}**.print()**{api} method.
 
 ```
-  chart.print();  // this method will print your chart
+  // this method will print your chart
+  chart.print();
 ```
 
 You can play with this sample try to change printing layout or paper size along with the margins. The chart is quit flexible and fit nicely into remaining space.
