@@ -55,7 +55,9 @@ In case you need to set paper size manually AnyChart provides an opportunity to 
 ```
 
 Here is the list of possible paper formats:
-
+  
+  
+* **usletter** paper size 215.9mm by 279.4mm
 * **A0** paper size 841mm by 1189mm
 * **A1** paper size 594mm by 841mm
 * **A2** paper size 420mm by 594mm
@@ -63,8 +65,9 @@ Here is the list of possible paper formats:
 * **A4** paper size 210mm by 297mm
 * **A5** paper size 148mm by 210mm
 * **A6** paper size 105mm by 148mm
-
-Here is a sample for printing chart on paper of **a2** format with **landscape** layout:
+  
+  
+Here is a sample for printing chart on paper of **A2** format with **landscape** layout:
 
 {sample}Exports\_04{sample}
 

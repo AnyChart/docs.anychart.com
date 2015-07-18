@@ -28,7 +28,9 @@
   // set data
   var series = chart.bar(data);
   series.stroke(null);
-  chart.title("The kind of pancakes preferred at the Sochi 2014 Olympic Games");
+  var title = chart.title();
+  title.fontSize(13);
+  title.text("The kind of pancakes preferred at the Sochi 2014 Olympic Games");
   chart.container("container");
   chart.draw();
 
