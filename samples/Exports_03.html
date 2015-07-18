@@ -1,12 +1,15 @@
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+  <script x-export="chart">anychart.onDocumentReady(function() {
+    
+  // set stage
+  var stage = anychart.graphics.create('container');
+  
   // data
   var data = [
     {x: "Chocolate paste", value: 5},
@@ -22,25 +25,36 @@
   for (var index in data)
     data[index].fill = palette[index];
 
-  //set chart type
-  var chart = anychart.bar();
+  // create custom title
+  var title = anychart.ui.title();
+  title.parentBounds(0, 0, stage.width(), stage.height()*0.1);
+  title.text("The kind of pancakes preferred at the Sochi 2014 Olympic Games");
+  title.container(stage);
+  title.draw();
 
-  // set data
-  var series = chart.bar(data);
+  //set chart type
+  var column = anychart.column();
+  var series = column.column(data);
   series.stroke(null);
-  chart.title("The kind of pancakes preferred at the Sochi 2014 Olympic Games");
-  chart.container("container");
-  chart.draw();
+  column.bounds(0, "10%", "50%", "90%");
+  column.container(stage);
+  column.draw();
+  
+  var pie  = anychart.pie(data);
+  pie.bounds("50%", "10%", "50%", "90%");
+  pie.container(stage);
+  pie.legend(null);
+  pie.draw();
 
   // create new buttons
   var printButton = document.createElement("div");
 
   // set action on button click
   printButton.onclick = function() {
-    chart.print();
+    stage.print();
   };
 
-  printButton.innerHTML = "Print<br>Chart";
+  printButton.innerHTML = "Print<br>Stage";
   container.appendChild(printButton);
 
   // set button style
@@ -49,7 +63,7 @@
   printButton.style.padding = "5px 10px";
   printButton.style.backgroundColor = "#444444";
   printButton.style.color = "#fff";
-  printButton.style.fontFamily = chart.title().fontFamily();
+  printButton.style.fontFamily = title.fontFamily();
   printButton.style.position = "absolute";
   printButton.style.zIndex = 2;
   printButton.style.transition = "0.5s";
