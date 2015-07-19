@@ -7,32 +7,36 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // data
-    var data = anychart.data.set([
-      ["Department Stores", 637166],
-      ["Discount Stores", 721630],
-      ["Men\'s/Women\'s Specialty Stores", 148662],
-      ["All other outlets", 90000]
-    ]);
+  // data
+  var data = anychart.data.set([
+    ["Department Stores", 637166],
+    ["Discount Stores", 721630],
+    ["Men's/Women's Specialty Stores", 148662],
+    ["All other outlets", 90000]
+  ]);
 
-    // chart type
-    var chart = anychart.barChart();
+  // chart type
+  var chart = anychart.bar();
 
-    // set title
-    chart.title().text("Inverted Axis Direction");
+  // change y scale direction
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 
-    // set axes titles
-    chart.xAxis().title().text("Retail Channel");
-    chart.yAxis().title().text("Sales");
+  // set title
+  chart.title("Inverted Axis Direction");
 
-    // set data
-    chart.bar(data);
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Retail Channel");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
 
-    // change y scale direction
-    chart.yScale().inverted(true);
+  // set data
+  chart.bar(data);
 
-    // draw chart
-    chart.container("container").draw();
+  // draw chart
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

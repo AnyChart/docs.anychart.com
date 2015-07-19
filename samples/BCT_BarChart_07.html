@@ -7,35 +7,38 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // data
-    var data = anychart.data.set([
-      ["Department Stores", 637166],
-      ["Discount Stores", 721630],
-      ["Men\'s/Women\'s Specialty Stores", 148662],
-      ["Juvenile Specialty Stores", 78662],
-      ["All other outlets", 90000]
-    ]);
+  // data
+  var data = anychart.data.set([
+    ["Department Stores", 637166],
+    ["Discount Stores", 721630],
+    ["Men's/Women's Specialty Stores", 148662],
+    ["Juvenile Specialty Stores", 78662],
+    ["All other outlets", 90000]
+  ]);
 
-    // chart type
-    chart = anychart.barChart();
+  // chart type
+  var chart = anychart.bar();
 
-    // set title
-    chart.title().text("Visualization");
+  // set title
+  chart.title("Visualization");
 
-    // set axes titles
-    chart.xAxis().title().text("Retail Channel");
-    chart.yAxis().title().text("Sales");
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Retail Channel");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
 
-    // set data and adjust visualization
-    chart.bar(data)
-        .fill("Gold")
-        .hoverStroke("darkred", 4)
-        .stroke("#56561a", 4)
-        .hatchFill("diagonalbrick", "gray")
-        .hoverHatchFill("diagonalbrick", "darkred");
+  // set data and adjust visualization
+  var series = chart.bar(data);
+  series.fill("Gold");
+  series.hoverStroke("darkred", 4);
+  series.stroke("#56561a", 4);
+  series.hatchFill("diagonalbrick", "gray");
+  series.hoverHatchFill("diagonalbrick", "darkred");
 
-    // draw
-    chart.container("container").draw();
+  // draw
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

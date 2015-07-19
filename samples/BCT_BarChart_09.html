@@ -7,38 +7,41 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // chart type
-    var chart = anychart.barChart();
+  // chart type
+  var chart = anychart.bar();
 
-    // set title
-    chart.title().text("Marker settings");
+  // set title
+  chart.title("Marker settings");
 
-    // set axes titles
-    chart.xAxis().title().text("Retail Channel");
-    chart.yAxis().title().text("Sales");
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Retail Channel");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
 
-    // set data
-    chart.bar([
-      ["Department Stores", 637166],
-      ["Discount Stores", 721630],
-      {
-        x: "Men\'s/Women\'s Specialty Stores", 
-        value: 148662, 
-        marker:{
-          type:"star5",         // set marker type
-          fill:"gold",          // set marker color
-          size: 12,             // set marker size
-          enabled: true         // enables marker
-        }, 
-        hoverMarker: {size: 22} // marker size on mouse over
-      },
-      
-      ["Juvenile Specialty Stores", 78662],
-      ["All other outlets", 90000]
-    ]);
+  // set data
+  chart.bar([
+    ["Department Stores", 637166],
+    ["Discount Stores", 721630],
+    {
+      x: "Men's/Women's Specialty Stores", 
+      value: 148662, 
+      marker:{
+        type:"star5",         // set marker type
+        fill:"gold",          // set marker color
+        size: 12,             // set marker size
+        enabled: true         // enables marker
+      }, 
+      hoverMarker: {size: 22} // marker size on mouse over
+    },
+    
+    ["Juvenile Specialty Stores", 78662],
+    ["All other outlets", 90000]
+  ]);
 
-    // draw
-    chart.container("container").draw();
+  // draw
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
