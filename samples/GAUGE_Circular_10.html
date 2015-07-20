@@ -7,76 +7,76 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
     
-		//create data set on our data
+		// create data set on our data
     dataSet = anychart.data.set([50,400]);
     
-		//set the gauge type
+		// set the gauge type
     gauge = anychart.circularGauge();
 
-		//gauge settings
+		// gauge settings
     gauge.data(dataSet);
     gauge.padding("10%");
     gauge.startAngle(270);
     gauge.sweepAngle(180);
     gauge.fill(["white", "black"], .5, .5, null, 1, 0.5, 0.9);
    
-		//axis settings
+		// axis settings
     var axis = gauge.axis()
         .radius(95)
         .width(0);
 
-		//scale settings
+		// scale settings
     axis.scale()
         .minimum(0)
         .maximum(120)
         .ticks({interval: 10})
         .minorTicks({interval: 1});
 
-		//ticks settings
+		// ticks settings
     axis.ticks()
         .type("trapezoid")
         .fill("white")
         .length("9");
 
-		//minor ticks settings
+		// minor ticks settings
     axis.minorTicks()
         .enabled(true)
         .fill("white")
         .length("1.5");
         
-        //labels settings
+        // labels settings
     axis.labels()
         .fontSize("24px")
         .fontColor("white");
         
-        //second axis settings
+        // second axis settings
     var axis_1 = gauge.axis(1)
         .radius(55)
         .width(0);
 
-		//second scale settings
+		// second scale settings
     axis_1.scale()
         .minimum(0)
         .maximum(600)
         .ticks({interval: 100})
         .minorTicks({interval: 20});
         
-		//second ticks settings
+		// second ticks settings
     axis_1.ticks()
         .type("trapezoid")
         .length("15");
 
-		//second minor ticks settings
+		// second minor ticks settings
     axis_1.minorTicks()
         .enabled(true)
         .length("5");
         
-        //labels 2 settings
+        // labels 2 settings
     axis_1.labels()
         .fontSize("18px")
         .fontColor("white");
         
-        //needle
+        // needle
     gauge.needle(0)
         .enabled(true)
         .startRadius("0%")
@@ -88,7 +88,7 @@
         .stroke("none")
         .middleWidth("1%");
         
-        //marker
+        // marker
     gauge.marker(0)
         .axisIndex(1)
         .dataIndex(1)
@@ -97,7 +97,7 @@
         .position("outside")
         .radius(55);
     
-    //bar
+    // bar
     gauge.bar(0)
         .axisIndex(1)
         .position("i")
@@ -106,14 +106,14 @@
         .radius(60)
         .zIndex(10);
         
-    //gap
+    // gap
     gauge.cap()
         .radius("3%");
         
-    //gauge label
+    // gauge label
     gauge.label()
         .text("ALBANY")
-        .anchor("center") //set the position of the label
+        .anchor("center") // set the position of the label
         .adjustFontSize(true)
         .hAlign("center")
         .offsetY("15%")
@@ -123,7 +123,7 @@
         .zIndex(10);
 
         
-    //range
+    // range
     gauge.range({
       from: 0,
       to: 120,
@@ -135,7 +135,7 @@
       zIndex: 10
   });
 
-		//draw the chart
+		// draw the chart
     gauge.container("container").draw();
 });</script>
 </head>

@@ -63,7 +63,7 @@
   streamButton.style.KhtmlUserSelect= "none";
   streamButton.style.WebkitUserSelect= "none";
   streamButton.style.userSelect= "none";
-  streamButton.innerHTML = "Start" + "\n" + "stream";
+  streamButton.innerHTML = "Start" + "\nstream";
   streamButton.style.cursor = "pointer";
   streamButton.onclick = function() {
     startStream();
@@ -78,7 +78,7 @@
   function startStream() {
 
     // adjust button content
-    streamButton.innerHTML = "Stop" + "\n" + "stream";
+    streamButton.innerHTML = "Stop" + "\nstream";
 
     // set interval of data stream
     var myVar = setInterval(
@@ -109,7 +109,7 @@
       streamButton.onclick = function() {
         startStream();
       };
-    streamButton.innerHTML = "Start" + "\n" + "stream";
+    streamButton.innerHTML = "Start" + "\nstream";
     };
   }
 });</script>

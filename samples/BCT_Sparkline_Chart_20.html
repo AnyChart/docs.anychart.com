@@ -7,11 +7,11 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
     var stage = anychart.graphics.create("container");
-  //create charts
+  // create charts
   chart1 = anychart.sparkline();
   chart2 = anychart.sparkline();
 
-  //set container id for the charts
+  // set container id for the charts
   chart1.container(stage);
   chart2.container(stage);
   chart1.title(true);
@@ -19,7 +19,7 @@
   chart1.title().text("Line 1");
   chart2.title().text("Line 2");
 
-  //create data for both charts
+  // create data for both charts
   chart1.data([
       -20, 
       30, 
@@ -39,13 +39,13 @@
       -30,
       50]);
   
-  //color the rest points in the same low-opacity color to make the fifth point of the data more noticeable
+  // color the rest points in the same low-opacity color to make the fifth point of the data more noticeable
   chart1.fill("green .3");
   chart1.negativeFill("green .3");
   chart2.fill("green .3");
   chart2.negativeFill("green .3");
   
-  //set charts dimensions and position
+  // set charts dimensions and position
   chart1.bounds(0, 0, 300, 120);
     chart1.type("column");  
   chart2.bounds(0, 120, 300, 120);
@@ -53,7 +53,7 @@
 
 	
   
-  //initiate chart drawing
+  // initiate chart drawing
   chart1.draw();
   chart2.draw();
   

@@ -24,12 +24,12 @@
     // set aqua style
     chart.fill("aquastyle");
     
-    //textFormatter
+    // textFormatter
     chart.labels().textFormatter(function(){
     return((this.getDataValue("value"))+" / "+this.getStat("sum"));
 });
 
-    //labels positioning
+    // labels positioning
     chart.labels().position("outside");
     
     // draw

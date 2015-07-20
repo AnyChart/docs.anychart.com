@@ -6,22 +6,22 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  //create data tree on our data
+  // create data tree on our data
   var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 
-  //create resource gantt chart
+  // create resource gantt chart
   chart = anychart.ganttResource();
 
-  //set container id for the chart
+  // set container id for the chart
   chart.container("container");
 
-  //set data for the chart
+  // set data for the chart
   chart.data(treeData);
 
-  //set start splitteformatDater position settings
+  // set start splitteformatDater position settings
   chart.splitterPosition(220);
 
-  //get chart data grid link to set column settings
+  // get chart data grid link to set column settings
   var dataGrid = chart.dataGrid();
 
   function formatDate(dateUnit) {
@@ -51,10 +51,10 @@ var custom = dataGrid.column(2);
   custom.width(90);
   custom.textFormatter(customTextFormatter);
 
-  //initiate chart drawing
+  // initiate chart drawing
   chart.draw();
 
-  //zoom chart to specified date
+  // zoom chart to specified date
   chart.fitAll();
 });
 

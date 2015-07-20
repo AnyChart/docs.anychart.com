@@ -38,7 +38,7 @@
   lineChart.yAxis().labels().textFormatter(function(){
       return this.value + " °C";
   });
-  //series titles setter
+  // series titles setter
     lineChart.getSeries(0).name("NY");
     lineChart.getSeries(1).name("SF");
     lineChart.getSeries(2).name("LA");
@@ -56,7 +56,7 @@
   // map x and value from the data set
   var colChart = anychart.columnChart.apply(null, anychart.data.mapAsTable(data));
   
-    //naming the chart's series (legend)
+    // naming the chart's series (legend)
     colChart.getSeries(0).name("NY");
     colChart.getSeries(1).name("SF");
     colChart.getSeries(2).name("LA");

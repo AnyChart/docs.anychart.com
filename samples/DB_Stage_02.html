@@ -28,17 +28,17 @@
 	
 	var series_1_1 = chart_1.column(seriesData_1);
 	
-    //create scale for line series and extraYAxis
-    //it force line series to not stuck values with over series
+    // create scale for line series and extraYAxis
+    // it force line series to not stuck values with over series
     var scale = anychart.scales.linear();
     
-    //create line series and set scale for it
+    // create line series and set scale for it
     var lineSeries = chart_1.spline(seriesData_2);
     lineSeries.yScale(scale);
     lineSeries.yScale().minimum(0).maximum(100);
     lineSeries.stroke("navy");
 
-    //create extra axis on the right side of chart
+    // create extra axis on the right side of chart
     var extraYAxis = chart_1.yAxis(1);
     extraYAxis.title().text("Customers under 20 years old");
     extraYAxis.orientation("right");
@@ -60,7 +60,7 @@
     chart_1.yAxis().title("Sales (.oz)");
     chart_1.xAxis().title("Tea Types");
 
-//chart 2
+// chart 2
 
 	// set data
 	var data_2 = [
@@ -84,10 +84,10 @@
 	chart_2.title("Confectionery sold in Tea House in May 2015");
 	
 	chart_2.legend(false);
-//	chart_2.legend().itemsLayout('vertical');
-//	chart_2.legend().position('right');	
-//	chart_2.legend().height('60%');
-//	chart_2.legend().width('30%');
+// 	chart_2.legend().itemsLayout('vertical');
+// 	chart_2.legend().position('right');	
+// 	chart_2.legend().height('60%');
+// 	chart_2.legend().width('30%');
 
 	// chart size and position
 	chart_2.bounds("60%", 0, "35%", "40%");
@@ -95,7 +95,7 @@
 	// draw
 	chart_2.container(stage).draw();
 	
-//chart 3
+// chart 3
 
 	// set data
 	var data_3 = [

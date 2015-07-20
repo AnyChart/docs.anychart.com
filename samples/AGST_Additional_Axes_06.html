@@ -244,7 +244,7 @@
   lineSeries.stroke("blue", 3);
   var lineTooltip = lineSeries.tooltip();
   lineTooltip.contentFormatter(function() {
-    return this.x + " Year \n" + "GDP - " + this.value + "%" ;
+    return this.x + " Year\nGDP - " + this.value + "%" ;
   });
 
   var columnSeries = chart.column(secondSeries);
@@ -257,7 +257,7 @@
     var value = (this.value/1000000000).toFixed(0);
     if (value > 999)
       value = ("" + value/1000).replace(".", " ");
-    return this.x + " Year \n" + "Debt - $" + value + " bil." ;
+    return this.x + " Year\nDebt - $" + value + " bil." ;
   });
   
   chart.container("container");

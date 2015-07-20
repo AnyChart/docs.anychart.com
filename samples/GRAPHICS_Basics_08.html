@@ -12,7 +12,7 @@
     
     // data
     var data = anychart.data.set([
-        ["USA", 10, 8.5], //7-10 days off, depends on the state
+        ["USA", 10, 8.5], // 7-10 days off, depends on the state
         ["Japan", 15, 18],
         ["China", 7, 26,
             {
@@ -48,14 +48,14 @@
     chart.yAxis().title().text("Days");
     chart.yScale().maximum(35);
     
-    //enable the legend
+    // enable the legend
     chart.legend(true);
 
     // set series data
     var series;
     series = chart.bar(official_holidays);
     
-    //set the series name which is displayed as 
+    // set the series name which is displayed as 
     series.name("Official holidays");
 
     // adjust series position
@@ -72,9 +72,9 @@
     // draw
     chart.container(stage).draw();
     
-	//a function that enables custom marker resizing
+	// a function that enables custom marker resizing
     function customMarkerDrawer(path, x, y, size) {
-        //create a custom marker
+        // create a custom marker
         path.moveTo(x, y)
                     .lineTo(x + 25, y - 20)
                     .arcTo(50,25,180,325)

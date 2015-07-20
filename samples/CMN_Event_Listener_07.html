@@ -33,7 +33,7 @@
 	// set container and draw chart
 	chart.container("container").draw();
   
-	//add a listener
+	// add a listener
     chart.listen("pointClick", function(e){
         var index = e.iterator.getIndex();
         var row = dataSet.row(index);
@@ -47,7 +47,7 @@
         dataSet.row(index, row);
 	});
   
-    //add a listener
+    // add a listener
     chart.listen("pointDblClick", function(e){
 		var new_value = e.iterator.get("url");
 		window.open(new_value,"_blank");

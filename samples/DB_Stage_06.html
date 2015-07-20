@@ -142,7 +142,7 @@
             chart.minorGrid().enabled(false);
             chart.grid(1).enabled(false);
             chart.minorGrid(1).enabled(false);
-            chart.yScale().minimum("-0.1").maximum("12");
+            chart.yScale().minimum(-0.1).maximum(12);
             chart.yScale().ticks().interval(4);
             chart.yAxis().stroke(lineColor);
             chart.yAxis().ticks().stroke(lineColor);
@@ -222,7 +222,7 @@
         draw_chart(layer_woodpecker, dataSet_woodpecker, [450, 195, 250, 100]);
 		var middle_tree_piece = draw_piece_of_tree(layer_woodpecker, [[175, 165], [280, 340], [70, 340]], "#689f38", 1, 0);
 		var middle_tree_shadow = draw_piece_shadow(layer_woodpecker, [[175, 165], [280, 390], [70, 390]], "#212121", -1, 0);
-	//	on_hover(middle_tree_piece, middle_tree_shadow);
+	// 	on_hover(middle_tree_piece, middle_tree_shadow);
 		
         layer_woodpecker.zIndex(8);
 
@@ -246,7 +246,7 @@
         draw_chart(layer_squirrel, dataSet_squirrel, [450, 310, 250, 100]);
 		var bottom_tree_piece = draw_piece_of_tree(layer_squirrel, [[175, 240], [310, 440], [40, 440]], "#558b2f", 1, 0);
 		var bottom_tree_shadow = draw_piece_shadow(layer_squirrel, [[175, 240], [310, 490], [40, 490]], "#212121", -1, 0);
-	//	on_hover(bottom_tree_piece, bottom_tree_shadow);
+	// 	on_hover(bottom_tree_piece, bottom_tree_shadow);
 		
         layer_squirrel.zIndex(6);
 
@@ -291,8 +291,8 @@
         var mouse_pic = draw_picture(layer_mouse, 400, [590, 40], lineColor, "mouse.jpg");
         draw_line(layer_mouse, [[210, 500], [300, 500], [370, 570]], lineColor, -1);
         draw_chart(layer_mouse, dataSet_mouse, [450, 540, 250, 100]);
-		//draw_piece_of_tree(layer_mouse, [[130, 515], [115, 520], [100, 505], [110, 110], [90, 515], [105, 530]], "#33691e", 1, 0);
-		//draw_piece_of_tree(layer_mouse, [[230, 515], [245, 500], [240, 520], [260, 505], [250, 525], [270, 515], [255, 530]], "#33691e", 1, 0);
+		// draw_piece_of_tree(layer_mouse, [[130, 515], [115, 520], [100, 505], [110, 110], [90, 515], [105, 530]], "#33691e", 1, 0);
+		// draw_piece_of_tree(layer_mouse, [[230, 515], [245, 500], [240, 520], [260, 505], [250, 525], [270, 515], [255, 530]], "#33691e", 1, 0);
         layer_mouse.zIndex(2);
     });</script>
 </head>

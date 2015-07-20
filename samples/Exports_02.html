@@ -23,7 +23,7 @@
       data[index].fill = palette[index];
   }
 
-  //set chart type
+  // set chart type
   var chart = anychart.barChart();
 
   // set data
@@ -35,7 +35,7 @@
   // disable background
   chart.background().enabled(false);
 
-  //set chart title
+  // set chart title
   chart.title().text("The kind of pancakes preferred at the Sochi 2014 Olympic Games").hAlign("center");
 
   // set chart container
@@ -58,8 +58,8 @@
   printButton.className = "custombutton";
   printFullButton.className = "custombutton";
 
-  printButton.innerHTML = "print Chart \n fit width";
-  printFullButton.innerHTML = "print Chart \n full page";
+  printButton.innerHTML = "print Chart\nfit width";
+  printFullButton.innerHTML = "print Chart\nfull page";
 
   printButton.onclick = function() {
       chart.container().height(chart.container().height()/(595/chart.container().width())).width(595);

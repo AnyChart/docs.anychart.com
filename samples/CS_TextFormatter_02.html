@@ -32,18 +32,18 @@
     series_1 = chart.bubble(seriesData_2).maximumSize(25).minimumSize(1);
     series_2 = chart.bubble(seriesData_1).maximumSize(25).minimumSize(1);
     
-	//enabling the labels
+	// enabling the labels
     series_1.labels(true);
     series_2.labels(true);
 	
-    //set the textFormatter
+    // set the textFormatter
     series_1.labels().textFormatter(function(){
     return("Size: "+this.size+", value: "+this.value);
     });
     series_2.labels().textFormatter(function(){
     return("Size: "+this.size+", value: "+this.value);
 });
-	//positioning the labels
+	// positioning the labels
     series_1.labels().anchor("bottom");
     series_2.labels().anchor("top");
     series_1.labels().position("top");

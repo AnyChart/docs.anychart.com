@@ -10,12 +10,12 @@
     // set stage
     stage = anychart.graphics.create("container");
 
-    //draw the circle
+    // draw the circle
     stage.circle(200, 250, 100)
                 .stroke("2 navy")
                 .zIndex(2);
 	
-	//draw the triangle
+	// draw the triangle
     stage.path().moveTo(25, 350)
                 .lineTo(200, 50)
                 .lineTo(375, 350)
@@ -23,13 +23,13 @@
                 .zIndex(1)
                 .close();
                 
-    //draw the wand in the middle
+    // draw the wand in the middle
     stage.path().moveTo(200,50)
                 .lineTo(200,350)
                 .zIndex(3)
                 .stroke("2 navy");
                 
-    //create the text element
+    // create the text element
     var textElement = stage.text();
     textElement.x(30);
     textElement.y(375);

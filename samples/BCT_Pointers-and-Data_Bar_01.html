@@ -7,44 +7,44 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
     
-		//create data set on our data
+		// create data set on our data
     dataSet = anychart.data.set([60]);
     
-		//set the gauge type
+		// set the gauge type
     gauge = anychart.circularGauge();
 
-		//gauge settings
+		// gauge settings
     gauge.data(dataSet);
     gauge.padding("10%");
     gauge.startAngle(0);
     gauge.sweepAngle(360);
    
-		//axis settings
+		// axis settings
     var axis = gauge.axis()
         .radius(95)
         .width(1);
 
-		//scale settings
+		// scale settings
     axis.scale()
         .minimum(0)
         .maximum(360)
         .ticks({interval: 20})
         .minorTicks({interval: 1});
 
-		//ticks settings
+		// ticks settings
     axis.ticks()
         .type("trapezoid")
         .length("8");
 
-		//minor ticks settings
+		// minor ticks settings
     axis.minorTicks()
         .enabled(true)
         .length("1");
     
-		//bar
+		// bar
     gauge.bar(0).enabled(true);
         
-		//draw the chart
+		// draw the chart
     gauge.container("container").draw();
 });</script>
 </head>

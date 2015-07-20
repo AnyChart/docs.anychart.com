@@ -12,13 +12,13 @@
     
     stage.scale(0.7, 0.7, 0, 0);
     // set layers of stage
-    var layer_cube = stage.layer(); //layer for the cube
-    var layer_cylinder = stage.layer(); //layer for the cylinder
-    var layer_prism = stage.layer(); //layer for the hexagonal prism
-    var layer_main_shadow = stage.layer(); //layer for the big shadow under the figures 
+    var layer_cube = stage.layer(); // layer for the cube
+    var layer_cylinder = stage.layer(); // layer for the cylinder
+    var layer_prism = stage.layer(); // layer for the hexagonal prism
+    var layer_main_shadow = stage.layer(); // layer for the big shadow under the figures 
     var layer_5 = stage.layer();
 
-    //creating the cube
+    // creating the cube
                 
     var rect = anychart.math.rect(50, 250, 100, 200); 
     var fill = {keys:["#666","#888", "#ccc"], angle:135, mode:rect}; 
@@ -51,7 +51,7 @@
                 
     layer_cube.zIndex(1);
     
-    //the shadow on a separate layer
+    // the shadow on a separate layer
     var cube_shadow_prism = layer_5.path().moveTo(231, 365)
                 .lineTo(360, 315)
                 .lineTo(390, 325)
@@ -78,7 +78,7 @@
     layer_5.zIndex(5);
     
     
-    //creating the cylinder
+    // creating the cylinder
     var ellipse_top = layer_cylinder.ellipse(50,50,150,30)
                 .fill(["#f0f0f0", "#f0f0f0", "#aaa"],-30)
                 .zIndex(3);
@@ -118,16 +118,16 @@
                 .stroke(null)
                 .close();
     
-    //moving the cylinder
+    // moving the cylinder
     layer_cylinder.translate(650,50);
     
-    //scaling the cylinder
+    // scaling the cylinder
     layer_cylinder.scale(0.3, 0.6, 0, 0);
     
     layer_cylinder.zIndex(3);
     
     
-    //creating the prism
+    // creating the prism
     
     var prism_hex_edge = layer_prism.path().moveTo(200,400)
                 .lineTo(215,460)
@@ -166,7 +166,7 @@
     layer_prism.zIndex(1);            
     
                 
-    //creating the big shadow under everything
+    // creating the big shadow under everything
     layer_main_shadow.path().moveTo(50,400)
                 .lineTo(445,415)
                 .lineTo(850,550)

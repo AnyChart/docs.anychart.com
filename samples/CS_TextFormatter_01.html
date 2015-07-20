@@ -34,11 +34,11 @@
     var series_1 = chart.bar(SalesWinter);
 	var series_2 = chart.bar(SalesSummer);
     
-    //set series name
+    // set series name
     series_1.name("Winter");
     series_2.name("Summer");
     
-    //set textFormatter
+    // set textFormatter
     series_1.labels().enabled(true);
     series_1.labels().textFormatter(function(){
         return(this.seriesName);
@@ -48,7 +48,7 @@
         return(this.seriesName);
     });	
     
-    //set the labels position
+    // set the labels position
     series_1.labels().position("right");
     series_1.labels().anchor("left");
     series_2.labels().position("right");

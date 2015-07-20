@@ -44,7 +44,7 @@
   // first index for new point
   var indexSetter = 21;
   
-  //create a function what to listen and then unlisten
+  // create a function what to listen and then unlisten
   var func_listen = function(){
       dataSet.append({
           // x value
@@ -57,11 +57,11 @@
         dataSet.remove(0);
   };
   
-  //add a listener
+  // add a listener
   var listener = chart.listen("mouseMove", func_listen);
   
     chart.listenOnce("click",function(){
-  //adding an unlistener 
+  // adding an unlistener 
     chart.unlisten("mouseMove", func_listen);
     });
   

@@ -36,11 +36,11 @@
     ]).xPointPosition(0.5)
     .meta("company", "Duff B. Corp.");
     
-    //enable the labels
+    // enable the labels
     series_1.labels(true);
     series_2.labels(true);
      
-    //textFormatter
+    // textFormatter
     series_1.labels().textFormatter(function(){
         return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
     });
@@ -48,7 +48,7 @@
         return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
     });
     
-    //labels positioning
+    // labels positioning
     series_1.labels().position("bottom");
     series_1.labels().anchor("top");
     series_1.labels().offsetY("5");
