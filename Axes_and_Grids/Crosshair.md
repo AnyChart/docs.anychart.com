@@ -2,7 +2,13 @@
 # Crosshair
 
 * [Overview](#overview)
-* [How to use](#how_to_use)
+* [Enable](#enable)
+* [Binding to axes](#binding_to_axes)
+* [Appearance](#appearance)
+   * [Lines](#lines)
+* [Labels](#labels)
+   * [Disable](#disable)
+   * [Change text](#change_text)
 
 ## Overview
 Crosshair is a pair of perpendicular lines (horizontal and vertical), moving with the mouse. It might be useful, when you need to get the particular data of an action, while the axes contain any other information, such as years/months or any kind of percentage.
@@ -14,19 +20,22 @@ Crosshair listens to the next events:<br>
  - mouseMove<br>
  - mouseOver<br>
  - mouseOut<br>
- In case mouse is inside the DataPlot box, Crosshair appears.
- <br>
- Note that Crosshairs can have only one label each axis (one label on x-axis and another on y-axis).
- <br>
- Crosshairs can be used on all Cartesians (Area, Line, Bar, Column, etc.) and [Scatter Charts](../../Basic_Chart_Types/Scatter_Chart).
+In case mouse is inside the DataPlot box, Crosshair appears.
+<br>
+Note that Crosshairs can have only one label each axis (one label on x-axis and another on y-axis).
+<br>
+Crosshairs can be used on all Cartesians (Area, Line, Bar, Column, etc.) and [Scatter Charts](../../Basic_Chart_Types/Scatter_Chart).
  
- ## How to use            
+## Enable           
  
 If you want to switch the Crosshair on, set the **.crosshair()** as true:
 ```
 	// turn the crosshair on
 	chart.crosshair(true);
 ```
+{sample}AGST\_Crosshair\_01{sample}
+
+## Binding to axes
 
 In case you've got several axes on the same scale, you should tie the crosshair to one of them. Unless you do it, the default axis will be chosen (with the "0" index). Use {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex()**{api} method for this.
 
@@ -37,7 +46,11 @@ In case you've got several axes on the same scale, you should tie the crosshair 
 ```
 Look at the sample downwards. Here we've got three axes and the crosshair in on.
 
-{sample}AGST\_Crosshair\_01{sample}
+{sample}AGST\_Crosshair\_02{sample}
+
+## Appearance
+
+### Lines
 
 In some situations you may not need one or both lines but highlighted labels are still necessary. Write **.xStroke(null)** to remove the x-axis line (or **.yStroke(null)** to remove the y-axis):
 
@@ -45,7 +58,21 @@ In some situations you may not need one or both lines but highlighted labels are
   // remove the x-axis line
   chart.crosshair().xStroke(null); 
 ```
-{sample}AGST\_Crosshair\_02{sample}
+{sample}AGST\_Crosshair\_03{sample}
+
+## Labels
+
+### Disable
+
+Use the standard function to disable the axes labels.
+
+```
+  // disable the x-axis labels
+  chart.xAxis().labels(false);
+```
+{sample}AGST\_Crosshair\_04{sample}
+
+### Change text
 
 The crosshair label's format is the same as axis label's format by default. You may use the {api}**.textFormatter()**{api} to change the crosshair's labels' performance. 
 
@@ -55,4 +82,4 @@ The crosshair label's format is the same as axis label's format by default. You 
     return '$' + this.value;
   });
 ```
-{sample}AGST\_Crosshair\_03{sample}
+{sample}AGST\_Crosshair\_05{sample}

@@ -36,13 +36,25 @@ anychart.onDocumentReady(function() {
   chart.crosshair(true);
   // the same as above
   // chart.crosshair().enabled(true);
+  
+  // adding and adjusting extra Y scale
+    var extraYScale = anychart.scales.linear();
+    extraYScale.minimum(0);
+    extraYScale.maximum(100);
+    extraYScale.ticks().interval(10);
+
+    // adding and adjusting extra X axis
+    var extraYAxis = chart.yAxis(1);
+    extraYAxis.orientation('right').staggerMode(false).scale(extraYScale);
+    extraYAxis.labels().textFormatter(function(){
+        return (this.value+'%');
+    });
+
+  chart.yAxis(1).orientation('right');
 	
   // set the indexes of the axes used
   chart.crosshair().yLabel().axisIndex(0);
   chart.crosshair().xLabel().axisIndex(0);
-  
-  // remove the x-axis line
-  chart.crosshair().xStroke(null); 
   
   // turn on chart animation
   chart.animation(true);
