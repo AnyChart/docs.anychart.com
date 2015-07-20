@@ -22,23 +22,23 @@ Now let's walk through the process of creating a custom map using AnyChart sourc
 Let's take the world map as a source and select Africa for demonstration. 
 Select the "Add Vector Layer" in the "Layer" menu.
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_01.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_01.jpg">
 <br> 
 Define the path to the catalogue with the files of the map.
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_02.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_02.jpg">
 <br>
 That's how the world map will look like when imported:
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_03.jpg">
+<img width = "700"src = "http://static.anychart.com/images/creating\_maps\_03.jpg">
 <br>
 3. So, as we have imported the map, we need to select the territory we will be working with and extract it from the whole map. For that we need a selection tool (of box type by default, to change the type click on the arrow to the right from the tool). Here we have used a Freehand Selection Tool.
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_04.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_04.jpg">
 <br>
 We need to get rid of the rest now - for that go the menu, click on the "Layer" button and choose to "Save As...".
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_05.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_05.jpg">
 <br>
 Don't forget to match the box with "Save only selected features" - unless you do it, you'll get the file with the whole map.
 <br>
@@ -114,7 +114,7 @@ As you can see, this area doesn't cover both shapes, only the common territories
 
 7. For more advanced edits use the Toolbox Panel (View->Panels->Toolbox).
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_08.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_08.jpg">
 
 
 
