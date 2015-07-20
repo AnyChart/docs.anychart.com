@@ -31,7 +31,7 @@ anychart.onDocumentReady(function() {
   var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
 
   // create line chart
-  chart = anychart.line();
+  chart = anychart.column();
   
   chart.crosshair(true);
   // the same as above
@@ -51,10 +51,10 @@ anychart.onDocumentReady(function() {
   chart.container('container');
 
   // set chart title text settings
-  chart.title('Line Chart with a crosshair');
+  chart.title('Column Chart with a crosshair');
 
   // create first series with mapped data
-  chart.line(seriesData_1);
+  chart.column(seriesData_1);
 
   // initiate chart drawing
   chart.draw();
