@@ -2,12 +2,13 @@
 
 * [Overview](#overview)
 * [Chart](#chart)
- * [Single Series](#single-series)
+ * [Single Series](#single_series)
  * [Multi-series](#multi-series)
 * [Axes](#axes)
  * [Orientation](#orientation)
  * [Inversion](#inversion)
  * [Minimum and Maximum](#minimum_and_maximum)
+ * [Scale Type](#scale_type)
 * [Padding](#padding)
 * [Visualization](#visualization)
  * [Basic Sample](#basic_sample)
@@ -20,16 +21,18 @@
 ## Overview
 
 Sometimes it's not the best idea to describe a set of values as a single summarized measure such as a sum or average. It may be necessary to describe the values as they spread across the entire range. For example, if we want to analyze salaries in a company, we will need more information than the sum of salaries for each salary grade. Even a measure of average salary wouldn't tell us enough.
- 
+  
+  
 Box Charts allow showing the minimum and the maximum with a median (a numerical value separating the higher half of a data sample, a population, or a probability distribution, from the lower half) and quartiles, which helps making the story more complete. But still, giving only the highest, the lowest and the medium values doesn't tell the full story. So it is often useful to display the data in a way that reveals more about values' distribution.
-
+  
+  
 Here it is where BoxCharts are really useful.
 
 ## Chart
 
 Depending on data model and the visualization purpose the box chart may contain one or several series.
 
-### Single-Series 
+### Single Series 
 
 Let's see single series area chart created using the following data: salaries of ACME Corp. by ranges in February 2015:
 
@@ -85,6 +88,7 @@ Let's see single series area chart created using the following data: salaries of
 </tbody></table>
 Now we need to convert this data table into the format that can be used by AnyChart. See more about formats in [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) article.
   
+  
 In terms of AnyChart data model we have one series of data (Salaries) with categories that hold range numbers. Each box in series represents the salaries' dispersion of the staff of a range in February. We will use the easiest basic method of data setting, it looks like this:
 
 ```
@@ -104,15 +108,14 @@ In terms of AnyChart data model we have one series of data (Salaries) with categ
 ```
 
 As you can see, we've created a Data Set. Every object is a box, each has some parameters. The first column is as 
-category and others represent boxes' paramaters.
+category and others represent boxes' parameters.
   
   
-Here it is: AnyChart can now visualize your data. Look at the chart sample below and click on "Launch in playground" 
-to see the full source code, alter and play with the sample or download it.
+Here it is: AnyChart can now visualize your data. Look at the chart sample below and click on "Launch in playground" to see the full source code, alter and play with the sample or download it.
 
 {sample}BCT\_BoxChart\_01{sample}
 
-### Multi-series 
+### Multi-series
 
 To compare two or more data sets you have to use multi-series area charts as it is shown in the sample below.
   
@@ -238,7 +241,6 @@ As we did in single series area sample above we need to convert this table AnyCh
     {x: "5", low: 8100, q1: 8400, median: 8500, q3: 9000, high: 9500, outliers:[9700,7600,4500]},
   ];
 
-
   //create box chart series with our data
   chart.box(data_1);
   chart.box(data_2);
@@ -261,8 +263,10 @@ With AnyChart you can place axes to any side of the chart, all you need to do is
 Position depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) Templates.
 
 ```
-  chart.xAxis().orientation("right");
-  chart.yAxis().orientation("top');
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
 ```
 
 And here is the demonstration of this feature on the Single-series sample:
@@ -275,17 +279,20 @@ AnyChart allows scale inversion. Just add the {api:anychart.scales.Base#inverted
  
 ```
   // adjust y scale
-  chart.yScale().inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 ```
 
 Only one line changes the view a lot:
 
 {sample}BCT\_BoxChart\_04{sample}
 
-###Minimum and maximum
+###Minimum and Maximum
 
-In case your data values start far much more than from the beginning of the scale or end far from the point you really need to show and analyse, you may have no desire to keep any empty space in the chart. Then use this ability of AnyChart to set the minimum and the maximum values shown on the axis.
- You can control these values by setting {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjust the scale, set {api:anychart.scales.ScatterTicks#interval}**.ticks().interval()**{api} as well, in case the default interval is twisted:
+In case your data values start far from the beginning of the scale or end far from the point you really need to show and analyse, you may have no desire to keep any empty space in the chart. Then use this ability of AnyChart to set the minimum and the maximum values shown on the axis.
+  
+  
+You can control these values by setting {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjust the scale, set {api:anychart.scales.ScatterTicks#interval}**.ticks().interval()**{api} as well, in case the default interval is twisted:
 
 ```
   var yScale = chart.yScale();
@@ -299,15 +306,16 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 {sample}BCT\_BoxChart\_05{sample}  
 
-###Scale type
+###Scale Type
 
-There are four types of scales in AnyChart: "Linear", "Logarithmic", "Ordinal" and "DateTime". To set scale type use appropriate constructor:
+There are four types of scales in AnyChart: {api:anychart.scales#linear}"Linear"{api}, {api:anychart.scales#log}"Logarithmic"{api}, {api:anychart.scales#ordinal}"Ordinal"{api} and {api:anychart.scales#dateTime}"DateTime"{api}. To set scale type use appropriate constructor:
 
 ```
   chart.xScale(anychart.scales.linear());
   var newScale = anychart.scales.ordinal();
   chart.yScale(newScale);
 ```
+
 Linear scale is set be default, other scale types can be set using the code above. For example, if you prefer your vertical scale logarithmic, paste the following:
 
 ```
@@ -363,6 +371,7 @@ Now, let's look how to apply a simple style to the chart. As we've already said,
   series.whiskerWidth(0);
   series.hoverWhiskerWidth(0);
 ```
+
 Using such settings we've created a style that colors boxes in light Сeladon color, makes the border invisible, colors the median in black and changes the color and the font of the axes. Two last lines makes whiskers invisible. 
 Now let's apply these setting to the sample.
 
@@ -373,7 +382,6 @@ Now let's apply these setting to the sample.
 In this section we will explain how to add and configure data labels and tooltips.
 If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.polar.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. Adding attributes with values to these methods will change visual appearance, position and format of these elements.
 With the following example let's make data labels appear to the top from the boxes, format them to show only the number of the range and force tooltips to show detailed description.
-
 
 ```
   // adjust labels position
@@ -446,10 +454,10 @@ Besides colorizing the whole series, we may define special color to the only box
 
 {sample}BCT\_BoxChart\_11{sample}
 
-Important Note:
+**Important Note**:
 AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors. For example, instead of "RGB(240,248,255)" you can set "AliceBlue" or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
 
-* Different ways of [setting colors](../Appearance_Settings/Color_Management) of elements
+* Different ways of [setting colors](../Appearance_Settings/Color_Management) of elements.
 
 ##Hatch Fills
 
