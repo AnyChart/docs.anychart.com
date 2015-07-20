@@ -41,6 +41,14 @@ anychart.onDocumentReady(function() {
   chart.crosshair().yLabel().axisIndex(0);
   chart.crosshair().xLabel().axisIndex(0);
   
+  // set the label performance
+  chart.crosshair().yLabel().textFormatter(function() {
+    return '$' + this.value;
+  });
+  
+  // remove the x-axis line
+  chart.crosshair().xStroke(null); 
+  
   // turn on chart animation
   chart.animation(true);
 
