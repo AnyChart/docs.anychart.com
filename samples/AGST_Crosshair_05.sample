@@ -278,7 +278,7 @@ anychart.onDocumentReady(function() {
   
   marker.tooltip().content().hAlign('start');
   marker.tooltip().contentFormatter(function() {
-    return 'Waiting time: ' + this['value'] + ' min.\nDuration: ' + this['x'] + ' min.';
+    return 'Cost: $' + this['value'] + '\nDuration: ' + this['x'] + ' min.';
   });
   chart.container('container').draw();
 });
