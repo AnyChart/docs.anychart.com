@@ -42,52 +42,52 @@ We need to get rid of the rest now - for that go the menu, click on the "Layer" 
 <br>
 Don't forget to match the box with "Save only selected features" - unless you do it, you'll get the file with the whole map.
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_06.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_06.jpg">
 <br>
 4. Now, we're ready for working further. You may start a new project (click on "Project" -> New -> Import) or simply go on working with the existing one. The result of importing the new created file or saving a selection will look tike that:
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_07.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_07.jpg">
 <br>
 In case of us going on working with the project we already have, we may delete the lowest layer or uncheck it to make it invisible, as we won't need it anymore.
 <br>
 While this looks nice, we want our map to have a different look. The simplest thing we can do is to change the color of the map. Click twice on the name of the layer to open the layer settings. Changing color is rather simple. Look through the pics below.
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_09.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_09.jpg">
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_10.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_10.jpg">
 <br>
 5. Now, let's add a new layer and draw a polygone on it. We need a drawing tool for that - "New Shapefile Layer...". Look at the picture below.
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_11.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_11.jpg">
 <br>
 It's very important not to forget about two moments here:
 <br> 1) check the "Polygone" - in different case you will not be able to make a closed shape;
 <br> 2) choose the right CRS-file - it might be automatically chosen in default or other CRS-file which doesn't match the one those files you have uploaded are using.
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_12.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_12.jpg">
 <br>
 Then we should give the name to our new shape file.
 <br> To make any changes in the file, we use "Toggle Editing" tool:
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_13.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_13.jpg">
 <br>
 When this button is clicked, some other tools become available. We will need an "Add Feature" tool to draw a new polygone.
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_14.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_14.jpg">
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_15.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_15.jpg">
 <br>
 Draw a polygone by clicking in those places where you want its vertexes to be, and right-click to finish. Then define the id for the new-made polygone.
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_16.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_16.jpg">
 <br>
 If you want to move a shape, use the "Move Feature" tool (next to "Add Feature"). To save the shape that you've just made click on the "Toggle Editing" button again.
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_17.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_17.jpg">
 <br>
 You may change the layers order, for that just drag the layer in the list of layers and put it where you want it to be (e.g., like it's done in Adobe Photoshop).
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_18.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_18.jpg">
 <br>
 6. Now let's cling the layers together. Go to the Vector->C.. Tools->Clip. This feature clips an existing shape file to everything outside its bounds.
 Unfortunately, you can't do that with more than one shape file at once.
@@ -95,17 +95,17 @@ Unfortunately, you can't do that with more than one shape file at once.
 An "Input Vector layer" is the "base" layer that you want the created one to clip to, and the "Clip layer" is always the one that we've created. Then you'll have to name your new shapefile.
 <br> Don't forget to uncheck boxes "Use only selected features" if you want to clip the whole layers without selecting them, or the new layer will be empty.
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_19.jpg">
-<br>
-<img src = "http://static.anychart.com/images/creating\_maps\_20.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_19.jpg">
+<br><br>
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_20.jpg">
 <br>
 Here we've done a new shapefile that is named New_Africa and contains the shape we've created.
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_21.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_21.jpg">
 <br>
 Let's turn off those layers except the newest one (New_Africa). That's what we've got after clipping the layers.
 <br>
-<img src = "http://static.anychart.com/images/creating\_maps\_22.jpg">
+<img width = "700" src = "http://static.anychart.com/images/creating\_maps\_22.jpg">
 <br>
 As you can see, this area doesn't cover both shapes, only the common territories. To make the region that will contain both African territory and the shape that was created we should repeat the previous operation, using the new layer.
 
