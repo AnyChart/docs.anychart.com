@@ -18,18 +18,23 @@
   var chart = anychart.funnel(data);
   
   chart.connectorStroke(
-    "2 #444", // set 2px thickness and #444 color
-    1,        // set lines opacity
-    "4 2"     // dashes and gaps settings
+    // set 2px thickness and #444 color
+    "2 #444",
+    // set lines opacity
+    1,
+    // dashes and gaps settings
+    "4 2"
   );
   
   // set fixed width for the funnel
-  chart.baseWidth(300).neckWidth(75);
+  chart.baseWidth(300);
+  chart.neckWidth(75);
   
-  chart.title().text("Tuned Labels Connectors");
+  chart.title("Tuned Labels Connectors");
   
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

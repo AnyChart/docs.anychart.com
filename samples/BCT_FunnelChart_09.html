@@ -12,15 +12,23 @@
     {
       name: "Science Fiction",
       value: 721630,
-      marker:{              // marker settings
-        enabled: true,      // enable marker
-        type:"star5",       // marker type
-        fill:"gold",        // marker inner color
-        size: 12,           // marker size
-        position: "center", // marker position
-        anchor: "center"},  // marker anchor
+      // marker settings
+      marker:{
+        // enable marker
+        enabled: true,
+        // marker type
+        type:"star5",
+        // marker inner color
+        fill:"gold",
+        // marker size
+        size: 12,
+        // marker position
+        position: "center",
+        // marker anchor
+        anchor: "center"},
       hoverMarker: {
-        size: 15            // marker size if mouse is over
+        // marker size if mouse is over
+        size: 15
       }
     },
     {name: "Detective", value: 148662},
@@ -28,13 +36,15 @@
     {name: "Textbooks", value: 90000}
   ]);
   
-  chart.title().text("Marker Settings");
+  chart.title("Marker Settings");
   
   // set fixed width for the funnel
-  chart.baseWidth(300).neckWidth(75);
+  chart.baseWidth(300);
+  chart.neckWidth(75);
   
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

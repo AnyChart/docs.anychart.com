@@ -17,20 +17,25 @@
   
   var chart = anychart.funnel(data);
   
-  chart.labels()
-    .position("outsideRight")   // place labels to the right
-    .hAlign("center")           // manage horizontal align
-    .textFormatter(function(){
-      return this.name+"\n"+this.value;
-    });
-  
-  chart.connectorLength(45);    // set 45px connectors length
+  var labels = chart.labels();
+  // place labels to the right
+  labels.position("outsideRight");
+  // manage horizontal align
+  labels.hAlign("center");
+  labels.textFormatter(function(){
+    return this.name+"\n"+this.value;
+  });
+
+  // set 45px connectors length
+  chart.connectorLength(45);
   
   // set fixed width for the funnel
-  chart.baseWidth(300).neckWidth(75);
+  chart.baseWidth(300);
+  chart.neckWidth(75);
   
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
