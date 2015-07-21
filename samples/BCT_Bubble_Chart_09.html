@@ -27,10 +27,6 @@
   // set series data
   var series1 = chart.bubble(seriesData_1);
 
-  // set minimum and maximum bubble size
-  series1.minimumSize(10);
-  series1.maximumSize(30);
-
   // set and adjust labels
   var labels1 = series1.labels();
   labels1.enabled(true);
@@ -57,8 +53,8 @@
   var series2 = chart.bubble(seriesData_2);
 
   // set minimum and maximum bubble size
-  series2.minimumSize(10);
-  series2.maximumSize(30);
+  chart.minBubbleSize(10);
+  chart.maxBubbleSize(30);
 
   // set and adjust labels
   var labels2 = series2.labels();

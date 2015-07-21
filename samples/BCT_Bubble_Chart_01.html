@@ -14,13 +14,13 @@
   chart.title("Bubble chart");
 
   // define chart type
-  var series = chart.bubble([
+  chart.bubble([
     [1, 637, 6], 
     [2, 472, 14], 
     [3, 48, 10]
   ]);
-  series.minimumSize(10);
-  series.maximumSize(40);
+  charts.minBubbleSize(10);
+  charts.maxBubbleSize(40);
 
   // adjust axes titles
   var xAxis = chart.xAxis();

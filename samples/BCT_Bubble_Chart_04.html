@@ -21,15 +21,16 @@
   var yAxis = chart.yAxis();
   yAxis.title("Sales");
 
-  var series = chart.bubble([
+  chart.bubble([
     [1, 637, 6],
     [2, 72, 14],
     [3, 48, 20],
     [4, 348, 18],
     [5, 100, 10]
   ]);
-  series.minimumSize(15);
-  series.maximumSize(60);
+
+  chart.minBubbleSize(15);
+  chart.maxBubbleSize(60);
   
   var xScale = chart.xScale();
   xScale.minimum(0);

@@ -28,9 +28,10 @@
   ]);
 
   // set data
-  var series = chart.bubble(data);
-  series.minimumSize(10);
-  series.maximumSize(30);
+  chart.bubble(data);
+  
+  chart.minBubbleSize(10);
+  chart.maxBubbleSize(30);
   
   var xScale = chart.xScale();
   xScale.minimum(0);

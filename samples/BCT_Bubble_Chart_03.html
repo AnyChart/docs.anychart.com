@@ -14,15 +14,16 @@
   chart.title("Bubble Series");
 
   // set data
-  var series = chart.bubble([
+  chart.bubble([
     [1, 637, 6],
     [2, 472, 14],
     [3, 48, 20],
     [4, 348, 18],
     [5, 100, 10]
   ]);
-  series.minimumSize("10%");
-  series.maximumSize("75%");
+
+  chart.minBubbleSize("10%");
+  chart.maxBubbleSize("75%");
 
   // adjust axes settings
   var yAxis = chart.yAxis();

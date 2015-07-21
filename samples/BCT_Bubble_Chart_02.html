@@ -25,12 +25,11 @@
   chart.title("Multi-series Bubble Chart");
 
   // set series data
-  var series1 = chart.bubble(seriesData_1);
-  series1.maximumSize(45);
-  series1.minimumSize(10);
-  var series2 = chart.bubble(seriesData_2);
-  series2.maximumSize(45);
-  series2.minimumSize(10);
+  chart.bubble(seriesData_1);
+  chart.bubble(seriesData_2);
+
+  chart.maxBubbleSize(45);
+  chart.minBubbleSize(10);
 
   // adjust axes settings
   var yAxis = chart.yAxis();

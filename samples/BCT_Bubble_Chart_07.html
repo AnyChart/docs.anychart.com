@@ -25,13 +25,14 @@
   yTicks.interval(100);
   
   // set data
-  var series = chart.bubble([
+  chart.bubble([
     [1, 637, 6],
     [2, 472, 14],
     [3, 48, 10]
   ]);
-  series.minimumSize(10);
-  series.maximumSize(30);
+
+  chart.minBubbleSize(10);
+  chart.maxBubbleSize(30);
   
   // adjust axes settings
   var yAxis = chart.yAxis();
