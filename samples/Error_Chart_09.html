@@ -6,22 +6,28 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  chart = anychart.columnChart();
+  
+  var chart = anychart .column();
 
-  // set container id for the chart
-  chart.container("container");
+  chart.title("Studies Of Snake Venom");
+  chart.barGroupsPadding(3);
+
+  var yAxis = chart.yAxis();
+  yAxis.title("Lethal Dose 50 (mg/mouse)");
+  var yScale = chart.yScale();
+  yScale.minimum(0);
 
   var series = chart.column([
     {x: "Viperia berus", y: 8, valueError: "4.4", valueErrorStroke: "red"},
     {x: "Viperia ammodytes", y: 7.1, valueError: "2.6", valueErrorStroke: "red"},
     {x: "Viperia aspis", y: 13.7, valueError: "4.6", valueErrorStroke: "red"},
     {x: "Viperia latastei", "y": 16.8, valueError: "5.5", valueErrorStroke: "red"}
-  ]).fill("Green .8");
+  ]);
+  series.fill("Green .8");
 
-  chart.yAxis().title("Lethal Dose 50 (mg/mouse)");
-  chart.barGroupsPadding(3);
-  chart.yScale().minimum(0);
-  chart.title("Studies Of Snake Venom");
+  // set container id for the chart
+  chart.container("container");
+
   // initiate chart drawing
   chart.draw();
 });</script>

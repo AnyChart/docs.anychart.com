@@ -6,10 +6,8 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  chart = anychart.scatter();
 
-  // set container id for the chart
-  chart.container("container");
+  var chart = anychart .scatter();
 
   var series = chart.line([
     [100, 300],
@@ -17,19 +15,22 @@
     [120, 490],
     [130, 389],
     [140, 414],
-    [150, 191],
+    [150, 191]
   ]);
-
-
-  series.error({
-            xLowerError: 3,
-            xUpperError: 4,
-            xErrorWidth: "30",
-            valueUpperError: 15,
-            valueLowerError: "5%",
-            valueErrorWidth: "6%",
-        });
+      
+  var error = series.error();
+  error.xLowerError(3);
+  error.xUpperError(4);
+  error.xErrorWidth(30);
+  error.valueUpperError(15);
+  error.valueLowerError("5%");
+  error.valueErrorWidth("6%");
+  
   chart.title("Scatter Line Chart With Modified Error Bars");
+
+  // set container id for the chart
+  chart.container("container");
+
   // initiate chart drawing
   chart.draw();
 });</script>

@@ -6,10 +6,8 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  chart = anychart.scatter();
 
-  // set container id for the chart
-  chart.container("container");
+  var chart = anychart .scatter();
 
   var series = chart.line([
     [10, 140],
@@ -17,14 +15,20 @@
     [30, 154],
     [50, 165],
     [60, 189],
-    [70, 191],
+    [70, 191]
   ]);
 
-
-  series.error().xUpperError(30).xLowerError(25).xError("10%");
+  var error = series.error();
+  error.xUpperError(30);
+  error.xLowerError(25);
+  error.xError("10%");
 
   chart.title("Scatter Chart With Error Bars For The Y value");
-  chart.yScale().minimum(0);
+  var yScale = chart.yScale();
+  yScale.minimum(0);
+
+  // set container id for the chart
+  chart.container("container");
 
   // initiate chart drawing
   chart.draw();
