@@ -16,10 +16,11 @@ Also, it looks similar to an aim in shooting; it's easier to "hit" the necessary
 
 <br>
 
-Crosshair listens to the next events:<br>
+<p>Crosshair listens to the next events:<br>
  - mouseMove<br>
  - mouseOver<br>
- - mouseOut<br>
+ - mouseOut<br></p>
+ 
 In case mouse is inside the DataPlot box, Crosshair appears.
 <br>
 Note that Crosshairs can have only one label each axis (one label on x-axis and another on y-axis).
