@@ -140,7 +140,7 @@ Labels of a funnel are text boxes with additional information for presented data
 
 ### Connectors
 
-THe line that joins a label with a particular funnel point is called connector. You can tune connectors visual appearance using {api:anychart.charts.Funnel#connectorStroke}**.connectorsStroke()**{api} method. 
+The line that joins a label with a particular funnel point is called connector. You can tune connectors visual appearance using {api:anychart.charts.Funnel#connectorStroke}**.connectorStroke()**{api} method. 
 
 ```
   var chart = anychart.funnel(data);
@@ -168,7 +168,7 @@ Position of the labels is controlled by {api:anychart.core.ui.LabelsFactory#posi
 * **outsideLeft** - place labels to the left of the funnel.
 * **outsideRight** - place labels to the right of the funnel.
 
-If you are using **outsideLeft** or **outsideRight** you can adjust length of labels connectors. Use {api:anychart.charts.Funnel#connectorLength}**.connectorsLength()**{api} parameter to set custom length for all labels connectors.
+If you are using **outsideLeft** or **outsideRight** you can adjust length of labels connectors. Use {api:anychart.charts.Funnel#connectorLength}**.connectorLength()**{api} parameter to set custom length for all labels connectors.
 
 ```
   var chart = anychart.funnel(data);
@@ -191,10 +191,11 @@ After adjusting content of the funnel labels some of them moved to prevent overl
 
 ```
   var chart = anychart.funnel(data);
-  chart.overlapMode('allowOverlap')  // allow labels overlapping
+  // allow labels overlapping
+  chart.overlapMode("allowOverlap");
 ```
 
-**Note:** if you want to hide connectors set **null** value for {api:anychart.charts.Funnel#connectorStroke}**.connectorsStroke()**{api} method.
+**Note:** if you want to hide connectors set **null** value for {api:anychart.charts.Funnel#connectorStroke}**.connectorStroke()**{api} method.
 
 {sample}BCT\_FunnelChart\_07{sample}
 
@@ -233,7 +234,8 @@ To make marker visually appealing we set its size to 12 pixels in normal state, 
         // marker position
         position: "center",
         // marker anchor
-        anchor: "center"},
+        anchor: "center"
+      },
       hoverMarker: {
         // marker size if mouse is over
         size: 15
