@@ -19,29 +19,36 @@
   var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
 
   // chart type
-  chart = anychart.scatter();
+  var chart = anychart.scatter();
 
   // set title
-  chart.title().text("Multi-series Bubble Chart");
+  chart.title("Multi-series Bubble Chart");
 
   // set series data
-  chart.bubble(seriesData_2).maximumSize(45).minimumSize(10);
-  chart.bubble(seriesData_1).maximumSize(45).minimumSize(10);
+  var series1 = chart.bubble(seriesData_1);
+  series1.maximumSize(45);
+  series1.minimumSize(10);
+  var series2 = chart.bubble(seriesData_2);
+  series2.maximumSize(45);
+  series2.minimumSize(10);
 
   // adjust axes settings
-  chart.yAxis().title().text("Sales");
-  chart.xAxis()
-    .drawFirstLabel(false)
-    .drawLastLabel(false)
-    .title().text("Products");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
+  var xAxis = chart.xAxis();
+  xAxis.drawFirstLabel(false);
+  xAxis.drawLastLabel(false);
+  xAxis.title("Products");
 
-  chart.xScale()
-    .minimum(0)
-    .maximum(4)
-    .ticks().interval(1);
-  
+  var xScale = chart.xScale();
+  xScale.minimum(0);
+  xScale.maximum(4);
+  var xTicks = chart.xScale().ticks();
+  xTicks.interval(1);
+
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

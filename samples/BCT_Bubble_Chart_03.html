@@ -8,34 +8,39 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  chart = anychart.scatter();
+  var chart = anychart.scatter();
 
   // set title
-  chart.title().text("Bubble Series");
+  chart.title("Bubble Series");
 
   // set data
-  chart.bubble([
+  var series = chart.bubble([
     [1, 637, 6],
     [2, 472, 14],
     [3, 48, 20],
     [4, 348, 18],
     [5, 100, 10]
-  ]).minimumSize("10%").maximumSize("75%");
+  ]);
+  series.minimumSize("10%");
+  series.maximumSize("75%");
 
   // adjust axes settings
-  chart.yAxis().title().text("Sales");
-  chart.xAxis()
-    .drawFirstLabel(false)
-    .drawLastLabel(false)
-    .title().text("Products");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
+  var xAxis = chart.xAxis();
+  xAxis.drawFirstLabel(false);
+  xAxis.drawLastLabel(false);
+  xAxis.title("Products");
 
-  chart.xScale()
-    .minimum(0)
-    .maximum(6)
-    .ticks().interval(1);
+  var xScale = chart.xScale();
+  xScale.minimum(0);
+  xScale.maximum(6);
+  var xTicks = chart.xScale().ticks();
+  xTicks.interval(1);
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

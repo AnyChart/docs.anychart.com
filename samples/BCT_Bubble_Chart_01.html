@@ -8,33 +8,41 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  chart = anychart.scatter();
+  var chart = anychart.scatter();
 
   // set title
-  chart.title().text("Bubble chart");
+  chart.title("Bubble chart");
 
   // define chart type
-  chart.bubble([
+  var series = chart.bubble([
     [1, 637, 6], 
     [2, 472, 14], 
     [3, 48, 10]
-  ]).minimumSize(10).maximumSize(40);
+  ]);
+  series.minimumSize(10);
+  series.maximumSize(40);
 
   // adjust axes titles
-  chart.xAxis()
-    .drawFirstLabel(false)      // hide first label
-    .drawLastLabel(false)       // hide last label
-    .title().text("Products");  // set axis title
-  chart.yAxis().title().text("Units Sold");
+  var xAxis = chart.xAxis();
+  // hide first label
+  xAxis.drawFirstLabel(false);
+  // hide last label
+  xAxis.drawLastLabel(false);
+  // set axis title
+  xAxis.title("Products");
+  var yAxis = chart.yAxis();
+  yAxis.title("Units Sold");
 
   // adjust x scale settings
-  chart.xScale()
-    .minimum(0)
-    .maximum(4)
-    .ticks().interval(1);
+  var xScale = chart.xScale();
+  xScale.minimum(0);
+  xScale.maximum(4);
+  var xTicks = chart.xScale().ticks();
+  xTicks.interval(1);
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

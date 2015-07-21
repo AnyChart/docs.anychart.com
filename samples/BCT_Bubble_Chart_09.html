@@ -22,83 +22,89 @@
   var chart = anychart.scatter();
 
   // set title
-  chart.title().text("Labels and Tooltips");
+  chart.title("Labels and Tooltips");
 
   // set series data
   var series1 = chart.bubble(seriesData_1);
 
   // set minimum and maximum bubble size
-  series1.minimumSize(10).maximumSize(30);
+  series1.minimumSize(10);
+  series1.maximumSize(30);
 
   // set and adjust labels
-  series1.labels()
-    .enabled(true)
-    .anchor("bottom")
-    .position("top")
-    .fontSize(15)
-    .fontWeight("bold")
-    .textFormatter(function(point){
-      return point.value + ".00";
-    });
+  var labels1 = series1.labels();
+  labels1.enabled(true);
+  labels1.anchor("bottom");
+  labels1.position("top");
+  labels1.fontSize(15);
+  labels1.fontWeight("bold");
+  labels1.textFormatter(function(point){
+    return point.value + ".00";
+  });
 
   // set tooltip title
-  series1.tooltip().enabled(true).title().enabled(true).text("Information");
+  var tooltip1 = series1.tooltip();
+  tooltip1.title("Information");
 
   // set and adjust tooltip content
-  series1.tooltip().enabled(true).contentFormatter(function() {
+  tooltip1.contentFormatter(function() {
     return "Sales: Product " + this.x.toString() +
-      "\nUnit: " + this.value + ".00" +
-      "\nYear: 2003" +
-      "\nProfit: " + "$" + this.size + ".00";
+      "\nUnit: " + this.value + ".00\nYear: 2003" +
+      "\nProfit: $" + this.size + ".00";
   });
 
   // set series data
   var series2 = chart.bubble(seriesData_2);
 
   // set minimum and maximum bubble size
-  series2.minimumSize(10).maximumSize(30);
+  series2.minimumSize(10);
+  series2.maximumSize(30);
 
   // set and adjust labels
-  series2.labels()
-    .enabled(true)
-    .anchor("bottom")
-    .position("top")
-    .fontSize(15)
-    .fontWeight("bold")
-    .textFormatter(function(point){
-      return point.value + ".00";
-    });
+  var labels2 = series2.labels();
+  labels2.enabled(true);
+  labels2.anchor("bottom");
+  labels2.position("top");
+  labels2.fontSize(15);
+  labels2.fontWeight("bold");
+  labels2.textFormatter(function(point){
+    return point.value + ".00";
+  });
 
   // set tooltip title
-  series2.tooltip().enabled(true).title().enabled(true).text("Information");
+  var tooltip2 = series2.tooltip();
+  tooltip2.title("Information");
 
   // set and adjust tooltip content
-  series2.tooltip().enabled(true).contentFormatter(function() {
-     return "Sales: Product " + this.x.toString() + 
-       "\nUnit: " + this.value + ".00" + 
-       "\nYear: 2004" + 
-       "\nProfit: $" + this.size + ".00";
+  tooltip2.contentFormatter(function() {
+    return "Sales: Product " + this.x.toString() + 
+      "\nUnit: " + this.value + ".00\nYear: 2004" + 
+      "\nProfit: $" + this.size + ".00";
   });
   
-  chart.xScale()
-    .minimum(0)
-    .maximum(4)
-    .ticks().interval(1);
+  var xScale = chart.xScale();
+  xScale.minimum(0);
+  xScale.maximum(4);
+  var xTicks = chart.xScale().ticks();
+  xTicks.interval(1);
   
   // adjust axes settings
-  chart.xAxis()
-    .drawFirstLabel(false)
-    .drawLastLabel(false)
-    .title().text("Products");
-  chart.yAxis().title().text("Sales");
+  var xAxis = chart.xAxis();
+  xAxis.drawFirstLabel(false);
+  xAxis.drawLastLabel(false);
+  xAxis.title("Products");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
   
   // format x axis labels
-  chart.xAxis().labels().textFormatter(function(){
+  var xLabels = chart.xAxis().labels();
+  xLabels.textFormatter(function(){
     return "Product " + this.value.toString();
   });
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

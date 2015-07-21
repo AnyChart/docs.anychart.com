@@ -36,13 +36,13 @@ Depending on data model and the visualization purpose the bar chart may contain 
 When using Bubble chart on a [scatter plot](./Scatter_Chart):
 
 ```
-    [10, 63, 20]
+  [10, 63, 20]
 ```
 
 When using Bubble chart on a categorized plot:
 
 ```
-    ['December', 6, 17]
+  ["December", 6, 17]
 ```
 
 ### Single-Series
@@ -76,11 +76,13 @@ Now we need to convert this data table into format acceptable by AnyChart. In te
 AnyChart data model, we have one series of data (Sales) with categories that hold Product names. Each point in series represents product, units sold and a profit amount. Converted data looks like:
 
 ```
-    chart.bubble([
-        [1, 637, 6],
-        [2, 472, 14],
-        [3, 48, 10]
-    ]).minimumSize(10).maximumSize(40);
+  var series = chart.bubble([
+      [1, 637, 6],
+      [2, 472, 14],
+      [3, 48, 10]
+  ]);
+  series.minimumSize(10);
+  series.maximumSize(40);
 ```
 
 As you can see, we've categorised chart at {api:anychart.charts.Cartesian#bubble}**bubble()**{api} method, set parameters that defines categories in X-axis into first column, sales amount in Y-axis into second and parameter that defines bubble size (which is the same with the profit amount) into third one.
@@ -136,13 +138,13 @@ Let's compare year 2003 sales to year 2004 product sales:
 As we did in single-series bubble sample above now we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have bigger data and we have to clarify which number means what, so we use the {api:anychart.data.Set#mapAs}**mapAs()**{api} parameter for it.
 
 ```
-    var dataSet = anychart.data.set([
-        [1, 637, 6, 630, 12],
-        [2, 72, 14, 32, 10],
-        [3, 48, 10, 48, 20]
-    ]);
-    var seriesData_1 = dataSet.mapAs({x: [0], value: [1], size:[2]});
-    var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
+  var dataSet = anychart.data.set([
+    [1, 637, 6, 630, 12],
+    [2, 72, 14, 32, 10],
+    [3, 48, 10, 48, 20]
+  ]);
+  var seriesData_1 = dataSet.mapAs({x: [0], value: [1], size:[2]});
+  var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
 ```
 
 {sample}BCT\_Bubble\_Chart\_02{sample}
@@ -152,7 +154,8 @@ As we did in single-series bubble sample above now we need to convert this table
 The min and the max size of bubbles can be controlled using {api:anychart.core.cartesian.series.Bubble#maximumSize}**.maximumSize()**{api} and {api:anychart.core.cartesian.series.Bubble#minimumSize}**.minimumSize()**{api} parameters. Both of them can be set either in pixels or in percents of a lesser chart side:
 
 ```
-    series.maximumSize('75%').minimumSize('10%');
+  series.maximumSize("75%");
+  series.minimumSize("10%");
 ```
 
 When you set {api:anychart.core.scatter.series.Bubble#maximumSize}**.maximumSize('75%')**{api} - AnyChart will make diameters of bubble(s) with a biggest size equal to 75% of width or the height, depends on which side is shorter.
@@ -165,7 +168,8 @@ Here is the sample when bubbles are sized in percents, as specified above:
 And in this sample when bubbles are sized in pixels:
 
 ```
-    series.maximumSize(60).minimumSize(15);
+  series.maximumSize(60);
+  series.minimumSize(15);
 ```
 Note: this size setting type (in pixels) may lead to the nasty results when chart is resized.
 
@@ -186,8 +190,10 @@ With AnyChart you can place axes to any side of the chart, all you need to do is
 Position depends on plot type and inversion of axes, you will find the list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) templates.
 
 ```
-    chart.xAxis(0).orientation('top');
-    chart.yAxis(0).orientation('right');
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
 ```
 
 Here is the demonstration of this feature in the Single-series sample:
@@ -198,7 +204,8 @@ Here is the demonstration of this feature in the Single-series sample:
 AnyChart allows to invert any axis: Y, X or any extra. Inversion is controlled by axis **scale().inverted()**:
 
 ```
-    chart.yScale().inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 ```
 
 {sample}BCT\_Bubble\_Chart\_06{sample}
@@ -208,7 +215,11 @@ AnyChart allows to invert any axis: Y, X or any extra. Inversion is controlled b
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 0, and maximum is 1000. You can control these values by setting **.maximum()** and **.minimum()** parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjusted the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 
 ```
-    chart.yScale().minimum(-100).maximum(1000).ticks().interval(100);
+  var yScale = chart.yScale();
+  yScale.minimum(-100);
+  yScale.maximum(1000);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(100);
 ```
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
@@ -224,11 +235,12 @@ In this section we will describe the main parts of bubble chart visualization an
 Now, let's look how to change the look of an Area. Here is a basic sample:
 
 ```
-    .fill('gold')
-    .hatchFill('diagonalbrick', 'gray')
-    .hoverHatchFill('diagonalbrick', 'darkred')
-    .stroke("Rgb(86,86,26)", 4)
-    .hoverStroke("darkred", 6);
+  var series = chart.bubble(data);
+  series.fill("gold");
+  series.hatchFill("diagonalbrick", "gray");
+  series.hoverHatchFill("diagonalbrick", "darkred");
+  series.stroke("Rgb(86,86,26)", 4);
+  series.hoverStroke("darkred", 6);
 ```
 
 Using such settings we've created a style that colors bubbles in Gold, makes the border rather thick, fills hatch with DiagonalBrick and a couple of effects. Also, we've defined that when user moves cursor over an element it becomes highlighted with a dark red thick border and a hatch fill is colored dark red too.
@@ -267,7 +279,7 @@ Marker is an object with a specified shape, size, and color or an image used to 
   
 In the sample below we take single-series data described above and mark the biggest bubble in series with a **"Star5"** of the **"Gold"** color.
   
-To make the marker more visually appealing we set its size to 10px in normal state and 18px when being hovered.
+To make the marker more visually appealing we set its size to 10px in normal state and 15px when being hovered.
 
 ```
   chart.bubble([
@@ -278,16 +290,15 @@ To make the marker more visually appealing we set its size to 10px in normal sta
       size: 14,
       marker: {
         enabled: true, 
-        type: 'star5', 
-        fill: 'gold', 
-        position: 'centerTop', 
+        type: "star5", 
+        fill: "gold", 
+        position: "centerTop", 
         size: 10
       },
-      hoverMarker: {size: 18}
-    },        
+      hoverMarker: {size: 15}
+    },
     {x: 3, value: 548, size: 10}
-  ]).minimumSize(10).maximumSize(30);
-
+  ]);
 ``` 
 
 And here is a result - the best product for ACME Corp. is Product B and we show this on the chart:
@@ -314,7 +325,6 @@ Look at the individual points we colorized in the sample below. We've got a char
 As you see it is very easy to do by setting a value for the {api:anychart.graphics.vector.Fill}**fill()**{api} parameter of a point.
 
 {sample}BCT\_Bubble\_Chart\_12{sample}
-
 
 **Important Note:**
 

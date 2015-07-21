@@ -21,47 +21,47 @@
   var seriesData_5 = data.mapAs({x: [0], value: [9], size:[10]});
 
   // chart type
-  chart = anychart.scatter();
+  var chart = anychart.scatter();
   
   // set title
-  chart.title().text("Colors");
+  chart.title("Colors");
 
   // set first series data and adjust color
-  chart.bubble(seriesData_1)
-    .minimumSize(10)
-    .maximumSize(30)
-    .color("#3333FF");
+  var series1 = chart.bubble(seriesData_1);
+  series1.minimumSize(10);
+  series1.maximumSize(30);
+  series1.color("#3333FF");
 
   // set second series data and adjust color
-  chart.bubble(seriesData_2)
-    .minimumSize(10)
-    .maximumSize(30)
-    .color("#660099");
+  var series2 = chart.bubble(seriesData_2);
+  series2.minimumSize(10);
+  series2.maximumSize(30);
+  series2.color("#660099");
 
   // set third series data and adjust color
-  series = chart.bubble(seriesData_3)
-    .minimumSize(10)
-    .maximumSize(30)
-    .color("#CC6600");
+  var series3 = chart.bubble(seriesData_3);
+  series3.minimumSize(10);
+  series3.maximumSize(30);
+  series3.color("#CC6600");
 
   // set forth series data and adjust color
-  chart.bubble(seriesData_4)
-    .minimumSize(10)
-    .maximumSize(30)
-    .color("#FFCC33");
+  var series4 = chart.bubble(seriesData_4);
+  series4.minimumSize(10);
+  series4.maximumSize(30);
+  series4.color("#FFCC33");
 
   // set forth series data and adjust color
-  chart.bubble(seriesData_5)
-    .minimumSize(10)
-    .maximumSize(30)
-    .color("#00aa00");
+  var series5 = chart.bubble(seriesData_5);
+  series5.minimumSize(10);
+  series5.maximumSize(30);
+  series5.color("#00aa00");
   
-  chart.xScale().ticks().interval(1);
-  chart.xAxis().title().enabled(false);
-  chart.yAxis().title().enabled(false);
+  var xTicks = chart.xScale().ticks();
+  xTicks.interval(1);
 
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
