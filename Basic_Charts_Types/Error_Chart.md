@@ -18,13 +18,16 @@ Error Charts are defined as part of the series and are used on graphs to indicat
 Here is the list of series compatible with error bars:
   
   
-**Cartesian**: [Area](Area_Chart#single_series_area_chart), [Bar](Bar_Chart), [Column](Column_Chart), [Line](Line-Spline-StepLine_Charts#single_series_line_chart), [Marker](Marker_Chart#single_series), [Spline](Line-Spline-StepLine_Charts#single_series_spline_chart), [SplineArea](Area_Chart#single_series_spline_area_chart), [StepArea](Stacked_Area-SplineArea_Charts#step_stacked_area), [StepLine](Line-Spline-StepLine_Charts#single_series_step_line_chart); [Scatter](Scatter_Chart): [Line](Scatter_Chart#line_chart), [Marker](Scatter_Chart#marker_chart).
+**Cartesian**: [Area](Area_Chart#single_series_area_chart), [Bar](Bar_Chart), [Column](Column_Chart), [Line](Line-Spline-StepLine_Charts#single_series_line_chart), [Marker](Marker_Chart#single_series), [Spline](Line-Spline-StepLine_Charts#single_series_spline_chart), [SplineArea](Area_Chart#single_series_spline_area_chart), [StepArea](Stacked_Area-SplineArea_Charts#step_stacked_area), [StepLine](Line-Spline-StepLine_Charts#single_series_step_line_chart); 
+  
+  
+[**Scatter**](Scatter_Chart): [Line](Scatter_Chart#line_chart), [Marker](Scatter_Chart#marker_chart).
 
 ## Chart
 
 ### Cartesian
 
-To start configuration of error bars you can go with {api:anychart.core.cartesian.series.Base#error}**.error()**{api} method:
+To start configuration of error lines you can go with {api:anychart.core.cartesian.series.Base#error}**.error()**{api} method:
 
 ```
   //create chart
@@ -57,7 +60,7 @@ If you want to define a total error value and/or the upper and lower error value
 </tbody>
 </table>
 
-If you need different error bars for each data point, you can add values to a data set:
+If you need different error lines for each data point, you can add values to a data set:
 
 ```
   chart.line([
@@ -87,6 +90,7 @@ AnyChart allows you to set an error value in different ways, e.g. as absolute nu
 ```
   // variable for errors
   var error = series.error();
+  
   //set the value in numbers
   error.valueError(7);
   
@@ -135,7 +139,8 @@ Error bars can be displayed for the series x value, y value or both. You should 
 <td>{api:anychart.core.utils.Error#xUpperError}**.xUpperError()**{api}</td>
 <td>Used to set an upper x error value</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
 And now we have an error defined on a scatter plot.
 
@@ -186,9 +191,10 @@ If you want to specify the visibility of the upper and lower error values - you 
 <td><b>both</b></td>
 <td>Error will be displayed for both x and y values</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
-Let's take a look at this part of code. As we can see the both error values are defined for some points (see the chart above), but since we configured the error mode as "none", nothing will be rendered.
+Let's take a look at this part of code. As we can see the both error values are defined for some points (see the chart above), but since we configured the error mode as **"none"**, nothing will be rendered.
 
 ```
   var series = chart.marker([
@@ -207,7 +213,7 @@ Let's take a look at this part of code. As we can see the both error values are 
 
 {sample}Error\_Chart\_09{sample}
 
-Or you can use only 'value' error mode with the same error settings:
+Or you can use only **"value"** error mode with the same error settings:
 
 ```
   var error = series.error();
@@ -239,7 +245,8 @@ AnyChart provides a few opportunities to configure an error view. If you want to
 <td>{api:anychart.core.utils.Error#valueErrorWidth}**.valueErrorWidth()**{api}</td>
 <td>Used to set an y value error width</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
 ```
   var error = series.error();
@@ -266,7 +273,8 @@ To change the error color you have to use the following settings:
 <td>{api:anychart.core.utils.Error#valueErrorStroke}**.valueErrorStroke()**{api}</td>
 <td>Used to configre a series error stroke</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
 Here is a simple code to illustrate how to apply these settings:
 
