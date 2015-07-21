@@ -23,12 +23,14 @@
   // chart type
   var chart = anychart.column();
 
+  // set series shift
+  chart.barsPadding(-0.5);
+  chart.barGroupsPadding(2);
+
   // set data
   var series1 = chart.column(Sales2003);
   // set series name
   series1.name("Sales in 2013");
-  // set series shift
-  series1.xPointPosition(0.5);
 
   // set series data
   var series2 = chart.column(Sales2004);
