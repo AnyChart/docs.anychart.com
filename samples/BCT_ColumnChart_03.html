@@ -8,7 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  var chart = anychart.columnChart();
+  var chart = anychart.column();
 
   // set data
   chart.column([
@@ -20,18 +20,21 @@
   ]);
 
   // axes position adjuster
-  chart.xAxis().orientation("top");
-  chart.yAxis().orientation("right");
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
 
   // set title
-  chart.title().text("Axes Management");
+  chart.title("Axes Management");
 
   // set axes titles
-  chart.xAxis().title().text("Manager");
-  chart.yAxis().title().text("Sales");
+  xAxis.title("Manager");
+  yAxis.title("Sales");
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

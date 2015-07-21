@@ -8,7 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  chart = anychart.columnChart();
+  var chart = anychart.column();
 
   // set data
   chart.column([
@@ -20,14 +20,17 @@
   ]);
   
   // chart title
-  chart.title().text("Marker");
+  chart.title("Marker");
   
   // set axes titles
-  chart.xAxis().title().text("Manager");
-  chart.yAxis().title().text("Sales");
+  var xAxis = chart.xAxis();
+  xAxis.title("Manager");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
 
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

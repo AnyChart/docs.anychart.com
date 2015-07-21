@@ -8,36 +8,47 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  chart = anychart.columnChart();
+  var chart = anychart.column();
 
   // set data
   chart.column([
     ["John" , 10000],
     ["Jake" , 12000],
     {
-      x: "Peter",             // set x
-      value: 18000,           // set value
-      marker:{                // marker settings
-        type:"star5",         // marker type
-        fill:"gold",          // marker color
-        size: 12,             // marker size
-        enabled: true         // initiate marker draw
+      // set x
+      x: "Peter",
+      // set value
+      value: 18000,
+      // marker settings
+      marker:{
+        // marker type
+        type:"star5",
+        // marker color
+        fill:"gold",
+        // marker size
+        size: 12,
+        // initiate marker draw
+        enabled: true
       },
-      hoverMarker: {size: 22} // adjust marker size on mouse over
+      // adjust marker size on mouse over
+      hoverMarker: {size: 22}
     },
     ["James" , 11000],
     ["Mary" , 9000]
   ]);
 
   // chart title
-  chart.title().text("Marker");
+  chart.title("Marker");
 
   // set axes titles
-  chart.xAxis().title().text("Manager");
-  chart.yAxis().title().text("Sales");
+  var xAxis = chart.xAxis();
+  xAxis.title("Manager");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
 
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

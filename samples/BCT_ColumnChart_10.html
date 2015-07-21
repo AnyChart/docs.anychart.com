@@ -21,41 +21,42 @@
   var dataMap5 = data.mapAs({x: [0], value: [5]});
 
   // chart type
-  chart = anychart.columnChart();
+  var chart = anychart.column();
 
    // set first series data and color
-  chart.column(dataMap1)
-    .fill("#3333FF")
-    .name("John");
+  var series1 = chart.column(dataMap1);
+  series1.fill("#3333FF");
+  series1.name("John");
 
   // set second series data and color
-  chart.column(dataMap2)
-    .fill("#660099")
-    .name("Jake");
+  var series2 = chart.column(dataMap2);
+  series2.fill("#660099");
+  series2.name("Jake");
 
   // set third series data and color
-  chart.column(dataMap3)
-    .fill("#CC6600")
-    .name("Peter");
+  var series3 = chart.column(dataMap3);
+  series3.fill("#CC6600");
+  series3.name("Peter");
 
   // set forth series data and color
-  chart.column(dataMap4)
-    .fill("#FFCC33")
-    .name("James");
+  var series4 = chart.column(dataMap4);
+  series4.fill("#FFCC33");
+  series4.name("James");
 
   // set fifth series data and color
-  chart.column(dataMap5)
-    .fill("#00aa00")
-    .name("Mary");
+  var series5 = chart.column(dataMap5);
+  series5.fill("#00aa00");
+  series5.name("Mary");
 
   // set title
-  chart.title().text("Colorizing");
+  chart.title("Colorizing");
 
   // set chart legend settings
-  chart.legend().enabled(true);
+  chart.legend(true);
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

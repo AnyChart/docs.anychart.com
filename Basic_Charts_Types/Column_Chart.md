@@ -86,13 +86,13 @@ Mary
 Now we need to convert this data table into an acceptable format. In terms of the AnyChart data model we have one series of data (Sales) with categories that hold managers names. Each point in series represents one manager and his/her sales. Converted Data looks like:
 
 ```
-    chart.column([
-        ['John' , 10000],
-        ['Jake' , 12000],
-        ['Peter' , 18000],
-        ['James' , 11000],
-        ['Mary' , 9000]
-    ]);
+  chart.column([
+    ["John" , 10000],
+    ["Jake" , 12000],
+    ["Peter" , 18000],
+    ["James" , 11000],
+    ["Mary" , 9000]
+  ]);
 ```
 
 {sample}BCT\_ColumnChart\_01{sample}
@@ -164,16 +164,16 @@ $19000
 As we did in single-series column sample above, here we need to convert this table into JSON, the only difference between these two samples is the fact that now we have two series of data - one series for each quarter, and we give proper names to each series:
 
 ```
-    var data = anychart.data.set([
-        ['John' , 10000, 12000],
-        ['Jake' , 12000, 15000],
-        ['Peter' , 18000, 16000],
-        ['James' , 11000, 13000],
-        ['Mary' , 9000, 19000]
-    ]);
+  var data = anychart.data.set([
+      ["John" , 10000, 12000],
+      ["Jake" , 12000, 15000],
+      ["Peter", 18000, 16000],
+      ["James", 11000, 13000],
+      ["Mary" , 9000, 19000]
+  ]);
 ```
 
-As we now have multi-series chart we don't want to set type for each series individually (there can be more than two series in multi-series chart), so we add {api:anychart.core.cartesian.series.Column}**anychart.columnChart()**{api} to the **chart**. Now all series in chart will be of Column type by default.
+As we now have multi-series chart we don't want to set type for each series individually (there can be more than two series in multi-series chart), so we add {api:anychart.core.cartesian.series.Column}**anychart.column()**{api} to the **chart**. Now all series in chart will be of Column type by default.
 
 {sample}BCT\_ColumnChart\_02{sample}
 
@@ -188,8 +188,8 @@ With AnyChart you can place axes to any side of the chart, all you need to do is
 Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
 
 ```
-    chart.xAxis(0).orientation('top');
-    chart.yAxis(0).orientation('right');
+  chart.xAxis().orientation("top");
+  chart.yAxis().orientation("right");
 ```
 
 Look at the demonstration of this feature in the Single-series sample:
@@ -201,7 +201,8 @@ Look at the demonstration of this feature in the Single-series sample:
 AnyChart allows to invert any axis: Y, X or any extra. Inversion is controlled by axis **scale().inverted()**:
 
 ```
-    chart.yScale().inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 ```
 Look at the demonstration of Y-Axis inversion in the Single-series sample:
 
@@ -212,7 +213,9 @@ Look at the demonstration of Y-Axis inversion in the Single-series sample:
 By default AnyChart calculates axis the minimum and the maximum automatically. You can see this on the scale inversion chart sample above: the minimal value of the Y-Axis is 6.000, and maximum is 21.000. You can control these values by setting **.maximum()** and **.minimum()** parameters of the scale:
 
 ```
-   chart.yScale().minimum('6000').maximum('20000');
+  var yScale = chart.yScale();
+  yScale.minimum(6000);
+  yScale.maximum(20000);
 ```
 
 Look at the demonstration of the maximum and the minimum values in the Single-series sample:
@@ -221,11 +224,7 @@ Look at the demonstration of the maximum and the minimum values in the Single-se
 
 ## Padding
 
-The special thing about column charts are the paddings between columns and column groups (in multi-series charts). The picture below shows what are these paddings:
-
-![](http://www.anychart.com/products/anychart/docs/users-guide/img/column-paddings.gif)
-
-If you want to set these paddings you need to set {api:anychart.charts.Cartesian#barsPadding}**.barsPadding()**{api} or {api:anychart.charts.Cartesian#barGroupsPadding}**.barGroupsPadding()**{api} parameters in the **chart**. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For example, if you set **.barsPadding()** to 0.5, the space between two columns will be equal to the half of each column width. If you don't want any padding between columns or groups you should set **.barsPadding()** and **.barGroupsPadding()** to 0.
+The special thing about column charts are the paddings between columns and column groups (in multi-series charts). To set paddings you need to set {api:anychart.charts.Cartesian#barsPadding}**.barsPadding()**{api} or {api:anychart.charts.Cartesian#barGroupsPadding}**.barGroupsPadding()**{api} parameters in the **chart**. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For example, if you set **.barsPadding()** to 0.5, the space between two columns will be equal to the half of each column width. If you don't want any padding between columns or groups you should set **.barsPadding()** and **.barGroupsPadding()** to 0.
   
   
 Here is the sample of multi-series column chart with **.barsPadding()** and **.barGroupsPadding()** set to -0.1 and 2; accordingly, negative **.barsPadding()** leads to columns overlay and large **.barGroupsPadding()** moves column groups away from each other:
@@ -249,17 +248,18 @@ Styles are also used to make charts interactive: you can define how elements wil
 Now, let's find out how to create a simple style and apply it to the chart. As we've already mentioned, style consists of several elements, like in the structure below:
 
 ```
-  var chart.column([
+  var series = chart.column([
     ['John' , 10000],
     ['Jake' , 12000],
     ['Peter' , 18000],
     ['James' , 11000],
     ['Mary' , 9000]
-  ]).fill('Gold')
-    .hoverStroke("darkred", 4)
-    .stroke('#56561a', 4)
-    .hatchFill('diagonalbrick', 'gray')
-    .hoverHatchFill('diagonalbrick', 'darkred');
+  ]);
+  series.fill("Gold");
+  series.hoverStroke("darkred", 4);
+  series.stroke("#56561a", 4);
+  series.hatchFill("diagonalbrick", "gray");
+  series.hoverHatchFill("diagonalbrick", "darkred");
 ```
 
 Using such settings we've created a style that defines columns of Gold color, rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed thick border and hatch fill colored DarkRed too.
@@ -318,35 +318,34 @@ Now let's study how to apply different colors to different data series. To apply
 Here's a part of the code of the sample above:
 
 ```
- // data
-    var data = anychart.data.set([
-        ['First quarter', 10000, 12000, 18000, 11000, 9000],
-        ['Second quarter', 12000, 15000, 16000, 13000, 19000]
-    ]);
+  // data
+  var data = anychart.data.set([
+    ["First quarter", 10000, 12000, 18000, 11000, 9000],
+    ["Second quarter", 12000, 15000, 16000, 13000, 19000]
+  ]);
 
-    // map data for the each series
-    var dataMap1 = data.mapAs({x: [0], value: [1]});
-    var dataMap2 = data.mapAs({x: [0], value: [2]});
-    var dataMap3 = data.mapAs({x: [0], value: [3]});
-    var dataMap4 = data.mapAs({x: [0], value: [4]});
-    var dataMap5 = data.mapAs({x: [0], value: [5]});
+  // map data for the each series
+  var dataMap1 = data.mapAs({x: [0], value: [1]});
+  var dataMap2 = data.mapAs({x: [0], value: [2]});
+  var dataMap3 = data.mapAs({x: [0], value: [3]});
+  var dataMap4 = data.mapAs({x: [0], value: [4]});
+  var dataMap5 = data.mapAs({x: [0], value: [5]});
 
-    // chart type
-    chart = anychart.columnChart();
+  // chart type
+  var chart = anychart.column();
 
-    // set title
-    chart.title().text('Colorizing');
-    
-      //set chart legend settings
-    chart.legend().enabled(true);
+  // set title
+  chart.title("Colorizing");
+  
+  // set chart legend settings
+  chart.legend(true);
 
-    // set first series data and color
-    chart.column(dataMap1)
-      .fill('#4A55C7')
-      .name('John');
+  // set first series data and color
+  var series = chart.column(dataMap1);
+  series.fill("#4A55C7");
+  series.name("John");
 
-    //other series names, data and color are to be set similarly to the former
-
+  // other series names, data and color are to be set similarly to the former
 ```
 
 Also, you might have noticed, that we enabled the *legend* element in this sample, which helped us to name each series differently.

@@ -21,28 +21,35 @@
   var Sales2004 = data.mapAs({x: [0], value: [2]});
 
   // chart type
-  var chart = anychart.columnChart();
+  var chart = anychart.column();
 
   // set data
-  chart.column(Sales2003)   // set series data
-    .name("Sales in 2013")  // set series name
-    .xPointPosition(0.5);   // set series shift
-    
-  chart.column(Sales2004)   // set series data
-    .name("Sales in 2014"); // set series name
+  var series1 = chart.column(Sales2003);
+  // set series name
+  series1.name("Sales in 2013");
+  // set series shift
+  series1.xPointPosition(0.5);
+
+  // set series data
+  var series2 = chart.column(Sales2004);
+  // set series name
+  series2.name("Sales in 2014");
     
   // chart title
-  chart.title().text("Paddings");
+  chart.title("Paddings");
   
   // set axes titles
-  chart.xAxis().title().text("Retail Channel");
-  chart.yAxis().title().text("Sales");
+  var xAxis = chart.xAxis();
+  xAxis.title("Retail Channel");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
   
   // enable legend
-  chart.legend().enabled(true);
+  chart.legend(true);
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
