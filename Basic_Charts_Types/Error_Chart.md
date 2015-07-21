@@ -25,12 +25,12 @@ Here is the list of series compatible with error bars:
 To start configuration of error bars you can go with {api:anychart.core.cartesian.series.Base#error}**.error()**{api} method:
 
 ```
-//create chart
-var chart = anychart.line();
-//set data
-var line = chart.line([4, 2, 3, 1]);
-//set error value
-line.error(1);
+  //create chart
+  var chart = anychart.line();
+  //set data
+  var line = chart.line([4, 2, 3, 1]);
+  //set error value
+  line.error(1);
 ```
 
 <br>If you want to define a total error value and/or the upper and lower error values, you should use the special methods:
