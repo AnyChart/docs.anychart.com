@@ -4,7 +4,7 @@
 * [Supported Chart Types](#supported_chart_types)
 * [Chart](#chart)
  * [Cartesian](#cartesian)
- * [Scatter Plot](#scatter_plot)
+ * [Scatter](#scatter)
  * [Error Mode](#error_mode)
 * [Visualization](#visualization)
 * [Labels And Tooltips](#labels_and_tooltips)
@@ -16,7 +16,9 @@ Error Charts are defined as part of the series and are used on graphs to indicat
 ## Supported Chart Types
 
 Here is the list of series compatible with error bars:
-<br><b>Cartesian</b>: [Area](Area_Chart#single_series_area_chart), [Bar](Bar_Chart), [Column](Column_Chart), [Line](Line-Spline-StepLine_Charts#single_series_line_chart), [Marker](Marker_Chart#single_series), [Spline](Line-Spline-StepLine_Charts#single_series_spline_chart), [SplineArea](Area_Chart#single_series_spline_area_chart), [StepArea](Stacked_Area-SplineArea_Charts#step_stacked_area), [StepLine](Line-Spline-StepLine_Charts#single_series_step_line_chart); [Scatter](Scatter_Chart): [Line](Scatter_Chart#line_chart), [Marker](Scatter_Chart#marker_chart).
+  
+  
+**Cartesian**: [Area](Area_Chart#single_series_area_chart), [Bar](Bar_Chart), [Column](Column_Chart), [Line](Line-Spline-StepLine_Charts#single_series_line_chart), [Marker](Marker_Chart#single_series), [Spline](Line-Spline-StepLine_Charts#single_series_spline_chart), [SplineArea](Area_Chart#single_series_spline_area_chart), [StepArea](Stacked_Area-SplineArea_Charts#step_stacked_area), [StepLine](Line-Spline-StepLine_Charts#single_series_step_line_chart); [Scatter](Scatter_Chart): [Line](Scatter_Chart#line_chart), [Marker](Scatter_Chart#marker_chart).
 
 ## Chart
 
@@ -33,7 +35,7 @@ To start configuration of error bars you can go with {api:anychart.core.cartesia
   line.error(1);
 ```
 
-<br>If you want to define a total error value and/or the upper and lower error values, you should use the special methods:
+If you want to define a total error value and/or the upper and lower error values, you should use the special methods:
 
 <table width="400" border="1" class="dtTABLE">
 <tbody><tr>
@@ -52,59 +54,65 @@ To start configuration of error bars you can go with {api:anychart.core.cartesia
 <td>{api:anychart.core.utils.Error#valueUpperError}**.valueUpperError()**{api}</td>
 <td>Used to set an upper error value</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
-<br>If you need different error bars for each data point, you can add values to a data set:
+If you need different error bars for each data point, you can add values to a data set:
+
 ```
-chart.line([
-    {x: '2005', value: 20, valueError:'3%'},
-    {x: '2006', value: 23, valueError: '4%'},
-    {x: '2007', value: 22, valueError: '3%'},
-    {x: '2008', value: 19, valueError: 1},
-    {x: '2009', value: 23, valueError: 1},
+  chart.line([
+    {x: "2005", value: 20, valueError: "3%"},
+    {x: "2006", value: 23, valueError: "4%"},
+    {x: "2007", value: 22, valueError: "3%"},
+    {x: "2008", value: 19, valueError: 1},
+    {x: "2009", value: 23, valueError: 1}
   ]);
 ```
 
-<br>{sample}Error\_Chart\_10{sample}
-
-<br>If you use only the {api:anychart.core.utils.Error#valueError}**.valueError()**{api} method, the upper and lower values will be equal to half of the specified value. The method {api:anychart.core.utils.Error#valueError}**.valueError()**{api} usage has priority over that of {api:anychart.core.utils.Error#valueLowerError}**.valueLowerError()**{api} or {api:anychart.core.utils.Error#valueUpperError}**.valueUpperError()**{api} usage. The code below demonstrates an error where the upper and lower values are equal to 3.
-
-```
-series.error().valueUpperError(2).valueLowerError(6).valueError(6);
-```
-
-<br>{sample}Error\_Chart\_03{sample}
-
-<br>AnyChart allows you to set an error value in different ways, e.g. as absolute numbers or as a percentage:
-
-```
-//set the value in numbers
-series.error().valueError(7);
-
-//or set it in percentage
-series.error().valueError('15%')
-```
-
-<br>As you can see we've created the error bars on a chart using the settings listed in the above table:
 {sample}Error\_Chart\_01{sample}
 
-<br>Also it should be noted that you can do the same using the {api:anychart.core.cartesian.series.Base#error}**.error()**{api} method. The sample below demonstrates how to apply a total error to a full data set.
+If you use only the {api:anychart.core.utils.Error#valueError}**.valueError()**{api} method, the upper and lower values will be equal to half of the specified value. The method {api:anychart.core.utils.Error#valueError}**.valueError()**{api} usage has priority over that of {api:anychart.core.utils.Error#valueLowerError}**.valueLowerError()**{api} or {api:anychart.core.utils.Error#valueUpperError}**.valueUpperError()**{api} usage. The code below demonstrates an error where the upper and lower values are equal to 3.
 
 ```
-//set the error value in numbers
-series.error(7);
-
-//or set it in percentage
-series.error('12%');
+  var error = series.error();
+  error.valueUpperError(2);
+  error.valueLowerError(6);
+  error.valueError(6);
 ```
 
-<br>
 {sample}Error\_Chart\_02{sample}
 
-<br><b>Note:</b>
-You can show error bars for x values in the case of e.g. an error in measurement of the data set. Have a look at the section below to learn more how to define an error on a series x value.
-{sample}Error\_Chart\_12{sample}
+AnyChart allows you to set an error value in different ways, e.g. as absolute numbers or as a percentage:
 
+```
+  // variable for errors
+  var error = series.error();
+  //set the value in numbers
+  error.valueError(7);
+  
+  //or set it in percentage
+  error.valueError("15%")
+```
+
+As you can see we've created the error bars on a chart using the settings listed in the above table:
+
+{sample}Error\_Chart\_03{sample}
+
+Also it should be noted that you can do the same using the {api:anychart.core.cartesian.series.Base#error}**.error()**{api} method. The sample below demonstrates how to apply a total error to a full data set.
+
+```
+  //set the error value in numbers
+  series.error(7);
+
+  //or set it in percentage
+  series.error("12%");
+```
+
+{sample}Error\_Chart\_04{sample}
+
+**Note**: You can show error bars for x values in the case of e.g. an error in measurement of the data set. Have a look at the section below to learn more how to define an error on a series x value.
+
+{sample}Error\_Chart\_05{sample}
 
 ### Scatter
 
@@ -129,24 +137,29 @@ Error bars can be displayed for the series x value, y value or both. You should 
 </tr>
 </tbody></table>
 
-<br>And now we have an error defined on a scatter plot.
-{sample}Error\_Chart\_05{sample}
+And now we have an error defined on a scatter plot.
 
-<br>X value error value must be defined in numbers or percentage of total value.
+{sample}Error\_Chart\_06{sample}
+
+X value error value must be defined in numbers or percentage of total value.
+
 ```
-//you can set the x error value
-series.error().xError(10);
-
-//or set it in percentage
-series.error().xError('15%')
+  var error = series.error();
+  
+  //you can set the x error value
+  error.xError(10);
+  
+  //or set it in percentage
+  error.xError("15%")
 ```
 
-<br>The same rules can be applied in case of scatter plot. Below is a demonstration of error defined with the foreground {api:anychart.core.utils.Error#xError}**.xError()**{api} method.
-{sample}Error\_Chart\_04{sample}
+The same rules can be applied in case of scatter plot. Below is a demonstration of error defined with the foreground {api:anychart.core.utils.Error#xError}**.xError()**{api} method.
 
-<br>It is also possible to apply a separate error bar to each data point within a series on a scatter plot:
+{sample}Error\_Chart\_07{sample}
 
-{sample}Error\_Chart\_11{sample}
+It is also possible to apply a separate error bar to each data point within a series on a scatter plot:
+
+{sample}Error\_Chart\_08{sample}
 
 ### Error Mode
 
@@ -175,35 +188,39 @@ If you want to specify the visibility of the upper and lower error values - you 
 </tr>
 </tbody></table>
 
-<br>Let's take a look at this part of code. As we can see the both error values are defined for some points (see the chart above), but since we configured the error mode as "none", nothing will be rendered.
+Let's take a look at this part of code. As we can see the both error values are defined for some points (see the chart above), but since we configured the error mode as "none", nothing will be rendered.
+
 ```
   var series = chart.marker([
-    {'x': 192, 'y': 9, 'xUpperError': '2%', 'xLowerError': '1%'},
-    {'x': 168, 'y': 24, 'xUpperError': '3%', 'xLowerError': '3%', 'valueUpperError': '3'},
-    {'x': 154, 'y': 30, 'xError': '6'},
-    {'x': 132, 'y': 41, 'xUpperError': '3%', 'xLowerError': '3%'},
-    {'x': 114, 'y': 53, 'xUpperError': '2', 'xLowerError': '3%', 'valueLowerError': '7%'},
-    {'x': 94, 'y': 74, 'xError': '4%', 'valueError': '6%'},
-    {'x': 83, 'y': 85, 'xUpperError': '3%', 'xLowerError': '5%', 'valueUpperError': '5%', 'valueLowerError': '2%'},
+    {x: 192, y: 9, xUpperError: "2%", xLowerError: "1%"},
+    {x: 168, y: 24, xUpperError: "3%", xLowerError: "3%", valueUpperError: 3},
+    {x: 154, y: 30, xError: 6},
+    {x: 132, y: 41, xUpperError: "3%", xLowerError: "3%"},
+    {x: 114, y: 53, xUpperError: 2, xLowerError: "3%", valueLowerError: "7%"},
+    {x: 94, y: 74, xError: "4%", "valueError": "6%"},
+    {x: 83, y: 85, xUpperError: "3%", xLowerError: "5%", valueUpperError: "5%", valueLowerError: "2%"}
   ]);
 
-series.error().mode('none');
-```
-<br>{sample}Error\_Chart\_06{sample}
-
-<br>Or you can use only 'value' error mode with the same error settings:
-```
-series.error({
-            xLowerError: '2%',
-            xUpperError: '2%',
-            valueUpperError: 5,
-            valueLowerError: '3%',
-            mode: 'value'
-        });
+  var error = series.error();
+  error.mode("none");
 ```
 
-<br>And the chart looks appropriate:
-{sample}Error\_Chart\_07{sample}
+{sample}Error\_Chart\_09{sample}
+
+Or you can use only 'value' error mode with the same error settings:
+
+```
+  var error = series.error();
+  error.xLowerError("2%");
+  error.xUpperError("2%");
+  error.valueUpperError(8);
+  error.valueLowerError("4%");
+  error.mode("value");
+```
+
+And the chart looks appropriate:
+
+{sample}Error\_Chart\_10{sample}
 
 ## Visualization
 
@@ -224,16 +241,17 @@ AnyChart provides a few opportunities to configure an error view. If you want to
 </tr>
 </tbody></table>
 
-<br>
 ```
-series.error().xErrorWidth('15');
-series.error().valueErrorWidth('6%');
+  var error = series.error();
+  error.xErrorWidth(30);
+  error.valueErrorWidth("6%");
 ```
 
-<br>Here is the simple demonstration of this feature on the Scatter Line Chart:
-{sample}Error\_Chart\_08{sample}
+Here is the simple demonstration of this feature on the Scatter Line Chart:
 
-<br>To change the error color you have to use the following settings:
+{sample}Error\_Chart\_11{sample}
+
+To change the error color you have to use the following settings:
 
 <table width="400" border="1" class="dtTABLE">
 <tbody><tr>
@@ -250,20 +268,28 @@ series.error().valueErrorWidth('6%');
 </tr>
 </tbody></table>
 
-<br>Here is a simple code to illustrate how to apply these settings:
+Here is a simple code to illustrate how to apply these settings:
+
 ```
-//set to the series
-series.error()
-            .valueErrorStroke('2 red .9')
-            .xErrorStroke('4px green .4');
+  // set to the series
+  var error = series.error();
+  error.valueErrorStroke("2 red .9");
+  error.xErrorStroke("4px green .4");
 
-//apply to the specific point
-{x: 94, value: 74, xError: '6', valueError: '4', valueErrorStroke: 'red', xErrorStroke: 'green'},
+  // apply to the specific point
+  {
+    x: 94,
+    value: 74,
+    xError: 6,
+    valueError: 4,
+    valueErrorStroke: "red",
+    xErrorStroke: "green"
+  },
 ```
 
-<br>Look at the chart sample below and click on it to see it's javascript source.
+Look at the chart sample below and click on it to see it's javascript source.
 
-{sample}Error\_Chart\_09{sample}
+{sample}Error\_Chart\_12{sample}
 
 ## Labels And Tooltips
 

@@ -6,37 +6,24 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
+  
+  var chart = anychart .column();
 
-  var chart = anychart .scatter();
+  chart.title("Studies Of Snake Venom");
+  chart.barGroupsPadding(3);
 
-  var series = chart.marker([
-    [1, 3.4],
-    [2, 4.1],
-    [3, 4.5],
-    [4, 4.7],
-    [5, 5.2],
-    [6, 5.67],
-    [7, 5.89],
-    [8, 6.9],
-    [9, 9.14],
-    [10, 15.78]
-  ]);
-
-  series.size(4);
-  series.hoverSize(5);
-
-  var error = series.error();
-  error.xLowerError("1%");
-  error.xUpperError("6%");
-  error.valueUpperError("2%");
-  error.valueLowerError("4%");
-
-  chart.title("Ice-sheet dynamics");
-
-  var xAxis = chart.xAxis();
-  xAxis.title("Distance (mm)");
   var yAxis = chart.yAxis();
-  yAxis.title("Hours");
+  yAxis.title("Lethal Dose 50 (mg/mouse)");
+  var yScale = chart.yScale();
+  yScale.minimum(0);
+
+  var series = chart.column([
+    {x: "Viperia berus", y: 8, valueError: "4.4", valueErrorStroke: "red"},
+    {x: "Viperia ammodytes", y: 7.1, valueError: "2.6", valueErrorStroke: "red"},
+    {x: "Viperia aspis", y: 13.7, valueError: "4.6", valueErrorStroke: "red"},
+    {x: "Viperia latastei", "y": 16.8, valueError: "5.5", valueErrorStroke: "red"}
+  ]);
+  series.fill("Green .8");
 
   // set container id for the chart
   chart.container("container");

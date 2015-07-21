@@ -6,22 +6,37 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  
-  var chart = anychart .line();
 
-  chart.line([
-    {x: "2005", value: 20, valueError:"3%"},
-    {x: "2006", value: 23, valueError: "4%"},
-    {x: "2007", value: 22, valueError: "3%"},
-    {x: "2008", value: 19, valueError: 1},
-    {x: "2009", value: 23, valueError: 1}
+  var chart = anychart .scatter();
+
+  var series = chart.marker([
+    [1, 177],
+    [2, 174],
+    [3, 165],
+    [4, 159],
+    [5, 140]
   ]);
 
-  chart.title("Daily Temperature Averages By City");
+  var error = series.error();
+  error.xLowerError("2%");
+  error.xUpperError("2%");
+  error.valueUpperError(8);
+  error.valueLowerError("4%");
+  error.mode("value");
+
+  series.size(4);
+  series.hoverSize(5);
+
+  var yScale = chart.yScale();
+  yScale.minimum(50);
+  var xScale = chart.xScale();
+  xScale.maximum(6);
+
+  chart.title("Scatter Marker Chart With Error Bars");
   var xAxis = chart.xAxis();
-  xAxis.title("Year");
+  xAxis.title("Hours After Treatment");
   var yAxis = chart.yAxis();
-  yAxis.title("Daily Temperature");
+  yAxis.title("Mean Blood Pressure");
 
   // set container id for the chart
   chart.container("container");
