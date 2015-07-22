@@ -207,8 +207,10 @@ With AnyChart you can place axes to any side of the chart, all you need to do is
 The position depends on the plot type and inversion of axes. See list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
 
 ```
-    chart.xAxis(0).orientation('top');
-    chart.yAxis(0).orientation('right');
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
 ```
 
 And here is the demonstration of this feature in the Single-series sample:
@@ -220,7 +222,8 @@ And here is the demonstration of this feature in the Single-series sample:
 AnyChart allows to invert any axis: Y, X or any other axis. Inversion is controlled by axis **.inverted()**:
 
 ```
-    chart.yScale().inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 ```
 
 And here is the demonstration of Y-Axis inversion in the Single-series sample:
@@ -233,9 +236,11 @@ AnyChart calculates axis minimum and maximum automatically. The minimal value on
 
 
 ```
-  chart.yScale()
-    .minimum(0)       // minimum value
-    .maximum(1800);   // maximum value
+  var yScale = chart.yScale();
+  // minimum value
+  yScale.minimum(0);
+  // maximum value
+  yScale.maximum(1800);
 ```
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
@@ -251,7 +256,7 @@ In this section we will describe main parts of marker chart visualization and wa
 Now, let's make a simple style and apply it to the chart. As we've already said, a style consists of several elements, like in this js structure below:
 
 ```
-  chart.marker([
+  var series = chart.marker([
     [2000, 1100],
     [2001, 880],
     [2002, 1100],
@@ -259,10 +264,12 @@ Now, let's make a simple style and apply it to the chart. As we've already said,
     [2004, 921],
     [2005, 1000],
     [2006, 1400]
-  ]).fill('gold')
-    .hoverFill('darkred')
-    .hoverStroke(0)
-    .hoverSize(20);
+  ]);
+  
+  series.fill("gold");
+  series.hoverFill("darkred");
+  series.hoverStroke(0);
+  series.hoverSize(20);
 ```
 
 Using such settings we've set Gold color for the markers and added a couple of effects. Also, we've defined that a marker will be highlighted with a dark red color and made bigger when hovered.
@@ -282,29 +289,29 @@ Here's a part of a code used in the sample below. For more detailed code visit t
 
 ```
   // data
-  data = anychart.data.set([
-      [2000, 1100],
-      [2001, 880],
-      [2002, 1100],
-      [2003, 1500],
-      [2004, 921],
-      [2005, 1000],
-      [2006, 1400]
+  var data = anychart.data.set([
+    [2000, 1100],
+    [2001, 880],
+    [2002, 1100],
+    [2003, 1500],
+    [2004, 921],
+    [2005, 1000],
+    [2006, 1400]
   ]);
 
   // set data
-  var markerchart = chart.marker(data);
+  var series = chart.marker(data);
 
   // enable and adjust labels
-  markerchart.labels()
-    .enabled(true)
-    .anchor('bottomcenter')
-    .fontWeight(900)
-    .offsetY(10);
+  var labels = series.labels();
+  labels.enabled(true);
+  labels.anchor("bottomcenter");
+  labels.fontWeight(900);
+  labels.offsetY(10);
   
   // adjust tooltips
   markerchart.tooltip().contentFormatter(function(){
-    return 'Month: ' + this.x + '\nSales: ' + this.value ;
+    return "Month: " + this.x + "\nSales: " + this.value ;
   });
 ```
 
@@ -345,16 +352,16 @@ That's how a part of a code of the sample above looks like:
   var data5 = data.mapAs({x: [0], value: [5]});
 
   // set data and color for each series
-  chart.marker(data1)
-    .fill('#4A55C7');
-  chart.marker(data2)
-    .fill('#5EBD9B');
-  chart.marker(data3)
-    .fill('#B04A8A');
-  chart.marker(data4)
-    .fill('#C7894A');
-  chart.marker(data5)
-    .fill('#BCBD46');
+  var series1 = chart.marker(data1);
+  series1.fill("#4A55C7");
+  var series2 = chart.marker(data2);
+  series2.fill("#5EBD9B");
+  var series3 = chart.marker(data3);
+  series3.fill("#B04A8A");
+  var series4 = chart.marker(data4);
+  series4.fill("#C7894A");
+  var series5 = chart.marker(data5);
+  series5.fill("#BCBD46");
 ```
 
 In the sample below we colorized individual points. We've got a chart with one series and predefined 
@@ -367,16 +374,13 @@ That's how it was done:
 ```
   // data
   data = anychart.data.set([
-    ['P!', 132],
-    ['P2', 124],
-    ['P3', 102],
-    ['P4', 119],
-    ['P5', 169],
-    {x: 'P6', value: 237, fill: 'Rgb(77,180,77)'},
-    ['P7', 120],
-    ['P8', 99],
-    {x: 'P9', value: 44, fill: 'Rgb(180,77,77)'},
-    ['P10', 59]
+    [2000, 132],
+    [2001, 124],
+    [2002, 102],
+    [2003, 119],
+    [2004, 169],
+    {x: 2005, value: 237, fill: "Rgb(77,180,77)"},
+    [2006, 120]
   ]);
 ```
 
@@ -398,7 +402,7 @@ Here's a part of the code of the sample below:
 
 ```
   // data
-  data = anychart.data.set([
+  var data = anychart.data.set([
     [1, 14, 24, 34, 42, 50],
     [2, 19, 26, 39, 45, 61],
     [3, 27, 38, 35, 41, 58]
@@ -412,12 +416,12 @@ Here's a part of the code of the sample below:
   var data5 = data.mapAs({x: [0], value: [1]});
 
   // set data for each series and adjust hatches and marker types
-  chart.marker(data1)
-    .hatchFill('diagonalcross')
-    .hoverSize(30)
-    .size(20)
-    .fill('#EEEEEE')
-    .type('star5');
+  var series = chart.marker(data1);
+  series.hatchFill("diagonalcross");
+  series.hoverSize(30);
+  series.size(20);
+  series.fill("#EEEEEE");
+  series.type("star5");
 ```
 
 That's how it looks like when we set all parameters for all series as for the first one:

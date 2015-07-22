@@ -25,49 +25,47 @@
   var data5 = data.mapAs({x: [0], value: [1]});
 
   // set data for each series and adjust hatches and marker types
-  chart.marker(data1)
-    .hatchFill("diagonalcross")
-    .hoverSize(30)
-    .size(20)
-    .color("#EEEEEE")
-    .type("star5");
-  chart.marker(data2)
-    .hoverSize(30)
-    .size(20)
-    .color("#EEEEEE")
-    .hatchFill("diagonalbrick")
-    .type("star4");
-  chart.marker(data3)
-    .hoverSize(30)
-    .size(20)
-    .color("#EEEEEE")
-    .hatchFill("zigzag");
-  chart.marker(data4)
-    .hoverSize(30)
-    .size(20)
-    .color("#EEEEEE")
-    .hatchFill("checkerboard")
-    .type("square");
-  chart.marker(data5)
-    .hoverSize(30)
-    .size(20)
-    .color("#EEEEEE")
-    .hatchFill("percent30")
-    .type("circle");
+  var series1 = chart.marker(data1);
+  series1.hatchFill("diagonalcross");
+  series1.hoverSize(30);
+  series1.size(20);
+  series1.color("#EEEEEE");
+  series1.type("star5");
+  var series2 = chart.marker(data2);
+  series2.hoverSize(30);
+  series2.size(20);
+  series2.color("#EEEEEE");
+  series2.hatchFill("diagonalbrick");
+  series2.type("star4");
+  var series3 = chart.marker(data3);
+  series3.hoverSize(30);
+  series3.size(20);
+  series3.color("#EEEEEE");
+  series3.hatchFill("zigzag");
+  var series4 = chart.marker(data4);
+  series4.hoverSize(30);
+  series4.size(20);
+  series4.color("#EEEEEE");
+  series4.hatchFill("checkerboard");
+  series4.type("square");
+  var series5 = chart.marker(data5);
+  series5.hoverSize(30);
+  series5.size(20);
+  series5.color("#EEEEEE");
+  series5.hatchFill("percent30");
+  series5.type("circle");
   
   // set title
-  chart.title().text("Hatches");
+  chart.title("Hatches");
   
-  // draw axes and set titles
-  chart.xAxis().title("Year");
-  chart.yAxis().title("Box office");
-    
-  chart.xScale()
-    .minimum(0)
-    .maximum(4)
-    .ticks().interval(1);
+  var xScale = chart.xScale();
+  xScale.minimum(1999);
+  xScale.maximum(2007);
+  var xTicks = chart.xScale().ticks();
+  xTicks.interval(1);
   
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

@@ -8,7 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
   
   // chart type
-  var chart = anychart.cartesianChart();
+  var chart = anychart.cartesian();
   
   // data
   chart.marker([
@@ -20,28 +20,17 @@
   ]);
   
   // set title
-  chart.title()
-    .text("Marker Series on Cartesian Plot")
-    .enabled(true);
-  
-  // grid settings
-  chart.grid().layout("horizontal");
-  chart.grid(1)
-    .evenFill(null)
-    .oddFill(null)
-    .stroke("#B9B9B9")
-    .layout("vertical");
-  chart.minorGrid()
-    .evenFill(null)
-    .oddFill(null)
-    .stroke("#B9B9B9 0.5")
-    .layout("horizontal");
-  
+  chart.title("Marker Series on Cartesian Plot");
+
   // draw axes and set titles
-  chart.xAxis().title("Month");
-  chart.yAxis().title("Box Office");
-  
-  chart.container("container").draw();
+  var xAxis = chart.xAxis();
+  xAxis.title("Month");
+  var yAxis = chart.yAxis();
+  yAxis.title("Box office");
+
+  // draw
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
