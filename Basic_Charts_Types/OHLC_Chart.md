@@ -28,11 +28,16 @@ OHLC chart uses four values
 
 ```
   {
-    x: Date.UTC(2007, 7, 28),   // position on x scale
-    open:511.53,                // opening value
-    high:514.98,                // the highest value
-    low:505.79,                 // the lowest value
-    close:506.40                // closing value
+    // position on x scale
+    x: Date.UTC(2007, 7, 28),
+    // opening value
+    open:511.53,
+    // the highest value
+    high:514.98,
+    // the lowest value
+    low:505.79,
+    // closing value
+    close:506.40
   },
 ```
 
@@ -88,15 +93,15 @@ Let's see single-series OHLC chart created using the following data - ACME Corp.
 Now we need to convert this data table into acceptable format. In terms of AnyChart data model we have one series of data with categories that hold days names. Each point in series represents one day and open, high, low, close prices. Converted Data looks like:
 
 ```
-    var data = [
-        {x: Date.UTC(2007, 8, 28), open:511.53, high:514.98, low:505.79, close:506.40},
-        {x: Date.UTC(2007, 8, 29), open:507.84, high:513.30, low:507.23, close:512.88},
-        {x: Date.UTC(2007, 8, 30), open:512.36, high:515.40, low:510.58, close:511.40},
-        {x: Date.UTC(2007, 8, 31), open:513.10, high:516.50, low:511.47, close:515.25},
-        {x: Date.UTC(2007, 9, 4), open:515.02, high:528.00, low:514.62, close:525.15}
-    ];
-    chart = anychart.areaChart();
-    chart.ohlc(data);
+  var data = [
+    {x: Date.UTC(2007, 8, 28), open:511.53, high:514.98, low:505.79, close:506.40},
+    {x: Date.UTC(2007, 8, 29), open:507.84, high:513.30, low:507.23, close:512.88},
+    {x: Date.UTC(2007, 8, 30), open:512.36, high:515.40, low:510.58, close:511.40},
+    {x: Date.UTC(2007, 8, 31), open:513.10, high:516.50, low:511.47, close:515.25},
+    {x: Date.UTC(2007, 9, 4), open:515.02, high:528.00, low:514.62, close:525.15}
+  ];
+  chart = anychart.areaChart();
+  chart.ohlc(data);
 ```
 
 As you can see, we've specified chart type as {api:anychart.core.cartesian.series.OHLC}**OHLC**{api} and set name, open, high, low, close parameters.
@@ -189,21 +194,21 @@ Let's compare ACME Corp. and Duff Brewing Corp. stock prices sales:
 As we do in single series sample above we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have two data sets - one for each year:
 
 ```
-    chart.ohlc([
-        {x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
-        {x: Date.UTC(2007, 7, 29), open:507.84, high:513.30, low:507.23, close:512.88},
-        {x: Date.UTC(2007, 7, 30), open:512.36, high:515.40, low:510.58, close:511.40},
-        {x: Date.UTC(2007, 7, 31), open:513.10, high:516.50, low:511.47, close:515.25},
-        {x: Date.UTC(2007, 8, 4), open:515.02, high:528.00, low:514.62, close:525.15}
-    ]);
-    
-    chart.ohlc([
-        {x: Date.UTC(2007, 7, 28), open: 522.95, high: 523.10, low: 522.50, close: 522.52},
-        {x: Date.UTC(2007, 7, 29), open: 522.60, high: 522.69, low: 522.27, close: 522.55},
-        {x: Date.UTC(2007, 7, 30), open: 522.49, high: 522.91, low: 522.38, close: 522.61},
-        {x: Date.UTC(2007, 7, 31), open: 522.81, high: 522.83, low: 522.51, close: 522.73},
-        {x: Date.UTC(2007, 8, 4),  open: 523.30, high: 524.50, low: 523.20, close: 523.97}
-    ]);
+  chart.ohlc([
+    {x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
+    {x: Date.UTC(2007, 7, 29), open:507.84, high:513.30, low:507.23, close:512.88},
+    {x: Date.UTC(2007, 7, 30), open:512.36, high:515.40, low:510.58, close:511.40},
+    {x: Date.UTC(2007, 7, 31), open:513.10, high:516.50, low:511.47, close:515.25},
+    {x: Date.UTC(2007, 8, 4), open:515.02, high:528.00, low:514.62, close:525.15}
+  ]);
+  
+  chart.ohlc([
+    {x: Date.UTC(2007, 7, 28), open: 522.95, high: 523.10, low: 522.50, close: 522.52},
+    {x: Date.UTC(2007, 7, 29), open: 522.60, high: 522.69, low: 522.27, close: 522.55},
+    {x: Date.UTC(2007, 7, 30), open: 522.49, high: 522.91, low: 522.38, close: 522.61},
+    {x: Date.UTC(2007, 7, 31), open: 522.81, high: 522.83, low: 522.51, close: 522.73},
+    {x: Date.UTC(2007, 8, 4),  open: 523.30, high: 524.50, low: 523.20, close: 523.97}
+  ]);
 ```
 
 {sample}BCT\_OHLC\_Chart\_02{sample}
@@ -217,8 +222,10 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 With AnyChart you can place axes to any side if the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
 
 ```
-    chart.xAxis().orientation('top');
-    chart.yAxis().orientation('right');
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
 ```
 
 And here is the demonstration of this feature on the Single-series sample:
@@ -230,9 +237,10 @@ And here is the demonstration of this feature on the Single-series sample:
 AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by {api:anychart.scales.Logarithmic}**.scale()**{api}:
 
 ```
-    logScale = anychart.scales.log();
-    logScale.minimum(0.1).maximum(100);
-    chart.yScale(logScale);
+  logScale = anychart.scales.log();
+  logScale.minimum(0.1);
+  logScale.maximum(100);
+  chart.yScale(logScale);
 ```
 
 And here is the demonstration of Logarithmic Y Axis on slightly modified the Single-series sample:
@@ -244,7 +252,11 @@ And here is the demonstration of Logarithmic Y Axis on slightly modified the Sin
 By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting **.maximum()** and **.minimum()** parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjusted the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
 
 ```
-    chart.yScale().minimum(505).maximum(530)ticks().interval(5)
+  var yScale = chart.yScale();
+  yScale.minimum(505);
+  yScale.maximum(530);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(5);
 ```
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
@@ -262,11 +274,11 @@ for OHLC parameters are {api:anychart.core.cartesian.series.OHLC#fallingStroke}*
 Now, let's look how to adjust OHLC appearance:
 
 ```
-    chart.ohlc(data)
-        .fallingStroke('red', 1)
-        .risingStroke('green', 1)
-        .hoverFallingStroke('darkred', 3)
-        .hoverRisingStroke('darkgreen', 3);
+  var series = chart.ohlc(data);
+  series.fallingStroke("red", 1);
+  series.risingStroke("green", 1);
+  series.hoverFallingStroke("darkred", 3);
+  series.hoverRisingStroke("darkgreen", 3);
 ```
 
 Using these settings we've set red color for every falling OHLC point and green color for every rising OHLC point. Also, our rising OHLC points have dark green color, if mouse is over, as well as all falling points have dark red color, if mouse is over. Thickness of strokes was adjusted too. It's 1 px for all points and 3px if mouse over.
