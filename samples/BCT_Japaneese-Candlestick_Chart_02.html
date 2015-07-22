@@ -8,17 +8,17 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  var chart = anychart.financialChart();
+  var chart = anychart.financial();
 
   // chart title
-  chart.title().text("Multi-series");
+  chart.title("Multi-series");
 
   // adjust x scale type
-  chart.xScale()
-    .minimum(Date.UTC(2007, 7, 27))
-    .maximum(Date.UTC(2007, 8, 5))
-    .ticks()
-      .interval(0,0,1);
+  var xScale = chart.xScale();
+  xScale.minimum(Date.UTC(2007, 7, 27));
+  xScale.maximum(Date.UTC(2007, 8, 5));
+  var xTicks = chart.xScale().ticks();
+  xTicks.interval(0,0,1);
 
   // set first series data
   chart.candlestick([
@@ -27,7 +27,7 @@
     {x: Date.UTC(2007, 7, 30), open:512.36, high:515.40, low:510.58, close:511.40},
     {x: Date.UTC(2007, 7, 31), open:513.10, high:516.50, low:511.47, close:515.25},
     {x: Date.UTC(2007, 8, 4),  open:515.02, high:528.00, low:514.62, close:525.15}
-  ]).xPointPosition(0.5);
+  ]);
 
   // set second series data
   chart.candlestick([
@@ -36,14 +36,18 @@
     {x: Date.UTC(2007, 7, 30), open: 522.49, high:522.91, low:522.38, close:522.61},
     {x: Date.UTC(2007, 7, 31), open: 522.81, high:522.83, low:522.51, close:522.73},
     {x: Date.UTC(2007, 8, 4),  open: 523.30, high:524.50, low:523.20, close:523.97}
-  ]).xPointPosition(0.5);
+  ]);
 
   // set axes title
-  chart.xAxis().title().text("Day");
-  chart.yAxis().title().text("Price");
+  var xAxis = chart.xAxis();
+  xAxis.title("Day");
+  var yAxis = chart.yAxis();
+  yAxis.title("Price");
 
   // set x axis labels width for the better outlook
-  chart.xAxis().staggerLines(1).labels().textFormatter(function(value){
+  xAxis.staggerLines(1);
+  var xLabels = chart.xAxis().labels();
+  xLabels.textFormatter(function(value){
     var date = new Date(value["tickValue"]);
     var options = {
       month: "short",
@@ -53,7 +57,8 @@
   });
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

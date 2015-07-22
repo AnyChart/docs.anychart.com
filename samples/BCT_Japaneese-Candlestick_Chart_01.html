@@ -26,15 +26,12 @@
   ]);
 
   // chart type
-  var chart = anychart.financialChart();
-
-  // disabling titles
-  chart.title().enabled(false);
-  chart.xAxis().title().enabled(false);
-  chart.yAxis().title().enabled(false);
+  var chart = anychart.financial();
 
   // rotate x axis labels
-  chart.xAxis().labels().rotation(-90).textFormatter(function(){
+  var xLabels = chart.xAxis().labels();
+  xLabels.rotation(-90);
+  xLabels.textFormatter(function(){
       return this.value;
   });
 
@@ -42,15 +39,16 @@
   chart.xScale(anychart.scales.ordinal());
 
   // set data and adjust colors
-  chart.candlestick(data)
-    .fallingFill("black")
-    .fallingStroke("black")
-    .risingFill("white")
-    .risingStroke("black")
-    .tooltip().enabled(false);
+  var series = chart.candlestick(data);
+  series.fallingFill("black");
+  series.fallingStroke("black");
+  series.risingFill("white");
+  series.risingStroke("black");
+  series.tooltip(false);
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
