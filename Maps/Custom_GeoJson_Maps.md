@@ -5,7 +5,9 @@
 
 ## Overview
 
-Custom Map is a map made by users of our component for some special purposes. In this article we will talk about creating those maps from data in most popular mapping formats. So, if you are going to draw your own map or create it from SVG, this article will help you.
+Custom Map is a map made by users of our component for some special purposes. In this article we will talk about creating those maps from data in the most popular mapping formats. So, if you are going to draw your own map or create it from SVG, this article will help you.
+<br>
+First of all, visit our (AnyChart Maps Collection)[../Maps_List.md] and download the map in one of available formats.
 <br>
 We have noticed that a lot of users have maps in \*.shp or other similar formats, which can be easily converted for AnyChart Maps through GeoJSON format, as GeoJSON is one of three native formats for AnyChart.
 This conversion can be made through most of GIS-editors. You can use QGIS as it is a free editor that supports .shp, .kml and a plenty of formats also. 
@@ -44,32 +46,51 @@ Don't forget to match the box with "Save only selected features" - unless you do
 <br>
 <a href="http://static.anychart.com/images/creating\_maps\_06.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_06.jpg"></a>
 <br><br>
-4. Now, we're ready for working further. You may start a new project (click on "Project" -> New -> Import) or simply go on working with the existing one. The result of importing the new created file or saving a selection will look like that:
+
+
+
+
+4. Now, we're ready for working further. Let's change the projection now.
+<br>
+Projection is just a type of view that shows how we look at the map. There are loads of projections, made by different geographers in different times for different purposes, so not all of them suite the world map.
+<br>
+As can be seen in the right-down corner, the default projection type is EPSG 4326. If you click on it, you'll open the "Project Properties" window.
 <br>
 <a href="http://static.anychart.com/images/creating\_maps\_07.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_07.jpg"></a>
 <br>
-In case of us going on working with the project we already have, we may delete the lowest layer or uncheck it to make it invisible, as we won't need it anymore.
-<br><br>
-5. While this looks nice, we want our map to have a different look. The simplest thing we can do is to change the color of the map. Click twice on the name of the layer to open the layer settings. Changing color is rather simple. Look through the pics below.
+In the top of the window there is a checkbox "Enable 'on the fly' CRS transformation". When checked, it automatically transforms added map files into a projection that is set in the whole project as default. Though, if the default projection is a non-global one, newly added map files can be not recognized by the default type of projection.
+<br>
+Now, let's change the projection of the world map. For that go to the Layer -> Set CRS of Layer(s). Note that a layer which projection you want to change has to be highlighted.
 <br>
 <a href="http://static.anychart.com/images/creating\_maps\_09.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_09.jpg"></a>
 <br>
 <a href="http://static.anychart.com/images/creating\_maps\_10.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_10.jpg"></a>
-<br><br>
-6. Now, let's add a new layer and draw a polygone on it. We need a drawing tool for that - "New Shapefile Layer...". Look at the picture below.
+<br>
+One of the rather famous map projections in QGIS is "Egypt 1907 / Purple Belt". Now, look at the sample below:
 <br>
 <a href="http://static.anychart.com/images/creating\_maps\_11.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_11.jpg"></a>
 <br>
-It's very important not to forget about two moments here:
-<br> 1) check the "Polygone" - in different case you will not be able to make a closed shape;
-<br> 2) choose the right CRS-file - it might be automatically chosen in default or other CRS-file which doesn't match the one those files you have uploaded are using.
+That's how the world map looks like in the "Egypt 1907 / Purple Belt" projection.
+<br>
+5. Now, let's simplify the geometry. The less details are in a map, the faster AnyChart works, and the faster your page loads. 
+The simplest way to do this is to go to the the Vector menu -> Geometry Tools -> Simplify Geometries. Set a tolerance of about 1000, tick the "Add result to canvas" box and select a result new file to save the result to. 
+<br>
+In the end of the process, you'll get a small information window, where the difference between the original map file and transformed one is quite clear.
+<br>
+<a href="http://static.anychart.com/images/creating\_maps\_13.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_13.jpg"></a>
+<br>
+When everything's over, you'll get a new layer with simplified geometry.
 <br>
 <a href="http://static.anychart.com/images/creating\_maps\_12.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_12.jpg"></a>
+
+
+
+6. Let's look through the properties of the map. Before exporting, we might want to inspect and modify the properties of our map. To do this, right click the layer in the table of contents and select "Open Attribute Table". These attributes will be included in the GeoJSON when we export our map. Highmaps was designed to be used with user defined maps, and is very flexible in the way that it handles map data. There are therefore no special requirements for metadata in the maps. 
+
 <br>
 Then we should give the name to our new shape file.
 <br> To make any changes in the file, we use "Toggle Editing" tool:
 <br>
-<a href="http://static.anychart.com/images/creating\_maps\_13.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_13.jpg"></a>
 <br>
 When this button is clicked, some other tools become available. We will need an "Add Feature" tool to draw a new polygone.
 <br>
