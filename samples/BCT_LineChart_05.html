@@ -17,23 +17,27 @@
   ]);
 
   // chart type
-  var chart = anychart.lineChart();
+  var chart = anychart.line();
   
   // adjust y scale direction
-  chart.yScale().inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
     
   // set daat
   chart.line(data);
 
   // title
-  chart.title().text("Scales Management");
+  chart.title("Scales Management");
 
   // set axes titles
-  chart.xAxis().title().text("Sales");
-  chart.yAxis().title().text("Month");
+  var xAxis = chart.xAxis();
+  xAxis.title("Sales");
+  var yAxis = chart.yAxis();
+  yAxis.title("Month");
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

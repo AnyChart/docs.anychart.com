@@ -9,31 +9,37 @@
 
   // data
   var data = anychart.data.set([
-      ["January", 10000],
-      ["February", 12000],
-      ["March", 18000],
-      ["April", 11000],
-      ["May", 9000]
+    ["January", 10000],
+    ["February", 12000],
+    ["March", 18000],
+    ["April", 11000],
+    ["May", 9000]
   ]);
 
   // chart type
-  chart = anychart.lineChart();
+  var chart = anychart .line();
   
   // set minimum and maximum y scale value
-  chart.yScale().minimum(0).maximum(50000);
+  var yScale = chart.yScale();
+  yScale.minimum(0);
+  yScale.maximum(50000);
   
   // set data
   chart.spline(data);
 
   // title
-  chart.title().text("Minimum and Maximum Value");
+  chart.title("Minimum and Maximum Value");
+
 
   // set axes titles
-  chart.xAxis().title().text("Sales");
-  chart.yAxis().title().text("Month");
+  var xAxis = chart.xAxis();
+  xAxis.title("Sales");
+  var yAxis = chart.yAxis();
+  yAxis.title("Month");
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

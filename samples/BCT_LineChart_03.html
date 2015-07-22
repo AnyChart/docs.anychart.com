@@ -17,20 +17,23 @@
   ]);
 
   // chart type
-  var chart = anychart.lineChart();
+  var chart = anychart.line();
 
   // title
-  chart.title().text("Stepline chart");
+  chart.title("Stepline chart");
 
   // set axes titles
-  chart.xAxis().title().text("Sales");
-  chart.yAxis().title().text("Month");
+  var xAxis = chart.xAxis();
+  xAxis.title("Sales");
+  var yAxis = chart.yAxis();
+  yAxis.title("Month");
 
   // set data and define chart
   chart.stepLine(data);
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

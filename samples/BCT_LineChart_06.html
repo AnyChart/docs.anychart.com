@@ -16,25 +16,28 @@
     ["May", 9000]
   ]);
 
-  // cahrt type
-  chart = anychart.lineChart();
+  // chart type
+  var chart = anychart .line();
 
   // title
-  chart.title().text("Axes Management");
+  chart.title("Axes Management");
 
   // set axes titles
-  chart.xAxis().title().text("Sales");
-  chart.yAxis().title().text("Month");
+  var xAxis = chart.xAxis();
+  xAxis.title("Sales");
+  var yAxis = chart.yAxis();
+  yAxis.title("Month");
 
   // adjust axes position
-  chart.xAxis().orientation("top");
-  chart.yAxis().orientation("right");
+  xAxis.orientation("top");
+  yAxis.orientation("right");
 
   // set date
   chart.spline(data);
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
