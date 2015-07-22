@@ -28,8 +28,10 @@
   grid.layout("horizontal");
   grid.evenFill("#fff");
   grid.oddFill("rgb(244,245,255");
+  grid.enabled(true);
   var minorGrid = chart.minorGrid();
   minorGrid.layout("horizontal");
+  minorGrid.enabled(true);
 
   // setting major ticks interval on y scale
   var yTicks = chart.yScale().ticks();

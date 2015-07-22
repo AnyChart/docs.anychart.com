@@ -20,16 +20,18 @@
   var dateMinorTicks = dateScale.minorTicks();
   dateMinorTicks.interval(0, 2);
   chart.yScale(dateScale);
+  
+  // enable minor ticks
+  var minorTicks = chart.yAxis().minorTicks();
+  minorTicks.enabled(true);
 
   // setting data
   var series = chart.rangeBar([
     {x: "Development", low: Date.UTC(2000, 01, 01), high: Date.UTC(2002, 02, 15)},
-    {x: "Internal Testing", low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01), fill: "red"},
-    {x: "Field Tests", low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01), fill: "green"},
-    {x: "Licensing", low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01), fill: "yellow"}
+    {x: "Internal Testing", low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01), fill: "#1976D2"},
+    {x: "Field Tests", low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01), fill: "#EF6C00"},
+    {x: "Licensing", low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01), fill: "#FFD54F"}
   ]);
-  series.hoverFill("#444444");
-  series.stroke("gray 0.8");
   series.tooltip(false);
 
   // adjusting labels for dateTime scale. Otherwise it would be the number of milliseconds between the date and midnight January 1 1970

@@ -8,7 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // define chart
-  var chart = anychart.columnChart();
+  var chart = anychart.column();
 
   // setting chart title
   chart.title("Date/Time scale sample");
@@ -26,12 +26,10 @@
   // setting data
   var series = chart.rangeColumn([
     {x: "Development", low: Date.UTC(2000, 01, 01), high: Date.UTC(2002, 02, 15)},
-    {x: "Internal Testing", low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01), fill: "red"},
-    {x: "Field Tests", low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01), fill: "green"},
-    {x: "Licensing", low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01), fill: "yellow"}
+    {x: "Internal Testing", low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01)},
+    {x: "Field Tests", low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01)},
+    {x: "Licensing", low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01)}
   ]);
-  series.hoverFill("#444444");
-  series.stroke("gray 0.8");
   series.tooltip(false);
 
   // adjusting labels for dateTime scale. Otherwise it would be the number of milliseconds between the date and midnight January 1 1970

@@ -20,29 +20,23 @@
 
   var stage = anychart.graphics.create("container");
 
-  // setting main title
-  var mainTitle = anychart.ui.title();
-  mainTitle.parentBounds(0, 0, stage.width(), stage.height()*0.1);
-  mainTitle.text("Main Labels Settings");
-  mainTitle.container(stage);
-  mainTitle.draw();
-
   // Chart without labels adjusting
   var normalLabels = anychart.column();
   // setting title
   normalLabels.title("Normal labels");
   // setting position and bounds
-  normalLabels.bounds(0, "10%", "33.3%", "55%");
+  normalLabels.bounds(0, 0, "33.3%", "55%");
   // setting series data
   normalLabels.column(seriesData_1);
   normalLabels.column(seriesData_2);
-  chartSettings(normalLabels);
+  normalLabels.container(stage);
+  normalLabels.draw();
 
 
   // chart with rotated labels
   var rotatedLabels = anychart.column();
   rotatedLabels.title("Rotated labels");
-  rotatedLabels.bounds("33.3%", "10%", "33.3%", "55%");
+  rotatedLabels.bounds("33.3%", 0, "33.3%", "55%");
   // rotating labels
   var xRotatedLabels = rotatedLabels.xAxis().labels();
   xRotatedLabels.rotation(-90);
@@ -50,17 +44,18 @@
   yRotatedLabels.rotation(-90);
   rotatedLabels.column(seriesData_1);
   rotatedLabels.column(seriesData_2);
-  chartSettings(rotatedLabels);
+  rotatedLabels.container(stage);
+  rotatedLabels.draw();
 
 
   // chart with stagger mode
   var staggerLabels = anychart.column();
   staggerLabels.title("Stagger Labels");
-  staggerLabels.bounds("66.6%", "10%", "33.3%", "55%");
+  staggerLabels.bounds("66.6%", 0, "33.3%", "55%");
   // enabling stagger mode
   var xAxis = staggerLabels.xAxis();
   xAxis.staggerMode(true);
-  // adjusting settings for stager mode
+  // adjusting settings for stagger mode
   xAxis.staggerLines(2);
 
   // data set for stagger mode sample
@@ -81,8 +76,9 @@
   var staggerSeriesData_2 = staggerData.mapAs({x: [0], value: [2]});
   staggerLabels.column(staggerSeriesData_1);
   staggerLabels.column(staggerSeriesData_2);
-  chartSettings(staggerLabels);
-  
+  staggerLabels.container(stage);
+  staggerLabels.draw();
+
   // chat with labels inside
   var labelsInside = anychart.line();
 
@@ -98,14 +94,7 @@
   insideLabelsSeries.tooltip(false);
 
   labelsInside.title("Labels Inside");
-  labelsInside.bounds(0, "65%", "100%", "35%");
-  var background = labelsInside.background();
-  background.stroke("#CCCCCC");
-
-  var innerXAxis = labelsInside.xAxis();
-  innerXAxis.title(false);
-  var innerYAxis = labelsInside.yAxis();
-  innerYAxis.title(false);
+  labelsInside.bounds(0, "55%", "100%", "45%");
 
   // adjusting scales
   var xNewScale = anychart.scales.linear();
@@ -118,42 +107,28 @@
   var yNewTicks = yNewScale.ticks();
   yNewTicks.interval(3);
   labelsInside.yScale(yNewScale);
-  
+
   // setting labels a bit higher and andjusting it's values
   var innerLabelsXAxisLabels = labelsInside.xAxis().labels();
-  innerLabelsXAxisLabels.offsetY(-25);
+  innerLabelsXAxisLabels.offsetY(-30);
   innerLabelsXAxisLabels.textFormatter(function(){
     return this.value + ".00";
   });
 
   // disabling first and last labels
+  var innerXAxis = labelsInside.xAxis();
   innerXAxis.drawFirstLabel(false);
   innerXAxis.drawLastLabel(false);
+  innerXAxis.stroke("#СЕСЕСЕ");
+  var innerTicks = labelsInside.xAxis().ticks();
+  innerTicks.enabled(true);
+  innerTicks.position("inside");
 
-  // disabling labels for y axis
-  innerYAxis.labels(false);
+  // disabling y axis
+  labelsInside.yAxis(false);
 
   labelsInside.container(stage);
   labelsInside.draw();
-  
-  function chartSettings (chart){
-    // disable axes titles
-    var xTitle = chart.xAxis().title();
-    xTitle.enabled(false);
-    var yTitle = chart.yAxis().title();
-    yTitle.enabled(false);
-    
-    var yScale = chart.yScale();
-    yScale.minimum(0);
-    
-    // set background border
-    var chartBackground = chart.background();
-    chartBackground.stroke("#CCCCCC");
-    
-    // set container and draw chart
-    chart.container(stage);
-    chart.draw();
-  }
 });</script>
 </head>
 <body>

@@ -18,23 +18,25 @@
   
   var chart = anychart.column(data);
   
-  chart.title(false);
-  
   // adjusting Axes
   var xTitle = chart.xAxis().title();
   xTitle.text("Sample X axis name");
   xTitle.fontWeight(400);
+  xTitle.enabled(true);
   
   var yAxis = chart.yAxis();
   yAxis.orientation("right");
   
   chart.container("container");
   chart.draw();
-  
-  // adjust y axis
-  var yTitle = chart.yAxis().title();
+
+  // get y minimum and maximum values
   var max = chart.yScale().maximum();
   var min = chart.yScale().minimum();
+
+  // adjust y axis
+  var yTitle = chart.yAxis().title();
+  yTitle.enabled(true);
   yTitle.text("Y axis from " + min + " to " + max);
   yTitle.align("bottom");
 });</script>

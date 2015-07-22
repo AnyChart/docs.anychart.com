@@ -46,6 +46,9 @@
   var yMinorTicks = chart.yScale().minorTicks();
   yMinorTicks.interval(2);
 
+  var minorTicks = chart.yAxis().minorTicks();
+  minorTicks.enabled(true);
+
   chart.container("container");
   chart.draw();
 });</script>

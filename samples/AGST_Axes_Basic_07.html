@@ -27,7 +27,7 @@
   mainTitle.draw();
 
   // first chart
-  var chart = anychart.columnChart();
+  var chart = anychart.column();
 
   chart.title("Tickmarks Outside");
 
@@ -68,45 +68,45 @@
   chart.draw();
 
   // second chart
-  var lineChart = anychart.lineChart(data);
+  var line = anychart.line(data);
 
-  lineChart.title("Tickmarks Inside");
+  line.title("Tickmarks Inside");
 
   // setting chart's size and position
-  lineChart.bounds("50%", "15%", "50%", "85%");
+  line.bounds("50%", "15%", "50%", "85%");
 
-  var lineBackground = lineChart.background();
+  var lineBackground = line.background();
   lineBackground.stroke("#CCCCCC");
 
   // adjusting x axis
-  var lineXTicks = lineChart.xAxis().ticks();
+  var lineXTicks = line.xAxis().ticks();
   lineXTicks.position("inside");
-  var lineXTitle = lineChart.xAxis().title();
+  var lineXTitle = line.xAxis().title();
   lineXTitle.enabled(false);
 
   // adjusting y axis
-  var lineYTitle = lineChart.yAxis().title();
+  var lineYTitle = line.yAxis().title();
   lineYTitle.enabled(false);
-  var lineYMinorTicks = lineChart.yAxis().minorTicks();
+  var lineYMinorTicks = line.yAxis().minorTicks();
   lineYMinorTicks.position("inside");
-  var lineYTicks = lineChart.yAxis().ticks();
+  var lineYTicks = line.yAxis().ticks();
   lineYTicks.position("inside");
 
   // disabling any grids
-  lineChart.minorGrid(null);
-  lineChart.grid(0, null);
-  lineChart.grid(1, null);
+  line.minorGrid(null);
+  line.grid(0, null);
+  line.grid(1, null);
 
   // setting major ticks interval on y scale
-  var lineYScaleTicks = lineChart.yScale().ticks();
+  var lineYScaleTicks = line.yScale().ticks();
   lineYScaleTicks.interval(5);
 
   // series data
-  lineChart.line(Sales2003);
-  lineChart.line(Sales2004);
+  line.line(Sales2003);
+  line.line(Sales2004);
 
-  lineChart.container(stage);
-  lineChart.draw();
+  line.container(stage);
+  line.draw();
 });</script>
 </head>
 <body>

@@ -27,12 +27,15 @@
   var grid = chart.grid(0);
   grid.stroke("#000");
   grid.layout("vertical");
+  grid.enabled(true);
   var grid1 = chart.grid(1);
   grid1.stroke("#000");
   grid1.layout("horizontal");
+  grid1.enabled(true);
   var minorGrid = chart.minorGrid();
-  minorGrid.stroke("#000 0.2", 1, "5 2 5");
+  minorGrid.stroke("#СЕСЕСЕ", 1, "5 2 5");
   minorGrid.layout("horizontal");
+  minorGrid.enabled(true);
 
   // setting major ticks interval on y scale
   var yTicks = chart.yScale().ticks();

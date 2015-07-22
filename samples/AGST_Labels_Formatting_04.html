@@ -12,11 +12,11 @@
   chart.title("Axes Labels Visual Setting");
 
   chart.area([
-      ["January" , 10000],
-      ["February" , 12000],
-      ["March" , 10000],
-      ["April" , 11000],
-      ["May" , 19000]
+    ["January" , 10000],
+    ["February" , 12000],
+    ["March" , 10000],
+    ["April" , 11000],
+    ["May" , 19000]
   ]);
 
   var yScale = chart.yScale();
@@ -38,12 +38,15 @@
 
   var xLabels = chart.xAxis().labels();
   xLabels.fontFamily("Courier");
-  xLabels.useHtml(true);
-  xLabels.fontColor("red");
+  xLabels.fontColor("#125393");
+  xLabels.offsetY(5);
+  xLabels.padding(3);
   xLabels.fontWeight("bold");
   var xLabelsBackground = chart.xAxis().labels().background();
   xLabelsBackground.enabled(true);
-  xLabelsBackground.stroke("blue");
+  xLabelsBackground.stroke("#cecece");
+  xLabelsBackground.cornerType("round");
+  xLabelsBackground.corners(5);
 
   // function to adjust y axis labels
   function dollarFormatter() {
