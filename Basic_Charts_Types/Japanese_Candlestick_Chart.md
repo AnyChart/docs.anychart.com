@@ -172,7 +172,7 @@ As you can see, we've specified chart as "Candlestick". Each series of data cont
   
 Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on it to see it's javascript settings.
 
-{sample}BCT\_Japaneese-Candlestick\_Chart\_01{sample}
+{sample}BCT\_Japanese-Candlestick\_Chart\_01{sample}
 
 ### Multi-series
 
@@ -276,7 +276,7 @@ As we did in single-series sample above, now we need to convert this table into 
   ]);
 ```
 
-{sample}BCT\_Japaneese-Candlestick\_Chart\_02{sample}
+{sample}BCT\_Japanese-Candlestick\_Chart\_02{sample}
 
 ## Axes
 
@@ -295,7 +295,7 @@ With AnyChart you can place axes to any side of the chart, all you need to do is
 
 And this is the demonstration of this feature in the Single-series sample:
 
-{sample}BCT\_Japaneese-Candlestick\_Chart\_03{sample}
+{sample}BCT\_Japanese-Candlestick\_Chart\_03{sample}
 
 ### Logarithmic Scale
 
@@ -310,7 +310,7 @@ AnyChart allows to make Y, X or any other scale Logarithmic. This is controlled 
 
 And this is the demonstration of making the Y-Axis Logarithmic in the slightly modified Single-series sample:
 
-{sample}BCT\_Japaneese-Candlestick\_Chart\_04{sample}
+{sample}BCT\_Japanese-Candlestick\_Chart\_04{sample}
 
 ### Minimum and Maximum
 
@@ -326,7 +326,7 @@ AnyChart calculates axis minimum and maximum automatically. You can see this on 
 
 And here is the demonstration of setting the max and the min values in the Single-series sample:
 
-{sample}BCT\_Japaneese-Candlestick\_Chart\_05{sample}
+{sample}BCT\_Japanese-Candlestick\_Chart\_05{sample}
 
 ## Visualization
 
@@ -348,7 +348,7 @@ Now, let's look how to adjust candlestick's appearance:
 
 Using these settings we've set black color for every falling candlestick point and white color for rising ones. Also, every point has black stroke and these stroke goes red if hovered. Thickness of strokes was adjusted too. It's 1 px for all points in normal state and 3px when hovered. 
 
-{sample}BCT\_Japaneese-Candlestick\_Chart\_06{sample}
+{sample}BCT\_Japanese-Candlestick\_Chart\_06{sample}
 
 ## Labels and Tooltips
 
@@ -364,7 +364,7 @@ With the following example let's make data labels appear to the top from the dat
   
 When formatting data labels' text and tooltips we can use {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} and {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api}.
 
-{sample}BCT\_Japaneese-Candlestick\_Chart\_07{sample}
+{sample}BCT\_Japanese-Candlestick\_Chart\_07{sample}
 <!--
 Related Help Topics:
 
@@ -381,11 +381,11 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 Now let's study how to apply different colors to different data series. To apply the color to the exact series we usually need to set the {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter for the {api:anychart.core.cartesian.series}**series**{api}. The Japanese Candlestick series does it another way. As far as this series has two types of points (with rising and falling values) it has two methods for setting series inner color. Use {api:anychart.core.cartesian.series.Candlestick#fallingFill}**.fallingFill()**{api} method to define inner color for all points with falling values and {api:anychart.core.cartesian.series.Candlestick#risingFill}**.risingFill()**{api} method to define inner color for all points with rising values. In the sample below we use BlueViolet color as {api:anychart.core.cartesian.series.Candlestick#fallingFill}**.fallingFill()**{api} and LightCoral color as {api:anychart.core.cartesian.series.Candlestick#risingFill}**.risingFill()**{api} (as for borders: use {api:anychart.core.cartesian.series.Candlestick#fallingStroke}**.fallingStroke()**{api} method to set border color for all points with falling values and {api:anychart.core.cartesian.series.Candlestick#risingStroke}**.risingStroke()**{api} method for all points with rising values):
 
-{sample}BCT\_Japaneese-Candlestick\_Chart\_08{sample}
+{sample}BCT\_Japanese-Candlestick\_Chart\_08{sample}
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set **"Rgb(180,77,77)"** color for minimum point and "Rgb(77,180,77)" for the maximal one. As you see it is very easy to do by setting {api:anychart.core.cartesian.series.Candlestick#fallingFill}**.fallingFill()**{api} and {api:anychart.core.cartesian.series.Candlestick#risingFill}**.risingFill()**{api} fields of the point.
 
-{sample}BCT\_Japaneese-Candlestick\_Chart\_09{sample}
+{sample}BCT\_Japanese-Candlestick\_Chart\_09{sample}
 
 
 **Important Note:**
@@ -400,4 +400,4 @@ Japanese Candlestick Series are rarely used alone, in technical analysis they ar
   
 AnyChart provides most of the features which might be necessary in creating a complex financial chart. This includes Combination charts, Dashboards and Interactivity features. The sample below shows a typical stock trading report and it can be used as a starting point in your integration of AnyChart into Financial/Trading/Reporting application.
 
-{sample}BCT\_Japaneese-Candlestick\_Chart\_10{sample}
+{sample}BCT\_Japanese-Candlestick\_Chart\_10{sample}
