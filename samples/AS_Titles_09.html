@@ -76,30 +76,31 @@
     chart.container(stage);
     chart.draw();
     
-    var customTitle = anychart.ui.title();
+    var customLabel = chart.label();
     // set title text
-    customTitle.text("Back to Sales Manager Report");
+    customLabel.text("Back to Sales Manager Report");
+    customLabel.fontColor("#000");
     // place title at the bottom
-    customTitle.orientation("bottom");
+    customLabel.position("bottomRight");
     // stick text to the right side
-    customTitle.align("right");
+    customLabel.anchor("bottomRight");
     // set text size
-    customTitle.fontSize(11);
+    customLabel.fontSize(11);
     // set font family
-    customTitle.fontFamily("Tahoma");
+    customLabel.fontFamily("Tahoma");
     // unbold title
-    customTitle.fontWeight(400);
+    customLabel.fontWeight(400);
     // background settings
-    var titleBackground = customTitle.background();
+    var labelBackground = customLabel.background();
     // eanble background
-    titleBackground.enabled(true);
+    labelBackground.enabled(true);
     // disable fill
-    titleBackground.fill("#FFFFFF");
+    labelBackground.fill("#FFFFFF");
     // set black border to title
-    titleBackground.stroke("#000000");
+    labelBackground.stroke("#000000");
     
     // set container and draw title
-    customTitle.listen("click", function(){
+    customLabel.listen("click", function(){
       chart = anychart.column();
       chart.title("Sales Report");
       var column = chart.column(data);
@@ -114,12 +115,8 @@
         });
       chart.container(stage);
       chart.draw();
-      customTitle.dispose();
+      customLabel.dispose();
     });
-    
-    // draw custom title
-    customTitle.container(stage);
-    customTitle.draw();
   }
 });</script>
 </head>
