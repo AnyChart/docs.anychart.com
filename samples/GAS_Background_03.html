@@ -8,10 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  var chart = anychart.areaChart();
-
-  // set title
-  chart.title().text("Column Chart");
+  var chart = anychart.area();
 
   // data
   var data = anychart.data.set([
@@ -40,11 +37,28 @@
   var series = chart.splineArea(data);
 
   // adjust data visualization
-  series.fill("yellow 0.7").hoverFill("red");series.markers().enabled(true).fill("yellow");
-  series.hoverMarkers().enabled(true).fill("white").stroke("gray");
+  series.fill("#ef6c00");
+  series.hoverFill("#ef6c00");
+  series.stroke("#fff");
+  var markers = series.markers();
+  markers.enabled(true);
+  markers.size(5);
+  markers.fill("#ef6c00");
+  markers.stroke("#fff");
+  var hoverMarkers = series.hoverMarkers();
+  hoverMarkers.enabled(true);
+  hoverMarkers.fill("#fff");
+  hoverMarkers.stroke("#ef6c00");
+  hoverMarkers.size(5);
 
   // adjust title background fill
-  chart.title().text("Gradient Background Fill").background().enabled(true).fill("gold");
+  var title = chart.title();
+  title.text("Gradient Background Fill");
+  title.enabled(true);
+  title.padding(5);
+  var titleBackground = chart.title().background();
+  titleBackground.enabled(true);
+  titleBackground.fill("gold");
 
   // adjust chart background fill
   chart.background().fill({
@@ -55,28 +69,21 @@
   });
 
   // adjust axes strokes, labels and ticks
-  chart.xAxis().stroke("white").labels().fontColor("white");
-  chart.xAxis().ticks().stroke("white");
-  chart.yAxis().stroke("white").labels().fontColor("white").textFormatter(function(){
+  var xAxis = chart.xAxis();
+  xAxis.stroke("white");
+  var xLabels = chart.xAxis().labels();
+  xLabels.fontColor("white");
+  var yAxis = chart.yAxis();
+  yAxis.stroke("white");
+  var yLabels = chart.yAxis().labels();
+  yLabels.fontColor("white");
+  yLabels.textFormatter(function(){
     return this.value + ".00";
   });
-  chart.yAxis().ticks().stroke("white");
-  chart.yAxis().minorTicks().stroke("white");
-
-  // adjust y scale ticks interval
-  chart.yScale().ticks().interval(5);
-
-  // disable axes titles
-  chart.xAxis().title().enabled(false);
-  chart.yAxis().title().enabled(false);
-
-  // adjust grid
-  chart.grid(0).stroke("white").evenFill("white 0.4").oddFill("white 0.4").layout("horizontal");
-  chart.minorGrid().stroke("white");
-  chart.grid(1).stroke("white").layout("vertical");
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

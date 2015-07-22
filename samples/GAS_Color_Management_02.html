@@ -29,12 +29,16 @@
   ]);
   
   // chart type
-  chart = anychart.columnChart();
+  var chart = anychart .column();
   
-  chart.title().text("Darken Colors Sample");
-  
-  // set data and set additionla information in tooltip
-  chart.column(data).tooltip().contentFormatter(function(){
+  chart.title("Darken Colors Sample");
+
+
+  // set data and set additional information in tooltip
+  var series = chart.column(data);
+  series.stroke(null);
+  var tooltip = series.tooltip();
+  tooltip.contentFormatter(function(){
     var mixColor2 = anychart.color.darken(color1, (this.index * 0.2));
     return "Input Color: " + color1 +
       "\nDarken Ration: " + this.index * 2 / 10 +
@@ -42,7 +46,8 @@
   });
   
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

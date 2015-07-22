@@ -30,12 +30,16 @@
   ]);
   
   // chart type
-  chart = anychart.columnChart();
+  var chart = anychart .column();
   
-  chart.title().text("Blend Colors Sample");
-  
-  // set data and set additionla information in tooltip
-  chart.column(data).tooltip().contentFormatter(function(){
+  chart.title("Blend Colors Sample");
+
+
+  // set data and set additional information in tooltip
+  var series = chart.column(data);
+  series.stroke(null);
+  var tooltip = series.tooltip();
+  tooltip.contentFormatter(function(){
     var mixColor2 = anychart.color.blend(color1, color2, (this.index * 0.2));
     return "Input Color: " + color1 +
       "\nBlend Color: " + color2 +
@@ -44,7 +48,8 @@
   });
   
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
