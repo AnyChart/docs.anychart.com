@@ -153,6 +153,6 @@ You can make your chart title interactive by adding event listeners of a differe
 
 {sample}AS\_Titles\_08{sample}
 
-Here is the advanced sample of using events in titles. In this sample we will show how chart footer can be used as "Back" button for self-drilldown charts. Click on bars to see detailed report on each sales manager and in detailed report click "Back to Sales Manager Report" button in the bottom right corner of line chart to load an initial chart.
+Here is the advanced sample of using events in titles. In this sample we will show how chart footer can be used as "Back" button for self-drilldown charts. Click on bars to see detailed report on each sales manager and in detailed report click "Back to Sales Manager Report" button in the bottom left corner of line chart to load an initial chart.
 
 {sample}AS\_Titles\_09{sample}
