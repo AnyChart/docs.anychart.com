@@ -76,31 +76,30 @@
     chart.container(stage);
     chart.draw();
     
-    var customLabel = chart.label();
+    var label= chart.label();
     // set title text
-    customLabel.text("Back to Sales Manager Report");
-    customLabel.fontColor("#000");
+    label.text("Back to Sales Manager Report");
     // place title at the bottom
-    customLabel.position("bottomRight");
+    label.position("bottomRight");
     // stick text to the right side
-    customLabel.anchor("bottomRight");
+    label.anchor("bottomRight");
     // set text size
-    customLabel.fontSize(11);
+    label.fontSize(11);
     // set font family
-    customLabel.fontFamily("Tahoma");
+    label.fontFamily("Tahoma");
     // unbold title
-    customLabel.fontWeight(400);
+    label.fontWeight(400);
     // background settings
-    var labelBackground = customLabel.background();
+    var labelBackground = label.background();
     // eanble background
     labelBackground.enabled(true);
     // disable fill
-    labelBackground.fill("#FFFFFF");
+    labelBackground.fill(null);
     // set black border to title
     labelBackground.stroke("#000000");
     
     // set container and draw title
-    customLabel.listen("click", function(){
+    label.listen("click", function(){
       chart = anychart.column();
       chart.title("Sales Report");
       var column = chart.column(data);
@@ -115,7 +114,7 @@
         });
       chart.container(stage);
       chart.draw();
-      customLabel.dispose();
+      label.dispose();
     });
   }
 });</script>
