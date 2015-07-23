@@ -7,7 +7,7 @@
 
 Custom Map is a map made by users of our component for some special purposes. In this article we will talk about creating those maps from data in the most popular mapping formats. So, if you are going to draw your own map or create it from SVG, this article will help you.
 <br>
-First of all, visit our (AnyChart Maps Collection)[../Maps_List.md] and download the map in one of available formats.
+First of all, visit our [AnyChart Maps Collection](../Maps_List.md) and download the map in one of available formats.
 <br>
 We have noticed that a lot of users have maps in \*.shp or other similar formats, which can be easily converted for AnyChart Maps through GeoJSON format, as GeoJSON is one of three native formats for AnyChart.
 This conversion can be made through most of GIS-editors. You can use QGIS as it is a free editor that supports .shp, .kml and a plenty of formats also. 
@@ -42,58 +42,38 @@ We need to get rid of the rest now - for that go the menu, click on the "Layer" 
 <br>
 <a href="http://static.anychart.com/images/creating\_maps\_05.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_05.jpg"></a>
 <br>
-Don't forget to match the box with "Save only selected features" - unless you do it, you'll get the file with the whole map.
+Don't forget to match the box with "Save only selected features" - unless you do it, you'll get the file with the whole map. To see the selected terrototy separately, uncheck the layer in the list of layers.
 <br>
 <a href="http://static.anychart.com/images/creating\_maps\_06.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_06.jpg"></a>
 <br><br>
-
-
-
-
 4. Now, we're ready for working further. Let's change the projection now.
 <br>
 Projection is just a type of view that shows how we look at the map. There are loads of projections, made by different geographers in different times for different purposes, so not all of them suite the world map.
 <br>
 As can be seen in the right-down corner, the default projection type is EPSG 4326. If you click on it, you'll open the "Project Properties" window.
 <br>
-<a href="http://static.anychart.com/images/creating\_maps\_07.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_07.jpg"></a>
-<br>
 In the top of the window there is a checkbox "Enable 'on the fly' CRS transformation". When checked, it automatically transforms added map files into a projection that is set in the whole project as default. Though, if the default projection is a non-global one, newly added map files can be not recognized by the default type of projection.
 <br>
-Now, let's change the projection of the world map. For that go to the Layer -> Set CRS of Layer(s). Note that a layer which projection you want to change has to be highlighted.
+Now, let's change the projection of our map part. For that check the "Enable 'on the fly' CRS transformation" box and use "Filter" field to find the appropriate projection.
 <br>
-<a href="http://static.anychart.com/images/creating\_maps\_09.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_09.jpg"></a>
+<a href="http://static.anychart.com/images/creating\_maps\_09.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_07.jpg"></a>
 <br>
-<a href="http://static.anychart.com/images/creating\_maps\_10.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_10.jpg"></a>
-<br>
-One of the rather famous map projections in QGIS is "Egypt 1907 / Purple Belt". Now, look at the sample below:
-<br>
-<a href="http://static.anychart.com/images/creating\_maps\_11.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_11.jpg"></a>
-<br>
-That's how the world map looks like in the "Egypt 1907 / Purple Belt" projection.
-<br>
+As you can see above, we've got several projections for the "usa" search tag. Let's choose the first one, USA_Contiguous_Albers_Equal_Area_Conic (it's got 102003 EPSG code). Apply the projection.
+<a href="http://static.anychart.com/images/creating\_maps\_08.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_08.jpg"></a>
+<br><br>
 5. Now, let's simplify the geometry. The less details are in a map, the faster AnyChart works, and the faster your page loads. 
-The simplest way to do this is to go to the the Vector menu -> Geometry Tools -> Simplify Geometries. Set a tolerance of about 1000, tick the "Add result to canvas" box and select a result new file to save the result to. 
+The simplest way to do this is to go to the the Vector menu -> Geometry Tools -> Simplify Geometries. Set a tolerance of 1 (it will be automatically rewritten as 1,0000), tick the "Add result to canvas" box and select a result new file to save the result to. 
 <br>
 In the end of the process, you'll get a small information window, where the difference between the original map file and transformed one is quite clear.
 <br>
-<a href="http://static.anychart.com/images/creating\_maps\_13.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_13.jpg"></a>
-<br>
 When everything's over, you'll get a new layer with simplified geometry.
 <br>
-<a href="http://static.anychart.com/images/creating\_maps\_12.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_12.jpg"></a>
+<a href="http://static.anychart.com/images/creating\_maps\_09.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_09.jpg"></a>
 
 
 
-6. Let's look through the properties of the map. Before exporting, we might want to inspect and modify the properties of our map. To do this, right click the layer in the table of contents and select "Open Attribute Table". These attributes will be included in the GeoJSON when we export our map. Highmaps was designed to be used with user defined maps, and is very flexible in the way that it handles map data. There are therefore no special requirements for metadata in the maps. 
+6. Let's look through the properties of the map - it worth inspecting them before exporting. Go to the contents table, right-click the layer and select "Open Attribute Table". You'll see a list of attributes that will be included in the .geojson file. As AnyChart was created quite flexible in working with data, it is able to work with used-defined maps, also, there are no special requirements for its metadata. 
 
-<br>
-Then we should give the name to our new shape file.
-<br> To make any changes in the file, we use "Toggle Editing" tool:
-<br>
-<br>
-When this button is clicked, some other tools become available. We will need an "Add Feature" tool to draw a new polygone.
-<br>
 <a href="http://static.anychart.com/images/creating\_maps\_14.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_14.jpg"></a>
 <br>
 <a href="http://static.anychart.com/images/creating\_maps\_15.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_15.jpg"></a>
