@@ -8,34 +8,37 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
   
   var stage = anychart.graphics.create("container");
-  anychart.ui.background()
-    .fill("none")
-    .stroke("orange", 15, null, "round")
-    .bounds(anychart.math.rect(22, 18, stage.width() - 44, stage.height() / 3 - 22))
-    .container(stage)
-    .draw();
-  anychart.ui.background()
-    .fill("none")
-    .stroke({
-        color: "grey",
-        thickness:15,
-        lineJoin: "bevel"
-    })
-    .bounds(anychart.math.rect(22, stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 - 22))
-    .container(stage)
-    .draw();
+
+  var background1 = anychart.ui.background();
+  background1.fill("none");
+  background1.stroke("orange", 15, null, "round");
+  background1.bounds(anychart.math.rect(22, 18, stage.width() - 44, stage.height() / 3 - 22));
+  background1.container(stage);
+  background1.draw();
+  var background2 = anychart.ui.background();
+  background2.fill("none");
+  background2.stroke({
+    color: "grey",
+    thickness:15,
+    lineJoin: "bevel"
+  });
+
+  background2.bounds(anychart.math.rect(22, stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 - 22));
+  background2.container(stage);
+  background2.draw();
+
   var line = anychart.cartesian();
-  line
-    .line([1, 1.8, 1.1, 2])
-    .stroke({
-        color: "blue",
-        thickness: 15,
-        lineJoin: "bevel",
-        lineCap: "round"
-    })
-    .bounds(anychart.math.rect(22, 2*stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 -20));
+  var series = line.line([1, 1.8, 1.1, 2]);
+  series.stroke({
+    color: "blue",
+    thickness: 15,
+    lineJoin: "bevel",
+    lineCap: "round"
+  });
+  line.bounds(anychart.math.rect(22, 2*stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 -20));
   
-  line.container(stage).draw();
+  line.container(stage);
+  line.draw();
 });</script>
 </head>
 <body>
