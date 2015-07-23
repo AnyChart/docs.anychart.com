@@ -69,54 +69,24 @@ In the end of the process, you'll get a small information window, where the diff
 When everything's over, you'll get a new layer with simplified geometry.
 <br>
 <a href="http://static.anychart.com/images/creating\_maps\_09.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_09.jpg"></a>
-
-
-
+<br><br>
 6. Let's look through the properties of the map - it worth inspecting them before exporting. Go to the contents table, right-click the layer and select "Open Attribute Table". You'll see a list of attributes that will be included in the .geojson file. As AnyChart was created quite flexible in working with data, it is able to work with used-defined maps, also, there are no special requirements for its metadata. 
-
+<a href="http://static.anychart.com/images/creating\_maps\_10.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_10.jpg"></a>
+<br>
+<a href="http://static.anychart.com/images/creating\_maps\_11.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_11.jpg"></a>
+<br><br>
+7. If you are finally satisfied with your map, you shall export it to GeoJSON format to use with AnyChart. For that right-click the layer you want to export in the "Layers" table and select "Save As". Make sure you've selected to save the layer in GeoJSON format. The result file is appropriate for using directly with AnyChart. 
+<br>You may notice that QGIS includes a large amount of decimals in the GeoJSON coordinates by default. You may strip it using a Regex or similar for optimization.
+<br>
+<a href="http://static.anychart.com/images/creating\_maps\_12.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_12.jpg"></a>
+<br>
+<a href="http://static.anychart.com/images/creating\_maps\_13.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_13.jpg"></a>
+<br>
+Don't forget to choose the CRS that you've used in the project, as the default one might be automatially set.
+<br>
+<br>
+8. For testing your map, paste your GeoJSON into our [playground](http://playground.anychart.com). Your result would look something like this:
+<br>
 <a href="http://static.anychart.com/images/creating\_maps\_14.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_14.jpg"></a>
 <br>
-<a href="http://static.anychart.com/images/creating\_maps\_15.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_15.jpg"></a>
-<br>
-7. Draw a polygone by clicking in those places where you want its vertexes to be, and right-click to finish. Then define the id for the new-made polygone.
-<br>
-<a href="http://static.anychart.com/images/creating\_maps\_16.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_16.jpg"></a>
-<br>
-If you want to move a shape, use the "Move Feature" tool (next to "Add Feature"). To save the shape that you've just made click on the "Toggle Editing" button again.
-<br>
-<a href="http://static.anychart.com/images/creating\_maps\_17.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_17.jpg"></a>
-<br>
-You may change the layers order, for that just drag the layer in the list of layers and put it where you want it to be (e.g., like it's done in Adobe Photoshop).
-<br>
-<a href="http://static.anychart.com/images/creating\_maps\_18.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_18.jpg"></a>
-<br><br>
-8. Now let's cling the layers together. Go to the Vector->C.. Tools->Clip. This feature clips an existing shape file to everything outside its bounds.
-Unfortunately, you can't do that with more than one shape file at once.
-<br>
-An "Input Vector layer" is the "base" layer that you want the created one to clip to, and the "Clip layer" is always the one that we've created. Then you'll have to name your new shapefile.
-<br> Don't forget to uncheck boxes "Use only selected features" if you want to clip the whole layers without selecting them, or the new layer will be empty.
-<br>
-<a href="http://static.anychart.com/images/creating\_maps\_19.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_19.jpg"></a>
-<br><br>
-<a href="http://static.anychart.com/images/creating\_maps\_20.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_20.jpg"></a>
-<br>
-Here we've done a new shapefile that is named New_Africa and contains the shape we've created.
-<br>
-<a href="http://static.anychart.com/images/creating\_maps\_21.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_21.jpg"></a>
-<br>
-Let's turn off those layers except the newest one (New_Africa). That's what we've got after clipping the layers.
-<br>
-<a href="http://static.anychart.com/images/creating\_maps\_22.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_22.jpg"></a>
-<br>
-9. For more advanced edits use the Toolbox Panel (View->Panels->Toolbox).
-<br>
-<a href="http://static.anychart.com/images/creating\_maps\_08.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_08.jpg"></a>
-
-
-
-
-
-
-
-
-
+Now you know how to use GeoJSON maps in AnyChart. Enjoy!
