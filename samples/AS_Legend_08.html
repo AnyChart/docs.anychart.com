@@ -19,6 +19,7 @@
     {x: "Peter", value: 16000}
   ]);
   series1.name("default markers");
+  series1.markers(true);
   
   // set series data
   var series2 = chart.line([
@@ -32,6 +33,7 @@
   var markers2 = series2.markers();
   // series marker type
   markers2.type("star4");
+  markers2.enabled(true);
   
   // set series data
   var series3 = chart.line([
@@ -41,6 +43,7 @@
   ]);
   // series name
   series3.name("custom legend marker type");
+  series3.markers(true);
   // settings for the series item in legend
   var legendItems3 = series3.legendItem();
   // series marker type in legend
@@ -54,6 +57,7 @@
   ]);
   // set series name
   series4.name("customised legend marker");
+  series4.markers(true);
   // settings for the legend item of the series
   var legendItems4 = series4.legendItem();
   // set inner color of series marker in legend

@@ -3,10 +3,9 @@
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
-    <meta name="is-new" content="false
-     :exports "stage"}
-
-anychart.onDocumentReady(function() {
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
   var data = anychart.data.set([
     {x: "Metallcutting",              value: 41,  fill: "#1D8BD1"},
@@ -74,6 +73,7 @@ anychart.onDocumentReady(function() {
     title.text(titleText);
     title.fontWeight(900);
     title.hAlign("center");
+    chart.top(20);
 
     var xAxis = chart.xAxis();
     xAxis.title(false);
@@ -81,7 +81,7 @@ anychart.onDocumentReady(function() {
     yAxis.title(false);
 
     chart.container(stage);
-    chrt.draw();
+    chart.draw();
   }
   
   function drawColumn(){
@@ -94,6 +94,7 @@ anychart.onDocumentReady(function() {
     title.text(titleText);
     title.fontWeight(900);
     title.hAlign("center");
+    chart.top(20);
     
     var xAxis = chart.xAxis();
     xAxis.title(false);
@@ -112,6 +113,7 @@ anychart.onDocumentReady(function() {
     title.text(titleText);
     title.fontWeight(900);
     title.hAlign("center");
+    chart.top(20);
     
     chart.container(stage);
     chart.draw();
