@@ -7,8 +7,8 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-// set stage
-    stage = anychart.graphics.create("container");
+    // set stage
+    var stage = anychart.graphics.create("container");
     
     // data
     var data = anychart.data.set([
@@ -20,14 +20,13 @@
                 type: customMarkerDrawer,
                 fill: "#1D8BD1",
                 stroke: "#146192"
-                
             }, {
                 enabled: true,
                 offsetX: 35,
                 offsetY: -20,
                 anchor: "left",
                 fontColor: "white",
-                fontSize: 12,
+                fontSize: 12
             }],
         ["UK", 16, 8],
         ["France", 8, 10]
@@ -38,15 +37,18 @@
     var days_off = data.mapAs({x: [0], value: [2], marker: [3], label: [4]});
 
     // chart type
-    chart = anychart.barChart();
+    var chart = anychart.bar();
 
     // chart title
-    chart.title().text("Amount of official holidays and days off in different countries (2015)");
+    chart.title("Amount of official holidays and days off in different countries (2015)");
 
     // set axes titles
-    chart.xAxis().title().text("Country");
-    chart.yAxis().title().text("Days");
-    chart.yScale().maximum(35);
+    var xAxis = chart.xAxis();
+    xAxis.title("Country");
+    var yAxis = chart.yAxis();
+    yAxis.title("Days");
+    var yScale = chart.yScale();
+    yScale.maximum(35);
     
     // enable the legend
     chart.legend(true);
@@ -72,16 +74,14 @@
     // draw
     chart.container(stage).draw();
     
-	// a function that enables custom marker resizing
+    // a function that enables custom marker resizing
     function customMarkerDrawer(path, x, y, size) {
         // create a custom marker
         path.moveTo(x, y)
                     .lineTo(x + 25, y - 20)
                     .arcTo(50,25,180,325)
                     .close();
-    }    
-    
-    
+    }
 });</script>
 </head>
 <body>

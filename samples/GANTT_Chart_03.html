@@ -10,7 +10,7 @@
   var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 
   // create resource gantt chart
-  chart = anychart.ganttResource();
+  var chart = anychart.ganttResource();
 
   // set container id for the chart
   chart.container("container");
@@ -35,11 +35,11 @@ function getData() {
   return [
     {
       "id":"404",
-      "name": "office 404",
+      "name": "office 404"
     },
     {
       "id":"409",
-      "name": "office 409",
+      "name": "office 409"
     },
     {
       "id": "1",

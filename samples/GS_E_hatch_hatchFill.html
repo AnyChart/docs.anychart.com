@@ -18,7 +18,7 @@
         ["A5", 213, 150]
     ];
     // create chart
-    chart = anychart.barChart();
+    var chart = anychart.bar();
 
     var series = anychart.data.mapAsTable(data, "value");
     chart.bar(series[0]).hatchFill("verticalbrick");

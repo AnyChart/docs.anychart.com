@@ -14,22 +14,22 @@ var data = [
   {x: "2014/6/27", value: 27},                          //    2
   {x: "2014/6/28", value: 25, marker:{fill:"violet"}},  //    3
   {x: "2014/6/29", value: 29, marker:{fill:"red"}},  //    4
-  {x: "2014/6/30", value: 28,}                          //    5
+  {x: "2014/6/30", value: 28}                          //    5
 ];
 
 // create a data set
 var dataSet = anychart.data.set(data);
 
 // create a line chart using the data set
-var lineChart = anychart.lineChart(dataSet);
+var line = anychart.line(dataSet);
 
 // set container id for the chart
-lineChart.container("container");
-lineChart.title("New York weather");
-lineChart.getSeries(0).name("New York");
+line.container("container");
+line.title("New York weather");
+line.getSeries(0).name("New York");
 
 // initiate chart drawing
-lineChart.draw();
+line.draw();
 });</script>
 </head>
 <body>

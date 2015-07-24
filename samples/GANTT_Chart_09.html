@@ -10,7 +10,7 @@
   var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 
   // create resource gantt chart
-  chart = anychart.ganttResource();
+  var chart = anychart.ganttResource();
 
   // set container id for the chart
   chart.container("container");
@@ -43,11 +43,11 @@ function getData() {
   return [
     {
       "id":"main_1",
-      "name": "Group 1",
+      "name": "Group 1"
     },
     {
       "id":"main_2",
-      "name": "Group 2",
+      "name": "Group 2"
     },
     {
       "id": "1",

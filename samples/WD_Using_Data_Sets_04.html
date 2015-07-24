@@ -23,38 +23,38 @@
   stage = anychart.graphics.create("container");
 
   // create a line chart using the data set
-  var lineChart = anychart.lineChart.apply(null, anychart.data.mapAsTable(data));
+  var line = anychart.line.apply(null, anychart.data.mapAsTable(data));
 
   // set container and position
-  lineChart.container(stage);
-  lineChart.bounds(0, 0, "100%", "50%");
+  line.container(stage);
+  line.bounds(0, 0, "100%", "50%");
 
   // current stage stroke
-  lineChart.background().stroke("white").fill("white");
+  line.background().stroke("white").fill("white");
 
   // axes titles setter
-  lineChart.xAxis().title().text("Date");
-  lineChart.yAxis().title().text("Temperature");
-  lineChart.yAxis().labels().textFormatter(function(){
+  line.xAxis().title().text("Date");
+  line.yAxis().title().text("Temperature");
+  line.yAxis().labels().textFormatter(function(){
       return this.value + " °C";
   });
   // series titles setter
-    lineChart.getSeries(0).name("NY");
-    lineChart.getSeries(1).name("SF");
-    lineChart.getSeries(2).name("LA");
+    line.getSeries(0).name("NY");
+    line.getSeries(1).name("SF");
+    line.getSeries(2).name("LA");
   // apply tooltip settings
-  lineChart.getSeries(0).tooltip().contentFormatter(tooltipSetter);
-  lineChart.getSeries(1).tooltip().contentFormatter(tooltipSetter);
-  lineChart.getSeries(2).tooltip().contentFormatter(tooltipSetter);
+  line.getSeries(0).tooltip().contentFormatter(tooltipSetter);
+  line.getSeries(1).tooltip().contentFormatter(tooltipSetter);
+  line.getSeries(2).tooltip().contentFormatter(tooltipSetter);
 
   // naming the chart
-  lineChart.title("Weather in the USA");
+  line.title("Weather in the USA");
 
   // initiate chart drawing
-  lineChart.draw();
+  line.draw();
 
   // map x and value from the data set
-  var colChart = anychart.columnChart.apply(null, anychart.data.mapAsTable(data));
+  var colChart = anychart.column.apply(null, anychart.data.mapAsTable(data));
   
     // naming the chart's series (legend)
     colChart.getSeries(0).name("NY");

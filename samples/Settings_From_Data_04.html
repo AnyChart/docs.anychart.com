@@ -10,7 +10,7 @@
   // create stage for all charts
   stage = acgraph.create("container");
 
-  var pieChart = anychart.pieChart([
+  var pie = anychart.pie([
         {"name":" Iron Hills - Dwarves", "value": 513, fill: {color:"Rgb(70,100,70)"}},
         {"name":"Mirkwood - Elves", "value": 1015, fill: {color:"Rgb(77,180,77)"}},
         {"name":"Esgaroth - Men", "value": 2709, fill: {color:"Rgb(77,150,77)"}},
@@ -19,29 +19,29 @@
     ]);
 
     // set chart title text settings
-  pieChart.title().text("The Main Armed Forces").padding(0).height(0).margin(0).fontSize(10);
+  pie.title().text("The Main Armed Forces").padding(0).height(0).margin(0).fontSize(10);
 
   // disabling legend title and title separator
-  pieChart.legend().enabled(false);
-  pieChart.bounds(0, 0, "20%", "50%");
-  pieChart.container(stage);
-  pieChart.margin(-10, -10, -10, -10);
-  pieChart.draw();
+  pie.legend().enabled(false);
+  pie.bounds(0, 0, "20%", "50%");
+  pie.container(stage);
+  pie.margin(-10, -10, -10, -10);
+  pie.draw();
   
-    var columnChart = anychart.columnChart();
+    var column = anychart.column();
 
     // set title
-    columnChart.title().text("The Forces Of Light").padding(2).margin(5);
+    column.title().text("The Forces Of Light").padding(2).margin(5);
 
     // set axes titles
-    columnChart.xAxis().title().text("Military Unit").fontSize(10).padding(0).height(2);
-    columnChart.yAxis().title().text("Amount").fontSize(10).padding(0).height(0).margin(0);
+    column.xAxis().title().text("Military Unit").fontSize(10).padding(0).height(2);
+    column.yAxis().title().text("Amount").fontSize(10).padding(0).height(0).margin(0);
 
     // set scale minimum
-    columnChart.yScale().minimum(0);
+    column.yScale().minimum(0);
 
     // set data
-    var series = columnChart.column([
+    var series = column.column([
         {"x": "Men of Esgaroth", value: 2709, stroke:{color:"#CD7F32", thickness:"2"}},
         {"x": "Eagles", value: 1067, stroke:{color:"#157DEC", thickness:"2"}},
         {"x": "Elves", value: 1015, stroke:{color:"#008000", thickness:"2"}},
@@ -53,13 +53,13 @@
     ]);
     
     
-    columnChart.xAxis().staggerMode(true);
+    column.xAxis().staggerMode(true);
     
-    columnChart.yScale(anychart.scales.log());
-    columnChart.bounds("0%", "50%", "100%", "50%");
-    columnChart.container(stage);
-    columnChart.margin(-10, -10, -10, -10);
-    columnChart.draw();
+    column.yScale(anychart.scales.log());
+    column.bounds("0%", "50%", "100%", "50%");
+    column.container(stage);
+    column.margin(-10, -10, -10, -10);
+    column.draw();
     
     var scatterChart  = anychart.scatterChart();
 

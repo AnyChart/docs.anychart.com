@@ -10,7 +10,7 @@
   var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 
   // create project gantt chart
-  chart = anychart.ganttProject();
+  var chart = anychart.ganttProject();
 
   // set container id for the chart
   chart.container("container");
@@ -50,7 +50,7 @@ function getData() {
       "actualStart": Date.UTC(2008, 7, 5),
       "actualEnd": Date.UTC(2008, 7, 12),
       "baselineStart": Date.UTC(2008, 7, 6),
-      "baselineEnd": Date.UTC(2008, 7, 10),
+      "baselineEnd": Date.UTC(2008, 7, 10)
     },
     {
       "id": "2",
@@ -58,7 +58,7 @@ function getData() {
       "actualStart": Date.UTC(2008, 7, 9),
       "actualEnd": Date.UTC(2008, 7, 13),
       "baselineStart": Date.UTC(2008, 7, 6),
-      "baselineEnd": Date.UTC(2008, 7, 10),
+      "baselineEnd": Date.UTC(2008, 7, 10)
     },
     {
       "id": "3",
@@ -66,7 +66,7 @@ function getData() {
       "actualStart": Date.UTC(2008, 7, 11),
       "actualEnd": Date.UTC(2008, 7, 20),
       "baselineStart": Date.UTC(2008, 7, 9),
-      "baselineEnd": Date.UTC(2008, 7, 19),
+      "baselineEnd": Date.UTC(2008, 7, 19)
     },
     {
       "id": "4",
@@ -74,7 +74,7 @@ function getData() {
       "actualStart": Date.UTC(2008, 7, 8),
       "actualEnd": Date.UTC(2008, 7, 15),
       "baselineStart": Date.UTC(2008, 7, 6),
-      "baselineEnd": Date.UTC(2008, 7, 12),
+      "baselineEnd": Date.UTC(2008, 7, 12)
     },
     {
       "id": "5",
@@ -82,7 +82,7 @@ function getData() {
       "actualStart": Date.UTC(2008, 7, 7),
       "actualEnd": Date.UTC(2008, 7, 16),
       "baselineStart": Date.UTC(2008, 7, 5),
-      "baselineEnd": Date.UTC(2008, 7, 13),
+      "baselineEnd": Date.UTC(2008, 7, 13)
     },
     {
       "id": "6",
@@ -90,7 +90,7 @@ function getData() {
       "actualStart": Date.UTC(2008, 7, 13),
       "actualEnd": Date.UTC(2008, 7, 19),
       "baselineStart": Date.UTC(2008, 7, 11),
-      "baselineEnd": Date.UTC(2008, 7, 16),
+      "baselineEnd": Date.UTC(2008, 7, 16)
     },
   ];
 }</script>

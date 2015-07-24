@@ -139,7 +139,7 @@
   ]);
   
   // table settings
-  
+  table.fontSize(10);
   table.getRow(0).height(30);
   table.getRow(8).height(40);
   table.getRow(9).height(45);
@@ -166,11 +166,11 @@
   table.getCell(9,1).fill({
     keys: [".1 red", ".5 yellow", ".9 green"],
     angle: 90
-  }).fontWeight(900).fontSize(17).fontOpacity(1);
+  }).fontWeight(900).fontSize(15).fontOpacity(1);
   table.getCell(9,2).fill({
     keys: [".1 red", ".5 yellow", ".9 green"],
     angle: 90
-  }).fontWeight(900).fontSize(17).fontOpacity(0.4);
+  }).fontWeight(900).fontSize(15).fontOpacity(0.4);
   
   table.getCell(12,1).textIndent(30);
   table.getCell(12,2).textIndent(0);
@@ -181,9 +181,8 @@
   table.getCell(15,1).vAlign("center");
   table.getCell(15,2).vAlign("bottom");
   
-  stage
-    .height(680)
-    .width(690);
+  stage.height(680);
+  stage.width(690);
   
   // set table container and initiate draw
   table.container(stage).draw();
