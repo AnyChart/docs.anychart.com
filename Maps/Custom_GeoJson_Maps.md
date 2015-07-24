@@ -85,7 +85,7 @@ When everything's over, you'll get a new layer with simplified geometry.
 Don't forget to choose the CRS that you've used in the project, as the default one might be automatially set.
 <br>
 <br>
-8. Try your GeoJSON map by pasting the code into [jsFiddle](http://jsfiddle.net/xbzxfx2L/111/). Your result would look something like this:
+8. Try your GeoJSON map by pasting the code into [jsFiddle](http://jsfiddle.net/xbzxfx2L/121/). Your result would look something like this:
 <br>
 <a href="http://static.anychart.com/images/creating\_maps\_14.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_14.jpg"></a>
 <br>
