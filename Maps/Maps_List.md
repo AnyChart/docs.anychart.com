@@ -13,7 +13,7 @@ World Map is a general map of all countries and continents. It can be downloaded
 To reference the JavaScript file, write the link inside a "script" tag in the "head" section of your web page.
 
 ```
-<script src="http://cdn.anychart.com/geodata/countries/aus/australia.js"></script>
+<script src="http://cdn.anychart.com/geodata/countries/world/world.js"></script>
 ```
 
  - [Download the world.geojson](http://cdn.anychart.com/geodata/world/world.geojson)
