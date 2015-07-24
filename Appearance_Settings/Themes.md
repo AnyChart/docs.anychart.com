@@ -177,7 +177,7 @@ The content of **custom_theme.js** should be something like to the snippet below
 
 ### Default Theme
 
-You can find **base.theme.js** in **binaries** folder in the downloaded AnyChart package.
+You can find **defaultTheme.js** in **binaries** folder in the downloaded AnyChart package.
 This file can be found in **binaries** folder in the downloaded AnyChart package. This file contains default AnyChart theme. You **DON'T NEED** to reference this file to use Default theme, it is built-in in the component, we provide this file only as a reference for a custom theme you may want to create yourself.
   
   
@@ -185,7 +185,7 @@ This file can be found in **binaries** folder in the downloaded AnyChart package
 
 ### Old Theme
   
-AnyChart provides several default themes along with the opportunity to [create custom themes](#create_theme). One of default them is the default one from AnyChart 5.x, 6.x. To use old theme you have to reference special theme file with the name **v6.theme.js**. This file can be found in **binaries** folder in the downloaded AnyChart package. After referencing the file you can use {api:anychart#theme}**.theme()**{api} method with **anychart.themes.v6** parameter to apply old theme:
+AnyChart provides several default themes along with the opportunity to [create custom themes](#create_theme). One of default them is the default one from AnyChart 5.x, 6.x. To use old theme you have to reference special theme file with the name **v6.js**. This file can be found in **binaries** folder in the downloaded AnyChart package. After referencing the file you can use {api:anychart#theme}**.theme()**{api} method with **anychart.themes.v6** parameter to apply old theme:
 
 ```
   // apply old theme
@@ -225,7 +225,7 @@ There is one very important thing you need to remember when you work with themes
 
 ```
   // return default theme to the charts below
-  anychart.theme(anychart.themes.default);
+  anychart.theme(anychart.themes.defaultTheme);
 ```
 
 ## Global Settings, Defaults and Theme Reference
@@ -342,8 +342,11 @@ Themes are introduced in AnyChart 7.6, along with new color scheme and changed d
 If you are already using AnyChart 7.0 to 7.5.1, you may face some conflicts in chart settings after the upgrade. These conflicts are not critical, but the visual appearance of your charts can change unexpectedly. There are several solutions for this problem: 
   
   
-* use special **anychart\_theme\_v6.min.js** with the old theme to your charts as default one (this js file can be found in **binaries** folder in the downloaded AnyChart package).
+* use special **anychart.min.js** from the folder **v6.min.js** with the old theme to your charts as default one (this js file can be found in **binaries** folder in the downloaded AnyChart package).
 * or you can simply use new **anychart.min.js** and [set old them for your charts](#old_theme) (this is the recommended way to solve this problem).
+  
+  
+To avoid any troubles and find out default theme of the current **anychart.min.js** file you can use **anychart.DEFAULT_THEM** method.
   
   
 **Note**: AnyChart recommends you to use new AnyChart theme, version 6 style will not be developed further and supported for the new chart types.
