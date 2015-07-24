@@ -268,9 +268,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 ## Visualization
 
-In this section we will describe main parts of OHLC chart visualization and ways to adjust it. Also you will see list 
-of predefined styles.  Visual appearance of OHLC is defined using certain methods and parameters. The most important 
-for OHLC parameters are {api:anychart.core.cartesian.series.OHLC#fallingStroke}**.fallingStroke()**{api} and {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}.
+In this section we will describe main parts of OHLC chart visualization and ways to adjust it.<!-- Also you will see list of predefined styles.--> Visual appearance of OHLC is defined using certain methods and parameters. The most important for OHLC parameters are {api:anychart.core.cartesian.series.OHLC#fallingStroke}**.fallingStroke()**{api} and {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}.
 
 ### Basic sample
 
@@ -290,10 +288,10 @@ Using these settings we've set red color for every falling OHLC point and green 
 
 ## Labels and Tooltips
 
-In this section we will explain how to add and configure data labels and tooltips. Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.
+In this section we will explain how to add and configure data labels and tooltips.<!-- Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
   
   
-If you want to configure data labels and tooltips for all series - you should do that with {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the top of the data points, also, we will format labels so they show only the value corresponding to the point and tooltip will show detailed description.
+If you want to configure data labels and tooltips for all series - you should do that using {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the bottom of the data points, also, we will format labels so they show only the date and tooltip will show detailed description.
   
   
 When formatting data labels text and tooltip we can use {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} and {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api}.
@@ -313,7 +311,10 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 ### Colorizing elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.color}**.color()**{api}. In the sample below we have 5 series with sample data and we'll color each series into different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. As far as this series has two types of points (with rising and falling values) it has two methods for adjusting series color. 
+
+
+To apply the color to the series we need to set {api:anychart.core.cartesian.series.OHLC#fallingStroke}**.fallingStroke()**{api} parameter to define color for all points with falling values and {api:anychart.core.cartesian.series.Candlestick#risingStroke}**.risingStroke()**{api} parameter to define color for all points with rising values:
 
 {sample}BCT\_OHLC\_Chart\_08{sample}
 
@@ -324,17 +325,13 @@ As you see it is very easy to do by setting {api:anychart.core.cartesian.series.
 
 **Important Note:**
 
-AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "Rgb(180,77,77)" you can set "HSV(?,?,?)" or "HTMLConstant" or "#HEXCode"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
+AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors, for example, instead of "Rgb(180,77,77)" you can set "#b44d4d"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
 
 ## Advanced OHLC Chart sample - OHLC, Line and Range Area Combination
 
-In the real world application Open-High-Low-Close rarely used alone, in technical analysis they are often combined with 
-other chart types, such as Lines (to show **moving average**), Range Areas (to show **"Bollinger bands"**), and column 
-charts (to show **trading volume**).
+In the real world application Open-High-Low-Close rarely used alone, in technical analysis they are often combined with charts of other types, such as [Lines](./Line-Spline-StepLine_Charts) (to show **moving average**), [Range Areas](./Range_Area-SplineArea_Charts) (to show **"Bollinger bands"**), and [Column Charts](./Column_Chart) (to show **trading volume**).
   
   
-AnyChart provides most of features that developer needs to create a complex financial chart, this includes Combination 
-charts, Dashboards and Interactivity features. The sample below shows a typical stock trading report and it can be used 
-as a starting point in your integration of AnyChart into Financial/Trading/Reporting application.
+AnyChart provides most of features that developer needs to create a complex financial chart, this includes Combination charts, Dashboards and Interactivity features. The sample below shows a typical stock trading report and it can be used as a starting point in your integration of AnyChart into Financial/Trading/Reporting application.
 
 {sample}BCT\_OHLC\_Chart\_10{sample}

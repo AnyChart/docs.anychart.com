@@ -108,19 +108,18 @@
   ohlc.tooltip(false);
 
   // set data and type for third chart
-  var spline = chart.spline(seriesData_3);
-  spline.markers(null);
-  spline.stroke("red");
-  var tooltip = splaine.tooltip();
-  tooltip.contentFormatter(function(){
+  var splineSeries = chart.spline(seriesData_3);
+  splineSeries.markers(null);
+  splineSeries.stroke("red");
+  var splineTooltip = splineSeries.tooltip();
+  splineTooltip.contentFormatter(function(){
     var date = new Date(this.x);
     var options = {
       year: "numeric",
       month: "numeric",
       day: "numeric"
     };
-    var transformedDate =  date.toLocaleDateString("en-US", options);
-    return transformedDate + "\n" + this.value;
+    return date.toLocaleDateString("en-US", options) + "\n" + this.value;
   });
 
   // set title and position for the first stage
@@ -129,6 +128,7 @@
   var xAxis = chart.xAxis();
   xAxis.staggerLines(1);
 
+  // disable axes titles
   var yLabels = chart.yAxis().labels();
   yLabels.textFormatter(function(){
     return this.value.toFixed(0).toString();
@@ -136,7 +136,6 @@
 
   // draw candlestick chart
   chart.container(stage);
-  
   // draw fist stage
   chart.draw();
 
@@ -218,7 +217,7 @@
   columnYLabels.textFormatter(function(){
     var value = this.value;
     if (value > 0)
-    value = value/1000000;
+      value = value/1000000;
     return value;
   });
 
@@ -228,7 +227,6 @@
 
   // new stage for a chart
   column.container(stage);
-
   // draw second stage
   column.draw();
 });</script>
