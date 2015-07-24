@@ -49,46 +49,47 @@ Let's see single-series OHLC chart created using the following data - ACME Corp.
 <tbody><tr>
 <th width="125"><b>Day</b></th>
 <th width="38"><b>Open</b></th>
-<th width="46"><b>High</b></th>	
-<th width="43"><b>Low</b></th>		
-<th width="51"><b>Close</b></th>			
+<th width="46"><b>High</b></th>
+<th width="43"><b>Low</b></th>
+<th width="51"><b>Close</b></th>
 </tr>
 <tr>
 <td>28-Aug-07</td>
 <td>511.53</td>
 <td>514.98</td>
 <td>505.79</td>
-<td>506.40</td>			
+<td>506.40</td>
 </tr>
 <tr>
 <td>29-Aug-07</td>
 <td>507.84</td>
 <td>513.30</td>
 <td>507.23</td>
-<td>512.88</td>			
+<td>512.88</td>
 </tr>
 <tr>
 <td>30-Aug-07</td>
 <td>512.36</td>
 <td>515.40</td>
 <td>510.58</td>
-<td>511.40</td>			
+<td>511.40</td>
 </tr>
 <tr>
 <td>31-Aug-07</td>
 <td>513.10</td>
 <td>516.50</td>
 <td>511.47</td>
-<td>515.25</td>			
+<td>515.25</td>
 </tr>
 <tr>
 <td>4-Sep-07</td>
 <td>515.02</td>
 <td>528.00</td>
 <td>514.62</td>
-<td>525.15</td>			
+<td>525.15</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
 Now we need to convert this data table into acceptable format. In terms of AnyChart data model we have one series of data with categories that hold days names. Each point in series represents one day and open, high, low, close prices. Converted Data looks like:
 
@@ -100,14 +101,14 @@ Now we need to convert this data table into acceptable format. In terms of AnyCh
     {x: Date.UTC(2007, 8, 31), open:513.10, high:516.50, low:511.47, close:515.25},
     {x: Date.UTC(2007, 9, 4), open:515.02, high:528.00, low:514.62, close:525.15}
   ];
-  chart = anychart.areaChart();
+  chart = anychart.area();
   chart.ohlc(data);
 ```
 
 As you can see, we've specified chart type as {api:anychart.core.cartesian.series.OHLC}**OHLC**{api} and set name, open, high, low, close parameters.
   
   
-Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on on it to see this example in background.
+Here it is - AnyChart can now visualize your data. Look at the chart sample below and click "Launch in playground" to examine sample's code.
 
 {sample}BCT\_OHLC\_Chart\_01{sample}
 
@@ -127,70 +128,72 @@ Let's compare ACME Corp. and Duff Brewing Corp. stock prices sales:
 <tr>
 <th width="75"><b>Day</b></th>
 <th width="46"><b>Open</b></th>
-<th width="46"><b>High</b></th>	
-<th width="46"><b>Low</b></th>		
-<th width="46"><b>Close</b></th>			
+<th width="46"><b>High</b></th>
+<th width="46"><b>Low</b></th>
+<th width="46"><b>Close</b></th>
 <th width="46"><b>Open</b></th>
-<th width="46"><b>High</b></th>	
-<th width="46"><b>Low</b></th>		
-<th width="46"><b>Close</b></th>			
+<th width="46"><b>High</b></th>
+<th width="46"><b>Low</b></th>
+<th width="46"><b>Close</b></th>
 </tr>
 <tr>
 <td>28-Aug-07</td>
 <td>511.53</td>
 <td>514.98</td>
 <td>505.79</td>
-<td>506.40</td>			
+<td>506.40</td>
 <td>522.95</td>
 <td>523.10</td>
 <td>522.50</td>
-<td>522.52</td>			
+<td>522.52</td>
 </tr>
 <tr>
 <td>29-Aug-07</td>
 <td>507.84</td>
 <td>513.30</td>
 <td>507.23</td>
-<td>512.88</td>			
+<td>512.88</td>
 <td>522.60</td>
 <td>522.69</td>
 <td>522.27</td>
-<td>522.55</td>			
+<td>522.55</td>
 </tr>
 <tr>
 <td>30-Aug-07</td>
 <td>512.36</td>
 <td>515.40</td>
 <td>510.58</td>
-<td>511.40</td>			
+<td>511.40</td>
 <td>522.49</td>
 <td>522.91</td>
 <td>522.38</td>
-<td>522.61</td>			
+<td>522.61</td>
 </tr>
 <tr>
 <td>31-Aug-07</td>
 <td>513.10</td>
 <td>516.50</td>
 <td>511.47</td>
-<td>515.25</td>		
+<td>515.25</td>
 <td>522.81</td>
 <td>522.83</td>
 <td>522.51</td>
-<td>522.73</td>			
+<td>522.73</td>
 </tr>
 <tr>
 <td>4-Sep-07</td>
 <td>515.02</td>
 <td>528.00</td>
 <td>514.62</td>
-<td>525.15</td>		
+<td>525.15</td>
 <td>523.30</td>
 <td>524.50</td>
 <td>523.20</td>
-<td>523.97</td>			
+<td>523.97</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+
 As we do in single series sample above we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have two data sets - one for each year:
 
 ```
@@ -249,7 +252,7 @@ And here is the demonstration of Logarithmic Y Axis on slightly modified the Sin
 
 ### Minimum and Maximum
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting **.maximum()** and **.minimum()** parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjusted the scale, it's desirable to set **.ticks().interval()** as well, in case default interval is twisted:
+By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjusted the scale, it's desirable to set {api:anychart.scales.ScatterTicks#interval}**.ticks().interval()**{api} as well, in case default interval is twisted:
 
 ```
   var yScale = chart.yScale();
