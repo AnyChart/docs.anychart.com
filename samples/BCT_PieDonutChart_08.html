@@ -28,10 +28,10 @@
     .draw();
 
   // first chart
-  var firstPie = anychart.pieChart(data);
+  var firstPie = anychart.pie(data);
 
   // chart title
-  firstPie.title().text("Inside Labels\nTooltips don\"t use HTML").hAlign("center");
+  firstPie.title().text("Inside Labels\nTooltips don't use HTML").hAlign("center");
 
   // chart size and position
   firstPie.bounds(0, "10%", "50%", "80%");
@@ -61,7 +61,7 @@
 
 
   // second chart
-  var secondPie = anychart.pieChart(data);
+  var secondPie = anychart.pie(data);
 
   // chart title
   secondPie.title().text("Outside Labels\nTooltips use HTML").hAlign("center");
