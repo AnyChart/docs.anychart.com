@@ -8,7 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // Create bullet chart
-  var chart = anychart.bulletChart([{value: 225}]);
+  var chart = anychart.bullet([{value: 225}]);
   
   // Set chart ranges
   chart.range().from(0).to(100);
@@ -17,15 +17,14 @@
   chart.range(3).from(200).to(250);
   chart.range(4).from(250).to(300);
 
-  // Set chart container
-  chart.container("container");
-
   // Set chart size and position settings
   chart.bounds(0, 0, "100%", 125);
 
   // Set title
-  chart.title().text("Ranges");
+  chart.title("Ranges");
 
+  // Set chart container
+  chart.container("container");
   // Initiate chart drawing
   chart.draw();
 });</script>
