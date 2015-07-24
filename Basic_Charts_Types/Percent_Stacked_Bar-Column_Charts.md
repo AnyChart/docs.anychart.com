@@ -37,14 +37,14 @@ Everything is ready! Here is a sample of a stacked column chart:
 
 ## Stacked Bar
 
-Just change "columnChart" to "barChart" and get your data displayed as a bar chart:
+Just change "column" to "bar" and get your data displayed as a bar chart:
 
 ```
-    chart = anychart.columnChart();
-    series = chart.column(seriesData_1);
-    series = chart.column(seriesData_2);
-    series = chart.column(seriesData_3);
-    series = chart.column(seriesData_4);
+  chart = anychart.column();
+  series = chart.column(seriesData_1);
+  series = chart.column(seriesData_2);
+  series = chart.column(seriesData_3);
+  series = chart.column(seriesData_4);
 ```
 
 Also, tooltips can be enabled/disabled by adjusting {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} method:
