@@ -11,30 +11,37 @@
   var chart = anychart.pie([
     ["Department Stores", 637166],
     ["Discount Stores", 721630],
-    ["Men\'s/Women\'s Stores", 248662],
+    ["Men's/Women's Stores", 248662],
     ["Juvenile Specialty Stores", 78662],
     ["All other outlets", 190000]
   ]);
 
   // chart title
-  chart.title().text("Visualization");
+  chart.title("Visualization");
 
   // adjust visualization
-  chart.fill("Gold")
-    .hoverHatchFill("diagonalbrick", "darkred")
-    .stroke("4 Rgb(86,86,26)")
-    .hoverStroke("4 darkred")
-    .hatchFill("diagonalbrick", "gray");
+  chart.fill("Gold");
+  chart.hoverHatchFill("diagonalbrick", "darkred");
+  chart.stroke("4 Rgb(86,86,26)");
+  chart.hoverStroke("4 darkred");
+  chart.hatchFill("diagonalbrick", "gray");
 
   // disable legend
-  chart.legend().enabled(false);
+  chart.legend(false);
   
   // labels
-  chart.labels().background(true).padding(5);
-  chart.labels().background().stroke("1 black").corners(5).cornerType("Round");
+  var labels = chart.labels();
+  labels.fontColor("#000");
+  var labelsBackground = chart.labels().background();
+  labelsBackground.enabled(true);
+  labelsBackground.padding(5);
+  labelsBackground.stroke("1 black");
+  labelsBackground.corners(5);
+  labelsBackground.cornerType("Round");
   
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

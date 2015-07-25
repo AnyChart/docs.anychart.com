@@ -11,16 +11,16 @@
   var chart = anychart.pie([
     ["Department Stores", 637166],
     ["Discount Stores", 721630],
-    ["Men\'s/Women\'s Stores", 148662],
+    ["Men's/Women's Stores", 148662],
     ["Juvenile Specialty Stores", 78662],
     ["All other outlets", 90000]
   ]);
 
   // set chart title text settings
-  chart.title().text("Exploded Slices");
+  chart.title("Exploded Slices");
 
   // disabling legend title and title separator
-  chart.legend().enabled(false);
+  chart.legend(false);
 
   // set explosion range
   chart.explode(30);
@@ -30,7 +30,8 @@
   chart.explodeSlice(4, true);
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

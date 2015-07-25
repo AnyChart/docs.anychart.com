@@ -7,22 +7,18 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // set chart type and data
-  var chart = anychart.pie([
-    ["Department Stores", 637166],
-    ["Discount Stores", 721630],
-    ["Men's/Women's Stores", 148662],
-    ["Juvenile Specialty Stores", 78662],
-    ["All other outlets", 90000]
+  // set data and chart type
+  var chart = anychart.pie3d([
+    {name: "Department Stores",         value: 637166},
+    {name: "Discount Stores",           value: 721630},
+    {name: "Men's/Women's Stores",      value: 148662},
+    {name: "Juvenile Specialty Stores", value: 78662},
+    {name: "All other outlets",         value: 90000}
   ]);
-  // set chart title text settings
-  chart.title("Aqua Style");
 
-  // disable legend
-  chart.legend(false);
+  chart.title("3D Pie Chart");
 
-  // set aqua style
-  chart.fill("aquastyle");
+  chart.background(null);
 
   // draw
   chart.container("container");
