@@ -31,7 +31,8 @@ Use a pie chart when:
 * Almost none of the values that you want to plot are zero values.
 * You've got no more than seven categories.
 * The categories represent parts of the whole.
-
+  
+  
 Donut chart are functionally identical to pie charts, the only difference is that the first one has a hole in the middle (which may be used, for example, as a place for the chart name).
 
 ## Chart
@@ -72,27 +73,28 @@ Let's see pie chart created using the following data - sales of ACME Corp. appar
 Now we need to convert this data table into js to make it acceptable by AnyChart. In terms of AnyChart data model we’ve got one series of data (Sales) with categories that hold Retail channels names. The data in JavaScript format looks like:
 
 ```
-  chart = anychart.pieChart([
-    ['Department Stores', 637166],
-    ['Discount Stores', 721630],
-    ['Men\'s/Women\'s Stores', 148662],
-    ['Juvenile Specialty Stores', 78662],
-    ['All other outlets', 90000]
+  chart = anychart.pie([
+    ["Department Stores", 637166],
+    ["Discount Stores", 721630],
+    ["Men's/Women's Stores", 148662],
+    ["Juvenile Specialty Stores", 78662],
+    ["All other outlets", 90000]
   ]);
 ```
 
-As you can see, we've created {api:anychart.charts.Pie}**anychart.pieChart()**{api} parameter. First column defines category and another one defines slice value.
-
+As you can see, we've used {api:anychart.charts.Pie}**anychart.pie()**{api} method to create pie chart. First column defines category and another one defines slice value.
+  
+  
 Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on it to see preview and full configured data in the playground.
 
 {sample}BCT\_PieDonutChart\_01{sample}
 
 ### Doughnut Chart
 
-Donut chart is almost the same as Pie chart, the only difference is in appearance: Donut charts are with holes inside. All you need to do to switch between these two types is to add/delete  {api:anychart.charts.Pie#innerRadius}**'chart.innerRadius()'**{api}
+Donut chart is almost the same as Pie chart, the only difference is in appearance: Donut charts have a hole in the middle. All you need to turn pie chart into doughnut chart is to set {api:anychart.charts.Pie#innerRadius}**innerRadius()**{api} parameter more than 0:
 
 ```
-  chart.innerRadius('30%');
+  chart.innerRadius("30%");
 ```
 
 And here is the same data as above in the form of a Donut chart:
@@ -107,7 +109,7 @@ It is very easy to display the data from the sample above in 3D mode - just use 
 
 ##Start Angle
 
-You can set starting angle for the first slice for the pie using {api:anychart.charts.Pie#startAngle}**.startAngle()**{api} method. In the sample below the start angle is shifted to 45°.
+You can set starting angle for the first slice of the pie using {api:anychart.charts.Pie#startAngle}**.startAngle()**{api} method. In the sample below the start angle is shifted to 45°.
 
 ```
   chart.startAngle(45);
@@ -127,58 +129,56 @@ In Pie/Donut charts, it is possible to sort the series by ascending or descendin
 You can set pie and donut chart slices to be exploded when user clicks on it and you can set certain slices to be exploded by default.
   
   
-{api:anychart.charts.Pie#explode}**Explode**{api} parameter defines how far slices are exploded. To disable exploding, set {api:anychart.charts.Pie#explode}**explode**{api} value to 0.
+{api:anychart.charts.Pie#explode}**.explode()**{api} parameter defines how far slices are exploded. To disable exploding, set {api:anychart.charts.Pie#explode}**.explode()**{api} value to 0.
 
 ```
-    chart.explode(30);
+  chart.explode(30);
 ```
 
 To explode only one slice set an “explode” value to a point:
 
 ```
-    chart.explodeSlice(0, true); 
+  chart.explodeSlice(0, true); 
 ```
 The first parameter is the number of the slice and the second one is boolean responsible for activating the explosion. Note that number of the slice is to be counted from 0.
-
-Sample chart below is exploded by default, you can launch the live sample and click on slices to move them back to the center.
+  
+  
+Sample chart below has the first slice exploded by default.
 
 {sample}BCT\_PieDonutChart\_04{sample}
 
 Also it's possible to define explosion with the data itself if you set the data as an object:
 
-
 ```
-    chart = anychart.pieChart([
-        {'name':'Department Stores', 'value': 637166, 'exploded': true},
-        ['Discount Stores', 721630],
-        ['Men\'s/Women\'s Stores', 148662],
-        ['Juvenile Specialty Stores', 78662],
-        ['All other outlets', 90000]
-    ]);
+  var chart = anychart.pieChart([
+    {name: "Department Stores", value: 637166, exploded: true},
+    ["Discount Stores", 721630],
+    ["Men's/Women's Stores", 148662],
+    ["Juvenile Specialty Stores", 78662],
+    ["All other outlets", 90000]
+  ]);
 ```
 
 {sample}BCT\_PieDonutChart\_05{sample}
 
-
 ## Visualization
 
 In this section we will describe the main parts of a pie chart style and demonstrate how to apply a style.
-
+  
+  
 Also, you can use styles to make charts interactive: you can define each element’s appearance and behavior by default, while hovered, etc.
-
-
- <!--More information about these features can be found in Interactivity tutorial.-->
+<!--More information about these features can be found in Interactivity tutorial.-->
 
 ### Basic Sample
 
 Now, let's look how to create a simple style and apply it to the chart. As we've already said style consists of several elements, here is a structure:
 
 ```
-    chart.fill('Gold')
-        .hoverHatchFill('diagonalbrick', 'darkred')
-        .stroke('4 Rgb(86,86,26)')
-        .hoverStroke('4 darkred')
-        .hatchFill('diagonalbrick', 'gray');
+  chart.fill("Gold")
+  chart.hoverHatchFill("diagonalbrick", "darkred")
+  chart.stroke("4 Rgb(86,86,26)")
+  chart.hoverStroke("4 darkred")
+  chart.hatchFill("diagonalbrick", "gray");
 ```
 
 Using such settings we've created a style that defines slices of gold color with rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user moves cursor over an element its border and hatch fill will be highlighted with dark red color.
@@ -190,7 +190,7 @@ Using such settings we've created a style that defines slices of gold color with
 Since version 7.4.0 you can use so-called “Aquastyle” to color pie charts, set the following to get this effect:
 
 ```
-     chart.fill('aquastyle');
+  chart.fill("aquastyle");
 ```
 
 That's how a chart with Aquastyle set looks like: 
@@ -212,11 +212,11 @@ You can place labels inside or outside pie slices using {api:anychart.ui.Label#p
 
 ```
   var labels = chart.labels();
-  labels.position('outside');
+  labels.position("outside");
 ```
-  
+
 {sample}BCT\_PieDonutChart\_11{sample}
-  
+
 The line that joins the label with the slice of the pie is called connector. You can tune connectors visual appearance using {api:anychart.charts.Pie#connectorStroke}**.connectorStroke()**{api} method.
 
 ```
@@ -335,24 +335,20 @@ Let's demonstrate how to apply different colors to different data series. To app
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch](../Appearance_Settings/Hatch_Fill) tutorial tutorial.
   
   
-To demonstrate hatch fill feature we've prepared the following sample. We have chart with 5-series with 2 data points in each. For every series we've applied different hatch fills by setting a hatch type for{api:anychart.charts.Pie#hatchFill}**.hatchFill()**{api} parameter.
+To demonstrate hatch fill feature we've prepared the following sample. We have pie chart with 6 points. For every point we've applied different hatch fills by setting a hatch type for{api:anychart.charts.Pie#hatchFill}**.hatchFill()**{api} parameter.
   
   
 That’s how we did it in our code:
 
 ```
-chart = anychart.pieChart([
-        {x: 'P1', value: 232, hatchFill: 'diagonalcross'},
-        {x: 'P2', value: 224, hatchFill: 'zigzag'},
-        {x: 'P3', value: 252, hatchFill: 'horizontal'},
-        {x: 'P4', value: 219, hatchFill: 'vertical'},
-        {x: 'P5', value: 169, hatchFill: 'dashedbackwarddiagonal'},
-        {x: 'P6', value: 217, hatchFill: 'grid'},
-        {x: 'P7', value: 175, hatchFill: 'dashedforwarddiagonal'},
-        {x: 'P8', value: 199, hatchFill: 'dashedhorizontal'},
-        {x: 'P9', value: 297, hatchFill: 'plaid'},
-        {x: 'P10', value: 317, hatchFill: 'weave'}
-    ]);
+  var chart = anychart.pieChart([
+    {x: "P1", value: 232, hatchFill: "diagonalcross"},
+    {x: "P2", value: 224, hatchFill: "zigzag"},
+    {x: "P3", value: 252, hatchFill: "horizontal"},
+    {x: "P4", value: 219, hatchFill: "vertical"},
+    {x: "P5", value: 169, hatchFill: "dashedbackwarddiagonal"},
+    {x: "P6", value: 217, hatchFill: "grid"}
+  ]);
 ```
 
 {sample}BCT\_PieDonutChart\_10{sample}
