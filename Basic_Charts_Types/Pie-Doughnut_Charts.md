@@ -1,4 +1,4 @@
-# Pie and Donut Chart
+# Pie and Doughnut Chart
                                                                
 * [Overview](#overview)
 * [Chart](#chart)
@@ -33,7 +33,7 @@ Use a pie chart when:
 * The categories represent parts of the whole.
   
   
-Donut chart are functionally identical to pie charts, the only difference is that the first one has a hole in the middle (which may be used, for example, as a place for the chart name).
+Doughnut chart are functionally identical to pie charts, the only difference is that the first one has a hole in the middle (which may be used, for example, as a place for the chart name).
 
 ## Chart
 
@@ -87,25 +87,25 @@ As you can see, we've used {api:anychart.charts.Pie}**anychart.pie()**{api} meth
   
 Here it is - AnyChart can now visualize your data. Look at the chart sample below and click on it to see preview and full configured data in the playground.
 
-{sample}BCT\_PieDonutChart\_01{sample}
+{sample}BCT\_PieDoughnutChart\_01{sample}
 
 ### Doughnut Chart
 
-Donut chart is almost the same as Pie chart, the only difference is in appearance: Donut charts have a hole in the middle. All you need to turn pie chart into doughnut chart is to set {api:anychart.charts.Pie#innerRadius}**innerRadius()**{api} parameter more than 0:
+Doughnut chart is almost the same as Pie chart, the only difference is in appearance: Doughnut charts have a hole in the middle. All you need to turn pie chart into doughnut chart is to set {api:anychart.charts.Pie#innerRadius}**innerRadius()**{api} parameter more than 0:
 
 ```
   chart.innerRadius("30%");
 ```
 
-And here is the same data as above in the form of a Donut chart:
+And here is the same data as above in the form of a Doughnut chart:
 
-{sample}BCT\_PieDonutChart\_02{sample}
+{sample}BCT\_PieDoughnutChart\_02{sample}
 
 ### 3D Pie Chart
 
 It is very easy to display the data from the sample above in 3D mode - just use {api:anychart#pie3d}**.pie3d()**{api} and the pie will become 3D.
 
-{sample}BCT\_Pie\_3d{sample}
+{sample}BCT\_PieDoughnutChart\_03{sample}
 
 ##Start Angle
 
@@ -115,18 +115,18 @@ You can set starting angle for the first slice of the pie using {api:anychart.ch
   chart.startAngle(45);
 ```
 
-{sample}BCT\_PieDonutChart\_13{sample}
+{sample}BCT\_PieDoughnutChart\_04{sample}
 
 ## Slices Sorting
 
-In Pie/Donut charts, it is possible to sort the series by ascending or descending. This feature is controlled using {api:anychart.charts.Pie#sort}**.sort()**{api} parameter. In the sample below three pie charts with identical series are shown, first isn't sorted, the second is sorted ascending and the third - descending.
+In Pie/Doughnut charts, it is possible to sort the series by ascending or descending. This feature is controlled using {api:anychart.charts.Pie#sort}**.sort()**{api} parameter. In the sample below three pie charts with identical series are shown, first isn't sorted, the second is sorted ascending and the third - descending.
 
-{sample :width 690 :height 230}BCT\_PieDonutChart\_03{sample}
+{sample :width 690 :height 230}BCT\_PieDoughnutChart\_05{sample}
 
 
 ## Exploded Slices
 
-You can set pie and donut chart slices to be exploded when user clicks on it and you can set certain slices to be exploded by default.
+You can set pie and doughnut chart slices to be exploded when user clicks on it and you can set certain slices to be exploded by default.
   
   
 {api:anychart.charts.Pie#explode}**.explode()**{api} parameter defines how far slices are exploded. To disable exploding, set {api:anychart.charts.Pie#explode}**.explode()**{api} value to 0.
@@ -145,7 +145,7 @@ The first parameter is the number of the slice and the second one is boolean res
   
 Sample chart below has the first slice exploded by default.
 
-{sample}BCT\_PieDonutChart\_04{sample}
+{sample}BCT\_PieDoughnutChart\_06{sample}
 
 Also it's possible to define explosion with the data itself if you set the data as an object:
 
@@ -159,7 +159,7 @@ Also it's possible to define explosion with the data itself if you set the data 
   ]);
 ```
 
-{sample}BCT\_PieDonutChart\_05{sample}
+{sample}BCT\_PieDoughnutChart\_07{sample}
 
 ## Visualization
 
@@ -183,7 +183,7 @@ Now, let's look how to create a simple style and apply it to the chart. As we've
 
 Using such settings we've created a style that defines slices of gold color with rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user moves cursor over an element its border and hatch fill will be highlighted with dark red color.
 
-{sample}BCT\_PieDonutChart\_06{sample}
+{sample}BCT\_PieDoughnutChart\_08{sample}
 
 ### Aquastyle
 
@@ -195,7 +195,7 @@ Since version 7.4.0 you can use so-called “Aquastyle” to color pie charts, s
 
 That's how a chart with Aquastyle set looks like: 
 
-{sample}BCT\_PieDonutChart\_07{sample}
+{sample}BCT\_PieDoughnutChart\_09{sample}
 
 ## Labels and Tooltips
 
@@ -215,7 +215,7 @@ You can place labels inside or outside pie slices using {api:anychart.ui.Label#p
   labels.position("outside");
 ```
 
-{sample}BCT\_PieDonutChart\_11{sample}
+{sample}BCT\_PieDoughnutChart\_10{sample}
 
 The line that joins the label with the slice of the pie is called connector. You can tune connectors visual appearance using {api:anychart.charts.Pie#connectorStroke}**.connectorStroke()**{api} method.
 
@@ -232,7 +232,7 @@ The line that joins the label with the slice of the pie is called connector. You
 
 You can find more information about lines in [Line Settings tutorial](../Appearance_Settings/Lines_Settings). Here is the pie with tuned connectors.
 
-{sample}BCT\_PieDonutChart\_12{sample}
+{sample}BCT\_PieDoughnutChart\_11{sample}
 
 ###Tooltips
 
@@ -260,7 +260,7 @@ In this section we will explain how to tune pie tooltip. Method {api:anychart.ch
 
 With the following example let's force tooltip to show detailed description for each pie slice.
 
-{sample}BCT\_PieDonutChart\_08{sample}
+{sample}BCT\_PieDoughnutChart\_12{sample}
 <!--
 Related Help Topics:
 
@@ -328,7 +328,7 @@ AnyChart uses default colors to colorize data elements of a chart automatically 
 
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set the {api:anychart.charts.Pie#fill}**.fill()**{api} parameter. In the sample below there are some series with sample data and we'll color each series to different color. Here is the sample:
 
-{sample}BCT\_PieDonutChart\_09{sample}
+{sample}BCT\_PieDoughnutChart\_13{sample}
 
 ## Hatch Fills
 
@@ -351,4 +351,4 @@ That’s how we did it in our code:
   ]);
 ```
 
-{sample}BCT\_PieDonutChart\_10{sample}
+{sample}BCT\_PieDoughnutChart\_14{sample}
