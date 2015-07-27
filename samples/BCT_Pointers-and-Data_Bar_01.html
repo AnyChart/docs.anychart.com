@@ -6,46 +6,50 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-    
-		// create data set on our data
-    dataSet = anychart.data.set([60]);
-    
-		// set the gauge type
-    gauge = anychart.circularGauge();
+  
+  // create data set on our data
+  var dataSet = anychart.data.set([60]);
+  
+  // set the gauge type
+  var gauge = anychart.circularGauge();
 
-		// gauge settings
-    gauge.data(dataSet);
-    gauge.padding("10%");
-    gauge.startAngle(0);
-    gauge.sweepAngle(360);
-   
-		// axis settings
-    var axis = gauge.axis()
-        .radius(95)
-        .width(1);
+  // gauge settings
+  gauge.data(dataSet);
+  gauge.padding("10%");
+  gauge.startAngle(0);
+  gauge.sweepAngle(360);
+  
+  // axis settings
+  var axis = gauge.axis();
+  axis.radius(95);
+  axis.width(1);
 
-		// scale settings
-    axis.scale()
-        .minimum(0)
-        .maximum(360)
-        .ticks({interval: 20})
-        .minorTicks({interval: 1});
+  // scale settings
+  var scale = gauge.axis().scale();
+  scale.minimum(0);
+  scale.maximum(360);
+  var ticks = gauge.axis().scale().ticks();
+  ticks.interval(20);
+  var minorTicks = gauge.axis().scale().minorTicks();
+  minorTicks.interval(1);
 
-		// ticks settings
-    axis.ticks()
-        .type("trapezoid")
-        .length("8");
+  // ticks settings
+  var axisTicks = gauge.axis().ticks();
+  axisTicks.type("trapezoid");
+  axisTicks.length("8");
 
-		// minor ticks settings
-    axis.minorTicks()
-        .enabled(true)
-        .length("1");
-    
-		// bar
-    gauge.bar(0).enabled(true);
-        
-		// draw the chart
-    gauge.container("container").draw();
+  // minor ticks settings
+  var axisMinorTicks = axis.minorTicks();
+  axisMinorTicks.enabled(true);
+  axisMinorTicks.length("1");
+  
+  // bar
+  var bar = gauge.bar();
+  bar.enabled(true);
+  
+  // draw the chart
+  gauge.container("container");
+  gauge.draw();
 });</script>
 </head>
 <body>

@@ -7,77 +7,82 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
     
-		// create data set on our data
-    dataSet = anychart.data.set([60]);
-    
-		// set the gauge type
-    gauge = anychart.circularGauge();
+  // create data set on our data
+  var dataSet = anychart.data.set([60]);
 
-		// gauge settings
-    gauge.data(dataSet);
-    gauge.padding("10%");
-    gauge.startAngle(0);
-    gauge.sweepAngle(360);
-   
-		// axis settings
-    var axis = gauge.axis()
-        .radius(95)
-        .width(1);
+  // set the gauge type
+  var gauge = anychart.circularGauge();
 
-		// scale settings
-    axis.scale()
-        .minimum(0)
-        .maximum(360)
-        .ticks({interval: 20})
-        .minorTicks({interval: 1});
+  // gauge settings
+  gauge.data(dataSet);
+  gauge.padding("10%");
+  gauge.startAngle(0);
+  gauge.sweepAngle(360);
 
-		// ticks settings
-    axis.ticks()
-        .type("trapezoid")
-        .length("8");
+  // axis settings
+  var axis = gauge.axis(0);
+  axis.radius(95);
+  axis.width(1);
 
-		// minor ticks settings
-    axis.minorTicks()
-        .enabled(true)
-        .length("1");
-        
-                // second axis settings
-    var axis_1 = gauge.axis(1)
-        .radius(50)
-        .width(3);
+  // scale settings
+  var scale = gauge.axis(0).scale();
+  scale.minimum(0);
+  scale.maximum(360);
+  var ticks = gauge.axis(0).scale().ticks();
+  ticks.interval(20);
+  var minorTicks = gauge.axis(0).scale().minorTicks();
+  minorTicks.interval(1);
 
-		// second scale settings
-    axis_1.scale()
-        .minimum(0)
-        .maximum(300)
-        .ticks({interval: 30})
-        .minorTicks({interval: 10});
+  // ticks settings
+  var axisTicks = gauge.axis(0).ticks();
+  axisTicks.type("trapezoid");
+  axisTicks.length("8");
 
-		// second ticks settings
-    axis_1.ticks()
-        .type("trapezoid")
-        .length("8");
+  // minor ticks settings
+  var axisMinorTicks = axis.minorTicks();
+  axisMinorTicks.enabled(true);
+  axisMinorTicks.length("1");
 
-		// second minor ticks settings
-    axis_1.minorTicks()
-        .enabled(true)
-        .length("3");
-		
-        // marker
-    gauge.marker(0)
-        .enabled(true)
-        .dataIndex(0)
-        .axisIndex(0)
-        .size(7);
-        
-		// bar
-    gauge.bar(0)
-        .width(3)
-        .dataIndex(0)
-        .axisIndex(1);
-        
-        // draw the chart
-    gauge.container("container").draw();
+  // second axis settings
+  var axis_1 = gauge.axis(1);
+  axis_1.radius(50);
+  axis_1.width(3);
+
+  // second scale settings
+  var scale_1 = gauge.axis(1).scale();
+  scale_1.minimum(0);
+  scale_1.maximum(300);
+  var ticks_1 = gauge.axis(1).scale().ticks();
+  ticks_1.interval(30);
+  var minorTicks_1 = gauge.axis(1).scale().minorTicks();
+  minorTicks_1.interval(10);
+
+  // second ticks settings
+  var axisTicks_1 = gauge.axis(1).ticks();
+  axisTicks_1.type("trapezoid");
+  axisTicks_1.length("8");
+
+  // second minor ticks settings
+  var axisMinorTicks_1 = gauge.axis(1).minorTicks();
+  axisMinorTicks_1.enabled(true);
+  axisMinorTicks_1.length("3");
+  
+  // marker
+  var marker = gauge.marker();
+  marker.enabled(true);
+  marker.dataIndex(0);
+  marker.axisIndex(0);
+  marker.size(7);
+      
+  // bar
+  var bar = gauge.bar();
+  bar.width(3);
+  bar.dataIndex(0);
+  bar.axisIndex(1);
+
+  // draw the chart
+  gauge.container("container");
+  gauge.draw();
 });</script>
 </head>
 <body>
