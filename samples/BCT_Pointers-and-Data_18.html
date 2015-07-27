@@ -35,13 +35,14 @@
 
   // ticks settings
   var axisTicks = gauge.axis(0).ticks();
+  axisTicks.enabled(true);
   axisTicks.type("trapezoid");
-  axisTicks.length("8");
+  axisTicks.length(8);
 
   // minor ticks settings
   var axisMinorTicks = gauge.axis(0).minorTicks();
   axisMinorTicks.enabled(true);
-  axisMinorTicks.length("1");
+  axisMinorTicks.length(1);
   
   // second axis settings
   var axis_1 = gauge.axis(1);
@@ -59,13 +60,14 @@
 
   // second ticks settings
   var axisTicks_1 = gauge.axis(1).ticks();
+  axisTicks_1.enabled(true);
   axisTicks_1.type("trapezoid");
-  axisTicks_1.length("8");
+  axisTicks_1.length(8);
 
   // second minor ticks settings
   var axisMinorTicks_1 = gauge.axis(1).minorTicks();
   axisMinorTicks_1.enabled(true);
-  axisMinorTicks_1.length("3");
+  axisMinorTicks_1.length(3);
   
   // marker
   var marker = gauge.marker();

@@ -35,13 +35,14 @@
 
   // ticks settings
   var axisTicks = gauge.axis().ticks();
+  axisTicks.enabled(true);
   axisTicks.type("trapezoid");
-  axisTicks.length("8");
+  axisTicks.length(8);
 
   // minor ticks settings
   var axisMinorTicks = gauge.axis().minorTicks();
   axisMinorTicks.enabled(true);
-  axisMinorTicks.length("1");
+  axisMinorTicks.length(1);
   
   // needle
   var needle = gauge.needle();
