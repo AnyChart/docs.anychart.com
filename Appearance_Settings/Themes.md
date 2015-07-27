@@ -331,7 +331,7 @@ Here is a list of global settings and defaults that can be defined in a theme:
 </tbody>
 </table>
 
-**Note**: AnyChart themes can contain much more settings than this table presents. File with default theme contains all possible chart settings with default values. Read more about default theme in [Default Theme section](#default_theme).
+**Note**: AnyChart themes can contain much more settings than this table presents. File with default theme contains all possible chart settings with default values and this file can be used as a reference of all theme settings. Read more about default theme in [Default Theme section](#default_theme).
 
 Here is a sample of a dashboard with a column chart, pie chart and a radar with default font altered by the default node in a theme:
 
