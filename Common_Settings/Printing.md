@@ -5,7 +5,7 @@ Printing
 
 * [Chart printing](#chart_printing)
 * [Stage printing](#stage_printing)
-* [Parameters Using](#parameters_using)
+* [Parameters](#parameters)
 
 Although AnyChart is intended for creation interactive charts for web we provide an opportunity to print any of our charts.
 
@@ -42,7 +42,7 @@ Here is the sample of stage printing:
 
 {sample}Exports\_03{sample}
 
-##Parameters Using
+##Parameters
 
 In case you need to set paper size manually AnyChart provides an opportunity to use two parameters for printing. The first one defines the paper size and the second one page layout: whether it should be portrait or landscape (**true** stands for the landscape layout and **false** for the portrait).
 
