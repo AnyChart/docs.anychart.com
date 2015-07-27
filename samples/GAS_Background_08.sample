@@ -1,0 +1,211 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+
+anychart.onDocumentReady(function() {
+
+    // chart type
+    chart = anychart.barChart();
+
+    // set title
+    chart.title().text('types');
+
+            // create chart and define data
+            chart.bar([
+        {x: 'Backward Diagonal', 
+        value: 737166,  
+        hatchFill:{type:'backwarddiagonal',color: 'grey'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Checker board', 
+        value: 737166,  
+        hatchFill:{hatchType:'checkerboard',color: 'grey'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Confetti', 
+        value: 737166,  
+        hatchFill:{type:'confetti',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Dashed Backward Diagonal', 
+        value: 737166,  
+        hatchFill:{type:'dashedbackwarddiagonal',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Dashed Forward Diagonal', 
+        value: 737166,  
+        hatchFill:{type:'dashedforwarddiagonal',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Dashed horizontal', 
+        value: 737166,  
+        hatchFill:{type:'dashedhorizontal',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Dashed vertical', 
+        value: 737166,  
+        hatchFill:{type:'dashedvertical',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Diagonal Brick', 
+        value: 737165,  
+        hatchFill:{hatchType:'diagonalbrick',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Diagonal Cross', 
+        value: 737166,  
+        hatchFill:{type:'diagonalcross',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Divot', 
+        value: 737166,  
+        hatchFill:{type:'divot',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Forward Diagonal', 
+        value: 737166,  
+        hatchFill:{type:'forwarddiagonal',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Grid', 
+        value: 737166,  
+        hatchFill:{type:'grid',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Horizontal', 
+        value: 737166,  
+        hatchFill:{type:'horizontal',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Horizontal Brick', 
+        value: 737166,  
+        hatchFill:{type:'horizontalbrick',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Percent_05', 
+        value: 737166,  
+        hatchFill:{type:'percent05',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Percent_10', 
+        value: 737166,  
+        hatchFill:{type:'percent10',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Percent_20', 
+        value: 737166,  
+        hatchFill:{type:'percent20',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Percent_25', 
+        value: 737166,  
+        hatchFill:{type:'percent25',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Percent_30', 
+        value: 737166,  
+        hatchFill:{type:'percent30',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Percent_40', 
+        value: 737166,  
+        hatchFill:{type:'percent40',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Percent_50', 
+        value: 737166,  
+        hatchFill:{type:'percent50',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Percent_60', 
+        value: 737166,  
+        hatchFill:{type:'percent60',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Percent_70', 
+        value: 737166,  
+        hatchFill:{type:'percent70',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Percent_75', 
+        value: 737166,  
+        hatchFill:{type:'percent75',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Percent_80', 
+        value: 737166,  
+        hatchFill:{type:'percent80',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Percent_90', 
+        value: 737166,  
+        hatchFill:{type:'percent90',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Plaid', 
+        value: 737166,  
+        hatchFill:{type:'plaid',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Solid Diamond', 
+        value: 737166,  
+        hatchFill:{type:'soliddiamond',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Vertical', 
+        value: 737166,  
+        hatchFill:{type:'vertical',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Vertical Brick', 
+        value: 737166,  
+        hatchFill:{type:'verticalbrick',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Weave', 
+        value: 737166,  
+        hatchFill:{type:'weave',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        },
+        {x: 'Zig Zag', 
+        value: 737166,  
+        hatchFill:{type:'zigzag',color: 'gray'},
+        fill: "white 0",
+        stroke: "grey"
+        }
+    
+    ]);
+           // draw
+    chart.container('container').draw();
+});

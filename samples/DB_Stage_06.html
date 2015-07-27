@@ -8,172 +8,130 @@
     <script x-export="chart">	 	 
 anychart.onDocumentReady(function () {
 
-        // set stage
-        stage = anychart.graphics.create('container');
+            // set stage
+            stage = anychart.graphics.create('container');
 
-        // set colors for sample
-        var textColor = '#7c868e';
-        var lineColor = '#CECECE';
-        var chart_palette = anychart.palettes.distinctColors().colors(['#bc7c63', '#6594ad', '#585953']);
 
-        // set layers of stage
-        var layer_jay = stage.layer(); // layer for the top of the fir-tree
-        var layer_woodpecker = stage.layer(); // layer for the middle of the fir-tree
-        var layer_squirrel = stage.layer(); // layer for the bottom of the fir-tree
-        var layer_beetle = stage.layer(); // layer for the grass
-        var layer_mouse = stage.layer(); // layer for the trunk
-        var layer_text = stage.layer(); // layer for the text elements
-        
-        var getLegend = function (items) {
-            var legend = anychart.ui.legend();
-            legend.fontSize('11px');
-            legend.fontFamily("'Verdana', Helvetica, Arial, sans-serif");
-            legend.itemsLayout('horizontal');
-            legend.fontColor(textColor);
-            legend.iconTextSpacing(0);
-            legend.align('left');
-            legend.position('top');
-            legend.padding(10);
-            legend.margin(65, 0, 20,10);
-            legend.itemsSpacing(15);
-            legend.iconTextSpacing(5);
-            legend.title().enabled(false);
-            legend.titleSeparator().enabled(true);
-            legend.paginator().enabled(false);
-            legend.background().enabled(false);
-            legend.items(items);
-            return legend;
-        };
-        var chartLegend = getLegend([
-            {'index': 0, 'text': 'Comes', 'iconType': 'rect', 'iconStroke': 'none', 'iconFill': '#bc7c63'},
-            {'index': 1, 'text': 'Eats', 'iconType': 'square', 'iconStroke': 'none', 'iconFill': '#6594ad'},
-            {'index': 2, 'text': 'Mates', 'iconType': 'square', 'iconStroke': 'none', 'iconFill': '#585953'}
-        ]);
+            // set colors for sample
+            var textColor = '#7c868e';
+            var lineColor = '#CECECE';
+            var chart_palette = anychart.palettes.distinctColors().colors(['#bc7c63', '#6594ad', '#585953']);
 
-        chartLegend.container(layer_text).draw();
-        
-        var settings_title = {
-            fontSize:20,
-            fontFamily:"'Verdana', Helvetica, Arial, sans-serif",
-            color:'#3D2914'
-        };
-        
-        var settings_sub = {
-            fontSize:18,
-            fontFamily:"'Verdana', Helvetica, Arial, sans-serif",
-            color:'#998552',
-            opacity:20
-        };
-        
-        var title = layer_text.text(20,20,'The activity of the animals in the biocenose of the fir-tree', settings_title);
-        
-        var subtitle = layer_text.text(20,45,'A 10 days observation period', settings_sub);
+            // set layers of stage
+            var layer_jay = stage.layer(); // layer for the top of the fir-tree
+            var layer_woodpecker = stage.layer(); // layer for the middle of the fir-tree
+            var layer_squirrel = stage.layer(); // layer for the bottom of the fir-tree
+            var layer_beetle = stage.layer(); // layer for the grass
+            var layer_mouse = stage.layer(); // layer for the trunk
+            var layer_text = stage.layer(); // layer for the text elements
 
-        var draw_piece_of_tree = function(layer, points, color, z_index, rotation){
-            var piece = layer.path().moveTo(points[0][0], points[0][1]).zIndex(z_index).fill(color).stroke(null);
-            for (var i = 0; i < points.length; i++) {
-                piece.lineTo(points[i][0], points[i][1]);
-            }
+            var getLegend = function (items) {
+                var legend = anychart.ui.legend();
+                legend.fontSize('11px');
+                legend.fontFamily("'Verdana', Helvetica, Arial, sans-serif");
+                legend.itemsLayout('horizontal');
+                legend.fontColor(textColor);
+                legend.iconTextSpacing(0);
+                legend.align('left');
+                legend.position('top');
+                legend.padding(10);
+                legend.margin(65, 0, 20,10);
+                legend.itemsSpacing(15);
+                legend.iconTextSpacing(5);
+                legend.title().enabled(false);
+                legend.titleSeparator().enabled(true);
+                legend.paginator().enabled(false);
+                legend.background().enabled(false);
+                legend.items(items);
+                return legend;
+            };
+            var chartLegend = getLegend([
+                {'index': 0, 'text': 'Comes', 'iconType': 'rect', 'iconStroke': 'none', 'iconFill': '#bc7c63'},
+                {'index': 1, 'text': 'Eats', 'iconType': 'square', 'iconStroke': 'none', 'iconFill': '#6594ad'},
+                {'index': 2, 'text': 'Mates', 'iconType': 'square', 'iconStroke': 'none', 'iconFill': '#585953'}
+            ]);
 
-            if (rotation) piece.rotateByAnchor(rotation, 'center');
-            return piece;
-        };
+            chartLegend.container(layer_text).draw();
 
-        var draw_piece_shadow = function(layer, points, color, z_index, rotation){
-            var piece = layer.path().moveTo(points[0][0], points[0][1]).zIndex(z_index).stroke(null);
-            for (var i = 0; i < points.length; i++) {
-                piece.lineTo(points[i][0], points[i][1]);
-            }
-            piece.fill([color + ' 0.5', color + ' 0.4', color + ' 0'], -90);
-            if (rotation) piece.rotateByAnchor(rotation, 'center');
-            return piece;
-        };
+            var settings_title = {
+                fontSize:20,
+                fontFamily:"'Verdana', Helvetica, Arial, sans-serif",
+                color:'#3D2914'
+            };
 
-        var on_hover = function (piece, shadow, line, lineShadow, img, imgShadow) {
-            shadow.visible(false);
-            lineShadow.visible(false);
-            imgShadow.visible(false);
-            piece.listen('mouseOver', function () {
-                piece.stroke(textColor);
-                shadow.visible(true);
-                lineShadow.visible(true);
-                imgShadow.visible(true);
-            });
-            piece.listen('mouseOut', function () {
-                shadow.visible(false);
-                lineShadow.visible(false);
-                imgShadow.visible(false);
-            });
-            line.listen('mouseOver', function () {
-                shadow.visible(true);
-                lineShadow.visible(true);
-                imgShadow.visible(true);
-            });
-            line.listen('mouseOut', function () {
-                shadow.visible(false);
-                lineShadow.visible(false);
-                imgShadow.visible(false);
-            });
-            img.listen('mouseOver', function () {
-                shadow.visible(true);
-                lineShadow.visible(true);
-                imgShadow.visible(true);
-            });
-            img.listen('mouseOut', function () {
-                shadow.visible(false);
-                lineShadow.visible(false);
-                imgShadow.visible(false);
-            });
-        };
-        
-        var draw_chart = function(container, data, bounds){
-            var chart = anychart.line();
-            chart.palette(chart_palette);
-            var comes_data = data.mapAs({x: [0], value: [1]});
-            chart.line(comes_data).markers(null);
-            var eats_data = data.mapAs({x: [0], value: [2]});
-            chart.line(eats_data).markers(null);
-            var mates_data = data.mapAs({x: [0], value: [3]});
-            chart.line(mates_data).markers(null);
+            var settings_sub = {
+                fontSize:18,
+                fontFamily:"'Verdana', Helvetica, Arial, sans-serif",
+                color:'#998552',
+                opacity:20
+            };
 
-            chart.background(null);
-            chart.bounds(bounds);
-            chart.title().enabled(false);
-            chart.grid().enabled(false);
-            chart.minorGrid().enabled(false);
-            chart.grid(1).enabled(false);
-            chart.minorGrid(1).enabled(false);
-            chart.yScale().minimum('-0.1').maximum('12');
-            chart.yScale().ticks().interval(4);
-            chart.yAxis().stroke(lineColor);
-            chart.yAxis().ticks().stroke(lineColor);
-            chart.yAxis().title(false);
-            chart.yAxis().minorTicks(false);
-            chart.yAxis().labels().textSettings({
-                        fontFamily: "'Verdana', Helvetica, Arial, sans-serif",
-                        fontWeight: 'normal',
-                        fontSize: '12px',
-                        fontColor: textColor});
-            chart.yAxis().drawFirstLabel(false);
-            chart.xAxis(false);
-            chart.container(container);
-            chart.draw();
-        };
+            var title = layer_text.text(20,20,'The activity of the animals in the biocenose of the fir-tree', settings_title);
 
-        var draw_line = function(layer, points, color, z_index){
-            var line = layer.path().moveTo(points[0][0], points[0][1]).stroke(color).zIndex(z_index);
-            for (var i = 0; i < points.length; i++) {
-                line.lineTo(points[i][0], points[i][1]);
-            }
-			return line;
-        };
+            var subtitle = layer_text.text(20,45,'A 10 days observation period', settings_sub);
 
-        var draw_picture = function (layer, radius, coordinates, color, pic_name) {
-            layer.circle(radius, coordinates[0], coordinates[1])
-                .stroke(color)
-                .fill({
-                    src: 'http://static.anychart.com/images/graphics_stage_demo/' + pic_name,
-                    mode: acgraph.vector.ImageFillMode.FILL
+            var draw_piece_of_tree = function(layer, points, color, z_index, rotation){
+                var piece = layer.path().moveTo(points[0][0], points[0][1]).zIndex(z_index).fill(color).stroke(null);
+                for (var i = 0; i < points.length; i++) {
+                    piece.lineTo(points[i][0], points[i][1]);
+                }
+
+                if (rotation) piece.rotateByAnchor(rotation, 'center');
+                return piece;
+            };
+
+            var draw_piece_shadow = function(layer, points, color, z_index, rotation){
+                var piece = layer.path().moveTo(points[0][0], points[0][1]).zIndex(z_index).stroke(null);
+                for (var i = 0; i < points.length; i++) {
+                    piece.lineTo(points[i][0], points[i][1]);
+                }
+                piece.fill([color + ' 0.5', color + ' 0.4', color + ' 0'], -90);
+                if (rotation) piece.rotateByAnchor(rotation, 'center');
+                return piece;
+            };
+
+            var on_hover = function (piece, lowerPiece, line, lineShadow, img, imgShadow, fill, fillOut) {
+                piece.listen('mouseOver', function (e) {
+                    e.stopPropagation();
+                    piece.stroke(textColor);
+                    lowerPiece.fill(fill, -90);
+                    lineShadow.visible(true);
+                    imgShadow.visible(true);
+                });
+                piece.listen('mouseOut', function (e) {
+                    e.stopPropagation();
+                    lowerPiece.fill(fillOut);
+
+//                    shadow.visible(false);
+                    lineShadow.visible(false);
+                    imgShadow.visible(false);
+                });
+                line.listen('mouseOver', function () {
+                    lineShadow.visible(true);
+                    imgShadow.visible(true);
+                    lowerPiece.fill(fill, -90);
+                });
+                line.listen('mouseOut', function () {
+                    lineShadow.visible(false);
+                    imgShadow.visible(false);
+                    lowerPiece.fill(fillOut);
+                });
+                img.listen('mouseOver', function () {
+                    lineShadow.visible(true);
+                    imgShadow.visible(true);
+                    lowerPiece.fill(fill, -90);
+                });
+                img.listen('mouseOut', function () {
+                    lineShadow.visible(false);
+                    imgShadow.visible(false);
+                    lowerPiece.fill(fillOut);
+                });
+            };
+
+            var on_hover_two_lower = function (line, lineShadow, img, imgShadow) {
+                line.listen('mouseOver', function () {
+                    lineShadow.visible(true);
+                    imgShadow.visible(true);
                 });
             return layer;
         };

@@ -7,22 +7,17 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    stage = anychart.graphics.create('container');
+            stage = anychart.graphics.create('container');
 
-    chart = anychart.barChart();
+            // create figures
+            var circle = stage.circle(200,200,100);
+            var rect = stage.rect(100,100,400,200);
+            var ellipse = stage.ellipse(400,200,100,50);
 
-    var data = [
-      ['A1', 100, 200, 150, 115],
-      ['A2', 85, 121, 175, 230],
-      ['A3', 70, 160, 125, 100],
-      ['A4', 156, 98, 150, 180],
-      ['A5', 213, 150, 160, 210]
-    ];
-    var series = anychart.data.mapAsTable(data, 'range');
-    chart.rangeBar(series[0]).color('gray 0.2').hatchFill('diamiond', 'black', 5, 20);
-    chart.rangeBar(series[1]).color('gray 0.2').hatchFill('diamiond', 'black', 2, 5);
-
-    chart.container(stage).draw();
+            //fill them with hatch
+            circle.fill(acgraph.hatchFill('diagonal', 'red', 5.01, 30));
+            rect.fill(acgraph.hatchFill('weave', 'green', 0.5));
+            ellipse.fill(acgraph.hatchFill('horizontal', 'gold 1.5', 2, 5));
 
 });</script>
 </head>

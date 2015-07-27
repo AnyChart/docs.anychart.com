@@ -2,17 +2,19 @@
 
 * [Overview](#overview)
 * [Basics](#basics)
-* [Solid Color](#solid_color)
-* [Gradient Color](#gradient_color)
+* [Coloring](#coloring)
+ * [Solid Color](#solid_color)
+ * [Gradient Color](#gradient_color) 
 * [Line Thickness](#line_thickness)
 * [Dashed Lines](#dashed_lines)
 * [Line Opacity](#line_opacity)
+* [Change borders](#change_borders)
 
 ## Overview
 
 Knowledge about line configuration parameters is very important, because AnyChart allows to configure almost any line you can see on the chart: Lines in charts, grids, tooltips and labels, and even tickmark lines.
 
-The name of the method is always {api:anychart.axisMarkers.Line}**.line()**{api} or {api:anychart.graphics.vector.Stroke}**.stroke()**{api}. In this tutorial all line parameters and features are described.
+The name of the method is always {api:anychart.axisMarkers.Line}**.line()**{api} or {api:anychart.graphics.vector.Stroke}**.stroke()**{api}. All line parameters and features are described in this tutorial.
 
 You can also refer to the detailed [Stroke API description](../Graphics/Stroke_Settings).
 
@@ -33,9 +35,9 @@ The sample line chart below shows you the different line settings:
 
 ## Coloring
 
-There are two types of line coloring "Solid" and "Gradient"
+There are two types of line coloring: "Solid" and "Gradient".
 
-## Solid Color
+### Solid Color
 
 Solid color type is default for any object of Anychart and you don't need to use any special settings to apply Solid color. For more information see [Color Management](Color_Management) article.
 
@@ -43,7 +45,7 @@ Solid color type is default for any object of Anychart and you don't need to use
     series.stroke('red');
 ```
 
-## Gradient Color
+### Gradient Color
 
 To color a line with a gradient transition you should set color keys, opacity, angle of coloring and stroke thickness.
 
@@ -99,3 +101,19 @@ Opacity through object:
     opacity: 0.8
   });
 ```
+
+
+## Change borders
+
+In case you need to change the border of a bar or a column point, you can use the {api:anychart.graphics.vector.Stroke}**.stroke()**{api} parameter.
+
+```
+    // set first series data
+            chart.column(dataSeries_1)
+                    .stroke('5 red')        // set stroke thickness 5px and stroke color as red
+                    .markers()              // markers settings
+                    .fill('red')          // markers color
+                    .stroke('red 0.4');   // markers border color
+```
+
+{sample}GAS\_Strokes\_and\_Lines\_03{sample}
