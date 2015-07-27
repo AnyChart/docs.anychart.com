@@ -185,7 +185,7 @@ This file can be found in **binaries** folder in the downloaded AnyChart package
 
 ### Old Theme
   
-AnyChart provides several default themes along with the opportunity to [create custom themes](#create_theme). One of default them is the default one from AnyChart 5.x, 6.x. To use old theme you have to reference special theme file with the name **v6.js**. This file can be found in **binaries** folder in the downloaded AnyChart package. After referencing the file you can use {api:anychart#theme}**.theme()**{api} method with **anychart.themes.v6** parameter to apply old theme:
+AnyChart provides several default themes along with the opportunity to [create custom themes](#create_theme). One of default themes is the default one from AnyChart 5.x, 6.x. To use old theme you have to reference special theme file with the name **v6.js**. This file can be found in **binaries** folder in the downloaded AnyChart package. After referencing the file you can use {api:anychart#theme}**.theme()**{api} method with **anychart.themes.v6** parameter to apply old theme:
 
 ```
   // apply old theme
@@ -329,10 +329,11 @@ Here is a list of global settings and defaults that can be defined in a theme:
 </tbody>
 </table>
 
+**Note**: AnyChart themes can contain much more settings than this table presents. File with default theme contains all possible chart settings with default values. Read more about default theme in [Default Theme section](#default_theme).
+
 Here is a sample of a dashboard with a column chart, pie chart and a radar with default font altered by the default node in a theme:
 
 {sample :width 690 :height 220}AS\_Themes\_04{sample}
-
 
 ## AnyChart 6.x, 7.0.0 to 7.5.1 look to AnyChart 7.6 Conversion
 
@@ -343,10 +344,10 @@ If you are already using AnyChart 7.0 to 7.5.1, you may face some conflicts in c
   
   
 * use special **anychart.theme_v6.min.js** with the old theme to your charts as default one (this js file can be found in **binaries** folder in the downloaded AnyChart package).
-* or you can simply use new **anychart.min.js** and [set old them for your charts](#old_theme) (this is the recommended way to solve this problem).
+* or you can simply use new **anychart.min.js** and [set old theme for your charts](#old_theme) (this is the recommended way to solve this problem).
   
   
-To avoid any troubles and find out default theme of the current **anychart.min.js** file you can use **anychart.DEFAULT_THEM** method.
+To avoid any troubles and find out default theme of the current **anychart.min.js** file you can use **anychart.DEFAULT_THEME** method.
   
   
 **Note**: AnyChart recommends you to use new AnyChart theme, version 6 style will not be developed further and supported for the new chart types.
