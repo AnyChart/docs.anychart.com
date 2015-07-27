@@ -51,8 +51,10 @@
     // setting tooltip content
     return "Value: " + this.value + "\nPercent: " + (this.value/(sum/100)).toFixed(2) + "%";
   });
-  
-  // draw chart
+
+  chart.legend(false);
+
+      // draw chart
   chart.container("container");
   chart.draw();
 });</script>

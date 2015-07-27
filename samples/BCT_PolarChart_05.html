@@ -49,8 +49,10 @@
   xLabels.textFormatter(function(){
     return this.value + ".00"
   });
+   
+  chart.legend(false);
 
-  // draw chart
+   // draw chart
   chart.container("container");
   chart.draw();
 });</script>
