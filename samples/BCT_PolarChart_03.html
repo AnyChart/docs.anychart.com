@@ -50,8 +50,7 @@
   xTicks.interval(4);
 
   // adjust content and visualisation of labels
-  var xLabels = chart.xAxis();
-  xLabels.labels();
+  var xLabels = chart.xAxis().labels();
   xLabels.fontWeight(900);
   xLabels.textFormatter(function(){
     return this.value + ".00";
