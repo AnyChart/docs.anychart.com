@@ -245,7 +245,8 @@ Here is a list of global settings and defaults that can be defined in a theme:
 <th width="587"><b>Way to set</b></th>
 </tr>
 <tr>
-<th style="text-align:center;"><b>Font</b></th>
+<th style="border-right: none;"></th>
+<th style="text-align:center; border-left: none;"><b>Font</b></th>
 </tr>
 <tr>
 <td>{api:anychart.core.Text#fontSize}fontSize{api}</td>
@@ -312,7 +313,8 @@ Here is a list of global settings and defaults that can be defined in a theme:
 <td>{"globalFontSettings": {"textOverflow": ""}}</td>
 </tr>
 <tr>
-<th style="text-align:center;"><b>Palettes</b></th>
+<th style="border-right: none;"></th>
+<th style="text-align:center; border-left: none;"><b>Palettes</b></th>
 </tr>
 <tr>
 <td>{api:anychart.charts.Cartesian#palette}palette{api}</td>
