@@ -4,12 +4,15 @@
 * [Chart](#chart)
   * [Pie Chart](#pie_chart)
   * [Doughnut Chart](#doughnut_chart)
+  * [3D Pie Chart](#3d_pie_chart)
+* [Start Angle](#start_angle)
 * [Slices Sorting](#slices_sorting)
 * [Exploded Slices](#exploded_slices)
 * [Visualization](#visualization)
   * [Basic Sample](#basic_sample)
 * [Labels and Tooltips](#labels_and_tooltips)
-<!--  * [Working with labels connectors](#label_connectors)-->
+  * [Labels](#labels)
+  * [Tooltips](#tooltips)
 <!--* [Using markers](#using_markers)-->
 * [Colors](#colors)
   * [Colorizing Elements](#colorizing_elements)
@@ -94,6 +97,22 @@ And here is the same data as above in the form of a Donut chart:
 
 {sample}BCT\_PieDonutChart\_02{sample}
 
+### 3D Pie Chart
+
+It is very easy to display the data from the sample above in 3D mode - just use {api:anychart#pie3d}**.pie3d()**{api} and the pie will become 3D.
+
+{sample}BCT\_Pie\_3d{sample}
+
+##Start Angle
+
+You can set starting angle for the first slice for the pie using {api:anychart.charts.Pie#startAngle}**.startAngle()**{api} method. In the sample below the start angle is shifted to 45°.
+
+```
+  chart.startAngle(45);
+```
+
+{sample}BCT\_PieDonutChart\_13{sample}
+
 ## Slices Sorting
 
 In Pie/Donut charts, it is possible to sort the series by ascending or descending. This feature is controlled using {api:anychart.charts.Pie#sort}**.sort()**{api} parameter. In the sample below three pie charts with identical series are shown, first isn't sorted, the second is sorted ascending and the third - descending.
@@ -166,7 +185,7 @@ Using such settings we've created a style that defines slices of gold color with
 
 ### Aquastyle
 
-Our new 7.4.0 release of AnyChart suggests this complete style. We used soft colors and made the chart more like 3D using gradients. To set this style just add this stroke to your code:
+Since version 7.4.0 you can use so-called “Aquastyle” to color pie charts, set the following to get this effect:
 
 ```
      chart.fill('aquastyle');
@@ -182,10 +201,62 @@ In this section we will explain how to add and configure data labels and tooltip
 <!--Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
 To configure data labels and tooltips for all series use {api:anychart.charts.Pie#labels}**.labels()**{api} and {api:anychart.charts.Pie#tooltip}**.tooltip()**{api} methods. These will help you to adjust visual appearance, positioning and format.
 
-Let's do that with the following example: we will make data labels to appear inside of the slices, format labels so they show only the percentage corresponding to the slices and tooltips to show detailed description.
+### Labels
 
+Labels are text boxes with additional information for presented data. You can tune labels using {api:anychart.charts.Pie#labels}**.labels()**{api} method.
+  
+  
+You can place labels inside or outside pie slices using {api:anychart.ui.Label#position}**.position()**{api} method.
 
-When formatting tooltips, we use  {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} to adjust source of content and visual appearance. To control labels’ position we may use  {api:anychart.core.ui.Label#position}**.position()**{api} parameter. Here is a sample of two charts with the same data and different labels positions.
+```
+  var labels = chart.labels();
+  labels.position('outside');
+```
+  
+{sample}BCT\_PieDonutChart\_11{sample}
+  
+The line that joins the label with the slice of the pie is called connector. You can tune connectors visual appearance using {api:anychart.charts.Pie#connectorStroke}**.connectorStroke()**{api} method.
+
+```
+  chart.connectorStroke(
+    // set 2px thickness and #444 color
+    "2 #444",
+    // set lines opacity
+    1,
+    // dashes and gaps settings
+    "4 2"
+  );
+```
+
+You can find more information about lines in [Line Settings tutorial](../Appearance_Settings/Lines_Settings). Here is the pie with tuned connectors.
+
+{sample}BCT\_PieDonutChart\_12{sample}
+
+###Tooltips
+
+In this section we will explain how to tune pie tooltip. Method {api:anychart.charts.Pie#tooltip}**.tooltip()**{api} controls tooltip of the pie. 
+
+```
+  // get tooltip title
+  var tooltip = chart.tooltip();
+  
+  // set tooltip title text
+  tooltip.title("Information");
+  
+  // set tooltip content
+  tooltip.contentFormatter(function(){
+  
+    // get name of each slice
+    var name = this.name;
+    // get value of each slice
+    var value = this.value
+    
+    // content to show
+    return "Chanel: " + name + "\nSales: " + value + "\nPeriod: Year 2003";
+  });
+```
+
+With the following example let's force tooltip to show detailed description for each pie slice.
 
 {sample}BCT\_PieDonutChart\_08{sample}
 <!--
@@ -194,30 +265,6 @@ Related Help Topics:
 Learn more about labels and tooltips in Labels and tooltips
 Full Keywords reference and formatting guide:Labels and tooltips
 Full reference of data labels settings can be found in XML Reference, particularly <label_style> and <label_settings> nodes.
---><!--
-<a name="label_connectors"/>
-### Working with labels connectors
-
-If you want pie slices labels to be shown outside of the chart, connected with slices using a smart non overlapping lines - you should change labels mode to "Outside" and configure connector line:
-
-XML Syntax
-XML Code
-Plain code
-01
-<pie_series>
-02
-  <label_settings mode="Outside" text_align="Center" />
-03
-  <connector enabled="True" color="Black" opacity="1" thickness="1" />
-04
-</pie_series>
-Here is a sample of Pie chart with connectors:
-
-Live Sample:  Sample Pie chart - Working with labels connectors
-
-And here is a sample multi-series chart with connectors:
-
-Live Sample:  Sample Pie chart - Working with multiseries labels connectors
 --><!--
 <a name="using_markers"/>
 ## Using markers
