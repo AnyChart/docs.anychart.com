@@ -29,7 +29,7 @@ Crosshairs can be used on all Cartesians (Area, Line, Bar, Column, etc.) and [Sc
  
 ## Enable           
  
-If you want to switch the Crosshair on, set the **.crosshair()** as true:
+If you want to switch the Crosshair on, set the **{api:anychart.core.ui.Crosshair}.crosshair(){api}** as true:
 ```
 	// turn the crosshair on
 	chart.crosshair(true);
@@ -38,7 +38,7 @@ If you want to switch the Crosshair on, set the **.crosshair()** as true:
 
 ## Binding to axes
 
-In case you've got several axes on the same scale, you should tie the crosshair to one of them. Unless you do it, the default axis will be chosen (with the "0" index). Use {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex()**{api} method for this.
+In case you've got several axes on the same scale, you should tie the crosshair to one of them. Unless you do it, the default axis will be chosen (with the "0" index). Use {api:anychart.core.ui.CrosshairLabel#axisIndex}**.axisIndex()**{api} method for this.
 
 ```
 	// set the indexes of the axes used
@@ -53,7 +53,7 @@ Look at the sample downwards. Here we've got three axes and the crosshair in on.
 
 ### Lines
 
-In some situations you may not need one or both lines but highlighted labels are still necessary. Write **.xStroke(null)** to remove the x-axis line (or **.yStroke(null)** to remove the y-axis):
+In some situations you may not need one or both lines but highlighted labels are still necessary. Write **{api:anychart.core.ui.Crosshair#xStroke}.xStroke(null){api}** to remove the x-axis line (or **{api:anychart.core.ui.Crosshair#yStroke}.yStroke(null){api}** to remove the y-axis):
 
 ```
   // remove the x-axis line
@@ -75,7 +75,7 @@ Use the standard function to disable the axes labels.
 
 ### Change text
 
-The crosshair label's format is the same as axis label's format by default. You may use the {api}**.textFormatter()**{api} to change the crosshair's labels' performance. 
+The crosshair label's format is the same as axis label's format by default. You may use the {api:anychart.ui.LabelsFactory.Label#textFormatter}**.textFormatter()**{api} to change the crosshair's labels' performance. 
 
 ```
   // set the label performance

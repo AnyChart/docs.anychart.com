@@ -53,7 +53,7 @@ anychart.onDocumentReady(function() {
   chart.yAxis(1).orientation('right');
   
   // disable the x-axis labels
-  chart.xAxis().labels(false);
+  chart.crosshair().yLabel(false);
 	
   // set the indexes of the axes used
   chart.crosshair().yLabel().axisIndex(0);
