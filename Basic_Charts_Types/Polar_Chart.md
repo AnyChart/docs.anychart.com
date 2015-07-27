@@ -64,7 +64,7 @@ By default in Polar charts drawing starts from the top center point (0°), but y
 
 Below you can see our sample chart with starting angle shifted to 90°:
 
-{sample}BCT\_PolarChart\_03{sample}
+{sample}BCT\_PolarChart\_02{sample}
 
 ### Plot background
 
@@ -81,7 +81,7 @@ You can change polar background using {api:anychart.core.ui.Background}**.backgr
 
 Here is a sample of a polar chart with tuned background:
 
-{sample}BCT\_PolarChart\_04{sample}
+{sample}BCT\_PolarChart\_03{sample}
 
 ## Axes
 
@@ -103,7 +103,7 @@ More information on possible stroke settings can be found in [Strokes and Lines 
 
 Here is a sample of tuned X and Y axes. Y axis has a dashed stroke and X axis has a stroke colored with gradient.
 
-{sample}BCT\_PolarChart\_05{sample}
+{sample}BCT\_PolarChart\_04{sample}
 
 ### Inversion
 
@@ -114,7 +114,7 @@ AnyChart allows to invert any axis. Inversion is controlled by axis **.inverted(
 ```
 Take a look at the demonstration of Y Axis inversion on the sample below:
 
-{sample}BCT\_PolarChart\_06{sample}
+{sample}BCT\_PolarChart\_05{sample}
 
 ### Logarithmic Scale
 
@@ -128,7 +128,7 @@ Logarithmic scale can be used in polar charts. You can set the scale type using 
 
 And here is the demonstration of Logarithmic Y Axis on a simple polar with area series:
 
-{sample}BCT\_PolarChart\_07{sample}
+{sample}BCT\_PolarChart\_06{sample}
 
 ### Labels Settings
 
@@ -155,7 +155,7 @@ AnyChart allows to customise Axes Labels in any required way. Below there is a s
     });
 ```
 
-{sample}BCT\_PolarChart\_08{sample}
+{sample}BCT\_PolarChart\_07{sample}
 
 You can change labels' background. Learn more about background configuration in [Background settings tutorial](../Appearance_Settings/Background).
 
@@ -173,7 +173,7 @@ You can change labels' background. Learn more about background configuration in 
         .corners(5);            // corner size
 ```
 
-{sample}BCT\_PolarChart\_09{sample}
+{sample}BCT\_PolarChart\_08{sample}
 
 You can hide first and/or last labels using {api:anychart.core.axes.Radial#drawFirstLabel}**.drawFirstLabel()**{api} and {api:anychart.core.axes.Radial#drawLastLabel}**.drawLastLabel()**{api} parameters:
 
@@ -183,7 +183,7 @@ You can hide first and/or last labels using {api:anychart.core.axes.Radial#drawF
     .drawLastLabel(false);  // hides last label of Y-Axis
 ```
 
-{sample}BCT\_PolarChart\_10{sample}
+{sample}BCT\_PolarChart\_09{sample}
 
 ## Visualization
 
@@ -211,7 +211,7 @@ Polar grid is a combination of circular and radial grids. Grid visual appearance
 
 This sample below demonstrates two polar charts with adjusted visualisation of the radial type of grid as well as of the circular one.
 
-{sample}BCT\_PolarChart\_11{sample}
+{sample}BCT\_PolarChart\_10{sample}
 
 ### Labels and Tooltips
 
@@ -250,16 +250,16 @@ Next sample demonstrates bold series labels which display value of a point and t
   });
 ```
 
-{sample}BCT\_PolarChart\_12{sample}
+{sample}BCT\_PolarChart\_11{sample}
 
 ## Series Types
 
 Polar chart supports: Line, Area and Marker series types. You can learn how to change and configure styles of these types in following: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
 
-{sample}BCT\_PolarChart\_13{sample}
+{sample}BCT\_PolarChart\_12{sample}
 
 ## Missing Points
 
 Polar Chart allows to omit one or several points in a data set. To miss a point set 'missing' into  the **value** field. On the sample below points from 60 to 70 are missing.
 
-{sample}BCT\_PolarChart\_14{sample}
+{sample}BCT\_PolarChart\_13{sample}
