@@ -11,20 +11,11 @@
    * [Change text](#change_text)
 
 ## Overview
-Crosshair is a pair of perpendicular lines (horizontal and vertical), moving with the mouse. It might be useful, when you need to get the particular data of an action, while the axes contain any other information, such as years/months or any kind of percentage.
-Also, it looks similar to an aim in shooting; it's easier to "hit" the necessary point and get some extra information about it with the crosshair on a chart.
 
-<br>
+Crosshair is a pair of perpendicular lines (horizontal and vertical), moving with the mouse. It might be useful, when you need to get the particular data of an action, while the axes contain any other information, such as years/months or any kind of percentage. Also, it looks similar to an aim in shooting; it's easier to "hit" the necessary point and get some extra information about it with the crosshair on a chart.
 
-<p>Crosshair listens to the next events:<br>
- - mouseMove<br>
- - mouseOver<br>
- - mouseOut<br></p>
- 
-In case mouse is inside the DataPlot box, Crosshair appears.
-<br>
-Note that Crosshairs can have only one label each axis (one label on x-axis and another on y-axis).
-<br>
+Crosshair listens to these events: mouseMove, mouseOver, mouseOut, when mouse is inside the DataPlot box, Crosshair appears. Note that Crosshairs can have only one label each axis (one label on x-axis and another on y-axis).
+
 Crosshairs can be used on all Cartesians (Area, Line, Bar, Column, etc.) and [Scatter Charts](../../Basic_Chart_Types/Scatter_Chart).
  
 ## Enable           
@@ -68,8 +59,8 @@ In some situations you may not need one or both lines but highlighted labels are
 Use the standard function to disable the axes labels.
 
 ```
-  // disable the x-axis labels
-  chart.xAxis().labels(false);
+  // disable the crosshair yLabels
+  chart.crosshair().yLabel(false);
 ```
 {sample}AGST\_Crosshair\_04{sample}
 
