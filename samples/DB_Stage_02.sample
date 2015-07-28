@@ -2,11 +2,24 @@
      :is_new false
      :exports "chart"}
 	 	 
-	 	 
 anychart.onDocumentReady(function() {
 
     // set stage
     stage = anychart.graphics.create('container');
+
+    // create variable for custom theme
+    var customTheme = {
+        "defaultFontSettings": {
+          "fontSize": 9,
+        },
+        "chart": {
+          "title": false,
+          "legend": false
+        }
+    };
+    
+    // apply custom theme
+    anychart.theme(customTheme);    
 
 	// set data
 	var data_1 = anychart.data.set([
@@ -34,11 +47,10 @@ anychart.onDocumentReady(function() {
     var lineSeries = chart_1.spline(seriesData_2);
     lineSeries.yScale(scale);
     lineSeries.yScale().minimum(0).maximum(100);
-    lineSeries.stroke('navy');
 
     //create extra axis on the right side of chart
     var extraYAxis = chart_1.yAxis(1);
-    extraYAxis.title().text('Customers under 20 years old');
+    extraYAxis.title('Customers under 20 years old');
     extraYAxis.orientation('right');
     extraYAxis.scale(scale);
     extraYAxis.labels().textFormatter(function(){
@@ -46,7 +58,7 @@ anychart.onDocumentReady(function() {
      });
     
     // set chart title
-	chart_1.title('Popular Tea Types in the Tea House in May 2015');
+	chart_1.title('Popular Tea Types in the Tea House');
 
 	// chart size and position
 	chart_1.bounds(0, 0, '60%', '100%');
@@ -56,9 +68,8 @@ anychart.onDocumentReady(function() {
 	
     // axes names
     chart_1.yAxis().title('Sales (.oz)');
-    chart_1.xAxis().title('Tea Types');
 
-//chart 2
+    //chart 2
 
 	// set data
 	var data_2 = [
@@ -71,21 +82,10 @@ anychart.onDocumentReady(function() {
 
 	// set chart_2
 	var chart_2 = anychart.pie(data_2);
-	chart_2.radius('45%');
 	chart_2.innerRadius('30%');
-	chart_2.fill('aquastyle');
-	chart_2.labels().fontSize(12);
-	chart_2.labels().adjustFontSize();
-	chart_2.labels().fontFamily('Georgia');
-	
-	chart_2.labels().fontColor('black');
-	chart_2.title('Confectionery sold in Tea House in May 2015');
-	
-	chart_2.legend(false);
-//	chart_2.legend().itemsLayout('vertical');
-//	chart_2.legend().position('right');	
-//	chart_2.legend().height('60%');
-//	chart_2.legend().width('30%');
+
+	chart_2.labels().fontColor('White');
+	chart_2.title('Confectionery sold in Tea House');
 
 	// chart size and position
 	chart_2.bounds('60%', 0, '35%', '40%');
@@ -93,7 +93,7 @@ anychart.onDocumentReady(function() {
 	// draw
 	chart_2.container(stage).draw();
 	
-//chart 3
+    //chart 3
 
 	// set data
 	var data_3 = [
@@ -106,14 +106,10 @@ anychart.onDocumentReady(function() {
 
 	// set chart_2
 	var chart_3 = anychart.bar(data_3);
-	chart_3.title('The most popular hours');
+	chart_3.title('Popular hours');
 
 	// chart size and position
 	chart_3.bounds('60%', '40%', '35%', '60%');
-	
-    // axes names
-    chart_3.yAxis().title('Sales');
-    chart_3.xAxis().title('Time');
 
 	// draw
 	chart_3.container(stage).draw();
