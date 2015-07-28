@@ -6,16 +6,16 @@
 ## Overview
 
 AnyChart is doing its best to create a [collection of maps](../Maps_List.md) to help you with most of the cases, but it is always possible that you need a custom map. In this article we will tell you how to create a custom map from data in the most popular mapping formats.
-
+ 
 
 \*.SHP is a de facto standart for geo data and although you can't load SHP map directly into AnyChart, any SHP map can be easily used for AnyChart Maps through GeoJSON format.
-
+ 
 
 This conversion can be made through most of GIS-editors. You can use QGIS as it is a free editor that supports .shp, .kml and a plenty of other formats. 
-
+ 
 
 The AnyChart Maps are supplied in GeoJSON, which makes them flexible in working and editing. Don't forget that different coordinate systems are used in different formats.
-
+ 
 
 ## Creating Maps For AnyChart
 
