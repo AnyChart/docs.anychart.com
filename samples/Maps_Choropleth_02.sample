@@ -1,0 +1,35 @@
+{:tags []
+     :is_new false
+     :exports "chart"}
+	 
+        anychart.onDocumentReady(function() {
+            var dataSet = anychart.data.set([
+                {'id': 'AU.WA', 'value': 300},  // Western Australia
+                {'id': 'AU.NS', 'value': 240},  // New South Wales
+                {'id': 'AU.VI', 'value': 75},   // Victoria
+                {'id': 'AU.NT', 'value': 130},  // Northern Territory
+                {'id': 'AU.TS', 'value': 190},  // Tasmania
+                {'id': 'AU.CT', labels: false}, // Australian Capital Territory
+            ]);
+
+            // set the fill for the regions you haven't defined in the dataSet
+            map.unboundRegions().fill('green');
+
+            var map = anychart.map();
+            map.geoData(anychart.maps.australia);
+
+
+            // set the background color
+            map.background('Gainsboro');
+            // set the title and its preferences
+            map.title().useHtml(true).hAlign('center');
+            map.title('<span style="font-size: 18px;">Data Setting</span><br><span style="font-size:12px;">Move the mouse over the districts to see which have values</span>');
+
+            // set the series
+            var series = map.choropleth(dataSet);
+            series.geoIdField('code_hasc');
+
+            // set the container
+            map.container('container');
+            map.draw();
+        });
