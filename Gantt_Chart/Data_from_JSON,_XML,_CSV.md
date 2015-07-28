@@ -2,11 +2,11 @@
 # Getting Data from JSON, XML or CSV
 
 * [Overview](#overview)
-* [From JavaScript to JSON](#from_javascript_to_json)
+* [JSON](#json)
  * [JSON Schema](#json_schema)
-* [From JavaScript to XML](#from_javascript_to_xml)
+* [XML](#xml)
  * [XML Schema](#xml_schema)
-* [From JavaScript to CSV](#from_javascript_to_csv)
+* [CSV](#csv)
 
 ## Overview
 
@@ -15,7 +15,7 @@ AnyChart supports several ways of setting data. This article quickly demonstrate
 The main difference between using any of these format types is that in JSON the chart configuration is presented as an object, in XML it is a string, and both of them may contain 
 some extra information, such as color and size settings or other design features. CSV format can be used to convert only the data, no extra information can be added in this case.
   
-## From JavaScript to JSON 
+## JSON 
   
 JSON or JavaScript Object Notation, is an open standard format that uses human-readable text to transmit data objects consisting 
 of attribute-value pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML. 
@@ -30,7 +30,7 @@ Explore the sample in playground to see the whole code in Javascript.
 To transform the code from Javascript into JSON configuration object, you can go two ways: open the tab "JSON" in the playground or add the following line somewhere in the end of the code:
 
 ```
-	// ask the console to convert this to json
+	// log json to console
 	console.log(chart.toJson());
 ```
 
@@ -115,17 +115,14 @@ JSON Schema specifies a JSON-based format to define the structure of JSON data
 (visit [http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) 
 for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. 
 AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart 7.3.1 version is located at 
-[http://anychart.com/products/anychart7/schemas/7.3.1/json-schema.json](http://anychart.com/products/anychart7/schemas/7.3.1/json-schema.json). 
+[http://anychart.com/schemas/7.3.1/json-schema.json](http://anychart.com/schemas/7.3.1/json-schema.json). 
 Whenever you use AnyChart JSON schema - make sure it suits the version of AnyChart. 
 The latest schema can always be found at [http://anychart.com/schemas/latest/json-schema.json](http://anychart.com/schemas/latest/json-schema.json) 
 
 
-## From JavaScript to XMl  
+## XML
 
-XML or Extensible Markup Language, is a markup language that defines a set of rules for encoding documents in a format which 
-is both human-readable and machine-readable. Originally designed to meet the challenges of large-scale electronic publishing, 
-XML is also playing an important role in the exchange of a wide variety of data on the Web and elsewhere. 
-More information on XML can be found on [http://en.wikipedia.org/wiki/XML](http://en.wikipedia.org/wiki/XML)
+XML or Extensible Markup Language, is a markup language that defines a set of rules for encoding documents in a format which is both human-readable and machine-readable. Originally designed to meet the challenges of large-scale electronic publishing,  XML is also playing an important role in the exchange of a wide variety of data on the Web and elsewhere.  More information on XML can be found on [http://en.wikipedia.org/wiki/XML](http://en.wikipedia.org/wiki/XML)
 
 You can use XML to define the chart configuration as a string. Let's take the sample above as an example. The code converted to XML will look like:
 
@@ -162,7 +159,7 @@ anychart.onDocumentReady(function() {
                     '</data_item>'+
                     '</children>'+
                     '<index>'+
-                    '<key><![CDATA[id]]></key>'+    // the index can be made for the id (as it is done here - by default) or for any other field
+                    '<key><![CDATA[id]]></key>'+ 
                     '</index>'+
                     '</tree_data>'+
                     '</controller>'+
@@ -189,18 +186,18 @@ The sample looks completely the same as the JSON-converted one.
 {sample :width 680 :height 200}GANTT\_JXC\_03{sample}
 
 
-## Schema
+## XML Schema
 
 XML Schema specifies a XML-based format to define the structure of XML data 
 (visit [http://en.wikipedia.org/wiki/XML_schema](http://en.wikipedia.org/wiki/XML_schema) for more information). 
 All objects of this schema correspond to JavaScript methods and parameters of a chart. 
 (for instance, XML schema for AnyChart 7.3.1 version is located at 
-[http://anychart.com/products/anychart7/schemas/7.3.1/xml-schema.xsd](http://anychart.com/products/anychart7/schemas/7.3.1/xml-schema.xsd)). 
+[http://anychart.com/schemas/7.3.1/xml-schema.xsd](http://anychart.com/schemas/7.3.1/xml-schema.xsd)). 
 Latest version of XML schema can be found at [http://anychart.com/schemas/latest/xml-schema.xml](http://anychart.com/schemas/latest/xml-schema.xml) 
 This file can also be used to validate your own XML structure. 
 
 
-## CSV vs JavaScript  
+## CSV 
 
 CSV or Comma-Separated Values, is a common data exchange format that is widely supported by consumer, business, 
 and scientific applications. Among its most common uses is moving tabular data between programs that natively 
@@ -210,7 +207,8 @@ to RFC 4180 (or any other standard), because so many programs support variations
 For example, a user may need to transfer information from a database program that stores data in a proprietary format, to a spreadsheet that uses a completely different format. The database program most likely can export its data as "CSV"; the exported CSV file can then be imported by the spreadsheet program.
 For more information visit [http://en.wikipedia.org/wiki/Comma-separated_values](http://en.wikipedia.org/wiki/CSV)
 
-If we take the above sample as an example, that's how the part of code for the Gantt Project chart will look like: <!--на данный момент тут такие вот портянки. неизвестно, когда будет поправлено все остальное и что-то здесь, что вроде как должно быть поправлено-->
+If we take the above sample as an example, that's how the part of code for the Gantt Project chart will look like: 
+
 ```
 		var csvString =
             '0,0,Activities,1169683200000,1173830400000,,\n' +
@@ -242,4 +240,4 @@ And there is the sample of the Project Gantt with CSV-formatted data:
 
 {sample :width 680 :height 200}GANTT\_JXC\_04{sample}
  
-As we can define not the whole chart configuration but only its data using the CSV format, we should help the data to parse correctly. That's why we need the "mapping" object - using it, we are able to tell the dataGrid to put the values from the CSV string into the right fields. The csvSettings is an object where we set the separators and tell about ignoring for some particular rows.
+As we can not define the whole chart configuration but only its data using the CSV format, we should help the data to parse correctly. That's why we need the "mapping" object - using it, we are able to tell the dataGrid to put the values from the CSV string into the right fields. The csvSettings is an object where we set the separators and tell about ignoring for some particular rows.
