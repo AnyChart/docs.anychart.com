@@ -15,23 +15,23 @@
     {name: "Textbooks", value: 90000}
   ];
   
-  var chart= anychart.pyramid(data).overlapMode("allowOverlap");
+  var chart = anychart.pyramid(data);
   
-  chart.connectorStroke(null).labels()
-    .position("outsideRightInColumn")
-    .hAlign("center")
-    .textFormatter(function(){
-      return this.name+"\n"+this.value;
-    });
-  chart.hoverLabels().fontWeight(900).background({enabled: true, stroke: "#FFF",fill:"#FFF"});
-  
-  chart.title().text("Overlapping Labels");
-  
-  // disable chart background
-  chart.background().enabled(false);
+  var labels = chart.labels();
+  // place labels to the right
+  labels.position("outsideRight");
+  // manage horizontal align
+  labels.hAlign("center");
+  labels.textFormatter(function(){
+    return this.name+"\n"+this.value;
+  });
+
+  // set 45px connectors length
+  chart.connectorLength(45);
   
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

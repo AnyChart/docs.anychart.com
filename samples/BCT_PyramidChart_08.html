@@ -15,24 +15,33 @@
     {name: "Textbooks", value: 90000}
   ];
   
-  var chart = anychart.pyramid(data);
+  var chart= anychart.pyramid(data);
   
-  chart.labels().enabled(false);
+  chart.overlapMode("allowOverlap");
   
-  chart.tooltip().content()
-    .useHtml(true)
-    .fontWeight(400);
-  chart.tooltip().contentFormatter(function(){
-    return "<b>Year</b>: 2005"+
-      "<br><b>Store</b>: Nerds Inc."+
-      "<br><b>Genre</b>: "+this.name+
-      "<br><b>Quantity</b>: "+this.value;
+  chart.connectorStroke(null);
+  var labels = chart.labels();
+  labels.position("outsideRightInColumn");
+  labels.hAlign("center");
+  labels.textFormatter(function(){
+    return this.name+"\n"+this.value;
   });
+
+  var hoverLabels = chart.hoverLabels();
+  hoverLabels.fontWeight(900);
+  var background = hoverLabels.background();
+  background.enabled(true);
+  background.stroke("#FFF");
+  background.fill("#FFF");
   
-  chart.title().text("Tooltip Settings");
+  chart.title("Overlapping Labels");
+  
+  // disable chart background
+  chart.background(false);
   
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

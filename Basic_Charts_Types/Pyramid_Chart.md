@@ -23,7 +23,7 @@ Pyramid chart is a kind of [Funnel chart](../Basic_Charts_Types/Funnel_Chart) th
 To create Pyramid chart with AnyChart you have to set {api:anychart#pyramid}**.pyramid()**{api} method.
 
 ```
-var chart = anychart.pyramid();
+  var chart = anychart.pyramid();
 ```
 
 Let's take a look at the sample data set that shows the number of different genres sold in local bookstore «Nerds Inc.» in 2005.
@@ -60,11 +60,11 @@ Now we need to convert this data table into the format that can be used by AnyCh
 
 ```
   var chart = anychart.pyramid([
-    {name: 'Fantasy', value: 637166},
-    {name: 'Science Fiction', value: 721630},
-    {name: 'Detective', value: 148662},
-    {name: 'Classics', value: 78662},
-    {name: 'Textbooks', value: 90000}
+    {name: "Fantasy", value: 637166},
+    {name: "Science Fiction", value: 721630},
+    {name: "Detective", value: 148662},
+    {name: "Classics", value: 78662},
+    {name: "Textbooks", value: 90000}
   ]);
 ```
 
@@ -83,7 +83,8 @@ You can set base size in pixels or in percentage ratio. Use string value for {ap
 ```
   var chart = anychart.pyramid(data);
   
-  chart.basWidth('50%') // set base width to 50% of the container width
+  // set base width to 50% of the container width
+  chart.basWidth("50%")
 ```
 
 {sample}BCT\_PyramidChart\_02{sample}
@@ -96,25 +97,27 @@ By default, base of the pyramid is placed at the bottom of the chart. Use {api:a
 
 ```
   var chart = anychart.pyramid(data);
-  
-  chart.reversed(true);   // upend the pyramid
+
+  // upend the pyramid
+  chart.reversed(true);
 ```
 
 Here is how reversed pyramid looks like:
 
-{sample}BCT\_PyramidChart\_12{sample}
+{sample}BCT\_PyramidChart\_03{sample}
 
 ## Padding
 
 As you can see, each part of a pyramid is separated from another with some space. The space between each part of pyramid chart is controlled by a {api:anychart.charts.Pyramid#pointsPadding}**.pointsPadding()**{api} parameter. Next sample of the pyramid chart has no spacing.
 
 ```
-  chart.pointSpacing(0);  // disable spacing between parts of the chart
+  // disable spacing between parts of the chart
+  chart.pointSpacing(0);
 ```
 
 Here is how the pyramid chart without spacing looks like.
 
-{sample}BCT\_PyramidChart\_03{sample}
+{sample}BCT\_PyramidChart\_04{sample}
 
 ## Visualization
 
@@ -124,18 +127,23 @@ In this section we will describe main parts of pyramid chart visualization and w
   // define chart type and set data
   var chart = anychart.pyramid(data);
   
-  chart
-    .fill('gold')                             // set chart inner color
-    .hoverFill('darkred')                     // chart inner color on hover
-    .stroke('darkred')                        // chart stroke
-    .hoverStroke('gold')                      // chart stroke on hover
-    .hatchFill('diagonalbrick', 'darkred')    // set hatch type and color
-    .hoverHatchFill('diagonalbrick', 'gold'); // adjust hatch type and color on hover
+  // set chart inner color
+  chart.fill("gold");
+  // chart inner color on hover
+  chart.hoverFill("darkred");
+  // chart stroke
+  chart.stroke("darkred");
+  // chart stroke on hover
+  chart.hoverStroke("gold");
+  // set hatch type and color
+  chart.hatchFill("diagonalbrick", "darkred");
+  // adjust hatch type and color on hover
+  chart.hoverHatchFill("diagonalbrick", "gold");
 ```
 
 Using such settings we've created a pyramid colored in Gold, dark red border and set DiagonalBrick hatch fill. Also, we've defined that when the pyramid is hovered it's hatch will be highlighted with gold and the chart will be filled with dark red. Now let's apply this style to the chart:
 
-{sample}BCT\_PyramidChart\_04{sample}
+{sample}BCT\_PyramidChart\_05{sample}
 
 ## Labels
  
@@ -149,15 +157,18 @@ THe line that joins a label with a particular pyramid point is called connector.
   var chart = anychart.pyramid(data);
 
   chart.connectorStroke({
-    thickness: 2,   // set thickness of the connectors
-    color: '#444',  // set color of the connectors
-    dash: '4 2'     // set dashed connectors. Dashes are 4px and gaps are 2px
+    // set thickness of the connectors
+    thickness: 2,
+    // set color of the connectors
+    color: '#444',
+    // set dashed connectors. Dashes are 4px and gaps are 2px
+    dash: '4 2'
   });
 ```
 
 You can find more information about lines in [Line Settings tutorial](../Appearance_Settings/Lines_Settings). Here is the pyramid with tuned connectors.
 
-{sample}BCT\_PyramidChart\_05{sample}
+{sample}BCT\_PyramidChart\_06{sample}
 
 ### Position
 
@@ -181,26 +192,27 @@ If you are using **outsideLeft** or **outsideRight** you can adjust length of la
 
 Using these settings we have set each label 45px to the right from the each pyramid point. Using {api:anychart.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method we can adjust content for the labels.
 
-{sample}BCT\_PyramidChart\_06{sample}
+{sample}BCT\_PyramidChart\_07{sample}
 
 ### Overlapping
 
 After adjusting content of the pyramid labels some of them moved to prevent overlapping. You can control overlapping using {api:anychart.charts.Pyramid#overlapMode}**.overlapMode()**{api}. Sample below demonstrates labels with allowed overlapping state.
 
 ```
-var chart = anychart.pyramid(data);
-chart.overlapMode('allowOverlap')  // allow labels overlapping
+  var chart = anychart.pyramid(data);
+  // allow labels overlapping
+  chart.overlapMode("allowOverlap");
 ```
 
 *Note:* if you want to hide connectors set **null** value for {api:anychart.charts.Pyramid#connectorStroke}**.connectorsStroke()**{api} method.
 
-{sample}BCT\_PyramidChart\_07{sample}
+{sample}BCT\_PyramidChart\_08{sample}
 
 ## Tooltip
 
 In this section we will explain how to tune pyramid tooltip. Method {api:anychart.charts.Pyramid#tooltip}**.tooltip()**{api} controls tooltip of the pyramid. With the following example let's force tooltip to show detailed description of the pyramid.
 
-{sample}BCT\_PyramidChart\_08{sample}
+{sample}BCT\_PyramidChart\_09{sample}
 
 ## Markers
 
@@ -214,36 +226,45 @@ To make marker visually appealing we set its size to 12 pixels in normal state, 
 
 ```
   var chart = pyramid([
-    {name: 'Fantasy', value: 637166},
+    {name: "Fantasy", value: 637166},
     {
-      name: 'Science Fiction', 
+      name: "Science Fiction", 
       value: 721630,
-      marker:{              // marker settings
-        enabled: true,      // enable marker
-        type:'star5',       // marker type
-        fill:'gold',        // marker inner color
-        size: 12,           // marker size
-        position: 'center', // marker position
-        anchor: 'center'},  // marker anchor
+       // marker settings
+      marker:{
+       // enable marker
+        enabled: true,
+         // marker type
+        type: "star5",
+         // marker inner color
+        fill: "gold",
+         // marker size
+        size: 12,
+         // marker position
+        position: "center",
+         // marker anchor
+        anchor: "center"
+      },
+      // marker size if mouse is over
       hoverMarker: {
-        size: 15            // marker size if mouse is over
+        size: 15
       }
     },
-    {name: 'Detective', value: 148662},
-    {name: 'Classics', value: 78662},
-    {name: 'Textbooks', value: 90000}
+    {name: "Detective", value: 148662},
+    {name: "Classics", value: 78662},
+    {name: "Textbooks", value: 90000}
   ]);
 ```
 
 And here is a result - it's easy to notice that Science Fiction is the most popular genre and we are showing this on the chart:
 
-{sample}BCT\_PyramidChart\_09{sample}
+{sample}BCT\_PyramidChart\_10{sample}
 
 ## Colors
 
 Let's demonstrate how to apply different colors to different parts of pyramid. To apply the color to the exact point we need to set the fill parameter. In the sample below each point of the pyramid chart has custom color.
 
-{sample}BCT\_PyramidChart\_10{sample}
+{sample}BCT\_PyramidChart\_11{sample}
 
 ## Hatch Fills
 
@@ -254,18 +275,18 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 
 ```
   var chart = anychart.pyramid([
-    // point value   hatch fill type
-    {value: 232,    hatchFill: 'diagonalcross'},
-    {value: 224,    hatchFill: 'zigzag'},
-    {value: 252,    hatchFill: 'horizontal'},
-    {value: 219,    hatchFill: 'vertical'},
-    {value: 169,    hatchFill: 'dashedbackwarddiagonal'},
-    {value: 217,    hatchFill: 'grid'},
-    {value: 175,    hatchFill: 'dashedforwarddiagonal'},
-    {value: 199,    hatchFill: 'dashedhorizontal'},
-    {value: 297,    hatchFill: 'plaid'},
-    {value: 317,    hatchFill: 'weave'}
+  // point value    hatch fill type
+    {value: 232,    hatchFill: "diagonalcross"},
+    {value: 224,    hatchFill: "zigzag"},
+    {value: 252,    hatchFill: "horizontal"},
+    {value: 219,    hatchFill: "vertical"},
+    {value: 169,    hatchFill: "dashedbackwarddiagonal"},
+    {value: 217,    hatchFill: "grid"},
+    {value: 175,    hatchFill: "dashedforwarddiagonal"},
+    {value: 199,    hatchFill: "dashedhorizontal"},
+    {value: 297,    hatchFill: "plaid"},
+    {value: 317,    hatchFill: "weave"}
   ]);
 ```
 
-{sample}BCT\_PyramidChart\_11{sample}
+{sample}BCT\_PyramidChart\_12{sample}

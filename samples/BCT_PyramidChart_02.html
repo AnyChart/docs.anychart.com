@@ -16,11 +16,13 @@
   ];
   
   var chart = anychart.pyramid(data);
-  
-  chart.baseWidth("50%");   // set base width to 50% of the container width
+
+  // set base width to 50% of the container width
+  chart.baseWidth("50%");
   
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

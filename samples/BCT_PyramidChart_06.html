@@ -17,17 +17,20 @@
   
   var chart = anychart.pyramid(data);
   
-  chart.labels()
-    .position("outsideRight")   // place labels to the right
-    .hAlign("center")           // manage horizontal align
-    .textFormatter(function(){
-      return this.name+"\n"+this.value;
-    });
+  chart.connectorStroke(
+    // set 2px thickness and #444 color
+    "2 #444",
+    // set lines opacity
+    1,
+    // dashes and gaps settings
+    "4 2"     
+  );
   
-  chart.connectorLength(45);    // set 45px connectors length
+  chart.title("Tuned Labels Connectors");
   
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
