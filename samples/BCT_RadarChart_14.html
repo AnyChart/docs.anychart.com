@@ -7,53 +7,65 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data for chart
-  var dataSet = anychart.data.set([
-    {x: "Product A", value: 90},
-    {x: "Product B", value: 65},
-    {x: "Product C", value: 73},
-    {x: "Product D", value: 88},
-    {x: "Product E", value: 75},
-    {x: "Product F", value: 100}
-  ]);
-
   // chart type
   var chart = anychart.radar();
 
   // chart title
-  chart.title().text("Labels and Tooltips");
+  chart.title("Radar Series Types");
 
-  // disable minor ticks
-  chart.yAxis().enabled(true).minorTicks().enabled(false);
+  // background fill
+  var background = chart.background();
+  background.enabled(true);
+  background.fill("#EEEEEE");
 
-  // set series data
-  var series = chart.area(dataSet);
+  // set data and adjust visual settings
+  var area = chart.area([
+    {x: "Product A", value: 722},
+    {x: "Product B", value: 1431},
+    {x: "Product C", value: 1624},
+    {x: "Product D", value: 1243},
+    {x: "Product E", value: 1813},
+    {x: "Product F", value: 1321},
+    {x: "Product G", value: 567},
+    {x: "Product H", value: 1876},
+    {x: "Product I", value: 1187}
+  ]);
+  area.name("Sales 2005");
 
-  // set series visualisation
-  series
-    .stroke("darkblue")     // stroke color
-    .fill("lightblue 0.8")  // fill color
-    .labels()               // labels settings
-      .enabled(true)        // enable labels
-      .fontWeight(900);     // labels font weight
+  var line = chart.line([
+    {x: "Product A", value: 1222},
+    {x: "Product B", value: 2431},
+    {x: "Product C", value: 3624},
+    {x: "Product D", value: 5243},
+    {x: "Product E", value: 6813},
+    {x: "Product F", value: 5321},
+    {x: "Product G", value: 1567},
+    {x: "Product H", value: 3876},
+    {x: "Product I", value: 2187}
+  ]);
+  line.name("Sales 2006");
 
-  // visual setting for tooltips
-  series.tooltip().content().fontWeight(400);       // settings for tooltip content font
-  series.tooltip().contentFormatter(function(){     // adjust tooltip content
-  
-    // summarize all values
-    var sum = 0;
-    for (var i=0;i<dataSet.mapAs().getRowsCount();i++)
-      sum +=dataSet.mapAs().get(i, "value");
+  var marker = chart.marker([
+    {x: "Product A", value: 1422},
+    {x: "Product B", value: 2231},
+    {x: "Product C", value: 3124},
+    {x: "Product D", value: 5543},
+    {x: "Product E", value: 6113},
+    {x: "Product F", value: 5521},
+    {x: "Product G", value: 567},
+    {x: "Product H", value: 3176},
+    {x: "Product I", value: 3187}
+  ]);
+  marker.name("Sales 2007");
 
-    return "Month: " + this.x +
-      "\nSales: " + this.value + "$" +
-      "\nYear: 2003" +
-      "\nPercent: " + (this.value/(sum/100)).toFixed(2) + "%";
-  });
+  // grid settings
+  var grid = chart.grid(0);
+  grid.evenFill("white");
+  grid.oddFill("white");
 
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

@@ -9,35 +9,40 @@
 
   // data for chart
   var dataSet = anychart.data.set([
-    ["Product A", 90],
-    ["Product B", 65],
-    ["Product C", 73],
-    ["Product D", 88],
-    ["Product E", 75],
-    ["Product F", 100]
+    ["Greeting Cards", 65],
+    ["Plush Toys", 21],
+    ["Romantic Dinner", 44],
+    ["Perfume/Cologne", 12],
+    ["Candy", 38],
+    ["Jewelry", 11],
+    ["Flowers", 32],
+    ["Gift Cards", 29],
+    ["Other Gifts", 17]
   ]);
 
   // chart type
   var chart = anychart.radar();
 
   // chart title
-  chart.title().text("Custom Radius size");
+  chart.title("Most Popular Ways to Celebrate Valentine’s Day");
 
-  // set chart radius
-  chart.yScale()
-    .minimum(50)        // minimum radius value
-    .maximum(120)       // maximum radius value
-    .ticks()
-      .interval(10);  // set ticks interval
-
-  // disable minor ticks
-  chart.yAxis().enabled(true).minorTicks().enabled(false);
+  // set start angle of the chart
+  chart.startAngle(90);
 
   // set data and adjust visualisation
-  chart.area(dataSet).fill("red 0.4").stroke("darkred");
+  var series = chart.line(dataSet);
+
+  // disable tooltips
+  series.tooltip(false);
+
+  // enable markers on series
+  series.markers(true);
+      
+  series.name("Gift");
 
   // draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

@@ -7,80 +7,63 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // create stage
-  var stage = anychart.graphics.create("container");
-
   // data for chart
   var dataSet = anychart.data.set([
-    ["Product A", 90],
-    ["Product B", 65],
-    ["Product C", 73],
-    ["Product D", 88],
-    ["Product E", 75],
-    ["Product F", 100]
+    {x: "Product A", value: 90},
+    {x: "Product B", value: 65},
+    {x: "Product C", value: 73},
+    {x: "Product D", value: 88},
+    {x: "Product E", value: 75},
+    {x: "Product F", value: 100}
   ]);
 
   // chart type
-  var chart1 = anychart.radar();
+  var chart = anychart.radar();
 
   // chart title
-  chart1.title().text("Circular Grid Adjustment");
+  chart.title("Labels and Tooltips");
 
   // disable minor ticks
-  chart1.yAxis().enabled(true).minorTicks().enabled(false);
+  var yAxis = chart.yAxis();
+  yAxis.enabled(true);
+  yAxis.minorTicks(false);
 
-  // set data and adjust visualisation
-  chart1.area(dataSet).stroke("yellow").fill("gold 0.8");
+  // set series data
+  var series = chart.area(dataSet);
 
-  chart1.grid(1)
-    .evenFill(null)
-    .oddFill(null)
-    .layout("radial")
-    .stroke("white");
+  series.name("Sales");
 
-  chart1.grid(0)
-    .evenFill("red 0.6")
-    .oddFill("darkred 0.6")
-    .layout("curcuit")
-    .stroke("white");
+  // stroke color
+  series.stroke("darkblue");
+  // fill color
+  series.fill("lightblue 0.8");
+  // labels settings
+  var labels = series.labels();
+  // enable labels
+  labels.enabled(true);
+  // labels font weight
+  labels.fontWeight(900);
 
-  // set chart size and position
-  chart1.bounds(0, 0, "50%", "100%");
+  // settings for tooltip content font
+  var tooltipContent = series.tooltip().content();
+  tooltipContent.fontWeight(400);
+  // adjust tooltip content
+  var tooltip = series.tooltip();
+  tooltip.contentFormatter(function(){
+    // summarize all values
+    var sum = 0;
+    for (var i=0;i<dataSet.mapAs().getRowsCount();i++)
+      sum +=dataSet.mapAs().get(i, "value");
 
-  // set container and draw chart
-  chart1.container(stage).draw();
+    return "Month: " + this.x +
+      "\nSales: " + this.value + "$" +
+      "\nYear: 2003" +
+      "\nPercent: " + (this.value/(sum/100)).toFixed(2) + "%";
+  });
 
-
-  // create second chart
-  var chart2 = anychart.radar();
-
-  // chart title
-  chart2.title().text("Radial Grid Adjustment");
-
-  // disable minor ticks
-  chart2.yAxis().enabled(true).minorTicks().enabled(false);
-
-  chart2.grid(0)
-    .evenFill("red 0.6")
-    .oddFill("darkred 0.6")
-    .layout("radial")
-    .stroke("white");
-
-  chart2.grid(1)
-    .evenFill(null)
-    .oddFill(null)
-    .layout("curcuit")
-    .stroke("white");
-
-  // set data and adjust visualisation
-  chart2.area(dataSet).stroke("yellow").fill("gold 0.8");
-
-  // set chart size and position
-  chart2.bounds("50%", 0, "50%", "100%");
-
-  // set container and draw chart
-  chart2.container(stage).draw();
-
+  // draw chart
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

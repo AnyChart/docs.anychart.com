@@ -7,47 +7,51 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  stage = acgraph.create("container");
-
-  // data for chart
-  var dataSet = anychart.data.set([
-    ["New Zealand",  26],
-    ["Australia",    24],
-    ["France",       22],
-    ["South Africa", 14],
-    ["Samoa",        8]
-  ]);
-
   // chart type
   var chart = anychart.radar();
 
   // chart title
-  chart.title().text("Rugby World Cup Overall Record 1987-2003 W Top 5 country");
+  chart.title("Tuning Axes Visualization");
 
   // disable minor ticks
-  chart.yAxis().enabled(true).minorTicks().enabled(false);
+  var yAxis = chart.yAxis();
+  yAxis.enabled(true);
+  yAxis.minorTicks(false);
 
-  // set background color
-  chart.background()
-    .enabled(true)
-    .fill("white");
+  var xAxis = chart.xAxis();
+  xAxis.stroke({
+    // set colors position
+    keys: [".2 red", ".4 darkred", "0.6 blue", "0.8 green"],
+    // set angle of colors drawing
+    angle: -25,
+    // set thickness
+    thickness: 4
+  });
 
-  // fill set
-  var fillSettings = {
-    keys: [".35 white", ".9 gray"],
-    angle: -135,
-    mode: chart.bounds()
-  };
+  yAxis.stroke({
+    // makes stroke dashed
+    dash: "7 3",
+    // set stroke thickness
+    thickness: 2,
+    // set stroke color
+    color: "#9900FF"
+  });
 
-  // apply fill set
-  chart.grid(0).oddFill(fillSettings).evenFill(fillSettings).stroke("black");
-  chart.grid(1).oddFill(null).evenFill(null).stroke("black");
-
-  // set data and adjust visualisation
-  chart.line(dataSet).markers().enabled(true);
+  // set data and type of series
+  var series = chart.line([
+    {x: "Administration", value:22},
+    {x: "Sales", value:34},
+    {x: "Marketing", value:16},
+    {x: "Research", value:12},
+    {x: "Support", value:38},
+    {x: "Development", value:47}
+  ]);
   
+  series.name("Distribution");
+
   // draw chart
-  chart.container(stage).draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
