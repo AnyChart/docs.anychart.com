@@ -36,8 +36,12 @@
   series.stroke("darkblue");
   // fill color
   series.fill("lightblue 0.8");
+  // labels settings
+  var labels = series.labels();
   // enable labels
-  series.labels(true);
+  labels.enabled(true);
+  // labels font weight
+  labels.fontWeight(900);
   
   // format tooltip content
   var tooltip = series.tooltip();

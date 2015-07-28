@@ -71,12 +71,15 @@ Below you can see our sample chart with starting angle shifted to 90°:
 You can change polar background using {api:anychart.core.ui.Background}**.background()**{api} method. Learn more about it in [Background settings tutorial](../Appearance_Settings/Background).
 
 ```
-  chart.background()
-    .enabled(true)                                  // enables background
-    .fill({
-      keys: ['.1 white', '.7 gray', '.9 darkgray'], // set gradient colors
-      angle: -130                                   // set angle of colors drawing
-    });
+  var background = chart.background();
+  // enables background
+  background.enabled(true);
+  background.fill({
+    // set gradient colors
+    keys: [".1 white", ".7 gray", ".9 darkgray"],
+    // set angle of colors drawing
+    angle: -130                                   
+  });
 ```
 
 Here is a sample of a polar chart with tuned background:
@@ -96,7 +99,9 @@ Axis stroke appearance is controlled by {api:anychart.core.grids.Polar#stroke}**
   var chart = anychart.polar();
 
   // adjust y axis visualization
-  chart.yAxis().stroke('2 #9900FF');  // set stroke thickness equal to 2px and set custom color to the stroke
+  var yAxis = chart.yAxis();
+  // set stroke thickness equal to 2px and set custom color to the stroke
+  yAxis.stroke("2 #9900FF");
 ```
 
 More information on possible stroke settings can be found in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines).
@@ -107,11 +112,13 @@ Here is a sample of tuned X and Y axes. Y axis has a dashed stroke and X axis ha
 
 ### Inversion
 
-AnyChart allows to invert any axis. Inversion is controlled by axis **.inverted()** parameter:
+AnyChart allows to invert any axis. Inversion is controlled by axis {api:anychart.scales.Linear#inverted}**.inverted()**{api} parameter:
 
 ```
-    chart.yScale().inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 ```
+
 Take a look at the demonstration of Y Axis inversion on the sample below:
 
 {sample}BCT\_PolarChart\_05{sample}
@@ -121,12 +128,15 @@ Take a look at the demonstration of Y Axis inversion on the sample below:
 Logarithmic scale can be used in polar charts. You can set the scale type using {api:anychart.scales}**.scale()**{api} method. More information about scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
 
 ```
-  var logScale = anychart.scales.log();   // create logarithmic scale
-  logScale.minimum(10).maximum(10000);    // set minimum and maximum value for the scale
-  chart.yScale(logScale);                 // set logarithmic scale as y scale for the chart
+  // create logarithmic scale
+  var logScale = anychart.scales.log();
+  // set minimum and maximum value for the scale
+  logScale.minimum(10).maximum(10000);
+  // set logarithmic scale as y scale for the chart
+  chart.yScale(logScale);
 ```
 
-And here is the demonstration of Logarithmic Y Axis on a simple polar with area series:
+And here is the demonstration of Logarithmic Y Axis on a simple polar with line series:
 
 {sample}BCT\_PolarChart\_06{sample}
 
@@ -141,18 +151,23 @@ AnyChart allows to customise Axes Labels in any required way. Below there is a s
   // set y axis labels position and format content
   chart.yAxis().labels().offsetX(12).textFormatter(function(){
     var value = this.value.toFixed(1);
-    if (value<0)                                            // check if axis value is negative
-      value = '(' + (this.value * (-1)).toFixed(1) + ')';   // set negative values into brackets and minus sign
-     return value.toString();
+    // check if axis value is negative
+    if (value<0)
+      // set negative values into brackets and minus sign
+      value = "(" + (this.value * (-1)).toFixed(1) + ")";
+    return value.toString();
   });
 
   // settings for x axis labels
-  chart.xAxis().labels()
-    .padding(5)                   // set labels padding
-    .fontWeight(900)              // set font weight for labels
-    .textFormatter(function(){
-      return this.value + '°';    // add '°' to every label of x axis
-    });
+  var xLabels = chart.xAxis().labels()
+  // set labels padding
+  xLabels.padding(5);
+  // set font weight for labels
+  xLabels.fontWeight(900);
+  xLabels.textFormatter(function(){
+    // add '°' to every label of x axis
+    return this.value + "°";
+  });
 ```
 
 {sample}BCT\_PolarChart\_07{sample}
@@ -160,17 +175,24 @@ AnyChart allows to customise Axes Labels in any required way. Below there is a s
 You can change labels' background. Learn more about background configuration in [Background settings tutorial](../Appearance_Settings/Background).
 
 ```
-  // axes settings
-  chart.xAxis()
-    .labels()                   // settings for labels
-      .padding(5)               // set padding for labels
-      .fontWeight(900)          // set font weight for labels
-      .background()             // background settings
-        .enabled(true)          // enable background
-        .fill('lightblue')      // background fill
-        .stroke('blue')         // stroke color
-        .cornerType('round')    // corner type
-        .corners(5);            // corner size
+  // settings for axis labels
+  var labels = chart.xAxis().labels();
+  // set padding for labels
+  labels.padding(5);
+  // set font weight for labels
+  labels.fontWeight(900);
+  // background settings
+  var labelsBackground = chart.xAxis().labels().background();
+  // enable background
+  labelsBackground.enabled(true);
+  // background fill
+  labelsBackground.fill("lightblue");
+  // stroke color
+  labelsBackground.stroke("blue");
+  // corner type
+  labelsBackground.cornerType("round");
+  // corner size
+  labelsBackground.corners(5);
 ```
 
 {sample}BCT\_PolarChart\_08{sample}
@@ -178,9 +200,11 @@ You can change labels' background. Learn more about background configuration in 
 You can hide first and/or last labels using {api:anychart.core.axes.Radial#drawFirstLabel}**.drawFirstLabel()**{api} and {api:anychart.core.axes.Radial#drawLastLabel}**.drawLastLabel()**{api} parameters:
 
 ```
-  chart.yAxis()
-    .drawFirstLabel(false)  // hides first label of Y-Axis
-    .drawLastLabel(false);  // hides last label of Y-Axis
+  var yAxis = chart.yAxis();
+  // hides first label of Y-Axis
+  yAxis.drawFirstLabel(false);
+  // hides last label of Y-Axis
+  yAxis.drawLastLabel(false);
 ```
 
 {sample}BCT\_PolarChart\_09{sample}
@@ -188,7 +212,8 @@ You can hide first and/or last labels using {api:anychart.core.axes.Radial#drawF
 ## Visualization
 
 In this section we will describe the main parts of a polar chart style and demonstrate how style can be applied.
-
+  
+  
 The main idea of styles is to segregate visualization and data definition. Visual appearance of columns can be defined using certain methods.
 
 ### Grid
@@ -199,11 +224,14 @@ Polar grid is a combination of circular and radial grids. Grid visual appearance
   // chart type
   var chart = anychart.polar();
   
-  chart.grid(0)
-    .evenFill('white 0.9')    // coloring odd cells of the grid
-    .oddFill('lightgray 0.9') // coloring even cells of the grid
-    .layout('curcuit')        // set layout type
-    .stroke('white');    
+  var grid = chart.grid(0);
+  // coloring odd cells of the grid
+  grid.evenFill("white 0.9");
+  // coloring even cells of the grid
+  grid.oddFill("lightgray 0.9");
+  // set layout type
+  grid.layout("curcuit");
+  grid.stroke("white");    
 ```
 
 **Note:** full information about grid settings can be found in [grid section of Scale tutorial](../Axes_and_Grids/Scales#grids)
@@ -226,27 +254,31 @@ When formatting tooltips, we use  {api:anychart.core.ui.Tooltip#contentFormatter
 Next sample demonstrates bold series labels which display value of a point and tooltip shows detailed description.
 
 ```
-  // adjust series visual settings
-  series
-    .stroke('darkblue')                             // stroke color
-    .fill('lightblue 0.8')                          // fill color
-    .labels()                                       // labels settings
-      .enabled(true)                                // enable labels
-      .fontWeight(900);                             // labels font weight
+  // set series data
+  var series = chart.area(dataSet);
   
-  // visual setting for tooltips
-  series.tooltip().content().fontWeight(400);       // settings for tooltip content font
-  
+  // stroke color
+  series.stroke("darkblue");
+  // fill color
+  series.fill("lightblue 0.8");
+  // labels settings
+  var labels = series.labels();
+  // enable labels
+  labels.enabled(true);
+  // labels font weight
+  labels.fontWeight(900);
+
   // format tooltip content
-  series.tooltip().contentFormatter(function(){
+  var tooltip = series.tooltip();
+  tooltip.contentFormatter(function(){
     
     // summarize all values
     var sum = 0;
     for (var i=0;i<dataSet.mapAs().getRowsCount();i++)
-      sum +=dataSet.mapAs().get(i, 'value');
+      sum +=dataSet.mapAs().get(i, "value");
     
     // setting tooltip content
-    return 'Value: ' + this.value + '\nPercent: ' + (this.value/(sum/100)).toFixed(2) + '%';
+    return "Value: " + this.value + "\nPercent: " + (this.value/(sum/100)).toFixed(2) + "%";
   });
 ```
 
