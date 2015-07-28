@@ -29,6 +29,7 @@ anychart.onDocumentReady(function () {
             chart_1.title('Winter Sales');
             chart_1.padding(50, 0, 0, 0);
             var series_1 = chart_1.column(data_1);
+            series_1.stroke(null);
 
             // draw
             chart_1.container(layer_1).draw();
