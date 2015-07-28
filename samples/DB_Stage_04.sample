@@ -1,8 +1,7 @@
 {:tags []
      :is_new false
      :exports "chart"}
-	 	 
-        anychart.onDocumentReady(function () {
+anychart.onDocumentReady(function () {
         // set stage
         var stage = anychart.graphics.create('container');
 
@@ -14,8 +13,6 @@
         var layer_4 = stage.layer(); //for the Fall Sales chart
         var layer_5 = stage.layer(); //for the buttons
         layer_5.zIndex(100);
-
-
 
         // set data for the Winter Sales
         var data_1 = anychart.data.set([
@@ -29,7 +26,7 @@
         // chart type
         var chart_1 = anychart.column();
         chart_1.title('Winter Sales');
-        chart_1.padding(0, 0, 0, 150);
+        chart_1.padding(50, 0, 0, 0);
         var series_1 = chart_1.column(data_1);
         series_1.fill(data_1);
         series_1.stroke(null);
@@ -50,7 +47,7 @@
         // set series data
         var chart_2 = anychart.column();
         chart_2.title('Spring Sales');
-        chart_2.padding(0, 0, 0, 150);
+        chart_2.padding(50, 0, 0, 0);
         var series_2 = chart_2.column(data_2);
         series_2.stroke(null);
 
@@ -70,7 +67,7 @@
         // set series data
         var chart_3 = anychart.column();
         chart_3.title('Summer Sales');
-        chart_3.padding(0, 0, 0, 150);
+        chart_3.padding(50, 0, 0, 0);
         var series_3 = chart_3.column(data_3);
         series_3.stroke(null);
 
@@ -89,7 +86,7 @@
         // set series data
         var chart_4 = anychart.column();
         chart_4.title('Fall Sales');
-        chart_4.padding(0, 0, 0, 150);
+        chart_4.padding(50, 0, 0, 0);
         var series_4 = chart_4.column(data_4);
         series_4.stroke(null);
 
@@ -110,12 +107,11 @@
         container.appendChild(b1);
 
         b1.style.position = 'absolute';
-        b1.style.left = '25px';
-        b1.style.top = '50px';
+        b1.style.top = '10px';
+        b1.style.left = '10px';
         b1.style.width = '120px';
 
         b1.onclick = function() {
-            console.log(layer_1.zIndex(), layer_2.zIndex());
             stage.suspend();
             stage.addChild(layer_1);
             layer_2.remove();
@@ -130,11 +126,11 @@
         container.appendChild(b2);
 
         b2.style.position = 'absolute';
-        b2.style.left = '25px';
-        b2.style.top = '100px';
+        b2.style.top = '10px';
+        b2.style.left = '140px';
         b2.style.width = '120px';
+        
         b2.onclick = function() {
-            console.log(layer_1.zIndex(), layer_2.zIndex());
             stage.suspend();
             stage.addChild(layer_2);
             layer_1.remove();
@@ -148,11 +144,11 @@
         container.appendChild(b3);
 
         b3.style.position = 'absolute';
-        b3.style.left = '25px';
-        b3.style.top = '150px';
+        b3.style.top = '10px';
+        b3.style.left = '280px';            
         b3.style.width = '120px';
+            
         b3.onclick = function() {
-            console.log(layer_1.zIndex(), layer_2.zIndex());
             stage.suspend();
             stage.addChild(layer_3);
             layer_1.remove();
@@ -166,12 +162,11 @@
         container.appendChild(b4);
 
         b4.style.position = 'absolute';
-        b4.style.left = '25px';
-        b4.style.top = '200px';
+        b4.style.top = '10px';
+        b4.style.left = '420px';
         b4.style.width = '120px';
-
+        
         b4.onclick = function() {
-            console.log(layer_1.zIndex(), layer_2.zIndex());
             stage.suspend();
             stage.addChild(layer_4);
             layer_1.remove();
@@ -180,4 +175,4 @@
             stage.resume();
         };
 
-    });
+ });
