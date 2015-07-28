@@ -74,11 +74,11 @@ In case you need to place more than one chart, you can use bounds to adapt the d
 	// draw
 	chart_2.container(stage).draw();
 ```
-{sample}DB\_Stage\_02{sample}
+{sample :width 700 :height 600}DB\_Stage\_02{sample}
 
 There are two ways of using bounds. If you define them in percent, your charts will resize each time the window they are opened in is resized. If you define bounds in pixels, the charts will not change their dimensions along with the resized window. Let's see what we'll get if we define bounds in pixels:
 
-{sample}DB\_Stage\_02-1{sample}
+{sample :width 700 :height 600}DB\_Stage\_02-1{sample}
 
 Explore the whole code in the playground to understand the difference.
 
