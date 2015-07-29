@@ -142,14 +142,6 @@ As you can see, they can be either completely monochrome or colored.
                     .fill(null)
                     .hatchFill('VERTICALBRICK');
 ```
- 
- It is also possible to define the hatch type for each point, as we can do it with fills:
- 
- ```
-            chart.bar(series[0])
-                    .fill(null)
-                    .hatchFill('VERTICALBRICK');
-```
 
 In the sample below there are all hatch types shown that are available in AnyChart. Explore the sample in the playground to see all these types' names.
 

@@ -233,7 +233,7 @@ And here is the demonstration of Y-Axis inversion in the Single-series sample:
 
 ### Minimum and Maximum
 
-AnyChart calculates axis minimum and maximum automatically. The minimal value on Y-Axis is 800, the maximum is 1.600, as you can see in the sample above. You can control these values by setting {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method; let's look at what will happen if we define 0 and 1.800 as the min amd the max values on the Y-Axis:
+AnyChart calculates axis minimum and maximum automatically. The minimal value on Y-Axis is 800, the maximum is 1.600, as you can see in the sample above. You can control these values by setting {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method; let's look at what will happen if we define 0 and 1800 as the min amd the max values on the Y-Axis:
 
 ```
   var yScale = chart.yScale();
