@@ -7,14 +7,14 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  var chart = anychart.scatterChart();
-  chart.title().enabled(true).text("Sample Scatter Graph");
+  chart = anychart.scatterChart();
+  chart.title().text('Sample Scatter Graph');
 
   chart.xScale().minimum(1.5).maximum(5.5).ticks().interval(1);
   chart.yScale().minimum(40).maximum(100).ticks().interval(10);
 
-  chart.yAxis(0).title().enabled(true).text("Waiting time between \r\n eruptions (Min)");
-  chart.xAxis(0).title().enabled(true).text("Eruption duration (Min)");
+  chart.yAxis(0).title().text('Waiting time between eruptions (Min)');
+  chart.xAxis(0).title().text('Eruption duration (Min)');
   chart.xAxis(0).drawFirstLabel(false).drawLastLabel(false);
 
   var marker = chart.marker([
@@ -240,54 +240,28 @@
     [2.1, 48],
     [5.2, 84],
     [2, 63]
-  ]).type("triangleup").size(4).hoverSize(7).hoverFill("red");
-
-  marker.tooltip().content().hAlign("start");
+  ]).type('triangleup').size(4).hoverSize(7).hoverFill('red');
+  
+  // enable the crosshair
+  chart.crosshair(true);
+	
+  // set the indexes of the axes used
+  chart.crosshair().yLabel().axisIndex(0);
+  chart.crosshair().xLabel().axisIndex(0);
+  
+  // set the label performance
+  chart.crosshair().yLabel().textFormatter(function() {
+    return '$' + this.value;
+  });
+  
+  // set chart title text settings
+  chart.title('Scatter Chart with a crosshair');
+  
+  marker.tooltip().content().hAlign('start');
   marker.tooltip().contentFormatter(function() {
-    return "Waiting time: " + this["value"] + " min.\nDuration: " + this["x"] + " min.";
+    return 'Cost: $' + this['value'] + '\nDuration: ' + this['x'] + ' min.';
   });
-
-  chart.line([
-    [1.7, 54.310454158527],
-    [1.8, 55.2005091829704],
-    [1.9, 56.0905642074139],
-    [2, 56.9806192318574],
-    [2.1, 57.8706742563008],
-    [2.2, 58.7607292807443],
-    [2.3, 59.6507843051877],
-    [2.5, 61.4308943540747],
-    [2.6, 62.3209493785181],
-    [2.7, 63.2110044029616],
-    [2.9, 64.9911144518485],
-    [3, 65.881169476292],
-    [3.1, 66.7712245007354],
-    [3.2, 67.6612795251789],
-    [3.3, 68.5513345496223],
-    [3.4, 69.4413895740658],
-    [3.5, 70.3314445985093],
-    [3.6, 71.2214996229527],
-    [3.7, 72.1115546473962],
-    [3.8, 73.0016096718396],
-    [3.9, 73.8916646962831],
-    [4, 74.7817197207266],
-    [4.1, 75.67177474517],
-    [4.2, 76.5618297696135],
-    [4.3, 77.4518847940569],
-    [4.4, 78.3419398185004],
-    [4.5, 79.2319948429438],
-    [4.6, 80.1220498673873],
-    [4.7, 81.0121048918308],
-    [4.8, 81.9021599162742],
-    [4.9, 82.7922149407177],
-    [5, 83.6822699651611],
-    [5.1, 84.5723249896046],
-    [5.2, 85.4623800140481]
-  ]).markers(null).hoverStroke(function() {
-    return this["sourceColor"];
-  });
-
-  chart.container('container');
-  chart.draw();
+  chart.container('container').draw();
 });</script>
 </head>
 <body>
