@@ -1,7 +1,15 @@
 {:index 2}
 Using Data Sets
-===============
+=================
+* [Why do we need Data Sets?](#why_do_we_need_data_sets)
+* [Creating Data Set](#creating_data_set)
+ * [Number or String](#number_or_string) 
+ * [Object](#object) 
+ * [Array](#array)
+* [Data Mapping](#data_mapping)
+
 ###Why do we need Data Sets?
+
 A situation when we need to analyze different data using the same set of values in the different series of one or different charts happens quite often. 
 
 For example, there is some information about the weather in three cities, and we have to show the difference on the line chart:
@@ -194,10 +202,10 @@ As a result we will have a chart with 3 line series:
     var dataMappingList = anychart.data.mapAsTable(data);
 
     // create line chart
-    var lineChart = anychart.line.apply(null, dataMappingList);
-    lineChart.getSeries(0).name('NY');
-    lineChart.getSeries(1).name('SF');
-    lineChart.getSeries(2).name('LA');
+    var lineChart = anychart.line(dataMappingList[0], dataMappingList[1], dataMappingList[2]);
+    lineChart.getSeries(0).name('New York');
+    lineChart.getSeries(1).name('San Francisco');
+    lineChart.getSeries(2).name('Los Angeles');
     
     // set container
     lineChart.container('container');
@@ -210,9 +218,10 @@ As a result we will have a chart with 3 line series:
 {sample}WD\_Using\_Data\_Sets\_03{sample}
 
 ###Data Mapping
-Data mapping is a great option to show the same data in different ways, for example in different charts, grouped or sorted differently. Here we are able to analyze the same information using two different chart types, the data is being shown rather clearly. This type of data performance is quite complicated in coding, however, it gives the best view for a researcher.   
-```
 
+Data mapping is a great option to show the same data in different ways, for example in different charts, grouped or sorted differently. That's how one can use the same data set to populate two different charts:
+
+```
   var data = [
     // column 0    1    2    3
     ["2014/6/25",  28,  23,  28], // row 0
@@ -223,84 +232,16 @@ Data mapping is a great option to show the same data in different ways, for exam
     ["2014/6/30",  28,  25,  27]  //     5
   ];
 
-  // create a data set
-  var dataSet = anychart.data.set(data);
-
-  // set stage
-  stage = anychart.graphics.create('container');
+  // create mapping list on one data set
+  var dataMappingList = anychart.data.mapAsTable(data);
 
   // create a line chart using the data set
-  var lineChart = anychart.line.apply(null, anychart.data.mapAsTable(data));
-
-  // set container and position
-  lineChart.container(stage);
-  lineChart.bounds(0, 0, '100%', '50%');
-
-  // current stage stroke
-  lineChart.background().stroke('white').fill('white');
-
-  // axes titles setter
-  lineChart.xAxis().title().text('Date');
-  lineChart.yAxis().title().text('Temperature');
-  lineChart.yAxis().labels().textFormatter(function(){
-      return this.value + ' °C';
-  });
-  
-  // series titles setter
-  lineChart.getSeries(0).name('NY');
-  lineChart.getSeries(1).name('SF');
-  lineChart.getSeries(2).name('LA');
-    
-  // apply tooltip settings
-  lineChart.getSeries(0).tooltip().contentFormatter(tooltipSetter);
-  lineChart.getSeries(1).tooltip().contentFormatter(tooltipSetter);
-  lineChart.getSeries(2).tooltip().contentFormatter(tooltipSetter);
-
-  // naming the chart
-  lineChart.title('Weather in the USA');
-
-  // initiate chart drawing
-  lineChart.draw();
+  var lineChart = anychart.line(dataMappingList[0], dataMappingList[1], dataMappingList[2]);
 
   // map x and value from the data set
-  var colChart = anychart.column.apply(null, anychart.data.mapAsTable(data));
-  
-  // naming the chart series (legend)
-  colChart.getSeries(0).name('NY');
-  colChart.getSeries(1).name('SF');
-  colChart.getSeries(2).name('LA');
-    
-  // axes titles setter
-  colChart.xAxis().title().text('Date');
-  colChart.yAxis().title().text('Temperature');
-  colChart.yAxis().labels().textFormatter(function(){
-      return this.value + ' °C';
-  });
-  
-  // naming the chart
-  colChart.title('Weather in the USA');
-  
-  // set container and position
-  colChart.container(stage);
-  colChart.bounds(0, '50%', '100%', '50%');
-  
-  // current stage stroke
-  colChart.background().stroke('white').fill('white');
-  
-  // apply tooltip settings
-  colChart.getSeries(0).tooltip().contentFormatter(tooltipSetter);
-  colChart.getSeries(1).tooltip().contentFormatter(tooltipSetter);
-  colChart.getSeries(2).tooltip().contentFormatter(tooltipSetter);
-
-  // draw
-  colChart.draw();
-});
-
-// tooltip series settings
-function tooltipSetter(){
-  return 'Date: ' + this.x + '\nTemperature: ' + this.value + '°C';
-}
+  var colChart = anychart.column(dataMappingList[0], dataMappingList[1], dataMappingList[2]);
 ```
-  
+
+This is a sample that utilized data mapping to show data in two different ways:
 
 {sample}WD\_Using\_Data\_Sets\_04{sample}
