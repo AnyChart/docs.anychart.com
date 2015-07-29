@@ -111,7 +111,7 @@ Let's enable the axis to see the changes we make and set its width and radius at
 Let's limit the axis with the values we want to be displayed. To set the limits, we used the {api:anychart.scales.ScatterBase#minimum}**.minimum()**{api} and the {api:anychart.scales.ScatterBase#maximum}**.maximum()**{api} methods. Let it be from 0 to 120 mph:
 
 ```
-		//scale settings
+    //scale settings
     axis.scale()
         .minimum(0)
         .maximum(120);
