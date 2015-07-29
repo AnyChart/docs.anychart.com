@@ -29,9 +29,9 @@
   ]);
 
   // chart type
-  var chart = anychart.columnChart();
+  var chart = anychart.column();
 
-  chart.title().text('Lighten Colors Sample');
+  chart.title('Lighten Colors Sample');
 
   // set data and set additionla information in tooltip
   chart.column(data).tooltip().contentFormatter(function(){
