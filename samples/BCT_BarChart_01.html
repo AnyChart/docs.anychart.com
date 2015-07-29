@@ -7,30 +7,30 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // data
-    var data = anychart.data.set([
-      ['Department Stores', 637166],
-      ['Discount Stores', 721630],
-      ['Men\'s/Women\'s Specialty Stores', 148662],
-      ['All other outlets', 90000]
-    ]);
+  // data
+  var data = anychart.data.set([
+    ["Department Stores", 637166],
+    ["Discount Stores", 721630],
+    ["Men's/Women's Specialty Stores", 148662],
+    ["All other outlets", 90000]
+  ]);
 
-    // chart type
-    var chart = anychart.bar();
+  // chart type
+  var chart = anychart.bar();
 
-    // set title
-    chart.title().text('Bar Chart');
+  // set data
+  chart.bar(data);
 
+  // set title
+  chart.title("Bar Chart");
 
-    // set axes titles
-    chart.xAxis().title().text('Retail Channel');
-    chart.yAxis().title().text('Sales');
+  // set axes titles
+  chart.xAxis().title("Retail Channel");
+  chart.yAxis().title("Sales");
 
-    // set data
-    chart.bar(data);
-
-    // draw chart
-    chart.container('container').draw();
+  // draw chart
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

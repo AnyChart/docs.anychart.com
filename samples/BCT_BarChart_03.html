@@ -7,33 +7,36 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // data
-    var data = anychart.data.set([
-      ['Department Stores', 637166],
-      ['Discount Stores', 721630],
-      ['Men\'s/Women\'s Specialty Stores', 148662],
-      ['All other outlets', 90000]
-    ]);
+  // data
+  var data = anychart.data.set([
+    ["Department Stores", 637166],
+    ["Discount Stores", 721630],
+    ["Men's/Women's Specialty Stores", 148662],
+    ["All other outlets", 90000]
+  ]);
 
-    // chart type
-    var chart = anychart.bar();
+  // chart type
+  var chart = anychart.bar();
 
-    // set title
-    chart.title().text('Adjusted Axes Position');
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Retail Channel");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
 
-    // set axes titles
-    chart.xAxis().title().text('Retail Channel');
-    chart.yAxis().title().text('Sales');
+  // adjust axes orientation
+  xAxis.orientation("right");
+  yAxis.orientation("top");
 
-    // set data
-    chart.bar(data);
+  // set data
+  chart.bar(data);
 
-    // adjust axes orientation
-    chart.xAxis(0).orientation('right');
-    chart.yAxis(0).orientation('top');
+  // set title
+  chart.title("Adjusted Axes Position");
 
-    // draw chart
-    chart.container('container').draw();
+  // draw chart
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
