@@ -8,7 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // Create bullet chart
-  var chart = anychart.bulletChart([
+  var chart = anychart.bullet([
     {value: 637.166}                    // 2005 income
   ]);
   
@@ -19,7 +19,7 @@
   chart.bounds(0, 0, '100%', 125);
 
   // chart title
-  chart.title().text('Revenue');
+  chart.title('Revenue');
 
   // Initiate chart drawing
   chart.container('container').draw();
