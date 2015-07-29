@@ -46,7 +46,7 @@ Example:
   
 ## The result
 ###See the result
-After all these steps you should have the following result. You can launch and explore this example further [here](http://playground.anychart.com/acdvf-docs/7.6.0/samples/quick_start_pie-plain).
+After all these steps you should have the following result. You can launch and explore this example further [here](http://playground.anychart.com/docs/latest/samples/quick_start_pie-plain).
 
 {sample}quick\_start\_pie{sample}
 ###Full source code
