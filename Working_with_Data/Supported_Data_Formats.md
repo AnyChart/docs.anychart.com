@@ -3,10 +3,10 @@
 Supported Data Formats
 =================
  * [Introduction](#introduction)
-   * [JavaScript API](#JavaScript)
-   * [XML](#XML)
-   * [JSON](#JSON)
-   * [CSV](#CSV)
+   * [JavaScript API](#javascript_api)
+   * [XML](#xml)
+   * [JSON](#json)
+   * [CSV](#csv)
 
 ###Introduction
 AnyChart supports 4 ways to set data to your charts. You can choose which one suits your task the best:
@@ -69,8 +69,8 @@ chart.container('container');
 // initiate chart drawing
 chart.draw();
 ```
-See also:
-[Data From XML](./Data_From_XML)
+See also:  
+[Data From XML](./Data_From_XML)  
 [Using Data Sets](./Using_Data_Sets)
 
 ###JSON
@@ -100,7 +100,7 @@ chart.container('container');
 chart.draw();
 ```
 See also:  
-[Data From JSON](./Data_From_JSON)
+[Data From JSON](./Data_From_JSON)  
 [Using Data Sets](./Using_Data_Sets)
 
 ###CSV  
