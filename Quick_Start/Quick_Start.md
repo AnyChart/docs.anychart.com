@@ -3,7 +3,7 @@ Quick Start
 ===========
   
 ## Getting started with AnyChart
-Create an HTML file and give it the “index.htm” name if you want to make a new web page, or open your HTML file where the chart should be put.
+Create an HTML file and give it the “index.htm” name if you want to make a new web page, or open your HTML file where the chart should be.
 ###1. Include AnyChart into your web page
 Reference the JavaScript file in the `<head>` section of your web page.  
 You can use the link as shown below or download anychart.min.js from the [download page](./Downloading_AnyChart) and then put it into any folder of your site (you’ll have to use your own link in this case). 
@@ -15,6 +15,7 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 ```
 ###2. Create a container for the chart
 Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. Unless you don’t, AnyChart will use 100% of the container.
+
 Example:
 ```
 <body>
@@ -22,18 +23,20 @@ Example:
 </body>
 ```  
 ###3. Create a chart
-Put the JavaScript tag `<script>` with the following code anywhere in the “head” or “body” section. This code example uses JavaScript API to create a chart, but you also can use JSON or XML format. See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about available formats. Example:
+Put the JavaScript tag `<script>` with the following code anywhere in the “head” or “body” section. This code example uses JavaScript API to create a chart, but you also can use JSON or XML format. See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about available formats.
+
+Example:
 
 ```
 <script>
     anychart.onDocumentLoad(function() {
-        var chart = anychart.pieChart([ //create an instance of a pie chart with data
+        var chart = anychart.pie([ //create an instance of a pie chart with data
             ['Chocolate paste', 5],
             ['White honey', 2],
             ['Strawberry jam', 2],
             ['Сondensed milk', 1]
         ]);
-        chart.title('The kind of pancakes preferred at the Sochi 2014 Olympic Games');
+        chart.title('The kind of pancakes preferred\nat the Sochi 2014 Olympic Games');
         chart.container('container'); // pass the container id, chart will be displayed there
         chart.draw(); // call the chart draw() method to initiate chart display
     });
@@ -53,13 +56,13 @@ Below this you can see how your full web page code should look like.
     <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
     <script>
         anychart.onDocumentLoad(function() {
-            var chart = anychart.pieChart([ //create an instance of pie chart with data
+            var chart = anychart.pie([ //create an instance of pie chart with data
                 ['Chocolate paste', 5],
                 ['White honey', 2],
                 ['Strawberry jam', 2],
                 ['Сondensed milk', 1]
             ]);
-            chart.title('The kind of pancakes preferred at the Sochi 2014 Olympic Games');
+            chart.title('The kind of pancakes preferred\nat the Sochi 2014 Olympic Games');
             chart.container('container'); //pass the container where chart will be drawn
             chart.draw(); //call the chart draw() method to initiate chart drawing
         });
