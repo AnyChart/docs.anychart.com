@@ -9,46 +9,66 @@
   
   // data
   var data = anychart.data.set([
-    ['January', 10000],
-    ['February', 12000],
-    ['March', 18000],
-    ['April', 11000],
-    ['May', 9000]
+    ["January", 10000],
+    ["February", 12000],
+    ["March", 18000],
+    ["April", 11000],
+    ["May", 9000]
   ]);
   
   // chart type
-  chart = anychart.lineChart();
+  var chart = anychart.line();
   
   // set series data
   var series = chart.line(data);
     
   series.stroke(
-    'Rgb(86,86,26)',    // set line color
-    4                   // set line size
+    // set line color
+    "Rgb(86,86,26)",
+    // set line size
+    4
+  );
+  // line settings in hovered state
+  series.hoverStroke(
+    // set line color
+    "Rgb(86,86,26)",
+    // set line size
+    4
   );
     
-  series.markers()
-    .enabled(true)      // enables markers
-    .type('star5')      // set marker type
-    .fill('gold')       // set marker inner color
-    .stroke('darkred')  // set marker border
-    .size(7);           // set marker size
+  var markers = series.markers();
+  // enables markers
+  markers.enabled(true);
+  // set marker type
+  markers.type("star5");
+  // set marker inner color
+  markers.fill("gold");
+  // set marker border
+  markers.stroke("darkred");
+  // set marker size
+  markers.size(7);
   
   // settings for hovered marker
-  series.hoverMarkers()
-    .size(7)            // marker size
-    .fill('darkred')    // marker inner color
-    .stroke('gold');    // marker border
-    
-    // title
-    chart.title().text('Visualization');
-    
-    // set axes titles
-    chart.xAxis().title().text('Sales');
-    chart.yAxis().title().text('Month');
-    
-    // draw
-  chart.container('container').draw();
+  var hoverMarkers = series.hoverMarkers();
+  // marker size
+  hoverMarkers.size(7);
+  // marker inner color
+  hoverMarkers.fill("darkred");
+  // marker border
+  hoverMarkers.stroke("gold");
+  
+  // title
+  chart.title("Visualization");
+
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Sales");
+  var yAxis = chart.yAxis();
+  yAxis.title("Month");
+
+  // draw
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

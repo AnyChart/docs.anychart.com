@@ -43,11 +43,11 @@ You can define a title of any axis, you can control its position and font <!--an
   var yTitle = chart.yAxis().title();
   var max = chart.yScale().maximum();
   var min = chart.yScale().minimum();
-  yTitle.text("Y axis from " + min + " to " + max);
+  yTitle.enabled(true).text("Y axis from " + min + " to " + max);
   yTitle.align("bottom");
   
   var xTitle = chart.xAxis().title();
-  xTitle.text("Sample X axis name");
+  xTitle.enabled(true).text("Sample X axis name");
   xTitle.fontWeight(400);
 ```
 

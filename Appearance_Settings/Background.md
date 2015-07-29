@@ -101,7 +101,7 @@ Image fill allows you to set an image as a background. An image can be **stretch
 
 You can adjust the shape of borders corners, there are 4 types for corners: **"Square"**, **"Rounded"**, **"Cut"** and **"RoundedInner"**. Appearance of these types is shown on the image below:
 
-![](http://anychart.com/products/anychart/docs/users-guide/img/corners_table.png)
+![](http://6.anychart.com/products/anychart/docs/users-guide/img/corners_table.png)
 
 For "Rounded", "Cut" and "RoundedInner" types you can control not only the shape, but also a radius of "rounding" or "cutting" for all corners, or given corners. Sample settings for "rounding" all corners:
 
@@ -139,7 +139,7 @@ As you can see, they can be either completely monochrome or colored.
 
 ```
             chart.bar(series[0])
-                    .color('white 0')
+                    .fill(null)
                     .hatchFill('VERTICALBRICK');
 ```
  
@@ -147,7 +147,7 @@ As you can see, they can be either completely monochrome or colored.
  
  ```
             chart.bar(series[0])
-                    .color('white 0')
+                    .fill(null)
                     .hatchFill('VERTICALBRICK');
 ```
 

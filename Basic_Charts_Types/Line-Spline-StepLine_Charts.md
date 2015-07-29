@@ -135,27 +135,27 @@ Let's compare 2003 sales to 2004 sales:
 <tr>
 <td>January</td>
 <td>$10000</td>
-<td>$12000</td>	
+<td>$12000</td>
 </tr>
 <tr>
 <td>February</td>
 <td> $12000</td>
-<td> $15000</td>	
+<td> $15000</td>
 </tr>
 <tr>
 <td>March</td>
 <td> $18000</td>
-<td> $16000</td>	
+<td> $16000</td>
 </tr>
 <tr>
 <td>April</td>
 <td> $11000</td>
-<td> $15000</td>	
+<td> $15000</td>
 </tr>
 <tr>
 <td>May</td>
 <td> $9000</td>
-<td> $14000</td>	
+<td> $14000</td>
 </tr>
 </tbody></table>
 
