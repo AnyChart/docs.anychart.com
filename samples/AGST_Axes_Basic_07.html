@@ -27,12 +27,12 @@
     .draw();
 
   // first chart
-  var chart = anychart.columnChart();
+  var chart = anychart.column();
 
-  chart.title().text('Tickmarks Outside');
+  chart.title('Tickmarks Outside');
 
   // setting chart's size and position
-  chart.bounds(0, '15%', '50%', '85%');
+  chart.bounds(0, '10%', '48%', '85%');
 
   chart.background().stroke('#CCCCCC');
 
@@ -59,12 +59,12 @@
   chart.container(stage).draw();
 
   // second chart
-  var LineChart = anychart.lineChart(data);
+  var LineChart = anychart.colu(data);
 
-  LineChart.title().text('Tickmarks Inside');
+  LineChart.title('Tickmarks Inside');
 
   // setting chart's size and position
-  LineChart.bounds('50%', '15%', '50%', '85%');
+  LineChart.bounds('52%', '10%', '48%', '85%');
 
   LineChart.background().stroke('#CCCCCC');
 
