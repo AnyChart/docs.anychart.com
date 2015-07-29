@@ -8,17 +8,16 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     var chart = anychart.pie([
-    ["Chocolate", 5],
-    ["Rhubarb compote", 2],
-    ["Crêpe Suzette", 2],
-    ["American blueberry", 2],
-    ["Buttermilk", 1]
+    ["Chocolate paste", 5],
+    ["White honey", 2],
+    ["Strawberry jam", 2],
+    ["Сondensed milk", 1]
     ]);
-    chart.title("Top 5 pancake fillings");
+    chart.title().text("The kind of pancakes preferred\nat the Sochi 2014 Olympic Games");
     chart.container("container");
     chart.draw();
 
-});</script>
+});
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
