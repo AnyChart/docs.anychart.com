@@ -28,7 +28,9 @@
     .itemsLayout('vertical')  // legend items layout
     .paginator()              // paginator settings
       .orientation('bottom'); // place paginator at the bottom of a legend
-  
+
+  chart.legend().paginator().padding(5);
+
   // draw
   chart.container('container').draw();
 });</script>

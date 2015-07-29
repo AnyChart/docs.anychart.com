@@ -23,7 +23,10 @@
     .align('top')                           // set legend align
     .itemsLayout('vertical')                // legend items layout
     .background()                           // background settings
-      .fill(['white', 'lightgreen'], -45);  // background inner color settings
+      .fill(['white', 'lightgrey'], -45);  // background inner color settings
+
+  chart.legend().background(true);
+  chart.legend().padding(10);
   
   // draw
   chart.container('container').draw();

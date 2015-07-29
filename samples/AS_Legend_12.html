@@ -72,6 +72,7 @@
     .position('bottom')
     .align('left')
     .zIndex(1)
+    .margin(10)
     .enabled(true)
     .itemsLayout('vertical')
     .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
@@ -97,6 +98,7 @@
     .position('bottom')
     .align('center')
     .zIndex(1)
+    .margin(10)
     .enabled(true)
     .itemsLayout('vertical')
     .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
@@ -122,6 +124,7 @@
     .position('bottom')
     .align('right')
     .zIndex(1)
+    .margin(10)
     .enabled(true)
     .itemsLayout('vertical')
     .listen(anychart.enums.EventType.LEGEND_ITEM_CLICK, function(event) {
@@ -191,6 +194,8 @@
     .text('Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>')  // set title text
     .fontSize(14)               // set font size
     .hAlign('center');
+
+  chart.legend().padding(10);
   
   // prevent chart overlapping by legends
   chart.margin().bottom(stage.height() - johnLegend.getRemainingBounds().getHeight() - 10);
