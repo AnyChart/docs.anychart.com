@@ -22,14 +22,11 @@ anychart.onDocumentReady(function() {
     var SalesSummer = data.mapAs({x: [0], value: [2]});
 
     // define chart type
-    var chart = anychart.barChart();
+    var chart = anychart.bar();
 
-    // set title
-    chart.title().text('Multi-series Bar Chart');
-    
     // set axes titles
-    chart.xAxis().title().text('Retail Channel');
-    chart.yAxis().title().text('Sales');
+    chart.xAxis().title('Retail Channel');
+    chart.yAxis().title('Sales');
 
     // set data series
     var series_1 = chart.bar(SalesWinter);
