@@ -21,7 +21,7 @@ var data = [
 ];
 
 //create bar chart
-var chart = anychart.barChart();
+var chart = anychart.bar();
 var series = chart.bar(data);
 ```
 
@@ -32,18 +32,24 @@ And the chart will look this way:
 
 ```
 var series = chart.bar(data);
-series
-    .fill('#6698FF .6')
-        .hoverStroke("#0000A0", 4)
-        .stroke('#56561a', 4)
-        .hatchFill('diagonalbrick', '#348781')
-        .hoverHatchFill('diagonalbrick', '#0000A0')
+series.fill('#6698FF .6');
+series.hoverStroke("#0000A0", 4);
+series.stroke('#56561a', 4);
+series.hatchFill('diagonalbrick', '#348781');
+series.hoverHatchFill('diagonalbrick', '#0000A0');
 ```
 <br>If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
 
 ```
-series.tooltip().enabled(true).title().enabled(true).text('Information:');
-series.labels().enabled(true).anchor('leftCenter').position('rightCenter').fontSize(13);
+var tooltip = series.tooltip();
+tooltip.enabled(true);
+tooltip.title('Information:');
+
+var labels = series.labels();
+labels.enabled(true);
+labels.anchor('leftCenter');
+labels.position('rightCenter');
+labels.fontSize(13);
 ```
 <br>Look at the demonstration of these settings in the Single-Series Bar Chart sample:
 {sample}Settings\_From\_Data\_02{sample}
