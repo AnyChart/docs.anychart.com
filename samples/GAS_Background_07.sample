@@ -15,24 +15,24 @@
                 ['A5', 213, 150, 200, 137, 179]
             ];
             // create chart
-            chart = anychart.barChart();
+            chart = anychart.bar();
             var series = anychart.data.mapAsTable(data, 'value');
 
 
             chart.bar(series[0])
-                    .color('white 0')
+                    .fill(null)
                     .hatchFill('VERTICALBRICK');
             chart.bar(series[1])
-                    .color('white 0')
+                    .fill(null)
                     .hatchFill('PERCENT60');
             chart.bar(series[2])
-                    .color('white 0')
+                    .fill(null)
                     .hatchFill('CHECKERBOARD');
             chart.bar(series[3])
-                    .color('white 0')
+                    .fill(null)
                     .hatchFill('CONFETTI');
             chart.bar(series[4])
-                    .color('white 0')
+                    .fill(null)
                     .hatchFill('SOLIDDIAMOND');
 
             chart.container(stage).draw();
