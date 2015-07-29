@@ -20,19 +20,14 @@
 
 
             chart.bar(series[0])
-                    .fill(null)
                     .hatchFill('VERTICALBRICK');
             chart.bar(series[1])
-                    .fill(null)
                     .hatchFill('PERCENT60');
             chart.bar(series[2])
-                    .fill(null)
                     .hatchFill('CHECKERBOARD');
             chart.bar(series[3])
-                    .fill(null)
                     .hatchFill('CONFETTI');
             chart.bar(series[4])
-                    .fill(null)
                     .hatchFill('SOLIDDIAMOND');
 
             chart.container(stage).draw();

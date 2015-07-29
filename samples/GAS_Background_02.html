@@ -20,7 +20,10 @@
   ]);
 
   // adjust title
-  chart.title().text('Solid Background Fill').padding(10).background().enabled(true).fill('gold');
+  chart.title('Solid Background Fill');
+  chart.title()
+      .padding(10)
+      .background('gold');
 
   // disable axes
   chart.xAxis().enabled(false);
