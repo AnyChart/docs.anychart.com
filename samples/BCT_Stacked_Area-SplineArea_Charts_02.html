@@ -21,14 +21,14 @@
   var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
 
   // chart type
-  var chart = anychart.areaChart();
+  var chart = anychart.area();
 
   // chart title
-  chart.title().text("Stacked Spline Area Chart");
+  chart.title("Stacked Spline Area Chart");
 
   // set axes title
-  chart.xAxis().title().text("Month");
-  chart.yAxis().title().text("Temperature");
+  chart.xAxis().title("Month");
+  chart.yAxis().title("Temperature");
 
   // set stack mode
   chart.yScale().stackMode("value");

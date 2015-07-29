@@ -28,10 +28,10 @@
 	// set chart type
 	chart = anychart.lineChart();
 
-	chart.title().text('Click on Chart and Go to Google');
+	chart.title().enabled(true).text('Click on Chart and Go to Google');
 
 	// set data
-	var area = chart.spline(dataSet).markers(null);
+	var area = chart.spline(dataSet);
 
 	chart.padding().right(80);
 

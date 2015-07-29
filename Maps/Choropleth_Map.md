@@ -78,7 +78,7 @@ var dataSet = anychart.data.set([
             ]);
 			
 // set the fill for the regions you haven't defined in the dataSet
-            map.unboundRegions().fill('green');
+map.unboundRegions().fill('green');
 ```
 <br>
 Now, let's look at what we've got:

@@ -28,10 +28,10 @@
   // set chart type
   chart = anychart.areaChart();
 
-  chart.title().text('Move the Mouse to Add Points, Click to stop it');
+  chart.title().enabled(true).text('Move the Mouse to Add Points, Click to stop it');
 
   // set data
-  var splinearea = chart.splineArea(dataSet).markers(null);
+  var splinearea = chart.splineArea(dataSet);
 
   chart.padding().right(80);
 
