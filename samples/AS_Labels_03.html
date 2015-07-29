@@ -29,7 +29,6 @@
 
   drawBar();
 
-
   // label for bar chart
   var barlabel = stage.image('http://static.anychart.com/images/bar.gif');
 
@@ -64,9 +63,10 @@
   pieLabel.listen('click', drawPie);
   
   
-  function drawBar () {
-    if (chart!==null&&undefined&&'') 
+  function drawBar() {
+    if (chart) {
       chart.dispose();
+    }
     
     chart = anychart.bar();
     chart.bar(data).stroke(null);
@@ -75,6 +75,8 @@
       .text(titleText)
       .fontWeight(900)
       .hAlign('center');
+
+    chart.margin(30, 0, 0 ,0 );
 
     chart.xAxis().title().enabled(false);
     chart.yAxis().title().enabled(false);
@@ -91,6 +93,8 @@
       .text(titleText)
       .fontWeight(900)
       .hAlign('center');
+
+    chart.margin(30, 0, 0 ,0 );
     
     chart.xAxis().title().enabled(false);
     chart.yAxis().title().enabled(false);
@@ -106,6 +110,8 @@
       .text(titleText)
       .fontWeight(900)
       .hAlign('center');
+
+    chart.margin(30, 0, 0 ,0 );
     
     chart.container(stage).draw();
   }
