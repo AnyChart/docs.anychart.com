@@ -28,10 +28,10 @@
   }
 
   // chart type
-  var chart = anychart.columnChart();
+  var chart = anychart.column();
 
   // title
-  chart.title().text('International Symbols Support');
+  chart.title('International Symbols Support');
 
   // set data
   var series = chart.column(data);
@@ -49,6 +49,7 @@
     .enabled(true)
     .position('centerTop')
     .anchor('center')
+    .hAlign('center')
     .offsetY(-15)
     .textFormatter(function(){return this.x});
 
