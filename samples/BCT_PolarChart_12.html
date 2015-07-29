@@ -6,54 +6,58 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  
-  // data for chart
-  var dataSet = anychart.data.set([
-    {x:3.7, value:93},
-    {x:3.701, value:67},
-    {x:4.8, value:85},
-    {x:5.7, value:93},
-    {x:5.701, value:67},
-    {x:6.8, value:85}
-  ]);
-  
+
   // chart type
   var chart = anychart.polar();
-  
+
   // chart title
-  chart.title().text('Labels and Tooltips');
-  
-  // disable minor ticks
-  chart.yAxis().enabled(true).drawFirstLabel(false).minorTicks().enabled(false);
-  
-  // set series data
-  var series = chart.area(dataSet);
-  
-  // adjust series visual settings
-  series
-    .stroke('darkblue')                             // stroke color
-    .fill('lightblue 0.8')                          // fill color
-    .labels()                                       // labels settings
-      .enabled(true)                                // enable labels
-      .fontWeight(900);                             // labels font weight
-  
-  // visual setting for tooltips
-  series.tooltip().content().fontWeight(400);       // settings for tooltip content font
-  
-  // format tooltip content
-  series.tooltip().contentFormatter(function(){
-    
-    // summarize all values
-    var sum = 0;
-    for (var i=0;i<dataSet.mapAs().getRowsCount();i++)
-      sum +=dataSet.mapAs().get(i, 'value');
-    
-    // setting tooltip content
-    return 'Value: ' + this.value + '\nPercent: ' + (this.value/(sum/100)).toFixed(2) + '%';
-  });
-  
+  chart.title("Polar Series Types");
+
+  // background fill
+  var background = chart.background();
+  background.enabled(true);
+  background.fill("#EEEEEE");
+
+  // scale settings
+  var xScale = chart.xScale();
+  xScale.maximum(100);
+
+  // set data and adjust visual settings
+  var area = chart.area([
+    {x: 0, value: 0},
+    {x: 50, value: 100},
+    {x: 100, value: 0}
+  ]);
+  area.fill("red 0.7");
+  area.stroke("darkred");
+
+  var line = chart.line([
+    {x: 50, value: 0},
+    {x: 100, value: 100},
+    {x: 50, value: 0}
+  ]);
+  line.stroke("lightblue");
+
+  var marker = chart.marker([
+    {x: 10, value: 20},
+    {x: 25, value: 100},
+    {x: 50, value: 40},
+    {x: 75, value: 100},
+    {x: 80, value: 45}
+  ]);
+  marker.fill("lightgreen");
+  marker.stroke("green");
+
+  // grid settings
+  var grid = chart.grid(0);
+  grid.evenFill("white");
+  grid.oddFill("white");
+
+  chart.legend(false);
+
   // draw chart
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

@@ -16,10 +16,10 @@
   ];
 
   // chart type
-  var chart = anychart.financialChart();
+  var chart = anychart.financial();
 
   // chart title
-  chart.title().text('Axes Management');
+  chart.title('Axes Management');
 
   // adjust x scale type
   chart.xScale()
@@ -32,8 +32,8 @@
   var series = chart.ohlc(data);
 
   // adjust x and y axes position and title
-  chart.xAxis().orientation('top').title().text('Day');
-  chart.yAxis().orientation('right').title().text('Price');
+  chart.xAxis().orientation('top').title('Day');
+  chart.yAxis().orientation('right').title('Price');
 
   // set x axis lables width for the better outlook
   chart.xAxis().staggerLines(1).labels().textFormatter(function(value){

@@ -9,7 +9,7 @@
 
   var chart = anychart.scatterChart();
 
-  chart.title().text('Springfield\'s Clusters\nLabels and Tooltips Settings')
+  chart.title().enabled(true).text('Springfield\'s Clusters\nLabels and Tooltips Settings')
     .hAlign('center');
 
   // y scale settings
@@ -24,7 +24,7 @@
     return this.value + '%'
   });
 
-  chart.yAxis().title().text('Job Growth');
+  chart.yAxis().title().enabled(true).text('Job Growth');
 
   // x scale settings
   chart.xScale()
@@ -38,7 +38,7 @@
     return '$' + this.value / 1000 + ',000'
   });
 
-  chart.xAxis().title().text('Wages');
+  chart.xAxis().title().enabled(true).text('Wages');
 
   // data for chart
   var data = anychart.data.set([

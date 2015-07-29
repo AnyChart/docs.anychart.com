@@ -69,7 +69,7 @@ chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
     var msg = event['item'].get('name');
     if (event['period']) msg += '\nPeriod: ' + event['period']['id'];
     return msg;
-  });
+});
 ```
 
 <br>As you can see from the code above, it is possible to get any information about the item from the event - it contains some useful fields. Here is a list of supported types of information:
@@ -169,8 +169,8 @@ event.preventDefault();
 {sample :width 700 :height 300 }GANTT\_Events\_02{sample}
 ```
 chart.listen(anychart.enums.EventType.ROW_CLICK, function(e) {
-                e.preventDefault();
-            });
+    e.preventDefault();
+});
 ```
 
 

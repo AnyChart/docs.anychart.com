@@ -71,8 +71,8 @@ AnyChart allows to create Gradient fills for any background. There are two types
 
 ``` 
     chart.background().fill({
-        keys: ['.1 lightblue', '.7 blue', '.9 darkblue'],
-        angle: -130,
+        keys: ['#fff', '#66f', '#fff'],
+        angle: 130,
     });
 ```
 
@@ -138,14 +138,6 @@ As you can see, they can be either completely monochrome or colored.
 {sample}GAS\_Background\_07{sample}
 
 ```
-            chart.bar(series[0])
-                    .fill(null)
-                    .hatchFill('VERTICALBRICK');
-```
- 
- It is also possible to define the hatch type for each point, as we can do it with fills:
- 
- ```
             chart.bar(series[0])
                     .fill(null)
                     .hatchFill('VERTICALBRICK');

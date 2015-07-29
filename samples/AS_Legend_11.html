@@ -20,10 +20,10 @@
   // variable for total sales
   var total = 0;
   
-  for (var i = 0; i<dataSet.mapAs().getRowsCount();i++)
-    total+=dataSet.mapAs().get(i,'value');
+  for (var i = 0; i < dataSet.mapAs().getRowsCount(); i++)
+    total += dataSet.mapAs().get(i,'value');
   
-  var chart = anychart.pieChart(dataSet);
+  var chart = anychart.pie(dataSet);
   
   // legend settings
   chart.legend()

@@ -34,7 +34,7 @@ Now we have to tell Y-Axis to display these series in a stacked area:
 And set "Area" as a default series type:
 
 ```
-    chart = anychart.areaChart();
+    chart = anychart.area();
 ```
 
 {sample}BCT_Stacked\_Area-SplineArea\_Charts\_01{sample}

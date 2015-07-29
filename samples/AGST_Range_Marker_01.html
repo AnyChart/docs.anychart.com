@@ -17,10 +17,10 @@
   ]);
 
   // chart type
-  chart = anychart.columnChart();
+  chart = anychart.column();
 
   // set data
-  chart.column(data).hoverFill('#444444').tooltip().contentFormatter(function(){
+  chart.column(data).tooltip().contentFormatter(function(){
     return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
   });
 
@@ -46,12 +46,12 @@
     .scale(chart.yScale())
     .from(20000)
     .to(30000)
-    .fill('green 0.5');
+    .fill('#d7fcda');
 
   // set yellow marker
   chart.rangeMarker(1)
     .scale(chart.yScale())
-    .fill('gold 0.5')
+    .fill('#ffffdc')
     .from(10000)
     .to(20000);
 
@@ -60,7 +60,7 @@
     .scale(chart.yScale())
     .from(0)
     .to(10000)
-    .fill('red 0.5');
+    .fill('#fcd8d7');
 
   // draw
   chart.container('container').draw();

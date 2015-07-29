@@ -8,7 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // define chart type
-  var chart = anychart.columnChart();
+  var chart = anychart.column();
 
   // chart title
   chart.title().text('Major and Minor Ticks');
@@ -25,8 +25,8 @@
   var Sales2004 = data.mapAs({x: [0], value: [2]});
 
   // setting series data
-  chart.column(Sales2003).hoverFill('#444444');
-  chart.column(Sales2004).hoverFill('#444444');
+  chart.column(Sales2003);
+  chart.column(Sales2004);
 
   // setting data for line chart
   chart.line([

@@ -11,13 +11,15 @@
   var chart = anychart.scatter();
 
   // set title
-  chart.title().text('Axes Management');
+  chart.title("Axes Management");
 
   // draw axes and set titles and adjust position
-  chart.xAxis().title('Year');
-  chart.yAxis().title('Box office');
-  chart.xAxis().orientation('top');
-  chart.yAxis().orientation('right');
+  var xAxis = chart.xAxis();
+  xAxis.title("Year");
+  var yAxis = chart.yAxis();
+  yAxis.title("Box office");
+  xAxis.orientation("top");
+  yAxis.orientation("right");
   
   // define chart and set data
   chart.marker([
@@ -29,14 +31,16 @@
     [2005, 1000],
     [2006, 1400]
   ]);
-    
-  chart.xScale()
-    .minimum(1999)
-    .maximum(2007)
-    .ticks().interval(1);
+
+  var xScale = chart.xScale();
+  xScale.minimum(1999);
+  xScale.maximum(2007);
+  var xTicks = chart.xScale().ticks();
+  xTicks.interval(1);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
