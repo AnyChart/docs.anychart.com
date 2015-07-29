@@ -26,12 +26,12 @@
   ]);
 
   // set chart type
-  chart = anychart.lineChart();
+  chart = anychart.line();
 
-  chart.title().text('Move the Mouse Over the Chart to Add New Points \nDoubleClick to Remove Listeners');
+  chart.title().enabled(true).text('Move the Mouse Over the Chart to Add New Points \nDoubleClick to Remove Listeners');
 
   // set data
-  var spline = chart.spline(dataSet).markers(null);
+  var spline = chart.spline(dataSet);
 
   chart.padding().right(80);
 

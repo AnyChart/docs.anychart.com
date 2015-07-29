@@ -25,10 +25,10 @@
   // setting data
   chart.rangeColumn([
     {x: 'Development', low: Date.UTC(2000, 01, 01), high: Date.UTC(2002, 02, 15)},
-    {x: 'Internal Testing', low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01), fill: 'red'},
-    {x: 'Field Tests', low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01), fill: 'green'},
-    {x: 'Licensing', low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01), fill: 'yellow'}
-  ]).hoverFill('#444444').stroke('gray 0.8').tooltip().enabled(false);
+    {x: 'Internal Testing', low: Date.UTC(2001, 06, 01), high: Date.UTC(2003, 07, 01), fill: '#1976d2'},
+    {x: 'Field Tests', low: Date.UTC(2002, 02, 25), high: Date.UTC(2003, 07, 01), fill: '#ef6c00'},
+    {x: 'Licensing', low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01), fill: '#ffd54f'}
+  ]).hoverFill('#444444').stroke(null).tooltip().enabled(false);
 
   // adjusting labels for dateTime scale. Otherwise it would be the number of milliseconds between the date and midnight January 1 1970
   chart.yAxis().labels()

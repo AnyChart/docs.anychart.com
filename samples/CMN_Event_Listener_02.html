@@ -11,11 +11,7 @@
     var chart = anychart.bar();
 
     // chart title
-    chart.title().text("Range Bar Chart");
-
-    // set axes title
-    chart.xAxis().title().enabled(false);
-    chart.yAxis().title().enabled(false);
+    chart.title().enabled(true).text("Range Bar Chart");
 
     // set data
     var range = chart.rangeBar([
