@@ -7,39 +7,39 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
+  // data for chart
+  var dataSet = anychart.data.set([
+    ["Product A", 90],
+    ["Product B", 65],
+    ["Product C", 73],
+    ["Product D", 88],
+    ["Product E", 75],
+    ["Product F", 100]
+  ]);
+
   // chart type
   var chart = anychart.radar();
 
   // chart title
-  chart.title().text('Tuning Axes Visualization');
+  chart.title("Inverted Radar Scale");
 
   // disable minor ticks
-  chart.yAxis().enabled(true).minorTicks().enabled(false);
+  var yAxis = chart.yAxis();
+  yAxis.enabled(true);
+  yAxis.minorTicks(false);
 
-  chart.xAxis().stroke({
-    keys: ['.2 red', '.4 darkred', '0.6 blue', '0.8 green'],  // set colors position
-    angle: -25,                                               // set angle of colors drawing
-    thickness: 4                                              // set thickness
-  });
+  // set y Scale inversion
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 
-  chart.yAxis().stroke({
-    dash: '7 3',                                              // makes stroke dashed
-    thickness: 2,                                             // set stroke thickness
-    color: '#9900FF'                                          // set stroke color
-  });
-
-  // set data and type of series
-  chart.line([
-    {x: "Administration", value:22},
-    {x: "Sales", value:34},
-    {x: "Marketing", value:16},
-    {x: "Research", value:12},
-    {x: "Support", value:38},
-    {x: "Development", value:47}
-  ]);
+  // set data and adjust visualisation
+  var series = chart.line(dataSet);
+  
+  series.name("Sales");
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
