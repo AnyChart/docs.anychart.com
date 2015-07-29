@@ -23,7 +23,7 @@
   stage = anychart.graphics.create('container');
 
   // create a line chart using the data set
-  var lineChart = anychart.lineChart.apply(null, anychart.data.mapAsTable(data));
+  var lineChart = anychart.line.apply(null, anychart.data.mapAsTable(data));
 
   // set container and position
   lineChart.container(stage);
@@ -54,7 +54,7 @@
   lineChart.draw();
 
   // map x and value from the data set
-  var colChart = anychart.columnChart.apply(null, anychart.data.mapAsTable(data));
+  var colChart = anychart.column.apply(null, anychart.data.mapAsTable(data));
   
     //naming the chart's series (legend)
     colChart.getSeries(0).name('NY');
