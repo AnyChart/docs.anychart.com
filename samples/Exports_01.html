@@ -12,7 +12,7 @@
     {x: 'Chocolate paste', value: 5},
     {x: 'White honey', value: 2},
     {x: 'Strawberry jam', value: 2},
-    {x: 'Сondensed milk', value: 1},
+    {x: 'Сondensed milk', value: 1}
   ];
 
   // create default palette
@@ -24,7 +24,7 @@
   }
 
   //set chart type
-  var chart = anychart.barChart();
+  var chart = anychart.bar();
 
   // set data
   var series = chart.bar(data);
@@ -68,18 +68,18 @@
   pdfButton.innerHTML = 'PDF';
 
   pngButton.onclick = function() {
-      chart.saveAsPNG();
+      chart.saveAsPng();
   };
   svgButton.onclick = function() {
-      chart.saveAsSVG();
+      chart.saveAsSvg();
   };
   jpgButton.onclick = function() {
-      chart.saveAsJPG();
+      chart.saveAsJpg();
   };
   pdfButton.onclick = function() {
     chart.container().height(842).width(595);
     chart.bounds(0, 0, 595, 842);
-    chart.saveAsPDF();
+    chart.saveAsPdf();
     chart.container().height('100%').width('100%');
     chart.bounds(0, 0, chart.container().width()-35, chart.container().height());
   };

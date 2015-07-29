@@ -101,20 +101,20 @@ You can see how it works on the sample below.
 Data tree item may have an unlimited number of data fields thus it requires methods for reading data from any field and item search through field value. The {api:anychart.data.Tree.DataItem#get}**.get()**{api} method gets a value of a specified field of an item. The sample below demonstrates data grid with custom columns. Each column reads data from custom fields of data grid ("year 2004", "year 2005"). The code below shows how to use this method.
 
 ```
-return item.get('year 2004');               // get the value in a field "year 2004" of an item
+return item.get('year2004');               // get the value in a field "year2004" of an item
 ```
 
 {sample :width 690 :height 200}Data\_Tree\_04{sample}
 
 ### Update
 
-Every node in data tree may be updated. The node should be gotten first to proceed information adjustment. Below there is an illustration of adding 1000 to values of the third node.
+Every node in data tree may be updated. The node should be got first to proceed information adjustment. Below there is an illustration of adding 1000 to values of the third node.
 
 ```
 // this part of a code is responsible for increasing the value of the third field "Value"
-function addValue(){
-    tree.getChildAt(2).set('value', (parseInt(tree.getChildAt(2).get('value')) + 1000 )*1+'');
-  }
+function addValue() {
+  tree.getChildAt(2).set("value", tree.getChildAt(2).get("value") + 1000);
+}
 ```
 
 {sample :width 690 :height 200}Data\_Tree\_05{sample}
