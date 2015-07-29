@@ -20,18 +20,19 @@ anychart.onDocumentReady(function() {
     var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
 
     // chart type
-    chart = anychart.lineChart();
-
-    // set title
-    chart.title().text('Multi-series Bubble Chart');
+    chart = anychart.line();
 
     // set axes titles
-    chart.xAxis().title().text('Products');
-    chart.yAxis().title().text('Sales');
+    chart.xAxis().title('Products');
+    chart.yAxis().title('Sales');
+
+    // set bubble size
+    chart.maxBubbleSize(80);
+    chart.minBubbleSize(10);
 
     // set series data
-    series_1 = chart.bubble(seriesData_2).maximumSize(25).minimumSize(1);
-    series_2 = chart.bubble(seriesData_1).maximumSize(25).minimumSize(1);
+    series_1 = chart.bubble(seriesData_2);
+    series_2 = chart.bubble(seriesData_1);
     
 	//enabling the labels
     series_1.labels(true);
