@@ -7,26 +7,19 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
   
-  var data = [
+  var chart = anychart.pyramid([
     {name: 'Fantasy', value: 637166},
     {name: 'Science Fiction', value: 721630},
     {name: 'Detective', value: 148662},
     {name: 'Classics', value: 78662},
     {name: 'Textbooks', value: 90000}
-  ];
+  ]);
   
-  var chart = anychart.pyramid(data);
+  // disable padding between parts of the chart
+  chart.pointsPadding(0);
   
-  chart
-    .fill('gold')                             // set chart inner color
-    .hoverFill('darkred')                     // chart inner color on hover
-    .stroke('darkred')                        // chart stroke
-    .hoverStroke('gold')                      // chart stroke on hover
-    .hatchFill('diagonalbrick', 'darkred')    // set hatch type and color
-    .hoverHatchFill('diagonalbrick', 'gold'); // adjust hatch type and color on hover
-  
-  chart.title().text('Visualization');
-  
+  chart.title().text('Disabled Padding');
+
   // draw chart
   chart.container('container').draw();
 });</script>

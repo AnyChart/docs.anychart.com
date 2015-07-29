@@ -17,14 +17,13 @@
   
   var chart = anychart.pyramid(data);
   
-  chart.labels()
-    .position('outsideRight')   // place labels to the right
-    .hAlign('center')           // manage horizontal align
-    .textFormatter(function(){
-      return this.name+'\n'+this.value;
-    });
+  chart.connectorStroke(
+    '2 #444', // set 2px thickness and #444 color
+    1,        // set lines opacity
+    '4 2'     // dashes and gaps settings
+  );
   
-  chart.connectorLength(45);    // set 45px connectors length
+  chart.title().text('Tuned Labels Connectors');
   
   // draw chart
   chart.container('container').draw();

@@ -15,20 +15,16 @@
     {name: 'Textbooks', value: 90000}
   ];
   
-  var chart= anychart.pyramid(data).overlapMode('allowOverlap');
+  var chart = anychart.pyramid(data);
   
-  chart.connectorStroke(null).labels()
-    .position('outsideRightInColumn')
-    .hAlign('center')
+  chart.labels()
+    .position('outsideRight')   // place labels to the right
+    .hAlign('center')           // manage horizontal align
     .textFormatter(function(){
       return this.name+'\n'+this.value;
     });
-  chart.hoverLabels().fontWeight(900).background({enabled: true, stroke: '#FFF',fill:'#FFF'});
   
-  chart.title().text('Overlapping Labels');
-  
-  // disable chart background
-  chart.background().enabled(false);
+  chart.connectorLength(45);    // set 45px connectors length
   
   // draw chart
   chart.container('container').draw();
