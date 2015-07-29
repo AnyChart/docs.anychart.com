@@ -4,43 +4,43 @@
 
 anychart.onDocumentReady(function () {
 
-        var csvString =
-                '0,0,Activities,1169683200000,1173830400000,,\n' +
-                '1,1,Draft plan,1169683200000,1170460800000,0,\n' +
-                '2,2,Board meeting,1170547200000,1170547200000,0,\n' +
-                '3,3,Research option,1170547200000,1172275200000,0,\n' +
-                '4,4,Final plan,1172275200000,1173830400000,0,\n'
+  var csvString =
+      '0,Activities,1169683200000,1173830400000,\n' +
+      '1,Draft plan,1169683200000,1170460800000,0\n' +
+      '2,Board meeting,1170547200000,1170547200000,0\n' +
+      '3,Research option,1170547200000,1172275200000,0\n' +
+      '4,Final plan,1172275200000,1173830400000,0\n';
 
-        var mapping = {
-            id: 0,
-            index: 1,
-            name: 2,
-            actualStart: 3,
-            actualEnd: 4,
-            parent: 5
-        };  
+  var mapping = {
+    id: 0,
+    name: 1,
+    actualStart: 2,
+    actualEnd: 3,
+    parent: 4
+  };
 
-        var csvSettings = {
-            rowsSeparator: ',',
-            columnsSeparator: ';',
-            ignoreFirstRow: false
-        };
+  var csvSettings = {
+    rowsSeparator: '\n',
+    columnsSeparator: ',',
+    ignoreFirstRow: false
+  };
 
-        treeData = anychart.data.tree(csvString, mapping, csvSettings);
-          
-        // chart type
-        chart = anychart.ganttProject();
-        
-        // chart container
-        chart.container('container');
-        
-        // set chart data
-        chart.data(treeData);
-        
-        // initiate drawing
-        chart.draw();
-          
-        // show all items 
-        chart.fitAll();
-    
+
+  treeData = anychart.data.tree(csvString, mapping, csvSettings);
+
+  // chart type
+  chart = anychart.ganttProject();
+
+  // chart container
+  chart.container('container');
+
+  // set chart data
+  chart.data(treeData);
+
+  // initiate drawing
+  chart.draw();
+
+  // show all items
+  chart.fitAll();
+
 });
