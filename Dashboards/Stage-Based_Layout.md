@@ -135,9 +135,9 @@ Besides the advantage of using layers, there's one more thing that you can do wi
 
 {sample :width 688 :height 700 }DB\_Stage\_06{sample}
 
-##Print
+##Printing
 
-Every browser has a printing function. We can print any page (in case it is not shelled from printing) using this function, but sometimes it can't guarantee that you get what we want or you may want to add "Print dashboard" option to your application.
+Every browser has a printing function. We can print any page using this function, but sometimes it can't guarantee that you get what you want or you may want to add "Print dashboard" or "Print chart" option to your application.
 
 If you have created a dashboard using AnyChart Stage, you can easily print it, learn more in [Printing tutorial](../Common_Settings/Printing#stage_printing).
 
