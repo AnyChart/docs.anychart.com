@@ -7,18 +7,27 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
   
-  var data = [
-    {name: 'Fantasy', value: 637166},
-    {name: 'Science Fiction', value: 721630},
-    {name: 'Detective', value: 148662},
-    {name: 'Classics', value: 78662},
-    {name: 'Textbooks', value: 90000}
-  ];
+  // define chart type and set data
+  var chart = anychart.pyramid([
+    {value: 232, hatchFill: 'diagonalcross', name: 'diagonalcross'},
+    {value: 224, hatchFill: 'zigzag', name: 'zigzag'},
+    {value: 252, hatchFill: 'horizontal', name: 'horizontal'},
+    {value: 219, hatchFill: 'vertical', name: 'vertical'},
+    {value: 169, hatchFill: 'dashedbackwarddiagonal', name: 'dashedbackwarddiagonal'},
+    {value: 217, hatchFill: 'grid', name: 'grid'},
+    {value: 175, hatchFill: 'dashedforwarddiagonal', name: 'dashedforwarddiagonal'},
+    {value: 199, hatchFill: 'dashedhorizontal', name: 'dashedhorizontal'},
+    {value: 297, hatchFill: 'plaid', name: 'plaid'},
+    {value: 317, hatchFill: 'weave', name: 'weave'}
+  ]).stroke('#888').fill('#EEE');
   
-  // set chart type and data
-  var chart = anychart.pyramid(data);
+  chart.labels().enabled(false);
   
-  chart.reversed(true);   // turn pyramid upside down
+  chart.tooltip().contentFormatter(function(){
+    return 'Hatch fill type\n'+this.name;
+  });
+  
+  chart.title().text('HatchFill Settings');
   
   // draw chart
   chart.container('container').draw();

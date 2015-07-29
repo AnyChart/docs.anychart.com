@@ -26,6 +26,7 @@
   //set major axis ticks
   var axis = gauge.axis();
   axis.ticks()
+      .enabled(true)
       .fill('white')
       .stroke('#888')
       .type('trapezoid')
@@ -44,7 +45,7 @@
       .position('i')
       .fill('#F0673B .9')
       .stroke('#F0673B')
-      .radius(80);
+      .radius(65);
  
   // draw chart
   gauge.container('container').draw();
