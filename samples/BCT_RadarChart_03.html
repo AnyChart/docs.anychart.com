@@ -9,37 +9,51 @@
 
   // data for chart
   var dataSet = anychart.data.set([
-    ["Greeting Cards", 65],
-    ["Plush Toys", 21],
-    ["Romantic Dinner", 44],
-    ["Perfume/Cologne", 12],
-    ["Candy", 38],
-    ["Jewelry", 11],
-    ["Flowers", 32],
-    ["Gift Cards", 29],
-    ["Other Gifts", 17]
+    ["New Zealand",  26],
+    ["Australia",    24],
+    ["France",       22],
+    ["South Africa", 14],
+    ["Samoa",        8]
   ]);
 
   // chart type
   var chart = anychart.radar();
 
   // chart title
-  chart.title().text('Most Popular Ways to Celebrate Valentine’s Day');
+  chart.title("Rugby World Cup Overall Record 1987-2003");
 
-  // set start angle of the chart
-  chart.startAngle(90);
+  // disable minor ticks
+  var yAxis = chart.yAxis();
+  yAxis.enabled(true);
+  yAxis.minorTicks(false);
+
+  // fill set
+  var fillSettings = {
+    keys: [".35 white", ".9 gray"],
+    angle: -135,
+    mode: chart.bounds()
+  };
+
+  // apply fill set
+  var grid = chart.grid(0);
+  grid.oddFill(fillSettings);
+  grid.evenFill(fillSettings);
+  grid.stroke("black");
+  grid.layout("circuit");
+  
+  var grid1 = chart.grid(1);
+  grid1.oddFill(null);
+  grid1.evenFill(null);
+  grid1.stroke("black");
 
   // set data and adjust visualisation
   var series = chart.line(dataSet);
-
-  // disable tooltips
-  series.tooltip().enabled(false);
-
-  // enable markers on series
-  series.markers().enabled(true);
-
+  series.markers(true);
+  series.name("Top 5 Country");
+  
   // draw chart
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

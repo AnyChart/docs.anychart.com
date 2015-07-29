@@ -29,9 +29,9 @@
   ]);
   
   // chart type
-  chart = anychart.columnChart();
+  chart = anychart.column();
   
-  chart.title().text('Darken Colors Sample');
+  chart.title('Darken Colors Sample');
   
   // set data and set additionla information in tooltip
   chart.column(data).tooltip().contentFormatter(function(){
