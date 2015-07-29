@@ -28,7 +28,7 @@ Let's create a simple Bullet Chart. The main bar represents 2005 revenue and the
 
 ```
   // Create bullet chart
-  var chart = anychart.bulletChart([
+  var chart = anychart.bullet([
     {value: 637.166}                  //2005 revenue
   ]);
   chart.range().from(0).to(750);      //maximum annual income ever 
@@ -98,7 +98,7 @@ Here is a sample with the data from dashboard above with an only change of axis 
 
 ### Inversion
 
-AnyChart allows to invert any axis on a dashboard. Inversion is to be set using the **scale().inverted()** method:
+AnyChart allows to invert any axis on a dashboard. Inversion is to be set using the {api:anychart.scales.Linear#inverted}**scale().inverted()**{api} method:
 
 ```
   chart.scale().inverted(true);
@@ -110,7 +110,7 @@ Below this you can see a demonstration of a horizontal bullet chart with inverte
 
 ### Minimum and Maximum
 
-By default AnyChart calculates axis minimum and maximum automatically, as you can see on the scale inversion chart sample above: minimal value on the Y Axis is 0, and maximum is 15. You can change these values by setting them for the **.maximum()** and **.minimum()** parameters:
+By default AnyChart calculates axis minimum and maximum automatically, as you can see on the scale inversion chart sample above: minimal value on the Y Axis is 0, and maximum is 15. You can change these values by setting them for the {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters:
 
 ```
   chart.yScale().minimum(-5).maximum(20);
@@ -137,7 +137,7 @@ Here is the sample with all 4 marker types:
 
 ### Style
 
-For clearer distinction between markers it is very useful to adjust style settings of markers. There are three things in a marker you can control and adjust: **.fill()**, **.stroke()** and **.gap()**. Fill method is responsible for inner color of a marker, stroke is responsible for the color of a border line and gap method is responsible for the size of a marker.
+For clearer distinction between markers it is very useful to adjust style settings of markers. There are three things in a marker you can control and adjust: **fill**, **stroke** and **gap**. Fill method is responsible for inner color of a marker, stroke is responsible for the color of a border line and gap method is responsible for the size of a marker.
   
   
 Here is the sample of an ellipse sharped marker with blue stroke, gold inner color and a size 0.7 size of a chart. 
