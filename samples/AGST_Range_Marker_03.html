@@ -47,7 +47,7 @@
     .from(0)
     .to(30000)
     .fill({
-      keys: ['.1 green', '.5 yellow', '.9 red'],
+      keys: ['.1 #009900', '.5 #ffa000', '.9 #dd2c00'],
       angle: -90,
       opacity: 0.5
     });
@@ -59,9 +59,9 @@
     .anchor('center')
     .offsetX(10)
     .value(25000)
+    .fontColor('#212121')
     .text('Good')
-    .fontSize(15)
-    .fontWeight(600);
+    .fontSize(13);
 
   // set text marker at the center
   chart.textMarker(1)
@@ -70,9 +70,9 @@
     .anchor('center')
     .offsetX(10)
     .value(15000)
+    .fontColor('#212121')
     .text('Average')
-    .fontSize(15)
-    .fontWeight(600);
+    .fontSize(13);
 
   // set text marker at the center
   chart.textMarker(2)
@@ -81,10 +81,9 @@
     .anchor('center')
     .offsetX(10)
     .value(5000)
-    .fontColor('black')
+    .fontColor('#212121')
     .text('Severe')
-    .fontSize(12)
-    .fontWeight(600);
+    .fontSize(13);
 
   // draw
   chart.container('container').draw();
