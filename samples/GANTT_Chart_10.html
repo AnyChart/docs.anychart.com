@@ -40,11 +40,7 @@ function customTextFormatter(item) {
    return "";
 }
 
-dataGrid.column(0).title().text("№");
-
-dataGrid.column(1).width(100).textFormatter(function(item) {
-    return item.get("name");
-  }).title().text("Resources");
+dataGrid.column(1).width(100).title("Resources");
 
 var custom = dataGrid.column(2);
   custom.title("Start Date");

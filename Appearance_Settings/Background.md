@@ -71,8 +71,8 @@ AnyChart allows to create Gradient fills for any background. There are two types
 
 ``` 
     chart.background().fill({
-        keys: ['.1 lightblue', '.7 blue', '.9 darkblue'],
-        angle: -130,
+        keys: ['#fff', '#66f', '#fff'],
+        angle: 130,
     });
 ```
 

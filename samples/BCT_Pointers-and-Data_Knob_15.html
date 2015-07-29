@@ -35,6 +35,7 @@ anychart.onDocumentReady(function() {
 
 		//ticks settings
     axis.ticks()
+        .enabled(true)
         .type('trapezoid')
         .length('8');
 
@@ -47,7 +48,7 @@ anychart.onDocumentReady(function() {
     gauge.knob(0)
         .verticesCount(15)
         .verticesCurvature(.5)
-        .topRadius(80)
+        .topRadius(70)
         .bottomRadius(50);
         
 		//draw the chart
