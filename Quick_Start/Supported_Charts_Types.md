@@ -20,6 +20,7 @@ with a links to tutorials where you can find out how to create them (with the sa
 <tr><td>[Gantt Chart](../Gantt_Chart/Quick_Start)</td><td></td><td></td></tr>
 <tr><td>[Funnel Chart](../Basic_Charts_Types/Funnel_Chart)</td><td>Yes</td><td>No</td></tr>
 <tr><td>[Line Chart](../Basic_Charts_Types/Line-Spline-StepLine_Charts)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[Maps](../Maps/Overview)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Marker Chart](../Basic_Charts_Types/Marker_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[OHLC Chart](../Basic_Charts_Types/OHLC_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Pie Chart](../Basic_Charts_Types/Pie-Doughnut_Charts)</td><td>Yes</td><td>No</td></tr>
