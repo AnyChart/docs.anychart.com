@@ -14,8 +14,8 @@
     {x: 'Português', value: 287318},
     {x: 'Español', value: 281288},
     {x: 'Русский', value: 204379},
-    {x: 'Norsk (bokmål)', value: 146215},
-    {x: '中文', value: 133410}
+    {x: '中文', value: 146215},
+    {x: 'Norsk\n(bokmål)', value: 133410}
   ]);
   
   
@@ -28,10 +28,10 @@
   }
 
   // chart type
-  var chart = anychart.columnChart();
+  var chart = anychart.column();
 
   // title
-  chart.title().text('International Symbols Support');
+  chart.title('International Symbols Support');
 
   // set data
   var series = chart.column(data);
@@ -49,6 +49,7 @@
     .enabled(true)
     .position('centerTop')
     .anchor('center')
+    .hAlign('center')
     .offsetY(-15)
     .textFormatter(function(){return this.x});
 

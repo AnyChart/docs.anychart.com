@@ -26,12 +26,12 @@
   ]);
 
   // set chart type
-  chart = anychart.lineChart();
+  chart = anychart.line();
 
-  chart.title().text('Move the Mouse to Add Points, DoubleClick to stop it');
+  chart.title().enabled(true).text('Move the Mouse to Add Points, DoubleClick to stop it');
 
   // set data
-  var line = chart.line(dataSet).markers(null);
+  var line = chart.line(dataSet);
 
   chart.padding().right(80);
 

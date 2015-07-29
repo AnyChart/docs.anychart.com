@@ -83,7 +83,7 @@ Now, when simple theme is ready we will learn where we can store it and how to a
 
 ##Internal Themes
 
-You can store a theme right where your chart code is:
+You can store a theme right where your chart code is, just be sure to apply the theme before you create a chart:
 
 ```
   // create variable for custom theme
@@ -175,7 +175,7 @@ The content of **custom_theme.js** should be something like to the snippet below
 ### Default Theme
 
 You can find **defaultTheme.js** in **binaries** folder in the downloaded AnyChart package.
-This file can be found in **binaries** folder in the downloaded AnyChart package. This file contains default AnyChart theme. You **DON'T NEED** to reference this file to use Default theme, it is built-in in the component, we provide this file only as a reference for a custom theme you may want to create yourself.
+This file can be found in **binaries** folder in the downloaded AnyChart package. You **DON'T NEED** to reference this file to use Default theme, it is built-in in the component, we provide this file only as a reference for a custom theme you may want to create yourself.
   
 **Note**: the theme you create need not contain all settings you see in a default theme - you need to tune only the settings you want to change or want them to be persistent no matter what.
 
