@@ -6,45 +6,46 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
+  
   // set stage
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
   var palette = anychart.palettes.distinctColors().colors();
   
   // data for each person
   var john = anychart.data.set([
-    {x: '2001', value: 3000},
-    {x: '2002', value: 4000},
-    {x: '2003', value: 3000}
+    {x: "2001", value: 3000},
+    {x: "2002", value: 4000},
+    {x: "2003", value: 3000}
   ]);
   var jake = anychart.data.set([
-    {x: '2001', value: 2000},
-    {x: '2002', value: 4000},
-    {x: '2003', value: 6000}
+    {x: "2001", value: 2000},
+    {x: "2002", value: 4000},
+    {x: "2003", value: 6000}
   ]);
   var peter = anychart.data.set([
-    {x: '2001', value: 10000},
-    {x: '2002', value: 6000},
-    {x: '2003', value: 2000}
+    {x: "2001", value: 10000},
+    {x: "2002", value: 6000},
+    {x: "2003", value: 2000}
   ]);
   
   function summarizer (salesData){
     var personSales = 0;
     for (var i=0;i<salesData.mapAs().getRowsCount();i++){
-      personSales+=salesData.mapAs().get(i, 'value');
+      personSales+=salesData.mapAs().get(i, "value");
     }
     return personSales;
   }
   
   // data for column chart
   var data = anychart.data.set([
-    {x: 'John', value: summarizer(john), clickData: john, fill: palette[0]},
-    {x: 'Jake', value: summarizer(jake), clickData: jake, fill: palette[1]},
-    {x: 'Peter', value: summarizer(peter), clickData: peter, fill: palette[2]}
+    {x: "John", value: summarizer(john), clickData: john, fill: palette[0]},
+    {x: "Jake", value: summarizer(jake), clickData: jake, fill: palette[1]},
+    {x: "Peter", value: summarizer(peter), clickData: peter, fill: palette[2]}
   ]);
   
   var chart = anychart.column();
   
-  chart.title().text('Sales Report');
+  chart.title("Sales Report");
   
   // set data and color
   var column = chart.column(data);
@@ -52,14 +53,14 @@
   column.listen(
     
     // listener type
-    'pointClick',
+    "pointClick",
     
     // function, if listener triggers
     function(e) {
       click(
-        data.mapAs().get(e.pointIndex, 'clickData'),
-        data.mapAs().get(e.pointIndex, 'x'),
-        data.mapAs().get(e.pointIndex, 'fill')
+        data.mapAs().get(e.pointIndex, "clickData"),
+        data.mapAs().get(e.pointIndex, "x"),
+        data.mapAs().get(e.pointIndex, "fill")
       );
     });
   
@@ -69,44 +70,52 @@
   function click (fullData, name, fill) {
     chart.dispose();
     chart = anychart.line();
-    chart.line(fullData).stroke(fill);
-    chart.title().text('Sales details for '+name);
+    var line = chart.line(fullData);
+    line.stroke(fill);
+    chart.title("Sales details for "+name);
     chart.container(stage);
     chart.draw();
     
-    var customTitle = anychart.ui.title();
-    customTitle
-      .text('Back to Sales Manager Report') // set title text
-      .orientation('bottom')                // place title at the bottom
-      .align('right')                       // stick text to the right side
-      .fontSize(11)                         // set text size
-      .fontFamily('Tahoma')                 // set font family
-      .fontWeight(400)                      // unbold title
-      .background()                         // background settings
-        .enabled(true)                      // eanble background
-        .fill('#FFFFFF')                    // disable fill
-        .stroke('#000000');                 // set black border to title
+    var label= chart.label();
+    // set title text
+    label.text("Back to Sales Manager Report");
+    // place title at the bottom
+    label.position("bottomRight");
+    // stick text to the right side
+    label.anchor("bottomRight");
+    // set text size
+    label.fontSize(15);
+    // set font family
+    label.fontFamily("Tahoma");
+    // unbold title
+    label.fontWeight(400);
+    // background settings
+    var labelBackground = label.background();
+    // eanble background
+    labelBackground.enabled(true);
+    // disable fill
+    labelBackground.fill(null);
+    // set black border to title
+    labelBackground.stroke("#000000");
     
     // set container and draw title
-    customTitle.listen('click', function(){
+    label.listen("click", function(){
       chart = anychart.column();
-      chart.title().text('Sales Report');
+      chart.title("Sales Report");
       var column = chart.column(data);
       column.listen(
-        'pointClick',
+        "pointClick",
         function(e) {
           click(
-            data.mapAs().get(e.pointIndex, 'clickData'),
-            data.mapAs().get(e.pointIndex, 'x'),
-            data.mapAs().get(e.pointIndex, 'fill')
+            data.mapAs().get(e.pointIndex, "clickData"),
+            data.mapAs().get(e.pointIndex, "x"),
+            data.mapAs().get(e.pointIndex, "fill")
           );
         });
-      chart.container(stage).draw();
-      customTitle.dispose();
+      chart.container(stage);
+      chart.draw();
+      label.dispose();
     });
-    
-    // draw custom title
-    customTitle.container(stage).draw();
   }
 });</script>
 </head>
