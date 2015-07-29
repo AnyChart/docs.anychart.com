@@ -24,10 +24,10 @@
   var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
 
   // chart type
-  var chart = anychart.lineChart();
+  var chart = anychart.line();
 
   // set title
-  chart.title().text('Image Fill of Background').background().enabled(true).fill('gold');
+  chart.title().enabled(true).text('Image Fill of Background').padding(10).background().enabled(true).fill('gold');
 
   // set chart background
   chart.background().fill({

@@ -7,12 +7,6 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // chart type
-  var chart = anychart.areaChart();
-
-  // set title
-  chart.title().text('Column Chart');
-
   // data
   var data = anychart.data.set([
     {x: "P1", value: 16},
@@ -36,15 +30,19 @@
     {x: "P20", value: 28}
   ]);
 
+  // chart type
+  var chart = anychart.area();
+
   // set data
   var series = chart.splineArea(data);
 
   // adjust data visualization
-  series.fill('yellow 0.7').hoverFill('red');series.markers().enabled(true).fill('yellow');
+  series.fill('yellow 0.7').hoverFill('red');
+  series.markers().enabled(true).fill('yellow');
   series.hoverMarkers().enabled(true).fill('white').stroke('gray');
 
   // adjust title background fill
-  chart.title().text('Gradient Background Fill').background().enabled(true).fill('gold');
+  chart.title().enabled(true).text('Gradient Background Fill').background().enabled(true).fill('gold');
 
   // adjust chart background fill
   chart.background().fill({

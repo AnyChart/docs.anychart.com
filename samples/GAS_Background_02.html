@@ -8,7 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  var chart = anychart.columnChart();
+  var chart = anychart.column();
 
   // set data
   chart.column([
@@ -20,19 +20,11 @@
   ]);
 
   // adjust title
-  chart.title().text('Solid Background Fill').background().enabled(true).fill('gold');
-
-  // adjust chart background fill
-  chart.background().fill('#aaaaaa');
+  chart.title().text('Solid Background Fill').padding(10).background().enabled(true).fill('gold');
 
   // disable axes
   chart.xAxis().enabled(false);
   chart.yAxis().enabled(false);
-
-  // disable grid
-  chart.grid().enabled(false);
-  chart.minorGrid().enabled(false);
-  chart.grid(1).enabled(false);
 
   // draw
   chart.container('container').draw();

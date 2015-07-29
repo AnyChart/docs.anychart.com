@@ -8,10 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  var chart = anychart.areaChart();
-
-  // set title
-  chart.title().text('Column Chart');
+  var chart = anychart.area();
 
   // data
   var data = anychart.data.set([
@@ -42,7 +39,7 @@
   series.hoverMarkers().enabled(true).fill('white').stroke('gray');
 
   // adjust title background fill
-  chart.title().text('Radial Gradient Background Fill').background().enabled(true).fill('gold');
+  chart.title().enabled(true).text('Radial Gradient Background Fill').padding(10).background().enabled(true).fill('gold');
 
   // adjust chart background fill
   chart.background().fill(['.5 lightblue', '.9 blue', 'darkblue'], 0.5, 0.5, -130);
