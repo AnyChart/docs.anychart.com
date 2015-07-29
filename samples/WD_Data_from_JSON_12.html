@@ -5,20 +5,21 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-  var json = {
-    // create chart
-    "chart": {
-      // set chart container
-      "container": "container",
-      // set chart type
-      "type": "cartesian",
-      // set chart title
-      "title": "Customized JSON Chart",
-      // create custom scales
-      "scales": {
+    <script x-export="chart">
+  anychart.onDocumentReady(function() {
+    var json = {
+      // create chart
+      "chart": {
+        // set chart container
+        "container": "container",
+        // set chart type
+        "type": "scatter",
+        // set chart title
+        "title": "Customized JSON Chart",
+        // create custom scales
+        "scales": [{},{},
         // first custom scale
-        "extraXScale": {
+        {
           // scale type
           "type": "linear",
           // set scale minimum value
@@ -27,11 +28,11 @@
           "ticks": {"interval": "5000"}
         },
         // second custom scale
-        "extraYScale":{
+        {
           // set scale type
           "type": "linear"
         }
-      },
+      ],
       // adjust default y scale
       "yScale": {
         // set ticks interval
@@ -76,7 +77,7 @@
           // set axis position
           "orientation": "right",
           // set axis scale
-          "scale": "extraYScale"
+          "scale": 3
         }
       ],
       // adjust x axes
@@ -109,7 +110,7 @@
           // disable stagger mode
           "staggerMode": false,
           // set axis scale
-          "scale": "extraXScale"
+          "scale": 2
         }
       ],
       // major grid settings
@@ -164,7 +165,7 @@
       // series settings
       "series": [{
         // set series type
-        "seriesType": "spline",
+        "seriesType": "line",
         // adjust markers visual settings
         "markers": {
           "size": 1,
@@ -173,9 +174,9 @@
           "stroke": null
         },
         // bound the series to custom y scale
-        "yScale": "extraYScale",
+        "yScale": 3,
         // bound the series to custom x scale
-        "xScale": "extraXScale",
+        "xScale": 2,
         // adjust visual appearance of the markers on mouse over
         "hoverMarkers":{
           "size": 3,
@@ -237,7 +238,7 @@
         ]
       },{
         // series type
-        "seriesType": "spline",
+        "seriesType": "line",
         // markers visual appearance
         "markers": {
           "size": 1,
