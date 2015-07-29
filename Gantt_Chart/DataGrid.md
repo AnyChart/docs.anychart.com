@@ -27,7 +27,7 @@ By default, Gantt Chart displays two columns: rows counts and names of Gantt ele
 //create new column contains names
 dataGrid.column(4).width(100).textFormatter(function(item) {
     return item.get('name');
-  }).title().text('Resources');
+  }).title('Resources');
 ```
 
 Just see simple code below. You can create new columns using this method and their ids can assume different values that do not have to be consecutive.
@@ -73,7 +73,7 @@ Column content can be tuned as well as its title with the {api:anychart.core.ui.
 ```
 //create a column contains all IDs
 column.textFormatter(function(item) {
-    return item.get('id');
+    return item.get('id') + '';
 });
 ```
 

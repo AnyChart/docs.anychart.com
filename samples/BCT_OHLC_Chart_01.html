@@ -17,14 +17,14 @@
   ];
 
   // chart type
-  var chart = anychart.financialChart();
+  var chart = anychart.financial();
 
   // set axes title
-  chart.xAxis().title().text('Day');
-  chart.yAxis().title().text('Price');
+  chart.xAxis().title('Day');
+  chart.yAxis().title('Price');
 
   // chart title
-  chart.title().text('Open High Low Close (OHLC) Chart');
+  chart.title('Open High Low Close (OHLC) Chart');
 
   // adjust x scale type
   chart.xScale()

@@ -1,28 +1,30 @@
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+  <script x-export="chart">
+    anychart.onDocumentReady(function() {
 
-		// create data set on our data
-    dataSet = anychart.data.set([50]);
-    
-		// set the gauge type
-    gauge = anychart.circularGauge();
+      // create data set on our data
+      dataSet = anychart.data.set([50]);
 
-		// gauge settings
-    gauge.data(dataSet);
-    gauge.padding("10%");
-    gauge.startAngle(270);
-    gauge.sweepAngle(180);
+      // set the gauge type
+      gauge = anychart.circularGauge();
 
-		// draw the chart
-    gauge.container("container");
-    gauge.draw();
-});</script>
+      // gauge settings
+      gauge.data(dataSet);
+      gauge.padding("10%");
+      gauge.startAngle(270);
+      gauge.sweepAngle(180);
+
+      // draw the chart
+      gauge.container("container");
+      gauge.draw();
+    });
+  </script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

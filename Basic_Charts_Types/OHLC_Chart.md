@@ -101,7 +101,7 @@ Now we need to convert this data table into acceptable format. In terms of AnyCh
     {x: Date.UTC(2007, 8, 31), open:513.10, high:516.50, low:511.47, close:515.25},
     {x: Date.UTC(2007, 9, 4), open:515.02, high:528.00, low:514.62, close:525.15}
   ];
-  chart = anychart.area();
+  chart = anychart.financial();
   chart.ohlc(data);
 ```
 

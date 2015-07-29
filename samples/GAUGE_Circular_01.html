@@ -1,26 +1,28 @@
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+  <script x-export="chart">
+    anychart.onDocumentReady(function() {
 
-  // create data set on our data
-  dataSet = anychart.data.set([50]);
+      // create data set on our data
+      dataSet = anychart.data.set([50]);
 
-  // set the gauge type
-  gauge = anychart.circularGauge();
-  
-  // link the data with the gauge
-  gauge.data(dataSet);
-  
-  // draw the chart
-  gauge.container("container");
-  gauge.draw();
+      // set the gauge type
+      gauge = anychart.circularGauge();
 
-});</script>
+      // link the data with the gauge
+      gauge.data(dataSet);
+
+      // draw the chart
+      gauge.container("container");
+      gauge.draw();
+
+    });
+  </script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
