@@ -194,8 +194,6 @@
     .text('Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>')  // set title text
     .fontSize(14)               // set font size
     .hAlign('center');
-
-  chart.legend().margin(10);
   
   // prevent chart overlapping by legends
   chart.margin().bottom(stage.height() - johnLegend.getRemainingBounds().getHeight() - 10);
