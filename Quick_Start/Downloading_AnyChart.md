@@ -3,10 +3,10 @@ Downloading AnyChart
 ======================
 
 * [Downloading](#downloading)
-** [AnyChart](#anychart)
-** [AnyGantt](#anygantt)
-** [AnyMap](#anymap)
-** [Bundle](#bundle)
+ * [AnyChart](#anychart)
+ * [AnyGantt](#anygantt)
+ * [AnyMap](#anymap)
+ * [Bundle](#bundle)
 * [AnyChart CDN](#anychart_cdn)
 * [Production vs Development Builds](#production_vs_development_builds)
 * [Package Content](#package_content)
