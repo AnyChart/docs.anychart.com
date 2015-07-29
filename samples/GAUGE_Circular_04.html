@@ -1,43 +1,44 @@
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-    
-		//create data set on our data
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+  <script x-export="chart">anychart.onDocumentReady(function() {
+
+    //create data set on our data
     dataSet = anychart.data.set([50]);
-    
-		//set the gauge type
+
+    //set the gauge type
     gauge = anychart.circularGauge();
 
-		//gauge settings
+    //gauge settings
     gauge.data(dataSet);
     gauge.padding('10%');
     gauge.startAngle(270);
     gauge.sweepAngle(180);
-   
-		//axis settings
+
+    //axis settings
     var axis = gauge.axis()
         .radius(95)
         .width(1);
+    axis.ticks().enabled(true);
 
-		//scale settings
+    //scale settings
     axis.scale()
         .minimum(0)
         .maximum(120)
         .ticks({interval: 10})
         .minorTicks({interval: 1});
 
-		//minor ticks settings
+    //minor ticks settings
     axis.minorTicks()
         .enabled(true);
 
-		//draw the chart
+    //draw the chart
     gauge.container('container').draw();
-});</script>
+  });</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
