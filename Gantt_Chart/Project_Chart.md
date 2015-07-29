@@ -35,16 +35,18 @@ Here is a simple sample to illustrate how to create a project chart:
 // hierarchy 1 by table
 
   {
+    'id': 1,
     'name': 'first',
     'actualStart': Date.UTC(2010, 0, 17, 8),
     'actualEnd': Date.UTC(2010, 1, 5, 18),
   },
   {
+    'id': 2,
+    'parent': 1,
     'name': 'second',
-    'parent': 'first',
     'actualStart': Date.UTC(2010, 0, 17, 8),
     'actualEnd': Date.UTC(2010, 0, 25, 12)
-  },
+  }
 ```
 
 ```
@@ -59,8 +61,8 @@ Here is a simple sample to illustrate how to create a project chart:
         "name": "second",
         "actualStart": Date.UTC(2007, 0, 25),
         "actualEnd": Date.UTC(2007, 1, 3)
-      },
-      ]
+      }
+    ]
  }
 ```
 
@@ -164,8 +166,8 @@ Tracking progress can be complicated, but you can show percent complete using pr
     "name": "research",
     "actualStart": Date.UTC(2009, 1, 4),
     "actualEnd": Date.UTC(2009, 2, 4),
-    "progressValue": '13'
-},
+    "progressValue": '13%'
+}
 ```
 
 {sample :width 690 :height 200}GANTT\_Chart\_05{sample}
@@ -173,11 +175,13 @@ Tracking progress can be complicated, but you can show percent complete using pr
 <br>Let's demonstrate how to apply different settings to progress bar for custom visualisation.
 
 ```
+{
     'progressValue': "17%",
     'progress':{
         'fill': 'blue',
-        'label': {'value': 'progress value'}
-    ,
+        'label': {'value': 'progress value'
+    }
+}
 ```
 
 ## Actual and Planned
@@ -257,7 +261,15 @@ If there is a need to add an additional connection between tasks, you can define
 
 ```
 // connectors in data
-{"id": "4", "name": "resolution", parent:"2", "actualStart": 400000, "actualEnd": 800000, "connectTo": "5", "connectorType": "FinishStart"},
+{
+    "id": "4",
+    "name": "resolution",
+    parent:"2",
+    "actualStart": Date.UTC(2010, 4, 29, 9),
+    "actualEnd": Date.UTC(2010, 5, 12, 11),
+    "connectTo": "5",
+    "connectorType": "FinishStart"
+}
 ```
 
 {sample :width 690 :height 170}GANTT\_Chart\_06{sample}
@@ -266,9 +278,9 @@ If there is a need to add an additional connection between tasks, you can define
 
 ```
 'connector': {
-            'stroke': {color: '#3300CC .2'},
-            'fill': {'color': '6600CC .5'}
-        }
+    'stroke': {color: '#3300CC .2'},
+    'fill': {'color': '6600CC .5'}
+}
 ```
 
 In the sample below we have a Gantt Chart with simple data and we'll color each connector to different color. Here is the sample:

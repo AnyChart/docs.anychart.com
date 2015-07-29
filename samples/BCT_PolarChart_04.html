@@ -7,70 +7,59 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  var stage = acgraph.create('container');
-
-  // data for chart
-  var dataSet = anychart.data.set([
-    [0, 80],
-    [3, 0],
-    [6, 80],
-    [9, 0],
-    [12, 80],
-    [15, 0],
-    [18, 80],
-    [21, 0],
-    [24, 0],
-    [3, 80],
-    [6, 0],
-    [9, 80],
-    [12, 0],
-    [15, 80],
-    [18, 0],
-    [21, 80],
-    [24, 0],
-    [21, 0]
-  ]);
-
   // chart type
   var chart = anychart.polar();
 
   // chart title
-  chart.title().enabled(true).text('Polar Chart Plot Background Sample');
+  chart.title("Tuning Axes Visualization");
 
   // disable minor ticks
-  chart.yAxis().enabled(true).minorTicks().enabled(false);
+  var yAxis = chart.yAxis();
+  yAxis.enabled(true);
+  yAxis.minorTicks(false);
 
-  // set ticks interval for y scale
-  chart.xScale().maximum(24).ticks().interval(4);
+  // set start angle for the chart
+  chart.startAngle(270);
 
-  // adjust content and visualisation of labels
-  chart.xAxis()
-    .labels()
-    .fontWeight(900)
-    .textFormatter(
-      function(){
-        return this.value + '.00';
-      });
+  var xAxis = chart.xAxis();
+  xAxis.stroke({
+    // set colors position
+    keys: [".2 red", ".4 darkred", "0.6 blue", "0.8 green"],
+    // set angle of colors drawing
+    angle: -25,
+    // set thickness
+    thickness: 4
+  });
 
-  // set background color
-  chart.background().enabled(true).fill('white');
+  var yAxis = chart.yAxis();
+  yAxis.stroke({
+    // makes stroke dashed
+    dash: "7 3",
+    // set stroke thickness
+    thickness: 2,
+    // set stroke color
+    color: "#9900FF"
+  });
 
-  // fill set
-  var fillSettings = {
-    keys: ['.35 white', '.9 gray'],
-    angle: -135,
-    mode: chart.bounds()
-  };
-
-  // apply fill set
-  chart.grid(0).oddFill(fillSettings).evenFill(fillSettings).stroke('black');
-  chart.grid(1).oddFill(null).evenFill(null).stroke('black');
-
-  // set data
-  chart.line(dataSet).tooltip().enabled(false);
+  // set data and type of series
+  chart.line([
+    {x: 2.9, value: 191},
+    {x: 3.1, value: 42},
+    {x: 4, value: 20},
+    {x: 4.8, value: 42},
+    {x: 5.1, value: 191},
+    {x: 6.8, value: 51},
+    {x: 7.2, value: 120},
+    {x: 7.9, value: 41},
+    {x: 8.8, value: 120},
+    {x: 9.2, value: 51}
+  ]);
   
-  // draw chart
-  chart.container(stage).draw();
+  chart.legend(false);
+
+      // draw chart
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
