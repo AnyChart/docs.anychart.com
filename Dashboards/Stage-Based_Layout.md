@@ -24,13 +24,8 @@ To get an access to some useful settings of the stage we should do a custom crea
 ```
 Here we have defined the container for the stage simultaneously with enabling the stage. The following piece of code means the same:
 ```
-<<<<<<< HEAD
-	var stage = anychart.graphics.create();
-	stage.container('container');
-=======
   var stage = anychart.graphics.create;
   stage.container('container');
->>>>>>> docs-DVF-1219-Stage-Based-Layout
 ```
 
 This will make the stage of the main container's width and height by default. To change the default values of those parameters, write them after the name of the container in brackets. 
