@@ -7,26 +7,17 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
   
-  var data = [
-    // column 0
-    28,   //row 0
-    26,   //    1
-    27,   //    2
-    "25", //    3
-    "29"  //    4
-  ];
-
-  // create a data set  
-  var dataSet = anychart.data.set(data);
-
-  // create a pie chart using the data set
-  var pieChart = anychart.pieChart(dataSet);
-
-  // set container id for the chart  
-  pieChart.container('container');
-
-  // initiate chart drawing
-  pieChart.draw();
+    chart = anychart.lineChart([
+    28, 
+    26, 
+    27, 
+    25,
+    29,
+    28
+    ]);
+ 
+	// draw
+	chart.container('container').draw();
 });</script>
 </head>
 <body>
