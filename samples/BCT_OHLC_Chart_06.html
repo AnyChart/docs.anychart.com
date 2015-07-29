@@ -17,10 +17,10 @@
   ]);
 
   // chart type
-  var chart = anychart.financialChart();
+  var chart = anychart.financial();
 
   // chart title
-  chart.title().text('Visualization');
+  chart.title('Visualization');
 
   // adjust x scale type
   chart.xScale()
@@ -37,8 +37,8 @@
     .hoverRisingStroke('darkgreen', 3);
 
   // set axes title
-  chart.xAxis().title().text('Day');
-  chart.yAxis().title().text('Price');
+  chart.xAxis().title('Day');
+  chart.yAxis().title('Price');
 
   // set x axis lables width for the better outlook
   chart.xAxis().staggerLines(1).labels().textFormatter(function(value){
