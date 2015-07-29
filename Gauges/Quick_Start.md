@@ -64,6 +64,7 @@ anychart.onDocumentReady(function() {
   //set major axis ticks
   var axis = gauge.axis();
   axis.ticks()
+      .enabled(true)
       .fill('white')
       .stroke('#888')
       .type('trapezoid')
@@ -134,6 +135,7 @@ anychart.onDocumentReady(function() {
   //set major axis ticks
   var axis = gauge.axis();
   axis.ticks()
+      .enabled(true)
       .fill('white')
       .stroke('#888')
       .type('trapezoid')
