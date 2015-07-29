@@ -7,19 +7,19 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
   
-  var chart = anychart.pyramid([
+  var data = [
     {name: 'Fantasy', value: 637166},
     {name: 'Science Fiction', value: 721630},
     {name: 'Detective', value: 148662},
     {name: 'Classics', value: 78662},
     {name: 'Textbooks', value: 90000}
-  ]);
+  ];
   
-  // disable padding between parts of the chart
-  chart.pointsPadding(0);
+  // set chart type and data
+  var chart = anychart.pyramid(data);
   
-  chart.title().text('Disabled Padding');
-
+  chart.reversed(true);   // turn pyramid upside down
+  
   // draw chart
   chart.container('container').draw();
 });</script>
