@@ -6,40 +6,40 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  //create data tree on our data
+  // create data tree on our data
   var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 
-  //create resource gantt chart
-  chart = anychart.ganttResource();
+  // create resource gantt chart
+  var chart = anychart.ganttResource();
 
-  //set container id for the chart
-  chart.container('container');
+  // set container id for the chart
+  chart.container("container");
 
-  //set data for the chart
+  // set data for the chart
   chart.data(treeData);
 
-  //set start splitter position settings
+  // set start splitter position settings
   chart.splitterPosition(160);
 
-  //get chart data grid link to set column settings
+  // get chart data grid link to set column settings
   var dataGrid = chart.dataGrid();
 
-  //initiate chart drawing
+  // initiate chart drawing
   chart.draw();
 
-  //zoom chart to specified date
+  // zoom chart to specified date
   chart.fitAll();
 });
 
 function getData() {
   return [
     {
-      "id":'404',
-      "name": "office 404",
+      "id":"404",
+      "name": "office 404"
     },
     {
-      "id":'409',
-      "name": "office 409",
+      "id":"409",
+      "name": "office 409"
     },
     {
       "id": "1",
@@ -56,7 +56,7 @@ function getData() {
       "name": "Server 2",
       "parent": "404",
       "periods": [
-        {"id": "2_1", "fill": "none", "stroke": {'color': 'green'}, "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 1, 22)},
+        {"id": "2_1", "fill": "none", "stroke": {"color": "green"}, "start": Date.UTC(2013, 1, 20), "end": Date.UTC(2013, 1, 22)},
         {"id": "2_2" , "start": Date.UTC(2013, 1, 25), "end": Date.UTC(2013, 2, 5)}
       ]
     },

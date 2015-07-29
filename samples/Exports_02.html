@@ -19,52 +19,74 @@
   var palette = anychart.palettes.distinctColors().colors();
 
   // color elements
-  for (var index in data)
-    data[index].fill = palette[index];
+  for (var index in data){
+      data[index].fill = palette[index];
+  }
 
-  //set chart type
+  // set chart type
   var chart = anychart.bar();
 
   // set data
   var series = chart.bar(data);
-  series.stroke(null);
+
   var title = chart.title();
   title.enabled(true);
   title.fontSize(13);
   title.text("The kind of pancakes preferred at the Sochi 2014 Olympic Games");
   chart.container("container");
+
   chart.draw();
 
   // create new buttons
   var printButton = document.createElement("div");
 
-  // set action on button click
+  var printFullButton = document.createElement("div");
+
+  printButton.className = "custombutton";
+  printFullButton.className = "custombutton";
+
+  printButton.innerHTML = "print Chart\nfit width";
+  printFullButton.innerHTML = "print Chart\nfull page";
+
   printButton.onclick = function() {
-    chart.print();
+      chart.container().height(chart.container().height()/(595/chart.container().width())).width(595);
+      chart.bounds(0, 0, "100%", "100%");
+      chart.print();
+      chart.container().height("100%").width("100%");
+      chart.bounds(0, 0, chart.container().width()-60, chart.container().height());
+  };
+  printFullButton.onclick = function() {
+      chart.container().height(842).width(595);
+      chart.bounds(0, 0, 595, 842);
+      chart.print();
+      chart.container().height("100%").width("100%");
+      chart.bounds(0, 0, chart.container().width()-60, chart.container().height());
   };
 
-  printButton.innerHTML = "Print<br>Chart";
+  // append button to container
   container.appendChild(printButton);
+  container.appendChild(printFullButton);
 
-  // set button style
-  printButton.style.top = "15px";
-  printButton.style.right = "5px";
-  printButton.style.padding = "5px 10px";
-  printButton.style.backgroundColor = "#444444";
-  printButton.style.color = "#fff";
-  printButton.style.fontFamily = chart.title().fontFamily();
-  printButton.style.position = "absolute";
-  printButton.style.zIndex = 2;
-  printButton.style.transition = "0.5s";
-  printButton.style.textAlign = "center";
-  printButton.style.border = "1px solid #444444";
-  printButton.style.borderRadius = "7px 7px 7px 7px";
-  printButton.style.fontSize = "15px";
-  printButton.style.cursor = "pointer";
-  printButton.style.MozUserSelect= "none";
-  printButton.style.KhtmlUserSelect= "none";
-  printButton.style.WebkitUserSelect= "none";
-  printButton.style.userSelect= "none";
+  var custombuttons = document.getElementsByClassName("custombutton");
+
+  for (var i = 0; i<custombuttons.length; i++){
+      // set button style
+      custombuttons[i].style.top = 65*i + "px";
+      custombuttons[i].style.right = "5px";
+      custombuttons[i].style.width = "80px";
+      custombuttons[i].style.height = "auto";
+      custombuttons[i].style.backgroundColor = "#444444";
+      custombuttons[i].style.color = "white";
+      custombuttons[i].style.fontFamily = chart.title().fontFamily();
+      custombuttons[i].style.position = "absolute";
+      custombuttons[i].style.zIndex = 2;
+      custombuttons[i].style.transition = "0.5s";
+      custombuttons[i].style.textAlign = "center";
+      custombuttons[i].style.border = "3px solid #444444";
+      custombuttons[i].style.borderRadius = "7px 7px 7px 7px";
+      custombuttons[i].style.fontSize = "15px";
+      custombuttons[i].style.cursor = "pointer";
+  }
 });</script>
 </head>
 <body>

@@ -77,7 +77,7 @@ Now we need to convert this data table into js format as it is acceptable by Any
   ]);
 ```
 
-This example shows what you can get from the code above. You may launch and explore this example further in our playground (to open it, click on the link in the top-to-right corner of the chart). 
+This example shows what you can get from the code above. You may launch and explore this example further in our playground (to open it, click on the link at the top right corner of the chart). 
 
 {sample}BCT\_Marker\_Chart\_01{sample}
 
@@ -196,7 +196,8 @@ All previous samples demonstrate marker series on scatter plot. Next sample show
 ## Axes
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
-
+  
+  
 All axis features are described in [Axes Basic](../Axes_and_Grids/Axis_Basics) tutorial, in this section we will quickly demonstrate how axis orientation can be adjusted, how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
 
 ### Orientation
@@ -207,8 +208,10 @@ With AnyChart you can place axes to any side of the chart, all you need to do is
 The position depends on the plot type and inversion of axes. See list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
 
 ```
-    chart.xAxis(0).orientation('top');
-    chart.yAxis(0).orientation('right');
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
 ```
 
 And here is the demonstration of this feature in the Single-series sample:
@@ -217,10 +220,11 @@ And here is the demonstration of this feature in the Single-series sample:
 
 ### Inversion
 
-AnyChart allows to invert any axis: Y, X or any other axis. Inversion is controlled by axis **.inverted()**:
+AnyChart allows to invert any axis: Y, X or any other scale. Inversion is controlled by axis {api:anychart.scales.Linear#inverted}**.inverted()**{api}:
 
 ```
-    chart.yScale().inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 ```
 
 And here is the demonstration of Y-Axis inversion in the Single-series sample:
@@ -229,13 +233,14 @@ And here is the demonstration of Y-Axis inversion in the Single-series sample:
 
 ### Minimum and Maximum
 
-AnyChart calculates axis minimum and maximum automatically. The minimal value on Y-Axis is 800, the maximum is 1.600, as you can see in the sample above. You can control these values by setting **.maximum()** and **.minimum()** parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method; let's look at what will happen if we define 0 and 1.800 as the min amd the max values on the Y-Axis:
-
+AnyChart calculates axis minimum and maximum automatically. The minimal value on Y-Axis is 800, the maximum is 1.600, as you can see in the sample above. You can control these values by setting {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method; let's look at what will happen if we define 0 and 1.800 as the min amd the max values on the Y-Axis:
 
 ```
-  chart.yScale()
-    .minimum(0)       // minimum value
-    .maximum(1800);   // maximum value
+  var yScale = chart.yScale();
+  // minimum value
+  yScale.minimum(0);
+  // maximum value
+  yScale.maximum(1800);
 ```
 
 And here is the demonstration of maximum and minimum values on the Single-series sample:
@@ -251,7 +256,7 @@ In this section we will describe main parts of marker chart visualization and wa
 Now, let's make a simple style and apply it to the chart. As we've already said, a style consists of several elements, like in this js structure below:
 
 ```
-  chart.marker([
+  var series = chart.marker([
     [2000, 1100],
     [2001, 880],
     [2002, 1100],
@@ -259,10 +264,12 @@ Now, let's make a simple style and apply it to the chart. As we've already said,
     [2004, 921],
     [2005, 1000],
     [2006, 1400]
-  ]).fill('gold')
-    .hoverFill('darkred')
-    .hoverStroke(0)
-    .hoverSize(20);
+  ]);
+  
+  series.fill("gold");
+  series.hoverFill("darkred");
+  series.hoverStroke(0);
+  series.hoverSize(20);
 ```
 
 Using such settings we've set Gold color for the markers and added a couple of effects. Also, we've defined that a marker will be highlighted with a dark red color and made bigger when hovered.
@@ -273,38 +280,42 @@ Using such settings we've set Gold color for the markers and added a couple of e
 
 In this section we will explain how to add and configure data labels and tooltips.
 <!-- Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips-->.
-    
+  
+  
 If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
-
+  
+  
 With the following example let's make data labels appear to the top from the data points, format them to show only the value corresponding to the point and force tooltips to show detailed description.
-
+  
+  
 Here's a part of a code used in the sample below. For more detailed code visit the playground.
 
 ```
   // data
-  data = anychart.data.set([
-      [2000, 1100],
-      [2001, 880],
-      [2002, 1100],
-      [2003, 1500],
-      [2004, 921],
-      [2005, 1000],
-      [2006, 1400]
+  var data = anychart.data.set([
+    [2000, 1100],
+    [2001, 880],
+    [2002, 1100],
+    [2003, 1500],
+    [2004, 921],
+    [2005, 1000],
+    [2006, 1400]
   ]);
 
   // set data
-  var markerchart = chart.marker(data);
+  var series = chart.marker(data);
 
   // enable and adjust labels
-  markerchart.labels()
-    .enabled(true)
-    .anchor('bottomcenter')
-    .fontWeight(900)
-    .offsetY(10);
+  var labels = series.labels();
+  labels.enabled(true);
+  labels.anchor("bottomcenter");
+  labels.fontWeight(900);
+  labels.offsetY(10);
   
   // adjust tooltips
-  markerchart.tooltip().contentFormatter(function(){
-    return 'Month: ' + this.x + '\nSales: ' + this.value ;
+  var tooltip = series.tooltip();
+  tooltip.contentFormatter(function(){
+    return "Month: " + this.x + "\nSales: " + this.value ;
   });
 ```
 
@@ -345,20 +356,19 @@ That's how a part of a code of the sample above looks like:
   var data5 = data.mapAs({x: [0], value: [5]});
 
   // set data and color for each series
-  chart.marker(data1)
-    .fill('#4A55C7');
-  chart.marker(data2)
-    .fill('#5EBD9B');
-  chart.marker(data3)
-    .fill('#B04A8A');
-  chart.marker(data4)
-    .fill('#C7894A');
-  chart.marker(data5)
-    .fill('#BCBD46');
+  var series1 = chart.marker(data1);
+  series1.fill("#4A55C7");
+  var series2 = chart.marker(data2);
+  series2.fill("#5EBD9B");
+  var series3 = chart.marker(data3);
+  series3.fill("#B04A8A");
+  var series4 = chart.marker(data4);
+  series4.fill("#C7894A");
+  var series5 = chart.marker(data5);
+  series5.fill("#BCBD46");
 ```
 
-In the sample below we colorized individual points. We've got a chart with one series and predefined 
-color for all elements. Let's color the minimum and the maximum points in "Rgb(180,77,77)" and "Rgb(77,180,77)" accordingly. As you can see it is very easy to do by setting {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter for the point.
+In the sample below we colorized individual points. We've got a chart with one series and predefined color for all elements. Let's color the minimum and the maximum points in "Rgb(180,77,77)" and "Rgb(77,180,77)" accordingly. As you can see it is very easy to do by setting {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter for the point.
 
 {sample}BCT\_Marker\_Chart\_10{sample}
 
@@ -367,22 +377,19 @@ That's how it was done:
 ```
   // data
   data = anychart.data.set([
-    ['P!', 132],
-    ['P2', 124],
-    ['P3', 102],
-    ['P4', 119],
-    ['P5', 169],
-    {x: 'P6', value: 237, fill: 'Rgb(77,180,77)'},
-    ['P7', 120],
-    ['P8', 99],
-    {x: 'P9', value: 44, fill: 'Rgb(180,77,77)'},
-    ['P10', 59]
+    [2000, 132],
+    [2001, 124],
+    [2002, 102],
+    [2003, 119],
+    [2004, 169],
+    {x: 2005, value: 237, fill: "Rgb(77,180,77)"},
+    [2006, 120]
   ]);
 ```
 
 Important Note:
 
-AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors. For example, instead of "Rgb(180,77,77)" you can set "HSB(0, 57, 71)" or "#b44d4d"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
+AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors. For example, instead of "Rgb(180,77,77)" you can set "#b44d4d"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
 
 [Different ways of setting colors of elements](../Appearance_Settings/Color_Management)
 <!--Advanced coloring techniques in [link in need]Styles tutorial[link in need]-->
@@ -392,13 +399,13 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
 To see whole range of available hatch types see [Hatch Fill](../Appearance_Settings/Hatch_Fill) tutorial.
   
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5-series with 2 data points in each. For every series we've applied different hatch fills by setting a hatch type for {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter and set all series in grey color (#EEEEEE).
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5-series with 2 data points in each. For every series we've applied different hatch fills by setting a hatch type for {api:anychart.core.scatter.series.Marker#hatchFill}**.hatchFill()**{api} parameter and set all series in grey color (#EEEEEE).
 
 Here's a part of the code of the sample below:
 
 ```
   // data
-  data = anychart.data.set([
+  var data = anychart.data.set([
     [1, 14, 24, 34, 42, 50],
     [2, 19, 26, 39, 45, 61],
     [3, 27, 38, 35, 41, 58]
@@ -412,12 +419,12 @@ Here's a part of the code of the sample below:
   var data5 = data.mapAs({x: [0], value: [1]});
 
   // set data for each series and adjust hatches and marker types
-  chart.marker(data1)
-    .hatchFill('diagonalcross')
-    .hoverSize(30)
-    .size(20)
-    .fill('#EEEEEE')
-    .type('star5');
+  var series = chart.marker(data1);
+  series.hatchFill("diagonalcross");
+  series.hoverSize(30);
+  series.size(20);
+  series.fill("#EEEEEE");
+  series.type("star5");
 ```
 
 That's how it looks like when we set all parameters for all series as for the first one:

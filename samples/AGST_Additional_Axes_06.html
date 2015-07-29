@@ -7,52 +7,74 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  var chart = anychart.lineChart();
-
-  chart.container('container');
-
-  chart.title().text('Extra Axes Units Comparison Sample');
+  var chart = anychart.line();
+  
+  chart.title("Extra Axes Units Comparison Sample");
 
   // setting xScale settings
   chart.xScale(anychart.scales.linear());
-  chart.xScale().minimum(1940).maximum(2010);
-  chart.xScale().ticks().interval(5);
+  var xScale = chart.xScale();
+  xScale.minimum(1940);
+  xScale.maximum(2010);
+  var xTicks = chart.xScale().ticks();
+  xTicks.interval(5);
 
   // setting yScale settings
-  chart.yScale().minimum(0).maximum(12000000000000).ticks().interval(2000000000000);
+  var yScale = chart.yScale();
+  yScale.minimum(0);
+  yScale.maximum(12000000000000);
+  var yScaleTicks = chart.yScale().ticks();
+  yScaleTicks.interval(2000000000000);
 
   // adding and adjusting extra Y scale
   var extraYScale = anychart.scales.linear();
-  extraYScale.minimum(0).maximum(140).ticks().interval(20);
+  extraYScale.minimum(0);
+  extraYScale.maximum(140);
+  var extraYScaleTicks = extraYScale.ticks();
+  extraYScaleTicks.interval(20);
 
   // adding and adjusting extra Y axis
   var extraYAxis = chart.yAxis(1);
-  extraYAxis.orientation('right').scale(extraYScale);
+  extraYAxis.orientation("right");
+  extraYAxis.scale(extraYScale);
 
   // setting yAxes titles
-  chart.yAxis().title().text('Debt');
-  chart.yAxis(1).title().text('GDP');
+  var yAxis = chart.yAxis(0);
+  yAxis.title("Debt");
+  extraYAxis.title("GDP");
 
   // yAxes labels text adjusting
-  chart.yAxis().labels().textFormatter(function(){
+  var yLabels = chart.yAxis(0).labels();
+  yLabels.textFormatter(function(){
     var value = (this.value/1000000000000);
     if (value > 0)
-      value = (this.value/1000000000000) + ' 000 bil.';
-    return '$' + value;
+      value = (this.value/1000000000000) + " 000 bil.";
+    return "$" + value;
   });
-  chart.yAxis(1).labels().textFormatter(function(){
-    return this.value + '%';
+  var yLabels1 = chart.yAxis(1).labels();
+  yLabels1.textFormatter(function(){
+    return this.value + "%";
   });
 
   // disable x axis title
-  chart.xAxis().title().enabled(false);
+  var xAxis = chart.xAxis();
+  xAxis.title(false);
 
   // enabling x axis stagger mode
-  chart.xAxis().staggerMode(true).labels().width(52).hAlign('center');
+  xAxis.staggerMode(true);
+  
+  // settings for labels of x axis
+  var xLabels = chart.xAxis().labels();
+  xLabels.width(50);
+  xLabels.hAlign("center");
 
   // set Grid settings
-  chart.grid(0).stroke('gray 0.8').layout('horizontal');
-  chart.grid(1).stroke('gray 0.8').layout('vertical');
+  var firstGrid = chart.grid(0);
+  firstGrid.stroke("gray 0.8");
+  firstGrid.layout("horizontal");
+  var secondGrid = chart.grid(1);
+  secondGrid.stroke("gray 0.8");
+  secondGrid.layout("vertical");
 
   // disable minorGrid
   chart.minorGrid(null);
@@ -201,35 +223,44 @@
     [2004, 7379052696330],
     [2005, 7932709661723],
     [2006, 8506973899215],
-    { x: 2007, value: 9350102000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1', stroke: 'black', hoverStroke: 'black'},
-    { x: 2008, value: 9948640000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1', stroke: 'black', hoverStroke: 'black'},
-    { x: 2009, value: 10543521000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1', stroke: 'black', hoverStroke: 'black'},
-    { x: 2010, value: 11137297000000, hatchFill: 'vertical', fill: 'white 0.1', hoverFill: 'white 0.1', stroke: 'black', hoverStroke: 'black'}
+    { x: 2007, value: 9350102000000, fill: "#FFF", hoverFill: "#FFF", stroke: "#000", hoverStroke: "#000"},
+    { x: 2008, value: 9948640000000, fill: "#FFF", hoverFill: "#FFF", stroke: "#000", hoverStroke: "#000"},
+    { x: 2009, value: 10543521000000, fill: "#FFF", hoverFill: "#FFF", stroke: "#000", hoverStroke: "#000"},
+    { x: 2010, value: 11137297000000, fill: "#FFF", hoverFill: "#FFF", stroke: "#000", hoverStroke: "#000"}
   ]);
 
   // adjusting data visualisation
 
   var lineSeries = chart.line(firstSeries);
   lineSeries.yScale(extraYScale);
-  lineSeries.markers().size(1).fill('blue 0.5').stroke(null);
-  lineSeries.hoverMarkers().size(4).fill('blue 0.7').stroke('blue');
-  lineSeries.stroke('blue', 3);
-  lineSeries.tooltip().enabled(true).contentFormatter(function() {
-    return this.x + ' Year \n' + 'GDP - ' + this.value + '%' ;
+  var lineMarkers = lineSeries.markers();
+  lineMarkers.size(1);
+  lineMarkers.fill("blue 0.5");
+  lineMarkers.stroke(null);
+  var lineHoverMarkers = lineSeries.hoverMarkers();
+  lineHoverMarkers.size(4);
+  lineHoverMarkers.fill("blue 0.7");
+  lineHoverMarkers.stroke("blue");
+  lineSeries.stroke("blue", 3);
+  var lineTooltip = lineSeries.tooltip();
+  lineTooltip.contentFormatter(function() {
+    return this.x + " Year\nGDP - " + this.value + "%" ;
   });
 
   var columnSeries = chart.column(secondSeries);
-  columnSeries.fill(['red', 'darkred'], -90)
-    .stroke('black', 1)
-    .hoverStroke('white', 1)
-    .hoverFill(['red', 'darkred'], -90);
-  columnSeries.tooltip().enabled(true).contentFormatter(function() {
+  columnSeries.fill(["red", "darkred"], -90);
+  columnSeries.stroke("black", 1);
+  columnSeries.hoverStroke("white", 1);
+  columnSeries.hoverFill(["red", "darkred"], -90);
+  var columnTooltip = columnSeries.tooltip();
+  columnTooltip.contentFormatter(function() {
     var value = (this.value/1000000000).toFixed(0);
     if (value > 999)
-      value = ('' + value/1000).replace('.', ' ');
-    return this.x + ' Year \n' + 'Debt - $' + value + ' bil.' ;
+      value = ("" + value/1000).replace(".", " ");
+    return this.x + " Year\nDebt - $" + value + " bil." ;
   });
-
+  
+  chart.container("container");
   chart.draw();
 });</script>
 </head>

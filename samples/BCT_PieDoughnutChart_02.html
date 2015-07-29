@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // set data and chart type
+  var chart = anychart.pie([
+    ["Department Stores", 637166],
+    ["Discount Stores", 721630],
+    ["Men's/Women's Stores", 148662],
+    ["Juvenile Specialty Stores", 78662],
+    ["All other outlets", 90000]
+  ]);
+
+  chart.title("Doughnut Chart");
+
+  // set radius inside pie chart to turn it into doughnut chart
+  chart.innerRadius("30%");
+
+  // draw
+  chart.container("container").draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

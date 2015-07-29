@@ -25,7 +25,8 @@ In this section we will demonstrate most of the axes visualization options, whic
 If you want to control any of the axes settings - you should do that using {api:anychart.core.axes}**Axis**{api} methods:
 
 ```
-  chart.xAxis().title().enabled(true).text('Sample X axis name');
+  var xAxis = chart.xAxis();
+  xAxis.title('Sample X axis name');
 ```
 
 ## Title
@@ -35,10 +36,19 @@ You can define a title of any axis, you can control its position and font <!--an
 ```
   var max = chart.yScale().maximum();
   var min = chart.yScale().minimum();
-  chart.yAxis().title().align('bottom');
-  chart.yAxis().orientation('right');
-  chart.xAxis().title().text('Sample X axis name').fontWeight('400');
-  chart.yAxis().title().text('Y axis from ' + min + ' to ' + max);
+  
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
+  
+  var yTitle = chart.yAxis().title();
+  var max = chart.yScale().maximum();
+  var min = chart.yScale().minimum();
+  yTitle.text("Y axis from " + min + " to " + max);
+  yTitle.align("bottom");
+  
+  var xTitle = chart.xAxis().title();
+  xTitle.text("Sample X axis name");
+  xTitle.fontWeight(400);
 ```
 
 As you can see, we've set titles both to X and Y axis and adjusted Y axis align<!--and used {%DataPlotYMax} and %DataPlotYMin keywords-->.
@@ -56,8 +66,10 @@ Learn how to format keywords in Number Formatting section.-->
 With AnyChart you can place axes to any side if the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods. Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Positioning and Inverting Templates](Axis_Orientation).
 
 ```
-  chart.xAxis(0).orientation('top');
-  chart.yAxis(0).orientation('right');
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
 ```
 
 And here is the demonstration of this feature on the Single series column chart:
@@ -73,7 +85,8 @@ Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Fo
 Look at the demonstration of possible labels display modes: "Normal" and "Stager".
 
 ```
-  chart.xAxis().staggerMode(false);
+  var xAxis = chart.xAxis();
+  xAxis.staggerMode(false);
 ```
 
 {sample}AGST\_Axes\_Basic\_03{sample}
@@ -81,15 +94,18 @@ Look at the demonstration of possible labels display modes: "Normal" and "Stager
 Rotated labels:
 
 ```
-  chart.yAxis().labels().enabled(true).rotation(-90);
-  chart.xAxis().labels().enabled(true).rotation(-90);
+  var xLabels = chart.yAxis().labels();
+  xLabels.rotation(-90);
+  var yLabels = chart.xAxis().labels();
+  yLabels.rotation(-90);
 ```
 
 {sample}AGST\_Axes\_Basic\_04{sample}
 
-```  
-  chart.xAxis().staggerMode(true);  //enables stagger mode
-  chart.xAxis().staggerLines(2);    //set the number of lines for labels
+```
+  var xAxis = chart.xAxis();  // getter of x axis
+  xAxis.staggerMode(true);    //enables stagger mode
+  xAxis.staggerLines(2);      //set the number of lines for labels
 ```
 
 {sample}AGST\_Axes\_Basic\_05{sample}
@@ -100,7 +116,8 @@ It is possible to tune visual appearance of axis segment line and zero line. To 
 {api:anychart.charts.Cartesian#lineMarker}**.lineMarker()**{api} method.
 
 ```
-  chart.lineMarker().stroke('2 red');    
+  var line = chart.lineMarker();
+  line.stroke("2 red");
 ```
 
 As in any line, you can make it gradient, change opacity and thickness using {api:anychart.core.axes.Linear#stroke}**stroke()**{api} method.
@@ -113,15 +130,20 @@ Read more about lines in [Strokes and Lines tutorial](../Appearance_Settings/Str
 Tickmarks are the small marks used to represent a point on an axis scale, there are major and minor ticks, first used to indicate major step of an axis scale, second - minor step. You can control their appearance and position. To enable/disable ticks set **.enabled(true)** or **.enabled(false)** to {api:anychart.core.axes.Linear#ticks}**.ticks()**{api} or {api:anychart.core.axes.Linear#minorTicks}**.minorTicks()**{api}
 
 ```
-minorTicks().enabled(true)
-ticks().enabled(false)
+  var minorTicks = chart.yScale().minorTicks;
+  minorTicks.enabled(true);
+  var majorTicks = chart.yScale().ticks();
+  majorTicks.enabled(false)
 ```
 
 Ticks can be placed **inside** or **outside** relatively to the axis line. These features are controlled by {api:anychart.core.axes.Ticks#position}**.position()**{api} attributes:
 
 ```
-  chart.yAxis().ticks().position('outside');
-  chart.xAxis().ticks().position('inside');
+  var yAxisTicks = chart.yAxis().ticks();
+  yAxisTicks.position("outside");
+  
+  var xAxisTicks = chart.xAxis().ticks();
+  xAxisTicks.position("outside");
 ```
 
 The dashboard below shows how these settings work:

@@ -22,17 +22,17 @@
   var seriesData_4 = dataSet.mapAs({x: [0], value: [4]});
 
   // chart type
-  var chart = anychart.barChart();
+  var chart = anychart.bar();
 
   // chart title
-  chart.title().text('Stacked Bar Chart');
+  chart.title().text("Stacked Bar Chart");
 
   // set axes title
-  chart.xAxis().title().text('Month');
-  chart.yAxis().title().text('Temperature');
+  chart.xAxis().title().text("Month");
+  chart.yAxis().title().text("Temperature");
 
   // set stack mode
-  chart.yScale().stackMode('value');
+  chart.yScale().stackMode("value");
 
   // set data
   chart.bar(seriesData_1);
@@ -40,7 +40,8 @@
   chart.bar(seriesData_3);
   chart.bar(seriesData_4);
 
-  chart.container('container').draw();
+  chart.container('container');
+  chart.draw();
 });</script>
 </head>
 <body>

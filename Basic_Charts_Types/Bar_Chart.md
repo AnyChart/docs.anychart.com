@@ -66,20 +66,20 @@ Let's see single series bar chart created using the following data - sales of AC
 </tbody>
 </table>
 
-Now we need to convert this data. In terms of AnyChart we have one series of data (Sales) with categories that hold Retail channels' names. Each bar in series represents sales amount made through  the channel this bar belongs with. Converted data looks like this:
+Now we need to convert this data. In terms of AnyChart we have one series of data (Sales) with categories that hold Retail channels' names. Each bar in series represents sales amount made through the channel this bar belongs with. Converted data looks like this:
 
 ```
-    var data = anychart.data.set([
-        ['Department Stores1', 637166],
-        ['Discount Stores', 721630],
-        ['Men\'s/Women\'s Specialty Stores', 148662],
-        ['All other outlets', 90000]
-    ]);
-    chart = anychart.barChart(data);
-    chart.bar(data);
+  var data = anychart.data.set([
+    ["Department Stores", 637166],
+    ["Discount Stores", 721630],
+    ["Men's/Women's Specialty Stores", 148662],
+    ["All other outlets", 90000]
+  ]);
+  var chart = anychart.bar();
+  chart.bar(data);
 ```
 
-As you can see, we've used {api:anychart.core.cartesian.series.Bar}**.barChart()**{api} method, set channel's names into **first column** to define bar category and values of sales' amount into **second column**.
+As you can see, we've used {api:anychart.core.cartesian.series.Bar}**.bar()**{api} method, set channel's names into **first column** to define bar category and values of sales' amount into **second column**.
 
 {sample}BCT\_BarChart\_01{sample}
 
@@ -127,21 +127,23 @@ Let's compare year 2003 sales to year 2004 sales:
 As we do in single-series bar sample above we need to convert this data, the only difference between these two samples is the fact that now we have two series of data - one series for each year, so we give proper names to each series:
 
 ```
-    var data = anychart.data.set([
-        ['Department Stores1', 637166, 737166],
-        ['Discount Stores', 721630, 537166],
-        ['Men\'s/Women\'s Specialty Stores', 148662, 188662],
-        ['Juvenile Specialty Stores', 78662, 178662],
-        ['All other outlets', 90000, 89000]
-    ]);
-    var Sales2003 = data.mapAs({x: [0], value: [1]});
-    var Sales2004 = data.mapAs({x: [0], value: [2]});
-    var chart = anychart.barChart();
-    chart.bar(Sales2003);
-    chart.bar(Sales2004);
+  // data
+  var data = anychart.data.set([
+    ["Department Stores", 637166, 737166],
+    ["Discount Stores", 721630, 537166],
+    ["Men's/Women's Specialty Stores", 148662, 188662],
+    ["Juvenile Specialty Stores", 78662, 178662],
+    ["All other outlets", 90000, 89000]
+  ]);
+  // map data for further using
+  var Sales2003 = data.mapAs({x: [0], value: [1]});
+  var Sales2004 = data.mapAs({x: [0], value: [2]});
+  // define chart type
+  var chart = anychart.bar();
+  // set data
+  chart.bar(Sales2003);
+  chart.bar(Sales2004);
 ```
-
-As we now have multi-series chart we don't want to set **type** for each series individually (there can be much more than two series in multi-series chart), so we add {api:anychart.core.cartesian.series.Bar}**anychart.barChart()**{api} method to **chart**. Now all series in chart will be **Bar** type by default.
 
 {sample}BCT\_BarChart\_02{sample}
 
@@ -152,13 +154,15 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 ### Orientation
 
 With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
-
-
+  
+  
 Position depends on plot type and inversion of axes, you will find the list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) templates.
 
 ```
-    chart.xAxis(0).orientation('right');
-    chart.yAxis(0).orientation('top');
+  var xAxis = chart.xAxis();
+  xAxis.orientation("right");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("top");
 ```
 
 And here is the demonstration of this feature in the Single-series sample:
@@ -167,20 +171,23 @@ And here is the demonstration of this feature in the Single-series sample:
 
 ### Inversion
 
-AnyChart allows to invert any axis: Y, X or any extra. Inversion is controlled by axis **scale().inverted()**:
+AnyChart allows to invert any axis: Y, X or any extra. Inversion is controlled by axis {api:anychart.scales.Linear#inverted}**scale().inverted()**{api}:
 
 ```
-    chart.yScale().inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 ```
 
 {sample}BCT\_BarChart\_04{sample}
 
 ### Minimum and Maximum
 
-AnyChart calculates axis minimum and maximum automatically. You can see this on the scale inversion chart sample above: the minimal value of the Y-Axis is 0.0, and the maximum is 800.000. You can control these values by setting **.maximum()** and **.minimum()**.:
+AnyChart calculates axis minimum and maximum values automatically. You can see this on the scale inversion chart sample above: the minimal value of the Y-Axis is 0, and the maximum is 800. You can control these values using {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} methods:
 
 ```
-    chart.yScale().minimum(-200000).maximum(800000)
+  var yScale = chart.yScale();
+  yScale.minimum(-200000);
+  yScale.maximum(800000)
 ```
 
 And here is the demonstration of maximum and minimum values in the Single-series sample:
@@ -189,11 +196,7 @@ And here is the demonstration of maximum and minimum values in the Single-series
 
 ## Padding
 
-The special thing about bar charts is the padding between a bar and a group of bars (in multi-series charts). You can see what are these paddings in the picture below :
-
-![](http://www.anychart.com/products/anychart/docs/users-guide/img/horz_bar_padding.jpg)
-
-If you want to set these paddings you need to set {api:anychart.core.cartesian.series.Base#xPointPosition}**xPointPosition()**{api} in **bar_series**. Paddings are measured as a ratio to bar width (bars widths are calculated automatically). For example, if you set **xPointPosition to 0.5** - the space between two bars will be equal to the half of each bar width. If you want to have no padding between bars set **xPointPosition** to 0.
+The special thing about bar charts is the padding between a bar and a group of bars (in multi-series charts). If you want to set paddings you need to use {api:anychart.core.cartesian.series.Base#xPointPosition}**xPointPosition()**{api}. Paddings are measured as a ratio to bar width (bars widths are calculated automatically). For example, if you set **xPointPosition(0.5)** - the space between two bars will be equal to the half of each bar width. If you want to have no padding between bars set **xPointPosition(0)**.
 
 Here is a sample of multi-series bar chart with **xPointPosition** set to 0.5.
 
@@ -216,12 +219,12 @@ Also, styles are used to make charts interactive, you can define how elements wi
 Now, let's look how to apply a simple style to the chart. As we've already said, a style consists of several elements, here is the javascript structure:
 
 ```
-    chart.bar(data)
-        .fill('Gold')
-        .hoverStroke("darkred", 4)
-        .stroke('#56561a', 4)
-        .hatchFill('diagonalbrick', 'gray')
-        .hoverHatchFill('diagonalbrick', 'darkred');
+  var series = chart.bar(data);
+  series.fill("Gold");
+  series.hoverStroke("darkred", 4);
+  series.stroke("#56561a", 4);
+  series.hatchFill("diagonalbrick", "gray");
+  series.hoverHatchFill("diagonalbrick", "darkred");
 ```
 
 Using such settings we've created a style that colors bars in Gold, makes the border rather thick, fills hatch with DiagonalBrick and a couple of effects. Also, we've defined that when the element is hovered it will be highlighted with the dark red thick border and hatch fill colored dark red too.
@@ -258,15 +261,20 @@ To make the marker more visually appealing we set its size to 12px.
 
 ```
   {
-    x: 'Men\'s/Women\'s Specialty Stores',
+    x: "Men's/Women's Specialty Stores",
     value: 148662, 
     marker:{
-      type:'star5',         // set marker type
-      fill:'gold',          // set marker color
-      size: 12,             // set marker size
-      enabled: true         // enable marker
+      // set marker type
+      type:'star5',
+      // set marker color
+      fill:"gold",
+      // set marker size
+      size: 12,
+      // enable marker
+      enabled: true
     }, 
-    hoverMarker: {size: 22} // set marker size on mouse over
+    // set marker size on mouse over
+    hoverMarker: {size: 22}
   }
 ```
 
@@ -291,14 +299,15 @@ As you see it is very easy to do by setting a value for the {api:anychart.graphi
 
 **Important Note:**
 
-AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors. For example, instead of "RGB(240,248,255)" you can set "HSB(208,100,97)", or "AliceBlue", or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
+AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors. For example, instead of "RGB(240,248,255)" you can set "AliceBlue" or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
 
 * Different ways of [setting colors](../Appearance_Settings/Color_Management) of elements
 
 ## Hatch Fills
 
-AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
-To see whole range of available hatch types see [Hatch Fill](../Appearance_Settings/Hatch_Fill) tutorial.
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings.
+
+You can find more information about hatch types in [Hatch Fill](../Appearance_Settings/Hatch_Fill) tutorial.
   
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart a with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
 

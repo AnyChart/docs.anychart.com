@@ -8,13 +8,13 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   var chart = anychart.scatterChart();
-  chart.title().text('Sample Scatter Graph');
+  chart.title().text("Sample Scatter Graph");
 
   chart.xScale().minimum(1.5).maximum(5.5).ticks().interval(1);
   chart.yScale().minimum(40).maximum(100).ticks().interval(10);
 
-  chart.yAxis(0).title().text('Waiting time between eruptions (Min)');
-  chart.xAxis(0).title().text('Eruption duration (Min)');
+  chart.yAxis(0).title().text("Waiting time between eruptions (Min)");
+  chart.xAxis(0).title().text("Eruption duration (Min)");
   chart.xAxis(0).drawFirstLabel(false).drawLastLabel(false);
 
   var marker = chart.marker([
@@ -240,11 +240,11 @@
     [2.1, 48],
     [5.2, 84],
     [2, 63]
-  ]).type('triangleup').size(4).hoverSize(7).hoverFill('red');
+  ]).type("triangleup").size(4).hoverSize(7).hoverFill("red");
 
-  marker.tooltip().content().hAlign('start');
+  marker.tooltip().content().hAlign("start");
   marker.tooltip().contentFormatter(function() {
-    return 'Waiting time: ' + this['value'] + ' min.\nDuration: ' + this['x'] + ' min.';
+    return "Waiting time: " + this["value"] + " min.\nDuration: " + this["x"] + " min.";
   });
 
   chart.line([
@@ -283,10 +283,11 @@
     [5.1, 84.5723249896046],
     [5.2, 85.4623800140481]
   ]).markers(null).hoverStroke(function() {
-    return this['sourceColor'];
+    return this["sourceColor"];
   });
 
-  chart.container('container').draw();
+  chart.container('container');
+  chart.draw();
 });</script>
 </head>
 <body>

@@ -7,23 +7,23 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    stage = anychart.graphics.create('container');
+    stage = anychart.graphics.create("container");
     anychart.ui.background()
-        .fill('none')
-        .stroke('5 orange .7')
+        .fill("none")
+        .stroke("5 orange .7")
         .bounds(anychart.math.rect(22, 18, stage.width() - 44, stage.height() / 3 - 22))
         .container(stage)
         .draw();
     anychart.ui.background()
-        .fill('none')
-        .stroke(['red', 'blue'], 15)
+        .fill("none")
+        .stroke(["red", "blue"], 15)
         .bounds(anychart.math.rect(22, stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 - 22))
         .container(stage)
         .draw();
     anychart.ui.background()
-        .fill('none')
+        .fill("none")
         .stroke({
-          keys: ['.1 red', 'white'],
+          keys: [".1 red", "white"],
           cx: .5,
           cy: .5,
           fx: .3,

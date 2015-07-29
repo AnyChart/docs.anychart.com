@@ -23,7 +23,7 @@ Funnel charts are so-called Accumulation charts and they show percentage ratio. 
 To create Funnel chart with AnyChart you have to set {api:anychart#funnel}**.funnel()**{api} method.
 
 ```
-var chart = anychart.funnel();
+  var chart = anychart.funnel();
 ```
 
 Let's take a look at the sample data set that shows the number of different genres sold in local bookstore «Nerds Inc.» in 2005.
@@ -60,11 +60,11 @@ Now we need to convert this data table into the format that can be used by AnyCh
 
 ```
   var chart = anychart.funnel([
-    {name: 'Fantasy', value: 637166},
-    {name: 'Science Fiction', value: 721630},
-    {name: 'Detective', value: 148662},
-    {name: 'Classics', value: 78662},
-    {name: 'Textbooks', value: 90000}
+    {name: "Fantasy", value: 637166},
+    {name: "Science Fiction", value: 721630},
+    {name: "Detective", value: 148662},
+    {name: "Classics", value: 78662},
+    {name: "Textbooks", value: 90000}
   ]);
 ```
 
@@ -78,13 +78,17 @@ As you can see, any funnel consist of two parts: the higher part which called he
 
 ```
   var chart = anychart.funnel(data);
-  
-  chart
-    .height('100%')     // set 100 percents height of the funnel
-    .width('100%')      // set 100 percents width of the funnel
-    .neckWidth(40)      // set neck width 40px
-    .neckHeight('50%')  // set neck height equal to half of the funnel's height
-    .baseWidth(170);    // set head width 170px
+
+  // set 100 percents height of the funnel
+  chart.height("100%");
+  // set 100 percents width of the funnel
+  chart.width("100%");
+  // set neck width 40px
+  chart.neckWidth(40);
+  // set neck height equal to half of the funnel's height
+  chart.neckHeight("50%");
+  // set head width 170px
+  chart.baseWidth(170);
 ```
 
 As you can see, you can set fixed or flexible size for any method that controls funnel size. Use number as a value for a method to define fixed size and string value to set size as a percentage of a container's size. Let's apply settings from above to a funnel.
@@ -96,7 +100,8 @@ As you can see, you can set fixed or flexible size for any method that controls 
 As you can see, each part of a funnel is separated from another with some space. The space between each part of funnel chart is controlled by a {api:anychart.charts.Funnel#pointsPadding}**.pointsPadding()**{api} parameter. Next sample of the funnel chart has no spacing.
 
 ```
-  chart.pointSpacing(0);  // disable spacing between parts of the chart
+  // disable spacing between parts of the chart
+  chart.pointSpacing(0);
 ```
 
 Here is how the funnel chart without spacing looks like.
@@ -111,13 +116,18 @@ In this section we will describe main parts of funnel chart visualization and wa
   // define chart type and set data
   var chart = anychart.funnel(data);
   
-  chart
-    .fill('gold')                             // set chart inner color
-    .hoverFill('darkred')                     // chart inner color on hover
-    .stroke('darkred')                        // chart stroke
-    .hoverStroke('gold')                      // chart stroke on hover
-    .hatchFill('diagonalbrick', 'darkred')    // set hatch type and color
-    .hoverHatchFill('diagonalbrick', 'gold'); // adjust hatch type and color on hover
+  // set chart inner color
+  chart.fill("gold");
+  // chart inner color on hover
+  chart.hoverFill("darkred");
+  // chart stroke
+  chart.stroke("darkred");
+  // chart stroke on hover
+  chart.hoverStroke("gold");
+  // set hatch type and color
+  chart.hatchFill("diagonalbrick", "darkred");
+  // adjust hatch type and color on hover
+  chart.hoverHatchFill("diagonalbrick", "gold");
 ```
 
 Using such settings we've created a funnel colored in Gold, dark red border and set DiagonalBrick hatch fill. Also, we've defined that when the funnel is hovered it's hatch will be highlighted with gold and the chart will be filled with dark red. Now let's apply this style to the chart:
@@ -130,15 +140,18 @@ Labels of a funnel are text boxes with additional information for presented data
 
 ### Connectors
 
-THe line that joins a label with a particular funnel point is called connector. You can tune connectors visual appearance using {api:anychart.charts.Funnel#connectorStroke}**.connectorsStroke()**{api} method. 
+The line that joins a label with a particular funnel point is called connector. You can tune connectors visual appearance using {api:anychart.charts.Funnel#connectorStroke}**.connectorStroke()**{api} method. 
 
 ```
   var chart = anychart.funnel(data);
 
   chart.connectorStroke({
-    thickness: 2,   // set thickness of the connectors
-    color: '#444',  // set color of the connectors
-    dash: '4 2'     // set dashed connectors. Dashes are 4px and gaps are 2px
+    // set thickness of the connectors
+    thickness: 2,
+    // set color of the connectors
+    color: "#444",
+    // set dashed connectors. Dashes are 4px and gaps are 2px
+    dash: "4 2"
   });
 ```
 
@@ -155,15 +168,17 @@ Position of the labels is controlled by {api:anychart.core.ui.LabelsFactory#posi
 * **outsideLeft** - place labels to the left of the funnel.
 * **outsideRight** - place labels to the right of the funnel.
 
-If you are using **outsideLeft** or **outsideRight** you can adjust length of labels connectors. Use {api:anychart.charts.Funnel#connectorLength}**.connectorsLength()**{api} parameter to set custom length for all labels connectors.
+If you are using **outsideLeft** or **outsideRight** you can adjust length of labels connectors. Use {api:anychart.charts.Funnel#connectorLength}**.connectorLength()**{api} parameter to set custom length for all labels connectors.
 
 ```
   var chart = anychart.funnel(data);
-  
-  chart.labels()
-    .position('outsideRight');  // place labels to the right
-    
-  chart.connectorLength(45);    // set 45px connectors length
+
+  // place labels to the right
+  var labels = chart.labels();
+  labels.position("outsideRight");
+
+  // set 45px connectors length
+  chart.connectorLength(45);
 ```
 
 Using these settings we have set each label 45px to the right from the each funnel point. Using {api:anychart.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method we can adjust content for the labels.
@@ -175,11 +190,12 @@ Using these settings we have set each label 45px to the right from the each funn
 After adjusting content of the funnel labels some of them moved to prevent overlapping. You can control overlapping using {api:anychart.charts.Funnel#overlapMode}**.overlapMode()**{api}. Sample below demonstrates labels with allowed overlapping state.
 
 ```
-var chart = anychart.funnel(data);
-chart.overlapMode('allowOverlap')  // allow labels overlapping
+  var chart = anychart.funnel(data);
+  // allow labels overlapping
+  chart.overlapMode("allowOverlap");
 ```
 
-*Note:* if you want to hide connectors set **null** value for {api:anychart.charts.Funnel#connectorStroke}**.connectorsStroke()**{api} method.
+**Note:** if you want to hide connectors set **null** value for {api:anychart.charts.Funnel#connectorStroke}**.connectorStroke()**{api} method.
 
 {sample}BCT\_FunnelChart\_07{sample}
 
@@ -200,25 +216,34 @@ In the sample below we take single-series data described above and mark the high
 To make marker visually appealing we set its size to 12 pixels in normal state, and 15px while hovered.
 
 ```
-  var chart = funnel([
-    {name: 'Fantasy', value: 637166},
+  var chart = anychart.funnel([
+    {name: "Fantasy", value: 637166},
     {
-      name: 'Science Fiction', 
+      name: "Science Fiction",
       value: 721630,
-      marker:{              // marker settings
-        enabled: true,      // enable marker
-        type:'star5',       // marker type
-        fill:'gold',        // marker inner color
-        size: 12,           // marker size
-        position: 'center', // marker position
-        anchor: 'center'},  // marker anchor
+      // marker settings
+      marker:{
+        // enable marker
+        enabled: true,
+        // marker type
+        type:"star5",
+        // marker inner color
+        fill:"gold",
+        // marker size
+        size: 12,
+        // marker position
+        position: "center",
+        // marker anchor
+        anchor: "center"
+      },
       hoverMarker: {
-        size: 15            // marker size if mouse is over
+        // marker size if mouse is over
+        size: 15
       }
     },
-    {name: 'Detective', value: 148662},
-    {name: 'Classics', value: 78662},
-    {name: 'Textbooks', value: 90000}
+    {name: "Detective", value: 148662},
+    {name: "Classics", value: 78662},
+    {name: "Textbooks", value: 90000}
   ]);
 ```
 
@@ -242,16 +267,16 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 ```
   var chart = anychart.pieChart([
     // point value   hatch fill type
-    {value: 232,    hatchFill: 'diagonalcross'},
-    {value: 224,    hatchFill: 'zigzag'},
-    {value: 252,    hatchFill: 'horizontal'},
-    {value: 219,    hatchFill: 'vertical'},
-    {value: 169,    hatchFill: 'dashedbackwarddiagonal'},
-    {value: 217,    hatchFill: 'grid'},
-    {value: 175,    hatchFill: 'dashedforwarddiagonal'},
-    {value: 199,    hatchFill: 'dashedhorizontal'},
-    {value: 297,    hatchFill: 'plaid'},
-    {value: 317,    hatchFill: 'weave'}
+    {value: 232,    hatchFill: "diagonalcross"},
+    {value: 224,    hatchFill: "zigzag"},
+    {value: 252,    hatchFill: "horizontal"},
+    {value: 219,    hatchFill: "vertical"},
+    {value: 169,    hatchFill: "dashedbackwarddiagonal"},
+    {value: 217,    hatchFill: "grid"},
+    {value: 175,    hatchFill: "dashedforwarddiagonal"},
+    {value: 199,    hatchFill: "dashedhorizontal"},
+    {value: 297,    hatchFill: "plaid"},
+    {value: 317,    hatchFill: "weave"}
   ]);
 ```
 

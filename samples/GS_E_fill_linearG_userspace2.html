@@ -7,9 +7,9 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    stage = anychart.graphics.create('container');
+    stage = anychart.graphics.create("container");
     var fillSettings = {
-        keys: ['.1 red', '.5 green', '.9 blue'],
+        keys: [".1 red", ".5 green", ".9 blue"],
         angle: -45,
         mode: anychart.math.rect(5, 0, 395, 200),
         opacity: .2
@@ -18,17 +18,17 @@
             .rect(5, 0, 395, 200)
             .fill(fillSettings);
     fillSettings.opacity = 1;
-    stage.text(20, 3, 'shape 1');
+    stage.text(20, 3, "shape 1");
     anychart.ui.background()
             .fill(fillSettings)
             .bounds(anychart.math.rect(20, 20, 100, 70))
             .container(stage).draw();
-    stage.text(60, 120, 'shape 2');
+    stage.text(60, 120, "shape 2");
     anychart.ui.background()
             .fill(fillSettings)
             .bounds(anychart.math.rect(60, 140, 70, 50))
             .container(stage).draw();
-    stage.text(270, 73, 'shape 3');
+    stage.text(270, 73, "shape 3");
     anychart.ui.background()
             .fill(fillSettings)
             .bounds(anychart.math.rect(270, 93, 100, 100))

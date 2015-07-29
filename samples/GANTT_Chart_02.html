@@ -11,13 +11,13 @@
   var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TREE);
 
   // chart type
-  chart = anychart.ganttProject();
+  var chart = anychart.ganttProject();
 
   // chart container
-  chart.container('container');
+  chart.container("container");
 
   // chart position
-  chart.bounds(0, 0, '100%', '100%');
+  chart.bounds(0, 0, "100%", "100%");
 
   // chart data
   chart.data(treeData);
@@ -28,12 +28,12 @@
   var dataGrid = chart.dataGrid();
 
   // settings for first column
-  dataGrid.column(0).width(30).title().text('#');
+  dataGrid.column(0).width(30).title().text("#");
 
   // settings for the second column
   dataGrid.column(1).width(140).textFormatter(function(item) {
-    return item.get('name');
-  }).title().text('Plan');
+    return item.get("name");
+  }).title().text("Plan");
 
   // initiate drawing
   chart.draw();
@@ -41,20 +41,20 @@
   // area to display by default
   chart.zoomTo(Date.UTC(2007, 0, 1), Date.UTC(2007, 2, 29));
 
-  var expandAllButton = document.createElement('div');
-  var collapseAllButton = document.createElement('div');
-  var expandLast = document.createElement('div');
-  var collapseLast = document.createElement('div');
+  var expandAllButton = document.createElement("div");
+  var collapseAllButton = document.createElement("div");
+  var expandLast = document.createElement("div");
+  var collapseLast = document.createElement("div");
 
-  expandAllButton.className = 'custombutton';
-  collapseAllButton.className = 'custombutton';
-  expandLast.className = 'custombutton';
-  collapseLast.className = 'custombutton';
+  expandAllButton.className = "custombutton";
+  collapseAllButton.className = "custombutton";
+  expandLast.className = "custombutton";
+  collapseLast.className = "custombutton";
 
-  expandAllButton.innerHTML = 'expand all';
-  collapseAllButton.innerHTML = 'collapse all';
-  expandLast.innerHTML = 'expand 5';
-  collapseLast.innerHTML = 'collapse 5';
+  expandAllButton.innerHTML = "expand all";
+  collapseAllButton.innerHTML = "collapse all";
+  expandLast.innerHTML = "expand 5";
+  collapseLast.innerHTML = "collapse 5";
 
   expandAllButton.onclick = function() {
       chart.expandAll();
@@ -63,10 +63,10 @@
       chart.collapseAll();
   };
   expandLast.onclick = function() {
-      chart.expandTask('5');
+      chart.expandTask("5");
   };
   collapseLast.onclick = function() {
-      chart.collapseTask('5');
+      chart.collapseTask("5");
   };
 
   // append button to container
@@ -75,26 +75,26 @@
   container.appendChild(collapseAllButton);
   container.appendChild(expandAllButton);
 
-  var custombuttons = document.getElementsByClassName('custombutton');
+  var custombuttons = document.getElementsByClassName("custombutton");
 
   // set style for all buttons
   for (var i = 0; i<custombuttons.length; i++){
     // set button style
-    custombuttons[i].style.top = '210px';
-    custombuttons[i].style.left = 170*i + 'px';
-    custombuttons[i].style.width = '165px';
-    custombuttons[i].style.height = 'auto';
-    custombuttons[i].style.backgroundColor = 'white';
-    custombuttons[i].style.color = 'black';
+    custombuttons[i].style.top = "210px";
+    custombuttons[i].style.left = 170*i + "px";
+    custombuttons[i].style.width = "165px";
+    custombuttons[i].style.height = "auto";
+    custombuttons[i].style.backgroundColor = "white";
+    custombuttons[i].style.color = "black";
     custombuttons[i].style.fontFamily = chart.title().fontFamily();
-    custombuttons[i].style.position = 'absolute';
+    custombuttons[i].style.position = "absolute";
     custombuttons[i].style.zIndex = 2;
-    custombuttons[i].style.transition = '0.5s';
-    custombuttons[i].style.textAlign = 'center';
-    custombuttons[i].style.border = '2px solid #444444';
-    custombuttons[i].style.borderRadius = '7px 7px 7px 7px';
-    custombuttons[i].style.fontSize = '18px';
-    custombuttons[i].style.cursor = 'pointer';
+    custombuttons[i].style.transition = "0.5s";
+    custombuttons[i].style.textAlign = "center";
+    custombuttons[i].style.border = "2px solid #444444";
+    custombuttons[i].style.borderRadius = "7px 7px 7px 7px";
+    custombuttons[i].style.fontSize = "18px";
+    custombuttons[i].style.cursor = "pointer";
   }
 
 });
@@ -123,7 +123,7 @@ function getData() {
         "actualEnd": Date.UTC(2007, 1, 24)
       },
       {
-        "id": '5',
+        "id": "5",
         "name": "Innovation activities",
         "actualStart": Date.UTC(2007, 1, 24),
         "actualEnd": Date.UTC(2007, 2, 14),

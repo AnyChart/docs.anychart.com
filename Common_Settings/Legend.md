@@ -30,7 +30,8 @@ To enable legend use the {api:anychart.core.ui.Legend#enabled}**.enable()**{api}
   var chart = anychart.line();
   
   // enable legend
-  chart.legend().enabled(true);
+  var legend = chart.legend();
+  legend.enabled(true);
 ```
 
 By default legend shows each series name next to the symbol colored the same as the series.
@@ -39,7 +40,7 @@ By default legend shows each series name next to the symbol colored the same as 
 To enable such legend in your chart write the following:
 
 ```
-  chart.legend().enabled(true);
+  chart.legend(true);
 ```
 
 In the live sample, please notice that when you move the mouse over the series name in legend, the whole series is highlighted:
@@ -51,9 +52,11 @@ In the live sample, please notice that when you move the mouse over the series n
 If you are showing a single series chart and want your legend to show all points names and values you should configure legend:
 
 ```
-  chart.legend()
-    .enabled(true)                  // enable legend
-    .itemsSourceMode('categories'); // set source of legend items
+  var legend = chart.legend()
+  // enable legend
+  legend.enabled(true)
+  // set source of legend items
+  legend.itemsSourceMode('categories'); 
 ```
 
 To create a legend for single series chart you just have to set **categories** value for {api:anychart.core.ui.Legend#itemsSourceMode}**.itemsSourceMode()**{api}.
@@ -65,18 +68,19 @@ To create a legend for single series chart you just have to set **categories** v
 Sometimes you need the title to a legend and sometimes it is superfluous: to enable the legend title just use the {api:anychart.core.ui.Title#enabled}**.enabled()**{api} parameter:
 
 ```
-  chart.legend().title().enabled(true);
+  var legendTitle = chart.legend().title();
+  title.enabled(true);
 ```
 
 To specify and format your own title for the legend use the {api:anychart.core.ui.Title#text}**.text()**{api} method of a {api:anychart.core.ui.Legend#title}**.title()**{api}. For more information about title settings please refer to the [Title](../Appearance_Settings/Title) article.
 
 ```
-  chart.legend().title()
-    .useHtml(true)
-    .enabled(true)              // enables legend title
-    .text('Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>')
-    .fontSize(14)               // set font size
-    .hAlign('center');
+  var legendTitle = chart.legend().title();
+  legendTitle.useHtml(true)
+  legendTitle.enabled(true)              // enables legend title
+  legendTitle.text('Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>')
+  legendTitle.fontSize(14)               // set font size
+  legendTitle.hAlign('center');
 ```
 
 Here is a sample bar chart with the formatted title:
@@ -112,9 +116,11 @@ Legend size is controlled by {api:anychart.core.ui.Legend#height}**.height()**{a
 Here is a Pie Chart with a legend of a fixed (75px in width, 140px in height) size positioned to the *"Left"* from the chart and aligned to *"Top"*, with padding of 10 pixels:
 
 ```
-  chart.legend()
-    .height(140)  // set legend height to 140px 
-    .width(95)    // set legend width to 95px
+  var legend = chart.legend();
+  // set legend height to 140px 
+  legend.height(140);
+  // set legend width to 95px
+  legend.width(95);
 ```
 
 {sample}AS\_Legend\_06{sample}
@@ -128,10 +134,13 @@ If all legend items can't be displayed on a plot of a legend, the **{api:anychar
 
 ```
   // legend settings
-  chart.legend().enabled(true)
-    .paginator()
-      .layout('vertical')       // set paginator layout
-      .orientation('right')     // place paginator on the right
+  var legend = chart.legend();
+  legend.enabled(true);
+  var paginator = chart.legend().paginator();
+  // set paginator layout
+  paginator.layout('vertical');
+  // place paginator on the right
+  paginator.orientation('right');
 ```
 
 {sample}AS\_Legend\_07{sample}
@@ -142,15 +151,19 @@ When you are working with line or spline charts you may use markers to distingui
 
 ```
   // chart data 
-  chart.line([
+  var series = chart.line([
     {x: "John", value: 16000},
     {x: "Jake", value: 21000},
     {x: "Peter", value: 22000}
-  ])
-    .legendItem()               // settings for legend item of the series
-      .iconMarkerFill('gold')   // set inner color of icon marker
-      .iconMarkerStroke('red')  // set border of icon marker
-      .iconMarkerType('star6'); // set type of icon marker
+  ]);
+  // settings for legend item of the series
+  var legendItem = series.legendItem();
+  // set inner color of icon marker
+  legendItem.iconMarkerFill('gold');
+  // set border of icon marker
+  legendItem.iconMarkerStroke('red');
+  // set type of icon marker
+  legendItem.iconMarkerType('star6');
 ```
 
 Here is a sample with different settings for a marker of legend item.
@@ -174,15 +187,17 @@ You can easily manage the series of the chart using chart legend. You can hide a
 When creating the legend you can add your own items with any information you want to see on the legend, to do that use the {api:anychart.ui.Legend#itemsFormatter}**itemsFormatter()**{api} method. 
 
 ```
-
-chart.legend()
-    .itemsFormatter(function(items){        // adjust legend items
-      items.push({                          // push into items array
-        text: 'item text '                  // set text of a new item
-      });
-      return items;                         // return items array
+  var legend = chart.legend();
+  // adjust legend items
+  legend.itemsFormatter(function(items){
+    // push into items array
+    items.push({
+      // set text of a new item
+      text: 'item text '
     });
-
+    // return items array
+    return items;
+  });
 ```
 
 In the sample below we've used custom item that adds *Total* data to legend.

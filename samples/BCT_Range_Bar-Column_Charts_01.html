@@ -8,10 +8,10 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  var chart = anychart.barChart();
+  var chart = anychart.bar();
 
   // chart title
-  chart.title().text('Range Bar Chart');
+  chart.title().text("Range Bar Chart");
 
   // set axes title
   chart.xAxis().title().enabled(false);
@@ -35,7 +35,8 @@
   ]);
 
   // draw
-  chart.container('container').draw();
+  chart.container('container');
+  chart.draw();
 });</script>
 </head>
 <body>

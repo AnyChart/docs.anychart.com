@@ -17,23 +17,23 @@ scale, both x scale, y scale and additional scale.
 To add range marker you need to use {api:anychart.axisMarkers.Range}**.rangeMarker()**{api} method. Each range marker has several mandatory properties set by {api:anychart.axisMarkers.Range#scale}**.scale()**{api}, {api:anychart.axisMarkers.Range#from}**.from()**{api}, {api:anychart.axisMarkers.Range#to}**.to()**{api} and {api:anychart.axisMarkers.Range#fill}**.fill()**{api} methods. If you want to bound range marker to a horizontal scale, you have to set {api:anychart.axisMarkers.Range#layout}**.layout(vertical)**{api}. Otherwise it will be horizontal.
 
 ```
-    chart.rangeMarker()
-        .scale(chart.yScale())
-        .from(20000)
-        .to(30000)
-        .fill('green 0.5');
+  var marker1 = chart.rangeMarker(0);
+  marker1.scale(yScale);
+  marker1.from(20000);
+  marker1.to(30000);
+  marker1.fill("green 0.5");
 
-    chart.rangeMarker(1)
-        .scale(chart.yScale())
-        .fill('gold 0.5')
-        .from(10000)
-        .to(20000);
+  var marker2 = chart.rangeMarker(1);
+  marker2.scale(chart.yScale());
+  marker2.fill("gold 0.5");
+  marker2.from(10000);
+  marker2.to(20000);
 
-    chart.rangeMarker(2)
-        .scale(chart.yScale())
-        .from(0)
-        .to(10000)
-        .fill('red 0.5');
+  var marker3 = chart.rangeMarker(2);
+  marker3.scale(chart.yScale());
+  marker3.from(0);
+  marker3.to(10000);
+  marker3.fill("red 0.5");
 ```
 
 The sample below shows horizontal axes ranges.
@@ -52,15 +52,15 @@ or mark some kind of data.
 As far as range marker has method {api:anychart.graphics.vector.Fill}**.fill()**{api}, you can also use gradient and image fills of range to achieve desired style of your charts.
 
 ```
-    chart.rangeMarker(2)
-        .scale(chart.yScale())
-        .from(0)
-        .to(30000)
-        .fill({
-            keys: ['.1 green', '.5 yellow', '.9 red'],
-            angle: -90,
-            opacity: 0.5
-        });
+  var rangeMarker = chart.rangeMarker();
+  rangeMarker.scale(chart.yScale());
+  rangeMarker.from(0);
+  rangeMarker.to(30000);
+  rangeMarker.fill({
+    keys: [".1 green", ".5 yellow", ".9 red"],
+    angle: -90,
+    opacity: 0.5
+  });
 ```
 
 Sample below shows semitransparent filled range.

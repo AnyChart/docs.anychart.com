@@ -6,48 +6,48 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  //create data tree on our data
+  // create data tree on our data
   var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 
-  //create resource gantt chart
-  chart = anychart.ganttResource();
+  // create resource gantt chart
+  var chart = anychart.ganttResource();
 
-  //set container id for the chart
-  chart.container('container');
+  // set container id for the chart
+  chart.container("container");
 
-  //set data for the chart
+  // set data for the chart
   chart.data(treeData);
 
-  //set start splitter position settings
+  // set start splitter position settings
   chart.splitterPosition(160);
 
-  //get chart data grid link to set column settings
+  // get chart data grid link to set column settings
   var dataGrid = chart.dataGrid();
 
-  dataGrid.rowOddFill('#8a2be2 .2');
-  dataGrid.rowEvenFill('#8a2be2 .4');
+  dataGrid.rowOddFill("#8a2be2 .2");
+  dataGrid.rowEvenFill("#8a2be2 .4");
 
   var timeline = chart.getTimeline();
 
-  timeline.rowEvenFill('green .4');
+  timeline.rowEvenFill("green .4");
   timeline.rowOddFill("#add8e6");
 
-  //initiate chart drawing
+  // initiate chart drawing
   chart.draw();
 
-  //zoom chart to specified date
+  // zoom chart to specified date
   chart.fitAll();
 });
 
 function getData() {
   return [
     {
-      "id":'main_1',
-      "name": "Group 1",
+      "id":"main_1",
+      "name": "Group 1"
     },
     {
-      "id":'main_2',
-      "name": "Group 2",
+      "id":"main_2",
+      "name": "Group 2"
     },
     {
       "id": "1",

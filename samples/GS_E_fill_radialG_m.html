@@ -7,14 +7,14 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    stage = anychart.graphics.create('container');
+    stage = anychart.graphics.create("container");
     var bg = anychart.ui.background()
-        .fill(['black', 'white'], .5, .5, null, 1, 0.23, 0.81)
+        .fill(["black", "white"], .5, .5, null, 1, 0.23, 0.81)
         .container(stage)
         .draw();
     stage.ellipse(stage.width() / 2, stage.height() / 2, stage.width() / 2 - 2, stage.height() / 2 - 2)
-        .stroke('1 green')
-        .fill('green .2');
+        .stroke("1 green")
+        .fill("green .2");
 
 });</script>
 </head>

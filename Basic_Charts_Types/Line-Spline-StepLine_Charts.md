@@ -21,14 +21,15 @@
 
 Data that is arranged in columns or rows on a worksheet can be plotted in a line chart. Line charts display continuous data over time, set against a common scale, and are therefore ideal for showing trends in data at equal intervals. In a line chart, categories are evenly distributed along the horizontal axis, and all value data is distributed along the vertical axis.  
   
+  
 It's better to use a line chart if your category labels are textual and if they represent evenly spaced values such as months, quarters, or fiscal years.  
+  
   
 Displayed with or without markers to indicate individual data values, line charts are good at showing trends over the ordered categories, especially when there are a lot of data points and the categories' order is important. If there are many categories or the values are approximate, it's better to use a line chart without markers.
 
 ## Chart
 
-Depending on data model and the visualization purpose the line chart may contain single or multiple 
-series.
+Depending on data model and the visualization purpose the line chart may contain single or multiple series.
 
 ### Single Series Line Chart
 
@@ -61,21 +62,21 @@ Let's look at the single-series line chart created using the following data - sa
 </tr>
 </tbody></table>
 
-Now we need to convert this data table into an acceptable format. In terms of AnyChart we've got one series of data (Sales) with categories that hold months names. Each point in series represents one month and sales volume. Converted Data looks like:
+Now we need to convert this data table into an acceptable format. In terms of AnyChart we've got one series of data (Sales) with categories that hold months names. Each point in series represents one month and sales volume. Converted data looks like:
 
 ```
-    var data = anychart.data.set([
-        ['January', 10000],
-        ['February', 12000],
-        ['March', 18000],
-        ['April', 11000],
-        ['May', 9000]
-    ]);
-    var chart = anychart.lineChart();
-    chart.line(data);
+  var data = anychart.data.set([
+    ["January", 10000],
+    ["February", 12000],
+    ["March", 18000],
+    ["April", 11000],
+    ["May", 9000]
+  ]);
+  var chart = anychart.line();
+  chart.line(data);
 ```
 
-As you can see, we've specified the chart's type with {api:anychart.core.cartesian.series.Line}**anychart.lineChart()**{api} method, defined data source with {api:anychart.charts.Cartesian#line}**chart.line(data)**{api} and set data with {api:anychart.data.Set}**anychart.data.set()**{api}.
+As you can see, we've specified the chart's type using {api:anychart.core.cartesian.series.Line}**anychart.line()**{api} method, defined data source using {api:anychart.charts.Cartesian#line}**chart.line(data)**{api} and set data with {api:anychart.data#set}**anychart.data.set()**{api}.
 
 {sample}BCT\_LineChart\_01{sample}
 
@@ -84,15 +85,15 @@ As you can see, we've specified the chart's type with {api:anychart.core.cartesi
 For better impression of your charts you can use the Spline chart type:
 
 ```
-    var data = anychart.data.set([
-        ['January', 10000],
-        ['February', 12000],
-        ['March', 18000],
-        ['April', 11000],
-        ['May', 9000]
-    ]);
-    var chart = anychart.lineChart();
-    chart.spline(data);
+  var data = anychart.data.set([
+    ["January", 10000],
+    ["February", 12000],
+    ["March", 18000],
+    ["April", 11000],
+    ["May", 9000]
+  ]);
+  var chart = anychart.line();
+  chart.spline(data);
 ```
 
 Here is the same chart as shown above, but in Spline mode:
@@ -101,18 +102,18 @@ Here is the same chart as shown above, but in Spline mode:
 
 ### Single Series Step Line Chart
 
-Step line chart series display data points connected with Horizontal or Vertical segments - depends on which axis you used for caterogies. 
+Step line chart series display data points connected with Horizontal and Vertical lines. 
 
 ```
-    var data = anychart.data.set([
-        ['January', 10000],
-        ['February', 12000],
-        ['March', 18000],
-        ['April', 11000],
-        ['May', 9000]
-    ]);
-    var chart = anychart.lineChart();
-    chart.stepLine(data);
+  var data = anychart.data.set([
+    ["January", 10000],
+    ["February", 12000],
+    ["March", 18000],
+    ["April", 11000],
+    ["May", 9000]
+  ]);
+  var chart = anychart.line();
+  chart.stepLine(data);
 ```
 
 Here is the same chart as shown above, but in Step Line mode:
@@ -161,21 +162,21 @@ Let's compare 2003 sales to 2004 sales:
 As we did in single-series line sample above we need to convert this table into acceptable format, the only difference between these two samples is the fact that now we have two series of data - one series for each year, and we give proper names to each series:
 
 ```
-    var dataSet = anychart.data.set([
-        ['January', '10000', '12000'],
-        ['February', '12000', '15000'],
-        ['March', '18000', '16000'],
-        ['April', '11000', '15000'],
-        ['May', '9000', '14000'],
-    ]);
-    var seriesData_2 = dataSet.mapAs({x: [0], value: [1]});
-    var seriesData_1 = dataSet.mapAs({x: [0], value: [2]});
-    var chart = anychart.lineChart();
-    chart.line(seriesData_1);
-    chart.line(seriesData_2);
+  var dataSet = anychart.data.set([
+    ["January", 10000, 12000],
+    ["February", 12000, 15000],
+    ["March", 18000, 16000],
+    ["April", 11000, 15000],
+    ["May", 9000, 14000],
+  ]);
+  var seriesData_2 = dataSet.mapAs({x: [0], value: [1]});
+  var seriesData_1 = dataSet.mapAs({x: [0], value: [2]});
+  var chart = anychart.line();
+  chart.line(seriesData_1);
+  chart.line(seriesData_2);
 ```
 
-As we now have multi-series chart it's not rational to set type for each series individually (there might be more than two series in multi-series chart), so we add the {api:anychart.core.cartesian.series.Line}**anychart.lineChart()**{api} parameter to **chart**. Now all series in chart will be of Line type by default.
+As you can see, to add a new line series you just have to use {api:anychart.core.cartesian.series.Line}**.line()**{api} method as many times as many series you need.
 
 {sample}BCT\_LineChart\_04{sample}
 
@@ -190,8 +191,10 @@ With AnyChart you can place axes to any side of the chart, all you need to do is
 The position depends on the plot type and inversion of axes. See list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
 
 ```
-    chart.xAxis().orientation('top');
-    chart.yAxis().orientation('right');
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
 ```
 
 Below this you can see the demonstration of this feature in the Single-series sample:
@@ -200,22 +203,25 @@ Below this you can see the demonstration of this feature in the Single-series sa
 
 ### Inversion
 
-AnyChart allows to invert any axis: Y, X or any other axis. Inversion is controlled by axis **.inverted()**:
+AnyChart allows to invert any scale you want. Inversion is controlled by {api:anychart.scales.Linear#inverted}**.inverted()**{api} method:
 
 ```
-    chart.yScale().inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 ```
 
-And here is the demonstration of Y Axis inversion on the Single-series sample:
+And here is the demonstration of Y Scale inversion on the Single-series sample:
 
 {sample}BCT\_LineChart\_06{sample}
 
 ### Minimum and Maximum
 
-AnyChart calculates axis minimum and maximum automatically. The minimal value on Y-Axis is 8.000, the maximum is 20.000, as you can see in the sample above. You can control these values by setting **.maximum()** and **.minimum()** parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method; let's look at what will happen if we define 0 and 50.000 as the min amd the max values on the Y-Axis:
+AnyChart calculates axis minimum and maximum automatically. The minimal value on Y-Axis is 8000, the maximum is 20000, as you can see in the sample above. You can control these values by setting {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method; let's look at what will happen if we define 0 and 50000 as the min amd the max values on the Y-Axis:
 
 ```
-    chart.yScale().minimum(0).maximum(50000);
+  var yScale = chart.yScale();
+  yScale.minimum(0);
+  yScale.maximum(50000);
 ```
 
 And here is the demonstration of setting the max and min values in the Single-series sample:
@@ -241,26 +247,43 @@ Now, let's look how to create a simple style and apply it to the chart. As we've
 ```
   // line settings
   series.stroke(
-    'Rgb(86,86,26)',    // set line color
-    4                   // set line size
+    // set line color
+    "Rgb(86,86,26)",
+    // set line size
+    4
   );
-
-  // marker settings
-  series.markers()
-    .enabled(true)      // enables markers
-    .type('star5')      // set marker type
-    .fill('gold')       // set marker inner color
-    .stroke('darkred')  // set marker border
-    .size(7);           // set marker size
+  
+  // line settings in hovered state
+  series.hoverStroke(
+    // set line color
+    "Rgb(86,86,26)",
+    // set line size
+    4
+  );
+    
+  var markers = series.markers();
+  // enables markers
+  markers.enabled(true);
+  // set marker type
+  markers.type("star5");
+  // set marker inner color
+  markers.fill("gold");
+  // set marker border
+  markers.stroke("darkred");
+  // set marker size
+  markers.size(7);
   
   // settings for hovered marker
-  series.hoverMarkers()
-    .size(7)            // marker size
-    .fill('darkred')    // marker inner color
-    .stroke('gold');    // marker border
+  var hoverMarkers = series.hoverMarkers();
+  // marker size
+  hoverMarkers.size(7);
+  // marker inner color
+  hoverMarkers.fill("darkred");
+  // marker border
+  hoverMarkers.stroke("gold");
 ```
 
-Using such settings we've set the line in Gold color, made it rather thick and added a couple of effects. Also, we've defined that an element will be highlighted with a thick line of dark red  color when being hovered.
+Using such settings we've redefined line color and made it rather thick. Also, we've redefined settings for each point marker along with settings for each marker in hovered state.
 <!--
 Now let's take a sample of a single-series chart described above, define style in JSON and apply it to all chart elements, using <line_series style="style1"/>
 -->
@@ -271,9 +294,10 @@ Now let's take a sample of a single-series chart described above, define style i
 In this section we will explain how to add and configure data labels and tooltips.
 <!-- Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
   
-If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
-
-With the following example let's make data labels appear to the top from the data points, format them to show only the value corresponding to the point and force tooltips to show detailed description.
+If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods.
+  
+  
+With the following example let's make data labels appear to the top from the data points, format them to show only the value corresponding to the point values and force tooltips to show detailed description.
 
 {sample}BCT\_LineChart\_09{sample}
 
@@ -287,22 +311,24 @@ With the following example let's make data labels appear to the top from the dat
 ## Markers
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including lines.
-
+  
+  
 In the sample below we take single-series data described above and mark the highest point in series with a "Star5" of the "Gold" color.
-
+  
+  
 To make marker visually appealing we set its size to 12 pixels in normal state, and 22px while hovered.
 
   
 ```
   {
-    x: 'March',
+    x: "March",
     value: 18000,
-    marker:{                // marker settings
-      type:'star5',         // marker type
-      fill:'gold',          // marker inner color
-      size: 12              // marker size
-    }, 
-    hoverMarker: {size: 22} // marker size on mouse over
+    marker:{
+      enabled: true,
+      type: "star5",
+      fill: "gold",
+      size: 12},
+    hoverMarker: {size: 22}
   }
 ```
 
@@ -325,3 +351,5 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.graphics.vector.Stroke}**.stroke()**{api} parameter for this series. In the sample below we've got 5 series with sample data and we'll color each series to different color. Here is the sample:
 
 {sample}BCT\_LineChart\_11{sample}
+
+**Note**: you can find more information about lines' visual appearance in [Line Settings tutorial](../Appearance_Settings/Lines_Settings) 
