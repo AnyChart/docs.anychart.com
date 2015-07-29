@@ -17,24 +17,22 @@
   ]);
 
   // set data and chart type
-  var chart = anychart.columnChart(data);
+  var chart = anychart.column(data);
 
   // title settings
-  chart.title().text('Extra Axes Simple Sample');
+  chart.title().enabled(true).text('Extra Axes Simple Sample');
 
   // adjusting xAxis title
-  chart.xAxis().title().text('Sample X axis name').fontWeight('400');
+  chart.xAxis().title().enabled(true).text('Sample X axis name');
 
   // adjusting yAxes titles
   chart.yAxis(1).orientation('right')
-    .title()
-      .text('First additional axis');
+    .title().enabled(true).text('First additional axis').padding(10,0, 0, 0);
   chart.yAxis(2).orientation('right')
-    .title()
-      .text('Second additional axis');
+    .title().enabled(true).text('Second additional axis').padding(10,0, 0, 0);
+
   chart.yAxis(3).orientation('right')
-    .title()
-      .text('Third additional axis');
+    .title().enabled(true).text('Third additional axis');
 
   // adjusting major ticks' interval
   chart.yScale().ticks().interval(100000);
