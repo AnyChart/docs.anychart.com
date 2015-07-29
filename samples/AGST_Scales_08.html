@@ -44,7 +44,7 @@
 
   valueStackedMode.yScale().minimumGap(0.5).maximumGap(0.5);
 
-  valueStackedMode.column(data).hoverFill('#444444');
+  valueStackedMode.column(data);
 
   valueStackedMode.container(stage).draw();
 
@@ -66,7 +66,7 @@
   percentStackedMode.yScale().ticks().interval(10);
   percentStackedMode.yScale().minorTicks().interval(2);
 
-  percentStackedMode.column(data).hoverFill('#444444');
+  percentStackedMode.column(data));
 
   percentStackedMode.container(stage).draw();
 
