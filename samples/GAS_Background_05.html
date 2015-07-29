@@ -30,7 +30,7 @@
   chart.title('Image Fill of Background');
   chart.title()
           .padding(10)
-          .background('#fff 0.3');
+          .background('#fff 0.9');
 
   // set chart background
   chart.background().fill({
@@ -40,11 +40,13 @@
 
   // adjust grid
   chart.grid()
-    .evenFill('white 0.3')
-    .oddFill('white 0.3')
+    .evenFill('white 0.6')
+    .oddFill('white 0.6')
+    .stroke('#fff')
     .layout('horizontal');
   chart.minorGrid(null);
   chart.grid(1)
+    .stroke('#fff')
     .layout('vertical');
 
   // adjust axes labels color, ticks color, stroke color
