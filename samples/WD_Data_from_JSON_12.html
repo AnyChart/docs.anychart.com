@@ -5,19 +5,20 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">
-  anychart.onDocumentReady(function() {
-    var json = {
-      // create chart
-      "chart": {
-        // set chart container
-        "container": "container",
-        // set chart type
-        "type": "scatter",
-        // set chart title
-        "title": "Customized JSON Chart",
-        // create custom scales
-        "scales": [{},{},
+    <script x-export="chart">anychart.onDocumentReady(function() {
+  var json = {
+    // create chart
+    "chart": {
+      // set chart container
+      "container": "container",
+      // set chart type
+      "type": "scatter",
+      // set chart title
+      "title": "Customized JSON Chart",
+      // create custom scales
+      "scales": [
+        {},
+        {},
         // first custom scale
         {
           // scale type
