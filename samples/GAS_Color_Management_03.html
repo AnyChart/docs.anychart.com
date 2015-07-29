@@ -30,12 +30,12 @@
   ]);
   
   // chart type
-  chart = anychart.columnChart();
+  chart = anychart.column();
   
-  chart.title().text('Blend Colors Sample');
+  chart.title('Blend Colors Sample');
   
   // set data and set additionla information in tooltip
-  chart.column(data).tooltip().contentFormatter(function(){
+  chart.column(data).stroke(null).tooltip().contentFormatter(function(){
     var mixColor2 = anychart.color.blend(color1, color2, (this.index * 0.2));
     return 'Input Color: ' + color1 +
       '\nBlend Color: ' + color2 +
