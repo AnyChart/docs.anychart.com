@@ -8,13 +8,11 @@
   * [Add/Remove](#add_or_remove)
   * [Adapt](#adapt)
 * [Custom elements](#custom_elements)
-* [Print](#print)
-
+* [Printing](#printing)
   
 ## Overview
 
-Rendering capability of AnyChart components is based on anychart.graphics library, which is in charge of visual display. This display is the stage, which is a graphics tool, which helps with positioning a number of charts and other elements on one page. 
-It manages visual appearance and logic structure of data.
+Rendering capability of AnyChart components is based on anychart.graphics library, which is in charge of visual display. This display is the stage, which is a graphics tool, which helps with positioning a number of charts and other elements on one page. It manages visual appearance and logic structure of data.
 
 ###Enabling the stage
 
@@ -22,19 +20,24 @@ When we start working with any graphic elements of AnyChart, the stage is create
 To get an access to some useful settings of the stage we should do a custom creation of the stage:
 
 ```
-	var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create('container');
 ```
 Here we have defined the container for the stage simultaneously with enabling the stage. The following piece of code means the same:
 ```
+<<<<<<< HEAD
 	var stage = anychart.graphics.create();
 	stage.container('container');
+=======
+  var stage = anychart.graphics.create;
+  stage.container('container');
+>>>>>>> docs-DVF-1219-Stage-Based-Layout
 ```
 
 This will make the stage of the main container's width and height by default. To change the default values of those parameters, write them after the name of the container in brackets. 
 For example, to define the new stage of 800px in width and 600px in height, write the following:
 
 ```
-var stage = anychart.graphics.create('container', 800, 600);
+  var stage = anychart.graphics.create('container', 800, 600);
 ```
 
 ###Chart placement
@@ -44,11 +47,11 @@ One of them is [Table Layout](Table_Layout). The second option is to use stage a
 Let's place a Column Chart sample on a stage. The only difference in this case is that we should set the stage and later define it as a container for drawing.
 
 ```
-    // set stage
-    stage = anychart.graphics.create('container');
+  // set stage
+  stage = anychart.graphics.create('container');
 	
-	// draw
-    chart.container(stage).draw();
+  // draw
+  chart.container(stage).draw();
 ```
 {sample}DB\_Stage\_01{sample}
 
@@ -56,29 +59,29 @@ Let's place a Column Chart sample on a stage. The only difference in this case i
 In case you need to place more than one chart, you can use bounds to adapt the dimensions of the charts to fit them on a web page or wherever you need.
 
 ```
-    // set stage
-    stage = anychart.graphics.create('container');
+  // set stage
+  stage = anychart.graphics.create('container');
 	
-	// set chart_1
-    var chart_1 = anychart.column(data_1);
+  // set chart_1
+  var chart_1 = anychart.column(data_1);
 	
-	// chart size and position
-	chart_1.bounds(0, 0, '50%', '70%');
+  // chart size and position
+  chart_1.bounds(0, 0, '50%', '70%');
 	
-	// set chart_2
-    var chart_2 = anychart.column(data_2);
+  // set chart_2
+  var chart_2 = anychart.column(data_2);
 	
-	// chart size and position
-	chart_2.bounds('50%', 0, '50%', '70%');
+  // chart size and position
+  chart_2.bounds('50%', 0, '50%', '70%');
   
-	// draw
-	chart_2.container(stage).draw();
+  // draw
+  chart_2.container(stage).draw();
 ```
-{sample}DB\_Stage\_02{sample}
+{sample :width 700 :height 600}DB\_Stage\_02{sample}
 
 There are two ways of using bounds. If you define them in percent, your charts will resize each time the window they are opened in is resized. If you define bounds in pixels, the charts will not change their dimensions along with the resized window. Let's see what we'll get if we define bounds in pixels:
 
-{sample}DB\_Stage\_02-1{sample}
+{sample :width 700 :height 600}DB\_Stage\_02-1{sample}
 
 Explore the whole code in the playground to understand the difference.
 
@@ -107,13 +110,13 @@ In this particular sample we use the {api:anychart.graphics.vector.Stage#addChil
 Each click on the "Add" button adds a layer with a red square, each click on the "Remove" button removes the last layer added. Explore the sample in the playground to see the whole code.
 
 ```
-	// add a layer
-	var layer_1 = anychart.graphics.layer();
-    stage.addChild(layer_1); 
+  // add a layer
+  var layer_1 = anychart.graphics.layer();
+  stage.addChild(layer_1); 
 	
-	// remove a layer
-    var layerToRemove = layers.pop();
-    if (layerToRemove) layerToRemove.remove();
+  // remove a layer
+  var layerToRemove = layers.pop();
+  if (layerToRemove) layerToRemove.remove();
 	
 ```
 {sample :width 688 :height 500 }DB\_Stage\_04{sample}
@@ -125,61 +128,21 @@ As it was mentioned before, layers might be transformed. For example, we use {ap
 for rotating them and {api:anychart.graphics.vector.Element#scale}**.scale()**{api},
  if we need to scale it some way.
  
- Let's now make a more complicated example to show those features. Explore the sample in the playground to see the code.
+Let's now make a more complicated example to show those features. Explore the sample in the playground to see the code.
  
 {sample :width 688 :height 500 }DB\_Stage\_05{sample}
 
 Note that the center of the stage coordinate system is in the left top corner of the monitor and the vertical scale of the stage is directed to the bottom of the screen.
 
-Here we used 3 different layers to build each chart.
-
 ##Custom elements
 
-Besides the advantage of using layers, there's one more thing that you can do with the stage - add some custom elements, e.g. lines, curves, circles and other shapes, like in the following example:
+Besides the advantage of using layers, there's one more thing that you can do with the stage - add some custom elements, e.g. lines, curves, circles and other shapes, like in the following example where the biocenosis of a fir-tree is shown. We have put the pics of animals, drawn the fir-tree and the lines leading to the charts using the stage graphics, - you can find more about graphics in our [Graphics](../Graphics/Basics) tutorial.
 
 {sample :width 688 :height 700 }DB\_Stage\_06{sample}
 
-Here we considered the biocenosis of a fir-tree. We have put the pics of animals, drawn the fir-tree and the lines leading to the charts using the stage graphics, - you can find more about graphics in our [Graphics](../Graphics/Basics) tutorial.
- 
-```
-	// remove the first layer
-    layer_1.remove();
-	
-```
+##Printing
 
-##Print
+Every browser has a printing function. We can print any page using this function, but sometimes it can't guarantee that you get what you want or you may want to add "Print dashboard" or "Print chart" option to your application.
 
-Every browser has a printing function. We can print any page (in case it is not shelled from printing) using this function, but it cannot guarantee that we'll get what we wanted. 
-Prints made through standard browser printing mostly contains a lot of unnecessary information. So that's where AnyChart Printing helps.
-
-The main difference between standard printing and using the AnyChart Printing is the fact that the first one will print the whole page with all extra images and text while the second one
-allows to print an only chart with no useless information. 
-
-To print the whole chart, graphics on stage or a dashboard just add the {api}**.print()**{api} method to your container. It will look like the following:
-
-```
-	// print
-    stage.print();
-	
-```
-
-<p align="center"><a href="http://static.anychart.com/images/browser\_printing.jpg"><img width="700px" height="550px" src="http://static.anychart.com/images/browser\_printing.jpg"></a></p>
-
-This method has two parameters, which can be set:
-<p>1. papersize - this param is US Letter by default. Here you should define a value from ISO standard (A5, C4, B3, etc.) or US metric system (US legal, US letter, etc.).  </p>
-<p>2. landscape (layout) - this param is false by default. To set the landscape layout, set this as true.</p>
-For example, in case we want to set a portrait layout and have a print of A4 format, we shall write the following:
-
-```
-	// print
-    stage.print(A3, true);
-	
-```
-![]("http://sg.uploads.ru/tAucr.jpg")
-<p align="center"><a href="http://static.anychart.com/images/printing\_01.jpg"><img width="700px" height="550px" src="http://static.anychart.com/images/printing\_01.jpg"></a></p>
-
-Here you can see that the image of a chart is separated. That is because Javascript is not able to change your printer preferences, 
-so even if you have set the papersize and a layout for the chart, you'll have to do the same for the printer. You can find them to the left from the illustration of the future print.
-
-<p align="center"><a href="http://static.anychart.com/images/printing\_02.jpg"><img width="700px" height="550px" src="http://static.anychart.com/images/printing\_02.jpg"></a></p>
+If you have created a dashboard using AnyChart Stage, you can easily print it, learn more in [Printing tutorial](../Common_Settings/Printing#stage_printing).
 

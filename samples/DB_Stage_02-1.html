@@ -6,13 +6,24 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">	 	 
-	 	 
-	 	 
-	 	 
 anychart.onDocumentReady(function() {
 
     // set stage
     stage = anychart.graphics.create('container');
+
+    // create variable for custom theme
+    var customTheme = {
+        "defaultFontSettings": {
+          "fontSize": 9,
+        },
+        "chart": {
+          "title": false,
+          "legend": false
+        }
+    };
+    
+    // apply custom theme
+    anychart.theme(customTheme);    
 
 	// set data
 	var data_1 = anychart.data.set([
@@ -26,12 +37,12 @@ anychart.onDocumentReady(function() {
 	// set data
 	var seriesData_1 = data_1.mapAs({x: [0], value: [1]});
 	var seriesData_2 = data_1.mapAs({x: [0], value: [2]});
-	
+
 	// set chart_1
     var chart_1 = anychart.column();
-    
+	
 	var series_1_1 = chart_1.column(seriesData_1);
-    
+	
     //create scale for line series and extraYAxis
     //it force line series to not stuck values with over series
     var scale = anychart.scales.linear();
@@ -40,11 +51,10 @@ anychart.onDocumentReady(function() {
     var lineSeries = chart_1.spline(seriesData_2);
     lineSeries.yScale(scale);
     lineSeries.yScale().minimum(0).maximum(100);
-    lineSeries.stroke('navy');
 
     //create extra axis on the right side of chart
     var extraYAxis = chart_1.yAxis(1);
-    extraYAxis.title().text('Customers under 20 years old');
+    extraYAxis.title('Customers under 20 years old');
     extraYAxis.orientation('right');
     extraYAxis.scale(scale);
     extraYAxis.labels().textFormatter(function(){
@@ -52,19 +62,18 @@ anychart.onDocumentReady(function() {
      });
     
     // set chart title
-	chart_1.title('Popular Tea Types in the Tea House in May 2015');
+	chart_1.title('Popular Tea Types in the Tea House');
 
 	// chart size and position
-	chart_1.bounds(0, 0, 420, 450);
+	chart_1.bounds(0, 0, 420, 600);
 
 	// draw
 	chart_1.container(stage).draw();
 	
     // axes names
     chart_1.yAxis().title('Sales (.oz)');
-    chart_1.xAxis().title('Tea Types');
 
-//chart 2
+    //chart 2
 
 	// set data
 	var data_2 = [
@@ -77,24 +86,19 @@ anychart.onDocumentReady(function() {
 
 	// set chart_2
 	var chart_2 = anychart.pie(data_2);
-	chart_2.radius(70);
 	chart_2.innerRadius('30%');
-	chart_2.fill('aquastyle');
-	chart_2.labels().fontSize(12);
-	chart_2.labels().fontFamily('Georgia');
-	
-	chart_2.labels().fontColor('black');
-	chart_2.title('Confectionery sold in Tea House in May 2015');
-	
-	chart_2.legend(false);
+
+	chart_2.labels().fontColor('White');
+	chart_2.title('Confectionery sold in Tea House');
 
 	// chart size and position
-	chart_2.bounds(400, 0, 205, 200);
+
+	chart_2.bounds(420, 0, 245, 300);
 
 	// draw
 	chart_2.container(stage).draw();
 	
-//chart 3
+    //chart 3
 
 	// set data
 	var data_3 = [
@@ -107,14 +111,10 @@ anychart.onDocumentReady(function() {
 
 	// set chart_2
 	var chart_3 = anychart.bar(data_3);
-	chart_3.title('The most popular hours');
+	chart_3.title('Popular hours');
 
 	// chart size and position
-	chart_3.bounds(400, 200, 210, 250);
-	
-    // axes names
-    chart_3.yAxis().title('Sales');
-    chart_3.xAxis().title('Time');
+	chart_3.bounds(420, 300, 245, 300);
 
 	// draw
 	chart_3.container(stage).draw();
