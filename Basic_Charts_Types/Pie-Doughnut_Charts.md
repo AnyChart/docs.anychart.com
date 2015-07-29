@@ -117,12 +117,6 @@ You can set starting angle for the first slice of the pie using {api:anychart.ch
 
 {sample}BCT\_PieDoughnutChart\_04{sample}
 
-### 3D Pie Chart
-
-It is very easy to display the data from the sample above in 3D mode - just use {api:anychart#pie3d}**.pie3d()**{api} and the pie will become 3D.
-
-{sample}BCT\_Pie\_3d{sample}
-
 ##Start Angle
 
 You can set starting angle for the first slice for the pie using {api:anychart.charts.Pie#startAngle}**.startAngle()**{api} method. In the sample below the start angle is shifted to 45°.
