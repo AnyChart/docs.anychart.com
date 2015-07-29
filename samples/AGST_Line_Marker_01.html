@@ -9,8 +9,8 @@
   
   // data
   var data = anychart.data.set([
-    [2000, 10000, 12000, 18000, 11000, 9000, 'gold 0.5'],
-    [2001, 12000, 15000, 16000, 13000, 19000, 'red 0.5'],
+    [2000, 10000, 12000, 18000, 11000, 9000, '#64b5f6 0.7'],
+    [2001, 12000, 15000, 16000, 13000, 19000, '#1976d2 0.7'],
   ]);
   
   // map data for the each series
@@ -24,19 +24,19 @@
   chart = anychart.columnChart();
   
   // set data
-  chart.column(chart1).tooltip().contentFormatter(function(){
+  chart.column(chart1).stroke(null).tooltip().contentFormatter(function(){
     return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
   });
-  chart.column(chart2).tooltip().contentFormatter(function(){
+  chart.column(chart2).stroke(null).tooltip().contentFormatter(function(){
     return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
   });
-  chart.column(chart3).tooltip().contentFormatter(function(){
+  chart.column(chart3).stroke(null).tooltip().contentFormatter(function(){
     return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
   });
-  chart.column(chart4).tooltip().contentFormatter(function(){
+  chart.column(chart4).stroke(null).tooltip().contentFormatter(function(){
     return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
   });
-  chart.column(chart5).tooltip().contentFormatter(function(){
+  chart.column(chart5).stroke(null).tooltip().contentFormatter(function(){
     return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
   });
   
@@ -59,15 +59,11 @@
   chart.yAxis(1)
     .orientation('right')
     .scale(additionalScale)
-    .stroke('1.5 black')
     .title('Sales Pts')
     .labels();
   
-  // disable x axis title
-  chart.xAxis().title().enabled(false);
-  
   // y axis title
-  chart.yAxis().title().text('Sales');
+  chart.yAxis().title().enabled(true).text('Sales');
   
   // set green marker
   chart.textMarker(1)
@@ -75,9 +71,9 @@
     .value(9000)
     .text('Lowest')
     .align('left')
-    .anchor('rightbottom')
-    .fontSize(13)
-    .offsetX(30)
+    .anchor('rightcenter')
+    .fontSize(14)
+    .offsetX(5)
     .fontColor('green');
   
   // set green marker
@@ -86,10 +82,10 @@
     .value(19000)
     .text('Highest')
     .align('left')
-    .anchor('rightbottom')
-    .fontSize(13)
-    .offsetX(30)
-    .fontColor('red');
+    .anchor('rightcenter')
+    .fontSize(14)
+    .offsetX(5)
+    .fontColor('#dd2c00');
   
   // set lowest line marker
   chart.lineMarker()
@@ -99,7 +95,7 @@
   
   // set highest line marker
   chart.lineMarker(1)
-    .stroke({color: 'red', dash: '7', opacity: 1})
+    .stroke({color: '#dd2c00', dash: '7', opacity: 1})
     .scale(chart.yScale())
     .value(19000);
   

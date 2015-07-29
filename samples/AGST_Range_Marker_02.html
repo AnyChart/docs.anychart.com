@@ -17,7 +17,7 @@
   ]);
   
   // chart type
-  chart = anychart.lineChart();
+  chart = anychart.line();
   
   // set data
   chart.line(data).hoverStroke('red').tooltip().contentFormatter(function(){
@@ -40,18 +40,22 @@
   
   // y scale title
   chart.yAxis().title().text('Sales');
-  
+
+//        chart.rangeMarker().from(20).to(28).fill('#006B00 0.4');
+//  chart.rangeMarker(1).from(28).to(38).fill('#009900 0.4');
+//  chart.rangeMarker(2).from(38).to(48).fill('#ffa000 0.4');
+
   // set green
   chart.rangeMarker()
     .scale(chart.yScale())
     .from(20000)
     .to(30000)
-    .fill('green 0.5');
+    .fill('#009900 0.4');
   
   // set red marker
   chart.rangeMarker(1)
     .scale(chart.yScale())
-    .fill('gold 0.5')
+    .fill('#ffa000 0.4')
     .from(10000)
     .to(20000);
   
@@ -60,7 +64,7 @@
     .scale(chart.yScale())
     .from(0)
     .to(10000)
-    .fill('red 0.5');
+    .fill('#dd2c00 0.4');
   
   // set left text marker
   chart.textMarker()
@@ -69,9 +73,9 @@
     .anchor('leftcenter')
     .offsetX(5)
     .value(25000)
-    .fontColor('white')
+    .fontColor('#212121')
     .text('Good: [20,000.00 - 30,000.00]')
-    .fontSize(20);
+    .fontSize(13);
   
   // set text marker at the center
   chart.textMarker(1)
@@ -79,10 +83,10 @@
     .align('center')
     .anchor('center')
     .value(15000)
-    .fontColor('black')
+    .fontColor('#212121')
     .hAlign('center')
     .text('Average \n[20,000.00 - 30,000.00]')
-    .fontSize(18);
+    .fontSize(13);
   
   // set text marker at the center
   chart.textMarker(2)
@@ -91,9 +95,9 @@
     .anchor('rightcenter')
     .offsetX(5)
     .value(5000)
-    .fontColor('black')
+    .fontColor('#212121')
     .text('Severe')
-    .fontSize(15);
+    .fontSize(13);
   
   // draw
   chart.container('container').draw();

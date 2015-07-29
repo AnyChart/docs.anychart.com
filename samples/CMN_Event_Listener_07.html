@@ -20,10 +20,10 @@
 	// set chart type
 	chart = anychart.columnChart();
 
-	chart.title().text('Confectionery Sales in April');
+	chart.title().enabled(true).text('Confectionery Sales in April');
 
 	// set data
-	var area = chart.column(dataSet).markers(null);
+	var area = chart.column(dataSet);
 
 	chart.padding().right(80);
 
