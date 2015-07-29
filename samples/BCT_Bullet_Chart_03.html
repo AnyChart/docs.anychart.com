@@ -10,13 +10,13 @@
   var stage = anychart.graphics.create('container').height(400).width(600);
 
   // Create bullet chart
-  var verticalChart = anychart.bulletChart([{value: 7}]);
+  var verticalChart = anychart.bullet([{value: 7}]);
   // Set chart to render on stage
   verticalChart.container(stage);
   // Chart title
   verticalChart.title().text('Vertical\nLayout').hAlign('center');
   // Set chart size and position settings
-  verticalChart.bounds('75%', 0, '25%', '100%');
+  verticalChart.bounds('75%', 0, 155, '100%');
   // Set chart layout
   verticalChart.layout('vertical');
   // Create chart ranges
@@ -27,7 +27,7 @@
   verticalChart.draw();
 
   // Create second bullet chart
-  var horizontalChart = anychart.bulletChart([{value: 11}]);
+  var horizontalChart = anychart.bullet([{value: 11}]);
   // Set chart to render on stage
   horizontalChart.container(stage);
   // Set chart size and position settings
