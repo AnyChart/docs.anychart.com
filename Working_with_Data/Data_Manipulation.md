@@ -3,7 +3,7 @@
 
 * [Overview](#overview)
  * [Add](#add)
- * [Meta-adding](#Meta-add)
+ * [Metadata](#metadata)
  * [Read](#read)
  * [Update](#update)
  * [Delete](#delete)
@@ -20,7 +20,7 @@ You can solve the following tasks using some easy-in-use Java Script methods:
   
  * Data-Stream - you can add some new data to the end of a data set while optional removing some data from its beginning. 
  * Add - you can add one or several points to the end of the data set.
- * Meta-add - you can add some metadata to the chart.
+ * Metadata - you can add some metadata to the chart.
  * Update - you can change the values of the existing points.
  * Remove - you can remove any point from a data set.
  * Insert - you can add one or several points between the existing points.
@@ -45,11 +45,11 @@ That's how it looks with the button which adds a point on a click.
 Append method helps to add information only at the end of the data set. To add information into any position see
  [.insert() method section](#insert) below.
 
-### Meta-add
+### Metadata
 Adding custom data is nice function, but charts have to be as useful and informative as possible. Any point of a chart may contain meta information. If you want some meta information to be avaliable on hovering a part of a chart, that's how your code will look like: 
 
 ```
- // function, if listener triggers
+ // hover listener
     function(e) {
         var info = view.get(e.pointIndex, 'value');
 
