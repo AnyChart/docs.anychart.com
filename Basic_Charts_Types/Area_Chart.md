@@ -71,7 +71,7 @@ like this:
         ['April', 11000],
         ['May', 9000]
     ]);
-    chart = anychart.areaChart();
+    chart = anychart.area();
     chart.area(data);
 ```
 
@@ -99,7 +99,7 @@ For better look of your charts you can use SplineArea chart type:
     ]);
 
     // setting chart type
-    chart = anychart.areaChart();
+    chart = anychart.area();
 	
 	// set data and define chart type
     chart.splineArea(data);
@@ -169,7 +169,7 @@ names to each series:
 ```
 
 As now we have multi-series chart we don't want to set the **chart type** for each series individually (there can be 
-more than two series in a multi-series chart), so we set the **chart** as {api:anychart#area}**anychart.areaChart()**{api}. Now all series in
+more than two series in a multi-series chart), so we set the **chart** as {api:anychart#area}**anychart.area()**{api}. Now all series in
 the chart will be of Area type by default.
 
 {sample}BCT\_AreaChart\_03{sample}
