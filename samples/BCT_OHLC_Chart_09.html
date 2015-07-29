@@ -17,14 +17,14 @@
   ];
 
   // chart type
-  var chart = anychart.financialChart();
+  var chart = anychart.financial();
 
   // chart title
-  chart.title().text('Minimum and Maximum Colors');
+  chart.title('Minimum and Maximum Colors');
 
   // set axes title
-  chart.xAxis().title().text('Day');
-  chart.yAxis().title().text('Price');
+  chart.xAxis().title('Day');
+  chart.yAxis().title('Price');
 
   // adjust x scale type
   chart.xScale()

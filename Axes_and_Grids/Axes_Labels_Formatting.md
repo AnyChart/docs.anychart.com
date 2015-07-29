@@ -144,7 +144,7 @@ Font settings of labels are configured as any text. You can specify size, face a
   var labels = chart.xAxis().labels();
   labels.fontFamily("Courier");
   labels.fontSize(12);
-  labels.fontColor("red");
+  labels.fontColor("green");
   labels.fontWeight("bold");
   labels.useHtml(false);
 ```
@@ -170,7 +170,7 @@ Labels background is configured with (api:anychart.core.ui.Label#background)**.b
 ```   
   var labelsBackground = chart.xAxis().labels().background();
   labelsBackground.enabled(true);
-  labelsBackground.stroke('blue');
+  labelsBackground.stroke('orange');
 ```
 
 In this sample we will demonstrate labels background settings, multi-line labels and align and font settings:
