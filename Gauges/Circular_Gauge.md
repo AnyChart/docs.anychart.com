@@ -37,19 +37,19 @@ Let's build a gauge that should look like a speedometer. Step by step, we will m
 Let's start with a simple speedometer gauge. First of all, we need to set the data - the speed represented. Let it be 50mph:
 
 ```
-//create data set on our data
-  dataSet = anychart.data.set([50]);
+    //create data set on our data
+    dataSet = anychart.data.set([50]);
 
-//set the chart type
-  gauge = anychart.circularGauge();
+    //set the chart type
+    gauge = anychart.circularGauge();
 
-//link the data with the gauge
-  gauge.data(dataSet);
+    //link the data with the gauge
+    gauge.data(dataSet);
 ```
 If we add a line that draws a chart, we'll see the plain frame with a cap in the center:
 ```
-  // draw chart
-  gauge.container('container').draw();
+    // draw chart
+    gauge.container('container').draw();
 ```
 
 That's how it looks like in a sample:
@@ -60,15 +60,15 @@ That's how it looks like in a sample:
 Change the {api:anychart.core.axes.Circular#startAngle}**.startAngle()**{api} parameter to fix the angle you need axes to start from:
 
 ```
-//set the angle
-  axis.startAngle(270);
+    //set the angle
+    gauge.startAngle(270);
 ```  
 
 Axis can be limited setting the {api:anychart.core.axes.Circular#sweepAngle}**.sweepAngle()**{api} parameter (its value represents the angle which would be drawn): 
 
 ```
-//set the angle
-  gauge.startAngle(270).sweepAngle(180);
+    //set the angle
+    gauge.startAngle(270).sweepAngle(180);
 ```
 
 Now, let's look at the sample and see what we've done:
@@ -79,8 +79,8 @@ Now, let's look at the sample and see what we've done:
 You can use negative values also. In this case, the count will be as usual. Let's set our startAngle to -45 and the sweepAngle to -300:
 
 ```
-//set the angle
-  axis.startAngle(-45).sweepAngle(-300);
+    //set the angle
+    gauge.startAngle(-45).sweepAngle(-300);
 ```  
 
 The gauge will look like the following:
@@ -100,10 +100,10 @@ Axis in gauges are not the same as in the other basic chart types. There's no X-
 Let's enable the axis to see the changes we make and set its width and radius at once. To make it we use the {api:anychart.core.axes.Circular#radius}**.radius()**{api} and the {api:anychart.core.axes.Circular#width}**.width()**{api} methods.
 
 ```
-	//axis settings
-  var axis = gauge.axis()
-       .radius(95)
-       .width(1);
+    //axis settings
+    var axis = gauge.axis()
+        .radius(95)
+        .width(1);
 ```
 
 ###Minimum and Maximum
@@ -111,7 +111,7 @@ Let's enable the axis to see the changes we make and set its width and radius at
 Let's limit the axis with the values we want to be displayed. To set the limits, we used the {api:anychart.scales.ScatterBase#minimum}**.minimum()**{api} and the {api:anychart.scales.ScatterBase#maximum}**.maximum()**{api} methods. Let it be from 0 to 120 mph:
 
 ```
-		//scale settings
+    //scale settings
     axis.scale()
         .minimum(0)
         .maximum(120);
@@ -127,14 +127,14 @@ So our gauge with the fixed axis will look the following way:
 At the moment our speedometer has only 4 ticks each 40 mph, that is not actually informative. Let's set the limits for our ticks, make major tickes appear each 10 mph and enable minor ticks.
 
 ```
-		//scale settings
+    //scale settings
     axis.scale()
         .minimum(0)
         .maximum(120)
         .ticks({interval: 10})
         .minorTicks({interval: 1});
 
-		//minor ticks settings
+    //minor ticks settings
     axis.minorTicks()
         .enabled(true);
 ```
@@ -146,12 +146,13 @@ To enable the ticks and set the interval we used the {api:anychart.core.axes.Cir
 It's easy to notice that there's no difference between major and minor ticks. Let's set them of the type and length that will emphasize the major ticks:
 
 ```
-		//ticks settings
+    //ticks settings
     axis.ticks()
+        .enabled(true)
         .type('trapezoid')
         .length('8');
 
-		//minor ticks settings
+    //minor ticks settings
     axis.minorTicks()
         .enabled(true)
         .length('1');
@@ -172,7 +173,7 @@ As you may remember, we have defined some data at the beginning of the article, 
 There are 4 different types of pointers avaliable: needle, knob, bar and marker. Knob is a full-circular pointer that is usually used with the needle and designed to look like a tuner of a part of electronics (audio, microwave, oven, etc.), so we don't describe it in here. Let's add the second axis and the second value in our dataSet to make some sense out of the rest pointers:
 
 ```
-        //needle
+    //needle
     gauge.needle(0)
         .enabled(true)
         .startRadius('-5%')
@@ -182,7 +183,7 @@ There are 4 different types of pointers avaliable: needle, knob, bar and marker.
         .endWidth('0.1%')
         .middleWidth('5%');
         
-        //marker
+    //marker
     gauge.marker(0)
         .axisIndex(1)   
         .dataIndex(1)
@@ -211,7 +212,7 @@ For more information look up the [Pointers and Data](../Gauges/Pointers_and_Data
 Cap in gauges has no practical meaning: its purpose is to make an on-screen gauge to look more like a usual gauge. Let's enable and fix it to fit its look to the gauge.
 
 ```
- //cap
+    //cap
     gauge.cap()
         .radius('6%');
 ```

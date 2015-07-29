@@ -7,7 +7,7 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
     
-  var chart = anychart.areaChart();
+  var chart = anychart.area();
 
   chart.title().text('Axes Labels Visual Setting');
 
@@ -32,11 +32,11 @@
 
   chart.xAxis().labels().fontFamily('Courier')
     .useHtml(true)
-    .fontColor('red')
+    .fontColor('green')
     .fontWeight('bold')
     .background()
       .enabled(true)
-      .stroke('blue');
+      .stroke('orange');
 
   // function to addjust y axis labels
   function dollarFormatter() {

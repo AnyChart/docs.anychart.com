@@ -29,7 +29,8 @@
 
 
   // Chart without labels adjusting
-  var normalLabels = anychart.columnChart();
+  var normalLabels = anychart.column();
+  normalLabels.padding(10, 10, 0, 10);
 
   // setting title
   normalLabels.title().text('Normal labels');
@@ -38,7 +39,7 @@
   normalLabels.background().stroke('#CCCCCC');
 
   // setting position and bounds
-  normalLabels.bounds(0, '10%', '33.3%', '55%');
+  normalLabels.bounds(0, '10%', '50%', '45%');
 
   // set scale minimum
   normalLabels.yScale().minimum(0);
@@ -59,9 +60,10 @@
 
 
   // chart with rotated labels
-  var rotatedLabels = anychart.columnChart();
+  var rotatedLabels = anychart.column();
   rotatedLabels.title().text('Rotated labels');
-  rotatedLabels.bounds('33.3%', '10%', '33.3%', '55%');
+  rotatedLabels.padding(10, 10, 0, 10);
+  rotatedLabels.bounds('50%', '10%', '50%', '45%');
   rotatedLabels.background().stroke('#CCCCCC');
 
   // set scale minimum
@@ -82,9 +84,10 @@
 
 
   // chart with stagger mode
-  var staggerLabels = anychart.columnChart();
+  var staggerLabels = anychart.column();
+  staggerLabels.padding(10, 10, 0, 10);
   staggerLabels.title().text('Stagger Labels');
-  staggerLabels.bounds('66.6%', '10%', '33.3%', '55%');
+  staggerLabels.bounds(0, '55%', '50%', '45%');
   staggerLabels.background().stroke('#CCCCCC');
   staggerLabels.xAxis().title().enabled(false);
   staggerLabels.yAxis().title().enabled(false);
@@ -124,7 +127,8 @@
 
 
   // chat with labels inside
-  var labelsInside = anychart.lineChart();
+  var labelsInside = anychart.line();
+  labelsInside.padding(10, 10, 0, 10);
 
   // setting data
   labelsInside.line([
@@ -137,7 +141,7 @@
   ]).tooltip().enabled(false);
 
   labelsInside.title().text('Labels Inside');
-  labelsInside.bounds(0, '65%', '100%', '35%');
+  labelsInside.bounds('50%', '55%', '50%', '45%');
   labelsInside.background().stroke('#CCCCCC');
 
   labelsInside.xAxis().title().enabled(false);

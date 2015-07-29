@@ -72,7 +72,7 @@ If you need different error lines for each data point, you can add values to a d
   ]);
 ```
 
-{sample}Error\_Chart\_01{sample}
+{sample}Error\_Chart\_10{sample}
 
 If you use only the {api:anychart.core.utils.Error#valueError}**.valueError()**{api} method, the upper and lower values will be equal to half of the specified value. The method {api:anychart.core.utils.Error#valueError}**.valueError()**{api} usage has priority over that of {api:anychart.core.utils.Error#valueLowerError}**.valueLowerError()**{api} or {api:anychart.core.utils.Error#valueUpperError}**.valueUpperError()**{api} usage. The code below demonstrates an error where the upper and lower values are equal to 3.
 
@@ -83,7 +83,7 @@ If you use only the {api:anychart.core.utils.Error#valueError}**.valueError()**{
   error.valueError(6);
 ```
 
-{sample}Error\_Chart\_02{sample}
+{sample}Error\_Chart\_03{sample}
 
 AnyChart allows you to set an error value in different ways, e.g. as absolute numbers or as a percentage:
 
@@ -92,7 +92,7 @@ AnyChart allows you to set an error value in different ways, e.g. as absolute nu
   var error = series.error();
   
   //set the value in numbers
-  error.valueError(7);
+  error.valueError(6);
   
   //or set it in percentage
   error.valueError("15%")
@@ -100,7 +100,7 @@ AnyChart allows you to set an error value in different ways, e.g. as absolute nu
 
 As you can see we've created the error bars on a chart using the settings listed in the above table:
 
-{sample}Error\_Chart\_03{sample}
+{sample}Error\_Chart\_01{sample}
 
 Also it should be noted that you can do the same using the {api:anychart.core.cartesian.series.Base#error}**.error()**{api} method. The sample below demonstrates how to apply a total error to a full data set.
 
@@ -112,11 +112,11 @@ Also it should be noted that you can do the same using the {api:anychart.core.ca
   series.error("12%");
 ```
 
-{sample}Error\_Chart\_04{sample}
+{sample}Error\_Chart\_02{sample}
 
 **Note**: You can show error bars for x values in the case of e.g. an error in measurement of the data set. Have a look at the section below to learn more how to define an error on a series x value.
 
-{sample}Error\_Chart\_05{sample}
+{sample}Error\_Chart\_12{sample}
 
 ### Scatter
 
@@ -144,7 +144,7 @@ Error bars can be displayed for the series x value, y value or both. You should 
 
 And now we have an error defined on a scatter plot.
 
-{sample}Error\_Chart\_06{sample}
+{sample}Error\_Chart\_05{sample}
 
 X value error value must be defined in numbers or percentage of total value.
 
@@ -160,11 +160,11 @@ X value error value must be defined in numbers or percentage of total value.
 
 The same rules can be applied in case of scatter plot. Below is a demonstration of error defined with the foreground {api:anychart.core.utils.Error#xError}**.xError()**{api} method.
 
-{sample}Error\_Chart\_07{sample}
+{sample}Error\_Chart\_04{sample}
 
 It is also possible to apply a separate error bar to each data point within a series on a scatter plot:
 
-{sample}Error\_Chart\_08{sample}
+{sample}Error\_Chart\_11{sample}
 
 ### Error Mode
 
@@ -211,7 +211,7 @@ Let's take a look at this part of code. As we can see the both error values are 
   error.mode("none");
 ```
 
-{sample}Error\_Chart\_09{sample}
+{sample}Error\_Chart\_06{sample}
 
 Or you can use only **"value"** error mode with the same error settings:
 
@@ -226,7 +226,7 @@ Or you can use only **"value"** error mode with the same error settings:
 
 And the chart looks appropriate:
 
-{sample}Error\_Chart\_10{sample}
+{sample}Error\_Chart\_07{sample}
 
 ## Visualization
 
@@ -256,7 +256,7 @@ AnyChart provides a few opportunities to configure an error view. If you want to
 
 Here is the simple demonstration of this feature on the Scatter Line Chart:
 
-{sample}Error\_Chart\_11{sample}
+{sample}Error\_Chart\_08{sample}
 
 To change the error color you have to use the following settings:
 
@@ -297,7 +297,7 @@ Here is a simple code to illustrate how to apply these settings:
 
 Look at the chart sample below and click on it to see it's javascript source.
 
-{sample}Error\_Chart\_12{sample}
+{sample}Error\_Chart\_09{sample}
 
 ## Labels And Tooltips
 
