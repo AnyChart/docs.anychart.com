@@ -127,14 +127,14 @@ So our gauge with the fixed axis will look the following way:
 At the moment our speedometer has only 4 ticks each 40 mph, that is not actually informative. Let's set the limits for our ticks, make major tickes appear each 10 mph and enable minor ticks.
 
 ```
-		//scale settings
+    //scale settings
     axis.scale()
         .minimum(0)
         .maximum(120)
         .ticks({interval: 10})
         .minorTicks({interval: 1});
 
-		//minor ticks settings
+    //minor ticks settings
     axis.minorTicks()
         .enabled(true);
 ```
@@ -146,13 +146,13 @@ To enable the ticks and set the interval we used the {api:anychart.core.axes.Cir
 It's easy to notice that there's no difference between major and minor ticks. Let's set them of the type and length that will emphasize the major ticks:
 
 ```
-		//ticks settings
+    //ticks settings
     axis.ticks()
         .enabled(true)
         .type('trapezoid')
         .length('8');
 
-		//minor ticks settings
+    //minor ticks settings
     axis.minorTicks()
         .enabled(true)
         .length('1');
