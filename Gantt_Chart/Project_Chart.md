@@ -7,6 +7,7 @@
 * [Expand/Collapse control](#expand/collapse_control)
 * [Task Progress](#task_progress)
 * [Actual and Planned](#actual_and_planned)
+ * [Swap Actual and Planned](#swap_actual_and_planned) 
 * [Connectors](#connectors)
 
 ## Overview
@@ -172,16 +173,17 @@ Tracking progress can be complicated, but you can show percent complete using pr
 
 {sample :width 690 :height 200}GANTT\_Chart\_05{sample}
 
-<br>Let's demonstrate how to apply different settings to progress bar for custom visualisation.
+<br>Note that in the sample above we have changed progress bar color for one of the tasks, that's how one can do this:
 
 ```
-{
-    'progressValue': "17%",
-    'progress':{
-        'fill': 'blue',
-        'label': {'value': 'progress value'
+    {
+      'id': '4',
+      'name': 'Task 4',
+      'actualStart': Date.UTC(2008, 7, 5),
+      'actualEnd': Date.UTC(2008, 7, 14),
+      'progressValue': '25%',
+      'progress':{'fill': 'red'}
     }
-}
 ```
 
 ## Actual and Planned
@@ -226,6 +228,18 @@ Sometimes a task is taking longer than was planned, in this case it is useful to
         }
 }
 ```
+
+### Swap Actual and Planned
+
+If you want to display Planned (baseline) bars above the Actual bars, use *baselineAbove()* method of the {api:anychart.charts.Gantt#getTimeline}**Timeline**{api}:
+
+```
+chart.getTimeline().baselineAbove(true);
+```
+
+This is how it works:
+
+{sample :width 690 :height 180}GANTT\_Chart\_04\_1{sample}
 
 ## Connectors
 

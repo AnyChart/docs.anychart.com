@@ -18,7 +18,7 @@ Credits is a single object shown as a watermark in the right bottom corner of an
 Сredits's text can be changed by using {api:anychart.core.ui.Credits#text}**.text()**{api} method:
 
 ```
-    chart.credits().text('My Company');
+    chart.credits().text('Company');
 ```
 {sample}Credits\_01{sample}
 
@@ -27,7 +27,7 @@ Credits is a single object shown as a watermark in the right bottom corner of an
 Tooltip is shown when a credits is hovered. It can be adjusted with {api:anychart.core.ui.Credits#alt}**.alt()**{api} method.
 
 ```
-    chart.credits().alt('Custom tooltip');
+    chart.credits().alt('Custom tooltip.');
 ```
 {sample}Credits\_02{sample}
 

@@ -24,7 +24,7 @@ JavaScript API helps you the best when you need to Create, Read, Update, and Del
 We recommend to use [Data Sets](./Using_Data_Sets) when you work with JS API, but you can also pass data directly to a chart by creating a function:
 ```
 // create a pie chart
-var chart = anychart.pieChart([
+var chart = anychart.pie([
     ['Product A', 1222],
     ['Product B', 2431],
     ['Product C', 3624],
@@ -118,7 +118,7 @@ var csvString = '2009-02-05,6764.81\n' +
       '2009-02-19,7555.23';
       
 // create an area chart      
-var chart = anychart.areaChart();
+var chart = anychart.area();
 
 // set container id for the chart
 chart.container('container');

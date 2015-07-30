@@ -1,3 +1,4 @@
+{:index 4}
 # Custom GeoJson Maps
 
 * [Overview](#overview)

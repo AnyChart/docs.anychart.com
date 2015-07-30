@@ -8,7 +8,7 @@
  * [Background](#background)
  * [Text Settings](#text_settings)
 * [HTML in Title](#html_in_title)
-* [Additional Titles](#additional_titles)
+<!--* [Additional Titles](#additional_titles)-->
 * [Adding Events](#adding_events)
 
 ## Overview
@@ -109,7 +109,7 @@ You can use HTML formatted text of a title. Use {api:anychart.core.ui.Title#useH
 {sample}AS\_Titles\_06{sample}
 
 **Note:** the list of all supported tags for HTML text formatting can be found in [Text Settings article](../Appearance_Settings/Text_Settings#supported_tags)
-
+<!--
 ## Additional Titles
 
 Chart can contain any number of additional titles. These titles can be placed anywhere on the plot.
@@ -146,7 +146,7 @@ Chart can contain any number of additional titles. These titles can be placed an
 {sample}AS\_Titles\_07{sample}
 
 **Note:** chart elements are drawn in a specific order and we recommend to use **.draw()** method for a custom title after the chart is drawn.
-
+-->
 ## Adding Events
 
 You can make your chart title interactive by adding event listeners of a different types. Sample below represents {api:anychart.enums.EventType}pointClick{api} event, that triggers alert() function.
