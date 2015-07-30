@@ -30,13 +30,14 @@ Example:
 ```
 <script>
     anychart.onDocumentLoad(function() {
-        var chart = anychart.pie([ //create an instance of a pie chart with data
-            ['Chocolate paste', 5],
-            ['White honey', 2],
-            ['Strawberry jam', 2],
-            ['Сondensed milk', 1]
-        ]);
-        chart.title('The kind of pancakes preferred\nat the Sochi 2014 Olympic Games');
+	var chart = anychart.pie([ // create an instance of a pie chart with data
+		["Chocolate", 5],
+		["Rhubarb compote", 2],
+		["Crêpe Suzette", 2],
+		["American blueberry", 2],
+		["Buttermilk", 1]
+	]);        
+        chart.title('Top 5 pancake fillings');
         chart.container('container'); // pass the container id, chart will be displayed there
         chart.draw(); // call the chart draw() method to initiate chart display
     });
@@ -45,7 +46,7 @@ Example:
   
 ## The result
 ###See the result
-After all these steps you should have the following result. You can launch and explore this example further [here](http://playground.anychart.com/acdvf-docs/7.3.1/samples/quick_start_pie-plain).
+After all these steps you should have the following result. You can launch and explore this example further [here](http://playground.anychart.com/docs/latest/samples/quick_start_pie-plain).
 
 {sample}quick\_start\_pie{sample}
 ###Full source code
@@ -56,15 +57,16 @@ Below this you can see how your full web page code should look like.
     <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
     <script>
         anychart.onDocumentLoad(function() {
-            var chart = anychart.pie([ //create an instance of pie chart with data
-                ['Chocolate paste', 5],
-                ['White honey', 2],
-                ['Strawberry jam', 2],
-                ['Сondensed milk', 1]
+            var chart = anychart.pie([ // create an instance of pie chart with data
+		["Chocolate", 5],
+		["Rhubarb compote", 2],
+		["Crêpe Suzette", 2],
+		["American blueberry", 2],
+		["Buttermilk", 1]
             ]);
-            chart.title('The kind of pancakes preferred\nat the Sochi 2014 Olympic Games');
-            chart.container('container'); //pass the container where chart will be drawn
-            chart.draw(); //call the chart draw() method to initiate chart drawing
+            chart.title('Top 5 pancake fillings');
+            chart.container('container'); // pass the container where chart will be drawn
+            chart.draw(); // call the chart draw() method to initiate chart drawing
         });
     </script>
 </head>
@@ -81,6 +83,7 @@ Also, you can copy and paste this code to a file on your computer and run it in 
 ### Learn more
 * Explore [JavaScript API Reference](http://api.anychart.com/)
 * See [Playground demos](http://playground.anychart.com/)
+* Ask for Rhubarb compote filling in your local diner.
 
 ### Subscribe
 * Follow us on [Facebook](https://www.facebook.com/AnyCharts) and [Twitter](https://twitter.com/intent/follow?&screen_name=anychart&original_referer=http%3A%2F%2Fdocs.anychart.com)

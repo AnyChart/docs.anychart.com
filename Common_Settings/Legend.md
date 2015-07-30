@@ -208,4 +208,4 @@ In the sample below we've used custom item that adds *Total* data to legend.
 
 AnyChart sets no limits to the amount of legends on one chart plot. Legend can be a part of a chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart. 
 
-{sample}AS\_Legend\_12{sample}
+{sample :width 690 :height 450}AS\_Legend\_12{sample}

@@ -16,32 +16,26 @@
     ["2014/6/30",  28,  25,  27]  //     5
   ];
 
-  // create a data set
-  var dataSet = anychart.data.set(data);
+  // create mapping list on one data set
+  var dataMappingList = anychart.data.mapAsTable(data);
 
   // set stage
   stage = anychart.graphics.create('container');
 
   // create a line chart using the data set
-  var lineChart = anychart.lineChart.apply(null, anychart.data.mapAsTable(data));
-
+  var lineChart = anychart.line(dataMappingList[0], dataMappingList[1], dataMappingList[2]);
+  
   // set container and position
   lineChart.container(stage);
   lineChart.bounds(0, 0, '100%', '50%');
 
-  // current stage stroke
-  lineChart.background().stroke('white').fill('white');
-
-  // axes titles setter
-  lineChart.xAxis().title().text('Date');
-  lineChart.yAxis().title().text('Temperature');
   lineChart.yAxis().labels().textFormatter(function(){
       return this.value + ' °C';
   });
   //series titles setter
-    lineChart.getSeries(0).name('NY');
-    lineChart.getSeries(1).name('SF');
-    lineChart.getSeries(2).name('LA');
+    lineChart.getSeries(0).name('New York');
+    lineChart.getSeries(1).name('San Francisco');
+    lineChart.getSeries(2).name('Los Angeles');
   // apply tooltip settings
   lineChart.getSeries(0).tooltip().contentFormatter(tooltipSetter);
   lineChart.getSeries(1).tooltip().contentFormatter(tooltipSetter);
@@ -54,29 +48,29 @@
   lineChart.draw();
 
   // map x and value from the data set
-  var colChart = anychart.columnChart.apply(null, anychart.data.mapAsTable(data));
+  var colChart = anychart.column(dataMappingList[0], dataMappingList[1], dataMappingList[2]);
   
     //naming the chart's series (legend)
-    colChart.getSeries(0).name('NY');
-    colChart.getSeries(1).name('SF');
-    colChart.getSeries(2).name('LA');
+    colChart.getSeries(0).name('New York');
+    colChart.getSeries(1).name('San Francisco');
+    colChart.getSeries(2).name('Los Angeles');
     
-    // axes titles setter
-  colChart.xAxis().title().text('Date');
-  colChart.yAxis().title().text('Temperature');
-  colChart.yAxis().labels().textFormatter(function(){
+   colChart.yAxis().labels().textFormatter(function(){
       return this.value + ' °C';
   });
-  
-    // naming the chart
-    colChart.title('Weather in the USA');
   
       // set container and position
   colChart.container(stage);
   colChart.bounds(0, '50%', '100%', '50%');
   
     // current stage stroke
-  colChart.background().stroke('white').fill('white');
+  colChart.legend()
+    .enabled(true)             // enables legend
+    .position('bottom')        // set legend position
+    .align('center')           // set legend align
+    .itemsLayout('horizontal') // set layout of legend items
+    .removeAllListeners(); // 
+
   
    // apply tooltip settings
   colChart.getSeries(0).tooltip().contentFormatter(tooltipSetter);

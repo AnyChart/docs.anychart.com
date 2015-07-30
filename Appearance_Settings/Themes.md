@@ -217,11 +217,11 @@ In the sample below a table contains several charts. Settings for these charts a
 
 ##Reset Theme
 
-There is one very important thing you need to remember when you work with themes in Dashboard mode: after the theme is defined in code every chart in the scope of the chart function uses this theme. To reset theme to the default or to the new one you have to use {api:anychart#theme}**.theme()**{api} method again.
+There is one very important thing you need to remember when you work with themes in Dashboard mode: after the theme is defined in code every chart uses this theme until you set another theme. To reset theme to the default or to the new one you have to use {api:anychart#theme}**.theme()**{api} method again.
 
 ```
   // return default theme to the charts below
-  anychart.theme(anychart.themes.defaultTheme);
+  anychart.theme(null);
 ```
 
 ## Global Settings, Defaults and Theme Reference
