@@ -1,3 +1,4 @@
+{:index 0}
 #Maps
 
 * [Overview](#overview)
