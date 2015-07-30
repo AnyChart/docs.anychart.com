@@ -1,3 +1,8 @@
+Isopleth Map
+===========
+
+Coming soon. See [AnyMap Roadmap](http://anychart.com/products/anymap/roadmap/).
+<!--
 #Maps
 
 * [Isopleth Map](#isopleth_map)
@@ -11,7 +16,7 @@
  * [Disadvantages](#disadvantages)
 
 *coming_soon*
-<!--
+
 ## Isopleth Map
 
 ## Data
