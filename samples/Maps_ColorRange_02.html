@@ -1,0 +1,49 @@
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+  <script src="//cdn.anychart.com/geodata/countries/aus/australia.js" data-export="true"></script>
+  <script x-export="chart">anychart.onDocumentReady(function() {
+    var dataSet = anychart.data.set([
+      {'id': 'AU.WA', 'value': 300},  // Western Australia
+      {'id': 'AU.JB'},                // Jervis Bay Territory
+      {'id': 'AU.NS', 'value': 240},  // New South Wales
+      {'id': 'AU.VI', 'value': 75},   // Victoria
+      {'id': 'AU.NT', 'value': 130},  // Northern Territory
+      {'id': 'AU.TS', 'value': 190},  // Tasmania
+      {'id': 'AU.CT', labels: false}, // Australian Capital Territory
+      {'id': 'AU.SA'},                // South Australia
+      {'id': 'AU.QL'}                 // Queensland
+    ]);
+
+    //
+    var map = anychart.map();
+    map.geoData(anychart.maps.australia);
+
+    // set the background color
+    map.background('Gainsboro');
+    // set the title and its preferences
+    map.title().useHtml(true).hAlign('center');
+    map.title('<span style="font-size: 18px;">Data Setting</span><br><span style="font-size:12px;">Move the mouse over the districts to see which have values</span>');
+
+    // set the series
+    var series = map.choropleth(dataSet);
+    series.geoIdField('code_hasc');
+    
+    // set the colors and ranges for the scale
+	series.colorScale(anychart.scales.ordinalColor([{less:200,color:'red'},{from:200, to:250, color:'green'},{greater:250, color:'white'}]));
+
+
+    // set the container
+    map.container('container');
+    map.draw();
+  });</script>
+
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

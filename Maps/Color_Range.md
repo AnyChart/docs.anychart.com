@@ -220,8 +220,10 @@ For example from yellow through orange to brown.
 </table>
 
 anychart.color#blendedHueProgression
+
+### Coming soon
  
-### Partial color progression
+#### Partial color progression
  
 Partial spectral hue progressions are used to map mixtures of two distinct sets of data. 
 This ColorRange type looks like a gradient between two adjacent opponent hues and shows the magnitude of the mixing data classes.
@@ -246,7 +248,7 @@ This ColorRange type looks like a gradient between two adjacent opponent hues an
 </table>
 
 
-### Full-spectral color progression
+#### Full-spectral color progression
 
 Full spectral progression contains all rainbow colors, from blue to red. This ColorRange type is usually used on relief maps and modern weather maps. 
 This progression is not recommended under other circumstances because some connections between a color and its meaning can seem confusing for users.
