@@ -23,7 +23,7 @@
 
 In this tutorial we will learn how to build the basic circular gauge step by step, trying to cover all major elements and pointing to the articles for the further tuning a gauge.
 
-So, a Circular Gauge is a radial axis that sweeps any angle from 0 to 360 degrees and a pointer (Needle or Knob) that indicates values on that scale. Gauge scale is usually colored for easy value quality distinction. Gauges can be used as clocks, speedometer, compass, audio feature tuner or any other gauge that should represent the value as an angle on a circle plot.
+So, a Circular Gauge is a visual representation of a measuring device with a radial axis that sweeps any angle from 0 to 360 degrees and a pointer (Needle or Knob) that indicates values on that scale. Gauge axes are usually colored for easy value distinction. Gauges can be used as clocks, speedometer, compass, volume tuner or any other gauge that should represent the value as an angle on a circle plot.
 
 Let's start with adding or configuring gauge elements step by step, so in the end we'll create a typical speedometer gauge as a result.
 
@@ -57,33 +57,38 @@ That's how it looks like in a sample:
 
 ##StartAngle and SweepAngle
 
-Change the {api:anychart.core.axes.Circular#startAngle}**.startAngle()**{api} parameter to fix the angle you need axes to start from:
+There are two ways of how we can set the starting angles for our axes: tuning the axes only or the whole gauge. 
+
+Method {api:anychart.core.axes.Circular#startAngle}**.startAngle()**{api} will fix the angle you need the gauge or the axis to start from, and use {api:anychart.core.axes.Circular#sweepAngle}**.sweepAngle()**{api} to limit the angle which would be drawn.
+
+Axes itself have no default starting angle - it takes the gauge setting as the default - and no default limitations except which are set for the whole gauge. But it's possible to make the axis settings different from those which the gauge has.
 
 ```
-    //set the angle
+    //set the starting angle for the gauge
     gauge.startAngle(270);
-```  
-
-Axis can be limited setting the {api:anychart.core.axes.Circular#sweepAngle}**.sweepAngle()**{api} parameter (its value represents the angle which would be drawn): 
-
+	
+	//set the starting angle for the axis
+    axis.startAngle(270);
+	
+    //set the angle limit for the gauge
+    gauge.sweepAngle(180);
+	
+    //set the angle limit for the axis
+    axis.sweepAngle(180);
 ```
-    //set the angle
-    gauge.startAngle(270).sweepAngle(180);
-```
 
-Now, let's look at the sample and see what we've done:
+Now, let's look at the sample. Here we've turned and limited the gauge itself:
 
 {sample}GAUGE\_Circular\_02{sample}
 
-
-You can use negative values also. In this case, the count will be as usual. Let's set our startAngle to -45 and the sweepAngle to -300:
+You can use negative values also. In this case, the count will be usual. Let's set our startAngle to -90 and leave the sweepAngle to 180:
 
 ```
     //set the angle
-    gauge.startAngle(-45).sweepAngle(-300);
+    gauge.startAngle(-90).sweepAngle(180);
 ```  
 
-The gauge will look like the following:
+As you can see, nothing has changed:
 
 {sample}GAUGE\_Circular\_02-1{sample}
 
