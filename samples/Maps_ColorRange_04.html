@@ -32,15 +32,15 @@
     // set the series
     var series = map.choropleth(dataSet);
     series.geoIdField('code_hasc');
-    series.stroke('#000 .3');
-    series.colorScale(anychart.scales.ordinalColor([{less:200},{from:200, to:250},{greater:250}]));
     
-    var colors = anychart.color.bipolarHueProgression("#4CAF50", "#FFEB3B", 4);
-
-    var cr = map.colorRange();
-    cr.enabled(true);
+    // set the colors and ranges for the scale
+	series.colorScale(anychart.scales.ordinalColor([{less:200},{from:200, to:250},{greater:250}]));
+        
+    //set the single hue progression
+    var colors = anychart.color.singleHueProgression('#0068BC');
+    
     series.colorScale().colors(colors);
-    
+
     // set the container
     map.container('container');
     map.draw();

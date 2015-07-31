@@ -33,14 +33,11 @@
     var series = map.choropleth(dataSet);
     series.geoIdField('code_hasc');
     series.stroke('#000 .3');
-    series.colorScale(anychart.scales.linearColor('#FFEBD6', '#C40A0A'));
-    
-    var colors = anychart.color.bipolarHueProgression("#4CAF50", "#FFEB3B", 4);
+    series.colorScale(anychart.scales.linearColor('#EC6E07', '#64B5F6'));
 
     var cr = map.colorRange();
     cr.enabled(true);
-    series.colorScale().colors(colors);
-    
+	
     // set the container
     map.container('container');
     map.draw();

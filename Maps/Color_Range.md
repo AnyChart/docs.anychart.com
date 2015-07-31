@@ -76,7 +76,7 @@ This type of ColorScale looks like a number of boxes with different colors. Colo
 
 ```
 	// set the colors and ranges for the scale
-	series.colorScale(anychart.scales.ordinalColor([{less:200,color:'red'},{from:200, to:250, color:'green'},{greater:250, color:'white'}]));
+	series.colorScale(anychart.scales.ordinalColor([{less:200,color:'#EC6E07'},{from:200, to:250, color:'#A1958A'},{greater:250, color:'#64B5F6'}]));
 ```
 
 {sample}Maps\_ColorRange\_02{sample}
@@ -88,7 +88,7 @@ The following code does the same as the code above.
 ```
 	// set the colors and the ranges
 	series.colorScale().ranges([{less:200},{from:200, to:250},{greater:250}]);
-	series.colorScale().colors(['red', 'green', 'white']);
+	series.colorScale().colors(['#EC6E07', '#A1958A', '#64B5F6']);
 ```
 
 ### Linear Color Range
@@ -97,8 +97,13 @@ This type of ColorScale looks like a single bar colored with a gradient, where i
 <br><br>
 <img src = "http://static.anychart.com/images/quant_colorrange.jpg">
 
+Using the Linear type of coloring, there are three ways of coloring the map:
+<br>1) we may define no colors - in this case the coloring will de based on the default palette;
+<br>2) we may define only one color - in this case the coloring gradient will be built from very light grey tot he only defined color;
+<br>3) the more colors we define here, the more colors will the gradient contain. 
+
 ```
-series.colorScale(anychart.scales.linearColor('#FFEBD6', '#C40A0A'));
+series.colorScale(anychart.scales.linearColor('#EC6E07', '#64B5F6'));
 ```
 
 {sample}Maps\_ColorRange\_03{sample}
@@ -136,7 +141,7 @@ This palette type is usually used to show the difference in values of something 
 To make a single-hue progression use the **{api:anychart.color#singleHueProgression}anychart.color.singleHueProgression(){api}**
 function. You may not define the colors - in this case the shades will de genereated for the default color. 
 
-{sample}Maps\_ColorRange\_02{sample}
+{sample}Maps\_ColorRange\_04{sample}
 
 ### Value progression
 
@@ -161,6 +166,10 @@ This type of ColorRange is one of the best ways to portray a magnitude message t
 </tr>
 </tbody>
 </table>
+
+This progression is more likely as single hue one, but the colors all are monochromatic. Just set the monochromatic shades (or even white and black) as colors for the single hue progression.
+
+{sample}Maps\_ColorRange\_05{sample}
  
 ### Bi-polar 
  
@@ -188,16 +197,16 @@ of the darker end point hues into a gray shade representing the middle. An examp
 </tbody>
 </table>
 
-{sample}Maps\_ColorRange\_03{sample}
+{sample}Maps\_ColorRange\_06{sample}
 
 That's how the same map would look like with an ordinal Scale.
 
-{sample}Maps\_ColorRange\_04{sample}
+{sample}Maps\_ColorRange\_07{sample}
  
 ### Blended color progression
 
 This type of color progression is typically used to show elevation changes. 
-It's more like a single hue type, but the difference between color are less sharp. This progression uses related hues to blend together the two end point hues. 
+It's more like a single hue type, but the difference between shades is less sharp. This progression uses related hues to blend together the two end point hues. 
 For example from yellow through orange to brown.
 
 <br><br>
