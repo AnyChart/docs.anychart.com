@@ -6,52 +6,53 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
+
   // create data set on our data
-    var dataSet = anychart.data.set([
-        ["Winter", 12000, 12000, 10000],
-        ["Spring", 13000, 12000, 17000],
-        ["Summer", 25000, 15000, 19000],
-        ["Autumn", 16000, 16000, 16000]
-    ]);
+  var dataSet = anychart.data.set([
+    ["Winter", 12000, 12000, 10000],
+    ["Spring", 13000, 12000, 17000],
+    ["Summer", 25000, 15000, 19000],
+    ["Autumn", 16000, 16000, 16000]
+  ]);
 
-    // map data for the first series, take x from the zero column and value from the first column of data set
-    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+  // map data for the first series, take x from the zero column and value from the first column of data set
+  var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
 
-    // map data for the second series, take x from the zero column and value from the second column of data set
-    var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+  // map data for the second series, take x from the zero column and value from the second column of data set
+  var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
 
-    // map data for the second series, take x from the zero column and value from the third column of data set
-    var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
+  // map data for the second series, take x from the zero column and value from the third column of data set
+  var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
 
-    // chart type
-    var chart = anychart.areaChart();
+  // chart type
+  var chart = anychart.area();
 
-    // chart title
-    chart.title().text('Percent Stacked Area Chart');
+  // chart title
+  chart.title("Percent Stacked Area Chart");
 
-    // set axes title
-    chart.xAxis().title().text('Season');
-    chart.yAxis().title().text('Percent');
+  // set axes title
+  var xAxis = chart.xAxis();
+  xAxis.title("Season");
+  var yAxis = chart.yAxis();
+  yAxis.title("Percent");
 
-    // set chart Y scale settings
-    chart.yScale().stackMode('percent');
+  // set chart Y scale settings
+  var yScale = chart.yScale();
+  yScale.stackMode("percent");
 
-    // set yAxis labels formatting, force it to add % to values
-    chart.yAxis().labels().textFormatter(function(info) {
-      return info.value + '%';
-    });
+  // set yAxis labels formatting, force it to add % to values
+  var yLabels = chart.yAxis();
+  yLabels.labels().textFormatter(function(info) {
+    return info.value + "%";
+  });
 
-    // create first area series on mapped data and specify series fill function
-    chart.area(seriesData_1);
+  chart.area(seriesData_1);
+  chart.area(seriesData_2);
+  chart.area(seriesData_3);
 
-    // create second area series on mapped data and specify series fill function
-    chart.area(seriesData_2);
-
-    // create third area series on mapped data, specify series fill function and color
-    chart.area(seriesData_3);
-
-    // draw
-    chart.container('container').draw();
+  // draw
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

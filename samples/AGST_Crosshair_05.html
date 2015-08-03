@@ -1,8 +1,11 @@
-{:tags []
-     :is_new false
-     :exports "chart"}
-
-anychart.onDocumentReady(function() {
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
   chart = anychart.scatterChart();
   chart.title().text('Sample Scatter Graph');
@@ -13,28 +16,6 @@ anychart.onDocumentReady(function() {
   chart.yAxis(0).title().text('Waiting time between eruptions (Min)');
   chart.xAxis(0).title().text('Eruption duration (Min)');
   chart.xAxis(0).drawFirstLabel(false).drawLastLabel(false);
-
-  chart.grid(0)
-    .oddFill('#F9F9F9')
-    .evenFill('#FFFFFF')
-    .layout(anychart.enums.Layout.HORIZONTAL);
-
-  chart.minorGrid(0)
-    .evenFill('none')
-    .oddFill('none')
-    .stroke('black 0.1')
-    .layout(anychart.enums.Layout.HORIZONTAL);
-
-  chart.grid(1)
-    .evenFill('none')
-    .oddFill('none')
-    .layout(anychart.enums.Layout.VERTICAL);
-
-  chart.minorGrid(1)
-    .evenFill('none')
-    .oddFill('none')
-    .stroke('black 0.1')
-    .layout(anychart.enums.Layout.VERTICAL);
 
   var marker = chart.marker([
     [4.4, 78],
@@ -281,4 +262,9 @@ anychart.onDocumentReady(function() {
     return 'Cost: $' + this['value'] + '\nDuration: ' + this['x'] + ' min.';
   });
   chart.container('container').draw();
-});
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

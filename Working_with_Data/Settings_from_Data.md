@@ -13,7 +13,7 @@ AnyChart allows you to apply different visualization settings to a single point.
 ```
 //create data set
 var data = [
-  {x: 'Department Stores1', value: 737166},
+  {x: 'Department Stores', value: 737166},
   {x: 'Discount Stores', value: 537166},
   {x: 'Men\'s/Women\'s Specialty Stores', value: 188662},
   {x: 'Juvenile Specialty Stores', value: 178662},
@@ -52,7 +52,7 @@ series.labels().enabled(true).anchor('leftCenter').position('rightCenter').fontS
 
 ```
 var data = [
-  {x: 'Department Stores1', value: 737166, fill:{color: 'red', opacity: '.5'}},
+  {x: 'Department Stores', value: 737166, fill:{color: 'red', opacity: '.5'}},
   {x: 'Discount Stores', value: 537166},
   {x: 'Men\'s/Women\'s Specialty Stores', value: 188662},
   {x: 'Juvenile Specialty Stores', value: 178662},
@@ -64,7 +64,7 @@ var data = [
 
 ```
 var data = [
-  {x: 'Department Stores1', value: 737166, fill:{color: 'red', opacity: '.7'}, hatchFill:{hatchType:'diagonalbrick',color: 'gray'}, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}},
+  {x: 'Department Stores', value: 737166, fill:{color: 'red', opacity: '.7'}, hatchFill:{hatchType:'diagonalbrick',color: 'gray'}, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}},
   {x: 'Discount Stores', value: 537166},
   {x: 'Men\'s/Women\'s Specialty Stores', value: 188662},
   {x: 'Juvenile Specialty Stores', value: 178662},

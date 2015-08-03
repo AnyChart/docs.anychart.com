@@ -36,6 +36,7 @@ anychart.onDocumentReady(function() {
 
 		//ticks settings
     axis.ticks()
+        .enabled(true)
         .type('trapezoid')
         .length('8');
 
@@ -57,7 +58,8 @@ anychart.onDocumentReady(function() {
         
 		//draw the chart
     gauge.container('container').draw();
-});</script>
+});
+</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

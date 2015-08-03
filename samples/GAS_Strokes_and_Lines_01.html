@@ -8,10 +8,10 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chat type
-  var chart = anychart.lineChart();
+  var chart = anychart.line();
 
   // title
-  chart.title().text('Sample Line Settigns');
+  chart.title('Sample Line Settigns');
 
   // data
   var data = anychart.data.set([
@@ -33,6 +33,7 @@
   chart.line(dataSeries_1)
     .stroke('5 red')        // set stroke thickness 5px and stroke color as red
     .markers()              // markers settings
+      .enabled(true)
       .fill('red')          // markers color
       .stroke('red 0.4');   // markers border color
 
@@ -49,8 +50,6 @@
     keys: ['.1 red', '.5 blue', '.9 green'],
     thickness: 5
   });
-  // disable markers
-  series_3.markers().enabled(false);
 
 
   // set data into forth series

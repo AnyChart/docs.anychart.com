@@ -9,9 +9,18 @@
 
   // setting data
   var data = anychart.data.set([
-    ['P1', 16, 20],
-    ['P2', 12, 18],
-    ['P3', 9, 14]
+    ['January', 200, 180],
+    ['February', 289, 290],
+    ['March', 197, 370],
+    ['April', 210, 400],
+    ['May', 220, 120],
+    ['June', 215, 214],
+    ['July', 209, 153],
+    ['August', 357, 257],
+    ['September', 333, 183],
+    ['October', 218, 236],
+    ['November', 289, 147],
+    ['December', 266, 368]
   ]);
 
   // remapping data
@@ -29,6 +38,8 @@
   // adjusting axes labels
   chart.yAxis().labels().enabled(true).rotation(-90);
   chart.xAxis().labels().enabled(true).rotation(-90);
+  chart.yAxis().labels().padding(5,0,5,0);
+  chart.xAxis().labels().padding(0,5,0,5);
 
   chart.container('container').draw();
 });</script>

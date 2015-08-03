@@ -17,13 +17,15 @@
   
   var chart = anychart.pyramid(data);
   
-  chart.connectorStroke(
-    '2 #444', // set 2px thickness and #444 color
-    1,        // set lines opacity
-    '4 2'     // dashes and gaps settings
-  );
+  chart
+    .fill('gold')                             // set chart inner color
+    .hoverFill('darkred')                     // chart inner color on hover
+    .stroke('darkred')                        // chart stroke
+    .hoverStroke('gold')                      // chart stroke on hover
+    .hatchFill('diagonalbrick', 'darkred')    // set hatch type and color
+    .hoverHatchFill('diagonalbrick', 'gold'); // adjust hatch type and color on hover
   
-  chart.title().text('Tuned Labels Connectors');
+  chart.title().text('Visualization');
   
   // draw chart
   chart.container('container').draw();

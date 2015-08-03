@@ -24,10 +24,13 @@
   var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
 
   // chart type
-  var chart = anychart.lineChart();
+  var chart = anychart.line();
 
   // set title
-  chart.title().text('Image Fill of Background').background().enabled(true).fill('gold');
+  chart.title('Image Fill of Background');
+  chart.title()
+          .padding(10)
+          .background('#fff 0.9');
 
   // set chart background
   chart.background().fill({
@@ -37,29 +40,14 @@
 
   // adjust grid
   chart.grid()
-    .stroke('gray')
     .evenFill('white 0.6')
     .oddFill('white 0.6')
+    .stroke('#fff')
     .layout('horizontal');
   chart.minorGrid(null);
   chart.grid(1)
-    .stroke('gray')
+    .stroke('#fff')
     .layout('vertical');
-
-
-  // set axes titles
-  chart.xAxis().title()
-    .text('Month')
-    .hAlign('center')
-    .background()
-      .enabled(true)
-      .fill('gold');
-  chart.yAxis().title()
-    .text('Sales')
-    .hAlign('center')
-    .background()
-      .enabled(true)
-      .fill('gold');
 
   // adjust axes labels color, ticks color, stroke color
   chart.xAxis().labels().fontColor('white').fontWeight(900);
@@ -69,8 +57,8 @@
   chart.yAxis().minorTicks(null);
 
   // using data in series
-  chart.line(seriesData_1).name('2004');
-  chart.spline(seriesData_2).name('2005');
+  chart.line(seriesData_1);
+  chart.spline(seriesData_2);
 
   // draw chart
   chart.container('container').draw();

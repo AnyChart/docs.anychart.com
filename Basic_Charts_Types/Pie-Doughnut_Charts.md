@@ -117,22 +117,6 @@ You can set starting angle for the first slice of the pie using {api:anychart.ch
 
 {sample}BCT\_PieDoughnutChart\_04{sample}
 
-### 3D Pie Chart
-
-It is very easy to display the data from the sample above in 3D mode - just use {api:anychart#pie3d}**.pie3d()**{api} and the pie will become 3D.
-
-{sample}BCT\_Pie\_3d{sample}
-
-##Start Angle
-
-You can set starting angle for the first slice for the pie using {api:anychart.charts.Pie#startAngle}**.startAngle()**{api} method. In the sample below the start angle is shifted to 45°.
-
-```
-  chart.startAngle(45);
-```
-
-{sample}BCT\_PieDonutChart\_13{sample}
-
 ## Slices Sorting
 
 In Pie/Doughnut charts, it is possible to sort the series by ascending or descending. This feature is controlled using {api:anychart.charts.Pie#sort}**.sort()**{api} parameter. In the sample below three pie charts with identical series are shown, first isn't sorted, the second is sorted ascending and the third - descending.
@@ -231,7 +215,7 @@ You can place labels inside or outside pie slices using {api:anychart.ui.Label#p
   labels.position('outside');
 ```
   
-{sample}BCT\_PieDonutChart\_11{sample}
+{sample}BCT\_PieDoughnutChart\_10{sample}
   
 The line that joins the label with the slice of the pie is called connector. You can tune connectors visual appearance using {api:anychart.charts.Pie#connectorStroke}**.connectorStroke()**{api} method.
 
@@ -248,7 +232,7 @@ The line that joins the label with the slice of the pie is called connector. You
 
 You can find more information about lines in [Line Settings tutorial](../Appearance_Settings/Lines_Settings). Here is the pie with tuned connectors.
 
-{sample}BCT\_PieDonutChart\_12{sample}
+{sample}BCT\_PieDoughnutChart\_11{sample}
 
 ###Tooltips
 

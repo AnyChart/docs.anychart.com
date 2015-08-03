@@ -1,3 +1,4 @@
+{:index 2}
 # Color Range
 
 * [Overview](#overview)

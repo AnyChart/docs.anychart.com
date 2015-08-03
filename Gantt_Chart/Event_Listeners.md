@@ -8,13 +8,14 @@
 ##Overview
 
 AnyChart supports the possibility to handle Gantt Chart events. In this tutorial we will list all available events, 
-explain when they are dispatched and what data is available in them. There is also some useful information about how to create an
-event handler and how to use the data coming from AnyGantt. First, you need to create a listener to handle the specific event. [Here](Common_Settings/Event_Listeners#listener_types) 
-you can find more information about creating these simply JavaScript functions.
+explain when they are dispatched and what data is available in them. There is also some useful information about how to create an event handler and how to use the data coming from AnyGantt.
+
+First, you need to create a listener to handle the specific event. In general [Event Listeners Article](../Common_Settings/Event_Listeners#listener_types) you can find more information about creating these  JavaScript functions.
 
 ## Event Types
 
 It is important to keep in mind that Resource Gantt Chart and Project Gantt Chart are almost identical in terms of data hierarchy. 
+
 So the information presented below applies to both chart types, except some details.
 These are events available for Gantt Chart:
 
@@ -69,7 +70,7 @@ chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
     var msg = event['item'].get('name');
     if (event['period']) msg += '\nPeriod: ' + event['period']['id'];
     return msg;
-  });
+});
 ```
 
 <br>As you can see from the code above, it is possible to get any information about the item from the event - it contains some useful fields. Here is a list of supported types of information:
@@ -169,8 +170,8 @@ event.preventDefault();
 {sample :width 700 :height 300 }GANTT\_Events\_02{sample}
 ```
 chart.listen(anychart.enums.EventType.ROW_CLICK, function(e) {
-                e.preventDefault();
-            });
+    e.preventDefault();
+});
 ```
 
 

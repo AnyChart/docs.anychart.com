@@ -1,8 +1,11 @@
-{:tags []
-     :is_new false
-     :exports "chart"}
-
-anychart.onDocumentReady(function() {
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
   // create data set on our data
   var dataSet = anychart.data.set([
     ['P1' , '3.6', '2.3'],
@@ -31,7 +34,7 @@ anychart.onDocumentReady(function() {
   var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
 
   // create line chart
-  chart = anychart.line();
+  chart = anychart.column();
   
   chart.crosshair(true);
   // the same as above
@@ -41,6 +44,9 @@ anychart.onDocumentReady(function() {
   chart.crosshair().yLabel().axisIndex(0);
   chart.crosshair().xLabel().axisIndex(0);
   
+  // remove the x-axis line
+  chart.crosshair().xStroke(null); 
+  
   // turn on chart animation
   chart.animation(true);
 
@@ -48,11 +54,16 @@ anychart.onDocumentReady(function() {
   chart.container('container');
 
   // set chart title text settings
-  chart.title('Line Chart with a crosshair');
+  chart.title('Column Chart with a crosshair');
 
   // create first series with mapped data
-  chart.line(seriesData_1);
+  chart.column(seriesData_1);
 
   // initiate chart drawing
   chart.draw();
-});
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
