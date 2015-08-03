@@ -33,7 +33,7 @@ Think of using a bar chart when:
 
 Depending on the data model and visualization purpose the bar chart may be single- or multi-series.
 
-### Single-Series
+### Single Series
 
 Let's see single series bar chart created using the following data - sales of ACME Corp. made through different retail channels in one year:
 
