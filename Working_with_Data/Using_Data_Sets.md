@@ -61,7 +61,8 @@ For example, there is some information about the weather in three cities, and we
 </tbody>
 </table>
   
-Usually the solution is to create three sets for a line chart with three series:
+<br>
+  Usually the solution is to create three sets for a line chart with three series:
 
 <table border="1" class="dtTABLE"><tbody>
 <tr>
@@ -122,7 +123,7 @@ Usually the solution is to create three sets for a line chart with three series:
 </tr>
 </tbody>
 </table>
-
+<br>
 In simple cases it is rather simple and you can allow some data duplication. But creating something complex, like a dashboard, may become a real pain, especially when you need to append, update or remove some data from all sets to sync them.  
 
 To avoid this we recommend to use Data Sets, which are the natural representation of a table, a view or a database query result.
