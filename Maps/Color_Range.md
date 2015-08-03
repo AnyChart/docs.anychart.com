@@ -2,9 +2,10 @@
 # Color Range
 
 * [Overview](#overview)
-* [Types](#types)
- * [Ordinal Color Range](#ordinal_color_range)
- * [Linear Color Range](#linear_color_range) 
+* [Scale Types](#scale_types)
+ * [Ordinal Color Scale](#ordinal_color_scale)
+ * [Linear Color Scale](#linear_color_scale) 
+* [Enabling the ColorRange](#enabling_the_colorrange)
 * [Palette](#palette)
  * [Single Hue](#single_hue)
  * [Bi-polar](#bi-polar) 
@@ -64,7 +65,7 @@ Here we took an Australia map for the example. You may notice that some regions 
 
 Note that a colorRange can only be connected to the first axis (with the '0' index), while it's possible to make a map with several series.
  
-## Types
+## Scale Types
  
 There are two types of ColorScale: Ordinal and Linear (Quantitative). The type of a ColorRange that will be used for your map will be automatically chosen and it depends on a scale type: it will be ordinal if the scale on your Map is ordinal; in any other case you'll get a Quantitative ColorRange.
  
@@ -91,7 +92,7 @@ The following code does the same as the code above.
 	series.colorScale().colors(['#EC6E07', '#A1958A', '#64B5F6']);
 ```
 
-### Linear Color Range
+### Linear Color Scale
  
 This type of ColorScale looks like a single bar colored with a gradient, where it colors depend on a chosen palette. 
 <br><br>
@@ -99,7 +100,7 @@ This type of ColorScale looks like a single bar colored with a gradient, where i
 
 Using the Linear type of coloring, there are three ways of coloring the map:
 <br>1) we may define no colors - in this case the coloring will de based on the default palette;
-<br>2) we may define only one color - in this case the coloring gradient will be built from very light grey tot he only defined color;
+<br>2) we may define only one color - in this case the coloring gradient will be built from very light grey to the only defined color;
 <br>3) the more colors we define here, the more colors will the gradient contain. 
 
 ```
@@ -107,6 +108,25 @@ series.colorScale(anychart.scales.linearColor('#EC6E07', '#64B5F6'));
 ```
 
 {sample}Maps\_ColorRange\_03{sample}
+ 
+## Enabling the ColorRange
+
+To enable the colorRange, there's a simple method **{api}.colorRange(){api}**. 
+
+```
+// create and enable the colorRange
+	var cr = map.colorRange(true);
+```
+	
+Look at the samples below: we have added the colorRange to the both previous samples. In the first sample the colorRange looks like a number of different-colored rectangles because of ordinal Scale. The number of rectangles depends on the number of ranges defined above.
+
+{sample}Maps\_ColorRange\_04{sample}
+
+Here is the second case with the linear colorScale. The colorRange here looks like a line colored with a gradient.
+
+{sample}Maps\_ColorRange\_05{sample}
+
+You may notice that there is a marker on the colorRange that helps to find the value on the colorRange.
  
 ## Palette
  
@@ -141,12 +161,14 @@ This palette type is usually used to show the difference in values of something 
 To make a single-hue progression use the **{api:anychart.color#singleHueProgression}anychart.color.singleHueProgression(){api}**
 function. You may not define the colors - in this case the shades will de genereated for the default color. 
 
-{sample}Maps\_ColorRange\_04{sample}
+{sample}Maps\_ColorRange\_06{sample}
 
 ### Value progression
 
 Value progression maps are monochromatic. Using the shades of grey between black and white makes it easy to print the map and is quite clear to understand.
 This type of ColorRange is one of the best ways to portray a magnitude message to the map audience. 
+
+Technically this progression is a simple single-hue progression for a shade of grey. So you should write the same 
 
 <br><br>
 
@@ -167,16 +189,16 @@ This type of ColorRange is one of the best ways to portray a magnitude message t
 </tbody>
 </table>
 
-This progression is more likely as single hue one, but the colors all are monochromatic. Just set the monochromatic shades (or even white and black) as colors for the single hue progression.
+This progression is more likely as single hue one, but the colors all are monochromatic. Just set the monochromatic shades (or even white and black) as colors for the single hue progression. In this sample the linear scale is enabled.
 
-{sample}Maps\_ColorRange\_05{sample}
+{sample}Maps\_ColorRange\_07{sample}
  
 ### Bi-polar 
  
 Bi-polar progression is a fade from the first chosen color to the second one with white in the middle. This is normally used when you need to show the change from
 positive to negative values, or to show the mean value.
 Complementary hue progressions are a type of bi-polar progression. This can be done with any of the complementary colors and will fade from each 
-of the darker end point hues into a gray shade representing the middle. An example would be using blue and yellow as the two end points.
+of the darker end point hues into a gray shade representing the middle. An example would be using blue and orange as the two end points.
 
 <br><br>
 
@@ -197,11 +219,14 @@ of the darker end point hues into a gray shade representing the middle. An examp
 </tbody>
 </table>
 
-{sample}Maps\_ColorRange\_06{sample}
+To make a bi-hue progression use the **{api:anychart.color#biHueProgression}anychart.color.biHueProgression(){api}**
+function. You may not define the colors - in this case the shades will de genereated for the default color. 
+
+{sample}Maps\_ColorRange\_08{sample}
 
 That's how the same map would look like with an ordinal Scale.
 
-{sample}Maps\_ColorRange\_07{sample}
+{sample}Maps\_ColorRange\_09{sample}
  
 ### Blended color progression
 
