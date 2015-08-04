@@ -344,8 +344,16 @@ That's how a part of a code of the sample above looks like:
 ```
   // data
   var data = anychart.data.set([
-    [1, 178, 165, 154, 143, 132],
-    [2, 167, 153, 144, 133, 122],
+    [2000, 178, 165, 154, 143, 132],
+    [2001, 108, 160, 142, 121, 190],
+    [2002, 180, 160, 170, 121, 119],
+    [2003, 120, 195, 177, 126, 184],
+    [2004, 110, 120, 130, 140, 150],
+    [2005, 108, 160, 142, 121, 190],
+    [2006, 180, 160, 170, 121, 119],
+    [2007, 120, 195, 177, 126, 184],
+    [2008, 110, 120, 130, 140, 150],
+    [2009, 140, 150, 180, 190, 200]
   ]);
 
   // map data for each series
@@ -359,7 +367,7 @@ That's how a part of a code of the sample above looks like:
   var series1 = chart.marker(data1);
   series1.fill("#4A55C7");
   var series2 = chart.marker(data2);
-  series2.fill("#5EBD9B");
+  series2.fill("#999999");
   var series3 = chart.marker(data3);
   series3.fill("#B04A8A");
   var series4 = chart.marker(data4);
@@ -368,22 +376,24 @@ That's how a part of a code of the sample above looks like:
   series5.fill("#BCBD46");
 ```
 
-In the sample below we colorized individual points. We've got a chart with one series and predefined color for all elements. Let's color the minimum and the maximum points in "Rgb(180,77,77)" and "Rgb(77,180,77)" accordingly. As you can see it is very easy to do by setting {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter for the point.
+In the sample below we colorized individual points. We've got a chart with one series and predefined colors for all elements. Let's color the minimum and the maximum points in "Rgb(180,77,77)" and "Rgb(77,180,77)" accordingly. As you can see it is very easy to do by setting {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter for the point.
 
 {sample}BCT\_Marker\_Chart\_10{sample}
 
 That's how it was done:
 
 ```
-  // data
-  data = anychart.data.set([
+  var data = anychart.data.set([
     [2000, 132],
     [2001, 124],
     [2002, 102],
     [2003, 119],
     [2004, 169],
     {x: 2005, value: 237, fill: "Rgb(77,180,77)"},
-    [2006, 120]
+    [2006, 120],
+    [2007, 99],
+    {x: 2008, value: 44, fill: "Rgb(180,77,77)"},
+    [2009, 59]
   ]);
 ```
 
@@ -406,9 +416,13 @@ Here's a part of the code of the sample below:
 ```
   // data
   var data = anychart.data.set([
-    [1, 14, 24, 34, 42, 50],
-    [2, 19, 26, 39, 45, 61],
-    [3, 27, 38, 35, 41, 58]
+    [2000, 16, 26, 36, 48, 60],
+    [2001, 14, 24, 34, 42, 50],
+    [2002, 19, 26, 39, 45, 61],
+    [2003, 27, 48, 35, 41, 58],
+    [2004, 13, 24, 35, 55, 41],
+    [2005, 37, 48, 65, 21, 28],
+    [2006, 30, 48, 38, 12, 61]
   ]);
 
   // map data for each series
