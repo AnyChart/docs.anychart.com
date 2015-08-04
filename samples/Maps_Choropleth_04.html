@@ -23,8 +23,6 @@
     var map = anychart.map();
     map.geoData(anychart.maps.australia);
 
-    // set the background color
-    map.background('Gainsboro');
     // set the title and its preferences
     map.title().useHtml(true).hAlign('center');
     map.title('<span style="font-size: 18px;">Data Setting</span><br><span style="font-size:12px;">Move the mouse over the districts to see which have values</span>');
@@ -34,6 +32,7 @@
     series.geoIdField('code_hasc');
     series.stroke('#000 .3');
     series.colorScale(anychart.scales.linearColor('#FFEBD6', '#C40A0A'));
+    series.labels().fontColor('black');
 
     // set the container
     map.container('container');

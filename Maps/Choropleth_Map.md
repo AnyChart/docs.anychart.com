@@ -67,7 +67,7 @@ s1 = map.choropleth(dataSet1);
 
 <br>
 In the data above we haven't defined the value for some regions, but those regions themselves are defined. If we remove the lines with the regions we don't have information about,
-they will become of default background color, so it's better to set the stroke for them:
+they will become of default color for undefined regions, so it's better to set the fill for them:
 ```
 var dataSet = anychart.data.set([
                 {'id': 'AU.WA', 'value': 300},  // Western Australia
@@ -79,7 +79,7 @@ var dataSet = anychart.data.set([
             ]);
 			
 // set the fill for the regions you haven't defined in the dataSet
-map.unboundRegions().fill('green');
+map.unboundRegions().fill('#eee');
 ```
 <br>
 Now, let's look at what we've got:

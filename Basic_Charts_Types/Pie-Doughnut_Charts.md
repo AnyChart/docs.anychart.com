@@ -234,48 +234,7 @@ You can find more information about lines in [Line Settings tutorial](../Appeara
 
 {sample}BCT\_PieDoughnutChart\_11{sample}
 
-###Tooltips
 
-In this section we will explain how to tune pie tooltip. Method {api:anychart.charts.Pie#tooltip}**.tooltip()**{api} controls tooltip of the pie. 
-
-```
-  // get tooltip title
-  var tooltip = chart.tooltip();
-  
-  // set tooltip title text
-  tooltip.title("Information");
-  
-  // set tooltip content
-  tooltip.contentFormatter(function(){
-  
-    // get name of each slice
-    var name = this.name;
-    // get value of each slice
-    var value = this.value
-    
-    // content to show
-    return "Chanel: " + name + "\nSales: " + value + "\nPeriod: Year 2003";
-  });
-```
-
-With the following example let's force tooltip to show detailed description for each pie slice
-
-The line that joins the label with the slice of the pie is called connector. You can tune connectors visual appearance using {api:anychart.charts.Pie#connectorStroke}**.connectorStroke()**{api} method.
-
-```
-  chart.connectorStroke(
-    // set 2px thickness and #444 color
-    "2 #444",
-    // set lines opacity
-    1,
-    // dashes and gaps settings
-    "4 2"
-  );
-```
-
-You can find more information about lines in [Line Settings tutorial](../Appearance_Settings/Lines_Settings). Here is the pie with tuned connectors.
-
-{sample}BCT\_PieDoughnutChart\_11{sample}
 
 ###Tooltips
 

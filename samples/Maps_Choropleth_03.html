@@ -37,6 +37,7 @@
     series = map.choropleth(dataSet);
     series.geoIdField('code_hasc');
     series.stroke('#000 .3');
+    series.labels().fontColor('black');
 
     // define the color of the hovered district
     series.selectFill('#5588ff');
