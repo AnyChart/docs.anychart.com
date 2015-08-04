@@ -5,10 +5,11 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="chart">
+anychart.onDocumentReady(function() {
 
   // enable stages for multiple charts
-  var stage = anychart.graphics.create("container");
+  stage = anychart.graphics.create("container");
 
   // data
   var dataSet = anychart.data.set([
@@ -96,39 +97,43 @@
   yScale.inverted(true);
 
   // set type and data for first chart
-  var rangeAreaSeries = chart.rangeSplineArea(seriesData_1);
-
-  // set second data color and opacity
-  rangeAreaSeries.fill("lightblue 0.7");
-  rangeAreaSeries.hoverFill("lightblue 0.7");
-
+  var rangeAreaSeria = chart.rangeSplineArea(seriesData_1);
   // set data and type for second chart
-  var ohlc = chart.ohlc(seriesData_2);
-  ohlc.color("green");
-  ohlc.tooltip(false);
-
-  // set data and type for third chart
-  var splineSeries = chart.spline(seriesData_3);
-  splineSeries.markers(null);
-  splineSeries.stroke("red");
-  var splineTooltip = splineSeries.tooltip();
-  splineTooltip.contentFormatter(function(){
+  rangeAreaSeria.tooltip().titleFormatter(function(){
     var date = new Date(this.x);
     var options = {
       year: "numeric",
       month: "numeric",
       day: "numeric"
     };
-    return date.toLocaleDateString("en-US", options) + "\n" + this.value;
+    return date.toLocaleDateString("en-US", options);
+  });
+  var ohlcSeries = chart.ohlc(seriesData_2);
+  ohlcSeries.tooltip(false);
+
+  // set data and type for third chart
+  var splineSeries = chart.spline(seriesData_3);
+  splineSeries.markers(null);
+  var splineTooltip = splineSeries.tooltip();
+  splineTooltip.titleFormatter(function(){
+    var date = new Date(this.x);
+    var options = {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric"
+    };
+    return date.toLocaleDateString("en-US", options);
+  });
+  splineTooltip.contentFormatter(function(){
+    return this.value;
   });
 
   // set title and position for the first stage
   chart.title("ACME Corp. Stock Prices: 11.05.07 - 07.08.07");
   chart.bounds(0, 0, "100%", "70%");
   var xAxis = chart.xAxis();
-  xAxis.staggerLines(1);
+    xAxis.drawLastLabel(false);
 
-  // disable axes titles
   var yLabels = chart.yAxis().labels();
   yLabels.textFormatter(function(){
     return this.value.toFixed(0).toString();
@@ -143,7 +148,7 @@
   var column = anychart.column();
 
   // set chart type and data
-  column.column([
+  var columnSeries = column.column([
     ["07.08.07", 20075300],
     ["06.08.07", 28948000],
     ["03.08.07", 19702100],
@@ -217,10 +222,17 @@
   columnYLabels.textFormatter(function(){
     var value = this.value;
     if (value > 0)
-      value = value/1000000;
+    value = value/1000000;
     return value;
   });
 
+  columnSeries.tooltip().titleFormatter(function(){
+    return this.x;
+  });
+
+  columnSeries.tooltip().contentFormatter(function(){
+    return this.value;
+  });
   // adjust x axis internal
   var columnXTicks = column.xScale().ticks();
   columnXTicks.interval(11);
@@ -229,7 +241,8 @@
   column.container(stage);
   // draw second stage
   column.draw();
-});</script>
+});
+    </script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
