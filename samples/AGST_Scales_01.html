@@ -11,27 +11,28 @@
   var chart = anychart.column();
 
   // title setter
-  chart.title().text('Linear scale sample');
+  chart.title("Linear scale sample");
 
   // setting yScale type as liner. Even knowing it's liner by default
   chart.yScale(anychart.scales.linear());
 
   // y axis title setter
-  chart.yAxis().title().text('This Axis has \'linear\' type');
+  var yAxis = chart.yAxis();
+  yAxis.title("This Axis has 'linear' type");
 
   // setting data
-  chart.column([
-    ['A', 637166],
-    ['B', 721630],
-    ['C', 148662],
-    ['D', 78662],
-    ['E', 90000]
-  ])
-    .hoverFill('#444444')
-    .tooltip().enabled(false);
+  var series = chart.column([
+    ["A", 637166],
+    ["B", 721630],
+    ["C", 148662],
+    ["D", 78662],
+    ["E", 90000]
+  ]);
+  series.hoverFill("#444444");
+  series.tooltip(false);
 
-  chart.container('container').draw();
-
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

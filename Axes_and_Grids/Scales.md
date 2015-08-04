@@ -156,7 +156,7 @@ Sample below shows how soft minimum and soft maximum help to show data better th
 
 ## Stick to Zero
 
-*stickToZero()* method allows to disable the default scale autocalculation behavior and always show include zero in scale range.
+{api:anychart.scales.Linear#stickToZero}**stickToZero()**{api} method allows to disable the default scale autocalculation behavior and always show include zero in scale range.
 
 ## Minor and Major Ticks
 

@@ -11,13 +11,13 @@
   var chart = anychart.column();
 
   // chart title
-  chart.title().text('Maximum and Minimum Scale Value');
+  chart.title("Maximum and Minimum Scale Value");
 
   // setteing data
   var data = anychart.data.set([
-    ['C', 5, 10],
-    ['D', 25, 20],
-    ['E', 15, 15]
+    ["C", 5, 10],
+    ["D", 25, 20],
+    ["E", 15, 15]
   ]);
 
   // remapping data
@@ -25,20 +25,27 @@
   var Sales2004 = data.mapAs({x: [0], value: [2]});
 
   // setting series data
-  chart.column(Sales2003);
-  chart.column(Sales2004);
+  var series = chart.column(Sales2003);
+  series.hoverFill("#444444");
+  var series1 = chart.column(Sales2004);
+  series1.hoverFill("#444444");
 
   // setting data for line chart
   chart.line([
-    ['C', 10],
-    ['D', 30],
-    ['E', 15]
+    ["C", 10],
+    ["D", 30],
+    ["E", 15]
   ]);
 
   // adjusting y scale minimum and maximum values
-  chart.yScale().minimum(-50).maximum(100).ticks().interval(20);
+  var yScale = chart.yScale();
+  yScale.minimum(-50);
+  yScale.maximum(100);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(20);
 
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
