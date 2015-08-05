@@ -38,7 +38,7 @@ var firstColumn = dataGrid.column(10);
 var secondColumn = dataGrid.column(20);
 ```
 
-<br>For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the [Content](DataGrid#content) topic.
+<br>For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the [Content](#content) topic.
 
 <br> The sample below shows Resource Gantt Chart, note that the third column is created to display the start data value.
 {sample :width 690 :height 190}GANTT\_Chart\_10{sample}
