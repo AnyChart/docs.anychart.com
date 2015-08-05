@@ -13,23 +13,19 @@ DataGrid columns can contain different types of information. You can format each
   chart.data(data);
   
   var column = chart.column(3);
-  column.setColumnFormat("actualStart","dateIso8601");
+  column.setColumnFormat("actualStart", "dateIso8601");
   column.title("Start");
 ```
 
 Let's take a closer look at each of these presets.
 
-### Numeric Formatting 
+### Formatting Presets
 
-There several options for formatting different kinds of numeric values. **dateCommonLog**, **dateDmyDots**, **dateIso8601** and **dateUsShort** options are useful for formatting  dates in different ways. **directNumbering** is a formatting for mere numbers, **financial** formats fiscal values and **percent** option format percentage values (assuming that *1* stands for  *100%*).
+As far as gantt chart visualize numeric values most formatting presets represent different numeric formats. **dateCommonLog**, **dateDmyDots**, **dateIso8601**, **shortText** and **dateUsShort** presets are useful for formatting dates in different ways. **directNumbering** is a formatting for simple numbers, **financial** formats fiscal values and **percent** option format percentage values (assuming that *1* stands for *100%*). Use **text** option to show simple text values without any adjustment. 
 
-### Alphabetic Formatting
+## Custom Formatter
 
-**text** option represents data as a simple text and **shortText** 
-
-## Column Formatting
-
-If your data requires some customization to be shown in column you can use your own object with custom settings for data formatting. Here is a sample of applying custom function for data formatting: 
+If your data requires more complex customization you can use your own object with custom settings for data formatting. Here is a sample of custom object data formatting: 
 
 ```
   var customColumn = dataGrid.column(8);
@@ -55,5 +51,5 @@ If your data requires some customization to be shown in column you can use your 
 ```
 
 The object for column customization may contain three parameters: "formatter", "textStyle" and "width". **Formatter** is a function for adjusting the data in each cell of the column. **TextStyle** adjust visual appearance of the text in the cell and **width** set custom column width.
-  
-  
+
+{sample}GANTT\_Column\_Presets\_02{sample}
