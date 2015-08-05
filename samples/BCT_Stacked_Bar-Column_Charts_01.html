@@ -25,11 +25,11 @@
   var chart = anychart.bar();
 
   // chart title
-  chart.title().text("Stacked Bar Chart");
+  chart.title("Stacked Bar Chart");
 
   // set axes title
-  chart.xAxis().title().text("Month");
-  chart.yAxis().title().text("Temperature");
+  chart.xAxis().title("Month");
+  chart.yAxis().title("Temperature");
 
   // set stack mode
   chart.yScale().stackMode("value");

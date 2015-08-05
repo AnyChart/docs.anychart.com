@@ -22,7 +22,7 @@ Example:
 ```
 ###3. Prepare your Data
 
-Gantt Chart provides quite a few opportunities to work with data (such as setting tree like hierarchy with parent/child division), thus it requires preparing data before usage. Raw data set for Gantt chart may look like this:
+Gantt Chart provides quite a few opportunities to work with data (such as setting [tree like hierarchy with parent/child division](../Working_with_Data/Using_Data_Tree_Model)), thus it requires preparing data before usage. Raw data set for Gantt chart may look like this:
 
 ```
  var rawData = [
@@ -57,7 +57,7 @@ Gantt Chart provides quite a few opportunities to work with data (such as settin
 
 ###4. Create a chart
 Add the JavaScript tag `<script>` with the following code anywhere in the  page. 
-This code example uses JavaScript API to create a chart, but you also can use JSON or XML format. <!--See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about supported formats.-->
+This code example uses JavaScript API to create a chart, but you also can use [JSON, XML and CSV](Data_from_JSON,_XML,_CSV). 
 Example:
 
 ```

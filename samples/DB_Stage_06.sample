@@ -97,8 +97,6 @@ anychart.onDocumentReady(function () {
                 piece.listen('mouseOut', function (e) {
                     e.stopPropagation();
                     lowerPiece.fill(fillOut);
-
-//                    shadow.visible(false);
                     lineShadow.visible(false);
                     imgShadow.visible(false);
                 });
@@ -309,8 +307,6 @@ anychart.onDocumentReady(function () {
             var mouse_line = draw_line(layer_mouse, [[210, 500], [300, 500], [370, 570]], lineColor, -1);
             var mouse_line_shadow = draw_line(layer_mouse, [[210, 500], [300, 500], [370, 570]], textColor, -1).visible(false);
             draw_chart(layer_mouse, dataSet_mouse, [450, 540, 250, 100]);
-            //draw_piece_of_tree(layer_mouse, [[130, 515], [115, 520], [100, 505], [110, 110], [90, 515], [105, 530]], '#33691e', 1, 0);
-            //draw_piece_of_tree(layer_mouse, [[230, 515], [245, 500], [240, 520], [260, 505], [250, 525], [270, 515], [255, 530]], '#33691e', 1, 0);
             layer_mouse.zIndex(2);
 
             on_hover(top_tree_piece, middle_tree_piece, jay_line, jay_line_shadow, jay_pic, jay_pic_shadow, ['#396E1F','#689f38'], '#689f38');

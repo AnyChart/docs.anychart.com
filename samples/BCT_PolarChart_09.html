@@ -33,42 +33,37 @@
   var chart = anychart.polar();
 
   // chart title
-  chart.title().text('Polar Chart Plot Background Sample');
-
-  // disable minor ticks
-  chart.yAxis().enabled(true).minorTicks().enabled(false);
-
-  // background fill
-  chart.background().enabled(true).fill('#EEEEEE');
-
-  chart.xAxis()
-    .labels()
-      .padding(5)                 // set paddings for labels
-      .fontWeight(900)            // set font weight for labels
-      .background()               // axes background settings
-        .enabled(true)            // enable background
-        .fill('lightblue')        // background fill
-        .stroke('blue')           // stroke color
-        .cornerType('round')      // corner type
-        .corners(5);              // corner size
+  chart.title("Disable First & Last Labels of Y Axis");
 
   // set ticks interval for y scale
-  chart.xScale().maximum(24).ticks().interval(4);
+  var xScale = chart.xScale();
+  xScale.maximum(24);
+  var xTicks = chart.xScale().ticks();
+  xTicks.interval(4);
 
-  // set data and adjust visualisation
+  // adjust y axis settings
+  var yAxis = chart.yAxis();
+  // disable first label
+  yAxis.drawFirstLabel(false);
+  // disable last label
+  yAxis.drawLastLabel(false);
+  // hide minor ticks
+  yAxis.minorTicks(false);
+
+  // set data and visual appearance
   var series = chart.area(dataSet);
-  series
-    .stroke('2 #11aaff')            // area border color
-    .fill('lightblue 0.5')          // area fill color
-    .markers()                      // marker settings
-      .enabled(true)                // enables markers
-      .fill('#11aaff');             // markers color
+  series.fill("lightblue 0.7");
 
-  // grid settings
-  chart.grid(0).evenFill('white').oddFill('white');
+  // set grid visual appearance
+  var grid = chart.grid(0);
+  grid.evenFill("white");
+  grid.oddFill("white");
+
+  chart.legend(false);
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

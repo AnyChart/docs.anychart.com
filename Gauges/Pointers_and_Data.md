@@ -106,11 +106,11 @@ Let's add the second value to our dataSet and bind the bar pointer with the new 
   // add the second data point
   var dataSet = anychart.data.set([60,120]);
 
-   // bar
-   var bar = gauge.bar();
-   bar.width(3);
-   bar.dataIndex(1);
-   bar.axisIndex(1);
+  // bar
+  var bar = gauge.bar();
+  bar.width(3);
+  bar.dataIndex(1);
+  bar.axisIndex(1);
 ```
 
 {sample}BCT\_Pointers-and-Data\_18{sample} 

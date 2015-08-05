@@ -3,10 +3,10 @@
 Supported Data Formats
 =================
  * [Introduction](#introduction)
-   * [JavaScript API](#JavaScript)
-   * [XML](#XML)
-   * [JSON](#JSON)
-   * [CSV](#CSV)
+   * [JavaScript API](#javascript_api)
+   * [XML](#xml)
+   * [JSON](#json)
+   * [CSV](#csv)
 
 ###Introduction
 AnyChart supports 4 ways to set data to your charts. You can choose which one suits your task the best:
@@ -24,7 +24,7 @@ JavaScript API helps you the best when you need to Create, Read, Update, and Del
 We recommend to use [Data Sets](./Using_Data_Sets) when you work with JS API, but you can also pass data directly to a chart by creating a function:
 ```
 // create a pie chart
-var chart = anychart.pieChart([
+var chart = anychart.pie([
     ['Product A', 1222],
     ['Product B', 2431],
     ['Product C', 3624],
@@ -69,8 +69,8 @@ chart.container('container');
 // initiate chart drawing
 chart.draw();
 ```
-See also:
-[Data From XML](./Data_From_XML)
+See also:  
+[Data From XML](./Data_From_XML)  
 [Using Data Sets](./Using_Data_Sets)
 
 ###JSON
@@ -100,7 +100,7 @@ chart.container('container');
 chart.draw();
 ```
 See also:  
-[Data From JSON](./Data_From_JSON)
+[Data From JSON](./Data_From_JSON)  
 [Using Data Sets](./Using_Data_Sets)
 
 ###CSV  
@@ -118,7 +118,7 @@ var csvString = '2009-02-05,6764.81\n' +
       '2009-02-19,7555.23';
       
 // create an area chart      
-var chart = anychart.areaChart();
+var chart = anychart.area();
 
 // set container id for the chart
 chart.container('container');

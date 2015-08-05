@@ -1,5 +1,9 @@
-#Maps
+# Proportional Symbol Map
+===========
 
+Coming soon. See [AnyMap Roadmap](http://anychart.com/products/anymap/roadmap/).
+
+<!-- 
 * [Proportional Symbol Map](#proportional_symbol_map)
 * [Data](#data)
 * [Series and Points](#series_and_points)
@@ -14,7 +18,7 @@
  * [Disadvantages](#disadvantages)
 
 *coming_soon*
-<!-- 
+
 ## Proportional Symbol Map
 
 

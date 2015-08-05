@@ -17,11 +17,10 @@
   ]);
 
   // chart type
-  chart = anychart.areaChart();
+  chart = anychart.area();
 
   // set data
   chart.area(data)
-    .hoverFill('#444444')
     .tooltip()
       .contentFormatter(function(){
         return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
@@ -41,12 +40,8 @@
   chart.yAxis(1)
     .orientation('right')
     .scale(additionalScale)
-    .stroke('1.5 black')
     .title('Sales Pts')
     .labels().enabled(false);
-
-  // disable x axis title
-  chart.xAxis().title().enabled(false);
 
   // adjust y axis labels
   chart.yAxis().labels().textFormatter(function(){
@@ -54,7 +49,7 @@
   });
 
   // y axis title
-  chart.yAxis().title().text('Sales');
+  chart.yAxis().title().enabled(true).text('Sales');
 
   // set marker
   chart.textMarker()
@@ -62,9 +57,9 @@
     .value(18000)
     .align('left')
     .anchor('leftcenter')
-    .fontSize(13)
+    .fontSize(12)
+    .fontColor('#212121')
     .offsetX(5)
-    .fontFamily('Courier')
     .text('Historical Maximum');
 
   // set red marker
@@ -73,9 +68,10 @@
     .value(18000)
     .text('High')
     .align('left')
-    .anchor('rightcenter')
+    .anchor('center')
+    .rotation(-90)
     .fontSize(13)
-    .offsetX(50)
+    .offsetX(-75)
     .fontColor('red');
 
   // set green marker
@@ -84,9 +80,10 @@
     .value(10000)
     .text('Low')
     .align('left')
-    .anchor('rightcenter')
+    .anchor('center')
+    .rotation(-90)
     .fontSize(13)
-    .offsetX(50)
+    .offsetX(-75)
     .fontColor('green');
 
   // set text marker on the right
@@ -96,6 +93,7 @@
     .text('8.00')
     .align('right')
     .anchor('leftcenter')
+    .fontWeight('bold')
     .fontSize(13)
     .offsetX(10);
 

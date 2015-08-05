@@ -19,6 +19,7 @@ AnyChart supports several ways of setting data. This article quickly demonstrate
   
 JSON or JavaScript Object Notation, is an open standard format that uses human-readable text to transmit data objects consisting of attribute-value pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML. For more information visit [http://en.wikipedia.org/wiki/JSON](http://en.wikipedia.org/wiki/JSON)
 
+
 ## Schema
 
 JSON Schema specifies a JSON-based format to define the structure of JSON data (visit [http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata](http://en.wikipedia.org/wiki/JSON#Schema_and_Metadata) for more information). All objects of this schema correspond to JavaScript methods and parameters of a chart. AnyChart JSON schema varies from version to version. For example, JSON Schema for AnyChart 7.4.1 version is located at [http://anychart.com/schemas/7.4.1/json-schema.json](http://anychart.com/schemas/7.4.1/json-schema.json). Whenever you use AnyChart JSON schema - make sure its corresponds to the version of AnyChart. The latest schema can always be found at [http://anychart.com/schemas/latest/json-schema.json](http://anychart.com/schemas/latest/json-schema.json)
@@ -60,13 +61,15 @@ This configuration creates chart like the one below
 JSON configuration can contain string, object, array, number, boolean and null. The variety of acceptable data formats makes the AnyChart JSON structure very similar to JavaScript configuration. To find out any required method or parameter use {api:anychart}AnyChart API{api}. API describes how every method and parameter are used. The structure is pretty much the same for JSON configuration. For example, you can find {api:anychart#column}**column()**{api} method in API to create column chart. 
 
 ```
-  anychart.column([128.14, 112.61, 163.21, 229.98]).container('container').draw();
+  var chart = anychart.column([128.14, 112.61, 163.21, 229.98]);
+  chart.container('container');
+  chart.draw();
 ```
 
 The same chart can be created using JSON
 
 ```
-  anychart.fromJson({
+  var chart = anychart.fromJson({
       "chart": {
         "type": "column",
         "series":[{
@@ -74,7 +77,9 @@ The same chart can be created using JSON
         }],
         "container": "container"
       }
-    }).draw();
+    });
+    
+    chart.draw();
 ```
 
 As you can see, JSON format isn't limited only to setting chart type and its data, but can set container for the chart as well.

@@ -240,4 +240,4 @@ And there is the sample of the Project Gantt with CSV-formatted data:
 
 {sample :width 680 :height 200}GANTT\_JXC\_04{sample}
  
-As we can not define the whole chart configuration but only its data using the CSV format, we should help the data to parse correctly. That's why we need the "mapping" object - using it, we are able to tell the dataGrid to put the values from the CSV string into the right fields. The csvSettings is an object where we set the separators and tell about ignoring for some particular rows.
+As we can not define the whole chart configuration but only its data using the CSV format, we should help the data to parse correctly. That's why we need the "mapping" object - using it, we are able to tell the dataGrid to put the values from the CSV string into the right fields. The csvSettings is an object where we set the separators and other CSV parsing options.

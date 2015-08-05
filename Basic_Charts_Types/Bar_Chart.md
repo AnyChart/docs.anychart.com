@@ -33,7 +33,7 @@ Think of using a bar chart when:
 
 Depending on the data model and visualization purpose the bar chart may be single- or multi-series.
 
-### Single-Series
+### Single Series
 
 Let's see single series bar chart created using the following data - sales of ACME Corp. made through different retail channels in one year:
 
@@ -207,10 +207,6 @@ Here is a sample of multi-series bar chart with **xPointPosition** set to 0.5.
 In this section we will describe the main elements of a bar chart style and demonstrate how a style can be applied.
 
 The main idea of styles is to segregate visualization and data definition. Visual appearance of bars is defined using certain styles and then you just apply the style to the certain data elements. The style can be applied to a data series or a single bar.
-
-On the image below you can see what a bar_style consists of: a variety of fill types, border and effects applied to whole bar.
-
-![](http://www.anychart.com/products/anychart/docs/users-guide/img/horz_bar_style_diagram.jpg)
 
 Also, styles are used to make charts interactive, you can define how elements will be displayed by default, when hovered, etc.
 

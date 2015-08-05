@@ -7,69 +7,50 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // setting data
+  // define chart type
+  var chart = anychart.column();
+
+  // chart title
+  chart.title("Major and Minor Ticks");
+
+  // setteing data
   var data = anychart.data.set([
-    ['C', 15],
-    ['D', -25],
-    ['E', 25]
+    ["C", 5, 10],
+    ["D", 25, 20],
+    ["E", 15, 15]
   ]);
 
-  var stage = anychart.graphics.create('container');
+  // remapping data
+  var Sales2003 = data.mapAs({x: [0], value: [1]});
+  var Sales2004 = data.mapAs({x: [0], value: [2]});
 
-  // setting basic title
-  anychart.ui.title()
-    .parentBounds(0, 0, stage.width(), stage.height()*0.1)
-    .text('Minimum/Maximum Gap Samples')
-    .container(stage)
-    .draw();
+  // setting series data
+  chart.column(Sales2003);
+  chart.column(Sales2004);
 
-  // first chart
-  var valueStackedMode = anychart.columnChart();
+  // setting data for line chart
+  chart.line([
+    ["C", 10],
+    ["D", 30],
+    ["E", 15]
+  ]);
 
-  // set chart title
-  valueStackedMode.title().text('Gap Sample');
+  // adjusting y scale minimum and maximum values
+  var yScale = chart.yScale();
+  yScale.minimum(-50);
+  yScale.maximum(100);
 
-  // setting chart's size and position
-  valueStackedMode.bounds(0, '15%', '50%', '85%');
+  // setting ticks and minor ticks
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(10);
+  var yMinorTicks = chart.yScale().minorTicks();
+  yMinorTicks.interval(2);
 
-  valueStackedMode.background().stroke('#CCCCCC');
+  var minorTicks = chart.yAxis().minorTicks();
+  minorTicks.enabled(true);
 
-  // disable axes title
-  valueStackedMode.xAxis().title().enabled(false);
-  valueStackedMode.yAxis().title().enabled(false);
-
-  // setting gaps
-  valueStackedMode.yScale().minorTicks().interval(2);
-  valueStackedMode.yScale().ticks().interval(10);
-
-  valueStackedMode.yScale().minimumGap(0.5).maximumGap(0.5);
-
-  valueStackedMode.column(data).hoverFill('#444444');
-
-  valueStackedMode.container(stage).draw();
-
-
-  var percentStackedMode = anychart.columnChart();
-
-  percentStackedMode.title().text('Sample without Gap');
-
-  // setting chart's size and position
-  percentStackedMode.bounds('50%', '15%', '50%', '85%');
-
-  percentStackedMode.background().stroke('#CCCCCC');
-
-  // disable Axes titles
-  percentStackedMode.yAxis().title().enabled(false);
-  percentStackedMode.xAxis().title().enabled(false);
-
-  // setting ticks
-  percentStackedMode.yScale().ticks().interval(10);
-  percentStackedMode.yScale().minorTicks().interval(2);
-
-  percentStackedMode.column(data).hoverFill('#444444');
-
-  percentStackedMode.container(stage).draw();
-
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

@@ -8,27 +8,31 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // defining chart type
-  var chart = anychart.lineChart();
+  var chart = anychart.line();
 
   // title setter
-  chart.title().text('Logarithmic scale sample');
+  chart.title("Logarithmic scale sample");
 
   // setting yScale type as logarithmic.
-  chart.yScale(anychart.scales.log().minimum(10));
+  var logScale = anychart.scales.log();
+  logScale.minimum(10);
+  chart.yScale(logScale);
 
   // y axis title setter
-  chart.yAxis().title().text('This Axis has \'Logarithmic\' type');
+  var yAxis = chart.yAxis();
+  yAxis.title("This Axis has \'Logarithmic\' type");
 
   // setting data
   chart.spline([
-    ['A', 637166],
-    ['B', 721630],
-    ['C', 1000],
-    ['D', 78],
-    ['E', 90]
+    ["A", 637166],
+    ["B", 721630],
+    ["C", 1000],
+    ["D", 78],
+    ["E", 90]
   ]);
 
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 
 });</script>
 </head>

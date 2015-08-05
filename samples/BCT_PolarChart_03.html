@@ -7,41 +7,79 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
+  var stage = acgraph.create("container");
+
   // data for chart
   var dataSet = anychart.data.set([
     [0, 80],
-    [3, 40],
+    [3, 0],
     [6, 80],
-    [9, 40],
+    [9, 0],
+    [12, 80],
+    [15, 0],
+    [18, 80],
+    [21, 0],
+    [24, 0],
     [3, 80],
-    [6, 40],
-    [9, 80]
+    [6, 0],
+    [9, 80],
+    [12, 0],
+    [15, 80],
+    [18, 0],
+    [21, 80],
+    [24, 0],
+    [21, 0]
   ]);
 
   // chart type
   var chart = anychart.polar();
 
   // chart title
-  chart.title().text('Polar Chart Start Angle Sample');
+  chart.title("Polar Chart Plot Background Sample");
 
-  // set start angle of the chart
-  chart.startAngle(90);
+  // disable minor ticks
+  var yAxis = chart.yAxis();
+  yAxis.enabled(true);
+  var yMinorTicks = chart.yAxis().minorTicks();
+  yMinorTicks.enabled(false);
 
-  // set data and disable tooltip
-  chart.line(dataSet).tooltip().enabled(false);
-
-  // x scale interval settings
-  chart.xScale().maximum(9).ticks().interval(1);
+  // set ticks interval for y scale
+  var xScale = chart.xScale();
+  xScale.maximum(24);
+  var xTicks = chart.xScale().ticks();
+  xTicks.interval(4);
 
   // adjust content and visualisation of labels
-  chart.xAxis().labels().fontWeight(900).textFormatter(function(){return this.value + '.00'});
+  var xLabels = chart.xAxis().labels();
+  xLabels.textFormatter(function(){
+    return this.value + ".00";
+  });
 
-  // grid settings
-  chart.grid(0).evenFill(null).oddFill(null);
-  chart.grid(1).evenFill(null).oddFill(null);
+  // fill set
+  var fillSettings = {
+    keys: [".35 white", ".9 gray"],
+    angle: -135,
+    mode: chart.bounds()
+  };
 
-  // draw chart
-  chart.container('container').draw();
+  // apply fill set
+  var grid1 = chart.grid(0);
+  grid1.oddFill(fillSettings);
+  grid1.evenFill(fillSettings);
+  grid1.layout("circuit");
+  var grid2 = chart.grid(1);
+  grid2.oddFill(null);
+  grid2.evenFill(null);
+  grid2.stroke("black");
+
+  // set data
+  chart.line(dataSet);
+
+  chart.legend(false);
+
+      // draw chart
+  chart.container(stage);
+  chart.draw();
 });</script>
 </head>
 <body>

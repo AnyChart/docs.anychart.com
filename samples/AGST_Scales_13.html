@@ -7,67 +7,42 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // set stage
-  var stage = anychart.graphics.create('container');
-
-  // custom scale
-  var customScale = anychart.scales.linear();
-  customScale.minimum(8000).maximum(20000).ticks().interval(1000);
-
-  // set position and data for the first chart
-  var Series_2003 = anychart.columnChart([
-    ['John' , 10000],
-    ['Jake' , 12000],
-    ['Peter' , 18000],
-    ['James' , 11000],
-    ['Mary' , 9000]
+  // setting data
+  var data = anychart.data.set([
+    ["P1", 16, 20],
+    ["P2", 12, 18],
+    ["P3", 9, 14]
   ]);
-  Series_2003.bounds(0, 0, '50%', '100%');
-  Series_2003.title().enabled(false);
 
-  // set custom scale as y scale for the chart
-  Series_2003.yScale(customScale);
+  // remapping data
+  var Sales2003 = data.mapAs({x: [0], value: [1]});
+  var Sales2004 = data.mapAs({x: [0], value: [2]});
 
-  // adjust axes settings
-  Series_2003.yAxis().orientation('right').title().enabled(false);
-  Series_2003.xAxis().title().text('Year 2003');
+  var chart = anychart.column();
 
-  // set scale minimum
-  Series_2003.yScale().minimum(0);
+  chart.column(Sales2003);
+  chart.column(Sales2004);
 
-  // set stage
-  Series_2003.container(stage);
+  // adjusting major and minor grids
+  var grid = chart.grid(1);
+  grid.layout("horizontal");
+  grid.evenFill("#fff");
+  grid.oddFill("rgb(244,245,255");
+  grid.enabled(true);
+  var minorGrid = chart.minorGrid();
+  minorGrid.layout("horizontal");
+  minorGrid.enabled(true);
 
-  // draw chart
-  Series_2003.draw();
-
-
-  // set position and data for the second chart
-  var Series_2004 = anychart.columnChart([
-      ['John' ,  12000],
-      ['Jake' ,  15000],
-      ['Peter' ,  16000],
-      ['James' ,  13000],
-      ['Mary' ,  19000]
-      ]);
-  Series_2004.title().enabled(false);
-  Series_2004.bounds('50%', 0, '50%', '100%');
-
-  // set custom scale as y scale for the chart
-  Series_2004.yScale(customScale);
-
-  // adjust axes settings
-  Series_2004.yAxis().title().text('Sales');
-  Series_2004.xAxis().title().text('Year 2004');
+  // setting major ticks interval on y scale
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(2);
 
   // set scale minimum
-  Series_2004.yScale().minimum(0);
+  var yScale = chart.yScale();
+  yScale.minimum(0);
 
-  // set container
-  Series_2004.container(stage);
-
-  // draw chart
-  Series_2004.draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

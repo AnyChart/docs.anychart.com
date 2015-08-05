@@ -7,45 +7,92 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
+  // create stage
+  var stage = anychart.graphics.create("container");
+
   // data for chart
   var dataSet = anychart.data.set([
-    ["January 2011", 22],
-    ["Febrary 2011", 34],
-    ["March 2011", 16],
-    ["April 2011", 12],
-    ["May 2011", 38],
-    ["June 2011", 47],
-    ["Jule 2011", 39],
-    ["August 2011", 28],
-    ["September 2011", 21],
-    ["October 2011", 18],
-    ["November 2011", 24],
-    ["December 2011", 20]
+    ["Product A", 90],
+    ["Product B", 65],
+    ["Product C", 73],
+    ["Product D", 88],
+    ["Product E", 75],
+    ["Product F", 100]
   ]);
 
   // chart type
-  var chart = anychart.radar();
+  var chart1 = anychart.radar();
 
   // chart title
-  chart.title().text('Disable First & Last Labels of Y Axis');
+  chart1.title("Circular Grid Adjustment");
 
-  // set background
-  chart.background().enabled(true).fill('#EEEEEE');
+  // disable minor ticks
+  var yAxis = chart1.yAxis();
+  yAxis.enabled(true);
+  yAxis.minorTicks(false);
 
-  chart.yAxis()             // adjust y axis settings
-    .drawFirstLabel(false)  // disable first label
-    .drawLastLabel(false)   // disable last label
-    .minorTicks()           // settings for minor ticks
-      .enabled(false);      // hide minor ticks
+  // set data and adjust visualisation
+  var series1 = chart1.area(dataSet);
+  series1.stroke("yellow");
+  series1.fill("gold 0.8");
 
-  // set data and visual appearance
-  chart.area(dataSet).fill('lightblue 0.7');
+  var grid1_1 = chart1.grid(1);
+  grid1_1.evenFill(null);
+  grid1_1.oddFill(null);
+  grid1_1.layout("radial");
+  grid1_1.stroke("white");
 
-  // set grid visual appearance
-  chart.grid(0).evenFill('white').oddFill('white');
+  var grid1_2 = chart1.grid(0);
+  grid1_2.evenFill("red 0.6");
+  grid1_2.oddFill("darkred 0.6");
+  grid1_2.layout("curcuit");
+  grid1_2.stroke("white");
 
-  // draw chart
-  chart.container('container').draw();
+  // set chart size and position
+  chart1.bounds(0, 0, "50%", "100%");
+
+  chart1.legend(false);
+
+  // set container and draw chart
+  chart1.container(stage);
+  chart1.draw();
+
+  // create second chart
+  var chart2 = anychart.radar();
+
+  // chart title
+  chart2.title("Radial Grid Adjustment");
+
+  // disable minor ticks
+  var yAxis1 = chart2.yAxis();
+  yAxis1.enabled(true);
+  yAxis1.minorTicks(false);
+
+  var grid2_1 = chart2.grid(0);
+  grid2_1.evenFill("red 0.6");
+  grid2_1.oddFill("darkred 0.6");
+  grid2_1.layout("radial");
+  grid2_1.stroke("white");
+
+  var grid2_2 = chart2.grid(1);
+  grid2_2.evenFill(null);
+  grid2_2.oddFill(null);
+  grid2_2.layout("curcuit");
+  grid2_2.stroke("white");
+
+  // set data and adjust visualisation
+  var series2 = chart2.area(dataSet);
+  series2.stroke("yellow");
+  series2.fill("gold 0.8");
+
+  // set chart size and position
+  chart2.bounds("50%", 0, "50%", "100%");
+
+  chart2.legend(false);
+
+  // set container and draw chart
+  chart2.container(stage);
+  chart2.draw();
 });</script>
 </head>
 <body>

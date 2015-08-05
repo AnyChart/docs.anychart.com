@@ -29,12 +29,12 @@
   ]);
   
   // chart type
-  chart = anychart.columnChart();
+  chart = anychart.column();
   
-  chart.title().text('Darken Colors Sample');
+  chart.title('Darken Colors Sample');
   
   // set data and set additionla information in tooltip
-  chart.column(data).tooltip().contentFormatter(function(){
+  chart.column(data).stroke(null).tooltip().contentFormatter(function(){
     var mixColor2 = anychart.color.darken(color1, (this.index * 0.2));
     return 'Input Color: ' + color1 +
       '\nDarken Ration: ' + this.index * 2 / 10 +

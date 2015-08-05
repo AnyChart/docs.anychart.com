@@ -11,9 +11,17 @@
   var chart = anychart.scatter();
 
   // data
-  data = anychart.data.set([
-    [1, 178, 165, 154, 143, 132],
-    [2, 167, 153, 144, 133, 122]
+  var data = anychart.data.set([
+    [2000, 178, 165, 154, 143, 132],
+    [2001, 108, 160, 142, 121, 190],
+    [2002, 180, 160, 170, 121, 119],
+    [2003, 120, 195, 177, 126, 184],
+    [2004, 110, 120, 130, 140, 150],
+    [2005, 108, 160, 142, 121, 190],
+    [2006, 180, 160, 170, 121, 119],
+    [2007, 120, 195, 177, 126, 184],
+    [2008, 110, 120, 130, 140, 150],
+    [2009, 140, 150, 180, 190, 200]
   ]);
 
   // map data for each series
@@ -24,31 +32,29 @@
   var data5 = data.mapAs({x: [0], value: [5]});
 
   // set data and color for each series
-  chart.marker(data1)
-    .fill('#4A55C7');
-  chart.marker(data2)
-    .fill('#5EBD9B');
-  chart.marker(data3)
-    .fill('#B04A8A');
-  chart.marker(data4)
-    .fill('#C7894A');
-  chart.marker(data5)
-    .fill('#BCBD46');
+  var series1 = chart.marker(data1);
+  series1.fill("#4A55C7");
+  var series2 = chart.marker(data2);
+  series2.fill("#999999");
+  var series3 = chart.marker(data3);
+  series3.fill("#B04A8A");
+  var series4 = chart.marker(data4);
+  series4.fill("#C7894A");
+  var series5 = chart.marker(data5);
+  series5.fill("#BCBD46");
   
   // set title
-  chart.title().text('Colors');
-  
-  // draw axes and set titles
-  chart.xAxis().title('Year');
-  chart.yAxis().title('Box office');
+  chart.title("Colors");
 
-  chart.xScale()
-    .minimum(0)
-    .maximum(3)
-    .ticks().interval(1);
+  var xScale = chart.xScale();
+  xScale.minimum(1999);
+  xScale.maximum(2010);
+  var xTicks = chart.xScale().ticks();
+  xTicks.interval(1);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

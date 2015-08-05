@@ -9,81 +9,94 @@
 
   // setting data
   var data = anychart.data.set([
-      ['P1', 16, 20],
-      ['P2', 12, 18],
-      ['P3', 9, 14]
+      ["P1", 16, 20],
+      ["P2", 12, 18],
+      ["P3", 9, 14]
   ]);
 
   // remapping data
   var Sales2003 = data.mapAs({x: [0], value: [1]});
   var Sales2004 = data.mapAs({x: [0], value: [2]});
     
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
 
   // setting basic title
-  anychart.ui.title()
-    .parentBounds(0, 0, stage.width(), stage.height()*0.1)
-    .text('Stacked Modes Samples')
-    .container(stage)
-    .draw();
+  var mainTitle = anychart.ui.title();
+  mainTitle.parentBounds(0, 0, stage.width(), stage.height()*0.1);
+  mainTitle.text("Stacked Modes Samples");
+  mainTitle.container(stage);
+  mainTitle.draw();
 
   // first chart
-  var valueStackedMode = anychart.columnChart();
+  var valueStackedMode = anychart.column();
 
   // set chart title
-  valueStackedMode.title().text('Value Stacked Mode');
+  valueStackedMode.title("Value Stacked Mode");
 
   // setting chart's size and position
-  valueStackedMode.bounds(0, '15%', '50%', '85%');
+  valueStackedMode.bounds(0, "15%", "50%", "85%");
 
-  valueStackedMode.background().stroke('#CCCCCC');
+  var background = valueStackedMode.background();
+  background.stroke("#CCCCCC");
 
   // define mode type
-  valueStackedMode.yScale().stackMode('value');
+  var yScale = valueStackedMode.yScale();
+  yScale.stackMode("value");
 
   // disable axes title
-  valueStackedMode.xAxis().title().enabled(false);
-  valueStackedMode.yAxis().title().enabled(false);
+  var xAxis = valueStackedMode.xAxis();
+  xAxis.title(false);
+  var yAxis = valueStackedMode.yAxis();
+  yAxis.title(false);
 
-  valueStackedMode.yScale().minorTicks().interval(2);
-  valueStackedMode.yScale().ticks().interval(10);
+  var yMinorTicks = valueStackedMode.yScale().minorTicks();
+  yMinorTicks.interval(2);
+  var yTicks = valueStackedMode.yScale().ticks();
+  yTicks.interval(10);
 
   // series data setter
-  valueStackedMode.column(Sales2003).hoverFill('#444444');
-  valueStackedMode.column(Sales2004).hoverFill('#444444');
-
-  valueStackedMode.container(stage).draw();
+  valueStackedMode.column(Sales2003);
+  valueStackedMode.column(Sales2004);
+  
+  valueStackedMode.container(stage);
+  valueStackedMode.draw();
 
   // second chart
-  var percentStackedMode = anychart.columnChart();
+  var percentStackedMode = anychart.column();
 
-  percentStackedMode.title().text('Percent Tacked Mode');
+  percentStackedMode.title("Percent Tacked Mode");
 
   // setting chart's size and position
-  percentStackedMode.bounds('50%', '15%', '50%', '85%');
+  percentStackedMode.bounds("50%", "15%", "50%", "85%");
 
-  percentStackedMode.background().stroke('#CCCCCC');
+  var background1 = percentStackedMode.background();
+  background1.stroke("#CCCCCC");
 
   // force chart to stack values by Y scale.
-  percentStackedMode.yScale().stackMode('percent');
+  var percentYScale = percentStackedMode.yScale();
+  percentYScale.stackMode("percent");
 
   // disable Axes titles
-  percentStackedMode.yAxis().title().enabled(false);
-  percentStackedMode.xAxis().title().enabled(false);
+  var persentYAxispercent = percentStackedMode.yAxis();
+  persentYAxispercent.title(false);
+  var persentXAxispercent = percentStackedMode.xAxis();
+  persentXAxispercent.title(false);
 
-  percentStackedMode.yScale().ticks().interval(10);
+  var percentYTicks = percentStackedMode.yScale().ticks();
+  percentYTicks.interval(10);
 
   // set yAxis labels formatting, force it to add % to values
-  percentStackedMode.yAxis().labels().textFormatter(function(info) {
-    return info.value + '%';
+  var percentYLabels = percentStackedMode.yAxis().labels();
+  percentYLabels.textFormatter(function(info) {
+    return info.value + "%";
   });
 
   // series data setter
-  percentStackedMode.column(Sales2003).hoverFill('#444444');
-  percentStackedMode.column(Sales2004).hoverFill('#444444');
-
-  percentStackedMode.container(stage).draw();
-
+  percentStackedMode.column(Sales2003);
+  percentStackedMode.column(Sales2004);
+  
+  percentStackedMode.container(stage);
+  percentStackedMode.draw();
 });</script>
 </head>
 <body>

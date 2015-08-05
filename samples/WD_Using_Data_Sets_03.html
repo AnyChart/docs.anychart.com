@@ -20,7 +20,7 @@
     var dataMappingList = anychart.data.mapAsTable(data);
 
     // create line chart
-    var lineChart = anychart.lineChart.apply(null, dataMappingList);
+    var lineChart = anychart.line(dataMappingList[0], dataMappingList[1], dataMappingList[2]);
     lineChart.getSeries(0).name('NY');
     lineChart.getSeries(1).name('SF');
     lineChart.getSeries(2).name('LA');

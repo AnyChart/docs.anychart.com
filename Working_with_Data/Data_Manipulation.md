@@ -41,6 +41,23 @@ That's how it looks with the button which adds a point on a click.
 
 {sample}CRUD\_01{sample}
 
+Note that in case of adding a point automatically it has to be done as a function:
+
+```
+function addPoint(e) {
+    // append data
+    dataSet.append({
+
+      // x value
+      x: 'P' + indexSetter,
+
+      // random value from 1 to 100
+      value : Math.floor((Math.random() * 100)+ 1)
+    });
+    indexSetter++;
+  }
+```
+
 **Note:**
 Append method helps to add information only at the end of the data set. To add information into any position see
  [.insert() method section](#insert) below.

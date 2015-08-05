@@ -64,6 +64,7 @@ anychart.onDocumentReady(function() {
   //set major axis ticks
   var axis = gauge.axis();
   axis.ticks()
+      .enabled(true)
       .fill('white')
       .stroke('#888')
       .type('trapezoid')
@@ -82,7 +83,7 @@ anychart.onDocumentReady(function() {
       .position('i')
       .fill('#F0673B .9')
       .stroke('#F0673B')
-      .radius(80);
+      .radius(65);
  
   // draw chart
   gauge.container('container').draw();
@@ -93,7 +94,7 @@ anychart.onDocumentReady(function() {
 ## The result
 ###See the result
 After all these steps you should have the following result. You can launch and explore this example further here:
-{sample :width 690 :height 180}GAUGE\_Basic\_Sample{sample}
+{sample :width 690 :height 250}GAUGE\_Basic\_Sample{sample}
 ###Full source code
 You can copy this to a file on your computer and open it in your browser to display the Gauge shown above:
 ```
@@ -134,6 +135,7 @@ anychart.onDocumentReady(function() {
   //set major axis ticks
   var axis = gauge.axis();
   axis.ticks()
+      .enabled(true)
       .fill('white')
       .stroke('#888')
       .type('trapezoid')
@@ -152,7 +154,7 @@ anychart.onDocumentReady(function() {
       .position('i')
       .fill('#F0673B .9')
       .stroke('#F0673B')
-      .radius(80);
+      .radius(65);
  
   // draw chart
   gauge.container('container').draw();

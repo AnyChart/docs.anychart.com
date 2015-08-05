@@ -85,7 +85,7 @@ Using this, you will be able to draw any shape. Let's draw a triangle outside of
 {sample}GRAPHICS\_Basics\_02{sample}
 
 As you can see, here we used the **{api:anychart.graphics.vector.Path#moveTo}.moveTo(){api}** function to define the starting point of drawing. To draw a line to the next 
-point we use the **{api:anychart.graphics.vector.Path#lineTo},lineTo(){api}** function. To define that we have finished with the particular figure we 
+point we use the **{api:anychart.graphics.vector.Path#lineTo}.lineTo(){api}** function. To define that we have finished with the particular figure we 
 use **{api:anychart.graphics.vector.Path#close}.close(){api}**. 
 There are a lot of drawing functions, like **{api:anychart.graphics.vector.Path#arcTo}.arcTo(){api}** or **{api:anychart.graphics.vector.Path#curveTo}.curveTo(){api}**, that helps to draw arcs and curves.
 Find more in our **{api:anychart.graphics.vector.Path}Path{api}** API.

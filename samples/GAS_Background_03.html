@@ -7,12 +7,6 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // chart type
-  var chart = anychart.areaChart();
-
-  // set title
-  chart.title().text('Column Chart');
-
   // data
   var data = anychart.data.set([
     {x: "P1", value: 16},
@@ -36,44 +30,25 @@
     {x: "P20", value: 28}
   ]);
 
+  // chart type
+  var chart = anychart.area();
+
   // set data
   var series = chart.splineArea(data);
 
-  // adjust data visualization
-  series.fill('yellow 0.7').hoverFill('red');series.markers().enabled(true).fill('yellow');
-  series.hoverMarkers().enabled(true).fill('white').stroke('gray');
-
   // adjust title background fill
-  chart.title().text('Gradient Background Fill').background().enabled(true).fill('gold');
+  chart.title('Gradient Background Fill');
+  chart.title()
+      .padding(10)
+      .background('#fff');
 
   // adjust chart background fill
   chart.background().fill({
     // set colors position
-    keys: ['.1 lightblue', '.7 blue', '.9 darkblue'],
+    keys: ['#fff', '#66f', '#fff'],
     // set angle of colors drawing
-    angle: -130
+    angle: 130
   });
-
-  // adjust axes strokes, labels and ticks
-  chart.xAxis().stroke('white').labels().fontColor('white');
-  chart.xAxis().ticks().stroke('white');
-  chart.yAxis().stroke('white').labels().fontColor('white').textFormatter(function(){
-    return this.value + '.00';
-  });
-  chart.yAxis().ticks().stroke('white');
-  chart.yAxis().minorTicks().stroke('white');
-
-  // adjust y scale ticks interval
-  chart.yScale().ticks().interval(5);
-
-  // disable axes titles
-  chart.xAxis().title().enabled(false);
-  chart.yAxis().title().enabled(false);
-
-  // adjust grid
-  chart.grid(0).stroke('white').evenFill('white 0.4').oddFill('white 0.4').layout('horizontal');
-  chart.minorGrid().stroke('white');
-  chart.grid(1).stroke('white').layout('vertical');
 
   // draw
   chart.container('container').draw();

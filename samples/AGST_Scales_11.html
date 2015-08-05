@@ -9,32 +9,45 @@
 
   // setting data
   var data = anychart.data.set([
-    ['P1', 16, 20],
-    ['P2', 12, 18],
-    ['P3', 9, 14]
+    ["P1", 16, 20],
+    ["P2", 12, 18],
+    ["P3", 9, 14]
   ]);
 
   // remapping data
   var Sales2003 = data.mapAs({x: [0], value: [1]});
   var Sales2004 = data.mapAs({x: [0], value: [2]});
 
-  var chart = anychart.columnChart();
+  var chart = anychart.column();
 
+  // series settings
   chart.column(Sales2003);
   chart.column(Sales2004);
 
   // adjusting major and minor grids
-  chart.grid(0).stroke('black').layout('vertical');
-  chart.grid(1).stroke('black').layout('horizontal');
-  chart.minorGrid().stroke({color: 'black', dash: '5 2 5', opacity: 0.2}).layout('horizontal');
+  var grid = chart.grid(0);
+  grid.stroke("#000");
+  grid.layout("vertical");
+  grid.enabled(true);
+  var grid1 = chart.grid(1);
+  grid1.stroke("#000");
+  grid1.layout("horizontal");
+  grid1.enabled(true);
+  var minorGrid = chart.minorGrid();
+  minorGrid.stroke("#СЕСЕСЕ");
+  minorGrid.layout("horizontal");
+  minorGrid.enabled(true);
 
   // setting major ticks interval on y scale
-  chart.yScale().ticks().interval(2);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(2);
 
   // set scale minimum
-  chart.yScale().minimum(0);
+  var yScale = chart.yScale();
+  yScale.minimum(0);
 
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

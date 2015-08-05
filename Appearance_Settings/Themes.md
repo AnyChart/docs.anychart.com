@@ -83,7 +83,7 @@ Now, when simple theme is ready we will learn where we can store it and how to a
 
 ##Internal Themes
 
-You can store a theme right where your chart code is:
+You can store a theme right where your chart code is, just be sure to apply the theme before you create a chart:
 
 ```
   // create variable for custom theme
@@ -175,7 +175,7 @@ The content of **custom_theme.js** should be something like to the snippet below
 ### Default Theme
 
 You can find **defaultTheme.js** in **binaries** folder in the downloaded AnyChart package.
-This file can be found in **binaries** folder in the downloaded AnyChart package. This file contains default AnyChart theme. You **DON'T NEED** to reference this file to use Default theme, it is built-in in the component, we provide this file only as a reference for a custom theme you may want to create yourself.
+This file can be found in **binaries** folder in the downloaded AnyChart package. You **DON'T NEED** to reference this file to use Default theme, it is built-in in the component, we provide this file only as a reference for a custom theme you may want to create yourself.
   
 **Note**: the theme you create need not contain all settings you see in a default theme - you need to tune only the settings you want to change or want them to be persistent no matter what.
 
@@ -217,11 +217,11 @@ In the sample below a table contains several charts. Settings for these charts a
 
 ##Reset Theme
 
-There is one very important thing you need to remember when you work with themes in Dashboard mode: after the theme is defined in code every chart in the scope of the chart function uses this theme. To reset theme to the default or to the new one you have to use {api:anychart#theme}**.theme()**{api} method again.
+There is one very important thing you need to remember when you work with themes in Dashboard mode: after the theme is defined in code every chart uses this theme until you set another theme. To reset theme to the default or to the new one you have to use {api:anychart#theme}**.theme()**{api} method again.
 
 ```
   // return default theme to the charts below
-  anychart.theme(anychart.themes.defaultTheme);
+  anychart.theme(null);
 ```
 
 ## Global Settings, Defaults and Theme Reference

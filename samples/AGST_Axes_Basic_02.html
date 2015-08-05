@@ -16,7 +16,7 @@
     ['E', 90000]
   ]);
 
-  var chart = anychart.columnChart(data);
+  var chart = anychart.column(data);
 
   chart.title().enabled(false);
 
@@ -25,8 +25,8 @@
   chart.xAxis().orientation('top');
 
   // axes titles adjusting
-  chart.xAxis().title().text('X Axis title on the top');
-  chart.yAxis().title().text('Y Axis title on the right');
+  chart.xAxis().title().enabled(true).text('X Axis title on the top');
+  chart.yAxis().title().enabled(true).text('Y Axis title on the right');
 
   chart.container('container').draw();
 });</script>

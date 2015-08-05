@@ -9,7 +9,6 @@ anychart.onDocumentReady(function () {
                 "gantt": {
                     "type": "project",
                     "controller": {
-                        "isResourceChart": false,
                         "treeData": {
                             "children": [
                                 {
@@ -18,34 +17,20 @@ anychart.onDocumentReady(function () {
                                         "actualStart": 1169683200000,
                                         "actualEnd": 1173830400000
                                     },
-                                    "treeDataItemMeta": {
-                                        "depth": 0,
-                                        "index": 0,
-                                        "autoProgress": 0,
-                                        "autoStart": 1169683200000,
-                                        "autoEnd": 1173830400000
-                                    },
                                     "children": [
                                         {
                                             "treeDataItemData": {
                                                 "name": "Draft plan",
                                                 "actualStart": 1169683200000,
                                                 "actualEnd": 1170460800000
-                                            },
-                                            "treeDataItemMeta": {
-                                                "depth": 1,
-                                                "index": 1
                                             }
+
                                         },
                                         {
                                             "treeDataItemData": {
                                                 "name": "Board meeting",
                                                 "actualStart": 1170547200000,
                                                 "actualEnd": 1170547200000
-                                            },
-                                            "treeDataItemMeta": {
-                                                "depth": 1,
-                                                "index": 2
                                             }
                                         },
                                         {
@@ -53,10 +38,6 @@ anychart.onDocumentReady(function () {
                                                 "name": "Research option",
                                                 "actualStart": 1170547200000,
                                                 "actualEnd": 1172275200000
-                                            },
-                                            "treeDataItemMeta": {
-                                                "depth": 1,
-                                                "index": 3
                                             }
                                         },
                                         {
@@ -64,24 +45,12 @@ anychart.onDocumentReady(function () {
                                                 "name": "Final plan",
                                                 "actualStart": 1172275200000,
                                                 "actualEnd": 1173830400000
-                                            },
-                                            "treeDataItemMeta": {
-                                                "depth": 1,
-                                                "index": 4
                                             }
                                         }
                                     ]
                                 }
-                            ],
-                            "index": [
-                                "id"
                             ]
-                        },
-                        "verticalOffset": 0,
-                        "startIndex": 0
-                    },
-                    "dataGrid": {
-                        "columns": []
+                        }
                     },
                     "timeline": {
                         "scale": {
@@ -95,14 +64,13 @@ anychart.onDocumentReady(function () {
                             }
                         }
                     }
-                    ,
-                    // chart container
-                    "container": "container"
+
                 }
             }
 
 
             var chart = anychart.fromJson(json);
+            chart.container('container');
 
             // draw chart
             chart.draw();

@@ -34,7 +34,7 @@ Depending on your task you can plot the following types on a Scatter plot: Line,
 Bubble charts. To start the creation of Scatter chart you need create chart using {api:anychart.charts.Scatter}**.scatterChart()**{api} method.
 
 ```
-  var chart = anychart.scatterChart();
+  var chart = anychart.scatter();
 ```
 
 ### Line Chart
@@ -106,7 +106,7 @@ Converted data from the tables is represented below:
 
 ```
   // set chart type
-  var chart = anychart.scatterChart();
+  var chart = anychart.scatter();
 
   // data for the first line series
   chart.line ([
@@ -169,7 +169,7 @@ A scatter plot does not specify dependent or independent variables. Either type 
 To plot a scatter diagram using AnyChart you should use {api:anychart.charts.Scatter#marker}**Marker**{api} series type along with {api:anychart.charts.Scatter}**anychart.scatterChart()**{api}:
 
 ```
-  var chart = anychart.scatterChart();
+  var chart = anychart.scatter();
 
   chart.marker([
     {2, 10},

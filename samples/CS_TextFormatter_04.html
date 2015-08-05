@@ -10,10 +10,7 @@
 anychart.onDocumentReady(function() {
 
     // chart type
-    chart = anychart.financialChart();
-
-    // chart title
-    chart.title().text('Multi-series');
+    chart = anychart.financial();
 
     // adjust x scale type
     chart.xScale()
@@ -59,16 +56,16 @@ anychart.onDocumentReady(function() {
     series_2.labels().offsetY('5');
     
     // set axes title
-    chart.xAxis().title().text('Day');
+    chart.xAxis().title('Day');
     chart.xAxis().labels().textFormatter(function(value){
         var date = new Date(value['tickValue']);
         var options = {
           month: 'short',
-          day: 'numeric',
+          day: 'numeric'
         };
         return date.toLocaleDateString('en-US', options);
       });
-    chart.yAxis().title().text('Price');
+    chart.yAxis().title('Price');
 
     // draw
     chart.container('container').draw();
