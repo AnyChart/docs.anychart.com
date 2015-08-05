@@ -31,7 +31,7 @@ As far as gantt chart visualize numeric values most formatting presets represent
   
 Here is a sample with date formatted using **dateDmyDots** preset.
 
-{sample :width 690 :height 180}GANTT\_Column\_Presets\_01{sample}
+{sample :width 690 :height 200}GANTT\_Column\_Presets\_01{sample}
 
 **directNumbering** is a formatting for simple numbers. This is default preset for the vary first column in the data grid.
   
@@ -41,7 +41,7 @@ Here is a sample with date formatted using **dateDmyDots** preset.
   
 Here is a sample with several presets in one data grid
 
-{sample :width 690 :height 180}GANTT\_Column\_Presets\_03{sample}
+{sample :width 690 :height 200}GANTT\_Column\_Presets\_03{sample}
 
 ### Custom Formatter
 
@@ -72,4 +72,4 @@ If your data requires more complex customization you can use your own object wit
 
 The object for column customization may contain three parameters: "formatter", "textStyle" and "width". **Formatter** is a function for adjusting the data in each cell of the column. **TextStyle** adjust visual appearance of the text in the cell and **width** set custom column width.
 
-{sample :width 690 :height 180}GANTT\_Column\_Presets\_02{sample}
+{sample :width 690 :height 200}GANTT\_Column\_Presets\_02{sample}
