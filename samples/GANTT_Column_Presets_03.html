@@ -37,10 +37,14 @@
       var duration = end - start;
       var hours = duration/1000/60/60;
       if (hours>24){
-        return hours + " hours (" + (hours/24).toFixed(0) + " days)";
+        return hours + " hours <a style='color: #7c868e;'>(" + (hours/24).toFixed(0) + " days)<a>";
       }else{
         return hours + " hours";
       }
+    },
+    "textStyle": {
+      "fontColor": "blue",
+      "useHtml": true
     },
     "width": 150
   });

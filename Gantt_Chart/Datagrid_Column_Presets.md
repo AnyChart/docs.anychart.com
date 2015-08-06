@@ -9,26 +9,18 @@ DataGrid Column Presets
 
 ## Overview
 
-Gantt chart consist of two parts - TimeLine contains visualized information and Data Grid displays string's number and name along with additional information. In this article we will describe how information in columns can be formatted with default presets or with your custom preset.
+Gantt chart consist of two parts - TimeLine that contains visualized information and DataGrid that displays strings' numbers and names along with additional information. In this article we will describe how information in the dataGrid columns can be formatted using presets and how to create a custom column formatter.
 
 ## Column Formatting
 
-DataGrid columns can contain different types of information. You can format each column according to your needs and desires. Use {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api} to define information field in your data set and data type for the column. You can find all possible data presets in {api:anychart.enums.ColumnFormats}**API**{api}. 
-
-```
-  var chart = anychart.ganttProject();
-  chart.data(data);
-  var dataGrid = chart.dataGrid();
-  var column = dataGrid.column(3);
-  column.setColumnFormat("actualStart", "dateIso8601");
-  column.title("Start");
-```
-
+DataGrid columns can contain different types of information. You can format each column according to your needs and desires. Use {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api} to define information field in your data set and preset for data formatting. You can find all possible data formatting presets in {api:anychart.enums.ColumnFormats}**API**{api}. 
+  
+  
 Let's take a closer look at each of these presets.
 
 ### Presets
 
-As far as gantt chart visualize numeric values most formatting presets represent different numeric formats. **dateCommonLog**, **dateDmyDots**, **dateIso8601**, **dateUsShort** and **dateUsShort** presets are useful for formatting dates in different ways. 
+As far as gantt chart visualize numeric values most formatting presets designed to format numeric values. **dateCommonLog**, **dateDmyDots**, **dateIso8601**, **dateUsShort** and **dateUsShort** presets are useful for formatting dates in different ways. 
   
 ```
   var column = dataGrid().column(2);
@@ -40,7 +32,10 @@ Here is a sample with date formatted using **dateDmyDots** preset.
 
 {sample :width 690 :height 200}GANTT\_Column\_Presets\_01{sample}
 
-**financial** preset formats fiscal values and **percent** preset format percentage values (assuming that for numeric values *1* stands for *100%* and for string values *1* stands for *1%*). **directNumbering** is a formatting for mere numbers. This is default preset for the very first column in the data grid. **shortText** preset is useful for adjusting text values and fitting it into small columns. Use **text** preset to show simple text values without any adjustment (**text** is default preset for second column).
+**financial** preset formats fiscal values and **percent** preset format percentage values (assuming that for numeric values *1* stands for *100%* and for string values *1* stands for *1%*). **directNumbering** is a formatting for the mere numbers. This is default preset for the first column in the data grid.
+  
+  
+As for text formatting presets - there are only two of them. **shortText** preset is useful for adjusting text values and fitting it into small columns. Use **text** preset to show simple text values without any adjustment (**text** is default preset for second column).
   
   
 Here is a sample with several presets in one data grid
@@ -80,11 +75,18 @@ If your data requires more complex customization you can use your own object wit
         // check if duration is more than 24 hours
         if (hours>24){
           // transform hours into days if the duration exceeds 24 hours
-          return hours + " hours (" + (hours/24).toFixed(0) + " days)";
+          return hours + " hours <a style='color: #7c868e;'>(" + (hours/24).toFixed(0) + " days)<a>";
         }else{
           // display only hours if the duration doesn't exceed 24 hours
           return hours + " hours";
         }
+      },
+      // set text visual appearance
+      "textStyle": {
+        // set clue font color
+        "fontColor": "blue",
+        // enable html in column content 
+        "useHtml": true
       },
       // set custom column width
       "width": 150
@@ -92,7 +94,7 @@ If your data requires more complex customization you can use your own object wit
   );
 ```
 
-The object for column customization may contain three parameters: "formatter", "textStyle" and "width". **Formatter** is a function for adjusting the data in each cell of the column. **TextStyle** adjust visual appearance of the text in the cell and **width** set custom column width.
+The object for column customization may contain three parameters: **formatter**, **textStyle** and **width**. **Formatter** is a function for adjusting the data in each cell of the column. **TextStyle** adjust visual appearance of the text in the cell and **width** set custom column width.
 
 {sample :width 690 :height 200}GANTT\_Column\_Presets\_03{sample}
 
