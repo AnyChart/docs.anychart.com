@@ -94,6 +94,8 @@ function customColumnTextFormatter(item)
 }
 ```
 
+**Note**: There are several presets for simplifying column content formatting. Please, see [DataGrid Column Presets article](./DataGrid_Column_Presets#presets) for more information.
+
 ### Width
 
 You should use the {api:anychart.core.ui.DataGrid.Column#width}**width()**{api} method for customizing the column width.

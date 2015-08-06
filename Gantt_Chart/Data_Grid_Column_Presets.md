@@ -5,7 +5,7 @@ DataGrid Column Presets
 * [Overview](#overview)
 * [Column Formatting](#column_formatting)
  * [Presets](#presets)
-* [Custom Formatter](#custom_formatter)
+ * [Custom Formatter](#custom_formatter)
 
 ## Overview
 
@@ -44,7 +44,7 @@ Here is a sample with several presets in one data grid
 
 ### Custom Formatter
 
-If your data requires more complex customization you can use your own object with custom settings for data formatting. Here is a sample of custom object data formatting: 
+If your data requires more complex customization you can use your own object with custom settings for data formatting and visual settings. Here is a sample of custom column content formatting: 
 
 ```
   // data grid getter
