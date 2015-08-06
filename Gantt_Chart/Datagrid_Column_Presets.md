@@ -2,8 +2,13 @@
 DataGrid Column Presets
 ===========
 
+* [Overview](#overview)
+* [Column Formatting](#column_formatting)
+ * [Presets](#presets)
+* [Custom Formatter](#custom_formatter)
 
-  
+## Overview
+
 Gantt chart consist of two parts - TimeLine contains visualized information and Data Grid displays string's number and name along with additional information. In this article we will describe how information in columns can be formatted with default presets or with your custom preset.
 
 ## Column Formatting
@@ -21,7 +26,7 @@ DataGrid columns can contain different types of information. You can format each
 
 Let's take a closer look at each of these presets.
 
-### Formatting Presets
+### Presets
 
 As far as gantt chart visualize numeric values most formatting presets represent different numeric formats. **dateCommonLog**, **dateDmyDots**, **dateIso8601**, **dateUsShort** and **dateUsShort** presets are useful for formatting dates in different ways. 
   
