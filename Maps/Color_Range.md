@@ -14,10 +14,11 @@
  * [Coming soon](#single_hue)
   * [Partial spectral color progression](#partial_color_progression) 
   * [Full-spectral color progression](#full-spectral_color_progression)
-* [Settings](#settings)
+* [Visual Settings](#visual_settings)
  * [Orientation](#orientation)
  * [Position](#position) 
  * [Size](#size)
+ * [Stroke](#stroke)
  
  
 ## Overview
@@ -26,7 +27,7 @@ Color Range is a tool that is necessary when we need to identify the value that 
 or like a number of colored boxes, each presenting a range of values.
  
 To create a color range, use the {api:anychart.charts.Map#colorRange}**.colorRange()**{api} function. There are a lot of parameters might be adjusted, such as orientation 
-(to change it use the {api}**.orientation()**{api} function), size of the color box (use {api:}**.colorLineSize()**{api}) or alignment ({api:anychart.graphics.vector.Image#align}**.align()**{api} in this case). 
+(to change it use the {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} function), size of the color box (use {api:}**.colorLineSize()**{api}) or alignment ({api:anychart.graphics.vector.Image#align}**.align()**{api} in this case). 
 
 However, first of all we need to adjust the map colors and its colorScale, because the colorRange type and appearance depend on those settings.
 
@@ -159,7 +160,7 @@ This palette type is usually used to show the difference in values of something 
 </table>
 
 To make a single-hue progression use the **{api:anychart.color#singleHueProgression}anychart.color.singleHueProgression(){api}**
-function. You may not define the colors - in this case the shades will de genereated for the default color. 
+function. You may not define the colors - in this case the shades will de generated for the default color. 
 
 {sample}Maps\_ColorRange\_06{sample}
 
@@ -220,7 +221,7 @@ of the darker end point hues into a gray shade representing the middle. An examp
 </table>
 
 To make a bi-hue progression use the **{api:anychart.color#biHueProgression}anychart.color.biHueProgression(){api}**
-function. You may not define the colors - in this case the shades will de genereated for the default color. 
+function. You may not define the colors - in this case the shades will de generated for the default color. 
 
 {sample}Maps\_ColorRange\_08{sample}
 
@@ -232,7 +233,7 @@ That's how the same map would look like with an ordinal Scale.
 
 This type of color progression is typically used to show elevation changes. 
 It's more like a single hue type, but the difference between shades is less sharp. This progression uses related hues to blend together the two end point hues. 
-For example from yellow through orange to brown.
+For example, from yellow through orange to brown or from light-green to deep-emerald green.
 
 <br><br>
 
@@ -253,7 +254,14 @@ For example from yellow through orange to brown.
 </tbody>
 </table>
 
-anychart.color#blendedHueProgression
+Use the **{api:anychart.color#biHueProgression}anychart.color.biHueProgression(){api}** to make a progression between two similar hues.
+In case you haven\t defined any of the colors, they will de generated automatically (of the default color). 
+
+{sample}Maps\_ColorRange\_10{sample}
+
+That's how the same map would look like with an ordinal Scale.
+
+{sample}Maps\_ColorRange\_11{sample}
 
 ### Coming soon
  
@@ -308,6 +316,34 @@ This progression is not recommended under other circumstances because some conne
 
 
 
+## Visual Settings
+
+There are some visual preferences of a ColorRange that might be set different from the default if needed - such as position, length and other. Look through this paragraph to know more about them.
+
+### Orientation
+
+A simple function {api:}**.orientation()**{api} is used for the changing the position. An argument should be a string with one of the following values: 'right', 'left', 'bottom' or 'top'.
+
+```
+	// put the colorRange to the right from the map
+	cr.orientation('right');
+```
+
+{sample}Maps\_ColorRange\_15{sample}
+
+### Length
+
+The colorRange length adjusting is quite usual: as for any other components, just add the **.length()** method to the colorRange.
+
+```
+	// set the colorRange length
+	cr.length(200);
+```
+
+{sample}Maps\_ColorRange\_16{sample}
+
+### Size
+### Stroke 
 
 
 

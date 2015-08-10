@@ -8,7 +8,7 @@
   <script src="//cdn.anychart.com/geodata/countries/aus/australia.js" data-export="true"></script>
   <script x-export="chart">anychart.onDocumentReady(function() {
     var dataSet = anychart.data.set([
-      {'id': 'AU.WA', 'value': 320},  // Western Australia
+      {'id': 'AU.WA', 'value': 300},  // Western Australia
       {'id': 'AU.JB', 'value': 270},  // Jervis Bay Territory
       {'id': 'AU.NS', 'value': 240},  // New South Wales
       {'id': 'AU.VI', 'value': 75},   // Victoria
@@ -27,7 +27,7 @@
     map.background('none');
     // set the title and its preferences
     map.title().useHtml(true).hAlign('center');
-    map.title('<span style="font-size: 18px;">Blended progression with Ordinal Color Scale</span>');
+    map.title('<span style="font-size: 18px;">Single Hue Progression - Ordinal Scale</span><br><span style="font-size:12px;">Move the mouse over the districts for more information</span>');
 
     // set the series
     var series = map.choropleth(dataSet);
@@ -37,17 +37,24 @@
     series.labels(false);
     
     // set the colors and ranges for the scale
-	series.colorScale(anychart.scales.ordinalColor([{less:125},{from:125, to:175},{from:175, to:225},{from:225, to:275},{from:275, to:315},{greater:315}]));
+	series.colorScale(anychart.scales.linearColor());
 
     //set the single hue progression
-    var colors = anychart.color.blendedHueProgression('#C8F672', '273813', 6);
+    var colors = anychart.color.singleHueProgression('#0068BC');
     
 	// define the colors 
     series.colorScale().colors(colors);
 	
 	// create and enable the colorRange
-	var cr = map.colorRange(true);
+	var cr = map.colorRange();
+	cr.enabled(true);
 	
+	// put the colorRange to the right from the map
+	cr.orientation('right');
+	
+	// set the colorRange length
+	cr.length(200);
+
     // set the container
     map.container('container');
     map.draw();
