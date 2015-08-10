@@ -25,8 +25,8 @@
 Color Range is a tool that is necessary when we need to identify the value that each point on a map presents. It looks like a range bar, colored as gradient 
 or like a number of colored boxes, each presenting a range of values.
  
-To create a color range, use the **.colorRange()** function. There are a lot of parameters might be adjusted, such as orientation 
-(to change it use the **.orientation()** function), size of the color box (use **.colorLineSize()**) or alignment ( **.align()** in this case). 
+To create a color range, use the {api:anychart.charts.Map#colorRange}**.colorRange()**{api} function. There are a lot of parameters might be adjusted, such as orientation 
+(to change it use the {api}**.orientation()**{api} function), size of the color box (use {api:}**.colorLineSize()**{api}) or alignment ({api:anychart.graphics.vector.Image#align}**.align()**{api} in this case). 
 
 However, first of all we need to adjust the map colors and its colorScale, because the colorRange type and appearance depend on those settings.
 
@@ -83,7 +83,7 @@ This type of ColorScale looks like a number of boxes with different colors. Colo
 {sample}Maps\_ColorRange\_02{sample}
 
 No parameters are necessary here, but it's possible to use this method to define the ranges and its colors. However, it can be done later. In case no colors are defined, the default first-series color will be applied. If you haven't set the ranges, the map will show only the borders (both inner and outer) of the chosen territory.
-Although, if you decide to set the colors or ranges later, you may use the **{api}.colors(){api}** and **{api:anychart.core.map.scale.OrdinalColor#ranges}.ranges(){api}** accordingly.
+Although, if you decide to set the colors or ranges later, you may use the **{api:anychart.core.map.scale.OrdinalColor#colors}.colors(){api}** and **{api:anychart.core.map.scale.OrdinalColor#ranges}.ranges(){api}** accordingly.
 The following code does the same as the code above.
 
 ```
@@ -111,7 +111,7 @@ series.colorScale(anychart.scales.linearColor('#EC6E07', '#64B5F6'));
  
 ## Enabling the ColorRange
 
-To enable the colorRange, there's a simple method **{api}.colorRange(){api}**. 
+To enable the colorRange, there's a simple method **{api: anychart.charts.Map#colorRange}.colorRange(){api}**. 
 
 ```
 // create and enable the colorRange
