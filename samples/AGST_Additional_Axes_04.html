@@ -7,37 +7,55 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
   
-  var chart = anychart.lineChart();
+  var chart = anychart.line();
 
-  chart.container('container');
-
-  chart.title().enabled(true).text('Extra Axes Binding Sample');
+  chart.title("Extra Axes Binding Sample");
 
   // setting yScale settings
-  chart.yScale().ticks().interval(100000);
-  chart.yScale().minorTicks().interval(20000);
+  var yScaleTicks = chart.yScale().ticks();
+  yScaleTicks.interval(100000);
+  var yScaleMinorTicks = chart.yScale().minorTicks();
+  yScaleMinorTicks.interval(20000);
 
   // setting yAxis settings
-  chart.yAxis().title().enabled(true).text('Basic Y Axis');
-  chart.yAxis(1).title().enabled(true).text('Extra Y Axis');
+  var yAxis = chart.yAxis(0);
+  yAxis.title("Basic Y Axis");
+  var yAxis1 = chart.yAxis(1);
+  yAxis1.title("Extra Y Axis");
 
   // setting Grid settings
-  chart.grid(0).layout('vertical');
-  chart.grid(1).layout('horizontal');
+  var grid = chart.grid(0);
+  grid.stroke("gray 0.8");
+  grid.layout("vertical");
+  var grid1 = chart.grid(1);
+  grid1.stroke("gray 0.8");
+  grid1.layout("horizontal");
 
   // setting minorGrid settings
-  chart.minorGrid(0).layout('vertical');
-  chart.minorGrid(1).layout('horizontal');
+  var minorGrid = chart.minorGrid(0);
+  minorGrid.layout("vertical");
+  minorGrid.oddFill(null);
+  minorGrid.evenFill(null);
+  minorGrid.stroke("gray 0.3");
+  var minorGrid1 = chart.minorGrid(1);
+  minorGrid1.layout("horizontal");
+  minorGrid1.oddFill(null);
+  minorGrid1.evenFill(null);
+  minorGrid1.stroke("gray 0.3");
 
   // adding extra Y scale
   var extraYScale = anychart.scales.linear();
-  extraYScale.ticks().interval(10);
-  extraYScale.minorTicks().interval(2);
-  extraYScale.minimum(0).maximum(100);
+  extraYScale.minimum(0);
+  extraYScale.maximum(100);
+  var extraYScaleTicks = extraYScale.ticks();
+  extraYScaleTicks.interval(10);
+  var extraYScaleMinorTicks = extraYScale.minorTicks();
+  extraYScaleMinorTicks.interval(2);
 
   // adding and adjust extra Y axis
   var extraYAxis = chart.yAxis(1);
-  extraYAxis.orientation('right').scale(extraYScale);
+  extraYAxis.orientation("right");
+  extraYAxis.scale(extraYScale);
 
   // setting first series of data
   var firstSeries = anychart.data.set([
@@ -62,13 +80,16 @@
   var lineSeries = chart.line(secondSeries);
 
   lineSeries.yScale(extraYScale);
-  lineSeries.tooltip().enabled(false);
-  lineSeries.markers().size(2);
-  lineSeries.hoverMarkers().size(4);
+  lineSeries.tooltip(false);
+  var lineMarkers = lineSeries.markers();
+  lineMarkers.size(2);
+  var lineHoverMarkers = lineSeries.hoverMarkers();
+  lineHoverMarkers.size(4);
 
-  columnSeries.tooltip().enabled(false);
-  columnSeries.hoverFill('#444444');
-
+  columnSeries.tooltip(false);
+  columnSeries.hoverFill("#444444");
+  
+  chart.container("container");
   chart.draw();
 });</script>
 </head>

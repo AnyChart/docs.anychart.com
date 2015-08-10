@@ -9,10 +9,9 @@
 
   var chart = anychart.scatterChart();
   chart.title()
-    .enabled(true)
     .useHtml(true)
     .fontWeight(400)
-    .text('<span style="font-weight: 900;">Springfield\'s Clusters</span><br> <br><span style="font-weight:400; color: LimeGreen;">LQ < 0.95;</span> <span style="color: Tomato;">LQ > 1.1149</span>')
+    .text("<span style="font-weight: 900;">Springfield\'s Clusters</span><br> <br><span style="font-weight:400; color: LimeGreen;">LQ < 0.95;</span> <span style="color: Tomato;">LQ > 1.1149</span> ")
     .hAlign("center");
 
   // y scale settings
@@ -27,7 +26,7 @@
     return this.value + "%"
   });
 
-  chart.yAxis().title().enabled(true).text("Job Growth");
+  chart.yAxis().title().text("Job Growth");
 
   // x scale settings
   chart.xScale()
@@ -41,7 +40,7 @@
     return "$" + this.value / 1000 + ",000"
   });
 
-  chart.xAxis().title().enabled(true).text("Wages");
+  chart.xAxis().title().text("Wages");
 
   // data for states which are more specialized than the nation
   chart.bubble([
@@ -69,8 +68,7 @@
     {name: "Agriculture", x:"26000", y:"5", size:"4"}
   ]).fill("DodgerBlue").minimumSize(10).maximumSize(30).stroke(anychart.color.darken("DodgerBlue", 0.2));
 
-  chart.container('container');
-  chart.draw();
+  chart.container("container").draw();
 });</script>
 </head>
 <body>

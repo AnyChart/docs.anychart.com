@@ -7,9 +7,9 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
   
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
   
-  var chart = anychart.pieChart([
+  var chart = anychart.pie([
     {x: "Product A", value: "9000"},
     {x: "Product B", value: "5000"},
     {x: "Product C", value: "1400"},
@@ -17,23 +17,24 @@
     {x: "Product E", value: "8813"}
   ]);
   
-  stage.image()
-    .src('http://static.anychart.com/images/logo_anychart.gif')
-    .y(15)
-    .x(25)
-    .width(50)
-    .height(50)
-    .zIndex(chart.zIndex() + 1);
+  var image = stage.image();
+  image.src("http://static.anychart.com/images/logo_anychart.gif");
+  image.y(15);
+  image.x(25);
+  image.width(50);
+  image.height(50);
+  image.zIndex(chart.zIndex() + 1);
 
-  chart.tooltip().enabled(false);
-  chart.fill('aquastyle');
-  chart.labels()
-    .position('outside');
+  chart.tooltip(false);
+  chart.fill("aquastyle");
+  var labels = chart.labels();
+  labels.position("outside");
   
-  chart.legend().enabled(false);
+  chart.legend(false);
 
-  chart.title().enabled(false);
-  chart.container(stage).draw();
+  chart.title(false);
+  chart.container(stage);
+  chart.draw();
 });</script>
 </head>
 <body>

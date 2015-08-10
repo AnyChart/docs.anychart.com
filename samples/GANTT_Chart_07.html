@@ -6,36 +6,36 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  //create data tree on our data
+  // create data tree on our data
   var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 
-  //create project gantt chart
-  chart = anychart.ganttProject();
+  // create project gantt chart
+  var chart = anychart.ganttProject();
 
-  //set container id for the chart
-  chart.container('container');
+  // set container id for the chart
+  chart.container("container");
 
-  //set data for the chart
+  // set data for the chart
   chart.data(treeData);
 
-  //get chart data grid link to set column settings
+  // get chart data grid link to set column settings
   var dataGrid = chart.dataGrid();
 
 chart.splitterPosition(120);
 
-  //set first column settings
+  // set first column settings
   var firstColumn = dataGrid.column(0);
-  firstColumn.cellTextSettings().hAlign('center');
+  firstColumn.cellTextSettings().hAlign("center");
   firstColumn.width(35);
 
 
   var secondColumn = dataGrid.column(1);
-  secondColumn.cellTextSettings().hAlign('left');
+  secondColumn.cellTextSettings().hAlign("left");
   secondColumn.textFormatter(function(item) {
-    return item.get('name');
+    return item.get("name");
   });
 
-  //initiate chart drawing
+  // initiate chart drawing
   chart.draw();
 
   chart.fitAll();
@@ -44,31 +44,31 @@ chart.splitterPosition(120);
 function getData() {
   return [
     {
-      'id': '1',
-      'name': 'Parent',
-      'actualStart': Date.UTC(2008, 7, 9),
-      'actualEnd': Date.UTC(2008, 7, 20)
+      "id": "1",
+      "name": "Parent",
+      "actualStart": Date.UTC(2008, 7, 9),
+      "actualEnd": Date.UTC(2008, 7, 20)
     },
     {
-      'id': '2',
-      'name': 'Child 1',
-      'parent': '1',
-      'actualStart': Date.UTC(2008, 7, 9),
-      'actualEnd': Date.UTC(2008, 7, 13),
+      "id": "2",
+      "name": "Child 1",
+      "parent": "1",
+      "actualStart": Date.UTC(2008, 7, 9),
+      "actualEnd": Date.UTC(2008, 7, 13)
     },
     {
-      'id': '3',
-      'name': 'Milestone',
-      'parent': '1',
-      'actualStart': Date.UTC(2008, 7, 14),
-      'actualEnd': Date.UTC(2008, 7, 14),
+      "id": "3",
+      "name": "Milestone",
+      "parent": "1",
+      "actualStart": Date.UTC(2008, 7, 14),
+      "actualEnd": Date.UTC(2008, 7, 14)
     },
     {
-      'id': '4',
-      'name': 'Child 2',
-      'parent': '1',
-      'actualStart': Date.UTC(2008, 7, 15),
-      'actualEnd': Date.UTC(2008, 7, 20),
+      "id": "4",
+      "name": "Child 2",
+      "parent": "1",
+      "actualStart": Date.UTC(2008, 7, 15),
+      "actualEnd": Date.UTC(2008, 7, 20)
     }
     ]
 }</script>

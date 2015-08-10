@@ -27,41 +27,52 @@
   var chart = anychart.line();
 
   // set title
-  chart.title('Image Fill of Background');
-  chart.title()
-          .padding(10)
-          .background('#fff 0.9');
+  var title = chart.title();
+  title.text("Image Fill");
+  title.padding(5);
+  title.enabled(true);
+  var titleBackground = chart.title().background();
+  titleBackground.enabled(true);
+  titleBackground.fill("gold");
 
   // set chart background
-  chart.background().fill({
-    src: 'http://static.anychart.com/underwater.jpg',
+  var background = chart.background();
+  background.fill({
+    src: "//static.anychart.com/underwater.jpg",
     mode: acgraph.vector.ImageFillMode.FIT_MAX
   });
 
   // adjust grid
-  chart.grid()
-    .evenFill('white 0.6')
-    .oddFill('white 0.6')
-    .stroke('#fff')
-    .layout('horizontal');
-  chart.minorGrid(null);
-  chart.grid(1)
-    .stroke('#fff')
-    .layout('vertical');
+  var grid = chart.grid();
+  grid.enabled(true);
+  grid.stroke("#FFF");
+  grid.evenFill("#000 0.6");
+  grid.oddFill("#000 0.6");
+  grid.layout("horizontal");
+  var grid1 = chart.grid(1);
+  grid1.enabled(true);
+  grid1.stroke("#FFF");
+  grid1.layout("vertical");
 
   // adjust axes labels color, ticks color, stroke color
-  chart.xAxis().labels().fontColor('white').fontWeight(900);
-  chart.xAxis().stroke('white').ticks().stroke('white');
-  chart.yAxis().labels().fontColor('white').fontWeight(900);
-  chart.yAxis().stroke('white').ticks().stroke('white');
-  chart.yAxis().minorTicks(null);
+  var xLabels = chart.xAxis().labels();
+  xLabels.fontColor("#fff");
+  xLabels.fontWeight(900);
+  var yLabels = chart.yAxis().labels();
+  yLabels.fontColor("white");
+  yLabels.fontWeight(900);
+  var yAxis = chart.yAxis();
+  yAxis.stroke("white");
+  var yTicks = chart.yAxis().ticks();
+  yTicks.stroke("white");
 
   // using data in series
   chart.line(seriesData_1);
   chart.spline(seriesData_2);
 
   // draw chart
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

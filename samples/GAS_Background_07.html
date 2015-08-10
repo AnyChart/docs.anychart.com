@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  var stage = anychart.graphics.create("container");
+
+  // define data
+  var data = [
+    ["A1", 100, 200, 70, 25, 40],
+    ["A2", 115, 101, 150, 130, 22],
+    ["A3", 70, 60, 10, 67, 54],
+    ["A4", 156, 98, 125, 46, 104],
+    ["A5", 213, 150, 200, 137, 179]
+  ];
+  // create chart
+  var chart = anychart.bar();
+  var seriesData = anychart.data.mapAsTable(data, "value");
+
+
+  var series0 = chart.bar(seriesData[0]);
+  series0.hatchFill("VERTICALBRICK");
+  var series1 = chart.bar(seriesData[1]);
+  series1.hatchFill("PERCENT60");
+  var series2 = chart.bar(seriesData[2]);
+  series2.hatchFill("CHECKERBOARD");
+  var series3 = chart.bar(seriesData[3]);
+  series3.hatchFill("CONFETTI");
+  var series4 = chart.bar(seriesData[4]);
+  series4.hatchFill("SOLIDDIAMOND");
+
+  chart.container(stage);
+  chart.draw();
+
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

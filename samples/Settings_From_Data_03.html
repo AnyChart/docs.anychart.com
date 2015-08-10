@@ -8,26 +8,25 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // chart type
-    chart = anychart.barChart();
+    var chart = anychart.bar();
+
+    // set title
+    chart.title().text("Bar Chart With A Point View Defined From Data Set");
+
+    // set axes titles
+    chart.xAxis().title().text("Retail Channel");
+    chart.yAxis().title().text("Sales");
 
     // set data
     chart.bar([
-        ['Discount Stores', 721630],
-        {x: 'Department Stores', value: 737166, fill:{color: 'red', opacity: '.7'}, hatchFill:{hatchType:'diagonalbrick',color: 'gray'}, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}},
-        ['Juvenile Specialty Stores', 78662],
-        ['All other outlets', 90000]
+        ["Discount Stores", 721630],
+        {x: "Department Stores", value: 737166, fill:{color: "red", opacity: ".7"}, hatchFill:{hatchType:"diagonalbrick",color: "gray"}, marker:{type:"star5", fill:"gold", size: 12, enabled: true}, hoverMarker: {size: 22}},
+        ["Juvenile Specialty Stores", 78662],
+        ["All other outlets", 90000]
     ]);
 
-    // set title
-    chart.title('Bar Chart With A Point View Defined From Data Set');
-
-    // set axes titles
-    chart.xAxis().title('Retail Channel');
-    chart.yAxis().title('Sales');
-
     // draw
-    chart.container('container');
-    chart.draw();
+    chart.container("container").draw();
 });</script>
 </head>
 <body>

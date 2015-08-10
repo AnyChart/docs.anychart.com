@@ -8,26 +8,30 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
   
   var data = [
-    {name: 'Fantasy', value: 637166},
-    {name: 'Science Fiction', value: 721630},
-    {name: 'Detective', value: 148662},
-    {name: 'Classics', value: 78662},
-    {name: 'Textbooks', value: 90000}
+    {name: "Fantasy", value: 637166},
+    {name: "Science Fiction", value: 721630},
+    {name: "Detective", value: 148662},
+    {name: "Classics", value: 78662},
+    {name: "Textbooks", value: 90000}
   ];
   
   var chart = anychart.pyramid(data);
   
-  chart.labels()
-    .position('outsideRight')   // place labels to the right
-    .hAlign('center')           // manage horizontal align
-    .textFormatter(function(){
-      return this.name+'\n'+this.value;
-    });
-  
-  chart.connectorLength(45);    // set 45px connectors length
+  var labels = chart.labels();
+  // place labels to the right
+  labels.position("outsideRight");
+  // manage horizontal align
+  labels.hAlign("center");
+  labels.textFormatter(function(){
+    return this.name+"\n"+this.value;
+  });
+
+  // set 45px connectors length
+  chart.connectorLength(45);
   
   // draw chart
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

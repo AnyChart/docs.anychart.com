@@ -8,28 +8,36 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // define chart
-  var chart = anychart.column();
+  var chart = anychart.cartesianChart();
+  
+  var margin = chart.margin();
+  margin.botoom(30);
+  margin.right(30);
 
   // setting data
   var data = anychart.data.set([
-    ['A', 4],
-    ['B', 3],
-    ['C', 2],
-    ['D', 1]
+    ["A", 4],
+    ["B", 3],
+    ["C", 2],
+    ["D", 1]
   ]);
 
   // define chart type
   chart.column(data);
 
   // position of x axis changer. Now x is on the top
-  chart.xAxis().orientation('top');
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
 
   // disabling all ticks
-  chart.xAxis().ticks().enabled(false);
-  chart.yAxis().minorTicks().enabled(false);
-  chart.yAxis().ticks().enabled(false);
+  var xTicks = chart.xAxis().ticks();
+  xTicks.enabled(false);
+  var yMinorTicks = chart.yAxis().minorTicks();
+  yMinorTicks.enabled(false);
+  var yTicks = chart.yAxis().ticks();
+  yTicks.enabled(false);
 
-  chart.container('container').draw();
+  chart.container("container").draw();
 });</script>
 </head>
 <body>

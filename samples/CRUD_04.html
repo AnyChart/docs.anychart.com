@@ -9,17 +9,17 @@
 
   // data
   var dataSet = anychart.data.set([
-    {x: 'P1', value: 10},
-    {x: 'P2', value: 2},
-    {x: 'P3', value: 15},
-    {x: 'P4', value: 10},
-    {x: 'P5', value: 15}
+    {x: "P1", value: 10},
+    {x: "P2", value: 2},
+    {x: "P3", value: 15},
+    {x: "P4", value: 10},
+    {x: "P5", value: 15}
   ]);
 
   // set chart type
-  chart = anychart.columnChart();
+  var chart = anychart.column();
   
-  chart.title().text('Remove Column on click');
+  chart.title().text("Remove Column on click");
   chart.xAxis().title().enabled(false);
   
   // set data
@@ -32,7 +32,7 @@
   column.listen(
 
     // listener type
-    'pointClick',
+    "pointClick",
 
     // function, if listener triggers
     function(e) {
@@ -43,7 +43,7 @@
   );
 
   // set container and draw chart
-  chart.container('container').draw();
+  chart.container("container").draw();
 });</script>
 </head>
 <body>

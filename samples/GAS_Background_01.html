@@ -9,9 +9,9 @@
 
   // data set
   var data = anychart.data.set([
-    ['P1', 16, 20],
-    ['P2', 12, 18],
-    ['P3', 9, 14]
+    ["P1", 16, 20],
+    ["P2", 12, 18],
+    ["P3", 9, 14]
   ]);
 
   // map data for series
@@ -19,30 +19,32 @@
   var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
   // set stage
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
 
   // setting main title
-  anychart.ui.title()
-    .text('Background Stroke Types')
-    .container(stage)
-    .draw();
+  var title = anychart.ui.title();
+  title.parentBounds(0, 0, stage.width(), stage.height()*0.1);
+  title.text("Background Stroke Types");
+  title.container(stage);
+  title.draw();
 
 
   // Chart with red solid stroke
   var solidStrokeSeries = anychart.column();
 
   // setting title
-  solidStrokeSeries.title('Solid Stroke');
+  solidStrokeSeries.title("Solid Stroke");
 
   // setting stroke for chart contaoner. It has solid type by default
-  solidStrokeSeries.background().stroke('5 red');
+  var solidBackground = solidStrokeSeries.background();
+  solidBackground.stroke("5 red");
 
   // setting position and bounds
-  solidStrokeSeries.bounds(0, '10%', '45%', '40%');
+  solidStrokeSeries.bounds(0, "10%", "45%", "40%");
 
   // disabling titles, labels and all ticks for Axes
-  solidStrokeSeries.yAxis().enabled(false);
-  solidStrokeSeries.xAxis().enabled(false);
+  solidStrokeSeries.yAxis(false);
+  solidStrokeSeries.xAxis(false);
 
   // setting data series
   solidStrokeSeries.column(seriesData_1);
@@ -55,13 +57,14 @@
 
   // chart with gradient stroke
   var gradientStrokeChart = anychart.column();
-  gradientStrokeChart.title('Gradient Stroke');
-  gradientStrokeChart.bounds('55%', '10%', '45%', '40%');
+  gradientStrokeChart.title("Gradient Stroke");
+  gradientStrokeChart.bounds("55%", "10%", "45%", "40%");
   
   // adjust stroke type and set color keys
-  gradientStrokeChart.background().stroke({
+  var gradientBackground = gradientStrokeChart.background();
+  gradientBackground.stroke({
     // set colors position
-    keys: ['.1 red', '.5 yellow', '.9 blue'],
+    keys: [".1 red", ".5 yellow", ".9 blue"],
     // set angle of colors drawing
     angle: 45,
     // set stroke thickness
@@ -69,8 +72,8 @@
   });
 
   // disabling titles, labels and all ticks for Axes
-  gradientStrokeChart.yAxis().enabled(false);
-  gradientStrokeChart.xAxis().enabled(false);
+  gradientStrokeChart.yAxis(false);
+  gradientStrokeChart.xAxis(false);
 
   // set series data
   gradientStrokeChart.column(seriesData_1);
@@ -83,15 +86,16 @@
 
   // chart with dashed stroke
   var dashedStrokeChart = anychart.column();
-  dashedStrokeChart.title('Dashed Stroke');
-  dashedStrokeChart.bounds(0, '60%', '45%', '40%');
+  dashedStrokeChart.title("Dashed Stroke");
+  dashedStrokeChart.bounds(0, "60%", "45%", "40%");
 
   // adjust stroke type and dash settings
-  dashedStrokeChart.background().stroke({color: 'red', dash: '5 2 5', thickness: 5});
+  var dashedBackground = dashedStrokeChart.background();
+  dashedBackground.stroke({color: "red", dash: "5 2 5", thickness: 5});
   
   // disable axes
-  dashedStrokeChart.xAxis().enabled(false);
-  dashedStrokeChart.yAxis().enabled(false);
+  dashedStrokeChart.xAxis(false);
+  dashedStrokeChart.yAxis(false);
   
   dashedStrokeChart.column(seriesData_1);
   dashedStrokeChart.column(seriesData_2);
@@ -103,12 +107,13 @@
   // chat with disabled stroke
   var disabledStrokeSeries = anychart.column();
 
-  disabledStrokeSeries.title('Disabled Stroke');
-  disabledStrokeSeries.bounds('55%', '60%', '45%', '40%');
-  disabledStrokeSeries.background().stroke(null);
+  disabledStrokeSeries.title("Disabled Stroke");
+  disabledStrokeSeries.bounds("55%", "60%", "45%", "40%");
+  var disabledBackground = disabledStrokeSeries.background();
+  disabledBackground.stroke(null);
 
-  disabledStrokeSeries.xAxis().enabled(false);
-  disabledStrokeSeries.yAxis().enabled(false);
+  disabledStrokeSeries.xAxis(false);
+  disabledStrokeSeries.yAxis(false);
   
   disabledStrokeSeries.column(seriesData_1);
   disabledStrokeSeries.column(seriesData_2);

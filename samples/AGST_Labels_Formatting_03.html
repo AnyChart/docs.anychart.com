@@ -9,48 +9,57 @@
   
   var chart = anychart.area();
 
-  chart.title().text('Axes Labels Enable/Disable Sample');
+  chart.title("Axes Labels Enable/Disable Sample");
 
   chart.area([
-    ['January' , 10000],
-    ['February' , 12000],
-    ['March' , 10000],
-    ['April' , 11000],
-    ['May' , 19000]
+    ["January" , 10000],
+    ["February" , 12000],
+    ["March" , 10000],
+    ["April" , 11000],
+    ["May" , 19000]
   ]).tooltip().enabled(true);
 
-  chart.yScale().minimum(8000).maximum(20000).ticks().interval(2000);
+  var yScale = chart.yScale();
+  yScale.minimum(8000);
+  yScale.maximum(20000);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(2000);
 
   // set function to format y axis labels
-  chart.yAxis().labels().textFormatter(dollarFormatter);
+  var yLabels = chart.yAxis(0).labels();
+  yLabels.textFormatter(dollarFormatter);
   // set y axis title
-  chart.yAxis().title().text('Revenue in US Dollars');
+  var yAxis = chart.yAxis(0);
+  yAxis.title("Revenue in US Dollars");
 
   // adjust additional axis
-  chart.yAxis(1).orientation('right');
-  chart.yAxis(1).title().text('Revenue in Euros');
+  var yAxsi1 = chart.yAxis(1);
+  yAxsi1.orientation("right");
+  yAxsi1.title("Revenue in Euros");
     
   // formats labels of additional axis
-  chart.yAxis(1).labels().textFormatter(function(){
+  var yLabels1 = chart.yAxis(1).labels();
+  yLabels1.textFormatter(function(){
     var value = this.value;
     // scale of USD
     value = value*0.7094716;
     // num decimal
     value = value.toFixed(2);
     // thousand separator
-    var num = value.split('.');
-    var main = '';
+    var num = value.split(".");
+    var main = "";
     for (var i=1;(i*3)<num[0].length;i++)
-      main = '\''+num[0].substr(num[0].length-(i*3), 3) + main;
+      main = "'"+num[0].substr(num[0].length-(i*3), 3) + main;
     var tail = num[0].substr(0, num[0].length-(main.length-main.length/4));
     num[0]=tail+main;
     // decimal Separator
-    value = num.join('.');
+    value = num.join(".");
     
-    return '€ ' + value;
+    return "€ " + value;
   });
 
-  chart.xAxis().title().text('Month');
+  var xTitle = chart.xAxis().title();
+  xTitle.text("Month");
 
   // limits length of x axis labels to 3 or less
   chart.xAxis().labels().textFormatter(function(){
@@ -60,10 +69,11 @@
   });
 
   function dollarFormatter() {
-      return '$' + (this.value/1000) + ' 000 USD';
+      return "$" + (this.value/1000) + " 000 USD";
   }
 
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

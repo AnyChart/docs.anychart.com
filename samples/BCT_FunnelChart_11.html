@@ -9,31 +9,36 @@
   
   // define chart type and set data
   var chart = anychart.funnel([
-    {value: 232, hatchFill: 'diagonalcross', name: 'diagonalcross'},
-    {value: 224, hatchFill: 'zigzag', name: 'zigzag'},
-    {value: 252, hatchFill: 'horizontal', name: 'horizontal'},
-    {value: 219, hatchFill: 'vertical', name: 'vertical'},
-    {value: 169, hatchFill: 'dashedbackwarddiagonal', name: 'dashedbackwarddiagonal'},
-    {value: 217, hatchFill: 'grid', name: 'grid'},
-    {value: 175, hatchFill: 'dashedforwarddiagonal', name: 'dashedforwarddiagonal'},
-    {value: 199, hatchFill: 'dashedhorizontal', name: 'dashedhorizontal'},
-    {value: 297, hatchFill: 'plaid', name: 'plaid'},
-    {value: 317, hatchFill: 'weave', name: 'weave'}
-  ]).stroke('#888').fill('#EEE');
+    {value: 232, hatchFill: "diagonalcross", name: "diagonalcross"},
+    {value: 224, hatchFill: "zigzag", name: "zigzag"},
+    {value: 252, hatchFill: "horizontal", name: "horizontal"},
+    {value: 219, hatchFill: "vertical", name: "vertical"},
+    {value: 169, hatchFill: "dashedbackwarddiagonal", name: "dashedbackwarddiagonal"},
+    {value: 217, hatchFill: "grid", name: "grid"},
+    {value: 175, hatchFill: "dashedforwarddiagonal", name: "dashedforwarddiagonal"},
+    {value: 199, hatchFill: "dashedhorizontal", name: "dashedhorizontal"},
+    {value: 297, hatchFill: "plaid", name: "plaid"},
+    {value: 317, hatchFill: "weave", name: "weave"}
+  ]);
+  chart.stroke("#888");
+  chart.fill("#EEE");
   
-  chart.labels().enabled(false);
+  chart.labels(false);
   
-  chart.tooltip().contentFormatter(function(){
-    return 'Hatch fill type\n'+this.name;
+  var tooltip = chart.tooltip();
+  tooltip.contentFormatter(function(){
+    return "Hatch fill type\n"+this.name;
   });
   
-  chart.title().text('HatchFill Settings');
+  chart.title("HatchFill Settings");
   
   // set fixed width for the funnel
-  chart.baseWidth(300).neckWidth(75);
+  chart.baseWidth(300);
+  chart.neckWidth(75);
   
   // draw chart
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

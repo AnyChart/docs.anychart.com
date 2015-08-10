@@ -5,135 +5,84 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function () {
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
-        // set stage
-        var stage = anychart.graphics.create('container');
+    // set stage
+    stage = anychart.graphics.create("container");
+    
+    // set layers
+    var layer_1 = anychart.graphics.layer();
+    stage.addChild(layer_1); // for the bullet chart
+    var layer_2 = stage.layer(); // for the column chart
+    var layer_3 = stage.layer(); // for the pie chart
 
-        var layer = stage.layer();
-        // set data
-        var data_1 = anychart.data.set([
-            {x: 'Ice-Cream', value: 5000, fill:'#00FFFF'},
-            {x: 'Sweets', value: 10000, fill:'#0DD9E6'},
-            {x: 'Chocolates', value: 19000, fill:'#1AB2CC'},
-            {x: 'Hot chocolate', value: 16000, fill:'#268CB2'},
-            {x: 'Cookies', value: 9000, fill:'#336699'}
-        ]);
+    // set data_1
+    var data_1 = [
+        ["Class A" , 16000],
+        ["Class B" , 12000],
+        ["Class C" , 17000],
+        ["Class D" , 11000],
+        ["Class E" , 13000],
+        ["Class F" , 13000],
+        ["Class G" , 12000]
+    ];
 
-        // chart type
-        var chart_1 = anychart.column();
-        chart_1.width(550);
-        chart_1.height(420);
-        chart_1.title('Sales');
-        chart_1.padding(40, 0, 0, 75);
-        var series_1 = chart_1.column(data_1);
-        series_1.stroke(null);
+    // set series data
+    var chart_1 = anychart.bullet([{value: 13800}]);
+    chart_1.title(false);
+  
+  
+    // Create chart ranges
+    chart_1.range().from(10000).to(11000);
+    chart_1.range(1).from(11000).to(12000);
+    chart_1.range(2).from(12000).to(13000);
+    chart_1.range(3).from(13000).to(16000);
+    chart_1.range(4).from(16000).to(17000);
+      
+    chart_1.scale().minimum(10000).maximum(17000);
+    chart_1.axis(false);
+     
 
-        // draw
-        chart_1.container(layer).draw();
+    // chart size and position
+    chart_1.bounds(0, 0, "23.5%", "17%");
 
-        //buttons
-        var container = document.getElementById('container');
-        b1 = document.createElement('button');   // scale
-        container.appendChild(b1);
-        b1.innerHTML = '+';
-        b1.style.padding = 0;
+    // draw
+    chart_1.container(layer_1).draw();
+  
+    // rotate the bullet chart
+    layer_1.rotate(270,0,0);
+    layer_1.setPosition(10,80);
 
-        b1.style.position = 'absolute';
-        b1.style.left = '320px';
-        b1.style.top = '455px';
-        b1.style.width = '30px';
-        b1.style.height = '30px';
-        
-        var ifScaled = false;
-        
-        b1.onclick = function() {
-            if (ifScaled) {
-                ifScaled = false;
-                layer.scale(0.8333, 0.8333, 0.9, 0.9);
-                b1.innerHTML = '+';
-            } else {
-                b1.innerHTML = '-';
-                layer.scale(1.2, 1.2, 0.9, 0.9);
-                ifScaled = true;
-            }
-            stage.suspend();
-            stage.resume();
-        };
+    // set series data
+    var chart_2 = anychart.column(data_1);
+    chart_2.title("Sales in April");
+    chart_2.xAxis().title(" ");
+    chart_2.yAxis().title(null);
+    
+    chart_2.yAxis().minorTicks(false);
+    chart_2.minorGrid(false);
+    
+    chart_2.background(null);
 
-        b2 = document.createElement('button');   // turn right
-        container.appendChild(b2);
+    // chart size and position
+    chart_2.bounds(0, 0, "50%", "70%");
 
-        b2.innerHTML = "Clockwise";
-        b2.style.padding = 0;
-
-        b2.style.position = 'absolute';
-        b2.style.left = '355px';
-        b2.style.top = '455px';
-        b2.style.width = '100px';
-        b2.style.height = '30px';
-        b2.onclick = function() {
-            stage.suspend();
-            layer.rotate(90, 325, 250);
-            stage.resume();
-        };
-
-        b3 = document.createElement('button');   // turn left
-        container.appendChild(b3);
-        b3.innerHTML = 'Counterclockwise';
-        
-        b3.style.padding = 0;
-
-        b3.style.position = 'absolute';
-        b3.style.left = '215px';
-        b3.style.top = '455px';
-        b3.style.width = '100px';
-        b3.style.height = '30px';
-        b3.onclick = function() {
-            stage.suspend();
-            layer.rotate(-90, 325, 250);
-            stage.resume();
-        };
-
-        b4 = document.createElement('button');   // move to the right
-        b4.innerHTML = 'Right';
-        
-        container.appendChild(b4);
-        b4.style.position = 'absolute';
-        b4.style.left = '460px';
-        b4.style.top = '455px';
-        b4.style.width = '60px';
-        b4.style.height = '30px';
-        b4.style.padding = 0;
-
-        b4.onclick = function() {
-            stage.suspend();
-            layer.translate(5, 0);
-            stage.resume();
-        };
-
-
-        b5 = document.createElement('button');   // move to the left
-        b5.innerHTML = 'Left';
-        
-        container.appendChild(b5);
-
-        b5.style.position = 'absolute';
-        b5.style.left = '150px';
-        b5.style.top = '455px';
-        b5.style.width = '60px';
-        b5.style.height = '30px';
-        b5.style.padding = 0;
-
-        b5.onclick = function() {
-            stage.suspend();
-            layer.translate(-5, 0);
-            stage.resume();
-        };
-
-
-});
-</script>
+    // draw
+    chart_2.container(layer_2).draw();
+  
+    layer_2.translate(50,0);
+  
+    // set the pie chart
+    var chart_3 = anychart.pie(data_1);
+    chart_3.legend(false);
+    chart_3.title(false);
+    chart_3.labels(false);
+    chart_3.background(null);
+    layer_3.translate(1800,300);
+    layer_3.scale(0.2,0.2,0,0);
+    chart_3.container(layer_3).draw();
+    
+});</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

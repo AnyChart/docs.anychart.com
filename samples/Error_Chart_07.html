@@ -1,44 +1,36 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <meta name="tags" content="['error' 'bar']"/>
+    <meta name="tags" content="[error,bar]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  chart = anychart.scatter();
 
+  var chart = anychart.scatter();
 
-  //set container id for the chart
-  chart.container('container');
-
-  var series = chart.marker([
-    [1, 177],
-    [2, 174],
-    [3, 165],
-    [4, 159],
-    [5, 140]
+  var series = chart.line([
+    [10, 140],
+    [20, 177],
+    [30, 154],
+    [50, 165],
+    [60, 189],
+    [70, 191]
   ]);
 
+  var error = series.error();
+  error.xUpperError(30);
+  error.xLowerError(25);
+  error.xError("10%");
 
-  series.error({
-            xLowerError: '2%',
-            xUpperError: '2%',
-            valueUpperError: 8,
-            valueLowerError: '4%',
-            mode: 'value'
-        });
+  chart.title("Scatter Chart With Error Bars For The Y value");
+  var yScale = chart.yScale();
+  yScale.minimum(0);
 
-  series.size(4).hoverSize(5);
+  // set container id for the chart
+  chart.container("container");
 
-  chart.yScale().minimum(50);
-  chart.xScale().maximum(6);
-
-  chart.title('Scatter Marker Chart With Error Bars');
-  chart.xAxis().title('Hours After Treatment');
-  chart.yAxis().title('Mean Blood Pressure');
-
-  //initiate chart drawing
+  // initiate chart drawing
   chart.draw();
 });</script>
 </head>

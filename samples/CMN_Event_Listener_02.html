@@ -11,7 +11,11 @@
     var chart = anychart.bar();
 
     // chart title
-    chart.title().enabled(true).text("Range Bar Chart");
+    chart.title().text("Range Bar Chart");
+
+    // set axes title
+    chart.xAxis().title().enabled(false);
+    chart.yAxis().title().enabled(false);
 
     // set data
     var range = chart.rangeBar([
@@ -36,8 +40,7 @@
     });   
 
     // draw
-    chart.container('container');
-    chart.draw();
+    chart.container("container").draw();
 });</script>
 </head>
 <body>

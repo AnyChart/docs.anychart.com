@@ -1,11 +1,11 @@
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+  <script x-export="chart">anychart.onDocumentReady(function() {
   var data = [
     // column 0    1    2    3
     ["2014/6/25",  28,  23,  28], // row 0
@@ -16,61 +16,67 @@
     ["2014/6/30",  28,  25,  27]  //     5
   ];
 
-  // create mapping list on one data set
-  var dataMappingList = anychart.data.mapAsTable(data);
+  // create a data set
+  var dataSet = anychart.data.set(data);
 
   // set stage
-  stage = anychart.graphics.create('container');
+  stage = anychart.graphics.create("container");
 
   // create a line chart using the data set
-  var lineChart = anychart.line(dataMappingList[0], dataMappingList[1], dataMappingList[2]);
-  
-  // set container and position
-  lineChart.container(stage);
-  lineChart.bounds(0, 0, '100%', '50%');
+  var line = anychart.line.apply(null, anychart.data.mapAsTable(data));
 
-  lineChart.yAxis().labels().textFormatter(function(){
-      return this.value + ' °C';
+  // set container and position
+  line.container(stage);
+  line.bounds(0, 0, "100%", "50%");
+
+  // current stage stroke
+  line.background().stroke("white").fill("white");
+
+  // axes titles setter
+  line.xAxis().title().text("Date");
+  line.yAxis().title().text("Temperature");
+  line.yAxis().labels().textFormatter(function(){
+      return this.value + " °C";
   });
-  //series titles setter
-    lineChart.getSeries(0).name('New York');
-    lineChart.getSeries(1).name('San Francisco');
-    lineChart.getSeries(2).name('Los Angeles');
+  // series titles setter
+  line.getSeries(0).name("NY");
+  line.getSeries(1).name("SF");
+  line.getSeries(2).name("LA");
   // apply tooltip settings
-  lineChart.getSeries(0).tooltip().contentFormatter(tooltipSetter);
-  lineChart.getSeries(1).tooltip().contentFormatter(tooltipSetter);
-  lineChart.getSeries(2).tooltip().contentFormatter(tooltipSetter);
+  line.getSeries(0).tooltip().contentFormatter(tooltipSetter);
+  line.getSeries(1).tooltip().contentFormatter(tooltipSetter);
+  line.getSeries(2).tooltip().contentFormatter(tooltipSetter);
 
   // naming the chart
-  lineChart.title('Weather in the USA');
+  line.title("Weather in the USA");
 
   // initiate chart drawing
-  lineChart.draw();
+  line.draw();
 
   // map x and value from the data set
-  var colChart = anychart.column(dataMappingList[0], dataMappingList[1], dataMappingList[2]);
+  var colChart = anychart.column.apply(null, anychart.data.mapAsTable(data));
   
-    //naming the chart's series (legend)
-    colChart.getSeries(0).name('New York');
-    colChart.getSeries(1).name('San Francisco');
-    colChart.getSeries(2).name('Los Angeles');
+    // naming the chart's series (legend)
+    colChart.getSeries(0).name("NY");
+    colChart.getSeries(1).name("SF");
+    colChart.getSeries(2).name("LA");
     
-   colChart.yAxis().labels().textFormatter(function(){
-      return this.value + ' °C';
+    // axes titles setter
+  colChart.xAxis().title().text("Date");
+  colChart.yAxis().title().text("Temperature");
+  colChart.yAxis().labels().textFormatter(function(){
+      return this.value + " °C";
   });
+  
+    // naming the chart
+    colChart.title("Weather in the USA");
   
       // set container and position
   colChart.container(stage);
-  colChart.bounds(0, '50%', '100%', '50%');
+  colChart.bounds(0, "50%", "100%", "50%");
   
     // current stage stroke
-  colChart.legend()
-    .enabled(true)             // enables legend
-    .position('bottom')        // set legend position
-    .align('center')           // set legend align
-    .itemsLayout('horizontal') // set layout of legend items
-    .removeAllListeners(); // 
-
+  colChart.background().stroke("white").fill("white");
   
    // apply tooltip settings
   colChart.getSeries(0).tooltip().contentFormatter(tooltipSetter);
@@ -83,7 +89,7 @@
 
 // tooltip series settings
 function tooltipSetter(){
-  return 'Date: ' + this.x + '\nTemperature: ' + this.value + '°C';
+  return "Date: " + this.x + "\nTemperature: " + this.value + "°C";
 }</script>
 </head>
 <body>

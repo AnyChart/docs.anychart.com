@@ -7,30 +7,33 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // data
-    var data = anychart.data.set([
-      ['January', 10000],
-      ['February', 12000],
-      ['March', 18000],
-      ['April', 11000],
-      ['May', 9000]
-    ]);
+  // data
+  var data = anychart.data.set([
+    ["January", 10000],
+    ["February", 12000],
+    ["March", 18000],
+    ["April", 11000],
+    ["May", 9000]
+  ]);
 
-    // set chart type
-    var chart = anychart.area();
+  // set chart type
+  var chart = anychart.area();
 
-    // setting title
-    chart.title().text('Area chart');
+  // setting title
+  chart.title("Area chart");
 
-    // set axes titles
-    chart.xAxis().title().text('Month');
-    chart.yAxis().title().text('Sales');
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Month");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
 
-    // set data
-    chart.area(data);
+  // set data
+  chart.area(data);
 
-    // draw chart
-    chart.container('container').draw();
+  // draw chart
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

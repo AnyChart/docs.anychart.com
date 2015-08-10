@@ -8,26 +8,29 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  var chart = anychart.areaChart();
+  var chart = anychart.area();
 
   // chart title
-  chart.title(true);
-  chart.title().text('Range Spline Area Chart');
+  chart.title("Range Spline Area Chart");
 
   // set axes title
-  chart.xAxis().title().enabled(false);
-  chart.yAxis().title().enabled(false);
+  var xAxis = chart.xAxis();
+  xAxis.title(false);
+  var yAxis = chart.yAxis();
+  yAxis.title(false);
 
   // set data and define chart type
-  chart.rangeSplineArea([
+  var series = chart.rangeSplineArea([
     {x: "A", low:0, high: 100},
     {x: "B", low:100, high: 200},
     {x: "C", low:60, high: 200},
     {x: "D", low:0, high: 60}
-  ]).markers().enabled(true);
+  ]);
+  series.markers(true);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

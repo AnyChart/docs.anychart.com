@@ -6,40 +6,47 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
+  
   // Create stage for all charts
-  var stage = anychart.graphics.create('container').height(400).width(600);
+  var stage = anychart.graphics.create("container").height(400).width(600);
 
   // Create bullet chart
   var verticalChart = anychart.bullet([{value: 7}]);
-  // Set chart to render on stage
-  verticalChart.container(stage);
   // Chart title
-  verticalChart.title().text('Vertical\nLayout').hAlign('center');
+  var vTitle = verticalChart.title();
+  vTitle.text("Vertical\nLayout");
+  vTitle.hAlign("center");
+  vTitle.enabled(true);
   // Set chart size and position settings
-  verticalChart.bounds('75%', 0, 155, '100%');
+  verticalChart.bounds("75%", 0, "25%", "100%");
   // Set chart layout
-  verticalChart.layout('vertical');
+  verticalChart.layout("vertical");
   // Create chart ranges
   verticalChart.range().from(0).to(5);
   verticalChart.range(1).from(5).to(10);
   verticalChart.range(2).from(10).to(15);
+  // Set chart to render on stage
+  verticalChart.container(stage);
   // Initiate chart drawing
   verticalChart.draw();
 
   // Create second bullet chart
   var horizontalChart = anychart.bullet([{value: 11}]);
-  // Set chart to render on stage
-  horizontalChart.container(stage);
   // Set chart size and position settings
-  horizontalChart.bounds(0, '35%', '75%', '30%');
+  horizontalChart.bounds(0, "35%", "75%", "30%");
   // Set chart layout
-  horizontalChart.layout('horizontal');
+  horizontalChart.layout("horizontal");
   // Chart title
-  horizontalChart.title().text('Horizontal\nLayout').hAlign('center');
+  var hTitle = horizontalChart.title();
+  hTitle.text("Horizontal\nLayout");
+  hTitle.hAlign("center");
+  hTitle.enabled(true);
   // Create chart ranges
   horizontalChart.range().from(0).to(5);
   horizontalChart.range(1).from(5).to(10);
   horizontalChart.range(2).from(10).to(15);
+  // Set chart to render on stage
+  horizontalChart.container(stage);
   // Initiate chart drawing
   horizontalChart.draw();
 });</script>

@@ -9,18 +9,15 @@
 
   // setting data
   var data = anychart.data.set([
-    ['January', 200, 180],
-    ['February', 289, 290],
-    ['March', 197, 370],
-    ['April', 210, 400],
-    ['May', 220, 120],
-    ['June', 215, 214],
-    ['July', 209, 153],
-    ['August', 357, 257],
-    ['September', 333, 183],
-    ['October', 218, 236],
-    ['November', 289, 147],
-    ['December', 266, 368]
+    ["P1", 16, 20],
+    ["P2", 12, 18],
+    ["P3", 19, 14],
+    ["P4", 17, 20],
+    ["P5", 11, 18],
+    ["P6", 14, 14],
+    ["P7", 13, 20],
+    ["P8", 10, 18],
+    ["P9", 15, 14]
   ]);
 
   // data remapping
@@ -30,15 +27,23 @@
   var chart = anychart.column();
 
   // set scale minimum
-  chart.yScale().minimum(0);
+  var yScale = chart.yScale();
+  yScale.minimum(0);
 
-  chart.title().text('Normal labels');
+  chart.title("Normal labels");
 
   // series data
   chart.column(Sales2003);
   chart.column(Sales2004);
 
-  chart.container('container').draw();
+  // disabling stagger mode
+  var yAxis = chart.yAxis();
+  yAxis.staggerMode(false);
+  var xAxis = chart.xAxis();
+  xAxis.staggerMode(false);
+
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

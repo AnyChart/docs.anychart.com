@@ -11,16 +11,19 @@
   var chart = anychart.line();
 
   // set chart title and adjust it
-  chart.title()
-    .enabled(true)
-    .text('Profitabilty Growth\n(in % to the previous year)')
-    .hAlign('center')
-    .fontColor('white');
+  var title = chart.title();
+  title.enabled(true);
+  title.text("Profitability Growth\n(in % to the previous year)");
+  title.hAlign("center");
+  title.fontColor("white");
 
   // set background color
-  chart.background().fill({
-    keys: ['#406181', '#6DA5DB'], // set colors position
-    angle: 90                     // set angle of colors drawing
+  var background = chart.background();
+  background.fill({
+    // set colors position
+    keys: ["#406181", "#6DA5DB"],
+    // set angle of colors drawing
+    angle: 90
   });
 
   // data
@@ -43,76 +46,84 @@
   var series = chart.line(data);
 
   // set chart stroke color, thickness dash
-  series.stroke({color: '#BBDA00', dash: '4 3', thickness: 3});
+  series.stroke({color: "#BBDA00", dash: "4 3", thickness: 3});
+  series.hoverStroke({color: "#BBDA00", dash: "4 3", thickness: 3});
+   series.name("dashed stroke");
 
   // adjust markers of a series
-  series.markers().enabled(true).fill('#BBDA00').stroke('2 white');
-  series.hoverMarkers().fill('darkred').stroke('2 white');
+  var markers = series.markers();
+  markers.enabled(true);
+  markers.fill("#BBDA00");
+  markers.stroke("2 white");
+  var hoverMarkers = series.hoverMarkers();
+  hoverMarkers.fill("darkred");
+  hoverMarkers.stroke("2 white");
 
   // adjust tooltip
-  series.tooltip()
-    .contentFormatter(function(){
-      return this.x + ', ' + this.value + '%';
-    })
-    .background()
-      .fill('#406181')
-      .stroke('white')
-      .cornerType('round')
-      .corners(4);
-  series.tooltip().content().fontColor('white');
+  var tooltip = series.tooltip();
+  tooltip.contentFormatter(function(){
+    return this.x + ", " + this.value + "%";
+  });
+      
+  var tooltipBackground = series.tooltip().background();
+  tooltipBackground.fill("#406181");
+  tooltipBackground.stroke("white");
+  tooltipBackground.cornerType("round");
+  tooltipBackground.corners(4);
+  var content = series.tooltip().content();
+  content.fontColor("white");
 
 
   // adjust y axis
-  chart.yAxis()
-    .ticks(null)
-    .minorTicks(null)
-    .stroke('white')
-    .title(null)
-    .labels()
-      .fontColor('white')
-      .fontWeight(900)
-      .anchor('rightCenter')
-      .textFormatter(function() {
-        return this.value + ' %';
-      });
+  var yAxis = chart.yAxis();
+  yAxis.ticks(null);
+  yAxis.minorTicks(null);
+  yAxis.stroke("white");
+  var yLabels = chart.yAxis().labels();
+  yLabels.fontColor("white");
+  yLabels.fontWeight(900);
+  yLabels.textFormatter(function() {
+    return this.value + " %";
+  });
 
   // set additional y axis hide dashed right stroke of a grid
-  chart.yAxis(1)
-      .ticks(null)
-      .minorTicks(null)
-      .stroke('white')
-      .title(null)
-      .labels(null)
-      .orientation('right');
+  var yAxis1 = chart.yAxis(1);
+  yAxis1.ticks(null);
+  yAxis1.stroke("white");
+  yAxis1.labels(null);
+  yAxis1.orientation("right");
 
   // adjust x axis
-  chart.xAxis()
-    .ticks(null)
-    .stroke('white')
-    .title(null)
-    .labels()
-      .fontColor('white')
-      .fontWeight(900)
-      .height(30)
-      .vAlign('middle');
+  var xAxis = chart.xAxis();
+  xAxis.stroke("white");
+  var xLabels = chart.xAxis().labels();
+  xLabels.fontColor("white");
+  xLabels.fontWeight(900);
+  xLabels.height(30);
+  xLabels.vAlign("middle");
 
 
   // adjust grid
-  chart.grid()
-    .stroke({color: 'white', dash: '3 5'})
-    .evenFill(null)
-    .oddFill('black 0.1')
-    .layout('vertical');
-  chart.minorGrid(null);
-  chart.grid(1)
-    .stroke('white')
-    .layout('horizontal');
+  var grid = chart.grid();
+  grid.enabled(true);
+  grid.stroke({color: "white", dash: "3 5"});
+  grid.evenFill(null);
+  grid.oddFill("black 0.1");
+  grid.layout("vertical");
+  var grid1 = chart.grid(1);
+  grid1.enabled(true);
+  grid1.stroke("white");
+  grid1.layout("horizontal");
 
   // adjust y scale
-  chart.yScale().maximum(100).ticks().interval(20);
+  var yScale = chart.yScale();
+  yScale.maximum(100);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(20);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

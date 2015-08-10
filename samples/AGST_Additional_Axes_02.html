@@ -9,46 +9,64 @@
   
   var chart = anychart.scatter();
   
-  chart.title().enabled(true).text('Extra X and Y Axes Simple Sample');
+  chart.title("Extra X and Y Axes Simple Sample");
   
   // setting xScale settings
-  chart.xScale().minimum(-10);
-  chart.xScale().ticks().interval(10);
-  chart.xScale().minorTicks().interval(2);
+  var xScale = chart.xScale();
+  xScale.minimum(-10);
+  var xScaleTicks = chart.xScale().ticks();
+  xScaleTicks.interval(10);
+  var xScaleMinorTicks = chart.xScale().minorTicks();
+  xScaleMinorTicks.interval(2);
   
   // adding and adjusting extra X scale
   var extraXScale = anychart.scales.linear();
   extraXScale.minimum(-1000);
-  extraXScale.ticks().interval(5000);
+  var extraXScaleTicks = extraXScale.ticks();
+  extraXScaleTicks.interval(5000);
   
   // adding extra Y scale
   var extraYScale = anychart.scales.linear();
   
   // setting yScale settings
-  chart.yScale().ticks().interval(0.5);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(0.5);
   
   // set yAxis settings
-  chart.yAxis().stroke('#dd2c00').staggerMode(false);
-  chart.yAxis().ticks().stroke('#dd2c00');
-  chart.yAxis().minorTicks().stroke('#dd2c00');
-  chart.yAxis().labels().fontColor('#dd2c00');
-  chart.yAxis().title().enabled(true).text('Amplitude').fontColor('#dd2c00');
-  chart.yAxis(1)
-    .orientation('right')
-    .scale(extraYScale)
-    .title().text('Amplitude');
+  var yAxis = chart.yAxis(0);
+  yAxis.stroke("red");
+  yAxis.staggerMode(false);
+  var yAxisTicks = chart.yAxis(0).ticks();
+  yAxisTicks.stroke("red");
+  var yAxisMinorTicks = chart.yAxis(0).minorTicks();
+  yAxisMinorTicks.stroke("red");
+  var yAxisLabels = chart.yAxis(0).labels();
+  yAxisLabels.fontColor("red");
+  var yAxisTitle = chart.yAxis(0).title();
+  yAxisTitle.text("Amplitude"); 
+  yAxisTitle.fontColor("red");
+  var yAxis1 = chart.yAxis(1);
+  yAxis1.orientation("right");
+  yAxis1.scale(extraYScale);
+  yAxis1.title("Amplitude");
   
   // setting xAxis settings
-  chart.xAxis().stroke('#dd2c00');
-  chart.xAxis().ticks().stroke('#dd2c00');
-  chart.xAxis().minorTicks().stroke('#dd2c00');
-  chart.xAxis().labels().fontColor('#dd2c00');
-  chart.xAxis().title().enabled(true).text('Time msec').fontColor('#dd2c00');
-  chart.xAxis(1)
-    .orientation('top')
-    .staggerMode(false)
-    .scale(extraXScale)
-    .title().text('Time Sec');
+  var xAxis = chart.xAxis(0);
+  xAxis.stroke("red");
+  var xAxisTicks = chart.xAxis(0).ticks();
+  xAxisTicks.stroke("red");
+  var xAxisMinorTicks = chart.xAxis(0).minorTicks();
+  xAxisMinorTicks.stroke("red");
+  var xAxisLabels = chart.xAxis(0).labels();
+  xAxisLabels.fontColor("red");
+  var xAxisTitle = xAxis.title();
+  xAxisTitle.text("Time msec");
+  xAxisTitle.fontColor("red");
+  var xAxis1 = chart.xAxis(1);
+  xAxis1.orientation("top");
+  xAxis1.staggerMode(false);
+  xAxis1.scale(extraXScale);
+  xAxis1.title("Time Sec");
   
   // setting first series of data
   var firstSeries = anychart.data.set([
@@ -143,30 +161,52 @@
   // setting and adjusting data visualisation
   
   var blackSeries = chart.line(secondSeries);
-  blackSeries
-    .yScale(extraYScale)
-    .xScale(extraXScale)
-    .stroke('#000', 3)
-    .hoverStroke('#000', 3);
-  blackSeries.markers().size(1).fill('black').stroke('1 #000');
-  blackSeries.hoverMarkers().size(3).fill('black').stroke('black');
-  blackSeries.tooltip().enabled(true).contentFormatter(function() {
-    return '(x,y) = (' + this.x + '.00,' + this.value + ')';
+  blackSeries.yScale(extraYScale);
+  blackSeries.xScale(extraXScale);
+  blackSeries.stroke("#000", 3);
+  blackSeries.hoverStroke("#000", 3);
+  var blackMarkers = blackSeries.markers();
+  blackMarkers.enabled(true);
+  blackMarkers.size(1);
+  blackMarkers.fill("black");
+  blackMarkers.stroke("1 #000");
+  var blackHoverMarkers = blackSeries.hoverMarkers();
+  blackHoverMarkers.size(3);
+  blackHoverMarkers.fill("black");
+  blackHoverMarkers.stroke("black");
+  var blackTooltip = blackSeries.tooltip();
+  blackTooltip.contentFormatter(function() {
+    return "(x,y) = (" + this.x + ".00," + this.value + ")";
   });
   
   var redSeries = chart.line(firstSeries);
-  redSeries.markers().enabled(true).size(3).fill(anychart.color.darken('#dd2c00')).stroke(null);
-  redSeries.hoverMarkers().size(3).fill(anychart.color.darken('#dd2c00')).stroke(null);
-  redSeries.stroke('#dd2c00', 2).hoverStroke('#dd2c00', 2);
-  redSeries.tooltip().enabled(true).contentFormatter(function() {
+  redSeries.stroke("red", 3);
+  redSeries.hoverStroke("red", 3);
+  var redMarkers = redSeries.markers();
+  redMarkers.enabled(true);
+  redMarkers.size(1);
+  redMarkers.fill("red");
+  redMarkers.stroke("1 red");
+  var redHoverMarkers = redSeries.hoverMarkers();
+  redHoverMarkers.size(3);
+  redHoverMarkers.fill("red");
+  redHoverMarkers.stroke("red");
+  var tooltipContent = redSeries.tooltip().content();
+  tooltipContent.fontColor("red");
+  var redTooltip = redSeries.tooltip();
+  redTooltip.contentFormatter(function() {
     var value = this.value;
-    return '(x,y) = (' + this.x + '.00,' + value.toFixed(2) + ')';
+    return "(x,y) = (" + this.x + ".00," + value.toFixed(2) + ")";
   });
   
-  // adding line to emphasize zero of extra axis
-  chart.lineMarker().stroke('1 #CECECE').layout('vertical').scale(extraXScale);
+  // adding red ling to emphasize zero of extra axis
+  var lineMarker = chart.lineMarker();
+  lineMarker.stroke("1 red");
+  lineMarker.layout("vertical");
+  lineMarker.scale(extraXScale);
   
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

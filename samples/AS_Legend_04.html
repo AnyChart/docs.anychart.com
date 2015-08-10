@@ -17,17 +17,20 @@
     {name: "Julia", value: 18000}
   
   ]);
-
-  chart.title().enabled(true);
   
-  chart.legend()
-    .enabled(true)            // enables legend
-    .position('left')         // set legend position
-    .align('top')             // set legend align
-    .itemsLayout('vertical'); // set layout of legend items
+  var legend = chart.legend();
+  // enables legend
+  legend.enabled(true);
+  // set legend position
+  legend.position("left");
+  // set legend align
+  legend.align("top");
+  // set layout of legend items
+  legend.itemsLayout("vertical");
   
   // draw chart
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

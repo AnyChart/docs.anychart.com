@@ -16,21 +16,24 @@
     {name: "Tom", value: 13000},
     {name: "Julia", value: 18000}
   ]);
-
-  chart.title().enabled(true);
   
-  chart.legend()
-    .enabled(true)                          // enables legend
-    .position('left')                       // set legend position
-    .align('top')                           // set legend align
-    .itemsLayout('vertical')                // legend items layout
-    .background()                           // background settings
-      .fill(['white', 'lightgrey'], -45);  // background inner color settings
-
-  chart.legend().background(true);
+  var legend = chart.legend();
+  // enables legend
+  legend.enabled(true);
+  // set legend position
+  legend.position("left");
+  // set legend align
+  legend.align("top");
+  // legend items layout
+  legend.itemsLayout("vertical");
+  // background settings
+  var background = legend.background();
+  // background inner color settings
+  background.fill(["white", "lightgreen"], -45);
   
   // draw
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

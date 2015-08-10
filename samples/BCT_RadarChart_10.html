@@ -37,6 +37,11 @@
   // chart title
   chart.title("Radar chart - x axis labels background");
 
+  // background fill
+  var background = chart.background();
+  background.enabled(true);
+  background.fill("#EEEEEE");
+
   var xLabels = chart.xAxis().labels();
   // set paddings for labels
   xLabels.padding(5);

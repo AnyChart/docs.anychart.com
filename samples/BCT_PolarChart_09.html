@@ -35,6 +35,11 @@
   // chart title
   chart.title("Disable First & Last Labels of Y Axis");
 
+  // set background
+  var background = chart.background();
+  background.enabled(true);
+  background.fill("#EEEEEE");
+
   // set ticks interval for y scale
   var xScale = chart.xScale();
   xScale.maximum(24);

@@ -5,17 +5,15 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">
-
-anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
   // Create bullet chart
-  var chart = anychart.bullet([
+  var chart = anychart.bulletChart([
     {value: 225},
     {value: 290,          // set marker position
-      type: 'ellipse',    // set ellipse as marker type
-      fill: 'gold',       // set gold inner color 
-      stroke: '2 blue',   // set border width 2px and border color
+      type: "ellipse",    // set ellipse as marker type
+      fill: "gold",       // set gold inner color 
+      stroke: "2 blue",   // set border width 2px and border color
       gap: 0.3            // set marker size 
     }
   ]);
@@ -28,13 +26,13 @@ anychart.onDocumentReady(function() {
   chart.range(4).from(250).to(300);
 
   // Set chart size and position settings
-  chart.bounds(0, 0, '100%', 125);
+  chart.bounds(0, 0, "100%", 125);
 
   // Set title
-  chart.title().text('Markers');
+  chart.title().text("Markers");
   
   // Set chart container
-  chart.container('container');
+  chart.container("container");
 
   // Initiate chart drawing
   chart.draw();

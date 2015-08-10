@@ -8,28 +8,37 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // define chart
-  var chart = anychart.column();
+  var chart = anychart.cartesianChart();
+  
+  var margin = chart.margin();
+  margin.top(30);
+  margin.right(30);
 
   // setting data
   var data = anychart.data.set([
-    ['A', 4],
-    ['B', 3],
-    ['C', 2],
-    ['D', 1]
+    ["A", 4],
+    ["B", 3],
+    ["C", 2],
+    ["D", 1]
   ]);
 
   // define chart type
   chart.column(data);
 
   // inverts y scale. Now all elements has inverted (from top to bottom) direction
-  chart.yScale().inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 
   // disabling all ticks
-  chart.xAxis().ticks().enabled(false);
-  chart.yAxis().minorTicks().enabled(false);
-  chart.yAxis().ticks().enabled(false);
+  var xTitle = chart.xAxis().ticks();
+  xTitle.enabled(false);
+  var yMinorTicks = chart.yAxis().minorTicks();
+  yMinorTicks.enabled(false);
+  var yTicks = chart.yAxis().ticks();
+  yTicks.enabled(false);
 
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
