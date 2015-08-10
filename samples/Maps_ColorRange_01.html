@@ -24,7 +24,7 @@
     map.geoData(anychart.maps.australia);
 
     // set the background color
-    map.background('Gainsboro');
+    map.background('none');
     // set the title and its preferences
     map.title().useHtml(true).hAlign('center');
     map.title('<span style="font-size: 18px;">Data Setting</span><br><span style="font-size:12px;">Move the mouse over the districts to see which have values</span>');
@@ -32,6 +32,9 @@
     // set the series
     var series = map.choropleth(dataSet);
     series.geoIdField('code_hasc');
+	
+	// disable the labels
+    series.labels(false);
 
     // set the container
     map.container('container');
