@@ -155,4 +155,4 @@ We've got a chart a with 5 series with 5 data points in each. For every series w
 
 In the sample below there are all hatch types shown that are available in AnyChart. Explore the sample in the playground to see all these types' names.
 
-{sample}GAS\_Background\_08{sample}
+{sample :width 690 :height 680}GAS\_Background\_08{sample}
