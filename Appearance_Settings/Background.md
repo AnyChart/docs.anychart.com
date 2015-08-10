@@ -150,7 +150,7 @@ We've got a chart a with 5 series with 5 data points in each. For every series w
 ```
   var series0 = chart.bar(series[0]);
   series0.fill(null);
-  series0.hatchFill('VERTICALBRICK');
+  series0.hatchFill("VERTICALBRICK");
 ```
 
 In the sample below there are all hatch types shown that are available in AnyChart. Explore the sample in the playground to see all these types' names.
