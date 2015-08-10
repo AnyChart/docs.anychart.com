@@ -27,10 +27,14 @@
     map.background('none');
     // set the title and its preferences
     map.title().useHtml(true).hAlign('center');
-    map.title('<span style="font-size: 18px;">Data Setting</span><br><span style="font-size:12px;">Move the mouse over the districts to see which have values</span>');
+    map.title('<span style="font-size: 18px;">Linear Color Scale with a colorRange</span><br><span style="font-size:12px;">Move the mouse over the districts to see the values</span>');
 
     // set the series
     var series = map.choropleth(dataSet);
+	
+	// disable the labels
+    series.labels(false);
+    
     series.geoIdField('code_hasc');
     series.stroke('#000 .3');
     series.colorScale(anychart.scales.linearColor('#EC6E07', '#64B5F6'));
