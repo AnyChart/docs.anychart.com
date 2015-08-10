@@ -10,8 +10,8 @@
   // chart type
   var chart = anychart.area();
 
-  // data
-  var data = anychart.data.set([
+  // set data
+  chart.splineArea([
     {x: "P1", value: 16},
     {x: "P2", value: 12},
     {x: "P3", value: 9},
@@ -33,24 +33,6 @@
     {x: "P20", value: 28}
   ]);
 
-  // set data
-  var series = chart.splineArea(data);
-
-  // adjust data visualization
-  series.fill("#ef6c00");
-  series.hoverFill("#ef6c00");
-  series.stroke("#fff");
-  var markers = series.markers();
-  markers.enabled(true);
-  markers.size(5);
-  markers.fill("#ef6c00");
-  markers.stroke("#fff");
-  var hoverMarkers = series.hoverMarkers();
-  hoverMarkers.enabled(true);
-  hoverMarkers.fill("#fff");
-  hoverMarkers.stroke("#ef6c00");
-  hoverMarkers.size(5);
-
   // adjust title background fill
   var title = chart.title();
   title.text("Gradient Background Fill");
@@ -61,24 +43,12 @@
   titleBackground.fill("gold");
 
   // adjust chart background fill
-  chart.background().fill({
+  var background = chart.background();
+  background.fill({
     // set colors position
     keys: [".1 lightblue", ".7 blue", ".9 darkblue"],
     // set angle of colors drawing
     angle: -130
-  });
-
-  // adjust axes strokes, labels and ticks
-  var xAxis = chart.xAxis();
-  xAxis.stroke("white");
-  var xLabels = chart.xAxis().labels();
-  xLabels.fontColor("white");
-  var yAxis = chart.yAxis();
-  yAxis.stroke("white");
-  var yLabels = chart.yAxis().labels();
-  yLabels.fontColor("white");
-  yLabels.textFormatter(function(){
-    return this.value + ".00";
   });
 
   // draw

@@ -11,10 +11,9 @@
   var chart = anychart.area();
 
   // set title
-  chart.title().text("Column Chart");
+  chart.title("Column Chart");
 
-  // data
-  var data = anychart.data.set([
+  chart.splineArea([
     {x: "P1", value: 16},
     {x: "P2", value: 12},
     {x: "P3", value: 9},
@@ -36,40 +35,19 @@
     {x: "P20", value: 28}
   ]);
 
-  var series = chart.splineArea(data);
-  series.fill("darkred 0.8").hoverFill("red").stroke("red");
-  series.markers().enabled(true).fill("red");
-  series.hoverMarkers().enabled(true).fill("white").stroke("gray");
-
   // adjust title background fill
-  chart.title().text("Radial Gradient Background Fill").background().enabled(true).fill("gold");
+  var title = chart.title();
+  title.enabled(true);
+  title.text("Radial Gradient Background Fill");
+  title.background("#FFF");
 
   // adjust chart background fill
-  chart.background().fill([".5 lightblue", ".9 blue", "darkblue"], 0.5, 0.5, -130);
-
-  // adjust axes strokes, labels and ticks
-  chart.xAxis().stroke("white").labels().fontColor("white");
-  chart.xAxis().ticks().stroke("white");
-  chart.yAxis().stroke("white").labels().fontColor("white").textFormatter(function(){
-      return this.value + ".00";
-  });
-  chart.yAxis().ticks().stroke("white");
-  chart.yAxis().minorTicks().stroke("white");
-
-  // adjust y scale ticks interval
-  chart.yScale().ticks().interval(5);
-
-  // disable axes titles
-  chart.xAxis().title().enabled(false);
-  chart.yAxis().title().enabled(false);
-
-  // adjust grid
-  chart.grid(0).stroke("#333333").evenFill("white 0.2").oddFill("white 0.2").layout("horizontal");
-  chart.minorGrid().stroke("while");
-  chart.grid(1).stroke("#333333").layout("vertical");
+  var background = chart.background();
+  background.fill([".5 lightblue", ".9 blue", "darkblue"], 0.5, 0.5, -130);
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
