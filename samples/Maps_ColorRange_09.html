@@ -27,7 +27,7 @@
     map.background('none');
     // set the title and its preferences
     map.title().useHtml(true).hAlign('center');
-    map.title('<span style="font-size: 18px;">Value Map</span><br><span style="font-size:12px;">Move the mouse over the districts for more information</span>');
+    map.title('<span style="font-size: 18px;">Bi-polar progression with Linear Color Scale</span><br><span style="font-size:12px;">Move the mouse over the districts for more information</span>');
 
     // set the series
     var series = map.choropleth(dataSet);
@@ -37,16 +37,17 @@
     series.labels(false);
     
     // set the colors and ranges for the scale
-	series.colorScale(anychart.scales.linearColor());
-        
+	series.colorScale(anychart.scales.ordinalColor([{less:200},{from:200, to:250},{greater:250}]));
+
     //set the single hue progression
-    var colors = anychart.color.singleHueProgression('#4C4C4C');
+    var colors = anychart.color.bipolarHueProgression('#EC6E07', '#64B5F6', 3);
     
 	// define the colors 
-    series.colorScale().colors(colors);
+    series.colorScale().colors(colors);	
 	
-	// create and enable the colorRange
-	var cr = map.colorRange(true);
+	// create, enable and stroke the colorRange
+	var cr = map.colorRange();
+	cr.enabled(true).stroke('#BBB');
 
     // set the container
     map.container('container');
