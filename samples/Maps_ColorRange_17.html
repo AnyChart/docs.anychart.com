@@ -14,7 +14,7 @@
       {'id': 'AU.VI', 'value': 75},   // Victoria
       {'id': 'AU.NT', 'value': 130},  // Northern Territory
       {'id': 'AU.TS', 'value': 190},  // Tasmania
-      {'id': 'AU.CT', 'value': 100, labels: false}, // Australian Capital Territory
+      {'id': 'AU.CT', 'value': 100}, // Australian Capital Territory
       {'id': 'AU.SA', 'value': 280},  // South Australia
       {'id': 'AU.QL', 'value': 220}   // Queensland
     ]);
@@ -27,7 +27,7 @@
     map.background('none');
     // set the title and its preferences
     map.title().useHtml(true).hAlign('center');
-    map.title('<span style="font-size: 18px;">Single Hue Progression - Ordinal Scale</span>');
+    map.title('<span style="font-size: 18px;">Set Padding (one value)</span>');
 
     // set the series
     var series = map.choropleth(dataSet);

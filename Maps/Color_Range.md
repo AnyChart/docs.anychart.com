@@ -14,14 +14,14 @@
 <!-- * [Coming soon](#single_hue)
   * [Partial spectral color progression](#partial_color_progression) 
   * [Full-spectral color progression](#full-spectral_color_progression) !-->
-* [Visual Settings](#visual_settings)
- * [Orientation](#orientation)
- * [Length](#length)
- * [Size](#size)
- * [Size and Position](#size_and_position)
- * [Stroke](#stroke)
- * [Labels](#labels)
- * [Marker](#marker)
+ * [Visual Settings](#visual_settings)
+  * [Orientation](#orientation)
+  * [Length](#length)
+  * [Size](#size)
+  * [Size and Position](#size_and_position)
+  * [Stroke](#stroke)
+  * [Labels](#labels)
+  * [Marker](#marker)
  
  
 ## Overview

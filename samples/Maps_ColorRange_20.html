@@ -27,7 +27,7 @@
     map.background('none');
     // set the title and its preferences
     map.title().useHtml(true).hAlign('center');
-    map.title('<span style="font-size: 18px;">Change the Marker Type</span>');
+    map.title('<span style="font-size: 18px;">Change the Marker Size and Color</span>');
 
     // set the series
     var series = map.choropleth(dataSet);
@@ -48,12 +48,6 @@
 	// create and enable the colorRange
 	var colorRange = map.colorRange();
 	colorRange.enabled(true);
-	
-	// put the colorRange to the right from the map
-	colorRange.orientation('right');
-	
-	// set the colorRange length
-	colorRange.padding(0, 100, 0, -100);
 	
 	// change the default marker type to diamond
     var marker = colorRange.marker();
