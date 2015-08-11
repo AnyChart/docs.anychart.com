@@ -356,7 +356,7 @@ In case you set the only value, this value will be interpreted as the same paddi
 
 {sample}Maps\_ColorRange\_17{sample}
 
-And if you define all four padding values, you'll be able to change the distance between the colorrange and both map and its field borders. Note that 
+And if you define all four padding values, you'll be able to change the distance between the colorrange and both map and its field borders. 
 
 ```
 	// set the colorRange padding 
