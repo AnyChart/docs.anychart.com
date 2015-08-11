@@ -1,0 +1,71 @@
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+  <script src="//cdn.anychart.com/geodata/countries/aus/australia.js" data-export="true"></script>
+  <script x-export="chart">anychart.onDocumentReady(function() {
+    var dataSet = anychart.data.set([
+      {'id': 'AU.WA', 'value': 300},  // Western Australia
+      {'id': 'AU.JB', 'value': 270},  // Jervis Bay Territory
+      {'id': 'AU.NS', 'value': 240},  // New South Wales
+      {'id': 'AU.VI', 'value': 75},   // Victoria
+      {'id': 'AU.NT', 'value': 130},  // Northern Territory
+      {'id': 'AU.TS', 'value': 190},  // Tasmania
+      {'id': 'AU.CT', 'value': 100}, // Australian Capital Territory
+      {'id': 'AU.SA', 'value': 280},  // South Australia
+      {'id': 'AU.QL', 'value': 220}   // Queensland
+    ]);
+
+    //
+    var map = anychart.map();
+    map.geoData(anychart.maps.australia);
+
+    // set the background color
+    map.background('none');
+    // set the title and its preferences
+    map.title().useHtml(true).hAlign('center');
+    map.title('<span style="font-size: 18px;">Change the Marker Size and Color</span>');
+
+    // set the series
+    var series = map.choropleth(dataSet);
+    series.geoIdField('code_hasc');
+	
+	// disable the labels
+    series.labels(false);
+    
+    // set the colors and ranges for the scale
+	series.colorScale(anychart.scales.linearColor());
+
+    //set the single hue progression
+    var colors = anychart.color.singleHueProgression('#7069B2');
+    
+	// define the colors 
+    series.colorScale().colors(colors);
+	
+	// create and enable the colorRange
+	var colorRange = map.colorRange();
+	colorRange.enabled(true);
+	
+	// change the default marker type to diamond
+    var marker = colorRange.marker();
+    marker.type("diamond");
+	
+	// change the default marker color to purple
+    marker.fill("purple");
+	
+	// set the size to your marker
+    marker.size(7);
+
+    // set the container
+    map.container('container');
+    map.draw();
+  })</script>
+
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
