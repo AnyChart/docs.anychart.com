@@ -1,35 +1,38 @@
 {:index 2}
-# Color Range
+# ColorRange
 
 * [Overview](#overview)
 * [Scale Types](#scale_types)
- * [Ordinal Color Scale](#ordinal_color_scale)
- * [Linear Color Scale](#linear_color_scale) 
+ * [Ordinal ColorScale](#ordinal_colorscale)
+ * [Linear ColorScale](#linear_colorscale) 
 * [Enabling the ColorRange](#enabling_the_colorrange)
 * [Palette](#palette)
  * [Single Hue](#single_hue)
  * [Bi-polar](#bi-polar) 
  * [Blended color progression](#blended_color_progression)
  * [Value progression](#value_progression) 
- * [Coming soon](#single_hue)
+<!-- * [Coming soon](#single_hue)
   * [Partial spectral color progression](#partial_color_progression) 
-  * [Full-spectral color progression](#full-spectral_color_progression)
+  * [Full-spectral color progression](#full-spectral_color_progression) !-->
 * [Visual Settings](#visual_settings)
  * [Orientation](#orientation)
- * [Position](#position) 
+ * [Length](#length)
  * [Size](#size)
+ * [Size and Position](#size_and_position)
  * [Stroke](#stroke)
+ * [Labels](#labels)
+ * [Marker](#marker)
  
  
 ## Overview
  
-Color Range is a tool that is necessary when we need to identify the value that each point on a map presents. It looks like a range bar, colored as gradient 
+ColorRange is a tool that is necessary when we need to identify the value that each point on a map presents. It looks like a range bar, colored as gradient 
 or like a number of colored boxes, each presenting a range of values.
  
-To create a color range, use the {api:anychart.charts.Map#colorRange}**.colorRange()**{api} function. There are a lot of parameters might be adjusted, such as orientation 
-(to change it use the {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} function), size of the color box (use {api:}**.colorLineSize()**{api}) or alignment ({api:anychart.graphics.vector.Image#align}**.align()**{api} in this case). 
+To create a colorrange, use the {api:anychart.charts.Map#colorRange}**.colorRange()**{api} function. There are a lot of parameters might be adjusted, such as orientation 
+(to change it use the {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} function), size of the color box (use {api:}**.colorLineSize()**{api}) or alignment ({api:anychart.graphics.vector.Image#align}**.align()**{api} in this case). You can find more about visual settings in the end of this article.
 
-However, first of all we need to adjust the map colors and its colorScale, because the colorRange type and appearance depend on those settings.
+However, first of all we need to adjust the map colors and its СolorScale, because the СolorRange type and appearance depend on those settings.
 
 The first step of adjusting the colors is to set the series and data correctly. Let's make an example with a Choropleth Series Map. Look at the code below.
 
@@ -60,17 +63,17 @@ The first step of adjusting the colors is to set the series and data correctly. 
     series.geoIdField('code_hasc');
 ```
 
-Here we took an Australia map for the example. You may notice that some regions don't have values, which makes them "unBound", but still all the regions are painted with the default color. That's because we haven't defined the color scale yet. If the ColorScale is defined, the unbound regions will become transparent (like in the Ordinal Scale sample).
+Here we took an Australia map for the example. You may notice that some regions don't have values, which makes them "unBound", but still all the regions are painted with the default color. That's because we haven't defined the ColorScale yet. If the ColorScale is defined, the unbound regions will become transparent (like in the Ordinal Scale sample).
 
 {sample}Maps\_ColorRange\_01{sample}
 
-Note that a colorRange can only be connected to the first axis (with the '0' index), while it's possible to make a map with several series.
+Note that a ColorRange can only be connected to the first axis (with the '0' index), while it's possible to make a map with several series.
  
 ## Scale Types
  
 There are two types of ColorScale: Ordinal and Linear (Quantitative). The type of a ColorRange that will be used for your map will be automatically chosen and it depends on a scale type: it will be ordinal if the scale on your Map is ordinal; in any other case you'll get a Quantitative ColorRange.
  
-### Ordinal Color Scale
+### Ordinal ColorScale
  
 This type of ColorScale looks like a number of boxes with different colors. Colors of these boxes depend on the palette chosen according to the type of map and its data, but they also may be defined independent from any of color progressions using the following method.
 <br><br>
@@ -93,14 +96,14 @@ The following code does the same as the code above.
 	series.colorScale().colors(['#EC6E07', '#A1958A', '#64B5F6']);
 ```
 
-### Linear Color Scale
+### Linear ColorScale
  
 This type of ColorScale looks like a single bar colored with a gradient, where it colors depend on a chosen palette. 
 <br><br>
 <img src = "http://static.anychart.com/images/quant_colorrange.jpg">
 
 Using the Linear type of coloring, there are three ways of coloring the map:
-<br>1) we may define no colors - in this case the coloring will de based on the default palette;
+<br>1) we may define no colors - in this case the coloring will be based on the default palette;
 <br>2) we may define only one color - in this case the coloring gradient will be built from very light grey to the only defined color;
 <br>3) the more colors we define here, the more colors will the gradient contain. 
 
@@ -112,22 +115,22 @@ series.colorScale(anychart.scales.linearColor('#EC6E07', '#64B5F6'));
  
 ## Enabling the ColorRange
 
-To enable the colorRange, there's a simple method **{api: anychart.charts.Map#colorRange}.colorRange(){api}**. 
+To enable the ColorRange, there's a simple method **{api: anychart.charts.Map#colorRange}.colorRange(){api}**. 
 
 ```
 // create and enable the colorRange
 	var cr = map.colorRange(true);
 ```
 	
-Look at the samples below: we have added the colorRange to the both previous samples. In the first sample the colorRange looks like a number of different-colored rectangles because of ordinal Scale. The number of rectangles depends on the number of ranges defined above.
+Look at the samples below: we have added the ColorRange to the both previous samples. In the first sample the ColorRange looks like a number of different-colored rectangles because of ordinal Scale. The number of rectangles depends on the number of ranges defined above.
 
 {sample}Maps\_ColorRange\_04{sample}
 
-Here is the second case with the linear colorScale. The colorRange here looks like a line colored with a gradient.
+Here is the second case with the linear ColorScale. The ColorRange here looks like a line colored with a gradient.
 
 {sample}Maps\_ColorRange\_05{sample}
 
-You may notice that there is a marker on the colorRange that helps to find the value on the colorRange.
+You may notice that there is a marker on the ColorRange that helps to find the value on the ColorRange.
  
 ## Palette
  
@@ -160,7 +163,7 @@ This palette type is usually used to show the difference in values of something 
 </table>
 
 To make a single-hue progression use the **{api:anychart.color#singleHueProgression}anychart.color.singleHueProgression(){api}**
-function. You may not define the colors - in this case the shades will de generated for the default color. 
+function. You may not define the colors - in this case the shades will be generated for the default color. 
 
 {sample}Maps\_ColorRange\_06{sample}
 
@@ -169,7 +172,7 @@ function. You may not define the colors - in this case the shades will de genera
 Value progression maps are monochromatic. Using the shades of grey between black and white makes it easy to print the map and is quite clear to understand.
 This type of ColorRange is one of the best ways to portray a magnitude message to the map audience. 
 
-Technically this progression is a simple single-hue progression for a shade of grey. So you should write the same 
+Technically this progression is a simple single-hue progression for a shade of grey. So you should use the same method as above, but with monochromatic colors.
 
 <br><br>
 
@@ -221,7 +224,7 @@ of the darker end point hues into a gray shade representing the middle. An examp
 </table>
 
 To make a bi-hue progression use the **{api:anychart.color#biHueProgression}anychart.color.biHueProgression(){api}**
-function. You may not define the colors - in this case the shades will de generated for the default color. 
+function. You may not define the colors - in this case the shades will be generated for the default color. 
 
 {sample}Maps\_ColorRange\_08{sample}
 
@@ -255,14 +258,14 @@ For example, from yellow through orange to brown or from light-green to deep-eme
 </table>
 
 Use the **{api:anychart.color#biHueProgression}anychart.color.biHueProgression(){api}** to make a progression between two similar hues.
-In case you haven\t defined any of the colors, they will de generated automatically (of the default color). 
+In case you haven't defined any of the colors, they will be generated automatically (of the default color). 
 
 {sample}Maps\_ColorRange\_10{sample}
 
 That's how the same map would look like with an ordinal Scale.
 
 {sample}Maps\_ColorRange\_11{sample}
-
+<!--
 ### Coming soon
  
 #### Partial color progression
@@ -313,12 +316,12 @@ This progression is not recommended under other circumstances because some conne
 </tr>
 </tbody>
 </table>
-
+!-->
 
 
 ## Visual Settings
 
-There are some visual preferences of a ColorRange that might be set different from the default if needed - such as position, length and other. Look through this paragraph to know more about them.
+There are some visual preferences of a ColorRange that might be set different from the default if needed - such as position, size and other. Look through this paragraph to know more about them.
 
 ### Orientation
 
@@ -326,57 +329,112 @@ A simple function {api:}**.orientation()**{api} is used for the changing the pos
 
 ```
 	// put the colorRange to the right from the map
-	cr.orientation('right');
+	colorRange.orientation('right');
 ```
 
 {sample}Maps\_ColorRange\_15{sample}
 
 ### Length
 
-The colorRange length adjusting is quite usual: as for any other components, just add the **.length()** method to the colorRange.
+The ColorRange length adjusting is quite usual: as for any other components, just add the **.length()** method to the colorRange.
 
 ```
 	// set the colorRange length
-	cr.length(100);
+	colorRange.length(100);
 ```
 
 {sample}Maps\_ColorRange\_16{sample}
 
 ### Size and position
 
-When you need to change the distance between the colorRange and the map itself or between the colorRange and the map field borders, use the {api:anychart.charts.Map#padding}**.padding()**{api} method. 
+When you need to change the distance between the ColorRange and the map itself or between the colorRange and the map field borders, use the {api:anychart.charts.Map#padding}**.padding()**{api} method. 
 You may define and only argument or all four (if you want them different) for all sides. Look at the following sample:
 
 ```
 	// set the colorRange padding 
-	cr.padding(100);
+	colorRange.padding(100);
 ```
 
 In case you set the only value, this value will be interpreted as the same padding to each of the map field sides.
 
 {sample}Maps\_ColorRange\_17{sample}
 
-And if you define all four padding values, you'll be able to change the distance between the colorrange and both map and its field borders. 
+And if you define all four padding values, you'll be able to change the distance between the СolorКange and both map and its field borders. 
 
 ```
 	// set the colorRange padding 
-	cr.padding(0, 100, 0, -100);
+	colorRange.padding(0, 100, 0, -100);
 ```
 
 {sample}Maps\_ColorRange\_18{sample}
 
-As you can see, the usage of this method with colorRange is the same as in simple HTML.
+As you can see, the usage of this method with СolorRange is the same as in simple HTML.
 
 ### Stroke 
 
-To stroke the colorRange, use the **.stroke()** method. We have already done it before - in the sample with a Bi-polar progression (Ordinal Scale). 
+To stroke the СolorRange, use the **.stroke()** method. We have already done it before - in the sample with a Bi-polar progression (Ordinal Scale). 
 
 ```
 	// create, enable and stroke the colorRange
-	var cr = map.colorRange();
-	cr.enabled(true).stroke('#BBB');
+	var colorRange = map.colorRange();
+	colorRange.enabled(true).stroke('#BBB');
 ```
 
 {sample}Maps\_ColorRange\_09{sample}
 
 
+### Labels
+
+### Marker
+
+Marker on a ColorRange is needed to demonstrate the position of the value on a ColorRange, so you can understand the map better. To make any changes with it both ColorRange and marker itself should be enabled.
+
+You can change the marker type, for example:
+
+```
+	// change the default marker type to diamond
+    var marker = colorRange.marker();
+    marker.type("diamond");
+```
+
+{sample}Maps\_ColorRange\_19{sample}
+
+Now let's change our marker's color and size:
+
+```
+	// change the default marker color to purple
+    marker.fill("purple");
+	
+	// set the size to your marker
+    marker.size(7);
+```
+
+{sample}Maps\_ColorRange\_20{sample}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
