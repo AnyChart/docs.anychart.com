@@ -337,13 +337,46 @@ The colorRange length adjusting is quite usual: as for any other components, jus
 
 ```
 	// set the colorRange length
-	cr.length(200);
+	cr.length(100);
 ```
 
 {sample}Maps\_ColorRange\_16{sample}
 
-### Size
+### Size and position
+
+When you need to change the distance between the colorRange and the map itself or between the colorRange and the map field borders, use the {api:anychart.charts.Map#padding}**.padding()**{api} method. 
+You may define and only argument or all four (if you want them different) for all sides. Look at the following sample:
+
+```
+	// set the colorRange padding 
+	cr.padding(100);
+```
+
+In case you set the only value, this value will be interpreted as the same padding to each of the map field sides.
+
+{sample}Maps\_ColorRange\_17{sample}
+
+And if you define all four padding values, you'll be able to change the distance between the colorrange and both map and its field borders. Note that 
+
+```
+	// set the colorRange padding 
+	cr.padding(0, 100, 0, -100);
+```
+
+{sample}Maps\_ColorRange\_18{sample}
+
+As you can see, the usage of this method with colorRange is the same as in simple HTML.
+
 ### Stroke 
 
+To stroke the colorRange, use the **.stroke()** method. We have already done it before - in the sample with a Bi-polar progression (Ordinal Scale). 
+
+```
+	// create, enable and stroke the colorRange
+	var cr = map.colorRange();
+	cr.enabled(true).stroke('#BBB');
+```
+
+{sample}Maps\_ColorRange\_09{sample}
 
 
