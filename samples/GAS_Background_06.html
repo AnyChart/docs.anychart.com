@@ -23,7 +23,7 @@
   // setting main title
   var title = anychart.ui.title();
   title.parentBounds(0, 0, stage.width(), stage.height()*0.1);
-  title.text("Background Corners Types");
+  title.text("Corners Types");
   title.container(stage);
   title.draw();
 
@@ -32,7 +32,7 @@
   var defaultCornersChart = anychart.column();
 
   // setting title
-  defaultCornersChart.title("Default Background Corners");
+  defaultCornersChart.title("Default Corners");
 
   // setting stroke for chart container
   var defaultBackground = defaultCornersChart.background();
@@ -56,7 +56,7 @@
 
   // chart with round corners
   var roundCornersChart = anychart.column();
-  roundCornersChart.title("Round Background Corners");
+  roundCornersChart.title("Round Corners");
   roundCornersChart.bounds("51%", "10%", "48%", "44%");
   var roundBackground = roundCornersChart.background();
   roundBackground.stroke("3 red");
@@ -77,7 +77,7 @@
   var roundInnerCornersChart = anychart.column();
 
   // chart title
-  roundInnerCornersChart.title("Round Inner Background Corners");
+  roundInnerCornersChart.title("Round Inner Corners");
 
   // chart size and position
   roundInnerCornersChart.bounds("1%", "55%", "48%", "44%");
