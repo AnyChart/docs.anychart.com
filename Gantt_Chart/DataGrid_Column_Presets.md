@@ -77,10 +77,12 @@ There are several types of presets for {api:anychart.core.ui.DataGrid.Column#set
 </tbody>
 </table>
 <script>
-var table = document.getElementsByTagName("table")[1];
-var sample = table.getElementsByClassName("sample");
-for(var els = 0;els<sample.length;els++)
-sample[els].style.marginTop = 0;
+var table = document.getElementsByTagName("table");
+for (var i = 0; i< table.length;i++){
+var sample = table[i].getElementsByClassName("sample");
+for(var els = 0;els<sample.length;els++){
+sample[els].style.marginTop = 0;}
+}
 </script>
   
   
