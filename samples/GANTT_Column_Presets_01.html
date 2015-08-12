@@ -1,40 +1,32 @@
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+  <script x-export="chart">anychart.onDocumentReady(function() {
 
   var data = [
-    {"id": "1", "name": "Task 1", "progressValue": "14%", "actualStart": 951350400000, "actualEnd": 951609600000},
-    {"id": "2", "name": "Task 2", "progressValue": "25%", "actualStart": 951350400000, "actualEnd": 951782400000},
-    {"id": "3", "name": "Task 3", "progressValue": "0%",  "actualStart": 951408000000, "actualEnd": 951440400000},
-    {"id": "4", "name": "Task 4", "progressValue": "0%",  "actualStart": 951494400000, "actualEnd": 951526800000},
-    {"id": "5", "name": "Task 5", "progressValue": "0%",  "actualStart": 951609600000, "actualEnd": 951696000000},
-    {"id": "6", "name": "Task 6", "progressValue": "27%", "actualStart": 951696000000, "actualEnd": 951782400000}
+    {"id": "1", "name": "Self-Assessment", "progressValue": "25", "actualStart": 951350400000, "actualEnd": 951782400000},
+    {"id": "2", "name": "Define business vision", parent:"1", "progressValue": "0", "actualStart": 951408000000, "actualEnd": 951440400000},
+    {"id": "3", "name": "Identify available skills, information and support", parent:"1", "progressValue": "0", "actualStart": 951494400000, "actualEnd": 951526800000},
+    {"id": "4", "name": "Decide whether to proceed", parent:"1", "progressValue": "0", "actualStart": 951609600000, "actualEnd": 951696000000}
   ];
-
   var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TABLE);
 
-  var chart = anychart.ganttProject();
-  chart.data(treeData);
-  chart.splitterPosition(250);
+  var dataGrid = anychart.ui.dataGrid();
+  dataGrid.data(treeData);
+  var column0 = dataGrid.column(0);
+  column0.title("Row Data");
+  column0.setColumnFormat("actualStart", "directNumbering");
+  var column1 = dataGrid.column(1);
+  column1.title("\"dateCommonLog\" Preset");
+  column1.setColumnFormat("actualStart", "dateCommonLog");
 
-  var dataGrid = chart.dataGrid();
-  var firstColumn = dataGrid.column(1);
-  firstColumn.width(70);
-  var dateColumn = dataGrid.column(2);
-
-  dateColumn.title("dateDmyDots");
-  // Sets column formats.
-  dateColumn.setColumnFormat("actualStart", "dateDmyDots");
-  dateColumn.width(130);
-
-  chart.container("container");
-  chart.draw();
-  chart.fitAll();
+  dataGrid.listen("signal", dataGrid.draw);
+  dataGrid.container("container");
+  dataGrid.draw();
 });</script>
 </head>
 <body>

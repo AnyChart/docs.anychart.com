@@ -37,50 +37,45 @@ There are several types of presets for {api:anychart.core.ui.DataGrid.Column#set
 <tr>
 <td><b>dateCommonLog</b></td>
 <td>Display date as day/month/year. Day and year have numeric format while month presented in a form of text 3 letters long</td>
-<td>25/Feb/2013</td>
+<td>{sample :width 250 :height 150}GANTT\_Column\_Presets\_01{sample}</td>
 </tr>
 <tr>
 <td><b>dateDmyDots</b></td>
 <td>Display date as dd.mm.yy. Day, month and year have numeric format and all of them are 2 figures long</td>
-<td>25.02.13</td>
+<td>{sample :width 250 :height 150}GANTT\_Column\_Presets\_02{sample}</td>
 </tr>
 <tr>
 <td><b>dateIso8601</b></td>
 <td>Display date as yyyy-mm-dd. Day, month and year have numeric format. Year is 4 figures long while month and day are 2 figures long</td>
-<td>2013-02-25</td>
+<td>{sample :width 250 :height 150}GANTT\_Column\_Presets\_03{sample}</td>
 </tr>
 <tr>
 <td><b>dateUsShort</b></td>
 <td>Display date as yyyy-mm-dd. Day, month and year have numeric format. Year is 4 figures long while month and day are 2 figures long</td>
-<td>02/25/2013</td>
+<td>{sample :width 250 :height 150}GANTT\_Column\_Presets\_04{sample}</td>
 </tr>
 <tr>
 <td><b>percent</b></td>
 <td>Format percentage values (assuming that for numeric values *1* stands for *100%* and for string values *"1"* stands for *1%*</td>
-<td>25%</td>
+<td>{sample :width 250 :height 150}GANTT\_Column\_Presets\_05{sample}</td>
 </tr>
 <tr>
 <td><b>directNumbering</b></td>
 <td>Format simple numbers</td>
-<td>73</td>
+<td>{sample :width 250 :height 150}GANTT\_Column\_Presets\_06{sample}</td>
 </tr>
 <tr>
 <td><b>shortText</b></td>
 <td>adjusting text values and fitting it into small columns</td>
-<td></td>
+<td>{sample :width 250 :height 150}GANTT\_Column\_Presets\_07{sample}</td>
 </tr>
 <tr>
 <td><b>text</b></td>
 <td>Show simple text values without any adjustment</td>
-<td style="padding:0; margin-left: 5px;">{sample :width 250 :height 150}GANTT\_Column\_Presets\_04{sample}</td>
+<td style="padding-left: 5px;">{sample :width 250 :height 150}GANTT\_Column\_Presets\_08{sample}</td>
 </tr>
 </tbody>
 </table>
-  
-  
-Here is a sample with several presets in one data grid
-
-{sample :width 690 :height 200}GANTT\_Column\_Presets\_02{sample}
 
 ### Custom Formatter
 
@@ -136,14 +131,6 @@ If your data requires more complex customization you can use your own object wit
 
 The object for column customization may contain three parameters: **formatter**, **textStyle** and **width**. **Formatter** is a function for adjusting the data in each cell of the column. **TextStyle** adjust visual appearance of the text in the cell and **width** set custom column width.
 
-{sample :width 690 :height 200}GANTT\_Column\_Presets\_03{sample}
+{sample :width 690 :height 200}GANTT\_Column\_Presets\_09{sample}
 
 **Note**: In some cases it is more appropriate to use {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method than {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api} method. Please, see [DataGrid article](./DataGrid#content) for more information.
-
-
-
-
-
-
-
-You can find all possible data formatting presets in {api:anychart.enums.ColumnFormats}**API**{api}. 
