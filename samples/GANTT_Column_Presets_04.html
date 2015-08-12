@@ -7,21 +7,27 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-      var data = [
-        {"id": "1", "name": "Task 1", "progressValue": "14", "spent": 97355.31, "actualStart": 951350400000, "actualEnd": 951609600000},
-        {"id": "2", "name": "Task 2", "progressValue": "25", "spent": 245462.56, "actualStart": 951350400000, "actualEnd": 951782400000},
-        {"id": "3", "name": "Task 3", "progressValue": "0",  "spent": 749.43, "actualStart": 951408000000, "actualEnd": 951440400000}
-      ];
-      var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TABLE);
+  var data = [
+    {"id": "1", "name": "Self-Assessment", "progressValue": "25", "actualStart": 951350400000, "actualEnd": 951782400000},
+    {"id": "2", "name": "Define business vision", parent:"1", "progressValue": "0", "actualStart": 951408000000, "actualEnd": 951440400000},
+    {"id": "3", "name": "Identify available skills, information and support", parent:"1", "progressValue": "0", "actualStart": 951494400000, "actualEnd": 951526800000},
+    {"id": "4", "name": "Decide whether to proceed", parent:"1", "progressValue": "0", "actualStart": 951609600000, "actualEnd": 951696000000}
+  ];
+  var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TABLE);
 
-      var currentDataGrid = anychart.ui.dataGrid();
-      currentDataGrid.data(treeData);
+  var dataGrid = anychart.ui.dataGrid();
+  dataGrid.data(treeData);
+  var column0 = dataGrid.column(0);
+  column0.title("Row Data");
+  column0.setColumnFormat("name", "text");
+  var column1 = dataGrid.column(1);
+  column1.title("\"text\" Preset");
+  column1.setColumnFormat("name", "text");
 
-
-      currentDataGrid.listen('signal', currentDataGrid.draw);
-      currentDataGrid.container("container");
-      currentDataGrid.draw();
-    });</script>
+  dataGrid.listen("signal", dataGrid.draw);
+  dataGrid.container("container");
+  dataGrid.draw();
+});</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

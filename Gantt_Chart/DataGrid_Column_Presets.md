@@ -72,23 +72,15 @@ There are several types of presets for {api:anychart.core.ui.DataGrid.Column#set
 <tr>
 <td><b>text</b></td>
 <td>Show simple text values without any adjustment</td>
-<td style="padding:0; margin: 0;">{sample :width 250 :height 150}GANTT\_Column\_Presets\_04{sample}</td>
+<td style="padding:0; margin-left: 5px;">{sample :width 250 :height 150}GANTT\_Column\_Presets\_04{sample}</td>
 </tr>
 </tbody>
 </table>
-<script>
-var table = document.getElementsByTagName("table");
-for (var i = 0; i< table.length;i++){
-var sample = table[i].getElementsByClassName("sample");
-for(var els = 0;els<sample.length;els++){
-sample[els].style.marginTop = 0;}
-}
-</script>
   
   
 Here is a sample with several presets in one data grid
 
-{sample :width 690 :height 200 :margin-top 0}GANTT\_Column\_Presets\_02{sample}
+{sample :width 690 :height 200}GANTT\_Column\_Presets\_02{sample}
 
 ### Custom Formatter
 
