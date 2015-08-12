@@ -80,7 +80,7 @@ There are several types of presets for {api:anychart.core.ui.DataGrid.Column#set
   
 Here is a sample with several presets in one data grid
 
-{sample :width 690 :height 200}GANTT\_Column\_Presets\_02{sample}
+{sample :width 690 :height 200 :margin-top 0}GANTT\_Column\_Presets\_02{sample}
 
 ### Custom Formatter
 
