@@ -30,7 +30,7 @@ These are events available for Gantt Chart:
 <td>Dispatched when mouse click event happened. </td>
 </tr>
 <tr>
-<td>rowDBlclick</td>
+<td>rowDblClick</td>
 <td>Dispatched when mouse double click event happened.</td>
 </tr>
 <tr>

@@ -13,29 +13,69 @@ Gantt chart consist of two parts - TimeLine that contains visualized information
 
 ## Column Formatting
 
-DataGrid columns can contain different types of information. You can format each column according to your needs and desires. Use {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api} to define information field in your data set and preset for data formatting. You can find all possible data formatting presets in {api:anychart.enums.ColumnFormats}**API**{api}. 
-  
-  
-Let's take a closer look at each of these presets.
+DataGrid columns can contain different types of information. You can format each column according to your needs and desires. Use {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api} to define information field in your data set and preset for data formatting.
 
-### Presets
-
-As far as gantt chart visualize numeric values most formatting presets designed to format numeric values. **dateCommonLog**, **dateDmyDots**, **dateIso8601**, **dateUsShort** and **dateUsShort** presets are useful for formatting dates in different ways. 
-  
 ```
   var column = dataGrid().column(2);
   column.title("dateDmyDots");
   column.setColumnFormat("actualStart", "dateDmyDots");
 ```
-  
-Here is a sample with date formatted using **dateDmyDots** preset.
 
-{sample :width 690 :height 200}GANTT\_Column\_Presets\_01{sample}
+Let's take a closer look at the presets.
 
-**financial** preset formats fiscal values and **percent** preset format percentage values (assuming that for numeric values *1* stands for *100%* and for string values *1* stands for *1%*). **directNumbering** is a formatting for the mere numbers. This is default preset for the first column in the data grid.
-  
-  
-As for text formatting presets - there are only two of them. **shortText** preset is useful for adjusting text values and fitting it into small columns. Use **text** preset to show simple text values without any adjustment (**text** is default preset for second column).
+### Presets
+
+There are several types of presets for {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api} method: some of them are useful for formatting dates, some can adjust simple text and some can process numeric values. Here is a table with all possible presets with a small description for each of them.
+
+<table width="328" border="1" class="dtTABLE">
+<tbody>
+<tr>
+<th width="210"><b>Preset</b></th>
+<th width="102"><b>Description</b></th>
+<th width="102"><b>Result</b></th>
+</tr>
+<tr>
+<td><b>dateCommonLog</b></td>
+<td>Display date as day/month/year. Day and year have numeric format while month presented in a form of text 3 letters long</td>
+<td>25/Feb/2013</td>
+</tr>
+<tr>
+<td><b>dateDmyDots</b></td>
+<td>Display date as dd.mm.yy. Day, month and year have numeric format and all of them are 2 figures long</td>
+<td>25.02.13</td>
+</tr>
+<tr>
+<td><b>dateIso8601</b></td>
+<td>Display date as yyyy-mm-dd. Day, month and year have numeric format. Year is 4 figures long while month and day are 2 figures long</td>
+<td>2013-02-25</td>
+</tr>
+<tr>
+<td><b>dateUsShort</b></td>
+<td>Display date as yyyy-mm-dd. Day, month and year have numeric format. Year is 4 figures long while month and day are 2 figures long</td>
+<td>02/25/2013</td>
+</tr>
+<tr>
+<td><b>percent</b></td>
+<td>Format percentage values (assuming that for numeric values *1* stands for *100%* and for string values *"1"* stands for *1%*</td>
+<td>25%</td>
+</tr>
+<tr>
+<td><b>directNumbering</b></td>
+<td>Format simple numbers</td>
+<td>73</td>
+</tr>
+<tr>
+<td><b>shortText</b></td>
+<td>adjusting text values and fitting it into small columns</td>
+<td></td>
+</tr>
+<tr>
+<td><b>text</b></td>
+<td>Show simple text values without any adjustment</td>
+<td></td>
+</tr>
+</tbody>
+</table>
   
   
 Here is a sample with several presets in one data grid
@@ -99,3 +139,11 @@ The object for column customization may contain three parameters: **formatter**,
 {sample :width 690 :height 200}GANTT\_Column\_Presets\_03{sample}
 
 **Note**: In some cases it is more appropriate to use {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method than {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api} method. Please, see [DataGrid article](./DataGrid#content) for more information.
+
+
+
+
+
+
+
+You can find all possible data formatting presets in {api:anychart.enums.ColumnFormats}**API**{api}. 
