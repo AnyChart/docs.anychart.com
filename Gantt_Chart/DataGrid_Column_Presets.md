@@ -72,7 +72,7 @@ There are several types of presets for {api:anychart.core.ui.DataGrid.Column#set
 <tr>
 <td><b>text</b></td>
 <td>Show simple text values without any adjustment</td>
-<td>{sample :width 200 :height 100}GANTT\_Column\_Presets\_04{sample}</td>
+<td style="padding:0; margin: 0;">{sample :width 250 :height 150}GANTT\_Column\_Presets\_04{sample}</td>
 </tr>
 </tbody>
 </table>
