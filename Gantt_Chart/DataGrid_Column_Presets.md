@@ -28,6 +28,7 @@ Let's take a closer look at the presets.
 There are several types of presets for {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api} method: some of them are useful for formatting dates, some can adjust simple text and some can process numeric values. Here is a table with all possible presets with a small description for each of them.
 
 <table border="1" class="dtTABLE">
+<style>.sample { margin-top: 0 !important;}</style>
 <tbody>
 <tr>
 <th width="210"><b>Preset</b></th>
@@ -75,6 +76,7 @@ There are several types of presets for {api:anychart.core.ui.DataGrid.Column#set
 <td style="padding:0; margin: 0;">{sample :width 250 :height 150}GANTT\_Column\_Presets\_04{sample}</td>
 </tr>
 </tbody>
+<style>.sample { margin-top: 10px !important;}</style>
 </table>
   
   
