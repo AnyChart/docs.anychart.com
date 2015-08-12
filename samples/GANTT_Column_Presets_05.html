@@ -19,12 +19,10 @@
   dataGrid.data(treeData);
   var column0 = dataGrid.column(0);
   column0.title("Row Data");
-  column0.setColumnFormat("actualStart", "text");
-  column0.width(100);
+  column0.setColumnFormat("progressValue", "text");
   var column1 = dataGrid.column(1);
-  column1.title("\"dateIso8601\" Preset");
-  column1.setColumnFormat("actualStart", "dateIso8601");
-  column1.width(120);
+  column1.title("\"percent\" Preset");
+  column1.setColumnFormat("progressValue", "text");
 
   dataGrid.listen("signal", dataGrid.draw);
   dataGrid.container("container");
