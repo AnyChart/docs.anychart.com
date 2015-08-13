@@ -27,11 +27,11 @@ Let's take a closer look at the presets.
 
 There are several types of presets for {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api} method: some of them are useful for formatting dates, some can adjust simple text and some can process numeric values. Here is a table with all possible presets with a small description for each of them.
 
-<table width="352" border="1" class="dtTABLE">
+<table border="1" class="dtTABLE">
 <tbody>
 <tr>
 <th width="100"><b>Preset</b></th>
-<th width="152"><b>Description</b></th>
+<th width="252"><b>Description</b></th>
 <th><b>Result</b></th>
 </tr>
 <tr>
