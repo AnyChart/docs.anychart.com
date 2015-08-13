@@ -30,9 +30,9 @@ There are several types of presets for {api:anychart.core.ui.DataGrid.Column#set
 <table border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th width="210"><b>Preset</b></th>
+<th width="100"><b>Preset</b></th>
 <th width="102"><b>Description</b></th>
-<th width="102"><b>Result</b></th>
+<th width="202"><b>Result</b></th>
 </tr>
 <tr>
 <td><b>dateCommonLog</b></td>
