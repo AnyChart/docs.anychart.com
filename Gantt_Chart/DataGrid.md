@@ -84,15 +84,22 @@ column.textFormatter(function(item) {
 dataGrid.column(2).textFormatter(customColumnTextFormatter);
 
 //define a custom content with actual start values
-function customColumnTextFormatter(item)
-{
-  var field = item.get(anychart.enums.GanttDataFields.ACTUAL_START);
-
-  var actualStart = new Date(field);
-  return formatDate(actualStart.getUTCMonth() + 1) + '/' +
-      formatDate(actualStart.getUTCDate()) + '/' + actualStart.getUTCFullYear();
+function customColumnTextFormatter(item){
+    var start = item.get("actualStart");
+    var end = item.get("actualEnd");
+    var duration = end - start;
+    var hours = duration/1000/60/60;
+    if (hours>24){
+        return hours + " hours <a style='color: #7c868e;'>(" + (hours/24).toFixed(0) + " days)<a>";
+    }else{
+        return hours + " hours";
+    }
 }
 ```
+
+Here is a sample with the complex {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api}.
+
+{sample :width 690 :height 200}GANTT\_Chart\_17{sample}
 
 **Note**: There are several presets for simplifying column content formatting. Please, see [DataGrid Column Presets article](./DataGrid_Column_Presets#presets) for more information.
 

@@ -9,9 +9,9 @@
 
   var data = [
     {"id": "1", "name": "Self-Assessment", "progressValue": "25", "actualStart": 951350400000, "actualEnd": 951782400000},
-    {"id": "2", "name": "Define business vision", parent:"1", "progressValue": "0", "actualStart": 951408000000, "actualEnd": 951440400000},
-    {"id": "3", "name": "Identify available skills, information and support", parent:"1", "progressValue": "0", "actualStart": 951494400000, "actualEnd": 951526800000},
-    {"id": "4", "name": "Decide whether to proceed", parent:"1", "progressValue": "0", "actualStart": 951609600000, "actualEnd": 951696000000}
+    {"id": "2", "name": "Define business vision", "progressValue": "0", "actualStart": 951408000000, "actualEnd": 951440400000},
+    {"id": "3", "name": "Identify available skills, information and support", "progressValue": "0", "actualStart": 951494400000, "actualEnd": 951526800000},
+    {"id": "4", "name": "Decide whether to proceed", "progressValue": "0", "actualStart": 951609600000, "actualEnd": 951696000000}
   ];
   var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TABLE);
 
@@ -24,7 +24,7 @@
   var column1 = dataGrid.column(1);
   column1.title("\"dateCommonLog\" Preset");
   column1.setColumnFormat("actualStart", "dateCommonLog");
-  column1.width(120);
+  column1.width(150);
 
   dataGrid.tooltip(false);
   dataGrid.listen("signal", dataGrid.draw);

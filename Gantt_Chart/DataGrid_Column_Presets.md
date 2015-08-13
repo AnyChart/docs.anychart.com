@@ -94,34 +94,42 @@ If your data requires more complex customization you can use your own object wit
   // set custom formatter
   customColumn.setColumnFormat(
     // get id of each string
-    "id", 
+    "actualStart", 
     {
       // set formatting function
       "formatter": function(value){
-        var number = value - 1;
-        // get actual start time from each string
-        var start = data[number].actualStart;
-        // get actual end time from each string
-        var end = data[number].actualEnd;
-        // subtract start time from end time (in milliseconds)
-        var duration = end - start;
-        // transform milliseconds into hours
-        var hours = duration/1000/60/60;
-        // check if duration is more than 24 hours
-        if (hours>24){
-          // transform hours into days if the duration exceeds 24 hours
-          return hours + " hours <a style='color: #7c868e;'>(" + (hours/24).toFixed(0) + " days)<a>";
+        var date = new Date(value);
+        // get minuts
+        var minutes = date.getUTCMinutes();
+        // get hours
+        var hours = date.getUTCHours();
+        // get month as a word 3 letters long
+        var month = date.toLocaleDateString("en-US", {month: "short"});
+        // if it is between 12.00 a.m. and 11.59 a.m.
+        if (hours < 12) {
+          // if 12.00 a.m.
+          if (hours === 0 && minutes === 0)
+          // display just month and day
+            return month + " " + format(date.getUTCDate());
+          // format and display hours, minutes, month and day
+          return format(hours) + ":" + format(minutes) + " a.m. " + month + " " + format(date.getUTCDate());
+          // if it is between 12.00 p.m. and 11.59 p.m
         }else{
-          // display only hours if the duration doesn't exceed 24 hours
-          return hours + " hours";
+          // format and display hours, minutes, month and day
+          return format(hours) + ":" + format(minutes) + " p.m. " + month + " " + format(date.getUTCDate());
+        }
+        function format (number) {
+          // if the number is less than 10
+          if (number<10)
+          // add zero before the digit
+            return "0" + number;
+          return number;
         }
       },
       // set text visual appearance
       "textStyle": {
         // set clue font color
-        "fontColor": "blue",
-        // enable html in column content 
-        "useHtml": true
+        "fontColor": "blue"
       },
       // set custom column width
       "width": 150
@@ -129,8 +137,34 @@ If your data requires more complex customization you can use your own object wit
   );
 ```
 
-The object for column customization may contain three parameters: **formatter**, **textStyle** and **width**. **Formatter** is a function for adjusting the data in each cell of the column. **TextStyle** adjust visual appearance of the text in the cell and **width** set custom column width.
+The object for column customization may contain three parameters: **width**, **textStyle** and **formatter**. **width** sets custom column width, **textStyle** adjusts visual appearance of the text in the column and **formatter** is a function for adjusting the data in each cell of the column. 
+  
+  
+**Note**: If you want to use same formatter for several columns you can create custom function beyond chart dataGrid settings and use it any time you want.
+
+```
+  var dataGrid = chart.dataGrid();
+  
+  var column2 = dataGrid.column(2);
+  // Sets column formats.
+  column2.setColumnFormat("actualStart", {
+    "formatter": columnFormatter
+  });
+  
+  var column3 = dataGrid.column(3);
+  // Sets column formats.
+  column3.setColumnFormat("actualEnd", {
+    "formatter": columnFormatter
+  });
+  
+  // custom formatting function
+  function columnFormatter (value){
+    /* code of your function */
+  }
+```
+
+Here is a sample with custom formatting function applied to two columns
 
 {sample :width 690 :height 200}GANTT\_Column\_Presets\_09{sample}
 
-**Note**: In some cases it is more appropriate to use {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method than {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api} method. Please, see [DataGrid article](./DataGrid#content) for more information.
+**Note**: In some cases it is more appropriate to use {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method than {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api} method. For example, if you need to use information from two or more fields of dataGrid row it is much more appropriate to use {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} instead of using {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api}. Please, see [DataGrid article](./DataGrid#content) for more information.
