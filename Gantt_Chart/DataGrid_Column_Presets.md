@@ -30,48 +30,48 @@ There are several types of presets for {api:anychart.core.ui.DataGrid.Column#set
 <table border="1" class="dtTABLE">
 <tbody>
 <tr>
-<th width="100"><b>Preset</b></th>
-<th width="252"><b>Description</b></th>
-<th><b>Result</b></th>
+<th width="100" style="vertical-align: middle; text-align: center;"><b>Preset</b></th>
+<th width="252" style="vertical-align: middle; text-align: center;"><b>Description</b></th>
+<th style="vertical-align: middle; text-align: center;"><b>Result</b></th>
 </tr>
 <tr>
-<td style="vertical-align: center; text-align: center;"><b>dateCommonLog</b></td>
-<td style="vertical-align: center; text-align: center;">Display date as day/month/year. Day and year have numeric format while month presented in a form of text 3 letters long</td>
+<td style="vertical-align: middle; text-align: center;"><b>dateCommonLog</b></td>
+<td style="vertical-align: middle; text-align: center;">Display date as day/month/year. Day and year have numeric format while month presented in a form of text 3 letters long</td>
 <td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_01{sample}</td>
 </tr>
 <tr>
-<td style="vertical-align: center; text-align: center;"><b>dateDmyDots</b></td>
-<td style="vertical-align: center; text-align: center;">Display date as dd.mm.yy. Day, month and year have numeric format and all of them are 2 figures long</td>
+<td style="vertical-align: middle; text-align: center;"><b>dateDmyDots</b></td>
+<td style="vertical-align: middle; text-align: center;">Display date as dd.mm.yy. Day, month and year have numeric format and all of them are 2 figures long</td>
 <td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_02{sample}</td>
 </tr>
 <tr>
-<td style="vertical-align: center; text-align: center;"><b>dateIso8601</b></td>
-<td style="vertical-align: center; text-align: center;">Display date as yyyy-mm-dd. Day, month and year have numeric format. Year is 4 figures long while month and day are 2 figures long</td>
+<td style="vertical-align: middle; text-align: center;"><b>dateIso8601</b></td>
+<td style="vertical-align: middle; text-align: center;">Display date as yyyy-mm-dd. Day, month and year have numeric format. Year is 4 figures long while month and day are 2 figures long</td>
 <td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_03{sample}</td>
 </tr>
 <tr>
-<td style="vertical-align: center; text-align: center;"><b>dateUsShort</b></td>
-<td style="vertical-align: center; text-align: center;">Display date as yyyy-mm-dd. Day, month and year have numeric format. Year is 4 figures long while month and day are 2 figures long</td>
+<td style="vertical-align: middle; text-align: center;"><b>dateUsShort</b></td>
+<td style="vertical-align: middle; text-align: center;">Display date as yyyy-mm-dd. Day, month and year have numeric format. Year is 4 figures long while month and day are 2 figures long</td>
 <td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_04{sample}</td>
 </tr>
 <tr>
-<td style="vertical-align: center; text-align: center;"><b>percent</b></td>
-<td style="vertical-align: center; text-align: center;">Format percentage values (assuming that for numeric values *1* stands for *100%* and for string values *"1"* stands for *1%*</td>
+<td style="vertical-align: middle; text-align: center;"><b>percent</b></td>
+<td style="vertical-align: middle; text-align: center;">Format percentage values (assuming that for numeric values *1* stands for *100%* and for string values *"1"* stands for *1%*</td>
 <td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_05{sample}</td>
 </tr>
 <tr>
-<td style="vertical-align: center; text-align: center;"><b>directNumbering</b></td>
-<td style="vertical-align: center; text-align: center;">Format simple numbers</td>
+<td style="vertical-align: middle; text-align: center;"><b>directNumbering</b></td>
+<td style="vertical-align: middle; text-align: center;">Format simple numbers</td>
 <td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_06{sample}</td>
 </tr>
 <tr>
-<td style="vertical-align: center; text-align: center;"><b>shortText</b></td>
-<td style="vertical-align: center; text-align: center;">adjusting text values and fitting it into small columns</td>
+<td style="vertical-align: middle; text-align: center;"><b>shortText</b></td>
+<td style="vertical-align: middle; text-align: center;">adjusting text values and fitting it into small columns</td>
 <td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_07{sample}</td>
 </tr>
 <tr>
-<td style="vertical-align: center; text-align: center;"><b>text</b></td>
-<td style="vertical-align: center; text-align: center;">Show simple text values without any adjustment</td>
+<td style="vertical-align: middle; text-align: center;"><b>text</b></td>
+<td style="vertical-align: middle; text-align: center;">Show simple text values without any adjustment</td>
 <td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_08{sample}</td>
 </tr>
 </tbody>
