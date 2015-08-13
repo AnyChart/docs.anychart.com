@@ -96,9 +96,8 @@ function customColumnTextFormatter(item){
     }
 }
 ```
-  
-  
-Here is a sample with the complex {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api}.
+
+<br>Here is a sample with the complex {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api}.
 
 {sample :width 690 :height 200}GANTT\_Chart\_17{sample}
 
