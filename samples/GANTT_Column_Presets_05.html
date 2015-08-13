@@ -20,9 +20,11 @@
   var column0 = dataGrid.column(0);
   column0.title("Row Data");
   column0.setColumnFormat("progressValue", "text");
+  column0.width(100);
   var column1 = dataGrid.column(1);
   column1.title("\"percent\" Preset");
-  column1.setColumnFormat("progressValue", "text");
+  column1.setColumnFormat("progressValue", "percent");
+  column1.width(120);
 
   dataGrid.listen("signal", dataGrid.draw);
   dataGrid.container("container");
