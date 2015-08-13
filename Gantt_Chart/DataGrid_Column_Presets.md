@@ -13,7 +13,7 @@ Gantt chart consist of two parts - TimeLine that contains visualized information
 
 ## Column Formatting
 
-DataGrid columns can contain different types of information. You can format each column according to your needs and desires. Use {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api} to define information field in your data set and preset for data formatting.
+DataGrid columns can contain different types of information. You can format each column according to your needs and desires. Use {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**setColumnFormat()**{api} to define information field in your data set and preset for data formatting.
 
 ```
   var column = dataGrid().column(2);
@@ -25,7 +25,7 @@ Let's take a closer look at the presets.
 
 ### Presets
 
-There are several types of presets for {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api} method: some of them are useful for formatting dates, some can adjust simple text and some can process numeric values. Here is a table with all possible presets with a small description for each of them.
+There are several types of presets for {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**setColumnFormat()**{api} method: some of them are useful for formatting dates, some can adjust simple text and some can process numeric values. Here is a table with all possible presets with a small description for each of them.
 
 <table border="1" class="dtTABLE">
 <tbody>
@@ -137,10 +137,8 @@ If your data requires more complex customization you can use your own object wit
   );
 ```
 
-The object for column customization may contain three parameters: **width**, **textStyle** and **formatter**. **width** sets custom column width, **textStyle** adjusts visual appearance of the text in the column and **formatter** is a function for adjusting the data in each cell of the column. 
-  
-  
-**Note**: If you want to use same formatter for several columns you can create custom function beyond chart dataGrid settings and use it any time you want.
+The object for column customization may contain three parameters: **width**, **textStyle** and **formatter**. **width** sets custom column width, **textStyle** adjusts visual appearance of the text in the column and **formatter** is a function for adjusting the data in each cell of the column.  
+**Note**: If you want to use same formatter for several columns you can create custom function beyond chart dataGrid scope and use it any time you want.
 
 ```
   var dataGrid = chart.dataGrid();
@@ -167,4 +165,4 @@ Here is a sample with custom formatting function applied to two columns
 
 {sample :width 690 :height 200}GANTT\_Column\_Presets\_09{sample}
 
-**Note**: In some cases it is more appropriate to use {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method than {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api} method. For example, if you need to use information from two or more fields of dataGrid row it is much more appropriate to use {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} instead of using {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**.setColumnFormat()**{api}. Please, see [DataGrid article](./DataGrid#content) for more information.
+**Note**: In some cases it is more appropriate to use {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method than {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**setColumnFormat()**{api} method. For example, if you need to use information from two or more fields of dataGrid row it is much more appropriate to use {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} instead of using {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**setColumnFormat()**{api}. Please, see [DataGrid article](./DataGrid#content) for more information.
