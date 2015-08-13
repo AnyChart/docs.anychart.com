@@ -26,6 +26,7 @@
   column1.setColumnFormat("progressValue", "percent");
   column1.width(120);
 
+  dataGrid.tooltip(false);
   dataGrid.listen("signal", dataGrid.draw);
   dataGrid.container("container");
   dataGrid.draw();

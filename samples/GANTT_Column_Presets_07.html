@@ -25,6 +25,7 @@
   column1.title("\"shortText\" Preset");
   column1.setColumnFormat("name", "shortText");
 
+  dataGrid.tooltip(false);
   dataGrid.listen("signal", dataGrid.draw);
   dataGrid.container("container");
   dataGrid.draw();
