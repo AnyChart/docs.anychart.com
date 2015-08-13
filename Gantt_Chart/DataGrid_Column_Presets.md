@@ -32,7 +32,7 @@ There are several types of presets for {api:anychart.core.ui.DataGrid.Column#set
 <tr>
 <th width="100"><b>Preset</b></th>
 <th width="102"><b>Description</b></th>
-<th width="202"><b>Result</b></th>
+<th width="150"><b>Result</b></th>
 </tr>
 <tr>
 <td><b>dateCommonLog</b></td>
