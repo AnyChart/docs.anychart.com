@@ -31,48 +31,48 @@ There are several types of presets for {api:anychart.core.ui.DataGrid.Column#set
 <tbody>
 <tr>
 <th width="100" style="vertical-align: middle; text-align: center;"><b>Preset</b></th>
-<th width="252" style="vertical-align: middle; text-align: center;"><b>Description</b></th>
+<th width="262" style="vertical-align: middle; text-align: center;"><b>Description</b></th>
 <th style="vertical-align: middle; text-align: center;"><b>Result</b></th>
 </tr>
 <tr>
 <td style="vertical-align: middle; text-align: center;"><b>dateCommonLog</b></td>
 <td style="vertical-align: middle; text-align: center;">Display date as day/month/year. Day and year have numeric format while month presented in a form of text 3 letters long</td>
-<td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_01{sample}</td>
+<td style="padding-top: 0;">{sample :width 270 :height 115}GANTT\_Column\_Presets\_01{sample}</td>
 </tr>
 <tr>
 <td style="vertical-align: middle; text-align: center;"><b>dateDmyDots</b></td>
 <td style="vertical-align: middle; text-align: center;">Display date as dd.mm.yy. Day, month and year have numeric format and all of them are 2 figures long</td>
-<td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_02{sample}</td>
+<td style="padding-top: 0;">{sample :width 270 :height 115}GANTT\_Column\_Presets\_02{sample}</td>
 </tr>
 <tr>
 <td style="vertical-align: middle; text-align: center;"><b>dateIso8601</b></td>
 <td style="vertical-align: middle; text-align: center;">Display date as yyyy-mm-dd. Day, month and year have numeric format. Year is 4 figures long while month and day are 2 figures long</td>
-<td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_03{sample}</td>
+<td style="padding-top: 0;">{sample :width 270 :height 115}GANTT\_Column\_Presets\_03{sample}</td>
 </tr>
 <tr>
 <td style="vertical-align: middle; text-align: center;"><b>dateUsShort</b></td>
 <td style="vertical-align: middle; text-align: center;">Display date as yyyy-mm-dd. Day, month and year have numeric format. Year is 4 figures long while month and day are 2 figures long</td>
-<td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_04{sample}</td>
+<td style="padding-top: 0;">{sample :width 270 :height 115}GANTT\_Column\_Presets\_04{sample}</td>
 </tr>
 <tr>
 <td style="vertical-align: middle; text-align: center;"><b>percent</b></td>
 <td style="vertical-align: middle; text-align: center;">Format percentage values (assuming that for numeric values *1* stands for *100%* and for string values *"1"* stands for *1%*</td>
-<td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_05{sample}</td>
+<td style="padding-top: 0;">{sample :width 270 :height 115}GANTT\_Column\_Presets\_05{sample}</td>
 </tr>
 <tr>
 <td style="vertical-align: middle; text-align: center;"><b>directNumbering</b></td>
 <td style="vertical-align: middle; text-align: center;">Format simple numbers</td>
-<td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_06{sample}</td>
+<td style="padding-top: 0;">{sample :width 270 :height 115}GANTT\_Column\_Presets\_06{sample}</td>
 </tr>
 <tr>
 <td style="vertical-align: middle; text-align: center;"><b>shortText</b></td>
 <td style="vertical-align: middle; text-align: center;">adjusting text values and fitting it into small columns</td>
-<td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_07{sample}</td>
+<td style="padding-top: 0;">{sample :width 270 :height 115}GANTT\_Column\_Presets\_07{sample}</td>
 </tr>
 <tr>
 <td style="vertical-align: middle; text-align: center;"><b>text</b></td>
 <td style="vertical-align: middle; text-align: center;">Show simple text values without any adjustment</td>
-<td style="padding-top: 0;">{sample :width 280 :height 115}GANTT\_Column\_Presets\_08{sample}</td>
+<td style="padding-top: 0;">{sample :width 270 :height 115}GANTT\_Column\_Presets\_08{sample}</td>
 </tr>
 </tbody>
 </table>
@@ -163,6 +163,6 @@ The object for column customization may contain three parameters: **width**, **t
 
 Here is a sample with custom formatting function applied to two columns
 
-{sample :width 690 :height 200}GANTT\_Column\_Presets\_09{sample}
+{sample :width 690 :height 220}GANTT\_Column\_Presets\_09{sample}
 
 **Note**: In some cases it is more appropriate to use {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method than {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**setColumnFormat()**{api} method. For example, if you need to use information from two or more fields of your data it is much more appropriate to use {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} instead of using {api:anychart.core.ui.DataGrid.Column#setColumnFormat}**setColumnFormat()**{api}. Please, see [DataGrid article](./DataGrid#content) for more information.
