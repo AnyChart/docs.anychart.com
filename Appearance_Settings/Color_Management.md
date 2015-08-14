@@ -97,7 +97,7 @@ To make design easier - AnyChart Provides several color transformation functions
 </tbody>
 </table>
 
-{sample}GAS\_Color\_Management\_01{sample}
+{sample}AS\_Color\_Management\_01{sample}
 
 ### Dark Color
 
@@ -122,7 +122,7 @@ To make design easier - AnyChart Provides several color transformation functions
 </tbody>
 </table>
 
-{sample}GAS\_Color\_Management\_02{sample}
+{sample}AS\_Color\_Management\_02{sample}
 
 ### Blend
 
@@ -175,4 +175,4 @@ To make design easier - AnyChart Provides several color transformation functions
 </tbody></table>
 	 
 In the sample below a function pluses 0.2 to a blend ratio for each column:
-{sample}GAS\_Color\_Management\_03{sample}
+{sample}AS\_Color\_Management\_03{sample}

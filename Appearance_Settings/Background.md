@@ -55,7 +55,7 @@ Sample dashed stroke settings:
 
 On the chart below you can see 3 different border types and a chart without a border.
 
-{sample}GAS\_Background\_01{sample}
+{sample}AS\_Background\_01{sample}
 
 ## Fill
 
@@ -73,7 +73,7 @@ can be defined with any of the methods described in [Color management tutorial](
 
 In the sample below a chart, a data plot and a chart title backgrounds are colored with a solid fill:
 
-{sample}GAS\_Background\_02{sample}
+{sample}AS\_Background\_02{sample}
 
 ### Gradient
 
@@ -89,11 +89,11 @@ AnyChart allows to create Gradient fills for any background. There are two types
 
 The sample below demonstrates how gradient fill can be used to create really attractive area chart.
 
-{sample}GAS\_Background\_03{sample}
+{sample}AS\_Background\_03{sample}
 
 The same sample, but with radial gradient fill:
 
-{sample}GAS\_Background\_04{sample}
+{sample}AS\_Background\_04{sample}
 
 ### Image
 
@@ -106,7 +106,7 @@ Image fill allows you to set an image as a background. An image can be **stretch
   });
 ```
 
-{sample}GAS\_Background\_05{sample}
+{sample}AS\_Background\_05{sample}
 
 ## Corners Settings
 
@@ -134,7 +134,7 @@ Also, it is possible to choose radius of any corner. Just set four number for ev
 
 The dashboard below demonstrates all possible corners types:
 
-{sample}GAS\_Background\_06{sample}
+{sample}AS\_Background\_06{sample}
 
 
 ## Hatch Fill
@@ -145,7 +145,7 @@ display or for those who are color blind. Hatch fill is fully-independent struct
   
 We've got a chart a with 5 series with 5 data points in each. For every series we've applied different hatch fills by setting hatch type through the {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter. As you can see, they can be either completely monochrome or colored.
 
-{sample}GAS\_Background\_07{sample}
+{sample}AS\_Background\_07{sample}
 
 ```
   var series0 = chart.bar(series[0]);
@@ -155,4 +155,4 @@ We've got a chart a with 5 series with 5 data points in each. For every series w
 
 In the sample below there are all hatch types shown that are available in AnyChart. Explore the sample in the playground to see all these types' names.
 
-{sample :width 690 :height 680}GAS\_Background\_08{sample}
+{sample :width 690 :height 680}AS\_Background\_08{sample}

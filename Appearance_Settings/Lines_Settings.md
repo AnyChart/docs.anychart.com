@@ -32,7 +32,7 @@ Typical line settings look like:
 
 The sample line chart below shows you the different line settings:
 
-{sample}GAS\_Strokes\_and\_Lines\_01{sample}
+{sample}AS\_Strokes\_and\_Lines\_01{sample}
 
 
 ## Coloring
@@ -83,7 +83,7 @@ You can make line or grid line dashed and tune dash properties:
   series.stroke({color: "yellow", dash: "2 2"});
 ```
 
-{sample}GAS\_Strokes\_and\_Lines\_02{sample}
+{sample}AS\_Strokes\_and\_Lines\_02{sample}
 
 ## Line Opacity
 
@@ -123,4 +123,4 @@ In case you need to change the border of a bar or a column series, you can use t
   markers.stroke("red 0.4");
 ```
 
-{sample}GAS\_Strokes\_and\_Lines\_03{sample}
+{sample}AS\_Strokes\_and\_Lines\_03{sample}

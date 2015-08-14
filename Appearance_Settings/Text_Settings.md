@@ -37,7 +37,7 @@ There's no problem with using AnyChart if your language is not English - AnyChar
 
 There are labels, tooltips and legend in English, French, Portuguese, Spanish, Russian, Chinese and Norwegian on the chart below.
 
-{sample}GAS\_Fonts\_01{sample}
+{sample}AS\_Fonts\_01{sample}
 
 ## HTML
 
@@ -97,7 +97,7 @@ If you want to do a complex formatting of the text - consider using HTML formatt
 
 The sample Pie chart below demonstrates all available tags on slice labels:
 
-{sample}GAS\_Fonts\_02{sample}
+{sample}AS\_Fonts\_02{sample}
 
 ## Text Formatting
 
@@ -178,4 +178,4 @@ Here is a table with all possible methods for controlling the text view.
 
 And here is a sample demonstrating the usage of these parameters:
 
-{sample :width 690 :height 680}GAS\_Fonts\_03{sample}
+{sample :width 690 :height 680}AS\_Fonts\_03{sample}
