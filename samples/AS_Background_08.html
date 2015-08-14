@@ -16,7 +16,7 @@
   chart.yAxis(false);
 
   // create chart and define data
-  chart.bar([
+  var series = chart.bar([
     {
       x: "Backward Diagonal",
       value: 1,
@@ -273,7 +273,9 @@
         color: "gray"
       }
     }
-  ]).fill(null).stroke("#ccc");
+  ]);
+  series.fill("#FFF");
+  series.stroke("#CCC");
   chart.minHeight(600);
   // draw
   chart.container("container");
