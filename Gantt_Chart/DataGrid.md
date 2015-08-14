@@ -70,7 +70,7 @@ title.hAlign("left");
 <a name="inner_content">
 ### Content
 
-Column content can be tuned as well as its title. The easiest way to manage column content is [using presets](./DataGrid_Column_Presets#presets). The advanced one is {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method. It used to define a cell text value formatter, so you can pass your own custom function as an argument.
+Column content can be tuned as well as its title. The easiest way to manage column content is [using presets](./DataGrid_Column_Presets). The advanced one is {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method. It used to define a cell text value formatter, so you can pass your own custom function as an argument.
 ```
 //create a column contains all IDs
 column.textFormatter(function(item) {
