@@ -3,7 +3,7 @@
 * [Columns](#columns)
  * [Columns Set](#columns_set)
  * [Title](#title)
- * [Content](#content)
+ * [Content](#inner_content)
  * [Width](#width)
 * [Visual Settings](#visual_settings)
  * [Interlaced mode](#interlaced_mode)
@@ -38,7 +38,7 @@ var firstColumn = dataGrid.column(10);
 var secondColumn = dataGrid.column(20);
 ```
 
-<br>For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the [Content](#content) topic.
+<br>For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the [Content](#inner_content) topic.
 
 <br> The sample below shows Resource Gantt Chart, note that the third column is created to display the start data value.
 {sample :width 690 :height 190}GANTT\_Chart\_10{sample}
@@ -63,13 +63,14 @@ Each column has its own title, so it is possible to tune the visual appearance o
 ```
 //set title values
 title.text("new column");
-title.fontWeight('bold').fontStyle('italic');
-title.hAlign('left');
+title.fontWeight("bold").fontStyle("italic");
+title.hAlign("left");
 ```
 
+<a name="inner_content">
 ### Content
 
-Column content can be tuned as well as its title with the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method. It used to define a cell text value formatter, so you can pass your own custom function as an argument.
+Column content can be tuned as well as its title. The easiest way to manage column content is [using presets](./DataGrid_Column_Presets#presets). The advanced one is {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method. It used to define a cell text value formatter, so you can pass your own custom function as an argument.
 ```
 //create a column contains all IDs
 column.textFormatter(function(item) {
@@ -99,7 +100,7 @@ function customColumnTextFormatter(item){
 
 <br>Here is a sample with the complex {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api}.
 
-{sample :width 690 :height 200}GANTT\_Chart\_17{sample}
+{sample :width 690 :height 220}GANTT\_Chart\_17{sample}
 
 **Note**: There are several presets for simplifying column content formatting. Please, see [DataGrid Column Presets article](./DataGrid_Column_Presets#presets) for more information.
 
