@@ -25,23 +25,19 @@
 
   // setting Grid settings
   var grid = chart.grid(0);
-  grid.stroke("gray 0.8");
+  grid.stroke("#cecece 0.8");
   grid.layout("vertical");
   var grid1 = chart.grid(1);
-  grid1.stroke("gray 0.8");
+  grid1.stroke("#cecece 0.8");
   grid1.layout("horizontal");
 
   // setting minorGrid settings
   var minorGrid = chart.minorGrid(0);
-  minorGrid.layout("vertical");
+  minorGrid.layout("horizontal");
   minorGrid.oddFill(null);
   minorGrid.evenFill(null);
-  minorGrid.stroke("gray 0.3");
-  var minorGrid1 = chart.minorGrid(1);
-  minorGrid1.layout("horizontal");
-  minorGrid1.oddFill(null);
-  minorGrid1.evenFill(null);
-  minorGrid1.stroke("gray 0.3");
+  minorGrid.enabled(true);
+  minorGrid.stroke("cecece 0.3");
 
   // adding extra Y scale
   var extraYScale = anychart.scales.linear();
@@ -77,17 +73,10 @@
 
   // setting and adjusting data visualisation
   var columnSeries = chart.column(firstSeries);
+  columnSeries.tooltip(false);
   var lineSeries = chart.line(secondSeries);
-
   lineSeries.yScale(extraYScale);
   lineSeries.tooltip(false);
-  var lineMarkers = lineSeries.markers();
-  lineMarkers.size(2);
-  var lineHoverMarkers = lineSeries.hoverMarkers();
-  lineHoverMarkers.size(4);
-
-  columnSeries.tooltip(false);
-  columnSeries.hoverFill("#444444");
   
   chart.container("container");
   chart.draw();

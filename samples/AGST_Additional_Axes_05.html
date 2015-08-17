@@ -6,60 +6,58 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  
   var chart = anychart.cartesian();
-  
+
   chart.title("Extra Axes Units Comparison Sample");
-  
+
   // additional axes settings
   var kelvinScale = anychart.scales.linear();
   kelvinScale.minimum(0);
   kelvinScale.maximum(2000);
   var kelvinTicks = kelvinScale.ticks();
   kelvinTicks.interval(500);
-  var kelvinMinorTicks = kelvinScale.minorTicks();
-  kelvinMinorTicks.interval(100);
-  
+
   var fahrenheitScale = anychart.scales.linear();
   fahrenheitScale.minimum((kelvinScale.minimum() - 273.15)*1.8 + 32);
   fahrenheitScale.maximum((kelvinScale.maximum() - 273.15)*1.8 + 32);
   var fahrenheitTicks = fahrenheitScale.ticks();
   fahrenheitTicks.interval(500);
-  
+
   var celsiusScale = anychart.scales.linear();
   celsiusScale.minimum(kelvinScale.minimum() - 273.15);
   celsiusScale.maximum(kelvinScale.maximum() - 273.15);
   var celsiusTicks = celsiusScale.ticks();
   celsiusTicks.interval(500);
-  var celsiusMinorTicks = celsiusScale.minorTicks();
-  celsiusMinorTicks.interval(100);
-  
+
   var xAxis = chart.xAxis();
   xAxis.scale(fahrenheitScale);
+  xAxis.ticks(true);
   xAxis.drawFirstLabel(false);
   xAxis.drawLastLabel(false);
   xAxis.title("Fahrenheit");
-  
+
   // adjusting axes
   var xAxis1 = chart.xAxis(1);
   xAxis1.title("Celsius");
   xAxis1.orientation("top");
+  xAxis1.ticks(true);
   xAxis1.drawFirstLabel(false);
   xAxis1.drawLastLabel(false);
   xAxis1.scale(celsiusScale);
-  
+
   var xAxis2 = chart.xAxis(2);
   xAxis2.scale(kelvinScale);
+  xAxis2.ticks(true);
   xAxis2.orientation("top");
   xAxis2.title("Kelvin");
-  
+
   // adding grid
   var grid = chart.grid();
   grid.stroke("#CECECE");
   grid.layout("horizontal");
   grid.evenFill(null);
   grid.oddFill(null);
-  
+
   // setting data
   var data = anychart.data.set([
     ["Absolute Zero", 0],
@@ -76,7 +74,7 @@
   yScale.inverted(true);
   var yAxisTitle = chart.yAxis().title();
   yAxisTitle.enabled(false);
-  
+
   // setting and adjusting data visualisation
   var markerSeries = chart.marker(data.mapAs({x: [1], value: [0]}));
   var markerTooltip = markerSeries.tooltip();
@@ -89,16 +87,16 @@
   markerSeries.xScale(kelvinScale);
   markerSeries.size(5);
   markerSeries.hoverSize(7);
-  
+
   var lineMarker = chart.lineMarker();
-  lineMarker.stroke("1 red");
+  lineMarker.stroke("#FF0000");
   lineMarker.layout("vertical");
   lineMarker.scale(celsiusScale);
   var lineMarker1 = chart.lineMarker(1);
-  lineMarker1.stroke("1 green");
+  lineMarker1.stroke("#00AA00");
   lineMarker1.layout("vertical");
   lineMarker1.scale(fahrenheitScale);
-  
+
   chart.padding(0,20,0,0);
   chart.container("container");
   chart.draw();

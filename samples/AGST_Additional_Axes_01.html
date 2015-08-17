@@ -25,7 +25,6 @@
   // adjusting xAxis title
   var xAxisTitle = chart.xAxis().title();
   xAxisTitle.text("Sample X axis name");
-  xAxisTitle.fontWeight("400");
 
   // adjusting yAxes titles
   var yAxis1 = chart.yAxis(1);
@@ -43,7 +42,8 @@
   ticks.interval(100000);
 
   // draw
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

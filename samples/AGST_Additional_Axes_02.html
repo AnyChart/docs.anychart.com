@@ -6,68 +6,70 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  
   var chart = anychart.scatter();
-  
+
   chart.title("Extra X and Y Axes Simple Sample");
-  
+
   // setting xScale settings
   var xScale = chart.xScale();
   xScale.minimum(-10);
   var xScaleTicks = chart.xScale().ticks();
   xScaleTicks.interval(10);
-  var xScaleMinorTicks = chart.xScale().minorTicks();
-  xScaleMinorTicks.interval(2);
-  
+
   // adding and adjusting extra X scale
   var extraXScale = anychart.scales.linear();
   extraXScale.minimum(-1000);
   var extraXScaleTicks = extraXScale.ticks();
   extraXScaleTicks.interval(5000);
-  
+
   // adding extra Y scale
   var extraYScale = anychart.scales.linear();
-  
+
   // setting yScale settings
   var yTicks = chart.yScale().ticks();
   yTicks.interval(0.5);
-  
+
   // set yAxis settings
   var yAxis = chart.yAxis(0);
   yAxis.stroke("red");
   yAxis.staggerMode(false);
   var yAxisTicks = chart.yAxis(0).ticks();
   yAxisTicks.stroke("red");
-  var yAxisMinorTicks = chart.yAxis(0).minorTicks();
-  yAxisMinorTicks.stroke("red");
+  yAxisTicks.enabled(true);
   var yAxisLabels = chart.yAxis(0).labels();
   yAxisLabels.fontColor("red");
   var yAxisTitle = chart.yAxis(0).title();
-  yAxisTitle.text("Amplitude"); 
+  yAxisTitle.text("Amplitude");
+  yAxisTitle.enabled(true);
   yAxisTitle.fontColor("red");
   var yAxis1 = chart.yAxis(1);
+  var yAxisTicks1 = chart.yAxis(1).ticks();
+  yAxisTicks1.enabled(true);
   yAxis1.orientation("right");
   yAxis1.scale(extraYScale);
   yAxis1.title("Amplitude");
-  
+
   // setting xAxis settings
   var xAxis = chart.xAxis(0);
   xAxis.stroke("red");
   var xAxisTicks = chart.xAxis(0).ticks();
   xAxisTicks.stroke("red");
-  var xAxisMinorTicks = chart.xAxis(0).minorTicks();
-  xAxisMinorTicks.stroke("red");
+  xAxisTicks.enabled(true);
   var xAxisLabels = chart.xAxis(0).labels();
   xAxisLabels.fontColor("red");
   var xAxisTitle = xAxis.title();
   xAxisTitle.text("Time msec");
   xAxisTitle.fontColor("red");
+  xAxisTitle.enabled(true);
   var xAxis1 = chart.xAxis(1);
+  var xAxisTicks1 = chart.xAxis(1).ticks();
+  xAxisTicks1.enabled(true);
+  xAxis1.drawFirstLabel(false);
   xAxis1.orientation("top");
   xAxis1.staggerMode(false);
   xAxis1.scale(extraXScale);
   xAxis1.title("Time Sec");
-  
+
   // setting first series of data
   var firstSeries = anychart.data.set([
     [0, 2],
@@ -112,7 +114,7 @@
     [39, 0.0260139446204817],
     [40, -0.0635179106335488]
   ]);
-  
+
   // setting second series of data
   var secondSeries = anychart.data.set([
     [1000, 0.00100000],
@@ -157,9 +159,8 @@
     [20500, 0.00004878],
     [21000, 0.00004762]
   ]);
-  
+
   // setting and adjusting data visualisation
-  
   var blackSeries = chart.line(secondSeries);
   blackSeries.yScale(extraYScale);
   blackSeries.xScale(extraXScale);
@@ -169,16 +170,16 @@
   blackMarkers.enabled(true);
   blackMarkers.size(1);
   blackMarkers.fill("black");
-  blackMarkers.stroke("1 #000");
   var blackHoverMarkers = blackSeries.hoverMarkers();
   blackHoverMarkers.size(3);
   blackHoverMarkers.fill("black");
   blackHoverMarkers.stroke("black");
   var blackTooltip = blackSeries.tooltip();
+  blackTooltip.title(false);
   blackTooltip.contentFormatter(function() {
     return "(x,y) = (" + this.x + ".00," + this.value + ")";
   });
-  
+
   var redSeries = chart.line(firstSeries);
   redSeries.stroke("red", 3);
   redSeries.hoverStroke("red", 3);
@@ -191,20 +192,28 @@
   redHoverMarkers.size(3);
   redHoverMarkers.fill("red");
   redHoverMarkers.stroke("red");
-  var tooltipContent = redSeries.tooltip().content();
-  tooltipContent.fontColor("red");
   var redTooltip = redSeries.tooltip();
+  redTooltip.title(false);
   redTooltip.contentFormatter(function() {
     var value = this.value;
     return "(x,y) = (" + this.x + ".00," + value.toFixed(2) + ")";
   });
-  
+
   // adding red ling to emphasize zero of extra axis
   var lineMarker = chart.lineMarker();
   lineMarker.stroke("1 red");
   lineMarker.layout("vertical");
   lineMarker.scale(extraXScale);
-  
+
+  var varticalGrid = chart.grid(0);
+  varticalGrid.stroke("red 0.3");
+  varticalGrid.layout("vertical");
+  varticalGrid.enabled(true);
+  var horizontalGrid = chart.grid(2);
+  horizontalGrid.stroke("red 0.3");
+  horizontalGrid.layout("horizontal");
+  horizontalGrid.enabled(true);
+
   chart.container("container");
   chart.draw();
 });</script>
