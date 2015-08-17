@@ -237,6 +237,7 @@
   columnSeries.hoverStroke("#FFF", 1);
   columnSeries.hoverFill(["#FF0000", "#880000"], -90);
   var columnTooltip = columnSeries.tooltip();
+  columnTooltip.title(false);
   columnTooltip.contentFormatter(function() {
     var value = (this.value/1000000000).toFixed(0);
     if (value > 999)

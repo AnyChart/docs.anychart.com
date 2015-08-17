@@ -78,6 +78,7 @@
   // setting and adjusting data visualisation
   var markerSeries = chart.marker(data.mapAs({x: [1], value: [0]}));
   var markerTooltip = markerSeries.tooltip();
+  markerTooltip.title(false);
   markerTooltip.contentFormatter(function(){
     return this.value+
       "\nKelvin: "+ (this.x).toFixed(2) +
