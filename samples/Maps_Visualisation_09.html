@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="http://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/geodata/countries/aus/australia.js" data-export="true"></script>
+    <script x-export="stage">
+anychart.onDocumentReady(function() {
+    var firstDataSet = anychart.data.set([
+        {id: "AU.CT", value: 15, title: "Australian Capital Territory"},
+        {id: "AU.VI", value: 23, title: "Victoria"},
+        {id: "AU.NT", value: 64, title: "Northern Territory"},
+        {id: "AU.TS", value: 28, title: "Tasmania"},
+        {id: "AU.SA", value: 45, title: "South Australian"}
+    ]);
+
+    var secondDataSet = anychart.data.set([
+        {id: "AU.WA", value: 86, title: "Western Australia"},
+        {id: "AU.QL", value: 16, title: "Queensland"},
+        {id: "AU.NS", value: 32, title: "New South Wales"}
+    ]);
+
+    var firstDataSetForSeries = firstDataSet.mapAs({id: "id"});
+    var secondDataSetForSeries = secondDataSet.mapAs({id: "id"});
+    
+    var australiaMap = anychart.map();
+    australiaMap.geoData(anychart.maps.australia);
+    
+    // create the color scale
+    var currentColorScale = anychart.scales.linearColor();
+    // Sets colors.
+    currentColorScale.colors(["#BDBDBD", "#424242"]);
+	
+	// create the first series
+    var firstSeries = australiaMap.choropleth(firstDataSetForSeries);
+    firstSeries.geoIdField("code_hasc");
+
+	// create the second series
+    var secondSeries = australiaMap.choropleth(secondDataSetForSeries);
+    secondSeries.geoIdField("code_hasc");
+    
+	// define the colorscale for both series 
+    firstSeries.colorScale(currentColorScale);
+    secondSeries.colorScale(currentColorScale);
+
+    australiaMap.container("container");
+    australiaMap.draw();
+});
+     </script>
+
+</head>
+<body>
+<div id="container" style="width: 700px; height: 450px; border:1px solid black"></div>
+</body>
+</html>
