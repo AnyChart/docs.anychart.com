@@ -7,7 +7,7 @@
 
 ## Overview
    
-Orientation depends on plot type and inversion of axes, below you will find all possible axes {api:anychart.core.axes.Linear#orientation}orientation{api} and inverting JS Settings with demonstration preview.
+Orientation depends on plot type and inversion of axes, below you will find all possible axes {api:anychart.core.axes.Linear#orientation}orientation{api} and {api:anychart.scales.Linear#inverted}inverting{api} JS Settings with demonstration preview.
   
 Though these settings are demonstrated using {api:anychart.core.cartesian.series.Bar}Bar{api}/{api:anychart.core.cartesian.series.Column}Column{api} charts - they work for all other chart types.
 
