@@ -32,6 +32,10 @@
   // position of y axis changer. Now y is on the right
   var yAxis = chart.yAxis();
   yAxis.orientation("right");
+  
+  // set x axis position. This position is set by default
+  var xAxis = chart.xAxis();
+  xAxis.orientation("bottom");
 
   chart.container("container");
   chart.draw();

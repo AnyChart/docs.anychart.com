@@ -25,6 +25,15 @@
   // define chart type
   chart.bar(data);
 
+  var xAxis = chart.xAxis();
+  xAxis.orientation("bottom");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("left");
+  var xScale = chart.xScale();
+  xScale.inverted(false);
+  var yScale = chart.yScale();
+  yScale.inverted(false);
+
   chart.container("container");
   chart.draw();
 });</script>

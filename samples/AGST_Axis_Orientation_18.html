@@ -32,6 +32,11 @@
   // inverts x scale. Now all elements has inverted (from top to bottom) direction
   var xScale = chart.xScale();
   xScale.inverted(true);
+  
+  var xAxis = chart.xAxis();
+  xAxis.orientation("bottom");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("left");
 
   chart.container("container");
   chart.draw();

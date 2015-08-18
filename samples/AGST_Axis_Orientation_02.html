@@ -28,6 +28,14 @@
   // inverts x scale. Now all elements has inverted (from right to left) direction
   var xScale = chart.xScale();
   xScale.inverted(true);
+      
+  // set y axis position. This position is set by default
+  var yAxis = chart.yAxis();
+  yAxis.orientation("left");
+  
+  // set x axis position. This position is set by default
+  var xAxis = chart.xAxis();
+  xAxis.orientation("bottom");
 
   chart.container("container");
   chart.draw();

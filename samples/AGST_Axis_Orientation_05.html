@@ -29,6 +29,14 @@
   var yScale = chart.yScale();
   yScale.inverted(true);
 
+  // set y axis position. This position is set by default
+  var yAxis = chart.yAxis();
+  yAxis.orientation("left");
+  
+  // set x axis position. This position is set by default
+  var xAxis = chart.xAxis();
+  xAxis.orientation("bottom");
+
   chart.container("container");
   chart.draw();
 });</script>
