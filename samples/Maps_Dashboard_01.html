@@ -9,9 +9,6 @@
     <script src="http://cdn.anychart.com/geodata/countries/aus/australia.js" data-export="true"></script>
     <script x-export="stage">
         anychart.onDocumentReady(function() {
-		
-            stage = anychart.graphics.create("container");
-			
             var dataSet = anychart.data.set([
                 ['AU.WA', 300],
                 ['AU.JB', 230],
@@ -28,11 +25,11 @@
             var chartDataSet = dataSet.mapAs({x: [0], value: [1]});
             var mapDataSet = dataSet.mapAs({id: [0], value: [1]});
 
+            stage = anychart.graphics.create("container");
             var mapChart = anychart.map();
             mapChart.geoData(anychart.maps.australia);
             mapChart.container(stage);
             mapChart.title('Australia Map');
-			
             // set the series
             var series = mapChart.choropleth(mapDataSet);
             series.geoIdField('code_hasc');
@@ -41,16 +38,14 @@
             series.labels(false);
             mapChart.bounds(0, 0, '100%', '70%');
             mapChart.draw();
-			
-			// setting the area chart
+
             var areaChart = anychart.area();
             areaChart.container(stage);
             areaChart.title('Spline-Area Chart');
             areaChart.bounds(0, '70%', '100%', '30%');
             areaChart.splineArea(chartDataSet);
             areaChart.draw();
-			
-			// editing the y-scale on the area chart
+
             var yAreaScale = areaChart.yScale();
             yAreaScale.minimum(0);
             yAreaScale.maximum(350);

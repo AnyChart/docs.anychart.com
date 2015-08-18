@@ -1,6 +1,6 @@
 {:index 2}
 # ColorRange
-
+======================
 * [Overview](#overview)
 * [Scale Types](#scale_types)
  * [Ordinal ColorScale](#ordinal_colorscale)
@@ -410,31 +410,6 @@ Now let's change our marker's color and size:
 ```
 
 {sample}Maps\_ColorRange\_20{sample}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
