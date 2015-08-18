@@ -8,18 +8,18 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // define chart
-  var chart = anychart.cartesianChart();
-  
+  var chart = anychart.cartesian();
+
   var margin = chart.margin();
-  margin.bottom(30);
+  margin.top(30);
   margin.left(30);
 
   // setting data
   var data = anychart.data.set([
-    ["A", 4],
-    ["B", 3],
-    ["C", 2],
-    ["D", 1]
+      ["A", 4],
+      ["B", 3],
+      ["C", 2],
+      ["D", 1]
   ]);
 
   // define chart type
@@ -28,22 +28,6 @@
   // position of y axis changer. Now y is on the right
   var yAxis = chart.yAxis();
   yAxis.orientation("right");
-
-  // position of x axis changer. Now x is on the top
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
-
-  // inverts y scale. Now all elements has inverted (from right to left) direction
-  var yScale = chart.yScale();
-  yScale.inverted(true);
-
-  // disabling all ticks
-  var xTicks = chart.xAxis().ticks();
-  xTicks.enabled(false);
-  var yMinorTicks = chart.yAxis().minorTicks();
-  yMinorTicks.enabled(false);
-  var yTicks = chart.yAxis().ticks();
-  yTicks.enabled(false);
 
   chart.container("container");
   chart.draw();

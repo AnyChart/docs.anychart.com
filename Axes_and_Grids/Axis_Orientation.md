@@ -20,209 +20,277 @@ Though these settings are demonstrated using {api:anychart.core.cartesian.series
 </tr>
 <tr>
 <td>
-{sample}AGST\_Axis\_Position\_01{sample}
+{sample}AGST\_Axis\_Orientation\_01{sample}
 </td>
 <td>
 ```
-chart.xAxis().orientation('bottom');
-chart.yAxis().orientation('left');
-chart.xScale().inverted(false);
-chart.yScale().inverted(false);
-```
-</td>
-</tr>
-<tr>
-<td>
-{sample}AGST\_Axis\_Position\_02{sample}
-</td>
-<td>
-```
-chart.xAxis().orientation('bottom');
-chart.yAxis().orientation('left');
-chart.xScale().inverted(true);
-chart.yScale().inverted(false);
+  // set x axis position. This position is set by default
+  var xAxis = chart.xAxis();
+  xAxis.orientation("bottom");
+
+  // set y axis position. This position is set by default
+  var yAxis = chart.yAxis();
+  yAxis.orientation("left");
+
+  var xScale = chart.xScale();
+  xScale.inverted(false);
+  var yScale = chart.yScale();
+  yScale.inverted(false);
 ```
 </td>
 </tr>
 <tr>
 <td>
-{sample}AGST\_Axis\_Position\_03{sample}
+{sample}AGST\_Axis\_Orientation\_02{sample}
 </td>
 <td>
 ```
-chart.xAxis().orientation('top');
-chart.yAxis().orientation('left');
-chart.xScale().inverted(false);
-chart.yScale().inverted(false);
-```
-</td>
-</tr>
-<tr>
-<td>
-{sample}AGST\_Axis\_Position\_04{sample}
-</td>
-<td>
-```
-chart.xAxis().orientation('top');
-chart.yAxis().orientation('left');
-chart.xScale().inverted(true);
-chart.yScale().inverted(false);
+  var xAxis = chart.xAxis();
+  xAxis.orientation("bottom");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("left");
+  var xScale = chart.xScale();
+  xScale.inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(false);
 ```
 </td>
 </tr>
 <tr>
 <td>
-{sample}AGST\_Axis\_Position\_05{sample}
+{sample}AGST\_Axis\_Orientation\_03{sample}
 </td>
 <td>
 ```
-chart.xAxis().orientation('bottom');
-chart.yAxis().orientation('left');
-chart.xScale().inverted(true);
-chart.yScale().inverted(false);
-```
-</td>
-</tr>
-<tr>
-<td>
-{sample}AGST\_Axis\_Position\_06{sample}
-</td>
-<td>
-```
-chart.xAxis().orientation('bottom');
-chart.yAxis().orientation('left');
-chart.xScale().inverted(true);
-chart.yScale().inverted(true);
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("left");
+  var xScale = chart.xScale();
+  xScale.inverted(false);
+  var yScale = chart.yScale();
+  yScale.inverted(false);
 ```
 </td>
 </tr>
 <tr>
 <td>
-{sample}AGST\_Axis\_Position\_07{sample}
+{sample}AGST\_Axis\_Orientation\_04{sample}
 </td>
 <td>
 ```
-chart.xAxis().orientation('top');
-chart.yAxis().orientation('left');
-chart.xScale().inverted(false);
-chart.yScale().inverted(true);
-```
-</td>
-</tr>
-<tr>
-<td>
-{sample}AGST\_Axis\_Position\_08{sample}
-</td>
-<td>
-```
-chart.xAxis().orientation('top');
-chart.yAxis().orientation('left');
-chart.xScale().inverted(true);
-chart.yScale().inverted(true);
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("left");
+  var xScale = chart.xScale();
+  xScale.inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(false);
 ```
 </td>
 </tr>
 <tr>
 <td>
-{sample}AGST\_Axis\_Position\_09{sample}
+{sample}AGST\_Axis\_Orientation\_05{sample}
 </td>
 <td>
 ```
-chart.xAxis().orientation('bottom');
-chart.yAxis().orientation('right');
-chart.xScale().inverted(false);
-chart.yScale().inverted(false);
-```
-</td>
-</tr>
-<tr>
-<td>
-{sample}AGST\_Axis\_Position\_10{sample}
-</td>
-<td>
-```
-chart.xAxis().orientation('bottom');
-chart.yAxis().orientation('right');
-chart.xScale().inverted(true);
-chart.yScale().inverted(false);
+  var xAxis = chart.xAxis();
+  xAxis.orientation("bottom");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("left");
+  var xScale = chart.xScale();
+  xScale.inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(false);
 ```
 </td>
 </tr>
 <tr>
 <td>
-{sample}AGST\_Axis\_Position\_11{sample}
+{sample}AGST\_Axis\_Orientation\_06{sample}
 </td>
 <td>
 ```
-chart.xAxis().orientation('top');
-chart.yAxis().orientation('right');
-chart.xScale().inverted(false);
-chart.yScale().inverted(false);
-```
-</td>
-</tr>
-<tr>
-<td>
-{sample}AGST\_Axis\_Position\_12{sample}
-</td>
-<td>
-```
-chart.xAxis().orientation('top');
-chart.yAxis().orientation('right');
-chart.xScale().inverted(true);
-chart.yScale().inverted(false);
+  var xAxis = chart.xAxis();
+  xAxis.orientation("bottom");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("left");
+  var xScale = chart.xScale();
+  xScale.inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 ```
 </td>
 </tr>
 <tr>
 <td>
-{sample}AGST\_Axis\_Position\_13{sample}
+{sample}AGST\_Axis\_Orientation\_07{sample}
 </td>
 <td>
 ```
-chart.xAxis().orientation('bottom');
-chart.yAxis().orientation('right');
-chart.xScale().inverted(false);
-chart.yScale().inverted(true);
-```
-</td>
-</tr>
-<tr>
-<td>
-{sample}AGST\_Axis\_Position\_14{sample}
-</td>
-<td>
-```
-chart.xAxis().orientation('bottom');
-chart.yAxis().orientation('right');
-chart.xScale().inverted(true);
-chart.yScale().inverted(true);
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("left");
+  var xScale = chart.xScale();
+  xScale.inverted(false);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 ```
 </td>
 </tr>
 <tr>
 <td>
-{sample}AGST\_Axis\_Position\_15{sample}
+{sample}AGST\_Axis\_Orientation\_08{sample}
 </td>
 <td>
 ```
-chart.xAxis().orientation('top');
-chart.yAxis().orientation('right');
-chart.xScale().inverted(false);
-chart.yScale().inverted(true);
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("left");
+  var xScale = chart.xScale();
+  xScale.inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 ```
 </td>
 </tr>
 <tr>
 <td>
-{sample}AGST\_Axis\_Position\_16{sample}
+{sample}AGST\_Axis\_Orientation\_09{sample}
 </td>
 <td>
 ```
-chart.xAxis().orientation('top');
-chart.yAxis().orientation('right');
-chart.xScale().inverted(true);
-chart.yScale().inverted(true);
+  var xAxis = chart.xAxis();
+  xAxis.orientation("bottom");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
+  var xScale = chart.xScale();
+  xScale.inverted(false);
+  var yScale = chart.yScale();
+  yScale.inverted(false);
+```
+</td>
+</tr>
+<tr>
+<td>
+{sample}AGST\_Axis\_Orientation\_10{sample}
+</td>
+<td>
+```
+  var xAxis = chart.xAxis();
+  xAxis.orientation("bottom");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
+  var xScale = chart.xScale();
+  xScale.inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(false);
+```
+</td>
+</tr>
+<tr>
+<td>
+{sample}AGST\_Axis\_Orientation\_11{sample}
+</td>
+<td>
+```
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
+  var xScale = chart.xScale();
+  xScale.inverted(false);
+  var yScale = chart.yScale();
+  yScale.inverted(false);
+```
+</td>
+</tr>
+<tr>
+<td>
+{sample}AGST\_Axis\_Orientation\_12{sample}
+</td>
+<td>
+```
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
+  var xScale = chart.xScale();
+  xScale.inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(false);
+```
+</td>
+</tr>
+<tr>
+<td>
+{sample}AGST\_Axis\_Orientation\_13{sample}
+</td>
+<td>
+```
+  var xAxis = chart.xAxis();
+  xAxis.orientation("bottom");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
+  var xScale = chart.xScale();
+  xScale.inverted(false);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
+```
+</td>
+</tr>
+<tr>
+<td>
+{sample}AGST\_Axis\_Orientation\_14{sample}
+</td>
+<td>
+```
+  var xAxis = chart.xAxis();
+  xAxis.orientation("bottom");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
+  var xScale = chart.xScale();
+  xScale.inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
+```
+</td>
+</tr>
+<tr>
+<td>
+{sample}AGST\_Axis\_Orientation\_15{sample}
+</td>
+<td>
+```
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
+  var xScale = chart.xScale();
+  xScale.inverted(false);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
+```
+</td>
+</tr>
+<tr>
+<td>
+{sample}AGST\_Axis\_Orientation\_16{sample}
+</td>
+<td>
+```
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
+  var xScale = chart.xScale();
+  xScale.inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 ```
 </td>
 </tr>
@@ -241,54 +309,70 @@ Here are some samples of Bar chart Axes orientation
 </tr>
 <tr>
 <td>
-{sample}AGST\_Axis\_Position\_17{sample}
+{sample}AGST\_Axis\_Orientation\_17{sample}
 </td>
 <td>
 ```
-chart.xAxis().orientation('bottom');
-chart.yAxis().orientation('left');
-chart.xScale().inverted(false);
-chart.yScale().inverted(false);
-```
-</td>
-</tr>
-<tr>
-<td>
-{sample}AGST\_Axis\_Position\_18{sample}
-</td>
-<td>
-```
-chart.xAxis().orientation('bottom');
-chart.yAxis().orientation('left');
-chart.xScale().inverted(true);
-chart.yScale().inverted(true);
+  var xAxis = chart.xAxis();
+  xAxis.orientation("bottom");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("left");
+  var xScale = chart.xScale();
+  xScale.inverted(false);
+  var yScale = chart.yScale();
+  yScale.inverted(false);
 ```
 </td>
 </tr>
 <tr>
 <td>
-{sample}AGST\_Axis\_Position\_19{sample}
+{sample}AGST\_Axis\_Orientation\_18{sample}
 </td>
 <td>
 ```
-chart.xAxis().orientation('top');
-chart.yAxis().orientation('right');
-chart.xScale().inverted(false);
-chart.yScale().inverted(false);
+  var xAxis = chart.xAxis();
+  xAxis.orientation("bottom");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("left");
+  var xScale = chart.xScale();
+  xScale.inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
+```
+</td>
+</tr>
+<tr>
+<td>
+{sample}AGST\_Axis\_Orientation\_19{sample}
+</td>
+<td>
+```
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
+  var xScale = chart.xScale();
+  xScale.inverted(false);
+  var yScale = chart.yScale();
+  yScale.inverted(false);
 
 ```
 </td>
 </tr>
 <tr>
 <td>
-{sample}AGST\_Axis\_Position\_20{sample}
+{sample}AGST\_Axis\_Orientation\_20{sample}
 </td>
 <td>
 ```
-chart.xAxis().orientation('top');
-chart.yAxis().orientation('right');
-chart.xScale().inverted(true);
-chart.yScale().inverted(true);
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
+  var xScale = chart.xScale();
+  xScale.inverted(true);
+  var yScale = chart.yScale();
+  yScale.inverted(true);
 ```
 </td>
 </tr>

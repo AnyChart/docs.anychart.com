@@ -8,7 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // define chart
-  var chart = anychart.cartesianChart();
+  var chart = anychart.cartesian();
   
   var margin = chart.margin();
   margin.top(30);
@@ -32,14 +32,6 @@
   // inverts x scale. Now all elements has inverted (from top to bottom) direction
   var xScale = chart.xScale();
   xScale.inverted(true);
-
-  // disabling all ticks
-  var xTicks = chart.xAxis().ticks();
-  xTicks.enabled(false);
-  var yMinorTicks = chart.yAxis().minorTicks();
-  yMinorTicks.enabled(false);
-  var yTicks = chart.yAxis().ticks();
-  yTicks.enabled(false);
 
   chart.container("container");
   chart.draw();
