@@ -17,7 +17,7 @@
     ["March" , 10000],
     ["April" , 11000],
     ["May" , 19000]
-  ]).tooltip().enabled(true);
+  ]);
 
   var yScale = chart.yScale();
   yScale.minimum(8000);
@@ -58,8 +58,8 @@
     return "€ " + value;
   });
 
-  var xTitle = chart.xAxis().title();
-  xTitle.text("Month");
+  var xAxis = chart.xAxis();
+  xAxis.title("Month");
 
   // limits length of x axis labels to 3 or less
   chart.xAxis().labels().textFormatter(function(){
@@ -69,7 +69,7 @@
   });
 
   function dollarFormatter() {
-      return "$" + (this.value/1000) + " 000 USD";
+    return "$" + (this.value/1000) + " 000 USD";
   }
 
   chart.container("container");

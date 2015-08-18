@@ -31,10 +31,10 @@
   yLabels.textWrap(true);
   yLabels.textFormatter(dollarFormatter);
   // set axes title
-  var yTitle = chart.yAxis().title();
-  yTitle.text("Revenue in US Dollars");
-  var xTitle = chart.xAxis().title();
-  xTitle.text("Month");
+  var yAxis = chart.yAxis();
+  yAxis.title("Revenue in US Dollars");
+  var xAxis = chart.xAxis();
+  xAxis.title("Month");
 
   var xLabels = chart.xAxis().labels();
   xLabels.fontFamily("Courier");

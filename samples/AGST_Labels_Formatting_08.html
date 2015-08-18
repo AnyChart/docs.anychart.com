@@ -41,12 +41,6 @@
   // force labels to hide value, if the previous one is too big, set text position to center
   var xAxis = chart.xAxis();
   xAxis.overlapMode(false);
-  xAxis.staggerLines(1);
-  var xLabels = chart.xAxis().labels();
-  xLabels.hAlign("center");
-  xLabels.width("100%");
-  var yMinorTicks = chart.yAxis().minorTicks();
-  yMinorTicks.enabled(false);
 
   // draw chart
   chart.container("container");

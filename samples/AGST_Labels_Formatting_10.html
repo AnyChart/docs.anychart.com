@@ -14,10 +14,10 @@
 
   // seting data
   chart.bar([
-    ["People's Republic of China", 1336717952],
+    ["People's\nRepublic\nof China", 1336717952],
     ["India", 1189172864],
-    ["United States of America", 313232032],
-    ["Russian Federation", 138739888],
+    ["United\nStates of\nAmerica", 313232032],
+    ["Russian\nFederation", 138739888],
     ["Japan", 126475664]
   ]);
 
@@ -38,14 +38,9 @@
     return value;
   });
   var xLabels = chart.xAxis().labels();
-  xLabels.width(60);
+  xLabels.textWrap(true);
+  xLabels.width(75);
   xLabels.hAlign("right");
-
-  var yMinorTicks = chart.yAxis().minorTicks();
-  yMinorTicks.enabled(false);
-  
-  var xAxis = chart.xAxis();
-  xAxis.staggerLines(1);
 
   // draw chart
   chart.container("container");

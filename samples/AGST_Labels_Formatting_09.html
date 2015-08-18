@@ -38,12 +38,9 @@
     return value;
   });
   var xLabels = chart.xAxis().labels();
+  xLabels.textWrap(true);
   xLabels.hAlign("center");
   xLabels.width(60);
-  var yMinorTicks = chart.yAxis().minorTicks();
-  yMinorTicks.enabled(false);
-  var xAxis = chart.xAxis();
-  xAxis.staggerLines(1);
 
   // draw chart
   chart.container("container");

@@ -19,21 +19,12 @@
   // first chart
   var firstChart = anychart.column();
 
-  // disabling title
-  firstChart.title(false);
-
   // setting stroke for chart contaoner
   var firstBackground = firstChart.background();
   firstBackground.stroke("#CCCCCC");
 
   // setting position and bounds
   firstChart.bounds(0, "10%", "100%", "45%");
-
-  // disabling titles for Axes
-  var firstYAxis = firstChart.yAxis();
-  firstYAxis.title(false);
-  var firstXAxis = firstChart.xAxis();
-  firstXAxis.title(false);
 
   // formatting labels value using function
   var firstYLabels = firstChart.yAxis().labels();
@@ -55,17 +46,10 @@
   // second chart
   var secondChart = anychart.column();
 
-  // disabling title and adjusting chart container position
-  secondChart.title(false);
+  // adjusting chart container position
   secondChart.bounds(0, "55%", "100%", "45%");
   var secondBackground = secondChart.background();
   secondBackground.stroke("#CCCCCC");
-
-  // disabling axes titles
-  var secondYAxis = secondChart.yAxis();
-  secondYAxis.title(false);
-  var secondXAxis = secondChart.xAxis();
-  secondXAxis.title(false);
 
   // adjusting axis labels using function
   var secondYLabels = secondChart.yAxis().labels();

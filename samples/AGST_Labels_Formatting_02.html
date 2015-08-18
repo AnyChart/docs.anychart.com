@@ -58,8 +58,8 @@
     return "€ " + value;
   });
 
-  var xTitle = chart.xAxis().title();
-  xTitle.text("Month");
+  var xAxis = chart.xAxis();
+  xAxis.title("Month");
 
   function dollarFormatter() {
     return "$" + (this.value/1000) + " 000 USD";
