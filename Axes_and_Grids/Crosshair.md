@@ -52,7 +52,8 @@ In some situations you may not need one or both lines but highlighted labels are
 
 ```
   // remove the x-axis line
-  chart.crosshair().xStroke(null); 
+  var crosshair = chart.crosshair();
+  crosshair.xStroke(null); 
 ```
 {sample}AGST\_Crosshair\_03{sample}
 
@@ -64,7 +65,8 @@ Use the standard function to disable the axes labels.
 
 ```
   // disable the crosshair yLabels
-  chart.crosshair().yLabel(false);
+  var crosshair = chart.crosshair();
+  crosshair.yLabel(false);
 ```
 {sample}AGST\_Crosshair\_04{sample}
 
