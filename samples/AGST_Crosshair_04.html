@@ -1,0 +1,77 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+  // create data set on our data
+  var dataSet = anychart.data.set([
+    ["P1" , 3.6 , 2.3],
+    ["P2" , 7.1 , 4.0],
+    ["P3" , 8.5 , 6.2],
+    ["P4" , 9.2 , 11.8],
+    ["P5" , 10.1, 13.0],
+    ["P6" , 11.6, 13.9],
+    ["P7" , 16.4, 18.0],
+    ["P8" , 18.0, 23.3],
+    ["P9" , 13.2, 24.7],
+    ["P10", 12.0, 18.0],
+    ["P11", 3.2 , 15.1],
+    ["P12", 4.1 , 11.3],
+    ["P13", 6.3 , 14.2],
+    ["P14", 9.4 , 13.7],
+    ["P15", 11.5, 9.9],
+    ["P16", 13.5, 12.1],
+    ["P17", 14.8, 13.5],
+    ["P18", 16.6, 15.1],
+    ["P19", 18.1, 17.9],
+    ["P20", 17.0, 18.9]
+  ]);
+
+  // create line chart
+  var chart = anychart.column();
+  
+  var crosshair = chart.crosshair();
+  // the same as above
+  crosshair.enabled(true);
+  // disable the x-axis labels
+  crosshair.yLabel(false);
+  
+  // adding and adjusting extra Y scale
+  var extraYScale = anychart.scales.linear();
+  extraYScale.minimum(0);
+  extraYScale.maximum(100);
+  var extraTicks = extraYScale.ticks();
+  extraTicks.interval(10);
+
+  // adding and adjusting extra X axis
+  var extraYAxis = chart.yAxis(1);
+  extraYAxis.orientation("right");
+  extraLabels.scale(extraYScale);
+  var extraLabels = extraYAxis.labels();
+  extraLabels.textFormatter(function(){
+    return (this.value+"%");
+  });
+  
+  // turn on chart animation
+  chart.animation(true);
+
+  // set chart title text settings
+  chart.title("Column Chart with a Crosshair");
+
+  // create first series with mapped data
+  chart.column(dataSet.mapAs({x: [0], value: [1]}));
+  chart.column(dataSet.mapAs({x: [0], value: [2]}));
+
+  // set container id for the chart
+  chart.container("container");
+  // initiate chart drawing
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
