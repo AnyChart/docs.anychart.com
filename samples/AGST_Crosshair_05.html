@@ -22,7 +22,7 @@
   xCrossLabel.textFormatter(function(){
     return this.value + "min."
   });
-  
+
   chart.title("Sample Scatter Graph");
 
   var xScale = chart.xScale();
@@ -278,8 +278,7 @@
   tooltip.contentFormatter(function() {
     return "Waiting Time: " + this.value + " min.\nDuration: " + this.x + " min.";
   });
-
-
+      
   chart.container("container");
   chart.draw();
 });</script>

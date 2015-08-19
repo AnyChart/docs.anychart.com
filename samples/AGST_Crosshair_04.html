@@ -49,7 +49,7 @@
   // adding and adjusting extra X axis
   var extraYAxis = chart.yAxis(1);
   extraYAxis.orientation("right");
-  extraLabels.scale(extraYScale);
+  extraYAxis.scale(extraYScale);
   var extraLabels = extraYAxis.labels();
   extraLabels.textFormatter(function(){
     return (this.value+"%");

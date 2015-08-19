@@ -9,6 +9,46 @@
 
   // define chart
   var chart = anychart.scatter();
+  
+  // crosshair settings
+  var crosshair = chart.crosshair();
+  // enable crosshair
+  crosshair.enabled(true);
+  // set custom function for formatting x crossshair label
+  var xCrossLabel = crosshair.xLabel();
+  xCrossLabel.textFormatter(function(){
+    // get label data
+    var date = new Date(this.rawValue);
+    // get month from date
+    var month = date.toLocaleDateString("en-US", {month: "long"});
+    // get day from date
+    var day = "Day: " + date.toLocaleDateString("en-US", {day: "numeric"});
+    // get year from date
+    var year = "Year: "+date.toLocaleDateString("en-US", {year: "numeric"});
+    // format label content
+    return month + " " + day + ", " + year;
+  });
+  // set custom function for formatting y crossshair label
+  var yCrossLabel = crosshair.yLabel();
+  yCrossLabel.textFormatter(function(){
+    var dollars = "$ " + formatter(this.value);
+    var euro = "€ " + formatter(this.value*0.91);
+    var yuan = "¥ " + formatter(this.value*6.40);
+    return euro + "\n"+ dollars + "\n" + yuan;
+  });
+
+  function formatter(value){
+    // dispose from fractional part of the value
+    var shortValue = value.toFixed(0);
+    var main = "";
+    // insert space before each three figures fo the number 
+    for (var i=1;(i*3)<shortValue.length;i++)
+      main = " "+shortValue.substr(shortValue.length-(i*3), 3) + main;
+    // format value and insert space if needed
+    var tail = shortValue.substr(0, shortValue.length-(main.length-main.length/4));
+    // return formatted value
+    return tail+main;
+  }
 
   var dateScale = anychart.scales.dateTime();
   var dateTicks = dateScale.ticks();
@@ -22,35 +62,9 @@
     var options = {month: "short", year: "numeric"};
     return date.toLocaleDateString("en-US", options);
   });
-  var crosshair = chart.crosshair();
-  crosshair.enabled(true);
-  var xCrossLabel = crosshair.xLabel();
-  xCrossLabel.textFormatter(function(){
-    var date = new Date(this.rawValue);
-    var month = "Month: " + date.toLocaleDateString("en-US", {month: "long"});
-    var day = "Day: " + date.toLocaleDateString("en-US", {day: "numeric"});
-    var year = "Year: "+date.toLocaleDateString("en-US", {year: "numeric"});
-    return month + " " + day + ", " + year;
-  });
-  var yCrossLabel = crosshair.yLabel();
-  yCrossLabel.textFormatter(function(){
-    var dollars = "$ " + formatter(this.value);
-    var euro = "€ " + formatter(this.value*0.7094716);
-    var yuan = "¥ " + formatter(this.value*115.167569);
-    return euro + "\n"+ dollars + "\n" + yuan;
-  });
 
   var yLabels = chart.yAxis().labels();
   yLabels.width(75);
-
-  function formatter(value){
-    var shortValue = value.toFixed(0);
-    var main = "";
-    for (var i=1;(i*3)<shortValue.length;i++)
-      main = " "+shortValue.substr(shortValue.length-(i*3), 3) + main;
-    var tail = shortValue.substr(0, shortValue.length-(main.length-main.length/4));
-    return tail+main;
-  }
 
   // set series data
   chart.line([
@@ -76,21 +90,21 @@
     [Date.UTC(2011, 7, 01), 104919],
     [Date.UTC(2011, 8, 01), 109661],
     [Date.UTC(2011, 9, 01), 99281],
-    [Date.UTC(2011, 10, 01), 84695],
-    [Date.UTC(2011, 11, 01), 89492],
+    [Date.UTC(2011, 10, 01), 104695],
+    [Date.UTC(2011, 11, 01), 109492],
     [Date.UTC(2012, 0, 01), 148910],
     [Date.UTC(2012, 1, 01), 154197],
     [Date.UTC(2012, 2, 01), 122224],
     [Date.UTC(2012, 3, 01), 136687],
     [Date.UTC(2012, 4, 01), 173808],
-    [Date.UTC(2012, 5, 01), 119910],
+    [Date.UTC(2012, 5, 01), 179910],
     [Date.UTC(2012, 6, 01), 194502],
     [Date.UTC(2012, 7, 01), 176565],
     [Date.UTC(2012, 8, 01), 152765],
     [Date.UTC(2012, 9, 01), 152950],
-    [Date.UTC(2012, 10, 01), 141812],
-    [Date.UTC(2012, 11, 01), 159217],
-    [Date.UTC(2013, 0, 01), 158348],
+    [Date.UTC(2012, 10, 01), 161812],
+    [Date.UTC(2012, 11, 01), 169217],
+    [Date.UTC(2013, 0, 01), 168348],
     [Date.UTC(2013, 1, 01), 174274],
     [Date.UTC(2013, 2, 01), 206777],
     [Date.UTC(2013, 3, 01), 195678],
