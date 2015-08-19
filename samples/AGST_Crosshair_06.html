@@ -22,9 +22,9 @@
     // get month from date
     var month = date.toLocaleDateString("en-US", {month: "long"});
     // get day from date
-    var day = "Day: " + date.toLocaleDateString("en-US", {day: "numeric"});
+    var day = date.toLocaleDateString("en-US", {day: "numeric"});
     // get year from date
-    var year = "Year: "+date.toLocaleDateString("en-US", {year: "numeric"});
+    var year = date.toLocaleDateString("en-US", {year: "numeric"});
     // format label content
     return month + " " + day + ", " + year;
   });
