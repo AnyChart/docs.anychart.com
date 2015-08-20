@@ -21,8 +21,6 @@
     // set dashes and gaps length
     dash: "3 5"
   });
-  // hide last grid line
-  grid.drawLastLine(false);
 
   // set y ticks interval
   var yTicks = chart.yScale().ticks();
@@ -31,7 +29,6 @@
   var title = chart.title();
   title.enabled(true);
   title.fontColor("#FFF");
-  title.fontWeight(900);
   title.text("Custom Grid Stroke");
 
   // set background color
