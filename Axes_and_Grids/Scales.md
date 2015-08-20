@@ -277,7 +277,7 @@ Here is a sample of radar chart with circular grid:
 
 And here is a sample of Polar chart with radial layout: 
 
-{sample}AGST\_Scales\_20{sample}
+{sample}AGST\_Scales\_16{sample}
 
 ## One Scale for Different Charts
 
