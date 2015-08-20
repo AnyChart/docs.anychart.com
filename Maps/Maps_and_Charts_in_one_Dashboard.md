@@ -1,4 +1,4 @@
-# Maps and Charts in one Dashboard
+Maps and Charts in one Dashboard
 ======================
 * [Overview](#overview)
 * [Simple Dashboard](#simple_dashboard)

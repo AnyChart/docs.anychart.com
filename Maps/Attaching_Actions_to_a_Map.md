@@ -1,2 +1,2 @@
-# Attaching Actions to a Map
+Attaching Actions to a Map
 ======================

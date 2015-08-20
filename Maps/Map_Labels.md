@@ -1,4 +1,4 @@
-# Map Labels
+Map Labels
 ======================
 * [Overview](#overview)
 * [General settings](#overview)
