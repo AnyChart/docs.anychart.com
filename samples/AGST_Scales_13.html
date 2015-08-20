@@ -7,40 +7,65 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // setting data
-  var data = anychart.data.set([
-    ["P1", 16, 20],
-    ["P2", 12, 18],
-    ["P3", 9, 14]
-  ]);
-
-  // remapping data
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
-
+  // chat type
   var chart = anychart.column();
 
-  chart.column(Sales2003);
-  chart.column(Sales2004);
-
-  // adjusting major and minor grids
-  var grid = chart.grid(1);
-  grid.layout("horizontal");
-  grid.evenFill("#fff");
-  grid.oddFill("rgb(244,245,255");
+  // adjust grid
+  var grid = chart.grid();
+  // enable grid
   grid.enabled(true);
-  var minorGrid = chart.minorGrid();
-  minorGrid.layout("horizontal");
-  minorGrid.enabled(true);
+  // set grid's stroke appearance
+  grid.stroke("#FFF");
+  // set odd fill
+  grid.oddFill("#FFF 0.25");
+  // set even fill
+  grid.evenFill("#000 0.25");
 
-  // setting major ticks interval on y scale
+  // set y ticks interval
   var yTicks = chart.yScale().ticks();
-  yTicks.interval(2);
+  yTicks.interval(100000);
 
-  // set scale minimum
-  var yScale = chart.yScale();
-  yScale.minimum(0);
+  var title = chart.title();
+  title.enabled(true);
+  title.fontColor("#FFF");
+  title.text("Custom Grid Fill");
 
+  // set background color
+  var background = chart.background();
+  background.fill({
+    // set colors position
+    keys: ["#BB0000", "#440000"],
+    // set angle of colors drawing
+    angle: 45
+  });
+
+  var series = chart.column([
+    ["A", 637166],
+    ["B", 721630],
+    ["C", 148662],
+    ["D", 78662],
+    ["E", 90000]
+  ]);
+  // disable series tooltip
+  series.tooltip(false);
+  // set chart stroke
+  series.stroke("#FFF");
+  // set series inner color
+  series.fill("#FF0 0.85");
+
+  // adjust y axis
+  var yAxis = chart.yAxis();
+  yAxis.stroke(null);
+  yAxis.ticks(false);
+  var yLabels = chart.yAxis().labels();
+  yLabels.fontColor("white");
+  // adjust x axis
+  var xAxis = chart.xAxis();
+  xAxis.stroke("white");
+  var xLabels = chart.xAxis().labels();
+  xLabels.fontColor("white");
+
+  // draw
   chart.container("container");
   chart.draw();
 });</script>

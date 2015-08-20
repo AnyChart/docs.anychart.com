@@ -7,30 +7,44 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // setting data
-  var data = anychart.data.set([
-    ["P1", 16, 20],
-    ["P2", 12, 18],
-    ["P3", 9, 14],
-    ["P4", 11, 16],
-    ["P5", 15, 10]
+  // chat type
+  var chart = anychart.polar();
+  chart.title("Radial Polar Grid");
+
+  chart.line([
+    [0, 80],
+    [3, 0],
+    [6, 80],
+    [9, 0],
+    [12, 80],
+    [15, 0],
+    [18, 80],
+    [21, 0],
+    [24, 0],
+    [3, 80],
+    [6, 0],
+    [9, 80],
+    [12, 0],
+    [15, 80],
+    [18, 0],
+    [21, 80],
+    [24, 0],
+    [21, 0]
   ]);
 
-  // mapping data
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
-
-  var chart = anychart.column();
-
-  // series settings
-  chart.column(Sales2003);
-  chart.column(Sales2004);
-
-  // adjusting major and minor grids
+  // grid settings
   var grid = chart.grid();
-  grid.enabled(true);
-  grid.layout("vertical");
+  // set grid layout
+  grid.layout("curcuit");
+  // set even fill
+  grid.evenFill("#CECECE 0.6");
 
+  var xScale = chart.xScale();
+  xScale.maximum(24);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(10);
+
+  // set container and draw chart
   chart.container("container");
   chart.draw();
 });</script>

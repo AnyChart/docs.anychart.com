@@ -15,9 +15,8 @@
 * [Minimum and Maximum Gap](#minimum_and_maximum_gap)
 * [Inversion](#inversion)
 * [Grids](#grids)
-  * [Major and Minor](#major_and_minor)
-  * [Dashed](#dashed)
-  * [Even and Odd Fills](#even_and_odd_fills)
+  * [Visualization](#visualization)
+  * [Layout](#layout)
 * [One Scale for Different Charts](#one_scale_for_different_charts)
 
 ## Overview
@@ -217,7 +216,7 @@ There are two types of grids in AnyChart - major grid that can be controlled usi
 
 Here is how default grid and minor grid of cartesian chart looks like:
 
-{sample}AGST\_Scales\_15{sample}
+{sample}AGST\_Scales\_11{sample}
 
 ### Visualization
 
@@ -233,7 +232,7 @@ You can control visual appearance of grid lines using {api:anychart.grids.Linear
   });
 ```
 
-{sample}AGST\_Scales\_17{sample}
+{sample}AGST\_Scales\_12{sample}
   
 
 Grid's fill is controlled by two methods: {api:anychart.grids.Linear#evenFill}**.evenFill()**{api} method controls inner color of all even spaces between grid lines and {api:anychart.grids.Linear#oddFill}**.oddFill()**{api} method controls the color settings of all odd spaces.
@@ -247,7 +246,7 @@ Grid's fill is controlled by two methods: {api:anychart.grids.Linear#evenFill}**
   grid.evenFill("#000 0.25");
 ```
 
-{sample}AGST\_Scales\_18{sample}
+{sample}AGST\_Scales\_13{sample}
 
 **Note**: Grid lines correlate with ticks of the chart scale. To manage lines number adjust {api:anychart.scales.ScatterTicks#interval}**interval()**{api} parameter of the chart scale. Use {api:anychart.grids.Linear#scale}**scale()**{api} method to bind grid to a custom scale.
 
@@ -260,9 +259,9 @@ Grids can be placed vertically or horizontally on the chart plot. You can contro
   grid.layout("vertical");
 ```
 
-{sample}AGST\_Scales\_16{sample}
+{sample}AGST\_Scales\_14{sample}
 
-As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts_Types/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these chart types you can use **layout("curcuit")** to define circular layout or **.layout("radial")** to enable radial grid layout. 
+As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts_Types/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these chart types you can use **layout("curcuit")** to define circular layout or **layout("radial")** to enable radial grid layout. 
 
 ```
   // create radar chart
@@ -274,7 +273,7 @@ As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts
 
 Here is a sample of radar chart with circular grid:
 
-{sample}AGST\_Scales\_19{sample}
+{sample}AGST\_Scales\_15{sample}
 
 And here is a sample of Polar chart with radial layout: 
 
@@ -284,4 +283,4 @@ And here is a sample of Polar chart with radial layout:
 
 Scale calculates values and in many cases it is very useful to adjust settings of one scale and then use it for multiple charts. in example below we will create custom scale, adjust it and apply it for 2 charts. Click "launch in playground" to see the code
 
-{sample}AGST\_Scales\_14{sample}
+{sample}AGST\_Scales\_17{sample}

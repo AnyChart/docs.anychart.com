@@ -7,68 +7,76 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // chat type
-  var chart = anychart.column();
+  // set stage
+  var stage = anychart.graphics.create("container");
 
-  // adjust grid
-  var grid = chart.grid();
-  // enable grid
-  grid.enabled(true);
-  // set grid's stroke appearance
-  grid.stroke({
-    // set stroke color
-    color: "#FFF",
-    // set dashes and gaps length
-    dash: "3 5"
-  });
+  // custom scale
+  var customScale = anychart.scales.linear();
+  customScale.minimum(8000);
+  customScale.maximum(20000);
+  var customTicks = customScale.ticks();
+  customTicks.interval(1000);
 
-  // set y ticks interval
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(100000);
-
-  var title = chart.title();
-  title.enabled(true);
-  title.fontColor("#FFF");
-  title.text("Custom Grid Stroke");
-
-  // set background color
-  var background = chart.background();
-  background.fill({
-    // set colors position
-    keys: ["#BB0000", "#440000"],
-    // set angle of colors drawing
-    angle: 45
-  });
-
-  var series = chart.column([
-    ["A", 637166],
-    ["B", 721630],
-    ["C", 148662],
-    ["D", 78662],
-    ["E", 90000]
+  // set position and data for the first chart
+  var series_2003 = anychart.column([
+    ["John" , 10000],
+    ["Jake" , 12000],
+    ["Peter" , 18000],
+    ["James" , 11000],
+    ["Mary" , 9000]
   ]);
-  // disable series tooltip
-  series.tooltip(false);
-  // set chart stroke
-  series.stroke("#FFF");
-  // set series inner color
-  series.fill("#FF0 0.85");
+  series_2003.bounds(0, 0, "50%", "100%");
+  series_2003.title(false);
 
-  // adjust y axis
-  var yAxis = chart.yAxis();
-  yAxis.stroke("white");
-  yAxis.ticks(false);
-  var yLabels = chart.yAxis().labels();
-  yLabels.fontColor("white");
-  // adjust x axis
-  var xAxis = chart.xAxis();
-  xAxis.stroke("white");
-  var xLabels = chart.xAxis().labels();
-  xLabels.fontColor("white");
+  // set custom scale as y scale for the chart
+  series_2003.yScale(customScale);
 
-  // draw
-  chart.container("container");
-  chart.draw();
+  // adjust axes settings
+  var yAxis2003 = series_2003.yAxis();
+  yAxis2003.orientation("right");
+  var xAxis2003 = series_2003.xAxis();
+  xAxis2003.title("Year 2003");
+
+  // set scale minimum
+  var yScale2003 = series_2003.yScale();
+  yScale2003.minimum(0);
+
+  // set stage
+  series_2003.container(stage);
+
+  // draw chart
+  series_2003.draw();
+
+
+  // set position and data for the second chart
+  var series_2004 = anychart.column([
+    ["John" ,  12000],
+    ["Jake" ,  15000],
+    ["Peter" ,  16000],
+    ["James" ,  13000],
+    ["Mary" ,  19000]
+   ]);
+  series_2004.title(false);
+  series_2004.bounds("50%", 0, "50%", "100%");
+
+  // set custom scale as y scale for the chart
+  series_2004.yScale(customScale);
+
+  // adjust axes settings
+  var yAxis2004 = series_2004.yAxis();
+  yAxis2004.title("Sales");
+  var xAxis2004 = series_2004.xAxis();
+  xAxis2004.title("Year 2004");
+
+  // set scale minimum
+  var yScale2004 = series_2004.yScale();
+  yScale2004.minimum(0);
+
+  // set container
+  series_2004.container(stage);
+
+  // draw chart
+  series_2004.draw();
 });</script>
 </head>
 <body>
