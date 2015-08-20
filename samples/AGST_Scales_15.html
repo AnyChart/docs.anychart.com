@@ -7,27 +7,28 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // define chart type
-  var chart = anychart.column();
-
-  // chart title
-  chart.title("Inverted Scale");
-
-  // set scale minimum
-  var yScale = chart.yScale();
-  yScale.minimum(0);
-
   // setting data
   var data = anychart.data.set([
-    ["C", 15],
-    ["D", 45],
-    ["E", 25]
+    ["P1", 16, 20],
+    ["P2", 12, 18],
+    ["P3", 9, 14]
   ]);
 
-  chart.column(data);
+  // mapping data
+  var Sales2003 = data.mapAs({x: [0], value: [1]});
+  var Sales2004 = data.mapAs({x: [0], value: [2]});
 
-  // setting yScale inversion
-  yScale.inverted(true);
+  var chart = anychart.column();
+
+  // series settings
+  chart.column(Sales2003);
+  chart.column(Sales2004);
+
+  // adjusting major and minor grids
+  var grid = chart.grid();
+  grid.enabled(true);
+  var minorGrid = chart.minorGrid();
+  minorGrid.enabled(true);
 
   chart.container("container");
   chart.draw();

@@ -19,15 +19,15 @@
   * [Dashed](#dashed)
   * [Even and Odd Fills](#even_and_odd_fills)
 * [One Scale for Different Charts](#one_scale_for_different_charts)
-<!--* [Crossing value](#crossing)-->
-<!--* [Base value](#base-value)-->
 
 ## Overview
 
-Scales allow you to control such features as minimum and maximum scale values, offsets, scale inversion, intervals, scale type and so on for a single axis. To create additional axes - please read [Additional axis](Additional_Axes) first. To adjust axes display - please see: [Axes Basics tutorial](Axis_Basics).
-
+Scales allow you to control such features as minimum and maximum scale values, scale inversion, intervals, scale type and so on for a single axis. To create additional axes - please read [Additional axis](Additional_Axes) first. To adjust axes display - please see: [Axis Basics tutorial](Axis_Basics).
+  
+  
 In this section we will explain main scales options.
-
+  
+  
 If you want to control any of scale settings - you should do that using {api:anychart.scales}**scale()**{api} method.
 
 ## Types
@@ -37,11 +37,11 @@ There are four types of scales in AnyChart: {api:anychart.scales.Linear}**"Linea
 ```
   chart.xScale(anychart.scales.linear());
   
-  newScale = anychart.scales.ordinal();
+  var newScale = anychart.scales.ordinal();
   chart.yScale(newScale);
 ```
 
-Note: working with extra axes is explained in [Additional Axes Tutorial](Additional_Axis)
+Note: working with extra axes is explained in [Additional Axes Tutorial](Additional_Axes)
 
 ### Linear
 
@@ -55,9 +55,7 @@ Linear scale type is a default type for yScale in most charts. Values for this s
 
 ### Logarithmic
 
-A logarithmic scale is a scale of measurement that uses the logarithm of a physical quantity instead of the quantity 
-itself. Presentation of data on a logarithmic scale can be helpful when the data covers a large range of values the 
-logarithm reduces this to a more manageable range. 
+A logarithmic scale is a scale of measurement that uses the logarithm of a physical quantity instead of the quantity itself. Presentation of data on a logarithmic scale can be helpful when the data covers a large range of values the logarithm reduces this to a more manageable range. 
 <!--You can set any positive number as a logarithm base using log_base attribute.-->
 
 ```
@@ -70,22 +68,21 @@ In the sample below **A = 637.166**, **B = 721.630**, and **C=1.000**, **D=78**,
 
 ### Ordinal
 
-Ordinal scale type is a default type for xScale in most charts. Values for this scale should be of string type and 
-scale intervals will be set automatic.
+Ordinal scale type is a default type for xScale in all cartesian charts. Values for this scale should be of string type and scale intervals will be set automatic.
 
 ```
     chart.xScale(anychart.scales.ordinal());
 ```
 {sample}AGST\_Scales\_03{sample}
 
+**Note**: You can set custom names for ordinal scale using {api:anychart.scales.Ordinal#names}**names()**{api} method. Use string parameter for this method to set data field with names for scale values or use array as parameter for {api:anychart.scales.Ordinal#names}**names()**{api} method to set custom names.
+
 ### Date Time
 
-A dateTime scale is a scale of measurement that is based on the **UTC Date** format, but accepts variety of data 
-formats. Presentation of data on a dateTime scale can be helpful for displaying time lines and time intervals. More 
-information about data formats and usage is in [Date/Time tutorial](Date_Time_Axes).
+A dateTime scale is a scale of measurement that is based on the **UTC Date** format, but accepts variety of data formats. Presentation of data on a dateTime scale can be helpful for displaying time lines and time intervals. More information about data formats and usage is in [Date/Time tutorial](Date_Time_Axes).
 
 ```
-    chart.yScale(anychart.scales.dateTime());
+  chart.yScale(anychart.scales.dateTime());
 ```
 
 {sample}AGST\_Scales\_04{sample}
@@ -117,7 +114,7 @@ To change scale mode you need to set {api:anychart.enums.ScaleStackMode}**.stack
 
 ```
   var yScale = chart.yScale();
-  yScale.stackMode('percent');
+  yScale.stackMode("percent");
 ```
 
 In the sample below stacked and percent stacked scales are demonstrated on the same data sets:
@@ -134,7 +131,7 @@ For any scale, but ordinal, you can set maximum and/or minimum values which are 
   yScale.maximum(100);
 ```
 
-Note, if you will set maximum value lesser than chart elements values, or minimum greater than them - these elements will be cut, and you will see only a part of them or will not see them at all.
+Note, if you will set maximum value lesser than chart elements values, or minimum greater than them - these elements will be cropped, and you will see only a part of them or will not see them at all.
 
 {sample}AGST\_Scales\_06{sample}
 
@@ -160,14 +157,19 @@ Sample below shows how soft minimum and soft maximum help to show data better th
 
 ## Minor and Major Ticks
 
-For any scale, but ordinal, you can set major and minor ticks intervals, which are calculated automatically by default. 
-
+For any scale, but ordinal, you can set {api:anychart.scales.Linear#ticks}major{api} and {api:anychart.scales.Linear#minorTicks}minor{api} ticks intervals, which are calculated automatically by default. 
+  
+  
 Major and minor ticks intervals are axis steps, which define where axis labels (major interval), axis ticks (major and minor, correspondingly) and major and minor grids are displayed.
 
 ```
+  // get ticks
   var yTicks = chart.yScale().ticks();
+  // set ticks interval
   yTicks.interval(10);
+  // get minor ticks
   var minorTicks = chart.yScale().minorTicks();
+  // set minor ticks interval
   minorTicks.interval(2);
 ```
 
@@ -185,28 +187,26 @@ For any axis scale you can set minimum and maximum offsets. Maximum and minimum 
   yScale.maximumGap(0.5);
 ```
 
-In the sample below you can see how offsets settings affects chart, the chart to the left has minimum and maximum 
-offsets set to 0.5, the chart to the right has all the same settings, but offsets are not set. Note that offsets are ignored when maximum or minimum scale values are specified.
+In the sample below you can see how offsets settings affects chart, the chart to the left has minimum and maximum offsets set to 0.5, the chart to the right has all the same settings, but offsets are not set. Note that offsets are ignored when maximum or minimum scale values are specified.
 
 {sample}AGST\_Scales\_09{sample}
 
 ## Inversion
 
-If you want to display scale in an inverted mode use **.inverted()** method with "true" parameter.
+If you want to display scale in an inverted mode use {api:anychart.scales.Linear#inverted}**.inverted()**{api} method with "true" parameter.
 
 ```
   var yScale = chart.yScale();
   yScale.inverted(true);
 ```
 
-Sample inverted scale chart:
+Sample of the chart with inverted scale:
 
 {sample}AGST\_Scales\_10{sample}
 
 ## Grids
-### Major and Minor
 
-There are two types of grids in AnyChart - {api:anychart.charts.Cartesian#grid}major grid{api} and {api:anychart.charts.Cartesian#minorGrid}minor grid{api}. To enable grid you have to specify:
+There are two types of grids in AnyChart - major grid that can be controlled using {api:anychart.charts.Cartesian#grid}**.grid()**{api} method and minor grid that is controlled with {api:anychart.charts.Cartesian#minorGrid}.minorGrid(){api} methods. Both grids are disabled by default. To enable major grid use {api:anychart.core.grids.Linear#enabled}**.enabled(true)**{api} method for {api:anychart.charts.Cartesian#grid}**.grid()**{api} and if you want to show minor grid use {api:anychart.core.grids.Linear#enabled}**.enabled(true)**{api} method for {api:anychart.charts.Cartesian#minorGrid}.minorGrid(){api}.
 
 ```
   var minorGrid = chart.minorGrid();
@@ -215,95 +215,73 @@ There are two types of grids in AnyChart - {api:anychart.charts.Cartesian#grid}m
   grid.enabled(true);
 ```
 
-For each grid you can define {api:anychart.grids.Linear#stroke}line style{api}:
+Here is how default grid and minor grid of cartesian chart looks like:
+
+{sample}AGST\_Scales\_15{sample}
+
+### Visualization
+
+You can control visual appearance of grid lines using {api:anychart.grids.Linear#stroke}**.stroke()**{api} method. Full information on lines settings can be found in [lines tutorial](../Appearance_Settings/Lines_Settings).
 
 ```
   var grid = chart.grid();
-  grid.stroke('black');
-  var minorGrid = chart.minorGrid();
-  minorGrid.stroke('black 0.5');
-```
-
-That's how simple grid will look like:
-
-{sample}AGST\_Scales\_11{sample}
-
-### Dashed
-
-You can also make your grid lines dashed:
-
-```
-  var minorGrid = chart.minorGrid();
-  minorGrid.stroke({
-    color: 'black',
-    dash: '5 2 5',
-    opacity: 0.2
+  grid.stroke({
+    // set stroke color
+    color: "#FFF",
+    // set dashes and gaps length
+    dash: "3 5"
   });
-  minorGrid.layout('horizontal');
 ```
 
-And create chart like this:
+{sample}AGST\_Scales\_17{sample}
+  
 
-{sample}AGST\_Scales\_12{sample}
-
-### Even and Odd Fills
-
-You can use this method with both major and minor grids. To do this you need to set {api:anychart.core.grids.Linear#oddFill}**.oddFill()**{api} or/and {api:anychart.core.grids.Linear#evenFill}**.evenFill()**{api} methods in the corresponding grid. Fill can be gradient, image and/or hatch as well as any other fill.
+Grid's fill is controlled by two methods: {api:anychart.grids.Linear#evenFill}**.evenFill()**{api} method controls inner color of all even spaces between grid lines and {api:anychart.grids.Linear#oddFill}**.oddFill()**{api} method controls the color settings of all odd spaces.
 
 ```
-  var grid = chart.grid()
-  grid.layout('horizontal')         // set grid layout
-  grid.evenFill('white')            // color of even rows
-  grid.oddFill('rgb(244,245,255');  // color of odd rows
+  // grid settings
+  var grid = chart.grid();
+  // set odd fill
+  grid.oddFill("#FFF 0.25");
+  // set even fill
+  grid.evenFill("#000 0.25");
 ```
 
-That's how simple interlaced grid looks like:
+{sample}AGST\_Scales\_18{sample}
 
-{sample}AGST\_Scales\_13{sample}
+**Note**: Grid lines correlate with ticks of the chart scale. To manage lines number adjust {api:anychart.scales.ScatterTicks#interval}**interval()**{api} parameter of the chart scale. Use {api:anychart.grids.Linear#scale}**scale()**{api} method to bind grid to a custom scale.
+
+### Layout
+
+Grids can be placed vertically or horizontally on the chart plot. You can control grid's organization using {api:anychart.grids.Linear#layout}**.layout()**{api} method. 
+
+```
+  var grid = chart.grid();
+  grid.layout("vertical");
+```
+
+{sample}AGST\_Scales\_16{sample}
+
+As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts_Types/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these chart types you can use **layout("curcuit")** to define circular layout or **.layout("radial")** to enable radial grid layout. 
+
+```
+  // create radar chart
+  var chart = anychart.radar();
+  
+  var grid = chart.grid();
+  grid.layout("curcuit");
+```
+
+Here is a sample of radar chart with circular grid:
+
+{sample}AGST\_Scales\_19{sample}
+
+And here is a sample of Polar chart with radial layout: 
+
+{sample}AGST\_Scales\_20{sample}
 
 ## One Scale for Different Charts
 
 Scale calculates values and in many cases it is very useful to adjust settings of one scale and then use it for multiple charts. in example below we will create custom scale, adjust it and apply it for 2 charts. Click "launch in playground" to see the code
 
 {sample}AGST\_Scales\_14{sample}
-
-<!--
-Crossing axis value
-
-If you want to display axis in the center of the chart you need to set "crossing" value. This value should be in the range of perpendicular axis.
-
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <scale crossing="3" />
-03
-</y_axis>
-Sample with crossing value set to 3:
-
-Live Sample:  Crossing value sample
-
-to top
---><!--
-Base axis scale value
-
-Base scale is a value where ticks, grids and labels are starting to show. Setting base value is useful when you want to ignore some part of scale range, but do not want to ignore it using minimum value attribute.
-
-XML Syntax
-XML Code
-Plain code
-01
-<y_axis>
-02
-  <scale base_value="30" />
-03
-</y_axis>
-Sample with base value set to 30:
-
-Live Sample:  Base value sample
-
-to top
-
-Current Page Online URL: Axes Scales-->

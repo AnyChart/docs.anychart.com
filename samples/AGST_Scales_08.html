@@ -20,7 +20,7 @@
     ["E", 15, 15]
   ]);
 
-  // remapping data
+  // mapping data
   var Sales2003 = data.mapAs({x: [0], value: [1]});
   var Sales2004 = data.mapAs({x: [0], value: [2]});
 
@@ -46,6 +46,7 @@
   var yMinorTicks = chart.yScale().minorTicks();
   yMinorTicks.interval(2);
 
+  // display minor ticks
   var minorTicks = chart.yAxis().minorTicks();
   minorTicks.enabled(true);
 

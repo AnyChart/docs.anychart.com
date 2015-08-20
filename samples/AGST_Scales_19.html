@@ -7,28 +7,26 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // define chart type
-  var chart = anychart.column();
+  // chat type
+  var chart = anychart.radar();
+  chart.title("Circular Radar Grid");
 
-  // chart title
-  chart.title("Inverted Scale");
-
-  // set scale minimum
-  var yScale = chart.yScale();
-  yScale.minimum(0);
-
-  // setting data
-  var data = anychart.data.set([
-    ["C", 15],
-    ["D", 45],
-    ["E", 25]
+  chart.area([
+    ["A", 637166],
+    ["B", 721630],
+    ["C", 148662],
+    ["D", 378662],
+    ["E", 900000]
   ]);
 
-  chart.column(data);
+  // grid settings
+  var grid = chart.grid();
+  // set grid layout
+  grid.layout("curcuit");
+  // set even fill
+  grid.evenFill("#CECECE 0.6");
 
-  // setting yScale inversion
-  yScale.inverted(true);
-
+  // set container and draw chart
   chart.container("container");
   chart.draw();
 });</script>

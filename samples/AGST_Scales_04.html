@@ -11,7 +11,7 @@
   var chart = anychart.column();
 
   // setting chart title
-  chart.title("Date/Time scale sample");
+  chart.title("Date/Time Scale Sample");
 
   // setting y scale type as dateTime and adjusting minimum and maximum values
   var dateScale = anychart.scales.dateTime();
@@ -20,8 +20,6 @@
   chart.yScale(dateScale);
   var yTicks = chart.yScale().ticks();
   yTicks.interval(1);
-  var yMinorTicks = chart.yScale().minorTicks();
-  yMinorTicks.interval(0, 2);
 
   // setting data
   var series = chart.rangeColumn([
