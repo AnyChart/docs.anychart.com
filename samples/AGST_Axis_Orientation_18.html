@@ -9,7 +9,7 @@
 
   // define chart
   var chart = anychart.cartesian();
-  
+
   var margin = chart.margin();
   margin.top(30);
   margin.right(30);
@@ -24,7 +24,7 @@
 
   // define chart type
   chart.bar(data);
-  
+
   // inverts y scale. Now all elements has inverted (from right to left) direction
   var yScale = chart.yScale();
   yScale.inverted(true);
@@ -32,7 +32,7 @@
   // inverts x scale. Now all elements has inverted (from top to bottom) direction
   var xScale = chart.xScale();
   xScale.inverted(true);
-  
+
   var xAxis = chart.xAxis();
   xAxis.orientation("bottom");
   var yAxis = chart.yAxis();
