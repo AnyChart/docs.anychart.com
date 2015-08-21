@@ -26,7 +26,7 @@ Consider using multiple axes when you need:
 
 ## Declaration
 
-If you want to declare an additional axis all you need to do is to set index to it, and set as many {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods as you want:
+If you want to declare an additional axis all you need to do is to set index to it, and set as many {api:anychart.charts.Cartesian#yAxis}**yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**xAxis()**{api} methods as you want:
 
 ```
   // First additional axis

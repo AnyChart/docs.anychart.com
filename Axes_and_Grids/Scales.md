@@ -109,7 +109,7 @@ Scale mode defines some additional behavior of a chart. In the table below all m
 </tr>
 </tbody></table>
 
-To change scale mode you need to set {api:anychart.enums.ScaleStackMode}**.stackMode()**{api} attribute. Possible attributes are: **value** and **percent**.
+To change scale mode you need to set {api:anychart.enums.ScaleStackMode}**stackMode()**{api} attribute. Possible attributes are: **value** and **percent**.
 
 ```
   var yScale = chart.yScale();
@@ -192,7 +192,7 @@ In the sample below you can see how offsets settings affects chart, the chart to
 
 ## Inversion
 
-If you want to display scale in an inverted mode use {api:anychart.scales.Linear#inverted}**.inverted()**{api} method with "true" parameter.
+If you want to display scale in the inverted mode use {api:anychart.scales.Linear#inverted}**inverted()**{api} method with "true" parameter.
 
 ```
   var yScale = chart.yScale();
@@ -205,7 +205,7 @@ Sample of the chart with inverted scale:
 
 ## Grids
 
-There are two types of grid in AnyChart - major grid that can be controlled using {api:anychart.charts.Cartesian#grid}**.grid()**{api} method and minor grid that is controlled with {api:anychart.charts.Cartesian#minorGrid}**.minorGrid()**{api} method. Both grids are disabled by default. To enable major grid use {api:anychart.core.grids.Linear#enabled}**.enabled(true)**{api} method for {api:anychart.charts.Cartesian#grid}**.grid()**{api} and if you want to display minor grid use {api:anychart.core.grids.Linear#enabled}**.enabled(true)**{api} method for {api:anychart.charts.Cartesian#minorGrid}**.minorGrid()**{api}.
+There are two types of grid in AnyChart - major grid that can be controlled using {api:anychart.charts.Cartesian#grid}**grid()**{api} method and minor grid that is controlled with {api:anychart.charts.Cartesian#minorGrid}**minorGrid()**{api} method. Both grids are disabled by default. To enable major grid use {api:anychart.core.grids.Linear#enabled}**enabled(true)**{api} method for {api:anychart.charts.Cartesian#grid}**grid()**{api} and if you want to display minor grid use {api:anychart.core.grids.Linear#enabled}**enabled(true)**{api} method for {api:anychart.charts.Cartesian#minorGrid}**minorGrid()**{api}.
 
 ```
   var minorGrid = chart.minorGrid();
@@ -220,7 +220,7 @@ Here is how default grid and minor grid of cartesian chart looks like:
 
 ### Visualization
 
-You can control visual appearance of grid lines using {api:anychart.grids.Linear#stroke}**.stroke()**{api} method. Full information on lines settings can be found in [lines tutorial](../Appearance_Settings/Lines_Settings).
+You can control visual appearance of grid lines using {api:anychart.grids.Linear#stroke}**stroke()**{api} method. Full information on lines settings can be found in [lines tutorial](../Appearance_Settings/Lines_Settings).
 
 ```
   var grid = chart.grid();
@@ -235,7 +235,7 @@ You can control visual appearance of grid lines using {api:anychart.grids.Linear
 {sample}AGST\_Scales\_12{sample}
   
 
-Grid's fill is controlled by two methods: {api:anychart.grids.Linear#evenFill}**.evenFill()**{api} method controls inner color of all even spaces between grid lines and {api:anychart.grids.Linear#oddFill}**.oddFill()**{api} method controls the color settings of all odd spaces.
+Grid's fill is controlled by two methods: {api:anychart.grids.Linear#evenFill}**evenFill()**{api} method controls inner color of all even spaces between grid lines and {api:anychart.grids.Linear#oddFill}**oddFill()**{api} method controls the color settings of all odd spaces.
 
 ```
   // grid settings
@@ -252,7 +252,7 @@ Grid's fill is controlled by two methods: {api:anychart.grids.Linear#evenFill}**
 
 ### Layout
 
-Grids can be placed vertically or horizontally on the chart plot. You can control grid's organization using {api:anychart.grids.Linear#layout}**.layout()**{api} method. 
+Grids can be placed vertically or horizontally on the chart plot. You can control grid's organization using {api:anychart.grids.Linear#layout}**layout()**{api} method. 
 
 ```
   var grid = chart.grid();

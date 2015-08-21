@@ -14,7 +14,7 @@ scale, both x scale, y scale and additional scale.
 
 ## Declare
 
-To add range marker you need to use {api:anychart.axisMarkers.Range}**.rangeMarker()**{api} method. Each range marker has several mandatory properties set by {api:anychart.axisMarkers.Range#scale}**.scale()**{api}, {api:anychart.axisMarkers.Range#from}**.from()**{api}, {api:anychart.axisMarkers.Range#to}**.to()**{api} and {api:anychart.axisMarkers.Range#fill}**.fill()**{api} methods. If you want to bound range marker to a horizontal scale, you have to set {api:anychart.axisMarkers.Range#layout}**.layout(vertical)**{api}. Otherwise it will be horizontal.
+To add range marker you need to use {api:anychart.axisMarkers.Range}**rangeMarker()**{api} method. Each range marker has several mandatory properties set by {api:anychart.axisMarkers.Range#scale}**scale()**{api}, {api:anychart.axisMarkers.Range#from}**from()**{api}, {api:anychart.axisMarkers.Range#to}**to()**{api} and {api:anychart.axisMarkers.Range#fill}**fill()**{api} methods. If you want to bound range marker to a horizontal scale, you have to set {api:anychart.axisMarkers.Range#layout}**layout(vertical)**{api}. Otherwise it will be horizontal.
 
 ```
   var marker1 = chart.rangeMarker(0);
@@ -49,7 +49,7 @@ or mark some kind of data.
 
 ## Advanced Visualization
 
-As far as range marker has method {api:anychart.graphics.vector.Fill}**.fill()**{api}, you can also use gradient and image fills of range to achieve desired style of your charts.
+As far as range marker has method {api:anychart.graphics.vector.Fill}**fill()**{api}, you can also use gradient and image fills of range to achieve desired style of your charts.
 
 ```
   var rangeMarker = chart.rangeMarker();

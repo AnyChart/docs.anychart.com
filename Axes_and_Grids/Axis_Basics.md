@@ -32,7 +32,7 @@ If you want to control any of the axes settings - you should do that using {api:
 
 ## Title
 
-You can define a title of any axis, you can control its position and font<!-- and use keywords-->, when specifying text. Full reference of parameters can be found in Reference: {api:anychart.core.axes.Linear#title}**.yAxis().title()**{api} or {api:anychart.core.axes.Linear#title}**.xAxis().title()**{api}. Here is a sample titles definition:
+You can define a title of any axis, you can control its position and font<!-- and use keywords-->, when specifying text. Full reference of parameters can be found in Reference: {api:anychart.core.axes.Linear#title}**yAxis().title()**{api} or {api:anychart.core.axes.Linear#title}**xAxis().title()**{api}. Here is a sample titles definition:
 
 ```
   var max = chart.yScale().maximum();
@@ -64,7 +64,7 @@ Learn how to format keywords in Number Formatting section.-->
 
 ## Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods. Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Positioning and Inverting Templates](Axis_Orientation).
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}**orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**xAxis()**{api} methods. Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Positioning and Inverting Templates](Axis_Orientation).
 
 ```
   var yAxis = chart.yAxis();
@@ -79,7 +79,7 @@ And here is the demonstration of this feature on the Single series column chart:
 
 ## Labels
 
-To enable or disable axis labels you need to specify {api:anychart.core.ui.LabelsFactory#enabled}**.labels().enabled()**{api} parameter of an axis. You can specify how labels should look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
+To enable or disable axis labels you need to specify {api:anychart.core.ui.LabelsFactory#enabled}**labels().enabled()**{api} parameter of an axis. You can specify how labels should look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
   
   
 Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Formatting)
@@ -119,7 +119,7 @@ Rotated labels:
 ## Axis Line
 
 It is possible to tune visual appearance of axis segment line and zero line. To do this you need to use 
-{api:anychart.charts.Cartesian#lineMarker}**.lineMarker()**{api} method.
+{api:anychart.charts.Cartesian#lineMarker}**lineMarker()**{api} method.
 
 ```
   var line = chart.lineMarker();
@@ -133,7 +133,7 @@ Read more about lines in [Strokes and Lines tutorial](../Appearance_Settings/Str
 
 ## Tickmarks
 
-Tickmarks are the small marks used to represent a point on an axis scale, there are major and minor ticks, first used to indicate major step of an axis scale, second - minor step. You can control their appearance and position. To enable/disable ticks set **.enabled(true)** or **.enabled(false)** to {api:anychart.core.axes.Linear#ticks}**.ticks()**{api} or {api:anychart.core.axes.Linear#minorTicks}**.minorTicks()**{api}
+Tickmarks are the small marks used to represent a point on an axis scale, there are major and minor ticks, first used to indicate major step of an axis scale, second - minor step. You can control their appearance and position. To enable/disable ticks set **.enabled(true)** or **.enabled(false)** to {api:anychart.core.axes.Linear#ticks}**ticks()**{api} or {api:anychart.core.axes.Linear#minorTicks}**minorTicks()**{api}
 
 ```
   var minorTicks = chart.yScale().minorTicks;
@@ -142,7 +142,7 @@ Tickmarks are the small marks used to represent a point on an axis scale, there 
   majorTicks.enabled(false)
 ```
 
-Ticks can be placed **inside** or **outside** relatively to the axis line. These features are controlled by {api:anychart.core.axes.Ticks#position}**.position()**{api} attributes:
+Ticks can be placed **inside** or **outside** relatively to the axis line. These features are controlled by {api:anychart.core.axes.Ticks#position}**position()**{api} attributes:
 
 ```
   var yAxisTicks = chart.yAxis().ticks();

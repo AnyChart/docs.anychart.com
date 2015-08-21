@@ -31,7 +31,7 @@ If you want to switch the Crosshair on, set the **{api:anychart.core.ui.Crosshai
 
 ## Binding to axes
 
-In case you've got several axes on the same scale, you should tie the crosshair to one of them. Unless you do it, the default axis will be chosen (with the "0" index). Use {api:anychart.core.ui.CrosshairLabel#axisIndex}**.axisIndex()**{api} method for this.
+In case you've got several axes on the same scale, you should tie the crosshair to one of them. Unless you do it, the default axis will be chosen (with the "0" index). Use {api:anychart.core.ui.CrosshairLabel#axisIndex}**axisIndex()**{api} method for this.
 
 ```
   // set the indexes of the axes used
@@ -72,7 +72,7 @@ Use the standard function to disable the axes labels.
 
 ### Change text
 
-The crosshair label's format is the same as axis label's format by default. You may use the {api:anychart.core.ui.CrosshairLabel#textFormatter}**.textFormatter()**{api} to change the crosshair's labels' performance. 
+The crosshair label's format is the same as axis label's format by default. You may use the {api:anychart.core.ui.CrosshairLabel#textFormatter}**textFormatter()**{api} to change the crosshair's labels' performance. 
 
 ```
   // set the label performance
@@ -86,6 +86,6 @@ Here is the sample with customized both x and y crosshair labels.
 
 {sample}AGST\_Crosshair\_05{sample}
 
-As far as you can use any function as {api:anychart.core.ui.CrosshairLabel#textFormatter}**.textFormatter()**{api} of crosshair labels you use these labels to display additional information. Here is a sample with more complex labels formatter.
+As far as you can use any function as {api:anychart.core.ui.CrosshairLabel#textFormatter}**textFormatter()**{api} of crosshair labels you use these labels to display additional information. Here is a sample with more complex labels formatter.
 
 {sample}AGST\_Crosshair\_06{sample}
