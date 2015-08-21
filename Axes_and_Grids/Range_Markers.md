@@ -49,10 +49,6 @@ To add range marker you need to use {api:anychart.axisMarkers.Range}**rangeMarke
   marker3.fill("#fcd8d7");
 ```
 
-lol {
- padding: 0;
-}
-
 The sample below shows horizontal axes ranges.
 
 {sample}AGST\_Range\_Marker\_01{sample}
@@ -92,4 +88,4 @@ Sample below shows semitransparent filled range.
 
 {sample}AGST\_Range\_Marker\_03{sample}
 
-**Note**: more information on advanced color settings can be found in [Fill Settings tutorial](#../Graphics/Fill_Settings)
+**Note**: more information on advanced color settings can be found in [Fill Settings tutorial](../Graphics/Fill_Settings)

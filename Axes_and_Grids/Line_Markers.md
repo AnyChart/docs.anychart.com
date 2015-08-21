@@ -35,7 +35,7 @@ To add line marker you need to use {api:anychart.charts.Cartesian#lineMarker}**l
   // line visual settings
   secondMarker.stroke({
     // set line color
-    color: "red",
+    color: "#dd2c00",
     // set dashes 
     dash: "7",
     // set stroke opacity
