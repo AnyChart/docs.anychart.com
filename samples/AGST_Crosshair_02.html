@@ -9,7 +9,7 @@
 
   // create line chart
   var chart = anychart.area();
-  
+
   var crosshair = chart.crosshair();
   crosshair.enabled(true);
   // set the indexes of the axes used
@@ -21,7 +21,7 @@
   crossYLabels.textFormatter(function(){
     return this.value+"%";
   });
-  
+
   // adding and adjusting extra Y scale
   var extraYScale = anychart.scales.linear();
   extraYScale.minimum(0);
@@ -37,7 +37,7 @@
   extraLabels.textFormatter(function(){
     return this.value+"%";
   });
-  
+
   // turn on chart animation
   chart.animation(true);
 

@@ -9,19 +9,19 @@
 
   // create line chart
   var chart = anychart.column();
-  
+
   var crosshair = chart.crosshair();
   crosshair.enabled(true);
       
   // remove the x-axis line
   crosshair.xStroke(null); 
-  
+
   // turn on chart animation
   chart.animation(true);
 
   // set chart title text settings
   chart.title("Column Chart with a Crosshair");
-  
+
   // create data set on our data
   var dataSet = anychart.data.set([
     ["P1" , 3.6 , 2.3],

@@ -32,13 +32,13 @@
 
   // create line chart
   var chart = anychart.column();
-  
+
   var crosshair = chart.crosshair();
   // the same as above
   crosshair.enabled(true);
   // disable the x-axis labels
   crosshair.yLabel(false);
-  
+
   // adding and adjusting extra Y scale
   var extraYScale = anychart.scales.linear();
   extraYScale.minimum(0);
@@ -54,7 +54,7 @@
   extraLabels.textFormatter(function(){
     return (this.value+"%");
   });
-  
+
   // turn on chart animation
   chart.animation(true);
 

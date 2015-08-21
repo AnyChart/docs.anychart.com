@@ -8,11 +8,11 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   var chart = anychart.scatter();
-  
+
   // enable the crosshair
   var crosshair = chart.crosshair();
   crosshair.enabled(true);
-  
+
   // set the label performance
   var yCrossLabel = chart.crosshair().yLabel();
   yCrossLabel.textFormatter(function() {
@@ -42,10 +42,10 @@
   xAxis.title("Eruption duration (Min)");
   xAxis.drawFirstLabel(false);
   xAxis.drawLastLabel(false);
-  
+
   // set chart title text settings
   chart.title("Scatter Chart with a Crosshair");
-  
+
   var marker = chart.marker([
     [4.4, 78],
     [3.9, 74],
