@@ -205,7 +205,7 @@ Sample of the chart with inverted scale:
 
 ## Grids
 
-There are two types of grids in AnyChart - major grid that can be controlled using {api:anychart.charts.Cartesian#grid}**.grid()**{api} method and minor grid that is controlled with {api:anychart.charts.Cartesian#minorGrid}.minorGrid(){api} methods. Both grids are disabled by default. To enable major grid use {api:anychart.core.grids.Linear#enabled}**.enabled(true)**{api} method for {api:anychart.charts.Cartesian#grid}**.grid()**{api} and if you want to show minor grid use {api:anychart.core.grids.Linear#enabled}**.enabled(true)**{api} method for {api:anychart.charts.Cartesian#minorGrid}.minorGrid(){api}.
+There are two types of grid in AnyChart - major grid that can be controlled using {api:anychart.charts.Cartesian#grid}**.grid()**{api} method and minor grid that is controlled with {api:anychart.charts.Cartesian#minorGrid}**.minorGrid()**{api} method. Both grids are disabled by default. To enable major grid use {api:anychart.core.grids.Linear#enabled}**.enabled(true)**{api} method for {api:anychart.charts.Cartesian#grid}**.grid()**{api} and if you want to display minor grid use {api:anychart.core.grids.Linear#enabled}**.enabled(true)**{api} method for {api:anychart.charts.Cartesian#minorGrid}**.minorGrid()**{api}.
 
 ```
   var minorGrid = chart.minorGrid();
@@ -248,7 +248,7 @@ Grid's fill is controlled by two methods: {api:anychart.grids.Linear#evenFill}**
 
 {sample}AGST\_Scales\_13{sample}
 
-**Note**: Grid lines correlate with ticks of the chart scale. To manage lines number adjust {api:anychart.scales.ScatterTicks#interval}**interval()**{api} parameter of the chart scale. Use {api:anychart.grids.Linear#scale}**scale()**{api} method to bind grid to a custom scale.
+**Note**: Grid lines correlate with [ticks of the chart scale](#minor_and_major_ticks). To manage lines number adjust {api:anychart.scales.ScatterTicks#interval}**interval()**{api} parameter of the chart scale. Use {api:anychart.grids.Linear#scale}**scale()**{api} method to bind grid to a custom scale.
 
 ### Layout
 
@@ -261,7 +261,7 @@ Grids can be placed vertically or horizontally on the chart plot. You can contro
 
 {sample}AGST\_Scales\_14{sample}
 
-As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts_Types/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these chart types you can use **layout("curcuit")** to define circular layout or **layout("radial")** to enable radial grid layout. 
+As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts_Types/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these chart types you can use {api:anychart.grids.Radar#layout}**layout("curcuit")**{api} to define circular layout or {api:anychart.grids.Polar#layout}**layout("radial")**{api} to enable radial grid layout. 
 
 ```
   // create radar chart
