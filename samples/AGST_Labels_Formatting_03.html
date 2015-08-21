@@ -36,7 +36,7 @@
   var yAxsi1 = chart.yAxis(1);
   yAxsi1.orientation("right");
   yAxsi1.title("Revenue in Euros");
-    
+
   // formats labels of additional axis
   var yLabels1 = chart.yAxis(1).labels();
   yLabels1.textFormatter(function(){
@@ -54,7 +54,7 @@
     num[0]=tail+main;
     // decimal Separator
     value = num.join(".");
-    
+
     return "€ " + value;
   });
 
