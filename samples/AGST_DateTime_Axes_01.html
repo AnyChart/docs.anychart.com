@@ -12,7 +12,7 @@
 
   // setting chart title
   chart.title("X113 Destroyer Development Plan");
-  
+
   // setting y scale type as dateTime and adjusting minimum and maximum values
   var dateScale = anychart.scales.dateTime();
   var dateTicks = dateScale.ticks();
@@ -20,7 +20,7 @@
   var dateMinorTicks = dateScale.minorTicks();
   dateMinorTicks.interval(0, 2);
   chart.yScale(dateScale);
-  
+
   // enable minor ticks
   var minorTicks = chart.yAxis().minorTicks();
   minorTicks.enabled(true);
@@ -33,6 +33,7 @@
     {x: "Licensing", low: Date.UTC(2003, 07, 01), high: Date.UTC(2004, 07, 01), fill: "#FFD54F"}
   ]);
   series.tooltip(false);
+  series.stroke(null);
 
   // adjusting labels for dateTime scale. Otherwise it would be the number of milliseconds between the date and midnight January 1 1970
   var xLabels = chart.yAxis().labels();

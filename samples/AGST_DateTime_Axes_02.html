@@ -50,11 +50,12 @@
   // adjust axis labels
   var labels = chart.xAxis().labels();
   labels.hAlign("center");
-  labels.width(50);
+  labels.width(60);
   labels.textFormatter(function(value){
     var date = new Date(value["tickValue"]);
     var options = {
-      year: "numeric"
+      year: "numeric",
+      month: "short"
     };
     return date.toLocaleDateString("en-US", options);
   });
