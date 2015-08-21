@@ -21,14 +21,10 @@
 
   // set data
   var series = chart.line(data);
-  series.hoverStroke("red");
   var tooltip = series.tooltip();
   tooltip.contentFormatter(function(){
     return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
   });
-
-  // disable title
-  chart.title(false);
 
   // set y scale ticks interval
   var yScale = chart.yScale();
@@ -37,64 +33,55 @@
   var yTicks = chart.yScale().ticks();
   yTicks.interval(5000);
 
-  // disable x axis title
-  var xAxis = chart.xAxis();
-  xAxis.title(false);
-
   // adjust y axis labels
   var yLabels = chart.yAxis().labels();
   yLabels.textFormatter(function(){
     return "$" + this.value/1000 + ",000";
   });
 
-  // y scale title
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
-
-  // set green marker
-  var rangeMarker = chart.rangeMarker();
-  rangeMarker.scale(chart.yScale());
-  rangeMarker.from(0);
-  rangeMarker.to(30000);
-  rangeMarker.fill({
-    keys: [".1 green", ".5 yellow", ".9 red"],
+  // set range marker
+  var range = chart.rangeMarker();
+  range.scale(chart.yScale());
+  range.from(0);
+  range.to(30000);
+  range.fill({
+    keys: [".1 #009900", ".5 #ffa000", ".9 #dd2c00"],
     angle: -90,
     opacity: 0.5
   });
 
   // set left text marker
-  var textMarker = chart.textMarker(0);
+  var textMarker = chart.textMarker();
   textMarker.scale(chart.yScale());
   textMarker.align("center");
   textMarker.anchor("center");
   textMarker.offsetX(10);
   textMarker.value(25000);
+  textMarker.fontColor("#212121");
   textMarker.text("Good");
-  textMarker.fontSize(15);
-  textMarker.fontWeight(600);
+  textMarker.fontSize(13);
 
   // set text marker at the center
-  var textMarker1 = chart.textMarker(1);
+  var textMarker1 = chart.textMarker(2);
   textMarker1.scale(chart.yScale());
   textMarker1.align("center");
   textMarker1.anchor("center");
   textMarker1.offsetX(10);
-  textMarker1.value(15000);
-  textMarker1.text("Average");
-  textMarker1.fontSize(15);
-  textMarker1.fontWeight(600);
+  textMarker1.value(5000);
+  textMarker1.fontColor("#212121");
+  textMarker1.text("Severe");
+  textMarker1.fontSize(13);
 
   // set text marker at the center
-  var textMarker2 = chart.textMarker(2);
+  var textMarker2 = chart.textMarker(1);
   textMarker2.scale(chart.yScale());
   textMarker2.align("center");
   textMarker2.anchor("center");
   textMarker2.offsetX(10);
-  textMarker2.value(5000);
-  textMarker2.fontColor("black");
-  textMarker2.text("Severe");
-  textMarker2.fontSize(12);
-  textMarker2.fontWeight(600);
+  textMarker2.value(15000);
+  textMarker2.fontColor("#212121");
+  textMarker2.text("Average");
+  textMarker2.fontSize(13);
 
   // draw
   chart.container("container");

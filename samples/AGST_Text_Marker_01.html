@@ -9,11 +9,11 @@
 
   // data
   var data = anychart.data.set([
-      [2000, 10000],
-      [2001, 12000],
-      [2002, 18000],
-      [2003, 11000],
-      [2004, 9000]
+    [2000, 10000],
+    [2001, 12000],
+    [2002, 18000],
+    [2003, 11000],
+    [2004, 9000]
   ]);
 
   // chart type
@@ -26,21 +26,9 @@
     return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
   });
 
-  // disable title
-  chart.title(false);
-
   // set y scale ticks interval
   var yTicks = chart.yScale().ticks();
   yTicks.interval(2000);
-  
-  // y axis title
-  var yAxis = chart.yAxis(0);
-  yAxis.title().text("Sales");
-  // adjust y axis labels
-  var yLabels = chart.yAxis(0).labels();
-  yLabels.textFormatter(function(){
-    return "$" + this.value/1000 + ",000";
-  });
 
   // custom scale
   var additionalScale = anychart.scales.linear();
@@ -49,39 +37,62 @@
   additionalScale.maximum(10);
   var additionalTicks = additionalScale.ticks();
   additionalTicks.interval(1);
+
+  // y axis title
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
+
+  // adjust y axis labels
+  var yLabels = chart.yAxis().labels();
+  yLabels.textFormatter(function(){
+    return "$" + this.value/1000 + ",000";
+  });
+
   // apply custom scale
   var yAxis1 = chart.yAxis(1);
   yAxis1.orientation("right");
   yAxis1.scale(additionalScale);
-  yAxis1.stroke("1.5 black");
   yAxis1.title("Sales Pts");
   yAxis1.labels(false);
 
-  // disable x axis title
-  var xAxis = chart.xAxis();
-  xAxis.title(false);
-
-
   // set marker
   var textMarker = chart.textMarker(0);
+  // bind marker to the scale
   textMarker.scale(chart.yScale());
+  // set marker position
   textMarker.value(18000);
+  // set marker alignment
   textMarker.align("left");
+  // set anchor
   textMarker.anchor("leftcenter");
-  textMarker.fontSize(13);
+  // set marker text size
+  textMarker.fontSize(12);
+  // set marker text color
+  textMarker.fontColor("#212121");
+  // shift marker
   textMarker.offsetX(5);
-  textMarker.fontFamily("Courier");
+  // set marker text
   textMarker.text("Historical Maximum");
 
   // set red marker
   var textMarker1 = chart.textMarker(1);
+  // bind marker to the scale
   textMarker1.scale(chart.yScale());
+  // set marker position
   textMarker1.value(18000);
-  textMarker1.text("High");
+  // set marker alignment
   textMarker1.align("left");
-  textMarker1.anchor("rightcenter");
+  // set anchor
+  textMarker1.anchor("center");
+  // rotate marker
+  textMarker1.rotation(-90);
+  // set marker text size
   textMarker1.fontSize(13);
-  textMarker1.offsetX(50);
+  // set marker text
+  textMarker1.text("High");
+  // shift marker
+  textMarker1.offsetX(-75);
+  // set marker text color
   textMarker1.fontColor("red");
 
   // set green marker
@@ -90,9 +101,10 @@
   textMarker2.value(10000);
   textMarker2.text("Low");
   textMarker2.align("left");
-  textMarker2.anchor("rightcenter");
+  textMarker2.anchor("center");
+  textMarker2.rotation(-90);
   textMarker2.fontSize(13);
-  textMarker2.offsetX(50);
+  textMarker2.offsetX(-75);
   textMarker2.fontColor("green");
 
   // set text marker on the right
@@ -102,6 +114,7 @@
   textMarker3.text("8.00");
   textMarker3.align("right");
   textMarker3.anchor("leftcenter");
+  textMarker3.fontWeight("bold");
   textMarker3.fontSize(13);
   textMarker3.offsetX(10);
 

@@ -16,15 +16,15 @@ These text markers are just custom text placed on chart.
 To add custom text you need to create {api:anychart.charts.Cartesian#textMarker}**textMarker()**{api} and set {api:anychart.core.axisMarkers.Text#value}**value()**{api}, {api:anychart.core.axisMarkers.Text#scale}**scale()**{api} and {api:anychart.core.axisMarkers.Text#text}**text()**{api}.You may use other options, but previous three are mandatory.
 
 ```
-  chart.textMarker()
-    .scale(chart.yScale())
-    .value(18000)
-    .align('left')
-    .anchor('leftcenter')
-    .fontSize(12)
-    .fontColor('#212121')
-    .offsetX(5)
-    .text('Historical Maximum');
+  var textMarker = chart.textMarker();
+  textMarker.scale(chart.yScale());
+  textMarker.value(18000);
+  textMarker.align('left');
+  textMarker.anchor('leftcenter');
+  textMarker.fontSize(12);
+  textMarker.fontColor(#212121');
+  textMarker.offsetX(5);
+  textMarker.text('Historical Maximum');
 ```
 
 Sample below shows several variants of Text Marker usage: marking up values (High, Low), describing values (Historical Maximum) and marking only selected values on certain axis (8.00).
@@ -38,14 +38,14 @@ You can configure text marker placement, font, anchor and text of any custom tex
 Markers placement is controlled using {api:anychart.enums.Align}**align()**{api} parameter.
 
 ```
-  chart.textMarker(2)
-    .scale(chart.yScale())
-    .value(13)
-    .text('Align: right')
-    .align('right')
-    .offsetX(5)
-    .fontColor('#212121')
-    .anchor('rightcenter');
+  var textMarker = chart.textMarker();
+  textMarker.scale(chart.yScale());
+  textMarker.value(13);
+  textMarker.text("Align: right");
+  textMarker.align("right");
+  textMarker.offsetX(5);
+  textMarker.fontColor("#212121");
+  textMarker.anchor("rightcenter");
 ```
 
 In the sample below you can see different text markers positions and text formatting:
