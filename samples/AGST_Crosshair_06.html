@@ -8,7 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // define chart
-  var chart = anychart.scatter();
+  var chart = anychart.financial();
 
   // crosshair settings
   var crosshair = chart.crosshair();
@@ -50,12 +50,11 @@
     return tail+main;
   }
 
-  var dateScale = anychart.scales.dateTime();
-  var dateTicks = dateScale.ticks();
-  dateTicks.interval(0,4);
-  dateScale.minimum(Date.UTC(2010, 0, 1));
-  dateScale.maximum(Date.UTC(2015, 0, 1));
-  chart.xScale(dateScale);
+  var xScale = chart.xScale();
+  xScale.minimum(Date.UTC(2010, 0, 1));
+  xScale.maximum(Date.UTC(2015, 0, 1));
+  var xTicks = chart.xScale().ticks();
+  xTicks.interval(0,4);
   var xLabels = chart.xAxis().labels();
   xLabels.textFormatter(function(){
     var date = new Date(this["tickValue"]);
@@ -67,7 +66,7 @@
   yLabels.width(75);
 
   // set series data
-  chart.line([
+  var series = chart.line([
     [Date.UTC(2010, 0, 01), 72924],
     [Date.UTC(2010, 1, 01), 79371],
     [Date.UTC(2010, 2, 01), 76899],
@@ -129,6 +128,7 @@
     [Date.UTC(2014, 10, 01), 295558],
     [Date.UTC(2014, 11, 01), 275614]
   ]);
+  series.tooltip(false);
 
   // draw chart
   chart.container("container");
