@@ -16,7 +16,7 @@ AnyChart allows you to set color of any element of the chart, and moreover - it 
 
 ## Color Formats
 
-As it is said above AnyChart supports the following color setting notation, which means you can use any of them when setting a value of {api:anychart.color}**.color()**{api}, {api:anychart.graphics.vector.Fill}**.fill()**{api}, and other attributes in any method:
+As it is said above AnyChart supports the following color setting notation, which means you can use any of them when setting a value of {api:anychart.color}**color()**{api}, {api:anychart.graphics.vector.Fill}**fill()**{api}, and other attributes in any method:
 
 * Hexadecimal (html-like)
 * Red Green Blue
@@ -76,7 +76,7 @@ To make design easier - AnyChart Provides several color transformation functions
 
 ### Light Color
 
-{api:anychart.color#lighten}**.lighten()**{api} function is used to return for sure a color that is lighter than a given, for example, if input color is Black - we will get some non-black color, that can be used for highlighting element. Input color can be specified in any of the specified above.
+{api:anychart.color#lighten}**lighten()**{api} function is used to return for sure a color that is lighter than a given, for example, if input color is Black - we will get some non-black color, that can be used for highlighting element. Input color can be specified in any of the specified above.
 
 ```
   anychart.color.lighten("#FF0000", 0.2)
@@ -101,7 +101,7 @@ To make design easier - AnyChart Provides several color transformation functions
 
 ### Dark Color
 
-{api:anychart.color#darken}**.darken()**{api} function is used to return for sure a color that is darker than a given, for example, if input color is White - we will get some non-white color, that can be used for outlining an element. Input color can be specified in any of the specified above.
+{api:anychart.color#darken}**darken()**{api} function is used to return for sure a color that is darker than a given, for example, if input color is White - we will get some non-white color, that can be used for outlining an element. Input color can be specified in any of the specified above.
 
 ```
   anychart.color.darken("#FF0000", 0.2)
@@ -126,7 +126,7 @@ To make design easier - AnyChart Provides several color transformation functions
 
 ### Blend
 
-{api:anychart.color#blend}**.blend()**{api} function allows you to mix two colors with a given ratio, it gives even wider control over getting the right tone.
+{api:anychart.color#blend}**blend()**{api} function allows you to mix two colors with a given ratio, it gives even wider control over getting the right tone.
 
 ```
   var color1 = [255, 0, 0];

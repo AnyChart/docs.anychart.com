@@ -185,7 +185,7 @@ This file can be found in **binaries** folder in the downloaded AnyChart package
 
 ### Old Theme
   
-AnyChart provides several default themes along with the opportunity to [create custom themes](#create_theme). One of default themes is the default one from AnyChart 5.x, 6.x. To use old theme you have to reference special theme file with the name **v6.js**. This file can be found in **binaries** folder in the downloaded AnyChart package. After referencing the file you can use {api:anychart#theme}**.theme()**{api} method with **anychart.themes.v6** parameter to apply old theme:
+AnyChart provides several default themes along with the opportunity to [create custom themes](#create_theme). One of default themes is the default one from AnyChart 5.x, 6.x. To use old theme you have to reference special theme file with the name **v6.js**. This file can be found in **binaries** folder in the downloaded AnyChart package. After referencing the file you can use {api:anychart#theme}**theme()**{api} method with **anychart.themes.v6** parameter to apply old theme:
 
 ```
   // apply old theme
@@ -221,7 +221,7 @@ In the sample below a table contains several charts. Settings for these charts a
 
 ##Reset Theme
 
-There is one very important thing you need to remember when you work with themes in Dashboard mode: after the theme is defined in code every chart uses this theme until you set another theme. To reset theme to the default or to the new one you have to use {api:anychart#theme}**.theme()**{api} method again.
+There is one very important thing you need to remember when you work with themes in Dashboard mode: after the theme is defined in code every chart uses this theme until you set another theme. To reset theme to the default or to the new one you have to use {api:anychart#theme}**theme()**{api} method again.
 
 ```
   // return default theme to the charts below

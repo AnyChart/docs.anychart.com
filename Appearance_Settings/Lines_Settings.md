@@ -15,7 +15,7 @@
 Knowledge about line configuration parameters is very important, because AnyChart allows to configure almost any line you can see on the chart: Lines in charts, grids, tooltips and labels, and even tickmark lines.
   
   
-The name of the method is almost always {api:anychart.graphics.vector.Stroke}**.stroke()**{api}. All line parameters and features are described in this tutorial.
+The name of the method is almost always {api:anychart.graphics.vector.Stroke}**stroke()**{api}. All line parameters and features are described in this tutorial.
   
   
 You can also refer to the detailed [Stroke API description](../Graphics/Stroke_Settings).
@@ -106,7 +106,7 @@ Opacity through object:
 
 ## Change borders
 
-In case you need to change the border of a bar or a column series, you can use the {api:anychart.graphics.vector.Stroke}**.stroke()**{api} parameter.
+In case you need to change the border of a bar or a column series, you can use the {api:anychart.graphics.vector.Stroke}**stroke()**{api} parameter.
 
 ```
   // set first series data

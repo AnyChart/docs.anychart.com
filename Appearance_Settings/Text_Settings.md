@@ -17,7 +17,7 @@ These settings are applied to all characters within a text element; use [HTML fo
 
 ## Basic Settings
 
-Most of the time the following methods are used to tune the appearance of a text: {api:anychart.graphics.vector.Text#fontFamily}**fontFamily()**{api}, {api:anychart.graphics.vector.Text#fontSize}**.fontSize()**{api}, {api:anychart.graphics.vector.Text#fontWeight}**.fontWeight()**{api}, {api:anychart.graphics.vector.Text#fontStyle}**.fontStyle()**{api}, {api:anychart.graphics.vector.Text#htmlText}**.useHtml()**{api}. Full list of methods can be found in [Text Formatting](#text_formatting) section or in {api:anychart.graphics.vector.Text}API{api}.
+Most of the time the following methods are used to tune the appearance of a text: {api:anychart.graphics.vector.Text#fontFamily}**fontFamily()**{api}, {api:anychart.graphics.vector.Text#fontSize}**fontSize()**{api}, {api:anychart.graphics.vector.Text#fontWeight}**fontWeight()**{api}, {api:anychart.graphics.vector.Text#fontStyle}**fontStyle()**{api}, {api:anychart.graphics.vector.Text#htmlText}**useHtml()**{api}. Full list of methods can be found in [Text Formatting](#text_formatting) section or in {api:anychart.graphics.vector.Text}API{api}.
 
 ```
   .fontColor('Red')
@@ -41,7 +41,7 @@ There are labels, tooltips and legend in English, French, Portuguese, Spanish, R
 
 ## HTML
 
-If you want to do a complex formatting of the text - consider using HTML formatting. To enable it set the {api:anychart.graphics.vector.Text#htmlText}**.useHtml()**{api} method in *true*:
+If you want to do a complex formatting of the text - consider using HTML formatting. To enable it set the {api:anychart.graphics.vector.Text#htmlText}**useHtml()**{api} method in *true*:
 
 ```
   series.labels().useHtml(true).textFormatter(function(){
