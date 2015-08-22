@@ -19,12 +19,12 @@ To add custom text you need to create {api:anychart.charts.Cartesian#textMarker}
   var textMarker = chart.textMarker();
   textMarker.scale(chart.yScale());
   textMarker.value(18000);
-  textMarker.align('left');
-  textMarker.anchor('leftcenter');
+  textMarker.align("left");
+  textMarker.anchor("leftcenter");
   textMarker.fontSize(12);
-  textMarker.fontColor(#212121');
+  textMarker.fontColor("#212121");
   textMarker.offsetX(5);
-  textMarker.text('Historical Maximum');
+  textMarker.text("Historical Maximum");
 ```
 
 Sample below shows several variants of Text Marker usage: marking up values (High, Low), describing values (Historical Maximum) and marking only selected values on certain axis (8.00).

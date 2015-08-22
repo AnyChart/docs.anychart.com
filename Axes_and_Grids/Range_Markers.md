@@ -8,7 +8,7 @@
 
 ## Overview
 
-Range Markers (sometimes referred as areas or zones) are colored areas bound to a scale, that are drawn through data plot. These areas are useful when you need to name a highlight some value(s) on axis. You can add Range Markers on any scale, both x scale, y scale and additional scale.
+Range Markers (sometimes referred as areas or zones) are colored areas bound to a chart scale. These areas are useful when you need to highlight some value(s) on axis. You can add Range Markers on any scale, both x scale, y scale and additional scale.
 
 ## Declare
 

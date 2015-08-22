@@ -35,7 +35,7 @@ There are four types of scales in AnyChart: {api:anychart.scales.Linear}**"Linea
 
 ```
   chart.xScale(anychart.scales.linear());
-  
+
   var newScale = anychart.scales.ordinal();
   chart.yScale(newScale);
 ```
@@ -58,7 +58,7 @@ A logarithmic scale is a scale of measurement that uses the logarithm of a physi
 <!--You can set any positive number as a logarithm base using log_base attribute.-->
 
 ```
-    chart.yScale(anychart.scales.log());
+  chart.yScale(anychart.scales.log());
 ```
 
 In the sample below **A = 637.166**, **B = 721.630**, and **C=1.000**, **D=78**, **E = 90**.
@@ -70,7 +70,7 @@ In the sample below **A = 637.166**, **B = 721.630**, and **C=1.000**, **D=78**,
 Ordinal scale type is a default type for xScale in all cartesian charts. Values for this scale should be of string type and scale intervals will be set automatic.
 
 ```
-    chart.xScale(anychart.scales.ordinal());
+  chart.xScale(anychart.scales.ordinal());
 ```
 {sample}AGST\_Scales\_03{sample}
 
@@ -109,7 +109,7 @@ Scale mode defines some additional behavior of a chart. In the table below all m
 </tr>
 </tbody></table>
 
-To change scale mode you need to set {api:anychart.enums.ScaleStackMode}**stackMode()**{api} attribute. Possible attributes are: **value** and **percent**.
+To change scale mode you need to set {api:anychart.enums.ScaleStackMode}**stackMode()**{api} parameter. Possible attributes are: **value** and **percent**.
 
 ```
   var yScale = chart.yScale();
@@ -152,7 +152,7 @@ Sample below shows how soft minimum and soft maximum help to show data better th
 
 ## Stick to Zero
 
-{api:anychart.scales.Linear#stickToZero}**stickToZero()**{api} method allows to disable the default scale autocalculation behavior and always show include zero in scale range.
+{api:anychart.scales.Linear#stickToZero}**stickToZero()**{api} method allows to disable the default scale autocalculation behavior and always include zero in scale range.
 
 ## Minor and Major Ticks
 
@@ -208,10 +208,12 @@ Sample of the chart with inverted scale:
 There are two types of grid in AnyChart - major grid that can be controlled using {api:anychart.charts.Cartesian#grid}**grid()**{api} method and minor grid that is controlled with {api:anychart.charts.Cartesian#minorGrid}**minorGrid()**{api} method. Both grids are disabled by default. To enable major grid use {api:anychart.core.grids.Linear#enabled}**enabled(true)**{api} method for {api:anychart.charts.Cartesian#grid}**grid()**{api} and if you want to display minor grid use {api:anychart.core.grids.Linear#enabled}**enabled(true)**{api} method for {api:anychart.charts.Cartesian#minorGrid}**minorGrid()**{api}.
 
 ```
-  var minorGrid = chart.minorGrid();
-  minorGrid.enabled(true);
+  // enable major grid
   var grid = chart.grid();
   grid.enabled(true);
+  // enable minor grid
+  var minorGrid = chart.minorGrid();
+  minorGrid.enabled(true);
 ```
 
 Here is how default grid and minor grid of cartesian chart looks like:
@@ -252,7 +254,7 @@ Grid's fill is controlled by two methods: {api:anychart.grids.Linear#evenFill}**
 
 ### Layout
 
-Grids can be placed vertically or horizontally on the chart plot. You can control grid's organization using {api:anychart.grids.Linear#layout}**layout()**{api} method. 
+Grids can be placed vertically or horizontally on the chart plot. You can control grid's placement using {api:anychart.grids.Linear#layout}**layout()**{api} method. 
 
 ```
   var grid = chart.grid();
@@ -261,7 +263,7 @@ Grids can be placed vertically or horizontally on the chart plot. You can contro
 
 {sample}AGST\_Scales\_14{sample}
 
-As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts_Types/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these chart types you can use {api:anychart.grids.Radar#layout}**layout("curcuit")**{api} to define circular layout or {api:anychart.grids.Polar#layout}**layout("radial")**{api} to enable radial grid layout. 
+As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts_Types/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these charts you can use {api:anychart.grids.Radar#layout}**layout("curcuit")**{api} to define circular layout or {api:anychart.grids.Polar#layout}**layout("radial")**{api} to enable radial grid layout. 
 
 ```
   // create radar chart
