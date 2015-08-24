@@ -19,8 +19,8 @@ Each region on a map is similar to a point of a chart, so they've got labels tha
 As map labels has got almost the same settings as chart labels, we advise you to look through these articles:
  - [Axes Labels Formatting](../../Axes_and_Grids/Axes_Labels_Formatting);  
  - [Labels](../../Common_Settings/Labels).
- 
- You'll find there all general information and answers on "how to color it" or "how to change the labels' position".
+
+You'll find there all general information and answers on "how to color it" or "how to change the labels' position".
 
 ## Labels Display Modes
 
