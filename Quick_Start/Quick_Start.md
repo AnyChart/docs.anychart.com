@@ -10,7 +10,7 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 
 ```
 <head>
-    <script src="http://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
+    <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
 </head>
 ```
 

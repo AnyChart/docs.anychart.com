@@ -7,6 +7,7 @@ Downloading AnyChart
  * [AnyGantt](#anygantt)
  * [AnyMap](#anymap)
  * [Bundle](#bundle)
+ * [Themes](#themes)
 * [AnyChart CDN](#anychart_cdn)
 * [Production vs Development Builds](#production_vs_development_builds)
 * [Package Content](#package_content)
