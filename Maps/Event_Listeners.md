@@ -11,18 +11,18 @@ Listeners help to catch the users actions in order to add or change some informa
 
 ## Action Types
 
-There are two types of actions: point-oriented and mouse-oriented. Actions of the last type are simple, while point-orientes ones give some information about the point that were acted at. [Here](../../Common_Settings/Event_Listeners/#eventtypes).you can find all these types.
+There are two types of actions: point-oriented and mouse-oriented. Actions of the last type are simple, while point-orientes ones give some information about the point that were acted at. [Here](../Common_Settings/Event_Listeners/#eventtypes) you can find all these types.
 Any of those is eligble for using with AnyMaps.
 
 ## Listener Types
 
 There are five basic listener methods in AnyMaps:
 
- - {api:anychart.charts.Map#listen}.listen(){api}
- - {api:anychart.charts.Map#listenOnce}.listenOnce(){api}
- - {api:anychart.charts.Map#removeAllListeners}.removeAllListeners(){api}
- - {api:anychart.charts.Map#unlisten}.unlisten(){api}
- - {api:anychart.charts.Map#unlistenByKey}.unlistenByKey(){api}
+ - {api:anychart.charts.Map#listen}listen{api}
+ - {api:anychart.charts.Map#listenOnce}listenOnce{api}
+ - {api:anychart.charts.Map#removeAllListeners}removeAllListeners{api}
+ - {api:anychart.charts.Map#unlisten}unlisten{api}
+ - {api:anychart.charts.Map#unlistenByKey}unlistenByKey{api}
  
 You can use first two of them to start listening the actions and rest are being used when we want to stop listening for the actions. 
 
