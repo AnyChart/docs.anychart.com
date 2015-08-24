@@ -15,7 +15,7 @@ Credits is a single object shown as a watermark in the right bottom corner of an
 
 ### Text
 
-Credits text can be changed by using {api:anychart.core.ui.Credits#text}**.text()**{api} method:
+Credits text can be changed by using {api:anychart.core.ui.Credits#text}**text()**{api} method:
 
 ```
   var credits = chart.credits();
@@ -26,7 +26,7 @@ Credits text can be changed by using {api:anychart.core.ui.Credits#text}**.text(
 
 ### Tooltip
 
-Tooltip is shown when a credits is hovered. It can be adjusted with {api:anychart.core.ui.Credits#alt}**.alt()**{api} method.
+Tooltip is shown when a credits is hovered. It can be adjusted with {api:anychart.core.ui.Credits#alt}**alt()**{api} method.
 
 ```
   var credits = chart.credits();
@@ -37,7 +37,7 @@ Tooltip is shown when a credits is hovered. It can be adjusted with {api:anychar
 
 ### URL
 
-Credits acts as a link. By default it references to [AnyChart Site](http://www.anychart.com/). You can change it using {api:anychart.core.ui.Credits#url}**.url()**{api} method.
+Credits acts as a link. By default it references to [AnyChart Site](http://www.anychart.com/). You can change it using {api:anychart.core.ui.Credits#url}**url()**{api} method.
 
 ```
   var credits = chart.credits();
@@ -47,7 +47,7 @@ Credits acts as a link. By default it references to [AnyChart Site](http://www.a
 {sample}Credits\_03{sample}
 
 ### Logo
-Logo picture can be adjusted as well. Use {api:anychart.core.ui.Credits#logoSrc}**.logoScr()**{api} method to set custom image.
+Logo picture can be adjusted as well. Use {api:anychart.core.ui.Credits#logoSrc}**logoScr()**{api} method to set custom image.
 
 ```
   var credits = chart.credits();
