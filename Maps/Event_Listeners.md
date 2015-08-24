@@ -4,11 +4,6 @@ Attaching Actions to a Map
 * [Overview](#overview)
 * [Action types](#action_types)
 * [Listener Types](#listener_types)
- * [listen](#listen)
- * [listenOnce](#listenonce)
- * [removeAllListeners](#removealllisteners)
- * [unlisten](#unlisten)
- * [unlistenByKey](#unlistenbykey)
  
 ## Overview
 
@@ -63,5 +58,5 @@ The following sample shows a listener and unlistener working at one map: we list
 
 This sample can be modified: you may add an extra field to the map data which would contain a specific URL, so each region will redirect to different pages when double-clicked.
 
-Look the main [Event Listener article](../../Common_Settings/Event_Listeners) to learn more about the listeners.
+Look the main [Event Listener article](../Common_Settings/Event_Listeners) to learn more about the listeners.
 
