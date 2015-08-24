@@ -18,11 +18,11 @@ Any of those is eligble for using with AnyMaps.
 
 There are five basic listener methods in AnyMaps:
 
- - listen
- - listenOnce
- - removeAllListeners
- - unlisten
- - unlistenByKey
+ - {api:anychart.charts.Map#listen}.listen(){api}
+ - {api:anychart.charts.Map#listenOnce}.listenOnce(){api}
+ - {api:anychart.charts.Map#removeAllListeners}.removeAllListeners(){api}
+ - {api:anychart.charts.Map#unlisten}.unlisten(){api}
+ - {api:anychart.charts.Map#unlistenByKey}.unlistenByKey(){api}
  
 You can use first two of them to start listening the actions and rest are being used when we want to stop listening for the actions. 
 
@@ -47,11 +47,22 @@ The following sample shows a listener and unlistener working at one map: we list
 ```
 	//create a function what to listen and then unlisten
     var func_listen = function(e){
-        window.open('http://www.google.com/search?q=Australia');
+        pi = e.pointIndex;
+        if (pi) {
+            series.fill('#FFC9A8');
+        } else{
+            series.fill('#ADEB85')
+        }
     };
   
     //add a listener
-    var listener = australiaMap.listen('dblclick', func_listen);
+    var listener = australiaMap.listen('mouseOver', func_listen);
+    
+    australiaMap.listenOnce('click',function(){
+    //adding an unlistener 
+    australiaMap.unlisten('mouseOver', func_listen);
+    });
+
 ```
 
 {sample}Maps\_Events\_02{sample}

@@ -27,7 +27,7 @@ anychart.onDocumentReady(function() {
     var series = australiaMap.choropleth(dataSetForSeries);
     series.geoIdField("code_hasc");
     
-    //create a function what to listen and then unlisten
+    //create a function what to listen
     var func_listen = function(e){
         window.open('http://www.google.com/search?q=Australia');
     };
