@@ -1,4 +1,4 @@
-Attaching Actions to a Map
+Event Listeners in Maps
 ======================
 
 * [Overview](#overview)
