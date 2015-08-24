@@ -26,10 +26,6 @@ anychart.onDocumentReady(function() {
 
     var series = australiaMap.choropleth(dataSetForSeries);
     series.geoIdField("code_hasc");
-
-    series.selectFill("#AED581");
-    // Sets selecting on third point by index.
-    series.select(2);
     
     //create a function what to listen and then unlisten
     var func_listen = function(e){
