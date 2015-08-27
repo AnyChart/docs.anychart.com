@@ -1,0 +1,53 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/geodata/countries/aus/australia.js" data-export="true"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // data
+  var dataSet = anychart.data.set([
+    [1, 10000, 12000, 15000],
+    [2, 12000, 12000, 14000],
+    [3, 18000, 15000, 15000],
+    [4, 11000, 10000, 19000],
+    [5, 9000, 13000, 19000]
+  ]);
+  
+  // mapping the data
+  var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+  var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+  var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
+
+  // chart type
+  var chart = anychart.scatter();
+  
+  // title
+  chart.title("Line Chart");
+  
+  // enable the legend
+  chart.legend(true);
+
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Sales");
+  var yAxis = chart.yAxis();
+  yAxis.title("Month");
+
+  // set data
+  chart.marker(seriesData_1);
+  chart.marker(seriesData_2);
+  chart.marker(seriesData_3);
+
+  // draw
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

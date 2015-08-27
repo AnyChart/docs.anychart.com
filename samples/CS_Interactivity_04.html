@@ -1,0 +1,72 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/geodata/countries/aus/australia.js" data-export="true"></script>
+    <script x-export="chart">var chart, stage;
+var randomExt = function(a, b) {
+  return Math.round(Math.random() * (b - a + 1) + a);
+};
+
+anychart.onDocumentReady(function() {
+  stage = acgraph.create('container');
+
+  var seriesCount = 1;
+  var pointsCount = 400;
+  var dataForDataSet = [];
+  var i, j;
+  for (i = 0; i < pointsCount; i++) {
+    var data = [];
+    data.push(i);
+    for (j = 0; j < seriesCount; j++) {
+      data.push(randomExt(-100, 100));
+    }
+    dataForDataSet.push(data);
+  }
+  var dataSet = anychart.data.set(dataForDataSet);
+
+
+  chart = anychart.cartesian();
+  // set chart margin settings
+  chart.margin(0);
+
+  // turn on grids
+  chart.grid().enabled(true);
+  chart.grid(1).enabled(true).layout('vertical');
+  chart.minorGrid().enabled(true);
+  chart.minorGrid(1).enabled(true).layout('vertical');
+
+  // set chart axes settings
+  var scale = anychart.scales.linear();
+  chart.xScale(scale);
+  chart.xAxis().minorTicks(true);
+  chart.yAxis().minorTicks(true);
+
+  //set chart legend settings
+  chart.legend().enabled(true).padding().bottom(30);
+  chart.background(false);
+
+
+  var s;
+  for (i = 0; i < seriesCount; i++) {
+    s = chart.spline(dataSet.mapAs({x: [0], value: [i + 1]}));
+    s.markers(true);
+    s.hoverMarkers().fill('yellow').enabled(true);
+  }
+
+    // single-hover enabling 
+	chart.interactivity('byX');
+    chart.interactivity().spotRadius(30);
+
+  chart.crosshair(true);
+  chart.container(stage);
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
