@@ -57,8 +57,6 @@
   bubble.fill("DodgerBlue")
     .hoverFill("DodgerBlue")
     .hoverHatchFill("zigzag")
-    .minimumSize(10)
-    .maximumSize(30)
     .stroke(anychart.color.darken("DodgerBlue"))
     .hoverStroke("#000000")
     .labels()
@@ -74,6 +72,10 @@
           "name"                // field to display
         );
       });
+
+  // set series size
+  chart.minBubbleSize(10);
+  chart.maxBubbleSize(30);
 
   // set tooltips
   bubble.tooltip().contentFormatter(function(){

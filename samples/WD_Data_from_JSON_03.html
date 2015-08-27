@@ -94,10 +94,10 @@
       if (/^"/.test(match)) {
         if (/:$/.test(match)) {
           cls = "key";
-          return "<span style="color: #718C00;">" + match.substr(0, (match.length - 1)) + "<a style="color:black;">:</a></span>";
+          return "<span style='color: #718C00;'>" + match.substr(0, (match.length - 1)) + "<a style='color:black;'>:</a></span>";
         }
       }
-      return "<span style="color: darkorange;">" + match + "</span>";
+      return "<span style='color: darkorange;'>" + match + "</span>";
     });
   }
   

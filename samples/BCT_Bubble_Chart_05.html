@@ -14,14 +14,14 @@
   chart.title("Axes Management");
 
   // set data
-  var series = chart.bubble([
+  chart.bubble([
     [1, 637, 6],
     [2, 472, 14],
     [3, 48, 10]
   ]);
       
-  series.minBubbleSize(10);
-  series.maxBubbleSize(30);
+  chart.minBubbleSize(10);
+  chart.maxBubbleSize(30);
 
   // adjust axes position
   var xAxis = chart.xAxis();
@@ -38,7 +38,7 @@
   var xScale = chart.xScale();
   xScale.minimum(0);
   xScale.maximum(4);
-  var xTicks = chart.xScale.ticks();
+  var xTicks = chart.xScale().ticks();
   xTicks.interval(1);
   
   // draw
