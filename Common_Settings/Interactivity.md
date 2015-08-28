@@ -10,7 +10,7 @@ Interactivity
  * [Series behaviour](#series_behaviour)
   * [Hover](#hover)
   * [Select](#select)
- * [Define interactivity parameters through dataSets](#define_interactivity_parameters_through_dataSets)
+ * [Define interactivity parameters through dataSets](#define_interactivity_parameters_through_datasets)
 
 
 # Overview 
