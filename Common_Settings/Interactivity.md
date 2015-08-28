@@ -85,7 +85,9 @@ Now, let'l look at the select editing tools.
 
 There is a {api}**.selectionMode()**{api} method created for changing the selection settings. The argument should be one of those: "none", "singleSelect" or "multiSelect".
 
-As selection is enabled by default, it might be necessary to switch it off:
+The **Shift** key is being used as usual, so ,if you need to select many points, hold **Shift** key while checking them.
+
+As selection is enabled by default, for some reasons it might be necessary to switch it off:
 
 ```
 // select disabling
@@ -94,7 +96,7 @@ chart.interactivity().selectionMode('none');
 
 {sample}CS\_Interactivity\_05{sample} 
 
-The mode that is on by default is a multi-selection mode. You may select many points, holding Shift key while checking the points. However, if you have turned it off and then you need a selection tool back, use this:
+The mode that is on by default is a multi-selection mode. However, if you have turned it off and then you need a selection tool back, use this:
 
 ```
 // multi-select enabling
@@ -170,7 +172,7 @@ Let's change the selection color for the box chart.
 
 {sample}CS\_Interactivity\_10{sample} 
 
-OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}, {api:anychart.core.cartesian.series.OHLC#risingStroke}**.selectRisingStroke()**(api) or {api}**.hoverFallingStroke()**{api}. You can find more in {api:anychart.core.cartesian.series.OHLC}[API Reference]{api}.
+OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}, {api:anychart.core.cartesian.series.OHLC#risingStroke}**.selectRisingStroke()**(api) or {api: anychart.core.cartesian.series.OHLC#hoverFallingStroke}**.hoverFallingStroke()**{api}. You can find more in {api:anychart.core.cartesian.series.OHLC}[API Reference]{api}.
 
 ```
 	// change the selected regions color to the dark violet from the default
