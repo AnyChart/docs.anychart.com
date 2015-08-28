@@ -10,7 +10,7 @@ Interactivity
  * [Series behaviour](#series_behaviour)
   * [Hover](#hover)
   * [Select](#select)
- * [Define interactivity through dataSets](#series_behaviour)
+ * [Define interactivity parameters through dataSets](#define_interactivity_parameters_through_dataSets)
 
 
 # Overview 
@@ -170,11 +170,11 @@ Let's change the selection color for the box chart.
 
 {sample}CS\_Interactivity\_10{sample} 
 
-OHLC charts have special seiings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}, {api:anychart.core.cartesian.series.OHLC#risingStroke}**.selectRisingStroke()**(api) or {api}**.hoverFallingStroke()**{api}. You can find more in {api:anychart.core.cartesian.series.OHLC}[API Reference]{api}.
+OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}, {api:anychart.core.cartesian.series.OHLC#risingStroke}**.selectRisingStroke()**(api) or {api}**.hoverFallingStroke()**{api}. You can find more in {api:anychart.core.cartesian.series.OHLC}[API Reference]{api}.
 
 ```
 	// change the selected regions color to the dark violet from the default
-   // series.risingStroke('#5400BA');
+    // series.risingStroke('#5400BA');
     series.hoverRisingStroke('#FFF');
 	
 	// enabling the selection
@@ -186,7 +186,20 @@ OHLC charts have special seiings such as {api:anychart.core.cartesian.series.OHL
 
 If you want to disable the selection ability, there is an only way to use the enum {api}**.selectionModel**(single|multi|none){api} with arguments of "single", "none" or "multi".
 
-## Define interactivity through dataSets
+## Define interactivity parameters through dataSets
 
+It's not possible to define the interactivity itself through the dataSet, but we can adjust some interactivity settings. That would look like the following:
 
-Как эмулировать кастомное состояние через данные
+{sample}CS\_Interactivity\_12{sample} 
+
+```
+	...		
+        ['22', 60, 25, 'green', {thickness:3, color:'black'}],
+	...
+	
+	// select the defined points
+	series_2.select([0,2,5,6,9,11,12,13,17,19,21,24,26,29]);
+```
+
+As you can see, there are some points differently colored and stroked when selected. This was defined through the dataset, (look up for the whole dataSet in playground). You can adjust the similar settings the same way.
+
