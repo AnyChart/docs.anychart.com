@@ -1,0 +1,38 @@
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+  <script x-export="chart">anychart.onDocumentReady(function() {
+
+  var data = [
+    {"id": "1", "name": "Self-Assessment", "progressValue": "25", "actualStart": 951350400000},
+    {"id": "2", "name": "Define business vision", "progressValue": "0", "actualStart": 951408000000},
+    {"id": "3", "name": "Identify available skills, information and support", "progressValue": "0", "actualStart": 951494400000},
+    {"id": "4", "name": "Decide whether to proceed", "progressValue": "0", "actualStart": 951609600000}
+  ];
+  var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TABLE);
+
+  var dataGrid = anychart.ui.dataGrid();
+  dataGrid.data(treeData);
+  var column0 = dataGrid.column(0);
+  column0.title("Raw Data");
+  column0.setColumnFormat("actualStart", "directNumbering");
+  column0.width(100);
+  var column1 = dataGrid.column(1);
+  column1.title("dateCommonLog");
+  column1.setColumnFormat("actualStart", "dateCommonLog");
+  column1.width(150);
+
+  dataGrid.tooltip(false);
+  dataGrid.listen("signal", dataGrid.draw);
+  dataGrid.container("container");
+  dataGrid.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

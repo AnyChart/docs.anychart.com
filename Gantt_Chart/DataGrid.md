@@ -3,7 +3,7 @@
 * [Columns](#columns)
  * [Columns Set](#columns_set)
  * [Title](#title)
- * [Content](#content)
+ * [Content](#inner_content)
  * [Width](#width)
 * [Visual Settings](#visual_settings)
  * [Interlaced mode](#interlaced_mode)
@@ -38,7 +38,7 @@ var firstColumn = dataGrid.column(10);
 var secondColumn = dataGrid.column(20);
 ```
 
-<br>For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the [Content](DataGrid#content) topic.
+<br>For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the [Content](#inner_content) topic.
 
 <br> The sample below shows Resource Gantt Chart, note that the third column is created to display the start data value.
 {sample :width 690 :height 190}GANTT\_Chart\_10{sample}
@@ -63,13 +63,14 @@ Each column has its own title, so it is possible to tune the visual appearance o
 ```
 //set title values
 title.text("new column");
-title.fontWeight('bold').fontStyle('italic');
-title.hAlign('left');
+title.fontWeight("bold").fontStyle("italic");
+title.hAlign("left");
 ```
 
+<a name="inner_content">
 ### Content
 
-Column content can be tuned as well as its title with the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method. It used to define a cell text value formatter, so you can pass your own custom function as an argument.
+Column content can be tuned as well as its title. The easiest way to manage column content is [using presets](./DataGrid_Column_Presets). The advanced one is {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method. It used to define a cell text value formatter, so you can pass your own custom function as an argument.
 ```
 //create a column contains all IDs
 column.textFormatter(function(item) {
@@ -84,15 +85,22 @@ column.textFormatter(function(item) {
 dataGrid.column(2).textFormatter(customColumnTextFormatter);
 
 //define a custom content with actual start values
-function customColumnTextFormatter(item)
-{
-  var field = item.get(anychart.enums.GanttDataFields.ACTUAL_START);
-
-  var actualStart = new Date(field);
-  return formatDate(actualStart.getUTCMonth() + 1) + '/' +
-      formatDate(actualStart.getUTCDate()) + '/' + actualStart.getUTCFullYear();
+function customColumnTextFormatter(item){
+    var start = item.get("actualStart");
+    var end = item.get("actualEnd");
+    var duration = end - start;
+    var hours = duration/1000/60/60;
+    if (hours>24){
+        return hours + " hours <a style='color: #7c868e;'>(" + (hours/24).toFixed(0) + " days)<a>";
+    }else{
+        return hours + " hours";
+    }
 }
 ```
+
+<br>Here is a sample with the complex {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api}.
+
+{sample :width 690 :height 220}GANTT\_Chart\_17{sample}
 
 ### Width
 
