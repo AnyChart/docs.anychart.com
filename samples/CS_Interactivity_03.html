@@ -5,65 +5,86 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script src="http://cdn.anychart.com/geodata/countries/aus/australia.js" data-export="true"></script>
-    <script x-export="chart">var chart, stage;
-var randomExt = function(a, b) {
-  return Math.round(Math.random() * (b - a + 1) + a);
-};
+    <script x-export="chart">anychart.onDocumentReady(function() {
+    var dataSet = anychart.data.set([
+        [1, 10],
+        [2, 12],
+        [3, 11],
+        [4, 15],
+        [5, 20],
+        [6, 22],
+        [7, 21],
+        [8, 25],
+        [9, 31],
+        [10, 32],
+        [11, 28],
+        [12, 29],
+        [13, 40],
+        [14, 41],
+        [15, 45],
+        [16, 50],
+        [17, 65],
+        [18, 45],
+        [19, 50],
+        [20, 51],
+        [21, 65],
+        [22, 60],
+        [23, 62],
+        [24, 65],
+        [25, 45],
+        [26, 55],
+        [27, 59],
+        [28, 52],
+        [29, 53],
+        [30, 40],
+        [31, 45],
+        [32, 23],
+        [33, 45],
+        [34, 40],
+        [35, 33],
+        [36, 37],
+        [37, 59],
+        [38, 30],
+        [39, 12],
+        [40, 60]
+    ]);
 
-anychart.onDocumentReady(function() {
-  stage = acgraph.create('container');
 
-  var seriesCount = 1;
-  var pointsCount = 400;
-  var dataForDataSet = [];
-  var i, j;
-  for (i = 0; i < pointsCount; i++) {
-    var data = [];
-    data.push(i);
-    for (j = 0; j < seriesCount; j++) {
-      data.push(randomExt(-100, 100));
-    }
-    dataForDataSet.push(data);
-  }
-  var dataSet = anychart.data.set(dataForDataSet);
+    var chart = anychart.cartesian();
+    // set chart margin settings
+    chart.margin(0);
 
+    var s = chart.spline(dataSet.mapAs({x: [0], value: [1]}));
 
-  chart = anychart.cartesian();
-  // set chart margin settings
-  chart.margin(0);
+    // create the title
+    chart.title('Hover feature');
 
-  // turn on grids
-  chart.grid().enabled(true);
-  chart.grid(1).enabled(true).layout('vertical');
-  chart.minorGrid().enabled(true);
-  chart.minorGrid(1).enabled(true).layout('vertical');
+    // turn on grids
+    chart.grid().enabled(true);
+    chart.grid(1).enabled(true).layout('vertical');
+    chart.minorGrid().enabled(true);
+    chart.minorGrid(1).enabled(true).layout('vertical');
 
-  // set chart axes settings
-  var scale = anychart.scales.linear();
-  chart.xScale(scale);
-  chart.xAxis().minorTicks(true);
-  chart.yAxis().minorTicks(true);
+    // set chart axes settings
+    var scale = anychart.scales.linear();
+    chart.xScale(scale);
+    chart.xAxis().minorTicks(true);
+    chart.yAxis().minorTicks(true);
 
-  //set chart legend settings
-  chart.legend().enabled(true).padding().bottom(30);
-  chart.background(false);
+    //set chart legend settings
+    chart.legend().enabled(true).padding().bottom(30);
+    chart.background(false);
 
-
-  var s;
-  for (i = 0; i < seriesCount; i++) {
-    s = chart.spline(dataSet.mapAs({x: [0], value: [i + 1]}));
     s.markers(true);
-    s.hoverMarkers().fill('yellow').enabled(true);
-  }
+    s.hoverMarkers().enabled(true).fill('yellow');
 
     // multi-hover enabling 
-    chart.interactivity().hoverMode('bySpot');
-    chart.interactivity().spotRadius(30);
+    chart.interactivity('bySpot');
+    chart.interactivity().spotRadius(60);
 
-  chart.crosshair(true);
-  chart.container(stage);
-  chart.draw();
+    chart.crosshair(true);
+    chart.container('container');
+    chart.draw();
 });</script>
 </head>
 <body>

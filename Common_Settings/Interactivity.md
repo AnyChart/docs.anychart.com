@@ -19,22 +19,21 @@ Interactivity is a kind of "dialog" that occurs between a user and a computer pr
 
 # Default interactivity
 
-Default interactivity of our charts contains the following:
- - highlighting the hovered series and points
- - selecting the points 
- - showing tooltips on hovered points
- - highlighting a series when a legend is hovered
- - showing/hiding the series when a legend element is clicked
- - multiselecting
+That's what might happen when users interact with charts:
+ - series and points are highlighted when hovered
+ - points are selected
+ - tooltips of hovered points are shown
+ - series becomes highlighted when a legend is hovered
+ - the series gets shown or hidden when a legend element is clicked
+ - a number of series are selected (multi-selecting)
 
-Now we're going to consider a couple of samples showing these kinds of interactivity.
-
-{sample}CS\_Interactivity\_01{sample}
-
+Lets' now take a look at a couple of samples with default interactivity settings.
 <br>
 Here we've got a line chart with three series and a legend enabled. Click on legend items to hide/show series, hover them and see the tooltips.
 
 You can see the code of this sample in the playground.
+
+{sample}CS\_Interactivity\_01{sample}
 
 In the following sample there is a marker chart, where we can hover and select the points, do the same as in the previous sample with the legend.
 
@@ -46,11 +45,11 @@ And now let's talk about customising the charts' performance and behaviour. Ther
 
 ## Charts behaviour
 
-We can make some changes in charts behaviour using the {api}**.interactivity()**{api} method. It helps to adjust hover and select settings, as well as create a "highlighting area" - a spot of a custom-defined radius that highlights (hovers) all points that belong to that radius.
+We can make some changes in charts behaviour using the {api}**.interactivity()**{api} method. It helps to adjust hover and select settings, as well as create a "highlighting area" - a spot of a custom-defined radius that highlights (hovers) all points within that radius.
 
-So, if we need to change something in hover performance, we should use {api:}**.hoverMode(){api} with an argument "bySpot" or "byX". In first case we may adjust the radius of a "spot",  making it bigger or smaller..
+So, if we need to change something with hover, we should use {api:}**.hoverMode(){api} with an argument "bySpot" or "byX". In first case we may adjust the radius of a "spot",  making it bigger or smaller..
 
-There are also two basic reaction types: hover and select.
+There are also two basic events: hover and select.
 
 ### Hover
 
@@ -78,12 +77,12 @@ The code line above does the same as the previous one, but we have changed the m
 So, the "byX" mode gives us a single-hover mode, when it even isn't necessary to hover the point, you just need to drag the cursor anywhere above or under the point. So the y-coordinate doesn't matter at all in this case. It might be useful when you've got a lot of points on a chart and you need to emphasize them.
 
 <br>
-Now, let'l look at the select editing tools.
+Now, let'l have a look of the selecting feature.
 
 
 ### Select
 
-There is a {api}**.selectionMode()**{api} method created for changing the selection settings. The argument should be one of those: "none", "singleSelect" or "multiSelect".
+If you want to change the selection settings, use the {api}**.selectionMode()**{api} method with one of the followng arguments: "none", "singleSelect" or "multiSelect".
 
 The **Shift** key is being used as usual, so ,if you need to select many points, hold **Shift** key while checking them.
 
@@ -96,7 +95,7 @@ chart.interactivity().selectionMode('none');
 
 {sample}CS\_Interactivity\_05{sample} 
 
-The mode that is on by default is a multi-selection mode. However, if you have turned it off and then you need a selection tool back, use this:
+Multi-selection mode is enabled by default. However, if you have turned it off and then you need it back, use this:
 
 ```
 // multi-select enabling
@@ -121,7 +120,7 @@ chart.interactivity().selectionMode('singleSelect');
 
 Usually, when you hover a point, it becomes highlighted. However, it might be necessary to hightlight the points before you even drag a cursor over the chart. In this case use the {api}**.hover()**{api} method with a number of point (of array of numbers) that needs to be highlighted at the moment of loading:
 
-If you define nothing as an argument for the {api}**.hover()**{api} function, the hovering will be disabled for the discrete series but switched on for the whole continous ones, if the hover mode is set as "bySpot". When the hover mode is "byX", using {api:}**.hover()**{api} without arguments will lead to the same picture, but it will be impossible to unhover the continuous series and one of the points of a discrete series will be hovered also (which one depends on the x-coordinate, nearest to the cursor position).
+If you define nothing as an argument for the {api:}**.hover()**{api} function, the hovering will be disabled for the discrete series but switched on for the whole continous ones, if the hover mode is set as "bySpot". When the hover mode is "byX", using {api:}**.hover()**{api} without arguments will lead to the same picture, but it will be impossible to unhover the continuous series and one of the points of a discrete series will be hovered also (which one depends on the x-coordinate, nearest to the cursor position).
 
 Change the hovering mode in playground and see the difference.
 
@@ -180,7 +179,7 @@ OHLC charts have special settings such as {api:anychart.core.cartesian.series.OH
     series.hoverRisingStroke('#FFF');
 	
 	// enabling the selection
-	series. select([1,2,5,6,7,9]);
+	series.select([1,2,5,6,7,9]);
 ```
 
 {sample}CS\_Interactivity\_11{sample} 
