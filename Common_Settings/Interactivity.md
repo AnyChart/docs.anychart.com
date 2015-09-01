@@ -10,7 +10,10 @@ Interactivity
  * [Series behaviour](#series_behaviour)
   * [Hover](#hover)
   * [Select](#select)
- * [Define interactivity parameters through dataSets](#define_interactivity_parameters_through_datasets)
+ * [Handling chart events](#handling_chart_events)
+  * [Navigating by URL](#interactivity_settings_in_data_sets)
+  * [DrillDown](#drilldown)
+ * [Interactivity Settings in Data Sets](#interactivity_settings_in_data_sets)
 
 
 # Overview 
@@ -35,7 +38,7 @@ You can see the code of this sample in the playground.
 
 {sample}CS\_Interactivity\_01{sample}
 
-In the following sample there is a marker chart, where we can hover and select the points, do the same as in the previous sample with the legend.
+In the following sample there is a chart with marker and line series, where we can hover and select the points, do the same as in the previous sample with the legend.
 
 {sample}CS\_Interactivity\_02{sample}
 
@@ -82,9 +85,9 @@ Now, let'l have a look of the selecting feature.
 
 ### Select
 
-If you want to change the selection settings, use the {api}**.selectionMode()**{api} method with one of the followng arguments: "none", "singleSelect" or "multiSelect".
+If you want to change the selection settings, use the {api}**.selectionMode()**{api} method with one of the followng arguments: "none", "singleSelect" or "multiSelect". The "none" argument disables the selection feature, "singleSelect" disables multi-selection and "multiSelect" is the same as default settings.
 
-The **Shift** key is being used as usual, so ,if you need to select many points, hold **Shift** key while checking them.
+The **Shift** key is being used as usual, so, if you need to select many points, hold **Shift** key while checking them.
 
 As selection is enabled by default, for some reasons it might be necessary to switch it off:
 
@@ -118,18 +121,15 @@ chart.interactivity().selectionMode('singleSelect');
 
 ### Hover
 
-Usually, when you hover a point, it becomes highlighted. However, it might be necessary to hightlight the points before you even drag a cursor over the chart. In this case use the {api}**.hover()**{api} method with a number of point (of array of numbers) that needs to be highlighted at the moment of loading:
+Usually, when you hover a point, it becomes highlighted. However, if you are programmig a custom dashboard or somehow complicated control elements it might be necessary to hightlight the points before you even drag a cursor over the chart. In this case use the {api}**.hover()**{api} method with a number of point (or array of numbers) that needs to be highlighted at the moment of loading.
 
 If you define nothing as an argument for the {api:}**.hover()**{api} function, the hovering will be disabled for the discrete series but switched on for the whole continous ones, if the hover mode is set as "bySpot". When the hover mode is "byX", using {api:}**.hover()**{api} without arguments will lead to the same picture, but it will be impossible to unhover the continuous series and one of the points of a discrete series will be hovered also (which one depends on the x-coordinate, nearest to the cursor position).
 
 Change the hovering mode in playground and see the difference.
 
-```
-	// hovering mode
-	chart.interactivity().hoverMode('bySpot');
-	
+```	
 	// setting some points of series_2 and an providing no arguments for the series_1 
-	series_1.hover();
+	series_1.hover([4, 6, 9, 12, 16, 19]);
 	series_2.hover([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);	
 ```
 
@@ -187,20 +187,43 @@ OHLC charts have special settings such as {api:anychart.core.cartesian.series.OH
 
 If you want to disable the selection ability, there is an only way to use the enum {api}**.selectionModel**(single|multi|none){api} with arguments of "single", "none" or "multi".
 
-## Define interactivity parameters through dataSets
 
-It's not possible to define the interactivity itself through the dataSet, but we can adjust some interactivity settings. That would look like the following:
+## Handling chart events
+
+In some cases you might need a custom chart reaction on some user's actions which cannot be simple set using the methods described above. That's where listeners may help. 
+
+You can add a listener to any chart element, forcing it to react in some way. For example, you can make the chart body to listen to clicks and add a random point on each click; or you can tell the chart to listen to selects to uncolor all other elements when one is selected and color them back when the item gets unselected. It's possible to set some other custom interactivity using event listeners. 
+
+You can find more about listeners [here](../Common_Settings/Event_Listeners).
+
+#№# Navigating by URL
+
+Let's look at the typical situation when we might need the listeners. We add a listener to the series, which will navigate us to the pre-defined URL.
 
 {sample}CS\_Interactivity\_12{sample} 
 
-```
-	...		
-        ['22', 60, 25, 'green', {thickness:3, color:'black'}],
-	...
-	
-	// select the defined points
-	series_2.select([0,2,5,6,9,11,12,13,17,19,21,24,26,29]);
-```
+Explore the code of this sample in the playground.
 
-As you can see, there are some points differently colored and stroked when selected. This was defined through the dataset, (look up for the whole dataSet in playground). You can adjust the similar settings the same way.
+#№# DrillDown
+
+There's a  
+
+## Interactivity Settings in Data Sets
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
