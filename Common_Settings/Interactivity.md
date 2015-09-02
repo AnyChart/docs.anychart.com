@@ -18,11 +18,11 @@ Interactivity
 
 # Overview 
 
-Interactivity is a kind of "dialog" that occurs between a user and a computer program, so in case with charts - between a user and a chart. Our charts perform some interactivity by default and also can be adjusted somehow to perform custom interactivity. This article describes the default charts behaviour and tells how to adjust charts' settings to create special interactivity.
+Our charts are interactive by default, and almost everything can be adjusted to your liking. This article describes the default charts behaviour and tells how to adjust charts' interactivity settings.
 
 # Default interactivity
 
-That's what might happen when users interact with charts:
+That's what happens by default when users interact with charts:
  - series and points are highlighted when hovered
  - points are selected
  - tooltips of hovered points are shown
@@ -44,7 +44,7 @@ In the following sample there is a chart with marker and line series, where we c
 
 # Altering interactivity
 
-And now let's talk about customising the charts' performance and behaviour. There are two levels of interactivity: charts behaviour in general and the series level.
+And now let's talk about customising the charts' behaviour. There are two levels of interactivity: charts behaviour in general and the series level.
 
 ## Charts behaviour
 
@@ -73,7 +73,7 @@ Note that there is a short version of this command:
 chart.interactivity('byX');
 ```
 
-The code line above does the same as the previous one, but we have changed the mode of performance. The following sample demonstrates the difference:
+The code line above does the same as the previous one, but we have changed the hovering mode. The following sample demonstrates the difference:
 
 {sample}CS\_Interactivity\_04{sample}
 
@@ -185,7 +185,7 @@ OHLC charts have special settings such as {api:anychart.core.cartesian.series.OH
 {sample}CS\_Interactivity\_11{sample} 
 
 
-If you want to disable the selection ability, there is an only way to use the enum {api}**.selectionModel**(single|multi|none){api} with arguments of "single", "none" or "multi".
+If you want to disable the selection ability, use "none" as the {api}**.selectionMode()**{api} argument.
 
 
 ## Handling chart events
