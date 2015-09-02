@@ -206,7 +206,7 @@ Explore the code of this sample in the playground.
 
 ### DrillDown
 
-There's a  
+
 
 ## Interactivity Settings in Data Sets
 

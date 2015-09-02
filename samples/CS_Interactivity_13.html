@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">var chart;
+anychart.onDocumentReady(function() {
+
+    // data
+    var data = anychart.data.set([
+        ['Velma', 10, '#AB3300', 4, 2, 3, 1],
+        ['Fred', 12, '#66A3FF', 3, 3, 2, 4],
+        ['Daphne', 18, '#570FBD', 4, 5, 5, 4],
+        ['Shaggy', 6, '#948F45', 1, 2, 2, 1],
+        ['Scooby', 46, '#784512', 46]
+    ]);
+
+    // map data for the each series
+    var dataMapping = data.mapAs({x: [0], value: [1], fill:[2]});
+
+    // chart type
+    chart = anychart.column();
+
+    // set data
+    var series = chart.column(dataMapping)   // set series data
+
+    // chart title
+    chart.title().useHtml(true);
+    chart.title('<span style="color:#545f69; font-size: 18px;">How many secret have they revealed?</span><br><span style="color:#545f69; font-size: 10px">And who helped them. Click on the bars.</span>');
+
+    // set axes titles
+    chart.xAxis().title().text('Retail Channel');
+    chart.yAxis().title().text('Sales');
+
+    // enable legend
+    chart.legend().enabled(false);
+
+    // switching the select mode to multi
+    chart.interactivity().selectionMode('multiselect');
+
+    chart.bounds('0','0', '50%', '70%');
+
+
+    var pieDataMapping = data.mapAs({});
+
+    // draw
+    chart.container('container').draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
