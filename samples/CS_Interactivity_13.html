@@ -10,11 +10,11 @@ anychart.onDocumentReady(function() {
 
     // data
     var data = anychart.data.set([
-        ['Velma', 10, '#AB3300', 4, 2, 3, 1],
-        ['Fred', 12, '#66A3FF', 3, 3, 2, 4],
-        ['Daphne', 18, '#570FBD', 4, 5, 5, 4],
-        ['Shaggy', 6, '#948F45', 1, 2, 2, 1],
-        ['Scooby', 46, '#784512', 46]
+        ['Velma', 10, '#AB3300', 4, 3, 7, 1, 0],
+        ['Fred', 12, '#66A3FF', 2, 4, 4, 0, 0],
+        ['Daphne', 18, '#570FBD', 2, 3, 4, 0, 0],
+        ['Shaggy', 6, '#948F45', 1, 1, 1, 4, 0],
+        ['Scooby', 46, '#784512', 1, 1, 2, 1, 46]
     ]);
 
     // map data for the each series
@@ -28,7 +28,7 @@ anychart.onDocumentReady(function() {
 
     // chart title
     chart.title().useHtml(true);
-    chart.title('<span style="color:#545f69; font-size: 18px;">How many secret have they revealed?</span><br><span style="color:#545f69; font-size: 10px">And who helped them. Click on the bars.</span>');
+    chart.title('<span style="color:#545f69; font-size: 18px;">How many secrets have they revealed?</span><br><span style="color:#545f69; font-size: 10px">And who helped them. Click on the bars.</span>');
 
     // set axes titles
     chart.xAxis().title().text('Retail Channel');
@@ -41,10 +41,25 @@ anychart.onDocumentReady(function() {
     chart.interactivity().selectionMode('multiselect');
 
     chart.bounds('0','0', '50%', '70%');
+		
+	chart.listen('pointClick', function(evt){
+		console.log(evt.pointIndex);
+	});
+	
+	var pie = anychart.pie();
 
-
-    var pieDataMapping = data.mapAs({});
-
+    var VelmaPieDataMapping = data.mapAs({x:[0], value:[3]});
+    var FredPieDataMapping = data.mapAs({x:[0], value:[4]});
+    var DaphnePieDataMapping = data.mapAs({x:[0], value:[5]});
+    var ShaggyPieDataMapping = data.mapAs({x:[0], value:[6]});
+    var ScoobyPieDataMapping = data.mapAs({x:[0], value:[7]});
+	
+	var VelmaPie = anychart.pie();
+	var FredPie = anychart.pie();
+	var DaphnePie = anychart.pie();
+	var ShaggyPie = anychart.pie();
+	var ScoobyPie = anychart.pie();	
+	
     // draw
     chart.container('container').draw();
 });</script>
