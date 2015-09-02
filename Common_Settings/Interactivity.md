@@ -196,7 +196,7 @@ You can add a listener to any chart element, forcing it to react in some way. Fo
 
 You can find more about listeners [here](../Common_Settings/Event_Listeners).
 
-#№# Navigating by URL
+### Navigating by URL
 
 Let's look at the typical situation when we might need the listeners. We add a listener to the series, which will navigate us to the pre-defined URL.
 
@@ -204,7 +204,7 @@ Let's look at the typical situation when we might need the listeners. We add a l
 
 Explore the code of this sample in the playground.
 
-#№# DrillDown
+### DrillDown
 
 There's a  
 
