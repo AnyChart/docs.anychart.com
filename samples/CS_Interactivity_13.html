@@ -5,10 +5,13 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">var chart;
+    <script x-export="chart">var chart, pie, stage;
 anychart.onDocumentReady(function() {
 
-    // data
+// set stage
+    stage = anychart.graphics.create('container');
+
+// data
     var data = anychart.data.set([
         ['Velma', 10, '#AB3300', 4, 3, 7, 1, 0],
         ['Fred', 12, '#66A3FF', 2, 4, 4, 0, 0],
@@ -17,51 +20,74 @@ anychart.onDocumentReady(function() {
         ['Scooby', 46, '#784512', 1, 1, 2, 1, 46]
     ]);
 
-    // map data for the each series
+    var pieTitle = 'And who helped them';
+    var pieSubTitle;
+
+// map data for the each series
     var dataMapping = data.mapAs({x: [0], value: [1], fill:[2]});
 
-    // chart type
+// chart type
     chart = anychart.column();
 
-    // set data
-    var series = chart.column(dataMapping)   // set series data
+// set data
+    var series = chart.column(dataMapping); // set series data
 
-    // chart title
+// chart title
     chart.title().useHtml(true);
-    chart.title('<span style="color:#545f69; font-size: 18px;">How many secrets have they revealed?</span><br><span style="color:#545f69; font-size: 10px">And who helped them. Click on the bars.</span>');
+    chart.title('<span style="color:#545f69; font-size: 18px;">How many pieces of pizza have they eaten?</span><br><span style="color:#545f69; font-size: 10px">Click on the bars.</span>');
 
-    // set axes titles
+// set axes titles
     chart.xAxis().title().text('Retail Channel');
     chart.yAxis().title().text('Sales');
 
-    // enable legend
+// enable legend
     chart.legend().enabled(false);
 
-    // switching the select mode to multi
+// switching the select mode to multi
     chart.interactivity().selectionMode('multiselect');
 
-    chart.bounds('0','0', '50%', '70%');
-		
-	chart.listen('pointClick', function(evt){
-		console.log(evt.pointIndex);
-	});
-	
-	var pie = anychart.pie();
+    chart.bounds('0','0', '50%', '100%');
 
-    var VelmaPieDataMapping = data.mapAs({x:[0], value:[3]});
-    var FredPieDataMapping = data.mapAs({x:[0], value:[4]});
-    var DaphnePieDataMapping = data.mapAs({x:[0], value:[5]});
-    var ShaggyPieDataMapping = data.mapAs({x:[0], value:[6]});
-    var ScoobyPieDataMapping = data.mapAs({x:[0], value:[7]});
-	
-	var VelmaPie = anychart.pie();
-	var FredPie = anychart.pie();
-	var DaphnePie = anychart.pie();
-	var ShaggyPie = anychart.pie();
-	var ScoobyPie = anychart.pie();	
-	
-    // draw
-    chart.container('container').draw();
+    pie = anychart.pie(pieDataMapping);
+    pie.title(pieTitle);
+    
+    var pieDataMapping = data.mapAs({x:[0], fill:[2], value:[3]});
+
+    chart.listen('click', function(evt){
+        var ind = evt.pointIndex;
+        switch (ind) {
+            case 0:
+                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[3]}); // Velmas pizza
+                pieSubTitle = "\nto eat Velma's pizza";
+                break;
+            case 1:
+                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[4]}); // Freds pizza
+                pieSubTitle = "\nto eat Fred's pizza";
+                break;
+            case 2:
+                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[5]}); // Daphnes pizza
+                pieSubTitle = "\nto eat Daphne's pizza";
+                break;
+            case 3:
+                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[6]}); // Shaggys pizza
+                pieSubTitle = "\nto eat Shaggy's pizza";
+                break;
+            case 4:
+                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[7]}); // Scoobys sausages
+                pieSubTitle = "... No one shared Scooby's sausages :(";
+                break;
+        }
+        pie.data(pieDataMapping);
+        pie.title(pieTitle + pieSubTitle);
+    });
+
+    pie.bounds('50%', 0, '50%', '100%');
+    pie.background('none');
+
+
+// draw
+    chart.container(stage).draw();
+    pie.container(stage).draw();
 });</script>
 </head>
 <body>

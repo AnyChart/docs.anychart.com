@@ -206,6 +206,55 @@ Explore the code of this sample in the playground.
 
 ### DrillDown
 
+Using all there features, it's possible to create a drilldown chart. You can easily get points' data through the **.pointSelect()** method and show or hide them. Look at the following sample:
+
+{sample}CS\_Interactivity\_13{sample} 
+
+```
+chart.listen('pointSelect', function(evt){
+        var ind = evt.pointIndex;
+        switch (ind) {
+            case 0:
+                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[3]}); // Velmas pizza
+                console.log('Velmas pizza');
+                pieSubTitle = "\nto eat Velma's pizza";
+                break;
+            case 1:
+                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[4]}); // Freds pizza
+                pieSubTitle = "\nto eat Fred's pizza";
+                console.log('Freds pizza');
+                break;
+            case 2:
+                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[5]}); // Daphnes pizza
+                console.log('Daphnes pizza');
+                pieSubTitle = "\nto eat Daphne's pizza";
+                break;
+            case 3:
+                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[6]}); // Shaggys pizza
+                console.log('Shaggys pizza');
+                pieSubTitle = "\nto eat Shaggy's pizza";
+                break;
+            case 4:
+                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[7]}); // Scoobys sausages
+                console.log('Scoobys sausages');
+                pieSubTitle = "... No one shared Scooby's sausages :(";
+                break;
+        }
+        pie.data(pieDataMapping);
+        pie.title(pieTitle + pieSubTitle);
+    });
+```
+
+Here we can see the column chart accompanied by a pie chart showing the amount of pizza slices, eaten by each member of Scoody-Doo group. The data to be shown depends on which column is selected. Note that this variant is possible only in case of singleSelect enabled (if multiSelect is switched on, it won't work).
+
+If you need the similar drilldown chart with multi-selection, you may do the following:
+
+{sample}CS\_Interactivity\_14{sample} 
+
+In this sample not the data but the charts are added and removed depending on selections made:
+
+```
+```
 
 
 ## Interactivity Settings in Data Sets
