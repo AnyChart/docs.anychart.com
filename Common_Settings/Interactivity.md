@@ -216,27 +216,22 @@ chart.listen('pointSelect', function(evt){
         switch (ind) {
             case 0:
                 pieDataMapping = data.mapAs({x:[0], fill:[2], value:[3]}); // Velmas pizza
-                console.log('Velmas pizza');
                 pieSubTitle = "\nto eat Velma's pizza";
                 break;
             case 1:
                 pieDataMapping = data.mapAs({x:[0], fill:[2], value:[4]}); // Freds pizza
                 pieSubTitle = "\nto eat Fred's pizza";
-                console.log('Freds pizza');
                 break;
             case 2:
                 pieDataMapping = data.mapAs({x:[0], fill:[2], value:[5]}); // Daphnes pizza
-                console.log('Daphnes pizza');
                 pieSubTitle = "\nto eat Daphne's pizza";
                 break;
             case 3:
                 pieDataMapping = data.mapAs({x:[0], fill:[2], value:[6]}); // Shaggys pizza
-                console.log('Shaggys pizza');
                 pieSubTitle = "\nto eat Shaggy's pizza";
                 break;
             case 4:
                 pieDataMapping = data.mapAs({x:[0], fill:[2], value:[7]}); // Scoobys sausages
-                console.log('Scoobys sausages');
                 pieSubTitle = "... No one shared Scooby's sausages :(";
                 break;
         }
