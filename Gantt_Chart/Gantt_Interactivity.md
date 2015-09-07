@@ -38,19 +38,17 @@ As you can notice, the Resource Gantt tooltips show the main duration of the pro
 
 ## Hover
 
-Hovering behaves similar to the same feature of basic charts. When a cursor moves over an item, it becomes highlighted, so its only function is to keep your attention.
+Hovering behaves similar to the same feature of basic charts. When a cursor moves over an item, it becomes highlighted, so its only function is to keep your attention. Look through the next paragraph to know how to change hovering preference.
 
 ## Select
 
-Selecting is quite a useful feature in Gantts. It gets some information about the 
+Selecting is quite a useful feature in Gantts. It gets some information about the selected item and can tranmit it to the user. By default, the selection feature gets all the information that datagrid contain: 
 
+{sample}Gantt\_Interactivity\_03{sample}
 
-No selection for the second time 
-
-
-
-
-
+There is a list of events are dispatched before select itself, when you select a row or an item. Some of them transmit the item data and some don't: mouseDown, mouseUp, rowClick and finally rowSelect. First two of those dispatch nothing, and the second pair are point-oriented events, so they dispatch the row data; in case you select a particular item, rowClick and rowSelect will dispatch the item data.
+Note that if you select the row or item that is already selected, the rowSelect event will not happen.
+When selected, the whole row and the items get filled with default selecting colors, but they can be changed. Look through the next paragraph.
 
 
 
@@ -59,6 +57,9 @@ No selection for the second time
 
 ## Tooltips
 
+When you need a tooltip that will show something more or less than it does by default, you always can use the textFormatter method to change the information shown. Look at the following sample and pay your attention at the tooltip behaviour.
+
+{sample}Gantt\_Interactivity\_04{sample}
 
 ## Hover
 
@@ -66,14 +67,16 @@ All default colors might be changed according to your needs and preferences. By 
  - chart.dataGrid().rowHoverFill('red')
  - chart.getTimeline().rowHoverFill('green')
 
+{sample}Gantt\_Interactivity\_05{sample}
+
 ## Select
 
+There are some default colors that might not fit your needs, so they can be changed. For changing the selected item color use {api}**.getTimeline().selectedElementFill()**{api} method and for he selected row there is a {api}**.rowSelectedFill('yellow')**{api} method. In the following sample we have changed the default select color using those methods.
+
+{sample}Gantt\_Interactivity\_06{sample}
 
 
-
- - chart.getTimeline().selectedElementFill('blue')
- - chart.rowSelectedFill('yellow')
-
+## DataGrid and Timeline adjusting
 
 # Handling chart events
 
