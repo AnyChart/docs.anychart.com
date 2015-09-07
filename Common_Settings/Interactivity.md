@@ -246,11 +246,38 @@ If you need the similar drilldown chart with multi-selection, you may do the fol
 
 {sample}CS\_Interactivity\_14{sample} 
 
-In this sample not the data but the charts are added and removed depending on selections made:
+In this sample not the data but the series are added and removed depending on selections made:
 
 ```
+chart.listen('click', function (evt) {
+        var ind = evt.pointIndex;
+        console.log(evt.pointIndex);
+        switch (ind) {
+            case 0:
+                markerVelma.enabled(!markerVelma.enabled());
+                break;
+            case 1:
+                markerFred.enabled(!markerFred.enabled());
+                break;
+            case 2:
+                markerDaphne.enabled(!markerDaphne.enabled());
+                break;
+            case 3:
+                markerShaggy.enabled(!markerShaggy.enabled());
+                break;
+            case 4:
+                markerScooby.enabled(!markerScooby.enabled());
+                break;
+        }
+    });
 ```
 
+Check out some other drilldown samples we've got in our gallery:
+ - [Dashboard with the US Map and Multiselect](http://anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
+ - [World Temperature Map](http://anychart.com/products/anymap/gallery/Maps/World_Temperature.php)
+ - [Wine Sales in Australia](http://anychart.com/products/anymap/gallery/Maps/Sales_by_Product_Categories.php)
+ - [Software Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
+ - [ACME Corp. Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
 
 ## Interactivity Settings in Data Sets
 

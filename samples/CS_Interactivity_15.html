@@ -6,7 +6,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">var chart, pie, stage;
-anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function () {
 
 // set stage
     stage = anychart.graphics.create('container');
@@ -22,36 +22,42 @@ anychart.onDocumentReady(function() {
 
     var pieTitle = 'And who helped them';
     var pieSubTitle = '...';
+    var columnTitle = 'Those are selected: ';
 
 // map data for the each series
-    var dataMapping = data.mapAs({x: [0], value: [1], fill:[2]});
+    var dataMapping = data.mapAs({x: [0], value: [1], fill: [2]});
 
 // chart type
     chart = anychart.column();
+    chart.title(columnTitle);
 
 // set data
     var series = chart.column(dataMapping); // set series data
 
 // chart title
     chart.title().useHtml(true);
-    chart.title('<span style="color:#545f69; font-size: 18px;">How many pieces of pizza have they eaten?</span><br><span style="color:#545f69; font-size: 10px">Click on the bars.</span>');
-
-// set axes titles
-    chart.xAxis().title().text('Retail Channel');
-    chart.yAxis().title().text('Sales');
-
 // enable legend
     chart.legend().enabled(false);
 
 // switching the select mode to multi
     chart.interactivity().selectionMode('multiSelect');
 
-    chart.bounds('0','0', '50%', '100%');
+    chart.bounds('0', '0', '50%', '100%');
 
-    chart.listen('pointSelect', function(evt){
+    chart.listen('pointSelect', function (evt) {
         var ind = evt.pointIndex;
-        chart.title('Those are selected: '+ evt.point);
+        console.log(evt)
+        if (ind>=0){
+            chart.title(columnTitle + evt.pointIndex);
+        } else {
+            series.unselect();
+            chart.title('No one is selected');
+        }
     });
+
+    chart.listen('unSelect', function (evt) {
+    });
+
 // draw
     chart.container(stage).draw();
 });</script>
