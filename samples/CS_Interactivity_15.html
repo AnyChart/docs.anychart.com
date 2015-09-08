@@ -4,12 +4,17 @@
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">var chart, pie, stage;
-anychart.onDocumentReady(function () {
+    <script x-export="chart">var chart, pie, stage, tooltip;
+//var div = document.createElement('div');
+//div.append("<div>foo</div>")
+anychart.onDocumentReady(function() {
 
 // set stage
     stage = anychart.graphics.create('container');
+    tooltip = $('<div></div>').css({'position': 'absolute', 'pointerEvents': 'none'});
+    $('body').append(tooltip);
 
 // data
     var data = anychart.data.set([
@@ -22,44 +27,47 @@ anychart.onDocumentReady(function () {
 
     var pieTitle = 'And who helped them';
     var pieSubTitle = '...';
-    var columnTitle = 'Those are selected: ';
 
 // map data for the each series
-    var dataMapping = data.mapAs({x: [0], value: [1], fill: [2]});
+    var dataMapping = data.mapAs({x: [0], value: [1], fill:[2]});
 
 // chart type
-    chart = anychart.column();
-    chart.title(columnTitle);
+    chart = anychart.column(dataMapping);
 
 // set data
-    var series = chart.column(dataMapping); // set series data
+    var series = chart.getSeries(0); // set series data
+    series.tooltip(false);
 
 // chart title
     chart.title().useHtml(true);
+    chart.title('<span style="color:#545f69; font-size: 18px;">How many pieces of pizza have they eaten?</span><br><span style="color:#545f69; font-size: 10px">Click on the bars.</span>');
+    chart.interactivity('single');
+
 // enable legend
     chart.legend().enabled(false);
 
 // switching the select mode to multi
     chart.interactivity().selectionMode('multiSelect');
 
-    chart.bounds('0', '0', '50%', '100%');
+    chart.bounds('0','0', '50%', '100%');
 
-    chart.listen('pointSelect', function (evt) {
-        var ind = evt.pointIndex;
-        console.log(evt)
-        if (ind>=0){
-            chart.title(columnTitle + evt.pointIndex);
-        } else {
-            series.unselect();
-            chart.title('No one is selected');
-        }
+    chart.listen('mouseMove', function(e) {
+        tooltip.css({'left': e['clientX']+20, 'top': e['clientY']+10});
     });
 
-    chart.listen('unSelect', function (evt) {
+    chart.listen('pointMouseOver', function(e) {
+        tooltip.css({'display': 'block', 'background': '#eee', 'padding': '4px', 'border': 'dashed red 1px'});
+        var ind = e.pointIndex;
+        tooltip.html( data.row(ind)[0]+' has eaten '+ data.row(ind)[1] + ' pieces of pizza in total');
     });
 
+    chart.listen('pointMouseOut', function(e) {
+        tooltip.css('display', 'none');
+    });
 // draw
+
     chart.container(stage).draw();
+}); chart.container(stage).draw();
 });</script>
 </head>
 <body>
