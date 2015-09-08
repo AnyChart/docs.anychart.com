@@ -13,7 +13,7 @@ Interactivity
  * [Handling chart events](#handling_chart_events)
   * [Navigating by URL](#interactivity_settings_in_data_sets)
   * [DrillDown](#drilldown)
- * [Creating HTML Tooltip](#Creating_html_tooltip)
+ * [Creating Custom Tooltip](#creating_custom_tooltip)
  * [Interactivity Settings in Data Sets](#interactivity_settings_in_data_sets)
 
 
@@ -280,24 +280,13 @@ Check out some other drilldown samples we've got in our gallery:
  - [Software Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
  - [ACME Corp. Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
 
-### Creating HTML Tooltip
+## Creating Custom Tooltip
 
+There is one more thing you can do with the interactivity of our charts: you can create some elements from "outside" of the main chart code using jQuery. In the next sample we have created a custom tooltip with no usag of AnyChart tooltips but only through jQuery. 
+
+{sample}CS\_Interactivity\_15{sample} 
 
 ## Interactivity Settings in Data Sets
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
