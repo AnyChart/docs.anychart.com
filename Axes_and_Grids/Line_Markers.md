@@ -1,7 +1,6 @@
 {:index 7}
 # Line Markers
 
-              
 * [Overview](#overview)
 * [Declare](#declare)
 * [Line and Text Markers](#line_and_text_markers)
@@ -18,7 +17,19 @@ You can add custom line markers to any scale, both x scale, y scale and addition
 
 ## Declare
 
-To add line marker you need to use {api:anychart.charts.Cartesian#lineMarker}**lineMarker()**{api} method and tune it using {api:anychart.core.axisMarkers.Line#scale}**scale()**{api}, {api:anychart.core.axisMarkers.Line#stroke}**stroke()**{api} and {api:anychart.core.axisMarkers.Line#layout}**layout()**{api} parameters:
+To add line marker you need to use {api:anychart.charts.Cartesian#lineMarker}**lineMarker()**{api} method. Also, {api:anychart.core.axisMarkers.Line#value}**value()**{api} method controls line position on the chart plot.
+
+```
+  var marker = chart.lineMarker();
+  marker.value(9000);
+```
+
+Here is a sample with a line marker placed to show the year with the lowest amount of income:
+
+{sample}AGST\_Line\_Marker\_03{sample}
+
+
+ and tune it using {api:anychart.core.axisMarkers.Line#scale}**scale()**{api}, {api:anychart.core.axisMarkers.Line#stroke}**stroke()**{api} and {api:anychart.core.axisMarkers.Line#layout}**layout()**{api} parameters:
 
 ```
   // create line marker
@@ -49,6 +60,8 @@ To add line marker you need to use {api:anychart.charts.Cartesian#lineMarker}**l
 The sample below shows horizontal lines that indicate minimum and maximum value.
 
 {sample}AGST\_Line\_Marker\_01{sample}
+
+As far as scatter chart has
 
 ## Line and Text Markers
 
