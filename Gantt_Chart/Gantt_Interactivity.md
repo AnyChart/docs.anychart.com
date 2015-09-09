@@ -44,8 +44,6 @@ Hovering behaves similar to the same feature of basic charts. When a cursor move
 
 Selecting is quite a useful feature in Gantts. It gets some information about the selected item and can tranmit it to the user. By default, the selection feature gets the main information about the selected item: 
 
-{sample}GANTT\_Interactivity\_03{sample}
-
 There is a list of events are dispatched before select itself, when you select a row or an item. Some of them transmit the item data and some don't: mouseDown, mouseUp, rowClick and finally rowSelect. First two of those dispatch nothing, and the second pair are point-oriented events, so they dispatch the row (item) data; in case you select a particular period, rowClick and rowSelect will dispatch the period data.
 Note that if you select the row or item that is already selected, the rowSelect event will not happen.
 When selected, the whole row and the items get filled with default selecting colors, but they can be changed. Look through the next paragraph.
