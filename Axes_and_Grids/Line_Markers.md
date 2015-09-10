@@ -40,12 +40,26 @@ Line marker is a simple line through the whole chart therefore it can be tuned a
      thickness: 2,
      color: green,
      dash: "2 7"
-  })
+  });
 ```
 
 Here is the sample quite similar to the one above but with visually tuned line marker:
 
 {sample}AGST\_Line\_Marker\_04{sample}
+
+## Multiple Lines
+
+AnyChart does not set any limits on the number of line markers on the chart plot. To use more than one marker you have to set the index for each of the markers.
+
+```
+  // define first marker
+  var marker1 = chart.lineMarker(0);
+  
+  // define second marker
+  var marker2 = chart.lineMarker(1);
+```
+
+Yo
 
 
 and tune it using {api:anychart.core.axisMarkers.Line#scale}**scale()**{api}, {api:anychart.core.axisMarkers.Line#stroke}**stroke()**{api} and {api:anychart.core.axisMarkers.Line#layout}**layout()**{api} parameters:
@@ -70,7 +84,7 @@ and tune it using {api:anychart.core.axisMarkers.Line#scale}**scale()**{api}, {a
     dash: 7,
     // set stroke opacity
     opacity: 1});
-  // bind marker to scale 
+  // bind marker to scale
   secondMarker.scale(chart.yScale());
   // set markers position
   secondMarker.value(19000);

@@ -85,10 +85,6 @@
     seriesFormatter(seriesNumber);
   }
 
-  // draw
-  chart.container("container");
-  chart.draw();
-
   function seriesFormatter(seriesNumber){
     // map data for series
     var seriesData = data.mapAs({x: [0], value: [seriesNumber], fill: [6]});
@@ -99,6 +95,10 @@
       return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
     });
   }
+
+  // draw
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

@@ -19,6 +19,14 @@
   // set lowest line marker
   var lineMarker = chart.lineMarker();
   lineMarker.value(9000);
+  lineMarker.stroke({
+    // set stroke thickness
+    thickness: 2,
+    // set stroke color
+    color: "#0D0",
+    // set dashes and gaps
+    dash: "2 4"
+  });
 
   // set y scale ticks interval
   var yScale = chart.yScale();
