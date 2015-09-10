@@ -8,8 +8,8 @@ Interactivity
   * [Hover](#hover)
   * [Select](#select)
  * [Series behaviour](#series_behaviour)
-  * [Hover](#hover)
-  * [Select](#select)
+  * <a name=”new_name”>[Hover]</a>(#hover)
+  * <a name=”new_name”>[Select]</a>(#select)
  * [Handling chart events](#handling_chart_events)
   * [Navigating by URL](#interactivity_settings_in_data_sets)
   * [DrillDown](#drilldown)
@@ -39,13 +39,13 @@ You can see the code of this sample in the playground.
 
 {sample}CS\_Interactivity\_01{sample}
 
-In the following sample there is a chart with marker and line series, where we can hover and select the points, do the same as in the previous sample with the legend.
+In the following sample there is a chart with marker series, where we can hover and select the points, do the same as in the previous sample with the legend.
 
 {sample}CS\_Interactivity\_02{sample}
 
 # Altering interactivity
 
-And now let's talk about customising the charts' behaviour. There are two levels of interactivity: charts behaviour in general and the series level.
+And now let's talk about customising the charts' behaviour. There are two levels of interactivity: charts behaviour in general and the series interactivity level.
 
 ## Charts behaviour
 
@@ -172,7 +172,7 @@ Let's change the selection color for the box chart.
 
 {sample}CS\_Interactivity\_10{sample} 
 
-OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}, {api:anychart.core.cartesian.series.OHLC#risingStroke}**.selectRisingStroke()**(api) or {api: anychart.core.cartesian.series.OHLC#hoverFallingStroke}**.hoverFallingStroke()**{api}. You can find more in {api:anychart.core.cartesian.series.OHLC}[API Reference]{api}.
+OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}, {api:anychart.core.cartesian.series.OHLC#selectrisingStroke}**.selectRisingStroke()**(api) or {api: anychart.core.cartesian.series.OHLC#hoverFallingStroke}**.hoverFallingStroke()**{api}. You can find more in {api:anychart.core.cartesian.series.OHLC}[API Reference]{api}.
 
 ```
 	// change the selected regions color to the dark violet from the default
@@ -193,7 +193,7 @@ If you want to disable the selection ability, use "none" as the {api}**.selectio
 
 In some cases you might need a custom chart reaction on some user's actions which cannot be simple set using the methods described above. That's where listeners may help. 
 
-You can add a listener to any chart element, forcing it to react in some way. For example, you can make the chart body to listen to clicks and add a random point on each click; or you can tell the chart to listen to selects to uncolor all other elements when one is selected and color them back when the item gets unselected. It's possible to set some other custom interactivity using event listeners. 
+You can add a listener to any chart element, forcing it to react in some way. For example, you can make the chart body to listen to clicks and add a random point on each click; or you can tell the chart to listen to selects and uncolor all other elements when one is selected and color them back when the item gets unselected. It's possible to set some other custom interactivity using event listeners. 
 
 You can find more about listeners [here](../Common_Settings/Event_Listeners).
 
@@ -207,7 +207,7 @@ Explore the code of this sample in the playground.
 
 ### DrillDown
 
-Using all there features, it's possible to create a drilldown chart. You can easily get points' data through the **.pointSelect()** method and show or hide them. Look at the following sample:
+Using all these features, it's possible to create a drilldown chart. You can easily get points' data through the **.pointSelect()** method and show or hide them. Look at the following sample:
 
 {sample}CS\_Interactivity\_13{sample} 
 
