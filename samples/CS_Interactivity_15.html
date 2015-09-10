@@ -46,7 +46,6 @@ anychart.onDocumentReady(function() {
 
 // enable legend
     chart.legend().enabled(false);
-    chart.bounds('0','0', '50%', '100%');
 
     chart.listen('mouseMove', function(e) {
         tooltip.css({'left': e['clientX']+20, 'top': e['clientY']+10});
