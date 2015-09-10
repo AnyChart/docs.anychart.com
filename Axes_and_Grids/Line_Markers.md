@@ -3,6 +3,7 @@
 
 * [Overview](#overview)
 * [Declare](#declare)
+* [Visualization](#visualization)
 * [Line and Text Markers](#line_and_text_markers)
 
 ## Overview
@@ -28,8 +29,26 @@ Here is a sample with a line marker placed to show the year with the lowest amou
 
 {sample}AGST\_Line\_Marker\_03{sample}
 
+## Visualization
 
- and tune it using {api:anychart.core.axisMarkers.Line#scale}**scale()**{api}, {api:anychart.core.axisMarkers.Line#stroke}**stroke()**{api} and {api:anychart.core.axisMarkers.Line#layout}**layout()**{api} parameters:
+Line marker is a simple line through the whole chart therefore it can be tuned as easy as any line in AnyChart. The main way to adjust line marker is using {api:anychart.core.axisMarkers.Line#stroke}**stroke()**{api} method.
+
+```
+  var marker = chart.lineMarker();
+  marker.value(9000);
+  marker.stroke({
+     thickness: 2,
+     color: green,
+     dash: "2 7"
+  })
+```
+
+Here is the sample quite similar to the one above but with visually tuned line marker:
+
+{sample}AGST\_Line\_Marker\_04{sample}
+
+
+and tune it using {api:anychart.core.axisMarkers.Line#scale}**scale()**{api}, {api:anychart.core.axisMarkers.Line#stroke}**stroke()**{api} and {api:anychart.core.axisMarkers.Line#layout}**layout()**{api} parameters:
 
 ```
   // create line marker
