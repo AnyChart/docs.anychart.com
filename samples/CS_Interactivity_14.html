@@ -9,19 +9,19 @@
 anychart.onDocumentReady(function () {
 
 // set stage
-    stage = anychart.graphics.create('container');
+    stage = anychart.graphics.create("container");
 
 // data
     var data = anychart.data.set([
-        ['Velma', 10, '#AB3300', 4, 3, 7, 1, 0],
-        ['Fred', 12, '#66A3FF', 2, 4, 4, 0, 0],
-        ['Daphne', 18, '#570FBD', 2, 3, 4, 0, 0],
-        ['Shaggy', 6, '#948F45', 1, 1, 1, 4, 0],
-        ['Scooby', 46, '#784512', 1, 1, 2, 1, 46]
+        ["Velma", 10, "#AB3300", 4, 3, 7, 1, 0],
+        ["Fred", 12, "#66A3FF", 2, 4, 4, 0, 0],
+        ["Daphne", 18, "#570FBD", 2, 3, 4, 0, 0],
+        ["Shaggy", 6, "#948F45", 1, 1, 1, 4, 0],
+        ["Scooby", 46, "#784512", 1, 1, 2, 1, 46]
     ]);
 
-    var pieTitle = 'And who helped them';
-    var pieSubTitle = '...';
+    var pieTitle = "And who helped them";
+    var pieSubTitle = "...";
 
 // map data for the each series
     var dataMapping = data.mapAs({x: [0], value: [1], fill: [2]});
@@ -38,16 +38,16 @@ anychart.onDocumentReady(function () {
     chart.title('<span style="color:#545f69; font-size: 18px;">How many pieces of pizza have they eaten?</span><br><span style="color:#545f69; font-size: 10px">Click on the bars.</span>');
 
 // set axes titles
-    chart.xAxis().title().text('Retail Channel');
-    chart.yAxis().title().text('Sales');
+    chart.xAxis().title().text("Retail Channel");
+    chart.yAxis().title().text("Sales");
 
 // enable legend
     chart.legend().enabled(false);
 
 // switching the select mode to multi
-// chart.interactivity().selectionMode('multiSelect');
+// chart.interactivity().selectionMode("multiSelect");
 
-    chart.bounds('0', '0', '50%', '100%');
+    chart.bounds("0", "0", "50%", "100%");
 
     var c0 = false;
     var c1 = false;
@@ -77,7 +77,7 @@ anychart.onDocumentReady(function () {
     var lineScooby = lineChart.line(lineScoobyDataMapping);
     lineScooby.enabled(false);
 
-    chart.listen('click', function (evt) {
+    chart.listen("click", function (evt) {
         var ind = evt.pointIndex;
 
         switch (ind) {
@@ -97,7 +97,7 @@ anychart.onDocumentReady(function () {
                 lineScooby.enabled(!lineScooby.enabled());
                 break;
         }
-        lineChart.bounds('50%', 0, '50%', x);
+        lineChart.bounds("50%", 0, "50%", x);
         lineChart.container(stage).draw();
     });
     console.log(c0);

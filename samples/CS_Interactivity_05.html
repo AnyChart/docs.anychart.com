@@ -26,31 +26,31 @@ anychart.onDocumentReady(function() {
 
     // set data
     var series_1 = chart.column(Sales2003)   // set series data
-        .name('Sales in 2013')  // set series name
+        .name("Sales in 2013")  // set series name
         .xPointPosition(0.5);   // set series shift
 
     var series_2 = chart.column(Sales2004)   // set series data
-        .name('Sales in 2014'); // set series name
+        .name("Sales in 2014"); // set series name
 
-    series_1.fill('#E0F08F');
-    series_2.fill('#29ADC2');
-    series_1.stroke('none');
-    series_2.stroke('none');
+    series_1.fill("#E0F08F");
+    series_2.fill("#29ADC2");
+    series_1.stroke("none");
+    series_2.stroke("none");
 
     // chart title
-    chart.title('Disable the selection');
+    chart.title("Disable the selection");
 
     // set axes titles
-    chart.xAxis().title().text('Retail Channel');
-    chart.yAxis().title().text('Sales');
+    chart.xAxis().title().text("Retail Channel");
+    chart.yAxis().title().text("Sales");
 
     // enable legend
     chart.legend().enabled(true);
 
-    chart.interactivity().selectionMode('none');
+    chart.interactivity().selectionMode("none");
 
     // draw
-    chart.container('container').draw();
+    chart.container("container").draw();
 });</script>
 </head>
 <body>

@@ -9,20 +9,20 @@
 anychart.onDocumentReady(function () {
 
 // set stage
-    stage = anychart.graphics.create('container');
+    stage = anychart.graphics.create("container");
 
 // data
     var data = anychart.data.set([
-        ['Velma', 10, '#AB3300', 4, 3, 7, 1, 0],
-        ['Fred', 12, '#66A3FF', 2, 4, 4, 0, 0],
-        ['Daphne', 18, '#570FBD', 2, 3, 4, 0, 0],
-        ['Shaggy', 6, '#948F45', 1, 1, 1, 4, 0],
-        ['Scooby', 46, '#784512', 1, 1, 2, 1, 46]
+        ["Velma", 10, "#AB3300", 4, 3, 7, 1, 0],
+        ["Fred", 12, "#66A3FF", 2, 4, 4, 0, 0],
+        ["Daphne", 18, "#570FBD", 2, 3, 4, 0, 0],
+        ["Shaggy", 6, "#948F45", 1, 1, 1, 4, 0],
+        ["Scooby", 46, "#784512", 1, 1, 2, 1, 46]
     ]);
 
-    var pieTitle = 'And who helped them';
-    var pieSubTitle = '...';
-    var columnTitle = 'Those are selected: ';
+    var pieTitle = "And who helped them";
+    var pieSubTitle = "...";
+    var columnTitle = "Those are selected: ";
 
 // map data for the each series
     var dataMapping = data.mapAs({x: [0], value: [1], fill: [2]});
@@ -40,22 +40,22 @@ anychart.onDocumentReady(function () {
     chart.legend().enabled(false);
 
 // switching the select mode to multi
-    chart.interactivity().selectionMode('multiSelect');
+    chart.interactivity().selectionMode("multiSelect");
 
-    chart.bounds('0', '0', '50%', '100%');
+    chart.bounds("0", "0", "50%", "100%");
 
-    chart.listen('pointSelect', function (evt) {
+    chart.listen("pointSelect", function (evt) {
         var ind = evt.pointIndex;
         console.log(evt)
         if (ind>=0){
             chart.title(columnTitle + evt.pointIndex);
         } else {
             series.unselect();
-            chart.title('No one is selected');
+            chart.title("No one is selected");
         }
     });
 
-    chart.listen('unSelect', function (evt) {
+    chart.listen("unSelect", function (evt) {
     });
 
 // draw

@@ -61,39 +61,39 @@ anychart.onDocumentReady(function() {
 
     // set data
     var series_1 = chart.column(Sales2003)   // set series data
-        .name('Sales in 2013')  // set series name
+        .name("Sales in 2013")  // set series name
 
     var series_2 = chart.column(Sales2004)   // set series data
-        .name('Sales in 2014'); // set series name
+        .name("Sales in 2014"); // set series name
 
-    series_1.fill('#10F00F');
-    series_2.fill('#29ADC2');
-    series_1.stroke('none');
-    series_2.stroke('none');
+    series_1.fill("#10F00F");
+    series_2.fill("#29ADC2");
+    series_1.stroke("none");
+    series_2.stroke("none");
 
     // chart title
-    chart.title('Custom hover');
+    chart.title("Custom hover");
 
     // set axes titles
-    chart.xAxis().title().text('Retail Channel');
-    chart.yAxis().title().text('Sales');
+    chart.xAxis().title().text("Retail Channel");
+    chart.yAxis().title().text("Sales");
 
     // enable legend
     chart.legend().enabled(true);
 
 
     // adding a listener
-    chart.title().listen('mouseOver', function(){
+    chart.title().listen("mouseOver", function(){
         series_1.hover([4, 6, 9, 12, 16, 19]);
         series_2.hover([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);
     });
-    chart.title().listen('mouseOut', function(){
+    chart.title().listen("mouseOut", function(){
         series_1.hover();
         series_2.hover();
     });
 
     // draw
-    chart.container('container').draw();
+    chart.container("container").draw();
 });</script>
 </head>
 <body>

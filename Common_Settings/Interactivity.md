@@ -50,7 +50,7 @@ And now let's talk about customising the charts' behaviour. There are two levels
 
 We can make some changes in charts behaviour using the {api}**.interactivity()**{api} method. It helps to adjust hover and select settings, as well as create a "highlighting area" - a spot of a custom-defined radius that highlights (hovers) all points within that radius.
 
-So, if we need to change something with hover, we should use {api:}**.hoverMode(){api} with an argument "bySpot" or "byX". In first case we may adjust the radius of a "spot",  making it bigger or smaller..
+So, if we need to change something with hover, we should use {api:}**.hoverMode()**{api} with an argument "bySpot" or "byX". In first case we may adjust the radius of a "spot",  making it bigger or smaller..
 
 There are also two basic events: hover and select.
 

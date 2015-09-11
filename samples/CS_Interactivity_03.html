@@ -54,16 +54,16 @@
     // set chart margin settings
     chart.margin(0);
 
-    var s = chart.spline(dataSet.mapAs({x: [0], value: [1]}));
+    var series = chart.spline(dataSet.mapAs({x: [0], value: [1]}));
 
     // create the title
-    chart.title('Multi-hovering feature');
+    chart.title("Multi-hovering feature");
 
     // turn on grids
     chart.grid().enabled(true);
-    chart.grid(1).enabled(true).layout('vertical');
+    chart.grid(1).enabled(true).layout("vertical");
     chart.minorGrid().enabled(true);
-    chart.minorGrid(1).enabled(true).layout('vertical');
+    chart.minorGrid(1).enabled(true).layout("vertical");
 
     // set chart axes settings
     var scale = anychart.scales.linear();
@@ -75,15 +75,15 @@
     chart.legend().enabled(true).padding().bottom(30);
     chart.background(false);
 
-    s.markers(true);
-    s.hoverMarkers().enabled(true).fill('yellow');
+    series.markers(true);
+    series.hoverMarkers().enabled(true).fill("yellow");
 
     // multi-hover enabling 
-    chart.interactivity('bySpot');
+    chart.interactivity("bySpot");
     chart.interactivity().spotRadius(60);
 
     chart.crosshair(true);
-    chart.container('container');
+    chart.container("container");
     chart.draw();
 });</script>
 </head>

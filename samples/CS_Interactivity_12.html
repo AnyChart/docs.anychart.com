@@ -8,32 +8,32 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
     
     var dataSet = anychart.data.set([
-		{x: 'Twix', value: 100, url:'//www.google.com/search?q=Twix', fill:'#F75208'},
-		{x: 'Bounty', value: 200, url:'//www.google.com/search?q=Bounty', fill:'#F0700F'},
-		{x: 'Picnic', value: 15, url:'//www.google.com/search?q=Picnic', fill:'#E88F17'},
-		{x: 'Mars', value: 130, url:'//www.google.com/search?q=Mars', fill:'#E88F17'},
-		{x: 'Snickers', value: 153, url:'//www.google.com/search?q=Snickers', fill:'#E0AD1F'},
-		{x: 'KitKat', value: 120, url:'//www.google.com/search?q=KitKat', fill:'#D9CC26'},
-		{x: 'Oreo', value: 151, url:'//www.google.com/search?q=Oreo', fill:'#D4E02B'}
+		{x: "Twix", value: 100, url:"//www.google.com/search?q=Twix", fill:"#F75208"},
+		{x: "Bounty", value: 200, url:"//www.google.com/search?q=Bounty", fill:"#F0700F"},
+		{x: "Picnic", value: 15, url:"//www.google.com/search?q=Picnic", fill:"#E88F17"},
+		{x: "Mars", value: 130, url:"//www.google.com/search?q=Mars", fill:"#E88F17"},
+		{x: "Snickers", value: 153, url:"//www.google.com/search?q=Snickers", fill:"#E0AD1F"},
+		{x: "KitKat", value: 120, url:"//www.google.com/search?q=KitKat", fill:"#D9CC26"},
+		{x: "Oreo", value: 151, url:"//www.google.com/search?q=Oreo", fill:"#D4E02B"}
 	]);
 
 	// set chart type
 	chart = anychart.columnChart();
 
-	chart.title().enabled(true).text('Confectionery Sales in April');
+	chart.title().enabled(true).text("Confectionery Sales in April");
 
 	// set data
 	var series = chart.column(dataSet);
 	
 	// disable the stroke
-	series.stroke('none');
+	series.stroke("none");
 	
 	// set container and draw chart
-	chart.container('container').draw();
+	chart.container("container").draw();
   
     //add a listener
-    chart.listen('pointDblClick', function(e){
-		var new_value = e.iterator.get('url');
+    chart.listen("pointDblClick", function(e){
+		var new_value = e.iterator.get("url");
 		window.open(new_value,"_blank");
 	});
     

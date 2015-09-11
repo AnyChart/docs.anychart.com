@@ -8,22 +8,22 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
     // create data set on our data
     var dataSet = anychart.data.set([
-['1', 10, 30],
-['2', 12, 32],
-['3', 11, 35],
-['4', 15, 40],
-['5', 20, 42],
-['6', 22, 35],
-['7', 21, 36],
-['11', 28, 40],
-['12', 29, 42],
-['13', 40, 40],
-['14', 41, 38],
-['15', 45, 40],
-['16', 50, 40],
-['19', 50, 30],
-['20', 51, 29],
-['21', 65, 28]
+["1", 10, 30],
+["2", 12, 32],
+["3", 11, 35],
+["4", 15, 40],
+["5", 20, 42],
+["6", 22, 35],
+["7", 21, 36],
+["11", 28, 40],
+["12", 29, 42],
+["13", 40, 40],
+["14", 41, 38],
+["15", 45, 40],
+["16", 50, 40],
+["19", 50, 30],
+["20", 51, 29],
+["21", 65, 28]
     ]);
 
     // map data for the first series, take x from the zero column and value from the first column of data set
@@ -37,7 +37,7 @@
 
     // adding dollar symbols to yAxis labels
     chart.yAxis().labels().textFormatter(function(){
-return '$' + this.value
+return "$" + this.value
     });
 
     // turn on chart animation
@@ -47,10 +47,10 @@ return '$' + this.value
     chart.crosshair(true);
 
     // set container id for the chart
-    chart.container('container');
+    chart.container("container");
 
     // set chart title text settings
-    chart.title('The cost of ACME\'s shares compared with their main competitor during month');
+    chart.title("The cost of ACME\'s shares compared with their main competitor during month");
 
     // create first series with mapped data
     var series_1 = chart.column(seriesData_1);
@@ -58,13 +58,13 @@ return '$' + this.value
 
     // create second series with mapped data
     var series_2 = chart.column(seriesData_2);
-    series_2.name('The Competitor\'s Share Price');
+    series_2.name("The Competitor\'s Share Price");
 
     // turn the legend on
-    chart.legend().enabled(true).align('center').fontSize(13);
+    chart.legend().enabled(true).align("center").fontSize(13);
 	
     // hovering mode
-    chart.interactivity().hoverMode('byX');
+    chart.interactivity().hoverMode("byX");
 
     // making series_1 and some points of series_2 selected
     series_1.select();
