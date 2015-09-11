@@ -49,14 +49,6 @@ anychart.onDocumentReady(function () {
 
     chart.bounds("0", "0", "50%", "100%");
 
-    var c0 = false;
-    var c1 = false;
-    var c2 = false;
-    var c3 = false;
-    var c4 = false;
-
-    var x = chart.height * 0.2;
-
     var lineVelmaDataMapping = data.mapAs({x: [0], fill: [2], value: [3]}); // Velmas pizza
     var lineVelma = lineChart.line(lineVelmaDataMapping);
     lineVelma.enabled(false);
@@ -100,7 +92,6 @@ anychart.onDocumentReady(function () {
         lineChart.bounds("50%", 0, "50%", x);
         lineChart.container(stage).draw();
     });
-    console.log(c0);
     // draw
     chart.container(stage).draw();
 });</script>
