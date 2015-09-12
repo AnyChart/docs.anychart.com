@@ -6,12 +6,12 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">var chart, markerChart, stage;
-anychart.onDocumentReady(function () {
+    anychart.onDocumentReady(function () {
 
-// set stage
+    // set stage
     stage = anychart.graphics.create("container");
 
-// data
+    // data
     var data = anychart.data.set([
         ["Velma", 10, "#AB3300", 4, 3, 7, 1, 0],
         ["Fred", 12, "#66A3FF", 2, 4, 3, 0, 0],
@@ -23,10 +23,10 @@ anychart.onDocumentReady(function () {
     var pieTitle = "And who helped them";
     var pieSubTitle = "...";
 
-// map data for the each series
+    // map data for the each series
     var dataMapping = data.mapAs({x: [0], value: [1], fill: [2]});
 
-// chart type
+    // chart type
     chart = anychart.column();
     markerChart = anychart.cartesian();
     markerChart.yAxis().enabled(true);
@@ -34,18 +34,18 @@ anychart.onDocumentReady(function () {
     markerChart.title("dfk");
     markerChart.enabled(false);
 
-// set data
+    // set data
     var series = chart.column(dataMapping); // set series data
 
-// chart title
+    // chart title
     chart.title().useHtml(true);
     chart.title('<span style="color:#545f69; font-size: 18px;">How many pieces of pizza have they eaten?</span><br><span style="color:#545f69; font-size: 10px">Click on the bars.</span>');
 
-// enable legend
+    // enable legend
     chart.legend().enabled(false);
 
-// switching the select mode to multi
-// chart.interactivity().selectionMode("multiSelect");
+    // switching the select mode to multi
+    chart.interactivity().selectionMode("multiSelect");
 
     chart.bounds("0", "0", "50%", "100%");
     markerChart.bounds("50%", "0%", "50%", "100%");
@@ -115,10 +115,12 @@ anychart.onDocumentReady(function () {
                 break;
         }
     });
-
-    markerChart.container(stage).draw();
+    markerChart.container(stage);
+    markerChart.draw();
+    
     // draw
-    chart.container(stage).draw();
+    chart.container(stage);
+    chart.draw();
 });</script>
 </head>
 <body>
