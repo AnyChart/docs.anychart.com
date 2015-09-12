@@ -6,12 +6,12 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">var chart, pie, stage;
-anychart.onDocumentReady(function() {
+    anychart.onDocumentReady(function() {
 
-// set stage
+    // set stage
     stage = anychart.graphics.create("container");
 
-// data
+    // data
     var data = anychart.data.set([
         ["Velma", 10, "#AB3300", 4, 3, 7, 1, 0],
         ["Fred", 12, "#66A3FF", 2, 4, 4, 0, 0],
@@ -23,27 +23,27 @@ anychart.onDocumentReady(function() {
     var pieTitle = "And who helped them";
     var pieSubTitle = "...";
 
-// map data for the each series
+    // map data for the each series
     var dataMapping = data.mapAs({x: [0], value: [1], fill:[2]});
 
-// chart type
+    // chart type
     chart = anychart.column();
 
-// set data
-    var series = chart.column(dataMapping); // set series data
+    // set data
+    var series = chart.column(dataMapping); 
 
-// chart title
+    // chart title
     chart.title().useHtml(true);
     chart.title('<span style="color:#545f69; font-size: 18px;">How many pieces of pizza have they eaten?</span><br><span style="color:#545f69; font-size: 10px">Click on the bars.</span>');
 
-// set axes titles
+    // set axes titles
     chart.xAxis().title().text("Retail Channel");
     chart.yAxis().title().text("Sales");
 
-// enable legend
+    // enable legend
     chart.legend().enabled(false);
 
-// switching the select mode to multi
+    // switching the select mode to multi
     chart.interactivity().selectionMode("singleSelect");
 
     chart.bounds("0","0", "50%", "100%");
@@ -84,8 +84,7 @@ anychart.onDocumentReady(function() {
     pie.bounds("50%", 0, "50%", "100%");
     pie.background("none");
 
-
-// draw
+    // draw
     chart.container(stage).draw();
     pie.container(stage).draw();
 });</script>
