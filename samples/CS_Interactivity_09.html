@@ -8,22 +8,22 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
     // create data set on our data
     var dataSet = anychart.data.set([
-["1", 10, 30],
-["2", 12, 32],
-["3", 11, 35],
-["4", 15, 40],
-["5", 20, 42],
-["6", 22, 35],
-["7", 21, 36],
-["11", 28, 40],
-["12", 29, 42],
-["13", 40, 40],
-["14", 41, 38],
-["15", 45, 40],
-["16", 50, 40],
-["19", 50, 30],
-["20", 51, 29],
-["21", 65, 28]
+	["1", 10, 30],
+	["2", 12, 32],
+	["3", 11, 35],
+	["4", 15, 40],
+	["5", 20, 42],
+	["6", 22, 35],
+	["7", 21, 36],
+	["11", 28, 40],
+	["12", 29, 42],
+	["13", 40, 40],
+	["14", 41, 38],
+	["15", 45, 40],
+	["16", 50, 40],
+	["19", 50, 30],
+	["20", 51, 29],
+	["21", 65, 28]
     ]);
 
     // map data for the first series, take x from the zero column and value from the first column of data set
@@ -46,9 +46,6 @@ return "$" + this.value
     // turn on the crosshair
     chart.crosshair(true);
 
-    // set container id for the chart
-    chart.container("container");
-
     // set chart title text settings
     chart.title("The cost of ACME\'s shares compared with their main competitor during month");
 
@@ -69,6 +66,9 @@ return "$" + this.value
     // making series_1 and some points of series_2 selected
     series_1.select();
     series_2.select([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);
+
+    // set container id for the chart
+    chart.container("container");
 
     // initiate chart drawing
     chart.draw();
