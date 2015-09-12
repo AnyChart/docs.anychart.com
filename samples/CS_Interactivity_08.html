@@ -60,11 +60,11 @@ anychart.onDocumentReady(function() {
     chart = anychart.cartesian();
 
     // set data
-    var series_1 = chart.column(Sales2003)   // set series data
-        .name("Sales in 2013")  // set series name
+    var series_1 = chart.column(Sales2003);
+    series_1.name("Sales in 2013");
 
-    var series_2 = chart.column(Sales2004)   // set series data
-        .name("Sales in 2014"); // set series name
+    var series_2 = chart.column(Sales2004);
+    series_2.name("Sales in 2014");
 
     series_1.fill("#10F00F");
     series_2.fill("#29ADC2");
@@ -93,7 +93,8 @@ anychart.onDocumentReady(function() {
     });
 
     // draw
-    chart.container("container").draw();
+    chart.container("container");
+    chart.draw();
 });</script>
 </head>
 <body>
