@@ -49,9 +49,9 @@ And now let's talk about customising the charts' behaviour. There are two levels
 
 ## Charts behaviour
 
-We can make some changes in charts behaviour using the {api}**.interactivity()**{api} method. It helps to adjust hover and select settings, as well as create a "highlighting area" - a spot of a custom-defined radius that highlights (hovers) all points within that radius.
+We can make some changes in charts behaviour using the {api:anychart.core.utils.Interactivity}**.interactivity()**{api} method. It helps to adjust hover and select settings, as well as create a "highlighting area" - a spot of a custom-defined radius that highlights (hovers) all points within that radius.
 
-So, if we need to change something with hover, we should use {api:}**.hoverMode()**{api} with an argument "bySpot" or "byX". In first case we may adjust the radius of a "spot",  making it bigger or smaller..
+So, if we need to change something with hover, we should use {api:anychart.core.utils.Interactivity#hoverMode}**.hoverMode()**{api} with an argument "bySpot" or "byX". In first case we may adjust the radius of a "spot",  making it bigger or smaller..
 
 There are also two basic events: hover and select.
 
@@ -70,7 +70,7 @@ chart.interactivity().spotRadius(30);
 
 This way of hovering, when a couple of points are hovered simultaneously, is a multi-hover mode. 
 
-#### <a name="byX">byX</a>
+#### <a name="byX"></a>byX
 
 Note that there is a short version of defining the hovering mode. Let's now look at another mode - byX:
 ```
@@ -90,7 +90,7 @@ Now, let'l have a look of the selecting feature.
 
 ### Select
 
-If you want to change the selection settings, use the {api}**.selectionMode()**{api} method with one of the followng arguments: "none", "singleSelect" or "multiSelect". The "none" argument disables the selection feature, "singleSelect" disables multi-selection and "multiSelect" is the same as default settings.
+If you want to change the selection settings, use the {api:anychart.core.utils.Interactivity#selectionMode}**.selectionMode()**{api} method with one of the followng arguments: "none", "singleSelect" or "multiSelect". The "none" argument disables the selection feature, "singleSelect" disables multi-selection and "multiSelect" is the same as default settings.
 
 The **Shift** key is being used as usual, so, if you need to select many points, hold **Shift** key while checking them.
 
@@ -130,9 +130,9 @@ chart.interactivity().selectionMode('singleSelect');
 
 ### Series hover
 
-Usually, when you hover a point, it becomes highlighted. However, if you are programmig a custom dashboard or somehow complicated control elements it might be necessary to hightlight the points before you even drag a cursor over the chart. In this case use the {api}**.hover()**{api} method with a number of point (or array of numbers) that needs to be highlighted at the moment of loading.
+Usually, when you hover a point, it becomes highlighted. However, if you are programmig a custom dashboard or somehow complicated control elements it might be necessary to hightlight the points before you even drag a cursor over the chart. In this case use the {api:anychart.core.SeriesBase#hover}**.hover()**{api} method with a number of point (or array of numbers) that needs to be highlighted at the moment of loading.
 
-If you define nothing as an argument for the {api:}**.hover()**{api} function, the hovering will be disabled for the discrete series but switched on for the whole continous ones, if the hover mode is set as "bySpot". When the hover mode is "byX", using {api:}**.hover()**{api} without arguments will lead to the same picture, but it will be impossible to unhover the continuous series and one of the points of a discrete series will be hovered also (which one depends on the x-coordinate, nearest to the cursor position).
+If you define nothing as an argument for the {api:anychart.core.SeriesBase#hover}**.hover()**{api} function, the hovering will be disabled for the discrete series but switched on for the whole continous ones, if the hover mode is set as "bySpot". When the hover mode is "byX", using {api:anychart.core.SeriesBase#hover}**.hover()**{api} without arguments will lead to the same picture, but it will be impossible to unhover the continuous series and one of the points of a discrete series will be hovered also (which one depends on the x-coordinate, nearest to the cursor position).
 
 Change the hovering mode in playground and see the difference.
 
@@ -144,11 +144,11 @@ Change the hovering mode in playground and see the difference.
 
 {sample}CS\_Interactivity\_08{sample} 
 
-If you define an exact number of an array of points for a continuous series, there would be no difference - the continuous series is being hovered regardless of the arguments given to the {api}**.hover()**{api} method.
+If you define an exact number of an array of points for a continuous series, there would be no difference - the continuous series is being hovered regardless of the arguments given to the {api:anychart.core.SeriesBase#hover}**.hover()**{api} method.
 
 ### Select  <a name=”series_select”> </a>
 
-There might be some points which you'd like to be selected by default or adjust the selecting feature according to your needs. The method {api}**.select()**{api} works here (similar to {api}**.hover()**{api}).
+There might be some points which you'd like to be selected by default or adjust the selecting feature according to your needs. The method {api}**.select()**{api} works here (similar to {api:anychart.core.SeriesBase#hover}**.hover()**{api}).
 
 So, let's select the same points as above on a marker chart:
 
@@ -162,13 +162,13 @@ So, let's select the same points as above on a marker chart:
 
 The same as with hovering action, just define an array with the numbers and you'll get a couple of points selected at the beginning.
 
-Note that if there is no arguments for the {api}**.select()**{api} function, the continuous series will be selected, but not the discrete one.
+Note that if there is no arguments for the {api:anychart.core.SeriesBase#select}**.select()**{api} function, the continuous series will be selected, but not the discrete one.
 
 If you need the whole series being selected as the chart is created, don't define the arguments at all. Try to do that in playground and see what difference it makes.
 
 Some of our charts might have something specific about their series - for example, maps or OHLC charts. Those components and charts have special setting for selections.
 
-We can adjust the color of selection using the {api}**.selectFill**{api} (or {api}**.selectHatchFill**{api} for monochromatic), the selection stroking color - {api}**.selectStroke()**{api}. 
+We can adjust the color of selection using the {api:anychart.core.map.series.Base#selectFill}**.selectFill**{api} (or {api:anychart.core.map.series.Base#selectHatchFill}**.selectHatchFill**{api} for monochromatic), the selection stroking color - {api:anychart.core.map.series.Base#selectStroke}**.selectStroke()**{api}. 
 
 Let's change the selection color for the box chart.
 
@@ -194,7 +194,7 @@ OHLC charts have special settings such as {api:anychart.core.cartesian.series.OH
 {sample}CS\_Interactivity\_11{sample} 
 
 
-If you want to disable the selection ability, use "none" as the {api}**.selectionMode()**{api} argument.
+If you want to disable the selection ability, use "none" as the {api:anychart.core.utils.Interactivity#selectionMode}**.selectionMode()**{api} argument.
 
 
 ## Handling chart events
