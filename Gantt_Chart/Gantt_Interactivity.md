@@ -8,7 +8,7 @@
  * [Other features](#other_features)
 * [Altering Interactivity](#altering_interactivity)
  * [Tooltips](#hover)
- * [Hover](#hover)
+ * [Hover](#altering_hover)
  * [Select](#select)
  * [DataGrid and Timeline adjusting](#datagrid_and_timeline_adjusting)
 * [Handling chart events](#handling_chart_events)
@@ -56,7 +56,7 @@ When you need a tooltip that will show more or less than it does by default, you
 
 {sample}GANTT\_Interactivity\_04{sample}
 
-As you can see, tooltips of this gantt are the same in both datagrid and timeline parts. We have only changed the timeline part tooltip using simple {api}**.contentFormatter()**{api} method:
+As you can see, tooltips of this gantt are the same in both datagrid and timeline parts. We have only changed the timeline part tooltip using simple {api:anychart.core.ui.Tooltip#anchor}**.contentFormatter()**{api} method:
 
 ```
 	chart.getTimeline().tooltip().contentFormatter(function (e) {
@@ -68,7 +68,7 @@ As you can see, tooltips of this gantt are the same in both datagrid and timelin
 
 You can find more about text formatters [here](../../Common_Settings/Text_Formatters). 
 
-## Hover
+<a name="altering_hover">## Hover</a>
 
 All default colors might be changed according to your needs and preferences. By default, there is the one hovering color for both timeline and datagrid parts. 
 You can change them using {api:anychart.core.gantt.Timeline#rowHoverFill}**.getTimeline().rowHoverFill()**{api} and {api:anychart.core.ui.DataGrid#rowHoverFill}**.dataGrid().rowHoverFill()**{api} accordingly:
@@ -110,6 +110,6 @@ You may use listeners for adjusting the gantt view or editing the data as well. 
 
 Our Gantts are so interactive that provide the opportunity to edit them in "live" mode, without even touching the code. All you need to do is to press the "Editing" button and start working on it. It's possible to edit connectors, duration length and start/end time.
 
-Find more about editing mode in Gantts [here](../Live_Edit_UI_and_API).
+Find more about editing mode in Gantts [here](Live_Edit_UI_and_API).
 
 Может тут сделать картинками, а не пример? оО
