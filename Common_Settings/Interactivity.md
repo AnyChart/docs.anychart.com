@@ -70,9 +70,9 @@ chart.interactivity().spotRadius(30);
 
 This way of hovering, when a couple of points are hovered simultaneously, is a multi-hover mode. 
 
-#### byX <a name="byX"> </a>
+#### <a name="byX">byX</a>
 
-Note that there is a short version of defining the hovering mode. Let's now look at another mode - <a name="byX">byX:
+Note that there is a short version of defining the hovering mode. Let's now look at another mode - byX:
 ```
 // single-hover enabling 
 chart.interactivity('byX');
@@ -103,6 +103,8 @@ chart.interactivity().selectionMode('none');
 
 {sample}CS\_Interactivity\_05{sample} 
 
+#### Multi-select
+
 Multi-selection mode is enabled by default. However, if you have turned it off and then you need it back, use this:
 
 ```
@@ -111,6 +113,8 @@ chart.interactivity().selectionMode('multiSelect');
 ```
 
 {sample}CS\_Interactivity\_06{sample} 
+
+#### Single-select
 
 And the last is single selection mode. As you could guess, the "singleSelect" is to be used in this case.
 
