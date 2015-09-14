@@ -70,7 +70,7 @@ chart.interactivity().spotRadius(30);
 ```
 {sample}CS\_Interactivity\_03{sample}
 
-This way of hovering, when a couple of points are hovered simultaneously, is a multi-hover mode. Now let's look at the single-hovering mode ("<a name="byX">byX</a>").
+This way of hovering, when a couple of points are hovered simultaneously, is a multi-hover mode. Now let's look at the single-hovering mode ("byX").<a name="byX"></a>
 
 #### byX
 
