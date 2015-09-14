@@ -8,8 +8,8 @@ Interactivity
   * [Hover](#hover)
   * [Select](#select)
  * [Series behaviour](#series_behaviour)
-  * <a name=”new_name”></a>[Hover](#hover)
-  * <a name=”new_name”></a>[Select](#select)
+  * [Hover](#hover)
+  * [Select](#select)
  * [Handling chart events](#handling_chart_events)
   * [Navigating by URL](#interactivity_settings_in_data_sets)
   * [DrillDown](#drilldown)
@@ -57,7 +57,7 @@ There are also two basic events: hover and select.
 
 ### Hover
 
-So the hover of bySpot type (with a Spot of 30px radius) is being enabled by the following line:
+So the hover of <a name="bySpot">bySpot</a> type (with a Spot of 30px radius) is being enabled by the following line:
 
 ```
 // multi-hover enabling 
@@ -68,7 +68,7 @@ chart.interactivity().spotRadius(30);
 
 This way of hovering, when a couple of points are hovered simultaneously, is a multi-hover mode. 
 
-Note that there is a short version of this command:
+Note that there is a short version of defining the hovering mode. Let's now look at another mode - <a name="byX">byX</a>:
 ```
 // single-hover enabling 
 chart.interactivity('byX');
@@ -138,7 +138,7 @@ Change the hovering mode in playground and see the difference.
 
 If you define an exact number of an array of points for a continuous series, there would be no difference - the continuous series is being hovered regardless of the arguments given to the {api}**.hover()**{api} method.
 
-### Select
+<a name=”series_select”>### Select</a>
 
 There might be some points which you'd like to be selected by default or adjust the selecting feature according to your needs. The method {api}**.select()**{api} works here (similar to {api}**.hover()**{api}).
 
