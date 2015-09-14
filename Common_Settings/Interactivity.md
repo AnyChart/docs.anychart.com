@@ -57,6 +57,8 @@ There are also two basic events: hover and select.
 
 ### Hover
 
+Our interactive hover might be of two types: "<a name = "bySpot">bySpot"</a>, which is a sort of multi-hoveringm and "byX", which is the same as single-select.
+
 #### bySpot 
 
 So the hover of bySpot type (with a Spot of 30px radius) is being enabled by the following line:
@@ -68,11 +70,11 @@ chart.interactivity().spotRadius(30);
 ```
 {sample}CS\_Interactivity\_03{sample}
 
-This way of hovering, when a couple of points are hovered simultaneously, is a multi-hover mode. 
+This way of hovering, when a couple of points are hovered simultaneously, is a multi-hover mode. Now let's look at the single-hovering mode ("<a name="byX">byX</a>").
 
 #### byX
 
-Note that there is a short version of defining the hovering mode. Let's now look at another mode - byX:
+Note that you can define the mode in a easier way:
 ```
 // single-hover enabling 
 chart.interactivity('byX');
