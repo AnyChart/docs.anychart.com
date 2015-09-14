@@ -2,14 +2,14 @@
 
 * [Overview](#overview)
 * [Default Interactivity](#default_interactivity)
- * [Tooltips](#hover)
+ * [Tooltips](#tootlips)
  * [Hover](#hover)
  * [Select](#select)
  * [Other features](#other_features)
 * [Altering Interactivity](#altering_interactivity)
- * [Tooltips](#hover)
+ * [Tooltips](#altering_tooltips)
  * [Hover](#altering_hover)
- * [Select](#select)
+ * [Select](#altering_select)
  * [DataGrid and Timeline adjusting](#datagrid_and_timeline_adjusting)
 * [Handling chart events](#handling_chart_events)
 * [Editing mode](#editing_mode)
@@ -49,7 +49,7 @@ Note that if you select the row or item that is already selected, the rowSelect 
 When selected, the whole row and the items get filled with default selecting colors, but they can be changed. Look through the next paragraph.
 
 # Altering Interactivity
-
+<a name="altering_tooltips"></a>
 ## Tooltips
 
 When you need a tooltip that will show more or less than it does by default, you always can use the textFormatter method to change the information shown. Look at the following sample and pay your attention at the tooltip behaviour.
@@ -68,7 +68,8 @@ As you can see, tooltips of this gantt are the same in both datagrid and timelin
 
 You can find more about text formatters [here](../../Common_Settings/Text_Formatters). 
 
-<a name="altering_hover">## Hover</a>
+<a name="altering_hover"></a>
+## Hover
 
 All default colors might be changed according to your needs and preferences. By default, there is the one hovering color for both timeline and datagrid parts. 
 You can change them using {api:anychart.core.gantt.Timeline#rowHoverFill}**.getTimeline().rowHoverFill()**{api} and {api:anychart.core.ui.DataGrid#rowHoverFill}**.dataGrid().rowHoverFill()**{api} accordingly:
@@ -76,7 +77,7 @@ You can change them using {api:anychart.core.gantt.Timeline#rowHoverFill}**.getT
  - chart.getTimeline().rowHoverFill('green')
 
 {sample}GANTT\_Interactivity\_05{sample}
-
+<a name="altering_select"></a>
 ## Select
 
 There are some default colors that might not fit your needs or the color scheme, so they can be changed. 
