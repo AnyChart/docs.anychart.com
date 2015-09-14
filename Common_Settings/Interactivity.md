@@ -57,7 +57,7 @@ There are also two basic events: hover and select.
 
 ### Hover
 
-Our interactive hover might be of two types: "<a name = "bySpot">bySpot"</a>, which is a sort of multi-hoveringm and "byX", which is the same as single-select.
+Our interactive hover might be of two types: "bySpot", which is a sort of multi-hovering, and "byX", which is the same as single-select. <a name = "bySpot"> </a>
 
 #### bySpot 
 
@@ -105,6 +105,8 @@ chart.interactivity().selectionMode('none');
 
 {sample}CS\_Interactivity\_05{sample} 
 
+<a name="multiselect"></a>
+
 #### Multi-select
 
 Multi-selection mode is enabled by default. However, if you have turned it off and then you need it back, use this:
@@ -115,6 +117,8 @@ chart.interactivity().selectionMode('multiSelect');
 ```
 
 {sample}CS\_Interactivity\_06{sample} 
+
+<a name="singleselect"></a>
 
 #### Single-select
 
