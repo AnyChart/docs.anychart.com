@@ -57,7 +57,7 @@ There are also two basic events: hover and select.
 
 ### Hover
 
-#### bySpot <a name="bySpot"> </a>
+#### bySpot 
 
 So the hover of bySpot type (with a Spot of 30px radius) is being enabled by the following line:
 
@@ -70,7 +70,7 @@ chart.interactivity().spotRadius(30);
 
 This way of hovering, when a couple of points are hovered simultaneously, is a multi-hover mode. 
 
-#### <a name="byX"></a>byX
+#### byX
 
 Note that there is a short version of defining the hovering mode. Let's now look at another mode - byX:
 ```
