@@ -25,11 +25,7 @@
     // disable chart background
     chart.background(null);
 
-    // set container id for the chart
-    chart.container("container");
-
     // set chart title text settings
-
     chart.title("Oceanic Airlines Delays December, 2014");
 
     // set axes settings
@@ -39,6 +35,9 @@
 
     series.selectFill("#5400BA");
     series.select([2,4,9]);
+
+    // set container id for the chart
+    chart.container("container");
 
     // initiate chart drawing
     chart.draw();

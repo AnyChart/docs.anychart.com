@@ -25,12 +25,12 @@ anychart.onDocumentReady(function() {
     chart = anychart.column();
 
     // set data
-    var series_1 = chart.column(Sales2003)   // set series data
-        .name("Sales in 2013")  // set series name
-        .xPointPosition(0.5);   // set series shift
+    var series_1 = chart.column(Sales2003); 
+    series_1 .name("Sales in 2013");
+    series_1.xPointPosition(0.5); 
 
-    var series_2 = chart.column(Sales2004)   // set series data
-        .name("Sales in 2014"); // set series name
+    var series_2 = chart.column(Sales2004);
+    series_2.name("Sales in 2014"); 
 
     series_1.fill("#E0F08F");
     series_2.fill("#29ADC2");
@@ -47,11 +47,12 @@ anychart.onDocumentReady(function() {
     // enable legend
     chart.legend().enabled(true);
 	
-	// switching the select mode to multi
+    // switching the select mode to multi
     chart.interactivity().selectionMode("multiselect");
 
     // draw
-    chart.container("container").draw();
+    chart.container("container");
+    chart.draw();
 });</script>
 </head>
 <body>

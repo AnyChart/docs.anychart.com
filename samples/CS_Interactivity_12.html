@@ -7,7 +7,7 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
     
-    var dataSet = anychart.data.set([
+    	var dataSet = anychart.data.set([
 		{x: "Twix", value: 100, url:"//www.google.com/search?q=Twix", fill:"#F75208"},
 		{x: "Bounty", value: 200, url:"//www.google.com/search?q=Bounty", fill:"#F0700F"},
 		{x: "Picnic", value: 15, url:"//www.google.com/search?q=Picnic", fill:"#E88F17"},
@@ -30,9 +30,9 @@
 	
 	// set container and draw chart
 	chart.container("container").draw();
-  
-    //add a listener
-    chart.listen("pointDblClick", function(e){
+ 
+	//add a listener
+ 	chart.listen("pointDblClick", function(e){
 		var new_value = e.iterator.get("url");
 		window.open(new_value,"_blank");
 	});

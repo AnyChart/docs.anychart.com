@@ -120,7 +120,7 @@ chart.interactivity().selectionMode('singleSelect');
 
 ## Series behaviour
 
-### Hover
+### Series hover
 
 Usually, when you hover a point, it becomes highlighted. However, if you are programmig a custom dashboard or somehow complicated control elements it might be necessary to hightlight the points before you even drag a cursor over the chart. In this case use the {api}**.hover()**{api} method with a number of point (or array of numbers) that needs to be highlighted at the moment of loading.
 
@@ -138,7 +138,7 @@ Change the hovering mode in playground and see the difference.
 
 If you define an exact number of an array of points for a continuous series, there would be no difference - the continuous series is being hovered regardless of the arguments given to the {api}**.hover()**{api} method.
 
-<a name=”series_select”>### Select</a>
+### Select  <a name=”series_select”> </a>
 
 There might be some points which you'd like to be selected by default or adjust the selecting feature according to your needs. The method {api}**.select()**{api} works here (similar to {api}**.hover()**{api}).
 

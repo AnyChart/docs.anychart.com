@@ -7,62 +7,62 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">var chart, pie, stage, tooltip;
-//var div = document.createElement("div");
-//div.append("<div>foo</div>")
-anychart.onDocumentReady(function() {
+    anychart.onDocumentReady(function() {
 
-// set stage
+    // set stage
     stage = anychart.graphics.create("container");
     tooltip = $("<div></div>").css({"position": "absolute", "pointerEvents": "none"});
     $("body").append(tooltip);
 
-// data
+    // data
     var data = anychart.data.set([
-["Velma", 10, "#AB3300", 4, 3, 7, 1, 0],
-["Fred", 12, "#66A3FF", 2, 4, 4, 0, 0],
-["Daphne", 18, "#570FBD", 2, 3, 4, 0, 0],
-["Shaggy", 6, "#948F45", 1, 1, 1, 4, 0],
-["Scooby", 46, "#784512", 1, 1, 2, 1, 46]
+        ["Velma", 10, "#AB3300", 4, 3, 7, 1, 0],
+        ["Fred", 12, "#66A3FF", 2, 4, 4, 0, 0],
+        ["Daphne", 18, "#570FBD", 2, 3, 4, 0, 0],
+        ["Shaggy", 6, "#948F45", 1, 1, 1, 4, 0],
+        ["Scooby", 46, "#784512", 1, 1, 2, 1, 46]
     ]);
 
     var pieTitle = "And who helped them";
     var pieSubTitle = "...";
 
-// map data for the each series
+    // map data for the each series
     var dataMapping = data.mapAs({x: [0], value: [1], fill:[2]});
 
-// chart type
+    // chart type
     chart = anychart.column(dataMapping);
 
-// set data
-    var series = chart.getSeries(0); // set series data
+    // set data
+    var series = chart.getSeries(0); 
     series.tooltip(false);
 
-// chart title
+    // chart title
     chart.title().useHtml(true);
     chart.title('<span style="color:#545f69; font-size: 18px;">How many pieces of pizza have they eaten?</span><br><span style="color:#545f69; font-size: 10px">Click on the bars.</span>');
-// switching the select mode to single
+
+    // switching the selection mode to single
     chart.interactivity().selectionMode("singleSelect");
 
-// enable legend
+    // enable legend
     chart.legend().enabled(false);
 
     chart.listen("mouseMove", function(e) {
-tooltip.css({"left": e["clientX"]+20, "top": e["clientY"]+10});
+        tooltip.css({"left": e["clientX"]+20, "top": e["clientY"]+10});
     });
 
     chart.listen("pointMouseOver", function(e) {
-tooltip.css({"display": "block", "background": "#eee", "padding": "4px", "border": "dashed red 1px"});
-var ind = e.pointIndex;
-tooltip.html( data.row(ind)[0]+" has eaten "+ data.row(ind)[1] + " pieces of pizza in total");
+        tooltip.css({"display": "block", "background": "#eee", "padding": "4px", "border": "dashed red 1px"});
+        var ind = e.pointIndex;
+        tooltip.html( data.row(ind)[0]+" has eaten "+ data.row(ind)[1] + " pieces of pizza in total");
     });
 
     chart.listen("pointMouseOut", function(e) {
-tooltip.css("display", "none");
+        tooltip.css("display", "none");
     });
-// draw
-
-    chart.container(stage).draw();
+    
+    // draw
+    chart.container(stage);
+    chart..draw();
 }); </script>
 </head>
 <body>
