@@ -2,10 +2,9 @@
 
 * [Overview](#overview)
 * [Default Interactivity](#default_interactivity)
- * [Tooltips](#tootlips)
+ * [Tooltips](#tooltips)
  * [Hover](#hover)
  * [Select](#select)
- * [Other features](#other_features)
 * [Altering Interactivity](#altering_interactivity)
  * [Tooltips](#altering_tooltips)
  * [Hover](#altering_hover)
