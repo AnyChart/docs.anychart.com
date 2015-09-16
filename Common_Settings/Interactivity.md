@@ -133,8 +133,8 @@ chart.interactivity().selectionMode('singleSelect');
 
 
 ## Series behaviour
-
-### Hover <a name="series_hover"></a>
+<a name="series_hover"></a>
+### Hover 
 
 Usually, when you hover a point, it becomes highlighted. However, if you are programmig a custom dashboard or somehow complicated control elements it might be necessary to hightlight the points before you even drag a cursor over the chart. In this case use the {api:anychart.core.SeriesBase#hover}**.hover()**{api} method with a number of point (or array of numbers) that needs to be highlighted at the moment of loading.
 
@@ -151,8 +151,8 @@ Change the hovering mode in playground and see the difference.
 {sample}CS\_Interactivity\_08{sample} 
 
 If you define an exact number of an array of points for a continuous series, there would be no difference - the continuous series is being hovered regardless of the arguments given to the {api:anychart.core.SeriesBase#hover}**.hover()**{api} method.
-
-### Select  <a name=”series_select”> </a>
+<a name=”series_select”> </a>
+### Select 
 
 There might be some points which you'd like to be selected by default or adjust the selecting feature according to your needs. The method {api}**.select()**{api} works here (similar to {api:anychart.core.SeriesBase#hover}**.hover()**{api}).
 
