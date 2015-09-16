@@ -8,8 +8,8 @@ Interactivity
   * [Hover](#hover)
   * [Select](#select)
  * [Series behaviour](#series_behaviour)
-  * [Hover](#hover)
-  * [Select](#select)
+  * [Hover](#series_hover)
+  * [Select](#series_select)
  * [Handling chart events](#handling_chart_events)
   * [Navigating by URL](#interactivity_settings_in_data_sets)
   * [DrillDown](#drilldown)
@@ -134,7 +134,7 @@ chart.interactivity().selectionMode('singleSelect');
 
 ## Series behaviour
 
-### Series hover
+### Hover <a name="series_hover"></a>
 
 Usually, when you hover a point, it becomes highlighted. However, if you are programmig a custom dashboard or somehow complicated control elements it might be necessary to hightlight the points before you even drag a cursor over the chart. In this case use the {api:anychart.core.SeriesBase#hover}**.hover()**{api} method with a number of point (or array of numbers) that needs to be highlighted at the moment of loading.
 
@@ -266,7 +266,6 @@ In this sample not the data but the series are added and removed depending on se
 ```
 chart.listen('click', function (evt) {
         var ind = evt.pointIndex;
-        console.log(evt.pointIndex);
         switch (ind) {
             case 0:
                 markerVelma.enabled(!markerVelma.enabled());
@@ -296,7 +295,7 @@ Check out some other drilldown samples we've got in our gallery:
 
 ## Creating Custom Tooltip
 
-There is one more thing you can do with the interactivity of our charts: you can create some elements from "outside" of the main chart code using jQuery. In the next sample we have created a custom tooltip with no usag of AnyChart tooltips but only through jQuery. 
+There is one more thing you can do with the interactivity of our charts: you can create some elements from "outside" of the main chart code using JavaScript. In the next sample we have created a custom tooltip with no usage of AnyChart tooltips but only through jQuery. 
 
 {sample}CS\_Interactivity\_15{sample} 
 
