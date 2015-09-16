@@ -17,9 +17,9 @@
   ]);
   
   // mapping the data
-  var series_1 = dataSet.mapAs({x: [0], value: [1]});
-  var series_2 = dataSet.mapAs({x: [0], value: [2]});
-  var series_3 = dataSet.mapAs({x: [0], value: [3]});
+  var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+  var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+  var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
 
   // chart type
   var chart = anychart.line();
@@ -37,10 +37,15 @@
   yAxis.title("Month");
 
   // set data
-  chart.line(series_1);
-  chart.line(series_2);
-  chart.line(series_3);
-
+  var series_1 = chart.line(seriesData_1);
+  var series_2 = chart.line(seriesData_2);
+  var series_3 = chart.line(seriesData_3);
+  
+  // setting series names
+  seriesData_1.name("Tea");
+  seriesData_2.name("Coffee");
+  seriesData_3.name("Hot chocolate");
+  
   // draw
   chart.container("container");
   chart.draw();

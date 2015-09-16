@@ -33,7 +33,8 @@
 
     var series = chart.box(data);
 
-    series.selectFill("#5400BA");
+    series.selectHatchFill("soliddiamond", "#FFF", 1, 5);
+    series.selectStroke("none");
     series.select([2,4,9]);
 
     // set container id for the chart

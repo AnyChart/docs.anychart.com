@@ -160,8 +160,8 @@ So, let's select the same points as above on a marker chart:
 
 ```
 	// making series_1 and some points of series_2 selected
-	series_1.select();
-	series_2.select([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);	
+    series_1.select();
+    series_2.select([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);
 ```
 
 {sample}CS\_Interactivity\_09{sample} 
@@ -174,7 +174,7 @@ If you need the whole series being selected as the chart is created, don't defin
 
 Some of our charts might have something specific about their series - for example, maps or OHLC charts. Those components and charts have special setting for selections.
 
-We can adjust the color of selection using the {api:anychart.core.map.series.Base#selectFill}**.selectFill**{api} (or {api:anychart.core.map.series.Base#selectHatchFill}**.selectHatchFill**{api} for monochromatic), the selection stroking color - {api:anychart.core.map.series.Base#selectStroke}**.selectStroke()**{api}. 
+We can adjust the color of selection using the {api:anychart.core.map.series.Base#selectFill}**.selectFill**{api} (or {api:anychart.core.map.series.Base#selectHatchFill}**.selectHatchFill**{api} for monochromatic), the selection stroke color - {api:anychart.core.map.series.Base#selectStroke}**.selectStroke()**{api}. 
 
 Let's change the selection color for the box chart.
 
@@ -205,7 +205,7 @@ If you want to disable the selection ability, use "none" as the {api:anychart.co
 
 ## Handling chart events
 
-In some cases you might need a custom chart reaction on some user's actions which cannot be simple set using the methods described above. That's where listeners may help. 
+In some cases you might need a custom chart reaction on some user's actions which cannot be set simply using the methods described above. That's where listeners may help. 
 
 You can add a listener to any chart element, forcing it to react in some way. For example, you can make the chart body to listen to clicks and add a random point on each click; or you can tell the chart to listen to selects and uncolor all other elements when one is selected and color them back when the item gets unselected. It's possible to set some other custom interactivity using event listeners. 
 
@@ -213,7 +213,7 @@ You can find more about listeners [here](../Common_Settings/Event_Listeners).
 
 ### Navigating by URL
 
-Let's look at the typical situation when we might need the listeners. We add a listener to the series, which will navigate us to the pre-defined URL.
+Let's look at the typical situation when we might need the listeners. We add a listener of double clicks to the series, which will navigate us to the pre-defined URL.
 
 {sample}CS\_Interactivity\_12{sample} 
 

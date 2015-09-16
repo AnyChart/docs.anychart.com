@@ -198,7 +198,7 @@
     ]);
 
     // mapping the data
-    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+    var seriesData = dataSet.mapAs({x: [0], value: [1]});
 
     // title
     chart.title("Default interactivity - Marker Chart");
@@ -210,10 +210,13 @@
     var xAxis = chart.xAxis();
     xAxis.title("Sales");
     var yAxis = chart.yAxis();
-    yAxis.title("Month");
+    yAxis.title("Special offer duration");
 
     // set data
-    chart.marker(seriesData_1);
+    var series = chart.marker(seriesData);
+	
+	// set series name
+	series.name("");
 
     // draw
     chart.container("container");
