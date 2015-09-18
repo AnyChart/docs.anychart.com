@@ -475,4 +475,4 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 
 ## Samples
 
- You can see a lot of other samples in [AnyChart Web Box Charts Gallery](http://anychart.com/products/anychart/gallery/Box_Charts/)
+ You can see a lot of other samples in [AnyChart Web Box Charts Gallery](http://anychart.com/products/anychart/gallery/Box_Charts/).

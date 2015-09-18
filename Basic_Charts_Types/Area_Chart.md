@@ -305,4 +305,4 @@ To demonstrate hatch fill feature we've prepared the following sample. As you ca
 
 ## Samples
 
- You can see a lot of other samples in [AnyChart Web Area Charts Gallery](http://anychart.com/products/anychart/gallery/Area,_Spline-Area,_Step-Area_Charts)
+ You can see a lot of other samples in [AnyChart Web Area Charts Gallery](http://anychart.com/products/anychart/gallery/Area,_Spline-Area,_Step-Area_Charts).
