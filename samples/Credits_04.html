@@ -7,19 +7,21 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    chart = anychart.column([10, 1, 7, 10]);
+  var chart = anychart.column([10, 1, 7, 10]);
 
-    // put your license key here and uncomment the next line
-    // anychart.licenseKey('COPY-PASTE-YOUR-LICENSE-KEY');
-    // credits are enabled by default. The only exception is our  playground site. You can remove next line in production.
-    chart.credits().enabled(true);
+  var credits = chart.credits();
 
-    // custom logo src
-    chart.credits().logoSrc('http://static.anychart.com/github.png');
+  // put your license key here and uncomment the next line
+  // anychart.licenseKey("COPY-PASTE-YOUR-LICENSE-KEY");
+  // credits are enabled by default. The only exception is our  playground site. You can remove next line in production.
+  credits.enabled(true);
 
-    // draw
-    chart.container('container');
-    chart.draw();
+  // custom logo src
+  credits.logoSrc("//static.anychart.com/github.png");
+
+  // draw
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

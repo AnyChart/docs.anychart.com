@@ -7,15 +7,44 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  chart = anychart.scatterChart();
-  chart.title().text('Sample Scatter Graph');
+  var chart = anychart.scatter();
 
-  chart.xScale().minimum(1.5).maximum(5.5).ticks().interval(1);
-  chart.yScale().minimum(40).maximum(100).ticks().interval(10);
+  // enable the crosshair
+  var crosshair = chart.crosshair();
+  crosshair.enabled(true);
 
-  chart.yAxis(0).title().text('Waiting time between eruptions (Min)');
-  chart.xAxis(0).title().text('Eruption duration (Min)');
-  chart.xAxis(0).drawFirstLabel(false).drawLastLabel(false);
+  // set the label performance
+  var yCrossLabel = chart.crosshair().yLabel();
+  yCrossLabel.textFormatter(function() {
+    return this.value + "min.";
+  });
+  var xCrossLabel = chart.crosshair().xLabel();
+  xCrossLabel.textFormatter(function(){
+    return this.value + "min."
+  });
+
+  chart.title("Sample Scatter Graph");
+
+  var xScale = chart.xScale();
+  xScale.minimum(1.5);
+  xScale.maximum(5.5);
+  var xTicks = chart.xScale().ticks();
+  xTicks.interval(1);
+  var yScale = chart.yScale();
+  yScale.minimum(40);
+  yScale.maximum(100);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(10);
+
+  var yAxis = chart.yAxis();
+  yAxis.title("Time Between Eruptions (Min)");
+  var xAxis = chart.xAxis();
+  xAxis.title("Eruption Duration (Min)");
+  xAxis.drawFirstLabel(false);
+  xAxis.drawLastLabel(false);
+
+  // set chart title text settings
+  chart.title("Scatter Chart with a Crosshair");
 
   var marker = chart.marker([
     [4.4, 78],
@@ -240,28 +269,18 @@
     [2.1, 48],
     [5.2, 84],
     [2, 63]
-  ]).type('triangleup').size(4).hoverSize(7).hoverFill('red');
-  
-  // enable the crosshair
-  chart.crosshair(true);
-	
-  // set the indexes of the axes used
-  chart.crosshair().yLabel().axisIndex(0);
-  chart.crosshair().xLabel().axisIndex(0);
-  
-  // set the label performance
-  chart.crosshair().yLabel().textFormatter(function() {
-    return '$' + this.value;
+  ]);
+  marker.type("triangleup");
+  marker.size(4);
+  marker.hoverSize(7);
+  marker.hoverFill("red");
+  var tooltip = marker.tooltip();
+  tooltip.contentFormatter(function() {
+    return "Waiting Time: " + this.value + " min.\nDuration: " + this.x + " min.";
   });
-  
-  // set chart title text settings
-  chart.title('Scatter Chart with a crosshair');
-  
-  marker.tooltip().content().hAlign('start');
-  marker.tooltip().contentFormatter(function() {
-    return 'Cost: $' + this['value'] + '\nDuration: ' + this['x'] + ' min.';
-  });
-  chart.container('container').draw();
+      
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

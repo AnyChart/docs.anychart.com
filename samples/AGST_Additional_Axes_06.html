@@ -8,7 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   var chart = anychart.line();
-  
+
   chart.title("Extra Axes Units Comparison Sample");
 
   // setting xScale settings
@@ -62,19 +62,11 @@
 
   // enabling x axis stagger mode
   xAxis.staggerMode(true);
-  
+
   // settings for labels of x axis
   var xLabels = chart.xAxis().labels();
   xLabels.width(50);
   xLabels.hAlign("center");
-
-  // set Grid settings
-  var firstGrid = chart.grid(0);
-  firstGrid.stroke("gray 0.8");
-  firstGrid.layout("horizontal");
-  var secondGrid = chart.grid(1);
-  secondGrid.stroke("gray 0.8");
-  secondGrid.layout("vertical");
 
   // disable minorGrid
   chart.minorGrid(null);
@@ -230,36 +222,30 @@
   ]);
 
   // adjusting data visualisation
-
   var lineSeries = chart.line(firstSeries);
+  lineSeries.stroke("#00F");
+  lineSeries.hoverStroke("#00F");
   lineSeries.yScale(extraYScale);
-  var lineMarkers = lineSeries.markers();
-  lineMarkers.size(1);
-  lineMarkers.fill("blue 0.5");
-  lineMarkers.stroke(null);
-  var lineHoverMarkers = lineSeries.hoverMarkers();
-  lineHoverMarkers.size(4);
-  lineHoverMarkers.fill("blue 0.7");
-  lineHoverMarkers.stroke("blue");
-  lineSeries.stroke("blue", 3);
   var lineTooltip = lineSeries.tooltip();
+  lineTooltip.title(false);
   lineTooltip.contentFormatter(function() {
     return this.x + " Year\nGDP - " + this.value + "%" ;
   });
 
   var columnSeries = chart.column(secondSeries);
-  columnSeries.fill(["red", "darkred"], -90);
-  columnSeries.stroke("black", 1);
-  columnSeries.hoverStroke("white", 1);
-  columnSeries.hoverFill(["red", "darkred"], -90);
+  columnSeries.fill(["#FF0000", "#880000"], -90);
+  columnSeries.stroke("#000", 1);
+  columnSeries.hoverStroke("#FFF", 1);
+  columnSeries.hoverFill(["#FF0000", "#880000"], -90);
   var columnTooltip = columnSeries.tooltip();
+  columnTooltip.title(false);
   columnTooltip.contentFormatter(function() {
     var value = (this.value/1000000000).toFixed(0);
     if (value > 999)
       value = ("" + value/1000).replace(".", " ");
     return this.x + " Year\nDebt - $" + value + " bil." ;
   });
-  
+
   chart.container("container");
   chart.draw();
 });</script>

@@ -22,14 +22,14 @@
   var seriesData_4 = dataSet.mapAs({x: [0], value: [4]});
 
   // chart type
-  var chart = anychart.column();
+  var chart = anychart.area();
 
   // chart title
-  chart.title("Stacked Column Chart");
+  chart.title().text("Stacked Column Chart");
 
   // set axes title
-  chart.xAxis().title("Month");
-  chart.yAxis().title("Temperature");
+  chart.xAxis().title().text("Month");
+  chart.yAxis().title().text("Temperature");
 
   // set stack mode
   chart.yScale().stackMode("value");
@@ -41,8 +41,7 @@
   chart.column(seriesData_4);
 
   // draw
-  chart.container('container');
-  chart.draw();
+  chart.container("container").draw();
 });</script>
 </head>
 <body>

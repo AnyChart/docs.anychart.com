@@ -7,36 +7,41 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // data
-    var data = anychart.data.set([
-      ['January', 10000],
-      ['February', 12000],
-      ['March', 18000],
-      ['April', 11000],
-      ['May', 9000]
-    ]);
+  // data
+  var data = anychart.data.set([
+    ["January", 10000],
+    ["February", 12000],
+    ["March", 18000],
+    ["April", 11000],
+    ["May", 9000]
+  ]);
 
-    // chart type
-    chart = anychart.area();
+  // chart type
+  var chart = anychart.area();
 
-    // set title
-    chart.title().text('Visualization');
+  // set title
+  chart.title("Visualization");
 
-    // set axes titles
-    chart.xAxis().title().text('Month');
-    chart.yAxis().title().text('Sales');
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Month");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
 
-    // setting data and adjusting chart visual appearance
-    chart.area(data)
-        .fill('Gold')
-        .hoverFill("darkred")
-        .stroke('#56561a', 4, 0.4)
-        .hatchFill('diagonalbrick', 'gray')
-        .hoverHatchFill('diagonalbrick', 'black');
+  // setting data and adjusting chart visual appearance
+  var series = chart.area(data);
+  series.fill("Gold");
+  series.hoverFill("darkred");
+  series.stroke("#56561a", 4, 0.4);
+  series.hatchFill("diagonalbrick", "gray");
+  series.hoverHatchFill("diagonalbrick", "black");
 
-    chart.yScale().minimum(8000).maximum(20001);
+  var yScale = chart.yScale();
+  yScale.minimum(8000);
+  yScale.maximum(20001);
 
-    chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

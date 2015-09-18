@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // define chart
+  var chart = anychart.cartesian();
+
+  var margin = chart.margin();
+  margin.bottom(30);
+  margin.left(30);
+
+  // setting data
+  var data = anychart.data.set([
+    ["A", 4],
+    ["B", 3],
+    ["C", 2],
+    ["D", 1]
+  ]);
+
+  // define chart type
+  chart.column(data);
+
+  // position of y axis changer. Now y is on the right
+  var yAxis = chart.yAxis();
+  yAxis.orientation("right");
+
+  // position of x axis changer. Now x is on the top
+  var xAxis = chart.xAxis();
+  xAxis.orientation("top");
+
+  // inverts y scale. Now all elements has inverted (from right to left) direction
+  var yScale = chart.yScale();
+  yScale.inverted(true);
+
+  // inverts x scale. Now all elements has inverted (from top to bottom) direction
+  var xScale = chart.xScale();
+  xScale.inverted(true);
+
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

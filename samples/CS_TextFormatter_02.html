@@ -5,54 +5,58 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">	 
-anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // data
-    var dataSet = anychart.data.set([
-        ['Product A', 600, 7, 630, 12],
-        ['Product B', 172, 14, 32, 10],
-        ['Product C', 48, 10, 48, 20]
-    ]);
+  // data
+  var dataSet = anychart.data.set([
+    ["Product A", 600, 7, 630, 12],
+    ["Product B", 172, 14, 32, 10],
+    ["Product C", 48, 10, 48, 20]
+  ]);
 
-    // map data for the each series
-    var seriesData_1 = dataSet.mapAs({x: [0], value: [1], size:[2]});
-    var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
+  // map data for the each series
+  var seriesData_1 = dataSet.mapAs({x: [0], value: [1], size:[2]});
+  var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
 
-    // chart type
-    chart = anychart.line();
+  // chart type
+  var chart = anychart.line();
 
-    // set axes titles
-    chart.xAxis().title('Products');
-    chart.yAxis().title('Sales');
+  // set title
+  chart.title("Multi-series Bubble Chart");
 
-    // set bubble size
-    chart.maxBubbleSize(80);
-    chart.minBubbleSize(10);
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Products");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
 
-    // set series data
-    series_1 = chart.bubble(seriesData_2);
-    series_2 = chart.bubble(seriesData_1);
-    
-	//enabling the labels
-    series_1.labels(true);
-    series_2.labels(true);
-	
-    //set the textFormatter
-    series_1.labels().textFormatter(function(){
-    return('Size: '+this.size+', value: '+this.value);
-    });
-    series_2.labels().textFormatter(function(){
-    return('Size: '+this.size+', value: '+this.value);
-});
-	//positioning the labels
-    series_1.labels().anchor('bottom');
-    series_2.labels().anchor('top');
-    series_1.labels().position('top');
-    series_2.labels().position('bottom');
-    
-    // draw
-    chart.container('container').draw();
+  // set series data
+  var series_1 = chart.bubble(seriesData_2);
+  series_1.maximumSize(25);
+  series_1.minimumSize(1);
+  var series_2 = chart.bubble(seriesData_1);
+  series_2.maximumSize(25);
+  series_2.minimumSize(1);
+  
+  // enabling the labels
+  var labels1 = series_1.labels();
+  labels1.enabled(true);
+  labels1.textFormatter(function(){
+    return("Size: "+this.size+", value: "+this.value);
+  });
+  labels1.anchor("bottom");
+  labels1.position("top");
+  var labels2 = series_2.labels();
+  labels2.enabled(true);
+  labels2.textFormatter(function(){
+    return("Size: "+this.size+", value: "+this.value);
+  });
+  labels2.anchor("top");
+  labels2.position("bottom");
+
+  // draw
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

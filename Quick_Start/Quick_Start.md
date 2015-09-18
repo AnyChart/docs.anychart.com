@@ -10,9 +10,10 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 
 ```
 <head>
-    <script src="http://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
+    <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
 </head>
 ```
+
 ###2. Create a container for the chart
 Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. Unless you don’t, AnyChart will use 100% of the container.
 
@@ -29,18 +30,21 @@ Example:
 
 ```
 <script>
-    anychart.onDocumentLoad(function() {
-	var chart = anychart.pie([ // create an instance of a pie chart with data
-		["Chocolate", 5],
-		["Rhubarb compote", 2],
-		["Crêpe Suzette", 2],
-		["American blueberry", 2],
-		["Buttermilk", 1]
-	]);        
-        chart.title('Top 5 pancake fillings');
-        chart.container('container'); // pass the container id, chart will be displayed there
-        chart.draw(); // call the chart draw() method to initiate chart display
-    });
+  anychart.onDocumentLoad(function() {
+    // create an instance of a pie chart with data
+    var chart = anychart.pie([
+      ["Chocolate", 5],
+      ["Rhubarb compote", 2],
+      ["Crêpe Suzette", 2],
+      ["American blueberry", 2],
+      ["Buttermilk", 1]
+    ]);
+    chart.title("Top 5 pancake fillings");
+    // pass the container id, chart will be displayed there
+    chart.container("container");
+    // call the chart draw() method to initiate chart display
+    chart.draw();
+  });
 </script>
 ```
   
@@ -49,7 +53,9 @@ Example:
 After all these steps you should have the following result. You can launch and explore this example further [here](http://playground.anychart.com/docs/latest/samples/quick_start_pie-plain).
 
 {sample}quick\_start\_pie{sample}
+
 ###Full source code
+
 Below this you can see how your full web page code should look like.
 ```
 <!doctype html>
@@ -57,21 +63,24 @@ Below this you can see how your full web page code should look like.
     <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
     <script>
         anychart.onDocumentLoad(function() {
-            var chart = anychart.pie([ // create an instance of pie chart with data
-		["Chocolate", 5],
-		["Rhubarb compote", 2],
-		["Crêpe Suzette", 2],
-		["American blueberry", 2],
-		["Buttermilk", 1]
+            // create an instance of pie chart with data
+            var chart = anychart.pie([
+                ["Chocolate", 5],
+                ["Rhubarb compote", 2],
+                ["Crêpe Suzette", 2],
+                ["American blueberry", 2],
+                ["Buttermilk", 1]
             ]);
-            chart.title('Top 5 pancake fillings');
-            chart.container('container'); // pass the container where chart will be drawn
-            chart.draw(); // call the chart draw() method to initiate chart drawing
+            chart.title("Top 5 pancake fillings");
+            // pass the container where chart will be drawn
+            chart.container("container");
+            // call the chart draw() method to initiate chart drawing
+            chart.draw();
         });
     </script>
 </head>
 <body>
-	<div id="container" style="width: 500px; height: 400px;"></div>
+    <div id="container" style="width: 500px; height: 400px;"></div>
 </body>
 </html>
 ```

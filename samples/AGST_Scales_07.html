@@ -6,28 +6,28 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  
+
   // set stage
   var stage = anychart.graphics.create("container");
-  
+
   // create table
   var table = anychart.ui.table();
   var firstRow = table.getRow(0);
   firstRow.height("10%");
-  
+
   // setting data
   var data_1 = anychart.data.set([
     ["C", 5],
     ["D", 21],
     ["E", 34]
   ]);
-  
+
   var data_2 = anychart.data.set([
     ["C", 5],
     ["D", 1],
     ["E", 4]
   ]);
-  
+
   // create charts
   var chart_1 = anychart.column(data_1);
   var chart_2 = anychart.column(data_1);
@@ -35,24 +35,24 @@
   var chart_4 = anychart.column(data_2);
   var chart_5 = anychart.column(data_2);
   var chart_6 = anychart.column(data_2);
-  
+
   var yScale2 = chart_2.yScale();
   yScale2.maximum(10);
   var yScale3 = chart_3.yScale();
   yScale3.softMaximum(10);
-  
+
   var yScale5 = chart_5.yScale();
   yScale5.maximum(10);
   var yScale6 = chart_6.yScale();
   yScale6.softMaximum(10);
-  
+
   formatChart(chart_1);
   formatChart(chart_2);
   formatChart(chart_3);
   formatChart(chart_4);
   formatChart(chart_5);
   formatChart(chart_6);
-  
+
   // set table content
   table.contents([
     ["Auto Calculation", ".maximum(10)","softMaximum(10)"],
@@ -67,12 +67,12 @@
       chart_6
     ]
   ]);
-  
+
   
   // position text in the center of each cell
   table.vAlign("center");
   table.hAlign("center");
-  
+
   // set table container and initiate draw
   table.container(stage);
   table.draw();

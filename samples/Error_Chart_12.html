@@ -1,47 +1,34 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <meta name="tags" content="['error' 'bar']"/>
+    <meta name="tags" content="[error,bar]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  chart = anychart.scatter();
+  
+  var chart = anychart.column();
 
+  chart.title("Studies Of Snake Venom");
+  chart.barGroupsPadding(3);
 
-  //set container id for the chart
-  chart.container('container');
+  var yAxis = chart.yAxis();
+  yAxis.title("Lethal Dose 50 (mg/mouse)");
+  var yScale = chart.yScale();
+  yScale.minimum(0);
 
-  var series = chart.marker([
-    [1, 3.4],
-    [2, 4.1],
-    [3, 4.5],
-    [4, 4.7],
-    [5, 5.2],
-    [6, 5.67],
-    [7, 5.89],
-    [8, 6.9],
-    [9, 9.14],
-    [10, 15.78]
+  var series = chart.column([
+    {x: "Viperia berus", y: 8, valueError: "4.4", valueErrorStroke: "red"},
+    {x: "Viperia ammodytes", y: 7.1, valueError: "2.6", valueErrorStroke: "red"},
+    {x: "Viperia aspis", y: 13.7, valueError: "4.6", valueErrorStroke: "red"},
+    {x: "Viperia latastei", "y": 16.8, valueError: "5.5", valueErrorStroke: "red"}
   ]);
+  series.fill("Green .8");
 
-  series.size(4).hoverSize(5);
+  // set container id for the chart
+  chart.container("container");
 
-  series.error({
-    xLowerError: '1%',
-    xUpperError: '6%',
-    valueUpperError: '2%',
-    valueLowerError: '4%'
-  });
-
-
-
-  chart.title('Ice-sheet dynamics');
-
-  chart.xAxis().title('Distance (mm)');
-  chart.yAxis().title('Hours');
-
-  //initiate chart drawing
+  // initiate chart drawing
   chart.draw();
 });</script>
 </head>

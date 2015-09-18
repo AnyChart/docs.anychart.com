@@ -8,10 +8,10 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  var chart = anychart.scatter();
+  var chart = anychart.scatterChart();
 
   // chart title
-  chart.title().text('Sample Scatter Line Chart');
+  chart.title().text("Sample Scatter Line Chart");
 
   // data for top line series
   chart.line([
@@ -33,7 +33,7 @@
   
   chart.xScale().ticks().interval(1);
 
-    chart.container('container').draw();
+    chart.container("container").draw();
 });</script>
 </head>
 <body>

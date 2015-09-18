@@ -13,6 +13,11 @@
   // chart title
   chart.title("Radar Series Types");
 
+  // background fill
+  var background = chart.background();
+  background.enabled(true);
+  background.fill("#EEEEEE");
+
   // set data and adjust visual settings
   var area = chart.area([
     {x: "Product A", value: 722},

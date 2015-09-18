@@ -6,101 +6,99 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  
+
   // data
   var data = anychart.data.set([
-    [2000, 10000, 12000, 18000, 11000, 9000, '#64b5f6 0.7'],
-    [2001, 12000, 15000, 16000, 13000, 19000, '#1976d2 0.7'],
+    [2000, 10000, 12000, 18000, 11000, 9000, "#64b5f6 0.7"],
+    [2001, 12000, 15000, 16000, 13000, 19000, "#1976d2 0.7"]
   ]);
-  
-  // map data for the each series
-  var chart1 = data.mapAs({x: [0], value: [1], fill: [6]});
-  var chart2 = data.mapAs({x: [0], value: [2], fill: [6]});
-  var chart3 = data.mapAs({x: [0], value: [3], fill: [6]});
-  var chart4 = data.mapAs({x: [0], value: [4], fill: [6]});
-  var chart5 = data.mapAs({x: [0], value: [5], fill: [6]});
-  
+
   // chart type
-  chart = anychart.columnChart();
-  
-  // set data
-  chart.column(chart1).stroke(null).tooltip().contentFormatter(function(){
-    return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
-  });
-  chart.column(chart2).stroke(null).tooltip().contentFormatter(function(){
-    return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
-  });
-  chart.column(chart3).stroke(null).tooltip().contentFormatter(function(){
-    return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
-  });
-  chart.column(chart4).stroke(null).tooltip().contentFormatter(function(){
-    return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
-  });
-  chart.column(chart5).stroke(null).tooltip().contentFormatter(function(){
-    return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
-  });
-  
-  // disable title
-  chart.title().enabled(false);
-  
+  var chart = anychart.column();
+
+  // set lowest line marker
+  var lineMarker = chart.lineMarker(0);
+  lineMarker.stroke("#090");
+  lineMarker.scale(chart.yScale());
+  lineMarker.value(9000);
+
+  // set highest line marker
+  var lineMarker1 = chart.lineMarker(1);
+  lineMarker1.stroke({color: "#dd2c00", dash: "7", opacity: 1});
+  lineMarker1.scale(chart.yScale());
+  lineMarker1.value(19000);
+
+  // set green marker
+  var textMarker = chart.textMarker(0);
+  textMarker.scale(chart.yScale());
+  textMarker.value(19000);
+  textMarker.text("Highest");
+  textMarker.align("left");
+  textMarker.anchor("rightcenter");
+  textMarker.fontSize(14);
+  textMarker.offsetX(5);
+  textMarker.fontColor("#dd2c00");
+
+  // set green marker
+  var textMarker1 = chart.textMarker(1);
+  textMarker1.scale(chart.yScale());
+  textMarker1.value(9000);
+  textMarker1.text("Lowest");
+  textMarker1.align("left");
+  textMarker1.anchor("rightcenter");
+  textMarker1.fontSize(14);
+  textMarker1.offsetX(5);
+  textMarker1.fontColor("#090");
+
   // set y scale ticks interval
-  chart.yScale().minimum(0).ticks().interval(2000);
-  
-  // adjust y axis labels
-  chart.yAxis().labels().textFormatter(function(){
-    return '$' + this.value/1000 + ',000';
-  });
-  
+  var yScale = chart.yScale();
+  yScale.minimum(0);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(2000);
+
   // custom scale
   var additionalScale = anychart.scales.linear();
   // set ticks interval
-  additionalScale.minimum(0).maximum(10).ticks().interval(1);
-  // apply custom scale
-  chart.yAxis(1)
-    .orientation('right')
-    .scale(additionalScale)
-    .title('Sales Pts')
-    .labels();
-  
+  additionalScale.minimum(0);
+  additionalScale.maximum(10);
+  var additionalTicks = additionalScale.ticks();
+  additionalTicks.interval(1);
+
   // y axis title
-  chart.yAxis().title().enabled(true).text('Sales');
-  
-  // set green marker
-  chart.textMarker(1)
-    .scale(chart.yScale())
-    .value(9000)
-    .text('Lowest')
-    .align('left')
-    .anchor('rightcenter')
-    .fontSize(14)
-    .offsetX(5)
-    .fontColor('green');
-  
-  // set green marker
-  chart.textMarker()
-    .scale(chart.yScale())
-    .value(19000)
-    .text('Highest')
-    .align('left')
-    .anchor('rightcenter')
-    .fontSize(14)
-    .offsetX(5)
-    .fontColor('#dd2c00');
-  
-  // set lowest line marker
-  chart.lineMarker()
-    .stroke('green')
-    .scale(chart.yScale())
-    .value(9000);
-  
-  // set highest line marker
-  chart.lineMarker(1)
-    .stroke({color: '#dd2c00', dash: '7', opacity: 1})
-    .scale(chart.yScale())
-    .value(19000);
-  
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
+
+  // adjust y axis labels
+  var yLabels = chart.yAxis(0).labels();
+  yLabels.textFormatter(function(){
+    return "$" + this.value/1000 + ",000";
+  });
+
+  // apply custom scale
+  var yAxis1 = chart.yAxis(1);
+  yAxis1.orientation("right");
+  yAxis1.scale(additionalScale);
+  yAxis1.title("Sales Pts");
+  yAxis1.labels();
+
+  for (var seriesNumber = 1; seriesNumber<6;seriesNumber++){
+    seriesFormatter(seriesNumber);
+  }
+
   // draw
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
+
+  function seriesFormatter(seriesNumber){
+    // map data for series
+    var seriesData = data.mapAs({x: [0], value: [seriesNumber], fill: [6]});
+    var series = chart.column(seriesData);
+    series.stroke(null);
+    var tooltip = series.tooltip();
+    tooltip.contentFormatter(function(){
+      return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
+    });
+  }
 });</script>
 </head>
 <body>

@@ -1,4 +1,3 @@
-
 <html>
 <head>
     <meta charset="UTF-8"/>
@@ -12,19 +11,19 @@
   var stage = anychart.graphics.create("container");
   
   // Create bullet chart
-  var chartB = anychart.bullet([
+  var chartB = anychart.bulletChart([
     {value: 225}                  // main marker in a shape of a bar
   ]);
   
-  var chartL = anychart.bullet([
+  var chartL = anychart.bulletChart([
     {value: 240, type: "line"}    // line shaped marker
   ]);
   
-  var chartX = anychart.bullet([
+  var chartX = anychart.bulletChart([
     {value: 275, type: "x"}       // X shaped marker
   ]);
   
-  var chartE = anychart.bullet([
+  var chartE = anychart.bulletChart([
     {value: 290, type: "ellipse"} // ellipse shaped marker
   ]);
   
@@ -81,9 +80,9 @@ function chartSettings (chart){
   chart.range(2).from(150).to(200);
   chart.range(3).from(200).to(250);
   chart.range(4).from(250).to(300);
-
 }</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
 </body>
+</html>

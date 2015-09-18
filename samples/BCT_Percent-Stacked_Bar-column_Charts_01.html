@@ -6,63 +6,60 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-    // create data set on our data
-    var dataSet = anychart.data.set([
-        ['P1', 297, 243, 235, 223],
-        ['P2', 184, 255, 156, 249],
-        ['P3', 136, 199, 177, 276],
-        ['P4', 142, 186, 242, 249],
-        ['P5', 228, 145, 267, 297]
-    ]);
 
-    // map data for the first series, take x from the zero column and value from the first column of data set
-    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+  // create data set on our data
+  var dataSet = anychart.data.set([
+    ["P1", 297, 243, 235, 223],
+    ["P2", 184, 255, 156, 249],
+    ["P3", 136, 199, 177, 276],
+    ["P4", 142, 186, 242, 249],
+    ["P5", 228, 145, 267, 297]
+  ]);
 
-    // map data for the second series, take x from the zero column and value from the second column of data set
-    var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+  // map data for the first series, take x from the zero column and value from the first column of data set
+  var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
 
-    // map data for the second series, take x from the zero column and value from the third column of data set
-    var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
+  // map data for the second series, take x from the zero column and value from the second column of data set
+  var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
 
-    // map data for the fourth series, take x from the zero column and value from the fourth column of data set
-    var seriesData_4 = dataSet.mapAs({x: [0], value: [4]});
+  // map data for the second series, take x from the zero column and value from the third column of data set
+  var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
 
-    // create bar chart
-    var chart = anychart.columnChart();
+  // map data for the fourth series, take x from the zero column and value from the fourth column of data set
+  var seriesData_4 = dataSet.mapAs({x: [0], value: [4]});
 
-    // force chart to stack values by Y scale.
-    chart.yScale().stackMode('percent');
+  // create bar chart
+  var chart = anychart.column();
 
-    // set container id for the chart
-    chart.container('container');
+  // force chart to stack values by Y scale.
+  var yScale = chart.yScale();
+  yScale.stackMode("percent");
 
-    // set chart title text settings
-    chart.title().text('100% Stacked Column Chart');
+  // set chart title text settings
+  chart.title("100% Stacked Column Chart");
 
-    // disable axes title
-    chart.xAxis().title().enabled(false);
-    chart.yAxis().title().enabled(false);
+  // disable axes title
+  var xAxis = chart.xAxis();
+  xAxis.title(false);
+  var yAxis = chart.yAxis();
+  yAxis.title(false);
 
+  // set yAxis labels formatting, force it to add % to values
+  var yLabels = chart.yAxis().labels();
+  yLabels.textFormatter(function(info) {
+    return info.value + "%";
+  });
 
-    // set yAxis labels formatting, force it to add % to values
-    chart.yAxis().labels().textFormatter(function(info) {
-      return info.value + '%';
-    });
+  // create series with mapped data
+  chart.column(seriesData_1);
+  chart.column(seriesData_2);
+  chart.column(seriesData_3);
+  chart.column(seriesData_4);
 
-    // create first series with mapped data
-    chart.column(seriesData_1);
-
-    // create second series with mapped data
-    chart.column(seriesData_2);
-
-    // create third series with mapped data
-    chart.column(seriesData_3);
-
-    // create fourth series with mapped data
-    chart.column(seriesData_4);
-
-    // initiate chart drawing
-    chart.draw();
+  // set container id for the chart
+  chart.container("container");
+  // initiate chart drawing
+  chart.draw();
 });</script>
 </head>
 <body>

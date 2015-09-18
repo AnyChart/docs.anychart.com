@@ -11,27 +11,31 @@
   var chart = anychart.column();
 
   // set data and adjust visualization
-  chart.column([
-    ['John' , 10000],
-    ['Jake' , 12000],
-    ['Peter' , 18000],
-    ['James' , 11000],
-    ['Mary' , 9000]
-  ]).fill('Gold')
-    .hoverStroke("darkred", 4)
-    .stroke('#56561a', 4)
-    .hatchFill('diagonalbrick', 'gray')
-    .hoverHatchFill('diagonalbrick', 'darkred');
+  var series = chart.column([
+    ["John" , 10000],
+    ["Jake" , 12000],
+    ["Peter", 18000],
+    ["James", 11000],
+    ["Mary" , 9000]
+  ]);
+  series.fill("Gold");
+  series.hoverStroke("darkred", 4);
+  series.stroke("#56561a", 4);
+  series.hatchFill("diagonalbrick", "gray");
+  series.hoverHatchFill("diagonalbrick", "darkred");
     
   // set title
-  chart.title().text('Visualization');
+  chart.title("Visualization");
   
   // set axes titles
-  chart.xAxis().title().text('Manager');
-  chart.yAxis().title().text('Sales');
+  var xAxis = chart.xAxis();
+  xAxis.title("Manager");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
 
   // draw
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

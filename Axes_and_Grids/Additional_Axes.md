@@ -10,7 +10,7 @@
  
 ## Overview
   
-In AnyChart scales control axes ticks, values, grid, line markers and tickmarks. You can add multiple X and Y axes to your charts with AnyChart.
+In AnyChart axis is a line at the edge of the chart that displays scale calculations to which series (or chart) values referred for measurement. You can add multiple X and Y axes to your charts with AnyChart.
   
   
 This article describes how to use the multi axis feature of AnyChart. With this feature an arbitrary number of axes can be added to the chart. AnyChart itself doesn't impose any restrictions on the number of additional axes but from a practical concern it is most likely very difficult to interpret a chart with more than 2-3 additional axes.  
@@ -26,7 +26,7 @@ Consider using multiple axes when you need:
 
 ## Declaration
 
-If you want to declare an additional axis all you need to do is to set index to it, and set as many {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods as you want:
+If you want to declare an additional axis all you need to do is to set index to it, and set as many {api:anychart.charts.Cartesian#yAxis}**yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**xAxis()**{api} methods as you want:
 
 ```
   // First additional axis
@@ -49,7 +49,7 @@ Here is the sample of the chart that shows three additional Y axes and almost no
 
 {sample}AGST\_Additional\_Axes\_01{sample}
 
-Another example of multiple axes use is multiple Y Axes along with multiple X Axes, which may be very useful in certain areas:
+Another example of multiple axes use is multiple Y Axes along with multiple X Axes, which may be very useful on scatter plot:
 
 {sample}AGST\_Additional\_Axes\_02{sample}
 
@@ -62,25 +62,29 @@ If you want to change any settings of additional axes you can do that just the s
   var yScale = chart.yScale();
   yScale.minimum(0);
   yScale.maximum(800000);
-  yScale.ticks({interval: 100000});
-  yScale.minorTicks({interval: 20000});
+  var yTicks = yScale.ticks();
+  yTicks.interval(100000);
+  var yMinorTicks = yScale.minorTicks();
+  yMinorTicks.interval(20000);
   
   // Create and tune additional y scale
   var extraYScale = anychart.scales.linear();
   extraYScale.minimum(800000);
   extraYScale.maximum(1600000);
-  extraYScale.ticks({interval: 100000});
-  extraYScale.minorTicks({interval: 20000});
+  var extraTicks = extraYScale.ticks();
+  extraTicks.interval(100000);
+  var extraMinorTicks = extraYScale.minorTicks();
+  extraMinorTicks.interval(20000);
   
   // Create and tune additional y axis
   var extraYAxis = chart.yAxis(1);
-  extraYAxis.orientation("r ight");
+  extraYAxis.orientation("right");
   extraYAxis.scale(extraYScale);
   extraYAxis.title("Extra Y Axis");
   
   // Tune default y axis
   var yAxis = chart.yAxis(0);
-  yAxis.title('Basic Y Axes');
+  yAxis.title("Basic Y Axes");
 ```
 
 In the a sample below we will add one additional axis and set value ranges and titles for both basic Y axis and additional Y axis:
@@ -132,10 +136,6 @@ Lets see how additional axes can be used to compare data in different units, for
   var kelvinTicks = kelvinScale.ticks();
   // set ticks interval
   kelvinTicks.interval(500);
-  // minor ticks getter
-  var kelvinMinorTicks = kelvinScale.minorTicks();
-  // set minor ticks interval
-  kelvinMinorTicks.interval(100);
   
   // create scale for temperature in degrees fahrenheit
   var fahrenheitScale = anychart.scales.linear();
@@ -170,10 +170,6 @@ Lets see how additional axes can be used to compare data in different units, for
   var celsiusTicks = celsiusScale.ticks();
   // set ticks interval
   celsiusTicks.interval(500);
-  // minor ticks getter
-  var celsiusMinorTicks = celsiusScale.minorTicks();
-  // set minor ticks interval
-  celsiusMinorTicks.interval(100);
 ```
 
 We defined three axes and set absolute zero as a minimum value, and Titanium melting temperature as a maximum value. 
@@ -190,6 +186,7 @@ We will create one series of a {api:anychart.core.cartesian.series.Marker}"Marke
     ["Water boils", 373.1339],
     ["Titanium melts", 1941]
   ]);
+  
   var markerSeries = chart.marker(data);
 ```
 

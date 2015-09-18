@@ -9,23 +9,23 @@
 
   // data set
   var data = anychart.data.set([
-    ['P1', 16, 20],
-    ['P2', 12, 18],
-    ['P3', 9, 14]
+    ["P1", 16, 20],
+    ["P2", 12, 18],
+    ["P3", 9, 14]
   ]);
 
   // data remapping
   var seriesData_1 = data.mapAs({x: [0], value: [1]});
   var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
 
   // setting main title
-  anychart.ui.title()
-    .parentBounds(0, 0, stage.width(), stage.height()*0.1)
-    .text('Main Labels Settings')
-    .container(stage)
-    .draw();
+  var title = anychart.ui.title();
+  title.parentBounds(0, 0, stage.width(), stage.height()*0.1);
+  title.text("Main Labels Settings");
+  title.container(stage);
+  title.draw();
 
 
   // Chart without labels adjusting
@@ -33,21 +33,18 @@
   normalLabels.padding(10, 10, 0, 10);
 
   // setting title
-  normalLabels.title().text('Normal labels');
+  normalLabels.title("Normal labels");
 
   // setting stroke for chart contaoner
-  normalLabels.background().stroke('#CCCCCC');
+  var normalBackground = normalLabels.background();
+  normalBackground.stroke("#CCCCCC");
 
   // setting position and bounds
-  normalLabels.bounds(0, '10%', '50%', '45%');
+  normalLabels.bounds(0, "10%", "50%", "45%");
 
   // set scale minimum
-  normalLabels.yScale().minimum(0);
-
-
-  // disabling titles for Axes
-  normalLabels.yAxis().title().enabled(false);
-  normalLabels.xAxis().title().enabled(false);
+  var normalYScale = normalLabels.yScale();
+  normalYScale.minimum(0);
 
 
   // setting series data
@@ -61,20 +58,21 @@
 
   // chart with rotated labels
   var rotatedLabels = anychart.column();
-  rotatedLabels.title().text('Rotated labels');
+  rotatedLabels.title("Rotated labels");
   rotatedLabels.padding(10, 10, 0, 10);
-  rotatedLabels.bounds('50%', '10%', '50%', '45%');
-  rotatedLabels.background().stroke('#CCCCCC');
+  rotatedLabels.bounds("50%", "10%", "50%", "45%");
+  var rotatedBackground = rotatedLabels.background();
+  rotatedBackground.stroke("#CCCCCC");
 
   // set scale minimum
-  rotatedLabels.yScale().minimum(0);
-
-  rotatedLabels.yAxis().title().enabled(false);
-  rotatedLabels.xAxis().title().enabled(false);
+  var rotatedYScale = rotatedLabels.yScale();
+  rotatedYScale.minimum(0);
 
   // rotating labels
-  rotatedLabels.xAxis().labels().rotation(-90);
-  rotatedLabels.yAxis().labels().rotation(-90);
+  var rotatedXAxis = rotatedLabels.xAxis().labels();
+  rotatedXAxis.rotation(-90);
+  var rotatedYAxis = rotatedLabels.yAxis().labels();
+  rotatedYAxis.rotation(-90);
 
   rotatedLabels.column(seriesData_1);
   rotatedLabels.column(seriesData_2);
@@ -86,33 +84,32 @@
   // chart with stagger mode
   var staggerLabels = anychart.column();
   staggerLabels.padding(10, 10, 0, 10);
-  staggerLabels.title().text('Stagger Labels');
-  staggerLabels.bounds(0, '55%', '50%', '45%');
-  staggerLabels.background().stroke('#CCCCCC');
-  staggerLabels.xAxis().title().enabled(false);
-  staggerLabels.yAxis().title().enabled(false);
+  staggerLabels.title("Stagger Labels");
+  staggerLabels.bounds(0, "55%", "50%", "45%");
+  var staggerBackground = staggerLabels.background();
+  staggerBackground.stroke("#CCCCCC");
 
   // enabling stagger mode
-  staggerLabels.xAxis().staggerMode(true);
+  var xAxis = staggerLabels.xAxis();
+  xAxis.staggerMode(true);
+  // adjusting settings for stager mode
+  xAxis.staggerLines(2);
 
   // set scale minimum
-  staggerLabels.yScale().minimum(0);
-
-
-  // adjusting settings for stager mode
-  staggerLabels.xAxis().staggerLines(2);
+  var staggerYScale = staggerLabels.yScale();
+  staggerYScale.minimum(0);
 
   // data set for stagger mode sample
   var staggerData = anychart.data.set([
-    ['P1', 16, 20],
-    ['P2', 12, 18],
-    ['P3', 9, 14],
-    ['P4', 13, 15],
-    ['P5', 19, 16],
-    ['P6', 14, 10],
-    ['P7', 11, 22],
-    ['P8', 17, 11],
-    ['P9', 9, 14]
+    ["P1", 16, 20],
+    ["P2", 12, 18],
+    ["P3", 9, 14],
+    ["P4", 13, 15],
+    ["P5", 19, 16],
+    ["P6", 14, 10],
+    ["P7", 11, 22],
+    ["P8", 17, 11],
+    ["P9", 9, 14]
   ]);
 
   // data remapping for stagger sample
@@ -127,43 +124,44 @@
 
 
   // chat with labels inside
-  var labelsInside = anychart.line();
+  var labelsInside = anychart.scatter();
   labelsInside.padding(10, 10, 0, 10);
 
   // setting data
-  labelsInside.line([
+  var line = labelsInside.line([
     [-4, 16],
     [-2, 20],
     [-1, 15],
     [2, 20],
     [3, 18],
     [4, 16]
-  ]).tooltip().enabled(false);
+  ]);
+  line.tooltip(false);
 
-  labelsInside.title().text('Labels Inside');
-  labelsInside.bounds('50%', '55%', '50%', '45%');
-  labelsInside.background().stroke('#CCCCCC');
-
-  labelsInside.xAxis().title().enabled(false);
-  labelsInside.yAxis().title().enabled(false);
+  labelsInside.title("Labels Inside");
+  labelsInside.bounds("50%", "55%", "50%", "45%");
+  var innerBackground = labelsInside.background();
+  innerBackground.stroke("#CCCCCC");
 
   // adjusting scales
-  labelsInside.xScale(anychart.scales.linear());
-  labelsInside.yScale(anychart.scales.linear().maximum(23).minimum(13));
-  labelsInside.yScale().ticks().interval(3);
-  labelsInside.xScale().ticks().interval(1);
+  var innerXTicks = labelsInside.xScale().ticks();
+  innerXTicks.interval(1);
 
-  // setting labels a bit higher and andjusting it's values
-  labelsInside.xAxis().labels().offsetY(-25).textFormatter(function(){
-    return this.value + '.00';
+  // setting labels a bit higher and adjusting it"s values
+  var innerLabels = labelsInside.xAxis().labels();
+  innerLabels.offsetY(-25);
+  innerLabels.width(40);
+  innerLabels.textFormatter(function(){
+    return this.value + ".00";
   });
 
   // disabling first and last labels
-  labelsInside.xAxis().drawFirstLabel(false);
-  labelsInside.xAxis().drawLastLabel(false);
+  var innerAxis = labelsInside.xAxis();
+  innerAxis.drawFirstLabel(false);
+  innerAxis.drawLastLabel(false);
 
   // disabling labels for y axis
-  labelsInside.yAxis().labels().enabled(false);
+  labelsInside.yAxis(false);
 
   labelsInside.container(stage);
   labelsInside.draw();

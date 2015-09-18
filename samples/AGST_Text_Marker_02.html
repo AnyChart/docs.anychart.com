@@ -18,77 +18,80 @@
 
   // chart type
   var chart = anychart.line();
-  chart.padding(20, 50, 0, 100)
+  chart.padding(20, 50, 0, 100);
 
   // set data
-  chart.line(data).tooltip().contentFormatter(function(){
-    return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
+  var series = chart.line(data);
+  var tooltip = series.tooltip();
+  tooltip.contentFormatter(function(){
+    return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
   });
 
-  // disable title
-  chart.title().enabled(false);
-
   // set y scale ticks interval
-  chart.yScale().ticks().interval(10);
-//  chart.yAxis().labels(null);
-
-  // disable x axis title
-  chart.xAxis().title().enabled(false);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(10);
 
   // first marker
-  chart.textMarker()
-    .scale(chart.yScale())
-    .value(13)
-    .align('center')
-    .anchor('center')
-          .fontColor('#212121')
-    .text('Align: center');
+  var marker = chart.textMarker(0);
+  // bind marker to the scale
+  marker.scale(chart.yScale());
+  // set marker position
+  marker.value(13);
+  // set marker's alignment
+  marker.align("center");
+  // set anchor
+  marker.anchor("center");
+  // set marker color
+  marker.fontColor("#212121");
+  // set marker text
+  marker.text("Align: center");
 
   // second marker
-  chart.textMarker(1)
-    .scale(chart.yScale())
-    .value(13)
-    .text('Align: left')
-    .align('left')
-    .offsetX(5)
-    .fontColor('#212121')
-    .anchor('leftcenter');
+  var marker1 = chart.textMarker(1);
+  marker1.scale(chart.yScale());
+  marker1.value(13);
+  marker1.text("Align: left");
+  marker1.align("left");
+  marker1.offsetX(5);
+  marker1.fontColor("#212121");
+  marker1.anchor("leftcenter");
 
 
   // third marker
-  chart.textMarker(2)
-    .scale(chart.yScale())
-    .value(13)
-    .text('Align: right')
-    .align('right')
-    .offsetX(5)
-    .fontColor('#212121')
-    .anchor('rightcenter');
+  var marker2 = chart.textMarker(2);
+  marker2.scale(chart.yScale());
+  marker2.value(13);
+  marker2.text("Align: right");
+  marker2.align("right");
+  marker2.offsetX(5);
+  marker2.fontColor("#212121");
+  marker2.anchor("rightcenter");
 
   // forth marker
-  chart.textMarker(3)
-    .scale(chart.yScale())
-    .value(15)
-    .text('Align: left\nAnchor: right')
-    .hAlign('right')
-    .align('left')
-    .fontColor('#212121')
-    .offsetX(5)
-    .anchor('rightcenter');
+  var marker3 = chart.textMarker(3);
+  marker3.scale(chart.yScale());
+  marker3.value(15);
+  marker3.text("Align: left\nAnchor: right");
+  marker3.hAlign("right");
+  marker3.align("left");
+  marker3.fontColor("#212121");
+  marker3.offsetX(5);
+  marker3.anchor("rightcenter");
 
   // fifth marker
-  chart.textMarker(4)
-    .scale(chart.yScale())
-    .value(4)
-    .text('Align: left\nAnchor: right\nOffsetX: 40')
-    .hAlign('right')
-    .align('left')
-    .fontColor('#212121')
-    .offsetX(40)
-    .anchor('rightcenter');
+  var marker4 = chart.textMarker(4);
+  marker4.scale(chart.yScale());
+  marker4.value(4);
+  marker4.text("Align: left\nAnchor: right\nOffsetX: 40");
+  marker4.hAlign("right");
+  marker4.align("left");
+  marker4.fontColor("#212121");
+  marker4.offsetX(40);
+  marker4.anchor("rightcenter");
 
   // draw
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

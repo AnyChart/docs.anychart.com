@@ -12,16 +12,8 @@
 
   // data
   var data = anychart.data.set([
-    [2000, 178, 165, 154, 143, 132],
-    [2001, 108, 160, 142, 121, 190],
-    [2002, 180, 160, 170, 121, 119],
-    [2003, 120, 195, 177, 126, 184],
-    [2004, 110, 120, 130, 140, 150],
-    [2005, 108, 160, 142, 121, 190],
-    [2006, 180, 160, 170, 121, 119],
-    [2007, 120, 195, 177, 126, 184],
-    [2008, 110, 120, 130, 140, 150],
-    [2009, 140, 150, 180, 190, 200]
+    [1, 178, 165, 154, 143, 132],
+    [2, 167, 153, 144, 133, 122]
   ]);
 
   // map data for each series
@@ -35,7 +27,7 @@
   var series1 = chart.marker(data1);
   series1.fill("#4A55C7");
   var series2 = chart.marker(data2);
-  series2.fill("#999999");
+  series2.fill("#5EBD9B");
   var series3 = chart.marker(data3);
   series3.fill("#B04A8A");
   var series4 = chart.marker(data4);
@@ -48,7 +40,7 @@
 
   var xScale = chart.xScale();
   xScale.minimum(1999);
-  xScale.maximum(2010);
+  xScale.maximum(2007);
   var xTicks = chart.xScale().ticks();
   xTicks.interval(1);
 

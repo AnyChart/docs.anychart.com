@@ -33,12 +33,12 @@
   // settings for the first column
   dataGrid.column(0).width(25).textFormatter(function(item) {
     return "";
-  });
+  }).title().text("#");
   
   // settings for the second column
   dataGrid.column(1).width(135).textFormatter(function(item) {
     return item.get("name");
-  }).title('Plan');
+  }).title().text("Plan");
 
   // disable buttons in the second column
   dataGrid.column(1).collapseExpandButtons(false);
@@ -89,7 +89,7 @@ function getData() {
                 "actualEnd": Date.UTC(2007, 2, 14)
       }
             ]
-      }
+      },
     ]
   }
   ];

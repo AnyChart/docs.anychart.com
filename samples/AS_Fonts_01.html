@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // data and fill color settings
+  var data = anychart.data.set([
+    {x: "English", value: 2022776},
+    {x: "Français", value: 561753},
+    {x: "Português", value: 287318},
+    {x: "Español", value: 281288},
+    {x: "Русский", value: 204379},
+    {x: "中文", value: 146215},
+    {x: "Norsk (bokmål)", value: 133410}
+  ]);
+  
+  
+  // create color palette
+  var palette = anychart.palettes.distinctColors().colors();
+  var mappedData = data.mapAs();
+      
+  // coloring elements
+  for (var i=0;i<mappedData.getRowsCount();i++){
+    mappedData.set(i,"fill",palette[i]);
+  }
+
+  // chart type
+  var chart = anychart.column();
+
+  // title
+  chart.title("International Symbols Support");
+
+  // set data
+  var series = chart.column(data);
+
+  // adjust tooltip content
+  series.stroke(null);
+  var tooltip = series.tooltip();
+  tooltip.contentFormatter(function(){
+    return "Language: " + this.x + "\nArticles: " + this.value;
+  });
+
+  // adjust tooltip font
+  var tooltipContent = series.tooltip().content();
+  tooltipContent.fontWeight(400);
+  tooltipContent.fontFamily("Tahoma");
+  tooltipContent.fontSize(12);
+
+  // adjust labels
+  var labels = series.labels();
+  labels.enabled(true);
+  labels.position("centerTop");
+  labels.anchor("center");
+  labels.offsetY(-15);
+  labels.textFormatter(function(){return this.x});
+
+  // draw
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

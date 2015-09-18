@@ -6,45 +6,44 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
+
   var chart = anychart.bar();
-  
-  chart.container('container');
 
   // setting title
-  chart.title().text('Y axis Labels stick to the right');
+  chart.title("Y axis Labels stick to the right");
 
   // seting data
   chart.bar([
-    ["People's Republic of China", 1336717952],
+    ["People's\nRepublic\nof China", 1336717952],
     ["India", 1189172864],
-    ["United States of America", 313232032],
-    ["Russian Federation", 138739888],
+    ["United\nStates of\nAmerica", 313232032],
+    ["Russian\nFederation", 138739888],
     ["Japan", 126475664]
   ]);
 
   // adjusting labels
-  chart.yScale().ticks().interval(200000000);
-  chart.yAxis().labels().textFormatter(function(){
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(200000000);
+  var yLabels = chart.yAxis().labels();
+  yLabels.textFormatter(function(){
     var value = this.value;
     if (value>1000000){
       if (value>999999999){
-        value = value/1000000000 + ' B ';
+        value = value/1000000000 + " B ";
       }
       else{
-        value = value/1000000 + ' M ';
+        value = value/1000000 + " M ";
       }
     }
     return value;
   });
-  chart.xAxis().labels()
-    .hAlign('center')
-    .width(60)
-    .hAlign('right');
-
-  chart.yAxis().minorTicks().enabled(false);
-  chart.xAxis().staggerLines(1);
+  var xLabels = chart.xAxis().labels();
+  xLabels.textWrap(true);
+  xLabels.width(75);
+  xLabels.hAlign("right");
 
   // draw chart
+  chart.container("container");
   chart.draw();
 });</script>
 </head>

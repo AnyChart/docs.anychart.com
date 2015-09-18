@@ -24,11 +24,11 @@
   var chart = anychart.area();
 
   // chart title
-  chart.title("Stacked Step Area Chart");
+  chart.title().text("Stacked Step Area Chart");
 
   // set axes title
-  chart.xAxis().title("Month");
-  chart.yAxis().title("Temperature");
+  chart.xAxis().title().text("Month");
+  chart.yAxis().title().text("Temperature");
 
   // set stack mode
   chart.yScale().stackMode("value");
@@ -39,8 +39,7 @@
   chart.stepArea(seriesData_3);
 
   // draw
-  chart.container('container');
-  chart.draw();
+  chart.container("container").draw();
 });</script>
 </head>
 <body>

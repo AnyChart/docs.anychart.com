@@ -16,25 +16,31 @@
     {name: "Tom", value: 13000},
     {name: "Julia", value: 18000}
   ]);
-
-  chart.title().enabled(true);
   
   // legend settings
-  chart.legend()
-    .enabled(true)            // enables legend
-    .height(155)              // set legend height
-    .width(95)                // set legend width
-    .position('left')         // set legend position
-    .align('top')             // set legend align
-    .padding(10)              // set padding 10px
-    .itemsLayout('vertical')  // legend items layout
-    .paginator()              // paginator settings
-      .orientation('bottom'); // place paginator at the bottom of a legend
-
-  chart.legend().paginator().padding(5);
-
+  var legend = chart.legend();
+  // enables legend
+  legend.enabled(true);
+  // set legend height
+  legend.height(140);
+  // set legend width
+  legend.width(95);
+  // set legend position
+  legend.position("left");
+  // set legend align
+  legend.align("top");
+  // set padding 10px
+  legend.padding(10);
+  // legend items layout
+  legend.itemsLayout("vertical");
+  // paginator settings
+  var paging = chart.legend().paginator();
+  // place paginator at the bottom of a legend
+  paging.orientation("bottom");
+  
   // draw
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

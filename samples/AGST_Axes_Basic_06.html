@@ -9,9 +9,9 @@
 
   // setting data
   var data = anychart.data.set([
-    ['P1', 16, -16],
-    ['P2', 12, -13],
-    ['P3', 9, 14]
+    ["P1", 16, -16],
+    ["P2", 12, -13],
+    ["P3", 9, 14]
   ]);
 
   // remapping data
@@ -20,20 +20,18 @@
 
   var chart = anychart.column();
 
-  chart.title().enabled(true).text('Axis Line and Zero Line Sample');
+  chart.title("Axis Line and Zero Line Sample");
 
   // setting line to emphasize zero point
-  chart.lineMarker().stroke('2 red');
+  var line = chart.lineMarker();
+  line.stroke("2 red");
 
   // series data
   chart.column(Sales2003);
   chart.column(Sales2004);
 
-  // adjusting grid
-  chart.minorGrid(null, null);
-  chart.grid(null, null);
-
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

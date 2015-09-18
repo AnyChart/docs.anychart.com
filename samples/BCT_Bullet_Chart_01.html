@@ -9,20 +9,22 @@
 
   // Create bullet chart
   var chart = anychart.bullet([
-    {value: 637.166}                    // 2005 income
+    // 2005 income
+    {value: 637.166}
   ]);
   
   // Set chart ranges
-  chart.range().from(0).to(750);        // maximum annual income
+  chart.range().from(0).to(750);
 
   // Set chart size and position settings
-  chart.bounds(0, 0, '100%', 125);
+  chart.bounds(0, 0, "100%", 125);
 
   // chart title
-  chart.title('Revenue');
+  chart.title("Revenue");
 
   // Initiate chart drawing
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

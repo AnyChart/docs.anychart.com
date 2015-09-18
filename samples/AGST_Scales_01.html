@@ -11,14 +11,14 @@
   var chart = anychart.column();
 
   // title setter
-  chart.title("Linear scale sample");
+  chart.title("Linear Scale Sample");
 
   // setting yScale type as liner. Even knowing it's liner by default
   chart.yScale(anychart.scales.linear());
 
   // y axis title setter
   var yAxis = chart.yAxis();
-  yAxis.title("This Axis has 'linear' type");
+  yAxis.title("This Axis Has 'Linear' Type");
 
   // setting data
   var series = chart.column([
@@ -28,7 +28,6 @@
     ["D", 78662],
     ["E", 90000]
   ]);
-  series.hoverFill("#444444");
   series.tooltip(false);
 
   chart.container("container");

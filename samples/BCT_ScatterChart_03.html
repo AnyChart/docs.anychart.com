@@ -8,13 +8,13 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   var chart = anychart.scatterChart();
-  chart.title().enabled(true).text("Sample Scatter Graph");
+  chart.title().text("Sample Scatter Graph");
 
   chart.xScale().minimum(1.5).maximum(5.5).ticks().interval(1);
   chart.yScale().minimum(40).maximum(100).ticks().interval(10);
 
-  chart.yAxis(0).title().enabled(true).text("Waiting time between \r\n eruptions (Min)");
-  chart.xAxis(0).title().enabled(true).text("Eruption duration (Min)");
+  chart.yAxis(0).title().text("Waiting time between eruptions (Min)");
+  chart.xAxis(0).title().text("Eruption duration (Min)");
   chart.xAxis(0).drawFirstLabel(false).drawLastLabel(false);
 
   var marker = chart.marker([
@@ -286,8 +286,7 @@
     return this["sourceColor"];
   });
 
-  chart.container('container');
-  chart.draw();
+  chart.container("container").draw();
 });</script>
 </head>
 <body>

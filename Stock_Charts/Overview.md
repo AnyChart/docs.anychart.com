@@ -1,4 +1,7 @@
-Overview
+{:index 1}
+#AnyStock
+
+<!-->Stock Chart is widely spread type of charts that can quite effectively visualize great amount of data. Stock Chart has lots of interesting features such as series zooming, using date scale, etc. Moreover, stock charts are very useful for real-time data visualization.<!-->
 
 Stocks are one of the most popular financial instruments in the world. They are usually used in cases with enormous amount of data spreads along the time; so it's quite logical to use them, for example, for showing the company assets and earnings for its whole working period.
 That's why stocks are this popular: it can show large amounts of data and keep it clear to the audience.

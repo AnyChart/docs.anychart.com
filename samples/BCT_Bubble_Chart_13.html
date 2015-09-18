@@ -9,9 +9,9 @@
 
   // data
   var data = anychart.data.set([
-      [1, 14, 2, 24, 2, 34, 2, 42, 2, 50, 2],
-      [2, 19, 2, 26, 1, 39, 2, 45, 2, 61, 2],
-      [3, 27, 3, 38, 3, 35, 2, 41, 2, 58, 2]
+    [1, 14, 2, 24, 2, 34, 2, 42, 2, 50, 2],
+    [2, 19, 2, 26, 1, 39, 2, 45, 2, 61, 2],
+    [3, 27, 3, 38, 3, 35, 2, 41, 2, 58, 2]
   ]);
 
   // map data for the each series
@@ -22,55 +22,48 @@
   var seriesData_5 = data.mapAs({x: [0], value: [9], size:[10]});
 
   // chart type
-  chart = anychart.scatter();
+  var chart = anychart.scatter();
 
   // chart title
-  chart.title().text('Hatches');
+  chart.title("Hatches");
 
   // set series data and adjust hatch
-  chart.bubble(seriesData_1)
-    .minimumSize(10)
-    .maximumSize(30)
-    .hatchFill('diagonalcross')
-    .color('#EEEEEE');
+  var series1 = chart.bubble(seriesData_1);
+  series1.hatchFill("diagonalcross");
+  series1.color("#EEEEEE");
 
   // set series data and adjust hatch
-  chart.bubble(seriesData_2)
-    .minimumSize(10)
-    .maximumSize(30)
-    .color('#EEEEEE')
-    .hatchFill('diagonalbrick');
+  var series2 = chart.bubble(seriesData_2);
+  series2.color("#EEEEEE");
+  series2.hatchFill("diagonalbrick");
 
   // set series data and adjust hatch
-  chart.bubble(seriesData_3)
-    .minimumSize(10)
-    .maximumSize(30)
-    .color('#EEEEEE')
-    .hatchFill('zigzag');
+  var series3 = chart.bubble(seriesData_3);
+  series3.color("#EEEEEE");
+  series3.hatchFill("zigzag");
 
   // set series data and adjust hatch
-  chart.bubble(seriesData_4)
-    .minimumSize(10)
-    .maximumSize(30)
-    .color('#EEEEEE')
-    .hatchFill('checkerboard');
+  var series4 = chart.bubble(seriesData_4);
+  series4.color("#EEEEEE");
+  series4.hatchFill("checkerboard");
 
   // set series data and adjust hatch
-  chart.bubble(seriesData_5)
-    .minimumSize(10)
-    .maximumSize(30)
-    .color('#EEEEEE')
-    .hatchFill('percent30');
+  var series5 = chart.bubble(seriesData_5);
+  series5.color("#EEEEEE");
+  series5.hatchFill("percent30");
 
-  chart.xScale()
-    .minimum(0)
-    .maximum(4)
-    .ticks().interval(1);
-  chart.xAxis().title().enabled(false);
-  chart.yAxis().title().enabled(false);
+  var xScale = chart.xScale();
+  xScale.minimum(0);
+  xScale.maximum(4);
+  var xTicks = chart.xScale().ticks();
+  xTicks.interval(1);
+      
+  chart.minBubbleSize(10);
+  chart.maxBubbleSize(30);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

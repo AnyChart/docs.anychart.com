@@ -6,11 +6,11 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
+
   var chart = anychart.column();
-  chart.container('container');
 
   // setting title
-  chart.title().text('X-Axis labels: width is 60px');
+  chart.title("X-Axis labels: width is 60px");
 
   // seting data
   chart.column([
@@ -22,24 +22,28 @@
   ]);
 
   // adjusting labels
-  chart.yScale().ticks().interval(200000000);
-  chart.yAxis().labels().textFormatter(function(){
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(200000000);
+  var yLabels = chart.yAxis().labels();
+  yLabels.textFormatter(function(){
     var value = this.value;
     if (value>1000000){
       if (value>999999999){
-        value = value/1000000000 + ' B ';
+        value = value/1000000000 + " B ";
       }
       else{
-        value = value/1000000 + ' M ';
+        value = value/1000000 + " M ";
       }
     }
     return value;
   });
-  chart.xAxis().labels().hAlign('center').width(60);
-  chart.yAxis().minorTicks().enabled(false);
-  chart.xAxis().staggerLines(1);
+  var xLabels = chart.xAxis().labels();
+  xLabels.textWrap(true);
+  xLabels.hAlign("center");
+  xLabels.width(60);
 
   // draw chart
+  chart.container("container");
   chart.draw();
 });</script>
 </head>

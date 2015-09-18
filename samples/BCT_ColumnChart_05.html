@@ -8,31 +8,36 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  chart = anychart.column();
+  var chart = anychart.column();
 
   // set title
-  chart.title().text('Scale Values Management');
+  chart.title("Scale Values Management");
 
   // set axes titles
-  chart.xAxis().title().text('Manager');
-  chart.yAxis().title().text('Sales');
+  var xAxis = chart.xAxis();
+  xAxis.title("Manager");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
 
   // set data
   chart.column([
-      ['John' , 10000],
-      ['Jake' , 12000],
-      ['Peter' , 18000],
-      ['James' , 11000],
-      ['Mary' , 9000]
+    ["John" , 10000],
+    ["Jake" , 12000],
+    ["Peter", 18000],
+    ["James", 11000],
+    ["Mary" , 9000]
   ]);
 
   // adjust min and max value
-  chart.yScale()
-    .minimum(-7000)   // set minimum value
-    .maximum(36000);  // set maximum value
+  var yScale = chart.yScale();
+  // set minimum value
+  yScale.minimum(-7000);
+  // set maximum value
+  yScale.maximum(36000);
 
   // draw
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

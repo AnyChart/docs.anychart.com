@@ -1,28 +1,39 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <meta name="tags" content="['error' 'bar']"/>
+    <meta name="tags" content="[error,bar]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  chart = anychart.columnChart();
+  
+  var chart = anychart.scatter();
 
-  //set container id for the chart
-  chart.container('container');
+  var series = chart.marker([
+    {x: 192, y: 9, xUpperError: "2%", xLowerError: '1%'},
+    {x: 168, y: 24, xUpperError: "3%", xLowerError: '3%', valueUpperError: 3},
+    {x: 154, y: 30, xError: 6},
+    {x: 132, y: 41, xUpperError: "3%", xLowerError: "3%"},
+    {x: 114, y: 53, xUpperError: 2, xLowerError: "3%", valueLowerError: "7%"},
+    {x: 94, y: 74, xError: "4%", "valueError": "6%"},
+    {x: 83, y: 85, xUpperError: "3%", xLowerError: "5%", valueUpperError: "5%", valueLowerError: "2%"}
+  ]);
 
-  var series = chart.column([
-    {x: 'Viperia berus', y: 8, valueError: '4.4', valueErrorStroke: 'red'},
-    {x: 'Viperia ammodytes', y: 7.1, valueError: '2.6', valueErrorStroke: 'red'},
-    {x: 'Viperia aspis', y: 13.7, valueError: '4.6', valueErrorStroke: 'red'},
-    {x: 'Viperia latastei', 'y': 16.8, valueError: '5.5', valueErrorStroke: 'red'}
-  ]).fill('Green .8');
+  chart.title("Market Demand Curve Without Error Bars");
+  var xAxis = chart.xAxis();
+  xAxis.title("Price");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
 
-  chart.yAxis().title('Lethal Dose 50 (mg/mouse)');
-  chart.barGroupsPadding(3);
-  chart.yScale().minimum(0);
-  chart.title('Studies Of Snake Venom');
-  //initiate chart drawing
+  series.size(7);
+
+  var error = series.error();
+  error.mode("none");
+
+  // set container id for the chart
+  chart.container("container");
+
+  // initiate chart drawing
   chart.draw();
 });</script>
 </head>

@@ -17,53 +17,52 @@
   ]);
 
   // chart type
-  chart = anychart.column();
+  var chart = anychart.column();
 
   // set data
-  chart.column(data).tooltip().contentFormatter(function(){
-    return 'Year: ' + this.x + '\nSales: ' + this.value/1000 + ',000.00';
+  var series = chart.column(data);
+  var tooltip = series.tooltip();
+  tooltip.contentFormatter(function(){
+    return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
   });
-
-  // disable title
-  chart.title().enabled(false);
 
   // set y scale ticks interval
-  chart.yScale().minimum(0).maximum(30000).ticks().interval(5000);
-
-  // disable x axis title
-  chart.xAxis().title().enabled(false);
+  var yScale = chart.yScale();
+  yScale.minimum(0);
+  yScale.maximum(30000);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(5000);
 
   // adjust y axis labels
-  chart.yAxis().labels().textFormatter(function(){
-    return '$' + this.value/1000 + ',000';
+  var yLabels = chart.yAxis().labels();
+  yLabels.textFormatter(function(){
+    return "$" + this.value/1000 + ",000";
   });
 
-  // y scale title
-  chart.yAxis().title().text('Sales');
-
   // set green marker
-  chart.rangeMarker()
-    .scale(chart.yScale())
-    .from(20000)
-    .to(30000)
-    .fill('#d7fcda');
+  var rangeMarker = chart.rangeMarker(0);
+  rangeMarker.scale(chart.yScale());
+  rangeMarker.from(20000);
+  rangeMarker.to(30000);
+  rangeMarker.fill("#d7fcda");
 
   // set yellow marker
-  chart.rangeMarker(1)
-    .scale(chart.yScale())
-    .fill('#ffffdc')
-    .from(10000)
-    .to(20000);
+  var rangeMarker1 = chart.rangeMarker(1);
+  rangeMarker1.scale(chart.yScale());
+  rangeMarker1.fill("#ffffdc");
+  rangeMarker1.from(10000);
+  rangeMarker1.to(20000);
 
   // set red marker
-  chart.rangeMarker(2)
-    .scale(chart.yScale())
-    .from(0)
-    .to(10000)
-    .fill('#fcd8d7');
+  var rangeMarker3 = chart.rangeMarker(2);
+  rangeMarker3.scale(chart.yScale());
+  rangeMarker3.from(0);
+  rangeMarker3.to(10000);
+  rangeMarker3.fill("#fcd8d7");
 
   // draw
-  chart.container('container').draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

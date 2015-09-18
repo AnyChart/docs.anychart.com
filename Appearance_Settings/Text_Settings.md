@@ -10,13 +10,14 @@
 ## Overview
 
 You can control the font settings of every text object in AnyChart. Working with fonts is the same for all methods. This tutorial will explain all possible settings.
-
+  
+  
 There are [built-in font formatting settings](#basic_settings) (like <b>bold</b>, <i>italic</i>, <u>underline</u>, <font size="+1">size</font>, <font color="red">color</font> or <font face="Times New Roman, Times, serif">font family</font>). 
 These settings are applied to all characters within a text element; use [HTML formatting](#html) in case you need a complex formatting.
 
 ## Basic Settings
 
-Most of the time the following methods are used to tune the appearance of a text: {api:anychart.graphics.vector.Text#fontFamily}**fontFamily()**{api}, {api:anychart.graphics.vector.Text#fontSize}**.fontSize()**{api}, {api:anychart.graphics.vector.Text#fontWeight}**.fontWeight()**{api}, {api:anychart.graphics.vector.Text#fontStyle}**.fontStyle()**{api}, {api:anychart.graphics.vector.Text#htmlText}**.useHtml()**{api}. Full list of methods can be found in [Text Formatting](#text_formatting) section or in {api:anychart.graphics.vector.Text}API{api}.
+Most of the time the following methods are used to tune the appearance of a text: {api:anychart.graphics.vector.Text#fontFamily}**fontFamily()**{api}, {api:anychart.graphics.vector.Text#fontSize}**fontSize()**{api}, {api:anychart.graphics.vector.Text#fontWeight}**fontWeight()**{api}, {api:anychart.graphics.vector.Text#fontStyle}**fontStyle()**{api}, {api:anychart.graphics.vector.Text#htmlText}**useHtml()**{api}. Full list of methods can be found in [Text Formatting](#text_formatting) section or in {api:anychart.graphics.vector.Text}API{api}.
 
 ```
   .fontColor('Red')
@@ -36,11 +37,11 @@ There's no problem with using AnyChart if your language is not English - AnyChar
 
 There are labels, tooltips and legend in English, French, Portuguese, Spanish, Russian, Chinese and Norwegian on the chart below.
 
-{sample}GAS\_Fonts\_01{sample}
+{sample}AS\_Fonts\_01{sample}
 
 ## HTML
 
-If you want to do a complex formatting of the text - consider using HTML formatting. To enable it set the {api:anychart.graphics.vector.Text#htmlText}**.useHtml()**{api} method in *true*:
+If you want to do a complex formatting of the text - consider using HTML formatting. To enable it set the {api:anychart.graphics.vector.Text#htmlText}**useHtml()**{api} method in *true*:
 
 ```
   series.labels().useHtml(true).textFormatter(function(){
@@ -96,7 +97,7 @@ If you want to do a complex formatting of the text - consider using HTML formatt
 
 The sample Pie chart below demonstrates all available tags on slice labels:
 
-{sample}GAS\_Fonts\_02{sample}
+{sample}AS\_Fonts\_02{sample}
 
 ## Text Formatting
 
@@ -177,4 +178,4 @@ Here is a table with all possible methods for controlling the text view.
 
 And here is a sample demonstrating the usage of these parameters:
 
-{sample :width 690 :height 680}GAS\_Fonts\_03{sample}
+{sample :width 690 :height 680}AS\_Fonts\_03{sample}
