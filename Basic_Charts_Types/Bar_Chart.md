@@ -16,6 +16,7 @@
 * [Colors](#colors)
   * [Colorizing Elements](#colorizing_elements)
 * [Hatch Fills](#hatch_fills)
+* [Samples](#samples)
 
 ## Overview
 
@@ -310,3 +311,7 @@ You can find more information about hatch types in [Hatch Fill](../Appearance_Se
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart a with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
 
 {sample}BCT\_BarChart\_12{sample}
+
+## Samples
+
+ You can see a lot of other samples in [AnyChart Web Bar Charts Gallery](http://anychart.com/products/anychart/gallery/Bar_Charts/)
