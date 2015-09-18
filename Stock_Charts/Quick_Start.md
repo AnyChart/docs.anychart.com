@@ -25,15 +25,16 @@ Example:
 
 ###3. Prepare your Data
 
-When you work with other charts, you use anychart.data.set() to set the data, and there are more than one way to do it (you can set the date as objects or arrays, also CSV, JSON amd XML)
-When you work with stocks, you need to use anychart.data.table(). AnyStocks don't support data in arrays format, so better set the data as objects.
+When you work with other charts, you use **anychart.data.set()** to set the data, and there are more than one way to do it (you can set the date as objects or arrays, also CSV, JSON amd XML)
+When you work with stocks, you need to use **anychart.data.table()**. AnyStocks don't support data set as array, so better set the data as objects.
+Note that AnyStocks support only three types of series: [Line](../Basic_Chart_Types/Line-Spline-StepLine_Charts), [Column](../Basic_Chart_Types/Column_Chart) and [OHLC](../Basic_Chart_Types/OHLC_Chart).
 
 ```
 
 ```
 
 ###4. Create a chart
-Add the JavaScript tag `<script>` with the following code anywhere in the  page. 
+Add the JavaScript tag `<script>` with the following code anywhere in the page. 
 This code example uses JavaScript API to create a chart, but you also can use [JSON, XML and CSV](Data_from_JSON,_XML,_CSV). 
 Example:
 
