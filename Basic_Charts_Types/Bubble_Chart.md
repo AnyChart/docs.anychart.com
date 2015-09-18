@@ -22,7 +22,7 @@
 A Bubble chart is a variation of a [Scatter chart](./Scatter_Chart) where the data points are replaced with bubbles.
   
   
-Bubble charts are often used to present financial data. Use a Bubble chart if you want to put more attention to the specific values in your chart by different bubble sizes.
+HTML5 Bubble charts are often used to present financial data. Use a Bubble chart if you want to put more attention to the specific values in your chart by different bubble sizes.
   
   
 Bubble charts are popular tools for identifying and illustrating industry clusters. Essentially, these charts allow four different variables to be plotted within the same graph, making it easy to assess relative economic performance.
@@ -74,7 +74,7 @@ Let's see single series bubble chart created using the sample data - ACME Corp. 
 </tr>
 </tbody></table>
 
-Now we need to convert this data table into format acceptable by AnyChart. In terms of AnyChart data model, we have one series of data (Sales) with categories that hold Product names. Each point in series represents product, units sold and a profit amount. Converted data looks like:
+Now we need to convert this data table into format acceptable by AnyChart javascript charting library. In terms of AnyChart data model, we have one series of data (Sales) with categories that hold Product names. Each point in series represents product, units sold and a profit amount. Converted data looks like:
 
 ```
   var series = chart.bubble([

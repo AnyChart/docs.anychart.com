@@ -15,6 +15,7 @@
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Markers](#markers)
 * [Hatch Fills](#hatch_fills)
+* [Samples](#samples)
 
 ## Overview
 
@@ -301,3 +302,7 @@ To demonstrate hatch fill feature we've prepared the following sample. As you ca
 ```
 
 {sample}BCT\_AreaChart\_11{sample}
+
+## Samples
+
+ You can see a lot of other samples in [AnyChart Web Area Charts Gallery](http://anychart.com/products/anychart/gallery/Area,_Spline-Area,_Step-Area_Charts)
