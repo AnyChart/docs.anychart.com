@@ -301,6 +301,27 @@ There is one more thing you can do with the interactivity of our charts: you can
 
 ## Interactivity Settings in Data Sets
 
+Now, let's look at our dataSets. If you have explored our samples in the playground, you may remember that in a couple of samples we added not only values but sometimes colors or url's, and mapped those accordingly. In this paragraph, we're going to shed some light on using dataSet values for defining interactivity parameters.
 
+Look at the following sample.
 
+{sample}CS\_Interactivity\_16{sample} 
 
+Here we have defined all interactivity colors (selection and hovering fills) through the dataSet of the chart. That's how it looks like in the code:
+
+```
+    // data
+    var data = anychart.data.set([
+        ["John", 10000, 12000, '#ccc', '#FF9900', 'diamond'],
+        ["Jake", 12000, 15000, '#ccc', '#FF9900', 'backwarddiagonal'],
+        ["Peter", 18000, 16000, '#ccc', '#FF9900', 'diamond'],
+        ["James", 11000, 13000, '#ccc', '#FF9900', 'diamond'],
+        ["Mary", 9000, 19000, '#ccc', '#FF9900', 'diamond']                                                          
+    ]);
+
+    // map data for each series
+	var Sales2003 = data.mapAs({x: [0], value: [1], hoverFill: [3], selectFill: [4]});
+	var Sales2004 = data.mapAs({x: [0], value: [2], hoverFill: [3], selectHatchFill: [5]});
+```
+
+So, when you need or want to use our dataSet to set the series interactive behaviour, all you need is to map the parameters properly afterwards.
