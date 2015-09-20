@@ -342,6 +342,6 @@ Another way of defining interactivity through the dataSet is setting the data as
     ]);
 ```
 <br>
-{sample}CS_Interactivity_17{sample}
+{sample}CS\_Interactivity\_17{sample}
 <br>
 So, when you need or want to use our dataSet to set the series interactive behaviour, all you need is to map the parameters properly afterwards.
