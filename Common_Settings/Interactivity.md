@@ -325,6 +325,9 @@ Here we have defined all interactivity colors (selection and hovering fills) thr
 ```
 
 <br>
+So, when you need or want to use our dataSet to set the series interactive behaviour, all you need is to map the parameters properly afterwards.
+
+<br>
 Another way of defining interactivity through the dataSet is setting the data as objects, like in the following:
 <br>
 
@@ -343,5 +346,3 @@ Another way of defining interactivity through the dataSet is setting the data as
 ```
 <br>
 {sample}CS\_Interactivity\_17{sample}
-<br>
-So, when you need or want to use our dataSet to set the series interactive behaviour, all you need is to map the parameters properly afterwards.
