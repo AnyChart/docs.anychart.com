@@ -35,13 +35,28 @@ Now, we should add some data in our newly created table. Note, that the data for
 	]);
 ```
 
-<br>**Note!** Each data table has to have a "key" value (x-axis value), which should be unique for the one series data. If there are some lines (data points) with the same x-axis value, stock will count only the last point with this X.
+<br>**Note!** Each data table has to have a "key" value (x-axis value), which should be unique for one series data. If there are some lines (data points) with the same x-axis value, stock will count only the last point with this X.
 
 Note that the X value has to contain date in any format. It means that you may set data as a timestamp, Date Time String or UTC - but it definitely has to be a data, as the first meaning of stock charts is to show the change of something through the time.
 
 # Mapping
 
-After we have set the data, we need to map it properly. We should create a new mapping object using {api:anychart.data.Table#mapAs}**.mapAs()**{api} finction. 
+After we have set the data, we need to map it properly. For that we should create a new mapping object using {api:anychart.data.Table#mapAs}**.mapAs()**{api} finction. 
+
+```
+	mapping = table.mapAs();
+```
+
+This object now will be responsible for the data mapping. Here we should add a plenty of fields (or simply lines) using {api:anychart.data.TableMapping#addField}**.addField()**{api} method. Each field has to get at least two parameters: the name of the field to add and the index of the column where the field should get values from. These will map the data correctly, but the grouping parameter by default is "close". It means that when you've got loads of data points and they are grouped to be shown all in one chart, the grouping type will be chosen "first" automatically as for OHLC chart, and all those values, which name we have defined as the first parameter, will group into one - the first one. If you want to change it to an average, last or any other, add this type as the third parameter to the {api:anychart.data.TableMapping#addField}**.addField()**{api} method.
+
+That's how it would look:
+
+```
+	mapping.addField('open', 1, 'first');
+	mapping.addField('high', 2, 'max');
+```
+
+That's how we map the data for AnyStocks. For more information look up the [Using Table Data Model](../Working_with_Data/Using_Table_Data_Model) article.
 
 # Remove
 
