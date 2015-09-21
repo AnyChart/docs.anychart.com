@@ -41,7 +41,7 @@ Note that the X value has to contain date in any format. It means that you may s
 
 # Mapping
 
-After we have set the data, we need to map it properly. We should create a new mapping object using {api:anychart.data.Table#mapAs}**.mapAs()**{api} finction.
+After we have set the data, we need to map it properly. We should create a new mapping object using {api:anychart.data.Table#mapAs}**.mapAs()**{api} finction. 
 
 # Remove
 
