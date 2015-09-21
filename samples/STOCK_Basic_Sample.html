@@ -31,7 +31,7 @@ anychart.onDocumentReady(function() {
 		['2016-01-10T12:00:00','508.53', '516.13', '505.66', '510.42'],
 		['2016-01-11T12:00:00','508.90', '516.24', '505.73', '510.40']	
   ]);
-  //table.addData(rawData.data);
+  
   mapping = table.mapAs();
   mapping.addField('open', 1, 'first');
   mapping.addField('high', 2, 'max');
@@ -41,11 +41,8 @@ anychart.onDocumentReady(function() {
 
   chart = anychart.stock();
   chart.padding(10, 10, 10, 50);
-  //chart.plot(0).line(mapping);
   chart.plot(0).ohlc(mapping);
   chart.plot(0).yAxis();
-  //chart.plot(0).xAxis(false);
-  //chart.plot(0).legend(true);
   chart.scroller().line(mapping);
   chart.title('Stock Demo\nClick this title to start streaming');
   chart.container('container');

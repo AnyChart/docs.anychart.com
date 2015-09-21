@@ -25,8 +25,8 @@ Example:
 
 ###3. Prepare your Data
 
-When you work with other charts, you use **anychart.data.set()** to set the data, and there are more than one way to do it (you can set the date as objects or arrays, also CSV, JSON amd XML)
-When you work with stocks, you need to use **anychart.data.table()** and {api:anychart.data.Table#addData}**.addData()**{api}. AnyStocks don't support data set as objects, so set it as array of arrays or a CSV string.
+When you work with other charts, you use {api:anychart.data#set}**anychart.data.set()**{api} to set the data, and there are more than one way to do it (you can set the date as objects or arrays, also CSV, JSON amd XML)
+When you work with stocks, you need to use {api:anychart.data#table}**anychart.data.table()**{api} and {api:anychart.data.Table#addData}**.addData()**{api}. AnyStocks don't support data set as objects, so set it as array of arrays or a CSV string.
 Note that AnyStocks support only three types of series: [Line](../Basic_Chart_Types/Line-Spline-StepLine_Charts), [Column](../Basic_Chart_Types/Column_Chart) and [OHLC](../Basic_Chart_Types/OHLC_Chart). It means that you should define the data points according to the series you're going to use.
 
 ```
@@ -74,15 +74,17 @@ After we have set the data, we need to do the mapping for it (beсause we cannot
 	mapping.addField('value', 4, 'last');
 ```
 <br>
-For activating the stock chart type we use .stock():
+For activating the stock chart type we use {api:anychart#stock}.stock(){api}:
 ```
 	chart = anychart.stock();
 ```
 <br>
-Due to specialty of stock charts, it has got no series but plots - it means that instead of .series() you need to write .plot():
+Due to specialty of stock charts, it may have more than one plot and a plenty of series, and the chart itself cannot create a series. So it means that you have to define .plot():
 ```
 	chart.plot(0).ohlc(mapping);
 ```
+<br>
+No matter how many plots with or withous series you create, all of them would scroll together, because they all are bend to one X axis. Though, plota might have different Y-axes.
 
 ###4. Create a chart
 Add the JavaScript tag `<script>` with the following code anywhere in the page. 
@@ -142,7 +144,7 @@ anychart.onDocumentReady(function() {
 ###See the result
 After all these steps you should have the following result. This example, like any other on our site, can be launched and explored using the samples playground.
 
-{sample :width 690 :height 180}STOCK\_Basic\_Sample{sample}
+{sample}STOCK\_Basic\_Sample{sample}
 ###Full source code
 You can copy this to a file on your computer and open it in your browser to display the AnyStock Chart shown above:
 ```
