@@ -2,4 +2,17 @@
 
 #Scroller
 
+*стыбзено с 6*
+
+AnyChart Stock provides chart viewer the most possible convenience to view and navigate the time based charts: user can drag the plot manually, enter exact date using Range Picker or set some range using Range Selector Presets. But the core navigation tool is Scroller, which is described in this section of the documentation.
+
+Scroller is a complex component, which consists of the several configurable parts: Scroller itself, thumbnail series in its background, optional scroll bar, and range markers. Illustration below highlights these parts:
+
+
+
+
+We can add any of [supported series](Supported_Series) to the scroller if necessary, so the scroller will display a "small stock" inside itself. Let's look at how it looks:
+
+
+
 *coming soon*
