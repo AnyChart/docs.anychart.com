@@ -21,7 +21,7 @@ Funnel charts are so-called Accumulation charts and they show percentage ratio. 
 
 ## Chart
 
-To create Funnel chart with AnyChart you have to set {api:anychart#funnel}**.funnel()**{api} method.
+To create Funnel chart with AnyChart charting framework you have to set {api:anychart#funnel}**.funnel()**{api} method.
 
 ```
   var chart = anychart.funnel();
@@ -75,7 +75,7 @@ You can see the funnel chart with this configuration below.
 
 ## Neck and Head
 
-As you can see, any funnel consist of two parts: the higher part which called head or base and the lower part which called neck. Size of these parts can be tuned separately. Using{api:anychart.charts.Funnel#neckWidth}**.neckWidth()**{api} and {api:anychart.charts.Funnel#baseWidth}**.baseWidth()**{api} methods along with {api:anychart.charts.Funnel#width}**.width()**{api} method gives a full control over the width of the funnel. Height of the neck can be adjusted using {api:anychart.charts.Funnel#neckHeight}**.neckHeight()**{api} method and the height of the whole funnel can be set using {api:anychart.charts.Funnel#neckWidth}**.height()**{api} method.
+As you can see, any funnel consist of two parts: the higher part which called head or base and the lower part which called neck. Size of these parts can be tuned separately. Using {api:anychart.charts.Funnel#neckWidth}**.neckWidth()**{api} and {api:anychart.charts.Funnel#baseWidth}**.baseWidth()**{api} methods along with {api:anychart.charts.Funnel#width}**.width()**{api} method gives a full control over the width of the funnel. Height of the neck can be adjusted using {api:anychart.charts.Funnel#neckHeight}**.neckHeight()**{api} method and the height of the whole funnel can be set using {api:anychart.charts.Funnel#neckWidth}**.height()**{api} method.
 
 ```
   var chart = anychart.funnel(data);
@@ -202,7 +202,7 @@ After adjusting content of the funnel labels some of them moved to prevent overl
 
 ## Tooltip
 
-In this section we will explain how to tune funnel tooltip. Method {api:anychart.charts.Funnel#tooltip}**.tooltip()**{api} controls tooltip of the funnel. With the following example let's force tooltip to show detailed description of the funnel.
+In this section we will explain how to tune funnel tooltip. {api:anychart.charts.Funnel#tooltip}**.tooltip()**{api} method controls tooltip of the funnel. With the following example let's force tooltip to show detailed description of the funnel.
 
 {sample}BCT\_FunnelChart\_08{sample}
 
@@ -260,7 +260,7 @@ Let's demonstrate how to apply different colors to different parts of funnel. To
 
 ## Hatch Fills
 
-AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch tutorial](../Appearance_Settings/Hatch_Fill). 
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch tutorial](../Appearance_Settings/Hatch_Fill).
   
   
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have funnel chart with 10 points in it. For every point we've applied different hatch fills parameter. That’s how we did it in our code:
@@ -283,3 +283,6 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 
 {sample}BCT\_FunnelChart\_11{sample}
 
+## Samples
+
+You can see a lot of other samples in [AnyChart Web Accumulation Charts Gallery](http://anychart.com/products/anychart/gallery/Accumulation_Charts/).

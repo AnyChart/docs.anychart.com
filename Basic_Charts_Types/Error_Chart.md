@@ -86,7 +86,7 @@ If you use only the {api:anychart.core.utils.Error#valueError}**.valueError()**{
 
 {sample}Error\_Chart\_03{sample}
 
-AnyChart allows you to set an error value in different ways, e.g. as absolute numbers or as a percentage:
+AnyChart html5 charting library allows you to set an error value in different ways, e.g. as absolute numbers or as a percentage:
 
 ```
   // variable for errors
