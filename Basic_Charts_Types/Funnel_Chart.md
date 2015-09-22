@@ -13,6 +13,7 @@
 * [Markers](#markers)
 * [Colors](#colors)
 * [Hatch Fills](#hatch_fills)
+* [Samples](#samples)
 
 ## Overview
 
@@ -281,3 +282,4 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 ```
 
 {sample}BCT\_FunnelChart\_11{sample}
+

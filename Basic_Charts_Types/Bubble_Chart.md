@@ -154,11 +154,11 @@ As we did in single-series bubble sample above now we need to convert this table
 The min and the max size of bubbles can be controlled using {api:anychart.charts.Scatter#maxBubbleSize}**.maxBubbleSize()**{api} and {api:anychart.charts.Scatter#minBubbleSize}**.minBubbleSize()**{api} parameters. Both of them can be set either in pixels or in percents of a lesser chart side:
 
 ```
-  chart.maxBubbleSize("75%");
-  chart.minBubbleSize("10%");
+  chart.maxBubbleSize("15%");
+  chart.minBubbleSize("5%");
 ```
 
-When you set {api:anychart.charts.Scatter#maxBubbleSize}**.maxBubbleSize("75%")**{api} - AnyChart will make diameters of bubble(s) with a biggest size equal to 75% of width or the height, depends on which side is shorter.
+When you set {api:anychart.charts.Scatter#maxBubbleSize}**.maxBubbleSize("15%")**{api} - AnyChart will make diameters of bubble(s) with a biggest size equal to 15% of width or the height, depends on which side is shorter.
   
   
 Here is the sample when bubbles are sized in percents, as specified above:
