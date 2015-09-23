@@ -155,8 +155,6 @@ Change the hovering mode in playground and see the difference.
 
 There might be some points which you'd like to be selected by default or adjust the selecting feature according to your needs. The method {api}**.select()**{api} works here (similar to {api:anychart.core.SeriesBase#hover}**.hover()**{api}).
 
-So, let's select the same points as above on a marker chart:
-
 ```
 	// making series_1 and some points of series_2 selected
     series_1.select();
@@ -175,12 +173,13 @@ Some of our charts might have something specific about their series - for exampl
 
 We can adjust the color of selection using the {api:anychart.core.map.series.Base#selectFill}**.selectFill**{api} (or {api:anychart.core.map.series.Base#selectHatchFill}**.selectHatchFill**{api} for monochromatic), the selection stroke color - {api:anychart.core.map.series.Base#selectStroke}**.selectStroke()**{api}. 
 
-Let's change the selection color for the box chart.
+Let's change the selection settings for the box chart.
 
 ```
-	// change the selected regions color to the dark violet from the default and add white stroke
-    series_2.selectFill('#5400BA');
-    series_2.selectStroke('#FFF');
+    // change the selected points look
+    series.selectHatchFill("soliddiamond", "#FFF", 1, 5);
+    series.selectStroke("none");
+    series.select([2,4,9]);
 ```
 
 {sample}CS\_Interactivity\_10{sample} 
