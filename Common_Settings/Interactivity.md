@@ -39,7 +39,7 @@ You can see the code of this sample in the playground.
 
 {sample}CS\_Interactivity\_01{sample}
 
-In the following sample there is a chart with marker series, where we can hover and select the points, do the same as in the previous sample with the legend.
+The following sample shows a scatter chart with marker series, you can hover and select the points, and do everything you can do in the previous cartesian chart sample.
 
 {sample}CS\_Interactivity\_02{sample}
 
@@ -84,22 +84,21 @@ The code line above does the same as the previous one, but we have changed the h
 
 {sample}CS\_Interactivity\_04{sample}
 
-So, the "byX" mode gives us a single-hover mode, when it even isn't necessary to hover the point, you just need to drag the cursor anywhere above or under the point. So the y-coordinate doesn't matter at all in this case. It might be useful when you've got a lot of points on a chart and you need to emphasize them.
+So, the "byX" mode gives us a single-hover mode, when it even isn't necessary to hover the point, you just need to move the cursor over the chart plot. So the y-coordinate doesn't matter at all in this case. It might be useful when you've got a lot of points on a chart and you need to emphasize them.
 
 <br>
-Now, let'l have a look of the selecting feature.
+Now, let's have a look at the <b>select and multi-select</b> features.
 
 
 ### Select
 
-If you want to change the selection settings, use the {api:anychart.core.utils.Interactivity#selectionMode}**.selectionMode()**{api} method with one of the followng arguments: "none", "singleSelect" or "multiSelect". The "none" argument disables the selection feature, "singleSelect" disables multi-selection and "multiSelect" is the same as default settings.
+If you want to change the selection settings, use the {api:anychart.core.utils.Interactivity#selectionMode}**.selectionMode()**{api} method with one of the following arguments: "none", "singleSelect" or "multiSelect". The "none" value disables the ability to select completely, "singleSelect" disables multi-select and "multiSelect" is the default.
 
-The **Shift** key is being used as usual, so, if you need to select many points, hold **Shift** key while checking them.
-
-As selection is enabled by default, for some reasons it might be necessary to switch it off:
+The **Shift** key is used as it is usually used with selection: if you need to select several points, hold **Shift** key while clicking them one by one.
+Selection feature is enabled by default, to switch it off do the following:
 
 ```
-// select disabling
+// disabling select
 chart.interactivity().selectionMode('none');
 ```
 
@@ -136,21 +135,21 @@ chart.interactivity().selectionMode('singleSelect');
 <a name="series_hover"></a>
 ### Hover 
 
-Usually, when you hover a point, it becomes highlighted. However, if you are programmig a custom dashboard or somehow complicated control elements it might be necessary to hightlight the points before you even drag a cursor over the chart. In this case use the {api:anychart.core.SeriesBase#hover}**.hover()**{api} method with a number of point (or array of numbers) that needs to be highlighted at the moment of loading.
+Usually, when you hover a point, it becomes highlighted. However, if you are creating a custom dashboard or a complex control elements, it might be necessary to highlight the points before you even drag a cursor over a chart. In this case use the {api:anychart.core.SeriesBase#hover}**.hover()**{api} method with a number of point (or array of numbers) that needs to be highlighted at the moment of loading.
 
-If you define nothing as an argument for the {api:anychart.core.SeriesBase#hover}**.hover()**{api} function, the hovering will be disabled for the discrete series but switched on for the whole continous ones, if the hover mode is set as "bySpot". When the hover mode is "byX", using {api:anychart.core.SeriesBase#hover}**.hover()**{api} without arguments will lead to the same picture, but it will be impossible to unhover the continuous series and one of the points of a discrete series will be hovered also (which one depends on the x-coordinate, nearest to the cursor position).
+If you provide no arguments to the {api:anychart.core.SeriesBase#hover}**.hover()**{api} function, all points of the series (a series itself) will be hovered, no matter which interactivity type you use.
 
 Change the hovering mode in playground and see the difference.
 
 ```	
-	// setting some points of series_2 and an providing no arguments for the series_1 
+	// setting some points for the series
 	series_1.hover([4, 6, 9, 12, 16, 19]);
 	series_2.hover([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);	
 ```
 
 {sample}CS\_Interactivity\_08{sample} 
 
-If you define an exact number of an array of points for a continuous series, there would be no difference - the continuous series is being hovered regardless of the arguments given to the {api:anychart.core.SeriesBase#hover}**.hover()**{api} method.
+
 <a name=”series_select”> </a>
 ### Select 
 
