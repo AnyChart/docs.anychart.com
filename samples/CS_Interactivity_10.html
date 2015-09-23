@@ -32,7 +32,8 @@
     chart.xAxis().staggerMode(true);
 
     var series = chart.box(data);
-
+    
+    // change the selected points look
     series.selectHatchFill("soliddiamond", "#FFF", 1, 5);
     series.selectStroke("none");
     series.select([2,4,9]);
