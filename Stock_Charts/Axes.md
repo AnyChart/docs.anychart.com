@@ -4,11 +4,10 @@
 
 * [Overview](#overview)
 * [Stock Axes features](#stock_axes_features)
-* [Title](#title)
 * [Orientation](#orientation)
+* [Tickmarks](#tickmarks)
 * [Labels](#labels)
 * [Axis Line](#axis_line)
-* [Tickmarks](#tickmarks)
 * [Number of axes](#number_of_axes)
 
 
@@ -43,34 +42,58 @@ While a lot of AnyStock Axes settings are the same as Basic charts', there is a 
 
 ##Tickmarks
 
-The ticks in AnyStocks are a bit different too. As the X-axis is an area, the ticks are being placed inside of it.
+The ticks in AnyStocks are a bit different too. As the X-axis is an area, the ticks are being placed inside of it. Let's enable both major (with {api:anychart.core.axes.StockDateTime#ticks}**.ticks()**{api} method) and minor (with {api:anychart.core.axes.StockDateTime#minorTicks}**.ticks()**{api} method) ticks 
 
-{sample}{sample}
+{sample}Stock\_Axes\_01{sample}
 
-We can adjust the length of those ticks on X-axis only by setting another heigth for the axis. Ticks themselves don't have this method. 
+Scroll the chart to see them all.
+
+We can adjust the length of those ticks on X-axis only by setting another heigth for the axis with the {api:api:anychart.core.axes.StockDateTime#height}**.height()**{api} method of the axis. Ticks themselves don't have this method. 
 
 Find how to work with the X-axis height in the "Axis Line" part of the article.
 
 ## Labels
 
-Labels of the X-axis has an additional feature that our Basic Charts' X-axis doesn't have. It is a helper label that "saves" the scrolled major label value. Just scroll the following example and watch the scrolled labels.
-
-{sample}{sample}
+Labels of the X-axis has an additional feature that our Basic Charts' X-axis doesn't have. It is a helper label that "saves" the scrolled major label value. Just scroll the previous example and watch the scrolled labels.
 
 That happens when the helperLabel is on (in the default condition). You may disable it by setting the {api:anychart.core.axes.StockDateTime#showHelperLabel}**.showHelperLabel()**{api} method in false condition.
 
-Another thing about X-axes labels is that they haven't got methods {api}**.drawFirstLabel()**{api} and {api}**.drawLastLabel()**{api}, which are usual for basic x-axes.
+```
+	// disabling the Helper Label
+	chart.plot(0).xAxis().showHelperLabel(false);
+```
 
-Finally, as our X-axis is an area, the labels are placed and might be moved only inside this area. For example, let's set the ticks on and the labels to the right from them. We use 
+{sample}Stock\_Axes\_02{sample}
 
-{sample}{sample}
+Another thing about X-axes labels is that they don't have methods {api:anychart.core.axes.Linear#drawFirstLabel}**.drawFirstLabel()**{api} and {api:anychart.core.axes.Linear#drawLastLabel}**.drawLastLabel()**{api}, which are usual for basic x-axes.
+
+Finally, as our X-axis is an area, the labels are placed and might be moved only inside of this area. For example, let's put our labels (both major and minor) to the right from the ticks we have enabled before. We use {api:anychart.core.ui.Label#position}**.position(){api} and {api:anychart.core.ui.Label#anchor}**.anchor**(){api} to move them correctly.
+
+```
+	// moving the labels
+	xAxis.labels().position('right').anchor('left_center');
+	xAxis.minorLabels().position('right').anchor('left_center');
+```
+
+{sample}Stock\_Axes\_03{sample}
 
 ## Axis Line
 
 In Stocks, the x-axis is not a line but an area with the background and height. We can change these parameters using {api:anychart.core.axes.StockDateTime#background}**.background()**{api} and {api:anychart.core.axes.StockDateTime#height}**.height()**{api} methods. Let's apply those settings to our example:
 
-{sample}{sample}
+```
+// changing the background and the height of the axis
+  xAxis.background('#CCFFFF');
+  xAxis.height(40);
+```
+
+{sample}Stock\_Axes\_04{sample}
 
 ## Number of axes
 
-You can add as many Y-axes as you need, but there can be no more than one X-axis at one plot. Though, you can have more than one plot on a stock chart with one x-axis in each.
+You can add as many Y-axes as you need, but there can be no more than one X-axis at one plot. Though, you can have more than one plot on a stock chart with one x-axis in each. Let's add one more series of line type on the new plot and enable both X and Y axes for it.
+
+```
+```
+
+{sample}Stock\_Axes\_05{sample}

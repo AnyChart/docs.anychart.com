@@ -49,22 +49,24 @@ anychart.onDocumentReady(function() {
 		['2016-01-28T12:00:00','508.90', '516.24', '505.73', '510.40']
   ]);
   
+  // mapping the data
   mapping = table.mapAs();
   mapping.addField('open', 1, 'first');
   mapping.addField('high', 2, 'max');
   mapping.addField('low', 3, 'min');
   mapping.addField('close', 4, 'last');
   mapping.addField('value', 4, 'last');
-
+  
+  // defining the chart type
   chart = anychart.stock();
-  chart.padding(10, 10, 10, 50);
   
+  // setting the series type
   chart.plot(0).ohlc(mapping);
-  chart.plot(0).yAxis();
   
+  // setting the chart title
   chart.title('Stock Demo\nClick this title to start streaming');
+  
   chart.container('container');
-
   chart.draw();
 });
 </script>
