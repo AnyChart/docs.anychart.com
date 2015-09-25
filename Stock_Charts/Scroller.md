@@ -8,10 +8,12 @@ AnyChart Stock provides chart viewer the most possible convenience to view and n
 
 Scroller is a complex component, which consists of the several configurable parts: Scroller itself, thumbnail series in its background, optional scroll bar, and range markers. Illustration below highlights these parts:
 
+<img src = "" width= height= />
 
 
+We can add any of [supported series](Supported_Series) to the scroller if necessary, so the scroller will display a thumbnail stock in its background. Let's define the thumbnail series of line type and look at it:
 
-We can add any of [supported series](Supported_Series) to the scroller if necessary, so the scroller will display a "small stock" inside itself. Let's look at how it looks:
+{sample}{sample}
 
 
 

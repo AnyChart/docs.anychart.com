@@ -3,19 +3,20 @@
 #Axes
 
 * [Overview](#overview)
-* [Stock Axes features](#Stock_Axes_features)
+* [Stock Axes features](#stock_axes_features)
 * [Title](#title)
 * [Orientation](#orientation)
 * [Labels](#labels)
 * [Axis Line](#axis_line)
 * [Tickmarks](#tickmarks)
+* [Number of axes](#number_of_axes)
 
 
 ## Overview
 
 In AnyChart axes are used to control grids, axes labels, lines and tick marks.  
   
-* To know how to operate with basic charts axes - please see: [Axis_Basics](../Axes_and_Grids/Axis_Basics)
+* To know how to operate with basic charts axes - please see: [Axis Basics](../Axes_and_Grids/Axis_Basics)
 * To know what scale options are available - [Scale tutorial](../Axes_and_Grids/Scales)
 * To learn how to create additional axes - [Additional axes](../Axes_and_Grids/Additional_Axes)
 * To learn how to configure axes labels - [Axes Labels](../Axes_and_Grids/Axes_Labels_Formatting)
@@ -30,7 +31,7 @@ Axes in AnyStocks are generally quite similar to the Basic Charts ones, but the 
  - X-axis is being scrolled
  - It has background instead of stroke (axis line)
  - It cannot be moved to another place on a chart (always at the bottom)
- - A showHelperLabel feature for 
+ - Helper Label feature
  - No drawFirstLabel, drawLastLabel
  - Tickmarks settings (ticks might be only inside of the axis)
  - No title
@@ -66,5 +67,10 @@ Finally, as our X-axis is an area, the labels are placed and might be moved only
 
 ## Axis Line
 
-In Stocks, the x-axis is not a line but an area with the background and height. We can change these parameters using {api:anychart.core.axes.StockDateTime#background}**.background()**{api} and {api:anychart.core.axes.StockDateTime#height}**.height()**{api} methods.
+In Stocks, the x-axis is not a line but an area with the background and height. We can change these parameters using {api:anychart.core.axes.StockDateTime#background}**.background()**{api} and {api:anychart.core.axes.StockDateTime#height}**.height()**{api} methods. Let's apply those settings to our example:
 
+{sample}{sample}
+
+## Number of axes
+
+You can add as many Y-axes as you need, but there can be no more than one X-axis at one plot. Though, you can have more than one plot on a stock chart with one x-axis in each.
