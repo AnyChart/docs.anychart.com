@@ -1,20 +1,21 @@
 # Marker Chart
 
- * [Overview](#overview)
- * [Chart](#chart)
-  * [Single Series](#single_series)
-  * [Multi-series](#multi-series)
-  * [Marker Cartesian Plot](#marker_cartesian_plot)
- * [Axes](#axes)
-  * [Orientation](#orientation)
-  * [Inversion](#inversion)
-  * [Minimum and Maximum](#minimum_and_maximum)
- * [Visualization](#visualization)
-  * [Basic Sample](#basic_sample)
- * [Labels and Tooltips](#labels_and_tooltips)
- * [Colors](#colors)
-  * [Colorizing Elements](#colorizing_elements)
- * [Hatch Fills](#hatch_fills)
+* [Overview](#overview)
+* [Chart](#chart)
+ * [Single Series](#single_series)
+ * [Multi-series](#multi-series)
+ * [Marker Cartesian Plot](#marker_cartesian_plot)
+* [Axes](#axes)
+ * [Orientation](#orientation)
+ * [Inversion](#inversion)
+ * [Minimum and Maximum](#minimum_and_maximum)
+* [Visualization](#visualization)
+ * [Basic Sample](#basic_sample)
+* [Labels and Tooltips](#labels_and_tooltips)
+* [Colors](#colors)
+ * [Colorizing Elements](#colorizing_elements)
+* [Hatch Fills](#hatch_fills)
+* [Samples](#samples)
 
 ## Overview
 
@@ -63,7 +64,7 @@ Let's look at the single-series marker chart created using the following data - 
 </tr>
 </tbody></table>
 
-Now we need to convert this data table into js format as it is acceptable by AnyChart. In terms of AnyChart first column represents year and second one contains total income of Box office. Converted Data looks like:
+Now we need to convert this data table into js format as it is acceptable by AnyChart. In terms of AnyChart charting library first column represents year and second one contains total income of Box office. Converted Data looks like:
 
 ```
   chart.marker([
@@ -444,3 +445,7 @@ Here's a part of the code of the sample below:
 That's how it looks like when we set all parameters for all series as for the first one:
 
 {sample}BCT\_Marker\_Chart\_11{sample}
+
+## Samples
+
+You can see a lot of other samples in [AnyChart Web Line, Spline, Step-Line Charts Gallery](http://anychart.com/products/anychart/gallery/Line,_Spline,_Step-Line_Charts/).
