@@ -44,7 +44,7 @@ While a lot of AnyStock Axes settings are the same as Basic charts', there is a 
 
 The ticks in AnyStocks are a bit different too. As the X-axis is an area, the ticks are being placed inside of it. Let's enable both major (with {api:anychart.core.axes.StockDateTime#ticks}**.ticks()**{api} method) and minor (with {api:anychart.core.axes.StockDateTime#minorTicks}**.ticks()**{api} method) ticks 
 
-{sample}Stock\_Axes\_01{sample}
+{sample}STOCK\_Axes\_01{sample}
 
 Scroll the chart to see them all.
 
@@ -63,7 +63,7 @@ That happens when the helperLabel is on (in the default condition). You may disa
 	chart.plot(0).xAxis().showHelperLabel(false);
 ```
 
-{sample}Stock\_Axes\_02{sample}
+{sample}STOCK\_Axes\_02{sample}
 
 Another thing about X-axes labels is that they don't have methods {api:anychart.core.axes.Linear#drawFirstLabel}**.drawFirstLabel()**{api} and {api:anychart.core.axes.Linear#drawLastLabel}**.drawLastLabel()**{api}, which are usual for basic x-axes.
 
@@ -75,7 +75,7 @@ Finally, as our X-axis is an area, the labels are placed and might be moved only
 	xAxis.minorLabels().position('right').anchor('left_center');
 ```
 
-{sample}Stock\_Axes\_03{sample}
+{sample}STOCK\_Axes\_03{sample}
 
 ## Axis Line
 
@@ -87,7 +87,7 @@ In Stocks, the x-axis is not a line but an area with the background and height. 
   xAxis.height(40);
 ```
 
-{sample}Stock\_Axes\_04{sample}
+{sample}STOCK\_Axes\_04{sample}
 
 ## Number of axes
 
@@ -96,4 +96,4 @@ You can add as many Y-axes as you need, but there can be no more than one X-axis
 ```
 ```
 
-{sample}Stock\_Axes\_05{sample}
+{sample}STOCK\_Axes\_05{sample}
