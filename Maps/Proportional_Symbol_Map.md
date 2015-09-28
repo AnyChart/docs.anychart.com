@@ -1,5 +1,4 @@
 # Proportional Symbol Map
-===========
 
 Coming soon. See [AnyMap Roadmap](http://anychart.com/products/anymap/roadmap/).
 
