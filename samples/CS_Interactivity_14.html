@@ -19,7 +19,7 @@
             ["2003", 10226, 904, 912, 914, 899, 868, 803, 1075, 1022, 920, 605, 937, 745],
             ["2004", 11004, 886, 980, 1090, 812, 850, 992, 986, 1032, 905, 800, 868, 803],
             ["2005", 10934, 902, 867, 830, 993, 1006, 847, 799, 1141, 902, 934, 785, 928],
-            ["2006", 11275, 2878, 2933, 3561, 1903],
+            ["2006", 11275, 1048, 839, 854, 993, 930, 886, 895, 855, 798, 1155, 1023, 999],
             ["2007", 11945, 2959, 3855, 3109, 2022],
             ["2008", 12245, 4001, 2156, 3928, 2160],
             ["2009", 12056, 1995, 2057, 4902, 3102],
@@ -31,7 +31,7 @@
             ["2015", 13188, 3199, 2564, 3118, 4307]
         ]);
 
-    var pieTitle = "And who helped them";
+    var pieTitle = "Monthly sales statistic";
     var pieSubTitle = "...";
 
     // map data for the each series
@@ -44,11 +44,11 @@
     // set data
     var series = chart.column(dataMapping); // set series data
     
-    series.name("Slices of pizza");
+    series.name("ACME Corp. sales");
 
     // chart title
     chart.title().useHtml(true);
-    chart.title('<span style="color:#545f69; font-size: 18px;">How many pieces of pizza have they eaten?</span><br><span style="color:#545f69; font-size: 10px">Click on the bars.</span>');
+        chart.title('<span style="color:#545f69; font-size: 18px;">Sales volume</span><br><span style="color:#545f69; font-size: 10px">ACME Corp.</span>');
 
     // set axes titles
     chart.xAxis().title().text("Retail Channel");
@@ -61,238 +61,63 @@
     chart.interactivity().selectionMode("multiSelect");
 
     chart.bounds("0", "0", "50%", "100%");
-    
-    // Velmas pizza
-    var lineVelmaDataMapping = data.mapAs({x: [0], fill: [2], value: [3]});
-    var lineVelma = lineChart.line(lineVelmaDataMapping);
-    lineVelma.enabled(false);
-    
-    // Freds pizza
-    var lineFredDataMapping = data.mapAs({x: [0], fill: [2], value: [4]}); 
-    var lineFred = lineChart.line(lineFredDataMapping);
-    lineFred.enabled(false);
-    
-    // Daphnes pizza
-    var lineDaphneDataMapping = data.mapAs({x: [0], fill: [2], value: [5]}); 
-    var lineDaphne = lineChart.line(lineDaphneDataMapping);
-    lineDaphne.enabled(false);
-    
-    // Shaggys pizza
-    var lineShaggyDataMapping = data.mapAs({x: [0], fill: [2], value: [6]}); 
-    var lineShaggy = lineChart.line(lineShaggyDataMapping);
-    lineShaggy.enabled(false);
-    
-    // Scoobys sausages
-    var lineScoobyDataMapping = data.mapAs({x: [0], fill: [2], value: [7]}); 
-    var lineScooby = lineChart.line(lineScoobyDataMapping);
-    lineScooby.enabled(false);
+    lineChart.bounds("50%", "0", "50%", "100%");
+    lineChart.xAxis(false);
+    lineChart.yAxis(false);
 
-        var dataRow;
+        var dataRow = data.row(0);
         var lineDataSet = anychart.data.set([
-            {x: "John", value: dataRow[2], fill: "#0099CC"},
-            {x: "James", value: dataRow[3], fill: "#520085"},
-            {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-            {x: "Mattew", value: dataRow[5], fill: "#336600"}
+            {x: "Jan", value: dataRow[3], fill: "#0099CC"},
+            {x: "Feb", value: dataRow[4], fill: "#520085"},
+            {x: "Mar", value: dataRow[5], fill: "#CC6600"},
+            {x: "Apr", value: dataRow[6], fill: "#336600"},
+            {x: "May", value: dataRow[7], fill: "#0099CC"},
+            {x: "Jun", value: dataRow[8], fill: "#520085"},
+            {x: "Jul", value: dataRow[9], fill: "#CC6600"},
+            {x: "Aug", value: dataRow[4], fill: "#520085"},
+            {x: "Sep", value: dataRow[5], fill: "#CC6600"},
+            {x: "Oct", value: dataRow[6], fill: "#336600"},
+            {x: "Nov", value: dataRow[7], fill: "#0099CC"},
+            {x: "Dec", value: dataRow[8], fill: "#520085"}
         ]);
-        console.log(dataRow);
-
-        line = anychart.line(lineDataSet);
-        line.titlepieTitle;
+        console.log(lineDataSet);
+        lineSubTitle = "\nfor "+ dataRow[0] + " year";
 
         var lineSubTitle;
 
+        chart.listenOnce("pointClick", function() {
+            lineChart.xAxis(true);
+            lineChart.yAxis(true);
+        });
+
         chart.listen("pointClick", function(evt){
             var ind = evt.pointIndex;
-            switch (ind) {
-                case 0:
-                    // 2000
-                    dataRow = data.row(0);
-                    lineDataSet.data([
-                        {x: "Jan", value: dataRow[3], fill: "#0099CC"},
-                        {x: "Feb", value: dataRow[4], fill: "#520085"},
-                        {x: "Mar", value: dataRow[5], fill: "#CC6600"},
-                        {x: "Apr", value: dataRow[6], fill: "#336600"},
-                        {x: "May", value: dataRow[7], fill: "#0099CC"},
-                        {x: "Jun", value: dataRow[8], fill: "#520085"},
-                        {x: "Jul", value: dataRow[9], fill: "#CC6600"},
-                        {x: "Aug", value: dataRow[4], fill: "#520085"},
-                        {x: "Sep", value: dataRow[5], fill: "#CC6600"},
-                        {x: "Oct", value: dataRow[6], fill: "#336600"},
-                        {x: "Nov", value: dataRow[7], fill: "#0099CC"},
-                        {x: "Dec", value: dataRow[8], fill: "#520085"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-                case 1:
-                    // 2001
-                    dataRow = data.row(1);
-                    lineDataSet.data([
-                        {x: "John", value: dataRow[2], fill: "#0099CC"},
-                        {x: "James", value: dataRow[3], fill: "#520085"},
-                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-                case 2:
-                    // 2002
-                    dataRow = data.row(2);
-                    lineDataSet.data([
-                        {x: "John", value: dataRow[2], fill: "#0099CC"},
-                        {x: "James", value: dataRow[3], fill: "#520085"},
-                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-                case 3:
-                    // 2003
-                    dataRow = data.row(3);
-                    lineDataSet.data([
-                        {x: "John", value: dataRow[2], fill: "#0099CC"},
-                        {x: "James", value: dataRow[3], fill: "#520085"},
-                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-                case 4:
-                    // 2004
-                    dataRow = data.row(4);
-                    lineDataSet.data([
-                        {x: "John", value: dataRow[2], fill: "#0099CC"},
-                        {x: "James", value: dataRow[3], fill: "#520085"},
-                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-                case 5:
-                    // 2005
-                    dataRow = data.row(5);
-                    lineDataSet.data([
-                        {x: "John", value: dataRow[2], fill: "#0099CC"},
-                        {x: "James", value: dataRow[3], fill: "#520085"},
-                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-                case 6:
-                    // 2006
-                    dataRow = data.row(6);
-                    lineDataSet.data([
-                        {x: "John", value: dataRow[2], fill: "#0099CC"},
-                        {x: "James", value: dataRow[3], fill: "#520085"},
-                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-                case 7:
-                    // 2007
-                    dataRow = data.row(7);
-                    lineDataSet.data([
-                        {x: "John", value: dataRow[2], fill: "#0099CC"},
-                        {x: "James", value: dataRow[3], fill: "#520085"},
-                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-                case 8:
-                    // 2008
-                    dataRow = data.row(8);
-                    lineDataSet.data([
-                        {x: "John", value: dataRow[2], fill: "#0099CC"},
-                        {x: "James", value: dataRow[3], fill: "#520085"},
-                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-                case 9:
-                    // 2009
-                    dataRow = data.row(9);
-                    lineDataSet.data([
-                        {x: "John", value: dataRow[2], fill: "#0099CC"},
-                        {x: "James", value: dataRow[3], fill: "#520085"},
-                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-                case 10:
-                    // 2010
-                    dataRow = data.row(10);
-                    lineDataSet.data([
-                        {x: "John", value: dataRow[2], fill: "#0099CC"},
-                        {x: "James", value: dataRow[3], fill: "#520085"},
-                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-                case 11:
-                    // 2011
-                    dataRow = data.row(11);
-                    lineDataSet.data([
-                        {x: "John", value: dataRow[2], fill: "#0099CC"},
-                        {x: "James", value: dataRow[3], fill: "#520085"},
-                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-                case 12:
-                    // 2012
-                    dataRow = data.row(12);
-                    lineDataSet.data([
-                        {x: "John", value: dataRow[2], fill: "#0099CC"},
-                        {x: "James", value: dataRow[3], fill: "#520085"},
-                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-                case 13:
-                    // 2013
-                    dataRow = data.row(13);
-                    lineDataSet.data([
-                        {x: "John", value: dataRow[2], fill: "#0099CC"},
-                        {x: "James", value: dataRow[3], fill: "#520085"},
-                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-                case 14:
-                    // 2014
-                    dataRow = data.row(14);
-                    lineDataSet.data([
-                        {x: "John", value: dataRow[2], fill: "#0099CC"},
-                        {x: "James", value: dataRow[3], fill: "#520085"},
-                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-                case 15:
-                    // 2015
-                    dataRow = data.row(15);
-                    lineDataSet.data([
-                        {x: "John", value: dataRow[2], fill: "#0099CC"},
-                        {x: "James", value: dataRow[3], fill: "#520085"},
-                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
-                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
-                    ]);
-                    lineSubTitle = "\nfor "+ dataRow[0] + " year";
-                    break;
-            }
-            line.data(lineDataSet);
-            line.title(pieTitle + lineSubTitle);
+
+            dataRow = data.row(ind);
+
+            lineDataSet.data([
+                {x: "Jan", value: dataRow[3], fill: "#0099CC"},
+                {x: "Feb", value: dataRow[4], fill: "#520085"},
+                {x: "Mar", value: dataRow[5], fill: "#CC6600"},
+                {x: "Apr", value: dataRow[6], fill: "#336600"},
+                {x: "May", value: dataRow[7], fill: "#0099CC"},
+                {x: "Jun", value: dataRow[8], fill: "#520085"},
+                {x: "Jul", value: dataRow[9], fill: "#CC6600"},
+                {x: "Aug", value: dataRow[4], fill: "#520085"},
+                {x: "Sep", value: dataRow[5], fill: "#CC6600"},
+                {x: "Oct", value: dataRow[6], fill: "#336600"},
+                {x: "Nov", value: dataRow[7], fill: "#0099CC"},
+                {x: "Dec", value: dataRow[8], fill: "#520085"}
+            ]);
+            lineSubTitle = "\nfor "+ dataRow[0] + " year";
+
+            lineChart.line(lineDataSet);
+            lineChart.titlepieTitle;
+
+            lineChart.title(pieTitle + lineSubTitle);
         });
     // draw
+        lineChart.container(stage).draw();
     chart.container(stage).draw();
 });</script>
 </head>
