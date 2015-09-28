@@ -40,11 +40,11 @@
   column.container(stage);
   column.draw();
   
-  var pie  = anychart.pie(data);
-  pie.bounds("50%", "10%", "50%", "90%");
-  pie.container(stage);
-  pie.legend(null);
-  pie.draw();
+  var pie  = anychart.line(data);
+  line.bounds("50%", "10%", "50%", "90%");
+  line.container(stage);
+  line.legend(null);
+  line.draw();
 
   // create new buttons
   var printButton = document.createElement("div");

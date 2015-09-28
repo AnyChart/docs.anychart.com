@@ -51,7 +51,7 @@
 
   columnLabel.listen('click', drawColumn);
   
-  // label for pie chart
+  // label for line chart
   var pieLabel = stage.image('http://static.anychart.com/images/donut.gif');
   pieLabel
     .width(25)
@@ -104,7 +104,7 @@
   
   function drawPie(){
     chart.dispose();
-    chart = anychart.pie(data);
+    chart = anychart.line(data);
     chart.title()
       .useHtml(true)
       .text(titleText)

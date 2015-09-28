@@ -8,7 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // set data and chart type
-  var chart = anychart.pie([
+  var chart = anychart.line([
     ["Department Stores", 637166],
     ["Discount Stores", 721630],
     ["Men's/Women's Stores", 148662],
@@ -18,7 +18,7 @@
 
   chart.title("Doughnut Chart");
 
-  // set radius inside pie chart to turn it into doughnut chart
+  // set radius inside line chart to turn it into doughnut chart
   chart.innerRadius("30%");
 
   // draw

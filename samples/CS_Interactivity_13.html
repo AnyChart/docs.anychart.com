@@ -13,18 +13,29 @@
 
     // data
     var data = anychart.data.set([
-        ["Velma", 10, "#AB3300", 4, 3, 7, 1, 0],
-        ["Fred", 12, "#66A3FF", 2, 4, 4, 0, 0],
-        ["Daphne", 18, "#570FBD", 2, 3, 4, 0, 0],
-        ["Shaggy", 6, "#948F45", 1, 1, 1, 4, 0],
-        ["Scooby", 46, "#784512", 1, 1, 2, 1, 46]
+        ["2000", 10048, 2600, 3200, 2159, 2089],
+        ["2001", 10938, 2367, 1989, 2383, 4199],
+        ["2002", 9989, 2156, 2399, 2867, 2567],
+        ["2003", 10226, 2398, 2225, 3010, 2593],
+        ["2004", 11004, 2851, 3007, 2805, 2341],
+        ["2005", 10934, 3400, 2105, 2563, 2866],
+        ["2006", 11275, 2878, 2933, 3561, 1903],
+        ["2007", 11945, 2959, 3855, 3109, 2022],
+        ["2008", 12245, 4001, 2156, 3928, 2160],
+        ["2009", 12056, 1995, 2057, 4902, 3102],
+        ["2010", 11734, 2584, 3166, 3101, 2883],
+        ["2011", 12337, 3106, 2845, 2933, 3453],
+        ["2012", 12761, 3296, 2655, 3144, 3666],
+        ["2013", 13390, 2611, 4194, 3206, 3379],
+        ["2014", 13818, 3000, 2599, 4107, 4112],
+        ["2015", 13188, 3199, 2564, 3118, 4307]
     ]);
 
-    var pieTitle = "And who helped them";
-    var pieSubTitle = "...";
-
     // map data for the each series
-    var dataMapping = data.mapAs({x: [0], value: [1], fill:[2]});
+    var dataMapping = data.mapAs({x: [0], value: [1]});
+
+
+    var pieTitle = "Sales made by managers";
 
     // chart type
     chart = anychart.column();
@@ -34,7 +45,7 @@
 
     // chart title
     chart.title().useHtml(true);
-    chart.title('<span style="color:#545f69; font-size: 18px;">How many pieces of pizza have they eaten?</span><br><span style="color:#545f69; font-size: 10px">Click on the bars.</span>');
+    chart.title('<span style="color:#545f69; font-size: 18px;">Sales volume</span><br><span style="color:#545f69; font-size: 10px">ACME Corp.</span>');
 
     // set axes titles
     chart.xAxis().title().text("Retail Channel");
@@ -48,50 +59,213 @@
 
     chart.bounds("0","0", "50%", "100%");
 
-    pie = anychart.pie(pieDataMapping);
-    pie.title(pieTitle);
-    
-    var pieDataMapping = data.mapAs({x:[0], fill:[2], value:[3]});
 
-    chart.listen("pointSelect", function(evt){
+        var dataRow = data.row(0);
+        var pieDataSet = anychart.data.set([
+            {x: "John", value: dataRow[2], fill: "#0099CC"},
+            {x: "James", value: dataRow[3], fill: "#520085"},
+            {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+            {x: "Mattew", value: dataRow[5], fill: "#336600"}
+        ]);
+        console.log(dataRow);
+        pieSubTitle = "\nfor "+ dataRow[0] + " year";
+
+    line = anychart.line(pieDataSet);
+    line.title(pieTitle);
+
+        var pieSubTitle;
+
+
+    chart.listen("pointClick", function(evt){
         var ind = evt.pointIndex;
         switch (ind) {
             case 0:
-                // Velmas pizza
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[3]}); 
-                pieSubTitle = "\nto eat Velma's pizza";
+                // 2000
+                dataRow = data.row(0);
+                pieDataSet.data([
+                        {x: "John", value: dataRow[2], fill: "#0099CC"},
+                        {x: "James", value: dataRow[3], fill: "#520085"},
+                        {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                        {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
                 break;
             case 1:
-                // Freds pizza
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[4]}); 
-                pieSubTitle = "\nto eat Fred's pizza";
+                // 2001
+                dataRow = data.row(1);
+                pieDataSet.data([
+                    {x: "John", value: dataRow[2], fill: "#0099CC"},
+                    {x: "James", value: dataRow[3], fill: "#520085"},
+                    {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                    {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
                 break;
             case 2:
-                // Daphnes pizza
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[5]}); 
-                pieSubTitle = "\nto eat Daphne's pizza";
+                // 2002
+                dataRow = data.row(2);
+                pieDataSet.data([
+                    {x: "John", value: dataRow[2], fill: "#0099CC"},
+                    {x: "James", value: dataRow[3], fill: "#520085"},
+                    {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                    {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
                 break;
             case 3:
-                // Shaggys pizza
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[6]}); 
-                pieSubTitle = "\nto eat Shaggy's pizza";
+                // 2003
+                dataRow = data.row(3);
+                pieDataSet.data([
+                    {x: "John", value: dataRow[2], fill: "#0099CC"},
+                    {x: "James", value: dataRow[3], fill: "#520085"},
+                    {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                    {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
                 break;
             case 4:
-                // Scoobys sausages
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[7]}); 
-                pieSubTitle = "... No one shared Scooby's sausages :(";
+                // 2004
+                dataRow = data.row(4);
+                pieDataSet.data([
+                    {x: "John", value: dataRow[2], fill: "#0099CC"},
+                    {x: "James", value: dataRow[3], fill: "#520085"},
+                    {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                    {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
+                break;
+            case 5:
+                // 2005
+                dataRow = data.row(5);
+                pieDataSet.data([
+                    {x: "John", value: dataRow[2], fill: "#0099CC"},
+                    {x: "James", value: dataRow[3], fill: "#520085"},
+                    {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                    {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
+                break;
+            case 6:
+                // 2006
+                dataRow = data.row(6);
+                pieDataSet.data([
+                    {x: "John", value: dataRow[2], fill: "#0099CC"},
+                    {x: "James", value: dataRow[3], fill: "#520085"},
+                    {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                    {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
+                break;
+            case 7:
+                // 2007
+                dataRow = data.row(7);
+                pieDataSet.data([
+                    {x: "John", value: dataRow[2], fill: "#0099CC"},
+                    {x: "James", value: dataRow[3], fill: "#520085"},
+                    {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                    {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
+                break;
+            case 8:
+                // 2008
+                dataRow = data.row(8);
+                pieDataSet.data([
+                    {x: "John", value: dataRow[2], fill: "#0099CC"},
+                    {x: "James", value: dataRow[3], fill: "#520085"},
+                    {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                    {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
+                break;
+            case 9:
+                // 2009
+                dataRow = data.row(9);
+                pieDataSet.data([
+                    {x: "John", value: dataRow[2], fill: "#0099CC"},
+                    {x: "James", value: dataRow[3], fill: "#520085"},
+                    {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                    {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
+                break;
+            case 10:
+                // 2010
+                dataRow = data.row(10);
+                pieDataSet.data([
+                    {x: "John", value: dataRow[2], fill: "#0099CC"},
+                    {x: "James", value: dataRow[3], fill: "#520085"},
+                    {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                    {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
+                break;
+            case 11:
+                // 2011
+                dataRow = data.row(11);
+                pieDataSet.data([
+                    {x: "John", value: dataRow[2], fill: "#0099CC"},
+                    {x: "James", value: dataRow[3], fill: "#520085"},
+                    {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                    {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
+                break;
+            case 12:
+                // 2012
+                dataRow = data.row(12);
+                pieDataSet.data([
+                    {x: "John", value: dataRow[2], fill: "#0099CC"},
+                    {x: "James", value: dataRow[3], fill: "#520085"},
+                    {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                    {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
+                break;
+            case 13:
+                // 2013
+                dataRow = data.row(13);
+                pieDataSet.data([
+                    {x: "John", value: dataRow[2], fill: "#0099CC"},
+                    {x: "James", value: dataRow[3], fill: "#520085"},
+                    {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                    {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
+                break;
+            case 14:
+                // 2014
+                dataRow = data.row(14);
+                pieDataSet.data([
+                    {x: "John", value: dataRow[2], fill: "#0099CC"},
+                    {x: "James", value: dataRow[3], fill: "#520085"},
+                    {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                    {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
+                break;
+            case 15:
+                // 2015
+                dataRow = data.row(15);
+                pieDataSet.data([
+                    {x: "John", value: dataRow[2], fill: "#0099CC"},
+                    {x: "James", value: dataRow[3], fill: "#520085"},
+                    {x: "Peter", value: dataRow[4], fill: "#CC6600"},
+                    {x: "Mattew", value: dataRow[5], fill: "#336600"}
+                ]);
+                pieSubTitle = "\nfor "+ dataRow[0] + " year";
                 break;
         }
-        pie.data(pieDataMapping);
-        pie.title(pieTitle + pieSubTitle);
+        line.data(pieDataSet);
+        line.title(pieTitle + pieSubTitle);
     });
 
-    pie.bounds("50%", 0, "50%", "100%");
-    pie.background("none");
+    line.bounds("50%", 0, "50%", "100%");
+    line.background("none");
 
     // draw
     chart.container(stage).draw();
-    pie.container(stage).draw();
+    line.container(stage).draw();
 });</script>
 </head>
 <body>
