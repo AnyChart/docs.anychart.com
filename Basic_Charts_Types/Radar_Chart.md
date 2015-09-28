@@ -276,7 +276,7 @@ If you want to configure data labels and tooltips for all series - you should do
   // setting tooltips
   var tooltip = series.tooltip();
   // setting content
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
     return this.x;
   });
 ```

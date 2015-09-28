@@ -37,18 +37,17 @@
   // set data
   var series = chart.column(data);
 
-  // adjust tooltip content
+  // adjust tooltip text
   series.stroke(null);
   var tooltip = series.tooltip();
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
     return "Language: " + this.x + "\nArticles: " + this.value;
   });
 
   // adjust tooltip font
-  var tooltipContent = series.tooltip().content();
-  tooltipContent.fontWeight(400);
-  tooltipContent.fontFamily("Tahoma");
-  tooltipContent.fontSize(12);
+  tooltip.fontWeight(400);
+  tooltip.fontFamily("Tahoma");
+  tooltip.fontSize(12);
 
   // adjust labels
   var labels = series.labels();

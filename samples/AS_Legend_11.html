@@ -53,7 +53,7 @@
   // configure tooltip considering new item 
   var tooltip = chart.legend().tooltip();
   tooltip.enabled(true);
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
     if(this.meta.pointValue === undefined)
       return this.value;
     return this.value+"\n"+this.meta.pointValue.toString();

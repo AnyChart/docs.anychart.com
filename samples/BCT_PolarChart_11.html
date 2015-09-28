@@ -45,14 +45,14 @@
   
   // format tooltip content
   var tooltip = series.tooltip();
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
     
     // summarize all values
     var sum = 0;
     for (var i=0;i<dataSet.mapAs().getRowsCount();i++)
       sum +=dataSet.mapAs().get(i, "value");
     
-    // setting tooltip content
+    // tooltip text
     return "Value: " + this.value + "\nPercent: " + (this.value/(sum/100)).toFixed(2) + "%";
   });
 

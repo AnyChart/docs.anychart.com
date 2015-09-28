@@ -242,8 +242,8 @@
     [2, 63]
   ]).type("triangleup").size(4).hoverSize(7).hoverFill("red");
 
-  marker.tooltip().content().hAlign("start");
-  marker.tooltip().contentFormatter(function() {
+  marker.tooltip().hAlign("start");
+  marker.tooltip().textFormatter(function() {
     return "Waiting time: " + this["value"] + " min.\nDuration: " + this["x"] + " min.";
   });
 

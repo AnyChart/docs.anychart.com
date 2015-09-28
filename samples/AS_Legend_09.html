@@ -29,9 +29,8 @@
   tooltipContent.useHtml(true);
   // set font weight
   tooltipContent.fontWeight(400);
-  
   var tooltip = chart.legend().tooltip();
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
     return this.meta.legendTooltipText;
   });
   

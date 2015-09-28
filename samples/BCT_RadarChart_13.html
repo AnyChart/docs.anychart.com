@@ -45,11 +45,10 @@
   labels.fontWeight(900);
 
   // settings for tooltip content font
-  var tooltipContent = series.tooltip().content();
-  tooltipContent.fontWeight(400);
-  // adjust tooltip content
   var tooltip = series.tooltip();
-  tooltip.contentFormatter(function(){
+  tooltip.fontWeight(400);
+  // adjust tooltip content
+  tooltip.textFormatter(function(){
     // summarize all values
     var sum = 0;
     for (var i=0;i<dataSet.mapAs().getRowsCount();i++)

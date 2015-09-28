@@ -294,7 +294,7 @@ In this section we will explain how to add and configure data labels and tooltip
 If you want to configure data labels and tooltips for all series - you should do that using {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the bottom of the data points, also, we will format labels so they show only the date and tooltip will show detailed description.
   
   
-When formatting data labels text and tooltip we can use {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} and {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api}.
+When formatting data labels text and tooltip we can use {api:anychart.core.ui.Tooltip#textFormatter}**.textFormatter()**{api} and {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api}.
 
 {sample}BCT\_OHLC\_Chart\_07{sample}
 <!--

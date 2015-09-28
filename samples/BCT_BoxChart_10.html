@@ -62,7 +62,7 @@
 
   // adjust tooltips content
   var tooltip = series.tooltip();
-  tooltip.contentFormatter(function() {
+  tooltip.textFormatter(function() {
     return "Range: " + this.x + "\nMedium: " + (this.q3+this.q1)/2 + "\nLowest: " + this.lowest + "\nQ1: " + this.q1 + "\nMedian: " + this.median + "\nQ3: " + this.q3 + "\nHighest: " +this.highest + "\nPeriod: February 2015";
   });
   

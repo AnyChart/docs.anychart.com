@@ -228,7 +228,7 @@
   lineSeries.yScale(extraYScale);
   var lineTooltip = lineSeries.tooltip();
   lineTooltip.title(false);
-  lineTooltip.contentFormatter(function() {
+  lineTooltip.textFormatter(function() {
     return this.x + " Year\nGDP - " + this.value + "%" ;
   });
 
@@ -239,7 +239,7 @@
   columnSeries.hoverFill(["#FF0000", "#880000"], -90);
   var columnTooltip = columnSeries.tooltip();
   columnTooltip.title(false);
-  columnTooltip.contentFormatter(function() {
+  columnTooltip.textFormatter(function() {
     var value = (this.value/1000000000).toFixed(0);
     if (value > 999)
       value = ("" + value/1000).replace(".", " ");

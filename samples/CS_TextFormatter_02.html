@@ -32,11 +32,9 @@
 
   // set series data
   var series_1 = chart.bubble(seriesData_2);
-  series_1.maximumSize(25);
-  series_1.minimumSize(1);
   var series_2 = chart.bubble(seriesData_1);
-  series_2.maximumSize(25);
-  series_2.minimumSize(1);
+  chart.minBubbleSize(1);
+  chart.maxBubbleSize(25);
   
   // enabling the labels
   var labels1 = series_1.labels();

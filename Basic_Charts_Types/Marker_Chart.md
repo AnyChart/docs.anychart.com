@@ -314,7 +314,7 @@ Here's a part of a code used in the sample below. For more detailed code visit t
   
   // adjust tooltips
   var tooltip = series.tooltip();
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
     return "Month: " + this.x + "\nSales: " + this.value ;
   });
 ```

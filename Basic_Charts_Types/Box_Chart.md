@@ -392,14 +392,16 @@ With the following example let's make data labels appear to the top from the box
 
   // adjust tooltips content
   var tooltip = series.tooltip();
-  tooltip.contentFormatter(function() {
+  tooltip.textFormatter(function() {
     return "Range: " + this.x + "\nMedium: " + (this.q3+this.q1)/2 + "\nLowest: " + this.lowest + "\nQ1: " + this.q1 + "\nMedian: " + this.median + "\nQ3: " + this.q3 + "\nHighest: " +this.highest + "\nPeriod: February 2015";
+  });
+  tooltip.titleFormatter(function(){
+    return "Salaries in February 2015\nInformation";
   });
 
   // adjust tooltip title
   var tooltipTitle = series.tooltip().title();
   tooltipTitle.enabled(true);
-  tooltipTitle.text("Salaries in February 2015\nInformation");
 ```
 
 {sample}BCT\_BoxChart\_08{sample} 

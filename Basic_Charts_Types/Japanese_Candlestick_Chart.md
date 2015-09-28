@@ -362,7 +362,7 @@ If you want to configure data labels and tooltips for all series - you should us
 With the following example let's make data labels appear to the top from the data points, format them to show only the value corresponding to the point and force tooltips to show detailed description.
   
   
-When formatting data labels' text and tooltips we can use {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} and {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api}.
+When formatting data labels' text and tooltips we can use {api:anychart.core.ui.Tooltip#textFormatter}**.textFormatter()**{api} and {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api}.
 
 {sample}BCT\_Japanese-Candlestick\_Chart\_07{sample}
 <!--

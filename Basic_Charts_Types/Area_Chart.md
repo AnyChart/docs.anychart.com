@@ -265,11 +265,11 @@ If you want to configure data labels and tooltips for all series - you should us
 When formatting data labels' text we use {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method to show month's name. 
 
 ```
-    var series= chart.bar(data);
-    series.labels().enabled(true).rotation(90).textFormatter(function(point){
-            return point.x;
-    });
-    series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
+  var series = chart.area(data);
+  series.labels().enabled(true).rotation(90).textFormatter(function(point){
+    return point.x;
+  });
+  series.tooltip().enabled(true).titleFormatter(function(){return 'Your Tooltip Title'});
 ```
 
 {sample}BCT\_AreaChart\_10{sample}
