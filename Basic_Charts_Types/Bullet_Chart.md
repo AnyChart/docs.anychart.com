@@ -12,7 +12,8 @@
  * [Types](#types)
  * [Style](#style)
 * [Colors](#colors)
- 
+* [Samples](#samples)
+
 ## Overview
 
 A Bullet Chart is a variation of [Bar Chart](Bar_Chart) designed to compare a single, primary measure (for example, current year-to-date revenue) to one or more other measures to enrich its meaning (for example, compared to a target), and displays it in the context of qualitative ranges of performance, such as poor, satisfactory, and good. The qualitative ranges are displayed as blocks of one hue but with varying intensity, making them discernible by those who are color blind and to restrict the use of colors on the dashboard to a minimum.
@@ -22,7 +23,7 @@ Bullet chart always uses only one data series, but a dashboard may contain sever
 
 ## Chart
 
-Bullet Chart consists of a main bar of key measure and a range bar of comparative measures. 
+JavaScript Bullet Chart consists of a main bar of key measure and a range bar of comparative measures. 
   
 Let's create a simple Bullet Chart. The main bar represents 2005 revenue and the range bar represents maximum annual income ever been reached in the company. Data set for the chart is below
 
@@ -110,7 +111,7 @@ Below this you can see a demonstration of a horizontal bullet chart with inverte
 
 ### Minimum and Maximum
 
-By default AnyChart calculates axis minimum and maximum automatically, as you can see on the scale inversion chart sample above: minimal value on the Y Axis is 0, and maximum is 15. You can change these values by setting them for the {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters:
+By default AnyChart html5 charting library calculates axis minimum and maximum automatically, as you can see on the scale inversion chart sample above: minimal value on the Y Axis is 0, and maximum is 15. You can change these values by setting them for the {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters:
 
 ```
   chart.yScale().minimum(-5).maximum(20);
@@ -173,3 +174,7 @@ Bullet Chart ranges use variables of color intensity rather than of hue. 
 ```
 
 {sample :width 690 :height 130}BCT\_Bullet\_Chart\_09{sample}
+
+## Samples
+
+You can see a lot of other samples in [AnyChart Web Bullet Charts Gallery](http://anychart.com/products/anychart/gallery/Bullet_Charts/).

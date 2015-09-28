@@ -16,6 +16,7 @@
 * [Colors](#colors)
   * [Colorizing Elements](#colorizing_elements)
 * [Hatch Fills](#hatch_fills)
+* [Samples](#samples)
 
 ## Overview
 
@@ -153,7 +154,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
+With AnyChart Javascript Framework you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
   
   
 Position depends on plot type and inversion of axes, you will find the list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) templates.
@@ -182,7 +183,7 @@ AnyChart allows to invert any axis: Y, X or any extra. Inversion is controlled b
 
 ### Minimum and Maximum
 
-AnyChart calculates axis minimum and maximum values automatically. You can see this on the scale inversion chart sample above: the minimal value of the Y-Axis is 0, and the maximum is 800. You can control these values using {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} methods:
+AnyChart javascript charting library calculates axis minimum and maximum values automatically. You can see this on the scale inversion chart sample above: the minimal value of the Y-Axis is 0, and the maximum is 800. You can control these values using {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} methods:
 
 ```
   var yScale = chart.yScale();
@@ -295,16 +296,22 @@ As you see it is very easy to do by setting a value for the {api:anychart.graphi
 
 **Important Note:**
 
-AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors. For example, instead of "RGB(240,248,255)" you can set "AliceBlue" or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
+AnyChart HTML5 charting library takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors. For example, instead of "RGB(240,248,255)" you can set "AliceBlue" or "#F0F8FF"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
 
 * Different ways of [setting colors](../Appearance_Settings/Color_Management) of elements
 
 ## Hatch Fills
 
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings.
-
+  
+  
 You can find more information about hatch types in [Hatch Fill](../Appearance_Settings/Hatch_Fill) tutorial.
+  
   
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart a with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
 
 {sample}BCT\_BarChart\_12{sample}
+
+## Samples
+
+ You can see a lot of other samples in [AnyChart Web Bar Charts Gallery](http://anychart.com/products/anychart/gallery/Bar_Charts/).

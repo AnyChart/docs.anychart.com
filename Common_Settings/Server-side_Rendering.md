@@ -29,7 +29,7 @@ and then set the parameters of the image (dimensions, quality, extension and so 
 
 Sample command line:
 ```
-java -jar anychart-export.jar cmd --script "var chart = anychart.line(1,2,5); chart.container('container'); chart.draw();" --output-path YOUR_OUT_PATH
+java -jar anychart-export.jar cmd --script "var chart = anychart.line([1,2,5]); chart.container('container'); chart.draw();" --output-path YOUR_OUT_PATH
 ```
 Full list of the parameters available:
 
@@ -163,7 +163,7 @@ java -jar anychart-export.jar server
 
 The sample of a command written in console:
 ```
-curl -X POST -H "Accept: application/json" --data "responseType=base64&dataType=script&data=var chart = anychart.line(1,2,5); chart.container('container'); chart.draw();" localhost:2000/png
+curl -X POST -H "Accept: application/json" --data "responseType=base64&dataType=script&data=var chart = anychart.line([1,2,5]); chart.container('container'); chart.draw();" localhost:2000/png
 ```
 Full list of server parameters that can be set:
 

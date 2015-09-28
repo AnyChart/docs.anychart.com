@@ -16,6 +16,7 @@
 * [Colors](#colors)
   * [Colorizing Elements](#colorizing_elements)
 * [Hatch Fills](#hatch_fills)
+* [Samples](#samples)
 
 ## Overview
 
@@ -179,7 +180,7 @@ Let's set {api:anychart#column}**.column()**{api} chart type as default one and 
 
 ## Axes
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. All axis features are described in [Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial. In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
+In AnyChart Charting Framework axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. All axis features are described in [Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial. In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
 
 ### Orientation
 
@@ -227,6 +228,7 @@ Look at the demonstration of the maximum and the minimum values in the Single-se
 ## Padding
 
 The special thing about column charts are the paddings between columns and column groups (in multi-series charts). To set paddings you need to use {api:anychart.charts.Cartesian#barsPadding}**.barsPadding()**{api} or {api:anychart.charts.Cartesian#barGroupsPadding}**.barGroupsPadding()**{api} parameters. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For example, if you set {api:anychart.charts.Cartesian#barsPadding}**.barsPadding()**{api} to 0.5, the space between two columns will be equal to the half of each column width. If you don't want any padding between columns or groups you should set {api:anychart.charts.Cartesian#barsPadding}**.barsPadding()**{api} and {api:anychart.charts.Cartesian#barGroupsPadding}**.barGroupsPadding()**{api} to 0.  
+  
   
 Here is the sample of multi-series column chart with {api:anychart.charts.Cartesian#barsPadding}**.barsPadding()**{api} and {api:anychart.charts.Cartesian#barGroupsPadding}**.barGroupsPadding()**{api} set to -0.5 and 2; accordingly, negative {api:anychart.charts.Cartesian#barsPadding}**.barsPadding()**{api} leads to columns overlay and large {api:anychart.charts.Cartesian#barGroupsPadding}**.barGroupsPadding()**{api} moves column groups away from each other:
 
@@ -318,7 +320,7 @@ And here is a result - it's easy to notice that Peter sold more than others and 
 
 ## Colors
 
-AnyChart uses default color palette to colorize data elements of chart automatically if you have not defined special colors.
+AnyChart javascript charting library uses default color palette to colorize data elements of chart automatically if you have not defined special colors.
 
 ### Colorizing Elements
 
@@ -384,3 +386,7 @@ To see whole range of available hatch types see [Hatch Fill](../Appearance_Setti
 To demonstrate hatch fill feature we've edited one of the previous samples. As you see now it is completely monochrome. We've got a 5-series chart with 2 data points in each series. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter opposite to {api:anychart.graphics.vector.Fill}**fill()**{api} parameter used to colorize the series and set all series in grey color (#EEEEEE).
 
 {sample}BCT\_ColumnChart\_12{sample}
+
+## Samples
+
+You can see a lot of other samples in [AnyChart Web Column Charts Gallery](http://anychart.com/products/anychart/gallery/Column_Charts/).
