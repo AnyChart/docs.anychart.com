@@ -223,6 +223,7 @@ Using all these features, it's possible to create a drilldown chart. You can eas
 
 {sample}CS\_Interactivity\_13{sample} 
 
+<!--
 ```
 chart.listen('pointSelect', function(evt){
         var ind = evt.pointIndex;
@@ -252,6 +253,7 @@ chart.listen('pointSelect', function(evt){
         pie.title(pieTitle + pieSubTitle);
     });
 ```
+
 
 Here we can see the column chart accompanied by a pie chart showing the amount of pizza slices, eaten by each member of Scoody-Doo group. The data to be shown depends on which column is selected. Note that this variant is possible only in case of singleSelect enabled (if multiSelect is switched on, it won't work).
 
@@ -283,7 +285,7 @@ chart.listen('click', function (evt) {
         }
     });
 ```
-
+-->
 Check out some other drilldown samples we've got in our gallery:
  - [Dashboard with the US Map and Multiselect](http://anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
  - [World Temperature Map](http://anychart.com/products/anymap/gallery/Maps/World_Temperature.php)
