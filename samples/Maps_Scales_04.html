@@ -27,7 +27,7 @@
     map.background('none');
     // set the title and its preferences
     map.title().useHtml(true).hAlign('center');
-    map.title('<span style="font-size: 18px;">Bi-polar progression with Ordinal Color Scale</span>');
+    map.title('<span style="font-size: 18px;">Value Map</span>');
 
     // set the series
     var series = map.choropleth(dataSet);
@@ -37,20 +37,16 @@
     series.labels(false);
     
     // set the colors and ranges for the scale
-	series.colorScale(anychart.scales.ordinalColor([{less:200},{from:200, to:250},{greater:250}]));
-
+	series.colorScale(anychart.scales.linearColor());
+        
     //set the single hue progression
-    var colors = anychart.color.bipolarHueProgression('#EC6E07', '#64B5F6', 3);
+    var colors = anychart.color.singleHueProgression('#4C4C4C');
     
 	// define the colors 
-    series.colorScale().colors(colors);	
+    series.colorScale().colors(colors);
 	
-	// create, enable and stroke the colorRange
-	var colorRange = map.colorRange();
-	colorRange.enabled(true).stroke('#BBB');
-	
-	// adjust the labels
-	colorRange.labels({'fontSize':10, 'fontColor':'green'});
+	// create and enable the colorRange
+	var colorRange = map.colorRange(true);
 
     // set the container
     map.container('container');
