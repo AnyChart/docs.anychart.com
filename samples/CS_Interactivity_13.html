@@ -77,7 +77,7 @@ pieSubTitle = "\nYear "+ dataRow[0] ;
 var pieSubTitle;
 
 
-    chart.listen("pointClick", function(evt){
+    chart.listen("pointSelect", function(evt){
         var ind = evt.pointIndex;
 
         dataRow = data.row(ind);

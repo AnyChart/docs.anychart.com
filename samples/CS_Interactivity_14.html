@@ -93,7 +93,7 @@
             lineSeries = lineChart.line(lineDataSet);
         });
 
-        chart.listen("pointClick", function(evt){
+        chart.listen("pointSelect", function(evt){
             var ind = evt.pointIndex;
             dataRow = data.row(ind);
 

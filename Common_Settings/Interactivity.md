@@ -223,33 +223,21 @@ Using all these features, it's possible to create a drilldown chart. You can eas
 
 {sample}CS\_Interactivity\_13{sample} 
 
-<!--
+
 ```
-chart.listen('pointSelect', function(evt){
+chart.listen("pointSelect", function(evt){
         var ind = evt.pointIndex;
-        switch (ind) {
-            case 0:
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[3]}); // Velmas pizza
-                pieSubTitle = "\nto eat Velma's pizza";
-                break;
-            case 1:
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[4]}); // Freds pizza
-                pieSubTitle = "\nto eat Fred's pizza";
-                break;
-            case 2:
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[5]}); // Daphnes pizza
-                pieSubTitle = "\nto eat Daphne's pizza";
-                break;
-            case 3:
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[6]}); // Shaggys pizza
-                pieSubTitle = "\nto eat Shaggy's pizza";
-                break;
-            case 4:
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[7]}); // Scoobys sausages
-                pieSubTitle = "... No one shared Scooby's sausages :(";
-                break;
-        }
-        pie.data(pieDataMapping);
+
+        dataRow = data.row(ind);
+        pieDataSet.data([
+                {x: "John", value: dataRow[2]},
+                {x: "James", value: dataRow[3]},
+                {x: "Peter", value: dataRow[4]},
+                {x: "Mattew", value: dataRow[5]}
+        ]);
+        pieSubTitle = "\nYear: "+ dataRow[0];
+
+        pie.data(pieDataSet);
         pie.title(pieTitle + pieSubTitle);
     });
 ```
@@ -264,28 +252,36 @@ If you need the similar drilldown chart with multi-selection, you may do the fol
 In this sample not the data but the series are added and removed depending on selections made:
 
 ```
-chart.listen('click', function (evt) {
-        var ind = evt.pointIndex;
-        switch (ind) {
-            case 0:
-                markerVelma.enabled(!markerVelma.enabled());
-                break;
-            case 1:
-                markerFred.enabled(!markerFred.enabled());
-                break;
-            case 2:
-                markerDaphne.enabled(!markerDaphne.enabled());
-                break;
-            case 3:
-                markerShaggy.enabled(!markerShaggy.enabled());
-                break;
-            case 4:
-                markerScooby.enabled(!markerScooby.enabled());
-                break;
-        }
-    });
+chart.listen("pointSelect", function(evt){
+            var ind = evt.pointIndex;
+            dataRow = data.row(ind);
+
+            lineDataSet.data([
+                {x: "Jan", value: dataRow[3], fill: "#0099CC"},
+                {x: "Feb", value: dataRow[4], fill: "#520085"},
+                {x: "Mar", value: dataRow[5], fill: "#CC6600"},
+                {x: "Apr", value: dataRow[6], fill: "#336600"},
+                {x: "May", value: dataRow[7], fill: "#0099CC"},
+                {x: "Jun", value: dataRow[8], fill: "#520085"},
+                {x: "Jul", value: dataRow[9], fill: "#CC6600"},
+                {x: "Aug", value: dataRow[4], fill: "#520085"},
+                {x: "Sep", value: dataRow[5], fill: "#CC6600"},
+                {x: "Oct", value: dataRow[6], fill: "#336600"},
+                {x: "Nov", value: dataRow[7], fill: "#0099CC"},
+                {x: "Dec", value: dataRow[8], fill: "#520085"}
+            ]);
+            lineSubTitle = "\nfor "+ dataRow[0] + " year";
+            lineChart.titlepieTitle;
+
+            lineChart.title(pieTitle + lineSubTitle);
+            lineSeries.tooltip().textFormatter(function(){
+                console.log(this.value);
+                var text = 'Sales amount: $' + this.value ;
+                return text;
+            });
+        });
 ```
--->
+
 Check out some other drilldown samples we've got in our gallery:
  - [Dashboard with the US Map and Multiselect](http://anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
  - [World Temperature Map](http://anychart.com/products/anymap/gallery/Maps/World_Temperature.php)
