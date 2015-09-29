@@ -11,7 +11,7 @@ Interactivity
   * [Hover](#series_hover)
   * [Select](#series_select)
  * [Handling chart events](#handling_chart_events)
-  * [Navigating by URL](#interactivity_settings_in_data_sets)
+  * [Navigating by URL](#navigating_by_url)
   * [DrillDown](#drilldown)
  * [Creating Custom Tooltip](#creating_custom_tooltip)
  * [Interactivity Settings in Data Sets](#interactivity_settings_in_data_sets)
@@ -33,7 +33,7 @@ That's what happens by default when users interact with charts:
 
 Lets' now take a look at a couple of samples with default interactivity settings.
 <br>
-Here we've got a line chart with three series and a legend enabled. Click on legend items to hide/show series, hover them and see the tooltips.
+Here we've got a line chart with three series and a legend enabled. Click on legend items to hide/show series.
 
 You can see the code of this sample in the playground.
 
@@ -150,7 +150,7 @@ Change the hovering mode in playground and see the difference.
 {sample}CS\_Interactivity\_08{sample} 
 
 
-<a name=”series_select”> </a>
+<a name="series_select"> </a>
 ### Select 
 
 There might be some points which you'd like to be selected by default or adjust the selecting feature according to your needs. The method {api}**.select()**{api} works here (similar to {api:anychart.core.SeriesBase#hover}**.hover()**{api}).
@@ -171,7 +171,7 @@ If you need the whole series being selected as the chart is created, don't defin
 
 Some of our charts might have something specific about their series - for example, maps or OHLC charts. Those components and charts have special setting for selections.
 
-We can adjust the color of selection using the {api:anychart.core.map.series.Base#selectFill}**.selectFill**{api} (or {api:anychart.core.map.series.Base#selectHatchFill}**.selectHatchFill**{api} for monochromatic), the selection stroke color - {api:anychart.core.map.series.Base#selectStroke}**.selectStroke()**{api}. 
+We can adjust the color of selection using the {api:anychart.core.cartesian.series.Column#selectFill}**.selectFill**{api} (or {api:anychart.core.cartesian.series.Column#selectHatchFill}**.selectHatchFill**{api} for monochromatic), the selection stroke color - {api:anychart.core.cartesian.series.Column#selectStroke}**.selectStroke()**{api}. 
 
 Let's change the selection settings for the box chart.
 
@@ -184,7 +184,7 @@ Let's change the selection settings for the box chart.
 
 {sample}CS\_Interactivity\_10{sample} 
 
-OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}, {api:anychart.core.cartesian.series.OHLC#selectrisingStroke}**.selectRisingStroke()**(api) or {api: anychart.core.cartesian.series.OHLC#hoverFallingStroke}**.hoverFallingStroke()**{api}. You can find more in {api:anychart.core.cartesian.series.OHLC}[API Reference]{api}.
+OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}, {api:anychart.core.cartesian.series.OHLC#selectRisingStroke}**.selectRisingStroke()**{api} or {api: anychart.core.cartesian.series.OHLC#hoverFallingStroke}**.hoverFallingStroke()**{api}. You can find more in {api:anychart.core.cartesian.series.OHLC}[API Reference]{api}.
 
 ```
 	// change the selected regions color to the dark violet from the default
