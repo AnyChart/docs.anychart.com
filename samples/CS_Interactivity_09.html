@@ -8,22 +8,18 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
     // create data set on our data
     var dataSet = anychart.data.set([
-	["1", 10, 30],
-	["2", 12, 32],
-	["3", 11, 35],
-	["4", 15, 40],
-	["5", 20, 42],
-	["6", 22, 35],
-	["7", 21, 36],
-	["11", 28, 40],
-	["12", 29, 42],
-	["13", 40, 40],
-	["14", 41, 38],
-	["15", 45, 40],
-	["16", 50, 40],
-	["19", 50, 30],
-	["20", 51, 29],
-	["21", 65, 28]
+	["Jan", 10, 30],
+	["Feb", 12, 32],
+	["Mar", 11, 35],
+	["Apr", 15, 40],
+	["May", 20, 42],
+	["Jun", 22, 35],
+	["Jul", 21, 36],
+	["Aug", 28, 40],
+	["Sep", 29, 42],
+	["Okt", 40, 40],
+	["Nov", 41, 38],
+	["Dec", 45, 40]
     ]);
 
     // map data for the first series, take x from the zero column and value from the first column of data set
@@ -66,7 +62,7 @@
     
     series_1.selectStroke(null);
     series_1.selectHatchFill("diagonal", "#ddd", 1, 5);
-    series_2.selectHatchFill("backwardDiagonal", "#fff", 1, 5);
+    series_2.selectHatchFill("confetti", "#fff", 1, 5);
     series_2.selectStroke(null);
 
     // set container id for the chart
