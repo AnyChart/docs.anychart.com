@@ -1,9 +1,9 @@
 # Range Column/Bar chart
                                                                          
- * [Overview](#overview)
- * [Chart](#chart)
- * [Temperature Range Chart Sample](#temperature_range_chart_sample)
- * [Waterfall Chart Sample](#waterfall_chart_sample)
+* [Overview](#overview)
+* [Chart](#chart)
+* [Temperature Range Chart Sample](#temperature_range_chart_sample)
+* [Waterfall Chart Sample](#waterfall_chart_sample)
 <!-- * [Configuration](#configuration)-->
 
 ## Overview
@@ -33,7 +33,7 @@ Also "RangeBar" series type should be specified.
 
 ## Temperature Range Chart Sample
 
-This sample shows how range bars can be used to chart temperature averages, the data is taken from UK average weather statistics from 1971 to 2000:
+This sample shows how JavaScript range bars can be used to chart temperature averages, the data is taken from UK average weather statistics from 1971 to 2000:
 
 {sample}BCT_Range\_Bar-Column\_Charts\_01{sample}
 

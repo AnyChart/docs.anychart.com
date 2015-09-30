@@ -271,7 +271,7 @@ That's how it all looks in the example:
 
 ##Colorizing elements
 
-AnyChart uses default color palette to colorize data elements of chart automatically if you have not define special colors. But you can set and apply the color to exact data series or data point.
+AnyChart charting framework uses default color palette to colorize data elements of chart automatically if you have not define special colors. But you can set and apply the color to exact data series or data point.
 
 ### General
 
