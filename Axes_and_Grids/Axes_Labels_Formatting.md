@@ -29,7 +29,7 @@ In this tutorial all major settings and features of axes labels are described.
 
 ## Enable or Disable
 
-Each axis in AnyChart has its own labels settings, these settings can be configured in labels sub parameter of the given axis. 
+Each axis in AnyChart JavaScript graphs has its own labels settings, these settings can be configured in labels sub parameter of the given axis. 
 By default labels for all axes are enabled. You can enable or disable labels for the given axis using enabled method of {api:anychart.core.axes.Linear#labels}**labels()**{api} method:
 
 ```
@@ -155,7 +155,7 @@ You can look at font settings at work in the [sample below](#sample).
 
 ### Multiline
 
-With AnyChart it is possible to control labels' alignment. It is useful, for example, when you want to set multiple label values on one scale:
+With AnyChart html5 charts it is possible to control labels' alignment. It is useful, for example, when you want to set multiple label values on one scale:
 
 ```
   var labels = chart.yAxis().labels();

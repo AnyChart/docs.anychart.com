@@ -31,7 +31,7 @@ If you want to control any of scale settings - you should do that using {api:any
 
 ## Types
 
-There are four types of scales in AnyChart: {api:anychart.scales.Linear}**"Linear"**{api}, {api:anychart.scales.Logarithmic}**"Logarithmic"**{api}, {api:anychart.scales.Ordinal}**"Ordinal"**{api} and {api:anychart.scales.DateTime}**"DateTime"**{api}. To set scale type use appropriate constructor:
+There are four types of scales in AnyChart charting framework: {api:anychart.scales.Linear}**"Linear"**{api}, {api:anychart.scales.Logarithmic}**"Logarithmic"**{api}, {api:anychart.scales.Ordinal}**"Ordinal"**{api} and {api:anychart.scales.DateTime}**"DateTime"**{api}. To set scale type use appropriate constructor:
 
 ```
   chart.xScale(anychart.scales.linear());
@@ -186,7 +186,7 @@ For any axis scale you can set minimum and maximum offsets. Maximum and minimum 
   yScale.maximumGap(0.5);
 ```
 
-In the sample below you can see how offsets settings affects chart, the chart to the left has minimum and maximum offsets set to 0.5, the chart to the right has all the same settings, but offsets are not set. Note that offsets are ignored when maximum or minimum scale values are specified.
+In the sample below you can see how offsets settings affects js chart. The chart to the left has minimum and maximum offsets set to 0.5, the chart to the right has all the same settings, but offsets are not set. Note that offsets are ignored when maximum or minimum scale values are specified.
 
 {sample}AGST\_Scales\_09{sample}
 
@@ -205,7 +205,7 @@ Sample of the chart with inverted scale:
 
 ## Grids
 
-There are two types of grid in AnyChart - major grid that can be controlled using {api:anychart.charts.Cartesian#grid}**grid()**{api} method and minor grid that is controlled with {api:anychart.charts.Cartesian#minorGrid}**minorGrid()**{api} method. Both grids are disabled by default. To enable major grid use {api:anychart.core.grids.Linear#enabled}**enabled(true)**{api} method for {api:anychart.charts.Cartesian#grid}**grid()**{api} and if you want to display minor grid use {api:anychart.core.grids.Linear#enabled}**enabled(true)**{api} method for {api:anychart.charts.Cartesian#minorGrid}**minorGrid()**{api}.
+There are two types of grid in AnyChart charting framework - major grid that can be controlled using {api:anychart.charts.Cartesian#grid}**grid()**{api} method and minor grid that is controlled with {api:anychart.charts.Cartesian#minorGrid}**minorGrid()**{api} method. Both grids are disabled by default. To enable major grid use {api:anychart.core.grids.Linear#enabled}**enabled(true)**{api} method for {api:anychart.charts.Cartesian#grid}**grid()**{api} and if you want to display minor grid use {api:anychart.core.grids.Linear#enabled}**enabled(true)**{api} method for {api:anychart.charts.Cartesian#minorGrid}**minorGrid()**{api}.
 
 ```
   // enable major grid
