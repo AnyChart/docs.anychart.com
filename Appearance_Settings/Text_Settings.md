@@ -9,7 +9,7 @@
 
 ## Overview
 
-You can control the font settings of every text object in AnyChart. Working with fonts is the same for all methods. This tutorial will explain all possible settings.
+You can control the font settings of every text object in AnyChart js charts. Working with fonts is the same for all methods. This tutorial will explain all possible settings.
   
   
 There are [built-in font formatting settings](#basic_settings) (like <b>bold</b>, <i>italic</i>, <u>underline</u>, <font size="+1">size</font>, <font color="red">color</font> or <font face="Times New Roman, Times, serif">font family</font>). 
