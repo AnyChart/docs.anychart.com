@@ -1,10 +1,8 @@
 {:index 2}
-# Quick Start
-
-Stock Chart Quick Start
+# AnyStock Quick Start
   
-## Getting started with Stock Chart
-###1. Include Stock Chart into Your Web Page
+## Getting started with AnyStock
+###1. Include AnyStock into Your Web Page
 
 Include the JavaScript file in the `<head>` section of your web page - visit the [download page](../Quick_Start/Downloading_AnyChart) for those or use CDN as shown below.
 
@@ -26,8 +24,7 @@ Example:
 ###3. Prepare your Data
 
 When you work with other charts, you use {api:anychart.data#set}**anychart.data.set()**{api} to set the data, and there are more than one way to do it (you can set the date as objects or arrays, also CSV, JSON amd XML)
-When you work with stocks, you need to use {api:anychart.data#table}**anychart.data.table()**{api} and {api:anychart.data.Table#addData}**.addData()**{api}. AnyStocks don't support data set as objects, so set it as array of arrays or a CSV string.
-Note that AnyStocks support only three types of series: [Line](../Basic_Chart_Types/Line-Spline-StepLine_Charts), [Column](../Basic_Chart_Types/Column_Chart) and [OHLC](../Basic_Chart_Types/OHLC_Chart). It means that you should define the data points according to the series you're going to use.
+When you work with AnyStock, you need to use {api:anychart.data#table}**anychart.data.table()**{api} and {api:anychart.data.Table#addData}**.addData()**{api}.
 
 ```
 table = anychart.data.table();
@@ -54,7 +51,7 @@ table = anychart.data.table();
   ]);
 ```
 
-We may use quotes or not, because our data contains numerical except the dateTime, which should be defined as above (in UTC format) or as in the following line, which is equivalent to the first data point of the array set above:
+We may use quotes or not, because our data is numerical except the dateTime, which should be defined as above (in UTC format) or as in the following line, which is equivalent to the first data point of the array set above:
 
 ```
 		[Date.UTC(2015, 12, 24, 12, 00, 00), 511.53, 514.98, 505.79, 506.40],
@@ -63,7 +60,7 @@ We may use quotes or not, because our data contains numerical except the dateTim
 Also you can set the data with no formatting - as a timestamp string.
 
 
-After we have set the data, we need to do the mapping for it (beсause we cannot use objects here) using the {api:anychart.data#mapAsTable}**.mapAs()**{api} and {api:anychart.data.TableMapping#addField}**.addField()**{api} methods. We need to define which value we set, then the value itself and the {api:anychart.enums.AggregationType}aggregation type{api}. The last are necesssary when you've got loads of information shown on a chart and you've got to group it - then you'll have to count or find and show the approximate value, and these types will do that automatically for you.
+After we have set the data, we need to map it using the {api:anychart.data#mapAsTable}**.mapAs()**{api} and {api:anychart.data.TableMapping#addField}**.addField()**{api} methods. We need to define which value we set, then the value itself and the {api:anychart.enums.AggregationType}aggregation type{api}. The last are necesssary when you've got loads of information shown on a chart and you want got to group it.
 
 ```
 	mapping = table.mapAs();
@@ -74,17 +71,17 @@ After we have set the data, we need to do the mapping for it (beсause we cannot
 	mapping.addField('value', 4, 'last');
 ```
 <br>
-For activating the stock chart type we use {api:anychart#stock}.stock(){api}:
+For activating the AnyStock chart we use {api:anychart#stock}.stock(){api}:
 ```
 	chart = anychart.stock();
 ```
 <br>
-Due to specialty of stock charts, it may have more than one plot and a plenty of series, and the chart itself cannot create a series. So it means that you have to define .plot():
+Due to specialty of stock charts, it may have more than one plot and a plenty of series, and the chart itself cannot create a series. So it means that you have to define {api:anychart.charts.Stock#plot}.plot(){api}:
 ```
 	chart.plot(0).ohlc(mapping);
 ```
 <br>
-No matter how many plots with or withous series you create, all of them would scroll together, because they all are bend to one X axis. Though, plota might have different Y-axes.
+No matter how many plots with or without series you create, all of them are scrolled together, because they all are bound to one X axis. 
 
 ###4. Create a chart
 Add the JavaScript tag `<script>` with the following code anywhere in the page. 
@@ -94,7 +91,7 @@ Example:
 ```
 <script>
 
-var table, mapping, xScale, yScale, stage, controller, chart;
+var table, mapping, chart;
 anychart.onDocumentReady(function() {
 
   table = anychart.data.table();
@@ -132,10 +129,10 @@ anychart.onDocumentReady(function() {
   chart = anychart.stock();
   
   // set the series type
-  chart.plot(0).ohlc(mapping);
+  chart.plot(0).ohlc(mapping).name('ACME Corp.');
   
   // setting the chart title
-  chart.title('Stock Demo\nClick this title to start streaming');
+  chart.title('AnyStock Basic Sample');
   
   chart.container('container');
   chart.draw();
@@ -155,17 +152,14 @@ You can copy this to a file on your computer and open it in your browser to disp
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <meta name="tags" content="['column' 'axis']"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">
-var table, mapping, xScale, yScale, stage, controller, chart;
+    <script src="http://cdn.anychart.com/js/latest/anystock.min.js" type="text/javascript"></script> 
+    <script>
+var table, mapping, chart;
 anychart.onDocumentReady(function() {
 
   table = anychart.data.table();
   table.addData([
-		['2015-12-24T12:00:00','511.53', '514.98', '505.79', '506.40'],
+		['2015-12-24T12:00:00'],
 		['2015-12-25T12:00:00','512.53', '514.88', '505.69', '507.34'],
 		['2015-12-26T12:00:00','511.83', '514.98', '505.59', '506.23'],
 		['2015-12-27T12:00:00','511.22', '515.30', '505.49', '506.47'],
@@ -183,7 +177,7 @@ anychart.onDocumentReady(function() {
 		['2016-01-08T12:00:00','510.88', '515.93', '505.22', '509.95'],
 		['2016-01-09T12:00:00','509.12', '515.97', '505.15', '510.12'],
 		['2016-01-10T12:00:00','508.53', '516.13', '505.66', '510.42'],
-		['2016-01-11T12:00:00','508.90', '516.24', '505.73', '510.40']	
+		['2016-01-11T12:00:00']	
   ]);
   
   // mapping the data
@@ -198,10 +192,10 @@ anychart.onDocumentReady(function() {
   chart = anychart.stock();
   
   // set the series type
-  chart.plot(0).ohlc(mapping);
+  chart.plot(0).ohlc(mapping).name('ACME Corp.');
   
   // setting the chart title
-  chart.title('Stock Demo\nClick this title to start streaming');
+  chart.title('AnyStock Demo');
   
   chart.container('container');
   chart.draw();
