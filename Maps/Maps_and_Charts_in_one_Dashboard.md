@@ -1,5 +1,7 @@
+{:index 14}
 Maps and Charts in one Dashboard
 ======================
+
 * [Overview](#overview)
 * [Simple Dashboard](#simple_dashboard)
 * [Dashboard with drilldown charts](#dashboard_with_drilldown_charts)

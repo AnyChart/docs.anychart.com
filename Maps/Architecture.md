@@ -1,4 +1,4 @@
-{:index 3}
+{:index 2}
 Architecture
 ===========
 
@@ -20,10 +20,5 @@ Also, you'll find our GeoData provided in .geojson and .js formats so you may ch
   
 <!-- TopoJSON is smaller in size but the GeoJSON is more simple, so it's up to you which option to choose.-->
 
-AnyChart component is able to work with files in .geojson format, so if your GeoData is in SHP format or any other, please convert it before using with AnyChart. You can find more about making custom geojson maps [here](../).
-
-We've got a plenty of map types (or series), which may be applied for your data:
- - world map
- - chotoplerth map
-
+AnyChart component is able to work with files in .geojson format, so if your GeoData is in SHP format or any other, please convert it before using with AnyChart. You can find more about [making custom maps]().
 

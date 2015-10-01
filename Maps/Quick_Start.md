@@ -1,5 +1,5 @@
 {:index 1}
-Gauges Quick Start
+AnyMap Quick Start
 ===========
   
 ## Getting started with Maps
@@ -9,13 +9,13 @@ You can use the link as shown below or download anychart-bundle.min.js from the 
 
 ```
 <head>
-    <script src="//cdn.anychart.com/js/latest/anychart-bundle.min.js" type="text/javascript"></script> 
+    <script src="//cdn.anychart.com/js/latest/anymap.min.js" type="text/javascript"></script> 
 </head>
 ```
 
 ###2. Include the necessary Map into Your Web Page
 Reference the JavaScript file in the <head> section of your web page.
-Download the *.zip file from the [download page](../Maps_List), put it into any folder of your site and reference it or simply use the link as shown below.
+Download the *.zip file from the [Map Collection](../Maps_List), put it into any folder of your site and reference it or simply use the link as shown below.
 
 ```
 <head>

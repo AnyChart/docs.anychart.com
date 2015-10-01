@@ -1,5 +1,7 @@
+{:index 12}
 Map Labels
 ======================
+
 * [Overview](#overview)
 * [General settings](#overview)
 * [Labels Display Modes](#labels_display_modes)

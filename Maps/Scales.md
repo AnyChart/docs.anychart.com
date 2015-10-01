@@ -1,5 +1,7 @@
+{:index 8}
 Map Scales
 ===========
+
 * [Overview](#overview)
 * [Ordinal ColorScale](#ordinal_colorscale)
 * [Linear ColorScale](#linear_colorscale)
