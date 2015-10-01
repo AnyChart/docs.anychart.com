@@ -8,7 +8,7 @@
   <script src="//cdn.anychart.com/geodata/countries/aus/australia.js" data-export="true"></script>
   <script x-export="chart">anychart.onDocumentReady(function() {
     var dataSet = anychart.data.set([
-      {'id': 'AU.WA', 'value': 300},  // Western Australia
+      {'id': 'AU.WA', 'value': 320},  // Western Australia
       {'id': 'AU.JB', 'value': 270},  // Jervis Bay Territory
       {'id': 'AU.NS', 'value': 240},  // New South Wales
       {'id': 'AU.VI', 'value': 75},   // Victoria
@@ -27,7 +27,7 @@
     map.background('none');
     // set the title and its preferences
     map.title().useHtml(true).hAlign('center');
-    map.title('<span style="font-size: 18px;">Changing the ColorRange</span>');
+    map.title('<span style="font-size: 18px;">Blended progression with Linear Color Scale</span>');
 
     // set the series
     var series = map.choropleth(dataSet);
@@ -40,21 +40,14 @@
 	series.colorScale(anychart.scales.linearColor());
 
     //set the single hue progression
-    var colors = anychart.color.singleHueProgression('#0068BC');
+    var colors = anychart.color.blendedHueProgression('#C8F672', '#273813');
     
 	// define the colors 
     series.colorScale().colors(colors);
 	
 	// create and enable the colorRange
-	var colorRange = map.colorRange();
-	colorRange.enabled(true);
+	var colorRange = map.colorRange(true);
 	
-	// put the colorRange to the right from the map
-	colorRange.orientation('right');
-	
-	// set the colorRange length
-	colorRange.length(100);
-
     // set the container
     map.container('container');
     map.draw();

@@ -9,14 +9,14 @@
   <script x-export="chart">anychart.onDocumentReady(function() {
     var dataSet = anychart.data.set([
       {'id': 'AU.WA', 'value': 300},  // Western Australia
-      {'id': 'AU.JB', 'value': 270},  // Jervis Bay Territory
+      {'id': 'AU.JB'},                // Jervis Bay Territory
       {'id': 'AU.NS', 'value': 240},  // New South Wales
       {'id': 'AU.VI', 'value': 75},   // Victoria
       {'id': 'AU.NT', 'value': 130},  // Northern Territory
       {'id': 'AU.TS', 'value': 190},  // Tasmania
-      {'id': 'AU.CT', 'value': 100}, // Australian Capital Territory
-      {'id': 'AU.SA', 'value': 280},  // South Australia
-      {'id': 'AU.QL', 'value': 220}   // Queensland
+      {'id': 'AU.CT', labels: false}, // Australian Capital Territory
+      {'id': 'AU.SA'},                // South Australia
+      {'id': 'AU.QL'}                 // Queensland
     ]);
 
     //
@@ -27,7 +27,7 @@
     map.background('none');
     // set the title and its preferences
     map.title().useHtml(true).hAlign('center');
-    map.title('<span style="font-size: 18px;">Set Padding (one value)</span>');
+    map.title('<span style="font-size: 18px;">Ordinal Color Scale</span>');
 
     // set the series
     var series = map.choropleth(dataSet);
@@ -37,23 +37,7 @@
     series.labels(false);
     
     // set the colors and ranges for the scale
-	series.colorScale(anychart.scales.linearColor());
-
-    //set the single hue progression
-    var colors = anychart.color.singleHueProgression('#0068BC');
-    
-	// define the colors 
-    series.colorScale().colors(colors);
-	
-	// create and enable the colorRange
-	var colorRange = map.colorRange();
-      colorRange.enabled(true);
-	
-	// put the colorRange to the right from the map
-	colorRange.orientation('right');
-	
-	// set the colorRange length
-	colorRange.padding(100);
+	series.colorScale(anychart.scales.ordinalColor([{less:200,color:'#EC6E07'},{from:200, to:250, color:'#A1958A'},{greater:250, color:'#64B5F6'}]));
 
     // set the container
     map.container('container');

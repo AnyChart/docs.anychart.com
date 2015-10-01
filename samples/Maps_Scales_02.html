@@ -27,31 +27,17 @@
     map.background('none');
     // set the title and its preferences
     map.title().useHtml(true).hAlign('center');
-    map.title('<span style="font-size: 18px;">Bi-polar progression with Ordinal Color Scale</span>');
+    map.title('<span style="font-size: 18px;">Linear Color Scale</span>');
 
     // set the series
     var series = map.choropleth(dataSet);
     series.geoIdField('code_hasc');
+    series.stroke('#000 .3');
+    series.colorScale(anychart.scales.linearColor('#EC6E07', '#64B5F6'));
 	
 	// disable the labels
     series.labels(false);
     
-    // set the colors and ranges for the scale
-	series.colorScale(anychart.scales.ordinalColor([{less:200},{from:200, to:250},{greater:250}]));
-
-    //set the single hue progression
-    var colors = anychart.color.bipolarHueProgression('#EC6E07', '#64B5F6', 3);
-    
-	// define the colors 
-    series.colorScale().colors(colors);	
-	
-	// create, enable and stroke the colorRange
-	var colorRange = map.colorRange();
-	colorRange.enabled(true).stroke('#BBB');
-	
-	// adjust the labels
-	colorRange.labels({'fontSize':10, 'fontColor':'green'});
-
     // set the container
     map.container('container');
     map.draw();
