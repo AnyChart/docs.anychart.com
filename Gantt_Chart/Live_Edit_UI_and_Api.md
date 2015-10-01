@@ -6,7 +6,7 @@
  * [TimeLine](#timeline)
  
 # Overview
-The Live Edit mode allows you to edit any part of your Gannt without touching the code. All you need is to activate this mode and drag&drop the elements to the position you want them to be (or stretch/reduce the duration of the item).
+The Live Edit mode allows you to edit any part of your Gannt without touching the code. All you need to do use the cursor to change the duration, position or connectons.
 
 In this article we will consider the "editing mode" of AnyGantts. For simplifying the material, there are two paragraphs for TimeLine and DataGrid. 
 
@@ -27,19 +27,25 @@ Stretch the length
 You can change the duration of the period, its start and end time. Hover right or left border, watch when your cursor is of this <img> type and drag it. 
 
 Drag&Drop
-Also you can change the start and end date without changing the duration of the task - you can simply drag the timeline of a process to wherever you want. Hover the element, wait for this <ing> cursor and drag the timeline.
+Also you can change the start and end date without changing the duration of the task - you can simply drag the timeline of a process to wherever you want. Hover the element, wait for this <img> cursor and drag the timeline.
 
 Change the connectors
 If you need to change the connections of some elements, you can do it also by simply dragging the connector point. Again, hover the side border of a timeline, wait till the points will show up and drag the required one to the element you need.
 
 Baseline changing
 
+
+
+Readyness
+The difference between the behaviour of the process timeline and its baseline is in having readyness. 
+
 Milestones
+
+You cannot change the duration of a milestone as they have no duration, but you still can drag it to another position.
 
 ##Scrolling
 
-Each side while it's possiblw
-
+When you set the connectors, make an end date later or a start date earlier than a gantt screen displays, it will start scrolling automatically. There're no limits for scrolling, so you may set any time you need.
 
 
 Может тут сделать картинками, а не пример? оО
