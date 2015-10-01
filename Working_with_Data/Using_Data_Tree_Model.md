@@ -1,4 +1,4 @@
-{:index 6}
+{:index 4}
 Using Data Tree Model
 ===============
 

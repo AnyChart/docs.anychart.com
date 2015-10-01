@@ -1,4 +1,4 @@
-{:index 7}
+{:index 5}
 Using Table Data Model
 ===============
 
