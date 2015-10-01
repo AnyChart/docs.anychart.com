@@ -176,7 +176,7 @@
   blackHoverMarkers.stroke("black");
   var blackTooltip = blackSeries.tooltip();
   blackTooltip.title(false);
-  blackTooltip.contentFormatter(function() {
+  blackTooltip.textFormatter(function() {
     return "(x,y) = (" + this.x + ".00," + this.value + ")";
   });
 
@@ -194,7 +194,7 @@
   redHoverMarkers.stroke("red");
   var redTooltip = redSeries.tooltip();
   redTooltip.title(false);
-  redTooltip.contentFormatter(function() {
+  redTooltip.textFormatter(function() {
     var value = this.value;
     return "(x,y) = (" + this.x + ".00," + value.toFixed(2) + ")";
   });

@@ -275,7 +275,7 @@
   marker.hoverSize(7);
   marker.hoverFill("red");
   var tooltip = marker.tooltip();
-  tooltip.contentFormatter(function() {
+  tooltip.textFormatter(function() {
     return "Waiting Time: " + this.value + " min.\nDuration: " + this.x + " min.";
   });
       

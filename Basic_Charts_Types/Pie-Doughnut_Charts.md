@@ -248,7 +248,7 @@ In this section we will explain how to tune pie tooltip. Method {api:anychart.ch
   tooltip.title("Information");
   
   // set tooltip content
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
   
     // get name of each slice
     var name = this.name;

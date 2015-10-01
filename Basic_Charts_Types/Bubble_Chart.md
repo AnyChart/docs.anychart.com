@@ -22,7 +22,7 @@
 A Bubble chart is a variation of a [Scatter chart](./Scatter_Chart) where the data points are replaced with bubbles.
   
   
-Bubble charts are often used to present financial data. Use a Bubble chart if you want to put more attention to the specific values in your chart by different bubble sizes.
+HTML5 Bubble charts are often used to present financial data. Use a Bubble chart if you want to put more attention to the specific values in your chart by different bubble sizes.
   
   
 Bubble charts are popular tools for identifying and illustrating industry clusters. Essentially, these charts allow four different variables to be plotted within the same graph, making it easy to assess relative economic performance.
@@ -74,7 +74,7 @@ Let's see single series bubble chart created using the sample data - ACME Corp. 
 </tr>
 </tbody></table>
 
-Now we need to convert this data table into format acceptable by AnyChart. In terms of AnyChart data model, we have one series of data (Sales) with categories that hold Product names. Each point in series represents product, units sold and a profit amount. Converted data looks like:
+Now we need to convert this data table into format acceptable by AnyChart javascript charting library. In terms of AnyChart data model, we have one series of data (Sales) with categories that hold Product names. Each point in series represents product, units sold and a profit amount. Converted data looks like:
 
 ```
   var series = chart.bubble([
@@ -154,11 +154,11 @@ As we did in single-series bubble sample above now we need to convert this table
 The min and the max size of bubbles can be controlled using {api:anychart.charts.Scatter#maxBubbleSize}**.maxBubbleSize()**{api} and {api:anychart.charts.Scatter#minBubbleSize}**.minBubbleSize()**{api} parameters. Both of them can be set either in pixels or in percents of a lesser chart side:
 
 ```
-  chart.maxBubbleSize("75%");
-  chart.minBubbleSize("10%");
+  chart.maxBubbleSize("15%");
+  chart.minBubbleSize("5%");
 ```
 
-When you set {api:anychart.charts.Scatter#maxBubbleSize}**.maxBubbleSize("75%")**{api} - AnyChart will make diameters of bubble(s) with a biggest size equal to 75% of width or the height, depends on which side is shorter.
+When you set {api:anychart.charts.Scatter#maxBubbleSize}**.maxBubbleSize("15%")**{api} - AnyChart will make diameters of bubble(s) with a biggest size equal to 15% of width or the height, depends on which side is shorter.
   
   
 Here is the sample when bubbles are sized in percents, as specified above:
@@ -332,8 +332,9 @@ As you see it is very easy to do by setting a value for the {api:anychart.graphi
 **Important Note:**
   
   
-AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors. For example, instead of "Rgb(180,77,77)" you can set "#b44d4d"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
-
+AnyChart html5 charting library takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors. For example, instead of "Rgb(180,77,77)" you can set "#b44d4d"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
+  
+  
 * Different ways of [setting colors](../Appearance_Settings/Color_Management) of elements
 <!-- But even this is not everything about colors in AnyChart: read more about setting colors below 
 and in the following Help Sections:
@@ -351,3 +352,7 @@ To see whole range of available hatch types see [Hatch Fill](../Appearance_Setti
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We've got a chart a with 5 series with 3 data points in each. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.core.scatter.series.Bubble#hatchFill}**.hatchFill()**{api} parameter.
 
 {sample}BCT\_Bubble\_Chart\_13{sample}
+
+## Samples
+
+ You can see a lot of other samples in [AnyChart Web Bubble and Markers Charts Gallery](http://anychart.com/products/anychart/gallery/Marker_and_Bubble_Charts/).

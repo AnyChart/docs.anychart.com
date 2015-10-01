@@ -30,7 +30,7 @@
 
   // adjust tooltips
   var tooltip = series.tooltip();
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
     var value = this.value;
     return "Month:" + this.x + 
       "\nSales: " + (value/1000) + "'000.00" + 

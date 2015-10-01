@@ -26,13 +26,10 @@
   // set first series data
   var series1 = chart.column(Sales2003);
 
-  // set hover color
-  series1.hoverFill("#333333");
-
   // set tooltip
   var tooltip1 = series1.tooltip();
   tooltip1.title("Information");
-  tooltip1.contentFormatter(function() {
+  tooltip1.textFormatter(function() {
     return "Manager: " + this.x + 
       "\nSales: " + this.value + 
       "\nPeriod: Year 2003";
@@ -57,13 +54,11 @@
   labels2.anchor("center");
   labels2.fontColor("#fff");
   labels2.fontWeight(900);
-
-  series2.hoverFill("#333333");
   
   // tune series tooltip
   var tooltip2 = series2.tooltip();
   tooltip2.title("Information");
-  tooltip2.contentFormatter(function() {
+  tooltip2.textFormatter(function() {
     return "Manager: " + this.x + 
       "\nSales: " + this.value + 
       "\nPeriod: Year 2004";

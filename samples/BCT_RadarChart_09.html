@@ -78,13 +78,12 @@
     series.hoverStroke("3 "+color);
     series.name(text);
     var tooltip = series.tooltip();
-    tooltip.contentFormatter(function(){
+    tooltip.textFormatter(function(){
       return this.x + "\n" + text + ": " + this.value;
     });
     var tooltipBackground = series.tooltip().background();
     tooltipBackground.fill(color+" 0.7");
-    var tooltipContent = series.tooltip().content();
-    tooltipContent.fontColor("#000");
+    tooltip.fontColor("#000");
     var tooltipTitle = series.tooltip().title();
     tooltipTitle.fontColor("#000");
   }

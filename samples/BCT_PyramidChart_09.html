@@ -23,7 +23,7 @@
   tooltipContent.useHtml(true);
   tooltipContent.fontWeight(400);
   var tooltip = chart.tooltip();
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
     return "<b>Year</b>: 2005"+
       "<br><b>Store</b>: Nerds Inc."+
       "<br><b>Genre</b>: "+this.name+

@@ -95,7 +95,7 @@
     var series = chart.column(seriesData);
     series.stroke(null);
     var tooltip = series.tooltip();
-    tooltip.contentFormatter(function(){
+    tooltip.textFormatter(function(){
       return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
     });
   }

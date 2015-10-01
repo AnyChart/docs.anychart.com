@@ -27,7 +27,7 @@ Some traders find candlestick charts easier to read, than [Open-High-Low-Close c
 
 ## Chart
 
-The candlestick chart uses four values, so we need to pass the opening, the highest, the lowest and the closing price values to the chart. This should be done as setting **open**, **high**, **low**, **close** parameters into second, third, fourth and fifth columns:
+The candlestick html5 chart uses four values, so we need to pass the opening, the highest, the lowest and the closing price values to the chart. This should be done as setting **open**, **high**, **low**, **close** parameters into second, third, fourth and fifth columns:
 
 ```
   ["White", 507, 511, 506, 510]
@@ -362,7 +362,7 @@ If you want to configure data labels and tooltips for all series - you should us
 With the following example let's make data labels appear to the top from the data points, format them to show only the value corresponding to the point and force tooltips to show detailed description.
   
   
-When formatting data labels' text and tooltips we can use {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} and {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api}.
+When formatting data labels' text and tooltips we can use {api:anychart.core.ui.Tooltip#textFormatter}**.textFormatter()**{api} and {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api}.
 
 {sample}BCT\_Japanese-Candlestick\_Chart\_07{sample}
 <!--
@@ -398,6 +398,6 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 Japanese Candlestick Series are rarely used alone, in technical analysis they are often combined with charts of other types, such as [Lines](./Line-Spline-StepLine_Charts) (to show **moving average**), [Range Areas](./Range_Area-SplineArea_Charts) (to show **"Bollinger bands"**), and [Column Charts](./Column_Chart) (to show **trading volume**).
   
   
-AnyChart provides most of the features which might be necessary in creating a complex financial chart. This includes Combination charts, Dashboards and Interactivity features. The sample below shows a typical stock trading report and it can be used as a starting point in your integration of AnyChart into Financial/Trading/Reporting application.
+AnyChart javascript charting library provides most of the features which might be necessary in creating a complex financial chart. This includes Combination charts, Dashboards and Interactivity features. The sample below shows a typical stock trading report and it can be used as a starting point in your integration of AnyChart into Financial/Trading/Reporting application.
 
 {sample}BCT\_Japanese-Candlestick\_Chart\_10{sample}

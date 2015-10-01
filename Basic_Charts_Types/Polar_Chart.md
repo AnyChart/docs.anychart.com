@@ -249,7 +249,7 @@ To configure data labels and tooltips for all series use {api:anychart.charts.Pi
 
 Let's do that with the following example: we will make data labels bold, format labels so they show only the the value of the point and tooltips to show detailed description.
 
-When formatting tooltips, we use  {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} to adjust source of content and visual appearance. To control labels’ position we may use  {api:anychart.core.ui.Label#position}**.position()**{api} parameter.
+When formatting tooltips, we use  {api:anychart.core.ui.Tooltip#textFormatter}**.textFormatter()**{api} to adjust source of content and visual appearance. To control labels’ position we may use  {api:anychart.core.ui.Label#position}**.position()**{api} parameter.
 
 Next sample demonstrates bold series labels which display value of a point and tooltip shows detailed description.
 
@@ -270,7 +270,7 @@ Next sample demonstrates bold series labels which display value of a point and t
 
   // format tooltip content
   var tooltip = series.tooltip();
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
     
     // summarize all values
     var sum = 0;

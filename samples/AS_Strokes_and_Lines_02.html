@@ -61,17 +61,16 @@
 
   // adjust tooltip
   var tooltip = series.tooltip();
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
     return this.x + ", " + this.value + "%";
   });
-      
+  tooltip.fontColor("white");
+
   var tooltipBackground = series.tooltip().background();
   tooltipBackground.fill("#406181");
   tooltipBackground.stroke("white");
   tooltipBackground.cornerType("round");
   tooltipBackground.corners(4);
-  var content = series.tooltip().content();
-  content.fontColor("white");
 
 
   // adjust y axis

@@ -112,7 +112,7 @@
   splineSeries.markers(null);
   splineSeries.stroke("red");
   var splineTooltip = splineSeries.tooltip();
-  splineTooltip.contentFormatter(function(){
+  splineTooltip.textFormatter(function(){
     var date = new Date(this.x);
     var options = {
       year: "numeric",

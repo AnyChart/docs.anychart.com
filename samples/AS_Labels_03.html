@@ -58,6 +58,7 @@
   pieLabel.zIndex(chart.zIndex() + 1);
   pieLabel.x(70);
 
+
   pieLabel.listen("click", drawPie);
   
   
@@ -107,6 +108,7 @@
   
   function drawPie(){
     chart.dispose();
+<<<<<<< HEAD
     chart = anychart.pie(data);
     var title = chart.title();
     title.useHtml(true);
@@ -114,6 +116,16 @@
     title.fontWeight(900);
     title.hAlign("center");
     chart.top(20);
+=======
+    chart = anychart.line(data);
+    chart.title()
+      .useHtml(true)
+      .text(titleText)
+      .fontWeight(900)
+      .hAlign('center');
+
+    chart.margin(30, 0, 0 ,0 );
+>>>>>>> docs-DVF-1639-Interactivity
     
     chart.container(stage);
     chart.draw();

@@ -43,7 +43,7 @@
   tooltip1.title("Information");
 
   // set and adjust tooltip content
-  tooltip1.contentFormatter(function() {
+  tooltip1.textFormatter(function() {
     return "Sales: Product " + this.x.toString() +
       "\nUnit: " + this.value + ".00\nYear: 2003" +
       "\nProfit: $" + this.size + ".00";
@@ -72,7 +72,7 @@
   tooltip2.title("Information");
 
   // set and adjust tooltip content
-  tooltip2.contentFormatter(function() {
+  tooltip2.textFormatter(function() {
     return "Sales: Product " + this.x.toString() + 
       "\nUnit: " + this.value + ".00\nYear: 2004" + 
       "\nProfit: $" + this.size + ".00";

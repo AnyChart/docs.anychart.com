@@ -17,6 +17,7 @@
 * [Colors](#colors)
   * [Colorizing Elements](#colorizing_elements)
 * [Hatch Fills](#hatch_fills)
+* [Samples](#samples)
 
 ## Overview
 
@@ -107,11 +108,10 @@ In terms of AnyChart data model we have one series of data (Salaries) with categ
   chart.box(data);
 ```
 
-As you can see, we've created a Data Set. Every object is a box, each has some parameters. The first column is as 
-category and others represent boxes' parameters.
+As you can see, we've created a Data Set. Every object is a box, each has some parameters. The first column is as category and others represent boxes' parameters.
   
   
-Here it is: AnyChart can now visualize your data. Look at the chart sample below and click on "Launch in playground" to see the full source code, alter and play with the sample or download it.
+Here it is: AnyChart Charting Library can now visualize your data. Look at the chart sample below and click on "Launch in playground" to see the full source code, alter and play with the sample or download it.
 
 {sample}BCT\_BoxChart\_01{sample}
 
@@ -275,7 +275,7 @@ And here is the demonstration of this feature on the Single-series sample:
 
 ###Inversion
 
-AnyChart allows scale inversion. Just add the {api:anychart.scales.Base#inverted}**.inverted()**{api} method to the scale you want to invert, for example:
+AnyChart Charting Framework allows scale inversion. Just add the {api:anychart.scales.Base#inverted}**.inverted()**{api} method to the scale you want to invert, for example:
  
 ```
   // adjust y scale
@@ -308,7 +308,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 ###Scale Type
 
-There are four types of scales in AnyChart: {api:anychart.scales#linear}"Linear"{api}, {api:anychart.scales#log}"Logarithmic"{api}, {api:anychart.scales#ordinal}"Ordinal"{api} and {api:anychart.scales#dateTime}"DateTime"{api}. To set scale type use appropriate constructor:
+There are four types of scales in AnyChart js charts: {api:anychart.scales#linear}"Linear"{api}, {api:anychart.scales#log}"Logarithmic"{api}, {api:anychart.scales#ordinal}"Ordinal"{api} and {api:anychart.scales#dateTime}"DateTime"{api}. To set scale type use appropriate constructor:
 
 ```
   chart.xScale(anychart.scales.linear());
@@ -392,14 +392,16 @@ With the following example let's make data labels appear to the top from the box
 
   // adjust tooltips content
   var tooltip = series.tooltip();
-  tooltip.contentFormatter(function() {
+  tooltip.textFormatter(function() {
     return "Range: " + this.x + "\nMedium: " + (this.q3+this.q1)/2 + "\nLowest: " + this.lowest + "\nQ1: " + this.q1 + "\nMedian: " + this.median + "\nQ3: " + this.q3 + "\nHighest: " +this.highest + "\nPeriod: February 2015";
+  });
+  tooltip.titleFormatter(function(){
+    return "Salaries in February 2015\nInformation";
   });
 
   // adjust tooltip title
   var tooltipTitle = series.tooltip().title();
   tooltipTitle.enabled(true);
-  tooltipTitle.text("Salaries in February 2015\nInformation");
 ```
 
 {sample}BCT\_BoxChart\_08{sample} 
@@ -473,3 +475,6 @@ To demonstrate hatch fill feature we've prepared the following sample. As you se
 
 {sample}BCT\_BoxChart\_12{sample}
 
+## Samples
+
+ You can see a lot of other samples in [AnyChart Web Box Charts Gallery](http://anychart.com/products/anychart/gallery/Box_Charts/).
