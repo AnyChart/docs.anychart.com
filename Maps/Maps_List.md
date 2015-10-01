@@ -1,4 +1,4 @@
-{:index 3}
+{:index 2}
 #Maps List
 
 There is a list of all map types available at the moment.

@@ -1,3 +1,4 @@
+{index:5}
 Proportional Symbol Map
 ===========
 
