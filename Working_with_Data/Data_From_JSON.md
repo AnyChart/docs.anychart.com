@@ -1,4 +1,4 @@
-{:index 7}
+{:index 6}
 # Getting Data from JSON
 
 * [Overview](#overview)
