@@ -84,6 +84,6 @@ To attach an action to the image you have to set **{api:anychart.graphics.vector
   )
 ```
 
-Here is a sample with three custom images. Click on any of them invokes function of redrawing chart using same data but different chart type.
+Here is a js chart with three custom images. Click on any of them invokes function of redrawing chart using same data but different chart type.
 
 {sample}AS\_Labels\_03{sample}
