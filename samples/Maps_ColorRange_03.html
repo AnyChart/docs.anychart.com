@@ -27,17 +27,22 @@
     map.background('none');
     // set the title and its preferences
     map.title().useHtml(true).hAlign('center');
-    map.title('<span style="font-size: 18px;">Linear Color Scale</span>');
+    map.title('<span style="font-size: 18px;">Linear Color Scale with a colorRange</span>');
 
     // set the series
     var series = map.choropleth(dataSet);
-    series.geoIdField('code_hasc');
-    series.stroke('#000 .3');
-    series.colorScale(anychart.scales.linearColor('#EC6E07', '#64B5F6'));
 	
 	// disable the labels
     series.labels(false);
     
+    series.geoIdField('code_hasc');
+    series.stroke('#000 .3');
+    series.colorScale(anychart.scales.linearColor('#EC6E07', '#64B5F6'));
+
+	// create and enable the colorRange
+    var colorRange = map.colorRange();
+    colorRange.enabled(true);
+	
     // set the container
     map.container('container');
     map.draw();

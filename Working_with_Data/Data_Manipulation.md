@@ -1,4 +1,4 @@
-{:index 4}
+{:index 3}
 # Data Manipulation
 
 * [Overview](#overview)
