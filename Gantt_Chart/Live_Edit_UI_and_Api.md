@@ -15,7 +15,83 @@ In this article we will consider the "editing mode" of AnyGantt. For simplifying
 
 ## Controls
 
-Тут будет про контролы с картинками
+There are several pointer cursors you will see while working with AnyGantt. They are used to edit intervals and Gantts' structure.
+
+All connectors' appearance might be edited by using usual methods such as {api**}.stroke()**{api}, {api}**.fill()**{api} or by choosing the theme you prefer. 
+<table width="700" border="1" class="dtTABLE">
+<tbody><tr>
+<th width="175"><b>Compound action</b></th>
+<th width="175"><b>Interaction</b></th>
+<th width="175"><b>Typical effect</b></th>
+<th width="175"><b>Pointers</b></th>
+</tr>
+<tr>
+<td>Connectors creating</td>
+<td>Position the pointer over the connector thumb of an interval or a milestone, press the button and move the mouse. If you haven't pointed the interval you want to connect with, there is a dashed line drawn to help the user not to get lost; it is possible to scroll the timeline while dragging the connector line inside the scale total range. If you hover the bar you want to connect with, there's a final connector preview shows up. Release the mouse button. If you are hovering the interval bar and watching the final connector preview, there will be the {api}**.beforeCreateConnector()**{api} event dispatched by the chart diagram (or by its timeline, depends on the way the chart was built) unless it was prevented. Then, if you release the mouse, the connector will be created and the intervals will become logically connected. If the {api}**.beforeCreateConnector()**{api} event was prevented, no connector will be created.
+<br>
+You can find more about events [here](../Common_Settings/Event_Listeners.md).
+</td>
+<td>One interval becomes connected to another and we see the connector.</td>
+<td>
+<img src ="http://anychart.com/products/anychart/docs/img/IC725676.png" alt="Connector creater" />
+<br>
+A pointer that is shown when a connector thumb is hovered
+<br>
+<img src ="http://anychart.com/products/anychart/docs/img/header_back.gif     https://i-msdn.sec.s-msft.com/dynimg/IC725676.png" alt="Connector thumb" />
+<br>
+The connector thumb shown when the interval is hovered
+<br>
+<img src ="dashed_connector.png" alt="Connector dashes" />
+<br>
+The unconnected connector line
+<br>
+<img src ="https://i-msdn.sec.s-msft.com/dynimg/IC725676.png" alt="Final connector" />
+<br>
+That's how the final connector looks like
+<br>
+<img src ="https://i-msdn.sec.s-msft.com/dynimg/IC725676.png" alt="Connector thumb" />
+<br> A small pointer that shows the beginning of the connector of each bar
+</td>
+</tr>
+<tr>
+<td>Resizing</td>
+<td>Hover the resizing thumb, press the left mouse button and drag the cursor. You will see the dashed contour - a preview of the interval duration. You can drag it to any date you need, the scale range will be automatically lengthened if necessary. When you release the button, the "update" event will be dispathed by the gantt tree. Find more information about tree events [here](../Working_with_Data/Data_Tree_Model).</td>
+<td>The actual time or the baseline interval becomes longer of shorter</td>
+<td>
+
+<img src ="https://i-msdn.sec.s-msft.com/dynimg/IC725676.png" alt="Horizontal resizer" />
+<br>
+The horizontal resizer
+<br>
+
+</td>
+</tr>
+<tr>
+<td>Drag&drop</td>
+<td>Hover the interval or a milestone </td>
+<td>Drags the interval through the time <!-->and space<--> without lengthening or shortening it. Makes</td>
+<td>
+
+<img src ="https://i-msdn.sec.s-msft.com/dynimg/IC725676.png" alt="Dragger" />
+<br>
+The dragger
+<br>
+
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4000</td>
+<td>5000</td>
+<td>6000</td>
+</tr>
+<tr>
+<td>5</td>
+<td>8000</td>
+<td>8400</td>
+<td>9000</td>
+</tr>
+</tbody></table>
 
 ## Data Grid
 
