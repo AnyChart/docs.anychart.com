@@ -130,6 +130,11 @@
   ]);
   series.tooltip(false);
 
+  var hoverMarkers = series.hoverMarkers();
+  hoverMarkers.size(4);
+
+  chart.interactivity("byX");
+
   // draw chart
   chart.container("container");
   chart.draw();

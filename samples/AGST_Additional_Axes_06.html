@@ -226,24 +226,23 @@
   lineSeries.stroke("#00F");
   lineSeries.hoverStroke("#00F");
   lineSeries.yScale(extraYScale);
-  var lineTooltip = lineSeries.tooltip();
-  lineTooltip.title(false);
-  lineTooltip.textFormatter(function() {
-    return this.x + " Year\nGDP - " + this.value + "%" ;
-  });
 
   var columnSeries = chart.column(secondSeries);
   columnSeries.fill(["#FF0000", "#880000"], -90);
   columnSeries.stroke("#000", 1);
   columnSeries.hoverStroke("#FFF", 1);
   columnSeries.hoverFill(["#FF0000", "#880000"], -90);
-  var columnTooltip = columnSeries.tooltip();
-  columnTooltip.title(false);
-  columnTooltip.textFormatter(function() {
-    var value = (this.value/1000000000).toFixed(0);
-    if (value > 999)
-      value = ("" + value/1000).replace(".", " ");
-    return this.x + " Year\nDebt - $" + value + " bil." ;
+
+  var tooltip = chart.tooltip();
+  tooltip.titleFormatter(function(){
+    return "Year: " + this.points[0].x;
+  });
+  tooltip.textFormatter(function(){
+    var gdp = "GDP - " + this.points[0].value + "%";
+    var debt = (this.points[1].value / 1000000000).toFixed(0);
+    if (debt > 999)
+      debt = ("" + debt/1000).replace(".", " ");
+    return gdp + "\nDebt - $" + debt + " bil." ;
   });
 
   chart.container("container");
