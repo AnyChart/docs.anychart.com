@@ -51,7 +51,7 @@ And now let's talk about customising the charts' behaviour. There are two levels
 
 We can make some changes in charts behaviour using the {api:anychart.core.utils.Interactivity}**.interactivity()**{api} method. It helps to adjust hover and select settings, as well as create a "highlighting area" - a spot of a custom-defined radius that highlights (hovers) all points within that radius.
 
-So, if we need to change something with hover, we should use {api:anychart.core.utils.Interactivity#hoverMode}**.hoverMode()**{api} with an argument "bySpot" or "byX". In first case we may adjust the radius of a "spot",  making it bigger or smaller..
+So, if we need to change something with hover, we should use {api:anychart.core.utils.Interactivity#hoverMode}**.hoverMode()**{api} with an argument "bySpot" or "byX". In first case we may adjust the radius of a "spot",  making it bigger or smaller.
 
 There are also two basic events: hover and select.
 
@@ -75,6 +75,7 @@ This way of hovering, when a couple of points are hovered simultaneously, is a m
 #### byX
 
 Note that you can define the mode in a easier way:
+
 ```
 // single-hover enabling 
 chart.interactivity('byX');
@@ -141,10 +142,10 @@ If you provide no arguments to the {api:anychart.core.SeriesBase#hover}**.hover(
 
 Change the hovering mode in playground and see the difference.
 
-```	
-	// setting some points for the series
-	series_1.hover([4, 6, 9, 12, 16, 19]);
-	series_2.hover([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);	
+```
+  // setting some points for the series
+  series_1.hover([4, 6, 9, 12, 16, 19]);
+  series_2.hover([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);
 ```
 
 {sample}CS\_Interactivity\_08{sample} 
@@ -156,9 +157,9 @@ Change the hovering mode in playground and see the difference.
 There might be some points which you'd like to be selected by default or adjust the selecting feature according to your needs. The method {api}**.select()**{api} works here (similar to {api:anychart.core.SeriesBase#hover}**.hover()**{api}).
 
 ```
-	// making series_1 and some points of series_2 selected
-    series_1.select();
-    series_2.select([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);
+  // making series_1 and some points of series_2 selected
+  series_1.select();
+  series_2.select([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);
 ```
 
 {sample}CS\_Interactivity\_09{sample} 

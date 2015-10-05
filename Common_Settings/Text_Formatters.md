@@ -14,7 +14,7 @@ Sometimes it might be necessary to display any text with the points on a chart f
 
 ##Default fields
 
-There are some standard fields this method has, which depend on the chart type. Below you can see a table with all chart types and fields avaliable for them by default.
+There are some standard fields this method has, which depend on the chart type. Below you can see a table with all chart types and fields available for them by default.
 
 
 <table class="dtTABLE">
@@ -103,7 +103,7 @@ This function can return more than one value. The sample below demonstrates it.
 
 ##Extra fields
 
-The number and variety of defalut fields might be not enough in some cases. Sometimes it's necessary to show some extra information. In this case you should use one of following methods: {api:anychart.core.utils.SeriesPointContextProvider#getStat}**.getStat()**{api}, {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api} or {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}**.getSeriesMeta()**{api}. Which one to use depends on the unique situation.
+The number and variety of default fields might be not enough in some cases. Sometimes it's necessary to show some extra information. In this case you should use one of following methods: {api:anychart.core.utils.SeriesPointContextProvider#getStat}**.getStat()**{api}, {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api} or {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}**.getSeriesMeta()**{api}. Which one to use depends on the unique situation.
 
 ###getDataValue
 
@@ -168,7 +168,7 @@ To add any parameter to the meta of the series, you need to set the parameter na
 
 ###getStat
 
-This method is to be used when you need to display some statistic information. The variecy of fields for this method is not complied the same way as shown above. The avaliable fields for this method are given below.
+This method is to be used when you need to display some statistic information. The variety of fields for this method is not complied the same way as shown above. The available fields for this method are given below.
 
 <table class="dtTABLE">
 <tr>

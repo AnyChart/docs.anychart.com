@@ -19,7 +19,7 @@ Tree Data Structure is crucial for [AnyGantt: AnyChart Gantt Charts](../Gantt_Ch
 
 ## Usage
 
-In this sample we will use standalone Datagrid to show how to work with tree data. AnyChart accepts two methods of setting data tree: through table and through tree.  The code below demonstrates setting the same data through both methods. You can also use CSV, which is similar to table in terms of stucture, but set differently, see [Gantt: Getting Data from JSON, XML or CSV](../Gantt_Chart/Data_from_JSON,_XML,_CSV#csv) to learn more.
+In this sample we will use standalone Datagrid to show how to work with tree data. AnyChart accepts two methods of setting data tree: through table and through tree. The code below demonstrates setting the same data through both methods. You can also use CSV, which is similar to table in terms of stucture, but set differently, see [Gantt: Getting Data from JSON, XML or CSV](../Gantt_Chart/Data_from_JSON,_XML,_CSV#csv) to learn more.
 
 ```
   //Data set through tree method
@@ -75,8 +75,7 @@ You can add some data as a tree using several methods. Sample below demonstrates
 {sample :width 690 :height 400}Data\_Tree\_02{sample}
 
 Adding a child is quite a useful method of adjusting data in real time and visualizing actual processes.
-Nevertheless, adding only one child at a time may appear to be ineffective for managing data. Transferring prepared
-data with predefined hierarchy is an advanced way of managing data in a tree.  You need the data type and the data itself to use the {api:anychart.data.Tree#addData}**.addData()**{api} method.
+Nevertheless, adding only one child at a time may appear to be ineffective for managing data. Transferring prepared data with predefined hierarchy is an advanced way of managing data in a tree.  You need the data type and the data itself to use the {api:anychart.data.Tree#addData}**.addData()**{api} method.
 
 ```
   // data to add
