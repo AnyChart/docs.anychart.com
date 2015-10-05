@@ -14,6 +14,7 @@
  * [Background](#background)
  * [Advanced Content Formatting](#advanced_content_formatting)
 * [Position](#position)
+ * [Fixed Tooltip Position](#fixed_tooltip_position)
 * [Hiding Time](#hiding_time)
 * [Themes](#themes)
 
@@ -201,7 +202,9 @@ Here is a sample with the tooltip sticks to the hovered point:
 
 {sample}CS\_Tooltip\_12{sample}
 
-**Note**: Sample of **positionMode()** method with *chart* parameter can be found [below](#sample).
+### Fixed Tooltip Position
+
+You can bind tooltips to a certain point on the chart plot using **chart** as a value for **positionMode()**. The sample of such settings can be found [below](#sample). You have to manage other tooltip parameters along with **positionMode()**.
   
   
 You can choose which part of the tooltip should be considered as anchor and used for position managing. **anchor()** method defines the main part of the tooltip for further positioning.

@@ -1,5 +1,6 @@
-{:index 1}
+{:index 5}
 #Choropleth Maps
+===========
 
 * [Choropleth Map](#choropleth_map)
 * [Data](#data)
