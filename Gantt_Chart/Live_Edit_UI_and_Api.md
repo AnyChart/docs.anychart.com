@@ -68,8 +68,8 @@ The horizontal resizer
 </tr>
 <tr>
 <td>Drag&drop</td>
-<td>Hover the interval or a milestone </td>
-<td>Drags the interval through the time <!-->and space<--> without lengthening or shortening it. Makes</td>
+<td>Hover the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically)</td>
+<td>Drags the interval through the time <!-->and space<--> without lengthening or shortening it.</td>
 <td>
 
 <img src ="https://i-msdn.sec.s-msft.com/dynimg/IC725676.png" alt="Dragger" />
@@ -80,16 +80,17 @@ The dragger
 </td>
 </tr>
 <tr>
-<td>4</td>
-<td>4000</td>
-<td>5000</td>
-<td>6000</td>
-</tr>
-<tr>
-<td>5</td>
-<td>8000</td>
-<td>8400</td>
-<td>9000</td>
+<td>Progress resizing</td>
+<td>Hover the border of the progress part and the rest of the actual time and press the button when the pointer is of progress resizing type.</td>
+<td>Lengthens or shortens the .</td>
+<td>
+
+<img src ="https://i-msdn.sec.s-msft.com/dynimg/IC725676.png" alt="Progress resizer" />
+<br>
+The dragger
+<br>
+
+</td>
 </tr>
 </tbody></table>
 
