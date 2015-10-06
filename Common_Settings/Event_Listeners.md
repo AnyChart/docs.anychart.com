@@ -51,13 +51,13 @@ You can add the {api:anychart.core.Base#listenOnce}**.listenOnce()**{api} method
 It's necessary to define the event type and the action to perform to get any reaction on the event. 
 
 ```
-    //adding a listener 
-    range.listenOnce(
-      //click twice on any range bar to see the result
-      "dblclick",
-      function(){
-        range.fill("red");
-    });   
+  //adding a listener 
+  range.listenOnce(
+    //click twice on any range bar to see the result
+    "dblclick",
+    function(){
+      range.fill("red");
+  });
 ```
 
 {sample}CMN\_Event\_Listener\_02{sample}
@@ -126,7 +126,6 @@ Look at the sample and its code. It's necessary to define the key of the listene
       chart.unlistenByKey(key);
     }
   );
-	
 ```
 
 {sample}CMN\_Event\_Listener\_05{sample}
@@ -236,7 +235,8 @@ When a point is clicked once, it is recolored.
 	
 	//add a listener
 	chart.listen("pointDblClick", function(e){ 
-		var new_value = e.iterator.get("url"); window.open(new_value,"_blank"); 
+		var new_value = e.iterator.get("url");
+		window.open(new_value,"_blank"); 
 	});
 ```
 
