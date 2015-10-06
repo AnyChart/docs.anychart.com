@@ -31,7 +31,7 @@
 
 
   // label for bar chart
-  var barlabel = stage.image("http://static.anychart.com/images/bar.gif");
+  var barlabel = stage.image("//static.anychart.com/images/bar.gif");
 
   barlabel.width(25);
   barlabel.height(25);
@@ -63,9 +63,9 @@
   
   
   function drawBar () {
-    if (chart!==null&&undefined&&"") 
+    if (chart)
       chart.dispose();
-    
+
     chart = anychart.bar();
     var series = chart.bar(data);
     series.stroke(null);
@@ -108,7 +108,6 @@
   
   function drawPie(){
     chart.dispose();
-<<<<<<< HEAD
     chart = anychart.pie(data);
     var title = chart.title();
     title.useHtml(true);
@@ -116,16 +115,7 @@
     title.fontWeight(900);
     title.hAlign("center");
     chart.top(20);
-=======
-    chart = anychart.line(data);
-    chart.title()
-      .useHtml(true)
-      .text(titleText)
-      .fontWeight(900)
-      .hAlign('center');
-
     chart.margin(30, 0, 0 ,0 );
->>>>>>> docs-DVF-1639-Interactivity
     
     chart.container(stage);
     chart.draw();
