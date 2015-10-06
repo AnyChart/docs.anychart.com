@@ -33,24 +33,21 @@ You can find more about events [here](../Common_Settings/Event_Listeners.md).
 </td>
 <td>One interval becomes connected to another and we see the connector.</td>
 <td>
-<img src ="http://anychart.com/products/anychart/docs/img/IC725676.png" alt="Connector creater" />
+<img src ="http://static.anychart.com/images/connector_creater.png" alt="Connector creater" />
 <br>
 A pointer that is shown when a connector thumb is hovered
 <br>
-<img src ="http://anychart.com/products/anychart/docs/img/header_back.gif     https://i-msdn.sec.s-msft.com/dynimg/IC725676.png" alt="Connector thumb" />
+<img src ="http://static.anychart.com/images/connector_thumb.png" alt="Connector thumb" />
 <br>
 The connector thumb shown when the interval is hovered
 <br>
-<img src ="dashed_connector.png" alt="Connector dashes" />
+<img src ="http://static.anychart.com/images/dashed_connector.png" alt="Connector dashes" />
 <br>
 The unconnected connector line
 <br>
-<img src ="https://i-msdn.sec.s-msft.com/dynimg/IC725676.png" alt="Final connector" />
+<img src ="http://static.anychart.com/images/final_connector.png" alt="Final connector" />
 <br>
 That's how the final connector looks like
-<br>
-<img src ="https://i-msdn.sec.s-msft.com/dynimg/IC725676.png" alt="Connector thumb" />
-<br> A small pointer that shows the beginning of the connector of each bar
 </td>
 </tr>
 <tr>
@@ -59,7 +56,7 @@ That's how the final connector looks like
 <td>The actual time or the baseline interval becomes longer of shorter</td>
 <td>
 
-<img src ="https://i-msdn.sec.s-msft.com/dynimg/IC725676.png" alt="Horizontal resizer" />
+<img src ="http://static.anychart.com/images/horizontal_resizer.png" alt="Horizontal resizer" />
 <br>
 The horizontal resizer
 <br>
@@ -72,7 +69,7 @@ The horizontal resizer
 <td>Drags the interval through the time <!-->and space<--> without lengthening or shortening it.</td>
 <td>
 
-<img src ="https://i-msdn.sec.s-msft.com/dynimg/IC725676.png" alt="Dragger" />
+<img src ="http://static.anychart.com/images/dragger.png" alt="Dragger" />
 <br>
 The dragger
 <br>
@@ -85,9 +82,9 @@ The dragger
 <td>Lengthens or shortens the .</td>
 <td>
 
-<img src ="https://i-msdn.sec.s-msft.com/dynimg/IC725676.png" alt="Progress resizer" />
+<img src ="http://static.anychart.com/images/progress_slider.png" alt="Progress_slider" />
 <br>
-The dragger
+Progress slider shows the progress of an action
 <br>
 
 </td>
