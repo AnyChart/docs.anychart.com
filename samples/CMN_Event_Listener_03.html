@@ -26,52 +26,53 @@
   ]);
 
   // set chart type
-  chart = anychart.line();
+  var chart = anychart.line();
 
-  chart.title().text("Move the Mouse Over the Chart to Add New Points\nDoubleClick to Remove Listeners");
+  chart.title("Move the Mouse Over the Chart to Add New Points\nDoubleClick to Remove Listeners");
 
   // set data
-  var spline = chart.spline(dataSet).markers(null);
-
-  chart.padding().right(80);
+  var spline = chart.spline(dataSet);
+  spline.markers(null);
 
   // disable stagger mode. Only one line for x axis labels
-  chart.xAxis().staggerMode(false);
+  var xAxis = chart.xAxis();
+  xAxis.staggerMode(false);
 
   // set container and draw chart
-  chart.container("container").draw();
+  chart.container("container");
+  chart.draw();
   
   // first index for new point
   var indexSetter = 21;
   
   // create a function what to listen and then unlisten
   var func_listen = function(){
-      dataSet.append({
-          // x value
-          x: "P" + indexSetter,
+    dataSet.append({
+      // x value
+      x: "P" + indexSetter,
 
-          // random value from 1 to 500
-          value : Math.floor((Math.random() * 500)+ 1)
-        });
-        indexSetter++;
-        dataSet.remove(0);
+      // random value from 1 to 500
+      value : Math.floor((Math.random() * 500)+ 1)
+    });
+    indexSetter++;
+    dataSet.remove(0);
   };
   
-    // add a listener
-    var listener = chart.listen("mouseMove", func_listen);
-    
-    var counter = 0;
-    
-    // add a listener
-    chart.listen("click", function(){
-        counter++;
-        chart.title("Clicks: "+ counter);
-    });
-    
-    // remove all listeners
-    chart.listen("dblclick", function(){
-        chart.removeAllListeners();     // click twice on any range bar to see the result
-    });
+  // add a listener
+  var listener = chart.listen("mouseMove", func_listen);
+  
+  var counter = 0;
+  
+  // add a listener
+  chart.listen("click", function(){
+    counter++;
+    chart.title("Clicks: "+ counter);
+  });
+  
+  // remove all listeners
+  chart.listen("dblclick", function(){
+    chart.removeAllListeners();     // click twice on any range bar to see the result
+  });
 });</script>
 </head>
 <body>

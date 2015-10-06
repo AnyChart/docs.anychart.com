@@ -101,7 +101,7 @@ To stop listen to the particular action, place an {api:anychart.core.Base.unlist
   };
   
   //add a listener
-  var listener = chart.listen("mouseMove", func_listen);
+  chart.listen("mouseMove", func_listen);
   
   chart.listenOnce("click",function(){
     //adding an unlistener 

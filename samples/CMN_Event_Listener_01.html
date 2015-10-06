@@ -28,35 +28,34 @@
   // set chart type
   var chart = anychart.line();
 
-  chart.title().text("Click on the Chart to Add New Points");
+  chart.title("Click on the Chart to Add New Points");
 
   // set data
-  var spline = chart.spline(dataSet).markers(null);
-
-  chart.padding().right(80);
+  var spline = chart.spline(dataSet);
+  spline.markers(null);
 
   // disable stagger mode. Only one line for x axis labels
-  chart.xAxis().staggerMode(false);
+  var xAxis = chart.xAxis();
+  xAxis.staggerMode(false);
+
+  // first index for new point
+  var indexSetter = 16;
+
+  chart.listen("click", function(){
+    dataSet.append({
+      // x value
+      x: "P" + indexSetter,
+
+      // random value from 1 to 500
+      value : Math.floor((Math.random() * 500)+ 1)
+    });
+    indexSetter++;
+    dataSet.remove(0);
+  });
 
   // set container and draw chart
-  chart.container("container").draw();
-  
-  // first index for new point
-  var indexSetter = 21;
-  
-  chart.listen("click", function(){
-      dataSet.append({
-          // x value
-          x: "P" + indexSetter,
-
-          // random value from 1 to 500
-          value : Math.floor((Math.random() * 500)+ 1)
-        });
-        indexSetter++;
-        dataSet.remove(0);
-  });
-  
-  
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
