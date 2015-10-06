@@ -82,7 +82,7 @@
   // settings for legend tooltips
   legend.tooltip().content().useHtml(true).fontWeight(400);
   // set source of content for legend tooltips
-  legend.tooltip().contentFormatter(function(){
+  legend.tooltip().textFormatter(function(){
       return this.meta.legendText;
     });
   
