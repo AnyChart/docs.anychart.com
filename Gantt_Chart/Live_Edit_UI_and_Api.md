@@ -71,7 +71,7 @@ The horizontal resizer
 <tr>
 <td>Drag&drop</td>
 <td>Hover the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically). The gantt will dispatch the "update" event immediately. Read about gantt events in the following.</td>
-<td>Drags the interval through the time <!-->and space<--> without lengthening or shortening it.</td>
+<td>Drags the interval through the time <!--and space--> without lengthening or shortening it.</td>
 <td>
 
 <img src ="http://static.anychart.com/images/dragger.png" alt="Dragger" />
@@ -104,7 +104,7 @@ Progress slider shows the progress of an action
 <td>Hover the row (item), press the button and drag it to wherever you need. When you release the button, the tree will dispatch the "move" event. Note that there are some situations when you cannot change the structure: it's not possible to make the item a child of itself and a milestone is not able to have children.</td>
 <td>Changes the gantt structure visually and logically.</td>
 <td>
-<!-->
+<!--
 <img src ="http://static.anychart.com/images/progress_slider.png" alt="Hovering and choosing cursor" />
 <br>
 The cursor becomes of this type when we hover and press the button on the item.
@@ -119,7 +119,7 @@ We see this symbol when we hover the item we cannot drop the dragged one into.
 <br>
 The cursor becomes of this type when we hover and press the button on the item.
 <br>
-<-->
+-->
 </td>
 </tr>
 </tbody></table>
