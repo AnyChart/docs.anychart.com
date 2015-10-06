@@ -1,6 +1,5 @@
 {:index 9}
 # ColorRange
-======================
 
 * [Overview](#overview)
 * [Enabling the ColorRange](#enabling_the_colorrange)
