@@ -1,0 +1,66 @@
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+  <script src="//cdn.anychart.com/geodata/countries/aus/australia.js" data-export="true"></script>
+  <script x-export="chart">anychart.onDocumentReady(function() {
+
+    var dataSet = anychart.data.set([
+      {'id': 'AU.WA', 'value': 170},  // Western Australia
+      {'id': 'AU.NS', 'value': 260},  // New South Wales
+      {'id': 'AU.VI', 'value': 75},   // Victoria
+      {'id': 'AU.NT', 'value': 130},  // Northern Territory
+      {'id': 'AU.TS', 'value': 210},  // Tasmania
+      {'id': 'AU.CT', labels: false} // Australian Capital Territory
+    ]);
+
+    var map = anychart.map();
+    map.geoData(anychart.maps.australia);
+
+    // stroke the undefined regions
+    map.unboundRegions().stroke('green');
+
+    map.title().useHtml(true).hAlign('center');
+    map.title('<span style="font-size: 18px;">Ordinal Color Scale <br> Single Hue Color Progression');
+
+    // set the colorRange preferences
+    var cr = map.colorRange();
+    cr.colorLineSize(15);
+    cr.align('center');
+    cr.stroke(null);
+    cr.ticks().stroke('rgb(216,216,216)');
+    cr.ticks().position('center').length(15);
+
+    series = map.choropleth(dataSet);
+    series.geoIdField('code_hasc');
+    series.stroke('#000 .3');
+    series.labels().fontColor('black');
+
+    // define the color of the hovered district
+    series.selectFill('#5588ff');
+
+    // making of the ordinal colorRange
+    ocs = anychart.scales.ordinalColor([
+      {less: 100},
+      {from: 100, to: 150},
+      {from: 150, to: 200},
+      {from: 200, to: 350},
+      {greater: 250}
+    ]);
+    ocs.colors(['rgb(253,225,86)', 'rgb(248,196,57)', 'rgb(244,168,19)', 'rgb(198,109,1)', 'rgb(152,58,0)']);
+
+    // tell the series what to use as a colorRange (colorScale)
+    series.colorScale(ocs);
+
+    map.container('container');
+    map.draw();
+  });</script>
+
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
