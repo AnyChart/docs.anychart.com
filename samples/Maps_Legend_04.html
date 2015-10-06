@@ -44,8 +44,8 @@ anychart.onDocumentReady(function() {
   series.labels().fontSize(10).fontColor('#212121').textFormatter(function(){
 return this.value;
   });
-  series.tooltip().content().textWrap('byLetter').useHtml(true);
-  series.tooltip().contentFormatter(function() {
+  series.tooltip().textWrap('byLetter').useHtml(true);
+  series.tooltip().textFormatter(function() {
     return '<span style="font-size: 13px">' + this.value + ' litres per capita</span>';
   });
   series.colorScale(anychart.scales.linearColor('#E08529', '#753D05'));
