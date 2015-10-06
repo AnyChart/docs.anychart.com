@@ -222,11 +222,17 @@ The main purpose of AnyChart Themes is to simplify the process of chart creation
   var customTheme = {
     // settings for bar charts
     "bar": {
-      "title": "Bar Chart"
+      "title": {
+        "text": "Bar Chart",
+        "enabled": true
+      }
     },
     // settings for column charts
     "column": {
-      "title": "Column Chart"
+      "title": {
+        "text": "Column Chart",
+        "enabled": true
+      }
     }
   };
 ```
