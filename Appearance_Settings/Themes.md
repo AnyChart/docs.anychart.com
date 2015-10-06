@@ -67,16 +67,29 @@ You can predefine these settings in theme and use it anytime you want. Below is 
     // define settings for bar charts
     "bar": {
       // set chart title
-      "title": "Bar Chart",
+      "title": {
+        // set title text
+        "text": "Bar Chart",
+        // display title
+        "enabled": true
+      },
       // settings for default x axis
       "defaultXAxisSettings": {
         // set x axis title
-        "title": "Retail Channel"
+        "title": {
+          // set title text
+          "text": "Retail Channel",
+          // force title to be shown
+          "enabled": true
+        }
       },
       // settings for default y axis
       "defaultYAxisSettings": {
         // set axis name
-        "title": 'Sales'
+        "title": {
+          "text": "Sales",
+          "enabled": true
+        }
       }
     }
   };
@@ -94,16 +107,25 @@ You can store a theme right where your chart code is, just be sure to apply the 
     // define settings for bar charts
     "bar": {
       // set chart title
-      "title": "Bar Chart",
+      "title": {
+        "text": "Bar Chart",
+        "enabled": true
+      },
       // settings for default x axis
       "defaultXAxisSettings": {
         // set x axis title
-        "title": "Retail Channel"
+        "title": {
+          "text": "Retail Channel",
+          "enabled": true
+        }
       },
       // settings for default y axis
       "defaultYAxisSettings": {
         // set axis name
-        "title": "Sales"
+        "title": {
+          "text": "Sales",
+          "enabled": true
+        }
       }
     }
   };
