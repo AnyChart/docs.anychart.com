@@ -9,15 +9,14 @@
 # Overview
 The Live Edit mode allows you to edit any part of your Gannt without touching the code. All you need to do is to use the mouse to change the duration, position or connections.
 
-In this article we will consider the "editing mode" of AnyGantt. For simplifying the material, there are two paragraphs for Timeline and Data Grid. 
-
+In this article we will consider the "editing mode" of AnyGantt.
 # Defaults
 
 ## Controls
 
 There are several pointer cursors you will see while working with AnyGantt. They are used to edit intervals and Gantts' structure.
 
-All connectors' appearance might be edited by using usual methods such as {api**}.stroke()**{api}, {api}**.fill()**{api} or by choosing the theme you prefer. 
+All connectors' appearance can be edited by using usual methods such as {api**}.stroke()**{api}, {api}**.fill()**{api} or by choosing the theme you prefer. 
 <table width="700" border="1" class="dtTABLE">
 <tbody><tr>
 <th width="175"><b>Compound action</b></th>
@@ -27,7 +26,7 @@ All connectors' appearance might be edited by using usual methods such as {api**
 </tr>
 
 <tr>
-<td colspan=4>Timeline part</td>
+<th colspan=4><b>Timeline part</b></th>
 </tr>
 
 <tr>
@@ -96,7 +95,7 @@ Progress slider shows the progress of an action
 </tr>
 
 <tr>
-<td colspan=4>Datagrid part</td>
+<th colspan=4><b>Data Grid part</b></td>
 </tr>
 
 <tr>
@@ -131,7 +130,7 @@ At first, you can change the structure of the Gantt by simply dragging any eleme
 
 <img>
 
-However, it's not possible to make a parent item its own child, while you can put that parent item with all its children inside another gantt root.
+However, it's not possible to make a parent item its own child, while you can put that parent item with all its children inside another root data item.
 
 Then, our parental items can be expanded and collapsed. Just click once on the "+"/"-" sign or double-click the row with the item (this might be prevented with the usage of [Event Listeners](../Common_Settings/Event_Listeners)).
 
@@ -156,13 +155,13 @@ Note that it's not possible to drop connectors into a baseline, as they cannot h
 
 Progress
 
-Another difference between the behaviour of the actual time bar and its baseline is in having progress.
+Another difference between the behavior of the actual time bar and its baseline is in having progress.
 You may notice that some of the actual time bars are colored differently and the progress part is of dark color. Those are the intervals of parent items, so when you change their progress, you change the progress for the whole group.
 
 
 Baseline changing
 
-As we have already noticed, the baseline bar looks and behaves almost like an actual time bar, with the dufference of not having any progress and connectors, as it shows the planned time. We can change its  position in time and whole its duration using the same controls as actual time bars have.
+As we have already noticed, the baseline bar looks and behaves almost like an actual time bar, with the difference of not having any progress and connectors, as it shows the planned time. We can change its  position in time and whole its duration using the same controls as actual time bars have.
 
 
 Milestones
@@ -175,4 +174,3 @@ You cannot change the duration of a milestone as they have no duration, but you 
 When you set the connectors, make an end date later or a start date earlier than a gantt screen displays, it will start scrolling automatically. Also, in live mode the Gantt scales can automatically grow when we overcome the min amd max scale values while scrolling.
 
 
-Может тут сделать картинками, а не пример? оО
