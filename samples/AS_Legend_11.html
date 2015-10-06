@@ -23,7 +23,7 @@
   for (var i = 0; i<dataSet.mapAs().getRowsCount();i++)
     total+=dataSet.mapAs().get(i,"value");
   
-  var chart = anychart.line(dataSet);
+  var chart = anychart.pie(dataSet);
   
   // legend settings
   var legend = chart.legend();

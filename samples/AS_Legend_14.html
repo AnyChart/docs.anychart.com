@@ -32,17 +32,17 @@
   var chart2005 = anychart.line();
   
   // set chart series and tooltips
-  chart2005.spline(data2005.mapAs({x: [0], value: [1]})).tooltip().contentFormatter(function(){return 'Name: Jhon\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
-  chart2005.spline(data2005.mapAs({x: [0], value: [2]})).tooltip().contentFormatter(function(){return 'Name: Jake\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
-  chart2005.spline(data2005.mapAs({x: [0], value: [3]})).tooltip().contentFormatter(function(){return 'Name: Peter\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
+  chart2005.spline(data2005.mapAs({x: [0], value: [1]})).tooltip().textFormatter(function(){return 'Name: Jhon\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
+  chart2005.spline(data2005.mapAs({x: [0], value: [2]})).tooltip().textFormatter(function(){return 'Name: Jake\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
+  chart2005.spline(data2005.mapAs({x: [0], value: [3]})).tooltip().textFormatter(function(){return 'Name: Peter\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
   
   // create second chart
   var chart2006 = anychart.line();
   
   // set chart series and tooltips
-  chart2006.spline(data2006.mapAs({x: [0], value: [1]})).tooltip().contentFormatter(function(){return 'Name: Jhon\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
-  chart2006.spline(data2006.mapAs({x: [0], value: [2]})).tooltip().contentFormatter(function(){return 'Name: Jake\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
-  chart2006.spline(data2006.mapAs({x: [0], value: [3]})).tooltip().contentFormatter(function(){return 'Name: Peter\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
+  chart2006.spline(data2006.mapAs({x: [0], value: [1]})).tooltip().textFormatter(function(){return 'Name: Jhon\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
+  chart2006.spline(data2006.mapAs({x: [0], value: [2]})).tooltip().textFormatter(function(){return 'Name: Jake\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
+  chart2006.spline(data2006.mapAs({x: [0], value: [3]})).tooltip().textFormatter(function(){return 'Name: Peter\nYear: 2005\n'+this.x+'\nResult: '+this.value;});
   
   
   // create variables for legend
