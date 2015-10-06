@@ -2,11 +2,11 @@
 
 * [Overview](#overview)
 * [Listener Types](#listener_types)
-  * [listen](#listen())
-  * [listenOnce](#listenonce())
-  * [removeAllListeners](#removealllisteners())
-  * [unlisten](#unlisten())
-  * [unlistenByKey](#unlistenByKey())
+  * [listen](#listen)
+  * [listenOnce](#listenonce)
+  * [removeAllListeners](#removealllisteners)
+  * [unlisten](#unlisten)
+  * [unlistenByKey](#unlistenbykey)
 * [Event types](#event_types)
   * [Mouse-related](#mouse-related)
   * [Point-related](#point-related)
@@ -24,6 +24,7 @@ There are 5 listener methods ({api:anychart.core.Base.listen}**.listen()**{api},
 
 There are five listener methods in Anychart, each type for a special case. Read the following information to find out how to use listeners.
 
+<a name="listen"></a>
 ###listen()
 
 This listener type adds an event listener to an implementing object. You can add the {api:anychart.core.Base.listen}**.listen()**{api} method to an object more than once (but not to an event); each time it's added its key is returned.
@@ -44,6 +45,7 @@ Look at the sample and through its code. It's necessary to define the event type
 
 {sample}CMN\_Event\_Listener\_01{sample}
 
+<a name="listenonce"></a>
 ###listenOnce()
 
 This listener type adds an event listener, that should react only once. It means that when the defined event happens for the first time, this listener reacts and then disables itself, so there will be no reaction when the event happens again.
@@ -62,6 +64,7 @@ It's necessary to define the event type and the action to perform to get any rea
 
 {sample}CMN\_Event\_Listener\_02{sample}
 
+<a name="removealllisteners"></a>
 ###removeAllListeners()
 
 This listener type removes all event listeners from the object, unless you define the particular type.
@@ -78,7 +81,7 @@ You can add the {api:anychart.core.Base.removeAllListeners}**.removeAllListeners
 
 Note that when you intend to stop listen to an only event or all of them, you should add an {api:anychart.core.Base#unlisten}**.unlisten()**{api} method from inside of the {api:anychart.core.Base#listen}**.listen()**{api} one. 
 
-
+<a name="unlisten">
 ###unlisten()
 
 This listener type disables the particular listener added using the {api:anychart.core.Base.listen}**.listen()**{api} or {api:anychart.core.Base.listenOnce}**.listenOnce()**{api} methods. You can add the {api:anychart.core.Base.unlisten}**.unlisten()**{api} method to an object more than once. The method requires the same parameters as the listener which is removing with this.  
@@ -108,6 +111,7 @@ To stop listen to the particular action, place an {api:anychart.core.Base.unlist
 
 {sample}CMN\_Event\_Listener\_04{sample}
 
+<a name="unlistenbykey">
 ###unlistenByKey()
 
 This listener type removes an event listener which was added with {api:anychart.core.Base.listen}**.listen()**{api} by the key returned by {api:anychart.core.Base.listen}**.listen()**{api} or {api:anychart.core.Base.listenOnce}**.listenOnce()**{api}. The only parameter of this method is the key to be listened to.
