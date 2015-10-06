@@ -12,16 +12,15 @@
     {x: "Chocolate paste", value: 5},
     {x: "White honey", value: 2},
     {x: "Strawberry jam", value: 2},
-    {x: "Сondensed milk", value: 1},
+    {x: "Сondensed milk", value: 1}
   ];
 
   // create default palette
-  var palette = anychart.palettes.distinctColors().colors();
+  var palette = anychart.palettes.distinctColors().items();
 
   // color elements
-  for (var index in data){
+  for (var index in data)
       data[index].fill = palette[index];
-  }
 
   // set chart type
   var chart = anychart.bar();
@@ -30,17 +29,10 @@
   var series = chart.bar(data);
 
   // disable tooltips
-  series.tooltip().enabled(false);
-
-  // disable background
-  chart.background().enabled(false);
-
-  // disable axes titles
-  chart.xAxis().title().enabled(false);
-  chart.yAxis().title().enabled(false);
+  series.tooltip(false);
 
   // set chart title
-  chart.title().text("The kind of pancakes preferred at the Sochi 2014 Olympic Games").hAlign("center");
+  chart.title("The kind of pancakes preferred at the Sochi 2014 Olympic Games");
 
   // set chart container
   chart.container("container");
@@ -68,20 +60,23 @@
   pdfButton.innerHTML = "PDF";
 
   pngButton.onclick = function() {
-      chart.saveAsPNG();
+    chart.saveAsPNG();
   };
   svgButton.onclick = function() {
-      chart.saveAsSVG();
+    chart.saveAsSVG();
   };
   jpgButton.onclick = function() {
-      chart.saveAsJPG();
+    chart.saveAsJPG();
   };
   pdfButton.onclick = function() {
-    chart.container().height(842).width(595);
+    var container = chart.container();
+    container.height(842);
+    container.width(595);
     chart.bounds(0, 0, 595, 842);
     chart.saveAsPDF();
-    chart.container().height("100%").width("100%");
-    chart.bounds(0, 0, chart.container().width()-35, chart.container().height());
+    container.height("100%");
+    container.width("100%");
+    chart.bounds(0, 0, container.width()-35, container.height());
   };
 
   // append button to container

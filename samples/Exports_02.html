@@ -19,9 +19,8 @@
   var palette = anychart.palettes.distinctColors().colors();
 
   // color elements
-  for (var index in data){
+  for (var index in data)
       data[index].fill = palette[index];
-  }
 
   // set chart type
   var chart = anychart.bar();
@@ -30,7 +29,7 @@
   var series = chart.bar(data);
 
   // disable tooltips
-  series.tooltip().enabled(false);
+  series.tooltip(false);
 
   // disable background
   chart.background().enabled(false);
