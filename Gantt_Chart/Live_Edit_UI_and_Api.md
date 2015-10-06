@@ -7,7 +7,7 @@
  * [TimeLine](#timeline)
  
 # Overview
-The Live Edit mode allows you to edit any part of your Gannt without touching the code. All you need to do is to use the mouse to change the duration, position or connectons.
+The Live Edit mode allows you to edit any part of your Gannt without touching the code. All you need to do is to use the mouse to change the duration, position or connections.
 
 In this article we will consider the "editing mode" of AnyGantt. For simplifying the material, there are two paragraphs for Timeline and Data Grid. 
 
@@ -25,6 +25,11 @@ All connectors' appearance might be edited by using usual methods such as {api**
 <th width="175"><b>Typical effect</b></th>
 <th width="175"><b>Pointers</b></th>
 </tr>
+
+<tr>
+<td colspan=4>Timeline part</td>
+</tr>
+
 <tr>
 <td>Connectors creating</td>
 <td>Position the pointer over the connector thumb of an interval or a milestone, press the button and move the mouse. If you haven't pointed the interval you want to connect with, there is a dashed line drawn to help the user not to get lost; it is possible to scroll the timeline while dragging the connector line inside the scale total range. If you hover the bar you want to connect with, there's a final connector preview shows up. Release the mouse button. If you are hovering the interval bar and watching the final connector preview, there will be the {api}**.beforeCreateConnector()**{api} event dispatched by the chart diagram (or by its timeline, depends on the way the chart was built) unless it was prevented. Then, if you release the mouse, the connector will be created and the intervals will become logically connected. If the {api}**.beforeCreateConnector()**{api} event was prevented, no connector will be created.
@@ -41,7 +46,7 @@ A pointer that is shown when a connector thumb is hovered
 <br>
 The connector thumb shown when the interval is hovered
 <br>
-<img src ="http://static.anychart.com/images/dashed_connector.png" alt="Connector dashes" />
+<img src ="http://static.anychart.com/images/dashed_connector.jpg" alt="Dashed connector" />
 <br>
 The unconnected connector line
 <br>
@@ -52,7 +57,7 @@ That's how the final connector looks like
 </tr>
 <tr>
 <td>Resizing</td>
-<td>Hover the resizing thumb, press the left mouse button and drag the cursor. You will see the dashed contour - a preview of the interval duration. You can drag it to any date you need, the scale range will be automatically lengthened if necessary. When you release the button, the "update" event will be dispathed by the gantt tree. Find more information about tree events [here](../Working_with_Data/Data_Tree_Model).</td>
+<td>Hover the resizing thumb, press the left mouse button and drag the cursor. You will see the dashed contour - a preview of the interval duration. You can drag it to any date you need, the scale range will be automatically lengthened if necessary. When you release the button, the "update" event will be dispatched by the gantt tree. Find more information about those events downwards.</td>
 <td>The actual time or the baseline interval becomes longer of shorter</td>
 <td>
 
@@ -65,7 +70,7 @@ The horizontal resizer
 </tr>
 <tr>
 <td>Drag&drop</td>
-<td>Hover the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically)</td>
+<td>Hover the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically). The gantt will dispatch the "update" event immediately. Read about gantt events in the following.</td>
 <td>Drags the interval through the time <!-->and space<--> without lengthening or shortening it.</td>
 <td>
 
@@ -78,15 +83,43 @@ The dragger
 </tr>
 <tr>
 <td>Progress resizing</td>
-<td>Hover the border of the progress part and the rest of the actual time and press the button when the pointer is of progress resizing type.</td>
-<td>Lengthens or shortens the .</td>
+<td>Hover the border between the progress part and the rest of the actual time bar and press the button when the pointer is of progress resizing type. Drag it and drop where needed. At this moment the gantt tree dispatches the "update" event. Read more about events below.</td>
+<td>Lengthens or shortens the progress part of the bar.</td>
 <td>
 
-<img src ="http://static.anychart.com/images/progress_slider.png" alt="Progress_slider" />
+<img src ="http://static.anychart.com/images/progress_slider.png" alt="Progress slider" />
 <br>
 Progress slider shows the progress of an action
 <br>
 
+</td>
+</tr>
+
+<tr>
+<td colspan=4>Datagrid part</td>
+</tr>
+
+<tr>
+<td>Changing the Gantt structure</td>
+<td>Hover the row (item), press the button and drag it to wherever you need. When you release the button, the tree will dispatch the "move" event. Note that there are some situations when you cannot change the structure: it's not possible to make the item a child of itself and a milestone is not able to have children.</td>
+<td>Changes the gantt structure visually and logically.</td>
+<td>
+<!-->
+<img src ="http://static.anychart.com/images/progress_slider.png" alt="Hovering and choosing cursor" />
+<br>
+The cursor becomes of this type when we hover and press the button on the item.
+<br>
+
+<img src ="http://static.anychart.com/images/progress_slider.png" alt="Forbid the operation" />
+<br>
+We see this symbol when we hover the item we cannot drop the dragged one into.
+<br>
+
+<img src ="http://static.anychart.com/images/progress_slider.png" alt="A between stroke and cursor" />
+<br>
+The cursor becomes of this type when we hover and press the button on the item.
+<br>
+<-->
 </td>
 </tr>
 </tbody></table>
