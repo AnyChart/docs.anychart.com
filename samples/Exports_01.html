@@ -20,7 +20,7 @@
 
   // color elements
   for (var index in data)
-      data[index].fill = palette[index];
+    data[index].fill = palette[index];
 
   // set chart type
   var chart = anychart.bar();
@@ -30,6 +30,8 @@
 
   // disable tooltips
   series.tooltip(false);
+
+  series.stroke(null);
 
   // set chart title
   chart.title("The kind of pancakes preferred at the Sochi 2014 Olympic Games");

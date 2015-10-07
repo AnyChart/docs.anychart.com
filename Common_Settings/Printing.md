@@ -28,7 +28,7 @@ It is not a problem to print several charts or the whole dashboard using AnyChar
 
 ```
   // stage to print
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
 
   // place charts on stage
   column.container(stage);
