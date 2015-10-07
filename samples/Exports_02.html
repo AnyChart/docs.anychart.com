@@ -31,9 +31,6 @@
   // disable tooltips
   series.tooltip(false);
 
-  // disable background
-  chart.background().enabled(false);
-
   // set chart title
   chart.title().text("The kind of pancakes preferred at the Sochi 2014 Olympic Games").hAlign("center");
 
@@ -42,10 +39,6 @@
 
   // set chart bounds
   chart.bounds(0, 0, chart.container().width()-35, chart.container().height());
-
-  // disable axes titles
-  chart.xAxis().title().enabled(false);
-  chart.yAxis().title().enabled(false);
 
   // initiate chart drawing
   chart.draw();
