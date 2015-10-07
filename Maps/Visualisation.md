@@ -125,7 +125,7 @@ You may define the colors you want to use in your map as an array using {api}**.
 {sample}Maps\_Visualisation\_05{sample}
 
 Note that you should define as many colors as there are regions you've got on the map, i.e. each color refers to one series.
-
+<!--
 #### Using object 
 <!--не работает-->
 
@@ -138,7 +138,7 @@ You may define the colors you want to use in your map as an object using {api}**
 {sample}Maps\_Visualisation\_06{sample}
 
 When setting colors through object, you may define only the first and the last colors, the final number of colors (series) you need and the palette type (which can be "range" or "distinct").
-
+-->
 #### Using RangeColors
 
 For using rangeColors you should create a new palette and set colors and number of them to it. Use method {api:anychart.palettes.RangeColors}**.anychart.palettes.rangeColors()**{api} to create the palette.
