@@ -3,9 +3,11 @@
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
+    <meta name="x-cat-tags" content="this_sample_is_hidden"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">var chart, lineChart, stage;
+    <script x-export="chart">
+        var chart, lineChart, stage;
     anychart.onDocumentReady(function () {
 
     // set stage
@@ -80,7 +82,6 @@
             {x: "Nov", value: dataRow[7], fill: "#0099CC"},
             {x: "Dec", value: dataRow[8], fill: "#520085"}
         ]);
-        console.log(lineDataSet);
         lineSubTitle = "\nfor "+ dataRow[0] + " year";
 
         var lineSubTitle;
@@ -112,14 +113,15 @@
             lineSubTitle = "\nfor "+ dataRow[0] + " year";
 
             lineChart.line(lineDataSet);
-            lineChart.titlepieTitle;
+            //lineChart.titlepieTitle;
 
             lineChart.title(pieTitle + lineSubTitle);
         });
     // draw
-        lineChart.container(stage).draw();
+    lineChart.container(stage).draw();
     chart.container(stage).draw();
-});</script>
+});
+    </script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

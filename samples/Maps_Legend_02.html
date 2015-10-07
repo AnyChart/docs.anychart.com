@@ -5,7 +5,7 @@
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
-    <script src="http://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
+    <script src="../anychart-bundle.min.js"></script>
     <script src="http://cdn.anychart.com/geodata/countries/usa/usa_mainland.js" data-export="true"></script>
     <script x-export="stage">var dataSet = anychart.data.set([
   {id: 'US-MN', name: "Minnesota", 'value': 8.4},
@@ -53,8 +53,8 @@ anychart.onDocumentReady(function() {
   series.labels().fontSize(10).fontColor('#212121').textFormatter(function(){
 	return (this.name+'\n'+this.value);
   });
-  series.tooltip().content().textWrap('byLetter').useHtml(true);
-  series.tooltip().contentFormatter(function() {
+  series.tooltip().textWrap('byLetter').useHtml(true);
+  series.tooltip().textFormatter(function() {
     return '<span style="font-size: 13px">' + '$ ' + this.value + 'm </span>';
   });
   series.colorScale(anychart.scales.linearColor('#E08529', '#753D05'));

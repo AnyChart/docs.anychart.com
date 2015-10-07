@@ -26,22 +26,22 @@
   title.container(stage);
   title.draw();
 
-  // set position and data for the first line
-  var pie = anychart.line(data);
-  line.title("No sorting");
-  line.bounds(0, stage.height()*0.1, "33.3%", "90%");
-  formatPie(line);
+  // set position and data for the first pie
+  var pie = anychart.pie(data);
+  pie.title("No sorting");
+  pie.bounds(0, stage.height()*0.1, "33.3%", "90%");
+  formatPie(pie);
 
-  // set position and data for the second line
-  var pie_asc = anychart.line(data);
+  // set position and data for the second pie
+  var pie_asc = anychart.pie(data);
   pie_asc.title("Ascending");
   // set sorting mode
   pie_asc.sort("asc");
   pie_asc.bounds("33.3%", stage.height()*0.1, "33.3%", "90%");
   formatPie(pie_asc);
 
-  // set position and data for the third line
-  var pie_desc = anychart.line(data);
+  // set position and data for the third pie
+  var pie_desc = anychart.pie(data);
   pie_desc.title("Descending");
   // set sorting mode
   pie_desc.sort("desc");
@@ -49,12 +49,12 @@
   formatPie(pie_desc);
   
   function formatPie(pie){
-    line.legend(false);
-    line.background(null);
-    var labels = line.labels();
+    pie.legend(false);
+    pie.background(null);
+    var labels = pie.labels();
     labels.fontSize(9);
-    line.container(stage);
-    line.draw();
+    pie.container(stage);
+    pie.draw();
   }
 });</script>
 </head>
