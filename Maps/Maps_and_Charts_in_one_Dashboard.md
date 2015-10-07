@@ -17,7 +17,7 @@ You may create such maps that will show some statistics for regions on click or 
 
 First of all, look at the simple dashboard with an only map and an only chart.
 
-{sample :width 690 :height 350}Maps\_Dashboard\_01{sample}
+{sample :width 690 :height 450}Maps\_Dashboard\_01{sample}
 
 ```
 	stage = anychart.graphics.create("container");
