@@ -13,7 +13,7 @@ Include the JavaScript file in the `<head>` section of your web page - visit the
 ```
 
 ###2. Create a Container for the Chart
-Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. AnyChart uses 100% of the container if other behaviour is not specified. 
+Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. AnyChart uses 100% of the container if other behavior is not specified. 
 Example:
 ```
 <body>
@@ -23,7 +23,7 @@ Example:
 
 ###3. Prepare your Data
 
-When you work with other charts, you use {api:anychart.data#set}**anychart.data.set()**{api} to set the data, and there are more than one way to do it (you can set the date as objects or arrays, also CSV, JSON amd XML)
+When you work with other charts, you use {api:anychart.data#set}**anychart.data.set()**{api} to set the data, and there are more than one way to do it (you can set the date as objects or arrays, also CSV, JSON and XML)
 When you work with AnyStock, you need to use {api:anychart.data#table}**anychart.data.table()**{api} and {api:anychart.data.Table#addData}**.addData()**{api}.
 
 ```
@@ -51,7 +51,7 @@ table = anychart.data.table();
   ]);
 ```
 
-We may use quotes or not, because our data is numerical except the dateTime, which should be defined as above (in UTC format) or as in the following line, which is equivalent to the first data point of the array set above:
+We may use quotes or not, because our data is numerical except the dateTime, which should be defined as above (in UTC format) or as in the following line, which is equal to the first data point of the array set above:
 
 ```
 		[Date.UTC(2015, 12, 24, 12, 00, 00), 511.53, 514.98, 505.79, 506.40],
@@ -60,7 +60,7 @@ We may use quotes or not, because our data is numerical except the dateTime, whi
 Also you can set the data with no formatting - as a timestamp string.
 
 
-After we have set the data, we need to map it using the {api:anychart.data#mapAsTable}**.mapAs()**{api} and {api:anychart.data.TableMapping#addField}**.addField()**{api} methods. We need to define which value we set, then the value itself and the {api:anychart.enums.AggregationType}aggregation type{api}. The last are necesssary when you've got loads of information shown on a chart and you want got to group it.
+After we have set the data, we need to map it using the {api:anychart.data#mapAsTable}**.mapAs()**{api} and {api:anychart.data.TableMapping#addField}**.addField()**{api} methods. We need to define which value we set, then the value itself and the {api:anychart.enums.AggregationType}aggregation type{api}. The last are necessary when you've got loads of information shown on a chart and you want got to group it.
 
 ```
 	mapping = table.mapAs();
@@ -76,7 +76,7 @@ For activating the AnyStock chart we use {api:anychart#stock}.stock(){api}:
 	chart = anychart.stock();
 ```
 <br>
-Due to specialty of stock charts, it may have more than one plot and a plenty of series, and the chart itself cannot create a series. So it means that you have to define {api:anychart.charts.Stock#plot}.plot(){api}:
+Due to specialty of stock charts, it can have more than one plot and a plenty of series, and the chart itself cannot create a series. So it means that you have to define {api:anychart.charts.Stock#plot}.plot(){api}:
 ```
 	chart.plot(0).ohlc(mapping);
 ```
