@@ -32,7 +32,8 @@ That's what happens by default when users interact with charts:
  - a number of series are selected (multi-selecting)
 
 Lets' now take a look at a couple of samples with default interactivity settings.
-<br>
+  
+  
 Here we've got a line chart with three series and a legend enabled. Click on legend items to hide/show series.
 
 You can see the code of this sample in the playground.
@@ -51,7 +52,7 @@ And now let's talk about customising the charts' behaviour. There are two levels
 
 We can make some changes in charts behaviour using the {api:anychart.core.utils.Interactivity}**.interactivity()**{api} method. It helps to adjust hover and select settings, as well as create a "highlighting area" - a spot of a custom-defined radius that highlights (hovers) all points within that radius.
 
-So, if we need to change something with hover, we should use {api:anychart.core.utils.Interactivity#hoverMode}**.hoverMode()**{api} with an argument "bySpot" or "byX". In first case we may adjust the radius of a "spot",  making it bigger or smaller.
+So, if we need to change something with hover, we should use {api:anychart.core.utils.Interactivity#hoverMode}**.hoverMode()**{api} with an argument "bySpot" or "byX". In first case we may adjust the radius of a "spot", making it bigger or smaller.
 
 There are also two basic events: hover and select.
 
@@ -64,9 +65,10 @@ Our interactive hover might be of two types: "bySpot", which is a sort of multi-
 So the hover of bySpot type (with a Spot of 30px radius) is being enabled by the following line:
 
 ```
-// multi-hover enabling 
-chart.interactivity().hoverMode('bySpot');
-chart.interactivity().spotRadius(30);
+  // multi-hover enabling 
+  var interactivity = chart.interactivity();
+  interactivity.hoverMode("bySpot");
+  interactivity.spotRadius(30);
 ```
 {sample}CS\_Interactivity\_03{sample}
 
@@ -77,8 +79,8 @@ This way of hovering, when a couple of points are hovered simultaneously, is a m
 Note that you can define the mode in a easier way:
 
 ```
-// single-hover enabling 
-chart.interactivity('byX');
+  // single-hover enabling 
+  chart.interactivity('byX');
 ```
 
 The code line above does the same as the previous one, but we have changed the hovering mode. The following sample demonstrates the difference:
@@ -86,15 +88,15 @@ The code line above does the same as the previous one, but we have changed the h
 {sample}CS\_Interactivity\_04{sample}
 
 So, the "byX" mode gives us a single-hover mode, when it even isn't necessary to hover the point, you just need to move the cursor over the chart plot. So the y-coordinate doesn't matter at all in this case. It might be useful when you've got a lot of points on a chart and you need to emphasize them.
-
-<br>
+  
+  
 Now, let's have a look at the <b>select and multi-select</b> features.
-
 
 ### Select
 
 If you want to change the selection settings, use the {api:anychart.core.utils.Interactivity#selectionMode}**.selectionMode()**{api} method with one of the following arguments: "none", "singleSelect" or "multiSelect". The "none" value disables the ability to select completely, "singleSelect" disables multi-select and "multiSelect" is the default.
-
+  
+  
 The **Shift** key is used as it is usually used with selection: if you need to select several points, hold **Shift** key while clicking them one by one.
 Selection feature is enabled by default, to switch it off do the following:
 

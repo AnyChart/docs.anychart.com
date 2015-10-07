@@ -71,10 +71,10 @@ This listener type removes all event listeners from the object, unless you defin
 You can add the {api:anychart.core.Base.removeAllListeners}**.removeAllListeners()**{api} method to an object more than once.
 
 ```
-    //remove all listeners
-    chart.listen("dblclick", function(){
-        chart.removeAllListeners();
-    });  
+  //remove all listeners
+  chart.listen("dblclick", function(){
+    chart.removeAllListeners();
+  });
 ```
 
 {sample}CMN\_Event\_Listener\_03{sample}
@@ -209,7 +209,8 @@ For further information, see the example below.
 ```
 	//add a listener
   chart.listen("mouseDown", function(){
-    window.open("http://google.com","_blank");  // this will open a new page in a new tab
+    // this will open a new page in a new tab
+    window.open("http://google.com","_blank");
 	});
 ```
 
@@ -245,5 +246,3 @@ When a point is clicked once, it is recolored.
 ```
 
 {sample}CMN\_Event\_Listener\_07{sample}
-
-
