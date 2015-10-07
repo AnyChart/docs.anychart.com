@@ -38,7 +38,7 @@ Visual settings control:
 
 ### Fill
 
-With AnyChart it is possible to color background of any cell with a solid color, with a gradient transition or fill it with an image. It can be achieved with {api:anychart.ui.Table#cellFill}**.cellFill()**{api} method.
+With AnyChart html5 charting framework it is possible to color background of any cell with a solid color, with a gradient transition or fill it with an image. It can be achieved with {api:anychart.ui.Table#cellFill}**.cellFill()**{api} method.
   
   
 This section contains information on colorizing the whole table and each of the cells separately. To find out all possible ways of controlling background color, please see [Fill tutorial](../Appearance_Settings/Fill).
@@ -68,7 +68,7 @@ Here is the sample with "#FFFFFF" background color for all cells in even rows an
 
 #### Cell Fill
 
-For emphasizing attention on one of the cells, it can be colorized in unique way. Background color of a certain cell is controlled by parameter {api:anychart.graphics.vector.Fill}**.fill()**{api}. and it should be applied to the cell itself.
+For emphasizing attention on one of the cells, it can be colorized in unique way. Background color of a certain cell is controlled by parameter {api:anychart.graphics.vector.Fill}**.fill()**{api} and it should be applied to the cell itself.
 
 ```
   var cell = table.getCell(0,1);  // Get a cell from the first row in second column

@@ -75,6 +75,6 @@ Just change default series type to "stepArea" and get your data displayed in mor
   chart.stepArea(seriesData_1);
 ```
 
-Here is a sample step stacked area chart:
+Here is a sample html5 step stacked area chart:
 
 {sample}BCT_Stacked\_Area-SplineArea\_Charts\_03{sample}

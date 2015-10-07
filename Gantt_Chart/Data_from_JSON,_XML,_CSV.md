@@ -10,7 +10,7 @@
 
 ## Overview
 
-AnyChart supports several ways of setting data. This article quickly demonstrates main aspects of using JSON, XML and CSV format in AnyChart Gantt. 
+AnyChart js charting framework supports several ways of setting data. This article quickly demonstrates main aspects of using JSON, XML and CSV format in AnyChart Gantt. 
 
 The main difference between using any of these format types is that in JSON the chart configuration is presented as an object, in XML it is a string, and both of them may contain some extra information, such as color and size settings or other design features. CSV format can be used to convert only the data, no extra information can be added in this case.
   

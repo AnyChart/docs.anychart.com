@@ -7,14 +7,14 @@
 
 ##Overview
 
-AnyChart supports the possibility to handle Gantt Chart events. In this tutorial we will list all available events, 
+AnyChart charting library supports the possibility to handle Gantt Chart events. In this tutorial we will list all available events, 
 explain when they are dispatched and what data is available in them. There is also some useful information about how to create an event handler and how to use the data coming from AnyGantt.
 
 First, you need to create a listener to handle the specific event. In general [Event Listeners Article](../Common_Settings/Event_Listeners#listener_types) you can find more information about creating these  JavaScript functions.
 
 ## Event Types
 
-It is important to keep in mind that Resource Gantt Chart and Project Gantt Chart are almost identical in terms of data hierarchy. 
+It is important to keep in mind that JavaScript Resource Gantt Chart and JavaScript Project Gantt Chart are almost identical in terms of data hierarchy. 
 
 So the information presented below applies to both chart types, except some details.
 These are events available for Gantt Chart:

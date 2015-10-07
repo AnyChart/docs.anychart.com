@@ -14,7 +14,7 @@
 
 ## Overview
 
-AnyChart supports several ways of setting data. This article quickly demonstrates main aspects of using XML format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [Using Data Sets](Using_Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
+AnyChart JavaScript charting framework supports several ways of setting data. This article quickly demonstrates main aspects of using XML format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [Using Data Sets](Using_Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
   
   
 XML or Extensible Markup Language, is a markup language that defines a set of rules for encoding documents in a format which is both human-readable and machine-readable. Originally designed to meet the challenges of large-scale electronic publishing, XML is also playing an increasingly important role in the exchange of a wide variety of data on the Web and elsewhere. More information on XML can be found on [http://en.wikipedia.org/wiki/XML](http://en.wikipedia.org/wiki/XML)
@@ -629,6 +629,6 @@ chart.textMarker(2)
 
 ## Complex
 
-Previous samples demonstrate separate additional features. Next sample is a bit more complex. It demonstrates cartesian chart with several different series and customized chart elements.
+Previous samples demonstrate separate additional features. Next sample is a bit more complex. It demonstrates JavaScript cartesian chart with several different series and customized chart elements.
 
 {sample}WD\_Data\_from\_XML\_12{sample}

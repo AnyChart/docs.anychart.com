@@ -13,7 +13,7 @@ Include the JavaScript file in the `<head>` section of your web page - visit the
 ```
 
 ###2. Create a Container for the Chart
-Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. AnyChart uses 100% of the container if other behaviour is not specified. 
+Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. AnyChart charting library uses 100% of the container if other behaviour is not specified. 
 Example:
 ```
 <body>
@@ -22,7 +22,7 @@ Example:
 ```
 ###3. Prepare your Data
 
-Gantt Chart provides quite a few opportunities to work with data (such as setting [tree like hierarchy with parent/child division](../Working_with_Data/Using_Data_Tree_Model)), thus it requires preparing data before usage. Raw data set for Gantt chart may look like this:
+Gantt Chart provides quite a few opportunities to work with data (such as setting [tree like hierarchy with parent/child division](../Working_with_Data/Using_Data_Tree_Model)), thus it requires preparing data before usage. Raw data set for html5 Gantt chart may look like this:
 
 ```
  var rawData = [

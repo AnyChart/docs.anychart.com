@@ -16,7 +16,7 @@ Rendering capability of AnyChart components is based on anychart.graphics librar
 
 ###Enabling the stage
 
-When we start working with any graphic elements of AnyChart, the stage is created and enabled automatically, but in case this action was not defined directly, there's not much can be done with it.
+When we start working with any graphic elements of AnyChart charting library, the stage is created and enabled automatically, but in case this action was not defined directly, there's not much can be done with it.
 To get an access to some useful settings of the stage we should do a custom creation of the stage:
 
 ```

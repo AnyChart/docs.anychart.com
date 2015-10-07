@@ -59,7 +59,7 @@ And here is an example of multiple-key linear gradient:
 ### Fill modes
 
 #### ObjectBoundingBox without angle value preservation
-In this mode, gradient vector is calculated with the preset angle, but the result gradient angle on the rendered page can be changed if the object proportion is not 1:1 in the browser. So visually the result gradient angle may **not correspond** to the original settings.
+In this mode, AnyChart charting framework calculates gradient vector with the preset angle, but the result gradient angle on the rendered page can be changed if the object proportion is not 1:1 in the browser. So visually the result gradient angle may **not correspond** to the original settings.
 
 #### ObjectBoundingBox with angle value preservation
 In this mode the result angle will visually correspond the original setting, non regarding browser scaling duplication (so, for objects that do not have 1:1 proportion with the original figure, the gradient angle will correspond to the initial value due to internal calculations).

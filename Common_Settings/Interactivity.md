@@ -19,7 +19,7 @@ Interactivity
 
 # Overview 
 
-Our charts are interactive by default, and almost everything can be adjusted to your liking. This article describes the default charts behaviour and tells how to adjust charts' interactivity settings.
+Our js charts are interactive by default, and almost everything can be adjusted to your liking. This article describes the default charts behaviour and tells how to adjust charts' interactivity settings.
 
 # Default interactivity
 
@@ -172,7 +172,7 @@ Note that if there is no arguments for the {api:anychart.core.SeriesBase#select}
 
 If you need the whole series being selected as the chart is created, don't define the arguments at all. Try to do that in playground and see what difference it makes.
 
-Some of our charts might have something specific about their series - for example, maps or OHLC charts. Those components and charts have special setting for selections.
+Some of our html5 charts might have something specific about their series - for example, maps or OHLC charts. Those components and charts have special setting for selections.
 
 We can adjust the color of selection using the {api:anychart.core.cartesian.series.Column#selectFill}**.selectFill**{api} (or {api:anychart.core.cartesian.series.Column#selectHatchFill}**.selectHatchFill**{api} for monochromatic), the selection stroke color - {api:anychart.core.cartesian.series.Column#selectStroke}**.selectStroke()**{api}. 
 
