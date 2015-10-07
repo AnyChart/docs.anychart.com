@@ -120,7 +120,7 @@ Look at the sample and its code. It's necessary to define the key of the listene
 
 ```
   //add a listener
-  var key = chart.listen('mouseMove', func_listen);
+  var key = chart.listen("mouseMove", func_listen);
   
   //unlisten this
   chart.listen(

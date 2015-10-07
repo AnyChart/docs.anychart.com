@@ -31,8 +31,7 @@
   chart.title("Click on the Chart to Add New Points");
 
   // set data
-  var spline = chart.spline(dataSet);
-  spline.markers(null);
+  chart.spline(dataSet);
 
   // disable stagger mode. Only one line for x axis labels
   var xAxis = chart.xAxis();

@@ -6,8 +6,8 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-    
-    var dataSet = anychart.data.set([
+
+  var dataSet = anychart.data.set([
     {x: "P1", value: 100},
     {x: "P2", value: 200},
     {x: "P3", value: 15},
@@ -31,19 +31,14 @@
   chart.title("Move the Mouse Over the Chart to Add New Points\nDoubleClick to Remove Listeners");
 
   // set data
-  var spline = chart.spline(dataSet);
-  spline.markers(null);
+  chart.spline(dataSet);
 
   // disable stagger mode. Only one line for x axis labels
   var xAxis = chart.xAxis();
   xAxis.staggerMode(false);
 
-  // set container and draw chart
-  chart.container("container");
-  chart.draw();
-  
   // first index for new point
-  var indexSetter = 21;
+  var indexSetter = 16;
   
   // create a function what to listen and then unlisten
   var func_listen = function(){
@@ -59,7 +54,7 @@
   };
   
   // add a listener
-  var listener = chart.listen("mouseMove", func_listen);
+  chart.listen("mouseMove", func_listen);
   
   var counter = 0;
   
@@ -73,6 +68,11 @@
   chart.listen("dblclick", function(){
     chart.removeAllListeners();     // click twice on any range bar to see the result
   });
+
+  // set container and draw chart
+  chart.container("container");
+  chart.draw();
+
 });</script>
 </head>
 <body>
