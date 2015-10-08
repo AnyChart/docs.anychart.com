@@ -3,11 +3,12 @@
 * [Overview](#overview)
 * [Defaults](#defaults)
  * [Controls](#controls) 
+ * [Events](#events) 
  * [Data Grid](#data_grid)
  * [TimeLine](#timeline)
  
 # Overview
-The Live Edit mode allows you to edit any part of your Gannt without touching the code. All you need to do is to use the mouse to change the duration, position or connections.
+The Live Edit mode allows you to edit any part of your Gantt without touching the code. All you need to do is to use the mouse to change the duration, position or connections.
 
 In this article we will consider the "editing mode" of AnyGantt.
 # Defaults
@@ -16,7 +17,7 @@ In this article we will consider the "editing mode" of AnyGantt.
 
 There are several pointer cursors you will see while working with AnyGantt. They are used to edit intervals and Gantts' structure.
 
-All connectors' appearance can be edited by using usual methods such as {api**}.stroke()**{api}, {api}**.fill()**{api} or by choosing the theme you prefer. 
+All controls' appearance can be edited by using usual methods such as {api}**.stroke()**{api}, {api}**.fill()**{api} or by choosing the theme you prefer. 
 <table width="700" border="1" class="dtTABLE">
 <tbody><tr>
 <th width="175"><b>Compound action</b></th>
@@ -69,7 +70,7 @@ The horizontal resizer
 </tr>
 <tr>
 <td>Drag&drop</td>
-<td>Hover the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically). The gantt will dispatch the "update" event immediately. Read about gantt events in the following.</td>
+<td>Hover the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically). The Gantt will dispatch the "update" event immediately. Read about Gantt events in the following.</td>
 <td>Drags the interval through the time <!--and space--> without lengthening or shortening it.</td>
 <td>
 
@@ -82,7 +83,7 @@ The dragger
 </tr>
 <tr>
 <td>Progress resizing</td>
-<td>Hover the border between the progress part and the rest of the actual time bar and press the button when the pointer is of progress resizing type. Drag it and drop where needed. At this moment the gantt tree dispatches the "update" event. Read more about events below.</td>
+<td>Hover the border between the progress part and the rest of the actual time bar and press the button when the pointer is of progress resizing type. Drag it and drop where needed. At this moment the Gantt tree dispatches the "update" event. Read more about events below.</td>
 <td>Lengthens or shortens the progress part of the bar.</td>
 <td>
 
@@ -101,7 +102,7 @@ Progress slider shows the progress of an action
 <tr>
 <td>Changing the Gantt structure</td>
 <td>Hover the row (item), press the button and drag it to wherever you need. When you release the button, the tree will dispatch the "move" event. Note that there are some situations when you cannot change the structure: it's not possible to make the item a child of itself and a milestone is not able to have children.</td>
-<td>Changes the gantt structure visually and logically.</td>
+<td>Changes the Gantt structure visually and logically.</td>
 <td>
 <!--
 <img src ="http://static.anychart.com/images/progress_slider.png" alt="Hovering and choosing cursor" />
@@ -123,6 +124,66 @@ The cursor becomes of this type when we hover and press the button on the item.
 </tr>
 </tbody></table>
 
+
+
+## Events
+
+When we change something in our shown Gantt diagram, we need to change it also inside of it, in its logic. That's where the events work.
+
+The Gantt tree will dispatch the "move" event when we change the position of any process/task. Gantt dispatch this when it catches the live mode changes in Gantts' structure made by user in live mode. It has several necessary fields: 
+
+ - "type", where you should put the object type (e.g. string)
+ - "source", where you should define the start point of your actual time bar
+ - "sourceIndex": this field shows the exact number (index) of the row which we are moving.
+ - "target": in this field there is an information about where you place your bar.
+ - "targetIndex": shows the exact index of the row we are putting our bar into (or between))
+ - "item": finally, this tells us about the bar we have dragged and dropped.
+
+ For example: we moved the parent item inside another parent item, making the Gantt tree arborize. Then the "move" event will be dispatched with these parameters:
+
+
+
+"Update" event will be dispatched by the Gantt tree when we change the duration of time intervals, names of the tasks, processes or something with the process children. For example, if you move an actual time bar of any task or process, there will be "update" event dispatched from that moved item because of changing the fields' values.
+
+There are necessary fields as well:
+
+- "type": the object type (item or what???)
+- "item": a DataItem object
+- "path":
+- "field": the field that value was changed
+- "value": the new value for the item field
+
+For example: we lengthen the baseline of a process. The default start date was 02/27, end date 03/03. The new dates are 02/27 to 08/03. So, there will be one field edited - "baselineEnd". Then the "update" event will have those parameters:
+
+The "create" event will be dispatched when we create a new object of any type in the Gantt tree. We have necessary fields here as well:
+- "type": the event type
+- "target": the name of the target where we're putting the new object in
+- "targetIndex": the index of our target
+- "item": a DataItem object
+
+
+When we remove an object, the Gantt tree dispatches the "remove" event. Its necessary fields are almost the same as the "create" event has:
+
+- "type": the event type;
+- "source": the name of the target where we're removing the object from;
+- "sourceIndex": the index of the source;
+- "item": a DataItem object.
+
+
+The "beforeCreateConnector" event is similar to the "create", but this is dispatched by the Gantt diagram opposite to Gantt tree in other events situations and, as it can be seen from its name, it is dispatched before the action itself, so it will not have any information about the source. To get this information we need to listen to the "update" event. The necessary fields of the "beforeCreateConnector" event are:
+
+- "type": the event type (e.g. anychart.enums.EventType.BEFORE_CREATE_CONNECTOR);
+- "source": which data item the connector starts from
+- "target": which data item the connector ends at (is connected to)
+- "connectorType": the connector type.
+There are necessary field for the Project Gantt, and when we deal with the Resource Gantt there will be more fields about periods (period objects and those indexes).
+
+
+remove - Удаление любого объекта, обязательные поля: type:string, source:DataItem (откуда), sourceIndex:number (откуда конкретно), item:DataItem (кто)
+beforeCreateConnector - содержит всю ту же информацию что и create, но отправляется до создания коннектора. В случае если сделать ему preventDefault, коннектор не создастся
+
+
+
 ## Data Grid
 
 There is a couple of wonderful features we've applied to our DataGrid.
@@ -136,41 +197,41 @@ Then, our parental items can be expanded and collapsed. Just click once on the "
 
 ## Timeline
 
-Stretch the length
+- Stretch the length
 
 You can change the duration of the interval, its start and end time. Hover right or left thumbs, watch if the control is of this <img> type and drag it. 
 
 
-Drag&Drop
+- Drag&Drop
 
 Also you can change the start and end date without changing the duration of the interval - you can simply drag the actual time bar to wherever you want. Hover the element, wait for this <img> control and drag the interval.
 
 
-Change the connectors
+- Change the connectors
 
 If you need to add the connections of some elements, you can do it also by simply dragging the connector thumb of an actual time bar. Again, hover the side of an actual time bar, catch the connector thumb and drag it to the element you need.
 
 Note that it's not possible to drop connectors into a baseline, as they cannot have ones.
 
 
-Progress
+- Progress
 
 Another difference between the behavior of the actual time bar and its baseline is in having progress.
 You may notice that some of the actual time bars are colored differently and the progress part is of dark color. Those are the intervals of parent items, so when you change their progress, you change the progress for the whole group.
 
 
-Baseline changing
+- Baseline changing
 
-As we have already noticed, the baseline bar looks and behaves almost like an actual time bar, with the difference of not having any progress and connectors, as it shows the planned time. We can change its  position in time and whole its duration using the same controls as actual time bars have.
+As we have already noticed, the baseline bar looks and behaves almost like an actual time bar, with the difference of not having any progress and connectors, as it shows the planned time. We can change its position in time and whole its duration using the same controls as actual time bars have.
 
 
-Milestones
+- Milestones
 
 You cannot change the duration of a milestone as they have no duration, but you still can drag it to another position. They have no progress and connectors as well, because they represent moments in time.
 
 
 ##Scrolling
 
-When you set the connectors, make an end date later or a start date earlier than a gantt screen displays, it will start scrolling automatically. Also, in live mode the Gantt scales can automatically grow when we overcome the min amd max scale values while scrolling.
+When you change the length of the time bars or move them or milestones later or earlier than Gantt screen displays, the display will start scrolling automatically. Also, in live mode the Gantt scales' ranges can automatically lengthen when we overcome the min and max range values while scrolling.
 
 
