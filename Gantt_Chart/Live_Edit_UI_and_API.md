@@ -157,7 +157,7 @@ There are necessary fields as well:
 
 For example: we lengthen the baseline of a process. The default start date was 02/27, end date 03/03. The new dates are 02/27 to 08/03. So, there will be one field edited - "baselineEnd". Then the "update" event will have those parameters:
 
-## create
+### create
 
 The "create" event will be dispatched when we create a new object of any type in the Gantt tree. We have necessary fields here as well:
 - "type": the event type
@@ -182,8 +182,11 @@ The "beforeCreateConnector" event is similar to the "create", but this is dispat
 - "source": which data item the connector starts from
 - "target": which data item the connector ends at (is connected to)
 - "connectorType": the connector type.
-There are necessary field for the Project Gantt, and when we deal with the Resource Gantt there will be more fields about periods (period objects and those indexes).
 
+These were necessary fields for the Project Gantt, and when we deal with the Resource Gantt there will be more fields about periods (period objects and those indexes).
+
+
+Also it's possible to prevent the default event behaviour, using {api}**.preventDefault**{api} method. In this case, when the event happens, there will be no default reaction.
 
 ## Data Grid
 
