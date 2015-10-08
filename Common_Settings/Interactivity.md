@@ -70,6 +70,7 @@ So the hover of bySpot type (with a Spot of 30px radius) is being enabled by the
   interactivity.hoverMode("bySpot");
   interactivity.spotRadius(30);
 ```
+
 {sample}CS\_Interactivity\_03{sample}
 
 This way of hovering, when a couple of points are hovered simultaneously, is a multi-hover mode. Now let's look at the single-hovering mode ("byX").<a name="byX"></a>
@@ -90,7 +91,7 @@ The code line above does the same as the previous one, but we have changed the h
 So, the "byX" mode gives us a single-hover mode, when it even isn't necessary to hover the point, you just need to move the cursor over the chart plot. So the y-coordinate doesn't matter at all in this case. It might be useful when you've got a lot of points on a chart and you need to emphasize them.
   
   
-Now, let's have a look at the <b>select and multi-select</b> features.
+Now, let's have a look at the **select and multi-select** features.
 
 ### Select
 
@@ -127,12 +128,12 @@ Multi-selection mode is enabled by default. However, if you have turned it off a
 And the last is single selection mode. As you could guess, the "singleSelect" is to be used in this case.
 
 ```
-// single-select enabling
-chart.interactivity().selectionMode('singleSelect");
+  // single-select enabling
+  var interactivity = chart.interactivity();
+  interactivity.selectionMode("singleSelect");
 ```
 
-{sample}CS\_Interactivity\_07{sample} 
-
+{sample}CS\_Interactivity\_07{sample}
 
 ## Series behaviour
 <a name="series_hover"></a>
@@ -200,13 +201,11 @@ OHLC charts have special settings such as {api:anychart.core.cartesian.series.OH
 
 {sample}CS\_Interactivity\_11{sample} 
 
-
 If you want to disable the selection ability, use "none" as the {api:anychart.core.utils.Interactivity#selectionMode}**.selectionMode()**{api} argument.
-
 
 ## Handling Chart Events
 
-In some cases you might need a custom chart reaction on some user's actions which cannot be set simply using the methods described above. That's where listeners may help. 
+In some cases you might need a custom chart reaction on some user's actions which cannot be set simply using the methods described above. That's where listeners may help.
 
 You can add a listener to any chart element, forcing it to react in some way. For example, you can make the chart body to listen to clicks and add a random point on each click; or you can tell the chart to listen to selects and uncolor all other elements when one is selected and color them back when the item gets unselected. It's possible to set some other custom interactivity using event listeners. 
 
@@ -225,7 +224,8 @@ Explore the code of this sample in the playground.
 Using all these features, it's possible to create a drilldown chart. You can easily get points' data through the **.pointSelect()** method and show or hide them. Look at the following sample:
 
 {sample}CS\_Interactivity\_13{sample} 
-
+  
+  
 <!--
 ```
 chart.listen("pointSelect", function(evt){
@@ -334,17 +334,17 @@ So, when you need or want to use our dataSet to set the series interactive behav
 Another way of defining interactivity through the dataSet is setting the data as objects, like in the following:
 
 ```
-// data
-    var data = anychart.data.set([
-        {x:1, value:990, selectFill:"Red"},
-        {x:2, value:1100, selected:true, selectFill:"Blue"},
-        {x:3, value:1050, selectFill:"Red"},
-        {x:4, value:890,  selectFill:"Red"},
-        {x:5, value:1300, selected:true, selectFill:"Red"},
-        {x:6, value:840, selected:true, selectFill:"Green"},
-        {x:7, value:900, selectFill:"Red"},
-        {x:8, value:1000, selectFill:"Red"}                                                   
-    ]);
+  // data
+  var data = anychart.data.set([
+    {x:1, value:990, selectFill:"Red"},
+    {x:2, value:1100, selected:true, selectFill:"Blue"},
+    {x:3, value:1050, selectFill:"Red"},
+    {x:4, value:890,  selectFill:"Red"},
+    {x:5, value:1300, selected:true, selectFill:"Red"},
+    {x:6, value:840, selected:true, selectFill:"Green"},
+    {x:7, value:900, selectFill:"Red"},
+    {x:8, value:1000, selectFill:"Red"}
+  ]);
 ```
 
 {sample}CS\_Interactivity\_17{sample}
