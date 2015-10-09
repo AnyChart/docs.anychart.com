@@ -302,6 +302,8 @@ There is one more thing you can do with the interactivity of our charts: you can
 
 {sample}CS\_Interactivity\_15{sample} 
 
+
+
 ## Interactivity Settings in Data Sets
 
 Now, let's look at our dataSets. If you have explored our samples in the playground, you may remember that in a couple of samples we added not only values but sometimes colors or url's, and mapped those accordingly. In this paragraph, we're going to shed some light on using dataSet values for defining interactivity parameters.

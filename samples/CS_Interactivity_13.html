@@ -5,100 +5,100 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script x-export="chart">var chart, pie, stage;
-    anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // set stage
-    stage = anychart.graphics.create("container");
+  // set stage
+  var stage = anychart.graphics.create("container");
 
-    // data
-    var data = anychart.data.set([
-["2000", 10048, 2600, 3200, 2159, 2089],
-["2001", 10938, 2367, 1989, 2383, 4199],
-["2002", 9989, 2156, 2399, 2867, 2567],
-["2003", 10226, 2398, 2225, 3010, 2593],
-["2004", 11004, 2851, 3007, 2805, 2341],
-["2005", 10934, 3400, 2105, 2563, 2866],
-["2006", 11275, 2878, 2933, 3561, 1903],
-["2007", 11945, 2959, 3855, 3109, 2022],
-["2008", 12245, 4001, 2156, 3928, 2160],
-["2009", 12056, 1995, 2057, 4902, 3102],
-["2010", 11734, 2584, 3166, 3101, 2883],
-["2011", 12337, 3106, 2845, 2933, 3453],
-["2012", 12761, 3296, 2655, 3144, 3666],
-["2013", 13390, 2611, 4194, 3206, 3379],
-["2014", 13818, 3000, 2599, 4107, 4112],
-["2015", 13188, 3199, 2564, 3118, 4307]
-    ]);
+  // data
+  var data = anychart.data.set([
+    ["2000", 10048, 2600, 3200, 2159, 2089],
+    ["2001", 10938, 2367, 1989, 2383, 4199],
+    ["2002", 9989, 2156, 2399, 2867, 2567],
+    ["2003", 10226, 2398, 2225, 3010, 2593],
+    ["2004", 11004, 2851, 3007, 2805, 2341],
+    ["2005", 10934, 3400, 2105, 2563, 2866],
+    ["2006", 11275, 2878, 2933, 3561, 1903],
+    ["2007", 11945, 2959, 3855, 3109, 2022],
+    ["2008", 12245, 4001, 2156, 3928, 2160],
+    ["2009", 12056, 1995, 2057, 4902, 3102],
+    ["2010", 11734, 2584, 3166, 3101, 2883],
+    ["2011", 12337, 3106, 2845, 2933, 3453],
+    ["2012", 12761, 3296, 2655, 3144, 3666],
+    ["2013", 13390, 2611, 4194, 3206, 3379],
+    ["2014", 13818, 3000, 2599, 4107, 4112],
+    ["2015", 13188, 3199, 2564, 3118, 4307]
+  ]);
 
-    // map data for the each series
-    var dataMapping = data.mapAs({x: [0], value: [1]});
-
-
-    var pieTitle = "Sales Persons Share";
-
-    // chart type
-    chart = anychart.column();
-
-    // set data
-    var series = chart.column(dataMapping); 
-
-    // chart title
-    chart.title().useHtml(true);
-    chart.title('<span style="color:#545f69; font-size: 18px;">Sales volume</span><br><span style="color:#545f69; font-size: 10px">ACME Corp.</span>');
-
-    // set axes titles
-    chart.xAxis().title().text("Retail Channel");
-    chart.yAxis().title().text("Sales");
-
-    // enable legend
-    chart.legend().enabled(false);
-
-series.select([0]);
-
-    // switching the select mode to multi
-    chart.interactivity().selectionMode("singleSelect");
-
-    chart.bounds("0","0", "50%", "100%");
+  // map data for the each series
+  var dataMapping = data.mapAs({x: [0], value: [1]});
 
 
-var dataRow = data.row(0);
-var pieDataSet = anychart.data.set([
+  var pieTitle = "Sales Persons Share";
+
+  // chart type
+  var chart = anychart.column();
+
+  // set data
+  var series = chart.column(dataMapping); 
+
+  // chart title
+  var title = chart.title();
+  title.useHtml(true);
+  title.text("<span style=\"color:#545f69; font-size: 18px;\">Sales volume</span><br><span style=\"color:#545f69; font-size: 10px\">ACME Corp.</span>");
+
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Retail Channel");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
+
+  // enable legend
+  chart.legend(false);
+
+  series.select([0]);
+
+  // switching the select mode to multi
+  var interactivity = chart.interactivity();
+  interactivity.selectionMode("singleSelect");
+
+  chart.bounds("0","0", "50%", "100%");
+
+  var dataRow = data.row(0);
+  var pieDataSet = anychart.data.set([
     {x: "John", value: dataRow[2]},
     {x: "James", value: dataRow[3]},
     {x: "Peter", value: dataRow[4]},
     {x: "Mattew", value: dataRow[5]}
-]);
-pieSubTitle = "\nYear "+ dataRow[0] ;
+  ]);
+  var pieSubTitle = "\nYear "+ dataRow[0];
 
-    pie = anychart.pie(pieDataSet);
+  var pie = anychart.pie(pieDataSet);
+  pie.title(pieTitle + pieSubTitle);
+
+  chart.listen("pointClick", function(evt){
+    var ind = evt.pointIndex;
+
+    dataRow = data.row(ind);
+    pieDataSet.data([
+      {x: "John", value: dataRow[2]},
+      {x: "James", value: dataRow[3]},
+      {x: "Peter", value: dataRow[4]},
+      {x: "Mattew", value: dataRow[5]}
+    ]);
+    pieSubTitle = "\nYear: "+ dataRow[0];
+
+    pie.data(pieDataSet);
     pie.title(pieTitle + pieSubTitle);
+  });
 
-var pieSubTitle;
+  pie.bounds("50%", 0, "50%", "100%");
 
-
-    chart.listen("pointClick", function(evt){
-        var ind = evt.pointIndex;
-
-        dataRow = data.row(ind);
-        pieDataSet.data([
-                {x: "John", value: dataRow[2]},
-                {x: "James", value: dataRow[3]},
-                {x: "Peter", value: dataRow[4]},
-                {x: "Mattew", value: dataRow[5]}
-        ]);
-        pieSubTitle = "\nYear: "+ dataRow[0];
-
-        pie.data(pieDataSet);
-        pie.title(pieTitle + pieSubTitle);
-    });
-
-    pie.bounds("50%", 0, "50%", "100%");
-    pie.background("none");
-
-    // draw
-    chart.container(stage).draw();
-    pie.container(stage).draw();
+  // draw
+  chart.container(stage);
+  chart.draw();
+  pie.container(stage);
+  pie.draw();
 });</script>
 </head>
 <body>
