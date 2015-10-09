@@ -8,16 +8,19 @@
  * [TimeLine](#timeline)
  
 # Overview
-The Live Edit mode allows you to edit any part of your Gantt without touching the code. All you need to do is to use the mouse to change the duration, position or connections.
+The Live Edit mode allows you to edit any part of your Gantt chart without touching the code. All you need to do is to use the mouse to change the duration, position or connections.
 
 In this article we will consider the "editing mode" of AnyGantt.
+
+
 # Defaults
 
 ## Controls
 
-There are several pointer cursors you will see while working with AnyGantt. They are used to edit intervals and Gantts' structure.
+There are several pointer cursors you will see while working with AnyGantt. They are used to edit intervals and Gantt charts' data tree structure, and those changes are displayed by the Gantt diagram.
 
-All controls' appearance can be edited by using usual methods such as {api}**.stroke()**{api}, {api}**.fill()**{api} or by choosing the theme you prefer. 
+All controls' appearance can be edited by using special methods, which are described below, or by choosing the theme you prefer. 
+
 <table width="700" border="1" class="dtTABLE">
 <tbody><tr>
 <th width="175"><b>Compound action</b></th>
@@ -32,7 +35,7 @@ All controls' appearance can be edited by using usual methods such as {api}**.st
 
 <tr>
 <td>Connectors creating</td>
-<td>Position the pointer over the connector thumb of an interval or a milestone, press the button and move the mouse. If you haven't pointed the interval you want to connect with, there is a dashed line drawn to help the user not to get lost; it is possible to scroll the timeline while dragging the connector line inside the scale total range. If you hover the bar you want to connect with, there's a final connector preview shows up. Release the mouse button. If you are hovering the interval bar and watching the final connector preview, there will be the {api}**.beforeCreateConnector()**{api} event dispatched by the chart diagram (or by its timeline, depends on the way the chart was built) unless it was prevented. Then, if you release the mouse, the connector will be created and the intervals will become logically connected. If the {api}**.beforeCreateConnector()**{api} event was prevented, no connector will be created.
+<td>Position the pointer over the connector thumb of an interval or a milestone, press the button and move the mouse. If you haven't pointed the interval you want to connect with, there is a preview line drawn to help the user not to get lost; the timeline and data grid both will be scrolled while dragging the connector line inside the scale total range. If you hover the bar you want to connect with, there's a final connector preview shows up: depending on where we hovered the bar (left or right part), the connector will stick to the appropriate side. Release the mouse button. If you hover the interval bar and watch the final connector preview, there will be the "beforeCreateConnector" event dispatched by the Gantt diagram (or by its timeline, if it was created in the standalone mode) unless it was prevented. Then, if you release the mouse, the connector will be created and the intervals will become logically connected. If the "beforeCreateConnector" event was prevented, no connector will be created.
 <br>
 You can find more about events [here](../Common_Settings/Event_Listeners.md).
 </td>
@@ -41,23 +44,23 @@ You can find more about events [here](../Common_Settings/Event_Listeners.md).
 <img src ="http://static.anychart.com/images/connector_creater.png" alt="Connector creater" />
 <br>
 A pointer that is shown when a connector thumb is hovered
-<br>
+<br><br>
 <img src ="http://static.anychart.com/images/connector_thumb.png" alt="Connector thumb" />
 <br>
 The connector thumb shown when the interval is hovered
-<br>
+<br><br>
 <img src ="http://static.anychart.com/images/dashed_connector.jpg" alt="Dashed connector" />
 <br>
 The unconnected connector line
-<br>
+<br><br>
 <img src ="http://static.anychart.com/images/final_connector.png" alt="Final connector" />
 <br>
 That's how the final connector looks like
 </td>
 </tr>
 <tr>
-<td>Resizing</td>
-<td>Hover the resizing thumb, press the left mouse button and drag the cursor. You will see the dashed contour - a preview of the interval duration. You can drag it to any date you need, the scale range will be automatically lengthened if necessary. When you release the button, the "update" event will be dispatched by the gantt tree. Find more information about those events downwards.</td>
+<td>Duration changing</td>
+<td>Hover the duration changing thumb, press the left mouse button and drag the cursor. You will see the preview contour - a preview of the interval duration. You can drag it to any date you need, the scale range will be automatically lengthened if necessary. When you release the button, the "update" event will be dispatched by the Gantt tree. Find more information about those events downwards.</td>
 <td>The actual time or the baseline interval becomes longer of shorter</td>
 <td>
 
@@ -70,7 +73,7 @@ The horizontal resizer
 </tr>
 <tr>
 <td>Drag&drop</td>
-<td>Hover the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically). The Gantt will dispatch the "update" event immediately. Read about Gantt events in the following.</td>
+<td>Hover the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically). The data [tree](../Working_with_Data/) will dispatch the "update" event immediately. Read about Gantt events in the following.</td>
 <td>Drags the interval through the time <!--and space--> without lengthening or shortening it.</td>
 <td>
 
@@ -82,14 +85,14 @@ The dragger
 </td>
 </tr>
 <tr>
-<td>Progress resizing</td>
-<td>Hover the border between the progress part and the rest of the actual time bar and press the button when the pointer is of progress resizing type. Drag it and drop where needed. At this moment the Gantt tree dispatches the "update" event. Read more about events below.</td>
-<td>Lengthens or shortens the progress part of the bar.</td>
+<td>Changing the duration of progress </td>
+<td>Hover the bar, look for the slider and press the button. Drag it and drop where needed. At this moment the Gantt tree dispatches the "update" event. Read more about events below.</td>
+<td>Lengthens or shortens the progress part of the task.</td>
 <td>
 
 <img src ="http://static.anychart.com/images/progress_slider.png" alt="Progress slider" />
 <br>
-Progress slider shows the progress of an action
+Progress slider 
 <br>
 
 </td>
@@ -100,9 +103,9 @@ Progress slider shows the progress of an action
 </tr>
 
 <tr>
-<td>Changing the Gantt structure</td>
+<td>Changing the Gantt chart tree structure</td>
 <td>Hover the row (item), press the button and drag it to wherever you need. When you release the button, the tree will dispatch the "move" event. Note that there are some situations when you cannot change the structure: it's not possible to make the item a child of itself and a milestone is not able to have children.</td>
-<td>Changes the Gantt structure visually and logically.</td>
+<td>Changes the Gantt chart tree structure visually and logically.</td>
 <td>
 <!--
 <img src ="http://static.anychart.com/images/progress_slider.png" alt="Hovering and choosing cursor" />
@@ -132,7 +135,7 @@ When we change something in our shown Gantt diagram, we need to change it also i
 
 ### move
 
-The Gantt tree will dispatch the "move" event when we change the position of any process/task. Gantt dispatch this when it catches the live mode changes in Gantts' structure made by user in live mode. It has several necessary fields: 
+The Gantt tree will dispatch the "move" event when we change the position of any process/task. Gantt chart dispatch this when it catches the live mode changes in Gantts' structure made by user in live mode. It has several necessary fields: 
 
  - "type", where you should put the object type (e.g. string)
  - "source", where you should define the start point of your actual time bar
