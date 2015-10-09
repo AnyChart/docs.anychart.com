@@ -23,6 +23,13 @@ To download the latest version of AnyChart charting library, which contains the 
 * Development edition - [anychart.dev.min.js](//anychart.com/products/anychart/download/?file=anychart.dev.min.js&version=latest) <span style="color:#898989;">(2.1Mb gzip)</span>  
 * Binaries package - [anychart.zip](//anychart.com/products/anychart/download/latest/anychart.zip) <span style="color:#898989;">(360Kb)</span>  
 
+####AnyStock
+
+To download the latest version of AnyStock, which contains **only** the stock chart, choose the most suitable option and click the link below.
+* Production edition - [anystock.min.js](//anychart.com/products/anystock/download/?file=anystock.min.js&version=latest) <span style="color:#898989;">(201Kb gzip)</span>
+* Development edition - [anystock.dev.min.js](//anychart.com/products/anystock/download/?file=anystock.dev.min.js&version=latest) <span style="color:#898989;">(204Kb gzip)</span>  
+* Binaries package - [anystock.zip](//anychart.com/products/anystock/download/latest/anystock.zip) <span style="color:#898989;">(885KB)</span>  
+
 ####AnyGantt
 
 To download the latest version of AnyGantt, which contains **only** the gantt chart, choose the most suitable option and click the link below.
