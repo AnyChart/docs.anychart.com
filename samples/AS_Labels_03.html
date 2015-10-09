@@ -22,7 +22,7 @@
   
   var stage = anychart.graphics.create("container");
 
-  var titleText = '<a style="font-size:15px;"><u>2007 Capital Equipment Expenditures</u></a><br/><i>By Specific Machinery/Equipment Category *</i>';
+  var titleText = "<a style=\"font-size:15px;\"><u>2007 Capital Equipment Expenditures</u></a><br/><i>By Specific Machinery/Equipment Category *</i>";
   
   // default chart
   var chart;
@@ -41,7 +41,7 @@
   barlabel.listen("click", drawBar);
 
   // label for column chart
-  var columnLabel = stage.image("http://static.anychart.com/images/column.png");
+  var columnLabel = stage.image("//static.anychart.com/images/column.png");
   columnLabel.width(25);
   columnLabel.height(25);
   columnLabel.y(20);
@@ -51,73 +51,89 @@
   columnLabel.listen("click", drawColumn);
   
   // label for pie chart
-  var pieLabel = stage.image("http://static.anychart.com/images/donut.gif");
+  var pieLabel = stage.image("//static.anychart.com/images/donut.gif");
   pieLabel.width(25);
   pieLabel.height(25);
   pieLabel.y(20);
   pieLabel.zIndex(chart.zIndex() + 1);
   pieLabel.x(70);
 
-
   pieLabel.listen("click", drawPie);
   
   
   function drawBar () {
+    // if there is a chart
     if (chart)
+      // destroy it
       chart.dispose();
 
+    // create bar chart
     chart = anychart.bar();
+    // set data
     var series = chart.bar(data);
+    // hide point's borders
     series.stroke(null);
+    // adjust title
     var title = chart.title();
     title.useHtml(true);
     title.text(titleText);
     title.fontWeight(900);
     title.hAlign("center");
+    // manage chart position
     chart.top(20);
 
-    var xAxis = chart.xAxis();
-    xAxis.title(false);
-    var yAxis = chart.yAxis();
-    yAxis.title(false);
-
+    // set chart container
     chart.container(stage);
+    // draw bar chart
     chart.draw();
   }
   
+  // create column chart
   function drawColumn(){
+    // destroy previous chart
     chart.dispose();
+    // create column chart
     chart = anychart.column();
+    // set data
     var series = chart.column(data);
+    // hide columns border
     series.stroke(null);
+    // adjust title
     var title = chart.title();
     title.useHtml(true);
+    title.enabled(true);
     title.text(titleText);
     title.fontWeight(900);
     title.hAlign("center");
+    // manage chart position
     chart.top(20);
     
-    var xAxis = chart.xAxis();
-    xAxis.title(false);
-    var yAxis = chart.yAxis();
-    yAxis.title(false);
-    
+    // set chart container
     chart.container(stage);
+    // draw column chart
     chart.draw();
   }
   
+  // create pie chart
   function drawPie(){
+    // destroy previous chart
     chart.dispose();
+    // create pie chart and set data
     chart = anychart.pie(data);
+    // adjust title
     var title = chart.title();
     title.useHtml(true);
+    title.enabled(true);
     title.text(titleText);
     title.fontWeight(900);
     title.hAlign("center");
+    // manage chart position
     chart.top(20);
     chart.margin(30, 0, 0 ,0 );
     
+    // set chart container
     chart.container(stage);
+    // draw chart
     chart.draw();
   }
 });</script>
