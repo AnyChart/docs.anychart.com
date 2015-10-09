@@ -186,6 +186,8 @@ Here is a sample of advanced tooltip content formatting:
 
 {sample}CS\_Tooltip\_11{sample}
 
+**Note**: You can find information on custom tooltips and an example of a chart as a tooltip in Interactivity article(../Common_Settings/Interactivity#creating_custom_tooltip)
+
 ## Position
 
 There are several methods for managing tooltips position on the chart. This section contains information on most of this methods.

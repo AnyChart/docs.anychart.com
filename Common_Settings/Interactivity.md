@@ -4,17 +4,18 @@ Interactivity
 * [Overview](#overview)
 * [Default interactivity](#default_interactivity)
 * [Altering interactivity](#altering_interactivity)
- * [Charts behaviour](#charts_behaviour)
-  * [Hover](#hover)
-  * [Select](#select)
- * [Series behaviour](#series_behaviour)
-  * [Hover](#series_hover)
-  * [Select](#series_select)
- * [Handling chart events](#handling_chart_events)
-  * [Navigating by URL](#navigating_by_url)
-  * [DrillDown](#drilldown)
- * [Creating Custom Tooltip](#creating_custom_tooltip)
- * [Interactivity Settings in Data Sets](#interactivity_settings_in_data_sets)
+* [Charts behaviour](#charts_behaviour)
+ * [Hover](#hover)
+ * [Select](#select)
+* [Series behaviour](#series_behaviour)
+ * [Hover](#series_hover)
+ * [Select](#series_select)
+* [Handling chart events](#handling_chart_events)
+ * [Navigating by URL](#navigating_by_url)
+ * [DrillDown](#drilldown)
+* [Creating Custom Tooltip](#creating_custom_tooltip)
+ * [Chart as Tooltip](#chart_as_tooltip)
+* [Interactivity Settings in Data Sets](#interactivity_settings_in_data_sets)
 
 
 # Overview 
@@ -302,7 +303,13 @@ There is one more thing you can do with the interactivity of our charts: you can
 
 {sample}CS\_Interactivity\_15{sample} 
 
+### Chart as Tooltip
 
+Custom tooltip can be mush more complex then the one above. Tooltip may contain any number of elements and even other charts. You can find a sample of a chart as a tooltip below. Launch the sample in playground to examine the code. As far as creating custom tooltip implies working with event listeners, this code might look a bit sophisticated. Study [Event Listeners article](../Common_Settings/Event_Listeners) to get information on mouse events managing.
+
+{sample}CS\_Interactivity\_18{sample}
+
+**Note**: full information on AnyChart tooltips can be found in [Tooltip article](../Common_Settings/Tooltip).
 
 ## Interactivity Settings in Data Sets
 
