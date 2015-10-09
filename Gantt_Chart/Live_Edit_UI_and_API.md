@@ -131,24 +131,33 @@ The cursor becomes of this type when we hover and press the button on the item.
 
 ## Events
 
-When we change something in our shown Gantt diagram, we need to change it also inside of it, in its logic. That's where the events work.
+Changes made in Live Edit mode lead to data changes. In this case we use events to inform user about those changes.
 
 ### move
 
-The Gantt tree will dispatch the "move" event when we change the position of any process/task. Gantt chart dispatch this when it catches the live mode changes in Gantts' structure made by user in live mode. It has several necessary fields: 
+The data tree will dispatch the "move" event when we change the Gantt chart tree structure. Gantt chart dispatch this when it catches the live mode changes in Gantts' structure made by user in live mode. It has several necessary fields: 
 
- - "type", where you should put the object type (e.g. string)
- - "source", where you should define the start point of your actual time bar
- - "sourceIndex": this field shows the exact number (index) of the row which we are moving.
- - "target": in this field there is an information about where you place your bar.
- - "targetIndex": shows the exact index of the row we are putting our bar into (or between))
- - "item": finally, this tells us about the bar we have dragged and dropped.
+ - "type": the event type (anychart.enums.EventType.TREE_ITEM_MOVE)
+ - "source", the data item where we move our item from
+ - "sourceIndex": the "source" item index
+ - "target": the data item where we move our item into
+ - "targetIndex": the target item index
+ - "item": finally, this is the item we have moved (dragged and dropped).
 
- For example: we moved the parent item inside another parent item, making the Gantt tree arborize. Then the "move" event will be dispatched with these parameters:
+ For example: we moved the parent item "Breathing" inside another parent item, making the Gantt tree arborize. Then the "move" event will be dispatched with these parameters:
+  - type: anychart.enums.EventType.TREE_ITEM_MOVE
+  - source: 
+  - sourceIndex:
+  - target:
+  - targetIndex:
+  - item:
+
+ ```
+ ```
 
 ### update
 
-"Update" event will be dispatched by the Gantt tree when we change the duration of time intervals, names of the tasks, processes or something with the process children. For example, if you move an actual time bar of any task or process, there will be "update" event dispatched from that moved item because of changing the fields' values.
+"Update" event will be dispatched by the data tree when we change anything about our data items. For example, if you move an actual time bar of any task or process, there will be "update" event dispatched from that moved item because of changing the fields' values.
 
 There are necessary fields as well:
 
@@ -162,7 +171,7 @@ For example: we lengthen the baseline of a process. The default start date was 0
 
 ### create
 
-The "create" event will be dispatched when we create a new object of any type in the Gantt tree. We have necessary fields here as well:
+The "create" event will be dispatched when we create a new tree data item. It will have those fields:
 - "type": the event type
 - "target": the name of the target where we're putting the new object in
 - "targetIndex": the index of our target
