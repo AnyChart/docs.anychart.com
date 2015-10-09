@@ -8,18 +8,18 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
   
   // set stage
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
   
   // manage data
   var data2005 = anychart.data.set([
-    ['John',  10000, 12000, 20000, 16000],
-    ['Jake',  12000, 15000, 19000, 21000],
-    ['Peter', 16000, 17000, 21000, 22000]
+    ["John",  10000, 12000, 20000, 16000],
+    ["Jake",  12000, 15000, 19000, 21000],
+    ["Peter", 16000, 17000, 21000, 22000]
   ]);
   var data2006 = anychart.data.set([
-    ['John',  13000, 10000, 18000, 21000],
-    ['Jake',  11700, 12000, 21000, 20000],
-    ['Peter', 18000, 11000, 12000, 22000]
+    ["John",  13000, 10000, 18000, 21000],
+    ["Jake",  11700, 12000, 21000, 20000],
+    ["Peter", 18000, 11000, 12000, 22000]
   ]);
   
   
@@ -54,92 +54,89 @@
   
   // set charts
   var chart2005 = anychart.column();
-  chart2005.title().text('2005 Sales');
+  chart2005.title().text("2005 Sales");
   
   // set data
   chart2005.column(data2005.mapAs({x: [0], value: [1]}))
     // set name
-    .name('Quarter 1')
+    .name("Quarter 1")
     // set data for legend tooltip content
-    .meta({legendText: '<b>Year:</b> 2005'+
-      '<br><b>Quarter</b> first'+
-      '<br><b>Total Sales:</b> '+results2005[0].total+
-      '<br><b>Best Result:</b> '+results2005[0].bestResult
+    .meta({legendText: "<b>Year:</b> 2005"+
+      "<br><b>Quarter</b> first"+
+      "<br><b>Total Sales:</b> "+results2005[0].total+
+      "<br><b>Best Result:</b> "+results2005[0].bestResult
     });
   chart2005.column(data2005.mapAs({x: [0], value: [2]}))
-    .name('Quarter 2')
-    .meta({legendText: '<b>Year:</b> 2005'+
-      '<br><b>Quarter</b> second'+
-      '<br><b>Total Sales:</b> '+results2005[1].total+
-      '<br><b>Best Result:</b> '+results2005[1].bestResult
+    .name("Quarter 2")
+    .meta({legendText: "<b>Year:</b> 2005"+
+      "<br><b>Quarter</b> second"+
+      "<br><b>Total Sales:</b> "+results2005[1].total+
+      "<br><b>Best Result:</b> "+results2005[1].bestResult
     });
   chart2005.column(data2005.mapAs({x: [0], value: [3]}))
-    .name('Quarter 3')
-    .meta({legendText: '<b>Year:</b> 2005'+
-      '<br><b>Quarter</b> third'+
-      '<br><b>Total Sales:</b> '+results2005[2].total+
-      '<br><b>Best Result:</b> '+results2005[2].bestResult
+    .name("Quarter 3")
+    .meta({legendText: "<b>Year:</b> 2005"+
+      "<br><b>Quarter</b> third"+
+      "<br><b>Total Sales:</b> "+results2005[2].total+
+      "<br><b>Best Result:</b> "+results2005[2].bestResult
     });
   chart2005.column(data2005.mapAs({x: [0], value: [4]}))
-    .name('Quarter 4')
-    .meta({legendText: '<b>Year:</b> 2005'+
-      '<br><b>Quarter</b> forth'+
-      '<br><b>Total Sales:</b> '+results2005[3].total+
-      '<br><b>Best Result:</b> '+results2005[3].bestResult
+    .name("Quarter 4")
+    .meta({legendText: "<b>Year:</b> 2005"+
+      "<br><b>Quarter</b> forth"+
+      "<br><b>Total Sales:</b> "+results2005[3].total+
+      "<br><b>Best Result:</b> "+results2005[3].bestResult
     });
   chart2005.padding().right(0).bottom(0);
-  chart2005.xAxis().title('Manager');
-  chart2005.yAxis().orientation('right').title().text('Sales').rotation(0);
+  chart2005.xAxis().title("Manager");
+  chart2005.yAxis().orientation("right").title().text("Sales").rotation(0);
   
   // create second chart
   var chart2006 = anychart.column();
   
   // set title
-  chart2006.title().text('2006 Sales');
+  chart2006.title().text("2006 Sales");
   
   // set data
   chart2006.column(data2006.mapAs({x: [0], value: [1]}))
     // set name
-    .name('Quarter 1')
+    .name("Quarter 1")
     // set legend tooltip content
-    .meta({legendText: '<b>Year:</b> 2006'+
-      '<br><b>Quarter</b> first<br>'+
-      '<b>Total Sales:</b> '+results2006[0].total+
-      '<br><b>Best Result:</b> '+results2006[0].max
+    .meta({legendText: "<b>Year:</b> 2006"+
+      "<br><b>Quarter</b> first<br>"+
+      "<b>Total Sales:</b> "+results2006[0].total+
+      "<br><b>Best Result:</b> "+results2006[0].max
     });
   chart2006.column(data2006.mapAs({x: [0], value: [2]}))
-    .name('Quarter 2')
-    .meta({legendText: '<b>Year:</b> 2006'+
-      '<br><b>Quarter</b> second<br>'+
-      '<b>Total Sales:</b> '+results2006[1].total+
-      '<br><b>Best Result:</b> '+results2006[1].max
+    .name("Quarter 2")
+    .meta({legendText: "<b>Year:</b> 2006"+
+      "<br><b>Quarter</b> second<br>"+
+      "<b>Total Sales:</b> "+results2006[1].total+
+      "<br><b>Best Result:</b> "+results2006[1].max
     });
   chart2006.column(data2006.mapAs({x: [0], value: [3]}))
-    .name('Quarter 3')
-    .meta({legendText: '<b>Year:</b> 2006'+
-      '<br><b>Quarter</b> third<br>'+
-      '<b>Total Sales:</b> '+results2006[2].total+
-      '<br><b>Best Result:</b> '+results2006[2].max
+    .name("Quarter 3")
+    .meta({legendText: "<b>Year:</b> 2006"+
+      "<br><b>Quarter</b> third<br>"+
+      "<b>Total Sales:</b> "+results2006[2].total+
+      "<br><b>Best Result:</b> "+results2006[2].max
     });
   chart2006.column(data2006.mapAs({x: [0], value: [4]}))
-    .name('Quarter 4')
-    .meta({legendText: '<b>Year:</b> 2006'+
-      '<br><b>Quarter</b> forth<br>'+
-      '<b>Total Sales:</b> '+results2006[3].total+
-      '<br><b>Best Result:</b> '+results2006[3].max
+    .name("Quarter 4")
+    .meta({legendText: "<b>Year:</b> 2006"+
+      "<br><b>Quarter</b> forth<br>"+
+      "<b>Total Sales:</b> "+results2006[3].total+
+      "<br><b>Best Result:</b> "+results2006[3].max
     });
-  chart2006.background().enabled(false);
-  chart2006.xAxis().title('Manager');
-  chart2006.yAxis().title().enabled(false);
+  chart2006.xAxis().title("Manager");
   chart2006.padding().left(0).bottom(0);
   
   // create custom legend
   var legend = anychart.ui.legend();
-  legend
-    .itemsSource([chart2005, chart2006])  // set items source
-    .title()                              // legend title settings
-      .text('2005 - 2006 Sales')          // title text
-      .hAlign('center');                  // title alignment
+  legend.itemsSource([chart2005, chart2006]);   // set items source
+  var legendTitle = legend.title();             // legend title settings
+  legendTitle.text("2005 - 2006 Sales");        // title text
+  legendTitle.hAlign("center");                 // title alignment
   
   // legend tooltip settings
   legend.tooltip().content()
@@ -147,7 +144,7 @@
     .fontWeight(400); // set font weigh
   
   // set legend tooltip content
-  legend.tooltip().contentFormatter(function(){
+  legend.tooltip().textFormatter(function(){
       return this.meta.legendText;
     });
   
@@ -155,8 +152,8 @@
   legend.container(stage).draw();
   
   // manage charts size and position
-  chart2005.bounds(0,0,'55%','100%').background().enabled(false);
-  chart2006.bounds('55%',0,'45%','100%').background().enabled(false);
+  chart2005.bounds(0,0,"55%","100%");
+  chart2006.bounds("55%",0,"45%","100%");
   
   // prevent legend overlapping
   chart2005.margin().bottom(stage.height() - legend.getRemainingBounds().getHeight());
@@ -164,7 +161,7 @@
   
   // redraw legend every time the first chart is redrawn
   chart2005.listen(
-    'chartDraw',
+    "chartDraw",
     function (){
       // define legend bounds
       var legendBounds = anychart.math.rect(
@@ -176,7 +173,8 @@
       
       // set bounds and draw legend
       legend.parentBounds(legendBounds).draw();
-    });
+    }
+  );
   
   // draw charts
   chart2005.container(stage).draw();
