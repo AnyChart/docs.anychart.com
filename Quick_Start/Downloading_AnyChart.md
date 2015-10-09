@@ -4,6 +4,7 @@ Downloading AnyChart
 
 * [Downloading](#downloading)
  * [AnyChart](#anychart)
+ * [AnyStock](#anystock)
  * [AnyGantt](#anygantt)
  * [AnyMap](#anymap)
  * [Bundle](#bundle)
