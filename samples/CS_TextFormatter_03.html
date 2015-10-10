@@ -25,34 +25,39 @@
   // create box chart
   var chart = anychart.box();
 
-  // set container id for the chart
-  chart.container("container");
-
   // set chart title text settings
-  chart.title().text("ACME Corp. Salaries\nFebruary, 2015 vs January, 2015");
-  chart.title().hAlign("center");
+  var title = chart.title();
+  title.text("ACME Corp. Salaries\nFebruary, 2015 vs January, 2015");
+  title.hAlign("center");
+  title.enabled(true);
 
   // set axes titles settings
-  chart.xAxis().title(false);
-  chart.yAxis().title("$ per month");
+  var xAxis = chart.xAxis();
+  xAxis.title(false);
+  var yAxis = chart.yAxis();
+  yAxis.title("$ per month");
 
   // set chart yScale settings
   chart.yScale().maximumGap(0);
 
-    // create box chart series with our data
-    var series_1 = chart.box(data_1);
-    var series_2 = chart.box(data_2);
-     
-    // enable the labels
-    series_2.labels().enabled(true);
-     
-    // usage of textFormatter
-    series_2.labels().textFormatter(function(){
-        return(this.getDataValue("extra_inf"));
-    });
+  // create box chart series with our data
+  chart.box(data_1);
+  var series = chart.box(data_2);
+   
+  // enable the labels
+  var labels = series.labels();
+  labels.enabled(true);
+   
+  // usage of textFormatter
+  labels.textFormatter(function(){
+    return(this.getDataValue("extra_inf"));
+  });
 
-    // positioning the label
-    series_2.labels().offsetY(-20);
+  // positioning the label
+  labels.offsetY(-20);
+
+  // set container id for the chart
+  chart.container("container");
 
   // initiate chart drawing
   chart.draw();

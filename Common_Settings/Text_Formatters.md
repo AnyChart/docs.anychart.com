@@ -50,9 +50,9 @@ x<br>seriesName<br>index<br>value<br>valueLowerError<br>valueUpperError<br>xLowe
 <td>x<br>open<br>high<br>low<br>close<br>seriesName<br>index</td>
 </tr>
 <tr>
-<td>Pie/Donut<br><!--Funnel--!>
+<td>Pie/Donut<br>Funnel<br>Pyramid
 </td>
-<td>**Note!** As those types have an only series by default,<br> you should use the {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method with chart.label().<br>x<br>value<br>seriesName<br>index</td>
+<td>**Note!** As those types have an only series by default,<br> you should use the {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method with chart.label().<br>x<br>value<br>index</td>
 </tr>
 </table>
 
@@ -62,24 +62,24 @@ Let's look at those examples to understand how it works.
 
 ```
     //set data series
-    var series_1, series_2;
-    series_1 = chart.bar(Sales2003);
-    series_2 = chart.bar(Sales2004);
+    var series_1 = chart.bar(Sales2003);
+    var series_2 = chart.bar(Sales2004);
     
     //set series name
-    series_1.name('Winter');
-    series_2.name('Summer');
+    series_1.name("Winter");
+    series_2.name("Summer");
     
     //set textFormatter
-    series_1.labels().enabled(true);
-    series_1.labels().textFormatter(function(){
+    var labels_1 = series_1.labels();
+    labels_1.enabled(true);
+    labels_1.textFormatter(function(){
         return(this.seriesName);
     });
-    series_2.labels().enabled(true);
-    series_2.labels().textFormatter(function(){
+    var labels_2 = series_2.labels();
+    labels_2.enabled(true);
+    labels_2.textFormatter(function(){
         return(this.seriesName);
     });
-
 ```
 
 {sample}CS\_TextFormatter\_01{sample}
@@ -90,13 +90,14 @@ This function can return more than one value. The sample below demonstrates it.
 
 ```
     //set the textFormatter
-    series_1.labels().textFormatter(function(){
-        return('Size: '+this.size+', value: '+this.value);
+    var labels_1 = series_1.labels();
+    labels_1.textFormatter(function(){
+        return("Size: "+this.size+", value: "+this.value);
     });
-    series_2.labels().textFormatter(function(){
-        return('Size: '+this.size+', value: '+this.value);
+    var labels_2 = series_2.labels();
+    labels_2.textFormatter(function(){
+        return("Size: "+this.size+", value: "+this.value);
     });
-
 ```
 
 {sample}CS\_TextFormatter\_02{sample}
@@ -110,23 +111,24 @@ The number and variety of default fields might be not enough in some cases. Some
 Using these methods, you can display the values from the extra params, if you have added any to the series or to the data. Look at the sample and its code below:
 
 ```
-  //create box chart series with our data
-  var series_1 = chart.box(data_1);
-  var series_2 = chart.box(data_2);
-  
-  //enable the labels
-  series_2.labels().enabled(true);
-  
-  //usage of textFormatter
-  series_2.labels().textFormatter(function(){
-      return(this.getDataValue('extra_inf'));
-  });
+    //create box chart series with our data
+    var series_1 = chart.box(data_1);
+    var series_2 = chart.box(data_2);
+    
+    //enable the labels
+    var labels = series_2.labels();
+    labels.enabled(true);
+    
+    //usage of textFormatter
+    labels.textFormatter(function(){
+        return(this.getDataValue("extra_inf"));
+    });
 
 ```
 
 {sample}CS\_TextFormatter\_03{sample}
 
-In this sample we have added some extra information to the data: we defined the "extra_inf" parameter of "60% redundant" value for the second point of the second series and displayed it, using {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api}. Another extra parameter, "extra_inf_long", was added to use it, for example, as an extra field in the tooltip, because it's too long to be shown on the chart. How to add the values from any extra parameters, see in the [Labels and Tooltips]() tutorial.
+In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "60% redundant" value for the second point of the second series and displayed it, using {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api}. Another extra parameter, "extra_inf_long", was added to use it, for example, as an extra field in the tooltip, because it's too long to be shown on the chart. How to add the values from any extra parameters, see in the [Labels and Tooltips]() tutorial.
 
 ###getSeriesMeta
 
@@ -206,8 +208,8 @@ Here is a sample of the {api:anychart.core.utils.SeriesPointContextProvider#getS
 ```
     //textFormatter
     chart.labels().textFormatter(function(){
-    return((this.getDataValue('value'))+' / '+this.getStat('sum'));
-});
+        return((this.getDataValue('value'))+' / '+this.getStat('sum'));
+    });
 
 ```
 
