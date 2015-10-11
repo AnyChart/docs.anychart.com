@@ -209,7 +209,7 @@ Here is a sample with the tooltip sticks to the hovered point:
 You can bind tooltips to a certain point on the chart plot using **chart** as a value for {api:anychart.core.ui.ChartTooltip#positionMode}**positionMode()**{api}. The sample of such settings can be found [below](#sample). You have to manage other tooltip parameters along with {api:anychart.core.ui.ChartTooltip#positionMode}**positionMode()**{api}.
   
   
-You can choose which part of the tooltip should be considered as anchor and used for position managing. **anchor()** method defines the main part of the tooltip for further positioning.
+You can choose which part of the tooltip should be considered as anchor and used for position managing. {api:anychart.core.ui.SeriesTooltip#anchor}**anchor()**{api} method defines the main part of the tooltip for further positioning.
 
 ```
   // tooltip settings
@@ -224,7 +224,7 @@ Here is a sample of two series with fixed tooltip position. Tooltip settings are
 <a name="sample"></a>
 {sample}CS\_Tooltip\_13{sample}
 
-Along with the main point for tooltip you can set the point to which the tooltip should be bound. Use **position()** method to set the point for tooltip to be bound to.
+Along with the main point for tooltip you can set the point to which the tooltip should be bound. Use {api:anychart.core.ui.SeriesTooltip#position}**position()**{api} method to set the point for tooltip to be bound to.
 
 ```
   var tooltip1 = series1.tooltip();
