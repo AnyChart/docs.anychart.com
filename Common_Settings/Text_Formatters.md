@@ -157,7 +157,7 @@ Managing additional information for chart tooltips works pretty much the same as
     });
 ```
 
-Here is a sample with additional information in chart tooltip. Full information on tooltips settings can be found in [Tooltip article](../Common_Settings/Tooltip).
+Here is a sample with additional information in the chart tooltip. Full information on tooltip settings can be found in [Tooltip article](../Common_Settings/Tooltip).
 
 {sample}CS\_TextFormatter\_06{sample}
 
