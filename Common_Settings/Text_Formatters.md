@@ -10,7 +10,7 @@
 
 ## Overview
 
-Sometimes it might be necessary to display any text with the points on a chart for some reasons. That's when you need to use the {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter**{api} method.
+Sometimes it might be necessary to display any text with the points on a chart for some reasons. That's when you need to use the {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method.
 
 ##Default fields
 
@@ -204,7 +204,7 @@ To add any parameter to the meta of the series, you need to set the parameter na
 
 {sample}CS\_TextFormatter\_04{sample}
 
-**Note!** There's no {api::anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}**.getSeriesMeta**{api} method in Pie, Funnel or Pyramid Charts.
+**Note!** There's no {api::anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}**.getSeriesMeta()**{api} method in Pie, Funnel or Pyramid Charts.
 
 ###getStat
 
