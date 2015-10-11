@@ -135,7 +135,7 @@ Changes made in Live Edit mode lead to data changes. In this case we use events 
 
 ### move
 
-The data tree will dispatch the "move" event when we change the Gantt chart tree structure. Gantt chart dispatch this when it catches the live mode changes in Gantts' structure made by user in live mode. It has several necessary fields: 
+The data tree will dispatch the "move" event when we change the Gantt chart tree structure. Gantt chart dispatch this when it catches the live mode changes in Gantts' structure made by user. It has several fields: 
 
  - "type": the event type (anychart.enums.EventType.TREE_ITEM_MOVE)
  - "source", the data item where we move our item from
@@ -144,30 +144,50 @@ The data tree will dispatch the "move" event when we change the Gantt chart tree
  - "targetIndex": the target item index
  - "item": finally, this is the item we have moved (dragged and dropped).
 
- For example: we moved the parent item "Breathing" inside another parent item, making the Gantt tree arborize. Then the "move" event will be dispatched with these parameters:
+
+ For example: we moved the parent item "Part 1" inside another parent item, "Part 3", making the Gantt tree arborize. Then the "move" event will be dispatched with these parameters:
+
   - type: anychart.enums.EventType.TREE_ITEM_MOVE
   - source: 
   - sourceIndex:
-  - target:
-  - targetIndex:
-  - item:
+  - target: "Part 3"
+  - targetIndex: 2
+  - item: "Part 1"
 
  ```
+ 	var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+ 	tree.listen(anychart.enums.EventType.TREE_ITEM_MOVE), function(e){
+ 		chart.title.text("The "+e.itemIndex+" item was moved");
+ 	});
  ```
 
 ### update
 
-"Update" event will be dispatched by the data tree when we change anything about our data items. For example, if you move an actual time bar of any task or process, there will be "update" event dispatched from that moved item because of changing the fields' values.
+"Update" event will be dispatched by the data tree when we change anything about our data items. For example, if you move an actual time bar of any task or process, there will be "update" event dispatched by the Gantt chart data tree because of changing the fields' values.
 
-There are necessary fields as well:
+Our "update" event includes the following fields:
 
-- "type": the object type (item or what???)
+- "type": the event type (anychart.enums.EventType.TREE_ITEM_UPDATE)
 - "item": a DataItem object
-- "path":
-- "field": the field that value was changed
-- "value": the new value for the item field
+- "path": path to the field with changed value
+- "field": the field which value was changed
+- "value": the new value for the field
 
-For example: we lengthen the baseline of a process. The default start date was 02/27, end date 03/03. The new dates are 02/27 to 08/03. So, there will be one field edited - "baselineEnd". Then the "update" event will have those parameters:
+ ```
+ 	var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+ 	tree.listen(anychart.enums.EventType.TREE_ITEM_UPDATE), function(e){
+ 		chart.title.text("The "+e.itemIndex+" item was updated");
+ 	});
+ ```
+
+For example: we lengthen the second period of a tree data item "Act 1". The start date was 02/27, end date 03/03. We change the end date to 08/03. So, there will be one field edited - "actualTimeEnd" of the second period. Then the "update" event will have those parameters:
+
+
+- "type": anychart.enums.EventType.TREE_ITEM_UPDATE
+- "item": "Act 1"
+- "path": "periods, 1"
+- "field": actualTimeEnd
+- "value": 08.03 (в UTC збацать)
 
 ### create
 
@@ -177,6 +197,14 @@ The "create" event will be dispatched when we create a new tree data item. It wi
 - "targetIndex": the index of our target
 - "item": a DataItem object
 
+
+ ```
+ 	var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+ 	tree.listen(anychart.enums.EventType.TREE_ITEM_CREATE), function(e){
+ 		chart.title.text("The "+e.itemIndex+" item was created");
+ 	});
+ ```
+
 ### remove
 
 When we remove an object, the Gantt tree dispatches the "remove" event. Its necessary fields are almost the same as the "create" event has:
@@ -185,6 +213,14 @@ When we remove an object, the Gantt tree dispatches the "remove" event. Its nece
 - "source": the name of the target where we're removing the object from;
 - "sourceIndex": the index of the source;
 - "item": a DataItem object.
+
+
+ ```
+ 	var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
+ 	tree.listen(anychart.enums.EventType.REMOVE), function(e){
+ 		chart.title.text("The "+e.itemIndex+" item was removed");
+ 	});
+ ```
 
 ### beforeCreateConnector
 
