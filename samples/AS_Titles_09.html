@@ -49,6 +49,7 @@
   
   // set data and color
   var column = chart.column(data);
+  column.name("Sales");
   column.stroke(null);
   
   column.listen(
@@ -105,6 +106,7 @@
       chart.title("Sales Report");
       var column = chart.column(data);
       column.stroke(null);
+      column.name("Sales");
       column.listen(
         "pointClick",
         function(e) {

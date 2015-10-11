@@ -182,9 +182,9 @@ There are a lot of event types, which are separated to two categories: mouse-ori
 <td>All browser params + point params</td>
 </tr>
 <tr>
-<td>dblclick</td>
+<td>dblСlick</td>
 <td>All browser params</td>
-<td>pointDblclick</td>
+<td>pointDblСlick</td>
 <td>All browser params + point params</td>
 </tr>
 <tr>
