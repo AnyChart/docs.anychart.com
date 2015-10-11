@@ -114,21 +114,55 @@ Using these methods, you can display the values from the extra params, if you ha
     //create box chart series with our data
     var series_1 = chart.box(data_1);
     var series_2 = chart.box(data_2);
-    
+
     //enable the labels
     var labels = series_2.labels();
     labels.enabled(true);
-    
+
     //usage of textFormatter
     labels.textFormatter(function(){
         return(this.getDataValue("extra_inf"));
     });
-
 ```
 
 {sample}CS\_TextFormatter\_03{sample}
 
-In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "60% redundant" value for the second point of the second series and displayed it, using {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api}. Another extra parameter, "extra_inf_long", was added to use it, for example, as an extra field in the tooltip, because it's too long to be shown on the chart. How to add the values from any extra parameters, see in the [Labels and Tooltips]() tutorial.
+In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "redundant" value for the second point of the second series and displayed it, using {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api}.
+  
+  
+Managing additional information for chart tooltips works pretty much the same as it does for chart labels. Define extra parameter in your data set and use the name of your parameter as a value for {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api} method.
+
+```
+    // map data for series
+    var seriesData = dataSet.mapAs({
+        // set data row for x parameter
+        x: [0],
+        // set data row for value parameter
+        value: [1],
+        // set data row for custom parameter
+        yoy: [2]
+    });
+    
+    // set data for series
+    var series = chart.column(seriesData);
+    series.name("Unique users in 2013");
+    
+    // series tooltip settings
+    var tooltip = series.tooltip();
+    // adjust tooltip text
+    tooltip.textFormatter(function(){
+        return 
+            this.seriesName + ": " + this.value + " millions" +
+            "\nYear over year: " + this.getDataValue("yoy") + "%";
+    });
+```
+
+Here is a sample with additional information in chart tooltip. Full information on tooltips settings can be found in [Tooltip article](../Common_Settings/Tooltip).
+
+{sample}CS\_TextFormatter\_06{sample}
+
+<!--
+ Another extra parameter, "extra\_inf\_long", was added to use it, for example, as an extra field in the tooltip, because it's too long to be shown on the chart. How to add the values from any extra parameters, see in the [Labels and Tooltips]() tutorial.-->
 
 ###getSeriesMeta
 
@@ -143,30 +177,34 @@ To add any parameter to the meta of the series, you need to set the parameter na
         {x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
         {x: Date.UTC(2007, 7, 30), open:517.36, high:518.40, low:516.58, close:516.80},
         {x: Date.UTC(2007, 8, 1), open:513.10, high:516.50, low:511.47, close:515.25},
-    ]).xPointPosition(0.5)
-    .meta('company', 'ACME Corp.');
+    ]);
+    series_1.xPointPosition(0.5);
+    series_1.meta("company", "ACME Corp.");
      
     // set second series data
     var series_2 = chart.ohlc([
         {x: Date.UTC(2007, 7, 28), open: 522.95, high: 523.10, low: 522.50, close: 522.52},
         {x: Date.UTC(2007, 7, 30), open: 524.49, high: 524.91, low: 524.38, close: 524.61},
         {x: Date.UTC(2007, 8, 1), open: 518.81, high: 520.03, low: 517.51, close: 519.73}
-    ]).xPointPosition(0.5)
-    .meta('company', 'Duff B. Corp.');
+    ]);
+    series_2.xPointPosition(0.5);
+    series_2.meta("company", "Duff B. Corp.");
 
     //textFormatter
-    series_1.labels().textFormatter(function(){
-        return('C: '+this.getSeriesMeta('company')+'\nL: '+this.low+'\nH: '+this.high);
+    var labels_1 = series_1.labels();
+    labels_1.textFormatter(function(){
+        return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
     });
-    series_2.labels().textFormatter(function(){
-        return('C: '+this.getSeriesMeta('company')+'\nL: '+this.low+'\nH: '+this.high);
+    var labels_2 = series_2.labels();
+    labels_2.textFormatter(function(){
+        return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
     });
 
 ```
 
 {sample}CS\_TextFormatter\_04{sample}
 
-**Note!** There's no {api::anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}**.getSeriesMeta**{api} method in Pie Charts.
+**Note!** There's no {api::anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}**.getSeriesMeta**{api} method in Pie, Funnel or Pyramid Charts.
 
 ###getStat
 
@@ -194,7 +232,7 @@ seriesPointsCount - the number of all points on a chart</td>
 <td>pointsCount - the number of all points on a chart<br>seriesPointsCount - the number of all points on a chart</td>
 </tr>
 <tr>
-<td>Pie/Donut<br><!--Funnel--!></td>
+<td>Pie/Donut<br>Funnel<br>Pyramid</td>
 <td>count - number of points<br>
 min - min value on a chart<br>
 max - max value on a chart<br>
@@ -207,10 +245,10 @@ Here is a sample of the {api:anychart.core.utils.SeriesPointContextProvider#getS
 
 ```
     //textFormatter
-    chart.labels().textFormatter(function(){
-        return((this.getDataValue('value'))+' / '+this.getStat('sum'));
+    var labels = chart.labels();
+    labels.textFormatter(function(){
+        return((this.getDataValue("value"))+" / "+this.getStat("sum"));
     });
-
 ```
 
 {sample}CS\_TextFormatter\_05{sample}
