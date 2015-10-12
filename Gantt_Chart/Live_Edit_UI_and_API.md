@@ -135,7 +135,7 @@ Changes made in Live Edit mode lead to data changes. In this case we use events 
 
 ### move
 
-The data tree will dispatch the "move" event when we change the Gantt chart tree structure. Gantt chart dispatch this when it catches the live mode changes in Gantts' structure made by user. It has several fields: 
+The data tree will dispatch the "move" event when we change the Gantt chart tree structure. Gantt chart dispatch this when it catches the live mode changes in Gantt charts' data structure made by user. It has several fields: 
 
  - "type": the event type (anychart.enums.EventType.TREE_ITEM_MOVE)
  - "source", the data item where we move our item from
@@ -148,8 +148,8 @@ The data tree will dispatch the "move" event when we change the Gantt chart tree
  For example: we moved the parent item "Part 1" inside another parent item, "Part 3", making the Gantt tree arborize. Then the "move" event will be dispatched with these parameters:
 
   - type: anychart.enums.EventType.TREE_ITEM_MOVE
-  - source: 
-  - sourceIndex:
+  - source: "null"
+  - sourceIndex: "null"
   - target: "Part 3"
   - targetIndex: 2
   - item: "Part 1"
@@ -169,7 +169,7 @@ Our "update" event includes the following fields:
 
 - "type": the event type (anychart.enums.EventType.TREE_ITEM_UPDATE)
 - "item": a DataItem object
-- "path": path to the field with changed value
+- "path": path to the field with changed value, always in array format
 - "field": the field which value was changed
 - "value": the new value for the field
 
@@ -180,18 +180,18 @@ Our "update" event includes the following fields:
  	});
  ```
 
-For example: we lengthen the second period of a tree data item "Act 1". The start date was 02/27, end date 03/03. We change the end date to 08/03. So, there will be one field edited - "actualTimeEnd" of the second period. Then the "update" event will have those parameters:
+For example: we lengthen the second period of a tree data item "Act 1". The start date was 02/27, end date 03/03. We change the end date to 08/03. So, there will be one field edited - "actualEnd" of the second period. Then the "update" event will have those parameters:
 
 
 - "type": anychart.enums.EventType.TREE_ITEM_UPDATE
 - "item": "Act 1"
 - "path": "periods, 1"
-- "field": actualTimeEnd
+- "field": actualEnd
 - "value": 08.03 (в UTC збацать)
 
 ### create
 
-The "create" event will be dispatched when we create a new tree data item. It will have those fields:
+The "create" event will be dispatched when we create a new tree data item. It will have these fields:
 - "type": the event type
 - "target": the name of the target where we're putting the new object in
 - "targetIndex": the index of our target
@@ -207,12 +207,12 @@ The "create" event will be dispatched when we create a new tree data item. It wi
 
 ### remove
 
-When we remove an object, the Gantt tree dispatches the "remove" event. Its necessary fields are almost the same as the "create" event has:
+When we remove an object, the Gantt tree dispatches the "remove" event. Its fields are similar to ones that the "create" event has:
 
-- "type": the event type;
-- "source": the name of the target where we're removing the object from;
-- "sourceIndex": the index of the source;
-- "item": a DataItem object.
+- "type": the event type
+- "source": the name of the target where we're removing the object from
+- "sourceIndex": the index of our source
+- "item": a DataItem object
 
 
  ```
@@ -224,26 +224,27 @@ When we remove an object, the Gantt tree dispatches the "remove" event. Its nece
 
 ### beforeCreateConnector
 
-The "beforeCreateConnector" event is similar to the "create", but this is dispatched by the Gantt diagram opposite to Gantt tree in other events situations and, as it can be seen from its name, it is dispatched before the action itself, so it will not have any information about the source. To get this information we need to listen to the "update" event. The necessary fields of the "beforeCreateConnector" event are:
+The "beforeCreateConnector" event is similar to the "create", but this is dispatched by the Gantt diagram opposite to Gantt tree in other events situations and, as it can be seen from its name, it is dispatched before the action itself, so it will not have any information about the source. To get this information we need to listen to the "update" event. The fields of the "beforeCreateConnector" event are:
 
 - "type": the event type (e.g. anychart.enums.EventType.BEFORE_CREATE_CONNECTOR);
 - "source": which data item the connector starts from
 - "target": which data item the connector ends at (is connected to)
 - "connectorType": the connector type.
 
-These were necessary fields for the Project Gantt, and when we deal with the Resource Gantt there will be more fields about periods (period objects and those indexes).
+That was a description of the Project Gantt charts, and when we deal with the Resource Gantt chart there are more fields about periods (period objects and those indexes).
 
 
-Also it's possible to prevent the default event behaviour, using {api}**.preventDefault**{api} method. In this case, when the event happens, there will be no default reaction.
+Also it's possible to prevent the default event behavior, using {api}**.preventDefault**{api} method. In this case, when the event happens, there will be no default reaction.
 
 ## Data Grid
 
 There is a couple of wonderful features we've applied to our DataGrid.
-At first, you can change the structure of the Gantt by simply dragging any element to wherever you need. Look at the picture below.
+At first, you can change the structure of the Gantt chart data by simply dragging any element to wherever you need. Look at the picture below.
 
 <img>
 
-However, it's not possible to make a parent item its own child, while you can put that parent item with all its children inside another root data item.
+However, it's not possible to make a parent item its own child, while you can put that parent item with all its children inside another data item (root or child).
+
 
 Then, our parental items can be expanded and collapsed. Just click once on the "+"/"-" sign or double-click the row with the item (this might be prevented with the usage of [Event Listeners](../Common_Settings/Event_Listeners)).
 
@@ -284,6 +285,6 @@ You cannot change the duration of a milestone as they have no duration, but you 
 
 ## Scrolling
 
-When you change the length of the time bars or move them or milestones later or earlier than Gantt screen displays, the display will start scrolling automatically. Also, in live mode the Gantt scales' ranges can automatically lengthen when we overcome the min and max range values while scrolling.
+When you change the length of the time bars or move them or milestones later or earlier than the screen with Gantt chart displays, the display will start scrolling automatically. Also, in live mode the Gantt chart's scales' ranges can automatically lengthen when we overcome the min and max range values while scrolling.
 
 
