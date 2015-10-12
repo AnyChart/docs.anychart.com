@@ -186,9 +186,9 @@ For example: we lengthen the second period of a tree data item "Act 1". The star
 
 - "type": anychart.enums.EventType.TREE_ITEM_UPDATE
 - "item": "Act 1"
-- "path": "periods, 1"
-- "field": actualEnd
-- "value": 08.03 (в UTC збацать)
+- "path": ["periods", "1"]
+- "field": "actualEnd"
+- "value": "1425772800000"
 
 ### create
 
