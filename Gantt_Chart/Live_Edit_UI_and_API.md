@@ -6,6 +6,7 @@
  * [Events](#events) 
  * [Data Grid](#data_grid)
  * [TimeLine](#timeline)
+* [Coloring](#coloring)
  
 # Overview
 The Live Edit mode allows you to edit any part of your Gantt chart without touching the code. All you need to do is to use the mouse to change the duration, position or connections.
@@ -283,8 +284,50 @@ As we have already noticed, the baseline bar looks and behaves almost like an ac
 You cannot change the duration of a milestone as they have no duration, but you still can drag it to another position. They have no progress and connectors as well, because they represent moments in time.
 
 
-## Scrolling
+### Scrolling
 
 When you change the length of the time bars or move them or milestones later or earlier than the screen with Gantt chart displays, the display will start scrolling automatically. Also, in live mode the Gantt chart's scales' ranges can automatically lengthen when we overcome the min and max range values while scrolling.
 
 
+
+## Coloring
+
+Besides basic Gantt chart elements, there are some more elements which show up in the Live Edit mode. You can alter the view of these elements using special methods described below. 
+
+Connectors have only stroke and thumbs (no fill), so we've got the {api:anychart.core.ui.Timeline#connectorPreviewStroke}**.connectorPreviewStroke()**{api} method to change the stroke color. The code line will look like the following:
+
+```
+	var timeline = chart.getTimeline();
+
+	// changing the color of the connector preview to red
+	timeline.connectorPreviewStroke("red", 1, "5 2");
+
+```
+
+We should define the color, then we can define its thickness and dash pattern, line join and line cap styles.
+
+To change the thumbs' fill and stroke we use {api:anychart.core.ui.Timeline#editConnectorThumbFill}**.editConnectorThumbFill()**{api} and {api:anychart.core.ui.Timeline#}**.editConnectorThumbStroke()**{api} methods.
+
+We have said in the paragraph above that when we edit the length or move the time interval bars, we can see our changes preview. To change its default view, we've got the following methods:
+
+ - {api:anychart.core.ui.Timeline#editPreviewFill}**.editPreviewFill()**{api} - for changing the fill color of the preview bar (transparent by default)
+ - {api:anychart.core.ui.Timeline#editPreviewStroke}**.editPreviewStroke()**{api} - for changing the stroke color of the preview bar
+ - {api:anychart.core.ui.Timeline#editProgressFill}**.editProgressFill()**{api} - for changing the fill color of the progress part of the time interval bar
+ - {api:anychart.core.ui.Timeline#editProgressStroke}**.editProgressStroke()**{api} - for changing the stroke color of progress
+
+
+Also we can change the thumbs fill color and stroke. We use the {api:anychart.core.ui.Timeline#editIntervalThumbFill}**.editIntervalThumbFill()**{api} and {api:anychart.core.ui.Timeline#editIntervalThumbStroke}**.editIntervalThumbStroke()**{api} methods accordingly. In the code this will look like below:
+
+
+```
+	var timeline = chart.getTimeline();
+
+    // sets edit interval thumb fill
+    currentTimeLine.editIntervalThumbFill({
+        src: "http://static.anychart.com/beach.png",
+        mode: "stretch"
+    });
+
+```
+
+As you see, you can also use pictures as fills.
