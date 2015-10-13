@@ -84,4 +84,40 @@ While as most types of charts represent differences in values of data points via
 There are different ways to manage HeatMap's colors. You can set colors ether in dataSet or using special methods. The most popular method for to set heatMap colors is colorScale() method. 
   
   
-Use linerColor() scale to define the range of colors 
+Use linerColor() scale to define an array key colors for creating custom palette with all hues that can be obtained by blending adjacent key colors from the array in different proportions.
+  
+  
+```
+  var chart = anychart.heatMap(dataSet);
+
+  // create linerColor scale
+  var colorScale = anychart.scales.linerColor();
+  // set range of colors for the scale
+  colorScale.colors(["#B2DFDB", "#004D40"]);
+  
+  // apply colorScale for colorizing heatMap chart
+  chart.colorScale(colorScale);
+```
+
+Another color scale for heatMap is ordinalColor(). Use this scale to define the color for each range of values. All value ranges are custom.
+
+```
+  var chart = anychart.heatMap(dataSet);
+
+  // create linerColor scale
+  var colorScale = anychart.scales.ordinalColor();
+  // set range of values and corresponding colors
+  colorScale.ranges([
+    // set color for all points with the value less than 1200000
+    {less: 1200000, color: "#B2DFDB"}, 
+    {from: 1200000, to: 3000000, color: "#004D40"},
+    {greater: 3000000, color: "#004D40"}
+  ]);
+
+  // apply colorScale for colorizing heatMap chart
+  chart.colorScale(colorScale);
+```
+
+Here is a sample with ordinalColor() scale: 
+
+{sample}BCT\HeatMapChart\_02{sample}

@@ -38,7 +38,19 @@
   // set chart type
   var chart = anychart.heatMap(data);
   chart.title("Email Opens by Environment\nper Quarter 2011-2013");
-  var colorScale = anychart.scales.linearColor(['#EC6E07', '#64B5F6']);
+  // create linerColor scale
+  var colorScale = anychart.scales.ordinalColor();
+  // set range of values and corresponding colors
+  colorScale.ranges([
+    // set color for all points with the value less than 1200000
+    {less: 1200000, color: "#EC6E07"},
+    {from: 1200000, to: 2000000, color: "#FFD700"},
+    {from: 2000000, to: 3000000, color: "#FFA500"},
+    {greater: 3000000, color: "#32CD32"}
+  ]);
+
+  // apply colorScale for colorizing heatMap chart
+  chart.colorScale(colorScale);
   chart.colorScale(colorScale);
 
   // draw chart
