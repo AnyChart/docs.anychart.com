@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // data
+  var data = anychart.data.set([
+    {column: "California",    row: "2004", value: 1704211},
+    {column: "California",    row: "2005", value: 2782680},
+    {column: "California",    row: "2006", value: 2992679},
+    {column: "Colorado",      row: "2004", value: 448302},
+    {column: "Colorado",      row: "2005", value: 768390},
+    {column: "Colorado",      row: "2006", value: 843584},
+    {column: "DC",            row: "2004", value: 693211},
+    {column: "DC",            row: "2005", value: 1215158},
+    {column: "DC",            row: "2006", value: 1053581},
+    {column: "Florida",       row: "2004", value: 405985},
+    {column: "Florida",       row: "2005", value: 661250},
+    {column: "Florida",       row: "2006", value: 811924},
+    {column: "Illinois",      row: "2004", value: 727914},
+    {column: "Illinois",      row: "2005", value: 1150659},
+    {column: "Illinois",      row: "2006", value: 1134085},
+    {column: "Massachusetts", row: "2004", value: 238819},
+    {column: "Massachusetts", row: "2005", value: 157719},
+    {column: "Massachusetts", row: "2006", value: 887169},
+    {column: "New York",      row: "2004", value: 1667969},
+    {column: "New York",      row: "2005", value: 2763503},
+    {column: "New York",      row: "2006", value: 3151022},
+    {column: "Texas",         row: "2004", value: 219967},
+    {column: "Texas",         row: "2005", value: 3732889},
+    {column: "Texas",         row: "2006", value: 4185098}
+  ]);
+
+  // set chart type
+  var chart = anychart.heatMap(data);
+  chart.title("Email Opens by Environment\nper Quarter 2011-2013");
+  var colorScale = anychart.scales.linearColor(['#EC6E07', '#64B5F6']);
+  chart.colorScale(colorScale);
+
+  // draw chart
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

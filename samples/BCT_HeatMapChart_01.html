@@ -9,54 +9,22 @@
 
   // data
   var data = anychart.data.set([
-    {column: "Quarter 1\n2011", row: "Mobile", value: 15},
-    {column: "Quarter 2\n2011", row: "Mobile", value: 17},
-    {column: "Quarter 3\n2011", row: "Mobile", value: 21},
-    {column: "Quarter 5\n2011", row: "Mobile", value: 23},
-    {column: "Quarter 1\n2012", row: "Mobile", value: 27},
-    {column: "Quarter 2\n2012", row: "Mobile", value: 31},
-    {column: "Quarter 3\n2012", row: "Mobile", value: 32},
-    {column: "Quarter 4\n2012", row: "Mobile", value: 36},
-    {column: "Quarter 1\n2013", row: "Mobile", value: 38},
-    {column: "Quarter 2\n2013", row: "Mobile", value: 40},
-    {column: "Quarter 3\n2013", row: "Mobile", value: 43},
-    {column: "Quarter 4\n2013", row: "Mobile", value: 44},
-    {column: "Quarter 1\n2011", row: "WebMail", value: 34},
-    {column: "Quarter 2\n2011", row: "WebMail", value: 33},
-    {column: "Quarter 3\n2011", row: "WebMail", value: 32},
-    {column: "Quarter 5\n2011", row: "WebMail", value: 30},
-    {column: "Quarter 1\n2012", row: "WebMail", value: 29},
-    {column: "Quarter 2\n2012", row: "WebMail", value: 27},
-    {column: "Quarter 3\n2012", row: "WebMail", value: 28},
-    {column: "Quarter 4\n2012", row: "WebMail", value: 27},
-    {column: "Quarter 1\n2013", row: "WebMail", value: 25},
-    {column: "Quarter 2\n2013", row: "WebMail", value: 23},
-    {column: "Quarter 3\n2013", row: "WebMail", value: 21},
-    {column: "Quarter 4\n2013", row: "WebMail", value: 18},
-    {column: "Quarter 1\n2011", row: "Desktop", value: 43},
-    {column: "Quarter 2\n2011", row: "Desktop", value: 42},
-    {column: "Quarter 3\n2011", row: "Desktop", value: 40},
-    {column: "Quarter 5\n2011", row: "Desktop", value: 38},
-    {column: "Quarter 1\n2012", row: "Desktop", value: 36},
-    {column: "Quarter 2\n2012", row: "Desktop", value: 34},
-    {column: "Quarter 3\n2012", row: "Desktop", value: 32},
-    {column: "Quarter 4\n2012", row: "Desktop", value: 31},
-    {column: "Quarter 1\n2013", row: "Desktop", value: 29},
-    {column: "Quarter 2\n2013", row: "Desktop", value: 29},
-    {column: "Quarter 3\n2013", row: "Desktop", value: 28},
-    {column: "Quarter 4\n2013", row: "Desktop", value: 26},
-    {column: "Quarter 1\n2011", row: "Undetected", value: 8},
-    {column: "Quarter 2\n2011", row: "Undetected", value: 8},
-    {column: "Quarter 3\n2011", row: "Undetected", value: 7},
-    {column: "Quarter 5\n2011", row: "Undetected", value: 8},
-    {column: "Quarter 1\n2012", row: "Undetected", value: 8},
-    {column: "Quarter 2\n2012", row: "Undetected", value: 8},
-    {column: "Quarter 3\n2012", row: "Undetected", value: 7},
-    {column: "Quarter 4\n2012", row: "Undetected", value: 7},
-    {column: "Quarter 1\n2013", row: "Undetected", value: 7},
-    {column: "Quarter 2\n2013", row: "Undetected", value: 8},
-    {column: "Quarter 3\n2013", row: "Undetected", value: 8},
-    {column: "Quarter 4\n2013", row: "Undetected", value: 12}
+    {column: "Quarter 1", row: "Mobile", value: 15},
+    {column: "Quarter 2", row: "Mobile", value: 17},
+    {column: "Quarter 3", row: "Mobile", value: 21},
+    {column: "Quarter 4", row: "Mobile", value: 23},
+    {column: "Quarter 1", row: "WebMail", value: 34},
+    {column: "Quarter 2", row: "WebMail", value: 33},
+    {column: "Quarter 3", row: "WebMail", value: 32},
+    {column: "Quarter 4", row: "WebMail", value: 30},
+    {column: "Quarter 1", row: "Desktop", value: 43},
+    {column: "Quarter 2", row: "Desktop", value: 42},
+    {column: "Quarter 3", row: "Desktop", value: 40},
+    {column: "Quarter 4", row: "Desktop", value: 38},
+    {column: "Quarter 1", row: "Undetected", value: 8},
+    {column: "Quarter 2", row: "Undetected", value: 8},
+    {column: "Quarter 3", row: "Undetected", value: 7},
+    {column: "Quarter 4", row: "Undetected", value: 8}
   ]);
 
   
@@ -66,8 +34,8 @@
   
   var max = Math.max.apply(null, valuesArray);
   var min = Math.min.apply(null, valuesArray);
-  var color2 = [240,255,255];
-  var color1 = [50,50,200];
+  var color2 = [240,230,140];
+  var color1 = [255,0,0];
 
   for (var i = 0; i<data.getRowsCount();i++){
     var value = data.mapAs().get(i, "value");
@@ -77,18 +45,7 @@
 
   // set chart type
   var chart = anychart.heatMap(data);
-  chart.stroke(null);
   chart.title("Email Opens by Environment\nper Quarter 2011-2013");
-  var labels = chart.labels();
-  labels.enabled(true);
-  labels.fontColor("#222");
-  labels.fontWeight(900);
-  labels.textFormatter(function(){
-    return this.value + "%"
-  });
-  var xLabels = chart.xAxis().labels();
-  xLabels.textWrap(true);
-  xLabels.hAlign("center");
 
   // draw chart
   chart.container("container");
