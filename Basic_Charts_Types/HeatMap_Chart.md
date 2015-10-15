@@ -108,7 +108,7 @@ Here is a sample of a heatMap with **.ordinalColor()** scale:
 
 {sample}BCT\_HeatMapChart\_02{sample}
 
-Moreover, you can set a solid color for each cell of the heatMap. Use **.fill()** method to define custom color for every cell. In addition to **.fill()** method **"fill"** parameter can be used to emphasize some chart points:
+Moreover, you can set a solid color for each cell of the heatMap. Use **.fill()** method to define custom color for every cell. In addition to **.fill()** method, **"fill"** parameter can be used to emphasize a chart point:
 
 ```
   var dataSet = anychart.data.set([
@@ -179,10 +179,10 @@ Border of the heatMap chart and all the borders of each chart points are control
     {column: "Texas",         row: "2005", value: 3732889},
     {
       column: "Texas",
-      row: "2006", 
+      row: "2006",
       value: 4185098,
-      // set custom stroke for the point
-      stroke: {color: "#006400"}
+      stroke: {color: "#006400"},
+      fill: "#90EE90"
     },
     {column: "Massachusetts", row: "2004", value: 238819},
     {column: "Massachusetts", row: "2005", value: 157719},
