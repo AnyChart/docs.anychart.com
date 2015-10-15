@@ -74,7 +74,7 @@ Moreover, you can use an array of arrays without any parameters as a data source
 
 Here is a HeatMap with this data:
 
-{sample}BCT\HeatMapChart\_01{sample}
+{sample}BCT\_HeatMapChart\_01{sample}
 
 ## Visualization
 
@@ -104,13 +104,55 @@ Use ordinalColor() scale as a parameter for colorScale() method to create an arr
   chart.colorScale(colorScale);
 ```
 
-Here is a sample with ordinalColor() scale: 
+Here is a sample of a heatMap with **ordinalColor()** scale:
 
-{sample}BCT\HeatMapChart\_02{sample}
+{sample}BCT\_HeatMapChart\_02{sample}
 
-Moreover, you can set a solid color for each cell of the heatMap. Use **.fill()** method to define custom color for every cell:
+Moreover, you can set a solid color for each cell of the heatMap. Use **.fill()** method to define custom color for every cell. In addition to **fill()** method **fill** parameter can be used to emphasize some chart points:
 
-{sample}BCT\HeatMapChart\_05{sample}
+```
+  var dataSet = anychart.data.set([
+    {column: "California",    row: "2004", value: 1704211},
+    {column: "California",    row: "2005", value: 2782680},
+    {column: "California",    row: "2006", value: 2992679},
+    {column: "Colorado",      row: "2004", value: 448302},
+    {column: "Colorado",      row: "2005", value: 768390},
+    {column: "Colorado",      row: "2006", value: 843584},
+    {column: "DC",            row: "2004", value: 693211},
+    {column: "DC",            row: "2005", value: 1215158},
+    {column: "DC",            row: "2006", value: 1053581},
+    {column: "Florida",       row: "2004", value: 405985},
+    {column: "Florida",       row: "2005", value: 661250},
+    {column: "Florida",       row: "2006", value: 811924},
+    {column: "Illinois",      row: "2004", value: 727914},
+    {column: "Illinois",      row: "2005", value: 1150659},
+    {column: "Illinois",      row: "2006", value: 1134085},
+    {column: "Texas",         row: "2004", value: 219967},
+    {column: "Texas",         row: "2005", value: 3732889},
+    {
+      // set column parameter
+      column: "Texas",
+      // set row parameter
+      row: "2006",
+      // set value parameter
+      value: 4185098,
+      // set custom inner color for a point
+      fill: "#90EE90"
+    },
+    {column: "Massachusetts", row: "2004", value: 238819},
+    {column: "Massachusetts", row: "2005", value: 157719},
+    {column: "Massachusetts", row: "2006", value: 887169},
+    {column: "New York",      row: "2004", value: 1667969},
+    {column: "New York",      row: "2005", value: 2763503},
+    {column: "New York",      row: "2006", value: 3151022}
+  ]);
+  
+  var chart = anychart.heatMap(dataSet);
+  // set inner color for every cell
+  chart.fill("#FFFFE0");
+```
+
+{sample}BCT\_HeatMapChart\_05{sample}
 
 ### Stroke
 
@@ -135,8 +177,13 @@ Border of the heatMap chart and all the borders of each chart points are control
     {column: "Illinois",      row: "2006", value: 1134085},
     {column: "Texas",         row: "2004", value: 219967},
     {column: "Texas",         row: "2005", value: 3732889},
-    // set custom stroke for the point
-    {column: "Texas",         row: "2006", value: 4185098, fill: "yellow", stroke: {color: "red"}},
+    {
+      column: "Texas",
+      row: "2006", 
+      value: 4185098,
+      // set custom stroke for the point
+      stroke: {color: "#006400"}
+    },
     {column: "Massachusetts", row: "2004", value: 238819},
     {column: "Massachusetts", row: "2005", value: 157719},
     {column: "Massachusetts", row: "2006", value: 887169},
@@ -145,13 +192,15 @@ Border of the heatMap chart and all the borders of each chart points are control
     {column: "New York",      row: "2006", value: 3151022}
   ]);
 
-  
+  // create chart
+  var chart = anychart.heatMap(dataSet);
+  chart.stroke("#CCC");
 ```
 
 Here is a sample with adjusted strokes.
 
-{sample}BCT\HeatMapChart\_06{sample}
-
+{sample}BCT\_HeatMapChart\_06{sample}
+  
 ### Labels
 
 Labels are text boxes with additional information for presented data. You can tune labels using {api:anychart.charts.HeatMap#labels}**.labels()**{api} method.
@@ -164,6 +213,20 @@ Labels are text boxes with additional information for presented data. You can tu
   var labels = chart.labels();
   // enable labels
   labels.enabled(true);
+  labels.textFormatter(function(){
+    // get value parameter of the point
+    var value = (this.value).toFixed(0);
+    var main = "";
+    // if value is more than three symbols long
+    for (var i=1;(i*3)<value.length;i++)
+      // insert space before evry 3 symbols
+      main = " " + value.substr(value.length-(i*3), 3) + main;
+    // get the remaining part of the value
+    var tail = value.substr(0, value.length-(main.length-main.length/4));
+    // format value in appropriate way
+    value = tail + main;
+    return "$" + value
+  });
 ```
 
 You can find information on managing labels content in [Text Formatters article](../Common_Settings/Text_Formatters).
@@ -171,7 +234,7 @@ You can find information on managing labels content in [Text Formatters article]
   
 Here is a sample of a js heatMap with formatted labels.
 
-{sample}BCT\HeatMapChart\_03{sample}
+{sample}BCT\_HeatMapChart\_03{sample}
 
 ### Tooltips
 
@@ -187,7 +250,7 @@ In this section we will explain how to tune pie tooltip. Method {api:anychart.ch
   });
 ```
 
-{sample}BCT\HeatMapChart\_04{sample}
+{sample}BCT\_HeatMapChart\_04{sample}
 <!--
 ## HatchFill
 

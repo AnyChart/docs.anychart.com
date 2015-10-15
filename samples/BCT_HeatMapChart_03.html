@@ -41,6 +41,16 @@
   var labels = chart.labels();
   labels.enabled(true);
 
+  labels.textFormatter(function(){
+    var value = (this.value).toFixed(0);
+    var main = "";
+    for (var i=1;(i*3)<value.length;i++)
+      main = " " + value.substr(value.length-(i*3), 3) + main;
+    var tail = value.substr(0, value.length-(main.length-main.length/4));
+    value = tail + main;
+    return "$" + value
+  });
+
   // draw chart
   chart.container("container");
   chart.draw();
