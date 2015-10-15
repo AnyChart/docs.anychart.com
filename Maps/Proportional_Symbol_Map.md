@@ -89,7 +89,7 @@ var dataSet = anychart.data.set([
     {'id': 'AU.TS', 'size': 514700, 'x':"6270", 'value': "-1933"}
 ]);
 
-
+```
 {sample}Maps\_Proportional\_Symbol\_04{sample}
 
 
