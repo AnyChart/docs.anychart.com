@@ -45,11 +45,12 @@
   xAxis.title("Likelihood");
   var yAxis = chart.yAxis();
   yAxis.title("Consequence");
+  chart.tooltip(false);
 
   var colorScale = anychart.scales.ordinalColor();
   // set range of values and corresponding colors
   colorScale.ranges([
-    {less: 1, color: "#ADFF2F"},
+    {less: 1, color: "#9ACD32"},
     {from: 0, to: 1, color: "#FFFF00"},
     {from: 1, to: 2, color: "#FF6347"},
     {greater: 2, color: "#FF0000"}

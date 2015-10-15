@@ -236,6 +236,8 @@ Here is a sample of a js heatMap with formatted labels.
 
 {sample}BCT\_HeatMapChart\_03{sample}
 
+HeatMap is a kind of charts that usually contains quite a few points in dataSet. That is why heatMaps has special **.labelsDisplayMode()** method for managing labels appearance on the chart plot. There are three possible parameters for displaying labels:  
+
 ### Tooltips
 
 In this section we will explain how to tune pie tooltip. Method {api:anychart.charts.HeatMap#tooltip}**.tooltip()**{api} controls tooltip of the heatMap.
