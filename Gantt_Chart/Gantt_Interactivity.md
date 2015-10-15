@@ -111,5 +111,3 @@ Our Gantts are so interactive that provide the opportunity to edit them in "live
 {sample}GANTT\_Interactivity\_08{sample}
 
 Find more about editing mode in Gantts [here](Live_Edit_UI_and_API).
-
-Может тут сделать картинками, а не пример? оО

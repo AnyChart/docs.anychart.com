@@ -323,11 +323,21 @@ Also we can change the thumbs fill color and stroke. We use the {api:anychart.co
 	var timeline = chart.getTimeline();
 
     // sets edit interval thumb fill
-    currentTimeLine.editIntervalThumbFill({
-        src: "http://static.anychart.com/beach.png",
-        mode: "stretch"
+    timeLine.editIntervalThumbFill("red");
+
+```
+
+You can define colors as objects as well. The following piece of code would do the same as the previous one:
+
+```
+  var timeline = chart.getTimeline();
+
+    // sets edit interval thumb fill
+    timeLine.editIntervalThumbFill({
+        color: "red"
     });
 
 ```
 
-As you see, you can also use pictures as fills.
+
+
