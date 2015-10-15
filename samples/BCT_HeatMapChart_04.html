@@ -45,11 +45,36 @@
   title.useHtml(true);
   title.hAlign("center");
   tooltip.titleFormatter(function(){
-    return this.column + "<br><a style=\"font-size: 11px; color: #ccc\">"+ this.row + "</a>";
+    return this.column + "<br><a style=\"font-size: 10px; color: #ccc\">Year: "+ this.row + "</a>";
   });
   tooltip.textFormatter(function(){
-    return "Income: " + this.value + "\nPercent: " + (100*this.value/this.getStat("sum")).toFixed(1) + "%";
+    // get value parameter of the point
+    var value = (this.value).toFixed(0);
+    var main = "";
+    // if value is more than three symbols long
+    for (var i=1;(i*3)<value.length;i++)
+      // insert space before every 3 symbols
+      main = " " + value.substr(value.length-(i*3), 3) + main;
+    // get the remaining part of the value
+    var tail = value.substr(0, value.length-(main.length-main.length/4));
+    // format value in appropriate way
+    value = tail + main;
+    return "Income: $" + value + "\nPercent: " + (100*this.value/this.getStat("sum")).toFixed(1) + "%";
   });
+  var colorScale = anychart.scales.ordinalColor();
+  // set range of values and corresponding colors
+  colorScale.ranges([
+    // set color for all points with the value less than 1200000
+    {less: 750000, color: "#FF4500"},
+    {from: 750000, to: 1000000, color: "#FFA500"},
+    {from: 1000000, to: 2000000, color: "#FFFF00"},
+    {from: 2000000, to: 3000000, color: "#9ACD32"},
+    {greater: 3000000, color: "#008000"}
+  ]);
+
+
+  // apply colorScale for colorizing heatMap chart
+  chart.colorScale(colorScale);
 
   // draw chart
   chart.container("container");
