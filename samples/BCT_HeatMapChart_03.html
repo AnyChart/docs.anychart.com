@@ -37,9 +37,9 @@
 
   // set chart type
   var chart = anychart.heatMap(data);
-  chart.title("Email Opens by Environment\nper Quarter 2011-2013");
-  //var colorScale = anychart.scales.linearColor(['#EC6E07', '#64B5F6']);
-  //chart.colorScale(colorScale);
+  chart.title("Sales Revenue");
+  var labels = chart.labels();
+  labels.enabled(true);
 
   // draw chart
   chart.container("container");

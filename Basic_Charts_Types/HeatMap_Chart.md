@@ -5,7 +5,8 @@
 * [Visualization](#visualization)
   * [Colors](#colors)
   * [Stroke](#stroke)
-  * [Labels and Tooltips](#labels_and_tooltips)
+  * [Labels](#labels)
+  * [Tooltips](#tooltips)
 * [HatchFill](#hatchFill)
 
 ## Overview
@@ -81,25 +82,10 @@ While as most types of charts represent differences in values of data points via
 
 ### Colors
 
-There are different ways to manage HeatMap's colors. You can set colors ether in dataSet or using special methods. The most popular method for to set heatMap colors is colorScale() method. 
+There are different ways to manage HeatMap's colors. You can set colors ether in your dataSet or using special methods. The most popular method to set heatMap colors is colorScale() method.
   
   
-Use linerColor() scale to define an array key colors for creating custom palette with all hues that can be obtained by blending adjacent key colors from the array in different proportions.
-  
-  
-```
-  var chart = anychart.heatMap(dataSet);
-
-  // create linerColor scale
-  var colorScale = anychart.scales.linerColor();
-  // set range of colors for the scale
-  colorScale.colors(["#B2DFDB", "#004D40"]);
-  
-  // apply colorScale for colorizing heatMap chart
-  chart.colorScale(colorScale);
-```
-
-Another color scale for heatMap is ordinalColor(). Use this scale to define the color for each range of values. All value ranges are custom.
+Use ordinalColor() scale as a parameter for colorScale() method to create an array of ranges and define the color for each range. All value for ranges are custom.
 
 ```
   var chart = anychart.heatMap(dataSet);
@@ -121,3 +107,92 @@ Another color scale for heatMap is ordinalColor(). Use this scale to define the 
 Here is a sample with ordinalColor() scale: 
 
 {sample}BCT\HeatMapChart\_02{sample}
+
+Moreover, you can set a solid color for each cell of the heatMap. Use **.fill()** method to define custom color for every cell:
+
+{sample}BCT\HeatMapChart\_05{sample}
+
+### Stroke
+
+Border of the heatMap chart and all the borders of each chart points are controlled by **.stroke()** method. Alone with **.stroke()** method you can set **stroke** parameter for an individual point.
+
+```
+  var dataSet = anychart.data.set([
+    {column: "California",    row: "2004", value: 1704211},
+    {column: "California",    row: "2005", value: 2782680},
+    {column: "California",    row: "2006", value: 2992679},
+    {column: "Colorado",      row: "2004", value: 448302},
+    {column: "Colorado",      row: "2005", value: 768390},
+    {column: "Colorado",      row: "2006", value: 843584},
+    {column: "DC",            row: "2004", value: 693211},
+    {column: "DC",            row: "2005", value: 1215158},
+    {column: "DC",            row: "2006", value: 1053581},
+    {column: "Florida",       row: "2004", value: 405985},
+    {column: "Florida",       row: "2005", value: 661250},
+    {column: "Florida",       row: "2006", value: 811924},
+    {column: "Illinois",      row: "2004", value: 727914},
+    {column: "Illinois",      row: "2005", value: 1150659},
+    {column: "Illinois",      row: "2006", value: 1134085},
+    {column: "Texas",         row: "2004", value: 219967},
+    {column: "Texas",         row: "2005", value: 3732889},
+    // set custom stroke for the point
+    {column: "Texas",         row: "2006", value: 4185098, fill: "yellow", stroke: {color: "red"}},
+    {column: "Massachusetts", row: "2004", value: 238819},
+    {column: "Massachusetts", row: "2005", value: 157719},
+    {column: "Massachusetts", row: "2006", value: 887169},
+    {column: "New York",      row: "2004", value: 1667969},
+    {column: "New York",      row: "2005", value: 2763503},
+    {column: "New York",      row: "2006", value: 3151022}
+  ]);
+
+  
+```
+
+Here is a sample with adjusted strokes.
+
+{sample}BCT\HeatMapChart\_06{sample}
+
+### Labels
+
+Labels are text boxes with additional information for presented data. You can tune labels using {api:anychart.charts.HeatMap#labels}**.labels()**{api} method.
+
+```
+  // create chart
+  var chart = anychart.heatMap(dataSet);
+  
+  // labels settings
+  var labels = chart.labels();
+  // enable labels
+  labels.enabled(true);
+```
+
+You can find information on managing labels content in [Text Formatters article](../Common_Settings/Text_Formatters).
+  
+  
+Here is a sample of a js heatMap with formatted labels.
+
+{sample}BCT\HeatMapChart\_03{sample}
+
+### Tooltips
+
+In this section we will explain how to tune pie tooltip. Method {api:anychart.charts.HeatMap#tooltip}**.tooltip()**{api} controls tooltip of the heatMap.
+
+```
+  var chart = anychart.heatMap(dataSet);
+  
+  var tooltip = chart.tooltip();
+  tooltip.textFormatter(function(){
+    return "Income: " + this.value + 
+      "\nPercent: " + (100*this.value/this.getStat("sum")).toFixed(1) + "%";
+  });
+```
+
+{sample}BCT\HeatMapChart\_04{sample}
+<!--
+## HatchFill
+
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see Hatch Fill tutorial.
+  
+  
+To demonstrate hatch fill feature we've edited one of the previous samples. As you see now it is completely monochrome. We've got a 5-series chart with 2 data points in each series. For every series we've applied different hatch fills by setting hatch type for the .hatchFill() parameter opposite to fill() parameter used to colorize the series and set all series in grey color (#EEEEEE).
+-->

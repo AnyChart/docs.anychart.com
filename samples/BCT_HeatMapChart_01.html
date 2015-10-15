@@ -27,21 +27,6 @@
     {column: "Quarter 4", row: "Undetected", value: 8}
   ]);
 
-  
-  var valuesArray = [];
-  for (var a=0;a<data.getRowsCount();a++)
-    valuesArray.push(data.mapAs().get(a, "value"));
-  
-  var max = Math.max.apply(null, valuesArray);
-  var min = Math.min.apply(null, valuesArray);
-  var color2 = [240,230,140];
-  var color1 = [255,0,0];
-
-  for (var i = 0; i<data.getRowsCount();i++){
-    var value = data.mapAs().get(i, "value");
-    var colorIndex = (value-min)/(max-min);
-    data.mapAs().set(i, "fill", "rgb(" + (anychart.color.blend(color1, color2, colorIndex)).join(",") + ")");
-  }
 
   // set chart type
   var chart = anychart.heatMap(data);
