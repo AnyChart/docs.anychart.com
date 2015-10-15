@@ -76,10 +76,6 @@ Here is a HeatMap with this data:
 
 {sample}BCT\_HeatMapChart\_01{sample}
 
-<div class="sample">
-<iframe style="margin-left:50px; margin-right: 50px;" src="https://doc-voron.c9.io/BCT_HeatMapChart_01.html"></iframe>
-</div>
-
 ## Visualization
 
 While as most types of charts represent differences in values of data points via series shapes on data plot the HeatMaps displays all differences with colors. That is why this section is quite important.
