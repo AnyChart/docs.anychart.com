@@ -7,12 +7,13 @@ Proportional Symbol Map
  * [Data](#data)
 * [Altering Bubbles](#altering_bubbles)
  * [Series colors](#series_colors)
+ * [Sizing](#sizing)
  * [Labels and Tooltips](#labels_and_tooltips)
 * [Usage with choroplet](#usage_with_choroplet)
 
 ## Overview
 
-As the name implies, symbols (circles), representing the values, are drawn of the proportional size to the size of the value being represented. The size of the bubbles (proportional symbols in maps) is not dependent on the size of the region associated with the variable. For example, if we show the value of unemployment on a proportional symbol map of Europe, Slovenia would have the bigger visual importance then Germany if their unemployment values were so (e.g. 9.3% in Slovenia, 4.7% in Germany).
+As the name implies, symbols (circles), representing the values, are drawn of the proportional size to the size of the value being represented. The size of the bubbles (proportional symbols in maps) is not dependent on the size of the region associated with the variable. For example, if we show the value of unemployment on a proportional symbol map of the UK, Clackmannanshire would have the bigger visual importance then Highland if their unemployment values were so (e.g. 3.5% in Clackmannanshire, 1% in Highland).
 
 An example of proportional circles is shown below.
 
@@ -95,7 +96,7 @@ var dataSet = anychart.data.set([
 
 ## Altering Bubbles
 
-Except from positioning the bubbles, which can be done through the data, altering the series look is the same as in [basic Bubble Charts](../Basic_Chart_Types/Bubble_Chart#colors).
+Apart from positioning the bubbles, which can be done through the data, altering the series look is the same as in [basic Bubble Charts](../Basic_Chart_Types/Bubble_Chart#colors).
 
 ### Series colors
 
@@ -119,7 +120,7 @@ Let's make a sample of what's written above.
 
 {sample}Maps\_Proportional\_Symbol\_05{sample}
 
-Also, we can make a monochromatic map using hatch fills. We use {api:}**.hatchFill**{api} for hatching the whole series, {api:}**.hoverHatchFill**{api} for hatching the hovered series and {api:}**.selectHatchFill**{api} to make the selected elements hatched.
+Also, we can make a monochromatic map using hatch fills. We use {api:anychart.core.scatter.series.Bubble#hatchFill}**.hatchFill**{api} for hatching the whole series, {api:anychart.core.scatter.series.Bubble#hoverHatchFill}**.hoverHatchFill**{api} for hatching the hovered series and {api:anychart.core.scatter.series.Bubble#selectHatchFill}**.selectHatchFill**{api} to make the selected elements hatched.
 
 
 ```
@@ -151,11 +152,56 @@ var dataSet = anychart.data.set([
 {sample}Maps\_Proportional\_Symbol\_07{sample}
 
 
+### Sizing
+
+We can adjust the bubbles' sizes as well. For this we use two methods: {api:anychart.charts.Scatter#maxBubbleSize}**.maxBubbleSize()**{api} and {api:anychart.charts.Scatter#minBubbleSize}**.minBubbleSize()**{api}. Let's now adjust the bubbles in one of the previous samples.
+
+```
+    // set the maximum size of the bubble
+    map.maxBubbleSize(35);
+
+    // set the minimum size of the bubble
+    map.minBubbleSize(10);
+
+```
+{sample}Maps\_Proportional\_Symbol\_08{sample}
+
+You can set the size in percent as well:
+
+```
+    // set the maximum size of the bubble
+    map.maxBubbleSize('10%');
+
+    // set the minimum size of the bubble
+    map.minBubbleSize('2%');
+
+```
+{sample}Maps\_Proportional\_Symbol\_09{sample}
+
+
 ### Labels and Tooltips
 
 You can also alter the labels' and tooltips' appearance. Use standard methods such as {api:anychart.core.ui.Label#fontColor}**.fontColor()**{api} for labels, format tooltips using .textFormatter() function. You can find everything about it in the [Labels](../Common_Settings/Labels) and [Tooltips](../Common_Settings/Tooltip) tutorial.
 
-*a couple of samples*
+Let's now consider a couple of samples with labels and/or tooltips. First, let's change the font color with {anychart.ui.Label#fontColor}**.fontcolor()**{api}, change their size and format them a bit with the usage of {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} function.
+
+```
+    // set the color for the text of the labels
+    series.labels().fontColor('black');
+    series.labels().fontSize(10);
+
+    // format the labels
+    series.labels().textFormatter(function(){
+        return(this.getDataValue("name")+"\n"+this.size);
+    });
+
+```
+
+{sample}Maps\_Proportional\_Symbol\_10{sample}
+
+Find more about Text Formatters [here](../Common_Settings/Text_Formatters).
+
+Labels are always enabled by default, but if you have switched them off and then need to have them back, use the {api:anychart.ui.Label#fontColor}**.enable()**{api} method as usual.
 
 
 ## Usage with choroplet
