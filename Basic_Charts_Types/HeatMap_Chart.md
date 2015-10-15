@@ -15,7 +15,7 @@ AnyChart JavaScript HeatMap is a graphical representation of data where the indi
 
 ## Chart 
 
-Each data point for HeatMap chart must have three parameters: "Column" parameter should define the name of the column to put the point into, "row" parameter defines the row to put the point into and "value" parameter corresponds with the color of the point. Here is a sample of appropriate data formatting:
+Each data point for HeatMap chart must have three parameters: **"Column"** parameter should define the name of the column to put the point into, **"row"** parameter defines the row to put the point into and **"value"** parameter corresponds with the color of the point. Here is a sample of appropriate data formatting:
 
 ```
   var dataSet = anychart.data.set([
@@ -76,16 +76,20 @@ Here is a HeatMap with this data:
 
 {sample}BCT\_HeatMapChart\_01{sample}
 
+<div class="sample">
+<iframe style="margin-left:50px; margin-right: 50px;" src="https://doc-voron.c9.io/BCT_HeatMapChart_01.html"></iframe>
+</div>
+
 ## Visualization
 
-While as most types of charts represent differences in values of data points via series shapes on data plot the HeatMaps displays all differences with colors. That is why this section is quite important 
+While as most types of charts represent differences in values of data points via series shapes on data plot the HeatMaps displays all differences with colors. That is why this section is quite important.
 
 ### Colors
 
-There are different ways to manage HeatMap's colors. You can set colors ether in your dataSet or using special methods. The most popular method to set heatMap colors is colorScale() method.
+There are different ways to manage HeatMap's colors. You can set colors ether in your dataSet or using special methods. The most popular method to set heatMap colors is **.colorScale()** method.
   
   
-Use ordinalColor() scale as a parameter for colorScale() method to create an array of ranges and define the color for each range. All value for ranges are custom.
+Use **.ordinalColor()** scale as a parameter for **.colorScale()** method to create an array of ranges and define the color for each range. All value for ranges are custom.
 
 ```
   var chart = anychart.heatMap(dataSet);
@@ -104,11 +108,11 @@ Use ordinalColor() scale as a parameter for colorScale() method to create an arr
   chart.colorScale(colorScale);
 ```
 
-Here is a sample of a heatMap with **ordinalColor()** scale:
+Here is a sample of a heatMap with **.ordinalColor()** scale:
 
 {sample}BCT\_HeatMapChart\_02{sample}
 
-Moreover, you can set a solid color for each cell of the heatMap. Use **.fill()** method to define custom color for every cell. In addition to **fill()** method **fill** parameter can be used to emphasize some chart points:
+Moreover, you can set a solid color for each cell of the heatMap. Use **.fill()** method to define custom color for every cell. In addition to **.fill()** method **"fill"** parameter can be used to emphasize some chart points:
 
 ```
   var dataSet = anychart.data.set([
@@ -156,7 +160,7 @@ Moreover, you can set a solid color for each cell of the heatMap. Use **.fill()*
 
 ### Stroke
 
-Border of the heatMap chart and all the borders of each chart points are controlled by **.stroke()** method. Alone with **.stroke()** method you can set **stroke** parameter for an individual point.
+Border of the heatMap chart and all the borders of each chart points are controlled by **.stroke()** method. Alone with **.stroke()** method you can set **"stroke"** parameter for an individual point.
 
 ```
   var dataSet = anychart.data.set([
@@ -219,7 +223,7 @@ Labels are text boxes with additional information for presented data. You can tu
     var main = "";
     // if value is more than three symbols long
     for (var i=1;(i*3)<value.length;i++)
-      // insert space before evry 3 symbols
+      // insert space before every 3 symbols
       main = " " + value.substr(value.length-(i*3), 3) + main;
     // get the remaining part of the value
     var tail = value.substr(0, value.length-(main.length-main.length/4));
