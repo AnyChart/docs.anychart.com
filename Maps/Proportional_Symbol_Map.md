@@ -9,7 +9,7 @@ Proportional Symbol Map
  * [Series colors](#series_colors)
  * [Sizing](#sizing)
  * [Labels and Tooltips](#labels_and_tooltips)
-* [Usage with choroplet](#usage_with_choroplet)
+* [Multi series](#multi_series)
 
 ## Overview
 
@@ -183,7 +183,7 @@ You can set the size in percent as well:
 
 You can also alter the labels' and tooltips' appearance. Use standard methods such as {api:anychart.core.ui.Label#fontColor}**.fontColor()**{api} for labels, format tooltips using .textFormatter() function. You can find everything about it in the [Labels](../Common_Settings/Labels) and [Tooltips](../Common_Settings/Tooltip) tutorial.
 
-Let's now consider a couple of samples with labels and/or tooltips. First, let's change the font color with {anychart.ui.Label#fontColor}**.fontcolor()**{api}, change their size and format them a bit with the usage of {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} function.
+Let's now consider a couple of samples with labels and/or tooltips. First, let's change the font color with {api:anychart.ui.Label#fontColor}**.fontColor()**{api}, change their size and format them a bit with the usage of {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} function.
 
 ```
     // set the color for the text of the labels
@@ -204,4 +204,46 @@ Find more about Text Formatters [here](../Common_Settings/Text_Formatters).
 Labels are always enabled by default, but if you have switched them off and then need to have them back, use the {api:anychart.ui.Label#fontColor}**.enable()**{api} method as usual.
 
 
-## Usage with choroplet
+{sample}Maps\_Proportional\_Symbol\_11{sample}
+
+
+## Multi series
+
+You can add several series to a map, no matter which type. We can create a multi-series Bubble Map or have different kinds of series on a map. Let's first create an Australia Map with choropleth and bubble series. 
+
+For this we'd better set the data as array as we should map it properly. Then we should set the labels of both series
+
+```
+кто-то лох оставил пример дома и этот тут так херня из дома вставлю что надо
+```
+
+{sample}Maps\_Proportional\_Symbol\_12{sample}
+
+We can create a multi-bubble-series map as well:
+
+```
+// create the data
+var dataSet = anychart.data.set([
+              ['AU.NS', 3.5, 8.5],
+              ['AU.NT', 7.1, 12],
+              ['AU.WA', 10.4, 2.9],
+              ['AU.SA', 4.7, 28.2],
+              ['AU.VI', 7.9, 19.4],
+              ['AU.QL', 8, 3.7],
+              ['AU.TS', 3.2, 7.3]
+          ]);
+
+// mapping the data
+var series1Data = dataSet.mapAs({id:[0], size:[1]});
+var series2Data = dataSet.mapAs({id:[0], size:[2]});
+
+//set series geoId field settings
+          series_1.geoIdField("code_hasc");
+          series_2.geoIdField("code_hasc");
+
+```
+
+{sample}Maps\_Proportional\_Symbol\_13{sample}
+
+
+As you can see, we can operate the series on a map quite easy and similar to working with basic charts. Find more about Choropleth series in the [Choropleth tutorial](Choropleth_Map) and some other features of Bubble series in the [Bubble tutorial](../Basic_Chart_Types/Bubble_Chart).

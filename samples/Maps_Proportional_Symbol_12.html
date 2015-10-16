@@ -1,0 +1,98 @@
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+  <script src="//cdn.anychart.com/geodata/1.0.0/countries/australia/australia.js" data-export="true"></script>
+  <script x-export="chart">
+      anychart.onDocumentReady(function() {
+
+// create data set
+          var dataSet = anychart.data.set([
+              ['AU.NS', 3.5, 8.5],
+              ['AU.NT', 7.1, 12],
+              ['AU.WA', 10.4, 2.9],
+              ['AU.SA', 4.7, 28.2],
+              ['AU.VI', 7.9, 19.4],
+              ['AU.QL', 8, 3.7],
+              ['AU.TS', 3.2, 7.3]
+          ]);
+
+          // create map chart
+          map = anychart.map();
+
+          map.title("Employed international workers and \nUnemployed local workers");
+
+          // set geoData using http://cdn.anychart.com/geodata/1.0.0/countries/australia/australia.js
+          map.geoData(anychart.maps.australia);
+
+          var series1Data = dataSet.mapAs({id:[0], size:[1]});
+          var series2Data = dataSet.mapAs({id:[0], value:[2]});
+
+          //set bubble min/max size settings
+          map.maxBubbleSize(70);
+          map.minBubbleSize(20);
+
+          //create bubble series
+          var series_1 = map.bubble(series1Data);
+          series_1.name("Employed international workers");
+          var series_2 = map.choropleth(series2Data);
+          series_2.name("Unemployed local workers");
+
+          series_2.colorScale(anychart.scales.linearColor('#c2e9fb', '#81d4fa', '#01579b', '#002746'));
+
+          //set series geo id field settings
+          series_1.geoIdField("code_hasc");
+          series_2.geoIdField("code_hasc");
+
+          // change the fill and hoverFill colors of series_1
+          series_1.fill("#EBD670", 0.35);
+          series_1.hoverFill("#C7FF99", 0.7);
+
+          // change the stroke and hoverStroke colors of series_1
+          series_1.stroke("#C7FF99");
+          series_1.hoverStroke("#EBD670");
+
+          // set the select colors of series_1
+          series_1.selectStroke("#66FFCC");
+          series_1.selectFill("#879CED");
+
+          // change the fill and hoverFill colors of series_2
+          series_2.fill("#178AA8", 0.35);
+          series_2.hoverFill("#3675BD", 0.7);
+
+          // change the stroke and hoverStroke colors of series_2
+          series_2.stroke("#3675BD");
+          series_2.hoverStroke("#178AA8");
+
+          // set the select colors of series_2
+          series_2.selectStroke("#3675BD");
+          series_2.selectFill("#734CE6");
+
+//          series_1.labels().textFormatter(function(){
+//              console.log(this.getSeriesMeta('regionProperties'));
+//          });
+
+          // set the labels
+          series_1.labels().fontColor('black');
+          series_1.labels().fontSize(10);
+          series_2.labels(false);
+
+          // set container id for the chart
+          map.container('container');
+
+          // initiate chart drawing
+          map.draw();
+
+      });
+
+
+  </script>
+
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
