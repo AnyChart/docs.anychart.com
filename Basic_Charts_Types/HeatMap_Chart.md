@@ -236,19 +236,49 @@ Here is a sample of a js heatMap with formatted labels.
 
 {sample}BCT\_HeatMapChart\_03{sample}
 
-HeatMap is a kind of charts that usually contains quite a few points in dataSet. That is why heatMaps has special **.labelsDisplayMode()** method for managing labels appearance on the chart plot. There are three possible parameters for displaying labels:  
+HeatMap is a kind of charts that usually contains quite a few points in dataSet. That is why heatMaps has special **.labelsDisplayMode()** method for managing labels appearance on the chart plot. There are three possible parameters for displaying labels: **"clip"**, **"drop"**, **"alwaysShow"**.
+  
+  
+* **"Clip"** parameter makes all labels to be displayed regardless the width of each point. If a label doesn't fit the point width, a part of this label will be cropped.
+* **"Drop"** parameter hides the whole label, if it doesn't fit point's width
+* **"AlwaysShow"** parameter force all labels to be shown despite the situation. Be careful using this parameter. Labels may overlap, if label's width is larger than point's width.
+  
+  
+{sample}BCT\_HeatMapChart\_08{sample}
 
 ### Tooltips
 
-In this section we will explain how to tune pie tooltip. Method {api:anychart.charts.HeatMap#tooltip}**.tooltip()**{api} controls tooltip of the heatMap.
+In this section we will explain how to tune heatMap's tooltip. Method {api:anychart.charts.HeatMap#tooltip}**.tooltip()**{api} controls tooltip of the heatMap. In [Tooltip](../Common_Settings/Tooltip) article you can find some information on how to adjust tooltip content and tooltip visual appearance.
 
 ```
   var chart = anychart.heatMap(dataSet);
   
+  // settings for chart tooltip
   var tooltip = chart.tooltip();
+  // adjust tooltip title
+  var title = tooltip.title();
+  // force title to respect html tags
+  title.useHtml(true);
+  // format title to place text in the center
+  title.hAlign("center");
+  // function for formatting title's text
+  tooltip.titleFormatter(function(){
+    return this.column + "<br><a style=\"font-size: 10px; color: #ccc\">Year: "+ this.row + "</a>";
+  });
+  // function for formatting tooltip text
   tooltip.textFormatter(function(){
-    return "Income: " + this.value + 
-      "\nPercent: " + (100*this.value/this.getStat("sum")).toFixed(1) + "%";
+    // get value parameter of the point
+    var value = (this.value).toFixed(0);
+    var main = "";
+    // if value is more than three symbols long
+    for (var i=1;(i*3)<value.length;i++)
+      // insert space before every 3 symbols
+      main = " " + value.substr(value.length-(i*3), 3) + main;
+    // get the remaining part of the value
+    var tail = value.substr(0, value.length-(main.length-main.length/4));
+    // format value in appropriate way
+    value = tail + main;
+    return "Income: $" + value + "\nPercent: " + (100*this.value/this.getStat("sum")).toFixed(1) + "%";
   });
 ```
 

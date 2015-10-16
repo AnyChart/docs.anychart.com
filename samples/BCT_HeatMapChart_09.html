@@ -1,0 +1,86 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <!--<script src="https://doc-voron.c9.io/anychart-bundle.min.js" data-export="true"></script>-->
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // data
+  var data = anychart.data.set([
+    {column: "Rare", row: "Insignificant", value: 0},
+    {column: "Rare", row: "Minor", value: 0},
+    {column: "Rare", row: "Moderate", value: 0},
+    {column: "Rare", row: "Major", value: 0},
+    {column: "Rare", row: "Extreme", value: 0},
+    {column: "Unlikely", row: "Insignificant", value: 0},
+    {column: "Unlikely", row: "Minor", value: 0},
+    {column: "Unlikely", row: "Moderate", value: 0},
+    {column: "Unlikely", row: "Major", value: 1},
+    {column: "Unlikely", row: "Extreme", value: 1},
+    {column: "Possible", row: "Insignificant", value: 0},
+    {column: "Possible", row: "Minor", value: 0},
+    {column: "Possible", row: "Moderate", value: 1},
+    {column: "Possible", row: "Major", value: 1},
+    {column: "Possible", row: "Extreme", value: 1},
+    {column: "Likely", row: "Insignificant", value: 0},
+    {column: "Likely", row: "Minor", value: 1},
+    {column: "Likely", row: "Moderate", value: 1},
+    {column: "Likely", row: "Major", value: 2},
+    {column: "Likely", row: "Extreme", value: 2},
+    {column: "Almost Certain", row: "Insignificant", value: 0},
+    {column: "Almost Certain", row: "Minor", value: 1},
+    {column: "Almost Certain", row: "Moderate", value: 1},
+    {column: "Almost Certain", row: "Major", value: 2},
+    {column: "Almost Certain", row: "Extreme", value: 3}
+  ]);
+
+  // set chart type
+  var chart = anychart.heatMap(data);
+  chart.title("Risk Matrix in Project Server");
+  
+  var xAxis = chart.xAxis();
+  xAxis.title("Likelihood");
+  var yAxis = chart.yAxis();
+  yAxis.title("Consequence");
+  chart.tooltip(false);
+
+  var colorScale = anychart.scales.ordinalColor();
+  // set range of values and corresponding colors
+  colorScale.ranges([
+    {less: 1, color: "#9ACD32"},
+    {from: 0, to: 1, color: "#FFFF00"},
+    {from: 1, to: 2, color: "#FF6347"},
+    {greater: 2, color: "#FF0000"}
+  ]);
+
+  // apply colorScale for colorizing heatMap chart
+  chart.colorScale(colorScale);
+  chart.labelsDisplayMode("clip");
+  var labels = chart.labels();
+  labels.enabled(true);
+  labels.minFontSize(12);
+  labels.textFormatter(function(){
+    var value = this.value;
+    switch(value){
+      case 0:
+        return "Low";
+      case 1:
+        return "Medium";
+      case 2:
+        return "High";
+      case 3:
+        return "Extreme";
+    }
+  });
+  // draw chart
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 360px; height: 100%"></div>
+</body>
+</html>
