@@ -194,7 +194,7 @@ Here is a sample of a heatMap with **.ordinalColor()** scale:
 
 {sample}BCT\_HeatMapChart\_02{sample}
 
-Moreover, you can set a solid color for each cell of the heatMap. Use **.fill()** method to define custom color for every cell. In addition to **.fill()** method, **"fill"** parameter can be used to emphasize a chart point:
+Moreover, you can set a solid color for each cell of the heatMap. Use **.fill()** method to define custom color for every cell. <!--In addition to **.fill()** method, **"fill"** parameter can be used to emphasize a chart point:-->
 
 ```
   var dataSet = anychart.data.set([
@@ -215,16 +215,7 @@ Moreover, you can set a solid color for each cell of the heatMap. Use **.fill()*
     {column: "Illinois",      row: "2006", value: 1134085},
     {column: "Texas",         row: "2004", value: 219967},
     {column: "Texas",         row: "2005", value: 3732889},
-    {
-      // set column parameter
-      column: "Texas",
-      // set row parameter
-      row: "2006",
-      // set value parameter
-      value: 4185098,
-      // set custom inner color for a point
-      fill: "#90EE90"
-    },
+    {column: "Texas",         row: "2006", value: 4185098},
     {column: "Massachusetts", row: "2004", value: 238819},
     {column: "Massachusetts", row: "2005", value: 157719},
     {column: "Massachusetts", row: "2006", value: 887169},
@@ -242,7 +233,7 @@ Moreover, you can set a solid color for each cell of the heatMap. Use **.fill()*
 
 ### Stroke
 
-Border of the heatMap chart and all the borders of each chart points are controlled by **.stroke()** method. Alone with **.stroke()** method you can set **"stroke"** parameter for an individual point.
+Border of the heatMap chart and all the borders of each chart points are controlled by **.stroke()** method.<!-- Alone with **.stroke()** method you can set **"stroke"** parameter for an individual point.-->
 
 ```
   var dataSet = anychart.data.set([
@@ -263,13 +254,7 @@ Border of the heatMap chart and all the borders of each chart points are control
     {column: "Illinois",      row: "2006", value: 1134085},
     {column: "Texas",         row: "2004", value: 219967},
     {column: "Texas",         row: "2005", value: 3732889},
-    {
-      column: "Texas",
-      row: "2006",
-      value: 4185098,
-      stroke: {color: "#006400"},
-      fill: "#90EE90"
-    },
+    {column: "Texas",         row: "2006", value: 4185098},
     {column: "Massachusetts", row: "2004", value: 238819},
     {column: "Massachusetts", row: "2005", value: 157719},
     {column: "Massachusetts", row: "2006", value: 887169},
