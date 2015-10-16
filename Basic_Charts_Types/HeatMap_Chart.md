@@ -244,7 +244,7 @@ HeatMap is a kind of charts that usually contains quite a few points in dataSet.
 * **"AlwaysShow"** parameter force all labels to be shown despite the situation. Be careful using this parameter. Labels may overlap, if label's width is larger than point's width.
   
   
-{sample}BCT\_HeatMapChart\_08{sample}
+{sample :width 690 :height 800}BCT\_HeatMapChart\_08{sample}
 
 ### Tooltips
 
