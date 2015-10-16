@@ -41,8 +41,6 @@
           var series_2 = map.choropleth(series2Data);
           series_2.name("Unemployed local workers");
 
-          series_2.colorScale(anychart.scales.linearColor('#c2e9fb', '#81d4fa', '#01579b', '#002746'));
-
           //set series geo id field settings
           series_1.geoIdField("code_hasc");
           series_2.geoIdField("code_hasc");
@@ -59,26 +57,23 @@
           series_1.selectStroke("#66FFCC");
           series_1.selectFill("#879CED");
 
-          // change the fill and hoverFill colors of series_2
-          series_2.fill("#178AA8", 0.35);
-          series_2.hoverFill("#3675BD", 0.7);
-
-          // change the stroke and hoverStroke colors of series_2
-          series_2.stroke("#3675BD");
-          series_2.hoverStroke("#178AA8");
-
           // set the select colors of series_2
           series_2.selectStroke("#3675BD");
           series_2.selectFill("#734CE6");
-
-//          series_1.labels().textFormatter(function(){
-//              console.log(this.getSeriesMeta('regionProperties'));
-//          });
 
           // set the labels
           series_1.labels().fontColor('black');
           series_1.labels().fontSize(10);
           series_2.labels(false);
+
+          // set the colors and ranges for the scale
+          series_2.colorScale(anychart.scales.linearColor());
+
+          //set the single hue progression
+          var colors = anychart.color.singleHueProgression('#0068BC');
+
+          // define the colors
+          series_2.colorScale().colors(colors);
 
           // set container id for the chart
           map.container('container');

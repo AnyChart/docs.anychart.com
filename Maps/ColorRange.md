@@ -1,5 +1,5 @@
 {:index 9}
-# ColorRange
+#ColorRange
 ======================
 
 * [Overview](#overview)

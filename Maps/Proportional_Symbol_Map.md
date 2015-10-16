@@ -19,9 +19,9 @@ An example of proportional circles is shown below.
 
 {sample}Maps\_Proportional\_Symbol\_01{sample}
 
-The Bubble series in Maps is quite similar to the Basic Bubble series. The only difference about it is defining the center of each circle. While we can do it only one way in [Cartesian/Scatter](../Basic_Chart_Types/Bubble_Chart) - with the usage of necessary "x" and "value" fields and "size" for the bubbles' sizes, - in maps there are two options about doing that. We will consider them in this article.
+The Bubble series in Maps is quite similar to the Basic Bubble series. The only difference about it is defining the center of each circle. While we can do it only one way in [Cartesian/Scatter](../Basic_Charts_Types/Bubble_Chart) - with the usage of necessary "x" and "value" fields and "size" for the bubbles' sizes, - in maps there are two options about doing that. We will consider them in this article.
 
-All other bubbles configuration can be accomplished the way described in [Bubble Chart Tutorial](../Basic_Chart_Types/Bubble_Chart).
+All other bubbles configuration can be accomplished the way described in [Bubble Chart Tutorial](../Basic_Charts_Types/Bubble_Chart).
 
 ## Creating Bubbles
 
@@ -40,7 +40,7 @@ Bubble series is being created the same as other series on a map. First, we shou
 
 What about setting the data, there are two ways of defining it properly. Let's look at them.
 
-### Data
+<!--  ### Data
 
 The way of setting the data influence the bubble series view. 
 
@@ -93,10 +93,45 @@ var dataSet = anychart.data.set([
 ```
 {sample}Maps\_Proportional\_Symbol\_04{sample}
 
+-->
+
+
+### Data
+
+Setting the data for maps with bubbles is rather easy. There are only two fields necessary: "id" and "size". Set the necessary parameters for the map and the series:
+
+```
+var dataSet = anychart.data.set([
+    {'id': 'AU.NS', 'size': 7565500},
+    {'id': 'AU.NT', 'size': 243700},
+    {'id': 'AU.WA', 'size': 2565600},
+    {'id': 'AU.SA', 'size': 1682600},
+    {'id': 'AU.VI', 'size': 5866300},
+    {'id': 'AU.QL', 'size': 4750500},
+    {'id': 'AU.TS', 'size': 514700}
+]);
+
+// create map chart
+map = anychart.map();
+
+// set geodata 
+map.geoData(anychart.maps.australia);
+
+// create bubble series
+var series = map.bubble(dataSet);
+
+// set series geoIdField settings
+series.geoIdField("code_hasc");
+```
+
+{sample}Maps\_Proportional\_Symbol\_02{sample}
+
 
 ## Altering Bubbles
 
-Apart from positioning the bubbles, which can be done through the data, altering the series look is the same as in [basic Bubble Charts](../Basic_Chart_Types/Bubble_Chart#colors).
+<!-- Apart from positioning the bubbles, which can be done through the data, altering the series look is the same as in [basic Bubble Charts](../Basic_Charts_Types/Bubble_Chart#colors). -->
+
+Altering the series look is actually the same as in [basic Bubble Charts](../Basic_Charts_Types/Bubble_Chart#colors). We can easily do it here. Let's look through a couple of samples.
 
 ### Series colors
 
@@ -170,10 +205,10 @@ You can set the size in percent as well:
 
 ```
     // set the maximum size of the bubble
-    map.maxBubbleSize('10%');
+    map.maxBubbleSize('20%');
 
     // set the minimum size of the bubble
-    map.minBubbleSize('2%');
+    map.minBubbleSize('1%');
 
 ```
 {sample}Maps\_Proportional\_Symbol\_09{sample}
@@ -211,10 +246,21 @@ Labels are always enabled by default, but if you have switched them off and then
 
 You can add several series to a map, no matter which type. We can create a multi-series Bubble Map or have different kinds of series on a map. Let's first create an Australia Map with choropleth and bubble series. 
 
-For this we'd better set the data as array as we should map it properly. Then we should set the labels of both series
+For this we'd better set the data as array as we should map it properly. Don't forget that bubble and choropleth series have different necessary data fields and the choropleth series has its own coloring settings. Read more about this [here](Choropleth_Map).
 
 ```
-кто-то лох оставил пример дома и этот тут так херня из дома вставлю что надо
+var dataSet = anychart.data.set([
+              ['AU.NS', 3.5, 8.5],
+              ['AU.NT', 7.1, 12],
+              ['AU.WA', 10.4, 2.9],
+              ['AU.SA', 4.7, 28.2],
+              ['AU.VI', 7.9, 19.4],
+              ['AU.QL', 8, 3.7],
+              ['AU.TS', 3.2, 7.3]
+          ]);
+          var series1Data = dataSet.mapAs({id:[0], size:[1]});
+          var series2Data = dataSet.mapAs({id:[0], value:[2]});
+
 ```
 
 {sample}Maps\_Proportional\_Symbol\_12{sample}
@@ -246,4 +292,4 @@ var series2Data = dataSet.mapAs({id:[0], size:[2]});
 {sample}Maps\_Proportional\_Symbol\_13{sample}
 
 
-As you can see, we can operate the series on a map quite easy and similar to working with basic charts. Find more about Choropleth series in the [Choropleth tutorial](Choropleth_Map) and some other features of Bubble series in the [Bubble tutorial](../Basic_Chart_Types/Bubble_Chart).
+As you can see, we can operate the series on a map quite easy and similar to working with basic charts. Find more about Choropleth series in the [Choropleth tutorial](Choropleth_Map) and some other features of Bubble series in the [Bubble tutorial](../Basic_Charts_Types/Bubble_Chart).
