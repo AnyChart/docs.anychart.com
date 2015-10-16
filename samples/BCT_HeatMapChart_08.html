@@ -9,17 +9,28 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   function heatMap(mode){
+    // create heatMap
     var chart = anychart.heatMap(data());
 
-    var xAxis = chart.xAxis();
-    xAxis.title("Likelihood");
-    var xLabels = xAxis.labels();
-    xLabels.rotation(-85);
-    xLabels.textWrap(true);
-    var yAxis = chart.yAxis();
-    yAxis.title("Consequence");
+    // set labels display mode
     chart.labelsDisplayMode(mode);
 
+    // adjust x axis
+    var xAxis = chart.xAxis();
+    // set title
+    xAxis.title("Likelihood");
+    // adjust labels
+    var xLabels = xAxis.labels();
+    // ratate labels
+    xLabels.rotation(-85);
+    // enable multiline labels
+    xLabels.textWrap(true);
+    // adjust y axis
+    var yAxis = chart.yAxis();
+    // set title
+    yAxis.title("Consequence");
+
+    // create color scale 
     var colorScale = anychart.scales.ordinalColor();
     // set range of values and corresponding colors
     colorScale.ranges([
@@ -28,12 +39,20 @@
       {from: 1, to: 2, color: "#FF6347"},
       {greater: 2, color: "#FF0000"}
     ]);
+    // apply colorScale for colorizing heatMap chart
+    chart.colorScale(colorScale);
 
+    // adjust chart labels
     var labels = chart.labels();
+    // display labels
     labels.enabled(true);
+    // set minimum font size
     labels.minFontSize(12);
+    // format labels' content
     labels.textFormatter(function(){
+      // get points value
       var value = this.value;
+      // replace values with words
       switch(value){
         case 0:
           return "Low";
@@ -45,13 +64,13 @@
           return "Extreme";
       }
     });
+    // disable tooltip
     chart.tooltip(false);
+    // manage chart position
     var padding = chart.padding();
     padding.bottom(0);
     padding.top(10);
 
-    // apply colorScale for colorizing heatMap chart
-    chart.colorScale(colorScale);
     return chart;
   } 
 
@@ -80,6 +99,7 @@
   table.getCol(1).width(360);
   table.getCol(0).maxWidth(200);
   table.cellBorder("white");
+  table.getRow(0).height(15);
 
   // set table container and initiate draw
   table.container("container");
