@@ -2,12 +2,12 @@
 
 * [Overview](#overview)
 * [Chart](#chart)
+* [Labels](#labels)
+* [Tooltips](#tooltips)
 * [Visualization](#visualization)
   * [Colors](#colors)
   * [Stroke](#stroke)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-* [HatchFill](#hatchFill)
+  * [from Data](#from_data)
 
 ## Overview
 
@@ -75,6 +75,92 @@ Moreover, you can use an array of arrays without any parameters as a data source
 Here is a HeatMap with this data:
 
 {sample}BCT\_HeatMapChart\_01{sample}
+
+
+### Labels
+
+Labels are text boxes with additional information for presented data. You can tune labels using {api:anychart.charts.HeatMap#labels}**.labels()**{api} method.
+
+```
+  // create chart
+  var chart = anychart.heatMap(dataSet);
+  
+  // labels settings
+  var labels = chart.labels();
+  // enable labels
+  labels.enabled(true);
+  labels.textFormatter(function(){
+    // get value parameter of the point
+    var value = (this.value).toFixed(0);
+    var main = "";
+    // if value is more than three symbols long
+    for (var i=1;(i*3)<value.length;i++)
+      // insert space before every 3 symbols
+      main = " " + value.substr(value.length-(i*3), 3) + main;
+    // get the remaining part of the value
+    var tail = value.substr(0, value.length-(main.length-main.length/4));
+    // format value in appropriate way
+    value = tail + main;
+    return "$" + value
+  });
+```
+
+You can find information on managing labels content in [Text Formatters article](../Common_Settings/Text_Formatters).
+  
+  
+Here is a sample of a js heatMap with formatted labels.
+
+{sample}BCT\_HeatMapChart\_03{sample}
+
+HeatMap is a kind of charts that usually contains quite a few points in dataSet. That is why heatMaps has special **.labelsDisplayMode()** method for managing labels appearance on the chart plot. There are three possible parameters for displaying labels: **"clip"**, **"drop"**, **"alwaysShow"**.
+  
+  
+* **"Clip"** parameter makes all labels to be displayed regardless the width of each point. If a label doesn't fit the point width, a part of this label will be cropped.
+* **"Drop"** parameter hides the whole label, if it doesn't fit point's width
+* **"AlwaysShow"** parameter force all labels to be shown despite the situation. Be careful using this parameter. Labels may overlap, if label's width is larger than point's width.
+  
+  
+{sample :width 690 :height 725}BCT\_HeatMapChart\_08{sample}
+
+### Tooltips
+
+In this section we will explain how to tune heatMap's tooltip. Method {api:anychart.charts.HeatMap#tooltip}**.tooltip()**{api} controls tooltip of the heatMap. In [Tooltip](../Common_Settings/Tooltip) article you can find some information on how to adjust tooltip content and tooltip visual appearance.
+
+```
+  var chart = anychart.heatMap(dataSet);
+  
+  // settings for chart tooltip
+  var tooltip = chart.tooltip();
+  // adjust tooltip title
+  var title = tooltip.title();
+  // force title to respect html tags
+  title.useHtml(true);
+  // format title to place text in the center
+  title.hAlign("center");
+  // function for formatting title's text
+  tooltip.titleFormatter(function(){
+    return this.column + 
+      "<br><a style=\"font-size: 10px; color: #ccc\">Year: "+ this.row + "</a>";
+  });
+  // function for formatting tooltip text
+  tooltip.textFormatter(function(){
+    // get value parameter of the point
+    var value = (this.value).toFixed(0);
+    var main = "";
+    // if value is more than three symbols long
+    for (var i=1;(i*3)<value.length;i++)
+      // insert space before every 3 symbols
+      main = " " + value.substr(value.length-(i*3), 3) + main;
+    // get the remaining part of the value
+    var tail = value.substr(0, value.length-(main.length-main.length/4));
+    // format value in appropriate way
+    value = tail + main;
+    return "Income: $" + value + 
+      "\nPercent: " + (100*this.value/this.getStat("sum")).toFixed(1) + "%";
+  });
+```
+
+{sample}BCT\_HeatMapChart\_04{sample}
 
 ## Visualization
 
@@ -200,94 +286,65 @@ Border of the heatMap chart and all the borders of each chart points are control
 Here is a sample with adjusted strokes.
 
 {sample}BCT\_HeatMapChart\_06{sample}
-  
-### Labels
 
-Labels are text boxes with additional information for presented data. You can tune labels using {api:anychart.charts.HeatMap#labels}**.labels()**{api} method.
+## from Data
+
+Along with visualization methods you can specify visual settings for individual point. There are several parameters for managing points visual appearance:
+
+* **fill** parameter defines inner color of the point.
+* **hoverFill** defines point's inner color while a mouse is over the point.
+* **stroke** parameter defines points border.
+* **hoverStroke** parameter defines points border while a mouse is over the point
 
 ```
+  var data = anychart.data.set([
+    {column: "California",    row: "2004", value: 1704211},
+    {column: "California",    row: "2005", value: 2782680},
+    {column: "California",    row: "2006", value: 2992679},
+    {column: "Colorado",      row: "2004", value: 448302},
+    {column: "Colorado",      row: "2005", value: 768390},
+    {column: "Colorado",      row: "2006", value: 843584},
+    {column: "DC",            row: "2004", value: 693211},
+    {column: "DC",            row: "2005", value: 1215158},
+    {column: "DC",            row: "2006", value: 1053581},
+    {column: "Florida",       row: "2004", value: 405985},
+    {column: "Florida",       row: "2005", value: 661250},
+    {column: "Florida",       row: "2006", value: 811924},
+    {column: "Illinois",      row: "2004", value: 727914},
+    {column: "Illinois",      row: "2005", value: 1150659},
+    {column: "Illinois",      row: "2006", value: 1134085},
+    {column: "Texas",         row: "2004", value: 219967},
+    {column: "Texas",         row: "2005", value: 3732889},
+    {
+      column: "Texas",
+      row: "2006",
+      value: 4185098,
+      stroke: {color: "#006400"},
+      hoverStroke: {
+        thickness: 2,
+        color: "#006400"
+      },
+      fill: "#90EE90",
+      hoverFill: {
+        keys: ["#A6F1A6", "#73be73"], 
+        cx: 0.5,
+        cy: 0.5
+      }
+    },
+    {column: "Massachusetts", row: "2004", value: 238819},
+    {column: "Massachusetts", row: "2005", value: 157719},
+    {column: "Massachusetts", row: "2006", value: 887169},
+    {column: "New York",      row: "2004", value: 1667969},
+    {column: "New York",      row: "2005", value: 2763503},
+    {column: "New York",      row: "2006", value: 3151022}
+  ]);
+
   // create chart
   var chart = anychart.heatMap(dataSet);
-  
-  // labels settings
-  var labels = chart.labels();
-  // enable labels
-  labels.enabled(true);
-  labels.textFormatter(function(){
-    // get value parameter of the point
-    var value = (this.value).toFixed(0);
-    var main = "";
-    // if value is more than three symbols long
-    for (var i=1;(i*3)<value.length;i++)
-      // insert space before every 3 symbols
-      main = " " + value.substr(value.length-(i*3), 3) + main;
-    // get the remaining part of the value
-    var tail = value.substr(0, value.length-(main.length-main.length/4));
-    // format value in appropriate way
-    value = tail + main;
-    return "$" + value
-  });
+  chart.stroke("#CCC");
+  chart.fill("#FFFFE0");
 ```
 
-You can find information on managing labels content in [Text Formatters article](../Common_Settings/Text_Formatters).
-  
-  
-Here is a sample of a js heatMap with formatted labels.
+**Note**: **fill** and **hoverFill** parameters can use both strings and objects with settings while **stroke** and **hoverStroke** parameters use only objects with settings.
 
-{sample}BCT\_HeatMapChart\_03{sample}
-
-HeatMap is a kind of charts that usually contains quite a few points in dataSet. That is why heatMaps has special **.labelsDisplayMode()** method for managing labels appearance on the chart plot. There are three possible parameters for displaying labels: **"clip"**, **"drop"**, **"alwaysShow"**.
-  
-  
-* **"Clip"** parameter makes all labels to be displayed regardless the width of each point. If a label doesn't fit the point width, a part of this label will be cropped.
-* **"Drop"** parameter hides the whole label, if it doesn't fit point's width
-* **"AlwaysShow"** parameter force all labels to be shown despite the situation. Be careful using this parameter. Labels may overlap, if label's width is larger than point's width.
-  
-  
-{sample :width 690 :height 725}BCT\_HeatMapChart\_08{sample}
-
-### Tooltips
-
-In this section we will explain how to tune heatMap's tooltip. Method {api:anychart.charts.HeatMap#tooltip}**.tooltip()**{api} controls tooltip of the heatMap. In [Tooltip](../Common_Settings/Tooltip) article you can find some information on how to adjust tooltip content and tooltip visual appearance.
-
-```
-  var chart = anychart.heatMap(dataSet);
-  
-  // settings for chart tooltip
-  var tooltip = chart.tooltip();
-  // adjust tooltip title
-  var title = tooltip.title();
-  // force title to respect html tags
-  title.useHtml(true);
-  // format title to place text in the center
-  title.hAlign("center");
-  // function for formatting title's text
-  tooltip.titleFormatter(function(){
-    return this.column + "<br><a style=\"font-size: 10px; color: #ccc\">Year: "+ this.row + "</a>";
-  });
-  // function for formatting tooltip text
-  tooltip.textFormatter(function(){
-    // get value parameter of the point
-    var value = (this.value).toFixed(0);
-    var main = "";
-    // if value is more than three symbols long
-    for (var i=1;(i*3)<value.length;i++)
-      // insert space before every 3 symbols
-      main = " " + value.substr(value.length-(i*3), 3) + main;
-    // get the remaining part of the value
-    var tail = value.substr(0, value.length-(main.length-main.length/4));
-    // format value in appropriate way
-    value = tail + main;
-    return "Income: $" + value + "\nPercent: " + (100*this.value/this.getStat("sum")).toFixed(1) + "%";
-  });
-```
-
-{sample}BCT\_HeatMapChart\_04{sample}
-<!--
-## HatchFill
-
-AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see Hatch Fill tutorial.
-  
-  
-To demonstrate hatch fill feature we've edited one of the previous samples. As you see now it is completely monochrome. We've got a 5-series chart with 2 data points in each series. For every series we've applied different hatch fills by setting hatch type for the .hatchFill() parameter opposite to fill() parameter used to colorize the series and set all series in grey color (#EEEEEE).
--->
+{sample}BCT\_HeatMapChart\_10{sample}
