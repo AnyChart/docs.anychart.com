@@ -10,31 +10,31 @@
 
   // data
   var data = anychart.data.set([
-    {column: "Rare", row: "Insignificant", value: 0},
-    {column: "Rare", row: "Minor", value: 0},
-    {column: "Rare", row: "Moderate", value: 0},
-    {column: "Rare", row: "Major", value: 0},
-    {column: "Rare", row: "Extreme", value: 0},
-    {column: "Unlikely", row: "Insignificant", value: 0},
-    {column: "Unlikely", row: "Minor", value: 0},
-    {column: "Unlikely", row: "Moderate", value: 0},
-    {column: "Unlikely", row: "Major", value: 1},
-    {column: "Unlikely", row: "Extreme", value: 1},
-    {column: "Possible", row: "Insignificant", value: 0},
-    {column: "Possible", row: "Minor", value: 0},
-    {column: "Possible", row: "Moderate", value: 1},
-    {column: "Possible", row: "Major", value: 1},
-    {column: "Possible", row: "Extreme", value: 1},
-    {column: "Likely", row: "Insignificant", value: 0},
-    {column: "Likely", row: "Minor", value: 1},
-    {column: "Likely", row: "Moderate", value: 1},
-    {column: "Likely", row: "Major", value: 2},
-    {column: "Likely", row: "Extreme", value: 2},
-    {column: "Almost Certain", row: "Insignificant", value: 0},
-    {column: "Almost Certain", row: "Minor", value: 1},
-    {column: "Almost Certain", row: "Moderate", value: 1},
-    {column: "Almost Certain", row: "Major", value: 2},
-    {column: "Almost Certain", row: "Extreme", value: 3}
+    {column: "Rare", row: "Insignificant", heat: 0},
+    {column: "Rare", row: "Minor", heat: 0},
+    {column: "Rare", row: "Moderate", heat: 0},
+    {column: "Rare", row: "Major", heat: 0},
+    {column: "Rare", row: "Extreme", heat: 0},
+    {column: "Unlikely", row: "Insignificant", heat: 0},
+    {column: "Unlikely", row: "Minor", heat: 0},
+    {column: "Unlikely", row: "Moderate", heat: 0},
+    {column: "Unlikely", row: "Major", heat: 1},
+    {column: "Unlikely", row: "Extreme", heat: 1},
+    {column: "Possible", row: "Insignificant", heat: 0},
+    {column: "Possible", row: "Minor", heat: 0},
+    {column: "Possible", row: "Moderate", heat: 1},
+    {column: "Possible", row: "Major", heat: 1},
+    {column: "Possible", row: "Extreme", heat: 1},
+    {column: "Likely", row: "Insignificant", heat: 0},
+    {column: "Likely", row: "Minor", heat: 1},
+    {column: "Likely", row: "Moderate", heat: 1},
+    {column: "Likely", row: "Major", heat: 2},
+    {column: "Likely", row: "Extreme", heat: 2},
+    {column: "Almost Certain", row: "Insignificant", heat: 0},
+    {column: "Almost Certain", row: "Minor", heat: 1},
+    {column: "Almost Certain", row: "Moderate", heat: 1},
+    {column: "Almost Certain", row: "Major", heat: 2},
+    {column: "Almost Certain", row: "Extreme", heat: 3}
   ]);
 
   // set chart type
@@ -48,7 +48,7 @@
   chart.tooltip(false);
 
   var colorScale = anychart.scales.ordinalColor();
-  // set range of values and corresponding colors
+  // set range of heat parameters and corresponding colors
   colorScale.ranges([
     {less: 1, color: "#9ACD32"},
     {from: 0, to: 1, color: "#FFFF00"},
