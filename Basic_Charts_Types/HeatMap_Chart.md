@@ -5,9 +5,10 @@
 * [Labels](#labels)
 * [Tooltips](#tooltips)
 * [Visualization](#visualization)
-  * [Colors](#colors)
+  * [Inner Color](#inner_color)
   * [Stroke](#stroke)
   * [from Data](#from_data)
+  * [Color Scale](#color_scsale)
 
 ## Overview
 
@@ -166,64 +167,15 @@ In this section we will explain how to tune heatMap's tooltip. Method {api:anych
 
 While as most types of charts represent differences in values of data points via series shapes on data plot the HeatMaps displays all differences with colors. That is why this section is quite important.
 
-### Colors
+### Inner Color
 
-There are different ways to manage HeatMap's colors. You can set colors ether in your dataSet or using special methods. The most popular method to set heatMap colors is **.colorScale()** method.
-  
-  
-Use **.ordinalColor()** scale as a parameter for **.colorScale()** method to create an array of ranges and define the color for each range. All value for ranges are custom.
+There are different ways to manage HeatMap's colors. You can set colors ether in your dataSet or using special
+methods. The easiest way to set heatMap's color is {api:anychart.charts.HeatMap#fill}**.fill()**{api} method.
 
-```
-  var chart = anychart.heatMap(dataSet);
 
-  // create linerColor scale
-  var colorScale = anychart.scales.ordinalColor();
-  // set range of values and corresponding colors
-  colorScale.ranges([
-    // set color for all points with the value less than 1200000
-    {less: 1200000, color: "#B2DFDB"}, 
-    {from: 1200000, to: 3000000, color: "#004D40"},
-    {greater: 3000000, color: "#004D40"}
-  ]);
-
-  // apply colorScale for colorizing heatMap chart
-  chart.colorScale(colorScale);
-```
-
-Here is a sample of a heatMap with **.ordinalColor()** scale:
-
-{sample}BCT\_HeatMapChart\_02{sample}
-
-Moreover, you can set a solid color for each cell of the heatMap. Use **.fill()** method to define custom color for every cell. <!--In addition to **.fill()** method, **"fill"** parameter can be used to emphasize a chart point:-->
+You can set a solid color for each cell of the heatMap. Use {api:anychart.charts.HeatMap#fill}**.fill()**{api} method to define custom color for every cell. <!--In addition to **.fill()** method, **"fill"** parameter can be used to emphasize a chart point:-->
 
 ```
-  var dataSet = anychart.data.set([
-    {column: "California",    row: "2004", value: 1704211},
-    {column: "California",    row: "2005", value: 2782680},
-    {column: "California",    row: "2006", value: 2992679},
-    {column: "Colorado",      row: "2004", value: 448302},
-    {column: "Colorado",      row: "2005", value: 768390},
-    {column: "Colorado",      row: "2006", value: 843584},
-    {column: "DC",            row: "2004", value: 693211},
-    {column: "DC",            row: "2005", value: 1215158},
-    {column: "DC",            row: "2006", value: 1053581},
-    {column: "Florida",       row: "2004", value: 405985},
-    {column: "Florida",       row: "2005", value: 661250},
-    {column: "Florida",       row: "2006", value: 811924},
-    {column: "Illinois",      row: "2004", value: 727914},
-    {column: "Illinois",      row: "2005", value: 1150659},
-    {column: "Illinois",      row: "2006", value: 1134085},
-    {column: "Texas",         row: "2004", value: 219967},
-    {column: "Texas",         row: "2005", value: 3732889},
-    {column: "Texas",         row: "2006", value: 4185098},
-    {column: "Massachusetts", row: "2004", value: 238819},
-    {column: "Massachusetts", row: "2005", value: 157719},
-    {column: "Massachusetts", row: "2006", value: 887169},
-    {column: "New York",      row: "2004", value: 1667969},
-    {column: "New York",      row: "2005", value: 2763503},
-    {column: "New York",      row: "2006", value: 3151022}
-  ]);
-  
   var chart = anychart.heatMap(dataSet);
   // set inner color for every cell
   chart.fill("#FFFFE0");
@@ -236,33 +188,6 @@ Moreover, you can set a solid color for each cell of the heatMap. Use **.fill()*
 Border of the heatMap chart and all the borders of each chart points are controlled by **.stroke()** method.<!-- Alone with **.stroke()** method you can set **"stroke"** parameter for an individual point.-->
 
 ```
-  var dataSet = anychart.data.set([
-    {column: "California",    row: "2004", value: 1704211},
-    {column: "California",    row: "2005", value: 2782680},
-    {column: "California",    row: "2006", value: 2992679},
-    {column: "Colorado",      row: "2004", value: 448302},
-    {column: "Colorado",      row: "2005", value: 768390},
-    {column: "Colorado",      row: "2006", value: 843584},
-    {column: "DC",            row: "2004", value: 693211},
-    {column: "DC",            row: "2005", value: 1215158},
-    {column: "DC",            row: "2006", value: 1053581},
-    {column: "Florida",       row: "2004", value: 405985},
-    {column: "Florida",       row: "2005", value: 661250},
-    {column: "Florida",       row: "2006", value: 811924},
-    {column: "Illinois",      row: "2004", value: 727914},
-    {column: "Illinois",      row: "2005", value: 1150659},
-    {column: "Illinois",      row: "2006", value: 1134085},
-    {column: "Texas",         row: "2004", value: 219967},
-    {column: "Texas",         row: "2005", value: 3732889},
-    {column: "Texas",         row: "2006", value: 4185098},
-    {column: "Massachusetts", row: "2004", value: 238819},
-    {column: "Massachusetts", row: "2005", value: 157719},
-    {column: "Massachusetts", row: "2006", value: 887169},
-    {column: "New York",      row: "2004", value: 1667969},
-    {column: "New York",      row: "2005", value: 2763503},
-    {column: "New York",      row: "2006", value: 3151022}
-  ]);
-
   // create chart
   var chart = anychart.heatMap(dataSet);
   chart.stroke("#CCC");
@@ -272,7 +197,7 @@ Here is a sample with adjusted strokes.
 
 {sample}BCT\_HeatMapChart\_06{sample}
 
-## from Data
+### from Data
 
 Along with visualization methods you can specify visual settings for individual point. There are several parameters for managing points visual appearance:
 
@@ -333,3 +258,28 @@ Along with visualization methods you can specify visual settings for individual 
 **Note**: **fill** and **hoverFill** parameters can use both strings and objects with settings while **stroke** and **hoverStroke** parameters use only objects with settings.
 
 {sample}BCT\_HeatMapChart\_10{sample}
+
+### Color Scale
+
+Even though you can set single solid color for every cell, this way of color managing quite contradict with the idea of heatMaps itself. That is why it is much more appropriate to use a **.colorScale()** method to define heatMap's colors. Use **.ordinalColor()** scale as a parameter for **.colorScale()** method to create an array of ranges and define the color for each range. All values for ranges are custom.
+
+```
+  var chart = anychart.heatMap(dataSet);
+
+  // create linerColor scale
+  var colorScale = anychart.scales.ordinalColor();
+  // set range of values and corresponding colors
+  colorScale.ranges([
+    // set color for all points with the value less than 1200000
+    {less: 1200000, color: "#B2DFDB"},
+    {from: 1200000, to: 3000000, color: "#004D40"},
+    {greater: 3000000, color: "#004D40"}
+  ]);
+
+  // apply colorScale for colorizing heatMap chart
+  chart.colorScale(colorScale);
+```
+
+Here is a sample of a heatMap with **.ordinalColor()** scale:
+
+{sample}BCT\_HeatMapChart\_02{sample}
