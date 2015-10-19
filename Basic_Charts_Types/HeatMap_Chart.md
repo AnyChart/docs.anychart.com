@@ -113,7 +113,7 @@ Here is a sample of a js heatMap with formatted labels.
 
 {sample}BCT\_HeatMapChart\_03{sample}
 
-HeatMap is a kind of charts that usually contains quite a few points in dataSet. That is why heatMaps has special **.labelsDisplayMode()** method for managing labels appearance on the chart plot. There are three possible parameters for displaying labels: **"clip"**, **"drop"**, **"alwaysShow"**.
+HeatMap is a kind of charts that usually contains quite a few points in dataSet. That is why heatMaps has special {api:anychart.charts.HeatMap#labelsDisplayMode}**.labelsDisplayMode()**{api} method for managing labels appearance on the chart plot. There are three possible parameters for displaying labels: **"clip"**, **"drop"**, **"alwaysShow"**.
   
   
 * **"Clip"** parameter makes all labels to be displayed regardless the width of each point. If a label doesn't fit the point width, a part of this label will be cropped.
@@ -185,7 +185,7 @@ You can set a solid color for each cell of the heatMap. Use {api:anychart.charts
 
 ### Stroke
 
-Border of the heatMap chart and all the borders of each chart points are controlled by **.stroke()** method.<!-- Alone with **.stroke()** method you can set **"stroke"** parameter for an individual point.-->
+Border of the heatMap chart and all the borders of each chart points are controlled by {api:anychart.charts.HeatMap#stroke}**.stroke()**{api} method.<!-- Alone with **.stroke()** method you can set **"stroke"** parameter for an individual point.-->
 
 ```
   // create chart
@@ -261,7 +261,7 @@ Along with visualization methods you can specify visual settings for individual 
 
 ### Color Scale
 
-Even though you can set single solid color for every cell, this way of color managing quite contradict with the idea of heatMaps itself. That is why it is much more appropriate to use a **.colorScale()** method to define heatMap's colors. Use **.ordinalColor()** scale as a parameter for **.colorScale()** method to create an array of ranges and define the color for each range. All values for ranges are custom.
+Even though you can set single solid color for every cell, this way of color managing quite contradict with the idea of heatMaps itself. That is why it is much more appropriate to use a {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to define heatMap's colors. Use {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale as a parameter for {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to create an array of ranges and define the color for each range. All values for ranges are custom.
 
 ```
   var chart = anychart.heatMap(dataSet);
@@ -282,6 +282,6 @@ Even though you can set single solid color for every cell, this way of color man
   chart.colorScale(colorScale);
 ```
 
-Here is a sample of a heatMap with **.ordinalColor()** scale:
+Here is a sample of a heatMap with {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale:
 
 {sample}BCT\_HeatMapChart\_02{sample}
