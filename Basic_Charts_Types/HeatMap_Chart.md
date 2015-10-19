@@ -8,7 +8,9 @@
   * [Inner Color](#inner_color)
   * [Stroke](#stroke)
   * [from Data](#from_data)
-  * [Color Scale](#color_scsale)
+  * [Color Scale](#color_scale)
+* [Scroller](#scroller)
+* [Theme](#theme)
 
 ## Overview
 
@@ -285,3 +287,15 @@ Even though you can set single solid color for every cell, this way of color man
 Here is a sample of a heatMap with {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale:
 
 {sample}BCT\_HeatMapChart\_02{sample}
+
+## Scroller
+
+[Scroller article](../Common_Settings/Scroller)
+
+## Theme
+
+AnyChart provides an opportunity to define desirable settings for your chart one sing time and then use this settings for your chart any time you want. Use .theme() method to apply custom settings for your heatMap. You can find information on AnyChart Themes in [Themes article](../Appearance_Settings/Themes).
+
+```
+  var customTheme = 
+```
