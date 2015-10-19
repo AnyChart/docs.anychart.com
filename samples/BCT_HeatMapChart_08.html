@@ -21,7 +21,7 @@
     xAxis.title("Likelihood");
     // adjust labels
     var xLabels = xAxis.labels();
-    // ratate labels
+    // rotate labels
     xLabels.rotation(-85);
     // enable multiline labels
     xLabels.textWrap(true);
@@ -30,7 +30,7 @@
     // set title
     yAxis.title("Consequence");
 
-    // create color scale 
+    // create color scale
     var colorScale = anychart.scales.ordinalColor();
     // set range of values and corresponding colors
     colorScale.ranges([
@@ -72,7 +72,7 @@
     padding.top(10);
 
     return chart;
-  } 
+  }
 
   var table = anychart.ui.table();
   table.contents([
@@ -96,10 +96,14 @@
     row.minHeight(230);
     row.hAlign("center");
   }
-  table.getCol(1).width(360);
-  table.getCol(0).maxWidth(200);
+  var col1 = table.getCol(1);
+  col1.width(360);
+  var col0 = table.getCol(0);
+  col0.maxWidth(200);
+  col0.vAlign("center");
   table.cellBorder("white");
-  table.getRow(0).height(15);
+  var row0 = table.getRow(0);
+  row0.height(30);
 
   // set table container and initiate draw
   table.container("container");
@@ -132,8 +136,7 @@ function data(){
     {column: "Almost\nCertain", row: "Moderate", value: 1},
     {column: "Almost\nCertain", row: "Major", value: 2},
     {column: "Almost\nCertain", row: "Extreme", value: 3}
-  ]);
-}</script>
+  ]);}</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
