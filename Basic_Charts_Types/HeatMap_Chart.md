@@ -16,26 +16,26 @@ AnyChart JavaScript HeatMap is a graphical representation of data where the indi
 
 ## Chart 
 
-Each data point for HeatMap chart must have three parameters: **"Column"** parameter should define the name of the column to put the point into, **"row"** parameter defines the row to put the point into and **"value"** parameter corresponds with the color of the point. Here is a sample of appropriate data formatting:
+Each data point for HeatMap chart must have three parameters: **"x"** parameter should define the name of the column to put the point into, **"y"** parameter defines the row to put the point into and **"heat"** parameter corresponds with the color of the point. Here is a sample of appropriate data formatting:
 
 ```
   var dataSet = anychart.data.set([
-    {column: "Quarter 1", row: "Mobile", value: 15},
-    {column: "Quarter 2", row: "Mobile", value: 17},
-    {column: "Quarter 3", row: "Mobile", value: 21},
-    {column: "Quarter 4", row: "Mobile", value: 23},
-    {column: "Quarter 1", row: "WebMail", value: 34},
-    {column: "Quarter 2", row: "WebMail", value: 33},
-    {column: "Quarter 3", row: "WebMail", value: 32},
-    {column: "Quarter 4", row: "WebMail", value: 30},
-    {column: "Quarter 1", row: "Desktop", value: 43},
-    {column: "Quarter 2", row: "Desktop", value: 42},
-    {column: "Quarter 3", row: "Desktop", value: 40},
-    {column: "Quarter 4", row: "Desktop", value: 38},
-    {column: "Quarter 1", row: "Undetected", value: 8},
-    {column: "Quarter 2", row: "Undetected", value: 8},
-    {column: "Quarter 3", row: "Undetected", value: 7},
-    {column: "Quarter 4", row: "Undetected", value: 8}
+    {x: "Quarter 1", y: "Mobile", heat: 15},
+    {x: "Quarter 2", y: "Mobile", heat: 17},
+    {x: "Quarter 3", y: "Mobile", heat: 21},
+    {x: "Quarter 4", y: "Mobile", heat: 23},
+    {x: "Quarter 1", y: "WebMail", heat: 34},
+    {x: "Quarter 2", y: "WebMail", heat: 33},
+    {x: "Quarter 3", y: "WebMail", heat: 32},
+    {x: "Quarter 4", y: "WebMail", heat: 30},
+    {x: "Quarter 1", y: "Desktop", heat: 43},
+    {x: "Quarter 2", y: "Desktop", heat: 42},
+    {x: "Quarter 3", y: "Desktop", heat: 40},
+    {x: "Quarter 4", y: "Desktop", heat: 38},
+    {x: "Quarter 1", y: "Undetected", heat: 8},
+    {x: "Quarter 2", y: "Undetected", heat: 8},
+    {x: "Quarter 3", y: "Undetected", heat: 7},
+    {x: "Quarter 4", y: "Undetected", heat: 8}
   ]);
   
   var chart = anychart.heatMap(dateSet);
@@ -65,9 +65,9 @@ Moreover, you can use an array of arrays without any parameters as a data source
   
   // define the column for each parameter
   var dataSet = data.mapAs({
-    column: [0],
-    row: [1],
-    value: [2]
+    x: [0],
+    y: [1],
+    heat: [2]
   });
   
   var chart = anychart.heatMap(dataSet);
@@ -91,8 +91,8 @@ Labels are text boxes with additional information for presented data. You can tu
   // enable labels
   labels.enabled(true);
   labels.textFormatter(function(){
-    // get value parameter of the point
-    var value = (this.value).toFixed(0);
+    // get heat parameter of the point
+    var value = (this.heat).toFixed(0);
     var main = "";
     // if value is more than three symbols long
     for (var i=1;(i*3)<value.length;i++)
@@ -140,13 +140,13 @@ In this section we will explain how to tune heatMap's tooltip. Method {api:anych
   title.hAlign("center");
   // function for formatting title's text
   tooltip.titleFormatter(function(){
-    return this.column + 
-      "<br><a style=\"font-size: 10px; color: #ccc\">Year: "+ this.row + "</a>";
+    return this.x + 
+      "<br><a style=\"font-size: 10px; color: #ccc\">Year: "+ this.y + "</a>";
   });
   // function for formatting tooltip text
   tooltip.textFormatter(function(){
-    // get value parameter of the point
-    var value = (this.value).toFixed(0);
+    // get heat parameter of the point
+    var value = (this.heat).toFixed(0);
     var main = "";
     // if value is more than three symbols long
     for (var i=1;(i*3)<value.length;i++)
@@ -157,7 +157,7 @@ In this section we will explain how to tune heatMap's tooltip. Method {api:anych
     // format value in appropriate way
     value = tail + main;
     return "Income: $" + value + 
-      "\nPercent: " + (100*this.value/this.getStat("sum")).toFixed(1) + "%";
+      "\nPercent: " + (100*this.heat/this.getStat("sum")).toFixed(1) + "%";
   });
 ```
 
@@ -208,27 +208,27 @@ Along with visualization methods you can specify visual settings for individual 
 
 ```
   var data = anychart.data.set([
-    {column: "California",    row: "2004", value: 1704211},
-    {column: "California",    row: "2005", value: 2782680},
-    {column: "California",    row: "2006", value: 2992679},
-    {column: "Colorado",      row: "2004", value: 448302},
-    {column: "Colorado",      row: "2005", value: 768390},
-    {column: "Colorado",      row: "2006", value: 843584},
-    {column: "DC",            row: "2004", value: 693211},
-    {column: "DC",            row: "2005", value: 1215158},
-    {column: "DC",            row: "2006", value: 1053581},
-    {column: "Florida",       row: "2004", value: 405985},
-    {column: "Florida",       row: "2005", value: 661250},
-    {column: "Florida",       row: "2006", value: 811924},
-    {column: "Illinois",      row: "2004", value: 727914},
-    {column: "Illinois",      row: "2005", value: 1150659},
-    {column: "Illinois",      row: "2006", value: 1134085},
-    {column: "Texas",         row: "2004", value: 219967},
-    {column: "Texas",         row: "2005", value: 3732889},
+    {x: "California",    y: "2004", heat: 1704211},
+    {x: "California",    y: "2005", heat: 2782680},
+    {x: "California",    y: "2006", heat: 2992679},
+    {x: "Colorado",      y: "2004", heat: 448302},
+    {x: "Colorado",      y: "2005", heat: 768390},
+    {x: "Colorado",      y: "2006", heat: 843584},
+    {x: "DC",            y: "2004", heat: 693211},
+    {x: "DC",            y: "2005", heat: 1215158},
+    {x: "DC",            y: "2006", heat: 1053581},
+    {x: "Florida",       y: "2004", heat: 405985},
+    {x: "Florida",       y: "2005", heat: 661250},
+    {x: "Florida",       y: "2006", heat: 811924},
+    {x: "Illinois",      y: "2004", heat: 727914},
+    {x: "Illinois",      y: "2005", heat: 1150659},
+    {x: "Illinois",      y: "2006", heat: 1134085},
+    {x: "Texas",         y: "2004", heat: 219967},
+    {x: "Texas",         y: "2005", heat: 3732889},
     {
-      column: "Texas",
-      row: "2006",
-      value: 4185098,
+      x: "Texas",
+      y: "2006",
+      heat: 4185098,
       stroke: {color: "#006400"},
       hoverStroke: {
         thickness: 2,
@@ -241,12 +241,12 @@ Along with visualization methods you can specify visual settings for individual 
         cy: 0.5
       }
     },
-    {column: "Massachusetts", row: "2004", value: 238819},
-    {column: "Massachusetts", row: "2005", value: 157719},
-    {column: "Massachusetts", row: "2006", value: 887169},
-    {column: "New York",      row: "2004", value: 1667969},
-    {column: "New York",      row: "2005", value: 2763503},
-    {column: "New York",      row: "2006", value: 3151022}
+    {x: "Massachusetts", y: "2004", heat: 238819},
+    {x: "Massachusetts", y: "2005", heat: 157719},
+    {x: "Massachusetts", y: "2006", heat: 887169},
+    {x: "New York",      y: "2004", heat: 1667969},
+    {x: "New York",      y: "2005", heat: 2763503},
+    {x: "New York",      y: "2006", heat: 3151022}
   ]);
 
   // create chart
@@ -268,11 +268,13 @@ Even though you can set single solid color for every cell, this way of color man
 
   // create linerColor scale
   var colorScale = anychart.scales.ordinalColor();
-  // set range of values and corresponding colors
+  // set range of heat parameter's values and corresponding colors
   colorScale.ranges([
-    // set color for all points with the value less than 1200000
+    // set color for all points with the heat parameter less than 1200000
     {less: 1200000, color: "#B2DFDB"},
+    // set color for all points with the heat parameter more than 1200000 but less than 3000000
     {from: 1200000, to: 3000000, color: "#004D40"},
+    // set color for all points with the heat parameter more than 3000000
     {greater: 3000000, color: "#004D40"}
   ]);
 
