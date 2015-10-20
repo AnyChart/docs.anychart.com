@@ -1,0 +1,99 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script src="https://doc-voron.c9.io/anychart-bundle.min.js" data-export="true"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // data
+  var data = anychart.data.set([
+    {x: "Quarter 1\n2011", y: "Mobile", heat: 15},
+    {x: "Quarter 2\n2011", y: "Mobile", heat: 17},
+    {x: "Quarter 3\n2011", y: "Mobile", heat: 21},
+    {x: "Quarter 5\n2011", y: "Mobile", heat: 23},
+    {x: "Quarter 1\n2012", y: "Mobile", heat: 27},
+    {x: "Quarter 2\n2012", y: "Mobile", heat: 31},
+    {x: "Quarter 3\n2012", y: "Mobile", heat: 32},
+    {x: "Quarter 4\n2012", y: "Mobile", heat: 36},
+    {x: "Quarter 1\n2013", y: "Mobile", heat: 38},
+    {x: "Quarter 2\n2013", y: "Mobile", heat: 40},
+    {x: "Quarter 3\n2013", y: "Mobile", heat: 43},
+    {x: "Quarter 4\n2013", y: "Mobile", heat: 44},
+    {x: "Quarter 1\n2011", y: "WebMail", heat: 34},
+    {x: "Quarter 2\n2011", y: "WebMail", heat: 33},
+    {x: "Quarter 3\n2011", y: "WebMail", heat: 32},
+    {x: "Quarter 5\n2011", y: "WebMail", heat: 30},
+    {x: "Quarter 1\n2012", y: "WebMail", heat: 29},
+    {x: "Quarter 2\n2012", y: "WebMail", heat: 27},
+    {x: "Quarter 3\n2012", y: "WebMail", heat: 28},
+    {x: "Quarter 4\n2012", y: "WebMail", heat: 27},
+    {x: "Quarter 1\n2013", y: "WebMail", heat: 25},
+    {x: "Quarter 2\n2013", y: "WebMail", heat: 23},
+    {x: "Quarter 3\n2013", y: "WebMail", heat: 21},
+    {x: "Quarter 4\n2013", y: "WebMail", heat: 18},
+    {x: "Quarter 1\n2011", y: "Desktop", heat: 43},
+    {x: "Quarter 2\n2011", y: "Desktop", heat: 42},
+    {x: "Quarter 3\n2011", y: "Desktop", heat: 40},
+    {x: "Quarter 5\n2011", y: "Desktop", heat: 38},
+    {x: "Quarter 1\n2012", y: "Desktop", heat: 36},
+    {x: "Quarter 2\n2012", y: "Desktop", heat: 34},
+    {x: "Quarter 3\n2012", y: "Desktop", heat: 32},
+    {x: "Quarter 4\n2012", y: "Desktop", heat: 31},
+    {x: "Quarter 1\n2013", y: "Desktop", heat: 29},
+    {x: "Quarter 2\n2013", y: "Desktop", heat: 29},
+    {x: "Quarter 3\n2013", y: "Desktop", heat: 28},
+    {x: "Quarter 4\n2013", y: "Desktop", heat: 26},
+    {x: "Quarter 1\n2011", y: "Undetected", heat: 8},
+    {x: "Quarter 2\n2011", y: "Undetected", heat: 8},
+    {x: "Quarter 3\n2011", y: "Undetected", heat: 7},
+    {x: "Quarter 5\n2011", y: "Undetected", heat: 8},
+    {x: "Quarter 1\n2012", y: "Undetected", heat: 8},
+    {x: "Quarter 2\n2012", y: "Undetected", heat: 8},
+    {x: "Quarter 3\n2012", y: "Undetected", heat: 7},
+    {x: "Quarter 4\n2012", y: "Undetected", heat: 7},
+    {x: "Quarter 1\n2013", y: "Undetected", heat: 7},
+    {x: "Quarter 2\n2013", y: "Undetected", heat: 8},
+    {x: "Quarter 3\n2013", y: "Undetected", heat: 8},
+    {x: "Quarter 4\n2013", y: "Undetected", heat: 12}
+  ]);
+
+  var colorScale = anychart.scales.ordinalColor();
+  // set range of heat parameters and corresponding colors
+  colorScale.ranges([
+    // set color for all points with the heat less than 1200000
+    {less: 15, color: "#FF4500"},
+    {from: 15, to: 20, color: "#FFA500"},
+    {from: 20, to: 25, color: "#FFFF00"},
+    {from: 25, to: 30, color: "#9ACD32"},
+    {greater: 30, color: "#008000"}
+  ]);
+
+  // set chart type
+  var chart = anychart.heatMap(data);
+  chart.title("Email Opens by Environment\nper Quarter 2011-2013");
+  var labels = chart.labels();
+  labels.enabled(true);
+  labels.fontColor("#222");
+  labels.fontWeight(900);
+  labels.textFormatter(function(){
+    return this.heat + "%"
+  });
+  var xLabels = chart.xAxis().labels();
+  xLabels.textWrap(true);
+  xLabels.hAlign("center");
+
+  var scroller = chart.xScroller();
+  scroller.enabled(true);
+
+  // draw chart
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
