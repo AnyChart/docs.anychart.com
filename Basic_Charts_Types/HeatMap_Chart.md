@@ -10,7 +10,6 @@
   * [from Data](#from_data)
   * [Color Scale](#color_scale)
 * [Scroller](#scroller)
-* [Theme](#theme)
 
 ## Overview
 
@@ -290,12 +289,18 @@ Here is a sample of a heatMap with {api:anychart.scales.OrdinalColor}**.ordinalC
 
 ## Scroller
 
-[Scroller article](../Common_Settings/Scroller)
-
-## Theme
-
-AnyChart provides an opportunity to define desirable settings for your chart one sing time and then use this settings for your chart any time you want. Use .theme() method to apply custom settings for your heatMap. You can find information on AnyChart Themes in [Themes article](../Appearance_Settings/Themes).
+As far as AnyChart doesn't limit the number of points on a chart, you might face a problem of having too many data points on your chart plot. The solution of this problem is simple: use **.xScroller()** method. This method creates a scroller on the chart plot and limits the amount of visible data points at the same time.
 
 ```
-  var customTheme = 
+  // create chart scroller
+  var scroller = chart.xScroller();
+  
+  // scroller settings
+  scroller.enabled(true);
+  // define the number of visible points at the same time
+  scroller.setToPointsCount(8);
 ```
+
+More information on scroller managing can be found in [Scroller article](../Common_Settings/Scroller).
+
+{sample}BCT\_HeatMapChart\_11{sample}

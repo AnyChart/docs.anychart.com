@@ -13,7 +13,7 @@
     {x: "Quarter 1\n2011", y: "Mobile", heat: 15},
     {x: "Quarter 2\n2011", y: "Mobile", heat: 17},
     {x: "Quarter 3\n2011", y: "Mobile", heat: 21},
-    {x: "Quarter 5\n2011", y: "Mobile", heat: 23},
+    {x: "Quarter 4\n2011", y: "Mobile", heat: 23},
     {x: "Quarter 1\n2012", y: "Mobile", heat: 27},
     {x: "Quarter 2\n2012", y: "Mobile", heat: 31},
     {x: "Quarter 3\n2012", y: "Mobile", heat: 32},
@@ -25,7 +25,7 @@
     {x: "Quarter 1\n2011", y: "WebMail", heat: 34},
     {x: "Quarter 2\n2011", y: "WebMail", heat: 33},
     {x: "Quarter 3\n2011", y: "WebMail", heat: 32},
-    {x: "Quarter 5\n2011", y: "WebMail", heat: 30},
+    {x: "Quarter 4\n2011", y: "WebMail", heat: 30},
     {x: "Quarter 1\n2012", y: "WebMail", heat: 29},
     {x: "Quarter 2\n2012", y: "WebMail", heat: 27},
     {x: "Quarter 3\n2012", y: "WebMail", heat: 28},
@@ -37,7 +37,7 @@
     {x: "Quarter 1\n2011", y: "Desktop", heat: 43},
     {x: "Quarter 2\n2011", y: "Desktop", heat: 42},
     {x: "Quarter 3\n2011", y: "Desktop", heat: 40},
-    {x: "Quarter 5\n2011", y: "Desktop", heat: 38},
+    {x: "Quarter 4\n2011", y: "Desktop", heat: 38},
     {x: "Quarter 1\n2012", y: "Desktop", heat: 36},
     {x: "Quarter 2\n2012", y: "Desktop", heat: 34},
     {x: "Quarter 3\n2012", y: "Desktop", heat: 32},
@@ -49,7 +49,7 @@
     {x: "Quarter 1\n2011", y: "Undetected", heat: 8},
     {x: "Quarter 2\n2011", y: "Undetected", heat: 8},
     {x: "Quarter 3\n2011", y: "Undetected", heat: 7},
-    {x: "Quarter 5\n2011", y: "Undetected", heat: 8},
+    {x: "Quarter 4\n2011", y: "Undetected", heat: 8},
     {x: "Quarter 1\n2012", y: "Undetected", heat: 8},
     {x: "Quarter 2\n2012", y: "Undetected", heat: 8},
     {x: "Quarter 3\n2012", y: "Undetected", heat: 7},
@@ -64,11 +64,11 @@
   // set range of heat parameters and corresponding colors
   colorScale.ranges([
     // set color for all points with the heat less than 1200000
-    {less: 15, color: "#FF4500"},
-    {from: 15, to: 20, color: "#FFA500"},
-    {from: 20, to: 25, color: "#FFFF00"},
-    {from: 25, to: 30, color: "#9ACD32"},
-    {greater: 30, color: "#008000"}
+    {less: 15, color: "#99EBFF"},
+    {from: 15, to: 20, color: "#19D1FF"},
+    {from: 20, to: 25, color: "#0099FF"},
+    {from: 25, to: 30, color: "#008AE6"},
+    {greater: 30, color: "#3366FF"}
   ]);
 
   // set chart type
@@ -85,8 +85,10 @@
   xLabels.textWrap(true);
   xLabels.hAlign("center");
 
+  chart.colorScale(colorScale);
   var scroller = chart.xScroller();
   scroller.enabled(true);
+  scroller.setToPointsCount(8);
 
   // draw chart
   chart.container("container");
