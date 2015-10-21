@@ -289,7 +289,7 @@ Here is a sample of a heatMap with {api:anychart.scales.OrdinalColor}**.ordinalC
 
 ## Scroller
 
-As far as AnyChart doesn't limit the number of points on a chart, you might face a problem of having too many data points on your chart plot. The solution of this problem is simple: use {api:anychart.charts.Cartesian#xScroller}**.xScroller()**{api} and yScroller() methods. These methods create scrollers on the chart plot and limits the amount of visible data points at the same time.
+As far as AnyChart doesn't limit the number of points on a chart, you might face a problem of having too many data points on your chart plot. The solution of this problem is simple: use {api:anychart.charts.Cartesian#xScroller}**.xScroller()**{api} and {api:anychart.charts.Cartesian#yScroller}**.yScroller()**{api} methods. These methods create scrollers on the chart plot and limits the amount of visible data points at the same time.
 
 ```
   // create horizontal chart scroller
@@ -313,6 +313,6 @@ As far as AnyChart doesn't limit the number of points on a chart, you might face
   yZoom.setToPointsCount(6);
 ```
 
-More information on scroller managing can be found in [Scroller article](../Common_Settings/Scroller).
+You can manage zoomed space using {api:anychart.charts.Cartesian#xZoom}**.xZoom()**{api} and {api:anychart.charts.Cartesian#yZoom}**.yZoom()**{api} methods. More information on scroller managing can be found in [Scroller article](../Common_Settings/Scroller).
 
 {sample}BCT\_HeatMapChart\_11{sample}
