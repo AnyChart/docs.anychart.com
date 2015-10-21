@@ -2,13 +2,13 @@
 
 * [Overview](#overview)
 * [Chart](#chart)
-* [Labels](#labels)
-* [Tooltips](#tooltips)
-* [Visualization](#visualization)
-  * [Inner Color](#inner_color)
+* [Coloring](#coloring)
+  * [Direct Coloring](#direct_coloring)
+  * [Color Scale](#color_scale)
   * [Stroke](#stroke)
   * [from Data](#from_data)
-  * [Color Scale](#color_scale)
+* [Labels](#labels)
+* [Tooltips](#tooltips)
 * [Scroller](#scroller)
 
 ## Overview
@@ -74,10 +74,134 @@ Moreover, you can use an array of arrays without any parameters as a data source
   var chart = anychart.heatMap(dataSet);
 ```
 
-Here is a HeatMap with this data:
+As you can see, you have to use your data set as a parameter for {api:anychart#heatMap}**.heatMap()**{api} method to create a HeatMap.
+  
+Here is a HeatMap with the data from above:
 
 {sample}BCT\_HeatMapChart\_01{sample}
 
+## Coloring
+
+While as most types of charts represent differences in values of data points via series shapes on data plot the HeatMaps displays all differences with colors. That is why this section is quite important.
+
+### Direct Coloring
+
+There are different ways to manage HeatMap's colors. You can set colors ether in your dataSet or using special
+methods. The easiest way to set heatMap's color is {api:anychart.charts.HeatMap#fill}**.fill()**{api} method.
+
+
+You can set a solid color for each cell of the heatMap. Use {api:anychart.charts.HeatMap#fill}**.fill()**{api} method to define custom color for every cell. <!--In addition to **.fill()** method, **"fill"** parameter can be used to emphasize a chart point:-->
+
+```
+  var chart = anychart.heatMap(dataSet);
+  // set inner color for every cell
+  chart.fill("#FFFFE0");
+```
+
+{sample}BCT\_HeatMapChart\_05{sample}
+
+### Color Scale
+
+Even though you can set single solid color for every cell, this way of color managing quite contradict with the idea of heatMaps itself. That is why it is much more appropriate to use a {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to define heatMap's colors. Use {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale as a parameter for {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to create an array of ranges and define the color for each range. All values for ranges are custom.
+
+```
+  var chart = anychart.heatMap(dataSet);
+
+  // create linerColor scale
+  var colorScale = anychart.scales.ordinalColor();
+  // set range of heat parameter's values and corresponding colors
+  colorScale.ranges([
+    // set color for all points with the heat parameter less than 1200000
+    {less: 1200000, color: "#B2DFDB"},
+    // set color for all points with the heat parameter more than 1200000 but less than 3000000
+    {from: 1200000, to: 3000000, color: "#004D40"},
+    // set color for all points with the heat parameter more than 3000000
+    {greater: 3000000, color: "#004D40"}
+  ]);
+
+  // apply colorScale for colorizing heatMap chart
+  chart.colorScale(colorScale);
+```
+
+Here is a sample of a heatMap with {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale:
+
+{sample}BCT\_HeatMapChart\_02{sample}
+
+### Stroke
+
+Border of the heatMap chart and all the borders of each chart points are controlled by {api:anychart.charts.HeatMap#stroke}**.stroke()**{api} method.<!-- Alone with **.stroke()** method you can set **"stroke"** parameter for an individual point.-->
+
+```
+  // create chart
+  var chart = anychart.heatMap(dataSet);
+  chart.stroke("#CCC");
+```
+
+Here is a sample with adjusted strokes.
+
+{sample}BCT\_HeatMapChart\_06{sample}
+
+### from Data
+
+Along with visualization methods you can specify visual settings for individual point. There are several parameters for managing points visual appearance:
+
+* **fill** parameter defines inner color of the point.
+* **hoverFill** defines point's inner color while a mouse is over the point.
+* **stroke** parameter defines points border.
+* **hoverStroke** parameter defines points border while a mouse is over the point
+
+```
+  var data = anychart.data.set([
+    {x: "California",    y: "2004", heat: 1704211},
+    {x: "California",    y: "2005", heat: 2782680},
+    {x: "California",    y: "2006", heat: 2992679},
+    {x: "Colorado",      y: "2004", heat: 448302},
+    {x: "Colorado",      y: "2005", heat: 768390},
+    {x: "Colorado",      y: "2006", heat: 843584},
+    {x: "DC",            y: "2004", heat: 693211},
+    {x: "DC",            y: "2005", heat: 1215158},
+    {x: "DC",            y: "2006", heat: 1053581},
+    {x: "Florida",       y: "2004", heat: 405985},
+    {x: "Florida",       y: "2005", heat: 661250},
+    {x: "Florida",       y: "2006", heat: 811924},
+    {x: "Illinois",      y: "2004", heat: 727914},
+    {x: "Illinois",      y: "2005", heat: 1150659},
+    {x: "Illinois",      y: "2006", heat: 1134085},
+    {x: "Texas",         y: "2004", heat: 219967},
+    {x: "Texas",         y: "2005", heat: 3732889},
+    {
+      x: "Texas",
+      y: "2006",
+      heat: 4185098,
+      stroke: {color: "#006400"},
+      hoverStroke: {
+        thickness: 2,
+        color: "#006400"
+      },
+      fill: "#90EE90",
+      hoverFill: {
+        keys: ["#A6F1A6", "#73be73"], 
+        cx: 0.5,
+        cy: 0.5
+      }
+    },
+    {x: "Massachusetts", y: "2004", heat: 238819},
+    {x: "Massachusetts", y: "2005", heat: 157719},
+    {x: "Massachusetts", y: "2006", heat: 887169},
+    {x: "New York",      y: "2004", heat: 1667969},
+    {x: "New York",      y: "2005", heat: 2763503},
+    {x: "New York",      y: "2006", heat: 3151022}
+  ]);
+
+  // create chart
+  var chart = anychart.heatMap(dataSet);
+  chart.stroke("#CCC");
+  chart.fill("#FFFFE0");
+```
+
+**Note**: **fill** and **hoverFill** parameters can use both strings and objects with settings while **stroke** and **hoverStroke** parameters use only objects with settings.
+
+{sample}BCT\_HeatMapChart\_10{sample}
 
 ### Labels
 
@@ -164,132 +288,12 @@ In this section we will explain how to tune heatMap's tooltip. Method {api:anych
 
 {sample}BCT\_HeatMapChart\_04{sample}
 
-## Visualization
-
-While as most types of charts represent differences in values of data points via series shapes on data plot the HeatMaps displays all differences with colors. That is why this section is quite important.
-
-### Inner Color
-
-There are different ways to manage HeatMap's colors. You can set colors ether in your dataSet or using special
-methods. The easiest way to set heatMap's color is {api:anychart.charts.HeatMap#fill}**.fill()**{api} method.
-
-
-You can set a solid color for each cell of the heatMap. Use {api:anychart.charts.HeatMap#fill}**.fill()**{api} method to define custom color for every cell. <!--In addition to **.fill()** method, **"fill"** parameter can be used to emphasize a chart point:-->
-
-```
-  var chart = anychart.heatMap(dataSet);
-  // set inner color for every cell
-  chart.fill("#FFFFE0");
-```
-
-{sample}BCT\_HeatMapChart\_05{sample}
-
-### Stroke
-
-Border of the heatMap chart and all the borders of each chart points are controlled by {api:anychart.charts.HeatMap#stroke}**.stroke()**{api} method.<!-- Alone with **.stroke()** method you can set **"stroke"** parameter for an individual point.-->
-
-```
-  // create chart
-  var chart = anychart.heatMap(dataSet);
-  chart.stroke("#CCC");
-```
-
-Here is a sample with adjusted strokes.
-
-{sample}BCT\_HeatMapChart\_06{sample}
-
-### from Data
-
-Along with visualization methods you can specify visual settings for individual point. There are several parameters for managing points visual appearance:
-
-* **fill** parameter defines inner color of the point.
-* **hoverFill** defines point's inner color while a mouse is over the point.
-* **stroke** parameter defines points border.
-* **hoverStroke** parameter defines points border while a mouse is over the point
-
-```
-  var data = anychart.data.set([
-    {x: "California",    y: "2004", heat: 1704211},
-    {x: "California",    y: "2005", heat: 2782680},
-    {x: "California",    y: "2006", heat: 2992679},
-    {x: "Colorado",      y: "2004", heat: 448302},
-    {x: "Colorado",      y: "2005", heat: 768390},
-    {x: "Colorado",      y: "2006", heat: 843584},
-    {x: "DC",            y: "2004", heat: 693211},
-    {x: "DC",            y: "2005", heat: 1215158},
-    {x: "DC",            y: "2006", heat: 1053581},
-    {x: "Florida",       y: "2004", heat: 405985},
-    {x: "Florida",       y: "2005", heat: 661250},
-    {x: "Florida",       y: "2006", heat: 811924},
-    {x: "Illinois",      y: "2004", heat: 727914},
-    {x: "Illinois",      y: "2005", heat: 1150659},
-    {x: "Illinois",      y: "2006", heat: 1134085},
-    {x: "Texas",         y: "2004", heat: 219967},
-    {x: "Texas",         y: "2005", heat: 3732889},
-    {
-      x: "Texas",
-      y: "2006",
-      heat: 4185098,
-      stroke: {color: "#006400"},
-      hoverStroke: {
-        thickness: 2,
-        color: "#006400"
-      },
-      fill: "#90EE90",
-      hoverFill: {
-        keys: ["#A6F1A6", "#73be73"], 
-        cx: 0.5,
-        cy: 0.5
-      }
-    },
-    {x: "Massachusetts", y: "2004", heat: 238819},
-    {x: "Massachusetts", y: "2005", heat: 157719},
-    {x: "Massachusetts", y: "2006", heat: 887169},
-    {x: "New York",      y: "2004", heat: 1667969},
-    {x: "New York",      y: "2005", heat: 2763503},
-    {x: "New York",      y: "2006", heat: 3151022}
-  ]);
-
-  // create chart
-  var chart = anychart.heatMap(dataSet);
-  chart.stroke("#CCC");
-  chart.fill("#FFFFE0");
-```
-
-**Note**: **fill** and **hoverFill** parameters can use both strings and objects with settings while **stroke** and **hoverStroke** parameters use only objects with settings.
-
-{sample}BCT\_HeatMapChart\_10{sample}
-
-### Color Scale
-
-Even though you can set single solid color for every cell, this way of color managing quite contradict with the idea of heatMaps itself. That is why it is much more appropriate to use a {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to define heatMap's colors. Use {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale as a parameter for {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to create an array of ranges and define the color for each range. All values for ranges are custom.
-
-```
-  var chart = anychart.heatMap(dataSet);
-
-  // create linerColor scale
-  var colorScale = anychart.scales.ordinalColor();
-  // set range of heat parameter's values and corresponding colors
-  colorScale.ranges([
-    // set color for all points with the heat parameter less than 1200000
-    {less: 1200000, color: "#B2DFDB"},
-    // set color for all points with the heat parameter more than 1200000 but less than 3000000
-    {from: 1200000, to: 3000000, color: "#004D40"},
-    // set color for all points with the heat parameter more than 3000000
-    {greater: 3000000, color: "#004D40"}
-  ]);
-
-  // apply colorScale for colorizing heatMap chart
-  chart.colorScale(colorScale);
-```
-
-Here is a sample of a heatMap with {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale:
-
-{sample}BCT\_HeatMapChart\_02{sample}
-
 ## Scroller
 
-As far as AnyChart doesn't limit the number of points on a chart, you might face a problem of having too many data points on your chart plot. The solution of this problem is simple: use {api:anychart.charts.Cartesian#xScroller}**.xScroller()**{api} and {api:anychart.charts.Cartesian#yScroller}**.yScroller()**{api} methods. These methods create scrollers on the chart plot and limits the amount of visible data points at the same time.
+As far as AnyChart doesn't limit the number of points on a chart, you may face a problem of having too many data points on your chart plot. The solution of this problem is simple: use {api:anychart.charts.Cartesian#xScroller}**.xScroller()**{api} and {api:anychart.charts.Cartesian#yScroller}**.yScroller()**{api} methods. These methods create scrollers on the chart plot and limits the amount of visible data points at the same time.
+  
+  
+You can manage chart's zoomed space using {api:anychart.charts.Cartesian#xZoom}**.xZoom()**{api} and {api:anychart.charts.Cartesian#yZoom}**.yZoom()**{api} methods. More information on scroller and zoom managing can be found in [Scroller article](../Common_Settings/Scroller).
 
 ```
   // create horizontal chart scroller
@@ -313,6 +317,6 @@ As far as AnyChart doesn't limit the number of points on a chart, you might face
   yZoom.setToPointsCount(6);
 ```
 
-You can manage zoomed space using {api:anychart.charts.Cartesian#xZoom}**.xZoom()**{api} and {api:anychart.charts.Cartesian#yZoom}**.yZoom()**{api} methods. More information on scroller managing can be found in [Scroller article](../Common_Settings/Scroller).
+Here is a sample of html5 HeatMap chart with horizontal and vertical scrollers:
 
 {sample}BCT\_HeatMapChart\_11{sample}
