@@ -8,7 +8,7 @@
   * [Stroke](#stroke)
   * [from Data](#from_data)
 * [Labels](#labels)
-* [Tooltips](#tooltips)
+* [Tooltip](#tooltip)
 * [Scroller](#scroller)
 
 ## Overview
@@ -248,7 +248,7 @@ HeatMap is a kind of charts that usually contains quite a few points in dataSet.
   
 {sample :width 690 :height 725}BCT\_HeatMapChart\_08{sample}
 
-### Tooltips
+### Tooltip
 
 In this section we will explain how to tune HeatMap's tooltip. Method {api:anychart.charts.HeatMap#tooltip}**.tooltip()**{api} controls tooltip of the HeatMap. In [Tooltip](../Common_Settings/Tooltip) article you can find some information on how to adjust tooltip content and tooltip visual appearance.
 
