@@ -245,6 +245,9 @@
   var labels = chart.labels();
   labels.enabled(true);
   labels.fontWeight(900);
+  labels.textFormatter(function(){
+    return "$" + this.heat
+  });
   var xLabels = chart.xAxis().labels();
   xLabels.textWrap(true);
   xLabels.hAlign("center");
