@@ -87,10 +87,10 @@ While as most types of charts represent differences in values of data points via
 ### Direct Coloring
 
 There are different ways to manage HeatMap's colors. You can set colors ether in your dataSet or using special
-methods. The easiest way to set heatMap's color is {api:anychart.charts.HeatMap#fill}**.fill()**{api} method.
+methods. The easiest way to set HeatMap's color is {api:anychart.charts.HeatMap#fill}**.fill()**{api} method.
 
 
-You can set a solid color for each cell of the heatMap. Use {api:anychart.charts.HeatMap#fill}**.fill()**{api} method to define custom color for every cell. <!--In addition to **.fill()** method, **"fill"** parameter can be used to emphasize a chart point:-->
+You can set a solid color for each cell of the HeatMap. Use {api:anychart.charts.HeatMap#fill}**.fill()**{api} method to define custom color for every cell. <!--In addition to **.fill()** method, **"fill"** parameter can be used to emphasize a chart point:-->
 
 ```
   var chart = anychart.heatMap(dataSet);
@@ -102,7 +102,7 @@ You can set a solid color for each cell of the heatMap. Use {api:anychart.charts
 
 ### Color Scale
 
-Even though you can set single solid color for every cell, this way of color managing quite contradict with the idea of heatMaps itself. That is why it is much more appropriate to use a {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to define heatMap's colors. Use {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale as a parameter for {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to create an array of ranges and define the color for each range. All values for ranges are custom.
+Even though you can set single solid color for every cell, this way of color managing quite contradict with the idea of HeatMaps itself. That is why it is much more appropriate to use a {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to define HeatMap's colors. Use {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale as a parameter for {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to create an array of ranges and define the color for each range. All values for ranges are custom.
 
 ```
   var chart = anychart.heatMap(dataSet);
@@ -123,13 +123,13 @@ Even though you can set single solid color for every cell, this way of color man
   chart.colorScale(colorScale);
 ```
 
-Here is a sample of a heatMap with {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale:
+Here is a sample of a HeatMap with {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale:
 
 {sample}BCT\_HeatMapChart\_02{sample}
 
 ### Stroke
 
-Border of the heatMap chart and all the borders of each chart points are controlled by {api:anychart.charts.HeatMap#stroke}**.stroke()**{api} method.<!-- Alone with **.stroke()** method you can set **"stroke"** parameter for an individual point.-->
+Border of the HeatMap chart and all the borders of each chart points are controlled by {api:anychart.charts.HeatMap#stroke}**.stroke()**{api} method.<!-- Alone with **.stroke()** method you can set **"stroke"** parameter for an individual point.-->
 
 ```
   // create chart
@@ -234,11 +234,11 @@ Labels are text boxes with additional information for presented data. You can tu
 You can find information on managing labels content in [Text Formatters article](../Common_Settings/Text_Formatters).
   
   
-Here is a sample of a js heatMap with formatted labels.
+Here is a sample of a js HeatMap with formatted labels.
 
 {sample}BCT\_HeatMapChart\_03{sample}
 
-HeatMap is a kind of charts that usually contains quite a few points in dataSet. That is why heatMaps has special {api:anychart.charts.HeatMap#labelsDisplayMode}**.labelsDisplayMode()**{api} method for managing labels appearance on the chart plot. There are three possible parameters for displaying labels: **"clip"**, **"drop"**, **"alwaysShow"**.
+HeatMap is a kind of charts that usually contains quite a few points in dataSet. That is why HeatMaps has special {api:anychart.charts.HeatMap#labelsDisplayMode}**.labelsDisplayMode()**{api} method for managing labels appearance on the chart plot. There are three possible parameters for displaying labels: **"clip"**, **"drop"**, **"alwaysShow"**.
   
   
 * **"Clip"** parameter makes all labels to be displayed regardless the width of each point. If a label doesn't fit the point width, a part of this label will be cropped.
@@ -250,7 +250,7 @@ HeatMap is a kind of charts that usually contains quite a few points in dataSet.
 
 ### Tooltips
 
-In this section we will explain how to tune heatMap's tooltip. Method {api:anychart.charts.HeatMap#tooltip}**.tooltip()**{api} controls tooltip of the heatMap. In [Tooltip](../Common_Settings/Tooltip) article you can find some information on how to adjust tooltip content and tooltip visual appearance.
+In this section we will explain how to tune HeatMap's tooltip. Method {api:anychart.charts.HeatMap#tooltip}**.tooltip()**{api} controls tooltip of the HeatMap. In [Tooltip](../Common_Settings/Tooltip) article you can find some information on how to adjust tooltip content and tooltip visual appearance.
 
 ```
   var chart = anychart.heatMap(dataSet);
