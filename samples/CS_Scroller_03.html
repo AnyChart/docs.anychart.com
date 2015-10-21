@@ -26,17 +26,17 @@
             {x: "Quarter 3", y: "Undetected", heat: 7},
             {x: "Quarter 4", y: "Undetected", heat: 8}
         ]);
-        chart.xAxis(true);
-        chart.yAxis(true);
 
         // set chart type
         var chart = anychart.heatMap(data);
 
+        chart.xAxis(true);
+        chart.yAxis(true);
         // set the yZoom
-        var yZoom = chart.yZoom();
+        var xZoom = chart.xZoom();
 
         // turn it on
-        yZoom().setToValue(2010, 2015, yZoom);
+        xZoom().setToValue(2010, 2015, xZoom);
 
 
     chart.container("container");

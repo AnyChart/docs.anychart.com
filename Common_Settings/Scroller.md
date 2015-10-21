@@ -151,9 +151,28 @@ This works when our scroll bar is next to any axes. We can set the "afterAxes" o
 
 {sample}CS\_Scroller\_08{sample}
 
-#### Hiding the scroll bar
+#### Autohide
+
+You can prevent the scroller from showing if there is no need in it. For example, if your dataSet has 20 points while you allow to show only 15 and you've removed five or more points, there's no need in scroll bar anymore. This is the example of a situation when you might need this function. We use {api:anychart.core.ui.Scroller#autoHide}**.autoHide()**{api} method for it:
+
+```	
+    // change the scroller orientation
+    chart.xScroller().position("beforeAxes");
+
+```
+<!-- найти пример где точки удалялись -->
+{sample}CS\_Scroller\_09{sample}
 
 #### Changing the range
+
+While your chart displays only a part of all information, you might want to manage the amount of displayed using {api:anychart.core.ui.Scroller#allowRangeChange}**.allowRangeChange()**{api}. This method is used to allow and prevent changing the amount of displayed by lengthening of shortening the scroll bar range. It's allowed by default; let's prevent this using the {api:anychart.core.ui.Scroller#allowRangeChange}**.allowRangeChange()**{api} method.
+
+```	
+    // change the scroller orientation
+    chart.xScroller().allowRangeChange(false);
+
+```
+{sample}CS\_Scroller\_10{sample}
 
 #### Colors
 
