@@ -5,7 +5,7 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script src="https://doc-voron.c9.io/anychart-bundle.min.js" data-export="true"></script>
+    <!--f<script src="https://doc-voron.c9.io/anychart-bundle.min.js" data-export="true"></script>-->
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   function heatMap(mode){
@@ -14,7 +14,11 @@
 
     // set labels display mode
     chart.labelsDisplayMode(mode);
+    chart.title(mode);
+    chart.xAxis(false);
+    chart.yAxis(false);
 
+    /*
     // adjust x axis
     var xAxis = chart.xAxis();
     // set title
@@ -28,7 +32,7 @@
     // adjust y axis
     var yAxis = chart.yAxis();
     // set title
-    yAxis.title("Consequence");
+    yAxis.title("Consequence");*/
 
     // create color scale
     var colorScale = anychart.scales.ordinalColor();
@@ -77,16 +81,12 @@
   var table = anychart.ui.table();
   table.contents([
     [
-      "Labels Display Mode",
-      "Risk Matrix in Project Server"
+      "Labels Display Mode"
     ],[
-      "clip",
       heatMap("clip")
     ],[
-      "drop",
       heatMap("drop")
     ],[
-      "alwaysShow",
       heatMap("alwaysShow")
     ]
   ]);
@@ -94,16 +94,13 @@
   for (var i=1;i<4;i++){
     var row = table.getRow(i);
     row.minHeight(230);
-    row.hAlign("center");
   }
-  var col1 = table.getCol(1);
-  col1.width(360);
-  var col0 = table.getCol(0);
-  col0.maxWidth(200);
-  col0.vAlign("center");
-  table.cellBorder("white");
+  var col = table.getCol(0);
+  col.width(245);
+  table.cellBorder(null);
   var row0 = table.getRow(0);
   row0.height(30);
+  row0.hAlign("center");
 
   // set table container and initiate draw
   table.container("container");

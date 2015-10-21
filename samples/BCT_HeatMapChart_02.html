@@ -54,6 +54,9 @@
   // apply colorScale for colorizing heatMap chart
   chart.colorScale(colorScale);
 
+  var xLabels = chart.xAxis().labels();
+  xLabels.fontSize(10);
+
   // draw chart
   chart.container("container");
   chart.draw();

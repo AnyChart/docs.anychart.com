@@ -65,6 +65,10 @@
     return "$" + value;
   });
 
+
+  var xLabels = chart.xAxis().labels();
+  xLabels.fontSize(10);
+
   // draw chart
   chart.container("container");
   chart.draw();
