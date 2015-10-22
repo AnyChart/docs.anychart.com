@@ -55,6 +55,21 @@
   var xLabels = chart.xAxis().labels();
   xLabels.fontSize(10);
 
+  // create ordinalColor scale
+  var colorScale = anychart.scales.ordinalColor();
+  // set range of heat parameters and corresponding colors
+  colorScale.ranges([
+    // set color for all points with the heat less than 1200000
+    {less: 750000, color: "#FFD54F"},
+    {from: 750000, to: 1000000, color: "#FBBB3B"},
+    {from: 1000000, to: 2000000, color: "#F7A128"},
+    {from: 2000000, to: 3000000, color: "#F38614"},
+    {greater: 3000000, color: "#EF6C00"}
+  ]);
+
+  // apply colorScale for colorizing heatMap chart
+  chart.colorScale(colorScale);
+
   // draw chart
   chart.container("container");
   chart.draw();

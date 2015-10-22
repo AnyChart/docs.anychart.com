@@ -6,7 +6,7 @@
   * [Direct Coloring](#direct_coloring)
   * [Color Scale](#color_scale)
 * [Visualization](#visualization)
-  * [Inner Color](#inner_color)
+  * [Color](#color)
   * [Stroke](#stroke)
 * [Labels](#labels)
 * [Tooltip](#tooltip)
@@ -77,7 +77,7 @@ Moreover, you can use an array of arrays without any parameters as a data source
 
 As you can see, you have to use your data set as a parameter for {api:anychart#heatMap}**.heatMap()**{api} method to create a HeatMap.
   
-Here is a HeatMap with the data from above:
+Let's create a sample with the data from above. Moreover, we let's use [color scale](#color_scale) for color managing.
 
 {sample}BCT\_HeatMapChart\_01{sample}
 
@@ -166,34 +166,28 @@ Along with using color scale you can specify visual settings for an individual p
 ##Visualization
 
 Even though the {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} is the most convenient way of managing HeatMap's colors you can still set a single color for all the points of a HeatMap and define a color for points' border.
-
-### Inner Color
-
-There are different ways to manage HeatMap's colors. You can set colors ether [in your dataSet](#direct_coloring) or using special
-methods. The easiest way to set HeatMap's color is {api:anychart.charts.HeatMap#fill}**.fill()**{api} method.
   
+  
+You can set HeatMap's colors ether [in your dataSet](#direct_coloring) or using special methods. The easiest way to set HeatMap's color is {api:anychart.charts.HeatMap#fill}**.fill()**{api} method.
   
 You can set a solid color for each cell of the HeatMap. Use {api:anychart.charts.HeatMap#fill}**.fill()**{api} method to define custom color for every cell. Information on setting a color for a custom range of heat parameters can be found in [Color Scale section](#color_scale). <!--In addition to **.fill()** method, **"fill"** parameter can be used to emphasize a chart point:-->
-
+  
+  
 ```
   var chart = anychart.heatMap(dataSet);
   // set inner color for every cell
-  chart.fill("#FFFFE0");
+  chart.fill("#FFD54F");
 ```
 
-{sample}BCT\_HeatMapChart\_05{sample}
-
-### Stroke
-
-Border of the HeatMap chart and all the borders of each chart points are controlled by {api:anychart.charts.HeatMap#stroke}**.stroke()**{api} method. Alone with {api:anychart.charts.HeatMap#stroke}**.stroke()**{api} method you can set **"stroke"** parameter for an [individual point](#direct_coloring).
+Along with a single color for all points, you can manage the color of all points' borders. Border of the HeatMap chart and all the borders of each chart points are controlled by {api:anychart.charts.HeatMap#stroke}**.stroke()**{api} method. Alone with {api:anychart.charts.HeatMap#stroke}**.stroke()**{api} method you can set **"stroke"** parameter for an [individual point](#direct_coloring).
 
 ```
   // create chart
   var chart = anychart.heatMap(dataSet);
-  chart.stroke("#CCC");
+  chart.stroke("#FFF");
 ```
 
-Here is a sample with adjusted strokes.
+Here is a sample with solid inner color and adjusted strokes.
 
 {sample}BCT\_HeatMapChart\_06{sample}
 
@@ -249,38 +243,18 @@ In this section we will explain how to tune HeatMap's tooltip. Method {api:anych
 ```
   var chart = anychart.heatMap(dataSet);
   
-  // settings for chart tooltip
   var tooltip = chart.tooltip();
-  // adjust tooltip title
   var title = tooltip.title();
-  // force title to respect html tags
-  title.useHtml(true);
-  // format title to place text in the center
   title.hAlign("center");
-  // function for formatting title's text
   tooltip.titleFormatter(function(){
-    return this.x + 
-      "<br><a style=\"font-size: 10px; color: #ccc\">Year: "+ this.y + "</a>";
+    return this.y;
   });
-  // function for formatting tooltip text
   tooltip.textFormatter(function(){
-    // get heat parameter of the point
-    var value = (this.heat).toFixed(0);
-    var main = "";
-    // if value is more than three symbols long
-    for (var i=1;(i*3)<value.length;i++)
-      // insert space before every 3 symbols
-      main = " " + value.substr(value.length-(i*3), 3) + main;
-    // get the remaining part of the value
-    var tail = value.substr(0, value.length-(main.length-main.length/4));
-    // format value in appropriate way
-    value = tail + main;
-    return "Income: $" + value + 
-      "\nPercent: " + (100*this.heat/this.getStat("sum")).toFixed(1) + "%";
+    return "Month: " + this.x + "\nOpens: " + this.heat + "%";
   });
 ```
 
-{sample}BCT\_HeatMapChart\_04{sample}
+{sample}BCT\_HeatMapChart\_13{sample}
 
 ## Scroller
 
