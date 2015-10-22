@@ -161,7 +161,7 @@ Along with using color scale you can specify visual settings for an individual p
 
 **Note**: **fill** and **hoverFill** parameters can use both strings and objects with settings while **stroke** and **hoverStroke** parameters use only objects with settings.
 
-{sample}BCT\_HeatMapChart\_12{sample}
+{sample}BCT\_HeatMapChart\_03{sample}
 
 ##Visualization
 
@@ -189,7 +189,7 @@ Along with a single color for all points, you can manage the color of all points
 
 Here is a sample with solid inner color and adjusted strokes.
 
-{sample}BCT\_HeatMapChart\_06{sample}
+{sample}BCT\_HeatMapChart\_04{sample}
 
 ## Labels
 
@@ -224,7 +224,7 @@ You can find information on managing labels content in [Text Formatters article]
   
 Here is a sample of a js HeatMap with formatted labels.
 
-{sample}BCT\_HeatMapChart\_03{sample}
+{sample}BCT\_HeatMapChart\_05{sample}
 
 HeatMap is a kind of charts that usually contains quite a few points in dataSet. That is why HeatMaps has special {api:anychart.charts.HeatMap#labelsDisplayMode}**.labelsDisplayMode()**{api} method for managing labels appearance on the chart plot. There are three possible parameters for displaying labels: **"clip"**, **"drop"**, **"alwaysShow"**.
   
@@ -234,7 +234,7 @@ HeatMap is a kind of charts that usually contains quite a few points in dataSet.
 * **"AlwaysShow"** parameter force all labels to be shown despite the situation. Be careful using this parameter. Labels may overlap, if label's width is larger than point's width.
   
   
-{sample :width 690 :height 725}BCT\_HeatMapChart\_08{sample}
+{sample :width 690 :height 725}BCT\_HeatMapChart\_06{sample}
 
 ## Tooltip
 
@@ -254,7 +254,7 @@ In this section we will explain how to tune HeatMap's tooltip. Method {api:anych
   });
 ```
 
-{sample}BCT\_HeatMapChart\_13{sample}
+{sample}BCT\_HeatMapChart\_07{sample}
 
 ## Scroller
 
@@ -287,4 +287,4 @@ You can manage chart's zoomed space using {api:anychart.charts.Cartesian#xZoom}*
 
 Here is a sample of html5 HeatMap chart with horizontal and vertical scrollers:
 
-{sample}BCT\_HeatMapChart\_11{sample}
+{sample}BCT\_HeatMapChart\_08{sample}

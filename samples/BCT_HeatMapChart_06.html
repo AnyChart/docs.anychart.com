@@ -5,64 +5,120 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script src="https://doc-voron.c9.io/anychart-bundle.min.js" data-export="true"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data
-  var data = anychart.data.set([
-    {x: "California",    y: "2004", heat: 1704211},
-    {x: "California",    y: "2005", heat: 2782680},
-    {x: "California",    y: "2006", heat: 2992679},
-    {x: "Colorado",      y: "2004", heat: 448302},
-    {x: "Colorado",      y: "2005", heat: 768390},
-    {x: "Colorado",      y: "2006", heat: 843584},
-    {x: "DC",            y: "2004", heat: 693211},
-    {x: "DC",            y: "2005", heat: 1215158},
-    {x: "DC",            y: "2006", heat: 1053581},
-    {x: "Florida",       y: "2004", heat: 405985},
-    {x: "Florida",       y: "2005", heat: 661250},
-    {x: "Florida",       y: "2006", heat: 811924},
-    {x: "Illinois",      y: "2004", heat: 727914},
-    {x: "Illinois",      y: "2005", heat: 1150659},
-    {x: "Illinois",      y: "2006", heat: 1134085},
-    {x: "Texas",         y: "2004", heat: 219967},
-    {x: "Texas",         y: "2005", heat: 3732889},
-    {x: "Texas",         y: "2006", heat: 4185098},
-    {x: "Massachusetts", y: "2004", heat: 238819},
-    {x: "Massachusetts", y: "2005", heat: 157719},
-    {x: "Massachusetts", y: "2006", heat: 887169},
-    {x: "New York",      y: "2004", heat: 1667969},
-    {x: "New York",      y: "2005", heat: 2763503},
-    {x: "New York",      y: "2006", heat: 3151022}
-    
+  function heatMap(mode){
+    // create heatMap
+    var chart = anychart.heatMap(data());
+
+    // set labels display mode
+    chart.labelsDisplayMode(mode);
+    chart.title(mode);
+    chart.xAxis(false);
+    chart.yAxis(false);
+
+    // create color scale
+    var colorScale = anychart.scales.ordinalColor();
+    // set range of heat parameters and corresponding colors
+    colorScale.ranges([
+      {less: 1, color: "#9ACD32"},
+      {from: 0, to: 1, color: "#FFFF00"},
+      {from: 1, to: 2, color: "#FF6347"},
+      {greater: 2, color: "#FF0000"}
+    ]);
+    // apply colorScale for colorizing heatMap chart
+    chart.colorScale(colorScale);
+
+    // adjust chart labels
+    var labels = chart.labels();
+    // display labels
+    labels.enabled(true);
+    // set minimum font size
+    labels.minFontSize(12);
+    // format labels' content
+    labels.textFormatter(function(){
+      // get points heat
+      var value = this.heat;
+      // replace values with words
+      switch(value){
+        case 0:
+          return "Low";
+        case 1:
+          return "Medium";
+        case 2:
+          return "High";
+        case 3:
+          return "Extreme";
+      }
+    });
+    // disable tooltip
+    chart.tooltip(false);
+    // manage chart position
+    var padding = chart.padding();
+    padding.bottom(0);
+    padding.top(10);
+
+    return chart;
+  }
+
+  var table = anychart.ui.table();
+  table.contents([
+    [
+      "Labels Display Mode"
+    ],[
+      heatMap("clip")
+    ],[
+      heatMap("drop")
+    ],[
+      heatMap("alwaysShow")
+    ]
   ]);
 
-  // set chart type
-  var chart = anychart.heatMap(data);
-  chart.title("Sales Revenue");
+  for (var i=1;i<4;i++){
+    var row = table.getRow(i);
+    row.minHeight(230);
+  }
+  var col = table.getCol(0);
+  col.width(245);
+  table.cellBorder(null);
+  var row0 = table.getRow(0);
+  row0.height(30);
+  row0.hAlign("center");
 
-  chart.fill("#FFD54F");
-  chart.stroke("#FFF");
-  var labels = chart.labels();
-  labels.enabled(true);
-  labels.textFormatter(function(){
-    var value = (this.heat).toFixed(0);
-    var main = "";
-    for (var i=1;(i*3)<value.length;i++)
-      main = " " + value.substr(value.length-(i*3), 3) + main;
-    var tail = value.substr(0, value.length-(main.length-main.length/4));
-    value = tail + main;
-    return "$" + value
-  });
-
-
-  var xLabels = chart.xAxis().labels();
-  xLabels.fontSize(10);
-
-  // draw chart
-  chart.container("container");
-  chart.draw();
-});</script>
+  // set table container and initiate draw
+  table.container("container");
+  table.left((table.container().width()/2)-122);
+  table.draw();
+});
+function data(){
+  return anychart.data.set([
+    {x: "Rare", y: "Insignificant", heat: 0},
+    {x: "Rare", y: "Minor", heat: 0},
+    {x: "Rare", y: "Moderate", heat: 0},
+    {x: "Rare", y: "Major", heat: 0},
+    {x: "Rare", y: "Extreme", heat: 0},
+    {x: "Unlikely", y: "Insignificant", heat: 0},
+    {x: "Unlikely", y: "Minor", heat: 0},
+    {x: "Unlikely", y: "Moderate", heat: 0},
+    {x: "Unlikely", y: "Major", heat: 1},
+    {x: "Unlikely", y: "Extreme", heat: 1},
+    {x: "Possible", y: "Insignificant", heat: 0},
+    {x: "Possible", y: "Minor", heat: 0},
+    {x: "Possible", y: "Moderate", heat: 1},
+    {x: "Possible", y: "Major", heat: 1},
+    {x: "Possible", y: "Extreme", heat: 1},
+    {x: "Likely", y: "Insignificant", heat: 0},
+    {x: "Likely", y: "Minor", heat: 1},
+    {x: "Likely", y: "Moderate", heat: 1},
+    {x: "Likely", y: "Major", heat: 2},
+    {x: "Likely", y: "Extreme", heat: 2},
+    {x: "Almost\nCertain", y: "Insignificant", heat: 0},
+    {x: "Almost\nCertain", y: "Minor", heat: 1},
+    {x: "Almost\nCertain", y: "Moderate", heat: 1},
+    {x: "Almost\nCertain", y: "Major", heat: 2},
+    {x: "Almost\nCertain", y: "Extreme", heat: 3}
+  ]);
+}</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

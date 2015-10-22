@@ -5,7 +5,6 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script src="https://doc-voron.c9.io/anychart-bundle.min.js" data-export="true"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data
@@ -34,38 +33,17 @@
     {x: "New York",      y: "2004", heat: 1667969},
     {x: "New York",      y: "2005", heat: 2763503},
     {x: "New York",      y: "2006", heat: 3151022}
+    
   ]);
 
   // set chart type
   var chart = anychart.heatMap(data);
   chart.title("Sales Revenue");
 
-  var tooltip = chart.tooltip();
-  var title = tooltip.title();
-  title.useHtml(true);
-  title.hAlign("center");
-  tooltip.titleFormatter(function(){
-    return this.x + "<br><a style=\"font-size: 10px; color: #ccc\">Year: "+ this.y + "</a>";
-  });
-  tooltip.textFormatter(function(){
-    // get heat parameter of the point
-    var value = (this.heat).toFixed(0);
-    var main = "";
-    // if value is more than three symbols long
-    for (var i=1;(i*3)<value.length;i++)
-      // insert space before every 3 symbols
-      main = " " + value.substr(value.length-(i*3), 3) + main;
-    // get the remaining part of the value
-    var tail = value.substr(0, value.length-(main.length-main.length/4));
-    // format value in appropriate way
-    value = tail + main;
-    return "Income: $" + value + "\nPercent: " + (100*this.heat/this.getStat("sum")).toFixed(1) + "%";
-  });
-
-  // format labels
+  chart.fill("#FFD54F");
+  chart.stroke("#FFF");
   var labels = chart.labels();
   labels.enabled(true);
-
   labels.textFormatter(function(){
     var value = (this.heat).toFixed(0);
     var main = "";
@@ -75,6 +53,7 @@
     value = tail + main;
     return "$" + value
   });
+
 
   var xLabels = chart.xAxis().labels();
   xLabels.fontSize(10);

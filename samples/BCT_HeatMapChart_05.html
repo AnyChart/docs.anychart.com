@@ -5,9 +5,8 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script src="https://doc-voron.c9.io/anychart-bundle.min.js" data-export="true"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-      
+
   // data
   var data = anychart.data.set([
     {x: "California",    y: "2004", heat: 1704211},
@@ -39,10 +38,9 @@
   // set chart type
   var chart = anychart.heatMap(data);
   chart.title("Sales Revenue");
-
-  chart.fill("#FFFFE0");
   var labels = chart.labels();
   labels.enabled(true);
+
   labels.textFormatter(function(){
     var value = (this.heat).toFixed(0);
     var main = "";
@@ -53,9 +51,23 @@
     return "$" + value
   });
 
-
   var xLabels = chart.xAxis().labels();
   xLabels.fontSize(10);
+
+  // create ordinalColor scale
+  var colorScale = anychart.scales.ordinalColor();
+  // set range of heat parameters and corresponding colors
+  colorScale.ranges([
+    // set color for all points with the heat less than 1200000
+    {less: 750000, color: "#FFD54F"},
+    {from: 750000, to: 1000000, color: "#FBBB3B"},
+    {from: 1000000, to: 2000000, color: "#F7A128"},
+    {from: 2000000, to: 3000000, color: "#F38614"},
+    {greater: 3000000, color: "#EF6C00"}
+  ]);
+
+  // apply colorScale for colorizing heatMap chart
+  chart.colorScale(colorScale);
 
   // draw chart
   chart.container("container");
