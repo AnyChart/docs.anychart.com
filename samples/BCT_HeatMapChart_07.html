@@ -69,21 +69,6 @@
     return this.heat + "%"
   });
 
-  // create ordinalColor scale
-  var colorScale = anychart.scales.ordinalColor();
-  // set range of heat parameters and corresponding colors
-  colorScale.ranges([
-    // set color for all points with the heat less than 1200000
-    {less: 27, color: "#FFD54F"},
-    {from: 27, to: 32, color: "#FBBB3B"},
-    {from: 32, to: 37, color: "#F7A128"},
-    {from: 37, to: 46, color: "#F38614"},
-    {greater: 46, color: "#EF6C00"}
-  ]);
-
-  // apply colorScale for colorizing heatMap chart
-  chart.colorScale(colorScale);
-
   var xLabels = chart.xAxis().labels();
   xLabels.textFormatter(function(){
     return (this.value).substr(0, 3);

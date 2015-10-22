@@ -77,7 +77,7 @@ Moreover, you can use an array of arrays without any parameters as a data source
 
 As you can see, you have to use your data set as a parameter for {api:anychart#heatMap}**.heatMap()**{api} method to create a HeatMap.
   
-Let's create a sample with the data from above. Moreover, we let's use [color scale](#color_scale) for color managing.
+Here is a HeatMap with the data from above:
 
 {sample}BCT\_HeatMapChart\_01{sample}
 
