@@ -18,7 +18,7 @@ AnyChart JavaScript HeatMap is a graphical representation of data where the indi
 
 ## Chart 
 
-Each data point for HeatMap chart must have three parameters: **"x"** parameter should define the name of the column to put the point into, **"y"** parameter defines the row to put the point into and **"heat"** parameter corresponds with the color of the point. Here is a sample of appropriate data formatting:
+Each data point for a HeatMap chart must have three parameters: **"x"** parameter should define the name of the column to put the point into, **"y"** parameter defines the row to put the point into and **"heat"** parameter corresponds with the color of the point. Here is a sample of appropriate data formatting:
 
 ```
   var dataSet = anychart.data.set([
@@ -43,7 +43,7 @@ Each data point for HeatMap chart must have three parameters: **"x"** parameter 
   var chart = anychart.heatMap(dateSet);
 ```
 
-Moreover, you can use an array of arrays without any parameters as a data source and map your data later:
+Moreover, you can use an array of arrays without any parameters as a data source - in this case you'll need to map your data later:
 
 ```
   var data = [
@@ -75,7 +75,7 @@ Moreover, you can use an array of arrays without any parameters as a data source
   var chart = anychart.heatMap(dataSet);
 ```
 
-As you can see, you have to use your data set as a parameter for {api:anychart#heatMap}**.heatMap()**{api} method to create a HeatMap.
+As you can see, the data set is used as a parameter for  the {api:anychart#heatMap}**.heatMap()**{api} method.
   
 Here is a HeatMap with the data from above:
 
@@ -83,11 +83,11 @@ Here is a HeatMap with the data from above:
 
 ## Coloring
 
-While as most types of charts represent differences in values of data points via series shapes on data plot the HeatMaps displays all differences with colors. That is why this section is quite important.
+While the majority of chart types represent differences in values of data points via series shapes on data plot the HeatMaps displays all differences with colors. That is why this section is quite important.
 
 ### Color Scale
 
-There are several ways for managing HeatMap's colors. The most appropriate of them all is using a {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to define HeatMap's colors. Use {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale as a parameter for {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to create an array of ranges and define the color for each range. All values for ranges are custom.
+There are several ways of managing HeatMap's colors. The best one of them all is using a {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to define HeatMap's colors. Use {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale as a parameter for {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to create an array of ranges and define the color for each range. All values for ranges are to be defined by a user.
 
 ```
   var chart = anychart.heatMap(dataSet);
