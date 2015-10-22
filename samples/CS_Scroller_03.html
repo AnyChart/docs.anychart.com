@@ -13,18 +13,30 @@
             {x: "Quarter 2", y: "Mobile", heat: 17},
             {x: "Quarter 3", y: "Mobile", heat: 21},
             {x: "Quarter 4", y: "Mobile", heat: 23},
+            {x: "Quarter 5", y: "Mobile", heat: 20},
+            {x: "Quarter 6", y: "Mobile", heat: 33},
+            {x: "Quarter 7", y: "Mobile", heat: 19},
             {x: "Quarter 1", y: "WebMail", heat: 34},
             {x: "Quarter 2", y: "WebMail", heat: 33},
             {x: "Quarter 3", y: "WebMail", heat: 32},
             {x: "Quarter 4", y: "WebMail", heat: 30},
+            {x: "Quarter 5", y: "WebMail", heat: 20},
+            {x: "Quarter 6", y: "WebMail", heat: 7},
+            {x: "Quarter 7", y: "WebMail", heat: 21},
             {x: "Quarter 1", y: "Desktop", heat: 43},
             {x: "Quarter 2", y: "Desktop", heat: 42},
             {x: "Quarter 3", y: "Desktop", heat: 40},
             {x: "Quarter 4", y: "Desktop", heat: 38},
-            {x: "Quarter 1", y: "Undetected", heat: 8},
+            {x: "Quarter 5", y: "Desktop", heat: 24},
+            {x: "Quarter 6", y: "Desktop", heat: 36},
+            {x: "Quarter 7", y: "Desktop", heat: 23},
+            {x: "Quarter 1", y: "Undetected", heat: 6},
             {x: "Quarter 2", y: "Undetected", heat: 8},
             {x: "Quarter 3", y: "Undetected", heat: 7},
-            {x: "Quarter 4", y: "Undetected", heat: 8}
+            {x: "Quarter 4", y: "Undetected", heat: 8},
+            {x: "Quarter 5", y: "Undetected", heat: 15},
+            {x: "Quarter 6", y: "Undetected", heat: 4},
+            {x: "Quarter 7", y: "Undetected", heat: 9}
         ]);
 
         // set chart type
@@ -32,11 +44,32 @@
 
         chart.xAxis(true);
         chart.yAxis(true);
+
+        // create linerColor scale
+        var colorScale = anychart.scales.ordinalColor();
+        // set range of heat parameter's values and corresponding colors
+        colorScale.ranges([
+          // set color for all points with the heat parameter less than 1200000
+          {less: 7, color: "#33CC33"},
+          // set color for all points with the heat parameter more than 1200000 but less than 3000000
+          {from: 7, to: 22, color: "#CCFF66"},
+          // set color for all points with the heat parameter more than 1200000 but less than 3000000
+          {from: 22, to: 32, color: "#EB9E33"},
+          // set color for all points with the heat parameter more than 3000000
+          {greater: 32, color: "#FF3300"}
+        ]);
+         
+        // apply colorScale for colorizing heatMap chart
+        chart.colorScale(colorScale);
+
+        // set the heatmap stroke
+        chart.stroke("#CCC");
+
         // set the yZoom
         var xZoom = chart.xZoom();
 
         // turn it on
-        xZoom().setToValue(2010, 2015, xZoom);
+        xZoom().setToValue("Quarter1", "Quarter 4", xZoom);
 
 
     chart.container("container");

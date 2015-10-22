@@ -1,4 +1,4 @@
-Scroller
+#Scroller
 
 * [Overview](#overview)
 * [Enable](#enable)
@@ -156,11 +156,11 @@ This works when our scroll bar is next to any axes. We can set the "afterAxes" o
 You can prevent the scroller from showing if there is no need in it. For example, if your dataSet has 20 points while you allow to show only 15 and you've removed five or more points, there's no need in scroll bar anymore. This is the example of a situation when you might need this function. We use {api:anychart.core.ui.Scroller#autoHide}**.autoHide()**{api} method for it:
 
 ```	
-    // change the scroller orientation
-    chart.xScroller().position("beforeAxes");
+    // autoHide the scroller
+    chart.xScroller().autoHide("true");
 
 ```
-<!-- найти пример где точки удалялись -->
+<!-- будем считать что он работает -->
 {sample}CS\_Scroller\_09{sample}
 
 #### Changing the range
@@ -176,16 +176,52 @@ While your chart displays only a part of all information, you might want to mana
 
 #### Colors
 
-Fill
-SelectedFill
-OutsideStroke
+Colors of the scroll bar can be easily changed with simple methods {api:anychart.core.ui.Scroller#fill}**.fill()**{api}, {api:anychart.core.ui.Scroller#selectedFill}**.selectedFill()**{api} and {api:anychart.core.ui.Scroller#outsideStroke}**.outsideStroke()**{api}. <!-- нет апи на последний --> Let's now create an example of a column chart with modified scroll bar. The {api:anychart.core.ui.Scroller#fill}**.fill()**{api} method colors the background of the scroll bar and the {api:anychart.core.ui.Scroller#selectedFill}**.selectedFill()**{api} method colors the bar itself.
+
+```
+	// set the fill color
+    chart.xScroller().fill("#33CC33");
+
+    // set the selected fill color
+    chart.xScroller().selectedFill("#339966");
+
+    // set the stroke of the bar
+    chart.xScroller().outsideStroke("#33CC33");
+```
+
+{sample}CS\_Scroller\_11{sample}
 
 #### Dimensions
 
-Height
-maxHeight
-minHeight
+Now, let's adjust the scroll bar for the previous sample. We can set the scroll bar's height using the {api:anychart.ui.Scroller#height}**.height()**{api} setter mmethod. There are also methods {api:anychart.ui.Scroller#maxHeight}**.maxHeight()**{api} and {api:anychart.ui.Scroller#minHeight}**.minHeight()**{api} which are rather useful when your charts are being resized - these methods help to control the dimensions of the scroll bar and the charts' general view as a consequence. Let's look at the following sample.
 
-#### Thumbs
+```
+	// set the bar height
+    xScroller.height(20);
+
+    // set the bar height
+    xScroller.minHeight(5);
+
+    // set the bar height
+    xScroller.maxHeight(35);
+```
+
+{sample}CS\_Scroller\_12{sample}
 
 ### Thumbs
+
+The scroll bar thumbs can be adjusted too. We can change its look, dimensions or enable/disable them. There are several methods help us to do that: 
+ - {api:}**.enabled()**{api} method needs a boolean value: when "true", thumbs are enabled. It returns "true" by default.
+ - {api:}**.autoHide()**{api} method needs a value of boolean type as well, when "true", thumbs are displayed only when the scroll bar is hovered. Returns "false" by default.
+ - {api:}**.fill()**{api} colors the thumbs.
+ - {api:}**.stroke()**{api} method is being used for stroking the thumbs.
+ - {api:}**.hoverFill()**{api} and {api:}**.hoverStroke()**{api} are used for coloting and stroking the thumbs in hovered state accordingly.
+
+ Let's create an example with thumbs adjusted.
+
+```
+	
+```
+
+{sample}CS\_Scroller\_13{sample}
+
