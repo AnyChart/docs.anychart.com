@@ -23,7 +23,7 @@
 
     var xScroller = chart.xScroller();
 
-    // Zooms series by defined points count.
+    // Zooms series by defined points count
     xZoom.setToPointsCount(15);
 
     // autoHide the scroller
@@ -35,9 +35,6 @@
     // set the selected fill color
     xScroller.selectedFill("#339966");
 
-    // set the stroke of the bar
-    xScroller.outsideStroke("#33CC33");
-
     // set the bar height
     xScroller.height(20);
 
@@ -46,6 +43,13 @@
 
     // set the bar height
     xScroller.maxHeight(35);
+
+    // set the thumbs
+    var thumbs = xScroller.thumbs();
+
+    // adjusting the thumbs
+    thumbs.autoHide(true);
+    thumbs.hoverFill("gold");
 
     chart.container("container");
     chart.draw();

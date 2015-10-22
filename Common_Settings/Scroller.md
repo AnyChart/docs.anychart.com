@@ -211,17 +211,25 @@ Now, let's adjust the scroll bar for the previous sample. We can set the scroll 
 ### Thumbs
 
 The scroll bar thumbs can be adjusted too. We can change its look, dimensions or enable/disable them. There are several methods help us to do that: 
- - {api:}**.enabled()**{api} method needs a boolean value: when "true", thumbs are enabled. It returns "true" by default.
- - {api:}**.autoHide()**{api} method needs a value of boolean type as well, when "true", thumbs are displayed only when the scroll bar is hovered. Returns "false" by default.
- - {api:}**.fill()**{api} colors the thumbs.
- - {api:}**.stroke()**{api} method is being used for stroking the thumbs.
- - {api:}**.hoverFill()**{api} and {api:}**.hoverStroke()**{api} are used for coloting and stroking the thumbs in hovered state accordingly.
+ - {api:anychart.core.ui.Scroller.Thumbs#enabled}**.enabled()**{api} method needs a boolean value: when "true", thumbs are enabled. It returns "true" by default.
+ - {api:anychart.core.ui.Scroller.Thumbs#autoHide}**.autoHide()**{api} method needs a value of boolean type as well, when "true", thumbs are displayed only when the scroll bar is hovered. Returns "false" by default.
+ - {api:anychart.core.ui.Scroller.Thumbs#fill}**.fill()**{api} colors the thumbs.
+ - {api:anychart.core.ui.Scroller.Thumbs#stroke}**.stroke()**{api} method is being used for stroking the thumbs.
+ - {api:anychart.core.ui.Scroller.Thumbs#hoverFill}**.hoverFill()**{api} and {api:anychart.core.ui.Scroller.Thumbs#hoverStroke}**.hoverStroke()**{api} are used for coloting and stroking the thumbs in hovered state accordingly.
 
  Let's create an example with thumbs adjusted.
 
 ```
+// set the thumbs
+    var thumbs = xScroller.thumbs();
+
+    // adjusting the thumbs
+    thumbs.autoHide(true);
+    thumbs.hoverFill("gold");
 	
 ```
 
 {sample}CS\_Scroller\_13{sample}
+
+Open any sample in our playground and try to use other methods to see and understand how they work.
 
