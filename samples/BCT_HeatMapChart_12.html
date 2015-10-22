@@ -1,0 +1,79 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script src="https://doc-voron.c9.io/anychart-bundle.min.js" data-export="true"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // create heatMap
+  var chart = anychart.heatMap([
+    {x: "Rare",             y: "Insignificant",  heat: 0, fill: "#9ACD32"},
+    {x: "Rare",             y: "Minor",          heat: 0, fill: "#9ACD32"},
+    {x: "Rare",             y: "Moderate",       heat: 0, fill: "#9ACD32"},
+    {x: "Rare",             y: "Major",          heat: 0, fill: "#9ACD32"},
+    {x: "Rare",             y: "Extreme",        heat: 0, fill: "#9ACD32"},
+    {x: "Unlikely",         y: "Insignificant",  heat: 0, fill: "#9ACD32"},
+    {x: "Unlikely",         y: "Minor",          heat: 0, fill: "#9ACD32"},
+    {x: "Unlikely",         y: "Moderate",       heat: 0, fill: "#9ACD32"},
+    {x: "Unlikely",         y: "Major",          heat: 1, fill: "#FFFF00"},
+    {x: "Unlikely",         y: "Extreme",        heat: 1, fill: "#FFFF00"},
+    {x: "Possible",         y: "Insignificant",  heat: 0, fill: "#9ACD32"},
+    {x: "Possible",         y: "Minor",          heat: 0, fill: "#9ACD32"},
+    {x: "Possible",         y: "Moderate",       heat: 1, fill: "#FFFF00"},
+    {x: "Possible",         y: "Major",          heat: 1, fill: "#FFFF00"},
+    {x: "Possible",         y: "Extreme",        heat: 1, fill: "#FFFF00"},
+    {x: "Likely",           y: "Insignificant",  heat: 0, fill: "#9ACD32"},
+    {x: "Likely",           y: "Minor",          heat: 1, fill: "#FFFF00"},
+    {x: "Likely",           y: "Moderate",       heat: 1, fill: "#FFFF00"},
+    {x: "Likely",           y: "Major",          heat: 2, fill: "#FF6347"},
+    {x: "Likely",           y: "Extreme",        heat: 2, fill: "#FF6347"},
+    {x: "Almost\nCertain",  y: "Insignificant",  heat: 0, fill: "#9ACD32"},
+    {x: "Almost\nCertain",  y: "Minor",          heat: 1, fill: "#FFFF00"},
+    {x: "Almost\nCertain",  y: "Moderate",       heat: 1, fill: "#FFFF00"},
+    {x: "Almost\nCertain",  y: "Major",          heat: 2, fill: "#FF6347"},
+    {
+      x: "Almost\nCertain",
+      y: "Extreme",
+      heat: 3,
+      fill: "#FF0000",
+      hoverFill: "#AA0000",
+      stroke: {color: "#AA0000"},
+      hoverStroke: {color: "#550000"},
+      hoverLabel:{fontColor: "#FFF"}
+    }
+  ]);
+
+  chart.title("Risk Matrix in Project Server");
+  // adjust chart labels
+  var labels = chart.labels();
+  // display labels
+  labels.enabled(true);
+  // format labels' content
+  labels.textFormatter(function(){
+    // get points heat
+    var value = this.heat;
+    // replace values with words
+    switch(value){
+      case 0:
+        return "Low";
+      case 1:
+        return "Medium";
+      case 2:
+        return "High";
+      case 3:
+        return "Extreme";
+    }
+  });
+  // disable tooltip
+  chart.tooltip(false);
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
