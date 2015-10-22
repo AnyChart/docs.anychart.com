@@ -163,7 +163,7 @@ Along with using color scale you can specify visual settings for an individual p
 
 {sample}BCT\_HeatMapChart\_12{sample}
 
-##Visualizationw
+##Visualization
 
 Even though the {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} is the most convenient way of managing HeatMap's colors you can still set a single color for all the points of a HeatMap and define a color for points' border.
 
@@ -197,7 +197,7 @@ Here is a sample with adjusted strokes.
 
 {sample}BCT\_HeatMapChart\_06{sample}
 
-### Labels
+## Labels
 
 Labels are text boxes with additional information for presented data. You can tune labels using {api:anychart.charts.HeatMap#labels}**.labels()**{api} method.
 
@@ -242,7 +242,7 @@ HeatMap is a kind of charts that usually contains quite a few points in dataSet.
   
 {sample :width 690 :height 725}BCT\_HeatMapChart\_08{sample}
 
-### Tooltip
+## Tooltip
 
 In this section we will explain how to tune HeatMap's tooltip. Method {api:anychart.charts.HeatMap#tooltip}**.tooltip()**{api} controls tooltip of the HeatMap. In [Tooltip](../Common_Settings/Tooltip) article you can find some information on how to adjust tooltip content and tooltip visual appearance.
 
