@@ -9,41 +9,41 @@
 
     anychart.onDocumentReady(function() {
         var data = anychart.data.set([
-            {x: "Quarter 1", y: "Mobile", heat: 15},
-            {x: "Quarter 2", y: "Mobile", heat: 17},
-            {x: "Quarter 3", y: "Mobile", heat: 21},
-            {x: "Quarter 4", y: "Mobile", heat: 23},
-            {x: "Quarter 5", y: "Mobile", heat: 20},
-            {x: "Quarter 6", y: "Mobile", heat: 33},
-            {x: "Quarter 7", y: "Mobile", heat: 19},
-            {x: "Quarter 1", y: "WebMail", heat: 34},
-            {x: "Quarter 2", y: "WebMail", heat: 33},
-            {x: "Quarter 3", y: "WebMail", heat: 32},
-            {x: "Quarter 4", y: "WebMail", heat: 30},
-            {x: "Quarter 5", y: "WebMail", heat: 20},
-            {x: "Quarter 6", y: "WebMail", heat: 7},
-            {x: "Quarter 7", y: "WebMail", heat: 21},
-            {x: "Quarter 1", y: "Desktop", heat: 43},
-            {x: "Quarter 2", y: "Desktop", heat: 42},
-            {x: "Quarter 3", y: "Desktop", heat: 40},
-            {x: "Quarter 4", y: "Desktop", heat: 38},
-            {x: "Quarter 5", y: "Desktop", heat: 24},
-            {x: "Quarter 6", y: "Desktop", heat: 36},
-            {x: "Quarter 7", y: "Desktop", heat: 23},
-            {x: "Quarter 1", y: "Undetected", heat: 6},
-            {x: "Quarter 2", y: "Undetected", heat: 8},
-            {x: "Quarter 3", y: "Undetected", heat: 7},
-            {x: "Quarter 4", y: "Undetected", heat: 8},
-            {x: "Quarter 5", y: "Undetected", heat: 15},
-            {x: "Quarter 6", y: "Undetected", heat: 4},
-            {x: "Quarter 7", y: "Undetected", heat: 9}
+            {y: "Part 1", x: "Mobile", heat: 15},
+            {y: "Part 2", x: "Mobile", heat: 17},
+            {y: "Part 3", x: "Mobile", heat: 21},
+            {y: "Part 4", x: "Mobile", heat: 23},
+            {y: "Part 5", x: "Mobile", heat: 20},
+            {y: "Part 6", x: "Mobile", heat: 33},
+            {y: "Part 7", x: "Mobile", heat: 19},
+            {y: "Part 1", x: "WebMail", heat: 34},
+            {y: "Part 2", x: "WebMail", heat: 33},
+            {y: "Part 3", x: "WebMail", heat: 32},
+            {y: "Part 4", x: "WebMail", heat: 30},
+            {y: "Part 5", x: "WebMail", heat: 20},
+            {y: "Part 6", x: "WebMail", heat: 7},
+            {y: "Part 7", x: "WebMail", heat: 21},
+            {y: "Part 1", x: "Desktop", heat: 43},
+            {y: "Part 2", x: "Desktop", heat: 42},
+            {y: "Part 3", x: "Desktop", heat: 40},
+            {y: "Part 4", x: "Desktop", heat: 38},
+            {y: "Part 5", x: "Desktop", heat: 24},
+            {y: "Part 6", x: "Desktop", heat: 36},
+            {y: "Part 7", x: "Desktop", heat: 23},
+            {y: "Part 1", x: "Undetected", heat: 6},
+            {y: "Part 2", x: "Undetected", heat: 8},
+            {y: "Part 3", x: "Undetected", heat: 7},
+            {y: "Part 4", x: "Undetected", heat: 8},
+            {y: "Part 5", x: "Undetected", heat: 15},
+            {y: "Part 6", x: "Undetected", heat: 4},
+            {y: "Part 7", x: "Undetected", heat: 9}
         ]);
+
+        // enable the scroller
+        chart.xScroller(true);
 
         // set chart type
         var chart = anychart.heatMap(data);
-
-        chart.xAxis(true);
-        chart.yAxis(true);
 
         // create linerColor scale
         var colorScale = anychart.scales.ordinalColor();
@@ -66,10 +66,10 @@
         chart.stroke("#CCC");
 
         // set the yZoom
-        var xZoom = chart.xZoom();
+        var yZoom = chart.yZoom();
 
         // turn it on
-        xZoom().setToValue("Quarter1", "Quarter 4", xZoom);
+        yZoom().setToValues("Part 1", "Part 4");
 
 
     chart.container("container");

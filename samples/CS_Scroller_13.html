@@ -13,8 +13,6 @@
         [10, 4, 17, 20, 16, 35, 6, 15, 19, 25, 34, 42, 14, 64, 55, 34, 40, 25]);
 
     var chart = anychart.column(dataSet);
-    chart.xAxis(true);
-    chart.yAxis(true);
 
     var xZoom = chart.xZoom();
 
@@ -49,7 +47,7 @@
 
     // adjusting the thumbs
     thumbs.autoHide(true);
-    thumbs.hoverFill("gold");
+    thumbs.hoverFill("#FFD700");
 
     chart.container("container");
     chart.draw();

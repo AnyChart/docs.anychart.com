@@ -13,14 +13,11 @@
         [10, 4, 17, 20, 16, 35, 6, 15, 19, 25, 34, 42, 14, 64, 55, 34, 40, 25]);
 
     var chart = anychart.column(dataSet);
-    chart.xAxis(true);
-    chart.yAxis(true);
 
     var xZoom = chart.xZoom();
 
     // enable the scroller
     chart.xScroller(true);
-
 
     // Zooms series by defined points count.
     xZoom.setToPointsCount(15);
@@ -35,7 +32,7 @@
     chart.xScroller().selectedFill("#339966");
 
     // set the stroke of the bar
-    chart.xScroller().outsideStroke("#33CC33");
+    chart.xScroller().outlineStroke("#33CC33", 2);
 
     chart.container("container");
     chart.draw();

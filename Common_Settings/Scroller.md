@@ -20,7 +20,7 @@ Note that Logarithmic Axes are not scrollable.
 
 ## Enable
 
-We use standard {api:anychart.core.ui.Scroller#enabled}**.enabled()**{api} method to switch the scroller on. Let's create a simple column chart and enable the scroller on it:
+We use standard {api:anychart.core.ui.Scroller#enabled}**.enabled()**{api} method to switch the scroller on and off. Let's create a simple column chart and enable the scroller on it:
 
 ```
 	// turn it on
@@ -32,11 +32,13 @@ We use standard {api:anychart.core.ui.Scroller#enabled}**.enabled()**{api} metho
 
 {sample}CS\_Scroller\_01{sample}
 
+Also, we can transmit the "true" value straight to the {api:anychart.charts.Cartesian#xScroller}**.xScroller()**{api} method.
+
 Now you can see that there is a scroller shown up, but the general view has not changed (though, you can drag it). That's because we should zoom the chart - set the area we'd like to display.
 
 ## Adjust
 
-In this section we will consider the zooming and viewing settings of the chart. 
+In this section we will consider the zooming and viewing settings of a chart. 
 
 ### Zoom
 
@@ -48,30 +50,31 @@ The simplest way of limiting the show area is using the ratio. We've got the {ap
 
 ```
 	// turn it on
-	chart.xZoom().setTo(0, 0.3);
+	var xZoom = chart.xZoom();
+	xZoom.setTo(0, 0.3);
 ```
 
 {sample}CS\_Scroller\_02{sample}
 
 #### Set the limits by values
 
-Another option is to define the particular values which exist on the scale. In this case you'll have to set the scale as the third parameter, unless you do it, the chart.xScale() will be counted as this scale automatically. So, if we'd like to zoom the chart to the area from 2010 то 2015 by Y-axis, we should use the {api:anychart.charts.Cartesian.XZoom#setToValue}**.setToValue()**{api} method and write the following:
+Another option is to define the particular values which exist on the scale. In this case you'll have to set the scale as the third parameter, unless you do it, the chart.xScale() will be counted as this scale automatically. So, if we'd like to zoom the chart to the area from Part 1 to Part 4 by Y-axis, we should use the {api:anychart.charts.Cartesian.XZoom#setToValue}**.setToValue()**{api} method and write the following:
 
 ```
 	// set the yZoom
-	var yZoom = chart.yZoom();
+    var yZoom = chart.yZoom();
 
-	// turn it on
-	yZoom().setToValue(2010, 2015, yZoom);
+    // turn it on
+    yZoom.setToValues("Part 1", "Part 4");
 ```
 
 {sample}CS\_Scroller\_03{sample}
 
-#### Set the limits by the points count
-
 Note that it's only Heatmaps which can be scrolled or zoomed by Y-scale.
 
-The third variant of setting the limits of the shown is to set the number of points from start or end value exists on the axis. We set the number of points, the second boolean means if the points should be counted from the end axis value and the third parameter is the scale again (this one is optional). The point will be counted from start by default, if you need them to be counted from end, set "true" as se second value:
+#### Set the limits by the points count
+
+The third variant of setting the limits of the shown is to set the number of points from the first or last value of the axis. We set the number of points, the second boolean means if the points should be counted from the end axis value and the third parameter is the scale again (this one is optional). The point will be counted from start by default, if you need them to be counted from end, set "true" as se second value:
 
 ```
 	// set the xZoom
@@ -101,7 +104,7 @@ By default, the screen is moving while being scrolled. We can prevent the scroll
 
 #### Get the limits ratio
 
-You can also get the limiting points ratio using {api:anychart.charts.Cartesian.XZoom#getStartRatio}**.getStartRatio()**{api} and {api:anychart.charts.Cartesian.XZoom#getEndRatio}**.getEndRatio()**{api} functions. They will return the limiting ratio values.
+You can also get the limiting points ratio using {api:anychart.charts.Cartesian.XZoom#getStartRatio}**.getStartRatio()**{api} and {api:anychart.charts.Cartesian.XZoom#getEndRatio}**.getEndRatio()**{api} methods. They will return the limiting ratio values.
 
 
 ```
@@ -153,14 +156,13 @@ This works when our scroll bar is next to any axes. We can set the "afterAxes" o
 
 #### Autohide
 
-You can prevent the scroller from showing if there is no need in it. For example, if your dataSet has 20 points while you allow to show only 15 and you've removed five or more points, there's no need in scroll bar anymore. This is the example of a situation when you might need this function. We use {api:anychart.core.ui.Scroller#autoHide}**.autoHide()**{api} method for it:
+You can prevent the scroller from showing if there is no need in it. For example, if your dataSet has 20 points while you allow to show only 15 and you've removed five or more points by clicking on them, there's no need in scroll bar anymore. This is the example of a situation when you might need this function. We use {api:anychart.core.ui.Scroller#autoHide}**.autoHide()**{api} method for it:
 
 ```	
     // autoHide the scroller
-    chart.xScroller().autoHide("true");
+    chart.xScroller().autoHide(true);
 
 ```
-<!-- будем считать что он работает -->
 {sample}CS\_Scroller\_09{sample}
 
 #### Changing the range
@@ -176,7 +178,7 @@ While your chart displays only a part of all information, you might want to mana
 
 #### Colors
 
-Colors of the scroll bar can be easily changed with simple methods {api:anychart.core.ui.Scroller#fill}**.fill()**{api}, {api:anychart.core.ui.Scroller#selectedFill}**.selectedFill()**{api} and {api:anychart.core.ui.Scroller#outsideStroke}**.outsideStroke()**{api}. <!-- нет апи на последний --> Let's now create an example of a column chart with modified scroll bar. The {api:anychart.core.ui.Scroller#fill}**.fill()**{api} method colors the background of the scroll bar and the {api:anychart.core.ui.Scroller#selectedFill}**.selectedFill()**{api} method colors the bar itself.
+Colors of the scroll bar can be easily changed with simple methods {api:anychart.core.ui.Scroller#fill}**.fill()**{api}, {api:anychart.core.ui.Scroller#selectedFill}**.selectedFill()**{api} and {api:anychart.core.ui.Scroller#outlineStroke}**.outlineStroke()**{api}. Let's now create an example of a column chart with modified scroll bar. The {api:anychart.core.ui.Scroller#fill}**.fill()**{api} method colors the background of the scroll bar and the {api:anychart.core.ui.Scroller#selectedFill}**.selectedFill()**{api} method colors the bar itself.
 
 ```
 	// set the fill color
@@ -186,14 +188,14 @@ Colors of the scroll bar can be easily changed with simple methods {api:anychart
     chart.xScroller().selectedFill("#339966");
 
     // set the stroke of the bar
-    chart.xScroller().outsideStroke("#33CC33");
+    chart.xScroller().outlineStroke("#33CC33", 2);
 ```
 
 {sample}CS\_Scroller\_11{sample}
 
 #### Dimensions
 
-Now, let's adjust the scroll bar for the previous sample. We can set the scroll bar's height using the {api:anychart.ui.Scroller#height}**.height()**{api} setter mmethod. There are also methods {api:anychart.ui.Scroller#maxHeight}**.maxHeight()**{api} and {api:anychart.ui.Scroller#minHeight}**.minHeight()**{api} which are rather useful when your charts are being resized - these methods help to control the dimensions of the scroll bar and the charts' general view as a consequence. Let's look at the following sample.
+Now, let's adjust the scroll bar for the previous sample. We can set the scroll bar's height using the {api:anychart.ui.Scroller#height}**.height()**{api} setter method. There are also methods {api:anychart.ui.Scroller#maxHeight}**.maxHeight()**{api} and {api:anychart.ui.Scroller#minHeight}**.minHeight()**{api} which are rather useful when your charts are being resized - these methods help to control the dimensions of the scroll bar and the charts' general view as a consequence. Let's look at the following sample.
 
 ```
 	// set the bar height
@@ -215,7 +217,7 @@ The scroll bar thumbs can be adjusted too. We can change its look, dimensions or
  - {api:anychart.core.ui.Scroller.Thumbs#autoHide}**.autoHide()**{api} method needs a value of boolean type as well, when "true", thumbs are displayed only when the scroll bar is hovered. Returns "false" by default.
  - {api:anychart.core.ui.Scroller.Thumbs#fill}**.fill()**{api} colors the thumbs.
  - {api:anychart.core.ui.Scroller.Thumbs#stroke}**.stroke()**{api} method is being used for stroking the thumbs.
- - {api:anychart.core.ui.Scroller.Thumbs#hoverFill}**.hoverFill()**{api} and {api:anychart.core.ui.Scroller.Thumbs#hoverStroke}**.hoverStroke()**{api} are used for coloting and stroking the thumbs in hovered state accordingly.
+ - {api:anychart.core.ui.Scroller.Thumbs#hoverFill}**.hoverFill()**{api} and {api:anychart.core.ui.Scroller.Thumbs#hoverStroke}**.hoverStroke()**{api} are used for coloring and stroking the thumbs in hovered state accordingly.
 
  Let's create an example with thumbs adjusted.
 
@@ -225,7 +227,7 @@ The scroll bar thumbs can be adjusted too. We can change its look, dimensions or
 
     // adjusting the thumbs
     thumbs.autoHide(true);
-    thumbs.hoverFill("gold");
+    thumbs.hoverFill("#FFD700");
 	
 ```
 
