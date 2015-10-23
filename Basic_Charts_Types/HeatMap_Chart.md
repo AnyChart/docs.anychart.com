@@ -6,8 +6,6 @@
   * [Direct Coloring](#direct_coloring)
   * [Color Scale](#color_scale)
 * [Visualization](#visualization)
-  * [Color](#color)
-  * [Stroke](#stroke)
 * [Labels](#labels)
 * [Tooltip](#tooltip)
 * [Scroller](#scroller)
