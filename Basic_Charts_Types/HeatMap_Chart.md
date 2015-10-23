@@ -114,7 +114,7 @@ Here is a sample of a HeatMap with {api:anychart.scales.OrdinalColor}**.ordinalC
 
 ### Direct Coloring
 
-Along with using color scale you can specify visual settings for an individual point. There are several parameters for managing points visual appearance:
+Along with using color scale you can specify visual settings for an individual point. There are several sets for managing points visual appearance:
 
 * **fill** sets inner color of the point.
 * **hoverFill** sets point's inner color while a mouse is over the point.
@@ -159,18 +159,18 @@ Along with using color scale you can specify visual settings for an individual p
   ]);
 ```
 
-**Note**: **fill** and **hoverFill** parameters can use both strings and objects with settings while **stroke** and **hoverStroke** parameters use only objects with settings.
+**Note**: You can use either string or object as a value for **fill** and **hoverFill** sets while **stroke** and **hoverStroke** sets use only object as values.
 
 {sample}BCT\_HeatMapChart\_03{sample}
 
 ##Visualization
 
-Even though the {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} is the most convenient way of managing HeatMap's colors you can still set a single color for all the points of a HeatMap and define a color for points' border.
+Even though the {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} is the most convenient way of managing HeatMap's colors you can still set a single color for all points of a HeatMap and define a color for points' border.
   
   
-You can set HeatMap's colors ether [in your dataSet](#direct_coloring) or using special methods. The easiest way to set HeatMap's color is {api:anychart.charts.HeatMap#fill}**.fill()**{api} method.
+You can set HeatMap's colors either [in your dataSet](#direct_coloring) or using special methods. The easiest way to set the HeatMap's color is {api:anychart.charts.HeatMap#fill}**.fill()**{api} method.
   
-You can set a solid color for each cell of the HeatMap. Use {api:anychart.charts.HeatMap#fill}**.fill()**{api} method to define custom color for every cell. Information on setting a color for a custom range of heat parameters can be found in [Color Scale section](#color_scale). <!--In addition to **.fill()** method, **"fill"** parameter can be used to emphasize a chart point:-->
+You can set a solid fill for each cell of the HeatMap. Use {api:anychart.charts.HeatMap#fill}**.fill()**{api} method to define custom color for every cell. Information on setting a color for a custom range of heat parameters can be found in [Color Scale section](#color_scale). <!--In addition to **.fill()** method, **"fill"** parameter can be used to emphasize a chart point:-->
   
   
 ```
@@ -179,7 +179,7 @@ You can set a solid color for each cell of the HeatMap. Use {api:anychart.charts
   chart.fill("#FFD54F");
 ```
 
-Along with a single color for all points, you can manage the color of all points' borders. Border of the HeatMap chart and all the borders of each chart points are controlled by {api:anychart.charts.HeatMap#stroke}**.stroke()**{api} method. Alone with {api:anychart.charts.HeatMap#stroke}**.stroke()**{api} method you can set **"stroke"** parameter for an [individual point](#direct_coloring).
+Along with a single color for all points, you can manage the color of all points' borders. The HeatMap chart borders are controlled by {api:anychart.charts.HeatMap#stroke}**.stroke()**{api} method. Alone with {api:anychart.charts.HeatMap#stroke}**.stroke()**{api} method you can set **"stroke"** parameter for an [individual point](#direct_coloring).
 
 ```
   // create chart
@@ -226,10 +226,10 @@ Here is a sample of a js HeatMap with formatted labels.
 
 {sample}BCT\_HeatMapChart\_05{sample}
 
-HeatMap is a kind of charts that usually contains quite a few points in dataSet. That is why HeatMaps has special {api:anychart.charts.HeatMap#labelsDisplayMode}**.labelsDisplayMode()**{api} method for managing labels appearance on the chart plot. There are three possible parameters for displaying labels: **"clip"**, **"drop"**, **"alwaysShow"**.
+HeatMap is a kind of chart that usually contains quite a few points in dataSet. That is why HeatMaps have special {api:anychart.charts.HeatMap#labelsDisplayMode}**.labelsDisplayMode()**{api} method for managing labels appearance on the chart plot. There are three possible modes of displaying labels: **"clip"**, **"drop"**, **"alwaysShow"**.
   
   
-* **"Clip"** parameter makes all labels to be displayed regardless the width of each point. If a label doesn't fit the point width, a part of this label will be cropped.
+* **"Clip"** parameter makes all labels be displayed regardless the width of each point. If a label doesn't fit the point width, a part of this label will be cropped.
 * **"Drop"** parameter hides the whole label, if it doesn't fit point's width
 * **"AlwaysShow"** parameter force all labels to be shown despite the situation. Be careful using this parameter. Labels may overlap, if label's width is larger than point's width.
   
