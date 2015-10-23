@@ -116,10 +116,10 @@ Here is a sample of a HeatMap with {api:anychart.scales.OrdinalColor}**.ordinalC
 
 Along with using color scale you can specify visual settings for an individual point. There are several parameters for managing points visual appearance:
 
-* **fill** object sets inner color of the point.
+* **fill** sets inner color of the point.
 * **hoverFill** sets point's inner color while a mouse is over the point.
-* **stroke** object sets points border.
-* **hoverStroke** object sets points border while a mouse is over the point.
+* **stroke** sets points border.
+* **hoverStroke** sets points border while a mouse is over the point.
 
 ```
   var chart = anychart.heatMap([
