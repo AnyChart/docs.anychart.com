@@ -207,7 +207,7 @@ Let's first enable a marker:
   marker.enabled(true);
 ```
 
-The marker size is rather small by default, so we need to use the {api:anychart.core.gauge.pointers.marker#size}**.size()**{api} method to make the marker visible, so the code will look as below:
+The marker size is rather small by default, so we need to use the {api:anychart.core.gauge.pointers.Marker#size}**.size()**{api} method to make the marker visible, so the code will look as below:
 
 ```  
   //marker
@@ -253,7 +253,7 @@ Let's now look at the needles - the most common pointer used with Gauges.
 
 {sample}BCT\_Pointers-and-Data\_Needle\_07{sample} 
 
-Needle can be a thin stick or a pointer of a complex form - you can regulate its width using three similar methods: {api:anychart.core.gauge.pointers.needle#startWidth}**.startWidth()**{api}, {api:anychart.core.gauge.pointers.Needle#middleWidth}**.middleWidth()**{api} and {api:anychart.core.gauge.pointers.Needle#endWidth}**.endWidth()**{api}.
+Needle can be a thin stick or a pointer of a complex form - you can regulate its width using three similar methods: {api:anychart.core.gauge.pointers.Needle#startWidth}**.startWidth()**{api}, {api:anychart.core.gauge.pointers.Needle#middleWidth}**.middleWidth()**{api} and {api:anychart.core.gauge.pointers.Needle#endWidth}**.endWidth()**{api}.
 
 Let's make our needle thiner to the end, wider to the center and a bit thiner to the start:
 
