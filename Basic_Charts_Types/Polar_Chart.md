@@ -22,7 +22,7 @@ Polar chart plot allows to draw scatter chart using the polar coordinate system,
 
 ## Chart
 
-AnyChart allows to display three types of series on a Polar chart: Line, Area and Marker. You should create a chart using {api:anychart.charts.Polar}**anychart.polar()**{api} method to display Polar chart:
+AnyChart javascript charting library allows to display three types of series on a Polar chart: Line, Area and Marker. You should create a chart using {api:anychart.charts.Polar}**anychart.polar()**{api} method to display Polar chart:
 
 ```
   // chart type
@@ -46,7 +46,7 @@ AnyChart allows to display three types of series on a Polar chart: Line, Area an
 
 As you can see each point is represented with **x** and **value** fields, where x is an angle.
 
-Here is a basic Polar sample:
+Here is a basic js Polar sample:
 
 {sample}BCT\_PolarChart\_01{sample}
 
@@ -234,7 +234,7 @@ Polar grid is a combination of circular and radial grids. Grid visual appearance
   grid.stroke("white");    
 ```
 
-**Note:** full information about grid settings can be found in [grid section of Scale tutorial](../Axes_and_Grids/Scales#grids)
+**Note:** full information about grid settings can be found in [grid section of Scale tutorial](../Axes_and_Grids/Scales#grids).
 
 
 This sample below demonstrates two polar charts with adjusted visualisation of the radial type of grid as well as of the circular one.

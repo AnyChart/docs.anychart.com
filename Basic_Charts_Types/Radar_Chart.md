@@ -25,7 +25,7 @@ The radar chart is also known as a web chart, spider chart, star chart, cobweb c
 
 ## Chart
 
-AnyChart allows to display three types of series on Radar chart: Line, Area and Marker. You need to create chart using {api:anychart.charts.Radar}**anychart.radar()**{api} method to display Radar chart:
+AnyChart JavaScript charting library allows to display three types of series on Radar chart: Line, Area and Marker. You need to create chart using {api:anychart.charts.Radar}**anychart.radar()**{api} method to display Radar chart:
 
 ```
   // chart type
@@ -254,7 +254,8 @@ Sample below demonstrates two radar charts with adjusted visualisation of the ra
 ### Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips.
-
+  
+  
 If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.core.polar.series.Base#labels}**.labels()**{api} and {api:anychart.core.polar.series.Base#tooltip}**.tooltip()**{api} methods. You can tune visual appearance, positioning and format of labels and tooltips.
 
 ```
@@ -287,6 +288,6 @@ Sample below has more complex tooltip than snippet above. Click 'Launch in playg
 
 ## Series Types
 
-Radar chart supports Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
+Radar js graphs supports Line, Area and Marker series types. You can learn how to change and configure styles of these types at: [Area chart](Area_Chart), [Line chart](Line-Spline-StepLine_Charts) and [Marker chart](Marker_Chart).
 
 {sample}BCT\_RadarChart\_14{sample}

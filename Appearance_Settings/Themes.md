@@ -15,7 +15,7 @@
 
 ##Overview
 
-To simplify visual adjustment of charts AnyChart provides "AnyChart Themes" technique. Chart theme is a named preset for some of the chart settings.
+To simplify visual adjustment of js charts AnyChart provides "AnyChart Themes" technique. Chart theme is a named preset for some of the chart settings.
   
   
 In this tutorial we will explain what themes are used for and how they are used.
@@ -350,4 +350,4 @@ If you are already using AnyChart 7.0 to 7.5.1, you may face some conflicts in c
 * or you can simply use new **anychart.min.js** and [set old theme for your charts](#old_theme) (this is the recommended way to solve this problem).
   
   
-**Note**: AnyChart recommends you to use new AnyChart theme, version 6 style will not be developed further and supported for the new chart types.
+**Note**: AnyChart html5 charting framework recommends you to use new AnyChart theme, version 6 style will not be developed further and supported for the new chart types.

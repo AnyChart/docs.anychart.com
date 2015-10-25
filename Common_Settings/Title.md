@@ -13,7 +13,7 @@
 
 ## Overview
 
-Every chart in AnyChart can have one default title and unlimited number of additional custom titles. These text fields are used to create description for the chart data. By default, the {api:anychart.core.ui.Title}**.title()**{api} is placed on the top of the chart.
+Every js chart in AnyChart can have one default title and unlimited number of additional custom titles. These text fields are used to create description for the chart data. By default, the {api:anychart.core.ui.Title}**.title()**{api} is placed on the top of the chart.
 
 ## Default Title
 
@@ -153,6 +153,6 @@ You can make your chart title interactive by adding event listeners of a differe
 
 {sample}AS\_Titles\_08{sample}
 
-Here is the advanced sample of using events in titles. In this sample we will show how chart footer can be used as "Back" button for self-drilldown charts. Click on bars to see detailed report on each sales manager and in detailed report click "Back to Sales Manager Report" button in the bottom left corner of line chart to load an initial chart.
+Here is the advanced sample of using events in titles. In this javascript sample we will show how chart footer can be used as "Back" button for self-drilldown charts. Click on bars to see detailed report on each sales manager and in detailed report click "Back to Sales Manager Report" button in the bottom left corner of line chart to load an initial chart.
 
 {sample}AS\_Titles\_09{sample}

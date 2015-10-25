@@ -9,7 +9,7 @@ DataGrid Column Presets
 
 ## Overview
 
-Gantt chart consists of two parts: TimeLine, that contains visualized information, and DataGrid, that displays strings' numbers and names along with additional information. In this article we will describe how information in the dataGrid columns can be formatted using presets and how to create a custom column formatter.
+JavaScript Gantt chart consists of two parts: TimeLine, that contains visualized information, and DataGrid, that displays strings' numbers and names along with additional information. In this article we will describe how information in the dataGrid columns can be formatted using presets and how to create a custom column formatter.
 
 ## Column Formatting
 

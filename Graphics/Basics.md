@@ -12,7 +12,7 @@
   
 ## Overview
 
-If you have already used AnyChart or explored samples in our articles, you might have noticed the code like:
+If you have already used AnyChart html5 charting solution or explored samples in our articles, you might have noticed the code like:
 
 ```
 // set stage

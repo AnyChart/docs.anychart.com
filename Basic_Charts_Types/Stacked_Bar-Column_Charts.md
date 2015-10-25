@@ -28,7 +28,7 @@ Now we have to tell Y-Axis to display these series as stacked columns:
   chart.yScale().stackMode('value');
 ```
 
-Everything is ready! Here is a sample of a stacked column chart:
+Everything is ready! Here is a sample of a js stacked column chart:
 
 {sample}BCT_Stacked\_Bar-Column\_Charts\_02{sample}
 

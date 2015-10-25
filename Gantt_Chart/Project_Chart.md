@@ -16,7 +16,7 @@ Project Gantt Chart is intended for showing a progress of completion of a single
 
 ## Chart
 
-To create Project Gantt Chart you should use the {api:anychart#ganttProject}**anychart.ganttProject()**{api} method.
+To create JavaScript Project Gantt Chart you should use the {api:anychart#ganttProject}**anychart.ganttProject()**{api} method.
 
 ```
 // chart type
@@ -288,7 +288,7 @@ If there is a need to add an additional connection between tasks, you can define
 
 {sample :width 690 :height 170}GANTT\_Chart\_06{sample}
 
-<br>AnyChart give you an opportunity to describe how connector should be displayed. If you want to customize the connector view you should set the "fill" and "stroke" parameters in <b>connector</b>, where "stroke" defines a color of connector line and "fill" defines the color of connector arrow.
+<br>AnyChart JavaScript framework give you an opportunity to describe how connector should be displayed. If you want to customize the connector view you should set the "fill" and "stroke" parameters in <b>connector</b>, where "stroke" defines a color of connector line and "fill" defines the color of connector arrow.
 
 ```
 'connector': {

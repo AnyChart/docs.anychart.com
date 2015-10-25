@@ -9,7 +9,7 @@ Supported Data Formats
    * [CSV](#csv)
 
 ###Introduction
-AnyChart supports 4 ways to set data to your charts. You can choose which one suits your task the best:
+AnyChart charting library supports 4 ways to set data to your charts. You can choose which one suits your task the best:
 * JavaScript API
 * XML
 * JSON
