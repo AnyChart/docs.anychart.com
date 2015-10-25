@@ -136,7 +136,7 @@ Those events dispatch in the following order on every click:
 
 <tr>
 <td>rowDBlclick</td>
-<td>Сollapse/expand items.</td>
+<td>Collapse/expand items.</td>
 </tr>
 
 <tr>
