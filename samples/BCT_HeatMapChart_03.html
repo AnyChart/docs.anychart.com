@@ -46,25 +46,19 @@
   ]);
 
   chart.title("Risk Matrix in Project Server");
+
   // adjust chart labels
   var labels = chart.labels();
   // display labels
   labels.enabled(true);
+  // variable with list of labels
+  var namesList = ["Low", "Medium", "High", "Extreme"];
   // format labels' content
   labels.textFormatter(function(){
     // get points heat
     var value = this.heat;
     // replace values with words
-    switch(value){
-      case 0:
-        return "Low";
-      case 1:
-        return "Medium";
-      case 2:
-        return "High";
-      case 3:
-        return "Extreme";
-    }
+    return namesList[value];
   });
   // disable tooltip
   chart.tooltip(false);
