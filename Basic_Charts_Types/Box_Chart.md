@@ -372,7 +372,7 @@ Now, let's look how to apply a simple style to the chart. As we've already said,
   series.hoverWhiskerWidth(0);
 ```
 
-Using such settings we've created a style that colors boxes in light Сeladon color, makes the border invisible, colors the median in black and changes the color and the font of the axes. Two last lines makes whiskers invisible. 
+Using such settings we've created a style that colors boxes in light Celadon color, makes the border invisible, colors the median in black and changes the color and the font of the axes. Two last lines makes whiskers invisible. 
 Now let's apply these setting to the sample.
 
 {sample}BCT\_BoxChart\_07{sample}  

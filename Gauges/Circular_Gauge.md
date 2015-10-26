@@ -25,7 +25,7 @@ In this tutorial we will learn how to build the basic circular gauge step by ste
 
 So, a Circular Gauge is a visual representation of a measuring device with a radial axis that sweeps any angle from 0 to 360 degrees and a pointer (Needle or Knob) that indicates values on that scale. Gauge axes are usually colored for easy value distinction. Gauges can be used as clocks, speedometer, compass, volume tuner or any other gauge that should represent the value as an angle on a circle plot.
 
-Let's start with adding or configuring gauge elements step by step, so in the end we'll create a typical speedometer gauge as a result.
+Let's start with adding or configuring gauge elements step by step, so in the end we'll create a typical JavaScript speedometer gauge as a result.
 
 ##Chart
 
@@ -208,7 +208,7 @@ There are 4 different types of pointers avaliable: needle, knob, bar and marker.
 ```
 {sample}GAUGE\_Circular\_06{sample}
 
-To bind the pointers to the axis and data we want them to show, we use {api:anychart.core.gauge.pointers.bar#axisIndex}**.axisIndex()**{api} and {api:anychart.core.gauge.pointers.bar#dataIndex}**.dataIndex()**{api} methods. The value transmitted to the method is the number of axis or data accordingly.
+To bind the pointers to the axis and data we want them to show, we use {api:anychart.core.gauge.pointers.Bar#axisIndex}**.axisIndex()**{api} and {api:anychart.core.gauge.pointers.Bar#dataIndex}**.dataIndex()**{api} methods. The value transmitted to the method is the number of axis or data accordingly.
 
 For more information look up the [Pointers and Data](../Gauges/Pointers_and_Data) tutorial.
 
@@ -263,7 +263,7 @@ Then we should put the name of the car company beside the cap to make the look o
 
 ##Colors
 
-AnyChart uses default color palette to colorize data elements of chart automatically if you have not define special colors.
+AnyChart charting library uses default color palette to colorize data elements of chart automatically if you have not define special colors.
 
 ###Colorizing Elements
 

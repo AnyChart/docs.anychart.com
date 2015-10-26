@@ -142,7 +142,7 @@ If legend items can't be displayed on a plot of a legend, **{api:anychart.core.u
 
 ### Marker Symbol
 
-When you are working with line and spline chart you may use markers to distinguish different series. By default AnyChart shows marker symbols in legend - only color representation is used in a small line icon. If you want to tune markers in legend icons you have to adjust {api:anychart.core.ui.LegendItem}**legendItem()**{api} method. Sample code presented below.
+When you are working with line and spline chart you may use markers to distinguish different series. By default AnyChart charting library shows marker symbols in legend - only color representation is used in a small line icon. If you want to tune markers in legend icons you have to adjust {api:anychart.core.ui.LegendItem}**legendItem()**{api} method. Sample code presented below.
 
 ```
   // chart data 
@@ -193,7 +193,7 @@ In the sample chart below we've used custom item that adds *Total* data to legen
 
 ## Custom Legend
 
-AnyChart sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart. 
+AnyChart JavaScript Framework sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart. 
 
 {sample}AS\_Legend\_12{sample}
 
@@ -215,7 +215,7 @@ As you can see, one legend can contain different information from one chart. Mor
 
 ## One Legend for Several Series
 
-You can attache an event to a legend items. Use **{api:anychart.core.ui.Legend#listen}.listen(){api}** method to set an event for a legend. List of possible event can be found in **{api:http://api.anychart.stg/develop/anychart.enums.EventType}API{api}**. For additional information on events in AnyChart you can find in [Event Listeners tutorial](../Common_Settings/Event_Listeners)
+You can attache an event to a legend items. Use **{api:anychart.core.ui.Legend#listen}.listen(){api}** method to set an event for a legend. List of possible event can be found in **{api:anychart.enums.EventType}API{api}**. For additional information on events in AnyChart you can find in [Event Listeners tutorial](../Common_Settings/Event_Listeners)
 
 ```
   // create legend

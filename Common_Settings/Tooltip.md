@@ -53,7 +53,7 @@ There are several modes for tooltip displaying. In this section you will find sa
 
 ### Single
 
-Single tooltip is a default mode for every AnyChart tooltip. A tooltip displays information based only on the hovered point or hovered series data.
+Anychart charting framework has different default settings for  Single tooltip is a default mode for every AnyChart tooltip. A tooltip displays information based only on the hovered point or hovered series data.
 
 ```
   // create column chart plot
@@ -191,7 +191,7 @@ Here is a sample of advanced tooltip content formatting:
 There are several methods for managing tooltips position on the chart. This section contains information on most of this methods.
   
   
-AnyChart allows to choose should the tooltip bind to cursor position, hovered point or to the exact place on the chart plot. Use **positionMode()** method to choose a target for binding tooltip to. *float* parameter is the default one for this method and makes tooltip to follow your cursor. *point* parameter binds tooltip to the hovered series point. Use *chart* parameter for **positionMode()** method to bind tooltip to a place on the chart plot.
+AnyChart html5 charting library allows to choose should the tooltip bind to cursor position, hovered point or to the exact place on the chart plot. Use **positionMode()** method to choose a target for binding tooltip to. *float* parameter is the default one for this method and makes tooltip to follow your cursor. *point* parameter binds tooltip to the hovered series point. Use *chart* parameter for **positionMode()** method to bind tooltip to a place on the chart plot.
 
 ```
   var tooltip = chart.tooltip();

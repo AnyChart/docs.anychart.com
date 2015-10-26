@@ -70,7 +70,7 @@ Let's see pie chart created using the following data - sales of ACME Corp. appar
 </tr>
 </tbody></table>
 
-Now we need to convert this data table into js to make it acceptable by AnyChart. In terms of AnyChart data model we’ve got one series of data (Sales) with categories that hold Retail channels names. The data in JavaScript format looks like:
+Now we need to convert this data table into js format to make it acceptable by AnyChart. In terms of AnyChart data model we’ve got one series of data (Sales) with categories that hold Retail channels names. The data in JavaScript format looks like:
 
 ```
   chart = anychart.pie([
@@ -119,7 +119,7 @@ You can set starting angle for the first slice of the pie using {api:anychart.ch
 
 ## Slices Sorting
 
-In Pie/Doughnut charts, it is possible to sort the series by ascending or descending. This feature is controlled using {api:anychart.charts.Pie#sort}**.sort()**{api} parameter. In the sample below three pie charts with identical series are shown, first isn't sorted, the second is sorted ascending and the third - descending.
+In Pie/Doughnut web charts, it is possible to sort the series by ascending or descending. This feature is controlled using {api:anychart.charts.Pie#sort}**.sort()**{api} parameter. In the sample below three pie charts with identical series are shown, first isn't sorted, the second is sorted ascending and the third - descending.
 
 {sample :width 690 :height 230}BCT\_PieDoughnutChart\_05{sample}
 
@@ -276,7 +276,7 @@ Let's demonstrate how to apply different colors to different data series. To app
 
 ## Hatch Fills
 
-AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch](../Appearance_Settings/Hatch_Fill) tutorial tutorial.
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart charting library has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch](../Appearance_Settings/Hatch_Fill) tutorial tutorial.
   
   
 To demonstrate hatch fill feature we've prepared the following sample. We have pie chart with 6 points. For every point we've applied different hatch fills by setting a hatch type for{api:anychart.charts.Pie#hatchFill}**.hatchFill()**{api} parameter.

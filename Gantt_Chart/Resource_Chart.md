@@ -6,12 +6,11 @@
 * [Periods](#periods)
 
 ## Overview
-
-Resources Gantt Chart is one of two types of Gantt Charts. It is intended for showing the resources you have and spreading these resources along the timeline (into periods). Resources can be servers, equipment, vacancies of employees, expendable materials, or anything else.
+JavaScript Resources Gantt Chart is one of two types of Gantt Charts. It is intended for showing the resources you have and spreading these resources along the timeline (into periods). Resources can be servers, equipment, vacancies of employees, expendable materials, or anything else.
 
 ## Chart
 
-The Resource Gantt Chart creation is the same as Project Chart except you should define the resource chat type using the {api:anychart#ganttResource}**ganttResource()**{api} method:
+The JS Resource Gantt Chart creation is the same as JS Project Chart except you should define the resource chat type using the {api:anychart#ganttResource}**ganttResource()**{api} method:
 
 ```
 //create resource gantt chart

@@ -28,13 +28,12 @@ Also "RangeLineArea" or "RangeSpineArea" series type should be specified.
 
 ## Temperature Range Area Chart Sample
 
-This sample shows how ranges can be used to chart temperature averages, the data is taken from UK average weather statistics from 1971 to 2000:
+This sample shows how ranges can be used to create JavaScript graph of temperature averages, the data is taken from UK average weather statistics from 1971 to 2000:
 
 {sample}BCT_Range\_Area-SplineArea\_Charts\_01{sample}
 
 ## Configuration
-Range area charts are configured and tuned almost the same way as usual Area charts.<!--, with the only difference: as we
- have to Y values (high and low point) - we have two tooltips, two labels, two markers and two lines-->.
+Range area charts are configured and tuned almost the same way as usual Area charts.<!--, with the only difference: as we have to Y values (high and low point) - we have two tooltips, two labels, two markers and two lines-->.
   
   
 So, to configure them we use the {api:anychart.core.cartesian.series.RangeArea}**rangeArea**{api} parameter that holds labels and markers settings.

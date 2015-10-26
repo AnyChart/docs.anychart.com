@@ -10,10 +10,10 @@
  
 ## Overview
   
-In AnyChart axis is a line at the edge of the chart that displays scale calculations to which series (or chart) values referred for measurement. You can add multiple X and Y axes to your charts with AnyChart.
+In AnyChart charting library axis is a line at the edge of the chart that displays scale calculations to which series (or chart) values referred for measurement. You can add multiple X and Y axes to your charts with AnyChart.
   
   
-This article describes how to use the multi axis feature of AnyChart. With this feature an arbitrary number of axes can be added to the chart. AnyChart itself doesn't impose any restrictions on the number of additional axes but from a practical concern it is most likely very difficult to interpret a chart with more than 2-3 additional axes.  
+This article describes how to use the multi axis feature of AnyChart js framework. With this feature an arbitrary number of axes can be added to the chart. AnyChart itself doesn't impose any restrictions on the number of additional axes but from a practical concern it is most likely very difficult to interpret a chart with more than 2-3 additional axes.  
   
   
 Consider using multiple axes when you need:
@@ -45,7 +45,7 @@ If you want to declare an additional axis all you need to do is to set index to 
   yAxis3.title("Third additional axis");
 ```
 
-Here is the sample of the chart that shows three additional Y axes and almost no configuration is done, as you can see three additional axes are drawn on the right side of data plot and their maximum and minimum values are calculated automatically (and they are the same as main Y axis):
+Here is the sample of the js chart that shows three additional Y axes and almost no configuration is done, as you can see three additional axes are drawn on the right side of data plot and their maximum and minimum values are calculated automatically (and they are the same as main Y axis):
 
 {sample}AGST\_Additional\_Axes\_01{sample}
 

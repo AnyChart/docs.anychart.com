@@ -127,7 +127,6 @@ You may define the colors you want to use in your map as an array using {api}**.
 Note that you should define as many colors as there are regions you've got on the map, i.e. each color refers to one series.
 <!--
 #### Using object 
-<!--не работает-->
 
 You may define the colors you want to use in your map as an object using {api}**.palette()**{api} method.
 

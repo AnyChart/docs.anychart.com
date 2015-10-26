@@ -13,7 +13,7 @@ Data that is arranged in columns or rows on a worksheet can be plotted in a bar 
 
 ## Chart
 
-As stacked charts should show percent contribution of different components to the total, we will demonstrate them on sales of an imaginable ACME FastFood, Corp. Let's assume that it sells Ice Creams, Chocolate Bars and Coke all through the year.
+As JavaScript Stacked charts should show percent contribution of different components to the total, we will demonstrate them on sales of an imaginable ACME FastFood, Corp. Let's assume that it sells Ice Creams, Chocolate Bars and Coke all through the year.
   
   
 So, we have three series of data - one series for each product, and seasons of a year will be shown as categories:

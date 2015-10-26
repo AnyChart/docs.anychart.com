@@ -12,7 +12,7 @@
   
 ## Overview
 
-If you have already used AnyChart or explored samples in our articles, you might have noticed the code like:
+If you have already used AnyChart html5 charting solution or explored samples in our articles, you might have noticed the code like:
 
 ```
 // set stage
@@ -29,7 +29,7 @@ These lines mean that the usage of anychart.graphics takes place in this or that
 
 Anychart.graphics is one of AnyChart components, the library which is capable for rendering and display. All charts are based on this library. It's not necessary to know how it works 
 to use AnyChart components, but if you want to use those options like drawing custom forms and use them as markers or create complicated dashboards, you should deal with some things.
-Read this article or visit the api of **{api:anychart.graphics}AnyСhart.graphics{api}**.
+Read this article or visit the api of **{api:anychart.graphics}AnyChart.graphics{api}**.
 
 ##Basic
 
@@ -154,7 +154,7 @@ Let's use the {api:anychart.graphics.vector.Stage#removeChild}**.remove()**{api}
 ```
 {sample}GRAPHICS\_Basics\_05{sample}
 
-The situation would be different if we decided to remove the cube also. In this case we should have used the **{api:anychart.graphics.vector.Element.removeChild()}**.removeChild()**{api}** method to get rid of the big shadow under all objects which is situated on a separated layer.
+The situation would be different if we decided to remove the cube also. In this case we should have used the **{api:anychart.graphics.vector.Element.remove}**.remove**{api}** method to get rid of the big shadow under all objects which is situated on a separated layer.
 ```
     //remove the cylinder layer
     layer_cylinder.remove();
