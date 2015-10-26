@@ -16,7 +16,7 @@ AnyChart JavaScript HeatMap is a graphical representation of data where the indi
 
 ## Chart 
 
-Each data point for a HeatMap chart must have three parameters: **"x"** parameter should define the name of the column to put the point into, **"y"** parameter defines the row to put the point into and **"heat"** parameter is the point's value (**"heat" parameter can be omitted when you are using [direct coloring](#direct_coloring)). Later the heatmap points will be colored due to the [colorScale](#color_scale) ranges, which are based on these values. Here is a sample of appropriate data formatting:
+Each data point for a HeatMap chart must have three parameters: **"x"** parameter should define the name of the column to put the point into, **"y"** parameter defines the row to put the point into and **"heat"** parameter is the point's value (**"heat"** parameter can be omitted when you are using [direct coloring](#direct_coloring)). Later the heatmap points will be colored due to the [colorScale](#color_scale) ranges, which are based on these values. Here is a sample of appropriate data formatting:
 
 ```
   var dataSet = anychart.data.set([
