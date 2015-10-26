@@ -37,42 +37,42 @@
             {y: "Part 7", x: "Undetected", heat: 9}
         ]);
 
-        // enable the scroller
-        chart.xScroller(true);
-
-        // set chart type
+// set chart type
         var chart = anychart.heatMap(data);
 
-        // create linerColor scale
+// enable the scroller
+        chart.yScroller(true);
+
+// create linerColor scale
         var colorScale = anychart.scales.ordinalColor();
-        // set range of heat parameter's values and corresponding colors
+// set range of heat parameter's values and corresponding colors
         colorScale.ranges([
-          // set color for all points with the heat parameter less than 1200000
-          {less: 7, color: "#33CC33"},
-          // set color for all points with the heat parameter more than 1200000 but less than 3000000
-          {from: 7, to: 22, color: "#CCFF66"},
-          // set color for all points with the heat parameter more than 1200000 but less than 3000000
-          {from: 22, to: 32, color: "#EB9E33"},
-          // set color for all points with the heat parameter more than 3000000
-          {greater: 32, color: "#FF3300"}
+            // set color for all points with the heat parameter less than 1200000
+            {less: 7, color: "#33CC33"},
+            // set color for all points with the heat parameter more than 1200000 but less than 3000000
+            {from: 7, to: 22, color: "#CCFF66"},
+            // set color for all points with the heat parameter more than 1200000 but less than 3000000
+            {from: 22, to: 32, color: "#EB9E33"},
+            // set color for all points with the heat parameter more than 3000000
+            {greater: 32, color: "#FF3300"}
         ]);
-         
-        // apply colorScale for colorizing heatMap chart
+
+// apply colorScale for colorizing heatMap chart
         chart.colorScale(colorScale);
 
-        // set the heatmap stroke
+// set the heatmap stroke
         chart.stroke("#CCC");
 
-        // set the yZoom
+// set the yZoom
         var yZoom = chart.yZoom();
 
-        // turn it on
-        yZoom().setToValues("Part 1", "Part 4");
+// turn it on
+        yZoom.setToValues("Part 1", "Part 4");
 
 
-    chart.container("container");
-    chart.draw();
-});</script>
+        chart.container("container");
+        chart.draw();
+    });</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

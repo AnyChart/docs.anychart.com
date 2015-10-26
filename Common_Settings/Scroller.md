@@ -25,28 +25,26 @@ We use standard {api:anychart.core.ui.Scroller#enabled}**.enabled()**{api} metho
 ```
 	// turn it on
 	var chart = anychart.column();
-	....
 	chart.xScroller(true);
-	....
 ```
 
 {sample}CS\_Scroller\_01{sample}
 
-Also, we can transmit the "true" value straight to the {api:anychart.charts.Cartesian#xScroller}**.xScroller()**{api} method.
+Also, we can pass the "true" value straight to the {api:anychart.charts.Cartesian#xScroller}**.xScroller()**{api} method.
 
 Now you can see that there is a scroller shown up, but the general view has not changed (though, you can drag it). That's because we should zoom the chart - set the area we'd like to display.
 
 ## Adjust
 
-In this section we will consider the zooming and viewing settings of a chart. 
+In this section we will consider the zoom and scroll settings of a chart. 
 
 ### Zoom
 
-First of all, we need to define that area of the chart that we'd like to have being displayed. We can do it differently, in accordance with out needs and preferences.
+First of all, we need to define that area of the chart that we'd like to have being displayed. We can do it differently, in accordance with our needs and preferences.
 
 #### Set the limits by ratio
 
-The simplest way of limiting the show area is using the ratio. We've got the {api:anychart.charts.Cartesian.XZoom#setTo}**.setTo()**{api} method for that. Use two values with this method: the start ratio value (e.g. 0) and the end one (e.g. 0.3). Look at the following sample.
+The simplest way of limiting the show area is using the ratio. We have the {api:anychart.charts.Cartesian.XZoom#setTo}**.setTo()**{api} method for that. Use two values with this method: the start ratio value (e.g. 0) and the end one (e.g. 0.3). Look at the following sample.
 
 ```
 	// turn it on
@@ -74,7 +72,7 @@ Note that it's only Heatmaps which can be scrolled or zoomed by Y-scale.
 
 #### Set the limits by the points count
 
-The third variant of setting the limits of the shown is to set the number of points from the first or last value of the axis. We set the number of points, the second boolean means if the points should be counted from the end axis value and the third parameter is the scale again (this one is optional). The point will be counted from start by default, if you need them to be counted from end, set "true" as se second value:
+The third option is to set limits is to set the number of points from the beginning or end of the scale. We set the number of points, the second boolean parameter defines if the points should be counted from the end of the scale and the third parameter is the scale. The point will be counted from start by default, if you need them to be counted from end, set "true" as se second value:
 
 ```
 	// set the xZoom
@@ -90,7 +88,7 @@ The third variant of setting the limits of the shown is to set the number of poi
 
 Note that this method works only with ordinal scales. 
 
-By default, the screen is moving while being scrolled. We can prevent the scrolling while the mouse button is not being released. For this option we've got the {api:anychart.charts.Cartesian.XZoom#continuous}**.continuous()**{api} method:
+By default, the chart is changing while being scrolled. We can prevent this and redraw chart only when the mouse button is released, this may improve user experience when you show very large data sets. For this option we've got the {api:anychart.charts.Cartesian.XZoom#continuous}**.continuous()**{api} method:
 
 ```
 	// set the xZoom
@@ -131,7 +129,7 @@ The scroll bar is rather flexible in its look and behavior. We can change the co
 
 #### Orientation
 
-With the {api:anychart.core.ui.Scroller#orientation}**.orietation()**{api} method we can set the orientation of the scroller. Let's create a simple bar chart with zoom and a scroller with orientation to the right.
+With the {api:anychart.core.ui.Scroller#orientation}**.orientation()**{api} method we can set the orientation of the scroller. Let's create a simple bar chart with zoom and a scroller with orientation to the right.
 
 ```	
     // change the scroller orientation
@@ -144,7 +142,7 @@ With the {api:anychart.core.ui.Scroller#orientation}**.orietation()**{api} metho
 
 #### Position
 
-This works when our scroll bar is next to any axes. We can set the "afterAxes" or "beforeAxes" positions. The afterAxes position is set by default.
+This works when our scroll bar is next to any axes. Scroller can be displayed in "afterAxes" or "beforeAxes" positions. The afterAxes position is set by default.
 
 ```	
     // change the scroller orientation
