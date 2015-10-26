@@ -12,11 +12,11 @@
 
 ## Overview
 
-AnyChart JavaScript HeatMap is a graphical representation of data where the individual values contained in a matrix are represented as colors. 
+AnyChart JavaScript HeatMap is a graphical representation of data where the individual values contained in a matrix are represented as colors. This article will tell you how to work with HaetMap charts in AnyChart JavaScript Charting Library.
 
 ## Chart 
 
-Each data point for a HeatMap chart must have three parameters: **"x"** parameter should define the name of the column to put the point into, **"y"** parameter defines the row to put the point into and **"heat"** parameter is the point's value. Later the heatmap points will be colored due to the [colorScale](#color_scale) ranges, which are based on these values. Here is a sample of appropriate data formatting:
+Each data point for a HeatMap chart must have three parameters: **"x"** parameter should define the name of the column to put the point into, **"y"** parameter defines the row to put the point into and **"heat"** parameter is the point's value (**"heat" parameter can be omitted when you are using [direct coloring](#direct_coloring)). Later the heatmap points will be colored due to the [colorScale](#color_scale) ranges, which are based on these values. Here is a sample of appropriate data formatting:
 
 ```
   var dataSet = anychart.data.set([
@@ -157,7 +157,7 @@ Along with using color scale you can specify visual settings for an individual p
   ]);
 ```
 
-**Note**: You can use either string or object as a value for **fill** and **hoverFill** sets while **stroke** and **hoverStroke** sets use only object as values.
+**Note**: You can use only object as values for  **stroke** and **hoverStroke** sets while **fill** and **hoverFill** sets use either string or object as a value. When you set color directly to a point you can omit **"heat"** in a data set.
 
 {sample}BCT\_HeatMapChart\_03{sample}
 
