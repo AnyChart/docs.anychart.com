@@ -21,10 +21,10 @@
     var colorScale = anychart.scales.ordinalColor();
     // set range of heat parameters and corresponding colors
     colorScale.ranges([
-      {less: 1, color: "#9ACD32"},
-      {from: 0, to: 1, color: "#FFFF00"},
-      {from: 1, to: 2, color: "#FF6347"},
-      {greater: 2, color: "#FF0000"}
+      {equal: 0, color: "#9ACD32"},
+      {equal: 1, color: "#FFFF00"},
+      {equal: 2, color: "#FF6347"},
+      {equal: 3, color: "#FF0000"}
     ]);
     // apply colorScale for colorizing heatMap chart
     chart.colorScale(colorScale);
