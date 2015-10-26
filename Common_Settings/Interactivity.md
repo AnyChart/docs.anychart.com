@@ -142,9 +142,18 @@ If you provide no arguments to the {api:anychart.core.SeriesBase#hover}**.hover(
 Change the hovering mode in playground and see the difference.
 
 ```	
-	// setting some points for the series
-	series_1.hover([4, 6, 9, 12, 16, 19]);
-	series_2.hover([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);	
+	// setting some points hovered for the series
+	series_1.hover([4, 6, 12, 16]);
+    series_2.hover([0, 1, 5, 10, 11, 16, 17, 20]);	
+```
+
+If you need to unhover a number of points automatically in some case, use {api:anychart.core.SeriesBase#unhover}**.unhover()**{api} method. You can define the points you'd like to unhover or leave the method with no parameters - this will unhover all points of the series.
+
+```
+chart.title().listen("mouseOut", function(){
+        series_1.unhover();
+        series_2.unhover([0, 1, 5, 16, 17]);
+    });
 ```
 
 {sample}CS\_Interactivity\_08{sample} 
@@ -199,6 +208,8 @@ OHLC charts have special settings such as {api:anychart.core.cartesian.series.OH
 
 
 If you want to disable the selection ability, use "none" as the {api:anychart.core.utils.Interactivity#selectionMode}**.selectionMode()**{api} argument.
+
+To unselect the points without preventing the selection ability use {api:anychart.core.SeriesBase#unselect}**.unselect()**{api} method. As well as in the situation with unhovering, you can define the points or set no parameters to the method. Try to use it in our playground.
 
 
 ## Handling chart events

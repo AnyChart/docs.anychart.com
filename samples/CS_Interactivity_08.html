@@ -71,7 +71,7 @@ anychart.onDocumentReady(function() {
     });
     chart.title().listen("mouseOut", function(){
         series_1.unhover();
-        series_2.unhover();
+        series_2.unhover([0, 1, 5, 16, 17]);
     });
 
     // draw

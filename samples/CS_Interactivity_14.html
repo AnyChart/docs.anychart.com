@@ -93,9 +93,10 @@
             lineSeries = lineChart.line(lineDataSet);
         });
 
-        chart.listen("pointSelect", function(evt){
-            var ind = evt.pointIndex;
+        chart.listen("pointsSelect", function(evt){
+            var ind = evt.point.getIndex();
             dataRow = data.row(ind);
+            console.log(ind);
 
             lineDataSet.data([
                 {x: "Jan", value: dataRow[3], fill: "#0099CC"},
@@ -115,7 +116,7 @@
             lineChart.titlepieTitle;
 
             lineChart.title(pieTitle + lineSubTitle);
-            lineSeries.tooltip().textFormatter(function(){
+            lineChart.tooltip().textFormatter(function(){
                 console.log(this.value);
                 var text = 'Sales amount: $' + this.value ;
                 return text;
