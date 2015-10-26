@@ -29,7 +29,7 @@ These lines mean that the usage of anychart.graphics takes place in this or that
 
 Anychart.graphics is one of AnyChart components, the library which is capable for rendering and display. All charts are based on this library. It's not necessary to know how it works 
 to use AnyChart components, but if you want to use those options like drawing custom forms and use them as markers or create complicated dashboards, you should deal with some things.
-Read this article or visit the api of **{api:anychart.graphics}AnyСhart.graphics{api}**.
+Read this article or visit the api of **{api:anychart.graphics}AnyChart.graphics{api}**.
 
 ##Basic
 
