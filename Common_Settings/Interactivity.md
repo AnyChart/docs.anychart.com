@@ -254,7 +254,7 @@ chart.listen("pointSelect", function(evt){
 ```
 
 
-Here we can see the column chart accompanied by a pie chart showing the amount of pizza slices, eaten by each member of Scoody-Doo group. The data to be shown depends on which column is selected. Note that this variant is possible only in case of singleSelect enabled (if multiSelect is switched on, it won't work).
+Here we can see the column chart accompanied by a line chart showing the sales amount of pizza slices, eaten by each member of Scoody-Doo group. The data to be shown depends on which column is selected. Note that this variant is possible only in case of singleSelect enabled (if multiSelect is switched on, it won't work).
 
 If you need the similar drilldown chart with multi-selection, you may do the following:
 
@@ -263,33 +263,40 @@ If you need the similar drilldown chart with multi-selection, you may do the fol
 In this sample not the data but the series are added and removed depending on selections made:
 
 ```
-chart.listen("pointSelect", function(evt){
-            var ind = evt.pointIndex;
-            dataRow = data.row(ind);
+chart.listen("pointsSelect", function(evt){
+            var pointsNum = evt.points.length;
+            console.log(pointsNum);
+            var myData = [];
 
-            lineDataSet.data([
-                {x: "Jan", value: dataRow[3], fill: "#0099CC"},
-                {x: "Feb", value: dataRow[4], fill: "#520085"},
-                {x: "Mar", value: dataRow[5], fill: "#CC6600"},
-                {x: "Apr", value: dataRow[6], fill: "#336600"},
-                {x: "May", value: dataRow[7], fill: "#0099CC"},
-                {x: "Jun", value: dataRow[8], fill: "#520085"},
-                {x: "Jul", value: dataRow[9], fill: "#CC6600"},
-                {x: "Aug", value: dataRow[4], fill: "#520085"},
-                {x: "Sep", value: dataRow[5], fill: "#CC6600"},
-                {x: "Oct", value: dataRow[6], fill: "#336600"},
-                {x: "Nov", value: dataRow[7], fill: "#0099CC"},
-                {x: "Dec", value: dataRow[8], fill: "#520085"}
-            ]);
-            lineSubTitle = "\nfor "+ dataRow[0] + " year";
-            lineChart.titlepieTitle;
+            for (var i = 0; i < pointsNum; i++) {
+                var point = evt.points[i];
+                if (!point.selected())
+                    continue;
+                dataRow = data.row(point.getIndex());
+                myData.push([
+                    {x: "Jan", value: dataRow[3], fill: "#0099CC"},
+                    {x: "Feb", value: dataRow[4], fill: "#520085"},
+                    {x: "Mar", value: dataRow[5], fill: "#CC6600"},
+                    {x: "Apr", value: dataRow[6], fill: "#336600"},
+                    {x: "May", value: dataRow[7], fill: "#0099CC"},
+                    {x: "Jun", value: dataRow[8], fill: "#520085"},
+                    {x: "Jul", value: dataRow[9], fill: "#CC6600"},
+                    {x: "Aug", value: dataRow[4], fill: "#520085"},
+                    {x: "Sep", value: dataRow[5], fill: "#CC6600"},
+                    {x: "Oct", value: dataRow[6], fill: "#336600"},
+                    {x: "Nov", value: dataRow[7], fill: "#0099CC"},
+                    {x: "Dec", value: dataRow[8], fill: "#520085"}
+                ]);
+            }
+            lineChart.removeAllSeries();
+            lineChart.addSeries.apply(lineChart, myData);
 
-            lineChart.title(pieTitle + lineSubTitle);
-            lineSeries.tooltip().textFormatter(function(){
-                console.log(this.value);
-                var text = 'Sales amount: $' + this.value ;
-                return text;
-            });
+                lineChart.title(pieTitle + lineSubTitle);
+                lineChart.tooltip().textFormatter(function() {
+                    console.log(this.value);
+                    var text = 'Sales amount: $' + this.value;
+                    return text;
+                });
         });
 ```
 
