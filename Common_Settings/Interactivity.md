@@ -254,7 +254,7 @@ chart.listen("pointSelect", function(evt){
 ```
 
 
-Here we can see the column chart accompanied by a line chart showing the sales amount of pizza slices, eaten by each member of Scoody-Doo group. The data to be shown depends on which column is selected. Note that this variant is possible only in case of singleSelect enabled (if multiSelect is switched on, it won't work).
+Here we can see the column chart showing sales amounts of ACME Corp. by year, accompanied by a line chart displaying monthly sales statistics. The data to be shown depends on which column is selected. Note that this variant is possible only in case of singleSelect enabled (if multiSelect is switched on, it won't work).
 
 If you need the similar drilldown chart with multi-selection, you may do the following:
 
