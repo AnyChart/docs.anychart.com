@@ -33,12 +33,12 @@
         ["22", 53],
         ["23", 62]
         ]);
+        var chart = anychart.column(dataSet);
 
         chart.xAxis().title("Hours");
     chart.yAxis().title("Support requests");
     chart.title("Amount of support requests in hours");
 
-    var chart = anychart.column(dataSet);
 
     var xZoom = chart.xZoom();
 

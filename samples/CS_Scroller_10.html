@@ -7,40 +7,37 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
     var chart = anychart.bar([
-        ["00", 10],
-        ["01", 4],
-        ["02", 17],
-        ["03", 20],
-        ["04", 20],
-        ["05", 16],
-        ["06", 35],
-        ["07", 6],
-        ["08", 15],
-        ["09", 19],
-        ["10", 25],
-        ["11", 34],
-        ["12", 42],
-        ["13", 14],
-        ["14", 50],
-        ["15", 25],
-        ["16", 34],
-        ["17", 40],
-        ["18", 64],
-        ["19", 48],
-        ["20", 22],
-        ["21", 37],
-        ["22", 53],
-        ["23", 62]
+        ["Facebook", 9245],
+        ["Live", 7345],
+        ["MSN", 10522],
+        ["Youtube", 12034],
+        ["Yahoo", 9014],
+        ["Wikipedia", 13463],
+        ["Google", 10525],
+        ["Baidu", 6345],
+        ["Twitter", 10211],
+        ["Amazon", 8093],
+        ["Ebay", 7836],
+        ["LinkedIn", 7276],
+        ["Vk", 9463],
+        ["Instagram", 10876],
+        ["TMall", 7220],
+        ["Microsoft", 8965],
+        ["AliExpress", 9120],
+        ["AnyChart", 9246],
+        ["PayPal", 6837],
+        ["BBC", 5046],
+        ["NicoVideo", 6822]
         ]);
 
-    chart.xAxis().title("Hours");
-    chart.yAxis().title("Support requests");
-    chart.title("Amount of support requests in hours");
+    chart.xAxis().title("Sites");
+    chart.yAxis().title("Users");
+    chart.title("Average unique visitors amount in a day \nRange Change prevented");
 
     var xZoom = chart.xZoom();
 
     // Zooms series by defined points count.
-    xZoom.setToPointsCount(15);
+    xZoom.setToPointsCount(10);
 
     // enable the scroller
     chart.xScroller(true);
