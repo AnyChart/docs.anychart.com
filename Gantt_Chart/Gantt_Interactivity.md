@@ -29,9 +29,9 @@ External environment can call AnyGantt Functions to load data to the gantt chart
 
 As in the basic charts, Gantt tooltips are designed to show the main information about the item in short. However, Gantt tooltips are special because of the Gantt diagrams itself. Simple charts' tooltips usually show the name of the item and its value (if it exists), but in Gantts, the basic tooltip, besides the name of the item (which is usually also written in the Data Grid section), will show the start and end date/time and the duration of the hovered item (process). Note that there is a difference between Project Gantts and Resource Gantts tooltips: 
 
-{sample}GANTT\_Interactivity\_01{sample}
+{sample :width 690 :height 300 }GANTT\_Interactivity\_01{sample}
 
-{sample}GANTT\_Interactivity\_02{sample}
+{sample :width 690 :height 300 }GANTT\_Interactivity\_02{sample}
 
 As you can notice, the Resource Gantt tooltips show the main duration of the process when this process name is hovered in Data Grid, and the duration of a some piece of process when this particular piece is hovered in the Timeline part. In the project Gantt Chart tooltips don't change.
 
