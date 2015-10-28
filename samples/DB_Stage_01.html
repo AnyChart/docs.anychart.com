@@ -8,20 +8,23 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // set stage
-    stage = anychart.graphics.create("container");
+    var stage = anychart.graphics.create("container");
 
     // chart type
     var chart = anychart.column();
 
     // set title
-    chart.title().text("Multi-series Column Chart");
+    chart.title("Multi-series Column Chart");
 
     // set axes titles
-    chart.xAxis().title().text("Manager");
-    chart.yAxis().title().text("Sales");
+    var xAxis = chart.xAxis();
+    xAxis.title("Manager");
+    var yAxis = chart.yAxis();
+    yAxis.title("Sales");
 
     // set scale minimum
-    chart.yScale().minimum(0);
+    var yScale = chart.yScale();
+    yScale.minimum(0);
 
     var data = anychart.data.set([
         ["John" , 10000, 12000],
@@ -36,13 +39,12 @@
     var Sales2004 = data.mapAs({x: [0], value: [2]});
 
     // set series data
-    series = chart.column(Sales2003);
-    series = chart.column(Sales2004);
+    chart.column(Sales2003);
+    chart.column(Sales2004);
 
     // draw
-    chart.container(stage).draw();
-   
-
+    chart.container(stage);
+    chart.draw();
 });</script>
 </head>
 <body>

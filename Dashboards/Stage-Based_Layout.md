@@ -52,7 +52,6 @@ Let's place a Column Chart sample on a stage. The only difference in this case i
 ```
 {sample}DB\_Stage\_01{sample}
 
-
 In case you need to place more than one chart, you can use {api:anychart.charts.Cartesian#bounds}**.bounds()**{api} method to adapt the dimensions of the charts to fit them on a web page or wherever you need.
 
 ```
@@ -117,7 +116,6 @@ Each click on the "Add" button adds a layer with a red square, each click on the
   // remove a layer
   var layerToRemove = layers.pop();
   if (layerToRemove) layerToRemove.remove();
-	
 ```
 {sample :width 688 :height 500 }DB\_Stage\_04{sample}
 
