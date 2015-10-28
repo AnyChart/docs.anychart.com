@@ -18,7 +18,7 @@ In this article we will look at the "editing mode" of AnyGantt.
 
 ##Editing 
 
-Life Editing of Gantt chart is disabled by default. Editing mode is controlled by **.edit()** method that uses boolean parameter.
+Life Editing of Gantt chart is disabled by default. Editing mode is controlled by {api:}**.edit()**{api} method that uses boolean parameter.
 
 ```
   // create Gantt project

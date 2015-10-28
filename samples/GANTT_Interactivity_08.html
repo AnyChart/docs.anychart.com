@@ -32,7 +32,9 @@
 	var secondColumn = dataGrid.column(1);
 	secondColumn.cellTextSettings().hAlign("left");
 	secondColumn.width(250);
-	chart.editing(true);
+
+	// disable Gantt editing
+	chart.editing(false);
 
 	// set container id for the chart
 	chart.container("container");
@@ -40,9 +42,68 @@
 	// initiate chart drawing
 	chart.draw();
 
-		// zoom chart to specified date
-		chart.fitAll();
+	// zoom chart to specified date
+	chart.fitAll();
+
+	// Manage Chart Toolbar
+
+	// enable Gantt toolbar
+	var toolbar = anychart.ganttToolbar();
+	toolbar.container("container");
+	toolbar.target(chart); // sets target
+	toolbar.draw();
+
+	// get current toolbar
+	var domToolbar = document.getElementsByClassName("anychart-toolbar")[0];
+
+	// create buttons separator
+	var separator = document.createElement("div");
+	separator.className = "anychart-toolbar-separator anychart-toolbar-separator-disabled anychart-inline-block";
+
+	separator.innerHTML = "&nbsp;";
+	separator.setAttribute("role", "separator");
+	// append buttons separator
+	domToolbar.appendChild(separator);
+
+	// create button for live editing
+	var editButton = document.createElement("div");
+	var outerBox = document.createElement("div");
+	outerBox.className = "anychart-inline-block anychart-toolbar-button-outer-box";
+	var innerBox = document.createElement("div");
+	innerBox.innerHTML = "Enable Live Edit";
+	innerBox.className = "anychart-inline-block anychart-toolbar-button-inner-box";
+	outerBox.appendChild(innerBox);
+	editButton.appendChild(outerBox);
+	domToolbar.appendChild(editButton);
+	// create class lists for different states of edit button
+	var buttonClasses = ["anychart-inline-block", "anychart-toolbar-button"];
+	var hoverClasses = ["anychart-inline-block", "anychart-toolbar-button", "anychart-toolbar-button-hover"];
+	var clickClasses = ["anychart-inline-block", "anychart-toolbar-button", "anychart-toolbar-button-hover", "anychart-toolbar-button-active"];
+	// set default class names for tooltip button
+	editButton.className = buttonClasses.join(" ");
+	editButton.setAttribute("role", "button");
+//
+	// manage button visual appearance
+	editButton.addEventListener("mouseover", function (){
+		editButton.className = hoverClasses.join(" ");
 	});
+	editButton.addEventListener("mouseout", function() {
+		editButton.className = buttonClasses.join(" ");
+	});
+	editButton.addEventListener("mousedown", function() {
+		editButton.className = clickClasses.join(" ");
+	});
+	editButton.addEventListener("mouseup", function() {
+		editButton.className = hoverClasses.join(" ");
+	});
+
+	// add action on button click
+	editButton.addEventListener("click", function(){
+		if (chart.editing()) innerBox.innerHTML = "Enable Live Edit";
+		else innerBox.innerHTML = "Disable Live Edit";
+		chart.editing(! chart.editing());
+	});
+});
 function getData() {
 	return [
 		{"id": "1", "name": "Phase 1 - Strategic Plan", "progressValue": "14%", "actualStart": 951350400000, "actualEnd": 954201600000},
