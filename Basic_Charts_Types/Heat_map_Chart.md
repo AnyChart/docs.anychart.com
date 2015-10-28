@@ -16,7 +16,7 @@ AnyChart JavaScript Heat map is a graphical representation of data where the ind
 
 ## Chart 
 
-Each data point for a Heat map chart must have three parameters: **"x"** parameter should define the name of the column to put the point into, **"y"** parameter defines the row to put the point into and **"heat"** parameter is the point's value (**"heat"** parameter can be omitted when you are using [direct coloring](#direct_coloring)). Later the Heat map points will be colored due to the [colorScale](#color_scale) ranges, which are based on these values. Here is a sample of appropriate data formatting:
+Each data point for a heat map chart must have three parameters: **"x"** parameter should define the name of the column to put the point into, **"y"** parameter defines the row to put the point into and **"heat"** parameter is the point's value (**"heat"** parameter can be omitted when you are using [direct coloring](#direct_coloring)). Later the heat map points will be colored due to the [colorScale](#color_scale) ranges, which are based on these values. Here is a sample of appropriate data formatting:
 
 ```
   var dataSet = anychart.data.set([
@@ -81,11 +81,11 @@ Here is a heat map with the data from above:
 
 ## Coloring
 
-While the majority of chart types represent differences in values of data points via series shapes on data plot the Heat maps displays all differences with colors. That is why this section is quite important.
+While the majority of chart types represent differences in values of data points via series shapes on data plot the heat maps displays all differences with colors. That is why this section is quite important.
 
 ### Color Scale
 
-There are several ways of managing Heat map's colors. The best one of them all is using a {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to define Heat map's colors. Use {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale as a parameter for {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to create an array of ranges and define the color for each range. All values for ranges are to be defined by a user.
+There are several ways of managing heat map's colors. The best one of them all is using a {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to define heat map's colors. Use {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale as a parameter for {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to create an array of ranges and define the color for each range. All values for ranges are to be defined by a user.
 
 ```
   var chart = anychart.heatMap(dataSet);
