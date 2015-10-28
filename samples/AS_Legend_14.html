@@ -71,17 +71,19 @@
   
   // create custom legend
   var legend = anychart.ui.legend();
+  legend.enabled(true);
   legend.position("top");
   var legendTitle = legend.title();
+  legendTitle.enabled(true);
   legendTitle.text("2005 - 2006 Sales");
   legendTitle.hAlign("center");
-  
+
   // settings for legend tooltips
   legend.tooltip().content().useHtml(true).fontWeight(400);
   // set source of content for legend tooltips
   legend.tooltip().textFormatter(function(){
-      return this.meta.legendText;
-    });
+    return this.meta.legendText;
+  });
   
   // set legend items from array
   legend.itemsFormatter(function(){return legendsItemsArray});
@@ -109,7 +111,7 @@
     chart2006.getSeries(index).enabled(! chart2006.getSeries(index).enabled());
     // manage clicked item visual appearance
     if (chart2005.getSeries(index).enabled() == true){
-      legendsItemsArray[index].fontColor = "#000";
+      legendsItemsArray[index].fontColor = "#777";
       legendsItemsArray[index].iconStroke = palette[index];
       legendsItemsArray[index].iconMarkerStroke= anychart.color.darken(palette[index], 0.2);
       legendsItemsArray[index].iconMarkerFill= palette[index];
