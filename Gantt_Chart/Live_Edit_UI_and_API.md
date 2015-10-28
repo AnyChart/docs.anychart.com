@@ -15,21 +15,6 @@ In this article we will look at the "editing mode" of AnyGantt.
 
 
 # Defaults
-
-##Editing 
-
-Life Editing of Gantt chart is disabled by default. Editing mode is controlled by {api:}**.edit()**{api} method that uses boolean parameter.
-
-```
-  // create Gantt project
-  var chart = anychart.ganttProject(data);
-  
-  // enable live edit
-  chart.edit(true);
-```
-
-{sample :width 690 :height 300 }GANTT\_Live\_Edit\_01{sample}
-
 ## Controls
 
 There are several pointer cursors you will see while working with AnyGantt. They are used to edit intervals and Gantt charts' data tree structure, and those changes are displayed by the Gantt diagram.
