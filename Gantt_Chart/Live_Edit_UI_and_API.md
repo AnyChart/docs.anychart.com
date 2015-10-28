@@ -11,10 +11,24 @@
 # Overview
 The Live Edit mode allows you to edit any part of your Gantt chart without touching the code. All you need to do is to use the mouse to change the duration, position or connections.
 
-In this article we will consider the "editing mode" of AnyGantt.
+In this article we will look at the "editing mode" of AnyGantt.
 
 
 # Defaults
+
+##Editing 
+
+Life Editing of Gantt chart is disabled by default. Editing mode is controlled by **.edit()** method that uses boolean parameter.
+
+```
+  // create Gantt project
+  var chart = anychart.ganttProject(data);
+  
+  // enable live edit
+  chart.edit(true);
+```
+
+{sample :width 690 :height 300 }GANTT\_Live\_Edit\_01{sample}
 
 ## Controls
 
@@ -38,7 +52,7 @@ All controls' appearance can be edited by using special methods, which are descr
 <td>Connectors creating</td>
 <td>Position the pointer over the connector thumb of an interval or a milestone, press the button and move the mouse. If you haven't pointed the interval you want to connect with, there is a preview line drawn to help the user not to get lost; the timeline and data grid both will be scrolled while dragging the connector line inside the scale total range. If you hover the bar you want to connect with, there's a final connector preview shows up: depending on where we hovered the bar (left or right part), the connector will stick to the appropriate side. Release the mouse button. If you hover the interval bar and watch the final connector preview, there will be the "beforeCreateConnector" event dispatched by the Gantt diagram (or by its timeline, if it was created in the standalone mode) unless it was prevented. Then, if you release the mouse, the connector will be created and the intervals will become logically connected. If the "beforeCreateConnector" event was prevented, no connector will be created.
 <br>
-You can find more about events [here](../Common_Settings/Event_Listeners.md).
+You can find more about events [here](../Common_Settings/Event_Listeners).
 </td>
 <td>One interval becomes connected to another and we see the connector.</td>
 <td>
@@ -251,7 +265,7 @@ Then, our parental items can be expanded and collapsed. Just click once on the "
 
 ## Timeline
 
-### Stretch the length
+### Change the duration
 
 You can change the duration of the interval, its start and end time. Hover right or left thumbs, watch if the control is of this <img> type and drag it. 
 
