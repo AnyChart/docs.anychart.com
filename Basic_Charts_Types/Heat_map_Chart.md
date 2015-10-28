@@ -163,7 +163,7 @@ Along with using color scale you can specify visual settings for an individual p
 
 ##Visualization
 
-Even though the {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} is the most convenient way of managing HeatMap's colors you can still set a single color for all points of a heat map and define a color for points' border.
+Even though the {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} is the most convenient way of managing heat map's colors you can still set a single color for all points of a heat map and define a color for points' border.
   
   
 You can set heat map's colors either [in your dataSet](#direct_coloring) or using special methods. The easiest way to set the heat map's color is {api:anychart.charts.HeatMap#fill}**.fill()**{api} method.
