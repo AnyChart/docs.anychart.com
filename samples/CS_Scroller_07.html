@@ -6,7 +6,38 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-    var chart = anychart.bar([10, 4, 17, 20, 16, 35, 6, 15, 19, 25, 34, 42, 14, 64, 55, 34, 40, 25]);
+    var chart = anychart.bar();
+  
+    chart.bar([
+        ["00", 10],
+        ["01", 4],
+        ["02", 17],
+        ["03", 20],
+        ["04", 20],
+        ["05", 16],
+        ["06", 35],
+        ["07", 6],
+        ["08", 15],
+        ["09", 19],
+        ["10", 25],
+        ["11", 34],
+        ["12", 42],
+        ["13", 14],
+        ["14", 50],
+        ["15", 25],
+        ["16", 34],
+        ["17", 40],
+        ["18", 64],
+        ["19", 48],
+        ["20", 22],
+        ["21", 37],
+        ["22", 53],
+        ["23", 62]
+        ]);
+
+    chart.xAxis().title("Hours");
+    chart.yAxis().title("Support requests");
+    chart.title("Amount of support requests in hours");
     var xScale = chart.xScale();
     xScale.inverted(false);
 
