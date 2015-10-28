@@ -56,14 +56,10 @@
 	// get current toolbar
 	var domToolbar = document.getElementsByClassName("anychart-toolbar")[0];
 
-	// create buttons separator
-	var separator = document.createElement("div");
-	separator.className = "anychart-toolbar-separator anychart-toolbar-separator-disabled anychart-inline-block";
-
-	separator.innerHTML = "&nbsp;";
-	separator.setAttribute("role", "separator");
-	// append buttons separator
-	domToolbar.appendChild(separator);
+	// dispose all buttons in toolbar
+	domToolbar.innerHTML = "";
+	// change buttons alignment
+	domToolbar.style.textAlign = "center";
 
 	// create button for live editing
 	var editButton = document.createElement("div");
@@ -82,7 +78,7 @@
 	// set default class names for tooltip button
 	editButton.className = buttonClasses.join(" ");
 	editButton.setAttribute("role", "button");
-//
+
 	// manage button visual appearance
 	editButton.addEventListener("mouseover", function (){
 		editButton.className = hoverClasses.join(" ");
