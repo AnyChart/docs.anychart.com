@@ -9,7 +9,7 @@
   <script x-export="chart">
       anychart.onDocumentReady(function() {
 
-// create data set
+          // create data set
           var dataSet = anychart.data.set([
               {'id': 'AU.NS', 'size': 7565500, 'name': 'New South Wales'},
               {'id': 'AU.NT', 'size': 243700, 'name': 'Northern Territory'},
@@ -20,13 +20,13 @@
               {'id': 'AU.TS', 'size': 514700, 'name': 'Tasmania'}
           ]);
 
-// create map chart
+          // create map chart
           map = anychart.map();
 
-// set geodata using http://cdn.anychart.com/geodata/1.0.0/countries/australia/australia.js
+          // set geodata using http://cdn.anychart.com/geodata/1.0.0/countries/australia/australia.js
           map.geoData(anychart.maps.australia);
 
-//create bubble series
+          //create bubble series
           var series = map.bubble(dataSet);
 
           // change the fill and hoverFill colors
@@ -47,7 +47,7 @@
           series.selectStroke("#66FFCC");
           series.selectFill("#879CED");
 
-          // set the color for the text of the labels
+          // set the text color
           series.labels().fontColor('black');
           series.labels().fontSize(10);
 

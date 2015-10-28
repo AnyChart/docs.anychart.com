@@ -19,9 +19,9 @@ An example of proportional circles is shown below.
 
 {sample}Maps\_Proportional\_Symbol\_01{sample}
 
-The Bubble series in Maps is quite similar to the Basic Bubble series. The only difference about it is defining the center of each circle. While we can do it only one way in [Cartesian/Scatter](../Basic_Charts_Types/Bubble_Chart) - with the usage of necessary "x" and "value" fields and "size" for the bubbles' sizes, - in maps there are two options about doing that. We will consider them in this article.
+<!-- The Bubble series in Maps is quite similar to the Basic Bubble series. The only difference about it is defining the center of each circle. While we can do it only one way in [Cartesian/Scatter](../Basic_Charts_Types/Bubble_Chart) - with the usage of necessary "x" and "value" fields and "size" for the bubbles' sizes, - in maps there are two options about doing that. We will consider them in this article. -->
 
-All other bubbles configuration can be accomplished the way described in [Bubble Chart Tutorial](../Basic_Charts_Types/Bubble_Chart).
+The Bubble series in Maps is quite similar to the Basic Bubble series. You can read about managing usual Bubble Charts in the [Bubble Chart tutorial](../Basic_Charts_Types/Bubble_Chart), and here we will consider some important moments about using Bubbles with maps.
 
 ## Creating Bubbles
 
@@ -38,7 +38,7 @@ Bubble series is being created the same as other series on a map. First, we shou
 	var series = map.bubble(dataSet);
 ```
 
-What about setting the data, there are two ways of defining it properly. Let's look at them.
+There are two ways of defining the data properly. Let's look at them.
 
 <!--  ### Data
 
@@ -131,13 +131,13 @@ series.geoIdField("code_hasc");
 
 <!-- Apart from positioning the bubbles, which can be done through the data, altering the series look is the same as in [basic Bubble Charts](../Basic_Charts_Types/Bubble_Chart#colors). -->
 
-Altering the series look is actually the same as in [basic Bubble Charts](../Basic_Charts_Types/Bubble_Chart#colors). We can easily do it here. Let's look through a couple of samples.
+Altering the series look is the same as in [basic Bubble Charts](../Basic_Charts_Types/Bubble_Chart#colors). We can easily do it here. Let's look through a couple of samples.
 
 ### Series colors
 
-To color all bubbles in a series we use the {api:anychart.core.scatter.series.Bubble#fill}**.fill()**{api} method; to color the hovered bubbles there is a {api:anychart.core.scatter.series.Bubble#hoverFill}**.hoverFill()**{api} function; for selected bubbles we've got {api:anychart.core.scatter.series.Bubble#selectFill}**.selectFill()**{api}. For coloring the stroke we've got {api:anychart.core.scatter.series.Bubble#stroke}**.stroke()**{api}, {api:anychart.core.scatter.series.Bubble#hoverStroke}**.hoverStroke()**{api} and {api:anychart.core.scatter.series.Bubble#selectStroke}**.selectStroke()**{api} accordingly. If 
+To color all bubbles in a series we use the {api:anychart.core.scatter.series.Bubble#fill}**.fill()**{api} method; to color the hovered bubbles there is a {api:anychart.core.scatter.series.Bubble#hoverFill}**.hoverFill()**{api} function; for selected bubbles we've got {api:anychart.core.scatter.series.Bubble#selectFill}**.selectFill()**{api}. For coloring the stroke we've got {api:anychart.core.scatter.series.Bubble#stroke}**.stroke()**{api}, {api:anychart.core.scatter.series.Bubble#hoverStroke}**.hoverStroke()**{api} and {api:anychart.core.scatter.series.Bubble#selectStroke}**.selectStroke()**{api} accordingly. 
 
-Let's make a sample of what's written above.
+Let's create a sample using things we've learned.
 
 ```
 	// change the fill and hoverFill colors
@@ -155,7 +155,7 @@ Let's make a sample of what's written above.
 
 {sample}Maps\_Proportional\_Symbol\_05{sample}
 
-Also, we can make a monochromatic map using hatch fills. We use {api:anychart.core.scatter.series.Bubble#hatchFill}**.hatchFill**{api} for hatching the whole series, {api:anychart.core.scatter.series.Bubble#hoverHatchFill}**.hoverHatchFill**{api} for hatching the hovered series and {api:anychart.core.scatter.series.Bubble#selectHatchFill}**.selectHatchFill**{api} to make the selected elements hatched.
+Also, we can make a monochromatic map using hatch fills. We use {api:anychart.core.scatter.series.Bubble#hatchFill}**.hatchFill**{api} to add a hatch filling to the whole series, {api:anychart.core.scatter.series.Bubble#hoverHatchFill}**.hoverHatchFill**{api} to add hatch to series in hovered state and {api:anychart.core.scatter.series.Bubble#selectHatchFill}**.selectHatchFill**{api} to make the selected elements hatched.
 
 
 ```
@@ -169,7 +169,7 @@ Also, we can make a monochromatic map using hatch fills. We use {api:anychart.co
 
 {sample}Maps\_Proportional\_Symbol\_06{sample}
 
-Note that we should get rid of the main filling color, unless we want the hatch over the color.
+Note that we should get rid of the main filling color, unless we want the hatch being added over the color.
 
 As usual, we can define the colors through the dataSet, especially if we need different color settings for some of our bubbles.
 
@@ -216,12 +216,12 @@ You can set the size in percent as well:
 
 ### Labels and Tooltips
 
-You can also alter the labels' and tooltips' appearance. Use standard methods such as {api:anychart.core.ui.Label#fontColor}**.fontColor()**{api} for labels, format tooltips using .textFormatter() function. You can find everything about it in the [Labels](../Common_Settings/Labels) and [Tooltips](../Common_Settings/Tooltip) tutorial.
+You can also alter the labels' and tooltips' appearance. Use standard methods such as {api:anychart.core.ui.Label#fontColor}**.fontColor()**{api} for labels, format tooltips using {api:anychart.core.ui.Tooltip#textFormatter}**.textFormatter()**{api} function. You can find everything about this in the [Labels](../Common_Settings/Labels) and [Tooltips](../Common_Settings/Tooltip) tutorial.
 
-Let's now consider a couple of samples with labels and/or tooltips. First, let's change the font color with {api:anychart.ui.Label#fontColor}**.fontColor()**{api}, change their size and format them a bit with the usage of {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} function.
+Let's now consider a couple of samples with labels and/or tooltips. First, let's change the font color with {api:anychart.ui.Label#fontColor}**.fontColor()**{api}, change their size and format them a bit using {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} function.
 
 ```
-    // set the color for the text of the labels
+    // set the text color 
     series.labels().fontColor('black');
     series.labels().fontSize(10);
 
@@ -234,9 +234,9 @@ Let's now consider a couple of samples with labels and/or tooltips. First, let's
 
 {sample}Maps\_Proportional\_Symbol\_10{sample}
 
-Find more about Text Formatters [here](../Common_Settings/Text_Formatters).
+Find out more about Text Formatters [here](../Common_Settings/Text_Formatters).
 
-Labels are always enabled by default, but if you have switched them off and then need to have them back, use the {api:anychart.ui.Label#fontColor}**.enable()**{api} method as usual.
+Labels are enabled by default, they can be turned on and off using the {api:anychart.ui.Label#fontColor}**.enable()**{api} method as usual.
 
 
 {sample}Maps\_Proportional\_Symbol\_11{sample}
