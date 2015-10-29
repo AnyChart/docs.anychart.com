@@ -13,7 +13,7 @@ Proportional Symbol Map
 
 ## Overview
 
-As the name implies, symbols (circles), representing the values, are drawn of the proportional size to the size of the value being represented. The size of the bubbles (proportional symbols in maps) is not dependent on the size of the region associated with the variable. For example, if we show the value of unemployment on a proportional symbol map of the UK, Clackmannanshire would have the bigger visual importance then Highland if their unemployment values were so (e.g. 3.5% in Clackmannanshire, 1% in Highland).
+As the name implies, symbols (circles), representing the values, are drawn of the proportional size to the size of the value being represented. The size of the bubbles (proportional symbols in maps) is not dependent on the size of the region associated with the variable. For example, if we show the value of unemployment on a proportional symbol map of the UK, Dundee would have the bigger visual importance then Highland if their unemployment values were so (e.g. 3.5% in Dundee, 1% in Highland).
 
 An example of proportional circles is shown below.
 
@@ -21,7 +21,7 @@ An example of proportional circles is shown below.
 
 <!-- The Bubble series in Maps is quite similar to the Basic Bubble series. The only difference about it is defining the center of each circle. While we can do it only one way in [Cartesian/Scatter](../Basic_Charts_Types/Bubble_Chart) - with the usage of necessary "x" and "value" fields and "size" for the bubbles' sizes, - in maps there are two options about doing that. We will consider them in this article. -->
 
-The Bubble series in Maps is quite similar to the Basic Bubble series. You can read about managing usual Bubble Charts in the [Bubble Chart tutorial](../Basic_Charts_Types/Bubble_Chart), and here we will consider some important moments about using Bubbles with maps.
+The Bubble series in Maps is quite similar to the Basic Bubble series. You can read about Bubble Charts in the [Bubble Chart tutorial](../Basic_Charts_Types/Bubble_Chart),  and in this article we will consider significant issues of Bubble charts used with maps.
 
 ## Creating Bubbles
 
@@ -155,7 +155,7 @@ Let's create a sample using things we've learned.
 
 {sample}Maps\_Proportional\_Symbol\_05{sample}
 
-Also, we can make a monochromatic map using hatch fills. We use {api:anychart.core.scatter.series.Bubble#hatchFill}**.hatchFill**{api} to add a hatch filling to the whole series, {api:anychart.core.scatter.series.Bubble#hoverHatchFill}**.hoverHatchFill**{api} to add hatch to series in hovered state and {api:anychart.core.scatter.series.Bubble#selectHatchFill}**.selectHatchFill**{api} to make the selected elements hatched.
+Also, we can make a monochromatic map using hatch fills. We use {api:anychart.core.scatter.series.Bubble#hatchFill}**.hatchFill**{api} to add a hatch pattern to the whole series, {api:anychart.core.scatter.series.Bubble#hoverHatchFill}**.hoverHatchFill**{api} to add hatch to series in hovered state and {api:anychart.core.scatter.series.Bubble#selectHatchFill}**.selectHatchFill**{api} to make the selected elements hatched.
 
 
 ```
@@ -265,27 +265,27 @@ var dataSet = anychart.data.set([
 
 {sample}Maps\_Proportional\_Symbol\_12{sample}
 
-We can create a multi-bubble-series map as well:
+We can create a map with several bubble series as well:
 
 ```
-// create the data
-var dataSet = anychart.data.set([
-              ['AU.NS', 3.5, 8.5],
-              ['AU.NT', 7.1, 12],
-              ['AU.WA', 10.4, 2.9],
-              ['AU.SA', 4.7, 28.2],
-              ['AU.VI', 7.9, 19.4],
-              ['AU.QL', 8, 3.7],
-              ['AU.TS', 3.2, 7.3]
-          ]);
+  // create the data
+  var dataSet = anychart.data.set([
+      ['AU.NS', 3.5, 8.5],
+      ['AU.NT', 7.1, 12],
+      ['AU.WA', 10.4, 2.9],
+      ['AU.SA', 4.7, 28.2],
+      ['AU.VI', 7.9, 19.4],
+      ['AU.QL', 8, 3.7],
+      ['AU.TS', 3.2, 7.3]
+  ]);
 
-// mapping the data
-var series1Data = dataSet.mapAs({id:[0], size:[1]});
-var series2Data = dataSet.mapAs({id:[0], size:[2]});
+  // mapping the data
+  var series1Data = dataSet.mapAs({id:[0], size:[1]});
+  var series2Data = dataSet.mapAs({id:[0], size:[2]});
 
-//set series geoId field settings
-          series_1.geoIdField("code_hasc");
-          series_2.geoIdField("code_hasc");
+  //set series geoId field settings
+  series_1.geoIdField("code_hasc");
+  series_2.geoIdField("code_hasc");
 
 ```
 

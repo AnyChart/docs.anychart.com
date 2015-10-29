@@ -7,39 +7,42 @@
   <script src="../anychart-bundle.min.js"></script>
   <script src="//cdn.anychart.com/geodata/1.0.0/countries/australia/australia.js" data-export="true"></script>
   <script x-export="chart">
-  anychart.onDocumentReady(function() {
+      anychart.onDocumentReady(function() {
 
-// create data set
-var dataSet = anychart.data.set([
-    {'id': 'AU.NS', 'size': 7565500},
-    {'id': 'AU.NT', 'size': 243700},
-    {'id': 'AU.WA', 'size': 2565600},
-    {'id': 'AU.SA', 'size': 1682600},
-    {'id': 'AU.VI', 'size': 5866300},
-    {'id': 'AU.QL', 'size': 4750500},
-    {'id': 'AU.TS', 'size': 514700}
-]);
+    // create data set
+    var dataSet = anychart.data.set([
+        {'id': 'AU.NS', 'size': 7565500},
+        {'id': 'AU.NT', 'size': 243700},
+        {'id': 'AU.WA', 'size': 2565600},
+        {'id': 'AU.SA', 'size': 1682600},
+        {'id': 'AU.VI', 'size': 5866300},
+        {'id': 'AU.QL', 'size': 4750500},
+        {'id': 'AU.TS', 'size': 514700}
+    ]);
 
-// create map chart
-map = anychart.map();
+    // create map chart
+    map = anychart.map();
 
-// set geodata using http://cdn.anychart.com/geodata/1.0.0/countries/australia/australia.js
-map.geoData(anychart.maps.australia);
+    // set geodata using http://cdn.anychart.com/geodata/1.0.0/countries/australia/australia.js
+    map.geoData(anychart.maps.australia);
 
-//create bubble series
-var series = map.bubble(dataSet);
+    //create bubble series
+    var series = map.bubble(dataSet);
 
-  // change the fill and hoverFill colors
-  series.fill("#EBD670");
-  series.hoverFill("#C7FF99");
+      // changes the fill and hoverFill colors
+      series.fill("#90caf9");
+      series.hoverFill("#b3e5fc");
+      series.labels().fontColor("#0277bd");
+      series.hoverLabels().fontColor("#01579b");
 
-  // change the stroke and hoverStroke colors
-  series.stroke("#C7FF99");
-  series.hoverStroke("#EBD670");
+      // changes the stroke and hoverStroke colors
+      series.stroke("#64b5f6");
+      series.hoverStroke("#81d4fa");
 
-  // set the select colors
-  series.selectStroke("#66FFCC");
-  series.selectFill("#879CED");
+      // sets the select colors
+      series.selectStroke("#546e7a");
+      series.selectFill("#78909c");
+      series.selectLabels().fontColor("#263238");
 
 //set series geo id field settings
 series.geoIdField("code_hasc");

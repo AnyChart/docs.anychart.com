@@ -29,23 +29,26 @@
 //create bubble series
           var series = map.bubble(dataSet);
 
-          // change the fill and hoverFill colors
-          series.fill("#EBD670");
-          series.hoverFill("#C7FF99");
+          // changes the fill and hoverFill colors
+          series.fill("#90caf9");
+          series.hoverFill("#b3e5fc");
+          series.labels().fontColor("#0277bd");
+          series.hoverLabels().fontColor("#01579b");
 
-          // change the stroke and hoverStroke colors
-          series.stroke("#C7FF99");
-          series.hoverStroke("#EBD670");
+          // changes the stroke and hoverStroke colors
+          series.stroke("#64b5f6");
+          series.hoverStroke("#81d4fa");
+
+          // sets the select colors
+          series.selectStroke("#546e7a");
+          series.selectFill("#78909c");
+          series.selectLabels().fontColor("#263238");
 
           // set the maximum size of the bubble
           map.maxBubbleSize('20%');
 
           // set the minimum size of the bubble
           map.minBubbleSize('1%');
-
-          // set the select colors
-          series.selectStroke("#66FFCC");
-          series.selectFill("#879CED");
 
 //set series geo id field settings
           series.geoIdField("code_hasc");

@@ -66,6 +66,15 @@
           series_1.labels().fontSize(10);
           series_2.labels(false);
 
+          // tooltip formatting
+          series_1.tooltip().textFormatter(function(){
+              return ("Employed international workers: "+this.size+ "%");
+          });
+
+          series_2.tooltip().textFormatter(function(){
+              return ("Unemployed local workers: "+this.value+ "%");
+          });
+
           // set the colors and ranges for the scale
           series_2.colorScale(anychart.scales.linearColor());
 

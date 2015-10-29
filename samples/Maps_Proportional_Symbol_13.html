@@ -104,6 +104,15 @@
           series_2.selectStroke("#3675BD");
           series_2.selectFill("#734CE6");
 
+          // tooltip formatting
+          series_1.tooltip().textFormatter(function(){
+              return ("Employed international workers: "+this.size+ "%");
+          });
+
+          series_2.tooltip().textFormatter(function(){
+              return ("Unemployed local workers: "+this.size+ "%");
+          });
+
           // set geo data, you can find this map in our geo maps collection
           // http://cdn.anychart.com/#maps-collection
           map.geoData(anychart.maps['united_kingdom']);
