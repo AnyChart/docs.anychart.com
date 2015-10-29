@@ -15,7 +15,6 @@ In this article we will look at the "editing mode" of AnyGantt.
 
 
 # Defaults
-
 ## Controls
 
 There are several pointer cursors you will see while working with AnyGantt. They are used to edit intervals and Gantt charts' data tree structure, and those changes are displayed by the Gantt diagram.
@@ -38,7 +37,7 @@ All controls' appearance can be edited by using special methods, which are descr
 <td>Connectors creating</td>
 <td>Position the pointer over the connector thumb of an interval or a milestone, press the button and move the mouse. If you haven't pointed the interval you want to connect with, there is a preview line drawn to help the user not to get lost; the timeline and data grid both will be scrolled while dragging the connector line inside the scale total range. If you hover the bar you want to connect with, there's a final connector preview shows up: depending on where we hovered the bar (left or right part), the connector will stick to the appropriate side. Release the mouse button. If you hover the interval bar and watch the final connector preview, there will be the "beforeCreateConnector" event dispatched by the Gantt diagram (or by its timeline, if it was created in the standalone mode) unless it was prevented. Then, if you release the mouse, the connector will be created and the intervals will become logically connected. If the "beforeCreateConnector" event was prevented, no connector will be created.
 <br>
-You can find more about events [here](../Common_Settings/Event_Listeners.md).
+You can find more about events [here](../Common_Settings/Event_Listeners).
 </td>
 <td>One interval becomes connected to another and we see the connector.</td>
 <td>

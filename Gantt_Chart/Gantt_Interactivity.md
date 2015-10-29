@@ -29,9 +29,9 @@ External environment can call AnyGantt Functions to load data to the gantt chart
 
 As in the basic charts, Gantt tooltips are designed to show the main information about the item in short. However, Gantt tooltips are special because of the Gantt diagrams itself. Simple charts' tooltips usually show the name of the item and its value (if it exists), but in Gantts, the basic tooltip, besides the name of the item (which is usually also written in the Data Grid section), will show the start and end date/time and the duration of the hovered item (process). Note that there is a difference between Project Gantts and Resource Gantts tooltips: 
 
-{sample}GANTT\_Interactivity\_01{sample}
+{sample :width 690 :height 300 }GANTT\_Interactivity\_01{sample}
 
-{sample}GANTT\_Interactivity\_02{sample}
+{sample :width 690 :height 300 }GANTT\_Interactivity\_02{sample}
 
 As you can notice, the Resource Gantt tooltips show the main duration of the process when this process name is hovered in Data Grid, and the duration of a some piece of process when this particular piece is hovered in the Timeline part. In the project Gantt Chart tooltips don't change.
 
@@ -53,7 +53,7 @@ When selected, the whole row and the items get filled with default selecting col
 
 When you need a tooltip that will show more or less than it does by default, you always can use the textFormatter method to change the information shown. Look at the following sample and pay your attention at the tooltip behaviour.
 
-{sample}GANTT\_Interactivity\_04{sample}
+{sample :width 690 :height 300 }GANTT\_Interactivity\_04{sample}
 
 As you can see, tooltips of this gantt are the same in both datagrid and timeline parts. We have only changed the timeline part tooltip using simple {api:anychart.core.ui.Tooltip#anchor}**.contentFormatter()**{api} method:
 
@@ -72,10 +72,13 @@ You can find more about text formatters [here](../../Common_Settings/Text_Format
 
 All default colors might be changed according to your needs and preferences. By default, there is the one hovering color for both timeline and datagrid parts. 
 You can change them using {api:anychart.core.gantt.Timeline#rowHoverFill}**.getTimeline().rowHoverFill()**{api} and {api:anychart.core.ui.DataGrid#rowHoverFill}**.dataGrid().rowHoverFill()**{api} accordingly:
- - chart.dataGrid().rowHoverFill('red')
- - chart.getTimeline().rowHoverFill('green')
 
-{sample}GANTT\_Interactivity\_05{sample}
+```
+  chart.dataGrid().rowHoverFill('red')
+  chart.getTimeline().rowHoverFill('green')
+```
+
+{sample :width 690 :height 300 }GANTT\_Interactivity\_05{sample}
 <a name="altering_select"></a>
 ## Select
 
@@ -83,7 +86,7 @@ There are some default colors that might not fit your needs or the color scheme,
 For changing the selected item color use {api:anychart.core.gantt.Timeline#selectedElementFill}**.getTimeline().selectedElementFill()**{api} method and for the selected row there is a {api:anychart.charts.Gantt#rowSelectedFill}**.rowSelectedFill()**{api} method. 
 In the following sample we have changed the default selecting color using those methods.
 
-{sample}GANTT\_Interactivity\_06{sample}
+{sample :width 690 :height 300 }GANTT\_Interactivity\_06{sample}
 
 
 ## DataGrid and Timeline adjusting
@@ -100,14 +103,14 @@ You can listen to some events happening on a chart to collect some data and make
     });
 ```
 
-{sample}GANTT\_Interactivity\_07{sample}
+{sample :width 690 :height 300 }GANTT\_Interactivity\_07{sample}
 
 You may use listeners for adjusting the gantt view or editing the data as well. There's a lot of information about Event Listeners you can find in [this](../../Common_Settings/Event_Listeners) article.
 
 # Editing mode
 
-Our Gantts are so interactive that provide the opportunity to edit them in "live" mode, without even touching the code. All you need to do is to press the "Editing" button and start working on it. It's possible to edit connectors, duration length and start/end time.
+Our Gantts are so interactive that provide the opportunity to edit them in "live" mode, without even touching the code. All you need to do is to press the "Enable Live Edit" button on the chart toolbar and start working on Gantt chart. It's possible to edit connectors, duration length and start/end time.
 
-{sample}GANTT\_Interactivity\_08{sample}
+{sample :width 690 :height 300 }GANTT\_Interactivity\_08{sample}
 
 Find more about editing mode in Gantts [here](Live_Edit_UI_and_API).
