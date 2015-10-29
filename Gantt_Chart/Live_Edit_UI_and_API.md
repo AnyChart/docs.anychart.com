@@ -11,7 +11,7 @@
 # Overview
 The Live Edit mode allows you to edit any part of your Gantt chart without touching the code. All you need to do is to use the mouse to change the duration, position or connections.
 
-In this article we will consider the "editing mode" of AnyGantt.
+In this article we will look at the "editing mode" of AnyGantt.
 
 
 # Defaults
@@ -251,7 +251,7 @@ Then, our parental items can be expanded and collapsed. Just click once on the "
 
 ## Timeline
 
-### Stretch the length
+### Change the duration
 
 You can change the duration of the interval, its start and end time. Hover right or left thumbs, watch if the control is of this <img> type and drag it. 
 
