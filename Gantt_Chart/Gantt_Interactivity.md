@@ -53,7 +53,7 @@ When selected, the whole row and the items get filled with default selecting col
 
 When you need a tooltip that will show more or less than it does by default, you always can use the textFormatter method to change the information shown. Look at the following sample and pay your attention at the tooltip behaviour.
 
-{sample}GANTT\_Interactivity\_04{sample}
+{sample :width 690 :height 300 }GANTT\_Interactivity\_04{sample}
 
 As you can see, tooltips of this gantt are the same in both datagrid and timeline parts. We have only changed the timeline part tooltip using simple {api:anychart.core.ui.Tooltip#anchor}**.contentFormatter()**{api} method:
 
@@ -75,7 +75,7 @@ You can change them using {api:anychart.core.gantt.Timeline#rowHoverFill}**.getT
  - chart.dataGrid().rowHoverFill('red')
  - chart.getTimeline().rowHoverFill('green')
 
-{sample}GANTT\_Interactivity\_05{sample}
+{sample :width 690 :height 300 }GANTT\_Interactivity\_05{sample}
 <a name="altering_select"></a>
 ## Select
 
@@ -83,7 +83,7 @@ There are some default colors that might not fit your needs or the color scheme,
 For changing the selected item color use {api:anychart.core.gantt.Timeline#selectedElementFill}**.getTimeline().selectedElementFill()**{api} method and for the selected row there is a {api:anychart.charts.Gantt#rowSelectedFill}**.rowSelectedFill()**{api} method. 
 In the following sample we have changed the default selecting color using those methods.
 
-{sample}GANTT\_Interactivity\_06{sample}
+{sample :width 690 :height 300 }GANTT\_Interactivity\_06{sample}
 
 
 ## DataGrid and Timeline adjusting
@@ -100,7 +100,7 @@ You can listen to some events happening on a chart to collect some data and make
     });
 ```
 
-{sample}GANTT\_Interactivity\_07{sample}
+{sample :width 690 :height 300 }GANTT\_Interactivity\_07{sample}
 
 You may use listeners for adjusting the gantt view or editing the data as well. There's a lot of information about Event Listeners you can find in [this](../../Common_Settings/Event_Listeners) article.
 
