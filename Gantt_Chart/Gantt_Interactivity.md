@@ -72,8 +72,11 @@ You can find more about text formatters [here](../../Common_Settings/Text_Format
 
 All default colors might be changed according to your needs and preferences. By default, there is the one hovering color for both timeline and datagrid parts. 
 You can change them using {api:anychart.core.gantt.Timeline#rowHoverFill}**.getTimeline().rowHoverFill()**{api} and {api:anychart.core.ui.DataGrid#rowHoverFill}**.dataGrid().rowHoverFill()**{api} accordingly:
- - chart.dataGrid().rowHoverFill('red')
- - chart.getTimeline().rowHoverFill('green')
+
+```
+  chart.dataGrid().rowHoverFill('red')
+  chart.getTimeline().rowHoverFill('green')
+```
 
 {sample :width 690 :height 300 }GANTT\_Interactivity\_05{sample}
 <a name="altering_select"></a>
