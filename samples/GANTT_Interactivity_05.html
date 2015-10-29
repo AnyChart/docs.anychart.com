@@ -10,7 +10,7 @@
     var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 
     // create resource gantt chart
-    chart = anychart.ganttResource();
+    var chart = anychart.ganttResource();
 
     // set container id for the chart
     chart.container('container');
@@ -23,6 +23,11 @@
     chart.dataGrid().rowEvenFill('#fff');
     chart.getTimeline().rowOddFill('#fff');
     chart.getTimeline().rowEvenFill('#fff');
+
+
+    // adjust default rows color on mouse over
+    chart.dataGrid().rowHoverFill('#DEFFE3');
+    chart.getTimeline().rowHoverFill('#DEFFE3');
 
     // set start splitter position settings
     chart.splitterPosition(150);
