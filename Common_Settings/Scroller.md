@@ -8,15 +8,14 @@
  * [Thumbs](#thumbs)
 * [Get|set methods](#get|set_methods)
  * [Scroll](#scroll)
- * [Zoom](#zoom)
+ * [Zoom](#zoom) 
+* [Events](#events)
 
 ## Overview
 
 Sometimes we've got so much data that we cannot display it all, keeping it comfortable for understanding. In this case we can enable the scroller for the chart axes.
 
 All X / Y Axes based charts (Bar, Line, Area, Candlestick, OHLC, Combinations, etc.) can have Axes with scroll bar. 
-
-Note that Logarithmic Axes are not scrollable.
 
 ## Enable
 
@@ -56,7 +55,7 @@ The simplest way of limiting the show area is using the ratio. We have the {api:
 
 #### Set the limits by values
 
-Another option is to define the particular values which exist on the scale. In this case you'll have to set the scale as the third parameter, unless you do it, the chart.xScale() will be counted as this scale automatically. So, if we'd like to zoom the chart to the area from Part 1 to Part 4 by Y-axis, we should use the {api:anychart.charts.Cartesian.XZoom#setToValue}**.setToValue()**{api} method and write the following:
+Another option is to define the particular values which exist on the scale. In this case you have to set the scale as the third parameter, unless you do this, the default xScale is used. So, if we'd like to zoom the chart to the area from Part 1 to Part 4 by Y-axis, we should use the {api:anychart.charts.Cartesian.XZoom#setToValue}**.setToValue()**{api} method and write the following:
 
 ```
 	// set the yZoom
@@ -68,7 +67,7 @@ Another option is to define the particular values which exist on the scale. In t
 
 {sample}CS\_Scroller\_03{sample}
 
-Note that it's only Heatmaps which can be scrolled or zoomed by Y-scale.
+Note that it's only Heat maps which can be scrolled or zoomed by Y-scale.
 
 #### Set the limits by the points count
 
@@ -112,7 +111,7 @@ You can also get the limiting points ratio using {api:anychart.charts.Cartesian.
 	// Zooms series by defined points count
 	xZoom.setToPointsCount(5);
 
-	// prevent the scrolling while the button is not released yet
+	// get the limits ratio
     chart.title("The chart shows the part from " + xZoom.getStartRatio() + " and ends at " + xZoom.getEndRatio());
 ```
 
@@ -142,7 +141,7 @@ With the {api:anychart.core.ui.Scroller#orientation}**.orientation()**{api} meth
 
 #### Position
 
-This works when our scroll bar is next to any axes. Scroller can be displayed in "afterAxes" or "beforeAxes" positions. The afterAxes position is set by default.
+Scroller can be displayed in "afterAxes" or "beforeAxes" positions. The afterAxes position is set by default.
 
 ```	
     // change the scroller orientation
@@ -233,3 +232,25 @@ The scroll bar thumbs can be adjusted too. We can change its look, dimensions or
 
 Open any sample in our playground and try to use other methods to see and understand how they work.
 
+
+## Events
+
+As the scroller is an interactive object, which changing affects the view of the chart, it dispatches some events. You can find a lot of information about event listeners in the [Event Listeners tutorial](Event_Listeners).
+
+There are three events, which our scroller can dispatch due to changes made on it: **scrollerchange**, **scrollerchangestart**, and **scrollerchangefinish**. These events are dispatched when we drag the scrollbar itself or its limits, making it show us more or less of the chart. All of them provide information about the source of changes (thumbDrag, selectedRangeDrag or backgroundClick), the startRatio and endRatio values, which then can be somehow used. Let's show this in a sample.
+
+Here we created a listener of the **scrollerchangefinish** event. The values it returns then are shown in the chart title.
+
+
+```
+// adding a listener
+        scroller.listen("scrollerchangefinish", function(e){
+            var startRatio = e.startRatio;
+            var endRatio = e.endRatio;
+            // change the chart title
+            chart.title("The chart shows the part from " + startRatio + " and ends " + endRatio);
+        });
+    
+```
+
+{sample}CS\_Scroller\_14{sample}

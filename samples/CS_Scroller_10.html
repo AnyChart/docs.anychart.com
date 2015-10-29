@@ -6,7 +6,9 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-    var chart = anychart.bar([
+    var chart = anychart.bar();
+
+        var dataSet = anychart.data.set([
         ["Facebook", 9245],
         ["Live", 7345],
         ["MSN", 10522],
@@ -29,6 +31,11 @@
         ["BBC", 5046],
         ["NicoVideo", 6822]
         ]);
+
+        //create series
+        var series = chart.column(dataSet);
+
+        series.name("Unique visitors");
 
     chart.xAxis().title("Sites");
     chart.yAxis().title("Users");

@@ -6,7 +6,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-    var chart = anychart.bar();
+    var chart = anychart.line();
 
         var dataSet = anychart.data.set([
         ["00:00", 10],
@@ -36,26 +36,35 @@
         ]);
 
         //create series
-        var series = chart.column(dataSet);
+        var series = chart.line(dataSet);
 
         series.name("Total support requests");
 
-    chart.xAxis().title("Hours");
-    chart.yAxis().title("Support requests");
-    chart.title("Amount of support requests in hours");
-    var xScale = chart.xScale();
-    xScale.inverted(false);
+        chart.xAxis().title("Hours");
+        chart.yAxis().title("Support requests");
+        chart.title("Amount of support requests in hours");
 
-    var xZoom = chart.xZoom();
+        // enable the scroller
+        var scroller = chart.xScroller(true);
 
-    // Zooms series by defined points count.
-    xZoom.setToPointsCount(5);
+        var xZoom = chart.xZoom();
 
-    // enable the scroller
-    chart.xScroller(true);
+        // Zooms series by defined points count.
+        xZoom.setToPointsCount(6);
 
-    // change the scroller orientation
-    chart.xScroller().orientation("right");
+        var startRatio = xZoom.getStartRatio();
+        var endRatio = xZoom.getEndRatio();
+
+        // get the limits ratio
+        chart.title("The chart shows the part from " + startRatio + " and ends " + endRatio);
+
+        // adding a listener
+        scroller.listen("scrollerchangefinish", function(e){
+            var startRatio = e.startRatio;
+            var endRatio = e.endRatio;
+            // change the chart title
+            chart.title("The chart shows the part from " + startRatio + " and ends " + endRatio);
+        });
 
     chart.container("container");
     chart.draw();
