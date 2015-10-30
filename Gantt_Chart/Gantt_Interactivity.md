@@ -74,8 +74,8 @@ All default colors might be changed according to your needs and preferences. By 
 You can change them using {api:anychart.core.gantt.Timeline#rowHoverFill}**.getTimeline().rowHoverFill()**{api} and {api:anychart.core.ui.DataGrid#rowHoverFill}**.dataGrid().rowHoverFill()**{api} accordingly:
 
 ```
-  chart.dataGrid().rowHoverFill('red')
-  chart.getTimeline().rowHoverFill('green')
+  chart.dataGrid().rowHoverFill('#DEFFE3')
+  chart.getTimeline().rowHoverFill('#DEFFE3')
 ```
 
 {sample :width 690 :height 300 }GANTT\_Interactivity\_05{sample}
