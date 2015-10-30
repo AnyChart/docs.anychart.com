@@ -71,7 +71,7 @@ Note that it's only Heat maps which can be scrolled or zoomed by Y-scale.
 
 #### Set the limits by the points count
 
-The third option is to set limits is to set the number of points from the beginning or end of the scale. We set the number of points, the second boolean parameter defines if the points should be counted from the end of the scale and the third parameter is the scale. The point will be counted from start by default, if you need them to be counted from end, set "true" as se second value. Let's consider this feature in the next sample, showing us the information about new Internet users in the Initech company.
+The third way of setting the limits is to set the number of points from the beginning or end of the scale. We set the number of points, the second boolean parameter defines if the points should be counted from the end of the scale and the third parameter is the scale. The point will be counted from start by default, if you need them to be counted from end, set "true" as se second value. Let's consider this feature in the next sample, showing us the information about new Internet users in the Initech company.
 
 ```
 	// set the xZoom
