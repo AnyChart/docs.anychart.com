@@ -162,7 +162,7 @@ chart.title().listen("mouseOut", function(){
 <a name=”series_select”> </a>
 ### Select 
 
-There might be some points which you'd like to be selected by default or adjust the selecting feature according to your needs. The method {api}**.select()**{api} works here (similar to {api:anychart.core.SeriesBase#hover}**.hover()**{api}).
+There might be some points which you'd like to be selected by default or adjust the selecting feature according to your needs. The method {api:anychart.core.SeriesBase#select}**.select()**{api} works here (similar to {api:anychart.core.SeriesBase#hover}**.hover()**{api}).
 
 ```
 	// making series_1 and some points of series_2 selected
