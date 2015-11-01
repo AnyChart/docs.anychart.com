@@ -54,7 +54,7 @@
     });
 
     chart.listen("pointMouseOver", function(e) {
-        tooltip.css({"width": "100px", "display": "block", "background": "#fff", "padding": "4px", "border": "dashed red 2px"});
+        tooltip.css({"width": "100px", "display": "block", "background": "#fff", "padding": "4px", "border": "solid black 2px"});
         var ind = e.pointIndex;
         tooltip.html( data.row(ind)[0]+" has eaten "+ data.row(ind)[1] + " pieces of pizza in total");
     });

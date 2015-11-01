@@ -1,5 +1,4 @@
 #Interactivity
-======================
 
 * [Overview](#overview)
 * [Default interactivity](#default_interactivity)
