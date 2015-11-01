@@ -11,8 +11,9 @@
 # Overview
 The Live Edit mode allows you to edit any part of your Gantt chart without touching the code. All you need to do is to use the mouse to change the duration, position or connections.
 
-In this article we will look at the "editing mode" of AnyGantt.
+In this article we will look at the "editing mode" of AnyGantt. In the following sample you can disable or enable editing mode and try to change whatever you like:
 
+{sample :width 690 :height 300 }GANTT\_Interactivity\_08{sample}
 
 # Defaults
 ## Controls
