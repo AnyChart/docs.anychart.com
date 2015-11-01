@@ -181,14 +181,14 @@ There are a lot of event types, which are separated to two categories: mouse-ori
 <tr>
 <td>draw</td>
 <td>target</td>
-<td>---</td>
-<td>---</td>
+<td>pointsHover</td>
+<td>All browser params + point params</td>
 </tr>
 <tr>
 <td>boundsChange</td>
 <td>target, x, y, width, height</td>
-<td>---</td>
-<td>---</td>
+<td>pointsSelect</td>
+<td>All browser params + point params + array of selected points</td>
 </tr>
 </tbody></table>
 

@@ -43,15 +43,15 @@
     chart.crosshair(true);
 
     // set chart title text settings
-    chart.title("The cost of ACME\'s shares vs Globex shares");
+    chart.title(false);
 
     // create first series with mapped data
     var series_1 = chart.column(seriesData_1);
-    series_1.name("ACME Share Price");
+    series_1.name("ACME Corp. Share Price");
 
     // create second series with mapped data
     var series_2 = chart.column(seriesData_2);
-    series_2.name("The Competitor\'s Share Price");
+    series_2.name("Sirius Cybernetics Corp. Share Price");
 
     // turn the legend on
     chart.legend().enabled(true).align("center").fontSize(13);

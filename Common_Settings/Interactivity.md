@@ -1,4 +1,4 @@
-Interactivity
+#Interactivity
 ======================
 
 * [Overview](#overview)
@@ -11,17 +11,18 @@ Interactivity
   * [Hover](#series_hover)
   * [Select](#series_select)
  * [Handling chart events](#handling_chart_events)
-  * [Navigating by URL](#navigating_by_url)
-  * [DrillDown](#drilldown)
- * [Creating Custom Tooltip](#creating_custom_tooltip)
- * [Interactivity Settings in Data Sets](#interactivity_settings_in_data_sets)
+  * [Navigating to URL](#interactivity_settings_in_data_sets)
+  * [DrillDown](#drilldown) 
+* [Creating Custom Tooltip](#creating_custom_tooltip)
+ * [Chart as Tooltip](#chart_as_tooltip)
+* [Interactivity Settings in Data Sets](#interactivity_settings_in_data_sets)
 
 
-# Overview 
+## Overview 
 
 Our js charts are interactive by default, and almost everything can be adjusted to your liking. This article describes the default charts behaviour and tells how to adjust charts' interactivity settings.
 
-# Default interactivity
+## Default interactivity
 
 That's what happens by default when users interact with charts:
  - series and points are highlighted when hovered
@@ -43,11 +44,11 @@ The following sample shows a scatter chart with marker series, you can hover and
 
 {sample}CS\_Interactivity\_02{sample}
 
-# Altering interactivity
+## Altering interactivity
 
 And now let's talk about customising the charts' behaviour. There are two levels of interactivity: charts behaviour in general and the series interactivity level.
 
-## Charts behaviour
+### Charts behaviour
 
 We can make some changes in charts behaviour using the {api:anychart.core.utils.Interactivity}**.interactivity()**{api} method. It helps to adjust hover and select settings, as well as create a "highlighting area" - a spot of a custom-defined radius that highlights (hovers) all points within that radius.
 
@@ -55,11 +56,11 @@ So, if we need to change something with hover, we should use {api:anychart.core.
 
 There are also two basic events: hover and select.
 
-### Hover
+#### Hover
 
 Our interactive hover might be of two types: "bySpot", which is a sort of multi-hovering, and "byX", which is the same as single-select. <a name = "bySpot"> </a>
 
-#### bySpot 
+##### bySpot 
 
 So the hover of bySpot type (with a Spot of 30px radius) is being enabled by the following line:
 
@@ -72,7 +73,7 @@ chart.interactivity().spotRadius(30);
 
 This way of hovering, when a couple of points are hovered simultaneously, is a multi-hover mode. Now let's look at the single-hovering mode ("byX").<a name="byX"></a>
 
-#### byX
+##### byX
 
 Note that you can define the mode in a easier way:
 ```
@@ -106,7 +107,7 @@ chart.interactivity().selectionMode('none');
 
 <a name="multiselect"></a>
 
-#### Multi-select
+##### Multi-select
 
 Multi-selection mode is enabled by default. However, if you have turned it off and then you need it back, use this:
 
@@ -119,7 +120,7 @@ chart.interactivity().selectionMode('multiSelect');
 
 <a name="singleselect"></a>
 
-#### Single-select
+##### Single-select
 
 And the last is single selection mode. As you could guess, the "singleSelect" is to be used in this case.
 
@@ -131,9 +132,9 @@ chart.interactivity().selectionMode('singleSelect');
 {sample}CS\_Interactivity\_07{sample} 
 
 
-## Series behaviour
+### Series behaviour
 <a name="series_hover"></a>
-### Hover 
+#### Hover 
 
 Usually, when you hover a point, it becomes highlighted. However, if you are creating a custom dashboard or a complex control elements, it might be necessary to highlight the points before you even drag a cursor over a chart. In this case use the {api:anychart.core.SeriesBase#hover}**.hover()**{api} method with a number of point (or array of numbers) that needs to be highlighted at the moment of loading.
 
@@ -142,16 +143,24 @@ If you provide no arguments to the {api:anychart.core.SeriesBase#hover}**.hover(
 Change the hovering mode in playground and see the difference.
 
 ```	
-	// setting some points for the series
-	series_1.hover([4, 6, 9, 12, 16, 19]);
-	series_2.hover([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);	
+	// setting some points hovered for the series
+	series_1.hover([4, 6, 12, 16]);
+    series_2.hover([0, 1, 5, 10, 11, 16, 17, 20]);	
+```
+
+If you need to unhover a number of points automatically in some case, use {api:anychart.core.SeriesBase#unhover}**.unhover()**{api} method. You can define the points you'd like to unhover or leave the method with no parameters - this will unhover all points of the series.
+
+```
+chart.title().listen("mouseOut", function(){
+        series_1.unhover();
+        series_2.unhover([0, 1, 5, 16, 17]);
+    });
 ```
 
 {sample}CS\_Interactivity\_08{sample} 
 
-
 <a name="series_select"> </a>
-### Select 
+#### Select 
 
 There might be some points which you'd like to be selected by default or adjust the selecting feature according to your needs. The method {api:anychart.core.SeriesBase#select}**.select()**{api} works here (similar to {api:anychart.core.SeriesBase#hover}**.hover()**{api}).
 
@@ -184,7 +193,7 @@ Let's change the selection settings for the box chart.
 
 {sample}CS\_Interactivity\_10{sample} 
 
-OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}, {api:anychart.core.cartesian.series.OHLC#selectRisingStroke}**.selectRisingStroke()**{api} or {api:anychart.core.cartesian.series.OHLC#hoverFallingStroke}**.hoverFallingStroke()**{api}. You can find more in {api:anychart.core.cartesian.series.OHLC}[API Reference]{api}.
+OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}, {api:anychart.core.cartesian.series.OHLC#selectrisingStroke}**.selectRisingStroke()**{api} or {api: anychart.core.cartesian.series.OHLC#hoverFallingStroke}**.hoverFallingStroke()**{api}. You can find more in {api:anychart.core.cartesian.series.OHLC}API Reference{api}.
 
 ```
 	// change the selected regions color to the dark violet from the default
@@ -200,8 +209,10 @@ OHLC charts have special settings such as {api:anychart.core.cartesian.series.OH
 
 If you want to disable the selection ability, use "none" as the {api:anychart.core.utils.Interactivity#selectionMode}**.selectionMode()**{api} argument.
 
+To unselect the points without preventing the selection ability use {api:anychart.core.SeriesBase#unselect}**.unselect()**{api} method. As well as in the situation with unhovering, you can define the points or set no parameters to the method. Try to use it in our playground.
 
-## Handling chart events
+
+### Handling chart events
 
 In some cases you might need a custom chart reaction on some user's actions which cannot be set simply using the methods described above. That's where listeners may help. 
 
@@ -209,7 +220,7 @@ You can add a listener to any chart element, forcing it to react in some way. Fo
 
 You can find more about listeners [here](../Common_Settings/Event_Listeners).
 
-### Navigating by URL
+#### Navigating by URL
 
 Let's look at the typical situation when we might need the listeners. We add a listener of double clicks to the series, which will navigate us to the pre-defined URL.
 
@@ -217,45 +228,33 @@ Let's look at the typical situation when we might need the listeners. We add a l
 
 Explore the code of this sample in the playground.
 
-### DrillDown
+#### DrillDown
 
 Using all these features, it's possible to create a drilldown chart. You can easily get points' data through the **.pointSelect()** method and show or hide them. Look at the following sample:
 
 {sample}CS\_Interactivity\_13{sample} 
 
-<!--
+
 ```
-chart.listen('pointSelect', function(evt){
+chart.listen("pointSelect", function(evt){
         var ind = evt.pointIndex;
-        switch (ind) {
-            case 0:
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[3]}); // Velmas pizza
-                pieSubTitle = "\nto eat Velma's pizza";
-                break;
-            case 1:
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[4]}); // Freds pizza
-                pieSubTitle = "\nto eat Fred's pizza";
-                break;
-            case 2:
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[5]}); // Daphnes pizza
-                pieSubTitle = "\nto eat Daphne's pizza";
-                break;
-            case 3:
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[6]}); // Shaggys pizza
-                pieSubTitle = "\nto eat Shaggy's pizza";
-                break;
-            case 4:
-                pieDataMapping = data.mapAs({x:[0], fill:[2], value:[7]}); // Scoobys sausages
-                pieSubTitle = "... No one shared Scooby's sausages :(";
-                break;
-        }
-        pie.data(pieDataMapping);
+
+        dataRow = data.row(ind);
+        pieDataSet.data([
+                {x: "John", value: dataRow[2]},
+                {x: "James", value: dataRow[3]},
+                {x: "Peter", value: dataRow[4]},
+                {x: "Mattew", value: dataRow[5]}
+        ]);
+        pieSubTitle = "\nYear: "+ dataRow[0];
+
+        pie.data(pieDataSet);
         pie.title(pieTitle + pieSubTitle);
     });
 ```
 
 
-Here we can see the column chart accompanied by a pie chart showing the amount of pizza slices, eaten by each member of Scoody-Doo group. The data to be shown depends on which column is selected. Note that this variant is possible only in case of singleSelect enabled (if multiSelect is switched on, it won't work).
+Here we can see the column chart showing sales amounts of ACME Corp. by year, accompanied by a line chart displaying monthly sales statistics. The data to be shown depends on which column is selected. Note that this variant is possible only in case of singleSelect enabled (if multiSelect is switched on, it won't work).
 
 If you need the similar drilldown chart with multi-selection, you may do the following:
 
@@ -264,28 +263,43 @@ If you need the similar drilldown chart with multi-selection, you may do the fol
 In this sample not the data but the series are added and removed depending on selections made:
 
 ```
-chart.listen('click', function (evt) {
-        var ind = evt.pointIndex;
-        switch (ind) {
-            case 0:
-                markerVelma.enabled(!markerVelma.enabled());
-                break;
-            case 1:
-                markerFred.enabled(!markerFred.enabled());
-                break;
-            case 2:
-                markerDaphne.enabled(!markerDaphne.enabled());
-                break;
-            case 3:
-                markerShaggy.enabled(!markerShaggy.enabled());
-                break;
-            case 4:
-                markerScooby.enabled(!markerScooby.enabled());
-                break;
-        }
-    });
+chart.listen("pointsSelect", function(evt){
+            var pointsNum = evt.points.length;
+            console.log(pointsNum);
+            var myData = [];
+
+            for (var i = 0; i < pointsNum; i++) {
+                var point = evt.points[i];
+                if (!point.selected())
+                    continue;
+                dataRow = data.row(point.getIndex());
+                myData.push([
+                    {x: "Jan", value: dataRow[3], fill: "#0099CC"},
+                    {x: "Feb", value: dataRow[4], fill: "#520085"},
+                    {x: "Mar", value: dataRow[5], fill: "#CC6600"},
+                    {x: "Apr", value: dataRow[6], fill: "#336600"},
+                    {x: "May", value: dataRow[7], fill: "#0099CC"},
+                    {x: "Jun", value: dataRow[8], fill: "#520085"},
+                    {x: "Jul", value: dataRow[9], fill: "#CC6600"},
+                    {x: "Aug", value: dataRow[4], fill: "#520085"},
+                    {x: "Sep", value: dataRow[5], fill: "#CC6600"},
+                    {x: "Oct", value: dataRow[6], fill: "#336600"},
+                    {x: "Nov", value: dataRow[7], fill: "#0099CC"},
+                    {x: "Dec", value: dataRow[8], fill: "#520085"}
+                ]);
+            }
+            lineChart.removeAllSeries();
+            lineChart.addSeries.apply(lineChart, myData);
+
+                lineChart.title(pieTitle + lineSubTitle);
+                lineChart.tooltip().textFormatter(function() {
+                    console.log(this.value);
+                    var text = 'Sales amount: $' + this.value;
+                    return text;
+                });
+        });
 ```
--->
+
 Check out some other drilldown samples we've got in our gallery:
  - [Dashboard with the US Map and Multiselect](http://anychart.com/products/anymap/gallery/Maps/States_of_United_States_Dashboard_with_MultiSelect.php)
  - [World Temperature Map](http://anychart.com/products/anymap/gallery/Maps/World_Temperature.php)
@@ -298,6 +312,14 @@ Check out some other drilldown samples we've got in our gallery:
 There is one more thing you can do with the interactivity of our charts: you can create some elements from "outside" of the main chart code using JavaScript. In the next sample we have created a custom tooltip with no usage of AnyChart tooltips but only through jQuery. 
 
 {sample}CS\_Interactivity\_15{sample} 
+
+### Chart as Tooltip
+
+Custom tooltips can be more complicated than the one above. Tooltips may contain any number of elements and even other charts. You can find a sample of a chart as a tooltip below. Launch the sample in the playground to examine the code. As far as creating custom tooltip implies working with event listeners, this code might look a bit sophisticated. Study [Event Listeners article](../Common_Settings/Event_Listeners) to get information on mouse events managing.
+
+{sample}CS\_Interactivity\_18{sample}
+
+**Note**: you can find more information about AnyChart tooltips [here](../Common_Settings/Tooltip).
 
 ## Interactivity Settings in Data Sets
 
