@@ -12,13 +12,11 @@
 
 AnyChart js charting framework supports several ways of setting data. This article quickly demonstrates main aspects of using JSON, XML and CSV format in AnyChart Gantt. 
 
-The main difference between using any of these format types is that in JSON the chart configuration is presented as an object, in XML it is a string, and both of them may contain 
-some extra information, such as color and size settings or other design features. CSV format can be used to convert only the data, no extra information can be added in this case.
+The main difference between using any of these format types is that in JSON the chart configuration is presented as an object, in XML it is a string, and both of them may contain some extra information, such as color and size settings or other design features. CSV format can be used to convert only the data, no extra information can be added in this case.
   
 ## JSON 
   
-JSON or JavaScript Object Notation, is an open standard format that uses human-readable text to transmit data objects consisting 
-of attribute-value pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML. 
+JSON or JavaScript Object Notation, is an open standard format that uses human-readable text to transmit data objects consisting of attribute-value pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML. 
 For more information visit [http://en.wikipedia.org/wiki/JSON](http://en.wikipedia.org/wiki/JSON)
 
 You can use JSON to define the chart configuration with functions and other complicated structures. Look at the sample below:
@@ -42,69 +40,69 @@ And that's how the code looks like in JSON.
 It is necessary to define the chart type, container (or as in the example) and data items to make the JSON config valid.
 
 ```
-var chart;
+  var chart;
 
-        anychart.onDocumentReady(function() {
+  anychart.onDocumentReady(function() {
 
-            var json = {
-                "gantt": {
-                    "type": "project",
-                    "controller": {
-                        "treeData": {
+    var json = {
+        "gantt": {
+            "type": "project",
+            "controller": {
+                "treeData": {
+                    "children": [
+                        {
+                            "treeDataItemData": {
+                                "id": 1,
+                                "name": "Activities" 	// actual start, actual end will be autocalculated here.
+                            }, 							// All meta will be autocalculated as well
                             "children": [
                                 {
                                     "treeDataItemData": {
-                                        "id": 1,
-                                        "name": "Activities" 	// actual start, actual end will be autocalculated here.
-                                    }, 							// All meta will be autocalculated as well
-                                    "children": [
-                                        {
-                                            "treeDataItemData": {
-                                                "id": 2,
-                                                "name": "Draft plan",
-                                                "actualStart": Date.UTC(2007, 0, 25, 8),   // This is for JSON only! For XML it still must be 1169683200000.
-                                                "actualEnd": 1170460800000
-                                            }
-                                        },
-                                        {
-                                            "treeDataItemData": {
-                                                "id": 3,
-                                                "name": "Board meeting",
-                                                "actualStart": 1170547200000,
-                                                "actualEnd": 1170547200000
-                                            }
-                                        },
-                                        {
-                                            "treeDataItemData": {
-                                                "id": 4,
-                                                "name": "Research option",
-                                                "actualStart": 1170547200000,
-                                                "actualEnd": 1172275200000
-                                            }
-                                        },
-                                        {
-                                            "treeDataItemData": {
-                                                "id": 5,
-                                                "name": "Final plan",
-                                                "actualStart": 1172275200000,
-                                                "actualEnd": 1173830400000
-                                            }
-                                        }
-                                    ]
+                                        "id": 2,
+                                        "name": "Draft plan",
+                                        "actualStart": Date.UTC(2007, 0, 25, 8),   // This is for JSON only! For XML it still must be 1169683200000.
+                                        "actualEnd": 1170460800000
+                                    }
+                                },
+                                {
+                                    "treeDataItemData": {
+                                        "id": 3,
+                                        "name": "Board meeting",
+                                        "actualStart": 1170547200000,
+                                        "actualEnd": 1170547200000
+                                    }
+                                },
+                                {
+                                    "treeDataItemData": {
+                                        "id": 4,
+                                        "name": "Research option",
+                                        "actualStart": 1170547200000,
+                                        "actualEnd": 1172275200000
+                                    }
+                                },
+                                {
+                                    "treeDataItemData": {
+                                        "id": 5,
+                                        "name": "Final plan",
+                                        "actualStart": 1172275200000,
+                                        "actualEnd": 1173830400000
+                                    }
                                 }
                             ]
                         }
-                    }
+                    ]
                 }
-            };
+            }
+        }
+    };
 
-            chart = anychart.fromJson(json);
-            chart.container('container');
+    chart = anychart.fromJson(json);
+    chart.container('container');
 
-            // draw chart
-            chart.draw();
+    // draw chart
+    chart.draw();
 
-        });
+  });
 ```
 
 Note that you can set the date in UTC in JSON. In XML you still have to use numeric format.

@@ -26,7 +26,7 @@ In this section we will demonstrate only the differences of AnyStock axes and sc
 ## Stock Axes features
 
 Axes in AnyStocks are generally quite similar to the Basic ones, but the X-axis is slightly different:
- - X-axis is always ba be in datetime format and show the Data values
+ - X-axis is always in datetime format and shows the Data values
  - X-axis is always scrollable
  - It has background instead of stroke (axis line)
  - It cannot be moved to another place on a chart (always at the bottom)
@@ -38,7 +38,7 @@ Axes in AnyStocks are generally quite similar to the Basic ones, but the X-axis 
 
 ## Orientation 
 
-While a lot of AnyStock Axes settings are the same as Basic charts', there is a difference in their orientaion settings. Due to the specifics of AnyStock charts, the X-axis has to be at to the bottom of the chart. The Y-axes act as usual.
+While a lot of AnyStock Axes settings are the same as Basic charts', there is a difference in their orientation settings. Due to the specifics of AnyStock charts, the X-axis has to be at to the bottom of the chart. The Y-axes act as usual.
 
 ##Tickmarks
 

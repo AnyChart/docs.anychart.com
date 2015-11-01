@@ -203,7 +203,7 @@ timeline.rowOddFill("#add8e6");
 
 ### Turning On/Off
 
-By default Data Grid is turned on. If you need to show only timeline and timeline plot - you cant turn Data Grid off using the {api:anychart.charts.Gantt#dataGrid}**.dataGrid()**{api} with <b>false</b> as the argument:
+By default Data Grid is turned on. If you need to show only timeline and timeline plot - you can turn Data Grid off using the {api:anychart.charts.Gantt#dataGrid}**.dataGrid()**{api} with <b>false</b> as the argument:
 
 ```
 //disable data grid

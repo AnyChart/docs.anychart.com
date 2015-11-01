@@ -6,70 +6,76 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-    // create data set on our data
-    var dataSet = anychart.data.set([
-	["Jan", 10, 30],
-	["Feb", 12, 32],
-	["Mar", 11, 35],
-	["Apr", 15, 40],
-	["May", 20, 42],
-	["Jun", 22, 35],
-	["Jul", 21, 36],
-	["Aug", 28, 40],
-	["Sep", 29, 42],
-	["Okt", 40, 40],
-	["Nov", 41, 38],
-	["Dec", 45, 40]
-    ]);
 
-    // map data for the first series, take x from the zero column and value from the first column of data set
-    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+  // create data set on our data
+  var dataSet = anychart.data.set([
+    ["Jan", 10, 30],
+    ["Feb", 12, 32],
+    ["Mar", 11, 35],
+    ["Apr", 15, 40],
+    ["May", 20, 42],
+    ["Jun", 22, 35],
+    ["Jul", 21, 36],
+    ["Aug", 28, 40],
+    ["Sep", 29, 42],
+    ["Okt", 40, 40],
+    ["Nov", 41, 38],
+    ["Dec", 45, 40]
+  ]);
 
-    // map data for the second series, take x from the zero column and value from the second column of data set
-    var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+  // map data for the first series, take x from the zero column and value from the first column of data set
+  var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
 
-    // create line chart
-    chart = anychart.column();
+  // map data for the second series, take x from the zero column and value from the second column of data set
+  var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
 
-    // adding dollar symbols to yAxis labels
-    chart.yAxis().labels().textFormatter(function(){
-		return "$" + this.value
-    });
+  // create line chart
+  var chart = anychart.column();
 
-    // turn on chart animation
-    chart.animation(true);
+  // adding dollar symbols to yAxis labels
+  var yLabels = chart.yAxis().labels();
+  yLabels.textFormatter(function(){
+    return "$" + this.value
+  });
 
-    // turn on the crosshair
-    chart.crosshair(true);
+  // turn on chart animation
+  chart.animation(true);
 
-    // set chart title text settings
-    chart.title(false);
+  // set chart title text settings
+  chart.title(false);
 
-    // create first series with mapped data
-    var series_1 = chart.column(seriesData_1);
-    series_1.name("ACME Corp. Share Price");
+  // create first series with mapped data
+  var series_1 = chart.column(seriesData_1);
+  series_1.name("ACME Corp. Share Price");
 
-    // create second series with mapped data
-    var series_2 = chart.column(seriesData_2);
-    series_2.name("Sirius Cybernetics Corp. Share Price");
+  // create second series with mapped data
+  var series_2 = chart.column(seriesData_2);
+  series_2.name("Sirius Cybernetics Corp. Share Price");
 
-    // turn the legend on
-    chart.legend().enabled(true).align("center").fontSize(13);
+  // create second series with mapped data
+  var series_2 = chart.column(seriesData_2);
+  series_2.name("The Competitor's Share Price");
 
-    // making series_1 and some points of series_2 selected
-    series_1.select();
-    series_2.select([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);
-    
-    series_1.selectStroke(null);
-    series_1.selectHatchFill("diagonal", "#ddd", 1, 5);
-    series_2.selectHatchFill("confetti", "#fff", 1, 5);
-    series_2.selectStroke(null);
+  // turn the legend on
+  var legend = chart.legend();
+  legend.enabled(true);
+  legend.align("center");
+  legend.fontSize(13);
 
-    // set container id for the chart
-    chart.container("container");
+  // making series_1 and some points of series_2 selected
+  series_1.select();
+  series_2.select([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);
+  
+  series_1.selectStroke(null);
+  series_1.selectHatchFill("diagonal", "#ddd", 1, 5);
+  series_2.selectHatchFill("confetti", "#fff", 1, 5);
+  series_2.selectStroke(null);
 
-    // initiate chart drawing
-    chart.draw();
+  // set container id for the chart
+  chart.container("container");
+
+  // initiate chart drawing
+  chart.draw();
 });</script>
 </head>
 <body>

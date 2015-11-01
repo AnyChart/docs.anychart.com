@@ -33,7 +33,8 @@
   ]);
 
   // set data
-  chart.column(data);
+  var series = chart.column(data);
+  series.name("Sales");
 
   // draw chart
   chart.container("container");

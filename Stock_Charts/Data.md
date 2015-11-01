@@ -35,9 +35,9 @@ Now, we should add some data in our newly created table. We use .addData() metho
 	]);
 ```
 
-<br>**Note!** Each data table has to have a "key" value (x-axis value), which should be unique for one series of data. If there are  rows (data points) with the same x-axis value, AnyStock will count only the last point with the given X.
+<br>**Note!** Each data table has to have a "key" value (x-axis value), which should be unique for one series of data. If there are rows (data points) with the same x-axis value, AnyStock will count only the last point with the given X.
 
-Note that the X value has to contain date in any format. It means that you may set data as a timestamp, Date Time String or UTC - but it has to be a date.
+Note that the X value has to contain date in any format. It means that you can set data as a timestamp, Date Time String or UTC - but it has to be a date.
 
 # Mapping
 
@@ -49,7 +49,7 @@ After we have set the data, we need to map it properly. For that we should creat
 
 This object now will be responsible for the data mapping. Here we should add fields (or simply lines) using {api:anychart.data.TableMapping#addField}**.addField()**{api} method. Each field has to get at least two parameters: the name of the field to add and the index of the column where the field should get values from. These will map the data correctly.
 
-The third parameter is an grouping/approximation mode: when you've got too many data points and they are grouped to be shown on a small plot, the grouping type is chosen according to the field name (so, "first" will be for "open", "last" for close, "average" for "value", etc.). If you want to change it, add the aggragation type you want to use as the third parameter to the {api:anychart.data.TableMapping#addField}**.addField()**{api} method.
+The third parameter is an grouping/approximation mode: when you've got too many data points and they are grouped to be shown on a small plot, the grouping type is chosen according to the field name (so, "first" will be for "open", "last" for close, "average" for "value", etc.). If you want to change it, add the aggregation type you want to use as the third parameter to the {api:anychart.data.TableMapping#addField}**.addField()**{api} method.
 
 That's how it should look like:
 

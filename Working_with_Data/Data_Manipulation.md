@@ -59,11 +59,11 @@ function addPoint(e) {
 ```
 
 **Note:**
-Append method helps to add information only at the end of the data set. To add information into any position see
- [.insert() method section](#insert) below.
+Append method helps to add information only at the end of the data set. To add information into any position see [.insert() method section](#insert) below.
 
 ### Meta-add
-Adding custom data is nice function, but charts have to be as useful and informative as possible. Any point of a chart may contain meta information. If you want some meta information to be avaliable on hovering a part of a chart, that's how your code will look like: 
+
+Adding custom data is nice function, but charts have to be as useful and informative as possible. Any point of a chart may contain meta information. If you want some meta information to be available on hovering a part of a chart, that's how your code will look like: 
 
 ```
  // function, if listener triggers
@@ -89,7 +89,8 @@ Note that this method allows you to show this information in the chart title.
 
 ### Update
 
-Updating the charts' data sets is to be done using {api:anychart.data#set}**.set()**{api} method.  That's how a part of a code should look like:
+Updating the charts' data sets is to be done using {api:anychart.data#set}**.set()**{api} method. That's how a part of a code should look like:
+
 ```
  function(e) {
         view.set(

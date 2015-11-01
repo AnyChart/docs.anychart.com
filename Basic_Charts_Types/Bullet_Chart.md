@@ -132,7 +132,7 @@ Bullet charts have 4 marker types: {api:anychart.enums.BulletMarkerType#BAR}*bar
 
 Here is the sample with all 4 marker types:
 
-{sample :width 690 :height 130}BCT\_Bullet\_Chart\_07{sample}
+{sample :width 690 :height 500}BCT\_Bullet\_Chart\_07{sample}
 
 **Note:** This chart contains all markers in one data set. It was done for demonstration purpose. It's highly recommended to **limit markers number to two** to avoid complexity.
 

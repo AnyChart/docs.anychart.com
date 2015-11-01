@@ -175,4 +175,5 @@ To make design easier - AnyChart Provides several color transformation functions
 </tbody></table>
 	 
 In the sample below a function pluses 0.2 to a blend ratio for each column:
+
 {sample}AS\_Color\_Management\_03{sample}

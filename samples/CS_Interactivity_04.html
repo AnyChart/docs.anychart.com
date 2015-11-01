@@ -44,48 +44,58 @@
         [2014, 45]
     ]);
 
+  var chart = anychart.cartesian();
+  // set chart margin settings
+  chart.margin(0);
 
-    var chart = anychart.cartesian();
-    // set chart margin settings
-    chart.margin(0);
-
-    var series = chart.spline(dataSet.mapAs({x: [0], value: [1]}));
+  var series = chart.spline(dataSet.mapAs({x: [0], value: [1]}));
         series.name("Youth unemployment ratio in Nevada");
         series.tooltip().textFormatter(function(){
             return ("Ratio: "+this.value+"%");
         });
 
-    // create the title
-    chart.title("Single-hovering feature");
+  // create the title
+  chart.title("Single-hovering feature");
 
-    // turn on grids
-    chart.grid().enabled(true);
-    chart.grid(1).enabled(true).layout("vertical");
-    chart.minorGrid().enabled(true);
-    chart.minorGrid(1).enabled(true).layout("vertical");
+  // turn on grids
+  var grid = chart.grid(0);
+  grid.enabled(true);
+  var grid1 = chart.grid(1);
+  grid1.enabled(true);
+  grid1.layout("vertical");
+  var minorGrid = chart.minorGrid();
+  minorGrid.enabled(true);
+  var minorGrid1 = chart.minorGrid(1);
+  minorGrid1.enabled(true);
+  minorGrid1.layout("vertical");
 
-    // set chart axes settings
-    var scale = anychart.scales.linear();
-    chart.xScale(scale);
-    chart.xAxis().minorTicks(true);
-    chart.yAxis().minorTicks(true);
+  // set chart axes settings
+  var scale = anychart.scales.linear();
+  chart.xScale(scale);
+  var xAxis = chart.xAxis();
+  xAxis.minorTicks(true);
+  var yAxis = chart.yAxis();
+  yAxis.minorTicks(true);
 
-    //set chart legend settings
-    chart.legend().enabled(true).padding().bottom(30);
-    chart.background(false);
+  //set chart legend settings
+  var legend = chart.legend();
+  legend.enabled(true);
+  var legendPadding = legend.padding();
+  legendPadding.bottom(30);
+  chart.background(false);
 
-    series.markers(true);
-    series.hoverMarkers().enabled(true).fill("yellow");
+  series.markers(true);
+  var hoverMarkers = series.hoverMarkers();
+  hoverMarkers.enabled(true);
+  hoverMarkers.fill("yellow");
 
-    // multi-hover enabling 
-    chart.interactivity("byX");
+  // multi-hover enabling 
+  chart.interactivity("byX");
 
-    chart.crosshair(true);
-    chart.container("container");
-    chart.draw();
-});
-
-</script>
+  chart.crosshair(true);
+  chart.container("container");
+  chart.draw();
+});</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

@@ -7,7 +7,7 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
     
-    var dataSet = anychart.data.set([
+  var dataSet = anychart.data.set([
     {x: "P1", value: 100},
     {x: "P2", value: 200},
     {x: "P3", value: 15},
@@ -26,45 +26,49 @@
   ]);
 
   // set chart type
-  chart = anychart.line();
+  var chart = anychart.line();
 
-  chart.title().text("Move the Mouse to Add Points, DoubleClick to stop it");
+  chart.title("Move the Mouse to Add Points, DoubleClick to stop it");
 
   // set data
-  var line = chart.line(dataSet).markers(null);
-
-  chart.padding().right(80);
+  chart.line(dataSet);
 
   // disable stagger mode. Only one line for x axis labels
-  chart.xAxis().staggerMode(false);
+  var xAxis = chart.xAxis();
+  xAxis.staggerMode(false);
 
-  // set container and draw chart
-  chart.container("container").draw();
-  
   // first index for new point
-  var indexSetter = 21;
+  var indexSetter = 16;
   
   // create a function what to listen and then unlisten
   var func_listen = function(){
-      dataSet.append({
-          // x value
-          x: "P" + indexSetter,
+    dataSet.append({
+      // x value
+      x: "P" + indexSetter,
 
-          // random value from 1 to 500
-          value : Math.floor((Math.random() * 500)+ 1)
-        });
-        indexSetter++;
-        dataSet.remove(0);
+      // random value from 1 to 500
+      value : Math.floor((Math.random() * 500)+ 1)
+    });
+    indexSetter++;
+    dataSet.remove(0);
   };
   
-    // add a listener
-    var key = chart.listen("mouseMove", func_listen);
-    
-    // remove all listeners
-    chart.listen("dblclick", function(){
-        chart.unlistenByKey(key);     // click twice on any range bar to see the result
-    });
-    
+  // add a listener
+  var key = chart.listen("mouseMove", func_listen);
+  
+  // remove all listeners
+  chart.listen(
+    // click twice on any range bar to see the result
+    "dblclick",
+    function(){
+      chart.unlistenByKey(key);
+    }
+  );
+
+  // set container and draw chart
+  chart.container("container");
+  chart.draw();
+
 });</script>
 </head>
 <body>

@@ -8,7 +8,7 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">
         var chart, lineChart, stage;
-    anychart.onDocumentReady(function () {
+        anychart.onDocumentReady(function () {
 
         // set stage
         stage = anychart.graphics.create("container");
@@ -44,9 +44,7 @@
 
         // set data
         var series = chart.column(dataMapping); // set series data
-
         series.name("ACME Corp. sales");
-
 
         // chart title
         chart.title().useHtml(true);

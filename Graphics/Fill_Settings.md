@@ -5,7 +5,8 @@
 * [Image Fill](#image_fill)
 
 ## Solid color
-The most simple fill is solid color fill.  Color can be set in the following formats:
+
+The most simple fill is solid color fill. Color can be set in the following formats:
 * Hex
 * RGB
 * HSL
@@ -76,7 +77,7 @@ Please see the following illustration of these modes:
 ```
 
 #### UserSpaceOnUse
-In this mode gradient settings are added by gradient size and borders/coordinates, and rendering is calculated within those borders.  After that, the fill is executed on the element figure according to its coordinates.
+In this mode gradient settings are added by gradient size and borders/coordinates, and rendering is calculated within those borders. After that, the fill is executed on the element figure according to its coordinates.
 
 This can be shown in the following way:
 

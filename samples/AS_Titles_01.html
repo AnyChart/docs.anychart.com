@@ -24,7 +24,8 @@
   title.enabled(true);
   
   // set data
-  chart.column(data);
+  var series = chart.column(data);
+  series.name("Sales");
   
   // set title text
   title.text("Default Title");

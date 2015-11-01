@@ -29,7 +29,7 @@ Sparkline charts are rather small with neither axes nor grids, amount of additio
 
 ## Chart
 
-As sparklines are very simple and their main purpose is showing the trend of something unique, there's no possibilty (and no need) to make them multi-series.
+As sparklines are very simple and their main purpose is showing the trend of something unique, there's no possibility (and no need) to make them multi-series.
 
 Sparkline series can be of 4 types: line, area, column and win/loss. 
 
@@ -77,7 +77,7 @@ Let's build an example with 2 single-series line charts using the following data
 Now we need to convert this data table into an acceptable format. In terms of AnyChart data model we have 2 charts with one series of data (rates) each with dates as categories. Each point in series represents one date and the rate. Converted data looks like:
 
 ```
-    var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create('container');
     
   //create charts
   chart1 = anychart.sparkline();
@@ -98,7 +98,7 @@ Now we need to convert this data table into an acceptable format. In terms of An
   //initiate chart drawing
   chart1.draw();
   chart2.draw();
- ```
+```
   
 As you can see, we defined only the values, no categories are mentioned in the code. 
 
@@ -112,8 +112,8 @@ All titles are disabled by default, so we have to put them in visible mode.
   //setting the titles
   chart1.title('EUR/USD');
   chart2.title('GBP/USD');
+```
 
- ```
 That's how it looks with titles:
 
 {sample :width 688 :height 50}BCT\_Sparkline\_Chart\_02{sample}
@@ -151,6 +151,7 @@ Currency rates are not the best example for Columns, so let's take the sum of po
 A WinLoss is a type used predominantly for scores in sports, games, etc. It shows no values but positive and negative positions.
 
 That's how we swap types:
+
 ```
   //set series type
   chart1.type('wl');
@@ -196,7 +197,7 @@ In this sample you can see how it looks with a missing point and compare with a 
 
 ##Visualisation
 
-Here you will find some information about main parts of  the sparkline chart style and see the demonstration of style applying.
+Here you will find some information about main parts of the sparkline chart style and see the demonstration of style applying.
 
 ###Point width
 
@@ -359,9 +360,10 @@ Let's have a look on two different line sparklines with negative points emphasiz
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_14{sample} 
 
 That's what we should write to color our negative points in green and stroke them in red:
+
 ```
-	chart1.negativeMarkers().enabled(true).stroke('1 red').fill('green').size(3);
-	chart2.negativeMarkers().enabled(true).stroke('1 red').fill('green').size(3);
+  chart1.negativeMarkers().enabled(true).stroke('1 red').fill('green').size(3);
+  chart2.negativeMarkers().enabled(true).stroke('1 red').fill('green').size(3);
 ```
 
 Now let's color the first and the last columns of two different column Sparklines. For that we use special methods {api:anychart.charts.Sparkline#firstFill}**.firstFill()**{api} and {api:anychart.charts.Sparkline#lastFill}**.lastFill()**{api} accordingly:

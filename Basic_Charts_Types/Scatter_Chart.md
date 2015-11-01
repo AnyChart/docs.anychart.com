@@ -30,8 +30,7 @@ Use a scatter chart when:
 
 ## Chart
 
-Depending on your task you can plot the following types on a Scatter plot: Line, Spline, Marker and
-Bubble charts. To start the creation of Scatter chart you need create chart using {api:anychart.charts.Scatter}**.scatterChart()**{api} method.
+Depending on your task you can plot the following types on a Scatter plot: Line, Marker and Bubble charts. To start the creation of Scatter chart you need create chart using {api:anychart.charts.Scatter}**.scatterChart()**{api} method.
 
 ```
   var chart = anychart.scatter();

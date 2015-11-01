@@ -79,7 +79,7 @@
   johnLegend.zIndex(1);
   johnLegend.enabled(true);
   johnLegend.itemsLayout("vertical");
-  johnLegend.listen('legendItemClick', function(event) {
+  johnLegend.listen("legendItemClick", function(event) {
     event.preventDefault();
     var index = event["itemIndex"];
     if (chart.getSeries(index).data().get(0, "value") == "missing"){
@@ -97,13 +97,19 @@
       johnLegend.itemsFormatter(function(){return johnLegendItems});
     }
   });
+  johnLegend.listen("legendItemMouseOver", function(event) {
+    chart.getSeries(event.itemIndex).hover(0);
+  });
+  johnLegend.listen("legendItemMouseOut", function(event) {
+    chart.getSeries(event.itemIndex).unhover(0);
+  });
   
   jakeLegend.position("bottom");
   jakeLegend.align("center");
   jakeLegend.zIndex(1);
   jakeLegend.enabled(true);
   jakeLegend.itemsLayout("vertical");
-  jakeLegend.listen('legendItemClick', function(event) {
+  jakeLegend.listen("legendItemClick", function(event) {
     event.preventDefault();
     var index = event["itemIndex"];
     if (chart.getSeries(index).data().get(1, "value") == "missing"){
@@ -121,13 +127,19 @@
       jakeLegend.itemsFormatter(function(){return jakeLegendItems});
     }
   });
+  jakeLegend.listen("legendItemMouseOver", function(event) {
+    chart.getSeries(event.itemIndex).hover(1);
+  });
+  jakeLegend.listen("legendItemMouseOut", function(event) {
+    chart.getSeries(event.itemIndex).unhover(1);
+  });
   
   peterLegend.position("bottom");
   peterLegend.align("right");
   peterLegend.zIndex(1);
   peterLegend.enabled(true);
   peterLegend.itemsLayout("vertical");
-  peterLegend.listen('legendItemClick', function(event) {
+  peterLegend.listen("legendItemClick", function(event) {
     event.preventDefault();
     var index = event["itemIndex"];
     if (chart.getSeries(index).data().get(2, "value") == "missing"){
@@ -144,6 +156,12 @@
       peterLegendItems[index].iconStroke = "#999";
       peterLegend.itemsFormatter(function(){return peterLegendItems});
     }
+  });
+  peterLegend.listen("legendItemMouseOver", function(event) {
+    chart.getSeries(event.itemIndex).hover(2);
+  });
+  peterLegend.listen("legendItemMouseOut", function(event) {
+    chart.getSeries(event.itemIndex).unhover(2);
   });
   
   // draw legends
@@ -204,7 +222,7 @@
   // enables legend title
   legendTitle.enabled(true);
   // set title text
-  legendTitle.text('Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>');
+  legendTitle.text("Total sales<br><i style=\"color: #999; font-weight: 400; font-size: 11px;\">(Year 2004)</i>");
   // set font size
   legendTitle.fontSize(14);
   legendTitle.hAlign("center");

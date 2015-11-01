@@ -35,6 +35,8 @@
   spline.stroke("5 green 0.4");
   // stroke settings for mouse over the series 
   spline.hoverStroke("5 #006600 0.4");
+  // disable marker on mouse over
+  spline.hoverMarkers(false);
   // set series name
   spline.name("Solid Color with Opacity");
 
@@ -45,6 +47,8 @@
     keys: [".1 red", ".5 blue", ".9 green"],
     thickness: 5
   });
+  // disable marker on mouse over
+  step.hoverMarkers(false);
   // set series name
   step.name("Gradient Color");
 
@@ -66,6 +70,7 @@
     // stroke thickness
     thickness: 3
   });
+  area.hoverMarkers(false);
   area.fill("gold 0.4");
   area.name("Dashed Stroke");
 
