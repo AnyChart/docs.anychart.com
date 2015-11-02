@@ -2,7 +2,13 @@
 
 #Chart Plots
 
-Sometimes you might need a group of charts showing the changes of different parameters or areas through the same time, but it's not comfortable to put those series all together on one chart. In this case you can create a couple of plots on a chart and put the series into the plots one for each. 
+* [Overview]()
+* [Add]()
+* [Edit]()
+ * [Axes]()
+ * [Axes]()
+
+Sometimes you might need a group of charts showing different parameters changing at the same time, but it's not comfortable to put those series all together on one chart. In this case you can create a couple of plots on a chart and put the series into the plots one for each. 
 
 You will be able to see all values for the same time point you hover on one of the plots
 
