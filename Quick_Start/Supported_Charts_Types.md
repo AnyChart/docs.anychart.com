@@ -47,5 +47,5 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Stacked Bar/Column Chart](../Basic_Charts_Types/Stacked_Bar-Column_Charts)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Step Area Chart](../Basic_Charts_Types/Area_Chart)</td><td>Yes</td><td>Yes</td></tr> 
 <tr><td>[Step Line Chart](../Basic_Charts_Types/Line-Spline-StepLine_Charts#single_series_step_line_chart)</td><td>Yes</td><td>Yes</td></tr>
-<tr><td>[Stock Charts](../Stock_Charts/Overview)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[Stock Charts](../Stock_Charts/Quick_Start)</td><td>Yes</td><td>Yes</td></tr>
 </table>

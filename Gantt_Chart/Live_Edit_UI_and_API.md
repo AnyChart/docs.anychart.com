@@ -74,7 +74,7 @@ The horizontal resizer
 </tr>
 <tr>
 <td>Drag&drop</td>
-<td>Hover the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically). The data [tree](../Working_with_Data/) will dispatch the "update" event immediately. Read about Gantt events in the following.</td>
+<td>Hover the interval or a milestone, press the button when the pointer is of dragging type, drag it to the place where you need to put it (scale range will change automatically). The data [tree](../Working_with_Data/Using_Data_Tree_Model) will dispatch the "update" event immediately. Read about Gantt events in the following.</td>
 <td>Drags the interval through the time <!--and space--> without lengthening or shortening it.</td>
 <td>
 
@@ -138,7 +138,7 @@ Changes made in Live Edit mode lead to data changes. In this case we use events 
 
 The data tree will dispatch the "move" event when we change the Gantt chart tree structure. Gantt chart dispatch this when it catches the live mode changes in Gantt charts' data structure made by user. It has several fields: 
 
- - "type": the event type (anychart.enums.EventType.TREE_ITEM_MOVE)
+ - "type": the event type (anychart.enums.EventType.TREE\_ITEM\_MOVE)
  - "source", the data item where we move our item from
  - "sourceIndex": the "source" item index
  - "target": the data item where we move our item into
@@ -148,7 +148,7 @@ The data tree will dispatch the "move" event when we change the Gantt chart tree
 
  For example: we moved the parent item "Part 1" inside another parent item, "Part 3", making the Gantt tree arborize. Then the "move" event will be dispatched with these parameters:
 
-  - type: anychart.enums.EventType.TREE_ITEM_MOVE
+  - type: anychart.enums.EventType.TREE\_ITEM\_MOVE
   - source: "null"
   - sourceIndex: "null"
   - target: "Part 3"
@@ -168,7 +168,7 @@ The data tree will dispatch the "move" event when we change the Gantt chart tree
 
 Our "update" event includes the following fields:
 
-- "type": the event type (anychart.enums.EventType.TREE_ITEM_UPDATE)
+- "type": the event type (anychart.enums.EventType.TREE\_ITEM\_UPDATE)
 - "item": a DataItem object
 - "path": path to the field with changed value, always in array format
 - "field": the field which value was changed
@@ -184,7 +184,7 @@ Our "update" event includes the following fields:
 For example: we lengthen the second period of a tree data item "Act 1". The start date was 02/27, end date 03/03. We change the end date to 08/03. So, there will be one field edited - "actualEnd" of the second period. Then the "update" event will have those parameters:
 
 
-- "type": anychart.enums.EventType.TREE_ITEM_UPDATE
+- "type": anychart.enums.EventType.TREE\_ITEM\_UPDATE
 - "item": "Act 1"
 - "path": ["periods", "1"]
 - "field": "actualEnd"
@@ -193,7 +193,7 @@ For example: we lengthen the second period of a tree data item "Act 1". The star
 ### create
 
 The "create" event will be dispatched when we create a new tree data item. It will have these fields:
-- "type": the event type
+- "type": the event type (anychart.enums.EventType.TREE\_ITEM\_CREATE)
 - "target": the name of the target where we're putting the new object in
 - "targetIndex": the index of our target
 - "item": a DataItem object
@@ -210,7 +210,7 @@ The "create" event will be dispatched when we create a new tree data item. It wi
 
 When we remove an object, the Gantt tree dispatches the "remove" event. Its fields are similar to ones that the "create" event has:
 
-- "type": the event type
+- "type": the event type (anychart.enums.EventType.TREE\_ITEM\_REMOVE)
 - "source": the name of the target where we're removing the object from
 - "sourceIndex": the index of our source
 - "item": a DataItem object
@@ -227,7 +227,7 @@ When we remove an object, the Gantt tree dispatches the "remove" event. Its fiel
 
 The "beforeCreateConnector" event is similar to the "create", but this is dispatched by the Gantt diagram opposite to Gantt tree in other events situations and, as it can be seen from its name, it is dispatched before the action itself, so it will not have any information about the source. To get this information we need to listen to the "update" event. The fields of the "beforeCreateConnector" event are:
 
-- "type": the event type (e.g. anychart.enums.EventType.BEFORE_CREATE_CONNECTOR);
+- "type": the event type (e.g. anychart.enums.EventType.BEFORE\_CREATE\_CONNECTOR);
 - "source": which data item the connector starts from
 - "target": which data item the connector ends at (is connected to)
 - "connectorType": the connector type.
@@ -235,7 +235,7 @@ The "beforeCreateConnector" event is similar to the "create", but this is dispat
 That was a description of the Project Gantt charts, and when we deal with the Resource Gantt chart there are more fields about periods (period objects and those indexes).
 
 
-Also it's possible to prevent the default event behavior, using {api}**.preventDefault**{api} method. In this case, when the event happens, there will be no default reaction.
+Also it's possible to prevent the default event behavior, using **.preventDefault()** method. In this case, when the event happens, there will be no default reaction.
 
 ## Data Grid
 
@@ -306,7 +306,7 @@ Connectors have only stroke and thumbs (no fill), so we've got the {api:anychart
 
 We should define the color, then we can define its thickness and dash pattern, line join and line cap styles.
 
-To change the thumbs' fill and stroke we use {api:anychart.core.ui.Timeline#editConnectorThumbFill}**.editConnectorThumbFill()**{api} and {api:anychart.core.ui.Timeline#}**.editConnectorThumbStroke()**{api} methods.
+To change the thumbs' fill and stroke we use {api:anychart.core.ui.Timeline#editConnectorThumbFill}**.editConnectorThumbFill()**{api} and {api:anychart.core.ui.Timeline#editConnectorThumbStroke}**.editConnectorThumbStroke()**{api} methods.
 
 We have said in the paragraph above that when we edit the length or move the time interval bars, we can see our changes preview. To change its default view, we've got the following methods:
 
