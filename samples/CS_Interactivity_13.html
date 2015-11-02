@@ -88,18 +88,6 @@
     ]);
     pieSubTitle = "\nYear: "+ dataRow[0];
 
-    chart.listen("pointsSelect", function(evt){
-        var ind = evt.point.getIndex();
-
-        dataRow = data.row(ind);
-        pieDataSet.data([
-                {x: "John", value: dataRow[2]},
-                {x: "James", value: dataRow[3]},
-                {x: "Peter", value: dataRow[4]},
-                {x: "Mattew", value: dataRow[5]}
-        ]);
-        pieSubTitle = "\nYear: "+ dataRow[0];
-
         pie.data(pieDataSet);
         pie.title(pieTitle + pieSubTitle);
     });
