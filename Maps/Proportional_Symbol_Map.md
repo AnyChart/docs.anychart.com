@@ -13,7 +13,7 @@ Proportional Symbol Map
 
 ## Overview
 
-As the name implies, symbols (circles), representing the values, are drawn of the proportional size to the size of the value being represented. The size of the bubbles (proportional symbols in maps) is not dependent on the size of the region associated with the variable. For example, if we show the value of unemployment on a proportional symbol map of the UK, Dundee would have the bigger visual importance then Highland if their unemployment values were so (e.g. 3.5% in Dundee, 1% in Highland).
+As the name implies, symbols (circles), representing the values, are drawn of the proportional size to the size of the value being represented. The size of the bubbles (proportional symbols in maps) is not dependent on the size of the region associated with the variable. For example, if we show the value of unemployment on a proportional symbol map of the UK, Dundee would have bigger visual importance then Highland if their unemployment values were so (e.g. 3.5% in Dundee, 1% in Highland).
 
 An example of proportional circles is shown below.
 
@@ -38,9 +38,12 @@ Bubble series is being created the same as other series on a map. First, we shou
 	var series = map.bubble(dataSet);
 ```
 
+Let's now study the proper way of defining the data.
+
+<!--
 There are two ways of defining the data properly. Let's look at them.
 
-<!--  ### Data
+  ### Data
 
 The way of setting the data influence the bubble series view. 
 
@@ -236,7 +239,7 @@ Let's now consider a couple of samples with labels and/or tooltips. First, let's
 
 Find out more about Text Formatters [here](../Common_Settings/Text_Formatters).
 
-Labels are enabled by default, they can be turned on and off using the {api:anychart.ui.Label#fontColor}**.enable()**{api} method as usual.
+Labels are enabled by default, they can be turned on and off using the {api:anychart.ui.Label#enable}**.enable()**{api} method as usual.
 
 
 {sample}Maps\_Proportional\_Symbol\_11{sample}
