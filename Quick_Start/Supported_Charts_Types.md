@@ -1,12 +1,12 @@
 {:index 3}
-Supported charts types
+Supported Charts Types
 ======================
-AnyChart offers you a lot of chart types and their modifications and combinations, 
-in the table below you will find a full list of all basic chart types available, 
-with a links to tutorials where you can find out how to create them (with the samples).
+AnyChart offers of chart types and their modifications and combinations, 
+in the table below you can find a full list of all chart types available, 
+with links to tutorials where you can find out how to create them.
   
     
-####List of AnyChart Basic Chart Types
+####List of Supported Chart Types
 <table width="700px" class="dtTABLE">
 <tr><th width="315px">Name</th><th width="58px">Single Series</th> <th width="56px">Multi Series</th></tr>
 <tr><td>[Area Chart](../Basic_Charts_Types/Area_Chart)</td><td>Yes</td><td>Yes</td></tr>
@@ -19,10 +19,13 @@ with a links to tutorials where you can find out how to create them (with the sa
 <tr><td>[Column Chart](../Basic_Charts_Types/Column_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Donut Chart](../Basic_Charts_Types/Pie-Doughnut_Charts#doughnut_chart)</td><td>Yes</td><td>No</td></tr>
 <tr><td>[Error Chart](../Basic_Charts_Types/Error_Chart)</td><td>Yes</td><td>No</td></tr>
+<tr><td>[Heat Map Chart](../Basic_Charts_Types/Heat_Map_Chart)</td><td>Yes</td><td>No</td></tr>
 <tr><td>[Gantt Chart](../Gantt_Chart/Quick_Start)</td><td></td><td></td></tr>
 <tr><td>[Funnel Chart](../Basic_Charts_Types/Funnel_Chart)</td><td>Yes</td><td>No</td></tr>
 <tr><td>[Line Chart](../Basic_Charts_Types/Line-Spline-StepLine_Charts)</td><td>Yes</td><td>Yes</td></tr>
-<tr><td>[Maps](../Maps/Overview)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[Maps - Geo Maps](../Maps/Overview)</td><td></td><td></td></tr>
+<tr><td>[Maps - Colored Choropleth](../Maps/Choropleth_Map)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[Maps - Proportional Bubbles](../Maps/Proportional_Symbol_Map)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Marker Chart](../Basic_Charts_Types/Marker_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[OHLC Chart](../Basic_Charts_Types/OHLC_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Percent Stacked Area Chart](../Basic_Charts_Types/Percent_Stacked_Area-SplineArea_Charts)</td><td>Yes</td><td>Yes</td></tr>
@@ -43,5 +46,6 @@ with a links to tutorials where you can find out how to create them (with the sa
 <tr><td>[Stacked Area/SplineArea Chart](../Basic_Charts_Types/Stacked_Area-SplineArea_Charts)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Stacked Bar/Column Chart](../Basic_Charts_Types/Stacked_Bar-Column_Charts)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Step Area Chart](../Basic_Charts_Types/Area_Chart)</td><td>Yes</td><td>Yes</td></tr> 
-<tr><td>[Step Line Chart](../Basic_Charts_Types/Line-Spline-StepLine_Charts#single_series_step_line_chart)</td><td>Yes</td><td>Yes</td></tr>                                                            
+<tr><td>[Step Line Chart](../Basic_Charts_Types/Line-Spline-StepLine_Charts#single_series_step_line_chart)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[Stock Charts](../Stock_Charts/Overview)</td><td>Yes</td><td>Yes</td></tr>
 </table>
