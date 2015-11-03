@@ -7,7 +7,7 @@ Architecture
 The AnyMap component helps to create very graphic Maps and dashboards. It consists of several parts, such as the Map file itself, 
 JavaScipt file and the code of the map you've created (with DataSet). Look through the information below to know more about creating and enabling the Maps.
 
-We recommend you to look through the [Quick Start](../Quick_Start) before reading this document, where you can find the basic information about AnyMap architecture.
+We recommend you to look through the [Quick Start](./Quick_Start) before reading this document, where you can find the basic information about AnyMap architecture.
 
 Main ideas of AnyChart Maps are:
 
@@ -20,5 +20,5 @@ Also, you'll find our GeoData provided in .geojson and .js formats so you may ch
   
 <!-- TopoJSON is smaller in size but the GeoJSON is more simple, so it's up to you which option to choose.-->
 
-AnyChart component is able to work with files in .geojson format, so if your GeoData is in SHP format or any other, please convert it before using with AnyChart. You can find more about [making custom maps]().
+AnyChart component is able to work with files in .geojson format, so if your GeoData is in SHP format or any other, please convert it before using with AnyChart. You can find more about [making custom maps](./Custom_GeoJson_Maps).
 
