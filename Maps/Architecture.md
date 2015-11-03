@@ -15,7 +15,7 @@ Main ideas of AnyChart Maps are:
  - AnyChart gets the usual data (such as values, region ID's, extra information)
  - The GeoData and your Data together with AnyChart component creates a map.
  
-We provide some GeoData in SHP format to make it easier to customize the maps. So, if you don't have your own GeoData, you may want to use one of our maps, which you can find [here](../Maps_List).
+We provide some GeoData in SHP format to make it easier to customize the maps. So, if you don't have your own GeoData, you may want to use one of our maps, which you can find [here](./Maps_List). 
 Also, you'll find our GeoData provided in .geojson and .js formats so you may choose which to use.
   
 <!-- TopoJSON is smaller in size but the GeoJSON is more simple, so it's up to you which option to choose.-->
