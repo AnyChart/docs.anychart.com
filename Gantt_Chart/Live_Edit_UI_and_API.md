@@ -36,7 +36,7 @@ All controls' appearance can be edited by using special methods, which are descr
 
 <tr>
 <td>Connectors creating</td>
-<td>Position the pointer over the connector thumb of an interval or a milestone, press the button and move the mouse. If you haven't pointed the interval you want to connect with, there is a preview line drawn to help the user not to get lost; the timeline and data grid both will be scrolled while dragging the connector line inside the scale total range. If you hover the bar you want to connect with, there's a final connector preview shows up: depending on where we hovered the bar (left or right part), the connector will stick to the appropriate side. Release the mouse button. If you hover the interval bar and watch the final connector preview, there will be the "beforeCreateConnector" event dispatched by the Gantt diagram (or by its timeline, if it was created in the standalone mode) unless it was prevented. Then, if you release the mouse, the connector will be created and the intervals will become logically connected. If the "beforeCreateConnector" event was prevented, no connector will be created.
+<td>Position the pointer over the connector thumb of an interval or a milestone, press the button and move the mouse. If you haven't pointed the interval you want to connect with, there is a preview line drawn to help the user not to get lost; the timeline and data grid both will be scrolled while dragging the connector line inside the scale total range. If you hover the bar you want to connect with, there's a final connector preview shows up: depending on where we hovered the bar (left or right part), the connector will stick to the appropriate side. Release the mouse button. If you hover the interval bar, watch the final connector preview and then release the mouse, there will be the "beforeCreateConnector" event dispatched by the Gantt diagram (or by its timeline, if it was created in the standalone mode) unless it was prevented. Then the connector will be created and the intervals will become logically connected. If the "beforeCreateConnector" event was prevented, no connector will be created.
 <br>
 You can find more about events [here](../Common_Settings/Event_Listeners).
 </td>
@@ -149,15 +149,15 @@ The data tree will dispatch the "move" event when we change the Gantt chart tree
  For example: we moved the parent item "Part 1" inside another parent item, "Part 3", making the Gantt tree arborize. Then the "move" event will be dispatched with these parameters:
 
   - type: anychart.enums.EventType.TREE\_ITEM\_MOVE
-  - source: "null"
-  - sourceIndex: "null"
+  - source: null
+  - sourceIndex: null
   - target: "Part 3"
   - targetIndex: 2
   - item: "Part 1"
 
  ```
  	var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
- 	tree.listen(anychart.enums.EventType.TREE_ITEM_MOVE), function(e){
+ 	tree.listen(anychart.enums.EventType.TREE_ITEM_MOVE, function(e){
  		chart.title.text("The "+e.itemIndex+" item was moved");
  	});
  ```
@@ -176,7 +176,7 @@ Our "update" event includes the following fields:
 
  ```
  	var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
- 	tree.listen(anychart.enums.EventType.TREE_ITEM_UPDATE), function(e){
+ 	tree.listen(anychart.enums.EventType.TREE_ITEM_UPDATE, function(e){
  		chart.title.text("The "+e.itemIndex+" item was updated");
  	});
  ```
@@ -186,9 +186,9 @@ For example: we lengthen the second period of a tree data item "Act 1". The star
 
 - "type": anychart.enums.EventType.TREE\_ITEM\_UPDATE
 - "item": "Act 1"
-- "path": ["periods", "1"]
-- "field": "actualEnd"
-- "value": "1425772800000"
+- "path": ["periods", 1, "end"]
+- "field": "periods"
+- "value": 1425772800000
 
 ### create
 
@@ -201,7 +201,7 @@ The "create" event will be dispatched when we create a new tree data item. It wi
 
  ```
  	var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
- 	tree.listen(anychart.enums.EventType.TREE_ITEM_CREATE), function(e){
+ 	tree.listen(anychart.enums.EventType.TREE_ITEM_CREATE, function(e){
  		chart.title.text("The "+e.itemIndex+" item was created");
  	});
  ```
@@ -218,7 +218,7 @@ When we remove an object, the Gantt tree dispatches the "remove" event. Its fiel
 
  ```
  	var tree = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
- 	tree.listen(anychart.enums.EventType.REMOVE), function(e){
+ 	tree.listen(anychart.enums.EventType.REMOVE, function(e){
  		chart.title.text("The "+e.itemIndex+" item was removed");
  	});
  ```
@@ -281,7 +281,7 @@ As we have already noticed, the baseline bar looks and behaves almost like an ac
 
 ### Milestones
 
-You cannot change the duration of a milestone as they have no duration, but you still can drag it to another position. They have no progress and connectors as well, because they represent moments in time.
+You cannot change the duration of a milestone as they have no duration, but you still can drag it to another position. They have no progress as well, because they represent instantaneous events in time.
 
 
 ### Scrolling
@@ -323,7 +323,7 @@ Also we can change the thumbs fill color and stroke. We use the {api:anychart.co
 	var timeline = chart.getTimeline();
 
     // sets edit interval thumb fill
-    timeLine.editIntervalThumbFill("red");
+    timeline.editIntervalThumbFill("red");
 
 ```
 
@@ -333,7 +333,7 @@ You can define colors as objects as well. The following piece of code would do t
   var timeline = chart.getTimeline();
 
     // sets edit interval thumb fill
-    timeLine.editIntervalThumbFill({
+    timeline.editIntervalThumbFill({
         color: "red"
     });
 

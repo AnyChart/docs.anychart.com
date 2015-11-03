@@ -33,7 +33,7 @@
         ]);
 
         //create series
-        var series = chart.column(dataSet);
+        var series = chart.bar(dataSet);
 
         series.name("Unique visitors");
 
@@ -49,7 +49,9 @@
     // enable the scroller
     chart.xScroller(true);
 
-        chart.xScroller().orientation("left");
+    chart.xScroller().orientation("left");
+
+    chart.xScroller().thumbs(false);
 
     // prevent the range changing
     chart.xScroller().allowRangeChange(false);
