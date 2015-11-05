@@ -191,7 +191,7 @@ XML Schema specifies a XML-based format to define the structure of XML data
 All objects of this schema correspond to JavaScript methods and parameters of a chart. 
 (for instance, XML schema for AnyChart 7.3.1 version is located at 
 [http://anychart.com/schemas/7.3.1/xml-schema.xsd](http://anychart.com/schemas/7.3.1/xml-schema.xsd)). 
-Latest version of XML schema can be found at [http://anychart.com/schemas/latest/xml-schema.xml](http://anychart.com/schemas/latest/xml-schema.xml) 
+Latest version of XML schema can be found at [http://anychart.com/schemas/latest/xml-schema.xsd](http://anychart.com/schemas/latest/xml-schema.xsd) 
 This file can also be used to validate your own XML structure. 
 
 
