@@ -45,7 +45,7 @@ l<html>
 
   // adjust tooltips content
   var tooltip1 = series1.tooltip();
-  tooltip1.contentFormatter(function(){
+  tooltip1.textFormatter(function(){
     return "Chanel: " + this.x + "\nSales: " + this.value + "\nPeriod: Year 2003";
   });
 
@@ -67,8 +67,8 @@ l<html>
   var tooltip2 = series2.tooltip();
   tooltip2.title("Information");
 
-  // adjust second series content
-  tooltip2.contentFormatter(function() {
+  // adjust second tooltip content
+  tooltip2.textFormatter(function() {
     return "Chanel: " + this.x + "\nSales: " + this.value + "\nPeriod: Year 2004";
   });
 

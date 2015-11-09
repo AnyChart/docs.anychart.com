@@ -79,7 +79,7 @@
   var markerSeries = chart.marker(data.mapAs({x: [1], value: [0]}));
   var markerTooltip = markerSeries.tooltip();
   markerTooltip.title(false);
-  markerTooltip.contentFormatter(function(){
+  markerTooltip.textFormatter(function(){
     return this.value+
       "\nKelvin: "+ (this.x).toFixed(2) +
       "\nCelsius: "+ (this.x - 273.15).toFixed(2) +

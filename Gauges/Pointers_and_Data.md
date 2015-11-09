@@ -17,7 +17,7 @@ Pointers are elements of the Gauge charts, which are necessary for the data repr
 
 ##Connection with the Data
 
-By default, when a pointer is added to the gauge, it shows the first value from the DataSet (if you've got more than one) or the only one. In case you need the second pointer with the same value to display or you have more than one value in your dataSet and you need one of your pointers to show this particular value  different from the first one, you need to connect the data with the pointer in some way. On the other hand, the situation when you need to show any value from your dataSet on the axis which is not the only and the first might take place as well.
+By default, when a pointer is added to the JavaScript gauge chart, it shows the first value from the DataSet (if you've got more than one) or the only one. In case you need the second pointer with the same value to display or you have more than one value in your dataSet and you need one of your pointers to show this particular value  different from the first one, you need to connect the data with the pointer in some way. On the other hand, the situation when you need to show any value from your dataSet on the axis which is not the only and the first might take place as well.
 
 These problems are to be easily resolved using the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} and the {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex**{api} methods. You can find more information about these methods below.
 
@@ -207,7 +207,7 @@ Let's first enable a marker:
   marker.enabled(true);
 ```
 
-The marker size is rather small by default, so we need to use the {api:anychart.core.gauge.pointers.marker#size}**.size()**{api} method to make the marker visible, so the code will look as below:
+The marker size is rather small by default, so we need to use the {api:anychart.core.gauge.pointers.Marker#size}**.size()**{api} method to make the marker visible, so the code will look as below:
 
 ```  
   //marker
@@ -253,7 +253,7 @@ Let's now look at the needles - the most common pointer used with Gauges.
 
 {sample}BCT\_Pointers-and-Data\_Needle\_07{sample} 
 
-Needle can be a thin stick or a pointer of a complex form - you can regulate its width using three similar methods: {api:anychart.core.gauge.pointers.needle#startWidth}**.startWidth()**{api}, {api:anychart.core.gauge.pointers.Needle#middleWidth}**.middleWidth()**{api} and {api:anychart.core.gauge.pointers.Needle#endWidth}**.endWidth()**{api}.
+Needle can be a thin stick or a pointer of a complex form - you can regulate its width using three similar methods: {api:anychart.core.gauge.pointers.Needle#startWidth}**.startWidth()**{api}, {api:anychart.core.gauge.pointers.Needle#middleWidth}**.middleWidth()**{api} and {api:anychart.core.gauge.pointers.Needle#endWidth}**.endWidth()**{api}.
 
 Let's make our needle thiner to the end, wider to the center and a bit thiner to the start:
 

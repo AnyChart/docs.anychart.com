@@ -43,9 +43,9 @@
   line.getSeries(1).name("SF");
   line.getSeries(2).name("LA");
   // apply tooltip settings
-  line.getSeries(0).tooltip().contentFormatter(tooltipSetter);
-  line.getSeries(1).tooltip().contentFormatter(tooltipSetter);
-  line.getSeries(2).tooltip().contentFormatter(tooltipSetter);
+  line.getSeries(0).tooltip().textFormatter(tooltipSetter);
+  line.getSeries(1).tooltip().textFormatter(tooltipSetter);
+  line.getSeries(2).tooltip().textFormatter(tooltipSetter);
 
   // naming the chart
   line.title("Weather in the USA");
@@ -79,9 +79,9 @@
   colChart.background().stroke("white").fill("white");
   
    // apply tooltip settings
-  colChart.getSeries(0).tooltip().contentFormatter(tooltipSetter);
-  colChart.getSeries(1).tooltip().contentFormatter(tooltipSetter);
-  colChart.getSeries(2).tooltip().contentFormatter(tooltipSetter);
+  colChart.getSeries(0).tooltip().textFormatter(tooltipSetter);
+  colChart.getSeries(1).tooltip().textFormatter(tooltipSetter);
+  colChart.getSeries(2).tooltip().textFormatter(tooltipSetter);
 
     // draw
     colChart.draw();

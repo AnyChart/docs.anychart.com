@@ -12,7 +12,7 @@ Using Data Sets
 
 A situation when we need to analyze different data using the same set of values in the different series of one or different charts happens quite often. 
 
-For example, there is some information about the weather in three cities, and we have to show the difference on the line chart:
+For example, there is some information about the weather in three cities, and we have to show the difference on the html5 line chart:
 
 <table border="1" class="dtTABLE">
 <tbody>
@@ -186,7 +186,7 @@ In this sample we specified the columns' names, the name of the chart and of the
 ####Array
 If you want to create more than one series on one chart or a chart with similar data, it is recommended to use `Array` as a row. Values of "column 0" of each row will represent series X (argument), each of the following columns value will represent a series value.
 
-As a result we will have a chart with 3 line series:  
+As a result we will have a js chart with 3 line series:  
 ```
 
     var data = [

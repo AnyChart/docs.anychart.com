@@ -1,6 +1,6 @@
 # Color  Table
 
-Here is the list of all web colors supported by AnyChart and their Hexadecimal and RGB equivalent.
+Here is the list of all web colors supported by AnyChart charting framework and their Hexadecimal and RGB equivalent.
 
 <table class="dtTABLE" width="700" border="1"><tbody><tr><th width="100" align="Left"><b>Name</b></th><th width="70" align="Left"><b>Color</b></th><th width="100" align="Left"><b>HEX</b></th><th width="140" align="Left"><b>RGB</b></th></tr>
 <tr><td>AliceBlue</td><td bgcolor="AliceBlue"></td><td>#F0F8FF</td><td>rgb(240,248,255)</td></tr>

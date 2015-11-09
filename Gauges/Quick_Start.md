@@ -23,7 +23,7 @@ Example:
 ```
 ###3. Prepare your Data
 
-Gauges provide quite a few opportunities to work with data (such as setting tree like hierarchy with parent/child division), thus it requires preparing data before usage. Raw data set for the Gauge may look like any of these:
+Gauges provide quite a few opportunities to work with data (such as setting tree like hierarchy with parent/child division), thus it requires preparing data before usage. Raw data set for the JavaScript Gauge chart may look like any of these:
 
 ```
 dataSet = anychart.data.set([81,34.5]);
@@ -96,7 +96,7 @@ anychart.onDocumentReady(function() {
 After all these steps you should have the following result. You can launch and explore this example further here:
 {sample :width 690 :height 250}GAUGE\_Basic\_Sample{sample}
 ###Full source code
-You can copy this to a file on your computer and open it in your browser to display the Gauge shown above:
+You can copy this to a file on your computer and open it in your browser to display the js Gauge shown above:
 ```
 <!doctype html>
 <html>

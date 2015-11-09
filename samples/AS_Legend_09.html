@@ -29,9 +29,9 @@
   tooltipContent.useHtml(true);
   // set font weight
   tooltipContent.fontWeight(400);
-  
   var tooltip = chart.legend().tooltip();
-  tooltip.contentFormatter(function(){
+  tooltip.enabled(true);
+  tooltip.textFormatter(function(){
     return this.meta.legendTooltipText;
   });
   
@@ -54,7 +54,7 @@
   title.useHtml(true);
   // set text align
   title.hAlign("center");
-  title.text('Total sales<br><i style="color: #999; font-weight: 400; font-size: 11px;">(Year 2004)</i>');
+  title.text("Total sales<br><i style=\"color: #999; font-weight: 400; font-size: 11px;\">(Year 2004)</i>");
   // set title text size
   title.fontSize(14);
   
@@ -96,7 +96,7 @@
   var series3 = chart.column(Quarter3);
   series3.name("Quarter 3");
   series3.meta({
-    legendTooltipText:"<b>Year:</b> 2004"+
+    legendTooltipText: "<b>Year:</b> 2004"+
     "<br><b>Quarter:</b> third"+
     "<br><b>Total sales: </b>"+(Quarter3.get(0,"value")+Quarter3.get(1,"value")+Quarter3.get(2,"value"))+
     "<br><b>Best result</b>: "+Quarter3.get(Quarter3.find("value",Math.max(Quarter3.get(0,"value"),Quarter3.get(1,"value"),Quarter3.get(2,"value"))),"x")

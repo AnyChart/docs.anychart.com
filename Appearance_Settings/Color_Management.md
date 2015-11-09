@@ -12,7 +12,7 @@
 
 ## Overview
 
-AnyChart allows you to set color of any element of the chart, and moreover - it provides a very user/designer/developer friendly mechanism of color setting. Web-developers usually work with Hexadecimal or Web-Colors, desktop developer use RGB or HSB notation. AnyChart supports all these formats and gives user the way for built-in color transformation.
+AnyChart html5 charting library allows you to set color of any element of the chart, and moreover - it provides a very user/designer/developer friendly mechanism of color setting. Web-developers usually work with Hexadecimal or Web-Colors, desktop developer use RGB or HSB notation. AnyChart supports all these formats and gives user the way for built-in color transformation.
 
 ## Color Formats
 
@@ -175,4 +175,5 @@ To make design easier - AnyChart Provides several color transformation functions
 </tbody></table>
 	 
 In the sample below a function pluses 0.2 to a blend ratio for each column:
+
 {sample}AS\_Color\_Management\_03{sample}

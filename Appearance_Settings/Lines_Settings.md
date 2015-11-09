@@ -41,7 +41,7 @@ There are two types of line coloring: "Solid" and "Gradient".
 
 ### Solid Color
 
-Solid color type is default for any object of Anychart and you don't need to use any special settings to apply Solid color. For more information see [Color Management](Color_Management) article.
+Solid color type is default for any object of Anychart html5 charting library and you don't need to use any special settings to apply Solid color. For more information see [Color Management](Color_Management) article.
 
 ```
   series.stroke('red');

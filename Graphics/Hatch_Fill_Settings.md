@@ -9,7 +9,7 @@
 ## Overview
 Some color printers print colors unpredictable and sometimes it is quite hard to identify similar colors as different. 
 Also it is impossible to identify colors on prints of black and white (monochrome) printers and in e-books. 
-AnyChart has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind.
+AnyChart js charting library has very useful feature - hatch fills, ideal for differentiating elements for black and white display or for those who are color blind.
 
 ## Hatch fill presets
 We provide a list of hatch fill presets, full list of them is available in the {api:anychart.graphics.vector.HatchFill#HatchFillType}API reference{api}.

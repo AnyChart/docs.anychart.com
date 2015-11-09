@@ -33,7 +33,7 @@
 
   // adjust tooltips
   var tooltip = series.tooltip();
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
     return "Month: " + this.x + "\nSales: " + this.value ;
   });
     

@@ -15,23 +15,23 @@
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Markers](#markers)
 * [Hatch Fills](#hatch_fills)
+* [Samples](#samples)
 
 ## Overview
 
-Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts emphasize the 
-magnitude of change over time, and can be used to draw attention to the total value across a trend. For example, data 
-that represents profit over time can be plotted in an area chart to emphasize the total profit.
+Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts emphasize the magnitude of change over time, and can be used to draw attention to the total value across a trend. For example, data that represents profit over time can be plotted in an area chart to emphasize the total profit.
 
 ## Chart
 
-Depending on the data model and the visualization purpose the area chart may contain one or several series.
+Depending on the data model and the visualization purpose the AnyChart JavaScript area charts may contain one or several series.
 
 ### Single Series Area Chart
 
 Let's have a look at the single series area chart created using the following data: sales of ACME Corp. through several months in a year:
 
 <table width="287" border="1" class="dtTABLE">
-<tbody><tr>
+<tbody>
+<tr>
 <th width="88"><b>Month</b></th>
 <th width="88"><b>Sales</b></th>
 </tr>
@@ -55,7 +55,9 @@ Let's have a look at the single series area chart created using the following da
 <td>May</td>
 <td> $9000</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+
 Now we need to convert this data table into the format that can be used by AnyChart. See more about formats in 
 [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) article.
   
@@ -64,15 +66,15 @@ in series represents monthly sales volume. We will use the easiest method of dat
 like this:
 
 ```
-    anychart.data.set([
-        ['January', 10000],
-        ['February', 12000],
-        ['March', 18000],
-        ['April', 11000],
-        ['May', 9000]
-    ]);
-    chart = anychart.area();
-    chart.area(data);
+  anychart.data.set([
+    ["January", 10000],
+    ["February", 12000],
+    ["March", 18000],
+    ["April", 11000],
+    ["May", 9000]
+  ]);
+  chart = anychart.area();
+  chart.area(data);
 ```
 
 As you can see, we've created a Data Set. Every object is a point with parameters. The first column is a 
@@ -155,41 +157,37 @@ these two samples is the fact that now we have two series of the data: one serie
 names to each series:
 
 ```
-    var dataSet = anychart.data.set([
-        ['January', 10000, 12000],
-        ['February', 12000, 15000],
-        ['March', 18000, 16000],
-        ['April', 11000, 15000],
-        ['May', 9000, 14000],
-    ]);
-    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
-    var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
-    chart.area(seriesData_1).name('2004');
-    chart.area(seriesData_2).name('2005');
+  var dataSet = anychart.data.set([
+    ["January", 10000, 12000],
+    ["February", 12000, 15000],
+    ["March", 18000, 16000],
+    ["April", 11000, 15000],
+    ["May", 9000, 14000],
+  ]);
+  var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+  var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+  chart.area(seriesData_1).name("2004");
+  chart.area(seriesData_2).name("2005");
 ```
 
-As now we have multi-series chart we don't want to set the **chart type** for each series individually (there can be 
-more than two series in a multi-series chart), so we set the **chart** as {api:anychart#area}**anychart.area()**{api}. Now all series in
-the chart will be of Area type by default.
+As now we have multi-series chart we don't want to set the **chart type** for each series individually (there can be more than two series in a multi-series chart), so we set the **chart** as {api:anychart#area}**anychart.area()**{api}. Now all series in the chart will be of Area type by default.
 
 {sample}BCT\_AreaChart\_03{sample}
 
 ## Axes
 
-In AnyChart, axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis 
-scale, settings, etc. In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values, you can find all axis features in
+In AnyChart JavaScript Charting Library, axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale, settings, etc. In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values, you can find all axis features in
 [Axes tutorial](../Axes_and_Grids/Axis_Basics).
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with 
-{api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.core.axes.Linear}**.yAxis()**{api} or {api:anychart.core.axes.Linear}**.xAxis()**{api} method.
+With AnyChart Charting Framework you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.core.axes.Linear}**.yAxis()**{api} or {api:anychart.core.axes.Linear}**.xAxis()**{api} method.
   
 Axes position depends on plot type, orientation and inversion of axes.
 
 ```
-    chart.xAxis(0).orientation('top');
-    chart.yAxis(0).orientation('right');
+  chart.xAxis(0).orientation('top');
+  chart.yAxis(0).orientation('right');
 ```
 
 Here is the demonstration of this feature in the Single-series sample:
@@ -265,11 +263,11 @@ If you want to configure data labels and tooltips for all series - you should us
 When formatting data labels' text we use {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method to show month's name. 
 
 ```
-    var series= chart.bar(data);
-    series.labels().enabled(true).rotation(90).textFormatter(function(point){
-            return point.x;
-    });
-    series.tooltip().enabled(true).title().enabled(true).text('Your Tooltip Title');
+  var series = chart.area(data);
+  series.labels().enabled(true).rotation(90).textFormatter(function(point){
+    return point.x;
+  });
+  series.tooltip().enabled(true).titleFormatter(function(){return 'Your Tooltip Title'});
 ```
 
 {sample}BCT\_AreaChart\_10{sample}
@@ -304,3 +302,7 @@ To demonstrate hatch fill feature we've prepared the following sample. As you ca
 ```
 
 {sample}BCT\_AreaChart\_11{sample}
+
+## Samples
+
+ You can see a lot of other samples in [AnyChart Web Area Charts Gallery](http://anychart.com/products/anychart/gallery/Area,_Spline-Area,_Step-Area_Charts).

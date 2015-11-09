@@ -12,13 +12,13 @@
  * [Data Grid Width](#data_grid_width)
  * [Expand/Collapse](#expand/collapse)
 
-<br>Data Grid - is one of the main parts of Gantt Chart. It usually contains main data about tasks and resources of the project, it displays nesting (for a hierarchical model configuration).
+<br>Data Grid - is one of the main parts of JavaScript Gantt Chart. It usually contains main data about tasks and resources of the project, it displays nesting (for a hierarchical model configuration).
 
 ## Columns
 
 ### Columns Set
 
-By default, Gantt Chart displays two columns: rows counts and names of Gantt elements (tasks or resources).
+By default, JS Gantt Chart displays two columns: rows counts and names of Gantt elements (tasks or resources).
 {sample :width 690 :height 190}GANTT\_Basic\_Sample{sample}
 
 <br>The <b>set of columns</b> is set and defined using the {api:anychart.core.ui.DataGrid#column}**.column()**{api} method:
@@ -203,7 +203,7 @@ timeline.rowOddFill("#add8e6");
 
 ### Turning On/Off
 
-By default Data Grid is turned on. If you need to show only timeline and timeline plot - you cant turn Data Grid off using the {api:anychart.charts.Gantt#dataGrid}**.dataGrid()**{api} with <b>false</b> as the argument:
+By default Data Grid is turned on. If you need to show only timeline and timeline plot - you can turn Data Grid off using the {api:anychart.charts.Gantt#dataGrid}**.dataGrid()**{api} with <b>false</b> as the argument:
 
 ```
 //disable data grid
@@ -215,7 +215,7 @@ chart.dataGrid(false);
 
 ### Data Grid Width
 
-It is possible to configure your Gantt Charts by simply dragging and dropping data grid splitter. Also you can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} method:
+It is possible to configure your html5 Gantt Charts by simply dragging and dropping data grid splitter. Also you can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} method:
 
 ```
 //set width to 100

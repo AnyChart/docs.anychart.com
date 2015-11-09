@@ -16,6 +16,7 @@
 * [Markers](#markers)
 * [Colors](#colors)
   * [Colorizing Elements](#colorizing_elements)
+* [Samples](#samples)
 
 ## Overview
 
@@ -186,7 +187,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
+With AnyChart web graphs you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
   
 The position depends on the plot type and inversion of axes. See list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
 
@@ -352,4 +353,8 @@ Let's demonstrate how to apply different colors to different data series. To app
 
 {sample}BCT\_LineChart\_11{sample}
 
-**Note**: you can find more information about lines' visual appearance in [Line Settings tutorial](../Appearance_Settings/Lines_Settings) 
+**Note**: you can find more information about lines' visual appearance in [Line Settings tutorial](../Appearance_Settings/Lines_Settings).
+
+## Samples
+
+You can see a lot of other samples in [AnyChart Web Line, Spline, Step-Line Charts Gallery](http://anychart.com/products/anychart/gallery/Line,_Spline,_Step-Line_Charts/).

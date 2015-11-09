@@ -15,7 +15,7 @@
 
 ##Overview
 
-To simplify visual adjustment of charts AnyChart provides "AnyChart Themes" technique. Chart theme is a named preset for some of the chart settings.
+To simplify visual adjustment of js charts AnyChart provides "AnyChart Themes" technique. Chart theme is a named preset for some of the chart settings.
   
   
 In this tutorial we will explain what themes are used for and how they are used.
@@ -67,16 +67,29 @@ You can predefine these settings in theme and use it anytime you want. Below is 
     // define settings for bar charts
     "bar": {
       // set chart title
-      "title": "Bar Chart",
+      "title": {
+        // set title text
+        "text": "Bar Chart",
+        // display title
+        "enabled": true
+      },
       // settings for default x axis
       "defaultXAxisSettings": {
         // set x axis title
-        "title": "Retail Channel"
+        "title": {
+          // set title text
+          "text": "Retail Channel",
+          // force title to be shown
+          "enabled": true
+        }
       },
       // settings for default y axis
       "defaultYAxisSettings": {
         // set axis name
-        "title": 'Sales'
+        "title": {
+          "text": "Sales",
+          "enabled": true
+        }
       }
     }
   };
@@ -94,16 +107,25 @@ You can store a theme right where your chart code is, just be sure to apply the 
     // define settings for bar charts
     "bar": {
       // set chart title
-      "title": "Bar Chart",
+      "title": {
+        "text": "Bar Chart",
+        "enabled": true
+      },
       // settings for default x axis
       "defaultXAxisSettings": {
         // set x axis title
-        "title": "Retail Channel"
+        "title": {
+          "text": "Retail Channel",
+          "enabled": true
+        }
       },
       // settings for default y axis
       "defaultYAxisSettings": {
         // set axis name
-        "title": "Sales"
+        "title": {
+          "text": "Sales",
+          "enabled": true
+        }
       }
     }
   };
@@ -200,11 +222,17 @@ The main purpose of AnyChart Themes is to simplify the process of chart creation
   var customTheme = {
     // settings for bar charts
     "bar": {
-      "title": "Bar Chart"
+      "title": {
+        "text": "Bar Chart",
+        "enabled": true
+      }
     },
     // settings for column charts
     "column": {
-      "title": "Column Chart"
+      "title": {
+        "text": "Column Chart",
+        "enabled": true
+      }
     }
   };
 ```
@@ -350,4 +378,4 @@ If you are already using AnyChart 7.0 to 7.5.1, you may face some conflicts in c
 * or you can simply use new **anychart.min.js** and [set old theme for your charts](#old_theme) (this is the recommended way to solve this problem).
   
   
-**Note**: AnyChart recommends you to use new AnyChart theme, version 6 style will not be developed further and supported for the new chart types.
+**Note**: AnyChart html5 charting framework recommends you to use new AnyChart theme, version 6 style will not be developed further and supported for the new chart types.

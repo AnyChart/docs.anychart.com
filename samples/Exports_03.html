@@ -1,0 +1,84 @@
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+  <script x-export="chart">anychart.onDocumentReady(function() {
+    
+  // set stage
+  var stage = anychart.graphics.create("container");
+  
+  // data
+  var data = [
+    {x: "Chocolate paste", value: 5},
+    {x: "White honey", value: 2},
+    {x: "Strawberry jam", value: 2},
+    {x: "Condensed milk", value: 1}
+  ];
+
+  // create default palette
+  var palette = anychart.palettes.distinctColors().items();
+
+  // color elements
+  for (var index in data)
+    data[index].fill = palette[index];
+
+  // create custom title
+  var title = anychart.ui.title();
+  title.parentBounds(0, 0, stage.width(), stage.height()*0.1);
+  title.text("The kind of pancakes preferred at the Sochi 2014 Olympic Games");
+  title.container(stage);
+  title.draw();
+
+  //set chart type
+  var column = anychart.column();
+  var series = column.column(data);
+  series.stroke(null);
+  column.bounds(0, "10%", "50%", "90%");
+  column.container(stage);
+  column.draw();
+  
+  var pie  = anychart.pie(data);
+  pie.bounds("50%", "10%", "50%", "90%");
+  pie.container(stage);
+  pie.legend(null);
+  pie.draw();
+
+  // create new buttons
+  var printButton = document.createElement("div");
+
+  // set action on button click
+  printButton.onclick = function() {
+    stage.print();
+  };
+
+  printButton.innerHTML = "Print<br>Stage";
+  container.appendChild(printButton);
+
+  // set button style
+  printButton.style.top = "15px";
+  printButton.style.right = "5px";
+  printButton.style.padding = "5px 10px";
+  printButton.style.backgroundColor = "#444444";
+  printButton.style.color = "#fff";
+  printButton.style.fontFamily = title.fontFamily();
+  printButton.style.position = "absolute";
+  printButton.style.zIndex = 2;
+  printButton.style.transition = "0.5s";
+  printButton.style.textAlign = "center";
+  printButton.style.border = "1px solid #444444";
+  printButton.style.borderRadius = "7px 7px 7px 7px";
+  printButton.style.fontSize = "15px";
+  printButton.style.cursor = "pointer";
+  printButton.style.MozUserSelect= "none";
+  printButton.style.KhtmlUserSelect= "none";
+  printButton.style.WebkitUserSelect= "none";
+  printButton.style.userSelect= "none";
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

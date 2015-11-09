@@ -1,4 +1,4 @@
-{:index 7}
+{:index 6}
 # Getting Data from JSON
 
 * [Overview](#overview)
@@ -14,7 +14,7 @@
 
 ## Overview
 
-AnyChart supports several ways of setting data. This article quickly demonstrates main aspects of using JSON format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [Using Data Sets](Using_Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
+AnyChart js charting library supports several ways of setting data. This article quickly demonstrates main aspects of using JSON format in AnyChart component. Last sample of this article demonstrates cartesian chart with advanced settings. For the information on other ways of setting data see [Using Data Sets](Using_Data_Sets) and [Supported Data Formats](Supported_Data_Formats) articles.
   
   
 JSON or JavaScript Object Notation, is an open standard format that uses human-readable text to transmit data objects consisting of attribute-value pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML. For more information visit [http://en.wikipedia.org/wiki/JSON](http://en.wikipedia.org/wiki/JSON)
@@ -611,6 +611,6 @@ chart.textMarker(2)
 
 ## Complex
 
-Previous samples demonstrate separate additional features. Next sample is a bit more complex. It demonstrates cartesian chart with several line series, customized axes, scales, grids and titles.
+Previous samples demonstrate separate additional features. Next sample is a bit more complex. It demonstrates html5 cartesian chart with several line series, customized axes, scales, grids and titles.
 
 {sample}WD\_Data\_from\_JSON\_12{sample}

@@ -57,8 +57,6 @@
   bubble.fill("DodgerBlue")
     .hoverFill("DodgerBlue")
     .hoverHatchFill("zigzag")
-    .minimumSize(10)
-    .maximumSize(30)
     .stroke(anychart.color.darken("DodgerBlue"))
     .hoverStroke("#000000")
     .labels()
@@ -75,8 +73,12 @@
         );
       });
 
+  // set series size
+  chart.minBubbleSize(10);
+  chart.maxBubbleSize(30);
+
   // set tooltips
-  bubble.tooltip().contentFormatter(function(){
+  bubble.tooltip().textFormatter(function(){
     return view.get(this.index, "name") + "\nWages: $" + this.x / 1000 + ",000.00" + "\nJob Growth: " + this.value;
   });
 

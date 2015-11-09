@@ -7,7 +7,7 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
     
-    var dataSet = anychart.data.set([
+  var dataSet = anychart.data.set([
 		{x: "P1", value: 100},
 		{x: "P2", value: 200},
 		{x: "P3", value: 15},
@@ -26,29 +26,26 @@
 	]);
 
 	// set chart type
-	chart = anychart.line();
+	var chart = anychart.line();
 
-	chart.title().text("Click on Chart and Go to Google");
+	chart.title("Click on Chart and Go to Google");
 
 	// set data
-	var area = chart.spline(dataSet).markers(null);
-
-	chart.padding().right(80);
+	chart.spline(dataSet);
 
 	// disable stagger mode. Only one line for x axis labels
-	chart.xAxis().staggerMode(false);
+	var xAxis = chart.xAxis();
+	xAxis.staggerMode(false);
+
+  // add a listener
+  chart.listen("mouseDown", function(){
+		// this will open a new page
+		window.open("http://google.com","_blank");
+	});
 
 	// set container and draw chart
-	chart.container("container").draw();
-  
-	// first index for new point
-	var indexSetter = 21;
-
-    // add a listener
-    chart.listen("mouseDown", function(){
-      window.open("http://google.com","_blank");  // this will open a new page
-	});
-    
+	chart.container("container");
+	chart.draw();
 });</script>
 </head>
 <body>

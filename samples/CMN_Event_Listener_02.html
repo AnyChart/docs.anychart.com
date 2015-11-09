@@ -7,40 +7,41 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // chart type
-    var chart = anychart.bar();
+  // chart type
+  var chart = anychart.bar();
 
-    // chart title
-    chart.title().text("Range Bar Chart");
+  // chart title
+  chart.title("Range Bar Chart");
 
-    // set axes title
-    chart.xAxis().title().enabled(false);
-    chart.yAxis().title().enabled(false);
+  // set data
+  var range = chart.rangeBar([
+    { low: 0.6, high: 6.3},
+    { low: 0.7, high: 6.1},
+    { low: 1.9, high: 8.5},
+    { low: 3.1, high: 10.8},
+    { low: 5.7, high: 14.4},
+    { low: 8.4, high: 16.9},
+    { low: 10.6, high: 19.2},
+    { low: 10.5, high: 18.9},
+    { low: 8.5, high: 16.1},
+    { low: 6.0, high: 12.5},
+    { low: 3.0, high: 8.8},
+    { low: 1.5, high: 6.9},
+    { low: 5.1, high: 12.1}
+  ]);
+  
+  // adding a listener 
+  range.listenOnce(
+    // click twice on any range bar to see the result
+    "dblclick",
+    function(){
+     range.fill("red");
+    }
+  );
 
-    // set data
-    var range = chart.rangeBar([
-        { low: 0.6, high: 6.3},
-        { low: 0.7, high: 6.1},
-        { low: 1.9, high: 8.5},
-        { low: 3.1, high: 10.8},
-        { low: 5.7, high: 14.4},
-        { low: 8.4, high: 16.9},
-        { low: 10.6, high: 19.2},
-        { low: 10.5, high: 18.9},
-        { low: 8.5, high: 16.1},
-        { low: 6.0, high: 12.5},
-        { low: 3.0, high: 8.8},
-        { low: 1.5, high: 6.9},
-        { low: 5.1, high: 12.1}
-    ]);
-    
-    // adding a listener 
-    range.listenOnce("dblclick",function(){     // click twice on any range bar to see the result
-       range.fill("red");
-    });   
-
-    // draw
-    chart.container("container").draw();
+  // draw
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

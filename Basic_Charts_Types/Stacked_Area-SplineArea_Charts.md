@@ -6,9 +6,10 @@
  * [Step Stacked Area](#step_stacked_area)
 
 ## Overview
+
 Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts are good at emphasizing the magnitude of changes over time, as well as at drawing attention to the total value across a trend.
   
-Stacked area charts are multi-series area charts that display the trend  each value contribute over time or categories.
+Stacked area charts are multi-series area charts that display the trend each value contribute over time or categories.
 
 ## Chart
 
@@ -17,24 +18,24 @@ As stacked charts should show contribution of different components to the total,
 So, now we've got three series of data - one series for each product. Let's define categories as seasons of a year.
 
 ```
-    var dataSet = anychart.data.set([
-        ["Winter", 12000, 12000, 10000],
-        ["Spring", 13000, 12000, 17000],
-        ["Summer", 25000, 15000, 19000],
-        ["Autumn", 16000, 16000, 16000]
-    ]);
+  var dataSet = anychart.data.set([
+    ["Winter", 12000, 12000, 10000],
+    ["Spring", 13000, 12000, 17000],
+    ["Summer", 25000, 15000, 19000],
+    ["Autumn", 16000, 16000, 16000]
+  ]);
 ```
 
 Now we have to tell Y-Axis to display these series in a stacked area:
 
 ```
-    chart.yScale().stackMode('value');
+  chart.yScale().stackMode('value');
 ```
 
 And set "Area" as a default series type:
 
 ```
-    chart = anychart.area();
+  chart = anychart.area();
 ```
 
 {sample}BCT_Stacked\_Area-SplineArea\_Charts\_01{sample}
@@ -71,9 +72,9 @@ Here is a sample spline stacked area chart:
 Just change default series type to "stepArea" and get your data displayed in more comparable way:
 
 ```
-    chart.stepArea(seriesData_1);
+  chart.stepArea(seriesData_1);
 ```
 
-Here is a sample step stacked area chart:
+Here is a sample html5 step stacked area chart:
 
 {sample}BCT_Stacked\_Area-SplineArea\_Charts\_03{sample}

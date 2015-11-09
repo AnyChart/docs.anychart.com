@@ -30,8 +30,7 @@ Use a scatter chart when:
 
 ## Chart
 
-Depending on your task you can plot the following types on a Scatter plot: Line, Spline, Marker and
-Bubble charts. To start the creation of Scatter chart you need create chart using {api:anychart.charts.Scatter}**.scatterChart()**{api} method.
+Depending on your task you can plot the following types on a Scatter plot: Line, Marker and Bubble charts. To start the creation of Scatter chart you need create chart using {api:anychart.charts.Scatter}**.scatterChart()**{api} method.
 
 ```
   var chart = anychart.scatter();
@@ -162,7 +161,7 @@ We illustrate industry cluster relationships for the 17 "Springfield" targeted i
 
 ### Marker Chart
 
-Scatter Point or Marker chart is used to make a scatter plot (scatter diagram or scatter graph). It is a chart used to display values of two variables. The data is displayed as a collection of points, each having one coordinate on the horizontal axis and one on the vertical axis.
+Scatter Point or Marker JavaScript chart is used to make a scatter plot (scatter diagram or scatter graph). It is a chart used to display values of two variables. The data is displayed as a collection of points, each having one coordinate on the horizontal axis and one on the vertical axis.
 
 A scatter plot does not specify dependent or independent variables. Either type of variable can be plotted on either axis. Scatter plots represent the association (not causation) between two variables.
 
@@ -216,7 +215,7 @@ And here is the demonstration of Y and X-Axis inversion in the Marker sample:
 
 ### Minimum and Maximum
 
-By default AnyChart calculates axis the minimum and the maximum automatically. You can see this on the scale inversion chart sample above: the minimal value of the Y-Axis is -5, and maximum is 5. You can control these values by setting **.maximum()** and **.minimum()** parameters of the scale:
+By default AnyChart charting library calculates axis the minimum and the maximum automatically. You can see this on the scale inversion chart sample above: the minimal value of the Y-Axis is -5, and maximum is 5. You can control these values by setting **.maximum()** and **.minimum()** parameters of the scale:
 
 
 ```

@@ -62,12 +62,14 @@
 
   // adjust tooltips content
   var tooltip = series.tooltip();
-  tooltip.contentFormatter(function() {
+  tooltip.textFormatter(function() {
     return "Range: " + this.x + "\nMedium: " + (this.q3+this.q1)/2 + "\nLowest: " + this.lowest + "\nQ1: " + this.q1 + "\nMedian: " + this.median + "\nQ3: " + this.q3 + "\nHighest: " +this.highest + "\nPeriod: February 2015";
   });
 
   // adjust tooltip title
-  tooltip.title("Salaries in February 2015\nInformation");
+  tooltip.titleFormatter(function() {
+    return "Salaries in February 2015\nInformation";
+  });
 
   // set container id for the chart
   chart.container("container");

@@ -69,7 +69,7 @@
   var hoverMarkers = series.hoverMarkers();
   hoverMarkers.size(1);
   var tooltip = series.tooltip();
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
     return "X: " + this.x.toFixed(1) + "\nValue: " + this.value.toFixed(0);
   });
 

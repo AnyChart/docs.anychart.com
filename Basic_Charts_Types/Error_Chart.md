@@ -8,6 +8,7 @@
  * [Error Mode](#error_mode)
 * [Visualization](#visualization)
 * [Labels And Tooltips](#labels_and_tooltips)
+* [Samples](#samples)
 
 ## Overview
 
@@ -85,7 +86,7 @@ If you use only the {api:anychart.core.utils.Error#valueError}**.valueError()**{
 
 {sample}Error\_Chart\_03{sample}
 
-AnyChart allows you to set an error value in different ways, e.g. as absolute numbers or as a percentage:
+AnyChart html5 charting library allows you to set an error value in different ways, e.g. as absolute numbers or as a percentage:
 
 ```
   // variable for errors
@@ -230,7 +231,7 @@ And the chart looks appropriate:
 
 ## Visualization
 
-AnyChart provides a few opportunities to configure an error view. If you want to customize the error width you should use these methods:
+AnyChart html5 charting framework provides a few opportunities to configure an error view. If you want to customize the error width you should use these methods:
 
 <table width="400" border="1" class="dtTABLE">
 <tbody><tr>
@@ -304,3 +305,7 @@ Look at the chart sample below and click on it to see it's javascript source.
 If you want to configure data labels and tooltips to display information about the error bars - you should do that in {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltips}**.tooltips()**{api} methods. You can tune their visual appearance, positioning and format.
 
 {sample}Error\_Chart\_13{sample}
+
+## Samples
+
+You can see a lot of other samples in [AnyChart Web Error Charts Gallery](http://anychart.com/products/anychart/gallery/Error_Charts/).

@@ -20,7 +20,7 @@ AnyChart Export Server itself is a jar-file that runs using Java so it works Win
 To run the AnyChart Export Server, do the following:
 * Install PhantomJS: instructions and downloads at [http://phantomjs.org/](http://phantomjs.org/))
 * Install Java: version above 6.0 - [https://java.com/en/download/](https://java.com/en/download/) )
-* Download AnyChart Export Server [//anychart.com/products/export_server/download/anychart-export.jar](binary file)
+* Download AnyChart Export Server [binary file](//anychart.com/products/export_server/download/export-server.jar)
 
 ## Command Line Usage
 
@@ -29,7 +29,7 @@ and then set the parameters of the image (dimensions, quality, extension and so 
 
 Sample command line:
 ```
-java -jar anychart-export.jar cmd --script "var chart = anychart.line(1,2,5); chart.container('container'); chart.draw();" --output-path YOUR_OUT_PATH
+java -jar anychart-export.jar cmd --script "var chart = anychart.line([1,2,5]); chart.container('container'); chart.draw();" --output-path YOUR_OUT_PATH
 ```
 Full list of the parameters available:
 
@@ -163,7 +163,7 @@ java -jar anychart-export.jar server
 
 The sample of a command written in console:
 ```
-curl -X POST -H "Accept: application/json" --data "responseType=base64&dataType=script&data=var chart = anychart.line(1,2,5); chart.container('container'); chart.draw();" localhost:2000/png
+curl -X POST -H "Accept: application/json" --data "responseType=base64&dataType=script&data=var chart = anychart.line([1,2,5]); chart.container('container'); chart.draw();" localhost:2000/png
 ```
 Full list of server parameters that can be set:
 
@@ -229,7 +229,7 @@ java -D phantomjs.binary.path=PATH_TO_YOUR_PHANTOMJS -jar
 If you have decided to use your own server, use the **[anychart.server()](http://api.anychart.com/7.5.0/anychart.graphics#server)** method and set the address of your server as a parameter:
 
 ```
-anychart.graphics.server('http://localhost:2000')
+anychart.graphics.server("http://localhost:2000");
 ```
 
 ## Contribution 

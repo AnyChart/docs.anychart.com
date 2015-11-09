@@ -11,7 +11,7 @@
 
 ## Overview
 
-In this tutorial we will explain in details how to configure background in AnyChart.
+In this tutorial we will explain in details how to configure background in AnyChart charting framework.
   
   
 Background consists of fill, stroke and border corners. These element are configured using {api:anychart.core.ui.Background#fill}**fill()**{api}, {api:anychart.core.ui.Background#stroke}**stroke()**{api} and {api:anychart.core.ui.Background#corners}**corners()**{api} attributes. Background is used in chart titles, labels, tooltips, chart background, data plot, and many more, and they all are configured the same way.
@@ -63,15 +63,14 @@ With AnyChart it is possible to color background with a solid color, with a grad
 
 ### Solid
 
-When fill type is set to "Solid", background is filled with one color and you can control this color opacity. Colors
-can be defined with any of the methods described in [Color management tutorial](Color_Management).Sample solid fill:
+When fill type is set to "Solid", background is filled with one color and you can control this color opacity. Colors can be defined with any of the methods described in [Color management tutorial](Color_Management).Sample solid fill:
 
 ```
   var background = chart.background();
   background.fill("gold");
 ```
 
-In the sample below a chart, a data plot and a chart title backgrounds are colored with a solid fill:
+In the sample below a web graph, a data plot and a chart's title backgrounds are colored with a solid fill:
 
 {sample}AS\_Background\_02{sample}
 

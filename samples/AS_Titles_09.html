@@ -9,7 +9,7 @@
   
   // set stage
   var stage = anychart.graphics.create("container");
-  var palette = anychart.palettes.distinctColors().colors();
+  var palette = anychart.palettes.distinctColors().items();
   
   // data for each person
   var john = anychart.data.set([
@@ -49,6 +49,8 @@
   
   // set data and color
   var column = chart.column(data);
+  column.name("Sales");
+  column.stroke(null);
   
   column.listen(
     
@@ -103,6 +105,8 @@
       chart = anychart.column();
       chart.title("Sales Report");
       var column = chart.column(data);
+      column.stroke(null);
+      column.name("Sales");
       column.listen(
         "pointClick",
         function(e) {

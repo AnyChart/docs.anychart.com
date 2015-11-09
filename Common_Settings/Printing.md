@@ -24,11 +24,11 @@ You can play with this sample try to change printing layout or paper size along 
 
 ## Stage Printing
 
-It is not a problem to print several charts or the whole dashboard using AnyChart. You can do it by placing every object for printing on the same stage and call {api:anychart.graphics.vector.Stage#print}**.print()**{api} method for stage instead of a single chart.
+It is not a problem to print several charts or the whole dashboard using AnyChart Charting Framework. You can do it by placing every object for printing on the same stage and call {api:anychart.graphics.vector.Stage#print}**.print()**{api} method for stage instead of a single chart.
 
 ```
   // stage to print
-  var stage = anychart.graphics.create('container');
+  var stage = anychart.graphics.create("container");
 
   // place charts on stage
   column.container(stage);

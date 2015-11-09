@@ -22,7 +22,7 @@ Polar chart plot allows to draw scatter chart using the polar coordinate system,
 
 ## Chart
 
-AnyChart allows to display three types of series on a Polar chart: Line, Area and Marker. You should create a chart using {api:anychart.charts.Polar}**anychart.polar()**{api} method to display Polar chart:
+AnyChart javascript charting library allows to display three types of series on a Polar chart: Line, Area and Marker. You should create a chart using {api:anychart.charts.Polar}**anychart.polar()**{api} method to display Polar chart:
 
 ```
   // chart type
@@ -46,7 +46,7 @@ AnyChart allows to display three types of series on a Polar chart: Line, Area an
 
 As you can see each point is represented with **x** and **value** fields, where x is an angle.
 
-Here is a basic Polar sample:
+Here is a basic js Polar sample:
 
 {sample}BCT\_PolarChart\_01{sample}
 
@@ -234,7 +234,7 @@ Polar grid is a combination of circular and radial grids. Grid visual appearance
   grid.stroke("white");    
 ```
 
-**Note:** full information about grid settings can be found in [grid section of Scale tutorial](../Axes_and_Grids/Scales#grids)
+**Note:** full information about grid settings can be found in [grid section of Scale tutorial](../Axes_and_Grids/Scales#grids).
 
 
 This sample below demonstrates two polar charts with adjusted visualisation of the radial type of grid as well as of the circular one.
@@ -249,7 +249,7 @@ To configure data labels and tooltips for all series use {api:anychart.charts.Pi
 
 Let's do that with the following example: we will make data labels bold, format labels so they show only the the value of the point and tooltips to show detailed description.
 
-When formatting tooltips, we use  {api:anychart.core.ui.Tooltip#contentFormatter}**.contentFormatter()**{api} to adjust source of content and visual appearance. To control labels’ position we may use  {api:anychart.core.ui.Label#position}**.position()**{api} parameter.
+When formatting tooltips, we use  {api:anychart.core.ui.Tooltip#textFormatter}**.textFormatter()**{api} to adjust source of content and visual appearance. To control labels’ position we may use  {api:anychart.core.ui.Label#position}**.position()**{api} parameter.
 
 Next sample demonstrates bold series labels which display value of a point and tooltip shows detailed description.
 
@@ -270,7 +270,7 @@ Next sample demonstrates bold series labels which display value of a point and t
 
   // format tooltip content
   var tooltip = series.tooltip();
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
     
     // summarize all values
     var sum = 0;

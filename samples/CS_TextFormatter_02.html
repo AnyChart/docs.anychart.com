@@ -10,8 +10,8 @@
   // data
   var dataSet = anychart.data.set([
     ["Product A", 600, 7, 630, 12],
-    ["Product B", 172, 14, 32, 10],
-    ["Product C", 48, 10, 48, 20]
+    ["Product B", 292, 14, 32, 10],
+    ["Product C", 348, 10, 365, 20]
   ]);
 
   // map data for the each series
@@ -19,7 +19,7 @@
   var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
 
   // chart type
-  var chart = anychart.line();
+  var chart = anychart.cartesian();
 
   // set title
   chart.title("Multi-series Bubble Chart");
@@ -32,11 +32,9 @@
 
   // set series data
   var series_1 = chart.bubble(seriesData_2);
-  series_1.maximumSize(25);
-  series_1.minimumSize(1);
   var series_2 = chart.bubble(seriesData_1);
-  series_2.maximumSize(25);
-  series_2.minimumSize(1);
+  chart.minBubbleSize(1);
+  chart.maxBubbleSize(25);
   
   // enabling the labels
   var labels1 = series_1.labels();

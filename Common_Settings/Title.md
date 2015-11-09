@@ -13,7 +13,7 @@
 
 ## Overview
 
-Every chart in AnyChart can have one default title and unlimited number of additional custom titles. These text fields are used to create description for the chart data. By default, the {api:anychart.core.ui.Title}**.title()**{api} is placed on the top of the chart.
+Every js chart in AnyChart can have one default title and unlimited number of additional custom titles. These text fields are used to create description for the chart data. By default, the {api:anychart.core.ui.Title}**.title()**{api} is placed on the top of the chart.
 
 ## Default Title
 
@@ -40,12 +40,12 @@ Of course you can specify your own texts for a title using {api:anychart.core.ui
   
   // set title text
   var title = chart.title();
-  title.text('Sales Performance');
+  title.text("Sales Performance");
 ```
 
 {sample}AS\_Titles\_02{sample}
 
-*Note:* there is even more simple way to set custom text for a title. Text can be set using **chart.title('Sales Performance')** method without additional parameters.
+*Note:* there is even more simple way to set custom text for a title. Text can be set using **chart.title("Sales Performance")** method without additional parameters.
 
 ## Visualization
 
@@ -59,9 +59,9 @@ Title can be placed anywhere on the chart plot. Parameter {api:anychart.core.ui.
   // adjust title
   var title = chart.title();
   // place title at the bottom
-  title.orientation('bottom');
+  title.orientation("bottom");
   // stick title to the left
-  title.align('left');
+  title.align("left");
 ```
 
 {sample}AS\_Titles\_03{sample}
@@ -84,9 +84,9 @@ Text is the main part of a title. Visit {api:anychart.core.ui.Title}API{api} to 
   // set font size
   title.fontSize(12);
   // underline text
-  title.fontDecoration('underline');
+  title.fontDecoration("underline");
   // set font family
-  title.fontFamily('Tahoma');
+  title.fontFamily("Tahoma");
 ```
 
 {sample}AS\_Titles\_05{sample}
@@ -100,9 +100,9 @@ You can use HTML formatted text of a title. Use {api:anychart.core.ui.Title#useH
   //enables HTML tags
   title.useHtml(true);
   title.text(
-    'Sales Performance'+
-    '<br><a style="color:#0000FF; font-size: 10px;">'+
-    'according to annual report</a>'
+    "Sales Performance"+
+    "<br><a style=\"color:#0000FF; font-size: 10px;\">"+
+    "according to annual report</a>"
   );
 ```
 
@@ -153,6 +153,6 @@ You can make your chart title interactive by adding event listeners of a differe
 
 {sample}AS\_Titles\_08{sample}
 
-Here is the advanced sample of using events in titles. In this sample we will show how chart footer can be used as "Back" button for self-drilldown charts. Click on bars to see detailed report on each sales manager and in detailed report click "Back to Sales Manager Report" button in the bottom left corner of line chart to load an initial chart.
+Here is the advanced sample of using events in titles. In this javascript sample we will show how chart footer can be used as "Back" button for self-drilldown charts. Click on bars to see detailed report on each sales manager and in detailed report click "Back to Sales Manager Report" button in the bottom left corner of line chart to load an initial chart.
 
 {sample}AS\_Titles\_09{sample}

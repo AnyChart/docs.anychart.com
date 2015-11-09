@@ -28,7 +28,7 @@
   var scale = gauge.axis(0).scale();
   scale.minimum(0);
   scale.maximum(360);
-  var ticks = gauge.axis(0).scale();
+  var ticks = gauge.axis(0).scale().ticks();
   ticks.interval(20);
   var minorTicks = gauge.axis(0).scale().minorTicks();
   minorTicks.interval(1);

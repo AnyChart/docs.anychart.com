@@ -5,7 +5,8 @@
 * [Image Fill](#image_fill)
 
 ## Solid color
-The most simple fill is solid color fill.  Color can be set in the following formats:
+
+The most simple fill is solid color fill. Color can be set in the following formats:
 * Hex
 * RGB
 * HSL
@@ -58,7 +59,7 @@ And here is an example of multiple-key linear gradient:
 ### Fill modes
 
 #### ObjectBoundingBox without angle value preservation
-In this mode, gradient vector is calculated with the preset angle, but the result gradient angle on the rendered page can be changed if the object proportion is not 1:1 in the browser. So visually the result gradient angle may **not correspond** to the original settings.
+In this mode, AnyChart charting framework calculates gradient vector with the preset angle, but the result gradient angle on the rendered page can be changed if the object proportion is not 1:1 in the browser. So visually the result gradient angle may **not correspond** to the original settings.
 
 #### ObjectBoundingBox with angle value preservation
 In this mode the result angle will visually correspond the original setting, non regarding browser scaling duplication (so, for objects that do not have 1:1 proportion with the original figure, the gradient angle will correspond to the initial value due to internal calculations).
@@ -76,7 +77,7 @@ Please see the following illustration of these modes:
 ```
 
 #### UserSpaceOnUse
-In this mode gradient settings are added by gradient size and borders/coordinates, and rendering is calculated within those borders.  After that, the fill is executed on the element figure according to its coordinates.
+In this mode gradient settings are added by gradient size and borders/coordinates, and rendering is calculated within those borders. After that, the fill is executed on the element figure according to its coordinates.
 
 This can be shown in the following way:
 

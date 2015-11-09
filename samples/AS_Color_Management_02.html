@@ -38,7 +38,7 @@
   var series = chart.column(data);
   series.stroke(null);
   var tooltip = series.tooltip();
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
     var mixColor2 = anychart.color.darken(color1, (this.index * 0.2));
     return "Input Color: " + color1 +
       "\nDarken Ration: " + this.index * 2 / 10 +

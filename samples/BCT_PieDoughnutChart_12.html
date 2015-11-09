@@ -28,14 +28,14 @@
   tooltip.title("Information");
 
   // set tooltip content
-  tooltip.contentFormatter(function(){
+  tooltip.textFormatter(function(){
 
     // get name of each slice
     var name = this.name;
     // get value of each slice
     var value = this.value;
 
-    // content to show
+    // text to show
     return "Chanel: " + name + "\nSales: " + value + "\nPeriod: Year 2003";
   });
 

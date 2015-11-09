@@ -9,25 +9,29 @@
   
   // set chart type
   var chart = anychart.column();
-  
-  // set data
-  chart.column([
-    {x: "John", value: 10000},
-    {x: "Jake", value: 12000},
-    {x: "Peter", value: 16000}
-  ]);
-  
-  // set chart title
-  chart.title("Legend for Single Series");
-  
+
   // legend settings
   var legend = chart.legend();
   // enable legend
   legend.enabled(true);
   // set source of legend items
   legend.itemsSourceMode("categories");
-  
-  // set container and draw chart
+
+
+
+  // set data
+  var series = chart.column([
+    {x: "John", value: 10000},
+    {x: "Jake", value: 12000},
+    {x: "Peter", value: 16000}
+  ]);
+  series.name("Sales");
+
+  // set chart title
+  chart.title("Legend for Single Series");
+
+
+      // set container and draw chart
   chart.container("container");
   chart.draw();
 });</script>

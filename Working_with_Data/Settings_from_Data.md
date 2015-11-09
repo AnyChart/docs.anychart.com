@@ -1,12 +1,13 @@
-#Settings from Data
-
+{:index 8}
+Settings from Data
+=================
 * [Overview](#overview)
 * [Supported Functionality](#supported_functionality)
 
 
 # Overview
 
-AnyChart allows you to apply different visualization settings to a single point. It means that you can customize the point view explicitly from the data set. Let's consider how it works on a sample of [Bar Chart](Bar_Chart).
+AnyChart js charting framework allows you to apply different visualization settings to a single point. It means that you can customize the point view explicitly from the data set. Let's consider how it works on a sample of JavaScript [Bar Chart](Bar_Chart).
 
 <br>As you know you can use a data set to create charts with the following code:
 
