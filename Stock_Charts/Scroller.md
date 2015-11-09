@@ -36,7 +36,6 @@ Now you can see that there is a scroller shown up, but the general view has not 
 
 Let's now look at the features of the scroller we can adjust.
 
-
 ## Adjust
 
 As we have already noted, the Stock Scroller has both the Basic Scroller features and special ones. Let's work with basic features first.
@@ -45,25 +44,62 @@ As we have already noted, the Stock Scroller has both the Basic Scroller feature
 
 Zoom, thumbs, scroller
 
-Note that we cannot change the position of the scroller as well as its orientation, as its function is to scroll the time (X) axis. Also, in cannot hide automatically. Though, we are able to change the visual settings of the scroller. Look at the sample below. We have 
+Note that we cannot change the position of the scroller as well as its orientation, as its function is to scroll the time (X) axis. Also, in cannot hide automatically. Though, we are able to change the visual settings of the scroller. Look at the sample below. We have set the default zoom to only 10 points, disabled thumbs, changed the scroller color and prohibited the range changing. For all these changes we used {api:anychart.core.stock.Scroller#selectedRange}**.selectedRange()**{api}, {api:anychart.core.stock.Scroller#allowRange}**.thumbs()**{api}, {api:anychart.core.stock.Scroller#fill}**.fill()**{api}, {api:anychart.core.stock.Scroller#selectedFill}**.selectedFill()**{api} and {api:anychart.core.stock.Scroller#allowRangeChange}**.allowRangeChange()**{api}:
 
-Colors
-allowRangeChange
+```
+		// adjust the scroller
+        chart.selectRange('2014-01-02','2014-02-03');
+        chart.scroller().thumbs(false);
+        chart.scroller().fill('green 0.1');
+        chart.scroller().selectedFill('green 0.5');
+        chart.scroller().allowRangeChange(true);
+```
+
+{sample}STOCK\_Scroller\_02{sample}
+
+Note that opposite to scroller in basic charts, in stocks we can zoom the chart only by setting the selected range.
 
 ### Background series
 
+Now, as we have tried to change some elements that are common for the Stock and the Basic scroller, let's adjust some params that only stock scroller can have. We can add any of [supported series](Supported_Series) to the scroller if necessary, so the scroller will display a thumbnail stock in its background. Let's define the thumbnail series of column type and look at it:
 
-We can add any of [supported series](Supported_Series) to the scroller if necessary, so the scroller will display a thumbnail stock in its background. Let's define the thumbnail series of line type and look at it:
+{sample}STOCK\_Scroller\_03{sample}
 
-{sample}{sample}
-
-
+```
 // create scroller series with mapped data
-chart.scroller().column(mapping);
+chart.scroller().column(line_3_mapping);
+```
 
+Visit [Supported series](Supported_Series) articles to know more about series in Stocks.
 
+### Scroller axis
 
-от обычного отличается тем, что
- - на нем можно рисовать серии (из тех же трех что на стоках)
- - нельзя позиционировать хз где
- - на нем можно создать ось - чтоб было лучше видно, какую часть данных просматриваем. 
+There's one more feature that only Stock scroller has - an additional axis inside, which helps to control the shown and hidden parts of the data and not to get lost. It's enabled by default, but we can disable it:
+
+```
+// create scroller series with mapped data
+chart.scroller().column(line_3_mapping);
+```
+
+{sample}STOCK\_Scroller\_04{sample}
+
+We can also adjust the labels of the axis. For example, let's make them of red color and format them to show the first day of each month.
+
+```
+		// adjust the scroller axis
+        var labels = chart.scroller().xAxis().labels();
+        var minorLabels = chart.scroller().xAxis().minorLabels();
+        
+        labels.textFormatter(function() {
+            return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
+        });
+        labels.fontColor('red');
+
+        minorLabels.textFormatter(function(){
+            return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
+        });
+        minorLabels.fontColor('red');
+```
+
+{sample}STOCK\_Scroller\_05{sample}
+

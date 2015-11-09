@@ -6,9 +6,6 @@
  * [Zoom](#zoom)
  * [Scroll](#scroll)
  * [Thumbs](#thumbs)
-* [Get|set methods](#get|set_methods)
- * [Scroll](#scroll)
- * [Zoom](#zoom) 
 * [Events](#events)
 
 ## Overview
@@ -37,7 +34,7 @@ Now you can see that there is a scroller shown up, but the general view has not 
 
 In this section we will consider the zoom and scroll settings of a chart. 
 
-### Zoom
+### Zoom 
 
 First of all, we need to define that area of the chart that we'd like to have being displayed. We can do it differently, in accordance with our needs and preferences.
 
@@ -121,7 +118,7 @@ Let's now talk about the scroller itself. Look through the next paragraph.
 
 
 
-### Scroll
+### Scroll <a href="scroll_2"></a>
 
 The scroll bar is rather flexible in its look and behavior. We can change the colors, sizes, positioning, etc. Let's make some changes with a couple of previous samples.
 
