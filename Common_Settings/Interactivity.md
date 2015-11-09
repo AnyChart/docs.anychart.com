@@ -16,7 +16,6 @@
   * [Chart as Tooltip](#chart_as_tooltip)
 * [Interactivity Settings in Data Sets](#interactivity_settings_in_data_sets)
 
-
 ## Overview 
 
 Our js charts are interactive by default, and almost everything can be adjusted to your liking. This article describes the default charts behaviour and tells how to adjust charts' interactivity settings.
