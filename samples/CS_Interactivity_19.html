@@ -1,0 +1,101 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js" data-export="true"></script>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+	// create line chart
+	var chart = anychart.column();
+	var series = chart.column([
+		["Jan", 10],
+		["Feb", 12],
+		["Mar", 11],
+		["Apr", 15],
+		["May", 20],
+		["Jun", 22],
+		["Jul", 21],
+		["Aug", 28],
+		["Sep", 29],
+		["Okt", 40],
+		["Nov", 41],
+		["Dec", 45]
+	]);
+
+	// adding dollar symbols to yAxis labels
+	var yLabels = chart.yAxis().labels();
+	yLabels.textFormatter(function(){
+		return "$" + this.value;
+	});
+
+	chart.listen("pointsHover", function(point){
+		var index = point.currentPoint.index;
+		var series = point.point.getSeries();
+		if (!point.currentPoint.hovered)return;
+		switch (true){
+			case (index<3):
+				series.hover([0,1,2]);
+				break;
+			case (index<6):
+				series.hover([3,4,5]);
+				break;
+			case (index<9):
+				series.hover([6,7,8]);
+				break;
+			case (index<12):
+				series.hover([9,10,11]);
+				break;
+		}
+	});
+
+	var tooltip = series.tooltip();
+	tooltip.titleFormatter(function(point){
+		var index = point.index;
+		switch (true){
+			case (index<3):
+				return "First Quarter";
+			case (index<6):
+				return "Second Quarter";
+			case (index<9):
+				return "Third Quarter";
+			case (index<12):
+				return "Fourth Quarter";
+		}
+	});
+	tooltip.textFormatter(function(point){
+		var index = point.index;
+		var series = chart.getSeries(0);
+		var prefix = "Income: $";
+		switch (true){
+			case (index<3):
+				return prefix+sumValues([0,1,2]);
+			case (index<6):
+				return prefix+sumValues([3,4,5]);
+			case (index<9):
+				return prefix+sumValues([6,7,8]);
+			case (index<12):
+				return prefix+sumValues([9,10,11]);
+		}
+
+		function sumValues(array){
+			var value = 0;
+			for (var i=0;i<array.length;i++)
+				value+=series.getPoint(array[i]).get("value");
+			return value;
+		}
+	});
+
+	// set container id for the chart
+	chart.container("container");
+
+	// initiate chart drawing
+	chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

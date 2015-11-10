@@ -266,41 +266,40 @@ If you need the similar drilldown chart with multi-selection, you may do the fol
 In this sample not the data but the series are added and removed depending on selections made:
 
 ```
-chart.listen("pointsSelect", function(evt){
-            var pointsNum = evt.points.length;
-            console.log(pointsNum);
-            var myData = [];
+  chart.listen("pointsSelect", function(evt){
+  var pointsNum = evt.points.length;
+  console.log(pointsNum);
+  var myData = [];
 
-            for (var i = 0; i < pointsNum; i++) {
-                var point = evt.points[i];
-                if (!point.selected())
-                    continue;
-                dataRow = data.row(point.getIndex());
-                myData.push([
-                    {x: "Jan", value: dataRow[3], fill: "#0099CC"},
-                    {x: "Feb", value: dataRow[4], fill: "#520085"},
-                    {x: "Mar", value: dataRow[5], fill: "#CC6600"},
-                    {x: "Apr", value: dataRow[6], fill: "#336600"},
-                    {x: "May", value: dataRow[7], fill: "#0099CC"},
-                    {x: "Jun", value: dataRow[8], fill: "#520085"},
-                    {x: "Jul", value: dataRow[9], fill: "#CC6600"},
-                    {x: "Aug", value: dataRow[4], fill: "#520085"},
-                    {x: "Sep", value: dataRow[5], fill: "#CC6600"},
-                    {x: "Oct", value: dataRow[6], fill: "#336600"},
-                    {x: "Nov", value: dataRow[7], fill: "#0099CC"},
-                    {x: "Dec", value: dataRow[8], fill: "#520085"}
-                ]);
-            }
-            lineChart.removeAllSeries();
-            lineChart.addSeries.apply(lineChart, myData);
+  for (var i = 0; i < pointsNum; i++) {
+    var point = evt.points[i];
+    if (!point.selected())
+      continue;
+    dataRow = data.row(point.getIndex());
+    myData.push([
+      {x: "Jan", value: dataRow[3], fill: "#0099CC"},
+      {x: "Feb", value: dataRow[4], fill: "#520085"},
+      {x: "Mar", value: dataRow[5], fill: "#CC6600"},
+      {x: "Apr", value: dataRow[6], fill: "#336600"},
+      {x: "May", value: dataRow[7], fill: "#0099CC"},
+      {x: "Jun", value: dataRow[8], fill: "#520085"},
+      {x: "Jul", value: dataRow[9], fill: "#CC6600"},
+      {x: "Aug", value: dataRow[4], fill: "#520085"},
+      {x: "Sep", value: dataRow[5], fill: "#CC6600"},
+      {x: "Oct", value: dataRow[6], fill: "#336600"},
+      {x: "Nov", value: dataRow[7], fill: "#0099CC"},
+      {x: "Dec", value: dataRow[8], fill: "#520085"}
+    ]);
+  }
+  lineChart.removeAllSeries();
+  lineChart.addSeries.apply(lineChart, myData);
 
-                lineChart.title(pieTitle + lineSubTitle);
-                lineChart.tooltip().textFormatter(function() {
-                    console.log(this.value);
-                    var text = 'Sales amount: $' + this.value;
-                    return text;
-                });
-        });
+  lineChart.title(pieTitle + lineSubTitle);
+  lineChart.tooltip().textFormatter(function() {
+      console.log(this.value);
+      var text = 'Sales amount: $' + this.value;
+      return text;
+  });
 ```
 
 Check out some other drilldown samples we've got in our gallery:
@@ -309,6 +308,97 @@ Check out some other drilldown samples we've got in our gallery:
  - [Wine Sales in Australia](http://anychart.com/products/anymap/gallery/Maps/Sales_by_Product_Categories.php)
  - [Software Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
  - [ACME Corp. Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
+
+### Manage Single Points
+
+AnyChart provides several method to manage interactivity settings of a single chart's point. You can pass a number as a parameter for the **.pointIndex()** method to choose a point for further adjustment. For instance, using **pointsHover** event we can find out the index of hovered point and set hovered state for adjacent points.
+
+```
+  var chart = anychart.column();
+  chart.column(data);
+  
+  chart.listen("pointsHover", function(point){
+    var index = point.currentPoint.index;
+    if (!point.currentPoint.hovered)return;
+    var arrayToHover = [index];
+    if (series.getPoint(index-1).exists())
+        arrayToHover.push(index-1);
+    if (series.getPoint(index+1).exists())
+        arrayToHover.push(index+1);
+    series.hover(arrayToHover);
+  });
+```
+
+Even though this code works fine, there isn't much sense in hovering three random points. Instead, we can hover points, that are somehow related. Let's create a chart, display the income through the year and hover all the points of a quarter, the hovered point belongs to:
+
+```
+    chart.listen("pointsHover", function(point){
+    var index = point.currentPoint.index;
+    var series = point.point.getSeries();
+      if (!point.currentPoint.hovered)return;
+      var arrayToHover = [index];
+      switch (true){
+        case (index<3): 
+          series.hover([0,1,2]);
+          break;
+        case (index<6): 
+          series.hover([3,4,5]);
+          break;
+        case (index<9): 
+          series.hover([6,7,8]);
+          break;
+        case (index<12): 
+          series.hover([9,10,11]);
+          break;
+      }
+    });
+```
+
+Moreover, you may consider it's useful to manage tooltip content, as far as we want to hover several points at a time. Let's display total income in current quarter as tooltip content:
+
+```
+  var tooltip = series.tooltip();
+  
+  tooltip.titleFormatter(function(point){
+    var index = point.index;
+    switch (true){
+      case (index<3): 
+        return "First Quarter";
+      case (index<6): 
+        return "Second Quarter";
+      case (index<9): 
+        return "Third Quarter";
+      case (index<12): 
+        return "Fourth Quarter";
+    }
+  });
+  
+  tooltip.contentFormatter(function(point){
+    var index = point.index;
+    var prefix = "Income: $";
+    switch (true){
+      case (index<3): 
+        return prefix+sumValues([0,1,2]);
+      case (index<6): 
+        return prefix+sumValues([3,4,5]);
+      case (index<9): 
+        return prefix+sumValues([6,7,8]);
+      case (index<12): 
+        return prefix+sumValues([9,10,11]);
+      }
+      
+      function sumValues(array){
+        var value = 0;
+        for (var i=0;i<array.length;i++)
+            value+=series.getPoint(array[i]).get("value");
+        return value;
+      }
+  });
+```
+
+And here is a sample with these settings
+
+{sample}CS\_Interactivity\_19{sample} 
 
 ## Creating Custom Tooltip
 
