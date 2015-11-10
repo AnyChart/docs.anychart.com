@@ -52,7 +52,7 @@ Note that we cannot change the position of the scroller as well as its orientati
         chart.scroller().thumbs(false);
         chart.scroller().fill('green 0.1');
         chart.scroller().selectedFill('green 0.5');
-        chart.scroller().allowRangeChange(true);
+        chart.scroller().allowRangeChange(false);
 ```
 
 {sample}STOCK\_Scroller\_02{sample}
