@@ -42,7 +42,7 @@ var thirdPlot = chart.plot(2);
 var thirdSeries = thirdPlot.line(lineMapping);
 ```
 
-{sample}STOCK\_Plots\_01{sample}
+{sample :width 690 :height 500 }STOCK\_Plots\_01{sample}
 
 So, we use {api}**.plot()**{api} for creating the plot. Note that we should give each plot an unique index. The number of plots each chart has is unlimited.
 
@@ -72,7 +72,7 @@ var secondPlot = chart.plot(1);
 var secondSeries = secondPlot.ohlc(ohlcMapping);
 ```
 
-{sample}STOCK\_Plots\_02{sample}
+{sample :width 690 :height 500 }STOCK\_Plots\_02{sample}
 
 One plot might contain an unlimited number of series, but still we recommend to split them into different plots if there are too many of them.
 
@@ -96,8 +96,7 @@ var secondPlot = chart.plot(1);
 // create ohlc series on the second plot
 var secondSeries = secondPlot.ohlc(ohlcMapping);
 ```
-
-{sample}STOCK\_Plots\_03{sample}
+{sample :width 690 :height 500 }STOCK\_Plots\_03{sample}
 
 Working with axes in plots is the same as working with them in basic charts. Visit the [Axes tutorial](../Axes_and_Grids/Axis_Basics) to know more about the axes.
 
