@@ -8,8 +8,10 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-	// create line chart
+	// create column chart
 	var chart = anychart.column();
+
+	// set series data
 	var series = chart.column([
 		["Jan", 10],
 		["Feb", 12],
@@ -31,10 +33,9 @@
 		return "$" + this.value;
 	});
 
-	chart.listen("pointsHover", function(point){
-		var index = point.currentPoint.index;
-		var series = point.point.getSeries();
-		if (!point.currentPoint.hovered)return;
+	chart.listen("pointsHover", function(event){
+		var index = event.currentPoint.index;
+		if (!event.currentPoint.hovered) return;
 		switch (true){
 			case (index<3):
 				series.hover([0,1,2]);
@@ -55,29 +56,21 @@
 	tooltip.titleFormatter(function(point){
 		var index = point.index;
 		switch (true){
-			case (index<3):
-				return "First Quarter";
-			case (index<6):
-				return "Second Quarter";
-			case (index<9):
-				return "Third Quarter";
-			case (index<12):
-				return "Fourth Quarter";
+			case (index<3): return "First Quarter";
+			case (index<6): return "Second Quarter";
+			case (index<9): return "Third Quarter";
+			case (index<12): return "Fourth Quarter";
 		}
 	});
+
 	tooltip.textFormatter(function(point){
 		var index = point.index;
-		var series = chart.getSeries(0);
 		var prefix = "Income: $";
 		switch (true){
-			case (index<3):
-				return prefix+sumValues([0,1,2]);
-			case (index<6):
-				return prefix+sumValues([3,4,5]);
-			case (index<9):
-				return prefix+sumValues([6,7,8]);
-			case (index<12):
-				return prefix+sumValues([9,10,11]);
+			case (index<3): return prefix+sumValues([0,1,2]);
+			case (index<6): return prefix+sumValues([3,4,5]);
+			case (index<9): return prefix+sumValues([6,7,8]);
+			case (index<12): return prefix+sumValues([9,10,11]);
 		}
 
 		function sumValues(array){
