@@ -332,71 +332,60 @@ AnyChart provides several method to manage interactivity settings of a single ch
 Even though this code works fine, there isn't much sense in hovering three random points. Instead, we can hover points, that are somehow related. Let's create a chart, display the income through the year and hover all the points of a quarter, the hovered point belongs to:
 
 ```
-    chart.listen("pointsHover", function(point){
-    var index = point.currentPoint.index;
-    var series = point.point.getSeries();
-      if (!point.currentPoint.hovered)return;
-      var arrayToHover = [index];
-      switch (true){
-        case (index<3): 
-          series.hover([0,1,2]);
-          break;
-        case (index<6): 
-          series.hover([3,4,5]);
-          break;
-        case (index<9): 
-          series.hover([6,7,8]);
-          break;
-        case (index<12): 
-          series.hover([9,10,11]);
-          break;
-      }
-    });
+	chart.listen("pointsHover", function(event){
+		var index = event.currentPoint.index;
+		if (!event.currentPoint.hovered) return;
+		switch (true){
+			case (index<3):
+				series.hover([0,1,2]);
+				break;
+			case (index<6):
+				series.hover([3,4,5]);
+				break;
+			case (index<9):
+				series.hover([6,7,8]);
+				break;
+			case (index<12):
+				series.hover([9,10,11]);
+				break;
+		}
+	});
 ```
 
 Moreover, you may consider it's useful to manage tooltip content, as far as we want to hover several points at a time. Let's display total income in current quarter as tooltip content:
 
 ```
-  var tooltip = series.tooltip();
-  
-  tooltip.titleFormatter(function(point){
-    var index = point.index;
-    switch (true){
-      case (index<3): 
-        return "First Quarter";
-      case (index<6): 
-        return "Second Quarter";
-      case (index<9): 
-        return "Third Quarter";
-      case (index<12): 
-        return "Fourth Quarter";
-    }
-  });
-  
-  tooltip.contentFormatter(function(point){
-    var index = point.index;
-    var prefix = "Income: $";
-    switch (true){
-      case (index<3): 
-        return prefix+sumValues([0,1,2]);
-      case (index<6): 
-        return prefix+sumValues([3,4,5]);
-      case (index<9): 
-        return prefix+sumValues([6,7,8]);
-      case (index<12): 
-        return prefix+sumValues([9,10,11]);
-      }
-      
-      function sumValues(array){
-        var value = 0;
-        for (var i=0;i<array.length;i++)
-            value+=series.getPoint(array[i]).get("value");
-        return value;
-      }
-  });
+	var tooltip = series.tooltip();
+	tooltip.titleFormatter(function(point){
+		var index = point.index;
+		switch (true){
+			case (index<3): return "First Quarter";
+			case (index<6): return "Second Quarter";
+			case (index<9): return "Third Quarter";
+			case (index<12): return "Fourth Quarter";
+		}
+	});
+
+	tooltip.textFormatter(function(point){
+		var index = point.index;
+		var prefix = "Income: $";
+		switch (true){
+			case (index<3): return prefix+sumValues([0,1,2]);
+			case (index<6): return prefix+sumValues([3,4,5]);
+			case (index<9): return prefix+sumValues([6,7,8]);
+			case (index<12): return prefix+sumValues([9,10,11]);
+		}
+
+		function sumValues(array){
+			var value = 0;
+			for (var i=0;i<array.length;i++)
+				value+=series.getPoint(array[i]).get("value");
+			return value;
+		}
+	});
 ```
 
-And here is a sample with these settings
+And here is a sample with these settings:
 
 {sample}CS\_Interactivity\_19{sample} 
 
