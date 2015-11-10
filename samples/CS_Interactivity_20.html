@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js" data-export="true"></script>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+	    // create column chart
+	    var chart = anychart.column();
+
+	    // set series data
+	    var series = chart.column([
+		    ["John", 10000],
+		    ["Jake", 12000],
+		    ["Peter", 18000],
+		    ["James", 11000],
+		    ["Mary", 9000]
+	    ]);
+	    var palette = anychart.palettes.distinctColors().colors();
+
+	    var legend = chart.legend();
+	    // enable legend
+	    legend.enabled(true);
+	    // set source of legend items
+	    legend.itemsSourceMode("categories");
+	    legend.itemsFormatter(function(items){
+		    for (var i=0;i<items.length;i++){
+			    items[i].iconType = "square";
+			    items[i].iconFill = palette[i];
+			    items[i].iconEnabled = true;
+		    }
+		    // return items array
+		    return items;
+	    });
+
+	    legend.listen("legendItemMouseOver", function(event) {
+		    // get item's index
+		    var index = event["itemIndex"];
+		    // simulate hovering charts series
+		    series.getPoint(index).hovered(true);
+	    });
+	    legend.listen("legendItemMouseOut", function(event) {
+		    // get item's index
+		    var index = event["itemIndex"];
+		    // simulate unhovering charts series
+		    series.getPoint(index).hovered(false);
+	    });
+
+	    // set container id for the chart
+	    chart.container("container");
+
+	    // initiate chart drawing
+	    chart.draw();
+    });</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

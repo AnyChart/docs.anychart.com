@@ -161,7 +161,7 @@ chart.title().listen("mouseOut", function(){
     });
 ```
 
-{sample}CS\_Interactivity\_08{sample} 
+{sample}CS\_Interactivity\_08{sample}
 
 <a name="series_select"> </a>
 #### Select 
@@ -214,6 +214,24 @@ If you want to disable the selection ability, use "none" as the {api:anychart.co
 
 To unselect the points without preventing the selection ability use {api:anychart.core.SeriesBase#unselect}**.unselect()**{api} method. As well as in the situation with unhovering, you can define the points or set no parameters to the method. Try to use it in our playground.
 
+#### Single point
+
+Along with hovering and selecting of a points' array you can manage current state of a single point. Use **.getPoint()** method to get a point of a series. Pass point's index as a parameter for this method. 
+
+```
+  var series = chart.column(data);
+  
+  var point = series.getPoint(3);
+```
+
+Now you can use **.hovered()** and **.selected()** methods to manage the state of the point. Both methods use **true** or **false** as a parameter.
+
+```
+  var point = series.getPoint(3);
+  point.hovered(true);
+```
+
+{sample}CS\_Interactivity\_20{sample}
 
 ### Handling chart events
 
@@ -227,7 +245,7 @@ You can find more about listeners [here](../Common_Settings/Event_Listeners).
 
 Let's look at the typical situation when we might need the listeners. We add a listener of double clicks to the series, which will navigate us to the pre-defined URL.
 
-{sample}CS\_Interactivity\_12{sample} 
+{sample}CS\_Interactivity\_12{sample}
 
 Explore the code of this sample in the playground.
 
@@ -387,7 +405,7 @@ Moreover, you may consider it's useful to manage tooltip content, as far as we w
 
 And here is a sample with these settings:
 
-{sample}CS\_Interactivity\_19{sample} 
+{sample}CS\_Interactivity\_19{sample}
 
 ## Creating Custom Tooltip
 
