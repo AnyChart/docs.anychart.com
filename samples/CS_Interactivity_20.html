@@ -13,26 +13,32 @@
 
 	// set series data
 	var series = chart.column([
-		["John", 10000],
-		["Jake", 12000],
-		["Peter", 18000],
-		["James", 11000],
-		["Mary", 9000]
+		{x:"John", value: 10000},
+		{x:"Jake", value: 12000},
+		{x:"Peter", value: 18000},
+		{x:"James", value: 11000},
+		{x:"Mary", value: 9000}
 	]);
-	var palette = anychart.palettes.distinctColors().items();
+	var palette = anychart.palettes.distinctColors();
+
+	for (var i=0; series.getPoint(i).exists();i++)
+		series.getPoint(i).set("fill", palette.itemAt(i));
+
+	series.selectFill("#444");
+	series.stroke(null);
 
 	var legend = chart.legend();
 	// enable legend
 	legend.enabled(true);
 	// set source of legend items
 	legend.itemsSourceMode("categories");
-	legend.itemsFormatter(function(items){
+
+	legend.itemsFormatter(function (items){
 		for (var i=0;i<items.length;i++){
 			items[i].iconType = "square";
-			items[i].iconFill = palette[i];
+			items[i].iconFill = palette.itemAt([i]);
 			items[i].iconEnabled = true;
 		}
-		// return items array
 		return items;
 	});
 
@@ -47,6 +53,38 @@
 		var index = event["itemIndex"];
 		// simulate unhovering charts series
 		series.getPoint(index).hovered(false);
+	});
+
+	legend.listen("legendItemClick", function(event) {
+		// get item's index
+		var index = event["itemIndex"];
+		// simulate unhovering charts series
+		series.getPoint(index).selected(!series.getPoint(index).selected());
+		legend.itemsFormatter(function (items){
+			for (var i=0;i<items.length;i++){
+				items[i].iconType = "square";
+				if (series.getPoint(i).selected())
+					items[i].iconFill = "#444";
+				else
+					items[i].iconFill = palette.itemAt([i]);
+				items[i].iconEnabled = true;
+			}
+			return items;
+		});
+	});
+
+	chart.listen("pointsSelect", function(){
+		legend.itemsFormatter(function (items){
+			for (var i=0;i<items.length;i++){
+				items[i].iconType = "square";
+				if (series.getPoint(i).selected())
+					items[i].iconFill = "#444";
+				else
+					items[i].iconFill = palette.itemAt([i]);
+				items[i].iconEnabled = true;
+			}
+			return items;
+		});
 	});
 
 	// set container id for the chart

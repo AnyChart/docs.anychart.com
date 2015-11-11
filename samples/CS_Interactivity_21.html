@@ -22,9 +22,10 @@
 
 	var palette = anychart.palettes.distinctColors();
 
-	for (var i=0; series.getPoint(i).exists();i++){
+	for (var i=0; series.getPoint(i).exists();i++)
 		series.getPoint(i).set("fill", palette.itemAt(i));
-	}
+
+	series.stroke(null);
 
 	// set container id for the chart
 	chart.container("container");

@@ -242,16 +242,22 @@ After you have defined a getter for the {api:anychart.core.SeriesPoint}series po
 		series.getPoint(i).set("fill", palette.itemAt(i));
 ```
 
-As you can see, we have created a column series, created variable for default AnyChart Palette and set a color for each point depending on point's index. 
+As you can see, we have created a column series, created variable for default AnyChart palette using distinctColors() method and set a color for each point depending on point's index. Moreover, the *for* loop uses **.exists()** method to check, whether the point exists or not. Custom color for a point is applied using **.set()** method.
 
-Now you can use **.hovered()** and **.selected()** methods to manage the state of the point. Both methods use **true** or **false** as a parameter.
+{sample}CS\_Interactivity\_21{sample}
+
+Previous sample demonstrates a way to change appearance of a single point. Now, let's try to manage point's current state. You can use **.hovered()** and **.selected()** methods to change current point's state. Both methods use **true** or **false** as a parameter.
 
 ```
   var point = series.getPoint(3);
   point.hovered(true);
 ```
 
+Next sample uses AnyChart **.legend()** to trigger changes of a point. Hovering and unhovering legend's item triggers series point's hovering. Click on legend's item to select a point.
+
 {sample}CS\_Interactivity\_20{sample}
+
+**Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Common_Settings/Event_Listeners)
 
 ### Handling chart events
 
