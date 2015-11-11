@@ -35,25 +35,44 @@ dataTable.addData([
 // map loaded data
 var mapping = dataTable.mapAs({'value': 4});
 var ohlcMapping = dataTable.mapAs({'open': 1, 'high': 2, 'low': 3, 'close':4});
-var lineMapping = dataTable.mapAs({'value': 6});
+var lineMapping = dataTable.mapAs({'value': 5});
   
 // create stock chart
 var chart = anychart.stock();
-
+        chart.padding(0,200,10,200);
 
 // create the plot on the chart with column series
-var plot = chart.plot(0);
-        var yAxis1 = plot.yAxis(1);
+        var plot_line_ohlc = chart.plot(0);
+        var yAxis1 = plot_line_ohlc.yAxis(1);
         yAxis1.orientation("right");
 
-// create the column series
-plot.column(mapping);
+        var plot_column = chart.plot(1);
 
-// create column series
-plot.ohlc(ohlcMapping);
+// Create and tune additional y scale
+        var extraYScale = anychart.scales.linear();
+        extraYScale.minimum(0);
+        extraYScale.maximum(3000000000);
+        var extraTicks = extraYScale.ticks();
+        extraTicks.interval(500000000);
+
+// Create and tune additional y axis
+        var extraYAxis = plot_line_ohlc.yAxis(1);
+        extraYAxis.orientation("left");
+        extraYAxis.scale(extraYScale);
+
+// create the column series
+        var columnSeries = plot_column.column(mapping);
+        columnSeries.name("Highest rates");
+
+// create ohlc series
+        var ohlcSeries = plot_line_ohlc.ohlc(ohlcMapping);
+        ohlcSeries.name("ACME Corp. Stock Prices");
 
 // create line series
-plot.line(lineMapping);
+        var lineSeries = plot_line_ohlc.line(lineMapping);
+        lineSeries.yScale(extraYScale);
+        lineSeries.name("Number of income requests worldwide");
+
 
 // set container id for the chart
 chart.container('container');
