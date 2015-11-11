@@ -9,6 +9,7 @@
 * [Series behaviour](#series_behaviour)
   * [Hover](#series_hover)
   * [Select](#series_select)
+  * [Single Point](#single_point)
 * [Handling chart events](#handling_chart_events)
   * [Navigating to URL](#interactivity_settings_in_data_sets)
   * [DrillDown](#drilldown) 
@@ -214,17 +215,19 @@ If you want to disable the selection ability, use "none" as the {api:anychart.co
 
 To unselect the points without preventing the selection ability use {api:anychart.core.SeriesBase#unselect}**.unselect()**{api} method. As well as in the situation with unhovering, you can define the points or set no parameters to the method. Try to use it in our playground.
 
-#### Single point
+#### Single Point
 
-Along with hovering and selecting of a points' array you can manage current state of a single point. Use **.getPoint()** method to get a point of a series. Pass point's index as a parameter for this method. 
+Along with hovering and selecting of a points' array you can manage current state of a single point. Use {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method to get a point of a series. Pass point's index as a parameter for this method. 
 
 ```
-  var series = chart.column(data);
-  
-  var point = series.getPoint(3);
+	// set series data
+	var series = chart.column(data);
+
+	// get fourth point of the series
+	var point = series.getPoint(3);
 ```
 
-After you have defined a getter for the {api:anychart.core.SeriesPoint}series point{api} you can adjust point's state and some properties. Let's make a single series chart a bit more colorful and set custom color for each point of the series:
+After you have defined a getter for the {api:anychart.core.SeriesPoint}series point{api} you can adjust point's state and change some point's properties. Let's make a single series chart a bit more colorful and set custom color for each point of the series:
 
 ```
 	// set series data
@@ -236,28 +239,31 @@ After you have defined a getter for the {api:anychart.core.SeriesPoint}series po
 		{x:"Mary", value: 9000}
 	]);
 
+	// create getter for AnyChart palette
 	var palette = anychart.palettes.distinctColors();
 
+	// create a loop for coloring every series point
 	for (var i=0; series.getPoint(i).exists();i++)
+		// define "fill" property for each series point
 		series.getPoint(i).set("fill", palette.itemAt(i));
 ```
 
-As you can see, we have created a column series, created variable for default AnyChart palette using distinctColors() method and set a color for each point depending on point's index. Moreover, the *for* loop uses **.exists()** method to check, whether the point exists or not. Custom color for a point is applied using **.set()** method.
+As you can see, we have created a column series, created variable for default AnyChart palette using {api:anychart.palettes#distinctColors}**.distinctColors()**{api} method and set a color for each point depending on point's index. Moreover, the *for* loop uses {api:anychart.core.SeriesPoint#exists}**.exists()**{api} method to check, whether the point exists or not. Custom color for a point is applied using {api:anychart.core.SeriesPoint#set}**.set()**{api} method.
 
 {sample}CS\_Interactivity\_21{sample}
 
-Previous sample demonstrates a way to change appearance of a single point. Now, let's try to manage point's current state. You can use **.hovered()** and **.selected()** methods to change current point's state. Both methods use **true** or **false** as a parameter.
+Previous sample demonstrates a way to change appearance of a single point. Now, let's try to manage point's current state. You can use {api:anychart.core.SeriesPoint#hovered}**.hovered()**{api} and {api:anychart.core.SeriesPoint#selected}**.selected()**{api} methods to change current point's state. Both methods use **true** or **false** as a parameter.
 
 ```
   var point = series.getPoint(3);
   point.hovered(true);
 ```
 
-Next sample uses AnyChart **.legend()** to trigger changes of a point. Hovering and unhovering legend's item triggers series point's hovering. Click on legend's item to select a point.
+Next sample uses chart's {api:anychart.ui.Legend}**.legend()**{api} to trigger changes of a point. Hovering and unhovering legend's item triggers series point's hovering. Click on a legend's item to and unselect a point.
 
 {sample}CS\_Interactivity\_20{sample}
 
-**Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Common_Settings/Event_Listeners)
+**Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Common_Settings/Event_Listeners). Information about legend is contained in [Legend article](../Common_Settings/Legend).
 
 ### Handling chart events
 
