@@ -224,6 +224,26 @@ Along with hovering and selecting of a points' array you can manage current stat
   var point = series.getPoint(3);
 ```
 
+After you have defined a getter for the {api:anychart.core.SeriesPoint}series point{api} you can adjust point's state and some properties. Let's make a single series chart a bit more colorful and set custom color for each point of the series:
+
+```
+	// set series data
+	var series = chart.column([
+		{x:"John", value: 10000},
+		{x:"Jake", value: 12000},
+		{x:"Peter", value: 18000},
+		{x:"James", value: 11000},
+		{x:"Mary", value: 9000}
+	]);
+
+	var palette = anychart.palettes.distinctColors();
+
+	for (var i=0; series.getPoint(i).exists();i++)
+		series.getPoint(i).set("fill", palette.itemAt(i));
+```
+
+As you can see, we have created a column series, created variable for default AnyChart Palette and set a color for each point depending on point's index. 
+
 Now you can use **.hovered()** and **.selected()** methods to manage the state of the point. Both methods use **true** or **false** as a parameter.
 
 ```
