@@ -82,34 +82,43 @@ One plot might contain an unlimited number of series, but still we recommend to 
 As we have noticed before, we can have different axes in one chart using different plots. While the X-axis is the only one for all plots, we can have different Y-axes. Furthermore, we can have an unlimited number of Y-axes for each plot.
 
 ```
-// create stock chart
-chart = anychart.stock();
-
-// create first plot on the chart with column series
-var firstPlot = chart.plot(0);
-firstPlot.column(columnMapping);
-firstPlot.line(lineMapping);
-
-// create second plot on the chart
-var secondPlot = chart.plot(1);
-
-// create ohlc series on the second plot
-var secondSeries = secondPlot.ohlc(ohlcMapping);
+		// create an additional axis
+		var yAxis1 = plot_line_ohlc.yAxis(1);
+        yAxis1.orientation("left");
 ```
 {sample :width 690 :height 500 }STOCK\_Plots\_03{sample}
 
-Working with axes in plots is the same as working with them in basic charts. Visit the [Axes tutorial](../Axes_and_Grids/Axis_Basics) to know more about the axes.
+Working with axes in stock plots is the same as working with them in basic charts. Visit the [Axes tutorial](../Axes_and_Grids/Axis_Basics) to know more about the axes.
 
 
 ### Position
 
+We can position plots wherever we want and make them of the size we need. This can be done using {api:anychart.core.stock.Plot#bounds}**.bounds()**{api} or other methods such as {api:anychart.core.stock.Plot#width}**.width**{api}, {api:anychart.core.stock.Plot#height}**.height**{api}, {api:anychart.core.stock.Plot#top}**.top**{api}, etc. The whole list of these methods you can find {api:anychart.core.stock.Plot}here{api}. By default, each new plot will be placed under the existing ones. Let's now create a simple three-plot stock and position two of them next to each other.
+
+```
+		// set the first plot position through bounds
+		var firstPlot = chart.plot(0);
+		firstPlot.bounds(0,0,"45%","45%");
+
+		// set the second plot position through width, height, top
+		var secondPlot = chart.plot(1);
+		secondPlot.width("100%");
+		secondPlot.height("45%");
+		secondPlot.top("50%");
+
+		// set the third plot bounds
+		var thirdPlot = chart.plot(2);
+		thirdPlot.bounds("55%", 0, "45%", "45%")
+```
+
+{sample :width 690 :height 500 }STOCK\_Plots\_04{sample}
+
 
 ### Crosshair
 
-you will be able to see all values at the same time point you hover on one of the plots
+Crosshair is a feature that helps you not to get lost in great amount of data. In case of having several plots on a stock chart, it shows you all values of the same time point you hover on one of the plots, which is quite comfortable especially if you've got loads of data points. Crosshair is enabled by default, to change it somehow put an object as a parameter to the {api:anychart.charts.Cartesian#crosshair}**.crosshair()**{api} method or use {api:anychart.core.ui.Crosshair#enabled}**.enabled(){api} method with "false" meaning to disable it. Note that this method belongs to chart but not to a plot. You can find more information about crosshairs [here](../Axes_and_Grids/Crosshair). Now let's create a sample with an adjusted crosshair.
 
-Смысл в том, чтобы просматривать данные, соответствующие одному иксу сразу на всех графиках (кроссхейр или как его там ползет по графикам)
+```
+```
 
-Шкала Y есть у каждого, шкала X одна на чарт
-Позиционировать их можно как угодно
-На одном плоте можно сделать энное количество серий и иметь несколько Y осей
+{sample :width 690 :height 500 }STOCK\_Plots\_05{sample}
