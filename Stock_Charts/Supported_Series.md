@@ -26,12 +26,16 @@ AnyStock supports a lot of different series types. Here's a sample where we have
 ```
 {sample}STOCK\_Supported\_Series\_01{sample}
 
-You can see that the whole stock is somewhat divided in two parts, where one contains ohlc and line series and the second one has column in it, while both parts have identical x-Axis and are being scrolled simultaneously. This can be done using plots. You can read about them [here](#Chart_Plots). Also one of our plots has two axes. You can fine information about managing axes [here](../Axes_and_Grids/Axes).
+You can see that the whole stock is somewhat divided in two parts, where one contains ohlc and line series and the second one has column in it, while both parts have identical x-Axis and are being scrolled simultaneously. This can be done using plots. You can read about them [here](#Chart_Plots). Also one of our plots has two axes. You can find information about managing axes [here](../Axes_and_Grids/Axes).
 
 ### Stock series adjusting
 
-Stock series are much alike normal series of Basic charts, except for having "hovered" and "selected" state. So we can adjust the colors of the
+Stock series are much alike normal series of Basic charts, except for having "hovered" and "selected" state. So we can adjust the colors of the series in normal state, adjust the tooltips, etc. Let's now create a sample with adjusted colors and tooltips.
 
+```
+		
+```
+{sample}STOCK\_Supported\_Series\_02{sample}
 
 
 ### Stock scroller series adjusting
@@ -55,7 +59,6 @@ We now support the following series:
  - Line
  - OHLC
  - Column
- - 
 
 
 

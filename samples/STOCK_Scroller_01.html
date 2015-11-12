@@ -33,9 +33,9 @@ dataTable.addData([
     ]);
 
 // map loaded data
-var line_1_mapping = dataTable.mapAs({'value': 4});
+var line_1_mapping = dataTable.mapAs({'value': 2});
 var line_2_mapping = dataTable.mapAs({'value': 3});
-var line_3_mapping = dataTable.mapAs({'value': 2});
+var line_3_mapping = dataTable.mapAs({'value': 4});
   
 // create stock chart
 chart = anychart.stock();
@@ -46,9 +46,13 @@ var series_1 = firstPlot.line(line_1_mapping);
 var series_2 = firstPlot.line(line_2_mapping);
 var series_3 = firstPlot.line(line_3_mapping);
 
-series_1.stroke("red");
-series_2.stroke("green");
-series_3.stroke("blue");
+series_1.stroke("#558B2F");
+series_2.stroke("#D84315");
+series_3.stroke("#FF8F00");
+
+series_1.name("Highest rates");
+series_2.name("Lowest rates");
+series_3.name("Close rates");
 
 chart.scroller().enabled(false);
 

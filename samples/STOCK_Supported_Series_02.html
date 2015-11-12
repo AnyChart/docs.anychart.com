@@ -164,21 +164,17 @@ var chart = anychart.stock();
         extraYAxis.orientation("left");
         extraYAxis.scale(extraYScale);
 
-        // adjust the line-ohlc plot legend
-        var legend = plot_line_ohlc.legend();
 
-        legend.paginator(false);
-        legend.height(100);
-        legend.itemsFormatter(function() {
-//            return [
-//                {text: "first", iconType: "circle"},
-//                {text: "second"}
-//            ]
-        });
+        plot_line_ohlc.legend().paginator(false);
+        plot_line_ohlc.legend().height(100);
+        plot_line_ohlc.legend("ACME Corp. Stock Prices");
 
 // create the column series
         var columnSeries = plot_column.column(mapping);
         columnSeries.name("Highest rates");
+
+        // color the column series
+        columnSeries.fill(['#00838F', "#81D4FA", "#4527A0"], 0, true, 0.9);
 
 // create ohlc series
         var ohlcSeries = plot_line_ohlc.ohlc(ohlcMapping);
@@ -186,6 +182,7 @@ var chart = anychart.stock();
 
 // create line series
         var lineSeries = plot_line_ohlc.line(lineMapping);
+        lineSeries.stroke("#00796B");
         lineSeries.yScale(extraYScale);
         lineSeries.name("Number of income requests worldwide");
 

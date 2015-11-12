@@ -71,9 +71,13 @@ dataTable.addData([
         var series_2 = firstPlot.line(line_2_mapping);
         var series_3 = firstPlot.line(line_3_mapping);
 
-        series_1.stroke("red");
-        series_2.stroke("green");
-        series_3.stroke("blue");
+        series_1.stroke("#558B2F");
+        series_2.stroke("#D84315");
+        series_3.stroke("#FF8F00");
+
+        series_1.name("Highest rates");
+        series_2.name("Lowest rates");
+        series_3.name("Close rates");
 
         // enable the scroller
         chart.scroller().enabled(true);

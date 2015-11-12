@@ -8,7 +8,7 @@
  * [Series](#series)
  * [Axes](#axes)
  * [Position](#position)
- * [Crosshair](#crosshair)
+ * [DateTime Highlighter](#datetime_highlighter)
 
 ## Overview
 
@@ -114,11 +114,19 @@ We can position plots wherever we want and make them of the size we need. This c
 {sample :width 690 :height 500 }STOCK\_Plots\_04{sample}
 
 
-### Crosshair
+### DateTime Highlighter
 
-Crosshair is a feature that helps you not to get lost in great amount of data. In case of having several plots on a stock chart, it shows you all values of the same time point you hover on one of the plots, which is quite comfortable especially if you've got loads of data points. Crosshair is enabled by default, to change it somehow put an object as a parameter to the {api:anychart.charts.Cartesian#crosshair}**.crosshair()**{api} method or use {api:anychart.core.ui.Crosshair#enabled}**.enabled(){api} method with "false" meaning to disable it. Note that this method belongs to chart but not to a plot. You can find more information about crosshairs [here](../Axes_and_Grids/Crosshair). Now let's create a sample with an adjusted crosshair.
+DateTime Highlighter is a feature that is rather similar to Crosshair feature and helps you not to get lost in great amount of data. In case of having several plots on a stock chart, it shows you all values of the same time point you hover on one of the plots, which is quite comfortable especially if you've got loads of data points. Crosshair is enabled by default; to somehow change it put an object as a parameter to the {api:anychart.core.stock.Plot#dateTimeHighlighter}**.dateTimeHighlighter()**{api} method or "false" value to disable it. Note that this method belongs not to a chart but to a plot. Now let's create a sample with an adjusted highlighter.
 
 ```
+		// disable the highlighter on the first plot
+		firstPlot.dateTimeHighlighter(false);
+
+		// make the second plot highlighter of green color
+		secondPlot.dateTimeHighlighter({color:"green"});
+
+		// adjust the highlighter of the third plot  
+		thirdPlot.dateTimeHighlighter("#F44336", 1.5, "6 2", "round");
 ```
 
 {sample :width 690 :height 500 }STOCK\_Plots\_05{sample}
