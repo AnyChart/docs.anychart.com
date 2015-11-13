@@ -2,9 +2,12 @@
 #AnyStock
 
 * [Overview](#overview)
-* []()
+* [Useful links](#useful_links)
 * [Indicators](#indicators) 
 * [Working with Data in AnyStock](#working_with_data_in_anystock)
+
+
+первые два абзаца актуально рерайтить, написать что новые anystock полностью совместимы с anychart, полностью javascript и невероятно быстры
 
 Stock Chart is a widely spread type of charts that can quite effectively visualize great amount of data. Stock Chart has lots of interesting features such as series zooming, using date scale, etc. Moreover, stock charts are very useful for real-time data visualization. They are usually used in cases with enormous amount of data spreads along the time; so it's quite logical to use them, for example, for showing the company assets and earnings for its whole working period.
 That's why stocks are this popular: it can show large amounts of data and keep it clear to the audience.
@@ -24,22 +27,15 @@ Also stocks can show some real-time data, as they support streaming.
 Note that Stock charts have an only X-axis of datetime type.
 
 
+Welcome to AnyChart Stock Stock User's Guide and thank you for choosing AnyChart Stock Flash Chart Component, we did our best to build a great Flash Charting Solution and prepare understandable and usable documentation.
 
-первые два абзаца актуально рерайтить, написать что новые anystock полностью совместимы с anychart, полностью javascript и невероятно быстры
+If you are a newcomer to AnyChart Stock and didn't use any Flash Charting Solution before here are the recommended short tutorials that give you a general idea of what AnyChart is, and how to start using and implementing it:
 
-2.2) строка “AnyStock SWF based version:” дропается
+Useful links
 
-2.3) блок списком
+[Quick Start: How it works](Quick_Start) - description of AnyChart Stock Flash Chart Component and general idea of flash charting.
+[Playground Gallery]() - tells you where to find chart samples and how to make use of them.
+[Supported Series](Supported_Series) - tells you what series types and indicator types are available.
+[Chart Plots](Chart_Plots) - 
+[Benchmarking] - you can see how fast and robust AnyStock is on this [AnyStock benchmarking test page](http://www.anychart.com/products/anystock/benchmark/)
 
-Introduction: bla bla >>  заменяем на Quick Start Bla bla
-Explore the Samples - bla boa >> заменяме на playground bla bla
-Series and Indicator Types -bla boa >> заменяем на Series Types bla bla и ссылку на статью
-
-еще добавь временно пустые пункты
-
-Indicators 
-Working with Data in AnyStock
-
-и пункт
-
-Benchmarking - you can see how fast and robust AnyStock is on this [AnyStock benchmarking test page](http://www.anychart.com/products/anystock/benchmark/)
