@@ -58,29 +58,15 @@ In case of adding the thumbnail series to the scroller, you should know that tho
 
 ## List of supported series
 
-We now support the following series:
- - Line
- - OHLC
- - Column
-
-
-
-<table width="700" border="1" class="dtTABLE">
+<table width="750" border="1" class="dtTABLE">
 <tbody><tr>
-<th width="50"><b></b></th>
-<th width="130"><b></b></th>
-<th width="130"><b></b></th>
-<th width="130"><b></b></th>
-<th width="130"><b></b></th>
-<th width="130"><b></b></th>
+<th width="350"><b>Series Type</b></th>
+<th width="350"><b>Links and info</b></th>
 </tr>
 <tr>
-<td>1</td>
-<td>1000</td>
-<td>1050</td>
-<td>1200</td>
-<td>1800</td>
-<td>2000</td>
+<td>Line</td>
+<td>Column</td>
+<td>OHLC</td>
 </tr>
 </tbody></table>
 
