@@ -1,6 +1,11 @@
 {:index 1}
 #AnyStock
 
+* [Overview](#overview)
+* []()
+* [Indicators](#indicators) 
+* [Working with Data in AnyStock](#working_with_data_in_anystock)
+
 Stock Chart is a widely spread type of charts that can quite effectively visualize great amount of data. Stock Chart has lots of interesting features such as series zooming, using date scale, etc. Moreover, stock charts are very useful for real-time data visualization. They are usually used in cases with enormous amount of data spreads along the time; so it's quite logical to use them, for example, for showing the company assets and earnings for its whole working period.
 That's why stocks are this popular: it can show large amounts of data and keep it clear to the audience.
 
@@ -13,7 +18,28 @@ Stocks are so special because of two main features:
 	<p style="text-indent: 25px;">If you are not satisfied with having the generalized data shown on a chart, you can use a scrollbar in the bottom of the chart to bring the data to more detailed form. That's how it works.</p>
 
 <br>
-Also stocks are able to be adjusted to show some real-time data, as they support streaming. 
+Also stocks can show some real-time data, as they support streaming. 
 
 <br>
 Note that Stock charts have an only X-axis of datetime type.
+
+
+
+первые два абзаца актуально рерайтить, написать что новые anystock полностью совместимы с anychart, полностью javascript и невероятно быстры
+
+2.2) строка “AnyStock SWF based version:” дропается
+
+2.3) блок списком
+
+Introduction: bla bla >>  заменяем на Quick Start Bla bla
+Explore the Samples - bla boa >> заменяме на playground bla bla
+Series and Indicator Types -bla boa >> заменяем на Series Types bla bla и ссылку на статью
+
+еще добавь временно пустые пункты
+
+Indicators 
+Working with Data in AnyStock
+
+и пункт
+
+Benchmarking - you can see how fast and robust AnyStock is on this [AnyStock benchmarking test page](http://www.anychart.com/products/anystock/benchmark/)
