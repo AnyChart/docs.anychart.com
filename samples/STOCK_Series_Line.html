@@ -55,8 +55,9 @@ anychart.onDocumentReady(function() {
   chart.padding(10, 10, 10, 50);
   chart.plot(0).line(mapping);
   chart.plot(0).yAxis();
-  chart.scroller().line(mapping);
-  chart.title('Stock Demo\nClick this title to start streaming');
+  var series = chart.scroller().line(mapping);
+    series.name("Globex Corporation");
+  chart.title('Stock Demo');
   chart.container('container');
 
   chart.draw();

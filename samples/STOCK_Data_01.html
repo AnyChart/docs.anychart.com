@@ -31,6 +31,10 @@
         // create first plot on the chart with column series
         var firstPlot = chart.plot(0);
         var series = firstPlot.ohlc(mapping);
+        series.name("ACME Corp. Stock Prices");
+
+        var item = series.legendItem();
+        item.text('ACME Corp. Stock Prices');
 
         // set container id for the chart
         chart.container('container');

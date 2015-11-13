@@ -79,6 +79,12 @@ dataTable.addData([
         series_2.name("Lowest rates");
         series_3.name("Close rates");
 
+        var legend = firstPlot.legend();
+        // enables legend
+        legend.enabled(true);
+        // set layout of legend items
+        legend.itemsLayout("vertical");
+
         // enable the scroller
         chart.scroller().enabled(true);
 

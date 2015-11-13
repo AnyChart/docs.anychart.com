@@ -53,9 +53,10 @@ anychart.onDocumentReady(function() {
   mapping.addField('value', 1, 'first');
   chart = anychart.stock();
   chart.padding(10, 10, 10, 50);
-  chart.plot(0).column(mapping);
+  var series = chart.plot(0).column(mapping);
+    series.name("Globex Corporation");
   chart.plot(0).yAxis();
-  chart.title('Stock Demo\nClick this title to start streaming');
+  chart.title('Stock Demo');
   chart.container('container');
 
   chart.draw();

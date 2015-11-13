@@ -50,11 +50,18 @@ series_1.stroke("#558B2F");
 series_2.stroke("#D84315");
 series_3.stroke("#FF8F00");
 
-series_1.name("Highest rates");
-series_2.name("Lowest rates");
-series_3.name("Close rates");
+series_1.name("High rate");
+series_2.name("Low rate");
+series_3.name("Close rate");
+
+        var legend = firstPlot.legend();
+        // enables legend
+        legend.enabled(true);
+        // set layout of legend items
+        legend.itemsLayout("vertical");
 
 chart.scroller().enabled(false);
+
 
 // set container id for the chart
 chart.container('container');

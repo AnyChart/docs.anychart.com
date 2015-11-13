@@ -47,7 +47,11 @@ anychart.onDocumentReady(function() {
   chart.padding(10, 10, 10, 50);
   
   // setting the series type
-  chart.plot(0).ohlc(mapping);
+  var series = chart.plot(0).ohlc(mapping);
+    series.name("ACME Corp. Stock Prices");
+
+    var item = series.legendItem();
+    item.text('ACME Corp. Stock Prices');
   
   xAxis = chart.plot(0).xAxis();
 
