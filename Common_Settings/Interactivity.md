@@ -10,6 +10,7 @@
   * [Hover](#series_hover)
   * [Select](#series_select)
   * [Single Point](#single_point)
+* [Single Series Chart](#single_series_chart)
 * [Handling chart events](#handling_chart_events)
   * [Navigating to URL](#interactivity_settings_in_data_sets)
   * [DrillDown](#drilldown) 
@@ -255,15 +256,42 @@ As you can see, we have created a column series, created variable for default An
 Previous sample demonstrates a way to change appearance of a single point. Now, let's try to manage point's current state. You can use {api:anychart.core.SeriesPoint#hovered}**.hovered()**{api} and {api:anychart.core.SeriesPoint#selected}**.selected()**{api} methods to change current point's state. Both methods use **true** or **false** as a parameter.
 
 ```
-  var point = series.getPoint(3);
-  point.hovered(true);
+	var point = series.getPoint(3);
+	point.hovered(true);
 ```
 
-Next sample uses chart's {api:anychart.ui.Legend}**.legend()**{api} to trigger changes of a point. Hovering and unhovering legend's item triggers series point's hovering. Click on a legend's item to and unselect a point.
+Next sample uses chart's {api:anychart.ui.Legend}**.legend()**{api} to trigger changes of a point. Hovering and unhovering legend's item triggers series point's hovering. Click on a legend's item to select and unselect a point.
 
 {sample}CS\_Interactivity\_20{sample}
 
 **Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Common_Settings/Event_Listeners). Information about legend is contained in [Legend article](../Common_Settings/Legend).
+
+## Single Series Chart
+
+As you know, AnyChart supports quite a variety of chart types. Some of them can have only one series of data. This is such charts as pie chart, funnel chart or pyramid chart. Managing points of these charts requires even less actions then for managing series points. Use .getPoint() method for chart itself to get desirable point;
+
+```
+	// set chart data
+	var chart = funnel(data);
+
+	// get fourth point
+	var point = chart.getPoint(3);
+```
+
+The way of managing chart's points is pretty much the same as the one in [single point](#single_point) section. Use .hovered() and .selected() methods to adjust current state of a point. Method .set() can help to change any property of a point or to add a new one.
+
+```
+	var chart = anychart.funnel(data);
+	
+	// get sixth point of the funnel chart
+	var point = chart.getPoint(5);
+	// set red inner color for the point
+	point.set("fill", "red");
+```
+
+Below is a sample of a funnel chart. This chart displays income through the year and each point corresponds with each month of the year. Using **.getPoint()** method each point was colorized according to the season of the year. Hover a point to see the tooltip that contains information on income in the month and the total income in the season. Information on getting information from custom point's property can be found in [Text Formatters article](../Common_Settings/Text_Formatters).
+
+{sample}CS\_Interactivity\_22{sample}
 
 ### Handling chart events
 
