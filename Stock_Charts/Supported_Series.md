@@ -40,15 +40,18 @@ Stock series are much alike normal series of Basic charts, except for having "ho
 
 ### Stock scroller series adjusting
 
-In case of adding the thumbnail series to the scroller, you should know that those series have the "selected" state. Let's add a background series of column type to the scroll bar background and adjust its "selected" state colors.
+In case of adding the thumbnail series to the scroller, you should know that those series have the "selected" state. Let's add a background series of a column type to the scroll bar background and adjust its "selected" state colors.
 
 ```
+        // create a thumbnail series in the scroller
+        var thSeries = chart.scroller().column(lineMapping);
+
+        // define the shown part of a stock
+        chart.selectRange('2014-02-01','2014-05-06');
+        
+        // set the color for the selected columns in the thumbnail series
+        thSeries.selectedFill("#4527A0");
 ```
-
-
-серии настраиваются также как и серии в anychart, например вот так мы меняем их цвета
-
-ПРИМЕР С ПЕРЕКРАШЕНЫМ БАРОМ И ЛИНИИЕЙ У КОТОРОЙ НАСТРОЕН ИНДИВИДУАЛЬНО ТУЛТИП
 
 {sample}STOCK\_Supported\_Series\_03{sample}
 
@@ -60,5 +63,25 @@ We now support the following series:
  - OHLC
  - Column
 
+
+
+<table width="700" border="1" class="dtTABLE">
+<tbody><tr>
+<th width="50"><b></b></th>
+<th width="130"><b></b></th>
+<th width="130"><b></b></th>
+<th width="130"><b></b></th>
+<th width="130"><b></b></th>
+<th width="130"><b></b></th>
+</tr>
+<tr>
+<td>1</td>
+<td>1000</td>
+<td>1050</td>
+<td>1200</td>
+<td>1800</td>
+<td>2000</td>
+</tr>
+</tbody></table>
 
 

@@ -143,12 +143,13 @@ var lineMapping = dataTable.mapAs({'value': 5});
   
 // create stock chart
 var chart = anychart.stock();
-        chart.padding(0,"10%",10,"10%");
+        chart.padding(0,"20%",10,"20%");
 
 // create the plot on the chart with column series
         var plot_line_ohlc = chart.plot(0);
         var yAxis1 = plot_line_ohlc.yAxis(1);
         yAxis1.orientation("left");
+        plot_line_ohlc.xAxis(false);
 
         var plot_column = chart.plot(1);
 
@@ -167,11 +168,10 @@ var chart = anychart.stock();
 
         plot_line_ohlc.legend().paginator(false);
         plot_line_ohlc.legend().height(100);
-        plot_line_ohlc.legend("ACME Corp. Stock Prices");
 
 // create the column series
         var columnSeries = plot_column.column(mapping);
-        columnSeries.name("Highest rates");
+        columnSeries.name("Highest rate");
 
         // color the column series
         columnSeries.fill(['#00838F', "#81D4FA", "#4527A0"], 0, true, 0.9);
@@ -179,6 +179,8 @@ var chart = anychart.stock();
 // create ohlc series
         var ohlcSeries = plot_line_ohlc.ohlc(ohlcMapping);
         var ohlcSeriesName = ohlcSeries.name("ACME Corp. Stock Prices");
+        var item = ohlcSeries.legendItem();
+        item.text('ACME Corp. Stock Prices');
 
 // create line series
         var lineSeries = plot_line_ohlc.line(lineMapping);
