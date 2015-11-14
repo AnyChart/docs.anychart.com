@@ -41,6 +41,7 @@
 				season.forEach(function(month){
 					if (point.get("x")==month){
 						point.set("fill", palette[counter]);
+						point.set("stroke", {color: anychart.color.darken(palette[counter], 0.05)});
 						point.set("season", names[counter]);
 					}
 				});

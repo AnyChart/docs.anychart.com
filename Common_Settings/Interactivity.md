@@ -268,7 +268,7 @@ Next sample uses chart's {api:anychart.ui.Legend}**.legend()**{api} to trigger c
 
 ## Single Series Chart
 
-As you know, AnyChart supports quite a variety of chart types. Some of them can have only one series of data. This is such charts as pie chart, funnel chart or pyramid chart. Managing points of these charts requires even less actions then for managing series points. Use .getPoint() method for chart itself to get desirable point;
+As you know, AnyChart supports quite a variety of chart types. Some of them can have only one series of data. This is such charts as pie chart, funnel chart or pyramid chart. Managing points of these charts requires even less actions then for managing series points. Use {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method for chart itself to get desirable point;
 
 ```
 	// set chart data
@@ -278,18 +278,18 @@ As you know, AnyChart supports quite a variety of chart types. Some of them can 
 	var point = chart.getPoint(3);
 ```
 
-The way of managing chart's points is pretty much the same as the one in [single point](#single_point) section. Use .hovered() and .selected() methods to adjust current state of a point. Method .set() can help to change any property of a point or to add a new one.
+The way of managing chart's points is pretty much the same as the one in [single point](#single_point) section. Use {api:anychart.core.SeriesPoint#hovered}**.hovered()**{api} and {api:anychart.core.SeriesPoint#selected}**.selected()**{api} methods to adjust current state of a point. Method {api:anychart.core.SeriesPoint#set}**.set()**{api} can help to change any property of a point or to add a new one.
 
 ```
 	var chart = anychart.funnel(data);
-	
+
 	// get sixth point of the funnel chart
 	var point = chart.getPoint(5);
 	// set red inner color for the point
 	point.set("fill", "red");
 ```
 
-Below is a sample of a funnel chart. This chart displays income through the year and each point corresponds with each month of the year. Using **.getPoint()** method each point was colorized according to the season of the year. Hover a point to see the tooltip that contains information on income in the month and the total income in the season. Information on getting information from custom point's property can be found in [Text Formatters article](../Common_Settings/Text_Formatters).
+Below is a sample of a funnel chart. This chart displays income through the year and each point corresponds with each month of the year. Using {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method each point was colorized according to the season of the year. Hover a point to see the tooltip that contains information on income in the month and the total income in the season. Information on getting information from custom point's property can be found in [Text Formatters article](../Common_Settings/Text_Formatters).
 
 {sample}CS\_Interactivity\_22{sample}
 
@@ -300,6 +300,8 @@ In some cases you might need a custom chart reaction on some user's actions whic
 You can add a listener to any chart element, forcing it to react in some way. For example, you can make the chart body to listen to clicks and add a random point on each click; or you can tell the chart to listen to selects and uncolor all other elements when one is selected and color them back when the item gets unselected. It's possible to set some other custom interactivity using event listeners. 
 
 You can find more about listeners [here](../Common_Settings/Event_Listeners).
+
+**Note**: Points of a pie chart can't be selected. Use **.exploded()** method to adjust current state of pie's slice.
 
 #### Navigating by URL
 
@@ -386,86 +388,6 @@ Check out some other drilldown samples we've got in our gallery:
  - [Wine Sales in Australia](http://anychart.com/products/anymap/gallery/Maps/Sales_by_Product_Categories.php)
  - [Software Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/Software_Sales_Dashboard.php)
  - [ACME Corp. Sales Dashboard](http://anychart.com/products/anychart/gallery/Dashboards/ACME_Corp_Sales_Dashboard.php)
-
-### Manage Single Points
-
-AnyChart provides several method to manage interactivity settings of a single chart's point. You can pass a number as a parameter for the **.pointIndex()** method to choose a point for further adjustment. For instance, using **pointsHover** event we can find out the index of hovered point and set hovered state for adjacent points.
-
-```
-  var chart = anychart.column();
-  chart.column(data);
-  
-  chart.listen("pointsHover", function(point){
-    var index = point.currentPoint.index;
-    if (!point.currentPoint.hovered)return;
-    var arrayToHover = [index];
-    if (series.getPoint(index-1).exists())
-        arrayToHover.push(index-1);
-    if (series.getPoint(index+1).exists())
-        arrayToHover.push(index+1);
-    series.hover(arrayToHover);
-  });
-```
-
-Even though this code works fine, there isn't much sense in hovering three random points. Instead, we can hover points, that are somehow related. Let's create a chart, display the income through the year and hover all the points of a quarter, the hovered point belongs to:
-
-```
-	chart.listen("pointsHover", function(event){
-		var index = event.currentPoint.index;
-		if (!event.currentPoint.hovered) return;
-		switch (true){
-			case (index<3):
-				series.hover([0,1,2]);
-				break;
-			case (index<6):
-				series.hover([3,4,5]);
-				break;
-			case (index<9):
-				series.hover([6,7,8]);
-				break;
-			case (index<12):
-				series.hover([9,10,11]);
-				break;
-		}
-	});
-```
-
-Moreover, you may consider it's useful to manage tooltip content, as far as we want to hover several points at a time. Let's display total income in current quarter as tooltip content:
-
-```
-	var tooltip = series.tooltip();
-	tooltip.titleFormatter(function(point){
-		var index = point.index;
-		switch (true){
-			case (index<3): return "First Quarter";
-			case (index<6): return "Second Quarter";
-			case (index<9): return "Third Quarter";
-			case (index<12): return "Fourth Quarter";
-		}
-	});
-
-	tooltip.textFormatter(function(point){
-		var index = point.index;
-		var prefix = "Income: $";
-		switch (true){
-			case (index<3): return prefix+sumValues([0,1,2]);
-			case (index<6): return prefix+sumValues([3,4,5]);
-			case (index<9): return prefix+sumValues([6,7,8]);
-			case (index<12): return prefix+sumValues([9,10,11]);
-		}
-
-		function sumValues(array){
-			var value = 0;
-			for (var i=0;i<array.length;i++)
-				value+=series.getPoint(array[i]).get("value");
-			return value;
-		}
-	});
-```
-
-And here is a sample with these settings:
-
-{sample}CS\_Interactivity\_19{sample}
 
 ## Creating Custom Tooltip
 
