@@ -15,7 +15,6 @@
 * [Custom Item](#custom_item)
 * [Custom Legend](#custom_legend)
 * [One Legend for Several Charts](#one_legend_for_several_charts)
-* [One Legend for Several Series](#one_legend_for_several_series)
 
 ## Overview
 Legend is a table on a chart listing and explaining the symbols and colors used and with additional information that helps user to understand a chart.
