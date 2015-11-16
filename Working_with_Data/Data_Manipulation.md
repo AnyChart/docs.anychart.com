@@ -9,6 +9,7 @@
  * [Delete](#delete)
  * [Insert](#insert)
 * [Data Streaming](#data_streaming)
+* [Series managing]
 
 ## Overview
 
@@ -158,3 +159,20 @@ function(e) {
 
 {sample}CRUD\_06{sample}
  
+## Series Managing
+
+Along with managing series data, chart's series can be adjusted too. Let's take a closer look at ways of controlling chart's series.
+
+### Series Index
+
+Every chart's series has an index. This index can be used to perform actions upon a series. Method **.getSeriesAt()** can be used to obtain a series.
+
+### Series ID
+
+Before proceeding actions on the series you have to get this series first. Method **.id()** helps to set identificator for the further usage. 
+
+```
+  var chart = anychart.column();
+  var series = chart.column(data);
+  
+```
