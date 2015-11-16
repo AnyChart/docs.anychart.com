@@ -27,6 +27,8 @@
 		["Dec", 45]
 	]);
 
+	series.selectFill("#444");
+
 	// adding dollar symbols to yAxis labels
 	var yLabels = chart.yAxis().labels();
 	yLabels.textFormatter(function(){
@@ -34,20 +36,22 @@
 	});
 
 	chart.listen("pointsHover", function(event){
-		var index = event.currentPoint.index;
+		var point = event.point;
+		var index = point.getIndex();
+		var currentSeries = point.getSeries();
 		if (!event.currentPoint.hovered) return;
 		switch (true){
 			case (index<3):
-				series.hover([0,1,2]);
+				currentSeries.hover([0,1,2]);
 				break;
 			case (index<6):
-				series.hover([3,4,5]);
+				currentSeries.hover([3,4,5]);
 				break;
 			case (index<9):
-				series.hover([6,7,8]);
+				currentSeries.hover([6,7,8]);
 				break;
 			case (index<12):
-				series.hover([9,10,11]);
+				currentSeries.hover([9,10,11]);
 				break;
 		}
 	});
@@ -55,30 +59,30 @@
 	chart.listen("pointsSelect", function(event){
 		var point = event.point;
 		var index = point.getIndex();
-		var series = point.getSeries();
+		var currentSeries = point.getSeries();
 		if (!event.currentPoint.selected) {
-			series.select(false);
+			currentSeries.select(false);
 		}else{
 			switch (true){
 				case (index<3):
-					series.getPoint(0).selected(true);
-					series.getPoint(1).selected(true);
-					series.getPoint(2).selected(true);
+					currentSeries.getPoint(0).selected(true);
+					currentSeries.getPoint(1).selected(true);
+					currentSeries.getPoint(2).selected(true);
 					break;
 				case (index<6):
-					series.getPoint(3).selected(true);
-					series.getPoint(4).selected(true);
-					series.getPoint(5).selected(true);
+					currentSeries.getPoint(3).selected(true);
+					currentSeries.getPoint(4).selected(true);
+					currentSeries.getPoint(5).selected(true);
 					break;
 				case (index<9):
-					series.getPoint(6).selected(true);
-					series.getPoint(7).selected(true);
-					series.getPoint(8).selected(true);
+					currentSeries.getPoint(6).selected(true);
+					currentSeries.getPoint(7).selected(true);
+					currentSeries.getPoint(8).selected(true);
 					break;
 				case (index<12):
-					series.getPoint(9).selected(true);
-					series.getPoint(10).selected(true);
-					series.getPoint(11).selected(true);
+					currentSeries.getPoint(9).selected(true);
+					currentSeries.getPoint(10).selected(true);
+					currentSeries.getPoint(11).selected(true);
 					break;
 			}}
 	});

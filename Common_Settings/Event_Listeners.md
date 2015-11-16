@@ -255,7 +255,8 @@ To make a your chart more flexible, AnyChart charting framework provides several
   
   
 For instance, **point** property can be used to get the point that triggered the event. This property provides pretty much the same options as {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method does. All methods of a {api:anychart.core.SeriesPoint#}**series point**{api} can be invoked upon this property.
-
+  
+  
 As an example, let's use **pointsHover** event to find out the index of hovered point and set hovered state for adjacent points.
 
 ```
