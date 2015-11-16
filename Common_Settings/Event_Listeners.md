@@ -254,7 +254,7 @@ When a point is clicked once, it is recolored.
 To make a your chart more flexible, AnyChart charting framework provides several ways to manage current state of a single point. Event's parameter contains quite a few properties that can ease interactivity managing.
   
   
-For instance, **point** property can be used to get the point that triggered the event. This property provides pretty much the same options as **.getPoint()** method does. All methods of a **series point** can be invoked upon this property.
+For instance, **point** property can be used to get the point that triggered the event. This property provides pretty much the same options as {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method does. All methods of a {api:anychart.core.SeriesPoint#}**series point**{api} can be invoked upon this property.
 
 As an example, let's use **pointsHover** event to find out the index of hovered point and set hovered state for adjacent points.
 
@@ -280,7 +280,9 @@ Even though this code works fine, there isn't much sense in hovering three rando
 
 ```
 	chart.listen("pointsHover", function(event){
-		var index = event.currentPoint.index;
+		var point = event.point;
+		var index = point.getIndex();
+		var series = point.getSeries();
 		if (!event.currentPoint.hovered) return;
 		switch (true){
 			case (index<3):
@@ -298,7 +300,7 @@ Even though this code works fine, there isn't much sense in hovering three rando
 		}
 	});
 ```
-
+<!--
 Moreover, you may consider it's useful to manage tooltip content, as far as we want to hover several points at a time. Let's display total income in current quarter as tooltip content:
 
 ```
@@ -326,12 +328,12 @@ Moreover, you may consider it's useful to manage tooltip content, as far as we w
 		function sumValues(array){
 			var value = 0;
 			for (var i=0;i<array.length;i++)
-				value+=series.getPoint(array[i]).get("value");
+				value+=chart.getSeries(0).getPoint(array[i]).get("value");
 			return value;
 		}
 	});
 ```
-
+-->
 And here is a sample with these settings:
 
 {sample}CS\_Interactivity\_19{sample}

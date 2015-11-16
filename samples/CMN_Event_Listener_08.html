@@ -52,6 +52,38 @@
 		}
 	});
 
+	chart.listen("pointsSelect", function(event){
+		var point = event.point;
+		var index = point.getIndex();
+		var series = point.getSeries();
+		if (!event.currentPoint.selected) {
+			series.select(false);
+		}else{
+			switch (true){
+				case (index<3):
+					series.getPoint(0).selected(true);
+					series.getPoint(1).selected(true);
+					series.getPoint(2).selected(true);
+					break;
+				case (index<6):
+					series.getPoint(3).selected(true);
+					series.getPoint(4).selected(true);
+					series.getPoint(5).selected(true);
+					break;
+				case (index<9):
+					series.getPoint(6).selected(true);
+					series.getPoint(7).selected(true);
+					series.getPoint(8).selected(true);
+					break;
+				case (index<12):
+					series.getPoint(9).selected(true);
+					series.getPoint(10).selected(true);
+					series.getPoint(11).selected(true);
+					break;
+			}}
+	});
+
+
 	var tooltip = series.tooltip();
 	tooltip.titleFormatter(function(point){
 		var index = point.index;

@@ -289,7 +289,7 @@ The way of managing chart's points is pretty much the same as the one in [single
 	point.set("fill", "red");
 ```
 
-Below is a sample of a funnel chart. This chart displays income through the year and each point corresponds with each month of the year. Using {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method each point was colorized according to the season of the year. Hover a point to see the tooltip that contains information on income in the month and the total income in the season. Information on getting information from custom point's property can be found in [Text Formatters article](../Common_Settings/Text_Formatters).
+Below is a sample of a funnel chart. This chart displays income through the year and each point corresponds with each month of the year. Using {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method each point was colorized according to the season of the year. Hover a point to see the tooltip that contains information on income in the month and the total income in the season.<!-- Information on getting information from custom point's property can be found in [Text Formatters article](../Common_Settings/Text_Formatters).-->
 
 {sample}CS\_Interactivity\_22{sample}
 
