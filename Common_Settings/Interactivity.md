@@ -268,7 +268,7 @@ Next sample uses chart's {api:anychart.ui.Legend}**.legend()**{api} to trigger c
 
 ## Single Series Chart
 
-As you know, AnyChart supports quite a variety of chart types. Some of them can have only one series of data. This is such charts as pie chart, funnel chart or pyramid chart. Managing points of these charts requires even less actions then for managing series points. Use {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method for chart itself to get desirable point;
+As you know, AnyChart supports quite a variety of chart types. Some of them can have only one series of data. This is such charts as pie chart, funnel chart or pyramid chart. Managing points of these charts requires even less actions then for managing series points. Use {api:anychart.core.Point}**.getPoint()**{api} method for chart itself to get desirable point;
 
 ```
 	// set chart data
@@ -278,7 +278,7 @@ As you know, AnyChart supports quite a variety of chart types. Some of them can 
 	var point = chart.getPoint(3);
 ```
 
-The way of managing chart's points is pretty much the same as the one in [single point](#single_point) section. Use {api:anychart.core.SeriesPoint#hovered}**.hovered()**{api} and {api:anychart.core.SeriesPoint#selected}**.selected()**{api} methods to adjust current state of a point. Method {api:anychart.core.SeriesPoint#set}**.set()**{api} can help to change any property of a point or to add a new one.
+The way of managing chart's points is pretty much the same as the one in [single point](#single_point) section. Use {api:anychart.core.Point#hovered}**.hovered()**{api} and {api:anychart.core.Point#selected}**.selected()**{api} methods to adjust current state of a point. Method {api:anychart.core.Point#set}**.set()**{api} can help to change any property of a point or to add a new one.
 
 ```
 	var chart = anychart.funnel(data);
@@ -289,7 +289,7 @@ The way of managing chart's points is pretty much the same as the one in [single
 	point.set("fill", "red");
 ```
 
-Below is a sample of a funnel chart. This chart displays income through the year and each point corresponds with each month of the year. Using {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method each point was colorized according to the season of the year. Hover a point to see the tooltip that contains information on income in the month and the total income in the season.<!-- Information on getting information from custom point's property can be found in [Text Formatters article](../Common_Settings/Text_Formatters).-->
+Below is a sample of a funnel chart. This chart displays income through the year and each point corresponds with each month of the year. Using {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method each point was colorized according to the season of the year. Hover a point to see the tooltip that contains information on income in the month and the total income in the season. Information on getting value from custom point's property can be found in [Text Formatters article](../Common_Settings/Text_Formatters).
 
 {sample}CS\_Interactivity\_22{sample}
 
