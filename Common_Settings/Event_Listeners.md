@@ -273,17 +273,17 @@ As an example, let's use **pointsHover** event to find out the index of hovered 
 		var index = point.getIndex();
 		// get series of hovered point
 		var series = point.getSeries();
-		// unhover all on points unhovering
+		// unhover the series on point unhovering
 		if (!point.hovered())return;
-		// create array for father hovering
+		// create array for further hovering
 		var arrayToHover = [index];
 		// checking existence of a point before hovered one
 		if (series.getPoint(index-1).exists())
-			// push the point for fether hovering
+			// push the point for further hovering
 			arrayToHover.push(index-1);
 		// checking existence of a point after hovered one
 		if (series.getPoint(index+1).exists())
-			// push this point for fether hovering
+			// push this point for further hovering
 			arrayToHover.push(index+1);
 		// hover points from the array
 		series.hover(arrayToHover);
