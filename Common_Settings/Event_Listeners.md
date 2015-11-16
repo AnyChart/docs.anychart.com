@@ -254,48 +254,75 @@ When a point is clicked once, it is recolored.
 To make a your chart more flexible, AnyChart charting framework provides several ways to manage current state of a single point. Event's parameter contains quite a few properties that can ease interactivity managing.
   
   
-For instance, **point** property can be used to get the point that triggered the event. This property provides pretty much the same options as {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method does. All methods of a {api:anychart.core.SeriesPoint#}**series point**{api} can be invoked upon this property.
+For instance, **point** property can be used to get the point that triggered the event. This property provides pretty much the same options as {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method does. All methods of a {api:anychart.core.SeriesPoint}**series point**{api} can be invoked upon this property.
   
   
 As an example, let's use **pointsHover** event to find out the index of hovered point and set hovered state for adjacent points.
 
 ```
+	// create chart
   var chart = anychart.column();
+  // set series data
   chart.column(data);
 
-  chart.listen("pointsHover", function(event){
-    var point = event.point;
-    var index = point.getIndex();
-    var series = point.getSeries();
-    if (!point.hovered())return;
-    var arrayToHover = [index];
-    if (series.getPoint(index-1).exists())
-        arrayToHover.push(index-1);
-    if (series.getPoint(index+1).exists())
-        arrayToHover.push(index+1);
-    series.hover(arrayToHover);
-  });
+	// create listener on point's hover event
+	chart.listen("pointsHover", function(event){
+		// get hovered point
+		var point = event.point;
+		// get index of hovered point
+		var index = point.getIndex();
+		// get series of hovered point
+		var series = point.getSeries();
+		// unhover all on points unhovering
+		if (!point.hovered())return;
+		// create array for father hovering
+		var arrayToHover = [index];
+		// checking existence of a point before hovered one
+		if (series.getPoint(index-1).exists())
+			// push the point for fether hovering
+			arrayToHover.push(index-1);
+		// checking existence of a point after hovered one
+		if (series.getPoint(index+1).exists())
+			// push this point for fether hovering
+			arrayToHover.push(index+1);
+		// hover points from the array
+		series.hover(arrayToHover);
+	});
 ```
 
 Even though this code works fine, there isn't much sense in hovering three random points. Instead, we can hover points, that are somehow related. Let's create a chart, display the income through the year and hover all the points of a quarter, the hovered point belongs to:
 
 ```
+	// create listener for point's hover event
 	chart.listen("pointsHover", function(event){
+		// get hovered point
 		var point = event.point;
+		// get index of hovered point
 		var index = point.getIndex();
+		// get series of hovered point
 		var series = point.getSeries();
+		// unhover all on points unhovering
 		if (!event.currentPoint.hovered) return;
+		// create loop for managing points' hovering 
 		switch (true){
+			// check the index of hovered point
 			case (index<3):
+				// hover the array of series points
 				series.hover([0,1,2]);
 				break;
+			// check the index of hovered point
 			case (index<6):
+				// hover the array of series points
 				series.hover([3,4,5]);
 				break;
+			// check the index of hovered point
 			case (index<9):
+				// hover the array of series points
 				series.hover([6,7,8]);
 				break;
+			// check the index of hovered point
 			case (index<12):
+				// hover the array of series points
 				series.hover([9,10,11]);
 				break;
 		}
