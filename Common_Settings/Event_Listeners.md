@@ -336,5 +336,5 @@ Moreover, you may consider it's useful to manage tooltip content, as far as we w
 -->
 And here is a sample with these settings:
 
-{sample}CS\_Interactivity\_19{sample}
+{sample}CMN\_Event\_Listener\_08{sample}
 
