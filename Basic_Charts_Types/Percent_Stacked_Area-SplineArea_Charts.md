@@ -1,8 +1,8 @@
 # Percent Stacked Area / Spline Area / StepLine Area Charts
 
- * [Overview](#overview)
- * [Chart](#chart)
- * [Spline Stacked Area](#spline_stacked_area)
+* [Overview](#overview)
+* [Chart](#chart)
+* [Spline Stacked Area](#spline_stacked_area)
 <!-- * [Adding "%" to axis labels](#percent)-->
 
 ## Overview
