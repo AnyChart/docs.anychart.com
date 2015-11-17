@@ -1,5 +1,4 @@
 # Resource Chart
-
 * [Overview](#overview)
 * [Chart](#chart)
 * [Expand/Collapse](#expand/collapse)
