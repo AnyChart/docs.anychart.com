@@ -1,9 +1,9 @@
 # Range Line/Spline Area Chart
 
- * [Overview](#overview)
- * [Chart](#chart)
- * [Temperature Range Area Chart Sample](#temperature_range_area_chart_sample)
- * [Configuration](#configuration)
+* [Overview](#overview)
+* [Chart](#chart)
+* [Temperature Range Area Chart Sample](#temperature_range_area_chart_sample)
+* [Configuration](#configuration)
 
 ## Overview
 
