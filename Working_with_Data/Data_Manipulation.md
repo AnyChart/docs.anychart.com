@@ -165,11 +165,22 @@ Along with managing series data, chart's series can be adjusted too. Let's take 
 
 ### Series Index
 
-Every chart's series has an index. This index can be used to perform actions upon a series. Method **.getSeriesAt()** can be used to obtain a series.
+Every chart's series has an index. This index can be used to perform actions upon a series. Method **.getSeriesAt()** can be used to obtain a series and this method uses series index as a parameter.
 
 ### Series ID
 
-Before proceeding actions on the series you have to get this series first. Method **.id()** helps to set identificator for the further usage. 
+As far as chart's series can be easily added or removed, it may be difficult to manage every using just indexes. Let's set unique identificator for a series to simplify further series manipulations. Use **id()** method to set unique identificator for series. Method **.getSeries()** can be used to get series by id.
+
+```
+  var chart = anychart.column(data1, data2);
+  
+```
+
+
+
+
+
+   Before proceeding actions on the series you have to get this series first. Method **.id()** helps to set identificator for the further usage. 
 
 ```
   var chart = anychart.column();
