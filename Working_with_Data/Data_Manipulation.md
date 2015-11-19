@@ -174,9 +174,27 @@ In most cases you can create a new series by using method that is named after th
   chart.addSeries(data1, data2, data3);
 ```
 
+All the series in the sample below was added using **.addSeries()** method. Open the sample in playground to examine the code.
+
+{sample}CRUD\_07{sample}
+
+**Note**: you can find out the exact number of chart's series using **.getSeriesCount()** method. 
+
 ### Series Index
 
-Every chart's series has an index. This index can be used to perform actions upon a series. Method **.getSeriesAt()** can be used to obtain a series and this method uses series index as a parameter.
+After adding multiple series you may need to get one of them for further adjustments. Every chart's series has an index and this index can be used to perform actions upon the series. Method **.getSeriesAt()** can be used to obtain a series and this method uses series index as a parameter.
+  
+  
+### Remove Series
+
+As far as any chart can be adjusted at any time there may be a need in removing some of chart's series. To remove any series you need just to pass series index to **.removeSeresAt()** method. 
+
+```
+  var chart = anychart.column();
+  
+  // remove third series
+  chart.removeSeriesAt(2);
+```
 
 ### Series ID
 
@@ -195,7 +213,13 @@ As far as chart's series can be easily added or removed, it may be difficult to 
   series.name("First Series");
 ```
 
-**Note**: if you pass series index to **.getSeries()** method, it will work pretty fine too and the series with the index will be returned. 
+**Note**: if you pass series index to **.getSeries()** method, it will work pretty fine too and the series with the index will be returned. To remove series using id, please, use **.removeSeries()** method.
+
+
+```
+  
+```
+  
   
   
 Here is a sample 
