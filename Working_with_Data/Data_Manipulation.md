@@ -165,12 +165,16 @@ Along with managing series data, chart's series can be adjusted too. Let's take 
 
 ### Adding Series
 
-In most cases you can create a new series by using method that is named after the series type (such as **column()**, **bar()**, **area()**, etc.) and use data array as a parameter for the method. But this way of setting series isn't convenient for managing lot's of series. There is another way to create multiple series. Method **.addSeries()** can create any number of series on the chart's plot. Use arrays as parameters for **.addSeries()** method to create series. You can pass any number of arrays with data to create a series for each of this arrays. But before adding series, you have to define the type of your series. You can set desirable series type with **.defaultSeriesType()**. 
+In most cases you can create a new series by using method that is named after the series type (such as **column()**, **bar()**, **area()**, etc.) and use data array as a parameter for the method. But this way of setting series isn't convenient for managing lot's of series. There is another way to create multiple series. Method **.addSeries()** can create any number of series on the chart's plot. Use arrays as parameters for **.addSeries()** method to create series. You can pass any number of arrays with data to create a series for each of this arrays. But before adding series, you have to define the type of your series. You can set desirable series type with **.defaultSeriesType()** method. 
 
 ```
+  // set chart type
   var chart = anychart.column();
+  
+  // set default series type
   chart.defaultSeriesType("column");
   
+  // create series
   chart.addSeries(data1, data2, data3);
 ```
 
@@ -178,16 +182,25 @@ All the series in the sample below was added using **.addSeries()** method. Open
 
 {sample}CRUD\_07{sample}
 
-**Note**: you can find out the exact number of chart's series using **.getSeriesCount()** method. 
+**Note**: you can find out the exact number of chart's series at current time using **.getSeriesCount()** method.
 
 ### Series Index
 
 After adding multiple series you may need to get one of them for further adjustments. Every chart's series has an index and this index can be used to perform actions upon the series. Method **.getSeriesAt()** can be used to obtain a series and this method uses series index as a parameter.
+
+```
+```
+
+If you try to pass number which exceeds amount of series on current chart, the **null** will be returned. This makes it quite continent to adjust each of chart's series using **while** loop and **in** operator. Here is how it is done.
+
+```
+  var chart = anychart.bar();
   
-  
+```
+
 ### Remove Series
 
-As far as any chart can be adjusted at any time there may be a need in removing some of chart's series. To remove any series you need just to pass series index to **.removeSeresAt()** method. 
+As far as any chart can be adjusted at any time there may be a need in removing some of chart's series. To remove any series you need just to pass series index to **.removeSeresAt()** method.
 
 ```
   var chart = anychart.column();
