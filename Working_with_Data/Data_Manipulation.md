@@ -163,18 +163,43 @@ function(e) {
 
 Along with managing series data, chart's series can be adjusted too. Let's take a closer look at ways of controlling chart's series.
 
+### Adding Series
+
+In most cases you can create a new series by using method that is named after the series type (such as **column()**, **bar()**, **area()**, etc.) and use data array as a parameter for the method. But this way of setting series isn't convenient for managing lot's of series. There is another way to create multiple series. Method **.addSeries()** can create any number of series on the chart's plot. Use arrays as parameters for **.addSeries()** method to create series. You can pass any number of arrays with data to create a series for each of this arrays. But before adding series, you have to define the type of your series. You can set desirable series type with **.defaultSeriesType()**. 
+
+```
+  var chart = anychart.column();
+  chart.defaultSeriesType("column");
+  
+  chart.addSeries(data1, data2, data3);
+```
+
 ### Series Index
 
 Every chart's series has an index. This index can be used to perform actions upon a series. Method **.getSeriesAt()** can be used to obtain a series and this method uses series index as a parameter.
 
 ### Series ID
 
-As far as chart's series can be easily added or removed, it may be difficult to manage every using just indexes. Let's set unique identificator for a series to simplify further series manipulations. Use **id()** method to set unique identificator for series. Method **.getSeries()** can be used to get series by id.
+As far as chart's series can be easily added or removed, it may be difficult to manage every series using just their indexes. It is much more sensible set unique identificator for a series to simplify further series manipulations. Use **id()** method to set unique identificator for series. Method **.getSeries()** can be used to get series by id.
 
 ```
-  var chart = anychart.column(data1, data2);
-  
+  var chart = anychart.column();
+
+  var series;
+  series = chart.column(data1);
+  series.id("First Series");
+  series = chart.column(data2);
+  series.id("Second Series");
+
+  series = chart.getSeries("First Series");
+  series.name("First Series");
 ```
+
+**Note**: if you pass series index to **.getSeries()** method, it will work pretty fine too and the series with the index will be returned. 
+  
+  
+Here is a sample 
+
 
 
 
