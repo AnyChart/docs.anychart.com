@@ -29,8 +29,8 @@
 	chart.addSeries(Sales2003, Sales2004, Sales2005);
 
 	var i=0;
-	while (i in chart.getSeriesAt(i)){
-		chart.getSeriesAt(i).name(i+"th Series");
+	while (chart.getSeriesAt(i)){
+		chart.getSeriesAt(i).name((i+1)+"th Series");
 		i++;
 	}
 

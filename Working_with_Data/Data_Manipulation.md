@@ -196,7 +196,7 @@ After adding multiple series you may need to get one of them for further adjustm
   series.fill("red");
 ```
 
-If you try to pass number which exceeds amount of series on current chart, the **null** will be returned. This makes it quite continent to adjust each of chart's series using **while** loop and **in** operator. Here is how it is done.
+If you try to pass number which exceeds amount of series on current chart, the **null** will be returned. This makes it quite continent to adjust each of chart's series using **while** loop. Here is how it is done.
 
 ```
   var chart = anychart.bar();
@@ -206,8 +206,8 @@ If you try to pass number which exceeds amount of series on current chart, the *
   chart.addSeries(data1, data2, data3);
   
   var i=0;
-  while (i in chart.getSeriesAt(i)){
-    chart.getSeriesAt(i).name(i+"th Series");
+  while (chart.getSeriesAt(i)){
+    chart.getSeriesAt(i).name((i+1)+"th Series");
     i++;
   }
 ```
