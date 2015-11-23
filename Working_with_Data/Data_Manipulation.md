@@ -225,6 +225,8 @@ As far as any chart can be adjusted at any time there may be a need in removing 
   chart.removeSeriesAt(2);
 ```
 
+As you can see, to remove a series you have to use series index as a parameter for **.removeSeriesAt()** method. Note, that if you want to hide series instead of removing it you can invoke **.enabled()** method for it with **false** parameter.
+
 ### Series ID
 
 As far as chart's series can be easily added or removed, it may be difficult to manage every series using just their indexes. It is much more sensible set unique identificator for a series to simplify further series manipulations. Use **id()** method to set unique identificator for series. Method **.getSeries()** can be used to get series by id.
@@ -244,25 +246,9 @@ As far as chart's series can be easily added or removed, it may be difficult to 
 
 **Note**: if you pass series index to **.getSeries()** method, it will work pretty fine too and the series with the index will be returned. To remove series using id, please, use **.removeSeries()** method.
 
-
 ```
   // get third series
   chart.removeSeries("Second Series");
-  
-  
 ```
 
-Here is a sample 
-
-
-
-
-
-
-   Before proceeding actions on the series you have to get this series first. Method **.id()** helps to set identificator for the further usage. 
-
-```
-  var chart = anychart.column();
-  var series = chart.column(data);
-  
-```
+Here is a sample with a toolbar for series removing.
