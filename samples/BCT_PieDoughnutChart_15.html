@@ -16,17 +16,20 @@
     {name: "All other outlets",         value: 690000}
   ]);
       
-      chart.innerRadius(115);
-      chart.radius(150);
-  chart.title("Tuned Labels Connectors");
+  chart.title("Inside labels");
+  chart.innerRadius(120);
+  chart.radius(160);
   var labels = chart.labels();
   
   // adding the offsets
+  labels.enabled(true);
   labels.fontColor("#333333");
   labels.position("inside");
   
   // set the insideLabelsOffset
-  chart.insideLabelsOffset("-45%");
+  chart.overlapMode(true);
+  chart.insideLabelsOffset("-65%");
+  chart.legend(false);
   chart.container("container");
   chart.draw();
 });</script>
