@@ -90,36 +90,23 @@ legend.itemsLayout('vertical');
 legend.itemsSpacing(1);
 
 // enable the scroller
-chart.scroller().enabled(true);
+        chart.scroller().enabled(true);
 
 // adjust the scroller
-chart.selectRange('2014-01-02','2014-02-03');
-chart.scroller().fill('green 0.1');
-chart.scroller().selectedFill('green 0.5');
+        chart.selectRange('2014-01-02','2014-02-03');
 
 // set container id for the chart
-chart.container('container');
+        chart.container('container');
 
 // adjust the scroller axis
-var labels = chart.scroller().xAxis().labels();
-var minorLabels = chart.scroller().xAxis().minorLabels();
-
-labels.textFormatter(function() {
-    return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
-});
-labels.fontColor('red');
-
-minorLabels.textFormatter(function(){
-    return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
-});
-minorLabels.fontColor('red');
-
+        var labels = chart.scroller().xAxis().labels();
+        var minorLabels = chart.scroller().xAxis().minorLabels();
 // create scroller series with mapped data
-chart.scroller().column(line_3_mapping);
+        chart.scroller().column(line_3_mapping);
 
 // initiate chart drawing
-chart.draw();
-});s</script>
+        chart.draw();
+    });</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

@@ -74,16 +74,7 @@
         legend.enabled(true);
 
 // turn the title on and set the position
-        legend.title(true);
-        legend.title().orientation('top').align('left');
-
-// format the title
-        legend.titleFormatter(function(){
-            return "ACME Corp. Stock Prices"
-        });
-
-//enable the titleSeparator
-        legend.titleSeparator(true);
+        legend.title(false);
 
 // set legend position and items layout
         plot.legend().itemsLayout('horizontal');

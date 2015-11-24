@@ -107,8 +107,6 @@
 
 // adjust the scroller
         chart.selectRange('2014-01-02','2014-02-03');
-        chart.scroller().fill('green 0.1');
-        chart.scroller().selectedFill('green 0.5');
 
 // set container id for the chart
         chart.container('container');
@@ -116,17 +114,6 @@
 // adjust the scroller axis
         var labels = chart.scroller().xAxis().labels();
         var minorLabels = chart.scroller().xAxis().minorLabels();
-
-        labels.textFormatter(function() {
-            return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
-        });
-        labels.fontColor('red');
-
-        minorLabels.textFormatter(function(){
-            return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
-        });
-        minorLabels.fontColor('red');
-
 // create scroller series with mapped data
         chart.scroller().column(line_3_mapping);
 
