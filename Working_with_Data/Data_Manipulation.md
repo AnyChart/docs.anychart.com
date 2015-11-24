@@ -252,3 +252,5 @@ As far as chart's series can be easily added or removed, it may be difficult to 
 ```
 
 Here is a sample with a toolbar for series removing.
+
+{sample}CRUD\_08{sample}
