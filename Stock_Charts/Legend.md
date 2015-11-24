@@ -67,23 +67,33 @@ By default, a Stock chart legend title shows the date and time of the hovered po
 
 ### Items
 
-By default, the legend items show the name of the series and the value hovered on a stock. Everything seems quite clear in the case of line or column series on a stock, but when we've got the OLHC series, we should use the {api:anychart.ui.Legend#itemsFormatter}**.itemsFormatter()**{api} method to set the value or values that you'd like the legend title to display, unless it shows the close values.
+By default, the legend items show the name of the series with the value hovered on a stock, and the icon of the item is of square form and of the represented series' color. We can change the appearance of the items list using {api:anychart.ui.Legend#itemsFormatter}**.itemsFormatter()**{api} method. It affects the list of items, so we can rename the items, change their icons' appearance. Look at the sample below 
 
 
 ```
+firstPlot.legend().itemsFormatter(function(){
+            return [
+                {text: "High", iconType: "circle", iconFill:"#558B2F"},
+                {text: "Low", iconFill:"#D84315"},
+                {text: "Close", iconType: "circle", iconFill:"#FF8F00"}
+            ]
+        });
 ```
 
 {sample}STOCK\_Legend\_03{sample}
 
-One thing more should we take into account: if we've got too many data points and the data is approximated, then the legend will show the approximate value of the hovered group of points. To see the exact value of the point you should scroll the data to a non-approximated state.
-
-
-### Visualization
-
-As far as a legend is a part of a stock plot, it should look attractive and . Main aspects of legend visual appearance are described in this section.
+When we've got the OHLC-series on our stock, we should use the {api:anychart.core.ui.Legend#itemsTextFormatter}**.itemsTextFormatter()**{api} method to display all OHLC values in the legend. In the sample below we check if the series we're formatting is of OHLC type (which is necessary if your stock has a number of series) and then define what to display.
 
 ```
+plot.legend().itemsTextFormatter(function(){
+      if (this.open !== undefined){ 
+      return "Open: " + this.open+ "   High: " + this.high+ "   Low: " + this.low+ "   Close: " + this.close 
+      }
+  });
 ```
 
 {sample}STOCK\_Legend\_04{sample}
+
+One thing more should we take into account: if we've got too many data points and the data is approximated, then the legend will show the approximate value of the hovered group of points. To see the exact value of the point you should scroll the data to a non-approximated state.
+
 

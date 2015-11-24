@@ -58,35 +58,24 @@
         ]);
 
 // map loaded data
-        var line_1_mapping = dataTable.mapAs({'value': 2});
-        var line_2_mapping = dataTable.mapAs({'value': 3});
-        var line_3_mapping = dataTable.mapAs({'value': 4});
+        var ohlc_mapping = dataTable.mapAs({'open': 1, 'high': 2, 'low': 3, 'close': 4, 'volume': 5});
 
 // create stock chart
         chart = anychart.stock();
 
 // create first plot on the chart with column series
-        var firstPlot = chart.plot(0);
-        var series_1 = firstPlot.line(line_1_mapping);
-        var series_2 = firstPlot.line(line_2_mapping);
-        var series_3 = firstPlot.line(line_3_mapping);
+        var plot = chart.plot(0);
+        var series = plot.ohlc(ohlc_mapping);
 
-        series_1.stroke("#558B2F");
-        series_2.stroke("#D84315");
-        series_3.stroke("#FF8F00");
+        series.name("OHLC");
 
-        series_1.name("Highest rates");
-        series_2.name("Lowest rates");
-        series_3.name("Close rates");
-
-        var legend = firstPlot.legend();
+        var legend = plot.legend();
 // enables legend
         legend.enabled(true);
 
 // turn the title on and set the position
         legend.title(true);
         legend.title().orientation('top').align('left');
-//legend.align('center');
 
 // format the title
         legend.titleFormatter(function(){
@@ -95,9 +84,15 @@
 
 //enable the titleSeparator
         legend.titleSeparator(true);
+
 // set legend position and items layout
-        firstPlot.legend().itemsLayout('horizontal');
-        firstPlot.legend().position('top');
+        plot.legend().itemsLayout('horizontal');
+        plot.legend().position('top');
+        plot.legend().itemsTextFormatter(function(){
+            if (this.open !== undefined){
+                return "Open: " + this.open+ "------High: " + this.high+ "------Low: " + this.low+ "------Close: " + this.close
+            }
+        });
 
 // setting the space between the items
         legend.itemsSpacing(10);
@@ -107,8 +102,6 @@
 
 // adjust the scroller
         chart.selectRange('2014-01-02','2014-02-03');
-        chart.scroller().fill('green 0.1');
-        chart.scroller().selectedFill('green 0.5');
 
 // set container id for the chart
         chart.container('container');
@@ -117,18 +110,6 @@
         var labels = chart.scroller().xAxis().labels();
         var minorLabels = chart.scroller().xAxis().minorLabels();
 
-        labels.textFormatter(function() {
-            return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
-        });
-        labels.fontColor('red');
-
-        minorLabels.textFormatter(function(){
-            return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
-        });
-        minorLabels.fontColor('red');
-
-// create scroller series with mapped data
-        chart.scroller().column(line_3_mapping);
 
 // initiate chart drawing
         chart.draw();

@@ -58,9 +58,9 @@
         ]);
 
 // map loaded data
-        var line_1_mapping = dataTable.mapAs({'value': 2});
+        var line_1_mapping = dataTable.mapAs({'value': 4});
         var line_2_mapping = dataTable.mapAs({'value': 3});
-        var line_3_mapping = dataTable.mapAs({'value': 4});
+        var line_3_mapping = dataTable.mapAs({'value': 2});
 
 // create stock chart
         chart = anychart.stock();
@@ -98,6 +98,13 @@
 // set legend position and items layout
         firstPlot.legend().itemsLayout('horizontal');
         firstPlot.legend().position('top');
+        firstPlot.legend().itemsFormatter(function(){
+            return [
+                {text: "High", iconType: "circle", iconFill:"#558B2F"},
+                {text: "Low", iconFill:"#D84315"},
+                {text: "Close", iconType: "circle", iconFill:"#FF8F00"}
+            ]
+        });
 
 // setting the space between the items
         legend.itemsSpacing(10);
