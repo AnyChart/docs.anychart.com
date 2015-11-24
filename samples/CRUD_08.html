@@ -7,172 +7,180 @@
   <script src="../anychart-bundle.min.js"></script>
   <script x-export="chart">anychart.onDocumentReady(function() {
 
-	  // define chart type
-	  var chart = anychart.bar();
+	// define chart type
+	var chart = anychart.bar();
 
-	  // set data series
-	  chart.defaultSeriesType("bar");
-	  chart.addSeries(data(), data(), data());
+	// set data series
+	chart.defaultSeriesType("bar");
+	chart.addSeries(data(), data(), data());
 
-	  var i=0;
-	  while (chart.getSeriesAt(i)){
-		  chart.getSeriesAt(i).name((i+1)+"th Series");
-		  i++;
-	  }
+	var i=0;
+	while (chart.getSeriesAt(i)){
+		chart.getSeriesAt(i).name((i+1)+"th Series");
+		i++;
+	}
 
-	  // set axes titles
-	  var xAxis = chart.xAxis();
-	  xAxis.title("Retail Channel");
-	  var xScale = chart.xScale();
-	  xScale.names([
-		  "Department Stores",
-		  "Discount Stores",
-		  "Men's/Women's Specialty Stores",
-		  "Juvenile Specialty Stores",
-		  "All other outlets"
-	  ]);
-	  var yAxis = chart.yAxis();
-	  yAxis.title("Sales");
+	// set axes titles
+	var xAxis = chart.xAxis();
+	xAxis.title("Retail Channel");
+	var xScale = chart.xScale();
+	xScale.names([
+		"Department Stores",
+		"Discount Stores",
+		"Men's/Women's Specialty Stores",
+		"Juvenile Specialty Stores",
+		"All other outlets"
+	]);
+	var yAxis = chart.yAxis();
+	yAxis.title("Sales");
 
-	  // draw chart
-	  chart.container("container");
-	  chart.draw();
+	// draw chart
+	chart.container("container");
+	chart.draw();
 
-	  // enable Gantt toolbar
-	  var toolbar = anychart.ganttToolbar();
-	  toolbar.container("container");
-	  toolbar.draw();
-
-
-	  // get current toolbar
-	  var domToolbar = document.getElementsByClassName("anychart-toolbar")[0];
-	  // dispose all buttons in toolbar
-	  domToolbar.innerHTML = "";
-
-	  // create class lists for different states of edit button
-	  var buttonClasses = ["anychart-inline-block", "anychart-toolbar-button"];
-	  var hoverClasses = ["anychart-inline-block", "anychart-toolbar-button", "anychart-toolbar-button-hover"];
-	  var clickClasses = ["anychart-inline-block", "anychart-toolbar-button", "anychart-toolbar-button-hover", "anychart-toolbar-button-active"];
-
-	  domToolbar.appendChild(button("Add Series", function(){
-		  if (chart.getSeriesAt(chart.getSeriesCount()-1).index()<9){
-			  chart.addSeries(data());
-			  chart.getSeriesAt(chart.getSeriesCount()-1).name(chart.getSeriesCount()+"th Series")
-		  }
-	  }));
-
-	  domToolbar.appendChild(button("Remove Series", function(){
-		  if (chart.getSeriesCount()>1)
-			  chart.removeSeriesAt(chart.getSeriesCount()-1);
-	  }));
-
-	  var array = [];
-
-	  domToolbar.appendChild(list("Remove by ID", array));
+	// enable toolbar
+	var toolbar = anychart.ganttToolbar();
+	toolbar.container("container");
+	toolbar.draw();
 
 
-	  function button (text, action, arrow){
-		  var button = document.createElement("div");
-		  var outerBox = document.createElement("div");
-		  outerBox.className = "anychart-inline-block anychart-toolbar-button-outer-box";
-		  var innerBox = document.createElement("div");
-		  innerBox.innerHTML = text;
-		  innerBox.className = "anychart-inline-block anychart-toolbar-button-inner-box";
-		  outerBox.appendChild(innerBox);
-		  if (arrow){
-			  var point = document.createElement("div");
-			  point.innerHTML = "&nbsp;"
-			  point.className = "anychart-inline-block anychart-toolbar-menu-button-dropdown"
-			  outerBox.appendChild(point);
-		  }else{
+	// get current toolbar
+	var domToolbar = document.getElementsByClassName("anychart-toolbar")[0];
+	// dispose all buttons in toolbar
+	domToolbar.innerHTML = "";
 
-		  }
-		  button.appendChild(outerBox);
-		  button.className = buttonClasses.join(" ");
-		  button.setAttribute("role", "button");
-		  button.addEventListener("click", action);
+	// create class lists for different states of edit button
+	var buttonClasses = ["anychart-inline-block", "anychart-toolbar-button"];
+	var hoverClasses = ["anychart-inline-block anychart-toolbar-button", "anychart-toolbar-button-hover"];
+	var listHoverClasses = ["anychart-inline-block anychart-toolbar-button", "anychart-toolbar-menu-button-hover"];
+	var clickClasses = ["anychart-inline-block", "anychart-toolbar-button", "anychart-toolbar-button-hover", "anychart-toolbar-button-active"];
 
-		  button.addEventListener("mouseover", function (){
-			  this.className = hoverClasses.join(" ");
-			  console.log(this.className)
-		  });
-		  button.addEventListener("mouseout", function() {
-			  this.className = buttonClasses.join(" ");
-		  });
-		  button.addEventListener("mousedown", function() {
-			  this.className = clickClasses.join(" ");
-		  });
-		  button.addEventListener("mouseup", function() {
-			  this.className = hoverClasses.join(" ");
-		  });
+	domToolbar.appendChild(button("Add Series", function(){
+		if (chart.getSeriesAt(chart.getSeriesCount()-1).index()<9){
+			chart.addSeries(data());
+			chart.getSeriesAt(chart.getSeriesCount()-1).name(chart.getSeriesCount()+"th Series")
+		}
+	}));
 
-		  return button
-	  }
+	domToolbar.appendChild(button("Remove Series", function(){
+		if (chart.getSeriesCount()>1)
+			chart.removeSeriesAt(chart.getSeriesCount()-1);
+	}));
+
+	var array = [];
+
+	domToolbar.appendChild(list("Remove by ID", array));
 
 
-	  function list (buttonText, array){
-		  var list = document.createElement("div");
-		  list.className = "anychart-menu anychart-menu-vertical";
-		  list.style.display = "none";
-		  list.style.top = "20px";
+	function button (text, action, arrow){
+		var button = document.createElement("div");
+		var outerBox = document.createElement("div");
+		var innerBox = document.createElement("div");
+		if (arrow){
+			outerBox.className = "anychart-inline-block anychart-toolbar-menu-button-outer-box";
+			innerBox.className = "anychart-inline-block anychart-toolbar-menu-button-inner-box";
+			var textBox = document.createElement("div");
+			textBox.className = "anychart-inline-block anychart-toolbar-menu-button-caption";
+			textBox.innerHTML = text;
+			var point = document.createElement("div");
+			point.innerHTML = "&nbsp;";
+			point.className = "anychart-inline-block anychart-toolbar-menu-button-dropdown";
+			innerBox.appendChild(textBox);
+			innerBox.appendChild(point);
+			var hClass = listHoverClasses;
+			var bClasses = ["anychart-inline-block", "anychart-toolbar-menu-button"];
+		}else{
+			outerBox.className = "anychart-inline-block anychart-toolbar-button-outer-box";
+			innerBox.innerHTML = text;
+			innerBox.className = "anychart-inline-block anychart-toolbar-button-inner-box";
+			var hClass = hoverClasses;
+			var bClasses = buttonClasses;
+		}
+		outerBox.appendChild(innerBox);
+		button.appendChild(outerBox);
+		button.className = bClasses.join(" ");
+		button.setAttribute("role", "button");
+		button.addEventListener("click", action);
 
-		  document.getElementsByTagName("body")[0].appendChild(list);
+		button.addEventListener("mouseover", function (){
+			this.className = hClass.join(" ");
+			console.log(this.className)
+		});
+		button.addEventListener("mouseout", function() {
+			this.className = bClasses.join(" ");
+		});
+		button.addEventListener("mousedown", function() {
+			this.className = clickClasses.join(" ");
+		});
+		button.addEventListener("mouseup", function() {
+			this.className = hClass.join(" ");
+		});
 
-		  return button(buttonText, function(){
-
-			  function builder (){
-				  for (var i=0;i<chart.getSeriesCount();i++){
-					  var name = chart.getSeriesAt(i).index()+1+"th Series";
-					  chart.getSeriesAt(i).id(name);
-					  var string = document.createElement("div");
-					  string.className = "anychart-menuitem";
-					  var text = document.createElement("div");
-					  text.className = "anychart-menuitem-content";
-					  text.innerHTML = name;
-					  string.appendChild(text);
-					  string.addEventListener("click", function(){
-						  chart.removeSeries(this.children[0].innerHTML);
-					  });
-					  list.appendChild(string);
-				  }
-				  chart.listen("mouseDown", remover);
-				  this.removeEventListener("click", builder);
-				  list.addEventListener("click", remover);
-			  }
-
-			  function remover () {
-				  console.log(this)
-				  list.style.display = "none";
-				  list.removeEventListener("click", remover);
-				  domToolbar.removeEventListener("click", remover);
-				  chart.unlisten("mouseDown", remover);
-				  list.innerHTML = "";
-				  for (var i=0;i<domToolbar.children.length;i++){
-					  domToolbar.children[i].removeEventListener("click", remover);
-				  }
-			  }
+		return button
+	}
 
 
-			  if (list.style.display == "block"){
-				  remover()
-			  }else{
-				  this.addEventListener("click", builder());
-				  list.style.left = this.offsetLeft + "px"
-				  list.style.top = this.offsetTop + this.offsetHeight + "px";
-				  list.style.display = "block";
-				  chart.listen("mouseDown", remover);
-				  domToolbar.addEventListener("click", remover, true);
-			  }
-		  }, true);
-	  }
+	function list (buttonText, array){
+		var list = document.createElement("div");
+		list.className = "anychart-menu anychart-menu-vertical";
+		list.style.display = "none";
+		list.style.top = "20px";
 
-	  function data () {
-		  var array = []
-		  for (var i=0;i<5;i++)
-			  array.push(Math.round(Math.random() * 50000) + 900000);
-		  return array
-	  }
-  });</script>
+		document.getElementsByTagName("body")[0].appendChild(list);
+
+		return button(buttonText, function(){
+
+			function builder (){
+				for (var i=0;i<chart.getSeriesCount();i++){
+					var name = chart.getSeriesAt(i).index()+1+"th Series";
+					chart.getSeriesAt(i).id(name);
+					var string = document.createElement("div");
+					string.className = "anychart-menuitem";
+					var text = document.createElement("div");
+					text.className = "anychart-menuitem-content";
+					text.innerHTML = name;
+					string.appendChild(text);
+					string.addEventListener("click", function(){
+						chart.removeSeries(this.children[0].innerHTML);
+					});
+					list.appendChild(string);
+				}
+				chart.listen("mouseDown", remover);
+				this.removeEventListener("click", builder);
+				list.addEventListener("click", remover);
+			}
+
+			function remover () {
+				list.style.display = "none";
+				list.removeEventListener("click", remover);
+				domToolbar.removeEventListener("click", remover);
+				chart.unlisten("mouseDown", remover);
+				list.innerHTML = "";
+				for (var i=0;i<domToolbar.children.length;i++){
+					domToolbar.children[i].removeEventListener("click", remover);
+				}
+			}
+
+			if (list.style.display == "block"){
+				remover()
+			}else{
+				this.addEventListener("click", builder());
+				list.style.left = this.offsetLeft + "px";
+				list.style.top = this.offsetTop + this.offsetHeight + "px";
+				list.style.display = "block";
+				chart.listen("mouseDown", remover);
+				domToolbar.addEventListener("click", remover, true);
+			}
+		}, true);
+	}
+
+	function data () {
+		var array = [];
+		for (var i=0;i<5;i++)
+			array.push(Math.round(Math.random() * 50000) + 900000);
+		return array
+	}
+});</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
