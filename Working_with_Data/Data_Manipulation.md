@@ -10,6 +10,10 @@
  * [Insert](#insert)
 * [Data Streaming](#data_streaming)
 * [Series managing](#series_managing)
+ * [Adding Series](#adding_series)
+ * [Series Index](#series_index)
+ * [Remove Series](#remove_series)
+ * [Series ID](#series_id)
 
 ## Overview
 
@@ -161,7 +165,7 @@ function(e) {
  
 ## Series Managing
 
-Along with managing series data, chart's series can be adjusted too. Let's take a closer look at ways of controlling chart's series.
+Along with manipulating series data, chart's series can be adjusted too. Let's take a closer look at ways of controlling chart's series.
 
 ### Adding Series
 
@@ -212,6 +216,8 @@ If you try to pass number which exceeds amount of series on current chart, the *
   }
 ```
 
+Below is a sample with demonstration of the code from above. Each series was renamed. The chart's legend was enabled to demonstrate series names.
+
 {sample}CRUD\_07{sample}
 
 ### Remove Series
@@ -229,7 +235,7 @@ As you can see, to remove a series you have to use series index as a parameter f
 
 ### Series ID
 
-As far as chart's series can be easily added or removed, it may be difficult to manage every series using just their indexes. It is much more sensible set unique identificator for a series to simplify further series manipulations. Use **id()** method to set unique identificator for series. Method **.getSeries()** can be used to get series by id.
+As far as chart's series can be easily added or removed, it may be difficult to manage every series using just their indexes. It is much more sensible to set a unique identificator for a series to simplify further series manipulations. Use **id()** method to set unique identificator for series. Method **.getSeries()** can be used to get series by id.
 
 ```
   var chart = anychart.column();
