@@ -16,7 +16,12 @@
 
 	var i=0;
 	while (chart.getSeriesAt(i)){
-		chart.getSeriesAt(i).name((i+1)+"th Series");
+		var series = chart.getSeriesAt(i);
+		series.name((i+1)+"th Series");
+		var tooltip = series.tooltip();
+		tooltip.titleFormatter(function(){
+			return chart.xScale().names()[this.index];
+		});
 		i++;
 	}
 
@@ -58,7 +63,12 @@
 	domToolbar.appendChild(button("Add Series", function(){
 		if (chart.getSeriesAt(chart.getSeriesCount()-1).index()<9){
 			chart.addSeries(data());
-			chart.getSeriesAt(chart.getSeriesCount()-1).name(chart.getSeriesCount()+"th Series")
+			var series = chart.getSeriesAt(chart.getSeriesCount()-1);
+			series.name(chart.getSeriesCount()+"th Series");
+			var tooltip = series.tooltip();
+			tooltip.titleFormatter(function(){
+				return chart.xScale().names()[this.index];
+			});
 		}
 	}));
 
@@ -104,7 +114,6 @@
 
 		button.addEventListener("mouseover", function (){
 			this.className = hClass.join(" ");
-			console.log(this.className)
 		});
 		button.addEventListener("mouseout", function() {
 			this.className = bClasses.join(" ");
