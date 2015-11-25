@@ -234,8 +234,7 @@ You can find more information about lines in [Line Settings tutorial](../Appeara
 
 {sample}BCT\_PieDoughnutChart\_11{sample}
 
-
-As this chart type might be transformed into doughnut, there's one more way of positioning labels inside it - through using offsets. The main problem is that we've got a chart with an only axis, which is round, so we should remember it when trying to position the labels using offset. There's a special method we've got for this case - {api:anychart.charts.Pie#insideLabelsOffset}**.insideLabelsOffset()**{api}. However, we stil can use {api}**.offSetX()**{api} and {api}**.offSetY()**{api} methods. Here is a sample where we have demonstrated both ways:
+When you are using a Doughnut modification of a Pie chart you may want to place labels inside a chart, this can be done using offsets. There's a special method we've got for this case - {api:anychart.charts.Pie#insideLabelsOffset}**.insideLabelsOffset()**{api}, you can also use {api:anychart.charts.Pie#offSetX}**.offSetX()**{api} and {api:anychart.charts.Pie#offSetY}**.offSetY()**{api} methods. Here is a sample of such chart:
 
 ```
     // set the insideLabelsOffset
@@ -244,7 +243,7 @@ As this chart type might be transformed into doughnut, there's one more way of p
 
 {sample}BCT\_PieDoughnutChart\_15{sample}
 
-Using {api:anychart.charts.Pie#insideLabelsOffset}**.insideLabelsOffset()**{api} is easier but {api}**.offSetX()**{api} and {api}**.offSetY()**{api} give you better accuracy in positioning. Choose the most appropriate way for your own case.
+Using {api:anychart.charts.Pie#insideLabelsOffset}**.insideLabelsOffset()**{api} is easier but {api:anychart.charts.Pie#offSetX}**.offSetX()**{api} and {api:anychart.charts.Pie#offSetY}**.offSetY()**{api} give you better accuracy in positioning. Choose the most appropriate way for your own case.
 
 ###Tooltips
 
