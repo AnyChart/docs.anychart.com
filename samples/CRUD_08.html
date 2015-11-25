@@ -150,7 +150,8 @@
 					text.innerHTML = name;
 					string.appendChild(text);
 					string.addEventListener("click", function(){
-						chart.removeSeries(this.children[0].innerHTML);
+						if(chart.getSeriesCount()>1)
+							chart.removeSeries(this.children[0].innerHTML);
 					});
 					list.appendChild(string);
 				}
