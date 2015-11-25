@@ -7,13 +7,9 @@
 * [Title](#title)
 * [Items](#items)
 * [Visualization](#visualization)
- * [Background](#background)
- * [Size](#size)
- * [Paging](#paging)
- * [Marker Symbol](#marker_symbol)
 * [Custom Item](#custom_item)
 * [Custom Legend](#custom_legend)
-* [One Legend for Several Charts](#one_legend_for_several_charts)
+* [One Legend for Several Plots](#one_legend_for_several_plots)
 
 
 ## Overview
@@ -117,30 +113,7 @@ When we want to change something in the legend view, there's almost no differenc
     item.iconType("ohlc");
 ```
 
-
-
- * [Background](#background)
- * [Size](#size)
- * [Paging](#paging)
- * [Marker Symbol](#marker_symbol)
-* [Custom Item](#custom_item)
-* [Custom Legend](#custom_legend)
-* [One Legend for Several Charts](#one_legend_for_several_charts)
-
-
-
-
-### Tooltip
-
-If you want to configure legend tooltips - you should do that using {api:anychart.core.ui.Legend#tooltip}**.tooltip()**{api} methods. You can tune its visual appearance and format. In the following sample we will format tooltips of the legend to show detailed description information.
-
-{sample}AS\_Legend\_09{sample}
-
-## Series Management
-
-You can easily control series of the chart using chart legend. You can hide and show any of the series by clicking on the legend items. Here is a sample of column chart with four series. One of the series is already disabled. Click on the last legend item to show hidden series. 
-
-{sample}AS\_Legend\_10{sample}
+{sample}STOCK\_Legend\_05{sample}
 
 ## Custom Item
 
@@ -162,50 +135,12 @@ When creating legend you can add your own items with any information you want to
 
 In the sample chart below we've used custom item that adds *Total* data to legend.
 
-{sample}AS\_Legend\_11{sample}
+{sample}STOCK\_Legend\_06{sample}
 
-## Custom Legend
+You can also create a custom legend. It's being done the same way as with basic chart legends, so you can look for it up in the [Basic Chart Legend](../Common_Settings/Legend#custom_legend) article.
 
-AnyChart JavaScript Framework sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart. 
 
-{sample}AS\_Legend\_12{sample}
+## One Legend for Several Plots
 
-## One Legend for Several Charts
-
-As you can see, one legend can contain different information from one chart. Moreover, one legend can contain information from several charts. To add several chart into one legend use {api:anychart.ui.Legend#itemsSource}**.itemsSource()**{api} method and define charts for legend's content.
-
-```
-  // define charts
-  var chart2005 = anychart.column();
-  var chart2006 = anychart.column();
-  
-  // create custom legend
-  var legend = anychart.ui.legend();
-  // set sources for legend items
-  legend.itemsSource([chart2005, chart2006]);
-```
-
-{sample}AS\_Legend\_13{sample}
-
-## One Legend for Several Series
-
-You can attache an event to a legend items. Use **{api:anychart.core.ui.Legend#listen}.listen(){api}** method to set an event for a legend. List of possible event can be found in **{api:anychart.enums.EventType}API{api}**. For additional information on events in AnyChart you can find in [Event Listeners tutorial](../Common_Settings/Event_Listeners)
-
-```
-  // create legend
-  var legend = anychart.ui.legend();
-
-  // enable and disable series on legend item click
-  legend.listen("legendItemClick", function(event) {
-    // get item's index
-    var index = event["itemIndex"];
-    // manage enabled/disabled state of the series
-    chart2005.getSeries(index).enabled(! chart2005.getSeries(index).enabled());
-    chart2006.getSeries(index).enabled(! chart2006.getSeries(index).enabled());
-  });
-```
-
-Sample below demonstrate managing several series with one legend item.
-
-{sample}AS\_Legend\_14{sample}
+The same as we create one legend to several series in basic charts, we can do with stocks. The only difference you'd better remember is that in stocks we operate with series on plots instead of charts. Look at this in the [Basic Chart Legend](../Common_Settings/Legend#one_legend_for_several_charts) article.
 
