@@ -96,3 +96,116 @@ One thing more should we take into account: if we've got too many data points an
 
 ## Visualization
 
+When we want to change something in the legend view, there's almost no difference in usage and editing between the basic chart legend and the stock one. Let's add a background to our legend, change its size and icons and adjust the legend paginator. 
+
+```
+	// add a background
+	legend.background("#E1F5FE");
+
+	// change size in height
+	legend.height(35);
+
+	// adjust the paginator
+    legend.paginator(true);
+    legend.paginator().orientation("right");
+
+    // icons
+    var item = series.legendItem();
+    // set stroke of icons
+    item.iconStroke("#000")
+    // set type of icon marker
+    item.iconType("ohlc");
+```
+
+
+
+ * [Background](#background)
+ * [Size](#size)
+ * [Paging](#paging)
+ * [Marker Symbol](#marker_symbol)
+* [Custom Item](#custom_item)
+* [Custom Legend](#custom_legend)
+* [One Legend for Several Charts](#one_legend_for_several_charts)
+
+
+
+
+### Tooltip
+
+If you want to configure legend tooltips - you should do that using {api:anychart.core.ui.Legend#tooltip}**.tooltip()**{api} methods. You can tune its visual appearance and format. In the following sample we will format tooltips of the legend to show detailed description information.
+
+{sample}AS\_Legend\_09{sample}
+
+## Series Management
+
+You can easily control series of the chart using chart legend. You can hide and show any of the series by clicking on the legend items. Here is a sample of column chart with four series. One of the series is already disabled. Click on the last legend item to show hidden series. 
+
+{sample}AS\_Legend\_10{sample}
+
+## Custom Item
+
+When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.ui.Legend#itemsFormatter}**itemsFormatter()**{api} method. 
+
+```
+  var legend = chart.legend();
+  // adjust legend items
+  legend.itemsFormatter(function(items){
+    // push into items array
+    items.push({
+      // set text of a new item
+      text: "item text "
+    });
+    // return items array
+    return items;
+  });
+```
+
+In the sample chart below we've used custom item that adds *Total* data to legend.
+
+{sample}AS\_Legend\_11{sample}
+
+## Custom Legend
+
+AnyChart JavaScript Framework sets no limits to the amount of legends on one chart plot. Legend can be a part chart as well as a separate unit. Sample below demonstrates three custom legend at the bottom of the chart. 
+
+{sample}AS\_Legend\_12{sample}
+
+## One Legend for Several Charts
+
+As you can see, one legend can contain different information from one chart. Moreover, one legend can contain information from several charts. To add several chart into one legend use {api:anychart.ui.Legend#itemsSource}**.itemsSource()**{api} method and define charts for legend's content.
+
+```
+  // define charts
+  var chart2005 = anychart.column();
+  var chart2006 = anychart.column();
+  
+  // create custom legend
+  var legend = anychart.ui.legend();
+  // set sources for legend items
+  legend.itemsSource([chart2005, chart2006]);
+```
+
+{sample}AS\_Legend\_13{sample}
+
+## One Legend for Several Series
+
+You can attache an event to a legend items. Use **{api:anychart.core.ui.Legend#listen}.listen(){api}** method to set an event for a legend. List of possible event can be found in **{api:anychart.enums.EventType}API{api}**. For additional information on events in AnyChart you can find in [Event Listeners tutorial](../Common_Settings/Event_Listeners)
+
+```
+  // create legend
+  var legend = anychart.ui.legend();
+
+  // enable and disable series on legend item click
+  legend.listen("legendItemClick", function(event) {
+    // get item's index
+    var index = event["itemIndex"];
+    // manage enabled/disabled state of the series
+    chart2005.getSeries(index).enabled(! chart2005.getSeries(index).enabled());
+    chart2006.getSeries(index).enabled(! chart2006.getSeries(index).enabled());
+  });
+```
+
+Sample below demonstrate managing several series with one legend item.
+
+{sample}AS\_Legend\_14{sample}
+
