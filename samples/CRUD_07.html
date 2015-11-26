@@ -24,16 +24,19 @@
 	// define chart type
 	var chart = anychart.bar();
 
-	// set data series
+	// set default series type
 	chart.defaultSeriesType("bar");
+	// add series
 	chart.addSeries(Sales2003, Sales2004, Sales2005);
 
+	// create a loop for renaming each of the series
 	var i=0;
 	while (chart.getSeriesAt(i)){
 		chart.getSeriesAt(i).name((i+1)+"th Series");
 		i++;
 	}
 
+	// enable legend
 	chart.legend(true);
 
 	// set axes titles

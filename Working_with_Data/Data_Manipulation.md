@@ -203,14 +203,19 @@ After adding multiple series you may need to get one of them for further adjustm
 If you try to pass number which exceeds amount of series on current chart, the **null** will be returned. This makes it quite continent to adjust each of chart's series using **while** loop. Here is how it is done.
 
 ```
+  // create chart
   var chart = anychart.bar();
   
+  // define default series type
   chart.defaultSeriesType("bar");
   
+  // set data for multiple series
   chart.addSeries(data1, data2, data3);
   
   var i=0;
+  // create a loop
   while (chart.getSeriesAt(i)){
+    // rename each series
     chart.getSeriesAt(i).name((i+1)+"th Series");
     i++;
   }
@@ -238,15 +243,23 @@ As you can see, to remove a series you have to use series index as a parameter f
 As far as chart's series can be easily added or removed, it may be difficult to manage every series using just their indexes. It is much more sensible to set a unique identificator for a series to simplify further series manipulations. Use {api:anychart.core.cartesian.series.Base#id}**id()**{api} method to set unique identificator for series. Method {api:anychart.charts.Cartesian#getSeries}**.getSeries()**{api} can be used to get series by id.
 
 ```
+  // create chart
   var chart = anychart.column();
 
+  // create variable for series
   var series;
+  // create first series
   series = chart.column(data1);
+  // set id for the first series
   series.id("First Series");
+  // create second series
   series = chart.column(data2);
+  // set id for second series
   series.id("Second Series");
 
+  // get first series
   series = chart.getSeries("First Series");
+  // rename first series
   series.name("First Series");
 ```
 

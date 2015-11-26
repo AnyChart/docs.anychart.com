@@ -10,15 +10,21 @@
 	// define chart type
 	var chart = anychart.bar();
 
-	// set data series
+	// set default series type
 	chart.defaultSeriesType("bar");
+	// create multiple series
 	chart.addSeries(data(), data(), data());
 
+	// create a loop
 	var i=0;
 	while (chart.getSeriesAt(i)){
+		// series getter
 		var series = chart.getSeriesAt(i);
+		// rename series
 		series.name((i+1)+"th Series");
+		// getter for tooltip
 		var tooltip = series.tooltip();
+		// manage tooltip title
 		tooltip.titleFormatter(function(){
 			return chart.xScale().names()[this.index];
 		});
@@ -28,7 +34,12 @@
 	// set axes titles
 	var xAxis = chart.xAxis();
 	xAxis.title("Retail Channel");
+	var yAxis = chart.yAxis();
+	yAxis.title("Sales");
+
+	// adjust x scale
 	var xScale = chart.xScale();
+	// set labels
 	xScale.names([
 		"Department Stores",
 		"Discount Stores",
@@ -36,8 +47,6 @@
 		"Juvenile Specialty Stores",
 		"All other outlets"
 	]);
-	var yAxis = chart.yAxis();
-	yAxis.title("Sales");
 
 	// draw chart
 	chart.container("container");
@@ -54,25 +63,35 @@
 	// dispose all buttons in toolbar
 	domToolbar.innerHTML = "";
 
-	// create class lists for different states of edit button
+	// create class lists for different states of buttons
 	var buttonClasses = ["anychart-inline-block", "anychart-toolbar-button"];
 	var hoverClasses = ["anychart-inline-block anychart-toolbar-button", "anychart-toolbar-button-hover"];
 	var listHoverClasses = ["anychart-inline-block anychart-toolbar-button", "anychart-toolbar-menu-button-hover"];
 	var clickClasses = ["anychart-inline-block", "anychart-toolbar-button", "anychart-toolbar-button-hover", "anychart-toolbar-button-active"];
 
+	// create toolbar button
 	domToolbar.appendChild(button("Add Series", function(){
+		// check the current number of series on the chart
 		if (chart.getSeriesAt(chart.getSeriesCount()-1).index()<9){
+			// create new series
 			chart.addSeries(data());
+			// getter for new series
 			var series = chart.getSeriesAt(chart.getSeriesCount()-1);
+			// rename series
 			series.name(chart.getSeriesCount()+"th Series");
+			// series tooltip getter
 			var tooltip = series.tooltip();
+			// format tooltip title
 			tooltip.titleFormatter(function(){
+				// get index of current element and return x scale's label with the same position
 				return chart.xScale().names()[this.index];
 			});
 		}
 	}));
 
+	// create toolbar button
 	domToolbar.appendChild(button("Remove Series", function(){
+		// remove last series if there is more than one on the chart's plot
 		if (chart.getSeriesCount()>1)
 			chart.removeSeriesAt(chart.getSeriesCount()-1);
 	}));
@@ -82,6 +101,7 @@
 	domToolbar.appendChild(list("Remove by ID", array));
 
 
+	// function for creating buttons
 	function button (text, action, arrow){
 		var button = document.createElement("div");
 		var outerBox = document.createElement("div");
