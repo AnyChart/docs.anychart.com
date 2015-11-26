@@ -169,7 +169,7 @@ Along with manipulating series data, chart's series can be adjusted too. Let's t
 
 ### Adding Series
 
-In most cases you can create a new series by using method that is named after the series type (such as **column()**, **bar()**, **area()**, etc.) and use data array as a parameter for the method. But this way of setting series isn't convenient for managing lot's of series. There is another way to create multiple series. Method **.addSeries()** can create any number of series on the chart's plot. Use arrays as parameters for **.addSeries()** method to create series. You can pass any number of arrays with data to create a series for each of this arrays. But before adding series, you have to define the type of your series. You can set desirable series type with **.defaultSeriesType()** method. 
+In most cases you can create a new series by using method that is named after the series type (such as {api:anychart.charts.Cartesian#column}**.column()**{api}, {api:anychart.charts.Cartesian#bar}**.bar()**{api}, {api:anychart.charts.Cartesian#area}**.area()**{api}, etc.) and use data array as a parameter for the method. But this way of setting series isn't convenient for managing lot's of series. There is another way to create multiple series. Method {api:anychart.charts.Cartesian#addSeries}**.addSeries()**{api} can create any number of series on the chart's plot. Use arrays as parameters for {api:anychart.charts.Cartesian#addSeries}**.addSeries()**{api} method to create series. You can pass any number of arrays with data to create a series for each of this arrays. But before adding series, you have to define the type of your series. You can set desirable series type with {api:anychart.charts.Cartesian#defaultSeriesType}**.defaultSeriesType()**{api} method. 
 
 ```
   // set chart type
@@ -182,15 +182,15 @@ In most cases you can create a new series by using method that is named after th
   chart.addSeries(data1, data2, data3);
 ```
 
-All the series in the sample below was added using **.addSeries()** method. Open the sample in playground to examine the code.
+All the series in the sample below was added using {api:anychart.charts.Cartesian#addSeries}**.addSeries()**{api} method. Open the sample in playground to examine the code.
 
-{sample}CRUD\_07{sample}
+{sample}CRUD\_09{sample}
 
-**Note**: you can find out the exact number of chart's series at current time using **.getSeriesCount()** method.
+**Note**: you can find out the exact number of chart's series at current time using {api:anychart.charts.Cartesian#getSeriesCount}**.getSeriesCount()**{api} method.
 
 ### Series Index
 
-After adding multiple series you may need to get one of them for further adjustments. Every chart's series has an index and this index can be used to perform actions upon the series. Method **.getSeriesAt()** can be used to obtain a series and this method uses series index as a parameter.
+After adding multiple series you may need to get one of them for further adjustments. Every chart's series has an index and this index can be used to perform actions upon the series. Method {api:anychart.charts.Cartesian#getSeriesAt}**.getSeriesAt()**{api} can be used to obtain a series and this method uses series index as a parameter.
 
 ```
   // get forth series
@@ -222,7 +222,7 @@ Below is a sample with demonstration of the code from above. Each series was ren
 
 ### Remove Series
 
-As far as any chart can be adjusted at any time there may be a need in removing some of chart's series. To remove any series you need just to pass series index to **.removeSeresAt()** method.
+As far as any chart can be adjusted at any time there may be a need in removing some of chart's series. To remove any series you need just to pass series index to {api:anychart.charts.Cartesian#removeSeriesAt}**.removeSeriesAt()**{api} method.
 
 ```
   var chart = anychart.column();
@@ -231,11 +231,11 @@ As far as any chart can be adjusted at any time there may be a need in removing 
   chart.removeSeriesAt(2);
 ```
 
-As you can see, to remove a series you have to use series index as a parameter for **.removeSeriesAt()** method. Note, that if you want to hide series instead of removing it you can invoke **.enabled()** method for it with **false** parameter.
+As you can see, to remove a series you have to use series index as a parameter for {api:anychart.charts.Cartesian#removeSeriesAt}**.removeSeriesAt()**{api} method. Note, that if you want to hide series instead of removing it you can invoke {api:anychart.core.cartesian.series.Base#enabled}**.enabled()**{api} method for it with **false** parameter.
 
 ### Series ID
 
-As far as chart's series can be easily added or removed, it may be difficult to manage every series using just their indexes. It is much more sensible to set a unique identificator for a series to simplify further series manipulations. Use **id()** method to set unique identificator for series. Method **.getSeries()** can be used to get series by id.
+As far as chart's series can be easily added or removed, it may be difficult to manage every series using just their indexes. It is much more sensible to set a unique identificator for a series to simplify further series manipulations. Use {api:anychart.core.cartesian.series.Base#id}**id()**{api} method to set unique identificator for series. Method {api:anychart.charts.Cartesian#getSeries}**.getSeries()**{api} can be used to get series by id.
 
 ```
   var chart = anychart.column();
@@ -250,7 +250,7 @@ As far as chart's series can be easily added or removed, it may be difficult to 
   series.name("First Series");
 ```
 
-**Note**: if you pass series index to **.getSeries()** method, it will work pretty fine too and the series with the index will be returned. To remove series using id, please, use **.removeSeries()** method.
+**Note**: if you pass series index to {api:anychart.charts.Cartesian#getSeries}**.getSeries()**{api} method, it will work pretty fine too and the series with the index will be returned. To remove series using id, please, use {api:anychart.charts.Cartesian#removeSeries}**.removeSeries()**{api} method.
 
 ```
   // get third series
