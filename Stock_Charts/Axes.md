@@ -8,7 +8,7 @@
 * [Tickmarks](#tickmarks)
 * [Labels](#labels)
 * [Axis Line](#axis_line)
-* [Number of axes](#number_of_axes)
+* [Extra/Additional Axes](#extra/additional_axes)
 
 
 ## Overview
@@ -32,7 +32,7 @@ Axes in AnyStocks are generally quite similar to the Basic ones, but the X-axis 
  - It cannot be moved to another place on a chart (always at the bottom)
  - It has a Helper Label feature
  - No drawFirstLabel, drawLastLabel
- - Tickmarks settings (ticks might be only inside of the axis)
+ - Tickmarks settings (ticks can be displayed only inside of the axis)
  - No title
  - Only one X-axis for a plot (so the max number of X-axes on an AnyStock chart is equal to the number of the plots)
 
@@ -65,11 +65,11 @@ That happens when the helperLabel is on (by default). You can disable it by pass
 
 {sample}STOCK\_Axes\_02{sample}
 
-Finally, as our X-axis is an area, the labels are placed and might be moved only inside of this area. For example, let's put our labels (both major and minor) to the right of the ticks we have enabled before. We use {api:anychart.core.ui.Label#position}**.position(){api} and {api:anychart.core.ui.Label#anchor}**.anchor**(){api} to move them correctly.
+Finally, as our X-axis is an area, the labels are placed and might be moved only inside of this area. For example, let's put our labels (both major and minor) to the right of the ticks we have enabled before. We use {api:anychart.core.ui.Label#position}**.position()**{api} and {api:anychart.core.ui.Label#anchor}**.anchor()**{api} to move them correctly.
 
 ```
 	// moving the labels
-    xAxis = chart.plot(0).xAxis();
+	xAxis = chart.plot(0).xAxis();
 	xAxis.labels().position('right').anchor('left_center');
 	xAxis.minorLabels().position('right').anchor('left_center');
 ```
@@ -81,13 +81,23 @@ Finally, as our X-axis is an area, the labels are placed and might be moved only
 In AnyStock, the x-axis is not a line, but an area with the background and height. We can change these parameters using {api:anychart.core.axes.StockDateTime#background}**.background()**{api} and {api:anychart.core.axes.StockDateTime#height}**.height()**{api} methods. Let's apply use this methods:
 
 ```
-// changing the background and the height of the axis
-  xAxis.background('#CCFFFF');
-  xAxis.height(40);
+	// changing the background and the height of the axis
+	xAxis.background('#CCFFFF');
+	xAxis.height(40);
 ```
 
 {sample}STOCK\_Axes\_04{sample}
 
-## Number of axes
+## Extra/Additional Axes
 
-You can add as many Y-axes as you need, but there can be only one X-axis on one plot. You can have more than one plot on a stock chart with one x-axis in each.
+You can add as many Y-axes as you need, but there can be only one X-axis on one plot. You can have more than one plot on a stock chart with one x-axis in each. It might be comfortable to use several series when you've got several series on a chart with completely different value limits. Look at the following sample:
+
+```
+	// create an additional axis
+	var yAxis1 = plot_line_ohlc.yAxis(1);
+    yAxis1.orientation("left");
+```
+
+{sample}STOCK\_Plots\_03{sample}
+
+We can place more than one stock chart together by using [plots](Chart_Plots) .
