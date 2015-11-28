@@ -234,7 +234,16 @@ You can find more information about lines in [Line Settings tutorial](../Appeara
 
 {sample}BCT\_PieDoughnutChart\_11{sample}
 
+When you are using a Doughnut modification of a Pie chart you may want to place labels inside a chart, this can be done using offsets. There's a special method we've got for this case - {api:anychart.charts.Pie#insideLabelsOffset}**.insideLabelsOffset()**{api}, you can also use {api:anychart.charts.Pie#offSetX}**.offSetX()**{api} and {api:anychart.charts.Pie#offSetY}**.offSetY()**{api} methods. Here is a sample of such chart:
 
+```
+    // set the insideLabelsOffset
+    chart.insideLabelsOffset("-45%");
+```
+
+{sample}BCT\_PieDoughnutChart\_15{sample}
+
+Using {api:anychart.charts.Pie#insideLabelsOffset}**.insideLabelsOffset()**{api} is easier but {api:anychart.charts.Pie#offSetX}**.offSetX()**{api} and {api:anychart.charts.Pie#offSetY}**.offSetY()**{api} give you better accuracy in positioning. Choose the most appropriate way for your own case.
 
 ###Tooltips
 
