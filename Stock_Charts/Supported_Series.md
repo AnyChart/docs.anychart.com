@@ -11,15 +11,15 @@
 AnyStock supports a lot of different series types. Here's a sample where we have put three of them. 
 
 ```
-		// create the column series
+        // create the column series
         var columnSeries = plot_column.column(mapping);
         columnSeries.name("Highest rates");
 
-		// create ohlc series
+	// create ohlc series
         var ohlcSeries = plot_line_ohlc.ohlc(ohlcMapping);
         ohlcSeries.name("ACME Corp. Stock Prices");
 
-		// create line series
+	// create line series
         var lineSeries = plot_line_ohlc.line(lineMapping);
         lineSeries.yScale(extraYScale);
         lineSeries.name("Number of income requests worldwide");
@@ -33,7 +33,25 @@ You can see that the whole stock is somewhat divided in two parts, where one con
 Stock series are much alike normal series of Basic charts, except for having "hovered" and "selected" state. So we can adjust the colors of the series in normal state, adjust the tooltips, etc. Let's now create a sample with adjusted colors and tooltips.
 
 ```
-		
+        // create the column series
+        var columnSeries = plot_column.column(mapping);
+        columnSeries.name("Highest rate");
+
+        // color the column series
+        columnSeries.fill(['#00838F', "#81D4FA", "#4527A0"], 0, true, 0.9);
+
+        // create ohlc series
+        var ohlcSeries = plot_line_ohlc.ohlc(ohlcMapping);
+        var ohlcSeriesName = ohlcSeries.name("ACME Corp. Stock Prices");
+        var item = ohlcSeries.legendItem();
+        item.text('ACME Corp. Stock Prices');
+
+        // create line series
+        var lineSeries = plot_line_ohlc.line(lineMapping);
+        lineSeries.stroke("#00796B");
+        lineSeries.yScale(extraYScale);
+        lineSeries.name("Number of income requests worldwide");
+	
 ```
 {sample}STOCK\_Supported\_Series\_02{sample}
 
@@ -65,8 +83,18 @@ In case of adding the thumbnail series to the scroller, you should know that tho
 </tr>
 <tr>
 <td>Line</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>Column</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>OHLC</td>
+<td></td>
+<td></td>
 </tr>
 </tbody></table>
 

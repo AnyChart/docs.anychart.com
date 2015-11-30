@@ -24,7 +24,7 @@ Scroller in Stocks is much alike basic Scroller, which you can find information 
 We use standard {api:anychart.core.ui.Scroller#enabled}**.enabled()**{api} method to switch the scroller on and off. While the scroller is enabled by default, you can always switch it off by setting "false" to this method :
 
 ```
-	// turn it off
+    // turn it off
 	chart.scroller.enabled(false);
 ```
 
@@ -47,12 +47,12 @@ Zoom, thumbs, scroller
 Note that we cannot change the position of the scroller as well as its orientation, as its function is to scroll the time (X) axis. Also, in cannot hide automatically. Though, we are able to change the visual settings of the scroller. Look at the sample below. We have set the default zoom to only 10 points, disabled thumbs, changed the scroller color and prohibited the range changing. For all these changes we used {api:anychart.core.stock.Scroller#selectedRange}**.selectedRange()**{api}, {api:anychart.core.stock.Scroller#allowRange}**.thumbs()**{api}, {api:anychart.core.stock.Scroller#fill}**.fill()**{api}, {api:anychart.core.stock.Scroller#selectedFill}**.selectedFill()**{api} and {api:anychart.core.stock.Scroller#allowRangeChange}**.allowRangeChange()**{api}:
 
 ```
-		// adjust the scroller
-        chart.selectRange('2014-01-02','2014-02-03');
-        chart.scroller().thumbs(false);
-        chart.scroller().fill('green 0.1');
-        chart.scroller().selectedFill('green 0.5');
-        chart.scroller().allowRangeChange(false);
+    // adjust the scroller
+    chart.selectRange('2014-01-02','2014-02-03');
+    chart.scroller().thumbs(false);
+    chart.scroller().fill('green 0.1');
+    chart.scroller().selectedFill('green 0.5');
+    chart.scroller().allowRangeChange(false);
 ```
 
 {sample}STOCK\_Scroller\_02{sample}
@@ -66,8 +66,8 @@ Now, as we have tried to change some elements that are common for the Stock and 
 {sample}STOCK\_Scroller\_03{sample}
 
 ```
-// create scroller series with mapped data
-chart.scroller().column(line_3_mapping);
+    // create scroller series with mapped data
+    chart.scroller().column(line_3_mapping);
 ```
 
 Visit [Supported series](Supported_Series) articles to know more about series in Stocks.
@@ -86,19 +86,21 @@ chart.scroller().column(line_3_mapping);
 We can also adjust the labels of the axis. For example, let's make them of red color and format them to show the first day of each month.
 
 ```
-		// adjust the scroller axis
-        var labels = chart.scroller().xAxis().labels();
-        var minorLabels = chart.scroller().xAxis().minorLabels();
-        
-        labels.textFormatter(function() {
-            return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
-        });
-        labels.fontColor('red');
+    // adjust the scroller axis
 
-        minorLabels.textFormatter(function(){
-            return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
-        });
-        minorLabels.fontColor('red');
+    var labels = chart.scroller().xAxis().labels();
+
+    var minorLabels = chart.scroller().xAxis().minorLabels();
+        
+    labels.textFormatter(function() {
+        return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
+    });
+    labels.fontColor('red');
+
+    minorLabels.textFormatter(function(){
+        return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
+    });
+    minorLabels.fontColor('red');
 ```
 
 {sample}STOCK\_Scroller\_05{sample}
