@@ -102,12 +102,12 @@ dataTable.addData([
         labels.textFormatter(function() {
             return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
         });
-        labels.fontColor('red');
+        labels.fontColor('#000');
 
         minorLabels.textFormatter(function(){
             return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
         });
-        minorLabels.fontColor('red');
+        minorLabels.fontColor('#000');
 
         // create scroller series with mapped data
         chart.scroller().column(line_3_mapping);
