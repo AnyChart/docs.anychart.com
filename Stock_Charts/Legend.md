@@ -14,19 +14,17 @@
 
 ## Overview
 
-The AnyStock legend is rather alike the basic charts legend. You may use all its functions, enable or disable completely the same features. You can find some information about basic legend [here](../Common_Settings/Legend). The main difference you should remember is that the stock legend is bend to the stock plot, not to the chart itself.
+The AnyStock legend is rather alike the basic charts legend. You may use all its functions, enable or disable completely the same features. You can find some information about basic legend [here](../Common_Settings/Legend). The main difference you should remember is that the legend in AnyStock is bend to the plot, not to the chart itself.
 
 Now, let's explore the legend usage in AnyStocks and have a look at a couple of samples.
 
-
-As our stock legend is quite similar to other charts' legend, we're going to consider here those cases of differences or when we need to change something in it.
+As the AnyStock legend is quite similar to other charts' legend, we're going to consider here those cases of differences or when we need to change something in it.
 
 ## Positioning
 
-We use the same methods for positioning the Stock Chart Legend as for the Basic Charts Legend. So, we use {api:anychart.core.ui.Legend#orientation}**.orientation()**{api} and {api:anychart.core.ui.Legend#align}**.align()**{api} methods to control legend's alignment. For more complicated settings, such as changing the items layout or space between items, we use {api:anychart.ui.Legend#itemsLayout}**.itemsLayout()**{api} and {api:anychart.core.ui.Legend#itemsSpacing}**.itemsSpacing()**{api} accordingly. Let's create a vertically arranged legend.
+We use the same methods for positioning the AnyStock Chart Legend as for the Basic Charts Legend. So, we use {api:anychart.core.ui.Legend#orientation}**.orientation()**{api} and {api:anychart.core.ui.Legend#align}**.align()**{api} methods to control legend's alignment. For more complicated settings, such as changing the items layout or space between items, we use {api:anychart.ui.Legend#itemsLayout}**.itemsLayout()**{api} and {api:anychart.core.ui.Legend#itemsSpacing}**.itemsSpacing()**{api} accordingly. Let's create a vertically arranged legend.
 
 ```
-
 	// making the legend vertical
 	legend.itemsLayout('vertical');
 	// setting the space between the items
@@ -75,7 +73,7 @@ firstPlot.legend().itemsFormatter(function(){
 
 {sample}STOCK\_Legend\_03{sample}
 
-When we've got the OHLC-series on our stock, we should use the {api:anychart.core.ui.Legend#itemsTextFormatter}**.itemsTextFormatter()**{api} method to display all OHLC values in the legend. In the sample below we check if the series we're formatting is of OHLC type (which is necessary if your stock has a number of series) and then define what to display.
+When we've got the OHLC-series on our chart, we should use the {api:anychart.core.ui.Legend#itemsTextFormatter}**.itemsTextFormatter()**{api} method to display all OHLC values in the legend. In the sample below we check if the series we're formatting is of OHLC type (which is necessary if your chart has a number of series) and then define what to display.
 
 ```
 plot.legend().itemsTextFormatter(function(){
@@ -92,16 +90,16 @@ One thing more should we take into account: if we've got too many data points an
 
 ## Visualization
 
-When we want to change something in the legend view, there's almost no difference in usage and editing between the basic chart legend and the stock one. Let's add a background to our legend, change its size and icons and adjust the legend paginator. 
+When we want to change something in the legend view, there's almost no difference in usage and editing between the basic chart legend and the AnyStock one. Let's add a background to our legend, change its size and icons and adjust the legend paginator. 
 
 ```
-	// add a background
-	legend.background("#E1F5FE");
+    // add a background
+    legend.background("#E1F5FE");
 
-	// change size in height
-	legend.height(35);
+    // change size in height
+    legend.height(35);
 
-	// adjust the paginator
+    // adjust the paginator
     legend.paginator(true);
     legend.paginator().orientation("right");
 

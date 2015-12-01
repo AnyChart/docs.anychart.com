@@ -13,17 +13,17 @@ Stock Chart is a widely spread type of charts that can quite effectively visuali
 
 AnyStock component provides a lot of different features. Besides being very fast and completely compatible with all other our products, having all basic stock features such as grouping, scrolling, etc., our stocks also have a special feature of [technical indicators](#Technical_Indicators), which are a type of analysis charts that indicate market direction. AnyChart Stock Chart Component supports automatic building of several types of technical indicators. Also, AnyStock is fully built on javascript, which makes them rather flexible and easy to use.
 
-<br>
+
 Stocks are so special because of three main features:
-<b>1. Data grouping</b>
+
+<i>1. Data grouping</i>
 	<p style="text-indent: 25px;">This feature is what lets showing those loads of information on one chart at a time. If your data contains more than 500 points in the time interval shown on a chart, AnyStock Charts will automatically group them in a plenty of structures by some parameter. 
 	For example, if you've got data which shows daily changing of something for ten years, it means that you've got 3650 data points. To make this information understandable, our stock can group the data monthly, so we'll have only 120 points on a chart. But what to do if you need to see the values for a couple of days? That's where we go to the second AnyStock feature.</p>
-<b>2. Navigation through the data</b> 
+<i>2. Navigation through the data</i> 
 	<p style="text-indent: 25px;">If you are not satisfied with having the generalized data shown on a chart, you can use a scrollbar in the bottom of the chart to bring the data to more detailed form. That's how it works.</p>
-<b>3. Streaming</b> 
+<i>3. Streaming</i> 
 	<p style="text-indent: 25px;">Showing and analyzing your real-time data is much easier and evident when using a chart that streams the data.</p>
 
-<br>
 
 ## Useful links
 

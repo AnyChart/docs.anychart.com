@@ -18,37 +18,37 @@ One of the distinctive features of AnyStock is its ability to place several char
 The main purpose of creating several plots instead of one multi-axes plot is making the management of different Y-scales easier and data from the series more easy to read. Using plots helps you to watch the data points with the same X value simultaneously and be able to compare them.
 
 
-Now, let's study how to use chart plots and make our work with stocks a bit easier.
+Now, let's study how to use chart plots and make our work with AnyStock a bit easier.
 
 ## Add
 
 First of all, we need to add plots to the chart and enable them. Let's create and enable three plots: one with column series, second one with OHLC chart and third with line series.
 
 ```
-// create stock chart
-chart = anychart.stock();
+	// create stock chart
+	chart = anychart.stock();
 
-// create first plot on the chart with column series
-var firstPlot = chart.plot(0);
-firstPlot.column(mapping);
+	// create first plot on the chart with column series
+	var firstPlot = chart.plot(0);
+	firstPlot.column(mapping);
 
-// create second plot on the chart
-var secondPlot = chart.plot(1);
+	// create second plot on the chart
+	var secondPlot = chart.plot(1);
 
-// create ohlc series on the second plot
-var secondSeries = secondPlot.ohlc(ohlcMapping);
+	// create ohlc series on the second plot
+	var secondSeries = secondPlot.ohlc(ohlcMapping);
 
-// create third plot
-var thirdPlot = chart.plot(2);
-// create column series on the third plot
-var thirdSeries = thirdPlot.line(lineMapping);
+	// create third plot
+	var thirdPlot = chart.plot(2);
+	// create column series on the third plot
+	var thirdSeries = thirdPlot.line(lineMapping);
 ```
 
 {sample :width 690 :height 500 }STOCK\_Plots\_01{sample}
 
 So, we use {api:anychart.charts.Stock#plot}**.plot()**{api} for creating the plot. Note that we should give each plot an unique index. The number of plots each chart has is unlimited.
 
-Now we can manage the stock chart plots.
+Now we can manage the chart plots.
 
 ## Edit
 
@@ -59,19 +59,19 @@ We can change a lot in plots appearance: series, their number, axes, colors, etc
 Let's add one more series to one of the plots. This would look like the following:
 
 ```
-// create stock chart
-chart = anychart.stock();
+	// create stock chart
+	chart = anychart.stock();
 
-// create first plot on the chart with column series
-var firstPlot = chart.plot(0);
-firstPlot.column(columnMapping);
-firstPlot.line(lineMapping);
+	// create first plot on the chart with column series
+	var firstPlot = chart.plot(0);
+	firstPlot.column(columnMapping);
+	firstPlot.line(lineMapping);
 
-// create second plot on the chart
-var secondPlot = chart.plot(1);
+	// create second plot on the chart
+	var secondPlot = chart.plot(1);
 
-// create ohlc series on the second plot
-var secondSeries = secondPlot.ohlc(ohlcMapping);
+	// create ohlc series on the second plot
+	var secondSeries = secondPlot.ohlc(ohlcMapping);
 ```
 
 {sample :width 690 :height 500 }STOCK\_Plots\_02{sample}
@@ -90,12 +90,12 @@ As we have noticed before, we can have different axes in one chart using differe
 ```
 {sample :width 690 :height 500 }STOCK\_Plots\_03{sample}
 
-Working with axes in stock plots is the same as working with them in basic charts. Visit the [Axes tutorial](../Axes_and_Grids/Axis_Basics) to know more about the axes.
+Working with axes in AnyStock chart plots is the same as working with them in basic charts. Visit the [Axes tutorial](../Axes_and_Grids/Axis_Basics) to know more about the axes.
 
 
 ### Position
 
-We can position plots wherever we want and make them of the size we need. This can be done using {api:anychart.core.stock.Plot#bounds}**.bounds()**{api} or other methods such as {api:anychart.core.stock.Plot#width}**.width**{api}, {api:anychart.core.stock.Plot#height}**.height**{api}, {api:anychart.core.stock.Plot#top}**.top**{api}, etc. The whole list of these methods you can find {api:anychart.core.stock.Plot}here{api}. By default, each new plot will be placed under the existing ones. Let's now create a simple three-plot stock and position two of them next to each other.
+We can position plots wherever we want and make them of the size we need. This can be done using {api:anychart.core.stock.Plot#bounds}**.bounds()**{api} or other methods such as {api:anychart.core.stock.Plot#width}**.width**{api}, {api:anychart.core.stock.Plot#height}**.height**{api}, {api:anychart.core.stock.Plot#top}**.top**{api}, etc. The whole list of these methods you can find {api:anychart.core.stock.Plot}here{api}. By default, each new plot will be placed under the existing ones. Let's now create a simple three-plot AnyStock chart and position two of them next to each other.
 
 ```
 	// set the first plot position through bounds
@@ -118,17 +118,17 @@ We can position plots wherever we want and make them of the size we need. This c
 
 ### DateTime Highlighter
 
-DateTime Highlighter is a feature that is rather similar to [Crosshair feature](../Axes_and_Grids/Crosshair) and helps you not to get lost in great amount of data. In case of having several plots on a stock chart, it shows you all values of the same time point you hover on one of the plots, which is quite comfortable especially if you've got loads of data points. Crosshair is enabled by default; to somehow change it put an object as a parameter to the {api:anychart.core.stock.Plot#dateTimeHighlighter}**.dateTimeHighlighter()**{api} method or "false" value to disable it. Note that this method belongs not to a chart but to a plot. Now let's create a sample with an adjusted highlighter.
+DateTime Highlighter is a feature that is rather similar to [Crosshair feature](../Axes_and_Grids/Crosshair) and helps you not to get lost in great amount of data. In case of having several plots on an AnyStock chart, it shows you all values of the same time point you hover on one of the plots, which is quite comfortable especially if you've got loads of data points. Crosshair is enabled by default; to somehow change it put an object as a parameter to the {api:anychart.core.stock.Plot#dateTimeHighlighter}**.dateTimeHighlighter()**{api} method or "false" value to disable it. Note that this method belongs not to a chart but to a plot. Now let's create a sample with an adjusted highlighter.
 
 ```
-	// disable the highlighter on the first plot
-	firstPlot.dateTimeHighlighter(false);
+	// adjust the highlighter of the third plot
+	firstPlot.dateTimeHighLighter("#F44336", 1.5, "6 2", "round");
 
 	// make the second plot highlighter of green color
-	secondPlot.dateTimeHighlighter({color:"green"});
+	secondPlot.dateTimeHighlighter({color: "green"});
 
-	// adjust the highlighter of the third plot  
-	thirdPlot.dateTimeHighlighter("#F44336", 1.5, "6 2", "round");
+	// disable the highlighter on the first plot
+	thirdPlot.dateTimeHighlighter(false);
 ```
 
 {sample :width 690 :height 500 }STOCK\_Plots\_05{sample}

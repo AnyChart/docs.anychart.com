@@ -54,20 +54,20 @@ Note that the X value has to contain date in any format. It means that you can s
 Now it's posiible to set the Data not only as array of arrays, but as array of objects. It's being done completely the same way as setting the Data though objects in Basic Charts. Look at the following piece of code:
 
 ```
-		// create data table on loaded data
-        var table = anychart.data.table("x");
+	// create data table on loaded data
+    var table = anychart.data.table("x");
 
-        table.addData([
-            {"open":'511.53', "high":'514.98', "x":'2015-12-24T12:00:00', "low":'505.79', "close":'506.40'},
-            {"open":'512.53', "high":'514.88', "x":'2015-12-25T12:00:00', "low":'505.69', "close":'505.34'},
-            {"open":'511.83', "high":'514.98', "x":'2015-12-26T12:00:00', "low":'505.59', "close":'507.23'},
-            {"open":'511.22', "high":'515.30', "x":'2015-12-27T12:00:00', "low":'505.49', "close":'506.47'},
-            {"open":'511.53', "high":'514.98', "x":'2015-12-28T12:00:00', "low":'505.79', "close":'506.40'},
-            {"open":'512.53', "high":'513.88', "x":'2015-12-29T12:00:00', "low":'505.69', "close":'505.34'},
-            {"open":'511.83', "high":'512.98', "x":'2015-12-30T12:00:00', "low":'502.59', "close":'503.23'},
-            {"open":'511.22', "high":'515.30', "x":'2015-12-31T12:00:00', "low":'505.49', "close":'506.47'},
-            {"open":'510.35', "high":'515.72', "x":'2016-01-01T12:00:00', "low":'505.23', "close":'508.80'}
-        ]);
+    table.addData([
+        {"open":'511.53', "high":'514.98', "x":'2015-12-24T12:00:00', "low":'505.79', "close":'506.40'},
+        {"open":'512.53', "high":'514.88', "x":'2015-12-25T12:00:00', "low":'505.69', "close":'505.34'},
+        {"open":'511.83', "high":'514.98', "x":'2015-12-26T12:00:00', "low":'505.59', "close":'507.23'},
+        {"open":'511.22', "high":'515.30', "x":'2015-12-27T12:00:00', "low":'505.49', "close":'506.47'},
+        {"open":'511.53', "high":'514.98', "x":'2015-12-28T12:00:00', "low":'505.79', "close":'506.40'},
+        {"open":'512.53', "high":'513.88', "x":'2015-12-29T12:00:00', "low":'505.69', "close":'505.34'},
+        {"open":'511.83', "high":'512.98', "x":'2015-12-30T12:00:00', "low":'502.59', "close":'503.23'},
+        {"open":'511.22', "high":'515.30', "x":'2015-12-31T12:00:00', "low":'505.49', "close":'506.47'},
+        {"open":'510.35', "high":'515.72', "x":'2016-01-01T12:00:00', "low":'505.23', "close":'508.80'}
+    ]);
 
 ```
 
@@ -89,6 +89,7 @@ The third parameter is an grouping/approximation mode: when you've got too many 
 That's how it should look like:
 
 ```
+    // mapping the data
 	mapping.addField('open', 1, 'first');
 	mapping.addField('high', 2, 'max');
 ```
@@ -130,4 +131,4 @@ In case you need to remove only one point, provide only one parameter:
 	table.remove('2015-12-25T12:00:00');
 ```
 <br>
-Using this method with no arguments  removing the whole table (all points), so be careful.
+Using this method with no arguments removing the whole table (all points), so be careful.

@@ -92,6 +92,8 @@ dataTable.addData([
         chart.scroller().fill('#FFE0B2 0.2');
         chart.scroller().selectedFill('#FFE0B2');
 
+        chart.title("Change the scroller and watch the title changes");
+
         // set container id for the chart
         chart.container('container');
 
@@ -114,11 +116,55 @@ dataTable.addData([
 
         var indexSetter = 0;
 
-        chart.scroller().listenOnce("click", function(){
-            dataTable.addData(
-                    ['2014-02-29', 2125.02, 2128, 2073.1499, 2077.3701, 2319549952]
-            );
-            console.log("я добавил");
+        // chart events
+        chart.listen("scroller_change_finish", function(){
+            indexSetter =  indexSetter+1;
+            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
+            console.log("scroller_change_finish");
+        });
+
+        chart.listen("scroll_change", function(){
+            indexSetter =  indexSetter+1;
+            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
+            console.log("scroll_change");
+        });
+
+        chart.listen("scroller_change_start", function(){
+            indexSetter =  indexSetter+1;
+            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
+            console.log("scroller_change_start");
+        });
+
+        chart.listen("scroller_change_finish", function(){
+            indexSetter =  indexSetter+1;
+            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
+            console.log("scroller_change_finish");
+        });
+
+
+        // scroller events
+        chart.scroller().listen("selected_range_before_change", function(){
+            indexSetter =  indexSetter+1;
+            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
+            console.log("selected_range_before_change");
+        });
+
+        chart.scroller().listen("selected_range_change", function(){
+            indexSetter =  indexSetter+1;
+            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
+            console.log("selected_range_change");
+        });
+
+        chart.scroller().listen("selected_range_change_finish", function(){
+            indexSetter =  indexSetter+1;
+            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
+            console.log("selected_range_change_finish");
+        });
+
+        chart.scroller().listen("selected_range_change_start", function(){
+            indexSetter =  indexSetter+1;
+            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
+            console.log("selected_range_change_start");
         });
 
         // initiate chart drawing

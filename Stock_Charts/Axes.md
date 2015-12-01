@@ -25,16 +25,16 @@ In this section we will demonstrate only the differences of AnyStock axes and sc
 
 ## Stock Axes features
 
-Axes in AnyStocks are generally quite similar to the Basic ones, but the X-axis is slightly different:
- - X-axis is always in datetime format and shows the Data values
- - X-axis is always scrollable
- - It has background instead of stroke (axis line)
- - It cannot be moved to another place on a chart (always at the bottom)
- - It has a Helper Label feature
- - No drawFirstLabel, drawLastLabel
- - Tickmarks settings (ticks can be displayed only inside of the axis)
- - No title
- - Only one X-axis for a plot (so the max number of X-axes on an AnyStock chart is equal to the number of the plots)
+Axes in AnyStock are generally quite similar to the Basic ones, but the X-axis is slightly different:
+* X-axis is always in datetime format and shows the Data values
+* X-axis is always scrollable
+* It has background instead of stroke (axis line)
+* It cannot be moved to another place on a chart (always at the bottom)
+* It has a Helper Label feature
+* No drawFirstLabel, drawLastLabel
+* Tickmarks settings (ticks can be displayed only inside of the axis)
+* No title
+* Only one X-axis for a plot (so the max number of X-axes on an AnyStock chart is equal to the number of the plots)
 
 ## Orientation 
 
@@ -90,7 +90,7 @@ In AnyStock, the x-axis is not a line, but an area with the background and heigh
 
 ## Extra/Additional Axes
 
-You can add as many Y-axes as you need, but there can be only one X-axis on one plot. You can have more than one plot on a stock chart with one x-axis in each. It might be comfortable to use several series when you've got several series on a chart with completely different value limits. Look at the following sample:
+You can add as many Y-axes as you need, but there can be only one X-axis on one plot. You can have more than one plot on an AnyStock chart with one x-axis in each. It might be comfortable to use several series when you've got several series on a chart with completely different value limits. Look at the following sample:
 
 ```
 	// create an additional axis
@@ -100,4 +100,4 @@ You can add as many Y-axes as you need, but there can be only one X-axis on one 
 
 {sample}STOCK\_Plots\_03{sample}
 
-We can place more than one stock chart together by using [plots](Chart_Plots) .
+We can place more than one AnyStock chart together by using [plots](Chart_Plots) .
