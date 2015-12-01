@@ -203,7 +203,7 @@ Every chart's series has an index and this index can be used to get series for f
   series.fill("red");
 ```
 
-If you try to pass number which exceeds amount of series on current chart, the **null** will be returned. This makes it quite continent to adjust each of chart's series using **while** loop. Here is how it is done. Moreover, the exact number of chart's series at current time can be found out using {api:anychart.charts.Cartesian#getSeriesCount}**.getSeriesCount()**{api} method.
+If you try to pass number which exceeds amount of series on current chart, the **null** will be returned. This makes it quite continent to adjust each of chart's series using **while** loop. Here is how it is done.
 
 ```
   // create chart
@@ -224,6 +224,9 @@ If you try to pass number which exceeds amount of series on current chart, the *
   }
 ```
 
+ Moreover, the exact number of chart's series at current time can be found out using {api:anychart.charts.Cartesian#getSeriesCount}**.getSeriesCount()**{api} method.
+  
+  
 Below is a sample with demonstration of the code from above. Each series was renamed. The chart's legend was enabled to demonstrate series names.
 
 {sample}CRUD\_07{sample}
@@ -268,7 +271,7 @@ As far as any chart can be adjusted at any time there may be a need in removing 
   chart.removeSeriesAt(2);
 ```
 
-Along with removing series one by one you can remove all series of the using single method. Call **.removeAllSeries()** method to remove every series of the current chart.
+Along with removing series one by one you can remove all series of the chart using one single method. Call **.removeAllSeries()** method to remove every series of the current chart.
   
   
 Click on a labels in the sample below to add/remove series on the chart's plot.
