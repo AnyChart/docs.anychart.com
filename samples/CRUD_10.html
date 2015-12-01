@@ -1,0 +1,95 @@
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+  <script x-export="chart">anychart.onDocumentReady(function() {
+
+	// data
+	var data = anychart.data.set([
+		["Department Stores", 637166, 737166, 813000, 719242, 791736, 837164, 918364, 819363, 864213],
+		["Discount Stores", 721630, 537166, 128013, 999, 888, 888, 888, 999 ,889],
+		["Men's/Women's Specialty Stores", 148662, 188662, 194912, 999, 888, 888, 888, 999 ,889],
+		["Juvenile Specialty Stores", 78662, 178662, 612037, 999, 888, 888, 888, 999 ,889],
+		["All other outlets", 90000, 89000, 375913, 999, 888, 888, 888, 999 ,889]
+	]);
+
+	// remapping data
+	var Sales2003 = data.mapAs({x: [0], value: [1]});
+	var Sales2004 = data.mapAs({x: [0], value: [2]});
+	var Sales2005 = data.mapAs({x: [0], value: [3]});
+
+	// define chart type
+	var chart = anychart.bar();
+
+	// set default series type
+	chart.defaultSeriesType("bar");
+	// create multiple series
+	chart.addSeries(Sales2003, Sales2004, Sales2005);
+
+	// set axes titles
+	var xAxis = chart.xAxis();
+	xAxis.title("Retail Channel");
+	var yAxis = chart.yAxis();
+	yAxis.title("Sales");
+
+	var add = chart.label(0);
+	add.padding(5,5);
+	add.position("topLeft");
+	add.anchor("topLeft");
+	add.offsetY(10);
+	add.offsetX(10);
+	add.text("Add Series");
+	var addBg = add.background();
+	addBg.enabled(true);
+	addBg.stroke("2 #BCBCBC");
+	addBg.cornerType("round");
+	addBg.corners(5);
+	add.listen("click",function(){
+		if (chart.getSeriesCount()<10)
+			chart.addSeries(data.mapAs({x: [0], value: [chart.getSeriesCount()]}));
+	});
+	var remove = chart.label(1);
+	remove.padding(5,5);
+	remove.position("topLeft");
+	remove.anchor("topLeft");
+	remove.offsetY(45);
+	remove.offsetX(10);
+	remove.text("Remove Series");
+	var removeBg = remove.background();
+	removeBg.enabled(true);
+	removeBg.stroke("2 #BCBCBC");
+	removeBg.cornerType("round");
+	removeBg.corners(5);
+	remove.listen("click",function(){
+		if (chart.getSeriesCount()>0)
+			chart.removeSeriesAt(chart.getSeriesCount()-1);
+	});
+	var removeAll = chart.label(2);
+	removeAll.padding(5,5);
+	removeAll.position("topLeft");
+	removeAll.anchor("topLeft");
+	removeAll.offsetY(45);
+	removeAll.offsetX(10);
+	removeAll.text("Remove Series");
+	var removeAllBg = removeAll.background();
+	removeAllBg.enabled(true);
+	removeAllBg.stroke("2 #BCBCBC");
+	removeAllBg.cornerType("round");
+	removeAllBg.corners(5);
+	removeAll.listen("click",function(){
+		if (chart.getSeriesCount()>0)
+			chart.removeSeriesAt(chart.getSeriesCount()-1);
+	});
+
+	// draw chart
+	chart.container("container");
+	chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
