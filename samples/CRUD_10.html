@@ -10,10 +10,10 @@
 	// data
 	var data = anychart.data.set([
 		["Department Stores", 637166, 737166, 813000, 719242, 791736, 837164, 918364, 819363, 864213],
-		["Discount Stores", 721630, 537166, 128013, 999, 888, 888, 888, 999 ,889],
-		["Men's/Women's Specialty Stores", 148662, 188662, 194912, 999, 888, 888, 888, 999 ,889],
-		["Juvenile Specialty Stores", 78662, 178662, 612037, 999, 888, 888, 888, 999 ,889],
-		["All other outlets", 90000, 89000, 375913, 999, 888, 888, 888, 999 ,889]
+		["Discount Stores", 721630, 537166, 128013, 471946, 385638, 764426, 237561, 628452 ,721645],
+		["Men's/Women's Specialty Stores", 148662, 188662, 194912, 573173, 384617, 481627, 615373, 274618 ,471846],
+		["Juvenile Specialty Stores", 78662, 178662, 612037, 589275, 128614, 201385, 171284, 317394 ,172846],
+		["All other outlets", 90000, 89000, 375913, 183613, 100847, 92714, 192483, 137184 ,99128]
 	]);
 
 	// remapping data
@@ -48,8 +48,8 @@
 	addBg.cornerType("round");
 	addBg.corners(5);
 	add.listen("click",function(){
-		if (chart.getSeriesCount()<10)
-			chart.addSeries(data.mapAs({x: [0], value: [chart.getSeriesCount()]}));
+		if (chart.getSeriesCount()<9)
+			chart.addSeries(data.mapAs({x: [0], value: [chart.getSeriesCount()+1]}));
 	});
 	var remove = chart.label(1);
 	remove.padding(5,5);
