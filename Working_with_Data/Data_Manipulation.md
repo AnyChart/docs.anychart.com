@@ -275,7 +275,7 @@ Click on a labels in the sample below to add/remove series on the chart's plot.
 
 {sample}CRUD\_10{sample}
 
-As a conclusion of this section here is a bit sophisticated sample with advanced series manipulation.  
+As a conclusion of this section here is a bit sophisticated sample with advanced series manipulation.
 
 {sample}CRUD\_08{sample}
 

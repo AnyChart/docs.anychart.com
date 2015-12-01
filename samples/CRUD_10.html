@@ -71,17 +71,16 @@
 	removeAll.padding(5,5);
 	removeAll.position("topLeft");
 	removeAll.anchor("topLeft");
-	removeAll.offsetY(45);
+	removeAll.offsetY(80);
 	removeAll.offsetX(10);
-	removeAll.text("Remove Series");
+	removeAll.text("Remove All Series");
 	var removeAllBg = removeAll.background();
 	removeAllBg.enabled(true);
 	removeAllBg.stroke("2 #BCBCBC");
 	removeAllBg.cornerType("round");
 	removeAllBg.corners(5);
 	removeAll.listen("click",function(){
-		if (chart.getSeriesCount()>0)
-			chart.removeSeriesAt(chart.getSeriesCount()-1);
+		chart.removeAllSeries();
 	});
 
 	// draw chart
