@@ -26,11 +26,12 @@ AnyStock supports a lot of different series types. Here's a sample where we have
 ```
 {sample}STOCK\_Supported\_Series\_01{sample}
 
-You can see that the whole stock is somewhat divided in two parts, where one contains ohlc and line series and the second one has column in it, while both parts have identical x-Axis and are being scrolled simultaneously. This can be done using plots. You can read about them [here](#Chart_Plots). Also one of our plots has two axes. You can find information about managing axes [here](../Axes_and_Grids/Axes).
+You can see that the whole chart is somewhat divided in two parts, where one contains ohlc and line series and the second one has column in it, while both parts have identical x-Axis and are being scrolled simultaneously. This can be done using plots. You can read about them [here](#Chart_Plots). Also one of our plots has two axes. You can find information about managing axes [here](../Axes_and_Grids/Axes).
 
-### Stock series adjusting
+### AnyStock series adjusting
 
-Stock series are much alike normal series of Basic charts, except for having "hovered" and "selected" state. So we can adjust the colors of the series in normal state, adjust the tooltips, etc. Let's now create a sample with adjusted colors and tooltips.
+
+Series in AnyStock chart are much alike normal series of Basic charts, except for having "hovered" and "selected" state. So we can adjust the colors of the series in normal state, adjust the tooltips, etc. Let's now create a sample with adjusted colors and tooltips.
 
 ```
     // create column series
@@ -53,7 +54,7 @@ Stock series are much alike normal series of Basic charts, except for having "ho
 {sample}STOCK\_Supported\_Series\_02{sample}
 
 
-### Stock scroller series adjusting
+### AnyStock scroller series adjusting
 
 In case of adding the thumbnail series to the scroller, you should know that those series have the "selected" state. Let's add a background series of a column type to the scroll bar background and adjust its "selected" state colors.
 
@@ -61,7 +62,7 @@ In case of adding the thumbnail series to the scroller, you should know that tho
     // create a thumbnail series in the scroller
     var thSeries = chart.scroller().column(lineMapping);
 
-    // define the shown part of a stock
+    // define the shown part of a chart 
     chart.selectRange('2014-02-01','2014-05-06');
         
     // set the color for the selected columns in the thumbnail series
@@ -81,16 +82,13 @@ In case of adding the thumbnail series to the scroller, you should know that tho
 <tr>
 <td>Line</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
 <td>Column</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
 <td>OHLC</td>
-<td></td>
 <td></td>
 </tr>
 </tbody></table>

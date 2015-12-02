@@ -173,8 +173,10 @@ var chart = anychart.stock();
         var columnSeries = plot_column.column(mapping);
         columnSeries.name("Highest rate");
 
-        // color the column series
-        columnSeries.fill(['#00838F', "#81D4FA", "#4527A0"], 0, true, 0.9);
+
+// color the column series
+//columnSeries.fill(['#00838F', "#81D4FA", "#4527A0"], 0, true, 0.9);
+        columnSeries.fill('#00838F');
 
 // create ohlc series
         var ohlcSeries = plot_line_ohlc.ohlc(ohlcMapping);
