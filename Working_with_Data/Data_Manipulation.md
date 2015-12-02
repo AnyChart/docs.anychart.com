@@ -271,7 +271,7 @@ As far as any chart can be adjusted at any time there may be a need in removing 
   chart.removeSeriesAt(2);
 ```
 
-Along with removing series one by one you can remove all series of the chart using one single method. Call {api:anychart.charts.Cartesian#removeAllSeries}**.removeAllSeries()**{api} method to remove every series of the current chart. Note, that series removal doesn't effect your data in any way.
+Along with removing series one by one you can remove all series of the chart using one single method. Call {api:anychart.charts.Cartesian#removeAllSeries}**.removeAllSeries()**{api} method to remove every series of the current chart. Note, that series removal doesn't affect your data in any way.
   
   
 Click on a labels in the sample below to add/remove series on the chart's plot.
