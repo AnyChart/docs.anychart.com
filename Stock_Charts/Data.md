@@ -131,4 +131,4 @@ In case you need to remove only one point, provide only one parameter:
 	table.remove('2015-12-25T12:00:00');
 ```
 <br>
-Using this method with no arguments removing the whole table (all points), so be careful.
+Using this method with no arguments removing the whole table (all points), so be careful. 
