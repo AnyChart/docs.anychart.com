@@ -26,18 +26,8 @@
 
 	// set default series type
 	chart.defaultSeriesType("bar");
-	// add series
+	// create multiple series
 	chart.addSeries(Sales2003, Sales2004, Sales2005);
-
-	// create a loop for renaming each of the series
-	var i=0;
-	while (chart.getSeriesAt(i)){
-		chart.getSeriesAt(i).name((i+1)+"th Series");
-		i++;
-	}
-
-	// enable legend
-	chart.legend(true);
 
 	// set axes titles
 	var xAxis = chart.xAxis();

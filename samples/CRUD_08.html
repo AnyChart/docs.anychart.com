@@ -7,29 +7,37 @@
   <script src="../anychart-bundle.min.js"></script>
   <script x-export="chart">anychart.onDocumentReady(function() {
 
+	// data
+	var data = anychart.data.set([
+		["Department Stores", 637166, 737166, 813000],
+		["Discount Stores", 721630, 537166, 128013],
+		["Men's/Women's Specialty Stores", 148662, 188662, 194912],
+		["Juvenile Specialty Stores", 78662, 178662, 612037],
+		["All other outlets", 90000, 89000, 375913]
+	]);
+
+	// remapping data
+	var Sales2003 = data.mapAs({x: [0], value: [1]});
+	var Sales2004 = data.mapAs({x: [0], value: [2]});
+	var Sales2005 = data.mapAs({x: [0], value: [3]});
+
 	// define chart type
 	var chart = anychart.bar();
 
 	// set default series type
 	chart.defaultSeriesType("bar");
-	// create multiple series
-	chart.addSeries(data(), data(), data());
+	// add series
+	chart.addSeries(Sales2003, Sales2004, Sales2005);
 
-	// create a loop
+	// create a loop for renaming each of the series
 	var i=0;
 	while (chart.getSeriesAt(i)){
-		// series getter
-		var series = chart.getSeriesAt(i);
-		// rename series
-		series.name((i+1)+"th Series");
-		// getter for tooltip
-		var tooltip = series.tooltip();
-		// manage tooltip title
-		tooltip.titleFormatter(function(){
-			return chart.xScale().names()[this.index];
-		});
+		chart.getSeriesAt(i).name((i+1)+"th Series");
 		i++;
 	}
+
+	// enable legend
+	chart.legend(true);
 
 	// set axes titles
 	var xAxis = chart.xAxis();
@@ -37,186 +45,9 @@
 	var yAxis = chart.yAxis();
 	yAxis.title("Sales");
 
-	// adjust x scale
-	var xScale = chart.xScale();
-	// set labels
-	xScale.names([
-		"Department Stores",
-		"Discount Stores",
-		"Men's/Women's Specialty Stores",
-		"Juvenile Specialty Stores",
-		"All other outlets"
-	]);
-
 	// draw chart
 	chart.container("container");
 	chart.draw();
-
-	// enable toolbar
-	var toolbar = anychart.ganttToolbar();
-	toolbar.container("container");
-	toolbar.draw();
-
-
-	// get current toolbar
-	var domToolbar = document.getElementsByClassName("anychart-toolbar")[0];
-	// dispose all buttons in toolbar
-	domToolbar.innerHTML = "";
-
-	// create class lists for different states of buttons
-	var buttonClasses = ["anychart-inline-block", "anychart-toolbar-button"];
-	var hoverClasses = ["anychart-inline-block anychart-toolbar-button", "anychart-toolbar-button-hover"];
-	var listHoverClasses = ["anychart-inline-block anychart-toolbar-button", "anychart-toolbar-menu-button-hover"];
-	var clickClasses = ["anychart-inline-block", "anychart-toolbar-button", "anychart-toolbar-button-hover", "anychart-toolbar-button-active"];
-
-	// create toolbar button
-	domToolbar.appendChild(button("Add Series", function(){
-		// check the current number of series on the chart
-		var checking;
-		if (chart.getSeriesCount()==0) checking = true;
-		else checking = chart.getSeriesAt(chart.getSeriesCount()-1).index()<9;
-		if (checking){
-			// create new series
-			chart.addSeries(data());
-			// getter for new series
-			var series = chart.getSeriesAt(chart.getSeriesCount()-1);
-			// rename series
-			series.name(chart.getSeriesCount()+"th Series");
-			// series tooltip getter
-			var tooltip = series.tooltip();
-			// format tooltip title
-			tooltip.titleFormatter(function(){
-				// get index of current element and return x scale's label with the same position
-				return chart.xScale().names()[this.index];
-			});
-		}
-	}));
-
-	// create toolbar button
-	domToolbar.appendChild(button("Remove Series", function(){
-		// remove last series on the chart's plot
-		chart.removeSeriesAt(chart.getSeriesCount()-1);
-	}));
-
-	var array = [];
-
-	domToolbar.appendChild(list("Remove by ID", array));
-
-	domToolbar.appendChild(button("Remove All Series", function(){
-		// remove all series of the chart
-		chart.removeAllSeries()
-	}));
-
-
-	// function for creating buttons
-	function button (text, action, arrow){
-		var button = document.createElement("div");
-		var outerBox = document.createElement("div");
-		var innerBox = document.createElement("div");
-		if (arrow){
-			outerBox.className = "anychart-inline-block anychart-toolbar-menu-button-outer-box";
-			innerBox.className = "anychart-inline-block anychart-toolbar-menu-button-inner-box";
-			var textBox = document.createElement("div");
-			textBox.className = "anychart-inline-block anychart-toolbar-menu-button-caption";
-			textBox.innerHTML = text;
-			var point = document.createElement("div");
-			point.innerHTML = "&nbsp;";
-			point.className = "anychart-inline-block anychart-toolbar-menu-button-dropdown";
-			innerBox.appendChild(textBox);
-			innerBox.appendChild(point);
-			var hClass = listHoverClasses;
-			var bClasses = ["anychart-inline-block", "anychart-toolbar-menu-button"];
-		}else{
-			outerBox.className = "anychart-inline-block anychart-toolbar-button-outer-box";
-			innerBox.innerHTML = text;
-			innerBox.className = "anychart-inline-block anychart-toolbar-button-inner-box";
-			var hClass = hoverClasses;
-			var bClasses = buttonClasses;
-		}
-		outerBox.appendChild(innerBox);
-		button.appendChild(outerBox);
-		button.className = bClasses.join(" ");
-		button.setAttribute("role", "button");
-		button.addEventListener("click", action);
-
-		button.addEventListener("mouseover", function (){
-			this.className = hClass.join(" ");
-		});
-		button.addEventListener("mouseout", function() {
-			this.className = bClasses.join(" ");
-		});
-		button.addEventListener("mousedown", function() {
-			this.className = clickClasses.join(" ");
-		});
-		button.addEventListener("mouseup", function() {
-			this.className = hClass.join(" ");
-		});
-
-		return button
-	}
-
-
-	function list (buttonText, array){
-		var list = document.createElement("div");
-		list.className = "anychart-menu anychart-menu-vertical";
-		list.style.display = "none";
-		list.style.top = "20px";
-
-		document.getElementsByTagName("body")[0].appendChild(list);
-
-		return button(buttonText, function(){
-
-			function builder (){
-				for (var i=0;i<chart.getSeriesCount();i++){
-					var name = chart.getSeriesAt(i).index()+1+"th Series";
-					chart.getSeriesAt(i).id(name);
-					var string = document.createElement("div");
-					string.className = "anychart-menuitem";
-					var text = document.createElement("div");
-					text.className = "anychart-menuitem-content";
-					text.innerHTML = name;
-					string.appendChild(text);
-					string.addEventListener("click", function(){
-						if(chart.getSeriesCount()>1)
-							chart.removeSeries(this.children[0].innerHTML);
-					});
-					list.appendChild(string);
-				}
-				chart.listen("mouseDown", remover);
-				this.removeEventListener("click", builder);
-				list.addEventListener("click", remover);
-			}
-
-			function remover () {
-				list.style.display = "none";
-				list.removeEventListener("click", remover);
-				domToolbar.removeEventListener("click", remover);
-				chart.unlisten("mouseDown", remover);
-				list.innerHTML = "";
-				for (var i=0;i<domToolbar.children.length;i++){
-					domToolbar.children[i].removeEventListener("click", remover);
-				}
-			}
-
-			if (list.style.display == "block"){
-				remover()
-			}else{
-				this.addEventListener("click", builder());
-				list.style.left = this.offsetLeft + "px";
-				list.style.top = this.offsetTop + this.offsetHeight + "px";
-				list.style.display = "block";
-				chart.listen("mouseDown", remover);
-				domToolbar.addEventListener("click", remover, true);
-			}
-		}, true);
-	}
-
-	function data () {
-		var array = [];
-		for (var i=0;i<5;i++)
-			array.push(Math.round(Math.random() * 50000) + 900000);
-		return array
-	}
 });</script>
 </head>
 <body>

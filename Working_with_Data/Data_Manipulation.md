@@ -185,7 +185,7 @@ In most cases you can create a new series by using method that is named after th
 
 All the series in the sample below was added using {api:anychart.charts.Cartesian#addSeries}**.addSeries()**{api} method. Open the sample in playground to examine the code.
 
-{sample}CRUD\_09{sample}
+{sample}CRUD\_07{sample}
 
 ### Identifying Series
 
@@ -229,7 +229,7 @@ Moreover, the exact number of chart's series at current time can be found out us
   
 Below is a sample with demonstration of the code from above. Each series was renamed. The chart's legend was enabled to demonstrate series names.
 
-{sample}CRUD\_07{sample}
+{sample}CRUD\_08{sample}
 
 #### ID
 
@@ -276,8 +276,8 @@ Along with removing series one by one you can remove all series of the chart usi
   
 Click on a labels in the sample below to add/remove series on the chart's plot.
 
-{sample}CRUD\_10{sample}
+{sample}CRUD\_09{sample}
 
 As a conclusion of this section here is a bit sophisticated sample with advanced opportunities of series manipulation.
 
-{sample}CRUD\_08{sample}
+{sample}CRUD\_10{sample}
