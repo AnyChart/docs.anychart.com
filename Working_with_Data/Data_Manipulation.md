@@ -233,7 +233,7 @@ Below is a sample with demonstration of the code from above. Each series was ren
 
 #### ID
 
-Another way to get one of series is to use series id. Method **.id()** sets a unique identificator for a series to simplify further series manipulations. After setting custom id, the series can be obtained using **.getSeries()** method with series id as a parameter.
+Another way to get one of series is to use series id. Method {api:anychart.core.cartesian.series.Base#id}**.id()**{api} sets a unique identificator for a series to simplify further series manipulations. After setting custom id, the series can be obtained using {api:anychart.charts.Cartesian#getSeries}**.getSeries()**{api} method with series id as a parameter.
 
 ```
   // create chart
@@ -258,7 +258,7 @@ Another way to get one of series is to use series id. Method **.id()** sets a un
 
 ### Removing Series
 
-As far as any chart can be adjusted at any time there may be a need in removing some of chart's series. If you know the id of the series that should be removed, invoke **.removeSeries()** method and use series ID as a parameter for this method. In the situation, when the series has no ID it can be removed using **.removeSeriesAt()** method. Method **.removeSeriesAt()** uses series index as a parameter and removes the series with the index.
+As far as any chart can be adjusted at any time there may be a need in removing some of chart's series. If you know the id of the series that should be removed, invoke {api:anychart.charts.Cartesian#removeSeries}**.removeSeries()**{api} method and use series ID as a parameter for this method. In the situation, when the series has no ID it can be removed using {api:anychart.charts.Cartesian#removeSeriesAt}**.removeSeriesAt()**{api} method. Method {api:anychart.charts.Cartesian#removeSeriesAt}**.removeSeriesAt()**{api} uses series index as a parameter and removes the series with the index.
 
 ```
   // create chart
@@ -271,13 +271,13 @@ As far as any chart can be adjusted at any time there may be a need in removing 
   chart.removeSeriesAt(2);
 ```
 
-Along with removing series one by one you can remove all series of the chart using one single method. Call **.removeAllSeries()** method to remove every series of the current chart. Note, that series removal doesn't effect your data in any way.
+Along with removing series one by one you can remove all series of the chart using one single method. Call {api:anychart.charts.Cartesian#removeAllSeries}**.removeAllSeries()**{api} method to remove every series of the current chart. Note, that series removal doesn't effect your data in any way.
   
   
 Click on a labels in the sample below to add/remove series on the chart's plot.
 
 {sample}CRUD\_10{sample}
 
-As a conclusion of this section here is a bit sophisticated sample with advanced opportunities of  series manipulation.
+As a conclusion of this section here is a bit sophisticated sample with advanced opportunities of series manipulation.
 
 {sample}CRUD\_08{sample}
