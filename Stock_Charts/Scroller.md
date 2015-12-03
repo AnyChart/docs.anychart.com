@@ -111,72 +111,33 @@ Each time when a user interacts with a chart, there's an event object generated 
 
 There are 8 special events for scroller, which you can use to provoke some reaction from your chart or from scroller itself. Let's look at the list of those events.
 
-Events perceived by a chart
-* **scrollerchange** - dispatches when we change a scroller somehow - работает
-* **scrollerchangefinish** - dispatches when we change the end value of the scroller - работает
-* **scrollerchangestart** - dispatches when we change the start value of the scroller
-* **scrollChange** - dispatches when we change a scroller somehow
-
  Events perceived by a scroller
+* **scrollerchange** - dispatches when we change a scroller somehow
+* **scrollerchangefinish** - dispatches when we change the end value of the scroller
+* **scrollerchangestart** - dispatches when we change the start value of the scroller
 * **selectedrangebeforechange** - dispathes before we change the selected range of the scroller
 * **selectedrangechange** - dispatches when change a scroller selected range somehow
 * **selectedrangechangefinish** - dispatches when we change a scroller selected range end value
 * **selectedrangechangestart** - dispatches when we change a scroller selected range start value
 
+There is also an event that is perceived by a chart
+* **scrollChange** - dispatches when we change a scroller somehow
+
 Now, let's create a couple of event listeners with these events. 
 
 ```
+    // events
+    chart.scroller().listen("scrollerchange", function(){
+        chart.title("You have changed the scroller");
+    });
 
-        // chart events
-        chart.listen("scrollerchange", function(){
-            indexSetter =  indexSetter+1;
-            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
-            console.log("scroller_change_finish");
-        });
+    chart.scroller().listen("scrollerchangestart", function(){
+        chart.title("You have changed the start value of the scroller");
+    });
 
-        chart.listen("scrollchange", function(){
-            indexSetter =  indexSetter+1;
-            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
-            console.log("scroll_change");
-        });
-
-        chart.listen("scrollerchangestart", function(){
-            indexSetter =  indexSetter+1;
-            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
-            console.log("scroller_change_start");
-        });
-
-        chart.listen("scrollerchangefinish", function(){
-            indexSetter =  indexSetter+1;
-            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
-            console.log("scroller_change_finish");
-        });
-
-
-        // scroller events
-        chart.scroller().listen("selectedrangebeforechange", function(){
-            indexSetter =  indexSetter+1;
-            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
-            console.log("selected_range_before_change");
-        });
-
-        chart.scroller().listen("selectedrangechange", function(){
-            indexSetter =  indexSetter+1;
-            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
-            console.log("selected_range_change");
-        });
-
-        chart.scroller().listen("selectedrangechangefinish", function(){
-            indexSetter =  indexSetter+1;
-            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
-            console.log("selected_range_change_finish");
-        });
-
-        chart.scroller().listen("selectedrangechangestart", function(){
-            indexSetter =  indexSetter+1;
-            chart.title("You have changed the end value of the scroller's selected range for the "+ indexSetter + " time");
-            console.log("selected_range_change_start");
-        });
+    chart.scroller().listen("scrollerchangefinish", function(){
+        chart.title("You have changed the end value of the scroller");
+    });
 ```
 
 {sample}STOCK\_Scroller\_06{sample}

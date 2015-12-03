@@ -39,7 +39,7 @@ var lineMapping = dataTable.mapAs({'value': 5});
   
 // create stock chart
 var chart = anychart.stock();
-        chart.padding(0,"5%",10,"20%");
+        //chart.padding(0,"5%",10,"20%");
 
 // create the plot on the chart with column series
         var plot_line_ohlc = chart.plot(0);
@@ -57,10 +57,13 @@ var chart = anychart.stock();
 
 // Create and tune additional y axis
         var extraYAxis = plot_line_ohlc.yAxis(1);
-        extraYAxis.orientation("left");
+        extraYAxis.orientation("right");
         extraYAxis.scale(extraYScale);
 
-        plot_line_ohlc.legend().height(100);
+        extraYAxis.labels().textFormatter(function(){
+            var value = this.value;
+            return value/1000000 + " mil";
+        });
 
 // create the column series
         var columnSeries = plot_column.column(mapping);
