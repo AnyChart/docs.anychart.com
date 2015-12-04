@@ -138,7 +138,51 @@ In the sample chart below we've used custom item that adds *Total* data to legen
 You can also create a custom legend. It's being done the same way as with basic chart legends, so you can look for it up in the [Basic Chart Legend](../Common_Settings/Legend#custom_legend) article.
 
 
-## One Legend for Several Plots
+## Custom Legend
 
 The same as we create one legend to several series in basic charts, we can do with stocks. The only difference you'd better remember is that in stocks we operate with series on plots instead of charts. Look at this in the [Basic Chart Legend](../Common_Settings/Legend#one_legend_for_several_charts) article.
+
+```
+    // create custom legend
+    var customLegend = anychart.ui.legend();
+    // set sources for legend items
+    customLegend.itemsSource([plot_column, plot_line_ohlc]);
+    customLegend.enabled(true);
+    customLegend.hAlign("center");
+    customLegend.height(50);
+
+    // legend tooltip settings
+    customLegend.tooltip().content()
+            .useHtml(true)    // enable using of html tags
+            .fontWeight(400); // set font weigh
+
+    // redraw legend every time the first chart is redrawn
+    chart.listen(
+            "chartDraw",
+            function (){
+                // define legend bounds
+                var legendBounds = anychart.math.rect(
+                      0,
+                      customLegend.getRemainingBounds().getHeight(),
+                      chart.container().width(),
+                      chart.container().height()
+                );
+                // set bounds and draw legend
+                customLegend.parentBounds(legendBounds).draw();
+            }
+    );
+
+    // set legend tooltip content
+    customLegend.tooltip().textFormatter(function () {
+        return this.meta.legendText;
+    });
+
+    // set the bottom margin
+    chart.margin().bottom(chart.height() - customLegend.getRemainingBounds().getHeight());
+
+    // draw legend
+    customLegend.container(stage).draw();
+```
+
+{sample}STOCK\_Legend\_07{sample}
 
