@@ -222,7 +222,7 @@ As it was mentioned before, export server needs PhantomJS. If you have installed
 check the place where Phantom JS is installed and set the right path for the export server. Like this:
 
 ```
-java -D phantomjs.binary.path=PATH_TO_YOUR_PHANTOMJS -jar
+java -Dphantomjs.binary.path=PATH_TO_YOUR_PHANTOMJS -jar
 ```
 
 ## How to Set the Path to Export Server 
