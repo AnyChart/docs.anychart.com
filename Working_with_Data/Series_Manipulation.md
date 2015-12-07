@@ -10,7 +10,7 @@
 
 ## Overview
 
-Series is a single set of data, that is visualized on the chart's plot. Series has a type and series data can be changed any time you want. You'll see updated visualization instantly. 
+Series is a single set of data, that is visualized on the chart's plot. Series has a type and series data can be changed any time you want. You'll see updated visualization instantly.
   
   
 **Note**: This article contains information about managing charts series only. Information about managing series data can be found in [Data Manipulation article](../Working_with_Data/Data_Manipulation).
@@ -21,10 +21,10 @@ In most cases you can create a new series by using method that is named after th
 
 ```
   // set chart type
-  var chart = anychart.column();
+  var chart = anychart.bar();
 
   // set default series type
-  chart.defaultSeriesType("column");
+  chart.defaultSeriesType("bar");
 
   // create series
   chart.addSeries(data1, data2, data3);
@@ -54,10 +54,10 @@ If you try to pass number which exceeds amount of series on current chart, the *
 
 ```
   // create chart
-  var chart = anychart.bar();
+  var chart = anychart.column();
   
   // define default series type
-  chart.defaultSeriesType("bar");
+  chart.defaultSeriesType("column");
   
   // set data for multiple series
   chart.addSeries(data1, data2, data3);
