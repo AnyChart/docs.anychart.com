@@ -16,8 +16,7 @@ AnyChart html5 charting library gives you the ability to create, read, update an
   
   
 You can solve the following tasks using some easy-in-use Java Script methods:
-  
-  
+
 * Data-Stream - you can add some new data to the end of a data set while optional removing some data from its beginning. 
 * Add - you can add one or several points to the end of the data set.
 * Meta-add - you can add some metadata to the chart.
@@ -27,6 +26,8 @@ You can solve the following tasks using some easy-in-use Java Script methods:
   
   
 This article shows how to solve each of these tasks.
+
+**Note**: this article contains information on data mapping and series data managing. Information about managing chart's series and series visual appearance can be found in [Series Manipulation article](../Working_with_Data/Series_Manipulation).
 
 ### Add
 
