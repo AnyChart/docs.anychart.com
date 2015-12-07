@@ -32,7 +32,7 @@
 	// create a loop for renaming each of the series
 	var i=0;
 	while (chart.getSeriesAt(i)){
-		chart.getSeriesAt(i).name((i+1)+"th Series");
+		chart.getSeriesAt(i).name((i+1)+ counter(i) +" Series");
 		i++;
 	}
 
@@ -48,7 +48,15 @@
 	// draw chart
 	chart.container("container");
 	chart.draw();
-});</script>
+});
+function counter(i){
+	switch ((i+1)%10){
+		case 1: return "st";
+		case 2: return "nd";
+		case 3: return "rd";
+		default: return "th";
+	}
+}</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

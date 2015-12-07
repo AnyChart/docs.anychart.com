@@ -3,7 +3,7 @@
 
 * [Overview](#overview)
  * [Add](#add)
- * [Meta-adding](#Meta-add)
+ * [Meta-adding](#meta-add)
  * [Read](#read)
  * [Update](#update)
  * [Delete](#delete)

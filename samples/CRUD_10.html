@@ -21,7 +21,7 @@
 		// series getter
 		var series = chart.getSeriesAt(i);
 		// rename series
-		series.name((i+1)+"th Series");
+		series.name((i+1)+counter(i+1)+" Series");
 		// getter for tooltip
 		var tooltip = series.tooltip();
 		// manage tooltip title
@@ -81,7 +81,7 @@
 			// getter for new series
 			var series = chart.getSeriesAt(chart.getSeriesCount()-1);
 			// rename series
-			series.name(chart.getSeriesCount()+"th Series");
+			series.name(chart.getSeriesCount()+counter(chart.getSeriesCount())+" Series");
 			// series tooltip getter
 			var tooltip = series.tooltip();
 			// format tooltip title
@@ -217,7 +217,15 @@
 			array.push(Math.round(Math.random() * 50000) + 900000);
 		return array
 	}
-});</script>
+});
+function counter(i){
+	switch ((i+1)%10){
+		case 1: return "st";
+		case 2: return "nd";
+		case 3: return "rd";
+		default: return "th";
+	}
+}</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
