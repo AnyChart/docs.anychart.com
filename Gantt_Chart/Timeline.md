@@ -2,8 +2,8 @@
 
 
 * [Overview](#overview)
-* [Resource Gantt Chart](#resource_gantt_chart)
-* [Project Gantt Chart](#project_gantt_chart)
+ * [Resource Gantt Chart](#resource_gantt_chart)
+ * [Project Gantt Chart](#project_gantt_chart)
 * [Markers](#markers)
  * [Special Features](#special_features)
 * [Visualisation](#visualisation)
@@ -15,15 +15,16 @@
 Timeline is generally a part (usually the right one) of a Gantt diagram of both types. It shows processes durations (time periods), events with no duration (milestones) and connector between them, of which a whole task consists. Also there are a couple of decorative elements that help you to navigate through the timeline.
 Timeline of a Project Chart is rather different from a timeline of a Resoure Gantt due to their different purpose. Later in this article we will look at both of them and consider that difference.
 
-## Resource Gantt Chart
+### Resource Gantt Chart
 This illustration highlights almost all major resource timeline elements, and this tutorial will describe how each element is configured:
 
 /картинка/
 
+Now, let's consider those elements that are highlighted in a picture above.
 
 
-## Project Gantt Chart
-This illustration highlights almost all major resource timeline elements, and this tutorial will describe how each element is configured:
+### Project Gantt Chart
+This illustration highlights almost all major project timeline elements, and this tutorial will describe how each element is configured:
 
 /картинка/
 
@@ -32,11 +33,24 @@ This illustration highlights almost all major resource timeline elements, and th
 
 There are three marker types we've got in Gantt Charts:
 
-* lineMarker - puts a vertical line at the defined date and marks this poo
+* lineMarker - puts a vertical line at the defined date and marks this point
 * textMarker - to mark a point on a Gantt diagram with a word
 * rangeMarker - to highlight some parts of a Gantt Chart
 
-We can
+Let's make a couple of samples with these markers.
+
+First of all, let's create 2 line markers: one showing the current date and second one - the date when the ongoing process should become finished.
+
+```
+```
+{sample}GANTT\_Timeline\_07{sample}
+
+Now, look at the sample with a textMarker showing the planned finish date and a rangeMarkers showing the time .
+
+```
+```
+{sample}GANTT\_Timeline\_07{sample}
+
 
 ### Special Features
 
@@ -48,7 +62,7 @@ Due to unique organization of a Gantt diagram, there are some special features t
 
 ## Visualisation
 
-Despite being quite different in usage and purposes, 
+Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them
 
 ### Hover
 ### Select
