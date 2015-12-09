@@ -293,24 +293,24 @@ As an example, let's use **pointsHover** event to find out the index of hovered 
 Even though this code works fine, there isn't much sense in hovering three random points. Instead, we can hover points, that are somehow related. Let's create a chart, display the income through the year and hover all the points of a quarter, the hovered point belongs to:
 
 ```
-  // event on hovering a point
-  chart.listen("pointsHover", function(event){
-    // getter for hovered point
-    var point = event.point;
-    // index of hovered point
-    var index = point.getIndex();
-    // getter for hovered point's series
-    var currentSeries = point.getSeries();
-    // if this event is triggered on points unhovering, nothing will happen
-    if (!event.currentPoint.hovered) return;
-    // get an array of months, hovered point belong to and hover it.
-    currentSeries.hover(getQuarterMonths(index));
-  });
-  // find out an array a month belong to
-  function getQuarterMonths(month) {
-    var quarterStartMonth = 3 * Math.floor(month / 3);
-    return [quarterStartMonth, quarterStartMonth + 1, quarterStartMonth + 2];
-  }
+// event on hovering a point
+chart.listen("pointsHover", function(event){
+	// getter for hovered point
+	var point = event.point;
+	// index of hovered point
+	var index = point.getIndex();
+	// getter for hovered point's series
+	var currentSeries = point.getSeries();
+	// if this event is triggered on points unhovering, nothing will happen
+	if (!event.currentPoint.hovered) return;
+	// get an array of months, hovered point belong to and hover it.
+	currentSeries.hover(getQuarterMonths(index));
+});
+// find out an array a month belong to
+function getQuarterMonths(month) {
+	var quarterStartMonth = 3 * Math.floor(month / 3);
+	return [quarterStartMonth, quarterStartMonth + 1, quarterStartMonth + 2];
+}
 ```
 <!--
 Moreover, you may consider it's useful to manage tooltip content, as far as we want to hover several points at a time. Let's display total income in current quarter as tooltip content:
