@@ -295,21 +295,21 @@ Even though this code works fine, there isn't much sense in hovering three rando
 ```
 // event on hovering a point
 chart.listen("pointsHover", function(event){
-	// getter for hovered point
-	var point = event.point;
-	// index of hovered point
-	var index = point.getIndex();
-	// getter for hovered point's series
-	var currentSeries = point.getSeries();
-	// if this event is triggered on points unhovering, nothing will happen
-	if (!event.currentPoint.hovered) return;
-	// get an array of months, hovered point belong to and hover it.
-	currentSeries.hover(getQuarterMonths(index));
+  // getter for hovered point
+  var point = event.point;
+  // index of hovered point
+  var index = point.getIndex();
+  // getter for hovered point's series
+  var currentSeries = point.getSeries();
+  // if this event is triggered on points unhovering, nothing will happen
+  if (!event.currentPoint.hovered) return;
+  // get an array of months, hovered point belong to and hover it.
+  currentSeries.hover(getQuarterMonths(index));
 });
 // find out an array a month belong to
 function getQuarterMonths(month) {
-	var quarterStartMonth = 3 * Math.floor(month / 3);
-	return [quarterStartMonth, quarterStartMonth + 1, quarterStartMonth + 2];
+  var quarterStartMonth = 3 * Math.floor(month / 3);
+  return [quarterStartMonth, quarterStartMonth + 1, quarterStartMonth + 2];
 }
 ```
 <!--
