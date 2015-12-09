@@ -293,40 +293,24 @@ As an example, let's use **pointsHover** event to find out the index of hovered 
 Even though this code works fine, there isn't much sense in hovering three random points. Instead, we can hover points, that are somehow related. Let's create a chart, display the income through the year and hover all the points of a quarter, the hovered point belongs to:
 
 ```
-	// create listener for point's hover event
-	chart.listen("pointsHover", function(event){
-		// get hovered point
-		var point = event.point;
-		// get index of hovered point
-		var index = point.getIndex();
-		// get series of hovered point
-		var series = point.getSeries();
-		// unhover all on points unhovering
-		if (!event.currentPoint.hovered) return;
-		// create loop for managing points' hovering 
-		switch (true){
-			// check the index of hovered point
-			case (index<3):
-				// hover the array of series points
-				series.hover([0,1,2]);
-				break;
-			// check the index of hovered point
-			case (index<6):
-				// hover the array of series points
-				series.hover([3,4,5]);
-				break;
-			// check the index of hovered point
-			case (index<9):
-				// hover the array of series points
-				series.hover([6,7,8]);
-				break;
-			// check the index of hovered point
-			case (index<12):
-				// hover the array of series points
-				series.hover([9,10,11]);
-				break;
-		}
-	});
+  // event on hovering a point
+  chart.listen("pointsHover", function(event){
+    // getter for hovered point
+    var point = event.point;
+    // index of hovered point
+    var index = point.getIndex();
+    // getter for hovered point's series
+    var currentSeries = point.getSeries();
+    // if this event is triggered on points unhovering, nothing will happen
+    if (!event.currentPoint.hovered) return;
+    // get an array of months, hovered point belong to and hover it.
+    currentSeries.hover(getQuarterMonths(index));
+  });
+  // find out an array a month belong to
+  function getQuarterMonths(month) {
+    var quarterStartMonth = 3 * Math.floor(month / 3);
+    return [quarterStartMonth, quarterStartMonth + 1, quarterStartMonth + 2];
+  }
 ```
 <!--
 Moreover, you may consider it's useful to manage tooltip content, as far as we want to hover several points at a time. Let's display total income in current quarter as tooltip content:
