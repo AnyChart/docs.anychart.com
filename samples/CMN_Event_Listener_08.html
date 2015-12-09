@@ -41,51 +41,20 @@
 		var index = point.getIndex();
 		var currentSeries = point.getSeries();
 		if (!event.currentPoint.hovered) return;
-		switch (true){
-			case (index<3):
-				currentSeries.hover([0,1,2]);
-				break;
-			case (index<6):
-				currentSeries.hover([3,4,5]);
-				break;
-			case (index<9):
-				currentSeries.hover([6,7,8]);
-				break;
-			case (index<12):
-				currentSeries.hover([9,10,11]);
-				break;
-		}
+		currentSeries.hover(getQuarterMonths(index));
 	});
 
 	chart.listen("pointsSelect", function(event){
 		var point = event.point;
 		var index = point.getIndex();
 		var currentSeries = point.getSeries();
-		if (!event.currentPoint.selected) {
+		if (!event.currentPoint.selected)
 			currentSeries.select(false);
-		}else{
-			switch (true){
-				case (index<3):
-					currentSeries.getPoint(0).selected(true);
-					currentSeries.getPoint(1).selected(true);
-					currentSeries.getPoint(2).selected(true);
-					break;
-				case (index<6):
-					currentSeries.getPoint(3).selected(true);
-					currentSeries.getPoint(4).selected(true);
-					currentSeries.getPoint(5).selected(true);
-					break;
-				case (index<9):
-					currentSeries.getPoint(6).selected(true);
-					currentSeries.getPoint(7).selected(true);
-					currentSeries.getPoint(8).selected(true);
-					break;
-				case (index<12):
-					currentSeries.getPoint(9).selected(true);
-					currentSeries.getPoint(10).selected(true);
-					currentSeries.getPoint(11).selected(true);
-					break;
-			}}
+		else {
+			var months = getQuarterMonths(index);
+			for (var i =0; i < months.length; i ++)
+				currentSeries.getPoint(months[i]).selected(true);
+		}
 	});
 
 
@@ -101,21 +70,11 @@
 	});
 
 	tooltip.textFormatter(function(point){
-		var index = point.index;
-		var prefix = "Income: $";
-		switch (true){
-			case (index<3): return prefix+sumValues([0,1,2]);
-			case (index<6): return prefix+sumValues([3,4,5]);
-			case (index<9): return prefix+sumValues([6,7,8]);
-			case (index<12): return prefix+sumValues([9,10,11]);
-		}
-
-		function sumValues(array){
-			var value = 0;
-			for (var i=0;i<array.length;i++)
-				value+=series.getPoint(array[i]).get("value");
-			return value;
-		}
+		var array = getQuarterMonths(point.index);
+		var value = 0;
+		for (var i=0;i<array.length;i++)
+			value+=series.getPoint(array[i]).get("value");
+		return "Income: $" + value;
 	});
 
 	// set container id for the chart
@@ -123,7 +82,14 @@
 
 	// initiate chart drawing
 	chart.draw();
-});</script>
+});
+function getQuarter(month){
+	return Math.floor(month / 3);
+}
+function getQuarterMonths(month) {
+	var quarterStartMonth = 3 * getQuarter(month);
+	return [quarterStartMonth, quarterStartMonth + 1, quarterStartMonth + 2];
+}</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
