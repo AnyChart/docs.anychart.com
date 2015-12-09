@@ -61,12 +61,10 @@
 	var tooltip = series.tooltip();
 	tooltip.titleFormatter(function(point){
 		var index = point.index;
-		switch (true){
-			case (index<3): return "First Quarter";
-			case (index<6): return "Second Quarter";
-			case (index<9): return "Third Quarter";
-			case (index<12): return "Fourth Quarter";
-		}
+		if (index<3) return "First Quarter";
+		else if (index<6) return "Second Quarter";
+		else if (index<9) return "Third Quarter";
+		else return "Fourth Quarter";
 	});
 
 	tooltip.textFormatter(function(point){
