@@ -36,22 +36,37 @@
 		return "$" + this.value;
 	});
 
+	// event on hovering a point
 	chart.listen("pointsHover", function(event){
+		// getter for hovered point
 		var point = event.point;
+		// index of hovered point
 		var index = point.getIndex();
+		// getter for hovered point's series
 		var currentSeries = point.getSeries();
+		// if this event is triggered on points unhovering, nothing will happen
 		if (!event.currentPoint.hovered) return;
+		// get an array of months, hovered point belong to and hover it.
 		currentSeries.hover(getQuarterMonths(index));
 	});
 
+	// event on point hovering
 	chart.listen("pointsSelect", function(event){
+		// getter for selected point
 		var point = event.point;
+		// index of selected point
 		var index = point.getIndex();
+		// getter for selected point's series
 		var currentSeries = point.getSeries();
+		// if the point was unselected
 		if (!event.currentPoint.selected)
+			// unselect every point of the series
 			currentSeries.select(false);
+		// if the point was selected
 		else {
+			// get an array of months, selected point belong to
 			var months = getQuarterMonths(index);
+			// select each point from the array
 			for (var i =0; i < months.length; i ++)
 				currentSeries.getPoint(months[i]).selected(true);
 		}
@@ -60,7 +75,9 @@
 
 	var tooltip = series.tooltip();
 	tooltip.titleFormatter(function(point){
+		// index of the current point
 		var index = point.index;
+		// adjust title depending on point's index
 		if (index<3) return "First Quarter";
 		else if (index<6) return "Second Quarter";
 		else if (index<9) return "Third Quarter";
@@ -68,10 +85,14 @@
 	});
 
 	tooltip.textFormatter(function(point){
-		var array = getQuarterMonths(point.index);
+		// get an array of months the point belong to
+		var months = getQuarterMonths(point.index);
+		// create variable for counting the income in the months
 		var value = 0;
-		for (var i=0;i<array.length;i++)
-			value+=series.getPoint(array[i]).get("value");
+		// summarize the income
+		for (var i=0;i<months.length;i++)
+			value+=series.getPoint(months[i]).get("value");
+		// display the income
 		return "Income: $" + value;
 	});
 
@@ -81,11 +102,9 @@
 	// initiate chart drawing
 	chart.draw();
 });
-function getQuarter(month){
-	return Math.floor(month / 3);
-}
+// find out an array a month belong to
 function getQuarterMonths(month) {
-	var quarterStartMonth = 3 * getQuarter(month);
+	var quarterStartMonth = 3 * Math.floor(month / 3);
 	return [quarterStartMonth, quarterStartMonth + 1, quarterStartMonth + 2];
 }</script>
 </head>
