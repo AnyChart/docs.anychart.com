@@ -93,8 +93,44 @@ And here is a sample with the settings from above:
 
 ## Multiple Series
 
-Multiple series on a single data plot can be created as easy as a single one. There are several ways to display multiple series on a 3D chart's plot. This section discloses most of them.
+Multiple series on a single data plot can be created as easy as a single one. There are several ways to display multiple series on a 3D chart's plot. This section discloses most of them. 
 
 ### Multi-Series
 
+One of the most simplest way to create multiple series on a chart is to invoke method for creating desirable type of series for each data set you have. 
 
+```
+  // data set
+  var data = anychart.data.set([
+    ["Department Stores", 637166, 737166],
+    ["Discount Stores", 721630, 537166],
+    ["Men's/Women's Specialty Stores", 148662, 188662],
+    ["Juvenile Specialty Stores", 78662, 178662],
+    ["All other outlets", 90000, 89000]
+  ]);
+
+  // map data for further using
+  var Sales2003 = data.mapAs({x: [0], value: [1]});
+  var Sales2004 = data.mapAs({x: [0], value: [2]});
+
+  // define chart type
+  var chart = anychart.bar3d();
+
+  // set data
+  chart.bar3d(Sales2003);
+  chart.bar3d(Sales2004);
+```
+
+Here is a sample of multi-series bar chart
+
+{sample}BCT\_3d\_04{sample}
+
+### Value Stacked
+
+Value stacked 3d charts are multi-series charts that display series point value upon the same point of the previous series. To enable value stacked mode you need to call **.stackedMode()** method with **value** parameter. The **.stackedMode()** method should be invoked for chart's y scale. Chart's y scale is controlled by **.yScale()** method. Here is a snippet of setting value stacked mode:
+
+```
+  var chart = anychart.are3d();
+  var yScale = chart.yScale();
+  yScale.stackedMode("value");
+```
