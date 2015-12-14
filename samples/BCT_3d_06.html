@@ -24,13 +24,16 @@
 	var chart = anychart.column3d();
 
 	// setting title
-	chart.title("Area chart");
+	chart.title("Percent Stacked 3D Column Chart");
 
 	// set axes titles
 	var xAxis = chart.xAxis();
 	xAxis.title("Month");
 	var yAxis = chart.yAxis();
 	yAxis.title("Sales");
+
+	var yScale = chart.yScale();
+	yScale.stackMode("percent");
 
 	// set data
 	chart.column3d(dataSet1);
