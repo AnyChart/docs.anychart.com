@@ -7,33 +7,42 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data
-  var data = anychart.data.set([
-    ["January", 10000],
-    ["February", 12000],
-    ["March", 18000],
-    ["April", 11000],
-    ["May", 9000]
-  ]);
+	// data
+	var data = anychart.data.set([
+		["Winter", 12000, 12000, 10000],
+		["Spring", 13000, 12000, 17000],
+		["Summer", 25000, 15000, 19000],
+		["Autumn", 16000, 16000, 16000]
+	]);
 
-  // set chart type
-  var chart = anychart.area3d();
+	var dataSet1 = data.mapAs({x: [0], value: [1]});
+	var dataSet2 = data.mapAs({x: [0], value: [2]});
+	var dataSet3 = data.mapAs({x: [0], value: [3]});
 
-  // setting title
-  chart.title("Area chart");
+	// set chart type
+	var chart = anychart.area3d();
 
-  // set axes titles
-  var xAxis = chart.xAxis();
-  xAxis.title("Month");
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
 
-  // set data
-  chart.area3d(data);
+	var yScale = chart.yScale();
+	yScale.stackMode("value");
 
-  // draw chart
-  chart.container("container");
-  chart.draw();
+	// setting title
+	chart.title("Value Stacked 3D Area Chart");
+
+	// set axes titles
+	var xAxis = chart.xAxis();
+	xAxis.title("Month");
+	var yAxis = chart.yAxis();
+	yAxis.title("Sales");
+
+	// create series
+	chart.area3d(dataSet1);
+	chart.area3d(dataSet2);
+	chart.area3d(dataSet3);
+
+	// draw chart
+	chart.container("container");
+	chart.draw();
 });</script>
 </head>
 <body>

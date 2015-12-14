@@ -130,9 +130,9 @@ Here is a sample of multi-series bar chart
 Value stacked 3d charts are multi-series charts that display series point value upon the same point of the previous series. To enable value stacked mode you need to call **.stackedMode()** method with **value** parameter. The **.stackedMode()** method should be invoked for chart's y scale. Chart's y scale is controlled by **.yScale()** method. Here is a snippet of setting value stacked mode:
 
 ```
-  var chart = anychart.are3d();
+  var chart = anychart.area3d();
   var yScale = chart.yScale();
-  yScale.stackedMode("value");
+  yScale.stackMode("value");
 ```
 
 Here is a sample of 3D stacked area chart:
@@ -149,7 +149,7 @@ To enable percent stacked mode you have to use **.stackedMode()** method with **
 ```
   var chart = anychart.column3d();
   var yScale = chart.yScale();
-  yScale.stackedMode("percent");
+  yScale.stackMode("percent");
 ```
 
 Let's see, how percent stacked 3d column chart looks like:
