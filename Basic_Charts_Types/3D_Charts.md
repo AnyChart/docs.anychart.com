@@ -134,3 +134,25 @@ Value stacked 3d charts are multi-series charts that display series point value 
   var yScale = chart.yScale();
   yScale.stackedMode("value");
 ```
+
+Here is a sample of 3D stacked area chart:
+
+{sample}BCT\_3d\_05{sample}
+
+### Percent Stacked
+
+Percent Stacked 3d charts is quite similar to simple 2d percent stacked chart. Information about percent stacked area charts can be found in [percent stacked area-splineArea charts tutorial](../Basic_Charts_Types/Percent_Stacked_Area-SplineArea_Charts) and information about percent stacked bars and columns can be found in [percent stacked bar-column charts tutorial](../Basic_Charts_Types/Percent_Stacked_Area-SplineArea_Charts).
+  
+  
+To enable percent stacked mode you have to use **.stackedMode()** method with **percent** parameter for chart's y scale.
+
+```
+  var chart = anychart.column3d();
+  var yScale = chart.yScale();
+  yScale.stackedMode("percent");
+```
+
+Let's see, how percent stacked 3d column chart looks like:
+
+{sample}BCT\_3d\_06{sample}
+
