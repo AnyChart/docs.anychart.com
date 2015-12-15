@@ -20,7 +20,7 @@ This illustration highlights almost all major resource timeline elements, and th
 
 /картинка/
 
-Now, let's consider those elements that are highlighted in a picture above.
+You can look up the [Resource Chart](Resource_Chart) article to know more about managing Gantt Charts of this type.
 
 
 ### Project Gantt Chart
@@ -28,6 +28,7 @@ This illustration highlights almost all major project timeline elements, and thi
 
 /картинка/
 
+You can look up the [Project Chart](Project_Chart) article to know more about managing Gantt Charts of this type.
 
 ## Markers
 
@@ -42,14 +43,20 @@ Let's make a couple of samples with these markers.
 First of all, let's create 2 line markers: one showing the current date and second one - the date when the ongoing process should become finished.
 
 ```
+	// create linemarkers
+	var tl = chart.getTimeline();
+	tl.lineMarker(0).value(anychart.enums.GanttDateTimeMarkers.CURRENT).stroke('4 red 0.5');
+	tl.lineMarker(1).value(anychart.enums.GanttDateTimeMarkers.END).stroke({color: 'grey', dash: '4 4', thickness: 4});
 ```
-{sample}GANTT\_Timeline\_07{sample}
+{sample}GANTT\_Timeline\_01{sample}
 
-Now, look at the sample with a textMarker showing the planned finish date and a rangeMarkers showing the time .
+As you see, we can define some parameters of each linemarker such as color, dashes or thickness using {api}**.stroke()**{api} method. Its usage is absolutely usual: parameters sent to this method should be formatted completely the same as for any ohter Line Chart .stroke() method.
+
+Now, look at the sample with a textMarker showing the planned finish date and two rangeMarkers showing the passed time remaining time.
 
 ```
 ```
-{sample}GANTT\_Timeline\_07{sample}
+{sample}GANTT\_Timeline\_02{sample}
 
 
 ### Special Features
