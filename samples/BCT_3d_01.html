@@ -8,33 +8,34 @@
     <script src="https://doc-voron.c9.io/anychart-bundle.min.js" data-export="true"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data
-  var data = anychart.data.set([
-    ["January", 10000],
-    ["February", 12000],
-    ["March", 18000],
-    ["April", 11000],
-    ["May", 9000]
-  ]);
+	// data
+	var data = anychart.data.set([
+		["January", 10000],
+		["February", 12000],
+		["March", 18000],
+		["April", 11000],
+		["May", 9000]
+	]);
 
-  // set chart type
-  var chart = anychart.area3d();
+	// set chart type
+	var chart = anychart.area3d();
 
-  // setting title
-  chart.title("3D Area Chart");
+	// setting title
+	chart.title("3D Area Chart");
 
-  // set axes titles
-  var xAxis = chart.xAxis();
-  xAxis.title("Month");
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
+	// set axes titles
+	var xAxis = chart.xAxis();
+	xAxis.title("Month");
+	var yAxis = chart.yAxis();
+	yAxis.title("Sales");
 
-  // set data
-  chart.area3d(data);
+	// set data
+	var series = chart.area3d(data);
+	series.name("Sales 2009");
 
-  // draw chart
-  chart.container("container");
-  chart.draw();
+	// draw chart
+	chart.container("container");
+	chart.draw();
 });</script>
 </head>
 <body>

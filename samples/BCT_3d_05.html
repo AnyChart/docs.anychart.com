@@ -23,7 +23,6 @@
 	// set chart type
 	var chart = anychart.area3d();
 
-
 	var yScale = chart.yScale();
 	yScale.stackMode("value");
 
@@ -37,9 +36,12 @@
 	yAxis.title("Sales");
 
 	// create series
-	chart.area3d(dataSet1);
-	chart.area3d(dataSet2);
-	chart.area3d(dataSet3);
+	var series1 = chart.area3d(dataSet1);
+	series1.name("Sales 2009");
+	var series2 = chart.area3d(dataSet2);
+	series2.name("Sales 2010");
+	var series3 = chart.area3d(dataSet3);
+	series3.name("Sales 2011");
 
 	// draw chart
 	chart.container("container");

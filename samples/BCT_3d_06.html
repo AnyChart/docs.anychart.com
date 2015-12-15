@@ -36,9 +36,12 @@
 	yScale.stackMode("percent");
 
 	// set data
-	chart.column3d(dataSet1);
-	chart.column3d(dataSet2);
-	chart.column3d(dataSet3);
+	var series1 = chart.column3d(dataSet1);
+	series1.name("Sales 2009");
+	var series2 = chart.column3d(dataSet2);
+	series2.name("Sales 2010");
+	var series3 = chart.column3d(dataSet3);
+	series3.name("Sales 2011");
 
 	// draw chart
 	chart.container("container");
