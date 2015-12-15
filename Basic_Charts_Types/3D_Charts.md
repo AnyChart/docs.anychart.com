@@ -6,6 +6,7 @@
  * [Area](#area)
  * [Bar](#bar)
  * [Column](#column)
+ * [Pie](#pie)
 * [Multiple Series](#multiple_series)
  * [Multi-Series](#multi-series)
  * [Value Stacked](#value_stacked)
@@ -14,7 +15,7 @@
 
 ## Overview
 
-Even though there are quite a few types of charts that can be used for data visualization, AnyChart always tries to achieve more. Using AnyChart component you can create 3d versions of some of chart types. 3D mode was created as alternative visual appearance of the common types of charts. Please, do not abuse this feature cause it may mislead.
+Even though there are quite a few types of charts that can be used for data visualization, AnyChart always tries to achieve more. Using AnyChart component you can create 3d versions of some chart types. 3D mode was created as alternative visual appearance of the common types of charts. Please, do not abuse this feature cause it may be misleading.
 
 ## Charts
 
@@ -22,8 +23,7 @@ Depending on the data model and visualization purpose you can use different 3d c
 
 ### Area
 
-Area charts emphasize the magnitude of change over time, and can be used to draw attention to the total value across a trend. Method {api:anychart#area3d}**.area3d()**{api} 3D plot for your series.
-Use your data as parameter for {api:anychart.core.radar.series.Area3d}**.area3d()**{api} method to visualize it as 3D area series.
+Area charts emphasize the magnitude of change over time, and can be used to draw attention to the total value across a trend. Method {api:anychart#area3d}**.area3d()**{api} 3D plot for your series. Use your data as parameter for {api:anychart.core.radar.series.Area3d}**.area3d()**{api} method to visualize it as 3D area series.
 
 ```
   // define data set
@@ -90,6 +90,30 @@ And here is a sample with the settings from above:
 ```
 
 {sample}BCT\_3d\_03{sample}
+
+### Pie
+
+3D pie chart is a of presenting single series of data. Use **.pie3d()** method to enable 3D mode for pie chart.
+
+```
+  // define data set
+  var data = anychart.data.set([
+    ["Department Stores", 637166],
+    ["Discount Stores", 721630],
+    ["Men's/Women's Specialty Stores", 148662],
+    ["All other outlets", 90000]
+  ]);
+  
+  // create 3d pie chart
+  var chart = anychart.pie3d(data);
+```
+
+More information about pie charts can be found in [pie and doughnut chart article](../Basic_Charts_Types/Pie-Doughnut_Charts).
+  
+  
+Here is a sample of 3d pie chart:
+
+{sample}BCT\_3d\_07{sample}
 
 ## Multiple Series
 
