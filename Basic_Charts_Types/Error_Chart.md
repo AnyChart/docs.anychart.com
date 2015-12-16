@@ -1,3 +1,4 @@
+{:index 1}
 #Error Chart
 
 * [Overview](#overview)

@@ -1,3 +1,4 @@
+{:index 1}
 # Stacked Line/Spline Charts
 
  * [Overview](#overview)

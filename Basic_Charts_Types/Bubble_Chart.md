@@ -1,3 +1,4 @@
+{:index 1}
 # Bubble Chart
 
 * [Overview](#overview)

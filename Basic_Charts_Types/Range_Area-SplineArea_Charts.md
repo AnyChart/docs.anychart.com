@@ -1,3 +1,4 @@
+{:index 1}
 # Range Line/Spline Area Chart
 
 * [Overview](#overview)

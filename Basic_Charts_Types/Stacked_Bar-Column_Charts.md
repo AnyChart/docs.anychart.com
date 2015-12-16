@@ -1,3 +1,4 @@
+{:index 1}
 # Stacked Bar/Column Charts
 
  * [Overview](#overview)

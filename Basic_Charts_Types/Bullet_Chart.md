@@ -1,3 +1,4 @@
+{:index 1}
 # Bullet Chart
 
 * [Overview](#overview)

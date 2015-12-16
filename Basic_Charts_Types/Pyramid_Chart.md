@@ -1,3 +1,4 @@
+{:index 1}
 #Pyramid Chart
 
 * [Overview](#overview)

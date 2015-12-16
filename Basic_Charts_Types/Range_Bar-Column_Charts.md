@@ -1,3 +1,4 @@
+{:index 1}
 # Range Column/Bar chart
                                                                          
 * [Overview](#overview)

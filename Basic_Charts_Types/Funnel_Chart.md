@@ -1,3 +1,4 @@
+{:index 1}
 #Funnel Chart
 
 * [Overview](#overview)

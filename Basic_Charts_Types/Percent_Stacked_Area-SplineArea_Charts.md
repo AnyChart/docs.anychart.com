@@ -1,3 +1,4 @@
+{:index 1}
 # Percent Stacked Area / Spline Area / StepLine Area Charts
 
 * [Overview](#overview)

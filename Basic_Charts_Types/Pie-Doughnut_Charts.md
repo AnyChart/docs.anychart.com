@@ -1,3 +1,4 @@
+{:index 1}
 #Pie and Doughnut Chart
                                                                
 * [Overview](#overview)

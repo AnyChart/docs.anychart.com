@@ -1,3 +1,4 @@
+{:index 1}
 # Column Chart
 
 * [Overview](#overview)
