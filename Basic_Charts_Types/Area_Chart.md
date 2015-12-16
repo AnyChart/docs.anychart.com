@@ -1,3 +1,4 @@
+{:index 1}
 #Area Chart
 
 * [Overview](#overview)

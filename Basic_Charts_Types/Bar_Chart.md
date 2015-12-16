@@ -1,3 +1,4 @@
+{:index 1}
 #Bar Chart
 
 * [Overview](#overview)
