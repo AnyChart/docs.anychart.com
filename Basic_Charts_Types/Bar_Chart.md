@@ -154,22 +154,25 @@ As we do in single-series bar sample above we need to convert this data, the onl
 You can easily display one or multiple series of bars in 3D mode. Use {api:anychart#bar3d}**.bar3d()**{api} method to enable bar 3D mode. If you have a single series of data you can use it as a parameter for the method and it will work pretty fine. For creating multiple 3D series you need to invoke {api:anychart.core.cartesian.series.Bar3d}**.bar3d()**{api} method for each of the series with your data as a parameter for these series.
 
 ```
-  // data
-  var data = anychart.data.set([
-    ["Department Stores", 637166, 737166],
-    ["Discount Stores", 721630, 537166],
-    ["Men's/Women's Specialty Stores", 148662, 188662],
-    ["Juvenile Specialty Stores", 78662, 178662],
-    ["All other outlets", 90000, 89000]
-  ]);
-  // map data for further using
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
-  // define chart type
-  var chart = anychart.bar3d();
-  // set data
-  chart.bar3d(Sales2003);
-  chart.bar3d(Sales2004);
+// data
+var data = anychart.data.set([
+  ["Department Stores", 637166, 737166],
+  ["Discount Stores", 721630, 537166],
+  ["Men's/Women's Specialty Stores", 148662, 188662],
+  ["Juvenile Specialty Stores", 78662, 178662],
+  ["All other outlets", 90000, 89000]
+]);
+
+// map data for further using
+var Sales2003 = data.mapAs({x: [0], value: [1]});
+var Sales2004 = data.mapAs({x: [0], value: [2]});
+
+// define chart type
+var chart = anychart.bar3d();
+
+// set data
+chart.bar3d(Sales2003);
+chart.bar3d(Sales2004);
 ```
 
 More information about 3D charts can be found in [3D Charts article](../Basic_Charts_Types/3D_Charts).

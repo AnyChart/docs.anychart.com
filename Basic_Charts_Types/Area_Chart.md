@@ -158,17 +158,19 @@ these two samples is the fact that now we have two series of the data: one serie
 names to each series:
 
 ```
-  var dataSet = anychart.data.set([
-    ["January", 10000, 12000],
-    ["February", 12000, 15000],
-    ["March", 18000, 16000],
-    ["April", 11000, 15000],
-    ["May", 9000, 14000],
-  ]);
-  var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
-  var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
-  chart.area(seriesData_1).name("2004");
-  chart.area(seriesData_2).name("2005");
+// define data set
+var data = anychart.data.set([
+  ["January", 10000],
+  ["February", 12000],
+  ["March", 18000],
+  ["April", 11000],
+  ["May", 9000]
+]);
+
+var chart = anychart.area3d();
+
+chart.area3d(seriesData_1);
+chart.area3d(seriesData_2);
 ```
 
 As now we have multi-series chart we don't want to set the **chart type** for each series individually (there can be more than two series in a multi-series chart), so we set the **chart** as {api:anychart#area}**anychart.area()**{api}. Now all series in the chart will be of Area type by default.
