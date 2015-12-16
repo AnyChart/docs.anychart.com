@@ -78,3 +78,13 @@ Just change default series type to "stepArea" and get your data displayed in mor
 Here is a sample html5 step stacked area chart:
 
 {sample}BCT_Stacked\_Area-SplineArea\_Charts\_03{sample}
+
+### 3D Series
+
+Along with common area charts you can use 3D mode for displaying your area charts. Use {api:anychart#area3d}**.area3d()**{api} method to enable area 3D mode.
+
+```
+var chart = anychart.area3d();
+```
+
+{sample}BCT_Stacked\_Area-SplineArea\_Charts\_04{sample}

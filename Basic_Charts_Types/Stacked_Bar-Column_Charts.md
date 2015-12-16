@@ -3,6 +3,7 @@
  * [Overview](#overview)
  * [Chart](#chart)
  * [Stacked Bar](#stacked_bar)
+ * [3D Stacked Column Chart](#3d_stacked_column_chart)
 
 ## Overview
 
@@ -54,16 +55,15 @@ Also, tooltips can be enabled/disabled by adjusting {api:anychart.core.cartesian
 Here is a sample of a stacked bar chart:
 
 {sample}BCT_Stacked\_Bar-Column\_Charts\_01{sample}
-<!--
 
-3D Stacked Column Chart
+## 3D Stacked Column Chart
 
 One more quick feature demo - enabling 3D mode makes column chart three-dimensional:
 
-XML Syntax
-XML Code
-Plain code
-01
-<data_plot_settings enable_3d_mode="True" />
+```
+var chart = anychart.column3d();
+```
+
 The sample of 3D Column chart at a glance:
--->
+
+{sample}BCT_Stacked\_Bar-Column\_Charts\_03{sample}
