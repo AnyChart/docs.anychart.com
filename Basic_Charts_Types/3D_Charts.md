@@ -1,4 +1,4 @@
-{index: 999}
+{:index 999}
 #3D Chart
 
 * [Overview](#overview)
