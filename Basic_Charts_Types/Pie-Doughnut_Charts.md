@@ -107,6 +107,8 @@ It is very easy to display the data from the sample above in 3D mode - just use 
 
 {sample}BCT\_PieDoughnutChart\_03{sample}
 
+More information about 3D charts can be found in [3D Charts article](../Basic_Charts_Types/3D_Charts).
+
 ##Start Angle
 
 You can set starting angle for the first slice of the pie using {api:anychart.charts.Pie#startAngle}**.startAngle()**{api} method. In the sample below the start angle is shifted to 45°.

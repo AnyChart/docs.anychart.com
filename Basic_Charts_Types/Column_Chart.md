@@ -4,6 +4,7 @@
 * [Chart](#chart)
   * [Single Series](#single_series)
   * [Multi-series](#multi-series)
+  * [3D Series](#3d_series)
 * [Axes](#axes)
   * [Orientation](#orientation)
   * [Inversion](#inversion)
@@ -177,6 +178,31 @@ As we did in single-series column sample above, here we need to convert this tab
 Let's set {api:anychart#column}**.column()**{api} chart type as default one and create two {api:anychart.core.cartesian.series.Column}**.column()**{api} series using our data.
 
 {sample}BCT\_ColumnChart\_02{sample}
+
+### 3D Series
+
+Along with common series appearance you can enable 3D mode for column chart. Use {api:anychart#column3d}**.column3d()**{api} method to enable 3D mode. 3D column series are controlled by {api:anychart.core.cartesian.series.Column3d}**.column3d()**{api} method.
+
+```
+// define data set
+var data = anychart.data.set([
+  ["Department Stores", 637166],
+  ["Discount Stores", 721630],
+  ["Men's/Women's Specialty Stores", 148662],
+  ["All other outlets", 90000]
+]);
+
+// create chart
+var chart = anychart.column3d();
+
+// create series
+var series = chart.column3d(data);
+series.name("Sales 2009");
+```
+
+More information about 3D charts can be found in [3D Charts article](../Basic_Charts_Types/3D_Charts).
+
+{sample}BCT\_ColumnChart\_13{sample}
 
 ## Axes
 

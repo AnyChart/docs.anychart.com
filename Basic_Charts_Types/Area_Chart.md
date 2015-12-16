@@ -5,6 +5,7 @@
   * [Single Series Area Chart](#single_series_area_chart)
   * [Single Series Spline Area Chart](#single_series_spline_area_chart)
   * [Multi-series](#multi-series)
+  * [3D Area Chart](#3d_area_chart)
 * [Axes](#axes)
   * [Orientation](#orientation)
   * [Inversion](#inversion)
@@ -173,6 +174,30 @@ names to each series:
 As now we have multi-series chart we don't want to set the **chart type** for each series individually (there can be more than two series in a multi-series chart), so we set the **chart** as {api:anychart#area}**anychart.area()**{api}. Now all series in the chart will be of Area type by default.
 
 {sample}BCT\_AreaChart\_03{sample}
+
+### 3D Area Chart
+
+Anychart provides an opportunity to use 3d version of area charts. Use {api:anychart#area3d}**.area3d()**{api} method to create 3d area chart. 
+
+```
+  // define data set
+  var data = anychart.data.set([
+    ["Department Stores", 637166],
+    ["Discount Stores", 721630],
+    ["Men's/Women's Specialty Stores", 148662],
+    ["All other outlets", 90000]
+  ]);
+  
+  // create 3D chart's plot
+  var chart = anychart.area3d();
+  
+  // create series
+  chart.area3d(data);
+```
+
+As you can see from the snippet from above, you need to use {api:anychart.core.cartesian.series.Area3d}**.area3d()**{api} method to create 3D area series. Here is a sample of 3D area chart:
+
+{sample}BCT\_AreaChart\_12{sample}
 
 ## Axes
 

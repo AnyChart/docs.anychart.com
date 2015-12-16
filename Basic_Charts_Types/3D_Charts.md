@@ -11,7 +11,6 @@
  * [Multi-Series](#multi-series)
  * [Value Stacked](#value_stacked)
  * [Percent Stacked](#percent_stacked)
- 
 
 ## Overview
 
@@ -23,7 +22,7 @@ Depending on the data model and visualization purpose you can use different 3d c
 
 ### Area
 
-Area charts emphasize the magnitude of change over time, and can be used to draw attention to the total value across a trend. Method {api:anychart#area3d}**.area3d()**{api} 3D plot for your series. Use your data as parameter for {api:anychart.core.radar.series.Area3d}**.area3d()**{api} method to visualize it as 3D area series.
+Area charts emphasize the magnitude of change over time, and can be used to draw attention to the total value across a trend. Method {api:anychart#area3d}**.area3d()**{api} 3D plot for your series. Use your data as parameter for {api:anychart.core.cartesian.series.Area3d}**.area3d()**{api} method to visualize it as 3D area series.
 
 ```
   // define data set
@@ -47,7 +46,7 @@ Here is a sample how simple 3d area looks like:
 
 ### Bar
 
-3D bar chart can be created as area chart. Firstly, you have to create 3d chart plot using {api:anychart#bar3d}**.bar3d()**{api} method. After creating the plot pass data to {api:anychart.core.radar.series.Bar3d}**.bar3d()**{api} method just like that:
+3D bar chart can be created as area chart. Firstly, you have to create 3d chart plot using {api:anychart#bar3d}**.bar3d()**{api} method. After creating the plot pass data to {api:anychart.core.cartesian.series.Bar3d}**.bar3d()**{api} method just like that:
 
 ```
   // define data set
@@ -71,7 +70,7 @@ And here is a sample with the settings from above:
 
 ### Column
 
-3D column chart is very similar to 3D bar chart and it is a kind of vertically orientated 3D bar plot. 3D column plot is controlled by {api:anychart#column3d}**.column3d()**{api} method. Series creating works pretty much the same way as it does for 3D area and 3D bar series - you just pass your data to {api:anychart.core.radar.series.Column3d}**.column3d()**{api} method.
+3D column chart is very similar to 3D bar chart and it is a kind of vertically orientated 3D bar plot. 3D column plot is controlled by {api:anychart#column3d}**.column3d()**{api} method. Series creating works pretty much the same way as it does for 3D area and 3D bar series - you just pass your data to {api:anychart.core.cartesian.series.Column3d}**.column3d()**{api} method.
 
 ```
   // define data set

@@ -51,52 +51,24 @@ This type of area chart makes your data look a bit more attractive: points and a
   chart.splineArea(seriesData_1);
 ```
 
-<!--Also, let's add area tooltips and make them more informative, to that we will change their format:
-
-XML Syntax
-XML Code
-Plain code
-01
-<area_series>
-02
-  <tooltip_settings enabled="true">
-03
-    <format><![CDATA[{%SeriesName} - {%Value}$ - {%YPercentOfCategory}{numDecimals:2}%]]></format>
-04
-  </tooltip_settings>
-05
-</area_series>-->
 Here is a sample of a spline stacked area chart:
 
 {sample}BCT_Percent-Stacked\_Area-SplineArea\_Charts\_02{sample}
-<!--
-<a name="percent"/>
-## Adding "%" to axis labels
 
-If you want to add percent symbol to axis labels - format the axis labels in the following way:
+## 3D Stacked Area
 
-XML Syntax
-XML Code
-Plain code
-01
-<axes>
-02
-  <y_axis>
-03
-    <labels align="inside">
-04
-      <format><![CDATA[{%Value}%]]></format>
-05
-    </labels>
-06
-    <scale mode="PercentStacked" maximum="100" />
-07
-  </y_axis>
-08
-</axes>
-Here is a sample stacked area chart with "%" labels, and notice align="inside" in <labels> node - this is an attribute that aligns labels.
+It requires a simple adjustment to tern common area chart into a 3D one.
 
-Live Sample:  Sample Percent Stacked Area Chart Percent Labels
+```
+var chart = anychart.area3d();
+var series1 = chart.area3d(dataSet1);
+series1.name("Sales 2009");
+var series2 = chart.area3d(dataSet2);
+series2.name("Sales 2010");
+var series3 = chart.area3d(dataSet3);
+series3.name("Sales 2011");
+```
 
-Current Page Online URL: Percent Stacked Line/Spline/StepLine Chart
--->
+And here is a sample of percent stacked 3D area chart:
+
+{sample}BCT_Percent-Stacked\_Area-SplineArea\_Charts\_03{sample}
