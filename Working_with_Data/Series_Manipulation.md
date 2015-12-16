@@ -71,12 +71,12 @@ while (chart.getSeriesAt(i)){
 }
 
 function counter(number){
-	switch ((number+1)%10){
-		case 1: return "st";
-		case 2: return "nd";
-		case 3: return "rd";
-		default: return "th";
-	}
+    switch ((number+1)%10){
+        case 1: return "st";
+        case 2: return "nd";
+        case 3: return "rd";
+        default: return "th";
+    }
 }
 ```
 
