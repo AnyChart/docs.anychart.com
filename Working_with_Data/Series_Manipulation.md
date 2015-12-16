@@ -71,45 +71,45 @@ while (chart.getSeriesAt(i)){
 }
 
 function counter(number){
-  switch ((number+1)%10){
-    case 1: return "st";
-    case 2: return "nd";
-    case 3: return "rd";
-    default: return "th";
-  }
+	switch ((number+1)%10){
+		case 1: return "st";
+		case 2: return "nd";
+		case 3: return "rd";
+		default: return "th";
+	}
 }
 ```
 
 Moreover, the exact number of chart's series at current time can be found out using {api:anychart.charts.Cartesian#getSeriesCount}**.getSeriesCount()**{api} method.
   
   
-Below is a sample with demonstration of the code from above. Each series was renamed. The chart's legend was enabled to demonstrate series names.
+Below there is a sample with demonstration of the code from above. Each series was renamed. The chart's legend was enabled to demonstrate series names.
 
 {sample}CRUD\_08{sample}
 
 #### ID
 
-Another way to get one of series is to use series id. Method {api:anychart.core.cartesian.series.Base#id}**.id()**{api} sets a unique identificator for a series to simplify further series manipulations. After setting custom id, the series can be obtained using {api:anychart.charts.Cartesian#getSeries}**.getSeries()**{api} method with series id as a parameter.
+Another way to get one of the series is to use series id. Method {api:anychart.core.cartesian.series.Base#id}**.id()**{api} sets a unique identificator for a series to simplify further series manipulations. After setting custom id, the series can be obtained using {api:anychart.charts.Cartesian#getSeries}**.getSeries()**{api} method with the series id as a parameter.
 
 ```
-  // create chart
-  var chart = anychart.column();
+// create chart
+var chart = anychart.column();
 
-  // create variable for series
-  var series;
-  // create first series
-  series = chart.column(data1);
-  // set id for the first series
-  series.id("First Series");
-  // create second series
-  series = chart.column(data2);
-  // set id for second series
-  series.id("Second Series");
+// create variable for series
+var series;
+// create first series
+series = chart.column(data1);
+// set id for the first series
+series.id("First Series");
+// create second series
+series = chart.column(data2);
+// set id for second series
+series.id("Second Series");
 
-  // get first series
-  series = chart.getSeries("First Series");
-  // rename first series
-  series.name("First Series");
+// get first series
+series = chart.getSeries("First Series");
+// rename first series
+series.name("First Series");
 ```
 
 ### Removing Series
@@ -117,20 +117,20 @@ Another way to get one of series is to use series id. Method {api:anychart.core.
 As far as any chart can be adjusted at any time there may be a need in removing some of chart's series. If you know the id of the series that should be removed, invoke {api:anychart.charts.Cartesian#removeSeries}**.removeSeries()**{api} method and use series ID as a parameter for this method. In the situation, when the series has no ID it can be removed using {api:anychart.charts.Cartesian#removeSeriesAt}**.removeSeriesAt()**{api} method. Method {api:anychart.charts.Cartesian#removeSeriesAt}**.removeSeriesAt()**{api} uses series index as a parameter and removes the series with the index.
 
 ```
-  // create chart
-  var chart = anychart.bar();
+// create chart
+var chart = anychart.bar();
 
-  // create 3 series
-  chart.addSeries(data0, data1, data2);
+// create 3 series
+chart.addSeries(data0, data1, data2);
 
-  // remove third series
-  chart.removeSeriesAt(2);
+// remove third series
+chart.removeSeriesAt(2);
 ```
 
-Along with removing series one by one you can remove all series of the chart using one single method. Call {api:anychart.charts.Cartesian#removeAllSeries}**.removeAllSeries()**{api} method to remove every series of the current chart. Note, that data sets and data mapping help to prevent original data affection while managing series and series data.
+Along with removing series one by one you can remove all series of the chart using one single method. Call {api:anychart.charts.Cartesian#removeAllSeries}**.removeAllSeries()**{api} method to remove all series of the current chart. Note, that data sets and data mapping help to prevent original data affection while managing series and series data.
   
   
-Click on a labels in the sample below to add/remove series on the chart's plot.
+Click on a label in the sample below to add/remove series on the chart's plot.
 
 {sample}CRUD\_09{sample}
 
