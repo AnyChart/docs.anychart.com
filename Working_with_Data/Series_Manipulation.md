@@ -1,5 +1,5 @@
 {:index 4}
-# Data Manipulation
+# Series Manipulation
 
 * [Overview](#overview)
 * [Adding Series](#adding_series)
@@ -10,24 +10,24 @@
 
 ## Overview
 
-Series is a single set of data, that is visualized on the chart's plot. Series has a type and series data can be changed any time you want. You'll see updated visualization instantly.
+Series is a single set of data, that is visualized on a chart's plot. Series has a type and series data can be changed any time you want. You'll see updated visualization instantly.
   
   
 **Note**: This article contains information about managing charts series only. Information about managing series data can be found in [Data Manipulation article](../Working_with_Data/Data_Manipulation).
 
 ## Adding Series
 
-In most cases you can create a new series by using method that is named after the series type (such as {api:anychart.charts.Cartesian#column}**.column()**{api}, {api:anychart.charts.Cartesian#bar}**.bar()**{api}, {api:anychart.charts.Cartesian#area}**.area()**{api}, etc.) and use data array as a parameter for the method. But this way of setting series isn't convenient for managing lot's of series. There is another way to create multiple series. Method {api:anychart.charts.Cartesian#addSeries}**.addSeries()**{api} can create any number of series on the chart's plot. Data for the method can be passed in different formats: it can be a simple array of data objects, a data set or a data view. You can pass any number of parameters to create a series for each of these parameters. But before adding series, you have to define the type of the series. You can set desirable series type with {api:anychart.charts.Cartesian#defaultSeriesType}**.defaultSeriesType()**{api} method.
+In most cases you can create a new series by using method that is named after the series type (such as {api:anychart.charts.Cartesian#column}**.column()**{api}, {api:anychart.charts.Cartesian#bar}**.bar()**{api}, {api:anychart.charts.Cartesian#area}**.area()**{api}, etc.) and use data array as a parameter for the method. But there is one more way of creating multi-series chart. Method {api:anychart.charts.Cartesian#addSeries}**.addSeries()**{api} can create any number of series on the chart's plot. Data for the method can be passed in different formats: it can be a simple array of data objects, a data set or a data view. You can pass any number of parameters to create a series for each of these parameters. But before adding series, you have to define the type of the series. You can set the series type with the {api:anychart.charts.Cartesian#defaultSeriesType}**.defaultSeriesType()**{api} method.
 
 ```
-  // set chart type
-  var chart = anychart.bar();
+// set chart type
+var chart = anychart.bar();
 
-  // set default series type
-  chart.defaultSeriesType("bar");
+// set default series type
+chart.defaultSeriesType("bar");
 
-  // create series
-  chart.addSeries(data1, data2, data3);
+// create series
+chart.addSeries(data1, data2, data3);
 ```
 
 All the series in the sample below was added using {api:anychart.charts.Cartesian#addSeries}**.addSeries()**{api} method. Open the sample in playground to examine the code.
@@ -40,44 +40,44 @@ After adding multiple series you may need to get one of them for further adjustm
 
 #### Index
 
-Every chart's series has an index and this index can be used to get series for further manipulations. Method {api:anychart.charts.Cartesian#getSeriesAt}**.getSeriesAt()**{api} can be used to obtain a series and this method uses series index as a parameter.
+Each series has an index and this index can be used to get series for further manipulations. Method {api:anychart.charts.Cartesian#getSeriesAt}**.getSeriesAt()**{api} can be used to obtain a series and it uses series index as a parameter.
 
 ```
-  // get forth series
-  var series = chart.getSeriesAt(3);
+// get forth series
+var series = chart.getSeriesAt(3);
 
-  // set series inner color
-  series.fill("red");
+// set series inner color
+series.fill("red");
 ```
 
 If you try to pass number which exceeds amount of series on current chart, the **null** will be returned. This makes it quite continent to adjust each of chart's series using **while** loop. Here is how it is done.
 
 ```
-  // create chart
-  var chart = anychart.column();
-  
-  // define default series type
-  chart.defaultSeriesType("column");
-  
-  // set data for multiple series
-  chart.addSeries(data1, data2, data3);
-  
-  var i=0;
-  // create a loop
-  while (chart.getSeriesAt(i)){
-    // rename each series
-    chart.getSeriesAt(i).name((i+1)+counter(i+1)+" Series");
-    i++;
+// create chart
+var chart = anychart.column();
+
+// define default series type
+chart.defaultSeriesType("column");
+
+// set data for multiple series
+chart.addSeries(data1, data2, data3);
+
+var i=0;
+// create a loop
+while (chart.getSeriesAt(i)){
+  // rename each series
+  chart.getSeriesAt(i).name((i+1)+counter(i+1)+" Series");
+  i++;
+}
+
+function counter(number){
+  switch ((number+1)%10){
+    case 1: return "st";
+    case 2: return "nd";
+    case 3: return "rd";
+    default: return "th";
   }
-  
-  function counter(number){
-    switch ((number+1)%10){
-      case 1: return "st";
-      case 2: return "nd";
-      case 3: return "rd";
-      default: return "th";
-    }
-  }
+}
 ```
 
 Moreover, the exact number of chart's series at current time can be found out using {api:anychart.charts.Cartesian#getSeriesCount}**.getSeriesCount()**{api} method.
