@@ -26,14 +26,17 @@
 	var chart = anychart.column3d();
 
 	// chart title
-	chart.title().text("Stacked Column Chart");
+	chart.title("Stacked Column Chart");
 
 	// set axes title
-	chart.xAxis().title().text("Month");
-	chart.yAxis().title().text("Temperature");
+	var xAxis = chart.xAxis();
+	xAxis.title("Month");
+	var yAxis = chart.yAxis();
+	yAxis.title("Temperature");
 
 	// set stack mode
-	chart.yScale().stackMode("value");
+	var yScale = chart.yScale();
+	yScale.stackMode("value");
 
 	// set data
 	chart.column3d(seriesData_1);
@@ -42,7 +45,8 @@
 	chart.column3d(seriesData_4);
 
 	// draw
-	chart.container("container").draw();
+	chart.container("container");
+	chart.draw();
 });</script>
 </head>
 <body>
