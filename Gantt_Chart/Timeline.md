@@ -28,6 +28,8 @@ This illustration highlights almost all major project timeline elements, and thi
 
 You can look up the [Project Chart](Project_Chart) article to know more about managing Gantt Charts of this type.
 
+Look at the samples or pictures of both Gantt diagram types. You can notice vertical borders on both types. These borders in the Data Grid part and the one that separates Data Grid and Timeline parts are splitters. They can be dragged: when you hover those splitters, you will how a mouse cursor will become of a typical kind for dragging. However, borders inside the Timetable are static, we cannot change its width.
+
 ## Markers
 
 There are three marker types we've got in Gantt Charts:
@@ -43,8 +45,8 @@ First of all, let's create 2 line markers: one showing the current date and seco
 ```
 	// create linemarkers
 	var tl = chart.getTimeline();
-	tl.lineMarker(0).value(anychart.enums.GanttDateTimeMarkers.CURRENT).stroke("4 red 0.5");
-	tl.lineMarker(1).value(now + 5*day).stroke({color: "grey", dash: '4 4', thickness: 4});
+	tl.lineMarker(0).value(anychart.enums.GanttDateTimeMarkers.CURRENT);
+	tl.lineMarker(1).value(now + 5*day);
 ```
 {sample}GANTT\_Timeline\_01{sample}
 
@@ -54,7 +56,7 @@ Now, look at the sample with a textMarker showing the planned finish date and a 
 
 ```
 	// creating a text marker
-	tl.textMarker(0).value(anychart.enums.GanttDateTimeMarkers.CURRENT).text("TODAY").fontSize(35).fontColor("blue").fontWeight("bold").fontOpacity(0.5);
+	tl.textMarker(0).value(anychart.enums.GanttDateTimeMarkers.CURRENT);
 	// creating a range marker
 	tl.rangeMarker(0).from(Date.UTC(2016, 0, 1)).to(anychart.enums.GanttDateTimeMarkers.END);
 	tl.rangeMarker(1).from(now - 7*day).to(anychart.enums.GanttDateTimeMarkers.CURRENT);
@@ -73,6 +75,16 @@ Due to unique organization of a Gantt diagram, there are some special features t
 
 ## Visualisation
 
-Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them. We use {api}**.fill()**{api} method to fill a rangeMarker with a color, {api}**.stroke()**{api} for stroking the markers, for text markers we use standard markers as well. We should format the objects transmitted to these methods as usual. 
+Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them. We use {api}**.fill()**{api} method to fill a rangeMarker with a color, {api}**.stroke()**{api} for stroking the markers, for text markers we use standard markers as well. There are some methods inherent to timeline only: {api:anychart.ui.ResourceTimeline#baseFill}**.baseFill**{api} for coloring all periods in the timeline, methods {api}**.rowOddFill()**{api} and {api}**.rowEvenFill()**{api} for coloring the timeline lines and {api}**.rowSelectedFill()**{api}, {api}**.rowHoverFill()**{api} for coloring the whole Gantt diagram lines. 
 
-Look at the samples or pictures of both Gantt diagram types. You can notice vertical borders on both types. These borders in the Data Grid part and the one that separates Data Grid and Timeline parts are splitters. They can be dragged: when you hover those splitters, you will how a mouse cursor will become of a typical kind for dragging. However, borders inside the Timetable are static, we cannot change its width.
+// надо придумать как написать понятно ушоб было
+
+
+We should format the objects transmitted to these methods as usual. 
+
+Let's create a sample with adjusted colors and text using those methods menthioned above:
+
+```
+
+```
+{sample}GANTT\_Timeline\_03{sample}

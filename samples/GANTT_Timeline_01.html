@@ -28,8 +28,8 @@
 
         // create linemarkers
         var tl = chart.getTimeline();
-        tl.lineMarker(0).value(anychart.enums.GanttDateTimeMarkers.CURRENT).stroke('4 red 0.5');
-        tl.lineMarker(1).value(now + 5*day).stroke({color: 'grey', dash: '4 4', thickness: 4});
+        tl.lineMarker(0).value(anychart.enums.GanttDateTimeMarkers.CURRENT);
+        tl.lineMarker(1).value(now + 5*day);
 
     // get chart data grid link to set column settings
     var dataGrid = chart.dataGrid();
