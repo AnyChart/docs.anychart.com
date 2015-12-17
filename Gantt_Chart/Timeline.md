@@ -7,8 +7,6 @@
 * [Markers](#markers)
  * [Special Features](#special_features)
 * [Visualisation](#visualisation)
- * [Hover](#altering_hover)
- * [Select](#altering_select)
 
 ## Overview
 
@@ -18,7 +16,7 @@ Timeline of a Project Chart is rather different from a timeline of a Resoure Gan
 ### Resource Gantt Chart
 This illustration highlights almost all major resource timeline elements, and this tutorial will describe how each element is configured:
 
-<img src ="http://static.anychart.com/images/resource_timeline.jpg" align  />
+<img width="700" src ="http://static.anychart.com/images/resource_timeline.jpg" />
 
 You can look up the [Resource Chart](Resource_Chart) article to know more about managing Gantt Charts of this type.
 
@@ -26,7 +24,7 @@ You can look up the [Resource Chart](Resource_Chart) article to know more about 
 ### Project Gantt Chart
 This illustration highlights almost all major project timeline elements, and this tutorial will describe how each element is configured:
 
-/картинка/
+<img width="700" src ="http://static.anychart.com/images/project_timeline.jpg" />
 
 You can look up the [Project Chart](Project_Chart) article to know more about managing Gantt Charts of this type.
 
@@ -72,11 +70,9 @@ Due to unique organization of a Gantt diagram, there are some special features t
 * Methods {api}**.scale**{api} and {api}**.layout**{api} return links to the API reference and transmit message to the console with a warning telling that they are not able to work. The point is that these methods can have no other values but "dateTime" scale and "vertical" layout.
 * There are three special values for setting to the text markers' {api}**.value()**{api} method: "start" and "end" to the range markers' {api}**.from()**{api} and {api}**.to()**{api}. The "value" returns the current date, "start" - the start date of the gantt chart timeline and "end" returns the end date of the whole Gantt diagram.
 
+
 ## Visualisation
 
 Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them. We use {api}**.fill()**{api} method to fill a rangeMarker with a color, {api}**.stroke()**{api} for stroking the markers, for text markers we use standard markers as well. We should format the objects transmitted to these methods as usual. 
 
 Look at the samples or pictures of both Gantt diagram types. You can notice vertical borders on both types. These borders in the Data Grid part and the one that separates Data Grid and Timeline parts are splitters. They can be dragged: when you hover those splitters, you will how a mouse cursor will become of a typical kind for dragging. However, borders inside the Timetable are static, we cannot change its width.
-
-### Hover
-### Select
