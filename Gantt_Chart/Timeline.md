@@ -48,7 +48,7 @@ First of all, let's create 2 line markers: one showing the current date and seco
 	tl.lineMarker(0).value(anychart.enums.GanttDateTimeMarkers.CURRENT);
 	tl.lineMarker(1).value(now + 5*day);
 ```
-{sample}GANTT\_Timeline\_01{sample}
+{sample :width 825 :height 230 }GANTT\_Timeline\_01{sample}
 
 As you see, we can define some parameters of each linemarker such as color, dashes or thickness using {api}**.stroke()**{api} method. Its usage is absolutely usual: parameters sent to this method should be formatted completely the same as for any ohter Line Chart {api}**.stroke()**{api} method.
 
@@ -61,7 +61,7 @@ Now, look at the sample with a textMarker showing the planned finish date and a 
 	tl.rangeMarker(0).from(Date.UTC(2016, 0, 1)).to(anychart.enums.GanttDateTimeMarkers.END);
 	tl.rangeMarker(1).from(now - 7*day).to(anychart.enums.GanttDateTimeMarkers.CURRENT);
 ```
-{sample}GANTT\_Timeline\_02{sample}
+{sample :width 825 :height 300 }GANTT\_Timeline\_02{sample}
 
 
 ### Special Features
@@ -75,7 +75,7 @@ Due to unique organization of a Gantt diagram, there are some special features t
 
 ## Visualisation
 
-Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them. We use {api}**.fill()**{api} method to fill a rangeMarker with a color, {api}**.stroke()**{api} for stroking the markers, for text markers we use standard markers as well. 
+Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them. We use {api}**.fill()**{api} method to fill a rangeMarker with a color, {api}**.stroke()**{api} for stroking the markers; for text markers we use standard markers as well. 
 
 We should format the objects transmitted to these methods as usual. 
 
@@ -205,3 +205,74 @@ There are some methods inherent to the timeline only. You can see a table below 
 </tbody>
 </table>
 
+There are two ways of defining colors and other visualization params: through those methods as usual or through the data while setting it. Using dataset to define some visualization settings gives you more flexibility as you can affect each data point separately, while methods act on all elements of each type together; also, we can affect only data points when we use the dataset. Let's try to create a couple of samples using both these ways.
+
+Below you can find a sample of a Resource Gantt Chart where we set the rows' colors using {api:anychart.core.ui.Timeline#rowEvenFill}**.rowEvenFill()**{api}, {api:anychart.core.ui.Timeline#rowOddFill}**.rowOddFill()**{api}, {api:anychart.core.ui.Timeline#rowHoverFill}**.rowHoverFill()**{api}, {api:anychart.core.ui.Timeline#rowSelectedFill}**.rowSelectedFill()**{api} methods, the selected elements' colors using {api:anychart.core.ui.Timeline#selectedElementFill}**.selectedElementFill()**{api} and {api:anychart.core.ui.Timeline#selectedElementStroke}**.selectedElementStroke()**{api} and change some data points' colors through the dataset.
+
+```
+	// set colors to the rows in the timeline section
+	tl.rowEvenFill("#FFF3E0 0.5");
+	tl.rowOddFill("#E0F7FA 0.5");
+	tl.rowHoverFill("#eee");
+	tl.rowSelectedFill("#FFAB91");
+
+	// set colors for selected elements
+	tl.selectedElementFill("#FFAB00");
+	tl.selectedElementStroke("#B8AA96");
+
+	function getData() {
+    return [
+	{
+    "id": "1",
+    "name": "Alex Exler",
+    "periods": [
+	{"id": "1_1", "start": now - 10*day, "end": now + 4*day, "stroke": "#B8AA96", "fill": {"angle": 90, "keys": [{"color": "#CFC0A9", "position": 0}, {"color": "#E6D5BC", "position": 0.38}, {"color": "#E8D9C3", "position": 1}]}},
+	{"id": "1_2", "start": now + 20*day, "end": now + 28*day, "stroke": "#B8AA96", "fill": {"angle": 90, "keys": [{"color": "#CFC0A9", "position": 0}, {"color": #E6D5BC", "position": 0.38}, {"color": "#E8D9C3", "position": 1}]}}]
+	}
+
+
+```
+
+{sample}GANTT\_Timeline\_04{sample}
+
+
+Now, let's look at the Project Gantt Chart with parameters adjusted the same way. Here we made the milestones using {api:anychart.core.ui.Timeline#milestoneFill}**.milestoneFill()**{api}, {api:anychart.core.ui.Timeline#milestoneStroke}**.milestoneStroke()**{api} and connnectors (with {api:anychart.core.ui.Timeline#progressFill}**.connectorFill()**{api} and {api:anychart.core.ui.Timeline#progressStroke}**.connectorStroke()**{api} methods) of the custom colors, as well as some of the data points, using the dataset.
+
+```
+	// set colors for milestones
+    tl.milestoneFill("#4A148C");
+    tl.milestoneStroke("#1A237E");
+
+	// set colors for the connectors
+    tl.connectorFill("#0D47A1");
+    tl.connectorStroke("#90CAF9");
+
+	function getData() {
+	var now = (new Date()).getTime();
+	var sec = 1000;
+	var min = 60 * sec;
+	var hour = 60 * min;
+	var day = 24 * hour;
+	return [
+    {
+        "id": "8",
+        "name": "Interview owners of similar businesses",
+        parent: "6",
+        "progressValue": "60%",
+        "actualStart": (now + 5 * day),
+        "actualEnd": (now + 15 * day),
+        "connectTo": "9",
+        "actual": {
+            "fill": "red"
+        },
+        "progress": {
+            "fill": {
+                "color": "black",
+                "opacity": 0.3
+            }  
+        },
+        "connectorType": "FinishStart"
+    },
+```
+
+{sample}GANTT\_Timeline\_05{sample}
