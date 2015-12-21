@@ -71,3 +71,28 @@ Due to unique organization of a Gantt diagram, there are some special features t
 * Any type of Gantt diagram will return "false" for {api}**.isHorizontal()**{api} method, because markers in Gantts can be only vertical.
 * Methods {api}**.scale**{api} and {api}**.layout**{api} return links to the API reference and transmit message to the console with a warning telling that they are not able to work. The point is that these methods can have no other values but "dateTime" scale and "vertical" layout.
 * There are three special values for setting to the text markers' {api}**.value()**{api} method: "start" and "end" to the range markers' {api}**.from()**{api} and {api}**.to()**{api}. The "value" returns the current date, "start" - the start date of the gantt chart timeline and "end" returns the end date of the whole Gantt diagram.
+
+
+## Visualisation
+
+Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them. We use {api}**.fill()**{api} method to fill a rangeMarker with a color, {api}**.stroke()**{api} for stroking the markers, for text markers we use standard markers as well. 
+
+We should format the objects transmitted to these methods as usual. 
+
+Let's create a sample with adjusted marker colors and text using those methods menthioned above:
+
+```
+        // creating and coloring a line marker
+        tl.lineMarker(0).value(Date.UTC(2007, 1, 29));
+        tl.lineMarker(0).stroke('2 #FFE4C4');
+        // creating and adjusting a text marker
+        tl.textMarker(0).value(Date.UTC(2007, 1, 29));
+        // changing the text setting
+        tl.textMarker(0).text('Text Marker').fontSize(15).fontColor('blue').fontWeight('bold').fontOpacity(0.5);
+        // creating and coloring a range marker
+        tl.rangeMarker(0).from(Date.UTC(2007, 0, 20)).to(Date.UTC(2007, 0, 25));
+        tl.rangeMarker(0).fill('#FFE4C4 0.5');
+```
+{sample}GANTT\_Timeline\_03{sample}
+
+There are some methods inherent to the timeline only. You can see a table below with all timeline methods which can be used to change the color scheme of your Gantt diagram.
