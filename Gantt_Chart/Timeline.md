@@ -98,13 +98,13 @@ Let's create a sample with adjusted marker colors and text using those methods m
 There are some methods inherent to the timeline only. You can see a table below with all timeline methods which can be used to change the color scheme of your Gantt diagram.
 
 <table width="700" border="1" class="dtTABLE">
-  <tbody>
-    <tr>
-        <th width="50"><b>#</b></th>
-        <th width="130"><b>Part of the timeline</b></th>
-        <th width="130"><b>Method</b></th>
-        <th width="130"><b>What for</b></th>
-    </tr>
-  </tbody>
+<tbody>
+<tr>
+<th width="50"><b>#</b></th>
+<th width="130"><b>Part of the timeline</b></th>
+<th width="130"><b>Method</b></th>
+<th width="130"><b>What for</b></th>
+</tr>
+</tbody>
 </table>
 
