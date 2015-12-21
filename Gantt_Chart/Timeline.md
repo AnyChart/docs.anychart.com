@@ -93,7 +93,7 @@ Let's create a sample with adjusted marker colors and text using those methods m
         tl.rangeMarker(0).from(Date.UTC(2007, 0, 20)).to(Date.UTC(2007, 0, 25));
         tl.rangeMarker(0).fill('#FFE4C4 0.5');
 ```
-{sample}GANTT\_Timeline\_03{sample}
+{sample :width 825 :height 300 }GANTT\_Timeline\_03{sample}
 
 There are some methods inherent to the timeline only. You can see a table below with all timeline methods which can be used to change the color scheme of your Gantt diagram.
 
@@ -233,7 +233,7 @@ Below you can find a sample of a Resource Gantt Chart where we set the rows' col
 
 ```
 
-{sample}GANTT\_Timeline\_04{sample}
+{sample :width 825 :height 230 }GANTT\_Timeline\_04{sample}
 
 
 Now, let's look at the Project Gantt Chart with parameters adjusted the same way. Here we made the milestones using {api:anychart.core.ui.Timeline#milestoneFill}**.milestoneFill()**{api}, {api:anychart.core.ui.Timeline#milestoneStroke}**.milestoneStroke()**{api} and connnectors (with {api:anychart.core.ui.Timeline#progressFill}**.connectorFill()**{api} and {api:anychart.core.ui.Timeline#progressStroke}**.connectorStroke()**{api} methods) of the custom colors, as well as some of the data points, using the dataset.
@@ -275,4 +275,4 @@ Now, let's look at the Project Gantt Chart with parameters adjusted the same way
     },
 ```
 
-{sample}GANTT\_Timeline\_05{sample}
+{sample :width 825 :height 300 }GANTT\_Timeline\_05{sample}
