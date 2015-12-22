@@ -87,18 +87,15 @@ Also, you can get the exact number of series in a chart using {api:anychart.char
   for (var i=0; i<chart.getSeriesCount();i++){
     seriesIndexes.push(chart.getSeriesAt(i).index());
   }
-    
 ```
-Moreover, the exact number of chart's series at current time can be found out using {api:anychart.charts.Cartesian#getSeriesCount}**.getSeriesCount()**{api} method.
-  
-  
-Below there is a sample with demonstration of the code from above. Each series was renamed. The chart's legend was enabled to demonstrate series names.
+<!--Moreover, the exact number of chart's series at current time can be found out using {api:anychart.charts.Cartesian#getSeriesCount}**.getSeriesCount()**{api} method.-->
+Sample below demonstrates the code shown above. Each series is renamed and legend is enabled to show modified series names.
 
 {sample}CRUD\_08{sample}
 
 #### ID
 
-Another way to get one of the series is to use series id. Method {api:anychart.core.cartesian.series.Base#id}**.id()**{api} sets a unique identificator for a series to simplify further series manipulations. After setting custom id, the series can be obtained using {api:anychart.charts.Cartesian#getSeries}**.getSeries()**{api} method with the series id as a parameter.
+Another way to obtain a link to a series object is to use series id. {api:anychart.core.cartesian.series.Base#id}**.id()**{api} method sets a unique identifier for a series. After custom id is set, the link to a series object can be obtained using {api:anychart.charts.Cartesian#getSeries}**.getSeries()**{api} method with the series id as a parameter.
 
 ```
 // create chart
@@ -123,7 +120,7 @@ series.name("First Series");
 
 ### Removing Series
 
-As far as any chart can be adjusted at any time there may be a need in removing some of chart's series. If you know the id of the series that should be removed, invoke {api:anychart.charts.Cartesian#removeSeries}**.removeSeries()**{api} method and use series ID as a parameter for this method. In the situation, when the series has no ID it can be removed using {api:anychart.charts.Cartesian#removeSeriesAt}**.removeSeriesAt()**{api} method. Method {api:anychart.charts.Cartesian#removeSeriesAt}**.removeSeriesAt()**{api} uses series index as a parameter and removes the series with the index.
+As far as any chart can be adjusted or added at any time, you can also remove any series. If you know the id of the series that should be removed, invoke {api:anychart.charts.Cartesian#removeSeries}**.removeSeries()**{api} method and use series ID as a parameter for this method. In the situation, when the series has no ID it can be removed using {api:anychart.charts.Cartesian#removeSeriesAt}**.removeSeriesAt()**{api} method. {api:anychart.charts.Cartesian#removeSeriesAt}**.removeSeriesAt()**{api} method uses series index as a parameter and removes the series with the given index.
 
 ```
 // create chart
@@ -136,13 +133,13 @@ chart.addSeries(data0, data1, data2);
 chart.removeSeriesAt(2);
 ```
 
-Along with removing series one by one you can remove all series of the chart using one single method. Call {api:anychart.charts.Cartesian#removeAllSeries}**.removeAllSeries()**{api} method to remove all series of the current chart. Note, that data sets and data mapping help to prevent original data affection while managing series and series data.
+Along with removing series one by one you can remove all series from the chart using one single method. Call {api:anychart.charts.Cartesian#removeAllSeries}**.removeAllSeries()**{api} method to remove all series from the current chart. Note, that if you use data sets and data mapping - the original data will not be totally lost while managing series and series data.
   
   
-Click on a label in the sample below to add/remove series on the chart's plot.
+Click the labels in the sample below to add or remove series.
 
 {sample}CRUD\_09{sample}
 
-As a conclusion of this section here is a bit sophisticated sample with advanced opportunities of series manipulation.
+As a conclusion of this section you can study this (a little bit) sophisticated sample of series manipulation.
 
 {sample}CRUD\_10{sample}
