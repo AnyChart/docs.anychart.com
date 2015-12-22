@@ -36,7 +36,7 @@ All the series in the sample below are added using {api:anychart.charts.Cartesia
 
 ### Identifying Series
 
-When you add multiple series in such way you may need to obtain a link to some or all of of them for further adjustments. You can use either series id or series index to achieve it.
+When you add multiple series in such way you may need to obtain a link to some or all of of them for further adjustments. You can use either series id or series index to achieve it.<!--This section contains information on both series index and series id.-->
 
 #### Index
 
