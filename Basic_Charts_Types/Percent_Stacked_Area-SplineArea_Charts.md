@@ -4,6 +4,7 @@
 * [Overview](#overview)
 * [Chart](#chart)
 * [Spline Stacked Area](#spline_stacked_area)
+* [3D Stacked Area](#3d_stacked_area)
 <!-- * [Adding "%" to axis labels](#percent)-->
 
 ## Overview

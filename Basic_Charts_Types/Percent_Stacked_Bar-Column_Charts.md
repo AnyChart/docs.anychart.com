@@ -4,6 +4,7 @@
  * [Overview](#overview)
  * [Chart](#chart)
  * [Stacked Bar](#stacked_bar)
+ * [3D Stacked Column Chart](#3d_stacked_column_chart)
 <!-- * [Adding "%" to axis labels](#percent) -->
 
 ## Overview

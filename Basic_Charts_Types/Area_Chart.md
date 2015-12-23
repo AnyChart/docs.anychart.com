@@ -198,7 +198,7 @@ var chart = anychart.area3d();
 chart.area3d(data);
 ```
 
-As you can see from the snippet from above, you need to use {api:anychart.core.cartesian.series.Area3d}**.area3d()**{api} method to create 3D area series. Here is a sample of 3D area chart:
+As you can see from the snippet above, you need to use {api:anychart.core.cartesian.series.Area3d}**.area()**{api} method to create 3D area series. Here is a sample of a 3D area chart:
 
 {sample}BCT\_AreaChart\_12{sample}
 

@@ -152,7 +152,7 @@ As we do in single-series bar sample above we need to convert this data, the onl
 
 ### 3D Series
 
-You can easily display one or multiple series of bars in 3D mode. Use {api:anychart#bar3d}**.bar3d()**{api} method to enable bar 3D mode. If you have a single series of data you can use it as a parameter for the method and it will work pretty fine. For creating multiple 3D series you need to invoke {api:anychart.core.cartesian.series.Bar3d}**.bar3d()**{api} method for each of the series with your data as a parameter for these series.
+You can easily display one or multiple series of bars in 3D mode. Use {api:anychart#bar3d}**.bar3d()**{api} method to enable bar 3D mode. If you have a single series of data you can use it as a parameter for the {api:anychart#bar3d}**.bar3d()**{api} method and it will work pretty fine. For creating multiple 3D series you need to invoke {api:anychart.core.cartesian.series.Bar3d}**.bar()**{api} method for each of the series with your data as a parameter for these series.
 
 ```
 // data

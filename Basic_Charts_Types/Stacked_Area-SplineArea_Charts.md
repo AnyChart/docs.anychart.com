@@ -5,6 +5,7 @@
  * [Chart](#chart)
  * [Spline Stacked Area](#spline_stacked_area)
  * [Step Stacked Area](#step_stacked_area)
+ * [3D Series](#3d_series)
 
 ## Overview
 

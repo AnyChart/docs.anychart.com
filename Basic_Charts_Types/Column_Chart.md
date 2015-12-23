@@ -182,7 +182,7 @@ Let's set {api:anychart#column}**.column()**{api} chart type as default one and 
 
 ### 3D Series
 
-Along with common series appearance you can enable 3D mode for column chart. Use {api:anychart#column3d}**.column3d()**{api} method to enable 3D mode. 3D column series are controlled by {api:anychart.core.cartesian.series.Column3d}**.column3d()**{api} method.
+Along with common series appearance you can enable 3D mode for column chart. Use {api:anychart#column3d}**.column3d()**{api} method to enable 3D mode. 3D column series are controlled by the {api:anychart.core.cartesian.series.Column3d}**.column()**{api} method.
 
 ```
 // define data set

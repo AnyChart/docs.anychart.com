@@ -4,7 +4,7 @@
 * [Overview](#overview)
 * [Single Series](#single_series)
  * [Area](#area)
- * [Bar](#bar)
+ * [Bar](#bar_chart)
  * [Column](#column)
  * [Pie](#pie)
 * [Multiple Series](#multiple_series)
@@ -22,7 +22,7 @@ Depending on the data model and visualization purpose you can use different 3d c
 
 ### Area
 
-Area charts emphasize the magnitude of change over time, and can be used to draw attention to the total value across a trend. Method {api:anychart#area3d}**.area3d()**{api} creates 3D plot for your series. Use your data as parameter for {api:anychart.core.cartesian.series.Area3d}**.area3d()**{api} method to visualize it as 3D area series.
+Area charts emphasize the magnitude of change over time, and can be used to draw attention to the total value across a trend. Method {api:anychart#area3d}**.area3d()**{api} creates 3D plot for your series. Use your data as a parameter for {api:anychart.core.cartesian.series.Area3d}**.area()**{api} method to visualize it as 3D area series.
 
 ```
 // define data set
@@ -37,16 +37,17 @@ var data = anychart.data.set([
 var chart = anychart.area3d();
 
 // create series
-chart.area3d(data);
+chart.area(data);
 ```
 
 Here is a sample how simple 3d area looks like:
 
 {sample}BCT\_3d\_01{sample}
 
+<a name="bar_chart"></a>
 ### Bar
 
-3D bar chart can be created as easy as area chart. Firstly, you have to create 3d chart plot using {api:anychart#bar3d}**.bar3d()**{api} method. After creating the plot pass data to {api:anychart.core.cartesian.series.Bar3d}**.bar3d()**{api} method just like that:
+3D bar chart can be created as easy as area chart. Firstly, you have to create 3d chart plot using {api:anychart#bar3d}**.bar3d()**{api} method. After creating the plot pass your data to {api:anychart.core.cartesian.series.Bar3d}**.bar()**{api} method just like that:
 
 ```
 // define data set
@@ -61,7 +62,7 @@ var data = anychart.data.set([
 var chart = anychart.bar3d();
 
 // create series
-chart.bar3d(data);
+chart.bar(data);
 ```
 
 And here is a sample with the settings from above:
@@ -70,7 +71,7 @@ And here is a sample with the settings from above:
 
 ### Column
 
-3D column chart is very similar to 3D bar chart and it is a kind of vertically orientated 3D bar plot. 3D column plot is controlled by {api:anychart#column3d}**.column3d()**{api} method. Series creating works pretty much the same way as it does for 3D area and 3D bar series - you just pass your data to {api:anychart.core.cartesian.series.Column3d}**.column3d()**{api} method.
+3D column chart is very similar to 3D bar chart and it is a kind of vertically orientated 3D bar plot. 3D column plot is controlled by {api:anychart#column3d}**.column3d()**{api} method. After creating chart’s plot you need to pass your data to {api:anychart.core.cartesian.series.Column3d}**.column()**{api} method to create 3d column series.
 
 ```
 // define data set
@@ -85,14 +86,14 @@ var data = anychart.data.set([
 var chart = anychart.column3d();
 
 // create series
-chart.column3d(data); 
+chart.column(data); 
 ```
 
 {sample}BCT\_3d\_03{sample}
 
 ### Pie
 
-3D pie chart is a of presenting single series of data. Use **.pie3d()** method to enable 3D mode for pie chart.
+3D pie chart is a way of presenting single series of data as a percentage of the whole pie. Use {api:anychart#pie3d}**.pie3d()**{api} method to enable 3D mode for pie chart.
 
 ```
 // define data set
@@ -153,8 +154,11 @@ Here is a sample of multi-series bar chart
 Value stacked 3d charts are multi-series charts that display series point value upon the same point of the previous series. To enable value stacked mode you need to call {api:anychart.scales.Linear#stackMode}**.stackMode()**{api} method with **value** parameter. The {api:anychart.scales.Linear#stackMode}**.stackMode()**{api} method should be invoked for chart's y scale. Chart's y scale is controlled by {api:anychart.charts.Cartesian3d#yScale}**.yScale()**{api} method. Here is a snippet of setting value stacked mode:
 
 ```
+  // create chart 3d plot
   var chart = anychart.area3d();
+  // getter for y scale
   var yScale = chart.yScale();
+  // set "value" stacked mode
   yScale.stackMode("value");
 ```
 
@@ -170,8 +174,11 @@ Percent Stacked 3d charts is quite similar to a simple 2d percent stacked chart.
 To enable percent stacked mode you have to use {api:anychart.scales.Linear#stackMode}**.stackMode()**{api} method with **percent** parameter for chart's y scale.
 
 ```
-  var chart = anychart.column3d();
+  // create chart 3d plot
+  var chart = anychart.area3d();
+  // getter for y scale
   var yScale = chart.yScale();
+  // set "percent" stacked mode
   yScale.stackMode("percent");
 ```
 
