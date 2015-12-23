@@ -21,7 +21,7 @@ An example of proportional circles is shown below.
 
 <!-- The Bubble series in Maps is quite similar to the Basic Bubble series. The only difference about it is defining the center of each circle. While we can do it only one way in [Cartesian/Scatter](../Basic_Charts_Types/Bubble_Chart) - with the usage of necessary "x" and "value" fields and "size" for the bubbles' sizes, - in maps there are two options about doing that. We will consider them in this article. -->
 
-The Bubble series in Maps is quite similar to the Basic Bubble series. You can read about Bubble Charts in the [Bubble Chart tutorial](../Basic_Charts_Types/Bubble_Chart),  and in this article we will consider significant issues of Bubble charts used with maps.
+The Bubble series in Maps is quite similar to the Basic Bubble series. You can read about Bubble Charts in the [Bubble Chart tutorial](../Basic_Charts_Types/Bubble_Chart), and in this article we will consider significant issues of Bubble charts used with maps.
 
 ## Creating Bubbles
 
@@ -40,9 +40,9 @@ Bubble series is being created the same as other series on a map. First, we shou
 
 Let's now study the proper way of defining the data.
 
-<!--
-There are two ways of defining the data properly. Let's look at them.
 
+There are two ways of defining the data properly. Let's look at them.
+<!--
   ### Data
 
 The way of setting the data influence the bubble series view. 
@@ -100,6 +100,23 @@ var dataSet = anychart.data.set([
 
 
 ### Data
+
+First of all, we need to remember, how we define the location of any object (town, country, house, memorial, ship, etc) in the world. Wherever the point is placed on the Earth and however small it is, there are always two geographic coordinates specifying this point location: latitude and longitude.
+
+Latitude specifies the north-south position and longitude is the east-west coordinate of an object on the Earth's surface. Both are measured as angles: latitude is in a range from 0° at the Equator to 90° N at north and 90° S at south (or 90° and -90° accordingly); longitude is being ranged from 0° at the Prime Meridian to +180° eastward and −180° westward. We use this system of defining the point's location as the main one. Let's have a look at the sample below to understand the meaning of described.
+
+
+```
+```
+{sample}Maps\_Proportional\_Symbol\_01{sample}
+
+
+Now, let's look at another way of defining the points locations on a map, when an only necessary parameter is an 'id'.
+
+
+
+
+
 
 Setting the data for maps with bubbles is rather easy. There are only two fields necessary: "id" and "size". Set the necessary parameters for the map and the series:
 
