@@ -5,12 +5,13 @@
  * [Resource Gantt Chart](#resource_gantt_chart)
  * [Project Gantt Chart](#project_gantt_chart)
 * [Markers](#markers)
+ * [Enums](#enums)
  * [Special Features](#special_features)
 * [Visualisation](#visualisation)
 
 ## Overview
 
-Timeline is generally a part (usually the right one) of a Gantt diagram of both types. It shows processes durations (time periods), events with no duration (milestones) and connector between them, of which a whole task consists. Also there are a couple of decorative elements that help you to navigate through the timeline.
+Timeline is generally a part (usually the right one) of a Gantt diagram of both types. It shows processes durations (time periods), events with no duration (milestones) and connector between them, of which a whole task consists. Also there are a couple of elements that help you to navigate through the timeline.
 Timeline of a Project Chart is rather different from a timeline of a Resoure Gantt due to their different purpose. Later in this article we will look at both of them and consider that difference.
 
 ### Resource Gantt Chart
@@ -28,14 +29,14 @@ This illustration highlights almost all major project timeline elements, and thi
 
 You can look up the [Project Chart](Project_Chart) article to know more about managing Gantt Charts of this type.
 
-Look at the samples or pictures of both Gantt diagram types. You can notice vertical borders on both types. These borders in the Data Grid part and the one that separates Data Grid and Timeline parts are splitters. They can be dragged: when you hover those splitters, you will how a mouse cursor will become of a typical kind for dragging. However, borders inside the Timetable are static, we cannot change its width.
+Look at the samples or pictures of both Gantt diagram types. You can notice vertical borders on both types. These borders in the Data Grid part and the one that separates Data Grid and Timeline parts are splitters. They can be dragged: when you hover those splitters, you will how a mouse cursor will become of a typical kind for dragging.
 
 ## Markers
 
 There are three marker types we've got in Gantt Charts:
 
 * lineMarker - puts a vertical line at the defined date and marks this point
-* textMarker - to mark a point on a Gantt diagram with a word
+* textMarker - to mark a point on a Gantt diagram with a text label
 * rangeMarker - to highlight some parts of a Gantt Chart
 
 Let's make a couple of samples with these markers.
@@ -50,7 +51,8 @@ First of all, let's create 2 line markers: one showing the current date and seco
 ```
 {sample :width 825 :height 230 }GANTT\_Timeline\_01{sample}
 
-As you see, we can define some parameters of each linemarker such as color, dashes or thickness using {api}**.stroke()**{api} method. Its usage is absolutely usual: parameters sent to this method should be formatted completely the same as for any ohter Line Chart {api}**.stroke()**{api} method.
+As you see, we can define some parameters of each linemarker such as color, dashes or thickness using {api}**.stroke()**{api} method. It is used absolutely the same way as any other line settings with the
+{api}**.stroke()**{api} method.
 
 Now, look at the sample with a textMarker showing the planned finish date and a rangeMarker showing the remaining time.
 
@@ -63,13 +65,48 @@ Now, look at the sample with a textMarker showing the planned finish date and a 
 ```
 {sample :width 825 :height 300 }GANTT\_Timeline\_02{sample}
 
+You might have noticed, that we used values of enumerated type in those samples above as a point in time. There is a list of enums that we can use to place the markers. Let's look at them.
+
+
+### Enums
+
+Enum is e keywords used to declare an enumeration. Usually it is best to define an enum directly within a namespace so that all classes in the namespace can access it with equal convenience.
+
+<table width="700" class="dtTABLE">
+<tbody>
+<tr>
+<th width="50"><b>#</b></th>
+<th width="325"><b>Enum</b></th>
+<th width="325"><b>String value</b></th>
+<th width="325"><b>Means</b></th>
+</tr>
+<tr>
+<td>1</td>
+<td>anychart.enums.GanttDateTimeMarkers.START</td>
+<td>"start"</td>
+<td>The first time point in the Gantt diagram timeline</td>
+<tr>
+<td>2</td>
+<td>anychart.enums.GanttDateTimeMarkers.CURRENT</td>
+<td>"current"</td>
+<td>The current time point in the Gantt diagram timeline</td>
+</tr>
+<td>3</td>
+<td>anychart.enums.GanttDateTimeMarkers.END</td>
+<td>"end"</td>
+<td>The last time point in the Gantt diagram timeline</td>
+</tr>
+</tbody>
+</table>
+
+
 
 ### Special Features
 
 Due to unique organization of a Gantt diagram, there are some special features that should be mentioned.
 
 * Any type of Gantt diagram will return "false" for {api}**.isHorizontal()**{api} method, because markers in Gantts can be only vertical.
-* Methods {api}**.scale**{api} and {api}**.layout**{api} return links to the API reference and transmit message to the console with a warning telling that they are not able to work. The point is that these methods can have no other values but "dateTime" scale and "vertical" layout.
+* The {api}**.scale**{api} and {api}**.layout**{api} methods return links to the API reference and transmit message to the console with a warning telling that they are not able to work. The point is that these methods can have no other values but "dateTime" scale and "vertical" layout.
 * There are three special values for setting to the text markers' {api}**.value()**{api} method: "start" and "end" to the range markers' {api}**.from()**{api} and {api}**.to()**{api}. The "value" returns the current date, "start" - the start date of the gantt chart timeline and "end" returns the end date of the whole Gantt diagram.
 
 
@@ -97,7 +134,7 @@ Let's create a sample with adjusted marker colors and text using those methods m
 
 There are some methods inherent to the timeline only. You can see a table below with all timeline methods which can be used to change the color scheme of your Gantt diagram.
 
-<table width="700" border="1" class="dtTABLE">
+<table width="700" class="dtTABLE">
 <tbody>
 <tr>
 <th width="50"><b>#</b></th>
