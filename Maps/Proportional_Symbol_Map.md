@@ -60,8 +60,8 @@ var dataSet = anychart.data.set([
     {'id': 'Cape South-Point', 'size': 109, "lat":  -39.08, "long": 142.22}, 
     {'id': 'Cape Byron', 'size': 108, "lat":  -28.36, "long": 153.38}, 
     {'id': 'Steep-Point Cape', 'size': 95, "lat":  -26.09, "long": 113.09},
-    {'id': 'Adelaide', 'size': 100, "lat": -23.69, "long": 133.87},
-    {'id': 'Alice Springs', 'size': 99, "lat": -34.98, "long": 138.42}
+    {'id': 'Alice Springs', 'size': 100, "lat": -23.69, "long": 133.87},
+    {'id': 'Adelaide', 'size': 99, "lat": -34.98, "long": 138.42}
 ]);
 
 ```
