@@ -9,7 +9,6 @@
 * [Visualization](#visualization)
 * [Custom Item](#custom_item)
 * [Custom Legend](#custom_legend)
-* [One Legend for Several Plots](#one_legend_for_several_plots)
 
 
 ## Overview
@@ -85,7 +84,7 @@ plot.legend().itemsTextFormatter(function(){
 
 {sample}STOCK\_Legend\_04{sample}
 
-One thing more should we take into account: if we've got too many data points and the data is approximated, then the legend will show the approximate value of the hovered group of points. To see the exact value of the point you should scroll the data to a non-approximated state.
+One more thing should we take into account: if we've got too many data points and the data is approximated, then the legend will show the approximate value of the hovered group of points. To see the exact value of the point you should scroll the data to a non-approximated state.
 
 
 ## Visualization
@@ -151,11 +150,6 @@ The same as we create one legend to several series in basic charts, we can do wi
     customLegend.hAlign("center");
     customLegend.height(50);
 
-    // legend tooltip settings
-    customLegend.tooltip().content()
-            .useHtml(true)    // enable using of html tags
-            .fontWeight(400); // set font weigh
-
     // redraw legend every time the first chart is redrawn
     chart.listen(
             "chartDraw",
@@ -171,12 +165,7 @@ The same as we create one legend to several series in basic charts, we can do wi
                 customLegend.parentBounds(legendBounds).draw();
             }
     );
-
-    // set legend tooltip content
-    customLegend.tooltip().textFormatter(function () {
-        return this.meta.legendText;
-    });
-
+    
     // set the bottom margin
     chart.margin().bottom(chart.height() - customLegend.getRemainingBounds().getHeight());
 

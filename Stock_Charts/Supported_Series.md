@@ -1,9 +1,9 @@
 #Supported Series in Stocks
 
 * [Overview](#overview)
- * [Stock series adjusting](#stock_series_adjusting)
- * [Stock scroller series adjusting](#stock_scroller_series_adjusting)
-* [List of supported series](#list_of_supported_series)
+ * [AnyStock Series Adjusting](#anystock_series_adjusting)
+ * [AnyStock Scroller Series Adjusting](#anystock_scroller_series_adjusting)
+* [List of Supported Series](#list_of_supported_series)
 
 
 ## Overview
@@ -26,9 +26,9 @@ AnyStock supports a lot of different series types. Here's a sample where we have
 ```
 {sample}STOCK\_Supported\_Series\_01{sample}
 
-You can see that the whole chart is somewhat divided in two parts, where one contains ohlc and line series and the second one has column in it, while both parts have identical x-Axis and are being scrolled simultaneously. This can be done using plots. You can read about them [here](#Chart_Plots). Also one of our plots has two axes. You can find information about managing axes [here](../Axes_and_Grids/Axes).
+You can see that the whole chart is somewhat divided in two parts, where one contains ohlc and line series and the second one has column in it, while both parts have identical x-Axis and are being scrolled simultaneously. This can be done using plots. You can read about them [here](Chart_Plots). Also one of our plots has two axes. You can find information about managing axes [here](../Axes_and_Grids/Axis_Basics).
 
-### AnyStock series adjusting
+### AnyStock Series Adjusting
 
 
 Series in AnyStock chart are much alike normal series of Basic charts, except for having "hovered" and "selected" state. So we can adjust the colors of the series in normal state, adjust the tooltips, etc. Let's now create a sample with adjusted colors and tooltips.
@@ -54,7 +54,7 @@ Series in AnyStock chart are much alike normal series of Basic charts, except fo
 {sample}STOCK\_Supported\_Series\_02{sample}
 
 
-### AnyStock scroller series adjusting
+### AnyStock Scroller Series Adjusting
 
 In case of adding the thumbnail series to the scroller, you should know that those series have the "selected" state. Let's add a background series of a column type to the scroll bar background and adjust its "selected" state colors.
 

@@ -18,13 +18,13 @@ First of all, we need to create a table for our data. It looks like this:
 	table = anychart.data.table();
 ```
 <br>
-Here you should set which table column contain the x-axis value. If it is not defined in the first table column, then you should set the index of the column with x-axis values to the .table() method, because it is set to 0 by default.
+Here you should set which table column contain the x-axis value. If it is not defined in the first table column, then you should set the index of the column with x-axis values to the {api:anychart.data#table}**.table()**{api} method, because it is set to 0 by default.
 
 ## Add
 
 ### Data as array of arrays
 
-Now, we should add some data in our newly created table. We use .addData() method for this.
+Now, we should add some data in our newly created table. We use {api:anychart.data.Table#addData}**.addData()**{api} method for this.
 
 ```
 	table = anychart.data.table();

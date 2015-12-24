@@ -60,7 +60,7 @@ We may use quotes or not, because our data is numerical except the dateTime, whi
 Also you can set the data with no formatting - as a timestamp string.
 
 
-After we have set the data, we need to map it using the {api:anychart.data#mapAsTable}**.mapAs()**{api} and {api:anychart.data.TableMapping#addField}**.addField()**{api} methods. We need to define which value we set, then the value itself and the {api:anychart.enums.AggregationType}aggregation type{api}. The last are necessary when you've got loads of information shown on a chart and you want got to group it.
+After we have set the data, we need to map it using the {api:anychart.data#mapAsTable}**.mapAs()**{api} and {api:anychart.data.TableMapping#addField}**.addField()**{api} methods. We need to define which value we set, then the value itself and the {api:anychart.enums.AggregationType}aggregation type{api}. The last are necessary when you've got loads of information shown on a chart and you want to group it.
 
 ```
 	mapping = table.mapAs();
@@ -81,7 +81,7 @@ Due to specialty of stock charts, it can have more than one plot and a plenty of
 	chart.plot(0).ohlc(mapping);
 ```
 <br>
-No matter how many plots with or without series you create, all of them are scrolled together, because they all are bound to one X axis. 
+No matter how many plots with or without series you create, all of them are scrolled together, because they all are bound to one X scale. 
 
 ###4. Create a chart
 Add the JavaScript tag `<script>` with the following code anywhere in the page. 

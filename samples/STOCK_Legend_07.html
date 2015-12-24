@@ -148,8 +148,6 @@
 
 // create the plot on the chart with column series
         var plot_line_ohlc = chart.plot(0);
-        var yAxis1 = plot_line_ohlc.yAxis(1);
-        yAxis1.orientation("left");
         plot_line_ohlc.xAxis(false);
 
         var plot_column = chart.plot(1);
@@ -196,12 +194,7 @@
         customLegend.itemsSource([plot_column, plot_line_ohlc]);
         customLegend.enabled(true);
         customLegend.hAlign("center");
-
-        // legend tooltip settings
-        customLegend.tooltip().content()
-                .useHtml(true)    // enable using of html tags
-                .fontWeight(400); // set font weigh
-
+        
         // redraw legend every time the first chart is redrawn
         chart.listen(
                 "chartDraw",
@@ -217,11 +210,6 @@
                     customLegend.parentBounds(legendBounds).draw();
                 }
         );
-
-        // set legend tooltip content
-        customLegend.tooltip().textFormatter(function () {
-            return this.meta.legendText;
-        });
 
         // set the bottom margin
         chart.margin().bottom(chart.height() - customLegend.getRemainingBounds().getHeight());

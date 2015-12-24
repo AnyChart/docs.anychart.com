@@ -22,7 +22,7 @@ Now, let's study how to use chart plots and make our work with AnyStock a bit ea
 
 ## Add
 
-First of all, we need to add plots to the chart and enable them. Let's create and enable three plots: one with column series, second one with OHLC chart and third with line series.
+First of all, we need to add plots to the chart and enable them. Let's create and enable three plots: two with column series and one with OHLC chart.
 
 ```
 	// create stock chart
@@ -41,12 +41,12 @@ First of all, we need to add plots to the chart and enable them. Let's create an
 	// create third plot
 	var thirdPlot = chart.plot(2);
 	// create column series on the third plot
-	var thirdSeries = thirdPlot.line(lineMapping);
+	var thirdSeries = thirdPlot.column(columnMapping);
 ```
 
-{sample :width 690 :height 500 }STOCK\_Plots\_01{sample}
+{sample :width 825 :height 500 }STOCK\_Plots\_01{sample}
 
-So, we use {api:anychart.charts.Stock#plot}**.plot()**{api} for creating the plot. Note that we should give each plot an unique index. The number of plots each chart has is unlimited.
+So, we use {api:anychart.charts.Stock#plot}**.plot()**{api} for creating a plot. Note that we should give each plot an unique index. The number of plots each chart has is unlimited.
 
 Now we can manage the chart plots.
 
@@ -74,7 +74,7 @@ Let's add one more series to one of the plots. This would look like the followin
 	var secondSeries = secondPlot.ohlc(ohlcMapping);
 ```
 
-{sample :width 690 :height 500 }STOCK\_Plots\_02{sample}
+{sample :width 825 :height 500 }STOCK\_Plots\_02{sample}
 
 One plot might contain an unlimited number of series, but still we recommend to split them into different plots if there are too many of them.
 
@@ -85,17 +85,18 @@ As we have noticed before, we can have different axes in one chart using differe
 
 ```
 	// create an additional axis
-	var yAxis1 = plot_line_ohlc.yAxis(1);
-	yAxis1.orientation("left");
+	var extraYAxis = plot_line_ohlc.yAxis(1);
+	extraYAxis.orientation("right");
+	extraYAxis.scale(extraYScale);
 ```
-{sample :width 690 :height 500 }STOCK\_Plots\_03{sample}
+{sample :width 825 :height 500 }STOCK\_Plots\_03{sample}
 
 Working with axes in AnyStock chart plots is the same as working with them in basic charts. Visit the [Axes tutorial](../Axes_and_Grids/Axis_Basics) to know more about the axes.
 
 
 ### Position
 
-We can position plots wherever we want and make them of the size we need. This can be done using {api:anychart.core.stock.Plot#bounds}**.bounds()**{api} or other methods such as {api:anychart.core.stock.Plot#width}**.width**{api}, {api:anychart.core.stock.Plot#height}**.height**{api}, {api:anychart.core.stock.Plot#top}**.top**{api}, etc. The whole list of these methods you can find {api:anychart.core.stock.Plot}here{api}. By default, each new plot will be placed under the existing ones. Let's now create a simple three-plot AnyStock chart and position two of them next to each other.
+We can position plots wherever we want and make them of the size we need. This can be done using {api:anychart.core.stock.Plot#bounds}**.bounds()**{api} or other methods such as {api:anychart.core.stock.Plot#width}**.width()**{api}, {api:anychart.core.stock.Plot#height}**.height()**{api}, {api:anychart.core.stock.Plot#top}**.top()**{api}, etc. The whole list of these methods you can find {api:anychart.core.stock.Plot}here{api}. By default, each new plot will be placed under the existing ones. Let's now create a simple three-plot AnyStock chart and position two of them next to each other.
 
 ```
 	// set the first plot position through bounds
@@ -113,7 +114,7 @@ We can position plots wherever we want and make them of the size we need. This c
 	thirdPlot.bounds("55%", 0, "45%", "45%")
 ```
 
-{sample :width 690 :height 500 }STOCK\_Plots\_04{sample}
+{sample :width 825 :height 500 }STOCK\_Plots\_04{sample}
 
 
 ### DateTime Highlighter
@@ -131,4 +132,4 @@ DateTime Highlighter is a feature that is rather similar to [Crosshair feature](
 	thirdPlot.dateTimeHighlighter(false);
 ```
 
-{sample :width 690 :height 500 }STOCK\_Plots\_05{sample}
+{sample :width 825 :height 500 }STOCK\_Plots\_05{sample}

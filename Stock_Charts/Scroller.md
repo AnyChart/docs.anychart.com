@@ -5,15 +5,15 @@
 * [Overview](#overview)
 * [Enable](#enable)
 * [Adjust](#adjust)
- * [Basic adjusting](#basic_adjusting)
- * [Background series](#background_series)
- * [Scroller axis](#scroller_axis)
+ * [Basic Adjusting](#basic_adjusting)
+ * [Background Series](#background_series)
+ * [Scroller Axis](#scroller_axis)
 * [Events](#events)
 
 
 ## Overview
 
-AnyCStock provides a lot of features and tools to a chart viewer to make the working process rather comfortable and easily navigate these time based charts. The core navigation tool is Scroller, which is described in this article.
+AnyStock provides a lot of features and tools to a chart viewer to make the working process rather comfortable and easily navigate these time based charts. The core navigation tool is Scroller, which is described in this article.
 
 Scroller is a complex component, which consists of the several configurable parts: Scroller itself, thumbnail series in its background (optional) and thumbs. Actually, it looks almost like a thumbnail chart which has a couple of managing tools.
 
@@ -25,12 +25,14 @@ We use standard {api:anychart.core.ui.Scroller#enabled}**.enabled()**{api} metho
 
 ```
     // turn it off
-	chart.scroller.enabled(false);
+	chart.scroller().enabled(false);
 ```
 
 {sample}STOCK\_Scroller\_01{sample}
 
 Also, we can pass the "true" or "false" value straight to the {api:anychart.charts.Cartesian#xScroller}**.scroller()**{api} method.
+
+{sample}STOCK\_Scroller\_01\_1{sample}
 
 Now you can see that there is a scroller shown up, but the general view has not changed (though, you can drag the scroller thumbs and change the view). 
 
@@ -38,11 +40,11 @@ Let's now look at the features of the scroller we can adjust.
 
 ## Adjust
 
-As we have already noted, the yStock Scroller has both the Basic Scroller features and special ones. Let's work with basic features first.
+As we have already noted, the Stock Scroller has both the Basic Scroller features and special ones. Let's work with basic features first.
 
-### Basic adjusting
+### Basic Adjusting
 
-Note that we cannot change the position of the scroller as well as its orientation, as its function is to scroll the time (X) axis. Also, in cannot hide automatically. Though, we are able to change the visual settings of the scroller. Look at the sample below. We have set the default zoom to only 10 points, disabled thumbs, changed the scroller color and prohibited the range changing. For all these changes we used {api:anychart.core.stock.Scroller#selectedRange}**.selectedRange()**{api}, {api:anychart.core.stock.Scroller#allowRange}**.thumbs()**{api}, {api:anychart.core.stock.Scroller#fill}**.fill()**{api}, {api:anychart.core.stock.Scroller#selectedFill}**.selectedFill()**{api} and {api:anychart.core.stock.Scroller#allowRangeChange}**.allowRangeChange()**{api}:
+Note that we cannot change the position of the scroller as well as its orientation, as its function is to scroll the time (X) axis. Also, it cannot hide automatically. Though, we are able to change the visual settings of the scroller. Look at the sample below. We have set the default zoom to only 10 points, disabled thumbs, changed the scroller color and prohibited the range changing. For all these changes we used {api:anychart.core.stock.Scroller#selectedRange}**.selectedRange()**{api}, {api:anychart.core.stock.Scroller#allowRange}**.thumbs()**{api}, {api:anychart.core.stock.Scroller#fill}**.fill()**{api}, {api:anychart.core.stock.Scroller#selectedFill}**.selectedFill()**{api} and {api:anychart.core.stock.Scroller#allowRangeChange}**.allowRangeChange()**{api}:
 
 ```
     // adjust the scroller
@@ -57,7 +59,7 @@ Note that we cannot change the position of the scroller as well as its orientati
 
 Note that opposite to scroller in basic charts, we can zoom the AnyStock charts only by setting the selected range.
 
-### Background series
+### Background Series
 
 Now, as we have tried to change some elements that are common for the AnyStock and the Basic scroller, let's adjust some params that only AnyStock scroller can have. We can add any of [supported series](Supported_Series) to the scroller if necessary, so the scroller will display a thumbnail AnyStock chart in its background. Let's define the thumbnail series of column type and look at it:
 
@@ -70,7 +72,7 @@ Now, as we have tried to change some elements that are common for the AnyStock a
 
 Visit [Supported series](Supported_Series) articles to know more about series supported by AnyStock Charts.
 
-### Scroller axis
+### Scroller Axis
 
 There's one more feature that only AnyStock scroller has - an additional axis inside, which helps to control the shown and hidden parts of the data and not to get lost. It's enabled by default, but we can disable it:
 
@@ -81,7 +83,7 @@ There's one more feature that only AnyStock scroller has - an additional axis in
 
 {sample}STOCK\_Scroller\_04{sample}
 
-We can also adjust the labels of the axis. For example, let's make them of red color and format them to show the first day of each month.
+We can also adjust the labels of the axis. For example, let's make them of black color and format them to show the first day of each month.
 
 ```
     // adjust the scroller axis
@@ -93,12 +95,12 @@ We can also adjust the labels of the axis. For example, let's make them of red c
     labels.textFormatter(function() {
         return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
         });
-    labels.fontColor('red');
+    labels.fontColor('#000');
 
     minorLabels.textFormatter(function(){
         return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
         });
-    minorLabels.fontColor('red');
+    minorLabels.fontColor('#000');
 ```
 
 {sample}STOCK\_Scroller\_05{sample}

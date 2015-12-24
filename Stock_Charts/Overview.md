@@ -9,9 +9,9 @@
 
 ## Overview
 
-Stock Chart is a widely spread type of charts that can quite effectively visualize great amount of data. They has lots of interesting features such as series zooming, using date scale, etc. Moreover, Stock Charts are very useful for real-time data visualization. They are usually used in cases with enormous amount of data spreads along the time; so it's quite logical to use them, for example, for showing the company assets and earnings for its whole working period. That's why stocks are this popular: it can show large amounts of data and keep it clear to the audience.
+Stock Chart is a widely spread type of charts that can quite effectively visualize great amount of data. It has lots of interesting features such as series zooming, using date scale, etc. Moreover, Stock Charts are very useful for real-time data visualization. They are usually used in cases with enormous amount of data spreads along the time; so it's quite logical to use them, for example, for showing the company assets and earnings for its whole working period. That's why stocks are this popular: it can show large amounts of data and keep it clear to the audience.
 
-AnyStock component provides a lot of different features. Besides being very fast and completely compatible with all other our products, having all basic stock features such as grouping, scrolling, etc., our stocks also have a special feature of [technical indicators](#Technical_Indicators), which are a type of analysis charts that indicate market direction. AnyChart Stock Chart Component supports automatic building of several types of technical indicators. Also, AnyStock is fully built on javascript, which makes them rather flexible and easy to use.
+AnyStock component provides a lot of different features. Besides being very fast and completely compatible with all other our products, having all basic stock features such as grouping, scrolling, etc., our stocks also have a special feature of [technical indicators](#indicators), which are a type of analysis charts that indicate market direction. AnyChart Stock Chart Component supports automatic building of several types of technical indicators. Also, AnyStock is fully built on javascript, which makes them rather flexible and easy to use.
 
 
 Stocks are so special because of three main features:
