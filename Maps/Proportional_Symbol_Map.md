@@ -38,87 +38,37 @@ Bubble series is being created the same as other series on a map. First, we shou
 	var series = map.bubble(dataSet);
 ```
 
-Let's now study the proper way of defining the data.
-
-
 There are two ways of defining the data properly. Let's look at them.
-<!--
-  ### Data
-
-The way of setting the data influence the bubble series view. 
-
-If we use the "id" field in the data, we'll get the center of each bubble in the center of each region.
-
-```
-var dataSet = anychart.data.set([
-    {'id': 'AU.NS', 'size': 7565500},
-    {'id': 'AU.NT', 'size': 243700},
-    {'id': 'AU.WA', 'size': 2565600},
-    {'id': 'AU.SA', 'size': 1682600},
-    {'id': 'AU.VI', 'size': 5866300},
-    {'id': 'AU.QL', 'size': 4750500},
-    {'id': 'AU.TS', 'size': 514700}
-]);
-```
-
-{sample}Maps\_Proportional\_Symbol\_02{sample}
-
-In the other case, we can use "x" or/and "value" ("x" and "y" map coordinates), then we can position each bubble separately.
-
-```
-var dataSet = anychart.data.set([
-    {'size': 7565500, 'x':"6803", 'value': "-1537"},
-    {'size': 243700, 'x':"5997", 'value': "-453"},
-    {'size': 2565600, 'x':"5151", 'value': "-687"},
-    {'size': 1682600, 'x':"5793", 'value': "-1551"},
-    {'size': 5866300, 'x':"6562", 'value': "-605"},
-    {'size': 4750500, 'x':"6685", 'value': "-1790"},
-    {'size': 514700, 'x':"6270", 'value': "-1933"}
-]);
-```
-
-{sample}Maps\_Proportional\_Symbol\_03{sample}
-
-You can define both "id" and "x" or/and "value" - in this case the last two ones will have the bigger priority in setting the center of the bubble.
-
-
-```
-var dataSet = anychart.data.set([
-    {'id': 'AU.NS', 'size': 7565500, 'x':"6803", 'value': "-1537"},
-    {'id': 'AU.NT', 'size': 243700, 'x':"5997", 'value': "-453"},
-    {'id': 'AU.WA', 'size': 2565600, 'x':"5151", 'value': "-687"},
-    {'id': 'AU.SA', 'size': 1682600, 'x':"5793", 'value': "-1551"},
-    {'id': 'AU.VI', 'size': 5866300, 'x':"6562", 'value': "-605"},
-    {'id': 'AU.QL', 'size': 4750500, 'x':"6685", 'value': "-1790"},
-    {'id': 'AU.TS', 'size': 514700, 'x':"6270", 'value': "-1933"}
-]);
-
-```
-{sample}Maps\_Proportional\_Symbol\_04{sample}
-
--->
 
 
 ### Data
 
 First of all, we need to remember, how we define the location of any object (town, country, house, memorial, ship, etc) in the world. Wherever the point is placed on the Earth and however small it is, there are always two geographic coordinates specifying this point location: latitude and longitude.
 
-Latitude specifies the north-south position and longitude is the east-west coordinate of an object on the Earth's surface. Both are measured as angles: latitude is in a range from 0° at the Equator to 90° N at north and 90° S at south (or 90° and -90° accordingly); longitude is being ranged from 0° at the Prime Meridian to +180° eastward and −180° westward. We use this system of defining the point's location as the main one. Let's have a look at the sample below to understand the meaning of described.
+Latitude specifies the north-south position and longitude is the east-west coordinate of an object on the Earth's surface. Both are measured as angles: latitude is in a range from 0° at the Equator to 90° N at north and 90° S at south (or 90° and -90° accordingly); longitude is being ranged from 0° at the Prime Meridian to +180° eastward and −180° westward. 
+
+We use this system of defining the point's location as the main one. While we use "x" ad "y" in other charts and choropleth maps, we've got "long" and "lat" to define longitude and latitude.
+
+Let's have a look at the sample below to understand the meaning of described.
 
 
 ```
+// create data set
+var dataSet = anychart.data.set([
+    {'id': 'Sydney', 'size': 106, "lat":  -33.51, "long": 151.11},
+    {'id': 'Cape York', 'size': 103, "lat":  -10.41, "long": 142.22},
+    {'id': 'Cape South-Point', 'size': 109, "lat":  -39.08, "long": 142.22}, 
+    {'id': 'Cape Byron', 'size': 108, "lat":  -28.36, "long": 153.38}, 
+    {'id': 'Steep-Point Cape', 'size': 95, "lat":  -26.09, "long": 113.09},
+    {'id': 'Adelaide', 'size': 100, "lat": -23.69, "long": 133.87},
+    {'id': 'Alice Springs', 'size': 99, "lat": -34.98, "long": 138.42}
+]);
+
 ```
-{sample}Maps\_Proportional\_Symbol\_01{sample}
+{sample}Maps\_Proportional\_Symbol\_03{sample}
 
 
-Now, let's look at another way of defining the points locations on a map, when an only necessary parameter is an 'id'.
-
-
-
-
-
-
-Setting the data for maps with bubbles is rather easy. There are only two fields necessary: "id" and "size". Set the necessary parameters for the map and the series:
+Now, let's look at another way of defining the points locations on a map, when there are only two fields necessary: "id" and "size". Set the necessary parameters for the map and the series:
 
 ```
 var dataSet = anychart.data.set([
