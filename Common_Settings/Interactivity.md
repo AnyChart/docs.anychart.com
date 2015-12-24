@@ -218,7 +218,7 @@ To unselect the points without preventing the selection ability use {api:anychar
 
 #### Single Point
 
-Along with hovering and selecting of a points' array you can manage current state of a single point. Use {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method to get a point of a series. Pass point's index as a parameter for this method. 
+Along with hovering and selecting of a number of points you can manage the current state of a single point. Use {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method to get a point of a series. Pass point's index as a parameter for this method. 
 
 ```
 	// set series data
@@ -228,68 +228,69 @@ Along with hovering and selecting of a points' array you can manage current stat
 	var point = series.getPoint(3);
 ```
 
-After you have defined a getter for the {api:anychart.core.SeriesPoint}series point{api} you can adjust point's state and change some point's properties. Let's make a single series chart a bit more colorful and set custom color for each point of the series:
+After you have defined the getter for the {api:anychart.core.SeriesPoint}series point{api} you can adjust point's state and change some point's properties. Let's make a single series chart a bit more colorful and set custom color for each point of the series:
 
 ```
-	// set series data
-	var series = chart.column([
-		{x:"John", value: 10000},
-		{x:"Jake", value: 12000},
-		{x:"Peter", value: 18000},
-		{x:"James", value: 11000},
-		{x:"Mary", value: 9000}
-	]);
+// set series data
+var series = chart.column([
+  {x:"John", value: 10000},
+  {x:"Jake", value: 12000},
+  {x:"Peter", value: 18000},
+  {x:"James", value: 11000},
+  {x:"Mary", value: 9000}
+]);
 
-	// create getter for AnyChart palette
-	var palette = anychart.palettes.distinctColors();
+// create getter for AnyChart palette
+var palette = anychart.palettes.distinctColors();
 
-	// create a loop for coloring every series point
-	for (var i=0; series.getPoint(i).exists();i++)
-		// define "fill" property for each series point
-		series.getPoint(i).set("fill", palette.itemAt(i));
+// create a loop for coloring every series point
+for (var i=0; series.getPoint(i).exists();i++){
+  // define "fill" property for each series point
+  series.getPoint(i).set("fill", palette.itemAt(i));
+}
 ```
 
-As you can see, we have created a column series, created variable for default AnyChart palette using {api:anychart.palettes#distinctColors}**.distinctColors()**{api} method and set a color for each point depending on point's index. Moreover, the *for* loop uses {api:anychart.core.SeriesPoint#exists}**.exists()**{api} method to check, whether the point exists or not. Custom color for a point is applied using {api:anychart.core.SeriesPoint#set}**.set()**{api} method.
+As you can see, we have created a column series, variable for default AnyChart palette using {api:anychart.palettes#distinctColors}**.distinctColors()**{api} method and set a color for each point depending on point's index. Moreover, the *for* loop uses {api:anychart.core.SeriesPoint#exists}**.exists()**{api} method to check, whether the point exists or not. Custom color for a point is applied using {api:anychart.core.SeriesPoint#set}**.set()**{api} method.
 
 {sample}CS\_Interactivity\_21{sample}
 
-Previous sample demonstrates a way to change appearance of a single point. Now, let's try to manage point's current state. You can use {api:anychart.core.SeriesPoint#hovered}**.hovered()**{api} and {api:anychart.core.SeriesPoint#selected}**.selected()**{api} methods to change current point's state. Both methods use **true** or **false** as a parameter.
+Previous sample demonstrates how to change a single point's appearance. Using {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api}, we also can make a point hovered or selected through the {api:anychart.core.SeriesPoint#hovered}**.hovered()**{api} or {api:anychart.core.SeriesPoint#selected}**.selected()**{api} methods accordingly.
 
 ```
-	var point = series.getPoint(3);
-	point.hovered(true);
+var point = series.getPoint(3);
+point.hovered(true);
 ```
 
-Next sample uses chart's {api:anychart.ui.Legend}**.legend()**{api} to trigger changes of a point. Hovering and unhovering legend's item triggers series point's hovering. Click on a legend's item to select and unselect a point.
+Next sample uses chart's legend to trigger changes of a point. When we hover an item in a legend, the corresponding point in a series becomes hovered too, and vice versa. The same is with selecting points.
 
 {sample}CS\_Interactivity\_20{sample}
 
-**Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Common_Settings/Event_Listeners). Information about legend is contained in [Legend article](../Common_Settings/Legend).
+**Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Common_Settings/Event_Listeners). Information about legend is contained in the [Legend article](../Common_Settings/Legend).
 
 ## Single Series Chart
 
-As you know, AnyChart supports quite a variety of chart types. Some of them can have only one series of data. This is such charts as pie chart, funnel chart or pyramid chart. Managing points of these charts requires even less actions then for managing series points. Use {api:anychart.core.Point}**.getPoint()**{api} method for chart itself to get desirable point;
+As you know, AnyChart supports quite a variety of chart types. Some of them are single series charts, such as pie chart, funnel chart or pyramid chart. Managing their points is much easier than managing a number of points in a series. Use {api:anychart.core.Point}**.getPoint()**{api} as a chart method to get the point you need:
 
 ```
-	// set chart data
-	var chart = funnel(data);
+// set chart data
+var chart = funnel(data);
 
-	// get fourth point
-	var point = chart.getPoint(3);
+// get fourth point
+var point = chart.getPoint(3);
 ```
 
-The way of managing chart's points is pretty much the same as the one in [single point](#single_point) section. Use {api:anychart.core.Point#hovered}**.hovered()**{api} and {api:anychart.core.Point#selected}**.selected()**{api} methods to adjust current state of a point. Method {api:anychart.core.Point#set}**.set()**{api} can help to change any property of a point or to add a new one.
+The way of managing chart's points is pretty much the same as the one in [single point](#single_point) section. Use {api:anychart.core.Point#hovered}**.hovered()**{api} and {api:anychart.core.Point#selected}**.selected()**{api} methods to adjust current state of any point. The {api:anychart.core.Point#set}**.set()**{api} method allows you to change or create any property (field) of a point.
 
 ```
-	var chart = anychart.funnel(data);
+var chart = anychart.funnel(data);
 
-	// get sixth point of the funnel chart
-	var point = chart.getPoint(5);
-	// set red inner color for the point
-	point.set("fill", "red");
+// get sixth point of the funnel chart
+var point = chart.getPoint(5);
+// set red inner color for the point
+point.set("fill", "red");
 ```
 
-Below is a sample of a funnel chart. This chart displays income through the year and each point corresponds with each month of the year. Using {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method each point was colorized according to the season of the year. Hover a point to see the tooltip that contains information on income in the month and the total income in the season. Information on getting value from custom point's property can be found in [Text Formatters article](../Common_Settings/Text_Formatters).
+Below there is a sample of a funnel chart. This chart shows how the income changes over the year and each point corresponds to a month. With the usage of {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method, we have colored each point separately according to the season each point belongs to. Hover a point to see the tooltip that contains information on the month's and total income of the season. Information on getting value from custom points' field can be found in [Text Formatters article](../Common_Settings/Text_Formatters).
 
 {sample}CS\_Interactivity\_22{sample}
 
