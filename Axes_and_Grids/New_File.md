@@ -54,3 +54,20 @@ AnyChart does not set any limits on the number of line markers on the chart plot
 ```
 
 Here is a sample with multiple lines. Both of them indicates extremes of the chart. 
+
+{sample}AGST\_Line\_Marker\_05{sample}
+
+## Layout
+
+You can easily manage line marker's layout using **.layout()** method. Using this method you can set horizontal or vertical placement.
+
+```
+  var marker = chart.lineMarker();
+  marker.layout("vertical");
+  marker.value(1325289600000)
+```
+
+Here is a sample of marker's vertical layout.
+
+
+{sample}AGST\_Line\_Marker\_06{sample}
