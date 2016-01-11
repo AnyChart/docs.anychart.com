@@ -5,23 +5,23 @@ Proportional Symbol Map
 * [Overview](#overview)
 * [Creating Bubbles](#creating_bubbles)
  * [Data](#data)
+  * [Latitude and Longitude](#latitude_and_longitude)
+  * [Region ID](#region_id)
+  * [Size](#size)
 * [Altering Bubbles](#altering_bubbles)
  * [Series colors](#series_colors)
- * [Sizing](#sizing)
  * [Labels and Tooltips](#labels_and_tooltips)
 * [Multi series](#multi_series)
 
 ## Overview
 
-As the name implies, symbols (circles), representing the values, are drawn of the proportional size to the size of the value being represented. The size of the bubbles (proportional symbols in maps) is not dependent on the size of the region associated with the variable. For example, if we show the value of unemployment on a proportional symbol map of the UK, Dundee would have bigger visual importance then Highland if their unemployment values were so (e.g. 3.5% in Dundee, 1% in Highland).
+As the name implies, symbols (circles, bubbles), representing the values, are drawn of the proportional size to the size of the value being represented. The size of the bubbles (proportional symbols in maps) is not dependent on the size of the region associated with the variable. For example, if we show the value of unemployment on a proportional symbol map of the UK, Dundee would have bigger visual importance then Highland if their unemployment values were so (e.g. 3.5% in Dundee, 1% in Highland).
 
 An example of proportional circles is shown below.
 
 {sample}Maps\_Proportional\_Symbol\_01{sample}
 
-<!-- The Bubble series in Maps is quite similar to the Basic Bubble series. The only difference about it is defining the center of each circle. While we can do it only one way in [Cartesian/Scatter](../Basic_Charts_Types/Bubble_Chart) - with the usage of necessary "x" and "value" fields and "size" for the bubbles' sizes, - in maps there are two options about doing that. We will consider them in this article. -->
-
-The Bubble series in Maps is quite similar to the Basic Bubble series. You can read about Bubble Charts in the [Bubble Chart tutorial](../Basic_Charts_Types/Bubble_Chart), and in this article we will consider significant issues of Bubble charts used with maps.
+The Bubble series in AnyChart JavaScript Maps is quite similar to the Basic JavaScript Bubble series. You can read about Bubble Charts in the [Bubble Chart tutorial](../Basic_Charts_Types/Bubble_Chart), and in this article we will consider significant issues of Bubble charts used with maps.
 
 ## Creating Bubbles
 
@@ -38,19 +38,19 @@ Bubble series is being created the same as other series on a map. First, we shou
 	var series = map.bubble(dataSet);
 ```
 
-There are two ways of defining the data properly. Let's look at them.
-
-
 ### Data
+
+There are two ways of defining bubble placement data properly. Let's look at them.
+
+### Latitude and Longitude
 
 First of all, we need to remember, how we define the location of any object (town, country, house, memorial, ship, etc) in the world. Wherever the point is placed on the Earth and however small it is, there are always two geographic coordinates specifying this point location: latitude and longitude.
 
 Latitude specifies the north-south position and longitude is the east-west coordinate of an object on the Earth's surface. Both are measured as angles: latitude is in a range from 0° at the Equator to 90° N at north and 90° S at south (or 90° and -90° accordingly); longitude is being ranged from 0° at the Prime Meridian to +180° eastward and −180° westward. 
 
-We use this system of defining the point's location as the main one. While we use "x" ad "y" in other charts and choropleth maps, we've got "long" and "lat" to define longitude and latitude.
+We use this system of defining the point's location as the main one. While we use "x" and "y" in other charts and choropleth maps, we've got "long" and "lat" to define longitude and latitude.
 
 Let's have a look at the sample below to understand the meaning of described.
-
 
 ```
 // create data set
@@ -67,8 +67,9 @@ var dataSet = anychart.data.set([
 ```
 {sample}Maps\_Proportional\_Symbol\_03{sample}
 
+### Region ID
 
-Now, let's look at another way of defining the points locations on a map, when there are only two fields necessary: "id" and "size". Set the necessary parameters for the map and the series:
+Now, let's look at another way of defining the points locations on a map, when there are only one field is necessary: "id", which binds by the field defined by {api:anychart.charts.Map#geoIdField}**geoIdField()**{api} method. Set the necessary parameters for the map and the series:
 
 ```
 var dataSet = anychart.data.set([
@@ -96,16 +97,39 @@ series.geoIdField("code_hasc");
 
 {sample}Maps\_Proportional\_Symbol\_02{sample}
 
+### Size
 
-## Altering Bubbles
+You can adjust how the bubbles' size is defined. For this we use two methods: {api:anychart.charts.Map#maxBubbleSize}**.maxBubbleSize()**{api} and {api:anychart.charts.Map#minBubbleSize}**.minBubbleSize()**{api}. Let's see how it is done:
 
-<!-- Apart from positioning the bubbles, which can be done through the data, altering the series look is the same as in [basic Bubble Charts](../Basic_Charts_Types/Bubble_Chart#colors). -->
+```
+    // set the maximum size of the bubble
+    map.maxBubbleSize(35);
 
-Altering the series look is the same as in [basic Bubble Charts](../Basic_Charts_Types/Bubble_Chart#colors). We can easily do it here. Let's look through a couple of samples.
+    // set the minimum size of the bubble
+    map.minBubbleSize(10);
+
+```
+{sample}Maps\_Proportional\_Symbol\_08{sample}
+
+You can set the size in percents of map size as well:
+
+```
+    // set the maximum size of the bubble
+    map.maxBubbleSize('20%');
+
+    // set the minimum size of the bubble
+    map.minBubbleSize('1%');
+
+```
+{sample}Maps\_Proportional\_Symbol\_09{sample}
+
+## Altering Bubble Series
+
+Altering the series looks pretty much the same as in [basic Bubble Charts](../Basic_Charts_Types/Bubble_Chart#colors). We can easily do it here. Let's look through a couple of samples.
 
 ### Series colors
 
-To color all bubbles in a series we use the {api:anychart.core.scatter.series.Bubble#fill}**.fill()**{api} method; to color the hovered bubbles there is a {api:anychart.core.scatter.series.Bubble#hoverFill}**.hoverFill()**{api} function; for selected bubbles we've got {api:anychart.core.scatter.series.Bubble#selectFill}**.selectFill()**{api}. For coloring the stroke we've got {api:anychart.core.scatter.series.Bubble#stroke}**.stroke()**{api}, {api:anychart.core.scatter.series.Bubble#hoverStroke}**.hoverStroke()**{api} and {api:anychart.core.scatter.series.Bubble#selectStroke}**.selectStroke()**{api} accordingly. 
+To color all bubbles in a series we use the {api:anychart.core.map.series.Bubble#fill}**.fill()**{api} method; to color the hovered bubbles there is a {api:anychart.core.map.series.Bubble#hoverFill}**.hoverFill()**{api} function; for selected bubbles we've got {api:anychart.core.map.series.Bubble#selectFill}**.selectFill()**{api}. For coloring the stroke we've got {api:anychart.core.map.series.Bubble#stroke}**.stroke()**{api}, {api:anychart.core.map.series.Bubble#hoverStroke}**.hoverStroke()**{api} and {api:anychart.core.map.series.Bubble#selectStroke}**.selectStroke()**{api} accordingly. 
 
 Let's create a sample using things we've learned.
 
@@ -125,7 +149,7 @@ Let's create a sample using things we've learned.
 
 {sample}Maps\_Proportional\_Symbol\_05{sample}
 
-Also, we can make a monochromatic map using hatch fills. We use {api:anychart.core.scatter.series.Bubble#hatchFill}**.hatchFill**{api} to add a hatch pattern to the whole series, {api:anychart.core.scatter.series.Bubble#hoverHatchFill}**.hoverHatchFill**{api} to add hatch to series in hovered state and {api:anychart.core.scatter.series.Bubble#selectHatchFill}**.selectHatchFill**{api} to make the selected elements hatched.
+Also, we can make a monochromatic map using hatch fills. We use {api:anychart.core.map.series.Bubble#hatchFill}**.hatchFill**{api} to add a hatch pattern to the whole series, {api:anychart.core.map.series.Bubble#hoverHatchFill}**.hoverHatchFill**{api} to add hatch to series in hovered state and {api:anychart.core.map.series.Bubble#selectHatchFill}**.selectHatchFill**{api} to make the selected elements hatched.
 
 
 ```
@@ -155,34 +179,6 @@ var dataSet = anychart.data.set([
 ]);
 ```
 {sample}Maps\_Proportional\_Symbol\_07{sample}
-
-
-### Sizing
-
-We can adjust the bubbles' sizes as well. For this we use two methods: {api:anychart.charts.Scatter#maxBubbleSize}**.maxBubbleSize()**{api} and {api:anychart.charts.Scatter#minBubbleSize}**.minBubbleSize()**{api}. Let's now adjust the bubbles in one of the previous samples.
-
-```
-    // set the maximum size of the bubble
-    map.maxBubbleSize(35);
-
-    // set the minimum size of the bubble
-    map.minBubbleSize(10);
-
-```
-{sample}Maps\_Proportional\_Symbol\_08{sample}
-
-You can set the size in percent as well:
-
-```
-    // set the maximum size of the bubble
-    map.maxBubbleSize('20%');
-
-    // set the minimum size of the bubble
-    map.minBubbleSize('1%');
-
-```
-{sample}Maps\_Proportional\_Symbol\_09{sample}
-
 
 ### Labels and Tooltips
 
@@ -260,6 +256,5 @@ We can create a map with several bubble series as well:
 ```
 
 {sample}Maps\_Proportional\_Symbol\_13{sample}
-
 
 As you can see, we can operate the series on a map quite easy and similar to working with basic charts. Find more about Choropleth series in the [Choropleth tutorial](Choropleth_Map) and some other features of Bubble series in the [Bubble tutorial](../Basic_Charts_Types/Bubble_Chart).
