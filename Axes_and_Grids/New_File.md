@@ -1,73 +1,58 @@
-# Line Markers
+{:index 9}
+# Text Markers
 
 * [Overview](#overview)
 * [Declare](#declare)
-* [Visualization](#visualization)
-* [Line and Text Markers](#line_and_text_markers)
+* [Position]
+* [Settings](#settings)
 
 ## Overview
 
-Along with series there are several element that can present on the chart's plot. One of these elements of line marker. Line marker is a strait line that goes all through the charts plot. It may serve for several purposes: to define the value for comparing each of the series points or to visually separate some of chart's elements.
+Text Markers are useful when you want to place custom texts or description with or instead of axes values labels. You can add text markers to any place of a chart.
 
 ## Declare
 
-To create a line marker you need to use the **.lineMarker()** method. This method will create a simple horizontal line and place it on 0 value of the y scale. You can control marker's position using **.value()** method.
+These text markers are just custom text placed on chart.
+
+To add custom text you need to create {api:anychart.charts.Cartesian#textMarker}**.textMarker()**{api} and set {api:anychart.core.axisMarkers.Text#value}**.value()**{api}, {api:anychart.core.axisMarkers.Text#scale}**.scale()**{api} and {api:anychart.core.axisMarkers.Text#text}**.text()**{api}. You may use other options, but previous three are mandatory.
 
 ```
-  var marker = chart.lineMarker();
-  marker.value(9000);
+  var textMarker = chart.textMarker();
+  textMarker.scale(chart.yScale());
+  textMarker.value(18000);
+  textMarker.align("left");
+  textMarker.anchor("leftcenter");
+  textMarker.fontSize(12);
+  textMarker.fontColor("#212121");
+  textMarker.offsetX(5);
+  textMarker.text("Historical Maximum");
 ```
 
-Here is a sample with a line marker and it is used to indicate the year with the lowest amount of income:
+Sample below shows several variants of Text Marker usage: marking up values (High, Low), describing values (Historical Maximum) and marking only selected values on certain axis (8.00).
 
-{sample}AGST\_Line\_Marker\_03{sample}
+{sample}AGST\_Text\_Marker\_01{sample}
 
+## Position
 
-## Visualization
+There are several method to control and calibrate text markers position. The **.value()** method uses number as a parameter to place your marker at the desirable position, depending on the markers scale. Note, that the default markers scale is the chart's **.xScale()**. You can adjust markers scale using **.scale()** method. **.anchor()** methods defines the point of the market that should be considered as main for marker positioning.  
 
-Line marker is a simple line through the whole chart therefore it can be tuned as easy as any line in AnyChart. The main way to adjust line marker is using {api:anychart.core.axisMarkers.Line#stroke}**stroke()**{api} method.
+## Settings
 
-```
-  var marker = chart.lineMarker();
-  marker.value(9000);
-  marker.stroke({
-     thickness: 2,
-     color: green,
-     dash: "2 7"
-  });
-```
+You can configure text marker placement, font, anchor and text of any custom text using {api:anychart.core.axisMarkers.Text#value}**value()**{api}, {api:anychart.core.axisMarkers.Text#align}**align()**{api}, {api:anychart.core.axisMarkers.Text#anchor}**anchor()**{api}, {api:anychart.graphics.vector.Text#fontSize}**fontSize()**{api}, {api:anychart.core.axisMarkers.Text#offsetX}**offsetX()**{api}, {api:anychart.core.axisMarkers.Text#offsetY}**offsetY()**{api}, {api:anychart.core.axisMarkers.Text#text}**text()**{api} methods.
 
-Here is the sample quite similar to the one above but with visually tuned line marker:
-
-{sample}AGST\_Line\_Marker\_04{sample}
-
-## Multiple Lines
-
-AnyChart does not set any limits on the number of line markers on the chart plot. To create multiple lines the **.lineMarker()** method should be called with an index as a parameter.
+Markers placement is controlled using {api:anychart.enums.Align}**align()**{api} parameter.
 
 ```
-  // define first marker
-  var marker1 = chart.lineMarker(0);
-  
-  // define second marker
-  var marker2 = chart.lineMarker(1);
+  var textMarker = chart.textMarker();
+  textMarker.scale(chart.yScale());
+  textMarker.value(13);
+  textMarker.text("Align: right");
+  textMarker.align("right");
+  textMarker.offsetX(5);
+  textMarker.fontColor("#212121");
+  textMarker.anchor("rightcenter");
 ```
 
-Here is a sample with multiple lines. Both of them indicates extremes of the chart. 
+In the sample below you can see different text markers positions and text formatting:
 
-{sample}AGST\_Line\_Marker\_05{sample}
-
-## Layout
-
-You can easily manage line marker's layout using **.layout()** method. Using this method you can set horizontal or vertical placement.
-
-```
-  var marker = chart.lineMarker();
-  marker.layout("vertical");
-  marker.value(1325289600000)
-```
-
-Here is a sample of marker's vertical layout.
-
-
-{sample}AGST\_Line\_Marker\_06{sample}
+{sample}AGST\_Text\_Marker\_02{sample}
