@@ -3,6 +3,7 @@
 
 * [Overview](#overview)
 * [Declare](#declare)
+* [Position](#position)
 * [Range and Text Markers](#range_and_text_markers)
 * [Advanced Visualization](#advanced_visualization)
 
@@ -29,9 +30,9 @@ Using this code let's create a marker that highlights unsatisfactory result.
 
 {sample}AGST\_Range\_Marker\_04{sample}
 
-##Position
+## Position
 
-As you can see range marker highlights the area between {api:anychart.axisMarkers.Range#from}**from()**{api} and {api:anychart.axisMarkers.Range#to}**to()**{api} parameters. You can manage the scale for marker to be bind to using **.scale()** method. If you want to rotate your marker by 90 degrees you need to change its layout using **.layout()** method. 
+As you can see range marker highlights the area between {api:anychart.axisMarkers.Range#from}**from()**{api} and {api:anychart.axisMarkers.Range#to}**to()**{api} parameters. You can manage the scale for marker to be bind to using {api:anychart.axisMarkers.Range#scale}**.scale()**{api} method. If you want to rotate your marker by 90 degrees you need to change its layout using {api:anychart.axisMarkers.Range#layout}**.layout()**{api} method. 
 
 ```
   // create range marker

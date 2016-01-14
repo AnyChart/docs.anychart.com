@@ -4,7 +4,8 @@
 * [Overview](#overview)
 * [Declare](#declare)
 * [Visualization](#visualization)
-* [Line and Text Markers](#line_and_text_markers)
+* [Multiple Lines](#multiple_lines)
+* [Layout](#layout)
 
 ## Overview
 
@@ -12,7 +13,7 @@ Along with series there are several element that can present on the chart's plot
 
 ## Declare
 
-To create a line marker you need to use the **.lineMarker()** method. This method will create a simple horizontal line and place it on 0 value of the y scale. You can control marker's position using **.value()** method.
+To create a line marker you need to use the {api:anychart.axisMarkers#line}**.lineMarker()**{api} method. This method will create a simple horizontal line and place it on 0 value of the y scale. You can control marker's position using {api:anychart.axisMarkers.Line#value}**.value()**{api} method.
 
 ```
   var marker = chart.lineMarker();
@@ -44,7 +45,8 @@ Here is the sample quite similar to the one above but with visually tuned line m
 
 ## Multiple Lines
 
-AnyChart does not set any limits on the number of line markers on the chart plot. To create multiple lines the **.lineMarker()** method should be called with an index as a parameter.
+AnyChart does not set any limits on the number of line markers on the chart plot. To create multiple lines the 
+{api:anychart.charts.Cartesian#lineMarker}**.lineMarker()**{api} method should be called with an index as a parameter.
 
 ```
   // define first marker
@@ -60,7 +62,7 @@ Here is a sample with multiple lines. Both of them indicates extremes of the cha
 
 ## Layout
 
-You can easily manage line marker's layout using **.layout()** method. Using this method you can set horizontal or vertical placement.
+You can easily manage line marker's layout using {api:anychart.axisMarkers.Line#layout}**.layout()**{api} method. Using this method you can set horizontal or vertical placement.
 
 ```
   var marker = chart.lineMarker();
