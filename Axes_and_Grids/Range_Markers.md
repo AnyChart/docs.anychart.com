@@ -12,51 +12,49 @@ Range Markers (sometimes referred as areas or zones) are colored areas bound to 
 
 ## Declare
 
-To add range marker you need to use {api:anychart.axisMarkers.Range}**rangeMarker()**{api} method. Each range marker has several mandatory properties set by {api:anychart.axisMarkers.Range#scale}**scale()**{api}, {api:anychart.axisMarkers.Range#from}**from()**{api}, {api:anychart.axisMarkers.Range#to}**to()**{api} and {api:anychart.axisMarkers.Range#fill}**fill()**{api} methods. If you want to bound range marker to a horizontal scale, you have to set {api:anychart.axisMarkers.Range#layout}**layout(vertical)**{api}. Otherwise it will be horizontal.
+To add range marker you need to use {api:anychart.axisMarkers.Range}**rangeMarker()**{api} method. Each range marker has several mandatory properties set by {api:anychart.axisMarkers.Range#from}**from()**{api}, {api:anychart.axisMarkers.Range#to}**to()**{api} and {api:anychart.axisMarkers.Range#fill}**fill()**{api} methods.
 
 ```
-  // create first range marker
-  var marker1 = chart.rangeMarker(0);
-  // bind marker to the scale
-  marker1.scale(yScale);
-  // set start value for range
-  marker1.from(20000);
-  // set end point for range
-  marker1.to(30000);
-  // set range color
-  marker1.fill("#d7fcda");
-  
-  // create second marker
-  var marker2 = chart.rangeMarker(1);
-  // bind marker to scale
-  marker2.scale(chart.yScale());
+  // create range marker
+  var marker = chart.rangeMarker();
   // set start point of the marker
-  marker2.from(10000);
+  marker.from(0);
   // set end point of the marker
-  marker2.to(20000);
-  // set marker's inner color
-  marker2.fill("#ffffdc");
-  
-  // create third marker
-  var marker3 = chart.rangeMarker(2);
-  // bind marker to the chart scale
-  marker3.scale(chart.yScale());
-  // set start point of the marker
-  marker3.from(0);
-  // set end point of the marker
-  marker3.to(10000);
+  marker.to(10000);
   // set marker inner color
-  marker3.fill("#fcd8d7");
+  marker.fill("#fcd8d7");
 ```
 
-The sample below shows horizontal axes ranges.
+Using this code let's create a marker that highlights unsatisfactory result.
 
-{sample}AGST\_Range\_Marker\_01{sample}
+{sample}AGST\_Range\_Marker\_04{sample}
+
+##Position
+
+As you can see range marker highlights the area between {api:anychart.axisMarkers.Range#from}**from()**{api} and {api:anychart.axisMarkers.Range#to}**to()**{api} parameters. You can manage the scale for marker to be bind to using **.scale()** method. If you want to rotate your marker by 90 degrees you need to change its layout using **.layout()** method. 
+
+```
+  // create range marker
+  var marker = chart.rangeMarker();
+  // set start point of the marker
+  marker.from("June");
+  // set end point of the marker
+  marker.to("August");
+  // rotate marker
+  marker.layout("vertical");
+  // bound marker to chart's x scale
+  marker.scale(chart.xScale());
+  // set marker inner color
+  marker.fill("#d7fcda");
+```
+
+In the next sample we will highlight summer months.
+
+{sample}AGST\_Range\_Marker\_05{sample}
 
 ## Range and Text Markers
 
-Combination of range and text markers may be very useful to emphasize certain information or to set a kind of comment 
-or mark some kind of data.
+Combination of range and text markers may be very useful to emphasize certain information or to set a kind of comment or mark some kind of data.
 
 {sample}AGST\_Range\_Marker\_02{sample}
 
