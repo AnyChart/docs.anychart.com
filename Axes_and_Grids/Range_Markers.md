@@ -13,7 +13,7 @@ Range Markers (sometimes referred as areas or zones) are colored areas bound to 
 
 ## Declare
 
-To add range marker you need to use {api:anychart.axisMarkers.Range}**rangeMarker()**{api} method. Each range marker has several mandatory properties set by {api:anychart.axisMarkers.Range#from}**from()**{api}, {api:anychart.axisMarkers.Range#to}**to()**{api} and {api:anychart.axisMarkers.Range#fill}**fill()**{api} methods.
+To add range marker you need to use {api:anychart.axisMarkers.Range}**.rangeMarker()**{api} method. Each range marker has several mandatory properties set by {api:anychart.axisMarkers.Range#from}**.from()**{api}, {api:anychart.axisMarkers.Range#to}**to()**{api} and {api:anychart.axisMarkers.Range#fill}**.fill()**{api} methods.
 
 ```
   // create range marker
@@ -32,7 +32,7 @@ Using this code let's create a marker that highlights unsatisfactory result.
 
 ## Position
 
-As you can see range marker highlights the area between {api:anychart.axisMarkers.Range#from}**from()**{api} and {api:anychart.axisMarkers.Range#to}**to()**{api} parameters. You can manage the scale for marker to be bind to using {api:anychart.axisMarkers.Range#scale}**.scale()**{api} method. If you want to rotate your marker by 90 degrees you need to change its layout using {api:anychart.axisMarkers.Range#layout}**.layout()**{api} method. 
+As you can see range marker highlights the area between {api:anychart.axisMarkers.Range#from}**.from()**{api} and {api:anychart.axisMarkers.Range#to}**.to()**{api} parameters. You can manage the scale for marker to be bind to using {api:anychart.axisMarkers.Range#scale}**.scale()**{api} method. If you want to rotate your marker by 90 degrees you need to change its layout using {api:anychart.axisMarkers.Range#layout}**.layout()**{api} method. 
 
 ```
   // create range marker
@@ -61,7 +61,7 @@ Combination of range and text markers may be very useful to emphasize certain in
 
 ## Advanced Visualization
 
-As far as range marker has method {api:anychart.graphics.vector.Fill}**fill()**{api}, you can also use gradient and image fills of range to achieve desired style of your charts.
+As far as range marker has method {api:anychart.graphics.vector.Fill}**.fill()**{api}, you can also use gradient and image fills of range to achieve desired style of your charts.
 
 ```
   // create range marker

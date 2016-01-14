@@ -27,7 +27,7 @@ Here is a sample with a line marker and it is used to indicate the year with the
 
 ## Visualization
 
-Line marker is a simple line through the whole chart therefore it can be tuned as easy as any line in AnyChart. The main way to adjust line marker is using {api:anychart.core.axisMarkers.Line#stroke}**stroke()**{api} method.
+Line marker is a simple line through the whole chart therefore it can be tuned as easy as any line in AnyChart. The main way to adjust line marker is using {api:anychart.core.axisMarkers.Line#stroke}**.stroke()**{api} method.
 
 ```
   var marker = chart.lineMarker();
