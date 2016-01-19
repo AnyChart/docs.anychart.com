@@ -12,6 +12,9 @@
  * [Value Stacked](#value_stacked)
  * [Percent Stacked](#percent_stacked)
 * [Visualization](#visualization)
+ * [Angle](#angle)
+ * [Depth](#depth)
+ * [Padding](#padding)
 
 ## Overview
 
@@ -189,9 +192,25 @@ Let's see, how percent stacked 3d column chart looks like:
 
 ## Visualization
 
+3D charts have a much more interesting appearance than a 2d charts and it requires a bit more methods to control this unusual type of charts. This section describes several methods of tuning visual appearance of a 3d plot.
+
+### Angle
+
+As far as 3d implements observing chart from different angles, it is important to tune viewing angle. Use desirable angle as a parameter for {api:anychart.charts.Cartesian3d#zAngle}**.zAngle()**{api} method to adjust it.
+
+```
+  var chart = anychart.bar3d();
+  chart.bar(data);
+
+  // increase default depth two times
+  chart.zAngle(20);
+```
+
+**Note**: {api:anychart.charts.Cartesian3d#zAngle}**.zAngle()**{api} range is limited and can't be less than 0 and more than 90.
+
 ### Depth
 
-For 3 dimensional charts it might be necessary to adjust depth of the plot. Use **.zDepth()** method to control the depth of 3d plot.
+For 3 dimensional charts it might be necessary to adjust depth of the plot. Use {api:anychart.charts.Cartesian3d#zDepth}**.zDepth()**{api} method to control the depth of 3d plot.
 
 ```
   var chart = anychart.bar3d();
@@ -205,23 +224,10 @@ Let's use these settings and create 3d chart with 20px depth
 
 {sample}BCT\_3d\_08{sample}
 
-### Angle
-
-Along with chart's depth you can tune angle of 3d vision. Use desirable angle as a parameter for **.zAngle()** method to adjust it.
-
-```
-  var chart = anychart.bar3d();
-  chart.bar(data);
-
-  // increase default depth two times
-  chart.zAngle(20);
-```
-
-**Note**: **zAngle()** range is limited and can't be less than 0 and more than 90.
 
 ### Padding
 
-If you want to change the way series are placed on the 3d chart's plot and make points to be placed one after another into the depth of the plot you need to use **.zPadding()** method. **.zPadding()** method uses number as a parameter and controls the space between the series.
+If you want to change the way series are placed on the 3d chart's plot and place points of one series behind the points of another into the depth of the plot you need to use {api:anychart.charts.Cartesian3d#zPadding}**.zPadding()**{api} method. {api:anychart.charts.Cartesian3d#zPadding}**.zPadding()**{api} method uses number as a parameter and controls the space between the series.
 
 ```
   var chart = anychart.column3d();
@@ -232,9 +238,9 @@ If you want to change the way series are placed on the 3d chart's plot and make 
   chart.zPadding(5);
 ```
 
-**Note**: If you pass **false** to **.zPadding()** each point of the series will be placed to the right from the points of the previous series.
+**Note**: If you pass **false** to {api:anychart.charts.Cartesian3d#zPadding}**.zPadding()**{api} each point of the series will be placed to the right from the points of the previous series.
 
-Let's take a look at the 3d chart with 5 pixel z padding.
+Let's take a look at the 3d chart that have 5 pixel {api:anychart.charts.Cartesian3d#zPadding}**.zPadding()**{api} and 60 pixels {api:anychart.charts.Cartesian3d#zDepth}**.zDepth()**{api}.
 
 {sample}BCT\_3d\_09{sample}
 
