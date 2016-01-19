@@ -224,10 +224,10 @@ Along with chart's depth you can tune angle of 3d vision. Use desirable angle as
 If you want to change the way series are placed on the chart's plot and make points to be placed one after another into the depth of the plot you need to use **.zPadding()** method. **.zPadding()** method uses number as a parameter and controls the space between the series. If you pass **false** to **.zPadding()** each point of the series will be placed to the right from the points of the previous series.
 
 ```
-  var chart = anychart.bar3d();
-  chart.bar(data1);
-  chart.bar(data2);
-  chart.bar(data3);
+  var chart = anychart.column3d();
+  chart.column(data1);
+  chart.column(data2);
+  chart.column(data3);
   
   chart.zPadding(5);
 ```

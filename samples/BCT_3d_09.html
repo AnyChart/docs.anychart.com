@@ -9,7 +9,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
 	// set data and chart type
-	var chart = anychart.bar3d();
+	var chart = anychart.column3d();
 
 	// data
 	var data = anychart.data.set([
@@ -23,9 +23,9 @@
 	var dataSet2 = data.mapAs({x: [0], value: [2]});
 	var dataSet3 = data.mapAs({x: [0], value: [3]});
 
-	chart.bar(dataSet1);
-	chart.bar(dataSet2);
-	chart.bar(dataSet3);
+	chart.column(dataSet1);
+	chart.column(dataSet2);
+	chart.column(dataSet3);
 
 	chart.title("Visualization");
 	chart.zPadding(5);
