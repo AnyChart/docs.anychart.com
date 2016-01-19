@@ -221,18 +221,20 @@ Along with chart's depth you can tune angle of 3d vision. Use desirable angle as
 
 ### Padding
 
-If you want to change the way series are placed on the chart's plot and make points to be placed one after another into the depth of the plot you need to use **.zPadding()** method. **.zPadding()** method uses number as a parameter and controls the space between the series. If you pass **false** to **.zPadding()** each point of the series will be placed to the right from the points of the previous series.
+If you want to change the way series are placed on the 3d chart's plot and make points to be placed one after another into the depth of the plot you need to use **.zPadding()** method. **.zPadding()** method uses number as a parameter and controls the space between the series.
 
 ```
   var chart = anychart.column3d();
   chart.column(data1);
   chart.column(data2);
   chart.column(data3);
-  
+
   chart.zPadding(5);
 ```
 
-Let's take a look at the 3d chart with 3 px z padding.
+**Note**: If you pass **false** to **.zPadding()** each point of the series will be placed to the right from the points of the previous series.
+
+Let's take a look at the 3d chart with 5 pixel z padding.
 
 {sample}BCT\_3d\_09{sample}
 
