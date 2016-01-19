@@ -10,16 +10,27 @@
 
 	// set data and chart type
 	var chart = anychart.bar3d();
-	chart.bar([
-		["Department Stores",         637166],
-		["Discount Stores",           721630],
-		["Men's/Women's Stores",      148662],
-		["Juvenile Specialty Stores", 78662],
-		["All other outlets",         90000]
+
+	// data
+	var data = anychart.data.set([
+		["Winter", 12000, 12000, 10000],
+		["Spring", 13000, 12000, 17000],
+		["Summer", 25000, 15000, 19000],
+		["Autumn", 16000, 16000, 16000]
 	]);
 
-	chart.title("Depth");
-	chart.zDepth(20);
+	var dataSet1 = data.mapAs({x: [0], value: [1]});
+	var dataSet2 = data.mapAs({x: [0], value: [2]});
+	var dataSet3 = data.mapAs({x: [0], value: [3]});
+
+	chart.bar(dataSet1);
+	chart.bar(dataSet2);
+	chart.bar(dataSet3);
+
+	chart.title("Visualization");
+	chart.zPadding(5);
+	chart.zAngle(60);
+	chart.zDepth(60);
 
 	// draw
 	chart.container("container");

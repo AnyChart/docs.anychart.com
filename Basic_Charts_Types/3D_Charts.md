@@ -204,3 +204,35 @@ For 3 dimensional charts it might be necessary to adjust depth of the plot. Use 
 Let's use these settings and create 3d chart with 20px depth
 
 {sample}BCT\_3d\_08{sample}
+
+### Angle
+
+Along with chart's depth you can tune angle of 3d vision. Use desirable angle as a parameter for **.zAngle()** method to adjust it.
+
+```
+  var chart = anychart.bar3d();
+  chart.bar(data);
+
+  // increase default depth two times
+  chart.zAngle(20);
+```
+
+**Note**: **zAngle()** range is limited and can't be less than 0 and more than 90.
+
+### Padding
+
+If you want to change the way series are placed on the chart's plot and make points to be placed one after another into the depth of the plot you need to use **.zPadding()** method. **.zPadding()** method uses number as a parameter and controls the space between the series. If you pass **false** to **.zPadding()** each point of the series will be placed to the right from the points of the previous series.
+
+```
+  var chart = anychart.bar3d();
+  chart.bar(data1);
+  chart.bar(data2);
+  chart.bar(data3);
+  
+  chart.zPadding(5);
+```
+
+Let's take a look at the 3d chart with 3 px z padding.
+
+{sample}BCT\_3d\_09{sample}
+
