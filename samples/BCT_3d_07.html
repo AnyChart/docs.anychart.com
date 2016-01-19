@@ -8,18 +8,42 @@
     <script src="https://preview.c9users.io/voron/doc/anychart-bundle.min.js" data-export="true"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-	// set data and chart type
-	var chart = anychart.pie3d([
-		{name: "Department Stores",         value: 637166},
-		{name: "Discount Stores",           value: 721630},
-		{name: "Men's/Women's Stores",      value: 148662},
-		{name: "Juvenile Specialty Stores", value: 78662},
-		{name: "All other outlets",         value: 90000}
+	// data
+	var data = anychart.data.set([
+		["Winter", 12000, 12000, 10000],
+		["Spring", 13000, 12000, 17000],
+		["Summer", 25000, 15000, 19000],
+		["Autumn", 16000, 16000, 16000]
 	]);
 
-	chart.title("3D Pie Chart");
+	var dataSet1 = data.mapAs({x: [0], value: [1]});
+	var dataSet2 = data.mapAs({x: [0], value: [2]});
+	var dataSet3 = data.mapAs({x: [0], value: [3]});
 
-	// draw
+	// set chart type
+	var chart = anychart.column3d();
+
+	// setting title
+	chart.title("Percent Stacked 3D Column Chart");
+
+	// set axes titles
+	var xAxis = chart.xAxis();
+	xAxis.title("Month");
+	var yAxis = chart.yAxis();
+	yAxis.title("Sales");
+
+	var yScale = chart.yScale();
+	yScale.stackMode("percent");
+
+	// set data
+	var series1 = chart.column(dataSet1);
+	series1.name("Sales 2009");
+	var series2 = chart.column(dataSet2);
+	series2.name("Sales 2010");
+	var series3 = chart.column(dataSet3);
+	series3.name("Sales 2011");
+
+	// draw chart
 	chart.container("container");
 	chart.draw();
 });</script>

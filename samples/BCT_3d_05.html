@@ -21,13 +21,10 @@
 	var dataSet3 = data.mapAs({x: [0], value: [3]});
 
 	// set chart type
-	var chart = anychart.area3d();
-
-	var yScale = chart.yScale();
-	yScale.stackMode("value");
+	var chart = anychart.bar3d();
 
 	// setting title
-	chart.title("Value Stacked 3D Area Chart");
+	chart.title("Multi-Series Bar chart");
 
 	// set axes titles
 	var xAxis = chart.xAxis();
@@ -36,11 +33,11 @@
 	yAxis.title("Sales");
 
 	// create series
-	var series1 = chart.area(dataSet1);
+	var series1 = chart.bar(dataSet1);
 	series1.name("Sales 2009");
-	var series2 = chart.area(dataSet2);
+	var series2 = chart.bar(dataSet2);
 	series2.name("Sales 2010");
-	var series3 = chart.area(dataSet3);
+	var series3 = chart.bar(dataSet3);
 	series3.name("Sales 2011");
 
 	// draw chart

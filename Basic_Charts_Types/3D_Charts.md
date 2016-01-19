@@ -11,6 +11,7 @@
  * [Multi-Series](#multi-series)
  * [Value Stacked](#value_stacked)
  * [Percent Stacked](#percent_stacked)
+* [Visualization](#visualization)
 
 ## Overview
 
@@ -113,7 +114,7 @@ More information about pie charts can be found in [pie and doughnut chart articl
   
 Here is a sample of 3d pie chart:
 
-{sample}BCT\_3d\_07{sample}
+{sample}BCT\_3d\_04{sample}
 
 ## Multiple Series
 
@@ -147,7 +148,7 @@ One of the most simplest way to create multiple series on a chart is to invoke m
 
 Here is a sample of multi-series bar chart
 
-{sample}BCT\_3d\_04{sample}
+{sample}BCT\_3d\_05{sample}
 
 ### Value Stacked
 
@@ -164,7 +165,7 @@ Value stacked 3d charts are multi-series charts that display series point value 
 
 Here is a sample of 3D stacked area chart:
 
-{sample}BCT\_3d\_05{sample}
+{sample}BCT\_3d\_06{sample}
 
 ### Percent Stacked
 
@@ -184,5 +185,22 @@ To enable percent stacked mode you have to use {api:anychart.scales.Linear#stack
 
 Let's see, how percent stacked 3d column chart looks like:
 
-{sample}BCT\_3d\_06{sample}
+{sample}BCT\_3d\_07{sample}
 
+## Visualization
+
+### Depth
+
+For 3 dimensional charts it might be necessary to adjust depth of the plot. Use **.zDepth()** method to control the depth of 3d plot.
+
+```
+  var chart = anychart.bar3d();
+  chart.bar(data);
+
+  // increase default depth two times
+  chart.zDepth(20);
+```
+
+Let's use these settings and create 3d chart with 20px depth
+
+{sample}BCT\_3d\_08{sample}
