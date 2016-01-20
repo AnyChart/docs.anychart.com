@@ -145,8 +145,8 @@ One of the most simplest way to create multiple series on a chart is to invoke m
   var chart = anychart.bar3d();
 
   // set data
-  chart.bar3d(Sales2003);
-  chart.bar3d(Sales2004);
+  chart.bar(Sales2003);
+  chart.bar(Sales2004);
 ```
 
 Here is a sample of multi-series bar chart
@@ -202,11 +202,11 @@ As far as 3d implements observing chart from different angles, it is important t
   var chart = anychart.bar3d();
   chart.bar(data);
 
-  // increase default depth two times
+  // decrease default angle two times
   chart.zAngle(20);
 ```
 
-**Note**: {api:anychart.charts.Cartesian3d#zAngle}**.zAngle()**{api} range is limited and can't be less than 0 and more than 90.
+**Note**: {api:anychart.charts.Cartesian3d#zAngle}**.zAngle()**{api} range is limited and can't be less than 0 and greater than 90.
 
 ### Depth
 
@@ -216,11 +216,12 @@ For 3 dimensional charts it might be necessary to adjust depth of the plot. Use 
   var chart = anychart.bar3d();
   chart.bar(data);
 
-  // increase default depth two times
-  chart.zDepth(20);
+  // increase default depth four times
+  chart.zDepth(40);
+  chart.zAngle(20);
 ```
 
-Let's use these settings and create 3d chart with 20px depth
+Let's use these settings and create 3d chart with 40px depth and adjusted angle of view:
 
 {sample}BCT\_3d\_08{sample}
 

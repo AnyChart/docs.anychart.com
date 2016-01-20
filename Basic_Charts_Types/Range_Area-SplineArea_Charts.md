@@ -55,7 +55,7 @@ Here is the way of changing upper markers:
 Here is the result of applying these settings to the sample data:
 
 {sample}BCT_Range\_Area-SplineArea\_Charts\_02{sample}
-
+<!--
 ## 3D Mode
 
 Use **.area3d()** method to enable 3d mode of area chart.
@@ -72,3 +72,4 @@ series3.name("Sales 2011");
 Here is a sample how 3d area looks like: 
 
 {sample}BCT_Range\_Area-SplineArea\_Charts\_03{sample}
+-->

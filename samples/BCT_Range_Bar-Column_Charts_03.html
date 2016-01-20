@@ -5,26 +5,13 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script src="https://preview.c9users.io/voron/doc/anychart-bundle.min.js" data-export="true"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-
-	// data
-	var data = anychart.data.set([
-		["Winter", 12000, 12000, 10000],
-		["Spring", 13000, 12000, 17000],
-		["Summer", 25000, 15000, 19000],
-		["Autumn", 16000, 16000, 16000]
-	]);
-
-	var dataSet1 = data.mapAs({x: [0], value: [1]});
-	var dataSet2 = data.mapAs({x: [0], value: [2]});
-	var dataSet3 = data.mapAs({x: [0], value: [3]});
 
 	// set chart type
 	var chart = anychart.bar3d();
 
 	// setting title
-	chart.title("Percent Stacked 3D Column Chart");
+	chart.title("3D Range Bar Chart");
 
 	// set axes titles
 	var xAxis = chart.xAxis();
@@ -36,12 +23,21 @@
 	yScale.stackMode("value");
 
 	// set data
-	var series1 = chart.bar(dataSet1);
-	series1.name("Sales 2009");
-	var series2 = chart.bar(dataSet2);
-	series2.name("Sales 2010");
-	var series3 = chart.bar(dataSet3);
-	series3.name("Sales 2011");
+	chart.rangeBar([
+		{low: 0.6, high: 6.3},
+		{low: 0.7, high: 6.1},
+		{low: 1.9, high: 8.5},
+		{low: 3.1, high: 10.8},
+		{low: 5.7, high: 14.4},
+		{low: 8.4, high: 16.9},
+		{low: 10.6, high: 19.2},
+		{low: 10.5, high: 18.9},
+		{low: 8.5, high: 16.1},
+		{low: 6.0, high: 12.5},
+		{low: 3.0, high: 8.8},
+		{low: 1.5, high: 6.9},
+		{low: 5.1, high: 12.1}
+	]);
 
 	// draw chart
 	chart.container("container");
