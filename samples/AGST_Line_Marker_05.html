@@ -18,11 +18,19 @@
 
   // set the lowest line marker
   var minMarker = chart.lineMarker(0);
+  // set marker's scale
+  minMarker.scale(chart.yScale());
+  // set marker's layout
+  minMarker.layout("horizontal");
   minMarker.value(9000);
   minMarker.stroke("#0D0");
 
   // set the highest line marker
   var maxMarker = chart.lineMarker(1);
+  // set marker's scale
+  maxMarker.scale(chart.yScale());
+  // set marker's layout
+  maxMarker.layout("horizontal");
   maxMarker.value(19000);
   maxMarker.stroke("red");
 
