@@ -20,7 +20,7 @@ To create a line marker you need to use the {api:anychart.axisMarkers#line}**.li
   marker.value(9000);
 ```
 
-Here is a sample with a line marker and it is used to indicate the year with the lowest amount of income:
+Here is a sample with a line marker and it is used to indicate the lowest amount of income:
 
 {sample}AGST\_Line\_Marker\_03{sample}
 
@@ -45,12 +45,13 @@ Here is the sample quite similar to the one above but with visually tuned line m
 
 ## Layout
 
-You can easily manage line marker's layout using {api:anychart.axisMarkers.Line#layout}**.layout()**{api} method. Using this method you can set horizontal or vertical placement. Don't forget to bound your marker to a scale using {api:anychart.axisMarkers.Line#scale}**.scale()**{api} method or your marker will be bind to default y scale.
+You can easily manage line marker's layout using {api:anychart.axisMarkers.Line#layout}**.layout()**{api} method. Using this method you can set horizontal or vertical placement. Don't forget to bind your marker to a scale using {api:anychart.axisMarkers.Line#scale}**.scale()**{api} method or your marker will be bound to default y scale.
 
 ```
   var marker = chart.lineMarker();
   marker.layout("vertical");
   marker.value(1325289600000);
+  marker.scale(chart.xScale());
 ```
 
 One of possible ways to use line marker's vertical layout is to separate a part of a chart:
@@ -70,7 +71,7 @@ AnyChart does not set any limits on the number of line markers on the chart plot
   var marker2 = chart.lineMarker(1);
 ```
 
-After defining a marker it is vital **to bound your marker to a scale and set markers layout**. Otherwise, you will have horizontal marker that is bind to chart's default y scale.
+After defining a marker it is vital **to bind your marker to a scale and set markers layout**. Otherwise, you will have horizontal marker that is bind to chart's default y scale.
   
 ```
   var marker1 = chart.lineMarker(0);
@@ -85,8 +86,8 @@ After defining a marker it is vital **to bound your marker to a scale and set ma
   marker2.scale(chart.yScale());
   // set layout for the second marker
   marker2.layout("horizontal");
-````
-  
-Here is a sample with multiple lines. Both of them indicates extremes of the chart. 
+```
+
+Here is a sample with multiple lines. Both of them indicate extremes of the chart.
 
 {sample}AGST\_Line\_Marker\_05{sample}
