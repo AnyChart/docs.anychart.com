@@ -9,25 +9,25 @@
 
 ## Overview
 
-Along with series there are several element that can present on the chart's plot. One of these elements of line marker. Line marker is a strait line that goes all through the charts plot. It may serve for several purposes: to define the value for comparing each of the series points or to visually separate some of chart's elements.
+Line marker is a line that is drawn on chart plot and bound to some value on an axis. It may be used to show a trend or mark an important value.
 
 ## Declare
 
-To create a line marker you need to use the {api:anychart.axisMarkers#line}**.lineMarker()**{api} method. This method will create a simple horizontal line and place it on 0 value of the y scale. You can control marker's position using {api:anychart.axisMarkers.Line#value}**.value()**{api} method.
+To create a line marker use the {api:anychart.axisMarkers#line}**.lineMarker()**{api} method. By default this method creates a marker on a primary y scale. To set a position for a marker use {api:anychart.axisMarkers.Line#value}**.value()**{api} method.
 
 ```
   var marker = chart.lineMarker();
   marker.value(9000);
 ```
 
-Here is a sample with a line marker and it is used to indicate the lowest amount of income:
+Here is a sample with a line marker on Y Axis:
 
 {sample}AGST\_Line\_Marker\_03{sample}
 
 
 ## Visualization
 
-Line marker is a simple line through the whole chart therefore it can be tuned as easy as any line in AnyChart. The main way to adjust line marker is using {api:anychart.core.axisMarkers.Line#stroke}**.stroke()**{api} method.
+Line marker appearance is defined using {api:anychart.core.axisMarkers.Line#stroke}**.stroke()**{api} method, like any other line in AnyChart.
 
 ```
   var marker = chart.lineMarker();
@@ -39,13 +39,13 @@ Line marker is a simple line through the whole chart therefore it can be tuned a
   });
 ```
 
-Here is the sample quite similar to the one above but with visually tuned line marker:
+Here is a sample with a dash line marker:
 
 {sample}AGST\_Line\_Marker\_04{sample}
 
 ## Layout
 
-You can easily manage line marker's layout using {api:anychart.axisMarkers.Line#layout}**.layout()**{api} method. Using this method you can set horizontal or vertical placement. Don't forget to bind your marker to a scale using {api:anychart.axisMarkers.Line#scale}**.scale()**{api} method or your marker will be bound to default y scale.
+You can easily manage line marker's layout using {api:anychart.axisMarkers.Line#layout}**.layout()**{api} method. Using this method you can set horizontal or vertical placement. Don't forget to bind markers to a scale using {api:anychart.axisMarkers.Line#scale}**.scale()**{api} method or your marker will be bound to the primary y scale.
 
 ```
   var marker = chart.lineMarker();
@@ -54,7 +54,7 @@ You can easily manage line marker's layout using {api:anychart.axisMarkers.Line#
   marker.scale(chart.xScale());
 ```
 
-One of possible ways to use line marker's vertical layout is to separate a part of a chart:
+Here is a sample of a line marker on a date time X Axis:
 
 {sample}AGST\_Line\_Marker\_06{sample}
 
@@ -71,7 +71,7 @@ AnyChart does not set any limits on the number of line markers on the chart plot
   var marker2 = chart.lineMarker(1);
 ```
 
-After defining a marker it is vital **to bind your marker to a scale and set markers layout**. Otherwise, you will have horizontal marker that is bind to chart's default y scale.
+After defining a marker it is vital **to bind a marker to a scale and set markers layout**. Otherwise, you will get a horizontal marker that is bound to the primary y scale.
   
 ```
   var marker1 = chart.lineMarker(0);

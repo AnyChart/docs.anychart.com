@@ -13,7 +13,7 @@ Range Markers (sometimes referred as areas or zones) are colored areas bound to 
 
 ## Declare
 
-To add range marker you need to use {api:anychart.axisMarkers.Range}**.rangeMarker()**{api} method. Each range marker has several mandatory properties set by {api:anychart.axisMarkers.Range#from}**.from()**{api}, {api:anychart.axisMarkers.Range#to}**to()**{api} and {api:anychart.axisMarkers.Range#fill}**.fill()**{api} methods.
+To add range marker you need to use {api:anychart.axisMarkers.Range}**.rangeMarker()**{api} method. the basic range marker's properties can be set using {api:anychart.axisMarkers.Range#from}**.from()**{api}, {api:anychart.axisMarkers.Range#to}**to()**{api} and {api:anychart.axisMarkers.Range#fill}**.fill()**{api} methods.
 
 ```
   // create range marker
@@ -32,7 +32,7 @@ Using this code let's create a marker that highlights unsatisfactory result.
 
 ## Position
 
-As you can see range marker highlights the area between {api:anychart.axisMarkers.Range#from}**.from()**{api} and {api:anychart.axisMarkers.Range#to}**.to()**{api} parameters. You can manage the scale for marker to be bind to using {api:anychart.axisMarkers.Range#scale}**.scale()**{api} method. If you want to rotate your marker by 90 degrees you need to change its layout using {api:anychart.axisMarkers.Range#layout}**.layout()**{api} method. 
+As you can see range marker highlights the area between {api:anychart.axisMarkers.Range#from}**.from()**{api} and {api:anychart.axisMarkers.Range#to}**.to()**{api} parameters. To change the scale marker is bound to use the {api:anychart.axisMarkers.Range#scale}**.scale()**{api} method. If you want to place marker on X axis you need to bind to X scale and change layout using {api:anychart.axisMarkers.Range#layout}**.layout()**{api} method. Please be careful: you can change layout without changing the scale create misleading representation.
 
 ```
   // create range marker
@@ -55,13 +55,13 @@ In the next sample we will highlight summer months.
 
 ## Range and Text Markers
 
-Combination of range and text markers may be very useful to emphasize certain information or to set a kind of comment or mark some kind of data.
+Combination of range and text markers may be very useful to emphasize certain information or to set a comment or mark some data.
 
 {sample}AGST\_Range\_Marker\_02{sample}
 
 ## Advanced Visualization
 
-As far as range marker has method {api:anychart.graphics.vector.Fill}**.fill()**{api}, you can also use gradient and image fills of range to achieve desired style of your charts.
+You can use {api:anychart.graphics.vector.Fill}**.fill()**{api}method to control the inner color of the marker. Note, that this method can be used to set gradient and image inner color for your marker.
 
 ```
   // create range marker
