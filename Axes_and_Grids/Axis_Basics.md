@@ -8,6 +8,9 @@
 * [Labels](#labels)
 * [Axis Line](#axis_line)
 * [Tickmarks](#tickmarks)
+* [Grids](#grids)
+  * [Visualization](#visualization)
+  * [Layout](#layout)
 
 ## Overview
 
@@ -155,3 +158,80 @@ Ticks can be placed **inside** or **outside** relatively to the axis line. These
 The dashboard below shows how these settings work:
 
 {sample}AGST\_Axes\_Basic\_07{sample}
+
+## Grids
+
+There are two types of grid in AnyChart charting framework - major grid that can be controlled using {api:anychart.charts.Cartesian#grid}**grid()**{api} method and minor grid that is controlled with {api:anychart.charts.Cartesian#minorGrid}**minorGrid()**{api} method. Both grids are disabled by default. To enable major grid use {api:anychart.core.grids.Linear#enabled}**enabled(true)**{api} method for {api:anychart.charts.Cartesian#grid}**grid()**{api} and if you want to display minor grid use {api:anychart.core.grids.Linear#enabled}**enabled(true)**{api} method for {api:anychart.charts.Cartesian#minorGrid}**minorGrid()**{api}.
+
+```
+  // enable major grid
+  var grid = chart.grid();
+  grid.enabled(true);
+  // enable minor grid
+  var minorGrid = chart.minorGrid();
+  minorGrid.enabled(true);
+```
+
+Here is how default grid and minor grid of cartesian chart looks like:
+
+{sample}AGST\_Axes\_Basic\_08{sample}
+
+### Visualization
+
+You can control visual appearance of grid lines using {api:anychart.grids.Linear#stroke}**stroke()**{api} method. Full information on lines settings can be found in [lines tutorial](../Appearance_Settings/Lines_Settings).
+
+```
+  var grid = chart.grid();
+  grid.stroke({
+    // set stroke color
+    color: "#FFF",
+    // set dashes and gaps length
+    dash: "3 5"
+  });
+```
+
+{sample}AGST\_Axes\_Basic\_09{sample}
+
+Grid's fill is controlled by two methods: {api:anychart.grids.Linear#evenFill}**evenFill()**{api} method controls inner color of all even spaces between grid lines and {api:anychart.grids.Linear#oddFill}**oddFill()**{api} method controls the color settings of all odd spaces.
+
+```
+  // grid settings
+  var grid = chart.grid();
+  // set odd fill
+  grid.oddFill("#FFF 0.25");
+  // set even fill
+  grid.evenFill("#000 0.25");
+```
+
+{sample}AGST\_Axes\_Basic\_10{sample}
+
+**Note**: Grid lines correlate with [ticks of the chart scale](./Scales#minor_and_major_ticks). To manage lines number adjust {api:anychart.scales.ScatterTicks#interval}**interval()**{api} parameter of the chart scale. Use {api:anychart.grids.Linear#scale}**scale()**{api} method to bind grid to a custom scale.
+
+### Layout
+
+Grids can be placed vertically or horizontally on the chart plot. You can control grid's placement using {api:anychart.grids.Linear#layout}**layout()**{api} method. 
+
+```
+  var grid = chart.grid();
+  grid.layout("vertical");
+```
+
+{sample}AGST\_Axes\_Basic\_11{sample}
+
+As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts_Types/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these charts you can use {api:anychart.grids.Radar#layout}**layout("curcuit")**{api} to define circular layout or {api:anychart.grids.Polar#layout}**layout("radial")**{api} to enable radial grid layout. 
+
+```
+  // create radar chart
+  var chart = anychart.radar();
+  
+  var grid = chart.grid();
+  grid.layout("curcuit");
+```
+
+Here is a sample of radar chart with circular grid:
+
+{sample}AGST\_Axes\_Basic\_12{sample}
+
+And here is a sample of Polar chart with radial layout: 
+
+{sample}AGST\_Axes\_Basic\_13{sample}
