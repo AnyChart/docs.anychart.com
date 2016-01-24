@@ -195,7 +195,7 @@ var data = anychart.data.set([
 var chart = anychart.area3d();
 
 // create series
-chart.area3d(data);
+chart.area(data);
 ```
 
 As you can see from the snippet above, you need to use {api:anychart.core.cartesian.series.Area3d}**.area()**{api} method to create 3D area series. Here is a sample of a 3D area chart:

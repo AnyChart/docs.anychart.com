@@ -197,7 +197,7 @@ var data = anychart.data.set([
 var chart = anychart.column3d();
 
 // create series
-var series = chart.column3d(data);
+var series = chart.column(data);
 series.name("Sales 2009");
 ```
 

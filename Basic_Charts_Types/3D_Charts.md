@@ -14,7 +14,7 @@
 * [Visualization](#visualization)
  * [Angle](#angle)
  * [Depth](#depth)
- * [Padding](#padding)
+<!-- * [Padding](#padding)-->
 
 ## Overview
 
@@ -225,7 +225,7 @@ Let's use these settings and create 3d chart with 40px depth and adjusted angle 
 
 {sample}BCT\_3d\_08{sample}
 
-
+<!--
 ### Padding
 
 If you want to change the way series are placed on the 3d chart's plot and place points of one series behind the points of another into the depth of the plot you need to use {api:anychart.charts.Cartesian3d#zPadding}**.zPadding()**{api} method. {api:anychart.charts.Cartesian3d#zPadding}**.zPadding()**{api} method uses number as a parameter and controls the space between the series.
@@ -245,3 +245,4 @@ Let's take a look at the 3d chart that have 5 pixel {api:anychart.charts.Cartesi
 
 {sample}BCT\_3d\_09{sample}
 
+-->

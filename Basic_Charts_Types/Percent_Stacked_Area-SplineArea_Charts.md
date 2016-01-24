@@ -63,11 +63,11 @@ It requires a simple adjustment to tern common area chart into a 3D one.
 
 ```
 var chart = anychart.area3d();
-var series1 = chart.area3d(dataSet1);
+var series1 = chart.area(dataSet1);
 series1.name("Sales 2009");
-var series2 = chart.area3d(dataSet2);
+var series2 = chart.area(dataSet2);
 series2.name("Sales 2010");
-var series3 = chart.area3d(dataSet3);
+var series3 = chart.area(dataSet3);
 series3.name("Sales 2011");
 ```
 

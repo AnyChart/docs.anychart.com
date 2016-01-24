@@ -5,7 +5,7 @@
 * [Chart](#chart)
 * [Temperature Range Chart Sample](#temperature_range_chart_sample)
 * [Waterfall Chart Sample](#waterfall_chart_sample)
-* [3D Range Bar](#3d_range_bar)
+<!--* [3D Range Bar](#3d_range_bar)-->
 <!-- * [Configuration](#configuration)-->
 
 ## Overview

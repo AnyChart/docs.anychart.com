@@ -172,8 +172,8 @@ var Sales2004 = data.mapAs({x: [0], value: [2]});
 var chart = anychart.bar3d();
 
 // set data
-chart.bar3d(Sales2003);
-chart.bar3d(Sales2004);
+chart.bar(Sales2003);
+chart.bar(Sales2004);
 ```
 
 More information about 3D charts can be found in [3D Charts article](../Basic_Charts_Types/3D_Charts).

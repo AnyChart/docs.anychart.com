@@ -5,7 +5,7 @@
 * [Chart](#chart)
 * [Temperature Range Area Chart Sample](#temperature_range_area_chart_sample)
 * [Configuration](#configuration)
-* [3D Mode](#3d_mode)
+<!--* [3D Mode](#3d_mode)-->
 
 ## Overview
 
