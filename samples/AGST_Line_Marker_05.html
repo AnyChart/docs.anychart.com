@@ -16,53 +16,29 @@
   // chart type
   var chart = anychart.column();
 
-  // set lowest line marker
-  var lineMarker = chart.lineMarker(0);
-  lineMarker.stroke("#090");
-  lineMarker.scale(chart.yScale());
-  lineMarker.value(9000);
+  // set the lowest line marker
+  var minMarker = chart.lineMarker(0);
+  // set marker's scale
+  minMarker.scale(chart.yScale());
+  // set marker's layout
+  minMarker.layout("horizontal");
+  minMarker.value(9000);
+  minMarker.stroke("#0D0");
 
-  // set highest line marker
-  var lineMarker1 = chart.lineMarker(1);
-  lineMarker1.stroke({color: "#dd2c00", dash: "7", opacity: 1});
-  lineMarker1.scale(chart.yScale());
-  lineMarker1.value(19000);
-
-  // set green marker
-  var textMarker = chart.textMarker(0);
-  textMarker.scale(chart.yScale());
-  textMarker.value(19000);
-  textMarker.text("Highest");
-  textMarker.align("left");
-  textMarker.anchor("rightcenter");
-  textMarker.fontSize(14);
-  textMarker.offsetX(5);
-  textMarker.fontColor("#dd2c00");
-
-  // set green marker
-  var textMarker1 = chart.textMarker(1);
-  textMarker1.scale(chart.yScale());
-  textMarker1.value(9000);
-  textMarker1.text("Lowest");
-  textMarker1.align("left");
-  textMarker1.anchor("rightcenter");
-  textMarker1.fontSize(14);
-  textMarker1.offsetX(5);
-  textMarker1.fontColor("#090");
+  // set the highest line marker
+  var maxMarker = chart.lineMarker(1);
+  // set marker's scale
+  maxMarker.scale(chart.yScale());
+  // set marker's layout
+  maxMarker.layout("horizontal");
+  maxMarker.value(19000);
+  maxMarker.stroke("red");
 
   // set y scale ticks interval
   var yScale = chart.yScale();
   yScale.minimum(0);
   var yTicks = chart.yScale().ticks();
   yTicks.interval(2000);
-
-  // custom scale
-  var additionalScale = anychart.scales.linear();
-  // set ticks interval
-  additionalScale.minimum(0);
-  additionalScale.maximum(10);
-  var additionalTicks = additionalScale.ticks();
-  additionalTicks.interval(1);
 
   // y axis title
   var yAxis = chart.yAxis();
@@ -74,13 +50,6 @@
     return "$" + this.value/1000 + ",000";
   });
 
-  // apply custom scale
-  var yAxis1 = chart.yAxis(1);
-  yAxis1.orientation("right");
-  yAxis1.scale(additionalScale);
-  yAxis1.title("Sales Pts");
-  yAxis1.labels();
-
   for (var seriesNumber = 1; seriesNumber<6;seriesNumber++){
     seriesFormatter(seriesNumber);
   }
@@ -91,7 +60,9 @@
     var series = chart.column(seriesData);
     series.stroke(null);
     var tooltip = series.tooltip();
-    tooltip.textFormatter(function(){
+    tooltip.title(false);
+    tooltip.separator(false);
+    tooltip.contentFormatter(function(){
       return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
     });
   }
