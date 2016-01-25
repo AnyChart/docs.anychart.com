@@ -1,8 +1,10 @@
+{:index 1}
 # Stacked Bar/Column Charts
 
  * [Overview](#overview)
  * [Chart](#chart)
  * [Stacked Bar](#stacked_bar)
+ * [3D Stacked Column Chart](#3d_stacked_column_chart)
 <!-- * [Adding "%" to axis labels](#percent) -->
 
 ## Overview
@@ -60,19 +62,15 @@ Also, tooltips can be enabled/disabled by adjusting {api:anychart.core.cartesian
 Here is a sample of a stacked bar chart:
 
 {sample}BCT_Percent-Stacked\_Bar-column\_Charts\_02{sample}
-<!--
 
-3D Stacked Column Chart
+## 3D Stacked Column Chart
 
-One more quick feature demo - enabling 3D mode makes column chart three-dimensional:
+One more quick feature demo - enabling 3D mode makes column chart three-dimensional: 
 
-XML Syntax
-XML Code
-Plain code
-01
-<data_plot_settings enable_3d_mode="True" />
+```
+var chart = anychart.column3d();
+```
+
 The sample of 3D Column chart at a glance:
 
-Live Sample:  Sample 3D Stacked Column Chart
-
-Current Page Online URL: Stacked Bar/Column Chart-->
+{sample}BCT_Percent-Stacked\_Bar-column\_Charts\_03{sample}

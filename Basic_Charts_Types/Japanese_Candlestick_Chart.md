@@ -1,3 +1,4 @@
+{:index 1}
 # Japanese Candlestick Chart
 
 * [Overview](#overview)

@@ -1,3 +1,4 @@
+{:index 1}
 #Area Chart
 
 * [Overview](#overview)
@@ -5,6 +6,7 @@
   * [Single Series Area Chart](#single_series_area_chart)
   * [Single Series Spline Area Chart](#single_series_spline_area_chart)
   * [Multi-series](#multi-series)
+  * [3D Area Chart](#3d_area_chart)
 * [Axes](#axes)
   * [Orientation](#orientation)
   * [Inversion](#inversion)
@@ -157,22 +159,50 @@ these two samples is the fact that now we have two series of the data: one serie
 names to each series:
 
 ```
-  var dataSet = anychart.data.set([
-    ["January", 10000, 12000],
-    ["February", 12000, 15000],
-    ["March", 18000, 16000],
-    ["April", 11000, 15000],
-    ["May", 9000, 14000],
-  ]);
-  var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
-  var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
-  chart.area(seriesData_1).name("2004");
-  chart.area(seriesData_2).name("2005");
+// define data set
+var data = anychart.data.set([
+  ["January", 10000],
+  ["February", 12000],
+  ["March", 18000],
+  ["April", 11000],
+  ["May", 9000]
+]);
+
+var chart = anychart.area3d();
+
+chart.area3d(seriesData_1);
+chart.area3d(seriesData_2);
 ```
 
 As now we have multi-series chart we don't want to set the **chart type** for each series individually (there can be more than two series in a multi-series chart), so we set the **chart** as {api:anychart#area}**anychart.area()**{api}. Now all series in the chart will be of Area type by default.
 
 {sample}BCT\_AreaChart\_03{sample}
+
+### 3D Area Chart
+
+Anychart provides an opportunity to use 3d version of area charts. Use {api:anychart#area3d}**.area3d()**{api} method to create 3d area chart. 
+
+```
+// define data set
+var data = anychart.data.set([
+  ["Department Stores", 637166],
+  ["Discount Stores", 721630],
+  ["Men's/Women's Specialty Stores", 148662],
+  ["All other outlets", 90000]
+]);
+
+// create 3D chart's plot
+var chart = anychart.area3d();
+
+// create series
+chart.area(data);
+```
+
+As you can see from the snippet above, you need to use {api:anychart.core.cartesian.series.Area3d}**.area()**{api} method to create 3D area series. Here is a sample of a 3D area chart:
+
+{sample}BCT\_AreaChart\_12{sample}
+
+**Note**: more information about 3D charts can be found in [3D Charts article](#../Basic_Charts_Types/3D_Charts).
 
 ## Axes
 

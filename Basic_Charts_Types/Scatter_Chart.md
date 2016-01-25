@@ -1,3 +1,4 @@
+{:index 1}
 # Scatter Chart
 
 * [Overview](#overview)

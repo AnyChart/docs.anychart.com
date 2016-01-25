@@ -1,9 +1,11 @@
+{:index 1}
 # Range Column/Bar chart
                                                                          
 * [Overview](#overview)
 * [Chart](#chart)
 * [Temperature Range Chart Sample](#temperature_range_chart_sample)
 * [Waterfall Chart Sample](#waterfall_chart_sample)
+<!--* [3D Range Bar](#3d_range_bar)-->
 <!-- * [Configuration](#configuration)-->
 
 ## Overview
@@ -42,7 +44,23 @@ This sample shows how JavaScript range bars can be used to chart temperature ave
 In the sample below we formatted start and end values, here we will colorize chart as we need. Here it is - a Waterfall chart is displayed.
 
 {sample}BCT_Range\_Bar-Column\_Charts\_02{sample}
+<!--
+## 3D Range Bar
 
+Along with common versions of range bars and columns you can use 3d version of these charts. Call {api:anychart#bar3d}**.bar3d()**{api} to use 3d bar or {api:anychart#column3d}**.column3d()**{api} if you desire to visualize your data using 3D column chart.
+
+```
+var chart = anychart.bar3d();
+var series1 = chart.bar3d(dataSet1);
+series1.name("Sales 2009");
+var series2 = chart.bar3d(dataSet2);
+series2.name("Sales 2010");
+var series3 = chart.bar3d(dataSet3);
+series3.name("Sales 2011");
+```
+
+{sample}BCT_Range\_Bar-Column\_Charts\_03{sample}
+-->
 <!--
 <a name="configuration"/>
 ## Configuration

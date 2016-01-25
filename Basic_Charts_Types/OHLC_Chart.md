@@ -1,3 +1,4 @@
+{:index 1}
 # Open High Low Close (OHLC) Chart
 
 * [Overview](#overview)

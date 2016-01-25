@@ -1,3 +1,4 @@
+{:index 1}
 #Pie and Doughnut Chart
                                                                
 * [Overview](#overview)
@@ -106,6 +107,8 @@ And here is the same data as above in the form of a Doughnut chart:
 It is very easy to display the data from the sample above in 3D mode - just use {api:anychart#pie3d}**.pie3d()**{api} and the pie will become 3D.
 
 {sample}BCT\_PieDoughnutChart\_03{sample}
+
+More information about 3D charts can be found in [3D Charts article](../Basic_Charts_Types/3D_Charts).
 
 ##Start Angle
 
