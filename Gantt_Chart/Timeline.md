@@ -51,15 +51,15 @@ First of all, let's create 2 line markers: one showing the current date and seco
 ```
 {sample :width 825 :height 230 }GANTT\_Timeline\_01{sample}
 
-As you see, we can define some parameters of each linemarker such as color, dashes or thickness using {api}**.stroke()**{api} method. It is used absolutely the same way as any other line settings with the
-{api}**.stroke()**{api} method.
+As you see, we can define some parameters of each linemarker such as color, dashes or thickness using {api:anychart.axisMarkers.Line#stroke}**.stroke()**{api} method. It is used absolutely the same way as any other line settings with the
+{api:anychart.axisMarkers.Line#stroke}**.stroke()**{api} method.
 
 Now, look at the sample with a textMarker showing the planned finish date and a rangeMarker showing the remaining time.
 
 ```
 	// creating a text marker
 	tl.textMarker(0).value(anychart.enums.GanttDateTimeMarkers.CURRENT);
-	// creating a range marker
+	// creating range markers
 	tl.rangeMarker(0).from(Date.UTC(2016, 0, 1)).to(anychart.enums.GanttDateTimeMarkers.END);
 	tl.rangeMarker(1).from(now - 7*day).to(anychart.enums.GanttDateTimeMarkers.CURRENT);
 ```
@@ -105,14 +105,14 @@ Enum is e keywords used to declare an enumeration. Usually it is best to define 
 
 Due to unique organization of a Gantt diagram, there are some special features that should be mentioned.
 
-* Any type of Gantt diagram will return "false" for {api}**.isHorizontal()**{api} method, because markers in Gantts can be only vertical.
-* The {api}**.scale**{api} and {api}**.layout**{api} methods return links to the API reference and transmit message to the console with a warning telling that they are not able to work. The point is that these methods can have no other values but "dateTime" scale and "vertical" layout.
-* There are three special values for setting to the text markers' {api}**.value()**{api} method: "start" and "end" to the range markers' {api}**.from()**{api} and {api}**.to()**{api}. The "value" returns the current date, "start" - the start date of the gantt chart timeline and "end" returns the end date of the whole Gantt diagram.
+* Any type of Gantt diagram will return "false" for {api:anychart.axisMarkers.Line#isHorizontal}**.isHorizontal()**{api} method, because markers in Gantts can be only vertical.
+* The **scale** and **layout** methods will not work here, only "dateTime" scale and "vertical" layout are available in Gantt Chart.
+* There are three special values for setting to the text markers' {api:anychart.core.axisMarkers.GanttText#value}**.value()**{api} method: "start" and "end" to the range markers' {api:anychart.core.axisMarkers.GanttRange#from}**.from()**{api} and {api/anychart.core.axisMarkers.GanttRange#to}**.to()**{api}. The "value" returns the current date, "start" - the start date of the gantt chart timeline and "end" returns the end date of the whole Gantt diagram.
 
 
 ## Visualisation
 
-Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them. We use {api}**.fill()**{api} method to fill a rangeMarker with a color, {api}**.stroke()**{api} for stroking the markers; for text markers we use standard markers as well. 
+Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them. We use {api:anychart.core.axisMarkers.GanttRange#fill}**.fill()**{api} method to fill a rangeMarker with a color, {api:anychart.core.axisMarkers.GanttRange#stroke}**.stroke()**{api} for stroking the markers; for text markers we use standard markers as well. 
 
 We should format the objects transmitted to these methods as usual. 
 
@@ -146,19 +146,19 @@ There are some methods inherent to the timeline only. You can see a table below 
 <td rowspan="5">1</td>
 <td rowspan="5">Whole timeline</td>
 <td>{api:anychart.core.ui.Timeline#rowEvenFill}**.rowEvenFill()**{api}</td>
-<td>Colors all even rows in the timeline</td>
+<td>Colors even rows in the timeline</td>
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Timeline#rowOddFill}**.rowOddFill()**{api}</td>
-<td>Colors all odd rows in the timeline</td>
+<td>Colors odd rows in the timeline</td>
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Timeline#rowHoverFill}**.rowHoverFill()**{api}</td>
-<td>Colors all hovered rows in the timeline</td>
+<td>Colors hovered rows in the timeline</td>
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Timeline#rowSelectedFill}**.rowSelectedFill()**{api}</td>
-<td>Colors all selected rows in the timeline</td>
+<td>Colors selected rows in the timeline</td>
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Timeline#columnStroke}**.columnStroke()**{api}</td>
@@ -173,11 +173,11 @@ There are some methods inherent to the timeline only. You can see a table below 
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Timeline#baselineFill}**.baselineFill()**{api}</td>
-<td>Fills all timeline baselines with a defined color</td>
+<td>Fills timeline baselines with a defined color</td>
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Timeline#baselineStroke}**.baselineStroke()**{api}</td>
-<td>Strokes all timeline baselines with a defined color</td>
+<td>Strokes timeline baselines with a defined color</td>
 </tr>
 <tr>
 <td rowspan="2">3</td>
@@ -203,11 +203,11 @@ There are some methods inherent to the timeline only. You can see a table below 
 <td rowspan="2">5</td>
 <td rowspan="2">Parent Elements</td>
 <td>{api:anychart.core.ui.Timeline#parentFill}**.parentFill()**{api}</td>
-<td>Defines the filling for all parent elements in the timeline</td>
+<td>Defines the filling for parent elements in the timeline</td>
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Timeline#parentStroke}**.parentStroke()**{api}</td>
-<td>Defines the stroke for all parent elements in the timeline</td>
+<td>Defines the stroke for parent elements in the timeline</td>
 </tr>
 <tr>
 <td rowspan="2">6</td>
@@ -233,11 +233,11 @@ There are some methods inherent to the timeline only. You can see a table below 
 <td rowspan="2">8</td>
 <td rowspan="2">Periods</td>
 <td>{api:anychart.core.ui.Timeline#selectedElementFill}**.selectedElementFill()**{api}</td>
-<td>Sets the filling of all selected elements</td>
+<td>Sets the filling of the selected elements</td>
 </tr>
 <tr>
 <td>{api:anychart.core.ui.Timeline#selectedElementStroke}**.selectedElementStroke()**{api}</td>
-<td>Sets the stroke of all selected elements</td>
+<td>Sets the stroke of the selected elements</td>
 </tr>
 </tbody>
 </table>
