@@ -9,13 +9,14 @@
 * [Series behaviour](#series_behaviour)
   * [Hover](#series_hover)
   * [Select](#series_select)
+  * [Single Point](#single_point)
+* [Single Series Chart](#single_series_chart)
 * [Handling chart events](#handling_chart_events)
   * [Navigating to URL](#interactivity_settings_in_data_sets)
   * [DrillDown](#drilldown) 
 * [Creating Custom Tooltip](#creating_custom_tooltip)
   * [Chart as Tooltip](#chart_as_tooltip)
 * [Interactivity Settings in Data Sets](#interactivity_settings_in_data_sets)
-
 
 ## Overview 
 
@@ -162,7 +163,7 @@ chart.title().listen("mouseOut", function(){
     });
 ```
 
-{sample}CS\_Interactivity\_08{sample} 
+{sample}CS\_Interactivity\_08{sample}
 
 <a name="series_select"> </a>
 #### Select 
@@ -215,6 +216,83 @@ If you want to disable the selection ability, use "none" as the {api:anychart.co
 
 To unselect the points without preventing the selection ability use {api:anychart.core.SeriesBase#unselect}**.unselect()**{api} method. As well as in the situation with unhovering, you can define the points or set no parameters to the method. Try to use it in our playground.
 
+#### Single Point
+
+Along with hovering and selecting of a number of points you can manage the current state of a single point. Use {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method to get a point of a series. Pass point's index as a parameter for this method. 
+
+```
+	// set series data
+	var series = chart.column(data);
+
+	// get fourth point of the series
+	var point = series.getPoint(3);
+```
+
+After you have defined the getter for the {api:anychart.core.SeriesPoint}series point{api} you can adjust point's state and change some point's properties. Let's make a single series chart a bit more colorful and set custom color for each point of the series:
+
+```
+// set series data
+var series = chart.column([
+  {x:"John", value: 10000},
+  {x:"Jake", value: 12000},
+  {x:"Peter", value: 18000},
+  {x:"James", value: 11000},
+  {x:"Mary", value: 9000}
+]);
+
+// create getter for AnyChart palette
+var palette = anychart.palettes.distinctColors();
+
+// create a loop for coloring every series point
+for (var i=0; series.getPoint(i).exists();i++){
+  // define "fill" property for each series point
+  series.getPoint(i).set("fill", palette.itemAt(i));
+}
+```
+
+As you can see, we have created a column series, variable for default AnyChart palette using {api:anychart.palettes#distinctColors}**.distinctColors()**{api} method and set a color for each point depending on point's index. Moreover, the *for* loop uses {api:anychart.core.SeriesPoint#exists}**.exists()**{api} method to check, whether the point exists or not. Custom color for a point is applied using {api:anychart.core.SeriesPoint#set}**.set()**{api} method.
+
+{sample}CS\_Interactivity\_21{sample}
+
+Previous sample demonstrates how to change a single point's appearance. Using {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api}, we also can make a point hovered or selected through the {api:anychart.core.SeriesPoint#hovered}**.hovered()**{api} or {api:anychart.core.SeriesPoint#selected}**.selected()**{api} methods accordingly.
+
+```
+var point = series.getPoint(3);
+point.hovered(true);
+```
+
+Next sample uses chart's legend to trigger changes of a point. When we hover an item in a legend, the corresponding point in a series becomes hovered too, and vice versa. The same is with selecting points.
+
+{sample}CS\_Interactivity\_20{sample}
+
+**Note**: The sample above uses several event listeners. More information on AnyChart events can be found in [Event Listeners article](../Common_Settings/Event_Listeners). Information about legend is contained in the [Legend article](../Common_Settings/Legend).
+
+## Single Series Chart
+
+As you know, AnyChart supports quite a variety of chart types. Some of them are single series charts, such as pie chart, funnel chart or pyramid chart. Managing their points is much easier than managing a number of points in a series. Use {api:anychart.core.Point}**.getPoint()**{api} as a chart method to get the point you need:
+
+```
+// set chart data
+var chart = funnel(data);
+
+// get fourth point
+var point = chart.getPoint(3);
+```
+
+The way of managing chart's points is pretty much the same as the one in [single point](#single_point) section. Use {api:anychart.core.Point#hovered}**.hovered()**{api} and {api:anychart.core.Point#selected}**.selected()**{api} methods to adjust current state of any point. The {api:anychart.core.Point#set}**.set()**{api} method allows you to change or create any property (field) of a point.
+
+```
+var chart = anychart.funnel(data);
+
+// get sixth point of the funnel chart
+var point = chart.getPoint(5);
+// set red inner color for the point
+point.set("fill", "red");
+```
+
+Below there is a sample of a funnel chart. This chart shows how the income changes over the year and each point corresponds to a month. With the usage of {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method, we have colored each point separately according to the season each point belongs to. Hover a point to see the tooltip that contains information on the month's and total income of the season. Information on getting value from custom points' field can be found in [Text Formatters article](../Common_Settings/Text_Formatters).
+
+{sample}CS\_Interactivity\_22{sample}
 
 ### Handling chart events
 
@@ -224,11 +302,13 @@ You can add a listener to any chart element, forcing it to react in some way. Fo
 
 You can find more about listeners [here](../Common_Settings/Event_Listeners).
 
+**Note**: Points of a pie chart can't be selected. Use **.exploded()** method to adjust current state of pie's slice.
+
 #### Navigating by URL
 
 Let's look at the typical situation when we might need the listeners. We add a listener of double clicks to the series, which will navigate us to the pre-defined URL.
 
-{sample}CS\_Interactivity\_12{sample} 
+{sample}CS\_Interactivity\_12{sample}
 
 Explore the code of this sample in the playground.
 
@@ -267,41 +347,40 @@ If you need the similar drilldown chart with multi-selection, you may do the fol
 In this sample not the data but the series are added and removed depending on selections made:
 
 ```
-chart.listen("pointsSelect", function(evt){
-            var pointsNum = evt.points.length;
-            console.log(pointsNum);
-            var myData = [];
+  chart.listen("pointsSelect", function(evt){
+  var pointsNum = evt.points.length;
+  console.log(pointsNum);
+  var myData = [];
 
-            for (var i = 0; i < pointsNum; i++) {
-                var point = evt.points[i];
-                if (!point.selected())
-                    continue;
-                dataRow = data.row(point.getIndex());
-                myData.push([
-                    {x: "Jan", value: dataRow[3], fill: "#0099CC"},
-                    {x: "Feb", value: dataRow[4], fill: "#520085"},
-                    {x: "Mar", value: dataRow[5], fill: "#CC6600"},
-                    {x: "Apr", value: dataRow[6], fill: "#336600"},
-                    {x: "May", value: dataRow[7], fill: "#0099CC"},
-                    {x: "Jun", value: dataRow[8], fill: "#520085"},
-                    {x: "Jul", value: dataRow[9], fill: "#CC6600"},
-                    {x: "Aug", value: dataRow[4], fill: "#520085"},
-                    {x: "Sep", value: dataRow[5], fill: "#CC6600"},
-                    {x: "Oct", value: dataRow[6], fill: "#336600"},
-                    {x: "Nov", value: dataRow[7], fill: "#0099CC"},
-                    {x: "Dec", value: dataRow[8], fill: "#520085"}
-                ]);
-            }
-            lineChart.removeAllSeries();
-            lineChart.addSeries.apply(lineChart, myData);
+  for (var i = 0; i < pointsNum; i++) {
+    var point = evt.points[i];
+    if (!point.selected())
+      continue;
+    dataRow = data.row(point.getIndex());
+    myData.push([
+      {x: "Jan", value: dataRow[3], fill: "#0099CC"},
+      {x: "Feb", value: dataRow[4], fill: "#520085"},
+      {x: "Mar", value: dataRow[5], fill: "#CC6600"},
+      {x: "Apr", value: dataRow[6], fill: "#336600"},
+      {x: "May", value: dataRow[7], fill: "#0099CC"},
+      {x: "Jun", value: dataRow[8], fill: "#520085"},
+      {x: "Jul", value: dataRow[9], fill: "#CC6600"},
+      {x: "Aug", value: dataRow[4], fill: "#520085"},
+      {x: "Sep", value: dataRow[5], fill: "#CC6600"},
+      {x: "Oct", value: dataRow[6], fill: "#336600"},
+      {x: "Nov", value: dataRow[7], fill: "#0099CC"},
+      {x: "Dec", value: dataRow[8], fill: "#520085"}
+    ]);
+  }
+  lineChart.removeAllSeries();
+  lineChart.addSeries.apply(lineChart, myData);
 
-                lineChart.title(pieTitle + lineSubTitle);
-                lineChart.tooltip().textFormatter(function() {
-                    console.log(this.value);
-                    var text = 'Sales amount: $' + this.value;
-                    return text;
-                });
-        });
+  lineChart.title(pieTitle + lineSubTitle);
+  lineChart.tooltip().textFormatter(function() {
+      console.log(this.value);
+      var text = 'Sales amount: $' + this.value;
+      return text;
+  });
 ```
 
 Check out some other drilldown samples we've got in our gallery:
