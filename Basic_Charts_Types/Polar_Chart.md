@@ -1,3 +1,4 @@
+{:index 1}
 # Polar Chart
 
 * [Overview](#overview)

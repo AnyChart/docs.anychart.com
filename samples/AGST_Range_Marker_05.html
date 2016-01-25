@@ -1,0 +1,53 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // setting data
+  var data = anychart.data.set([
+    ["January", 200],
+    ["February", 289],
+    ["March", 297],
+    ["April", 250],
+    ["May", 220],
+    ["June", 215],
+    ["July", 279],
+    ["August", 357],
+    ["September", 333],
+    ["October", 218],
+    ["November", 289],
+    ["December", 266]
+  ]);
+
+  var chart = anychart.column();
+
+  chart.title("Rotated Marker");
+
+  // series data
+  chart.column(data);
+
+  // create range marker
+  var marker = chart.rangeMarker();
+  // set start point of the marker
+  marker.from("June");
+  // set end point of the marker
+  marker.to("August");
+  // rotate marker
+  marker.layout("vertical");
+  // bound marker to chart's x scale
+  marker.scale(chart.xScale());
+  // set marker inner color
+  marker.fill("#d7fcda");
+
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

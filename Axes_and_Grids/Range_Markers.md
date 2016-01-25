@@ -3,6 +3,7 @@
 
 * [Overview](#overview)
 * [Declare](#declare)
+* [Position](#position)
 * [Range and Text Markers](#range_and_text_markers)
 * [Advanced Visualization](#advanced_visualization)
 
@@ -12,57 +13,55 @@ Range Markers (sometimes referred as areas or zones) are colored areas bound to 
 
 ## Declare
 
-To add range marker you need to use {api:anychart.axisMarkers.Range}**rangeMarker()**{api} method. Each range marker has several mandatory properties set by {api:anychart.axisMarkers.Range#scale}**scale()**{api}, {api:anychart.axisMarkers.Range#from}**from()**{api}, {api:anychart.axisMarkers.Range#to}**to()**{api} and {api:anychart.axisMarkers.Range#fill}**fill()**{api} methods. If you want to bound range marker to a horizontal scale, you have to set {api:anychart.axisMarkers.Range#layout}**layout(vertical)**{api}. Otherwise it will be horizontal.
+To add range marker you need to use {api:anychart.axisMarkers.Range}**.rangeMarker()**{api} method. the basic range marker's properties can be set using {api:anychart.axisMarkers.Range#from}**.from()**{api}, {api:anychart.axisMarkers.Range#to}**to()**{api} and {api:anychart.axisMarkers.Range#fill}**.fill()**{api} methods.
 
 ```
-  // create first range marker
-  var marker1 = chart.rangeMarker(0);
-  // bind marker to the scale
-  marker1.scale(yScale);
-  // set start value for range
-  marker1.from(20000);
-  // set end point for range
-  marker1.to(30000);
-  // set range color
-  marker1.fill("#d7fcda");
-  
-  // create second marker
-  var marker2 = chart.rangeMarker(1);
-  // bind marker to scale
-  marker2.scale(chart.yScale());
+  // create range marker
+  var marker = chart.rangeMarker();
   // set start point of the marker
-  marker2.from(10000);
+  marker.from(0);
   // set end point of the marker
-  marker2.to(20000);
-  // set marker's inner color
-  marker2.fill("#ffffdc");
-  
-  // create third marker
-  var marker3 = chart.rangeMarker(2);
-  // bind marker to the chart scale
-  marker3.scale(chart.yScale());
-  // set start point of the marker
-  marker3.from(0);
-  // set end point of the marker
-  marker3.to(10000);
+  marker.to(10000);
   // set marker inner color
-  marker3.fill("#fcd8d7");
+  marker.fill("#fcd8d7");
 ```
 
-The sample below shows horizontal axes ranges.
+Using this code let's create a marker that highlights unsatisfactory result.
 
-{sample}AGST\_Range\_Marker\_01{sample}
+{sample}AGST\_Range\_Marker\_04{sample}
+
+## Position
+
+As you can see range marker highlights the area between {api:anychart.axisMarkers.Range#from}**.from()**{api} and {api:anychart.axisMarkers.Range#to}**.to()**{api} parameters. To change the scale marker is bound to use the {api:anychart.axisMarkers.Range#scale}**.scale()**{api} method. If you want to place marker on X axis you need to bind to X scale and change layout using {api:anychart.axisMarkers.Range#layout}**.layout()**{api} method. Please be careful: you can change layout without changing the scale create misleading representation.
+
+```
+  // create range marker
+  var marker = chart.rangeMarker();
+  // set start point of the marker
+  marker.from("June");
+  // set end point of the marker
+  marker.to("August");
+  // rotate marker
+  marker.layout("vertical");
+  // bound marker to chart's x scale
+  marker.scale(chart.xScale());
+  // set marker inner color
+  marker.fill("#d7fcda");
+```
+
+In the next sample we will highlight summer months.
+
+{sample}AGST\_Range\_Marker\_05{sample}
 
 ## Range and Text Markers
 
-Combination of range and text markers may be very useful to emphasize certain information or to set a kind of comment 
-or mark some kind of data.
+Combination of range and text markers may be very useful to emphasize certain information or to set a comment or mark some data.
 
 {sample}AGST\_Range\_Marker\_02{sample}
 
 ## Advanced Visualization
 
-As far as range marker has method {api:anychart.graphics.vector.Fill}**fill()**{api}, you can also use gradient and image fills of range to achieve desired style of your charts.
+You can use {api:anychart.graphics.vector.Fill}**.fill()**{api}method to control the inner color of the marker. Note, that this method can be used to set gradient and image inner color for your marker.
 
 ```
   // create range marker

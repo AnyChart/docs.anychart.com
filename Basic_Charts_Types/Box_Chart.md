@@ -1,3 +1,4 @@
+{:index 1}
 #Box Chart
 
 * [Overview](#overview)

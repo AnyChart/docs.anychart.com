@@ -1,4 +1,5 @@
-# Pie and Doughnut Chart
+{:index 1}
+#Pie and Doughnut Chart
                                                                
 * [Overview](#overview)
 * [Chart](#chart)
@@ -106,6 +107,8 @@ And here is the same data as above in the form of a Doughnut chart:
 It is very easy to display the data from the sample above in 3D mode - just use {api:anychart#pie3d}**.pie3d()**{api} and the pie will become 3D.
 
 {sample}BCT\_PieDoughnutChart\_03{sample}
+
+More information about 3D charts can be found in [3D Charts article](../Basic_Charts_Types/3D_Charts).
 
 ##Start Angle
 
@@ -234,7 +237,16 @@ You can find more information about lines in [Line Settings tutorial](../Appeara
 
 {sample}BCT\_PieDoughnutChart\_11{sample}
 
+When you are using a Doughnut modification of a Pie chart you may want to place labels inside a chart, this can be done using offsets. There's a special method we've got for this case - {api:anychart.charts.Pie#insideLabelsOffset}**.insideLabelsOffset()**{api}, you can also use {api:anychart.charts.Pie#offSetX}**.offSetX()**{api} and {api:anychart.charts.Pie#offSetY}**.offSetY()**{api} methods. Here is a sample of such chart:
 
+```
+    // set the insideLabelsOffset
+    chart.insideLabelsOffset("-45%");
+```
+
+{sample}BCT\_PieDoughnutChart\_15{sample}
+
+Using {api:anychart.charts.Pie#insideLabelsOffset}**.insideLabelsOffset()**{api} is easier but {api:anychart.charts.Pie#offSetX}**.offSetX()**{api} and {api:anychart.charts.Pie#offSetY}**.offSetY()**{api} give you better accuracy in positioning. Choose the most appropriate way for your own case.
 
 ###Tooltips
 

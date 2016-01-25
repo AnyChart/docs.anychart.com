@@ -1,3 +1,4 @@
+{:index 1}
 # Line Chart
 
 * [Overview](#overview)

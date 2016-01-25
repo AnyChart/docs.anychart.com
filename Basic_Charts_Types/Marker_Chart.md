@@ -1,3 +1,4 @@
+{:index 1}
 # Marker Chart
 
 * [Overview](#overview)

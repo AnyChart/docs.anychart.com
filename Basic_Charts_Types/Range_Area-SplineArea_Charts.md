@@ -1,9 +1,11 @@
+{:index 1}
 # Range Line/Spline Area Chart
 
- * [Overview](#overview)
- * [Chart](#chart)
- * [Temperature Range Area Chart Sample](#temperature_range_area_chart_sample)
- * [Configuration](#configuration)
+* [Overview](#overview)
+* [Chart](#chart)
+* [Temperature Range Area Chart Sample](#temperature_range_area_chart_sample)
+* [Configuration](#configuration)
+<!--* [3D Mode](#3d_mode)-->
 
 ## Overview
 
@@ -53,3 +55,21 @@ Here is the way of changing upper markers:
 Here is the result of applying these settings to the sample data:
 
 {sample}BCT_Range\_Area-SplineArea\_Charts\_02{sample}
+<!--
+## 3D Mode
+
+Use **.area3d()** method to enable 3d mode of area chart.
+```
+var chart = anychart.area3d();
+var series1 = chart.area3d(dataSet1);
+series1.name("Sales 2009");
+var series2 = chart.area3d(dataSet2);
+series2.name("Sales 2010");
+var series3 = chart.area3d(dataSet3);
+series3.name("Sales 2011");
+```
+
+Here is a sample how 3d area looks like: 
+
+{sample}BCT_Range\_Area-SplineArea\_Charts\_03{sample}
+-->

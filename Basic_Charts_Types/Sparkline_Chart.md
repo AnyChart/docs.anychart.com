@@ -1,3 +1,4 @@
+{:index 1}
 #Sparkline Chart
 
 * [Overview](#overview)

@@ -10,7 +10,7 @@
 * [Event types](#event_types)
   * [Mouse-related](#mouse-related)
   * [Point-related](#point-related)
-  
+* [Manage Single Point](#manage_single_point)
 
 ## Overview
 
@@ -227,23 +227,126 @@ Here we added two listeners. One of them hears clicks and changes fill of the po
 When a point is clicked once, it is recolored.
 
 ```
-	//add a listener
-	chart.listen("pointClick", function(e){
-	  var index = e.iterator.getIndex();
-	  var row = dataSet.row(index);
-		if (row.fillOld){
-		  row.fill = row.fillOld; delete row.fillOld;
-		}else{
-		  row.fillOld = row.fill; row.fill = "green";
-		}
-		dataSet.row(index, row);
-	});
-	
-	//add a listener
-	chart.listen("pointDblClick", function(e){ 
-		var new_value = e.iterator.get("url");
-		window.open(new_value,"_blank"); 
-	});
+//add a listener
+chart.listen("pointClick", function(e){
+  var index = e.iterator.getIndex();
+  var row = dataSet.row(index);
+  if (row.fillOld){
+    row.fill = row.fillOld; delete row.fillOld;
+  }else{
+    row.fillOld = row.fill; row.fill = "green";
+  }
+  dataSet.row(index, row);
+});
+
+//add a listener
+chart.listen("pointDblClick", function(e){ 
+  var new_value = e.iterator.get("url");
+  window.open(new_value,"_blank"); 
+});
 ```
 
 {sample}CMN\_Event\_Listener\_07{sample}
+
+
+## Manage Single Point
+
+To make your chart more flexible, AnyChart js charting framework provides several ways of managing states of a single point. Event's parameter contains a number of properties that can ease interactivity managing.
+  
+  
+For instance, **point** property can be used to get the point that triggered the event. This property provides pretty much the same options as {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method does. All methods of a {api:anychart.core.SeriesPoint}**series point**{api} can be invoked upon this property.
+  
+  
+As an example, let's use **pointsHover** event to find out the index of the hovered point and set hovered state for adjacent points.
+
+```
+// create chart
+var chart = anychart.column();
+// set series data
+chart.column(data);
+
+// create listener on point's hover event
+chart.listen("pointsHover", function(event){
+  // get hovered point
+  var point = event.point;
+  // get index of hovered point
+  var index = point.getIndex();
+  // get series of hovered point
+  var series = point.getSeries();
+  // unhover the series on point unhovering
+  if (!point.hovered())return;
+  // create array for further hovering
+  var arrayToHover = [index];
+  // checking existence of a point before hovered one
+  if (series.getPoint(index-1).exists())
+    // push the point for further hovering
+    arrayToHover.push(index-1);
+  // checking existence of a point after hovered one
+  if (series.getPoint(index+1).exists())
+    // push this point for further hovering
+    arrayToHover.push(index+1);
+  // hover points from the array
+  series.hover(arrayToHover);
+});
+```
+
+Even though this code works fine, there isn't much sense in hovering three random points. Instead, we can hover points, that are somehow related. Let's create a chart, display the income through the year and hover all the points of a quarter, the hovered point belongs to:
+
+```
+// event on hovering a point
+chart.listen("pointsHover", function(event){
+  // getter for hovered point
+  var point = event.point;
+  // index of hovered point
+  var index = point.getIndex();
+  // getter for hovered point's series
+  var currentSeries = point.getSeries();
+  // if this event is triggered on points unhovering, nothing will happen
+  if (!event.currentPoint.hovered) return;
+  // get an array of months, hovered point belong to and hover it.
+  currentSeries.hover(getQuarterMonths(index));
+});
+// find out an array a month belong to
+function getQuarterMonths(month) {
+  var quarterStartMonth = 3 * Math.floor(month / 3);
+  return [quarterStartMonth, quarterStartMonth + 1, quarterStartMonth + 2];
+}
+```
+<!--
+Moreover, you may consider it's useful to manage tooltip content, as far as we want to hover several points at a time. Let's display total income in current quarter as tooltip content:
+
+```
+	var tooltip = series.tooltip();
+	tooltip.titleFormatter(function(point){
+		var index = point.index;
+		switch (true){
+			case (index<3): return "First Quarter";
+			case (index<6): return "Second Quarter";
+			case (index<9): return "Third Quarter";
+			case (index<12): return "Fourth Quarter";
+		}
+	});
+
+	tooltip.textFormatter(function(point){
+		var index = point.index;
+		var prefix = "Income: $";
+		switch (true){
+			case (index<3): return prefix+sumValues([0,1,2]);
+			case (index<6): return prefix+sumValues([3,4,5]);
+			case (index<9): return prefix+sumValues([6,7,8]);
+			case (index<12): return prefix+sumValues([9,10,11]);
+		}
+
+		function sumValues(array){
+			var value = 0;
+			for (var i=0;i<array.length;i++)
+				value+=chart.getSeries(0).getPoint(array[i]).get("value");
+			return value;
+		}
+	});
+```
+-->
+And here is a sample with these settings:
+
+{sample}CMN\_Event\_Listener\_08{sample}
+
