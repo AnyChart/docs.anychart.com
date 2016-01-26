@@ -1,4 +1,4 @@
-# Exponential Moving Average
+# Simple Moving Average
 
 * [Overview](#overview)
 * [Adding indicator](#adding_indicator)
