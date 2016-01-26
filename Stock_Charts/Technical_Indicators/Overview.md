@@ -4,7 +4,6 @@
 
 * [Overview](#overview)
 * [Adding indicators](#adding_indicators)
-* [Calculation Method](#calculation_method)
 * [Supported Types](#supported_types)
 * [Custom Indicators](#custom_indicators)
 * [Mathematical Description](#mathematical_description)
@@ -23,15 +22,13 @@ To understand how technical indicator gets data and what it depends on please st
 
 Let's now add one of the most common and basic indicators to a chart (we will take one from [Quick Start](../Quick_Start) article as a basis). To add Simple Moving Average (SMA) indicator to the first (and only in this case) plot you just need to add the following line when chart and [mapping](../Data) are ready:
 
-'''
+```
 	chart.plot(0).sma(mapping, 10, "line");
-'''
-
-'''
+```
 
 Full code goes as follows:
 
-'''
+```
 anychart.onDocumentReady(function() {
 	var table, mapping, chart;
 
@@ -81,26 +78,22 @@ chart.title('AnyStock Basic Sample with SMA indicator');
 chart.container('container');
 chart.draw();
 });
-'''
+```
 
 And here is a live sample:
 
 {sample}STOCK\_Technical\_Indicators\_Basic\_Sample\_SMA{sample}
 
-It is that simple! One line that invokes {api:anychart.core.stock.Plot#sma}**.sma()**{api} method with correct parameters: mapping of dataset with correct fields, indicator parameters (period in case of SMA)
-
-## Calculation Method
-
-Coming soon.
+It is that simple! One line that invokes {api:anychart.core.stock.Plot#sma}**.sma()**{api} method with correct parameters: mapping of dataset with correct fields, indicator parameters (period in case of SMA), type of the series you want indicator to be displayed as, and here it is - shown on the chart and automatically recalculated when needed.
 
 ## Supported Types
 
-Coming soon.
+AnyStock supports several technical indicators out of the box, to see full list and navigate to the articles that describe them in details please see [Supported Technical Indicators](Supported_Technical_Indicators) article.
 
 ## Custom Indicators
 
-Coming soon.
+A unique feature that distinguishes AnyStock JavaScript Stock Chart among other solutions is the ability to create your own indicators, we provide an API to do that and you can use it to add known indicators that are not in the [supported](Supported_Technical_Indicators) set yet or your own proprietary indicators. Please see [Custom Indicators](Custom_Indicators) to learn more.
 
 ## Mathematical Description
 
-Coming soon.
+Mathematical formulas we use to calculate all out of the box technical indicators can be found in [Mathematical Description](Mathematical_Description) article.
