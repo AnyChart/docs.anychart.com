@@ -3,35 +3,35 @@
 #Technical Indicators
 
 * [Overview](#overview)
-* [Accumulation Distribution Line (ADL)]
-* [Adaptive Moving Average (AMA)]
-* [Aroon]
-* [Average True Range (ATR)]
-* [Bollinger Bands (BBands)]	
-* [BBands %B]
-* [BBands Width]
-* [Commodity Channel Index (CCI)]
-* [Chaikin Money Flow (CMF)]
-* [Chaikin Oscillator (CHO)]
-* [Chaikin Volatility (CHV)]
-* [Directional Movement Indicator (DMI)]
+* [Accumulation Distribution Line (ADL)](#)
+* [Adaptive Moving Average (AMA)](#)
+* [Aroon](#)
+* [Average True Range (ATR)](#)
+* [Bollinger Bands (BBands)](#)
+* [BBands %B](#)
+* [BBands Width](#)
+* [Commodity Channel Index (CCI)](#)
+* [Chaikin Money Flow (CMF)](#)
+* [Chaikin Oscillator (CHO)](#)
+* [Chaikin Volatility (CHV)](#)
+* [Directional Movement Indicator (DMI)](#)
 * [Exponential Moving Average (EMA)](#ema)
-* [Keltner Channels]
-* [Modified (Smoothed) Moving Average (MMA)]
-* [Money Flow Index (MFI)]
-* [Momentum]	
+* [Keltner Channels](#)
+* [Modified (Smoothed) Moving Average (MMA)](#)
+* [Money Flow Index (MFI)](#)
+* [Momentum](#)
 * [Moving Average Convergence Divergence (MACD)](#macd)
-* [Moving Average Envelopes (MA Envelopes)]
-* [On Balance Volume (OBV)]
-* [Parabolic SAR (PSAR)]	
-* [Price Channels]
+* [Moving Average Envelopes (MA Envelopes)](#)
+* [On Balance Volume (OBV)](#)
+* [Parabolic SAR (PSAR)](#)
+* [Price Channels](#)
 * [Rate of Change (ROC)](#roc)
 * [Relative Strength Index (RSI)](#rsi)
 * [Simple Moving Average (SMA)](#sma)
-* [Stochastic Oscillator (Fast,Slow)]
-* [TRIX]
-* [Volume + MA]
-* [Williams %R]
+* [Stochastic Oscillator (Fast,Slow)](#)
+* [TRIX](#)
+* [Volume + MA](#)
+* [Williams %R](#)
 
 ## Overview
 
@@ -39,16 +39,10 @@ This document contains mathematical description of all technical indicators avai
 
 For all formulas and indicators below:
 <ul>
-	<li><strong>n</strong> is a period for which calculations are done, it is usually set by the <strong>period</strong> attribute in the 
-	indicator settings.</li>
+	<li><strong>n</strong> is a period for which calculations are done, it is usually set by the <strong>period</strong> parameter of the 
+	method that creates an indicator.</li>
 	<li><strong>X<sub>i</sub></strong> is the value passed by the data source.</li>
 </ul>
-
-A technical indicator is a type of analysis chart that indicates market direction. Indicators generally overlay on price chart data to indicate where the price is going, or whether the price is in an "overbought" condition or an "oversold" condition.
-
-AnyChart Stock Chart Component supports automatic building of several types of technical indicators. Technical indicators are based on data from data providers and do not depend on series.
-
-This document lists available indicator types and gives directions to the tutorials about each indicator type and general information about technical indicators in AnyChart Stock Component.
 
 ## Accumulation Distribution Line (ADL)
 
@@ -100,7 +94,7 @@ Coming soon.
 
 ## <a name="ema"></a> Exponential Moving Average (EMA)
 
-Exponential Moving Average in each point is calculated according to the following formula:</p>
+Exponential Moving Average in each point is calculated according to the following formula:
 
 <center><img src="http://static.anychart.com/images/technical_indicators/ema.png" width="680"></center>
 
@@ -125,15 +119,15 @@ Coming soon.
 Moving Average Convergence/Divergence indicator is calculated as follows:
 
 <ol>
-	<li class="main">EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#ema)</a>. Slow period 
+	<li>EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#ema)</a>. Slow period 
 	and fast period are set by <strong>slowPeriod</strong> (default 26) and <strong>fastPeriod</strong> (default 12) parameters of {api:anychart.core.stock.indicators.MACD}.macd(){api} method.</li>
 	<li>MACD series value is calculated:<br>
 <img src="http://static.anychart.com/images/technical_indicators/macd-macd.png"/></li>
-	<li>EMA[signal period]<sub>i</sub> of MACD series values is calculated by <a href="#EMA">EMA formula</a>, where signal period is set
+	<li>EMA\[signal period\]<sub>i</sub> of MACD series values is calculated by [EMA formula](#ema), where signal period is set
 	by <strong>signalPeriod</strong> parameter.</li>
-	<li class="main">Signal series value is calculated:<br>
+	<li>Signal series value is calculated:<br>
 <img src="http://static.anychart.com/images/technical_indicators/macd-signal.png"/></li>
-	<li class="main">Histogram series is calculated:<br>
+	<li>Histogram series is calculated:<br>
 <img src="http://static.anychart.com/images/technical_indicators/macd-histogram.png"/></li>
 </ol>
 
@@ -165,12 +159,12 @@ Relative Strength Index is calculated as follows:
 
 <ol>
 	<li class="main">Upward change (U) or downward change (D) sequences are calculated:<br>
-<img src="img/rsi-u-d.png"></li>
+<img src="http://static.anychart.com/images/rsi-u-d.png"></li>
 	<li class="main">Then two averages are calculated:<br>
-      <img src="img/rsi-mau.png"><br>
-<img src="img/rsi-mad.png"></li>
+      <img src="http://static.anychart.com/images/rsi-mau.png"><br>
+<img src="http://static.anychart.com/images/rsi-mad.png"></li>
 	<li class="main">And final RSI formula is :<br>
-<img src="img/rsi-rsi.png"></li>
+<img src="http://static.anychart.com/images/rsi-rsi.png"></li>
 </ol>
 
 ## <a name="sma"></a> Simple Moving Average (SMA)
