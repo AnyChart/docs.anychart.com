@@ -62,7 +62,7 @@
     var tooltip = series.tooltip();
     tooltip.title(false);
     tooltip.separator(false);
-    tooltip.contentFormatter(function(){
+    tooltip.textFormatter(function(){
       return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
     });
   }
