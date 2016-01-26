@@ -1,6 +1,4 @@
-{:index 1}
-
-#AnyStock Series Overview
+#Supported Series in Stocks
 
 * [Overview](#overview)
  * [AnyStock Series Adjusting](#anystock_series_adjusting)

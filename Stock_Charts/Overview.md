@@ -15,7 +15,7 @@ AnyStock component provides a lot of different features. Besides being very fast
 
 Stocks are so special because of three main features:
 
-<b>Data grouping</n>
+<b>Data grouping</b>
 
 This feature is what lets showing those loads of information on one chart at a time. If your data contains more than certain points in the time interval shown on a chart, AnyStock Charts will automatically group them to avoid cluttering and allow chart to be displayed fast. 
 
@@ -41,8 +41,8 @@ AnyStock allows to stream data efficiently, you can see this on our <a href="htt
 
 A technical indicator is a type of analysis chart that indicates market direction. Indicators generally overlay on price chart data to indicate where the price is going, or whether the price is in an "overbought" condition or an "oversold" condition.
 
-AnyChart Stock Chart Component supports automatic building of several types of technical indicators as well allows you to add custom indicators of your choice. 
+AnyChart Stock Chart Component supports automatic building of several types of technical indicators as well allows you to add custom indicators of your choice. Read more about technical indicators feature in [Technical Indicators](Technical_Indicators/Overview) article.
 
 ## Working with Data in AnyStock
 
-When we start working with AnyStocks, firstly we should set the data as with any other chart type. Working with data in Stocks is slightly different from working with other basic charts. We can set the data for Stocks in all formats available for our basic charts, but we should consider that the data set must be a table, and this table later has to be mapped correctly. You can find more information and some samples in the [Data](Data) article.
+When we start working with AnyStocks, firstly we should set the data as with any other chart type. Working with data in Stocks is slightly different from working with other basic charts. We can set the data for Stocks in all formats available for our basic charts, but we should consider that the data set must be a table, and this table later has to be mapped correctly. You can find more information and some samples in the [Working with Data in AnyStock](Data) article.
