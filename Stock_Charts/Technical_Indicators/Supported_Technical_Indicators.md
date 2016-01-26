@@ -1,17 +1,35 @@
 {:index 2}
 
-#Technical Indicators
+#Supported Technical Indicators
 
 * [Overview](#overview)
-* [General information](#general_information)
-* [Calculation Method](#calculation_method)
-* [Supported Types](#supported_types)
-* [Mathematical Description](#mathematical_description)
+* [List](#List)
 
 ## Overview
 
-A technical indicator is a type of analysis chart that indicates market direction. Indicators generally overlay on price chart data to indicate where the price is going, or whether the price is in an "overbought" condition or an "oversold" condition.
+This is a full list of technical indicators AnyStock JavaScript Stock Chart provides out of the box. We are constantly working on improvements and if you are interested how this list will be expanded - see our [Roadmap](http://www.anychart.com/products/anystock/roadmap/), if indicators you are interested in are not there - please [contact us](http://www.anychart.com/support/) and we will try to figure something out.
 
-AnyChart Stock Chart Component supports automatic building of several types of technical indicators. Technical indicators are based on data from data providers and do not depend on series.
+## List
 
-This document lists available indicator types and gives directions to the tutorials about each indicator type and general information about technical indicators in AnyChart Stock Component.
+<table>
+		<tbody>
+			<tr>
+				<th>Technical Indicator</th>
+			</tr>
+			<tr>
+				<td>[Simple Moving Average (SMA)](Simple_Moving_Average_(SMA))</td>
+			</tr>
+			<tr>
+				<td>[Relative Strength Index (RSI)](Relative_Strength_Index_(RSI))</td>
+			</tr>
+			<tr>
+				<td>[Rate of Change (ROC)](Rate_of_Change_(ROC))</td>
+			</tr>
+			<tr>
+				<td>[Moving Average Convergence Divergence (MACD)](Moving_Average_Convergence_Divergence_(MACD))</td>
+			</tr>
+			<tr>
+				<td>[Exponential Moving Average (EMA)](Exponential_Moving_Average_(EMA))</td>
+			</tr>			
+		</tbody>
+</table>
