@@ -15,19 +15,19 @@
 * [Chaikin Oscillator (CHO)](#)
 * [Chaikin Volatility (CHV)](#)
 * [Directional Movement Indicator (DMI)](#)
-* [Exponential Moving Average (EMA)](#ema)
+* [Exponential Moving Average (EMA)](#exponential_moving_average)
 * [Keltner Channels](#)
 * [Modified (Smoothed) Moving Average (MMA)](#)
 * [Money Flow Index (MFI)](#)
 * [Momentum](#)
-* [Moving Average Convergence Divergence (MACD)](#macd)
+* [Moving Average Convergence Divergence (MACD)](#moving_average_convergence_divergence)
 * [Moving Average Envelopes (MA Envelopes)](#)
 * [On Balance Volume (OBV)](#)
 * [Parabolic SAR (PSAR)](#)
 * [Price Channels](#)
 * [Rate of Change (ROC)](#roc)
-* [Relative Strength Index (RSI)](#rsi)
-* [Simple Moving Average (SMA)](#sma)
+* [Relative Strength Index (RSI)](#relative_strength_index)
+* [Simple Moving Average (SMA)](#simple_moving_average)
 * [Stochastic Oscillator (Fast,Slow)](#)
 * [TRIX](#)
 * [Volume + MA](#)
@@ -92,7 +92,7 @@ Coming soon.
 
 Coming soon.
 
-## <a name="ema"></a> Exponential Moving Average (EMA)
+## Exponential Moving Average
 
 Exponential Moving Average in each point is calculated according to the following formula:
 
@@ -114,16 +114,16 @@ Coming soon.
 
 Coming soon.
 
-## <a name="macd"></a> Moving Average Convergence/Divergence (MACD)
+## Moving Average Convergence Divergence
 
 Moving Average Convergence/Divergence indicator is calculated as follows:
 
 <ol>
-	<li>EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#ema)</a>. Slow period 
+	<li>EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#exponential_moving_average)</a>. Slow period 
 	and fast period are set by <strong>slowPeriod</strong> (default 26) and <strong>fastPeriod</strong> (default 12) parameters of {api:anychart.core.stock.indicators.MACD}.macd(){api} method.</li>
 	<li>MACD series value is calculated:<br>
 <img src="http://static.anychart.com/images/technical_indicators/macd-macd.png"/></li>
-	<li>EMA\[signal period\]<sub>i</sub> of MACD series values is calculated by [EMA formula](#ema), where signal period is set
+	<li>EMA\[signal period\]<sub>i</sub> of MACD series values is calculated by [EMA formula](#exponential_moving_average), where signal period is set
 	by <strong>signalPeriod</strong> parameter.</li>
 	<li>Signal series value is calculated:<br>
 <img src="http://static.anychart.com/images/technical_indicators/macd-signal.png"/></li>
@@ -131,15 +131,15 @@ Moving Average Convergence/Divergence indicator is calculated as follows:
 <img src="http://static.anychart.com/images/technical_indicators/macd-histogram.png"/></li>
 </ol>
 
-## Moving Average Envelopes (MA Envelopes)
+## Moving Average Envelopes
 
 Coming soon.
 
-## On Balance Volume (OBV)
+## On Balance Volume
 
 Coming soon.
 
-## Parabolic SAR (PSAR)
+## Parabolic SAR
 
 Coming soon.
 
@@ -147,13 +147,13 @@ Coming soon.
 
 Coming soon.
 
-## <a name="roc"></a> Rate of Change (ROC)
+## Rate of Change
 
 Rate of Change is calculated according to this formula:
 
-<center><img src="http://static.anychart.com/images/technical_indicators//roc.png"/></center>
+<center><img src="http://static.anychart.com/images/technical_indicators/roc.png"/></center>
 
-## <a name="rsi"></a> Relative Strength Index (RSI)
+## Relative Strength Index
 
 Relative Strength Index is calculated as follows:
 
@@ -167,7 +167,7 @@ Relative Strength Index is calculated as follows:
 <img src="http://static.anychart.com/images/rsi-rsi.png"></li>
 </ol>
 
-## <a name="sma"></a> Simple Moving Average (SMA)
+## Simple Moving Average
 
 Simple Moving Average in each point is calculated according to the following formula:
 
