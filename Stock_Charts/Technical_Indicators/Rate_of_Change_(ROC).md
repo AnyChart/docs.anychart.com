@@ -1,17 +1,20 @@
-{:index 3}
-
-#Technical Indicators
+# Rate of change
 
 * [Overview](#overview)
-* [General information](#general_information)
-* [Calculation Method](#calculation_method)
-* [Supported Types](#supported_types)
-* [Mathematical Description](#mathematical_description)
+* [Adding indicator](#adding_indicator)
+* [Indicator parameters](#indicator_parameters)
+* [Visualization](#visualization)
 
 ## Overview
 
-A technical indicator is a type of analysis chart that indicates market direction. Indicators generally overlay on price chart data to indicate where the price is going, or whether the price is in an "overbought" condition or an "oversold" condition.
+Rate of change (ROC) is a simple technical analysis indicator showing the difference between today's closing price and the close N days ago.
 
-AnyChart Stock Chart Component supports automatic building of several types of technical indicators. Technical indicators are based on data from data providers and do not depend on series.
+AnyChart Stock allows you to add ROC with desired period to any of your charts.
 
-This document lists available indicator types and gives directions to the tutorials about each indicator type and general information about technical indicators in AnyChart Stock Component.
+Mathematical description of the indicator please see at: [Mathematical Description of Technical Indicators](Mathematical_Description).
+
+## Adding indicator
+
+## Indicator parameters
+
+## Visualization
