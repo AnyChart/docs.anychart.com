@@ -17,19 +17,19 @@ This is a full list of technical indicators AnyStock JavaScript Stock Chart prov
 				<th>Technical Indicator</th>
 			</tr>
 			<tr>
-				<td>[Simple Moving Average (SMA)](Simple_Moving_Average_(SMA))</td>
+				<td>[Simple Moving Average (SMA)](Simple_Moving_Average_\(SMA\))</td>
 			</tr>
 			<tr>
-				<td>[Relative Strength Index (RSI)](Relative_Strength_Index_(RSI))</td>
+				<td>[Relative Strength Index (RSI)](Relative_Strength_Index_\(RSI\))</td>
 			</tr>
 			<tr>
-				<td>[Rate of Change (ROC)](Rate_of_Change_(ROC))</td>
+				<td>[Rate of Change (ROC)](Rate_of_Change_\(ROC\))</td>
 			</tr>
 			<tr>
-				<td>[Moving Average Convergence Divergence (MACD)](Moving_Average_Convergence_Divergence_(MACD))</td>
+				<td>[Moving Average Convergence Divergence (MACD)](Moving_Average_Convergence_Divergence_\(MACD\))</td>
 			</tr>
 			<tr>
-				<td>[Exponential Moving Average (EMA)](Exponential_Moving_Average_(EMA))</td>
+				<td>[Exponential Moving Average (EMA)](Exponential_Moving_Average_\(EMA\))</td>
 			</tr>			
 		</tbody>
 </table>
