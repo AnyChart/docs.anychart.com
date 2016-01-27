@@ -23,7 +23,6 @@ String tokens are special strings you can use in text formatters instead of usin
 Here is a full list of the tokens you can use in formatting strings:
 
 <table width="700px" class="dtTABLE">
-    <tbody>
     <tr>
         <th>Token</th>
         <th>Description</th>
@@ -109,7 +108,6 @@ Here is a full list of the tokens you can use in formatting strings:
     <tr>
         <td>{%DataPlotSeriesCount}</td><td>The number of the series within the chart.</td>
     </tr>
-    </tbody>
 </table>
 
 ##Default fields
