@@ -33,7 +33,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Pie Chart](../Basic_Charts_Types/Pie-Doughnut_Charts)</td><td>Yes</td><td>No</td></tr>
 <tr><td>[3D Area Chart](../Basic_Charts_Types/Area_Chart#3d_area_chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[3D Bar Chart](../Basic_Charts_Types/Bar_Chart#3d_series)</td><td>Yes</td><td>Yes</td></tr>
-<tr><td>[3D Column Chart](../Basic_Charts_Types/Column_Chart##3d_series)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[3D Column Chart](../Basic_Charts_Types/Column_Chart#3d_series)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[3D Pie Chart](../Basic_Charts_Types/Pie-Doughnut_Charts#3d_pie_chart)</td><td>Yes</td><td>No</td></tr>
 <tr><td>[3D Stacked Area/SplineArea Chart](../Basic_Charts_Types/Stacked_Area-SplineArea_Charts#3d_series)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[3D Stacked Bar/Column Chart](../Basic_Charts_Types/Stacked_Bar-Column_Charts#3d_stacked_column_chart)</td><td>Yes</td><td>Yes</td></tr>
