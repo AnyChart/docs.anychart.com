@@ -7,7 +7,7 @@
     <script src="../anychart-bundle.min.js"></script>
     <script src="//cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-        // The data used in this sample can be obtained from the CDN
+        // The data that used in this sample can be obtained from the CDN
         // http://cdn.anychart.com/csv-data/csco-daily.js
 
         // create data table on loaded data
@@ -25,24 +25,33 @@
         // create stock chart
         chart = anychart.stock();
 
-        // create the first plot on the chart
+        // create first plot on the chart
         var plot = chart.plot(0);
 
         // create line series
         var ohlcSeries = plot.ohlc(mapping);
         ohlcSeries.name('CSCO');
 
-        // create the second plot on the chart
+        // create second plot on the chart
         var secondPlot = chart.plot(1);
-        secondPlot.height('30%');
+        secondPlot.height('25%');
 
-        // create RSI indicator with period 14
-        var rsi = secondPlot.rsi(mapping, 14).series();
-        rsi.stroke('#64b5f6');
+        // create ROC indicator with period 14 and display as line on the second plot
+        var roc14 = secondPlot.roc(mapping, 14, 'line').series();
+        roc14.stroke('#64b5f6');
+
+        // create third plot on the chart
+        var thirdPlot = chart.plot(2);
+        thirdPlot.height('25%');
+
+        // create ROC indicator with period 30 and display as column on the third plot
+        var roc30 = thirdPlot.roc(mapping, 30, 'column').series();
+        roc30.fill('#64b5f6');        
 
         // set Y Axis settings
         plot.yAxis().orientation('right');
         secondPlot.yAxis().orientation('right');
+        thirdPlot.yAxis().orientation('right');
 
         // create scroller series with mapped data
         chart.scroller().line(mapping);

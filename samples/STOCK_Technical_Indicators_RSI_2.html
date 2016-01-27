@@ -36,17 +36,17 @@
         var secondPlot = chart.plot(1);
         secondPlot.height('25%');
 
-        // create RSI indicator with period 14 and display as line
-        var roc14 = secondPlot.rsi(mapping, 14, 'line').series();
-        roc14.stroke('#64b5f6');
+        // create RSI indicator with period 14 and display as line and display on the second plot
+        var rsi14 = secondPlot.rsi(mapping, 14, 'line').series();
+        rsi14.stroke('#64b5f6');
 
         // create third plot on the chart
         var thirdPlot = chart.plot(2);
         thirdPlot.height('25%');
 
-        // create RSI indicator with period 30 and display as column
-        var roc30 = secondPlot.rsi(mapping, 30, 'column').series();
-        roc30.fill('#64b5f6');        
+        // create RSI indicator with period 30 and display as column and display on the third plot
+        var rsi30 = thirdPlot.rsi(mapping, 30, 'column').series();
+        rsi30.fill('#64b5f6');        
 
         // set Y Axis settings
         plot.yAxis().orientation('right');

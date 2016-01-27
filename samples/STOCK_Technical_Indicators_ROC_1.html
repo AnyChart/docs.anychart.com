@@ -36,9 +36,9 @@
         var secondPlot = chart.plot(1);
         secondPlot.height('30%');
 
-        // create RSI indicator with period 14
-        var rsi = secondPlot.rsi(mapping, 14).series();
-        rsi.stroke('#64b5f6');
+        // create ROC indicator with period 14
+        var roc = secondPlot.roc(mapping, 14).series();
+        roc.stroke('#64b5f6');
 
         // set Y Axis settings
         plot.yAxis().orientation('right');

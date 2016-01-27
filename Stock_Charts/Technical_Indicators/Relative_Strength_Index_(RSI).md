@@ -56,11 +56,11 @@ var rsi30 = plot.rsi(mapping, 30, "column");
 
 ## Visualization
 
-Indicator visualization depends on the series you chose to display it with, here is a sample where SMA with different parameters and settings is added to different plots:
+Indicator visualization depends on the series you chose to display it with, here is a sample where RSI with different parameters and settings is added to different plots:
 
 ```
 // create RSI indicator with period 14 and shown as column on the second plot
-rsi14 = plot_1.sma(mapping, 14).series();
+rsi14 = plot_1.rsi(mapping, 14).series();
 rsi14.name('RSI(14)');
 rsi14.stroke('#bf360c');
 
@@ -72,4 +72,4 @@ rsi30.fill('#ff6d00');
 
 Live sample:
 
-{sample}STOCK\_Technical\_Indicators\_RSI\_2{sample}
+{sample :width 825 :height 800}STOCK\_Technical\_Indicators\_RSI\_2{sample}
