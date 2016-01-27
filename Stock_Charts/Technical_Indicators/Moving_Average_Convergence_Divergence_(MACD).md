@@ -15,6 +15,66 @@ Mathematical description of the indicator please see at: [Mathematical Descripti
 
 ## Adding indicator
 
+MACD indicator is added using {api:anychart.core.stock.Plot#macd}.macd(){api} method, it requires a mapping with value field in it:
+
+```
+// create data table on loaded data
+var dataTable = anychart.data.table();
+
+// add data to a table
+dataTable.addData(get_data());
+
+// map loaded data
+var mapping = dataTable.mapAs({'value': 4});
+
+// create stock chart
+chart = anychart.stock();
+
+// create plot on the chart
+var plot_0 = chart.plot(0);
+
+// MACD is usually displayed on a separate plot
+var plot_1 = chart.plot(1);
+
+// create MACD indicator with fast period 12, slow period 26 and signal period 9
+var macd = plot_1.macd(mapping, 12, 26, 9);
+// MACD consists of three series, MACD and signal are lines by default, histogram is a column
+macd.macdSeries().stroke('#bf360c');
+macd.signalSeries().stroke('#ff6d00');
+macd.histogramSeries().fill('#ffe082');
+
+```
+
+Here is a live sample:
+
+{sample}STOCK\_Technical\_Indicators\_MACD\_1{sample}
+
 ## Indicator parameters
 
+MACD indicator needs three parameters: mapping with value field in it, fast period 12, slow period 26 and signal period 9, and a types of series to be displayed as:
+
+```
+var macd_default = plot_1.macd(mapping, 12, 26, 9);
+var macd_all_lines = plot_2.macd(mapping, 14, 28, 10, "line", "line", "line");
+```
+
 ## Visualization
+
+Indicator visualization depends on the series you chose to display it with, here is a sample where MACD with different parameters and settings is added to different plots:
+
+```
+// create MACD indicator fast period of 12, slow of 26 an signal of 9
+// series types are default 
+macd_default = plot_1.macd(mapping, 12, 26, 9);
+
+// create MACD indicator fast period of 12, slow of 26 an signal of 9
+// series types are all lines, even histogram
+var macd_all_lines = plot_2.macd(mapping, 14, 28, 10, "line", "line", "line");
+macd.macdSeries().stroke('#bf360c');
+macd.signalSeries().stroke('#ff6d00');
+macd.histogramSeries().stroke('#ffe082');
+```
+
+Live sample:
+
+{sample :width 825 :height 800}STOCK\_Technical\_Indicators\_MACD\_2{sample}
