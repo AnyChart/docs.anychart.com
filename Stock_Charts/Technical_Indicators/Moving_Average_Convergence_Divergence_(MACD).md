@@ -70,9 +70,9 @@ macd_default = plot_1.macd(mapping, 12, 26, 9);
 // create MACD indicator fast period of 12, slow of 26 an signal of 9
 // series types are all lines, even histogram
 var macd_all_lines = plot_2.macd(mapping, 14, 28, 10, "line", "line", "line");
-macd.macdSeries().stroke('#bf360c');
-macd.signalSeries().stroke('#ff6d00');
-macd.histogramSeries().stroke('#ffe082');
+macd_all_lines.macdSeries().stroke('#bf360c');
+macd_all_lines.signalSeries().stroke('#ff6d00');
+macd_all_lines.histogramSeries().stroke('#ffe082');  
 ```
 
 Live sample:
