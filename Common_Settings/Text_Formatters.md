@@ -22,7 +22,7 @@ String tokens are special strings you can use in text formatters instead of usin
 
 Here is a full list of the tokens you can use in formatting strings:
 
-<table>
+<table width="700px" class="dtTABLE">
     <tbody>
     <tr>
         <th>Token</th>
@@ -111,7 +111,6 @@ Here is a full list of the tokens you can use in formatting strings:
     </tr>
     </tbody>
 </table>
-
 
 ##Default fields
 
