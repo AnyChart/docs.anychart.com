@@ -1,6 +1,8 @@
 #Text Formatters
 
 * [Overview](#overview)
+* [String Tokens](#string_tokens)
+ * [Tokens List](#tokens_list)
 * [Default fields](#default_fields)
 * [Extra fields](#extra_fields)
  * [getDataValue](#getdatavalue)
@@ -11,6 +13,105 @@
 ## Overview
 
 Sometimes it might be necessary to display any text with the points on a chart for some reasons. That's when you need to use the {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method.
+
+## String Tokens
+
+String tokens are special strings you can use in text formatters instead of using formatting functions described later, string tokens are suitable when you need only basic formatting, but they cover most of the cases.
+
+## Tokens List
+
+Here is a full list of the tokens you can use in formatting strings:
+
+<table>
+    <tbody>
+    <tr>
+        <th>Token</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>{%Value}</td><td>The y value of this point.</td>
+    </tr>
+    <tr>
+        <td>{%YValue}</td><td>The y value of this point.</td>
+    </tr>
+    <tr>
+        <td>{%YPercentOfSeries}</td><td>The percentage of the series this point represents.</td>
+    </tr>
+    <tr>
+        <td>{%YPercentOfTotal}</td><td>The percentage of all the series on the chart this point represents.</td>
+    </tr>
+    <tr>
+        <td>{%XValue}</td><td>The x value of this point (Scatter Plot charts).</td>
+    </tr>
+    <tr>
+        <td>{%BubbleSize}</td><td>The bubble size value of this point (Bubble chart).</td>
+    </tr>
+    <tr>
+        <td>{%Index}</td><td>The index of this point in the series this point represents (zero-based).</td>
+    </tr>
+    <tr>
+        <td>{%SeriesName}</td><td>The name of this series.</td>
+    </tr>
+    <tr>
+        <td>{%SeriesYSum}</td><td>The sum of all the points y values.</td>
+    </tr>
+    <tr>
+        <td>{%SeriesYAverage}</td><td>The average y value of all the points within this series.</td>
+    </tr>
+    <tr>
+        <td>{%SeriesPointCount}</td><td> number of points in this series.</td>
+    </tr>
+    <tr>
+        <td>{%Name}</td><td>The name of this point.</td>
+    </tr>
+    <tr>
+        <td>{%High}</td><td>The high value of this point (OHLC, Candlestick).</td>
+    </tr>
+    <tr>
+        <td>{%Low}</td><td>The low value of this point (OHLC, Candlestick).</td>
+    </tr>
+    <tr>
+        <td>{%Open}</td><td>The open value of this point (OHLC, Candlestick).</td>
+    </tr>
+    <tr>
+        <td>{%Close}</td><td>The close value of this point (OHLC, Candlestick).</td>
+    </tr>
+    <tr>
+        <td>{%SeriesYMax}</td><td>The maximal y value of all the elements within this series.</td>
+    </tr>
+    <tr>
+        <td>{%SeriesYMin}</td><td>The minimal y value of all the elements within this series.</td>
+    </tr>
+    <tr>
+        <td>{%RangeStart}</td><td>The starting value of this point (Range charts).</td>
+    </tr>
+    <tr>
+        <td>{%RangeEnd}</td><td>The ending value of this point (Range charts).</td>
+    </tr>
+    <tr>
+        <td>{%Range}</td><td>The range of this point (RangeEnd - RangeStart).</td>
+    </tr>
+    <tr>
+        <td>{%DataPlotYSum}</td><td>The sum of all the points y values.</td>
+    </tr>
+    <tr>
+        <td>{%DataPlotYMax}</td><td>The maximal of all the points y values.</td>
+    </tr>
+    <tr>
+        <td>{%DataPlotYMin}</td><td>The minimal of all the points y values.</td>
+    </tr>
+    <tr>
+        <td>{%DataPlotYAverage}</td><td>The average y value of all the points.</td>
+    </tr>
+    <tr>
+        <td>{%DataPlotPointCount}</td><td>The number of the points within the chart.</td>
+    </tr>
+    <tr>
+        <td>{%DataPlotSeriesCount}</td><td>The number of the series within the chart.</td>
+    </tr>
+    </tbody>
+</table>
+
 
 ##Default fields
 
