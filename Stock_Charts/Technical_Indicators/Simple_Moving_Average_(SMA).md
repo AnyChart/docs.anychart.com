@@ -61,7 +61,7 @@ var sma20 = plot_0.sma(mapping, 20).series();
 sma20.name('SMA(20)');
 sma20.stroke('#bf360c');
 
-// create SMA indicators with period 50 and shown as column on the second plot
+// create SMA indicator with period 50 and show as column on the second plot
 var sma50 = plot_1.sma(mapping, 50, "column").series();
 sma50.name('SMA(50)');
 sma50.fill('#ff6d00');

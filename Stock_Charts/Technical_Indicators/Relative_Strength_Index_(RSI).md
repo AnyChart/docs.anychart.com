@@ -15,6 +15,61 @@ Mathematical description of the indicator please see at: [Mathematical Descripti
 
 ## Adding indicator
 
+RSI indicator is added using {api:anychart.core.stock.Plot#rsi}.rsi(){api} method, it requires a mapping with value field in it:
+
+```
+// create data table on loaded data
+var dataTable = anychart.data.table();
+
+// add data to a table
+dataTable.addData(get_data());
+
+// map loaded data
+var mapping = dataTable.mapAs({'value': 4});
+
+// create stock chart
+chart = anychart.stock();
+
+// create plot on the chart
+var plot_0 = chart.plot(0);
+
+// RSI is usually displayed on a separate plot
+var plot_1 = chart.plot(1);
+
+// create RSI indicator with period 14
+var rsi14 = plot_1.rsi(mapping, 14).series();
+rsi14.name('RSI(14)');
+rsi14.stroke('#bf360c');
+```
+
+Here is a live sample:
+
+{sample}STOCK\_Technical\_Indicators\_RSI\_1{sample}
+
 ## Indicator parameters
 
+RSI indicator needs three parameters: mapping with value field in it, period and a type of series to be displayed as:
+
+```
+var rsi30 = plot.rsi(mapping, 30, "column");
+```
+
 ## Visualization
+
+Indicator visualization depends on the series you chose to display it with, here is a sample where SMA with different parameters and settings is added to different plots:
+
+```
+// create RSI indicator with period 14 and shown as column on the second plot
+rsi14 = plot_1.sma(mapping, 14).series();
+rsi14.name('RSI(14)');
+rsi14.stroke('#bf360c');
+
+// create RSI indicator with period 30 and shown as column on the third plot
+var rsi30 = plot_2.rsi(mapping, 30, "column").series();
+rsi30.name('RSI(30)');
+rsi30.fill('#ff6d00');
+```
+
+Live sample:
+
+{sample}STOCK\_Technical\_Indicators\_RSI\_2{sample}
