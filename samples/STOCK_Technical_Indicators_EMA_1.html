@@ -23,9 +23,9 @@
         lineSeries.name('CSCO');
         lineSeries.stroke('2px #64b5f6');
         // create SMA indicators with period 20
-        var sma20 = plot.sma(mapping, 20).series();
-        sma20.name('SMA(20)');
-        sma20.stroke('#bf360c');
+        var ema20 = plot.ema(mapping, 20).series();
+        ema20.name('EMA(20)');
+        ema20.stroke('#bf360c');
         // set Y Axis settings
         var yAxis = plot.yAxis();
         yAxis.orientation('right');

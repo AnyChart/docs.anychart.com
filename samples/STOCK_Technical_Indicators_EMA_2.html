@@ -16,21 +16,29 @@
         var mapping = dataTable.mapAs({'value': 4});
         // create stock chart
         chart = anychart.stock();
-        // create plot on the chart
-        var plot = chart.plot(0);
-        // create line series
-        var lineSeries = plot.line(mapping);
-        lineSeries.name('CSCO');
-        lineSeries.stroke('2px #64b5f6');
-        // create SMA indicators with period 20
-        var sma20 = plot.sma(mapping, 20).series();
-        sma20.name('SMA(20)');
-        sma20.stroke('#bf360c');
-        // set Y Axis settings
-        var yAxis = plot.yAxis();
-        yAxis.orientation('right');
-        // create scroller series with mapped data
-        chart.scroller().line(mapping);
+        // create plots on the chart
+        var plot_0 = chart.plot(0);
+        var plot_1 = chart.plot(1);
+
+        // create line series on both of them
+        var lineSeries_0 = plot_0.line(mapping);
+        lineSeries_0.name('CSCO');
+        lineSeries_0.stroke('2px #64b5f6');
+
+        var lineSeries_1 = plot_1.line(mapping);
+        lineSeries_1.name('CSCO');
+        lineSeries_1.stroke('2px #64b5f6');
+
+        // create EMA indicator with period 20 and show as line on the first plot
+        var ema20 = plot_0.ema(mapping, 20).series();
+        ema20.name('EMA(20)');
+        ema20.stroke('#bf360c');
+
+        // create EMA indicators with period 50 and show as column on the second plot
+        var ema50 = plot_1.ema(mapping, 50, "column").series();
+        ema50.name('EMA(50)');
+        ema50.fill('#ff6d00');
+        
         // set container id for the chart
         chart.container('container');
         // initiate chart drawing
