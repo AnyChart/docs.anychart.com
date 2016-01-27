@@ -31,6 +31,10 @@
 	chart.zAngle(60);
 	chart.zDepth(60);
 
+    // enabled grids
+    chart.grid(0).enabled(true);
+    chart.grid(1).enabled(true).layout("vertical");		
+
 	// draw
 	chart.container("container");
 	chart.draw();

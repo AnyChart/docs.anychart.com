@@ -25,6 +25,10 @@
 	// setting title
 	chart.title("Multi-Series Bar chart");
 
+    // enabled grids
+    chart.grid(0).enabled(true);
+    chart.grid(1).enabled(true).layout("horizontal");	
+
 	// set axes titles
 	var xAxis = chart.xAxis();
 	xAxis.title("Month");
