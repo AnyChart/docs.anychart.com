@@ -15,7 +15,7 @@ Mathematical description of the indicator please see at: [Mathematical Descripti
 
 ## Adding indicator
 
-SMA indicator is added using {api:anychart.core.stock.Plot#sma}.sma(){api} method, it requires
+SMA indicator is added using {api:anychart.core.stock.Plot#sma}.sma(){api} method, it requires a mapping with value field in it:
 
 ```
 // create data table on loaded data
@@ -39,6 +39,34 @@ sma20.name('SMA(20)');
 sma20.stroke('#bf360c');
 ```
 
+Here is a live sample:
+
+{sample}STOCK\_Technical\_Indicators\_SMA\_1{sample}
+
 ## Indicator parameters
 
+SMA indicator need three parameters: mapping with value field in it, period and a type of series to be displayed as:
+
+```
+var sma10 = plot.sma(mapping, 10, "column");
+```
+
 ## Visualization
+
+Indicator visualization depends on the series you chose to display it with, here is a sample where SMA with different parameters and settings is added to different plots:
+
+```
+// create SMA indicator with period 20 and show as line on the first plot
+var sma20 = plot_0.sma(mapping, 20).series();
+sma20.name('SMA(20)');
+sma20.stroke('#bf360c');
+
+// create SMA indicators with period 50 and shown as column on the second plot
+var sma50 = plot_1.sma(mapping, 50, "column").series();
+sma50.name('SMA(50)');
+sma50.fill('#ff6d00');
+```
+
+Live sample:
+
+{sample}STOCK\_Technical\_Indicators\_SMA\_2{sample}
