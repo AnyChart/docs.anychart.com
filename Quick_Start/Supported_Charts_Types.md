@@ -31,14 +31,20 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Percent Stacked Area Chart](../Basic_Charts_Types/Percent_Stacked_Area-SplineArea_Charts)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Percent Stacked Bar/Column Charts](../Basic_Charts_Types/Percent_Stacked_Bar-Column_Charts)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Pie Chart](../Basic_Charts_Types/Pie-Doughnut_Charts)</td><td>Yes</td><td>No</td></tr>
+<tr><td>[3D Area Chart](../Basic_Charts_Types/Area_Chart#3d_area_chart)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[3D Bar Chart](../Basic_Charts_Types/Bar_Chart#3d_series)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[3D Column Chart](../Basic_Charts_Types/Column_Chart##3d_series)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[3D Pie Chart](../Basic_Charts_Types/Pie-Doughnut_Charts#3d_pie_chart)</td><td>Yes</td><td>No</td></tr>
+<tr><td>[3D Stacked Area/SplineArea Chart](../Basic_Charts_Types/Stacked_Area-SplineArea_Charts#3d_series)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[3D Stacked Bar/Column Chart](../Basic_Charts_Types/Stacked_Bar-Column_Charts#3d_stacked_column_chart)</td><td>Yes</td><td>Yes</td></tr>
+
 <tr><td>[Polar Chart](../Basic_Charts_Types/Polar_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Pyramid Chart](../Basic_Charts_Types/Polar_Chart)</td><td>Yes</td><td>No</td></tr>
 <tr><td>[Radar Chart](../Basic_Charts_Types/Radar_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Range Area Chart](../Basic_Charts_Types/Range_Area-SplineArea_Charts)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Range Bar Chart](../Basic_Charts_Types/Range_Bar-Column_Charts)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Range Column Chart](../Basic_Charts_Types/Range_Bar-Column_Charts)</td><td>Yes</td><td>Yes</td></tr>
-<tr><td>[Range Spline Area Chart](../Basic_Charts_Types/Range_Area-SplineArea_Charts)</td><td>Yes</td><td>Yes</td</tr>
+<tr><td>[Range Spline Area Chart](../Basic_Charts_Types/Range_Area-SplineArea_Charts)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Range Step Area Chart](../Basic_Charts_Types/Range_Area-SplineArea_Charts)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Sparkline Chart](../Basic_Charts_Types/Sparkline_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Spline Chart](../Basic_Charts_Types/Line-Spline-StepLine_Charts#single_series_spline_chart)</td><td>Yes</td><td>Yes</td></tr>    
