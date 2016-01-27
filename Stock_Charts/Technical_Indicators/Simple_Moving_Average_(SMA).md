@@ -15,6 +15,30 @@ Mathematical description of the indicator please see at: [Mathematical Descripti
 
 ## Adding indicator
 
+SMA indicator is added using {api:anychart.core.stock.Plot#sma}.sma(){api} method, it requires
+
+```
+// create data table on loaded data
+var dataTable = anychart.data.table();
+
+// add data to a table
+dataTable.addData(get_data());
+
+// map loaded data
+var mapping = dataTable.mapAs({'value': 4});
+
+// create stock chart
+chart = anychart.stock();
+
+// create plot on the chart
+var plot = chart.plot(0);
+
+// create SMA indicators with period 20
+var sma20 = plot.sma(mapping, 20).series();
+sma20.name('SMA(20)');
+sma20.stroke('#bf360c');
+```
+
 ## Indicator parameters
 
 ## Visualization
