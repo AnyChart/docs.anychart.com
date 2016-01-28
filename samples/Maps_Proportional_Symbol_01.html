@@ -7,11 +7,12 @@
   <script src="../anychart-bundle.min.js"></script>
   <script src="//cdn.anychart.com/geodata/1.1.0/countries/united_kingdom/united_kingdom.js" data-export="true"></script>
   <script x-export="chart">
+  
   anychart.onDocumentReady(function() {
 
 // create data set
 var dataSet = anychart.data.set([
-    {'id': 'GB.DU', 'size': 3.5},
+    {'id': 'GB.DU', 'size': 3},
     {'id': 'GB.HI', 'size': 1}
     ]);
 
@@ -24,6 +25,10 @@ map.geoData(anychart.maps['united_kingdom']);
 //create bubble series
 var series = map.bubble(dataSet);
 
+// set max and min bubble sizes
+map.maxBubbleSize(35);
+map.minBubbleSize(10);
+
 //set series geo id field settings
 series.geoIdField("code_hasc");
 
@@ -33,6 +38,7 @@ map.container('container');
 // initiate chart drawing
 map.draw();
 });
+
 </script>
 
 </head>
