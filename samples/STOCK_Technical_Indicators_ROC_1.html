@@ -40,10 +40,6 @@
         var roc = secondPlot.roc(mapping, 14).series();
         roc.stroke('#64b5f6');
 
-        // set Y Axis settings
-        plot.yAxis().orientation('right');
-        secondPlot.yAxis().orientation('right');
-
         // create scroller series with mapped data
         chart.scroller().line(mapping);
 

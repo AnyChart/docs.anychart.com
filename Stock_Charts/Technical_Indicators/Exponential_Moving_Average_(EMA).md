@@ -11,7 +11,7 @@ An exponential moving average (EMA), sometimes also called an exponentially weig
 
 AnyChart Stock allows you to add EMA with desired period to any of your charts.
 
-Mathematical description of the indicator please see at: [Mathematical Description of Technical Indicators](Mathematical_Description).
+Mathematical description of the indicator: [Exponential Moving Average (EMA) Mathematical Description](Mathematical_Description).
 
 ## Adding indicator
 

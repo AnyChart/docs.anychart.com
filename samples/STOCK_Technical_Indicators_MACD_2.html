@@ -51,11 +51,6 @@
         macd_all_lines.signalSeries().stroke('#ff6d00');
         macd_all_lines.histogramSeries().stroke('#ffe082');       
 
-        // set Y Axis settings
-        plot.yAxis().orientation('right');
-        secondPlot.yAxis().orientation('right');
-        thirdPlot.yAxis().orientation('right');
-
         // create scroller series with mapped data
         chart.scroller().line(mapping);
 

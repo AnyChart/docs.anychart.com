@@ -12,7 +12,7 @@ A technical indicator is a type of analysis chart that indicates market directio
 
 ## Creating a custom technical indicator
 
-Creating custom indicator consists of three main steps: the first one is to have a data set to build an indicator upon, most likely (but not necessarily) it is the same data set you series are built upon. For the sake of clarity we add data in code, but you can load it from an external file or script. When data is added to a table, we need to map the value we will use in indicator calculation.
+Creating custom indicator consists of three main steps: the first one is to have a data set to build an indicator upon, most likely (but not necessarily) it is the same data set series are built upon. For the sake of clarity we add data in code, but you can load it from an external file or script. When data is added to a table, we need to map the value we will use in indicator calculation.
 
 ```
 // create data table on loaded data
