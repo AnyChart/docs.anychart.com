@@ -23,6 +23,10 @@
   // chart type
   var chart = anychart.column();
 
+  // switching the select mode to multi
+  var interactivity = chart.interactivity();
+  interactivity.selectionMode("multiselect");  
+
   // set data
   var series_1 = chart.column(Sales2003); 
   series_1.name("Sales in 2013");
@@ -33,6 +37,8 @@
 
   series_1.fill("#E0F08F");
   series_2.fill("#29ADC2");
+  series_1.selectHatchFill("brick");
+  series_2.selectHatchFill("brick");   
   series_1.stroke("none");
   series_2.stroke("none");
 
@@ -47,10 +53,6 @@
 
   // enable legend
   chart.legend(true);
-	
-  // switching the select mode to multi
-  var interactivity = chart.interactivity();
-  interactivity.selectionMode("multiselect");
 
   // draw
   chart.container("container");
