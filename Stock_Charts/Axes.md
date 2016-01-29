@@ -9,11 +9,11 @@
 * [Labels](#labels)
 * [Axis Line](#axis_line)
 * [Extra/Additional Axes](#extra/additional_axes)
-
+* [Grids](#grids)
 
 ## Overview
 
-In AnyChart axes are used to control grids, axes labels, lines and tick marks.  
+In AnyChart axes are used to control axes labels, lines and tick marks.  
   
 * To know how to operate with basic charts axes - please see: [Axis Basics](../Axes_and_Grids/Axis_Basics)
 * To know what scale options are available - [Scale tutorial](../Axes_and_Grids/Scales)
@@ -29,7 +29,7 @@ Axes in AnyStock are generally quite similar to the Basic ones, but the X-axis i
 * X-axis is always in datetime format and shows the Data values
 * X-axis is always scrollable
 * It has background instead of stroke (axis line)
-* It cannot be moved to another place on a chart (always at the bottom)
+* It cannot be moved to another side of a plot (always at the bottom)
 * It has a Helper Label feature
 * No drawFirstLabel, drawLastLabel
 * Tickmarks settings (ticks can be displayed only inside of the axis)
@@ -88,17 +88,39 @@ In AnyStock, the x-axis is not a line, but an area with the background and heigh
 
 {sample}STOCK\_Axes\_04{sample}
 
-## Extra/Additional Axes
+## Grids
 
-You can add as many Y-axes as you need, but there can be only one X-axis on one plot. You can have more than one plot on an AnyStock chart with one x-axis in each. It might be comfortable to use several series when you've got several series on a chart with completely different value limits. Look at the following sample:
+Grids are added to every plot using {api:anychart.core.stock.Plot#grid}grid{api} method, the settings are similar to [basic grids](../Axis_Basics#grids), but it is a method of a plot, not a chart:
 
 ```
-	// Create and tune additional y axis
-	var extraYAxis = plot_line_ohlc.yAxis(1);
-	extraYAxis.orientation("right");
-	extraYAxis.scale(extraYScale);
+// defining the chart 
+chart = anychart.stock();
+
+// dashed horizontal grid
+chart.plot(0).grid(0).enabled(true);
+chart.plot(0).grid(0).stroke({dash: "3 5"});
+```
+{sample}STOCK\_Axes\_05{sample}
+
+## Extra/Additional Axes
+
+You can add as many Y-axes as you need, but there can be only one X-axis on one plot. You can have more than one plot on an AnyStock chart with one x-axis in each. It might be comfortable to use several series when you've got several series on a chart with completely different values. Look at the following sample:
+
+```
+// Create and tune additional y axis
+var extraYAxis = plot_line_ohlc.yAxis(1);
+extraYAxis.orientation("right");
+extraYAxis.scale(extraYScale);
+```
+
+Note that when you add an extra axis you need to change plot {api:anychart.charts.Stock#padding}padding{api} to fit the labels, AnyStock Chart, unlike AnyChart charts, do not fit axes labels automatically, paddings can be set both in pixels and percents:
+
+```
+// create a chart
+chart = anychart.stock();
+// set paddings
+chart.padding("10%", 10, 10, 50);
 ```
 
 {sample}STOCK\_Plots\_03{sample}
 
-We can place more than one AnyStock chart together by using [plots](Chart_Plots) .
