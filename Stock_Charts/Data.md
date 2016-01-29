@@ -45,7 +45,7 @@ table.addData([
 
 {sample}STOCK\_Data\_01{sample}
 
-**Note!** Each data table has to have a "key" value (x-axis value), which should contain a set of unique values. If there are rows (data points) with the same X-axis value, AnyStock will use only the last point with the given X.
+**Note!** Each data table has to have a key column with unique values (x axis values). If there are rows with the same value in this field, AnyStock will use only the last row with the given x axis value.
 
 Note that the X value has to contain date in any format. It means that you can set data as a timestamp, Date Time String or UTC - but it has to be a date.
 
