@@ -3,11 +3,12 @@
 * [Overview](#overview)
 * [String Tokens](#string_tokens)
  * [Tokens List](#tokens_list)
-* [Default fields](#default_fields)
-* [Extra fields](#extra_fields)
- * [getDataValue](#getdatavalue)
- * [getSeriesMeta](#getseriesmeta)
- * [getStat](#getstat)
+* [Formatting functions](#formatting_functions)
+ * [Default fields](#default_fields)
+ * [Extra fields](#extra_fields)
+  * [getDataValue](#getdatavalue)
+  * [getSeriesMeta](#getseriesmeta)
+  * [getStat](#getstat)
 
 
 ## Overview
@@ -148,9 +149,24 @@ Here is a full list of the tokens you can use in formatting strings, note that s
 </tr>
 </table>
 
-##Default fields
+##Formatting functions
 
-There are some standard fields this method has, which depend on the chart type. Below you can see a table with all chart types and fields available for them by default.
+If you need a complex formatting you can use formatting function instead of token strings. Formatting functions are set like this:
+
+```
+    //set data series
+    var series = chart.bar(Sales2003);
+    series.name("Winter");
+    
+    series.tooltip().textFormatter(function(){
+        return this.seriesName + ": " + this.value + " millions%";
+    });
+
+```
+
+###Default fields
+
+There are some standard fields available in formatters depending on a chart type. Below you can see a table with all chart types and fields available for them by default.
 
 
 <table class="dtTABLE">
@@ -238,11 +254,11 @@ This function can return more than one value. The sample below demonstrates it.
 
 {sample}CS\_TextFormatter\_02{sample}
 
-##Extra fields
+###Extra fields
 
 The number and variety of default fields might be not enough in some cases. Sometimes it's necessary to show some extra information. In this case you should use one of the following methods: {api:anychart.core.utils.SeriesPointContextProvider#getStat}**.getStat()**{api}, {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api} or {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}**.getSeriesMeta()**{api}. Which one to use depends on the unique situation.
 
-###getDataValue
+####getDataValue
 
 Using these methods, you can display the values from the extra params, if you have added any to the series or to the data. Look at the sample and its code below:
 
@@ -300,7 +316,7 @@ Here is a sample with additional information in the chart tooltip. Full informat
 <!--
  Another extra parameter, "extra\_inf\_long", was added to use it, for example, as an extra field in the tooltip, because it's too long to be shown on the chart. How to add the values from any extra parameters, see in the [Labels and Tooltips]() tutorial.-->
 
-###getSeriesMeta
+####getSeriesMeta
 
 You can add extra parameters not only to the data points but to series too. Let's add an extra parameter as to the series of OHLC chart and show it with textFormatter.
 
@@ -342,7 +358,7 @@ To add any parameter to the meta of the series, you need to set the parameter na
 
 **Note!** There's no {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}**.getSeriesMeta()**{api} method in Pie, Funnel or Pyramid Charts.
 
-###getStat
+####getStat
 
 This method is to be used when you need to display some statistic information. The variety of fields for this method is not complied the same way as shown above. The available fields for this method are given below.
 
