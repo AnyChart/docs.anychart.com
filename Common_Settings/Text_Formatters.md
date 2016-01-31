@@ -18,9 +18,47 @@ Sometimes it might be necessary to display any text with the points on a chart f
 
 String tokens are special strings you can use in text formatters instead of using formatting functions described later, string tokens are suitable when you need only basic formatting, but they cover most of the cases.
 
+Here is how tokens can be used in tooltips, series labels or axes labels:
+
+```
+anychart.onDocumentReady(function() {
+  // chart type
+  var chart = anychart.column([
+  {x: 'January', value: -10, season:"Winter"},
+  {x: 'February', value: -8, season:"Winter"},
+  {x: 'March', value: -4, season:"Spring"},
+  {x: 'April', value: 1, season:"Spring"},  
+  {x: 'May', value: 7, season:"Spring"},  
+  {x: 'June', value: 12, season:"Summer"}
+    ]);
+
+  // set tooltip text template
+  var tooltip = chart.getSeries(0).tooltip();
+  tooltip.title().text("Content");
+  tooltip.textFormatter("{%x} is a {%season} month\nLowest temp: {%Value}°C");
+
+  // set series labels text template
+  var seriesLabels = chart.getSeries(0).labels().enabled(true);
+  seriesLabels.textFormatter("{%x}");
+  
+  // format axis labels
+  var axisLabels = chart.xAxis().labels();
+  axisLabels.useHtml(true);
+  axisLabels.textFormatter("<b style='color:black;'>{%Value}</b>");
+
+  // draw
+  chart.container("container");
+  chart.draw();
+});
+```
+
+A live sample of chart tooltip, labels and axes labels formatted using string tokens:
+
+{sample}CS\_TextFormatter\_00{sample}
+
 ## Tokens List
 
-Here is a full list of the tokens you can use in formatting strings:
+Here is a full list of the tokens you can use in formatting strings, note that some tokens don't work unversally: you can't use {%BubbleSize} outside of [Bubble series](../Basic_Charts_Types/Bubble_Chart) or {%Close} outside of [Candlestick](../Basic_Charts_Types/Japanese_Candlestick_Chart) or [OHLC](../Basic_Charts_Types/OHLC_Chart) and so on. 
 
 <table width="700px" class="dtTABLE">
 <tr>
