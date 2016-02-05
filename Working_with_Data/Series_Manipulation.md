@@ -21,10 +21,10 @@ In most cases you can create a new series using a method that is named after the
 
 ```
 // set chart type
-var chart = anychart.bar();
+var chart = anychart.cartesian();
 
 // set default series type
-chart.defaultSeriesType("bar");
+chart.defaultSeriesType("column");
 
 // create series
 chart.addSeries(data1, data2, data3);

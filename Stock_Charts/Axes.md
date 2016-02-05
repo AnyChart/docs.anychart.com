@@ -38,7 +38,7 @@ Axes in AnyStock are generally quite similar to the Basic ones, but the X-axis i
 
 ## Orientation 
 
-While a lot of AnyStock Axes settings are the same as Basic charts', there is a difference in their orientation settings. Due to the specifics of AnyStock charts, the X-axis has to be at to the bottom of the chart. The Y-axes act as usual.
+While a lot of AnyStock Axes settings are the same as Basic charts', there is a difference in their orientation settings. Due to the specifics of AnyStock charts, the X-axis has to be at to the bottom of the plot. The Y-axes act as usual.
 
 ##Tickmarks
 
@@ -113,7 +113,7 @@ extraYAxis.orientation("right");
 extraYAxis.scale(extraYScale);
 ```
 
-Note that when you add an extra axis you need to change plot {api:anychart.charts.Stock#padding}padding{api} to fit the labels, AnyStock Chart, unlike AnyChart charts, do not fit axes labels automatically, paddings can be set both in pixels and percents:
+Note that when you add an extra axis you need to change chart {api:anychart.charts.Stock#padding}padding{api} to fit the labels, AnyStock Chart, unlike AnyChart charts, do not fit axes labels automatically, paddings can be set both in pixels and percents:
 
 ```
 // create a chart
