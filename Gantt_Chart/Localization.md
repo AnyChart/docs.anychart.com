@@ -27,7 +27,7 @@ Linking from your server may look like this:
 <script src="http://mydomain.com/anychart-locales/english-(united-states).js">
 ```
 
-After you linked the file AnyChart engine knows about it and you can start using it in your AnyGantt charts, just set the code of the locale in either {api:anychart.format#outputLocale}inputLocale{api} or {api:anychart.format#outputLocale}outputLocale{api}. The code of the locale is listed in the CODE column on (AnyChart Locales CDN)[https://cdn.anychart.com/#locales]. 
+After you linked the file AnyChart engine knows about it and you can start using it in your AnyGantt charts, just set the code of the locale in either {api:anychart.format#outputLocale}inputLocale{api} or {api:anychart.format#outputLocale}outputLocale{api}. The code of the locale is listed in the CODE column on [AnyChart Locales CDN](https://cdn.anychart.com/#locales). 
 
 Setting input and output locale looks like this:
 
