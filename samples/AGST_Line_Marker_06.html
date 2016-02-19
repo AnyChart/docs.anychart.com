@@ -56,7 +56,12 @@
   var yScale = chart.yScale();
   yScale.minimum(0);
 
-  // set series data
+  chart.xScroller(true);
+  var xZoom = chart.xZoom();
+  xZoom.setToValues(Date.UTC(2011, 0, 1), Date.UTC(2015, 0, 1));
+
+
+      // set series data
   var series = chart.line([
     {x: Date.UTC(2011, 0, 01), value: 3.7},
     {x: Date.UTC(2011, 1, 01), value: 3.7},
@@ -168,8 +173,17 @@
   text.scale(chart.xScale());
   text.text("forecast");
   text.align("top");
-  text.anchor("bottomLeft");
+  text.anchor("topLeft");
+  text.offsetX(3);
   text.rotation(0);
+
+  var label = chart.label();
+  label.text("<a style=\"color: #51AF14;\"><b>crudle oil</font><br>forecast</b></a> and<br><b>range of<br>uncertainty</b>");
+  label.position("rightCenter");
+  label.anchor("rightCenter");
+  label.offsetX(10);
+  label.offsetY(-20);
+  label.useHtml(true);
 
   // draw chart
   chart.container("container");
