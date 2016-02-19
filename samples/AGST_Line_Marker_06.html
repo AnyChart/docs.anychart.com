@@ -58,8 +58,7 @@
 
   chart.xScroller(true);
   var xZoom = chart.xZoom();
-  xZoom.setToValues(Date.UTC(2011, 0, 1), Date.UTC(2015, 0, 1));
-
+  xZoom.setToValues(Date.UTC(2014, 0, 1), Date.UTC(2018, 0, 1));
 
       // set series data
   var series = chart.line([
@@ -184,6 +183,8 @@
   label.offsetX(10);
   label.offsetY(-20);
   label.useHtml(true);
+
+  chart.margin().right(50);
 
   // draw chart
   chart.container("container");
