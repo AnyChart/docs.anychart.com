@@ -124,33 +124,33 @@
      {x: Date.UTC(2015, 10, 01), value: 2.9},
      {x: Date.UTC(2015, 11, 01), value: 2.9},
      {x: Date.UTC(2016, 0, 01), value: 2.9},
-     {x: Date.UTC(2016, 1, 01), value: 2.9, valueError: "0.5%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2016, 2, 01), value: 2.9, valueError: "0.5%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2016, 3, 01), value: 2.95, valueError: "1%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2016, 4, 01), value: 3.0, valueError: "1%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2016, 5, 01), value: 3.0, valueError: "1%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2016, 6, 01), value: 3.05, valueError: "1.5%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2016, 7, 01), value: 3.1, valueError: "1.5%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2016, 8, 01), value: 3.1, valueError: "1.5%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2016, 9, 01), value: 3.1, valueError: "1.5%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2016, 10, 01), value: 3.1, valueError: "2%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2016, 11, 01), value: 3.2, valueError: "2%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2017, 0, 01), value: 3.25, valueError: "2%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2017, 1, 01), value: 3.3, valueError: "2.5%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2017, 2, 01), value: 3.35, valueError: "2.5%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2017, 3, 01), value: 3.375, valueError: "2.5%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2017, 4, 01), value: 3.4, valueError: "3%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2017, 5, 01), value: 3.425, valueError: "3.5%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2017, 6, 01), value: 3.45, valueError: "3.5%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2017, 7, 01), value: 3.475, valueError: "3.5%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2017, 8, 01), value: 3.5, valueError: "4%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2017, 9, 01), value: 3.525, valueError: "4%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2017, 10, 01), value: 3.55, valueError: "5%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2017, 11, 01), value: 3.575, valueError: "4.5%", valueErrorStroke: "#7c868e"},
-     {x: Date.UTC(2018, 0, 01), value: 3.6, valueError: "5%", valueErrorStroke: "#7c868e"}
+     {x: Date.UTC(2016, 1, 01), value: 2.9, valueError: "0.5%"},
+     {x: Date.UTC(2016, 2, 01), value: 2.9, valueError: "0.5%"},
+     {x: Date.UTC(2016, 3, 01), value: 2.95, valueError: "1%"},
+     {x: Date.UTC(2016, 4, 01), value: 3.0, valueError: "1%"},
+     {x: Date.UTC(2016, 5, 01), value: 3.0, valueError: "1%"},
+     {x: Date.UTC(2016, 6, 01), value: 3.05, valueError: "1.5%"},
+     {x: Date.UTC(2016, 7, 01), value: 3.1, valueError: "1.5%"},
+     {x: Date.UTC(2016, 8, 01), value: 3.1, valueError: "1.5%"},
+     {x: Date.UTC(2016, 9, 01), value: 3.1, valueError: "1.5%"},
+     {x: Date.UTC(2016, 10, 01), value: 3.1, valueError: "2%"},
+     {x: Date.UTC(2016, 11, 01), value: 3.2, valueError: "2%"},
+     {x: Date.UTC(2017, 0, 01), value: 3.25, valueError: "2%"},
+     {x: Date.UTC(2017, 1, 01), value: 3.3, valueError: "2.5%"},
+     {x: Date.UTC(2017, 2, 01), value: 3.35, valueError: "2.5%"},
+     {x: Date.UTC(2017, 3, 01), value: 3.375, valueError: "2.5%"},
+     {x: Date.UTC(2017, 4, 01), value: 3.4, valueError: "3%"},
+     {x: Date.UTC(2017, 5, 01), value: 3.425, valueError: "3.5%"},
+     {x: Date.UTC(2017, 6, 01), value: 3.45, valueError: "3.5%"},
+     {x: Date.UTC(2017, 7, 01), value: 3.475, valueError: "3.5%"},
+     {x: Date.UTC(2017, 8, 01), value: 3.5, valueError: "4%"},
+     {x: Date.UTC(2017, 9, 01), value: 3.525, valueError: "4%"},
+     {x: Date.UTC(2017, 10, 01), value: 3.55, valueError: "5%"},
+     {x: Date.UTC(2017, 11, 01), value: 3.575, valueError: "4.5%"},
+     {x: Date.UTC(2018, 0, 01), value: 3.6, valueError: "5%"}
    ]);
 
-  series.stroke("#51AF14");
+  series.name("crudle oil forecast and range of uncertainty");
 
   series.tooltip().title(false).separator(false).textFormatter(function(){
     var value = this.value.toFixed(3);
@@ -179,13 +179,7 @@
   text.offsetX(3);
   text.rotation(0);
 
-  var label = chart.label();
-  label.text("<a style=\"color: #51AF14;\"><b>crudle oil</font><br>forecast</b></a> and<br><b>range of<br>uncertainty</b>");
-  label.position("rightCenter");
-  label.anchor("rightCenter");
-  label.offsetX(10);
-  label.offsetY(-20);
-  label.useHtml(true);
+  chart.legend(true);
 
   chart.margin().right(50);
 
