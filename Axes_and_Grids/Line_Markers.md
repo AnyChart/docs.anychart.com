@@ -55,7 +55,6 @@ You can easily manage line marker's layout using {api:anychart.axisMarkers.Line#
 ```
 
 Here is a sample that shows the production of crude oil. The line marker is used to mark the date of chart's creation which means that all the data to the right of the marker is a prediction for the future.
-of a line marker on a date time X Axis:
 
 {sample}AGST\_Line\_Marker\_06{sample}
 
