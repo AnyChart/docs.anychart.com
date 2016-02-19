@@ -10,6 +10,8 @@
   // define chart
   var chart = anychart.financial();
 
+  chart.title("Monthly Iranian crudle oil production");
+
   // crosshair settings
   var crosshair = chart.crosshair();
   // enable crosshair
@@ -30,29 +32,13 @@
   });
   // set custom function for formatting y crossshair label
   var yCrossLabel = crosshair.yLabel();
-  yCrossLabel.textFormatter(function(){
-    var dollars = "$ " + formatter(this.value);
-    var euro = "€ " + formatter(this.value*0.91);
-    var yuan = "¥ " + formatter(this.value*6.40);
-    return euro + "\n"+ dollars + "\n" + yuan;
-  });
+  yCrossLabel.enabled(false);
 
-  function formatter(value){
-    // dispose from fractional part of the value
-    var shortValue = value.toFixed(0);
-    var main = "";
-    // insert space before each three figures fo the number
-    for (var i=1;(i*3)<shortValue.length;i++)
-      main = " "+shortValue.substr(shortValue.length-(i*3), 3) + main;
-    // format value and insert space if needed
-    var tail = shortValue.substr(0, shortValue.length-(main.length-main.length/4));
-    // return formatted value
-    return tail+main;
-  }
+  crosshair.yStroke(null);
 
   var xScale = chart.xScale();
-  xScale.minimum(Date.UTC(2010, 0, 1));
-  xScale.maximum(Date.UTC(2015, 0, 1));
+  xScale.minimum(Date.UTC(2011, 0, 1));
+  xScale.maximum(Date.UTC(2018, 0, 1));
   var xTicks = chart.xScale().ticks();
   xTicks.interval(0,4);
   var xLabels = chart.xAxis().labels();
@@ -63,82 +49,127 @@
   });
 
   var yLabels = chart.yAxis().labels();
-  yLabels.width(75);
+  yLabels.textFormatter(function(){
+    return this.value.toFixed(1);
+  });
+
+  var yScale = chart.yScale();
+  yScale.minimum(0);
 
   // set series data
   var series = chart.line([
-    [Date.UTC(2010, 0, 01), 72924],
-    [Date.UTC(2010, 1, 01), 79371],
-    [Date.UTC(2010, 2, 01), 76899],
-    [Date.UTC(2010, 3, 01), 80891],
-    [Date.UTC(2010, 4, 01), 50548],
-    [Date.UTC(2010, 5, 01), 47039],
-    [Date.UTC(2010, 6, 01), 64029],
-    [Date.UTC(2010, 7, 01), 57180],
-    [Date.UTC(2010, 8, 01), 69809],
-    [Date.UTC(2010, 9, 01), 73899],
-    [Date.UTC(2010, 10, 01), 59456],
-    [Date.UTC(2010, 11, 01), 68822],
-    [Date.UTC(2011, 0, 01), 92536],
-    [Date.UTC(2011, 1, 01), 105108],
-    [Date.UTC(2011, 2, 01), 97777],
-    [Date.UTC(2011, 3, 01), 82511],
-    [Date.UTC(2011, 4, 01), 123476],
-    [Date.UTC(2011, 5, 01), 123113],
-    [Date.UTC(2011, 6, 01), 104613],
-    [Date.UTC(2011, 7, 01), 104919],
-    [Date.UTC(2011, 8, 01), 109661],
-    [Date.UTC(2011, 9, 01), 99281],
-    [Date.UTC(2011, 10, 01), 104695],
-    [Date.UTC(2011, 11, 01), 109492],
-    [Date.UTC(2012, 0, 01), 148910],
-    [Date.UTC(2012, 1, 01), 154197],
-    [Date.UTC(2012, 2, 01), 122224],
-    [Date.UTC(2012, 3, 01), 136687],
-    [Date.UTC(2012, 4, 01), 173808],
-    [Date.UTC(2012, 5, 01), 179910],
-    [Date.UTC(2012, 6, 01), 194502],
-    [Date.UTC(2012, 7, 01), 176565],
-    [Date.UTC(2012, 8, 01), 152765],
-    [Date.UTC(2012, 9, 01), 152950],
-    [Date.UTC(2012, 10, 01), 161812],
-    [Date.UTC(2012, 11, 01), 169217],
-    [Date.UTC(2013, 0, 01), 168348],
-    [Date.UTC(2013, 1, 01), 174274],
-    [Date.UTC(2013, 2, 01), 206777],
-    [Date.UTC(2013, 3, 01), 195678],
-    [Date.UTC(2013, 4, 01), 201773],
-    [Date.UTC(2013, 5, 01), 211041],
-    [Date.UTC(2013, 6, 01), 203658],
-    [Date.UTC(2013, 7, 01), 194100],
-    [Date.UTC(2013, 8, 01), 197417],
-    [Date.UTC(2013, 9, 01), 211506],
-    [Date.UTC(2013, 10, 01), 211488],
-    [Date.UTC(2013, 11, 01), 198981],
-    [Date.UTC(2014, 0, 01), 232004],
-    [Date.UTC(2014, 1, 01), 228394],
-    [Date.UTC(2014, 2, 01), 204727],
-    [Date.UTC(2014, 3, 01), 246861],
-    [Date.UTC(2014, 4, 01), 249813],
-    [Date.UTC(2014, 5, 01), 235604],
-    [Date.UTC(2014, 6, 01), 255414],
-    [Date.UTC(2014, 7, 01), 280067],
-    [Date.UTC(2014, 8, 01), 282872],
-    [Date.UTC(2014, 9, 01), 287978],
-    [Date.UTC(2014, 10, 01), 295558],
-    [Date.UTC(2014, 11, 01), 275614]
+    {x: Date.UTC(2011, 0, 01), value: 3.7},
+    {x: Date.UTC(2011, 1, 01), value: 3.7},
+    {x: Date.UTC(2011, 2, 01), value: 3.7},
+    {x: Date.UTC(2011, 3, 01), value: 3.6},
+    {x: Date.UTC(2011, 4, 01), value: 3.6},
+    {x: Date.UTC(2011, 5, 01), value: 3.5},
+    {x: Date.UTC(2011, 6, 01), value: 3.4},
+    {x: Date.UTC(2011, 7, 01), value: 3.4},
+    {x: Date.UTC(2011, 8, 01), value: 3.5},
+    {x: Date.UTC(2011, 9, 01), value: 3.3},
+    {x: Date.UTC(2011, 10, 01), value: 3.3},
+    {x: Date.UTC(2011, 11, 01), value: 3.2},
+    {x: Date.UTC(2012, 0, 01), value: 3.2},
+    {x: Date.UTC(2012, 1, 01), value: 3.2},
+    {x: Date.UTC(2012, 2, 01), value: 3.1},
+    {x: Date.UTC(2012, 3, 01), value: 3.1},
+    {x: Date.UTC(2012, 4, 01), value: 3.1},
+    {x: Date.UTC(2012, 5, 01), value: 3.0},
+    {x: Date.UTC(2012, 6, 01), value: 3.0},
+    {x: Date.UTC(2012, 7, 01), value: 2.9},
+    {x: Date.UTC(2012, 8, 01), value: 2.9},
+    {x: Date.UTC(2012, 9, 01), value: 2.8},
+    {x: Date.UTC(2012, 10, 01), value: 2.7},
+    {x: Date.UTC(2012, 11, 01), value: 2.7},
+    {x: Date.UTC(2013, 0, 01), value: 2.6},
+    {x: Date.UTC(2013, 1, 01), value: 2.6},
+    {x: Date.UTC(2013, 2, 01), value: 2.7},
+    {x: Date.UTC(2013, 3, 01), value: 2.7},
+    {x: Date.UTC(2013, 4, 01), value: 2.7},
+    {x: Date.UTC(2013, 5, 01), value: 2.7},
+    {x: Date.UTC(2013, 6, 01), value: 2.7},
+    {x: Date.UTC(2013, 7, 01), value: 2.7},
+    {x: Date.UTC(2013, 8, 01), value: 2.7},
+    {x: Date.UTC(2013, 9, 01), value: 2.7},
+    {x: Date.UTC(2013, 10, 01), value: 2.7},
+    {x: Date.UTC(2013, 11, 01), value: 2.7},
+    {x: Date.UTC(2014, 0, 01), value: 2.7},
+    {x: Date.UTC(2014, 1, 01), value: 2.75},
+    {x: Date.UTC(2014, 2, 01), value: 2.8},
+    {x: Date.UTC(2014, 3, 01), value: 2.85},
+    {x: Date.UTC(2014, 4, 01), value: 2.9},
+    {x: Date.UTC(2014, 5, 01), value: 2.9},
+    {x: Date.UTC(2014, 6, 01), value: 2.9},
+    {x: Date.UTC(2014, 7, 01), value: 2.9},
+    {x: Date.UTC(2014, 8, 01), value: 2.9},
+    {x: Date.UTC(2014, 9, 01), value: 2.9},
+    {x: Date.UTC(2014, 10, 01), value: 2.9},
+    {x: Date.UTC(2014, 11, 01), value: 2.9},
+    {x: Date.UTC(2015, 0, 01), value: 2.9},
+    {x: Date.UTC(2015, 1, 01), value: 2.9},
+    {x: Date.UTC(2015, 2, 01), value: 2.9},
+    {x: Date.UTC(2015, 3, 01), value: 2.9},
+    {x: Date.UTC(2015, 4, 01), value: 2.9},
+    {x: Date.UTC(2015, 5, 01), value: 2.9},
+    {x: Date.UTC(2015, 6, 01), value: 2.9},
+    {x: Date.UTC(2015, 7, 01), value: 2.9},
+    {x: Date.UTC(2015, 8, 01), value: 2.9},
+    {x: Date.UTC(2015, 9, 01), value: 2.9},
+    {x: Date.UTC(2015, 10, 01), value: 2.9},
+    {x: Date.UTC(2015, 11, 01), value: 2.9},
+    {x: Date.UTC(2016, 0, 01), value: 2.9},
+    {x: Date.UTC(2016, 1, 01), value: 2.9, valueError: "0.5%"},
+    {x: Date.UTC(2016, 2, 01), value: 2.9, valueError: "0.5%"},
+    {x: Date.UTC(2016, 3, 01), value: 2.95, valueError: "1%"},
+    {x: Date.UTC(2016, 4, 01), value: 3.0, valueError: "1%"},
+    {x: Date.UTC(2016, 5, 01), value: 3.0, valueError: "1%"},
+    {x: Date.UTC(2016, 6, 01), value: 3.05, valueError: "1.5%"},
+    {x: Date.UTC(2016, 7, 01), value: 3.1, valueError: "1.5%"},
+    {x: Date.UTC(2016, 8, 01), value: 3.1, valueError: "1.5%"},
+    {x: Date.UTC(2016, 9, 01), value: 3.1, valueError: "1.5%"},
+    {x: Date.UTC(2016, 10, 01), value: 3.1, valueError: "2%"},
+    {x: Date.UTC(2016, 11, 01), value: 3.2, valueError: "2%"},
+    {x: Date.UTC(2017, 0, 01), value: 3.25, valueError: "2%"},
+    {x: Date.UTC(2017, 1, 01), value: 3.3, valueError: "2.5%"},
+    {x: Date.UTC(2017, 2, 01), value: 3.35, valueError: "2.5%"},
+    {x: Date.UTC(2017, 3, 01), value: 3.375, valueError: "2.5%"},
+    {x: Date.UTC(2017, 4, 01), value: 3.4, valueError: "3%"},
+    {x: Date.UTC(2017, 5, 01), value: 3.425, valueError: "3.5%"},
+    {x: Date.UTC(2017, 6, 01), value: 3.45, valueError: "3.5%"},
+    {x: Date.UTC(2017, 7, 01), value: 3.475, valueError: "3.5%"},
+    {x: Date.UTC(2017, 8, 01), value: 3.5, valueError: "4%"},
+    {x: Date.UTC(2017, 9, 01), value: 3.525, valueError: "4%"},
+    {x: Date.UTC(2017, 10, 01), value: 3.55, valueError: "5%"},
+    {x: Date.UTC(2017, 11, 01), value: 3.575, valueError: "4.5%"},
+    {x: Date.UTC(2018, 0, 01), value: 3.6, valueError: "5%"}
   ]);
-  series.tooltip(false);
+
+  series.tooltip().title(false).separator(false).textFormatter(function(){
+    var value = this.value.toFixed(3);
+    if (this.valueLowerError !==0 )
+      value = this.value.toFixed(3) + "±" + this.valueLowerError.toFixed(3);
+    return "Date: " + new Date(this.x).toLocaleDateString("en-US", {month: "short", year: "numeric"}) + "\n" + value + " million barrels per day";
+  });
 
   var hoverMarkers = series.hoverMarkers();
-  hoverMarkers.size(4);
+  hoverMarkers.size(3);
 
   chart.interactivity("byX");
 
   var marker = chart.lineMarker();
-  marker.value(1325289600000);
+  marker.value(Date.UTC(2016, 1, 01));
   marker.layout("vertical");
   marker.scale(chart.xScale());
+
+  var text = chart.textMarker();
+  text.value(Date.UTC(2016, 1, 01));
+  text.layout("vertical");
+  text.scale(chart.xScale());
+  text.text("forecast");
+  text.align("top");
+  text.anchor("bottomLeft");
+  text.rotation(0);
 
   // draw chart
   chart.container("container");

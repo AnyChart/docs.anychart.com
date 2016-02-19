@@ -50,11 +50,12 @@ You can easily manage line marker's layout using {api:anychart.axisMarkers.Line#
 ```
   var marker = chart.lineMarker();
   marker.layout("vertical");
-  marker.value(1325289600000);
+  marker.value(Date.UTC(2016, 1, 01));
   marker.scale(chart.xScale());
 ```
 
-Here is a sample of a line marker on a date time X Axis:
+Here is a sample that shows the production of crude oil. The line marker is used to mark the date of chart's creation which means that all the data to the right of the marker is a prediction for the future.
+of a line marker on a date time X Axis:
 
 {sample}AGST\_Line\_Marker\_06{sample}
 
