@@ -38,7 +38,7 @@
 
   var xScale = chart.xScale();
   xScale.minimum(Date.UTC(2011, 0, 1));
-  xScale.maximum(Date.UTC(2018, 0, 1));
+  xScale.maximum(Date.UTC(2018, 1, 1));
   var xTicks = chart.xScale().ticks();
   xTicks.interval(0,4);
   var xLabels = chart.xAxis().labels();
@@ -59,7 +59,6 @@
   chart.xScroller(true);
   var xZoom = chart.xZoom();
   xZoom.setToValues(Date.UTC(2014, 0, 1), Date.UTC(2018, 1, 1));
-
 
    // set series data
    var series = chart.line([
@@ -154,7 +153,7 @@
 
   series.tooltip().title(false).separator(false).textFormatter(function(){
     var value = this.value.toFixed(3);
-    if (this.valueLowerError !==0 )
+    if (this.valueLowerError !==0)
       value = this.value.toFixed(3) + "±" + this.valueLowerError.toFixed(3);
     return "Date: " + new Date(this.x).toLocaleDateString("en-US", {month: "short", year: "numeric"}) + "\n" + value + " million barrels per day";
   });
