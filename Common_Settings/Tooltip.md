@@ -88,7 +88,7 @@ Union display mode helps to display information for all series in one tooltip. T
 
 ```
   var tooltip = chart.tooltip();
-  chart.displayMode("separated");
+  tooltip.displayMode("separated");
 ```
 
 {sample}CS\_Tooltip\_04{sample}
