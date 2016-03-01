@@ -1,4 +1,4 @@
-{:index 5}
+{:index 6}
 #Choropleth Maps
 
 * [Choropleth Map](#choropleth_map)

@@ -1,4 +1,4 @@
-{:index 6}
+{:index 7}
 Proportional Symbol Map
 ===========
 
