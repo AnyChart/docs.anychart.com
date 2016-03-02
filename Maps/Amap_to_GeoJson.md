@@ -104,7 +104,7 @@ Conversion of files works the same in all the systems: you need to switch into t
 
 Here is a screenshot of a single **.amap** file conversion:
 
-<a href="https://pp.vk.me/c627831/v627831947/3f33c/bkE-VDU_MoE.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f33c/bkE-VDU_MoE.jpg"></a>
+<a href="https://pp.vk.me/c627831/v627831947/3f33c/bkE-VDU\_MoE.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f33c/bkE-VDU_MoE.jpg"></a>
 
 ### Multiple Files
 <a name="converting_windows">
