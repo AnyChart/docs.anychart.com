@@ -110,10 +110,10 @@ SCREENSHOT(of the result in folder)
 <a name="converting_windows">
 #### Windows
 
-As far as there might be multiple files for converting you can convert the whole folder with files. The syntax for convertin several files is here: **forfiles** command can prosses several files. **/p** defines the path to the folder with **.amao** files, **/m**  sets the mask for files filtering, **/s** enables search in sub-folders, **/c** defines the command for each file. Here is a snippet of converting all **.amap** files in the directory **C:\Users\a1\Desktop\maps** and placing them into **C:\Users\a1\Desktop\amap-converter\result\all** folder:
+As far as there might be multiple files for converting you can convert the whole folder with files. The syntax for convertin several files is here: **forfiles** command can prosses several files. **/p** defines the path to the folder with **.amao** files, **/m**  sets the mask for files filtering, **/c** defines the command for each file. Here is a snippet of converting all **.amap** files in the directory **C:\Users\a1\Desktop\maps** and placing them into **C:\Users\a1\Desktop\amap-converter\result\all** folder:
 
 ```
-  forfiles /p C:\Users\a1\Desktop\maps /m *.amap /s /c "cmd /c python C:\Users\a1\Desktop\amap-converter\converter.py @file C:\Users\a1\Desktop\amap-converter\result\all\/@fname"
+  forfiles /p C:\Users\a1\Desktop\maps /m *.amap /c "cmd /c python C:\Users\a1\Desktop\amap-converter\converter.py @file C:\Users\a1\Desktop\amap-converter\result\all\/@fname"
 ```
 
 After running this code the result will be similar to the one on the screenshot:
@@ -125,7 +125,7 @@ SCREENSHOT
 As far as the code doesn't limit the number or files for processing, we might need to place files for each map into separate folder. Here is a bit adjusted snippet for this purpose:
 
 ```
-  forfiles /p C:\Users\a1\Desktop\maps /m *.amap /s /c "cmd /c python C:\Users\a1\Desktop\amap-converter\converter.py @file C:\Users\a1\Desktop\amap-converter\result\all\/@relpath\..\/@fname\/@fname"
+  forfiles /p C:\Users\a1\Desktop\maps /m *.amap /c "cmd /c python C:\Users\a1\Desktop\amap-converter\converter.py @file C:\Users\a1\Desktop\amap-converter\result\all\/@fname\/@fname"
 ```
 
 The result for this code is here:
@@ -204,10 +204,10 @@ Here is a screenshot of a single **.amap** file conversion:
 
 SCREENSHOT
 
-As far as there might be multiple files for converting you can convert the whole folder with files. The syntax for convertin several files is here: **forfiles** command can prosses several files. **/p** defines the path to the folder with **.amao** files, **/m**  sets the mask for files filtering, **/s** enables search in sub-folders, **/c** defines the command for each file. Here is a snippet of converting all **.amap** files in the directory **C:\Users\a1\Desktop\maps** and placing them into **C:\Users\a1\Desktop\amap-converter\result\all** folder:
+As far as there might be multiple files for converting you can convert the whole folder with files. The syntax for convertin several files is here: **forfiles** command can prosses several files. **/p** defines the path to the folder with **.amao** files, **/m**  sets the mask for files filtering, **/c** defines the command for each file. Here is a snippet of converting all **.amap** files in the directory **C:\Users\a1\Desktop\maps** and placing them into **C:\Users\a1\Desktop\amap-converter\result\all** folder:
 
 ```
-  forfiles /p C:\Users\a1\Desktop\maps /m *.amap /s /c "cmd /c python C:\Users\a1\Desktop\amap-converter\converter.py @file C:\Users\a1\Desktop\amap-converter\result\all\/@fname"
+  forfiles /p C:\Users\a1\Desktop\maps /m *.amap /c "cmd /c python C:\Users\a1\Desktop\amap-converter\converter.py @file C:\Users\a1\Desktop\amap-converter\result\all\/@fname"
 ```
 
 After running this code the result will be similar to the one on the screenshot:
@@ -219,14 +219,14 @@ SCREENSHOT
 As far as the code doesn't limit the number or files for processing, we might need to place files for each map into separate folder. Here is a bit adjusted snippet for this purpose:
 
 ```
-  forfiles /p C:\Users\a1\Desktop\maps /m *.amap /s /c "cmd /c python C:\Users\a1\Desktop\amap-converter\converter.py @file C:\Users\a1\Desktop\amap-converter\result\all\/@relpath\..\/@fname\/@fname"
+  forfiles /p C:\Users\a1\Desktop\maps /m *.amap /c "cmd /c python C:\Users\a1\Desktop\amap-converter\converter.py @file C:\Users\a1\Desktop\amap-converter\result\all\/@fname\/@fname"
 ```
 
 The result for this code is here:
 
 SCREENSHOT
 
-### \*Unix
+### Unix
 
 For Unix family of operation systems the process of **.amap** conversion works pretty much the same.
 
