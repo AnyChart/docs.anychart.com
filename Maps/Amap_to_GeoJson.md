@@ -3,8 +3,14 @@
 # Custom GeoJson Maps
 
 * [Overview](#overview)
-* [Creating Maps For AnyChart](#creating_maps_for_anychart)
-* [amap to JSON converter]
+* [Installation](#installation)
+ * [Windows](#windows_install)
+ * [Unix](#unix_install)
+* [Converting](#converting)
+ * [Single File](#single_file)
+ * [Multiple Files](#multiple_files)
+  * [Windows](#converting_windows)
+  * [Unix](#converting_unix)
 
 ## Overview
 
@@ -23,7 +29,7 @@ Converter generates AnyMap 7.x GeoJSON based JavaScript (.js), pure GeoJSON (.js
 After you converted .amap file you can [use .js or .json files directly in the new HTML5 AnyMap](http://docs.anychart.com/7.9.1/Maps/Quick_Start) or tune .json or .shp files further as described in [AnyMap Custom GeoJSON Maps Tutorial](http://docs.anychart.com/7.9.1/Maps/Custom_GeoJson_Maps).
 
 ## Installation
-
+<a name="windows_install">
 ### Windows
 
 First of all, you need to download the converter. The converter can be downloaded from the [github page of the project](https://github.com/AnyChart/amap-converter).
@@ -60,7 +66,8 @@ After all the requirements are installed you will see same massage as on the scr
 
 SCREENSHOT
 
-### \*Unix
+<a name="unix_install">
+### Unix
 
 The process of converter installation into an operation system of the Unix family works almost in the same as for windows. First of all ypu need to download and install the Python version 2.7.x which can be download from [official web site](https://www.python.org/downloads/) and the converter itself from the [github](https://github.com/AnyChart/amap-converter).
   
@@ -100,9 +107,8 @@ Here is a screenshot of a single **.amap** file conversion:
 SCREENSHOT(of the result in folder)
 
 ### Multiple Files
-
+<a name="converting_windows">
 #### Windows
-
 
 As far as there might be multiple files for converting you can convert the whole folder with files. The syntax for convertin several files is here: **forfiles** command can prosses several files. **/p** defines the path to the folder with **.amao** files, **/m**  sets the mask for files filtering, **/s** enables search in sub-folders, **/c** defines the command for each file. Here is a snippet of converting all **.amap** files in the directory **C:\Users\a1\Desktop\maps** and placing them into **C:\Users\a1\Desktop\amap-converter\result\all** folder:
 
@@ -125,8 +131,8 @@ As far as the code doesn't limit the number or files for processing, we might ne
 The result for this code is here:
 
 SCREENSHOT
-
-#### \*Unix
+<a name="converting_unix">
+#### Unix
 
 For operation systems from Unix family there is a bit more simple way of converting multiple files from a single folder. Use **convert-batch** for the terminal and set the path to the folder with **amap** files and the desirable path to output files.
 
