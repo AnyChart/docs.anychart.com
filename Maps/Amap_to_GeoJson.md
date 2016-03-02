@@ -40,7 +40,7 @@ As far as this is a Python-based converter, you need to install Python in your s
   
 **Note**: it is strongly recommended to add python.exe to Path while python installation.
   
-<a href="https://pp.vk.me/c627831/v627831947/3f2ed/YrBmGHLYlCo.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f2ed/YrBmGHLYlCo.jpg"></a>
+<a href="https://pp.vk.me/c627831/v627831947/3f2ed/YrBmGHLYlCo.jpg" target=_blank><img width = "400" src = "https://pp.vk.me/c627831/v627831947/3f2ed/YrBmGHLYlCo.jpg"></a>
 
 
 PC reboot is required to finish python installation.
