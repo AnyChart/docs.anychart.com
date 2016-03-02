@@ -40,7 +40,7 @@ As far as this is a Python-based converter, you need to install Python in your s
   
 **Note**: it is strongly recommended to add python.exe to Path while python installation.
   
-SCREENSHOT
+<a href="https://pp.vk.me/c627831/v627831947/3f2ed/YrBmGHLYlCo.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f2ed/YrBmGHLYlCo.jpg"></a>
 
 
 PC reboot is required to finish python installation.
@@ -54,7 +54,7 @@ After successful installation of the python on your PC you need to install all t
 
 He is a sample of switching into another folder in Command Prompt.
 
-SCREENSHOT
+<a href="https://pp.vk.me/c627831/v627831947/3f2f6/V9FpvxJSkcU.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f2f6/V9FpvxJSkcU.jpg"></a>
 
 Now, we need to launch the process of requirements installation. Run the following command to do it:
 
@@ -64,7 +64,7 @@ Now, we need to launch the process of requirements installation. Run the followi
 
 After all the requirements are installed you will see same massage as on the screenshot below
 
-SCREENSHOT
+<a href="https://pp.vk.me/c627831/v627831947/3f328/8ac0YOKGGEA.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f328/8ac0YOKGGEA.jpg"></a>
 
 <a name="unix_install">
 ### Unix
@@ -100,11 +100,11 @@ Conversion of files works the same in all the systems: you need to switch into t
   python converter.py PATH_TO_YOUR_MAP.amap OUTPUT_PATH/FILES_NAME
 ```
 
-SCREENSHOT(of the terminal)
+<a href="https://pp.vk.me/c627831/v627831947/3f332/NDBR4IuMg0g.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f332/NDBR4IuMg0g.jpg"></a>
 
 Here is a screenshot of a single **.amap** file conversion:
 
-SCREENSHOT(of the result in folder)
+<a href="https://pp.vk.me/c627831/v627831947/3f33c/bkE-VDU_MoE.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f33c/bkE-VDU_MoE.jpg"></a>
 
 ### Multiple Files
 <a name="converting_windows">
@@ -118,7 +118,7 @@ As far as there might be multiple files for converting you can convert the whole
 
 After running this code the result will be similar to the one on the screenshot:
 
-SCREENSHOT
+<a href="https://pp.vk.me/c627831/v627831947/3f35a/j1LWsNLPloM.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f35a/j1LWsNLPloM.jpg"></a>
 
 **Note**: in the snippet were used *@file* and some other prompt variables. More information can be found on [technet.microsoft.com](https://technet.microsoft.com/en-us/library/cc753551(v=ws.10).aspx).
 
@@ -130,7 +130,8 @@ As far as the code doesn't limit the number or files for processing, we might ne
 
 The result for this code is here:
 
-SCREENSHOT
+<a href="https://pp.vk.me/c627831/v627831947/3f364/Qorv7FwMzR4.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f364/Qorv7FwMzR4.jpg"></a>
+
 <a name="converting_unix">
 #### Unix
 
@@ -142,15 +143,15 @@ For operation systems from Unix family there is a bit more simple way of convert
 
 He is a screenshot of converting a folder with **amap** files:
 
-SCREENSHOT(terminal)
+<a href="https://pp.vk.me/c627831/v627831947/3f36e/Bc7cHCelBHY.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f36e/Bc7cHCelBHY.jpg"></a>
 
 The source folder for conversion were:
 
-SCREENSHOT (of the folder)
+<a href="https://pp.vk.me/c627831/v627831947/3f378/qs1pRlCCPM0.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f378/qs1pRlCCPM0.jpg"></a>
 
 And the output folder contains these files:
 
-SCREENSHOT(of the folder)
+<a href="https://pp.vk.me/c627831/v627831947/3f38c/85dyMNs2qgo.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f38c/85dyMNs2qgo.jpg"></a>
 
 <!--
 
