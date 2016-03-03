@@ -91,7 +91,7 @@ Now, we may proceed to the process of files conversion.
 Conversion of an .amap file works the same in all the systems: you need to switch into the converter's folder and run the following code:
 
 ```
-  python converter.py PATH_TO_YOUR_MAP.amap OUTPUT_PATH/FILES_NAME
+  python converter.py PATH_TO_YOUR_MAP.amap OUTPUT_PATH\FILES_NAME
 ```
 
 <a href="https://pp.vk.me/c627831/v627831947/3f332/NDBR4IuMg0g.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f332/NDBR4IuMg0g.jpg"></a>
