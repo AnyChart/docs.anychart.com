@@ -9,8 +9,8 @@
 * [Converting](#converting)
  * [Single File](#single_file)
  * [Multiple Files](#multiple_files)
-  * [Windows](#converting_windows)
-  * [Unix](#converting_unix)
+<!--  * [Windows](#converting_windows)
+  * [Unix](#converting_unix)-->
 
 ## Overview
 
@@ -83,10 +83,6 @@ Run the following code to launce the process of requirements intallation:
 ```
   pip install -r requirements
 ```
-
-If you see the massage like this, all the requirements are installed.
-
-SCREENSHOT
 
 Now, we may proceed to the process of files conversion.
 
