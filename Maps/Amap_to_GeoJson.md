@@ -104,9 +104,43 @@ Conversion of files works the same in all the systems: you need to switch into t
 
 Here is a screenshot of a single **.amap** file conversion:
 
-<a href="https://pp.vk.me/c627831/v627831947/3f33c/bkE-VDU\_MoE.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f33c/bkE-VDU_MoE.jpg"></a>
+<a href="https://pp.vk.me/c627831/v627831947/3f33c/bkE-VDU\_MoE.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f33c/bkE-VDU\_MoE.jpg"></a>
 
 ### Multiple Files
+
+For converting multiple there is a special script. As far as windows and unix systems are quite different and can't process same scripts, there are two different file for converting multiple **amap** files: **windows_convert-batch.bat** works for windows system and **convert-batch** for unix systems.
+  
+  
+The way of converting multiple files in both systems is the same: in terminal (for unix) or command prompt (for windows) write the path to the script, the path to the folder with amap files and a path for converted files.
+  
+  
+For unix systems:
+
+```
+  ./convert-batch src-folder output-folder
+```
+
+He is a screenshot of converting a folder with **amap** files:
+
+<a href="https://pp.vk.me/c627831/v627831947/3f36e/Bc7cHCelBHY.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f36e/Bc7cHCelBHY.jpg"></a>
+
+The source folder for conversion were:
+
+<a href="https://pp.vk.me/c627831/v627831947/3f378/qs1pRlCCPM0.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f378/qs1pRlCCPM0.jpg"></a>
+
+And the output folder contains these files:
+
+<a href="https://pp.vk.me/c627831/v627831947/3f38c/85dyMNs2qgo.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f38c/85dyMNs2qgo.jpg"></a>
+
+For windows:
+
+```
+  windows_convert-batch.bat src-folder out-folder
+```
+The result for windows:
+
+<a href="https://pp.vk.me/c627831/v627831947/3f364/Qorv7FwMzR4.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f364/Qorv7FwMzR4.jpg"></a>
+<!--
 <a name="converting_windows">
 #### Windows
 
