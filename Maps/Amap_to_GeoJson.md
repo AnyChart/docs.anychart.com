@@ -14,14 +14,11 @@
 
 This Python-based converter allows you to convert any AnyMap 4.x, 5.x and 6.x **amap** map source files to AnyMap 7.x GeoJSON based JavaScript, pure GeoJSON and SHP format.  
   
-You might have obtained .amap files from [the set of maps AnyChart provided with old versions](http://6.anychart.com/products/anychart/mapList/index.php) or created yourself with [AnyChart SHP to AMAP Converter](http://6.anychart.com/products/anymap/converter/).
+You might have obtained .amap files from [the set of maps AnyChart provided with old versions](http://6.anychart.com/products/anychart/mapList/index.php) or created yourself with [AnyChart SHP to AMAP Converter](http://6.anychart.com/products/anymap/converter/).  
   
+AnyChart 7.x maps collection can be found in [AnyChart CDN Maps Collection](https://cdn.anychart.com/#maps-collection).  
   
-AnyChart 7.x maps collection can be found in [AnyChart CDN Maps Collection](https://cdn.anychart.com/#maps-collection).
-  
-  
-Converter generates AnyMap 7.x GeoJSON based JavaScript (.js), pure GeoJSON (.json) and SHP (.shp, .shx and .dbf) formats in the specified output folder.
-  
+Converter generates AnyMap 7.x GeoJSON based JavaScript (.js), pure GeoJSON (.json) and SHP (.shp, .shx and .dbf) formats in the specified output folder.  
   
 After you converted .amap file you can [use .js or .json files directly in the new HTML5 AnyMap](http://docs.anychart.com/7.9.1/Maps/Quick_Start) or tune .json or .shp files further as described in [AnyMap Custom GeoJSON Maps Tutorial](http://docs.anychart.com/7.9.1/Maps/Custom_GeoJson_Maps).
 
@@ -29,19 +26,15 @@ After you converted .amap file you can [use .js or .json files directly in the n
 <a name="windows_install">
 ### Windows
 
-First of all, you need to download the converter. The converter can be downloaded from the [github page of AMAP to JSON converter](https://github.com/AnyChart/amap-converter).
+First of all, you need to download the converter. The converter can be downloaded from the [github page of AMAP to JSON converter](https://github.com/AnyChart/amap-converter).  
   
-  
-As far as this is a Python-based converter, you need to install Python in your system. This converter requires Python version 2.7.x, which can be obtained from the official [download page](https://www.python.org/downloads/).
-  
+As far as this is a Python-based converter, you need to install Python in your system. This converter requires Python version 2.7.x, which can be obtained from the official [download page](https://www.python.org/downloads/).  
   
 **Note**: it is strongly recommended to add python.exe to Path while Python installation.
   
 <a href="https://pp.vk.me/c627831/v627831947/3f2ed/YrBmGHLYlCo.jpg" target=_blank><img width = "400" src = "https://pp.vk.me/c627831/v627831947/3f2ed/YrBmGHLYlCo.jpg"></a>
 
-
-PC reboot is required to finish Python installation.
-  
+PC reboot is required to finish Python installation.  
   
 After successful installation of the Python on your PC you need to install all the requirements for the appropriate work of the converter. To do it you need to run Command Prompt and switch into converter's folder:
 
@@ -66,8 +59,7 @@ After all the requirements are installed you will see same massage as on the scr
 <a name="unix_install">
 ### Unix
 
-The process of converter installation into an operation system of the Unix family works almost in the same as for Windows. First of all you need to download and install the Python version 2.7.x which can be download from [official web site](https://www.python.org/downloads/) and the converter itself from the [github](https://github.com/AnyChart/amap-converter).
-  
+The process of converter installation into an operation system of the Unix family works almost in the same as for Windows. First of all you need to download and install the Python version 2.7.x which can be download from [official web site](https://www.python.org/downloads/) and the converter itself from the [github](https://github.com/AnyChart/amap-converter).  
   
 Second step is installation of all requirements. You need to launch the terminal and switch into the converter's directory. It can be easily done by using **cd** command:
 
@@ -101,8 +93,7 @@ Here is a screenshot of a converted **.amap** file:
 
 ### Multiple Files
 
-For converting multiple there is a special script. As far as Windows and Unix-like systems are quite different and can't process same scripts, there are two different file for converting multiple **.amap** files: **windows_convert-batch.bat** file works for Windows system and **convert-batch** file for Unix-like systems.
-  
+For converting multiple there is a special script. As far as Windows and Unix-like systems are quite different and can't process same scripts, there are two different file for converting multiple **.amap** files: **windows_convert-batch.bat** file works for Windows system and **convert-batch** file for Unix-like systems.  
   
 The way of converting multiple files in both systems is the same: in terminal (for Unix-like systems) or command prompt (for Windows) write the path to the script, the path to the folder with .amap files and a path for the converted files.
   
