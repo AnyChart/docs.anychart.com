@@ -52,7 +52,7 @@ Now, we need to launch the process of requirements installation. Run the followi
   pip install -r requirements
 ```
 
-After all the requirements are installed you will see same massage as on the screenshot below
+After all the requirements are installed you will see same message as on the screenshot below
 
 <a href="https://pp.vk.me/c627831/v627831947/3f328/8ac0YOKGGEA.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f328/8ac0YOKGGEA.jpg"></a>
 
