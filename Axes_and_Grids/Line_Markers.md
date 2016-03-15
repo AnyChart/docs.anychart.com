@@ -13,17 +13,19 @@ Line marker is a line that is drawn on chart plot and bound to some value on an 
 
 ## Declare
 
-To create a line marker use the {api:anychart.axisMarkers#line}**.lineMarker()**{api} method. By default this method creates a marker on a primary y scale. To set a position for a marker use {api:anychart.axisMarkers.Line#value}**.value()**{api} method.
+To create a line marker use the {api:anychart.axisMarkers#line}**.lineMarker()**{api} method. By default this method creates a marker on a primary y axis. You can bind the marker to another axis using **.axis()** method. To set a position for a marker use {api:anychart.axisMarkers.Line#value}**.value()**{api} method.
 
 ```
+  var yAxis = chart.yAxis();
+  
   var marker = chart.lineMarker();
+  marker.axis(yAxis);
   marker.value(9000);
 ```
 
 Here is a sample with a line marker on Y Axis:
 
 {sample}AGST\_Line\_Marker\_03{sample}
-
 
 ## Visualization
 
@@ -45,7 +47,13 @@ Here is a sample with a dash line marker:
 
 ## Layout
 
-You can easily manage line marker's layout using {api:anychart.axisMarkers.Line#layout}**.layout()**{api} method. Using this method you can set horizontal or vertical placement. Don't forget to bind markers to a scale using {api:anychart.axisMarkers.Line#scale}**.scale()**{api} method or your marker will be bound to the primary y scale.
+In some cases you may need to customize your marker's emplacement. The {api:anychart.axisMarkers.Line#layout}**.layout()**{api} method can set horizontal or vertical placement. When a marker is bind to an axis using **.axis()** method the marker's layout is defined to be perpendicular to the axis' orientation. 
+
+###Advanced option
+
+Along with binding marker to an axis, it is possible to use a scale for marker positioning. The scale for the marker can be defined using **.scale()** method. As far as scales don't have any layout you need to define layout for the marker using {api:anychart.axisMarkers.Line#layout}**.layout()**{api} method.  
+  
+**Note**: if you define neither **.scale()** nor **.axis()** the marker will be bound to the primary y axis.
 
 ```
   var marker = chart.lineMarker();
