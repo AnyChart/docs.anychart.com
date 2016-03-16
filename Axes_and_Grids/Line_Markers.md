@@ -13,7 +13,7 @@ Line marker is a line that is drawn on chart plot and bound to some value on an 
 
 ## Declare
 
-To create a line marker use the {api:anychart.axisMarkers#line}**.lineMarker()**{api} method. By default this method creates a marker on a primary y axis. You can bind the marker to another axis using **.axis()** method. To set a position for a marker use {api:anychart.axisMarkers.Line#value}**.value()**{api} method.
+To create a line marker use the {api:anychart.axisMarkers#line}**.lineMarker()**{api} method. By default this method creates a marker on a primary y axis. You can bind the marker to another axis using {api:anychart.core.axisMarkers.Line#axis}**.axis()**{api} method. To set a position for a marker use {api:anychart.axisMarkers.Line#value}**.value()**{api} method.
 
 ```
   var yAxis = chart.yAxis();
@@ -35,9 +35,9 @@ Line marker appearance is defined using {api:anychart.core.axisMarkers.Line#stro
   var marker = chart.lineMarker();
   marker.value(9000);
   marker.stroke({
-     thickness: 2,
-     color: green,
-     dash: "2 7"
+    thickness: 2,
+    color: green,
+    dash: "2 7"
   });
 ```
 
@@ -47,13 +47,13 @@ Here is a sample with a dash line marker:
 
 ## Layout
 
-In some cases you may need to customize your marker's emplacement. The {api:anychart.axisMarkers.Line#layout}**.layout()**{api} method can set horizontal or vertical placement. When a marker is bind to an axis using **.axis()** method the marker's layout is defined to be perpendicular to the axis' orientation. 
+In some cases you may need to customize your marker's emplacement. The {api:anychart.axisMarkers.Line#layout}**.layout()**{api} method can set horizontal or vertical placement. When a marker is bind to an axis using {api:anychart.core.axisMarkers.Line#axis}**.axis()**{api} method the marker's layout is defined to be perpendicular to the axis' orientation.
 
 ###Advanced option
 
-Along with binding marker to an axis, it is possible to use a scale for marker positioning. The scale for the marker can be defined using **.scale()** method. As far as scales don't have any layout you need to define layout for the marker using {api:anychart.axisMarkers.Line#layout}**.layout()**{api} method.  
+Along with binding marker to an axis, it is possible to use a scale for marker positioning. The scale for the marker can be defined using {api:anychart.axisMarkers.Line#scale}**.scale()**{api} method. As far as scales don't have any layout you need to define layout for the marker using {api:anychart.axisMarkers.Line#layout}**.layout()**{api} method.  
   
-**Note**: if you define neither **.scale()** nor **.axis()** the marker will be bound to the primary y axis.
+**Note**: if you define neither {api:anychart.core.axisMarkers.Line#scale}**.scale()**{api} nor {api:anychart.core.axisMarkers.Line#axis}**.axis()**{api} the marker will be bound to the primary y axis.
 
 ```
   var marker = chart.lineMarker();
@@ -79,21 +79,16 @@ AnyChart does not set any limits on the number of line markers on the chart plot
   var marker2 = chart.lineMarker(1);
 ```
 
-After defining a marker it is vital **to bind a marker to a scale and set markers layout**. Otherwise, you will get a horizontal marker that is bound to the primary y scale.
+After defining a marker it is vital **to bind a marker to an axis or bind it to a scale and set markers layout**. Otherwise, you will get a horizontal marker that is bound to the primary y axis.
   
 ```
   var marker1 = chart.lineMarker(0);
   var marker2 = chart.lineMarker(1);
   
-  // set scale for the first marker
-  marker1.scale(chart.yScale());
-  // set layout for the first marker
-  marker1.layout("horizontal");
-  
-  // set scale for the second marker
-  marker2.scale(chart.yScale());
-  // set layout for the second marker
-  marker2.layout("horizontal");
+  // set axis for the first marker
+  marker1.axis(chart.yAxis());
+  // set axis for the second marker
+  marker2.axis(chart.yAxis());
 ```
 
 Here is a sample with multiple lines. Both of them indicate extremes of the chart.

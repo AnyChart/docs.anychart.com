@@ -16,8 +16,13 @@
   // chart type
   var chart = anychart.column();
 
+  // y axis title
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
+
   // set lowest line marker
   var lineMarker = chart.lineMarker();
+  lineMarker.axis(yAxis);
   lineMarker.value(9000);
 
   // set y scale ticks interval
@@ -26,12 +31,9 @@
   var yTicks = chart.yScale().ticks();
   yTicks.interval(2000);
 
-  // y axis title
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
 
   // adjust y axis labels
-  var yLabels = chart.yAxis(0).labels();
+  var yLabels = chart.yAxis().labels();
   yLabels.textFormatter(function(){
     return "$" + this.value/1000 + ",000";
   });
