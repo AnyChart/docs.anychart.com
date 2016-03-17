@@ -32,7 +32,7 @@ As far as this is a Python-based converter, you need to install Python in your s
   
 **Note**: it is strongly recommended to add python.exe to Path while Python installation.
   
-<a href="https://pp.vk.me/c627831/v627831947/3f2ed/YrBmGHLYlCo.jpg" target=_blank><img width = "400" src = "https://pp.vk.me/c627831/v627831947/3f2ed/YrBmGHLYlCo.jpg"></a>
+<a href="http://static.anychart.com/images/amap-converter/python-install.jpg" target=_blank><img width = "400" src = "http://static.anychart.com/images/amap-converter/python-install.jpg"></a>
 
 PC reboot is required to finish Python installation.  
   
@@ -44,7 +44,7 @@ After you've installed the Python on your PC you need to install all requirement
 
 Here is a sample of switching into another folder in Command Prompt.
 
-<a href="https://pp.vk.me/c627831/v627831947/3f2f6/V9FpvxJSkcU.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f2f6/V9FpvxJSkcU.jpg"></a>
+<a href="http://static.anychart.com/images/amap-converter/change-directory.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/change-directory.jpg"></a>
 
 Now, we need to launch the process of installing requirements. Run the following command:
 
@@ -54,7 +54,7 @@ Now, we need to launch the process of installing requirements. Run the following
 
 After all the requirements are installed you will see same message as shown the screenshot below
 
-<a href="https://pp.vk.me/c627831/v627831947/3f328/8ac0YOKGGEA.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f328/8ac0YOKGGEA.jpg"></a>
+<a href="http://static.anychart.com/images/amap-converter/pip-install.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/pip-install.jpg"></a>
 
 <a name="unix_install">
 ### Unix
@@ -85,11 +85,11 @@ Conversion of .amap files works the same in all the systems: you need to switch 
   python converter.py PATH_TO_YOUR_MAP.amap OUTPUT_PATH\FILES_NAME
 ```
 
-<a href="https://pp.vk.me/c627831/v627831947/3f332/NDBR4IuMg0g.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f332/NDBR4IuMg0g.jpg"></a>
+<a href="http://static.anychart.com/images/amap-converter/single-file-windows.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/single-file-windows.jpg"></a>
 
 Here is a screenshot of a converted **.amap** file:
 
-<a href="https://pp.vk.me/c627831/v627831947/3f33c/bkE-VDU\_MoE.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f33c/bkE-VDU\_MoE.jpg"></a>
+<a href="http://static.anychart.com/images/amap-converter/single-file-result-windows.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/single-file-result-windows.jpg"></a>
 
 ### Multiple Files
 
@@ -108,15 +108,15 @@ The way of converting multiple files in both systems is the same: in terminal (f
 
 Converting a folder with **amap** files in UNIX:
 
-<a href="https://pp.vk.me/c627831/v627831947/3f36e/Bc7cHCelBHY.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f36e/Bc7cHCelBHY.jpg"></a>
+<a href="http://static.anychart.com/images/amap-converter/batch-convert.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/batch-convert.jpg"></a>
 
 If the source folder for the conversion is:
 
-<a href="https://pp.vk.me/c627831/v627831947/3f378/qs1pRlCCPM0.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f378/qs1pRlCCPM0.jpg"></a>
+<a href="http://static.anychart.com/images/amap-converter/batch-convert-source.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/batch-convert-source.jpg"></a>
 
 The output folder will contains several folders with these files in each of the folders:
 
-<a href="https://pp.vk.me/c627831/v627831947/3f38c/85dyMNs2qgo.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f38c/85dyMNs2qgo.jpg"></a>
+<a href="http://static.anychart.com/images/amap-converter/batch-convert-result-unix.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/batch-convert-result-unix.jpg"></a>
 
 ####Windows
 
@@ -125,4 +125,4 @@ The output folder will contains several folders with these files in each of the 
 ```
 The result folder in Windows may look like this:
 
-<a href="https://pp.vk.me/c627831/v627831947/3f364/Qorv7FwMzR4.jpg" target=_blank><img width = "700" src = "https://pp.vk.me/c627831/v627831947/3f364/Qorv7FwMzR4.jpg"></a>
+<a href="http://static.anychart.com/images/amap-converter/batch-convert-result-windows.jpg" target=_blank><img width = "700" src = "http://static.anychart.com/images/amap-converter/batch-convert-result-windows.jpg"></a>
