@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <script src="../anychart-bundle.min.js"></script>
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        #container {
+            width: 500px;
+            height: 500px;
+            float: left
+        }
+
+        #controls {
+            margin: 5px;
+            float: left
+        }
+    </style>
+</head>
+<body>
+<div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
+
+
+<script>
+    var chart, range, rangeInput;
+    range = document.getElementById('hintOpacity');
+    rangeInput = document.getElementById('hintOpacityText');
+    anychart.onDocumentReady(function() {
+         var data = anychart.data.tree([
+         {id: 'Eurasia', parent: null},
+
+         {id: 'Asia', parent: 'Eurasia'},
+
+         {id: 'Asia 1', parent: 'Asia'},
+         {id: 'Asia 11', parent: 'Asia 1', value: 20},
+         {id: 'Asia 12', parent: 'Asia 1', value: 30},
+
+         {id: 'Asia 2', parent: 'Asia'},
+
+         {id: 'Asia 21', parent: 'Asia 2', value: 50},
+         {id: 'Asia 22', parent: 'Asia 2', value: 50},
+         {id: 'Asia 23', parent: 'Asia 2', value: 50},
+
+         {id: 'Asia 3', parent: 'Asia'},
+
+         {id: 'Asia 31', parent: 'Asia 3', value: 35},
+         {id: 'Asia 32', parent: 'Asia 3', value: 70},
+         {id: 'Asia 33', parent: 'Asia 3', value: 105},
+         {id: 'Asia 34', parent: 'Asia 3', value: 140},
+
+         {id: 'Europe', parent: 'Eurasia'},
+         {id: 'Europe 1', parent: 'Europe'},
+         {id: 'Europe 2', parent: 'Europe', value: 400},
+
+         {id: 'Europe 11', parent: 'Europe 1', value: 300},
+         {id: 'Europe 12', parent: 'Europe 1', value: 400},
+         {id: 'Europe 13', parent: 'Europe 1', value: 100},
+         ],
+    anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
+    );
+
+        chart = anychart.treeMap(data);
+        chart.container('container');
+        chart.headers().textFormatter(function() {
+            return this.getDataValue('id');
+        });
+        chart.labels().textFormatter(function() {
+            return this.getDataValue('id');
+        });
+        chart.tooltip().titleFormatter(function() {
+            return this.getDataValue('id');
+        });
+
+        chart.maxDepth(1);
+        chart.hoverStroke('black');
+        chart.hintDepth(0);
+        chart.hintOpacity(1);
+        chart.draw();
+    });
+</script>
+
+</body>
+</html>
