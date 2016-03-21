@@ -80,6 +80,7 @@
 
         chart = anychart.treeMap(data);
         chart.container('container');
+        
         chart.headers().textFormatter(function() {
             return this.getDataValue('name');
         });

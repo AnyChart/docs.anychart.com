@@ -6,11 +6,12 @@
   * [Hierarchical](#hierarchical)
   * [Table](#table)
   * [MaxDepth](#MaxDepth)
-* [Point elements](#coloring)
+* [Point elements](#point_elements)
   * [Header](#header)
   * [Content](#content)
+  * [Markers](#markers)
 * [Interactivity](#interactivity)
-  * [Drilldown and drillup](#drilldown_and_drillup)
+  * [Drilldown and Drillup](#drilldown_and_drillup)
   * [Select](#select)
 * [Visualization](#visualization)
   * [Labels](#labels)
@@ -186,4 +187,122 @@ Our TreeMaps have a MaxDepth feature. You can define how many levels do you want
 
 That's how the chart looks with the maxDepth property value set more than 1. There are two extra settings that help managing this feature, {api}**.hintOpacity**{api} and {api}**.hintDepth**{api}, which will be described later in the article.
 
- {sample}BCT\_TreeMap\_03{sample}
+{sample}BCT\_TreeMap\_03{sample}
+
+
+## Point elements
+
+Points in TreeMap Charts are not typical, they look like rectangles which represent some content. So, a point of a TreeMap should have a name (or a header) and some content.
+
+### Header
+
+Header is a name of a root of the current level. Due to its settings, they all can be enabled, disabled or set individually through the data. To set some parameters or format the header we use the {api}**.headers()**{api} method. We can change the font and background settings, format the demonstrated value and define hovering settings using the {api}**.hoverHeaders()**{api} method. Let's look at the example below. We've changed some font and hovering settings of the demonstrated headers.
+
+```
+	// headers settings
+        chart.headers().fontColor("red");
+        chart.headers().fontSize(14);
+        chart.headers().fontWeight('bold');
+        chart.hoverHeaders().fontColor("purple");
+        chart.headers().textFormatter(function() {
+            return this.getDataValue('name');
+        });
+```
+{sample}BCT\_TreeMap\_04{sample}
+
+Let's set some headers through the data and disable one of them:
+
+```
+	var rawData = [
+         {
+         name: 'Eurasia',
+         children: [
+         {
+         name: 'Asia',
+         header: null,
+         children: [
+         {
+         name: 'Asia 1',
+         header: {text: 'ASIA 1 NEW HEADER'},
+         children: [
+         {name: 'Asia 11', value: 20},
+         {name: 'Asia 12', value: 30}
+         ]
+         },
+         {
+         name: 'Asia 2',
+         value: 60,
+         header: {textFormatter: function() {return 'ASIA 2 NEW HEADER'}},
+         children: [
+         {name: 'Asia 21', value: 50},
+         {name: 'Asia 22', value: 50},
+         {name: 'Asia 23', value: 50}
+         ]
+         },
+         {
+         name: 'Asia 3',
+         value: 70,
+         header: {text: 'ASIA 3 NEW HEADER'},
+         children: [
+         {name: 'Asia 31', value: 35},
+         {name: 'Asia 32', value: 70},
+         {name: 'Asia 33', value: 105},
+         {name: 'Asia 34', value: 140}
+         ]
+         }
+         ]
+         },
+         {
+         name: 'Europe',
+         header: null,
+         children: [
+         {name: 'Europe 1', value: 300},
+         {name: 'Europe 2', value: 400}
+         ]
+         }
+         ]
+         }
+         ];
+```
+{sample}BCT\_TreeMap\_05{sample}
+
+We can see that three headers have changed and two headers that represent Asia and Europe parts have disappeared.
+
+
+### Content
+
+Content points are all points besides root ones. We can also edit the them almost the same as we would edit Column Chart points appearance. Additionally, TreeMap Chart points have an opacity property, which we can set using {api}**.hintOpacity**{api} method. Let's adjust our content points and change their background colors and opacity.
+
+```
+
+```
+{sample}BCT\_TreeMap\_06{sample}
+
+
+### Markers
+
+You can notice that there are markers shown on a point when you hover it. Markers in the TreeMap charts are quite usual: we use {api}**.markers()**{api}, {api}**.hoverMarkers()**{api} and {api}**.selectMarkers()**{api} for adjusting markers in different chart states. Let's now edit the hovering settings of our TreeMap: create markers of bubble type which will be displayed only on those hovered points that have children elements. Those conditions can be complied if defined through [events](../Common_Settings/Event_Listeners.md).
+
+```
+
+```
+
+{sample}BCT\_TreeMap\_07{sample}
+
+
+
+## Interactivity
+
+You might have already noticed that our TreeMap point reaction is quite interacive. "Blocks" or elements are being drilled down and up, hovered and selected. In this part we will describe working with TreeMap interactivity.
+
+### Drilldown and Drillup
+
+The main feature and purpose of TreeMap Charts is demonstrating the hierarchy of some subjects, processes or anything else. Drilldown feature therefore becomes the most important interactive feature for this chart type. 
+
+When you left-click at the leaf which is a parent itself, a drill down will be performed for this element and you will see the next level of the tree where the selected element is a root.
+
+Left click на none leaf point content (content - все кроме хедера)
+Left click on none root header, такой хедер можно увидеть только при при наличии минимум 3х уровней в данных и настройке maxDepth больше единицы.
+Right click на none leaf point content --> context menu --> drill down
+
+### Select
