@@ -196,7 +196,7 @@ Points in TreeMap Charts are not typical, they look like rectangles which repres
 
 ### Header
 
-Header is a name of a root of the current level. Due to its settings, they all can be enabled, disabled or set individually through the data. To set some parameters or format the header we use the {api}**.headers()**{api} method. We can change the font and background settings, format the demonstrated value and define hovering settings using the {api}**.hoverHeaders()**{api} method. Let's look at the example below. We've changed some font and hovering settings of the demonstrated headers.
+Header is a name of a parent of the current level. Due to its settings, they all can be enabled, disabled or set individually through the data. To set some parameters or format the header we use the {api}**.headers()**{api} method. We can change the font and background settings, format the demonstrated value and define hovering settings using the {api}**.hoverHeaders()**{api} method. Let's look at the example below. We've changed some font and hovering settings of the demonstrated headers.
 
 ```
 	// headers settings
@@ -264,27 +264,35 @@ Let's set some headers through the data and disable one of them:
          }
          ];
 ```
-{sample}BCT\_TreeMap\_05{sample}
+{sample}BCT\_TreeMap\_05{sample} 
+ <!--пока что не работает-->
 
 We can see that three headers have changed and two headers that represent Asia and Europe parts have disappeared.
 
 
 ### Content
 
-Content points are all points besides root ones. We can also edit the them almost the same as we would edit Column Chart points appearance. Additionally, TreeMap Chart points have an opacity property, which we can set using {api}**.hintOpacity**{api} method. Let's adjust our content points and change their background colors and opacity.
+Content points are all points besides parental ones. We can also edit them almost the same as we would edit Column Chart points appearance. Additionally, TreeMap Chart points have an opacity property, which we can set using {api}**.hintOpacity()**{api} method with a value from 0 to 1 (default value is 1). Note that the result of using this method will be seen only if we adjust another setting, {api}**.hintDepth()**{api}, which stands Let's adjust our content points and change their background colors and opacity.
 
 ```
-
+// content points settings
+        chart.hintOpacity(2);
+        chart.fill("#ddd");
 ```
 {sample}BCT\_TreeMap\_06{sample}
 
+Here we used a single color for the {api}**.fill()**{api} method so all content points became of the same light-grey color. If you need to make points colored differently depending on the 
+
+Look for more detailed description of the content point visualisation in the [visualization paragaph](#visualization).
 
 ### Markers
 
-You can notice that there are markers shown on a point when you hover it. Markers in the TreeMap charts are quite usual: we use {api}**.markers()**{api}, {api}**.hoverMarkers()**{api} and {api}**.selectMarkers()**{api} for adjusting markers in different chart states. Let's now edit the hovering settings of our TreeMap: create markers of bubble type which will be displayed only on those hovered points that have children elements. Those conditions can be complied if defined through [events](../Common_Settings/Event_Listeners.md).
+You can notice that there are markers shown on a point when you hover it. Markers in the TreeMap charts are quite usual: we use {api}**.markers()**{api}, {api}**.hoverMarkers()**{api} and {api}**.selectMarkers()**{api} for adjusting markers in different chart states. Let's now edit the hovering settings of our TreeMap: create markers of pentagon type which will be displayed on the hovered points. <!--Those conditions can be complied if defined through [events](../Common_Settings/Event_Listeners.md).-->
 
 ```
-
+	// markers
+        chart.hoverMarkers(true);
+        chart.hoverMarkers({size: 10, fill: "#80CBC4", type: "pentagon"});
 ```
 
 {sample}BCT\_TreeMap\_07{sample}
@@ -299,10 +307,52 @@ You might have already noticed that our TreeMap point reaction is quite interaci
 
 The main feature and purpose of TreeMap Charts is demonstrating the hierarchy of some subjects, processes or anything else. Drilldown feature therefore becomes the most important interactive feature for this chart type. 
 
-When you left-click at the leaf which is a parent itself, a drill down will be performed for this element and you will see the next level of the tree where the selected element is a root.
+When you left-click at the leaf which is a parent itself, a drill down will be performed for this element and you will see the next level of the tree, where the selected element is a parent. This can be performed if the {api}**.maxDepth()**{api} of the TreeMap is not set in the maximum value, because in this case you will see all headers in the top rows of the TreeMap table and the demonstrated content points will belong to the lowest level.
 
-Left click на none leaf point content (content - все кроме хедера)
-Left click on none root header, такой хедер можно увидеть только при при наличии минимум 3х уровней в данных и настройке maxDepth больше единицы.
-Right click на none leaf point content --> context menu --> drill down
+If you set the value of the {api}**.maxDepth()**{api} parameter more than 1 and your data has over 3 levels of contens, you will see the headers of the nested levels in the rows under the root header row. If you click at one of those headers, its level points will be drilled down.
+
+
+Also AnyChart TreeMaps work with context menu. If a content point is a parent of another level, you can drilldown this level by right-clicking this content-parent point and choosing the necessary option in the context menu.
+
+
+To drillup a chart or a level, use headers. Click at the root header (you will be able to see it from any level but the highest if you have set the {api}**.maxDepth()**{api} parameter in the right value). Anyway, if you don't see the root header, you can click at the level's parent's header - so you will drillup a level. Also, you may use a context menu: right-click at one of the points of the level and choosing "drillup" in the context menu will bring you a level up.
+
+
+If necessary, it is possible to disable drilldown function. In this case we need to call for events. You can look for the [Events tutorial article](../Common_Settings/Event_Listeners.md) for better understanding the subject. Here below you can find a way to turn down the drilldown function.
+
+
+```
+	chart.listen(anychart.enums.EventType.DRILL_CHANGE, function(e) {
+		return false;
+	});
+```
+
+{sample}BCT\_TreeMap\_08{sample}
+
 
 ### Select
+
+Selecting points in TreeMap Charts is another special theme. Mostly, selecting a point of a TreeMap will lead to the next level opening where this point as a header. Though, when you get to such a level of the hierarchy where some of content points or all of them have no children, you will be able to select those points. 
+
+There are two ways of selecting the leaf points: first is to click at a point with the left button of your mouse, and the second is to right-click a point and choose "Select".
+
+
+## Visualization
+
+When you change some visualization setting of your charts, you make them not only more informative but more customized. There are several parameters besides those already considered that you can change and adjust.
+
+### Labels
+
+To configure data labels use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api}. Adding attributes with values to these methods will lead to changes in visual appearance, position and format. 
+We can change the labels' position and format the text. Let's now change the points' labels
+
+```
+	
+```
+
+{sample}BCT\_TreeMap\_09{sample}
+
+
+### Tooltip
+### HintDepth
+### HintOpacity
