@@ -272,7 +272,7 @@ We can see that three headers have changed and two headers that represent Asia a
 
 ### Content
 
-Content points are all points besides parental ones. We can also edit them almost the same as we would edit Column Chart points appearance. Additionally, TreeMap Chart points have an opacity property, which we can set using {api}**.hintOpacity()**{api} method with a value from 0 to 1 (default value is 1). Note that the result of using this method will be seen only if we adjust another setting, {api}**.hintDepth()**{api}, which stands Let's adjust our content points and change their background colors and opacity.
+Content points are all points besides parental ones. We can also edit them almost the same as we would edit Column Chart points appearance. Additionally, TreeMap Chart points have an opacity property, which we can set using {api}**.hintOpacity()**{api} method with a value from 0 to 1 (default value is 1). Note that the result of using this method will be seen only if we adjust another setting, {api}**.hintDepth()**{api}, which ids described lower in the article. Let's adjust our content points and change their background colors and opacity.
 
 ```
 // content points settings
@@ -339,20 +339,76 @@ There are two ways of selecting the leaf points: first is to click at a point wi
 
 ## Visualization
 
-When you change some visualization setting of your charts, you make them not only more informative but more customized. There are several parameters besides those already considered that you can change and adjust.
+When you change some visualization setting of your charts, you make them not only more informative but memorable. There are several parameters besides those already considered that you can change and adjust.
 
 ### Labels
 
 To configure data labels use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api}. Adding attributes with values to these methods will lead to changes in visual appearance, position and format. 
-We can change the labels' position and format the text. Let's now change the points' labels
+For formatting the text of the labels we use {api}**.textFormatter()**{api}. Let's format the labels so they would show the represented value and color the labels' text in black.
 
 ```
-	
+	// labels
+        chart.labels().fontColor('black');
+        chart.labels().textFormatter(function(){
+            return this.name + ': ' + this.value + 'm';
+        });
 ```
 
 {sample}BCT\_TreeMap\_09{sample}
 
+It's possible to set some additional information through the data that is to be later displayed by the labels. You can find more interesting information and examples like that with labels formatting and adjusting in the [Labels](../Common_Settings/Labels) tutorial.
 
 ### Tooltip
+
+Tooltips are small windows that pop up when you hover a point. They are shown next to the cursor and follows it by default. We can change their appearance and behaviour using several the {api:anychart.core.cartesian.series.Base#tooltips}**.tooltip()**{api} method. For formatting the text and title of the tooltips we use {api:anychart.core.ui.ChartTooltip#textFormatter}**.textFormatter()**{api} and {api:anychart.core.ui.ChartTooltip#titleFormatter}**.titleFormatter()**{api}; for changing the position we use special positining parameters like {api:anychart.core.ui.ChartTooltip#positionMode}**.positionMode()**{api}, {apianychart.core.ui.ChartTooltip#anchor}**.anchor()**{api} and other, which you can find [here](../Common_Settings/Tooltip#position). Let's now adjust the tooltips.
+
+```
+	// tooltips settings
+        chart.tooltip().titleFormatter(function(){
+        return rawData[0].name;
+        });
+        chart.tooltip().textFormatter(function(){
+            return this.name + ': ' + this.value + 'm';
+        });
+        chart.tooltip().positionMode('point');
+```
+
+{sample}BCT\_TreeMap\_10{sample}
+
+Some tooltip settings can be defined through the data. For more information look up the [Tooltip](../Common_Settings/Tooltip) tutorial.
+
 ### HintDepth
+
+HintDepth is the TreeMaps feature. The value that you set for the {api}**.hintDepth()**{api} method means how many levels further than those defined for {api}**.maxDepth()**{api} you want to be shown. This is different from **MaxDepth** feature: while **MaxDepth** shows several levels with their parents in the first rows of the TreeMap table, making all elements interactive, the **HintDepth** shows only the elements inside without making them interactive and without displaying their parent elements. Look at the following sample: we have set 2 in the {api}**.maxDepth()**{api} parameter and 1 for {api}**.hintDepth()**{api}.
+
+```
+	// setting the maximum levels depth
+        chart.maxDepth(2);
+    // setting the number of levels shown additionally
+        chart.hintDepth(1);
+```
+
+{sample}BCT\_TreeMap\_11{sample}
+
+If we set the **MaxDepth** parameter in 3 while we've got 3 levels of hierarchy, using **HintDepth** will lead to no changes in visual appearance of the chart. 
+
+
 ### HintOpacity
+
+This setting helps to manage the TreeMap appearance when the **HintDepth** parameter is set in more than 0. The range of the {api}**.hintOpacity()**{api} parameter is from 0 to 1; the more the value is, the less transparent will be the chart (the less visible will be your additional levels). Let's leave the **MaxDepth** and **HintDepth** settings from the previous samples and set the **hintOpacity** in 0,7.
+
+
+```
+	
+        // setting the maximum levels depth
+        chart.maxDepth(2);
+
+        // setting the number of levels shown additionally
+        chart.hintDepth(1);
+
+        // hintopacity setting
+        chart.hintOpacity(0.7);
+
+```
+
+{sample}BCT\_TreeMap\_12{sample}

@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+    <script src="../anychart-bundle.min.js"></script>
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        #container {
+            width: 500px;
+            height: 500px;
+            float: left
+        }
+
+        #controls {
+            margin: 5px;
+            float: left
+        }
+    </style>
+</head>
+<body>
+<div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
+
+
+<script>
+    var chart, range, rangeInput;
+    range = document.getElementById('hintOpacity');
+    rangeInput = document.getElementById('hintOpacityText');
+    anychart.onDocumentReady(function() {
+        var rawData = [
+         {
+         name: 'Eurasia',
+         children: [
+         {
+         name: 'Asia',
+         children: [
+         {
+         name: 'Asia 1',
+         header: {text: 'ASIA 1 NEW HEADER'},
+         children: [
+         {name: 'Asia 11', value: 20},
+         {name: 'Asia 12', value: 30}
+         ]
+         },
+         {
+         name: 'Asia 2',
+         value: 60,
+         header: {textFormatter: function() {return 'ASIA 2 NEW HEADER'}},
+         children: [
+         {name: 'Asia 21', value: 50},
+         {name: 'Asia 22', value: 50},
+         {name: 'Asia 23', value: 50}
+         ]
+         },
+         {
+         name: 'Asia 3',
+         value: 70,
+         header: 'Asia 3',
+         children: [
+         {name: 'Asia 31', value: 35},
+         {name: 'Asia 32', value: 70},
+         {name: 'Asia 33', value: 105},
+         {name: 'Asia 34', value: 140}
+         ]
+         }
+         ]
+         },
+         {
+         name: 'Europe',
+         children: [
+         {name: 'Europe 1', value: 300, hoverMarker:false},
+         {name: 'Europe 2', value: 400}
+         ]
+         }
+         ]
+         }
+         ];
+        var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
+
+        chart = anychart.treeMap(data);
+        chart.container('container');
+
+        // headers settings
+        chart.headers().fontColor("red");
+        chart.headers().fontSize(14);
+        chart.headers().fontWeight('bold');
+        chart.hoverHeaders().fontColor("purple");
+        // chart.headers().textFormatter(function() {
+        //     return this.getDataValue('name');
+        // });
+
+        // chart.labels().textFormatter(function() {
+        //     return this.getDataValue('name');
+        // });
+        chart.tooltip().titleFormatter(function() {
+            return this.getDataValue('name');
+        });
+
+
+        // setting the maximum levels depth
+        chart.maxDepth(1);
+
+        
+        // markers
+        chart.hoverMarkers(false);
+        chart.hoverMarkers({size: 10, fill: "#80CBC4", type: "pentagon"});
+
+        // labels
+        chart.labels().fontColor('black');
+        chart.labels().textFormatter(function(){
+            return this.name + ': ' + this.value + 'm';
+        });
+
+
+        chart.hoverStroke('black');
+        chart.draw();
+    });
+</script>
+
+</body>
+</html>
