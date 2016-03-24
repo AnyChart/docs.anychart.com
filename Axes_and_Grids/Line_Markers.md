@@ -62,7 +62,7 @@ Along with binding marker to an axis, it is possible to use a scale for marker p
   marker.scale(chart.xScale());
 ```
 
-Here is a sample that shows the production of crude oil. The line marker is used to mark the date of chart's creation which means that all the data to the right of the marker is a prediction for the future. As you can see, the line marker uses {api:anychart.axisMarkers.Line#scale}**.scale()**{api} and {api:anychart.axisMarkers.Line#layout}**.layout()**{api} methods to use advanced marker's positioning. Let's use main {api:anychart.core.axisMarkers.Line#axis}**.axis()**{api} method for positioning text marker on the same sport and see the result:
+Here is a sample that shows the production of crude oil. The line marker is used to mark the date of chart's creation which means that all the data to the right of the marker is a prediction for the future. As you can see, the line marker uses {api:anychart.axisMarkers.Line#scale}**.scale()**{api} and {api:anychart.axisMarkers.Line#layout}**.layout()**{api} methods to use advanced marker's positioning. Let's use main {api:anychart.core.axisMarkers.Text#axis}**.axis()**{api} method for positioning text marker on the same sport and see the result:
 
 ```
   var text = chart.textMarker();
