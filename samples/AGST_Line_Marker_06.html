@@ -170,8 +170,7 @@
 
   var text = chart.textMarker();
   text.value(Date.UTC(2016, 1, 01));
-  text.layout("vertical");
-  text.scale(chart.xScale());
+  text.axis(chart.xAxis());
   text.text("forecast");
   text.align("top");
   text.anchor("topLeft");

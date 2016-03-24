@@ -4,7 +4,7 @@
 * [Overview](#overview)
 * [Declare](#declare)
 * [Visualization](#visualization)
-* [Layout](#layout)
+* [Advanced Layout](#advanced_layout)
 * [Multiple Lines](#multiple_lines)
 
 ## Overview
@@ -45,7 +45,7 @@ Here is a sample with a dash line marker:
 
 {sample}AGST\_Line\_Marker\_04{sample}
 
-## Layout
+## Advanced Layout
 
 In some cases you may need to customize your marker's emplacement. The {api:anychart.axisMarkers.Line#layout}**.layout()**{api} method can set horizontal or vertical placement. When a marker is bind to an axis using {api:anychart.core.axisMarkers.Line#axis}**.axis()**{api} method the marker's layout is defined to be perpendicular to the axis' orientation.
 
@@ -62,7 +62,13 @@ Along with binding marker to an axis, it is possible to use a scale for marker p
   marker.scale(chart.xScale());
 ```
 
-Here is a sample that shows the production of crude oil. The line marker is used to mark the date of chart's creation which means that all the data to the right of the marker is a prediction for the future.
+Here is a sample that shows the production of crude oil. The line marker is used to mark the date of chart's creation which means that all the data to the right of the marker is a prediction for the future. As you can see, the line marker uses {api:anychart.axisMarkers.Line#scale}**.scale()**{api} and {api:anychart.axisMarkers.Line#layout}**.layout()**{api} methods to use advanced marker's positioning. Let's use main {api:anychart.core.axisMarkers.Line#axis}**.axis()**{api} method for positioning text marker on the same sport and see the result:
+
+```
+  var text = chart.textMarker();
+  text.value(Date.UTC(2016, 1, 01));
+  text.axis(chart.xAxis());
+```
 
 {sample}AGST\_Line\_Marker\_06{sample}
 
