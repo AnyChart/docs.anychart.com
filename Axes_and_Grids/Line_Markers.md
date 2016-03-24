@@ -49,7 +49,7 @@ Here is a sample with a dash line marker:
 
 In some cases you may need to customize your marker's emplacement. The {api:anychart.axisMarkers.Line#layout}**.layout()**{api} method can set horizontal or vertical placement. When a marker is bind to an axis using {api:anychart.core.axisMarkers.Line#axis}**.axis()**{api} method the marker's layout is defined to be perpendicular to the axis' orientation.
 
-###Advanced option
+### Advanced option
 
 Along with binding marker to an axis, it is possible to use a scale for marker positioning. The scale for the marker can be defined using {api:anychart.axisMarkers.Line#scale}**.scale()**{api} method. As far as scales don't have any layout you need to define layout for the marker using {api:anychart.axisMarkers.Line#layout}**.layout()**{api} method.  
   
