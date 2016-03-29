@@ -1,0 +1,76 @@
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="http://cdn.anychart.com/js/develop/anychart-bundle.min.js"></script>
+  <script src="http://cdn.anychart.com/geodata/1.1.0/countries/australia/australia.js" data-export="true"></script>
+  <script x-export="chart">
+anychart.onDocumentReady(function () {
+
+    // create the dataset of points that are defined by latitude and longtitude values
+    var dataSet_lat_long = anychart.data.set([
+        {lat: -25.758751446573896, long: 122.18216472408207},
+        {lat: -18.506379573972872, long: 135.24294642224174},
+        {lat: -23.12833157353524, long: 148.62674513057308},
+        {lat: -17.897798647183976, long: 145.09867715290332},
+        {lat: -33.2809649396655, long: 135.589751474883},
+        {lat: -31.216760559507435, long: 116.44220156961407},
+        {lat: -32.26380339970011, long: 151.44030365260178},
+        {lat: -25.63226536838997, long: 152.37860865188998}
+    ]);
+
+    // create the dataset of points that are defined by the region id
+    var dataSet_id = anychart.data.set([
+        {"id": "AU.NS", "farms": 240},
+        {"id": "AU.NT", "farms": 202},
+        {"id": "AU.WA", "farms": 193},
+        {"id": "AU.SA", "farms": 196},
+        {"id": "AU.VI", "farms": 48},
+        {"id": "AU.TS", "farms": 13},
+        {"id": "AU.QL", "farms": 136}
+    ]);
+
+    australiaMap = anychart.map();
+    australiaMap.geoData(anychart.maps.australia);
+
+    // Creates the marker series
+    var series_lat_long = australiaMap.marker(dataSet_lat_long);
+    var series_id = australiaMap.marker(dataSet_id);
+
+    // format the tooltips of the lat_long series
+    series_lat_long.tooltip({title: false, separator: false});
+
+    //format the labels of the id-defined series
+    series_id.labels().textFormatter(function(e){
+      return this.id + ": " + e.getDataValue("farms") + " sheep farms";
+    });
+
+    // hovered and selected labels
+    series_id.hoverLabels().fontColor("black");
+    series_id.selectLabels().fontColor("red");
+
+    // change the color of the lat-long series
+    series_lat_long.stroke("green");
+    series_lat_long.fill("gold");
+
+    // make the markers of the series with id bigger
+    series_lat_long.size("10");
+    series_lat_long.hoverSize("10");
+
+    // change the markers type
+    series_id.type("square");
+    series_lat_long.type("cross");
+
+    australiaMap.title("Marker series on a map");
+    australiaMap.container("container");
+    australiaMap.draw();
+});
+    </script>
+
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
