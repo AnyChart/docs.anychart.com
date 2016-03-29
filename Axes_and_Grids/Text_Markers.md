@@ -13,11 +13,11 @@ Text Markers are useful when you want to place custom texts or description with 
 
 These text markers are just custom text placed on chart.
 
-To add custom text you need to create {api:anychart.charts.Cartesian#textMarker}**textMarker()**{api} and set {api:anychart.core.axisMarkers.Text#value}**value()**{api}, {api:anychart.core.axisMarkers.Text#scale}**scale()**{api} and {api:anychart.core.axisMarkers.Text#text}**text()**{api}.You may use other options, but previous three are mandatory.
+To add custom text you need to create {api:anychart.charts.Cartesian#textMarker}**textMarker()**{api} and set {api:anychart.core.axisMarkers.Text#value}**value()**{api}, {api:anychart.core.axisMarkers.Text#axis}**axis()**{api} and {api:anychart.core.axisMarkers.Text#text}**text()**{api}.You may use other options, but previous three are mandatory.
 
 ```
   var textMarker = chart.textMarker();
-  textMarker.scale(chart.yScale());
+  textMarker.axis(chart.yAxis());
   textMarker.value(18000);
   textMarker.align("left");
   textMarker.anchor("leftcenter");
@@ -39,7 +39,7 @@ Markers placement is controlled using {api:anychart.enums.Align}**align()**{api}
 
 ```
   var textMarker = chart.textMarker();
-  textMarker.scale(chart.yScale());
+  textMarker.axis(chart.yAxis());
   textMarker.value(13);
   textMarker.text("Align: right");
   textMarker.align("right");

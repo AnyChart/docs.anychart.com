@@ -34,7 +34,7 @@
   // first marker
   var marker = chart.textMarker(0);
   // bind marker to the scale
-  marker.scale(chart.yScale());
+  marker.axis(chart.axis));
   // set marker position
   marker.value(13);
   // set marker's alignment
@@ -59,7 +59,7 @@
 
   // third marker
   var marker2 = chart.textMarker(2);
-  marker2.scale(chart.yScale());
+  marker2.axis(chart.yAxis());
   marker2.value(13);
   marker2.text("Align: right");
   marker2.align("right");
@@ -69,7 +69,7 @@
 
   // forth marker
   var marker3 = chart.textMarker(3);
-  marker3.scale(chart.yScale());
+  marker3.axis(chart.yAxis());
   marker3.value(15);
   marker3.text("Align: left\nAnchor: right");
   marker3.hAlign("right");
@@ -80,7 +80,7 @@
 
   // fifth marker
   var marker4 = chart.textMarker(4);
-  marker4.scale(chart.yScale());
+  marker4.axis(chart.yAxis());
   marker4.value(4);
   marker4.text("Align: left\nAnchor: right\nOffsetX: 40");
   marker4.hAlign("right");

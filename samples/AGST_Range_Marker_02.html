@@ -40,28 +40,28 @@
 
   // set green
   var rangeMarker = chart.rangeMarker();
-  rangeMarker.scale(chart.yScale());
+  rangeMarker.axis(chart.yAxis());
   rangeMarker.from(20000);
   rangeMarker.to(30000);
   rangeMarker.fill("#009900 0.4");
 
   // set red marker
   var rangeMarker1 = chart.rangeMarker(1);
-  rangeMarker1.scale(chart.yScale());
+  rangeMarker1.axis(chart.yAxis());
   rangeMarker1.fill("#ffa000 0.4");
   rangeMarker1.from(10000);
   rangeMarker1.to(20000);
 
   // set green marker
   var rangeMarker2 = chart.rangeMarker(2);
-  rangeMarker2.scale(chart.yScale());
+  rangeMarker2.axis(chart.yAxis());
   rangeMarker2.from(0);
   rangeMarker2.to(10000);
   rangeMarker2.fill("#dd2c00 0.4");
 
   // set left text marker
   var textMarker = chart.textMarker(0);
-  textMarker.scale(chart.yScale());
+  textMarker.axis(chart.yAxis());
   textMarker.align("left");
   textMarker.anchor("leftcenter");
   textMarker.offsetX(5);
@@ -72,7 +72,7 @@
 
   // set text marker at the center
   var textMarker1 = chart.textMarker(1);
-  textMarker1.scale(chart.yScale());
+  textMarker1.axis(chart.yAxis());
   textMarker1.align("center");
   textMarker1.anchor("center");
   textMarker1.value(15000);
@@ -83,7 +83,7 @@
 
   // set text marker at the center
   var textMarker2 = chart.textMarker(2);
-  textMarker2.scale(chart.yScale());
+  textMarker2.axis(chart.yAxis());
   textMarker2.align("right");
   textMarker2.anchor("rightcenter");
   textMarker2.offsetX(5);
