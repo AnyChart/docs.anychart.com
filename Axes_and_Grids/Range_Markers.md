@@ -27,6 +27,8 @@ To add range marker you need to use {api:anychart.axisMarkers.Range}**.rangeMark
   marker.to(10000);
   // set marker inner color
   marker.fill("#fcd8d7");
+  // set axis
+  marker.axis(yAxis);
 ```
 
 Using this code let's create a marker that highlights unsatisfactory result.
