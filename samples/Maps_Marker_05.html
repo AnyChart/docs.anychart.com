@@ -5,67 +5,42 @@
   <meta name="index" content="1000"/>
   <meta name="is-new" content="false"/>
   <script src="http://cdn.anychart.com/js/develop/anychart-bundle.min.js"></script>
-  <script src="http://cdn.anychart.com/geodata/1.1.0/countries/australia/australia.js" data-export="true"></script>
+  <script src="http://cdn.anychart.com/geodata/1.1.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
   <script x-export="chart">
 anychart.onDocumentReady(function () {
 
     // create the dataset of points that are defined by latitude and longtitude values
     var dataSet_lat_long = anychart.data.set([
-        {lat: -25.758751446573896, long: 122.18216472408207},
-        {lat: -18.506379573972872, long: 135.24294642224174},
-        {lat: -23.12833157353524, long: 148.62674513057308},
-        {lat: -17.897798647183976, long: 145.09867715290332},
-        {lat: -33.2809649396655, long: 135.589751474883},
-        {lat: -31.216760559507435, long: 116.44220156961407},
-        {lat: -32.26380339970011, long: 151.44030365260178},
-        {lat: -25.63226536838997, long: 152.37860865188998}
+        {lat: 33.758751446573896, long: -112.18216472408207, name: "ACME Corp. branch No. 1", value: 321},
+        {lat: 28.506379573972872, long: -135.24294642224174, name: "ACME Corp. branch No. 2", value: 293},
+        {lat: 23.12833157353524, long: -148.62674513057308, name: "ACME Corp. branch No. 3", value: 312},
+        {lat: 17.897798647183976, long: -145.09867715290332, name: "ACME Corp. branch No. 4", value: 198},
+        {lat: 33.2809649396655, long: -135.589751474883, name: "ACME Corp. branch No. 5", value: 309},
+        {lat: 39.216760559507435, long: -116.44220156961407, name: "ACME Corp. branch No. 6", value: 215},
+        {lat: 32.26380339970011, long: -151.44030365260178, name: "ACME Corp. branch No. 7", value: 219},
+        {lat: 27.63226536838997, long: -152.37860865188998, name: "ACME Corp. branch No. 8", value: 179}
     ]);
 
-    // create the dataset of points that are defined by the region id
-    var dataSet_id = anychart.data.set([
-        {"id": "AU.NS", "farms": 240},
-        {"id": "AU.NT", "farms": 202},
-        {"id": "AU.WA", "farms": 193},
-        {"id": "AU.SA", "farms": 196},
-        {"id": "AU.VI", "farms": 48},
-        {"id": "AU.TS", "farms": 13},
-        {"id": "AU.QL", "farms": 136}
-    ]);
-
-    australiaMap = anychart.map();
-    australiaMap.geoData(anychart.maps.australia);
+    usaMap = anychart.map();
+    usaMap.geoData(anychart.maps.united_states_of_america);
 
     // Creates the marker series
-    var series_lat_long = australiaMap.marker(dataSet_lat_long);
-    var series_id = australiaMap.marker(dataSet_id);
+    var series_lat_long = usaMap.marker(dataSet_lat_long);
 
-    // format the tooltips of the lat_long series
+    // format the tooltips
     series_lat_long.tooltip({title: false, separator: false});
-
-    //format the labels of the id-defined series
-    series_id.labels().textFormatter(function(e){
-      return this.id + ": " + e.getDataValue("farms") + " sheep farms";
+    series_lat_long.tooltip().textFormatter(function(e){
+       return "Yearly profit: $" + e.getDataValue("value") + "m";
     });
 
-    // hovered and selected labels
-    series_id.hoverLabels().fontColor("black");
-    series_id.selectLabels().fontColor("red");
+    // format the labels
+    series_lat_long.labels().fontSize(10)
+    series_lat_long.labels().fontColor("#000");
 
-    // change the color of the lat-long series
-    series_lat_long.stroke("green");
-    series_lat_long.fill("gold");
 
-    // make the markers of the series with id bigger
-    series_lat_long.size("10");
-    series_lat_long.hoverSize("10");
-
-    // change the markers type
-    series_id.type("square");
-    series_lat_long.type("cross");
-
-    australiaMap.title("Marker series on a map");
-    australiaMap.container("container");
-    australiaMap.draw();
+    usaMap.title("Formatting the labels and tooltips");
+    usaMap.container("container");
+    usaMap.draw();
 });
     </script>
 

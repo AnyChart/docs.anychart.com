@@ -21,23 +21,11 @@ anychart.onDocumentReady(function () {
         {lat: -25.63226536838997, long: 152.37860865188998}
     ]);
 
-    // create the dataset of points that are defined by the region id
-    var dataSet_id = anychart.data.set([
-        {"id": "AU.NS"},
-        {"id": "AU.NT"},
-        {"id": "AU.WA"},
-        {"id": "AU.SA"},
-        {"id": "AU.VI"},
-        {"id": "AU.TS"},
-        {"id": "AU.QL"}
-    ]);
-
     australiaMap = anychart.map();
     australiaMap.geoData(anychart.maps.australia);
 
     // Creates the marker series
     var series_lat_long = australiaMap.marker(dataSet_lat_long);
-    var series_id = australiaMap.marker(dataSet_id);
 
     series_lat_long.tooltip({title: false, separator: false});
 
