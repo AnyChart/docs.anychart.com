@@ -163,19 +163,32 @@
 
   chart.interactivity("byX");
 
-  var marker = chart.lineMarker();
-  marker.value(Date.UTC(2016, 1, 01));
-  marker.layout("vertical");
-  marker.scale(chart.xScale());
+  var nearFuture = chart.lineMarker();
+  nearFuture.value(Date.UTC(2016, 1, 01));
+  nearFuture.layout("vertical");
+  nearFuture.scale(chart.xScale());
+
+  var future = chart.lineMarker(1);
+  future.value(Date.UTC(2017, 1, 01));
+  future.axis(chart.xAxis());
 
   var text = chart.textMarker();
   text.value(Date.UTC(2016, 1, 01));
   text.axis(chart.xAxis());
-  text.text("forecast");
+  text.text("Near Future");
   text.align("top");
   text.anchor("topLeft");
   text.offsetX(3);
   text.rotation(0);
+
+  var futureText = chart.textMarker();
+  futureText.value(Date.UTC(2017, 1, 01));
+  futureText.axis(chart.xAxis());
+  futureText.text("Future");
+  futureText.align("top");
+  futureText.anchor("topLeft");
+  futureText.offsetX(3);
+  futureText.rotation(0);
 
   chart.legend(true);
 
