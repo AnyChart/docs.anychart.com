@@ -142,16 +142,16 @@ It's possible to change labels and tooltips for the points in another state. To 
 
 We can also edit the series here as in all other maps. To change the series filling and stroking colors we use {api:anychart.core.map.series.Marker#fill}**.fill()**{api} and {api:anychart.core.map.series.Marker#stroke}**.stroke()**{api} methods. Also we can change the markers' size with the {api:anychart.core.map.series.Marker#size}**.size()**{api} method. For hovered state we've got {api:anychart.core.map.series.Marker#hoverFill}**.hoverFill()**{api}, {api:anychart.core.map.series.Marker#hoverStroke}**.hoverStroke()**{api} and {api:anychart.core.map.series.Marker#hoverSize}**.hoverSize()**{api}.
 
-Let's change the marker stroke color to green and the filling color to gold for the first series, and make the markers of the second series bigger in size. 
+Let's add another series demonstrating the CITRUS company profit rates and change the ACME series's marker stroke color to green and the filling color to gold, and make the markers of the second series bigger in size. 
 
 ```
-	// change the color of the lat-long series
-    series_lat_long.stroke("green");
-    series_lat_long.fill("gold");
+	// change the color of the ACME series
+    series_CITRUS.stroke("green");
+    series_CITRUS.fill("gold");
 
-    // make the markers of the series with id bigger
-    series_id.size("10");
-    series_id.hoverSize("10");
+    // make the markers of the CITRUS series 
+    series_CITRUS.size(8);
+    series_CITRUS.hoverSize(10);
 ```
 {sample}Maps\_Marker\_07{sample}
 
@@ -161,8 +161,8 @@ Also we can change the shape of the markers using the {api:anychart.core.scatter
 
 ```
 	// change the markers type
-    series_id.type("square");
-    series_lat_long.type("cross");
+    series_ACME.type("square");
+    series_CITRUS.type("cross");
 
 ```
 {sample}Maps\_Marker\_08{sample}

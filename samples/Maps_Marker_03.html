@@ -40,6 +40,7 @@ anychart.onDocumentReady(function () {
     series_id.selectLabels().fontColor("red");
 
     australiaMap.title("Marker series on a map");
+    australiaMap.interactivity().mouseWheel(false);
     australiaMap.container("container");
     australiaMap.draw();
 });

@@ -34,11 +34,15 @@ anychart.onDocumentReady(function () {
     });
 
     // format the labels
+    series_lat_long.labels().textFormatter(function(){
+        return this.getDataValue("name");
+    });
     series_lat_long.labels().fontSize(10)
     series_lat_long.labels().fontColor("#000");
 
 
     usaMap.title("Formatting the labels and tooltips");
+    usaMap.interactivity().mouseWheel(false);
     usaMap.container("container");
     usaMap.draw();
 });
