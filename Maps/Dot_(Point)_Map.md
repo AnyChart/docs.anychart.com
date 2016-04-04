@@ -171,7 +171,7 @@ We can customize our map by creating our own, unique markers. We need to set a f
 
 ```
 	// sets custom function to display marker
-    series_id.type(function(path, x, y, size) {
+    series_CITRUS.type(function(path, x, y, size) {
         var numericSize = +size;
         var point1 = {x: x + 1.3 * numericSize, y: y - 0.4 * numericSize};
         var point2 = {x: x - 0.4 * numericSize, y: y - 0.5 * numericSize};
@@ -183,7 +183,7 @@ We can customize our map by creating our own, unique markers. We need to set a f
         return path;
     }); 
 
-    series_id.hoverType(function(path, x, y, size) {
+    series_CITRUS.hoverType(function(path, x, y, size) {
         var numericSize = +size;
         var point1 = {x: x + 1.3 * numericSize, y: y - 0.4 * numericSize};
         var point2 = {x: x - 0.4 * numericSize, y: y - 0.5 * numericSize};
@@ -200,24 +200,24 @@ Another way to create unique markers is to set an image (or an array of images) 
 
 ```
     // set the link for the directory with images
-    var image_link = 'http://static.anychart.com/images/parks_of_the_world/';
+    var image_link = 'http://cdn.bolshoyvopros.ru/files/users/images/67/48/67482812be439b0d3fb1b144a87281ec.jpg';
     
 
     // set the images for dots of the series defined by latitude and longtitude in normal state
-    series_lat_long.fill(function () {
+    series_ACME.fill(function () {
     if (this.index >= 0) {
         return {
-            src: image_link + (this.index+1) + ".jpg",
+            src: image_link,
             mode: 'fitMax'
         }
     }
     });
 
     // set the images for dots of the series defined by latitude and longtitude in hovered state
-    series_lat_long.hoverFill(function () {
+    series_ACME.hoverFill(function () {
     if (this.index >= 0) {
         return {
-          src: image_link + (this.index+1) + ".jpg",
+          src: image_link,
             mode: 'fitMax',
             opacity: 0.7
         }
