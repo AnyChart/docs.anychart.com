@@ -119,7 +119,32 @@ In the sample below stacked and percent stacked scales are demonstrated on the s
 
 ### Clustered
 
+For staked charts with multiple series it is possible to divide stacked series into groups. The groups can be created by using new y scale for each series group. New scale should be used as a parameter of {api:anychart.core.cartesian.series.ContinuousBase#yScale}**.yScale()**{api} method for each series in the group:
 
+```
+  var newScale = anychart.scales.linear()
+  
+  var series = chart.column(data);
+  series.yScale(newScale);
+```
+
+Here is a sample of clustered series on a chart:
+
+{sample}AGST\_Scales\_12{sample}
+
+**Note**: clustering for *value* stacked may twist data visualization in unpredictable way that is why additional actions have to be performed for this mode: you need to set same minimum values and same maximum values for each scale. Here is a snippet of equalizing extremes of each scale from the sample above:
+
+```
+  // create array with scales
+  var scales = [yScale, secondScale];
+  // for each scale
+  for (var i=0; i<scales.length;i++){
+    // set minimum parameter equal to the lowest minimum value from all scales
+    scales[i].minimum(Math.min(yScale.minimum(), secondScale.minimum()));
+    // set maximum parameter of each scale equal to the highest maximum value from each scale
+    scales[i].maximum(Math.max(yScale.maximum(), secondScale.maximum()));
+  }
+```
 
 ## Minimum and Maximum
 
