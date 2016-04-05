@@ -5,7 +5,7 @@
  * [Chart](#chart)
  * [Stacked Bar](#stacked_bar)
  * [3D Stacked Column Chart](#3d_stacked_column_chart)
- * [Clustered Charts](#clustered_charts
+ * [Clustered Charts](#clustered_charts)
 
 ## Overview
 
