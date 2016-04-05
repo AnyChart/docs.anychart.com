@@ -199,11 +199,11 @@ We can customize our map by creating our own, unique markers. We need to set a f
 Another way to create unique markers is to set an image (or an array of images) as an argument for {api:anychart.core.map.series.Marker#fill}**.fill()**{api} and {api:anychart.core.map.series.Marker#hoverFill}**.hoverFill()**{api} methods. The following sample describes this in details:
 
 ```
-    // set the link for the directory with images
+    // set the link for the image
     var image_link = 'http://cdn.bolshoyvopros.ru/files/users/images/67/48/67482812be439b0d3fb1b144a87281ec.jpg';
     
 
-    // set the images for dots of the series defined by latitude and longtitude in normal state
+    // set the images for dots of the ACME series in normal state
     series_ACME.fill(function () {
     if (this.index >= 0) {
         return {
@@ -213,7 +213,7 @@ Another way to create unique markers is to set an image (or an array of images) 
     }
     });
 
-    // set the images for dots of the series defined by latitude and longtitude in hovered state
+    // set the images for dots of the ACME series in hovered state
     series_ACME.hoverFill(function () {
     if (this.index >= 0) {
         return {
