@@ -8,6 +8,7 @@
   * [Ordinal](#ordinal)
   * [Date Time](#date_time)
 * [Stack Mode](#stack_mode)
+  * [Clustered](#clustered)
 * [Minimum and Maximum](#minimum_and_maximum) 
 * [Soft Minimum and Soft Maximum](#soft_minimum_and_soft_maximum) 
 * [Stick to Zero](#stick_to_zero)

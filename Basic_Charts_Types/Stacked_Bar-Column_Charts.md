@@ -5,6 +5,7 @@
  * [Chart](#chart)
  * [Stacked Bar](#stacked_bar)
  * [3D Stacked Column Chart](#3d_stacked_column_chart)
+ * [Clustered Charts](#clustered_charts
 
 ## Overview
 
@@ -69,7 +70,7 @@ The sample of 3D Column chart at a glance:
 
 {sample}BCT_Stacked\_Bar-Column\_Charts\_03{sample}
 
-## Clustered 
+## Clustered Charts
 
 As far as there might be quite a few series on a stacked chart you need a way to somehow divide them into groups. In previous sample we were comparing sales of an ACME FastFood, Corp. through a single year. Now, let's prepare sales through several years for further usage:
 
@@ -112,7 +113,7 @@ Now we need to map our data:
   var dataMap2012_3 = dataSet2012.mapAs({x: [0], value: [3]});
 ```
 
-After data mapping let's proceed to clustering series. First of all, we need to create a scale for each group of series and define **.stakedMode()** for each scale. After it we will apply our scale for each series group.
+After data mapping let's proceed to clustering series. First of all, we need to create a scale for each group of series and define {api:anychart.scales.Linear#stackMode}**.stackMode()**{api} for each scale. After it we will apply our scale for each series group.
 
 ```
   var scale2011 = anychart.scales.linear();
@@ -122,7 +123,7 @@ After data mapping let's proceed to clustering series. First of all, we need to 
   scale2012.stackMode("value");
 ```
 
-To apply scales to the series we will use **.yScale()** method with the scale as method's parameter:
+To apply scales to the series we will use {api:anychart.core.cartesian.series.Column#yScale}**.yScale()**{api} method with the scale as method's parameter:
 
 ```
   chart.column(dataMap2010_1);
