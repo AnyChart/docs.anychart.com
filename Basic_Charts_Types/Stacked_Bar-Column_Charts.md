@@ -1,11 +1,11 @@
 {:index 1}
 # Stacked Bar/Column Charts
 
- * [Overview](#overview)
- * [Chart](#chart)
- * [Stacked Bar](#stacked_bar)
- * [3D Stacked Column Chart](#3d_stacked_column_chart)
- * [Clustered Charts](#clustered_charts)
+* [Overview](#overview)
+* [Chart](#chart)
+* [Stacked Bar](#stacked_bar)
+* [3D Stacked Column Chart](#3d_stacked_column_chart)
+* [Clustered Charts](#clustered_charts)
 
 ## Overview
 
