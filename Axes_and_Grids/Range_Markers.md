@@ -3,13 +3,14 @@
 
 * [Overview](#overview)
 * [Declare](#declare)
-* [Position](#position)
+* [Advanced Layout](#advanced_layout)
+ * [Advanced Option](#advanced_option)
 * [Range and Text Markers](#range_and_text_markers)
 * [Advanced Visualization](#advanced_visualization)
 
 ## Overview
 
-Range Markers (sometimes referred as areas or zones) are colored areas bound to a chart axis. These areas are useful when you need to highlight some value(s) on axis. You can add Range Markers on any axis, both x axis, y axis and additional axis.
+Range Markers (sometimes referred as areas or zones) are colored areas bound to a chart axis. These areas are useful when you need to highlight some value(s) on axis. You can add Range Markers on any axis, both x axis, y axis and additional axis. You can add text markers to any place of a chart. You can also place [Text Markers](../Axes_and_Grids/Text_Markers) to show Text and [Line Markers](../Axes_and_Grids/Line_Markers) to show Lines.
 
 ## Declare
 
@@ -40,7 +41,7 @@ Using this code let's create a marker that highlights unsatisfactory result.
 In some cases you may need to customize your marker's emplacement. The {api:anychart.axisMarkers.range#layout}**.layout()**{api} method can set horizontal or vertical placement. When a marker is bind to an axis using {api:anychart.core.axisMarkers.Range#axis}**.axis()**{api} method the marker's layout is defined to be perpendicular to the axis' orientation.
 
 
-### Advanced option
+### Advanced Option
 
 Along with binding marker to an axis, it is possible to use a scale for marker positioning. The scale for the marker can be defined using {api:anychart.axisMarkers.Range#scale}**.scale()**{api} method. As far as scales don't have any layout you need to define layout for the marker using {api:anychart.axisMarkers.Range#layout}**.layout()**{api} method.  
   

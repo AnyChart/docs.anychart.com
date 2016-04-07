@@ -21,15 +21,7 @@
   chart.padding(20, 50, 0, 100);
 
   // set data
-  var series = chart.line(data);
-  var tooltip = series.tooltip();
-  tooltip.textFormatter(function(){
-    return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
-  });
-
-  // set y scale ticks interval
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(10);
+  chart.line(data);
 
   // first marker
   var marker = chart.textMarker(0);

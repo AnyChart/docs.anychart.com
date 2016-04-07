@@ -48,11 +48,6 @@
     return date.toLocaleDateString("en-US", options);
   });
 
-  var yLabels = chart.yAxis().labels();
-  yLabels.textFormatter(function(){
-    return this.value.toFixed(1);
-  });
-
   var yScale = chart.yScale();
   yScale.minimum(0);
 
@@ -149,7 +144,7 @@
      {x: Date.UTC(2018, 0, 01), value: 3.6, valueError: "5%"}
    ]);
 
-  series.name("crudle oil forecast and range of uncertainty");
+  series.name("Сrudle oil forecast and range of uncertainty");
 
   series.tooltip().title(false).separator(false).textFormatter(function(){
     var value = this.value.toFixed(3);

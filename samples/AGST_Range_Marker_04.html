@@ -30,6 +30,9 @@
   // series data
   chart.column(data);
 
+  // y axis getter
+  var yAxis = chart.yAxis();
+
   // create range marker
   var marker = chart.rangeMarker();
   // set start point of the marker
@@ -38,6 +41,11 @@
   marker.to(245);
   // set marker inner color
   marker.fill("#fcd8d7");
+  // set axis
+  marker.axis(yAxis);
+
+  var scale = chart.yScale();
+  scale.minimum(0);
 
   chart.container("container");
   chart.draw();

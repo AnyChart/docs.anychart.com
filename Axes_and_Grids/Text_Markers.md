@@ -7,7 +7,7 @@
 
 ## Overview
 
-Text Markers are useful when you want to place custom texts or description with or instead of axes values labels. You can add text markers to any place of a chart.
+Text Markers are useful when you want to place custom texts or description with or instead of axes values labels. You can add text markers to any place of a chart. You can also place [Range Markers](../Axes_and_Grids/Range_Markers) to show Ranges and [Line Markers](../Axes_and_Grids/Line_Markers) to show Lines.
 
 ## Declare
 
