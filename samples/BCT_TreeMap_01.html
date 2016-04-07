@@ -27,107 +27,113 @@
 
 
 <script>
-    var chart, range, rangeInput;
-    range = document.getElementById('hintOpacity');
-    rangeInput = document.getElementById('hintOpacityText');
+    //Data set through tree method
     anychart.onDocumentReady(function() {
-         var data = anychart.data.tree([
-         {id: 'Eurasia', parent: null},
-
-         {id: 'Asia', parent: 'Eurasia'},
-
-         {id: 'Easternern Asia', parent: 'Asia'},
-         {id: 'Western Asia', parent: 'Asia'},
-         {id: 'Southern Asia', parent: 'Asia'},
-         {id: 'Central Asia', parent: 'Asia'},
-         {id: 'South-Easternern Asia', parent: 'Asia'},
-
-         {id: 'Mongolia', parent: 'Eastern Asia', value: 1564116, capital: 'Ulan-Bator'},
-         {id: 'China', parent: 'Eastern Asia', value: 1564116, capital: 'Beijing'},
-         {id: 'Southern Korea', parent: 'Eastern Asia', value: 1564116, capital: 'Seoul'},
-         {id: 'Northern Korea', parent: 'Eastern Asia', value: 120540, capital: 'Pyongyang'},
-         {id: 'Japan', parent: 'Eastern Asia', value: 1564116, capital: 'Tokio'},
-            {id: 'Hokkaido', parent: 'Japan', value: 83400},
-            {id: 'Kyushu', parent: 'Japan', value: 35640},
-            {id: 'Honshu', parent: 'Japan', value: 230500},
-            {id: 'Shikoku', parent: 'Japan', value: 1200},
-
-         {id: 'Jordan', parent: 'Western Asia', value: 92300, capital: 'Amman'},
-         {id: 'Georgia', parent: 'Western Asia', value: 69700, capital: 'Tbilisi'},
-         {id: 'Israel', parent: 'Western Asia', value: 20770, capital: 'Jerusalem'},
-         {id: 'Armenia', parent: 'Western Asia', value: 29743, capital: 'Yerevan'},
-         {id: 'Azerbaijan', parent: 'Western Asia', value: 86600, capital: 'Baku'},
-         {id: 'Bahrain', parent: 'Western Asia', value: 750, capital: 'Manama'},
-
-         {id: 'Indonesia', parent: 'South-Eastern Asia', value: 1919440, capital: 'Jakarta'},
-             {id: 'Java', parent: 'Indonesia', value: 128297},
-             {id: 'Kalimantan (Borneo)', parent: 'Indonesia', value: 743330},
-             {id: 'Sulawesi', parent: 'Indonesiaa', value: 174600},
-             {id: 'Sumatra', parent: 'Indonesia', value: 473481},
-
-         {id: 'Singapoor', parent: 'South-Eastern Asia', value: 718.3, capital: 'Singapoor'},
-         {id: 'Thailand', parent: 'South-Eastern Asia', value: 513.120, capital: 'Bangkok'},
-         {id: 'Philippines', parent: 'South-Eastern Asia', value: 300000, capital: 'Manila'},
-            {id: 'Luzon', parent: 'Philippines', value: 104688},
-            {id: 'Eastern Visayas', parent: 'Philippines', value: 15875},
-            {id: 'Central Visayas', parent: 'Philippines', value: 21562},
-            {id: 'Mindanayo', parent: 'Philippines', value: 21562},
-
-         {id: 'Laos', parent: 'South-Eastern Asia', value: 236800, capital: 'Vientiane'},
-         {id: 'Cambodia', parent: 'Southern-Eastern Asia', value: 181040, capital: 'Phnom Penh'},
-
-         {id: 'Kazakhstan', parent: 'Central Asia', value: 2724902, capital: 'Astana'},
-         {id: 'Kyrgyzstan', parent: 'Central Asia', value: 199951, capital: 'Bishkek'},
-         {id: 'Tajikistan', parent: 'Central Asia', value: 142000, capital: 'Dushanbe'},
-         {id: 'Turkmenistan', parent: 'Central Asia', value: 491200, capital: 'Ashgabat'},
-         {id: 'Uzbekistan', parent: 'Central Asia', value: 447400, capital: 'Tashkent'},
-
-         {id: 'India', parent: 'Southern Asia', value: 3287263, capital: 'New Delhi'},
-         {id: 'Iran', parent: 'Southern Asia', value: 1648000, capital: 'Tehran'},
-         {id: 'Shri-Lanka', parent: 'Southern Asia', value: 65610, capital: 'Colombo'},
-         {id: 'Nepal', parent: 'Southern Asia', value: 140800, capital: 'Kathmandu'},
-
-
-         {id: 'Europe', parent: 'Eurasia'},
-
-         {id: 'Eastern Europe', parent: 'Europe'},
-         {id: 'Western Europe', parent: 'Europe', value: 20},
-         {id: 'Southern Europe', parent: 'Europe', value: 30},
-         {id: 'Northern Europe', parent: 'Europe', value: 20},
-
-         {id: 'Poland', parent: 'Eastern Europe', value: 312679, capital: 'Warsaw'},
-         {id: 'Ukiraine', parent: 'Eastern Europe', value: 603628, capital: 'Kiev'},
-
-         {id: 'Austria', parent: 'Western Europe', value: 83879, capital: 'Vienna'},
-         {id: 'Germany', parent: 'Western Europe', value: 357168, capital: 'Berlin'},
-         {id: 'France', parent: 'Western Europe', value: 643801, capital: 'Paris'},
-
-         {id: 'Malta', parent: 'Southern Europe', value: 316, capital: 'Valletta'},
-         {id: 'Greece', parent: 'Southern Europe', value: 131957, capital: 'Athens'},
-         {id: 'Italy', parent: 'Southern Europe', value: 301338, capital: 'Rome'},
-
-         {id: 'Finland', parent: 'Northern Europe', value: 338424, capital: 'Helsinki'},
-         {id: 'Great Britain', parent: 'Northern Europe', value: 209331, capital: 'London'},
-         {id: 'Ireland', parent: 'Northern Europe', value: 84421, capital: 'Dublin'},
-         {id: 'Scandinavia', parent: 'Northern Europe', value: 928057},
-            {id: 'Sweden', parent: 'Scandinavia', value: 450295, capital: 'Stockholm'},
-            {id: 'Norway', parent: 'Scandinavia', value: 385178, capital: 'Oslo'},
-            {id: 'Denmark', parent: 'Scandinavia', value: 42923.53, capital: 'Copenhagen'},
-         ],
-    anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
-    );
+        var data = anychart.data.tree([
+        {name: 'Eurasia',
+            children:[
+                {name: "Asia", children:[
+                    {name: "Eastern Asia", children:[
+                        {name:"Mongolia", value: 1564116, capital: 'Ulan-Bator'},
+                        {name: "China", value: 1564116, capital: 'Beijing'},
+                        {name: "Southern Korea", value: 1564116, capital: 'Seoul'},
+                        {name: "Northern Korea", value: 120540, capital: 'Pyongyang'},
+                        {name: "Japan", value: 1564116, capital: 'Tokio', children:[
+                            {name: "Hokkaido", value: 83400},
+                            {name: "Kyushu", value: 35640},
+                            {name: "Honshu", value: 230500},
+                            {name: "Shikoku", value: 1200}
+                        ]}
+                    ]},
+                    {name: "Western Asia", children:[
+                        {name: "Jordan", value: 92300, capital: 'Amman'},
+                        {name: "Georgia", value: 69700, capital: 'Tbilisi'},
+                        {name: "Israel", value: 20770, capital: 'Jerusalem'},
+                        {name: "Armenia", value: 29743, capital: 'Yerevan'},
+                        {name: "Azerbaijan", value: 86600, capital: 'Baku'},
+                        {name: "Bahrain", value: 750, capital: 'Manama'},
+                        
+                        
+                    ]},
+                    {name: "Southern Asia", children:[
+                        {name:"India", value: 3287263, capital: "New Delhi"},
+                        {name: 'Iran', parent: 'Southern Asia', value: 16480},
+                        {name: 'Shri-Lanka', value: 65610, capital: 'Colombo'},
+                        {name: 'Nepal', value: 140800, capital: 'Kathmandu'}
+                    ]},
+                    {name: "South-Eastern Asia", children:[
+                        {name: "Singapoor", value: 718.3, capital: 'Singapoor'},
+                        {name: "Indonesia", value: 1919440, capital: "Jakarta", children:[
+                            {name: "Java", value: 128297},
+                            {name: "Kalimantan (Borneo)", value: 174600},
+                            {name: "Sulawesi", value: 174600},
+                            {name: "Sumatra", value: 473481}
+                        ]},
+                        {name: "Thailand", value: 513.120, capital: 'Bangkok'},
+                        {name: "Philippines", value: 300000, capital: 'Manila', children:[
+                            {name: "Luzon", value: 104688},
+                            {name: "Eastern Visayas", value: 15875},
+                            {name: "Central Visayas", value: 21562},
+                            {name: "Mindanayo", value: 21562}
+                        ]},
+                        {name: "Laos", value: 236800, capital: 'Vientiane'},
+                        {name: "Cambodia", value: 181040, capital: 'Phnom Penh'}
+                    ]},
+                    {name: "Central Asia", children:[
+                        {name: "Kazakhstan", value: 2724902, capital: 'Astana'},
+                        {name: "Kyrgyzstan", value: 199951, capital: 'Bishkek'},
+                        {name: "Tajikistan", value: 142000, capital: 'Dushanbe'},
+                        {name: "Turkmenistan", value: 491200, capital: 'Ashgabat'},
+                        {name: "Uzbekistan", value: 447400, capital: 'Tashkent'}
+                    ]}
+                ]},
+                {name: "Europe", children: [
+                    {name: "Eastern Europe", children:[
+                        {name: "Poland", value: 312679, capital: 'Warsaw'},
+                        {name: "Ukiraine", value: 603628, capital: 'Kiev'}
+                    ]},
+                    {name: "Western Europe", children:[
+                        {name: "Austria", value: 83879, capital: 'Vienna'},
+                        {name: "Germany", value: 357168, capital: 'Berlin'},
+                        {name: "France", value: 643801, capital: 'Paris'}
+                    ]},
+                    {name: "Southern Europe", children:[
+                        {name: "Malta", value: 316, capital: 'Valletta'},
+                        {name: "Greece", value: 131957, capital: 'Athens'},
+                        {name: "Italy", value: 301338, capital: 'Rome'}
+                    ]},
+                    {name: "Northern Europe", children:[
+                        {name: "Finland", value: 338424, capital: 'Helsinki'},
+                        {name: "Great Britain", value: 209331, capital: 'London'},
+                        {name: "Ireland", value: 84421, capital: 'Dublin'},
+                        {name: "Scandinavia", value: 928057, children:[
+                            {name: "Sweden", value: 450295, capital: 'Stockholm'},
+                            {name: "Norway", value: 385178, capital: 'Oslo'},
+                            {name: "Denmark", value: 42923.53, capital: 'Copenhagen'}
+                        ]},                        
+                    ]}
+                ]}
+             ]},
+    anychart.enums.TreeFillingMethod.AS_TREE // data type settings
+    ]);
 
         chart = anychart.treeMap(data);
         chart.container('container');
+
         chart.headers().textFormatter(function() {
-            return this.getDataValue('id');
+            return this.getDataValue('name');
         });
         chart.labels().textFormatter(function() {
-            return this.getDataValue('id');
+            return this.getDataValue('name');
         });
         chart.tooltip().titleFormatter(function() {
-            return this.getDataValue('id');
+            return this.getDataValue('name');
         });
+        chart.tooltip().textFormatter(function() {
+            return "Area: " + this.value + " square km";
+        });
+
+        chart.title("Setting the data as tree");
 
         chart.maxDepth(1);
         chart.hoverStroke('black');

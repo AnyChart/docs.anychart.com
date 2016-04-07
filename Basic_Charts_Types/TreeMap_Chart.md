@@ -38,60 +38,50 @@ Regardless which way we decide to use, there are some parameters we have to defi
 
 ### Hierarchical
 
-This way of arranging the data is expected by a TreeMap as a default way, as the data to be shown by the TreemMap should demonstrate some hierarchy.
+This way of arranging the data is expected by a TreeMap as a default way, as the data to be shown by the TreemMap should demonstrate some hierarchy. In our example, we show the countries divided by the geographical parameter, and the values they show are their area values.
 
 ```
 	//Data set through tree method
-	var rawData = [
-        {
-        name: 'Eurasia',
-	        children: [
-	        {
-	        name: 'Asia',
-		        children: [
-		        {
-		        name: 'Asia 1',
-			        children: [
-			        {name: 'Asia 11', value: 20},
-			        {name: 'Asia 12', value: 30}
-			        ]
-		        },
-		        {
-		        name: 'Asia 2',
-		        value: 60,
-			        children: [
-			        {name: 'Asia 21', value: 50},
-			        {name: 'Asia 22', value: 50},
-			        {name: 'Asia 23', value: 50}
-			        ]
-		        },
-		        {
-		        name: 'Asia 3',
-		        value: 70,
-			        children: [
-			        {name: 'Asia 31', value: 35},
-			        {name: 'Asia 32', value: 70},
-			        {name: 'Asia 33', value: 105},
-			        {name: 'Asia 34', value: 140}
-			        ]
-		        }
-		        ]
-	        },
-	        {
-	        name: 'Europe',
-		        children: [
-		        {name: 'Europe 1', value: 300},
-		        {name: 'Europe 2', value: 400}
-		        ]
-	        }
-	        ]
-        }
-    ];
-    var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
+	anychart.onDocumentReady(function() {
+        var data = anychart.data.tree([
+        {name: 'Eurasia',
+            children:[
+                {name: "Asia", children:[
+                    {name: "Eastern Asia", children:[
+                        {name:"Mongolia", value: 1564116, capital: 'Ulan-Bator'},
+                        {name: "China", value: 1564116, capital: 'Beijing'},
+                        {name: "Southern Korea", value: 1564116, capital: 'Seoul'},
+                        {name: "Northern Korea", value: 120540, capital: 'Pyongyang'},
+                        {name: "Japan", value: 1564116, capital: 'Tokio', children:[
+                            {name: "Hokkaido", value: 83400},
+                            {name: "Kyushu", value: 35640},
+                            {name: "Honshu", value: 230500},
+                            {name: "Shikoku", value: 1200}
+                        ]}
+                    ]}
+                ]},
+                {name: "Europe", children: [
+                    {name: "Northern Europe", children:[
+                        {name: "Finland", value: 338424, capital: 'Helsinki'},
+                        {name: "Great Britain", value: 209331, capital: 'London'},
+                        {name: "Ireland", value: 84421, capital: 'Dublin'},
+                        {name: "Scandinavia", value: 928057, children:[
+                            {name: "Sweden", value: 450295, capital: 'Stockholm'},
+                            {name: "Norway", value: 385178, capital: 'Oslo'},
+                            {name: "Denmark", value: 42923.53, capital: 'Copenhagen'}
+                        ]},                        
+                    ]}
+                ]}
+             ]},
+    anychart.enums.TreeFillingMethod.AS_TREE // data type settings
+    ]);
+        var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
 
 ```
 
-Here is a sample with the result of proceeding data from the code above.
+The whole data can be found while exploring this sample in the playground.
+
+Here is a sample with the result of proceeding the whole data.
 
 {sample}BCT\_TreeMap\_01{sample}
 
@@ -104,46 +94,41 @@ This way is also available for using while setting the data for the AnyChart Tre
 ```
 	//Data set through table method
 	var data = anychart.data.tree([
-        {id: 'Eurasia', parent: null},
+         {id: 'Eurasia', parent: null},
+             {id: 'Asia', parent: 'Eurasia'},
+                 {id: 'Eastern Asia', parent: 'Asia'},
+                     {id: 'Mongolia', parent: 'Eastern Asia', value: 1564116, capital: 'Ulan-Bator'},
+                     {id: 'China', parent: 'Eastern Asia', value: 1564116, capital: 'Beijing'},
+                     {id: 'Southern Korea', parent: 'Eastern Asia', value: 1564116, capital: 'Seoul'},
+                     {id: 'Northern Korea', parent: 'Eastern Asia', value: 120540, capital: 'Pyongyang'},
+                     {id: 'Japan', parent: 'Eastern Asia', value: 1564116, capital: 'Tokio'},
+                        {id: 'Hokkaido', parent: 'Japan', value: 83400},
+                        {id: 'Kyushu', parent: 'Japan', value: 35640},
+                        {id: 'Honshu', parent: 'Japan', value: 230500},
+                        {id: 'Shikoku', parent: 'Japan', value: 1200},
 
-        {id: 'Asia', parent: 'Eurasia'},
-
-        {id: 'Asia 1', parent: 'Asia'},
-        {id: 'Asia 11', parent: 'Asia 1', value: 20},
-        {id: 'Asia 12', parent: 'Asia 1', value: 30},
-
-        {id: 'Asia 2', parent: 'Asia'},
-
-        {id: 'Asia 21', parent: 'Asia 2', value: 50},
-        {id: 'Asia 22', parent: 'Asia 2', value: 50},
-        {id: 'Asia 23', parent: 'Asia 2', value: 50},
-
-        {id: 'Asia 3', parent: 'Asia'},
-
-        {id: 'Asia 31', parent: 'Asia 3', value: 35},
-        {id: 'Asia 32', parent: 'Asia 3', value: 70},
-        {id: 'Asia 33', parent: 'Asia 3', value: 105},
-        {id: 'Asia 34', parent: 'Asia 3', value: 140},
-
-        {id: 'Europe', parent: 'Eurasia'},
-        {id: 'Europe 1', parent: 'Europe'},
-        {id: 'Europe 2', parent: 'Europe', value: 400},
-
-        {id: 'Europe 11', parent: 'Europe 1', value: 300},
-        {id: 'Europe 12', parent: 'Europe 1', value: 400},
-        {id: 'Europe 13', parent: 'Europe 1', value: 100},
-        ],
-    	anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
+         {id: 'Europe', parent: 'Eurasia'},
+             {id: 'Northern Europe', parent: 'Europe'},
+                 {id: 'Finland', parent: 'Northern Europe', value: 338424, capital: 'Helsinki'},
+                 {id: 'Great Britain', parent: 'Northern Europe', value: 209331, capital: 'London'},
+                 {id: 'Ireland', parent: 'Northern Europe', value: 84421, capital: 'Dublin'},
+                 {id: 'Scandinavia', parent: 'Northern Europe', value: 928057},
+                    {id: 'Sweden', parent: 'Scandinavia', value: 450295, capital: 'Stockholm'},
+                    {id: 'Norway', parent: 'Scandinavia', value: 385178, capital: 'Oslo'},
+                    {id: 'Denmark', parent: 'Scandinavia', value: 42923.53, capital: 'Copenhagen'},
+             ],
+    anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
     );
 
         chart = anychart.treeMap(data);
 ```
 
+Explore this sample in the playground to see the whole data.
 
 Note that after setting the data we should set the method of its mapping to make it clear for the component how to treat the data. You can see how it's done above or you can define the data type settings after setting the data itself:
 
 ```
-	var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TABLE);
+	var mappedData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TABLE);
 ```
 
 {sample}BCT\_TreeMap\_02{sample}
@@ -187,60 +172,27 @@ Header is a name of a parent of the current level. Due to its settings, they all
 Let's set some headers through the data and disable one of them:
 
 ```
-	var rawData = [
-    {
-    name: 'Eurasia',
-    children: [
-        {
-        name: 'Asia',
-        header: null,
-        children: [
-            {
-            name: 'Asia 1',
-            header: {text: 'ASIA 1 NEW HEADER'},
-            children: [
-                {name: 'Asia 11', value: 20},
-                {name: 'Asia 12', value: 30}
-            ]
-            },
-            {
-            name: 'Asia 2',
-            value: 60,
-            header: {textFormatter: function() {return 'ASIA 2 NEW HEADER'}},
-            children: [
-                {name: 'Asia 21', value: 50},
-                {name: 'Asia 22', value: 50},
-                {name: 'Asia 23', value: 50}
-            ]
-            },
-            {
-            name: 'Asia 3',
-            value: 70,
-            header: {text: 'ASIA 3 NEW HEADER'},
-            children: [
-                {name: 'Asia 31', value: 35},
-                {name: 'Asia 32', value: 70},
-                {name: 'Asia 33', value: 105},
-                {name: 'Asia 34', value: 140}
-            ]
-            }
-        ]
-        },
-        {
-        name: 'Europe',
-        header: null,
-        children: [
-            {name: 'Europe 1', value: 300},
-            {name: 'Europe 2', value: 400}
-        ]
-        }
-    ]
-    }
-    ];
+	{name: "South-Eastern Asia", children:[
+        {name: "Singapoor", value: 718.3, capital: 'Singapoor'},
+        {name: "Indonesia", value: 1919440, capital: "Jakarta", header: {textFormatter: function() {return 'INDONESIA NEW HEADER'}}, children:[
+            {name: "Java", value: 128297},
+            {name: "Kalimantan (Borneo)", value: 174600},
+            {name: "Sulawesi", value: 174600},
+            {name: "Sumatra", value: 473481}
+        ]},
+        {name: "Thailand", value: 513.120, capital: 'Bangkok', header: null},
+        {name: "Philippines", value: 300000, capital: 'Manila', header: {textFormatter: function() {return 'PHILIPPINES NEW HEADER'}}, children:[
+            {name: "Luzon", value: 104688},
+            {name: "Eastern Visayas", value: 15875},
+            {name: "Central Visayas", value: 21562},
+            {name: "Mindanayo", value: 21562}
+        {name: "Laos", value: 236800, capital: 'Vientiane', header: null},
+        {name: "Cambodia", value: 181040, capital: 'Phnom Penh', header: null}
+        ]},
 ```
 {sample}BCT\_TreeMap\_05{sample} 
 
-We can see that three headers have changed and two headers that represent Asia and Europe parts have disappeared.
+We can see that two headers have changed (Philippines and Indonesia) and three headers (belong to Thailand, Laos and Cambodia) have disappeared.
 
 
 ### Content
@@ -249,7 +201,7 @@ Content points are all points besides parental ones. We can also edit them almos
 
 ```
 	// content points settings
-    chart.hintOpacity(2);
+    chart.hintOpacity(0.5);
     chart.fill("#ddd");
 ```
 {sample}BCT\_TreeMap\_06{sample}

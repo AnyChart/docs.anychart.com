@@ -31,55 +31,34 @@
     range = document.getElementById('hintOpacity');
     rangeInput = document.getElementById('hintOpacityText');
     anychart.onDocumentReady(function() {
-        var rawData = [
-         {
-         name: 'Eurasia',
-         children: [
-         {
-         name: 'Asia',
-         children: [
-         {
-         name: 'Asia 1',
-         header: {text: 'ASIA 1 NEW HEADER'},
-         children: [
-         {name: 'Asia 11', value: 20},
-         {name: 'Asia 12', value: 30}
-         ]
-         },
-         {
-         name: 'Asia 2',
-         value: 60,
-         header: {textFormatter: function() {return 'ASIA 2 NEW HEADER'}},
-         children: [
-         {name: 'Asia 21', value: 50},
-         {name: 'Asia 22', value: 50},
-         {name: 'Asia 23', value: 50}
-         ]
-         },
-         {
-         name: 'Asia 3',
-         value: 70,
-         header: 'Asia 3',
-         children: [
-         {name: 'Asia 31', value: 35},
-         {name: 'Asia 32', value: 70},
-         {name: 'Asia 33', value: 105},
-         {name: 'Asia 34', value: 140}
-         ]
-         }
-         ]
-         },
-         {
-         name: 'Europe',
-         children: [
-         {name: 'Europe 1', value: 300, hoverMarker:false},
-         {name: 'Europe 2', value: 400}
-         ]
-         }
-         ]
-         }
-         ];
-        var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
+        var data = anychart.data.tree([
+         {id: 'Europe', parent: 'null'},
+             {id: 'Eastern Europe', parent: 'Europe'},
+             {id: 'Western Europe', parent: 'Europe'},
+             {id: 'Southern Europe', parent: 'Europe'},
+             {id: 'Northern Europe', parent: 'Europe'},
+                 {id: 'Poland', parent: 'Eastern Europe', value: 312679},
+                 {id: 'Ukiraine', parent: 'Eastern Europe', value: 603628},
+                 {id: 'Austria', parent: 'Western Europe', value: 83879},
+                 {id: 'Germany', parent: 'Western Europe', value: 357168},
+                 {id: 'France', parent: 'Western Europe', value: 643801},
+                 {id: 'Malta', parent: 'Southern Europe', value: 316},
+                 {id: 'Greece', parent: 'Southern Europe', value: 131957},
+                 {id: 'Italy', parent: 'Southern Europe', value: 301338},
+                 {id: 'Finland', parent: 'Northern Europe', value: 338424},
+                 {id: 'Great Britain', parent: 'Northern Europe', value: 209331},
+                 {id: 'Ireland', parent: 'Northern Europe', value: 84421},
+                    {id: "Medical", parent: "Ireland"},
+                        {id: "Instruments (surgery, vet, dental)", value: 4.05},                        
+                        {id: "Packages medicaments", value: 20.1},                        
+                        {id: "Antibiotics", value: 0.817},
+                 {id: 'Scandinavia', parent: 'Northern Europe', value: 928057},
+                    {id: 'Sweden', parent: 'Scandinavia', value: 450295, capital: 'Stockholm'},
+                    {id: 'Norway', parent: 'Scandinavia', value: 385178, capital: 'Oslo'},
+                    {id: 'Denmark', parent: 'Scandinavia', value: 42923.53, capital: 'Copenhagen'},
+             ],
+    anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
+    );
 
         chart = anychart.treeMap(data);
         chart.container('container');
@@ -89,15 +68,18 @@
         chart.headers().fontSize(14);
         chart.headers().fontWeight('bold');
         chart.hoverHeaders().fontColor("purple");
-        // chart.headers().textFormatter(function() {
-        //     return this.getDataValue('name');
-        // });
+         chart.headers().textFormatter(function() {
+             return this.getDataValue('id');
+         });
 
-        // chart.labels().textFormatter(function() {
-        //     return this.getDataValue('name');
-        // });
+         chart.labels().textFormatter(function() {
+             return this.getDataValue('id');
+         });
         chart.tooltip().titleFormatter(function() {
-            return this.getDataValue('name');
+            return this.getDataValue('id');
+        });
+        chart.tooltip().textFormatter(function() {
+            return "Area: " + this.value + " square km";
         });
 
 
@@ -113,6 +95,8 @@
         chart.listen(anychart.enums.EventType.DRILL_CHANGE, function(e) {
             return false;
         });
+
+        chart.title("2012 Export Map");
 
         chart.hoverStroke('black');
         chart.draw();
