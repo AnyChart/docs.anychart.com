@@ -274,9 +274,9 @@ For formatting the text of the labels we use {api:anychart.core.ui.LabelsFactory
 
 ```
 	// labels
-    chart.labels().fontColor('black');
-    chart.labels().textFormatter(function(){
-        return this.name + ': ' + this.value + 'm';
+    сhart.labels().fontColor('black');
+    chart.labels().textFormatter(function() {
+         return this.getDataValue('id') + ": $" + this.value + "B";
     });
 ```
 
@@ -290,13 +290,13 @@ Tooltips are small windows that pop up when you hover a point. They are shown ne
 
 ```
 	// tooltips settings
-    chart.tooltip().titleFormatter(function(){
-    	return rawData[0].name;
-    });
-    chart.tooltip().textFormatter(function(){
-    	return this.name + ': ' + this.value + 'm';
-    });
     chart.tooltip().positionMode('point');
+    chart.tooltip().titleFormatter(function() {
+        return this.getDataValue('id');
+    });
+    chart.tooltip().textFormatter(function() {
+        return "Effort from export in 2012: $" + this.value + "B";
+    });
 ```
 
 {sample}BCT\_TreeMap\_10{sample}
