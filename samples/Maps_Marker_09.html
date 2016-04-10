@@ -58,9 +58,9 @@ anychart.onDocumentReady(function () {
     series_citrus.labels().fontColor("#000");
 
     // hovered and selected labels
-    series_acme.hoverLabels().fontSize(12);
+    series_acme.hoverLabels().fontSize(10);
     series_acme.hoverLabels().fontColor("#660000");
-    series_acme.selectLabels().fontSize(12);
+    series_acme.selectLabels().fontSize(10);
     series_acme.selectLabels().fontColor("#660000");
 
     // change the color of the ACME series
@@ -69,7 +69,7 @@ anychart.onDocumentReady(function () {
     series_acme.stroke(null);
 
     // make the markers of the CITRUS series of smaller size than default
-    series_citrus.size(9);
+    series_citrus.size(10);
     series_citrus.hoverSize(10);
     series_citrus.selectSize(10);
     series_acme.size(14);
@@ -105,12 +105,10 @@ anychart.onDocumentReady(function () {
         return path;
     });
 
-
     // set the link for the directory with images
     var image_link = 'http://s29.postimg.org/hjvf35eav/acme.jpg';
     
-
-    // set the images for dots of the series defined by latitude and longtitude in normal state
+    // set the images for dots of the ACME series defined in normal state
     series_acme.fill(function () {
     if (this.index >= 0) {
         return {
@@ -120,7 +118,7 @@ anychart.onDocumentReady(function () {
     }
     });
 
-    // set the images for dots of the series defined by latitude and longtitude in hovered state
+    // set the images for dots of the ACME series in hovered state
     series_acme.hoverFill(function () {
     if (this.index >= 0) {
         return {
@@ -130,8 +128,6 @@ anychart.onDocumentReady(function () {
         }
     }
     });
-
-
 
     usaMap.title("Creating custom markers");
     usaMap.interactivity().mouseWheel(false);

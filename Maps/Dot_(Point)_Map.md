@@ -146,12 +146,12 @@ Let's add another series demonstrating the CITRUS company profit rates and chang
 
 ```
 	// change the color of the ACME series
-    series_CITRUS.stroke("green");
-    series_CITRUS.fill("gold");
+    series_citrus.stroke("green");
+    series_citrus.fill("gold");
 
     // make the markers of the CITRUS series 
-    series_CITRUS.size(8);
-    series_CITRUS.hoverSize(10);
+    series_citrus.size(8);
+    series_citrus.hoverSize(10);
 ```
 {sample}Maps\_Marker\_07{sample}
 
@@ -161,8 +161,8 @@ Also we can change the shape of the markers using the {api:anychart.core.scatter
 
 ```
 	// change the markers type
-    series_ACME.type("square");
-    series_CITRUS.type("cross");
+    series_acme.type("square");
+    series_citrus.type("cross");
 
 ```
 {sample}Maps\_Marker\_08{sample}
@@ -171,7 +171,7 @@ We can customize our map by creating our own, unique markers. We need to set a f
 
 ```
 	// sets custom function to display marker
-    series_CITRUS.type(function(path, x, y, size) {
+    series_citrus.type(function(path, x, y, size) {
         var numericSize = +size;
         var point1 = {x: x + 1.3 * numericSize, y: y - 0.4 * numericSize};
         var point2 = {x: x - 0.4 * numericSize, y: y - 0.5 * numericSize};
@@ -183,7 +183,7 @@ We can customize our map by creating our own, unique markers. We need to set a f
         return path;
     }); 
 
-    series_CITRUS.hoverType(function(path, x, y, size) {
+    series_citrus.hoverType(function(path, x, y, size) {
         var numericSize = +size;
         var point1 = {x: x + 1.3 * numericSize, y: y - 0.4 * numericSize};
         var point2 = {x: x - 0.4 * numericSize, y: y - 0.5 * numericSize};
@@ -199,12 +199,11 @@ We can customize our map by creating our own, unique markers. We need to set a f
 Another way to create unique markers is to set an image (or an array of images) as an argument for {api:anychart.core.map.series.Marker#fill}**.fill()**{api} and {api:anychart.core.map.series.Marker#hoverFill}**.hoverFill()**{api} methods. The following sample describes this in details:
 
 ```
-    // set the link for the directory with images
-    var image_link = 'http://cdn.bolshoyvopros.ru/files/users/images/67/48/67482812be439b0d3fb1b144a87281ec.jpg';
+     // set the link for the directory with images
+    var image_link = 'http://s29.postimg.org/hjvf35eav/acme.jpg';
     
-
-    // set the images for dots of the series defined by latitude and longitude in normal state
-    series_ACME.fill(function () {
+    // set the images for dots of the ACME series defined in normal state
+    series_acme.fill(function () {
     if (this.index >= 0) {
         return {
             src: image_link,
@@ -213,8 +212,8 @@ Another way to create unique markers is to set an image (or an array of images) 
     }
     });
 
-    // set the images for dots of the series defined by latitude and longitude in hovered state
-    series_ACME.hoverFill(function () {
+    // set the images for dots of the ACME series in hovered state
+    series_acme.hoverFill(function () {
     if (this.index >= 0) {
         return {
           src: image_link,
@@ -223,6 +222,5 @@ Another way to create unique markers is to set an image (or an array of images) 
         }
     }
     });
-
 ```
 {sample}Maps\_Marker\_09{sample}
