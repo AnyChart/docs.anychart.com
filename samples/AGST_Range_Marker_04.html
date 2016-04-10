@@ -34,7 +34,7 @@
   var yAxis = chart.yAxis();
 
   // create range marker
-  var marker = chart.rangeMarker();
+  var marker = chart.rangeMarker(0);
   // set start point of the marker
   marker.from(0);
   // set end point of the marker
@@ -46,6 +46,12 @@
 
   var scale = chart.yScale();
   scale.minimum(0);
+
+  var vMarker = chart.rangeMarker(1);
+  vMarker.from("June");
+  vMarker.to("August");
+  vMarker.axis(chart.xAxis());
+  vMarker.fill("#d7fcda");
 
   chart.container("container");
   chart.draw();

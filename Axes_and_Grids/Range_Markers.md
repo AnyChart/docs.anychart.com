@@ -32,7 +32,7 @@ To add range marker you need to use {api:anychart.axisMarkers.Range}**.rangeMark
   marker.axis(yAxis);
 ```
 
-Using this code let's create a marker that highlights unsatisfactory result.
+Using horizontal range marker let's highlights unsatisfactory result and using vertical range marker we can highlight summer months.
 
 {sample}AGST\_Range\_Marker\_04{sample}
 
