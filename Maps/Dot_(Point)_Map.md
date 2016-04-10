@@ -15,19 +15,19 @@ Dot (Point) Maps
 
 ## Overview
 
-Dot Maps use dots (points, markers) to demonstrate the existence of a subject or a feature. It's a lot like Bubble Maps ([Proportional Symbol Maps](Proportional_Symbol_Map)), but the dots' sizes don't depend on their values, as there's no size setting. Usually the tooltips are formatted to show some describing information for their points - so these maps should be quite useful and popular in guiding, tourism, health service and in other researches. 
+Dot Maps use dots (points, markers) to demonstrate the existence of a subject or a feature. It's a lot like Bubble Maps ([Proportional Symbol Maps](Proportional_Symbol_Map)), but the dots' sizes don't depend on their values, as there's no size setting. Usually the tooltips are formatted to show some information about points - so these maps are very useful and popular in census, tourism, health service and any other researches.
 
-Spreading points (or dots) across a Map is rather alike scatter (or marker) series. So, in AnyChart, this series in maps is of Marker type.
+Spreading points (or dots) across a Map is rather alike scatter (or marker) series. So, in AnyChart, this series in maps is of [Marker type](../Basic_Chart_Types/Marker_Chart).
 
-Note that all dot density maps must be drawn on an equal area map projection. This is critical - using a map projection which does not preserve the size of areas will distort the perceived density of the dots.
+Note that when you use this type to draw density maps they must be drawn on an equal area map projection. This is critical - using a map projection which does not preserve the size of areas will distort the perceived density of the dots.
 
 There are two general types of Marker Maps: One-To-One and One-To-Many. One-To-One is a type where a marker stands for an only feature, event or any other subject. One-To-Many means that one marker describes several subjects or values. There is no difference in setting the data, this is just general information that doesn't affect the way of managing the data.
 
-An example of those points is shown below.
+Here is a basic sample of Dot map:
 
 {sample}Maps\_Marker\_01{sample}
 
-When you hover a point you can see the information it contains. One series shows the latitude and longtitude values and another one demonstrates the region Ids.
+When you hover a point you can see the information it contains.
 
 
 ## Creating Markers
@@ -38,31 +38,31 @@ To create Dot/Point/Marker type series in Maps we use {api:anychart.charts.Map#m
 	// create marker series
 	var series = map.marker(data);
 ```
-Depending on the purpose of the map, it can contain a number of series. In the sample above you can see a two-series example, where one of the series contains the longtitude and latitude coordinates of the point and each point of the second one shows the corresponding region's Id.
+Depending on the purpose of the map, it can contain a number of series. In the sample above you can see an example, where the series contains the longitude and latitude coordinates of the point. It's easy to create several series more if necessary. It'd be better if your series' would be of one mapping type.
 
 
 ### Data
 
-You can create points on a map by defining longtitude and latitude or by setting the region id. In the second case you'll get a point in the center of the defined region, and if you set long and lat params, you'll define the exact placement for each point.
+You can create points on a map by defining longitude and latitude or by setting the region id. In the second case you'll get a point in the center of the defined region, and if you set long and lat params it means that you define the exact placement for each point.
 
 
-#### Latitude and Longtitude
+#### Latitude and Longitude
 
-Latitude and longtitude are two parameters that define the position of any point on our planet. If you need to show something located in a certain point, it's better to define latitude and longtitude params.
+Latitude and longitude are two parameters that define the position of any point on our planet. If you need to show something located in a certain point, it's better to define latitude and longitude params.
 
 That's how it looks like in the code:
 
 ```
-	// create the dataset of points that are defined by latitude and longtitude values
+	// create the dataset of points that are defined by latitude and longitude values
 	var dataSet_lat_long = anychart.data.set([
-        {lat: -25.758751446573896, long: 122.18216472408207, name: "ACME Corp. branch No. 1", value: 321},
-        {lat: -18.506379573972872, long: 135.24294642224174, name: "ACME Corp. branch No. 2", value: 293},
-        {lat: -23.12833157353524, long: 148.62674513057308, name: "ACME Corp. branch No. 3", value: 312},
-        {lat: -17.897798647183976, long: 145.09867715290332, name: "ACME Corp. branch No. 4", value: 198},
-        {lat: -33.2809649396655, long: 135.589751474883, name: "ACME Corp. branch No. 5", value: 309},
-        {lat: -31.216760559507435, long: 116.44220156961407, name: "ACME Corp. branch No. 6", value: 215},
-        {lat: -32.26380339970011, long: 151.44030365260178, name: "ACME Corp. branch No. 7", value: 219},
-        {lat: -25.63226536838997, long: 152.37860865188998, name: "ACME Corp. branch No. 8", value: 179}
+        {lat: -25.75, long: 122.18, name: "ACME Corp. branch #1", value: 321},
+        {lat: -18.50, long: 135.24, name: "ACME Corp. branch #2", value: 293},
+        {lat: -23.12, long: 148.62, name: "ACME Corp. branch #3", value: 312},
+        {lat: -17.89, long: 145.09, name: "ACME Corp. branch #4", value: 198},
+        {lat: -33.28, long: 135.58, name: "ACME Corp. branch #5", value: 309},
+        {lat: -31.21, long: 116.44, name: "ACME Corp. branch #6", value: 215},
+        {lat: -32.26, long: 151.44, name: "ACME Corp. branch #7", value: 219},
+        {lat: -25.63, long: 152.37, name: "ACME Corp. branch #8", value: 179}
     ]);
 ```
 
@@ -110,18 +110,17 @@ We can edit the appearance of our map as we want. We can change the color of the
 
 ### Labels and Tooltips
 
-We can change our labels and tooltips behavior by using standard {api:anychart.core.map.series.Marker#labels}**.labels()**{api} and {api:anychart.core.map.series.Marker#tooltip}**.tooltip()**{api} methods. We can format the text and their appearance or disable them using those methods. Let's adjust tooltips to show no title and no separator but the yearly profit value. Look how it's done and format the labels of another series:
+We can change our labels and tooltips behavior by using standard {api:anychart.core.map.series.Marker#labels}**.labels()**{api} and {api:anychart.core.map.series.Marker#tooltip}**.tooltip()**{api} methods. We can format the text and their appearance or disable them using those methods. Let's adjust tooltips to show no title and no separator but the yearly profit value. Look how it's done and format the labels also:
 
 ```
     // format the tooltips
-    series_lat_long.tooltip({title: false, separator: false});
-    series_lat_long.tooltip().textFormatter(function(e){
-       return "Yearly profit: $" + e.getDataValue("value") + "m";
-    });
+    series_acme.tooltip({title: false, separator: false});
+    series_acme.tooltip().textFormatter("Yearly profit: ${%value}");
 
     // format the labels
-    series_lat_long.labels().fontSize(10)
-    series_lat_long.labels().fontColor("#000");
+    series_acme.labels().fontSize(10)
+    series_acme.labels().fontColor("#000");
+    series_acme.labels().fontFamily("Georgia");
 ```
 {sample}Maps\_Marker\_05{sample}
 
@@ -129,13 +128,14 @@ It's possible to change labels and tooltips for the points in another state. To 
 
 ```
     // hovered and selected labels
-    series_lat_long.hoverLabels().fontSize(12);
-    series_lat_long.hoverLabels().fontColor("#660000");
-    series_lat_long.selectLabels().fontSize(12);
-    series_lat_long.selectLabels().fontColor("#660000");
+    series_acme.hoverLabels().fontSize(12);
+    series_acme.hoverLabels().fontColor("#660000");
+    series_acme.selectLabels().fontSize(12);
+    series_acme.selectLabels().fontColor("#660000");
 ```
 {sample}Maps\_Marker\_06{sample}
 
+You can find more information about formatting labels and tooltips in the [Labels](../Common_Settings/Labels), [Tooltips](../Common_Settings/Tooltip) and [Text Formatters](../Common_Settings/Text_Formatters) tutorials.
 
 
 ### Series colors
@@ -203,7 +203,7 @@ Another way to create unique markers is to set an image (or an array of images) 
     var image_link = 'http://cdn.bolshoyvopros.ru/files/users/images/67/48/67482812be439b0d3fb1b144a87281ec.jpg';
     
 
-    // set the images for dots of the series defined by latitude and longtitude in normal state
+    // set the images for dots of the series defined by latitude and longitude in normal state
     series_ACME.fill(function () {
     if (this.index >= 0) {
         return {
@@ -213,7 +213,7 @@ Another way to create unique markers is to set an image (or an array of images) 
     }
     });
 
-    // set the images for dots of the series defined by latitude and longtitude in hovered state
+    // set the images for dots of the series defined by latitude and longitude in hovered state
     series_ACME.hoverFill(function () {
     if (this.index >= 0) {
         return {

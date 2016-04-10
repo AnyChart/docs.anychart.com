@@ -31,9 +31,7 @@ anychart.onDocumentReady(function () {
       return e.name;
     });
 
-    series_id.tooltip().textFormatter(function(){
-        return "Id: " + this.id + "\nSheep farms: " + this.getDataValue("farms");
-    });
+    series_id.tooltip().textFormatter("Id: {%id} \nSheep farms: {%farms}");
 
     // hovered and selected labels
     series_id.hoverLabels().fontColor("black");
