@@ -92,7 +92,7 @@
                 {name: "Europe", children: [
                     {name: "Eastern Europe", children:[
                         {name: "Poland", value: 312679, capital: 'Warsaw'},
-                        {name: "Ukiraine", value: 603628, capital: 'Kiev'}
+                        {name: "Ukraine", value: 603628, capital: 'Kiev'}
                     ]},
                     {name: "Western Europe", children:[
                         {name: "Austria", value: 83879, capital: 'Vienna'},
@@ -129,12 +129,8 @@
     chart.headers().fontWeight('bold');
     chart.hoverHeaders().fontColor("purple");
 
-    chart.tooltip().titleFormatter(function() {
-        return this.getDataValue('name');
-    });
-    chart.tooltip().textFormatter(function() {
-        return "Area: " + this.value + " square km";
-    });
+    chart.tooltip().titleFormatter("{%name}");
+    chart.tooltip().textFormatter("Area: {%Value} square km");
 
     // setting the maximum levels depth
     chart.maxDepth(3);

@@ -90,7 +90,7 @@
                 {name: "Europe", children: [
                     {name: "Eastern Europe", children:[
                         {name: "Poland", value: 312679, capital: 'Warsaw'},
-                        {name: "Ukiraine", value: 603628, capital: 'Kiev'}
+                        {name: "Ukraine", value: 603628, capital: 'Kiev'}
                     ]},
                     {name: "Western Europe", children:[
                         {name: "Austria", value: 83879, capital: 'Vienna'},
@@ -120,18 +120,10 @@
         chart = anychart.treeMap(data);
         chart.container('container');
 
-        chart.headers().textFormatter(function() {
-            return this.getDataValue('name');
-        });
-        chart.labels().textFormatter(function() {
-            return this.getDataValue('name');
-        });
-        chart.tooltip().titleFormatter(function() {
-            return this.getDataValue('name');
-        });
-        chart.tooltip().textFormatter(function() {
-            return "Area: " + this.value + " square km";
-        });
+        chart.headers().textFormatter("{%name}");
+        chart.labels().textFormatter("{%name}");
+        chart.tooltip().titleFormatter("{%name}");
+        chart.tooltip().textFormatter("Area: {%Value} square km");
 
         chart.title("Setting the data as tree");
 

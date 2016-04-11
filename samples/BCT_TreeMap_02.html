@@ -82,7 +82,7 @@
              {id: 'Southern Europe', parent: 'Europe'},
              {id: 'Northern Europe', parent: 'Europe'},
                  {id: 'Poland', parent: 'Eastern Europe', value: 312679, capital: 'Warsaw'},
-                 {id: 'Ukiraine', parent: 'Eastern Europe', value: 603628, capital: 'Kiev'},
+                 {id: 'Ukraine', parent: 'Eastern Europe', value: 603628, capital: 'Kiev'},
                  {id: 'Austria', parent: 'Western Europe', value: 83879, capital: 'Vienna'},
                  {id: 'Germany', parent: 'Western Europe', value: 357168, capital: 'Berlin'},
                  {id: 'France', parent: 'Western Europe', value: 643801, capital: 'Paris'},
@@ -102,18 +102,10 @@
 
         chart = anychart.treeMap(data);
         chart.container('container');
-        chart.headers().textFormatter(function() {
-            return this.getDataValue('id');
-        });
-        chart.labels().textFormatter(function() {
-            return this.getDataValue('id');
-        });
-        chart.tooltip().titleFormatter(function() {
-            return this.getDataValue('id');
-        });
-        chart.tooltip().textFormatter(function() {
-            return "Area: " + this.value + " square km";
-        });
+        chart.headers().textFormatter("{%id}");
+        chart.labels().textFormatter("{%id}");
+        chart.tooltip().titleFormatter("{%id}");
+        chart.tooltip().textFormatter("Area: {%Value} square km");
         chart.title("Setting the data as table");
 
         chart.maxDepth(1);
