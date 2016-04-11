@@ -9,12 +9,29 @@
 
   // data
   var data = anychart.data.set([
-    [2000, 10000, 12000, 18000, 11000, 9000, "#64b5f6 0.7"],
-    [2001, 12000, 15000, 16000, 13000, 19000, "#1976d2 0.7"]
+    [Date.UTC(2010, 0, 01), 10000],
+    [Date.UTC(2010, 1, 01), 12000],
+    [Date.UTC(2010, 2, 01), 18000],
+    [Date.UTC(2010, 3, 01), 11000],
+    [Date.UTC(2010, 4, 01), 9000],
+    [Date.UTC(2010, 5, 01), 12000],
+    [Date.UTC(2010, 6, 01), 15000],
+    [Date.UTC(2010, 7, 01), 16000],
+    [Date.UTC(2010, 8, 01), 13000],
+    [Date.UTC(2010, 9, 01), 19000],
+    [Date.UTC(2010, 10, 01), 12000],
+    [Date.UTC(2010, 11, 01), 14000],
+    [Date.UTC(2010, 11, 31), 13000]
   ]);
 
   // chart type
-  var chart = anychart.column();
+  var chart = anychart.financial();
+
+  var xScale = chart.xScale();
+  xScale.minimum(Date.UTC(2009, 11, 31));
+  xScale.maximum(Date.UTC(2011, 0, 01));
+
+  chart.yScale().minimum(0);
 
   // y axis title
   var yAxis = chart.yAxis();
@@ -22,24 +39,24 @@
 
   // set lowest line marker
   var lineMarker = chart.lineMarker();
-  lineMarker.axis(yAxis);
   lineMarker.value(9000);
+  lineMarker.axis(yAxis);
 
-  // set y scale ticks interval
-  var yScale = chart.yScale();
-  yScale.minimum(0);
+  // divide plot on seasons
+  var seasonMarker_1 = chart.lineMarker();
+  seasonMarker_1.value(Date.UTC(2010, 2, 01));
+  seasonMarker_1.axis(chart.xAxis());
+  var seasonMarker_2 = chart.lineMarker();
+  seasonMarker_2.value(Date.UTC(2010, 5, 01));
+  seasonMarker_2.axis(chart.xAxis());
+  var seasonMarker_3 = chart.lineMarker();
+  seasonMarker_3.value(Date.UTC(2010, 8, 01));
+  seasonMarker_3.axis(chart.xAxis());
+  var seasonMarker_4 = chart.lineMarker();
+  seasonMarker_4.value(Date.UTC(2010, 11, 01));
+  seasonMarker_4.axis(chart.xAxis());
 
-  for (var seriesNumber = 1; seriesNumber<6;seriesNumber++){
-    seriesFormatter(seriesNumber);
-  }
-
-  function seriesFormatter(seriesNumber){
-    // map data for series
-    var seriesData = data.mapAs({x: [0], value: [seriesNumber], fill: [6]});
-    var series = chart.column(seriesData);
-    series.stroke(null);
-  }
-
+  chart.line(data);
   // draw
   chart.container("container");
   chart.draw();
