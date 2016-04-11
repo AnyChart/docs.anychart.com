@@ -72,89 +72,77 @@ The sample of 3D Column chart at a glance:
 
 ## Clustered Charts
 
-As far as there might be quite a few series on a stacked chart you need a way to somehow divide them into groups. In previous sample we were comparing sales of an ACME FastFood, Corp. through a single year. Now, let's prepare sales through several years for further usage:
+To produce so called Clustered Stacked Charts you need do use some trickery with data and settings, let's go through this process with sales data for ACME FastFood, Corp. for a couple of years.  
+  
+Suppose we have data for 2 years, broken down to 4 seasons, for 3 products:
 
 ```
-  var dataSet2010 = anychart.data.set([
-      ["Winter", 12000, 12000, 10000],
-      ["Spring", 13000, 12000, 17000],
-      ["Summer", 25000, 15000, 19000],
-      ["Autumn", 16000, 16000, 16000]
-  ]);
-  
-  var dataSet2011 = anychart.data.set([
-      ["Winter", 13500, 14000, 11000],
-      ["Spring", 12500, 11000, 14000],
-      ["Summer", 30000, 23000, 20000],
-      ["Autumn", 23000, 17000, 18000]
-  ]);
-  
-  var dataSet2012 = anychart.data.set([
-      ["Winter", 10000, 13000, 12000],
-      ["Spring", 15000, 19000, 13500],
-      ["Summer", 19000, 21000, 25000],
-      ["Autumn", 22000, 23500, 11000]
+  var dataSet = anychart.data.set([
+      ["Winter", 12000, 12000, 10000, 13500, 14000, 11000],
+      ["Spring", 13000, 12000, 17000, 12500, 11000, 14000],
+      ["Summer", 25000, 15000, 19000, 30000, 23000, 20000],
+      ["Autumn", 16000, 16000, 16000, 23000, 17000, 18000]
   ]);
 ```
 
-Now we need to map our data:
+Mapping for series must be done like this:
 
 ```
-  var dataMap2010_1 = dataSet2010.mapAs({x: [0], value: [1]});
-  var dataMap2010_2 = dataSet2010.mapAs({x: [0], value: [2]});
-  var dataMap2010_3 = dataSet2010.mapAs({x: [0], value: [3]});
+  var dataMap2010_1 = dataSet.mapAs({x: [0], value: [1]});
+  var dataMap2010_2 = dataSet.mapAs({x: [0], value: [2]});
+  var dataMap2010_3 = dataSet.mapAs({x: [0], value: [3]});
+
+  var dataMap2011_1 = dataSet.mapAs({x: [0], value: [1]});
+  var dataMap2011_2 = dataSet.mapAs({x: [0], value: [2]});
+  var dataMap2011_3 = dataSet.mapAs({x: [0], value: [3]});
+```
+
+After data mapping let's proceed to clustering series. First of all, we need to create a scale for each group of series and define {api:anychart.scales.Linear#stackMode}**.stackMode()**{api} for each scale. After that we will apply our scale for each series group.
+
+```
+  var scale2010 = chart.yScale();
+  scale2010.stackMode("value");
   
-  var dataMap2011_1 = dataSet2011.mapAs({x: [0], value: [1]});
-  var dataMap2011_2 = dataSet2011.mapAs({x: [0], value: [2]});
-  var dataMap2011_3 = dataSet2011.mapAs({x: [0], value: [3]});
-  
-  var dataMap2012_1 = dataSet2012.mapAs({x: [0], value: [1]});
-  var dataMap2012_2 = dataSet2012.mapAs({x: [0], value: [2]});
-  var dataMap2012_3 = dataSet2012.mapAs({x: [0], value: [3]});
-```
-
-After data mapping let's proceed to clustering series. First of all, we need to create a scale for each group of series and define {api:anychart.scales.Linear#stackMode}**.stackMode()**{api} for each scale. After it we will apply our scale for each series group.
-
-```
   var scale2011 = anychart.scales.linear();
   scale2011.stackMode("value");
-  
-  var scale2012 = anychart.scales.linear();
-  scale2012.stackMode("value");
 ```
 
-To apply scales to the series we will use {api:anychart.core.cartesian.series.Column#yScale}**.yScale()**{api} method with the scale as method's parameter:
+To apply scales to the series we use {api:anychart.core.cartesian.series.Column#yScale}**.yScale()**{api} method with the scale as method's parameter:
 
 ```
-  chart.column(dataMap2010_1);
-  chart.column(dataMap2010_2);
-  chart.column(dataMap2010_3);
-  
+  var series2010_1 = chart.column(dataMap2010_1);
+  series2010_1.name("Burgers");
+  var series2010_2 = chart.column(dataMap2010_2);
+  series2010_2.name("Salads");
+  var series2010_3 = chart.column(dataMap2010_3);
+  series2010_3.name("Drinks");
+
   var series2011_1 = chart.column(dataMap2011_1);
   series2011_1.yScale(scale2011);
+  series2011_1.name("Burgers");
   var series2011_2 = chart.column(dataMap2011_2);
   series2011_2.yScale(scale2011);
+  series2011_2.name("Salads");
   var series2011_3 = chart.column(dataMap2011_3);
   series2011_3.yScale(scale2011);
-  
-  var series2012_1 = chart.column(dataMap2012_1);
-  series2012_1.yScale(scale2012);
-  var series2012_2 = chart.column(dataMap2012_2);
-  series2012_2.yScale(scale2012);
-  var series2012_3 = chart.column(dataMap2012_3);
-  series2012_3.yScale(scale2012);
+  series2011_3.name("Drinks");
 ```
 
 Here is the result:
 
 {sample}BCT_Stacked\_Bar-Column\_Charts\_04{sample}
 
-**Note:** As far as custom scales do not coordinate by default we need to manage minimum and maximum values of each scale. Here is a sample of managing scales:
+**Note:** Custom scales do not sync themselves in terms of minimum and maximum, this may lead to the confusion when you use them. In the previous sample we've synced scales simply by setting the same minimum and maximum to all three of them. In real world you may not know what kind of data comes to the chart and may want to rely on automatic scales calculations. In this case you may need to sync scales automatically, this can be done, for example, like this:
+
 
 ```
-  var scales = [chart.yScale(), scale2011, scale2012];
+  var scales = [chart.yScale(), scale2011];
   for(var i=0;i<scales.length;i++){
-    scales[i].maximum(Math.max(chart.yScale().maximum(), scale2011.maximum(), scale2012.maximum()));
-    scales[i].minimum(Math.min(chart.yScale().minimum(), scale2011.minimum(), scale2012.minimum()));
+    scales[i].maximum(Math.max(chart.yScale().maximum(), scale2011.maximum()));
+    scales[i].minimum(Math.min(chart.yScale().minimum(), scale2011.minimum()));
   }
 ```
+
+And here is the same sample as above, we've used scale range autocalculations and synced them, so the minimum and maximum are calculated by the engine for better fit:
+
+{sample}BCT_Stacked\_Bar-Column\_Charts\_05{sample}

@@ -29,12 +29,8 @@
   // set stack mode
   var scale2010 = chart.yScale();
   scale2010.stackMode("value");
-  scale2010.minimum(0);
-  scale2010.maximum(100000);
   var scale2011 = anychart.scales.linear();
   scale2011.stackMode("value");
-  scale2011.minimum(0);
-  scale2011.maximum(100000);
 
   // chart title
   chart.title("ACME FastFood, Corp. Sales");
@@ -59,6 +55,12 @@
   // draw
   chart.container("container");
   chart.draw();
+
+  var scales = [scale2010, scale2011];
+  for(var i=0;i<scales.length;i++){
+    scales[i].maximum(Math.max(scale2010.maximum(), scale2011.maximum()));
+    scales[i].minimum(Math.min(scale2010.minimum(), scale2011.minimum()));
+  }
 });</script>
 </head>
 <body>
