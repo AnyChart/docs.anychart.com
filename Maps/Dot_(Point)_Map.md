@@ -170,57 +170,40 @@ Also we can change the shape of the markers using the {api:anychart.core.scatter
 We can customize our map by creating our own, unique markers. We need to set a function as a value for the {api:anychart.core.scatter.series.Marker#type}**.type()**{api} method:
 
 ```
-	// sets custom function to display marker
-    series_citrus.type(function(path, x, y, size) {
-        var numericSize = +size;
-        var point1 = {x: x + 1.3 * numericSize, y: y - 0.4 * numericSize};
-        var point2 = {x: x - 0.4 * numericSize, y: y - 0.5 * numericSize};
-        path.moveTo(point1.x, point1.y)
-                .arcToByEndPoint(point2.x, point2.y, numericSize, numericSize, true, true)
-                .arcToByEndPoint(point1.x, point1.y, numericSize / 3, numericSize / 3, false, false)
-                .moveTo(point1.x, point1.y)
-                .close();
-        return path;
-    }); 
+	// creating a custom marker for the CITRUS company series using a function
+    series_citrus.type(customMarkerType);
+    series_citrus.hoverType(customMarkerType);
 
-    series_citrus.hoverType(function(path, x, y, size) {
-        var numericSize = +size;
-        var point1 = {x: x + 1.3 * numericSize, y: y - 0.4 * numericSize};
-        var point2 = {x: x - 0.4 * numericSize, y: y - 0.5 * numericSize};
-        path.moveTo(point1.x, point1.y)
-                .arcToByEndPoint(point2.x, point2.y, numericSize, numericSize, true, true)
-                .arcToByEndPoint(point1.x, point1.y, numericSize / 3, numericSize / 3, false, false)
-                .moveTo(point1.x, point1.y)
-                .close();
-        return path;
-    });
-```
-
-Another way to create unique markers is to set an image (or an array of images) as an argument for {api:anychart.core.map.series.Marker#fill}**.fill()**{api} and {api:anychart.core.map.series.Marker#hoverFill}**.hoverFill()**{api} methods. The following sample describes this in details:
-
-```
-     // set the link for the directory with images
-    var image_link = 'http://s29.postimg.org/hjvf35eav/acme.jpg';
-    
-    // set the images for dots of the ACME series defined in normal state
-    series_acme.fill(function () {
-    if (this.index >= 0) {
-        return {
-            src: image_link,
-            mode: 'fitMax'
+    function customMarkerType(path, x, y, size) {
+    var numericSize = +size;
+    var point1 = {x: x + 1.3 * numericSize, y: y - 0.4 * numericSize};
+    var point2 = {x: x - 0.4 * numericSize, y: y - 0.5 * numericSize};
+    path.moveTo(point1.x, point1.y)
+            .arcToByEndPoint(point2.x, point2.y, numericSize, numericSize, true, true)
+            .arcToByEndPoint(point1.x, point1.y, numericSize / 3, numericSize / 3, false, false)
+            .moveTo(point1.x, point1.y)
+            .close();
+    return path;
         }
-    }
-    });
+```
 
+Note that we've created a detached function to draw a marker in order not to be obliged to create this marker several times.
+
+Another way to create unique markers is to set an image (or an array of images) as an argument for {api:anychart.core.map.series.Marker#fill}**.fill()**{api} and {api:anychart.core.map.series.Marker#hoverFill}**.hoverFill()**{api} methods. The following sample describes this in details. Note that in this example we have also used external function for the same purpose as before.
+
+```
+    // set the images for our series defined in normal state
+    series_acme.fill(customImageMarker(1));
     // set the images for dots of the ACME series in hovered state
-    series_acme.hoverFill(function () {
-    if (this.index >= 0) {
-        return {
+    series_acme.hoverFill(customImageMarker(0.5));
+
+    function customImageMarker(op){
+    var image_link = 'http://static.anychart.com/images/acme.jpg';
+      return {
           src: image_link,
             mode: 'fitMax',
-            opacity: 0.7
-        }
+            opacity: op
+        }  
     }
-    });
 ```
 {sample}Maps\_Marker\_09{sample}

@@ -76,64 +76,47 @@ anychart.onDocumentReady(function () {
     series_acme.hoverSize(14);
     series_acme.selectSize(14);
 
-    // change the markers type
-    series_acme.type("square");
-    series_citrus.type("cross");
-
-    // sets custom function to display marker
-    series_citrus.type(function(path, x, y, size) {
-        var numericSize = +size;
-        var point1 = {x: x + 1.3 * numericSize, y: y - 0.4 * numericSize};
-        var point2 = {x: x - 0.4 * numericSize, y: y - 0.5 * numericSize};
-        path.moveTo(point1.x, point1.y)
-                .arcToByEndPoint(point2.x, point2.y, numericSize, numericSize, true, true)
-                .arcToByEndPoint(point1.x, point1.y, numericSize / 3, numericSize / 3, false, false)
-                .moveTo(point1.x, point1.y)
-                .close();
-        return path;
-    }); 
-
-    series_citrus.hoverType(function(path, x, y, size) {
-        var numericSize = +size;
-        var point1 = {x: x + 1.3 * numericSize, y: y - 0.4 * numericSize};
-        var point2 = {x: x - 0.4 * numericSize, y: y - 0.5 * numericSize};
-        path.moveTo(point1.x, point1.y)
-                .arcToByEndPoint(point2.x, point2.y, numericSize, numericSize, true, true)
-                .arcToByEndPoint(point1.x, point1.y, numericSize / 3, numericSize / 3, false, false)
-                .moveTo(point1.x, point1.y)
-                .close();
-        return path;
-    });
+    // creating a custom marker for the CITRUS company series using a function
+    series_citrus.type(customMarkerType);
+    series_citrus.hoverType(customMarkerType);
 
     // set the link for the directory with images
-    var image_link = 'http://s29.postimg.org/hjvf35eav/acme.jpg';
+    var image_link = 'http://static.anychart.com/images/acme.jpg';
     
-    // set the images for dots of the ACME series defined in normal state
-    series_acme.fill(function () {
-    if (this.index >= 0) {
-        return {
-            src: image_link,
-            mode: 'fitMax'
-        }
-    }
-    });
-
+    // set the images for our series defined in normal state
+    series_acme.fill(customImageMarker(1));
     // set the images for dots of the ACME series in hovered state
-    series_acme.hoverFill(function () {
-    if (this.index >= 0) {
-        return {
-          src: image_link,
-            mode: 'fitMax',
-            opacity: 0.7
-        }
-    }
-    });
+    series_acme.hoverFill(customImageMarker(0.5));
 
     usaMap.title("Creating custom markers");
     usaMap.interactivity().mouseWheel(false);
     usaMap.container("container");
     usaMap.draw();
 });
+
+
+    function customMarkerType(path, x, y, size) {
+    var numericSize = +size;
+    var point1 = {x: x + 1.3 * numericSize, y: y - 0.4 * numericSize};
+    var point2 = {x: x - 0.4 * numericSize, y: y - 0.5 * numericSize};
+    path.moveTo(point1.x, point1.y)
+            .arcToByEndPoint(point2.x, point2.y, numericSize, numericSize, true, true)
+            .arcToByEndPoint(point1.x, point1.y, numericSize / 3, numericSize / 3, false, false)
+            .moveTo(point1.x, point1.y)
+            .close();
+    return path;
+        }
+    
+    function customImageMarker(op){
+    var image_link = 'http://static.anychart.com/images/acme.jpg';
+      return {
+          src: image_link,
+            mode: 'fitMax',
+            opacity: op
+        }  
+    }
+
+
     </script>
 
 </head>

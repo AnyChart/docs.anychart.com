@@ -11,14 +11,14 @@ anychart.onDocumentReady(function () {
 
     // create the dataset of points that are defined by latitude and longtitude values
     var dataSet_lat_long = anychart.data.set([
-        {lat: 33.75, long: -112.18, name: "Stepford ACME Corp. branch", value: 321},
-        {lat: 28.50, long: -135.24, name: "Metropolis ACME Corp. branch", value: 293},
-        {lat: 23.12, long: -148.62, name: "Haddonfield ACME Corp. branch", value: 312},
-        {lat: 17.89, long: -145.09, name: "Marlberry ACME Corp. branch", value: 198},
-        {lat: 33.28, long: -135.58, name: "Sunnydale ACME Corp. branch", value: 309},
-        {lat: 39.21, long: -116.44, name: "Landmark ACME Corp. branch", value: 215},
-        {lat: 32.26, long: -151.44, name: "Springfield ACME Corp. branch", value: 219},
-        {lat: 27.63, long: -152.37, name: "Vice City ACME Corp. branch", value: 179}
+        {lat: 33.75, long: -112.18, name: "Stepford branch", value: 321},
+        {lat: 28.50, long: -135.24, name: "Metropolis branch", value: 293},
+        {lat: 23.12, long: -148.62, name: "Haddonfield branch", value: 312},
+        {lat: 17.89, long: -145.09, name: "Marlberry branch", value: 198},
+        {lat: 33.28, long: -135.58, name: "Sunnydale branch", value: 309},
+        {lat: 39.21, long: -116.44, name: "Landmark branch", value: 215},
+        {lat: 32.26, long: -151.44, name: "Springfield branch", value: 219},
+        {lat: 27.63, long: -152.37, name: "Vice City branch", value: 179}
     ]);
 
     usaMap = anychart.map();
@@ -28,7 +28,7 @@ anychart.onDocumentReady(function () {
     var series_acme = usaMap.marker(dataSet_lat_long);
 
     // format the tooltips
-    series_acme.tooltip({title: false, separator: false});
+    series_acme.tooltip().titleFormatter("{%name} of ACME Corp.");
     series_acme.tooltip().textFormatter("Yearly profit: ${%value}m");
 
     // format the labels
