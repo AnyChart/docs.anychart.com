@@ -133,7 +133,7 @@ Here is a sample of clustered series groups in a stacked modes:
 
 {sample}AGST\_Scales\_12{sample}
 
-**Note**: You can find more accurate sample with information on scales' sync in [Stacked Bar-Column Charts](../Basic_Charts_Types/Stacked_Bar-Column_Charts) and [Percent Stacked Bar-Column Charts](../Basic_Charts_Types/Percent_Stacked_Bar-Column_Charts) articles.
+**Note**: You can find more accurate sample with information on scales' sync in [Stacked Bar-Column Charts](../Basic_Charts_Types/Stacked_Bar-Column_Charts#clustered_charts) and [Percent Stacked Bar-Column Charts](../Basic_Charts_Types/Percent_Stacked_Bar-Column_Charts#clustered_charts) articles.
 
 ## Minimum and Maximum
 
