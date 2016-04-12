@@ -14,7 +14,7 @@
     ["P3", 9, 14, 17, 21]
   ]);
 
-  // remapping data
+  // mapping data
   var Sales2003 = data.mapAs({x: [0], value: [1]});
   var Sales2004 = data.mapAs({x: [0], value: [2]});
 
@@ -39,8 +39,7 @@
   // setting chart's size and position
   valueStackedMode.bounds(0, "15%", "50%", "85%");
 
-  var background = valueStackedMode.background();
-  background.stroke("#CCCCCC");
+  valueStackedMode.background().stroke("#CCCCCC");
 
   // define mode type
   var yScale = valueStackedMode.yScale();
@@ -53,9 +52,6 @@
   xAxis.title(false);
   var yAxis = valueStackedMode.yAxis();
   yAxis.title(false);
-
-  var yTicks = valueStackedMode.yScale().ticks();
-  yTicks.interval(10);
 
   // first cluster
   valueStackedMode.column(Sales2003);
@@ -80,33 +76,29 @@
   // second chart
   var percentStackedMode = anychart.column();
 
-  percentStackedMode.title("Percent Tacked Mode");
+  percentStackedMode.title("Percent Stacked Mode");
 
   // setting chart's size and position
   percentStackedMode.bounds("50%", "15%", "50%", "85%");
 
-  var background1 = percentStackedMode.background();
-  background1.stroke("#CCCCCC");
+  percentStackedMode.background().stroke("#CCCCCC");
 
-  var percentYScale = percentStackedMode.yScale();
-  percentYScale.stackMode("percent");
+  percentStackedMode.yScale().stackMode("percent");
   var percentScale = anychart.scales.linear();
   percentScale.stackMode("percent");
 
   // disable Axes titles
-  var persentYAxispercent = percentStackedMode.yAxis();
-  persentYAxispercent.title(false);
-  var persentXAxispercent = percentStackedMode.xAxis();
-  persentXAxispercent.title(false);
+  var percentYAxis = percentStackedMode.yAxis();
+  percentYAxis.title(false);
+  var percentXAxis = percentStackedMode.xAxis();
+  percentXAxis.title(false);
 
   var percentYTicks = percentStackedMode.yScale().ticks();
   percentYTicks.interval(10);
 
   // set yAxis labels formatting, force it to add % to values
   var percentYLabels = percentStackedMode.yAxis().labels();
-  percentYLabels.textFormatter(function(info) {
-    return info.value + "%";
-  });
+  percentYLabels.textFormatter("{%Value}%");
 
   // series data setter
   percentStackedMode.column(Sales2003);
