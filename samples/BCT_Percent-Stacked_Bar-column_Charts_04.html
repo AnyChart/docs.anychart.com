@@ -10,20 +10,20 @@
   // chart type
   var chart = anychart.column();
 
-      var dataSet = anychart.data.set([
-        ["Winter", 12000, 12000, 10000, 13500, 14000, 11000],
-        ["Spring", 13000, 12000, 17000, 12500, 11000, 14000],
-        ["Summer", 25000, 15000, 19000, 30000, 23000, 20000],
-        ["Autumn", 16000, 16000, 16000, 23000, 17000, 18000]
-      ]);
+  var dataSet = anychart.data.set([
+    ["Winter", 12000, 12000, 10000, 13500, 14000, 11000],
+    ["Spring", 13000, 12000, 17000, 12500, 11000, 14000],
+    ["Summer", 25000, 15000, 19000, 30000, 23000, 20000],
+    ["Autumn", 16000, 16000, 16000, 23000, 17000, 18000]
+  ]);
 
-      var dataMap2010_1 = dataSet.mapAs({x: [0], value: [1]});
-      var dataMap2010_2 = dataSet.mapAs({x: [0], value: [2]});
-      var dataMap2010_3 = dataSet.mapAs({x: [0], value: [3]});
+  var dataMap2010_1 = dataSet.mapAs({x: [0], value: [1]});
+  var dataMap2010_2 = dataSet.mapAs({x: [0], value: [2]});
+  var dataMap2010_3 = dataSet.mapAs({x: [0], value: [3]});
 
-      var dataMap2011_1 = dataSet.mapAs({x: [0], value: [4]});
-      var dataMap2011_2 = dataSet.mapAs({x: [0], value: [5]});
-      var dataMap2011_3 = dataSet.mapAs({x: [0], value: [6]});
+  var dataMap2011_1 = dataSet.mapAs({x: [0], value: [4]});
+  var dataMap2011_2 = dataSet.mapAs({x: [0], value: [5]});
+  var dataMap2011_3 = dataSet.mapAs({x: [0], value: [6]});
 
 
   // set stack mode
@@ -37,16 +37,22 @@
   // chart title
   chart.title("Stacked Column Chart");
 
-  chart.column(dataMap2010_1);
-  chart.column(dataMap2010_2);
-  chart.column(dataMap2010_3);
+  var series2010_1 = chart.column(dataMap2010_1);
+  series2010_1.name("Burgers");
+  var series2010_2 = chart.column(dataMap2010_2);
+  series2010_2.name("Salads");
+  var series2010_3 = chart.column(dataMap2010_3);
+  series2010_3.name("Drinks");
 
   var series2011_1 = chart.column(dataMap2011_1);
   series2011_1.yScale(scale2011);
+  series2011_1.name("Burgers");
   var series2011_2 = chart.column(dataMap2011_2);
   series2011_2.yScale(scale2011);
+  series2011_2.name("Salads");
   var series2011_3 = chart.column(dataMap2011_3);
   series2011_3.yScale(scale2011);
+  series2011_3.name("Drinks");
 
   // draw
   chart.container("container");
