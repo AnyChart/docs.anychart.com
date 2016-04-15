@@ -149,6 +149,8 @@ Here is a sample with the settings from above.
 
 {sample}CS\_Tooltip\_08{sample}
 
+The default content of a tooltip may vary for different chart types and series, but mainly it displays main points' properties: **x** and **value**. Check out the {api:anychart.core.ui.Tooltip#textFormatter}**.textFormatter()**{api} method which is described  in [Advanced Content Formatting](#advanced_content_formatting) section to find information about changing tooltip content.
+
 ### Prefix and Postfix
 
 Use {api:anychart.core.ui.Tooltip#valuePrefix}**valuePrefix()**{api} and {api:anychart.core.ui.Tooltip#valuePostfix}**valuePostfix()**{api} methods to add symbols or the whole words before/after tooltip content. These methods can be used to set dollar symbol as prefix ($) or degrees fahrenheit as postfix (°F).
@@ -173,7 +175,7 @@ That is how tooltip background with the settings from above looks like:
 
 ### Advanced Content Formatting
 
-In case you need more complex content formatting there is the {api:anychart.core.ui.SeriesTooltip#textFormatter}**textFormatting()**{api} method that uses a function as parameter. Use this method for complex content formatting.
+In case you need more complex content formatting there is the {api:anychart.core.ui.SeriesTooltip#textFormatter}**textFormatting()**{api} method that uses a function or a string token as parameter. More information on adjusting a text can be found in [Text Formatters article](../Common_Settings/Text_Formatters).
 
 ```
   var tooltip = chart.tooltip();
