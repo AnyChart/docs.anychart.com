@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+  <script src="http://cdn.anychart.com/js/develop/anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/geodata/1.1.0/countries/united_kingdom/united_kingdom.js"></script>
+  <style>
+    html, body, #container {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/javascript">
+
+
+anychart.onDocumentReady(function() {
+
+// create data set
+var data = anychart.data.set([
+    {points: [50.8, -3.6, 51.1, -2.8], fill:'red', stroke:'red', to: "Exmoor National Park"},
+    {points: [51.1, -2.8, 50.7, -2.4], fill:'red', stroke:'red', to: "Maiden Castle"},
+    {points: [50.7, -2.4, 50.8, -1.6], fill:'red', stroke:'red', to: "New Forest National Park"},
+    {points: [50.8, -1.6, 51.5, -0.16], fill:'red', stroke:'red', to: "Stonehenge"},
+    {points: [], fill:'red', stroke:'red', to: "London"},
+    {points: [51.7, -1.29, 52.2, 0.27], fill:'red', stroke:'red', to: "Oxford"},
+    {points: [52.2, 0.27, 53.3, -1.5], fill:'red', stroke:'red', to: "Cambridge"},
+    {points: [53.3, -1.5, 53.4, -3.02], fill:'red', stroke:'red', to: "Peak District National Park"},
+    {points: [], fill:'red', stroke:'red', to: "Liverpool"},
+    {points: [], fill:'red', stroke:'red', to: "The National Trust"},
+    {points: [54.4,-3.18, 54.5,-3.4], fill:'red', stroke:'red', to: "Hadrian's Wall"},
+    {points: [54.5,-3.4, 55.2, -1.9], fill:'red', stroke:'red', to: "Nunnykirk Caravan Club Site"},
+    {points: [], fill:'red', stroke:'red', to: "Edinburgh"},
+    {points: [56.4, -3.5, 57.1, -2.19], fill:'red', stroke:'red', to: "Aberdeen"}
+]);
+
+// create map chart
+var map = anychart.map()
+
+//create bubble series
+var series = map.connector(data);
+
+// set geodata using http://cdn.anychart.com/geodata/1.0.0/countries/australia/australia.js
+map.geoData(anychart.maps['united_kingdom']);
+
+//set series geo id field settings
+series.geoIdField("code_hasc");
+
+// name of the chart
+map.title("The touristic interest route through the UK \nwith missing points");
+
+// set container id for the chart
+map.container('container');
+
+// initiate chart drawing
+map.draw();
+});
+    
+    </script>
+</body>
+</html>

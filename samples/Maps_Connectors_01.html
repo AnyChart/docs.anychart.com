@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+  <script src="http://cdn.anychart.com/js/develop/anychart-bundle.min.js"></script>
+  <script src="http://cdn.anychart.com/geodata/1.1.0/custom/world/world.js"></script>
+  <style>
+    html, body, #container {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/javascript">
+
+
+anychart.onDocumentReady(function () {
+    // Defines settings for maps regions (regions bounds are not relevant for this data,  so let's make it less contrast)
+    var customTheme = {
+"map": {
+    'unboundRegions': {'enabled': true,  'fill': '#E1E1E1',  'stroke': '#D2D2D2'}
+}
+    };
+    anychart.theme(customTheme);
+
+    // Creates map chart
+    map = anychart.connector();
+
+    // Sets settings for map chart
+    map.padding([10,  10,  10,  10]);
+    map.geoData(anychart.maps.world);
+    map.interactivity().selectionMode("none");
+
+    // Sets title for map chart and customizes it
+    map.title().enabled(true).padding([0,  0,  20,  0]).useHtml(true).text('Top Chinese Export Directions to the World<br/>' +
+    '<span style="color:#212121; font-size: 13px;">According to www.worldsrichestcountries.com</span>');
+
+    // Sets credits data
+    var credits = map.credits();
+    credits.enabled(true);
+    credits.url('//www.worldsrichestcountries.com/top_china_exports.html');
+    credits.text('Data source: www.worldsrichestcountries.com/top_china_exports.html');
+
+    // Helper function to create several series
+    var createSeries = function(name, data, color) {
+// Creates connector series for destinations and customizes them
+var connectorSeries = map.connector(data)
+        .name(name)
+        .fill(color)
+        .stroke('1.5 ' + color)
+        .hoverStroke('1.5 #212121')
+        .hoverFill('#212121')
+        .markers({position: '100%', size: 20, fill: color, stroke: '2 #E1E1E1'})
+        .hoverMarkers({position: '100%', size: 20, fill: '#212121', stroke: '2 #E1E1E1'})
+        .curvature(0);
+
+if (name == 'More then 10%') connectorSeries.startSize(7).endSize(2);
+else if (name == '5 - 10%') connectorSeries.startSize(5).endSize(1.5);
+else if (name == '3 - 5%') connectorSeries.startSize(3).endSize(1);
+else connectorSeries.startSize(0).endSize(0);
+
+// Sets settings for labels for the destination series
+connectorSeries.labels()
+        .enabled(true)
+        .offsetY(0)
+        .offsetX(0)
+        .fontSize(10)
+        .position('100%')
+        .textFormatter(function(){return this.getDataValue('to')});
+connectorSeries.hoverLabels().enabled(true).fontColor('#212121');
+
+// Sets settings for legend items
+connectorSeries.legendItem({iconType: "square", iconFill: color, iconStroke: null});
+
+// Sets tooltip setting for the destination series
+connectorSeries.tooltip({padding: [8, 13, 10, 13]});
+connectorSeries.tooltip().titleFormatter(function () {
+    return this.getDataValue('to')
+});
+connectorSeries.tooltip().useHtml(true).fontSize(13).textFormatter(function () {
+    return '<span style="font-size: 12px; color: #cbcbcb">Total:</span> $' + this.getDataValue('total') + ' billion <br/>' +
+            '<span style="font-size: 12px; color: #cbcbcb">Overall Exports Percent:</span> ' + this.getDataValue('percent') + '%'
+});
+    };
+
+    // Creates Dataset from Sample data
+    var exportDataSet = anychart.data.set(exportData).mapAs();
+
+    // Creates 5 series, filtering the data by the amount of Fatalities
+    createSeries('Less then 0.5%', exportDataSet.filter('percent', filter_function(0, 0.5)), '#64b5f6');
+    createSeries('0.5 - 1.5%', exportDataSet.filter('percent', filter_function(0.5, 1.5)), '#1976d2');
+    createSeries('1.5 - 3%', exportDataSet.filter('percent', filter_function(1.5, 3)), '#1976d2');
+    createSeries('3 - 5%', exportDataSet.filter('percent', filter_function(3, 5)), '#355CB1');
+    createSeries('5 - 10%', exportDataSet.filter('percent', filter_function(5, 10)), '#5C3883');
+    createSeries('More then 10%', exportDataSet.filter('percent', filter_function(10)), '#880e4f');
+
+    // Turns on the legend for the sample
+    map.legend().enabled(true).position('bottom').padding([20,0,0,0]).fontSize(10);
+    map.legend().title().enabled(true).text('Percent of Chinese Overall Exports').fontSize(13).padding([0,0,5,0]);
+
+    // Sets container id for the chart
+    map.container('container');
+
+    // Initiates chart drawing
+    map.draw();
+});
+
+// Helper function to bind data field to the local var.
+function filter_function (val1, val2) {
+    if (val2)
+return function (fieldVal) {
+    return val1 <= fieldVal && fieldVal < val2;
+};
+    else
+return function (fieldVal) {
+    return val1 <= fieldVal;
+};
+}
+
+// Sets data for the destination (connector) series
+var exportData = [
+    {points: [39.90487,116.402231,48.207834,16.373794], total: 2.4, percent: 0.1, to: "Austria", curvature: -0.15, label: {position: '55%', anchor: 'bottom'}},
+    {points: [39.90487,116.402231,59.912917,10.75174], total: 2.7, percent: 0.1, to: "Norway", curvature: 0.75, label: {position: '55%'}},
+    {points: [39.90487,116.402231,46.947939,7.448878], total: 3.1, percent: 0.1, to: "Switzerland", curvature: -0.55, label: {anchor: 'topRight', position: '50%', offsetY: -5, offsetX: 0}},
+    {points: [39.90487,116.402231,59.328568,18.068252], total: 7.2, percent: 0.3, to: "Sweden", curvature: 0.5, label: {position: '60%'}},
+    {points: [39.90487,116.402231,52.227476,21.011642], total: 14.3, percent: 0.6, to: "Poland", curvature: -0.05, label: {anchor: 'topLeft', offsetX: 10, offsetY: 5}},
+    {points: [39.90487,116.402231,50.847534,4.350937], total: 17.2, percent: 0.7, to: "Belgium", curvature: 0.45, label: {position: '50%'}},
+    {points: [39.90487,116.402231,39.932089,32.859522], total: 19.3, percent: 0.8, to: "Turkey", curvature: -0.15, label: {anchor: 'top', position: '70%', offsetY: -3}},
+    {points: [39.90487,116.402231,24.710437,46.675164], total: 20.6, percent: 0.9, to: "Saudi Arabia", curvature: -0.3, label: {anchor: 'leftBottom', offsetX: -5}},
+    {points: [39.90487,116.402231,40.40615,-3.701934], total: 21.5, percent: 0.9, to: "Spain", curvature: -0.55, label: {anchor: 'rightTop'}},
+    {points: [39.90487,116.402231,41.901737,12.49625], total: 28.8, percent: 1.2, to: "Italy", curvature: -0.45, label: {anchor: 'bottom', offsetY: 3, position: '75%'}},
+    {points: [39.90487,116.402231,48.836364,2.355807], total: 29, percent: 1.2, to: "France", curvature: -0.6, label: {anchor: 'rightTop'}},
+    {points: [39.90487,116.402231,45.411673,-75.69629], total: 30, percent: 1.3, to: "Canada", curvature: -0.51},
+    {points: [39.90487,116.402231,19.462558,-99.136756], total: 32.3, percent: 1.4, to: "Mexico", curvature: -0.6},
+    {points: [39.90487,116.402231,13.756717,100.501634], total: 34.3, percent: 1.5, to: "Thailand", curvature: -0.1},
+    {points: [39.90487,116.402231,-15.80048,-47.88187], total: 34.9, percent: 1.5, to: "Brazil", curvature: -0.3},
+    {points: [39.90487,116.402231,-6.191635,106.834857], total: 39.1, percent: 1.7, to: "Indonesia"},
+    {points: [39.90487,116.402231,-30.592659,145.943667], total: 39.1, percent: 1.7, to: "Australia"},
+    {points: [39.90487,116.402231,1.354784,103.867475], total: 48.9, percent: 2.1, to: "Singapore"},
+    {points: [39.90487,116.402231,55.747362,37.621273], total: 53.7, percent: 2.3, to: "Russia", curvature: 0.1, label: {anchor: 'topLeft', offsetX: 10}},
+    {points: [39.90487,116.402231,28.610198,77.207584], total: 54.2, percent: 2.3, to: "India", curvature: -0.3, label: {anchor: 'bottom'}},
+    {points: [39.90487,116.402231,52.667078,-0.955920], total: 57.2, percent: 2.4, to: "United Kindom", curvature: 0.95, label: {position: '50%'}},
+    {points: [39.90487,116.402231,52.369775,4.89441], total: 64.9, percent: 2.8, to: "Netherlands", curvature: 0.7, label: {position: '50%'}},
+    {points: [39.90487,116.402231,52.511693,13.403121], total: 72.7, percent: 3.1, to: "Germany", curvature: 0.35, label: {position: '45%', anchor: 'top'}},
+    {points: [39.90487,116.402231,37.548124,126.99126], total: 100.4, percent: 4.3, to: "South Korea", label: {offsetY: 10}},
+    {points: [39.90487,116.402231,36.653054,137.141329], total: 149.6, percent: 6.4, to: "Japan", curvature: 0.3, label: {anchor: 'leftBottom'}},
+    {points: [39.90487,116.402231,38.884053,-77.033513], total: 397.2, percent: 17, to: "United States", curvature: -0.5}
+
+];
+    
+    </script>
+</body>
+</html>
