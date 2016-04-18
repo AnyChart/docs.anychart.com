@@ -184,7 +184,7 @@ In case you need more complex content formatting there is the {api:anychart.core
   });
 ```
 
-Here is a sample of advanced tooltip content formatting:
+In the sample below we use every possible way of setting a text formatter: tokens, named function and a function that was set as a parameter. It's not mandatory to use each of this ways. Just choose the one that fits you best. For instance, if you are going to serialize/deserialize your charts to/from xml or json you need to use tokens, but if you want to proceed some sophisticated computations using single function several times you need to use named function. Set a function as a parameter if you need to use unique formatter just a single time.
 
 {sample}CS\_Tooltip\_11{sample}
 
