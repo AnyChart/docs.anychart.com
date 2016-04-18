@@ -165,13 +165,12 @@
         chart.headers().fontSize(14);
         chart.headers().fontWeight('bold');
         chart.hoverHeaders().fontColor("purple");
-        chart.headers().textFormatter(function() {
-           return this.getDataValue('id');
-        });
+        chart.headers().textFormatter("{%id}");
+        
 
         chart.labels().textFormatter("{%id}: ${%Value}B");
         chart.tooltip().titleFormatter("{%id}");
-        chart.tooltip().textFormatter("Effort from export in 2012: $ {%Value}B");
+        chart.tooltip().textFormatter("Income from export in 2012: $ {%Value}B");
 
         // setting the maximum levels depth
         chart.maxDepth(1);

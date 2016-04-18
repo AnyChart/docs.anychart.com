@@ -137,14 +137,14 @@ You can notice that samples don't differ a thing despite their data is defined d
 
 ### MaxDepth 
 
-Our TreeMaps have a MaxDepth feature. You can define how many levels do you want to be shown simultaneously in one chart. It means that it's possible to show as many levels of hierarchy as you need. Use {api}**.maxDepth()**{api} method with a number of levels you want to see as an argument. Note that the more levels you show the less understandable your TreeMap might become (depends on the levels' number and values they represent). Let's set this parameter to 3 for the next sample:
+Our TreeMaps have a MaxDepth feature. You can define how many levels do you want to be shown simultaneously in one chart. It means that it's possible to show as many levels of hierarchy as you need. Use {api:anychart.charts.TreeMap#msxDepth}**.maxDepth()**{api} method with a number of levels you want to see as an argument. Note that the more levels you show the less understandable your TreeMap might become (depends on the levels' number and values they represent). Let's set this parameter to 3 for the next sample:
 
 ```
 	// setting the maximum levels depth
     chart.maxDepth(3);
 ```
 
-That's how the chart looks with the maxDepth property value set more than 1. There are two extra settings that help managing this feature, {api}**.hintOpacity**{api} and {api}**.hintDepth**{api}, which will be described later in the article.
+That's how the chart looks with the maxDepth property value set more than 1. There are two extra settings that help managing this feature, {api:anychart.charts.TreeMap#hintOpacity}**.hintOpacity**{api} and {api:anychart.charts.TreeMap#hintDepth}**.hintDepth**{api}, which will be described later in the article.
 
 {sample}BCT\_TreeMap\_03{sample}
 
@@ -155,7 +155,7 @@ Points in TreeMap Charts are not typical, they look like rectangles which repres
 
 ### Header
 
-Header is a name of a parent of the current level. Due to its settings, they all can be enabled, disabled or set individually through the data. To set some parameters or format the header we use the {api}**.headers()**{api} method. We can change the font and background settings, format the demonstrated value and define hovering settings using the {api}**.hoverHeaders()**{api} method. Let's look at the example below. We've changed some font and hovering settings of the demonstrated headers.
+Header is a name of a parent of the current level. Due to its settings, they all can be enabled, disabled or set individually through the data. To set some parameters or format the header we use the {api:anychart.charts.TreeMap#headers}**.headers()**{api} method. We can change the font and background settings, format the demonstrated value and define hovering settings using the {api:anychart.charts.TreeMap#hoverHeaders}**.hoverHeaders()**{api} method. Let's look at the example below. We've changed some font and hovering settings of the demonstrated headers.
 
 ```
 	// headers settings
@@ -163,8 +163,7 @@ Header is a name of a parent of the current level. Due to its settings, they all
     chart.headers().fontSize(14);
     chart.headers().fontWeight('bold');
     chart.hoverHeaders().fontColor("purple");
-    chart.headers().textFormatter(function() {
-        return this.getDataValue('name');
+    chart.headers().textFormatter("{%name}");
     });
 ```
 {sample}BCT\_TreeMap\_04{sample}
@@ -197,7 +196,7 @@ We can see that two headers have changed (Philippines and Indonesia) and three h
 
 ### Content
 
-Content points are all points besides parental ones. We can also edit them almost the same as we would edit Column Chart points appearance. Additionally, TreeMap Chart points have an opacity property, which we can set using {api}**.hintOpacity()**{api} method with a value from 0 to 1 (default value is 1). Note that the result of using this method will be seen only if we adjust another setting, {api}**.hintDepth()**{api}, which ids described lower in the article. Let's adjust our content points and change their background colors and opacity.
+Content points are all points besides parental ones. We can also edit them almost the same as we would edit Column Chart points appearance. Additionally, TreeMap Chart points have an opacity property, which we can set using {api:anychart.charts.TreeMap#hintOpacity}**.hintOpacity()**{api} method with a value from 0 to 1 (default value is 1). Note that the result of using this method will be seen only if we adjust another setting, {api:anychart.charts.TreeMap#hintDepth}**.hintDepth()**{api}, which ids described lower in the article. Let's adjust our content points and change their background colors and opacity.
 
 ```
 	// content points settings
@@ -212,7 +211,7 @@ Look for more detailed description of the content point visualization in the [vi
 
 ### Markers
 
-You can notice that there are markers shown on a point when you hover it. Markers in the TreeMap charts are quite usual: we use {api}**.markers()**{api}, {api}**.hoverMarkers()**{api} and {api}**.selectMarkers()**{api} for adjusting markers in different chart states. Let's now edit the hovering settings of our TreeMap: create markers of pentagon type which will be displayed on the hovered points. <!--Those conditions can be complied if defined through [events](../Common_Settings/Event_Listeners).-->
+You can notice that there are markers shown on a point when you hover it. Markers in the TreeMap charts are quite usual: we use {api:anychart.charts.TreeMap#markers}**.markers()**{api}, {api:anychart.charts.TreeMap#hoverMarkers}**.hoverMarkers()**{api} and {api:anychart.charts.TreeMap#selectMarkers}**.selectMarkers()**{api} for adjusting markers in different chart states. Let's now edit the hovering settings of our TreeMap: create markers of pentagon type which will be displayed on the hovered points. <!--Those conditions can be complied if defined through [events](../Common_Settings/Event_Listeners).-->
 
 ```
 	// markers
@@ -232,15 +231,15 @@ You might have already noticed that our TreeMap point reaction is quite interact
 
 The main feature and purpose of TreeMap Charts is demonstrating the hierarchy of some subjects, processes or anything else. Drill Down feature therefore becomes the most important interactive feature for this chart type. 
 
-When you left-click at the leaf which is a parent itself, a Drill Down will be performed for this element and you will see the next level of the tree, where the selected element is a parent. This can be performed if the {api}**.maxDepth()**{api} of the TreeMap is not set in the maximum value, because in this case you will see all headers in the top rows of the TreeMap table and the demonstrated content points will belong to the lowest level.
+When you left-click at the leaf which is a parent itself, a Drill Down will be performed for this element and you will see the next level of the tree, where the selected element is a parent. This can be performed if the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} of the TreeMap is not set in the maximum value, because in this case you will see all headers in the top rows of the TreeMap table and the demonstrated content points will belong to the lowest level.
 
-If you set the value of the {api}**.maxDepth()**{api} parameter more than 1 and your data has over 3 levels of contents, you will see the headers of the nested levels in the rows under the root header row. If you click at one of those headers, its level points will be drilled down.
+If you set the value of the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} parameter more than 1 and your data has over 3 levels of contents, you will see the headers of the nested levels in the rows under the root header row. If you click at one of those headers, its level points will be drilled down.
 
 
 Also AnyChart TreeMaps work with context menu. If a content point is a parent of another level, you can drill this level down by right-clicking this content-parent point and choosing the necessary option in the context menu.
 
 
-To drill a chart or a level up, use headers. Click at the root header (you will be able to see it from any level but the highest if you have set the {api}**.maxDepth()**{api} parameter in the right value). Anyway, if you don't see the root header, you can click at the level's parent's header - so you will go one level up. Also, you may use a context menu: right-click at one of the points of the level and choosing "Drill Up" in the context menu will bring you a level up.
+To drill a chart or a level up, use headers. Click at the root header (you will be able to see it from any level but the highest if you have set the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} parameter in the right value). Anyway, if you don't see the root header, you can click at the level's parent's header - so you will go one level up. Also, you may use a context menu: right-click at one of the points of the level and choosing "Drill Up" in the context menu will bring you a level up.
 
 
 If necessary, it is possible to disable drill Down function. In this case we need to call for events. You can look for the [Events tutorial article](../Common_Settings/Event_Listeners) for better understanding the subject. Below you can find a way to turn down the Drill Down function.
@@ -275,9 +274,7 @@ For formatting the text of the labels we use {api:anychart.core.ui.LabelsFactory
 ```
 	// labels
     сhart.labels().fontColor('black');
-    chart.labels().textFormatter(function() {
-         return this.getDataValue('id') + ": $" + this.value + "B";
-    });
+    chart.labels().textFormatter("{%id}: ${%Value}B");
 ```
 
 {sample}BCT\_TreeMap\_09{sample}
@@ -286,7 +283,7 @@ It's possible to set some additional information through the data that is to be 
 
 ### Tooltip
 
-Tooltips are small windows that pop up when you hover a point. They are shown next to the cursor and follows it by default. We can change their appearance and behavior using several the {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} method. For formatting the text and title of the tooltips we use {api:anychart.core.ui.ChartTooltip#textFormatter}**.textFormatter()**{api} and {api:anychart.core.ui.ChartTooltip#titleFormatter}**.titleFormatter()**{api}; for changing the position we use special positioning parameters like {api:anychart.core.ui.ChartTooltip#positionMode}**.positionMode()**{api}, {api:anychart.core.ui.ChartTooltip#anchor}**.anchor()**{api} and other, which you can find [here](../Common_Settings/Tooltip#position). Let's now adjust the tooltips.
+Tooltips are small windows that pop up when you hover a point. They are shown next to the cursor and follows it by default. We can change their appearance and behavior using several the {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} method. For formatting the text and title of the tooltips we use {api:anychart.core.ui.ChartTooltip#textFormatter}**.textFormatter()**{api} and {api:anychart.core.ui.ChartTooltip#titleFormatter}**.titleFormatter()**{api}; for changing the position we use special positioning parameters like {api:anychart.core.ui.ChartTooltip#positionMode}**.positionMode()**{api}, {api:anychart.core.ui.ChartTooltip#anchor}**.anchor()**{api} and other, which you can find in the [Tooltip article](../Common_Settings/Tooltip#position). Let's now adjust the tooltips.
 
 ```
 	// tooltips settings
@@ -294,9 +291,7 @@ Tooltips are small windows that pop up when you hover a point. They are shown ne
     chart.tooltip().titleFormatter(function() {
         return this.getDataValue('id');
     });
-    chart.tooltip().textFormatter(function() {
-        return "Effort from export in 2012: $" + this.value + "B";
-    });
+    chart.tooltip().textFormatter("Income from export in 2012: $ {%Value}B");
 ```
 
 {sample}BCT\_TreeMap\_10{sample}
@@ -305,7 +300,7 @@ Some tooltip settings can be defined through the data. For more information look
 
 ### HintDepth
 
-HintDepth is the TreeMaps feature. The value that you set for the {api}**.hintDepth()**{api} method means how many levels further than those defined for {api}**.maxDepth()**{api} you want to be shown. This is different from **MaxDepth** feature: while **MaxDepth** shows several levels with their parents in the first rows of the TreeMap table, making all elements interactive, the **HintDepth** shows only the elements inside without making them interactive and without displaying their parent elements. Look at the following sample: we have set 2 in the {api}**.maxDepth()**{api} parameter and 1 for {api}**.hintDepth()**{api}.
+HintDepth is the TreeMaps feature. The value that you set for the {api:anychart.charts.TreeMap#hintDepth}**.hintDepth()**{api} method means how many levels further than those defined for {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} you want to be shown. This is different from **MaxDepth** feature: while **MaxDepth** shows several levels with their parents in the first rows of the TreeMap table, making all elements interactive, the **HintDepth** shows only the elements inside without making them interactive and without displaying their parent elements. Look at the following sample: we have set 2 in the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} parameter and 1 for {api:anychart.charts.TreeMap#hintDepth}**.hintDepth()**{api}.
 
 ```
 	// setting the maximum levels depth
@@ -322,7 +317,7 @@ If we set the **MaxDepth** parameter in 3 while we've got 3 levels of hierarchy,
 
 ### HintOpacity
 
-This setting helps to manage the TreeMap appearance when the **HintDepth** parameter is set in more than 0. The range of the {api}**.hintOpacity()**{api} parameter is from 0 to 1; the more the value is, the less transparent will be the chart (the less visible will be your additional levels). Let's leave the **MaxDepth** and **HintDepth** settings from the previous samples and set the **hintOpacity** in 0,7.
+This setting helps to manage the TreeMap appearance when the **HintDepth** parameter is set in more than 0. The range of the {api:anychart.charts.TreeMap#hintOpacity}**.hintOpacity()**{api} parameter is from 0 to 1; the more the value is, the less transparent will be the chart (the less visible will be your additional levels). Let's leave the **MaxDepth** and **HintDepth** settings from the previous samples and set the **hintOpacity** in 0,7.
 
 
 ```
