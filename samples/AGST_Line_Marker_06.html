@@ -167,7 +167,7 @@
   future.value(Date.UTC(2017, 1, 01));
   future.axis(chart.xAxis());
 
-  var text = chart.textMarker();
+  var text = chart.textMarker(0);
   text.value(Date.UTC(2016, 1, 01));
   text.axis(chart.xAxis());
   text.text("Near Future");
@@ -176,7 +176,7 @@
   text.offsetX(3);
   text.rotation(0);
 
-  var futureText = chart.textMarker();
+  var futureText = chart.textMarker(1);
   futureText.value(Date.UTC(2017, 1, 01));
   futureText.axis(chart.xAxis());
   futureText.text("Future");
