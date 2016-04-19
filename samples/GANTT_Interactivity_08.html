@@ -5,7 +5,8 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <meta name="x-cat-tags" content="actualBug"/>
-    <script src="../anychart-bundle.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" data-export="true"/>
+	<script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function(){
 
 	// create data tree on our data
@@ -17,7 +18,6 @@
 	// set data for the chart
 	chart.data(treeData);
 
-    chart.padding(25,0,0,0);
 
 	// set start splitter position settings
 	chart.splitterPosition(200);
@@ -36,6 +36,12 @@
 	secondColumn.cellTextSettings().hAlign("left");
 	secondColumn.width(250);
 
+	// enable Gantt toolbar
+	var toolbar = anychart.ui.ganttToolbar();
+	toolbar.container("container");
+	toolbar.target(chart); // sets target
+	toolbar.draw();
+
 	// disable Gantt editing
 	chart.editing(false);
 
@@ -50,11 +56,7 @@
 
 	// Manage Chart Toolbar
 
-	// enable Gantt toolbar
-	var toolbar = anychart.ganttToolbar();
-	toolbar.container("container");
-	toolbar.target(chart); // sets target
-	toolbar.draw();
+
 
 	// get current toolbar
 	var domToolbar = document.getElementsByClassName("anychart-toolbar")[0];
