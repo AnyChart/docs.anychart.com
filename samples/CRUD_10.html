@@ -4,6 +4,7 @@
   <meta name="tags" content="[]"/>
   <meta name="index" content="1000"/>
   <meta name="is-new" content="false"/>
+	<meta name="x-cat-tags" content="actualBug"/>
 	<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" data-export="true"/>
 
 	<script src="../anychart-bundle.min.js"></script>
@@ -51,17 +52,18 @@
 		"All other outlets"
 	]);
 
-	// draw chart
-	chart.container("container");
-	chart.draw();
-
 	// enable toolbar
 	var toolbar = anychart.ui.ganttToolbar();
 	toolbar.container("container");
 	toolbar.draw();
 
+	// draw chart
+	chart.container("container");
+	chart.draw();
 
-	// get current toolbar
+
+
+		// get current toolbar
 	var domToolbar = document.getElementsByClassName("anychart-toolbar")[0];
 	// dispose all buttons in toolbar
 	domToolbar.innerHTML = "";
