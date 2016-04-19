@@ -20,23 +20,22 @@
 anychart.onDocumentReady(function() {
 
 // create data set
-var data = anychart.data.set([
-    {points: [50.8, -3.6, 51.1, -2.8], fill:'red', stroke:'red', to: "Exmoor National Park"},
-    {points: [51.1, -2.8, 50.7, -2.4], fill:'red', stroke:'red', to: "Maiden Castle"},
-    {points: [50.7, -2.4, 50.8, -1.6], fill:'red', stroke:'red', to: "New Forest National Park"},
-    {points: [50.8, -1.6, 51.5, -0.16], fill:'red', stroke:'red', to: "Stonehenge"},
-    {points: [], fill:'red', stroke:'red', to: "London"},
-    {points: [51.7, -1.29, 52.2, 0.27], fill:'red', stroke:'red', to: "Oxford"},
-    {points: [52.2, 0.27, 53.3, -1.5], fill:'red', stroke:'red', to: "Cambridge"},
-    {points: [53.3, -1.5, 53.4, -3.02], fill:'red', stroke:'red', to: "Peak District National Park"},
-    {points: [], fill:'red', stroke:'red', to: "Liverpool"},
-    {points: [], fill:'red', stroke:'red', to: "The National Trust"},
-    {points: [54.4,-3.18, 54.5,-3.4], fill:'red', stroke:'red', to: "Hadrian's Wall"},
-    {points: [54.5,-3.4, 55.2, -1.9], fill:'red', stroke:'red', to: "Nunnykirk Caravan Club Site"},
-    {points: [], fill:'red', stroke:'red', to: "Edinburgh"},
-    {points: [56.4, -3.5, 57.1, -2.19], fill:'red', stroke:'red', to: "Aberdeen"}
-]);
-
+var data = anychart.data.set([    
+  {points: [50.8, -3.6, 51.1, -2.8], stroke:'red', to: "Exmoor National Park", marker: {fill: "#9fa8da"}},
+    {points: [51.1, -2.8, 50.7, -2.4], stroke:'green', to: "Maiden Castle"},
+    {points: [50.7, -2.4, 50.8, -1.6], stroke:'green', to: "New Forest National Park"},
+    {points: [50.8, -1.6, 51.5, -0.16], stroke:'green', to: "Stonehenge"},
+    {points: [51.5,-0.16, 51.7, -1.29], to: "London"},
+    {points: [51.7, -1.29, 52.2, 0.27], to: "Oxford"},
+    {points: [52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
+    {points: [53.3, -1.5, 53.4, -3.02], to: "Peak District National Park"},
+    {points: [53.4, -3.02,54.1,-3.29], to: "Liverpool"},
+    {points: [54.1, -3.29,54.4,-3.18], to: "The National Trust"},
+    {points: [54.4,-3.18, 54.5,-3.4], stroke:'green', to: "Hadrian's Wall"},
+    {points: [54.5,-3.4, 55.2, -1.9], stroke:'red', to: "Nunnykirk Caravan Club Site"},
+    {points: [55.2, -1.9, 56.4, -3.5], to: "Edinburgh"},
+    {points: [56.4, -3.5, 57.1, -2.19], stroke:'green', to: "Aberdeen"}
+    ]);
 // create map chart
 var map = anychart.map()
 
@@ -48,9 +47,10 @@ map.geoData(anychart.maps['united_kingdom']);
 
 //set series geo id field settings
 series.geoIdField("code_hasc");
+series.markers({position: '100%', size: 3, fill: '#1976d2', stroke: '2 #E1E1E1', type: 'circle'});
 
 // name of the chart
-map.title("The touristic interest route through the UK \nwith missing points");
+map.title("The touristic interest route through the UK \n");
 
 // set container id for the chart
 map.container('container');
