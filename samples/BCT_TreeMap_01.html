@@ -118,7 +118,6 @@
     ]);
 
         chart = anychart.treeMap(data);
-        chart.container('container');
 
         chart.headers().textFormatter("{%name}");
         chart.labels().textFormatter("{%name}");
@@ -131,6 +130,7 @@
         chart.hoverStroke('black');
         chart.hintDepth(0);
         chart.hintOpacity(1);
+        chart.container('container');
         chart.draw();
     });
 </script>

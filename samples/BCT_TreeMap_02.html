@@ -24,8 +24,6 @@
 </head>
 <body>
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-
-
 <script>
     //Data set through table method
     anychart.onDocumentReady(function() {
@@ -101,7 +99,6 @@
     );
 
         chart = anychart.treeMap(data);
-        chart.container('container');
         chart.headers().textFormatter("{%id}");
         chart.labels().textFormatter("{%id}");
         chart.tooltip().titleFormatter("{%id}");
@@ -112,6 +109,7 @@
         chart.hoverStroke('black');
         chart.hintDepth(0);
         chart.hintOpacity(1);
+        chart.container('container');
         chart.draw();
     });
 </script>

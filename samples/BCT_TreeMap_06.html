@@ -24,14 +24,9 @@
 </head>
 <body>
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-
-
 <script>
-    var chart, range, rangeInput;
-    range = document.getElementById('hintOpacity');
-    rangeInput = document.getElementById('hintOpacityText');
+    var chart;
     anychart.onDocumentReady(function() {
-
         var rawData = [
         {name: 'Eurasia',
             children:[
@@ -119,32 +114,32 @@
              ]},
     anychart.enums.TreeFillingMethod.AS_TREE // data type settings
     ];
-        var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
+    var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
 
  
-        chart = anychart.treeMap(data);
-        chart.container('container');
+    chart = anychart.treeMap(data);
 
-        // headers settings
-        chart.headers().fontColor("red");
-        chart.headers().fontSize(14);
-        chart.headers().fontWeight('bold');
-        chart.hoverHeaders().fontColor("purple");
+    // headers settings
+    chart.headers().fontColor("red");
+    chart.headers().fontSize(14);
+    chart.headers().fontWeight('bold');
+    chart.hoverHeaders().fontColor("purple");
 
-        chart.tooltip().titleFormatter("{%name}");
-        chart.tooltip().textFormatter("Area: {%Value} square km");
+    chart.tooltip().titleFormatter("{%name}");
+    chart.tooltip().textFormatter("Area: {%Value} square km");
 
-        // setting the maximum levels depth
-        chart.maxDepth(2);
-        chart.hintDepth(1);
-        chart.hoverStroke('black');
+    // setting the maximum levels depth
+    chart.maxDepth(2);
+    chart.hintDepth(1);
+    chart.hoverStroke('black');
 
-        // content points settings
-        chart.hintOpacity(0.5);
-        chart.fill("#ddd");
+    // content points settings
+    chart.hintOpacity(0.5);
+    chart.fill("#ddd");
 
-        chart.draw();
-    });
+    chart.container('container');
+    chart.draw();
+});
 </script>
 
 </body>

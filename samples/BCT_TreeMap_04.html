@@ -24,12 +24,8 @@
 </head>
 <body>
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-
-
 <script>
-    var chart, range, rangeInput;
-    range = document.getElementById('hintOpacity');
-    rangeInput = document.getElementById('hintOpacityText');
+    var chart;
     anychart.onDocumentReady(function() {
         var rawData = [
         {name: 'Eurasia',
@@ -121,7 +117,6 @@
         var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
 
         chart = anychart.treeMap(data);
-        chart.container('container');
 
         // headers settings
         chart.headers().fontColor("red");
@@ -138,6 +133,7 @@
         chart.maxDepth(3);
 
         chart.hoverStroke('black');
+        chart.container('container');
         chart.draw();
     });
 </script>

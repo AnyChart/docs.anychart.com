@@ -16,6 +16,7 @@
 * [Visualization](#visualization)
   * [Labels](#labels)
   * [Tooltip](#tooltip)
+  * [ColorRange](#colorrange)
   * [HintDepth](#hintdepth)
   * [HintOpacity](#hintopacity)
 
@@ -297,6 +298,22 @@ Tooltips are small windows that pop up when you hover a point. They are shown ne
 {sample}BCT\_TreeMap\_10{sample}
 
 Some tooltip settings can be defined through the data. For more information look up the [Tooltip](../Common_Settings/Tooltip) tutorial.
+
+
+### ColorRange
+
+ColorRange is a component that helps to color the treemap points according to the values they represent. There is a default color scheme which you do not need to adjust, but it's also possible to define custom colors and ranges if necessary. Let's create an example with a customized ColorRange.
+
+
+```
+    // making the ColorScale and ColorRnge
+    var cr = chart.colorRange(true);
+    chart.colorScale(anychart.scales.ordinalColor([{less:100,color:"#FFCC99"},{from:100, to:200, color:'#CC9966'},{from:200, to:250, color:'#996633'},{greater:250, color:'#663300'}]));
+```
+
+{sample}BCT\_TreeMap\_13{sample}
+
+For more information about ColorRange and adjusting it look up the [ColorRange article](../Maps/ColorRange) and [ColorScale]() article for information about the color sca;les.
 
 ### HintDepth
 
