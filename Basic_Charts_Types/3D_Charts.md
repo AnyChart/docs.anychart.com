@@ -208,9 +208,13 @@ As far as 3d implements observing chart from different angles, it is important t
 
 **Note**: {api:anychart.charts.Cartesian3d#zAngle}**.zAngle()**{api} range is limited and can't be less than 0 and greater than 90.
 
-### Depth
+### Distribution
 
-For 3 dimensional charts it might be necessary to adjust depth of the plot. Use {api:anychart.charts.Cartesian3d#zDepth}**.zDepth()**{api} method to control the depth of 3d plot.
+3D mode provides a bit more diversity for visualizing multiple series on charts plot. Common 2d chart distributes series along x axis. You can set distribution by z axis for 3d charts using {api:anychart.charts.Cartesian3d#zDistribution}**.zDistribution()**{api} method. Use *true* parameter to enable z axis distribution and *false* for x axis distribution.
+
+### Aspect
+
+For 3 dimensional charts it might be necessary to adjust depth of the plot. The {api:anychart.charts.Cartesian3d#zAspect}**.zAspect()**{api} method controls depth of the 3D chart's plot.
 
 ```
   var chart = anychart.bar3d();
