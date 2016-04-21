@@ -50,8 +50,8 @@ anychart.onDocumentReady(function () {
     series_citrus.tooltip().textFormatter("Yearly profit: ${%value}m");
 
     // turn off labels
-    series_acme.labels().enabled("false");
-    series_citrus.labels().enabled("false");
+    series_acme.labels(false);
+    series_citrus.labels(false);
 
     // change the color of the ACME series
     series_citrus.stroke("green");
