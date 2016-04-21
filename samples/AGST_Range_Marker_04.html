@@ -4,7 +4,7 @@
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
+    <script src="../../DVF-2001-axis-grids-api/anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // setting data
@@ -30,14 +30,28 @@
   // series data
   chart.column(data);
 
+  // y axis getter
+  var yAxis = chart.yAxis();
+
   // create range marker
-  var marker = chart.rangeMarker();
+  var marker = chart.rangeMarker(0);
   // set start point of the marker
   marker.from(0);
   // set end point of the marker
   marker.to(245);
   // set marker inner color
   marker.fill("#fcd8d7");
+  // set axis
+  marker.axis(yAxis);
+
+  var scale = chart.yScale();
+  scale.minimum(0);
+
+  var vMarker = chart.rangeMarker(1);
+  vMarker.from("June");
+  vMarker.to("August");
+  vMarker.axis(chart.xAxis());
+  vMarker.fill("#d7fcda");
 
   chart.container("container");
   chart.draw();

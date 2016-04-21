@@ -7,14 +7,14 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  var chart = anychart.scatterChart();
+  var chart = anychart.scatter();
   chart.title().text("Sample Scatter Graph");
 
   chart.xScale().minimum(1.5).maximum(5.5).ticks().interval(1);
   chart.yScale().minimum(40).maximum(100).ticks().interval(10);
 
-  chart.yAxis(0).title().text("Waiting time between eruptions (Min)");
-  chart.xAxis(0).title().text("Eruption duration (Min)");
+  chart.yAxis(0).title("Waiting time between eruptions (Min)");
+  chart.xAxis(0).title("Eruption duration (Min)");
   chart.xAxis(0).drawFirstLabel(false).drawLastLabel(false);
 
   var marker = chart.marker([
@@ -243,9 +243,7 @@
   ]).type("triangleup").size(4).hoverSize(7).hoverFill("red");
 
   marker.tooltip().hAlign("start");
-  marker.tooltip().textFormatter(function() {
-    return "Waiting time: " + this["value"] + " min.\nDuration: " + this["x"] + " min.";
-  });
+  marker.tooltip().textFormatter("Waiting time: {%Value} min.\nDuration: {%x} min.");
 
   chart.line([
     [1.7, 54.310454158527],
@@ -282,9 +280,20 @@
     [5, 83.6822699651611],
     [5.1, 84.5723249896046],
     [5.2, 85.4623800140481]
-  ]).markers(null).hoverStroke(function() {
-    return this["sourceColor"];
-  });
+  ]).markers(null);
+
+  // create major and minor grids and bind them to X and Y axes
+  var y_grid = chart.grid(0);
+  y_grid.axis(chart.yAxis());
+
+  var x_grid = chart.grid(1);
+  x_grid.axis(chart.xAxis());
+
+  var y_minor_grid = chart.minorGrid(0);
+  y_minor_grid.axis(chart.yAxis());
+
+  var x_minor_grid = chart.minorGrid(1);
+  x_minor_grid.axis(chart.xAxis());     
 
   chart.container("container").draw();
 });</script>

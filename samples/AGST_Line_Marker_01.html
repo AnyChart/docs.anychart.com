@@ -53,8 +53,6 @@
   // set y scale ticks interval
   var yScale = chart.yScale();
   yScale.minimum(0);
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(2000);
 
   // custom scale
   var additionalScale = anychart.scales.linear();
@@ -67,12 +65,6 @@
   // y axis title
   var yAxis = chart.yAxis();
   yAxis.title("Sales");
-
-  // adjust y axis labels
-  var yLabels = chart.yAxis(0).labels();
-  yLabels.textFormatter(function(){
-    return "$" + this.value/1000 + ",000";
-  });
 
   // apply custom scale
   var yAxis1 = chart.yAxis(1);
@@ -90,10 +82,6 @@
     var seriesData = data.mapAs({x: [0], value: [seriesNumber], fill: [6]});
     var series = chart.column(seriesData);
     series.stroke(null);
-    var tooltip = series.tooltip();
-    tooltip.textFormatter(function(){
-      return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
-    });
   }
 
   // draw

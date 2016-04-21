@@ -4,7 +4,7 @@
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
+    <script src="../../DVF-2001-axis-grids-api/anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data
@@ -52,7 +52,7 @@
 
   // set left text marker
   var textMarker = chart.textMarker();
-  textMarker.scale(chart.yScale());
+  textMarker.axis(chart.yAxis());
   textMarker.align("center");
   textMarker.anchor("center");
   textMarker.offsetX(10);
@@ -63,7 +63,7 @@
 
   // set text marker at the center
   var textMarker1 = chart.textMarker(2);
-  textMarker1.scale(chart.yScale());
+  textMarker1.axis(chart.yAxis());
   textMarker1.align("center");
   textMarker1.anchor("center");
   textMarker1.offsetX(10);
@@ -74,7 +74,7 @@
 
   // set text marker at the center
   var textMarker2 = chart.textMarker(1);
-  textMarker2.scale(chart.yScale());
+  textMarker2.axis(chart.yAxis());
   textMarker2.align("center");
   textMarker2.anchor("center");
   textMarker2.offsetX(10);

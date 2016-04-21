@@ -4,7 +4,7 @@
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
+    <script src="../../DVF-2001-axis-grids-api/anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data
@@ -20,15 +20,7 @@
   var chart = anychart.area();
 
   // set data
-  var series = chart.area(data);
-  var tooltip = series.tooltip();
-  tooltip.textFormatter(function(){
-    return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
-  });
-
-  // set y scale ticks interval
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(2000);
+  chart.area(data);
 
   // custom scale
   var additionalScale = anychart.scales.linear();
@@ -42,12 +34,6 @@
   var yAxis = chart.yAxis();
   yAxis.title("Sales");
 
-  // adjust y axis labels
-  var yLabels = chart.yAxis().labels();
-  yLabels.textFormatter(function(){
-    return "$" + this.value/1000 + ",000";
-  });
-
   // apply custom scale
   var yAxis1 = chart.yAxis(1);
   yAxis1.orientation("right");
@@ -58,7 +44,7 @@
   // set marker
   var textMarker = chart.textMarker(0);
   // bind marker to the scale
-  textMarker.scale(chart.yScale());
+  textMarker.axis(yAxis);
   // set marker position
   textMarker.value(18000);
   // set marker alignment
@@ -77,7 +63,7 @@
   // set red marker
   var textMarker1 = chart.textMarker(1);
   // bind marker to the scale
-  textMarker1.scale(chart.yScale());
+  textMarker1.axis(chart.yAxis());
   // set marker position
   textMarker1.value(18000);
   // set marker alignment
@@ -97,7 +83,7 @@
 
   // set green marker
   var textMarker2 = chart.textMarker(2);
-  textMarker2.scale(chart.yScale());
+  textMarker2.axis(chart.yAxis());
   textMarker2.value(10000);
   textMarker2.text("Low");
   textMarker2.align("left");
@@ -109,7 +95,7 @@
 
   // set text marker on the right
   var textMarker3 = chart.textMarker(3);
-  textMarker3.scale(additionalScale);
+  textMarker3.axis(yAxis1);
   textMarker3.value(8);
   textMarker3.text("8.00");
   textMarker3.align("right");
