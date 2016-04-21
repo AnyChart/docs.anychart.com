@@ -2,7 +2,7 @@
 <html>
 <head>
   <script src="http://cdn.anychart.com/js/develop/anychart-bundle.min.js"></script>
-    <script src="http://cdn.anychart.com/geodata/1.1.0/countries/united_kingdom/united_kingdom.js"></script>
+    <script src="http://cdn.anychart.com/geodata/1.1.0/countries/united_kingdom/united_kingdom.js"  data-export="true"></script>
   <style>
     html, body, #container {
       width: 100%;
@@ -53,7 +53,6 @@ series.selectStroke("red");
 // setting the marker position
 series.markers().position("middle");
 
-
 // set geodata using http://cdn.anychart.com/geodata/1.0.0/countries/australia/australia.js
 map.geoData(anychart.maps['united_kingdom']);
 
@@ -62,7 +61,7 @@ series.geoIdField("code_hasc");
 series.markers({size: 3, fill: '#1976d2', stroke: '2 #E1E1E1', type: 'circle'});
 
 // name of the chart
-map.title("The touristic interest route through the UK \n");
+map.title("Adjusting markers on the map");
 
 // set container id for the chart
 map.container('container');

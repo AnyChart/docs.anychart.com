@@ -45,7 +45,7 @@ var data = anychart.data.set([
     ]);
 ```
 
-First two values are the longitude and latitude
+First two values are the longitude and latitude of the start point and the second pair of values are responsible for the end point coordinates.
 
 That's how a Connector Map with this dataset will look like:
 
@@ -180,24 +180,55 @@ Curvature parameter cannot be different for hovered and selected states, as well
 
 ### Markers
 
-Another special parameter of the connectors is their markers' position. To adjust it we use {api:anychart.core.map.series.Connector#position}**.position()**{api} method which accepts string values like "start", "end", "middle", or ratio from 0 to 1, or a percent value. This method manages each marker's position on a connector. It can be defined through the dataSet as well. Let's use both ways of defining our markers' position in the next sample.
+Another special parameter of the connectors is their markers' position. To adjust it we use {api:anychart.core.ui.MarkersFactory.Marker#position}**.position()**{api} method which accepts string calues like "start", "end", "middle", or ratio from 0 to 1, or a percent value. This method manages each marker's position on a connector. It can be defined through the dataSet as well. Let's use both ways of defining our markers' position in the next sample.
 
 ```
+	// create data set
+	var data = anychart.data.set([    
+	    {points: [50.8, -3.6, 51.1, -2.8, 50.7, -2.4, 50.8, -1.6], stroke:'red', to: "New Forest National Park", marker: {fill: "#9fa8da"}},
+	    {points: [50.8, -1.6, 51.5, -0.16], stroke:'green', to: "Stonehenge"},
+	    {points: [51.5,-0.16, 51.7, -1.29], to: "London"},
+	    {points: [51.7, -1.29, 52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
+	    {points: [53.3, -1.5, 53.4, -3.02], to: "Peak District National Park"},
+	    {points: [53.4, -3.02,54.1,-3.29], to: "Liverpool", curvature:-0.2},
+	    {points: [54.1, -3.29,54.5,-3.4, 55.2, -1.9], to: "Nunnykirk Caravan Club Site"},
+	    {points: [55.2, -1.9, 56.4, -3.5], to: "Edinburgh"},
+	    {points: [56.4, -3.5, 57.1, -2.19], stroke:'green', to: "Aberdeen", marker: {position:"end"}}
+	]);
 	// setting the marker position
+	var markers = series.markers();
+	markers.position("middle");
 	
 ```
 {sample}Maps\_Connectors\_10{sample}
 
-The anchor of the marker depends on its posiiton and its connector's curvature.
+The anchor of the marker depends on its position and its connector's curvature, though it can be adjusted. Use the {api:anychart.core.ui.MarkersFactory.Marker#anchor}**.anchor()**{api} method to set it. You will need to define a string value, chosing one from the {api:anychart.enums.Anchor}Anchor type list{api}. Look a the next sample. We have set anchors for our markers and transformed them to look more like arrows using the {api:}**.type()**{api} method. All default marker types can be found on the {api:anychart.enums.Marker}Marker Type list{api}.
 
+```
+	// setting the marker type
+	markers.type(anychart.enums.MarkerType.ARROWHEAD);                                                                            markers.size(15);
+
+	// setting the anchor
+	markers.anchor("leftCenter");
+```
+{sample}Maps\_Connectors\_11{sample}
+
+We have also changed the size of the markers, using the {api:anychart.core.ui.MarkersFactory.Marker#}**.size()**{api} method.
+
+Another way to emphasize the start and/or end points is to create a Marker series. You can find the instructions in the [Marker series tutorial](../Basic_Charts_Types/Marker_Chart).
 
 ### Labels and Tooltips
 
-Adjusting the position of labels is similar to adjusting it for the markers. We should set "start", "end", "middle", or ratio from 0 to 1, or a percent value for the {api}**.position()**{api} method.
+Adjusting the position of labels is similar to adjusting it for the markers. We should set "start", "end", "middle", or ratio from 0 to 1, or a percent value for the {api:anychart.core.ui.LabelsFactory.Label#position}**.position()**{api} method. 
 
-The anchor of the label depends on its posiiton and its connector's curvature.
+The anchor of the label depends on its posiiton and its connector's curvature, but can be adjusted as well by using the {api:anychart.core.ui.LabelsFactory.Label#anchor}**.anchor()**{api} method.
 
+Let's create a sample with labels held to some point.
 
+```
+	тут что-то пошло не так, position работает только через датасет, и то как-то коряво
+```
+{sample}Maps\_Connectors\_12{sample}
 
 
 ## Maps Usage
@@ -206,6 +237,24 @@ Let's create three different maps with connectors to understand the specifics of
 
 ### Route Map
 
+This Map type is intended to show some route that can be useful for a traveller or in any other case when we need to give the instructions about getting somewhere. 
+
+Let's create a map showing the touristic route through France.
+
+{sample}Maps\_Connectors\_13{sample}
+
 ### Flight Map
 
+This Map type can be found almost on all airlines' sites as it is used to show customers:
+1) how a plane goes over a planet during each flight;
+2) which flights to which direcions the airline provides.
+
+Let's create a sample showing 10 most popular flights from Washington.
+
+{sample}Maps\_Connectors\_14{sample}
+
 ### Areas and Landscape
+
+This Map can be used for showing some borders between countries, landscapes on topographic maps, war borders. Let's create a map representing the border separating the United States and Confederate States in the American Civil War.
+
+{sample}Maps\_Connectors\_15{sample}

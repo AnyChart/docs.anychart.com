@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+  <script src="http://cdn.anychart.com/js/develop/anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/geodata/1.1.0/countries/france/france.js"  data-export="true"></script>
+  <style>
+    html, body, #container {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/javascript">
+
+
+anychart.onDocumentReady(function() {
+
+// create data set
+var data = anychart.data.set([    
+    {points: [48.50, 2.20, 48.8, 2.13], from: "Paris", to: "Versailles", marker: {fill: "#9fa8da"}},
+    {points: [48.8, 2.13, 47.31, 5.01], to: "Dijon"},
+    {points: [47.31, 5.01, 45.08, 3.56], to: "Beaune", curvature: -0.5},
+    {points: [45.08, 3.56, 46.95, 4.3], to: "Autun"},
+    {points: [46.95, 4.3, 47.4, 3.73], to: "Vezelay"},
+    {points: [47.4, 3.73, 47.8, 3.8], to: "Chablis", label: {position: "rightTop"}},
+    {points: [47.8, 3.8, 48.50, 2.20], to: "Paris"},
+    {points: [48.50, 2.20, 49.4, 1.08], to: "Rouen, Normady capital", marker: {position:"end"}},
+    {points: [49.4, 1.08, 49.18, -0.35], to: "Caen", marker: {position:"end"}},
+    {points: [49.18, -0.35, 49.2, -0.7], to: "Bayeux", marker: {position:"end"}},
+    {points: [49.2, -0.7, 48.6, -1.5], to: "Mont Saint-Michel", label: {position: "rightTop", offSetX: 30}},
+    ]);
+// create map chart
+var map = anychart.map()
+
+//create bubble series
+var series = map.connector(data);
+
+// changing the curvature of the series
+series.curvature(0.3);
+
+// changing the startSize and endSize of the connectors
+series.startSize(0);
+series.endSize(0);
+
+// setting colors for hovered and selected
+series.hoverFill("black");
+series.selectFill("red");                                                                       
+series.hoverStroke("black");
+series.selectStroke("red");
+
+// setting the marker position
+var markers = series.markers();
+markers.position("middle");
+
+// setting the marker type
+markers.type(anychart.enums.MarkerType.ARROWHEAD);
+markers.size(7);
+
+// setting the anchor for the markers
+markers.anchor("leftCenter");
+
+// setting the labels
+var labels = series.labels();
+labels.enabled(true);
+//labels.posiion(0.8);
+
+// formatting the labels
+labels.textFormatter("To {%to}");
+
+// set geodata using http://cdn.anychart.com/geodata/1.0.0/countries/australia/australia.js
+map.geoData(anychart.maps['france']);
+
+//set series geo id field settings
+series.geoIdField("code_hasc");
+series.markers({fill: '#1976d2', stroke: '2 #E1E1E1'});
+
+// name of the chart
+map.title("A trip through France: Burgundy and Normandy");
+
+// set container id for the chart
+map.container('container');
+
+// initiate chart drawing
+map.draw();
+});
+    
+    </script>
+</body>
+</html>
