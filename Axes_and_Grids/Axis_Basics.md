@@ -219,7 +219,7 @@ Either grids and minor grids can be placed vertically or horizontally on the cha
 
 In such case the grid will be bound to this axis and change its orientation and placement according to axis orientation and placement, as it is shown in the sample below: 
 
-{sample}AGST\_Axes\_Basic\_14{sample}
+{sample}AGST\_Axes\_Basic\_11{sample}
 
 Alternatively, you can control grid using {api:anychart.grids.Linear#layout}**layout()**{api} method and {api:anychart.grids.Linear#scale}**scale()**{api} methods. This can be done like shown below and is used in dashboards and charts with complex configurations:
 
@@ -229,8 +229,6 @@ Alternatively, you can control grid using {api:anychart.grids.Linear#layout}**la
   grid.layout(chart.xScale());
 
 ```
-
-{sample}AGST\_Axes\_Basic\_11{sample}
 
 As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts_Types/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these charts you can use {api:anychart.grids.Radar#layout}**layout("circuit")**{api} to define circular layout or {api:anychart.grids.Polar#layout}**layout("radial")**{api} to enable radial grid layout. 
 
