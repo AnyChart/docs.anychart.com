@@ -9,8 +9,7 @@
 
   var chart = anychart.scatterChart();
 
-  chart.title().text("Springfield's Clusters\nLabels and Tooltips Settings")
-    .hAlign("center");
+  chart.title("Springfield's Clusters\nLabels and Tooltips Settings");
 
   // y scale settings
   chart.yScale()
@@ -20,11 +19,9 @@
       .interval(50);
 
   // adjust y axis labels representation
-  chart.yAxis().labels().textFormatter(function(){
-    return this.value + "%"
-  });
+  chart.yAxis().labels().textFormatter("{%Value}%");
 
-  chart.yAxis().title().text("Job Growth");
+  chart.yAxis().title("Job Growth");
 
   // x scale settings
   chart.xScale()
@@ -34,11 +31,9 @@
       .interval(10000);
 
   // adjust x axis labels representation
-  chart.xAxis().labels().textFormatter(function(){
-    return "$" + this.value / 1000 + ",000"
-  });
+  chart.xAxis().labels().textFormatter("${%Value}");
 
-  chart.xAxis().title().text("Wages");
+  chart.xAxis().title("Wages");
 
   // data for chart
   var data = anychart.data.set([
@@ -53,6 +48,9 @@
   // data for line series
   var bubble = chart.bubble(data);
 
+  bubble.name("Cluster");
+
+
   // set labels and adjust visualization
   bubble.fill("DodgerBlue")
     .hoverFill("DodgerBlue")
@@ -66,21 +64,21 @@
       .fontColor(anychart.color.darken("DodgerBlue"))
       .fontSize(12)
       .fontWeight(400)
-      .textFormatter(function(){
-        return view.get(
-          this.index,           // index of a current point is used to get row with point's data
-          "name"                // field to display
-        );
-      });
+      .textFormatter("{%Name}");
 
   // set series size
   chart.minBubbleSize(10);
   chart.maxBubbleSize(30);
 
   // set tooltips
-  bubble.tooltip().textFormatter(function(){
-    return view.get(this.index, "name") + "\nWages: $" + this.x / 1000 + ",000.00" + "\nJob Growth: " + this.value;
-  });
+  bubble.tooltip().textFormatter("{%Name}\nWages: ${%x}\nJob Growth: {%Value}");
+
+  // create major and minor grids and bind them to X and Y axes
+  var y_grid = chart.grid(0);
+  y_grid.axis(chart.yAxis());
+
+  var x_grid = chart.grid(1);
+  x_grid.axis(chart.xAxis());
 
   chart.container("container").draw();
 });</script>
