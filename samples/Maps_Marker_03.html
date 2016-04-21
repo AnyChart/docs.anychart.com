@@ -1,0 +1,51 @@
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="http://cdn.anychart.com/js/develop/anychart-bundle.min.js"></script>
+  <script src="http://cdn.anychart.com/geodata/1.1.0/countries/australia/australia.js" data-export="true"></script>
+  <script x-export="chart">
+anychart.onDocumentReady(function () {
+
+    // create the dataset of points that are defined by the region id
+    var dataSet_id = anychart.data.set([
+        {"id": "AU.NS", "farms": 240},
+        {"id": "AU.NT", "farms": 202},
+        {"id": "AU.WA", "farms": 193},
+        {"id": "AU.SA", "farms": 196},
+        {"id": "AU.VI", "farms": 48},
+        {"id": "AU.TS", "farms": 13},
+        {"id": "AU.QL", "farms": 136}
+    ]);
+
+    australiaMap = anychart.map();
+    australiaMap.geoData(anychart.maps.australia);
+
+    // Creates the marker series
+    var series_id = australiaMap.marker(dataSet_id);
+
+    //format the labels of the id-defined series
+    series_id.labels().textFormatter(function(e){
+      return e.name;
+    });
+
+    series_id.tooltip().textFormatter("Id: {%id} \nSheep farms: {%farms}");
+
+    // hovered and selected labels
+    series_id.hoverLabels().fontColor("black");
+    series_id.selectLabels().fontColor("red");
+
+    australiaMap.title("Marker series on a map");
+    australiaMap.interactivity().mouseWheel(false);
+    australiaMap.container("container");
+    australiaMap.draw();
+});
+    </script>
+
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

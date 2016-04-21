@@ -8,6 +8,7 @@
   * [Ordinal](#ordinal)
   * [Date Time](#date_time)
 * [Stack Mode](#stack_mode)
+  * [Clustered](#clustered)
 * [Minimum and Maximum](#minimum_and_maximum) 
 * [Soft Minimum and Soft Maximum](#soft_minimum_and_soft_maximum) 
 * [Stick to Zero](#stick_to_zero)
@@ -116,6 +117,23 @@ To change scale mode you need to set {api:anychart.enums.ScaleStackMode}**stackM
 In the sample below stacked and percent stacked scales are demonstrated on the same data sets:
 
 {sample}AGST\_Scales\_05{sample}
+
+### Clustered
+
+For stacked charts with multiple series it is possible to divide stacked series into groups. The groups can be created by using a new y scale for each group. New scale should be used as a parameter of {api:anychart.core.cartesian.series.ContinuousBase#yScale}**.yScale()**{api} method for each series in the group:
+
+```
+  var newScale = anychart.scales.linear()
+
+  var series = chart.column(data);
+  series.yScale(newScale);
+```
+
+Here is a sample of clustered series groups in a stacked modes:
+
+{sample}AGST\_Scales\_12{sample}
+
+**Note**: You can find more accurate sample with information on scales' sync in [Stacked Bar-Column Charts](../Basic_Charts_Types/Stacked_Bar-Column_Charts#clustered_charts) and [Percent Stacked Bar-Column Charts](../Basic_Charts_Types/Percent_Stacked_Bar-Column_Charts#clustered_charts) articles.
 
 ## Minimum and Maximum
 

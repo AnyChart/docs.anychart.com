@@ -161,7 +161,7 @@ Relative Strength Index is calculated as follows:
 	<li>Upward change (U) or downward change (D) sequences are calculated:<br>
 <img src="http://static.anychart.com/images/technical_indicators/rsi-u-d.png"/></li>
 	<li>Then two averages are calculated:<br>
-      <img src="http://static.anychart.com/images/technical_indicators/rsi-mau.png"/><br>
+<img src="http://static.anychart.com/images/technical_indicators/rsi-mau.png"/><br>
 <img src="http://static.anychart.com/images/technical_indicators/rsi-mad.png"/></li>
 	<li>And final RSI formula is :<br>
 <img src="http://static.anychart.com/images/technical_indicators/rsi-rsi.png"></li>

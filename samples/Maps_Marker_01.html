@@ -1,0 +1,43 @@
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="http://cdn.anychart.com/js/develop/anychart-bundle.min.js"></script>
+  <script src="http://cdn.anychart.com/geodata/1.1.0/countries/australia/australia.js" data-export="true"></script>
+  <script x-export="chart">
+anychart.onDocumentReady(function () {
+
+    // create the dataset of points that are defined by latitude and longtitude values
+    var dataSet_lat_long = anychart.data.set([
+        {lat: -25.75, long: 122.18},
+        {lat: -18.50, long: 135.24},
+        {lat: -23.12, long: 148.62},
+        {lat: -17.89, long: 145.09},
+        {lat: -33.28, long: 135.58},
+        {lat: -31.21, long: 116.44},
+        {lat: -32.26, long: 151.44},
+        {lat: -25.63, long: 152.37}
+    ]);
+
+    australiaMap = anychart.map();
+    australiaMap.geoData(anychart.maps.australia);
+
+    // Creates the marker series
+    var series_lat_long = australiaMap.marker(dataSet_lat_long);
+
+    series_lat_long.tooltip({title: false, separator: false});
+
+    australiaMap.title("Marker series on a map");
+    australiaMap.interactivity().mouseWheel(false);
+    australiaMap.container("container");
+    australiaMap.draw();
+});
+    </script>
+
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

@@ -1,6 +1,5 @@
 #Timeline
 
-
 * [Overview](#overview)
  * [Resource Gantt Chart](#resource_gantt_chart)
  * [Project Gantt Chart](#project_gantt_chart)
@@ -20,7 +19,6 @@ This illustration highlights almost all major resource timeline elements, and th
 <img width="700" src ="http://static.anychart.com/images/resource_timeline.jpg" />
 
 You can look up the [Resource Chart](Resource_Chart) article to know more about managing Gantt Charts of this type.
-
 
 ### Project Gantt Chart
 This illustration highlights almost all major project timeline elements, and this tutorial will describe how each element is configured:
@@ -49,6 +47,7 @@ First of all, let's create 2 line markers: one showing the current date and seco
 	tl.lineMarker(0).value(anychart.enums.GanttDateTimeMarkers.CURRENT);
 	tl.lineMarker(1).value(now + 5*day);
 ```
+
 {sample :width 825 :height 230 }GANTT\_Timeline\_01{sample}
 
 As you see, we can define some parameters of each linemarker such as color, dashes or thickness using {api:anychart.axisMarkers.Line#stroke}**.stroke()**{api} method. It is used absolutely the same way as any other line settings with the
@@ -63,43 +62,37 @@ Now, look at the sample with a textMarker showing the planned finish date and a 
 	tl.rangeMarker(0).from(Date.UTC(2016, 0, 1)).to(anychart.enums.GanttDateTimeMarkers.END);
 	tl.rangeMarker(1).from(now - 7*day).to(anychart.enums.GanttDateTimeMarkers.CURRENT);
 ```
+
 {sample :width 825 :height 300 }GANTT\_Timeline\_02{sample}
 
 You might have noticed, that we used values of enumerated type in those samples above as a point in time. There is a list of enums that we can use to place the markers. Let's look at them.
 
-
 ### Enums
 
-Enum is e keywords used to declare an enumeration. Usually it is best to define an enum directly within a namespace so that all classes in the namespace can access it with equal convenience.
+The following Enums can be used to make timeling configuration easier:
 
-<table width="700" class="dtTABLE">
+<table class="dtTABLE">
 <tbody>
 <tr>
-<th width="50"><b>#</b></th>
-<th width="325"><b>Enum</b></th>
-<th width="325"><b>String value</b></th>
-<th width="325"><b>Means</b></th>
+<th><b>Enum</b></th>
+<th><b>String value</b></th>
+<th><b>Value returned</b></th>
 </tr>
 <tr>
-<td>1</td>
 <td>anychart.enums.GanttDateTimeMarkers.START</td>
 <td>"start"</td>
-<td>The first time point in the Gantt diagram timeline</td>
+<td>The first time point in the Gantt diagram timeline.</td>
 <tr>
-<td>2</td>
 <td>anychart.enums.GanttDateTimeMarkers.CURRENT</td>
 <td>"current"</td>
-<td>The current time point in the Gantt diagram timeline</td>
+<td>The current time point in the Gantt diagram timeline.</td>
 </tr>
-<td>3</td>
 <td>anychart.enums.GanttDateTimeMarkers.END</td>
 <td>"end"</td>
-<td>The last time point in the Gantt diagram timeline</td>
+<td>The last time point in the Gantt diagram timeline.</td>
 </tr>
 </tbody>
 </table>
-
-
 
 ### Special Features
 
@@ -107,14 +100,13 @@ Due to unique organization of a Gantt diagram, there are some special features t
 
 * Any type of Gantt diagram will return "false" for {api:anychart.axisMarkers.Line#isHorizontal}**.isHorizontal()**{api} method, because markers in Gantts can be only vertical.
 * The **scale** and **layout** methods will not work here, only "dateTime" scale and "vertical" layout are available in Gantt Chart.
-* There are three special values for setting to the text markers' {api:anychart.core.axisMarkers.GanttText#value}**.value()**{api} method: "start" and "end" to the range markers' {api:anychart.core.axisMarkers.GanttRange#from}**.from()**{api} and {api/anychart.core.axisMarkers.GanttRange#to}**.to()**{api}. The "value" returns the current date, "start" - the start date of the gantt chart timeline and "end" returns the end date of the whole Gantt diagram.
-
+* There are three special values for setting to the text markers' {api:anychart.core.axisMarkers.GanttText#value}**.value()**{api} method: "start" and "end" to the range markers' {api:anychart.core.axisMarkers.GanttRange#from}**.from()**{api} and {api:anychart.core.axisMarkers.GanttRange#to}**.to()**{api}. The "value" returns the current date, "start" - the start date of the gantt chart timeline and "end" returns the end date of the whole Gantt diagram.
 
 ## Visualisation
 
 Despite being quite different in usage and purposes, markers behave identically when it comes to coloring, positioning and shaping them. We use {api:anychart.core.axisMarkers.GanttRange#fill}**.fill()**{api} method to fill a rangeMarker with a color, {api:anychart.core.axisMarkers.GanttRange#stroke}**.stroke()**{api} for stroking the markers; for text markers we use standard markers as well. 
 
-We should format the objects transmitted to these methods as usual. 
+We should format the objects passed to these methods as usual. 
 
 Let's create a sample with adjusted marker colors and text using those methods menthioned above:
 
@@ -266,12 +258,9 @@ Below you can find a sample of a Resource Gantt Chart where we set the rows' col
 	{"id": "1_1", "start": now - 10*day, "end": now + 4*day, "stroke": "#B8AA96", "fill": {"angle": 90, "keys": [{"color": "#CFC0A9", "position": 0}, {"color": "#E6D5BC", "position": 0.38}, {"color": "#E8D9C3", "position": 1}]}},
 	{"id": "1_2", "start": now + 20*day, "end": now + 28*day, "stroke": "#B8AA96", "fill": {"angle": 90, "keys": [{"color": "#CFC0A9", "position": 0}, {"color": #E6D5BC", "position": 0.38}, {"color": "#E8D9C3", "position": 1}]}}]
 	}
-
-
 ```
 
 {sample :width 825 :height 230 }GANTT\_Timeline\_04{sample}
-
 
 Now, let's look at the Project Gantt Chart with parameters adjusted the same way. Here we made the milestones using {api:anychart.core.ui.Timeline#milestoneFill}**.milestoneFill()**{api}, {api:anychart.core.ui.Timeline#milestoneStroke}**.milestoneStroke()**{api} and connnectors (with {api:anychart.core.ui.Timeline#progressFill}**.connectorFill()**{api} and {api:anychart.core.ui.Timeline#progressStroke}**.connectorStroke()**{api} methods) of the custom colors, as well as some of the data points, using the dataset.
 

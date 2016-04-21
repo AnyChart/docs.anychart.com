@@ -7,6 +7,9 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
+  // create a stage for two charts
+  var stage = anychart.graphics.create("container",600,800);
+
   // setting data
   var data = anychart.data.set([
     ["January", 200, 180],
@@ -27,21 +30,44 @@
   var Sales2003 = data.mapAs({x: [0], value: [1]});
   var Sales2004 = data.mapAs({x: [0], value: [2]});
 
-  var chart = anychart.column();
-
-  chart.title("Stagger Labels");
+  // create a chart
+  var chart_1 = anychart.column();
+  
+  // set chart title
+  chart_1.title("Adaptive Stagger Labels");
 
   // series data
-  chart.column(Sales2003);
-  chart.column(Sales2004);
+  chart_1.column(Sales2003);
+  chart_1.column(Sales2004);
 
-  // adjusting axis mode
-  var xAxis = chart.xAxis();
-  xAxis.staggerMode(true);
-  xAxis.staggerLines(2);
+  // enables stagger mode
+  chart_1.xAxis().staggerMode(true);
+  // set the number of maximum lines for labels to stagger 
+  // if chart is able to fit labels without staggering or staggering
+  // in 2 or 3 lines - it will do so. It will not go over 4 lines:
+  chart_1.xAxis().staggerMaxLines(4);
+  
+    // create a chart
+  var chart_2 = anychart.column();
+  
+  // set chart title
+  chart_2.title("Fixed Stagger Labels");
 
-  chart.container("container");
-  chart.draw();
+  // series data
+  chart_2.column(Sales2003);
+  chart_2.column(Sales2004);
+
+  // enables stagger mode
+  chart_2.xAxis().staggerMode(true);
+  // set the number of lines for labels to stagger 
+  chart_2.xAxis().staggerLines(3);
+  
+  // place charts on the stage
+  chart_1.bounds(0, 0, "100%", "50%");
+  chart_1.container(stage).draw();
+  
+  chart_2.bounds(0, "50%", "100%", "50%");
+  chart_2.container(stage).draw();
 });</script>
 </head>
 <body>
