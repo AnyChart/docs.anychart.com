@@ -25,6 +25,13 @@
 <body>
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
 <script>anychart.onDocumentReady(function() {
+
+    // create treemap chart
+    chart = anychart.treeMap(data);
+
+    // tune depth
+    chart.maxDepth(3);
+
     var rawData = [
         {name: 'Eurasia', header: null,
             children:[
@@ -109,19 +116,13 @@
                 ]}
              ]}
     ];
+
     var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
 
-    chart = anychart.treeMap(data);
+    // set data
+    chart.data(data);
 
-    // headers settings
-    chart.headers().fontColor("red");
-    chart.headers().fontSize(14);
-    chart.headers().fontWeight('bold');
-    chart.hoverHeaders().fontColor("black");
-
-    chart.tooltip().titleFormatter("{%name}");
-    chart.tooltip().textFormatter("Area: {%Value} square km");
-
+    // display chart
     chart.container('container');
     chart.draw();
     });
