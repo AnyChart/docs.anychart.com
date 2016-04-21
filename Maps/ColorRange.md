@@ -19,9 +19,9 @@ ColorRange is a tool that is necessary when we need to identify the value that e
 or like a number of colored boxes, each presenting a range of values.
  
 To create a colorrange, use the {api:anychart.charts.Map#colorRange}**.colorRange()**{api} function. There are a lot of parameters might be adjusted, such as orientation 
-(to change it use the {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} function), size of the color box (use {api:}**.colorLineSize()**{api}) or alignment ({api:anychart.graphics.vector.Image#align}**.align()**{api} in this case). You can find more about visual settings in the end of this article.
+(to change it use the {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} function), size of the color box (use {api:anychart.core.ui.ColorRange#colorLineSize}**.colorLineSize()**{api}) or alignment ({api:anychart.graphics.vector.Image#align}**.align()**{api} in this case). You can find more about visual settings in the end of this article.
 
-However, first of all we need to adjust the map colors and its ColorScale, because the ColorRange type and appearance depend on those settings. Read the article about [ColorScale](../../Map_Scales) to know, how to set and adjust it according to your needs.
+However, first of all we need to adjust the map colors and its ColorScale, because the ColorRange type and appearance depend on those settings. Read the article about [ColorScale](Scales) to know, how to set and adjust it according to your needs.
 
 The first step of adjusting the colors is to set the series and data correctly. Let's make an example with a Choropleth Series Map. Look at the code below.
 
@@ -85,7 +85,7 @@ There are some visual preferences of a ColorRange that might be set different fr
 
 ### Orientation
 
-A simple function {api:}**.orientation()**{api} is used for the changing the position. An argument should be a string with one of the following values: 'right', 'left', 'bottom' or 'top'.
+A simple function {api:anychart.core.ui.ColorRange#orientation}**.orientation()**{api} is used for the changing the position. An argument should be a string with one of the following values: 'right', 'left', 'bottom' or 'top'.
 
 ```
 	// put the colorRange to the right from the map
@@ -96,7 +96,7 @@ A simple function {api:}**.orientation()**{api} is used for the changing the pos
 
 ### Length
 
-The ColorRange length adjusting is quite usual: as for any other components, just add the **.length()** method to the colorRange.
+The ColorRange length adjusting is quite usual: as for any other components, just add the {api:anychart.core.ui.ColorRange#length}**.length()**{api} method to the colorRange.
 
 ```
 	// set the colorRange length
@@ -132,7 +132,7 @@ As you can see, the usage of this method with ColorRange is the same as in simpl
 
 ### Stroke 
 
-To stroke the ColorRange, use the **.stroke()** method. We have already done it before - in the sample with a Bi-polar progression (Ordinal Scale). 
+To stroke the ColorRange, use the {api:anychart.core.ui.ColorRange#stroke}**.stroke()**{api} method. We have already done it before - in the sample with a Bi-polar progression (Ordinal Scale). 
 
 ```
 	// create, enable and stroke the colorRange
