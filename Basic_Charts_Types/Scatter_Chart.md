@@ -252,12 +252,7 @@ If you want to configure data labels and tooltips for all series - you should us
 
 ```
   // set labels
-  chart.bubble(data).labels().textFormatter(function(){
-    return view.get(
-      this.index,           // index of a current point is used to get row with point’s data
-      'name'                // field to display
-    );
-  });
+  chart.bubble(data).labels().textFormatter("{%Name}");
 ```
 
 {sample}BCT\_ScatterChart\_08{sample}
