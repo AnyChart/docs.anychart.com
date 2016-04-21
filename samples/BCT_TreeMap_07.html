@@ -25,7 +25,6 @@
 <body>
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
 <script>
-    var chart;
     anychart.onDocumentReady(function() {
         var rawData = [
         {name: 'Eurasia',
@@ -49,9 +48,7 @@
                         {name: "Israel", value: 20770, capital: 'Jerusalem'},
                         {name: "Armenia", value: 29743, capital: 'Yerevan'},
                         {name: "Azerbaijan", value: 86600, capital: 'Baku'},
-                        {name: "Bahrain", value: 750, capital: 'Manama'},
-                        
-                        
+                        {name: "Bahrain", value: 750, capital: 'Manama'},                        
                     ]},
                     {name: "Southern Asia", children:[
                         {name:"India", value: 3287263, capital: "New Delhi"},
@@ -111,28 +108,20 @@
                         ]},                        
                     ]}
                 ]}
-             ]},
-    anychart.enums.TreeFillingMethod.AS_TREE // data type settings
-    ];
+             ]}];
+
         var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
+
         chart = anychart.treeMap(data);
 
         // headers settings
-        chart.headers().fontColor("red");
-        chart.headers().fontSize(14);
-        chart.headers().fontWeight('bold');
-        chart.hoverHeaders().fontColor("purple");
         chart.tooltip().titleFormatter("{%name}");
         chart.tooltip().textFormatter("Area: {%Value} square km");
-
-        // setting the maximum levels depth
-        chart.maxDepth(1);
         
         // markers
         chart.hoverMarkers(false);
-        chart.hoverMarkers({size: 10, fill: "#80CBC4", type: "pentagon"});
+        chart.hoverMarkers({size: 10, fill: "Gold", type: "star5"});
 
-        chart.hoverStroke('black');
         chart.container('container');
         chart.draw();
     });

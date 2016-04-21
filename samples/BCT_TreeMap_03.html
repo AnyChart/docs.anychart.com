@@ -24,9 +24,7 @@
 </head>
 <body>
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-<script>
-    var chart;
-    anychart.onDocumentReady(function() {
+<script>anychart.onDocumentReady(function() {
         var rawData = [
         {name: 'Eurasia',
             children:[
@@ -50,8 +48,6 @@
                         {name: "Armenia", value: 29743, capital: 'Yerevan'},
                         {name: "Azerbaijan", value: 86600, capital: 'Baku'},
                         {name: "Bahrain", value: 750, capital: 'Manama'},
-                        
-                        
                     ]},
                     {name: "Southern Asia", children:[
                         {name:"India", value: 3287263, capital: "New Delhi"},
@@ -114,23 +110,22 @@
              ]},
     anychart.enums.TreeFillingMethod.AS_TREE // data type settings
     ];
-        var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
+    var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
 
-        chart = anychart.treeMap(data);
-        
-        chart.headers().textFormatter("{%name}");
-        chart.labels().textFormatter("{%name}");
-        chart.tooltip().titleFormatter("{%name}");
-        chart.tooltip().textFormatter("Area: {%Value} square km");
+    chart = anychart.treeMap(data);
+    
+    chart.headers().textFormatter("{%name}");
+    chart.labels().textFormatter("{%name}");
+    chart.tooltip().titleFormatter("{%name}");
+    chart.tooltip().textFormatter("Area: {%Value} square km");
 
-        chart.title("Increasing the number of levels shown to 3");
-        // setting the maximum levels depth
-        chart.maxDepth(3);
+    chart.title("Increasing the number of levels shown (maxDepth) to 3");
+    // setting the maximum levels depth
+    chart.maxDepth(3);
 
-        chart.hoverStroke('black');
-        chart.container('container');
-        chart.draw();
-    });
+    chart.container('container');
+    chart.draw();
+});
 </script>
 
 </body>

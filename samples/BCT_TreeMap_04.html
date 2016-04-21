@@ -24,9 +24,7 @@
 </head>
 <body>
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-<script>
-    var chart;
-    anychart.onDocumentReady(function() {
+<script>anychart.onDocumentReady(function() {
         var rawData = [
         {name: 'Eurasia',
             children:[
@@ -111,18 +109,17 @@
                         ]},                        
                     ]}
                 ]}
-             ]},
-    anychart.enums.TreeFillingMethod.AS_TREE // data type settings
-    ];
+             ]}
+        ];
         var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
 
         chart = anychart.treeMap(data);
 
         // headers settings
-        chart.headers().fontColor("red");
+        chart.headers().fontColor("black");
         chart.headers().fontSize(14);
         chart.headers().fontWeight('bold');
-        chart.hoverHeaders().fontColor("purple");
+        chart.hoverHeaders().fontColor("LightCoral");
         chart.headers().textFormatter("{%name}");
 
         chart.labels().textFormatter("{%name}");
@@ -135,8 +132,7 @@
         chart.hoverStroke('black');
         chart.container('container');
         chart.draw();
-    });
-</script>
+});</script>
 
 </body>
 </html>
