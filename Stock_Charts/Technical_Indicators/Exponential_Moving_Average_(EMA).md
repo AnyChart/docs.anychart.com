@@ -11,7 +11,7 @@ An exponential moving average (EMA), sometimes also called an exponentially weig
 
 AnyChart Stock allows you to add EMA with desired period to any of your charts.
 
-Mathematical description of the indicator please see at: [Mathematical Description of Technical Indicators](Mathematical_Description).
+Mathematical description of the indicator: [Exponential Moving Average (EMA) Mathematical Description](Mathematical_Description).
 
 ## Adding indicator
 
@@ -35,7 +35,6 @@ var plot = chart.plot(0);
 
 // create EMA indicators with period 20
 var ema20 = plot.sma(mapping, 20).series();
-ema20.name('EMA(20)');
 ema20.stroke('#bf360c');
 ```
 
@@ -58,12 +57,10 @@ Indicator visualization depends on the series you chose to display it with, here
 ```
 // create EMA indicator with period 20 and show as line on the first plot
 var ema20 = plot_0.ema(mapping, 20).series();
-ema20.name('EMA(20)');
 ema20.stroke('#bf360c');
 
 // create EMA indicator with period 50 and show as column on the second plot
 var ema50 = plot_1.ema(mapping, 50, "column").series();
-ema50.name('EMA(50)');
 ema50.fill('#ff6d00');
 ```
 

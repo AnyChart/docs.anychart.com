@@ -11,7 +11,7 @@ The Relative Strength Index (RSI) is a financial technical analysis momentum osc
 
 AnyChart Stock allows you to add RSI with desired period to any of your charts.
 
-Mathematical description of the indicator please see at: [Mathematical Description of Technical Indicators](Mathematical_Description).
+Mathematical description of the indicator: [The Relative Strength Index (RSI) Mathematical Description](Mathematical_Description).
 
 ## Adding indicator
 
@@ -38,7 +38,6 @@ var plot_1 = chart.plot(1);
 
 // create RSI indicator with period 14
 var rsi14 = plot_1.rsi(mapping, 14).series();
-rsi14.name('RSI(14)');
 rsi14.stroke('#bf360c');
 ```
 
@@ -56,17 +55,15 @@ var rsi30 = plot.rsi(mapping, 30, "column");
 
 ## Visualization
 
-Indicator visualization depends on the series you chose to display it with, here is a sample where RSI with different parameters and settings is added to different plots:
+Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where RSI with different parameters and settings is added to different plots:
 
 ```
 // create RSI indicator with period 14 and shown as column on the second plot
 rsi14 = plot_1.rsi(mapping, 14).series();
-rsi14.name('RSI(14)');
 rsi14.stroke('#bf360c');
 
 // create RSI indicator with period 30 and shown as column on the third plot
 var rsi30 = plot_2.rsi(mapping, 30, "column").series();
-rsi30.name('RSI(30)');
 rsi30.fill('#ff6d00');
 ```
 

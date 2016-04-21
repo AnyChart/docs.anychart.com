@@ -8,13 +8,16 @@
   <script x-export="chart">anychart.onDocumentReady(function() {
 
 	// define chart type
-	var chart = anychart.bar();
+	var chart = anychart.cartesian();
 
 	// set default series type
-	chart.defaultSeriesType("bar");
+	chart.defaultSeriesType("column");
 	// create multiple series
 	chart.addSeries(data(), data(), data());
-
+	
+	// set title
+    chart.title("Add/Remove Series sample");
+    
 	// create a loop
 	var i=0;
 	while (chart.getSeriesAt(i)){

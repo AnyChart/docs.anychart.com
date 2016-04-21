@@ -9,9 +9,9 @@
 
 MACD, which stands for Moving Average Convergence / Divergence, is a technical analysis indicator created by Gerald Appel in the 1960s. It shows the difference between a fast and slow exponential moving average (EMA) of closing prices.
 
-AnyChart Stock allows you to add MFI with desired fast, slow and signal periods settings to any of your charts.
+AnyChart Stock allows you to add MACD with desired fast, slow and signal periods settings to any of your charts.
 
-Mathematical description of the indicator please see at: [Mathematical Description of Technical Indicators](Mathematical_Description).
+Mathematical description of the indicator: [Moving Average Convergence/Divergence (MACD) Mathematical Description](Mathematical_Description).
 
 ## Adding indicator
 
@@ -60,7 +60,7 @@ var macd_all_lines = plot_2.macd(mapping, 14, 28, 10, "line", "line", "line");
 
 ## Visualization
 
-Indicator visualization depends on the series you chose to display it with, here is a sample where MACD with different parameters and settings is added to different plots:
+Vizualization of an indicator depends on the type of series you display it with. Here is a sample where MACD with different parameters and settings is added to different plots:
 
 ```
 // create MACD indicator fast period of 12, slow of 26 an signal of 9

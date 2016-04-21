@@ -6,7 +6,7 @@
 * [Title](#title)
 * [Orientation](#orientation)
 * [Labels](#labels)
-* [Axis Line](#axis_line)
+* [Axis Line and Zero Line](#axis_line_and_zero_line)
 * [Tickmarks](#tickmarks)
 * [Grids](#grids)
   * [Visualization](#visualization)
@@ -15,8 +15,7 @@
 ## Overview
 
 In AnyChart axes are used to control grids, axes labels, lines and tick marks.
-  
-  
+
 * To know what scale options are available - please see: [Scale tutorial](Scales)
 * To learn how to create additional axes - [Additional axes](Additional_Axes)
 * To learn how to configure axes labels - [Axes Labels](Axes_Labels_Formatting)
@@ -35,33 +34,21 @@ If you want to control any of the axes settings - you should do that using {api:
 
 ## Title
 
-You can define a title of any axis, you can control its position and font<!-- and use keywords-->, when specifying text. Full reference of parameters can be found in Reference: {api:anychart.core.axes.Linear#title}**yAxis().title()**{api} or {api:anychart.core.axes.Linear#title}**xAxis().title()**{api}. Here is a sample titles definition:
+You can define a title of any axis, you can control its position and font, when specifying text. Full reference of parameters can be found in Reference: {api:anychart.core.axes.Linear#title}.title(){api}. Here is a sample titles definition:
 
 ```
-  var max = chart.yScale().maximum();
-  var min = chart.yScale().minimum();
-  
-  var yAxis = chart.yAxis();
-  yAxis.orientation("right");
-  
   var yTitle = chart.yAxis().title();
-  var max = chart.yScale().maximum();
-  var min = chart.yScale().minimum();
   yTitle.enabled(true);
-  yTitle.text("Y axis from " + min + " to " + max);
+  yTitle.text("Units");
   yTitle.align("bottom");
   
   var xTitle = chart.xAxis().title();
   xTitle.enabled(true);
   xTitle.text("Sample X axis name");
+  xTitle.fontWeight(400);  
 ```
 
-As you can see, we've set titles both to X and Y axis<!--and used {%DataPlotYMax} and %DataPlotYMin keywords-->.
-<!--Full reference of available keywords is available in the end of this article: Keywords reference.
-
-General formatting questions are answered in Text Formatting and Keywords section.
-
-Learn how to format keywords in Number Formatting section.-->
+As you can see, we've set titles both to X and Y axis.
 
 {sample}AGST\_Axes\_Basic\_01{sample}
 
@@ -83,11 +70,9 @@ And here is the demonstration of this feature on the Single series column chart:
 ## Labels
 
 To enable or disable axis labels you need to specify {api:anychart.core.ui.LabelsFactory#enabled}**labels().enabled()**{api} parameter of an axis. You can specify how labels should look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
-  
-  
+
 Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Formatting)
-  
-  
+    
 Look at the demonstration of possible labels display modes: "Normal" and "Stager".
 
 ```
@@ -108,20 +93,36 @@ Rotated labels:
 
 {sample}AGST\_Axes\_Basic\_04{sample}
 
+Adaptive stagger mode and with the maximum number of lines defined:
+
 ```
   // getter of x axis
   var xAxis = chart.xAxis();
-  //enables stagger mode
+  // enables stagger mode
   xAxis.staggerMode(true);
-  //set the number of lines for labels
-  xAxis.staggerLines(2);
+  // set the maximum number lines for labels to stagger 
+  // if chart is able to fit labels without staggering or staggering
+  // in 2 or 3 lines - it will do so. It will not go over 4 lines:
+  xAxis.staggerMaxLines(4);
 ```
 
-{sample}AGST\_Axes\_Basic\_05{sample}
+Stagger always mode with the fixed number of lines:
 
-## Axis Line
+```
+  // getter of x axis
+  var xAxis = chart.xAxis();
+  // enables stagger mode
+  xAxis.staggerMode(true);
+  // set the number of lines for labels to stagger 
+  xAxis.staggerLines(3);
+```
+Here is a sample of two similar charts with adaptive and fixed stagger modes enabled, you can see that the first one uses adaptive strategy and occupies two lines, the second one always uses three lines:
 
-It is possible to tune visual appearance of axis segment line and zero line. To do this you need to use 
+{sample :width 600 :height 800}AGST\_Axes\_Basic\_05{sample}
+
+## Axis Line and Zero Line
+
+It is possible to tune visual appearance of axis line and zero line. To do this you need to use 
 {api:anychart.charts.Cartesian#lineMarker}**lineMarker()**{api} method.
 
 ```
@@ -129,8 +130,7 @@ It is possible to tune visual appearance of axis segment line and zero line. To 
   line.stroke("2 red");
 ```
 
-As in any line, you can make it gradient, change opacity and thickness using {api:anychart.core.axes.Linear#stroke}**stroke()**{api} method.
-Read more about lines in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines)
+As in any line, you can make it gradient, change opacity and thickness using {api:anychart.core.axes.Linear#stroke}**stroke()**{api} method. Read more about lines in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines)
 
 {sample}AGST\_Axes\_Basic\_06{sample}
 
@@ -225,7 +225,7 @@ As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts
   var chart = anychart.radar();
   
   var grid = chart.grid();
-  grid.layout("curcuit");
+  grid.layout("circuit");
 ```
 
 Here is a sample of radar chart with circular grid:

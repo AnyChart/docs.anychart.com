@@ -24,11 +24,7 @@
         lineSeries.stroke('2px #64b5f6');
         // create SMA indicators with period 20
         var ema20 = plot.ema(mapping, 20).series();
-        ema20.name('EMA(20)');
         ema20.stroke('#bf360c');
-        // set Y Axis settings
-        var yAxis = plot.yAxis();
-        yAxis.orientation('right');
         // create scroller series with mapped data
         chart.scroller().line(mapping);
         // set container id for the chart

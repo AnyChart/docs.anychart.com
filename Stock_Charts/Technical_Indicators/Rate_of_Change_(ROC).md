@@ -11,7 +11,7 @@ Rate of change (ROC) is a simple technical analysis indicator showing the differ
 
 AnyChart Stock allows you to add ROC with desired period to any of your charts.
 
-Mathematical description of the indicator please see at: [Mathematical Description of Technical Indicators](Mathematical_Description).
+Mathematical description of the indicator: [Rate of change (ROC) Mathematical Description](Mathematical_Description).
 
 ## Adding indicator
 
@@ -38,7 +38,6 @@ var plot_1 = chart.plot(1);
 
 // create ROC indicator with period 14
 var roc14 = plot_1.roc(mapping, 14).series();
-roc14.name('ROC(14)');
 roc14.stroke('#bf360c');
 ```
 
@@ -56,17 +55,15 @@ var roc30 = plot.roc(mapping, 30, "column");
 
 ## Visualization
 
-Indicator visualization depends on the series you chose to display it with, here is a sample where ROC with different parameters and settings is added to different plots:
+Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where ROC with different parameters and settings is added to different plots:
 
 ```
 // create ROC indicator with period 14 and shown as column on the second plot
 roc14 = plot_1.roc(mapping, 14).series();
-roc14.name('ROC(14)');
 roc14.stroke('#bf360c');
 
 // create ROC indicator with period 30 and shown as column on the third plot
 var roc30 = plot_2.roc(mapping, 30, "column").series();
-roc30.name('ROC(30)');
 roc30.fill('#ff6d00');
 ```
 

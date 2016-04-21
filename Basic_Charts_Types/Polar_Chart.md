@@ -147,7 +147,7 @@ AnyChart allows to customise Axes Labels in any required way. Below there is a s
 
 ```
   // chart type
-  var chart = anychaty.polar();
+  var chart = anychart.polar();
 
   // set y axis labels position and format content
   chart.yAxis().labels().offsetX(12).textFormatter(function(){
