@@ -24,69 +24,54 @@
 </head>
 <body>
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-<script>
-    var chart;
-    anychart.onDocumentReady(function() {
-        var data = anychart.data.tree([
-            {id: 'Europe', parent: 'null'},
-            {id: 'Eastern Europe', parent: 'Europe'},
-            {id: 'Western Europe', parent: 'Europe'},
-            {id: 'Southern Europe', parent: 'Europe'},
-            {id: 'Northern Europe', parent: 'Europe'},
-            {id: 'Poland', parent: 'Eastern Europe', value: 312679},
-            {id: 'Ukraine', parent: 'Eastern Europe', value: 603628},
-            {id: 'Austria', parent: 'Western Europe', value: 83879},
-            {id: 'Germany', parent: 'Western Europe', value: 357168},
-            {id: 'France', parent: 'Western Europe', value: 643801},
-            {id: 'Malta', parent: 'Southern Europe', value: 316},
-            {id: 'Greece', parent: 'Southern Europe', value: 131957},
-            {id: 'Italy', parent: 'Southern Europe', value: 301338},
-            {id: 'Finland', parent: 'Northern Europe', value: 338424},
-            {id: 'Great Britain', parent: 'Northern Europe', value: 209331},
-            {id: 'Ireland', parent: 'Northern Europe', value: 84421},
-            {id: "Medical", parent: "Ireland"},
-            {id: "Instruments (surgery, vet, dental)", value: 4.05},                        
-            {id: "Packages medicaments", value: 20.1},                        
-            {id: "Antibiotics", value: 0.817},
-            {id: 'Scandinavia', parent: 'Northern Europe', value: 928057},
-            {id: 'Sweden', parent: 'Scandinavia', value: 450295, capital: 'Stockholm'},
-            {id: 'Norway', parent: 'Scandinavia', value: 385178, capital: 'Oslo'},
-            {id: 'Denmark', parent: 'Scandinavia', value: 42923.53, capital: 'Copenhagen'},
-             ],
+<script>anychart.onDocumentReady(function() {
+    // create treemap chart
+    chart = anychart.treeMap(data);
+
+    // disable drilldown
+    chart.listen(anychart.enums.EventType.DRILL_CHANGE, function(e) {
+        return false;
+    });
+
+    // set title
+    chart.title("2012 Export Map");
+
+    var data = anychart.data.tree([
+        {id: 'Europe', parent: 'null'},
+        {id: 'Eastern Europe', parent: 'Europe'},
+        {id: 'Western Europe', parent: 'Europe'},
+        {id: 'Southern Europe', parent: 'Europe'},
+        {id: 'Northern Europe', parent: 'Europe'},
+        {id: 'Poland', parent: 'Eastern Europe', value: 312679},
+        {id: 'Ukraine', parent: 'Eastern Europe', value: 603628},
+        {id: 'Austria', parent: 'Western Europe', value: 83879},
+        {id: 'Germany', parent: 'Western Europe', value: 357168},
+        {id: 'France', parent: 'Western Europe', value: 643801},
+        {id: 'Malta', parent: 'Southern Europe', value: 316},
+        {id: 'Greece', parent: 'Southern Europe', value: 131957},
+        {id: 'Italy', parent: 'Southern Europe', value: 301338},
+        {id: 'Finland', parent: 'Northern Europe', value: 338424},
+        {id: 'Great Britain', parent: 'Northern Europe', value: 209331},
+        {id: 'Ireland', parent: 'Northern Europe', value: 84421},
+        {id: "Medical", parent: "Ireland"},
+        {id: "Instruments (surgery, vet, dental)", value: 4.05},                        
+        {id: "Packages medicaments", value: 20.1},                        
+        {id: "Antibiotics", value: 0.817},
+        {id: 'Scandinavia', parent: 'Northern Europe', value: 928057},
+        {id: 'Sweden', parent: 'Scandinavia', value: 450295, capital: 'Stockholm'},
+        {id: 'Norway', parent: 'Scandinavia', value: 385178, capital: 'Oslo'},
+        {id: 'Denmark', parent: 'Scandinavia', value: 42923.53, capital: 'Copenhagen'},
+         ],
     anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
     );
 
-        chart = anychart.treeMap(data);
-
-        // headers settings
-        chart.headers().fontColor("red");
-        chart.headers().fontSize(14);
-        chart.headers().fontWeight('bold');
-        chart.hoverHeaders().fontColor("purple");
-        chart.headers().textFormatter("{%id}");
-
-        chart.labels().textFormatter("{%id}");
-        chart.tooltip().titleFormatter("{%id}");
-        chart.tooltip().textFormatter("Area: {%Value} square km");
-
-        // setting the maximum levels depth
-        chart.maxDepth(1);
-        
-        // markers
-        chart.hoverMarkers(false);
-        chart.hoverMarkers({size: 10, fill: "#80CBC4", type: "pentagon"});
-
-        // disable drilldown
-        chart.listen(anychart.enums.EventType.DRILL_CHANGE, function(e) {
-            return false;
-        });
-
-        chart.title("2012 Export Map");
-
-        chart.hoverStroke('black');
-        chart.container('container');
-        chart.draw();
-    });
+    // set data to chart
+    chart.data(data);
+    
+    // display chart
+    chart.container('container');
+    chart.draw();
+});
 </script>
 
 </body>

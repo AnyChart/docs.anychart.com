@@ -216,19 +216,19 @@ chart.hoverMarkers({size: 10, fill: "Gold", type: "star5"});
 
 ## Interactivity
 
-You might have already noticed that TreeMap is an interactive chart by default. "Blocks" or elements are being drilled down and up, hovered and selected. In this part we will describe working with TreeMap interactivity.
+You might have already noticed that TreeMap is an interactive chart by default. Elements are being drilled down and up, hovered and selected. In this part we will describe working with TreeMap interactivity.
 
 ### Drill Down and Drill Up
 
-The main feature and purpose of TreeMap Charts is demonstrating the hierarchy of some subjects, processes or anything else. Drill Down feature therefore becomes the most important interactive feature for this chart type. 
+The main feature and purpose of TreeMap Charts is demonstrating the hierarchy of objects, processes or anything else. Drill Down feature therefore becomes the most important interactive feature for this chart type. 
 
-When you left-click at the leaf which is a parent itself, a Drill Down will be performed for this element and you will see the next level of the tree, where the selected element is a parent. This can be performed if the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} of the TreeMap is not set in the maximum value, because in this case you will see all headers in the top rows of the TreeMap table and the demonstrated content points will belong to the lowest level.
+When you click the node which is a parent itself, a Drill Down is performed for this element and you see the next level of the tree, where element just clicked is a parent. This can be performed if the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} of the TreeMap is not set in the maximum value, because in this case you will see all headers in the top rows of the TreeMap table and the points shown belong to the lowest level.
 
-If you set the value of the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} parameter more than 1 and your data has over 3 levels of contents, you will see the headers of the nested levels in the rows under the root header row. If you click at one of those headers, its level points will be drilled down.
+If you set the value of the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} parameter more than 1 and your data has over 3 levels of content, you will see the headers of the nested levels in the rows under the root header row. If you click one of those headers, its level points will be drilled down.
 
 Also AnyChart TreeMaps work with context menu. If a content point is a parent of another level, you can drill this level down by right-clicking this content-parent point and choosing the necessary option in the context menu.
 
-To drill a chart or a level up, use headers. Click at the root header (you will be able to see it from any level but the highest if you have set the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} parameter in the right value). Anyway, if you don't see the root header, you can click at the level's parent's header - so you will go one level up. Also, you may use a context menu: right-click at one of the points of the level and choosing "Drill Up" in the context menu will bring you a level up.
+To drill a chart or a level up, use headers. Click the root header (you will be able to see it from any level but the highest if you have set the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} parameter in the right value). Anyway, if you don't see the root header, you can click at the level's parent's header - so you will go one level up. Also, you may use a context menu: right-click at one of the points of the level and choosing "Drill Up" in the context menu will bring you a level up.
 
 If necessary, it is possible to disable drill Down function. In this case we need to call for events. You can look for the [Events tutorial article](../Common_Settings/Event_Listeners) for better understanding the subject. Below you can find a way to turn down the Drill Down function.
 
@@ -243,7 +243,7 @@ chart.listen(anychart.enums.EventType.DRILL_CHANGE, function(e) {
 
 ### Select
 
-Selecting points in TreeMap Charts is another special theme. Mostly, selecting a point of a TreeMap will lead to the next level opening where this point as a header. Though, when you get to such a level of the hierarchy where some of content points or all of them have no children, you will be able to select those points. 
+Selecting points in TreeMap Charts is another special topic. Mostly, selecting a point of a TreeMap will lead to the next level opening where this point as a header. Though, when you get to such a level of the hierarchy where some of content points or all of them have no children, you will be able to select those points. 
 
 There are two ways of selecting the leaf points: first is to click at a point with the left button of your mouse, and the second is to right-click a point and choose "Select".
 
@@ -253,8 +253,7 @@ When you change some visualization setting of your charts, you make them not onl
 
 ### Labels
 
-To configure data labels use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api}. Adding attributes with values to these methods will lead to changes in visual appearance, position and format. 
-For formatting the text of the labels we use {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api}. Let's format the labels so they would show the represented value and color the labels' text in black.
+To configure data labels use {api:anychart.charts.TreeMap#labels}**.labels()**{api}. For formatting the text of the labels use {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api}. Let's format the labels so they show the represented value and color the labels' text in black.
 
 ```
 // labels
@@ -293,38 +292,31 @@ chart.colorScale(anychart.scales.ordinalColor([{less:100,color:"#FFCC99"},{from:
 
 {sample}BCT\_TreeMap\_13{sample}
 
-For more information about ColorRange and adjusting it look up the [ColorRange article](../Maps/ColorRange) and [ColorScale]() article for information about the color sca;les.
+For more information about ColorRange and adjusting it look up the [ColorRange article]() and [ColorScale]() article for information about the color scales.
 
 ### Hint Depth
 
-HintDepth is the TreeMaps feature. The value that you set for the {api:anychart.charts.TreeMap#hintDepth}**.hintDepth()**{api} method means how many levels further than those defined for {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} you want to be shown. This is different from **MaxDepth** feature: while **MaxDepth** shows several levels with their parents in the first rows of the TreeMap table, making all elements interactive, the **HintDepth** shows only the elements inside without making them interactive and without displaying their parent elements. Look at the following sample: we have set 2 in the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} parameter and 1 for {api:anychart.charts.TreeMap#hintDepth}**.hintDepth()**{api}.
+Hint Depth is the TreeMaps feature. The value that you set for the {api:anychart.charts.TreeMap#hintDepth}**.hintDepth()**{api} method means how many levels further than those defined for {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} you want to be shown. This is different from [Maximum Depth](#maximim_depth) feature: while **Maximum Depth** shows several levels with their parents in the first rows of the TreeMap table, making all elements interactive, the **Hint Depth** shows only the elements inside without making them interactive and without displaying their parent elements. Look at the following sample: we have set 2 in the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} parameter and 1 for {api:anychart.charts.TreeMap#hintDepth}**.hintDepth()**{api}.
 
 ```
 // setting the maximum levels depth
 chart.maxDepth(2);
 
 // setting the number of levels shown additionally
-chart.hintDepth(1);
+chart.hintDepth(3);
 ```
 
 {sample}BCT\_TreeMap\_11{sample}
 
-If we set the **MaxDepth** parameter in 3 while we've got 3 levels of hierarchy, using **HintDepth** will lead to no changes in visual appearance of the chart. 
-
+Note, if we set the **Maximum Depth** parameter to some value while we've got the same number of levels of hierarchy, using **Hint Depth** will lead to no changes in visual appearance of the chart. 
 
 ### Hint Opacity
 
-This setting helps to manage the TreeMap appearance when the **HintDepth** parameter is set in more than 0. The range of the {api:anychart.charts.TreeMap#hintOpacity}**.hintOpacity()**{api} parameter is from 0 to 1; the more the value is, the less transparent will be the chart (the less visible will be your additional levels). Let's leave the **MaxDepth** and **HintDepth** settings from the previous samples and set the **hintOpacity** in 0,7.
+This setting helps to manage the TreeMap appearance when the **Hint Depth** parameter is set in more than 0. The range of the {api:anychart.charts.TreeMap#hintOpacity}**.hintOpacity()**{api} parameter 0 to 1; the more the value is, the less transparent will be the chart (the less visible will be  additional levels). Here is how you set **hintOpacity** to 0,7.
 
 ```	
-// setting the maximum levels depth
-chart.maxDepth(2);
-
-// setting the number of levels shown additionally
-chart.hintDepth(1);
-
-// hintOpacity setting
-chart.hintOpacity(0.7);
+// hint opacity setting
+chart.hintOpacity(0.7);  
 ```
 
 {sample}BCT\_TreeMap\_12{sample}

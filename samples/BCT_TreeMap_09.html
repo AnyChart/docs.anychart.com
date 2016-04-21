@@ -24,9 +24,16 @@
 </head>
 <body>
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-<script>
-    var chart;
-    anychart.onDocumentReady(function() {
+<script>anychart.onDocumentReady(function() {
+
+        // create treemap chart
+        var chart = anychart.treeMap();
+
+        // labels
+        chart.labels().textFormatter("{%id}: ${%Value}B");
+        chart.labels().fontColor('black');
+
+        // data set
         var data = anychart.data.tree([       
             {id: 'Europe', parent: 'null'},
             {id: 'Eastern Europe', parent: 'Europe'},
@@ -153,35 +160,12 @@
     anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
     );
 
-        chart = anychart.treeMap(data);
+    // set data
+    chart.data(data);
 
-        // headers settings
-        chart.headers().fontColor("red");
-        chart.headers().fontSize(14);
-        chart.headers().fontWeight('bold');
-        chart.hoverHeaders().fontColor("purple");
-        chart.headers().textFormatter("{%id}");
-        
-
-        chart.labels().textFormatter("{%id}: ${%Value}B");
-        chart.tooltip().titleFormatter("{%id}");
-        chart.tooltip().textFormatter("Income from export in 2012: $ {%Value}B");
-
-        // setting the maximum levels depth
-        chart.maxDepth(1);
-        
-        // markers
-        chart.hoverMarkers(false);
-        chart.hoverMarkers({size: 10, fill: "#80CBC4", type: "pentagon"});
-
-        // labels
-        chart.labels().fontColor('black');
-
-        chart.hoverStroke('black');
-        chart.container('container');
-        chart.draw();
-    });
-</script>
-
+    // display chart
+    chart.container('container');
+    chart.draw();
+    });</script>
 </body>
 </html>
