@@ -9,12 +9,12 @@
  * [Pie](#pie)
 * [Multiple Series](#multiple_series)
  * [Multi-Series](#multi-series)
+ * [Z Distribution](#z_distribution) 
  * [Value Stacked](#value_stacked)
  * [Percent Stacked](#percent_stacked)
 * [Visualization](#visualization)
  * [Angle](#angle)
- * [Depth](#depth)
-<!-- * [Padding](#padding)-->
+ * [Aspect](#aspect)
 
 ## Overview
 
@@ -130,42 +130,55 @@ Multiple series on a single data plot can be created as easy as a single one. Th
 One of the most simplest way to create multiple series on a chart is to invoke method for creating desirable type of series for each data set you have. 
 
 ```
-  // data
-  var data = anychart.data.set([
-    ["Department Stores", 637166, 737166],
-    ["Discount Stores", 721630, 537166],
-    ["Men's/Women's Specialty Stores", 148662, 188662],
-    ["Juvenile Specialty Stores", 78662, 178662],
-    ["All other outlets", 90000, 89000]
-  ]);
+// data
+var data = anychart.data.set([
+  ["Department Stores", 637166, 737166],
+  ["Discount Stores", 721630, 537166],
+  ["Men's/Women's Specialty Stores", 148662, 188662],
+  ["Juvenile Specialty Stores", 78662, 178662],
+  ["All other outlets", 90000, 89000]
+]);
 
-  // map data for data sets
-  var Sales2003 = data.mapAs({x: [0], value: [1]});
-  var Sales2004 = data.mapAs({x: [0], value: [2]});
+// map data for data sets
+var Sales2003 = data.mapAs({x: [0], value: [1]});
+var Sales2004 = data.mapAs({x: [0], value: [2]});
 
-  // define chart type
-  var chart = anychart.bar3d();
+// define chart type
+var chart = anychart.column3d();
 
-  // set data
-  chart.bar(Sales2003);
-  chart.bar(Sales2004);
+// set data
+chart.column(Sales2003);
+chart.column(Sales2004);
 ```
 
 Here is a sample of multi-series bar chart
 
 {sample}BCT\_3d\_05{sample}
 
+### Z Distribution
+
+Common 2D chart distributes series along X axis, by default 3D multi-series charts do the same, but you can set distribution along Z axis for 3d charts using {api:anychart.charts.Cartesian3d#zDistribution}**.zDistribution()**{api} method. Use *true* parameter to enable z axis distribution and *false* for x axis distribution.
+
+```
+// Turn on Z Distribution
+chart.zDistribution(true);
+```
+
+Here is a sample of a Multi-series chart with Z Distribution enabled:
+
+{sample}BCT\_3d\_09{sample}
+
 ### Value Stacked
 
 Value stacked 3d charts are multi-series charts that display series point value upon the same point of the previous series. To enable value stacked mode you need to call {api:anychart.scales.Linear#stackMode}**.stackMode()**{api} method with **value** parameter. The {api:anychart.scales.Linear#stackMode}**.stackMode()**{api} method should be invoked for chart's y scale. Chart's y scale is controlled by {api:anychart.charts.Cartesian3d#yScale}**.yScale()**{api} method. Here is a snippet of setting value stacked mode:
 
 ```
-  // create chart 3d plot
-  var chart = anychart.area3d();
-  // getter for y scale
-  var yScale = chart.yScale();
-  // set "value" stacked mode
-  yScale.stackMode("value");
+// create chart 3d plot
+var chart = anychart.area3d();
+// getter for y scale
+var yScale = chart.yScale();
+// set "value" stacked mode
+yScale.stackMode("value");
 ```
 
 Here is a sample of 3D stacked area chart:
@@ -180,12 +193,12 @@ Percent Stacked 3d charts is quite similar to a simple 2d percent stacked chart.
 To enable percent stacked mode you have to use {api:anychart.scales.Linear#stackMode}**.stackMode()**{api} method with **percent** parameter for chart's y scale.
 
 ```
-  // create chart 3d plot
-  var chart = anychart.area3d();
-  // getter for y scale
-  var yScale = chart.yScale();
-  // set "percent" stacked mode
-  yScale.stackMode("percent");
+// create chart 3d plot
+var chart = anychart.area3d();
+// getter for y scale
+var yScale = chart.yScale();
+// set "percent" stacked mode
+yScale.stackMode("percent");
 ```
 
 Let's see, how percent stacked 3d column chart looks like:
@@ -194,57 +207,39 @@ Let's see, how percent stacked 3d column chart looks like:
 
 ## Visualization
 
-3D charts have a much more interesting appearance than a 2d charts and it requires a bit more methods to control this unusual type of charts. This section describes several methods of tuning visual appearance of a 3d plot.
+3D charts have much more interesting appearance than 2d charts and have special methods to control visualization. This section describes methods of tuning visual appearance of a 3d plot.
 
 ### Angle
 
 As far as 3d implements observing chart from different angles, it is important to tune viewing angle. Use desirable angle as a parameter for {api:anychart.charts.Cartesian3d#zAngle}**.zAngle()**{api} method to adjust it.
 
 ```
-  var chart = anychart.bar3d();
-  chart.bar(data);
+var chart = anychart.column3d();
+chart.column(data);
 
-  // decrease default angle two times
-  chart.zAngle(20);
+// change angle
+chart.zAngle(20);
 ```
 
 **Note**: {api:anychart.charts.Cartesian3d#zAngle}**.zAngle()**{api} range is limited and can't be less than 0 and greater than 90.
 
-### Depth
+### Aspect
 
-For 3 dimensional charts it might be necessary to adjust depth of the plot. Use {api:anychart.charts.Cartesian3d#zDepth}**.zDepth()**{api} method to control the depth of 3d plot.
+For 3 dimensional charts it might be necessary to adjust depth of the plot. The {api:anychart.charts.Cartesian3d#zAspect}**.zAspect()**{api} method controls depth of the 3D chart's plot.
 
 ```
-  var chart = anychart.bar3d();
-  chart.bar(data);
+var chart = anychart.column3d();
+chart.column(data);
 
-  // increase default depth four times
-  chart.zDepth(40);
-  chart.zAngle(20);
+// increase default depth four times
+chart.zAspect(150);
+chart.zAngle(20);
 ```
 
 Let's use these settings and create 3d chart with 40px depth and adjusted angle of view:
 
 {sample}BCT\_3d\_08{sample}
 
-<!--
-### Padding
+**Note**: the plot's depth can be set in pixels using a numeric parameter for {api:anychart.charts.Cartesian3d#zAspect}**.zAspect()**{api} method or in percentage depending on the size of the least points side.
 
-If you want to change the way series are placed on the 3d chart's plot and place points of one series behind the points of another into the depth of the plot you need to use {api:anychart.charts.Cartesian3d#zPadding}**.zPadding()**{api} method. {api:anychart.charts.Cartesian3d#zPadding}**.zPadding()**{api} method uses number as a parameter and controls the space between the series.
 
-```
-  var chart = anychart.column3d();
-  chart.column(data1);
-  chart.column(data2);
-  chart.column(data3);
-
-  chart.zPadding(5);
-```
-
-**Note**: If you pass **false** to {api:anychart.charts.Cartesian3d#zPadding}**.zPadding()**{api} each point of the series will be placed to the right from the points of the previous series.
-
-Let's take a look at the 3d chart that have 5 pixel {api:anychart.charts.Cartesian3d#zPadding}**.zPadding()**{api} and 60 pixels {api:anychart.charts.Cartesian3d#zDepth}**.zDepth()**{api}.
-
-{sample}BCT\_3d\_09{sample}
-
--->

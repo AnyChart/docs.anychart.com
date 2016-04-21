@@ -20,10 +20,10 @@
 	var dataSet3 = data.mapAs({x: [0], value: [3]});
 
 	// set chart type
-	var chart = anychart.bar3d();
+	var chart = anychart.column3d();
 
 	// setting title
-	chart.title("Multi-Series Bar chart");
+	chart.title("Multi-Series 3D Column chart");
 
     // enabled grids
     chart.grid(0).enabled(true);
@@ -36,11 +36,11 @@
 	yAxis.title("Sales");
 
 	// create series
-	var series1 = chart.bar(dataSet1);
+	var series1 = chart.column(dataSet1);
 	series1.name("Sales 2009");
-	var series2 = chart.bar(dataSet2);
+	var series2 = chart.column(dataSet2);
 	series2.name("Sales 2010");
-	var series3 = chart.bar(dataSet3);
+	var series3 = chart.column(dataSet3);
 	series3.name("Sales 2011");
 
 	// draw chart

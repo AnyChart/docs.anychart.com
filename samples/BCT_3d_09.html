@@ -26,14 +26,10 @@
 	chart.column(dataSet2);
 	chart.column(dataSet3);
 
-	chart.title("Visualization");
-	chart.zPadding(5);
-	chart.zAspect(40);
-	chart.zAngle(60);
+	chart.title("Z Axis Distribution Mode");
 
-    // enabled grids
-    chart.grid(0).enabled(true);
-    chart.grid(1).enabled(true).layout("vertical");		
+	// Turn on Z Distribution
+	chart.zDistribution(true);
 
 	// draw
 	chart.container("container");
