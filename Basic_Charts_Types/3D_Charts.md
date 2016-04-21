@@ -13,7 +13,7 @@
  * [Percent Stacked](#percent_stacked)
 * [Visualization](#visualization)
  * [Angle](#angle)
- * [Depth](#depth)
+ * [Distribution](#distribution)
 <!-- * [Padding](#padding)-->
 
 ## Overview
@@ -221,13 +221,15 @@ For 3 dimensional charts it might be necessary to adjust depth of the plot. The 
   chart.bar(data);
 
   // increase default depth four times
-  chart.zDepth(40);
+  chart.zAspect(40);
   chart.zAngle(20);
 ```
 
 Let's use these settings and create 3d chart with 40px depth and adjusted angle of view:
 
 {sample}BCT\_3d\_08{sample}
+
+**Note**: the plot's depth can be set in pixels using a numeric parameter for {api:anychart.charts.Cartesian3d#zAspect}**.zAspect()**{api} method or in percentage depending on the size of the least points side.
 
 <!--
 ### Padding
