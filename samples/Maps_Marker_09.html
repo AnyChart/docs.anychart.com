@@ -49,19 +49,9 @@ anychart.onDocumentReady(function () {
     series_citrus.tooltip({title: false, separator: false});
     series_citrus.tooltip().textFormatter("Yearly profit: ${%value}m");
 
-    // format the labels for the ACME series
-    series_acme.labels().fontSize(10)
-    series_acme.labels().fontColor("#000");
-
-    // format the labels for the CITRUS series
-    series_citrus.labels().fontSize(10)
-    series_citrus.labels().fontColor("#000");
-
-    // hovered and selected labels
-    series_acme.hoverLabels().fontSize(10);
-    series_acme.hoverLabels().fontColor("#660000");
-    series_acme.selectLabels().fontSize(10);
-    series_acme.selectLabels().fontColor("#660000");
+    // turn off labels
+    series_acme.labels().enabled("false");
+    series_citrus.labels().enabled("false");
 
     // change the color of the ACME series
     series_citrus.stroke("green");
