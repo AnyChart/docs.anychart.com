@@ -9,6 +9,7 @@
 * [Altering Connectors](#altering_connectors)
  * [Connector settings](#connector_settings)
  * [Series colors](#series_colors)
+ * [Markers](#markers)
  * [Labels and Tooltips](#labels_and_tooltips)
 * [Maps usage](#maps_usage)
  * [Route Map](#route_map)
@@ -139,13 +140,13 @@ We can also define curvature for each connector separately through the data, lik
 ```
 var data = anychart.data.set([    
     {points: [50.8, -3.6, 51.1, -2.8, 50.7, -2.4, 50.8, -1.6], stroke:'red', to: "New Forest National Park", marker: {fill: "#9fa8da"}},
-    {points: [50.8, -1.6, 51.5, -0.16], stroke:'green', to: "Stonehenge"},
+    {points: [50.8, -1.6, 51.5, -0.16], stroke:'green', to: "Stonehenge", curvature: -0.6},
     {points: [51.5,-0.16, 51.7, -1.29], to: "London"},
     {points: [51.7, -1.29, 52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
     {points: [53.3, -1.5, 53.4, -3.02], to: "Peak District National Park"},
     {points: [53.4, -3.02,54.1,-3.29], to: "Liverpool", curvature:-0.2},
     {points: [54.1, -3.29,54.4,-3.18, 54.5,-3.4, 55.2, -1.9], to: "Nunnykirk Caravan Club Site"},
-    {points: [55.2, -1.9, 56.4, -3.5], to: "Edinburgh"},
+    {points: [55.2, -1.9, 56.4, -3.5], to: "Edinburgh", curvature: 0.6},
     {points: [56.4, -3.5, 57.1, -2.19], stroke:'green', to: "Aberdeen", curvature:1}
     ]);
 ```
@@ -156,43 +157,47 @@ Note that curvature might be negative. Negative value will simply curve the segm
 Two more features of our map connector series are {api:anychart.core.map.series.Connector#startSize}**.startSize()**{api} and {api:anychart.core.map.series.Connector#endSize}**.endSize(){api}. These methods make our connector look more like arrows, tapering or expanding the connector curve (or line) to its ens or from its start. These settings are also available to be adjusted through the data set. In the next sample we've defined both settings for the series in general.
 
 ```
-var data = anychart.data.set([    
-    {points: [50.8, -3.6, 51.1, -2.8, 50.7, -2.4, 50.8, -1.6], stroke:'red', to: "New Forest National Park", marker: {fill: "#9fa8da"}},
-    {points: [50.8, -1.6, 51.5, -0.16], stroke:'green', to: "Stonehenge"},
-    {points: [51.5,-0.16, 51.7, -1.29], to: "London"},
-    {points: [51.7, -1.29, 52.2, 0.27, 53.3, -1.5], to: "Cambridge"},
-    {points: [53.3, -1.5, 53.4, -3.02], to: "Peak District National Park"},
-    {points: [53.4, -3.02,54.1,-3.29], to: "Liverpool", curvature:-0.2},
-    {points: [54.1, -3.29,54.4,-3.18, 54.5,-3.4, 55.2, -1.9], to: "Nunnykirk Caravan Club Site"},
-    {points: [55.2, -1.9, 56.4, -3.5], to: "Edinburgh"},
-    {points: [56.4, -3.5, 57.1, -2.19], stroke:'green', to: "Aberdeen", curvature:1}
-    ]);
+	// changing the startSize and endSize of the connectors
+	series.startSize(7);
+	series.endSize(0);
 ```
 {sample}Maps\_Connectors\_08{sample}
 
-Now, note that as soon as our connectors have become of some width, we will need to set some value for the {api:anychart.core.map.series.Connector#fill}**.fill()**{api} method of our series in addition to {api:anychart.core.map.series.Connector#stroke}**.stroke()**{api}, if we'd like our connectors to be colored somehow differently from the default. Of course, these can be also defined through the dataset. 
+### Series colors
+
+Now, note that as soon as our connectors have become of some width, we will need to set some value for the {api:anychart.core.map.series.Connector#fill}**.fill()**{api} method of our series in addition to {api:anychart.core.map.series.Connector#stroke}**.stroke()**{api}, if we'd like our connectors to be colored somehow differently from the default. Of course, these colors can be also defined through the dataset. As usual, we can edit colors for hovered and selected states also - for these states we use {api:anychart.core.map.series.Connector#hoverFill}**.hoverFill()**{api}, {api:anychart.core.map.series.Connector#hoverstroke}**.hoverStroke()**{api}, {api:anychart.core.map.series.Connector#selectFill}**.selectFill()**{api} and {api:anychart.core.map.series.Connector#selectStroke}**.selectStroke()**{api} methods.
+
+```
+	// setting colors for hovered and selected
+	series.hoverFill("black");
+	series.selectFill("red");
+	series.hoverStroke("black");
+	series.selectStroke("red");
+```
+{sample}Maps\_Connectors\_09{sample}
+
+Curvature parameter cannot be different for hovered and selected states, as well as the {api:anychart.core.map.series.Connector#endSize}**.endSize()**{api} and {api:anychart.core.map.series.Connector#startSize}**.startSize()**{api} parameters. They stay the same in all states.
+
+### Markers
+
+Another special parameter of the connectors is their markers' position. To adjust it we use {api:anychart.core.map.series.Connector#position}**.position()**{api} method which accepts string values like "start", "end", "middle", or ratio from 0 to 1, or a percent value. This method manages each marker's position on a connector. It can be defined through the dataSet as well. Let's use both ways of defining our markers' position in the next sample.
+
+```
+	// setting the marker position
+	
+```
+{sample}Maps\_Connectors\_10{sample}
+
+The anchor of the marker depends on its posiiton and its connector's curvature.
 
 
-Hover select
-
-
-
-#### Markers
-
-To adjust the position of markers we use {api}**.position()**{api} method which accepts string values like "start", "end", "middle", or ratio from 0 to 1, or a percent value.
-
-The anchor of the marker depends on its posiiton and its connector's curvature, but it can be adjusted if necessary.
-
-
-#### Labels
+### Labels and Tooltips
 
 Adjusting the position of labels is similar to adjusting it for the markers. We should set "start", "end", "middle", or ratio from 0 to 1, or a percent value for the {api}**.position()**{api} method.
 
 The anchor of the label depends on its posiiton and its connector's curvature.
 
-### Series colors
 
-### Labels and Tooltips
 
 
 ## Maps Usage
