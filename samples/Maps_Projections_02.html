@@ -1,0 +1,31 @@
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+  <script src="//cdn.anychart.com/geodata/1.1.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
+  <script x-export="chart">anychart.onDocumentReady(function() {
+
+  var map = anychart.map();
+  map.geoData(anychart.maps.united_states_of_america);
+
+  // Set crs projection.
+  map.crs("august");
+
+  map.title("August Map Projection");
+
+  // set container id for the chart
+  map.container("container");
+
+  // initiate chart drawing
+  map.draw();
+});
+</script>
+
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
