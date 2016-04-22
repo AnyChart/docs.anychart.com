@@ -243,7 +243,7 @@ World map in Wagner6 projection
 ```
   var map = anychart.map();
   map.geoData(anychart.maps.world_source);
-  map.crs("Wagner6");
+  map.crs("wagner6");
 ```
 
 {sample}Maps\_Projections\_12{sample}
