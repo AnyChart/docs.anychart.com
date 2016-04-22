@@ -1,18 +1,21 @@
 # Map Projection
 
 * [Overview](#Overview)
-* [Setting map projection](#Setting map projection)
-* [Available Projections](#Available Projections)
-* [Equirectangular](#Equirectangular)
-* [Orthographic](#Orthographic)
-* [Mercator](#Mercator)
-* [Wagner3](#Wagner3)
-* [Fahey](#Fahey)
-* [Eckert1](#Eckert1)
-* [Eckert3](#Eckert3)
-* [Hammer-Aitoff](#Hammer-Aitoff)
-* [Robinson](#Robinson)
-* [Bonne](#Bonne)
+* [Setting map projection](#setting_map_projection)
+* [Available Projections](#available_projections)
+ * [Aitoff](#aitoff)
+ * [August](#august)
+ * [Bonne](#bonne)
+ * [Eckert1](#eckert1)
+ * [Eckert3](#eckert3)
+ * [Equirectangular](#equirectangular)
+ * [Fahey](#fahey)
+ * [Hammer](#hammer)
+ * [Mercator](#mercator)
+ * [Orthographic](#orthographic)
+ * [Robinson](#robinson)
+ * [Wagner6](#wagner6)
+ * [WSG84](#wsg84)
 
 ##Overview
 
@@ -26,7 +29,7 @@ AnyChart allows to display any map in 10 projections, below you will find a list
   
 Depending on your visualization task you can choose what projection to use in your project or give end-user an ability to swap projections in real-time.
 
-##Setting map projection
+##Setting Map Projection
 
 To set map projection you should set its type using {api:anychart.charts.Map#crs}**.crs()**{api} method:
 
@@ -34,7 +37,7 @@ To set map projection you should set its type using {api:anychart.charts.Map#crs
   var map = anychart.map();
   map.crs("august");
 ```
-Available projections
+##Available Projections
 
 The table below lists all available projection types, samples can be found after the table.
 <table>
@@ -185,9 +188,9 @@ World map in Fahey projection
 
 {sample}Maps\_Projections\_07{sample}
 
-###Hammer-Aitoff
+###Hammer
 
-World map in Hammer-Aitoff projection
+World map in Hammer projection
 
 ```
   var map = anychart.map();
