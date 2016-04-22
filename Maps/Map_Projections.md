@@ -32,7 +32,7 @@ To set map projection you should set its type using {api:anychart.charts.Map#crs
 
 ```
   var map = anychart.map();
-  map.crs(anychart.enums.MapProjections.AUGUST);
+  map.crs("august");
 ```
 Available projections
 
@@ -73,8 +73,8 @@ Max Eckert (-Greifendorff) in 1906.</td>
 <td>Fahey Modified Gall, pseudocylindrical, neither conformal or equal-area, developed by Lawrence Fahey in 1975.</td>
 </tr>
 <tr>
-<td>Hammer-Aitoff</td>
-<td>Hammer-Aitoff projection produces an equal area map of the entire globe, it is useful for visual representations of geographically related statistical data and distributions. Astronomers use this projection to show the entire celestial sphere on one map in a way that accurately depicts the relative distribution of the stars in different regions of the sky.</td>
+<td>Hammer</td>
+<td>Hammer projection (also known as Hammer-Aitoff projection) produces an equal area map of the entire globe, it is useful for visual representations of geographically related statistical data and distributions. Astronomers use this projection to show the entire celestial sphere on one map in a way that accurately depicts the relative distribution of the stars in different regions of the sky.</td>
 </tr>
 <tr>
 <td>Mercator</td>
@@ -89,7 +89,7 @@ Max Eckert (-Greifendorff) in 1906.</td>
 <td>A pseudo-cylindrical projection by reason of its straight parallels, along each of which the meridians are spaced evenly. The central meridian is also a straight line; other meridians are curved. Developed by Dr. Arthur H. Robinson in 1963.</td>
 </tr>
 <tr>
-<td>Wagner3</td>
+<td>Wagner6</td>
 <td>A pseudocylindrical projection, neither conformal or equal-area, developed by 
 K. H. Wagner in 1932.</td>
 </tr>
@@ -99,7 +99,7 @@ K. H. Wagner in 1932.</td>
 </tr>
 </tbody></table>
 
-Check out {api:anychart.enums.MapProjections}MapProjections enum{api} to find out the list of map projections.
+As far as AnyChart constantly implements new features to improves AnyChart charting library, all new projections in further versions would be added {api:anychart.enums.MapProjections}MapProjections enum{api} along with existing ones.
 
 ###Aitoff
 
@@ -233,14 +233,14 @@ World map in Robinson projection
 
 {sample}Maps\_Projections\_11{sample}
 
-###Wagner3
+###Wagner6
 
-World map in Wagner3 projection
+World map in Wagner6 projection
 
 ```
   var map = anychart.map();
   map.geoData(anychart.maps.world_source);
-  map.crs("Wagner3");
+  map.crs("Wagner6");
 ```
 
 {sample}Maps\_Projections\_12{sample}
@@ -255,4 +255,4 @@ World map in Robinson projection
   map.crs("wsg84");
 ```
 
-{sample}Maps\_Projections\_12{sample}
+{sample}Maps\_Projections\_13{sample}
