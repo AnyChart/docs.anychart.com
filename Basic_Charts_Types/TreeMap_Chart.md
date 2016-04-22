@@ -8,11 +8,12 @@
   * [Maximum Depth](#maximum_depth)
 * [Point elements](#point_elements)
   * [Header](#header)
-  * [Content](#content)
+  * [Nodes](#nodes)
   * [Markers](#markers)
 * [Interactivity](#interactivity)
   * [Drill Down and Drill Up](#drill_down_and_drill_up)
   * [Select](#select)
+  * [Methods](#methods)  
 * [Visualization](#visualization)
   * [Labels](#labels)
   * [Tooltip](#tooltip)
@@ -189,7 +190,17 @@ Sample below shows this way to change headers:
 
 We can see that all headers in Asia are changed and the root header disappeared completely.
 
-### Points
+There are two special treemap chart parameters that allow to tune headers behavior when chart is resized:
+
+{api:anychart.charts.TreeMap#maxHeadersHeight}maxHeadersHeight(){api} defines the maximum amount of point surface header can occupy. It can be set in pixels or percents.
+
+{api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode(){api} defines how header label behaves when there is enough space to fit it in the header, there are three modes: "crop", "drop" and "alwaysShow".
+
+Take a look at the sample below, where the header height is set to "10px" and "crop" mode is set to "alwaysShow", then click the title to change settings to "5%" and "alwaysShow":
+
+{sample}BCT\_TreeMap\_05\_1{sample} 
+
+### Nodes
 
 TreeMap Chart points have fill, hatchfill, border and other usual element have a hint opacity property, which we can set using {api:anychart.charts.TreeMap#hintOpacity}**.hintOpacity()**{api} method with a value from 0 to 1. Note that the result of using this method will be seen only if we adjust another setting, {api:anychart.charts.TreeMap#hintDepth}**.hintDepth()**{api}, which is described below in the article. Let's adjust points and change their background colors and opacity.
 
@@ -247,6 +258,16 @@ Selecting points in TreeMap Charts is another special topic. Mostly, selecting a
 
 There are two ways of selecting the leaf points: first is to click at a point with the left button of your mouse, and the second is to right-click a point and choose "Select".
 
+### Methods
+
+Treemap works with all standard [Interactivity methods](../Common_Settings/Interactivity) and have several special methods: {api:anychart.charts.TreeMap#drillTo}drillTo(){api}, {api:anychart.charts.TreeMap#drillUp}drillUp(){api} and {api:anychart.charts.TreeMap#getCurrentPath}getCurrentPath(){api}. These methods allow you to control and navigate any treemap.
+
+The following sample shows how to use all these three methods, you can navigate treemap the usual way and see how {api:anychart.charts.TreeMap#getCurrentPath}getCurrentPath(){api} is used to show the structure of drill down in a chart title, or you can use button on the top of the chart to jump deep into the hierarchy and drill up level by level. 
+
+{sample}BCT\_TreeMap\_08\_1{sample}
+
+Note that {api:anychart.charts.TreeMap#drillTo}drillTo(){api} method accepts instances of {api:anychart.data.Tree.DataItem}Tree.DataItem{api} as a parameter, you need to know how to work with [Tree Data Model](../Working_with_Data/Using_Data_Tree_Model#search), particularly {api:anychart.data.Tree#search}search(){api} and {api:anychart.data.Tree#searchItems}searchItems(){api} methods, to work with them. 
+
 ## Visualization
 
 When you change some visualization setting of your charts, you make them not only more informative but memorable. There are several parameters besides those already considered that you can change and adjust.
@@ -263,11 +284,11 @@ chart.labels().textFormatter("{%id}: ${%Value}B");
 
 {sample}BCT\_TreeMap\_09{sample}
 
-It's possible to set some additional information through the data that is to be later displayed by the labels. You can find more interesting information and examples like that with labels formatting and adjusting in the [Labels](../Common_Settings/Labels) tutorial.
+It's possible to set some additional information through the data that is to be later displayed in labels. You can find more interesting information and examples like that with labels formatting and adjustment in the [Labels](../Common_Settings/Labels) tutorial.
 
 ### Tooltip
 
-Tooltips are small windows that pop up when you hover a point. They are shown next to the cursor and follows it by default. We can change their appearance and behavior using several the {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} method. For formatting the text and title of the tooltips we use {api:anychart.core.ui.ChartTooltip#textFormatter}**.textFormatter()**{api} and {api:anychart.core.ui.ChartTooltip#titleFormatter}**.titleFormatter()**{api}; for changing the position we use special positioning parameters like {api:anychart.core.ui.ChartTooltip#positionMode}**.positionMode()**{api}, {api:anychart.core.ui.ChartTooltip#anchor}**.anchor()**{api} and other, which you can find in the [Tooltip article](../Common_Settings/Tooltip#position). Let's now adjust the tooltips.
+Tooltips are small windows that pop up when you hover a point. They are shown next to the cursor and follows it by default. We can change their appearance and behavior using several the {api:anychart.charts.TreeMap#tooltip}**.tooltip()**{api} method. To format the text and title of tooltips we use {api:anychart.core.ui.ChartTooltip#textFormatter}**.textFormatter()**{api} and {api:anychart.core.ui.ChartTooltip#titleFormatter}**.titleFormatter()**{api}; to change the position we use special positioning methods: {api:anychart.core.ui.ChartTooltip#positionMode}**.positionMode()**{api} and {api:anychart.core.ui.ChartTooltip#anchor}**.anchor()**{api}, which you can find in the [Tooltip article](../Common_Settings/Tooltip#position). Let's now adjust the tooltips text:
 
 ```
 // tooltips settings
@@ -278,7 +299,7 @@ chart.tooltip().textFormatter("Income from export in 2012: $ {%Value}B");
 
 {sample}BCT\_TreeMap\_10{sample}
 
-Some tooltip settings can be defined through the data. For more information see [Tooltip](../Common_Settings/Tooltip) tutorial.
+Some tooltip settings can be set in the data. For more information see [Tooltip](../Common_Settings/Tooltip) tutorial.
 
 ### Color Range
 
@@ -292,7 +313,7 @@ chart.colorScale(anychart.scales.ordinalColor([{less:100,color:"#FFCC99"},{from:
 
 {sample}BCT\_TreeMap\_13{sample}
 
-For more information about ColorRange and adjusting it look up the [ColorRange article]() and [ColorScale]() article for information about the color scales.
+For more information about ColorRange and adjusting it take a look at [ColorRange article]() and [ColorScale]() articles for information about the color scales.
 
 ### Hint Depth
 

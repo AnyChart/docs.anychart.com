@@ -28,12 +28,23 @@
 
     // create treemap chart
     var chart = anychart.treeMap();
-
-    // markers
-    chart.hoverMarkers(false);
-    chart.hoverMarkers({size: 10, fill: "Gold", type: "star5"});
-
-    // data
+    
+    // headers settings
+    chart.maxHeadersHeight("10px");
+    chart.headersDisplayMode("crop");     
+    
+    // set title
+    chart.title("Headers Settings\nclick here to change maxHeadersHeight and headersDisplayMode");
+    
+    chart.title().listen("click",function(){
+        // change header settings
+        chart.maxHeadersHeight("5%");
+        chart.headersDisplayMode("alwaysShow");
+    });
+    
+    // setting the maximum levels depth
+    chart.maxDepth(3);
+    
     var rawData = [
     {name: 'Eurasia',
         children:[
@@ -56,7 +67,7 @@
                     {name: "Israel", value: 20770, capital: 'Jerusalem'},
                     {name: "Armenia", value: 29743, capital: 'Yerevan'},
                     {name: "Azerbaijan", value: 86600, capital: 'Baku'},
-                    {name: "Bahrain", value: 750, capital: 'Manama'},                        
+                    {name: "Bahrain", value: 750, capital: 'Manama'},
                 ]},
                 {name: "Southern Asia", children:[
                     {name:"India", value: 3287263, capital: "New Delhi"},
@@ -116,12 +127,13 @@
                     ]},                        
                 ]}
             ]}
-         ]}];
-
+         ]}
+    ];
+    
     // set data
     var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
     chart.data(data);
-
+    
     // display chart
     chart.container('container');
     chart.draw();
