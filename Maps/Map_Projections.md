@@ -107,7 +107,7 @@ World map in Aitoff projection
 
 ```
   var map = anychart.map();
-  map.geoData(anychart.maps.united_states_of_america);
+  map.geoData(anychart.maps.world_source);
   map.crs("aitoff");
 ```
 
@@ -119,7 +119,7 @@ World map in August projection
 
 ```
   var map = anychart.map();
-  map.geoData(anychart.maps.united_states_of_america);
+  map.geoData(anychart.maps.world_source);
   map.crs("August");
 ```
 
@@ -131,7 +131,7 @@ World map in August projection
 
 ```
   var map = anychart.map();
-  map.geoData(anychart.maps.united_states_of_america);
+  map.geoData(anychart.maps.world_source);
   map.crs("Bonne");
 ```
 
@@ -143,7 +143,7 @@ World map in Eckert1 projection
 
 ```
   var map = anychart.map();
-  map.geoData(anychart.maps.united_states_of_america);
+  map.geoData(anychart.maps.world_source);
   map.crs("eckert1");
 ```
 
@@ -155,7 +155,7 @@ World map in Eckert3 projection
 
 ```
   var map = anychart.map();
-  map.geoData(anychart.maps.united_states_of_america);
+  map.geoData(anychart.maps.world_source);
   map.crs("eckert3");
 ```
 
@@ -167,7 +167,7 @@ World map in Equirectangular projection
 
 ```
   var map = anychart.map();
-  map.geoData(anychart.maps.united_states_of_america);
+  map.geoData(anychart.maps.world_source);
   map.crs("equirectangular");
 ```
 
@@ -179,7 +179,7 @@ World map in Fahey projection
 
 ```
   var map = anychart.map();
-  map.geoData(anychart.maps.united_states_of_america);
+  map.geoData(anychart.maps.world_source);
   map.crs("fahey");
 ```
 
@@ -191,7 +191,7 @@ World map in Hammer-Aitoff projection
 
 ```
   var map = anychart.map();
-  map.geoData(anychart.maps.united_states_of_america);
+  map.geoData(anychart.maps.world_source);
   map.crs("hammer");
 ```
 
@@ -203,7 +203,7 @@ World map in Mercator projection
 
 ```
   var map = anychart.map();
-  map.geoData(anychart.maps.united_states_of_america);
+  map.geoData(anychart.maps.world_source);
   map.crs("mercator");
 ```
 
@@ -215,7 +215,7 @@ World map in Orthographic projection
 
 ```
   var map = anychart.map();
-  map.geoData(anychart.maps.united_states_of_america);
+  map.geoData(anychart.maps.world_source);
   map.crs("orthographic");
 ```
 
@@ -227,7 +227,7 @@ World map in Robinson projection
 
 ```
   var map = anychart.map();
-  map.geoData(anychart.maps.united_states_of_america);
+  map.geoData(anychart.maps.world_source);
   map.crs("robinson");
 ```
 
@@ -239,7 +239,7 @@ World map in Wagner3 projection
 
 ```
   var map = anychart.map();
-  map.geoData(anychart.maps.united_states_of_america);
+  map.geoData(anychart.maps.world_source);
   map.crs("Wagner3");
 ```
 
@@ -251,7 +251,7 @@ World map in Robinson projection
 
 ```
   var map = anychart.map();
-  map.geoData(anychart.maps.united_states_of_america);
+  map.geoData(anychart.maps.world_source);
   map.crs("wsg84");
 ```
 
