@@ -103,7 +103,7 @@ Check out {api:anychart.enums.MapProjections}MapProjections enum{api} to find ou
 
 ###Aitoff
 
-Map of USA in Aitoff projection
+World map in Aitoff projection
 
 ```
   var map = anychart.map();
@@ -115,7 +115,7 @@ Map of USA in Aitoff projection
 
 ###August
 
-Map of USA in August projection
+World map in August projection
 
 ```
   var map = anychart.map();
@@ -127,7 +127,7 @@ Map of USA in August projection
 
 ###Bonne
 
-Map of USA in August projection
+World map in August projection
 
 ```
   var map = anychart.map();
@@ -139,7 +139,7 @@ Map of USA in August projection
 
 ###Eckert1
 
-Map of USA in Eckert1 projection
+World map in Eckert1 projection
 
 ```
   var map = anychart.map();
@@ -151,7 +151,7 @@ Map of USA in Eckert1 projection
 
 ###Eckert3
 
-Map of USA in Eckert3 projection
+World map in Eckert3 projection
 
 ```
   var map = anychart.map();
@@ -163,7 +163,7 @@ Map of USA in Eckert3 projection
 
 ###Equirectangular
 
-Map of USA in Equirectangular projection
+World map in Equirectangular projection
 
 ```
   var map = anychart.map();
@@ -175,7 +175,7 @@ Map of USA in Equirectangular projection
 
 ###Fahey
 
-Map of USA in Fahey projection
+World map in Fahey projection
 
 ```
   var map = anychart.map();
@@ -187,7 +187,7 @@ Map of USA in Fahey projection
 
 ###Hammer-Aitoff
 
-Map of USA in Hammer-Aitoff projection
+World map in Hammer-Aitoff projection
 
 ```
   var map = anychart.map();
@@ -199,7 +199,7 @@ Map of USA in Hammer-Aitoff projection
 
 ###Mercator
 
-Map of USA in Mercator projection
+World map in Mercator projection
 
 ```
   var map = anychart.map();
@@ -211,7 +211,7 @@ Map of USA in Mercator projection
 
 ###Orthographic
 
-Map of USA in Orthographic projection
+World map in Orthographic projection
 
 ```
   var map = anychart.map();
@@ -223,7 +223,7 @@ Map of USA in Orthographic projection
 
 ###Robinson
 
-Map of USA in Robinson projection
+World map in Robinson projection
 
 ```
   var map = anychart.map();
@@ -235,7 +235,7 @@ Map of USA in Robinson projection
 
 ###Wagner3
 
-Map of USA in Wagner3 projection
+World map in Wagner3 projection
 
 ```
   var map = anychart.map();
@@ -247,7 +247,7 @@ Map of USA in Wagner3 projection
 
 ###WSG84
 
-Map of USA in Robinson projection
+World map in Robinson projection
 
 ```
   var map = anychart.map();
