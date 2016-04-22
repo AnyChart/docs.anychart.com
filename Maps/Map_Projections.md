@@ -123,7 +123,7 @@ World map in August projection
 ```
   var map = anychart.map();
   map.geoData(anychart.maps.world_source);
-  map.crs("August");
+  map.crs("august");
 ```
 
 {sample}Maps\_Projections\_02{sample}
@@ -135,7 +135,7 @@ World map in August projection
 ```
   var map = anychart.map();
   map.geoData(anychart.maps.world_source);
-  map.crs("Bonne");
+  map.crs("bonne");
 ```
 
 {sample}Maps\_Projections\_03{sample}
