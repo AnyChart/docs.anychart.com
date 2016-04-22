@@ -74,6 +74,8 @@ map.title("Adjusting markers on the map");
 // set container id for the chart
 map.container('container');
 
+// disabling the zoom
+map.interactivity().mouseWheel(false);
 // initiate chart drawing
 map.draw();
 });

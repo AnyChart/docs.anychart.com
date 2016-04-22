@@ -102,6 +102,8 @@ connectorSeries.tooltip().useHtml(true).fontSize(13).textFormatter(function () {
     // Sets container id for the chart
     map.container('container');
 
+    // disabling the zoom
+    map.interactivity().mouseWheel(false);
     // Initiates chart drawing
     map.draw();
 });

@@ -32,7 +32,7 @@ var data = anychart.data.set([
     {points: [56.4, -3.5, 57.1, -2.19], stroke:'green', to: "Aberdeen", marker: {position:"end"}}
     ]);
 // create map chart
-var map = anychart.map()
+var map = anychart.map();
 
 //create bubble series
 var series = map.connector(data);
@@ -66,6 +66,8 @@ map.title("Adjusting markers on the map");
 // set container id for the chart
 map.container('container');
 
+// disabling the zoom
+map.interactivity().mouseWheel(false);
 // initiate chart drawing
 map.draw();
 });

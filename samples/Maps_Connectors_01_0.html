@@ -2,7 +2,7 @@
 <html>
 <head>
   <script src="http://cdn.anychart.com/js/develop/anychart-bundle.min.js"></script>
-    <script src="http://cdn.anychart.com/geodata/1.1.0/countries/united_kingdom/united_kingdom.js" data-export="true"></script>
+    <script src="http://cdn.anychart.com/geodata/1.1.0/custom/world/world.js" data-export="true"></script>
   <style>
     html, body, #container {
       width: 100%;
@@ -21,13 +21,12 @@ anychart.onDocumentReady(function() {
 
 // create data set
 var data = anychart.data.set([
-   [[50.8, -3.6, 51.1, -2.8], 'red', 'red'],
-   [[51.1, -2.8, 50.7, -2.4], 'red', 'red'],
-   [[50.7, -2.4, 50.8, -1.6], 'red', 'red'],
-   [[50.8, -1.6, 51.5, -0.16], 'red', 'red'],
-   [[51.5,-0.16, 51.7, -1.29], 'red', 'red'],
-   [[51.7, -1.29, 52.2, 0.27], 'red', 'red'],
-   [[52.2, 0.27, 53.3, -1.5], 'red', 'red'],
+   [[37.7, 50.8, 38.88, -77], 'red', 'red'],
+   [[39.9, 116.3, 13.75, 100.5], 'red', 'red'],
+   [[50.8, -1.6, 8.5, 115.2], 'red', 'red'],
+   [[37.5, 126.9, 33.4, 126.4], 'Seoul', 'Jeju'],
+   [[35.6, 139.6, 33.5, 130.4], 'Tokyo', 'Fukuoka'],
+   [[-33.8, 151.2, -37.81, 144.9], 'Sydney', 'Melbourne'],
    [[53.3, -1.5, 53.4, -3.02], 'red', 'red'],
    [[53.4, -3.02,54.1,-3.29], 'red', 'red'],
    [[54.1, -3.29,54.4,-3.18], 'red', 'red'],
@@ -44,14 +43,14 @@ var map = anychart.map();
 //create bubble series
 var series = map.connector(data);
 
-// set geodata using http://cdn.anychart.com/geodata/1.0.0/countries/australia/australia.js
-map.geoData(anychart.maps['united_kingdom']);
+// set geodata
+map.geoData(anychart.maps['world']);
 
 //set series geo id field settings
 series.geoIdField("code_hasc");
 
 // name of the chart
-map.title("The touristic interest route through the UK \nObject notation");
+map.title("10 most popular flights in the world");
 
 // set container id for the chart
 map.container('container');
