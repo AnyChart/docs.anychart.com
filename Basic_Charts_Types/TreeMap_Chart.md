@@ -146,7 +146,7 @@ That's how the chart looks with the maxDepth property value set more than 1. The
 
 You can sort data in your treemap when you need using {api:anychart.charts.TreeMap#sort}sort(){api} method, which accepts any of {api:anychart.enums.Sort}enums.Sort{api} values, here is a sample of chart, click buttons at the top to sort elements of the treemap:
 
-{sample}BCT\_TreeMap\_03_1{sample}
+{sample}BCT\_TreeMap\_03\_1{sample}
 
 ## Point elements
 

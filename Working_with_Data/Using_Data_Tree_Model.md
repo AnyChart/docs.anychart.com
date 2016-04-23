@@ -148,7 +148,7 @@ var item = treeData.search("id", "Finland");
 chart.drillTo(item);
 ```
 
-{sample}BCT\_TreeMap\_08\_1{sample}
+{sample :height 600}BCT\_TreeMap\_08\_1{sample}
 
 ### Traverse
 
@@ -157,4 +157,4 @@ Traversing (or cycling through) the tree is the way to go through all the elemen
 
 In the next sample traverser is used to go through the tree and [drill to](../Basic_Charts_Types/TreeMap_Chart#drill_down_and_drill_up) each element one by one, when cycle is done - traverser is {api:anychart.data.Traverser#reset}reset{api} and you can go again.
 
-{sample}BCT\_TreeMap\_07{sample}
+{sample :height 600}Data\_Tree\_07{sample}
