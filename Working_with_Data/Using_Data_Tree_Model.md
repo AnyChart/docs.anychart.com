@@ -9,13 +9,15 @@ Using Data Tree Model
  * [Read](#read)
  * [Update](#update)
  * [Delete](#delete)
+ * [Search](#search)
+ * [Traverse](#traverse)
 
 
 ## Overview
 
 Tree Data is quite a useful way of implementing data where "tree" means an hierarchy with parent/child division. Such structure of visualizing data nodes connections simplifies data adjusting, improves data organization and provides advanced opportunities of data manipulation.
 
-Tree Data Structure is crucial for [AnyGantt: AnyChart Gantt Charts](../Gantt_Chart/Quick_Start).
+Tree Data Structure is crucial for [AnyGantt: AnyChart Gantt Charts](../Gantt_Chart/Quick_Start) and [Treemap Charts](../Basic_Charts_Types/TreeMap_Chart).
 
 ## Usage
 
@@ -50,7 +52,7 @@ In this sample we will use standalone Datagrid to show how to work with tree dat
   );
 ```
 
-Here is a sample with the result of proceeding data from the code above.
+Here is a sample with the result of processing data from the code above.
 
 {sample :width 690 :height 180}Data\_Tree\_01{sample}
 
@@ -58,11 +60,11 @@ Here is a sample with the result of proceeding data from the code above.
 
 Data Manipulation includes CRUD operations, such as:
 
-
- * Updating - you can change the values of the existing points.
- * Adding - you can add one or several points between the existing points.
- * Removing - you can remove any point from a data set.
-
+ * Updating - you can change the values of the existing points,
+ * Adding - you can add one or several points between the existing points,
+ * Removing - you can remove any point from a data set,
+ * Searching - you can look for a certain element in a tree basing on some criteria,
+ * Cycling (Traversing) - you can go through all the elements of the tree.
 
 These operations can be performed on root elements as well as on children of a node. 
 
@@ -74,9 +76,7 @@ You can add some data as a tree using several methods. Sample below demonstrates
 
 {sample :width 690 :height 400}Data\_Tree\_02{sample}
 
-Adding a child is quite a useful method of adjusting data in real time and visualizing actual processes.
-Nevertheless, adding only one child at a time may appear to be ineffective for managing data. Transferring prepared
-data with predefined hierarchy is an advanced way of managing data in a tree.  You need the data type and the data itself to use the {api:anychart.data.Tree#addData}**.addData()**{api} method.
+Adding a child is quite a useful method of adjusting data in real time and visualizing actual processes.Nevertheless, adding only one child at a time may appear to be ineffective for managing data. Transferring prepared data with predefined hierarchy is an advanced way of managing data in a tree.  You need the data type and the data itself to use the {api:anychart.data.Tree#addData}.addData(){api} method.
 
 ```
   // data to add
@@ -100,7 +100,7 @@ You can see how it works on the sample below.
 
 ### Read
 
-Data tree item may have an unlimited number of data fields thus it requires methods for reading data from any field and item search through field value. The {api:anychart.data.Tree.DataItem#get}**.get()**{api} method gets a value of a specified field of an item. The sample below demonstrates data grid with custom columns. Each column reads data from custom fields of data grid ("year 2004", "year 2005"). The code below shows how to use this method.
+Data tree item may have an unlimited number of data fields thus it requires methods for reading data from any field and item search through field value. The {api:anychart.data.Tree.DataItem#get}get(){api} method gets a value of a specified field of an item. The sample below demonstrates data grid with custom columns. Each column reads data from custom fields of data grid ("year 2004", "year 2005"). The code below shows how to use this method.
 
 ```
 return item.get('year2004');               // get the value in a field "year2004" of an item
@@ -110,7 +110,7 @@ return item.get('year2004');               // get the value in a field "year2004
 
 ### Update
 
-Every node in data tree may be updated. The node should be got first to proceed information adjustment. Below there is an illustration of adding 1000 to values of the third node.
+Every node in a data tree may be updated. The node should be obtained to proceed with data adjustment. Here is how you can add 1000 to a value of the third node:
 
 ```
 // this part of a code is responsible for increasing the value of the third field "Value"
@@ -121,10 +121,9 @@ function addValue() {
 
 {sample :width 690 :height 200}Data\_Tree\_05{sample}
 
-
 ### Delete
 
-As far as we can add data, we can remove it too. Use {api:anychart.data.Tree#removeChild}**.removeChild()**{api} method to delete an item from data set.
+As far as we can add data, we can remove it too. Use {api:anychart.data.Tree#removeChild}removeChild(){api} method to delete an item from data set.
 
 ```
   tree.removeChildAt(0); // remove first element in data tree
@@ -133,3 +132,29 @@ As far as we can add data, we can remove it too. Use {api:anychart.data.Tree#rem
 The sample below demonstrates removing first element from the data tree.
 
 {sample :width 690 :height 200}Data\_Tree\_06{sample}
+
+### Search
+
+When you work with tree data sets you may need to look for an element of the tree to navigate or highlight, or use other CRUD operations. There are two methods for this: {api:anychart.data.Tree#search}search(){api} and {api:anychart.data.Tree#searchItems}searchItems(){api}.
+
+Here is a sample of using {api:anychart.data.Tree#search}search(){api} method with [Treemap Chart](../Basic_Charts_Types/TreeMap_Chart) and its {api:anychart.charts.TreeMap#drillTo}drillTo(){api} method:
+
+```
+// locate an item in a tree data and get it as an object
+// that can be used in drillTo method
+var item = treeData.search("id", "Finland");
+    
+// Drill down to the specified item.
+chart.drillTo(item);
+```
+
+{sample}BCT\_TreeMap\_08\_1{sample}
+
+### Traverse
+
+Traversing (or cycling through) the tree is the way to go through all the elements of the tree, AnyChart makes it easier with
+{api:anychart.data.Tree#getTraverser}getTraverser(){api} method that obtains an instance of {api:anychart.data.Traverser}Traverser{api} object, which has everything you need to go over the tree in an efficient way.
+
+In the next sample traverser is used to go through the tree and [drill to](../Basic_Charts_Types/TreeMap_Chart#drill_down_and_drill_up) each element one by one, when cycle is done - traverser is {api:anychart.data.Traverser#reset}reset{api} and you can go again.
+
+{sample}BCT\_TreeMap\_07{sample}

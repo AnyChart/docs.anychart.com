@@ -72,7 +72,9 @@
         chart.title(printPath(chart.getCurrentPath()))
     });
 
-
+    // put title with path to the bottom of the chart
+    chart.title().orientation("bottom");
+    chart.title().padding(10);
     // format labels
     chart.labels().textFormatter("{%id}");
     // set chart bounds and display it
