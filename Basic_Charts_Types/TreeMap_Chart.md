@@ -6,6 +6,7 @@
   * [Hierarchical](#hierarchical)
   * [Table](#table)
   * [Maximum Depth](#maximum_depth)
+  * [Sorting](#sorting)
 * [Point elements](#point_elements)
   * [Header](#header)
   * [Nodes](#nodes)
@@ -140,6 +141,12 @@ chart.maxDepth(3);
 That's how the chart looks with the maxDepth property value set more than 1. There are two extra settings that help managing this feature, {api:anychart.charts.TreeMap#hintOpacity}**.hintOpacity**{api} and {api:anychart.charts.TreeMap#hintDepth}**.hintDepth**{api}, which are described below in [Hint Opacity](#hint_opacity) and [Hint Depth](#hint_depth) sections.
 
 {sample}BCT\_TreeMap\_03{sample}
+
+### Sorting
+
+You can sort data in your treemap when you need using {api:anychart.charts.TreeMap#sort}sort(){api} method, which accepts any of {api:anychart.enums.Sort}enums.Sort{api} values, here is a sample of chart, click buttons at the top to sort elements of the treemap:
+
+{sample}BCT\_TreeMap\_03_1{sample}
 
 ## Point elements
 
@@ -313,7 +320,7 @@ chart.colorScale(anychart.scales.ordinalColor([{less:100,color:"#FFCC99"},{from:
 
 {sample}BCT\_TreeMap\_13{sample}
 
-For more information about ColorRange and adjusting it take a look at [ColorRange article]() and [ColorScale]() articles for information about the color scales.
+For more information about ColorRange and adjusting it take a look at [ColorRange article](../Maps/ColorRange) and [ColorScale](../Maps/Scales) articles for information about the color scales.
 
 ### Hint Depth
 
