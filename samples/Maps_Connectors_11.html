@@ -34,7 +34,7 @@ var data = anychart.data.set([
 // create map chart
 var map = anychart.map()
 
-//create bubble series
+//create connector series
 var series = map.connector(data);
 
 // changing the curvature of the series
@@ -61,11 +61,10 @@ markers.size(15);
 // setting the anchor
 markers.anchor("leftCenter");
 
-// set geodata using http://cdn.anychart.com/geodata/1.0.0/countries/australia/australia.js
+// set geodata
 map.geoData(anychart.maps['united_kingdom']);
 
 //set series geo id field settings
-series.geoIdField("code_hasc");
 series.markers({fill: '#1976d2', stroke: '2 #E1E1E1'});
 
 // name of the chart

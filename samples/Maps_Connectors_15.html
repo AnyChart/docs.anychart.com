@@ -21,71 +21,102 @@ anychart.onDocumentReady(function() {
 
 // create data set
 var data = anychart.data.set([    
-    {points: [48.50, 2.20, 48.8, 2.13], from: "Paris", to: "Versailles", marker: {fill: "#9fa8da"}},
-    {points: [48.8, 2.13, 47.31, 5.01], to: "Dijon"},
-    {points: [47.31, 5.01, 45.08, 3.56], to: "Beaune", curvature: -0.5},
-    {points: [45.08, 3.56, 46.95, 4.3], to: "Autun"},
-    {points: [46.95, 4.3, 47.4, 3.73], to: "Vezelay"},
-    {points: [47.4, 3.73, 47.8, 3.8], to: "Chablis", label: {position: "rightTop"}},
-    {points: [47.8, 3.8, 48.50, 2.20], to: "Paris"},
-    {points: [48.50, 2.20, 49.4, 1.08], to: "Rouen, Normady capital", marker: {position:"end"}},
-    {points: [49.4, 1.08, 49.18, -0.35], to: "Caen", marker: {position:"end"}},
-    {points: [49.18, -0.35, 49.2, -0.7], to: "Bayeux", marker: {position:"end"}},
-    {points: [49.2, -0.7, 48.6, -1.5], to: "Mont Saint-Michel", label: {position: "rightTop", offSetX: 30}},
+    {points: [32, -106.8, 35, -103.5], curvature: -0.27},
+    {points: [35, -103.5, 36.5, -99.5], curvature: 0.47},
+    {points: [36.5, -99.5, 34, -97.3], curvature: 0.25},
+    {points: [34, -97.3, 32.3, -95.27], curvature: -0.3},
+    {points: [32.3,-95.27, 32.9, -92.03], curvature: -0.25},
+    {points: [32.9, -92.03, 40.4, -75.5], curvature: 0.05},
+    {points: [40.4, -75.5, 39.9, -74.1], curvature: 0.45}
     ]);
-// create map chart
-var map = anychart.map()
 
-//create bubble series
+// create map chart
+var map = anychart.map();
+
+// create connector series
 var series = map.connector(data);
 
 // changing the curvature of the series
-series.curvature(0.3);
+series.curvature(0);
 
-// changing the startSize and endSize of the connectors
-series.startSize(0);
-series.endSize(0);
+// set series geo id field settings
+series.geoIdField("id_hasc");
+series.markers({enabled: false});
+series.fill("maroon");
+series.stroke("maroon", 2);
+series.hoverStroke("maroon", 2);
+series.select("maroon", 2);
+series.tooltip().textFormatter("Basic border along which the hostilities took place");
 
-// setting colors for hovered and selected
-series.hoverFill("black");
-series.selectFill("red");                                                                       
-series.hoverStroke("black");
-series.selectStroke("red");
+// data set for the choropeth series
+var dataSet = anychart.data.set([
+    {id: 'US.MN', name: "Minnesota", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.MT', name: "Montana", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.ND', name: "North Dakota", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.ID', name: "Idaho", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.WA', name: "Washington", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.AZ', name: "Arizona", 'fill': "#FFCC99", 'position': "Union territories permitting slavery (claimed by Confederacy)"},
+    {id: 'US.CA', name: "California", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.CO', name: "Colorado", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.NV', name: "Nevada", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.NM', name: "New Mexico",'fill': "#FFCC99", 'position': "Union territories permitting slavery (claimed by Confederacy)"},
+    {id: 'US.OR', name: "Oregon", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.UT', name: "Utah", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.WY', name: "Wyoming", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.AR', name: "Arkansas", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.IA', name: "Iowa", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.KS', name: "Kansas", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.MO', name: "Missouri", 'fill': "#CC9933", 'position': "Border Union states, permitting slavery"},
+    {id: 'US.NE', name: "Nebraska", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.OK', name: "Oklahoma", 'fill': "#FFCC99", 'position': "Union territories permitting slavery (claimed by Confederacy)"},
+    {id: 'US.SD', name: "South Dakota", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.LA', name: "Louisiana", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.TX', name: "Texas", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.CT', name: "Connecticut", 'fill': "#000066", 'position': "Union", labels: false},
+    {id: 'US.MA', name: "Massachusetts", 'fill': "#000066", 'position': "Union", labels: false},
+    {id: 'US.NH', name: "New Hampshire", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.RI', name: "Rhode Island", 'fill': "#000066", 'position': "Union", labels: false},
+    {id: 'US.VT', name: "Vermont", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.AL', name: "Alabama", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.FL', name: "Florida", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.GA', name: "Georgia", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.MS', name: "Mississippi", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.SC', name: "South Carolina", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.IL', name: "Illinois", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.IN', name: "Indiana", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.KY', name: "Kentucky", 'fill': "#CC9933", 'position': "Border Union states, permitting slavery"},
+    {id: 'US.NC', name: "North Carolina", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.OH', name: "Ohio", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.TN', name: "Tennessee", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.VA', name: "Virginia", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.WI', name: "Wisconsin", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.WY', name: "Wyoming", 'fill': "#9999FF", 'position': "Union territories not permitting slavery", labels: false},
+    {id: 'US.WV', name: "West Virginia", 'fill': "#CC9933", 'position': "Border Union states, permitting slavery"},
+    {id: 'US.DE', name: "Delaware",'fill': "#BB6600", position: "Confederate states", labels: false},
+    {id: 'US.DC', name: "District of Columbia", 'fill': "#BB6600", position: "Confederate states", labels: false},
+    {id: 'US.MD', name: "Maryland", 'fill': "#BB6600", position: "Confederate states", labels: false},
+    {id: 'US.NJ', name: "New Jersey", 'fill': "#BB6600", position: "Confederate states", labels: false},
+    {id: 'US.NY', name: "New York", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.PA', name: "Pennsylvania", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.ME', name: "Maine", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.MI', name: "Michigan", 'fill': "#000066", 'position': "Union"}
+]);
 
-// setting the marker position
-var markers = series.markers();
-markers.position("middle");
+var ch_series = map.choropleth(dataSet);
 
-// setting the marker type
-markers.type(anychart.enums.MarkerType.ARROWHEAD);
-markers.size(7);
+ch_series.tooltip().textFormatter("{%position}");
 
-// setting the anchor for the markers
-markers.anchor("leftCenter");
-
-// setting the labels
-var labels = series.labels();
-labels.enabled(true);
-//labels.posiion(0.8);
-
-// formatting the labels
-labels.textFormatter("To {%to}");
-
-// set geodata using http://cdn.anychart.com/geodata/1.0.0/countries/australia/australia.js
+// set geodata 
 map.geoData(anychart.maps.united_states_of_america);
 
-//set series geo id field settings
-series.geoIdField("id_hasc");
-series.markers({fill: '#1976d2', stroke: '2 #E1E1E1'});
-
 // name of the chart
-map.title("American Civil War: United States vs Confederate States");
-
-// set container id for the chart
-map.container('container');
+map.title("American Civil War: the Union vs the Confederacy");
 
 // disabling the zoom
 map.interactivity().mouseWheel(false);
+
+// set container id for the chart
+map.container('container');
 // initiate chart drawing
 map.draw();
 });

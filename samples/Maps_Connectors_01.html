@@ -2,7 +2,7 @@
 <html>
 <head>
   <script src="http://cdn.anychart.com/js/develop/anychart-bundle.min.js"></script>
-  <script src="http://cdn.anychart.com/geodata/1.1.0/custom/world/world.js" data-export="true"></script>
+    <script src="http://cdn.anychart.com/geodata/1.1.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
   <style>
     html, body, #container {
       width: 100%;
@@ -17,119 +17,69 @@
     <script type="text/javascript">
 
 
-anychart.onDocumentReady(function () {
-    // Defines settings for maps regions (regions bounds are not relevant for this data,  so let's make it less contrast)
-    var customTheme = {
-"map": {
-    'unboundRegions': {'enabled': true,  'fill': '#E1E1E1',  'stroke': '#D2D2D2'}
-}
-    };
-    anychart.theme(customTheme);
+anychart.onDocumentReady(function() {
 
-    // Creates map chart
-    map = anychart.connector();
+// create data set
+var data = anychart.data.set([
+    {points: [41.83, -87.87, 40.70, -74.11], from: "Chicago, IL (Metro Area)", to: "New York City, NY (Metro Area)"},
+    {points: [34.02, -118.69, 37.75, -122.47], from:"Los Angeles, CA (Metro Area)", to: "San Francisco, CA (Metro Area)"},
+    {points: [34.02, -118.69, 40.70, -74.11], from: "Los Angeles, CA (Metro Area)", to: "New York City, NY (Metro Area)"},
+    {points: [41.83, -87.87, 34.02, -118.69], from: "Chicago, IL (Metro Area)", to: "Los Angeles, CA (Metro Area)"},
+    {points: [25.78, -80.30, 40.70, -74.11], from: "Miami, FL (Metro Area)", to: "New York City, NY (Metro Area)"},
+    {points: [33.76, -84.49, 41.83, -87.87], from: "Atlanta, GA (Metro Area)", to: "Chicago, IL (Metro Area)", curvature:-0.2},
+    {points: [41.83, -87.87, 44.97, -93.33], from: "Chicago, IL (Metro Area)", to: "Minneapolis, MN (Metro Area)"},
+    {points: [33.76, -84.49, 40.70, -74.11], from: "Atlanta, GA (Metro Area)", to: "New York City, NY (Metro Area)"},
+    {points: [33.76, -84.49, 28.48, -81.50], from: "Atlanta, GA (Metro Area)", to: "Orlando, FL (Metro Area)"},    
+    {points: [41.83, -87.87, 38.89, -77.08], from: "Chicago, IL (Metro Area)", to: "Washington, DC (Metro Area)"}
+]);
 
-    // Sets settings for map chart
-    map.padding([10,  10,  10,  10]);
-    map.geoData(anychart.maps.world);
-    map.interactivity().selectionMode("none");
+// create data set for the marker series
+var data_marker = anychart.data.set([
+    {long: -87.87, lat: 41.83, name: "Chicago, IL (Metro Area)"},
+    {long: -118.69, lat: 34.02, name: "Los Angeles, CA (Metro Area)"},
+    {long: -80.30, lat: 25.78, name: "Miami, FL (Metro Area)"},
+    {long: -84.49, lat: 33.76, name: "Atlanta, GA (Metro Area)"},
+    {long: -74.11, lat: 40.70, name: "New York City, NY (Metro Area)"},
+    {long: -122.47, lat: 37.75, name: "San Francisco, CA (Metro Area)"},
+    {long: -93.33, lat: 44.97, name: "Minneapolis, MN (Metro Area)"},
+    {long: -81.50, lat: 28.48, name: "Orlando, FL (Metro Area)"},
+    {long: -77.08, lat: 38.89, name: "Washington, DC (Metro Area)"}
+    ]);
 
-    // Sets title for map chart and customizes it
-    map.title().enabled(true).padding([0,  0,  20,  0]).useHtml(true).text('Top Chinese Export Directions to the World<br/>' +
-    '<span style="color:#212121; font-size: 13px;">According to www.worldsrichestcountries.com</span>');
+// create map chart
+var map = anychart.map();
+// create marker series
+var series_marker = map.marker(data_marker);
+// create connector series
+var series_connector = map.connector(data);
 
-    // Sets credits data
-    var credits = map.credits();
-    credits.enabled(true);
-    credits.url('//www.worldsrichestcountries.com/top_china_exports.html');
-    credits.text('Data source: www.worldsrichestcountries.com/top_china_exports.html');
+// set geodata
+map.geoData(anychart.maps.united_states_of_america);
 
-    // Helper function to create several series
-    var createSeries = function(name, data, color) {
-// Creates connector series for destinations and customizes them
-var connectorSeries = map.connector(data)
-        .name(name)
-        .fill(color)
-        .stroke('1.5 ' + color)
-        .hoverStroke('1.5 #212121')
-        .hoverFill('#212121')
-        .markers({position: '100%', size: 20, fill: color, stroke: '2 #E1E1E1'})
-        .hoverMarkers({position: '100%', size: 20, fill: '#212121', stroke: '2 #E1E1E1'})
-        .curvature(0);
+// markers of connector series
+series_connector.markers({size:15});
 
-if (name == 'More then 10%') connectorSeries.startSize(7).endSize(2);
-else if (name == '5 - 10%') connectorSeries.startSize(5).endSize(1.5);
-else if (name == '3 - 5%') connectorSeries.startSize(3).endSize(1);
-else connectorSeries.startSize(0).endSize(0);
+// tooltip formatter
+series_connector.tooltip().textFormatter("From: {%from} \nTo: {%to}");
 
-// Sets settings for labels for the destination series
-connectorSeries.labels()
-        .enabled(true)
-        .offsetY(0)
-        .offsetX(0)
-        .fontSize(10)
-        .position('100%')
-        .textFormatter(function(){return this.getDataValue('to')});
-connectorSeries.hoverLabels().enabled(true).fontColor('#212121');
+// set the markers of marker series
+series_marker.size(10);
 
-// Sets settings for legend items
-connectorSeries.legendItem({iconType: "square", iconFill: color, iconStroke: null});
+// adjust marker series tooltips
+series_marker.tooltip().textFormatter("{%name}");
+series_marker.tooltip().titleFormatter({enable:false});
 
-// Sets tooltip setting for the destination series
-connectorSeries.tooltip({padding: [8, 13, 10, 13]});
-connectorSeries.tooltip().titleFormatter(function () {
-    return this.getDataValue('to')
+// name of the chart
+map.title("10 most popular flight destinations in the USA");
+
+// set container id for the chart
+map.container('container');
+
+// disabling the zoom
+map.interactivity().mouseWheel(false);
+// initiate chart drawing
+map.draw();
 });
-connectorSeries.tooltip().useHtml(true).fontSize(13).textFormatter(function () {
-    return '<span style="font-size: 12px; color: #cbcbcb">Total:</span> $' + this.getDataValue('total') + ' billion <br/>' +
-            '<span style="font-size: 12px; color: #cbcbcb">Overall Exports Percent:</span> ' + this.getDataValue('percent') + '%'
-});
-    };
-
-    // Creates Dataset from Sample data
-    var exportDataSet = anychart.data.set(exportData).mapAs();
-
-    // Creates 5 series, filtering the data by the amount of Fatalities\
-    createSeries('Less than 3%', exportDataSet.filter('percent', filter_function(1.5, 3)), '#1976d2');
-    createSeries('3 - 5%', exportDataSet.filter('percent', filter_function(3, 5)), '#355CB1');
-    createSeries('5 - 10%', exportDataSet.filter('percent', filter_function(5, 10)), '#5C3883');
-    createSeries('More then 10%', exportDataSet.filter('percent', filter_function(10)), '#880e4f');
-
-    // Turns on the legend for the sample
-    map.legend().enabled(true).position('bottom').padding([20,0,0,0]).fontSize(10);
-    map.legend().title().enabled(true).text('Percent of Chinese Overall Exports').fontSize(13).padding([0,0,5,0]);
-
-    // Sets container id for the chart
-    map.container('container');
-
-    // disabling the zoom
-    map.interactivity().mouseWheel(false);
-    // Initiates chart drawing
-    map.draw();
-});
-
-// Helper function to bind data field to the local var.
-function filter_function (val1, val2) {
-    if (val2)
-return function (fieldVal) {
-    return val1 <= fieldVal && fieldVal < val2;
-};
-    else
-return function (fieldVal) {
-    return val1 <= fieldVal;
-};
-}
-
-// Sets data for the destination (connector) series
-var exportData = [    
-    {points: [39.90487,116.402231,55.747362,37.621273], total: 53.7, percent: 2.3, to: "Russia", curvature: 0.1, label: {anchor: 'topLeft', offsetX: 10}},
-    
-    {points: [39.90487,116.402231,52.511693,13.403121], total: 72.7, percent: 3.1, to: "Germany", curvature: 0.35, label: {position: '45%', anchor: 'top'}},
-    
-    {points: [39.90487,116.402231,36.653054,137.141329], total: 149.6, percent: 6.4, to: "Japan", curvature: 0.3, label: {anchor: 'leftBottom'}},
-    {points: [39.90487,116.402231,38.884053,-77.033513], total: 397.2, percent: 17, to: "United States", curvature: -0.5}
-
-];
     
     </script>
 </body>

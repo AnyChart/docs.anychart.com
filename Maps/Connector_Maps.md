@@ -25,13 +25,13 @@ Connector Maps are those which are being used for representing routes areas and 
 
 Look at the example below. That's how a complicated multi-functional Connector Map might look like.
 
-{sample}Maps\_Connectors\_01\_0{sample}
+{sample}Maps\_Connectors\_01{sample}
 
 There are three basic ways of using these maps: flight map, route map and area map. In this article there will be created maps of all three types.
 
 ## Data
 
-As it was mentioned before, it's necessary to set latitude and longitude for the start and end point of each connector. Note that longitude of the point should be defines  first and then the latitude for each point, as it is done in all popular GIS-systems. There are two different data notations: the data can be arranged as objects and as arrays. For example, our dataset might look like the following:
+As it was mentioned before, it's necessary to set latitude and longitude for the start and end point of each connector. Note that latitude of the point should be defined first and then the longitude for each point, as it is done in all popular GIS-systems. There are two different data notations: the data can be arranged as objects and as arrays.
 
 ### Object notation
 
@@ -162,7 +162,7 @@ Note that curvature might be negative. Negative value will simply curve the segm
 
 #### Start/end size
 
-Two more features of our map connector series are {api:anychart.core.map.series.Connector#startSize}**.startSize()**{api} and {api:anychart.core.map.series.Connector#endSize}**.endSize(){api}. These methods make our connector look more like arrows, tapering or expanding the connector curve (or line) to its end or from its start. These settings are also available to be adjusted through the data set. In the next sample we've defined both settings for the series in general.
+Two more features of our map connector series are {api:anychart.core.map.series.Connector#startSize}**.startSize()**{api} and {api:anychart.core.map.series.Connector#endSize}**.endSize()**{api}. These methods make our connector look more like arrows, tapering or expanding the connector curve (or line) to its end or from its start. These settings are also available to be adjusted through the data set. In the next sample we've defined both settings for the series in general.
 
 ```
 	// changing the startSize and endSize of the connectors
@@ -224,7 +224,7 @@ The anchor of the marker depends on its position and its connector's curvature, 
 
 The size of markers were changes as well through the {api:anychart.core.ui.MarkersFactory.Marker#}**.size()**{api} method.
 
-Another way to emphasize the start and/or end points is to create a Marker series. You can find the instructions in the [Marker series tutorial](../Basic_Charts_Types/Marker_Chart).
+Another way to emphasize the start and/or end points is to create a Marker series. You can find the instructions in the [Marker series tutorial](/Dot_(Point)_Map).
 
 ### Labels and Tooltips
 
@@ -243,7 +243,7 @@ Let's create a sample with labels held to some point.
 
 ## Maps Usage
 
-Let's create three different maps with connectors to understand the specifics of each map type.
+Let's create three different maps with connectors to understand the specifics of each map type. Here we will use another series together with connectors. You can any types of series you need with connectors, it's
 
 ### Route Map
 
