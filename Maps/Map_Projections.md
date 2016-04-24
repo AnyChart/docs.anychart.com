@@ -25,7 +25,7 @@ Flat maps could not exist without map projections, because a sphere cannot be la
   
 Map projections can be constructed to preserve one or some of map regions properties (area, shape, direction, bearing, distance, scale), though not all of them simultaneously. Each projection preserves or compromises or approximates basic metric properties in different ways. The purpose of the map, then, determines which projection should form the base for the map. Since many purposes exist for maps, so do many projections exist upon which to construct them.  
   
-AnyChart allows to display any map in 10 projections, below you will find a list of all available projections with map samples.  
+AnyChart allows to display any map in 13 projections, below you will find a list of all available projections with map samples.  
   
 Depending on your visualization task you can choose what projection to use in your project or give end-user an ability to swap projections in real-time.
 
