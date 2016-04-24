@@ -83,3 +83,5 @@ Each of the methods for saving data uses parameters for managing output file. He
 Here is a sample that demonstrates the saving of data with custom file name:
 
 {sample}Exports\_06{sample}
+
+**Note**: all data saving methods are available in the context menu.
