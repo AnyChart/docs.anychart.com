@@ -42,3 +42,44 @@ From the first glance it seems that the visual presentation is the main part of 
 ```
 
 {sample}Exports\_05{sample}
+
+### Output Settings
+
+Each of the methods for saving data uses parameters for managing output file. Here are the sample of usage data saving methods with parameters:
+ 
+```
+  var chart = anychart.bar();
+  
+  chart.saveAsXml(
+    // include current theme
+    true,
+    // custom file name
+    "output_name"
+  );
+  
+  chart.saveAsCsv(
+    // csv mode
+    "raw",
+    true,
+    // custom file name
+    "output_name"
+  );
+  
+  chart.saveAsJson(
+    // include current theme
+    true,
+    // custom file name
+    "output_name"
+  );
+  
+  chart.saveAsXlsx(
+    // csv mode
+    "raw",
+    // custom file name
+    "output_name"
+  );
+```
+
+Here is a sample that demonstrates the saving of data with custom file name:
+
+{sample}Exports\_06{sample}
