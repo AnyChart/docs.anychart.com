@@ -37,7 +37,17 @@ To set map projection you should set its type using {api:anychart.charts.Map#crs
   var map = anychart.map();
   map.crs("august");
 ```
+
+Snippet above shows a string as a parameter for {api:anychart.charts.Map#crs}**.crs()**{api} method. Here is how the projection can be set using {api:anychart.enums.MapProjections}enum{api}:
+
+```
+  var map = anychart.map();
+  map.crs(anychart.enums.MapProjections.AUGUST);
+```
+
 ##Available Projections
+
+As far as AnyChart constantly implements new features to improves AnyChart charting library, all new projections in further versions would be added {api:anychart.enums.MapProjections}MapProjections enum{api} along with existing ones.
 
 The table below lists all available projection types, samples can be found after the table.
 <table>
@@ -102,11 +112,9 @@ K. H. Wagner in 1932.</td>
 </tr>
 </tbody></table>
 
-As far as AnyChart constantly implements new features to improves AnyChart charting library, all new projections in further versions would be added {api:anychart.enums.MapProjections}MapProjections enum{api} along with existing ones.
-
 ###Aitoff
 
-World map in Aitoff projection
+World map in Aitoff projection:
 
 ```
   var map = anychart.map();
@@ -118,7 +126,7 @@ World map in Aitoff projection
 
 ###August
 
-World map in August projection
+World map in August projection:
 
 ```
   var map = anychart.map();
@@ -130,7 +138,7 @@ World map in August projection
 
 ###Bonne
 
-World map in August projection
+World map in August projection:
 
 ```
   var map = anychart.map();
@@ -142,7 +150,7 @@ World map in August projection
 
 ###Eckert1
 
-World map in Eckert1 projection
+World map in Eckert1 projection:
 
 ```
   var map = anychart.map();
@@ -154,7 +162,7 @@ World map in Eckert1 projection
 
 ###Eckert3
 
-World map in Eckert3 projection
+World map in Eckert3 projection:
 
 ```
   var map = anychart.map();
@@ -166,7 +174,7 @@ World map in Eckert3 projection
 
 ###Equirectangular
 
-World map in Equirectangular projection
+World map in Equirectangular projection:
 
 ```
   var map = anychart.map();
@@ -178,7 +186,7 @@ World map in Equirectangular projection
 
 ###Fahey
 
-World map in Fahey projection
+World map in Fahey projection:
 
 ```
   var map = anychart.map();
@@ -190,7 +198,7 @@ World map in Fahey projection
 
 ###Hammer
 
-World map in Hammer projection
+World map in Hammer projection:
 
 ```
   var map = anychart.map();
@@ -202,7 +210,7 @@ World map in Hammer projection
 
 ###Mercator
 
-World map in Mercator projection
+World map in Mercator projection:
 
 ```
   var map = anychart.map();
@@ -214,7 +222,7 @@ World map in Mercator projection
 
 ###Orthographic
 
-World map in Orthographic projection
+World map in Orthographic projection:
 
 ```
   var map = anychart.map();
@@ -226,7 +234,7 @@ World map in Orthographic projection
 
 ###Robinson
 
-World map in Robinson projection
+World map in Robinson projection:
 
 ```
   var map = anychart.map();
@@ -238,7 +246,7 @@ World map in Robinson projection
 
 ###Wagner6
 
-World map in Wagner6 projection
+World map in Wagner6 projection:
 
 ```
   var map = anychart.map();
@@ -250,7 +258,7 @@ World map in Wagner6 projection
 
 ###WSG84
 
-World map in Robinson projection
+World map in WSG84 projection:
 
 ```
   var map = anychart.map();

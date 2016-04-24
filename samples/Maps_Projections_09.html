@@ -16,6 +16,11 @@
 
   map.title("Mercator Map Projection");
 
+  var interactivity = map.interactivity();
+  interactivity.mouseWheel(false);
+  map.unboundRegions().stroke("black 0.4");
+  map.background("DodgerBlue 0.4");
+
   // set container id for the chart
   map.container("container");
 
