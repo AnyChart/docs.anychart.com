@@ -19,13 +19,13 @@ Exports
 
 ## Overview
 
-AnyChart provides you with ability to export charts to images (SVG, PNG, JPG), PDF or data files (CSV, Excel). These options are available both via [Context menu](/UI_Controls/Context_menu) and API. Every export has some fine tune options, including an ability to change file name. There is also a special option to save chart [configuration](#configuration) which may be used to debug charts and report issues.
+AnyChart provides you with ability to export charts to images (SVG, PNG, JPG), PDF or data files (CSV, Excel). These options are available both via [Context menu](./UI_Controls/Context_menu) and API. Every export has some fine tune options, including an ability to change file name. There is also a special option to save chart [configuration](#configuration) which may be used to debug charts and report issues.
 
 ## Export server
 
-*IMPORTANT, DO NOT SKIP THIS PART*
+**IMPORTANT, DO NOT SKIP THIS PART**
 
-AnyChart "save as" features work via [AnyChart Export Server](Server-side_Rendering), which is hosted at AnyChart.Com server. Although we do our best to keep AnyChart site up and running 24x7x365 - we *do not guarantee* export server availability. If you want to have full control over the ability of the component to export images, or just don't want to use  AnyChart Server due to the security or accessibility concerns - just run Export Server in server mode on the server you control and trust and configure your charts to custom_server.
+AnyChart "save as" features work via [AnyChart Export Server](Server-side_Rendering), which is hosted at AnyChart.Com server. Although we do our best to keep AnyChart site up and running 24x7x365 - we **do not guarantee** export server availability. If you want to have full control over the ability of the component to export images, or just don't want to use  AnyChart Server due to the security or accessibility concerns - just run Export Server in server mode on the server you control and trust and configure your charts to custom_server.
 
 Custom server address is set like this:
 
@@ -192,9 +192,11 @@ chart.saveAsXml(
   // file name
   "chart_xml"
 );
+```
 
 ### JSON
 
+```
 // save chart data and configuration in Json format
 chart.saveAsJson(
   // include theme or not

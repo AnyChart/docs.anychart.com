@@ -9,34 +9,17 @@
 
   // data
   var data = [
-    {x: "Chocolate paste", value: 5},
-    {x: "White honey", value: 2},
-    {x: "Strawberry jam", value: 2},
-    {x: "Condensed milk", value: 1}
+    {x: "Winter", value: 5},
+    {x: "Spring", value: 2},
+    {x: "Summer", value: 2},
+    {x: "Autumn", value: 1}
   ];
 
-  // create default palette
-  var palette = anychart.palettes.distinctColors().items();
-
-  // color elements
-  for (var index in data)
-    data[index].fill = palette[index];
-
   // set chart type
-  var chart = anychart.bar();
-
-  // set data
-  var series = chart.bar(data);
-
-  // disable tooltips
-  series.tooltip(false);
-
-  series.stroke(null);
+  var chart = anychart.line(data);
 
   // set chart title
-  chart.title("The kind of pancakes preferred at the Sochi 2014 Olympic Games");
-
-  chart.title().fontSize(14);
+  chart.title("Export configuration sample");
 
   // set chart container
   chart.container("container");
@@ -50,18 +33,12 @@
   // create new buttons
   var xmlButton = document.createElement("div");
   var jsonButton = document.createElement("div");
-  var csvButton = document.createElement("div");
-  var xlsxButton = document.createElement("div");
 
   xmlButton.className = "custombutton";
   jsonButton.className = "custombutton";
-  csvButton.className = "custombutton";
-  xlsxButton.className = "custombutton";
 
   xmlButton.innerHTML = "XML";
   jsonButton.innerHTML = "JSON";
-  csvButton.innerHTML = "CSV";
-  xlsxButton.innerHTML = "XLSX";
 
   xmlButton.onclick = function() {
     chart.saveAsXml(true, "pancakes_data");
@@ -69,18 +46,10 @@
   jsonButton.onclick = function() {
     chart.saveAsJson(true, "pancakes_data");
   };
-  csvButton.onclick = function() {
-    chart.saveAsCsv("raw", true, "pancakes_data");
-  };
-  xlsxButton.onclick = function() {
-    chart.saveAsXlsx("raw", "pancakes_data");
-  };
 
   // append button to container
   container.appendChild(xmlButton);
   container.appendChild(jsonButton);
-  container.appendChild(csvButton);
-  container.appendChild(xlsxButton);
 
   var custombuttons = document.getElementsByClassName("custombutton");
 
