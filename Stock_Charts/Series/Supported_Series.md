@@ -19,11 +19,11 @@ AnyStock supports a lot of different series types. For the general information o
 </tr>
 <tr>
 <td>Area</td>
-<td>Coming soon (version 7.10.0)</td>
+<td>[Read more about Area series in AnyStock](Area)</td>
 </tr>
 <tr>
 <td>Candlestick</td>
-<td>Coming soon (version 7.10.0)</td>
+<td>[Read more about Japanese Candlestick series in AnyStock](Japanese_Candlestick)</td>
 </tr>
 <tr>
 <td>Column</td>
@@ -35,31 +35,51 @@ AnyStock supports a lot of different series types. For the general information o
 </tr>
 <tr>
 <td>Marker</td>
-<td>Coming soon (version 7.10.0)</td>
+<td>[Read more about Marker series in AnyStock](Marker)</td>
 </tr>
 <tr>
 <td>OHLC</td>
 <td>[Read more about OHLC series in AnyStock](OHLC)</td>
 </tr>
 <tr>
-<td>Spline Area Chart</td>
-<td>Coming soon (version 7.10.0)</td>
+<td>Spline Area</td>
+<td>[Read more about Spline Area series in AnyStock](Spline Area)</td>
 </tr>
 <tr>
-<td>Stick Chart</td>
-<td>Coming soon (version 7.10.0)</td>
+<td>Stick</td>
+<td>[Read more about Stick series in AnyStock](Stick)</td>
 </tr>
 <tr>
-<td>Range Column Chart</td>
-<td>Coming soon (version 7.10.0)</td>
+<td>Range Column</td>
+<td>[Read more about Range Column series in AnyStock](Range Column)</td>
 </tr>
 <tr>
-<td>Range Area Chart</td>
-<td>Coming soon (version 7.10.0)</td>
+<td>Range Area</td>
+<td>[Read more about Range Area series in AnyStock](Range Area)</td>
 </tr>
 <tr>
-<td>Range Spline Area Chart</td>
-<td>Coming soon (version 7.10.0)</td>
+<td>Range Spline Area</td>
+<td>[Read more about Range Spline Area series in AnyStock](Range Spline Area)</td>
+</tr>
+<tr>
+<td>Range Step Area</td>
+<td>[Read more about Range Step Area series in AnyStock](Range Step Area)</td>
+</tr>
+<tr>
+<td>Spline</td>
+<td>[Read more about Spline series in AnyStock](Spline)</td>
+</tr>
+<tr>
+<td>Spline Area</td>
+<td>[Read more about Spline Area series in AnyStock](Spline Area)</td>
+</tr>
+<tr>
+<td>Step Area</td>
+<td>[Read more about Step Area series in AnyStock](Step Area)</td>
+</tr>
+<tr>
+<td>Step Line</td>
+<td>[Read more about Step Line series in AnyStock](Step Line)</td>
 </tr>
 </tbody></table>
 
