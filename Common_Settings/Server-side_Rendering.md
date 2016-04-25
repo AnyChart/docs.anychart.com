@@ -16,8 +16,8 @@ AnyChart Export server is also used to provide Export chart to CSV, Excel, JSON 
 
 ## Environment
 
-AnyChart Export Server uses [PhantomJS](http://phantomjs.org/) which emulates a browser on the server (WebKit), runs our charts in it, gets SVG and converts it into \*.PNG, \*.JPG or \*.PDF files, using [Apache Batik](https://xmlgraphics.apache.org/batik/). 
-Exporting to CSV, Excel, JSON and XML doesn't require PhantomJS, server serves only as an intermediary to allow file to be saved using a browser.
+AnyChart Export Server uses [PhantomJS](http://phantomjs.org/) which emulates a browser on the server (WebKit), runs our charts in it, gets SVG and converts it into \*.PNG, \*.JPG or \*.PDF files, using [Apache Batik](https://xmlgraphics.apache.org/batik/). Export to Excel uses [Apache POI](https://poi.apache.org/).
+Exporting to CSV, JSON and XML doesn't require PhantomJS, server serves only as an intermediary to allow file to be saved using a browser.
 AnyChart Export Server itself is a jar-file that runs using Java so it works Windows, Linux, MacOS or any other OS where Java is available.
  
 To run the AnyChart Export Server, do the following:
@@ -228,7 +228,7 @@ Request parameters (required):
 * response-type - a field that tells how to export the result (file or as base64)
 
 Optional request parameters:
-* file-name
+* file-name - file name
 * width - picture width
 * height - picture height 
 * quality - picture quality
