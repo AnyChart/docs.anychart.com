@@ -10,9 +10,12 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 
 ```
 <head>
-    <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
+    <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://cdn.anychart.com/css/latest/anychart-ui.css">
 </head>
 ```
+
+**Note**: first link in the snippet above reference AnyChart JS file and the second one 
 
 ###2. Create a container for the chart
 Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. Unless you don’t, AnyChart charting library will use 100% of the container.
