@@ -17,9 +17,9 @@
 
     // Get statistical data
     var bubbleMaxSize = chart.getStat("dataPlotBubbleMaxSize");
-	var pointsCount = chart.getStat(anychart.enums.Statistics.COUNT);
+	var pointsCount = chart.getStat(anychart.enums.Statistics.DATA_PLOT_POINT_COUNT);
 
-    chart.title("Bubble maximum size is " + bubbleMaxSize + ", there are" + pointsCount + " bubbles.");
+    chart.title("Bubble maximum size is " + bubbleMaxSize + ", there are " + pointsCount + " bubbles.");
     
     chart.container("container");
     chart.draw();
