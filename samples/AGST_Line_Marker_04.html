@@ -4,7 +4,7 @@
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
+    <script src="../../DVF-2001-axis-grids-api/anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data
@@ -31,18 +31,10 @@
   // set y scale ticks interval
   var yScale = chart.yScale();
   yScale.minimum(0);
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(2000);
 
   // y axis title
   var yAxis = chart.yAxis();
   yAxis.title("Sales");
-
-  // adjust y axis labels
-  var yLabels = chart.yAxis(0).labels();
-  yLabels.textFormatter(function(){
-    return "$" + this.value/1000 + ",000";
-  });
 
   for (var seriesNumber = 1; seriesNumber<6;seriesNumber++){
     seriesFormatter(seriesNumber);
@@ -53,10 +45,6 @@
     var seriesData = data.mapAs({x: [0], value: [seriesNumber], fill: [6]});
     var series = chart.column(seriesData);
     series.stroke(null);
-    var tooltip = series.tooltip();
-    tooltip.textFormatter(function(){
-      return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
-    });
   }
 
   // draw

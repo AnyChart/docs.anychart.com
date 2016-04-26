@@ -1,0 +1,45 @@
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+  <script src="http://cdn.anychart.com/geodata/1.1.0/countries/australia/australia.js" data-export="true"></script>
+  <script x-export="australiaMap">
+anychart.onDocumentReady(function () {
+
+    // create the dataset of points that are defined by latitude and longtitude values
+    var dataSet_lat_long = anychart.data.set([
+        {lat: -25.75, long: 122.18, name: "ACME Corp. branch #1", value: 321},
+        {lat: -18.50, long: 135.24, name: "ACME Corp. branch #2", value: 293},
+        {lat: -23.12, long: 148.62, name: "ACME Corp. branch #3", value: 312},
+        {lat: -17.89, long: 145.09, name: "ACME Corp. branch #4", value: 198},
+        {lat: -33.28, long: 135.58, name: "ACME Corp. branch #5", value: 309},
+        {lat: -31.21, long: 116.44, name: "ACME Corp. branch #6", value: 215},
+        {lat: -32.26, long: 151.44, name: "ACME Corp. branch #7", value: 219},
+        {lat: -25.63, long: 152.37, name: "ACME Corp. branch #8", value: 179}
+    ]);
+
+    australiaMap = anychart.map();
+    australiaMap.geoData(anychart.maps.australia);
+
+    // Creates the marker series
+    var series_lat_long = australiaMap.marker(dataSet_lat_long);
+
+    // format the tooltips of the lat_long series    
+    series_lat_long.tooltip().titleFormatter("{%Name}");
+    series_lat_long.tooltip().textFormatter("Yearly profit: ${%value}m");
+
+    australiaMap.title("Marker series defined by latitude and longtitude");
+    australiaMap.interactivity().mouseWheel(false);
+    australiaMap.container("container");
+    australiaMap.draw();
+});
+    </script>
+
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

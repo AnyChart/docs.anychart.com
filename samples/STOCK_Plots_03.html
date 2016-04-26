@@ -39,42 +39,41 @@ var lineMapping = dataTable.mapAs({'value': 5});
   
 // create stock chart
 var chart = anychart.stock();
-        //chart.padding(0,"5%",10,"20%");
+chart.padding(0,70,10,50);
 
 // create the plot on the chart with column series
-        var plot_line_ohlc = chart.plot(0);
-
-        var plot_column = chart.plot(1);
+var plot_line_ohlc = chart.plot(0);
+var plot_column = chart.plot(1);
 
 // Create and tune additional y scale
-        var extraYScale = anychart.scales.linear();
-        extraYScale.minimum(0);
-        extraYScale.maximum(3000000000);
-        var extraTicks = extraYScale.ticks();
-        extraTicks.interval(500000000);
+var extraYScale = anychart.scales.linear();
+extraYScale.minimum(0);
+extraYScale.maximum(3000000000);
+var extraTicks = extraYScale.ticks();
+extraTicks.interval(500000000);
 
 // Create and tune additional y axis
-        var extraYAxis = plot_line_ohlc.yAxis(1);
-        extraYAxis.orientation("right");
-        extraYAxis.scale(extraYScale);
+var extraYAxis = plot_line_ohlc.yAxis(1);
+extraYAxis.orientation("right");
+extraYAxis.scale(extraYScale);
 
-        extraYAxis.labels().textFormatter(function(){
-            var value = this.value;
-            return value/1000000 + " mil";
-        });
+extraYAxis.labels().textFormatter(function(){
+    var value = this.value;
+    return value/1000000 + " mil";
+});
 
 // create the column series
-        var columnSeries = plot_column.column(mapping);
-        columnSeries.name("Highest rates");
+var columnSeries = plot_column.column(mapping);
+columnSeries.name("Highest rates");
 
 // create ohlc series
-        var ohlcSeries = plot_line_ohlc.ohlc(ohlcMapping);
-        ohlcSeries.name("ACME Corp. Stock Prices");
+var ohlcSeries = plot_line_ohlc.ohlc(ohlcMapping);
+ohlcSeries.name("ACME Corp. Stock Prices");
 
 // create line series
-        var lineSeries = plot_line_ohlc.line(lineMapping);
-        lineSeries.yScale(extraYScale);
-        lineSeries.name("Number of income requests worldwide");
+var lineSeries = plot_line_ohlc.line(lineMapping);
+lineSeries.yScale(extraYScale);
+lineSeries.name("Number of income requests worldwide");
 
 
 // set container id for the chart
@@ -82,7 +81,7 @@ chart.container('container');
 
 // initiate chart drawing
 chart.draw();
-    });</script>
+});</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

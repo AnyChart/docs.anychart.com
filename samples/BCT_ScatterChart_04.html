@@ -8,7 +8,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  var chart = anychart.scatterChart();
+  var chart = anychart.scatter();
 
   // chart title
   chart.title().text("Sample Scatter Line and Spline Chart");
@@ -34,6 +34,13 @@
     [1, -1],
     [2, -4]
   ]);
+
+  // create major and minor grids and bind them to X and Y axes
+  var y_grid = chart.grid(0);
+  y_grid.axis(chart.yAxis());
+
+  var x_grid = chart.grid(1);
+  x_grid.axis(chart.xAxis());  
 
   chart.container("container").draw();
 });</script>

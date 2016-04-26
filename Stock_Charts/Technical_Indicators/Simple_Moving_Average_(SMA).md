@@ -7,11 +7,11 @@
 
 ## Overview
 
-An exponential moving average (EMA), sometimes also called an exponentially weighted moving average (EWMA), applies weighting factors which decrease exponentially. The weighting for each older data point decreases exponentially, giving much more importance to recent observations while still not discarding older observations entirely.
+A simple moving average (SMA) is the unweighted mean of the previous n data points. In technical analysis there are various popular values for n, like 10 days, 40 days, or 200 days. The period selected depends on the kind of movement one is concentrating on, such as short, intermediate, or long term. In any case moving average levels are interpreted as support in a rising market, or resistance in a falling market.
 
-AnyChart Stock allows you to add EMA with desired period to any of your charts.
+AnyChart Stock allows you to add SMA with desired period to any of your charts.
 
-Mathematical description of the indicator please see at: [Mathematical Description of Technical Indicators](Mathematical_Description).
+Mathematical description of the indicator: [Simple moving average (SMA) Mathematical Description](Mathematical_Description).
 
 ## Adding indicator
 
@@ -35,7 +35,6 @@ var plot = chart.plot(0);
 
 // create SMA indicators with period 20
 var sma20 = plot.sma(mapping, 20).series();
-sma20.name('SMA(20)');
 sma20.stroke('#bf360c');
 ```
 
@@ -53,17 +52,15 @@ var sma10 = plot.sma(mapping, 10, "column");
 
 ## Visualization
 
-Indicator visualization depends on the series you chose to display it with, here is a sample where SMA with different parameters and settings is added to different plots:
+Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where SMA with different parameters and settings is added to different plots:
 
 ```
 // create SMA indicator with period 20 and show as line on the first plot
 var sma20 = plot_0.sma(mapping, 20).series();
-sma20.name('SMA(20)');
 sma20.stroke('#bf360c');
 
 // create SMA indicator with period 50 and show as column on the second plot
 var sma50 = plot_1.sma(mapping, 50, "column").series();
-sma50.name('SMA(50)');
 sma50.fill('#ff6d00');
 ```
 

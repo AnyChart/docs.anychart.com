@@ -10,7 +10,7 @@
 
 ## Overview
 
-A technical indicator is a type of analysis chart that indicates market direction. Indicators generally overlay on price chart data to indicate where the price is going, or whether the price is in an "overbought" condition or an "oversold" condition.
+A technical indicator is a type of analysis chart that indicates market direction. Indicators are mathematical calculation based on historic price, volume, or (in the case of futures contracts) open interest, used to indicate where the price is going, or whether the price is in an "overbought" condition or an "oversold" condition.
 
 AnyChart JavaScript Stock Chart Component supports automatic building of several types of technical indicators. Technical indicators are based on data from data providers and do not depend on series.
 

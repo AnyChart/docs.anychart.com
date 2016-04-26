@@ -7,7 +7,7 @@
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  var chart = anychart.scatterChart();
+  var chart = anychart.scatter();
   chart.title()
     .useHtml(true)
     .fontWeight(400)
@@ -22,9 +22,7 @@
       .interval(50);
 
   // adjust y axis labels representation
-  chart.yAxis().labels().textFormatter(function(){
-    return this.value + "%"
-  });
+  chart.yAxis().labels().textFormatter("{%Value}%");
 
   chart.yAxis().title().text("Job Growth");
 
@@ -36,11 +34,9 @@
       .interval(10000);
 
   // adjust x axis labels representation
-  chart.xAxis().labels().textFormatter(function(){
-    return "$" + this.value / 1000 + ",000"
-  });
+  chart.xAxis().labels().textFormatter("${%Value}");
 
-  chart.xAxis().title().text("Wages");
+  chart.xAxis().title("Wages");
 
   // data for states which are more specialized than the nation
   chart.bubble([
@@ -69,6 +65,13 @@
   ]).fill("DodgerBlue").stroke(anychart.color.darken("DodgerBlue", 0.2));
   chart.minBubbleSize(10);
   chart.maxBubbleSize(30);
+
+  // create major and minor grids and bind them to X and Y axes
+  var y_grid = chart.grid(0);
+  y_grid.axis(chart.yAxis());
+
+  var x_grid = chart.grid(1);
+  x_grid.axis(chart.xAxis());
 
   chart.container("container").draw();
 });</script>

@@ -39,7 +39,7 @@ AnyStock allows to stream data efficiently, you can see this on our <a href="htt
 
 ## Indicators
 
-A technical indicator is a type of analysis chart that indicates market direction. Indicators generally overlay on price chart data to indicate where the price is going, or whether the price is in an "overbought" condition or an "oversold" condition.
+A technical indicator is a type of analysis chart that indicates market direction. Indicators are mathematical calculation based on historic price, volume, or (in the case of futures contracts) open interest, used to indicate where the price is going, or whether the price is in an "overbought" condition or an "oversold" condition.
 
 AnyChart Stock Chart Component supports automatic building of several types of technical indicators as well allows you to add custom indicators of your choice. Read more about technical indicators feature in [Technical Indicators](Technical_Indicators/Overview) article.
 

@@ -24,97 +24,45 @@
 </head>
 <body>
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-
-
-<script>
+<script x-export="chart">anychart.onDocumentReady(function() {
     //Data set through table method
-    anychart.onDocumentReady(function() {
-         var data = anychart.data.tree([
-         {id: 'Eurasia', parent: null},
-             {id: 'Asia', parent: 'Eurasia'},
-                 {id: 'Eastern Asia', parent: 'Asia'},
-                 {id: 'Western Asia', parent: 'Asia'},
-                 {id: 'Southern Asia', parent: 'Asia'},
-                 {id: 'Central Asia', parent: 'Asia'},
-                 {id: 'South-Eastern Asia', parent: 'Asia'},
-                     {id: 'Mongolia', parent: 'Eastern Asia', value: 1564116, capital: 'Ulan-Bator'},
-                     {id: 'China', parent: 'Eastern Asia', value: 1564116, capital: 'Beijing'},
-                     {id: 'Southern Korea', parent: 'Eastern Asia', value: 1564116, capital: 'Seoul'},
-                     {id: 'Northern Korea', parent: 'Eastern Asia', value: 120540, capital: 'Pyongyang'},
-                     {id: 'Japan', parent: 'Eastern Asia', value: 1564116, capital: 'Tokio'},
-                        {id: 'Hokkaido', parent: 'Japan', value: 83400},
-                        {id: 'Kyushu', parent: 'Japan', value: 35640},
-                        {id: 'Honshu', parent: 'Japan', value: 230500},
-                        {id: 'Shikoku', parent: 'Japan', value: 1200},
-                     {id: 'Jordan', parent: 'Western Asia', value: 92300, capital: 'Amman'},
-                     {id: 'Georgia', parent: 'Western Asia', value: 69700, capital: 'Tbilisi'},
-                     {id: 'Israel', parent: 'Western Asia', value: 20770, capital: 'Jerusalem'},
-                     {id: 'Armenia', parent: 'Western Asia', value: 29743, capital: 'Yerevan'},
-                     {id: 'Azerbaijan', parent: 'Western Asia', value: 86600, capital: 'Baku'},
-                     {id: 'Bahrain', parent: 'Western Asia', value: 750, capital: 'Manama'},
-                     {id: 'Indonesia', parent: 'South-Eastern Asia', value: 1919440, capital: 'Jakarta'},
-                         {id: 'Java', parent: 'Indonesia', value: 128297},
-                         {id: 'Kalimantan (Borneo)', parent: 'Indonesia', value: 743330},
-                         {id: 'Sulawesi', parent: 'Indonesiaa', value: 174600},
-                         {id: 'Sumatra', parent: 'Indonesia', value: 473481},
-                     {id: 'Singapoor', parent: 'South-Eastern Asia', value: 718.3, capital: 'Singapoor'},
-                     {id: 'Thailand', parent: 'South-Eastern Asia', value: 513.120, capital: 'Bangkok'},
-                     {id: 'Philippines', parent: 'South-Eastern Asia', value: 300000, capital: 'Manila'},
-                        {id: 'Luzon', parent: 'Philippines', value: 104688},
-                        {id: 'Eastern Visayas', parent: 'Philippines', value: 15875},
-                        {id: 'Central Visayas', parent: 'Philippines', value: 21562},
-                        {id: 'Mindanayo', parent: 'Philippines', value: 21562},
-                     {id: 'Laos', parent: 'South-Eastern Asia', value: 236800, capital: 'Vientiane'},
-                     {id: 'Cambodia', parent: 'South-Eastern Asia', value: 181040, capital: 'Phnom Penh'},
-                     {id: 'Kazakhstan', parent: 'Central Asia', value: 2724902, capital: 'Astana'},
-                     {id: 'Kyrgyzstan', parent: 'Central Asia', value: 199951, capital: 'Bishkek'},
-                     {id: 'Tajikistan', parent: 'Central Asia', value: 142000, capital: 'Dushanbe'},
-                     {id: 'Turkmenistan', parent: 'Central Asia', value: 491200, capital: 'Ashgabat'},
-                     {id: 'Uzbekistan', parent: 'Central Asia', value: 447400, capital: 'Tashkent'},
-                     {id: 'India', parent: 'Southern Asia', value: 3287263, capital: 'New Delhi'},
-                     {id: 'Iran', parent: 'Southern Asia', value: 1648000, capital: 'Tehran'},
-                     {id: 'Shri-Lanka', parent: 'Southern Asia', value: 65610, capital: 'Colombo'},
-                     {id: 'Nepal', parent: 'Southern Asia', value: 140800, capital: 'Kathmandu'},
+    var data = [
+         {id:  1, parent: null, name: 'Eurasia'},
+         {id:  2, parent:    1, name: 'Asia'},
+         {id:  3, parent:    2, name: 'Eastern Asia'},
+         {id:  4, parent:    3, name: 'Mongolia',       value: 1564116,  capital: 'Ulan-Bator'},
+         {id:  5, parent:    3, name: 'China',          value: 1564116,  capital: 'Beijing'},
+         {id:  6, parent:    3, name: 'Southern Korea', value: 1564116,  capital: 'Seoul'},
+         {id:  7, parent:    3, name: 'Northern Korea', value: 120540,   capital: 'Pyongyang'},
+         {id:  8, parent:    3, name: 'Japan',          value: 1564116,  capital: 'Tokio'},
+         {id:  9, parent:    8, name: 'Hokkaido',       value: 83400},
+         {id: 10, parent:    9, name: 'Kyushu',         value: 35640},
+         {id: 11, parent:    9, name: 'Honshu',         value: 230500},
+         {id: 12, parent:    9, name: 'Shikoku',        value: 1200},
+         {id: 13, parent:    1, name: 'Europe'},
+         {id: 14, parent:   13, name: 'Northern Europe'},
+         {id: 15, parent:   14, name: 'Finland',        value: 338424,   capital: 'Helsinki'},
+         {id: 16, parent:   14, name: 'Great Britain',  value: 209331,   capital: 'London'},
+         {id: 17, parent:   14, name: 'Ireland',        value: 84421,    capital: 'Dublin'},
+         {id: 18, parent:   14, name: 'Scandinavia',    value: 928057},
+         {id: 19, parent:   18, name: 'Sweden',         value: 450295,   capital: 'Stockholm'},
+         {id: 20, parent:   18, name: 'Norway',         value: 385178,   capital: 'Oslo'},
+         {id: 21, parent:   18, name: 'Denmark',        value: 42923.53, capital: 'Copenhagen'},
+    ];
 
-         {id: 'Europe', parent: 'Eurasia'},
-             {id: 'Eastern Europe', parent: 'Europe'},
-             {id: 'Western Europe', parent: 'Europe'},
-             {id: 'Southern Europe', parent: 'Europe'},
-             {id: 'Northern Europe', parent: 'Europe'},
-                 {id: 'Poland', parent: 'Eastern Europe', value: 312679, capital: 'Warsaw'},
-                 {id: 'Ukraine', parent: 'Eastern Europe', value: 603628, capital: 'Kiev'},
-                 {id: 'Austria', parent: 'Western Europe', value: 83879, capital: 'Vienna'},
-                 {id: 'Germany', parent: 'Western Europe', value: 357168, capital: 'Berlin'},
-                 {id: 'France', parent: 'Western Europe', value: 643801, capital: 'Paris'},
-                 {id: 'Malta', parent: 'Southern Europe', value: 316, capital: 'Valletta'},
-                 {id: 'Greece', parent: 'Southern Europe', value: 131957, capital: 'Athens'},
-                 {id: 'Italy', parent: 'Southern Europe', value: 301338, capital: 'Rome'},
-                 {id: 'Finland', parent: 'Northern Europe', value: 338424, capital: 'Helsinki'},
-                 {id: 'Great Britain', parent: 'Northern Europe', value: 209331, capital: 'London'},
-                 {id: 'Ireland', parent: 'Northern Europe', value: 84421, capital: 'Dublin'},
-                 {id: 'Scandinavia', parent: 'Northern Europe', value: 928057},
-                    {id: 'Sweden', parent: 'Scandinavia', value: 450295, capital: 'Stockholm'},
-                    {id: 'Norway', parent: 'Scandinavia', value: 385178, capital: 'Oslo'},
-                    {id: 'Denmark', parent: 'Scandinavia', value: 42923.53, capital: 'Copenhagen'},
-             ],
-    anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
-    );
+    // set data and data type settings
+    chart = anychart.treeMap(data, anychart.enums.TreeFillingMethod.AS_TABLE);
+    
+    chart.headers().textFormatter("{%name}");
+    chart.labels().textFormatter("{%name}");
+    chart.tooltip().titleFormatter("{%name}");
+    chart.tooltip().textFormatter("Area: {%Value} square km");
 
-        chart = anychart.treeMap(data);
-        chart.container('container');
-        chart.headers().textFormatter("{%id}");
-        chart.labels().textFormatter("{%id}");
-        chart.tooltip().titleFormatter("{%id}");
-        chart.tooltip().textFormatter("Area: {%Value} square km");
-        chart.title("Setting the data as table");
+    chart.title("Setting the data as table");
 
-        chart.maxDepth(1);
-        chart.hoverStroke('black');
-        chart.hintDepth(0);
-        chart.hintOpacity(1);
-        chart.draw();
-    });
-</script>
+    chart.container('container');
+    chart.draw();
+});</script>
 
 </body>
 </html>

@@ -31,16 +31,16 @@ This listener type adds an event listener to an implementing object. You can add
 Look at the sample and through its code. It's necessary to define the event type and the action to perform. 
 
 ```
-	chart.listen("click", function(){
-		dataSet.append({
-			// x value
-			x: "P" + indexSetter,
+chart.listen("click", function(){
+	dataSet.append({
+		// x value
+		x: "P" + indexSetter,
 
-			// random value from 1 to 500
-			value : Math.floor((Math.random() * 500)+ 1)
-		});
-		indexSetter++;
+		// random value from 1 to 500
+		value : Math.floor((Math.random() * 500)+ 1)
 	});
+	indexSetter++;
+});
 ```
 
 {sample}CMN\_Event\_Listener\_01{sample}
@@ -53,12 +53,12 @@ You can add the {api:anychart.core.Base#listenOnce}**.listenOnce()**{api} method
 It's necessary to define the event type and the action to perform to get any reaction on the event. 
 
 ```
-  //adding a listener 
-  range.listenOnce(
-    //click twice on any range bar to see the result
-    "dblClick",
-    function(){
-      range.fill("red");
+// adding a listener 
+// click twice on any range bar to see the result
+
+range.listenOnce("dblClick",
+  function(){
+    range.fill("red");
   });
 ```
 
@@ -71,10 +71,10 @@ This listener type removes all event listeners from the object, unless you defin
 You can add the {api:anychart.core.Base#removeAllListeners}**.removeAllListeners()**{api} method to an object more than once.
 
 ```
-  //remove all listeners
-  chart.listen("dblClick", function(){
-    chart.removeAllListeners();
-  });
+// remove all listeners
+chart.listen("dblClick", function(){
+  chart.removeAllListeners();
+});
 ```
 
 {sample}CMN\_Event\_Listener\_03{sample}
@@ -89,25 +89,25 @@ You can add the {api:anychart.core.Base#unlisten}**.unlisten()**{api} method to 
 To stop listen to the particular action, place an {api:anychart.core.Base#unlisten}**.unlisten**(){api} method to the event you\d like to stop listen to inside the {api:anychart.core.Base#listen}**.listen()**{api} method, enabled for any action.
 
 ```
-  //create a function for what to listen and then unlisten
-  var func_listen = function(){
-    dataSet.append({
-      // x value
-      x: "P" + indexSetter,
+// create a function for what to listen and then unlisten
+var func_listen = function(){
+  dataSet.append({
+    // x value
+    x: "P" + indexSetter,
 
-      // random value from 1 to 500
-      value : Math.floor((Math.random() * 500)+ 1)
-    });
-    indexSetter++;
-  };
-  
-  //add a listener
-  chart.listen("mouseMove", func_listen);
-  
-  chart.listenOnce("click",function(){
-    //adding an unlistener 
-    chart.unlisten("mouseMove", func_listen);
+    // random value from 1 to 500
+    value : Math.floor((Math.random() * 500)+ 1)
   });
+  indexSetter++;
+};
+
+// add a listener
+chart.listen("mouseMove", func_listen);
+
+chart.listenOnce("click",function(){
+  // adding an unlistener 
+  chart.unlisten("mouseMove", func_listen);
+});
 ```
 
 {sample}CMN\_Event\_Listener\_04{sample}
@@ -120,17 +120,16 @@ You can use the {api:anychart.core.Base#unlistenByKey}**.unlistenByKey()**{api} 
 Look at the sample and its code. It's necessary to define the key of the listener that you need to disable.
 
 ```
-  //add a listener
-  var key = chart.listen("mouseMove", func_listen);
-  
-  //unlisten this
-  chart.listen(
-    //click twice on the chart to see the result
-    "dblclick",
-    function(){
-      chart.unlistenByKey(key);
-    }
-  );
+// add a listener
+var key = chart.listen("mouseMove", func_listen);
+
+// unlisten this
+// click twice on the chart to see the result
+chart.listen("dblclick",
+  function(){
+    chart.unlistenByKey(key);
+  }
+);
 ```
 
 {sample}CMN\_Event\_Listener\_05{sample}
@@ -208,11 +207,11 @@ As mentioned above, these event types provides no information about the point an
 For further information, see the example below.
 
 ```
-	//add a listener
-  chart.listen("mouseDown", function(){
-    // this will open a new page in a new tab
-    window.open("http://google.com","_blank");
-	});
+//add a listener
+chart.listen("mouseDown", function(){
+  // this will open a new page in a new tab
+  window.open("http://google.com","_blank");
+});
 ```
 
 {sample}CMN\_Event\_Listener\_06{sample}
@@ -227,7 +226,7 @@ Here we added two listeners. One of them hears clicks and changes fill of the po
 When a point is clicked once, it is recolored.
 
 ```
-//add a listener
+// add a listener
 chart.listen("pointClick", function(e){
   var index = e.iterator.getIndex();
   var row = dataSet.row(index);
@@ -239,7 +238,7 @@ chart.listen("pointClick", function(e){
   dataSet.row(index, row);
 });
 
-//add a listener
+// add a listener
 chart.listen("pointDblClick", function(e){ 
   var new_value = e.iterator.get("url");
   window.open(new_value,"_blank"); 
@@ -248,15 +247,12 @@ chart.listen("pointDblClick", function(e){
 
 {sample}CMN\_Event\_Listener\_07{sample}
 
-
 ## Manage Single Point
 
 To make your chart more flexible, AnyChart js charting framework provides several ways of managing states of a single point. Event's parameter contains a number of properties that can ease interactivity managing.
-  
-  
+
 For instance, **point** property can be used to get the point that triggered the event. This property provides pretty much the same options as {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method does. All methods of a {api:anychart.core.SeriesPoint}**series point**{api} can be invoked upon this property.
-  
-  
+
 As an example, let's use **pointsHover** event to find out the index of the hovered point and set hovered state for adjacent points.
 
 ```

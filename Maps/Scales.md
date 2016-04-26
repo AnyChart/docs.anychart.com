@@ -1,4 +1,4 @@
-{:index 8}
+{:index 10}
 Map Scales
 ===========
 
@@ -28,7 +28,7 @@ This type of ColorScale looks like a number of boxes with different colors. Colo
 <br>
 
 No parameters are necessary here, but it's possible to use this method to define the ranges and its colors. However, it can be done later. In case no colors are defined, the default first-series color will be applied. If you haven't set the ranges, the map will show only the borders (both inner and outer) of the chosen territory.
-Although, if you decide to set the colors or ranges later, you may use the **{api:anychart.core.map.scale.OrdinalColor#colors}.colors(){api}** and **{api:anychart.core.map.scale.OrdinalColor#ranges}.ranges(){api}** accordingly.
+Although, if you decide to set the colors or ranges later, you may use the **{api:anychart.scales.OrdinalColor#colors}.colors(){api}** and **{api:anychart.scales.OrdinalColor#ranges}.ranges(){api}** accordingly.
 The following code does the same as the code above.
 
 ```
