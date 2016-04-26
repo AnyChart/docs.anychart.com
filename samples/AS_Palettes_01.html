@@ -25,15 +25,16 @@
 // chart type
   var chart = anychart.pie(data);
 
-  chart.title("Palettes Switch Sample\nClick slices to change palette");
+  chart.title("Palettes Switch Sample - Click slices to change palette");
   chart.explode(0);
   chart.labels().textFormatter("{%x}");
   chart.legend().position("right");
   chart.legend().itemsLayout("vertical");
+  chart.legend().height("100%");
   chart.overlapMode("allowOverlap");
 
 
-  chart.listen("pointClick",function(e){
+  chart.listen("pointMouseDown",function(e){
     chart.title(e.point.get("x"));
     chart.palette(e.point.get("palette"));
   });
