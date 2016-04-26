@@ -145,7 +145,7 @@ chart.saveAsPdf();
 
 AnyChart provides several methods for saving current chart's data. Output formats are {api:anychart.core.Chart#saveAsCsv}CSV{api} and {api:anychart.core.Chart#saveAsXlsx}XLSX{api} (Excel file).
 
-{api:anychart.enums.chartDataExportMode}chartDataExportMode{api} parameter defines what data is exported: only the data used by chart (SPECIFIC), all data in the data set (RAW) and a special mode for stock charts allows to export grouped data (GROUPED).
+{api:anychart.enums.ChartDataExportMode}ChartDataExportMode{api} parameter defines what data is exported: only the data used by chart (SPECIFIC), all data in the data set (RAW) and a special mode for stock charts allows to export grouped data (GROUPED).
 
 ### CSV
 
@@ -154,9 +154,9 @@ With {api:anychart.core.Chart#saveAsCsv}CSV{api} you can set how you export data
 ```
 saveAsCsv(
     // CSV Mode
-    anychart.enums.chartDataExportMode.RAW,
+    anychart.enums.ChartDataExportMode.RAW,
     // csvSettings
-    "rowsSeparator:\n,columnsSeparator:,",
+    {"rowsSeparator": "\n", "columnsSeparator": ",", "ignoreFirstRow": true},
     // file name
     "csv"
 );
@@ -170,7 +170,7 @@ With {api:anychart.core.Chart#saveAsXlsx}XLSX{api} you can set how you export da
 // this method will chart's data in Xlsx format
 chart.saveAsXlsx(
     // chart data export mode
-    anychart.enums.chartDataExportMode.SPECIFIC,
+    anychart.enums.ChartDataExportMode.SPECIFIC,
     // file name
     "excel"
 );
