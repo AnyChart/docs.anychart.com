@@ -14,7 +14,7 @@ To obtain statistical data from chart use {api:anychart.core.Chart#getStat}getSt
 
 ```
 var bubbleMaxSize = chart.getStat("dataPlotBubbleMaxSize");
-var pointsCount = chart.getStat(anychart.enums.Statistics.COUNT);
+var pointsCount = chart.getStat(anychart.enums.Statistics.DATA_PLOT_POINT_COUNT);
 ```
 
 Here is a sample chart where maximum bubble size and number of points is obtained using {api:anychart.core.Chart#getStat}getStat(){api} method:
