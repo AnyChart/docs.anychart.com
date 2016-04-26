@@ -6,9 +6,9 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <script x-export="chart">
-  var table, mapping, xScale, yScale, stage, controller, chart;
 anychart.onDocumentReady(function() {
 
+  // set the data
   table = anychart.data.table("x");
   table.addData([
         {"x":'2015-12-24T12:00:00', value: 27},
@@ -49,12 +49,16 @@ anychart.onDocumentReady(function() {
         {"x":'2016-01-28T12:00:00', value: 28.7}
   ]);
   
+  // map the data
   mapping = table.mapAs({'x':"x", 'value':"value"});
+
+  // set the chart type
   chart = anychart.stock();
-  chart.padding(10, 10, 10, 50);
+
+  // define the series
   var series = chart.plot(0).column(mapping);
     series.name("Temperature in Alice's Springs");
-  chart.plot(0).yAxis();
+
   chart.title('Column in Stocks Demo');
   chart.container('container');
 

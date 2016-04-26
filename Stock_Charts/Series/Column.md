@@ -3,10 +3,11 @@
 * [Overview](#overview)
 * [AnyStock Column Series Adjustment](#anystock_column_series_adjustment)
  * [Data](#data)
+ * [Switching series type](#switching_series_type)
 * [Visualization](#visualization)
  * [Coloring](#coloring)
  * [Hovered state](#hovered_state)
- * [Tooltips](#tooltips)
+  * [Tooltips](#tooltips)
 
 
 ## Overview
@@ -34,38 +35,11 @@ table = anychart.data.table();
         ['2015-12-29T12:00:00', 30.3],
         ['2015-12-30T12:00:00', 23.7],
         ['2015-12-31T12:00:00', 20.4],
-        ['2016-01-01T12:00:00', 23],
-        ['2016-01-02T12:00:00', 27.5],
-        ['2016-01-03T12:00:00', 28.2],
-        ['2016-01-04T12:00:00', 23.3],
-        ['2016-01-05T12:00:00', 28.9],
-        ['2016-01-06T12:00:00', 29.3],
-        ['2016-01-07T12:00:00', 28.4],
-        ['2016-01-08T12:00:00', 22.8],
-        ['2016-01-09T12:00:00', 25],
-        ['2016-01-10T12:00:00', 26.5],
-        ['2016-01-11T12:00:00', 27],
-        ['2016-01-12T12:00:00', 27.8],
-        ['2016-01-13T12:00:00', 24.2],
-        ['2016-01-14T12:00:00', 29.3],
-        ['2016-01-15T12:00:00', 28.1],
-        ['2016-01-16T12:00:00', 30.4],
-        ['2016-01-17T12:00:00', 28.9],
-        ['2016-01-18T12:00:00', 24.8],
-        ['2016-01-19T12:00:00', 31.7],
-        ['2016-01-20T12:00:00', 29.9],
-        ['2016-01-21T12:00:00', 24.9],
-        ['2016-01-22T12:00:00', 29.9],
-        ['2016-01-23T12:00:00', 23.9],
-        ['2016-01-24T12:00:00', 27.9],
-        ['2016-01-25T12:00:00', 28.2],
-        ['2016-01-26T12:00:00', 22.7],
-        ['2016-01-27T12:00:00', 30.3],
-    ['2016-01-28T12:00:00', 28.7]
+    	['2016-01-28T12:00:00', 28.7]
   ]);
   
   mapping = table.mapAs();
-  mapping.addField('value', 1, 'first');
+  mapping.addField('value', 1);
 ```
 
 {sample}STOCK\_Column\_01{sample}
@@ -81,36 +55,7 @@ table = anychart.data.table("x");
         {"x":'2015-12-27T12:00:00', value: 26.9},
         {"x":'2015-12-28T12:00:00', value: 29.7},
         {"x":'2015-12-29T12:00:00', value: 30.3},
-        {"x":'2015-12-30T12:00:00', value: 23.7},
-        {"x":'2015-12-31T12:00:00', value: 20.4},
-        {"x":'2016-01-01T12:00:00', value: 23},
-        {"x":'2016-01-02T12:00:00', value: 27.5},
-        {"x":'2016-01-03T12:00:00', value: 28.2},
-        {"x":'2016-01-04T12:00:00', value: 23.3},
-        {"x":'2016-01-05T12:00:00', value: 28.9},
-        {"x":'2016-01-06T12:00:00', value: 29.3},
-        {"x":'2016-01-07T12:00:00', value: 28.4},
-        {"x":'2016-01-08T12:00:00', value: 22.8},
-        {"x":'2016-01-09T12:00:00', value: 25},
-        {"x":'2016-01-10T12:00:00', value: 26.5},
-        {"x":'2016-01-11T12:00:00', value: 27},
-        {"x":'2016-01-12T12:00:00', value: 27.8},
-        {"x":'2016-01-13T12:00:00', value: 24.2},
-        {"x":'2016-01-14T12:00:00', value: 29.3},
-        {"x":'2016-01-15T12:00:00', value: 28.1},
-        {"x":'2016-01-16T12:00:00', value: 30.4},
-        {"x":'2016-01-17T12:00:00', value: 28.9},
-        {"x":'2016-01-18T12:00:00', value: 24.8},
-        {"x":'2016-01-19T12:00:00', value: 31.7},
-        {"x":'2016-01-20T12:00:00', value: 29.9},
-        {"x":'2016-01-21T12:00:00', value: 24.9},
-        {"x":'2016-01-22T12:00:00', value: 29.9},
-        {"x":'2016-01-23T12:00:00', value: 23.9},
-        {"x":'2016-01-24T12:00:00', value: 27.9},
-        {"x":'2016-01-25T12:00:00', value: 28.2},
-        {"x":'2016-01-26T12:00:00', value: 22.7},
-        {"x":'2016-01-27T12:00:00', value: 30.3},
-        {"x":'2016-01-28T12:00:00', value: 28.7}
+        {"x":'2015-12-30T12:00:00', value: 23.7}
   ]);
   
   mapping = table.mapAs({'x':"x", 'value':"value"});
@@ -141,8 +86,13 @@ For creating a new plot the {api:anychart.charts.Stock#plot}.plot(){api} method 
 
 By default, the plots are placed full-width one under another, but this can be set in other way. Look up the [Chart Plots article](../Chart_Plots) to know how to manage the plots.
 
-As stocks are intended to show big arrays of data, this data needs to be compressed at some point to be displayed correctly. By default, when a number of points displayed at once overcomes 500, these points are being grouped to form no more than 500 points. There are two grouping types: functional and objective. All information about them can be found in the [Grouping](../grouping) article.
+As stocks are intended to show big arrays of data, this data needs to be compressed at some point to be displayed correctly. By default, when a number of points displayed at once overcomes 500, these points are being grouped to form no more than 500 points. There are two grouping types: functional and objective. All information about them can be found in the [Grouping](../Grouping) article.
 
+### Switching series type
+
+Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
+
+To switch the series use {api}.seriesType(){api} method.
 
 ## Visualization
 
@@ -150,8 +100,48 @@ There are some parameters that influences the columns' appearance - their color,
 
 ### Coloring
 
-As in case with all basic series, Column series in Stocks can be colored. To change the standard filling and stroking colors use {api:anychart.core.stock.series.Column#fill}.fill(){api} and {api:anychart.core.stock.series.Column#stroke}.stroke(){api}.
+As in case with all basic series, Column series in Stocks can be colored. To change the default colors of the columns filling and stroke use {api:anychart.core.stock.series.Column#fill}.fill(){api} and {api:anychart.core.stock.series.Column#stroke}.stroke(){api}. Also it's possible to highlight a series not with a color but with a hatch filling (which can be very useful in case a person with sight problems will be exploring your charts) using {api:anychart.core.stock.series.Column#hatchFill}.hatchFill(){api} method. Let's change the color of one of our series and add hatch settings to another. The third series is left untouched to make the difference between the adjusted series and default one more notable.
+
+```
+	// australia series coloring
+    series_as.fill("#CC9933");
+    series_as.stroke("#663300");
+
+    // sydney series coloring
+    series_sydney.fill("#fff");
+    series_sydney.hatchFill("cross");
+
+```
+
+{sample}STOCK\_Column\_04{sample}
+
 
 ### Hovered state
 
-When a point is hovered it should have different visual settings. To set special filling and stroking colors for hovered states use {api:anychart.core.stock.series.Column#hoverFill}.hoverFill(){api} and {api:anychart.core.stock.series.Column#hoverStroke}.hoverStroke(){api}.
+When a point is hovered, there is a crosshair being displayed over a hovered point. If there are several points belong to one time point, all of them are being hovered simultaneously. 
+
+Crosshair is identified as a {api:anychart.core.stock.Plot#dateTimeHighlighter}.dateTimeHighlighter(){api}, so to change its color and thickness use {api}.stroke(){api} and {api}.thickness(){api}. Also it's possible to make a highlighter of different style instead of a simple line. Let's adjust the crosshair in our sample.
+
+Note that a crosshair belongs to a chart plot, so it's possible to make a crosshair of every plot unique if necessary.
+
+```
+	// crosshair settings
+  chart.plot(0).dateTimeHighlighter("#663300", 1.5, "6 2", "round");
+  chart.plot(1).dateTimeHighlighter("#999", 1.5);
+  chart.plot(2).dateTimeHighlighter("#000066", 1.5, "7 4");
+```
+
+{sample}STOCK\_Column\_05{sample}
+
+More about crosshair can be found in the [Crosshair tutorial](../../Axes_and_Grids/Crosshair).
+
+Together with the crosshair, a tooltip of union type is shown, demonstrating values of all hovered points. 
+
+Let's go further and consider the tooltips.
+
+Note that opposite to column series in common use, in stocks it's not possible to select the points.
+
+
+#### Tooltips
+
+Default tooltip type is union type, and it cannot be changes
