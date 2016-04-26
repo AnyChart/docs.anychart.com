@@ -28,7 +28,7 @@ TreeMap is intended to demonstrate hierarchically ordered data structures, where
   
 ## Data
 
-Working with data in AnyChart TreeMaps is quite simple. As TreeMap in intended to work with hierarchies, you can set the data in one of two available formats: as an hierarchical tree and as an hierarchical table.
+Working with data in AnyChart TreeMaps is quite simple. As TreeMap is intended to work with hierarchies, you can set the data in one of two available formats: as an hierarchical tree and as an hierarchical table.
 
 Regardless which way we decide to use, there are some parameters we have to define to all points. Here's a list of them:
  - "id": a unique parameter that identifies the point. This parameter is necessary for all elements, or nodes;
@@ -45,41 +45,37 @@ This way of arranging the data is expected by a TreeMap as a default. In our exa
 
 ```
 // Data set using tree method
-anychart.onDocumentReady(function() {
-      var data = anychart.data.tree([
-      {name: 'Eurasia',
-          children:[
-              {name: "Asia", children:[
-                  {name: "Eastern Asia", children:[
-                      {name:"Mongolia", value: 1564116, capital: 'Ulan-Bator'},
-                      {name: "China", value: 1564116, capital: 'Beijing'},
-                      {name: "Southern Korea", value: 1564116, capital: 'Seoul'},
-                      {name: "Northern Korea", value: 120540, capital: 'Pyongyang'},
-                      {name: "Japan", value: 1564116, capital: 'Tokio', children:[
-                          {name: "Hokkaido", value: 83400},
-                          {name: "Kyushu", value: 35640},
-                          {name: "Honshu", value: 230500},
-                          {name: "Shikoku", value: 1200}
-                      ]}
-                  ]}
-              ]},
-              {name: "Europe", children: [
-                  {name: "Northern Europe", children:[
-                      {name: "Finland", value: 338424, capital: 'Helsinki'},
-                      {name: "Great Britain", value: 209331, capital: 'London'},
-                      {name: "Ireland", value: 84421, capital: 'Dublin'},
-                      {name: "Scandinavia", value: 928057, children:[
-                          {name: "Sweden", value: 450295, capital: 'Stockholm'},
-                          {name: "Norway", value: 385178, capital: 'Oslo'},
-                          {name: "Denmark", value: 42923.53, capital: 'Copenhagen'}
-                      ]},                        
-                  ]}
-              ]}
-           ]},
-  anychart.enums.TreeFillingMethod.AS_TREE // data type settings
-  ]);
-
-var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
+var data = anychart.data.tree([
+{name: 'Eurasia',
+    children:[
+        {name: "Asia", children:[
+            {name: "Eastern Asia", children:[
+                {name:"Mongolia", value: 1564116, capital: 'Ulan-Bator'},
+                {name: "China", value: 1564116, capital: 'Beijing'},
+                {name: "Southern Korea", value: 1564116, capital: 'Seoul'},
+                {name: "Northern Korea", value: 120540, capital: 'Pyongyang'},
+                {name: "Japan", value: 1564116, capital: 'Tokio', children:[
+                    {name: "Hokkaido", value: 83400},
+                    {name: "Kyushu", value: 35640},
+                    {name: "Honshu", value: 230500},
+                    {name: "Shikoku", value: 1200}
+                ]}
+            ]},
+        ]},
+        {name: "Europe", children: [
+            {name: "Northern Europe", children:[
+                {name: "Finland", value: 338424, capital: 'Helsinki'},
+                {name: "Great Britain", value: 209331, capital: 'London'},
+                {name: "Ireland", value: 84421, capital: 'Dublin'},
+                {name: "Scandinavia", value: 928057, children:[
+                    {name: "Sweden", value: 450295, capital: 'Stockholm'},
+                    {name: "Norway", value: 385178, capital: 'Oslo'},
+                    {name: "Denmark", value: 42923.53, capital: 'Copenhagen'}
+                ]},                        
+            ]}
+        ]}
+     ]} 
+], anychart.enums.TreeFillingMethod.AS_TREE);
 ```
 
 Here is a sample of a treemap with data set this way:
@@ -93,34 +89,34 @@ You can find more about using Data Tree Model in [Using Data Tree model in AnyCh
 Table representation is another way to load data into AnyChart JavaScript TreeMap Chart. It may be particularly useful when you store your data in a common relational database tables. 
 
 ```
-	//Data set through table method
-	var data = anychart.data.tree([
-         {id:  1, parent: null, name: 'Eurasia'},
-         {id:  2, parent:    1, name: 'Asia'},
-         {id:  3, parent:    2, name: 'Eastern Asia'},
-         {id:  4, parent:    3, name: 'Mongolia',       value: 1564116,  capital: 'Ulan-Bator'},
-         {id:  5, parent:    3, name: 'China',          value: 1564116,  capital: 'Beijing'},
-         {id:  6, parent:    3, name: 'Southern Korea', value: 1564116,  capital: 'Seoul'},
-         {id:  7, parent:    3, name: 'Northern Korea', value: 120540,   capital: 'Pyongyang'},
-         {id:  8, parent:    3, name: 'Japan',          value: 1564116,  capital: 'Tokio'},
-         {id:  9, parent:    8, name: 'Hokkaido',       value: 83400},
-         {id: 10, parent:    9, name: 'Kyushu',         value: 35640},
-         {id: 11, parent:    9, name: 'Honshu',         value: 230500},
-         {id: 12, parent:    9, name: 'Shikoku',        value: 1200},
-         {id: 13, parent:    1, name: 'Europe'},
-         {id: 14, parent:   13, name: 'Northern Europe'},
-         {id: 15, parent:   14, name: 'Finland',        value: 338424,   capital: 'Helsinki'},
-         {id: 16, parent:   14, name: 'Great Britain',  value: 209331,   capital: 'London'},
-         {id: 17, parent:   14, name: 'Ireland',        value: 84421,    capital: 'Dublin'},
-         {id: 18, parent:   14, name: 'Scandinavia',    value: 928057},
-         {id: 19, parent:   18, name: 'Sweden',         value: 450295,   capital: 'Stockholm'},
-         {id: 20, parent:   18, name: 'Norway',         value: 385178,   capital: 'Oslo'},
-         {id: 21, parent:   18, name: 'Denmark',        value: 42923.53, capital: 'Copenhagen'},
-        ],
-    anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
-    );
+//Data set through table method
+var data = anychart.data.tree([
+       {id:  1, parent: null, name: 'Eurasia'},
+       {id:  2, parent:    1, name: 'Asia'},
+       {id:  3, parent:    2, name: 'Eastern Asia'},
+       {id:  4, parent:    3, name: 'Mongolia',       value: 1564116,  capital: 'Ulan-Bator'},
+       {id:  5, parent:    3, name: 'China',          value: 1564116,  capital: 'Beijing'},
+       {id:  6, parent:    3, name: 'Southern Korea', value: 1564116,  capital: 'Seoul'},
+       {id:  7, parent:    3, name: 'Northern Korea', value: 120540,   capital: 'Pyongyang'},
+       {id:  8, parent:    3, name: 'Japan',          value: 1564116,  capital: 'Tokio'},
+       {id:  9, parent:    8, name: 'Hokkaido',       value: 83400},
+       {id: 10, parent:    9, name: 'Kyushu',         value: 35640},
+       {id: 11, parent:    9, name: 'Honshu',         value: 230500},
+       {id: 12, parent:    9, name: 'Shikoku',        value: 1200},
+       {id: 13, parent:    1, name: 'Europe'},
+       {id: 14, parent:   13, name: 'Northern Europe'},
+       {id: 15, parent:   14, name: 'Finland',        value: 338424,   capital: 'Helsinki'},
+       {id: 16, parent:   14, name: 'Great Britain',  value: 209331,   capital: 'London'},
+       {id: 17, parent:   14, name: 'Ireland',        value: 84421,    capital: 'Dublin'},
+       {id: 18, parent:   14, name: 'Scandinavia',    value: 928057},
+       {id: 19, parent:   18, name: 'Sweden',         value: 450295,   capital: 'Stockholm'},
+       {id: 20, parent:   18, name: 'Norway',         value: 385178,   capital: 'Oslo'},
+       {id: 21, parent:   18, name: 'Denmark',        value: 42923.53, capital: 'Copenhagen'},
+      ],
+  anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
+  );
 
-  chart = anychart.treeMap(data);
+chart = anychart.treeMap(data);
 ```
 
 Note that unless you use default field names listed in the beginning of the article you use mapping to make it clear for the component how to treat the data. 
@@ -203,7 +199,7 @@ There are two special treemap chart parameters that allow to tune headers behavi
 
 {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode(){api} defines how header label behaves when there is enough space to fit it in the header, there are three modes: "crop", "drop" and "alwaysShow".
 
-Take a look at the sample below, where the header height is set to "10px" and "crop" mode is set to "alwaysShow", then click the title to change settings to "5%" and "alwaysShow":
+Take a look at the sample below, where the header height is set to "10px" and display mode is set to "alwaysShow", then click the title to change settings to "5%" and "alwaysShow":
 
 {sample}BCT\_TreeMap\_05\_1{sample} 
 
@@ -267,9 +263,9 @@ There are two ways of selecting the leaf points: first is to click at a point wi
 
 ### Methods
 
-Treemap works with all standard [Interactivity methods](../Common_Settings/Interactivity) and have several special methods: {api:anychart.charts.TreeMap#drillTo}drillTo(){api}, {api:anychart.charts.TreeMap#drillUp}drillUp(){api} and {api:anychart.charts.TreeMap#getCurrentPath}getCurrentPath(){api}. These methods allow you to control and navigate any treemap.
+Treemap works with all standard [Interactivity methods](../Common_Settings/Interactivity) and have several special methods: {api:anychart.charts.TreeMap#drillTo}drillTo(){api}, {api:anychart.charts.TreeMap#drillUp}drillUp(){api} and {api:anychart.charts.TreeMap#getDrilldownPath}getDrilldownPath(){api}. These methods allow you to control and navigate any treemap.
 
-The following sample shows how to use all these three methods, you can navigate treemap the usual way and see how {api:anychart.charts.TreeMap#getCurrentPath}getCurrentPath(){api} is used to show the structure of drill down in a chart title, or you can use button on the top of the chart to jump deep into the hierarchy and drill up level by level. 
+The following sample shows how to use all these three methods, you can navigate treemap the usual way and see how {api:anychart.charts.TreeMap#getDrilldownPath}getDrilldownPath(){api} is used to show the structure of drill down in a chart title, or you can use button on the top of the chart to jump deep into the hierarchy and drill up level by level. 
 
 {sample}BCT\_TreeMap\_08\_1{sample}
 

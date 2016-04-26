@@ -58,10 +58,10 @@ var data = anychart.data.tree([
             ]}
         ]}
      ]} 
-]);
+], anychart.enums.TreeFillingMethod.AS_TREE);
 
 // set data and data type settings
-chart = anychart.treeMap(data, anychart.enums.TreeFillingMethod.AS_TREE);
+chart = anychart.treeMap(data);
 
 chart.headers().textFormatter("{%name}");
 chart.labels().textFormatter("{%name}");
