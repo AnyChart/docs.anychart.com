@@ -28,6 +28,10 @@
   chart.title("Palettes Switch Sample\nClick slices to change palette");
   chart.explode(0);
   chart.labels().textFormatter("{%x}");
+  chart.legend().position("right");
+  chart.legend().itemsLayout("vertical");
+  chart.overlapMode("allowOverlap");
+
 
   chart.listen("pointClick",function(e){
     chart.title(e.point.get("x"));
