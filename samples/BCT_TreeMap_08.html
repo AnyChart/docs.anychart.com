@@ -24,7 +24,7 @@
 </head>
 <body>
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-<script>anychart.onDocumentReady(function() {
+<script x-export="chart">anychart.onDocumentReady(function() {
     // create treemap chart
     chart = anychart.treeMap(data);
 
@@ -36,8 +36,8 @@
     // set title
     chart.title("2012 Export Map");
 
-    var data = anychart.data.tree([
-        {id: 'Europe', parent: 'null'},
+    var data = [
+        {id: 'Europe', parent: null},
         {id: 'Eastern Europe', parent: 'Europe'},
         {id: 'Western Europe', parent: 'Europe'},
         {id: 'Southern Europe', parent: 'Europe'},
@@ -60,13 +60,11 @@
         {id: 'Scandinavia', parent: 'Northern Europe', value: 928057},
         {id: 'Sweden', parent: 'Scandinavia', value: 450295, capital: 'Stockholm'},
         {id: 'Norway', parent: 'Scandinavia', value: 385178, capital: 'Oslo'},
-        {id: 'Denmark', parent: 'Scandinavia', value: 42923.53, capital: 'Copenhagen'},
-         ],
-    anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
-    );
+        {id: 'Denmark', parent: 'Scandinavia', value: 42923.53, capital: 'Copenhagen'}
+    ];
 
     // set data to chart
-    chart.data(data);
+    chart.data(data, anychart.enums.TreeFillingMethod.AS_TABLE);
     
     // display chart
     chart.container('container');

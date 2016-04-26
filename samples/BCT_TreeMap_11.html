@@ -24,7 +24,7 @@
 </head>
 <body>
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-<script>anychart.onDocumentReady(function() {
+<script x-export="chart">anychart.onDocumentReady(function() {
     // create treemap chart
     chart = anychart.treeMap();
 
@@ -37,8 +37,8 @@
     // tune labels
     chart.labels().textFormatter("{%id}");
 
-    var data = anychart.data.tree([
-        {id: 'Europe', parent: 'null'},
+    var data = [
+        {id: 'Europe', parent: nullmea},
         {id: 'Eastern Europe', parent: 'Europe'},
         {id: 'Western Europe', parent: 'Europe'},
         {id: 'Southern Europe', parent: 'Europe'},
@@ -72,7 +72,7 @@
         {id: "Other bars and rods of iron or nonalloy steel", parent: "Steel (Ua)", value: 1.61},  
         {id: 'Germany', parent: 'Western Europe'},
         {id: "Food (De)", parent: "Germany"},
-        {id: "Swine meat", parent: "Food (De)", value: 4.52},                        
+        {id: "Swine meat (DE)", parent: "Food (De)", value: 4.52},,                        
         {id: "Fresh cheese", parent: "Food (De)", value: 4.2},                        
         {id: "Coffee, not roasted", parent: "Food (De)", value: 1.89},                        
         {id: "Bread, pastry, cakes, biscuits and other baked goods", parent: "Food (De)", value: 3.64},
@@ -160,12 +160,10 @@
         {id: "Automated data processing machines", parent: "Machinery (Irl)", value: 5.21},                        
         {id: "Transmission apparatus for radio, TV, telephone", parent: "Machinery (Irl)", value: 1.86},                        
         {id: "Printers and copying machines", parent: "Machinery (Irl)", value: 1.17}
-         ],
-    anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
-    );
+    ];
     
     // set data
-    chart.data(data);
+    chart.data(data, anychart.enums.TreeFillingMethod.AS_TABLE);
 
     // display chart
     chart.container('container');
