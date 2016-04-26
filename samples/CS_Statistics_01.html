@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script x-export="chart">anychart.onDocumentReady(function () {
+    chart = anychart.scatter();
+
+    chart.bubble([
+        [4, 9, 10],
+        [1, 7, 6],
+        [2, 7, 15],
+        [3, 8, 20]
+    ]);
+
+    // Get statistical data
+    var bubbleMaxSize = chart.getStat("dataPlotBubbleMaxSize");
+	var pointsCount = chart.getStat(anychart.enums.Statistics.COUNT);
+
+    chart.title("Bubble maximum size is " + bubbleMaxSize + ", there are" + pointsCount + " bubbles.");
+    
+    chart.container("container");
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
