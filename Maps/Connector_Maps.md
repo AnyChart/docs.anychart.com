@@ -1,5 +1,5 @@
 {:index 7}
-#Connector Maps
+Connector Maps
 ==================
 
 * [Overview](#overview)
@@ -130,7 +130,7 @@ There are several settings can be adjusted for the series.
 
 #### Curvature
 
-As you might have noticed, all connectors in the samples above look like curves of the same curvature. Let's adjust this parameter with the {api:anychart.core.map.series.Connector#curvature}**.curvature()**{api} method. Let's make the connectors series look as straight lines:
+As you might have noticed, all connectors in the samples above look like curves of the same curvature. Let's adjust this parameter with the {api:anychart.core.map.series.Connector#curvature}.curvature(){api} method. Let's make the connectors series look as straight lines:
 
 ```
 	// changing the curvature of the series
@@ -161,7 +161,7 @@ Note that curvature might be negative. Negative value make the segment's curve g
 
 #### Start/end size
 
-Two more features of our map connector series are {api:anychart.core.map.series.Connector#startSize}**.startSize()**{api} and {api:anychart.core.map.series.Connector#endSize}**.endSize()**{api}. These methods make our connector look more like arrows, tapering or expanding the connector curve (or line) to its end or from its start. These settings are also available to be adjusted through the data set. In the next sample we've defined both settings for the series in general.
+Two more features of our map connector series are {api:anychart.core.map.series.Connector#startSize}.startSize(){api} and {api:anychart.core.map.series.Connector#endSize}.endSize(){api}. These methods make our connector look more like arrows, tapering or expanding the connector curve (or line) to its end or from its start. These settings are also available to be adjusted through the data set. In the next sample we've defined both settings for the series in general.
 
 ```
 	// changing the startSize and endSize of the connectors
@@ -173,7 +173,7 @@ Two more features of our map connector series are {api:anychart.core.map.series.
 
 ### Series colors
 
-Now, note that as soon as our connectors have become of some width, we will need to set some value for the {api:anychart.core.map.series.Connector#fill}**.fill()**{api} method of our series in addition to {api:anychart.core.map.series.Connector#stroke}**.stroke()**{api}, if we'd like our connectors to be colored somehow differently from the default. Of course, these colors can be also defined through the dataset. As usual, it's possible to edit colors for hovered and selected states also - for these states use {api:anychart.core.map.series.Connector#hoverFill}**.hoverFill()**{api}, {api:anychart.core.map.series.Connector#hoverstroke}**.hoverStroke()**{api}, {api:anychart.core.map.series.Connector#selectFill}**.selectFill()**{api} and {api:anychart.core.map.series.Connector#selectStroke}**.selectStroke()**{api} methods.
+Now, note that as soon as our connectors have become of some width, we will need to set some value for the {api:anychart.core.map.series.Connector#fill}.fill(){api} method of our series in addition to {api:anychart.core.map.series.Connector#stroke}.stroke(){api}, if we'd like our connectors to be colored somehow differently from the default. Of course, these colors can be also defined through the dataset. As usual, it's possible to edit colors for hovered and selected states also - for these states use {api:anychart.core.map.series.Connector#hoverFill}.hoverFill(){api}, {api:anychart.core.map.series.Connector#hoverstroke}.hoverStroke(){api}, {api:anychart.core.map.series.Connector#selectFill}.selectFill(){api} and {api:anychart.core.map.series.Connector#selectStroke}.selectStroke(){api} methods.
 
 ```
 	// setting colors for hovered and selected
@@ -185,11 +185,11 @@ Now, note that as soon as our connectors have become of some width, we will need
 
 {sample}Maps\_Connectors\_09{sample}
 
-Curvature parameter cannot be different for hovered and selected states, as well as the {api:anychart.core.map.series.Connector#endSize}**.endSize()**{api} and {api:anychart.core.map.series.Connector#startSize}**.startSize()**{api} parameters. They stay the same in all states.
+Curvature parameter cannot be different for hovered and selected states, as well as the {api:anychart.core.map.series.Connector#endSize}.endSize(){api} and {api:anychart.core.map.series.Connector#startSize}.startSize(){api} parameters. They stay the same in all states.
 
 ### Markers
 
-Another special parameter of the connectors is their markers' position. To adjust it use {api:anychart.core.ui.MarkersFactory.Marker#position}**.position()**{api} method which accepts string values like "start", "end", "middle", or ratio from 0 to 1, or a percent value. This method manages each marker's position on a connector. It can be defined through the dataSet as well. Let's use both ways of defining our markers' position in the next sample.
+Another special parameter of the connectors is their markers' position. To adjust it use {api:anychart.core.ui.MarkersFactory.Marker#position}.position(){api} method which accepts string values like "start", "end", "middle", or ratio from 0 to 1, or a percent value. This method manages each marker's position on a connector. It can be defined through the dataSet as well. Let's use both ways of defining our markers' position in the next sample.
 
 ```
 	// create data set
@@ -211,7 +211,7 @@ Another special parameter of the connectors is their markers' position. To adjus
 
 {sample}Maps\_Connectors\_10{sample}
 
-The anchor of the marker depends on its position and its connector's curvature, though it can be adjusted. Use the {api:anychart.core.ui.MarkersFactory.Marker#anchor}**.anchor()**{api} method to set it. You will need to define a string value, chosing one from the {api:anychart.enums.Anchor}Anchor type list{api}. Look a the next sample. Anchors are set for the markers, which are transformed to look more like arrows using the {api:anychart.core.ui.MarkersFactory.Marker#type}**.type()**{api} method. All default marker types can be found on the {api:anychart.enums.Marker}Marker Type list{api}.
+The anchor of the marker depends on its position and its connector's curvature, though it can be adjusted. Use the {api:anychart.core.ui.MarkersFactory.Marker#anchor}.anchor(){api} method to set it. You will need to define a string value, chosing one from the {api:anychart.enums.Anchor}Anchor type list{api}. Look a the next sample. Anchors are set for the markers, which are transformed to look more like arrows using the {api:anychart.core.ui.MarkersFactory.Marker#type}.type(){api} method. All default marker types can be found on the {api:anychart.enums.Marker}Marker Type list{api}.
 
 ```
 	// setting the marker type
@@ -224,22 +224,17 @@ The anchor of the marker depends on its position and its connector's curvature, 
 
 {sample}Maps\_Connectors\_11{sample}
 
-The size of markers were changes as well through the {api:anychart.core.ui.MarkersFactory.Marker#}**.size()**{api} method.
+The size of markers were changes as well through the {api:anychart.core.ui.MarkersFactory.Marker#}.size(){api} method.
 
-Another way to emphasize the start and/or end points is to create a Marker series. You can find the instructions in the [Marker series tutorial](/Dot_(Point)_Map).
+Another way to emphasize the start and/or end points is to create a Marker series. You can find the instructions in the [Marker series tutorial](Dot_\(Point\)_Map).
 
 ### Labels and Tooltips
 
 Adjusting the position of labels is similar to adjusting it for the markers. Set
- "start", "end", "middle", or ratio from 0 to 1, or a percent value for the {api:anychart.core.ui.LabelsFactory.Label#position}**.position()**{api} method. 
+ "start", "end", "middle", or ratio from 0 to 1, or a percent value for the {api:anychart.core.ui.LabelsFactory.Label#position}.position(){api} method. 
 
-The anchor of the label depends on its position and its connector's curvature, but can be adjusted as well by using the {api:anychart.core.ui.LabelsFactory.Label#anchor}**.anchor()**{api} method.
+The anchor of the label depends on its position and its connector's curvature, but can be adjusted as well by using the {api:anychart.core.ui.LabelsFactory.Label#anchor}.anchor(){api} method.
 
-Let's create a sample with labels held to some point.
-
-```
-	тут что-то пошло не так, position работает только через датасет, и то как-то коряво
-```
 
 {sample}Maps\_Connectors\_12{sample}
 
