@@ -1,4 +1,6 @@
+{:index 7}
 #Connector Maps
+==================
 
 * [Overview](#overview)
 * [Data](#data)
@@ -18,20 +20,17 @@
  * [Flight Map](#flight_map)
  * [Areas and Landscape](#areas_and_landscape)
 
-
 ## Overview
 
-Connector Maps are those which are being used for representing routes areas and some landscape elements (such as rivers, for example) in a schematic way. They are quite popular in geography, airlines, economics and advertising. Also they suit well for describing places of touristic interest, so they are also rather claimed in touristic companies. Start and end points for connectors in these maps are defined by the latitude and longitude parameters.
+Connector Maps are those used to represent routes, areas and some landscape elements (such as rivers) in a schematic way. They are quite popular in geography, airlines, economics and advertising. Also they suit well for describing places of touristic interest, so they are also rather claimed in touristic companies. Start and end points for connectors in these maps are defined by the latitude and longitude parameters.
 
-Look at the example below. That's how a complicated multi-functional Connector Map might look like.
+Look at the example below. That's a sample of Connector Map:
 
 {sample}Maps\_Connectors\_01{sample}
 
-There are three basic ways of using these maps: flight map, route map and area map. In this article there will be created maps of all three types.
-
 ## Data
 
-As it was mentioned before, it's necessary to set latitude and longitude for the start and end point of each connector. Note that latitude of the point should be defined first and then the longitude for each point, as it is done in all popular GIS-systems. There are two different data notations: the data can be arranged as objects and as arrays.
+As it was mentioned before, it's necessary to set latitude and longitude for the start and end point of each connector. Note that latitude of the point should be defined first and then the longitude for each point. There are two different data notations: the data can be arranged as objects or as arrays.
 
 ### Object notation
 
@@ -103,8 +102,6 @@ That's how the appearance of our map has changed after applying some settings th
 
 {sample}Maps\_Connectors\_04{sample}
 
-
-
 ### Segments
 
 One of the Connector Maps features is the ability to create segments: several connectors are connected as one point, creating segments of the route. Look at the code and sample below.
@@ -120,10 +117,10 @@ One of the Connector Maps features is the ability to create segments: several co
     {points: [55.2, -1.9, 56.4, -3.5], to: "Edinburgh"},
     {points: [56.4, -3.5, 57.1, -2.19], stroke:'green', to: "Aberdeen"}
 ```
+
 {sample}Maps\_Connectors\_05{sample}
 
 There are several connectors created that consist of a number of segments. To create a multi-segmental connector add a pair of values (representing longitude and latitude) to the data of this connector. Watch the number of values: it should stay even in each point (connector) data.
-
 
 ## Altering Connectors
 
@@ -139,6 +136,7 @@ As you might have noticed, all connectors in the samples above look like curves 
 	// changing the curvature of the series
 	series.curvature(0);
 ```
+
 {sample}Maps\_Connectors\_06{sample}
 
 It's possible to define curvature for each connector separately through the data, like in the sample below:
@@ -156,9 +154,10 @@ var data = anychart.data.set([
     {points: [56.4, -3.5, 57.1, -2.19], stroke:'green', to: "Aberdeen", curvature:1}
     ]);
 ```
+
 {sample}Maps\_Connectors\_07{sample}
 
-Note that curvature might be negative. Negative value will simply curve the segment in the other direction.
+Note that curvature might be negative. Negative value make the segment's curve go in the other direction.
 
 #### Start/end size
 
@@ -169,6 +168,7 @@ Two more features of our map connector series are {api:anychart.core.map.series.
 	series.startSize(7);
 	series.endSize(0);
 ```
+
 {sample}Maps\_Connectors\_08{sample}
 
 ### Series colors
@@ -182,6 +182,7 @@ Now, note that as soon as our connectors have become of some width, we will need
 	series.hoverStroke("black");
 	series.selectStroke("red");
 ```
+
 {sample}Maps\_Connectors\_09{sample}
 
 Curvature parameter cannot be different for hovered and selected states, as well as the {api:anychart.core.map.series.Connector#endSize}**.endSize()**{api} and {api:anychart.core.map.series.Connector#startSize}**.startSize()**{api} parameters. They stay the same in all states.
@@ -206,8 +207,8 @@ Another special parameter of the connectors is their markers' position. To adjus
 	// setting the marker position
 	var markers = series.markers();
 	markers.position("middle");
-	
 ```
+
 {sample}Maps\_Connectors\_10{sample}
 
 The anchor of the marker depends on its position and its connector's curvature, though it can be adjusted. Use the {api:anychart.core.ui.MarkersFactory.Marker#anchor}**.anchor()**{api} method to set it. You will need to define a string value, chosing one from the {api:anychart.enums.Anchor}Anchor type list{api}. Look a the next sample. Anchors are set for the markers, which are transformed to look more like arrows using the {api:anychart.core.ui.MarkersFactory.Marker#type}**.type()**{api} method. All default marker types can be found on the {api:anychart.enums.Marker}Marker Type list{api}.
@@ -220,6 +221,7 @@ The anchor of the marker depends on its position and its connector's curvature, 
 	// setting the anchor
 	markers.anchor("leftCenter");
 ```
+
 {sample}Maps\_Connectors\_11{sample}
 
 The size of markers were changes as well through the {api:anychart.core.ui.MarkersFactory.Marker#}**.size()**{api} method.
@@ -238,8 +240,8 @@ Let's create a sample with labels held to some point.
 ```
 	тут что-то пошло не так, position работает только через датасет, и то как-то коряво
 ```
-{sample}Maps\_Connectors\_12{sample}
 
+{sample}Maps\_Connectors\_12{sample}
 
 ## Maps Usage
 
