@@ -58,8 +58,8 @@ These are events available for Gantt Chart:
 <td>Dispatched when some row is selected.</td>
 </tr>
 <tr>
-<td>rowCollapseExpand<td>
-<td>Dispatched when an item that contains other items expands or collapses.<td>
+<td>rowCollapseExpand</td>
+<td>Dispatched when an item that contains other items expands or collapses.</td>
 </tbody>
 </table>
 
