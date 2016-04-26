@@ -15,28 +15,14 @@
     {x: "Condensed milk", value: 1}
   ];
 
-  // create default palette
-  var palette = anychart.palettes.distinctColors().items();
-
-  // color elements
-  for (var index in data)
-    data[index].fill = palette[index];
-
   // set chart type
   var chart = anychart.bar();
 
   // set data
   var series = chart.bar(data);
 
-  // disable tooltips
-  series.tooltip(false);
-
-  series.stroke(null);
-
   // set chart title
   chart.title("The kind of pancakes preferred at the Sochi 2014 Olympic Games");
-
-  chart.title().fontSize(14);
 
   // set chart container
   chart.container("container");
@@ -51,17 +37,14 @@
   var svgButton = document.createElement("div");
   var pngButton = document.createElement("div");
   var jpgButton = document.createElement("div");
-  var pdfButton = document.createElement("div");
 
   svgButton.className = "custombutton";
   pngButton.className = "custombutton";
   jpgButton.className = "custombutton";
-  pdfButton.className = "custombutton";
 
   svgButton.innerHTML = "SVG";
   pngButton.innerHTML = "PNG";
   jpgButton.innerHTML = "JPG";
-  pdfButton.innerHTML = "PDF";
 
   pngButton.onclick = function() {
     chart.saveAsPNG();
@@ -72,22 +55,11 @@
   jpgButton.onclick = function() {
     chart.saveAsJPG();
   };
-  pdfButton.onclick = function() {
-    var container = chart.container();
-    container.height(842);
-    container.width(595);
-    chart.bounds(0, 0, 595, 842);
-    chart.saveAsPDF();
-    container.height("100%");
-    container.width("100%");
-    chart.bounds(0, 0, container.width()-35, container.height());
-  };
 
   // append button to container
   container.appendChild(svgButton);
   container.appendChild(pngButton);
   container.appendChild(jpgButton);
-  container.appendChild(pdfButton);
 
   var custombuttons = document.getElementsByClassName("custombutton");
 
