@@ -23,7 +23,7 @@ Here is a sample with enabled context menu:
 
 ## Disable
 
-The Context Menu is enabled by default and if you have no need in the menu you can disable it using {api:anychart.ui.ContextMenu#enabled}.enabled(){api} method with *false* parameter:
+The Context Menu is enabled by default and if you have no need in the menu you can disable it using {api:anychart.ui.ContextMenu#enabled}.enabled(){api} method:
 
 ```
   var chart = anychart.column();
@@ -31,7 +31,7 @@ The Context Menu is enabled by default and if you have no need in the menu you c
   menu.enabled(false);
 ```
 
-*Note:* there is even more simple way to disable context menu. Pass *false* to the {api:anychart.core.Chart#contextMenu}.contextMenu(){api} method to disable context menu.
+*Note:* there is even more simple way to disable context menu: pass *false* to the {api:anychart.core.Chart#contextMenu}.contextMenu(){api} method.
 
 {sample}CS\_Context\_Menu\_02{sample}
 
@@ -39,15 +39,10 @@ The Context Menu is enabled by default and if you have no need in the menu you c
 
 The context menu consist of the following elements:
 
-* Export as
-* Save config as
+* Save chart as
 * Save data as
-* Print Chart
-* Version x.xx.x.xx
-* About AnyChart
-* Need help?
-
-As far as there are quite a few types of charts some of them requires unique Context Menu items. Here is a list of them: 
+* Print 
+* AnyChart vx.xx.x
 
 You can change any item in the context menu using {api:anychart.ui.ContextMenu#itemsFormatter}.itemsFormatter(){api} method. This method uses function as a parameter:
 
