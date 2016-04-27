@@ -76,23 +76,4 @@ In case of adding the thumbnail series to the scroller, you should know that tho
 
 ## List of supported series
 
-<table width="750" border="1" class="dtTABLE">
-<tbody><tr>
-<th width="350"><b>Series Type</b></th>
-<th width="350"><b>Links and info</b></th>
-</tr>
-<tr>
-<td>Line</td>
-<td></td>
-</tr>
-<tr>
-<td>Column</td>
-<td></td>
-</tr>
-<tr>
-<td>OHLC</td>
-<td></td>
-</tr>
-</tbody></table>
-
-
+Find them in the [Supported Series list](Supported_Series).
