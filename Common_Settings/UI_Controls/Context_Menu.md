@@ -96,3 +96,34 @@ Here is a sample with adjusted text of the default item and hidden last item:
 
 ## Custom Context Menu
 
+The Context Menu is very flexible it may serve a variety of purposes and in some cases it makes much more seance to create a whole new Context Menu rather than tuning default one. Use {api:anychart.ui.ContextMenu}anychart.ui.contextMenu(){api} to create custom Context Menu:
+
+```
+  var chart = anychart.column();
+  
+  // hide default menu
+  chart.contextMenu(false);
+  
+  // create custom context menu
+  var menu = anychart.ui.contextMenu();
+```
+
+AnyChart charting library doesn't limit the number of charts on a single plot, that is why it is required to define the target for the custom Context Menu:
+ 
+```
+  menu.attach(chart);
+```
+
+The custom menu has no items by default. Use {api:anychart.ui.ContextMenu#itemsProvider}.itemsProvider(){api} method to set a function for creating custom items array:
+
+```
+  menu.itemsProvider(function(){
+    return [
+      {text: "Unselect All", action: function(){
+        var i=0;
+        while(i in chart.getSeriesAt())
+          chart.getSeriesAt(i).unselect();
+      }}
+    ]
+  });
+```
