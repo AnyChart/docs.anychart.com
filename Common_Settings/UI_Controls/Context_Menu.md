@@ -1,6 +1,14 @@
 #Context Menu
 
 * [Overview](#overview)
+* [Enabled](#enabled)
+* [Disable](#disabled)
+* [Change Standard Element](#change_standard_element)
+ * [Adjust Text](#adjust_text)
+ * [Hide Element](#hide_element)
+* [Custom Context Menu](#custom_context_menu)
+* [Change the Look](#change_the_look)
+* [Context](#context)
 
 ## Overview 
 
@@ -149,3 +157,11 @@ The custom menu has no items by default. Use {api:anychart.ui.ContextMenu#itemsP
 Here is a sample of a custom context menu:
 
 {sample}CS\_ContextMenu\_04{sample}
+
+## Change the Look
+
+If you want to tune the visual appearance of the Context Menu you can define desirable appearance in you css file for custom css class and add the class name to the menu using {api:anychart.ui.ContextMenu#addClassName}.addClassName(){api} method.
+
+## Context
+
+Context Menu passes additional information into the formatting function depending on clicked chart's point. It helps to make the Context Menu more flexible and provides additional functionality for your menu.
