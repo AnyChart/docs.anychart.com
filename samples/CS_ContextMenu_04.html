@@ -29,12 +29,14 @@
       }});
     return [
       {
+        enabled: allState(true),
         text: "Explode All",
         action: function(){
           chart.explodeSlices(true)
         }
       },
       {
+        enabled: allState(false),
         text: "Explode None",
         action: function(){
           chart.explodeSlices(false);
@@ -47,10 +49,16 @@
     ];
   });
 
-  // draw
-  chart.container("container");
-  chart.draw();
-});</script>
+  function allState (state){
+    for (var i=0;i<chart.data().getRowsCount();i++)
+      if (state != chart.getPoint(i).selected()) return true;
+    return false;
+  }
+
+    // draw
+    chart.container("container");
+    chart.draw();
+  });</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
