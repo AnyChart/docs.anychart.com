@@ -113,10 +113,11 @@ This sample with Project Gantt Chart demonstrates the usage of this feature. Cli
 When you click on a row or move the mouse over the row, there are some default actions take place. 
 
 Events are dispatched in the following order on every click:
-1) rowMouseDown
-2) rowMouseUp
-3) rowClick (which is the same as rowMouseDown + rowMouseUp)
-4) rowSelect
+
+1. rowMouseDown
+2. rowMouseUp
+3. rowClick (which is the same as rowMouseDown + rowMouseUp)
+4. rowSelect
 
 <table>
 <tbody>

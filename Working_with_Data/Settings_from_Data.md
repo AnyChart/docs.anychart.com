@@ -1,10 +1,11 @@
 {:index 9}
-Settings from Data
+# Settings from Data
+========
 
 * [Overview](#overview)
 * [Supported Functionality](#supported_functionality)
 
-# Overview
+## Overview
 
 AnyChart js charting framework allows you to apply different visualization settings to a single point. It means that you can customize the point view explicitly from the data set. Let's consider how it works on a sample of JavaScript [Bar Chart](Bar_Chart).
 
