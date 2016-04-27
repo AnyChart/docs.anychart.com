@@ -1,8 +1,8 @@
 #Context Menu
 
 * [Overview](#overview)
-* [Enabled](#enabled)
-* [Disable](#disabled)
+* [Enable](#enable)
+* [Disable](#disable)
 * [Change Standard Element](#change_standard_element)
  * [Adjust Text](#adjust_text)
  * [Hide Element](#hide_element)
