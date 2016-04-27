@@ -1,14 +1,12 @@
 # AnyStock Column Series
 
 * [Overview](#overview)
-* [AnyStock Column Series Adjustment](#anystock_column_series_adjustment)
+* [AnyStock Column Adjustment](#anystock_column_series_adjustment)
  * [Data](#data)
  * [Switching series type](#switching_series_type)
 * [Visualization](#visualization)
  * [Coloring](#coloring)
  * [Hovered state](#hovered_state)
-  * [Tooltips](#tooltips)
-
 
 ## Overview
 
@@ -16,7 +14,7 @@ Column series is a standard series that uses columns to show the values of a par
 
 In stocks, the difference is in quantity of columns displayed at once in the chart. Stocks are intended to show how a some value changes in time. 
 
-## AnyStock Column Series Adjustment
+## AnyStock Column Adjustment
 
 Let's create a stock chart with column series used and adjust some parameters. 
 
@@ -26,20 +24,20 @@ AnyStock Charts can process table-formatted data. We can arrange the data as arr
 
 ```
 table = anychart.data.table();
-  table.addData([
-        ['2015-12-24T12:00:00', 27],
-        ['2015-12-25T12:00:00', 25.5],
-        ['2015-12-26T12:00:00', 23.1],
-        ['2015-12-27T12:00:00', 26.9],
-        ['2015-12-28T12:00:00', 29.7],
-        ['2015-12-29T12:00:00', 30.3],
-        ['2015-12-30T12:00:00', 23.7],
-        ['2015-12-31T12:00:00', 20.4],
-    	['2016-01-28T12:00:00', 28.7]
-  ]);
-  
-  mapping = table.mapAs();
-  mapping.addField('value', 1);
+table.addData([
+      ['2015-12-24T12:00:00', 27],
+      ['2015-12-25T12:00:00', 25.5],
+      ['2015-12-26T12:00:00', 23.1],
+      ['2015-12-27T12:00:00', 26.9],
+      ['2015-12-28T12:00:00', 29.7],
+      ['2015-12-29T12:00:00', 30.3],
+      ['2015-12-30T12:00:00', 23.7],
+      ['2015-12-31T12:00:00', 20.4],
+     	['2016-01-28T12:00:00', 28.7]
+]);
+
+mapping = table.mapAs();
+mapping.addField('value', 1);
 ```
 
 {sample}STOCK\_Column\_01{sample}
@@ -48,17 +46,17 @@ In the code sample above the data is set as array of arrays and mapped. It's nec
 
 ```
 table = anychart.data.table("x");
-  table.addData([
-        {"x":'2015-12-24T12:00:00', value: 27},
-        {"x":'2015-12-25T12:00:00', value: 25.5},
-        {"x":'2015-12-26T12:00:00', value: 23.1},
-        {"x":'2015-12-27T12:00:00', value: 26.9},
-        {"x":'2015-12-28T12:00:00', value: 29.7},
-        {"x":'2015-12-29T12:00:00', value: 30.3},
-        {"x":'2015-12-30T12:00:00', value: 23.7}
-  ]);
-  
-  mapping = table.mapAs({'x':"x", 'value':"value"});
+table.addData([
+      {"x":'2015-12-24T12:00:00', value: 27},
+      {"x":'2015-12-25T12:00:00', value: 25.5},
+      {"x":'2015-12-26T12:00:00', value: 23.1},
+      {"x":'2015-12-27T12:00:00', value: 26.9},
+      {"x":'2015-12-28T12:00:00', value: 29.7},
+      {"x":'2015-12-29T12:00:00', value: 30.3},
+      {"x":'2015-12-30T12:00:00', value: 23.7}
+]);
+
+mapping = table.mapAs({'x':"x", 'value':"value"});
 ```
 
 {sample}STOCK\_Column\_02{sample}
@@ -70,29 +68,30 @@ More about data settings in stocks can be found in the [Stock Data tutorial](../
 Of course, stock column charts can contain several series. You can find how to create a multi-series Column chart in the [Column Chart](../../Basic_Chart_Types/Column_Chart#multi_series) tutorial.
 
 Stocks usually demonstrate a number of charts, making the stock more informative. Sometimes these series are of different types. The sample below contains two plots with column series, but it's possible to add series of other types.
-For creating a new plot the {api:anychart.charts.Stock#plot}.plot(){api} method is being used. It's necessary to set the plot index as an argument of the method as the plot's identifier.
+
+For creating a new plot the {api:anychart.charts.Stock#plot}.plot(){api} method is being used. It's necessary to set the plot index as an argument to create a new or access existing plot.
 
 ```
-  // series of the first plot
-  var series_as = chart.plot(0).column(mapping_as);
-    series_as.name("Temperature in Alice's Springs");
+// series of the first plot
+var series_as = chart.plot(0).column(mapping_as);
+series_as.name("Temperature in Alice's Springs");
 
-  // series of the second plot
-  var series_sydney = chart.plot(1).column(mapping_sydney);
-    series_sydney.name("Temperature in Sydney");
+// series of the second plot
+var series_sydney = chart.plot(1).column(mapping_sydney);
+series_sydney.name("Temperature in Sydney");
 ```
 
 {sample}STOCK\_Column\_03{sample}
 
 By default, the plots are placed full-width one under another, but this can be set in other way. Look up the [Chart Plots article](../Chart_Plots) to know how to manage the plots.
 
-As stocks are intended to show big arrays of data, this data needs to be compressed at some point to be displayed correctly. By default, when a number of points displayed at once overcomes 500, these points are being grouped to form no more than 500 points. There are two grouping types: functional and objective. All information about them can be found in the [Grouping](../Grouping) article.
+As stocks are intended to show big arrays of data, this data needs to be compressed at some point to be displayed correctly. By default, when a number of points displayed at once overcomes 500, these points are being grouped to form no more than 500 points. There are two grouping types: functional and objective. All information about them can be found in the [Data Grouping](../Data_Grouping) article.
 
 ### Switching series type
 
-Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
+Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
 
-To switch the series use {api}.seriesType(){api} method.
+To switch the series use *seriesType()* method.
 
 ## Visualization
 
@@ -110,11 +109,9 @@ As in case with all basic series, Column series in Stocks can be colored. To cha
     // sydney series coloring
     series_sydney.fill("#fff");
     series_sydney.hatchFill("cross");
-
 ```
 
 {sample}STOCK\_Column\_04{sample}
-
 
 ### Hovered state
 
@@ -133,15 +130,4 @@ Note that a crosshair belongs to a chart plot, so it's possible to make a crossh
 
 {sample}STOCK\_Column\_05{sample}
 
-More about crosshair can be found in the [Crosshair tutorial](../../Axes_and_Grids/Crosshair).
-
 Together with the crosshair, a tooltip of union type is shown, demonstrating values of all hovered points. 
-
-Let's go further and consider the tooltips.
-
-Note that opposite to column series in common use, in stocks it's not possible to select the points.
-
-
-#### Tooltips
-
-Default tooltip type is union type, and it cannot be changes
