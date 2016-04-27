@@ -71,7 +71,7 @@ In the next sample let's try to change the text of the "Include" item the "Hidde
   });
 ```
 
-**Note**: as you can see, the way of text adjustment is a bit tricky. The differences in context menu for selected and unselected point requires to omit changing elements using index of the menu's item.  
+**Note**: as you can see, the way of text adjustment is a bit tricky. The differences in context menu for selected and unselected point requires to omit changing elements using index of the menu's item. The sample with adjusted items text can be found [below](#sample).
   
 ### Hide Element
 
@@ -91,4 +91,8 @@ JavaScript provides variety of methods for working with arrays. [These methods](
 
 Here is a sample with adjusted text of the default item and hidden last item:
 
+<a name="sample"></a>
 {sample}CS\_ContextMenu\_03{sample}
+
+## Custom Context Menu
+
