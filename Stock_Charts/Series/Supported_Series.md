@@ -45,7 +45,7 @@ AnyStock supports a lot of different series types. For the general information o
 <td>x, value</td>
 </tr>
 <tr>
-<td>[Stick series in AnyStock](Stick)</td>
+<td>Stick series in AnyStock</td>
 <td>*Coming soon*</td>
 </tr>
 <tr>
