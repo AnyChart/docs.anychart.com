@@ -59,4 +59,26 @@ You can change any item in the context menu using {api:anychart.ui.ContextMenu#i
   });
 ```
 
-In the snippet above the parameter `items` can be used to obtain the context menu items array. 
+In the snippet above the parameter `items` can be used to obtain the context menu items array.  
+  
+In the next sample let's try to change the text of the "Include" item the "Hidden". Here is the snippet for this:
+
+```
+  var chart = anychart.column();
+  var menu = chart.contextMenu();
+  menu.itemsFormatter(function(items){
+    for(var i=0;i<items.length;i++)
+      if(items[i]!==null)
+        if(items[i].text == "Include") items[i].text = "Hidden";
+    return items;
+  });
+```
+
+**Note**: as you can see, the way of text adjustment is a bit tricky. The differences in context menu for selected and unselected point requires to omit changing elements using index of the menu's item.  
+  
+
+
+Here is a sample with adjusted text of the custom item:
+
+{sample}CS\_Context\_Menu\_03{sample}
+
