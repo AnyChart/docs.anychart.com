@@ -10,9 +10,12 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 
 ```
 <head>
-    <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
+    <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://cdn.anychart.com/css/latest/anychart-ui.css">
 </head>
 ```
+
+**Note**: first link in the snippet above reference AnyChart JS file and the second one reference css file that is required for proper work of [AnyChart UI](../Common_Settings/UI_Controls/AnyChart_UI) elements including [Gantt Toolbar](../Common_Settings/UI_Controls/Gantt_Toolbar) and [Context Menu feature](../Common_Settings/UI_Controls/Context_Menu).
 
 ###2. Create a container for the chart
 Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. Unless you don’t, AnyChart charting library will use 100% of the container.
