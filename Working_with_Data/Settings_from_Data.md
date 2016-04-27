@@ -8,7 +8,7 @@ Settings from Data
 
 AnyChart js charting framework allows you to apply different visualization settings to a single point. It means that you can customize the point view explicitly from the data set. Let's consider how it works on a sample of JavaScript [Bar Chart](Bar_Chart).
 
-<br>As you know you can use a data set to create charts with the following code:
+As you know you can use a data set to create charts with the following code:
 
 ```
 //create data set
@@ -26,9 +26,10 @@ var series = chart.bar(data);
 ```
 
 And the chart will look this way:
+
 {sample}Settings\_From\_Data\_01{sample}
 
-<br>Visual appearance of bars is defined using [these settings](Bar_Chart#visualization):
+Visual appearance of bars is defined using [these settings](Bar_Chart#visualization):
 
 ```
 var series = chart.bar(data);
@@ -39,16 +40,19 @@ series
         .hatchFill('diagonalbrick', '#348781')
         .hoverHatchFill('diagonalbrick', '#0000A0')
 ```
-<br>If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
+
+If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
 
 ```
 series.tooltip().enabled(true).title().enabled(true).text('Information:');
 series.labels().enabled(true).anchor('leftCenter').position('rightCenter').fontSize(13);
 ```
-<br>Look at the demonstration of these settings in the Single-Series Bar Chart sample:
+
+Look at the demonstration of these settings in the Single-Series Bar Chart sample:
+
 {sample}Settings\_From\_Data\_02{sample}
 
-<br>As you can see, the settings are applied to all point in series, but sometimes it is necessary to highlight a specific point using a custom view. To make it you can define the point settings directly in a data set:
+As you can see, the settings are applied to all point in series, but sometimes it is necessary to highlight a specific point using a custom view. To make it you can define the point settings directly in a data set:
 
 ```
 var data = [
@@ -60,7 +64,7 @@ var data = [
 ];
 ```
 
-<br>Using this way you can redefine all visualization parameters that are available for this type of chart:
+Using this way you can redefine all visualization parameters that are available for this type of chart:
 
 ```
 var data = [
@@ -74,10 +78,9 @@ var data = [
 
 {sample}Settings\_From\_Data\_03{sample}
 
-<br>It was a simple demonstration of this feature, we've created the sample below to illustrate more opportunities:
+It was a simple demonstration of this feature, we've created the sample below to illustrate more opportunities:
 
 {sample :width 690 :height 450}Settings\_From\_Data\_04{sample}
-
 
 ## Supported Functionality
 
