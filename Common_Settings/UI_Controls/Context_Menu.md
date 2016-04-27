@@ -19,7 +19,7 @@ To enable AnyChart Context Menu feature you need to reference the css file in th
 
 Here is a sample with enabled context menu: 
 
-{sample}CS\_Context\_Menu\_01{sample}
+{sample}CS\_ContextMenu\_01{sample}
 
 ## Disable
 
@@ -33,7 +33,7 @@ The Context Menu is enabled by default and if you have no need in the menu you c
 
 *Note:* there is even more simple way to disable context menu: pass *false* to the {api:anychart.core.Chart#contextMenu}.contextMenu(){api} method.
 
-{sample}CS\_Context\_Menu\_02{sample}
+{sample}CS\_ContextMenu\_02{sample}
 
 ## Change Standard Element
 
@@ -42,7 +42,7 @@ The context menu consist of the following elements:
 * Save chart as
 * Save data as
 * Print 
-* AnyChart vx.xx.x
+* AnyChart vX.XX.X
 
 You can change any item in the context menu using {api:anychart.ui.ContextMenu#itemsFormatter}.itemsFormatter(){api} method. This method uses function as a parameter:
 
