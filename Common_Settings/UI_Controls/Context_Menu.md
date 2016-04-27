@@ -118,12 +118,34 @@ The custom menu has no items by default. Use {api:anychart.ui.ContextMenu#itemsP
 
 ```
   menu.itemsProvider(function(){
+    var data = chart.data();
+    var slices = [];
+    for (var i=0;i<data.getRowsCount();i++)
+      slices.push({text: data.get(i, "name"), action: function(){
+        var slice = data.find("name", this.item.text);
+        chart.explodeSlice(slice, !chart.getPoint(slice).selected());
+      }});
     return [
-      {text: "Unselect All", action: function(){
-        var i=0;
-        while(i in chart.getSeriesAt())
-          chart.getSeriesAt(i).unselect();
-      }}
-    ]
+      {
+        text: "Explode All",
+        action: function(){
+          chart.explodeSlices(true)
+        }
+      },
+      {
+        text: "Explode None",
+        action: function(){
+          chart.explodeSlices(false);
+        }
+      },
+      {
+        text: "Slices",
+        subMenu: slices
+      }
+    ];
   });
 ```
+
+Here is a sample of a custom context menu:
+
+{sample}CS\_ContextMenu\_04{sample}
