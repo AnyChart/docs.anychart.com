@@ -24,12 +24,18 @@
   var chart = anychart.column();
 
   // set title
-  chart.title("Adjusted Default Menu Item");
+  chart.title("Adjusted Context Menu Items");
   var menu = chart.contextMenu();
   menu.itemsFormatter(function(items){
     for(var i=0;i<items.length;i++)
       if(items[i]!==null)
+        // change text of the item
         if(items[i].text == "Include") items[i].text = "Hidden";
+
+    // exclude two last items of the menu
+    items.pop();
+    items.pop();
+
     return items;
   });
 

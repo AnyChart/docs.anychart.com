@@ -55,7 +55,9 @@ You can change any item in the context menu using {api:anychart.ui.ContextMenu#i
 ```
 
 In the snippet above the parameter `items` can be used to obtain the context menu items array.  
-  
+
+### Adjust Text
+
 In the next sample let's try to change the text of the "Include" item the "Hidden". Here is the snippet for this:
 
 ```
@@ -71,9 +73,22 @@ In the next sample let's try to change the text of the "Include" item the "Hidde
 
 **Note**: as you can see, the way of text adjustment is a bit tricky. The differences in context menu for selected and unselected point requires to omit changing elements using index of the menu's item.  
   
+### Hide Element
 
+JavaScript provides variety of methods for working with arrays. [These methods](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_2) can be used for manipulating Context Menu items in any way you want. For instance, you can use method [**.pop()**](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) to exclude last item of the Context Menu:
 
-Here is a sample with adjusted text of the custom item:
+```
+  var chart = anychart.column();
+  var menu = chart.contextMenu();
+  menu.itemsFormatter(function(items){
+    items.pop();
+    items.pop();
+    return items;
+  });
+```
+
+**Note**: as far as items separator is an element of items' array excluding separator along with the last element of the Context Menu makes it more sensible. 
+
+Here is a sample with adjusted text of the default item and hidden last item:
 
 {sample}CS\_ContextMenu\_03{sample}
-
