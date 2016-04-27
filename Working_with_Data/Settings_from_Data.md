@@ -1,5 +1,5 @@
 {:index 9}
-# Settings from Data
+Settings from Data
 ========
 
 * [Overview](#overview)
