@@ -75,5 +75,5 @@ In the next sample let's try to change the text of the "Include" item the "Hidde
 
 Here is a sample with adjusted text of the custom item:
 
-{sample}CS\_Context\_Menu\_03{sample}
+{sample}CS\_ContextMenu\_03{sample}
 
