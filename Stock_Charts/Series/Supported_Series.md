@@ -26,7 +26,7 @@ AnyStock supports a lot of different series types. For the general information o
 </tr>
 <tr>
 <td>[Column series in AnyStock](Column)</td>
-<td>z, value</td>
+<td>x, value</td>
 </tr>
 <tr>
 <td>[Line series in AnyStock](Line)</td>
