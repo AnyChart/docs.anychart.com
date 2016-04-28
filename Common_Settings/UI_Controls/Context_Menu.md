@@ -166,4 +166,4 @@ If you want to tune the visual appearance of the Context Menu you can define des
 
 ## Context
 
-Context Menu passes additional information into the formatting function depending on clicked chart's point. It helps to make the Context Menu more flexible and provides additional functionality for your menu.
+Context Menu passes context (additional information) into the formatting function depending on clicked chart's point. The information on context can b found in {api:anychart.ui.ContextMenu.PrepareItemsContext}api{api}. It helps to make the Context Menu more flexible and provides additional functionality for your menu.
