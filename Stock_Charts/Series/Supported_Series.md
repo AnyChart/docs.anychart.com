@@ -41,7 +41,7 @@ AnyStock supports a lot of different series types. For the general information o
 <td>x, open, high, low, close</td>
 </tr>
 <tr>
-<td>[Spline Area series in AnyStock](Spline Area)</td>
+<td>[Spline Area series in AnyStock](Spline_Area)</td>
 <td>x, value</td>
 </tr>
 <tr>
@@ -49,19 +49,19 @@ AnyStock supports a lot of different series types. For the general information o
 <td>*Coming soon*</td>
 </tr>
 <tr>
-<td>[Range Column series in AnyStock](Range Column)</td>
+<td>[Range Column series in AnyStock](Range_Column)</td>
 <td>x, high, low</td>
 </tr>
 <tr>
-<td>[Range Area series in AnyStock](Range Area)</td>
+<td>[Range Area series in AnyStock](Range_Area)</td>
 <td>x, high, low</td>
 </tr>
 <tr>
-<td>[Range Spline Area series in AnyStock](Range Spline Area)</td>
+<td>[Range Spline Area series in AnyStock](Range_Spline_Area)</td>
 <td>x, high, low</td>
 </tr>
 <tr>
-<td>[Range Step Area series in AnyStock](Range Step Area)</td>
+<td>[Range Step Area series in AnyStock](Range_Step_Area)</td>
 <td>x, high, low</td>
 </tr>
 <tr>
@@ -69,15 +69,15 @@ AnyStock supports a lot of different series types. For the general information o
 <td>x, value</td>
 </tr>
 <tr>
-<td>[Spline Area series in AnyStock](Spline Area)</td>
+<td>[Spline Area series in AnyStock](Spline_Area)</td>
 <td>x, value</td>
 </tr>
 <tr>
-<td>[Step Area series in AnyStock](Step Area)</td>
+<td>[Step Area series in AnyStock](Step_Area)</td>
 <td>x, value</td>
 </tr>
 <tr>
-<td>[Step Line series in AnyStock](Step Line)</td>
+<td>[Step Line series in AnyStock](Step_Line)</td>
 <td>x, value</td>
 </tr>
 </tbody></table>
