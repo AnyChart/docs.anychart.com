@@ -117,7 +117,7 @@ As in case with all basic series, Column series in Stocks can be colored. To cha
 
 When a point is hovered, there is a crosshair being displayed over a hovered point. If there are several points belong to one time point, all of them are being hovered simultaneously. 
 
-Crosshair is identified as a {api:anychart.core.stock.Plot#dateTimeHighlighter}.dateTimeHighlighter(){api}, so to change its color and thickness use {api}.stroke(){api} and {api}.thickness(){api}. Also it's possible to make a highlighter of different style instead of a simple line. Let's adjust the crosshair in our sample.
+Crosshair is identified as a {api:anychart.core.stock.Plot#dateTimeHighlighter}.dateTimeHighlighter(){api}, so we need to set the stroke color, thickness and style settings as parameters of this method to change the defaults. Also it's possible to make a highlighter of different style instead of a simple line. Let's adjust the crosshair in our sample.
 
 Note that a crosshair belongs to a chart plot, so it's possible to make a crosshair of every plot unique if necessary.
 
