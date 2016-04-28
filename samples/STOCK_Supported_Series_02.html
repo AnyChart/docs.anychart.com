@@ -144,6 +144,7 @@ var lineMapping = dataTable.mapAs({'value': 5});
   
 // create stock chart
 var chart = anychart.stock();
+        chart.padding().right(70);
 
 // create the plot on the chart with column series
         var plot_line_ohlc = chart.plot(0);
