@@ -52,6 +52,8 @@ The context menu consist of the following elements:
 * Print 
 * AnyChart vX.XX.X
 
+**Note**: the list of the elements from above may vary cause different types of charts require different interactivity. For instance: Context Menu of a cartesian chart contains "Include" item which contains all the hidden points of the chart and the Context Menu that was invoked by clicking on a series point of a cartesian chart contains "Exclude" and "Keep Only" items.
+  
 You can change any item in the context menu using {api:anychart.ui.ContextMenu#itemsFormatter}.itemsFormatter(){api} method. This method uses function as a parameter:
 
 ```
@@ -95,8 +97,8 @@ JavaScript provides variety of methods for working with arrays. [These methods](
   });
 ```
 
-**Note**: as far as items separator is an element of items' array excluding separator along with the last element of the Context Menu makes it more sensible. 
-
+**Note**: as far as items separator is an element of items' array excluding separator along with the last element of the Context Menu makes it more sensible.  
+  
 Here is a sample with adjusted text of the default item and hidden last item:
 
 <a name="sample"></a>
