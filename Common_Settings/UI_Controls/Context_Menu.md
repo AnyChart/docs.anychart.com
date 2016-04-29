@@ -39,20 +39,25 @@ The Context Menu is enabled by default and if you have no need in the menu you c
   menu.enabled(false);
 ```
 
-*Note:* there is even more simple way to disable context menu: pass *false* to the {api:anychart.core.Chart#contextMenu}.contextMenu(){api} method.
+*Note:* there is even more simple way to disable context menu: pass *false* to the {api:anychart.core.Chart#contextMenu}.contextMenu(){api} method:
+
+```
+  var chart = anychart.column();
+  chart.contextMenu(false);
+```
 
 {sample}CS\_ContextMenu\_02{sample}
 
 ## Change Standard Element
 
-The context menu consist of the following elements:
+The default context menu in all charts consists of the following elements:
 
 * Save chart as
 * Save data as
 * Print 
 * AnyChart vX.XX.X
 
-**Note**: the list of the elements from above may vary cause different types of charts require different interactivity. For instance: Context Menu of a cartesian chart contains "Include" item which contains all the hidden points of the chart and the Context Menu that was invoked by clicking on a series point of a cartesian chart contains "Exclude" and "Keep Only" items.
+**Note**: the list of the elements above may vary in different types of charts. For instance: Context Menu of a cartesian chart contains "Include/Exclude" functionality, Treemap charts provide "Drill up" option when available.
   
 You can change any item in the context menu using {api:anychart.ui.ContextMenu#itemsFormatter}.itemsFormatter(){api} method. This method uses function as a parameter:
 
@@ -68,7 +73,7 @@ In the snippet above the parameter `items` can be used to obtain the context men
 
 ### Adjust Text
 
-In the next sample let's try to change the text of the "Include" item the "Hidden". Here is the snippet for this:
+In the next sample let's change the text of the "Include" item the "Hidden". Here is the snippet for this:
 
 ```
   var chart = anychart.column();
@@ -76,7 +81,7 @@ In the next sample let's try to change the text of the "Include" item the "Hidde
   menu.itemsFormatter(function(items){
     for(var i=0;i<items.length;i++)
       if(items[i]!==null)
-        if(items[i].text == "Include") items[i].text = "Hidden";
+        if(items[i].text == "Include") items[i].text = "- INCLUDE -";
     return items;
   });
 ```
@@ -166,4 +171,4 @@ If you want to tune the visual appearance of the Context Menu you can define des
 
 ## Context
 
-Context Menu passes context (additional information) into the formatting function depending on clicked chart's point. The information on context can b found in {api:anychart.ui.ContextMenu.PrepareItemsContext}api{api}. It helps to make the Context Menu more flexible and provides additional functionality for your menu.
+Context Menu passes context (additional information) into the formatting function depending on clicked chart's point. The information on context can be found in {api:anychart.ui.ContextMenu.PrepareItemsContext}api{api}. It helps to make the Context Menu more flexible and provides additional functionality for your menu.
