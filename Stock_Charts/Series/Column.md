@@ -109,6 +109,7 @@ As in case with all basic series, Column series in Stocks can be colored. To cha
     // sydney series coloring
     series_sydney.fill("#fff");
     series_sydney.hatchFill("cross");
+    series_sydney.stroke("#000");
 ```
 
 {sample}STOCK\_Column\_04{sample}
