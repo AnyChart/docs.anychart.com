@@ -38,34 +38,6 @@
   secondColumn.cellTextSettings().hAlign('left');
   secondColumn.width(180);
 
-  // set third column settings
-  var thirdColumn = dataGrid.column(2);
-  thirdColumn.title('Start Time');
-  thirdColumn.width(70);
-  thirdColumn.cellTextSettings().hAlign('right');
-  thirdColumn.textFormatter(function(item) {
-    var date = new Date(item.get('actualStart'));
-    var month = date.getUTCMonth() + 1;
-    var strMonth = (month > 9) ? month : '0' + month;
-    var utcDate = date.getUTCDate();
-    var strDate = (utcDate > 9) ? utcDate : '0' + utcDate;
-    return date.getUTCFullYear() + '.' + strMonth + '.' + strDate;
-  });
-
-  // set fourth column settings
-  var fourthColumn = dataGrid.column(3);
-  fourthColumn.title('End Time');
-  fourthColumn.width(80);
-  fourthColumn.cellTextSettings().hAlign('right');
-  fourthColumn.textFormatter(function(item) {
-    var date = new Date(item.get('actualEnd'));
-    var month = date.getUTCMonth() + 1;
-    var strMonth = (month > 9) ? month : '0' + month;
-    var utcDate = date.getUTCDate();
-    var strDate = (utcDate > 9) ? utcDate : '0' + utcDate;
-    return date.getUTCFullYear() + '.' + strMonth + '.' + strDate;
-  });
-
   // initiate chart drawing
   chart.draw();
 
@@ -76,12 +48,12 @@ function getData() {
   return [
     {"id": "1", "name": "Phase 1 - Strategic Plan", "progressValue": "14%", "actualStart": 951350400000, "actualEnd": 954201600000,
       'markers': [
-        {'value': Date.UTC(2000, 2, 1), 'type': "diagonalCross", 'fill': "#0288d1 0.7", 'stroke': 'none'},
-        {'value': Date.UTC(2000, 3, 1), 'type': "star4", 'fill': "#0d47a1 0.7", 'stroke': 'none'}
+        {'value': Date.UTC(2000, 2, 1), 'type': "diagonalCross"},
+        {'value': Date.UTC(2000, 3, 1), 'type': "star4"}
       ]},
     {"id": "2", "name": "Self-Assessment", parent:"1", "progressValue": "25%", "actualStart": 951350400000, "actualEnd": 951955200000,
       'markers': [
-        {'value': Date.UTC(2000, 2, 25), 'type': "diagonalCross", 'fill': "#0288d1 0.7", 'stroke': 'none'}
+        {'value': Date.UTC(2000, 2, 25), 'type': "diagonalCross"}
     ]},
     {"id": "3", "name": "Define business vision", parent:"2", "progressValue": "0%", "actualStart": 951408000000, "actualEnd": 951440400000, "connectTo": "4", "connectorType": "FinishStart"},
     {"id": "4", "name": "Identify available skills, information and support", parent:"2", "progressValue": "0%", "actualStart": 951494400000, "actualEnd": 951526800000, "connectTo": "5", "connectorType": "FinishStart"},

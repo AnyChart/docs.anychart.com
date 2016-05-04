@@ -22,8 +22,8 @@ To add markers you need to attach an array of markers to a data item, in a Resou
     'name': 'Oceanic Airlines Navigation System',
     'periods': [{'id': 200, 'start': Date.UTC(2005, 1, 1), 'end': Date.UTC(2007, 1, 1)}],
     'markers': [
-      {'value': Date.UTC(2005, 2, 1), 'type': "diagonalCross", 'fill': "#0288d1 0.7", 'stroke': 'none'},
-      {'value': Date.UTC(2005, 3, 1), 'type': "star4", 'fill': "#0d47a1 0.7", 'stroke': 'none'}
+      {'value': Date.UTC(2005, 2, 1), 'type': "diagonalCross"},
+      {'value': Date.UTC(2005, 3, 1)}
     ]
   }];
 ```
@@ -42,8 +42,8 @@ In a Project chart you add markers to a task:
     'name': 'Oceanic Airlines Navigation System',
     'periods': [{'id': 200, 'start': Date.UTC(2005, 1, 1), 'end': Date.UTC(2007, 1, 1)}],
     'markers': [
-      {'value': Date.UTC(2005, 2, 1), 'type': "diagonalCross", 'fill': "#0288d1 0.7", 'stroke': 'none'},
-      {'value': Date.UTC(2005, 3, 1), 'type': "star4", 'fill': "#0d47a1 0.7", 'stroke': 'none'}
+      {'value': Date.UTC(2005, 2, 1), 'type': "diagonalCross"},
+      {'value': Date.UTC(2005, 3, 1), 'type': "star4"}
     ]
   }];
 ```
