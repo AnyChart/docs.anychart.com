@@ -57,8 +57,17 @@ Which looks like this:
 The marker's appearance Markers can be tuned using several properties of the marker's object. The {api:anychart.enums.MarkerType}type{api} property defines the shape of the marker. The inner color of a marker can be set using {api:anychart.graphics.vector.Fill}color{api} property and a border of a marker is controlled by {api:anychart.ui.MarkersFactory#stroke}stroke{api} property.
 
 ```
-// chart type
-chart = anychart.ganttProject();
+  // defining markers for a resource in resource chart
+  data = [{
+    'id': 0,
+    'project_number': 675023,
+    'name': 'Phase 1 - Strategic Plan',
+    'periods': [{"id": "1_1", "start": Date.UTC(2007, 1, 13), "end": Date.UTC(2007, 2, 1)}],
+    'markers': [
+      {'value': Date.UTC(2007, 1, 14), 'type': "diagonalCross", 'fill': "#0288d1 0.7", 'stroke': 'none'},
+      {'value': Date.UTC(2007, 1, 20), 'type': "star4", 'fill': "gold", 'stroke': 'darkorange'}
+    ]
+  }];
 ```
 
 text
