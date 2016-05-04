@@ -30,7 +30,7 @@ To add markers you need to attach an array of markers to a data item, in a Resou
 
 Which works like this:
 
-{sample :width 690 :height 180}GANTT\_Multiple\_Milestones\_1{sample}
+{sample :width 690 :height 180}GANTT\_Multiple\_Milestones\_01{sample}
 
 In a Project chart you add markers to a task:
 
@@ -50,11 +50,11 @@ In a Project chart you add markers to a task:
 
 Which looks like this:
 
-{sample :width 690 :height 180}GANTT\_Multiple\_Milestones\_2{sample}
+{sample :width 690 :height 180}GANTT\_Multiple\_Milestones\_02{sample}
 
 ##Tuning appearance
 
-text
+The marker's appearance Markers can be tuned using several properties of the marker's object. The {api:anychart.enums.MarkerType}type{api} property defines the shape of the marker. The inner color of a marker can be set using {api:anychart.graphics.vector.Fill}color{api} property and a border of a marker is controlled by {api:anychart.ui.MarkersFactory#stroke}stroke{api} property.
 
 ```
 // chart type
@@ -63,4 +63,4 @@ chart = anychart.ganttProject();
 
 text
 
-{sample :width 690 :height 180}GANTT\_Multiple\_Milestones\_2{sample}
+{sample :width 690 :height 180}GANTT\_Multiple\_Milestones\_03{sample}
