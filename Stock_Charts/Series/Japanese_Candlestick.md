@@ -104,7 +104,7 @@ It's obvious that this information in a stock is rather hard to understand. Let'
 
 So, plots are a kind of chart frames that allow to show several series with completely different range of values, making the information clear for the auditorium.  
 
-Find more information about using plots in stocks in the [Chat Plots](../Chart_Plots)(article).
+Find more information about using plots in stocks in the [Chart Plots](../Chart_Plots) article.
 
 
 ### Switching series type
