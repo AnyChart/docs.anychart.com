@@ -39,11 +39,11 @@ In a Project chart you add markers to a task:
   data = [{
     'id': 0,
     'project_number': 675023,
-    'name': 'Oceanic Airlines Navigation System',
-    'periods': [{'id': 200, 'start': Date.UTC(2005, 1, 1), 'end': Date.UTC(2007, 1, 1)}],
+    'name': 'Phase 1 - Strategic Plan',
+    'periods': [{"id": "1_1", "start": Date.UTC(2007, 1, 13), "end": Date.UTC(2007, 2, 1)}],
     'markers': [
-      {'value': Date.UTC(2005, 2, 1), 'type': "diagonalCross"},
-      {'value': Date.UTC(2005, 3, 1), 'type': "star4"}
+      {'value': Date.UTC(2007, 1, 14), 'type': "diagonalCross"},
+      {'value': Date.UTC(2007, 1, 20)}
     ]
   }];
 ```
