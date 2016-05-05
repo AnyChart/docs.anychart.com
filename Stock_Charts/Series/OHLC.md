@@ -126,10 +126,11 @@ Let's change the defaults for one of the series in the previous sample.
 
 ### Hovered state
 
-When a point is hovered, stock behaves differently from basic charts. A point is highlighted with a crosshair instead of different color. A crosshair, which is identified as {api:anychart.core.stock.Plot#dateTimeHighlighter}.dateTimeHighlighter(){api}, can be adjusted: it's possible to change its color, thickness, - the same params that both stroke types have. Let's edit the highlighter of the upper plot.
+When a point is hovered, stock behaves differently from basic charts. A point is highlighted with a crosshair instead of different color. A crosshair, which is identified as {api:anychart.core.stock.Plot#dateTimeHighlighter}.dateTimeHighlighter(){api}, can be adjusted: it's possible to change its color, thickness, dash pattern, line joining type and line cap - the same params that both stroke types have. Look through the API to know more. Let's edit the highlighter of the upper plot.
 
 ```
-	
+	// highlighter (crosshair) adjusting
+    chart.plot(0).dateTimeHighlighter("#0000FF", 0.5);
 ```
 
 {sample}STOCK\_OHLC\_05{sample}
