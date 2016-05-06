@@ -113,17 +113,17 @@ As stocks are intended to show big arrays of data, this data needs to be compres
 
 ### Switching series type
 
-Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the sameimilar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
+Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
 
 To switch the series use *seriesType()* method.
 
 ## Visualization
 
-There are some parameters that influences the appearanceof the areas - their colors, behavior while being hovered, tooltips, etc. Let's consider those below.
+There are some parameters that influences the appearance of the areas - their colors, behavior while being hovered, tooltips, etc. Let's consider those below.
 
 ### Coloring
 
-Area series in Stocks can be colored as well as any other seres . To change the default colors of the area filling and stroke use {api:anychart.core.stock.series.Area#fill}.fill(){api} and {api:anychart.core.stock.series.Area#stroke}.stroke(){api}. Another way of highlighting the series is using hatch filling (which can be very useful in case a person with sight problems will be exploring your charts) with {api:anychart.core.stock.series.Column#hatchFill}.hatchFill(){api} method. Let's change the color of one of our series and add hatch settings to another. 
+Area series in Stocks can be colored as well as any other seres . To change the default colors of the area filling and stroke use {api:anychart.core.stock.series.Area#fill}.fill(){api} and {api:anychart.core.stock.series.Area#stroke}.stroke(){api}. Another way of highlighting the series is using hatch filling (which can be very useful in case a person with sight problems will be exploring your charts) with {api:anychart.core.stock.series.Area#hatchFill}.hatchFill(){api} method. Let's change the color of one of our series and add hatch settings to another. 
 
 ```
   // coloring
