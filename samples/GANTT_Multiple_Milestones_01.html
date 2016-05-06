@@ -15,12 +15,6 @@
   // chart type
   var chart = anychart.ganttResource();
 
-  // chart container
-  chart.container("container");
-
-  // chart position
-  chart.bounds(0, 0, "100%", "100%");
-
   // chart data
   chart.data(treeData);
 
@@ -37,13 +31,14 @@
     return item.get("name");
   }).title().text("Person");
 
+  // chart container
+  chart.container("container");
+
   // initiate drawing
   chart.draw();
 
-  // area to display by default
-  chart.zoomTo(1171036800000, 1176908400000);
+  chart.fitAll();
 });
-
 // data
 var data = [
   {
@@ -84,13 +79,13 @@ var data = [
     "id": "5",
     "name": "Decide whether to proceed",
     "periods": [
-      {"id": "5_1", "start": 1171296000000, "end": 1171382400000}]
+      {"id": "5_1", "start": Date.UTC(2007, 2, 12), "end": Date.UTC(2007, 2, 13)}]
   },
   {
     "id": "6",
     "name": "Define the Opportunity",
     "periods": [
-      {"id": "6_1", "start": 1173628800000, "end": 1174320000000}]
+      {"id": "6_1", "start": Date.UTC(2007, 3, 11), "end": Date.UTC(2007, 3, 19)}]
   }
 ];</script>
 </head>
