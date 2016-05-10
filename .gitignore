@@ -1,3 +1,9 @@
-*.DS_Store
-.idea/
-
+.DS_Store
+*.swp
+.idea
+*.pid
+contrib/compiler/
+out/*
+src/deps.js
+*.swo
+demos-local
