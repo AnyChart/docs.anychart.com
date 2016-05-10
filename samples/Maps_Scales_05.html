@@ -25,7 +25,7 @@
     map.geoData(anychart.maps.australia);
 
     // set the background color
-    map.background('none');
+    map.background('#ddd');
     // set the title and its preferences
     map.title().useHtml(true).hAlign('center');
     map.title('<span style="font-size: 18px;">Bi-polar progression with Linear Color Scale</span>');
@@ -48,6 +48,9 @@
 	
 	// create and enable the colorRange
 	var colorRange = map.colorRange(true);
+
+    // stroke disable
+    series.stroke(false);
 
     // set the container
     map.container('container');

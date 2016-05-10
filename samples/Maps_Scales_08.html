@@ -25,7 +25,7 @@
     map.geoData(anychart.maps.australia);
 
     // set the background color
-    map.background('none');
+    map.background('#ddd');
     // set the title and its preferences
     map.title().useHtml(true).hAlign('center');
     map.title('<span style="font-size: 18px;">Blended progression with Ordinal Color Scale</span>');
@@ -34,8 +34,9 @@
     var series = map.choropleth(dataSet);
     series.geoIdField('code_hasc');
 	
-	// disable the labels
+	// disable the labels and stroke
     series.labels(false);
+    series.stroke(false);
     
     // set the colors and ranges for the scale
 	series.colorScale(anychart.scales.ordinalColor([{less:125},{from:125, to:175},{from:175, to:225},{from:225, to:275},{from:275, to:315},{greater:315}]));
