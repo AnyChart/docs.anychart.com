@@ -11,15 +11,15 @@
   var chart = anychart.column();
 
   // setting title
-  chart.title("X-Axis labels: width is 100% (no wrapping)");
+  chart.title("Prevent X Labels Overlapping");
 
   // setting data
   chart.column([
-      ["People's Republic of China", 1336717952],
-      ["India", 1189172864],
-      ["United States of America", 313232032],
-      ["Russian Federation", 138739888],
-      ["Japan", 126475664]
+    ["People's Republic of China", 1336717952],
+    ["India", 1189172864],
+    ["United States of America", 313232032],
+    ["Russian Federation", 138739888],
+    ["Japan", 126475664]
   ]);
 
   // adjusting labels
@@ -29,7 +29,8 @@
   yLabels.textFormatter(function(){
     var value = this.value;
     if (value>1000000){
-      if (value>999999999){
+      if (
+        value>999999999){
         value = value/1000000000 + " B ";
       }
       else{
@@ -39,9 +40,10 @@
     return value;
   });
 
-  // force labels to hide value, if the previous one is too big, set text position to center
+  // x axis getter
   var xAxis = chart.xAxis();
-  xAxis.overlapMode(false);
+  // prevent labels overlapping
+  xAxis.overlapMode("noOverlap");
 
   // draw chart
   chart.container("container");

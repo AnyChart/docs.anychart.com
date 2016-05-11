@@ -19,6 +19,7 @@
  * [First and Last Labels](#first_and_last_labels)
  * [Y-Axis Labels: Fixed Width](#y-axis_labels-fixed-width)
  * [X-Axis Labels: Fixed Width and Text Wrapping](#x-axis-labels-wrapping-width)
+ * [Overlapping](#overlapping)
 
 ## Overview
 
@@ -289,3 +290,23 @@ Exactly the same configuration but the labels width is set manually to 60 pixels
 This works as well for other plot types. The following example demonstrates the same data displayed on a bar chart. In order to align multiline text to the right side {api:anychart.graphics.vector.Text#hAlign}**hAlign()**{api} attribute is set to right:
 
 {sample}AGST\_Labels\_Formatting\_10{sample}
+
+## Overlapping
+
+As far as your labels can be unlimited in width AnyChart provides some tools to make axis labels more manageable. You can define the labels' visibility for the case of overlapping. The {api:anychart.core.axes.Linear#overlapMode}overlapMode{api} of a chart's {api:anychart.core.axes.Linear}axis{api} uses **noOverlap** and **allowOverlap** parameters to control overlapping labels:
+
+```
+// x axis getter
+var xAxis = chart.xAxis();
+// allow labels overlap 
+xAxis.overlapMode("allowOverlap");
+```
+
+Here is a sample with overlapping labels:
+
+{sample}AGST\_Labels\_Formatting\_11{sample}
+
+And x labels with prevented overlapping looks like:
+
+{sample}AGST\_Labels\_Formatting\_12{sample}
+
