@@ -15,7 +15,7 @@
       {'id': 'AU.VI', 'value': 75},   // Victoria
       {'id': 'AU.NT', 'value': 130},  // Northern Territory
       {'id': 'AU.TS', 'value': 190},  // Tasmania
-      {'id': 'AU.CT', 'value': 100, labels: false}, // Australian Capital Territory
+      {'id': 'AU.CT', 'value': 100}, // Australian Capital Territory
       {'id': 'AU.SA', 'value': 280},  // South Australia
       {'id': 'AU.QL', 'value': 220}   // Queensland
     ]);
@@ -24,15 +24,8 @@
     var map = anychart.map();
     map.geoData(anychart.maps.australia);
 
-    // set the background color
-    map.background('#ddd');
     // set the title and its preferences
-    map.title().useHtml(true).hAlign('center');
-    map.title('<span style="font-size: 18px;">Bi-polar progression with Ordinal Color Scale</span>');
-
-    // set the series
-    var series = map.choropleth(dataSet);
-    series.geoIdField('code_hasc');
+    map.title("Bi-polar progression with Ordinal Color Scale");
 	
 	// disable the labels
     series.labels(false);
@@ -44,7 +37,7 @@
     var colors = anychart.color.bipolarHueProgression('#EC6E07', '#64B5F6', 3);
 
     // series disable
-    series.stroke(false);
+    series.stroke("2 white 0");(
     
 	// define the colors 
     series.colorScale().colors(colors);	
