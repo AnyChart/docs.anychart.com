@@ -23,7 +23,7 @@
     //
     var map = anychart.map();
     map.geoData(anychart.maps.australia);
-    
+
     // set the title and its preferences
     map.title("Value Map");
 
@@ -31,28 +31,29 @@
     var series = map.choropleth(dataSet);
     series.geoIdField('code_hasc');
 	
-	// disable the labels
+    // disable the labels
     series.labels(false);
     
     // set the colors and ranges for the scale
-	series.colorScale(anychart.scales.linearColor());
+    series.colorScale(anychart.scales.linearColor());
         
     //set the single hue progression
     var colors = anychart.color.singleHueProgression('#4C4C4C');
     
-	// define the colors 
+    // define the colors 
     series.colorScale().colors(colors);
 
-    // stroke disable
-    series.stroke(false);
+    // set the stroke
+    series.stroke("2 white 0");
 	
-	// create and enable the colorRange
-	var colorRange = map.colorRange(true);
+    // create and enable the colorRange
+    var colorRange = map.colorRange(true);
 
     // set the container
     map.container('container');
     map.draw();
-  });</script>
+});
+</script>
 
 </head>
 <body>

@@ -31,26 +31,27 @@
     var series = map.choropleth(dataSet);
     series.geoIdField('code_hasc');
 	
-	// disable the labels and stroke
+    // disable the labels and stroke
     series.labels(false);
     series.stroke("2 white 0");
     
     // set the colors and ranges for the scale
-	series.colorScale(anychart.scales.ordinalColor([{less:125},{from:125, to:175},{from:175, to:225},{from:225, to:275},{from:275, to:315},{greater:315}]));
+    series.colorScale(anychart.scales.ordinalColor([{less:125},{from:125, to:175},{from:175, to:225},{from:225, to:275},{from:275, to:315},{greater:315}]));
 
     //set the single hue progression
     var colors = anychart.color.blendedHueProgression('#C8F672', '273813', 6);
     
-	// define the colors 
+    // define the colors 
     series.colorScale().colors(colors);
 	
-	// create and enable the colorRange
-	var colorRange = map.colorRange(true);
+    // create and enable the colorRange
+    var colorRange = map.colorRange(true);
 	
     // set the container
     map.container('container');
     map.draw();
-  });</script>
+});
+</script>
 
 </head>
 <body>

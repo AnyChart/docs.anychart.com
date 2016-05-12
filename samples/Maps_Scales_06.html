@@ -26,30 +26,35 @@
 
     // set the title and its preferences
     map.title("Bi-polar progression with Ordinal Color Scale");
+
+    // set the series
+    var series = map.choropleth(dataSet);
+    series.geoIdField('code_hasc');
 	
-	// disable the labels
+    // disable the labels
     series.labels(false);
     
     // set the colors and ranges for the scale
-	series.colorScale(anychart.scales.ordinalColor([{less:200},{from:200, to:250},{greater:250}]));
+    series.colorScale(anychart.scales.ordinalColor([{less:200},{from:200, to:250},{greater:250}]));
 
     //set the single hue progression
     var colors = anychart.color.bipolarHueProgression('#EC6E07', '#64B5F6', 3);
 
     // series disable
-    series.stroke("2 white 0");(
+    series.stroke("2 white 0");
     
-	// define the colors 
+    // define the colors 
     series.colorScale().colors(colors);	
 	
-	// create, enable and stroke the colorRange
-	var colorRange = map.colorRange();
-	colorRange.enabled(true).stroke('#BBB');
+    // create, enable and stroke the colorRange
+    var colorRange = map.colorRange();
+    colorRange.enabled(true).stroke('#BBB');
 
     // set the container
     map.container('container');
     map.draw();
-  });</script>
+});
+</script>
 
 </head>
 <body>

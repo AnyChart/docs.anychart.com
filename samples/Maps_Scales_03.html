@@ -31,14 +31,14 @@
     var series = map.choropleth(dataSet);
     series.geoIdField('code_hasc');
 
-    // stroke disable
+    // set the stroke
     series.stroke("2 white 0");
 	
-	// disable the labels
+    // disable the labels
     series.labels(false);
     
     // set the colors and ranges for the scale
-	series.colorScale(anychart.scales.ordinalColor([{less:200},{from:200, to:250},{greater:250}]));
+    series.colorScale(anychart.scales.ordinalColor([{less:200},{from:200, to:250},{greater:250}]));
 
     //set the single hue progression
     var colors = anychart.color.singleHueProgression('#0068BC');
