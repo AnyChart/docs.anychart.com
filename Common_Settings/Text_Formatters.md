@@ -85,6 +85,15 @@ Here is a full list of the tokens you can use in formatting strings, note that s
 <td>{%BubbleSize}</td><td>The bubble size value of this point (Bubble chart).</td>
 </tr>
 <tr>
+<td>{%BubbleSizePercentOfCategory}</td><td>The percentage of all the points with the same name this point represents (Categorized charts).</td>
+</tr>
+<tr>
+<td>{%BubbleSizePercentOfSeries}</td><td>The percentage of the series this point represents.</td>
+</tr>
+<tr>
+<td>{%BubbleSizePercentOfTotal}</td><td>The percentage of all the series on the chart this point represents.</td>
+</tr>
+<tr>
 <td>{%Index}</td><td>The index of this point in the series this point represents (zero-based).</td>
 </tr>
 <tr>
@@ -145,7 +154,85 @@ Here is a full list of the tokens you can use in formatting strings, note that s
 <td>{%DataPlotPointCount}</td><td>The number of the points within the chart.</td>
 </tr>
 <tr>
+<td>{%DataPlotBubbleMaxSize}</td><td>The maximal of all the points bubble sizes (Bubble chart).</td>
+</tr>
+<tr>
+<td>{%DataPlotBubbleMinSize}</td><td>The minimal of all the points bubble sizes (Bubble chart).</td>
+</tr>
+<tr>
+<td>{%DataPlotBubbleSizeAverage}</td><td>The average bubble size of all the points (Scatter plot charts).</td>
+</tr>
+<tr>
+<td>{%DataPlotBubbleSizeSum}</td><td>The sum of all the points bubble sizes (Bubble chart).</td>
+</tr>
+<tr>
 <td>{%DataPlotSeriesCount}</td><td>The number of the series within the chart.</td>
+</tr>
+<tr>
+<td>{%AxisName}</td><td>The name of the axis.</td>
+</tr>
+<tr>
+<td>{%AxisScaleMax}</td><td>The maximum value on the axis.</td>
+</tr>
+<tr>
+<td>{%AxisScaleMin}</td><td>The minimum value on the axis.</td>
+</tr>
+<tr>
+<td>{%CategoryName}</td><td>The name of the category.</td>
+</tr>
+<tr>
+<td>{%CategoryYAverage}</td><td>The name of the category.</td>
+</tr>
+<tr>
+<td>{%CategoryYMax}</td><td>The max of all the points within this category.</td>
+</tr>
+<tr>
+<td>{%CategoryYMedian}</td><td>The median of all the points within this category.</td>
+</tr>
+<tr>
+<td>{%CategoryYMin}</td><td>The min of all the points within this category.</td>
+</tr>
+<tr>
+<td>{%CategoryYMode}</td><td>The mode of all the points within this category.</td>
+</tr>
+<tr>
+<td>{%CategoryYPercentOfTotal}</td><td>The percent of all the data on the chart this category represents.</td>
+</tr>
+<tr>
+<td>{%CategoryYRangeAverage}</td><td>The average range in this category (Range charts).</td>
+</tr>
+<tr>
+<td>{%CategoryYRangeMax}</td><td>The maximal range in this category (Range charts).</td>
+</tr>
+<tr>
+<td>{%CategoryYRangeMedian}</td><td>The median range in this category (Range charts).</td>
+</tr>
+<tr>
+<td>{%CategoryYRangeMin}</td><td>The minimal range in this category (Range charts).</td>
+</tr>
+<tr>
+<td>{%CategoryYRangeMode}</td><td>The mode range in this category (Range charts).</td>
+</tr>
+<tr>
+<td>{%СategoryYRangePercentOfTotal}</td><td>Category Y range percent of total (Range charts).</td>
+</tr>
+<tr>
+<td>{%DataPlotMaxYSumSeriesName}</td><td>The name of the series with a maximal sum of the points y values.</td>
+</tr>
+<tr>
+<td>{%DataPlotMaxYValuePointName}</td><td>The name of the point with a maximal of all the points y values.</td>
+</tr>
+<tr>
+<td>{%DataPlotMaxYValuePointSeriesName}</td><td>The name of the series with a maximal of all the points y values.</td>
+</tr>
+<tr>
+<td>{%DataPlotMinYSumSeriesName}</td><td>The name of the series with a minimal sum of the points y values.</td>
+</tr>
+<tr>
+<td>{%DataPlotMinYValuePointName}</td><td>The name of the point with a minimal of all the points y values.</td>
+</tr>
+<tr>
+<td>{%DataPlotMinYValuePointSeriesName}</td><td>The name of the series with a minimal of all the points y values.</td>
 </tr>
 </table>
 
