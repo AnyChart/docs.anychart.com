@@ -90,7 +90,7 @@ There are two series in one chart, but the second series looks like a line. It b
     series_ex2.name("Experiment 2");
 ```
 
-{sample}STOC\_RangeK\_Step\_Area\_04{sample}
+{sample}STOCK\_Range\_Step\_Area\_04{sample}
 
 The difference in the code is in a single parameter, means the plot ID, but the difference in the data visualization is spectacular. More about plots can be found in the [Plots tutorial](../Chart_Plots).
 

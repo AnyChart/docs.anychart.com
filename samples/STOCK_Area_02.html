@@ -8,9 +8,9 @@
     <script x-export="chart">
 anychart.onDocumentReady(function() {
 
-  // set the data
-  table = anychart.data.table("x");
-  table.addData([
+    // set the data
+    table = anychart.data.table("x");
+    table.addData([
         {x:'1790', value:3929214},
         {x:'1795', value:4390561},
         {x:'1800', value:5236631},
@@ -57,22 +57,27 @@ anychart.onDocumentReady(function() {
         {x:'2005', value:299456285},
         {x:'2010', value:308745538},
         {x:'2015', value:318914629}
-  ]);
-  
-  // map the data
-  mapping = table.mapAs({'x':"x", 'value':"value"});
+    ]);
+      
+    // map the data
+    mapping = table.mapAs({'x':"x", 'value':"value"});
 
-  // chart type
-  chart = anychart.stock();
+    // chart type
+    chart = anychart.stock();
 
-  // set the series
-  var series = chart.plot(0).area(mapping);
+    // set the series
+    var series = chart.plot(0).area(mapping);
     series.name("USA population growth");
 
-  chart.title('Stock Area Demo: USA population growth');
-  chart.container('container');
-
-  chart.draw();
+    chart.title('Stock Area Demo: USA population growth');
+    
+    // y-axis labels formatting
+    chart.plot(0).yAxis().labels().textFormatter(function(){
+      return this.value/1000000 + "m";
+    });
+    
+    chart.container('container');
+    chart.draw();
 });
 </script>
 </head>

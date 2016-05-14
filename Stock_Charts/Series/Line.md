@@ -24,20 +24,20 @@ The data in stocks should be table-formatted, though there are two ways of setti
 
 
 ```
-// set the data
-  table = anychart.data.table();
-  table.addData([
+    // set the data
+    table = anychart.data.table();
+    table.addData([
         ['2016-01-01T12:00:00', 1.0860],
         ['2016-01-04T12:00:00', 1.0832],
         ['2016-01-05T12:00:00', 1.0780],
         ['2016-01-06T12:00:00', 1.0781],
         ['2016-01-07T12:00:00', 1.0936],
         ['2016-01-08T12:00:00', 1.0932]
-  ]);
+    ]);
   
-  // map the data
-  mapping = table.mapAs();
-  mapping.addField('value', 1);
+    // map the data
+    mapping = table.mapAs();
+    mapping.addField('value', 1);
 ```
 
 {sample}STOCK\_Line\_01{sample}
@@ -45,19 +45,19 @@ The data in stocks should be table-formatted, though there are two ways of setti
 In the sample above we arranged data as an array of arrays. The next sample contains the same data, but this time it's arranged as an array of objects.
 
 ```
-// set the data
-  table = anychart.data.table("x");
-  table.addData([
+    // set the data
+    table = anychart.data.table("x");
+    table.addData([
         {'x':"2016-01-01T12:00:00", 'value': 1.0860},
         {'x':"2016-01-04T12:00:00", 'value': 1.0832},
         {'x':"2016-01-05T12:00:00", 'value': 1.0780},
         {'x':"2016-01-06T12:00:00", 'value': 1.0781},
         {'x':"2016-01-07T12:00:00", 'value': 1.0936},
         {'x':"2016-01-08T12:00:00", 'value': 1.0932},
-  ]);
-  
-  // map the data
-  mapping = table.mapAs({'x': 'x', 'value': 'value'});
+    ]);
+    
+    // map the data
+    mapping = table.mapAs({'x': 'x', 'value': 'value'});
 
 ```
 
@@ -69,10 +69,10 @@ A stock can contain several series. There are also two ways of creating a multi-
 
 
 ```
-  // set the series
-  var series_euro = chart.plot(0).line(mapping_euro);
-  series_euro.name("Euro to Dollar Rate");
-  var series_rub = chart.plot(0).line(mapping_rub);
+    // set the series
+    var series_euro = chart.plot(0).line(mapping_euro);
+    series_euro.name("Euro to Dollar Rate");
+    var series_rub = chart.plot(0).line(mapping_rub);
     series_rub.name("Euro to Dollar Rate");
 ```
 
@@ -84,10 +84,10 @@ To create a new plot, use the {api:anychart.charts.Stock#plot}.plot(){api} metho
 
 
 ```
-// set the series
-  var series_euro = chart.plot(0).line(mapping_euro);
+    // set the series
+    var series_euro = chart.plot(0).line(mapping_euro);
     series_euro.name("Euro to Dollar Rate");
-  var series_rub = chart.plot(1).line(mapping_rub);
+    var series_rub = chart.plot(1).line(mapping_rub);
     series_rub.name("Euro to Dollar Rate");
 ```
 
@@ -114,8 +114,8 @@ There are some visual parameters of the Line series, such as color, stroke width
 In Lines, there's no filling colors due to chart specifics. To set the stroke color for the line series use {api:anychart.core.stock.series.Line#stroke}.stroke(){api} with a color set as a parameter.
 
 ```
-	// coloring
-	series_euro.stroke("#ff0000");
+	 // coloring
+	 series_euro.stroke("#ff0000");
 ```
 
 {sample}STOCK\_Line\_05{sample}
@@ -126,8 +126,8 @@ In Lines, there's no filling colors due to chart specifics. To set the stroke co
 When you hover a point in a stock chart, there's a crosshair shows up, highlighting the hovered point. This can be adjusted as well using the {api:anychart.core.stock.Plot#dateTimeHighlighter}.dateTimeHighlighter(){api} method. A highlighter (or a crosshair) is held to a plot, so it's possible to make all highlighters different of edit only one of them. Its parameters are color, thickness, dashPattern, lineJoin and lineCap, though it's not necessary to define them all.
 
 ```
-	// crosshair adjusting
-	chart.plot(0).dateTimeHighlighter("green", 0.5, "10 4");
+	 // crosshair adjusting
+	 chart.plot(0).dateTimeHighlighter("green", 0.5, "10 4");
 ```
 
 {sample}STOCK\_Line\_06{sample}

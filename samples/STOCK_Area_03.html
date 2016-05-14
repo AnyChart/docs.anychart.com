@@ -8,9 +8,9 @@
     <script x-export="chart">
 anychart.onDocumentReady(function() {
 
-  // set the data
-  table = anychart.data.table();
-  table.addData([
+    // set the data
+    table = anychart.data.table();
+    table.addData([
         ['1086', null, 1710000],
         ['1190', null, 3100000],
         ['1220', null, 3970000],
@@ -32,7 +32,6 @@ anychart.onDocumentReady(function() {
         ['1600', null, 4110000],
         ['1650', null, 5310000],
         ['1700', null, 5200000],
-
         ['1790', 3929214, 5836464],
         ['1795', 4390561, 7002323],
         ['1800', 5236631, 7754875],
@@ -79,29 +78,34 @@ anychart.onDocumentReady(function() {
         ['2005', 299456285, 51121448],
         ['2010', 308745538, 53012456],
         ['2015', 318914629, 54986564]
-  ]);
+    ]);
   
-  // map the data
-  mapping_usa = table.mapAs();
-  mapping_usa.addField('value', 1);
-  mapping_uk = table.mapAs();
-  mapping_uk.addField('value', 2);
+    // map the data
+    mapping_usa = table.mapAs();
+    mapping_usa.addField('value', 1);
+    mapping_uk = table.mapAs();
+    mapping_uk.addField('value', 2);
 
-  // chart type
-  chart = anychart.stock();
+      // chart type
+    chart = anychart.stock();
 
-  // set the US series
-  var series_usa = chart.plot(0).area(mapping_usa);
+    // set the US series
+    var series_usa = chart.plot(0).area(mapping_usa);
     series_usa.name("USA population growth");
 
-  // set the UK series
-  var series_uk = chart.plot(0).area(mapping_uk);
+      // set the UK series
+    var series_uk = chart.plot(0).area(mapping_uk);
     series_uk.name("UK population growth");
 
-  chart.title('Stock Area Demo \nPopulation growth: USA vs UK');
-  chart.container('container');
+    chart.title('Stock Area Demo \nPopulation growth: USA vs UK');
+    
+    // y-axis labels formatting
+    chart.plot(0).yAxis().labels().textFormatter(function(){
+      return this.value/1000000 + "m";
+    });
 
-  chart.draw();
+    chart.container('container');
+    chart.draw();
 });
 </script>
 </head>

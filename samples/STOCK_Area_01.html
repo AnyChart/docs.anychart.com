@@ -57,23 +57,28 @@ anychart.onDocumentReady(function() {
         ['2005', 299456285],
         ['2010', 308745538],
         ['2015', 318914629]
-  ]);
+    ]);
   
-  // map the data
-  mapping = table.mapAs();
-  mapping.addField('value', 1);
+    // map the data
+    mapping = table.mapAs();
+    mapping.addField('value', 1);
 
-  // chart type
-  chart = anychart.stock();
+    // chart type
+    chart = anychart.stock();
 
-  // set the series
-  var series = chart.plot(0).area(mapping);
+    // set the series
+    var series = chart.plot(0).area(mapping);
     series.name("USA population growth");
 
-  chart.title('Stock Area Demo: USA population growth');
-  chart.container('container');
+    chart.title('Stock Area Demo: USA population growth');
 
-  chart.draw();
+    // y-axis labels formatting
+    chart.plot(0).yAxis().labels().textFormatter(function(){
+      return this.value/1000000 + "m";
+    });
+    
+    chart.container('container');
+    chart.draw();
 });
 </script>
 </head>

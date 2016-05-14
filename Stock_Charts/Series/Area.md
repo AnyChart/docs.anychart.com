@@ -23,20 +23,20 @@ First of all, let's create a stock chart that represents how an area series can 
 Data in stocks should be set in the table format. It can be arranged in two ways: as array of arrays and as array of objects. Let's create two samples demonstrating the same data that will be arranged differently.
 
 ```
-// set the data
-  table = anychart.data.table();
-  table.addData([
-        ['1990', 248709873],
-        ['1995', 272119084],
-        ['2000', 281421906],
-        ['2005', 299456285],
-        ['2010', 308745538],
-        ['2015', 318914629]
-  ]);
-  
-  // map the data
-  mapping = table.mapAs();
-  mapping.addField('value', 1);
+    // set the data
+    table = anychart.data.table();
+    table.addData([
+          ['1990', 248709873],
+          ['1995', 272119084],
+          ['2000', 281421906],
+          ['2005', 299456285],
+          ['2010', 308745538],
+          ['2015', 318914629]
+    ]);
+    
+    // map the data
+    mapping = table.mapAs();
+    mapping.addField('value', 1);
 ```
 
 {sample}STOCK\_Area\_01{sample}
@@ -44,19 +44,19 @@ Data in stocks should be set in the table format. It can be arranged in two ways
 The sample above demonstrates how a stock looks with its data arranged as an array of arrays. The next sample contains the same data arranged as array of objects.
 
 ```
-// set the data
-  table = anychart.data.table("x");
-  table.addData([
+    // set the data
+    table = anychart.data.table("x");
+    table.addData([
         {x:'1990', value:248709873},
         {x:'1995', value:272119084},
         {x:'2000', value:281421906},
         {x:'2005', value:299456285},
         {x:'2010', value:308745538},
         {x:'2015', value:318914629}
-  ]);
-  
-  // map the data
-  mapping = table.mapAs({'x':"x", 'value':"value"});
+    ]);
+    
+    // map the data
+    mapping = table.mapAs({'x':"x", 'value':"value"});
 
 ```
 
@@ -70,19 +70,19 @@ A stock can obviously have more than one series. There are two ways of creating 
 
 Let's create two multi-series samples demonstrating both situations.
 
-```
-  // map the data
-  mapping_usa = table.mapAs();
-  mapping_usa.addField('value', 1);
-  mapping_uk = table.mapAs();
-  mapping_uk.addField('value', 2);
+  ```
+    // map the data
+    mapping_usa = table.mapAs();
+    mapping_usa.addField('value', 1);
+    mapping_uk = table.mapAs();
+    mapping_uk.addField('value', 2);
 
-  // set the US series
-  var series_usa = chart.plot(0).area(mapping_usa);
+    // set the US series
+    var series_usa = chart.plot(0).area(mapping_usa);
     series_usa.name("USA population growth");
 
-  // set the UK series
-  var series_uk = chart.plot(0).area(mapping_uk);
+    // set the UK series
+    var series_uk = chart.plot(0).area(mapping_uk);
     series_uk.name("UK population growth");
 ```
 
@@ -94,12 +94,12 @@ In case of creating several series in one chart, we use an only dataset, but we 
 For creating plots use the {api:anychart.charts.Stock#plot}.plot(){api} method. It's necessary to set the plot index as an argument to create a new or access existing plot.
 
 ```
-  // set the US series
-  var series_usa = chart.plot(0).area(mapping_usa);
+    // set the US series
+    var series_usa = chart.plot(0).area(mapping_usa);
     series_usa.name("USA population growth");
 
-  // set the UK series
-  var series_uk = chart.plot(1).area(mapping_uk);
+    // set the UK series
+    var series_uk = chart.plot(1).area(mapping_uk);
     series_uk.name("UK population growth");
 
 ```
@@ -126,12 +126,12 @@ There are some parameters that influences the appearance of the areas - their co
 Area series in Stocks can be colored as well as any other seres . To change the default colors of the area filling and stroke use {api:anychart.core.stock.series.Area#fill}.fill(){api} and {api:anychart.core.stock.series.Area#stroke}.stroke(){api}. Another way of highlighting the series is using hatch filling (which can be very useful in case a person with sight problems will be exploring your charts) with {api:anychart.core.stock.series.Area#hatchFill}.hatchFill(){api} method. Let's change the color of one of our series and add hatch settings to another. 
 
 ```
-  // coloring
+    // coloring
     series_usa.fill("#CC9933");
     series_usa.stroke("#FFCC33")
 
-  // set the UK series
-  var series_uk = chart.plot(1).area(mapping_uk);
+    // set the UK series
+    var series_uk = chart.plot(1).area(mapping_uk);
     series_uk.name("UK population growth");
 
     // hatch fill
@@ -149,9 +149,9 @@ Crosshair is identified as a {api:anychart.core.stock.Plot#dateTimeHighlighter}.
 Note that a crosshair belongs to a chart plot, so it's possible to make a unique crosshair in every plot.
 
 ```
-  // crosshair settings
-  chart.plot(0).dateTimeHighlighter("#663300", 1.5, "6 2", "round");
-  chart.plot(1).dateTimeHighlighter("#999", 1.5);
+    // crosshair settings
+    chart.plot(0).dateTimeHighlighter("#663300", 1.5, "6 2", "round");
+    chart.plot(1).dateTimeHighlighter("#999", 1.5);
 ```
 
 {sample}STOCK\_Area\_06{sample}

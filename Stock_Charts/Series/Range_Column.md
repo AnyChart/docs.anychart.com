@@ -23,15 +23,15 @@ Let's create a stock chart with Range Column series used and adjust some paramet
 AnyStock Charts can process table-formatted data. We can arrange the data as array of arrays or as array of objects. The next two code samples contain the same data which is formatted differently.
 
 ```
-table = anychart.data.table();
-table.addData([
-	['2010-01-01T12:00:00', 5.8, 7.9],
- 	['2010-02-01T12:00:00', 4.6, 6.1],
-	['2010-03-01T12:00:00', 5.9, 8.1],
-	['2010-04-01T12:00:00', 7.8, 10.7],
-	['2010-05-01T12:00:00', 10.5, 13.7],
-	['2010-06-01T12:00:00', 13.8, 17]
-]);
+	table = anychart.data.table();
+	table.addData([
+		['2010-01-01T12:00:00', 5.8, 7.9],
+	 	['2010-02-01T12:00:00', 4.6, 6.1],
+		['2010-03-01T12:00:00', 5.9, 8.1],
+		['2010-04-01T12:00:00', 7.8, 10.7],
+		['2010-05-01T12:00:00', 10.5, 13.7],
+		['2010-06-01T12:00:00', 13.8, 17]
+	]);
 
 	mapping = table.mapAs();
 	mapping.addField('low', 1);
@@ -43,15 +43,15 @@ table.addData([
 In the code sample above the data is set as array of arrays and mapped. It's necessary to map the data, no matter how you arrange yor data.
 
 ```
-table = anychart.data.table("x");
-table.addData([
-    {"month": '2010-01-01T12:00:00', "low": 5.8, "high": 7.9},
-    {"month": '2010-02-01T12:00:00', "low": 4.6, "high": 6.1},
-    {"month": '2010-03-01T12:00:00', "low": 5.9, "high": 8.1},
-    {"month": '2010-04-01T12:00:00', "low": 7.8, "high": 10.7},
-    {"month": '2010-05-01T12:00:00', "low": 10.5, "high": 13.7},
-    {"month": '2010-06-01T12:00:00', "low": 13.8, "high": 17}
-]);
+	table = anychart.data.table("x");
+	table.addData([
+	    {"month": '2010-01-01T12:00:00', "low": 5.8, "high": 7.9},
+	    {"month": '2010-02-01T12:00:00', "low": 4.6, "high": 6.1},
+	    {"month": '2010-03-01T12:00:00', "low": 5.9, "high": 8.1},
+	    {"month": '2010-04-01T12:00:00', "low": 7.8, "high": 10.7},
+	    {"month": '2010-05-01T12:00:00', "low": 10.5, "high": 13.7},
+	    {"month": '2010-06-01T12:00:00', "low": 13.8, "high": 17}
+	]);
 
 	mapping = table.mapAs({'low':"low", 'high':"high", 'value':"month"});
 ```

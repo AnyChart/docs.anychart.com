@@ -23,7 +23,7 @@ In stocks, there are several parameters that are different from the basic charts
 Data in stocks should be defined as table. There are two ways of data arranging: as array of objects and as array of arrays. Below you can find two samples with the same data but different types of this data arranged. The first sample demonstrates the view of the stock with the data arranged as array of objects. The second one shows a stock which data is an array of arrays.
 
 ```
-	    // set the data
+	// set the data
     table = anychart.data.table("x");
     table.addData([
         {'x': '2004-01-02', 'o': 92.86, 'h': 93.05, 'l': 91.20, 'c': 91.55},
@@ -45,7 +45,7 @@ Data in stocks should be defined as table. There are two ways of data arranging:
 {sample}STOCK\_Candlestick\_01{sample}
 
 ```
-	    // set the data
+	// set the data
     table = anychart.data.table();
     table.addData([
         ['2004-01-02', 92.86, 93.05, 91.20, 91.55, 5327800],
@@ -77,7 +77,7 @@ You can easily notice that there is no difference in both stocks performing. So,
 It's possible to create a multi-series stock. It can be reached through two ways as well: we can create a chart with several series in one chart (plot) or create several plots and distribute the series among them. Let's use our previous sample: add the data for the second series and look how stock will look like.
 
 ```
-// set the series for ACME
+    // set the series for ACME
     var series_acme = chart.plot(0).candlestick(mapping_acme);
     series_acme.name("ACME Corp. stock prices (jan 2004 - mar 2004)");
 
@@ -91,7 +91,7 @@ It's possible to create a multi-series stock. It can be reached through two ways
 It's obvious that this information in a stock is rather hard to understand. Let's look how adding a plot can help in this situation.
 
 ```
-// set the series for ACME
+    // set the series for ACME
     var series_acme = chart.plot(0).candlestick(mapping_acme);
     series_acme.name("ACME Corp. stock prices (jan 2004 - mar 2004)");
 
