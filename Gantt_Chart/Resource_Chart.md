@@ -16,7 +16,8 @@ The JS Resource Gantt Chart creation is the same as JS Project Chart except you 
   chart = anychart.ganttResource();
 ```
 
-<br>Here is a sample demonstrates how to create simple Project Chart.
+Here is a sample demonstrates how to create simple Project Chart.
+
 {sample :width 690 :height 180}GANTT\_Chart\_01{sample}
 
 ## Expand/Collapse
@@ -47,7 +48,8 @@ Also there is an ability to expand resources using parent property.
 </tbody>
 </table>
 
-<br>Let's demonstrate these possibilities with some sample code:
+Let's demonstrate these possibilities with some sample code:
+
 {sample :width 690 :height 210}GANTT\_Chart\_08{sample}
 
 ## Periods
@@ -60,7 +62,7 @@ As shown above every resource has a set of its own properties:
  "periods": [..]
 ```
 
-<br>Each period has the id, name, start and end time.
+Each period has the id, name, start and end time.
 
 ```
  "periods": [
@@ -69,7 +71,7 @@ As shown above every resource has a set of its own properties:
         ]
 ```
 
-<br>Also you can define the view of the given period:
+Also you can define the view of the given period:
 
 ```
 //solid fill
@@ -81,7 +83,7 @@ As shown above every resource has a set of its own properties:
 
 {sample :width 710 :height 190}GANTT\_Chart\_03{sample}
 
-<br>You may have some tasks that are associated with another task, for this purpose it is possible to use the "parent" property:
+You may have some tasks that are associated with another task, for this purpose it is possible to use the "parent" property:
 
 ```
 //the first resource is the parent of the second

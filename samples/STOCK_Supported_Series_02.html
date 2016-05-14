@@ -5,6 +5,7 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
 // create data table on loaded data
@@ -143,6 +144,7 @@ var lineMapping = dataTable.mapAs({'value': 5});
   
 // create stock chart
 var chart = anychart.stock();
+        chart.padding().right(70);
 
 // create the plot on the chart with column series
         var plot_line_ohlc = chart.plot(0);

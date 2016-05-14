@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
+  <style>
+    html, body, #container {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+    <div id="container"></div>
+  <script x-export="map">anychart.onDocumentReady(function() {
+
+// create data set
+var data = anychart.data.set([
+    {points: [41.83, -87.87, 40.70, -74.11], from: "Chicago, IL (Metro Area)", to: "New York City, NY (Metro Area)"},
+    {points: [34.02, -118.69, 37.75, -122.47], from:"Los Angeles, CA (Metro Area)", to: "San Francisco, CA (Metro Area)"},
+    {points: [34.02, -118.69, 40.70, -74.11], from: "Los Angeles, CA (Metro Area)", to: "New York City, NY (Metro Area)"},
+    {points: [41.83, -87.87, 34.02, -118.69], from: "Chicago, IL (Metro Area)", to: "Los Angeles, CA (Metro Area)"},
+    {points: [25.78, -80.30, 40.70, -74.11], from: "Miami, FL (Metro Area)", to: "New York City, NY (Metro Area)"},
+    {points: [33.76, -84.49, 41.83, -87.87], from: "Atlanta, GA (Metro Area)", to: "Chicago, IL (Metro Area)", curvature:-0.2},
+    {points: [41.83, -87.87, 44.97, -93.33], from: "Chicago, IL (Metro Area)", to: "Minneapolis, MN (Metro Area)"},
+    {points: [33.76, -84.49, 40.70, -74.11], from: "Atlanta, GA (Metro Area)", to: "New York City, NY (Metro Area)"},
+    {points: [33.76, -84.49, 28.48, -81.50], from: "Atlanta, GA (Metro Area)", to: "Orlando, FL (Metro Area)"},    
+    {points: [41.83, -87.87, 38.89, -77.08], from: "Chicago, IL (Metro Area)", to: "Washington, DC (Metro Area)"}
+]);
+
+// create data set for the marker series
+var data_marker = anychart.data.set([
+    {long: -87.87, lat: 41.83, name: "Chicago, IL (Metro Area)"},
+    {long: -118.69, lat: 34.02, name: "Los Angeles, CA (Metro Area)"},
+    {long: -80.30, lat: 25.78, name: "Miami, FL (Metro Area)"},
+    {long: -84.49, lat: 33.76, name: "Atlanta, GA (Metro Area)"},
+    {long: -74.11, lat: 40.70, name: "New York City, NY (Metro Area)"},
+    {long: -122.47, lat: 37.75, name: "San Francisco, CA (Metro Area)"},
+    {long: -93.33, lat: 44.97, name: "Minneapolis, MN (Metro Area)"},
+    {long: -81.50, lat: 28.48, name: "Orlando, FL (Metro Area)"},
+    {long: -77.08, lat: 38.89, name: "Washington, DC (Metro Area)"}
+    ]);
+
+// create map chart
+var map = anychart.map();
+// create marker series
+var series_marker = map.marker(data_marker);
+// create connector series
+var series_connector = map.connector(data);
+
+// set geodata
+map.geoData(anychart.maps.united_states_of_america);
+
+// markers of connector series
+series_connector.markers({size:15});
+
+// tooltip formatter
+series_connector.tooltip().textFormatter("From: {%from} \nTo: {%to}");
+
+// set the markers of marker series
+series_marker.size(10);
+
+// adjust marker series tooltips
+series_marker.tooltip().textFormatter("{%name}");
+series_marker.tooltip().titleFormatter({enable:false});
+
+// name of the chart
+map.title("10 most popular flight destinations in the USA");
+
+// set container id for the chart
+map.container('container');
+
+// disabling the zoom
+map.interactivity().mouseWheel(false);
+// initiate chart drawing
+map.draw();
+});
+    
+    </script>
+</body>
+</html>

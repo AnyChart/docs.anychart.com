@@ -5,6 +5,7 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data
@@ -15,22 +16,8 @@
     {x: "Condensed milk", value: 1}
   ];
 
-  // create default palette
-  var palette = anychart.palettes.distinctColors().items();
-
-  // color elements
-  for (var index in data)
-    data[index].fill = palette[index];
-
   // set chart type
-  var chart = anychart.bar();
-
-  // set data
-  var series = chart.bar(data);
-
-  // disable tooltips
-  series.tooltip(false);
-  series.stroke(null);
+  var chart = anychart.pie(data);
 
   // set chart title
   chart.title("The kind of pancakes preferred at the Sochi 2014 Olympic Games");
@@ -46,32 +33,17 @@
 
   // create new buttons
   var printButton = document.createElement("div");
-  var printFullButton = document.createElement("div");
 
   printButton.className = "custombutton";
-  printFullButton.className = "custombutton";
 
-  printButton.innerHTML = "print Chart\nfit width";
-  printFullButton.innerHTML = "print Chart\nfull page";
+  printButton.innerHTML = "Save as PDF";
 
   printButton.onclick = function() {
-    chart.container().height(chart.container().height()/(595/chart.container().width())).width(595);
-    chart.bounds(0, 0, "100%", "100%");
-    chart.print();
-    chart.container().height("100%").width("100%");
-    chart.bounds(0, 0, chart.container().width()-60, chart.container().height());
-  };
-  printFullButton.onclick = function() {
-    chart.container().height(842).width(595);
-    chart.bounds(0, 0, 595, 842);
-    chart.print();
-    chart.container().height("100%").width("100%");
-    chart.bounds(0, 0, chart.container().width()-60, chart.container().height());
+    chart.saveAsPDF();
   };
 
   // append button to container
   container.appendChild(printButton);
-  container.appendChild(printFullButton);
 
   var custombuttons = document.getElementsByClassName("custombutton");
 

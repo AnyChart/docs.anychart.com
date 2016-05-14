@@ -5,6 +5,7 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
   
   var stage = anychart.graphics.create("container");
@@ -17,8 +18,7 @@
     {x: "Product E", value: "8813"}
   ]);
   
-  var image = stage.image();
-  image.src("//static.anychart.com/images/logo_anychart.gif");
+  var image = stage.image("//static.anychart.com/images/logo_anychart.gif");
   image.y(15);
   image.x(25);
   image.width(50);

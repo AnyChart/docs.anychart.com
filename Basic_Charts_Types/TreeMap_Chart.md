@@ -28,7 +28,7 @@ TreeMap is intended to demonstrate hierarchically ordered data structures, where
   
 ## Data
 
-Working with data in AnyChart TreeMaps is quite simple. As TreeMap in intended to work with hierarchies, you can set the data in one of two available formats: as an hierarchical tree and as an hierarchical table.
+Working with data in AnyChart TreeMaps is quite simple. As TreeMap is intended to work with hierarchies, you can set the data in one of two available formats: as an hierarchical tree and as an hierarchical table.
 
 Regardless which way we decide to use, there are some parameters we have to define to all points. Here's a list of them:
  - "id": a unique parameter that identifies the point. This parameter is necessary for all elements, or nodes;
@@ -45,41 +45,37 @@ This way of arranging the data is expected by a TreeMap as a default. In our exa
 
 ```
 // Data set using tree method
-anychart.onDocumentReady(function() {
-      var data = anychart.data.tree([
-      {name: 'Eurasia',
-          children:[
-              {name: "Asia", children:[
-                  {name: "Eastern Asia", children:[
-                      {name:"Mongolia", value: 1564116, capital: 'Ulan-Bator'},
-                      {name: "China", value: 1564116, capital: 'Beijing'},
-                      {name: "Southern Korea", value: 1564116, capital: 'Seoul'},
-                      {name: "Northern Korea", value: 120540, capital: 'Pyongyang'},
-                      {name: "Japan", value: 1564116, capital: 'Tokio', children:[
-                          {name: "Hokkaido", value: 83400},
-                          {name: "Kyushu", value: 35640},
-                          {name: "Honshu", value: 230500},
-                          {name: "Shikoku", value: 1200}
-                      ]}
-                  ]}
-              ]},
-              {name: "Europe", children: [
-                  {name: "Northern Europe", children:[
-                      {name: "Finland", value: 338424, capital: 'Helsinki'},
-                      {name: "Great Britain", value: 209331, capital: 'London'},
-                      {name: "Ireland", value: 84421, capital: 'Dublin'},
-                      {name: "Scandinavia", value: 928057, children:[
-                          {name: "Sweden", value: 450295, capital: 'Stockholm'},
-                          {name: "Norway", value: 385178, capital: 'Oslo'},
-                          {name: "Denmark", value: 42923.53, capital: 'Copenhagen'}
-                      ]},                        
-                  ]}
-              ]}
-           ]},
-  anychart.enums.TreeFillingMethod.AS_TREE // data type settings
-  ]);
-
-var data = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
+var data = anychart.data.tree([
+{name: 'Eurasia',
+    children:[
+        {name: "Asia", children:[
+            {name: "Eastern Asia", children:[
+                {name:"Mongolia", value: 1564116, capital: 'Ulan-Bator'},
+                {name: "China", value: 1564116, capital: 'Beijing'},
+                {name: "Southern Korea", value: 1564116, capital: 'Seoul'},
+                {name: "Northern Korea", value: 120540, capital: 'Pyongyang'},
+                {name: "Japan", value: 1564116, capital: 'Tokio', children:[
+                    {name: "Hokkaido", value: 83400},
+                    {name: "Kyushu", value: 35640},
+                    {name: "Honshu", value: 230500},
+                    {name: "Shikoku", value: 1200}
+                ]}
+            ]},
+        ]},
+        {name: "Europe", children: [
+            {name: "Northern Europe", children:[
+                {name: "Finland", value: 338424, capital: 'Helsinki'},
+                {name: "Great Britain", value: 209331, capital: 'London'},
+                {name: "Ireland", value: 84421, capital: 'Dublin'},
+                {name: "Scandinavia", value: 928057, children:[
+                    {name: "Sweden", value: 450295, capital: 'Stockholm'},
+                    {name: "Norway", value: 385178, capital: 'Oslo'},
+                    {name: "Denmark", value: 42923.53, capital: 'Copenhagen'}
+                ]},                        
+            ]}
+        ]}
+     ]} 
+], anychart.enums.TreeFillingMethod.AS_TREE);
 ```
 
 Here is a sample of a treemap with data set this way:
@@ -93,34 +89,34 @@ You can find more about using Data Tree Model in [Using Data Tree model in AnyCh
 Table representation is another way to load data into AnyChart JavaScript TreeMap Chart. It may be particularly useful when you store your data in a common relational database tables. 
 
 ```
-	//Data set through table method
-	var data = anychart.data.tree([
-         {id:  1, parent: null, name: 'Eurasia'},
-         {id:  2, parent:    1, name: 'Asia'},
-         {id:  3, parent:    2, name: 'Eastern Asia'},
-         {id:  4, parent:    3, name: 'Mongolia',       value: 1564116,  capital: 'Ulan-Bator'},
-         {id:  5, parent:    3, name: 'China',          value: 1564116,  capital: 'Beijing'},
-         {id:  6, parent:    3, name: 'Southern Korea', value: 1564116,  capital: 'Seoul'},
-         {id:  7, parent:    3, name: 'Northern Korea', value: 120540,   capital: 'Pyongyang'},
-         {id:  8, parent:    3, name: 'Japan',          value: 1564116,  capital: 'Tokio'},
-         {id:  9, parent:    8, name: 'Hokkaido',       value: 83400},
-         {id: 10, parent:    9, name: 'Kyushu',         value: 35640},
-         {id: 11, parent:    9, name: 'Honshu',         value: 230500},
-         {id: 12, parent:    9, name: 'Shikoku',        value: 1200},
-         {id: 13, parent:    1, name: 'Europe'},
-         {id: 14, parent:   13, name: 'Northern Europe'},
-         {id: 15, parent:   14, name: 'Finland',        value: 338424,   capital: 'Helsinki'},
-         {id: 16, parent:   14, name: 'Great Britain',  value: 209331,   capital: 'London'},
-         {id: 17, parent:   14, name: 'Ireland',        value: 84421,    capital: 'Dublin'},
-         {id: 18, parent:   14, name: 'Scandinavia',    value: 928057},
-         {id: 19, parent:   18, name: 'Sweden',         value: 450295,   capital: 'Stockholm'},
-         {id: 20, parent:   18, name: 'Norway',         value: 385178,   capital: 'Oslo'},
-         {id: 21, parent:   18, name: 'Denmark',        value: 42923.53, capital: 'Copenhagen'},
-        ],
-    anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
-    );
+//Data set through table method
+var data = anychart.data.tree([
+       {id:  1, parent: null, name: 'Eurasia'},
+       {id:  2, parent:    1, name: 'Asia'},
+       {id:  3, parent:    2, name: 'Eastern Asia'},
+       {id:  4, parent:    3, name: 'Mongolia',       value: 1564116,  capital: 'Ulan-Bator'},
+       {id:  5, parent:    3, name: 'China',          value: 1564116,  capital: 'Beijing'},
+       {id:  6, parent:    3, name: 'Southern Korea', value: 1564116,  capital: 'Seoul'},
+       {id:  7, parent:    3, name: 'Northern Korea', value: 120540,   capital: 'Pyongyang'},
+       {id:  8, parent:    3, name: 'Japan',          value: 1564116,  capital: 'Tokio'},
+       {id:  9, parent:    8, name: 'Hokkaido',       value: 83400},
+       {id: 10, parent:    9, name: 'Kyushu',         value: 35640},
+       {id: 11, parent:    9, name: 'Honshu',         value: 230500},
+       {id: 12, parent:    9, name: 'Shikoku',        value: 1200},
+       {id: 13, parent:    1, name: 'Europe'},
+       {id: 14, parent:   13, name: 'Northern Europe'},
+       {id: 15, parent:   14, name: 'Finland',        value: 338424,   capital: 'Helsinki'},
+       {id: 16, parent:   14, name: 'Great Britain',  value: 209331,   capital: 'London'},
+       {id: 17, parent:   14, name: 'Ireland',        value: 84421,    capital: 'Dublin'},
+       {id: 18, parent:   14, name: 'Scandinavia',    value: 928057},
+       {id: 19, parent:   18, name: 'Sweden',         value: 450295,   capital: 'Stockholm'},
+       {id: 20, parent:   18, name: 'Norway',         value: 385178,   capital: 'Oslo'},
+       {id: 21, parent:   18, name: 'Denmark',        value: 42923.53, capital: 'Copenhagen'},
+      ],
+  anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
+  );
 
-  chart = anychart.treeMap(data);
+chart = anychart.treeMap(data);
 ```
 
 Note that unless you use default field names listed in the beginning of the article you use mapping to make it clear for the component how to treat the data. 
@@ -131,14 +127,14 @@ You can notice that samples don't differ a thing despite their data is defined d
 
 ### Maximum Depth 
 
-AnyChart TreeMaps have a Maximum Depth feature. You can define how many levels do you want to be shown simultaneously on a chart. It means that it's possible to show as many levels of hierarchy as you need. Use {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} method with a number of levels you want to see as an argument. Note that the more levels you show the less understandable your TreeMap might become (depends on the levels' number and values they represent). Let's set this parameter to 3 for the next sample:
+AnyChart TreeMaps have a Maximum Depth feature. You can define how many levels do you want to be shown simultaneously on a chart. It means that it's possible to show as many levels of hierarchy as you need. Use {api:anychart.charts.TreeMap#maxDepth}.maxDepth(){api} method with a number of levels you want to see as an argument. Note that the more levels you show the less understandable your TreeMap might become (depends on the levels' number and values they represent). Let's set this parameter to 3 for the next sample:
 
 ```
 // setting the maximum levels depth
 chart.maxDepth(3);
 ```
 
-That's how the chart looks with the maxDepth property value set more than 1. There are two extra settings that help managing this feature, {api:anychart.charts.TreeMap#hintOpacity}**.hintOpacity**{api} and {api:anychart.charts.TreeMap#hintDepth}**.hintDepth**{api}, which are described below in [Hint Opacity](#hint_opacity) and [Hint Depth](#hint_depth) sections.
+That's how the chart looks with the maxDepth property value set more than 1. There are two extra settings that help managing this feature, {api:anychart.charts.TreeMap#hintOpacity}.hintOpacity{api} and {api:anychart.charts.TreeMap#hintDepth}.hintDepth{api}, which are described below in [Hint Opacity](#hint_opacity) and [Hint Depth](#hint_depth) sections.
 
 {sample}BCT\_TreeMap\_03{sample}
 
@@ -154,7 +150,7 @@ Points in TreeMap Charts are somewhat atypical, they look like rectangles which 
 
 ### Header
 
-Header is usually a name of a parent of the current level. Due to its settings, they all can be enabled, disabled or set individually through the data. To set some parameters or format the header we use the {api:anychart.charts.TreeMap#headers}**.headers()**{api} method. We can change the font and background settings, format the value shown and define hovering settings using the {api:anychart.charts.TreeMap#hoverHeaders}**.hoverHeaders()**{api} method. Let's look at the example below. 
+Header is usually a name of a parent of the current level. Due to its settings, they all can be enabled, disabled or set individually through the data. To set some parameters or format the header we use the {api:anychart.charts.TreeMap#headers}.headers(){api} method. We can change the font and background settings, format the value shown and define hovering settings using the {api:anychart.charts.TreeMap#hoverHeaders}.hoverHeaders(){api} method. Let's look at the example below. 
 
 ```
 // headers settings
@@ -203,13 +199,13 @@ There are two special treemap chart parameters that allow to tune headers behavi
 
 {api:anychart.charts.TreeMap#headersDisplayMode}headersDisplayMode(){api} defines how header label behaves when there is enough space to fit it in the header, there are three modes: "crop", "drop" and "alwaysShow".
 
-Take a look at the sample below, where the header height is set to "10px" and "crop" mode is set to "alwaysShow", then click the title to change settings to "5%" and "alwaysShow":
+Take a look at the sample below, where the header height is set to "10px" and display mode is set to "alwaysShow", then click the title to change settings to "5%" and "alwaysShow":
 
 {sample}BCT\_TreeMap\_05\_1{sample} 
 
 ### Nodes
 
-TreeMap Chart points have fill, hatchfill, border and other usual element have a hint opacity property, which we can set using {api:anychart.charts.TreeMap#hintOpacity}**.hintOpacity()**{api} method with a value from 0 to 1. Note that the result of using this method will be seen only if we adjust another setting, {api:anychart.charts.TreeMap#hintDepth}**.hintDepth()**{api}, which is described below in the article. Let's adjust points and change their background colors and opacity.
+TreeMap Chart points have fill, hatchfill, border and other usual element have a hint opacity property, which we can set using {api:anychart.charts.TreeMap#hintOpacity}.hintOpacity(){api} method with a value from 0 to 1. Note that the result of using this method will be seen only if we adjust another setting, {api:anychart.charts.TreeMap#hintDepth}.hintDepth(){api}, which is described below in the article. Let's adjust points and change their background colors and opacity.
 
 ```
 // points fill and hover stroke   
@@ -218,11 +214,11 @@ chart.fill("#ddd");
 ```
 {sample}BCT\_TreeMap\_06{sample}
 
-Here we used a single color for the {api:anychart.charts.TreeMap#fill}**.fill()**{api} method so all content points became of the same light-gray color. If you need to make points colored differently depending on the value - see [Color range](#color_range)  in the [visualization section](#visualization).
+Here we used a single color for the {api:anychart.charts.TreeMap#fill}.fill(){api} method so all content points became of the same light-gray color. If you need to make points colored differently depending on the value - see [Color range](#color_range)  in the [visualization section](#visualization).
 
 ### Markers
 
-Markers in the TreeMap charts are configured using {api:anychart.charts.TreeMap#markers}**.markers()**{api}, {api:anychart.charts.TreeMap#hoverMarkers}**.hoverMarkers()**{api} and {api:anychart.charts.TreeMap#selectMarkers}**.selectMarkers()**{api} methods, adjusting markers in different chart states. Let's now edit the hovering settings of a TreeMap: create markers of "star5" type which will be displayed on the hovered points.
+Markers in the TreeMap charts are configured using {api:anychart.charts.TreeMap#markers}.markers(){api}, {api:anychart.charts.TreeMap#hoverMarkers}.hoverMarkers(){api} and {api:anychart.charts.TreeMap#selectMarkers}.selectMarkers(){api} methods, adjusting markers in different chart states. Let's now edit the hovering settings of a TreeMap: create markers of "star5" type which will be displayed on the hovered points.
 
 ```
 // markers
@@ -240,13 +236,13 @@ You might have already noticed that TreeMap is an interactive chart by default. 
 
 The main feature and purpose of TreeMap Charts is demonstrating the hierarchy of objects, processes or anything else. Drill Down feature therefore becomes the most important interactive feature for this chart type. 
 
-When you click the node which is a parent itself, a Drill Down is performed for this element and you see the next level of the tree, where element just clicked is a parent. This can be performed if the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} of the TreeMap is not set in the maximum value, because in this case you will see all headers in the top rows of the TreeMap table and the points shown belong to the lowest level.
+When you click the node which is a parent itself, a Drill Down is performed for this element and you see the next level of the tree, where element just clicked is a parent. This can be performed if the {api:anychart.charts.TreeMap#maxDepth}.maxDepth(){api} of the TreeMap is not set in the maximum value, because in this case you will see all headers in the top rows of the TreeMap table and the points shown belong to the lowest level.
 
-If you set the value of the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} parameter more than 1 and your data has over 3 levels of content, you will see the headers of the nested levels in the rows under the root header row. If you click one of those headers, its level points will be drilled down.
+If you set the value of the {api:anychart.charts.TreeMap#maxDepth}.maxDepth(){api} parameter more than 1 and your data has over 3 levels of content, you will see the headers of the nested levels in the rows under the root header row. If you click one of those headers, its level points will be drilled down.
 
 Also AnyChart TreeMaps work with context menu. If a content point is a parent of another level, you can drill this level down by right-clicking this content-parent point and choosing the necessary option in the context menu.
 
-To drill a chart or a level up, use headers. Click the root header (you will be able to see it from any level but the highest if you have set the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} parameter in the right value). Anyway, if you don't see the root header, you can click at the level's parent's header - so you will go one level up. Also, you may use a context menu: right-click at one of the points of the level and choosing "Drill Up" in the context menu will bring you a level up.
+To drill a chart or a level up, use headers. Click the root header (you will be able to see it from any level but the highest if you have set the {api:anychart.charts.TreeMap#maxDepth}.maxDepth(){api} parameter in the right value). Anyway, if you don't see the root header, you can click at the level's parent's header - so you will go one level up. Also, you may use a context menu: right-click at one of the points of the level and choosing "Drill Up" in the context menu will bring you a level up.
 
 If necessary, it is possible to disable drill Down function. In this case we need to call for events. You can look for the [Events tutorial article](../Common_Settings/Event_Listeners) for better understanding the subject. Below you can find a way to turn down the Drill Down function.
 
@@ -267,9 +263,9 @@ There are two ways of selecting the leaf points: first is to click at a point wi
 
 ### Methods
 
-Treemap works with all standard [Interactivity methods](../Common_Settings/Interactivity) and have several special methods: {api:anychart.charts.TreeMap#drillTo}drillTo(){api}, {api:anychart.charts.TreeMap#drillUp}drillUp(){api} and {api:anychart.charts.TreeMap#getCurrentPath}getCurrentPath(){api}. These methods allow you to control and navigate any treemap.
+Treemap works with all standard [Interactivity methods](../Common_Settings/Interactivity) and have several special methods: {api:anychart.charts.TreeMap#drillTo}drillTo(){api}, {api:anychart.charts.TreeMap#drillUp}drillUp(){api} and {api:anychart.charts.TreeMap#getDrilldownPath}getDrilldownPath(){api}. These methods allow you to control and navigate any treemap.
 
-The following sample shows how to use all these three methods, you can navigate treemap the usual way and see how {api:anychart.charts.TreeMap#getCurrentPath}getCurrentPath(){api} is used to show the structure of drill down in a chart title, or you can use button on the top of the chart to jump deep into the hierarchy and drill up level by level. 
+The following sample shows how to use all these three methods, you can navigate treemap the usual way and see how {api:anychart.charts.TreeMap#getDrilldownPath}getDrilldownPath(){api} is used to show the structure of drill down in a chart title, or you can use button on the top of the chart to jump deep into the hierarchy and drill up level by level. 
 
 {sample}BCT\_TreeMap\_08\_1{sample}
 
@@ -281,7 +277,7 @@ When you change some visualization setting of your charts, you make them not onl
 
 ### Labels
 
-To configure data labels use {api:anychart.charts.TreeMap#labels}**.labels()**{api}. For formatting the text of the labels use {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api}. Let's format the labels so they show the represented value and color the labels' text in black.
+To configure data labels use {api:anychart.charts.TreeMap#labels}.labels(){api}. For formatting the text of the labels use {api:anychart.core.ui.LabelsFactory#textFormatter}.textFormatter(){api}. Let's format the labels so they show the represented value and color the labels' text in black.
 
 ```
 // labels
@@ -295,7 +291,7 @@ It's possible to set some additional information through the data that is to be 
 
 ### Tooltip
 
-Tooltips are small windows that pop up when you hover a point. They are shown next to the cursor and follows it by default. We can change their appearance and behavior using several the {api:anychart.charts.TreeMap#tooltip}**.tooltip()**{api} method. To format the text and title of tooltips we use {api:anychart.core.ui.ChartTooltip#textFormatter}**.textFormatter()**{api} and {api:anychart.core.ui.ChartTooltip#titleFormatter}**.titleFormatter()**{api}; to change the position we use special positioning methods: {api:anychart.core.ui.ChartTooltip#positionMode}**.positionMode()**{api} and {api:anychart.core.ui.ChartTooltip#anchor}**.anchor()**{api}, which you can find in the [Tooltip article](../Common_Settings/Tooltip#position). Let's now adjust the tooltips text:
+Tooltips are small windows that pop up when you hover a point. They are shown next to the cursor and follows it by default. We can change their appearance and behavior using several the {api:anychart.charts.TreeMap#tooltip}.tooltip(){api} method. To format the text and title of tooltips we use {api:anychart.core.ui.ChartTooltip#textFormatter}.textFormatter(){api} and {api:anychart.core.ui.ChartTooltip#titleFormatter}.titleFormatter(){api}; to change the position we use special positioning methods: {api:anychart.core.ui.ChartTooltip#positionMode}.positionMode(){api} and {api:anychart.core.ui.ChartTooltip#anchor}.anchor(){api}, which you can find in the [Tooltip article](../Common_Settings/Tooltip#position). Let's now adjust the tooltips text:
 
 ```
 // tooltips settings
@@ -324,7 +320,7 @@ For more information about ColorRange and adjusting it take a look at [ColorRang
 
 ### Hint Depth
 
-Hint Depth is the TreeMaps feature. The value that you set for the {api:anychart.charts.TreeMap#hintDepth}**.hintDepth()**{api} method means how many levels further than those defined for {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} you want to be shown. This is different from [Maximum Depth](#maximim_depth) feature: while **Maximum Depth** shows several levels with their parents in the first rows of the TreeMap table, making all elements interactive, the **Hint Depth** shows only the elements inside without making them interactive and without displaying their parent elements. Look at the following sample: we have set 2 in the {api:anychart.charts.TreeMap#maxDepth}**.maxDepth()**{api} parameter and 1 for {api:anychart.charts.TreeMap#hintDepth}**.hintDepth()**{api}.
+Hint Depth is the TreeMaps feature. The value that you set for the {api:anychart.charts.TreeMap#hintDepth}.hintDepth(){api} method means how many levels further than those defined for {api:anychart.charts.TreeMap#maxDepth}.maxDepth(){api} you want to be shown. This is different from [Maximum Depth](#maximim_depth) feature: while **Maximum Depth** shows several levels with their parents in the first rows of the TreeMap table, making all elements interactive, the **Hint Depth** shows only the elements inside without making them interactive and without displaying their parent elements. Look at the following sample: we have set 2 in the {api:anychart.charts.TreeMap#maxDepth}.maxDepth(){api} parameter and 1 for {api:anychart.charts.TreeMap#hintDepth}.hintDepth(){api}.
 
 ```
 // setting the maximum levels depth
@@ -340,7 +336,7 @@ Note, if we set the **Maximum Depth** parameter to some value while we've got th
 
 ### Hint Opacity
 
-This setting helps to manage the TreeMap appearance when the **Hint Depth** parameter is set in more than 0. The range of the {api:anychart.charts.TreeMap#hintOpacity}**.hintOpacity()**{api} parameter 0 to 1; the more the value is, the less transparent will be the chart (the less visible will be  additional levels). Here is how you set **hintOpacity** to 0,7.
+This setting helps to manage the TreeMap appearance when the **Hint Depth** parameter is set in more than 0. The range of the {api:anychart.charts.TreeMap#hintOpacity}.hintOpacity(){api} parameter 0 to 1; the more the value is, the less transparent will be the chart (the less visible will be  additional levels). Here is how you set **hintOpacity** to 0.7.
 
 ```	
 // hint opacity setting

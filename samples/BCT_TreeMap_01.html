@@ -2,6 +2,7 @@
 <html>
 <head>
     <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
 
     <style>
         html, body {
@@ -26,7 +27,7 @@
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
 
 
-<script>anychart.onDocumentReady(function() {
+<script x-export="chart">anychart.onDocumentReady(function() {
 //Data set using tree method
 var data = anychart.data.tree([
 {name: 'Eurasia',
@@ -57,10 +58,10 @@ var data = anychart.data.tree([
                 ]},                        
             ]}
         ]}
-     ]},
-anychart.enums.TreeFillingMethod.AS_TREE // data type settings
-]);
+     ]} 
+], anychart.enums.TreeFillingMethod.AS_TREE);
 
+// set data and data type settings
 chart = anychart.treeMap(data);
 
 chart.headers().textFormatter("{%name}");

@@ -19,7 +19,7 @@ It is important to keep in mind that JavaScript Resource Gantt Chart and JavaScr
 So the information presented below applies to both chart types, except some details.
 These are events available for Gantt Chart:
 
-<br><table>
+<table>
 <tbody>
 <tr>
 <th>Event</th>
@@ -57,12 +57,15 @@ These are events available for Gantt Chart:
 <td>rowSelect</td>
 <td>Dispatched when some row is selected.</td>
 </tr>
+<tr>
+<td>rowCollapseExpand</td>
+<td>Dispatched when an item that contains other items expands or collapses.</td>
 </tbody>
 </table>
 
 All events return all available data about an active row.
 
-<br>To listen an event use the code below:
+To listen an event use the code below:
 
 ```
 //choose an event type from table above:
@@ -73,9 +76,9 @@ chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
 });
 ```
 
-<br>As you can see from the code above, it is possible to get any information about the item from the event - it contains some useful fields. Here is a list of supported types of information:
+As you can see from the code above, it is possible to get any information about the item from the event - it contains some useful fields. Here is a list of supported types of information:
 
-<br><table>
+<table>
 <tbody>
 <tr>
 <th>Event Field</th>
@@ -101,21 +104,21 @@ chart.listen(anychart.enums.EventType.ROW_CLICK, function(event) {
 </tbody>
 </table>
 
-<br>This sample with Project Gantt Chart demonstrates the usage of this feature. Click on a row to change the Chart title:
+This sample with Project Gantt Chart demonstrates the usage of this feature. Click on a row to change the Chart title:
 
 {sample :width 700 :height 300 }GANTT\_Events\_01{sample}
 
 ## Default Events
 
-<br>When you click on a row or move the mouse over the row, there are some default actions take place. 
+When you click on a row or move the mouse over the row, there are some default actions take place. 
 
-Those events dispatch in the following order on every click:
-<p>1) rowMouseDown</p>
-<p>2) rowMouseUp </p>
-<p>3) rowClick (which is the same as rowMouseDown + rowMouseUp) </p>
-<p>4) rowSelect </p>
+Events are dispatched in the following order on every click:
 
-<br>
+1. rowMouseDown
+2. rowMouseUp
+3. rowClick (which is the same as rowMouseDown + rowMouseUp)
+4. rowSelect
+
 <table>
 <tbody>
 
@@ -159,19 +162,18 @@ Those events dispatch in the following order on every click:
 
 ## Prevent Defaults
 
-<br>To prevent these events dispatching you can use the special method **.preventDefault()**.
+To prevent these events dispatching you can use the special method **.preventDefault()**.
 
 ```
 event.preventDefault();
 ```
 
-<br>In this case these events won't be reported by the chart. Let's disable the default behaviour for the clicks. The sample below illustrates this idea.
+In this case these events won't be reported by the chart. Let's disable the default behaviour for the clicks. The sample below illustrates this idea.
 
-{sample :width 700 :height 300 }GANTT\_Events\_02{sample}
 ```
 chart.listen(anychart.enums.EventType.ROW_CLICK, function(e) {
     e.preventDefault();
 });
 ```
 
-
+{sample :width 700 :height 300 }GANTT\_Events\_02{sample}

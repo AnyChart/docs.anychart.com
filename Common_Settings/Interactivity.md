@@ -2,6 +2,7 @@
 
 * [Overview](#overview)
 * [Default interactivity](#default_interactivity)
+  * [Include and Exclude Points](#include_and_exclude_points)
 * [Altering interactivity](#altering_interactivity)
 * [Charts behaviour](#charts_behaviour)
   * [Hover](#hover)
@@ -30,7 +31,7 @@ That's what happens by default when users interact with charts:
  - tooltips of hovered points are shown
  - series becomes highlighted when a legend is hovered
  - the series gets shown or hidden when a legend element is clicked
- - a number of series are selected (multi-selecting)
+ - a number of series are selected (multi-select)
 
 Lets' now take a look at a couple of samples with default interactivity settings.
    
@@ -43,6 +44,12 @@ You can see the code of this sample in the playground.
 The following sample shows a scatter chart with marker series, you can hover and select the points, and do everything you can do in the previous cartesian chart sample.
 
 {sample}CS\_Interactivity\_02{sample}
+
+### Include and Exclude Points
+
+AnyChart provides out of the box data exploration option: ability to temporary exclude and then, if needed, include point on the any chart. Do do so just move a mouse over the point and right click it, so the [context menu](./UI_Controls/Context_Menu) appears, you will see "Exclude" or "Include" point items in the menu. The points you exclude or include affect only the look of the chart, your data stays safe, unharmed and unaffected by these actions.
+
+If you want to create custom controls or change functionality in conext menu you need to use *getExcludedPoints()*, *excludePoint() and *includePoint()* methods.
 
 ## Altering interactivity
 

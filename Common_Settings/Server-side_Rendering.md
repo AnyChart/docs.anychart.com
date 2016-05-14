@@ -16,8 +16,8 @@ AnyChart Export server is also used to provide Export chart to CSV, Excel, JSON 
 
 ## Environment
 
-AnyChart Export Server uses [PhantomJS](http://phantomjs.org/) which emulates a browser on the server (WebKit), runs our charts in it, gets SVG and converts it into \*.PNG, \*.JPG or \*.PDF files, using [Apache Batik](https://xmlgraphics.apache.org/batik/). 
-Exporting to CSV, Excel, JSON and XML doesn't require PhantomJS, server serves only as an intermediary to allow file to be saved using a browser.
+AnyChart Export Server uses [PhantomJS](http://phantomjs.org/) which emulates a browser on the server (WebKit), runs our charts in it, gets SVG and converts it into \*.PNG, \*.JPG or \*.PDF files, using [Apache Batik](https://xmlgraphics.apache.org/batik/). Export to Excel uses [Apache POI](https://poi.apache.org/).
+Exporting to CSV, JSON and XML doesn't require PhantomJS, server serves only as an intermediary to allow file to be saved using a browser.
 AnyChart Export Server itself is a jar-file that runs using Java so it works Windows, Linux, MacOS or any other OS where Java is available.
  
 To run the AnyChart Export Server, do the following:
@@ -163,7 +163,7 @@ Full list of the parameters available:
 
 ## Web Server Usage 
 
-AnyChart Export Server is also used when you use AnyChart [Export] methods and by default AnyChart component uses server hosted at http://anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365 - we *do not guarantee* export server availability. 
+AnyChart Export Server is also used when you use AnyChart [Export](Exports) methods and by default AnyChart component uses server hosted at http://anychart.com/. Although we do our best to keep AnyChart site up and running 24x7x365 - we *do not guarantee* export server availability. 
 If you want to have full control over the ability of the component to export images, or just don't want to use  AnyChart Server due to the security or accessibility concerns - just run Export Server in server mode on the server you control and trust.
 
 To run Export server in server mode set "server" as the first parameter. Host and port params are optional.
@@ -228,7 +228,7 @@ Request parameters (required):
 * response-type - a field that tells how to export the result (file or as base64)
 
 Optional request parameters:
-* file-name
+* file-name - file name
 * width - picture width
 * height - picture height 
 * quality - picture quality
@@ -248,10 +248,10 @@ java -Dphantomjs.binary.path=PATH_TO_YOUR_PHANTOMJS -jar
 ```
 
 ## How to Set the Path to Export Server 
-If you have decided to use your own server, use the {api:anychart.graphics#server}anychart.server(){api} method and set the address of your server as a parameter:
+If you have decided to use your own server, use the {api:anychart#server}anychart.server(){api} method and set the address of your server as a parameter:
 
 ```
-anychart.graphics.server("http://localhost:2000");
+anychart.server("http://localhost:2000");
 ```
 
 ## Contribution 

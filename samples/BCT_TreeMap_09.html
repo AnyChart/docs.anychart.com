@@ -2,6 +2,7 @@
 <html>
 <head>
     <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
 
     <style>
         html, body {
@@ -24,18 +25,18 @@
 </head>
 <body>
 <div id="container" style="border: 1px solid; width: 800px; height: 600px;"></div>
-<script>anychart.onDocumentReady(function() {
+<script x-export="chart">anychart.onDocumentReady(function() {
 
         // create treemap chart
-        var chart = anychart.treeMap();
+        chart = anychart.treeMap();
 
         // labels
         chart.labels().textFormatter("{%id}: ${%Value}B");
         chart.labels().fontColor('black');
 
         // data set
-        var data = anychart.data.tree([       
-            {id: 'Europe', parent: 'null'},
+        var data =[       
+            {id: 'Europe', parent: null},
             {id: 'Eastern Europe', parent: 'Europe'},
             {id: 'Western Europe', parent: 'Europe'},
             {id: 'Southern Europe', parent: 'Europe'},
@@ -43,7 +44,7 @@
             {id: 'Poland', parent: 'Eastern Europe'},
             {id: "Vehicles (Pl)", parent: "Poland"},
             {id: "Tractors", parent: "Vehicles (Pl)", value: 0.458},                        
-            {id: "Cars", parent: "Vehicles (Pl)", value: 5.01},                        
+            {id: "Cars (Pl)", parent: "Vehicles (Pl)", value: 5.01},                        
             {id: "Parts and accessories of the motor vehicles", parent: "Vehicles (Pl)", value: 7.94},
             {id: "Motor vehicles for transporting goods", parent: "Vehicles (Pl)", value: 1.2},
             {id: "Food (Pl)", parent: "Poland"},
@@ -69,7 +70,7 @@
             {id: "Other bars and rods of iron or nonalloy steel", parent: "Steel (Ua)", value: 1.61},  
             {id: 'Germany', parent: 'Western Europe'},
             {id: "Food (De)", parent: "Germany"},
-            {id: "Swine meat", parent: "Food (De)", value: 4.52},                        
+            {id: "Swine meat (DE)", parent: "Food (De)", value: 4.52},                        
             {id: "Fresh cheese", parent: "Food (De)", value: 4.2},                        
             {id: "Coffee, not roasted", parent: "Food (De)", value: 1.89},                        
             {id: "Bread, pastry, cakes, biscuits and other baked goods", parent: "Food (De)", value: 3.64},
@@ -79,7 +80,7 @@
             {id: "Industrial monocarboxylic fatty acids, etc.", parent: "Medical (De)", value: 5.95},
             {id: "Vehicles (De)", parent: "Germany"},
             {id: "Aircraft, spacecraft & launch vehicles", parent: "Vehicles (De)", value: 26.2},                        
-            {id: "Cars", parent: "Vehicles (De)", value: 141},                        
+            {id: "Cars (De)", parent: "Vehicles (De)", value: 141},                        
             {id: "Parts and accessories of the motor vehicles", parent: "Vehicles (De)", value: 53.7},
             {id: "Motor vehicles for transporting goods", parent: "Vehicles (De)", value: 11.9},
             {id: 'France', parent: 'Western Europe'},
@@ -89,7 +90,7 @@
             {id: "Make-up products", parent: "Medical (Fr)", value: 6.6},
             {id: "Vehicles (Fr)", parent: "France"},
             {id: "Aircraft, spacecraft & launch vehicles", parent: "Vehicles (Fr)", value: 38.4},                        
-            {id: "Cars", parent: "Vehicles (Fr)", value: 23.4},                        
+            {id: "Cars (Fr)", parent: "Vehicles (Fr)", value: 23.4},                        
             {id: "Parts and accessories of the motor vehicles", parent: "Vehicles (Fr)", value: 19},
             {id: "Food (Fr)", parent: "France"},
             {id: "Wine of fresh grapes", parent: "Food (Fr)", value: 10.4},                        
@@ -115,7 +116,7 @@
             {id: "Make-up products", parent: "Medical (It)", value: 1.47},
             {id: "Vehicles (It)", parent: "Italy"},
             {id: "Parts and accessories of the motor vehicles", parent: "Vehicles (It)", value: 11.8},                        
-            {id: "Cars", parent: "Vehicles (It)", value: 9.7},                        
+            {id: "Cars (It)", parent: "Vehicles (It)", value: 9.7},                        
             {id: "Motor vehicles for transporting goods", parent: "Vehicles (It)", value: 4.32},
             {id: "Food (It)", parent: "Italy"},
             {id: "Fresh cheese", parent: "Food (It)", value: 2.34},                        
@@ -156,16 +157,15 @@
             {id: "Machinery (Irl)", parent: "Ireland"},
             {id: "Automated data processing machines", parent: "Machinery (Irl)", value: 5.21},                        
             {id: "Transmission apparatus for radio, TV, telephone", parent: "Machinery (Irl)", value: 1.86},                        
-            {id: "Printers and copying machines", parent: "Machinery (Irl)", value: 1.17}             ],
-    anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
-    );
+            {id: "Printers and copying machines", parent: "Machinery (Irl)", value: 1.17}
+        ];
 
     // set data
-    chart.data(data);
+    chart.data(data, anychart.enums.TreeFillingMethod.AS_TABLE);
 
     // display chart
     chart.container('container');
     chart.draw();
-    });</script>
+});</script>
 </body>
 </html>

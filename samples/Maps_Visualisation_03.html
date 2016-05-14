@@ -6,7 +6,8 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script src="//cdn.anychart.com/geodata/1.1.0/countries/australia/australia.js" data-export="true"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
     <script x-export="stage">anychart.onDocumentReady(function() {
     var firstDataSet = anychart.data.set([
         {id: "AU.CT", value: 15, title: "Australian Capital Territory"},
@@ -47,7 +48,7 @@
     
     // set the image for the hovered regions of the second series
     secondSeries.hoverFill({
-        src: "http://static.anychart.com/logo/oceanic-airlines.png",
+        src: "http://static.anychart.com/images/oceanic-airlines.png",
         mode: "stretch",
         opacity: 0.3
     });

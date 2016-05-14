@@ -5,6 +5,7 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // data
@@ -31,7 +32,7 @@
   // adjust chart fill mode and set a picture instead of a color
   var series = chart.area(data);
   series.fill({
-    src: "http://static.anychart.com/underwater.jpg",
+    src: "http://static.anychart.com/images/underwater.jpg",
     mode: acgraph.vector.ImageFillMode.STRETCH
   });
 

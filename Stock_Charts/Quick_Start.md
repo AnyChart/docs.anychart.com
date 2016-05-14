@@ -13,8 +13,9 @@ Include the JavaScript file in the `<head>` section of your web page - visit the
 ```
 
 ###2. Create a Container for the Chart
+
 Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. AnyChart uses 100% of the container if other behavior is not specified. 
-Example:
+
 ```
 <body>
     <div id="container" style="width: 500px; height: 400px;"></div>
@@ -59,7 +60,6 @@ We may use quotes or not, because our data is numerical except the dateTime, whi
 
 Also you can set the data with no formatting - as a timestamp string.
 
-
 After we have set the data, we need to map it using the {api:anychart.data#mapAsTable}**.mapAs()**{api} and {api:anychart.data.TableMapping#addField}**.addField()**{api} methods. We need to define which value we set, then the value itself and the {api:anychart.enums.AggregationType}aggregation type{api}. The last are necessary when you've got loads of information shown on a chart and you want to group it.
 
 ```
@@ -70,23 +70,25 @@ After we have set the data, we need to map it using the {api:anychart.data#mapAs
 	mapping.addField('close', 4, 'last');
 	mapping.addField('value', 4, 'last');
 ```
-<br>
-For activating the AnyStock chart we use {api:anychart#stock}.stock(){api}:
+
+{api:anychart#stock}stock(){api} method is used to create a stock chart:
+
 ```
 	chart = anychart.stock();
 ```
-<br>
-Due to specialty of stock charts, it can have more than one plot and a plenty of series, and the chart itself cannot create a series. So it means that you have to define {api:anychart.charts.Stock#plot}.plot(){api}:
+
+Due to specialty of stock charts, it can have more than one plot and a plenty of series, and the chart itself cannot create a series. You have to define {api:anychart.charts.Stock#plot}.plot(){api} first:
+
 ```
 	chart.plot(0).ohlc(mapping);
 ```
-<br>
+
 No matter how many plots with or without series you create, all of them are scrolled together, because they all are bound to one X scale. 
 
 ###4. Create a chart
+
 Add the JavaScript tag `<script>` with the following code anywhere in the page. 
 This code example uses JavaScript API to create a chart, but you also can use [JSON, XML and CSV](Data_from_JSON,_XML,_CSV). 
-Example:
 
 ```
 <script>
@@ -143,11 +145,15 @@ Example:
   
 ## The result
 ###See the result
+
 After all these steps you should have the following result. This example, like any other on our site, can be launched and explored using the samples playground.
 
 {sample}STOCK\_Basic\_Sample{sample}
+
 ###Full source code
+
 You can copy this to a file on your computer and open it in your browser to display the AnyStock Chart shown above:
+
 ```
 <html>
 <head>
@@ -206,5 +212,4 @@ You can copy this to a file on your computer and open it in your browser to disp
 <div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>
-
 ```

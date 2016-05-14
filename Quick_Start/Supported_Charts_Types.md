@@ -25,6 +25,8 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Line Chart](../Basic_Charts_Types/Line-Spline-StepLine_Charts)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Maps - Geo Maps](../Maps/Overview)</td><td></td><td></td></tr>
 <tr><td>[Maps - Colored Choropleth](../Maps/Choropleth_Map)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[Maps - Dot, Point, Marker](../Maps/Dot_\(Point\)_Map)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[Maps - Connector, Line](../Maps/Connector_Maps)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Maps - Proportional Bubbles](../Maps/Proportional_Symbol_Map)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Marker Chart](../Basic_Charts_Types/Marker_Chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[OHLC Chart](../Basic_Charts_Types/OHLC_Chart)</td><td>Yes</td><td>Yes</td></tr>
@@ -54,4 +56,5 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Step Area Chart](../Basic_Charts_Types/Area_Chart)</td><td>Yes</td><td>Yes</td></tr> 
 <tr><td>[Step Line Chart](../Basic_Charts_Types/Line-Spline-StepLine_Charts#single_series_step_line_chart)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Stock Charts](../Stock_Charts/Quick_Start)</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>[Treemap Chart](../Basic_Charts_Types/TreeMap_Chart)</td><td>Yes</td><td>Yes</td></tr>
 </table>

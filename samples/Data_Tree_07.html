@@ -5,13 +5,14 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create stage to put sort buttons along the chart
     stage = anychart.graphics.create("container");
 
     // create treemap
-    var chart = anychart.treeMap();
+    chart = anychart.treeMap();
     
     // setting the maximum levels depth
     chart.maxDepth(4);
@@ -27,12 +28,12 @@
         var dataItem = traverser.current();
         // drill down to this item
         chart.drillTo(dataItem);
-      } 
-      else
-      {
+              } 
+              else
+              {
         // if we can't advance any more - reset the traverser
         traverser.reset();
-      }
+              }
     });    
  
     // data
@@ -52,9 +53,7 @@
             {name: "Southern Europe", value: "5"},
             {name: "Northern Europe", value: "10"},                        
         ]}
-     ]},
-    anychart.enums.TreeFillingMethod.AS_TREE // data type settings
-    ];
+     ]}];
 
     data =  anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.TREE);
     

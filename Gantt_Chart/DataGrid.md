@@ -12,16 +12,17 @@
  * [Data Grid Width](#data_grid_width)
  * [Expand/Collapse](#expand/collapse)
 
-<br>Data Grid - is one of the main parts of JavaScript Gantt Chart. It usually contains main data about tasks and resources of the project, it displays nesting (for a hierarchical model configuration).
+Data Grid - is one of the main parts of JavaScript Gantt Chart. It usually contains main data about tasks and resources of the project, it displays nesting (for a hierarchical model configuration).
 
 ## Columns
 
 ### Columns Set
 
 By default, JS Gantt Chart displays two columns: rows counts and names of Gantt elements (tasks or resources).
+
 {sample :width 690 :height 190}GANTT\_Basic\_Sample{sample}
 
-<br>The <b>set of columns</b> is set and defined using the {api:anychart.core.ui.DataGrid#column}**.column()**{api} method:
+The **set of columns** is set and defined using the {api:anychart.core.ui.DataGrid#column}**.column()**{api} method:
 
 ```
 //create new column contains names
@@ -38,15 +39,18 @@ var firstColumn = dataGrid.column(10);
 var secondColumn = dataGrid.column(20);
 ```
 
-<br>For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the [Content](#inner_content) topic.
+For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the [Content](#inner_content) topic.
 
-<br> The sample below shows Resource Gantt Chart, note that the third column is created to display the start data value.
+The sample below shows Resource Gantt Chart, note that the third column is created to display the start data value.
+
 {sample :width 690 :height 190}GANTT\_Chart\_10{sample}
 
-<br>The same for Project Gantt Chart. The next sample shows the data grid with the actual start and actual end values.
+The same for Project Gantt Chart. The next sample shows the data grid with the actual start and actual end values.
+
 {sample :width 690 :height 200}GANTT\_Chart\_11{sample}
 
-<br>You can create and display custom fields in data items:
+You can create and display custom fields in data items:
+
 ```
     'id': '1',
     'name': 'Task 1',
@@ -54,7 +58,8 @@ var secondColumn = dataGrid.column(20);
     'actualStart': Date.UTC(2008, 7, 9),
     'actualEnd': Date.UTC(2008, 7, 20)
 ```
-<br>{sample :width 690 :height 170}GANTT\_Chart\_12{sample}
+
+{sample :width 690 :height 170}GANTT\_Chart\_12{sample}
 
 ### Title
 
@@ -78,7 +83,7 @@ column.textFormatter(function(item) {
 });
 ```
 
-<br>Or it can be more complicated:
+Or it can be more complicated:
 
 ```
 //create the third column
@@ -98,7 +103,7 @@ function customColumnTextFormatter(item){
 }
 ```
 
-<br>Here is a sample with the complex {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api}.
+Here is a sample with the complex {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api}.
 
 {sample :width 690 :height 220}GANTT\_Chart\_17{sample}
 
@@ -132,7 +137,6 @@ These methods can be used to change the background color:
 </tbody>
 </table>
 
-<br>
 ```
 var dataGrid = chart.dataGrid();
 dataGrid.backgroundFill('blue .4');
@@ -160,7 +164,6 @@ By default, the odd and the even fields are differentiated by their fill. To cha
 </tbody>
 </table>
 
-<br>
 ```
 var dataGrid = chart.dataGrid();
 
@@ -168,7 +171,7 @@ dataGrid.rowOddFill('#8a2be2 .2');
 dataGrid.rowEvenFill('#8a2be2 .4');
 ```
 
-<br>Use these methods to change the rows fill color of the main chart plot:
+Use these methods to change the rows fill color of the main chart plot:
 
 <table>
 <tbody>
@@ -187,7 +190,6 @@ dataGrid.rowEvenFill('#8a2be2 .4');
 </tbody>
 </table>
 
-<br>
 ```
 //get chart timeline link to change color
 var timeline = chart.getTimeline();
@@ -196,7 +198,7 @@ timeline.rowEvenFill('green .4');
 timeline.rowOddFill("#add8e6");
 ```
 
-<br>In the sample below the odd rows are colored with a solid fill as well as the even rows.
+In the sample below the odd rows are colored with a solid fill as well as the even rows.
 {sample :width 690 :height 190}GANTT\_Chart\_09{sample}
 
 ## General Settings
@@ -210,7 +212,8 @@ By default Data Grid is turned on. If you need to show only timeline and timelin
 chart.dataGrid(false);
 ```
 
-<br>And here is a simple illustration of this idea:
+And here is a simple illustration of this idea:
+
 {sample :width 690 :height 190}GANTT\_Chart\_15{sample}
 
 ### Data Grid Width
@@ -228,17 +231,18 @@ Data Grid supports hierarchical data representation, so if the data is complicat
 
 {sample :width 690 :height 210}GANTT\_Chart\_08{sample}
 
-<br>Please note that it is also possible to configure the expand/collapse button settings using the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons}**.collapseExpandButtons()**{api} method.
+Please note that it is also possible to configure the expand/collapse button settings using the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons}**.collapseExpandButtons()**{api} method.
 
 ```
 column.collapseExpandButtons(false);
 ```
 
-<br>You can set the left padding in a cell depending on a tree data item's depth with {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}**.depthPaddingMultiplier()**{api} method to to customize the data view.
+You can set the left padding in a cell depending on a tree data item's depth with {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}**.depthPaddingMultiplier()**{api} method to to customize the data view.
 
 ```
 column.depthPaddingMultiplier(8);
 ```
 
-<br>In the example below we have disabled the default appearance of the expand/collapse buttons in the second column and put them into the first.
+In the example below we have disabled the default appearance of the expand/collapse buttons in the second column and put them into the first.
+
 {sample :width 690 :height 200}GANTT\_Chart\_14{sample}

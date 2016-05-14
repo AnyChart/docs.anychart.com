@@ -51,7 +51,7 @@ Logo picture can be adjusted as well. Use {api:anychart.core.ui.Credits#logoSrc}
 
 ```
   var credits = chart.credits();
-  credits.logoSrc("http://static.anychart.com/github.png");
+  credits.logoSrc("http://static.anychart.com/images/github.png");
 ```
 
 {sample}Credits\_04{sample}

@@ -152,7 +152,7 @@ To fill an element with an image you need to pass the following settings: object
 
 ```
 .fill({
-    src: 'http://static.anychart.com/kitty.png',
+    src: '//static.anychart.com/images/kitty.png',
     mode: acgraph.vector.ImageFillMode.TILE
 })
 ```

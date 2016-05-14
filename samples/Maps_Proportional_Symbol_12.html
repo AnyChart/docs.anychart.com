@@ -5,7 +5,8 @@
   <meta name="index" content="1000"/>
   <meta name="is-new" content="false"/>
   <script src="../anychart-bundle.min.js"></script>
-  <script src="//cdn.anychart.com/geodata/1.1.0/countries/australia/australia.js" data-export="true"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+  <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script x-export="chart">
       anychart.onDocumentReady(function() {
 
@@ -25,7 +26,7 @@
 
           map.title("Employed international workers and \nUnemployed local workers");
 
-          // set geoData using http://cdn.anychart.com/geodata/1.0.0/countries/australia/australia.js
+          // set geoData using http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js
           map.geoData(anychart.maps.australia);
 
           var series1Data = dataSet.mapAs({id:[0], size:[1]});
