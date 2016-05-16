@@ -11,9 +11,9 @@
   var chart = anychart.column();
 
   // setting title
-  chart.title("Allow x Labels Overlapping");
+  chart.title("Prevent X Labels Overlapping");
 
-  // seting data
+  // setting data
   chart.column([
     ["People's Republic of China", 1336717952],
     ["India", 1189172864],
@@ -42,8 +42,8 @@
 
   // x axis getter
   var xAxis = chart.xAxis();
-  // allow labels overlapping
-  xAxis.overlapMode("allowOverlap");
+  // prevent labels overlapping
+  xAxis.overlapMode("noOverlap");
 
   // draw chart
   chart.container("container");
