@@ -106,7 +106,64 @@ Here is a full list of the tokens you can use in formatting strings, note that s
 <td>{%SeriesYAverage}</td><td>The average y value of all the points within this series.</td>
 </tr>
 <tr>
-<td>{%SeriesPointCount}</td><td> number of points in this series.</td>
+<td>{%SeriesPointCount}</td><td>The number of points in this series.</td>
+</tr>
+<tr>
+<td>{%SeriesBubbleMaxSize}</td><td>The maximal bubble size value of all the points within this series (Bubble chart).</td>
+</tr>
+<tr>
+<td>{%SeriesBubbleMinSize}</td><td>The minimal bubble size value of all the points within this series (Bubble chart).</td>
+</tr>
+<tr>
+<td>{%SeriesBubbleSizeAverage}</td><td>The average bubble size value of all the points within this series (Bubble chart).</td>
+</tr>
+<tr>
+<td>{%SeriesBubbleSizeMedian}</td><td>The median bubble size value of all the points within this series (Bubble chart).</td>
+</tr>
+<tr>
+<td>{%SeriesBubbleSizeMode}</td><td>The mode bubble size value of all the points within this series (Bubble chart).</td>
+</tr>
+<tr>
+<td>{%SeriesBubbleSizeSum}</td><td>The sum of all the points bubble sizes (Bubble chart).</td>
+</tr>
+<tr>
+<td>{%SeriesFirstXValue}</td><td>The x value of the first point in this series (Scatter plot charts).</td>
+</tr>
+<tr>
+<td>{%SeriesFirstYValue}</td><td>The y value of the first point in this series.</td>
+</tr>
+<tr>
+<td>{%SeriesLastXValue}</td><td>The x value of the last point in this series (Scatter plot charts).</td>
+</tr>
+<tr>
+<td>{%SeriesLastYValue}</td><td>The y value of the first point in this series.</td>
+</tr>
+<tr>
+<td>{%SeriesPointsCount}</td><td>The number of points in this series.</td>
+</tr>
+<tr>
+<td>{%SeriesXAverage}</td><td>The average x value of all the points within this series.</td>
+</tr>
+<tr>
+<td>{%SeriesXAxisName}</td><td>The title text of the X Axis.</td>
+</tr>
+<tr>
+<td>{%SeriesXMax}</td><td>The maximal x value of all the elements within this series (Scatter plot charts).</td>
+</tr>
+<tr>
+<td>{%SeriesXMedian}</td><td>The median x value of all the points within this series (Scatter plot charts).</td>
+</tr>
+<tr>
+<td>{%SeriesXMin}</td><td>The minimal x value of all the elements within this series (Scatter plot charts).</td>
+</tr>
+<tr>
+<td>{%SeriesXMode}</td><td>The mode x value of all the points within this series (Scatter plot charts).</td>
+</tr>
+<tr>
+<td>{%SeriesXSum}</td><td>The sum of all the points x values (Scatter plot charts).</td>
+</tr>
+<tr>
+<td>{%SeriesYAxisName}</td><td>The title text of the Y Axis.</td>
 </tr>
 <tr>
 <td>{%Name}</td><td>The name of this point.</td>
@@ -130,10 +187,25 @@ Here is a full list of the tokens you can use in formatting strings, note that s
 <td>{%SeriesYMin}</td><td>The minimal y value of all the elements within this series.</td>
 </tr>
 <tr>
+<td>{%SeriesYMedian}</td><td>The median y value of all the points within this series.</td>
+</tr>
+<tr>
+<td>{%SeriesYMode}</td><td>The mode y value of all the points within this series.</td>
+</tr>
+<tr>
 <td>{%RangeStart}</td><td>The starting value of this point (Range charts).</td>
 </tr>
 <tr>
 <td>{%RangeEnd}</td><td>The ending value of this point (Range charts).</td>
+</tr>
+<tr>
+<td>{%SeriesYRangeMax}</td><td>The maximal range in this series (Range charts).</td>
+</tr>
+<tr>
+<td>{%SeriesYRangeMin}</td><td>The minimal range in this series (Range charts).</td>
+</tr>
+<tr>
+<td>{%SeriesYRangeSum}</td><td>The sum of all ranges in this series (Range charts).</td>
 </tr>
 <tr>
 <td>{%Range}</td><td>The range of this point (RangeEnd - RangeStart).</td>
@@ -167,6 +239,27 @@ Here is a full list of the tokens you can use in formatting strings, note that s
 </tr>
 <tr>
 <td>{%DataPlotSeriesCount}</td><td>The number of the series within the chart.</td>
+</tr>
+<tr>
+<td>{%DataPlotXAverage}</td><td>The average x value of all the points (Scatter plot charts).</td>
+</tr>
+<tr>
+<td>{%DataPlotXMax}</td><td>The maximal of all the points x values (Scatter plot chart).</td>
+</tr>
+<tr>
+<td>{%DataPlotXMin}</td><td>The minimal of all the points x values (Scatter plot chart).</td>
+</tr>
+<tr>
+<td>{%DataPlotXSum}</td><td>The sum of all the points x values (Scatter plot charts).</td>
+</tr>
+<tr>
+<td>{%DataPlotYRangeMax}</td><td>The maximal of the ranges of the points within the chart.</td>
+</tr>
+<tr>
+<td>{%DataPlotYRangeMin}</td><td>The minimal of the ranges of the points within the chart.</td>
+</tr>
+<tr>
+<td>{%DataPlotYRangeSum}</td><td>The sum of the ranges of the points within the chart.</td>
 </tr>
 <tr>
 <td>{%AxisName}</td><td>The name of the axis.</td>
@@ -233,6 +326,15 @@ Here is a full list of the tokens you can use in formatting strings, note that s
 </tr>
 <tr>
 <td>{%DataPlotMinYValuePointSeriesName}</td><td>The name of the series with a minimal of all the points y values.</td>
+</tr>
+<tr>
+<td>{%XPercentOfSeries}</td><td>The percentage of the series this point represents (Scatter Plot charts).</td>
+</tr>
+<tr>
+<td>{%XPercentOfTotal}</td><td>The percentage of all the series on the chart this point represents.</td>
+</tr>
+<tr>
+<td>{%YPercentOfCategory}</td><td>The percentage of all the points with the same name this point represents.</td>
 </tr>
 </table>
 
