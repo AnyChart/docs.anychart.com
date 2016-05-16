@@ -43,121 +43,101 @@ Full list of the parameters available:
 <th width="100"><strong>Options</strong></th>
 <th width="200"><strong>Description</strong></th>
 </tr>
-
 <tr>
 <td>--help</td>
 <td></td>
 <td>Shows help</td>
 </tr>
-
 <tr>
 <td>--script</td>
 <td></td>
 <td>The chart code</td>
 </tr>
-
 <tr>
 <td>--input-file</td>
 <td></td>
 <td>Set the path to the file with the chart code (script)</td>
 </tr>
-
 <tr>
 <td>--output-file</td>
 <td></td>
 <td>Name for the output file (e.g.: "Chart_1" or "Chart_0.png")</td>
 </tr>
-
 <tr>
 <td>--output-path</td>
 <td></td>
 <td>Set the path for the folder where the chart will be saved</td>
 </tr>
-
 <tr>
 <td>--type</td>
 <td>svg, png, jpg, pdf, csv, xlsx, xml, json</td>
 <td>The file type</td>
 </tr>
-
 <tr>
 <td>--container-id</td>
 <td></td>
 <td>The id for the container which will be generated in PhantomJS for the chart</td>
 </tr>
-
 <tr>
 <td>--container-width</td>
 <td></td>
 <td>The container width. The image quality will be better if the container is larger than the image.</td>
 </tr>
-
 <tr>
 <td>--container-height</td>
 <td></td>
 <td>The container height. The image quality will be better if the container is larger than the image.</td>
 </tr>
-
 <tr>
 <td>--image-width</td>
 <td></td>
 <td>The image width. Doesn't work for \*.pdf</td>
 </tr>
-
 <tr>
 <td>--image-height</td>
 <td></td>
 <td>The image height. Doesn't work for \*.pdf</td>
 </tr>
-
 <tr>
 <td>--force-transparent-white</td>
 <td></td>
 <td>If the chart's background is originally transparent - makes it white</td>
 </tr>
-
 <tr>
 <td>--jpg-quality</td>
 <td>from 0 to 1</td>
 <td>The image quality</td>
 </tr>
-
 <tr>
 <td>--pdf-size</td>
 <td></td>
 <td>Define the \*.pdf document paper size</td>
 </tr>
-
 <tr>
 <td>--pdf-x</td>
 <td></td>
 <td>X-coordinate of the chart in the \*.pdf document (in pixels)</td>
 </tr>
-
 <tr>
 <td>--pdf-y</td>
 <td></td>
 <td>Y-coordinate of the chart in the \*.pdf document (in pixels)</td>
 </tr>
-
 <tr>
 <td>--pdf-width</td>
 <td></td>
 <td>\*.pdf document height (in pixels)</td>
 </tr>
-
 <tr>
 <td>--pdf-height</td>
 <td></td>
 <td>\*.pdf document height (in pixels)</td>
 </tr>
-
 <tr>
 <td>--pdf-landscape</td>
 <td>Portrait or Landscape</td>
 <td>The \*.pdf document layout</td>
 </tr>
-
 </tbody>
 </table>
 
@@ -189,25 +169,21 @@ Full list of server parameters that can be set:
 <th width="100"><strong>Options</strong></th>
 <th width="200"><strong>Description</strong></th>
 </tr>
-
 <tr>
 <td>--host</td>
 <td></td>
 <td>The host where to run the server</td>
 </tr>
-
 <tr>
 <td>--port</td>
 <td></td>
 <td>The port where to run the server</td>
 </tr>
-
 <tr>
 <td>--allow-scripts-executing</td>
 <td>y (yes), n (no)</td>
 <td>A boolean parameter. If set in Y (e.g. as we do with http://export.anychart.com/) it might affect the security, so there's a flag which is N by default. </td>
 </tr>
-
 </tbody>
 </table>
 

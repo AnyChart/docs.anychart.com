@@ -139,7 +139,8 @@ chart.listen("dblclick",
 There are a lot of event types, which are separated to two categories: mouse-oriented and point-oriented. Types of both categories are similar to each other, the only difference is that point-oriented events contains some information about the point, while the mouse-oriented events are simple events with no point parameters. All those types you can see in the table below.
 
 <table width="700" border="1" class="dtTABLE">
-<tbody><tr>
+<tbody>
+<tr>
 <th width="150"><b>Mouse-oriented event</b></th>
 <th width="200"><b>Parameters</b></th>
 <th width="150"><b>Point-oriented event</b></th>
@@ -199,7 +200,8 @@ There are a lot of event types, which are separated to two categories: mouse-ori
 <td>pointsSelect</td>
 <td>All browser params + point params + array of selected points</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
 ###Mouse-related
 
