@@ -3,7 +3,7 @@
 <head>
   <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
+  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"  data-export="true"></script>
   <style>
     html, body, #container {
       width: 100%;
@@ -18,72 +18,97 @@
   <script x-export="map">anychart.onDocumentReady(function() {
 
 // create data set
-var data = anychart.data.set([
-    {points: [-37.85, 144.79, -33.79, 150.64], from: "Melbourne", to: "Sydney", passengers: "8 322 300"},
-    {points: [-27.40, 152.44, -33.79, 150.64], from:"Brisbane", to: "Sydney", passengers: "4 447 900"},
-    {points: [-27.40, 152.44, -37.85, 144.79], from: "Brisbane", to: "Melbourne", passengers: "3 317 100"},
-    {points: [-27.98, 153.04, -33.79, 150.64], from: "Gold Coast", to: "Sydney", passengers: "2 596 400"},
-    {points: [-34.98, 138.42, -37.85, 144.79], from: "Adelaide", to: "Melbourne", passengers: "2 272 000"},
-    {points: [-37.85, 144.79, -31.93, 115.96], from: "Melbourne", to: "Perth", passengers: "2 160 700"},
-    {points: [-34.98, 138.42, -33.79, 150.64], from: "Adelaide", to: "Sydney", passengers: "1 813 000"},
-    {points: [-31.93, 115.96, -33.79, 150.64], from: "Perth", to: "Sydney", passengers: "1 798 900"},
-    {points: [-27.98, 153.04, -37.85, 144.79], from: "Gold Coast", to: "Melbourne", passengers: "1 754 200"},    
-    {points: [-37.85, 144.79, -42.88, 147.31], from: "Melbourne", to: "Hobart", passengers: "1 400 200"}
-]);
-
-// create data set for the marker series
-var data_marker = anychart.data.set([
-    {lat: -37.85, long: 144.79, name: "Melbourne", label:{position:"left", anchor:"right"}},
-    {lat: -33.79, long: 150.64, name: "Sydney", label:{position:"bottom", anchor:"left_top"}},
-    {lat: -27.40, long: 152.44, name: "Brisbane"},
-    {lat: -27.98, long: 153.04, name: "Gold Coast", label:{position:"bottom", anchor:"left_top"}},
-    {lat: -34.98, long: 138.42, name: "Adelaide", label:{position:"bottom_left", anchor:"top"}},
-    {lat: -31.93, long: 115.96, name: "Perth", label:{position:"top", anchor:"bottom_right"}},
-    {lat: -42.88, long: 147.31, name: "Hobart", label:{position:"bottom", anchor:"top"}}
-]);
-
+var data = anychart.data.set([    
+    {points: [32, -106.8, 35, -103.5], curvature: -0.27},
+    {points: [35, -103.5, 36.5, -99.5], curvature: 0.47},
+    {points: [36.5, -99.5, 34, -97.3], curvature: 0.25},
+    {points: [34, -97.3, 32.3, -95.27], curvature: -0.3},
+    {points: [32.3,-95.27, 32.9, -92.03], curvature: -0.25},
+    {points: [32.9, -92.03, 40.4, -75.5], curvature: 0.05},
+    {points: [40.4, -75.5, 39.9, -74.1], curvature: 0.45}
+    ]);
 
 // create map chart
 var map = anychart.map();
-// create marker series
-var series_marker = map.marker(data_marker);
+
 // create connector series
-var series_connector = map.connector(data);
+var series = map.connector(data);
 
-// set geodata
-map.geoData(anychart.maps.australia);
+// changing the curvature of the series
+series.curvature(0);
 
-// markers of connector series
-series_connector.markers({size:15});
+// set series geo id field settings
+series.geoIdField("id_hasc");
+series.markers({enabled: false});
+series.fill("maroon");
+series.stroke("maroon", 2);
+series.hoverStroke("maroon", 2);
+series.select("maroon", 2);
+series.tooltip().textFormatter("Basic border along which the hostilities took place");
 
-// tooltip formatter
-series_connector.tooltip().textFormatter("From: {%from} \nTo: {%to} \nPassengers (in 2013): {%passengers}");
+// data set for the choropeth series
+var dataSet = anychart.data.set([
+    {id: 'US.MN', name: "Minnesota", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.MT', name: "Montana", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.ND', name: "North Dakota", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.ID', name: "Idaho", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.WA', name: "Washington", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.AZ', name: "Arizona", 'fill': "#FFCC99", 'position': "Union territories permitting slavery (claimed by Confederacy)"},
+    {id: 'US.CA', name: "California", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.CO', name: "Colorado", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.NV', name: "Nevada", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.NM', name: "New Mexico",'fill': "#FFCC99", 'position': "Union territories permitting slavery (claimed by Confederacy)"},
+    {id: 'US.OR', name: "Oregon", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.UT', name: "Utah", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.WY', name: "Wyoming", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.AR', name: "Arkansas", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.IA', name: "Iowa", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.KS', name: "Kansas", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.MO', name: "Missouri", 'fill': "#CC9933", 'position': "Border Union states, permitting slavery"},
+    {id: 'US.NE', name: "Nebraska", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.OK', name: "Oklahoma", 'fill': "#FFCC99", 'position': "Union territories permitting slavery (claimed by Confederacy)"},
+    {id: 'US.SD', name: "South Dakota", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
+    {id: 'US.LA', name: "Louisiana", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.TX', name: "Texas", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.CT', name: "Connecticut", 'fill': "#000066", 'position': "Union", labels: false},
+    {id: 'US.MA', name: "Massachusetts", 'fill': "#000066", 'position': "Union", labels: false},
+    {id: 'US.NH', name: "New Hampshire", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.RI', name: "Rhode Island", 'fill': "#000066", 'position': "Union", labels: false},
+    {id: 'US.VT', name: "Vermont", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.AL', name: "Alabama", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.FL', name: "Florida", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.GA', name: "Georgia", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.MS', name: "Mississippi", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.SC', name: "South Carolina", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.IL', name: "Illinois", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.IN', name: "Indiana", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.KY', name: "Kentucky", 'fill': "#CC9933", 'position': "Border Union states, permitting slavery"},
+    {id: 'US.NC', name: "North Carolina", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.OH', name: "Ohio", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.TN', name: "Tennessee", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.VA', name: "Virginia", 'fill': "#BB6600", position: "Confederate states"},
+    {id: 'US.WI', name: "Wisconsin", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.WY', name: "Wyoming", 'fill': "#9999FF", 'position': "Union territories not permitting slavery", labels: false},
+    {id: 'US.WV', name: "West Virginia", 'fill': "#CC9933", 'position': "Border Union states, permitting slavery"},
+    {id: 'US.DE', name: "Delaware",'fill': "#BB6600", position: "Confederate states", labels: false},
+    {id: 'US.DC', name: "District of Columbia", 'fill': "#BB6600", position: "Confederate states", labels: false},
+    {id: 'US.MD', name: "Maryland", 'fill': "#BB6600", position: "Confederate states", labels: false},
+    {id: 'US.NJ', name: "New Jersey", 'fill': "#BB6600", position: "Confederate states", labels: false},
+    {id: 'US.NY', name: "New York", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.PA', name: "Pennsylvania", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.ME', name: "Maine", 'fill': "#000066", 'position': "Union"},
+    {id: 'US.MI', name: "Michigan", 'fill': "#000066", 'position': "Union"}
+]);
 
-// set the start and end sizes
-series_connector.startSize(7);
-series_connector.endSize(0);
+var ch_series = map.choropleth(dataSet);
 
-// connector series colors
-series_connector.fill("#fff");
-series_connector.stroke("#600");
-series_connector.hoverFill("#600");
-series_connector.hoverStroke("#600");
+ch_series.tooltip().textFormatter("{%position}");
 
-// set the markers of marker series
-series_marker.size(5);
-series_marker.fill("#600");
-series_marker.stroke("#600", 2);
-series_marker.selectFill("#000");
-
-// adjust marker series tooltips
-series_marker.tooltip().textFormatter("{%name}");
-series_marker.tooltip().titleFormatter({enable:false});
-series_marker.labels().fontColor("#000");
-
-series_marker.zIndex(1000);
+// set geodata 
+map.geoData(anychart.maps.united_states_of_america);
 
 // name of the chart
-map.title("10 most popular flights through Australia");
+map.title("American Civil War: the Union vs the Confederacy");
 
 // disabling the zoom
 map.interactivity().mouseWheel(false);
