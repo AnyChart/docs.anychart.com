@@ -349,23 +349,17 @@ Along with usage of special tokens which helps to define the source of text you 
 <th>Description</th>
 </tr>
 <tr>
-<td>numDecimals</td><td>The number of visible decimal characters, if there are any.</td>
+<td>decimalsCount</td><td>The number of visible decimal characters (including characters for the integer values).</td>
 </tr>
 <tr>
-<td>decimalsCount</td><td>The number of visible decimal characters (including characters for the integer values).</td>
+<td>thousandsSeparator</td><td>A character for separating each three symbols of an integer number</td>
 </tr>
 <tr>
 <td>useNegativeSign</td><td>Controls the "-" sign.</td>
 </tr>
 <tr>
-<td>useBracketsForNegative</td><td>Puts negative values in brackets, if enabled.</td>
-</tr>
-<tr>
 <td>trailingZeros</td><td>Hides or display decimal characters for integer values</td>
 </tr>
-<!--<tr>
-<td>zeroFillDecimals</td><td>Minimum length of the integer part of a number. Zeroes will be added to the size for </td>
-</tr>-->
 </table>
 
 ##Formatting functions
