@@ -3,6 +3,7 @@
 * [Overview](#overview)
 * [String Tokens](#string_tokens)
  * [Tokens List](#tokens_list)
+ * [Formatters List](#formatters_list)
 * [Formatting functions](#formatting_functions)
  * [Default fields](#default_fields)
  * [Extra fields](#extra_fields)
@@ -336,6 +337,35 @@ Here is a full list of the tokens you can use in formatting strings, note that s
 <tr>
 <td>{%YPercentOfCategory}</td><td>The percentage of all the points with the same name this point represents.</td>
 </tr>
+</table>
+
+##Formatters List
+
+Along with usage of special tokens which helps to define the source of text you can use another type of tokens which helps to format numeric values in the text. Here is the list of these tokens:
+
+<table width="700px" class="dtTABLE">
+<tr>
+<th>Token</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>numDecimals</td><td>The number of visible decimal characters, if there are any.</td>
+</tr>
+<tr>
+<td>decimalsCount</td><td>The number of visible decimal characters (including characters for the integer values).</td>
+</tr>
+<tr>
+<td>useNegativeSign</td><td>Controls the "-" sign.</td>
+</tr>
+<tr>
+<td>useBracketsForNegative</td><td>Puts negative values in brackets, if enabled.</td>
+</tr>
+<tr>
+<td>trailingZeros</td><td>Hides or display decimal characters for integer values</td>
+</tr>
+<!--<tr>
+<td>zeroFillDecimals</td><td>Minimum length of the integer part of a number. Zeroes will be added to the size for </td>
+</tr>-->
 </table>
 
 ##Formatting functions
