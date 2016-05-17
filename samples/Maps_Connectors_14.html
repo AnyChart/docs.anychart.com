@@ -47,62 +47,84 @@ series.select("maroon", 2);
 series.tooltip().textFormatter("Basic border along which the hostilities took place");
 
 // data set for the choropeth series
-var dataSet = anychart.data.set([
-    {id: 'US.MN', name: "Minnesota", 'fill': "#000066", 'position': "Union"},
-    {id: 'US.MT', name: "Montana", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
-    {id: 'US.ND', name: "North Dakota", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
-    {id: 'US.ID', name: "Idaho", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
-    {id: 'US.WA', name: "Washington", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
-    {id: 'US.AZ', name: "Arizona", 'fill': "#FFCC99", 'position': "Union territories permitting slavery (claimed by Confederacy)"},
-    {id: 'US.CA', name: "California", 'fill': "#000066", 'position': "Union"},
-    {id: 'US.CO', name: "Colorado", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
-    {id: 'US.NV', name: "Nevada", 'fill': "#000066", 'position': "Union"},
-    {id: 'US.NM', name: "New Mexico",'fill': "#FFCC99", 'position': "Union territories permitting slavery (claimed by Confederacy)"},
-    {id: 'US.OR', name: "Oregon", 'fill': "#000066", 'position': "Union"},
-    {id: 'US.UT', name: "Utah", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
-    {id: 'US.WY', name: "Wyoming", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
-    {id: 'US.AR', name: "Arkansas", 'fill': "#BB6600", position: "Confederate states"},
-    {id: 'US.IA', name: "Iowa", 'fill': "#000066", 'position': "Union"},
-    {id: 'US.KS', name: "Kansas", 'fill': "#000066", 'position': "Union"},
-    {id: 'US.MO', name: "Missouri", 'fill': "#CC9933", 'position': "Border Union states, permitting slavery"},
-    {id: 'US.NE', name: "Nebraska", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
-    {id: 'US.OK', name: "Oklahoma", 'fill': "#FFCC99", 'position': "Union territories permitting slavery (claimed by Confederacy)"},
-    {id: 'US.SD', name: "South Dakota", 'fill': "#9999FF", 'position': "Union territories not permitting slavery"},
-    {id: 'US.LA', name: "Louisiana", 'fill': "#BB6600", position: "Confederate states"},
-    {id: 'US.TX', name: "Texas", 'fill': "#BB6600", position: "Confederate states"},
-    {id: 'US.CT', name: "Connecticut", 'fill': "#000066", 'position': "Union", labels: false},
-    {id: 'US.MA', name: "Massachusetts", 'fill': "#000066", 'position': "Union", labels: false},
-    {id: 'US.NH', name: "New Hampshire", 'fill': "#000066", 'position': "Union"},
-    {id: 'US.RI', name: "Rhode Island", 'fill': "#000066", 'position': "Union", labels: false},
-    {id: 'US.VT', name: "Vermont", 'fill': "#000066", 'position': "Union"},
-    {id: 'US.AL', name: "Alabama", 'fill': "#BB6600", position: "Confederate states"},
-    {id: 'US.FL', name: "Florida", 'fill': "#BB6600", position: "Confederate states"},
-    {id: 'US.GA', name: "Georgia", 'fill': "#BB6600", position: "Confederate states"},
-    {id: 'US.MS', name: "Mississippi", 'fill': "#BB6600", position: "Confederate states"},
-    {id: 'US.SC', name: "South Carolina", 'fill': "#BB6600", position: "Confederate states"},
-    {id: 'US.IL', name: "Illinois", 'fill': "#000066", 'position': "Union"},
-    {id: 'US.IN', name: "Indiana", 'fill': "#000066", 'position': "Union"},
-    {id: 'US.KY', name: "Kentucky", 'fill': "#CC9933", 'position': "Border Union states, permitting slavery"},
-    {id: 'US.NC', name: "North Carolina", 'fill': "#BB6600", position: "Confederate states"},
-    {id: 'US.OH', name: "Ohio", 'fill': "#000066", 'position': "Union"},
-    {id: 'US.TN', name: "Tennessee", 'fill': "#BB6600", position: "Confederate states"},
-    {id: 'US.VA', name: "Virginia", 'fill': "#BB6600", position: "Confederate states"},
-    {id: 'US.WI', name: "Wisconsin", 'fill': "#000066", 'position': "Union"},
-    {id: 'US.WY', name: "Wyoming", 'fill': "#9999FF", 'position': "Union territories not permitting slavery", labels: false},
-    {id: 'US.WV', name: "West Virginia", 'fill': "#CC9933", 'position': "Border Union states, permitting slavery"},
-    {id: 'US.DE', name: "Delaware",'fill': "#BB6600", position: "Confederate states", labels: false},
-    {id: 'US.DC', name: "District of Columbia", 'fill': "#BB6600", position: "Confederate states", labels: false},
-    {id: 'US.MD', name: "Maryland", 'fill': "#BB6600", position: "Confederate states", labels: false},
-    {id: 'US.NJ', name: "New Jersey", 'fill': "#BB6600", position: "Confederate states", labels: false},
-    {id: 'US.NY', name: "New York", 'fill': "#000066", 'position': "Union"},
-    {id: 'US.PA', name: "Pennsylvania", 'fill': "#000066", 'position': "Union"},
-    {id: 'US.ME', name: "Maine", 'fill': "#000066", 'position': "Union"},
-    {id: 'US.MI', name: "Michigan", 'fill': "#000066", 'position': "Union"}
+var dataSet_union = anychart.data.set([
+    {id: 'US.MN', name: "Minnesota"},
+    {id: 'US.CA', name: "California"},
+    {id: 'US.NV', name: "Nevada"},
+    {id: 'US.OR', name: "Oregon"},
+    {id: 'US.IA', name: "Iowa"},
+    {id: 'US.KS', name: "Kansas"},
+    {id: 'US.CT', name: "Connecticut", labels: false},
+    {id: 'US.MA', name: "Massachusetts", labels: false},
+    {id: 'US.NH', name: "New Hampshire"},
+    {id: 'US.RI', name: "Rhode Island", labels: false},
+    {id: 'US.VT', name: "Vermont"},
+    {id: 'US.IL', name: "Illinois"},
+    {id: 'US.IN', name: "Indiana"},
+    {id: 'US.OH', name: "Ohio"},
+    {id: 'US.WI', name: "Wisconsin"},
+    {id: 'US.NY', name: "New York"},
+    {id: 'US.PA', name: "Pennsylvania"},
+    {id: 'US.ME', name: "Maine"},
+    {id: 'US.MI', name: "Michigan"}
 ]);
 
-var ch_series = map.choropleth(dataSet);
+var dataSet_union_terr_nps = anychart.data.set([
+    {id: 'US.MT', name: "Montana"},
+    {id: 'US.ND', name: "North Dakota"},
+    {id: 'US.ID', name: "Idaho"},
+    {id: 'US.WA', name: "Washington"},
+    {id: 'US.CO', name: "Colorado"},
+    {id: 'US.UT', name: "Utah"},
+    {id: 'US.WY', name: "Wyoming"},
+    {id: 'US.MO', name: "Missouri"},
+    {id: 'US.NE', name: "Nebraska"},
+    {id: 'US.SD', name: "South Dakota"},
+    {id: 'US.WY', name: "Wyoming", labels: false}
+]);
 
-ch_series.tooltip().textFormatter("{%position}");
+var dataSet_confederate = anychart.data.set([
+    {id: 'US.AR', name: "Arkansas"},
+    {id: 'US.LA', name: "Louisiana"},
+    {id: 'US.TX', name: "Texas"},
+    {id: 'US.AL', name: "Alabama"},
+    {id: 'US.FL', name: "Florida"},
+    {id: 'US.GA', name: "Georgia"},
+    {id: 'US.MS', name: "Mississippi"},
+    {id: 'US.SC', name: "South Carolina"},
+    {id: 'US.NC', name: "North Carolina"},
+    {id: 'US.TN', name: "Tennessee"},
+    {id: 'US.VA', name: "Virginia"},
+    {id: 'US.DE', name: "Delaware", labels: false},
+    {id: 'US.DC', name: "District of Columbia", labels: false},
+    {id: 'US.MD', name: "Maryland", labels: false},
+    {id: 'US.NJ', name: "New Jersey", labels: false}
+]);
+
+var dataSet_union_border_states = anychart.data.set([
+    {id: 'US.KY', name: "Kentucky"},
+    {id: 'US.WV', name: "West Virginia"}
+]);
+
+var dataSet_union_terr_ps = anychart.data.set([
+    {id: 'US.AZ', name: "Arizona"},
+    {id: 'US.NM', name: "New Mexico"},
+    {id: 'US.OK', name: "Oklahoma"}
+]);
+
+// map setting
+var ch_series_union = map.choropleth(dataSet_union);
+var ch_series_union_terr_nps = map.choropleth(dataSet_union_terr_nps);
+var ch_series_confederate = map.choropleth(dataSet_confederate);
+var ch_series_union_border_states = map.choropleth(dataSet_union_border_states);
+var ch_series_union_terr_ps = map.choropleth(dataSet_union_terr_ps);
+
+// position for the series
+ch_series_union.tooltip().textFormatter("Union");
+ch_series_union_terr_nps.tooltip().textFormatter("Union territories not permitting slavery");
+ch_series_confederate.tooltip().textFormatter("Confederate states");
+ch_series_union_border_states.tooltip().textFormatter("Border Union states, permitting slavery");
+ch_series_union_terr_ps.tooltip().textFormatter("Union territories permitting slavery (claimed by Confederacy)");
 
 // set geodata 
 map.geoData(anychart.maps.united_states_of_america);
@@ -110,8 +132,16 @@ map.geoData(anychart.maps.united_states_of_america);
 // name of the chart
 map.title("American Civil War: the Union vs the Confederacy");
 
-// disabling the zoom
-map.interactivity().mouseWheel(false);
+// setting the colors
+ch_series_union.fill("#000066");
+ch_series_union_terr_nps.fill("#9999FF");
+ch_series_confederate.fill("#BB6600");
+ch_series_union_border_states.fill("#CC9933");
+ch_series_union_terr_ps.fill("#FFCC99");
+ch_series_union_terr_nps.stroke("#6666FF");
+
+// disabling the states that were not part of USA at the time of the Civil War
+map.unboundRegions(false);
 
 // set container id for the chart
 map.container('container');

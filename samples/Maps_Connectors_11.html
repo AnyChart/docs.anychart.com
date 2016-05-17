@@ -20,7 +20,7 @@
   // create data set
   var data = anychart.data.set([    
       {points: [51.5, -3.2, 57.1, -2.19], from: "Cardiff", to: "Aberdeen", time: "2h 20m"},
-      {points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m"},
+      {points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m", label:{anchor:"leftTop"}},
       {points: [54.7, -5.9, 57.6,-3.9], from: "Dublin", to: "Iverness", time: "2h 35m"}
   ]);
   // create map chart
@@ -48,7 +48,7 @@
   series.selectStroke("#CCCC99");
 
   // name of the chart
-  map.title("Setting the size of the connectors in the start/end points");
+  map.title("Labels and tooltips adjusting");
 
   series.tooltip().textFormatter("A flight from {%from} to {%to} takes at least {%time}");
 
@@ -66,14 +66,12 @@
   var labels = series.labels();
   labels.enabled(true);
   labels.position("end");
-  labels.anchor("left");
+  labels.anchor("leftBottom");
   labels.textFormatter("To {%to}");
 
   // set container id for the chart
   map.container('container');
-
-  // disabling the zoom
-  map.interactivity().mouseWheel(false);
+  
   // initiate chart drawing
   map.draw();
 });     

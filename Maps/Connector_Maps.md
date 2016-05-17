@@ -26,7 +26,7 @@ Connector Maps are those used to represent routes, areas and some landscape elem
 
 ## Data
 
-As it was mentioned before, it's necessary to set latitude and longitude for the start and end point of each connector. Note that latitude of the point should be defined first and then the longitude for each point. There are two different data notations: the data can be arranged as objects or as arrays.
+It's necessary to set latitude and longitude for the start and end point of each connector. Note that latitude of the point should be defined first and then the longitude for each point. There are two different data notations: the data can be arranged as objects or as arrays.
 
 ### Object notation
 
@@ -146,11 +146,11 @@ var data = anychart.data.set([
 
 {sample}Maps\_Connectors\_07{sample}
 
-Note that curvature might be negative. Negative value make the segment's curve go in the other direction.
+Note that curvature may be negative. Negative value make the segment's curve go in the other direction.
 
 #### Start/end size
 
-Two more features of our map connector series are {api:anychart.core.map.series.Connector#startSize}.startSize(){api} and {api:anychart.core.map.series.Connector#endSize}.endSize(){api}. These methods make our connector look more like arrows, tapering or expanding the connector curve (or line) to its end or from its start. These settings are also available to be adjusted through the data set. In the next sample we've defined both settings for the series in general.
+Two more features of our map connector series are {api:anychart.core.map.series.Connector#startSize}.startSize(){api} and {api:anychart.core.map.series.Connector#endSize}.endSize(){api}. These methods can make a connector look more like an arrow, tapering or expanding its curve. These settings are also available to be adjusted through the data set. In the next sample we've defined both settings for the series in general.
 
 ```
 	// changing the startSize and endSize of the connectors
@@ -162,7 +162,7 @@ Two more features of our map connector series are {api:anychart.core.map.series.
 
 ### Series colors
 
-Now, note that as soon as our connectors have become of some width, it becomes necessary to set some value for the {api:anychart.core.map.series.Connector#fill}.fill(){api} method of our series in addition to {api:anychart.core.map.series.Connector#stroke}.stroke(){api}, if we'd like our connectors to be colored somehow differently from the default. Of course, these colors can be also defined through the dataset. As usual, it's possible to edit colors for hovered and selected states also - for these states use {api:anychart.core.map.series.Connector#hoverFill}.hoverFill(){api}, {api:anychart.core.map.series.Connector#hoverstroke}.hoverStroke(){api}, {api:anychart.core.map.series.Connector#selectFill}.selectFill(){api} and {api:anychart.core.map.series.Connector#selectStroke}.selectStroke(){api} methods.
+As soon as our connectors acquire some width, we can set the filling color for them. There are several method used for changing the default colors: {api:anychart.core.map.series.Connector#fill}.fill(){api} and {api:anychart.core.map.series.Connector#stroke}.stroke(){api} methods are used to color connectors in normal state, colors can be also defined through the dataset. It's possible to change colors for hovered and selected states using {api:anychart.core.map.series.Connector#hoverFill}.hoverFill(){api}, {api:anychart.core.map.series.Connector#hoverstroke}.hoverStroke(){api}, {api:anychart.core.map.series.Connector#selectFill}.selectFill(){api} and {api:anychart.core.map.series.Connector#selectStroke}.selectStroke(){api} methods. Note that fill color is used only with start or end size greater than zero. Only stroke color is visible by default.
 
 ```
 	// setting colors for hovered and selected
@@ -180,9 +180,9 @@ Curvature parameter cannot be different for hovered and selected states, as well
 
 ### Markers
 
-Another special parameter of the connectors is their markers' position. To adjust it use {api:anychart.core.ui.MarkersFactory.Marker#position}.position(){api} method which accepts string values like "start", "end", "middle", or ratio from 0 to 1, or a percent value. This method manages each marker's position on a connector. It can be defined through the dataSet as well. 
+To change the position of a marker on a connector use {api:anychart.core.ui.MarkersFactory.Marker#position}.position(){api} method. It accepts string values like "start", "end", "middle", or ratio from 0 to 1, or a percent value as a parameter. This method manages each marker's position on a connector and can be defined through the dataSet as well.
 
-The anchor of the marker depends on its position and its connector's curvature, though it can be adjusted. Use the {api:anychart.core.ui.MarkersFactory.Marker#anchor}.anchor(){api} method to set it. You will need to define a string value, chosing one from the {api:anychart.enums.Anchor}Anchor type list{api}. Look a the next sample. Anchors are set for the markers, which are transformed to look more like arrows using the {api:anychart.core.ui.MarkersFactory.Marker#type}.type(){api} method. All default marker types can be found on the {api:anychart.enums.Marker}Marker Type list{api}.
+The anchor of the marker depends on its position and its connector's curvature, though it can be adjusted. Use the {api:anychart.core.ui.MarkersFactory.Marker#anchor}.anchor(){api} method to set it. You will need to define a string value, chosing one from the {api:anychart.enums.Anchor}Anchor type list{api}. Look at the next sample. Anchors are set for the markers, which are transformed to look more like arrows using the {api:anychart.core.ui.MarkersFactory.Marker#type}.type(){api} method. All default marker types can be found on the {api:anychart.enums.Marker}Marker Type list{api}.
 
 ```
 	// create data set
@@ -205,9 +205,9 @@ The anchor of the marker depends on its position and its connector's curvature, 
 
 {sample}Maps\_Connectors\_10{sample}
 
-The size of markers were changes as well through the {api:anychart.core.ui.MarkersFactory.Marker#}.size(){api} method.
+The size of markers were changed as well using the {api:anychart.core.ui.MarkersFactory.Marker#}.size(){api} method.
 
-Another way to emphasize the start and/or end points is to create a Marker series. You can find the instructions in the [Marker series tutorial](Dot_\(Point\)_Map).
+Another way to emphasize the start and/or end points is to create a Marker series. You can find the instructions in the [Map Marker series tutorial](Dot_\(Point\)_Map).
 
 ### Labels and Tooltips
 
@@ -215,7 +215,11 @@ Adjusting the position of labels is similar to adjusting it for the markers. Set
 
 The anchor of the label depends on its position and its connector's curvature, but can be adjusted as well by using the {api:anychart.core.ui.LabelsFactory.Label#anchor}.anchor(){api} method.
 
-All label settings can be also define through the dataSet as well.
+To change the content of labels use {api:anychart.core.ui.LabelsFactory.Label#textFormatter}.textFormatter(){api} method. To know more about labels and methods of adjusting then look up the [Labels tutorial](../Common_Settings/Labels).
+
+Tooltips have similar methods of adjusting. Use {api:anychart.core.ui.Tooltip#textFormatter}.textFormatter(){api} to change the content of the tooltip body and {api:anychart.core.ui.Tooltip#titleFormatter}.titleFormatter(){api} to change the content of the tooltip title content. Its position and anchor are being set using the {api:}.position(){api} and {api:}.anchor(){api} methods as well. There are a lot of different tooltip features that can be adjusted. Find more about tooltips in the [Tooltip adjusting tutorial](../Common_Settings/Tooltip).
+
+All label settings can be also defined through the dataSet as well.
 
 ```
 	// create data set
@@ -224,12 +228,16 @@ All label settings can be also define through the dataSet as well.
 	    {points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m", label:{anchor:"leftTop"}},
 	    {points: [54.7, -5.9, 57.6,-3.9], from: "Dublin", to: "Iverness", time: "2h 35m"}
 	]);
+
 	// set the labels
 	var labels = series.labels();
 	labels.enabled(true);
 	labels.position("end");
 	labels.anchor("leftBottom");
 	labels.textFormatter("To {%to}");
+
+	// tooltip adjusting
+	series.tooltip().textFormatter("A flight from {%from} to {%to} takes at least {%time}");
 ```
 
 {sample}Maps\_Connectors\_11{sample}

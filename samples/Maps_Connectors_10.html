@@ -48,7 +48,7 @@
   series.selectStroke("#CCCC99");
 
   // name of the chart
-  map.title("Setting the size of the connectors in the start/end points");
+  map.title("Settings the markers");
 
   series.tooltip().textFormatter("A flight from {%from} to {%to} takes at least {%time}");
 
@@ -65,8 +65,6 @@
   // set container id for the chart
   map.container('container');
 
-  // disabling the zoom
-  map.interactivity().mouseWheel(false);
   // initiate chart drawing
   map.draw();
 });     
