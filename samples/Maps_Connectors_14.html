@@ -17,6 +17,16 @@
     <div id="container"></div>
   <script x-export="map">anychart.onDocumentReady(function() {
 
+customTheme = {chart: {defaultSeriesSettings: {base: {tooltip: {textFormatter:"{%SeriesName}",titleFormatter:"{%Name}"}}}}};
+anychart.theme(customTheme);
+
+// create map chart
+var map = anychart.map();
+// set geodata 
+map.geoData(anychart.maps.united_states_of_america);
+// name of the chart
+map.title("American Civil War Map");
+
 // create data set
 var data = anychart.data.set([    
     {points: [32, -106.8, 35, -103.5], curvature: -0.27},
@@ -28,23 +38,15 @@ var data = anychart.data.set([
     {points: [40.4, -75.5, 39.9, -74.1], curvature: 0.45}
     ]);
 
-// create map chart
-var map = anychart.map();
-
 // create connector series
 var series = map.connector(data);
 
-// changing the curvature of the series
-series.curvature(0);
-
-// set series geo id field settings
-series.geoIdField("id_hasc");
-series.markers({enabled: false});
-series.fill("maroon");
-series.stroke("maroon", 2);
+// set connector series settings
+series.markers(false);
+series.color("maroon");
 series.hoverStroke("maroon", 2);
-series.select("maroon", 2);
-series.tooltip().textFormatter("Basic border along which the hostilities took place");
+series.name("Hostilities border");
+series.legendItem().iconType("line");
 
 // data set for the choropeth series
 var dataSet_union = anychart.data.set([
@@ -54,10 +56,10 @@ var dataSet_union = anychart.data.set([
     {id: 'US.OR', name: "Oregon"},
     {id: 'US.IA', name: "Iowa"},
     {id: 'US.KS', name: "Kansas"},
-    {id: 'US.CT', name: "Connecticut", labels: false},
-    {id: 'US.MA', name: "Massachusetts", labels: false},
+    {id: 'US.CT', name: "Connecticut"},
+    {id: 'US.MA', name: "Massachusetts"},
     {id: 'US.NH', name: "New Hampshire"},
-    {id: 'US.RI', name: "Rhode Island", labels: false},
+    {id: 'US.RI', name: "Rhode Island"},
     {id: 'US.VT', name: "Vermont"},
     {id: 'US.IL', name: "Illinois"},
     {id: 'US.IN', name: "Indiana"},
@@ -80,7 +82,7 @@ var dataSet_union_terr_nps = anychart.data.set([
     {id: 'US.MO', name: "Missouri"},
     {id: 'US.NE', name: "Nebraska"},
     {id: 'US.SD', name: "South Dakota"},
-    {id: 'US.WY', name: "Wyoming", labels: false}
+    {id: 'US.WY', name: "Wyoming"}
 ]);
 
 var dataSet_confederate = anychart.data.set([
@@ -95,10 +97,10 @@ var dataSet_confederate = anychart.data.set([
     {id: 'US.NC', name: "North Carolina"},
     {id: 'US.TN', name: "Tennessee"},
     {id: 'US.VA', name: "Virginia"},
-    {id: 'US.DE', name: "Delaware", labels: false},
-    {id: 'US.DC', name: "District of Columbia", labels: false},
-    {id: 'US.MD', name: "Maryland", labels: false},
-    {id: 'US.NJ', name: "New Jersey", labels: false}
+    {id: 'US.DE', name: "Delaware"},
+    {id: 'US.DC', name: "District of Columbia"},
+    {id: 'US.MD', name: "Maryland"},
+    {id: 'US.NJ', name: "New Jersey"}
 ]);
 
 var dataSet_union_border_states = anychart.data.set([
@@ -114,34 +116,32 @@ var dataSet_union_terr_ps = anychart.data.set([
 
 // map setting
 var ch_series_union = map.choropleth(dataSet_union);
-var ch_series_union_terr_nps = map.choropleth(dataSet_union_terr_nps);
 var ch_series_confederate = map.choropleth(dataSet_confederate);
+var ch_series_union_terr_nps = map.choropleth(dataSet_union_terr_nps);
 var ch_series_union_border_states = map.choropleth(dataSet_union_border_states);
 var ch_series_union_terr_ps = map.choropleth(dataSet_union_terr_ps);
 
-// position for the series
-ch_series_union.tooltip().textFormatter("Union");
-ch_series_union_terr_nps.tooltip().textFormatter("Union territories not permitting slavery");
-ch_series_confederate.tooltip().textFormatter("Confederate states");
-ch_series_union_border_states.tooltip().textFormatter("Border Union states, permitting slavery");
-ch_series_union_terr_ps.tooltip().textFormatter("Union territories permitting slavery (claimed by Confederacy)");
-
-// set geodata 
-map.geoData(anychart.maps.united_states_of_america);
-
-// name of the chart
-map.title("American Civil War: the Union vs the Confederacy");
+// names for the series a
+ch_series_union.name("Union");
+ch_series_confederate.name("Confederation");
+ch_series_union_terr_nps.name("Union territories (no slavery)");
+ch_series_union_border_states.name("Border Union states (slavery)");
+ch_series_union_terr_ps.name("Union territories claimed by Confederacy (slavery)");
 
 // setting the colors
-ch_series_union.fill("#000066");
-ch_series_union_terr_nps.fill("#9999FF");
-ch_series_confederate.fill("#BB6600");
-ch_series_union_border_states.fill("#CC9933");
-ch_series_union_terr_ps.fill("#FFCC99");
-ch_series_union_terr_nps.stroke("#6666FF");
+ch_series_union.color("#0288d1");
+ch_series_union_terr_nps.color("#40c4ff");
+ch_series_confederate.color("#8d5932");
+ch_series_union_border_states.color("#d8b597");
+ch_series_union_terr_ps.color("#f2d1be");
+ch_series_union_terr_nps.color("#6666FF");
 
 // disabling the states that were not part of USA at the time of the Civil War
 map.unboundRegions(false);
+
+// legend
+map.legend(true);
+map.legend().position("bottom");
 
 // set container id for the chart
 map.container('container');
