@@ -181,7 +181,7 @@
     blackHoverMarkers.stroke("black");
     var blackTooltip = blackSeries.tooltip();
     blackTooltip.title(false).separator(false);
-    blackTooltip.textFormatter("x = {%X}{thousandsSeparator: '} \ny = {%Value}{numDecimals:2, trailingZeros: true}");
+    blackTooltip.textFormatter("x = {%X}{thousandsSeparator: '} \ny = {%Value}{numDecimals:5, trailingZeros: true}");
 
     var redSeries = chart.line(firstSeries);
     redSeries.stroke("red", 3);
