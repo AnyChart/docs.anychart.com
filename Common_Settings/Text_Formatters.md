@@ -341,7 +341,7 @@ Here is a full list of the tokens you can use in formatting strings, note that s
 
 ##Formatters List
 
-Along with usage of special tokens which helps to define the source of text you can use another type of tokens which helps to format numeric values in the text. Here is the list of these tokens:
+Along with usage of special tokens which helps to define the source of text you can set options which helps to format numeric values in the text. Here is the list of these options:
 
 <table width="700px" class="dtTABLE">
 <tr>
@@ -374,7 +374,7 @@ tooltip.textFormatter(
 );
 ```
 
-Here is a chart with tooltip configured with tokens:
+As you can see, curly brackets delimit options which follows the token. Here is a chart with a tooltip configured using tokens with options:
 
 {sample}CS\_TextFormatter\_07{sample}
 
