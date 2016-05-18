@@ -362,6 +362,21 @@ Along with usage of special tokens which helps to define the source of text you 
 </tr>
 </table>
 
+Here is a simple code with tokens usage:
+
+```
+var series = chart.line(data);
+var tooltip = series.tooltip();
+tooltip.textFormatter(
+  // get the value of the point and shows the integer number and 2 characters of decimal part
+  "y = {%Value}{numDecimals:2, trailingZeros: true}"
+);
+```
+
+Here is a chart with tooltip configured with tokens:
+
+{sample}CS\_TextFormatter\_07{sample}
+
 ##Formatting functions
 
 If you need a complex formatting you can use formatting function instead of token strings. Formatting functions are set like this:
