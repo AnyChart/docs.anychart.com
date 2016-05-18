@@ -346,19 +346,20 @@ Along with usage of special tokens which helps to define the source of text you 
 <table width="700px" class="dtTABLE">
 <tr>
 <th>Token</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 <tr>
-<td>decimalsCount</td><td>The number of visible decimal characters (including characters for the integer values).</td>
+<td>numDecimals</td><td>numeric</td><td>The number of visible decimal characters (including characters for the integer values).</td>
 </tr>
 <tr>
-<td>thousandsSeparator</td><td>A character for separating each three symbols of an integer number</td>
+<td>thousandsSeparator</td><td>string</td><td>A character for separating each three symbols of an integer number</td>
 </tr>
 <tr>
-<td>useNegativeSign</td><td>Controls the "-" sign.</td>
+<td>useNegativeSign</td><td>boolean</td><td>Controls the "-" sign.</td>
 </tr>
 <tr>
-<td>trailingZeros</td><td>Hides or display decimal characters for integer values</td>
+<td>trailingZeros</td><td>boolean</td><td>Hides or display decimal characters for integer values</td>
 </tr>
 </table>
 
