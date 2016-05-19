@@ -302,7 +302,7 @@ var xAxis = chart.xAxis();
 xAxis.overlapMode("allowOverlap");
 ```
 
-**Note**: the overlap is enabled by default. The sample below demonstrates x labels with prevented overlap:
+**Note**: the overlap is disabled by default. The sample below demonstrates x labels with allowed overlap:
 
 {sample}AGST\_Labels\_Formatting\_11{sample}
 
