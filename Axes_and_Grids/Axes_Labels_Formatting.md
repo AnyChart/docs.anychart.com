@@ -298,8 +298,8 @@ As far as your labels can be unlimited in width AnyChart provides some tools to 
 ```
 // x axis getter
 var xAxis = chart.xAxis();
-// prevent labels overlap 
-xAxis.overlapMode("noOverlap");
+// allow labels overlapping
+xAxis.overlapMode("allowOverlap");
 ```
 
 **Note**: the overlap is enabled by default. The sample below demonstrates x labels with prevented overlap:
