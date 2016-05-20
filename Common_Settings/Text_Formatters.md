@@ -359,7 +359,7 @@ Along with usage of special tokens which helps to define the source of text you 
 <td>useNegativeSign</td><td>boolean</td><td>Controls the "-" sign.</td>
 </tr>
 <tr>
-<td>trailingZeros</td><td>boolean</td><td>Hides or display decimal characters for integer values</td>
+<td>trailingZeros</td><td>boolean</td><td>Hide or display decimal characters for integer values</td>
 </tr>
 </table>
 
@@ -369,8 +369,9 @@ Here is a simple code with tokens usage:
 var series = chart.line(data);
 var tooltip = series.tooltip();
 tooltip.textFormatter(
-  // get the value of the point and shows the integer number and 2 characters of decimal part
-  "y = {%Value}{numDecimals:2, trailingZeros: true}"
+  // Show series name and point's value. 
+  // The value has ' as a thousands separator and maximum number of decimal symbols is limited with 3 
+  "{%SeriesName}: {%Value}{thousandsSeparator:', numDecimals:3}"
 );
 ```
 
