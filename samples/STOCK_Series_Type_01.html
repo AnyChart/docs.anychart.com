@@ -80,21 +80,21 @@ anychart.onDocumentReady(function() {
     chart.container(stage);
     chart.draw();
 
-    // create label for changing the series type
+    // create label switching to column
     columnLabel = createLabel("Switch to Column", 10, function() {
         // change the series type
         series.seriesType("column");
         chart.title("Column");
     });    
 
-    // create descending sort label
+    // create label switching to line
     lineLabel = createLabel("Switch to Line", 150, function() {
         // change the series type
         series.seriesType("line");
         chart.title("Line");
     });    
 
-    // create no sort sort label
+    // create label switching to area
     areaLabel = createLabel("Switch to Area", 267, function() {
         // change the series type
         series.seriesType("area");

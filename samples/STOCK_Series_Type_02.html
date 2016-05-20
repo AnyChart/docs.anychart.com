@@ -97,21 +97,21 @@ anychart.onDocumentReady(function() {
     chart.container(stage);
     chart.draw();
 
-    // create label for changing the series type
+    // create label switching to ohlc
     ohlcLabel = createLabel("Switch to OHLC", 10, function() {
         // change the series type
         series.seriesType("ohlc");
         chart.title("OHLC");
     });    
 
-    // create descending sort label
+    // create label switching to japanese candlestick
     jcLabel = createLabel("Switch to Japanese Candlestick", 140, function() {
         // change the series type
         series.seriesType("candlestick");
         chart.title("Japanese Candlestick");
     });    
 
-    // create descending sort label
+    // create label switching to range area
     rangeAreaLabel = createLabel("Switch to Range Area", 140, function() {
         // change the series type
         series.seriesType("rangeArea");
