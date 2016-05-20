@@ -39,7 +39,6 @@ anychart.onDocumentReady(function() {
     var clickNum = 0;
     // set zoom
     australiaMap.listen("click", function(evt) {
-        console.log(evt.clientX);
         if (clickNum == 0){                 
             australiaMap.zoomTo(5, evt.clientX, evt.clientY);
             clickNum = 1
