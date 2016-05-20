@@ -6,9 +6,6 @@ Move and Zoom API
 * [Interactivity](#interactivity)
  * [Default](#default)
  * [Other features](#other_features)
-* [API](#api)
- * [Buttons](#buttons)
- * [Breadcrumbs](#breadcrumbs)
 
 
 AnyChart Maps are JavaScript interactive maps, with ability to change color when you move mouse over the element, when you select them or move mouse over the legend or color range item, they have interactive labels and tooltips, but surely one of the most demanded features of interactive maps is an ability to zoom in/zoom out and move the map to provide end-user with ability to dig into the data represented on the map.
@@ -51,22 +48,6 @@ There is another popular feature - zooming to a particular region on a map. Use 
 
 Note that here we used a listener to catch the click on a region. Read about listeners in the [Map Event Listener article](Event_Listeners).
 
-
-In some cases it might be necessary to know the path to a place that is zoomed in at the moment. It's possible to get the path using the {api:}.drillDownMap(){api} method. In the sample below the path is being shown in the tooltip, so hover the region to get it.
-
-```
-
-```
-
-{sample}Maps\_Move\_and\_Zoom\_03{sample}
-
-XML JSON ???
-
-
-4. Как задать карту переходов при помощи drillDownMap(), как это сделать через XML, как это сделать через JSON
-
-
-
 To turn off all interactivity in the map use the {api:anychart.charts.Map#interactivity}.interactivity(){api} method. 
 
 ```
@@ -77,29 +58,3 @@ To turn off all interactivity in the map use the {api:anychart.charts.Map#intera
 {sample}Maps\_Move\_and\_Zoom\_04{sample}
 
 
-## API
-
-
-AnyChart JavaScript Maps provide full set of methods to control map zoom and move: {api:anychart.charts.Map#zoom}zoom(){api}, {api:anychart.charts.Map#zoomTo}zoomTo(){api} {api:anychart.charts.Map#zoomToFeature}zoomToFeature(){api} and {api:anychart.charts.Map#move}move{api}. It's possible to create some custom elements on a map to make it unique or to make it easier for customers to navigate the map. Let's consider those samples below.
-
-### Buttons
-
-In this sample there are arrow buttons created that are intended to move the map.
-
-```
-	// creating a button
-	var zoomFirstLabel = anychart.ui.label();
-    zoomFirstLabel.background({fill: "#9E9E9E"});
-    zoomFirstLabel.text("2x Zoom.");
-    zoomFirstLabel.fontColor("#fff");
-    zoomFirstLabel.parentBounds(0, 0, 200, 200);
-    zoomFirstLabel.padding(5);
-    zoomFirstLabel.listen("click", function() {
-
-        // Zoom map in 2 times.
-        australiaMap.zoom(2);
-
-    });
-```
-
-{sample}Maps\_Move\_and\_Zoom\_05{sample}
