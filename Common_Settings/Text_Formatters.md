@@ -341,7 +341,17 @@ Here is a full list of the tokens you can use in formatting strings, note that s
 
 ##Formatters List
 
-Along with usage of special tokens which helps to define the source of text you can set options which helps to format numeric values in the text. Here is the list of these options:
+Along with usage of special tokens which helps to define the source of text you can set options which helps to format numeric values in the text. Curly brackets delimit options which follows the token. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Here is the list of these options:
 
 <table width="700px" class="dtTABLE">
 <tr>
@@ -375,9 +385,19 @@ tooltip.textFormatter(
 );
 ```
 
-As you can see, curly brackets delimit options which follows the token. Here is a chart with a tooltip configured using tokens with options:
+Here is a chart with a tooltip configured using tokens with options:
 
 {sample}CS\_TextFormatter\_07{sample}
+
+Note: if you want to use a symbol which is already reserved in token's parser, you need to use double slash \\ before desirable symbol to prevent the symbol from been parsed.
+
+```
+var tooltip = series.tooltip();
+tooltip.textFormatter(
+  // use coma as a thousands separator
+  "{%Value}{thousandsSeparator:\\,}"
+);
+```
 
 ##Formatting functions
 
