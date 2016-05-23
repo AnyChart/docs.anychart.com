@@ -10,55 +10,8 @@ anychart.onDocumentReady(function() {
     stage = anychart.graphics.create("container");
 
     // set the data
-    table = anychart.data.table("x");
-    table.addData([
-        {x:'1790', value:3929214},
-        {x:'1795', value:4390561},
-        {x:'1800', value:5236631},
-        {x:'1805', value:5989289},
-        {x:'1810', value:7239881},
-        {x:'1815', value:8722382},
-        {x:'1820', value:9638453},
-        {x:'1825', value:10923857},
-        {x:'1830', value:12866020},
-        {x:'1835', value:15454230},
-        {x:'1840', value:17069453},
-        {x:'1845', value:19234543},
-        {x:'1850', value:23191876},
-        {x:'1855', value:28347121},
-        {x:'1860', value:31443321},
-        {x:'1865', value:34098412},
-        {x:'1870', value:38558371},
-        {x:'1875', value:44728322},
-        {x:'1880', value:49371340},
-        {x:'1885', value:53989443},
-        {x:'1890', value:62979766},
-        {x:'1895', value:71883243},
-        {x:'1900', value:76212168},
-        {x:'1905', value:85023411},
-        {x:'1910', value:92228496},
-        {x:'1915', value:100378232},
-        {x:'1920', value:106021537},
-        {x:'1925', value:118323005},
-        {x:'1930', value:123202624},
-        {x:'1935', value:126232034},
-        {x:'1940', value:132164569},
-        {x:'1945', value:144773641},
-        {x:'1950', value:151325798},
-        {x:'1955', value:160460555},
-        {x:'1960', value:179323175},
-        {x:'1965', value:188232951},
-        {x:'1970', value:203211926},
-        {x:'1975', value:215789873},
-        {x:'1980', value:226545805},
-        {x:'1985', value:239905274},
-        {x:'1990', value:248709873},
-        {x:'1995', value:272119084},
-        {x:'2000', value:281421906},
-        {x:'2005', value:299456285},
-        {x:'2010', value:308745538},
-        {x:'2015', value:318914629}
-    ]);
+    var table = anychart.data.table("x");
+    table.addData(data_us_population());
   
     // map the data
     mapping = table.mapAs({'x':"x", 'value':"value"});
@@ -72,11 +25,17 @@ anychart.onDocumentReady(function() {
 
     // y-axis labels formatting
     chart.plot(0).yAxis().labels().textFormatter(function(){
-      return this.value/1000000 + "m";
+      return this.value + "m";
     });
 
+    // set the chart title
     chart.title('Stock series changing demo');
+    chart.title().padding(20);
 
+    // create scroller series with values
+    chart.scroller().area(table.mapAs({'value': 'value'}));
+
+    // set the chart container
     chart.container(stage);
     chart.draw();
 
@@ -124,6 +83,57 @@ anychart.onDocumentReady(function() {
         });    
         return label;
     }   
+
+    // data
+    function data_us_population() {
+    return [
+        {x:'1790', value:3.929214},
+        {x:'1795', value:4.390561},
+        {x:'1800', value:5.236631},
+        {x:'1805', value:5.989289},
+        {x:'1810', value:7.239881},
+        {x:'1815', value:8.722382},
+        {x:'1820', value:9.638453},
+        {x:'1825', value:10.923857},
+        {x:'1830', value:12.866020},
+        {x:'1835', value:15.454230},
+        {x:'1840', value:17.069453},
+        {x:'1845', value:19.234543},
+        {x:'1850', value:23.191876},
+        {x:'1855', value:28.347121},
+        {x:'1860', value:31.443321},
+        {x:'1865', value:34.098412},
+        {x:'1870', value:38.558371},
+        {x:'1875', value:44.728322},
+        {x:'1880', value:49.371340},
+        {x:'1885', value:53.989443},
+        {x:'1890', value:62.979766},
+        {x:'1895', value:71.883243},
+        {x:'1900', value:76.212168},
+        {x:'1905', value:85.023411},
+        {x:'1910', value:92.228496},
+        {x:'1915', value:100.378232},
+        {x:'1920', value:106.021537},
+        {x:'1925', value:118.323005},
+        {x:'1930', value:123.202624},
+        {x:'1935', value:126.232034},
+        {x:'1940', value:132.164569},
+        {x:'1945', value:144.773641},
+        {x:'1950', value:151.325798},
+        {x:'1955', value:160.460555},
+        {x:'1960', value:179.323175},
+        {x:'1965', value:188.232951},
+        {x:'1970', value:203.211926},
+        {x:'1975', value:215.789873},
+        {x:'1980', value:226.545805},
+        {x:'1985', value:239.905274},
+        {x:'1990', value:248.709873},
+        {x:'1995', value:272.119084},
+        {x:'2000', value:281.421906},
+        {x:'2005', value:299.456285},
+        {x:'2010', value:308.745538},
+        {x:'2015', value:318.914629}
+    ]};
 
 
 });

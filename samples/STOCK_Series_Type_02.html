@@ -10,8 +10,78 @@ anychart.onDocumentReady(function() {
     stage = anychart.graphics.create("container");
 
     // set the data
-    table = anychart.data.table("x");
-    table.addData([
+    var table = anychart.data.table("x");
+    table.addData(data_acme_stock());
+  
+    // map the data
+    mapping = table.mapAs({'open':"o",'high': "h", 'low':"l", 'close':"c"});
+    chart = anychart.stock();
+
+    // set the series
+    var series = chart.plot(0).ohlc(mapping);
+    series.name("ACME Corp. stock prices");
+
+    // y-axis labels formatting
+    chart.plot(0).yAxis().labels().textFormatter(function(){
+      return this.value + "m";
+    });
+
+    chart.title('Stock series changing demo');
+    chart.title().padding(20);
+
+    // create scroller series with "close" values
+    chart.scroller().area(table.mapAs({'value': 'c'}));
+
+    chart.container(stage);
+    chart.draw();
+
+    // create label switching to ohlc
+    ohlcLabel = createLabel("Switch to OHLC", 10, function() {
+        // change the series type
+        series.seriesType("ohlc");
+        chart.title("OHLC");
+    });    
+
+    // create label switching to japanese candlestick
+    jcLabel = createLabel("Switch to Japanese Candlestick", 140, function() {
+        // change the series type
+        series.seriesType("candlestick");
+        chart.title("Japanese Candlestick");
+    });    
+
+    // create label switching to range area
+    rangeAreaLabel = createLabel("Switch to Range Area", 375, function() {
+        // change the series type
+        series.seriesType("rangeArea");
+        chart.title("Range Area");
+    });   
+
+    // helper function to create buttons
+    function createLabel(text, offset, action){
+        var label = anychart.ui.label();
+        label.background({fill: "#1976d2"});
+        label.text(text);
+        label.fontColor("#fff");
+        label.padding(5);
+        label.parentBounds(offset, 5, 130, 100);    
+        label.listen("click", action);
+        label.container(stage);
+        label.draw();
+        label.listen("mouseOver", function(){
+            label.background().fill("#1976d2 0.5")
+            document.body.style.cursor = "pointer";
+            label.draw();
+        });
+        label.listen("mouseOut", function(){
+            label.background().fill("#1976d2")
+            document.body.style.cursor = "auto";
+            label.draw();
+        });    
+        return label;
+    }   
+
+    function data_acme_stock (){
+        return[
         {'x': '2015-04-01', 'o': 18.23, 'h': 19.36, 'l': 18.18, 'c': 19.31},
         {'x': '2015-04-02', 'o': 19.50, 'h': 19.89, 'l': 19.00, 'c': 19.29},
         {'x': '2015-04-03', 'o': 19.13, 'h': 19.15, 'l': 18.43, 'c': 18.75},
@@ -77,70 +147,7 @@ anychart.onDocumentReady(function() {
         {'x': '2015-06-30', 'o': 23.97, 'h': 24.24, 'l': 23.63, 'c': 23.77},
         {'x': '2015-07-01', 'o': 24.05, 'h': 24.30, 'l': 23.96, 'c': 24.04},
         {'x': '2015-07-02', 'o': 23.76, 'h': 24.04, 'l': 23.21, 'c': 23.37}
-    ]);
-  
-    // map the data
-    mapping = table.mapAs({'open':"o",'high': "h", 'low':"l", 'close':"c"});
-    chart = anychart.stock();
-
-    // set the series
-    var series = chart.plot(0).ohlc(mapping);
-    series.name("ACME Corp. stock prices");
-
-    // y-axis labels formatting
-    chart.plot(0).yAxis().labels().textFormatter(function(){
-      return this.value/1000000 + "m";
-    });
-
-    chart.title('Stock series changing demo');
-
-    chart.container(stage);
-    chart.draw();
-
-    // create label switching to ohlc
-    ohlcLabel = createLabel("Switch to OHLC", 10, function() {
-        // change the series type
-        series.seriesType("ohlc");
-        chart.title("OHLC");
-    });    
-
-    // create label switching to japanese candlestick
-    jcLabel = createLabel("Switch to Japanese Candlestick", 140, function() {
-        // change the series type
-        series.seriesType("candlestick");
-        chart.title("Japanese Candlestick");
-    });    
-
-    // create label switching to range area
-    rangeAreaLabel = createLabel("Switch to Range Area", 140, function() {
-        // change the series type
-        series.seriesType("rangeArea");
-        chart.title("Range Area");
-    });   
-
-    // helper function to create buttons
-    function createLabel(text, offset, action){
-        var label = anychart.ui.label();
-        label.background({fill: "#1976d2"});
-        label.text(text);
-        label.fontColor("#fff");
-        label.padding(5);
-        label.parentBounds(offset, 5, 130, 100);    
-        label.listen("click", action);
-        label.container(stage);
-        label.draw();
-        label.listen("mouseOver", function(){
-            label.background().fill("#1976d2 0.5")
-            document.body.style.cursor = "pointer";
-            label.draw();
-        });
-        label.listen("mouseOut", function(){
-            label.background().fill("#1976d2")
-            document.body.style.cursor = "auto";
-            label.draw();
-        });    
-        return label;
-    }   
+        ]};
 
 
 });
