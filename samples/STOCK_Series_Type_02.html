@@ -22,15 +22,13 @@ anychart.onDocumentReady(function() {
     series.name("ACME Corp. stock prices");
 
     // y-axis labels formatting
-    chart.plot(0).yAxis().labels().textFormatter(function(){
-      return this.value + "m";
-    });
+    chart.plot(0).yAxis().labels().textFormatter("{%Value}m");
 
     chart.title('Stock series changing demo');
     chart.title().padding(20);
 
     // create scroller series with "close" values
-    chart.scroller().area(table.mapAs({'value': 'c'}));
+    var scrollerSeries = chart.scroller().area(table.mapAs({'value': 'c'}));
 
     chart.container(stage);
     chart.draw();
@@ -39,6 +37,7 @@ anychart.onDocumentReady(function() {
     ohlcLabel = createLabel("Switch to OHLC", 10, function() {
         // change the series type
         series.seriesType("ohlc");
+        scrollerSeries.seriesType("ohlc");
         chart.title("OHLC");
     });    
 
@@ -46,6 +45,7 @@ anychart.onDocumentReady(function() {
     jcLabel = createLabel("Switch to Japanese Candlestick", 140, function() {
         // change the series type
         series.seriesType("candlestick");
+        scrollerSeries.seriesType("candlestick");
         chart.title("Japanese Candlestick");
     });    
 
@@ -53,6 +53,7 @@ anychart.onDocumentReady(function() {
     rangeAreaLabel = createLabel("Switch to Range Area", 375, function() {
         // change the series type
         series.seriesType("rangeArea");
+        scrollerSeries.seriesType("rangeArea");
         chart.title("Range Area");
     });   
 

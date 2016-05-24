@@ -24,16 +24,14 @@ anychart.onDocumentReady(function() {
     series.name("USA population growth (Object Data notation)");
 
     // y-axis labels formatting
-    chart.plot(0).yAxis().labels().textFormatter(function(){
-      return this.value + "m";
-    });
+    chart.plot(0).yAxis().labels().textFormatter("{%Value}m");
 
     // set the chart title
     chart.title('Stock series changing demo');
     chart.title().padding(20);
 
     // create scroller series with values
-    chart.scroller().area(table.mapAs({'value': 'value'}));
+    var scrollerSeries = chart.scroller().area(table.mapAs({'value': 'value'}));
 
     // set the chart container
     chart.container(stage);
@@ -43,6 +41,7 @@ anychart.onDocumentReady(function() {
     columnLabel = createLabel("Switch to Column", 10, function() {
         // change the series type
         series.seriesType("column");
+        scrollerSeries.seriesType("column");
         chart.title("Column");
     });    
 
@@ -50,6 +49,7 @@ anychart.onDocumentReady(function() {
     lineLabel = createLabel("Switch to Line", 150, function() {
         // change the series type
         series.seriesType("line");
+        scrollerSeries.seriesType("line");
         chart.title("Line");
     });    
 
@@ -57,6 +57,7 @@ anychart.onDocumentReady(function() {
     areaLabel = createLabel("Switch to Area", 267, function() {
         // change the series type
         series.seriesType("area");
+        scrollerSeries.seriesType("area");
         chart.title("Area");
     });    
 
