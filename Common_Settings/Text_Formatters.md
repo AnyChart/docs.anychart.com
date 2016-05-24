@@ -58,6 +58,36 @@ A live sample of chart tooltip, labels and axes labels formatted using string to
 
 {sample}CS\_TextFormatter\_00{sample}
 
+##Formatters List
+
+Along with usage of special tokens which helps to define the source of text you can set options which helps to format numeric values in the text. Curly brackets delimit options which follows the token. 
+  
+Here is a simple code with tokens usage:
+
+```
+var series = chart.line(data);
+var tooltip = series.tooltip();
+tooltip.textFormatter(
+  // Show series name and point's value. 
+  // The value has ' as a thousands separator and maximum number of decimal symbols is limited with 3 
+  "{%SeriesName}: {%Value}{thousandsSeparator:', numDecimals:3}"
+);
+```
+
+Here is a chart with a tooltip configured using tokens with options:
+
+{sample}CS\_TextFormatter\_07{sample}
+
+Note: if you want to use a symbol which is already reserved in token's parser, you need to use double slash \\ before desirable symbol to prevent the symbol from been parsed.
+
+```
+var tooltip = series.tooltip();
+tooltip.textFormatter(
+  // use coma as a thousands separator
+  "{%Value}{thousandsSeparator:\\,}"
+);
+```
+
 ## Tokens List
 
 Here is a full list of the tokens you can use in formatting strings, note that some tokens don't work unversally: you can't use {%BubbleSize} outside of [Bubble series](../Basic_Charts_Types/Bubble_Chart) or {%Close} outside of [Candlestick](../Basic_Charts_Types/Japanese_Candlestick_Chart) or [OHLC](../Basic_Charts_Types/OHLC_Chart) and so on. 
@@ -338,21 +368,11 @@ Here is a full list of the tokens you can use in formatting strings, note that s
 <td>{%YPercentOfCategory}</td><td>The percentage of all the points with the same name this point represents.</td>
 </tr>
 </table>
-
-##Formatters List
-
-Along with usage of special tokens which helps to define the source of text you can set options which helps to format numeric values in the text. Curly brackets delimit options which follows the token. 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- Here is the list of these options:
-
+  
+  
+Here is the list of options for tokens formatting:
+  
+  
 <table width="700px" class="dtTABLE">
 <tr>
 <th>Token</th>
@@ -372,32 +392,6 @@ Along with usage of special tokens which helps to define the source of text you 
 <td>trailingZeros</td><td>boolean</td><td>Hide or display decimal characters for integer values.</td>
 </tr>
 </table>
-
-Here is a simple code with tokens usage:
-
-```
-var series = chart.line(data);
-var tooltip = series.tooltip();
-tooltip.textFormatter(
-  // Show series name and point's value. 
-  // The value has ' as a thousands separator and maximum number of decimal symbols is limited with 3 
-  "{%SeriesName}: {%Value}{thousandsSeparator:', numDecimals:3}"
-);
-```
-
-Here is a chart with a tooltip configured using tokens with options:
-
-{sample}CS\_TextFormatter\_07{sample}
-
-Note: if you want to use a symbol which is already reserved in token's parser, you need to use double slash \\ before desirable symbol to prevent the symbol from been parsed.
-
-```
-var tooltip = series.tooltip();
-tooltip.textFormatter(
-  // use coma as a thousands separator
-  "{%Value}{thousandsSeparator:\\,}"
-);
-```
 
 ##Formatting functions
 
