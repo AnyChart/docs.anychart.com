@@ -5,9 +5,14 @@ Move and Zoom API
 * [Overview](#overview)
 * [Interactivity](#interactivity)
  * [Default](#default)
- * [Zoom adjusting](#zoom_adjusting)
- * [Move adjusting](#move_adjusting)
+ * [Adjusting](#adjusting)
+  * [Text](#text)
+  * [Zoom](#zoom)
+  * [Move](#move)
  * [Disable](#disable)
+
+
+## Overview
 
 
 AnyChart Maps are JavaScript interactive maps, with ability to change color when you move mouse over the element, when you select them or move mouse over the legend or color range item, they have interactive labels and tooltips, but surely one of the most demanded features of interactive maps is an ability to zoom in/zoom out and move the map to provide end-user with ability to dig into the data represented on the map.
@@ -15,15 +20,19 @@ AnyChart Maps are JavaScript interactive maps, with ability to change color when
 By default maps already have keyboard/mouse zoom in/out and pan features enabled, this can be turned on/off or tuned using {api:anychart.charts.Map#interactivity}interactivity(){api} method.
 
 
-## Overview
+## Interactivity
 
 AnyChart Maps are JavaScript interactive maps: use mouse and keyboard to manage the behavior and view of the map or its part. Some interactive features, like zooming and moving, are enabled by default. Let's now look at some default interactive settings.
+
 
 ### Default
 
 Use a keyboard to zoom the map in (press the "Ctrl" + "+" (for Mac: "cmd" + "+")) and out ("Ctrl" + "-" (for Mac: "cmd" + "-")) or use mouse and click twice on the map at the point you want to zoom to, and move map using the arrows on the keyboard or drill the map by mouse buttons. Note that keyboard interactivity works only when the focus is on the map, so it's necessary to click somewhere on the map to activate the keyboard interactivity.
 
-When there is a point selected or a couple of them, it's possible to copy some information about them. Select the regions you need and use standard hotkeys to copy theit data: Ctrl+C in Windows or Cmd+C in Mac. By default, the information you get contains the series number, the selected regions' Id's and indexes. 
+When there is a point selected or a couple of them, it's possible to copy some information about them. Select the regions you need and use standard hotkeys to copy their data: Ctrl+C in Windows or Cmd+C in Mac. By default, the information you get contains the series number, the selected regions' Id's and indexes. 
+
+
+### Adjusting
 
 The text that you get from the point can be adjusted by using the {api:anychart.core.utils.MapInteractivity#copyFormatter}.copyFormatter(){api} method. Look at the sample below. Select several points and use copying hotkeys to get those points' data.
 
@@ -35,11 +44,11 @@ The text that you get from the point can be adjusted by using the {api:anychart.
     });
 ```
 
-{sample}Maps\_Move\_and\_Zoom\_07{sample}
+{sample}Maps\_Move\_and\_Zoom\_01{sample}
 
 
 
-### Zoom adjusting
+### Zoom
 
 AnyMaps have an interesting and quite popular feature that is frequently being asked for. This feature uses mouse wheel for zooming the map with a bind. To enable this feature use {api:anychart.core.utils.MapInteractivity#mouseWheel}.mouseWheel(){api} method.
 
@@ -48,7 +57,7 @@ AnyMaps have an interesting and quite popular feature that is frequently being a
     currentInteractivity.mouseWheel(true);
 ```
 
-{sample}Maps\_Move\_and\_Zoom\_01{sample}
+{sample}Maps\_Move\_and\_Zoom\_02{sample}
 
 Note that when the mouse wheel zooming is enabled, it becomes possible to zoom a point by double-clicking it.
 
@@ -56,23 +65,17 @@ Another useful feature is general zoom. Use {api:anychart.charts.Map#zoom}.zoom(
 
 ```
     // creating a button
-    var zoomFirstLabel = anychart.ui.label();
-    zoomFirstLabel.background({fill: "#9E9E9E"});
-    zoomFirstLabel.text("2x Zoom.");
-    zoomFirstLabel.fontColor("#fff");
-    zoomFirstLabel.parentBounds(0, 0, 200, 200);
-    zoomFirstLabel.padding(5);
-    zoomFirstLabel.listen("click", function() {
+    var zoomButton = anychart.ui.label();
+    zoomButton.listen("click", function() {
 
         // Zoom map in 2 times.
         australiaMap.zoom(2);
-
     });
 ```
 
-{sample}Maps\_Move\_and\_Zoom\_05{sample}
+{sample}Maps\_Move\_and\_Zoom\_03{sample}
 
-Another zooming option suggested by our component is zooming to a some point. While {api:anychart.charts.Map#zoom}.zoom(){api} takes the central point of a map as the target zooming point, the {api:anychart.charts.Map#zoomTo}.zoomTo(){api} method allows to set this target point ahead. In the next sample, click twice at any point you prefer; the map will be zoomed to this point.
+Another zooming option provided by our component is zooming to a some point. While {api:anychart.charts.Map#zoom}.zoom(){api} takes the central point of a map as the target zooming point, the {api:anychart.charts.Map#zoomTo}.zoomTo(){api} method allows to set this target point ahead. In the next sample, click twice any point you prefer; the map will be zoomed to this point.
 
 ```
     // set zoom
@@ -89,7 +92,7 @@ Another zooming option suggested by our component is zooming to a some point. Wh
     });
 ```
 
-{sample}Maps\_Move\_and\_Zoom\_06{sample}
+{sample}Maps\_Move\_and\_Zoom\_04{sample}
 
 Note that {api:anychart.charts.Map#zoomTo}.zoomTo(){api} requires not only the zoom factor but the target point coordinates as well. If those are not set, the center point of the map will be considered as the target zoom point.
 
@@ -103,26 +106,26 @@ There is another popular feature - zooming to a particular region on a map. Use 
     })
 ```
 
-{sample}Maps\_Move\_and\_Zoom\_02{sample}
+{sample}Maps\_Move\_and\_Zoom\_05{sample}
 
 Note that here we used a listener to catch the click on a region. Read about listeners in the [Map Event Listener article](Event_Listeners).
 
 
-### Move adjusting
+### Move
 
 Moving function is being created with the {api:anychart.charts.Map#move}.move(){api} method. Set the factor as an argument.
 
 In this sample there are arrow buttons created that are intended to move the map.
 
 ```
-    // move up
-    upLabel = createLabel("Up", 0, 50);
-    upLabel.listen("click", function(){
+    // up button
+    upButton = createLabel("Up", 0, 50);
+    upButton.listen("click", function(){
         australiaMap.move(0, 10);
     });
 ```
 
-{sample}Maps\_Move\_and\_Zoom\_08{sample}
+{sample}Maps\_Move\_and\_Zoom\_06{sample}
 
 
 ### Disable
@@ -134,4 +137,4 @@ To turn off all interactivity in the map use the {api:anychart.charts.Map#intera
     map.interactivity(false);
 ```
 
-{sample}Maps\_Move\_and\_Zoom\_04{sample}
+{sample}Maps\_Move\_and\_Zoom\_07{sample}

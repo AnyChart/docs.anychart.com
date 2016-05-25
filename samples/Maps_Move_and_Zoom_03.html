@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script x-export="chart">
+
 anychart.onDocumentReady(function() {
+    stage = anychart.graphics.create("container");
+
+    // set the data
     var dataSet = anychart.data.set([
         {"id": "AU.CT", value: 15, title: "Australian Capital Territory"},
         {"id": "AU.VI", value: 23, title: "Victoria"},
@@ -20,27 +24,45 @@ anychart.onDocumentReady(function() {
         {"id": "AU.SA", value: 45, title: "South Australia"}
     ]);
 
+    // map the data
     var dataSetForSeries = dataSet.mapAs({id: "id"});
 
-    australiaMap = anychart.map();
+    // create the map
+    var australiaMap = anychart.map();
     australiaMap.geoData(anychart.maps.australia);
 
+    // set the map title
+    australiaMap.title("Zoom map");
+
+    // create choropleth series
     australiaMap.choropleth(dataSetForSeries);
-    australiaMap.geoIdField("code_hasc");
 
-    var currentInteractivity = australiaMap.interactivity();
+    // set the container for the map
+    australiaMap.container(stage);
 
-    // Disables the mouse wheel.
-    currentInteractivity.mouseWheel(false);
-
-    // zoom to a region
-    australiaMap.listen('pointClick', function(e) {
-        console.log(e.point.get('id'))
-        australiaMap.zoomToFeature(e.point.get('id'));
-    })
-
-    australiaMap.container("container");
+    // draw
     australiaMap.draw();
+
+    // creating a button
+    var zoomButton = anychart.ui.label();
+    zoomButton.background({fill: "#9E9E9E"});
+    zoomButton.text("2x Zoom.");
+    zoomButton.fontColor("#fff");
+    zoomButton.parentBounds(0, 0, 200, 200);
+    zoomButton.padding(5);
+    zoomButton.listen("click", function() {
+        // Zoom map in 2 times.
+        australiaMap.zoom(2);
+    });
+
+    // set the container for the button
+    zoomButton.container(stage);
+
+    // draw the button
+    zoomButton.draw();
+
+    // activate mousewheel
+    australiaMap.interactivity().mouseWheel(true);
 });
     </script>
 

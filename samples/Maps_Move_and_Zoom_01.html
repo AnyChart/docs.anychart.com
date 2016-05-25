@@ -9,6 +9,8 @@
   <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script x-export="chart">
 anychart.onDocumentReady(function() {
+
+    // set the data
     var dataSet = anychart.data.set([
         {id: "AU.CT", value: 15, title: "Australian Capital Territory"},
         {id: "AU.VI", value: 23, title: "Victoria"},
@@ -20,20 +22,30 @@ anychart.onDocumentReady(function() {
         {id: "AU.SA", value: 45, title: "South Australia"}
     ]);
 
+    // map the data
     var dataSetForSeries = dataSet.mapAs({id: "id"});
 
     australiaMap = anychart.map();
     australiaMap.geoData(anychart.maps.australia);
 
-    australiaMap.choropleth(dataSetForSeries);
-    australiaMap.geoIdField("code_hasc");
+    // set the map title
+    australiaMap.title("Change the text for the clipboard");
 
+    // create the series of choropleth
+    australiaMap.choropleth(dataSetForSeries);
+
+    // create a variable for the interactivity
     var currentInteractivity = australiaMap.interactivity();
 
-    // Enables the mouse wheel
-    currentInteractivity.mouseWheel(true);
+    // Adjust the text
+    currentInteractivity.copyFormatter(function() {
+        return "There are "+ this.point.get("value") + " sheep farms in the " +  this.point.getFeatureProp()["name"] + " region";
+    });
 
+    // set the container for the map
     australiaMap.container("container");
+
+    // draw
     australiaMap.draw();
 });
     </script>

@@ -9,34 +9,36 @@
   <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script x-export="chart">
 anychart.onDocumentReady(function() {
+
+    // set the data
     var dataSet = anychart.data.set([
-        {"id": "AU.CT", value: 15, title: "Australian Capital Territory"},
-        {"id": "AU.VI", value: 23, title: "Victoria"},
-        {"id": "AU.WA", value: 86, title: "Western Australia"},
-        {"id": "AU.QL", value: 16, title: "Queensland"},
-        {"id": "AU.NS", value: 32, title: "New South Wales"},
-        {"id": "AU.NT", value: 64, title: "Northern Territory"},
-        {"id": "AU.TS", value: 28, title: "Tasmania"},
-        {"id": "AU.SA", value: 45, title: "South Australia"}
+        {id: "AU.CT", value: 15, title: "Australian Capital Territory"},
+        {id: "AU.VI", value: 23, title: "Victoria"},
+        {id: "AU.WA", value: 86, title: "Western Australia"},
+        {id: "AU.QL", value: 16, title: "Queensland"},
+        {id: "AU.NS", value: 32, title: "New South Wales"},
+        {id: "AU.NT", value: 64, title: "Northern Territory"},
+        {id: "AU.TS", value: 28, title: "Tasmania"},
+        {id: "AU.SA", value: 45, title: "South Australia"}
     ]);
 
+    // map the data
     var dataSetForSeries = dataSet.mapAs({id: "id"});
 
+    // create the map 
     australiaMap = anychart.map();
     australiaMap.geoData(anychart.maps.australia);
+    // set the map title
+    australiaMap.title("Enable the mousewheel");
 
+    // set the series of choropleth type
     australiaMap.choropleth(dataSetForSeries);
-    australiaMap.geoIdField("code_hasc");
 
+    // create a variable for the interactivity
     var currentInteractivity = australiaMap.interactivity();
 
-    // Disables the mouse wheel.
-    currentInteractivity.mouseWheel(false);
-
-    // zoom to a region
-    australiaMap.listen('pointClick', function(e) {
-        australiaMap.zoomToFeature(e.point.get('id'));
-    })
+    // Enables the mouse wheel
+    currentInteractivity.mouseWheel(true);
 
     australiaMap.container("container");
     australiaMap.draw();
