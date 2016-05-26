@@ -10,7 +10,6 @@
   <script x-export="chart">
 
 anychart.onDocumentReady(function() {
-    // set the stage as a container
     stage = anychart.graphics.create("container");
 
     // set the data
@@ -29,37 +28,41 @@ anychart.onDocumentReady(function() {
     var dataSetForSeries = dataSet.mapAs({id: "id"});
 
     // create the map
-    var australiaMap = anychart.map();    
+    var australiaMap = anychart.map();
     australiaMap.geoData(anychart.maps.australia);
 
-    // disable all interactivity
-    australiaMap.interactivity(false);
-
     // set the map title
-    australiaMap.title("Zoom map to a point");
+    australiaMap.title("Zoom map");
 
-    // create the series
+    // create choropleth series
     australiaMap.choropleth(dataSetForSeries);
 
-    // set the container
+    // set the container for the map
     australiaMap.container(stage);
 
-    // draw a map
+    // draw
     australiaMap.draw();
 
-    // set zoom
-    var clickNum = 0;
-    australiaMap.listen("click", function(evt) {
-        if (clickNum == 0){                 
-            australiaMap.zoomTo(5, evt.clientX, evt.clientY);
-            clickNum = 1
-        }
-            else {
-            australiaMap.zoomTo(0.2, evt.clientX, evt.clientY);
-            clickNum = 0
-        }
+    // creating a button
+    var zoomButton = anychart.ui.label();
+    zoomButton.background({fill: "#9E9E9E"});
+    zoomButton.text("2x Zoom.");
+    zoomButton.fontColor("#fff");
+    zoomButton.parentBounds(0, 0, 200, 200);
+    zoomButton.padding(5);
+    zoomButton.listen("click", function() {
+        // Zoom map in 2 times.
+        australiaMap.zoom(2);
     });
 
+    // set the container for the button
+    zoomButton.container(stage);
+
+    // draw the button
+    zoomButton.draw();
+
+    // activate mousewheel
+    australiaMap.interactivity().mouseWheel(true);
 });
     </script>
 

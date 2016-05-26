@@ -5,11 +5,10 @@ Move and Zoom API
 * [Overview](#overview)
 * [Interactivity](#interactivity)
  * [Default](#default)
- * [Adjusting](#adjusting)
-  * [Enable/disable](#enable/disable)
-  * [Text](#text)
-  * [Zoom](#zoom)
-  * [Move](#move)
+ * [Enable/Disable](#enable/disable)
+ * [Text](#text)
+ * [Zoom](#zoom)
+ * [Move](#move)
 
 
 ## Overview
@@ -40,10 +39,10 @@ To enable or disable al interactive features we use {api:anychart.charts.Map#int
     map.interactivity(false);
 ```
 
-{sample}Maps\_Move\_and\_Zoom\_07{sample}
+{sample}Maps\_Move\_and\_Zoom\_01{sample}
 
 
-### Adjusting
+### Text
 
 The text that you get from the point can be adjusted by using the {api:anychart.core.utils.MapInteractivity#copyFormatter}.copyFormatter(){api} method. Look at the sample below. Select several points and use copying hotkeys to get those points' data.
 
@@ -57,8 +56,7 @@ The text that you get from the point can be adjusted by using the {api:anychart.
     });
 ```
 
-{sample}Maps\_Move\_and\_Zoom\_01{sample}
-
+{sample}Maps\_Move\_and\_Zoom\_02{sample}
 
 
 ### Zoom
@@ -70,7 +68,7 @@ Zooming feature uses mouse wheel to zoom the map in relation to the bind. To ena
     currentInteractivity.mouseWheel(true);
 ```
 
-{sample}Maps\_Move\_and\_Zoom\_02{sample}
+{sample}Maps\_Move\_and\_Zoom\_03{sample}
 
 Note that when the mouse wheel zooming is enabled, it becomes possible to zoom a point by double-clicking it.
 
@@ -81,7 +79,7 @@ Another useful feature is general zoom. Use {api:anychart.charts.Map#zoom}.zoom(
     australiaMap.zoom(2);
 ```
 
-{sample}Maps\_Move\_and\_Zoom\_03{sample}
+{sample}Maps\_Move\_and\_Zoom\_04{sample}
 
 Another zooming option provided by our component is zooming to a some point. While {api:anychart.charts.Map#zoom}.zoom(){api} takes the central point of a map as the target zooming point, the {api:anychart.charts.Map#zoomTo}.zoomTo(){api} method allows to set this target point ahead. In the next sample, click twice any point you prefer; the map will be zoomed to this point.
 
@@ -99,7 +97,7 @@ Another zooming option provided by our component is zooming to a some point. Whi
     });
 ```
 
-{sample}Maps\_Move\_and\_Zoom\_04{sample}
+{sample}Maps\_Move\_and\_Zoom\_05{sample}
 
 Note that {api:anychart.charts.Map#zoomTo}.zoomTo(){api} requires not only the zoom factor but the target point coordinates as well. If those are not set, the center point of the map will be considered as the target zoom point.
 
@@ -113,7 +111,7 @@ There is another popular feature - zooming to a particular region on a map. Use 
     })
 ```
 
-{sample}Maps\_Move\_and\_Zoom\_05{sample}
+{sample}Maps\_Move\_and\_Zoom\_06{sample}
 
 Note that here we used a listener to catch the click on a region. Read about listeners in the [Map Event Listener article](Event_Listeners).
 

@@ -6,47 +6,84 @@
   <meta name="is-new" content="false"/>
   <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
+  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
   <script x-export="chart">
 anychart.onDocumentReady(function() {
-
-    // set the data
+    // create data set
     var dataSet = anychart.data.set([
-        {id: "AU.CT", value: 15, title: "Australian Capital Territory"},
-        {id: "AU.VI", value: 23, title: "Victoria"},
-        {id: "AU.WA", value: 86, title: "Western Australia"},
-        {id: "AU.QL", value: 16, title: "Queensland"},
-        {id: "AU.NS", value: 32, title: "New South Wales"},
-        {id: "AU.NT", value: 64, title: "Northern Territory"},
-        {id: "AU.TS", value: 28, title: "Tasmania"},
-        {id: "AU.SA", value: 45, title: "South Australia"}
+      {'id': 'US.MA', 'value': 0},
+      {'id': 'US.MN', 'value': 1},
+      {'id': 'US.MT', 'value': 2},
+      {'id': 'US.ND', 'value': 3},
+      {'id': 'US.HI', 'value': 4},
+      {'id': 'US.ID', 'value': 5},
+      {'id': 'US.WA', 'value': 6},
+      {'id': 'US.AZ', 'value': 7},
+      {'id': 'US.CA', 'value': 8},
+      {'id': 'US.CO', 'value': 9},
+      {'id': 'US.NV', 'value': 10},
+      {'id': 'US.NM', 'value': 11},
+      {'id': 'US.OR', 'value': 12},
+      {'id': 'US.UT', 'value': 13},
+      {'id': 'US.WY', 'value': 14},
+      {'id': 'US.AR', 'value': 15},
+      {'id': 'US.IA', 'value': 16},
+      {'id': 'US.KS', 'value': 17},
+      {'id': 'US.MO', 'value': 18},
+      {'id': 'US.NE', 'value': 19},
+      {'id': 'US.OK', 'value': 20},
+      {'id': 'US.SD', 'value': 21},
+      {'id': 'US.LA', 'value': 22},
+      {'id': 'US.TX', 'value': 23},
+      {'id': 'US.CT', 'value': 24},
+      {'id': 'US.NH', 'value': 25},
+      {'id': 'US.RI', 'value': 26},
+      {'id': 'US.VT', 'value': 27},
+      {'id': 'US.AL', 'value': 28},
+      {'id': 'US.FL', 'value': 29},
+      {'id': 'US.GA', 'value': 30},
+      {'id': 'US.MS', 'value': 31},
+      {'id': 'US.SC', 'value': 32},
+      {'id': 'US.IL', 'value': 33},
+      {'id': 'US.IN', 'value': 34},
+      {'id': 'US.KY', 'value': 35},
+      {'id': 'US.NC', 'value': 36},
+      {'id': 'US.OH', 'value': 37},
+      {'id': 'US.TN', 'value': 38},
+      {'id': 'US.VA', 'value': 39},
+      {'id': 'US.WI', 'value': 40},
+      {'id': 'US.WV', 'value': 41},
+      {'id': 'US.DE', 'value': 42},
+      {'id': 'US.MD', 'value': 43},
+      {'id': 'US.NJ', 'value': 44},
+      {'id': 'US.NY', 'value': 45},
+      {'id': 'US.PA', 'value': 46},
+      {'id': 'US.ME', 'value': 47},
+      {'id': 'US.MI', 'value': 48},
+      {'id': 'US.AK', 'value': 49}
     ]);
 
-    // map the data
+    // data mapping
     var dataSetForSeries = dataSet.mapAs({id: "id"});
 
-    australiaMap = anychart.map();
-    australiaMap.geoData(anychart.maps.australia);
+    // create a map
+    usaMap = anychart.map();
+    usaMap.geoData(anychart.maps.united_states_of_america);
 
     // set the map title
-    australiaMap.title("Change the text for the clipboard");
+    usaMap.title("Disable all interactivity");
+    
+    // set the choropleth series
+    usaMap.choropleth(dataSetForSeries);
 
-    // create the series of choropleth
-    australiaMap.choropleth(dataSetForSeries);
+    // disable all interactivity
+    usaMap.interactivity(false);
 
-    // create a variable for the interactivity
-    var currentInteractivity = australiaMap.interactivity();
+    // set the container
+    usaMap.container("container");
 
-    // Adjust the text
-    currentInteractivity.copyFormatter(function() {
-        return "There are "+ this.point.get("value") + " sheep farms in " +  this.point.getFeatureProp()["name"];
-    });
-
-    // set the container for the map
-    australiaMap.container("container");
-
-    // draw
-    australiaMap.draw();
+    // draw the map
+    usaMap.draw();
 });
     </script>
 
