@@ -11,19 +11,15 @@ Move and Zoom API
   * [Move](#move)
  * [Disable](#disable)
 
-
 ## Overview
-
 
 AnyChart Maps are JavaScript interactive maps, with ability to change color when you move mouse over the element, when you select them or move mouse over the legend or color range item, they have interactive labels and tooltips, but surely one of the most demanded features of interactive maps is an ability to zoom in/zoom out and move the map to provide end-user with ability to dig into the data represented on the map.
 
 By default maps already have keyboard/mouse zoom in/out and pan features enabled, this can be turned on/off or tuned using {api:anychart.charts.Map#interactivity}interactivity(){api} method.
 
-
 ## Interactivity
 
 AnyChart Maps are JavaScript interactive maps: use mouse and keyboard to manage the behavior and view of the map or its part. Some interactive features, like zooming and moving, are enabled by default. Let's now look at some default interactive settings.
-
 
 ### Default
 
@@ -31,11 +27,9 @@ Use a keyboard to zoom the map in (press the "Ctrl" + "+" (for Mac: "cmd" + "+")
 
 When there is a point selected or a couple of them, it's possible to copy some information about them. Select the regions you need and use standard hotkeys to copy their data: Ctrl+C in Windows or Cmd+C in Mac. By default, the information you get contains the series number, the selected regions' Id's and indexes. 
 
-
 ### Adjusting
 
 The text that you get from the point can be adjusted by using the {api:anychart.core.utils.MapInteractivity#copyFormatter}.copyFormatter(){api} method. Look at the sample below. Select several points and use copying hotkeys to get those points' data.
-
 
 ```
     // Adjust the text
@@ -45,8 +39,6 @@ The text that you get from the point can be adjusted by using the {api:anychart.
 ```
 
 {sample}Maps\_Move\_and\_Zoom\_01{sample}
-
-
 
 ### Zoom
 
