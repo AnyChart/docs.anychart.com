@@ -4,7 +4,7 @@ Switching series type
 
 Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [list of supported series](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
 
-To switch the series use .seriesType() method of a series. Let's create a couple of samples to make it clear how to use the feature.
+To switch the series use {api:anychart.core.stock.series.Base#seriesType}.seriesType(){api} method of a series. Let's create a couple of samples to make it clear how to use the feature.
 
 ```
 	table.addData([
