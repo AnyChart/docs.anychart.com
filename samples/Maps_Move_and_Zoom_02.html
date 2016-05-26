@@ -25,22 +25,27 @@ anychart.onDocumentReady(function() {
     // map the data
     var dataSetForSeries = dataSet.mapAs({id: "id"});
 
-    // create the map 
     australiaMap = anychart.map();
     australiaMap.geoData(anychart.maps.australia);
-    // set the map title
-    australiaMap.title("Enable the mousewheel");
 
-    // set the series of choropleth type
+    // set the map title
+    australiaMap.title("Change the text for the clipboard");
+
+    // create the series of choropleth
     australiaMap.choropleth(dataSetForSeries);
 
     // create a variable for the interactivity
     var currentInteractivity = australiaMap.interactivity();
 
-    // Enables the mouse wheel
-    currentInteractivity.mouseWheel(true);
+    // Adjust the text
+    currentInteractivity.copyFormatter(function() {
+        return "There are "+ this.point.get("value") + " sheep farms in " +  this.point.getFeatureProp()["name"];
+    });
 
+    // set the container for the map
     australiaMap.container("container");
+
+    // draw
     australiaMap.draw();
 });
     </script>
