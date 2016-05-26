@@ -39,7 +39,7 @@ anychart.onDocumentReady(function() {
 
     // Adjust the text
     currentInteractivity.copyFormatter(function() {
-        return "There are "+ this.point.get("value") + " sheep farms in the " +  this.point.getFeatureProp()["name"] + " region";
+        return "There are "+ this.point.get("value") + " sheep farms in " +  this.point.getFeatureProp()["name"];
     });
 
     // set the container for the map
