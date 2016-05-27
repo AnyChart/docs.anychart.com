@@ -25,14 +25,14 @@ The first difference between Basic Charts and AnyStock is the data format. All d
 	// set the data
 	table = anychart.data.table("x");
 	table.addData([
-        {x:'1790', value:3929214},
-        {x:'1795', value:4390561},
-        {x:'1800', value:5236631},
-        {x:'1805', value:5989289},
-        {x:'1810', value:7239881},
-        {x:'2005', value:299456285},
-        {x:'2010', value:308745538},
-        {x:'2015', value:318914629}
+        {x:'1790-01-01', value:3929214},
+        {x:'1795-01-01', value:4390561},
+        {x:'1800-01-01', value:5236631},
+        {x:'1805-01-01', value:5989289},
+        {x:'1810-01-01', value:7239881},
+        {x:'2005-01-01', value:299456285},
+        {x:'2010-01-01', value:308745538},
+        {x:'2015-01-01', value:318914629}
 	]);
   
 	// map the data
@@ -54,12 +54,12 @@ In this sample, the data was arranged as array of objects. Now, let's look at th
 	// set the data
 	table = anychart.data.table();
 	table.addData([
-        ['1990', 248709873],
-        ['1995', 272119084],
-        ['2000', 281421906],
-        ['2005', 299456285],
-        ['2010', 308745538],
-        ['2015', 318914629]
+        ['1990-01-01', 248709873],
+        ['1995-01-01', 272119084],
+        ['2000-01-01', 281421906],
+        ['2005-01-01', 299456285],
+        ['2010-01-01', 308745538],
+        ['2015-01-01', 318914629]
 	]);
   
 	// map the data
@@ -84,11 +84,11 @@ As lots of chart types supports being multiserial, as well as stocks do. There a
 	// set the data
 	table = anychart.data.table();
 	table.addData([
-        ['1995', 272119084, 49066487],
-        ['2000', 281421906, 49138831],
-        ['2005', 299456285, 51121448],
-        ['2010', 308745538, 53012456],
-        ['2015', 318914629, 54986564]
+        ['1995-01-01', 272119084, 49066487],
+        ['2000-01-01', 281421906, 49138831],
+        ['2005-01-01', 299456285, 51121448],
+        ['2010-01-01', 308745538, 53012456],
+        ['2015-01-01', 318914629, 54986564]
 	]);
   
 	// map the data
@@ -129,7 +129,7 @@ The only difference between these two code samples is the index of the second pl
 
 Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
 
-To switch the series use *seriesType()* method.
+To switch the series use {api:anychart.core.stock.series.Base#seriesType}.seriesType(){api} method.
 
 
 ## Visualization

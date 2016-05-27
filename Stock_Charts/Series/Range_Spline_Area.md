@@ -28,18 +28,18 @@ The data in this sample below is arranged as array of objects.
 	// set the data
     table = anychart.data.table("x");
     table.addData([
-        {x: "January 2000", low: 2, high: 6},
-        {x: "February 2000", low: 2, high: 7},
-        {x: "March 2000", low: 3, high: 10},
-        {x: "April 2000", low: 5, high: 13},
-        {x: "May 2000", low: 8, high: 17},
-        {x: "June 2000", low: 11, high: 20},
-        {x: "July 2000", low: 13, high: 22},
-        {x: "August 2000", low: 13, high: 21},
-        {x: "September 2000", low: 11, high: 19},
-        {x: "October 2000", low: 8, high: 14},
-        {x: "November 2000", low: 5, high: 10},
-        {x: "December 2000", low: 5, high: 7}
+        {x: "2000-01-01", low: 2, high: 6},
+        {x: "2000-02-01", low: 2, high: 7},
+        {x: "2000-03-01", low: 3, high: 10},
+        {x: "2000-04-01", low: 5, high: 13},
+        {x: "2000-05-01", low: 8, high: 17},
+        {x: "2000-06-01", low: 11, high: 20},
+        {x: "2000-07-01", low: 13, high: 22},
+        {x: "2000-08-01", low: 13, high: 21},
+        {x: "2000-09-01", low: 11, high: 19},
+        {x: "2000-10-01", low: 8, high: 14},
+        {x: "2000-11-01", low: 5, high: 10},
+        {x: "2000-12-01", low: 5, high: 7}
     ]);
   
     // map the data
@@ -61,18 +61,18 @@ The next sample demonstrates the data arranged as array of arrays.
 // set the data
     table = anychart.data.table();
     table.addData([
-        ["January 2000", 2, 6],
-        ["February 2000", 2, 7],
-        ["March 2000", 3, 10],
-        ["April 2000", 5, 13],
-        ["May 2000", 8, 17],
-        ["June 2000", 11, 20],
-        ["July 2000", 13, 22],
-        ["August 2000", 13, 21],
-        ["September 2000", 11, 19],
-        ["October 2000", 8, 14],
-        ["November 2000", 5, 10],
-        ["December 2000", 5, 7]
+        ["2000-01-01", 2, 6],
+        ["2000-02-01", 2, 7],
+        ["2000-03-01", 3, 10],
+        ["2000-04-01", 5, 13],
+        ["2000-05-01", 8, 17],
+        ["2000-06-01", 11, 20],
+        ["2000-07-01", 13, 22],
+        ["2000-08-01", 13, 21],
+        ["2000-09-01", 11, 19],
+        ["2000-10-01", 8, 14],
+        ["2000-11-01", 5, 10],
+        ["2000-12-01", 5, 7],
     ]);
   
     // map the data
@@ -98,11 +98,11 @@ Now, let's add a series to one of the previous samples.
 // set the data
     table = anychart.data.table();
     table.addData([
-        ["January 2000", 2, 6, -3, 4],
-        ["February 2000", 2, 7, -2, 5],
-        ["March 2000", 3, 10, 2, 10],
-        ["April 2000", 5, 13, 7, 16],
-        ["May 2000", 8, 17, 12, 22]
+        ["2000-01-01", 2, 6, -3, 4],
+        ["2000-02-01", 2, 7, -2, 5],
+        ["2000-03-01", 3, 10, 2, 10],
+        ["2000-04-01", 5, 13, 7, 16],
+        ["2000-05-01", 8, 17, 12, 22]
     ]);
   
     // map the data
@@ -150,7 +150,7 @@ You can find all information about plots in the [Plot tutorial](../Chart_Plots).
 
 Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
 
-To switch the series use *seriesType()* method.
+To switch the series use {api:anychart.core.stock.series.Base#seriesType}.seriesType(){api} method.
 
 
 ## Visualization

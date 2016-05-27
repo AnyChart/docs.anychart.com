@@ -28,7 +28,7 @@ anychart.onDocumentReady(function() {
     chart.title().padding(20);
 
     // create scroller series with "close" values
-    var scrollerSeries = chart.scroller().area(table.mapAs({'value': 'c'}));
+    var scrollerSeries = chart.scroller().ohlc(table.mapAs({'open':"o",'high': "h", 'low':"l", 'close':"c"}));
 
     chart.container(stage);
     chart.draw();
