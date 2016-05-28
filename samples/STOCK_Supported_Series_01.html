@@ -168,8 +168,8 @@ var chart = anychart.stock();
         var legend = plot_line_ohlc.legend();
 
 // create the column series
-        var columnSeries = plot_column.column(mapping);
-        columnSeries.name("Highest rate");
+        var rates = plot_column.column(mapping);
+        rates.name("Highest rate");
 
         extraYAxis.labels().textFormatter(function(){
             var value = this.value;
@@ -177,15 +177,15 @@ var chart = anychart.stock();
         });
 
 // create ohlc series
-        var ohlcSeries = plot_line_ohlc.ohlc(ohlcMapping);
-        var ohlcSeriesName = ohlcSeries.name("ACME Corp. Stock Prices");
-        var item = ohlcSeries.legendItem();
+        var prices = plot_line_ohlc.ohlc(ohlcMapping);
+        var pricesName = prices.name("ACME Corp. Stock Prices");
+        var item = prices.legendItem();
         item.text('ACME Corp. Stock Prices');
 
 // create line series
-        var lineSeries = plot_line_ohlc.line(lineMapping);
-        lineSeries.yScale(extraYScale);
-        lineSeries.name("Number of income requests worldwide");
+        var requests = plot_line_ohlc.line(lineMapping);
+        requests.yScale(extraYScale);
+        requests.name("Number of income requests worldwide");
 
 
 
