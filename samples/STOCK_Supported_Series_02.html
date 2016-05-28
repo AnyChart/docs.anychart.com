@@ -152,6 +152,9 @@
 
         var plot_column = chart.plot(1);
 
+        // legend formatter
+        plot_line_ohlc.legend().itemsTextFormatter("{%SeriesName}: {%Value}{trailingZeros:true}");
+
         // Create and tune additional y scale
         var extraYScale = anychart.scales.linear();
         extraYScale.minimum(0);
@@ -168,10 +171,15 @@
         var rates = plot_column.column(mapping);
         rates.name("Highest rate");
 
-        extraYAxis.labels().textFormatter(function(){
-            var value = this.value;
-            return value/1000000 + " mil";
-        });
+        // extraYAxis.labels().textFormatter(function(){
+        //     var value = this.value;
+        //     return value/1000000 + " mil";
+        // });
+
+        extraYAxis.labels().textFormatter("{%Value}");
+
+        // set the chart width
+        chart.right(30);
 
         rates.fill('#00838F');
 
