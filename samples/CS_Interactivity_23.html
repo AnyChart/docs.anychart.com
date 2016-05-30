@@ -43,7 +43,7 @@
 		var series = [];
 		var managers = [];
 
-		var formatedM = names.map(function(manager){
+		var formatedManagers = names.map(function(manager){
 			return {
 				text: manager,
 				included: true
@@ -72,14 +72,14 @@
 			}
 			chart.getSeriesAt(i).getExcludedPoints().forEach(function(exPoint){
 				if (names.indexOf(exPoint.get("x")) != (-1))
-					for (var i=0;i<formatedM.length;i++){
-						if (formatedM[i].text==exPoint.get("x"))
-							formatedM[i].excluded = true;
+					for (var i=0;i<formatedManagers.length;i++){
+						if (formatedManagers[i].text==exPoint.get("x"))
+							formatedManagers[i].excluded = true;
 					}
 			});
 		}
 
-		formatedM = formatedM.concat(managers.map(function(point){
+		formatedManagers = formatedManagers.concat(managers.map(function(point){
 			return {
 				text: point,
 				enabled: true,
@@ -88,70 +88,60 @@
 		}));
 		var included = [];
 		var excluded = [];
-		formatedM.forEach(function(manager, index){
-			if (manager.included){
-				var itemIn = {
+		formatedManagers.forEach(function(manager, index){
+			if (manager.included)
+				included.push({
 					text: manager.text,
-					enabled: true
-				};
-				itemIn.action = function(){
-					var i =0;
-					while(chart.getSeriesAt(i)){
-						chart.getSeriesAt(i).excludePoint(index);
-						i++;
-					}
-				};
-				included.push(itemIn);
-			}
-			if (manager.excluded){
-				var itemEx = {
-					text: manager.text,
-					enabled: true
-				};
-				itemEx.action = function(){
-					var i =0;
-					while(chart.getSeriesAt(i)){
-						var point = 0;
-						while (chart.getSeriesAt(i).getPoint(point).exists()){
-							if (chart.getSeriesAt(i).getPoint(point).get("x")==itemEx.text)
-								chart.getSeriesAt(i).includePoint(point);
-							point++;
+					enabled: true,
+					action: function(){
+						var i =0;
+						while(chart.getSeriesAt(i)){
+							chart.getSeriesAt(i).excludePoint(index);
+							i++;
 						}
-						i++;
 					}
-				};
-				excluded.push(itemEx);
-			}
+				});
+			if (manager.excluded)
+				excluded.push({
+					text: manager.text,
+					enabled: true,
+					action:  function(){
+						var i =0;
+						while(chart.getSeriesAt(i)){
+							var point = 0;
+							while (chart.getSeriesAt(i).getPoint(point).exists()){
+								if (chart.getSeriesAt(i).getPoint(point).get("x")==itemEx.text)
+									chart.getSeriesAt(i).includePoint(point);
+								point++;
+							}
+							i++;
+						}
+					}
+				});
 		});
 
 		series.forEach(function(counter, index){
 			if (counter.included) {
-				var seriesIn = {
+				included.push({
 					text: counter.text,
-					enabled: true
-				};
-				seriesIn.action = function (){
-					var i=0;
-					while (chart.getSeriesAt(index).getPoint(i).exists()){
-						chart.getSeriesAt(index).excludePoint(i);
-						i++;
+					enabled: true,
+					action: function (){
+						var i=0;
+						while (chart.getSeriesAt(index).getPoint(i).exists()){
+							chart.getSeriesAt(index).excludePoint(i);
+							i++;
+						}
 					}
-				};
-				included.push(seriesIn);
+				});
 			}
 			if (counter.excluded) {
-				var seriesEx = {
+				excluded.push({
 					text: counter.text,
-					enabled: true
-				};
-				seriesEx.action = function (){
-					var i=0;
-					while (chart.getSeriesAt(index).getPoint(i).exists()){
-						chart.getSeriesAt(index).includePoint(i);
-						i++;
+					enabled: true,
+					action: function (){
+						chart.getSeriesAt(index).includeAllPoints();
 					}
-				};
-				excluded.push(seriesEx);
+				});
 			}
 		});
 
@@ -172,16 +162,10 @@
 				text: "Include All",
 				enabled: true,
 				action: function(){
-					for (var i=0;i<chart.getSeriesCount();i++){
-						var c = 0;
-						while(chart.getSeriesAt(i).getPoint(c).exists()){
-							chart.getSeriesAt(i).includePoint(c);
-							c++;
-						}
-					}
+					for (var i=0;i<chart.getSeriesCount();i++)
+						chart.getSeriesAt(i).includeAllPoints();
 				}
 			});
-
 
 		return [
 			{
@@ -198,7 +182,8 @@
 				enabled: e.selectedPoints.length>0,
 				text: "Exclude Selected",
 				action: function(){
-					for(var i=0;i<e.selectedPoints.length;i++) e.selectedPoints[i].getSeries().excludePoint(e.selectedPoints[i].index);
+					for(var i=0;i<e.selectedPoints.length;i++)
+						e.selectedPoints[i].getSeries().excludePoint(e.selectedPoints[i].index);
 				}
 			}
 		];
