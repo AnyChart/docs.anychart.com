@@ -56,6 +56,8 @@ Here is a bit sophisticated sample with adjusted context menu.
 
 {sample}CS\_Interactivity\_23{sample}
 
+**Note**: All methods that was mentioned in this section works for chart's series even though these methods process series point. 
+
 ## Altering interactivity
 
 And now let's talk about customising the charts' behaviour. There are two levels of interactivity: charts behaviour in general and the series interactivity level.
