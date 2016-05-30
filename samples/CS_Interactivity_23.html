@@ -17,21 +17,14 @@
 		["Mary" , 9000, 19000, 17200, 15000, 18000]
 	]);
 
-	// map data for the each series
-	var data1 = data.mapAs({x: [0], value: [1]});
-	var data2 = data.mapAs({x: [0], value: [2]});
-	var data3 = data.mapAs({x: [0], value: [3]});
-	var data4 = data.mapAs({x: [0], value: [4]});
-	var data5 = data.mapAs({x: [0], value: [5]});
-
 	// chart type
 	var chart = anychart.column();
 
-	chart.column(data1).name("Year 2008");
-	chart.column(data2).name("Year 2009");
-	chart.column(data3).name("Year 2010");
-	chart.column(data4).name("Year 2011");
-	chart.column(data5).name("Year 2012");
+	chart.column(data.mapAs({x: [0], value: [1]})).name("Year 2008");
+	chart.column(data.mapAs({x: [0], value: [2]})).name("Year 2009");
+	chart.column(data.mapAs({x: [0], value: [3]})).name("Year 2010");
+	chart.column(data.mapAs({x: [0], value: [4]})).name("Year 2011");
+	chart.column(data.mapAs({x: [0], value: [5]})).name("Year 2012");
 
 	// set title
 	chart.title("Managing Context Menu");
