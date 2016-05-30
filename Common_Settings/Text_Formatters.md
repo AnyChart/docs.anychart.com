@@ -3,7 +3,7 @@
 * [Overview](#overview)
 * [String Tokens](#string_tokens)
  * [Tokens List](#tokens_list)
- * [Formatters List](#formatters_list)
+ * [Formatting Options](#formatting_options)
 * [Formatting functions](#formatting_functions)
  * [Default fields](#default_fields)
  * [Extra fields](#extra_fields)
@@ -58,7 +58,7 @@ A live sample of chart tooltip, labels and axes labels formatted using string to
 
 {sample}CS\_TextFormatter\_00{sample}
 
-##Formatters List
+##Formatting Options
 
 Along with usage of special tokens which helps to define the source of text you can set options which helps to format numeric values in the text. Curly brackets delimit options which follows the token. 
   
