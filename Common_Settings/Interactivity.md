@@ -47,9 +47,16 @@ The following sample shows a scatter chart with marker series, you can hover and
 
 ### Include and Exclude Points
 
-AnyChart provides out of the box data exploration option: ability to temporary exclude and then, if needed, include point on the any chart. Do do so just move a mouse over the point and right click it, so the [context menu](./UI_Controls/Context_Menu) appears, you will see "Exclude" or "Include" point items in the menu. The points you exclude or include affect only the look of the chart, your data stays safe, unharmed and unaffected by these actions.
+AnyChart provides out of the box data exploration option: ability to temporary exclude and then, if needed, include point on the any chart. To do so just move a mouse over the point and right click it, so the [context menu](./UI_Controls/Context_Menu) appears, you will see "Exclude" or "Include" point items in the menu. The points you exclude or include affect only the look of the chart, your data stays safe, unharmed and unaffected by these actions.
 
-If you want to create custom controls or change functionality in conext menu you need to use *getExcludedPoints()*, *excludePoint() and *includePoint()* methods.
+If you want to create custom controls or change functionality in context menu you need to use {api:anychart.core.cartesian.series.ContinuousBase#getExcludedPoints}getExcludedPoints(){api}, {api:anychart.core.cartesian.series.ContinuousBase#excludePoint}excludePoint(){api} and {api:anychart.core.cartesian.series.ContinuousBase#includePoint}includePoint(){api} methods.
+  
+  
+Using these methods it is possible to totally customize the context menu. Let's try this out:
+
+```
+
+```
 
 ## Altering interactivity
 

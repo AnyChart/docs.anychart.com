@@ -1,0 +1,215 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js" data-export="true"></script>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+	var data = anychart.data.set([
+		["John" , 10000, 12000, 15000, 20000, 19000],
+		["Jake" , 12000, 15000, 11500, 18350, 11000],
+		["Peter" , 18000, 16000, 13000, 18000, 15000],
+		["James" , 11000, 13000, 14000, 12500, 16000],
+		["Mary" , 9000, 19000, 17200, 15000, 18000]
+	]);
+
+	// map data for the each series
+	var data1 = data.mapAs({x: [0], value: [1]});
+	var data2 = data.mapAs({x: [0], value: [2]});
+	var data3 = data.mapAs({x: [0], value: [3]});
+	var data4 = data.mapAs({x: [0], value: [4]});
+	var data5 = data.mapAs({x: [0], value: [5]});
+
+	// chart type
+	var chart = anychart.column();
+
+	chart.column(data1).name("Year 2008");
+	chart.column(data2).name("Year 2009");
+	chart.column(data3).name("Year 2010");
+	chart.column(data4).name("Year 2011");
+	chart.column(data5).name("Year 2012");
+
+	// set title
+	chart.title("Managing Context Menu");
+
+	var menu = chart.contextMenu();
+	menu.itemsProvider(function(e){
+		var names = chart.xScale().names();
+
+		var series = [];
+		var managers = [];
+
+		var formatedM = names.map(function(manager){
+			return {
+				text: manager,
+				included: true
+			}
+		});
+
+		for (var i=0;i<chart.getSeriesCount();i++){
+			series.push({
+				text: chart.getSeriesAt(i).name(),
+				enabled: true
+			});
+			if (chart.getSeriesAt(i).getExcludedPoints().length==0)
+				series[i].included = true;
+			else if (! chart.getSeriesAt(i).getPoint(chart.getSeriesAt(i).getExcludedPoints().length).exists())
+				series[i].excluded = true;
+			else {
+				series[i].excluded = true;
+				series[i].included = true;
+			}
+			var point = 0;
+			while(chart.getSeriesAt(i).getPoint(point).exists()){
+				var current = chart.getSeriesAt(i).getPoint(point);
+				if ((names.indexOf(current.get("x")) == (-1))&&(managers.indexOf(current.get("x"))==(-1)))
+					managers.push(current.get("x"));
+				point++;
+			}
+			chart.getSeriesAt(i).getExcludedPoints().forEach(function(exPoint){
+				if (names.indexOf(exPoint.get("x")) != (-1))
+					for (var i=0;i<formatedM.length;i++){
+						if (formatedM[i].text==exPoint.get("x"))
+							formatedM[i].excluded = true;
+					}
+			});
+		}
+
+		formatedM = formatedM.concat(managers.map(function(point){
+			return {
+				text: point,
+				enabled: true,
+				excluded: true
+			};
+		}));
+		var included = [];
+		var excluded = [];
+		formatedM.forEach(function(manager, index){
+			if (manager.included){
+				var itemIn = {
+					text: manager.text,
+					enabled: true
+				};
+				itemIn.action = function(){
+					var i =0;
+					while(chart.getSeriesAt(i)){
+						chart.getSeriesAt(i).excludePoint(index);
+						i++;
+					}
+				};
+				included.push(itemIn);
+			}
+			if (manager.excluded){
+				var itemEx = {
+					text: manager.text,
+					enabled: true
+				};
+				itemEx.action = function(){
+					var i =0;
+					while(chart.getSeriesAt(i)){
+						var point = 0;
+						while (chart.getSeriesAt(i).getPoint(point).exists()){
+							if (chart.getSeriesAt(i).getPoint(point).get("x")==itemEx.text)
+								chart.getSeriesAt(i).includePoint(point);
+							point++;
+						}
+						i++;
+					}
+				};
+				excluded.push(itemEx);
+			}
+		});
+
+		series.forEach(function(counter, index){
+			if (counter.included) {
+				var seriesIn = {
+					text: counter.text,
+					enabled: true
+				};
+				seriesIn.action = function (){
+					var i=0;
+					while (chart.getSeriesAt(index).getPoint(i).exists()){
+						chart.getSeriesAt(index).excludePoint(i);
+						i++;
+					}
+				};
+				included.push(seriesIn);
+			}
+			if (counter.excluded) {
+				var seriesEx = {
+					text: counter.text,
+					enabled: true
+				};
+				seriesEx.action = function (){
+					var i=0;
+					while (chart.getSeriesAt(index).getPoint(i).exists()){
+						chart.getSeriesAt(index).includePoint(i);
+						i++;
+					}
+				};
+				excluded.push(seriesEx);
+			}
+		});
+
+		if (included.length>1)
+			included.push({
+				text: "Exclude All",
+				enabled: true,
+				action: function(){
+					for (var i=0;i<chart.getSeriesCount();i++){
+						for (var c = 0; c<names.length;c++)
+							chart.getSeriesAt(i).excludePoint(c);
+					}
+				}
+			});
+
+		if (excluded.length>1)
+			excluded.push({
+				text: "Include All",
+				enabled: true,
+				action: function(){
+					for (var i=0;i<chart.getSeriesCount();i++){
+						var c = 0;
+						while(chart.getSeriesAt(i).getPoint(c).exists()){
+							chart.getSeriesAt(i).includePoint(c);
+							c++;
+						}
+					}
+				}
+			});
+
+
+		return [
+			{
+				enabled: excluded.length>0,
+				text: "Include",
+				subMenu: excluded
+			},
+			{
+				enabled: included.length>0,
+				text: "Exclude",
+				subMenu: included
+			},
+			{
+				enabled: e.selectedPoints.length>0,
+				text: "Exclude Selected",
+				action: function(){
+					for(var i=0;i<e.selectedPoints.length;i++) e.selectedPoints[i].getSeries().excludePoint(e.selectedPoints[i].index);
+				}
+			}
+		];
+	});
+
+	// draw
+	chart.container("container");
+	chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
