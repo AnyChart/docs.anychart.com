@@ -103,7 +103,7 @@
 						while(chart.getSeriesAt(i)){
 							var point = 0;
 							while (chart.getSeriesAt(i).getPoint(point).exists()){
-								if (chart.getSeriesAt(i).getPoint(point).get("x")==itemEx.text)
+								if (chart.getSeriesAt(i).getPoint(point).get("x")==excluded.text)
 									chart.getSeriesAt(i).includePoint(point);
 								point++;
 							}
