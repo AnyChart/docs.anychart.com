@@ -7,7 +7,7 @@
   <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
-  <script x-export="chart">
+  <script x-export="map">
 
 anychart.onDocumentReady(function() {
 
@@ -72,49 +72,54 @@ anychart.onDocumentReady(function() {
     var dataSetForSeries = dataSet.mapAs({id: "id"});
 
     // create the map
-    var usaMap = anychart.map();
-    usaMap.geoData(anychart.maps.united_states_of_america);
+    var map = anychart.map();
+    map.geoData(anychart.maps.united_states_of_america);
 
     // set the map title
-    usaMap.title("Move the map");
+    map.title("Move the map");
 
     // set the choropleth series
-    usaMap.choropleth(dataSetForSeries);
+    map.choropleth(dataSetForSeries);
 
     // set default zoom
-    usaMap.zoom(1.2);
+    map.zoom(1.2);
 
     // put the map in the container 
-    usaMap.container(stage);
+    map.container(stage);
 
     // draw a map
-    usaMap.draw();
+    map.draw();
 
     // up button
     upButton = createButton("Up", 0, 50);
     upButton.listen("click", function(){
-        usaMap.move(0, 10);
+        map.move(0, 10);
     });
 
     // down button
     downButton = createButton("Down", 0, 20);
     downButton.listen("click", function(){
-        usaMap.move(0, -10);
+        map.move(0, -10);
     });
 
     // left button
     leftButton = createButton("Left", -50, 20);
     leftButton.listen("click", function(){
-        usaMap.move(10, 0);
+        map.move(10, 0);
     });
 
     // right button
     rightButton = createButton("Right", 50, 20);
     rightButton.listen("click", function(){
-        usaMap.move(-10, 0);
+        map.move(-10, 0);
     });
+    
+    // disable all default interactivity on the map
+    map.interactivity(false);
 
-    // helper function to create buttons
+});
+
+// helper function to create buttons
     function createButton(text, offsetX, offsetY){
     var button = anychart.ui.label();
     button.background({fill: "#1976d2"});
@@ -139,10 +144,6 @@ anychart.onDocumentReady(function() {
     });     
     return button;
 }   
-    // disable all default interactivity on the map
-    usaMap.interactivity(false);
-
-});
     </script>
 
 </head>

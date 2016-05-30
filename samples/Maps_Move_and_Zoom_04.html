@@ -7,10 +7,9 @@
   <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-  <script x-export="chart">
+  <script x-export="map">
 
 anychart.onDocumentReady(function() {
-    stage = anychart.graphics.create("container");
 
     // set the data
     var dataSet = anychart.data.set([
@@ -28,41 +27,29 @@ anychart.onDocumentReady(function() {
     var dataSetForSeries = dataSet.mapAs({id: "id"});
 
     // create the map
-    var australiaMap = anychart.map();
-    australiaMap.geoData(anychart.maps.australia);
+    var map = anychart.map();
+    map.geoData(anychart.maps.australia);
 
     // set the map title
-    australiaMap.title("Zoom map");
+    map.title("Zoom map \n Click here to zoom map two times");
 
-    // create choropleth series
-    australiaMap.choropleth(dataSetForSeries);
-
-    // set the container for the map
-    australiaMap.container(stage);
-
-    // draw
-    australiaMap.draw();
-
-    // creating a button
-    var zoomButton = anychart.ui.label();
-    zoomButton.background({fill: "#9E9E9E"});
-    zoomButton.text("2x Zoom.");
-    zoomButton.fontColor("#fff");
-    zoomButton.parentBounds(0, 0, 200, 200);
-    zoomButton.padding(5);
-    zoomButton.listen("click", function() {
+    // listen to the click
+    map.title().listen("click", function() {
         // Zoom map in 2 times.
-        australiaMap.zoom(2);
+        map.zoom(2);
     });
 
-    // set the container for the button
-    zoomButton.container(stage);
-
-    // draw the button
-    zoomButton.draw();
+    // create choropleth series
+    map.choropleth(dataSetForSeries);
 
     // activate mousewheel
-    australiaMap.interactivity().mouseWheel(true);
+    map.interactivity().mouseWheel(true);
+
+    // set the container for the map
+    map.container("container");
+
+    // draw
+    map.draw();
 });
     </script>
 

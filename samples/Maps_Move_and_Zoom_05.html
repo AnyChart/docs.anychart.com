@@ -7,7 +7,7 @@
   <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-  <script x-export="chart">
+  <script x-export="map">
 
 anychart.onDocumentReady(function() {
     // set the stage as a container
@@ -29,35 +29,34 @@ anychart.onDocumentReady(function() {
     var dataSetForSeries = dataSet.mapAs({id: "id"});
 
     // create the map
-    var australiaMap = anychart.map();    
-    australiaMap.geoData(anychart.maps.australia);
+    var map = anychart.map();    
+    map.geoData(anychart.maps.australia);
 
     // disable all interactivity
-    australiaMap.interactivity(false);
+    map.interactivity(false);
 
     // set the map title
-    australiaMap.title("Zoom map to a point");
+    map.title("Zoom map to a point");
 
     // create the series
-    australiaMap.choropleth(dataSetForSeries);
+    map.choropleth(dataSetForSeries);
 
     // set the container
-    australiaMap.container(stage);
+    map.container(stage);
 
     // draw a map
-    australiaMap.draw();
+    map.draw();
 
     // set zoom
-    var clickNum = 0;
-    australiaMap.listen("click", function(evt) {
-        if (clickNum == 0){                 
-            australiaMap.zoomTo(5, evt.clientX, evt.clientY);
-            clickNum = 1
+    var clicked = true;
+    map.listen("click", function(evt) {
+        if (clicked) {                 
+            map.zoomTo(3, evt.clientX, evt.clientY);
         }
-            else {
-            australiaMap.zoomTo(0.2, evt.clientX, evt.clientY);
-            clickNum = 0
+        else {
+            map.zoomTo(0, evt.clientX, evt.clientY);
         }
+    clicked = !clicked;
     });
 
 });

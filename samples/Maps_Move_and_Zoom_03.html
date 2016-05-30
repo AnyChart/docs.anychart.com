@@ -7,7 +7,7 @@
   <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-  <script x-export="chart">
+  <script x-export="map">
 anychart.onDocumentReady(function() {
 
     // set the data
@@ -26,22 +26,22 @@ anychart.onDocumentReady(function() {
     var dataSetForSeries = dataSet.mapAs({id: "id"});
 
     // create the map 
-    australiaMap = anychart.map();
-    australiaMap.geoData(anychart.maps.australia);
+    map = anychart.map();
+    map.geoData(anychart.maps.australia);
     // set the map title
-    australiaMap.title("Enable the mousewheel");
+    map.title("Enable the mousewheel");
 
     // set the series of choropleth type
-    australiaMap.choropleth(dataSetForSeries);
+    map.choropleth(dataSetForSeries);
 
     // create a variable for the interactivity
-    var currentInteractivity = australiaMap.interactivity();
+    var currentInteractivity = map.interactivity();
 
     // Enables the mouse wheel
     currentInteractivity.mouseWheel(true);
 
-    australiaMap.container("container");
-    australiaMap.draw();
+    map.container("container");
+    map.draw();
 });
     </script>
 
