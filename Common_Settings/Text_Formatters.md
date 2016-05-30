@@ -2,8 +2,8 @@
 
 * [Overview](#overview)
 * [String Tokens](#string_tokens)
- * [Tokens List](#tokens_list)
  * [Formatting Options](#formatting_options)
+ * [Tokens List](#tokens_list)
 * [Formatting functions](#formatting_functions)
  * [Default fields](#default_fields)
  * [Extra fields](#extra_fields)
