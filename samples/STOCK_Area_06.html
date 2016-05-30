@@ -91,7 +91,7 @@ anychart.onDocumentReady(function() {
 
     // set the US series
     var series_usa = chart.plot(0).area(mapping_usa);
-    series_usa.name("USA population growth");
+    series_usa.name("USA");
 
     // coloring
     series_usa.fill("#CC9933");
@@ -99,14 +99,14 @@ anychart.onDocumentReady(function() {
 
     // set the UK series
     var series_uk = chart.plot(1).area(mapping_uk);
-    series_uk.name("UK population growth");
+    series_uk.name("UK");
 
     // hatch fill
     series_uk.hatchFill("diagonalCross");
 
     // crosshair settings
-    сhart.plot(0).dateTimeHighlighter("#663300", 0.5);
-    chart.plot(1).dateTimeHighlighter("#999", 1.5, "6 2", "round");
+    chart.plot(0).dateTimeHighlighter("#663300", 1.5, "6 2", "round");
+    chart.plot(1).dateTimeHighlighter("#999", 1.5);
 
     chart.title('Stock Area Demo \nPopulation growth: USA vs UK');
     

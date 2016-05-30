@@ -39,7 +39,7 @@ Data in stocks should be defined as table. There are two ways of data arranging:
 
     // set the series
     var series = chart.plot(0).candlestick(mapping);
-    series.name("ACME Corp. stock prices (apr 2015 - jul 2015)");
+    series.name("ACME Corp.");
 ```
 
 {sample}STOCK\_Candlestick\_01{sample}
@@ -67,7 +67,7 @@ Data in stocks should be defined as table. There are two ways of data arranging:
 
     // set the series
     var series = chart.plot(0).candlestick(mapping);
-    series.name("ACME Corp. stock prices (apr 2015 - jul 2015)");
+    series.name("ACME Corp.");
 ```
 
 {sample}STOCK\_Candlestick\_02{sample}
@@ -79,11 +79,11 @@ It's possible to create a multi-series stock. It can be reached through two ways
 ```
     // set the series for ACME
     var series_acme = chart.plot(0).candlestick(mapping_acme);
-    series_acme.name("ACME Corp. stock prices (jan 2004 - mar 2004)");
+    series_acme.name("ACME Corp.");
 
     // set the series for Globex
     var series_globex = chart.plot(0).candlestick(mapping_globex);
-    series_globex.name("Globex Corp. stock prices (jan 2004 - mar 2004)");
+    series_globex.name("Globex Corp.");
 ```
 
 {sample}STOCK\_Candlestick\_03{sample}
@@ -93,11 +93,11 @@ It's obvious that this information in a stock is rather hard to understand. Let'
 ```
     // set the series for ACME
     var series_acme = chart.plot(0).candlestick(mapping_acme);
-    series_acme.name("ACME Corp. stock prices (jan 2004 - mar 2004)");
+    series_acme.name("ACME Corp.");
 
     // set the series for Globex
     var series_globex = chart.plot(1).candlestick(mapping_globex);
-    series_globex.name("Globex Corp. stock prices (jan 2004 - mar 2004)");
+    series_globex.name("Globex Corp.");
 ```
 
 {sample}STOCK\_Candlestick\_04{sample}

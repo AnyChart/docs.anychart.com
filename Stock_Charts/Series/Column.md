@@ -74,11 +74,11 @@ For creating a new plot the {api:anychart.charts.Stock#plot}.plot(){api} method 
 ```
 // series of the first plot
 var series_as = chart.plot(0).column(mapping_as);
-series_as.name("Temperature in Alice's Springs");
+series_as.name("Alice's Springs");
 
 // series of the second plot
 var series_sydney = chart.plot(1).column(mapping_sydney);
-series_sydney.name("Temperature in Sydney");
+series_sydney.name("Sydney");
 ```
 
 {sample}STOCK\_Column\_03{sample}

@@ -91,7 +91,7 @@ anychart.onDocumentReady(function() {
 
     // set the US series
     var series_usa = chart.plot(0).area(mapping_usa);
-    series_usa.name("USA population growth");
+    series_usa.name("USA");
 
     // coloring
     series_usa.fill("#CC9933");
@@ -99,7 +99,7 @@ anychart.onDocumentReady(function() {
 
     // set the UK series
     var series_uk = chart.plot(1).area(mapping_uk);
-    series_uk.name("UK population growth");
+    series_uk.name("UK");
 
     // hatch fill
     series_uk.hatchFill("diagonalCross");

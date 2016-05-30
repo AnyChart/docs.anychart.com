@@ -179,24 +179,19 @@
     var rates = plot_column.column(mapping);
     rates.name("Highest rate");
 
-    extraYAxis.labels().textFormatter(function(){
-        var value = this.value;
-        return value/1000000 + " mil";
-    });
-
     // set the chart width
-    chart.right(30);
+    chart.right(55);
 
     // create ohlc series
     var prices = plot_line_ohlc.ohlc(ohlcMapping);
-    var pricesName = prices.name("ACME Corp. Stock Prices");
+    var pricesName = prices.name("ACME Corp.");
     var item = prices.legendItem();
     item.text('ACME Corp. Stock Prices');
 
     // create line series
     var requests = plot_line_ohlc.line(lineMapping);
     requests.yScale(extraYScale);
-    requests.name("Number of income requests worldwide");
+    requests.name("Requests");
 
     // set container id for the chart
     chart.container('container');

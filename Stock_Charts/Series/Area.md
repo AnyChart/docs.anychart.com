@@ -79,11 +79,11 @@ Let's create two multi-series samples demonstrating both situations.
 
     // set the US series
     var series_usa = chart.plot(0).area(mapping_usa);
-    series_usa.name("USA population growth");
+    series_usa.name("USA");
 
     // set the UK series
     var series_uk = chart.plot(0).area(mapping_uk);
-    series_uk.name("UK population growth");
+    series_uk.name("UK");
 ```
 
 {sample}STOCK\_Area\_03{sample}
@@ -96,11 +96,11 @@ For creating plots use the {api:anychart.charts.Stock#plot}.plot(){api} method. 
 ```
     // set the US series
     var series_usa = chart.plot(0).area(mapping_usa);
-    series_usa.name("USA population growth");
+    series_usa.name("USA");
 
     // set the UK series
     var series_uk = chart.plot(1).area(mapping_uk);
-    series_uk.name("UK population growth");
+    series_uk.name("UK");
 
 ```
 
@@ -132,7 +132,7 @@ Area series in Stocks can be colored as well as any other seres . To change the 
 
     // set the UK series
     var series_uk = chart.plot(1).area(mapping_uk);
-    series_uk.name("UK population growth");
+    series_uk.name("UK");
 
     // hatch fill
     series_uk.hatchFill("diagonalCross");

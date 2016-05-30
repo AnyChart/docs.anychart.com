@@ -10,21 +10,25 @@
 
 ## Overview
 
-AnyStock supports a lot of different series types. Here's a sample where we have put three of them. 
+AnyStock supports a lot of [different series types](Supported_Series). Here's a sample where we have put three of them. 
 
 ```
+    // set the plots
+    var plot_line_ohlc = chart.plot(0);
+    var plot_column = chart.plot(1);
+
     // create the column series
-    var columnSeries = plot_column.column(mapping);
-    columnSeries.name("Highest rates");
+    var rates = plot_column.column(mapping);
+    rates.name("Highest rate");
 
-	// create ohlc series
-    var ohlcSeries = plot_line_ohlc.ohlc(ohlcMapping);
-    ohlcSeries.name("ACME Corp. Stock Prices");
+    // create ohlc series
+    var prices = plot_line_ohlc.ohlc(ohlcMapping);
+    var pricesName = prices.name("ACME Corp.");
 
-	// create line series
-    var lineSeries = plot_line_ohlc.line(lineMapping);
-    lineSeries.yScale(extraYScale);
-    lineSeries.name("Number of income requests worldwide");
+    // create line series
+    var requests = plot_line_ohlc.line(lineMapping);
+    requests.name("Requests");
+
 ```
 {sample}STOCK\_Supported\_Series\_01{sample}
 
@@ -33,24 +37,14 @@ You can see that the whole chart is somewhat divided in two parts, where one con
 ### AnyStock Series Adjusting
 
 
-Series in AnyStock chart are much alike normal series of Basic charts, except for having "hovered" and "selected" state. So we can adjust the colors of the series in normal state, adjust the tooltips, etc. Let's now create a sample with adjusted colors and tooltips.
+Series in AnyStock chart are much alike normal series of Basic charts, except for having "hovered" and "selected" state. So we can adjust the colors of the series in normal state, adjust the tooltips, etc. Let's now create a sample with adjusted colors.
 
 ```
-    // create column series
-    var firstSeries = firstPlot.column(mapping);
-    firstSeries.name("Highest rates");
+    // set the filling color for the rates series
+    rates.fill('#00838F');
 
-    // create ohlc series on the second plot
-    var secondSeries = secondPlot.ohlc(ohlcMapping);
-    // set width for columns in percent
-    secondSeries.pointWidth('50%');
-    secondSeries.name("ACME Corp. Stock Prices");
-
-    // create column series on the third plot
-    var thirdSeries = thirdPlot.column(columnMapping);
-    thirdSeries.name("Lowest rates");
-    //set gradient fill for the series
-    thirdSeries.fill(['#dd2c00', "#ffd54f", "#ef6c00"], 0, true, 0.8);
+    // set stroke for the requests series
+    requests.stroke("#00796B");
 	
 ```
 {sample}STOCK\_Supported\_Series\_02{sample}

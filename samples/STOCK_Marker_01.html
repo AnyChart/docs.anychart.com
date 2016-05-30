@@ -67,14 +67,14 @@ anychart.onDocumentReady(function() {
 
     // set the series
     var series = chart.plot(0).marker(mapping);
-    series.name("USA population growth (Object Data notation)");
+    series.name("USA");
 
     // y-axis labels formatting
     chart.plot(0).yAxis().labels().textFormatter(function(){
       return this.value/1000000 + "m";
     });
 
-    chart.title('Stock Marker Demo: USA population growth');
+    chart.title('Stock Marker Demo: population growth \n(Object data notation)');
 
     chart.container('container');
     chart.draw();

@@ -43,7 +43,7 @@ The first difference between Basic Charts and AnyStock is the data format. All d
 
 	// set the series
 	var series = chart.plot(0).marker(mapping);
-    series.name("USA population growth (Object Data notation)");
+    series.name("USA");
 ```
 
 {sample}STOCK\_Marker\_01{sample}
@@ -71,7 +71,7 @@ In this sample, the data was arranged as array of objects. Now, let's look at th
 
  	// set the series
 	var series = chart.plot(0).marker(mapping);
-    series.name("USA population growth (Array Data notation)");
+    series.name("USA");
 ```
 
 {sample}STOCK\_Marker\_02{sample}
@@ -102,11 +102,11 @@ As lots of chart types supports being multiserial, as well as stocks do. There a
 
 	// set the US series
 	var series_usa = chart.plot(0).marker(mapping_usa);
-    series_usa.name("USA population growth");
+    series_usa.name("USA");
 
 	// set the UK series
 	var series_uk = chart.plot(0).marker(mapping_uk);
-    series_uk.name("UK population growth");
+    series_uk.name("UK");
 ```
 
 {sample}STOCK\_Marker\_03{sample}
@@ -114,11 +114,11 @@ As lots of chart types supports being multiserial, as well as stocks do. There a
 ```
 	// set the US series
     var series = chart.plot(0).marker(mapping_usa);
-    series.name("USA population growth");
+    series.name("USA");
 
     // set the UK series
     var series = chart.plot(1).marker(mapping_uk);
-    series.name("UK population growth");
+    series.name("UK");
 ```
 
 {sample}STOCK\_Marker\_04{sample}
