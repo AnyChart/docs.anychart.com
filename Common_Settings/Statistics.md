@@ -20,3 +20,7 @@ var bubbleMaxSize = chart.getStat("dataPlotBubbleMaxSize");
 Here is a sample chart where maximum bubble size and number of points is obtained using {api:anychart.core.Chart#getStat}getStat(){api} method:
 
 {sample}CS\_Statistics\_01{sample}
+
+Martian Height
+
+{sample}CS\_Statistics\_02{sample}
