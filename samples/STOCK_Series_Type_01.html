@@ -21,7 +21,7 @@ anychart.onDocumentReady(function() {
 
     // set the series
     var series = chart.plot(0).line(mapping);
-    series.name("USA");
+    series.name("Population");
 
     // y-axis labels formatting
     chart.plot(0).yAxis().labels().textFormatter("{%Value}m");
@@ -42,7 +42,7 @@ anychart.onDocumentReady(function() {
         // change the series type
         series.seriesType("column");
         scrollerSeries.seriesType("column");
-        chart.title("Column");
+        chart.title("Stock series changing demo \n Column");
     });    
 
     // create label switching to line
@@ -50,7 +50,7 @@ anychart.onDocumentReady(function() {
         // change the series type
         series.seriesType("line");
         scrollerSeries.seriesType("line");
-        chart.title("Line");
+        chart.title("Stock series changing demo \n Line");
     });    
 
     // create label switching to area
@@ -58,7 +58,7 @@ anychart.onDocumentReady(function() {
         // change the series type
         series.seriesType("area");
         scrollerSeries.seriesType("area");
-        chart.title("Area");
+        chart.title("Stock series changing demo \n Area");
     });    
 
     // helper function to create buttons

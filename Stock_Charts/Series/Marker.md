@@ -22,28 +22,28 @@ In Stocks, Marker series are intended to show a big amount of data, so some thei
 The first difference between Basic Charts and AnyStock is the data format. All data points in Stocks should be represented in table format. Let's create a sample to show how it looks like: 
 
 ```
-	// set the data
-	table = anychart.data.table("x");
-	table.addData([
-        {x:'1790-01-01', value:3929214},
-        {x:'1795-01-01', value:4390561},
-        {x:'1800-01-01', value:5236631},
-        {x:'1805-01-01', value:5989289},
-        {x:'1810-01-01', value:7239881},
-        {x:'2005-01-01', value:299456285},
-        {x:'2010-01-01', value:308745538},
-        {x:'2015-01-01', value:318914629}
-	]);
-  
-	// map the data
-	mapping = table.mapAs({'x':"x", 'value':"value"});
+// set the data
+table = anychart.data.table("x");
+table.addData([
+	{x:'1790-01-01', value:3929},
+	{x:'1795-01-01', value:4390},
+	{x:'1800-01-01', value:5236},
+	{x:'1805-01-01', value:5989},
+	{x:'1810-01-01', value:7239},
+	{x:'2005-01-01', value:299456},
+	{x:'2010-01-01', value:308745},
+	{x:'2015-01-01', value:318914}
+]);
 
-	// chart type
-	chart = anychart.stock();
+// map the data
+mapping = table.mapAs({'x':"x", 'value':"value"});
 
-	// set the series
-	var series = chart.plot(0).marker(mapping);
-    series.name("USA");
+// chart type
+chart = anychart.stock();
+
+// set the series
+var series = chart.plot(0).marker(mapping);
+series.name("USA");
 ```
 
 {sample}STOCK\_Marker\_01{sample}
@@ -51,27 +51,27 @@ The first difference between Basic Charts and AnyStock is the data format. All d
 In this sample, the data was arranged as array of objects. Now, let's look at the same sample with this data arranged as array of arrays.
 
 ```
-	// set the data
-	table = anychart.data.table();
-	table.addData([
-        ['1990-01-01', 248709873],
-        ['1995-01-01', 272119084],
-        ['2000-01-01', 281421906],
-        ['2005-01-01', 299456285],
-        ['2010-01-01', 308745538],
-        ['2015-01-01', 318914629]
-	]);
-  
-	// map the data
-	mapping = table.mapAs();
-	mapping.addField('value', 1);
+// set the data
+table = anychart.data.table();
+table.addData([
+	['1990-01-01', 248709],
+	['1995-01-01', 272119],
+	['2000-01-01', 281421],
+	['2005-01-01', 299456],
+	['2010-01-01', 308745],
+	['2015-01-01', 318914]
+]);
 
-	// chart type
-	chart = anychart.stock();
+// map the data
+mapping = table.mapAs();
+mapping.addField('value', 1);
 
- 	// set the series
-	var series = chart.plot(0).marker(mapping);
-    series.name("USA");
+// chart type
+chart = anychart.stock();
+
+// set the series
+var series = chart.plot(0).marker(mapping);
+series.name("USA");
 ```
 
 {sample}STOCK\_Marker\_02{sample}
@@ -81,56 +81,53 @@ It seems quite clear that nothing has finally changed in the stock appearance. S
 As lots of chart types supports being multiserial, as well as stocks do. There are two ways to create a multi-series stock: to create several series in one plot (find more about them in the [Plot article](../Chart_Plots)) or create several plots and distribute all series among these plots. Let's look at the next couple of Marker Stocks. 
 
 ```
-	// set the data
-	table = anychart.data.table();
-	table.addData([
-        ['1995-01-01', 272119084, 49066487],
-        ['2000-01-01', 281421906, 49138831],
-        ['2005-01-01', 299456285, 51121448],
-        ['2010-01-01', 308745538, 53012456],
-        ['2015-01-01', 318914629, 54986564]
-	]);
-  
-	// map the data
-	mapping_usa = table.mapAs();
-	mapping_usa.addField('value', 1);
-	mapping_uk = table.mapAs();
-	mapping_uk.addField('value', 2);
+// set the data
+table = anychart.data.table();
+table.addData([
+	['1995-01-01', 272119, 49066],
+	['2000-01-01', 281421, 49138],
+	['2005-01-01', 299456, 51121],
+	['2010-01-01', 308745, 53012],
+	['2015-01-01', 318914, 54986]
+]);
 
-	// chart type
-	chart = anychart.stock();
+// map the data
+mapping_usa = table.mapAs();
+mapping_usa.addField('value', 1);
+mapping_uk = table.mapAs();
+mapping_uk.addField('value', 2);
 
-	// set the US series
-	var series_usa = chart.plot(0).marker(mapping_usa);
-    series_usa.name("USA");
+// chart type
+chart = anychart.stock();
 
-	// set the UK series
-	var series_uk = chart.plot(0).marker(mapping_uk);
-    series_uk.name("UK");
+// set the US series
+var series_usa = chart.plot(0).marker(mapping_usa);
+series_usa.name("USA");
+
+// set the UK series
+var series_uk = chart.plot(0).marker(mapping_uk);
+series_uk.name("UK");
 ```
 
 {sample}STOCK\_Marker\_03{sample}
 
 ```
-	// set the US series
-    var series = chart.plot(0).marker(mapping_usa);
-    series.name("USA");
+// set the US series
+var series = chart.plot(0).marker(mapping_usa);
+series.name("USA");
 
-    // set the UK series
-    var series = chart.plot(1).marker(mapping_uk);
-    series.name("UK");
+// set the UK series
+var series = chart.plot(1).marker(mapping_uk);
+series.name("UK");
 ```
 
 {sample}STOCK\_Marker\_04{sample}
-
-The only difference between these two code samples is the index of the second plot, but it changes a lot in the stocks' appearance and its perspicuity. 
 
 ### Switching series type
 
 Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}.seriesType(){api} method.
-
 
 ## Visualization
 
@@ -143,20 +140,19 @@ Coloring is a very useful feature when it comes to emphasizing some values or se
 AnyStocks have one more interesting feature. In case of having problems with eyesight, you might want to use hatch fillings, which monochrome palette allows to distinguish series without coloring them differently. Let's use our previous sample to show those features in action.
 
 ```
-	// coloring
-    series_usa.fill("#CC9933");
-    series_usa.stroke("#FFCC33");
+// coloring
+series_usa.fill("#CC9933");
+series_usa.stroke("#FFCC33");
 
-    // hatch fill
-    series_uk.hatchFill("confetti");
-    series_uk.fill("#fff");
-    series_uk.stroke("#000");
+// hatch fill
+series_uk.hatchFill("confetti");
+series_uk.fill("#fff");
+series_uk.stroke("#000");
 ```
 
 {sample}STOCK\_Marker\_05{sample}
 
 Note that despite being fill with hatch fills, the lower chart has not become easier to recognize the points. It seems necessary to make them bigger in size and possibly change the form. That's what the next paragrach about.
-
 
 ### Marker type 
 
@@ -164,9 +160,9 @@ Marker series have one more special feature: a marker type. It's possible to def
 Another useful setting is marker size. It's possible to make markers much bigger or smaller. In our case it's definiteley necessary to enlarge the markers. We will use {api:anychart.core.stock.series.Marker#size}.size(){api} method.
 
 ```
-	// type and size
-    series_uk.type("square");
-    series_uk.size(7);
+// type and size
+series_uk.type("square");
+series_uk.size(7);
 ```
 
 {sample}STOCK\_Marker\_06{sample}
@@ -176,8 +172,8 @@ Another useful setting is marker size. It's possible to make markers much bigger
 In hovered state, points don't change their color or size, but there is a highlghter (crosshair) that helps to follow the points you hover. It helps especially when there are too many points with one value on X-axis, so a union tooltip shows up and demonstrated all those values. It's possible to adjust the crosshair default settings.
 
 ```
-	// crosshair settings
-    chart.plot(0).dateTimeHighlighter("#999", 1.5, "6 2", "round");
+// crosshair settings
+chart.plot(0).dateTimeHighlighter("#999", 1.5, "6 2", "round");
 ```
 
 {sample}STOCK\_Marker\_07{sample}
