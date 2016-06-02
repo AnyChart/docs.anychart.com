@@ -209,6 +209,7 @@
 	draw_chart(layer_jay, dataSet_jay, [450, 80, 250, 100]);
 	var top_tree_piece = draw_piece_of_tree(layer_jay, [[175, 120], [250, 240], [100, 240]], "#7cb342", 1, 5);
 	var top_tree_shadow = draw_piece_shadow(layer_jay, [[175, 165], [260, 290], [110, 290]], "#212121", -1, 5);
+	top_tree_shadow.disablePointerEvents(true);
 	on_hover(top_tree_piece, top_tree_shadow, jay_line, jay_line_shadow, jay_pic, jay_pic_shadow);
 	layer_jay.zIndex(10);
 
@@ -238,6 +239,7 @@
 	draw_chart(layer_woodpecker, dataSet_woodpecker, [450, 195, 250, 100]);
 		var middle_tree_piece = draw_piece_of_tree(layer_woodpecker, [[175, 165], [280, 340], [70, 340]], "#689f38", 1, 0);
 		var middle_tree_shadow = draw_piece_shadow(layer_woodpecker, [[175, 255], [280, 390], [70, 390]], "#212121", -1, 0);
+	middle_tree_shadow.disablePointerEvents(true);
 	on_hover(middle_tree_piece, middle_tree_shadow, woodpecker_line, woodpecker_line_shadow, woodpecker_pic, woodpecker_pic_shadow);	
 	layer_woodpecker.zIndex(8);
 
@@ -267,8 +269,8 @@
 	draw_chart(layer_squirrel, dataSet_squirrel, [450, 310, 250, 100]);
 		var bottom_tree_piece = draw_piece_of_tree(layer_squirrel, [[175, 240], [310, 440], [40, 440]], "#558b2f", 1, 0);
 		var bottom_tree_shadow = draw_piece_shadow(layer_squirrel, [[135, 400], [215, 400], [215, 520], [135, 520], [135, 400]], "#212121", -1, 0);
+	bottom_tree_shadow.disablePointerEvents(true);
 	on_hover(bottom_tree_piece, bottom_tree_shadow, squirrel_line, squirrel_line_shadow, squirrel_pic, squirrel_pic_shadow);
-		
 	layer_squirrel.zIndex(6);
 
 
@@ -297,6 +299,7 @@
 	draw_chart(layer_beetle, dataSet_beetle, [450, 425, 250, 100]);
 		var trunk = draw_piece_of_tree(layer_beetle, [[135, 400], [215, 400], [215, 520], [135, 520], [135, 400]], "#6d4c41", 1, 0);
 		var trunk_shadow = draw_piece_shadow(layer_beetle, [[135, 400], [215, 400], [215, 570], [135, 570], [135, 400]], "#212121", -1, 0);
+	trunk_shadow.disablePointerEvents(true);
 	on_hover(trunk, trunk_shadow, beetle_line, beetle_line_shadow, beetle_pic, beetle_pic_shadow);
 	layer_beetle.zIndex(4);
 
@@ -326,7 +329,6 @@
 	draw_chart(layer_mouse, dataSet_mouse, [450, 540, 250, 100]);
     on_hover(trunk, trunk_shadow, mouse_line, mouse_line_shadow, mouse_pic, mouse_pic_shadow);
 	layer_mouse.zIndex(2);
-	
 });</script>
 </head>
 <body>
