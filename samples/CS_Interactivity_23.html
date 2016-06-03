@@ -33,21 +33,25 @@
 	menu.itemsProvider(function(e){
 		var names = chart.xScale().names();
 
+		// variables for managing series and managers
 		var series = [];
 		var managers = [];
 
-		var formatedManagers = names.map(function(manager){
+		// get all currently included managers
+		var formattedManagers = names.map(function(manager){
 			return {
 				text: manager,
 				included: true
 			}
 		});
 
+		// manage all series of the chart
 		for (var i=0;i<chart.getSeriesCount();i++){
 			series.push({
 				text: chart.getSeriesAt(i).name(),
 				enabled: true
 			});
+			// checking included and excluded points
 			if (chart.getSeriesAt(i).getExcludedPoints().length==0)
 				series[i].included = true;
 			else if (! chart.getSeriesAt(i).getPoint(chart.getSeriesAt(i).getExcludedPoints().length).exists())
@@ -57,31 +61,36 @@
 				series[i].included = true;
 			}
 			var point = 0;
+			// search for totally excluded managers
 			while(chart.getSeriesAt(i).getPoint(point).exists()){
 				var current = chart.getSeriesAt(i).getPoint(point);
 				if ((names.indexOf(current.get("x")) == (-1))&&(managers.indexOf(current.get("x"))==(-1)))
 					managers.push(current.get("x"));
 				point++;
 			}
+			// get all excluded managers and format an object for each of them
 			chart.getSeriesAt(i).getExcludedPoints().forEach(function(exPoint){
 				if (names.indexOf(exPoint.get("x")) != (-1))
-					for (var i=0;i<formatedManagers.length;i++){
-						if (formatedManagers[i].text==exPoint.get("x"))
-							formatedManagers[i].excluded = true;
+					for (var i=0;i<formattedManagers.length;i++){
+						if (formattedManagers[i].text==exPoint.get("x"))
+							formattedManagers[i].excluded = true;
 					}
 			});
 		}
 
-		formatedManagers = formatedManagers.concat(managers.map(function(point){
+		// join included and excluded managers
+		formattedManagers = formattedManagers.concat(managers.map(function(point){
 			return {
 				text: point,
 				enabled: true,
 				excluded: true
 			};
 		}));
+		// variables for managing lists of included/excluded elements
 		var included = [];
 		var excluded = [];
-		formatedManagers.forEach(function(manager, index){
+		// create lists for excluded and included managers
+		formattedManagers.forEach(function(manager, index){
 			if (manager.included)
 				included.push({
 					text: manager.text,
@@ -113,6 +122,7 @@
 				});
 		});
 
+		// create lists for included and excluded series
 		series.forEach(function(counter, index){
 			if (counter.included) {
 				included.push({
@@ -138,6 +148,7 @@
 			}
 		});
 
+		// create a button for excluding all points
 		if (included.length>1)
 			included.push({
 				text: "Exclude All",
@@ -150,6 +161,7 @@
 				}
 			});
 
+		// create button for including all points
 		if (excluded.length>1)
 			excluded.push({
 				text: "Include All",
@@ -171,6 +183,7 @@
 				text: "Exclude",
 				subMenu: included
 			},
+			// if any points selected
 			{
 				enabled: e.selectedPoints.length>0,
 				text: "Exclude Selected",
