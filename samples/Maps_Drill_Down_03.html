@@ -58,14 +58,22 @@ anychart.onDocumentReady(function () {
         chart.drillTo(e.point.get("id"), txMap);
     });
 
+    
     // set drill up
     txTitle.listen("click", function(e){
         txMap.drillUp();
+        // revealing the path
+        var path = chart.getDrilldownPath();
+        console.log(path[0].getCurrentChart());
+        debugger;
+        //txMap.title(path);
     });
 
     usaTitle.listen("click", function(e){
         usaMap.drillUp();
     });
+
+    chart.title(path);
 });
     
 </script>
