@@ -152,14 +152,6 @@
 
     var plot_column = chart.plot(1);
 
-    // legend formatter
-    plot_line_ohlc.legend().itemsTextFormatter(function(e){
-        var name = this.seriesName;
-        var value = Math.round(this.value);
-        console.log(this);
-        return(name + ": " + value);
-    });
-
     // Create and tune additional y scale
     var extraYScale = anychart.scales.linear();
     extraYScale.minimum(0);
@@ -186,7 +178,7 @@
     var prices = plot_line_ohlc.ohlc(ohlcMapping);
     var pricesName = prices.name("ACME Corp.");
     var item = prices.legendItem();
-    item.text('ACME Corp. Stock Prices');
+    item.text('ACME Corp.');
 
     // create line series
     var requests = plot_line_ohlc.line(lineMapping);
