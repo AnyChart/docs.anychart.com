@@ -9,190 +9,189 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-	var data = anychart.data.set([
-		["John" , 10000, 12000, 15000, 20000, 19000],
-		["Jake" , 12000, 15000, 11500, 18350, 11000],
-		["Peter" , 18000, 16000, 13000, 18000, 15000],
-		["James" , 11000, 13000, 14000, 12500, 16000],
-		["Mary" , 9000, 19000, 17200, 15000, 18000]
-	]);
+		var data = anychart.data.set([
+			["John" , 10000, 12000, 15000, 20000, 19000],
+			["Jake" , 12000, 15000, 11500, 18350, 11000],
+			["Peter" , 18000, 16000, 13000, 18000, 15000],
+			["James" , 11000, 13000, 14000, 12500, 16000],
+			["Mary" , 9000, 19000, 17200, 15000, 18000]
+		]);
 
-	// chart type
-	var chart = anychart.column();
+		// chart type
+		var chart = anychart.column();
 
-	chart.column(data.mapAs({x: [0], value: [1]})).name("Year 2008");
-	chart.column(data.mapAs({x: [0], value: [2]})).name("Year 2009");
-	chart.column(data.mapAs({x: [0], value: [3]})).name("Year 2010");
-	chart.column(data.mapAs({x: [0], value: [4]})).name("Year 2011");
-	chart.column(data.mapAs({x: [0], value: [5]})).name("Year 2012");
+		chart.column(data.mapAs({x: [0], value: [1]})).name("Year 2008");
+		chart.column(data.mapAs({x: [0], value: [2]})).name("Year 2009");
+		chart.column(data.mapAs({x: [0], value: [3]})).name("Year 2010");
+		chart.column(data.mapAs({x: [0], value: [4]})).name("Year 2011");
+		chart.column(data.mapAs({x: [0], value: [5]})).name("Year 2012");
 
-	// set title
-	chart.title("Managing Context Menu");
+		// set title
+		chart.title("Managing Context Menu");
 
-	var menu = chart.contextMenu();
-	menu.itemsProvider(function(e){
-		var names = chart.xScale().names();
+		var menu = chart.contextMenu();
+		menu.itemsProvider(function(e){
+			var names = chart.xScale().names();
 
-		// variables for managing series and managers
-		var series = [];
-		var managers = [];
+			// variables for managing series and managers
+			var series = [];
+			var managers = [];
 
-		// get all currently included managers
-		var formattedManagers = names.map(function(manager){
-			return {
-				text: manager,
-				included: true
-			}
-		});
+			// get all currently included managers
+			var formattedManagers = names.map((manager) =>{
+				  return {
+					  text: manager,
+					  included: true
+				  }}
+			);
 
-		// manage all series of the chart
-		for (var i=0;i<chart.getSeriesCount();i++){
-			series.push({
-				text: chart.getSeriesAt(i).name(),
-				enabled: true
-			});
-			// checking included and excluded points
-			if (chart.getSeriesAt(i).getExcludedPoints().length==0)
-				series[i].included = true;
-			else if (! chart.getSeriesAt(i).getPoint(chart.getSeriesAt(i).getExcludedPoints().length).exists())
-				series[i].excluded = true;
-			else {
-				series[i].excluded = true;
-				series[i].included = true;
-			}
-			var point = 0;
-			// search for totally excluded managers
-			while(chart.getSeriesAt(i).getPoint(point).exists()){
-				var current = chart.getSeriesAt(i).getPoint(point);
-				if ((names.indexOf(current.get("x")) == (-1))&&(managers.indexOf(current.get("x"))==(-1)))
-					managers.push(current.get("x"));
-				point++;
-			}
-			// get all excluded managers and format an object for each of them
-			chart.getSeriesAt(i).getExcludedPoints().forEach(function(exPoint){
-				if (names.indexOf(exPoint.get("x")) != (-1))
-					for (var i=0;i<formattedManagers.length;i++){
-						if (formattedManagers[i].text==exPoint.get("x"))
-							formattedManagers[i].excluded = true;
-					}
+			// manage all series of the chart
+			for (var i=0;i<chart.getSeriesCount();i++){
+				series.push({
+					text: chart.getSeriesAt(i).name(),
+					enabled: true
+				});
+				// checking included and excluded points
+				if (chart.getSeriesAt(i).getExcludedPoints().length==0)
+					series[i].included = true;
+				else if (! chart.getSeriesAt(i).getPoint(chart.getSeriesAt(i).getExcludedPoints().length).exists())
+					series[i].excluded = true;
+				else {
+					series[i].excluded = true;
+					series[i].included = true;
+				}
+				var point = 0;
+				// search for totally excluded managers
+				while(chart.getSeriesAt(i).getPoint(point).exists()){
+					var current = chart.getSeriesAt(i).getPoint(point);
+					if ((names.indexOf(current.get("x")) == (-1))&&(managers.indexOf(current.get("x"))==(-1)))
+						managers.push(current.get("x"));
+					point++;
+				}
+				// get all excluded managers and format an object for each of them
+				chart.getSeriesAt(i).getExcludedPoints().forEach((exPoint) => {
+					if (names.indexOf(exPoint.get("x")) != (-1))
+					for (var i=0;i<formattedManagers.length;i++)
+				if (formattedManagers[i].text==exPoint.get("x"))
+					formattedManagers[i].excluded = true;
 			});
 		}
 
 		// join included and excluded managers
-		formattedManagers = formattedManagers.concat(managers.map(function(point){
-			return {
-				text: point,
-				enabled: true,
-				excluded: true
-			};
-		}));
-		// variables for managing lists of included/excluded elements
-		var included = [];
-		var excluded = [];
-		// create lists for excluded and included managers
-		formattedManagers.forEach(function(manager, index){
-			if (manager.included)
-				included.push({
-					text: manager.text,
-					enabled: true,
-					action: function(){
-						var i =0;
-						while(chart.getSeriesAt(i)){
-							chart.getSeriesAt(i).excludePoint(index);
-							i++;
-						}
+		formattedManagers = formattedManagers.concat(managers.map(point => {
+			  return {
+				  text: point,
+				  enabled: true,
+				  excluded: true
+			  };
+	}));
+	// variables for managing lists of included/excluded elements
+	var included = [];
+	var excluded = [];
+	// create lists for excluded and included managers
+	formattedManagers.forEach((manager, index)=>{
+		if (manager.included)
+		included.push({
+		  text: manager.text,
+		  enabled: true,
+		  action: function(){
+			  var i =0;
+			  while(chart.getSeriesAt(i)){
+				  chart.getSeriesAt(i).excludePoint(index);
+				  i++;
+			  }
+		  }
+	  });
+	if (manager.excluded)
+		excluded.push({
+			text: manager.text,
+			enabled: true,
+			action:  function(){
+				var i =0;
+				while(chart.getSeriesAt(i)){
+					var point = 0;
+					while (chart.getSeriesAt(i).getPoint(point).exists()){
+						if (chart.getSeriesAt(i).getPoint(point).get("x")==manager.text)
+							chart.getSeriesAt(i).includePoint(point);
+						point++;
 					}
-				});
-			if (manager.excluded)
-				excluded.push({
-					text: manager.text,
-					enabled: true,
-					action:  function(){
-						var i =0;
-						while(chart.getSeriesAt(i)){
-							var point = 0;
-							while (chart.getSeriesAt(i).getPoint(point).exists()){
-								if (chart.getSeriesAt(i).getPoint(point).get("x")==manager.text)
-									chart.getSeriesAt(i).includePoint(point);
-								point++;
-							}
-							i++;
-						}
-					}
-				});
-		});
-
-		// create lists for included and excluded series
-		series.forEach(function(counter, index){
-			if (counter.included) {
-				included.push({
-					text: counter.text,
-					enabled: true,
-					action: function (){
-						var i=0;
-						while (chart.getSeriesAt(index).getPoint(i).exists()){
-							chart.getSeriesAt(index).excludePoint(i);
-							i++;
-						}
-					}
-				});
-			}
-			if (counter.excluded) {
-				excluded.push({
-					text: counter.text,
-					enabled: true,
-					action: function (){
-						chart.getSeriesAt(index).includeAllPoints();
-					}
-				});
+					i++;
+				}
 			}
 		});
+	});
 
-		// create a button for excluding all points
-		if (included.length>1)
-			included.push({
-				text: "Exclude All",
-				enabled: true,
-				action: function(){
-					for (var i=0;i<chart.getSeriesCount();i++){
-						for (var c = 0; c<names.length;c++)
-							chart.getSeriesAt(i).excludePoint(c);
-					}
-				}
-			});
-
-		// create button for including all points
-		if (excluded.length>1)
-			excluded.push({
-				text: "Include All",
-				enabled: true,
-				action: function(){
-					for (var i=0;i<chart.getSeriesCount();i++)
-						chart.getSeriesAt(i).includeAllPoints();
-				}
-			});
-
-		return [
-			{
-				enabled: excluded.length>0,
-				text: "Include",
-				subMenu: excluded
-			},
-			{
-				enabled: included.length>0,
-				text: "Exclude",
-				subMenu: included
-			},
-			// if any points selected
-			{
-				enabled: e.selectedPoints.length>0,
-				text: "Exclude Selected",
-				action: function(){
-					for(var i=0;i<e.selectedPoints.length;i++)
-						e.selectedPoints[i].getSeries().excludePoint(e.selectedPoints[i].index);
+	// create lists for included and excluded series
+	series.forEach((counter, index)=>{
+		if (counter.included) {
+		included.push({
+			text: counter.text,
+			enabled: true,
+			action: function (){
+				var i=0;
+				while (chart.getSeriesAt(index).getPoint(i).exists()){
+					chart.getSeriesAt(index).excludePoint(i);
+					i++;
 				}
 			}
-		];
+		});
+	}
+	if (counter.excluded) {
+		excluded.push({
+			text: counter.text,
+			enabled: true,
+			action: function (){
+				chart.getSeriesAt(index).includeAllPoints();
+			}
+		});
+	}
+	});
+
+	// create a button for excluding all points
+	if (included.length>1)
+		included.push({
+			text: "Exclude All",
+			enabled: true,
+			action: function(){
+				for (var i=0;i<chart.getSeriesCount();i++){
+					for (var c = 0; c<names.length;c++)
+						chart.getSeriesAt(i).excludePoint(c);
+				}
+			}
+		});
+
+	// create button for including all points
+	if (excluded.length>1)
+		excluded.push({
+			text: "Include All",
+			enabled: true,
+			action: function(){
+				for (var i=0;i<chart.getSeriesCount();i++)
+					chart.getSeriesAt(i).includeAllPoints();
+			}
+		});
+
+	return [
+		{
+			enabled: excluded.length>0,
+			text: "Include",
+			subMenu: excluded
+		},
+		{
+			enabled: included.length>0,
+			text: "Exclude",
+			subMenu: included
+		},
+		// if any points selected
+		{
+			enabled: e.selectedPoints.length>0,
+			text: "Exclude Selected",
+			action: function(){
+				for(var i=0;i<e.selectedPoints.length;i++)
+					e.selectedPoints[i].getSeries().excludePoint(e.selectedPoints[i].index);
+			}
+		}
+	];
 	});
 
 	// draw
