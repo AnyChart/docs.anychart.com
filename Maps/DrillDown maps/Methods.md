@@ -49,15 +49,36 @@ txMap.drillUp();
 
 ### GetDrillDownPath
 
-When we drill down into the map, we may need to get the whole path to the current level. That's when we use the {api:anychart.charts.TreeMap#getDrilldownPath}.getDrilldownPath(){api} method. It returns the objects (levels) that precede the current level. Let's make the title of the next sample show this path.
+When we drill down into the map, we may need to get the whole path to the current level. That's when we use the {api:anychart.charts.TreeMap#getDrilldownPath}.getDrilldownPath(){api} method. It returns the objects (levels) that precede the current level and the current level object itself, so it should be considered while extracting the path. Note that there is a root element in the drill down path which is a bit different from other elements as it contains no level. Let's make the title of the next sample show this path.
 
 ```
+// get drilldown path
+var path = chart.getDrilldownPath();
 
+// get link to the current chart
+var cv = path[path.length - 1].getCurrentChart();
+      
+// update path in the title of appropriate instance
+cv.title(printPath(path))
 ```
-
 {sample}Maps\_Drill\_Down\_03{sample}
 
-Using this function, it becomes easier to drill into any of the levels previous to the current one.
+In the sample above we've used the {api:anychart.core.MapPoint#getCurrentChart}.getCurrentChart(){api} method to define the current drill down path object (chart, level) and transform in to a string, to make it possible to put it later in the title. A custom function helps to print the whole path in the title of the chart:
+
+```
+// function to turn current drill down path structure to string
+function printPath(path){
+    // root element is the World in this case
+    var text = "World";
+    // go through the next levels
+    for (i = 1; i <  path.length; i++) { 
+        text += "\-\>" + path[i].H.name;
+    }
+    return text;
+}
+```
+
+Using {api:anychart.charts.TreeMap#getDrilldownPath}.getDrilldownPath(){api}, we can make it easier to drill into any of the levels previous to the current one. That's where the Breadcrumbs help us. Look up the [Breadcrumbs article](Breadcrumbs) to know how they can be used with the described method.
 
 
 ### DrillDownMap

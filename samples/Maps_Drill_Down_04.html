@@ -2,15 +2,15 @@
 <html>
 <head>
     <script src="http://cdn.anychart.com/js/7.10.1/anychart-bundle.min.js"></script>
-    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js "></script>
-    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/canada/canada.js"></script>    
-    <script src="http://cdn.anychart.com/geodata/1.2.0/custom/world/world.js"></script>
-    <script src="http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js"></script>    
-    <script src="http://cdn.anychart.com/geodata/1.2.0/usa_states/new_york/new_york.js"></script>    
-    <script src="http://cdn.anychart.com/geodata/1.2.0/usa_states/louisiana/louisiana.js"></script>    
-    <script src="http://cdn.anychart.com/geodata/1.2.0/canada_states/prince_edward_island/prince_edward_island.js"></script>   
-    <script src="http://cdn.anychart.com/geodata/1.2.0/canada_states/newfoundland_and_labrador/newfoundland_and_labrador.js"></script>    
-    <script src="http://cdn.anychart.com/geodata/1.2.0/canada_states/british_columbia/british_columbia.js"></script>         
+    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"  data-export = "true"></script>
+    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/canada/canada.js"  data-export = "true"></script>    
+    <script src="http://cdn.anychart.com/geodata/1.2.0/custom/world/world.js"  data-export = "true"></script>
+    <script src="http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js"  data-export = "true"></script>    
+    <script src="http://cdn.anychart.com/geodata/1.2.0/usa_states/new_york/new_york.js"  data-export = "true"></script>    
+    <script src="http://cdn.anychart.com/geodata/1.2.0/usa_states/louisiana/louisiana.js"  data-export = "true"></script>    
+    <script src="http://cdn.anychart.com/geodata/1.2.0/canada_states/prince_edward_island/prince_edward_island.js"  data-export = "true"></script>   
+    <script src="http://cdn.anychart.com/geodata/1.2.0/canada_states/newfoundland_and_labrador/newfoundland_and_labrador.js"  data-export = "true"></script>    
+    <script src="http://cdn.anychart.com/geodata/1.2.0/canada_states/british_columbia/british_columbia.js"  data-export = "true"></script>         
   <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
   <style>
     html, body, #container {
@@ -32,35 +32,35 @@ anychart.onDocumentReady(function () {
     ]);
 
     var usaDataSet = anychart.data.set([
-        {'id': 'US.LA', 'value': 22},
-        {'id': 'US.TX', 'value': 23},
-        {'id': 'US.NY', 'value': 45}
+        {"id": "US.LA", "value": 22},
+        {"id": "US.TX", "value": 23},
+        {"id": "US.NY", "value": 45}
     ]);
 
     var canadaDataSet = anychart.data.set([
-        {'id': 'CA.BC', 'value': 3},
-        {'id': 'CA.NF', 'value': 11},
-        {'id': 'CA.PE', 'value': 12}
+        {"id": "CA.BC", "value": 3},
+        {"id": "CA.NF", "value": 11},
+        {"id": "CA.PE", "value": 12}
     ]);
 
     // regions maps
     var txMap = anychart.map();
-    txMap.geoData(anychart.maps['texas']);
+    txMap.geoData(anychart.maps["texas"]);
 
     var laMap = anychart.map();
-    laMap.geoData(anychart.maps['louisiana']);
+    laMap.geoData(anychart.maps["louisiana"]);
 
     var nyMap = anychart.map();
-    nyMap.geoData(anychart.maps['new_york']);
+    nyMap.geoData(anychart.maps["new_york"]);
 
     var bcMap = anychart.map();
-    bcMap.geoData(anychart.maps['british_columbia']);
+    bcMap.geoData(anychart.maps["british_columbia"]);
     
     var nfMap = anychart.map();
-    nfMap.geoData(anychart.maps['newfoundland_and_labrador']);
+    nfMap.geoData(anychart.maps["newfoundland_and_labrador"]);
 
     var peMap = anychart.map();
-    peMap.geoData(anychart.maps['prince_edward_island']);
+    peMap.geoData(anychart.maps["prince_edward_island"]);
 
 
     // major maps
