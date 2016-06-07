@@ -1,3 +1,0 @@
-AJAX tutorial
-
-*coming soon*

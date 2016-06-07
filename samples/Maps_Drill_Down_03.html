@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
 <head>
-    <script src="http://cdn.anychart.com/js/7.10.1/anychart-bundle.min.js"></script>
-    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export = "true"></script>
+    <script src="http://cdn.anychart.com/js/7.10.1/anychart-bundle.min.js" data-export = "true"></script>
+    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"  data-export = "true"></script>
     <script src="http://cdn.anychart.com/geodata/1.2.0/custom/world/world.js"  data-export = "true"></script>
-    <script src="http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js"  data-export = "true"></script>   
+    <script src="http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js"  data-export = "true"></script>    
   <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
   <style>
     html, body, #container {
@@ -19,92 +19,54 @@
     <div id="container"></div>
     <script x-export="chart">
 anychart.onDocumentReady(function () {
-        // create a container for maps and a button
-    stage = anychart.graphics.create("container");
 
-        // data sets
     var worldDataSet = anychart.data.set([
-        {id: "US"}
-    ]);
-    var usaDataSet = anychart.data.set([
-        {id: "US.TX"}
+        {id: "US", name: "USA", value: "A1"}
     ]);
 
-        // world map
-    var chart = anychart.map();
-    chart.geoData(anychart.maps.world);
-    worldSeries = chart.choropleth(worldDataSet);
-    
-    // usa map
+    var usaDataSet = anychart.data.set([
+        {"id": "US.TX", "value": 23}
+    ]);
+
+    var txMap = anychart.map();
+    txMap.geoData(anychart.maps["texas"]);
+
     var usaMap = anychart.map();
     usaMap.geoData(anychart.maps.united_states_of_america);
     usaSeries = usaMap.choropleth(usaDataSet);
 
-        // texas map
-    var txMap = anychart.map();
-    txMap.geoData(anychart.maps["texas"]);
+    var chart = anychart.map();
+    chart.geoData(anychart.maps.world);
+    worldSeries = chart.choropleth(worldDataSet);
+    chart.title("Click at the title to get one level up");
 
-    // set drill down for maps
+    // title setting
+    var txTitle = txMap.title("Click at the title to get one level up");
+    var usaTitle = usaMap.title("Click at the title to get one level up");
+
+    chart.container("container");
+    chart.draw();
+
+    // set drill down
     worldSeries.listen("pointClick", function(e) {
-        // Drill down to the specified map.
+        // Drill down to specified map.
         chart.drillTo(e.point.get("id"), usaMap);
     });
 
     usaSeries.listen("pointClick", function(e) {
-        // Drill down to the specified map.
+        // Drill down to specified map.
         chart.drillTo(e.point.get("id"), txMap);
     });
 
-    // listen for draw event and update path in a title
-    chart.listen("chartDraw",function(){
-      // get drilldown path
-      var path = chart.getDrilldownPath();
-      
-      // get link to the current chart
-      var cv = path[path.length - 1].getCurrentChart();
-      
-      // update path in the title of appropriate instance
-      cv.title(printPath(path))
+    // set drill up
+    txTitle.listen("click", function(e){
+        txMap.drillUp();
     });
 
-    // create drill up label
-    drillToLabel = createLabel("Drill Up", 0, function() {
-      // Drill down to the specified item.
-      chart.drillUp();
+    usaTitle.listen("click", function(e){
+        usaMap.drillUp();
     });
-    
-        // set chart bounds and display it
-    chart.container(stage);
-    chart.draw();
-
 });
-
-// function to turn current drill down path structure to string
-function printPath(path){
-        // root element is the World in this case
-    var text = "World";
-    // go through the next levels
-    for (i = 1; i <  path.length; i++) { 
-                text += "\-\>" + path[i].H.name;
-    }
-    return text;
-}
-
-// helper function to create buttons
-function createLabel(text, offset, action){
-    var label = anychart.ui.label();
-    label.background({fill: "#9E9E9E"});
-    label.zIndex(1000);
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    return label;
-}
-
     
 </script>
 </body>

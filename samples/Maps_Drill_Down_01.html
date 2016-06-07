@@ -2,7 +2,7 @@
 <html>
 <head>
     <script src="http://cdn.anychart.com/js/7.10.1/anychart-bundle.min.js"></script>
-    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js "  data-export = "true"></script>
+    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"  data-export = "true"></script>
     <script src="http://cdn.anychart.com/geodata/1.2.0/custom/world/world.js"  data-export = "true"></script>
     <script src="http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" data-export = "true"></script>    
   <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
@@ -43,13 +43,13 @@ anychart.onDocumentReady(function () {
 
 
     worldSeries.listen("pointClick", function(e) {
-        // Drill down to specified map.
+        // Drill down to specified map
         chart.drillTo(e.point.get("id"), usaMap);
 
     });
 
     usaSeries.listen("pointClick", function(e) {
-        // Drill down to specified map.
+        // Drill down to specified map
         chart.drillTo(e.point.get("id"), txMap);
 
     });
