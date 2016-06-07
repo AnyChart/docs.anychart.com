@@ -24,7 +24,22 @@
 <body>
     <div id="container"></div>
     <script x-export="chart">
-anychart.onDocumentReady(function () {
+anychart.onDocumentReady(function () {    
+
+    // world map
+    var chart = anychart.map();
+    chart.geoData(anychart.maps.world);
+    worldSeries = chart.choropleth(worldDataSet);
+
+    // usa map
+    var usaMap = anychart.map();
+    usaMap.geoData(anychart.maps.united_states_of_america);
+    usaSeries = usaMap.choropleth(usaDataSet);
+
+    // canada map
+    var canadaMap = anychart.map();
+    canadaMap.geoData(anychart.maps.canada);
+    canadaSeries = canadaMap.choropleth(canadaDataSet);
 
     var worldDataSet = anychart.data.set([
         {id: "US", name: "USA", value: "1"},
@@ -61,21 +76,6 @@ anychart.onDocumentReady(function () {
 
     var peMap = anychart.map();
     peMap.geoData(anychart.maps["prince_edward_island"]);
-
-
-    // major maps
-    var usaMap = anychart.map();
-    usaMap.geoData(anychart.maps.united_states_of_america);
-    usaSeries = usaMap.choropleth(usaDataSet);
-
-    var canadaMap = anychart.map();
-    canadaMap.geoData(anychart.maps.canada);
-    canadaSeries = canadaMap.choropleth(canadaDataSet);
-
-    // world map
-    var chart = anychart.map();
-    chart.geoData(anychart.maps.world);
-    worldSeries = chart.choropleth(worldDataSet);
 
     // set the drillDownMaps
     chart.drillDownMap({

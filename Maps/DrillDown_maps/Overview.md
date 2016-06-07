@@ -16,7 +16,7 @@ AnyChart Maps are JavaScript interactive maps, with ability to create Drill Down
 
 There are three types of drilldown maps that we offer:
  - Change GeoData and Data: when we drill down to any level, we change only the data and geojson data, while all visual settings, controls and other stay the same as in the root map;
- - Change GeoData, Data and some custom things: when we drill down, the data and geojson data changes obviously, with some other custom settings (some labels or series can be added), but the controls stay the same as in th root map;
+ - Change GeoData, Data and some custom things: when we drill down, the data and geojson data changes obviously, with some other custom settings (some labels or series can be added), but the controls stay the same as in the root map;
  - Completely Custom: all settings, data and controls are different on each level of drill down.
 
  ## Data

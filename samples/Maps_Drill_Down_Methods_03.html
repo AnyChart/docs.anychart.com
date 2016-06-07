@@ -85,7 +85,7 @@ function printPath(path){
     var text = "World";
     // go through the next levels
     for (i = 1; i <  path.length; i++) { 
-                text += "\-\>" + path[i].H.name;
+                text +=  " -> " + path[i].getProperties().name;
     }
     return text;
 }
