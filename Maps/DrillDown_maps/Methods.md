@@ -43,7 +43,7 @@ Now, our map can only drill to a region. Let's now look how we can drill up and 
 
 ### Drill Up
 
-The {api:anychart.charts.Map#drillUp}.drillUp(){api} method loads the map of the previous level. This method requires no params, so it can work only in case of using {api:anychart.charts.Map#drillTo}.drillTo(){api} or {api:anychart.charts.Map#drillDownMap}.drillDownMap(){api} before.
+The {api:anychart.charts.Map#drillUp}.drillUp(){api} method loads the map of the previous level. This method requires no params, so it can work only in case of using {api:anychart.charts.Map#drillTo}.drillTo(){api} or {api:anychart.charts.Map#drillDownMap}.drillDownMap(){api} before. The best way to set this method is to use [listeners](Event_Listeners). In the following sample we have set listeners to the chart title.
 
 ```
 // set drill up
@@ -80,7 +80,7 @@ function printPath(path){
 ```
 {sample}Maps\_Drill\_Down\_Methods\_03{sample}
 
-In the sample above we've used the {api:anychart.core.MapPoint#getCurrentChart}.getCurrentChart(){api} method to define the current map. A custom function helps to print the whole path in the title of the chart.
+In the sample above we've used the {api:anychart.core.MapPoint#getCurrentChart}.getCurrentChart(){api} method to define the current map. A custom function **printpath(path)** helps to print the whole path in the title of the chart.
 
 Using {api:anychart.charts.TreeMap#getDrilldownPath}.getDrilldownPath(){api}, we can make it easier to drill into any of the levels previous to the current one. That's where the Breadcrumbs help us. Look up the [Breadcrumbs article](Breadcrumbs) to know how they can be used with the described method.
 
