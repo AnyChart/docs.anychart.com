@@ -25,10 +25,10 @@ Note that all maps that will be used should be referenced like in this code samp
 
 ```
 <head>
-    <script src="//cdn.anychart.com/geodata/1.2.0/custom/world/world.js" type="text/javascript" data-export = "true"></script> 
-    <script src="//cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" type="text/javascript" data-export = "true"></script> 
-    <script src="//cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.js" type="text/javascript" data-export = "true"></script> 
-    <script src="//cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" type="text/javascript" data-export = "true"></script> 
+    <script src="//cdn.anychart.com/geodata/1.2.0/custom/world/world.js" type="text/javascript"></script> 
+    <script src="//cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" type="text/javascript"></script> 
+    <script src="//cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.js" type="text/javascript"></script> 
+    <script src="//cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" type="text/javascript"></script> 
 </head>
 ```
 
@@ -45,4 +45,11 @@ Here we have created the world map, other maps are to be defined the same. You c
 
 ### Data
 
-Now it's time for defining the data. 
+Now it's time for defining the data. As with other components, there are two ways of the data defining: as array of arrays or as array of objects. Note that you should set the data for all maps that are used in Drill Down. 
+
+Let's use dome statistic data about population in those states in 2000 for the next sample.
+
+```
+```
+{sample}Maps\_Drill\_Down\_Methods\_01{sample}
+
