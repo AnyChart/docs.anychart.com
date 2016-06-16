@@ -50,33 +50,33 @@ Now it's time for defining the data. As with other components, there are two way
 Let's use some statistic data about population in those states in 2000 for the next sample.
 
 ``` 
-    // set the data for the world map
-    var worldDataSet = anychart.data.set([
-        {id: "US", name: "USA", value: "A1"}
-    ]);
+// set the data for the world map
+var worldDataSet = anychart.data.set([
+    {id: "US", name: "USA", value: "A1"}
+]);
 
-    // set the data for the USA map
-    var usaDataSet = anychart.data.set([
-        {"id": "US.TX", "value": 26956958},
-        {"id": "US.FL", "value": 19552860}
-    ]);
+// set the data for the USA map
+var usaDataSet = anychart.data.set([
+    {"id": "US.TX", "value": 26956958},
+    {"id": "US.FL", "value": 19552860}
+]);
 
-	// create dataset for Texas
-    var dataSetTX = anychart.data.set([
-        {'id': 'US.TX.111', 'value': 6222}, // Dallam
-        {'id': 'US.TX.421', 'value': 3186}, // Sherman
-        {'id': 'US.TX.195', 'value': 5369}, // Hansford
-        {'id': 'US.TX.357', 'value': 9006}, // Ochiltree
-        {'id': 'US.TX.295', 'value': 3057}, // Lipscomb
-    ]);
+// create dataset for Texas
+var dataSetTX = anychart.data.set([
+    {'id': 'US.TX.111', 'value': 6222}, // Dallam
+    {'id': 'US.TX.421', 'value': 3186}, // Sherman
+    {'id': 'US.TX.195', 'value': 5369}, // Hansford
+    {'id': 'US.TX.357', 'value': 9006}, // Ochiltree
+    {'id': 'US.TX.295', 'value': 3057}, // Lipscomb
+]);
 
-    // create dataset for Florida 
-    var dataSetFL = anychart.data.set([
-        {'id': 'US.FL.063', 'value': 46755}, //Jackson]
-        {'id': 'US.FL.091', 'value': 170498}, //Okaloosa
-        {'id': 'US.FL.077', 'value': 7021}, //Liberty County
-        {'id': 'US.FL.079', 'value': 18733}, //Madison
-    });
+// create dataset for Florida 
+var dataSetFL = anychart.data.set([
+    {'id': 'US.FL.063', 'value': 46755}, //Jackson]
+    {'id': 'US.FL.091', 'value': 170498}, //Okaloosa
+    {'id': 'US.FL.077', 'value': 7021}, //Liberty County
+    {'id': 'US.FL.079', 'value': 18733}, //Madison
+});
 ```
 
 After we have defined the data, it's time to pass to the series.
@@ -85,16 +85,66 @@ After we have defined the data, it's time to pass to the series.
 
 AnyMaps provide a wide range of series avaliable for usage, so at the first step you should make up your maind about which series (map) type you're going to use in you Drill Down Map. All supported series types can be found in the [Maps](../Maps_List) list.
 
-In this sample we've decided to use Choropleth, as it's one of the most popular series type and it's qiute
-pictorial when we talk about population.
+In this sample we've decided to use Choropleth, as it's one of the most popular series type and it's qiute pictorial when we talk about population.
 
 ```
-    // Set the series for all maps
-    worldSeries = chart.choropleth(worldDataSet);
-    usaSeries = usaMap.choropleth(usaDataSet);
-    txSeries = txMap.choropleth(dataSetTX);    
-    flSeries = flMap.choropleth(dataSetFL);
+// Set the series for all maps
+worldSeries = chart.choropleth(worldDataSet);
+usaSeries = usaMap.choropleth(usaDataSet);
+txSeries = txMap.choropleth(dataSetTX);    
+flSeries = flMap.choropleth(dataSetFL);
 ```
+
+## Drill To
+
+As we have defined all series and set the data, we can enable the {api:anychart.charts.Map#drillTo}.drillTo(){api} method and make our map capable of drilling into countries and regions.
+
+```
+// Drill down to the USA map
+chart.drillTo(e.point.get("id"), usaMap);
+```
+
+The {api:anychart.charts.Map#drillTo}.drillTo(){api} method requires two parameters: the ID of the clicked region and the name of the map of this region.
+
+You can see how it works in the sample below:
 
 {sample}Maps\_Drill\_Down\_Methods\_01{sample}
 
+## Drill Up
+
+Though now our map can perform the drilling action, it's still quite unready for usage, as there is no way to get from the lower levels to upper ones. THat's where we need the {api:anychart.charts.Map#drillUp}.drillUp(){api} method. It performs the opposite to {api:anychart.charts.Map#drillTo}.drillTo(){api}: it opens the parent map to the current level. This method requires no params.
+
+```
+// drill up
+chart.drillUp();
+```
+
+We have added a drilling-up button to the previous sample and that's what we got:
+
+{sample}Maps\_Drill\_Down\_Methods\_02{sample}
+
+Open this sample in playground to explore it and understand how it works.
+
+
+## Drill Down Map
+
+In the previous two samples we used a simple way of making a Drill Down Map, which is quite useful when you don't use a huge range of maps. In the opposite case, using the {api:anychart.charts.Map#drillDownMap}.drillDownMap(){api} method seems to suit better. This method requires a javacript map, which fields represent the regions, which the level of a Drill Down Map will show. 
+
+```
+// set the drillDownMaps
+chart.drillDownMap({
+    "US": usaMap
+});
+
+usaMap.drillDownMap({
+    "US.TX": txMap,   
+    "US.FL": flMap
+});
+
+// set the selectionMode    
+chart.interactivity({selectionMode: "drillDown"});
+```
+
+Note that using this method requires setting the interactivity into drillDown mode.
+
+{sample}Maps\_Drill\_Down\_Methods\_03{sample}

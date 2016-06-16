@@ -18,8 +18,11 @@
 </head>
 <body>
     <div id="container"></div>
-    <script x-export="chart">
-anychart.onDocumentReady(function () {
+    <script x-export="stage">
+    // set the stage as a container
+    stage = anychart.graphics.create("container");
+
+    anychart.onDocumentReady(function () {
 
     var chart = anychart.map();
     chart.geoData(anychart.maps.world);
@@ -111,29 +114,46 @@ anychart.onDocumentReady(function () {
     txSeries = txMap.choropleth(dataSetTX);    
     flSeries = flMap.choropleth(dataSetFL); 
 
-    // drill from the world map into US map
-    worldSeries.listen("pointClick", function(e) {
-        // Drill down to specified map
-        chart.drillTo(e.point.get("id"), usaMap);
-
-    });
-
     // drill from US map into states
-    usaSeries.listen("pointClick", function(e) {
-        // Drill down to specified map
-        console.log(e.point);
-        var id = e.point.get("id");
-        var map;
-        if (id == "US.TX") map = txMap;
-        if (id == "US.FL") map = flMap;
-        //drill to a region
-        chart.drillTo(id, map);
+    
+    // set the drillDownMaps
+    chart.drillDownMap({
+        "US": usaMap
     });
+
+    usaMap.drillDownMap({
+        "US.TX": txMap,   
+        "US.FL": flMap
+    });
+
+    // set the selectionMode    
+    chart.interactivity({selectionMode: "drillDown"});
 
     // draw the chart
-    chart.container("container");
+    chart.container(stage);
     chart.draw();
+
+    // create drill up label
+    drillToLabel = createLabel("Drill Up", 0, function() {
+        // drill up 
+        chart.drillUp();
+    }); 
 });
+
+// helper function to create buttons
+function createLabel(text, offset, action){
+    var label = anychart.ui.label();
+    label.background({fill: "#9E9E9E"});
+    label.zIndex(1000);
+    label.text(text);
+    label.fontColor("#fff");
+    label.padding(5);
+    label.parentBounds(offset, 5, 130, 100);    
+    label.listen("click", action);
+    label.container(stage);
+    label.draw();
+    return label;
+}
     
 </script>
 </body>
