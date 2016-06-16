@@ -47,9 +47,54 @@ Here we have created the world map, other maps are to be defined the same. You c
 
 Now it's time for defining the data. As with other components, there are two ways of the data defining: as array of arrays or as array of objects. Note that you should set the data for all maps that are used in Drill Down. 
 
-Let's use dome statistic data about population in those states in 2000 for the next sample.
+Let's use some statistic data about population in those states in 2000 for the next sample.
+
+``` 
+    // set the data for the world map
+    var worldDataSet = anychart.data.set([
+        {id: "US", name: "USA", value: "A1"}
+    ]);
+
+    // set the data for the USA map
+    var usaDataSet = anychart.data.set([
+        {"id": "US.TX", "value": 26956958},
+        {"id": "US.FL", "value": 19552860}
+    ]);
+
+	// create dataset for Texas
+    var dataSetTX = anychart.data.set([
+        {'id': 'US.TX.111', 'value': 6222}, // Dallam
+        {'id': 'US.TX.421', 'value': 3186}, // Sherman
+        {'id': 'US.TX.195', 'value': 5369}, // Hansford
+        {'id': 'US.TX.357', 'value': 9006}, // Ochiltree
+        {'id': 'US.TX.295', 'value': 3057}, // Lipscomb
+    ]);
+
+    // create dataset for Florida 
+    var dataSetFL = anychart.data.set([
+        {'id': 'US.FL.063', 'value': 46755}, //Jackson]
+        {'id': 'US.FL.091', 'value': 170498}, //Okaloosa
+        {'id': 'US.FL.077', 'value': 7021}, //Liberty County
+        {'id': 'US.FL.079', 'value': 18733}, //Madison
+    });
+```
+
+After we have defined the data, it's time to pass to the series.
+
+## Series
+
+AnyMaps provide a wide range of series avaliable for usage, so at the first step you should make up your maind about which series (map) type you're going to use in you Drill Down Map. All supported series types can be found in the [Maps](../Maps_List) list.
+
+In this sample we've decided to use Choropleth, as it's one of the most popular series type and it's qiute
+pictorial when we talk about population.
 
 ```
+    // Set the series for all maps
+    worldSeries = chart.choropleth(worldDataSet);
+    usaSeries = usaMap.choropleth(usaDataSet);
+    txSeries = txMap.choropleth(dataSetTX);    
+    flSeries = flMap.choropleth(dataSetFL);
 ```
+
 {sample}Maps\_Drill\_Down\_Methods\_01{sample}
 
