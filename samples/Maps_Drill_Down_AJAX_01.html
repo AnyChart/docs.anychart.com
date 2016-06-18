@@ -2,9 +2,7 @@
 <html>
 <head>
     <script src="http://cdn.anychart.com/js/7.10.1/anychart-bundle.min.js"></script>
-    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"  data-export = "true"></script>
-    <script src="http://cdn.anychart.com/geodata/1.2.0/custom/world/world.js"  data-export = "true"></script>
-    <script src="http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" data-export = "true"></script>    
+    <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export = "true"></script>    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
   <style>
@@ -21,27 +19,69 @@
     <script x-export="chart">
 anychart.onDocumentReady(function () {
 
-    var worldDataSet = anychart.data.set([
-        {id: "US", name: "USA", value: "A1"}
+    // set the data for the USA map
+    var usaDataSet = anychart.data.set([
+        {"id": "US.TX", "value": 26956958},
+        {"id": "US.FL", "value": 19552860}
     ]);
 
-    var chart = anychart.map();
-    chart.geoData(anychart.maps.world);
-    worldSeries = chart.choropleth(worldDataSet);
-    chart.container("container");
-    chart.draw();
+    // define the map
+    var usaMap = anychart.map();    
+    var txMap = anychart.map();
+    var flMap = anychart.map();
+    // set the geodata
+    usaMap.geoData(anychart.maps.united_states_of_america);
+    // set the series
+    usaSeries = usaMap.choropleth(usaDataSet);
 
-
-    worldSeries.listen("pointClick", function(e) {
+    // load the map of Texas
+    usaSeries.listen("pointClick", function(e) {
+      var id = e.point.get("id");
+      if (id == "US.TX") {
         jQuery.ajax({
-            type: "GET",
-            url: "http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js",
-            dataType: "script"
-            success: function(){
-            alert("Load was performed.");
-        }
+            type: "GET",  //POST
+            url: "http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json", //js
+            dataType: "json", //script
+            success: function(data){
+            console.log(data);
+            //console.log(anychart.maps.united_states_of_america);
+            },
+            error: function(){
+              console.log(arguments);
+            },
+          });
+          txMap.geoData(anychart.maps["texas"]);
+      }
+
+        
+      // load the map of Florida
+      if (id == "US.FL") {
+        jQuery.ajax({
+            type: "GET", 
+            url: "http://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json",
+            dataType: "json", 
+            success: function(data){
+            console.log(data);
+            },
+            error: function(){
+              console.log(arguments);
+            }
+        });
+  }
 });
+    usaMap.container("container");
+    usaMap.draw();
+
+    // enable the drilldown interactivity for the USA map    
+    usaMap.drillDownMap({
+        "US.TX": txMap,   
+        "US.FL": flMap
     });
+
+    // set the selectionMode    
+    usaMap.interactivity({selectionMode: "drillDown"});
+
+
 });
     
 </script>

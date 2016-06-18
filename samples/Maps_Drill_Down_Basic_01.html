@@ -2,7 +2,6 @@
 <html>
 <head>
     <script src="http://cdn.anychart.com/js/7.10.1/anychart-bundle.min.js"></script>
-    <script src="http://cdn.anychart.com/geodata/1.2.0/custom/world/world.js"  data-export = "true"></script>
     <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"  data-export = "true"></script>
     <script src="http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" data-export = "true"></script>   
     <script src="http://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.js" data-export = "true"></script>   
@@ -18,11 +17,11 @@
 </head>
 <body>
     <div id="container"></div>
-    <script x-export="chart">
-anychart.onDocumentReady(function () {
+    <script x-export="stage">
+    // set the stage as a container
+    stage = anychart.graphics.create("container");
 
-    var chart = anychart.map();
-    chart.geoData(anychart.maps.world);
+    anychart.onDocumentReady(function () {
 
     var usaMap = anychart.map();
     usaMap.geoData(anychart.maps.united_states_of_america);
@@ -32,11 +31,6 @@ anychart.onDocumentReady(function () {
 
     var txMap = anychart.map();
     txMap.geoData(anychart.maps["texas"]);
-    
-    // set the data for the world map
-    var worldDataSet = anychart.data.set([
-        {id: "US", name: "USA", value: "A1"}
-    ]);
 
     // set the data for the USA map
     var usaDataSet = anychart.data.set([
@@ -106,34 +100,44 @@ anychart.onDocumentReady(function () {
     ]);    
     
     // Set the series for all maps
-    worldSeries = chart.choropleth(worldDataSet);
     usaSeries = usaMap.choropleth(usaDataSet);
     txSeries = txMap.choropleth(dataSetTX);    
     flSeries = flMap.choropleth(dataSetFL); 
 
-    // drill from the world map into US map
-    worldSeries.listen("pointClick", function(e) {
-        // Drill down to specified map
-        chart.drillTo(e.point.get("id"), usaMap);
-
+    // enable the drilldown interactivity for the USA map    
+    usaMap.drillDownMap({
+        "US.TX": txMap,   
+        "US.FL": flMap
     });
 
-    // drill from US map into states
-    usaSeries.listen("pointClick", function(e) {
-        // Drill down to specified map
-        console.log(e.point);
-        var id = e.point.get("id");
-        var map;
-        if (id == "US.TX") map = txMap;
-        if (id == "US.FL") map = flMap;
-        //drill to a region
-        chart.drillTo(id, map);
-    });
+    // set the selectionMode    
+    usaMap.interactivity({selectionMode: "drillDown"});
 
     // draw the chart
-    chart.container("container");
-    chart.draw();
+    usaMap.container(stage);
+    usaMap.draw();
+
+    // create drill up label
+    drillToLabel = createLabel("Drill Up", 0, function() {
+        // drill up 
+        usaMap.drillUp();
+    }); 
 });
+
+// helper function to create buttons
+function createLabel(text, offset, action){
+    var label = anychart.ui.label();
+    label.background({fill: "#9E9E9E"});
+    label.zIndex(1000);
+    label.text(text);
+    label.fontColor("#fff");
+    label.padding(5);
+    label.parentBounds(offset, 5, 130, 100);    
+    label.listen("click", action);
+    label.container(stage);
+    label.draw();
+    return label;
+}
     
 </script>
 </body>
