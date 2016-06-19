@@ -1,15 +1,13 @@
 {:index 3}
-Basic tutorial
+#Basic tutorial
 
-* [Include AnyMap into Drill Down Map](#include_anymap_into_drill_down_map)
-* [Include maps into Drill Down Map](#include_maps_into_drill_down_map)
+* [Include AnyMap component](#include_anymap_component)
+* [Add maps](#add_maps)
 * [Data](#data)
-* [Series](#series)
 * [Drill Down Map](#drill_down_map)
-* [Drill Up](#drill_up)
 
 
-## Include AnyMap into Drill Down Map
+## Include AnyMap component
 
 First of all, you need the Anymap component, which can be found on the [download page](../Quick_Start/Downloading_AnyChart). Reference the AnyMap JavaScript file in the <head> section of your web page. 
 
@@ -22,13 +20,13 @@ First of all, you need the Anymap component, which can be found on the [download
 If you need any other AnyChart components, it's better to include anychart-bundle.min.js, which can be found on the same page.
 
 
-## Include maps into Drill Down Map
+## Add maps
 
 There are several ways how to include maps in your Drill Down Map: through scripts or using AJAX. The first way is described in this article; if you need the tutorial for AJAX, visit the [AJAX](AJAX_Tutorial) page.
 
 To include a map as script, reference the JavaScript file with this map in the <head> section of your web page.
 You can use the link as shown below or download all necessary maps from the <a href="http://cdn.anychart.com/#map-collection">download page</a> and then reference them locally.
-Note that all maps that will be used should be referenced like in this code sample. In the following code sample we reference the root map (the world map), the USA map and maps of Texas and Florida, as we're not going to use any other maps.
+Note that all maps that will be used should be referenced like in this code sample. In the following code sample we reference the USA map and maps of Texas and Florida, as we're not going to use any other maps.
 
 ```
 <head>
@@ -46,14 +44,14 @@ var usaMap = anychart.map();
 usaMap.geoData(anychart.maps.united_states_of_america);
 ```
 
-Here we have created the world map, other maps are to be defined the same. You can find geoData names for all available maps on the <a href = "http://cdn.anychart.com/#map-collection">maps collection page</a>. The regions' IDs can be found there as well. Choose the "Demo" of a necessary map to see how it should be defined.
+Here we have created the USA map, other maps are to be defined the same. You can find geoData names for all available maps on the <a href = "http://cdn.anychart.com/#map-collection">maps collection page</a>. The regions' IDs can be found there as well. Choose the "Demo" of a necessary map to see how it should be defined.
 
 
 ## Data
 
 Now it's time for defining the data. As with other components, there are two ways of the data defining: as array of arrays or as array of objects. Note that you should set the data for all maps that are used in Drill Down. 
 
-Let's use some statistic data about population in those states in 2000 for the next sample.
+Let's use some statistical data about population in those states in 2000 for the next sample.
 
 ``` 
 // set the data for the USA map
@@ -80,13 +78,11 @@ var dataSetFL = anychart.data.set([
 });
 ```
 
-After we have defined the data, it's time to pass to the series.
+After we have defined the data, it's time to pass to series defining.
 
-## Series
+AnyMaps provide a wide range of series avaliable for usage, so at the first step you should make up your mind about which series (map) type (or types) you're going to use in your Drill Down Map. All supported Maps can be found in the [Maps](../Maps_List) list.
 
-AnyMaps provide a wide range of series avaliable for usage, so at the first step you should make up your mind about which series (map) type (or types) you're going to use in you Drill Down Map. All supported series types can be found in the [Maps](../Maps_List) list.
-
-In this sample we've decided to use Choropleth, as it's one of the most popular series type and it's qiute pictorial when we talk about population.
+In this sample we've decided to use Choropleth, as it's one of the most popular series type and it's quite a good choice for performing the information about population.
 
 ```
 // Set the series for all maps
@@ -100,7 +96,7 @@ Now, it's time to enable the drill down interactivity in our map.
 
 ## Drill Down Map
 
-To enable the drill down in the map, we use {api:anychart.charts.Map#drillDownMap}.drillDownMap(){api} method with a javascript map, which fields represent the regions, as a parameter. Look up the next sample.
+To enable the drill down in the map, we use {api:anychart.charts.Map#drillDownMap}.drillDownMap(){api} method. Explore the next sample.
 
 ```
 usaMap.drillDownMap({
@@ -116,11 +112,9 @@ Note that using this method requires setting the {api:anychart.charts.Map#intera
 
 {sample}Maps\_Drill\_Down\_Basic\_01{sample}
 
+By default, the {api:anychart.charts.Map#drillUp}.drillUp(){api} method is performed on "Esc" click, so use Esc to open the map of the previous level in the sample.
 
-## Drill Up
-
-By default, the {api:anychart.charts.Map#drillUp}.drillUp(){api} method is performed on "Esc" click. You can check this on the previous sample.
 
 ## Adjust settings
 
-The sample demonstrated in this article is rather simple, but it can be upgraded and adjusted in dependancy of your needs and preferences. Look up the [Methods](Methods) and [AJAX Tutorial](AJAX_Tutorial) articles to know all about special drilldown methods and to understand how to upgrade it if necessary. For example, you can create breadcrumbs - find information about them in the [Breadcrumbs]() article.
+The sample demonstrated in this article is rather simple, but it can be upgraded and adjusted in dependancy of your needs and preferences. Check the [Methods](Methods) and [AJAX Tutorial](AJAX_Tutorial) articles to know all about special drilldown methods and to understand how to upgrade it if necessary. For example, you can create breadcrumbs - find information about them in the [Breadcrumbs](Breadcrumbs) article.

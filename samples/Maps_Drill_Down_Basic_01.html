@@ -17,9 +17,7 @@
 </head>
 <body>
     <div id="container"></div>
-    <script x-export="stage">
-    // set the stage as a container
-    stage = anychart.graphics.create("container");
+    <script x-export="chart">
 
     anychart.onDocumentReady(function () {
 
@@ -114,30 +112,10 @@
     usaMap.interactivity({selectionMode: "drillDown"});
 
     // draw the chart
-    usaMap.container(stage);
+    usaMap.container("container");
     usaMap.draw();
-
-    // create drill up label
-    drillToLabel = createLabel("Drill Up", 0, function() {
-        // drill up 
-        usaMap.drillUp();
-    }); 
 });
 
-// helper function to create buttons
-function createLabel(text, offset, action){
-    var label = anychart.ui.label();
-    label.background({fill: "#9E9E9E"});
-    label.zIndex(1000);
-    label.text(text);
-    label.fontColor("#fff");
-    label.padding(5);
-    label.parentBounds(offset, 5, 130, 100);    
-    label.listen("click", action);
-    label.container(stage);
-    label.draw();
-    return label;
-}
     
 </script>
 </body>
