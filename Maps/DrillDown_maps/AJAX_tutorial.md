@@ -35,47 +35,13 @@ The root map is better to be added the same way as the AnyMap component and AJAX
 </head>
 ```
 
-## Add maps
-
-Using AJAX means that you don't simultaneously load all maps you're going to use in your Drill Down Map, but you get a necessary map each time you make an AJAX request. 
-
-A request in AJAX should have the following fields:
- - type: AnyChart suppots two request types, "GET" and "POST"
- - url: A link to the requested file
- - dateType: a type of the data of the requested file
- - success: in this field we set a function which is to be run, if the requested file has been successfully loaded
- - error: this field contains actions that should be performed if the request fails (this field is not necessary)
-
- In this sample we have used maps in .json format.
-
-```
-jQuery.ajax({
-    type: "GET", 
-    url: "http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json", 
-    dataType: "json",
-    success: function(data){
-	    console.log(data);
-	    txMap.geoData(data.features);
-	    txSeries = txMap.choropleth(dataSetTX);    
-    },
-    error: function(){
-        console.log(arguments);
-    },
-});
-```
-
-
-
-
-
-
-
 
 ## Data
 
-Now it's time for defining the data. As with other components, there are two ways of the data defining: as array of arrays or as array of objects. Note that you should set the data for all maps that are used in Drill Down. 
+Let's create the dataSet for the current map of the USA and for maps of Floorida and Texxas, which we're going to load later using AJAX.
+We have used some data about population in those states in 2000 for the sample.
 
-Let's use some statistical data about population in those states in 2000 for the next sample.
+As usual, we can define the data in array of arrays or in array of objects format. In the next sample we've set the data as array of objects.
 
 ``` 
 // set the data for the USA map
@@ -111,32 +77,63 @@ In this sample we've decided to use Choropleth, as it's one of the most popular 
 ```
 // Set the series for all maps
 usaSeries = usaMap.choropleth(usaDataSet);
-txSeries = txMap.choropleth(dataSetTX);    
-flSeries = flMap.choropleth(dataSetFL);
 ```
 
 Now, it's time to enable the drill down interactivity in our map.
 
 
-## Drill Down Map
+## Add maps through AJAX
 
-To enable the drill down in the map, we use {api:anychart.charts.Map#drillDownMap}.drillDownMap(){api} method. Explore the next sample.
+Using AJAX means that you don't simultaneously load all maps you're going to use in your Drill Down Map, but you get a necessary map each time you make an AJAX request. 
+
+A request in AJAX should have the following fields:
+ - type: AnyChart suppots two request types, "GET" and "POST"
+ - url: A link to the requested file
+ - dateType: a type of the data of the requested file
+ - success: in this field we set a function which is to be run, if the requested file has been successfully loaded
+ - error: this field contains actions that should be performed if the request fails (this field is not necessary). In our case it shows an alert warning a user of failed map load
+
+ In this sample we have used maps in .json format.
 
 ```
-usaMap.drillDownMap({
-    "US.TX": txMap,   
-    "US.FL": flMap
+jQuery.ajax({
+    type: "GET", 
+    url: "//cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json", 
+    dataType: "json",
+    success: function(data){
+    },
+    error: function(){
+    	alert("Map loading failed");
+    },
 });
-
-// set the selectionMode    
-usaMap.interactivity({selectionMode: "drillDown"});
 ```
 
-Note that using this method requires setting the {api:anychart.charts.Map#interactivity}.interactivity(){api} method into drillDown mode.
+You can find links to all maps on the <a href="http://cdn.anychart.com/#map-collection">Maps Collection</a> page.
+
+
+### drillTo
+
+To drill into a determined map, we use the {api:anychart.charts.Map#drillTo}.drillTo(){api} method, which requires the id of the map and the map name. 
+
+So, in case when AJAX request ends with success, we create a map, transmit the data that we got into the new map's geoData, then create a series and use a {api:anychart.charts.Map#drillTo}.drillTo{api} method to load the map of the selected region and perform the drill down. So the "success" field of the AJAX request will look like the following:
+
+```
+success: function(data){
+    var txMap = anychart.map();
+    txMap.geoData(data);
+    txSeries = txMap.choropleth(dataSetTX); 
+    usaMap.drillTo("US.TX", txMap);  
+}, 
+```
+
+To load the map of the higher level, or simply to drill up, press "Esc" button. Find more about special methods of drill down in the [Methods](Methods) article.
+
+
+### Dynamic URL
+
+
 
 {sample}Maps\_Drill\_Down\_Basic\_01{sample}
-
-By default, the {api:anychart.charts.Map#drillUp}.drillUp(){api} method is performed on "Esc" click, so use Esc to open the map of the previous level in the sample.
 
 
 ## Adjust settings

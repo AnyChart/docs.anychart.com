@@ -21,8 +21,6 @@ anychart.onDocumentReady(function () {
 
     // define the map
     var usaMap = anychart.map();    
-    var txMap = anychart.map();
-    var flMap = anychart.map();
 
     // set the data for the USA map
     var usaDataSet = anychart.data.set([
@@ -96,14 +94,9 @@ anychart.onDocumentReady(function () {
     // set the series
     usaSeries = usaMap.choropleth(usaDataSet);
 
-    // enable the drilldown interactivity for the USA map    
-    usaMap.drillDownMap({
-        "US.TX": txMap,   
-        "US.FL": flMap
-    });
-
-    // set the selectionMode    
-    usaMap.interactivity({selectionMode: "drillDown"});
+    // draw the USA map
+    usaMap.container("container");
+    usaMap.draw();
 
     // load the map of Texas
     usaSeries.listen("pointClick", function(e) {
@@ -114,15 +107,16 @@ anychart.onDocumentReady(function () {
             url: "http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json", //js
             dataType: "json", //script
             success: function(data){
-            console.log(data.features);
-            //console.log(anychart.maps.united_states_of_america); //for js
-            //txMap.geoData(anychart.maps["texas"]);
-            txMap.geoData(data.features);
-            txSeries = txMap.choropleth(dataSetTX);    
+              var txMap = anychart.map();
+              txMap.geoData(data);
+              txSeries = txMap.choropleth(dataSetTX); 
+              usaMap.drillTo("US.TX", txMap);   
             },
             error: function(){
             },
           });
+        //debugger;
+        
       }        
       // load the map of Florida
       if (id == "US.FL") {
@@ -131,22 +125,16 @@ anychart.onDocumentReady(function () {
             url: "http://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json",
             dataType: "json", 
             success: function(data){
-            console.log(data);
-            //flMap.geoData(anychart.maps["florida"]);
-            flMap.geoData(data);
-            flSeries = flMap.choropleth(dataSetFL); 
+              var flMap = anychart.map();
+              flMap.geoData(data);
+              flSeries = flMap.choropleth(dataSetFL); 
+              usaMap.drillTo("US.FL", flMap);
             },
             error: function(){
             }
         });
       }
     });
-
-    // draw the USA map
-    usaMap.container("container");
-    usaMap.draw();
-
-
 });
     
 </script>
