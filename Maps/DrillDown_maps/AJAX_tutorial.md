@@ -1,7 +1,13 @@
 {:index 4}
 #AJAX tutorial
 
-
+* [Include AnyMap component](#include_anyMap_component)
+* [Add AJAX and Maps](#add_ajax_and_maps)
+* [Data](#data)
+* [Add maps through AJAX](#add_maps_through_ajax)
+ * [drillTo](drillto)
+ * [Dynamic URL](#dynamic_url)
+* [Adjust settings](#adjust_settings)
 
 ## Include AnyMap component
 
@@ -68,9 +74,9 @@ var dataSetFL = anychart.data.set([
 });
 ```
 
-After we have defined the data, it's time to pass to series defining.
+After we have defined the data, it's time to pass to the series defining.
 
-AnyMaps provide a wide range of series avaliable for usage, so at the first step you should make up your mind about which series (map) type (or types) you're going to use in your Drill Down Map. All supported Maps can be found in the [Maps](../Maps_List) list.
+AnyMaps provide a wide range of series available for usage, so at the first step you should make up your mind about which series (map) type (or types) you're going to use in your Drill Down Map. All supported Maps can be found in the [Maps](../Maps_List) list.
 
 In this sample we've decided to use Choropleth, as it's one of the most popular series type and it's quite a good choice for performing the information about population.
 
@@ -87,7 +93,7 @@ Now, it's time to enable the drill down interactivity in our map.
 Using AJAX means that you don't simultaneously load all maps you're going to use in your Drill Down Map, but you get a necessary map each time you make an AJAX request. 
 
 A request in AJAX should have the following fields:
- - type: AnyChart suppots two request types, "GET" and "POST"
+ - type: AnyChart supports two request types, "GET" and "POST"
  - url: A link to the requested file
  - dateType: a type of the data of the requested file
  - success: in this field we set a function which is to be run, if the requested file has been successfully loaded
@@ -129,11 +135,55 @@ success: function(data){
 To load the map of the higher level, or simply to drill up, press "Esc" button. Find more about special methods of drill down in the [Methods](Methods) article.
 
 
+{sample}Maps\_Drill\_Down\_AJAX\_01{sample}
+
+
 ### Dynamic URL
 
+It's rather inconvenient to write a new AJAX-request for each state. Let's change the AJAX-request a bit to let it use different URLs in dependency of the state we have selected.
 
+Let's create an external function, which contains the AJAX-request, and pass three parameters to it: the id of the clicked region, the url corresponding to the clicked regions and the root map. This function will be called on the "pointclick" event.
 
-{sample}Maps\_Drill\_Down\_Basic\_01{sample}
+We need to add a field with url to both states in the dataset of the USA map:
+
+```
+// set the data for the USA map
+var usaDataSet = anychart.data.set([
+    {"id": "US.TX", "value": 26956958, "url": "http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json"},
+    {"id": "US.FL", "value": 19552860, "url": "http://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json"}
+]);
+
+// load the map using AJAX
+usaSeries.listen("pointClick", function(e) {
+    loadMap(e.point.get("id"), e.point.get("url"), usaMap);      
+});
+
+function loadMap(id, url, map){
+  jQuery.ajax({
+    type: "GET",
+    url: url, 
+    dataType: "json", 
+    success: function(data){              
+              // create a map to load
+              var drillMap = anychart.map();
+              // put the data into the map
+              drillMap.geoData(data);
+              // perform a drill down into the drillMap
+              map.drillTo(id, drillMap);
+              var drillMapSeries = drillMap.choropleth(dataSets[id]);
+            },
+    error: function(){
+            alert('Error: ', data);
+          }
+  });
+}                                                                               
+```
+
+{sample}Maps\_Drill\_Down\_AJAX\_02{sample}
+
+To open a map of a previous level press "Esc" button.
+
+Explore the sample to see the whole code.
 
 
 ## Adjust settings
