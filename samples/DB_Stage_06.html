@@ -19,6 +19,7 @@
 	// layer for the text elements
 	layer_text = stage.layer();
 	
+	// legend on the chart
 	chartLegend = createLegend([
 		{index: 0, text: "Visits",  iconFill: "#bC7C63"},
 		{index: 1, text: "Feeding", iconFill: "#6594AD"},
@@ -43,25 +44,39 @@
 		["7", 2, 0, 1, 6, 3, 2, 2, 0, 1, 0, 7,  0]
 	];
 
+	// map all data as table into one series 
 	series = anychart.data.mapAsTable(dataSet);
 
+	// settings for the block describing jay 
 	jaySettings = {
+		// latin name of the animal
 		name: "Garrulus glandarius",
+		// position of the text
 		textX: 350,
 		textY: 175,
+		// the name of the picture of the animal in the folder with pictures
 		picture: "jay.jpg",
+		// the picture position
 		pictureY: 130,
+		// the path of the line connecting the picture with its part of the fur-tree
 		linePath: [[210, 190], [300, 130], [370, 130]],
+		// Y-position of the chart
 		chartY: 80,
+		// sets the data of this particular animal from the series
 		data: [series[0], series[1], series[2]],
+		// coordinates of the fur-tree piece where this animal lives
 		treePath: [[175, 120], [250, 240], [100, 240]],
-		shadowPath: [[175, 165], [260, 290], [110, 290]],
+		// coordinates of the shadow of the fir-tree piece where this animal lives
+		shadowPath: [[175, 165], [250, 290], [100, 290]],
+		// the color of the fur-tree piece where this animal lives
 		treeColor: "#7CB342",
+		// makes this layer overlap others
 		zIndex: 10
 	};
-
+	// creates a
 	createSpecies(jaySettings);
 
+	// settings for the block describing woodpecker
 	woodpeckerSettings = {
 		name: "Dendrocopos analis",
 		textX: 350,
@@ -72,7 +87,7 @@
 		chartY: 195,
 		data: [series[3], series[4], series[5]],
 		treePath: [[175, 165], [280, 340], [70, 340]],
-		shadowPath: [[175, 255], [280, 390], [70, 390]],
+		shadowPath: [[175, 240], [280, 395], [70, 395]],
 		treeColor: "#689F38",
 		zIndex: 8
 	};
@@ -115,6 +130,7 @@
 
 });
 
+// an external function for creating legends
 function createLegend(items) {
 	var legend = anychart.ui.legend();
 	legend.align("left");
@@ -123,6 +139,7 @@ function createLegend(items) {
 	return legend;
 }
 
+// creates everything connected to the animal
 function createSpecies(e){
 	var layer = stage.layer();
 	layer.text(e.textX, e.textY, e.name).color(textColor);
@@ -143,15 +160,16 @@ function createSpecies(e){
 	layer.zIndex(e.zIndex);
 }
 
-
+// an external function for drawing a piece of tree
 function draw_tree(layer, points, color, z_index, shadow){
 	if (shadow) fill = [color + " 0.5", color + " 0.4", color + " 0"]
 	else fill = color;	
-	var piece = layer.path().moveTo(points[0][0], points[0][1]).zIndex(z_index).fill(fill).stroke(null);
+	var piece = layer.path().moveTo(points[0][0], points[0][1]).zIndex(z_index).fill(fill, 270).stroke(null);
 	for (var i = 0; i < points.length; i++) piece.lineTo(points[i][0], points[i][1]);
 	return piece;
 }
 
+// an external function switching the behaviour
 function on_hover(piece, shadow, line, lineShadow, img, imgShadow) {
 	toggle(false);
 	piece.listen("mouseOver", function (){toggle(true);});
@@ -160,6 +178,7 @@ function on_hover(piece, shadow, line, lineShadow, img, imgShadow) {
 	line.listen("mouseOut", function (){toggle(false);});
 	img.listen("mouseOver", function (){toggle(true);});
 	img.listen("mouseOut", function (){toggle(false);});
+	// enables and disables all shadows when an element is hovered or unhovered
     function toggle(e){
         shadow.visible(e);
         lineShadow.visible(e);
@@ -167,6 +186,7 @@ function on_hover(piece, shadow, line, lineShadow, img, imgShadow) {
     }
 }
 
+// draws a chart with passed parameters of the particular animal
 function draw_chart(container, data, bounds){
 	var chart = anychart.line();
 	chart.palette(chart_palette);
@@ -184,12 +204,14 @@ function draw_chart(container, data, bounds){
 	chart.container(container).draw();
 }
 
+// creates series
 function setupSeries(name, data, chart){
 	var series = chart.line(data);
 	series.name(name);
 	series.clip(false);
 }	
 
+// draws a line connecting picture of animal and the fur-tree part
 function draw_line(layer, points, color, z_index){
 	var line = layer.path().moveTo(points[0][0], points[0][1]).stroke(color).zIndex(z_index);
 	for (var i = 0; i < points.length; i++) {
@@ -198,6 +220,7 @@ function draw_line(layer, points, color, z_index){
 	return line;
 }
 
+// draws a picture for an animal taken from the url
 function draw_picture(layer, radius, coordinates, color, pic_name) {
 	layer.circle(radius, coordinates[0], coordinates[1])
 		.stroke(color)
