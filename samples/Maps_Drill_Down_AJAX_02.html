@@ -16,21 +16,20 @@
 </head>
 <body>
     <div id="container"></div>
-    <script x-export="chart">
+    <script x-export="usaMap">
 anychart.onDocumentReady(function () {
-    var regions_data;
 
     // define the map
-    var usaMap = anychart.map();    
+    usaMap = anychart.map();    
 
     // set the data for the USA map
-    var usaDataSet = anychart.data.set([
+    usaDataSet = anychart.data.set([
         {"id": "US.TX", "value": 26956958, "url": "http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json"},
         {"id": "US.FL", "value": 19552860, "url": "http://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json"}
     ]);
 
     // create data set for Texas districts
-    var dataSetTX = anychart.data.set([
+    dataSetTX = anychart.data.set([
         {'id': 'US.TX.111', 'value': 6222}, //Dallam
         {'id': 'US.TX.421', 'value': 3186}, //Sherman
         {'id': 'US.TX.195', 'value': 5369}, //hansford
@@ -60,7 +59,7 @@ anychart.onDocumentReady(function () {
     ]);
 
     // create data set for Florida districts
-    var dataSetFL = anychart.data.set([
+    dataSetFL = anychart.data.set([
         {'id': 'US.FL.063', 'value': 46755}, //Jackson]
         {'id': 'US.FL.091', 'value': 170498}, //Okaloosa
         {'id': 'US.FL.077', 'value': 7021}, //Liberty County
