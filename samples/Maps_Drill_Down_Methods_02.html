@@ -20,29 +20,29 @@
     <script x-export="chart">
 anychart.onDocumentReady(function () {
 
-    var worldDataSet = anychart.data.set([
+    worldDataSet = anychart.data.set([
         {id: "US", name: "USA", value: "A1"}
     ]);
 
-    var usaDataSet = anychart.data.set([
+    usaDataSet = anychart.data.set([
         {"id": "US.TX", "value": 23}
     ]);
 
-    var txMap = anychart.map();
+    txMap = anychart.map();
     txMap.geoData(anychart.maps["texas"]);
 
-    var usaMap = anychart.map();
+    usaMap = anychart.map();
     usaMap.geoData(anychart.maps.united_states_of_america);
     usaSeries = usaMap.choropleth(usaDataSet);
 
-    var chart = anychart.map();
+    chart = anychart.map();
     chart.geoData(anychart.maps.world);
     worldSeries = chart.choropleth(worldDataSet);
     chart.title("Click at the title to get one level up");
 
     // title setting
-    var txTitle = txMap.title("Click at the title to get one level up");
-    var usaTitle = usaMap.title("Click at the title to get one level up");
+    txTitle = txMap.title("Click at the title to get one level up");
+    usaTitle = usaMap.title("Click at the title to get one level up");
 
     chart.container("container");
     chart.draw();

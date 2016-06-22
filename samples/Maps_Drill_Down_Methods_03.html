@@ -29,26 +29,26 @@ anychart.onDocumentReady(function () {
     stage = anychart.graphics.create("container");
 
     // world map
-    var chart = anychart.map();
+    chart = anychart.map();
 
     // major maps
-    var usaMap = anychart.map();
+    usaMap = anychart.map();
 
     // canada map
-    var canadaMap = anychart.map();
+    canadaMap = anychart.map();
 
-    var worldDataSet = anychart.data.set([
+    worldDataSet = anychart.data.set([
         {id: "US", name: "USA", value: "1"},
         {id: "CA", name: "Canada", value: "2", fill: "#FF9966"}
     ]);
 
-    var usaDataSet = anychart.data.set([
+    usaDataSet = anychart.data.set([
         {"id": "US.LA", "value": 22},
         {"id": "US.TX", "value": 23},
         {"id": "US.NY", "value": 45}
     ]);
 
-    var canadaDataSet = anychart.data.set([
+    canadaDataSet = anychart.data.set([
         {"id": "CA.BC", "value": 3},
         {"id": "CA.NF", "value": 11},
         {"id": "CA.PE", "value": 12}
@@ -68,22 +68,22 @@ anychart.onDocumentReady(function () {
     canadaSeries.fill("#FF9966");
 
     // regions maps
-    var txMap = anychart.map();
+    txMap = anychart.map();
     txMap.geoData(anychart.maps["texas"]);
 
-    var laMap = anychart.map();
+    laMap = anychart.map();
     laMap.geoData(anychart.maps["louisiana"]);
 
-    var nyMap = anychart.map();
+    nyMap = anychart.map();
     nyMap.geoData(anychart.maps["new_york"]);
 
-    var bcMap = anychart.map();
+    bcMap = anychart.map();
     bcMap.geoData(anychart.maps["british_columbia"]);
     
-    var nfMap = anychart.map();
+    nfMap = anychart.map();
     nfMap.geoData(anychart.maps["newfoundland_and_labrador"]);
 
-    var peMap = anychart.map();
+    peMap = anychart.map();
     peMap.geoData(anychart.maps["prince_edward_island"]);
 
 

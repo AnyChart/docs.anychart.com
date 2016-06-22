@@ -23,25 +23,25 @@ anychart.onDocumentReady(function () {
     stage = anychart.graphics.create("container");
 
         // data sets
-    var worldDataSet = anychart.data.set([
+    worldDataSet = anychart.data.set([
         {id: "US"}
     ]);
-    var usaDataSet = anychart.data.set([
+    usaDataSet = anychart.data.set([
         {id: "US.TX"}
     ]);
 
         // world map
-    var chart = anychart.map();
+    chart = anychart.map();
     chart.geoData(anychart.maps.world);
     worldSeries = chart.choropleth(worldDataSet);
     
     // usa map
-    var usaMap = anychart.map();
+    usaMap = anychart.map();
     usaMap.geoData(anychart.maps.united_states_of_america);
     usaSeries = usaMap.choropleth(usaDataSet);
 
         // texas map
-    var txMap = anychart.map();
+    txMap = anychart.map();
     txMap.geoData(anychart.maps["texas"]);
 
     // set drill down for maps

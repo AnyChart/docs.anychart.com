@@ -29,33 +29,33 @@
 <body>
     <div id = "breadcrumbs"></div>
     <div id="container"></div>
-    <script x-export="chart">
+    <script x-export="worldMap">
 anychart.onDocumentReady(function () {
 
     // define the root map
-    var worldMap = anychart.map();
+    worldMap = anychart.map();
 
     // set the data for the USA map
-    var worldDataSet = anychart.data.set([
+    worldDataSet = anychart.data.set([
         {"id": "US", "value": 26956958, "url": "http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.json"},
         {"id": "CA", "value": 19552860, "url": "http://cdn.anychart.com/geodata/1.2.0/countries/canada/canada.json"}
     ]);   
 
     // set the data for the USA map
-    var usaDataSet = anychart.data.set([
+    usaDataSet = anychart.data.set([
         {"id": "US.TX", "value": 26956958, "url": "http://cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.json"},
         {"id": "US.FL", "value": 19552860, "url": "http://cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.json"},
         {"id": "US.OK", "value": 26956958, "url": "http://cdn.anychart.com/geodata/1.2.0/usa_states/oklahoma/oklahoma.json"},
         {"id": "US.AR", "value": 19552860, "url": "http://cdn.anychart.com/geodata/1.2.0/usa_states/arkansas/arkansas.json"}
     ]);  
 
-    var canadaDataSet = anychart.data.set([
+    canadaDataSet = anychart.data.set([
         {"id": "CA.PE", "value": 2341411, "url": "http://cdn.anychart.com/geodata/1.2.0/canada_states/prince_edward_island/prince_edward_island.json"},
         {"id": "CA.NU", "value": 15054501, "url": "http://cdn.anychart.com/geodata/1.2.0/canada_states/nunavut/nunavut.json"}
     ]);
 
     // create data set for Texas districts
-    var dataSetTX = anychart.data.set([
+    dataSetTX = anychart.data.set([
         {'id': 'US.TX.111', 'value': 6222}, //Dallam
         {'id': 'US.TX.421', 'value': 3186}, //Sherman
         {'id': 'US.TX.195', 'value': 5369}, //hansford
@@ -85,7 +85,7 @@ anychart.onDocumentReady(function () {
     ]);
 
     // create data set for Florida districts
-    var dataSetFL = anychart.data.set([
+    dataSetFL = anychart.data.set([
         {'id': 'US.FL.063', 'value': 46755}, //Jackson]
         {'id': 'US.FL.091', 'value': 170498}, //Okaloosa
         {'id': 'US.FL.077', 'value': 7021}, //Liberty County
@@ -116,12 +116,12 @@ anychart.onDocumentReady(function () {
     ]);    
 
     // create data set for Nunavut
-    var dataSetNU = anychart.data.set([
+    dataSetNU = anychart.data.set([
         {'id': 'CA.NU.62001', 'value': 0}
     ]);
 
     // create data set
-    var dataSetPE = anychart.data.set([
+    dataSetPE = anychart.data.set([
         {'id': 'CA.PE.11004', 'value': 0},
         {'id': 'CA.PE.11003', 'value': 1},
         {'id': 'CA.PE.11001', 'value': 2},
