@@ -3,7 +3,7 @@
 
 The AnyChart Technical Documentation Team welcomes you!
 
-This repo contains source for [AnyChart JavaScript HTML5 Charts Documentation](//docs.anychart.com) documentation.
+This repo contains source for [AnyChart JavaScript HTML5 Charts Documentation](//docs.anychart.com).
 We are appreciate your interest and will do our best to make AnyChart documentation as good as possible.  
 
 If you have any suggestions how to improve this documentation, feel free to use one of the following methods:
