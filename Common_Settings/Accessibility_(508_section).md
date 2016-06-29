@@ -1,4 +1,4 @@
-#508 Section
+#Accessibility (508 Section)
 
 * [What is 508](#what_is_508)
 * [Methods](#methods)
@@ -7,6 +7,7 @@
  * [Accessibility Modes](#accessibility_modes)
   * [chartElements mode](#chartelements_mode)
   * [dataTable mode](#datatable_mode)
+ * [Defaults](#defaults)
 
 
 ## What is 508
@@ -45,6 +46,7 @@ Accessibility support for series is separated from the chart's accessibility. To
 ```
 // enable the accessibility support for series
 series.a11y(true);
+series.a11y(true);
 ```
 {sample}CMN\_508\_Section\_01{sample}
 
@@ -54,12 +56,19 @@ series.a11y(true);
 Before we pass to some specific settings of accessibility support, let's prepare our chart's elements. We need to set the chart title and series titles through the {api:}.a11y(){api} method to make them recognized and readable by VoiceOver. Let's use the {api:}.titleFormatter(){api} method for both chart and series.
 
 ```
-// set the 508-friendly chart title
-chart.a11y().titleFormatter("Chart");
+// set the titleFormatter for the chart
+  chart.a11y().titleFormatter(function(e){
+    var chart = this.chart;
+    return "Series Y sum: " + chart.getStat("dataPlotYSum") + "\n" +
+                "Series Y minimum: " + chart.getSeries(0).getStat("seriesYMin") + "\n" +
+                "Series Y maximum: " + chart.getSeries(0).getStat("seriesYMax");
+  });
 
-// set the 508-friendly series titles
-series1.a11y().titleFormatter("Series 1");
-series2.a11y().titleFormatter("Series 2");
+  // set the titleFormatter for the series
+  series2014.a11y().titleFormatter(function(e){
+    var series = this.series;
+    return "This series named " + series.name() + " has its maximum value in $" + series.getStat("seriesYMax") + ", the average in $" +  				chart.getSeries(1).getStat("average") + " and minimum value in $" + chart.getSeries(1).getStat("seriesYMin");
+  });
 
 ```
 {sample}CMN\_508\_Section\_02{sample}
@@ -86,7 +95,7 @@ Note that setting the mode to the chart does not affect the series.
 
 #### dataTable mode
 
-In this mode, an invisible table is being generated on a chart. This table contains the chart title (taken from {api:}.titleFormatter(){api} or from {api:}.title(){api} method) as the table's head, and all information shown on the chart is transformed into a table structure, i.e. as cells, and the VoiceOver reads it appropriately. The navigation between cells is organized through the hot-keys, no interaction with chart is supposed. 
+In this mode, an invisible table is being generated on a chart. This table contains the chart title (taken from {api:}.titleFormatter(){api} or from {api:}.title(){api} method) as the table's head, and all information shown on the chart is transformed into a table structure, i.e. as cells, and the VoiceOver reads it appropriately. The navigation between cells is organized through the hot-keys, no interaction with the chart is supposed. 
 
 ```
 // set the accessibility mode as table data
@@ -94,4 +103,11 @@ chart.a11y().mode("dataTable")
 ```
 {sample}CMN\_508\_Section\_04{sample}
 
+Open the console to inderstand the difference between these two modes.
 
+
+### Defaults
+
+The acessibilty support is enabled by default. It means that there is no need in enabling this feature unless you've turned it off due to some reasons. Switching the accessibility support off will lead to absence of both ARIA-tags and ARIA-labels in the SVG structure, so the information percepted and performed by a screen reader will be scarcely understandable.
+
+The default Accessibility mode is Chart Elements, which means that a user interacts with a chart and its elements, using a keyboaкd for navigation between them. If you change the mode to the "dataTable", there will be an invisible table generated in the upper left corner of the chart. In this case, an interaction between a user and a chart will be performed through this table, which cells represent the data points of the chart.

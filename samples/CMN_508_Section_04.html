@@ -35,7 +35,7 @@
   series2014.name("Sales in 2014");
     
   // chart title
-  chart.title("Enable the accessibility support on the chart");
+  chart.title("Making chart and series titles accessible");
   
   // set axes titles
   var xAxis = chart.xAxis();
@@ -46,12 +46,26 @@
   // enable legend
   chart.legend(true);
 
-  // enable the accessibility of the chart
-  chart.a11y(true);
-
-  // enable the accessibility support for series
+  // enable the accessibility support for series  
   series2013.a11y(true);
   series2014.a11y(true);
+
+  // set the titleFormatter for the chart
+  chart.a11y().titleFormatter(function(e){
+    var chart = this.chart;
+    return "Series Y sum: " + chart.getStat("dataPlotYSum") + "\n" +
+                "Series Y minimum: " + chart.getSeries(0).getStat("seriesYMin") + "\n" +
+                "Series Y maximum: " + chart.getSeries(0).getStat("seriesYMax");
+  });
+
+  // set the titleFormatter for the series
+  series2014.a11y().titleFormatter(function(e){
+    var series = this.series;
+    return "This series named " + series.name() + " has its maximum value in $" + series.getStat("seriesYMax") + ", the average in $" +  chart.getSeries(1).getStat("average") + " and minimum value in $" + chart.getSeries(1).getStat("seriesYMin");
+  });
+
+  // set the accessibility mode as table data
+  chart.a11y().mode("dataTable");
 
   // draw
   chart.container("container");
