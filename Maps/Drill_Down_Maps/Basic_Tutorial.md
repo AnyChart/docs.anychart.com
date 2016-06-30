@@ -6,19 +6,17 @@
 * [Data](#data)
 * [Drill Down Map](#drill_down_map)
 
-
 ## Include AnyMap component
 
 First of all, you need the Anymap component, which can be found on the [download page](../Quick_Start/Downloading_AnyChart). Reference the AnyMap JavaScript file in the <head> section of your web page. 
 
 ```
 <head>
-    <script src="//cdn.anychart.com/js/latest/anymap.min.js" type="text/javascript"></script> 
+<script src="//cdn.anychart.com/js/latest/anymap.min.js" type="text/javascript"></script> 
 </head>
 ```
 
 If you need any other AnyChart components, it's better to include anychart-bundle.min.js, which can be found on the same page.
-
 
 ## Add maps
 
@@ -30,13 +28,13 @@ Note that all maps that will be used should be referenced like in this code samp
 
 ```
 <head>
-    <script src="//cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" type="text/javascript"></script> 
-    <script src="//cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.js" type="text/javascript"></script> 
-    <script src="//cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" type="text/javascript"></script> 
+<script src="//cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" type="text/javascript"></script> 
+<script src="//cdn.anychart.com/geodata/1.2.0/usa_states/florida/florida.js" type="text/javascript"></script> 
+<script src="//cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" type="text/javascript"></script> 
 </head>
 ```
 
-After the maps are referenced in the <head> section, we can create the map objects and get the geoData from these maps. Look at the next code sample:
+After the maps are referenced in the &lt;head&gt; section, we can create the map objects and get the geoData from these maps. Look at the next code sample:
 
 ```
 // creating the map of the USA
@@ -44,8 +42,7 @@ var usaMap = anychart.map();
 usaMap.geoData(anychart.maps.united_states_of_america);
 ```
 
-Here we have created the USA map, other maps are to be defined the same. You can find geoData names for all available maps on the <a href = "http://cdn.anychart.com/#map-collection">maps collection page</a>. The regions' IDs can be found there as well. Choose the "Demo" of a necessary map to see how it should be defined.
-
+Here we have created the USA map, other maps are to be defined the same way. You can find geoData names for all available maps on the <a href = "http://cdn.anychart.com/#map-collection">AnyMap Map Collection</a> page. The regions' IDs can be found there as well. Choose the "Demo" of a necessary map to see how it should be defined.
 
 ## Data
 
@@ -55,9 +52,9 @@ Let's use some statistical data about population in those states in 2000 for the
 
 ``` 
 // set the data for the USA map
-var usaDataSet = anychart.data.set([
-    {"id": "US.TX", "value": 26956958},
-    {"id": "US.FL", "value": 19552860}
+var dataSetUSA = anychart.data.set([
+    {'id': 'US.TX', 'value': 26956958},
+    {'id': 'US.FL', 'value': 19552860}
 ]);
 
 // create dataset for Texas
@@ -71,28 +68,27 @@ var dataSetTX = anychart.data.set([
 
 // create dataset for Florida 
 var dataSetFL = anychart.data.set([
-    {'id': 'US.FL.063', 'value': 46755}, //Jackson
-    {'id': 'US.FL.091', 'value': 170498}, //Okaloosa
-    {'id': 'US.FL.077', 'value': 7021}, //Liberty County
-    {'id': 'US.FL.079', 'value': 18733}, //Madison
+    {'id': 'US.FL.063', 'value': 46755},  // Jackson
+    {'id': 'US.FL.091', 'value': 170498}, // Okaloosa
+    {'id': 'US.FL.077', 'value': 7021},   // Liberty County
+    {'id': 'US.FL.079', 'value': 18733},  //Madison
 });
 ```
 
-After we have defined the data, it's time to pass to series defining.
+After we have defined the data, it's time to pass it to series.
 
-AnyMaps provide a wide range of series avaliable for usage, so at the first step you should make up your mind about which series (map) type (or types) you're going to use in your Drill Down Map. All supported Maps can be found in the [Maps](../Maps_List) list.
+AnyMap provide a wide range of series, so at the first step you should make up your mind about which series (map) type (or types) you're going to use in your Drill Down Map
 
-In this sample we've decided to use Choropleth, as it's one of the most popular series type and it's quite a good choice for performing the information about population.
+In this sample we've decided to use [Choropleth Map](Choropleth_Map), as it's one of the most popular series type.
 
 ```
 // Set the series for all maps
-usaSeries = usaMap.choropleth(usaDataSet);
+usaSeries = usaMap.choropleth(dataSetUSA);
 txSeries = txMap.choropleth(dataSetTX);    
 flSeries = flMap.choropleth(dataSetFL);
 ```
 
 Now, it's time to enable the drill down interactivity in our map.
-
 
 ## Drill Down Map
 
@@ -104,8 +100,8 @@ usaMap.drillDownMap({
     "US.FL": flMap
 });
 
-// set the selectionMode    
-usaMap.interactivity({selectionMode: "drillDown"});
+// set the Selection Mode    
+usaMap.interactivity().selectionMode("drillDown");
 ```
 
 Note that using this method requires setting the {api:anychart.charts.Map#interactivity}.interactivity(){api} method into drillDown mode.
@@ -114,7 +110,6 @@ Note that using this method requires setting the {api:anychart.charts.Map#intera
 
 By default, the {api:anychart.charts.Map#drillUp}.drillUp(){api} method is performed on "Esc" click, so use Esc to open the map of the previous level in the sample.
 
-
 ## Adjust settings
 
-The sample demonstrated in this article is rather simple, but it can be upgraded and adjusted in dependancy of your needs and preferences. Check the [Methods](Methods) and [AJAX Tutorial](AJAX_Tutorial) articles to know all about special drilldown methods and to understand how to upgrade it if necessary. For example, you can create breadcrumbs - find information about them in the [Breadcrumbs](Breadcrumbs) article.
+The sample demonstrated in this article is a simple one, but it can be improved and adjusted as you need. Check the [Methods](Methods) and [AJAX Tutorial](AJAX_Tutorial) articles to know all about special drill down methods and to understand how to use them.
