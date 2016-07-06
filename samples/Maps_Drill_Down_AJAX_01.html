@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
 <head>
-    <script src="http://cdn.anychart.com/js/7.10.1/anychart-bundle.min.js"></script>
+    <script src="../anychart-bundle.min.js"></script>
     <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export = "true"></script>    
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" data-export = "true"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css" />
   <style>
     html, body, #container {
       width: 100%;
@@ -23,7 +23,7 @@ anychart.onDocumentReady(function () {
     usaMap = anychart.map();    
 
     // set the data for the USA map
-    usaDataSet = anychart.data.set([
+    dataSetUSA = anychart.data.set([
         {"id": "US.TX", "value": 26956958},
         {"id": "US.FL", "value": 19552860}
     ]);
@@ -92,7 +92,7 @@ anychart.onDocumentReady(function () {
     // set the geodata
     usaMap.geoData(anychart.maps.united_states_of_america);
     // set the series
-    usaSeries = usaMap.choropleth(usaDataSet);
+    usaSeries = usaMap.choropleth(dataSetUSA);
 
     // draw the USA map
     usaMap.container("container");
