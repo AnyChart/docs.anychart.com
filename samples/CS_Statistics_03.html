@@ -12,21 +12,21 @@ anychart.onDocumentReady(function() {
 
   // set data and create a pie chart
   chart = anychart.pie([
-    ['Elms', 521],
-    ['Fraxini', 338],
-    ['Maples', 1395],
-    ['Oaks', 957],
-    ['Pines', 1866],
+    ["Elms", 521],
+    ["Fraxini", 338],
+    ["Maples", 1395],
+    ["Oaks", 957],
+    ["Pines", 1866],
   ]);
 
   // get statistical data (the sum of all the values)
  numberOfTrees = chart.getStat("sum");
 
   // set the title of the chart
-  chart.title('There are ' + numberOfTrees + ' trees in the forest.');
+  chart.title("There Are " + numberOfTrees + " Trees in the Forest");
   
   // set the container id for the chart
-  chart.container('container');
+  chart.container("container");
 
   // initiate drawing the chart
   chart.draw();
