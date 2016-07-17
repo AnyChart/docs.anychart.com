@@ -21,6 +21,12 @@ Here is a sample chart where maximum bubble size and number of points is obtaine
 
 {sample}CS\_Statistics\_01{sample}
 
-Martian Height
+The Height of Martians (1)
 
 {sample}CS\_Statistics\_02{sample}
+
+Trees in a Forest
+
+{sample}CS\_Statistics\_0e{sample}
+
+The Height of Martians (2)

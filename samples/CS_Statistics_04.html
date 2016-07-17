@@ -7,10 +7,9 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">
-    
+
 anychart.onDocumentReady(function() {
-  
-  // create a data set
+  // create data set
   dataSet = anychart.data.set([
     ['1800', 170, 161],
     ['1820', 171, 164],
@@ -44,11 +43,14 @@ anychart.onDocumentReady(function() {
   femaleMartians.name('Female Martians');
   femaleMartians.color("#E93F39"); 
 
-  // get statistical data (the average of all the Y values on the data plot)
-  totalAverage = chart.getStat("dataPlotYAverage");
+  // get statistical data (the average of all the Y values on the first series)
+  maleAverage = maleMartians.getStat("seriesYAverage");
+
+  // get statistical data (the average of all the Y values on the second series)
+  femaleAverage = femaleMartians.getStat("seriesYAverage");
 
   // set the title of the chart
-  chart.title('The average height of Martians from 1800 to 2000 is ' + totalAverage + '.');
+  chart.title('The average height of male Martians from 1800 to 2000 is ' + maleAverage + '. The average height of females is ' + femaleAverage + '.');
   
   // set the title of the y-axis
   chart.yAxis().title('Average Height (cm)');
@@ -61,8 +63,7 @@ anychart.onDocumentReady(function() {
 
   // initiate drawing the chart
   chart.draw();
-});
-</script>
+});</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
