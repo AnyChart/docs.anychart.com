@@ -19,12 +19,12 @@
         [3, 8, 20]
     ]);
 
-    // get statistical data (the maximal bubble size and the mumber of the bubbles)
+    // get statistical data (the maximum bubble size and the mumber of the bubbles)
     var bubbleMaxSize = chart.getStat("dataPlotBubbleMaxSize");
 	var pointsCount = chart.getStat(anychart.enums.Statistics.DATA_PLOT_POINT_COUNT);
 
     // set the title of the chart
-    chart.title('There are ' + pointsCount + 'bubbles. The maximal bubble size is ' + bubbleMaxSize + '.');
+    chart.title('There are ' + pointsCount + 'bubbles. The maximum bubble size is ' + bubbleMaxSize + '.');
 
     // set the container id for the chart 
     chart.container("container");

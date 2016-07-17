@@ -27,6 +27,8 @@ The Height of Martians (1)
 
 Trees in a Forest
 
-{sample}CS\_Statistics\_0e{sample}
+{sample}CS\_Statistics\_03{sample}
 
 The Height of Martians (2)
+
+{sample}CS\_Statistics\_04{sample}
