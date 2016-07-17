@@ -8,56 +8,56 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">
 anychart.onDocumentReady(function() {
-  // create data set
+  // create a data set
   dataSet = anychart.data.set([
-    ['1800', 170, 160],
-    ['1820', 172, 164],
+    ['1800', 170, 161],
+    ['1820', 171, 164],
     ['1840', 174, 168],
-    ['1860', 174, 170],
-    ['1880', 176, 172],
+    ['1860', 175, 170],
+    ['1880', 175, 172],
     ['1900', 180, 174],
-    ['1920', 182, 174],
+    ['1920', 181, 174],
     ['1940', 184, 176],
-    ['1960', 184, 180],
+    ['1960', 185, 180],
     ['1980', 186, 182],
     ['2000', 188, 182]
   ]);
 
   // map data for the first series
-  data_maleMartian = dataSet.mapAs({x: [0], value: [1]});
+  data_maleMartians = dataSet.mapAs({x: [0], value: [1]});
 
   // map data for the second series
-  data_femaleMartian = dataSet.mapAs({x: [0], value: [2]});
+  data_femaleMartians = dataSet.mapAs({x: [0], value: [2]});
 
-  // create line chart
+  // create a line chart
   chart = anychart.line();
 
-  // create first series with mapped data
-  maleMartian = chart.line(data_maleMartian);
-  maleMartian.name('Male Martians');
-  maleMartian.color("#398CEA");   
+  // create the first series with mapped data
+  maleMartians = chart.line(data_maleMartians);
+  maleMartians.name('Male Martians');
+  maleMartians.color("#398CEA");   
 
-  // create second series with mapped data
-  femaleMartian = chart.line(data_femaleMartian);
-  femaleMartian.name('Female Martians');
-  femaleMartian.color("#E93F39"); 
+  // create the second series with mapped data
+  femaleMartians = chart.line(data_femaleMartians);
+  femaleMartians.name('Female Martians');
+  femaleMartians.color("#E93F39"); 
 
-  // get statistical data (average of all the Y values on the data plot)
+  // get statistical data (the average of all the Y values on the data plot)
   totalAverage = chart.getStat("dataPlotYAverage");
 
-  // set chart title text settings
-  chart.title('Average Martian Height from 1800 to 2000 is ' + totalAverage);
+  // set the title of the chart
+  chart.title('The average height of Martians from 1800 to 2000 is ' + totalAverage + '.');
   
-  // set yAxis title
+  // set the title of the y-axis
   chart.yAxis().title('Average Height (cm)');
 
-    // turn the legend on
+  // turn the legend on
   chart.legend(true);
 
-  // set container id for the chart
+  // set the container id for the chart
   chart.container('container');
 
-  // initiate chart drawing
+  // initiate drawing the chart
   chart.draw();
 });
 </script>
