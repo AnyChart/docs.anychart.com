@@ -81,13 +81,13 @@ anychart.onDocumentReady(function() {
     grouping = chart.grouping();
 
     // set the max number of points
-    grouping.maxVisiblePoints(20);
+    grouping.maxVisiblePoints(10);
 
     grouping.levels([
         {unit: 'year', count: 5},
         {unit: 'year', count: 10},
-        {unit: 'year', count: 20}
-        ]);
+        {unit: 'year', count: 50}
+    ]);
     
     chart.container('container');
     chart.draw();

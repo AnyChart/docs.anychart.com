@@ -34,6 +34,12 @@ anychart.onDocumentReady(function () {
     // set the minimum point width
     grouping.minPixPerPoint(10);
 
+    grouping.levels([
+        {unit: 'month', count: 1},
+        {unit: 'month', count: 6},
+        {unit: 'month', count: 12}
+    ]);    
+
     chart.container("container");
     chart.draw();
 });
