@@ -73,10 +73,10 @@ anychart.onDocumentReady(function() {
   	// begin creating a subtitle with the information on the selected points
     subtitleText = "<span style='font-size:12'>" + selectedPointYear + ": ";
     // loop through the array of the selected points
-    e.points.forEach(function(item){
+    for (var i = 0; i < e.points.length; i++) {
       // get the name of the series a selected point belongs to and the value of the point
-      subtitleText += item.getSeries().name() + " — " + item.getStat("value") + ", ";
-    });
+      subtitleText += e.points[i].getSeries().name() + " — " + e.points[i].getStat("value") + ", ";
+    }
     // remove the extra comma at the end of the subtitle and close the <span> tag
     subtitleText = subtitleText.slice(0, subtitleText.length - 2) + "</span>";
     // update the title with the subtitle
