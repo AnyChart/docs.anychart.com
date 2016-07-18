@@ -53,16 +53,15 @@
   // set the titleFormatter for the chart
   chart.a11y().titleFormatter(function(e){
     var chart = this.chart;
-    return "Series Y sum: " + chart.getStat("dataPlotYSum") + "\n" +
-                "Series Y minimum: " + chart.getSeries(0).getStat("seriesYMin") + "\n" +
-                "Series Y maximum: " + chart.getSeries(0).getStat("seriesYMax");
+    return "Data Plot Y Sum is " + chart.getStat("dataPlotYSum") + "\n" +
+                "First Series Y minimum is " + chart.getSeries(0).getStat("seriesYMin") + "\n" +
+                "First Series Y maximum is " + chart.getSeries(0).getStat("seriesYMax");
   });
 
   // set the titleFormatter for the series
   series2014.a11y().titleFormatter(function(e){
     var series = this.series;
-    //debugger;
-    return "This series named " + series.name() + " has its maximum value in $" + series.getStat("seriesYMax") + ", the average in $" +  chart.getSeries(1).getStat("average") + " and minimum value in $" + chart.getSeries(1).getStat("seriesYMin");
+    return "This series named " + series.name() + " has its maximum value in $" + series.getStat("seriesYMax") + ", the average in $" +  series.getStat("average") + " and minimum value in $" + series.getStat("seriesYMin");
   });
 
   // draw
