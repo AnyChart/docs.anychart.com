@@ -26,7 +26,7 @@ The default Accessibility mode is ["Chart Elements"](chart_elements_mode), which
 
 ## Enable/Disable
 
-To make a chart accessible for everyone, we need to enable the {api:}.a11y(){api} method of the chart or series, which means "accessibility". Accessibility support is enabled by default, but in case you have switched it off and need to enable it back again, use {api}.enable(){api}.
+To make a chart accessible for everyone, we need to enable the {api:anychart.core.Chart#a11y}a11y(){api} method of the chart or series, which means "accessibility". Accessibility support is enabled by default, but in case you have switched it off and need to enable it back again, use {api:anychart.core.utils.ChartA11y#enabled}enable(){api}.
 
 ```
 // enable the accessibility of the chart
@@ -50,7 +50,7 @@ series.a11y(true);
 
 ## Accessible Elements
 
-Before we pass to some specific settings of accessibility support, let's prepare our chart's elements. We need to set the chart title and series titles through the {api:}.a11y(){api} method to make them recognized and readable by VoiceOver. Let's use the {api:}.titleFormatter(){api} method for both chart and series.
+Before we pass to some specific settings of accessibility support, let's prepare our chart's elements. We need to set the chart title and series titles through the {api:anychart.core.Chart#a11y}a11y(){api} method to make them recognized and readable by VoiceOver. Let's use the {api:anychart.core.utils.ChartA11y#titleFormatter}titleFormatter(){api} method for both chart and series.
 
 ```
   // set the titleFormatter for the chart
@@ -74,11 +74,11 @@ The next part of the article tells about accessibility modes: in dependency of t
 
 ## Accessibility Modes
 
-AnyChart supports two modes of accessibility: representing the chart/series elements as chart elements or as elements of a table. Choose the one you prefer and use the {api:}mode(){api} method to set it. Two following samples demonstrate both modes and the difference between them.
+AnyChart supports two modes of accessibility: representing the chart/series elements as chart elements or as elements of a table. Choose the one you prefer and use the {api:anychart.core.utils.ChartA11y#mode}mode(){api} method to set it. Two following samples demonstrate both modes and the difference between them.
 
 ## Chart Elements Mode
 
-The "chartElements" mode is enabled by default. In this mode, the VoiceOver informs a user, which hot-keys usage leads to interacting with which element of a chart. The chart title, taken from {api:}titleFormatter(){api} or from {api:}title(){api} method, is transformed into an ARIA tag of the corresponding SVG element.
+The "chartElements" mode is enabled by default. In this mode, the VoiceOver informs a user, which hot-keys usage leads to interacting with which element of a chart. The chart title, taken from *titleFormatter()* or from *title()* methods, is transformed into an ARIA tag of the corresponding SVG element.
 
 ```
 // set the accessibility mode as chart elements
@@ -91,7 +91,7 @@ Note that setting the mode to the chart does not affect the series.
 
 ## Data Table Mode
 
-In this mode, an invisible table is being generated on a chart. This table contains the chart title (taken from {api:}.titleFormatter(){api} or from {api:}.title(){api} method) as the table's head, and all information shown on the chart is transformed into a table structure, i.e. as cells, and the VoiceOver reads it appropriately. The navigation between cells is organized through the hot-keys, no interaction with the chart is supposed. 
+In this mode, an invisible table is being generated on a chart. This table contains the chart title (taken from *titleFormatter()* or from *title()* methods) as the table's head, and all information shown on the chart is transformed into a table structure, i.e. as cells, and the VoiceOver reads it appropriately. The navigation between cells is organized through the hot-keys, no interaction with the chart is supposed. 
 
 ```
 // set the accessibility mode as table data
