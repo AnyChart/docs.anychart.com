@@ -1,13 +1,12 @@
 #Accessibility (508 Section)
 
 * [What is Section 508](#what_is_section_508)
+* [Default](#default)
 * [Enable/Disable](#enable/disable)
 * [Accessible Elements](#accessible_elements)
 * [Accessibility Modes](#accessibility_modes)
 * [Chart Elements Mode](#chart_elements_mode)
 * [Data Table mode](#data_table_mode)
-* [Defaults](#defaults)
-
 
 ## What is Section 508
 
@@ -73,11 +72,11 @@ Before we pass to some specific settings of accessibility support, let's prepare
 
 The next part of the article tells about accessibility modes: in dependency of the chosen mode this information will be transformed differently.
 
-### Accessibility Modes
+## Accessibility Modes
 
 AnyChart supports two modes of accessibility: representing the chart/series elements as chart elements or as elements of a table. Choose the one you prefer and use the {api:}mode(){api} method to set it. Two following samples demonstrate both modes and the difference between them.
 
-#### Chart Elements Mode
+## Chart Elements Mode
 
 The "chartElements" mode is enabled by default. In this mode, the VoiceOver informs a user, which hot-keys usage leads to interacting with which element of a chart. The chart title, taken from {api:}titleFormatter(){api} or from {api:}title(){api} method, is transformed into an ARIA tag of the corresponding SVG element.
 
@@ -90,7 +89,7 @@ chart.a11y().mode("chartElements")
 
 Note that setting the mode to the chart does not affect the series.
 
-### Data Table Mode
+## Data Table Mode
 
 In this mode, an invisible table is being generated on a chart. This table contains the chart title (taken from {api:}.titleFormatter(){api} or from {api:}.title(){api} method) as the table's head, and all information shown on the chart is transformed into a table structure, i.e. as cells, and the VoiceOver reads it appropriately. The navigation between cells is organized through the hot-keys, no interaction with the chart is supposed. 
 
