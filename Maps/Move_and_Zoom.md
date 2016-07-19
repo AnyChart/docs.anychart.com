@@ -31,92 +31,90 @@ When there is a point selected or a couple of them, it's possible to copy some i
 To enable or disable al interactive features we use {api:anychart.charts.Map#interactivity}.interactivity(){api} method. Set "true" or "false" to the method depending if you'd like to enable the map interactivity or disable.
 
 ```
-    // disable all interactivity
-    map.interactivity(false);
+// disable all interactivity
+map.interactivity(false);
 ```
 
 {sample}Maps\_Move\_and\_Zoom\_01{sample}
 
 ### Text
 
-The text that you get from the point can be adjusted by using the {api:anychart.core.utils.MapInteractivity#copyFormatter}.copyFormatter(){api} method. Look at the sample below. Select several points and use copying hotkeys to get those points' data.
+It's possible to get some information about the points directly in your clipboard by selecting a region or a couple of them and using Copy & Paste hotkeys. The text with information that you get from the point can be adjusted by using the {api:anychart.core.utils.MapInteractivity#copyFormatter}.copyFormatter(){api} method. Look at the sample below. Select several points and use copying hotkeys to get those points' data.
 
 ```
-    currentInteractivity = map.interactivity();
+currentInteractivity = map.interactivity();
 
-    // Adjust the text
-    currentInteractivity.copyFormatter(function() {
-        return "There are "+ this.point.get("value") + " sheep farms in " +  this.point.getFeatureProp()["name"];
-    });
+// Adjust the text
+currentInteractivity.copyFormatter(function() {
+    return "There are "+ this.point.get("value") + " sheep farms in " +  this.point.getFeatureProp()["name"];
+});
 ```
 
 {sample}Maps\_Move\_and\_Zoom\_02{sample}
 
 ### Zoom
 
-Zooming feature uses mouse wheel to zoom the map in relation to the bind. To enable it use {api:anychart.core.utils.MapInteractivity#mouseWheel}.mouseWheel(){api} method.
+To enable a mouse wheel zooming feature use {api:anychart.core.utils.MapInteractivity#mouseWheel}.mouseWheel(){api} method.
 
 ```
-    // Enables the mouse wheel
-    currentInteractivity.mouseWheel(true);
+// Enables the mouse wheel
+map.interactivity().mouseWheel(true);
 ```
 
 {sample}Maps\_Move\_and\_Zoom\_03{sample}
 
-Note that when the mouse wheel zooming is enabled, it becomes possible to zoom a point by double-clicking it.
-
-Another useful feature is general zoom. Use {api:anychart.charts.Map#zoom}.zoom(){api} with a zoom factor as the method argument to zoom the map. In the next sample the 2x zoom is being performed when you click the button.
+You can also control zoom using the {api:anychart.charts.Map#zoom}.zoom(){api} method with a zoom factor as the method argument. If you add two more params - X and Y coordinates, the map will be zoomed to this certain point, unless the center point of the map will be considered as the target zooming point. In the next sample the 2x zoom is being performed when you click the button.
 
 ```
-    // Zoom map in 2 times.
-    australiaMap.zoom(2);
+// Zoom map in 2 times.
+map.zoom(2);
 ```
 
 {sample}Maps\_Move\_and\_Zoom\_04{sample}
 
-Another zooming option provided by our component is zooming to a some point. While {api:anychart.charts.Map#zoom}.zoom(){api} takes the central point of a map as the target zooming point, the {api:anychart.charts.Map#zoomTo}.zoomTo(){api} method allows to set this target point ahead. In the next sample, click twice any point you prefer; the map will be zoomed to this point.
+Another way to zoom a map is using {api:anychart.charts.Map#zoomTo}.zoomTo(){api}. This method also uses three parameters: zooming factor, X and Y coordinates. In the next sample, click any point you prefer; the map will be zoomed in this point's direction.
 
 ```
-    // set zoom
-    australiaMap.listen("click", function(evt) {
-        if (clickNum == 0){                 
-            australiaMap.zoomTo(5, evt.clientX, evt.clientY);
-            clickNum = 1
-        }
-            else {
-            australiaMap.zoomTo(0.2, evt.clientX, evt.clientY);
-            clickNum = 0
-        }
-    });
+// set zoom
+var clicked = true;
+map.listen("click", function(evt) {
+    if (clicked) {                 
+        map.zoomTo(3, evt.clientX, evt.clientY);
+    }
+    else {
+        map.zoomTo(0, evt.clientX, evt.clientY);
+    }
+clicked = !clicked;
+});
 ```
 
 {sample}Maps\_Move\_and\_Zoom\_05{sample}
 
-Note that {api:anychart.charts.Map#zoomTo}.zoomTo(){api} requires not only the zoom factor but the target point coordinates as well. If those are not set, the center point of the map will be considered as the target zoom point.
+Note the difference between the previous two methods. When you call {api:anychart.charts.Map#zoom}.zoom(){api} multiple times, the map will be zoomed as many times as the method was called, while using {api:anychart.charts.Map#zoomTo}.zoomTo(){api} will zoom the map only once to the defined factor.
 
-There is another popular feature - zooming to a particular region on a map. Use the {api:anychart.charts.Map#zoomToFeature}.zoomToFeature(){api} method to enable it.
+The third zooming method is zooming to a particular region on a map using {api:anychart.charts.Map#zoomToFeature}.zoomToFeature(){api}.
 
 ```
-    // zoom to a region
-    australiaMap.listen('pointClick', function(e) {
-        australiaMap.zoomToFeature(e.point.get('id'));
-    })
+// zoom to a region
+map.listen('pointClick', function(e) {
+    map.zoomToFeature(e.point.get('id'));
+})
 ```
 
 {sample}Maps\_Move\_and\_Zoom\_06{sample}
 
-Note that here we used a listener to catch the click on a region. Read about listeners in the [Map Event Listener article](Event_Listeners).
+Note that event listener is used to handle region click event. Read more about event listeners in the [Map Event Listener article](Event_Listeners).
 
 ### Move
 
-Set the {api:anychart.charts.Map#move}.move(){api} method to the map with X-axis and Y-axis intervals set as arguments.
+Use the {api:anychart.charts.Map#move}.move(){api} method to the map with X and Y shifts as arguments, if you need to move the map on the defined distance.
 
 In this sample there are arrow buttons created that are intended to move the map.
 
 ```
-    // up button
-    australiaMap.move(0, 10);
+// up button
+map.move(0, 10);
 ```
 
-{sample}Maps\_Move\_and\_Zoom\_06{sample}
+{sample}Maps\_Move\_and\_Zoom\_07{sample}
 

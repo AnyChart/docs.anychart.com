@@ -7,7 +7,7 @@
   <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
-  <script x-export="chart">
+  <script x-export="map">
 anychart.onDocumentReady(function() {
     
     // create data set
@@ -68,28 +68,25 @@ anychart.onDocumentReady(function() {
     var dataSetForSeries = dataSet.mapAs({id: "id"});
 
     // create the map
-    usaMap = anychart.map();
-    usaMap.geoData(anychart.maps.united_states_of_america);
+    map = anychart.map();
+    map.geoData(anychart.maps.united_states_of_america);
 
     // set the map title
-    usaMap.title("Zoom map to a selected region");
+    map.title("Zoom map to a selected region");
 
     // set the series
-    usaMap.choropleth(dataSetForSeries);
-
-    // set the interactivity variable
-    var currentInteractivity = usaMap.interactivity();
+    map.choropleth(dataSetForSeries);
 
     // zoom to a region
-    usaMap.listen('pointClick', function(e) {
-        usaMap.zoomToFeature(e.point.get('id'));
+    map.listen('pointClick', function(e) {
+        map.zoomToFeature(e.point.get('id'));
     })
 
     // set the container
-    usaMap.container("container");
+    map.container("container");
 
     // draw the map
-    usaMap.draw();
+    map.draw();
 });
     </script>
 

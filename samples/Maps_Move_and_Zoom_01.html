@@ -67,23 +67,23 @@ anychart.onDocumentReady(function() {
     var dataSetForSeries = dataSet.mapAs({id: "id"});
 
     // create a map
-    usaMap = anychart.map();
-    usaMap.geoData(anychart.maps.united_states_of_america);
+    map = anychart.map();
+    map.geoData(anychart.maps.united_states_of_america);
 
     // set the map title
-    usaMap.title("Disable all interactivity");
+    map.title("Disable all interactivity");
     
     // set the choropleth series
-    usaMap.choropleth(dataSetForSeries);
+    map.choropleth(dataSetForSeries);
 
     // disable all interactivity
-    usaMap.interactivity(false);
+    map.interactivity(false);
 
     // set the container
-    usaMap.container("container");
+    map.container("container");
 
     // draw the map
-    usaMap.draw();
+    map.draw();
 });
     </script>
 
