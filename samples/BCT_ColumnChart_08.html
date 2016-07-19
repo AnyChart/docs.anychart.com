@@ -23,18 +23,19 @@
   var Sales2004 = data.mapAs({x: [0], value: [2]});
   
   // chart type
-  var chart = anychart.column();
+  chart = anychart.column();
 
   // set first series data
   var series1 = chart.column(Sales2003);
+  series1.name("2003");
 
   // set tooltip
   var tooltip1 = series1.tooltip();
   tooltip1.title("Information");
-  tooltip1.textFormatter(function() {
-    return "Manager: " + this.x + 
-      "\nSales: " + this.value + 
-      "\nPeriod: Year 2003";
+  tooltip1.textFormatter(function(e) {
+    return "Manager: " + e.x + 
+      "\nSales: " + e.value + 
+      "\nPeriod: " + e.series.name();
   });
 
   var labels1 = series1.labels();
@@ -47,6 +48,7 @@
 
   // set data and adjust second series
   var series2 = chart.column(Sales2004);
+  series2.name("2004");
 
   // set series labels
   var labels2 = series2.labels();
@@ -60,11 +62,7 @@
   // tune series tooltip
   var tooltip2 = series2.tooltip();
   tooltip2.title("Information");
-  tooltip2.textFormatter(function() {
-    return "Manager: " + this.x + 
-      "\nSales: " + this.value + 
-      "\nPeriod: Year 2004";
-  });
+  tooltip2.textFormatter("Manager: {%x}\nSales: {%Value}\nPeriod: {%SeriesName}");
   
   // set title
   chart.title("Labels and Tooltips");

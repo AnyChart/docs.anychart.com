@@ -27,7 +27,7 @@
   var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
 
   // chart type
-  var chart = anychart.area();
+  chart = anychart.area();
 
   // chart title
   chart.title("Percent Stacked Area Chart");
@@ -44,9 +44,7 @@
 
   // set yAxis labels formatting, force it to add % to values
   var yLabels = chart.yAxis();
-  yLabels.labels().textFormatter(function(info) {
-    return info.value + "%";
-  });
+  yLabels.labels().textFormatter("{%Value}%");
 
   chart.area(seriesData_1);
   chart.area(seriesData_2);

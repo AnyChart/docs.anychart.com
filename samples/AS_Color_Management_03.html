@@ -32,7 +32,7 @@
   ]);
   
   // chart type
-  var chart = anychart.column();
+  chart = anychart.column();
   
   chart.title("Blend Colors Sample");
 
@@ -45,7 +45,7 @@
     var mixColor2 = anychart.color.blend(color1, color2, (this.index * 0.2));
     return "Input Color: " + color1 +
       "\nBlend Color: " + color2 +
-      "\nBlend Ration: " + this.index * 2 / 10 +
+      "\nBlend Ratio: " + this.index * 2 / 10 +
       "\nResult: " + mixColor2.join(",");
   });
   

@@ -21,7 +21,7 @@
   var seriesData_2 = data.mapAs({x: [0], value: [3], size:[4]});
 
   // chart type
-  var chart = anychart.scatter();
+  chart = anychart.scatter();
 
   // set title
   chart.title("Labels and Tooltips");
@@ -36,9 +36,6 @@
   labels1.position("top");
   labels1.fontSize(15);
   labels1.fontWeight("bold");
-  labels1.textFormatter(function(point){
-    return point.value + ".00";
-  });
 
   // set tooltip title
   var tooltip1 = series1.tooltip();
@@ -46,9 +43,9 @@
 
   // set and adjust tooltip content
   tooltip1.textFormatter(function() {
-    return "Sales: Product " + this.x.toString() +
-      "\nUnit: " + this.value + ".00\nYear: 2003" +
-      "\nProfit: $" + this.size + ".00";
+    return "Sales: Product " + this.x +
+      "\nUnit: " + this.value + "\nYear: 2003" +
+      "\nProfit: $" + this.size;
   });
 
   // set series data
@@ -65,9 +62,7 @@
   labels2.position("top");
   labels2.fontSize(15);
   labels2.fontWeight("bold");
-  labels2.textFormatter(function(point){
-    return point.value + ".00";
-  });
+  labels2.textFormatter("{%Value}");
 
   // set tooltip title
   var tooltip2 = series2.tooltip();
@@ -75,9 +70,9 @@
 
   // set and adjust tooltip content
   tooltip2.textFormatter(function() {
-    return "Sales: Product " + this.x.toString() + 
-      "\nUnit: " + this.value + ".00\nYear: 2004" + 
-      "\nProfit: $" + this.size + ".00";
+    return "Sales: Product " + this.x + 
+      "\nUnit: " + this.value + "\nYear: 2004" + 
+      "\nProfit: $" + this.size;
   });
   
   var xScale = chart.xScale();
@@ -94,12 +89,6 @@
   var yAxis = chart.yAxis();
   yAxis.title("Sales");
   
-  // format x axis labels
-  var xLabels = chart.xAxis().labels();
-  xLabels.textFormatter(function(){
-    return "Product " + this.value.toString();
-  });
-
   // draw
   chart.container("container");
   chart.draw();

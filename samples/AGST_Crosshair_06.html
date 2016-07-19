@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // define chart
-  var chart = anychart.financial();
+  chart = anychart.financial();
 
   // crosshair settings
   var crosshair = chart.crosshair();
@@ -33,24 +33,11 @@
   // set custom function for formatting y crossshair label
   var yCrossLabel = crosshair.yLabel();
   yCrossLabel.textFormatter(function(){
-    var dollars = "$ " + formatter(this.value);
-    var euro = "€ " + formatter(this.value*0.91);
-    var yuan = "¥ " + formatter(this.value*6.40);
+    var dollars = "$ " + this.value.toFixed(2);
+    var euro = "€ " + (this.value*0.91).toFixed(2);
+    var yuan = "¥ " + (this.value*6.40).toFixed(2);
     return euro + "\n"+ dollars + "\n" + yuan;
   });
-
-  function formatter(value){
-    // dispose from fractional part of the value
-    var shortValue = value.toFixed(0);
-    var main = "";
-    // insert space before each three figures fo the number 
-    for (var i=1;(i*3)<shortValue.length;i++)
-      main = " "+shortValue.substr(shortValue.length-(i*3), 3) + main;
-    // format value and insert space if needed
-    var tail = shortValue.substr(0, shortValue.length-(main.length-main.length/4));
-    // return formatted value
-    return tail+main;
-  }
 
   var xScale = chart.xScale();
   xScale.minimum(Date.UTC(2010, 0, 1));

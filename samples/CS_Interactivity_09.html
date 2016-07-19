@@ -32,13 +32,11 @@
   var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
 
   // create line chart
-  var chart = anychart.column();
+  chart = anychart.column();
 
   // adding dollar symbols to yAxis labels
   var yLabels = chart.yAxis().labels();
-  yLabels.textFormatter(function(){
-    return "$" + this.value
-  });
+  yLabels.textFormatter("${%Value}");
 
   // turn on chart animation
   chart.animation(true);
@@ -53,10 +51,6 @@
   // create second series with mapped data
   var series_2 = chart.column(seriesData_2);
   series_2.name("Sirius Cybernetics Corp. Share Price");
-
-  // create second series with mapped data
-  var series_2 = chart.column(seriesData_2);
-  series_2.name("The Competitor's Share Price");
 
   // turn the legend on
   var legend = chart.legend();

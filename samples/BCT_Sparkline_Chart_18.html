@@ -7,8 +7,8 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-    var stage = anychart.graphics.create("container");
+    <script x-export="stage">anychart.onDocumentReady(function() {
+  stage = anychart.graphics.create("container");
   // create charts
   chart1 = anychart.sparkline();
   chart2 = anychart.sparkline();
@@ -18,8 +18,7 @@
   chart2.container(stage);
   chart1.title(true);
   chart2.title(true);
-  // chart1.title().width(155);
- // chart3.title().width(155);
+
   chart1.title().text("WL 1");
   chart2.title().text("WL 2");
 
@@ -30,9 +29,9 @@
   
   // set charts dimensions and position
   chart1.bounds(0, 0, 300, 40);
-    chart1.type("wl");  
+  chart1.type("wl");  
   chart2.bounds(0, 50, 300, 40);
-    chart2.type("wl");  
+  chart2.type("wl");  
 	
   // colorize our charts
   chart1.negativeHatchFill("checkerboard");

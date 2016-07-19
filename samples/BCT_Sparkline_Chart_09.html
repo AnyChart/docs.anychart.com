@@ -7,8 +7,8 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-    var stage = anychart.graphics.create("container");
+    <script x-export="stage">anychart.onDocumentReady(function() {
+  stage = anychart.graphics.create("container");
   // create charts
   chart1 = anychart.sparkline();
   chart2 = anychart.sparkline();
@@ -27,13 +27,13 @@
 
   // set charts dimensions and position
   chart1.bounds(0, 0, 400, 40);
-    chart1.type("column");    
+  chart1.type("column");    
   chart2.bounds(0, 50, 400, 40);
-    chart2.type("wl");
+  chart2.type("wl");
     
   // set width of the columns
-    chart1.pointWidth("50%");
-    chart2.pointWidth(25);
+  chart1.pointWidth("50%");
+  chart2.pointWidth(25);
   
   // initiate chart drawing
   chart1.draw();

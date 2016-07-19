@@ -24,7 +24,7 @@ Pyramid chart is a kind of [Funnel chart](../Basic_Charts_Types/Funnel_Chart) th
 To create html5 Pyramid chart with AnyChart you have to set {api:anychart#pyramid}**.pyramid()**{api} method.
 
 ```
-  var chart = anychart.pyramid();
+var chart = anychart.pyramid();
 ```
 
 Let's take a look at the sample data set that shows the number of different genres sold in local bookstore «Nerds Inc.» in 2005.
@@ -60,13 +60,13 @@ Let's take a look at the sample data set that shows the number of different genr
 Now we need to convert this data table into the format that can be used by AnyChart. Here is a snippet with the data in acceptable format.
 
 ```
-  var chart = anychart.pyramid([
-    {name: "Fantasy", value: 637166},
-    {name: "Science Fiction", value: 721630},
-    {name: "Detective", value: 148662},
-    {name: "Classics", value: 78662},
-    {name: "Textbooks", value: 90000}
-  ]);
+var chart = anychart.pyramid([
+  {name: "Fantasy", value: 637166},
+  {name: "Science Fiction", value: 721630},
+  {name: "Detective", value: 148662},
+  {name: "Classics", value: 78662},
+  {name: "Textbooks", value: 90000}
+]);
 ```
 
 You can see the web chart with this configuration below.
@@ -82,10 +82,10 @@ Base of a pyramid is the largest horizontal line of the pyramid chart. In this s
 You can set base size in pixels or in percentage ratio. Use string value for {api:anychart.charts.Pyramid#baseWidth}**.baseWidth()**{api} to define flexible base size in percentage ratio.
 
 ```
-  var chart = anychart.pyramid(data);
-  
-  // set base width to 50% of the container width
-  chart.basWidth("50%")
+var chart = anychart.pyramid(data);
+
+// set base width to 50% of the container width
+chart.baseWidth("50%")
 ```
 
 {sample}BCT\_PyramidChart\_02{sample}
@@ -97,10 +97,10 @@ You can set base size in pixels or in percentage ratio. Use string value for {ap
 By default, base of the pyramid is placed at the bottom of the chart. Use {api:anychart.charts.Pyramid#reversed}**.reversed()**{api} method to turn the pyramid upside down.
 
 ```
-  var chart = anychart.pyramid(data);
+var chart = anychart.pyramid(data);
 
-  // upend the pyramid
-  chart.reversed(true);
+// upend the pyramid
+chart.reversed(true);
 ```
 
 Here is how reversed pyramid looks like:
@@ -112,8 +112,8 @@ Here is how reversed pyramid looks like:
 As you can see, each part of a pyramid is separated from another with some space. The space between each part of pyramid chart is controlled by a {api:anychart.charts.Pyramid#pointsPadding}**.pointsPadding()**{api} parameter. Next sample of the pyramid chart has no spacing.
 
 ```
-  // disable spacing between parts of the chart
-  chart.pointSpacing(0);
+// disable spacing between parts of the chart
+chart.pointSpacing(0);
 ```
 
 Here is how the pyramid chart without spacing looks like.
@@ -183,12 +183,10 @@ Position of the labels is controlled by {api:anychart.core.ui.LabelsFactory#posi
 If you are using **outsideLeft** or **outsideRight** you can adjust length of labels connectors. Use {api:anychart.charts.Pyramid#connectorLength}**.connectorsLength()**{api} parameter to set custom length for all labels connectors.
 
 ```
-  var chart = anychart.pyramid(data);
-  
-  chart.labels()
-    .position('outsideRight');  // place labels to the right
-    
-  chart.connectorLength(45);    // set 45px connectors length
+var chart = anychart.pyramid(data);
+
+chart.labels().position('outsideRight');  // place labels to the right    
+chart.connectorLength(45);    // set 45px connectors length
 ```
 
 Using these settings we have set each label 45px to the right from the each pyramid point. Using {api:anychart.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method we can adjust content for the labels.
@@ -200,9 +198,9 @@ Using these settings we have set each label 45px to the right from the each pyra
 After adjusting content of the pyramid labels some of them moved to prevent overlapping. You can control overlapping using {api:anychart.charts.Pyramid#overlapMode}**.overlapMode()**{api}. Sample below demonstrates labels with allowed overlapping state.
 
 ```
-  var chart = anychart.pyramid(data);
-  // allow labels overlapping
-  chart.overlapMode("allowOverlap");
+var chart = anychart.pyramid(data);
+// allow labels overlapping
+chart.overlapMode("allowOverlap");
 ```
 
 *Note:* if you want to hide connectors set **null** value for {api:anychart.charts.Pyramid#connectorStroke}**.connectorsStroke()**{api} method.
@@ -218,43 +216,41 @@ In this section we will explain how to tune pyramid tooltip. Method {api:anychar
 ## Markers
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element.
-  
-  
+
 In the sample below we take single-series data described above and mark the element with the biggest value in series with a "Star5" of the "Gold" color.
-  
   
 To make marker visually appealing we set its size to 12 pixels in normal state, and 15px while hovered.
 
 ```
-  var chart = pyramid([
-    {name: "Fantasy", value: 637166},
-    {
-      name: "Science Fiction", 
-      value: 721630,
-       // marker settings
-      marker:{
-       // enable marker
-        enabled: true,
-         // marker type
-        type: "star5",
-         // marker inner color
-        fill: "gold",
-         // marker size
-        size: 12,
-         // marker position
-        position: "center",
-         // marker anchor
-        anchor: "center"
-      },
-      // marker size if mouse is over
-      hoverMarker: {
-        size: 15
-      }
+var chart = pyramid([
+  {name: "Fantasy", value: 637166},
+  {
+    name: "Science Fiction", 
+    value: 721630,
+     // marker settings
+    marker:{
+     // enable marker
+      enabled: true,
+       // marker type
+      type: "star5",
+       // marker inner color
+      fill: "gold",
+       // marker size
+      size: 12,
+       // marker position
+      position: "center",
+       // marker anchor
+      anchor: "center"
     },
-    {name: "Detective", value: 148662},
-    {name: "Classics", value: 78662},
-    {name: "Textbooks", value: 90000}
-  ]);
+    // marker size if mouse is over
+    hoverMarker: {
+      size: 15
+    }
+  },
+  {name: "Detective", value: 148662},
+  {name: "Classics", value: 78662},
+  {name: "Textbooks", value: 90000}
+]);
 ```
 
 And here is a result - it's easy to notice that Science Fiction is the most popular genre and we are showing this on the chart:
@@ -270,24 +266,23 @@ Let's demonstrate how to apply different colors to different parts of pyramid. T
 ## Hatch Fills
 
 AnyChart charting library allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch tutorial](../Appearance_Settings/Hatch_Fill). 
-  
-  
+
 To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have pyramid chart with 10 points in it. For every point we've applied different hatch fills parameter. That’s how we did it in our code:
 
 ```
-  var chart = anychart.pyramid([
-  // point value    hatch fill type
-    {value: 232,    hatchFill: "diagonalcross"},
-    {value: 224,    hatchFill: "zigzag"},
-    {value: 252,    hatchFill: "horizontal"},
-    {value: 219,    hatchFill: "vertical"},
-    {value: 169,    hatchFill: "dashedbackwarddiagonal"},
-    {value: 217,    hatchFill: "grid"},
-    {value: 175,    hatchFill: "dashedforwarddiagonal"},
-    {value: 199,    hatchFill: "dashedhorizontal"},
-    {value: 297,    hatchFill: "plaid"},
-    {value: 317,    hatchFill: "weave"}
-  ]);
+var chart = anychart.pyramid([
+// point value    hatch fill type
+  {value: 232,    hatchFill: "diagonalcross"},
+  {value: 224,    hatchFill: "zigzag"},
+  {value: 252,    hatchFill: "horizontal"},
+  {value: 219,    hatchFill: "vertical"},
+  {value: 169,    hatchFill: "dashedbackwarddiagonal"},
+  {value: 217,    hatchFill: "grid"},
+  {value: 175,    hatchFill: "dashedforwarddiagonal"},
+  {value: 199,    hatchFill: "dashedhorizontal"},
+  {value: 297,    hatchFill: "plaid"},
+  {value: 317,    hatchFill: "weave"}
+]);
 ```
 
 {sample}BCT\_PyramidChart\_12{sample}

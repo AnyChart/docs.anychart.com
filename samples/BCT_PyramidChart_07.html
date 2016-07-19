@@ -17,16 +17,14 @@
     {name: "Textbooks", value: 90000}
   ];
   
-  var chart = anychart.pyramid(data);
+  chart = anychart.pyramid(data);
   
   var labels = chart.labels();
   // place labels to the right
   labels.position("outsideRight");
   // manage horizontal align
   labels.hAlign("center");
-  labels.textFormatter(function(){
-    return this.name+"\n"+this.value;
-  });
+  labels.textFormatter("{%name}\n{%value}");
 
   // set 45px connectors length
   chart.connectorLength(45);

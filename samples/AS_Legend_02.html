@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
   
   // set chart type
-  var chart = anychart.column();
+  chart = anychart.column();
 
   // legend settings
   var legend = chart.legend();
@@ -19,21 +19,19 @@
   // set source of legend items
   legend.itemsSourceMode("categories");
 
-
-
   // set data
   var series = chart.column([
     {x: "John", value: 10000},
     {x: "Jake", value: 12000},
     {x: "Peter", value: 16000}
   ]);
+
   series.name("Sales");
 
   // set chart title
   chart.title("Legend for Single Series");
 
-
-      // set container and draw chart
+  // set container and draw chart
   chart.container("container");
   chart.draw();
 });</script>

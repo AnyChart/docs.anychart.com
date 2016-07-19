@@ -50,15 +50,13 @@
   ]);
 
   // create chart
-  var chart = anychart.heatMap(dataSet);
+  chart = anychart.heatMap(dataSet);
   chart.title("Email Opens by Environment 2014");
 
   var tooltip = chart.tooltip();
   var title = tooltip.title();
   title.hAlign("center");
-  tooltip.titleFormatter(function(){
-    return this.y;
-  });
+  tooltip.titleFormatter("{%y}");
   tooltip.textFormatter(function(){
     return "Month: " + this.x + "\nOpens: " + this.heat + "%";
   });
@@ -67,9 +65,7 @@
   var labels = chart.labels();
   labels.enabled(true);
 
-  labels.textFormatter(function(){
-    return this.heat + "%"
-  });
+  labels.textFormatter("{%heat}%");
 
   var xLabels = chart.xAxis().labels();
   xLabels.textFormatter(function(){

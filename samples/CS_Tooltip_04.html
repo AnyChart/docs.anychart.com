@@ -22,7 +22,7 @@
   var data2 = data.mapAs({x: [0], value: [2]});
 
   // chart type
-  var chart = anychart.line();
+  chart = anychart.line();
 
   // set title
   chart.title("Separated Tooltip");
@@ -46,7 +46,6 @@
   tooltip2.anchor("bottomCenter");
   tooltip2.title(false);
   tooltip2.separator(false);
-
 
   var interactivity = chart.interactivity();
   interactivity.hoverMode("byX");

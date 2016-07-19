@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  var stage = acgraph.create("container");
-
   // data for chart
   var dataSet = anychart.data.set([
     [0, 80],
@@ -34,7 +32,7 @@
   ]);
 
   // chart type
-  var chart = anychart.polar();
+  chart = anychart.polar();
 
   // chart title
   chart.title("Polar Chart Plot Background Sample");
@@ -50,12 +48,6 @@
   xScale.maximum(24);
   var xTicks = chart.xScale().ticks();
   xTicks.interval(4);
-
-  // adjust content and visualisation of labels
-  var xLabels = chart.xAxis().labels();
-  xLabels.textFormatter(function(){
-    return this.value + ".00";
-  });
 
   // fill set
   var fillSettings = {
@@ -80,8 +72,8 @@
 
   chart.legend(false);
 
-      // draw chart
-  chart.container(stage);
+  // draw chart
+  chart.container("container");
   chart.draw();
 });</script>
 </head>

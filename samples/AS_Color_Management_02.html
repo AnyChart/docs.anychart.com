@@ -31,7 +31,7 @@
   ]);
   
   // chart type
-  var chart = anychart.column();
+  chart = anychart.column();
   
   chart.title("Darken Colors Sample");
 
@@ -43,7 +43,7 @@
   tooltip.textFormatter(function(){
     var mixColor2 = anychart.color.darken(color1, (this.index * 0.2));
     return "Input Color: " + color1 +
-      "\nDarken Ration: " + this.index * 2 / 10 +
+      "\nDarken Ratio: " + this.index * 2 / 10 +
       "\nResult: " + mixColor2;
   });
   

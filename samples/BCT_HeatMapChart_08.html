@@ -241,14 +241,15 @@
   ]);
 
   // set chart type
-  var chart = anychart.heatMap(data);
+  chart = anychart.heatMap(data);
   chart.title("Sales 2014");
   var labels = chart.labels();
   labels.enabled(true);
   labels.fontWeight(900);
-  labels.textFormatter(function(){
-    return "$" + this.heat
-  });
+  labels.textFormatter("${%heat}");
+
+  chart.tooltip(false);
+  
   var xLabels = chart.xAxis().labels();
   xLabels.textWrap(true);
   xLabels.hAlign("center");

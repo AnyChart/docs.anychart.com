@@ -10,7 +10,7 @@ m<html>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  var chart = anychart.polar();
+  chart = anychart.polar();
 
   // chart title
   chart.title("Axes labels settings");
@@ -39,24 +39,14 @@ m<html>
   yAxis.minorTicks(false);
 
   // set y axis labels position and format content
-  chart.yAxis().labels().offsetX(12).textFormatter(function(){
-    var value = this.value.toFixed(1);
-    // check if axis value is negative
-    if (value<0)
-      // set negative values into brackets and minus sign
-      value = "(" + (this.value * (-1)).toFixed(1) + ")";
-    return value.toString();
-  });
+  chart.yAxis().labels().offsetX(12).textFormatter("{%Value}{useNegativeSign:false}");
 
   var xLabels = chart.xAxis().labels();
   // set labels padding
   xLabels.padding(5);
   // set font weight for labels
   xLabels.fontWeight(900);
-  xLabels.textFormatter(function(){
-    // add '°' to every label of x axis
-    return this.value + "°";
-  });
+  xLabels.textFormatter("{%Value}°");
 
   // set data for first series
   var series1 = chart.line([

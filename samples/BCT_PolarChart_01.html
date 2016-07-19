@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  var chart = anychart.polar();
+  chart = anychart.polar();
 
   // chart title
   chart.title("Polar Chart");
@@ -42,12 +42,6 @@
   // set ticks interval for y scale
   var yTicks = chart.yScale().ticks();
   yTicks.interval(2);
-
-  // adjust content and visualisation of labels
-  var labels = chart.xAxis().labels();
-  labels.textFormatter(function(){
-    return this.value + ".00"
-  });
   
   chart.legend(false);
 

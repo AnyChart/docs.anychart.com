@@ -31,7 +31,7 @@
   ]);
 
   // chart type
-  var chart = anychart.column();
+  chart = anychart.column();
 
   chart.title("Lighten Colors Sample");
 
@@ -42,7 +42,7 @@
   tooltip.textFormatter(function(){
     var mixColor2 = anychart.color.lighten(color1, (this.index * 0.2));
     return "Input Color: " + color1 +
-      "\nLighten Ration: " + this.index * 2 / 10 +
+      "\nLighten Ratio: " + this.index * 2 / 10 +
       "\nResult: " + mixColor2;
   });
 
