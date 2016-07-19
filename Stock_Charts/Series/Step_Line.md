@@ -24,43 +24,43 @@ The first difference between Basic Charts and Stocks is the data defining.
 The Data in Stocks should be represented in table format and arranged as array of arrays or objects. Look at the next two samples: they demonstrate the same data differently arranged.
 
 ```
-	// set the data
-	table = anychart.data.table();
-	table.addData([
-        ['2004-01-02', 29955800],
-	    ['2004-01-05', 38892100],
-	    ['2004-01-06', 43684400],
-	    ['2004-01-07', 48757500],
-	    ['2004-01-08', 61683300],
-	    ['2004-01-09', 68856400],
-	    ['2004-01-12', 52871900],
-	    ['2004-01-13', 56334200]
-	]);
-  
-	// map the data
-	mapping = table.mapAs();
-	mapping.addField('value', 1);
+// set the data
+table = anychart.data.table();
+table.addData([
+	['2004-01-02', 29955800],
+	['2004-01-05', 38892100],
+	['2004-01-06', 43684400],
+	['2004-01-07', 48757500],
+	['2004-01-08', 61683300],
+	['2004-01-09', 68856400],
+	['2004-01-12', 52871900],
+	['2004-01-13', 56334200]
+]);
+
+// map the data
+mapping = table.mapAs();
+mapping.addField('value', 1);
 ```
 
 {sample}STOCK\_Step\_Line\_01{sample}
 
 
 ```
-	// set the data
-	table = anychart.data.table("x");
-	table.addData([
-        {'x':"2004-01-02", 'value': 29955800},
-	    {'x':"2004-01-05", 'value': 38892100},
-	    {'x':"2004-01-06", 'value': 43684400},
-	    {'x':"2004-01-07", 'value': 48757500},
-	    {'x':"2004-01-08", 'value': 61683300},
-	    {'x':"2004-01-09", 'value': 68856400},
-	    {'x':"2004-01-12", 'value': 52871900},
-	    {'x':"2004-01-13", 'value': 56334200}
-	]);
-  
-	// map the data
-	mapping = table.mapAs({'x': 'x', 'value': 'value'});	
+// set the data
+table = anychart.data.table("x");
+table.addData([
+	{'x':"2004-01-02", 'value': 29955800},
+	{'x':"2004-01-05", 'value': 38892100},
+	{'x':"2004-01-06", 'value': 43684400},
+	{'x':"2004-01-07", 'value': 48757500},
+	{'x':"2004-01-08", 'value': 61683300},
+	{'x':"2004-01-09", 'value': 68856400},
+	{'x':"2004-01-12", 'value': 52871900},
+	{'x':"2004-01-13", 'value': 56334200}
+]);
+
+// map the data
+mapping = table.mapAs({'x': 'x', 'value': 'value'});	
 ```
 
 {sample}STOCK\_Step\_Line\_02{sample}
@@ -74,11 +74,11 @@ Stocks are often used to show several parameters changing, so it's possible to c
 This sample shows a simple multi-series Step Line stock. 
 
 ```  
-	// set the series
-	var series_total = chart.plot(0).stepLine(mapping_total);
-	series_total.name("Total Request Number");
-	var series_region = chart.plot(0).stepLine(mapping_region);
-    series_region.name("Region Request Number");
+// set the series
+var series_total = chart.plot(0).stepLine(mapping_total);
+series_total.name("Total Request Number");
+var series_region = chart.plot(0).stepLine(mapping_region);
+series_region.name("Region Request Number");
 ```
 
 {sample}STOCK\_Step\_Line\_03{sample}
@@ -86,11 +86,11 @@ This sample shows a simple multi-series Step Line stock.
 This sample is a great demonstration of the series managing failure. Now look at the next sample, where the same series are put in the different plots.
 
 ```  
-	// set the series
-	var series_total = chart.plot(0).stepLine(mapping_total);
-	series_total.name("Total Request Number");
-	var series_region = chart.plot(1).stepLine(mapping_region);
-    series_region.name("Region Request Number");
+// set the series
+var series_total = chart.plot(0).stepLine(mapping_total);
+series_total.name("Total Request Number");
+var series_region = chart.plot(1).stepLine(mapping_region);
+series_region.name("Region Request Number");
 ```
 
 {sample}STOCK\_Step\_Line\_04{sample}
@@ -98,13 +98,11 @@ This sample is a great demonstration of the series managing failure. Now look at
 Note that the only thing you need to do to put a series in a new plot is to set the new plot ID as a parameter of the {api:anychart.charts.Stock#plot}.plot(){api} method.
 More about plots can be found in the [Plots tutorial](../Chart_Plots).
 
-
 ### Switching series type
 
 Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
 
-To switch the series use *seriesType()* method.
-
+To switch the series use {api:anychart.core.stock.series.Base#seriesType}.seriesType(){api} method.
 
 ## Visualization
 
@@ -115,9 +113,10 @@ When a series used in Stocks, there are some visualization settings are being ma
 Color scheme makes your chart unique and helps to distinguish the series. For all Line-type series there are no filling colors, but we can change the stroke color using the {api:anychart.core.stock.series.StepLine#stroke}.stroke(){api} method.
 
 ```
-	// coloring
-	series_totals.stroke("#ff0000");
+// coloring
+series_totals.stroke("#ff0000");
 ```
+
 {sample}STOCK\_Step\_Line\_05{sample}
 
 ### Hovered state
@@ -125,8 +124,8 @@ Color scheme makes your chart unique and helps to distinguish the series. For al
 Points hovering in stocks differs from what it looks like in Basic Charts. In Stocks, when a point is hovered, there's a crosshair highlights it. You can adjust the crosshair (or highlighter) using the {api:anychart.core.stock.Plot#dateTimeHighlighter}.dateTimeHighlighter(){api} method. A highlighter (or a crosshair) is held by a plot, so it's possible to make all highlighters different of edit only one of them. Its parameters are color, thickness, dashPattern, lineJoin and lineCap, though it's not necessary to define them all.
 
 ```
-	// crosshair adjusting
-	chart.plot(0).dateTimeHighlighter("green", 0.5, "10 4");
+// crosshair adjusting
+chart.plot(0).dateTimeHighlighter("green", 0.5, "10 4");
 ```
 
 {sample}STOCK\_Step\_Line\_06{sample}

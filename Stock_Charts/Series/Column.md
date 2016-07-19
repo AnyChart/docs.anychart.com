@@ -74,11 +74,11 @@ For creating a new plot the {api:anychart.charts.Stock#plot}.plot(){api} method 
 ```
 // series of the first plot
 var series_as = chart.plot(0).column(mapping_as);
-series_as.name("Temperature in Alice's Springs");
+series_as.name("Alice's Springs");
 
 // series of the second plot
 var series_sydney = chart.plot(1).column(mapping_sydney);
-series_sydney.name("Temperature in Sydney");
+series_sydney.name("Sydney");
 ```
 
 {sample}STOCK\_Column\_03{sample}
@@ -91,7 +91,7 @@ As stocks are intended to show big arrays of data, this data needs to be compres
 
 Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
 
-To switch the series use *seriesType()* method.
+To switch the series use {api:anychart.core.stock.series.Base#seriesType}.seriesType(){api} method.
 
 ## Visualization
 

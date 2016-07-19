@@ -26,12 +26,12 @@ Data in stocks should be set in the table format. It can be arranged in two ways
     // set the data
     table = anychart.data.table();
     table.addData([
-        ['1990', 248709873],
-        ['1995', 272119084],
-        ['2000', 281421906],
-        ['2005', 299456285],
-        ['2010', 308745538],
-        ['2015', 318914629]
+        ['1990-01-01', 248709873],
+        ['1995-01-01', 272119084],
+        ['2000-01-01', 281421906],
+        ['2005-01-01', 299456285],
+        ['2010-01-01', 308745538],
+        ['2015-01-01', 318914629]
     ]);
   
     // map the data
@@ -47,12 +47,12 @@ The sample above demonstrates how a stock looks with its data arranged as an arr
     // set the data
     table = anychart.data.table("x");
     table.addData([
-        {x:'1990', value:248709873},
-        {x:'1995', value:272119084},
-        {x:'2000', value:281421906},
-        {x:'2005', value:299456285},
-        {x:'2010', value:308745538},
-        {x:'2015', value:318914629}
+        {x:'1990-01-01', value:248709873},
+        {x:'1995-01-01', value:272119084},
+        {x:'2000-01-01', value:281421906},
+        {x:'2005-01-01', value:299456285},
+        {x:'2010-01-01', value:308745538},
+        {x:'2015-01-01', value:318914629}
     ]);
   
     // map the data
@@ -115,7 +115,7 @@ As stocks are intended to show big arrays of data, this data needs to be compres
 
 Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
 
-To switch the series use *seriesType()* method.
+To switch the series use {api:anychart.core.stock.series.Base#seriesType}.seriesType(){api} method.
 
 ## Visualization
 

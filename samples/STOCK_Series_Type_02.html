@@ -27,8 +27,8 @@ anychart.onDocumentReady(function() {
     chart.title('Stock series changing demo');
     chart.title().padding(20);
 
-    // create scroller series with "close" values
-    var scrollerSeries = chart.scroller().area(table.mapAs({'value': 'c'}));
+    // create scroller series with o/h/l/c values
+    var scrollerSeries = chart.scroller().ohlc(table.mapAs({'open':"o",'high': "h", 'low':"l", 'close':"c"}));
 
     chart.container(stage);
     chart.draw();
@@ -149,8 +149,6 @@ anychart.onDocumentReady(function() {
         {'x': '2015-07-01', 'o': 24.05, 'h': 24.30, 'l': 23.96, 'c': 24.04},
         {'x': '2015-07-02', 'o': 23.76, 'h': 24.04, 'l': 23.21, 'c': 23.37}
         ]};
-
-
 });
 </script>
 </head>
