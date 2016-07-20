@@ -1,6 +1,6 @@
 <html>
 <head>
-  <meta name="x-cat-tags" content="actualBug anyGantt"/>
+  <meta name="x-cat-tags" content="anyGantt"/>
   <meta charset="UTF-8"/>
   <meta name="tags" content="[]"/>
   <meta name="index" content="1000"/>
@@ -44,20 +44,19 @@
   // chart type
   chart = anychart.ganttProject();
 
-  // chart container
-  chart.container('container');
-
   // set chart data
   chart.data(treeData);
 
+  // chart container
+  chart.container('container');
   // initiate drawing
-  chart.draw();
+  chart.draw();  
   
-  console.log(chart.toJson());
-  
-  // show all items 
-  chart.fitAll();
+  json = chart.toJson();
+  // uncomment the next line to see json in console or simply add watch on json varibale
+  // console.log(json);
 
+  chart.fitAll();
 });</script>
 </head>
 <body>
