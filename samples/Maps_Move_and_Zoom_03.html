@@ -29,7 +29,7 @@ anychart.onDocumentReady(function() {
     map = anychart.map();
     map.geoData(anychart.maps.australia);
     // set the map title
-    map.title("Enable the mousewheel");
+    map.title("Enable the zoomOnMouseWheel");
 
     // set the series of choropleth type
     map.choropleth(dataSetForSeries);
@@ -38,7 +38,7 @@ anychart.onDocumentReady(function() {
     var currentInteractivity = map.interactivity();
 
     // Enables the mouse wheel
-    currentInteractivity.mouseWheel(true);
+    currentInteractivity.zoomOnMouseWheel(true);
 
     map.container("container");
     map.draw();

@@ -1,22 +1,13 @@
-<!doctype html>
 <html>
-  <head>
-    <meta name="tags" content="[]"/>    
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script src="http://cdn.anychart.com/csv-data/dji-daily-short.js" data-export="true"></script>
-    <style>
-      html, body, #container {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="container"></div>
-    <script>
-
+    <script src="http://cdn.anychart.com/csv-data/dji-daily-short.js" data-export="true"></script>    
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">
 anychart.onDocumentReady(function() {
     var dataTable = anychart.data.table();
     dataTable.addData(get_dji_daily_short_data());
@@ -36,7 +27,9 @@ anychart.onDocumentReady(function() {
     chart.container("container");
     chart.draw();
 });
-    
-    </script>
-  </body>
+</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
 </html>

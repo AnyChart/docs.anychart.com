@@ -54,11 +54,11 @@ currentInteractivity.copyFormatter(function() {
 
 ### Zoom
 
-To enable a mouse wheel zooming feature use {api:anychart.core.utils.MapInteractivity#mouseWheel}.mouseWheel(){api} method.
+To enable a mouse wheel zooming feature use {api:anychart.core.utils.MapInteractivity#zoomOnMouseWheel}zoomOnMouseWheel(){api} method.
 
 ```
-// Enables the mouse wheel
-map.interactivity().mouseWheel(true);
+// Enables zoom On Mouse Wheel
+map.interactivity().zoomOnMouseWheel(true);
 ```
 
 {sample}Maps\_Move\_and\_Zoom\_03{sample}

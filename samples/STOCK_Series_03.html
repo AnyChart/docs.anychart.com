@@ -157,7 +157,6 @@
     plot_line_ohlc.legend().itemsTextFormatter(function(e){
         var name = this.seriesName;
         var value = Math.round(this.value);
-        console.log(this);
         return(name + ": " + value);
     });
 

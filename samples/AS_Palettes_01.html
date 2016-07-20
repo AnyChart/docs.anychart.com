@@ -35,7 +35,6 @@
   chart.legend().height("100%");
   chart.overlapMode("allowOverlap");
 
-
   chart.listen("pointMouseDown",function(e){
     chart.title(e.point.get("x"));
     chart.palette(e.point.get("palette"));
