@@ -281,7 +281,7 @@ To configure data labels use {api:anychart.charts.TreeMap#labels}.labels(){api}.
 
 ```
 // labels
-сhart.labels().fontColor('black');
+chart.labels().fontColor('black');
 chart.labels().textFormatter("{%name}: ${%Value}B");
 ```
 
