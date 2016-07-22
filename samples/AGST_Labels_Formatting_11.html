@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -8,44 +9,23 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  var chart = anychart.column();
+  chart = anychart.column([
+    ["People's Republic of China", 1336],
+    ["India", 1189],
+    ["United States of America", 313],
+    ["Russian Federation", 138],
+    ["Japan", 126]
+  ]);
 
   // setting title
   chart.title("Allow x Labels Overlapping");
 
-  // seting data
-  chart.column([
-    ["People's Republic of China", 1336717952],
-    ["India", 1189172864],
-    ["United States of America", 313232032],
-    ["Russian Federation", 138739888],
-    ["Japan", 126475664]
-  ]);
-
-  // adjusting labels
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(200000000);
-  var yLabels = chart.yAxis().labels();
-  yLabels.textFormatter(function(){
-    var value = this.value;
-    if (value>1000000){
-      if (
-        value>999999999){
-        value = value/1000000000 + " B ";
-      }
-      else{
-        value = value/1000000 + " M ";
-      }
-    }
-    return value;
-  });
-
-  // x axis getter
+      // x axis getter
   var xAxis = chart.xAxis();
   // allow labels overlapping
   xAxis.overlapMode("allowOverlap");
 
-  // draw chart
+    // draw chart
   chart.container("container");
   chart.draw();
 });</script>

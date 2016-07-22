@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -18,26 +19,23 @@
   ]);
 
   // chart type
-  var chart = anychart.line();
+  chart = anychart.line();
 
   // set data
   var series = chart.line(data);
   var tooltip = series.tooltip();
-  tooltip.textFormatter(function(){
-    return "Year: " + this.x + "\nSales: " + this.value/1000 + ",000.00";
-  });
+  tooltip.textFormatter("Year: {%x}\nSales: {%Value}");
 
   // set y scale ticks interval
-  var yScale = chart.yScale().minimum(0);
+  var yScale = chart.yScale();
+  yScale.minimum(0);
   yScale.maximum(30000);
   var yTicks = chart.yScale().ticks();
   yTicks.interval(5000);
 
   // adjust y axis labels
   var yLabels = chart.yAxis().labels();
-  yLabels.textFormatter(function(){
-    return "$" + this.value/1000 + ",000";
-  });
+  yLabels.textFormatter("${%Value}");
 
   // set green
   var rangeMarker = chart.rangeMarker();

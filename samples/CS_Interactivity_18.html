@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -37,7 +38,7 @@ var data = anychart.data.set([
 var dataMapping = data.mapAs({x: [0], value: [1]});
 
 // chart type
-var chart = anychart.column();
+chart = anychart.column();
 
 // set data
 var column = chart.column(dataMapping);

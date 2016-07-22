@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyStock"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="['column' 'axis']"/>
     <meta name="index" content="1000"/>
@@ -57,14 +58,14 @@ anychart.onDocumentReady(function() {
 
   // series of the first plot
   var series_as = chart.plot(0).column(mapping_as);
-    series_as.name("Temperature in Alice's Springs");
+    series_as.name("Alice's Springs");
 
   // series of the second plot
   var series_sydney = chart.plot(1).column(mapping_sydney);
-    series_sydney.name("Temperature in Sydney");
+    series_sydney.name("Sydney");
 
   chart.plot(0).yAxis();
-  chart.title('Column in Stocks Demo');
+  chart.title('Daily temperature');
   chart.container('container');
 
   chart.draw();

@@ -4,7 +4,7 @@ Gauges Quick Start
   
 ## Getting started with Gauges
 ###1. Include Gauges into Your Web Page
-Reference the JavaScript file in the <head> section of your web page.
+Reference the JavaScript file in the &lt;head&gt; section of your web page.
 You can use the link as shown below or download anychart.min.js from the [download page](../Quick_Start/Downloading_AnyChart) and then put it into any folder of your site (you’ll have to use your own link in this case).
 
 ```

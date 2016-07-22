@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -26,7 +27,7 @@
   var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
 
   // create area chart
-  var chart = anychart.area();
+  chart = anychart.area();
 
   // chart title
   chart.title("Percent Stacked Spline Area Chart");
@@ -46,9 +47,7 @@
 
   // set yAxis labels formatting, force it to add % to values
   var yLabels = chart.yAxis().labels();
-  yLabels.textFormatter(function(info) {
-    return info.value + "%";
-  });
+  yLabels.textFormatter("{%Value}%");
 
   chart.splineArea(seriesData_1);
   chart.splineArea(seriesData_2);

@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -23,18 +24,18 @@
     {x: "default", value: 1, palette: anychart.palettes.defaultPalette}
   ]);
 
-// chart type
-  var chart = anychart.pie(data);
+  // chart type
+  chart = anychart.funnel(data);
 
-  chart.title("Palettes Switch Sample - Click slices to change palette");
-  chart.explode(0);
-  chart.labels().textFormatter("{%x}");
-  chart.legend().position("right");
-  chart.legend().itemsLayout("vertical");
-  chart.legend().height("100%");
+  chart.title("Palettes Switch Sample - Click bars to change palette");
+  chart.neckWidth("60%");
+  chart.baseWidth("60%");  
+  chart.legend().position("bottom");
+  chart.legend().itemsLayout("horizontal");
   chart.overlapMode("allowOverlap");
+  chart.selectLabels().background().stroke("black");
 
-
+  // switch palette on click and update title
   chart.listen("pointMouseDown",function(e){
     chart.title(e.point.get("x"));
     chart.palette(e.point.get("palette"));

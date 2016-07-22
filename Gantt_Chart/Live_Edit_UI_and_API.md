@@ -29,11 +29,9 @@ All controls' appearance can be edited by using special methods, which are descr
 <th width="175"><b>Typical effect</b></th>
 <th width="175"><b>Pointers</b></th>
 </tr>
-
 <tr>
 <th colspan=4><b>Timeline part</b></th>
 </tr>
-
 <tr>
 <td>Connectors creating</td>
 <td>Position the pointer over the connector thumb of an interval or a milestone, press the button and move the mouse. If you haven't pointed the interval you want to connect with, there is a preview line drawn to help the user not to get lost; the timeline and data grid both will be scrolled while dragging the connector line inside the scale total range. If you hover the bar you want to connect with, there's a final connector preview shows up: depending on where we hovered the bar (left or right part), the connector will stick to the appropriate side. Release the mouse button. If you hover the interval bar, watch the final connector preview and then release the mouse, there will be the "beforeCreateConnector" event dispatched by the Gantt diagram (or by its timeline, if it was created in the standalone mode) unless it was prevented. Then the connector will be created and the intervals will become logically connected. If the "beforeCreateConnector" event was prevented, no connector will be created.
@@ -98,11 +96,9 @@ Progress slider
 
 </td>
 </tr>
-
 <tr>
 <th colspan=4><b>Data Grid part</b></td>
 </tr>
-
 <tr>
 <td>Changing the Gantt chart tree structure</td>
 <td>Hover the row (item), press the button and drag it to wherever you need. When you release the button, the tree will dispatch the "move" event. Note that there are some situations when you cannot change the structure: it's not possible to make the item a child of itself and a milestone is not able to have children.</td>

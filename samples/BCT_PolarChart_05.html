@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -9,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  var chart = anychart.polar();
+  chart = anychart.polar();
 
   // chart title
   chart.title("Inverted Y Scale");
@@ -43,12 +44,6 @@
   yScale.inverted(true);
   var yTicks = chart.yScale().ticks();
   yTicks.interval(2);
-
-  // adjust content and visualisation of labels
-  var xLabels = chart.xAxis().labels();
-  xLabels.textFormatter(function(){
-    return this.value + ".00"
-  });
    
   chart.legend(false);
 

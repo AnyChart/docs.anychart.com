@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyMap"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -8,7 +9,7 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-    <script x-export="stage">
+    <script x-export="australiaMap">
 anychart.onDocumentReady(function() {
     var firstDataSet = anychart.data.set([
         {id: "AU.CT", value: 15, title: "Australian Capital Territory"},
@@ -27,7 +28,7 @@ anychart.onDocumentReady(function() {
     var firstDataSetForSeries = firstDataSet.mapAs({id: "id"});
     var secondDataSetForSeries = secondDataSet.mapAs({id: "id"});
     
-    var australiaMap = anychart.map();
+    australiaMap = anychart.map();
     australiaMap.geoData(anychart.maps.australia);
     
     // create the color scale

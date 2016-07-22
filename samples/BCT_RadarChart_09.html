@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -28,7 +29,7 @@
   var bronze = dataSet.mapAs({x: [0], value: [3]});
 
   // chart type
-  var chart = anychart.radar();
+  chart = anychart.radar();
 
   // chart title
   chart.title("Olympic medals Sydney 2000 (most recent) by country");
@@ -44,22 +45,9 @@
   yAxis.minorTicks(false);
 
   var xLabels = chart.xAxis().labels();
-  // set labels font
-  xLabels.fontWeight(900);
+  xLabels.useHtml(true);
   // set labels content
-  xLabels.textFormatter(function(){
-    var longValue = this.value;
-    var myValue = "";
-    // check label width
-    if (longValue.length > 3){
-      myValue = longValue.substr(0, 3) + "...";
-    }
-    else{
-      myValue = longValue;
-    }
-    // return adjuster value
-    return myValue;
-  });
+  xLabels.textFormatter("<b>{%Value}</b>");
 
   // set series data
   seriesFormatter(gold, "gold", "Gold");
@@ -79,9 +67,7 @@
     series.hoverStroke("3 "+color);
     series.name(text);
     var tooltip = series.tooltip();
-    tooltip.textFormatter(function(){
-      return this.x + "\n" + text + ": " + this.value;
-    });
+    tooltip.textFormatter("{%x}\n" + text + ": {%Value}");
     var tooltipBackground = series.tooltip().background();
     tooltipBackground.fill(color+" 0.7");
     tooltip.fontColor("#000");

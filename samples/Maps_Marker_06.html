@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyMap"/>
   <meta charset="UTF-8"/>
   <meta name="tags" content="[]"/>
   <meta name="index" content="1000"/>
@@ -48,7 +49,7 @@ anychart.onDocumentReady(function () {
 
 
     usaMap.title("Formatting the labels and tooltips in hovered state");
-    usaMap.interactivity().mouseWheel(false);
+    usaMap.interactivity().zoomOnMouseWheel(false);
     usaMap.container("container");
     usaMap.draw();
 });

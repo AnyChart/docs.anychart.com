@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyMap"/>
   <meta charset="UTF-8"/>
   <meta name="tags" content="[]"/>
   <meta name="index" content="1000"/>
@@ -80,7 +81,7 @@ anychart.onDocumentReady(function () {
     series_acme.hoverFill(customImageMarker(0.5));
 
     usaMap.title("Creating custom markers");
-    usaMap.interactivity().mouseWheel(false);
+    usaMap.interactivity().zoomOnMouseWheel(false);
     usaMap.container("container");
     usaMap.draw();
 });

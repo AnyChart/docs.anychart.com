@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -24,7 +25,7 @@
   for (var i = 0; i<dataSet.mapAs().getRowsCount();i++)
     total+=dataSet.mapAs().get(i,"value");
   
-  var chart = anychart.pie(dataSet);
+  chart = anychart.pie(dataSet);
   
   // legend settings
   var legend = chart.legend();
@@ -55,8 +56,10 @@
   var tooltip = chart.legend().tooltip();
   tooltip.enabled(true);
   tooltip.textFormatter(function(){
+    // to avoid failing on "total" item
     if(this.meta.pointValue === undefined)
       return this.value;
+    // for all other points
     return this.value+"\n"+this.meta.pointValue.toString();
   });
   

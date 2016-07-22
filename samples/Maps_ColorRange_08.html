@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyMap"/>
   <meta charset="UTF-8"/>
   <meta name="tags" content="[]"/>
   <meta name="index" content="1000"/>
@@ -7,52 +8,52 @@
   <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-  <script x-export="chart">anychart.onDocumentReady(function() {
-    var dataSet = anychart.data.set([
-      {'id': 'AU.WA', 'value': 300},  // Western Australia
-      {'id': 'AU.JB', 'value': 270},  // Jervis Bay Territory
-      {'id': 'AU.NS', 'value': 240},  // New South Wales
-      {'id': 'AU.VI', 'value': 75},   // Victoria
-      {'id': 'AU.NT', 'value': 130},  // Northern Territory
-      {'id': 'AU.TS', 'value': 190},  // Tasmania
-      {'id': 'AU.CT', 'value': 100, labels: false}, // Australian Capital Territory
-      {'id': 'AU.SA', 'value': 280},  // South Australia
-      {'id': 'AU.QL', 'value': 220}   // Queensland
-    ]);
+  <script x-export="map">anychart.onDocumentReady(function() {
+  var dataSet = anychart.data.set([
+    {'id': 'AU.WA', 'value': 300},  // Western Australia
+    {'id': 'AU.JB', 'value': 270},  // Jervis Bay Territory
+    {'id': 'AU.NS', 'value': 240},  // New South Wales
+    {'id': 'AU.VI', 'value': 75},   // Victoria
+    {'id': 'AU.NT', 'value': 130},  // Northern Territory
+    {'id': 'AU.TS', 'value': 190},  // Tasmania
+    {'id': 'AU.CT', 'value': 100, labels: false}, // Australian Capital Territory
+    {'id': 'AU.SA', 'value': 280},  // South Australia
+    {'id': 'AU.QL', 'value': 220}   // Queensland
+  ]);
 
-    //
-    var map = anychart.map();
-    map.geoData(anychart.maps.australia);
+  // create map
+  map = anychart.map();
+  map.geoData(anychart.maps.australia);
 
-    // set the background color
-    map.background('none');
-    // set the title and its preferences
-    map.title().useHtml(true).hAlign('center');
-    map.title('<span style="font-size: 18px;">Bi-polar progression with Ordinal Color Scale</span>');
+  // set the background color
+  map.background('none');
+  // set the title and its preferences
+  map.title().useHtml(true).hAlign('center');
+  map.title('<span style="font-size: 18px;">Bi-polar progression with Ordinal Color Scale</span>');
 
-    // set the series
-    var series = map.choropleth(dataSet);
-    series.geoIdField('code_hasc');
-	
-	// disable the labels
-    series.labels(false);
-    
-    // set the colors and ranges for the scale
-	series.colorScale(anychart.scales.ordinalColor([{less:200},{from:200, to:250},{greater:250}]));
+  // set the series
+  var series = map.choropleth(dataSet);
+  series.geoIdField('code_hasc');
 
-    //set the single hue progression
-    var colors = anychart.color.bipolarHueProgression('#EC6E07', '#64B5F6', 3);
-    
-	// define the colors 
-    series.colorScale().colors(colors);	
-	
-	// create, enable and stroke the colorRange
-	var colorRange = map.colorRange();
-	colorRange.enabled(true).stroke('#BBB');
+  // disable the labels
+  series.labels(false);
 
-    // set the container
-    map.container('container');
-    map.draw();
+  // set the colors and ranges for the scale
+  series.colorScale(anychart.scales.ordinalColor([{less:200},{from:200, to:250},{greater:250}]));
+
+  //set the single hue progression
+  var colors = anychart.color.bipolarHueProgression('#EC6E07', '#64B5F6', 3);
+
+  // define the colors 
+  series.colorScale().colors(colors);	
+
+  // create, enable and stroke the colorRange
+  var colorRange = map.colorRange();
+  colorRange.enabled(true).stroke('#BBB');
+
+  // set the container
+  map.container('container');
+  map.draw();
   });</script>
 
 </head>

@@ -8,7 +8,6 @@
  * [Background](#background)
  * [Text Settings](#text_settings)
 * [HTML in Title](#html_in_title)
-<!--* [Additional Titles](#additional_titles)-->
 * [Adding Events](#adding_events)
 
 ## Overview
@@ -109,50 +108,9 @@ You can use HTML formatted text of a title. Use {api:anychart.core.ui.Title#useH
 {sample}AS\_Titles\_06{sample}
 
 **Note:** the list of all supported tags for HTML text formatting can be found in [Text Settings article](../Appearance_Settings/Text_Settings#supported_tags)
-<!--
-## Additional Titles
 
-Chart can contain any number of additional titles. These titles can be placed anywhere on the plot.
-
-```
-  // create additional title
-  var customTitle = anychart.ui.title();
-  // set title text
-  customTitle.text("according to annual report");
-  // place title at the bottom
-  customTitle.orientation("bottom");
-  // stick text to the right side
-  customTitle.align("right");
-  // set text size
-  customTitle.fontSize(11);
-  // set font family
-  customTitle.fontFamily("Tahoma");
-  // unbold title
-  customTitle.fontWeight(400);
-  // background settings
-  var titleBackground = customTitle.background();
-  // eanble background
-  titleBackground.enabled(true);
-  // disable fill
-  titleBackground.fill(null);
-  // set black border to title
-  titleBackground.stroke("#000000");
-  
-  // set container and draw title
-  customTitle.container(stage);
-  customTitle.draw();
-```
-
-{sample}AS\_Titles\_07{sample}
-
-**Note:** chart elements are drawn in a specific order and we recommend to use **.draw()** method for a custom title after the chart is drawn.
--->
 ## Adding Events
 
-You can make your chart title interactive by adding event listeners of a different types. Sample below represents {api:anychart.enums.EventType}pointClick{api} event, that triggers alert() function.
+You can make your chart title interactive by adding event listeners of a different types. Sample below shows {api:anychart.enums.EventType}pointClick{api} event that triggers alert() function.
 
 {sample}AS\_Titles\_08{sample}
-
-Here is the advanced sample of using events in titles. In this javascript sample we will show how chart footer can be used as "Back" button for self-drilldown charts. Click on bars to see detailed report on each sales manager and in detailed report click "Back to Sales Manager Report" button in the bottom left corner of line chart to load an initial chart.
-
-{sample}AS\_Titles\_09{sample}

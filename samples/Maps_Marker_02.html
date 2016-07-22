@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyMap"/>
   <meta charset="UTF-8"/>
   <meta name="tags" content="[]"/>
   <meta name="index" content="1000"/>
@@ -33,7 +34,7 @@ anychart.onDocumentReady(function () {
     series_lat_long.tooltip().textFormatter("Yearly profit: ${%value}m");
 
     australiaMap.title("Marker series defined by latitude and longtitude");
-    australiaMap.interactivity().mouseWheel(false);
+    australiaMap.interactivity().zoomOnMouseWheel(false);
     australiaMap.container("container");
     australiaMap.draw();
 });

@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -20,7 +21,7 @@
   var seriesData_2 = dataSet.mapAs({x: [0], value: [3], size:[4]});
 
   // chart type
-  var chart = anychart.cartesian();
+  chart = anychart.cartesian();
 
   // set title
   chart.title("Multi-series Bubble Chart");
@@ -41,14 +42,14 @@
   var labels1 = series_1.labels();
   labels1.enabled(true);
   labels1.textFormatter(function(){
-    return("Size: "+this.size+", value: "+this.value);
+    return("Size: " + this.size + ", value: "+this.value);
   });
   labels1.anchor("bottom");
   labels1.position("top");
   var labels2 = series_2.labels();
   labels2.enabled(true);
   labels2.textFormatter(function(){
-    return("Size: "+this.size+", value: "+this.value);
+    return("Size: " + this.size + ", value: "+this.value);
   });
   labels2.anchor("top");
   labels2.position("bottom");

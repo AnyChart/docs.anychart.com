@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyMap"/>
   <meta charset="UTF-8"/>
   <meta name="tags" content="[]"/>
   <meta name="index" content="1000"/>
@@ -7,42 +8,40 @@
   <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
-  <script x-export="chart">anychart.onDocumentReady(function() {
-    var dataSet = anychart.data.set([
-      {'id': 'AU.WA', 'value': 300},  // Western Australia
-      {'id': 'AU.JB'},                // Jervis Bay Territory
-      {'id': 'AU.NS', 'value': 240},  // New South Wales
-      {'id': 'AU.VI', 'value': 75},   // Victoria
-      {'id': 'AU.NT', 'value': 130},  // Northern Territory
-      {'id': 'AU.TS', 'value': 190},  // Tasmania
-      {'id': 'AU.CT', labels: false}, // Australian Capital Territory
-      {'id': 'AU.SA'},                // South Australia
-      {'id': 'AU.QL'}                 // Queensland
-    ]);
+  <script x-export="map">anychart.onDocumentReady(function() {
+      var dataSet = anychart.data.set([
+          {'id': 'AU.WA', 'value': 300},  // Western Australia
+          {'id': 'AU.NS', 'value': 240},  // New South Wales
+          {'id': 'AU.VI', 'value': 75},   // Victoria
+          {'id': 'AU.NT', 'value': 130},  // Northern Territory
+          {'id': 'AU.TS', 'value': 190},  // Tasmania
+          {'id': 'AU.CT', 'value': 150}, // Australian Capital Territory
 
-    //
-    var map = anychart.map();
-    map.geoData(anychart.maps.australia);
+      ]);
 
-    // set the background color
-    map.background('none');
-    // set the title and its preferences
-    map.title().useHtml(true).hAlign('center');
-    map.title('<span style="font-size: 18px;">Ordinal Color Scale</span>');
+      // create map
+      map = anychart.map();
+      map.geoData(anychart.maps.australia);
 
-    // set the series
-    var series = map.choropleth(dataSet);
-    series.geoIdField('code_hasc');
-	
-	// disable the labels
-    series.labels(false);
-    
-    // set the colors and ranges for the scale
-	series.colorScale(anychart.scales.ordinalColor([{less:200,color:'#EC6E07'},{from:200, to:250, color:'#A1958A'},{greater:250, color:'#64B5F6'}]));
+      // set the title and its preferences
+      map.title('Ordinal Color Scale');
 
-    // set the container
-    map.container('container');
-    map.draw();
+      // set the series
+      var series = map.choropleth(dataSet);
+      series.geoIdField('code_hasc');
+
+      // disable the labels
+      series.labels(false);
+
+      // stroke disable
+      series.stroke("2 gray 0.4");
+
+      // set the colors and ranges for the scale
+      series.colorScale(anychart.scales.ordinalColor([{less:200,color:'#EC6E07'},{from:200, to:250, color:'#A1958A'},{greater:250, color:'#64B5F6'}]));
+
+      // set the container
+      map.container('container');
+      map.draw();
   });</script>
 
 </head>
