@@ -67,4 +67,6 @@ You can take a look at this sample in Playground and change rendering mode to se
 
 To illustrate how rendering mode can affect user experience we created this sample of rendering of 80 pie charts on a single stage. Click buttons to launch chart rendering and you will see charts appearing one by one in case of asynchronous execution and experience a slight delay before all charts appear at once in case of synchronous rendering.
 
+**NOTE:** it may look almost the same if your PC performance is very high.
+
 {sample}CMN\_Async\_02{sample}
