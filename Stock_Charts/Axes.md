@@ -16,7 +16,7 @@
 In AnyChart axes are used to control axes labels, lines and tick marks.  
   
 * To know how to operate with basic charts axes - please see: [Axis Basics](../Axes_and_Grids/Axis_Basics)
-* To know what scale options are available - [Scale tutorial](../Axes_and_Grids/Scales)
+* To know what scale options are available - [Scale tutorial](Scales)
 * To learn how to create additional axes - [Additional axes](../Axes_and_Grids/Additional_Axes)
 * To learn how to configure axes labels - [Axes Labels](../Axes_and_Grids/Axes_Labels_Formatting)
 * To learn more about Date/Time Scale - [Date/Time Axes](../Axes_and_Grids/Date_Time_Axes)
@@ -26,14 +26,14 @@ In this section we will demonstrate only the differences of AnyStock axes and sc
 ## Stock Axes features
 
 Axes in AnyStock are generally quite similar to the Basic ones, but the X-axis is slightly different:
-* X-axis is always in datetime format and shows the Data values
+* X-axis is always in date time format and shows the Data values
 * X-axis is always scrollable
-* It has background instead of stroke (axis line)
-* It cannot be moved to another side of a plot (always at the bottom)
-* It has a Helper Label feature
-* No drawFirstLabel, drawLastLabel
-* Tickmarks settings (ticks can be displayed only inside of the axis)
-* No title
+* X-axis has background instead of stroke (axis line)
+* X-axis cannot be moved to another side of a plot (always at the bottom)
+* X-axis has a Helper Label feature
+* There are no drawFirstLabel, drawLastLabel in Stock X-axis
+* X-axis Tickmarks settings are different (ticks can be displayed only inside of the axis)
+* X-axis doesnt have a title
 * Only one X-axis for a plot (so the max number of X-axes on an AnyStock chart is equal to the number of the plots)
 
 ## Orientation 
