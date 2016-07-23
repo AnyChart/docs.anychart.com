@@ -6,7 +6,8 @@ Move and Zoom API
 * [Interactivity](#interactivity)
  * [Default](#default)
  * [Enable/Disable](#enable/disable)
- * [Text](#text)
+ * [Navigational Interactivity](#navigational_interactivity)
+ * [Clipboard Text](#clipboard_text)
  * [Zoom](#zoom)
  * [Move](#move)
 
@@ -28,7 +29,9 @@ When there is a point selected or a couple of them, it's possible to copy some i
 
 ### Enable/Disable
 
-To enable or disable al interactive features we use {api:anychart.charts.Map#interactivity}.interactivity(){api} method. Set "true" or "false" to the method depending if you'd like to enable the map interactivity or disable.
+To enable or disable all interactive features we use {api:anychart.charts.Map#interactivity}.interactivity(){api} method. Set "true" or "false" to the method depending if you'd like to enable the map interactivity or disable. 
+
+**NOTE**: This is a complete interactivity shutdown - you will not see tooltips or be able to hover regions if you disable interactivity in such way.
 
 ```
 // disable all interactivity
@@ -37,9 +40,32 @@ map.interactivity(false);
 
 {sample}Maps\_Move\_and\_Zoom\_01{sample}
 
-### Text
+### Navigational Interactivity
 
-It's possible to get some information about the points directly in your clipboard by selecting a region or a couple of them and using Copy & Paste hotkeys. The text with information that you get from the point can be adjusted by using the {api:anychart.core.utils.MapInteractivity#copyFormatter}.copyFormatter(){api} method. Look at the sample below. Select several points and use copying hotkeys to get those points' data.
+You can decide how you want to allow user to navigate a map, this is configured by the following three methods:
+
+To enable or disable a mouse wheel zooming feature use {api:anychart.core.utils.MapInteractivity#zoomOnMouseWheel}zoomOnMouseWheel(){api} method.
+
+To enable or disable a keyboard move and zoom feature use {api:anychart.core.utils.MapInteractivity#keyboardZoomAndMove}keyboardZoomAndMove(){api. Cmd/Ctrl + "+/-/0" and keyboard arrows don't navigate a map when set to false.
+
+To enable or disable zoom on double click behavior use {api:anychart.core.utils.MapInteractivity#zoomOnDoubleClick}zoomOnDoubleClick(){} method.
+
+```
+// Disables zoom On Mouse Wheel
+map.interactivity().zoomOnMouseWheel(false);
+// Disables zoom on double click
+map.interactivity().keyboardZoomAndMove(false);
+// Disables zoom on double click
+map.interactivity().zoomOnDoubleClick(false);
+```
+
+The sample below shows the same map as above with navigational interactivity disabled. You still can click and hover regions and see tooltips.
+
+{sample}Maps\_Move\_and\_Zoom\_03{sample}
+
+### Clipbpard Text
+
+It's possible to put information about the points directly in computer clipboard by selecting a region or a couple of them and using Copy & Paste hotkeys. The text with information that you get from the point can be adjusted by using the {api:anychart.core.utils.MapInteractivity#copyFormatter}copyFormatter(){api} method. Look at the sample below. Select several points and use Copy & Paste hotkeys to get those points' data.
 
 ```
 currentInteractivity = map.interactivity();
@@ -54,16 +80,7 @@ currentInteractivity.copyFormatter(function() {
 
 ### Zoom
 
-To enable a mouse wheel zooming feature use {api:anychart.core.utils.MapInteractivity#zoomOnMouseWheel}zoomOnMouseWheel(){api} method.
-
-```
-// Enables zoom On Mouse Wheel
-map.interactivity().zoomOnMouseWheel(true);
-```
-
-{sample}Maps\_Move\_and\_Zoom\_03{sample}
-
-You can also control zoom using the {api:anychart.charts.Map#zoom}.zoom(){api} method with a zoom factor as the method argument. If you add two more params - X and Y coordinates, the map will be zoomed to this certain point, unless the center point of the map will be considered as the target zooming point. In the next sample the 2x zoom is being performed when you click the button.
+You can control zoom using the {api:anychart.charts.Map#zoom}.zoom(){api} method with a zoom factor as the method argument. If you add two more parameters - X and Y coordinates, the map will be zoomed to this certain point, unless the center point of the map will be considered as the target zooming point. In the next sample the 2x zoom is being performed when you click the button.
 
 ```
 // Zoom map in 2 times.
@@ -117,4 +134,3 @@ map.move(0, 10);
 ```
 
 {sample}Maps\_Move\_and\_Zoom\_07{sample}
-

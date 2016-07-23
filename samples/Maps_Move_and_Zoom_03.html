@@ -29,7 +29,7 @@ anychart.onDocumentReady(function() {
     map = anychart.map();
     map.geoData(anychart.maps.australia);
     // set the map title
-    map.title("Enable the zoomOnMouseWheel");
+    map.title("Disable Navigational Interactivity");
 
     // set the series of choropleth type
     map.choropleth(dataSetForSeries);
@@ -37,8 +37,12 @@ anychart.onDocumentReady(function() {
     // create a variable for the interactivity
     var currentInteractivity = map.interactivity();
 
-    // Enables the mouse wheel
-    currentInteractivity.zoomOnMouseWheel(true);
+    // Disables zoom On Mouse Wheel
+    map.interactivity().zoomOnMouseWheel(false);
+    // Disables zoom on double click
+    map.interactivity().keyboardZoomAndMove(false);
+    // Disables zoom on double click
+    map.interactivity().zoomOnDoubleClick(false);
 
     map.container("container");
     map.draw();
