@@ -1,6 +1,6 @@
 {:index 4}
 
-# Custom GeoJson Maps
+# Custom GeoJSON Maps
 
 * [Overview](#overview)
 * [Creating Maps For AnyChart](#creating_maps_for_anychart)
@@ -9,11 +9,13 @@
 
 AnyChart is doing its best to create a [collection of maps](./Maps_List) to help you with most of the cases, but it is always possible that you need a custom map. In this article we will tell you how to create a custom map from data in the most popular mapping formats.
 
+GeoJSON and [TopoJSON](Custom_TopoJSON) formats are formats of Geo Data AnyChart directly supports.
+
 \*.SHP is a de facto standart for geo data and although you can't load SHP map directly into AnyChart, any SHP map can be easily used for AnyChart Maps through GeoJSON format.
 
 This conversion can be made through most of GIS-editors. You can use QGIS as it is a free editor that supports .shp, .kml and a plenty of other formats. 
 
-The AnyChart Maps are supplied in GeoJSON, which makes them flexible in working and editing. Don't forget that different coordinate systems are used in different formats.
+The AnyChart Maps are supplied in [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON), which makes them flexible in working and editing. Don't forget that different coordinate systems are used in different formats.
 
 ## Creating Maps For AnyChart
 

@@ -4,8 +4,7 @@ AnyMap Quick Start
   
 ## Getting started with Maps
 ###1. Include AnyMap into Your Web Page
-Reference the JavaScript file in the <head> section of your web page.
-You can use the link as shown below or download anychart-bundle.min.js from the [download page](../Quick_Start/Downloading_AnyChart) and then put it into any folder of your site (you’ll have to use your own link in this case).
+Reference the JavaScript file in the <head> section of your web page. You can use the link as shown below or download anychart-bundle.min.js from the [AnyChart download page](../Quick_Start/Downloading_AnyChart) and then put it into any folder of your site (you’ll have to use your own link in this case).
 
 ```
 <head>
@@ -51,7 +50,7 @@ dataSet = anychart.data.set([
 
 ###4. Create a map
 Add the JavaScript tag `<script>` with the following code anywhere in the page. 
-This code example uses JavaScript API to create a chart, but you also can use GeoJSON format. See [Maps List](./Maps_List) and [Custom GeoJson Maps](./Custom_GeoJson_Maps) to learn more about supported formats and ways of creating maps.
+You also can use [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON) and [TopoJSON](https://en.wikipedia.org/wiki/GeoJSON#TopoJSON) formats. See [Maps List](./Maps_List) and [Custom GeoJSON Maps](./Custom_GeoJson_Maps) to learn more about supported formats and ways of creating maps.
 Example:
 
 ```
