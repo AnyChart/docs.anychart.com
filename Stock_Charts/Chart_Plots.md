@@ -42,7 +42,7 @@ var thirdPlot = chart.plot(2);
 var thirdSeries = thirdPlot.column(columnMapping);
 ```
 
-{sample}STOCK\_Plots\_01{sample}
+{sample :height 600}STOCK\_Plots\_01{sample}
 
 So, we use {api:anychart.charts.Stock#plot}**.plot()**{api} for creating a plot. Note that we should give each plot an unique index. The number of plots each chart has is unlimited.
 
@@ -72,7 +72,7 @@ var secondPlot = chart.plot(1);
 var secondSeries = secondPlot.ohlc(ohlcMapping);
 ```
 
-{sample}STOCK\_Plots\_02{sample}
+{sample :height 600 width: 100%}STOCK\_Plots\_02{sample}
 
 One plot might contain an unlimited number of series, but still we recommend to split them into different plots if there are too many of them.
 
