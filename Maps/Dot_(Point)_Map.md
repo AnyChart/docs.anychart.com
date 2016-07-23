@@ -1,4 +1,4 @@
-{:index 7}
+{:index 8}
 Dot (Point) Maps
 ===========
 
