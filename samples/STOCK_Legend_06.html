@@ -113,18 +113,7 @@
         item_h.iconType("line");
         item_c.iconType("line");
 
-        // set legend position and items layout
 
-        // variable for average sales
-        var average = 0;
-
-        var iterator = selectable.getIterator();
-        iterator.advance();
-        // Gets value.
-        var currentValue = iterator.get("value");
-
-        for (var i = 0; i<45;i++)
-            average+=dataTable.mapAs().get(i,"value");
 
         // adding an item to the legend
         legend.itemsFormatter(function(items){
