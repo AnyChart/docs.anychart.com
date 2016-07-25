@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/csv-data/dji-daily-short.js" data-export="true"></script>    
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">
+anychart.onDocumentReady(function() {
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_dji_daily_short_data());
+
+    var mapping = dataTable.mapAs({'open': 1,'high': 2,'low': 3,'close':4});
+
+    chart = anychart.stock();
+    chart.padding(10, 10, 10, 50);
+    chart.title("Minimum width of a point is 10 px");
+
+    var currentPlot = chart.plot();
+    currentPlot.ohlc(mapping);
+
+    var grouping = chart.grouping();
+
+    // set the minimum point width
+    grouping.minPixPerPoint(10);
+
+    grouping.levels([
+        {unit: 'month', count: 1},
+        {unit: 'month', count: 6},
+        {unit: 'month', count: 12}
+    ]);    
+
+    chart.container("container");
+    chart.draw();
+});
+</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

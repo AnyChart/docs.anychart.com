@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyMap"/>
   <meta charset="UTF-8"/>
   <meta name="tags" content="[]"/>
   <meta name="index" content="1000"/>
@@ -39,7 +40,7 @@ anychart.onDocumentReady(function () {
     series_id.selectLabels().fontColor("red");
 
     australiaMap.title("Marker series on a map");
-    australiaMap.interactivity().mouseWheel(false);
+    australiaMap.interactivity().zoomOnMouseWheel(false);
     australiaMap.container("container");
     australiaMap.draw();
 });

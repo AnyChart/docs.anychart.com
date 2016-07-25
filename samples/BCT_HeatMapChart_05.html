@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -37,18 +38,13 @@
   ]);
 
   // set chart type
-  var chart = anychart.heatMap(data);
+  chart = anychart.heatMap(data);
   chart.title("Sales Revenue");
   var labels = chart.labels();
   labels.enabled(true);
 
   labels.textFormatter(function(){
     var value = (this.heat).toFixed(0);
-    var main = "";
-    for (var i=1;(i*3)<value.length;i++)
-      main = " " + value.substr(value.length-(i*3), 3) + main;
-    var tail = value.substr(0, value.length-(main.length-main.length/4));
-    value = tail + main;
     return "$" + value
   });
 

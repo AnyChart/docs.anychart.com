@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -7,9 +8,9 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
-    var chart = anychart.line();
+    chart = anychart.line();
 
-        var dataSet = anychart.data.set([
+    var dataSet = anychart.data.set([
         ["Jan 15", 2094],
         ["Feb 15", 1865],
         ["Mar 15", 2051],
@@ -36,14 +37,14 @@
         ["Dec 16", 2323]
     ]);
 
-        //create series
-        var series = chart.column(dataSet);
+    //create series
+    var series = chart.column(dataSet);
 
-        series.name("New users");
+    series.name("New users");
 
-        chart.xAxis().title("Month");
-        chart.yAxis().title("New users");
-        chart.title("New internet users \nPrevent scrolling");
+    chart.xAxis().title("Month");
+    chart.yAxis().title("New users");
+    chart.title("New internet users \nPrevent scrolling");
     // enable the scroller
     chart.xScroller(true);
 

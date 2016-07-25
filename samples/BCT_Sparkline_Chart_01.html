@@ -1,13 +1,14 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-    var stage = anychart.graphics.create("container");
+    <script x-export="stage">anychart.onDocumentReady(function() {
+    stage = anychart.graphics.create("container");
     
   // create charts
   chart1 = anychart.sparkline();
@@ -27,9 +28,7 @@
   
   // initiate chart drawing
   chart1.draw();
-  chart2.draw();
-  
-  
+  chart2.draw();  
 });</script>
 </head>
 <body>

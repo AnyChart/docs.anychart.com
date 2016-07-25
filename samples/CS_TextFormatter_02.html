@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -46,7 +47,6 @@
   var extraYScale = anychart.scales.linear();
   extraYScale.minimum(0).maximum(100);
 
-
   // adding and adjust extra Y axis
   var extraYAxis = chart.yAxis(1);
   extraYAxis.orientation("right");
@@ -62,6 +62,7 @@
     seriesTooltip.title(false);
     seriesTooltip.separator(false);
   }
+
 
   chart.container("container");
   chart.draw();

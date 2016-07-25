@@ -1,12 +1,13 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function() {
 
   // data set
   var data = anychart.data.set([
@@ -19,7 +20,7 @@
   var seriesData_1 = data.mapAs({x: [0], value: [1]});
   var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
-  var stage = anychart.graphics.create("container");
+  stage = anychart.graphics.create("container");
 
   // setting main title
   var title = anychart.ui.title();

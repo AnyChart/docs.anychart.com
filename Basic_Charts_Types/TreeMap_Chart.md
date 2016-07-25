@@ -281,8 +281,8 @@ To configure data labels use {api:anychart.charts.TreeMap#labels}.labels(){api}.
 
 ```
 // labels
-сhart.labels().fontColor('black');
-chart.labels().textFormatter("{%id}: ${%Value}B");
+chart.labels().fontColor('black');
+chart.labels().textFormatter("{%name}: ${%Value}B");
 ```
 
 {sample}BCT\_TreeMap\_09{sample}
@@ -296,13 +296,13 @@ Tooltips are small windows that pop up when you hover a point. They are shown ne
 ```
 // tooltips settings
 chart.tooltip().positionMode('point');
-chart.tooltip().titleFormatter('{%id}');
+chart.tooltip().titleFormatter('{%name}');
 chart.tooltip().textFormatter("Income from export in 2012: $ {%Value}B");
 ```
 
 {sample}BCT\_TreeMap\_10{sample}
 
-Some tooltip settings can be set in the data. For more information see [Tooltip](../Common_Settings/Tooltip) tutorial.
+Some tooltip settings can be set through the data. For more information see [Tooltip](../Common_Settings/Tooltip) tutorial.
 
 ### Color Range
 

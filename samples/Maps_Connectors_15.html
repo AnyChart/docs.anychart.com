@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyMap"/>
   <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"  data-export="true"></script>
@@ -29,7 +30,7 @@ var data = anychart.data.set([
     ]);
 
 // create map chart
-var map = anychart.map();
+map = anychart.map();
 
 // create connector series
 var series = map.connector(data);
@@ -111,7 +112,7 @@ map.geoData(anychart.maps.united_states_of_america);
 map.title("American Civil War: the Union vs the Confederacy");
 
 // disabling the zoom
-map.interactivity().mouseWheel(false);
+map.interactivity().zoomOnMouseWheel(false);
 
 // set container id for the chart
 map.container('container');

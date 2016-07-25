@@ -1,5 +1,6 @@
 l<html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -22,7 +23,7 @@ l<html>
   var Sales2004 = data.mapAs({x: [0], value: [2]});
 
   // chart type
-  var chart = anychart.bar();
+  chart = anychart.bar();
 
   // set title
   chart.title("Labels and Tooltips");
@@ -35,6 +36,7 @@ l<html>
 
   // set first series data
   var series1 = chart.bar(Sales2003);
+  series1.name("2003");
 
   // adjust labels position for first series
   var labels1 = series1.labels();
@@ -46,15 +48,14 @@ l<html>
 
   // adjust tooltips content
   var tooltip1 = series1.tooltip();
-  tooltip1.textFormatter(function(){
-    return "Chanel: " + this.x + "\nSales: " + this.value + "\nPeriod: Year 2003";
-  });
+  tooltip1.textFormatter("Chanel: {%x}\nSales: {%Value}\nPeriod: {%SeriesName}");
 
   // adjust tooltip title
   tooltip1.title("Information");
 
   // set second series data
   var series2 = chart.bar(Sales2004);
+  series2.name("2004");
 
   // adjust second series labels
   var labels2 = series2.labels();
@@ -69,9 +70,7 @@ l<html>
   tooltip2.title("Information");
 
   // adjust second tooltip content
-  tooltip2.textFormatter(function() {
-    return "Chanel: " + this.x + "\nSales: " + this.value + "\nPeriod: Year 2004";
-  });
+  tooltip2.textFormatter("Chanel: {%x}\nSales: {%Value}\nPeriod: {%SeriesName}");
 
   // draw
   chart.container("container");

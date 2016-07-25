@@ -1,310 +1,233 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function () {
+    <script x-export="stage">anychart.onDocumentReady(function () {
 
-	// set stage
-	var stage = anychart.graphics.create("container");
+	// create stage
+	stage = anychart.graphics.create("container");
 
 	// set colors for sample
-	var textColor = "#7c868e";
-	var lineColor = "#CECECE";
-	var chart_palette = anychart.palettes.distinctColors().colors(["#bc7c63", "#6594ad", "#585953"]);
+	textColor = "#7C868E";
+	lineColor = "#CECECE";
+	chart_palette = anychart.palettes.distinctColors().colors(["#bC7C63", "#6594AD", "#585953"]);
 
-	// set layers of stage
-	// layer for the top of the fir-tree
-	var layer_jay = stage.layer();
-	// layer for the middle of the fir-tree
-	var layer_woodpecker = stage.layer();
-	// layer for the bottom of the fir-tree
-	var layer_squirrel = stage.layer();
-	// layer for the grass
-	var layer_beetle = stage.layer();
-	// layer for the trunk
-	var layer_mouse = stage.layer();
 	// layer for the text elements
-	var layer_text = stage.layer();
-
-	var getLegend = function (items) {
-		var legend = anychart.ui.legend();
-		legend.fontSize("11px");
-		legend.fontFamily("'Verdana', Helvetica, Arial, sans-serif");
-		legend.itemsLayout("horizontal");
-		legend.fontColor(textColor);
-		legend.iconTextSpacing(0);
-		legend.align("left");
-		legend.position("top");
-		legend.padding(10);
-		legend.margin(65, 0, 20,10);
-		legend.itemsSpacing(15);
-		legend.iconTextSpacing(5);
-		legend.title().enabled(false);
-		legend.titleSeparator().enabled(true);
-		legend.paginator().enabled(false);
-		legend.background().enabled(false);
-		legend.items(items);  return legend;
-	};
-	var chartLegend = getLegend([
-		{"index": 0, "text": "Comes", "iconType": "rect", "iconStroke": "none", "iconFill": "#bc7c63"},
-		{"index": 1, "text": "Eats", "iconType": "square", "iconStroke": "none", "iconFill": "#6594ad"},
-		{"index": 2, "text": "Mates", "iconType": "square", "iconStroke": "none", "iconFill": "#585953"}
+	layer_text = stage.layer();
+	
+	// legend on the chart
+	chartLegend = createLegend([
+		{index: 0, text: "Visits",  iconFill: "#bC7C63"},
+		{index: 1, text: "Feeding", iconFill: "#6594AD"},
+		{index: 2, text: "Mating",  iconFill: "#585953"}
 	]);
 
 	chartLegend.container(layer_text).draw();
 
-	var settings_title = {
-		fontSize:20,
-		fontFamily:"'Verdana', Helvetica, Arial, sans-serif",
-		color:"#3D2914"
+    // create main title
+	layer_text.text(20, 20, "Animals activitiy", {fontSize:20});
+    // create subtitle
+	layer_text.text(20, 45, "Abies sibirica, 7 days observation period", {fontSize:18, color:"#998552", opacity:20});
+
+	// jay, woodpecker, squirrel, mouse  
+	dataSet = [
+		["1", 4, 0, 0, 4, 4, 0, 3, 1, 1, 4, 10, 2],
+		["2", 2, 1, 0, 6, 5, 0, 2, 1, 0, 9, 11, 3],
+		["3", 2, 1, 0, 2, 1, 0, 4, 1, 1, 7, 8,  4],
+		["4", 2, 0, 0, 2, 2, 0, 4, 2, 0, 1, 12, 0],
+		["5", 3, 1, 1, 0, 0, 0, 1, 0, 0, 0, 10, 6],
+		["6", 1, 1, 0, 3, 2, 1, 0, 0, 0, 8, 10, 5],
+		["7", 2, 0, 1, 6, 3, 2, 2, 0, 1, 0, 7,  0]
+	];
+
+	// map all data as table into one series 
+	series = anychart.data.mapAsTable(dataSet);
+
+	// settings for the block describing jay 
+	jaySettings = {
+		// latin name of the animal
+		name: "Garrulus glandarius",
+		// position of the text
+		textX: 350,
+		textY: 175,
+		// the name of the picture of the animal in the folder with pictures
+		picture: "jay.jpg",
+		// the picture position
+		pictureY: 130,
+		// the path of the line connecting the picture with its part of the fur-tree
+		linePath: [[210, 190], [300, 130], [370, 130]],
+		// Y-position of the chart
+		chartY: 80,
+		// sets the data of this particular animal from the series
+		data: [series[0], series[1], series[2]],
+		// coordinates of the fur-tree piece where this animal lives
+		treePath: [[175, 120], [250, 240], [100, 240]],
+		// coordinates of the shadow of the fir-tree piece where this animal lives
+		shadowPath: [[175, 165], [250, 290], [100, 290]],
+		// the color of the fur-tree piece where this animal lives
+		treeColor: "#7CB342",
+		// makes this layer overlap others
+		zIndex: 10
+	};
+	// creates a
+	createSpecies(jaySettings);
+
+	// settings for the block describing woodpecker
+	woodpeckerSettings = {
+		name: "Dendrocopos analis",
+		textX: 350,
+		textY: 290,
+		picture: "woodpecker.jpg",
+		pictureY: 245,
+		linePath: [[250, 290], [300, 240], [370, 240]],
+		chartY: 195,
+		data: [series[3], series[4], series[5]],
+		treePath: [[175, 165], [280, 340], [70, 340]],
+		shadowPath: [[175, 240], [280, 395], [70, 395]],
+		treeColor: "#689F38",
+		zIndex: 8
 	};
 
-	var settings_sub = {
-		fontSize:18,
-		fontFamily:"'Verdana', Helvetica, Arial, sans-serif",
-		color:"#998552",
-		opacity:20
+	createSpecies(woodpeckerSettings);
+
+	squirrelSettings = {
+		name: "Sciurus vulgaris",
+		textX: 360,
+		textY: 405,
+		picture: "sqirrel.jpg",
+		pictureY: 360,
+		linePath: [[260, 365], [370, 365]],
+		chartY: 310,
+		data: [series[6], series[7], series[8]],
+		treePath: [[175, 240], [310, 440], [40, 440]],
+		shadowPath: [[135, 400], [215, 400], [215, 520], [135, 520], [135, 400]],
+		treeColor: "#558B2F",
+		zIndex: 6
 	};
 
-	var title = layer_text.text(20,20,"The activity of the animals in the biocenose of the fir-tree", settings_title);
+	createSpecies(squirrelSettings);
 
-	var subtitle = layer_text.text(20,45,"A 10 days observation period", settings_sub);
-
-	var draw_piece_of_tree = function(layer, points, color, z_index, rotation){
-		var piece = layer.path().moveTo(points[0][0], points[0][1]).zIndex(z_index).fill(color).stroke(null);
-		for (var i = 0; i < points.length; i++)
-			piece.lineTo(points[i][0], points[i][1]);
-
-		if (rotation)
-			piece.rotateByAnchor(rotation, "center");
-		return piece;
+	mouseSettings = {
+		name: "Apodemus uralensis",
+		textX: 340,
+		textY: 520,
+		picture: "mouse.jpg",
+		pictureY: 475,
+		linePath: [[210, 465], [370, 465]],
+		chartY: 425,
+		data: [series[9], series[10], series[11]],
+		treePath: [[135, 400], [215, 400], [215, 520], [135, 520], [135, 400]],
+		shadowPath: [[135, 400], [215, 400], [215, 570], [135, 570], [135, 400]],
+		treeColor: "#6D4C41",
+		zIndex: 4
 	};
 
-	var draw_piece_shadow = function(layer, points, color, z_index, rotation){
-		var piece = layer.path().moveTo(points[0][0], points[0][1]).zIndex(z_index).stroke(null);
-		for (var i = 0; i < points.length; i++)
-			piece.lineTo(points[i][0], points[i][1]);
-		piece.fill([color + " 0.5", color + " 0.4", color + " 0"], -90);
-		if (rotation)
-			piece.rotateByAnchor(rotation, "center");
-		return piece;
-	};
+	createSpecies(mouseSettings);
 
-	var on_hover = function (piece, shadow, line, lineShadow, img, imgShadow) {
-		shadow.visible(false);
-		lineShadow.visible(false);
-		imgShadow.visible(false);
-		piece.listen("mouseOver", function () {
-			piece.stroke(textColor);
-			shadow.visible(true);
-			lineShadow.visible(true);
-			imgShadow.visible(true);
-		});
-		piece.listen("mouseOut", function () {
-			shadow.visible(false);
-			lineShadow.visible(false);
-			imgShadow.visible(false);
-		});
-		line.listen("mouseOver", function () {
-			shadow.visible(true);
-			lineShadow.visible(true);
-			imgShadow.visible(true);
-		});
-		line.listen("mouseOut", function () {
-			shadow.visible(false);
-			lineShadow.visible(false);
-			imgShadow.visible(false);
-		});
-		img.listen("mouseOver", function () {
-			shadow.visible(true);
-			lineShadow.visible(true);
-			imgShadow.visible(true);
-		});
-		img.listen("mouseOut", function () {
-			shadow.visible(false);
-			lineShadow.visible(false);
-			imgShadow.visible(false);
-		});
-	};
+});
 
-	var draw_chart = function(container, data, bounds){
-		var chart = anychart.line();
-		chart.palette(chart_palette);
-		var comes_data = data.mapAs({x: [0], value: [1]});
-		chart.line(comes_data).markers(null);
-		var eats_data = data.mapAs({x: [0], value: [2]});
-		chart.line(eats_data).markers(null);
-		var mates_data = data.mapAs({x: [0], value: [3]});
-		chart.line(mates_data).markers(null);
+// an external function for creating legends
+function createLegend(items) {
+	var legend = anychart.ui.legend();
+	legend.align("left");
+	legend.margin(75, 0, 20, 10);
+	legend.items(items);
+	return legend;
+}
 
-		chart.background(null);
-		chart.bounds(bounds);
-		chart.title().enabled(false);
-		chart.grid().enabled(false);
-		chart.minorGrid().enabled(false);
-		chart.grid(1).enabled(false);
-		chart.minorGrid(1).enabled(false);
-		chart.yScale().minimum(-0.1).maximum(12);
-		chart.yScale().ticks().interval(4);
-		chart.yAxis().stroke(lineColor);
-		chart.yAxis().ticks().stroke(lineColor);
-		chart.yAxis().title(false);
-		chart.yAxis().minorTicks(false);
-		chart.yAxis().labels().textSettings({
-			fontFamily: "'Verdana', Helvetica, Arial, sans-serif",
-			fontWeight: "normal",
-			fontSize: "12px",
-			fontColor: textColor});
-		chart.yAxis().drawFirstLabel(false);
-		chart.xAxis(false);
-		chart.container(container);
-		chart.draw();
-	};
+// creates everything connected to the animal
+function createSpecies(e){
+	var layer = stage.layer();
+	layer.text(e.textX, e.textY, e.name).color(textColor);
+	var pic = draw_picture(layer, 400, [e.pictureY, 40], lineColor, e.picture);
+	var pic_shadow = layer.circle(400, e.pictureY, 60);
+	pic_shadow.fill(["black 0.5","black 0"], .5, .5, null, .5, 0.5, 0.5);
+	pic_shadow.zIndex(-2);
+	pic_shadow.stroke(null);
+	var line = draw_line(layer, e.linePath, lineColor, -1);
+	var line_shadow = draw_line(layer, e.linePath, textColor, -1);
+	line_shadow.visible(false);
+	draw_chart(layer, e.data, [460, e.chartY, 250, 100]);
+	var tree_piece = draw_tree(layer, e.treePath, e.treeColor, 1, false);
+	var tree_shadow = draw_tree(layer, e.shadowPath, "#212121", -1, true);
+	tree_shadow.visible(false);
+	tree_shadow.disablePointerEvents(true);
+	on_hover(tree_piece, tree_shadow, line, line_shadow, pic, pic_shadow);
+	layer.zIndex(e.zIndex);
+}
 
-	var draw_line = function(layer, points, color, z_index){
-		var line = layer.path().moveTo(points[0][0], points[0][1]).stroke(color).zIndex(z_index);
-		for (var i = 0; i < points.length; i++) {
-			line.lineTo(points[i][0], points[i][1]);
-		}
-		return line;
-	};
+// an external function for drawing a piece of tree
+function draw_tree(layer, points, color, z_index, shadow){
+	if (shadow) fill = [color + " 0.5", color + " 0.4", color + " 0"]
+	else fill = color;	
+	var piece = layer.path().moveTo(points[0][0], points[0][1]).zIndex(z_index).fill(fill, 270).stroke(null);
+	for (var i = 0; i < points.length; i++) piece.lineTo(points[i][0], points[i][1]);
+	return piece;
+}
 
-	var draw_picture = function (layer, radius, coordinates, color, pic_name) {
-		layer.circle(radius, coordinates[0], coordinates[1])
-			.stroke(color)
-			.fill({
-				src: "http://static.anychart.com/images/graphics_stage_demo/" + pic_name,
-				mode: acgraph.vector.ImageFillMode.FILL
-		});
-		return layer;
-	};
+// an external function switching the behaviour
+function on_hover(piece, shadow, line, lineShadow, img, imgShadow) {
+	toggle(false);
+	piece.listen("mouseOver", function (){toggle(true);});
+	piece.listen("mouseOut", function (){toggle(false);});
+	line.listen("mouseOver", function (){toggle(true);});
+	line.listen("mouseOut", function (){toggle(false);});
+	img.listen("mouseOver", function (){toggle(true);});
+	img.listen("mouseOut", function (){toggle(false);});
+	// enables and disables all shadows when an element is hovered or unhovered
+    function toggle(e){
+        shadow.visible(e);
+        lineShadow.visible(e);
+        imgShadow.visible(e);
+    }
+}
 
+// draws a chart with passed parameters of the particular animal
+function draw_chart(container, data, bounds){
+	var chart = anychart.line();
+	chart.palette(chart_palette);
 
-	// jay
-	var dataSet_jay = anychart.data.set([
-		["1", 4, 0, 0],
-		["2", 2, 1, 0],
-		["3", 2, 1, 0],
-		["4", 2, 0, 0],
-		["5", 3, 1, 1],
-		["6", 1, 1, 0],
-		["7", 2, 0, 1],
-		["8", 4, 2, 0],
-		["9", 5, 1, 1],
-		["10", 3, 1, 0]
-	]);
-	layer_jay.text(350, 175, "Garrulus glandarius").color(textColor);
-	var jay_pic = draw_picture(layer_jay, 400, [130, 40], lineColor, "jay.jpg");
-	var jay_pic_shadow = layer_jay.circle(400, 130, 60);
-	jay_pic_shadow.fill(["black 0.5","black 0"], .5, .5, null, .5, 0.5, 0.5);
-	jay_pic_shadow.zIndex(-2);
-	jay_pic_shadow.stroke(null);
-	jay_pic_shadow.visible(true);
-	var jay_line = draw_line(layer_jay, [[210, 190], [300, 130], [370, 130]], lineColor, -1);
-	var jay_line_shadow = draw_line(layer_jay, [[210, 190], [300, 130], [370, 130]], textColor, -1);
-	draw_chart(layer_jay, dataSet_jay, [450, 80, 250, 100]);
-	var top_tree_piece = draw_piece_of_tree(layer_jay, [[175, 120], [250, 240], [100, 240]], "#7cb342", 1, 5);
-	var top_tree_shadow = draw_piece_shadow(layer_jay, [[175, 120], [250, 290], [100, 290]], "#212121", -1, 5);
-	on_hover(top_tree_piece, top_tree_shadow, jay_line, jay_line_shadow, jay_pic, jay_pic_shadow);
-	layer_jay.zIndex(10);
+	setupSeries("Visits", data[0], chart);
+	setupSeries("Feeding", data[1], chart);
+	setupSeries("Mating", data[2], chart);
 
+	chart.bounds(bounds);
+	chart.yScale().ticks().interval(2);
+	chart.yAxis().drawFirstLabel(true);
+	chart.xAxis(false);
+	chart.tooltip().title(false);
+	chart.tooltip().separator(false);
+	chart.container(container).draw();
+}
 
-	// woodpecker
-	var dataSet_woodpecker = anychart.data.set([
-		["1", 4, 4, 0],
-		["2", 6, 5, 0],
-		["3", 2, 1, 0],
-		["4", 2, 2, 0],
-		["5", 0, 0, 0],
-		["6", 3, 2, 1],
-		["7", 6, 3, 2],
-		["8", 4, 0, 0],
-		["9", 5, 1, 1],
-		["10", 3, 0, 0]
-	]);
-	layer_woodpecker.text(350, 290, "Dendrocopos analis").color(textColor);
-	var woodpecker_pic = draw_picture(layer_woodpecker, 400, [245, 40], lineColor, "woodpecker.jpg");
-	draw_line(layer_woodpecker, [[250, 290], [300, 240], [370, 240]], lineColor, -1);
-	draw_chart(layer_woodpecker, dataSet_woodpecker, [450, 195, 250, 100]);
-		var middle_tree_piece = draw_piece_of_tree(layer_woodpecker, [[175, 165], [280, 340], [70, 340]], "#689f38", 1, 0);
-		var middle_tree_shadow = draw_piece_shadow(layer_woodpecker, [[175, 165], [280, 390], [70, 390]], "#212121", -1, 0);
-	// on_hover(middle_tree_piece, middle_tree_shadow);
-		
-	layer_woodpecker.zIndex(8);
+// creates series
+function setupSeries(name, data, chart){
+	var series = chart.line(data);
+	series.name(name);
+	series.clip(false);
+}	
 
-		
-	// squirrel
-	var dataSet_squirrel = anychart.data.set([
-		["1", 3, 1, 1],
-		["2", 2, 1, 0],
-		["3", 4, 1, 1],
-		["4", 4, 2, 0],
-		["5", 1, 0, 0],
-		["6", 0, 0, 0],
-		["7", 2, 0, 1],
-		["8", 4, 2, 0],
-		["9", 2, 1, 1],
-		["10", 5, 1, 0]
-	]);
-	layer_squirrel.text(360, 405, "Sciurus vulgaris").color(textColor);
-	var squirrel_pic = draw_picture(layer_squirrel, 400, [360, 40], lineColor, "sqirrel.jpg");
-	draw_line(layer_squirrel, [[260, 365], [370, 365]], lineColor, -1);
-	draw_chart(layer_squirrel, dataSet_squirrel, [450, 310, 250, 100]);
-		var bottom_tree_piece = draw_piece_of_tree(layer_squirrel, [[175, 240], [310, 440], [40, 440]], "#558b2f", 1, 0);
-		var bottom_tree_shadow = draw_piece_shadow(layer_squirrel, [[175, 240], [310, 490], [40, 490]], "#212121", -1, 0);
-	// on_hover(bottom_tree_piece, bottom_tree_shadow);
-		
-	layer_squirrel.zIndex(6);
+// draws a line connecting picture of animal and the fur-tree part
+function draw_line(layer, points, color, z_index){
+	var line = layer.path().moveTo(points[0][0], points[0][1]).stroke(color).zIndex(z_index);
+	for (var i = 0; i < points.length; i++) {
+		line.lineTo(points[i][0], points[i][1]);
+	}
+	return line;
+}
 
-
-	// beetle
-	var dataSet_beetle = anychart.data.set([
-		["1", 4, 4],
-		["2", 9, 7],
-		["3", 7, 1],
-		["4", 1, 5],
-		["5", 0, 1],
-		["6", 8, 3],
-		["7", 0, 0],
-		["8", 2, 6],
-		["9", 7, 1],
-		["10", 3, 0]
-	]);
-	layer_beetle.text(340, 520, "Dendroctonus ponderosae").color(textColor);
-	var beetle_pic = draw_picture(layer_beetle, 400, [475, 40], lineColor, "beetle.jpg");
-	draw_line(layer_beetle, [[210, 465], [370, 465]], lineColor, -1);
-	draw_chart(layer_beetle, dataSet_beetle, [450, 425, 250, 100]);
-		var trunk = draw_piece_of_tree(layer_beetle, [[135, 400], [215, 400], [215, 520], [135, 520], [135, 400]], "#6d4c41", 1, 0);
-		var trunk_shadow = draw_piece_shadow(layer_beetle, [[135, 400], [215, 400], [215, 570], [135, 570], [135, 400]], "#212121", -1, 0);
-		// on_hover(trunk, trunk_shadow);
-		layer_beetle.zIndex(4);
-
-		
-	// mouse
-	var dataSet_mouse = anychart.data.set([
-		["1", 10, 2, 4],
-		["2", 11, 3, 0],
-		["3", 8, 4, 2],
-		["4", 12, 0, 0],
-		["5", 10, 6, 1],
-		["6", 10, 5, 0],
-		["7", 7, 0, 3],
-		["8", 8, 1, 0],
-		["9", 9, 1, 1],
-		["10", 8, 1, 0]
-	]);
-	layer_mouse.text(355, 635, "Apodemus uralensis").color(textColor);
-	var mouse_pic = draw_picture(layer_mouse, 400, [590, 40], lineColor, "mouse.jpg");
-	draw_line(layer_mouse, [[210, 500], [300, 500], [370, 570]], lineColor, -1);
-	draw_chart(layer_mouse, dataSet_mouse, [450, 540, 250, 100]);
-		// draw_piece_of_tree(layer_mouse, [[130, 515], [115, 520], [100, 505], [110, 110], [90, 515], [105, 530]], "#33691e", 1, 0);
-		// draw_piece_of_tree(layer_mouse, [[230, 515], [245, 500], [240, 520], [260, 505], [250, 525], [270, 515], [255, 530]], "#33691e", 1, 0);
-	layer_mouse.zIndex(2);
-});</script>
+// draws a picture for an animal taken from the url
+function draw_picture(layer, radius, coordinates, color, pic_name) {
+	layer.circle(radius, coordinates[0], coordinates[1])
+		.stroke(color)
+		.fill({src: "http://static.anychart.com/images/graphics_stage_demo/" + pic_name, mode: acgraph.vector.ImageFillMode.FILL});
+	return layer;
+}</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

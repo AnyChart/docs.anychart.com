@@ -11,8 +11,7 @@
 ## Overview
 
 Series is a single set of data, that is visualized on a chart's plot. Series has a type and series data can be changed any time you want, when data changes in the data set or you update series properties you see updated visualization instantly.
-  
-  
+
 **Note**: This article contains information about managing charts series. Information about manipulating series data can be found in [Data Manipulation article](../Working_with_Data/Data_Manipulation).
 
 ## Adding Series
@@ -66,27 +65,18 @@ var i=0;
 // create a loop
 while (chart.getSeriesAt(i)){
   // rename each series
-  chart.getSeriesAt(i).name((i+1)+counter(i+1)+" Series");
+  chart.getSeriesAt(i).name("Series #" + (i+1));
   i++;
-}
-
-function counter(number){
-    switch ((number+1)%10){
-        case 1: return "st";
-        case 2: return "nd";
-        case 3: return "rd";
-        default: return "th";
-    }
 }
 ```
 
 Also, you can get the exact number of series in a chart using {api:anychart.charts.Cartesian#getSeriesCount}.getSeriesCount(){api} method and use for loop to cycle through all series. Note that indexes are always continuous, this cycle can be executed at any time and you will always go through every series, just as you will with while loop. Here is how it is done:
 
 ```
-  var seriesIndexes = [];
-  for (var i=0; i<chart.getSeriesCount();i++){
-    seriesIndexes.push(chart.getSeriesAt(i).index());
-  }
+var seriesIndexes = [];
+for (var i=0; i<chart.getSeriesCount();i++){
+  seriesIndexes.push(chart.getSeriesAt(i).index());
+}
 ```
 
 Sample below demonstrates the code shown above. Each series is renamed and legend is enabled to show modified series names.

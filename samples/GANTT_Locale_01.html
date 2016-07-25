@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyGantt"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -11,6 +12,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
   // set locales
   anychart.format.inputLocale('en-us');
+  anychart.format.inputDateTimeFormat('yyyy.MM.dd')  
   anychart.format.outputLocale('hi-in');
 
   // create data
@@ -45,6 +47,7 @@
 
   // initiate chart drawing
   chart.draw();
+  chart.fitAll();
 });
 
 // formatter for timeline and datagrid tooltips
@@ -72,7 +75,7 @@ function getData() {
       'id': '3',
       'name': 'It defines the business vision',
       'parent': '2',
-      'actualStart': Date.UTC(2015, 2, 13),//'2015.03.13',
+      'actualStart': '2015.02.13',
       'actualEnd': '2015.03.24'
     },
     {

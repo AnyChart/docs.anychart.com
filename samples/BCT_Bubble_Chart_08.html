@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -9,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   // chart type
-  var chart = anychart.scatter();
+  chart = anychart.scatter();
 
   // set title
   chart.title("Visualization");
@@ -51,8 +52,7 @@
   // minimum size of a bubble
   chart.maxBubbleSize(30);
 
-
-      // draw
+  // draw
   chart.container("container");
   chart.draw();
 });</script>

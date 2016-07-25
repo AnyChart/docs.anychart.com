@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <script src="../anychart-bundle.min.js"></script>
+    <script src="//cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"  data-export = "true"></script>
+    <script src="//cdn.anychart.com/geodata/1.2.0/custom/world/world.js"  data-export = "true"></script>
+    <script src="//cdn.anychart.com/geodata/1.2.0/usa_states/texas/texas.js" data-export = "true"></script>    
+  <link rel="stylesheet" href="//cdn.anychart.com/css/latest/anychart-ui.min.css" />
+  <style>
+    html, body, #container {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script x-export="chart">
+anychart.onDocumentReady(function () {
+
+    worldDataSet = anychart.data.set([
+        {id: "US", name: "USA", value: "A1"}
+    ]);
+
+    usaDataSet = anychart.data.set([
+        {"id": "US.TX", "value": 23}
+    ]);
+
+    txMap = anychart.map();
+    txMap.geoData(anychart.maps["texas"]);
+
+    usaMap = anychart.map();
+    usaMap.geoData(anychart.maps.united_states_of_america);
+    usaSeries = usaMap.choropleth(usaDataSet);
+
+    chart = anychart.map();
+    chart.geoData(anychart.maps.world);
+    worldSeries = chart.choropleth(worldDataSet);
+    chart.container("container");
+    chart.draw();
+
+
+    worldSeries.listen("pointClick", function(e) {
+        // Drill down to specified map
+        chart.drillTo(e.point.get("id"), usaMap);
+
+    });
+
+    usaSeries.listen("pointClick", function(e) {
+        // Drill down to specified map
+        chart.drillTo(e.point.get("id"), txMap);
+
+    });
+});
+    
+</script>
+</body>
+</html>

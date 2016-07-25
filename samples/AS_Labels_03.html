@@ -1,12 +1,13 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function() {
 
   var data = anychart.data.set([
     {x: "Metallcutting",              value: 41,  fill: "#1D8BD1"},
@@ -21,7 +22,7 @@
     {x: "Other",                      value: 4,   fill: "#DDA0DD"}
   ]);
   
-  var stage = anychart.graphics.create("container");
+  stage = anychart.graphics.create("container");
 
   var titleText = "<a style=\"font-size:15px;\"><u>2007 Capital Equipment Expenditures</u></a><br/><i>By Specific Machinery/Equipment Category *</i>";
   

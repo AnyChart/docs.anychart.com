@@ -294,7 +294,7 @@ var point = chart.getPoint(5);
 point.set("fill", "red");
 ```
 
-Below there is a sample of a funnel chart. This chart shows how the income changes over the year and each point corresponds to a month. With the usage of {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method, we have colored each point separately according to the season each point belongs to. Hover a point to see the tooltip that contains information on the month's and total income of the season. Information on getting value from custom points' field can be found in [Text Formatters article](../Common_Settings/Text_Formatters).
+Below there is a sample of a funnel chart. This chart shows sales proccess and each point corresponds to a certain stage. Using {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method we have colored each point separately according to the value of the point before it. Hover a point to see the tooltip that contains information on the difference. Information on getting value from custom points' field can be found in [Text Formatters article](../Common_Settings/Text_Formatters).
 
 {sample}CS\_Interactivity\_22{sample}
 

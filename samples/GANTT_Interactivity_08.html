@@ -1,10 +1,10 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="actualBug anyGantt"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
-    <meta name="x-cat-tags" content="actualBug"/>
 	<script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function(){
@@ -13,11 +13,10 @@
 	var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 
 	// create project gantt chart
-	var chart = anychart.ganttProject();
+	chart = anychart.ganttProject();
 
 	// set data for the chart
 	chart.data(treeData);
-
 
 	// set start splitter position settings
 	chart.splitterPosition(200);
@@ -55,8 +54,6 @@
 	chart.fitAll();
 
 	// Manage Chart Toolbar
-
-
 
 	// get current toolbar
 	var domToolbar = document.getElementsByClassName("anychart-toolbar")[0];

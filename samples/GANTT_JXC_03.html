@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyGantt"/>
   <meta charset="UTF-8"/>
   <meta name="tags" content="[]"/>
   <meta name="index" content="1000"/>
@@ -35,11 +36,11 @@
                     '</tree_data>'+
                     '</controller>'+
                     '</scale>'+
-                    '</timeline>'
+                    '</timeline>'+
                     '</gantt>'+
                     '</anychart>';
 
-            var chart = anychart.fromXml(xml);
+            chart = anychart.fromXml(xml);
 
             // set container id for the chart
             chart.container('container');

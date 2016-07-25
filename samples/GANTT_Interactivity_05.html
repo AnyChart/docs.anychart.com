@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyGantt"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -11,7 +12,7 @@
     var treeData = anychart.data.tree(getData(), anychart.enums.TreeFillingMethod.AS_TABLE);
 
     // create resource gantt chart
-    var chart = anychart.ganttResource();
+    chart = anychart.ganttResource();
 
     // set container id for the chart
     chart.container('container');

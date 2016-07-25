@@ -1,73 +1,55 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
-    <script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js" data-export="true"></script>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-	var chart = anychart.funnel([
-		{x: "January", value: 10},
-		{x: "February", value: 12},
-		{x: "March", value: 11},
-		{x: "April", value: 15},
-		{x: "May", value: 20},
-		{x: "June", value: 22},
-		{x: "July", value: 21},
-		{x: "August", value: 28},
-		{x: "September", value: 29},
-		{x: "October", value: 40},
-		{x: "November", value: 41},
-		{x: "December", value: 45}
+    // create a funnel chart
+		chart = anychart.funnel([
+		{x: "Qualified", value: 45},
+		{x: "Proposal", value: 32},
+		{x: "Negotiation", value: 11},
+		{x: "Review", value: 15},
+		{x: "Signed", value: 20},
+		{x: "Payed", value: 22}
 	]);
+	
+	// go through all points of the end to the beginning
+	for (var i = chart.getStat("count") - 1;i > 0; i--){
+		// get the point and the point before it
+		currentPoint = chart.getPoint(i);
+		previousPoint = chart.getPoint(i - 1);
 
-	var seasons = [
-		["January", "February", "December"],
-		["March", "April", "May"],
-		["June", "July", "August"],
-		["September", "October", "November"]
-	];
+		// calculate the difference of values
+		diff = currentPoint.get("value") - previousPoint.get("value");
 
-	var names = ["winter", "spring", "summer", "fall"];
-	var palette = ["#6FAFF7", "#31C45D", "#F8DF3D", "#F39232"];
-	var total = {};
-	for (var i=0;chart.getPoint(i).exists();i++){
-		var point = chart.getPoint(i);
-		var counter = 0;
-		seasons.forEach(function(season){
-			if (point.get("season")==undefined)
-				season.forEach(function(month){
-					if (point.get("x")==month){
-						point.set("fill", palette[counter]);
-						point.set("stroke", {color: anychart.color.darken(palette[counter], 0.05)});
-						point.set("season", names[counter]);
-					}
-				});
-			counter++;
-		});
-		if (total[point.get("season")] == undefined)
-			total[point.get("season")]=0;
-		total[point.get("season")] += point.get("value");
+		// and put it into the data
+		currentPoint.set("diff", diff);
+
+		// color the columns depending on the difference
+		if (diff > 0) {
+			currentPoint.set("fill", "#31C45D");
+			currentPoint.set("stroke", {color: anychart.color.darken("#31C45D", 0.05)});
+		} else
+		{
+			currentPoint.set("fill", "#F39232");
+			currentPoint.set("stroke", {color: anychart.color.darken("#F39232", 0.05)});
+		}
 	}
 
-	for(var index = 0; chart.getPoint(index).exists(); index++)
-		chart.getPoint(index).set("income", total[chart.getPoint(index).get("season")]);
-
+	// display the diff in tooltip
+	// the diff wasn't in the original dataset, but we've added it
 	var tooltip = chart.tooltip();
-	tooltip.textFormatter(function(){
-		return "Season: " + this.getDataValue("season") +
-			"\nIncome: $" + this.getDataValue("income") + "mil.";
-	});
-	tooltip.titleFormatter(function(){
-		return "Month: " + this.x + "\nIncome: $"+this.value + "mil.";
-	});
+	tooltip.textFormatter("Change: {%diff}");
 
-	chart.pointsPadding(0);
+    chart.neckHeight(0);
+
 	chart.title("Points Customization");
-	chart.neckWidth("20%");
 	chart.container("container");
 	chart.draw();
 });</script>

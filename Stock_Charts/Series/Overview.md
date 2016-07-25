@@ -10,70 +10,63 @@
 
 ## Overview
 
-AnyStock supports a lot of different series types. Here's a sample where we have put three of them. 
+AnyStock supports a lot of [different series types](Supported_Series), some of them compatible to be [switched during run time](Series_Type).
+
+Here's a sample where we put three of them. 
 
 ```
-    // create the column series
-    var columnSeries = plot_column.column(mapping);
-    columnSeries.name("Highest rates");
+// set the plots
+var plot_line_ohlc = chart.plot(0);
+var plot_column = chart.plot(1);
 
-	// create ohlc series
-    var ohlcSeries = plot_line_ohlc.ohlc(ohlcMapping);
-    ohlcSeries.name("ACME Corp. Stock Prices");
+// create the column series
+var rates = plot_column.column(mapping);
+rates.name("Highest rate");
 
-	// create line series
-    var lineSeries = plot_line_ohlc.line(lineMapping);
-    lineSeries.yScale(extraYScale);
-    lineSeries.name("Number of income requests worldwide");
+// create ohlc series
+var prices = plot_line_ohlc.ohlc(ohlcMapping);
+var pricesName = prices.name("ACME Corp.");
+
+// create line series
+var requests = plot_line_ohlc.line(lineMapping);
+requests.name("Requests");
 ```
-{sample}STOCK\_Supported\_Series\_01{sample}
 
-You can see that the whole chart is somewhat divided in two parts, where one contains ohlc and line series and the second one has column in it, while both parts have identical x-Axis and are being scrolled simultaneously. This can be done using plots. You can read about them [here](Chart_Plots). Also one of our plots has two axes. You can find information about managing axes [here](../Axes_and_Grids/Axis_Basics).
+{sample}STOCK\_Series\_01{sample}
+
+You can see that the whole chart is somewhat divided in two parts, where one contains ohlc and line series and the second one has column in it, while both parts have identical x-Axis and are being scrolled simultaneously. This can be done using plots. You can read about them in the article about [Chart Plots](../Chart_Plots). Also one of our plots has two axes. You can find information about managing axes in the [Axis tutorial](../Axes).
 
 ### AnyStock Series Adjusting
 
-
-Series in AnyStock chart are much alike normal series of Basic charts, except for having "hovered" and "selected" state. So we can adjust the colors of the series in normal state, adjust the tooltips, etc. Let's now create a sample with adjusted colors and tooltips.
+Series in AnyStock chart are much alike normal series of Basic charts, except for having "hovered" and "selected" state. So we can adjust the colors of the series in normal state, adjust the tooltips, etc. Let's now create a sample with adjusted colors.
 
 ```
-    // create column series
-    var firstSeries = firstPlot.column(mapping);
-    firstSeries.name("Highest rates");
+// set the filling color for the rates series
+rates.fill('#00838F');
 
-    // create ohlc series on the second plot
-    var secondSeries = secondPlot.ohlc(ohlcMapping);
-    // set width for columns in percent
-    secondSeries.pointWidth('50%');
-    secondSeries.name("ACME Corp. Stock Prices");
-
-    // create column series on the third plot
-    var thirdSeries = thirdPlot.column(columnMapping);
-    thirdSeries.name("Lowest rates");
-    //set gradient fill for the series
-    thirdSeries.fill(['#dd2c00', "#ffd54f", "#ef6c00"], 0, true, 0.8);
-	
+// set stroke for the requests series
+requests.stroke("#00796B");
 ```
-{sample}STOCK\_Supported\_Series\_02{sample}
 
+{sample}STOCK\_Series\_02{sample}
 
 ### AnyStock Scroller Series Adjusting
 
 In case of adding the thumbnail series to the scroller, you should know that those series have the "selected" state. Let's add a background series of a column type to the scroll bar background and adjust its "selected" state colors.
 
 ```
-    // create a thumbnail series in the scroller
-    var thSeries = chart.scroller().column(lineMapping);
+// create a thumbnail series in the scroller
+var thSeries = chart.scroller().column(lineMapping);
 
-    // define the shown part of a chart 
-    chart.selectRange('2014-02-01','2014-05-06');
-        
-    // set the color for the selected columns in the thumbnail series
-    thSeries.selectedFill("#4527A0");
+// define the shown part of a chart 
+chart.selectRange('2014-02-01','2014-05-06');
+    
+// set the color for the selected columns in the thumbnail series
+thSeries.selectedFill("#4527A0");
 ```
 
-{sample}STOCK\_Supported\_Series\_03{sample}
-
+{sample}STOCK\_Series\_03{sample}
 
 ## List of supported series
 
-Find them in the [Supported Series list](Supported_Series).
+AnyStock supports series of different types, like Line Series, OHLC, Marker and many other - find them all in the [Supported Series list](Supported_Series). Compatible series types can be [switched during run time](Series_Type).

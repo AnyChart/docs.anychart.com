@@ -1,5 +1,6 @@
 <html>
 <head>
+  <meta name="x-cat-tags" content="anyChart"/>
     <meta charset="UTF-8"/>
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
@@ -9,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
 	// set data and chart type
-	var chart = anychart.column3d();
+	chart = anychart.column3d();
 	chart.column([
 		["Department Stores",         637166],
 		["Discount Stores",           721630],
@@ -19,8 +20,8 @@
 	]);
 
 	chart.title("Z Aspect and Angle modified");
-	chart.zAspect(150);
-	chart.zAngle(20);
+	chart.zAspect(90);
+	chart.zAngle(70);
 
     // enabled grids
     chart.grid(0).enabled(true);

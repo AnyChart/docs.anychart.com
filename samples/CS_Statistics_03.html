@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">
+
+anychart.onDocumentReady(function() {
+
+  // set data and create a pie chart
+  chart = anychart.pie([
+    ["Ash Trees", 138],
+    ["Elms", 521],
+    ["Maples", 1395],
+    ["Oaks", 857],
+    ["Pines", 1966],
+  ]);
+
+  // get statistical data (the sum of all the values)
+ numberOfTrees = chart.getStat("sum");
+
+  // set the title of the chart
+  chart.title("There Are " + numberOfTrees + " Trees in the Forest");
+  
+  // set the container id for the chart
+  chart.container("container");
+
+  // initiate drawing the chart
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
