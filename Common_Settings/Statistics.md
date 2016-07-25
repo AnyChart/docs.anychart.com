@@ -28,7 +28,7 @@ You can call {api:anychart.core.Chart#getStat}getStat(){api} on the instances of
 
 ## Chart
 
-The {api:anychart.core.Chart#getStat}getStat(){api} method should be called on a chart if you need to get overall statistics on all the series of a multi-series chart or if the chart type does not suggest that there are more than one series.
+You should call the {api:anychart.core.Chart#getStat}getStat(){api} method of a chart object if you need to get overall statistics on all the series of a multi-series chart or if the chart type does not suggest that there are more than one series.
 
 The sample you see below demonstrates how the method allows to obtain the average Y-value of all the points in all the series of a chart (see the title):
 
@@ -48,13 +48,13 @@ numberOfTrees = chart.getStat("sum");
 
 ## Series
 
-Sometimes it is necessary to call the {api:anychart.core.Chart#getStat}getStat(){api} method on an instance of the Series class. Firstly, you may be interested only in one of all the data sets, secondly, the kind of statistics you can obtain depends on the type of a series.
+Sometimes it is necessary to call the {api:anychart.core.Cartesian#getStat}getStat(){api} method of an instance of the series class. Firstly, you may be interested only in one of all the data sets, secondly, the kind of statistics you can obtain depends on the type of a series.
 
 The following sample is based on one of the samples from the previous section. Here, the average is obtained for each series separately, and two numbers are displayed in the title: 
 
 {sample}CS\_Statistics\_04{sample}
 
-Please note that there are two ways to get a link to a series object: a link can be returned either by series constructor methods or by the {api:anychart.charts.Cartesian#getSeries}getSeries(){api} and {api:anychart.charts.Cartesian#getSeriesAt}getSeriesAt(){api} methods of a chart:
+Please note that there are two ways to get a link to a series object instance: a link can be returned either by series constructor methods or by the {api:anychart.charts.Cartesian#getSeries}getSeries(){api} and {api:anychart.charts.Cartesian#getSeriesAt}getSeriesAt(){api} methods of a chart:
 
 ```
 maleAverage = maleMartians.getStat("seriesYAverage");
@@ -63,13 +63,13 @@ femaleAverage = chart.getSeriesAt(1).getStat("seriesYAverage");
 
 ## Point
 
-As a rule, to call {api:anychart.core.Chart#getStat}getStat(){api} on a point, one needs to use the so-called [event listeners](../Common_Settings/Event_Listeners) and [text formatters](../Common_Settings/Text_Formatters). However, in some cases the {api:anychart.core.cartesian.series.Line#getPoint}getPoint(){api} method also allows to get a link to a Point object. We will demonstrate the both ways.
+As a rule, to call {api:anychart.core.Point#getStat}getStat(){api} on a point, one needs to use the so-called [event listeners](../Common_Settings/Event_Listeners) and [text formatters](../Common_Settings/Text_Formatters). However, in some cases you can use the {api:anychart.core.cartesian.series.Line#getPoint}getPoint(){api} method to get a link to a Point object, and invoke the {api:anychart.core.Point#getStat}getStat(){api} method on it. We will demonstrate the both ways.
 
 In the sample below, the title of the chart shows values of the latest points in both series. In addition, when a user selects a pair of points, a subtitle with information on these points appears:
 
 {sample}CS\_Statistics\_05{sample}
 
-The {api:anychart.core.cartesian.series.Line#getPoint}getPoint(){api} method is used to get links to the latest points in two series, and then the {api:anychart.core.Chart#getStat}getStat(){api} method is called on them to get their values and create the title:
+The {api:anychart.core.cartesian.series.Line#getPoint}getPoint(){api} method is used to get links to the latest points in two series, and then the {api:anychart.core.Point#getStat}getStat(){api} method is called on them to get their values and create the title:
 
 ```
 // get links to the latest points in both series
@@ -82,7 +82,7 @@ latestPointMaleMartians.getStat("value") + ", Females — " +
 latestPointFemaleMartians.getStat("value")
 ```
 
-An event listener is used to listen to the pointsSelect event and get links to the selected points. The {api:anychart.core.Chart#getStat}getStat(){api} method is called on them to get their category name and values and to create the subtitle.
+An event listener is used to listen to the pointsSelect event and get links to the selected points. The {api:anychart.core.Point#getStat}getStat(){api} method is called on them to get their category name and values and to create the subtitle.
 
 ```
 // listen to the pointsSelect event
