@@ -52,6 +52,10 @@ anychart.onDocumentReady(function() {
     // Set custom date.
     // Date is 24 of April 2008, set as a JavaScript Timestamp 
     thirdPlotYScale.compareWith(1209081600000);
+    // the following line gives the same result
+    // thirdPlotYScale.compareWith(Date.UTC(2008, 3, 25));
+
+   
 
     chart.title("Different Comparison Bases in Percent mode");
     chart.container("container");

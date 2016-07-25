@@ -89,6 +89,8 @@ chart.plot(0).yScale().compareWith("seriesStart");
 // date is 24 of April 2008, set as a JavaScript Timestamp 
 chart.plot(1).yScale().comparisonMode("value");
 chart.plot(1).yScale().compareWith(1209081600000);
+// the following line gives the same result
+// chart.plot(1).yScale().compareWith(Date.UTC(2008, 3, 25));
 ```
 
 {sample}STOCK\_Scales\_03{sample}
