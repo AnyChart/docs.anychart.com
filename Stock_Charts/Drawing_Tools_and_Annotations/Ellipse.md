@@ -1,8 +1,18 @@
 {:index 3}
-#General Settings
+#Ellipse
 
 * [Overview](#overview)
+* [Hardcoding](#hardcoding)
+* [Visual Settings](#visual_settings)
 
 ## Overview
 
-text
+Coming soon.
+
+## Hardcoding
+
+Coming soon.
+
+## Visual Settings
+
+Coming soon.

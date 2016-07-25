@@ -24,7 +24,7 @@ General settings are the settings that can be done with any annotation regardles
 
 ## Annotation Types
 
-Here is a full list of annotations/drawings available in [AnyStock](http://www.anychart.com/products/anystock/overview/), with links to the tutorials that describe their settings.
+Here is a full list of annotations/drawings available in [AnyStock](../Overview), with links to the tutorials that describe their settings.
 
 ### Fibonacci Tools
 
@@ -45,7 +45,7 @@ Here is a full list of annotations/drawings available in [AnyStock](http://www.a
 ### Geometric Shapes
 
 * [Ellipse](Ellipse)
-* [Rectangle]()
+* [Rectangle](Rectangle)
 * [Triangle](Triangle)
 
 <a name="signals"></a>
