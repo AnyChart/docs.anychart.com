@@ -1,0 +1,53 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyStock"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="['column' 'axis']"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script src="http://cdn.anychart.com/csv-data/dji-daily-short.js" data-export="true"></script>    
+    <script x-export="chart">anychart.onDocumentReady(function() {
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_dji_daily_short_data());
+
+    var firstMapping = dataTable.mapAs({value: 1});
+    var secondMapping = dataTable.mapAs({value: 3});
+
+    chart = anychart.stock();
+    chart.padding(10, 10, 10, 50);
+
+    var nonePlot = chart.plot(0);
+    nonePlot.line(firstMapping);
+    nonePlot.line(secondMapping);
+    nonePlot.legend().titleFormatter(function(){return "comparisonMode='none'"});
+    // Set comparison mode to 'none'
+    nonePlot.yScale().comparisonMode("none");
+
+    var valuePlot = chart.plot(1);
+    valuePlot.line(firstMapping);
+    valuePlot.line(secondMapping);
+    valuePlot.legend().titleFormatter(function(){return "comparisonMode='value'"});
+    // Set comparison mode 'value'
+    valuePlot.yScale().comparisonMode("value");
+
+    var percentPlot = chart.plot(2);
+    percentPlot.line(firstMapping);
+    percentPlot.line(secondMapping);
+    percentPlot.legend().titleFormatter(function(){return "comparisonMode='percent'"});
+    percentPlot.yAxis().labels().textFormatter("{%Value}%");
+    // Set comparison mode to 'percent'
+    percentPlot.yScale().comparisonMode("percent");
+
+    chart.title("Stock: Different Comparison Modes");
+    chart.container("container");
+    chart.draw();
+});
+    
+</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

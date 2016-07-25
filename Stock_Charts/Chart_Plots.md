@@ -44,7 +44,7 @@ var thirdSeries = thirdPlot.column(columnMapping);
 
 {sample :height 800}STOCK\_Plots\_01{sample}
 
-So, we use {api:anychart.charts.Stock#plot}**.plot()**{api} for creating a plot. Note that we should give each plot an unique index. The number of plots each chart has is unlimited.
+So, we use {api:anychart.charts.Stock#plot}plot(){api} for creating a plot. Note that we should give each plot an unique index. The number of plots each chart has is unlimited.
 
 Now we can manage the chart plots.
 
@@ -72,7 +72,7 @@ var secondPlot = chart.plot(1);
 var secondSeries = secondPlot.ohlc(ohlcMapping);
 ```
 
-{sample :height 800 width:}STOCK\_Plots\_02{sample}
+{sample :height 800}STOCK\_Plots\_02{sample}
 
 One plot might contain an unlimited number of series, but still we recommend to split them into different plots if there are too many of them.
 
@@ -93,7 +93,7 @@ extraYAxis.scale(extraYScale);
 
 ### Position
 
-We can position plots wherever we want and make them of the size we need. This can be done using {api:anychart.core.stock.Plot#bounds}**.bounds()**{api} or other methods such as {api:anychart.core.stock.Plot#width}**.width()**{api}, {api:anychart.core.stock.Plot#height}**.height()**{api}, {api:anychart.core.stock.Plot#top}**.top()**{api}, etc. The whole list of these methods you can find {api:anychart.core.stock.Plot}here{api}. By default, each new plot will be placed under the existing ones. Let's now create a simple three-plot AnyStock chart and position two of them next to each other.
+We can position plots wherever we want and make them of the size we need. This can be done using {api:anychart.core.stock.Plot#bounds}bounds(){api} or other methods such as {api:anychart.core.stock.Plot#width}width(){api}, {api:anychart.core.stock.Plot#height}height(){api}, {api:anychart.core.stock.Plot#top}top(){api}, etc. The whole list of these methods you can find {api:anychart.core.stock.Plot}here{api}. By default, each new plot will be placed under the existing ones. Let's now create a simple three-plot AnyStock chart and position two of them next to each other.
 
 ```
 // set the first plot position through bounds
@@ -115,7 +115,7 @@ thirdPlot.bounds("55%", 0, "45%", "45%")
 
 ### DateTime Highlighter
 
-DateTime Highlighter is a feature that is rather similar to [Crosshair feature](../Axes_and_Grids/Crosshair) and helps you not to get lost in great amount of data. In case of having several plots on an AnyStock chart, it shows you all values of the same time point you hover on one of the plots, which is quite comfortable especially if you've got loads of data points. Crosshair is enabled by default; to somehow change it put an object as a parameter to the {api:anychart.core.stock.Plot#dateTimeHighlighter}**.dateTimeHighlighter()**{api} method or "false" value to disable it. Note that this method belongs not to a chart but to a plot. Now let's create a sample with an adjusted highlighter.
+DateTime Highlighter is a feature that is rather similar to [Crosshair feature](../Axes_and_Grids/Crosshair) and helps you not to get lost in great amount of data. In case of having several plots on an AnyStock chart, it shows you all values of the same time point you hover on one of the plots, which is quite comfortable especially if you've got loads of data points. Crosshair is enabled by default; to somehow change it put an object as a parameter to the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method or "false" value to disable it. Note that this method belongs not to a chart but to a plot. Now let's create a sample with an adjusted highlighter.
 
 ```
 // adjust the highlighter of the third plot

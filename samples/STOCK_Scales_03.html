@@ -1,0 +1,68 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyStock"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="['column' 'axis']"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script src="http://cdn.anychart.com/csv-data/dji-daily-short.js" data-export="true"></script>    
+    <script x-export="chart">
+anychart.onDocumentReady(function() {
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_dji_daily_short_data());
+
+    var firstMapping = dataTable.mapAs({value: 1});
+    var secondMapping = dataTable.mapAs({value: 5});
+
+    chart = anychart.stock();
+    chart.padding(10, 10, 10, 50);
+
+    var firstPlot = chart.plot(0);
+    firstPlot.legend().titleFormatter(function(){return "Compare With SERIES_START"});
+    firstPlot.line(firstMapping);
+    firstPlot.line(secondMapping);
+
+    var firstPlotYScale = firstPlot.yScale();
+    firstPlotYScale.comparisonMode("percent");
+
+    // Set date for the changes zero of the series.
+    firstPlotYScale.compareWith(anychart.enums.ScaleCompareWithMode.SERIES_START);
+
+    var secondPlot = chart.plot(1);
+    secondPlot.legend().titleFormatter(function(){return "Compare With FIRST_VISIBLE"});    
+    secondPlot.line(firstMapping);
+    secondPlot.line(secondMapping);
+
+    var secondPlotYScale = secondPlot.yScale();
+    secondPlotYScale.comparisonMode("percent");
+
+    // Set date for first visible point.
+    secondPlotYScale.compareWith(anychart.enums.ScaleCompareWithMode.FIRST_VISIBLE);
+
+    var thirdPlot = chart.plot(2);
+    thirdPlot.legend().titleFormatter(function(){return "Compare With 24 of April 2008"});        
+    thirdPlot.line(firstMapping);
+    thirdPlot.line(secondMapping);
+
+    var thirdPlotYScale = thirdPlot.yScale();
+    thirdPlotYScale.comparisonMode("percent");
+
+    // Set custom date.
+    // Date is 24 of April 2008, set as a JavaScript Timestamp 
+    thirdPlotYScale.compareWith(1209081600000);
+
+    chart.title("Different Comparison Bases in Percent mode");
+    chart.container("container");
+    chart.draw();
+
+    chart.selectRange("2004-01-02", "2006-01-10");    
+});
+
+</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

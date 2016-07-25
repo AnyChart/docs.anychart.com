@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-// create data table on loaded data
+        // create data table on loaded data
         var dataTable = anychart.data.table();
         dataTable.addData([
             ['2014-01-02', 2011.08, 2022.37, 1999.77, 2006.6801, 1666780032],
@@ -59,21 +59,21 @@
             ['2014-02-28', 2125.02, 2128, 2073.1499, 2077.3701, 2319549952]
         ]);
 
-// map loaded data
+        // map loaded data
         var ohlc_mapping = dataTable.mapAs({'open': 1, 'high': 2, 'low': 3, 'close': 4, 'volume': 5});
         var line_high_mapping = dataTable.mapAs({'value': 2});
         var line_close_mapping = dataTable.mapAs({'value': 4});
 
-// create stock chart
+        // create stock chart
         chart = anychart.stock();
 
-// create first plot on the chart with column series
+        // create first plot on the chart with column series
         var plot = chart.plot(0);
         var series = plot.ohlc(ohlc_mapping);
         var line_high_series = plot.line(line_high_mapping);
         var line_close_series = plot.line(line_close_mapping);
 
-// colors
+        // colors
         series.fallingStroke("#bbb");
         series.risingStroke("#888");
         line_high_series.stroke("#FF6D00");
@@ -84,10 +84,10 @@
         line_close_series.name("Close values of the ACME Sales");
 
         var legend = plot.legend();
-// enables legend
+        // enables legend
         legend.enabled(true);
 
-// turn the title on and set the position
+        // turn the title on and set the position
         legend.title(false);
 
         // add a background
@@ -97,9 +97,7 @@
         legend.height(35);
 
         // adjust the paginator
-        //legend.itemsLayout("vertical");
         legend.paginator(true);
-        //legend.paginator().layout("vertical");
         legend.paginator().orientation("right");
 
         // icons
@@ -115,7 +113,7 @@
         item_h.iconType("line");
         item_c.iconType("line");
 
-// set legend position and items layout
+        // set legend position and items layout
         legend.itemsLayout('horizontal');
         legend.position('top');
         legend.itemsTextFormatter(function(){
@@ -124,24 +122,24 @@
             }
         });
 
-// setting the space between the items
+        // setting the space between the items
         legend.itemsSpacing(10);
 
-// enable the scroller
+        // enable the scroller
         chart.scroller().enabled(true);
 
-// adjust the scroller
+        // adjust the scroller
         chart.selectRange('2014-01-02','2014-02-03');
 
-// set container id for the chart
+        // set container id for the chart
         chart.container('container');
 
-// adjust the scroller axis
+        // adjust the scroller axis
         var labels = chart.scroller().xAxis().labels();
         var minorLabels = chart.scroller().xAxis().minorLabels();
 
 
-// initiate chart drawing
+        // initiate chart drawing
         chart.draw();
     });</script>
 </head>

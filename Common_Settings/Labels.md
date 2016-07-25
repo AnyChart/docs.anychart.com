@@ -5,14 +5,9 @@
 * [Image Labels](#image_labels)
 * [Attaching Actions](#attaching_actions)
 
-
 ## Overview
 
 Custom labels are text or image elements that can be placed anywhere on your chart or map to add descriptions or comments. Labels also can have actions attached.
-  
-  
-<!--This article describes labels visualisation and interactivity settings - if you need to know about custom labels positioning, please study Controls and Controls Positioning.-->
-
 
 ## Text Labels
 
@@ -22,38 +17,37 @@ The sample below demonstrates a {api:anychart.ui.Label}label{api} placed in the 
 
 ## Image Labels
 
-If you want to use image as a label and you don't need any text on this image, use {api:anychart.graphics.vector.Stage}**.stage()**{api} and define the image and its appearance settings using the {api:anychart.graphics.vector.Stage#image}**.image()**{api} method of the stage. 
-  
+If you want to use image as a label and you don't need any text on this image, use {api:anychart.graphics.vector.Stage}stage(){api} and define the image and its appearance settings using the {api:anychart.graphics.vector.Stage#image}image(){api} method of the stage. 
   
 The sample below shows a revenue chart with AnyChart logo in the left top corner of data plot. The code should be similar to this one:
 
 ```
-  // create stage
-  var stage = anychart.graphics.create("container");
-  
-  // define chart type and set data
-  var chart = anychart.pieChart([
-    {x: "Product A", value: 9000},
-    {x: "Product B", value: 5000},
-    {x: "Product C", value: 1400},
-    {x: "Product D", value: 590},
-    {x: "Product E", value: 8813}
-  ]);
-  
-  // create image label
-  var image = stage.image();
-  // set image source
-  image.src("//static.anychart.com/images/logo_anychart.gif");
-  // set spacing from the top
-  image.y(15);
-  // set spacing from the left
-  image.x(25);
-  // set width of the image
-  image.width(50);
-  // set height of the image
-  image.height(50);
-  // manage overlapping
-  image.zIndex(chart.zIndex() + 1);
+// create stage
+var stage = anychart.graphics.create("container");
+
+// define chart type and set data
+var chart = anychart.pieChart([
+  {x: "Product A", value: 9000},
+  {x: "Product B", value: 5000},
+  {x: "Product C", value: 1400},
+  {x: "Product D", value: 590},
+  {x: "Product E", value: 8813}
+]);
+
+// create image label
+var image = stage.image();
+// set image source
+image.src("//static.anychart.com/images/logo_anychart.gif");
+// set spacing from the top
+image.y(15);
+// set spacing from the left
+image.x(25);
+// set width of the image
+image.width(50);
+// set height of the image
+image.height(50);
+// manage overlapping
+image.zIndex(chart.zIndex() + 1);
 ```
 
 These settings will allow you to display chart the following way:
@@ -66,37 +60,37 @@ You can attach actions to labels and turn them into controls that can change an 
 
 Sample below will demonstrate you calling external function on image labels click.
 
-Note: In the previous sample we've used {api:anychart.ui.Label}**.label()**{api} without text but with an image as a background. For such cases you can use **{api:anychart.graphics.vector.Stage#image}.image(){api}** method.
+Note: In the previous sample we've used {api:anychart.ui.Label}label(){api} without text but with an image as a background. For such cases you can use {api:anychart.graphics.vector.Stage#image}image(){api} method.
 
 ```
-  var image = stage.image();
-  // source of the image
-  image.src("//static.anychart.com/images/column.png")
-  // set width of the image
-  image.width(25)
-  // set height of the image
-  image.height(25)
-  // set spacing from the top
-  image.y(20)
-  // manage overlapping
-  image.zIndex(2)
-  // set spacing from the left
-  image.x(35);
+var image = stage.image();
+// source of the image
+image.src("//static.anychart.com/images/column.png")
+// set width of the image
+image.width(25)
+// set height of the image
+image.height(25)
+// set spacing from the top
+image.y(20)
+// manage overlapping
+image.zIndex(2)
+// set spacing from the left
+image.x(35);
 ```
 
-To attach an action to the image you have to set **{api:anychart.graphics.vector.Image#listen}listen(){api}** method for the **{api:anychart.graphics.vector.Stage#image}.image(){api}**. Full list of available actions is described in [Event Listeners article](../Common_Settings/Event_Listeners).
+To attach an action to the image you have to set {api:anychart.graphics.vector.Image#listen}listen(){api} method for the {api:anychart.graphics.vector.Stage#image}image(){api} Full list of available actions is described in [Event Listeners article](../Common_Settings/Event_Listeners).
 
 ```
-  var myImage = stage.image();
-  myImage.src("//static.anychart.com/images/column.png");
-  myImage.align("topleft");
-  
-  myImage.listen(
-    // event type
-    "click",
-    // your function
-    function() {/*custom function code*/}
-  )
+var myImage = stage.image();
+myImage.src("//static.anychart.com/images/column.png");
+myImage.align("topleft");
+
+myImage.listen(
+  // event type
+  "click",
+  // your function
+  function() {/*custom function code*/}
+)
 ```
 
 Here is a js chart with three custom images. Click on any of them invokes function of redrawing chart using same data but different chart type.
