@@ -8,58 +8,61 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data
-  var data = anychart.data.set([
-    ["Department Stores", 637166, 737166],
-    ["Discount Stores", 721630, 537166],
-    ["Men's/Women's Specialty Stores", 148662, 188662],
-    ["Juvenile Specialty Stores", 78662, 178662],
-    ["All other outlets", 90000, 89000]
+  var chart = anychart.line();
+
+  chart.title("Tokens with Options");
+  var tooltip = chart.tooltip();
+  tooltip.displayMode("separated");
+  tooltip.positionMode("point");
+
+  // string for formatting tooltips
+  var fomatter = "{%SeriesName}: {%Value}{groupsSeparator:', decimalsCount:3}";
+
+  // setting and adjusting data visualisation
+  var columnSeries = chart.column([
+    ["A", 637166],
+    ["B", 721630],
+    ["C", 148662],
+    ["D", 78662],
+    ["E", 90000]
   ]);
+  columnSeries.name("Income");
 
-  // remapping data
-  var SalesWinter = data.mapAs({x: [0], value: [1]});
-  var SalesSummer = data.mapAs({x: [0], value: [2]});
+  var columnTooltip = columnSeries.tooltip();
+  columnTooltip.textFormatter(fomatter);
 
-  // define chart type
-  var chart = anychart.bar();
+  var lineSeries = chart.line([
+    ["A", 95.073],
+    ["B", 97.12844],
+    ["C", 96.43],
+    ["D", 70.582],
+    ["E", 35]
+  ]);
+  lineSeries.name("Percentage");
 
-  // set title
-  chart.title("Multi-series Bar Chart");
-  
-  // set axes titles
-  var xAxis = chart.xAxis();
-  xAxis.title("Retail Channel");
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
+  var lineTooltip = lineSeries.tooltip();
+  lineTooltip.textFormatter(fomatter);
 
-  // set data series
-  var series_1 = chart.bar(SalesWinter);
-  var series_2 = chart.bar(SalesSummer);
-  
-  // set series name
-  series_1.name("Winter");
-  series_2.name("Summer");
-  
-  // set textFormatter
-  var labels1 = series_1.labels();
-  labels1.enabled(true);
-  labels1.textFormatter(function(){
-      return(this.seriesName);
-  });
-  var labels2 = series_2.labels();
-  labels2.enabled(true);
-  labels2.textFormatter(function(){
-      return(this.seriesName);
-  });
-  
-  // set the labels position
-  labels1.position("right");
-  labels1.anchor("left");
-  labels2.position("right");
-  labels2.anchor("left");
+  var extraYScale = anychart.scales.linear();
+  extraYScale.minimum(0).maximum(100);
 
-  // draw chart
+
+  // adding and adjust extra Y axis
+  var extraYAxis = chart.yAxis(1);
+  extraYAxis.orientation("right");
+  extraYAxis.scale(extraYScale);
+  lineSeries.yScale(extraYScale);
+
+  tooltipSetter(columnTooltip);
+  tooltipSetter(lineTooltip);
+
+  function tooltipSetter(seriesTooltip) {
+    seriesTooltip.anchor("bottomCenter");
+    seriesTooltip.position("topCenter");
+    seriesTooltip.title(false);
+    seriesTooltip.separator(false);
+  }
+
   chart.container("container");
   chart.draw();
 });</script>

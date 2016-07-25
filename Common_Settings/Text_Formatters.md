@@ -2,8 +2,10 @@
 
 * [Overview](#overview)
 * [String Tokens](#string_tokens)
- * [Formatting Options](#formatting_options)
  * [Tokens List](#tokens_list)
+* [Formatting Parameters](#formatting_parameters)
+ * [Formatting Parameters List](#formatting_parameters_list)
+ * [Escaping symbols](#escaping_symbols)
 * [Formatting functions](#formatting_functions)
  * [Default fields](#default_fields)
  * [Extra fields](#extra_fields)
@@ -18,7 +20,7 @@ Sometimes it might be necessary to display any text with the points on a chart f
 
 ## String Tokens
 
-String tokens are special strings you can use in text formatters instead of using formatting functions described later, string tokens are suitable when you need only basic formatting, but they cover most of the cases.
+String tokens are special string values you can use in text formatters instead of using formatting functions described below. They are suitable when you need only basic formatting, but they cover most of the cases.
 
 Here is how tokens can be used in tooltips, series labels or axes labels:
 
@@ -58,44 +60,17 @@ A live sample of chart tooltip, labels and axes labels formatted using string to
 
 {sample}CS\_TextFormatter\_00{sample}
 
-##Formatting Options
+### Tokens List
 
-Along with usage of special tokens which helps to define the source of text you can set options which helps to format numeric values in the text. Curly brackets delimit options which follows the token. 
-  
-Here is a simple code with tokens usage:
-
-```
-var series = chart.line(data);
-var tooltip = series.tooltip();
-tooltip.textFormatter(
-  // Show series name and point's value. 
-  // The value has ' as a thousands separator and maximum number of decimal symbols is limited with 3 
-  "{%SeriesName}: {%Value}{thousandsSeparator:', numDecimals:3}"
-);
-```
-
-Here is a chart with a tooltip configured using tokens with options:
-
-{sample}CS\_TextFormatter\_07{sample}
-
-Note: if you want to use a symbol which is already reserved in token's parser, you need to use double slash \\ before desirable symbol to prevent the symbol from been parsed.
-
-```
-var tooltip = series.tooltip();
-tooltip.textFormatter(
-  // use coma as a thousands separator
-  "{%Value}{thousandsSeparator:\\,}"
-);
-```
-
-## Tokens List
-
-Here is a full list of the tokens you can use in formatting strings, note that some tokens don't work unversally: you can't use {%BubbleSize} outside of [Bubble series](../Basic_Charts_Types/Bubble_Chart) or {%Close} outside of [Candlestick](../Basic_Charts_Types/Japanese_Candlestick_Chart) or [OHLC](../Basic_Charts_Types/OHLC_Chart) and so on. 
+Here is a full list of the tokens you can use in formatting strings. Note that some tokens don't work universally: you can't use {%BubbleSize} outside of [Bubble series](../Basic_Charts_Types/Bubble_Chart) or {%Close} outside of [Candlestick](../Basic_Charts_Types/Japanese_Candlestick_Chart) or [OHLC](../Basic_Charts_Types/OHLC_Chart) and so on. 
 
 <table width="700px" class="dtTABLE">
 <tr>
 <th>Token</th>
 <th>Description</th>
+</tr>
+<tr>
+<td>{%Average}</td><td>Average value.</td>
 </tr>
 <tr>
 <td>{%Value}</td><td>The y value of this point.</td>
@@ -168,9 +143,6 @@ Here is a full list of the tokens you can use in formatting strings, note that s
 </tr>
 <tr>
 <td>{%SeriesLastYValue}</td><td>The y value of the first point in this series.</td>
-</tr>
-<tr>
-<td>{%SeriesPointsCount}</td><td>The number of points in this series.</td>
 </tr>
 <tr>
 <td>{%SeriesXAverage}</td><td>The average x value of all the points within this series.</td>
@@ -308,13 +280,7 @@ Here is a full list of the tokens you can use in formatting strings, note that s
 <td>{%CategoryYAverage}</td><td>The name of the category.</td>
 </tr>
 <tr>
-<td>{%CategoryYMax}</td><td>The max of all the points within this category.</td>
-</tr>
-<tr>
 <td>{%CategoryYMedian}</td><td>The median of all the points within this category.</td>
-</tr>
-<tr>
-<td>{%CategoryYMin}</td><td>The min of all the points within this category.</td>
 </tr>
 <tr>
 <td>{%CategoryYMode}</td><td>The mode of all the points within this category.</td>
@@ -338,7 +304,13 @@ Here is a full list of the tokens you can use in formatting strings, note that s
 <td>{%CategoryYRangeMode}</td><td>The mode range in this category (Range charts).</td>
 </tr>
 <tr>
-<td>{%СategoryYRangePercentOfTotal}</td><td>Category Y range percent of total (Range charts).</td>
+<td>{%CategoryYRangePercentOfTotal}</td><td>Category Y range percent of total (Range charts).</td>
+</tr>
+<tr>
+<td>{%CategoryYRangeSum}</td><td>The sum of all ranges in this category (Range charts).</td>
+</tr>
+<tr>
+<td>{%CategoryYSum}</td><td>The sum of all the points within this category.</td>
 </tr>
 <tr>
 <td>{%DataPlotMaxYSumSeriesName}</td><td>The name of the series with a maximal sum of the points y values.</td>
@@ -368,47 +340,121 @@ Here is a full list of the tokens you can use in formatting strings, note that s
 <td>{%YPercentOfCategory}</td><td>The percentage of all the points with the same name this point represents.</td>
 </tr>
 </table>
+
+
+## Formatting Parameters
+
+Along with usage of special tokens which help to define the source of text, you can set options which help to format numeric values in the text. Curly brackets delimit options which follow the token. 
   
+Here is a simple code with tokens usage:
+
+```
+var series = chart.line(data);
+var tooltip = series.tooltip();
+tooltip.textFormatter(
+  // Show series name and point's value. 
+  // The value has an apostophe symbol (') as a thousands separator and maximum number of decimal symbols is limited with 3 
+  "{%SeriesName}: {%Value}{groupsSeparator:', decimalsCount:3}"
+);
+```
+
+Here is a chart with a tooltip configured using tokens with options:
+
+{sample}CS\_TextFormatter\_01{sample}
   
-Here is the list of options for tokens formatting:
-  
+
+### Formatting Parameters List  
+
+There is a list of formatting parameters, which help to organize your data presentation in the way you prefer. You can find a sample of usage after the table.
   
 <table width="700px" class="dtTABLE">
 <tr>
-<th>Token</th>
-<th>Type</th>
-<th>Description</th>
+<th colspan=2>Token</th>
+<th rowspan=2>Type</th>
+<th rowspan=2>Description</th>
+</tr>
+<tr><td>AnyChart 7</td><td>AnyChart 6</td></tr>
+<tr>
+<td>decimalsCount</td><td>numDecimals</td><td>numeric</td><td>The number of visible decimal characters (including characters for the integer values).</td>
 </tr>
 <tr>
-<td>numDecimals</td><td>numeric</td><td>The number of visible decimal characters (including characters for the integer values).</td>
+<td>decimalPoint</td><td>decimalSeparator</td><td>boolean</td><td>Sets a character for separating decimal part of a number.</td>
 </tr>
 <tr>
-<td>thousandsSeparator</td><td>string</td><td>A character for separating each three symbols of an integer number.</td>
+<td>groupsSeparator</td><td>thousandsSeparator</td><td>string</td><td>Sets a character for separating thousands of an integer number.</td>
 </tr>
 <tr>
-<td>useNegativeSign</td><td>boolean</td><td>Controls the "-" sign.</td>
+<td>useBracketsForNegativeuseNegativeSign</td><td>useNegativeSign</td><td>boolean</td><td>Controls the "-" sign. Uses "-" when "true" in AnyChart 6 and curly brackets in AnyChart 7, and vica versa.</td>
 </tr>
 <tr>
-<td>trailingZeros</td><td>boolean</td><td>Hide or display decimal characters for integer values.</td>
+<td>zeroFillDecimals</td><td>trailingZeros</td><td>boolean</td><td>Hides or displays decimal characters for integer values.</td>
+</tr>
+<tr>
+<td>scale</td><td>scale</td><td></td><td>.</td>
 </tr>
 </table>
 
-##Formatting functions
+In the next sample we have formatted the scale according to the Old British currency system (before 1971), when £1 was eqivalent to 20 shillings and 1 shilling = 12 pence.
 
-If you need a complex formatting you can use formatting function instead of token strings. Formatting functions are set like this:
+<table width="700px" class="dtTABLE">
+<tr>
+<td>1 pence</td><td>1 pence</td>
+</tr>
+<tr>
+<td>12 pence</td><td>1 shilling</td>
+</tr>
+<tr>
+<td>20 shillings</td><td>1 pound</td>
+</tr>
+</table>
 
 ```
-    //set data series
-    var series = chart.bar(Sales2003);
-    series.name("Winter");
-    
-    series.tooltip().textFormatter(function(){
-        return this.seriesName + ": " + this.value + " millions%";
+var columnTooltip = columnSeries.tooltip();
+columnTooltip.textFormatter(
+  // formatting the scale
+  "{%SeriesName}: {%Value}{scale:(1)(12)(20)|( p)( s)( £)}"
+);
+var lineTooltip = lineSeries.tooltip();
+  lineTooltip.textFormatter("{%SeriesName}: {%Value}{decimalsCount:1}%");
+```  
+
+{sample}CS\_TextFormatter\_02{sample}
+
+If you explore the sample, you can see that all values are set in pence, but the shown value is formatted.
+
+
+### Escaping symbols
+
+If you want to use a symbol which is already reserved in token's parser, you need to use double slash (\\) before this symbol to prevent it from been parsed.
+
+```
+var tooltip = series.tooltip();
+tooltip.textFormatter(
+  // use coma as a thousands separator
+  "{%Value}{groupsSeparator:\\,}"
+);
+```  
+
+{sample}CS\_TextFormatter\_03{sample}
+
+
+## Formatting functions
+
+For complex formatting use formatting function instead of token strings. Formatting functions are set like this:
+
+```
+    // formatting through function
+    var lineTooltip = lineSeries.tooltip();
+    lineTooltip.textFormatter(function(){
+      return "Income: " + this.value + "%";
     });
 
 ```
 
-###Default fields
+{sample}CS\_TextFormatter\_04{sample}
+
+
+### Default fields
 
 There are some standard fields available in formatters depending on a chart type. Below you can see a table with all chart types and fields available for them by default.
 
@@ -478,7 +524,7 @@ Let's look at those examples to understand how it works.
     });
 ```
 
-{sample}CS\_TextFormatter\_01{sample}
+{sample}CS\_TextFormatter\_05{sample}
 
 First of all, you should enable the labels. Then set the fields of values you want those labels to show using the {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} function according to the table above.
 
@@ -496,13 +542,13 @@ This function can return more than one value. The sample below demonstrates it.
     });
 ```
 
-{sample}CS\_TextFormatter\_02{sample}
+{sample}CS\_TextFormatter\_06{sample}
 
-###Extra fields
+### Extra fields
 
 The number and variety of default fields might be not enough in some cases. Sometimes it's necessary to show some extra information. In this case you should use one of the following methods: {api:anychart.core.utils.SeriesPointContextProvider#getStat}**.getStat()**{api}, {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api} or {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}**.getSeriesMeta()**{api}. Which one to use depends on the unique situation.
 
-####getDataValue
+#### getDataValue
 
 Using these methods, you can display the values from the extra params, if you have added any to the series or to the data. Look at the sample and its code below:
 
@@ -521,7 +567,7 @@ Using these methods, you can display the values from the extra params, if you ha
     });
 ```
 
-{sample}CS\_TextFormatter\_03{sample}
+{sample}CS\_TextFormatter\_07{sample}
 
 In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "redundant" value for the second point of the second series and displayed it, using {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api}.
   
@@ -555,7 +601,7 @@ Managing additional information for chart tooltips works pretty much the same as
 
 Here is a sample with additional information in the chart tooltip. Full information on tooltip settings can be found in [Tooltip article](../Common_Settings/Tooltip).
 
-{sample}CS\_TextFormatter\_06{sample}
+{sample}CS\_TextFormatter\_08{sample}
 
 <!--
  Another extra parameter, "extra\_inf\_long", was added to use it, for example, as an extra field in the tooltip, because it's too long to be shown on the chart. How to add the values from any extra parameters, see in the [Labels and Tooltips]() tutorial.-->
@@ -598,7 +644,7 @@ To add any parameter to the meta of the series, you need to set the parameter na
 
 ```
 
-{sample}CS\_TextFormatter\_04{sample}
+{sample}CS\_TextFormatter\_09{sample}
 
 **Note!** There's no {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}**.getSeriesMeta()**{api} method in Pie, Funnel or Pyramid Charts.
 
@@ -647,4 +693,4 @@ Here is a sample of the {api:anychart.core.utils.SeriesPointContextProvider#getS
     });
 ```
 
-{sample}CS\_TextFormatter\_05{sample}
+{sample}CS\_TextFormatter\_10{sample}

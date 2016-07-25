@@ -8,35 +8,60 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // set chart type and data
-    var chart = anychart.pie([
-        ["Department Stores", 637166],
-        ["Discount Stores", 721630],
-        ["Men's/Women's Stores", 148662],
-        ["Juvenile Specialty Stores", 78662],
-        ["All other outlets", 90000]
-    ]);
-    // set chart title text settings
-    chart.title("Aqua Style");
+  // data
+  var data = anychart.data.set([
+    ["Department Stores", 637166, 737166],
+    ["Discount Stores", 721630, 537166],
+    ["Men's/Women's Specialty Stores", 148662, 188662],
+    ["Juvenile Specialty Stores", 78662, 178662],
+    ["All other outlets", 90000, 89000]
+  ]);
 
-    // disable legend
-    chart.legend(false);
+  // remapping data
+  var SalesWinter = data.mapAs({x: [0], value: [1]});
+  var SalesSummer = data.mapAs({x: [0], value: [2]});
 
-    // set aqua style
-    chart.fill("aquastyle");
-    
-    // textFormatter
-    var labels = chart.labels();
-    labels.textFormatter(function(){
-        return((this.getDataValue("value"))+" / "+this.getStat("sum"));
-    });
+  // define chart type
+  var chart = anychart.bar();
 
-    // labels positioning
-    labels.position("outside");
-    
-    // draw
-    chart.container("container");
-    chart.draw();
+  // set title
+  chart.title("Multi-series Bar Chart");
+  
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Retail Channel");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
+
+  // set data series
+  var series_1 = chart.bar(SalesWinter);
+  var series_2 = chart.bar(SalesSummer);
+  
+  // set series name
+  series_1.name("Winter");
+  series_2.name("Summer");
+  
+  // set textFormatter
+  var labels1 = series_1.labels();
+  labels1.enabled(true);
+  labels1.textFormatter(function(){
+      return(this.seriesName);
+  });
+  var labels2 = series_2.labels();
+  labels2.enabled(true);
+  labels2.textFormatter(function(){
+      return(this.seriesName);
+  });
+  
+  // set the labels position
+  labels1.position("right");
+  labels1.anchor("left");
+  labels2.position("right");
+  labels2.anchor("left");
+
+  // draw chart
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
