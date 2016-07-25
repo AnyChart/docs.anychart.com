@@ -499,7 +499,9 @@ x<br>seriesName<br>index<br>value<br>valueLowerError<br>valueUpperError<br>xLowe
 </table>
 
 
-Let's look at those examples to understand how it works.
+First of all, enable the labels. Then set the fields of values you want those labels to show using the {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} function according to the table above.
+
+This function can return more than one value. The sample below demonstrates it.
 
 
 ```
@@ -511,38 +513,20 @@ Let's look at those examples to understand how it works.
     series_1.name("Winter");
     series_2.name("Summer");
     
-    //set textFormatter
-    var labels_1 = series_1.labels();
-    labels_1.enabled(true);
-    labels_1.textFormatter(function(){
-        return(this.seriesName);
+    var labels_winter = series_winter.labels();
+    labels_winter.enabled(true);
+    labels_winter.textFormatter(function(){
+        return(this.seriesName + ": $" + this.value);
     });
-    var labels_2 = series_2.labels();
-    labels_2.enabled(true);
-    labels_2.textFormatter(function(){
-        return(this.seriesName);
+    var labels_summer = series_summer.labels();
+    labels_summer.enabled(true);
+    labels_summer.textFormatter(function(){
+        return(this.seriesName + ": $" + this.value);
     });
 ```
 
 {sample}CS\_TextFormatter\_05{sample}
 
-First of all, you should enable the labels. Then set the fields of values you want those labels to show using the {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} function according to the table above.
-
-This function can return more than one value. The sample below demonstrates it.
-
-```
-    //set the textFormatter
-    var labels_1 = series_1.labels();
-    labels_1.textFormatter(function(){
-        return("Size: "+this.size+", value: "+this.value);
-    });
-    var labels_2 = series_2.labels();
-    labels_2.textFormatter(function(){
-        return("Size: "+this.size+", value: "+this.value);
-    });
-```
-
-{sample}CS\_TextFormatter\_06{sample}
 
 ### Extra fields
 
@@ -567,7 +551,7 @@ Using these methods, you can display the values from the extra params, if you ha
     });
 ```
 
-{sample}CS\_TextFormatter\_07{sample}
+{sample}CS\_TextFormatter\_06{sample}
 
 In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "redundant" value for the second point of the second series and displayed it, using {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api}.
   
@@ -601,7 +585,7 @@ Managing additional information for chart tooltips works pretty much the same as
 
 Here is a sample with additional information in the chart tooltip. Full information on tooltip settings can be found in [Tooltip article](../Common_Settings/Tooltip).
 
-{sample}CS\_TextFormatter\_08{sample}
+{sample}CS\_TextFormatter\_07{sample}
 
 <!--
  Another extra parameter, "extra\_inf\_long", was added to use it, for example, as an extra field in the tooltip, because it's too long to be shown on the chart. How to add the values from any extra parameters, see in the [Labels and Tooltips]() tutorial.-->
@@ -613,7 +597,6 @@ You can add extra parameters not only to the data points but to series too. Let'
 To add any parameter to the meta of the series, you need to set the parameter name first and then its value, which can be of any type.
 
 ```
-
     // set first series data
     var series_1 = chart.ohlc([
         {x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
@@ -644,7 +627,7 @@ To add any parameter to the meta of the series, you need to set the parameter na
 
 ```
 
-{sample}CS\_TextFormatter\_09{sample}
+{sample}CS\_TextFormatter\_08{sample}
 
 **Note!** There's no {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}**.getSeriesMeta()**{api} method in Pie, Funnel or Pyramid Charts.
 
@@ -693,4 +676,4 @@ Here is a sample of the {api:anychart.core.utils.SeriesPointContextProvider#getS
     });
 ```
 
-{sample}CS\_TextFormatter\_10{sample}
+{sample}CS\_TextFormatter\_09{sample}

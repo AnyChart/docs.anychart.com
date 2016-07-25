@@ -8,51 +8,75 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // data
-    var dataSet = anychart.data.set([
-        ["Facebook", 103.42, 27],
-        ["Google Search", 75.98, 37],
-        ["Google Play", 73.67, 28],
-        ["YouTube", 71.96, 27],
-        ["Google Maps", 68.58, 14],
-        ["Gmail", 64.41, 29],
-        ["Instagram", 31.99, 66],
-        ["Maps (Apple)", 31.89, 64],
-        ["Stocks", 30.78, 32],
-        ["Twitter", 30.76, 36]
+    // chart type
+    var chart = anychart.financial();
+
+    // chart title
+    chart.title("Multi-series");
+
+    // adjust x scale type
+    var xScale = chart.xScale();
+    xScale.minimum(Date.UTC(2007, 7, 27));
+    xScale.maximum(Date.UTC(2007, 8, 2));
+    var xTicks = xScale.ticks();
+    xTicks.interval(0,0,1);
+
+    // set first series data
+    var series_1 = chart.ohlc([
+        {x: Date.UTC(2007, 7, 28), open:511.53, high:514.98, low:505.79, close:506.40},
+        {x: Date.UTC(2007, 7, 30), open:517.36, high:518.40, low:516.58, close:516.80},
+        {x: Date.UTC(2007, 8, 1), open:513.10, high:516.50, low:511.47, close:515.25}
     ]);
-
-    // set chart type
-    var chart = anychart.column();
-
-    chart.title("Additional Information in Chart Tooltip");
-
-    // map data for series
-    var seriesData = dataSet.mapAs({
-        // set data row for x parameter
-        x: [0],
-        // set data row for value parameter
-        value: [1],
-        // set data row for custom parameter
-        yoy: [2]
+    series_1.xPointPosition(0.5);
+    series_1.meta("company", "ACME Corp.");
+     
+    // set second series data
+    var series_2 = chart.ohlc([
+        {x: Date.UTC(2007, 7, 28), open: 522.95, high: 523.10, low: 522.50, close: 522.52},
+        {x: Date.UTC(2007, 7, 30), open: 524.49, high: 524.91, low: 524.38, close: 524.61},
+        {x: Date.UTC(2007, 8, 1), open: 518.81, high: 520.03, low: 517.51, close: 519.73}
+    ]);
+    series_2.xPointPosition(0.5);
+    series_2.meta("company", "Duff B. Corp.");
+    
+    // enable the labels
+    var labels_1 = series_1.labels();
+    var labels_2 = series_2.labels();
+     
+    // textFormatter
+    labels_1.textFormatter(function(){
+        return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
     });
-
-    // set data for series
-    var series = chart.column(seriesData);
-    series.name("Unique users in 2013");
-
-    // series tooltip settings
-    var tooltip = series.tooltip();
-    // adjust tooltip text
-    tooltip.textFormatter(function(){
-        return this.seriesName + ": " + this.value + " millions\nYear over year: " + this.getDataValue("yoy") + "%";
+    labels_2.textFormatter(function(){
+        return("C: "+this.getSeriesMeta("company")+"\nL: "+this.low+"\nH: "+this.high);
     });
-
-    // allow two lines in x axis labels
+    
+    // labels positioning
+    labels_1.position("bottom");
+    labels_1.anchor("top");
+    labels_1.offsetY("5");
+    labels_1.enabled(true);
+    labels_2.position("top");
+    labels_2.anchor("bottom");
+    labels_2.offsetY("5");
+    labels_2.enabled(true);
+    
+    // set axes title
     var xAxis = chart.xAxis();
-    xAxis.staggerMode(2);
+    xAxis.title("Day");
+    var xLabels = chart.xAxis().labels();
+    xLabels.textFormatter(function(value){
+        var date = new Date(value["tickValue"]);
+        var options = {
+            month: "short",
+            day: "numeric"
+        };
+        return date.toLocaleDateString("en-US", options);
+    });
+    var yAxis = chart.yAxis();
+    yAxis.title("Price");
 
-    // set container and draw chart
+    // draw
     chart.container("container");
     chart.draw();
 });</script>

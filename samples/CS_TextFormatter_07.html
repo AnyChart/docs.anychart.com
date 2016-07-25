@@ -7,61 +7,54 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  // chart data
-  var data_1 = [
-    {x: "1", low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000},
-    {x: "2", low: 2500, q1: 3000, median: 3800, q3: 3900, high: 4000},
-    {x: "3", low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000},
-    {x: "4", low: 4000, q1: 5000, median: 5500, q3: 6500, high: 7000},
-    {x: "5", low: 8000, q1: 8400 , median: 8500, q3: 8800, high: 9000}
-  ];
-  var data_2 = [
-    {x: "1", low: 1300, q1: 1400, median: 1700, q3: 2000, high: 2100, outliers:[2300,1000]},
-    {x: "2", low: 2500, q1: 3400, median: 3500, q3: 3600, high: 3700, outliers:[4000,2200], extra_inf:["Redundancy"]},
-    {x: "3", low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000, outliers:[3450,1800]},
-    {x: "4", low: 4000, q1: 5000, median: 5500, q3: 6000, high: 7000, outliers:[7100,3700]},
-    {x: "5", low: 8100, q1: 8400, median: 8500, q3: 9000, high: 9500, outliers:[9700,7600,4500]}
-  ];
 
-  // create box chart
-  var chart = anychart.box();
+    // data
+    var dataSet = anychart.data.set([
+        ["Facebook", 103.42, 27],
+        ["Google Search", 75.98, 37],
+        ["Google Play", 73.67, 28],
+        ["YouTube", 71.96, 27],
+        ["Google Maps", 68.58, 14],
+        ["Gmail", 64.41, 29],
+        ["Instagram", 31.99, 66],
+        ["Maps (Apple)", 31.89, 64],
+        ["Stocks", 30.78, 32],
+        ["Twitter", 30.76, 36]
+    ]);
 
-  // set chart title text settings
-  var title = chart.title();
-  title.text("ACME Corp. Salaries\nFebruary, 2015 vs January, 2015");
-  title.hAlign("center");
-  title.enabled(true);
+    // set chart type
+    var chart = anychart.column();
 
-  // set axes titles settings
-  var xAxis = chart.xAxis();
-  xAxis.title(false);
-  var yAxis = chart.yAxis();
-  yAxis.title("$ per month");
+    chart.title("Additional Information in Chart Tooltip");
 
-  // set chart yScale settings
-  chart.yScale().maximumGap(0);
+    // map data for series
+    var seriesData = dataSet.mapAs({
+        // set data row for x parameter
+        x: [0],
+        // set data row for value parameter
+        value: [1],
+        // set data row for custom parameter
+        yoy: [2]
+    });
 
-  // create box chart series with our data
-  chart.box(data_1);
-  var series = chart.box(data_2);
-   
-  // enable the labels
-  var labels = series.labels();
-  labels.enabled(true);
-   
-  // usage of textFormatter
-  labels.textFormatter(function(){
-    return(this.getDataValue("extra_inf"));
-  });
+    // set data for series
+    var series = chart.column(seriesData);
+    series.name("Unique users in 2013");
 
-  // positioning the label
-  labels.offsetY(20);
+    // series tooltip settings
+    var tooltip = series.tooltip();
+    // adjust tooltip text
+    tooltip.textFormatter(function(){
+        return this.seriesName + ": " + this.value + " millions\nYear over year: " + this.getDataValue("yoy") + "%";
+    });
 
-  // set container id for the chart
-  chart.container("container");
+    // allow two lines in x axis labels
+    var xAxis = chart.xAxis();
+    xAxis.staggerMode(2);
 
-  // initiate chart drawing
-  chart.draw();
+    // set container and draw chart
+    chart.container("container");
+    chart.draw();
 });</script>
 </head>
 <body>
