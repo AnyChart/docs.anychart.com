@@ -9,7 +9,7 @@
 * [Remove](#remove)
 
 ## General information
-AnyStock Charts can process table-formatted data. The most appropriate way of doing this is using {api:anychart.data#table}**table()**{api} method. You can find more about table data model [here](../Working_with_Data/Using_Table_Data_Model).
+AnyStock Charts can process table-formatted data. The most appropriate way of doing this is using {api:anychart.data#table}table(){api} method. You can find more about table data model in [AnyChart Table Data Model](../Working_with_Data/Using_Table_Data_Model) article.
 
 First of all, we need to create a table for our data. It looks like this:
 
@@ -18,13 +18,13 @@ First of all, we need to create a table for our data. It looks like this:
 table = anychart.data.table();
 ```
 
-Here you should set which table column contain the x-axis value. If it is not defined in the first table column, then you should set the index of the column with x-axis values to the {api:anychart.data#table}**.table()**{api} method, because it is set to 0 by default.
+Here you should set which table column contain the x-axis value. If it is not defined in the first table column, then you should set the index of the column with x-axis values to the {api:anychart.data#table}table(){api} method, because it is set to 0 by default.
 
 ## Add
 
 ### Data as array of arrays
 
-Now, we should add some data to our newly created table. We use {api:anychart.data.Table#addData}**.addData()**{api} method for this.
+Now, we should add some data to our newly created table. We use {api:anychart.data.Table#addData}addData(){api} method for this.
 
 ```
 table = anychart.data.table(0);
@@ -73,16 +73,16 @@ table.addData([
 
 ## Mapping
 
-After we have set the data, we need to map it properly. For that we should create a new mapping object using {api:anychart.data.Table#mapAs}**.mapAs()**{api} function. 
+After we have set the data, we need to map it properly. For that we should create a new mapping object using {api:anychart.data.Table#mapAs}mapAs(){api} function. 
 
 ```
 // create a mapping
 var mapping = table.mapAs();
 ```
 
-This object now will be responsible for the data mapping. Here we should add fields using {api:anychart.data.TableMapping#addField}**.addField()**{api} method. Each field has to get at least two parameters: the name of the field to add and the index of the column where the field should get values from. These will map the data correctly.
+This object now will be responsible for the data mapping. Here we should add fields using {api:anychart.data.TableMapping#addField}addField(){api} method. Each field has to get at least two parameters: the name of the field to add and the index of the column where the field should get values from. These will map the data correctly.
 
-The third parameter is an grouping/approximation mode: when you've got too many data points and they are grouped to be shown on a small plot, the grouping type is chosen according to the field name (so, "first" will be for "open", "last" for close, "average" for "value", etc.). If you want to change it, add the aggregation type you want to use as the third parameter to the {api:anychart.data.TableMapping#addField}**.addField()**{api} method.
+The third parameter is an grouping/approximation mode: when you've got too many data points and they are grouped to be shown on a small plot, the grouping type is chosen according to the field name (so, "first" will be for "open", "last" for close, "average" for "value", etc.). If you want to change it, add the aggregation type you want to use as the third parameter to the {api:anychart.data.TableMapping#addField}addField(){api} method.
 
 That's how it should look like:
 
@@ -110,17 +110,17 @@ That's how we map the data for AnyStock. For more information see the [Using Tab
 
 ## Remove
 
-We can remove data points using two methods: {api:anychart.data.Table#remove}**.remove()**{api} or {api:anychart.data.Table#removeFirst}**.removeFirst()**{api}. 
+We can remove data points using two methods: {api:anychart.data.Table#remove}remove(){api} or {api:anychart.data.Table#removeFirst}removeFirst(){api}. 
 Which one to choose depends on what exactly do we need.
 
-{api:anychart.data.Table#removeFirst}**.removeFirst()**{api} method removes the given number of data points from the beginning of a table. This removes the first ten rows from the table:
+{api:anychart.data.Table#removeFirst}removeFirst(){api} method removes the given number of data points from the beginning of a table. This removes the first ten rows from the table:
 
 ```
 // remove first ten rows
 table.removeFirst(10);
 ```
 
-{api:anychart.data.Table#remove}**.remove()**{api} method can remove any point or a range of them. Look at the following code sample, it will remove a range of data points:
+{api:anychart.data.Table#remove}remove(){api} method can remove any point or a range of them. Look at the following code sample, it will remove a range of data points:
 
 ```
 // remove a range of rows
