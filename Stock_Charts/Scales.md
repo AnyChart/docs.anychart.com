@@ -48,9 +48,9 @@ To enable this mode use {api:anychart.scales.Linear#comparisonMode}comparisonMod
 values of {api:anychart.enums.ScaleComparisonMode}anychart.enums.ScaleComparisonMode{api} enum as a parameter value. Possible values:
 
 <table><tr><th>Mode</th><th>Enum Constant</th><th>Value</th><tr>
-<tr>No changes, values displayed<td>anychart.enums.ScaleComparisonMode.NONE</td><td>"none"</td></tr>
-<tr>Percent Changes Displayed<td>anychart.enums.ScaleComparisonMode.PERCENT</td><td>"percent"</td></tr>
-<tr>Value Changes Displayes<td>anychart.enums.ScaleComparisonMode.VALUE</td><td>"value"</td></tr>
+<tr><td>No changes, values displayed</td><td>anychart.enums.ScaleComparisonMode.NONE</td><td>"none"</td></tr>
+<tr><td>Percent Changes Displayed</td><td>anychart.enums.ScaleComparisonMode.PERCENT</td><td>"percent"</td></tr>
+<tr><td>Value Changes Displayes</td><td>anychart.enums.ScaleComparisonMode.VALUE</td><td>"value"</td></tr>
 </table>
 
 ### Values
