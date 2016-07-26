@@ -21,6 +21,8 @@ In this section of the documentation you can learn almost everything you need to
 General settings are the settings that can be done with any annotation regardless its type, this document also contains some other basic information you need to know about annotations: how to allow/forbid adding annotations, how to work with defaults and so on.
 
 * [Annotations General Settings](General_Settings)
+* [Managing Drawing Process](Drawing)
+* [Serializing and Deserializing Drawings](Serializing_Deserializing)
 
 ## Annotation Types
 
