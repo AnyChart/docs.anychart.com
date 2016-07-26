@@ -34,16 +34,16 @@ Here is a sample with enabled context menu:
 The Context Menu is enabled by default and if you have no need in the menu you can disable it using {api:anychart.ui.ContextMenu#enabled}.enabled(){api} method:
 
 ```
-  var chart = anychart.column();
-  var menu = chart.contextMenu();
-  menu.enabled(false);
+var chart = anychart.column();
+var menu = chart.contextMenu();
+menu.enabled(false);
 ```
 
 *Note:* there is even more simple way to disable context menu: pass *false* to the {api:anychart.core.Chart#contextMenu}.contextMenu(){api} method:
 
 ```
-  var chart = anychart.column();
-  chart.contextMenu(false);
+var chart = anychart.column();
+chart.contextMenu(false);
 ```
 
 {sample}CS\_ContextMenu\_02{sample}
@@ -62,11 +62,11 @@ The default context menu in all charts consists of the following elements:
 You can change any item in the context menu using {api:anychart.ui.ContextMenu#itemsFormatter}.itemsFormatter(){api} method. This method uses function as a parameter:
 
 ```
-  var chart = anychart.column();
-  var menu = chart.contextMenu();
-  menu.itemsFormatter(function(items){
-    /*custom code*/
-  });
+var chart = anychart.column();
+var menu = chart.contextMenu();
+menu.itemsFormatter(function(items){
+  /*custom code*/
+});
 ```
 
 In the snippet above the parameter `items` can be used to obtain the context menu items array.  
@@ -76,14 +76,14 @@ In the snippet above the parameter `items` can be used to obtain the context men
 In the next sample let's change the text of the "Include" item the "Hidden". Here is the snippet for this:
 
 ```
-  var chart = anychart.column();
-  var menu = chart.contextMenu();
-  menu.itemsFormatter(function(items){
-    for(var i=0;i<items.length;i++)
-      if(items[i]!==null)
-        if(items[i].text == "Include") items[i].text = "- INCLUDE -";
-    return items;
-  });
+var chart = anychart.column();
+var menu = chart.contextMenu();
+menu.itemsFormatter(function(items){
+  for(var i=0; i < items.length; i++)
+    if (items[i]!==null)
+      if(items[i].text == "Include") items[i].text = "- INCLUDE -";
+  return items;
+});
 ```
 
 **Note**: as you can see, the way of text adjustment is a bit tricky. The differences in context menu for selected and unselected point requires to omit changing elements using index of the menu's item. The sample with adjusted items text can be found [below](#sample).
@@ -93,13 +93,13 @@ In the next sample let's change the text of the "Include" item the "Hidden". Her
 JavaScript provides variety of methods for working with arrays. [These methods](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods_2) can be used for manipulating Context Menu items in any way you want. For instance, you can use method [**.pop()**](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) to exclude last item of the Context Menu:
 
 ```
-  var chart = anychart.column();
-  var menu = chart.contextMenu();
-  menu.itemsFormatter(function(items){
-    items.pop();
-    items.pop();
-    return items;
-  });
+var chart = anychart.column();
+var menu = chart.contextMenu();
+menu.itemsFormatter(function(items){
+  items.pop();
+  items.pop();
+  return items;
+});
 ```
 
 **Note**: as far as items separator is an element of items' array excluding separator along with the last element of the Context Menu makes it more sensible.  
@@ -114,51 +114,51 @@ Here is a sample with adjusted text of the default item and hidden last item:
 The Context Menu is very flexible it may serve a variety of purposes and in some cases it makes much more seance to create a whole new Context Menu rather than tuning default one. Use {api:anychart.ui.ContextMenu}anychart.ui.contextMenu(){api} to create custom Context Menu:
 
 ```
-  var chart = anychart.column();
-  
-  // hide default menu
-  chart.contextMenu(false);
-  
-  // create custom context menu
-  var menu = anychart.ui.contextMenu();
+var chart = anychart.column();
+
+// hide default menu
+chart.contextMenu(false);
+
+// create custom context menu
+var menu = anychart.ui.contextMenu();
 ```
 
 AnyChart charting library doesn't limit the number of charts on a single plot, that is why it is required to define the target for the custom Context Menu:
  
 ```
-  menu.attach(chart);
+menu.attach(chart);
 ```
 
 The custom menu has no items by default. Use {api:anychart.ui.ContextMenu#itemsProvider}.itemsProvider(){api} method to set a function for creating custom items array:
 
 ```
-  menu.itemsProvider(function(){
-    var data = chart.data();
-    var slices = [];
-    for (var i=0;i<data.getRowsCount();i++)
-      slices.push({text: data.get(i, "name"), action: function(){
-        var slice = data.find("name", this.item.text);
-        chart.explodeSlice(slice, !chart.getPoint(slice).selected());
-      }});
-    return [
-      {
-        text: "Explode All",
-        action: function(){
-          chart.explodeSlices(true)
-        }
-      },
-      {
-        text: "Explode None",
-        action: function(){
-          chart.explodeSlices(false);
-        }
-      },
-      {
-        text: "Slices",
-        subMenu: slices
+menu.itemsProvider(function(){
+  var data = chart.data();
+  var slices = [];
+  for (var i=0;i < data.getRowsCount();i++)
+    slices.push({text: data.get(i, "name"), action: function(){
+      var slice = data.find("name", this.item.text);
+      chart.explodeSlice(slice, !chart.getPoint(slice).selected());
+    }});
+  return [
+    {
+      text: "Explode All",
+      action: function(){
+        chart.explodeSlices(true)
       }
-    ];
-  });
+    },
+    {
+      text: "Explode None",
+      action: function(){
+        chart.explodeSlices(false);
+      }
+    },
+    {
+      text: "Slices",
+      subMenu: slices
+    }
+  ];
+});
 ```
 
 Here is a sample of a custom context menu:
