@@ -17,10 +17,10 @@ Chart Editor is a dialog window that allows to create and set up various chart t
 
 ## Prerequisites
 
-Chart editor works only if `https://cdn.anychart.com/fonts/2.0.0/anychart.css` and `https://cdn.anychart.com/css/latest/anychart-ui.min.css` are referenced in the page:
+Chart editor works only if `anychart.css` and `anychart-ui.min.css` are referenced in the page, you can find latest and versioned options at [AnyChart CDN](https://cdn.anychart.com/#ui):
 
 ```
-<link rel="stylesheet" href="https://cdn.anychart.com/css/7.11.0/anychart-ui.min.css">
+<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css">
 <link rel="stylesheet" href="https://cdn.anychart.com/fonts/2.0.0/anychart.css">
 ```
 

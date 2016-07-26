@@ -6,6 +6,7 @@ The following UI components are available and supported:
 
 * [Context Menu](Context_Menu)
 * [Chart Editor](Chart_Editor)
+* [Preloader](Preloader)
 
 The following UI components are present in the Framework but are in beta:
 
@@ -15,4 +16,5 @@ In the upcoming releases we plan to add:
 
 * General Toolbar Component
 * Stock Drawing Toolbar
+* Updated Gantt Toolbar Component
 * Export Data/Image Toolbar
