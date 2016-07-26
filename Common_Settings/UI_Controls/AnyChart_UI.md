@@ -18,3 +18,4 @@ In the upcoming releases we plan to add:
 * Stock Drawing Toolbar
 * Updated Gantt Toolbar Component
 * Export Data/Image Toolbar
+* Breacrumbs for Drill Down Control

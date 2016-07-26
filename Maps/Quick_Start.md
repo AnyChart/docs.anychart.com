@@ -3,8 +3,10 @@ AnyMap Quick Start
 ===========
   
 ## Getting started with Maps
-###1. Include AnyMap into Your Web Page
-Reference the JavaScript file in the <head> section of your web page. You can use the link as shown below or download anychart-bundle.min.js from the [AnyChart download page](../Quick_Start/Downloading_AnyChart) and then put it into any folder of your site (you’ll have to use your own link in this case).
+
+##1. Include AnyMap into Your Web Page
+
+Reference the JavaScript file in the `<head>` section of your web page. 
 
 ```
 <head>
@@ -12,25 +14,33 @@ Reference the JavaScript file in the <head> section of your web page. You can us
 </head>
 ```
 
-###2. Include the necessary Map into Your Web Page
-Reference the JavaScript file in the <head> section of your web page.
-Download the *.zip file from the [Map Collection](./Maps_List), put it into any folder of your site and reference it or simply use the link as shown below.
+You can use the link as shown above or download anychart-bundle.min.js from the [AnyChart download page](../Quick_Start/Downloading_AnyChart) and then put it into any folder of your site (you’ll have to use your own link in such case).
+
+##2. Include the necessary Map into Your Web Page
+
+Reference the Map JavaScript file in the `<head>` section of your web page.
 
 ```
 <head>
-    <script src="//cdn.anychart.com/geodata/countries/aus/australia.js"></script>
+    <script src="https://cdn.anychart.com/geodata/countries/aus/australia.js"></script>
 </head>
 ```
 
-###3. Create a Container for the Map
+You also can use **GeoJSON**, **TopoJSON** or **SVG** formats. See [AnyChart Map List](./Maps_List) and [Supported Formats](Architecture#supported_formats) to learn more about supported formats and ways of creating maps.
+
+You can use the link as shown above or download file from the [Map Collection](./Maps_List), put it into any folder of your site (you’ll have to use your own link in such case).
+
+##3. Create a Container for the Map
+
 Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. Unless you don’t, AnyMap will use 100% of the container.
-Example:
+
 ```
 <body>
     <div id="container" style="width: 500px; height: 400px;"></div>
 </body>
 ```
-###4. Prepare your Data
+
+##4. Prepare your Data
 
 Map Data should be defined as an array of objects (each represents a region) containing at least a region id and a value. The number of fields that might a data object have is unlimited. 
 
@@ -48,10 +58,9 @@ dataSet = anychart.data.set([
 ]);
 ```
 
-###4. Create a map
+##5. Create a map
+
 Add the JavaScript tag `<script>` with the following code anywhere in the page. 
-You also can use [GeoJSON](https://en.wikipedia.org/wiki/GeoJSON) and [TopoJSON](https://en.wikipedia.org/wiki/GeoJSON#TopoJSON) formats. See [Maps List](./Maps_List) and [Custom GeoJSON Maps](./Custom_GeoJson_Maps) to learn more about supported formats and ways of creating maps.
-Example:
 
 ```
 <script>
@@ -74,9 +83,8 @@ anychart.onDocumentReady(function() {
 
     // set the series
     var series = map.choropleth(dataSet);
-    series.geoIdField('code_hasc');
 	
-	// disable the labels
+	// disable labels
     series.labels(false);
 
     // set the container
@@ -85,19 +93,25 @@ anychart.onDocumentReady(function() {
   });
 </script>
 ```
+
+Several map series types are available, see [AnyChart Map Series Types](Architecture#map_series_types) to learn more.
   
 ## The result
-###See the result
+
 After all these steps you should have the following result. You can launch and explore this example further here:
+
 {sample}Maps\_Overview\_01{sample}
-###Full source code
-You can copy this to a file on your computer and open it in your browser to display the Gauge shown above:
+
+##Full source code
+
+You can copy this code to a file on your computer and open it in your browser to display the map above:
+
 ```
 <!doctype html>
 <html>
   <head>
-    <script src="//cdn.anychart.com/js/develop/anychart-bundle.min.js"></script>
-    <script src="//cdn.anychart.com/geodata/countries/aus/australia.js"></script>
+    <script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
     <style>
       html, body, #container {
         width: 100%;
@@ -129,9 +143,8 @@ You can copy this to a file on your computer and open it in your browser to disp
 
     // set the series
     var series = map.choropleth(dataSet);
-    series.geoIdField('code_hasc');
 	
-	// disable the labels
+	// disable labels
     series.labels(false);
 
     // set the container

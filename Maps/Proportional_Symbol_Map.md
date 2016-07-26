@@ -15,7 +15,7 @@ Proportional Symbol Map
 
 ## Overview
 
-As the name implies, symbols (circles, bubbles), representing the values, are drawn of the proportional size to the size of the value being represented. The size of the bubbles (proportional symbols in maps) is not dependent on the size of the region associated with the variable. For example, if we show the value of unemployment on a proportional symbol map of the UK, Dundee would have bigger visual importance then Highland if their unemployment values were so (e.g. 3.5% in Dundee, 1% in Highland).
+As the name implies, symbols (circles, bubbles), representing the values, are drawn of the proportional size to the size of the value being represented. The size of the bubbles (proportional symbols in maps) does not depend on the size of the region associated with the variable. For example, if we show the value of unemployment on a proportional symbol map of the UK, Dundee would have bigger visual importance then Highland if their unemployment values were so (e.g. 3.5% in Dundee, 1% in Highland).
 
 An example of proportional circles is shown below.
 
@@ -28,14 +28,14 @@ The Bubble series in AnyChart JavaScript Maps is quite similar to the Basic Java
 Bubble series is being created the same as other series on a map. First, we should create the map, set the geoData and define series of bubble type:
 
 ```
-	// creating the map
-	map = anychart.map();
+// creating the map
+map = anychart.map();
 
-	// setting the geoData
-	map.geoData(anychart.maps.australia);
+// setting the geoData
+map.geoData(anychart.maps.australia);
 
-	// setting the series
-	var series = map.bubble(dataSet);
+// setting the series
+var series = map.bubble(dataSet);
 ```
 
 ### Data
@@ -69,7 +69,7 @@ var dataSet = anychart.data.set([
 
 ### Region ID
 
-Now, let's look at another way of defining the points locations on a map, when there are only one field is necessary: "id", which binds by the field defined by {api:anychart.charts.Map#geoIdField}**geoIdField()**{api} method. Set the necessary parameters for the map and the series:
+Now, let's look at another way of defining the points locations on a map, when there are only one field is necessary: "id", which binds by the field defined by {api:anychart.charts.Map#geoIdField}**geoIdField(){api} method. Set the necessary parameters for the map and the series:
 
 ```
 var dataSet = anychart.data.set([
@@ -99,28 +99,28 @@ series.geoIdField("code_hasc");
 
 ### Size
 
-You can adjust how the bubbles' size is defined. For this we use two methods: {api:anychart.charts.Map#maxBubbleSize}**.maxBubbleSize()**{api} and {api:anychart.charts.Map#minBubbleSize}**.minBubbleSize()**{api}. Let's see how it is done:
+You can adjust how the bubbles' size is defined. For this we use two methods: {api:anychart.charts.Map#maxBubbleSize}maxBubbleSize(){api} and {api:anychart.charts.Map#minBubbleSize}minBubbleSize(){api}. Let's see how it is done:
 
 ```
-    // set the maximum size of the bubble
-    map.maxBubbleSize(35);
+// set the maximum size of the bubble
+map.maxBubbleSize(35);
 
-    // set the minimum size of the bubble
-    map.minBubbleSize(10);
-
+// set the minimum size of the bubble
+map.minBubbleSize(10);
 ```
+
 {sample}Maps\_Proportional\_Symbol\_08{sample}
 
 You can set the size in percents of map size as well:
 
 ```
-    // set the maximum size of the bubble
-    map.maxBubbleSize('20%');
+// set the maximum size of the bubble
+map.maxBubbleSize('20%');
 
-    // set the minimum size of the bubble
-    map.minBubbleSize('1%');
-
+// set the minimum size of the bubble
+map.minBubbleSize('1%');
 ```
+
 {sample}Maps\_Proportional\_Symbol\_09{sample}
 
 ## Altering Bubble Series
@@ -129,36 +129,36 @@ Altering the series looks pretty much the same as in [basic Bubble Charts](../Ba
 
 ### Series colors
 
-To color all bubbles in a series we use the {api:anychart.core.map.series.Bubble#fill}**.fill()**{api} method; to color the hovered bubbles there is a {api:anychart.core.map.series.Bubble#hoverFill}**.hoverFill()**{api} function; for selected bubbles we've got {api:anychart.core.map.series.Bubble#selectFill}**.selectFill()**{api}. For coloring the stroke we've got {api:anychart.core.map.series.Bubble#stroke}**.stroke()**{api}, {api:anychart.core.map.series.Bubble#hoverStroke}**.hoverStroke()**{api} and {api:anychart.core.map.series.Bubble#selectStroke}**.selectStroke()**{api} accordingly. 
+To color all bubbles in a series we use the {api:anychart.core.map.series.Bubble#fill}fill(){api} method; to color the hovered bubbles there is a {api:anychart.core.map.series.Bubble#hoverFill}hoverFill(){api} function; for selected bubbles we've got {api:anychart.core.map.series.Bubble#selectFill}selectFill(){api}. For coloring the stroke we've got {api:anychart.core.map.series.Bubble#stroke}stroke(){api}, {api:anychart.core.map.series.Bubble#hoverStroke}hoverStroke(){api} and {api:anychart.core.map.series.Bubble#selectStroke}selectStroke(){api} accordingly. 
 
 Let's create a sample using things we've learned.
 
 ```
-	// change the fill and hoverFill colors
-	series.fill("#EBD670");
-	series.hoverFill("#C7FF99");
+// change the fill and hoverFill colors
+series.fill("#EBD670");
+series.hoverFill("#C7FF99");
 
-	// change the stroke and hoverStroke colors
-	series.stroke("#C7FF99");
-	series.hoverStroke("#EBD670");
+// change the stroke and hoverStroke colors
+series.stroke("#C7FF99");
+series.hoverStroke("#EBD670");
 
-	// set the select colors
-	series.selectStroke("#66FFCC");
-	series.selectFill("#879CED");
+// set the select colors
+series.selectStroke("#66FFCC");
+series.selectFill("#879CED");
 ```
 
 {sample}Maps\_Proportional\_Symbol\_05{sample}
 
-Also, we can make a monochromatic map using hatch fills. We use {api:anychart.core.map.series.Bubble#hatchFill}**.hatchFill**{api} to add a hatch pattern to the whole series, {api:anychart.core.map.series.Bubble#hoverHatchFill}**.hoverHatchFill**{api} to add hatch to series in hovered state and {api:anychart.core.map.series.Bubble#selectHatchFill}**.selectHatchFill**{api} to make the selected elements hatched.
+Also, we can make a monochromatic map using hatch fills. We use {api:anychart.core.map.series.Bubble#hatchFill}hatchFill{api} to add a hatch pattern to the whole series, {api:anychart.core.map.series.Bubble#hoverHatchFill}hoverHatchFill{api} to add hatch to series in hovered state and {api:anychart.core.map.series.Bubble#selectHatchFill}selectHatchFill{api} to make the selected elements hatched.
 
 
 ```
-	// making the chart monochromatic
-	series.hatchFill("horizontal");
-	series.hoverHatchFill("diagonal_cross");
-	series.selectHatchFill("confetti");
-	series.stroke("black");
-	series.fill(null);
+// making the chart monochromatic
+series.hatchFill("horizontal");
+series.hoverHatchFill("diagonal_cross");
+series.selectHatchFill("confetti");
+series.stroke("black");
+series.fill(null);
 ```
 
 {sample}Maps\_Proportional\_Symbol\_06{sample}
@@ -178,35 +178,33 @@ var dataSet = anychart.data.set([
     {'id': 'AU.TS', 'size': 514700}
 ]);
 ```
+
 {sample}Maps\_Proportional\_Symbol\_07{sample}
 
 ### Labels and Tooltips
 
-You can also alter the labels' and tooltips' appearance. Use standard methods such as {api:anychart.core.ui.Label#fontColor}**.fontColor()**{api} for labels, format tooltips using {api:anychart.core.ui.Tooltip#textFormatter}**.textFormatter()**{api} function. You can find everything about this in the [Labels](../Common_Settings/Labels) and [Tooltips](../Common_Settings/Tooltip) tutorial.
+You can also alter the labels' and tooltips' appearance. Use standard methods such as {api:anychart.core.ui.Label#fontColor}fontColor(){api} for labels, format tooltips using {api:anychart.core.ui.Tooltip#textFormatter}textFormatter(){api} function. You can find everything about this in the [Labels](../Common_Settings/Labels) and [Tooltips](../Common_Settings/Tooltip) tutorial.
 
-Let's now consider a couple of samples with labels and/or tooltips. First, let's change the font color with {api:anychart.ui.Label#fontColor}**.fontColor()**{api}, change their size and format them a bit using {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} function.
+Let's now take a look at the couple of samples with labels and/or tooltips. First, let's change the font color with {api:anychart.ui.Label#fontColor}fontColor(){api}, change their size and format them a bit using {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} function.
 
 ```
-    // set the text color 
-    series.labels().fontColor('black');
-    series.labels().fontSize(10);
+// set the text color 
+series.labels().fontColor('black');
+series.labels().fontSize(10);
 
-    // format the labels
-    series.labels().textFormatter(function(){
-        return(this.getDataValue("name")+"\n"+this.size);
-    });
-
+// format the labels
+series.labels().textFormatter(function(){
+    return(this.getDataValue("name")+"\n"+this.size);
+});
 ```
 
 {sample}Maps\_Proportional\_Symbol\_10{sample}
 
 Find out more about Text Formatters [here](../Common_Settings/Text_Formatters).
 
-Labels are enabled by default, they can be turned on and off using the {api:anychart.ui.Label#enable}**.enable()**{api} method as usual.
-
+Labels are enabled by default, they can be turned on and off using the {api:anychart.ui.Label#enable}enable(){api} method as usual.
 
 {sample}Maps\_Proportional\_Symbol\_11{sample}
-
 
 ## Multi series
 
@@ -216,17 +214,16 @@ For this we'd better set the data as array as we should map it properly. Don't f
 
 ```
 var dataSet = anychart.data.set([
-              ['AU.NS', 3.5, 8.5],
-              ['AU.NT', 7.1, 12],
-              ['AU.WA', 10.4, 2.9],
-              ['AU.SA', 4.7, 28.2],
-              ['AU.VI', 7.9, 19.4],
-              ['AU.QL', 8, 3.7],
-              ['AU.TS', 3.2, 7.3]
-          ]);
-          var series1Data = dataSet.mapAs({id:[0], size:[1]});
-          var series2Data = dataSet.mapAs({id:[0], value:[2]});
-
+  ['AU.NS', 3.5, 8.5],
+  ['AU.NT', 7.1, 12],
+  ['AU.WA', 10.4, 2.9],
+  ['AU.SA', 4.7, 28.2],
+  ['AU.VI', 7.9, 19.4],
+  ['AU.QL', 8, 3.7],
+  ['AU.TS', 3.2, 7.3]
+]);
+var series1Data = dataSet.mapAs({id:[0], size:[1]});
+var series2Data = dataSet.mapAs({id:[0], value:[2]});
 ```
 
 {sample}Maps\_Proportional\_Symbol\_12{sample}
@@ -234,25 +231,24 @@ var dataSet = anychart.data.set([
 We can create a map with several bubble series as well:
 
 ```
-  // create the data
-  var dataSet = anychart.data.set([
-      ['AU.NS', 3.5, 8.5],
-      ['AU.NT', 7.1, 12],
-      ['AU.WA', 10.4, 2.9],
-      ['AU.SA', 4.7, 28.2],
-      ['AU.VI', 7.9, 19.4],
-      ['AU.QL', 8, 3.7],
-      ['AU.TS', 3.2, 7.3]
-  ]);
+// create the data
+var dataSet = anychart.data.set([
+    ['AU.NS', 3.5, 8.5],
+    ['AU.NT', 7.1, 12],
+    ['AU.WA', 10.4, 2.9],
+    ['AU.SA', 4.7, 28.2],
+    ['AU.VI', 7.9, 19.4],
+    ['AU.QL', 8, 3.7],
+    ['AU.TS', 3.2, 7.3]
+]);
 
-  // mapping the data
-  var series1Data = dataSet.mapAs({id:[0], size:[1]});
-  var series2Data = dataSet.mapAs({id:[0], size:[2]});
+// mapping the data
+var series1Data = dataSet.mapAs({id:[0], size:[1]});
+var series2Data = dataSet.mapAs({id:[0], size:[2]});
 
-  //set series geoId field settings
-  series_1.geoIdField("code_hasc");
-  series_2.geoIdField("code_hasc");
-
+//set series geoId field settings
+series_1.geoIdField("code_hasc");
+series_2.geoIdField("code_hasc");
 ```
 
 {sample}Maps\_Proportional\_Symbol\_13{sample}

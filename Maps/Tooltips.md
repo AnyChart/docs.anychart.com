@@ -15,9 +15,9 @@ To learn about Tooltips editing in general please visit [Text Settings](../Appea
 
 When you attach the data to your map, you can add some extra fields which you may want to show later in the tooltip. Just look through the [Text Formatters article](..\Common_Settings/Text_Formatters) to know more about meta.
 
-In the sample below we've got a map of Australia, where each state data contains some extra information which lately is viewed in tooltips on states hover.
+In the sample below we've got a map of Australia, where each state data contains some extra information which later is shown in tooltips.
 
-Note that we added extra fields to each data point, and one of the regions has one extra field more than other. Then we used {api:anychart.core.ui.Tooltip#textFormatter}**.textFormatter**{api} to transform our tooltips to make them show the information we need instead of what is displayed by default.
+Note that we added extra fields to each data point, and one of the regions has one extra field. We use {api:anychart.core.ui.Tooltip#textFormatter}textFormatter{api} to transform our tooltips and make them show the information we need instead of what is displayed by default.
 
 ```
 var mapDataSet = anychart.data.set([
@@ -39,7 +39,6 @@ mapChart.geoData(anychart.maps.australia);
 
 // set the series
 var series = mapChart.choropleth(mapDataSet);
-series.geoIdField('code_hasc');
 
 // enable the tooltips and format them at once
 series.tooltip().textFormatter(function(e){
