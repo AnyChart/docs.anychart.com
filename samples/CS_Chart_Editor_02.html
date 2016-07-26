@@ -20,6 +20,7 @@
 
   // create chart editor
   editor = anychart.ui.chartEditorDialog();
+  editor.decorate(document.getElementById("container"));      
 
   // pass data
   editor.data(data);
