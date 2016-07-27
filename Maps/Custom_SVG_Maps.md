@@ -98,6 +98,8 @@ or
 </g>
 ```
 
+**NOTE:**
+
 ## Sample
 
 {sample}Maps\_SVG\_01{sample}
