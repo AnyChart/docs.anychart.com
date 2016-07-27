@@ -129,7 +129,7 @@ Here is a very basic sample of SVG image loaded into AnyMap and used with [Choro
 
 {sample}Maps\_SVG\_01{sample}
 
-## Sample SVG String
+## Sample SVG Map
 
 Here is a sample of SVG map from [AnyMap Map Collection](Maps_List) and used with [Choropleth Map Series](Choropleth_Map):
 
