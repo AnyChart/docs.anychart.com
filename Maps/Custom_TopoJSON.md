@@ -7,7 +7,7 @@
 
 ## Overview
 
-AnyChart supports Geo Data in [GeoJSON](Custom_GeoJson_Maps) and TopoJSON formats.
+AnyChart supports Geo Data in [GeoJSON](Custom_GeoJson_Maps), TopoJSON and [SVG](Custom_SVG_Maps) formats.
 
 TopoJSON is an extension of GeoJSON that encodes topology. Rather than representing geometries discretely, geometries in TopoJSON files are stitched together from shared line segments called arcs. Arcs are sequences of points, while line strings and polygons are defined as sequences of arcs. Each arc is defined only once, but can be referenced several times by different shapes, thus reducing redundancy and decreasing the file size. 
 

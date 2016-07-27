@@ -6,11 +6,11 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/7.11.0/anychart-ui.min.css"/>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <link rel="stylesheet" href="https://cdn.anychart.com/fonts/2.0.0/anychart.css" data-export="true">        
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  stage = anychart.graphics.create("container");
+  var stage = anychart.graphics.create("container");
   // sample data set
   data = [
     ['Category A', 12814, 3054, 4376, 4229],
@@ -19,7 +19,7 @@
   ];
 
   // create chart editor
-  editor = anychart.ui.chartEditorDialog();
+  var editor = anychart.ui.chartEditorDialog();
   editor.render(document.getElementById("container"));      
 
   // pass data
