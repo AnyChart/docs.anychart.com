@@ -2,9 +2,17 @@
 PERT Chart Data
 ===========
 
-PERT charts use a special type of data, which cannot be set the same way as data for other chart types: one needs not only to create a set of items (nodes), but also to specify how they are connected. There are two ways to set data for PERT charts, both based on [Anychart Data Tree Model](../Working_with_Data/Using_Data_Tree_Model):
+* [Overview](#overview)
+* [Nodes and Connections Set Simultaneously](#nodes_and_connections_set_simultaneously)
+* [Nodes and Connections Set Separately](#nodes_and_connections_set_separately)
 
-1. Nodes and connections between them can be set simultaneously. In this case, nodes' descriptions contain information on their connections.
+## Overview
+
+PERT charts use a special type of data, which cannot be set the same way as data for other chart types: one needs not only to create a set of items (nodes), but also to specify how they are connected. There are two ways to set data for PERT charts, both based on [Anychart Data Tree Model](../Working_with_Data/Using_Data_Tree_Model).
+
+## Nodes and Connections Set Simultaneously
+
+Nodes and connections between them can be set simultaneously. In this case, nodes' descriptions contain information on their connections.
 
 ```
 var data = [
@@ -13,12 +21,14 @@ var data = [
   {id: 2, name: 'C', dependsOn: [1]},
   {id: 3, name: 'D', dependsOn: [0]},
   {id: 4, name: 'E', dependsOn: [0]},
-  {id: 5, name: 'F', dependsOn: [4]}
+  {id: 5, name: 'F', dependsOn: [4, 3]}
 ];
 var tree = anychart.data.tree(data);
 ```
 
-2. Nodes and connections can be set separately, in two sets of data.
+## Nodes and Connections Set Separately
+
+Nodes and connections can be set separately, in two sets of data.
 
 ```
 var data = [
