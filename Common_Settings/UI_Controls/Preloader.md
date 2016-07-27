@@ -29,9 +29,8 @@ preloader = anychart.ui.preloader();
 // render preloader to the DOM
 preloader.render();
 
-// Optional: decide what element is covered by an animated preloader
-// if not set - page body is used
-preloader.decorate(document.getElementById("container"));
+// Optional: decide what element becomes a preloader
+// preloader.decorate(document.getElementById("container"));
 
 // show preloader
 preloader.visible(true);
