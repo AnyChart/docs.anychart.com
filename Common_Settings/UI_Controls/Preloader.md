@@ -29,8 +29,11 @@ preloader = anychart.ui.preloader();
 // render preloader to the DOM
 preloader.render();
 
+// Optional: 
+// preloader.render(document.getElementById("container")); renders
+// preloader in the given element
 // Optional: decide what element becomes a preloader
-// preloader.decorate(document.getElementById("container"));
+// preloader.decorate(document.getElementById("preloader_container"));
 
 // show preloader
 preloader.visible(true);

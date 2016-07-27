@@ -32,7 +32,7 @@ Source code of this sample can be obtained from [https://github.com/AnyChart/cha
 
 ## Rendering
 
-Chart editor is rendered using {api:anychart.ui#chartEditorDialog}chartEditorDialog(){api} method that returns {api:anychart.ui.chartEditor.Dialog}anychart.ui.chartEditor.Dialog{api} instance. After initialization of editor you either need to create it in DOM using {api:anychart.ui.chartEditor.Dialog#render}render(){} method, or assign a container which will become the editor using {api:anychart.ui.chartEditor.Dialog#decorate}decorate(){} method. 
+Chart editor is created using {api:anychart.ui#chartEditorDialog}chartEditorDialog(){api} method that returns {api:anychart.ui.chartEditor.Dialog}anychart.ui.chartEditor.Dialog{api} instance. After initialization of editor you either need to create it in DOM using {api:anychart.ui.chartEditor.Dialog#render}render(){} method, or assign a container which will become the editor using {api:anychart.ui.chartEditor.Dialog#decorate}decorate(){} method. 
 
 After that you need to make dialog visible in order to see it, use {api:anychart.ui.chartEditor.Dialog#visible}visible(){} method for that.
 
@@ -40,8 +40,10 @@ After that you need to make dialog visible in order to see it, use {api:anychart
 editor = anychart.ui.chartEditorDialog();
 // render editor on the page
 editor.render();
+// optionally: editor.render(document.getElementById("container"));
+// renders in the given element
 // alternatively, render to the element on the page
-// editor.decorate(document.getElementById("container"));      
+// editor.decorate(document.getElementById("editor_container"));      
 
 // show editor
 editor.visible(true);
