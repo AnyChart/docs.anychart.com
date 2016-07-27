@@ -28,7 +28,7 @@ var tree = anychart.data.tree(data);
 
 Here is a sample with data set in this way:
 
-{sample :width 700 :height 700}PERT\_Data\_01{sample}
+{sample}PERT\_Data\_01{sample}
 
 ## Nodes and Connections Set Separately
 
@@ -56,5 +56,5 @@ var tree = anychart.data.tree(data, dependencies);
 
 Here is a sample with data set in this way:
 
-{sample :width 700 :height 700}PERT\_Data\_02{sample}
+{sample}PERT\_Data\_02{sample}
 
