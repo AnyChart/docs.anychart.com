@@ -5,7 +5,8 @@
 * [Overview](#overview)
 * [Loading SVG](#loading_svg)
 * [SVG Structure](#svg_structure)
-* [Sample](#sample)
+* [Sample SVG String](#sample_svg_string)
+* [Sample SVG Map](#sample_svg_map)
 
 ## Overview
 
@@ -122,9 +123,17 @@ If you want to assign any other text data to an element, like you do in GeoJSON 
 </rect>
 ```
 
-## Sample
+## Sample SVG String
 
 Here is a very basic sample of SVG image loaded into AnyMap and used with [Choropleth Map Series](Choropleth_Map):
 
 {sample}Maps\_SVG\_01{sample}
+
+## Sample SVG String
+
+Here is a sample of SVG map from [AnyMap Map Collection](Maps_List) and used with [Choropleth Map Series](Choropleth_Map):
+
+{sample}Maps\_SVG\_02{sample}
+
+You can find more samples of using SVG images to create [Seat Maps](Seat_Map) at [AnyMap: Seat Maps Gallery](http://anychart.stg/products/anymap/gallery/Seat_Maps/).
 
