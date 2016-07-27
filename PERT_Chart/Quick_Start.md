@@ -1,4 +1,4 @@
-{:index 1}
+{:index 3}
 PERT Chart Quick Start
 ===========
  
@@ -76,7 +76,7 @@ anychart.onDocumentReady(function () {
 ###See the Result
 After all these steps you should have the following result. This example, like any other on our site, can be launched and explored using AnyChart Playground.
 
-{sample :width 690 :height 180}PERT\_Basic\_Sample{sample}
+{sample :width 700 :height 700}PERT\_Basic\_Sample{sample}
 
 ###Full Source Code
 You can copy this to a file on your computer and open it in your browser to display the PERT Chart shown above:

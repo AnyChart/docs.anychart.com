@@ -1,4 +1,4 @@
-{:index 2}
+{:index 4}
 PERT Chart Data
 ===========
 
@@ -26,6 +26,10 @@ var data = [
 var tree = anychart.data.tree(data);
 ```
 
+Here is a sample with data set in this way:
+
+{sample :width 700 :height 700}PERT\_Data\_01{sample}
+
 ## Nodes and Connections Set Separately
 
 Nodes and connections can be set separately, in two sets of data.
@@ -46,5 +50,11 @@ var dependencies = [
   {from: 1, to: 2},
   {from: 4, to: 5}
 ];
+
 var tree = anychart.data.tree(data, dependencies);
 ```
+
+Here is a sample with data set in this way:
+
+{sample :width 700 :height 700}PERT\_Data\_02{sample}
+

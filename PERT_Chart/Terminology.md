@@ -12,7 +12,7 @@ A milestone is an element of a PERT chart, marking the completion of a task or s
 
 ## Categories
 
-A category is an additional meta-information used for positioning and grouping milestons and tasks.
+A category is an additional meta-information used for positioning and grouping milestones and tasks.
 
 ## Critical Path
 
