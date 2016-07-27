@@ -8,60 +8,60 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
-  // chart data
-  var data_1 = [
-    {x: "1", low: 1000, q1: 1050, median: 1200, q3: 1800, high: 2000},
-    {x: "2", low: 2500, q1: 3000, median: 3800, q3: 3900, high: 4000},
-    {x: "3", low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000},
-    {x: "4", low: 4000, q1: 5000, median: 5500, q3: 6500, high: 7000},
-    {x: "5", low: 8000, q1: 8400 , median: 8500, q3: 8800, high: 9000}
-  ];
-  var data_2 = [
-    {x: "1", low: 1300, q1: 1400, median: 1700, q3: 2000, high: 2100, outliers:[2300,1000]},
-    {x: "2", low: 2500, q1: 3400, median: 3500, q3: 3600, high: 3700, outliers:[4000,2200], extra_inf:["Redundancy"]},
-    {x: "3", low: 2000, q1: 2300, median: 2500, q3: 2900, high: 3000, outliers:[3450,1800]},
-    {x: "4", low: 4000, q1: 5000, median: 5500, q3: 6000, high: 7000, outliers:[7100,3700]},
-    {x: "5", low: 8100, q1: 8400, median: 8500, q3: 9000, high: 9500, outliers:[9700,7600,4500]}
-  ];
 
-  // create box chart
-  var chart = anychart.box();
+  // data
+  var data = anychart.data.set([
+    ["Department Stores", 637166, 737166],
+    ["Discount Stores", 721630, 537166],
+    ["Men's/Women's Specialty Stores", 148662, 188662],
+    ["Juvenile Specialty Stores", 78662, 178662],
+    ["All other outlets", 90000, 89000]
+  ]);
 
-  // set chart title text settings
-  var title = chart.title();
-  title.text("ACME Corp. Salaries\nFebruary, 2015 vs January, 2015");
-  title.hAlign("center");
-  title.enabled(true);
+  // remapping data
+  var SalesWinter = data.mapAs({x: [0], value: [1]});
+  var SalesSummer = data.mapAs({x: [0], value: [2]});
 
-  // set axes titles settings
+  // define chart type
+  var chart = anychart.bar();
+
+  // set title
+  chart.title("Multi-series Bar Chart");
+  
+  // set axes titles
   var xAxis = chart.xAxis();
-  xAxis.title(false);
+  xAxis.title("Retail Channel");
   var yAxis = chart.yAxis();
-  yAxis.title("$ per month");
+  yAxis.title("Sales");
 
-  // set chart yScale settings
-  chart.yScale().maximumGap(0);
-
-  // create box chart series with our data
-  chart.box(data_1);
-  var series = chart.box(data_2);
-   
-  // enable the labels
-  var labels = series.labels();
-  labels.enabled(true);
-   
-  // usage of textFormatter
-  labels.textFormatter(function(){
-    return(this.getDataValue("extra_inf"));
+  // set data series
+  var series_winter = chart.bar(SalesWinter);
+  var series_summer = chart.bar(SalesSummer);
+  
+  // set series name
+  series_winter.name("Winter");
+  series_summer.name("Summer");
+  
+  // set textFormatter
+  var labels_winter = series_winter.labels();
+  labels_winter.enabled(true);
+  labels_winter.textFormatter(function(){
+      return(this.seriesName + ": $" + this.value);
   });
+  var labels_summer = series_summer.labels();
+  labels_summer.enabled(true);
+  labels_summer.textFormatter(function(){
+      return(this.seriesName + ": $" + this.value);
+  });
+  
+  // set the labels position
+  labels_winter.position("right");
+  labels_winter.anchor("left");
+  labels_summer.position("right");
+  labels_summer.anchor("left");
 
-  // positioning the label
-  labels.offsetY(20);
-
-  // set container id for the chart
+  // draw chart
   chart.container("container");
-
-  // initiate chart drawing
   chart.draw();
 });</script>
 </head>

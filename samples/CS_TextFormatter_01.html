@@ -12,12 +12,6 @@
   var chart = anychart.line();
 
   chart.title("Tokens with Options");
-  var tooltip = chart.tooltip();
-  tooltip.displayMode("separated");
-  tooltip.positionMode("point");
-
-  // string for formatting tooltips
-  var fomatter = "{%SeriesName}: {%Value}{groupsSeparator:', decimalsCount:3}";
 
   // setting and adjusting data visualisation
   var columnSeries = chart.column([
@@ -29,33 +23,14 @@
   ]);
   columnSeries.name("Income");
 
+  // string for formatting tooltips
+  var formatter = "{%SeriesName}: {%Value}{groupsSeparator:', decimalsCount:3}";
+
+  // setting the tooltips
   var columnTooltip = columnSeries.tooltip();
-  columnTooltip.textFormatter(fomatter);
-
-  var lineSeries = chart.line([
-    ["A", 95.073],
-    ["B", 97.12844],
-    ["C", 96.43],
-    ["D", 70.582],
-    ["E", 35]
-  ]);
-  lineSeries.name("Percentage");
-
-  var lineTooltip = lineSeries.tooltip();
-  lineTooltip.textFormatter(fomatter);
-
-  var extraYScale = anychart.scales.linear();
-  extraYScale.minimum(0).maximum(100);
-
-
-  // adding and adjust extra Y axis
-  var extraYAxis = chart.yAxis(1);
-  extraYAxis.orientation("right");
-  extraYAxis.scale(extraYScale);
-  lineSeries.yScale(extraYScale);
+  columnTooltip.textFormatter(formatter);
 
   tooltipSetter(columnTooltip);
-  tooltipSetter(lineTooltip);
 
   function tooltipSetter(seriesTooltip) {
     seriesTooltip.anchor("bottomCenter");

@@ -9,53 +9,30 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  var chart = anychart.line();
+  chart = anychart.line();
 
-  chart.title("Tokens with Options");
+  chart.title("Tokens with Options: thousandfold scaling");
   var tooltip = chart.tooltip();
   tooltip.displayMode("separated");
   tooltip.positionMode("point");
 
   // string for formatting tooltips
-  var fomatter = "{%SeriesName}: {%Value}{groupsSeparator:\\,}";
+  var formatter = "{%SeriesName}: {%Value}{scale:(1)(1000)(1000)(1000)|( d)( th)( M)( B)}";
 
   // setting and adjusting data visualisation
   var columnSeries = chart.column([
-    ["A", 637166],
-    ["B", 721630],
-    ["C", 148662],
-    ["D", 78662],
-    ["E", 90000]
+    ["A", 10000000000],
+    ["B", 1000000000],
+    ["C", 1000000],
+    ["D", 1000],
+    ["E", 1]
   ]);
   columnSeries.name("Income");
 
   var columnTooltip = columnSeries.tooltip();
-  columnTooltip.textFormatter(fomatter);
-
-  var lineSeries = chart.line([
-    ["A", 95.073],
-    ["B", 97.12844],
-    ["C", 96.43],
-    ["D", 70.582],
-    ["E", 35]
-  ]);
-  lineSeries.name("Percentage");
-
-  var lineTooltip = lineSeries.tooltip();
-  lineTooltip.textFormatter(fomatter);
-
-  var extraYScale = anychart.scales.linear();
-  extraYScale.minimum(0).maximum(100);
-
-
-  // adding and adjust extra Y axis
-  var extraYAxis = chart.yAxis(1);
-  extraYAxis.orientation("right");
-  extraYAxis.scale(extraYScale);
-  lineSeries.yScale(extraYScale);
-
+  columnTooltip.textFormatter(formatter);
+  
   tooltipSetter(columnTooltip);
-  tooltipSetter(lineTooltip);
 
   function tooltipSetter(seriesTooltip) {
     seriesTooltip.anchor("bottomCenter");

@@ -17,7 +17,7 @@
   tooltip.positionMode("point");
 
   // string for formatting tooltips
-  var fomatter = "{%SeriesName}: {%Value}{groupsSeparator:\\,}";
+  var formatter = "{%SeriesName}: {%Value}{groupsSeparator:\\,}";
 
   // setting and adjusting data visualisation
   var columnSeries = chart.column([
@@ -30,7 +30,7 @@
   columnSeries.name("Income");
 
   var columnTooltip = columnSeries.tooltip();
-  columnTooltip.textFormatter(fomatter);
+  columnTooltip.textFormatter(formatter);
 
   var lineSeries = chart.line([
     ["A", 95.073],
@@ -41,11 +41,8 @@
   ]);
   lineSeries.name("Percentage");
 
-  // formatting through function
   var lineTooltip = lineSeries.tooltip();
-  lineTooltip.textFormatter(function(){
-    return "Income: " + this.value + "%";
-  });
+  lineTooltip.textFormatter(formatter);
 
   var extraYScale = anychart.scales.linear();
   extraYScale.minimum(0).maximum(100);

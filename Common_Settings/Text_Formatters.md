@@ -349,11 +349,11 @@ Along with usage of special tokens which help to define the source of text, you 
 Here is a simple code with tokens usage:
 
 ```
-var series = chart.line(data);
+var series = chart.column(data);
 var tooltip = series.tooltip();
 tooltip.textFormatter(
   // Show series name and point's value. 
-  // The value has an apostophe symbol (') as a thousands separator and maximum number of decimal symbols is limited with 3 
+  // The value has an apostrophe symbol (') as a thousands separator and maximum number of decimal symbols is limited with 3 
   "{%SeriesName}: {%Value}{groupsSeparator:', decimalsCount:3}"
 );
 ```
@@ -369,11 +369,10 @@ There is a list of formatting parameters, which help to organize your data prese
   
 <table width="700px" class="dtTABLE">
 <tr>
-<th colspan=2>Token</th>
-<th rowspan=2>Type</th>
-<th rowspan=2>Description</th>
+<th><td>AnyChart 7</td><td>AnyChart 6</td></th>
+<th>Type</th>
+<th>Description</th>
 </tr>
-<tr><td>AnyChart 7</td><td>AnyChart 6</td></tr>
 <tr>
 <td>decimalsCount</td><td>numDecimals</td><td>numeric</td><td>The number of visible decimal characters (including characters for the integer values).</td>
 </tr>
@@ -384,7 +383,7 @@ There is a list of formatting parameters, which help to organize your data prese
 <td>groupsSeparator</td><td>thousandsSeparator</td><td>string</td><td>Sets a character for separating thousands of an integer number.</td>
 </tr>
 <tr>
-<td>useBracketsForNegativeuseNegativeSign</td><td>useNegativeSign</td><td>boolean</td><td>Controls the "-" sign. Uses "-" when "true" in AnyChart 6 and curly brackets in AnyChart 7, and vica versa.</td>
+<td>useBracketsForNegativeuseNegativeSign</td><td>useNegativeSign</td><td>boolean</td><td>Controls the "-" sign. Uses "-" when "true" in AnyChart 6 and brackets in AnyChart 7, and vice versa.</td>
 </tr>
 <tr>
 <td>zeroFillDecimals</td><td>trailingZeros</td><td>boolean</td><td>Hides or displays decimal characters for integer values.</td>
@@ -394,19 +393,7 @@ There is a list of formatting parameters, which help to organize your data prese
 </tr>
 </table>
 
-In the next sample we have formatted the scale according to the Old British currency system (before 1971), when £1 was eqivalent to 20 shillings and 1 shilling = 12 pence.
-
-<table width="700px" class="dtTABLE">
-<tr>
-<td>1 pence</td><td>1 pence</td>
-</tr>
-<tr>
-<td>12 pence</td><td>1 shilling</td>
-</tr>
-<tr>
-<td>20 shillings</td><td>1 pound</td>
-</tr>
-</table>
+In the next sample we have formatted the scale according to the Old British currency system (before 1971), when £1 was equivalent to 20 shillings and 1 shilling = 12 pence.
 
 ```
 var columnTooltip = columnSeries.tooltip();
@@ -415,12 +402,21 @@ columnTooltip.textFormatter(
   "{%SeriesName}: {%Value}{scale:(1)(12)(20)|( p)( s)( £)}"
 );
 var lineTooltip = lineSeries.tooltip();
-  lineTooltip.textFormatter("{%SeriesName}: {%Value}{decimalsCount:1}%");
+lineTooltip.textFormatter("{%SeriesName}: {%Value}{decimalsCount:1}%");
 ```  
 
 {sample}CS\_TextFormatter\_02{sample}
 
 If you explore the sample, you can see that all values are set in pence, but the shown value is formatted.
+
+On the sample below there is another popular case of scale formatting shown: a thousandfold increase.
+
+```
+// string for formatting tooltips
+var formatter = "{%SeriesName}: {%Value}{scale:(1)(1000)(1000)(1000)|( d)( th)( M)( B)}";
+```  
+
+{sample}CS\_TextFormatter\_03{sample}
 
 
 ### Escaping symbols
@@ -435,7 +431,7 @@ tooltip.textFormatter(
 );
 ```  
 
-{sample}CS\_TextFormatter\_03{sample}
+{sample}CS\_TextFormatter\_04{sample}
 
 
 ## Formatting functions
@@ -451,7 +447,7 @@ For complex formatting use formatting function instead of token strings. Formatt
 
 ```
 
-{sample}CS\_TextFormatter\_04{sample}
+{sample}CS\_TextFormatter\_05{sample}
 
 
 ### Default fields
@@ -525,7 +521,7 @@ This function can return more than one value. The sample below demonstrates it.
     });
 ```
 
-{sample}CS\_TextFormatter\_05{sample}
+{sample}CS\_TextFormatter\_06{sample}
 
 
 ### Extra fields
@@ -551,7 +547,7 @@ Using these methods, you can display the values from the extra params, if you ha
     });
 ```
 
-{sample}CS\_TextFormatter\_06{sample}
+{sample}CS\_TextFormatter\_07{sample}
 
 In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "redundant" value for the second point of the second series and displayed it, using {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api}.
   
@@ -585,7 +581,7 @@ Managing additional information for chart tooltips works pretty much the same as
 
 Here is a sample with additional information in the chart tooltip. Full information on tooltip settings can be found in [Tooltip article](../Common_Settings/Tooltip).
 
-{sample}CS\_TextFormatter\_07{sample}
+{sample}CS\_TextFormatter\_08{sample}
 
 <!--
  Another extra parameter, "extra\_inf\_long", was added to use it, for example, as an extra field in the tooltip, because it's too long to be shown on the chart. How to add the values from any extra parameters, see in the [Labels and Tooltips]() tutorial.-->
@@ -627,7 +623,7 @@ To add any parameter to the meta of the series, you need to set the parameter na
 
 ```
 
-{sample}CS\_TextFormatter\_08{sample}
+{sample}CS\_TextFormatter\_09{sample}
 
 **Note!** There's no {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}**.getSeriesMeta()**{api} method in Pie, Funnel or Pyramid Charts.
 
@@ -676,4 +672,4 @@ Here is a sample of the {api:anychart.core.utils.SeriesPointContextProvider#getS
     });
 ```
 
-{sample}CS\_TextFormatter\_09{sample}
+{sample}CS\_TextFormatter\_10{sample}

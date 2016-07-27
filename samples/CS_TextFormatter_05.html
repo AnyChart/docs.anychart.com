@@ -9,58 +9,64 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data
-  var data = anychart.data.set([
-    ["Department Stores", 637166, 737166],
-    ["Discount Stores", 721630, 537166],
-    ["Men's/Women's Specialty Stores", 148662, 188662],
-    ["Juvenile Specialty Stores", 78662, 178662],
-    ["All other outlets", 90000, 89000]
+  var chart = anychart.line();
+
+  chart.title("Tokens with Options");
+  var tooltip = chart.tooltip();
+  tooltip.displayMode("separated");
+  tooltip.positionMode("point");
+
+  // string for formatting tooltips
+  var formatter = "{%SeriesName}: {%Value}{groupsSeparator:\\,}";
+
+  // setting and adjusting data visualisation
+  var columnSeries = chart.column([
+    ["A", 637166],
+    ["B", 721630],
+    ["C", 148662],
+    ["D", 78662],
+    ["E", 90000]
   ]);
+  columnSeries.name("Income");
 
-  // remapping data
-  var SalesWinter = data.mapAs({x: [0], value: [1]});
-  var SalesSummer = data.mapAs({x: [0], value: [2]});
+  var columnTooltip = columnSeries.tooltip();
+  columnTooltip.textFormatter(formatter);
 
-  // define chart type
-  var chart = anychart.bar();
+  var lineSeries = chart.line([
+    ["A", 95.073],
+    ["B", 97.12844],
+    ["C", 96.43],
+    ["D", 70.582],
+    ["E", 35]
+  ]);
+  lineSeries.name("Percentage");
 
-  // set title
-  chart.title("Multi-series Bar Chart");
-  
-  // set axes titles
-  var xAxis = chart.xAxis();
-  xAxis.title("Retail Channel");
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
-
-  // set data series
-  var series_winter = chart.bar(SalesWinter);
-  var series_summer = chart.bar(SalesSummer);
-  
-  // set series name
-  series_winter.name("Winter");
-  series_summer.name("Summer");
-  
-  // set textFormatter
-  var labels_winter = series_winter.labels();
-  labels_winter.enabled(true);
-  labels_winter.textFormatter(function(){
-      return(this.seriesName + ": $" + this.value);
+  // formatting through function
+  var lineTooltip = lineSeries.tooltip();
+  lineTooltip.textFormatter(function(){
+    return "Income: " + this.value + "%";
   });
-  var labels_summer = series_summer.labels();
-  labels_summer.enabled(true);
-  labels_summer.textFormatter(function(){
-      return(this.seriesName + ": $" + this.value);
-  });
-  
-  // set the labels position
-  labels_winter.position("right");
-  labels_winter.anchor("left");
-  labels_summer.position("right");
-  labels_summer.anchor("left");
 
-  // draw chart
+  var extraYScale = anychart.scales.linear();
+  extraYScale.minimum(0).maximum(100);
+
+
+  // adding and adjust extra Y axis
+  var extraYAxis = chart.yAxis(1);
+  extraYAxis.orientation("right");
+  extraYAxis.scale(extraYScale);
+  lineSeries.yScale(extraYScale);
+
+  tooltipSetter(columnTooltip);
+  tooltipSetter(lineTooltip);
+
+  function tooltipSetter(seriesTooltip) {
+    seriesTooltip.anchor("bottomCenter");
+    seriesTooltip.position("topCenter");
+    seriesTooltip.title(false);
+    seriesTooltip.separator(false);
+  }
+
   chart.container("container");
   chart.draw();
 });</script>
