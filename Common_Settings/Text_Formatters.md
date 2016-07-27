@@ -349,13 +349,11 @@ Along with usage of special tokens which help to define the source of text, you 
 Here is a simple code with tokens usage:
 
 ```
-var series = chart.column(data);
-var tooltip = series.tooltip();
-tooltip.textFormatter(
-  // Show series name and point's value. 
-  // The value has an apostrophe symbol (') as a thousands separator and maximum number of decimal symbols is limited with 3 
-  "{%SeriesName}: {%Value}{groupsSeparator:', decimalsCount:3}"
-);
+// setting the tooltips with formatting
+var columnTooltip = columnSeries.tooltip();
+columnTooltip.textFormatter("{%SeriesName}: {%Value}{groupsSeparator:', decimalsCount:3}");
+var lineTooltip = lineSeries.tooltip();
+lineTooltip.textFormatter("{%SeriesName}: {%Value}{decimalsCount:1}%");
 ```
 
 Here is a chart with a tooltip configured using tokens with options:
