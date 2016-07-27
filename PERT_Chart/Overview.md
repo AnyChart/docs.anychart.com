@@ -6,7 +6,7 @@ PERT is an abbreviation for "Program (Project) Evaluation and Review Technique".
 
 To learn more about PERT in general, see [Wikipedia](https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique), and to learn how to create PERT charts in AnyChart, read the following sections in our documentation:
 
-[PERT Chart Quick Start](../PERT_Chart/Quick_Start)
-[PERT Chart Terminology](../PERT_Chart/Terminology)
-[PERT Chart Data](../PERT_Chart/Data)
-[PERT Chart Settings](../PERT_Chart/Settings)
+* [PERT Chart Quick Start](Quick_Start)
+* [PERT Chart Terminology](Terminology)
+* [PERT Chart Data](Data)
+* [PERT Chart Settings](Settings)
