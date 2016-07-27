@@ -74,33 +74,57 @@ Same rules apply to groups (`<g></g>`) elements. You can set `id` in attribute:
 ```
 <g id="1">
 	<rect class='main' x="51.141" y="36.445" width="185" height="156"/>
-        <g>
-	         <rect class='pin1' x="61.141" y="44.445" width="164" height="64"/>
-	         <rect class='innerFrame' x="61.141" y="121.445"width="164" height="62"/>
-        </g>
+		<g>
+			<rect class='pin1' x="61.141" y="44.445" width="164" height="64"/>
+			<rect class='innerFrame' x="61.141" y="121.445"width="164" height="62"/>
+		</g>
 	<text transform="matrix(1 0 0 1 130.1406 85.4448)" font-size="12">Pin 1</text>
 </g>
 ```
 
-or
+or in `<desc>` node as a content of `<id>` node:
 
 ```
 <g>
-   <desc>
-            <id>1</id>
-   </desc>	
+	<desc>
+		<id>1</id>
+	</desc>	
 	<rect class='main' x="51.141" y="36.445" width="185" height="156"/>
-        <g>
-	         <rect class='pin1' x="61.141" y="44.445" width="164" height="64"/>
-	         <rect class='innerFrame' x="61.141" y="121.445"width="164" height="62"/>
-        </g>
+	<g>
+		<rect class='pin1' x="61.141" y="44.445" width="164" height="64"/>
+		<rect class='innerFrame' x="61.141" y="121.445"width="164" height="62"/>
+	</g>
 	<text transform="matrix(1 0 0 1 130.1406 85.4448)" font-size="12">Pin 1</text>
 </g>
 ```
 
-**NOTE:**
+**NOTE:** if some parent element has an `id` and its child element has it too: parent element will be considered by AnyMap.
+
+If you want to assign any other text data to an element, like you do in GeoJSON or SHP you can de that in `<desc>` as well - all this data can be accessed by AnyMap when it comes to formatting tooltips and labels:
+
+```
+<rect x="161.141" y="144.445" width="164" height="64">
+	<desc>
+		<labelrank>2</labelrank>
+		<code_hasc>AU.JB</code_hasc>
+		<name>Jervis Bay Territory</name>
+		<admin>Australia</admin>
+		<type_en>Territory</type_en>
+		<woe_id>1102841</woe_id>
+		<longitude>150</longitude>
+		<woe_name>Jervis Bay</woe_name>
+		<latitude>-35</latitude>
+		<iso_a2>AU</iso_a2>
+		<postal>JB</postal>
+		<type>Territory</type>
+		<id>AU.JB</id>
+	</desc>
+</rect>
+```
 
 ## Sample
+
+Here is a very basic sample of SVG image loaded into AnyMap and used with [Choropleth Map Series](Choropleth_Map):
 
 {sample}Maps\_SVG\_01{sample}
 

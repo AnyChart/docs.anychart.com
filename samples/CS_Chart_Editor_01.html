@@ -8,9 +8,9 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <link rel="stylesheet" href="https://cdn.anychart.com/fonts/2.0.0/anychart.css" data-export="true">        
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function() {
 
-  stage = anychart.graphics.create("container-xml");
+  stage = anychart.graphics.create("container");
   // sample data set
   data = [
     ['Category A', 12814, 3054, 4376, 4229],
@@ -66,6 +66,6 @@ function createLabel(text, offset, action) {
 }</script>
 </head>
 <body>
-<div id="container-xml" style="width: 100%; height: 100%"></div>
+<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>
