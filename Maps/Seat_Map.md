@@ -16,4 +16,4 @@ Creating seat maps is made possible by AnyMap ability to load specially formatte
 
 ## Creating Seat Map
 
-When you have a suitable SVG image with assign identifiers you can start developing your own Seat Map. You can find samples of using SVG images to create Seat Maps in [AnyMap: Seat Maps Gallery](http://anychart.stg/products/anymap/gallery/Seat_Maps/). 
+When you have a suitable SVG image with assign identifiers you can start developing your own Seat Map. You can find samples of using SVG images to create Seat Maps in [AnyMap: Seat Maps Gallery](http://www.anychart.com/products/anymap/gallery/Seat_Maps/). 
