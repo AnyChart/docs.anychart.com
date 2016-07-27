@@ -1,10 +1,10 @@
 {:index 1}
-Gantt Chart Quick Start
+PERT Chart Quick Start
 ===========
-  
-## Getting started with Gantt Chart
-###1. Include Gantt Chart into Your Web Page
-Include the JavaScript file in the `<head>` section of your web page - visit the [download page](../Quick_Start/Downloading_AnyChart) for those or use CDN as shown below.
+ 
+## Getting started with PERT Chart
+###1. Include PERT Chart into Your Web Page
+Include the JavaScript file in the `<head>` section of your web page – visit the [download page](../Quick_Start/Downloading_AnyChart) for those or use CDN as shown below:
 
 ```
 <head>
@@ -14,158 +14,118 @@ Include the JavaScript file in the `<head>` section of your web page - visit the
 
 ###2. Create a Container for the Chart
 Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. AnyChart charting library uses 100% of the container if other behaviour is not specified. 
-Example:
+
 ```
 <body>
     <div id="container" style="width: 500px; height: 400px;"></div>
 </body>
 ```
-###3. Prepare your Data
+###3. Prepare Your Data
 
-Gantt Chart provides quite a few opportunities to work with data (such as setting [tree like hierarchy with parent/child division](../Working_with_Data/Using_Data_Tree_Model)), thus it requires preparing data before usage. Raw data set for html5 Gantt chart may look like this:
+There are two ways to set data for PERT charts, both based on [Anychart Data Tree Model](../Working_with_Data/Using_Data_Tree_Model): nodes and connections between them can be set either simultaneously or separately, in two sets of data. In this sample, the first way is shown:
 
 ```
- var rawData = [
-  {
-    "name": "Activities",
-    "actualStart": Date.UTC(2007, 0, 25),
-    "actualEnd": Date.UTC(2007, 2, 14),
-    "children": [
-      {
-        "name": "Draft plan",
-        "actualStart": Date.UTC(2007, 0, 25),
-        "actualEnd": Date.UTC(2007, 1, 3)
-      },
-      {
-        "name": "Board meeting",
-        "actualStart": Date.UTC(2007, 1, 4),
-        "actualEnd": Date.UTC(2007, 1, 4)
-      },
-      {
-        "name": "Research option",
-        "actualStart": Date.UTC(2007, 1, 4),
-        "actualEnd": Date.UTC(2007, 1, 24)
-      },
-      {
-        "name": "Final plan",
-        "actualStart": Date.UTC(2007, 1, 24),
-        "actualEnd": Date.UTC(2007, 2, 14)
-      }
-    ]
-  }];
+// raw data
+var data = [
+    {id: "1", duration: 1, name: "Task A"},
+    {id: "2", duration: 3, name: "Task B"},
+    {id: "3", duration: 3, name: "Task C"},
+    {id: "4", duration: 1, name: "Task D"},
+    {id: "5", duration: 2, name: "Task AD", dependsOn: ["1", "4"]},
+    {id: "6", duration: 2, name: "Task BC", dependsOn: ["2", "3"]}
+];
 ```
 
-###4. Create a chart
+###4. Create a Chart
 Add the JavaScript tag `<script>` with the following code anywhere in the  page. 
 This code example uses JavaScript API to create a chart, but you also can use [JSON, XML and CSV](Data_from_JSON,_XML,_CSV). 
-Example:
 
 ```
 <script>
-anychart.onDocumentReady(function(){
- var rawData = [
-  {
-    "name": "Activities",
-    "actualStart": Date.UTC(2007, 0, 25),
-    "actualEnd": Date.UTC(2007, 2, 14),
-    "children": [
-      {
-        "name": "Draft plan",
-        "actualStart": Date.UTC(2007, 0, 25),
-        "actualEnd": Date.UTC(2007, 1, 3)
-      },
-      {
-        "name": "Board meeting",
-        "actualStart": Date.UTC(2007, 1, 4),
-        "actualEnd": Date.UTC(2007, 1, 4)
-      },
-      {
-        "name": "Research option",
-        "actualStart": Date.UTC(2007, 1, 4),
-        "actualEnd": Date.UTC(2007, 1, 24)
-      },
-      {
-        "name": "Final plan",
-        "actualStart": Date.UTC(2007, 1, 24),
-        "actualEnd": Date.UTC(2007, 2, 14)
-      }
-    ]
-  }];
-  
-  // data tree settings
-  var treeData = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
-  var chart = anychart.ganttProject();      // chart type
-  chart.data(treeData);                     // chart data
-  chart.container('container').draw();      // set container and initiate drawing
+anychart.onDocumentReady(function () {
+	   
+	// raw data
+	var data = [
+	    {id: "1", duration: 1, name: "Task A"},
+	    {id: "2", duration: 3, name: "Task B"},
+	    {id: "3", duration: 3, name: "Task C"},
+	    {id: "4", duration: 1, name: "Task D"},
+	    {id: "5", duration: 2, name: "Task AD", dependsOn: ["1", "4"]},
+	    {id: "6", duration: 2, name: "Task BC", dependsOn: ["2", "3"]}
+	];
+
+	// create a PERT chart
+	chart = anychart.pert();
+
+	// set chart data
+	chart.data(data, "asTable");
+
+	// set the title of the chart
+	chart.title("PERT Chart");
+
+	// set the container id for the chart
+	chart.container("container");
+
+	// initiate drawing the chart
+	chart.draw();
 });
 </script>
 ```
-  
-## The result
-###See the result
-After all these steps you should have the following result. This example, like any other on our site, can be launched and explored using the samples playground.
-{sample :width 690 :height 180}GANTT\_Basic\_Sample{sample}
-###Full source code
-You can copy this to a file on your computer and open it in your browser to display the Gantt Chart shown above:
+
+## The Result
+###See the Result
+After all these steps you should have the following result. This example, like any other on our site, can be launched and explored using AnyChart Playground.
+
+{sample :width 690 :height 180}PERT\_Basic\_Sample{sample}
+
+###Full Source Code
+You can copy this to a file on your computer and open it in your browser to display the PERT Chart shown above:
+
 ```
 <!doctype html>
-<head>
-  <script src="//cdn.anychart.com/js/latest/anygantt.min.js" type="text/javascript"></script>
-  <script>
-	anychart.onDocumentReady(function(){
-	
-	    var rawData = [
-	      {
-	        "name": "Activities",
-	        "actualStart": Date.UTC(2007, 0, 25),
-	        "actualEnd": Date.UTC(2007, 2, 14),
-	        "children": [
-	          {
-	            "name": "Draft plan",
-	            "actualStart": Date.UTC(2007, 0, 25),
-	            "actualEnd": Date.UTC(2007, 1, 3)
-	          },
-	          {
-	            "name": "Board meeting",
-	            "actualStart": Date.UTC(2007, 1, 4),
-	            "actualEnd": Date.UTC(2007, 1, 4)
-	          },
-	          {
-	            "name": "Research option",
-	            "actualStart": Date.UTC(2007, 1, 4),
-	            "actualEnd": Date.UTC(2007, 1, 24)
-	          },
-	          {
-	            "name": "Final plan",
-	            "actualStart": Date.UTC(2007, 1, 24),
-	            "actualEnd": Date.UTC(2007, 2, 14)
-	          }
-	        ]
-	      }];
-	
-	  // tree data settings
-	  var treeData = anychart.data.tree(rawData, anychart.enums.TreeFillingMethod.AS_TREE);
-	
-	  // chart type
-	  chart = anychart.ganttProject();
-	
-	  // chart container
-	  chart.container('container');
-	
-	  // set chart data
-	  chart.data(treeData);
-	
-	  // initiate drawing
-	  chart.draw();
-	  
-	  // show all items 
-	  chart.fitAll();
-	
+<html>
+  <head>
+    <script src="http://cdn.anychart.com/js/develop/anychart-bundle.min.js"></script>
+    <style>
+      html, body, #container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+	anychart.onDocumentReady(function () {
+		   
+		// raw data
+		var data = [
+		    {id: "1", duration: 1, name: "Task A"},
+		    {id: "2", duration: 3, name: "Task B"},
+		    {id: "3", duration: 3, name: "Task C"},
+		    {id: "4", duration: 1, name: "Task D"},
+		    {id: "5", duration: 2, name: "Task AD", dependsOn: ["1", "4"]},
+		    {id: "6", duration: 2, name: "Task BC", dependsOn: ["2", "3"]}
+		];
+
+		// create a PERT chart
+		chart = anychart.pert();
+
+		// set chart data
+		chart.data(data, "asTable");
+
+		// set the title of the chart
+		chart.title("PERT Chart");
+
+		// set the container id for the chart
+		chart.container("container");
+
+		// initiate drawing the chart
+		chart.draw();
 	});
-  </script>
-</head>
-<body>
-	<div id="container" style="width: 500px; height: 400px;"></div>
-</body>
+    </script>
+  </body>
 </html>
 ```
