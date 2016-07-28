@@ -1,7 +1,7 @@
 #Accessibility (508 Section)
 
 * [What is Section 508](#what_is_section_508)
-* [Why Accessibility is abbreviated as a11y?](#why_accessibility_abbreviated_a11y)
+* [Why a11y](#why_a11y)
 * [Default](#default)
 * [Enable/Disable](#enable/disable)
 * [Accessible Elements](#accessible_elements)
@@ -19,8 +19,7 @@ You can find a lot of information about section 508 at [https://www.section508.g
 
 There are several methods AnyChart supports for accessibility. The main idea lies in creating special tags (ARIA tags) in SVG structure (the chart itself), which is rendered by AnyChart component. These tags help screen readers to perceive the chart content as readable DOM structure and pronounce it correctly, which helps disabled people to understand the information performed on out charts better. 
 
-<a name="why_accessibility_abbreviated_a11y"></a>
-## Why Accessibility is abbreviated as a11y?
+## Why a11y
 
 Accessibility is often abbreviated as the numeronym **a11y**, where the number 11 refers to the number of letters omitted. This parallels the abbreviations of internationalization and localization as i18n and l10n respectively, this follows an Information and Communications Technology (ICT)-oriented convention, which are used mostly in the software community.
 
