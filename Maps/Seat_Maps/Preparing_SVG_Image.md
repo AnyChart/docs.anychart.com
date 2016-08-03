@@ -35,7 +35,7 @@ Note: to draw a straight line or curve at an angle, multiple of 45* or 90*, hold
 
 After the walls are drawn, we need to draw the doors and add some text. 
 
-<a href="//images.vfl.ru/ii/1470044464/8e80bd55/13579067\_m.png" target="_blank"><img src="//images.vfl.ru/ii/1470044464/8e80bd55/13579067\_m.png" alt="pic\_05\_preplan\_with\_doors\_and\_text" title="pic\_05\_preplan\_with\_doors\_and\_text" border="0" width=828></a>
+<a href="//images.vfl.ru/ii/1470203928/29af4585/13601584\_m.png"><img src="//images.vfl.ru/ii/1470203928/29af4585/13601584\_m.png" alt="pic05\_preplan\_with\_doors" title="pic05\_preplan\_with\_doors" border="0"></a>
 
 You can notice that we've put no door in the Kitchen: this wall will help us to border the rooms, but in the final version there will be no partition between the hall and the kitchen.
 
@@ -101,9 +101,13 @@ Open this file in any editor that supports svg-files. Look through the code. All
 </g>
 ```
 
-Elements inside of the group might have its own id's due to some reasons.
+Inline groups might have its own id's due to some reasons. Elements inside of the groups might have classes; set classes to each element you need to react on hovering or selecting. All elements that belong to the same class will have the same interactive settings, so be careful with setting them. We've set the classes to the texts.
 
-
+```
+<text class="info" transform="matrix(1 0 0 1 172.5244 131.3237)"><tspan x="0" y="0" fill="#996633" font-family="'ArialMT'" font-size="16.6934">Room 1</tspan><tspan x="-21.189" y="20.032" fill="#996633" font-family="'ArialMT'" font-size="16.6934">11&apos; 0&quot; x 13&apos; 0&quot;</tspan></text>
+```
 
 If there are lines demonstrating some extra elements you don't need anymore, find these lines in the code of the svg-image and simply delete them. This will simplify your work with the file.
+
+Now, our SVG-image is ready for the further work and transformations. For the further info & tutorial, open the [Seat Map](Seat_Map) article.
 
