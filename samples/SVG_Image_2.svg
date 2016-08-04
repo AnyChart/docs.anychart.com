@@ -9,10 +9,9 @@
 <g id="hall">
 	<path fill="#DDD1B3" stroke="#000000" stroke-miterlimit="10" d="M592,497.5H381.5v-91H321l0.5-0.5V267.5h-31V61L527,61.5
 		c177.98,0,322,144.02,322,322L591.5,384v114"/>
-	<text transform="matrix(1 0 0 1 516.0977 214)"><tspan x="0" y="0" fill="#996600" font-family="'ArialMT'" font-size="18.7156">Hall</tspan><tspan x="-40.401" y="22.458" fill="#996600" font-family="'ArialMT'" font-size="18.7156">30&apos; 0&quot; x 24&apos; 0&quot;</tspan></text>
 	<g>
 		<g>
-			<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M500,497.313c0-13.059-10.566-23.813-23.625-23.813h0.375
+			<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M500,497.313c0-13.06-10.566-23.813-23.625-23.813h0.375
 				l-23.625,23.719"/>
 		</g>
 		<line fill="none" stroke="#DDD1B3" stroke-miterlimit="10" x1="454.078" y1="497.5" x2="499.5" y2="497.5"/>
@@ -21,14 +20,12 @@
 <g id="room2">
 	<path fill="#DDD1B3" stroke="#000000" stroke-miterlimit="10" d="M704.875,382.5l143.625,0.016v153.151L590,535.5l0.25-153h-0.002
 		l67.943,0.055l24.054-24.055C694.546,358.5,704.875,369.891,704.875,382.5"/>
-	<text transform="matrix(1 0 0 1 692.4805 453.4834)"><tspan x="0" y="0" fill="#996600" font-family="'ArialMT'" font-size="16.861">Room 2</tspan><tspan x="-21.401" y="20.233" fill="#996600" font-family="'ArialMT'" font-size="16.861">15&apos; 0&quot; x 11&apos; 0&quot;</tspan></text>
 </g>
 <g id="WC">
 	<rect x="252.5" y="405.5" fill="#DDD1B3" stroke="#000000" stroke-miterlimit="10" width="129" height="130"/>
-	<text transform="matrix(1 0 0 1 308.123 456.5)"><tspan x="0" y="0" fill="#996600" font-family="'ArialMT'" font-size="16.0587">WC</tspan><tspan x="-26.189" y="19.271" fill="#996600" font-family="'ArialMT'" font-size="16.0587">7&apos; 0&quot; x 7&apos; 0&quot;</tspan></text>
 	<g>
 		<g>
-			<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M381.719,473.938c13.059,0,23.781-10.566,23.781-23.625v0.375
+			<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M381.719,473.938c13.06,0,23.781-10.566,23.781-23.625v0.375
 				l-23.703-23.625"/>
 		</g>
 		<line fill="none" stroke="#DDD1B3" stroke-miterlimit="10" x1="381.563" y1="428.016" x2="381.563" y2="473.438"/>
@@ -37,20 +34,29 @@
 <g id="room1">
 	<path fill="#DDD1B3" stroke="#000000" stroke-miterlimit="10" d="M291,267.5L111.5,267V62l0.5-0.5L291.5,61v62l0.297,0.063
 		l23.703,23.625v-0.375c0,13.059-10.723,23.625-23.781,23.625L291.5,170v97"/>
-	<text transform="matrix(1 0 0 1 172.5244 131.3237)"><tspan x="0" y="0" fill="#996633" font-family="'ArialMT'" font-size="16.6934">Room 1</tspan><tspan x="-21.189" y="20.032" fill="#996633" font-family="'ArialMT'" font-size="16.6934">11&apos; 0&quot; x 13&apos; 0&quot;</tspan></text>
 </g>
 <g id="kitchen">
 	<g>
 		<polygon fill="#DDD1B3" stroke="#000000" stroke-miterlimit="10" points="252.5,535 252.5,406 252,405.5 322,405.5 322.5,405 
 			322.5,266 323,265.5 112,265.5 111.5,266 111.5,536 111,535.5 251,535.5 		"/>
-		<text transform="matrix(1 0 0 1 142.2422 345.1572)"><tspan x="0" y="0" fill="#996633" font-family="'ArialMT'" font-size="15.9953">Kitchen &amp; Dining room</tspan><tspan x="31.264" y="19.194" fill="#996633" font-family="'ArialMT'" font-size="15.9953">13&apos; 0&quot; x 16&apos; 0&quot;</tspan></text>
 	</g>
 	<g>
 		<g>
-			<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M322.719,368.938c13.059,0,23.781-10.566,23.781-23.625v0.375
+			<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M322.719,368.938c13.06,0,23.781-10.566,23.781-23.625v0.375
 				l-23.703-23.625"/>
 		</g>
 		<line fill="none" stroke="#DDD1B3" stroke-miterlimit="10" x1="322.563" y1="323.016" x2="322.563" y2="368.438"/>
 	</g>
+</g>
+<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="161.034" cy="428.292" r="18.792"/>
+<rect x="111.5" y="487.767" fill="none" stroke="#000000" stroke-miterlimit="10" width="45" height="47.733"/>
+<rect x="196.5" y="502.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="56" height="33"/>
+<rect x="224.5" y="439.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="28" height="63"/>
+<g>
+	<rect x="156.5" y="502.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="40" height="33"/>
+	<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="167.595" cy="512.43" r="4.929"/>
+	<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="186.118" cy="512.43" r="4.929"/>
+	<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="167.595" cy="526.81" r="4.929"/>
+	<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="186.118" cy="526.81" r="4.929"/>
 </g>
 </svg>

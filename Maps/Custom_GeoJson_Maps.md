@@ -33,7 +33,7 @@ Define the path to the catalogue with the files of the map.
 
 That's how the world map will look like when imported:
 
-<a href="http://static.anychart.com/images/creating\_maps\_03.jpg" target="_blank"><img width = "700"src = "http://static.anychart.com/images/creating\_maps\_03.jpg"></a>
+<a href="http://static.anychart.com/images/creating\_maps\_03.jpg" target="_blank"><img width = "700" src = "http://static.anychart.com/images/creating\_maps\_03.jpg"></a>
 
 3) So, as we have imported the map, we need to select the territory we will be working with and extract it from the whole map. For that we need a selection tool (of box type by default, to change the type click on the arrow to the right from the tool). Here we have used a Freehand Selection Tool.
 
