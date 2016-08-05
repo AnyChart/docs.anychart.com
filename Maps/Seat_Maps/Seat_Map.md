@@ -35,32 +35,29 @@ When you have a suitable SVG image with assign identifiers you can start develop
 
 ### Upload the SVG Data
 
-When your SVG image is ready, we need to upload it to our sample to work with its attributes. At first, We put an object with the link of the SVG-file into the "body" section of the sample file. 
+When your SVG image is ready, we need to upload it to our sample to work with its attributes. At first, we put an object with the link of the SVG-file into the "body" section of the sample file. 
 
 ```
 <body>
 <div id="container"></div>
-<object style="width: 0; height: 0;" data="SVG_Image.svg" type="image/svg+xml" id="svg" width="100%" height="100%"></object>
+<object style="width: 0; height: 0;" data="http://cdn.anychart.com/svg-data/seat-map/house.svg" type="image/svg+xml" id="svg" width="100%" height="100%"></object>
 </body>
 ```
 
-To get the data of the SVG-file we need to load the document and get the inner DOM of the file by using jQuery:
+To get the data of the SVG-file we need to load the document using AJAX:
 
 ```
-$(window).on('load', function () {
-
-var a = document.getElementById('svg');
-//it's important to add an load event listener to the object, as it will load the svg doc asynchronously
-
-//get the inner DOM of svg.svg
-var svgDoc = a.contentDocument; 
+$.ajax({
+    type: 'GET',
+    url: 'http://cdn.anychart.com/svg-data/seat-map/house.svg',
 ```
 
 ### Map Data
 
-Besides the SVG-image, we need a Map data, which objects are groups of attributes. Set IDs and values in the Map dataset.
+Besides the SVG-image, we need a Map data, which objects are groups of attributes. If the AJAX request was successful,  Set IDs and values in the Map dataset.
 
 ```
+success: function(svgData){
 // data set
 chart = anychart.seatMap([
 	{id: 'hall', value: '720'},
@@ -71,7 +68,7 @@ chart = anychart.seatMap([
 ]);
 
 // set svg data
-chart.geoData(svgDoc);
+chart.geoData(svgData);
 ```
 
 {sample}Maps\_Seat\_01{sample}
@@ -209,13 +206,42 @@ chart.unboundRegions('hide');
 
 Let's transform our labels and tooltips. 
 
-Text elements in our Seat Maps are not adapted to change its color, but we can replace SVG-text by labels which can be adjusted to be fully interactive.
+Text elements in our Seat Maps are not adapted to change its color, but we can replace SVG-text by labels which can be adjusted to be fully interactive. Let's put additional information about sizes and square feets of the rooms into the dataSet.
+
+```
+// data set
+    chart = anychart.seatMap([
+    {id: 'hall', value: '720', info: "30\' 0\" x 24\'0\"" , sq: "720 sq. ft."},
+    {id: 'room2', value: '165', info: "15\' 0\" x 11\'0\"" , sq: "165 sq. ft."},
+    {id: 'WC', value: '49', info: "7\' 0\" x 7\'0\"" , sq: "49 sq. ft."},
+    {id: 'room1', value: '143', info: "11\' 0\" x 13\'0\"" , sq: "143 sq. ft."},
+    {id: 'kitchen', value: '208', info: "13\' 0\" x 16\'0\"" , sq: "208 sq. ft."}
+]);
+```
+
 
 ```
 
 ```
 
 {sample}Maps\_Seat\_07{sample}
+
+To edit the information described in our tooltips, use the {api:anychart.charts.Map#tooltip}.tooltip(){api} method. We can edit the text in the title and in the body of a tooltip using the {api:anychart.core.ui.ChartTooltip#titleFormatter}.titleFormatter(){api} and {api:anychart.core.ui.ChartTooltip#textFormatter}.textFormatter(){api} methods, as well as the tooltips' appearance: their form, colors, etc. You can find more information about tooltips in our [Tooltips](../../Common_Settings/Tooltip) and [Map Tooltips](../Tooltips) articles.
+
+```
+// set the tooltips
+tooltips = series.tooltip();
+
+// set the tooltips titles and body texts
+tooltips.titleFormatter("{%id}");
+tooltips.textFormatter("{%info}");
+
+// set the tooltips colors
+tooltips.background("green 0.8");
+tooltips.separator("white");
+```
+
+{sample}Maps\_Seat\_08{sample}
 
 
 ## Gallery Samples

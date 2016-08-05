@@ -77,7 +77,7 @@ We'll make them as a group of two figures laying one over another: first (lower)
 
 <a href="http://static.anychart.com/images/seat\_map/pic12\_group.png" target="_blank"><img src="http://static.anychart.com/images/seat\_map/pic12\_group.png" alt="pic12\_group" title="pic12\_group" border="0" width=600 align="center"></a>
 
-To group several elements, select all of them, right-click on them and select "Group". Don't forget to join the paths if you used lines/arcs for drawing, unless you won't have any opportunity to fill the rooms with color.
+To group several elements, select all of them, right-click on them and select "Group". Don't forget to join the paths if you used lines/arcs for drawing, otherwise you won't have any opportunity to fill the rooms with color.
 
 <a href="http://static.anychart.com/images/seat\_map/pic13\_group\_room.png" target="_blank"><img src="http://static.anychart.com/images/seat\_map/pic13\_group\_room.png" alt="pic13\_group\_room" title="pic13\_group\_room" border="0" width=600 align="center"></a>
 

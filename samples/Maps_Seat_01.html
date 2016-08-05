@@ -10,38 +10,36 @@
 
     <script x-export="chart">
 
-        $(window).on('load', function () {
+anychart.onDocumentReady(function () {
 
-            var a = document.getElementById('svg');
-            //it's important to add an load event listener to the object, as it will load the svg doc asynchronously
+// The data that have been used for this sample can be taken from the CDN
+$.ajax({
+    type: 'GET',
+    // The data that have been used for this sample can be taken from the CDN load SVG image using jQuery ajax
+    url: 'http://cdn.anychart.com/svg-data/seat-map/house.svg',
+    success: function (svgData) {
 
-            var svgDoc = a.contentDocument; //get the inner DOM of svg.svg
-            //add behaviour
-
-            anychart.onDocumentReady(function () {
-
-                chart = anychart.seatMap([
-                    {id: 'hall', value: '720'},
-                    {id: 'room2', value: '165'},
-                    {id: 'WC', value: '49'},
-                    {id: 'room1', value: '143'},
-                    {id: 'kitchen', value: '208'}
-                ]);
-                // set svg data
-                chart.geoData(svgDoc);                
-                series = chart.getSeries(0);
+        chart = anychart.seatMap([
+            {id: 'hall', value: '720'},
+            {id: 'room2', value: '165'},
+            {id: 'WC', value: '49'},
+            {id: 'room1', value: '143'},
+            {id: 'kitchen', value: '208'}
+        ]);
+        // set svg data
+        chart.geoData(svgData);                
+        series = chart.getSeries(0);
                 
-                chart.padding([85, 0, 20, 0]);
+        chart.padding([85, 0, 20, 0]);
 
-                // set container id for the chart
-                chart.container('container');
-                // initiate chart drawing
-                chart.draw();
-
-            });
-
-        });
-    </script>
+        // set container id for the chart
+        chart.container('container');
+        // initiate chart drawing
+        chart.draw();
+    }
+    });
+});
+</script>
 </head>
 <body>
 <div id="container"></div>
