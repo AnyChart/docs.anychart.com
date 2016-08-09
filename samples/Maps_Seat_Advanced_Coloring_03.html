@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css">
 
     <script x-export="chart">
+
 anychart.onDocumentReady(function () {
 // The data that have been used for this sample can be taken from the CDN
 $.ajax({
@@ -22,7 +23,8 @@ $.ajax({
             {id: 'Hall', value: '720'},
             {id: 'Room2', value: '165'},
             {id: 'WC', value: '49'},
-            {id: 'Room1', value: '143'}
+            {id: 'Room1', value: '143'},
+            {id: 'Kitchen', value: '208'}
         ]);
         // set svg data
         chart.geoData(svgData);
@@ -36,6 +38,18 @@ $.ajax({
         series.fill(function () {
             var attrs = this.attributes;
             if (attrs) return attrs.fill;
+            if (attrs) {
+                // get the class
+                var clas = attrs.class;
+                switch (clas) {
+                    case 'inner_elements' :
+                        return "red";
+                    default:
+                        return "red";
+                }
+            } else {
+                return this.sourceColor;
+            }
         });
 
         // sets stroke series
@@ -88,7 +102,6 @@ $.ajax({
     }
     });
 });
-
 </script>
 </head>
 <body>
