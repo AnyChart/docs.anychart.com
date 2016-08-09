@@ -43,7 +43,7 @@ At first, we put an object with the link of the SVG-file into the "body" section
 ```
 <body>
 <div id="container"></div>
-<object style="width: 0; height: 0;" data="svg_images/house.svg" type="image/svg+xml" width="100%" height="100%"></object>
+<object style="width: 0; height: 0;" data="../images/house.svg" type="image/svg+xml" width="100%" height="100%"></object>
 </body>
 ```
 
@@ -68,7 +68,7 @@ As well as with AJAX, it's necessary to put an object with the link to the SVG-f
 ```
 <body>
 <div id="container"></div>
-<object style="width: 0; height: 0;" data="svg_images/house.svg" type="image/svg+xml" id="house" width="100%" height="100%"></object>
+<object style="width: 0; height: 0;" data="../images/house.svg" type="image/svg+xml" id="house" width="100%" height="100%"></object>
 </body>
 ```
 
