@@ -1,0 +1,180 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="2"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js" data-export="true"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css">
+
+    <script x-export="chart">
+
+anychart.onDocumentReady(function () {
+// The data that have been used for this sample can be taken from the CDN
+$.ajax({
+    type: "GET",
+    // The data that have been used for this sample can be taken from the CDN load SVG image using jQuery ajax
+    url: "http://static.anychart.com/images/docs/theatre_seating_plan.svg",
+    success: function (svgData) {
+
+        chart = anychart.seatMap();
+
+        // setting the data
+        dataSet = anychart.seatMap([            
+            {id: "r1s1", value: "12"},
+            {id: "r1s2", value: "12"},
+            {id: "r1s3", value: "12"},
+            {id: "r1s4", value: "12"},
+            {id: "r1s5", value: "12"},
+            {id: "r1s6", value: "12"},
+            {id: "r2s1", value: "12"},
+            {id: "r2s2", value: "12"},
+            {id: "r2s3", value: "12"},
+            {id: "r2s4", value: "12"},
+            {id: "r1s5", value: "12"},
+            {id: "r1s6", value: "12"},
+            {id: "r1s7", value: "12"},
+            {id: "r1s8", value: "12"}, 
+            {id: "r3s2", value: "10"},
+            {id: "r3s3", value: "10"},
+            {id: "r3s4", value: "10"},
+            {id: "r3s5", value: "10"},
+            {id: "r4s3", value: "10"},
+            {id: "r4s4", value: "10"},
+            {id: "r4s5", value: "10"},
+            {id: "r4s6", value: "10"},
+            {id: "r5s5", value: "10"},
+            {id: "r5s6", value: "10"},
+            {id: "r5s7", value: "10"},
+            {id: "r5s8", value: "10"},
+            {id: "r6s5", value: "10"},
+            {id: "r6s6", value: "10"},
+            {id: "r6s7", value: "10"},
+            {id: "r6s8", value: "10"},
+            {id: "r7s5", value: "10"},
+            {id: "r7s6", value: "10"},
+            {id: "r7s7", value: "10"},
+            {id: "r7s8", value: "10"},
+            {id: "r8s5", value: "10"},
+            {id: "r8s6", value: "10"},
+            {id: "r8s7", value: "10"},
+            {id: "r8s8", value: "10"},
+            {id: "r3s1", value: "5.5"},
+            {id: "r3s6", value: "5.5"},
+            {id: "r4s1", value: "5.5"},
+            {id: "r4s2", value: "5.5"},
+            {id: "r4s7", value: "5.5"},
+            {id: "r4s8", value: "5.5"},
+            {id: "r5s1", value: "5.5"},
+            {id: "r5s2", value: "3.5", extra: "RESTRICTED VIEW"},
+            {id: "r5s11", value: "3.5", extra: "RESTRICTED VIEW"},
+            {id: "r5s12", value: "5.5"},
+            {id: "r6s1", value: "5.5"},
+            {id: "r6s2", value: "5.5"},
+            {id: "r6s11", value: "5.5"},
+            {id: "r6s12", value: "5.5"},
+            {id: "r7s1", value: "5.5"},
+            {id: "r7s2", value: "5.5"},
+            {id: "r7s11", value: "5.5"},
+            {id: "r7s12", value: "5.5"},
+            {id: "r8s1", value: "5.5"},
+            {id: "r8s2", value: "5.5"},
+            {id: "r8s11", value: "5.5"},
+            {id: "r8s12", value: "5.5"},
+            {id: "r4s3", value: "3.5", extra: "RESTRICTED VIEW"},
+            {id: "r4s4", value: "3.5", extra: "RESTRICTED VIEW"},
+            {id: "r4s9", value: "3.5", extra: "RESTRICTED VIEW"},
+            {id: "r4s10", value: "3.5", extra: "RESTRICTED VIEW"},
+
+            {id: "r5s3", value: "7.5"},
+            {id: "r5s4", value: "3.5", extra: "RESTRICTED VIEW"},
+            {id: "r5s9", value: "3.5", extra: "RESTRICTED VIEW"},
+            {id: "r5s10", value: "7.5"},
+
+            {id: "r6s3", value: "7.5"},
+            {id: "r6s4", value: "7.5"},
+            {id: "r6s9", value: "7.5"},
+            {id: "r6s10", value: "7.5"},
+
+            {id: "r7s3", value: "7.5"},
+            {id: "r7s4", value: "7.5"},
+            {id: "r7s9", value: "7.5"},
+            {id: "r7s10", value: "7.5"},
+
+            {id: "r8s3", value: "7.5"},
+            {id: "r8s4", value: "7.5"},
+            {id: "r8s9", value: "7.5"},
+            {id: "r8s10", value: "7.5"},
+        ]);
+        // set svg data
+        chart.geoData(svgData);
+
+        chart.padding([85, 0, 20, 0]);
+
+        series = chart.seatMap(dataSet);
+
+        // set the tooltips
+        series.tooltip().titleFormatter(){"Side places"};
+        series.tooltip().textFormatter(){
+            if this.extra = "RESTRICTED VIEW" return "£{%Value} \nRESTRICTED VIEW"
+            else return "£{%Value}";
+        };
+
+        // set the colors and ranges for the scale
+        series.colorScale(anychart.scales.linearColor());
+
+        //set the single hue progression
+        var colors = anychart.color.singleHueProgression('#33cc00');
+        
+        // define the colors 
+        series.colorScale().colors(colors);
+
+        // create and enable the colorRange
+        var colorRange = map.colorRange();
+        colorRange.enabled(true);
+
+        // sets fill series
+        series_closed.fill(function () {
+            var attrs = this.attributes;
+            if (attrs) return attrs.fill;
+            if (attrs) {
+                // get the class
+                var clas = attrs.class;
+                switch (clas) {
+                    case "restricted" :
+                        return "#000";
+                }
+            } else {
+                return this.sourceColor;
+            }
+        });
+
+        series_side.fill(function () {
+            var attrs = this.attributes;
+            if (attrs) return attrs.fill;
+            if (attrs) {
+                // get the class
+                var clas = attrs.class;
+                switch (clas) {
+                    case "restricted" :
+                        return "#000";
+                }
+            } else {
+                return this.sourceColor;
+            }
+        });
+
+        // set container id for the chart
+        chart.container("container");
+        // initiate chart drawing
+        chart.draw();
+    }
+    });
+});
+</script>
+</head>
+<body>
+<div id="container"></div>
+</body>
+</html>

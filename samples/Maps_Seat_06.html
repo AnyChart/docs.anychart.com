@@ -13,17 +13,17 @@
 anychart.onDocumentReady(function () {
 // The data that have been used for this sample can be taken from the CDN
 $.ajax({
-    type: 'GET',
+    type: "GET",
     // The data that have been used for this sample can be taken from the CDN load SVG image using jQuery ajax
-    url: '../images/house1.svg',
+    url: "http://static.anychart.com/images/docs/house1.svg",
     success: function (svgData) {
 
         // data set
         chart = anychart.seatMap([
-            {id: 'Hall', value: '720'},
-            {id: 'Room2', value: '165'},
-            {id: 'WC', value: '49'},
-            {id: 'Room1', value: '143'}
+            {id: "Hall", value: "720"},
+            {id: "Room2", value: "165"},
+            {id: "WC", value: "49"},
+            {id: "Room1", value: "143"}
         ]);
         // set svg data
         chart.geoData(svgData);
@@ -51,7 +51,7 @@ $.ajax({
                 // get the class
                 var clas = attrs.class;
                 switch (clas) {
-                    case 'inner_elements' :
+                    case "inner_elements":
                         return "red";
                     default:
                         return anychart.color.lighten(attrs.fill, 0.5);
@@ -79,12 +79,11 @@ $.ajax({
             return attrs ? attrs.stroke : this.sourceColor;
         });
 
-        // load svg-file without elements with no values
-        //chart.unboundRegions(anychart.enums.MapUnboundRegionsMode.HIDE);
+        // load svg file without elements with no values
         chart.unboundRegions("hide");
 
         // set container id for the chart
-        chart.container('container');
+        chart.container("container");
         // initiate chart drawing
         chart.draw();
     }
@@ -95,6 +94,5 @@ $.ajax({
 </head>
 <body>
 <div id="container"></div>
-<object style="width: 0; height: 0;" data="../images/house1.svg" type="image/svg+xml" id="svg" width="100%" height="100%"></object>
 </body>
 </html>

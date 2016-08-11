@@ -4,7 +4,7 @@ Preparing SVG Image
 
 * [Overview](#overview)
 * [Creating a picture](#creating_a_picture)
-* [Grouping](grouping)
+* [Grouping](#grouping)
 * [Setting ID](#setting_id)
  * [Adobe Illustrator](#adobe_ilustrator)
  * [SVG-code](#svg_code)
@@ -133,4 +133,4 @@ If there are lines demonstrating some extra elements you don't need anymore, fin
 
 Now, our SVG-image is ready for the further work and transformations. For the further info & tutorial, open the [Seat Map](Seat_Map) article.
 
-If you want to explore the SVG-file we've used in this article, you can [download it](../../samples/svg_images/house.svg).
+If you want to explore the SVG-file we've used in this article, you can <a href="http://static.anychart.com/images/docs/house.svg">download it</a>.
