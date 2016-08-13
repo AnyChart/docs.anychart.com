@@ -1,12 +1,12 @@
 Linear Gauge
 ============
 
-* [Overview](#overview)
-* [Basics](#basics)
-* [Layout](#layout)
-* [Scales and axes](#scales_and_axes)
-* [Scale Bar](#scale_bar)
-* [Pointers](#pointers)
+* [Overview](#Overview)
+* [Basics](#Basics)
+* [Layout](#Layout)
+* [Scales and axes](#Scales_and_Axes)
+* [Scale Bar](#Scale_Bar)
+* [Pointers](#Pointers)
 
 ## Overview
 
@@ -16,7 +16,7 @@ A linear gauge is visual representation of a measuring device with a horizontal 
 
 To create all types of linear gauges, you can use a basic constructor: {api:anychart.gauges#linear}linear(){api}. Also, AnyChart supports three special constructors with presetes of tank, led, and thermometer gauges: {api:anychart.gauges#tank}tank(){api}, {api:anychart.gauges#led}led(){api}, {api:anychart.gauges#thermometer}thermometer(){api}. These presets define the visual style of a gauge and the type of its pointer (see the [Pointers](#pointers) section below).
 
-In the following sample the four available constructors are used to create gauges of four types, each with its own type of pointer:
+In the following sample, the four available constructors are used to create gauges of four types, each with its own type of pointer:
 
 {sample}GAUGE\_Linear\_01{sample}
 
@@ -61,7 +61,7 @@ Here are the four gauges from the previous sample, now oriented horizontally:
 
 ## Scales and Axes
 
-Like all other charts, gauges can have multiple scales and axes, though by default, only a primary scale is created and calculated, and a primary axis is bound to it. Configuring scales and axes is very similar to configuring the same elements of basic chart types (see the following articles: [Scales](../Axes_and_Grids/Scales) and [Additional Axes](../Axes_and_Grids/Additional_Axes)). (??? ссылки)
+Like all other charts, gauges can have multiple scales and axes, though by default, only a primary scale is created and calculated, and a primary axis is bound to it. Configuring scales and axes is very similar to configuring the same elements of basic chart types: see [Scales](../Axes_and_Grids/Scales) and [Additional Axes](../Axes_and_Grids/Additional_Axes). (??? ссылки)
 
 In this sample, there is a thermometer gauge with two scales and two axes that show temperature in Celsius and Fahrenheit:
 
