@@ -58,7 +58,7 @@
     cScale.ticks().interval(10);
     cScale.minorTicks().interval(1);
 
-    // configure an axis on the left side of the gauge
+    // configure an axis on the right side of the gauge
     var axisRight = gauge.axis(1);
     axisRight.minorTicks(true);
     axisRight.minorTicks().stroke('#cecece');
@@ -66,7 +66,7 @@
     axisRight.offset('3.15%');
     axisRight.orientation('right');
 
-    // bind the left axis to the Celsius scale
+    // bind the right axis to the Celsius scale
     axisRight.scale(cScale);
 
     // set the container id
