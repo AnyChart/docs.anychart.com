@@ -1,12 +1,12 @@
 Linear Gauge
 ============
 
-* [Overview](#Overview)
-* [Basics](#Basics)
-* [Layout](#Layout)
-* [Scales and axes](#Scales_and_Axes)
-* [Scale Bar](#Scale_Bar)
-* [Pointers](#Pointers)
+* [Overview](#overview)
+* [Basics](#basics)
+* [Layout](#layout)
+* [Scales and axes](#scales_and_axes)
+* [Scale Bar](#scale_bar)
+* [Pointers](#pointers)
 
 ## Overview
 
@@ -45,8 +45,7 @@ tank.addPointer(1);
 
 ## Layout
 
-By default, all linear gauges are vertically oriented. To change the layout, the {api:anychart.charts.LinearGauge#layout}layout(){api} method is used: (??? правильная ли ссылка)
-
+By default, all linear gauges are vertically oriented. To change the layout, the {api:anychart.charts.LinearGauge#layout}layout(){api} method is used:
 ```
 gauge = anychart.gauges.linear();
 
@@ -60,7 +59,7 @@ Here are the four gauges from the previous sample, now oriented horizontally:
 
 ## Scales and Axes
 
-Like all other charts, gauges can have multiple scales and axes, though by default, only a primary scale is created and calculated, and a primary axis is bound to it. Configuring scales and axes is very similar to configuring the same elements of basic chart types: see [Scales](../Axes_and_Grids/Scales) and [Axis Basics](../Axes_and_Grids/Axis_Basics). (??? ссылки)
+Like all other charts, gauges can have multiple scales and axes, though by default, only a primary scale is created and calculated, and a primary axis is bound to it. Configuring scales and axes is very similar to configuring the same elements of basic chart types: see [Scales](../Axes_and_Grids/Scales) and [Axis Basics](../Axes_and_Grids/Axis_Basics).
 
 In this sample, there is a thermometer gauge with two scales and two axes that show temperature in Celsius and Fahrenheit:
 
