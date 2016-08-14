@@ -1,11 +1,11 @@
 Statistics
 ==========
 
-* [Overview](#overview)
-* [Basics](#basics)
-* [Chart](#chart)
-* [Series](#series)
-* [Point](#point)
+* [Overview](#Overview)
+* [Basics](#Basics)
+* [Chart](#Chart)
+* [Series](#Series)
+* [Point](#Point)
 
 ## Overview 
 

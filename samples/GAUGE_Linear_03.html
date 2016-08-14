@@ -24,7 +24,7 @@
     // add a thermometer pointer
     gauge.addPointer(0);
 
-    //use the primary scale a Fahrenheit scale
+    // use the primary scale a Fahrenheit scale
     var fScale = gauge.scale();
 
     // set the minimum and maximum values of the Fahrenheit scale
@@ -51,7 +51,7 @@
     // bind the left axis to the Fahrenheit scale
     axisLeft.scale(fScale);
 
-    //configure a Celsius scale
+    // configure a Celsius scale
     var cScale = anychart.scales.linear();
     cScale.minimum(-40);
     cScale.maximum(50);

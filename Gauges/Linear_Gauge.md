@@ -14,7 +14,7 @@ A linear gauge is visual representation of a measuring device with a horizontal 
 
 ## Basics
 
-To create all types of linear gauges, you can use a basic constructor: {api:anychart.gauges#linear}linear(){api}. Also, AnyChart supports three special constructors with presetes of tank, led, and thermometer gauges: {api:anychart.gauges#tank}tank(){api}, {api:anychart.gauges#led}led(){api}, {api:anychart.gauges#thermometer}thermometer(){api}. These presets define the visual style of a gauge and the type of its pointer (see the [Pointers](#pointers) section below).
+To create all types of linear gauges, you can use a basic constructor: {api:anychart.gauges#linear}linear(){api}. Also, AnyChart supports three special constructors with presets of tank, led, and thermometer gauges: {api:anychart.gauges#tank}tank(){api}, {api:anychart.gauges#led}led(){api}, {api:anychart.gauges#thermometer}thermometer(){api}. These presets define the visual style of a gauge and the type of its pointer (see the [Pointers](#pointers) section below).
 
 In the following sample, the four available constructors are used to create gauges of four types, each with its own type of pointer:
 
@@ -48,11 +48,10 @@ tank.addPointer(1);
 By default, all linear gauges are vertically oriented. To change the layout, the {api:anychart.charts.LinearGauge#layout}layout(){api} method is used: (??? правильная ли ссылка)
 
 ```
-// set the gauge type
-linear = anychart.gauges.linear();
+gauge = anychart.gauges.linear();
 
 // set the layout
-linear.layout("horizontal");
+gauge.layout("horizontal");
 ```
 
 Here are the four gauges from the previous sample, now oriented horizontally:
@@ -61,14 +60,14 @@ Here are the four gauges from the previous sample, now oriented horizontally:
 
 ## Scales and Axes
 
-Like all other charts, gauges can have multiple scales and axes, though by default, only a primary scale is created and calculated, and a primary axis is bound to it. Configuring scales and axes is very similar to configuring the same elements of basic chart types: see [Scales](../Axes_and_Grids/Scales) and [Additional Axes](../Axes_and_Grids/Additional_Axes). (??? ссылки)
+Like all other charts, gauges can have multiple scales and axes, though by default, only a primary scale is created and calculated, and a primary axis is bound to it. Configuring scales and axes is very similar to configuring the same elements of basic chart types: see [Scales](../Axes_and_Grids/Scales) and [Axis Basics](../Axes_and_Grids/Axis_Basics). (??? ссылки)
 
 In this sample, there is a thermometer gauge with two scales and two axes that show temperature in Celsius and Fahrenheit:
 
 {sample}GAUGE\_Linear\_03{sample}
 
 ```
-//use the primary scale a Fahrenheit scale
+// use the primary scale a Fahrenheit scale
 var fScale = gauge.scale();
 
 // configure the primary scale
@@ -77,13 +76,11 @@ fScale.maximum(122);
 fScale.ticks().interval(10);
 fScale.minorTicks().interval(2);    
 
-// confugure an axis on the left side of the gauge
+// configure an axis on the left side of the gauge
 var axisLeft = gauge.axis(0);
 axisLeft.minorTicks(true)
 axisLeft.minorTicks().stroke('#cecece');
-set the width of the left axis
 axisLeft.width('0');
-set the offset of the left axis (as a percentage of the gauge width)
 axisLeft.offset('-0.18%');
 
 // bind the left axis to the Fahrenheit scale
@@ -152,17 +149,13 @@ scaleBar.colorScale(scaleBarColorScale);
 
 ## Pointers
 
-To add a pointer to a linear gauge, the {api:anychart.charts.LinearGauge#addPointer}addPointer(){api} method is called. The type of pointer added by this method is implicitly defined by the constructor used to create the gauge. However, you can use any pointer with any gauge.
+To add a pointer to a linear gauge, the {api:anychart.charts.LinearGauge#addPointer}addPointer(){api} method is called. The type of pointer added by this method is implicitly defined by the constructor used to create the gauge. However, you can use any pointer with any gauge by calling the {api:anychart.charts.LinearGauge#bar}bar(){api}, {api:anychart.charts.LinearGauge#led}led(){api}, {api:anychart.charts.LinearGauge#marker}marker(){api}, {api:charts.LinearGauge#rangeBar}rangeBar(){api}, {api:charts.LinearGauge#tank}tank(){api}, and {api:charts.LinearGauge#thermometer}thermometer(){api} methods.
 
 In the following sample, there is a tank gauge with tank, marker, and two bar pointers: 
 
 {sample}GAUGE\_Linear\_05{sample}
 
-Please note that in data you can pass values to a few pointers by binding the pointers to particular values in the data set:
-
-(??? Please note that you can bind pointers to particular values in the data set:)
-
-(??? Замечание: Обратите внимание, что в данных можно передать численные значения для нескольких указателей, - при этом указатели привязываются к конкретным values in the data set:)
+Please note that you can bind pointers to particular values in the data set:
 
 ```
 // create data
