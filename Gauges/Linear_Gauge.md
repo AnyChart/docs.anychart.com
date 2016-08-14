@@ -160,16 +160,22 @@ Please note that you can bind pointers to particular values in the data set:
 ```
 // create data
 var data = [150, 250, 300, 170];
+
 // set the gauge type
 gauge = anychart.gauges.tank();
+
 // set the data for the gauge
 gauge.data(data);
+
 // create the first pointer (tank)
 var tank = gauge.tank(0);
+
 // create the second pointer (marker)
 var marker = gauge.marker(1);
+
 // configure the third pointer (bar)
 var bar_1 = gauge.bar(2);
+
 // configure the fourth pointer (bar)
 var bar_2 = gauge.bar(3);
 ```
