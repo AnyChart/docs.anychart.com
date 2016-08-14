@@ -55,7 +55,7 @@ gauge.layout("horizontal");
 
 Here are the four gauges from the previous sample, now oriented horizontally:
 
-{sample}GAUGE\_Linear\_02{sample}
+{sample :height 200}GAUGE\_Linear\_02{sample}
 
 ## Scales and Axes
 
@@ -110,7 +110,7 @@ axisRight.scale(cScale);
 
 The sample below shows a basic horizontally oriented linear gauge with three color zones:
 
-{sample}GAUGE\_Linear\_04{sample}
+{sample :height 200}GAUGE\_Linear\_04{sample}
 
 ```
 // create a color scale
