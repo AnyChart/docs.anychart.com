@@ -23,7 +23,7 @@ There are several methods AnyChart supports for accessibility. The main idea lie
 
 ## Why a11y
 
-Accessibility is often abbreviated as the numeronym **a11y**, where the number 11 refers to the number of letters omitted. This parallels the abbreviations of internationalization and localization as i18n and l10n respectively, and follows an Information and Communications Technology (ICT)-oriented convention, which is used widely in the software community.
+Accessibility is often abbreviated as the numeronym **a11y**, where the number 11 refers to the number of letters omitted. This parallels the abbreviations of internationalization and [localization](Localization) as i18n and l10n respectively, and follows an Information and Communications Technology (ICT)-oriented convention, which is used widely in the software community.
 
 ## Default
 

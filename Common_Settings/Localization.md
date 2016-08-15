@@ -41,17 +41,17 @@ anychart.format.outputLocale('hi-in');
 
 AnyChart sample:
 
-{sample :height 300}GANTT\_Locale\_00{sample}
+{sample}CMN\_Locale\_01{sample}
 
 AnyStock sample:
 
-{sample :height 300}GANTT\_Locale\_00{sample}
+{sample}CMN\_Locale\_02{sample}
 
 In the sample Gantt chart below, the names of months in the timeline are displayed in Hindu, while the input format is English:
 
-{sample :height 300}GANTT\_Locale\_01{sample}
+{sample :height 300}CMN\_Locale\_03{sample}
 
-<a name="tuning_a_date_time_locale"></a>
+<a name='tuning_a_date_time_locale'></a>
 ##Tuning a Date/Time Locale
 
 Locales define the default input and output date time formats...
@@ -69,11 +69,11 @@ anychart.format.outputDateTimeFormat('dd MMM');
 
 The following samples demonstrates how it works in AnyChart, AnyGantt, and AnyStock:
 
-{sample :height 300}GANTT\_Locale\_00{sample}
+{sample}CMN\_Locale\_04{sample}
 
-{sample :height 300}GANTT\_Locale\_00{sample}
+{sample}CMN\_Locale\_05{sample}
 
-{sample :height 300}GANTT\_Locale\_02{sample}
+{sample :height 300}CMN\_Locale\_06{sample}
 
 ##Locales in AnyChart CDN
 You can get all available locales from [AnyChart CDN](https://cdn.anychart.com/#locales) and either download them to your server or link directly from the CDN.
