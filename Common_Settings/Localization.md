@@ -51,7 +51,7 @@ In the sample Gantt chart below, the names of months in the timeline are display
 
 {sample :height 300}CMN\_Locale\_03{sample}
 
-<a name='tuning_a_date_time_locale'></a>
+<a name='tuning\_a\_date\_time\_locale'></a>
 ##Tuning a Date/Time Locale
 
 If you want to use custom input and output date/time formats, you can tune them via the {api:anychart.format#inputDateTimeFormat}inputDateTimeFormat(){api} and {api:anychart.format#outputDateTimeFormat}outputDateTimeFormat(){api} methods: 
