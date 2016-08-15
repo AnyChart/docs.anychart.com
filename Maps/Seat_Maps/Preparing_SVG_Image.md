@@ -34,7 +34,7 @@ Now, we can draw the walls and partitions inside, forming the rooms. We can use 
 
 Note: to draw a straight line or curve at an angle, multiple of 45* or 90*, hold the Shift key on your keyboard while drawing.
 
-![](http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic04_preplan.png =400x600)
+![](http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic04_preplan.png =600x)
 
 After the walls are drawn, we need to draw the doors. Let's mark them as two short lines on a wall.
 
