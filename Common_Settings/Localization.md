@@ -11,7 +11,7 @@
 
 All AnyChart products support full localization of input and output date/time and number formats, based on the *locale* mechanism. This article describes how to use locales (which is quite easy).
 
-##Applying Automatic Locale
+##Applying an Automatic Locale
 
 AnyChart provides built-in locales covering most regions and cultures. To use an automatic locale, first link a file from [AnyChart CDN](https://cdn.anychart.com/#locales) or download it to your server and link from there.
 
@@ -51,7 +51,7 @@ In the sample Gantt chart below, the names of months in the timeline are display
 
 {sample :height 300}GANTT\_Locale\_01{sample}
 
-<a name="tuning_a_date_time_locale"/>
+<a name="tuning_a_date_time_locale"></a>
 ##Tuning a Date/Time Locale
 
 Locales define the default input and output date time formats...
