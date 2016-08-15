@@ -20,16 +20,27 @@ $.ajax({
 
         // data set
         chart = anychart.seatMap([
-            {id: "Hall", value: "720"},
-            {id: "Room2", value: "165"},
-            {id: "WC", value: "49"},
-            {id: "Room1", value: "143"}
+            {id: "Hall", value: "720", info: "30\' 0\" x 24\'0\"", sq: "720 sq. ft."},
+            {id: "Room2", value: "165", info: "15\' 0\" x 11\'0\"", sq: "165 sq. ft."},
+            {id: "WC", value: "49", info: "7\' 0\" x 7\'0\"", sq: "49 sq. ft."},
+            {id: "Room1", value: "143", info: "11\' 0\" x 13\'0\"", sq: "143 sq. ft."},
+            {id: "Kitchen", value: "208", info: "13\' 0\" x 16\'0\"", sq: "208 sq. ft."}
         ]);
         // set svg data
         chart.geoData(svgData);
         chart.padding([85, 0, 20, 0]);
 
         series = chart.getSeries(0);
+
+        labels = series.labels();
+
+        // enable labels and adjust them
+        labels.enabled(false);
+        series.labels({fontSize: 10});
+        labels.textFormatter("{%id} \n{%info} \n{%sq}");
+        labels.offsetY(-13);
+
+        series.tooltip(false);
 
         // sets fill series
         series.fill(function () {
@@ -49,9 +60,9 @@ $.ajax({
             var attrs = this.attributes;
             if (attrs) {
                 // get the class
-                var clas = attrs.class;
+                     clas = attrs.class;
                 switch (clas) {
-                    case "inner_elements":
+                    case "inner_elements" :
                         return "red";
                     default:
                         return anychart.color.lighten(attrs.fill, 0.5);
@@ -79,18 +90,18 @@ $.ajax({
             return attrs ? attrs.stroke : this.sourceColor;
         });
 
-        // load svg file without elements with no values
-        chart.unboundRegions("hide");
+        // load svg-file without elements with no values
+        chart.unboundRegions(anychart.enums.MapUnboundRegionsMode.HIDE);
 
         // set container id for the chart
         chart.container("container");
         // initiate chart drawing
         chart.draw();
-    }
-    });
-});
 
-</script>
+    }
+});
+});
+    </script>
 </head>
 <body>
 <div id="container"></div>

@@ -21,24 +21,21 @@ Seat Maps are diagrams of the seat layout inside a building, passenger aircraft 
 
 ## Preparing SVG Image
 
-Creating seat maps is made possible by AnyMap ability to load specially formatted SVG Images and using them as the source for maps. How an existing SVG image should be loaded and formatted is described in [Custom SVG Maps](Custom_SVG_Maps) article.
+Creating seat maps is made possible by AnyMap ability to load specially formatted SVG Images and to use them as the source for maps. How an existing SVG image should be loaded and formatted is described in [Custom SVG Maps](Custom_SVG_Maps) article.
 
 If you need to create your own SVG picture in a graphic editor, look through the [Preparing SVG Image](Preparing_SVG_Image) article.
 
 
 ## SVG Data
 
-When your SVG image is ready, we need to upload it to our sample to work with its attributes. There are three ways how to get the access to the file: through AJAX-request, requesting a file through jQuery or put all the SVG code in a string.
+When your SVG image is ready, you should upload it to the sample for the further work. There are two ways how to get the access to the file: request it through the AJAX or put all the SVG code in a string.
 
 ### AJAX
 
-At first, we put an object with the link of the SVG file into the "body" section of the sample file. 
+At first, we need to enable jQuery to connect with AJAX. Put a script with a link into the ```<head>``` section of the sample code.
 
 ```
-<body>
-<div id="container"></div>
-<object style="width: 0; height: 0;" data="../images/house.svg" type="image/svg+xml" width="100%" height="100%"></object>
-</body>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 ```
 
 To get the data of the SVG file we need to load the document using AJAX:
@@ -51,12 +48,12 @@ $.ajax({
 
 {sample}Maps\_Seat\_01{sample}
 
-This option is highly recommended to use because of its flexibility. It doesn't matter for AJAX how much time is it neccessary to upload the file or how big this file is - unlike others.
+This option is highly recommended to use because of its flexibility. It doesn't matter for AJAX how much time is it neccessary to upload the file or how big this file is. 
 
 
 ### As String
 
-Another way to define the SVG code is to put it directly in the file as a string object. This way may suit you if your SVG contains a little information; in case with large SVG images define it the same as in one of the previous samples.
+Another way to upload the SVG image is to put its code directly in the file as a string object. This way may suit you if your SVG code is not too long; in case with large SVG document it's better to define it the same as in the previous sample.
 
 ```
 svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
@@ -67,11 +64,11 @@ svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
             "</g></svg>";
 ```
 
-{sample}Maps\_Seat\_03{sample}
+{sample}Maps\_Seat\_02{sample}
 
 ## Map Data
 
-Besides the SVG image, we need a Map data, which objects are groups of attributes. If the AJAX request was successful, set IDs and values in the Map data set.
+Besides the SVG image, we need to set the data for our Map. This data points' IDs should correspond the groups' IDs in the SVG file.
 
 ```
 success: function(svgData){
@@ -93,7 +90,7 @@ chart.geoData(svgData);
 
 ## Coloring
 
-The easiest way to change the colors of the elements in Seat Maps is to use the data set. Just add the necessary fields to the objects representing points:
+The easiest way to change the colors of the Seat Maps elements is to use the data set. Just add the necessary fields to the objects that represent points:
 
 ```
 chart = anychart.seatMap([
@@ -105,14 +102,14 @@ chart = anychart.seatMap([
 ]);
 ```
 
-{sample}Maps\_Seat\_04{sample}
+{sample}Maps\_Seat\_03{sample}
 
-Colors can be also defined through the SVG code. Look through the [Advanced Coloring](Advanced_Coloring) article for this information.
+Colors can be also defined through the SVG code and through several other ways. Look through the [Advanced Coloring](Advanced_Coloring) article for this information.
 
 
 ## Unbound Regions
 
-The {api:anychart.charts.Map#unboundRegions}unboundRegion(){api} method sets the color to the regions that have no value defined in the map data. Let's remove one of the points from the map data set:
+Use the {api:anychart.charts.Map#unboundRegions}unboundRegion(){api} method to set the view of the regions that have no value defined in the map data. Let's remove one of the points from the map data set:
 
 ```
 // data set
@@ -131,21 +128,21 @@ There are two modes of highlighting those regions (points, areas): "as-is" and "
 chart.unboundRegions("as-is");
 ```
 
-{sample}Maps\_Seat\_05{sample}
+{sample}Maps\_Seat\_04{sample}
 
-If you set "hide" as argument of the {api:anychart.charts.Map#unboundRegions}unboundRegion(){api} method, these regions are not being shown at all.
+When you set "hide" as argument of the {api:anychart.charts.Map#unboundRegions}unboundRegion(){api} method, regions with no values are not being shown at all. You can see that in the sample below our kitchen has simply disappeared.
 
 ```
 // load svg file without elements with no values
 chart.unboundRegions("hide");
 ```
 
-{sample}Maps\_Seat\_06{sample}
+{sample}Maps\_Seat\_05{sample}
 
 
 ### Labels and Tooltips
 
-Let's transform our labels and tooltips. We'll put additional information about sizes and square feets of the rooms into the data set and use standard {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods to set them.
+Let's transform our labels and tooltips. We'll put additional information about sizes and square feet of the rooms into the data set and use standard {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods to set them.
 
 ```
 // data set
@@ -156,14 +153,14 @@ Let's transform our labels and tooltips. We'll put additional information about 
     {id: "Room1", value: "143", info: "11\' 0\" x 13\'0\"" , sq: "143 sq. ft."},
     {id: "Kitchen", value: "208', info: "13\' 0\" x 16\'0\"" , sq: "208 sq. ft."}
 ]);
+
+// enable labels and adjust them
+labels.enabled(false);
+series.labels({fontSize: 10});
+labels.textFormatter("{%id} \n{%info} \n{%sq}");
 ```
 
-
-```
-
-```
-
-{sample}Maps\_Seat\_07{sample}
+{sample}Maps\_Seat\_06{sample}
 
 To edit the information described in our tooltips, use the {api:anychart.charts.Map#tooltip}tooltip(){api} method. We can edit the text in the title and in the body of a tooltip using the {api:anychart.core.ui.ChartTooltip#titleFormatter}titleFormatter(){api} and {api:anychart.core.ui.ChartTooltip#textFormatter}textFormatter(){api} methods, as well as the tooltips' appearance: their form, colors, etc. You can find more information about tooltips in our [Tooltips](../../Common_Settings/Tooltip) and [Map Tooltips](../Tooltips) articles.
 
@@ -180,7 +177,7 @@ tooltips.background("green 0.8");
 tooltips.separator("white");
 ```
 
-{sample}Maps\_Seat\_08{sample}
+{sample}Maps\_Seat\_07{sample}
 
 
 ## Gallery Samples
