@@ -21,21 +21,19 @@ We create a picture as a usual project in Illustrator, using its basic component
 
 Create the image file: "File" -> "New":
 
-![](../../images/pic01_new_doc.png =250x)
-
-<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic01\_new\_doc.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic01\_new\_doc.png" alt="pic\_01\_new\_doc" title="pic\_01\_new\_doc" border="0" width=600 align="center"></a>
+<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic01\_new\_doc.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic01\_new\_doc.png" alt="pic01\_new\_doc" title="pic01\_new\_doc" border="0" width=600 align="center"></a>
 
 Let's first define the perimeter and form of our house. We'll need drawing tools and use a "Rectangle Tool" to draw a rectangle. If the window with tools is not visible, click "Windows" in the main menu and choose "Tools". 
 
-<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic02\_open\_tools\_panel.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic02\_open\_tools\_panel.png" alt="pic\_02\_open\_tools\_panel" title="pic\_02\_open\_tools\_panel" border="0" width=828></a>
+<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic02\_open\_tools\_panel.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic02\_open\_tools\_panel.png" alt="pic02\_open\_tools\_panel" title="pic02\_open\_tools\_panel" border="0" width=828></a
 
-<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic03\_rectangle.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic03\_rectangle.png" alt="pic\_03\_rectangle" title="pic\_03\_rectangle" border="0" width=600 align="center"></a>
+<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic03\_rectangle.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic03\_rectangle.png" alt="pic03\_rectangle" title="pic03\_rectangle" border="0" width=600 align="center"></a>
 
 Now, we can draw the walls and partitions inside, forming the rooms. We can use several tools: Line Segment or Arc Tool (they both are under the same pic of Line Segment Tool, to show other variations of Segment tools click the Line Segment Tool and hold the mouse button for a couple of seconds), Rectangle Tool and its variations, Pen Tool, and the Slice Tool might be quite useful for planning. Let's use Line Segments to draw the walls.
 
 Note: to draw a straight line or curve at an angle, multiple of 45* or 90*, hold the Shift key on your keyboard while drawing.
 
-<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic\_04\_preplan.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic\_04\_preplan.png" alt="pic\_04\_preplan" title="pic\_04\_preplan" border="0" width=600 align="center"></a>
+<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic04\_preplan.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic04\_preplan.png" alt="pic04\_preplan" title="pic04\_preplan" border="0" width=600 align="center"></a>
 
 After the walls are drawn, we need to draw the doors. Let's mark them as two short lines on a wall.
 
@@ -45,19 +43,19 @@ Now, let's get rid of the extra elements like paths and parts of figures that we
 
 Adobe Illustrator has a panel of tools, which are very useful in some cases about shapes and figures. For example, in our situation, we need to get a complicated shape of the house perimeter: the main entrance is not on the same line as surrounding rooms, and the hall has got a full-height window in a shape of arc. We can subtract the small rectangle out of the big one that we have drawn at the beginning. Press "Windows" in the main menu and find the "Pathfinder" tool, or simply press Shift+Ctrl+F9.
 
-<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic\_06\_pathfinder.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic\_06\_pathfinder.png" alt="pic\_06\_pathfinder" title="pic\_06\_pathfinder" border="0" width=600 align="center"></a>
+<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic06\_pathfinder.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic06\_pathfinder.png" alt="pic06\_pathfinder" title="pic06\_pathfinder" border="0" width=600 align="center"></a>
 
 Select those two shapes that you need to subtract one from other: the first one to select should be that one that should be subtracted. Hold the Shift key while selecting the shapes. Then choose the "Minus front" button from the Shape Modes on the Pathfinder tab.
 
-<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic07\_minus\_front.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic07\_minus\_front.png" alt="pic\_07\_minus\_front" title="pic\_07\_minus\_front" border="0" width=600 align="center"></a>
+<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic07\_minus\_front.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic07\_minus\_front.png" alt="pic07\_minus\_front" title="pic07\_minus\_front" border="0" width=600 align="center"></a>
 
 The picture below demonstrates the situation you may get into: the new shape comes to the front layer and covers almost everything. 
 
-<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic\_08\_after\_minus\_front.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic\_08\_after\_minus\_front.png" alt="pic\_08\_after\_minus\_front" title="pic\_08\_after\_minus\_front" border="0" width=600 align="center"></a>
+<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic08\_after\_minus\_front.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic08\_after\_minus\_front.png" alt="pic08\_after\_minus\_front" title="pic08\_after\_minus\_front" border="0" width=600 align="center"></a>
 
 Right-click on this shape and choose "Arrange" -> "Send to back".
 
-<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic\_09\_arrange\_sent\_to\_back.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic\_09\_arrange\_sent\_to\_back.png" alt="pic\_09\_arrange\_sent\_to\_back" title="pic\_09\_arrange\_sent\_to\_back" border="0" width=600 align="center"></a>
+<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic09\_arrange\_sent\_to\_back.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic09\_arrange\_sent\_to\_back.png" alt="pic09\_arrange\_sent\_to\_back" title="pic09\_arrange\_sent\_to\_back" border="0" width=600 align="center"></a>
 
 Now, the layout of the house is visible again. Let's add some "furniture" into our plan.
 
