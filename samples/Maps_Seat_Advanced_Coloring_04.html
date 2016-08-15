@@ -127,21 +127,21 @@ $.ajax({
         series_closed = chart.seatMap(dataSet_closed);
 
         // set the tooltips
-        series_best_1_2.tooltip().titleFormatter(){"Best places (1-2 rows)"};
-        series_best_1_2.tooltip().textFormatter(){"£{%Value}"};
+        series_best_1_2.tooltip().titleFormatter("Best places (1-2 rows)");
+        series_best_1_2.tooltip().textFormatter("£{%Value}");
 
-        series_best_3_8.tooltip().titleFormatter(){"Best places (3-8 rows)"};
-        series_best_3_8.tooltip().textFormatter(){"£{%Value}"};
+        series_best_3_8.tooltip().titleFormatter("Best places (3-8 rows)");
+        series_best_3_8.tooltip().textFormatter("£{%Value}");
 
-        series_side.tooltip().titleFormatter(){"Side places"};
+        series_side.tooltip().titleFormatter("Side places");
         series_side.tooltip().textFormatter(){
-            if this.extra = "RESTRICTED VIEW" return "£{%Value} \nRESTRICTED VIEW"
+            if (this.extra == "RESTRICTED VIEW") return "£{%Value} \nRESTRICTED VIEW"
             else return "£{%Value}";
         };
 
-        series_closed.tooltip().titleFormatter(){"Side places"};
+        series_closed.tooltip().titleFormatter("Side places");
         series_closed.tooltip().textFormatter(){
-            if this.extra = "RESTRICTED VIEW" return "£{%Value} \nRESTRICTED VIEW"
+            if (this.extra == "RESTRICTED VIEW") return "£{%Value} \nRESTRICTED VIEW"
             else return "£{%Value}";
         };
 

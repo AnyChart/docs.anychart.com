@@ -115,11 +115,11 @@ $.ajax({
         series = chart.seatMap(dataSet);
 
         // set the tooltips
-        series.tooltip().titleFormatter(){"Side places"};
+        series.tooltip().titleFormatter("Side places");
         series.tooltip().textFormatter(){
-            if this.extra = "RESTRICTED VIEW" return "£{%Value} \nRESTRICTED VIEW"
+            if (this.extra == "RESTRICTED VIEW") return "£{%Value} \nRESTRICTED VIEW"
             else return "£{%Value}";
-        };
+        }
 
         // set the colors and ranges for the scale
         series.colorScale(anychart.scales.linearColor());
