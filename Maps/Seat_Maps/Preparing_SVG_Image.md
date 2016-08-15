@@ -21,13 +21,15 @@ We create a picture as a usual project in Illustrator, using its basic component
 
 Create the image file: "File" -> "New":
 
+![](../../images/pic01_new_doc.png =250x)
+
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic01\_new\_doc.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic01\_new\_doc.png" alt="pic\_01\_new\_doc" title="pic\_01\_new\_doc" border="0" width=600 align="center"></a>
 
 Let's first define the perimeter and form of our house. We'll need drawing tools and use a "Rectangle Tool" to draw a rectangle. If the window with tools is not visible, click "Windows" in the main menu and choose "Tools". 
 
-<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic\_02\_open\_tools\_panel.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic\_02\_open\_tools\_panel.png" alt="pic\_02\_open\_tools\_panel" title="pic\_02\_open\_tools\_panel" border="0" width=828></a>
+<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic02\_open\_tools\_panel.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic02\_open\_tools\_panel.png" alt="pic\_02\_open\_tools\_panel" title="pic\_02\_open\_tools\_panel" border="0" width=828></a>
 
-<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic\_03\_rectangle.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic\_03\_rectangle.png" alt="pic\_03\_rectangle" title="pic\_03\_rectangle" border="0" width=600 align="center"></a>
+<a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic03\_rectangle.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic03\_rectangle.png" alt="pic\_03\_rectangle" title="pic\_03\_rectangle" border="0" width=600 align="center"></a>
 
 Now, we can draw the walls and partitions inside, forming the rooms. We can use several tools: Line Segment or Arc Tool (they both are under the same pic of Line Segment Tool, to show other variations of Segment tools click the Line Segment Tool and hold the mouse button for a couple of seconds), Rectangle Tool and its variations, Pen Tool, and the Slice Tool might be quite useful for planning. Let's use Line Segments to draw the walls.
 
