@@ -36,9 +36,12 @@ $.ajax({
 
         // enable labels and adjust them
         labels.enabled(false);
-        series.labels({fontSize: 10});
+        series.labels({fontSize: 10, background: {fill: 'green .3'}});
         labels.textFormatter("{%id} \n{%info} \n{%sq}");
         labels.offsetY(-13);
+
+        // allow labels to overlap each other
+        series.overlapMode("allowOverlap");
 
         series.tooltip(false);
 

@@ -16,7 +16,7 @@ Seat Maps
 
 ## Overview
 
-Seat Maps are diagrams of the seat layout inside a building, passenger aircraft or else. They are often published by airlines for informational purposes, and they are of use to passengers for selection of their seat at booking or check-in. AnyMap technology allows to create any kind of seat maps, schemes or interactive layouts.
+Seat Maps are diagrams of the seat layout inside a building, passenger aircraft or else. They are often being published by airlines for informational purposes, and they are of use to passengers for selection of their seat at booking or check-in. AnyMap technology allows to create any kind of seat maps, schemes or interactive layouts.
 
 
 ## Preparing SVG Image
@@ -28,17 +28,17 @@ If you need to create your own SVG picture in a graphic editor, look through the
 
 ## SVG Data
 
-When your SVG image is ready, you should upload it to the sample for the further work. There are two ways how to get the access to the file: request it through the AJAX or put all the SVG code in a string.
+When your SVG image is ready, you should upload it to the sample for the further work. There are two ways how to get the access to the file: request it through the AJAX or put all the SVG code in a string object.
 
 ### AJAX
 
-At first, we need to enable jQuery to connect with AJAX. Put a script with a link into the ```<head>``` section of the sample code.
+At first, we need to include the jQuery library. Put a script with a link into the <head> section of the sample code.
 
 ```
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 ```
 
-To get the data of the SVG file we need to load the document using AJAX:
+To get the SVG file we need to load the document using AJAX:
 
 ```
 $.ajax({
@@ -48,12 +48,12 @@ $.ajax({
 
 {sample}Maps\_Seat\_01{sample}
 
-This option is highly recommended to use because of its flexibility. It doesn't matter for AJAX how much time is it neccessary to upload the file or how big this file is. 
+It is highly recommended to use this way of connecting with the svg document because of its flexibility. It doesn't matter for AJAX how much time is it neccessary to upload the file or how big this file is. 
 
 
 ### As String
 
-Another way to upload the SVG image is to put its code directly in the file as a string object. This way may suit you if your SVG code is not too long; in case with large SVG document it's better to define it the same as in the previous sample.
+Another way to upload the SVG image is to put its code directly in the file as a string object. This way may suit you if your SVG code is not too long; in case with large SVG document it's better to define it as it is described in the previous sample.
 
 ```
 svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
@@ -87,10 +87,12 @@ chart.geoData(svgData);
 
 {sample}Maps\_Seat\_01{sample}
 
+If you open the original SVG image, you can easily notice that the colors in the sample above are different from those defined in the image itself. In the paragraph below we consider working with colors in Seat Maps.
+
 
 ## Coloring
 
-The easiest way to change the colors of the Seat Maps elements is to use the data set. Just add the necessary fields to the objects that represent points:
+The easiest way to change the colors of the Seat Map elements is to use the data set. Just add the necessary fields to the objects (points):
 
 ```
 chart = anychart.seatMap([
@@ -104,7 +106,7 @@ chart = anychart.seatMap([
 
 {sample}Maps\_Seat\_03{sample}
 
-Colors can be also defined through the SVG code and through several other ways. Look through the [Advanced Coloring](Advanced_Coloring) article for this information.
+Colors can be also defined through the SVG code and several other ways. Look through the [Advanced Coloring](Advanced_Coloring) article for this information.
 
 
 ## Unbound Regions
@@ -121,7 +123,7 @@ chart = anychart.seatMap([
 ]);
 ```
 
-There are two modes of highlighting those regions (points, areas): "as-is" and "hide". In the first case the unbound region is being colored according to the settings in the SVG image, with no reaction on hovering or selecting:
+There are two modes of highlighting those regions (points, areas): "as-is" and "hide". In the displaying "as-is" mode the unbound region is being colored according to the settings of the SVG image, with no reaction when being hovered or selected:
 
 ```
 // load svg file with original color scheme used for points without values
@@ -130,7 +132,7 @@ chart.unboundRegions("as-is");
 
 {sample}Maps\_Seat\_04{sample}
 
-When you set "hide" as argument of the {api:anychart.charts.Map#unboundRegions}unboundRegion(){api} method, regions with no values are not being shown at all. You can see that in the sample below our kitchen has simply disappeared.
+When you set "hide" as argument of the {api:anychart.charts.Map#unboundRegions}unboundRegion(){api} method, regions with no values are not being shown at all. You can see that in the sample below our kitchen is not displayed at all.
 
 ```
 // load svg file without elements with no values
@@ -151,7 +153,7 @@ Let's transform our labels and tooltips. We'll put additional information about 
     {id: "Room2", value: "165", info: "15\' 0\" x 11\'0\"" , sq: "165 sq. ft."},
     {id: "WC", value: "49", info: "7\' 0\" x 7\'0\"" , sq: "49 sq. ft."},
     {id: "Room1", value: "143", info: "11\' 0\" x 13\'0\"" , sq: "143 sq. ft."},
-    {id: "Kitchen", value: "208', info: "13\' 0\" x 16\'0\"" , sq: "208 sq. ft."}
+    {id: "Kitchen", value: "208", info: "13\' 0\" x 16\'0\"" , sq: "208 sq. ft."}
 ]);
 
 // enable labels and adjust them
@@ -182,4 +184,4 @@ tooltips.separator("white");
 
 ## Gallery Samples
 
-You can find samples of using SVG images to create Seat Maps in [AnyMap: Seat Maps Gallery](http://www.anychart.com/products/anymap/gallery/Seat_Maps/). 
+You can find samples of using SVG images in Seat Maps in [AnyMap: Seat Maps Gallery](http://www.anychart.com/products/anymap/gallery/Seat_Maps/). 
