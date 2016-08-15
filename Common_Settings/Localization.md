@@ -1,3 +1,5 @@
+{:index 5}
+
 #Localization
 
 * [Overview](#overview)
@@ -39,7 +41,7 @@ anychart.format.outputLocale('hi-in');
 
 AnyChart sample:
 
-{sample :height 300}GANTT\_Locale\_010sample}
+{sample :height 300}GANTT\_Locale\_00{sample}
 
 AnyStock sample:
 
