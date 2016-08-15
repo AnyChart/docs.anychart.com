@@ -21,14 +21,14 @@ We create a picture as a usual project in Illustrator, using its basic component
 
 Create the image file: "File" -> "New":
 
-![](http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic01_new_doc.png =400x600)
+![[http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic01_new_doc.png|width=600]]
 
 
 Let's first define the perimeter and form of our house. We'll need drawing tools and use a "Rectangle Tool" to draw a rectangle. If the window with tools is not visible, click "Windows" in the main menu and choose "Tools". 
 
-![](http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic02_open_tools_panel.png =400x600)
+[[http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic02_open_tools_panel.png|width=600]]
 
-![](http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic03_rectangle.png =400x600)
+![](http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic03_rectangle.png =400x600){: width=600px}
 
 Now, we can draw the walls and partitions inside, forming the rooms. We can use several tools: Line Segment or Arc Tool (they both are under the same pic of Line Segment Tool, to show other variations of Segment tools click the Line Segment Tool and hold the mouse button for a couple of seconds), Rectangle Tool and its variations, Pen Tool, and the Slice Tool might be quite useful for planning. Let's use Line Segments to draw the walls.
 
