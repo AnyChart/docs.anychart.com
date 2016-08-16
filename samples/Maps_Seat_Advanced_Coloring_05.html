@@ -21,7 +21,7 @@ $.ajax({
         chart = anychart.seatMap();
 
         // setting the data
-        dataSet = anychart.seatMap([            
+        dataSet = anychart.data.set([            
             {id: "r1s1", value: "12"},
             {id: "r1s2", value: "12"},
             {id: "r1s3", value: "12"},
@@ -32,18 +32,14 @@ $.ajax({
             {id: "r2s2", value: "12"},
             {id: "r2s3", value: "12"},
             {id: "r2s4", value: "12"},
-            {id: "r1s5", value: "12"},
-            {id: "r1s6", value: "12"},
-            {id: "r1s7", value: "12"},
-            {id: "r1s8", value: "12"}, 
+            {id: "r2s5", value: "12"},
+            {id: "r2s6", value: "12"},
+            {id: "r2s7", value: "12"},
+            {id: "r2s8", value: "12"}, 
             {id: "r3s2", value: "10"},
             {id: "r3s3", value: "10"},
             {id: "r3s4", value: "10"},
             {id: "r3s5", value: "10"},
-            {id: "r4s3", value: "10"},
-            {id: "r4s4", value: "10"},
-            {id: "r4s5", value: "10"},
-            {id: "r4s6", value: "10"},
             {id: "r5s5", value: "10"},
             {id: "r5s6", value: "10"},
             {id: "r5s7", value: "10"},
@@ -64,8 +60,14 @@ $.ajax({
             {id: "r3s6", value: "5.5"},
             {id: "r4s1", value: "5.5"},
             {id: "r4s2", value: "5.5"},
+            {id: "r4s3", value: "10"},
+            {id: "r4s4", value: "10"},
+            {id: "r4s5", value: "10"},
+            {id: "r4s6", value: "10"},
             {id: "r4s7", value: "5.5"},
             {id: "r4s8", value: "5.5"},
+            {id: "r4s9", value: "5.5"},
+            {id: "r4s10", value: "5.5"},
             {id: "r5s1", value: "5.5"},
             {id: "r5s2", value: "3.5", extra: "RESTRICTED VIEW"},
             {id: "r5s11", value: "3.5", extra: "RESTRICTED VIEW"},
@@ -82,15 +84,11 @@ $.ajax({
             {id: "r8s2", value: "5.5"},
             {id: "r8s11", value: "5.5"},
             {id: "r8s12", value: "5.5"},
-            {id: "r4s3", value: "3.5", extra: "RESTRICTED VIEW"},
-            {id: "r4s4", value: "3.5", extra: "RESTRICTED VIEW"},
-            {id: "r4s9", value: "3.5", extra: "RESTRICTED VIEW"},
-            {id: "r4s10", value: "3.5", extra: "RESTRICTED VIEW"},
 
-            {id: "r5s3", value: "7.5"},
+            {id: "r5s3", value: "3.5", extra: "RESTRICTED VIEW"},
             {id: "r5s4", value: "3.5", extra: "RESTRICTED VIEW"},
             {id: "r5s9", value: "3.5", extra: "RESTRICTED VIEW"},
-            {id: "r5s10", value: "7.5"},
+            {id: "r5s10", value: "3.5", extra: "RESTRICTED VIEW"},
 
             {id: "r6s3", value: "7.5"},
             {id: "r6s4", value: "7.5"},
@@ -112,58 +110,27 @@ $.ajax({
 
         chart.padding([85, 0, 20, 0]);
 
-        series = chart.seatMap(dataSet);
+        series = chart.choropleth(dataSet);
 
         // set the tooltips
         series.tooltip().titleFormatter("Side places");
-        series.tooltip().textFormatter(){
-            if (this.extra == "RESTRICTED VIEW") return "£{%Value} \nRESTRICTED VIEW"
-            else return "£{%Value}";
-        }
+        series.tooltip().textFormatter(function(){
+            if (this.getDataValue("extra") == "RESTRICTED VIEW") return "£"+this.value+"\nRESTRICTED VIEW"
+            else return "£"+this.value;
+        });
 
         // set the colors and ranges for the scale
         series.colorScale(anychart.scales.linearColor());
 
         //set the single hue progression
-        var colors = anychart.color.singleHueProgression('#33cc00');
+        var colors = anychart.color.singleHueProgression("#006633");
         
         // define the colors 
         series.colorScale().colors(colors);
 
         // create and enable the colorRange
-        var colorRange = map.colorRange();
+        var colorRange = chart.colorRange();
         colorRange.enabled(true);
-
-        // sets fill series
-        series_closed.fill(function () {
-            var attrs = this.attributes;
-            if (attrs) return attrs.fill;
-            if (attrs) {
-                // get the class
-                var clas = attrs.class;
-                switch (clas) {
-                    case "restricted" :
-                        return "#000";
-                }
-            } else {
-                return this.sourceColor;
-            }
-        });
-
-        series_side.fill(function () {
-            var attrs = this.attributes;
-            if (attrs) return attrs.fill;
-            if (attrs) {
-                // get the class
-                var clas = attrs.class;
-                switch (clas) {
-                    case "restricted" :
-                        return "#000";
-                }
-            } else {
-                return this.sourceColor;
-            }
-        });
 
         // set container id for the chart
         chart.container("container");

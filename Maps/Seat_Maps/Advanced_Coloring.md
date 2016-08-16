@@ -137,13 +137,13 @@ To enable ColorRange, we need to set "true" to the {api:anychart.charts.Map#colo
 series.colorScale(anychart.scales.linearColor());
 
 //set the single hue progression
-var colors = anychart.color.singleHueProgression('#33cc00');
+var colors = anychart.color.singleHueProgression("#006633");
         
 // define the colors 
 series.colorScale().colors(colors);
 
 // create and enable the colorRange
-var colorRange = map.colorRange();
+var colorRange = chart.colorRange();
 colorRange.enabled(true);
 ```
 
