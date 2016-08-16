@@ -130,7 +130,7 @@ chart.palette(["#ff0000", "#990000", "#ffcc33", "#996633"]);
 
 It's possible to add ColorRange and use ColorScale in AnyChart Seat Maps. ColorRange looks like a range bar, colored as gradient or like a number of colored boxes, each presenting a range of values. It is rather useful when we need to identify the value that each point on a map presents.
 
-To enable ColorRange, we need to set "true" to the {api:anychart.charts.Map#colorRange}colorRange(){api} method. To make it work properly we need to set the colors and the type of the ColorScale. You can find information about colorScale adjusting in the [ColorRange article](../ColorRange).
+To enable ColorRange, we need to set "true" as an argument to the {api:anychart.charts.Map#colorRange}colorRange(){api} method. To make it work properly we need to set the colors and the type of the ColorScale. You can find information about colorScale adjusting in the [ColorRange article](../ColorRange).
 
 ```
 // set the colors and ranges for the scale
