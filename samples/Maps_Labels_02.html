@@ -1,0 +1,78 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyMap"/>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
+  <script x-export="stage">anychart.onDocumentReady(function() {
+  // create stage
+  var stage = anychart.graphics.create("container");
+  map = anychart.map();
+  var dataSet = anychart.data.set([
+    {'id': 'AU.WA', 'value': 300},  // Western Australia
+    {'id': 'AU.JB'},                // Jervis Bay Territory
+    {'id': 'AU.NS', 'value': 240},  // New South Wales
+    {'id': 'AU.VI', 'value': 75},   // Victoria
+    {'id': 'AU.NT', 'value': 130},  // Northern Territory
+    {'id': 'AU.TS', 'value': 190},  // Tasmania
+    {'id': 'AU.CT', labels: false}, // Australian Capital Territory
+    {'id': 'AU.SA'},                // South Australia
+    {'id': 'AU.QL'}                 // Queensland
+  ]);
+
+  map.geoData(anychart.maps.australia);
+
+  // set the title and its preferences
+  map.title().useHtml(true).hAlign('center');
+  map.title('<span style="font-size: 18px;">Data Setting</span><br><span style="font-size:12px;">Move the mouse over the districts to see which have values</span>');
+  map.padding(10,250,10,0)
+
+  // set the series
+  var series = map.choropleth(dataSet);
+  series.geoIdField('code_hasc');
+  // enable labels
+  series.labels(true);
+  labels = series.labels();
+    
+  // labels setting
+  labels.fontColor('black');
+  labels.fontSize("10px");
+
+  // custom text label
+  custom_label = map.label();
+  custom_label.text("Australia's sons let us rejoice, \nFor we are young and free;\nWe've golden soil and wealth for toil,\nOur home is girt by sea;\nOur land abounds in Nature's gifts\nOf beauty rich and rare;\nIn hist'ry's page, let ev'ry stage\nAdvance Australia fair.\nIn joyful strains then let us sing,\nAdvance Australia fair.");  
+  custom_label.position("rightcenter");
+  custom_label.anchor("rightcenter");
+  custom_label.offsetX(30);
+  custom_label.width(210);
+  custom_label.fontSize(10);
+  custom_label.fontColor("black");
+  
+  // custom image label
+  image = stage.image("//static.anychart.com/images/australia.png");
+  image.width(150);
+  image.height(150);
+  image.x(stage.width()-225);
+  image.y(stage.height()/2-75);
+  stage.listen("stageresize", function(){
+        image.x(stage.width()-200);
+        image.y(stage.height()/2-50);
+  });
+  image.opacity("0.3");
+  image.zIndex(map.zIndex()+1);
+  
+  // set the container
+  map.container(stage);
+  map.draw();
+  });
+</script>
+
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
