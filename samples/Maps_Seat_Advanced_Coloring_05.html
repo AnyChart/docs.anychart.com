@@ -116,10 +116,11 @@ $.ajax({
 
         // set the tooltips
         series.tooltip().titleFormatter("Side places");
-        series.tooltip().textFormatter(){
+        series.tooltip().textFormatter(function(){
+            debugger;
             if (this.extra == "RESTRICTED VIEW") return "£{%Value} \nRESTRICTED VIEW"
             else return "£{%Value}";
-        }
+        });
 
         // set the colors and ranges for the scale
         series.colorScale(anychart.scales.linearColor());
