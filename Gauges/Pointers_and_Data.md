@@ -63,7 +63,7 @@ The following code shows how to create a data set with two values, add two point
   bar.dataIndex(1);
 ```
 
-That is how it looks:
+That is how it looks like:
 
 {sample}BCT\_Pointers-and-Data\_16{sample} 
 
@@ -129,13 +129,13 @@ The following code adds a second value to the data set and binds it with the bar
 
 {sample}BCT\_Pointers-and-Data\_18{sample} 
 
-### Adding Multiple Pointers
+### Adding Multiple Pointers (??? Какая-то нелогичная структура. Adding Multiple Pointers of the Same Type?)
 
-You can add not only different pointers but the same. Look at the example below:
+The samples above show how to add multiple pointers of different types. But you can also add a number of pointers of one type:
 
 {sample}BCT\_Pointers-and-Data\_19{sample}
 
-All we need to do is to change the value of the {api:anychart.core.gauge.pointers.Marker}**.marker()**{api} itself. This value means the pointer's numbers and counts from 0.
+You need to specify the numbers (??? indexes?) of the pointers by adding their values (the numberation starting with 0). In this sample, the numbers (??? indexes?) of the {api:anychart.core.gauge.pointers.Marker}**.marker()**{api} pointers are specified:
 
 ```
   // add the second data point
