@@ -6,7 +6,9 @@ Map Labels
 * [Common Settings](#common_settings)
 * [Source Data Access](#source_data_access)
 * [Overlap](#overlap)
-* [Out of region labels](#out_of_region_labels)
+* [Positioning](#positioning)
+ * [Inside](#inside)
+ * [Out of region labels](#out_of_region_labels)
 * [Callout](#callout)
 
 ## Overview 
@@ -99,15 +101,62 @@ Both code samples do the same: disable labels that overlap each other.
 
 ### Series
 
-In the previous paragraph we considered working with labels of the whole map. AnyMap allows to change the settings to the determined series if necessary. To set the overlapping mode we use the {api:anychart.charts.Map#overlapMode}overlapMode(){api} method with the series, and remember that series setting are more 
+In the previous paragraph we considered working with labels of the whole map. AnyMap allows to change the settings to the determined series if necessary. To set the overlapping mode we use the {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} method with the series, and remember that series setting have a higher priority than the map overlap settings. It means that it's possible to disable all labels that overlap each other on a map but enable those for determined series.
+
+The {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} method supports the same methods as the same method for maps; moreover, if we set "null", the overlapping mode of the series inherits the behaviour from the map.
+
+```
+
+```
+
+{sample}Maps\_Labels\_04{sample}
+
+Note that this setting doesn't change if the map is zoomed, but during the zooming process itself you can see some labels overlapping each other. This is made on purpose tho make the process of zooming more graphic.
+
+If there are several labels in a series overlapping each other, set the "labelrank" property to those regions. The label of a region with a higher labelrank will be shown, while other overlapping labels will be disabled. It helps to shown as many labels as possible.
+
+```
+
+```
+
+{sample}Maps\_Labels\_05{sample}
 
 
-Coming soon
+## Positioning
 
-## Out of region labels
+### Inside
 
-Coming soon
+Default - in the middle (middle-x, middle-y, middlexymode^ relative or absolute)
+Координаты эти указываются только в geo данных в свойcтвах точки и через данные серии для конкретной точки.
+через geo данные
+  
+через данные серии
+```
+
+```
+
+{sample}Maps\_Labels\_06{sample}
+
+
+### Out of region labels
+
+If it's necessary to show the labels for those tiny regions, you can do it by setting the X and Y coordinates of a label through the geo data or data set of your map. Use {api:}positionMode(){api} to set the correct positioning of the label according to the coordinates set. There are three position modes:relative, absolute and offset.
+
+```
+
+```
+
+{sample}Maps\_Labels\_07{sample}
+
+Also there is a connector created specially for the labels outside of regions. The {api:}connectorStroke(){api} method will help you to adjust its appearance.
+
+```
+
+```
+
+{sample}Maps\_Labels\_08{sample}
+
 
 ## Callout
 
-Coming soon
+gallery sample
