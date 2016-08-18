@@ -29,7 +29,7 @@ By default, when a pointer is added to a JavaSchipt gauge chart, it shows the fi
 
 To show more than one value, the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} method  is used: it should be applied  to (??? called on) each pointer showing any other than the first value. Note that the numeration of values starts from 0. 
 
-(???) Или все-таки метод должен применяться ко всем указателям, а то вдруг возникнет путаница? В таком случае то, что после двоеточия, нужно вычеркнуть. В примере метод к указателю, покBзывающему первую точку, применяется, но индекс точки в нем не прописан.
+(???) Или все-таки метод должен применяться ко всем указателям, а то вдруг возникнет путаница? В таком случае то, что после двоеточия, нужно вычеркнуть. В примере метод к указателю, показывающему первую точку, применяется, но индекс точки в нем не прописан.
 
 When you call the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} method, you change the value represented by the pointer. However, using this makes sense only if you have more than one value in your data set and more than one axis, because the only axis shows the only (or the first) value from your dataSet by default. So, there is no need in this method if your chart has an only one axis and your data looks like this:
 
