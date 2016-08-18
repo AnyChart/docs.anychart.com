@@ -129,7 +129,7 @@ The following code adds a second value to the data set and binds it with the bar
 
 {sample}BCT\_Pointers-and-Data\_18{sample} 
 
-### Adding Multiple Pointers (??? Какая-то нелогичная структура. Adding Multiple Pointers of the Same Type?)
+### Adding Multiple Pointers (??? Какая-то нелогичная структура. Adding Multiple Pointers of the Same Type? Или сделать этот кусок частью первого раздела?)
 
 The samples above show how to add multiple pointers of different types. But you can also add a number of pointers of one type:
 
