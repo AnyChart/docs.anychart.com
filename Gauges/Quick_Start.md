@@ -3,7 +3,7 @@
 
 ## Creating a Circular Gauge
 ###1. Including a Circular Gauge into Your Web Page
-Reference the _anychart.min.js_ JavaScript file in the `<head>` section of your web page. You can use the link as shown below or download the file from the [download page](../Quick_Start/Downloading_AnyChart) and then put it into any folder of your site (in this case, you have to use your own link).
+Reference the _anychart.min.js_ JavaScript file in the `<head>` section of your web page: 
 
 ```
 <head>
@@ -11,8 +11,10 @@ Reference the _anychart.min.js_ JavaScript file in the `<head>` section of your 
 </head>
 ```
 
+You can use the link as shown above or download the file from the [download page](../Quick_Start/Downloading_AnyChart) and then put it into any folder of your site. In this case, you have to use your own link.
+
 ###2. Creating a Container for the Gauge
-Add a block-based HTML element to your page and set the `id`, `width` and `height` attributes (when they are not set, AnyChart uses 100% of the container):
+Add a block-based HTML element to your page and set the `id`, `width` and `height` attributes:
 
 (??? block-based HTML element не гуглится) 
 
@@ -21,6 +23,7 @@ Add a block-based HTML element to your page and set the `id`, `width` and `heigh
     <div id="container" style="width: 500px; height: 400px;"></div>
 </body>
 ```
+When the attributes are not set, AnyChart uses 100% of the container.
 
 ###3. Preparing your Data
 
@@ -31,7 +34,7 @@ dataSet = anychart.data.set([81,34.5]);
 ```
 
 ###4. Creating a Gauge
-Add the `<script>` tag with the following code to any place in the page (in this sample, JavaScript API is used to create a chart, but you can also use JSON or XML format):
+Add the `<script>` tag with the code shown below to any place in the page. In this sample, JavaScript API is used to create a chart, but you can also use JSON or XML format.
 
 ```
 <script>
@@ -89,7 +92,7 @@ Here is the result all these steps lead to:
 
 {sample :width 690 :height 250}GAUGE\_Basic\_Sample{sample}
 
-The sample above can be launched and explored in AnyChart PlayGround. You can also copy this code to a file on your computer and open it in your browser to display the gauge:
+The sample above can be launched and explored in AnyChart PlayGround. You can also copy the following code to a file on your computer and open it in your browser to display the gauge:
 
 ```
 <!doctype html>

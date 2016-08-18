@@ -4,7 +4,7 @@
 * [Connection with the Data](#connection_with_the_data)
  * [Bind to Data](#bind_to_data)
  * [Bind to Axis](#bind_to_axis)
- * [Multiple pointers](#multiple_pointers)
+ * [Multiple Pointers](#multiple_pointers)
 * [Types](#types)
  * [Bar](#bar)
  * [Marker](#marker)
@@ -115,7 +115,7 @@ Let's add the second value to our dataSet and bind the bar pointer with the new 
 
 {sample}BCT\_Pointers-and-Data\_18{sample} 
 
-### Multiple pointers
+### Multiple Pointers
 
 You can add not only different pointers but the same. Look at the example below:
 
