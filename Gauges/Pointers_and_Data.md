@@ -1,7 +1,7 @@
 #Pointers and Data
 
 * [Overview](#overview)
-* [Connection with the Data](#connection_with_the_data)
+* [Connecting Pointers with Data](#connecting_pointers_with_data)
  * [Bind to Data](#bind_to_data)
  * [Bind to Axis](#bind_to_axis)
  * [Multiple Pointers](#multiple_pointers)
@@ -13,13 +13,23 @@
 
 ##Overview
 
-Pointers are elements of the Gauge charts, which are necessary for the data representation. 
+Pointers are essential elements of gauges, used to indicate data. 
 
-##Connection with the Data
+##Connecting Pointers with Data
 
-By default, when a pointer is added to the JavaScript gauge chart, it shows the first value from the DataSet (if you've got more than one) or the only one. In case you need the second pointer with the same value to display or you have more than one value in your dataSet and you need one of your pointers to show this particular value  different from the first one, you need to connect the data with the pointer in some way. On the other hand, the situation when you need to show any value from your dataSet on the axis which is not the only and the first might take place as well.
+By default, when a pointer is added to a JavaScript gauge chart, it shows the first value of the data set (if there is more than one value) or the only one. In case you need a second pointer displaying the same value or you have more than one value in the data set and need one of the pointers to show a value different from the first one, you need to connect your pointers with the data. However, a situation when you need to show any value from your data set on the axis that is not the only one and the first might take place as well.
 
-These problems are to be easily resolved using the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} and the {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex**{api} methods. You can find more information about these methods below.
+These problems are to be easily resolved using the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} and {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex**{api} methods. You can find more information about them below.
+
+(???) Запутанно и сложно! А ведь вроде все просто... Предлагаю переписать так:
+
+By default, when a pointer is added to a JavaScript gauge chart, it shows the first value of the data set (if there is more than one value) or the only one. If you want to create another pointer showing the same value or to show another value, you need to connect your pointers with the data using the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} metod.
+
+In case a gauge has more than one axis, when you add a pointer, it shows a value on the first one. If you want the value to be shown at another axis, you need to use the {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex**{api} method.
+
+Или даже так:
+
+By default, when a pointer is added to a JavaSchipt gauge chart, it shows the first (or the only) value of the data set on the first (or the only) axis. If you want to indicate another value, or to place a pointer to another axis, or to create a number of pointers, you need to use the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} and {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex**{api} methods.
 
 ### Bind to Data
 
