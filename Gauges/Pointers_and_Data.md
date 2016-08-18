@@ -69,7 +69,7 @@ That is how it looks like:
 
 ### Binding Pointers to Axes
 
-To bind a pointer to an axis, the {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex()**{api} method is used. However, there is no need in this method ша your gauge contains only one axis. Also note that the numeration of axes starts from 0.
+To bind a pointer to an axis, the {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex()**{api} method is used. However, there is no need in this method if your gauge contains only one axis. Also note that the numeration of axes starts from 0.
 
 In the samle below, there is a gauge with two axis and two pointers, marker and bar, both indicating the same value. The bar pointer is bound to the second axis.
 
