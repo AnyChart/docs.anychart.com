@@ -16,6 +16,7 @@
 A pointer is an essential element of gauges, used to indicate data. 
 
 ##Connecting Pointers with Data
+(??? Нелогично обобщение. Connecting Pointers with Data and Axes? Binding Pointers to Data and Axes?)
 
 By default, when a pointer is added to a JavaScript gauge chart, it shows the first value of the data set (if there is more than one value) or the only one. In case you need a second pointer displaying the same value or you have more than one value in the data set and need one of the pointers to show a value different from the first one, you need to connect your pointers with the data. However, a situation when you need to show any value from your data set on the axis that is not the only one and the first might take place as well.
 
@@ -23,7 +24,7 @@ These problems are to be easily resolved using the {api:anychart.core.gauge.poin
 
 (???) Запутанно и сложно! А ведь вроде все не так уж хитро... Предлагаю переписать так:
 
-By default, when a pointer is added to a JavaSchipt gauge chart, it shows the first (or the only) value of the data set on the first (or the only) axis. If you need to indicate another value, to place a pointer to another axis, or to create a number of pointers, you should use the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} and {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex**{api} methods.
+By default, when a pointer is added to a JavaSchipt gauge chart, it shows the first (or the only) value of the data set on the first (or the only) axis. If you need to indicate another value, to place a pointer to another axis, or to create a number of pointers, you should use the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} and {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex**{api} methods to connect your pointers with data and axes.
 
 ### Binding Pointers to Data
 
@@ -129,7 +130,8 @@ The following code adds a second value to the data set and binds it with the bar
 
 {sample}BCT\_Pointers-and-Data\_18{sample} 
 
-### Adding Multiple Pointers (??? Какая-то нелогичная структура. Adding Multiple Pointers of the Same Type? Или сделать этот кусок частью первого раздела?)
+### Adding Multiple Pointers
+(???) Какая-то нелогичная структура. Adding Multiple Pointers of the Same Type? Или сделать этот кусок частью первого раздела?
 
 The samples above show how to add multiple pointers of different types. But you can also add a number of pointers of one type:
 
