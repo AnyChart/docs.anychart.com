@@ -13,7 +13,7 @@
 
 ##Overview
 
-Pointers are essential elements of gauges, used to indicate data. 
+A pointer is an essential element of gauges, used to indicate data. 
 
 ##Connecting Pointers with Data
 
@@ -29,7 +29,21 @@ By default, when a pointer is added to a JavaSchipt gauge chart, it shows the fi
 
 To show more than one value, the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} method  is used: it should be applied  to (??? called on) each pointer showing any other than the first value. Note that the numeration of values starts from 0. 
 
-(??? разве то, что в скобках, не очевидно и так?)
+(???) или все-таки метод должен применяться ко всем указателям, а то вдруг возникнет путаница? в таком случае то, что после двоеточия, нужно вычеркнуть. в примере метод к указателю, показывающему первую точку, применяется, но индекс точки в нем не прописан
+
+When you call the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} method, you change the value represented by the pointer. However, using this makes sense only if you have more than one value in your data set and more than one axis, because the only axis shows the only (or the first) value from your dataSet by default. So, there is no need in this method if your chart has an only one axis and your data looks like this:
+
+```
+  var dataSet = anychart.data.set([60]);
+```
+
+(???) Не вижу смысла в первой фразе, предлагаю ее выкинуть или перенести в другое место - она слабо связана с основной мыслью абзаца. Сам он изобилует повторами одного и того же. Предлагаю такой вариант:
+
+Since the only axis shows the only value by default, using the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} method makes no sense if your gauge has one axis and your data set looks like this:
+
+```
+  var dataSet = anychart.data.set([60]);
+```
 
 The following code shows how to create a data set with two values, add two pointers (marker and bar), and bind the bar pointer to the second value:
 
@@ -53,29 +67,13 @@ That is how it looks:
 
 {sample}BCT\_Pointers-and-Data\_16{sample} 
 
-When you call the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} method, you change the value represented by the pointer. However, using this makes sense only if you have more than one value in your data set and more than one axis, because the only axis shows the only (or the first) value from your dataSet by default. So, there is no need in this method if your chart has an only one axis and your data looks like this:
-
-```
-  var dataSet = anychart.data.set([60]);
-```
-
-(???) Не вижу смысла в первой фразе, предлагаю ее выкинуть или перенести в другое место - она слабо связана с основной мыслью абзаца. Сам он изобилует повторами одного и того же. Предлагаю такой вариант:
-
-Since the only axis shows the only value by default, using the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} method makes no sense if your gauge has one axis and your data set looks like this:
-
-```
-  var dataSet = anychart.data.set([60]);
-```
-
 ### Binding Pointers to Axes
 
-To bind the pointer to the axis use the {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex()**{api} method. Note that the count starts from 0. There's no need in using this method if your chart contains an only axis.
+To bind a pointer to an axis, the {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex()**{api} method is used. However, there is no need in this method ша your gauge contains only one axis. Also note that the numeration of axes starts from 0.
 
-Let's enable one more axis and bind the bar pointer to this new axis:
+In the samle below, there is a gauge with two axis and two pointers, marker and bar, both indicating the same value. The bar pointer is bound to the second axis.
 
 {sample}BCT\_Pointers-and-Data\_17{sample} 
-
-To reach the result as in the sample above we need to add the following:
 
 ```
   // second axis settings
@@ -116,7 +114,7 @@ To reach the result as in the sample above we need to add the following:
   bar.axisIndex(1);
 ```
 
-Let's add the second value to our dataSet and bind the bar pointer with the new value to the new axis:
+The following code adds a second value to the data set and binds it with the bar pointer on the second axis:
 
 ```
   // add the second data point
