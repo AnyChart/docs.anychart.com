@@ -9,23 +9,23 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script x-export="chart">anychart.onDocumentReady(function() {
  
-  // create data set on our data
+  // create data set
   var dataSet = anychart.data.set([81, 34.5]);
  
-  // chart type
+  // set the gauge type
   var gauge = anychart.circularGauge();
  
-  // set series padding
+  // set the padding
   gauge.data(dataSet).padding("4%");
  
-  // set axis scale settings
+  // configure the scale
   var scale = gauge.axis().scale();
   scale.minimum(0)
       .maximum(100)
       .ticks()
       .interval(10);
  
-  // set major axis ticks
+  // configure masjor ticks on the axis
   var axis = gauge.axis();
   axis.ticks()
       .fill("white")
@@ -33,7 +33,7 @@
       .type("trapezoid")
       .length(20);
  
-  // set minor axis ticks
+  // configure minor ticks on the axis
   axis.minorTicks()
       .enabled(true)
       .fill("white")
@@ -41,14 +41,14 @@
       .type("trapezoid")
       .length(10);
  
-  // set the look of the bar that presents data
+  // configure the bar presenting data
   gauge.bar(0)
       .position("i")
       .fill("#F0673B .9")
       .stroke("#F0673B")
       .radius(80);
  
-  // draw chart
+  // initiate drawing the gauge
   gauge.container("container").draw();
 });</script>
 </head>
