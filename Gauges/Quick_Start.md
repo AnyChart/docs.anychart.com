@@ -21,6 +21,7 @@ Add a block-based HTML element to your page and set the `id`, `width` and `heigh
     <div id="container" style="width: 500px; height: 400px;"></div>
 </body>
 ```
+
 ###3. Preparing your Data
 
 AnyChart provides quite a few opportunities to work with data, so you need to prepare your data before usage. A raw data set for a circular gauge chart may look like this:
