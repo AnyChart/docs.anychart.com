@@ -2,9 +2,9 @@
 
 * [Overview](#overview)
 * [Connecting Pointers with Data](#connecting_pointers_with_data)
- * [Bind to Data](#bind_to_data)
- * [Bind to Axis](#bind_to_axis)
- * [Multiple Pointers](#multiple_pointers)
+ * [Binding Pointers to Data](#binding_pointers_to_data)
+ * [Binding Pointers to Axes](#binding_pointers_to_axes)
+ * [Adding Multiple Pointers](#adding_multiple_pointers)
 * [Types](#types)
  * [Bar](#bar)
  * [Marker](#marker)
@@ -21,21 +21,17 @@ By default, when a pointer is added to a JavaScript gauge chart, it shows the fi
 
 These problems are to be easily resolved using the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} and {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex**{api} methods. You can find more information about them below.
 
-(???) Запутанно и сложно! А ведь вроде все просто... Предлагаю переписать так:
+(???) Запутанно и сложно! А ведь вроде все не так уж хитро... Предлагаю переписать так:
 
-By default, when a pointer is added to a JavaScript gauge chart, it shows the first value of the data set (if there is more than one value) or the only one. If you want to create another pointer showing the same value or to show another value, you need to connect your pointers with the data using the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} metod.
+By default, when a pointer is added to a JavaSchipt gauge chart, it shows the first (or the only) value of the data set on the first (or the only) axis. If you need to indicate another value, to place a pointer to another axis, or to create a number of pointers, you should use the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} and {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex**{api} methods.
 
-In case a gauge has more than one axis, when you add a pointer, it shows a value on the first one. If you want the value to be shown at another axis, you need to use the {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex**{api} method.
+### Binding Pointers to Data
 
-Или даже так:
+To show more than one value, the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} method  is used: it should be applied  to (??? called on) each pointer showing any other than the first value. Note that the numeration of values starts from 0. 
 
-By default, when a pointer is added to a JavaSchipt gauge chart, it shows the first (or the only) value of the data set on the first (or the only) axis. If you want to indicate another value, or to place a pointer to another axis, or to create a number of pointers, you need to use the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} and {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex**{api} methods.
+(??? разве то, что в скобках, не очевидно и так?)
 
-### Bind to Data
-
-In case you have more that one value in your dataset, you should use the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} method to each pointer showing any other value but the first. Note that numeration of the values starts from 0. There's no need in use of this method if you have an only value in your dataSet.
-
-Let's add the second point to the data and enable two pointers: the bar and the marker. Let's bind the bar pointer to the new data point:
+The following code shows how to create a data set with two values, add two pointers (marker and bar), and bind the bar pointer to the second value:
 
 ```
   //add the second data point
@@ -53,15 +49,25 @@ Let's add the second point to the data and enable two pointers: the bar and the 
   bar.dataIndex(1);
 ```
 
+That is how it looks:
+
 {sample}BCT\_Pointers-and-Data\_16{sample} 
 
-When you apply for the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} method, you change the value that will be represented by the pointer you add this method to. However, using this means only if you have more than one value in the dataSet and more than one axis, because the only axis shows the only (or the first) value from your dataSet by default. So, there is no need in this method if your chart has an only axis and your data looks like this:
+When you call the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} method, you change the value represented by the pointer. However, using this makes sense only if you have more than one value in your data set and more than one axis, because the only axis shows the only (or the first) value from your dataSet by default. So, there is no need in this method if your chart has an only one axis and your data looks like this:
 
 ```
   var dataSet = anychart.data.set([60]);
 ```
 
-### Bind to Axis
+(???) Не вижу смысла в первой фразе, предлагаю ее выкинуть или перенести в другое место - она слабо связана с основной мыслью абзаца. Сам он изобилует повторами одного и того же. Предлагаю такой вариант:
+
+Since the only axis shows the only value by default, using the {api:anychart.core.gauge.pointers.Base#dataIndex}**.dataIndex()**{api} method makes no sense if your gauge has one axis and your data set looks like this:
+
+```
+  var dataSet = anychart.data.set([60]);
+```
+
+### Binding Pointers to Axes
 
 To bind the pointer to the axis use the {api:anychart.core.gauge.pointers.Base#axisIndex}**.axisIndex()**{api} method. Note that the count starts from 0. There's no need in using this method if your chart contains an only axis.
 
@@ -125,7 +131,7 @@ Let's add the second value to our dataSet and bind the bar pointer with the new 
 
 {sample}BCT\_Pointers-and-Data\_18{sample} 
 
-### Multiple Pointers
+### Adding Multiple Pointers
 
 You can add not only different pointers but the same. Look at the example below:
 
