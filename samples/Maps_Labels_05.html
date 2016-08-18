@@ -1,0 +1,129 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyMap"/>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
+  <script x-export="map">anychart.onDocumentReady(function() {
+
+  map = anychart.map();
+  // data set for the choropeth series
+var dataSet_union = anychart.data.set([
+    {id: 'US.MN', name: "Minnesota"},
+    {id: 'US.CA', name: "California"},
+    {id: 'US.NV', name: "Nevada"},
+    {id: 'US.OR', name: "Oregon"},
+    {id: 'US.IA', name: "Iowa"},
+    {id: 'US.KS', name: "Kansas"},
+    {id: 'US.CT', name: "Connecticut"},
+    {id: 'US.MA', name: "Massachusetts"},
+    {id: 'US.NH', name: "New Hampshire"},
+    {id: 'US.RI', name: "Rhode Island"},
+    {id: 'US.VT', name: "Vermont"},
+    {id: 'US.IL', name: "Illinois"},
+    {id: 'US.IN', name: "Indiana"},
+    {id: 'US.OH', name: "Ohio"},
+    {id: 'US.WI', name: "Wisconsin"},
+    {id: 'US.NY', name: "New York"},
+    {id: 'US.PA', name: "Pennsylvania"},
+    {id: 'US.ME', name: "Maine"},
+    {id: 'US.MI', name: "Michigan"}
+]);
+
+var dataSet_union_terr_nps = anychart.data.set([
+    {id: 'US.MT', name: "Montana"},
+    {id: 'US.ND', name: "North Dakota"},
+    {id: 'US.ID', name: "Idaho"},
+    {id: 'US.WA', name: "Washington"},
+    {id: 'US.CO', name: "Colorado"},
+    {id: 'US.UT', name: "Utah"},
+    {id: 'US.WY', name: "Wyoming"},
+    {id: 'US.MO', name: "Missouri"},
+    {id: 'US.NE', name: "Nebraska"},
+    {id: 'US.SD', name: "South Dakota"},
+    {id: 'US.WY', name: "Wyoming"}
+]);
+
+var dataSet_confederate = anychart.data.set([
+    {id: 'US.AR', name: "Arkansas"},
+    {id: 'US.LA', name: "Louisiana"},
+    {id: 'US.TX', name: "Texas"},
+    {id: 'US.AL', name: "Alabama"},
+    {id: 'US.FL', name: "Florida"},
+    {id: 'US.GA', name: "Georgia"},
+    {id: 'US.MS', name: "Mississippi"},
+    {id: 'US.SC', name: "South Carolina"},
+    {id: 'US.NC', name: "North Carolina"},
+    {id: 'US.TN', name: "Tennessee"},
+    {id: 'US.VA', name: "Virginia"},
+    {id: 'US.DE', name: "Delaware"},
+    {id: 'US.DC', name: "District of Columbia"},
+    {id: 'US.MD', name: "Maryland"},
+    {id: 'US.NJ', name: "New Jersey"}
+]);
+
+var dataSet_union_border_states = anychart.data.set([
+    {id: 'US.KY', name: "Kentucky"},
+    {id: 'US.WV', name: "West Virginia"}
+]);
+
+var dataSet_union_terr_ps = anychart.data.set([
+    {id: 'US.AZ', name: "Arizona"},
+    {id: 'US.NM', name: "New Mexico"},
+    {id: 'US.OK', name: "Oklahoma"}
+]);
+
+  map.geoData("anychart.maps.united_states_of_america");
+
+  // set the title and its preferences
+  map.title().useHtml(true).hAlign('center');
+  map.title('<span style="font-size: 18px;">Data Setting</span><br><span style="font-size:12px;">Set the overlapping mode</span>');
+
+  // set the series
+  var series_union = map.choropleth(dataSet_union);
+  var series_union_terr_nps = map.choropleth(dataSet_union_terr_nps);
+  var series_confederate = map.choropleth(dataSet_confederate);
+  var series_union_border_states = map.choropleth(dataSet_union_border_states);
+  var series_union_terr_ps = map.choropleth(dataSet_union_terr_ps);
+
+  series_union.geoIdField('code_hasc');
+  series_union_terr_nps.geoIdField('code_hasc');
+  series_confederate.geoIdField('code_hasc');
+  series_union_border_states.geoIdField('code_hasc');
+  series_union_terr_ps.geoIdField('code_hasc');
+  
+  // enable labels
+  series_union.labels(true);
+  series_union_terr_nps.labels(true);
+  series_confederate.labels(true);
+  series_union_border_states.labels(true);
+  series_union_terr_ps.labels(true);
+
+  // set the labels
+  labels_union = series_union.labels();
+  labels_union_terr_nps = series_union_terr_nps.labels();
+  labels_union_confederate = series_confederate.labels();
+  labels_union_union_border_states = series_union_border_states.labels();
+  labels_union_union_terr_ps = series_union_terr_ps.labels();
+    
+  // set the overlapping mode
+  map.overlapMode(false);
+  // the following line means the same as the line above
+  // map.overlapMode(anychart.enums.LabelsOverlapMode.NO_OVERLAP);
+
+  // set the container
+  map.container('container');
+  map.draw();
+  });
+
+</script>
+
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

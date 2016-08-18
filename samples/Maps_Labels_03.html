@@ -27,7 +27,7 @@
 
   // set the title and its preferences
   map.title().useHtml(true).hAlign('center');
-  map.title('<span style="font-size: 18px;">Data Setting</span><br><span style="font-size:12px;">Labels on a map</span>');
+  map.title('<span style="font-size: 18px;">Data Setting</span><br><span style="font-size:12px;">Getting data from geoJSON</span>');
 
   // set the series
   var series = map.choropleth(dataSet);
@@ -40,6 +40,20 @@
   labels.fontColor('black');
   labels.fontSize("10px");
   labels.offsetY(-10);
+
+  // get some values from geoJSON
+  map.listen("pointMouseOver", function (e) {
+    // Gets point properties.
+    var properties = e.point.getFeatureProp();
+    //labels.text(text);
+    labels.textFormatter("Name: " + properties.name + "\nLongitude: " + properties.longitude + "\nLatitude: " + properties.latitude)
+  });
+
+  map.listen("pointMouseOut", function (e) {
+    // Gets point properties.
+    var properties = e.point.getFeatureProp();
+    labels.textFormatter("Name" + properties.name);
+  });
 
   // set the container
   map.container('container');

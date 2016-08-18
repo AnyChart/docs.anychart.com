@@ -74,7 +74,54 @@ In the sample above we have used a lot of settings for custom graphic elements a
 
 ## Source Data Access
 
-Coming soon
+Labels are not only used to show the names of the regions or any other information that is defined in the data set. It's possible to adjust labels to make them show some properties that are defined only in the data source. In AnyMap there is a {api:anychart.core.ChoroplethPoint#getFeatureProp}getFeatureProp(){api} method, that allows to get any information from the geoJson data. Look at the next sample and explore it in the playground to understand how it works.
+
+That's how properties look in geoJSON:
+
+```
+"properties": {
+	"labelrank": 2, 
+	"code_hasc": "AU.NT", 
+	"name": "Northern Territory", 
+	"admin": "Australia", 
+	"type_en": "Territory", 
+	"region": "", 
+	"woe_id": 2344701, 
+	"longitude": 133, 
+	"woe_name": "Northern Territory", 
+	"fips": "AS03", 
+	"woe_label": "Northern Territory, AU, Australia", 
+	"latitude": -20, 
+	"iso_a2": "AU", 
+	"postal": "NT", 
+	"type": "Territory", 
+	"id": "AU.NT"
+}
+
+```
+
+There are some properties that are not mentioned in the data set, but still we can get those values and show them in labels. Let's get the longitude and latitude using {api:anychart.core.ChoroplethPoint#getFeatureProp}getFeatureProp(){api} method:
+
+```
+// get some values from geoJSON
+map.listen("pointMouseOver", function (e) {
+  // Gets point properties.
+  var properties = e.point.getFeatureProp();
+  //labels.text(text);
+  labels.textFormatter("Name: " + properties.name + "\nLongitude: " + properties.longitude + "\nLatitude: " + properties.latitude)
+});
+
+map.listen("pointMouseOut", function (e) {
+  // Gets point properties.
+  var properties = e.point.getFeatureProp();
+  labels.textFormatter("Name" + properties.name);
+});
+```
+
+{sample}Maps\_Labels\_03{sample}
+
+You can find the geoJSON map on our [cdn](http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.json).
+
 
 ## Overlap
 
@@ -85,18 +132,18 @@ Sometimes there are a lot of tiny regions on maps, and their labels are not able
 In AnyMap, the {api:anychart.charts.Map#overlapMode}overlapMode(){api} method stands for hiding and showing this kind of labels. It supports two types of arguments: boolean and string. If use booleans, "true" allows labels to overlap each other, "false" disables them. If use enums, "anychart.enums.LabelsOverlapMode.NO_OVERLAP" will disable overlapping labels and "anychart.enums.LabelsOverlapMode.ALLOW_OVERLAP" will allow it. Look at the next sample.
 
 ```
-chart = anychart.map();
-chart.overlapMode(false);
+map = anychart.map();
+map.overlapMode(false);
 ```
 
 ```
-chart = anychart.map();
-chart.overlapMode(anychart.enums.LabelsOverlapMode.NO_OVERLAP);
+map = anychart.map();
+map.overlapMode(anychart.enums.LabelsOverlapMode.NO_OVERLAP);
 ```
 
 Both code samples do the same: disable labels that overlap each other.
 
-{sample}Maps\_Labels\_03{sample}
+{sample}Maps\_Labels\_04{sample}
 
 
 ### Series
@@ -109,24 +156,36 @@ The {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} meth
 
 ```
 
-{sample}Maps\_Labels\_04{sample}
+{sample}Maps\_Labels\_05{sample}
 
 Note that this setting doesn't change if the map is zoomed, but during the zooming process itself you can see some labels overlapping each other. This is made on purpose tho make the process of zooming more graphic.
 
-If there are several labels in a series overlapping each other, set the "labelrank" property to those regions. The label of a region with a higher labelrank will be shown, while other overlapping labels will be disabled. It helps to shown as many labels as possible.
+If there are several labels in a series overlapping each other, set the "labelrank" property to those regions. The label of a region with a higher labelrank will be shown, while other overlapping labels will be disabled. It helps to shown as many labels as possible. If there are two labels belong to different series with the same "labelrank" value, set the "index" parameter to the series.
 
 ```
 
 ```
 
-{sample}Maps\_Labels\_05{sample}
+{sample}Maps\_Labels\_06{sample}
 
 
 ## Positioning
 
+It's quite important where to place labels in the map. They are displayed in the center of a region by default, but sometimes it might be necessary to set the different placement for some of the regions. For example, if one of the sides of region is longer than the opposite one, it may lead to a situation when only a part of a label is displayed inside a region, and the other part is shown on the other region's territory or outside of a map.
+
+We can adjust positioning of the labels inside the regions or outside, depends on regions' sizes and our preferences.
+
 ### Inside
 
-Default - in the middle (middle-x, middle-y, middlexymode^ relative or absolute)
+To set the custom position of the labels inside the regions, set "middle-x" and "middle-y" properties through the geo data or data set of a map.
+
+```
+```
+{sample}Maps\_Labels\_07{sample}
+
+Another property is responsible for positioning around the "middle-x" and "middle-y" coordinates: set "middleXYmode" as relative or absolute. When the "middleXYmode" property is in the 
+
+Default - in the middle (middle-x, middle-y, middlexymode: relative or absolute)
 Координаты эти указываются только в geo данных в свойcтвах точки и через данные серии для конкретной точки.
 через geo данные
   
@@ -135,7 +194,7 @@ Default - in the middle (middle-x, middle-y, middlexymode^ relative or absolute)
 
 ```
 
-{sample}Maps\_Labels\_06{sample}
+{sample}Maps\_Labels\_08{sample}
 
 
 ### Out of region labels
@@ -146,7 +205,7 @@ If it's necessary to show the labels for those tiny regions, you can do it by se
 
 ```
 
-{sample}Maps\_Labels\_07{sample}
+{sample}Maps\_Labels\_09{sample}
 
 Also there is a connector created specially for the labels outside of regions. The {api:}connectorStroke(){api} method will help you to adjust its appearance.
 
@@ -154,7 +213,7 @@ Also there is a connector created specially for the labels outside of regions. T
 
 ```
 
-{sample}Maps\_Labels\_08{sample}
+{sample}Maps\_Labels\_10{sample}
 
 
 ## Callout
