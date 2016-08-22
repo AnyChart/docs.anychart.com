@@ -10,6 +10,7 @@ Map Labels
  * [Inside](#inside)
  * [Out of region labels](#out_of_region_labels)
 * [Callout](#callout)
+ * [Connectors](#connectors)
 
 ## Overview 
 
@@ -347,4 +348,74 @@ series_union.labels().connectorStroke("gold");
 
 ## Callout
 
-In AnyMaps, it's possible not to connect labels to their regions and demonstrate them in a line, on a side of the map.
+In AnyMaps, it's possible not to connect labels to their regions and display them in a row or column, on a side of the map. To create an array of this type use the {api:}callout(){api} method. This will create an entity similar to axis on charts. The callout entity is not being zoomed or moved while map is, it looks and behaves like a colorRange element.
+
+The code sample below demonstrates creating of two callouts, to the left and to the right of the maps:
+
+```
+// create the callouts
+calloutLeft = map.callout(0);
+calloutRight = map.callout(1);
+```
+
+After creating the elements it's necessary to fill in the arrays of regions which labels we'd like to demonstrate in those callout elements through the {api:}items(){api} method. The regions in those arrays are represented by their IDs:
+
+```
+// fill in the arrays
+calloutRight.items(["US.NH", "US.VT", "US.MA", "US.CT", "US.RI", "US.NJ", "US.DE", "US.MD"]);
+```
+
+The {api:}align(){api} method helps to set the position of the label text inside of the callout and setting the {api:}orientation(){api}will define the position of the whole callout:
+
+```
+// set the callout positions
+calloutBottom.orientation("bottom");
+calloutRight.orientation("right");
+  
+// set the label text position
+calloutBottom.align("center");
+calloutRight.align("center");  
+```
+
+To change the size of callout labels, use {api:}width(){api} method. As each callout label has a form of a square, only one measure is necessary. Though, if you need rectangular callout labels, set the length to the whole callout element through the {api:}length(){api} element.
+
+```  
+// set the width and length
+calloutBottom.width(30);
+calloutBottom.length(400);
+calloutRight.width(50);
+```
+
+{sample}Maps\_Labels\_12{sample}
+
+The text that labels represent can be formatted as the usual labels text, but remember that formatting labels of the whole series will lead to changes in all labels of this series, so if you need to format only those labels that are shown in the callout element, use data set. It's possible to change the size of the label text through the {api:}fontSize(){api} method and {api:}connnectorStroke(){api} method to set the color of the connector. The {api:}textFormatter(){api} method allows to change the text displayed by the labels.
+
+```
+var dataSet_confederate = anychart.data.set([
+    {id: 'US.AR', name: "Arkansas"},
+    {id: 'US.LA', name: "Louisiana"},
+    {id: 'US.TX', name: "Texas"},
+    {id: 'US.AL', name: "Alabama", label:{textFormatter: "{%id}"}},
+    {id: 'US.FL', name: "Florida", label:{textFormatter: "{%id}"}},
+    {id: 'US.GA', name: "Georgia", label:{textFormatter: "{%id}"}},
+    {id: 'US.MS', name: "Mississippi"},
+    {id: 'US.SC', name: "South Carolina", label:{textFormatter: "{%id}"}},
+    {id: 'US.NC', name: "North Carolina", label:{textFormatter: "{%id}"}},
+    {id: 'US.TN', name: "Tennessee"},
+    {id: 'US.VA', name: "Virginia", label:{textFormatter: "{%id}"}},
+    {id: 'US.DE', name: "Delaware", label:{textFormatter: "{%id}"}},
+    {id: 'US.DC', name: "District of Columbia"},
+    {id: 'US.MD', name: "Maryland", label:{textFormatter: "{%id}"}},
+    {id: 'US.NJ', name: "New Jersey", label:{textFormatter: "{%id}"}}
+]);
+
+// set the labels
+labels_union = series_union.labels();
+labels_union_terr_nps = series_union_terr_nps.labels();
+labels_confederate = series_confederate.labels();
+labels_union_border_states = series_union_border_states.labels();
+labels_union_terr_ps = series_union_terr_ps.labels();
+```
+
+
+{sample}Maps\_Labels\_13{sample}

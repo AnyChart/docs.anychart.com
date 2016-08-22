@@ -1,0 +1,176 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyMap"/>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
+  <script x-export="map">anychart.onDocumentReady(function() {
+
+  map = anychart.map();
+  // data set for the choropeth series
+var dataSet_union = anychart.data.set([
+    {id: 'US.MN', name: "Minnesota", label:{textFormatter: "{%id}"}},
+    {id: 'US.CA', name: "California", label:{textFormatter: "{%id}"}},
+    {id: 'US.NV', name: "Nevada"},
+    {id: 'US.OR', name: "Oregon"},
+    {id: 'US.IA', name: "Iowa"},
+    {id: 'US.KS', name: "Kansas"},
+    {id: 'US.CT', name: "Connecticut", label:{textFormatter: "{%id}"}},
+    {id: 'US.MA', name: "Massachusetts", connectorStroke: "red", label:{textFormatter: "{%id}"}},
+    {id: 'US.NH', name: "New Hampshire", label:{textFormatter: "{%id}"}},
+    {id: 'US.RI', name: "Rhode Island", label:{textFormatter: "{%id}"}},
+    {id: 'US.VT', name: "Vermont", label:{textFormatter: "{%id}"}},
+    {id: 'US.IL', name: "Illinois", label:{textFormatter: "{%id}"}},
+    {id: 'US.IN', name: "Indiana"},
+    {id: 'US.OH', name: "Ohio"},
+    {id: 'US.WI', name: "Wisconsin", label:{textFormatter: "{%id}"}},
+    {id: 'US.NY', name: "New York", label:{textFormatter: "{%id}"}},
+    {id: 'US.PA', name: "Pennsylvania", label:{textFormatter: "{%id}"}},
+    {id: 'US.ME', name: "Maine"},
+    {id: 'US.MI', name: "Michigan"}
+]);
+
+var dataSet_union_terr_nps = anychart.data.set([
+    {id: 'US.MT', name: "Montana"},
+    {id: 'US.ND', name: "North Dakota"},
+    {id: 'US.ID', name: "Idaho", label:{textFormatter: "{%id}"}},
+    {id: 'US.WA', name: "Washington"},
+    {id: 'US.CO', name: "Colorado"},
+    {id: 'US.UT', name: "Utah"},
+    {id: 'US.WY', name: "Wyoming"},
+    {id: 'US.MO', name: "Missouri"},
+    {id: 'US.NE', name: "Nebraska"},
+    {id: 'US.SD', name: "South Dakota"},
+    {id: 'US.WY', name: "Wyoming"}
+]);
+
+var dataSet_confederate = anychart.data.set([
+    {id: 'US.AR', name: "Arkansas"},
+    {id: 'US.LA', name: "Louisiana"},
+    {id: 'US.TX', name: "Texas"},
+    {id: 'US.AL', name: "Alabama", label:{textFormatter: "{%id}"}},
+    {id: 'US.FL', name: "Florida", label:{textFormatter: "{%id}"}},
+    {id: 'US.GA', name: "Georgia", label:{textFormatter: "{%id}"}},
+    {id: 'US.MS', name: "Mississippi"},
+    {id: 'US.SC', name: "South Carolina", label:{textFormatter: "{%id}"}},
+    {id: 'US.NC', name: "North Carolina", label:{textFormatter: "{%id}"}},
+    {id: 'US.TN', name: "Tennessee"},
+    {id: 'US.VA', name: "Virginia", label:{textFormatter: "{%id}"}},
+    {id: 'US.DE', name: "Delaware", label:{textFormatter: "{%id}"}},
+    {id: 'US.DC', name: "District of Columbia"},
+    {id: 'US.MD', name: "Maryland", label:{textFormatter: "{%id}"}},
+    {id: 'US.NJ', name: "New Jersey", label:{textFormatter: "{%id}"}}
+]);
+
+var dataSet_union_border_states = anychart.data.set([
+    {id: 'US.KY', name: "Kentucky"},
+    {id: 'US.WV', name: "West Virginia"}
+]);
+
+var dataSet_union_terr_ps = anychart.data.set([
+    {id: 'US.AZ', name: "Arizona"},
+    {id: 'US.NM', name: "New Mexico"},
+    {id: 'US.OK', name: "Oklahoma"}
+]);
+
+  map.geoData("anychart.maps.united_states_of_america");
+
+  // set the title and its preferences
+  map.title().useHtml(true).hAlign('center');
+  map.title('<span style="font-size: 18px;">Callout labels</span><br><span style="font-size:12px;">Change the font size and the color of a connector stroke</span>');
+
+  // set the series
+  var series_union = map.choropleth(dataSet_union);
+  var series_union_terr_nps = map.choropleth(dataSet_union_terr_nps);
+  var series_confederate = map.choropleth(dataSet_confederate);
+  var series_union_border_states = map.choropleth(dataSet_union_border_states);
+  var series_union_terr_ps = map.choropleth(dataSet_union_terr_ps);
+
+  // set the connector stroke color
+  series_union.labels().connectorStroke("gold");
+
+  series_union.geoIdField('code_hasc');
+  series_union_terr_nps.geoIdField('code_hasc');
+  series_confederate.geoIdField('code_hasc');
+  series_union_border_states.geoIdField('code_hasc');
+  series_union_terr_ps.geoIdField('code_hasc');
+  
+  // enable labels
+  series_union.labels(true);
+  series_union_terr_nps.labels(true);
+  series_confederate.labels(true);
+  series_union_border_states.labels(true);
+  series_union_terr_ps.labels(true);
+
+  // set the labels
+  labels_union = series_union.labels();
+  labels_union_terr_nps = series_union_terr_nps.labels();
+  labels_confederate = series_confederate.labels();
+  labels_union_border_states = series_union_border_states.labels();
+  labels_union_terr_ps = series_union_terr_ps.labels();
+  
+  // set the labels font size
+  labels_union.fontSize(10);
+  labels_union_terr_nps.fontSize(10);
+  labels_confederate.fontSize(10);
+  labels_union_border_states.fontSize(10);
+  labels_union_terr_ps.fontSize(10);
+    
+  // set the overlapping mode for the map
+  map.overlapMode(false);
+
+  // set the tooltips
+  series_union_terr_nps.tooltip().textFormatter(function(){
+    return "Union Territories Not Permitting Slavery"
+  });
+  series_union_terr_ps.tooltip().textFormatter(function(){
+    return "Union Territories Permitting Slavery"
+  });
+  series_confederate.tooltip().textFormatter(function(){
+    return "Confederate States"
+  });
+        series_union_border_states.tooltip().textFormatter(function(){
+    return "Border Union States, Permitting Slavery"
+  });
+  series_union.tooltip().textFormatter(function(){
+    return "Union States"
+  });   
+
+  // create the callout
+  calloutRight = map.callout(0);
+  calloutBottom = map.callout(1);
+
+  // fill in the arrays
+  calloutBottom.items(["US.AL", "US.FL", "US.GA", "US.SC", "US.NC", "US.VA", "US.MN" ,"US.ID", "US.CA", "US.IL", "US.WI"]);
+  calloutRight.items(["US.NH", "US.VT", "US.MA", "US.CT", "US.RI", "US.NJ", "US.DE", "US.MD", "US.PA", "US.NY"]);
+  
+  // set the callouts positions
+  calloutBottom.orientation("bottom");
+  calloutRight.orientation("right");
+  
+  // set the label text position
+  calloutBottom.align("center");
+  calloutRight.align("center");  
+  
+  // set the width and length
+  calloutBottom.width(30);
+  calloutBottom.length(500);
+  calloutRight.width(50);
+  calloutRight.length(300);
+
+  // set the container
+  map.container('container');
+  map.draw();
+  });
+
+</script>
+
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
