@@ -10,9 +10,9 @@ Map Legend
 
 ## Overview
 
-Generally, map legend works the same as legend in the charts. Look through [this article](../../Common_Settings/Legend) for more information about legends:
+AnyMap legend works the same way it works in all other chart types. Look through [Legend Settings](../Common_Settings/Legend) article for more information about legends:
 
-Here you will find a couple of samples showing its usage with maps.
+This articles shows several samples how legend is used with AnyChart JavaScript maps.
 
 ## Simple Legend
 
@@ -40,7 +40,7 @@ In the sample below we display the map of the USA (colored states are states whe
   series.legendItem().iconType("circle");
 ```
 
-Note that this series is colored using the colorScale and the color of the state depends on the value it represents. We have changed the legendItem icon from default rectangular to circle using {api:anychart.core.ui.LegendItem#iconType}**.iconType()**{api}.
+Note that this series is colored using the colorScale and the color of the state depends on the value it represents. We have changed the legendItem icon from default rectangular to circle using {api:anychart.core.ui.LegendItem#iconType}iconType(){api}.
 
 
 ## Multiple Legends
@@ -49,63 +49,51 @@ Multiple Legends might be useful when you need to show different data in one map
 
 {sample}Maps\_Legend\_02{sample}
 
-Note that the colorRange is activated but it displays only the first series color changes. This is so because of two reasons: first - the second series has no values due to its absence; second - the colorRange is able to work only with one series. Read more about ColorRange [here](../ColorRange).
-
+Note that the Color Range is also used in the sample, read more about it in [Color Range](ColorRange) article.
 
 ## Thresholds in Legend
 
-We can use Legend also with thresholds; if we've got thresholds, the legend will look similar to a colorRange of an ordinal colorScale. It also can be used when you've got a couple of series which regions you need to be colored accordingly to its values. 
-Let's create one more dataSet and a legend for it and define another colorScale. This new series will tell us about other companies average profit in the same sphere as ACME Corp. works. Also we will free states from the second series and add them to a new one to see is the decision reliable or quite not.
+You can use Legend with thresholds; with thresholds, the legend looks similar to a Color Range with an ordinal [Color Scale](Scales). 
+
+Let's create one more data set and a legend for it and define another color scale. This new series tells us about rival companies average profit.
 
 ```
 var series_other = map.choropleth(dataSet_other);
-  series_other.geoIdField('iso_3166_2');
-  series_other.name('Sales of other companies');
-  series_other.labels().fontSize(10).fontColor('#212121').textFormatter(function(){
-	return (this.value);
-  });
-  series_other.tooltip().content().textWrap('byLetter').useHtml(true);
-  series_other.tooltip().contentFormatter(function() {
-    return '<span style="font-size: 13px">' + '$ ' + this.value + 'm </span>';
-  });
+series_other.geoIdField('iso_3166_2');
+series_other.name('Sales of other companies');
+series_other.labels().fontSize(10).fontColor('#212121').textFormatter(function(){
+  return (this.value);
+});
+series_other.tooltip().content().textWrap('byLetter').useHtml(true);
+series_other.tooltip().contentFormatter(function() {
+  return '<span style="font-size: 13px">' + '$ ' + this.value + 'm </span>';
+});
   
-  var scale = anychart.scales.ordinalColor([
-    {less: 5},
-    {from: 5, to: 10},
-    {greater: 10}
-    ]);
+var scale = anychart.scales.ordinalColor([
+  {less: 5},
+  {from: 5, to: 10},
+  {greater: 10}
+]);
     
-    scale.colors(['#73E6BF', '#54D1B5', '#26B2A6']);
+scale.colors(['#73E6BF', '#54D1B5', '#26B2A6']);
     
-  series_other.colorScale(scale);
+series_other.colorScale(scale);
   
-  // some legend settings
-  map.legend(true);
-  var legend = map.legend();
-  legend.itemsSourceMode('CATEGORIES');
+// legend settings
+var legend = map.legend();
+legend.enabled(true);
+legend.itemsSourceMode('CATEGORIES');
 ```
 
 {sample}Maps\_Legend\_03{sample}
 
 ## Undefined Regions In Legend
 
-If you've got a lot of undefined regions, but you need to color them, use an {api}**.unboundRegions()**{api} method:
+If you've got a lot of undefined regions (regions with no data), but you need to color them, use the {api}unboundRegions(){api} method:
 
 ```
-	// set the color for undefined (unbound) regions
-	map.unboundRegions().fill('#FFFFDE');
+// set the color for undefined (unbound) regions
+map.unboundRegions().fill('#FFFFDE');
 ```
+
 {sample}Maps\_Legend\_04{sample}
-
-
-
-
-
-
-
-
-
-
-
-
-
