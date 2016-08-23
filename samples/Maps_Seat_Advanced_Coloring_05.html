@@ -113,7 +113,14 @@ chart.geoData(svgData);
 series = chart.choropleth(dataSet);
 
 // set the tooltips
-series.tooltip().titleFormatter("Side places");
+series.tooltip().titleFormatter(function(){
+    if (this.value == 12) return "Best seats (Rows 1-2)";    
+    if (this.value == 10) return "Best seats (Rows 3-8)";  
+    if (this.value == 7.5) return "Back seats";
+    if (this.value == 5.5) return "Side seats";
+    if (this.value == 3.5) return "Side seats";
+});
+
 series.tooltip().textFormatter(function(){
     if (this.getDataValue("extra") == "RESTRICTED VIEW") return "£"+this.value+"\nRESTRICTED VIEW"
     else return "£"+this.value;
