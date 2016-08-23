@@ -32,13 +32,13 @@ When your SVG image is ready, you should upload it to the sample for the further
 
 ### AJAX
 
-At first, we need to include the jQuery library. Put a script with a link into the <head> section of the sample code.
+At first, let's include the jQuery library. Reference it properly using the `script` tag.
 
 ```
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 ```
 
-To get the SVG file we need to load the document using AJAX:
+To get the SVG file it's necessary to load the document using AJAX:
 
 ```
 $.ajax({
@@ -68,7 +68,7 @@ svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
 
 ## Map Data
 
-Besides the SVG image, we need to set the data for our Map. This data points' IDs should correspond the groups' IDs in the SVG file.
+Besides the SVG image, it's necessary to set the data for our Map. This data points' IDs should correspond the groups' IDs in the SVG file.
 
 ```
 success: function(svgData){
@@ -87,7 +87,7 @@ chart.geoData(svgData);
 
 {sample}Maps\_Seat\_01{sample}
 
-If you open the original SVG image, you can easily notice that the colors in the sample above are different from those defined in the image itself. In the paragraph below we consider working with colors in Seat Maps.
+If you open the original SVG image, you can easily notice that the colors in the sample above are different from those defined in the image itself. Working with colors in Seat Maps is described in the next section.
 
 
 ## Coloring
@@ -98,7 +98,7 @@ The easiest way to change the colors of the Seat Map elements is to use the data
 chart = anychart.seatMap([
     {id: "Hall", value: "720"},
     {id: "Room2", value: "165"},
-    {id: "WC", value: "49", hoverFill: "green 0.1", hoverStroke: "3 green"},
+    {id: "WC", value: "49", fill: "gold 0.5", hoverFill: "green 0.1", hoverStroke: "3 green"},
     {id: "Room1", value: "143", hoverFill: "blue 0.1", hoverStroke: "3 navy"},
     {id: "Kitchen", value: "208"}
 ]);
@@ -106,7 +106,7 @@ chart = anychart.seatMap([
 
 {sample}Maps\_Seat\_03{sample}
 
-Colors can be also defined through the SVG code and several other ways. Look through the [Advanced Coloring](Advanced_Coloring) article for this information.
+Colors can be also defined through the SVG code and several other ways. See the [Advanced Coloring](Advanced_Coloring) article to learn more.
 
 
 ## Unbound Regions
@@ -132,7 +132,7 @@ chart.unboundRegions("as-is");
 
 {sample}Maps\_Seat\_04{sample}
 
-When you set "hide" as argument of the {api:anychart.charts.Map#unboundRegions}unboundRegion(){api} method, regions with no values are not being shown at all. You can see that in the sample below our kitchen is not displayed at all.
+When you set "hide" as the argument of the {api:anychart.charts.Map#unboundRegions}unboundRegion(){api} method, regions with no values are not being shown at all. You can see that in the sample below the kitchen is not displayed at all.
 
 ```
 // load svg file without elements with no values
@@ -144,7 +144,7 @@ chart.unboundRegions("hide");
 
 ### Labels and Tooltips
 
-Let's transform our labels and tooltips. We'll put additional information about sizes and square feet of the rooms into the data set and use standard {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods to set them.
+Let's transform our labels and tooltips. Put the additional information about sizes and square feet of the rooms into the data set and use standard {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods to set them.
 
 ```
 // data set
@@ -164,7 +164,7 @@ labels.textFormatter("{%id} \n{%info} \n{%sq}");
 
 {sample}Maps\_Seat\_06{sample}
 
-To edit the information described in our tooltips, use the {api:anychart.charts.Map#tooltip}tooltip(){api} method. We can edit the text in the title and in the body of a tooltip using the {api:anychart.core.ui.ChartTooltip#titleFormatter}titleFormatter(){api} and {api:anychart.core.ui.ChartTooltip#textFormatter}textFormatter(){api} methods, as well as the tooltips' appearance: their form, colors, etc. You can find more information about tooltips in our [Tooltips](../../Common_Settings/Tooltip) and [Map Tooltips](../Tooltips) articles.
+To edit the information described in our tooltips, use the {api:anychart.charts.Map#tooltip}tooltip(){api} method. Text in the tooltip title and text of the body of a tooltip are to be formatted using the {api:anychart.core.ui.ChartTooltip#titleFormatter}titleFormatter(){api} and {api:anychart.core.ui.ChartTooltip#textFormatter}textFormatter(){api} methods; these methods are also responsible for tooltips' appearance: their form, colors, etc. You can find more information about tooltips in our [Tooltips](../../Common_Settings/Tooltip) and [Map Tooltips](../Tooltips) articles.
 
 ```
 // set the tooltips

@@ -12,20 +12,20 @@ Advanced Coloring
 
 ## Overview
 
-There are several ways to color your set map. You can use data set to set all the colors, as usual: read about it in the [Seat Map](Seat_Map) article. The second way is to use standard methods like {api:anychart.ui.Background#fill}fill(){api} and {api:anychart.ui.Background#stroke}stroke(){api}; the third way is to use classes of elements, set in the tags in the SVG code; also, you may use AnyChart palette to set the necessary colors (this method is only reliable when there are several series on a Map) and use ColorScale and ColorRange - all these options are described in this tutorial.
+There are several ways to color a set map. First option is to use the data set to set all the colors, as usual: read about it in the [Seat Map](Seat_Map) article. The second way is to use standard methods like {api:anychart.ui.Background#fill}fill(){api} and {api:anychart.ui.Background#stroke}stroke(){api}; the third way is to use classes of elements that are set in the tags in the SVG code; also, you may use AnyChart palette to set the necessary colors (this method is only reliable when there are several series on a Map) and use ColorScale and ColorRange - all these options are described in this tutorial.
 
-We have taken the SVG image from the [Seat Map](Seat_Map) and [Preparing SVG Image](Preparing_SVG_Image) articles as the basis for our samples below. That's how an SVG image looks like with the default color palette:
+The SVG image was taken from the [Seat Map](Seat_Map) and [Preparing SVG Image](Preparing_SVG_Image) articles as the basis for the samples below. That's how an SVG image looks like with the default color palette:
 
 {sample}Maps\_Seat\_01{sample}
 
 
 ## Colors
 
-You can see that the colors of the picture in the sample are different from the defined (you can find the original SVG picture <a href="http://static.anychart.com/images/docs/house.svg">[here](../../images/house.svg)). To return the colors that we've used in the SVG picture and change the interactivity colors, we need to use some methods that are considered below.
+Note that the colors of the picture in the sample are different from the defined (you can find the original SVG picture <a href="http://static.anychart.com/images/docs/house.svg">[here](../../images/house.svg)). To return the colors that were used in the original SVG picture and change the interactivity colors, use some methods that are considered below.
 
 ### Elements coloring
 
-You can see that the colors of the picture in the sample are different from the defined. To return the colors that we've used in the SVG picture, we need to use the {api:anychart.ui.Background#fill}fill(){api} and {api:anychart.ui.Background#stroke}stroke(){api} methods. Though, we need to remember that we work with the series from an SVG document. Not all of elements in our SVG have the "fill" attribute. We need to check if the element has the "fill" field, and if so, we set the fill original fill color to this element. This will look like the following:
+To return the colors that were used in the SVG picture, or to set new custom colors use the {api:anychart.ui.Background#fill}fill(){api} and {api:anychart.ui.Background#stroke}stroke(){api} methods. Though, it's important to remember that not all of the elements in the SVG file have the "fill" attribute. Before setting the value to the "fill" field it's necessary to check if the element has it, and if so, set the fill color to this element. Setting colors through this method will look like the following:
 
 
 ```
@@ -45,7 +45,7 @@ series.stroke(function () {
 
 {sample}Maps\_Seat\_Advanced\_Coloring\_01{sample}
 
-To change the interactivity colors (colors of the groups in a hovered or selected states) we can use the same methods as before or use {api:anychart.core.map.series.Choropleth#hoverFill}hoverFill(){api}, {api:anychart.core.map.series.Choropleth#hoverStroke}hoverStroke(){api}, {api:anychart.core.map.series.Choropleth#selectFill}selectFill(){api} and {api:anychart.core.map.series.Choropleth#selectStroke}selectStroke(){api}
+To change the interactivity colors (colors of the groups in a hovered or selected states) use the following methods: {api:anychart.core.map.series.Choropleth#hoverFill}hoverFill(){api}, {api:anychart.core.map.series.Choropleth#hoverStroke}hoverStroke(){api}, {api:anychart.core.map.series.Choropleth#selectFill}selectFill(){api} and {api:anychart.core.map.series.Choropleth#selectStroke}selectStroke(){api}
 
 ```
 // set the hoverFill color 
@@ -78,7 +78,7 @@ series.selectStroke(function () {
 
 ### Attributes coloring
 
-It's also possible to change the colors of the parts of a group, if there are any. We need to set classes for those elements. Let's put several elements into the plan and repaint them on being hovered. Let's set the "inner_elements" class to them.
+It's also possible to change the colors of the parts of a group, if there are any. Let's set classes for those elements and put several elements into the plan and repaint them on being hovered.
 
 ```
 <g id="hotplate">
@@ -115,9 +115,9 @@ series.hoverFill(function(){
 
 ## Palette
 
-Palette is a color scheme which is being used to set the colors to the series of a chart. Using the {api:anychart.charts.Map#palette}palette(){api} method, we can change the default palette and define custom colors. Note that this method is effective when your SVG image contains several series.
+Palette is a color scheme which is being used to set the colors to the series of a chart. Using the {api:anychart.charts.Map#palette}palette(){api} method, it's possible to set the default palette or to define custom colors. Note that this method is effective when the SVG image contains several series.
 
-The following sample has no grouping, but we have formed several series out of seats, where each seat has its own ID. 
+The following sample has no grouping, but it's reasonable to form several series out of seats due to their costs. Each seat has its own ID. 
 
 ```
 // setting custom colors to the chart palette
@@ -128,19 +128,26 @@ chart.palette(["#ff0000", "#990000", "#ffcc33", "#996633"]);
 
 ## ColorScale and ColorRange
 
-It's possible to add ColorRange and use ColorScale in AnyChart Seat Maps. ColorRange looks like a range bar, colored as gradient or like a number of colored boxes, each presenting a range of values. It is rather useful when we need to identify the value that each point on a map presents.
+It's possible to add ColorRange and use ColorScale in AnyChart Seat Maps. ColorRange looks like a range bar, colored as gradient or like a number of colored boxes, each presenting a range of values. It is rather useful in identifying the value that each point on a map presents.
 
-To enable ColorRange, we need to set "true" as an argument to the {api:anychart.charts.Map#colorRange}colorRange(){api} method. To make it work properly we need to set the colors and the type of the ColorScale. You can find information about colorScale adjusting in the [ColorRange article](../ColorRange).
+To enable ColorRange, set "true" as an argument to the {api:anychart.charts.Map#colorRange}colorRange(){api} method. To make it work properly set the colors and the type of the ColorScale. You can find information about colorScale adjusting in the [ColorRange article](../ColorRange).
 
 ```
-// set the colors and ranges for the scale
-series.colorScale(anychart.scales.linearColor());
+// set the ranges for the scale
+currentColorScale = anychart.scales.ordinalColor();
+currentColorScale.ranges([
+        {from: 0, to: 3.5},
+        {from: 4, to: 5.5},
+        {from: 6, to: 7.5},
+        {from: 8, to: 12}
+    ]);
 
-//set the single hue progression
-var colors = anychart.color.singleHueProgression("#006633");
-        
+//set the color progression
+var colors = anychart.color.singleHueProgression("#336666");
+
 // define the colors 
-series.colorScale().colors(colors);
+currentColorScale.colors(colors);
+series.colorScale(currentColorScale);
 
 // create and enable the colorRange
 var colorRange = chart.colorRange();

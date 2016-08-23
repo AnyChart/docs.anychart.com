@@ -122,19 +122,19 @@ $.ajax({
         series_closed = chart.choropleth(dataSet_closed);
 
         // set the tooltips
-        series_best_1_2.tooltip().titleFormatter("Best places (1-2 rows)");
+        series_best_1_2.tooltip().titleFormatter("Best seats (Rows 1-2)");
         series_best_1_2.tooltip().textFormatter("£{%Value}");
 
-        series_best_3_8.tooltip().titleFormatter("Best places (3-8 rows)");
+        series_best_3_8.tooltip().titleFormatter("Best seats (Rows 3-8)");
         series_best_3_8.tooltip().textFormatter("£{%Value}");
 
-        series_side.tooltip().titleFormatter("Side places");
+        series_side.tooltip().titleFormatter("Side seats");
         series_side.tooltip().textFormatter(function(e){
             if (this.getDataValue("extra") == "RESTRICTED VIEW") return "£"+this.value+"\nRESTRICTED VIEW"
             else return "£"+this.value;
         });
 
-        series_closed.tooltip().titleFormatter("Side places");
+        series_closed.tooltip().titleFormatter("Closed seats");
         series_closed.tooltip().textFormatter(function(){
             if (this.getDataValue("extra") == "RESTRICTED VIEW") return "£"+this.value+"\nRESTRICTED VIEW"
             else return "£"+this.value;
