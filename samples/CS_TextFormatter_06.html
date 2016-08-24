@@ -9,53 +9,60 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // data
-    var dataSet = anychart.data.set([
-        ["Facebook", 103.42, 27],
-        ["Google Search", 75.98, 37],
-        ["Google Play", 73.67, 28],
-        ["YouTube", 71.96, 27],
-        ["Google Maps", 68.58, 14],
-        ["Gmail", 64.41, 29],
-        ["Instagram", 31.99, 66],
-        ["Maps (Apple)", 31.89, 64],
-        ["Stocks", 30.78, 32],
-        ["Twitter", 30.76, 36]
-    ]);
+  // data
+  var data = anychart.data.set([
+    ["Department Stores", 637166, 737166],
+    ["Discount Stores", 721630, 537166],
+    ["Men's/Women's Specialty Stores", 148662, 188662],
+    ["Juvenile Specialty Stores", 78662, 178662],
+    ["All other outlets", 90000, 89000]
+  ]);
 
-    // set chart type
-    chart = anychart.column();
+  // remapping data
+  var SalesWinter = data.mapAs({x: [0], value: [1]});
+  var SalesSummer = data.mapAs({x: [0], value: [2]});
 
-    chart.title("Additional Information in Chart Tooltip");
+  // define chart type
+  var chart = anychart.bar();
 
-    // map data for series
-    var seriesData = dataSet.mapAs({
-        // set data row for x parameter
-        x: [0],
-        // set data row for value parameter
-        value: [1],
-        // set data row for custom parameter
-        yoy: [2]
-    });
+  // set title
+  chart.title("Multi-series Bar Chart");
+  
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Retail Channel");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales");
 
-    // set data for series
-    var series = chart.column(seriesData);
-    series.name("Unique users in 2013");
+  // set data series
+  var series_winter = chart.bar(SalesWinter);
+  var series_summer = chart.bar(SalesSummer);
+  
+  // set series name
+  series_winter.name("Winter");
+  series_summer.name("Summer");
+  
+  // set textFormatter
+  var labels_winter = series_winter.labels();
+  labels_winter.enabled(true);
+  labels_winter.textFormatter(function(){
+      return(this.seriesName + ": $" + this.value);
+  });
+  var labels_summer = series_summer.labels();
+  labels_summer.enabled(true);
+  labels_summer.textFormatter(function(){
+      return(this.seriesName + ": $" + this.value);
+  });
+  
+  // set the labels position
+  labels_winter.position("right");
+  labels_winter.anchor("left");
+  labels_summer.position("right");
+  labels_summer.anchor("left");
 
-    // series tooltip settings
-    var tooltip = series.tooltip();
-    // adjust tooltip text
-    tooltip.textFormatter(function(){
-        return this.seriesName + ": " + this.value + " millions\nYear over year: " + this.getDataValue("yoy") + "%";
-    });
-
-    // allow two lines in x axis labels
-    var xAxis = chart.xAxis();
-    xAxis.staggerMode(2);
-
-    // set container and draw chart
-    chart.container("container");
-    chart.draw();
+  // draw chart
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
