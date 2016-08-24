@@ -369,27 +369,27 @@ There is a list of formatting parameters, which help to organize your data prese
   
 <table width="700px" class="dtTABLE">
 <tr>
-<th><td>AnyChart 7</td><td>AnyChart 6</td></th>
+<th>Option</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
 <tr>
-<td>decimalsCount</td><td>numDecimals</td><td>numeric</td><td>The number of visible decimal characters (including characters for the integer values).</td>
+<td>decimalsCount</td><td>numeric</td><td>The number of visible decimal characters (including characters for the integer values).</td>
 </tr>
 <tr>
-<td>decimalPoint</td><td>decimalSeparator</td><td>boolean</td><td>Sets a character for separating decimal part of a number.</td>
+<td>decimalPoint</td><td>boolean</td><td>Sets a character for separating decimal part of a number.</td>
 </tr>
 <tr>
-<td>groupsSeparator</td><td>thousandsSeparator</td><td>string</td><td>Sets a character for separating thousands of an integer number.</td>
+<td>groupsSeparator</td><td>string</td><td>Sets a character for separating thousands of an integer number.</td>
 </tr>
 <tr>
-<td>useBracketsForNegativeuseNegativeSign</td><td>useNegativeSign</td><td>boolean</td><td>Controls the "-" sign. Uses "-" when "true" in AnyChart 6 and brackets in AnyChart 7, and vice versa.</td>
+<td>useBracketsForNegativeuseNegativeSign</td><td>boolean</td><td>Controls the "-" sign.</td>
 </tr>
 <tr>
-<td>zeroFillDecimals</td><td>trailingZeros</td><td>boolean</td><td>Hides or displays decimal characters for integer values.</td>
+<td>zeroFillDecimals</td><td>boolean</td><td>Hides or displays decimal characters for integer values.</td>
 </tr>
 <tr>
-<td>scale</td><td>scale</td><td></td><td>.</td>
+<td>scale</td><td></td><td>Sets value scaling.</td>
 </tr>
 </table>
 
@@ -442,7 +442,7 @@ lineTooltip.textFormatter(function(){
 
 {sample}CS\_TextFormatter\_05{sample}
 
-**Note**: you can use {api:anychart.format#number}anychart.format.number(){}, {api:anychart.format#dateTime}anychart.format.dateTime()api} and other members of {api}anychart.format{api} namespace to format values in formatting functions:
+**Note**: you can use {api:anychart.format#number}anychart.format.number(){api}, {api:anychart.format#dateTime}anychart.format.dateTime(){api} and other members of {api:anychart.format}anychart.format{api} namespace to format values in formatting functions:
 
 ```
 var currentLabels = chart.labels();
@@ -452,7 +452,7 @@ currentLabels.textFormatter(function() {
 });
 ```
 
-Here is a sample where {api:anychart.format#number}anychart.format.number(){} is used to present label in a desired way:
+Here is a sample where {api:anychart.format#number}anychart.format.number(){api} is used to present label in a desired way:
 
 {sample}CS\_TextFormatter\_05\_1{sample}
 

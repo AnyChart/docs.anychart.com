@@ -28,7 +28,7 @@
     // textFormatter
     var labels = chart.labels();
     labels.textFormatter(function(){
-        return((this.getDataValue("value"))+" / "+this.getStat("sum"));
+        return((this.getDataValue("value"))+"(of "+this.getStat("sum")+")");
     });
 
     // labels positioning
