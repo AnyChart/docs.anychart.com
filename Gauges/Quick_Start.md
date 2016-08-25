@@ -14,9 +14,7 @@ Reference the _anychart.min.js_ JavaScript file in the `<head>` section of your 
 You can use the link as shown above or download the file from the [download page](../Quick_Start/Downloading_AnyChart) and then put it into any folder of your site. In this case, you have to use your own link.
 
 ###2. Creating a Container for the Gauge
-Add a block-based HTML element to your page and set the `id`, `width` and `height` attributes:
-
-(??? block-based HTML element не гуглится) 
+Add a block-level HTML element to your page and set the `id`, `width` and `height` attributes:
 
 ```
 <body>
