@@ -22,7 +22,7 @@ To learn about creating maps visit [Quick Start](Quick_Start) article.
 
 ## Common Settings
 
-In AnyMaps, we can use labels the same as in our charts: add and format them for images, create text labels related to series or not, attach actions and so on. Let's demonstrate here all these abilities of our labels. 
+In AnyMaps, labels are being used the same as in the charts: you can add and format them, create text labels related to series or not, attach actions, use images as labels and so on. Let's demonstrate here all these abilities.
 
 To make points show labels, use {api:anychart.core.map.series.Choropleth#labels}labels(){api}. There are a lot of different methods which are to customize your chart, like {api:anychart.core.ui.LabelsFactory#fontColor}fontColor(){api} to set the color of the label text, {api:anychart.core.ui.LabelsFactory#fontSize}fontSize(){api} to define the text size, {api:anychart.core.ui.LabelsFactory#offsetX}offsetX(){api} and {api:anychart.core.ui.LabelsFactory#offsetY}offsetY(){api} to move the label and else. You can find more in the [Common Labels](../Common_Settings/Labels) article.
 
@@ -70,7 +70,7 @@ image.zIndex(map.zIndex()+1);
 
 {sample}Maps\_Labels\_02{sample}
 
-In the sample above we have used a lot of settings for custom graphic elements and a listener, which monitors resizing of a stage and recalculates the coordinates of the image. Visit the [Common Labels](../Common_Settings/Labels) and [Text Settings](../Appearance_Settings/Text_Settings) articles to know more about those appearance settings used, and the [Event Listener](../Common_Settings/Event_Listeners) article will help you to consider the listeners.
+In the sample above there are many settings for custom graphic elements and a listener used, which monitors resizing of a stage and recalculates the coordinates of the image. Visit the [Common Labels](../Common_Settings/Labels) and [Text Settings](../Appearance_Settings/Text_Settings) articles to know more about those appearance settings. The [Event Listener](../Common_Settings/Event_Listeners) article will help you to understand the listeners.
 
 
 ## Source Data Access
@@ -101,7 +101,7 @@ That's how properties look in geoJSON:
 
 ```
 
-There are some properties that are not mentioned in the data set, but still we can get those values and show them in labels. Let's get the longitude and latitude using {api:anychart.core.ChoroplethPoint#getFeatureProp}getFeatureProp(){api} method:
+There are some properties that are not mentioned in the data set, but still it's possible to get those values and show them in labels. Let's get the longitude and latitude using {api:anychart.core.ChoroplethPoint#getFeatureProp}getFeatureProp(){api} method:
 
 ```
 // get some values from geoJSON
@@ -126,11 +126,11 @@ You can find the geoJSON map on our [cdn](http://cdn.anychart.com/geodata/1.2.0/
 
 ## Overlap
 
-Sometimes there are a lot of tiny regions on maps, and their labels are not able to suit the sizes of their regions. In these cases it's just necessary to have an opportunity to disable and enable some of them.
+Some maps might contain several tiny regions, which labels are not able to suit the sizes of their regions. In these cases it's just necessary to have an opportunity to disable and enable some of them.
 
 ### Map
 
-In AnyMap, the {api:anychart.charts.Map#overlapMode}overlapMode(){api} method stands for hiding and showing this kind of labels. It supports two types of arguments: boolean and string. If use booleans, "true" allows labels to overlap each other, "false" disables them. If use enums, "anychart.enums.LabelsOverlapMode.NO_OVERLAP" will disable overlapping labels and "anychart.enums.LabelsOverlapMode.ALLOW_OVERLAP" will allow it. Look at the next sample.
+In AnyMap, the {api:anychart.charts.Map#overlapMode}overlapMode(){api} method stands for hiding and showing this kind of labels. It supports two types of arguments: boolean and string. If use booleans, "true" allows labels to overlap each other, "false" disables those which overlap. If use enums, "anychart.enums.LabelsOverlapMode.NO_OVERLAP" will disable overlapping labels and "anychart.enums.LabelsOverlapMode.ALLOW_OVERLAP" will allow it. Look at the next sample.
 
 ```
 map.overlapMode(false);
@@ -147,9 +147,9 @@ Both code samples do the same: disable labels that overlap each other.
 
 ### Series
 
-In the previous paragraph we considered working with labels of the whole map. AnyMap allows to change the settings to the determined series if necessary. To set the overlapping mode we use the {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} method with the series, and remember that series setting have a higher priority than the map overlap settings. It means that it's possible to disable all labels that overlap each other on a map but enable those for determined series.
+In the previous paragraph we have considered working with labels of the whole map. AnyMap allows to change the settings of the determined series if necessary. To set the overlapping mode use the {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} method with the series, and remember that the series overlapping mode has a higher priority than the map overlapping mode. It means that it's possible to disable all labels that overlap each other on the whole map but enable those for determined series.
 
-The {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} method supports the same methods as the same method for maps; moreover, if we set "null", the overlapping mode of the series inherits the behaviour from the map.
+The {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} method supports the same arguments as the same method for maps; moreover, if set "null", the overlapping mode of the series inherits the behaviour from the map.
 
 ```
 // set the overlapping mode for the map
@@ -161,9 +161,9 @@ series_union_terr_ps.overlapMode(true);
 
 {sample}Maps\_Labels\_05{sample}
 
-Note that this setting isn't being changed if the map is zoomed, but during the zooming process itself you can see some labels overlapping each other. This is made on purpose to make the process of zooming more graphic.
+Note that this setting isn't being changed if the map is zoomed, but during the zooming process itself you can see some labels overlapping each other even if it's restricted. This is made on purpose to make the process of zooming more graphic.
 
-If there are several labels in a series overlapping each other, set the "labelrank" property to those regions. The label of a region with a higher labelrank will be shown, while other overlapping labels will be disabled. It helps to show as many labels as possible. If there are two labels belong to different series with the same "labelrank" value, set the "index" parameter to the series.
+It's also possible to manage each region's label separately. If there are several labels in a series overlapping each other, set the "labelrank" property to those regions. The label of a region with a higher labelrank will be shown, while other overlapping labels will be disabled. It helps to show as many labels as possible. If there are two labels belong to different series with the same "labelrank" value, the "index" parameter set to the series will solve the problem.
 
 Those properties can be set through the geoJSON code or through the data set.
 
@@ -193,18 +193,18 @@ var dataSet_union_border_states = anychart.data.set([
 ]);
 ```
 
-Note that the map's or series' overlapping mode set through the {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} method has the highest priority, so even if some of the labels have the highest labelrank, but overlapping is forbidden for their series or the whole map, those labels will not be displayed. The similar situation is for the opposite case: if your series has overlapping allowed, setting labelranks will have no sense as all labels will be displayed anyway.
+Note that the map's or series' overlapping mode set through the {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} method has the highest priority, so even if some of the labels have the highest labelrank, but overlapping is forbidden for this series or the whole map, those labels will not be displayed. The similar situation is for the opposite case: if your series has overlapping allowed, setting labelranks will have no sense as all labels will be displayed anyway.
 
 {sample}Maps\_Labels\_06{sample}
 
-You can see that the label of Virginia is still displayed despite we have set the lower labelrank for it than West Virginia has. It is easily explained by the fact that the overlappping mode is turned off for the Border States series, which West Virginia belongs to. Also, you could have noticed that Wisconsin state label is now displayed while the label of Michigan became hidden. The labels of Maryland and Delaware are both shown despite they've got different labelranks - it means that the overlapping is allowed for the series those states belong to. That's how the labelranks work.
+You can see that the label of Virginia is still displayed despite it has the lower labelrank set than West Virginia has. It is easily explained by the fact that the overlappping mode is turned off for the Border States series, which West Virginia belongs to. Also, you could have noticed that Wisconsin state label is now displayed while the label of Michigan became hidden. The labels of Maryland and Delaware are both shown despite they've got different labelranks - it means that the overlapping is allowed for the series those states belong to. That's how the labelranks work.
 
 
 ## Positioning
 
 It's quite important where to place labels in the map. They are displayed in the center of a region by default, but sometimes it might be necessary to set the different placement for some of the labels. For example, if one of the sides of region is longer than the opposite one, it may lead to a situation when only a part of a label is displayed inside a region, and the other part is shown on the other region's territory or outside of a map.
 
-We can adjust positioning of the labels inside the regions or outside, depends on regions' sizes and our preferences. Also positioning can be a great help when it's necessary to avoid allowing overlap, but to show as many labels as possible.
+It's possible to adjust positioning of the labels inside the regions or outside, depends on regions' sizes and our preferences. Also positioning can be a great help when it's necessary to avoid allowing overlap, but to show as many labels as possible.
 
 ### Inside
 
@@ -358,7 +358,7 @@ calloutLeft = map.callout(0);
 calloutRight = map.callout(1);
 ```
 
-After creating the elements it's necessary to fill in the arrays of regions which labels we'd like to demonstrate in those callout elements through the {api:}items(){api} method. The regions in those arrays are represented by their IDs:
+After creating the elements it's necessary to fill in the arrays with regions' IDs that will be demonstrated in those callout elements through the {api:}items(){api} method.
 
 ```
 // fill in the arrays
