@@ -25,10 +25,10 @@ When the attributes are not set, AnyChart uses 100% of the container.
 
 ###3. Preparing your Data
 
-AnyChart provides quite a few opportunities to work with data, so you need to prepare your data before usage. A raw data set for a circular gauge chart may look like this:
+AnyChart provides quite a few opportunities to work with data, so you need to prepare your data before usage. Setting data for a circular gauge chart may look like this:
 
 ```
-dataSet = anychart.data.set([81,34.5]);
+gauge.data([73.2]);
 ```
 
 ###4. Creating a Gauge
@@ -37,49 +37,72 @@ Add the `<script>` tag with the code shown below to any place in the page. In th
 ```
 <script>
 anychart.onDocumentReady(function() {
- 
-  //create data set on our data
-  dataSet = anychart.data.set([81, 34.5]);
- 
-  // chart type
-  gauge = anychart.circularGauge();
- 
-  //set series padding
-  gauge.data(dataSet).padding('4%');
- 
-  //set axis scale settings
-  var scale = gauge.axis().scale();
-  scale.minimum(0)
-      .maximum(100)
-      .ticks()
-      .interval(10);
- 
-  //set major axis ticks
-  var axis = gauge.axis();
-  axis.ticks()
-      .enabled(true)
-      .fill('white')
-      .stroke('#888')
-      .type('trapezoid')
-      .length(20);
- 
-  //set minor axis ticks
-  axis.minorTicks()
-      .enabled(true)
-      .fill('white')
-      .stroke('#ccc')
-      .type('trapezoid')
-      .length(10);
- 
-  //set the look of the bar that presents data
-  gauge.bar(0)
-      .position('i')
-      .fill('#F0673B .9')
-      .stroke('#F0673B')
-      .radius(65);
- 
-  // draw chart
-  gauge.container('container').draw();
+
+	// create a circular gauge
+	gauge = anychart.circularGauge();
+
+	// set data
+	gauge.data([73.2]);
+
+	// set the start and sweep angles
+	gauge.startAngle(270);
+	gauge.sweepAngle(180);
+
+	// turn off the background frame
+	gauge.fill('#FFFFFF').stroke(null);
+
+	// configure the axis scale
+	gauge.axis().scale().minimum(0);
+	gauge.axis().scale().maximum(100);
+
+	// set the position of axis labels
+	gauge.axis().labels().position('outside');
+
+	// set the axis width
+	gauge.axis().width(1);
+
+	// set the title of the gauge
+	gauge.title('Pressure');
+
+	// set the starting point of the needle
+	gauge.needle().startRadius('0%');
+
+	// configure color zones
+	gauge.range(0, {
+	    from: 0,
+	    to: 30,
+	    position: 'inside',
+	    fill: '#009900 0.4',
+	    startSize: 50,
+	    endSize: 50,
+	    radius: 98
+	});
+
+	gauge.range(1, {
+	    from: 30,
+	    to: 70,
+	    position: 'inside',
+	    fill: '#ffa000 0.4',
+	    startSize: 50,
+	    endSize: 50,
+	    radius: 98
+	});
+
+	gauge.range(2, {
+	    from: 70,
+	    to: 100,
+	    position: 'inside',
+	    fill: '#dd2c00 0.4',
+	    startSize: 50,
+	    endSize: 50,
+	    radius: 98
+	});
+
+	// set the container id
+	gauge.container('container');
+
+	// initiate drawing the gauge
+	gauge.draw();
 });
 </script>
 ```
@@ -88,7 +111,7 @@ anychart.onDocumentReady(function() {
 
 Here is the result all these steps lead to:
 
-{sample :width 690 :height 250}GAUGE\_Basic\_Sample{sample}
+{sample}GAUGE\_Basic\_Sample{sample}
 
 The sample above can be launched and explored in AnyChart PlayGround. You can also copy the following code to a file on your computer and open it in your browser to display the gauge:
 
@@ -96,7 +119,7 @@ The sample above can be launched and explored in AnyChart PlayGround. You can al
 <!doctype html>
 <html>
 <head>
-  <script src="//cdn.anychart.com/js/special/anychart.min.js"></script>
+  <script src="//cdn.anychart.com/js/latest/anychart.min.js"></script>
   <style>
     html, body, #container {
       width: 100%;
@@ -110,51 +133,74 @@ The sample above can be launched and explored in AnyChart PlayGround. You can al
     <div id="container"></div>
     <script type="text/javascript">
 anychart.onDocumentReady(function() {
- 
-  //create data set on our data
-  dataSet = anychart.data.set([81, 34.5]);
- 
-  // chart type
-  gauge = anychart.circularGauge();
- 
-  //set series padding
-  gauge.data(dataSet).padding('4%');
- 
-  //set axis scale settings
-  var scale = gauge.axis().scale();
-  scale.minimum(0)
-      .maximum(100)
-      .ticks()
-      .interval(10);
- 
-  //set major axis ticks
-  var axis = gauge.axis();
-  axis.ticks()
-      .enabled(true)
-      .fill('white')
-      .stroke('#888')
-      .type('trapezoid')
-      .length(20);
- 
-  //set minor axis ticks
-  axis.minorTicks()
-      .enabled(true)
-      .fill('white')
-      .stroke('#ccc')
-      .type('trapezoid')
-      .length(10);
- 
-  //set the look of the bar that presents data
-  gauge.bar(0)
-      .position('i')
-      .fill('#F0673B .9')
-      .stroke('#F0673B')
-      .radius(65);
- 
-  // draw chart
-  gauge.container('container').draw();
-});
-    </script>
+
+	// create a circular gauge
+	gauge = anychart.circularGauge();
+
+	// set data
+	gauge.data([73.2]);
+
+	// set the start and sweep angles
+	gauge.startAngle(270);
+	gauge.sweepAngle(180);
+
+	// turn off the background frame
+	gauge.fill('#FFFFFF').stroke(null);
+
+	// configure the axis scale
+	gauge.axis().scale().minimum(0);
+	gauge.axis().scale().maximum(100);
+
+	// set the position of axis labels
+	gauge.axis().labels().position('outside');
+
+	// set the axis width
+	gauge.axis().width(1);
+
+	// set the title of the gauge
+	gauge.title('Pressure');
+
+	// set the starting point of the needle
+	gauge.needle().startRadius('0%');
+
+	// configure color zones
+	gauge.range(0, {
+	    from: 0,
+	    to: 30,
+	    position: 'inside',
+	    fill: '#009900 0.4',
+	    startSize: 50,
+	    endSize: 50,
+	    radius: 98
+	});
+
+	gauge.range(1, {
+	    from: 30,
+	    to: 70,
+	    position: 'inside',
+	    fill: '#ffa000 0.4',
+	    startSize: 50,
+	    endSize: 50,
+	    radius: 98
+	});
+
+	gauge.range(2, {
+	    from: 70,
+	    to: 100,
+	    position: 'inside',
+	    fill: '#dd2c00 0.4',
+	    startSize: 50,
+	    endSize: 50,
+	    radius: 98
+	});
+
+	// set the container id
+	gauge.container('container');
+
+	// initiate drawing the gauge
+	gauge.draw();
+	});
+</script>
 </body>
 </html>
 
