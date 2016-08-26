@@ -353,6 +353,11 @@ knob.bottomRatio(.5);
 
 {sample}BCT\_Pointers-and-Data\_Knob\_14{sample} 
 
+Setting the {api:anychart.core.gauge.pointers.Knob#verticesCurvature}verticesCurvature(){api} and the {api:anychart.core.gauge.pointers.Knob#bottomRatio}bottomRatio(){api} values to default (0.5), makes vertices look like triangles directed down to the knob. You can try to do it yourself in the Playground.
+
+(??? Может, все-таки пример добавить?)
+(??? Tекст полностью повторяется. Может, настройки все же разные? Предполагаю, что в этом случае речь идет о topRatio - в плейгрануде картинка вроде получается похожая на описанную, если задать дефолтное значение для topRatio. Правда, при этом я заметила, что bottomRatio надо ставить на 0 - а в предыдущем примере, наоборот, topRatio стояло на 0. Странно, что этот фактор не описан. Если поставить все по дефолту или просто снести строчку с тем методом, где значение 0, картинка будет другая. Какая-то хитрая недоговоренность! Может быть, вообще логичнее всего указать на то, как картинка будет выглядеть при всех значениях по дефолту - такой пример уже был раньше, когда речь шла о числе зубцов или как их там. А эти примеры подать под соусом "вот, что будет, если по-разному поиграть с комбинациями настроек".)
+
 Finally, another unique feature available for knob pointers is the ability to adjust the radii of its outer and inner sides, thus adjusting the height of vertices and the depth of dimples. These parameters are set via {api:anychart.core.gauge.pointers.Knob#topRadius}topRadius(){api} and {api:anychart.core.gauge.pointers.Knob#bottomRadius}bottomRadius(){api} methods, and the sample below shows how they are used (in the sake of clarity, there are no ratio settings): 
 
 (??? Как-то не скажешь, что это внутренняя и внешняя стороны. Но не знаю, на что заменить.)
