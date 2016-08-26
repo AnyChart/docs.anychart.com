@@ -1,14 +1,15 @@
 #Pointers and Data
 
 * [Overview](#overview)
-* [Connecting Pointers with Data](#connecting_pointers_with_data)
+* [Connecting Pointers with Data](#connecting_
+pointers_with_data)
  * [Binding Pointers to Data](#binding_pointers_to_data)
  * [Binding Pointers to Axes](#binding_pointers_to_axes)
 * [Types of Pointers](#types_of_pointers)
- * [Bar](#bar)
- * [Marker](#marker)
- * [Needle](#needle)
- * [Knob](#knob)
+ * [Bar Pointer](#bar_pointer)
+ * [Marker Pointer](#marker_pointer)
+ * [Needle Pointer](#needle_pointer)
+ * [Knob Pointer](#knob_pointer)
 
 ##Overview
 
@@ -17,19 +18,13 @@ A pointer is an essential element of a gauge, used to indicate data.
 ##Connecting Pointers with Data
 (??? ВОПРОС О ЗАГОЛОВКЕ ОСТАЕТСЯ. Сейчас тут два подраздела Binding Pointers to Data и Binding Pointers to Axes. Они объединены заголовком про Data. Какая-то асимметрия получается: общий заголовок практически совпадает с первым подзаголовком. Если вдруг появятся идеи, как можно переформулировать, скажи. Я пока не понимаю, путаюсь из-за того, что указатели фактически подразумевают данные, а привязка к осям подразумевает и привязку данных к указателям, в общем все во все перетекает... Можно ли вообще разделить более логично?)
 
-By default, when a pointer is added to a JavaSchipt gauge chart, it shows the first (or the only) value of the data set on the first (or the only) axis. If you need to show another value, to place a pointer to another axis, or to create a number of pointers, you should use the {api:anychart.core.gauge.pointers.Base#dataIndex}dataIndex(){api} and {api:anychart.core.gauge.pointers.Base#axisIndex}axisIndex{api} methods to connect your pointers with data and axes.
+By default, when a pointer is added to a JavaSchipt gauge chart, it shows the first (or the only) value of the data set on the first (or the only) axis. If you want to show another value, to place a pointer to another axis, or to create a number of pointers, you need to connect your pointers with data and axes using the {api:anychart.core.gauge.pointers.Base#dataIndex}dataIndex(){api} and {api:anychart.core.gauge.pointers.Base#axisIndex}axisIndex{api}.
 
 ### Binding Pointers to Data
 
 To show more than one value, the {api:anychart.core.gauge.pointers.Base#dataIndex}dataIndex(){api} method  is used: it should be applied  to (??? called on) each pointer showing any other than the first value. Note that the numeration of values starts from 0. 
 
 (???) Или все-таки метод должен применяться ко всем указателям, а то вдруг возникнет путаница? В таком случае то, что после двоеточия, нужно вычеркнуть. В примере метод к указателю, показывающему первую точку, применяется, но индекс точки в нем не прописан (НА ВСЯКИЙ СЛУЧАЙ УТОЧНЯЮ: ПРАВИЛЬНО ЛИ Я ПОНЯЛА, ЧТО ИЗ ТВОЕГО КОММЕНТАРИЯ СЛЕДУЕТ НЕОБХОДИМОСТЬ СНЯТЬ КУСОК ПРЕДЛОЖЕНИЯ ПОСЛЕ ДВОЕТОЧИЯ, Т.К. ОН НЕВЕРНЫЙ, ВЕДЬ ЕСЛИ УКАЗАТЕЛЕЙ НЕСКОЛЬКО, ТО НАДО ДЛЯ ПОРЯДКА ПРОПИСАТЬ И САМОЕ ПЕРВОЕ ЗНАЧЕНИЕ?)
-
-When you call the {api:anychart.core.gauge.pointers.Base#dataIndex}dataIndex(){api} method, you change the value represented by the pointer. However, using this makes sense only if you have more than one value in your data set and more than one axis, because the only axis shows the only (or the first) value from your dataSet by default. So, there is no need in this method if your chart has an only one axis and your data looks like this:
-
-```
-  var dataSet = anychart.data.set([60]);
-```
 
 Since the only axis shows the only value by default, using the {api:anychart.core.gauge.pointers.Base#dataIndex}dataIndex(){api} method makes no sense if your gauge has one axis and your data set looks like this:
 
@@ -155,14 +150,11 @@ There are four types of pointers avaliable for circular gauges: bar, marker, nee
 
 (??? Понимаю, что хочется сделать вступление подлиннее, но не уверена, что второе предложение нужно.)
 
-###Bar
+###Bar Pointer
 
 A bar is a pointer looking like a bold line colored rather brightly (??? НЕ ПОНЯЛА. НА КАРТИНКЕ ОНА СЕРАЯ). As a rule, it is placed right next to an axis and combined with a marker pointer.
 
-
 In the sample below, you can see how to create a plain circular gauge with a bar pointer:
-
-{sample}BCT\_Pointers-and-Data\_Bar\_01{sample} 
 
 ```
   //bar
@@ -170,8 +162,9 @@ In the sample below, you can see how to create a plain circular gauge with a bar
   bar.enabled(true);
 ```
 
-To change the width and radius of a bar pointer, do the following:
+{sample}BCT\_Pointers-and-Data\_Bar\_01{sample} 
 
+To change the width and radius of a bar pointer, do the following:
 
 ```
 //bar
@@ -208,13 +201,13 @@ var bar = gauge.bar();
 bar.position("i");
 ```
 
-###Marker
+###Marker Pointer
 
-There are many types of markers in AnyChart: you can read about them in the Marker tutorial. In circular gauges, marker pointers are usually combined with bar pointers. 
+There are many types of markers in AnyChart: you can find more information in a tutorial about them. In circular gauges, marker pointers are usually combined with bar pointers. 
 
 (??? Туториал существует? Что-то не нахожу.)
 
-Let's first enable a marker:
+This code enables a marker:
 
 ```  
   //marker
@@ -222,7 +215,7 @@ Let's first enable a marker:
   marker.enabled(true);
 ```
 
-By default, the marker size is rather small, and to make in visible, you should use the {api:anychart.core.gauge.pointers.Marker#size}size(){api} method:
+By default, the marker size is rather small. To make it visible, the {api:anychart.core.gauge.pointers.Marker#size}size(){api} method is used:
 
 ```  
 //marker
@@ -233,7 +226,9 @@ marker.size(7);
 
 {sample}BCT\_Pointers-and-Data\_Marker\_04{sample} 
 
-It's not the best view when the marker covers the value on the axis, so now let's adjust the position of the marker according to the circle of the default or defined radius. As with bars, the marker might be in its center, outside or inside it. Let's set the marker's position to outside and look how will it change the view: 
+To prevent your marker pointer from covering the value it shows on the axis, you need to adjust the position of the pointer according to the circle of the default or defined radius (???). Like bars, markers can be positioned outside, in the center, or inside of the circle. Here is a sample circular gauge with a marker positioned outside:
+
+{sample}BCT\_Pointers-and-Data\_Marker\_05{sample}
 
 ```
 //marker
@@ -242,9 +237,7 @@ marker.position("outside");
 marker.size(7);
 ```
 
-{sample}BCT\_Pointers-and-Data\_Marker\_05{sample} 
-
-Now our marker is outside the axis, but it doesn't point at the value. Let's change its type:
+Placed outside of the axis, the maker doesn't point at the value. To fix this problem, you can change the marker type:
 
 ```
 //marker
@@ -256,9 +249,9 @@ marker.size(7);
 
 {sample}BCT\_Pointers-and-Data\_Marker\_06{sample} 
 
-###Needle
+###Needle Pointer
 
-Let's now look at the needles - the most common pointer used with Gauges. 
+A needle is the most common pointer used with circular gauges. That is how it is added:
 
 ```
 //needle
@@ -268,9 +261,9 @@ needle.enabled(true);
 
 {sample}BCT\_Pointers-and-Data\_Needle\_07{sample} 
 
-Needle can be a thin stick or a pointer of a complex form - you can regulate its width using three similar methods: {api:anychart.core.gauge.pointers.Needle#startWidth}startWidth(){api}, {api:anychart.core.gauge.pointers.Needle#middleWidth}middleWidth(){api} and {api:anychart.core.gauge.pointers.Needle#endWidth}endWidth(){api}.
+A needle can either look like a thin stick or have a complex form. The form is adjusted via three methods regulating the needle width: {api:anychart.core.gauge.pointers.Needle#startWidth}startWidth(){api}, {api:anychart.core.gauge.pointers.Needle#middleWidth}middleWidth(){api}, and {api:anychart.core.gauge.pointers.Needle#endWidth}endWidth(){api}.
 
-Let's make our needle thiner to the end, wider to the center and a bit thiner to the start:
+The sample below shows how they can be used: in the starting point the needle is a bit thinner than by default, then it gets wider to the center and thinner to the end. 
 
 ```
 //needle
@@ -282,7 +275,11 @@ needle.endWidth(0);
 
 {sample}BCT\_Pointers-and-Data\_Needle\_08{sample} 
 
-As we can see, the needle starts not from the gauge center. Let's adjust the start, the middle and the end of our needle with methods {api:anychart.core.gauge.pointers.Needle#startRadius}startRadius(){api}, {api:anychart.core.gauge.pointers.Needle#middleRadius}middleRadius(){api} and {api:anychart.core.gauge.pointers.Needle#endRadius}endRadius(){api}. The value transmitted to this method can be in pixels or percents.
+As you can see, now the needle doesn't start from the center of the gauge. To position it properly, you need to adjust the start, the middle, and the end of a needle, using the {api:anychart.core.gauge.pointers.Needle#startRadius}startRadius(){api}, {api:anychart.core.gauge.pointers.Needle#middleRadius}middleRadius(){api}, and {api:anychart.core.gauge.pointers.Needle#endRadius}endRadius(){api} methods (values transmitted to them can be either in pixels or in percents):
+
+(??? что конкретно они настраивают? все-таки не само начало или середину, а их позицию?)
+(??? кстати непонятно, что оно сдвинулось-то из-за изменения ширины? странновато!)
+(??? можно переписать вот так последнее предложение: Values can be transmitted to them either in pixels or percents?)
 
 ```
 //needle
@@ -297,13 +294,15 @@ needle.endWidth(0);
 
 {sample}BCT\_Pointers-and-Data\_Needle\_09{sample} 
 
-###Knob
+###Knob Pointer
 
-Knob is a full-curcle pointer that is nice to use with a needle or marker pointer. It looks like a switcher on microwaves or the audio tuner. You can see the example of the default enabled knob pointer below.
+A knob is a full-circle pointer, often combined with a needle or marker pointer. It looks like a microwave knob or an audio tuner. In the following sample you can see a sample gauge with a default knob pointer:
+
+(??? именно аудиотюнер? не volume regulator имеется в виду? изначально фраза выглядела так: ...a switcher on microwaves or the audio tuner)
 
 {sample}BCT\_Pointers-and-Data\_Knob\_10{sample} 
 
-As you can see, this pointer is completely different from others. The first thing we'll adjust will be the number of the knob's projections (vertices). For that we use the {api:anychart.core.gauge.pointers.Knob#verticesCount}verticesCount(){api} method. 
+Knob pointers are completely different from the others and have a few unique settings. For example, you can adjust the number of a knob's projections (vertices), using the {api:anychart.core.gauge.pointers.Knob#verticesCount}verticesCount(){api} method: 
 
 ```
 //knob
@@ -313,7 +312,11 @@ knob.verticesCount(15);
 
 {sample}BCT\_Pointers-and-Data\_Knob\_11{sample} 
 
-The curvature of vertices can be adjusted too. Use the {api:anychart.core.gauge.pointers.Knob#verticesCurvature}verticesCurvature(){api} method and set the value from 0 to 1 (0.5 is set by default). The less the value is the more convex the vertices are. The more the value the more concave they are.
+To adjust the curvature of vertices, call the {api:anychart.core.gauge.pointers.Knob#verticesCurvature}verticesCurvature(){api} method and set the value from 0 to 1 (by default it is 0.5). The less the value is, the more convex the vertices are. The more the value is, the more concave they are:
+
+(??? Последние две фразы предлагаю заменить вот на что:
+Increasing the value makes vertices more concave, and reducing the value makes them more convex:
+Не идеально, но вроде чуть меньше все повторяется что ли.)
 
 ```
 //knob
@@ -324,7 +327,7 @@ knob.verticesCurvature(.1);
 
 {sample}BCT\_Pointers-and-Data\_Knob\_12{sample} 
 
-The next feature we can adjust is the ratio, which spilts into the {api:anychart.core.gauge.pointers.Knob#topRatio}topRatio(){api} and {api:anychart.core.gauge.pointers.Knob#bottomRatio}bottomRatio(){api} methods. The values for these methods might be from 0 to 1 as well.
+You can also adjust the top and bottom ratio (??? of vertices) by calling the {api:anychart.core.gauge.pointers.Knob#topRatio}topRatio(){api} and {api:anychart.core.gauge.pointers.Knob#bottomRatio}bottomRatio(){api} methods and setting the values from 0 to 1 (the default value is 0.5 as well):
 
 ```
 //knob
@@ -337,7 +340,7 @@ knob.bottomRatio(1);
 
 {sample}BCT\_Pointers-and-Data\_Knob\_13{sample} 
 
-If you set the {api:anychart.core.gauge.pointers.Knob#verticesCurvature}verticesCurvature(){api} and the {api:anychart.core.gauge.pointers.Knob#bottomRatio}bottomRatio(){api} values to default (0.5), the vertices would look like triangles directed up from the knob:
+Setting the {api:anychart.core.gauge.pointers.Knob#verticesCurvature}verticesCurvature(){api} and {api:anychart.core.gauge.pointers.Knob#bottomRatio}bottomRatio(){api} values to default (0.5), makes vertices look like triangles directed up from the knob:
 
 ```
 //knob
@@ -350,9 +353,10 @@ knob.bottomRatio(.5);
 
 {sample}BCT\_Pointers-and-Data\_Knob\_14{sample} 
 
-If you set {api:anychart.core.gauge.pointers.Knob#verticesCurvature}verticesCurvature(){api} and the {api:anychart.core.gauge.pointers.Knob#bottomRatio}bottomRatio(){api} values to default (0.5), the vertices would look like triangles directed down to the knob. Try to do it yourself, using the playground.
+Finally, another unique feature available for knob pointers is the ability to adjust the radii of its outer and inner sides, thus adjusting the height of vertices and the depth of dimples. These parameters are set via {api:anychart.core.gauge.pointers.Knob#topRadius}topRadius(){api} and {api:anychart.core.gauge.pointers.Knob#bottomRadius}bottomRadius(){api} methods, and the sample below shows how they are used (in the sake of clarity, there are no ratio settings): 
 
-The last feature available at the moment for only the knob pointers is radius, which is split the same way as ratio. Use the {api:anychart.core.gauge.pointers.Knob#topRadius}topRadius(){api} and the {api:anychart.core.gauge.pointers.Knob#bottomRadius}bottomRadius(){api} methods to set the radius for the outer side (height of the vertices) and the inner side (depth of dimples) accordingly. For clearer representation let's get rid of the ratio settings.
+(??? Как-то не скажешь, что это внутренняя и внешняя стороны. Но не знаю, на что заменить.)
+(??? Про то, что в примере нет настроек ratio, может, не надо?)
 
 ```
 //knob
