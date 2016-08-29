@@ -27,46 +27,28 @@
   var yTicks = chart.yScale().ticks();
   yTicks.interval(2000);
 
-  // set function to format y axis labels
-  var yLabels = chart.yAxis().labels();
-  yLabels.hAlign("right");
   yLabels.textWrap(true);
-  yLabels.textFormatter(dollarFormatter);
+  yLabels.textFormatter("${%Value}");
   // set axes title
   var yAxis = chart.yAxis();
   yAxis.title("Revenue in US Dollars");
   var xAxis = chart.xAxis();
   xAxis.title("Month");
 
+  // set the font settings for the X axis labels
   var xLabels = chart.xAxis().labels();
   xLabels.fontFamily("Courier");
   xLabels.fontColor("#125393");
   xLabels.offsetY(5);
   xLabels.padding(3);
   xLabels.fontWeight("bold");
+
+  // background settings
   var xLabelsBackground = chart.xAxis().labels().background();
   xLabelsBackground.enabled(true);
   xLabelsBackground.stroke("#cecece");
   xLabelsBackground.cornerType("round");
   xLabelsBackground.corners(5);
-
-  // function to adjust y axis labels
-  function dollarFormatter() {
-    var value = this.value*115.167569;
-    value = value.toFixed(2);
-    var num = value.split(".");
-
-    var main = "";
-    for (var i=1;(i*3)<num[0].length;i++)
-      main = ","+num[0].substr(num[0].length-(i*3), 3) + main;
-    var tail = num[0].substr(0, num[0].length-(main.length-main.length/4));
-    num[0]=tail+main;
-
-    // decimal Separator
-    value = num.join(".");
-
-    return "$" + (this.value/1000) + " 000.00 USD" + "\n¥ " + value;
-  }
 
   chart.container("container");
   chart.draw();

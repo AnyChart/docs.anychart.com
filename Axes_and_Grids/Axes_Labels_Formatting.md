@@ -8,11 +8,10 @@
  * [Number Formatting](#number_formatting)
  * [Label Length](#label_length)
 * [Visual Appearance](#visual_appearance)
-* [Font](#font)
- * [Multiline](#multiline)
+ * [Font](#font)
  * [Background](#background)
 * [Positioning](#positioning)
- * [Labels Align](#labels_align)
+ * [Labels Alignment](#labels_alignment)
  * [Padding](#padding)
  * [Rotation](#rotation)
  * [Stagger Mode](#stagger_mode)
@@ -103,13 +102,17 @@ Find more about text formatting parameters in the [Text Formatters article](Comm
 
 ### Label Length
 
-If the label value is too long, it's possible to limit the number of characters. 
+If the label value is too long, it's possible to limit the number of characters using standard javascript methods: 
 
 ```
-substr который есть в примере - у нас нет такого
+// limits length of x axis labels to 3 or less
+chart.xAxis().labels().textFormatter(function(){
+  var value = this.value;
+  // limit the number of symbols to 3
+  value = value.substr(0, 3);
+  return value
+});
 ```
-
-Here is the previous sample with X-axis labels symbols limited to 3.
 
 {sample}AGST\_Labels\_Formatting\_03{sample}
 
@@ -121,12 +124,12 @@ Visual appearance of axes labels can be customized according to the chart design
   
 Learn more about these settings in: [Background tutorial](../Appearance_Settings/Background), [Text Settings tutorial](../Appearance_Settings/Text_Settings).
 
-In this section we will cover the basics that allow to tune labels appearance and some special features (Multi-line labels).
+The basic settings that allow to tune labels appearance and some special features (Multi-line labels) are considered below.
 
 
 ## Font
 
-Font settings of labels are configured as any text. You can specify font face, size and color or set the text to HTML mode:
+Font settings of labels are configured as any text. You can specify font face, size and color or set the text to HTML mode using {api:anychart.core.ui.Label#fontFamily}fontFamily(){api}, {api:anychart.core.ui.Label#fontSize}fontSize(){api}, {api:anychart.core.ui.Label#fontColor}fontColor(){api} and {api:anychart.core.ui.Label#useHtml}useHtml(){api} methods. 
 
 ```
   var labels = chart.xAxis().labels();
@@ -137,28 +140,17 @@ Font settings of labels are configured as any text. You can specify font face, s
   labels.useHtml(false);
 ```
 
-Look at font settings at work in the sample below.
-
-{sample}AGST\_Labels\_Formatting\_04{sample}
-
-
-### Multiline
-
-With AnyChart html5 charts it is possible to control labels' alignment. It is useful, for example, when you want to set multiple label values on one scale:
-
-```
-  var labels = chart.yAxis().labels();
-  labels.hAlign("right");
-```
-
 ### Background
 
 Labels background is being configured with the (api:anychart.core.ui.Label#background).background(){api} method. Let's enable background for xAxis labels and adjust the stroke for them:
 
 ```   
-  var labelsBackground = chart.xAxis().labels().background();
-  labelsBackground.enabled(true);
-  labelsBackground.stroke("#cecece");
+// background settings
+var xLabelsBackground = chart.xAxis().labels().background();
+xLabelsBackground.enabled(true);
+xLabelsBackground.stroke("#cecece");
+xLabelsBackground.cornerType("round");
+xLabelsBackground.corners(5);
 ```
 
 {sample}AGST\_Labels\_Formatting\_04{sample}
@@ -169,29 +161,36 @@ Find more about background settings in [Background tutorial](../Appearance_Setti
 
 AnyChart provides a number of options to control the position of axes labels, depending on the values displayed - choose where and how labels should be placed, whether they should be rotated or staggered and set alignment.
 
-### Labels Align
+### Labels Alignment
 
-To specify how labels are aligned set {api:anychart.graphics.vector.Text#hAlign}hAlign(){api} and {api:anychart.graphics.vector.Text#vAlign}vAlign(){api} methods. Possible arguments for the {api:anychart.graphics.vector.Text#hAlign}hAlign(){api} method are: "left", "start", "center", "end" and "right". As for {api:anychart.graphics.vector.Text#vAlign}vAlign(){api} arguments, they can be "top", "middle" or "bottom".
+To specify how labels are aligned set {api:anychart.graphics.vector.Text#hAlign}hAlign(){api} and {api:anychart.graphics.vector.Text#vAlign}vAlign(){api} methods. Using the {api:anychart.graphics.vector.Text#hAlign}hAlign(){api} method makes a noticable change if the labels consist of several lines.
   
 Also, to change the position of the labels and make them to show inside a chart plot set {api:anychart.core.ui.Label#offsetX}offsetX(){api} for yAxis and {api:anychart.core.ui.Label#offsetY}offsetY(){api} for xAxis.
 
 ```
-  var yAxisLabels = chart.yAxis().labels();
-  yAxisLabels.offsetX(30);
+// set function to format axes labels
+var yLabels = chart.yAxis().labels();
+yLabels.hAlign("center");
+var xLabels = chart.xAxis().labels();
+xLabels.offsetY(5);
 ```
+
+{sample}AGST\_Labels\_Formatting\_04\_1{sample}
 
 ### Padding
 
-To change the paddings between the label's background borders and the text use {api:anychart.core.ui.Label#padding}padding(){api}. This parameter's value is to be set in px. Padding may contain up to 4 values: Top&Bottom&Left&Right, Right&Left, Bottom, Left. It is not necessary to set all 4 values. 
+To change the paddings between the label's background borders and the text use {api:anychart.core.ui.Label#padding}padding(){api}. This parameter's value is to be set in px. Padding may contain up to 4 values in the following order: Top, Right, Bottom and Left. It is not necessary to set all 4 values. 
 
 ```
-  var yAxisLabels = chart.yAxis().labels();
-  yAxisLabels.padding(0,0,2,3)
+var normalYAxisLabels = normalLabels.yAxis().labels();
+normalYAxisLabels.padding(0, 10, 15, 0);
 ```
+
+This method also allows to put the labels inside of a chart, i.e. on the other side of the axis they belong to. This is demonstrated in the [dashboard](#dashboard) below.
 
 ### Rotation
 
-One of the most useful features of label positioning is ability to show rotated labels. To rotate labels just set angle of rotation in rotation method:
+One of the most useful features of label positioning is ability to show rotated labels. To rotate labels set the angle of rotation in the {api:anychart.core.ui.LabelsFactory#rotation}rotation(){api} method:
 
 ```
   var yAxisLabels = chart.yAxis().labels();
@@ -200,29 +199,29 @@ One of the most useful features of label positioning is ability to show rotated 
 
 ### Stagger Mode
 
-When there are a lot of labels with long values, especially containing category names, the {api:anychart.core.axes.Linear#staggerLines}staggerLines(){api} method becomes quite useful. It sets a number of stagger lines:
+When there are a lot of labels with long values, especially containing category names, the {api:anychart.core.axes.Linear#staggerLines}staggerLines(){api} method becomes quite useful. It sets a number of staggered lines:
 
 ```
-  var xAxis = chart.xAxis();
-  xAxis.staggerLines(2);
+// enabling stagger mode
+var xAxis = staggerLabels.xAxis();
+xAxis.staggerMode(true);
+// adjusting settings for stagger mode
+xAxis.staggerLines(2);
 ```
-
-The dashboard below demonstrates a lot of labels positioning settings:
-
-<a name="dashboard"/></a>
-{sample}AGST\_Labels\_Formatting\_05{sample}
 
 ## First and Last Labels
 
 There are special methods for editing the first label (the one with the minimal value) on the axis and the last label (maximal value). You can force them to be shown or hide them using the {api:anychart.core.axes.Linear#drawFirstLabel}drawFirstLabel(){api} and {api:anychart.core.axes.Linear#drawLastLabel}drawLastLabel(){api} methods.
-  
-Turning off both last and first labels is shown on the [dashboard above](#dashboard) in the "Labels Inside" Line chart.
 
 ```
   var xAxis = chart.xAxis();
   xAxis.drawFirstLabel(false);
   xAxis.drawLastLabel(false);
 ```
+
+<a name="dashboard"/></a>
+{sample}AGST\_Labels\_Formatting\_05{sample}
+
 
 <a name="y-axis_labels-fixed-width"/>
 ## Y-Axis Labels: Fixed Width
@@ -237,7 +236,7 @@ To set the axis width use {api:anychart.core.ui.Label#width}width(){api} attribu
   labels.width(50);
 ```
 
-Sample dashboard shows two charts with values in completely different ranges: upper charts shows up to hundreds of 
+Sample dashboard shows two charts with values in completely different ranges: the upper chart shows up to hundreds of 
 thousands and the one beneath shows only hundreds. As the result, the charts' Y axes aren't synced to the left:
 
 {sample}AGST\_Labels\_Formatting\_06{sample}

@@ -32,7 +32,7 @@
   var firstLabels = firstChart.yAxis().labels();
   firstLabels.width(80);
   firstLabels.hAlign("right");
-  firstLabels.textFormatter(valueAdjuster);
+  firstLabels.textFormatter("{%Value}{groupsSeparator:.}");
 
   firstChart.column([
       ["P1", 698712],
@@ -59,7 +59,6 @@
   var secondYLabels = secondChart.yAxis().labels();
   secondYLabels.width(80);
   secondYLabels.hAlign("right");
-  secondYLabels.textFormatter(valueAdjuster);
 
   secondChart.column([
     ["P1", 12],
@@ -73,22 +72,6 @@
   secondChart.container(stage);
   secondChart.draw();
 
-  // the function to format labels
-  function valueAdjuster() {
-    var value = this.value;
-    value = value.toFixed(2);
-    var num = value.split(".");
-
-    var main = "";
-    for (var i=1;(i*3)<num[0].length;i++)
-      main = ","+num[0].substr(num[0].length-(i*3), 3) + main;
-    var tail = num[0].substr(0, num[0].length-(main.length-main.length/4));
-    num[0]=tail+main;
-
-    // decimal Separator
-    value = num.join(".");
-    return value;
-  }
 });</script>
 </head>
 <body>
