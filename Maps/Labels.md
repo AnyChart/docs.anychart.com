@@ -137,9 +137,8 @@ map.overlapMode(false);
 ```
 
 ```
-map.overlapMode(anychart.enums.LabelsOverlapMode.NO_OVERLAP);
+map.overlapMode("noOverlap");
 ```
-
 Both code samples do the same: disable labels that overlap each other.
 
 {sample}Maps\_Labels\_04{sample}
@@ -153,10 +152,9 @@ The {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} meth
 
 ```
 // set the overlapping mode for the map
-map.overlapMode(false);
-// enable overlapping for series
-series_confederate.overlapMode("allowOverlap");
-series_union_terr_ps.overlapMode(true);
+  map.overlapMode(false);
+  // enable overlapping for series
+  series_obama.overlapMode("allowOverlap");
 ```
 
 {sample}Maps\_Labels\_05{sample}
@@ -168,29 +166,14 @@ It's also possible to manage each region's label separately. If there are severa
 Those properties can be set through the geoJSON code or through the data set.
 
 ```
-
-var dataSet_union = anychart.data.set([
-    {id: 'US.CA', name: "California", "labelrank": 5},
-    {id: 'US.NV', name: "Nevada", "labelrank": 3},
-    {id: 'US.WI', name: "Wisconsin", "labelrank": 5},
-    {id: 'US.NY', name: "New York"},
-    {id: 'US.PA', name: "Pennsylvania"},
-    {id: 'US.ME', name: "Maine"},
-    {id: 'US.MI', name: "Michigan", "labelrank": 3}
-]);
-
-var dataSet_confederate = anychart.data.set([
-    {id: 'US.VA', name: "Virginia", "labelrank": 0},
-    {id: 'US.DE', name: "Delaware", "labelrank": 1},
-    {id: 'US.DC', name: "District of Columbia"},
-    {id: 'US.MD', name: "Maryland", "labelrank": 5},
-    {id: 'US.NJ', name: "New Jersey"}
-]);
-
-var dataSet_union_border_states = anychart.data.set([
-    {id: 'US.KY', name: "Kentucky"},
-    {id: 'US.WV', name: "West Virginia", "labelrank": 5}
-]);
+var dataSet_obama = anychart.data.set([
+    {id: 'US.WA', name: "Washington", value: 12},
+    {id: 'US.CA', name: "California", value: 55, "labelrank": 5},
+    {id: 'US.NV', name: "Nevada", value: 6, "labelrank": 3},
+    {id: 'US.OR', name: "Oregon", value: 7},
+    {id: 'US.CO', name: "Colorado", value: 9},
+    {id: 'US.NM', name: "New Mexico", value: 5},
+    {id: 'US.WI', name: "Wisconsin", value: 10, "labelrank": 5},
 ```
 
 Note that the map's or series' overlapping mode set through the {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} method has the highest priority, so even if some of the labels have the highest labelrank, but overlapping is forbidden for this series or the whole map, those labels will not be displayed. The similar situation is for the opposite case: if your series has overlapping allowed, setting labelranks will have no sense as all labels will be displayed anyway.
@@ -213,33 +196,14 @@ To set the custom position of the labels inside the regions, set "middle-x" and 
 Another property is responsible for positioning around the "middle-x" and "middle-y" coordinates: set "middleXYmode" as relative or absolute. When the "middleXYmode" property is "relative", the default middle-x and middle-y values will be considered as 0.5, so keep it in mind while setting the "middle-x" and "middle-y" properties.
 
 ```
-var dataSet_union = anychart.data.set([
-    {id: 'US.MN', name: "Minnesota"},
-    {id: 'US.CA', name: "California", "labelrank": 5},
-    {id: 'US.NV', name: "Nevada", "labelrank": 3, "middle-x": 0.5, "middle-y": 0.3, middleXYMode: "relative"},
-    {id: 'US.OR', name: "Oregon"},
-    {id: 'US.IA', name: "Iowa"},
-    {id: 'US.KS', name: "Kansas"},
-    {id: 'US.CT', name: "Connecticut"},
-    {id: 'US.MA', name: "Massachusetts"},
-    {id: 'US.NH', name: "New Hampshire"},
-    {id: 'US.RI', name: "Rhode Island"},
-    {id: 'US.VT', name: "Vermont"},
-    {id: 'US.IL', name: "Illinois", "middle-y": 0.25, middleXYMode: "relative"},
-    {id: 'US.IN', name: "Indiana"},
-    {id: 'US.OH', name: "Ohio"},
-    {id: 'US.WI', name: "Wisconsin", "labelrank": 5},
-    {id: 'US.NY', name: "New York"},
-    {id: 'US.PA', name: "Pennsylvania"},
-    {id: 'US.ME', name: "Maine"},
-    {id: 'US.MI', name: "Michigan", "labelrank": 3, "middle-x": 0.5, "middle-y": 0.3, middleXYMode: "relative"}
-]);
-
-var dataSet_confederate = anychart.data.set([
-    {id: 'US.AR', name: "Arkansas"},
-    {id: 'US.FL', name: "Florida", "middle-x": 0.7, "middle-y": 0.3, middleXYMode: "relative"},
-    {id: 'US.GA', name: "Georgia"}
-]);
+  var dataSet_obama = anychart.data.set([
+    {id: 'US.WA', name: "Washington", value: 12},
+    {id: 'US.CA', name: "California", value: 55, "labelrank": 5},
+    {id: 'US.NV', name: "Nevada", value: 6, "labelrank": 3, "middle-x": 0.5, "middle-y": 0.3, middleXYMode: "relative"},
+    {id: 'US.OR', name: "Oregon", value: 7},
+    {id: 'US.CO', name: "Colorado", value: 9},
+    {id: 'US.NM', name: "New Mexico", value: 5},
+    {id: 'US.WI', name: "Wisconsin", value: 10, "labelrank": 5},
 ```
 
 {sample}Maps\_Labels\_07{sample}
@@ -303,7 +267,7 @@ Note that if the middleXYMode property is absolute, it's necessary to set both m
 
 If it's necessary to show the labels for those tiny regions, it's possible to display labels outside of the them. In this case set the X and Y coordinates of a label through the geo data or data set of your map. Set the "positionMode" property (through the data set or the geoJSON) to set the correct positioning of the label according to the coordinates set. There are three position modes: relative, absolute and offset. Setting positionMode as "offset" will lead to considering the "x" coordinate as angle (in grades) and y as the connector length. Note that in this mode the distance between the middle point of the region and its labels will not change even when map is being zoomed.
 
-In the sample below there are some regions with labels set as inside (with middle- coordinates) and others are set as outside in different modes.
+In the sample below there are some regions with labels set as inside (with middle-coordinates) and others are set as outside in different modes.
 
 ```
 var dataSet_union = anychart.data.set([
@@ -331,7 +295,7 @@ var dataSet_union = anychart.data.set([
 
 {sample}Maps\_Labels\_10{sample}
 
-Also there is a connector created specially for the labels outside of regions. The {api:}connectorStroke(){api} method will help you to adjust its appearance. Also the connector color can be set through the data set. Setting the connector stroke color in "null" will disable the connector.
+Also there is a connector created specially for the labels outside of regions. The {api:}connectorStroke(){api} method helps to adjust its appearance. Also the connector color can be set through the data set. Setting the connector stroke color in "null" will disable the connector.
 
 ```
 var dataSet_union = anychart.data.set([
@@ -362,10 +326,11 @@ After creating the elements it's necessary to fill in the arrays with regions' I
 
 ```
 // fill in the arrays
-calloutRight.items(["US.NH", "US.VT", "US.MA", "US.CT", "US.RI", "US.NJ", "US.DE", "US.MD"]);
+calloutBottom.items(["US.AL", "US.FL", "US.GA", "US.SC", "US.NC", "US.VA", "US.MN" ,"US.ID", "US.CA", "US.IL", "US.WI"]);
+calloutRight.items(["US.NH", "US.VT", "US.MA", "US.CT", "US.RI", "US.NJ", "US.DE", "US.MD", "US.PA", "US.NY"]);
 ```
 
-The {api:}align(){api} method helps to set the position of the label text inside of the callout and setting the {api:}orientation(){api}will define the position of the whole callout:
+The {api:}align(){api} method helps to set the position of the label text inside of the callout. The position of the whole callout is being set through the {api:}orientation(){api} method:
 
 ```
 // set the callout positions
@@ -377,7 +342,7 @@ calloutBottom.align("center");
 calloutRight.align("center");  
 ```
 
-To change the size of callout labels, use {api:}width(){api} method. As each callout label has a form of a square, only one measure is necessary. Though, if you need rectangular callout labels, set the length to the whole callout element through the {api:}length(){api} element.
+To change the size of callout labels, use {api:}width(){api} method. As each callout label has a form of a square, only one measure is necessary. Though, if it's necessary to make the labels rectangular instead of a square, set the length to the whole callout element through the {api:}length(){api} element.
 
 ```  
 // set the width and length
@@ -388,33 +353,19 @@ calloutRight.width(50);
 
 {sample}Maps\_Labels\_12{sample}
 
-The text that labels represent can be formatted as the usual labels text, but remember that formatting labels of the whole series will lead to changes in all labels of this series, so if you need to format only those labels that are shown in the callout element, use data set. It's possible to change the size of the label text through the {api:}fontSize(){api} method and {api:}connnectorStroke(){api} method to set the color of the connector. The {api:}textFormatter(){api} method allows to change the text displayed by the labels.
+The text that labels represent can be formatted as the usual labels text, but remember that formatting labels of the whole series will lead to changes in all labels of this series, so if you need to format only those labels that are shown in the callout element, use data set. It's possible to change the size of the label text through the {api:}fontSize(){api} method and {api:}connnectorStroke(){api} method to set the color of the connector. The {api:anychart.core.ui.LabelsFactory.Label#textFormatter}textFormatter(){api} method allows to change the text displayed by the labels.
 
 ```
-var dataSet_confederate = anychart.data.set([
-    {id: 'US.AR', name: "Arkansas"},
-    {id: 'US.LA', name: "Louisiana"},
-    {id: 'US.TX', name: "Texas"},
-    {id: 'US.AL', name: "Alabama", label:{textFormatter: "{%id}"}},
-    {id: 'US.FL', name: "Florida", label:{textFormatter: "{%id}"}},
-    {id: 'US.GA', name: "Georgia", label:{textFormatter: "{%id}"}},
-    {id: 'US.MS', name: "Mississippi"},
-    {id: 'US.SC', name: "South Carolina", label:{textFormatter: "{%id}"}},
-    {id: 'US.NC', name: "North Carolina", label:{textFormatter: "{%id}"}},
-    {id: 'US.TN', name: "Tennessee"},
-    {id: 'US.VA', name: "Virginia", label:{textFormatter: "{%id}"}},
-    {id: 'US.DE', name: "Delaware", label:{textFormatter: "{%id}"}},
-    {id: 'US.DC', name: "District of Columbia"},
-    {id: 'US.MD', name: "Maryland", label:{textFormatter: "{%id}"}},
-    {id: 'US.NJ', name: "New Jersey", label:{textFormatter: "{%id}"}}
-]);
-
-// set the labels
-labels_union = series_union.labels();
-labels_union_terr_nps = series_union_terr_nps.labels();
-labels_confederate = series_confederate.labels();
-labels_union_border_states = series_union_border_states.labels();
-labels_union_terr_ps = series_union_terr_ps.labels();
+var dataSet_obama = anychart.data.set([
+{id: 'US.WA', name: "Washington", value: 12},
+{id: 'US.CA', name: "California", value: 55, label:{textFormatter: "CA"}},
+{id: 'US.NV', name: "Nevada", value: 6},
+{id: 'US.OR', name: "Oregon", value: 7},
+{id: 'US.CO', name: "Colorado", value: 9},
+{id: 'US.NM', name: "New Mexico", value: 5},
+{id: 'US.WI', name: "Wisconsin", value: 10, label:{textFormatter: "WI"}},
+{id: 'US.IL', name: "Illinois", value: 20, label:{textFormatter: "IL"}},
+{id: 'US.MN', name: "Minnesota", value: 10, label:{textFormatter: "MN"}},
 ```
 
 

@@ -12,129 +12,92 @@
 
   map = anychart.map();
   // data set for the choropeth series
-var dataSet_union = anychart.data.set([
-    {id: 'US.MN', name: "Minnesota"},
-    {id: 'US.CA', name: "California", "labelrank": 5},
-    {id: 'US.NV', name: "Nevada", "labelrank": 3, "middle-x": 0.5, "middle-y": 0.3, middleXYMode: "relative"},
-    {id: 'US.OR', name: "Oregon"},
-    {id: 'US.IA', name: "Iowa"},
-    {id: 'US.KS', name: "Kansas"},
-    {id: 'US.CT', name: "Connecticut"},
-    {id: 'US.MA', name: "Massachusetts"},
-    {id: 'US.NH', name: "New Hampshire"},
-    {id: 'US.RI', name: "Rhode Island"},
-    {id: 'US.VT', name: "Vermont"},
-    {id: 'US.IL', name: "Illinois", "middle-y": 0.25, middleXYMode: "relative"},
-    {id: 'US.IN', name: "Indiana"},
-    {id: 'US.OH', name: "Ohio"},
-    {id: 'US.WI', name: "Wisconsin", "labelrank": 5},
-    {id: 'US.NY', name: "New York"},
-    {id: 'US.PA', name: "Pennsylvania", "middle-x": 100, "middle-y": 0, middleXYMode: "absolute"},
-    {id: 'US.ME', name: "Maine"},
-    {id: 'US.MI', name: "Michigan", "labelrank": 3, "middle-x": 0.5, "middle-y": 0.3, middleXYMode: "relative"}
+  var dataSet_obama = anychart.data.set([
+    {id: 'US.WA', name: "Washington", value: 12},
+    {id: 'US.CA', name: "California", value: 55, "labelrank": 5},
+    {id: 'US.NV', name: "Nevada", value: 6, "labelrank": 3, "middle-x": 0.5, "middle-y": 0.3, middleXYMode: "relative"},
+    {id: 'US.OR', name: "Oregon", value: 7},
+    {id: 'US.CO', name: "Colorado", value: 9},
+    {id: 'US.NM', name: "New Mexico", value: 5},
+    {id: 'US.WI', name: "Wisconsin", value: 10, "labelrank": 5},
+    {id: 'US.IL', name: "Illinois", value: 20, "middle-y": 0.25, middleXYMode: "relative"},
+    {id: 'US.MN', name: "Minnesota", value: 10},
+    {id: 'US.IA', name: "Iowa", value: 6},
+    {id: 'US.MI', name: "Michigan", value: 16, "labelrank": 3, "middle-x": 0.5, "middle-y": 0.3, middleXYMode: "relative"},
+    {id: 'US.OH', name: "Ohio", value: 18},
+    {id: 'US.PA', name: "Pennsylvania", value: 20, "middle-x": 100, "middle-y": 0, middleXYMode: "absolute"},
+    {id: 'US.NY', name: "New York", value: 29},
+    {id: 'US.CT', name: "Connecticut", value: 7},
+    {id: 'US.MA', name: "Massachusetts", value: 11},
+    {id: 'US.NH', name: "New Hampshire", value: 4},
+    {id: 'US.RI', name: "Rhode Island", value: 4},
+    {id: 'US.VT', name: "Vermont", value: 3},
+    {id: 'US.ME', name: "Maine", value: 4},
+    {id: 'US.VA', name: "Virginia", value: 13, "labelrank": 0},
+    {id: 'US.FL', name: "Florida", value: 29, "middle-x": 0.7, "middle-y": 0.3, middleXYMode: "relative"},
+    {id: 'US.DE', name: "Delaware", value: 3, "labelrank": 1},
+    {id: 'US.DC', name: "District of Columbia", value: 3},
+    {id: 'US.NJ', name: "New Jersey", value: 14},
+    {id: 'US.HI', name: "Hawaii", value: 4},
+    {id: 'US.MD', name: "Maryland", value: 10, "labelrank": 5},
 ]);
 
-var dataSet_union_terr_nps = anychart.data.set([
-    {id: 'US.MT', name: "Montana"},
-    {id: 'US.ND', name: "North Dakota"},
-    {id: 'US.ID', name: "Idaho"},
-    {id: 'US.WA', name: "Washington"},
-    {id: 'US.CO', name: "Colorado"},
-    {id: 'US.UT', name: "Utah"},
-    {id: 'US.WY', name: "Wyoming"},
-    {id: 'US.MO', name: "Missouri"},
-    {id: 'US.NE', name: "Nebraska"},
-    {id: 'US.SD', name: "South Dakota"},
-    {id: 'US.WY', name: "Wyoming"}
-]);
-
-var dataSet_confederate = anychart.data.set([
-    {id: 'US.AR', name: "Arkansas"},
-    {id: 'US.LA', name: "Louisiana"},
-    {id: 'US.TX', name: "Texas"},
-    {id: 'US.AL', name: "Alabama"},
-    {id: 'US.FL', name: "Florida", "middle-x": 0.7, "middle-y": 0.3, middleXYMode: "relative"},
-    {id: 'US.GA', name: "Georgia"},
-    {id: 'US.MS', name: "Mississippi"},
-    {id: 'US.SC', name: "South Carolina"},
-    {id: 'US.NC', name: "North Carolina"},
-    {id: 'US.TN', name: "Tennessee"},
-    {id: 'US.VA', name: "Virginia", "labelrank": 0},
-    {id: 'US.DE', name: "Delaware", "labelrank": 1},
-    {id: 'US.DC', name: "District of Columbia"},
-    {id: 'US.MD', name: "Maryland", "labelrank": 5},
-    {id: 'US.NJ', name: "New Jersey"}
-]);
-
-var dataSet_union_border_states = anychart.data.set([
-    {id: 'US.KY', name: "Kentucky"},
-    {id: 'US.WV', name: "West Virginia", "labelrank": 5}
-]);
-
-var dataSet_union_terr_ps = anychart.data.set([
-    {id: 'US.AZ', name: "Arizona"},
-    {id: 'US.NM', name: "New Mexico"},
-    {id: 'US.OK', name: "Oklahoma"}
+var dataSet_romney = anychart.data.set([
+    {id: 'US.MT', name: "Montana", value: 3},
+    {id: 'US.ND', name: "North Dakota", value: 3},
+    {id: 'US.ID', name: "Idaho", value: 4},
+    {id: 'US.UT', name: "Utah", value: 6},
+    {id: 'US.WY', name: "Wyoming", value: 3},
+    {id: 'US.MO', name: "Missouri", value: 10},
+    {id: 'US.NE', name: "Nebraska", value: 5},
+    {id: 'US.SD', name: "South Dakota", value: 3},
+    {id: 'US.KS', name: "Kansas", value: 6},
+    {id: 'US.IN', name: "Indiana", value: 11},
+    {id: 'US.AR', name: "Arkansas", value: 6},
+    {id: 'US.LA', name: "Louisiana", value: 8},
+    {id: 'US.TX', name: "Texas", value: 38},
+    {id: 'US.AL', name: "Alabama", value: 9},
+    {id: 'US.GA', name: "Georgia", value: 16},
+    {id: 'US.MS', name: "Mississippi", value: 6},
+    {id: 'US.SC', name: "South Carolina", value: 9},
+    {id: 'US.NC', name: "North Carolina", value: 15},
+    {id: 'US.TN', name: "Tennessee", value: 11},
+    {id: 'US.KY', name: "Kentucky", value: 8},
+    {id: 'US.WV', name: "West Virginia", value: 5, "labelrank": 5},
+    {id: 'US.AZ', name: "Arizona", value: 11},
+    {id: 'US.OK', name: "Oklahoma", value: 7},
+    {id: 'US.AK', name: "Alaska", value: 3}
 ]);
 
   map.geoData("anychart.maps.united_states_of_america");
 
   // set the title and its preferences
   map.title().useHtml(true).hAlign('center');
-  map.title('<span style="font-size: 18px;">Data Setting</span><br><span style="font-size:12px;">Set the overlapping mode</span>');
+  map.title('<span style="font-size: 14px;">Presidental elections 2012</span><br><span style="font-size:12px;">Set the overlapping mode</span>');
 
   // set the series
-  var series_union = map.choropleth(dataSet_union);
-  var series_union_terr_nps = map.choropleth(dataSet_union_terr_nps);
-  var series_confederate = map.choropleth(dataSet_confederate);
-  var series_union_border_states = map.choropleth(dataSet_union_border_states);
-  var series_union_terr_ps = map.choropleth(dataSet_union_terr_ps);
+  var series_obama = map.choropleth(dataSet_obama);
+  var series_romney = map.choropleth(dataSet_romney);
 
-  series_union.geoIdField('code_hasc');
-  series_union_terr_nps.geoIdField('code_hasc');
-  series_confederate.geoIdField('code_hasc');
-  series_union_border_states.geoIdField('code_hasc');
-  series_union_terr_ps.geoIdField('code_hasc');
-  
   // enable labels
-  series_union.labels(true);
-  series_union_terr_nps.labels(true);
-  series_confederate.labels(true);
-  series_union_border_states.labels(true);
-  series_union_terr_ps.labels(true);
+  series_obama.labels(true);
+  series_romney.labels(true);
 
   // set the labels
-  labels_union = series_union.labels();
-  labels_union_terr_nps = series_union_terr_nps.labels();
-  labels_confederate = series_confederate.labels();
-  labels_union_border_states = series_union_border_states.labels();
-  labels_union_terr_ps = series_union_terr_ps.labels();
-    
+  labels_obama = series_obama.labels();
+  labels_romney = series_obama.labels();
+
   // set the overlapping mode for the map
   map.overlapMode(false);
   // enable overlapping for series
-  series_confederate.overlapMode("allowOverlap");
-  series_union_terr_ps.overlapMode(true);
-
-  series_union.listen("click", function(){
-    console.log(this);
-  })
+  series_obama.overlapMode("allowOverlap");
 
   // set the tooltips
-  series_union_terr_nps.tooltip().textFormatter(function(){
-    return "Union Territories Not Permitting Slavery"
+  series_obama.tooltip().textFormatter(function(){
+    return "Most voted for Obama"
   });
-  series_union_terr_ps.tooltip().textFormatter(function(){
-    return "Union Territories Permitting Slavery"
-  });
-  series_confederate.tooltip().textFormatter(function(){
-    return "Confederate States"
-  });
-  series_union_border_states.tooltip().textFormatter(function(){
-    return "Border Union States, Permitting Slavery"
-  });
-  series_union.tooltip().textFormatter(function(){
-    return "Union States"
+  series_romney.tooltip().textFormatter(function(){
+    return "Most voted for Romney"
   });
 
   // the following line means the same as the line above
