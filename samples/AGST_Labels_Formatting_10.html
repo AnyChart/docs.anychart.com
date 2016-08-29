@@ -37,10 +37,10 @@
         value = value/1000000 + " M ";
       }
     }
-    return value;
+    return "$" + value;
   });
   var xLabels = chart.xAxis().labels();
-  xLabels.textWrap(true);
+  xLabels.textWrap("noWrap");
   xLabels.width(75);
   xLabels.hAlign("right");
 

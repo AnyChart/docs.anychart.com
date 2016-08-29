@@ -102,7 +102,7 @@ Find more about text formatting parameters in the [Text Formatters article](Comm
 
 ### Label Length
 
-If the label value is too long, it's possible to limit the number of characters using standard javascript methods: 
+If the label value is too long, it's possible to limit the number of characters using standard javascript method **substr()**: 
 
 ```
 // limits length of x axis labels to 3 or less
@@ -255,25 +255,26 @@ Please note that width resriction can lead to wrapping the labels' content, so t
 <a name="x-axis-labels-wrapping-width"/>
 ## X-Axis Labels: Fixed Width and Text Wrapping
 
-Sometimes you may encounter a situation when point names (which are used as arguments and are displayed in X axis labels) are too long and chart engine removes some of them because they don't fit the chart size this undesired result can be avoided in several ways: you can allow labels to overlap, change the overflow mode (use {api:}textOverflow(){api} method), or set fixed width to the labels and make them wrap their content.
-  
-  
-To fix tle labels' width  use {api:anychart.core.ui.Label#width}width(){api} method:
-
-```
-  var xLabels = chart.xAxis().labels();
-  xLabels.width(60);
-```
+Sometimes you may encounter a situation when point names (which are used as arguments and are displayed in X axis labels) are too long and chart engine removes some of them because they don't fit the chart size this undesired result can be avoided in several ways: you can allow labels to overlap, change the overflow mode (use standard javascript **textOverflow()** method), or set fixed width to the labels and make them wrap their content.
 
 The following example demonstrates standard behavior of the X axis labels. As you can see long labels cause component to skip several labels in order to prevent overlapping:
 
 {sample}AGST\_Labels\_Formatting\_08{sample}
 
-Exactly the same configuration but the labels width is set manually to 60 pixels. In this case, component wraps text in order to fit the width:
+The following sample demonstrates exactly the same configuration but the labels width is set manually to 60 pixels. In this case, component wraps text in order to fit the width:
+  
+To adjust the labels' width and allow or forbid the labels' text wrapping use {api:anychart.core.ui.Label#width}width(){api} and {api:anychart.core.ui.LabelsFactory#textWrap}textWrap(){api} methods:
+
+```
+var xLabels = chart.xAxis().labels();
+xLabels.width(60);
+xLabels.textWrap("byLetter");
+```
 
 {sample}AGST\_Labels\_Formatting\_09{sample}
 
-This works for other plot types as well. The following example demonstrates the same data displayed on a bar chart. In order to align multiline text to the right side set "right" to the {api:anychart.graphics.vector.Text#hAlign}hAlign(){api} method:
+
+This works for other plot types as well. The following example demonstrates the same data displayed on a bar chart:
 
 {sample}AGST\_Labels\_Formatting\_10{sample}
 
