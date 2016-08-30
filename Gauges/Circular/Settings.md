@@ -22,9 +22,9 @@
 
 ##Overview
 
-In this tutorial we will learn how to build the basic circular gauge step by step, trying to cover all major elements and pointing to the articles for the further tuning a gauge.
+In this tutorial we will learn how to build a basic circular gauge step by step, trying to cover all major elements and pointing to the articles for the further tuning a gauge.
 
-So, a Circular Gauge is a visual representation of a measuring device with a radial axis that sweeps any angle from 0 to 360 degrees and a pointer (Needle or Knob) that indicates values on that scale. Gauge axes are usually colored for easy value distinction. Gauges can be used as clocks, speedometer, compass, volume tuner or any other gauge that should represent the value as an angle on a circle plot.
+So, a circular gauge is a visual representation of a measuring device with a radial scale that sweeps any angle from 0 to 360 degrees and a pointer or multiple pointer indicating particular values. The scale is usually color zoned, which helps to see what range the value of interest falls in. Circular gauges can represent clocks, speedometers, compasses, volume tuners, or any other devices with circular scales.
 
 Let's start with adding or configuring gauge elements step by step, so in the end we'll create a typical JavaScript speedometer gauge as a result.
 
