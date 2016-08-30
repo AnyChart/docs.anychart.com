@@ -1,5 +1,5 @@
-Linear Gauge
-============
+{:index 2}
+# Linear Gauge Settings
 
 * [Overview](#overview)
 * [Basics](#basics)
