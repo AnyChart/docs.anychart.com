@@ -37,8 +37,7 @@ var plot_0 = chart.plot(0);
 var plot_1 = chart.plot(1);
 
 // create Aroon indicator with period 25
-var aroon25 = plot_1.aroon(mapping, 25).series();
-aroon25.stroke('#bf360c');
+var aroon25 = plot_1.aroon(mapping, 25);
 ```
 
 Here is a live sample:
@@ -63,11 +62,13 @@ aroon25 = plot_1.roc(mapping, 25);
 aroon25.upSeries().stroke('#bf360c');
 aroon25.downSeries().stroke('#ff6d00');
 
-// create Aroon indicator with period 30 and shown as spline on the third plot
-aroon30 = plot_2.aroon(mapping);
+// create Aroon indicator with period 30 and shown as splines on the third plot
+aroon30 = thirdPlot.aroon(mapping);
 aroon30.period(30);
-aroon30.upSeries("spline").stroke('#bf360c', 2, '5 5 10');
-aroon30.downSeries("spline").stroke('#ff6d00', 2, '5 5 10');
+aroon30.upSeries().seriesType("spline");
+aroon30.upSeries().stroke('#bf360c', 2, '5 5 10');
+aroon30.downSeries().seriesType("spline");        
+aroon30.downSeries().stroke('#ff6d00', 2, '5 5 10');
 ```
 
 Live sample:

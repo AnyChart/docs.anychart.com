@@ -38,8 +38,8 @@
         var secondPlot = chart.plot(1);
         secondPlot.height('25%');
 
-        // create Aroon indicator with period 25 and shown as lines on the second plot
-        aroon25 = secondPlot.roc(mapping, 25);
+        // create Aroon indicator with period 25 and shown as steplines on the second plot
+        aroon25 = secondPlot.aroon(mapping, 25, "stepline", "stepline");
         aroon25.upSeries().stroke('#bf360c');
         aroon25.downSeries().stroke('#ff6d00');
 
@@ -47,11 +47,13 @@
         var thirdPlot = chart.plot(2);
         thirdPlot.height('25%');
 
-        // create Aroon indicator with period 30 and shown as spline on the third plot
+        // create Aroon indicator with period 30 and shown as splines on the third plot
         aroon30 = thirdPlot.aroon(mapping);
         aroon30.period(30);
-        aroon30.upSeries("spline").stroke('#bf360c', 2, '5 5 10');
-        aroon30.downSeries("spline").stroke('#ff6d00', 2, '5 5 10');              
+        aroon30.upSeries().seriesType("spline");
+        aroon30.upSeries().stroke('#bf360c', 2, '5 5 10');
+        aroon30.downSeries().seriesType("spline");        
+        aroon30.downSeries().stroke('#ff6d00', 2, '5 5 10');              
 
         // create scroller series with mapped data
         chart.scroller().line(mapping);

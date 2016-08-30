@@ -39,8 +39,7 @@
         secondPlot.height('30%');
 
         // create Aroon indicator with period 25
-        var aroon25 = secondPlot.aroon(mapping, 25).series();
-        aroon25.stroke('#bf360c');
+        var aroon25 = secondPlot.aroon(mapping, 25);
 
         // create scroller series with mapped data
         chart.scroller().line(mapping);
