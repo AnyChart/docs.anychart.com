@@ -1,8 +1,8 @@
 {:index 1}
 #Quick Start
 
-## Creating a Circular Gauge
-###1. Including a Circular Gauge into Your Web Page
+## Creating a Linear Gauge
+###1. Including a Linear Gauge into Your Web Page
 Reference the _anychart.min.js_ JavaScript file in the `<head>` section of your web page: 
 
 ```
@@ -25,10 +25,10 @@ When the attributes are not set, AnyChart uses 100% of the container.
 
 ###3. Preparing your Data
 
-AnyChart provides quite a few opportunities to work with data, so you need to prepare your data before usage. Setting data for a circular gauge chart may look like this:
+AnyChart provides quite a few opportunities to work with data, so you need to prepare your data before usage. Setting data for a linear gauge chart may look like this:
 
 ```
-gauge.data([73.2]);
+gauge.data([65]);
 ```
 
 ###4. Creating a Gauge
@@ -38,71 +38,79 @@ Add the `<script>` tag with the code shown below to any place in the page. In th
 <script>
 anychart.onDocumentReady(function() {
 
-	// create a circular gauge
-	gauge = anychart.circularGauge();
+    // create a linear gauge
+    gauge = anychart.gauges.linear();
 
-	// set data
-	gauge.data([73.2]);
+    // set data
+    gauge.data([65]);
 
-	// set the start and sweep angles
-	gauge.startAngle(270);
-	gauge.sweepAngle(180);
+    // set the layout
+    gauge.layout("horizontal");
 
-	// turn off the background frame
-	gauge.fill('#FFFFFF').stroke(null);
+    // create a color scale
+    var scaleBarColorScale = anychart.scales.ordinalColor().ranges(
+    [
+        {
+            from: 0,
+            to: 30,
+            color: ['#dd2c00 0.4']
+        },
+        {
+            from: 30,
+            to: 65,
+            color: ['#ffa000 0.4']
+        },
+        {
+            from: 65,
+            to: 100,
+            color: ['#009900 0.4']
+        }
+    ]
+    );
 
-	// configure the axis scale
-	gauge.axis().scale().minimum(0);
-	gauge.axis().scale().maximum(100);
+    // create a Scale Bar
+    var scaleBar = gauge.scaleBar();
 
-	// set the position of axis labels
-	gauge.axis().labels().position('outside');
+    // set the height and offset of the Scale Bar (both as percentages of the gauge height)
+    scaleBar.width('10%');
+    scaleBar.offset('31.5%');
 
-	// set the axis width
-	gauge.axis().width(1);
+    // use the color scale (defined earlier) as the color scale of the Scale Bar
+    scaleBar.colorScale(scaleBarColorScale); 
 
-	// set the title of the gauge
-	gauge.title('Pressure');
+    // create a marker pointer
+    var marker = gauge.marker(0);
 
-	// set the starting point of the needle
-	gauge.needle().startRadius('0%');
+    // set the marker type
+    marker.type('star');
 
-	// configure color zones
-	gauge.range(0, {
-	    from: 0,
-	    to: 30,
-	    position: 'inside',
-	    fill: '#009900 0.4',
-	    startSize: 50,
-	    endSize: 50,
-	    radius: 98
-	});
+    // set the zIndex of the marker
+    marker.zIndex(10);
 
-	gauge.range(1, {
-	    from: 30,
-	    to: 70,
-	    position: 'inside',
-	    fill: '#ffa000 0.4',
-	    startSize: 50,
-	    endSize: 50,
-	    radius: 98
-	});
+    // set the width and offset of the marker pointer (both as percentages of the gauge width)
+    marker.width('4%');
+    marker.offset('39%');
 
-	gauge.range(2, {
-	    from: 70,
-	    to: 100,
-	    position: 'inside',
-	    fill: '#dd2c00 0.4',
-	    startSize: 50,
-	    endSize: 50,
-	    radius: 98
-	});
+    // configure the scale
+    var scale = gauge.scale();
+    scale.minimum(0);
+    scale.maximum(100);
+    scale.ticks().interval(10);
 
-	// set the container id
-	gauge.container('container');
+    // configure the axis
+    var axis = gauge.axis();
+    axis.width('1%');
+    axis.offset('30.5%');
+    axis.orientation('top');
 
-	// initiate drawing the gauge
-	gauge.draw();
+    // set the title of the gauge
+    gauge.title('Monthly Sales Level (th. USD)');
+
+    // set the container id
+    gauge.container('container');
+
+    // initiate drawing the gauge
+    gauge.draw();
 });
 </script>
 ```
@@ -111,7 +119,7 @@ anychart.onDocumentReady(function() {
 
 Here is the result all these steps lead to:
 
-{sample}GAUGE\_Basic\_Sample{sample}
+{sample}GAUGE\_Linear\_Basic\_Sample{sample}
 
 The sample above can be launched and explored in AnyChart PlayGround. You can also copy the following code to a file on your computer and open it in your browser to display the gauge:
 
@@ -134,74 +142,81 @@ The sample above can be launched and explored in AnyChart PlayGround. You can al
     <script type="text/javascript">
 anychart.onDocumentReady(function() {
 
-	// create a circular gauge
-	gauge = anychart.circularGauge();
+    // create a linear gauge
+    gauge = anychart.gauges.linear();
 
-	// set data
-	gauge.data([73.2]);
+    // set data
+    gauge.data([65]);
 
-	// set the start and sweep angles
-	gauge.startAngle(270);
-	gauge.sweepAngle(180);
+    // set the layout
+    gauge.layout("horizontal");
 
-	// turn off the background frame
-	gauge.fill('#FFFFFF').stroke(null);
+    // create a color scale
+    var scaleBarColorScale = anychart.scales.ordinalColor().ranges(
+    [
+        {
+            from: 0,
+            to: 30,
+            color: ['#dd2c00 0.4']
+        },
+        {
+            from: 30,
+            to: 65,
+            color: ['#ffa000 0.4']
+        },
+        {
+            from: 65,
+            to: 100,
+            color: ['#009900 0.4']
+        }
+    ]
+    );
 
-	// configure the axis scale
-	gauge.axis().scale().minimum(0);
-	gauge.axis().scale().maximum(100);
+    // create a Scale Bar
+    var scaleBar = gauge.scaleBar();
 
-	// set the position of axis labels
-	gauge.axis().labels().position('outside');
+    // set the height and offset of the Scale Bar (both as percentages of the gauge height)
+    scaleBar.width('10%');
+    scaleBar.offset('31.5%');
 
-	// set the axis width
-	gauge.axis().width(1);
+    // use the color scale (defined earlier) as the color scale of the Scale Bar
+    scaleBar.colorScale(scaleBarColorScale); 
 
-	// set the title of the gauge
-	gauge.title('Pressure');
+    // create a marker pointer
+    var marker = gauge.marker(0);
 
-	// set the starting point of the needle
-	gauge.needle().startRadius('0%');
+    // set the marker type
+    marker.type('star');
 
-	// configure color zones
-	gauge.range(0, {
-	    from: 0,
-	    to: 30,
-	    position: 'inside',
-	    fill: '#009900 0.4',
-	    startSize: 50,
-	    endSize: 50,
-	    radius: 98
-	});
+    // set the zIndex of the marker
+    marker.zIndex(10);
 
-	gauge.range(1, {
-	    from: 30,
-	    to: 70,
-	    position: 'inside',
-	    fill: '#ffa000 0.4',
-	    startSize: 50,
-	    endSize: 50,
-	    radius: 98
-	});
+    // set the width and offset of the marker pointer (both as percentages of the gauge width)
+    marker.width('4%');
+    marker.offset('39%');
 
-	gauge.range(2, {
-	    from: 70,
-	    to: 100,
-	    position: 'inside',
-	    fill: '#dd2c00 0.4',
-	    startSize: 50,
-	    endSize: 50,
-	    radius: 98
-	});
+    // configure the scale
+    var scale = gauge.scale();
+    scale.minimum(0);
+    scale.maximum(100);
+    scale.ticks().interval(10);
 
-	// set the container id
-	gauge.container('container');
+    // configure the axis
+    var axis = gauge.axis();
+    axis.width('1%');
+    axis.offset('30.5%');
+    axis.orientation('top');
 
-	// initiate drawing the gauge
-	gauge.draw();
-	});
+    // set the title of the gauge
+    gauge.title('Monthly Sales Level (th. USD)');
+
+    // set the container id
+    gauge.container('container');
+
+    // initiate drawing the gauge
+    gauge.draw();
+});
 </script>
 </body>
 </html>
-
 ```

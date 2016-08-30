@@ -61,9 +61,6 @@ anychart.onDocumentReady(function() {
 	// set the axis width
 	gauge.axis().width(1);
 
-	// set the title of the gauge
-	gauge.title('Pressure');
-
 	// set the starting point of the needle
 	gauge.needle().startRadius('0%');
 
@@ -98,6 +95,9 @@ anychart.onDocumentReady(function() {
 	    radius: 98
 	});
 
+	// set the title of the gauge
+	gauge.title('Pressure');
+
 	// set the container id
 	gauge.container('container');
 
@@ -111,7 +111,7 @@ anychart.onDocumentReady(function() {
 
 Here is the result all these steps lead to:
 
-{sample}GAUGE\_Basic\_Sample{sample}
+{sample}GAUGE\_Circular\_Basic\_Sample{sample}
 
 The sample above can be launched and explored in AnyChart PlayGround. You can also copy the following code to a file on your computer and open it in your browser to display the gauge:
 
@@ -157,9 +157,6 @@ anychart.onDocumentReady(function() {
 	// set the axis width
 	gauge.axis().width(1);
 
-	// set the title of the gauge
-	gauge.title('Pressure');
-
 	// set the starting point of the needle
 	gauge.needle().startRadius('0%');
 
@@ -194,12 +191,15 @@ anychart.onDocumentReady(function() {
 	    radius: 98
 	});
 
+	// set the title of the gauge
+	gauge.title('Pressure');
+
 	// set the container id
 	gauge.container('container');
 
 	// initiate drawing the gauge
 	gauge.draw();
-	});
+});
 </script>
 </body>
 </html>

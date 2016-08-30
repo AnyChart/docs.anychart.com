@@ -32,9 +32,6 @@
     // set the axis width
     gauge.axis().width(1);
 
-    // set the title of the gauge
-    gauge.title('Pressure');
-    
     // set the starting point of the needle
     gauge.needle().startRadius('0%');
 
@@ -68,6 +65,9 @@
         endSize: 50,
         radius: 98
     });
+
+    // set the title of the gauge
+    gauge.title('Pressure');
 
     // set the container id
     gauge.container('container');
