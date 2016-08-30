@@ -17,7 +17,7 @@ This is a full list of technical indicators AnyStock JavaScript Stock Chart prov
 				<th>Technical Indicator</th>
 			</tr>
 			<tr>
-				<td>[Aroon](Aroon))</td>
+				<td>[Aroon](Aroon)</td>
 			</tr>
 			<tr>
 				<td>[Simple Moving Average (SMA)](Simple_Moving_Average_\(SMA\))</td>

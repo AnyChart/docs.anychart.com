@@ -1,4 +1,4 @@
-# Rate of change
+# Aroon
 
 * [Overview](#overview)
 * [Adding indicator](#adding_indicator)
