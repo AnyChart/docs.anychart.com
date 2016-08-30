@@ -5,7 +5,7 @@
 * [Overview](#overview)
 * [Accumulation Distribution Line (ADL)](#)
 * [Adaptive Moving Average (AMA)](#)
-* [Aroon](#)
+* [Aroon](#aroon)
 * [Average True Range (ATR)](#)
 * [Bollinger Bands (BBands)](#)
 * [BBands %B](#)
@@ -54,7 +54,9 @@ Coming soon.
 
 ## Aroon
 
-Coming soon.
+Aroon indicator in each point is calculated according to the following formula:
+
+<center><img src="http://static.anychart.com/images/technical_indicators/aroon.png" width="650"></center>
 
 ## Average True Range (ATR)
 

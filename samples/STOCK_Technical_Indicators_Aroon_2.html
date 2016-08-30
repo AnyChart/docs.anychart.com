@@ -38,20 +38,20 @@
         var secondPlot = chart.plot(1);
         secondPlot.height('25%');
 
-        // create MACD indicator fast period of 12, slow of 26 an signal of 9
-        // series types are default 
-        macd_default = secondPlot.macd(mapping, 12, 26, 9);
+        // create Aroon indicator with period 25 and shown as lines on the second plot
+        aroon25 = secondPlot.roc(mapping, 25);
+        aroon25.upSeries().stroke('#bf360c');
+        aroon25.downSeries().stroke('#ff6d00');
 
         // create third plot on the chart
         var thirdPlot = chart.plot(2);
         thirdPlot.height('25%');
 
-        // create MACD indicator fast period of 12, slow of 26 an signal of 9
-        // series types are all lines, even histogram
-        var macd_all_lines = thirdPlot.macd(mapping, 14, 28, 10, "line", "line", "line");
-        macd_all_lines.macdSeries().stroke('#bf360c');
-        macd_all_lines.signalSeries().stroke('#ff6d00');
-        macd_all_lines.histogramSeries().stroke('#ffe082');       
+        // create Aroon indicator with period 30 and shown as spline on the third plot
+        aroon30 = thirdPlot.aroon(mapping);
+        aroon30.period(30);
+        aroon30.upSeries("spline").stroke('#bf360c', 2, '5 5 10');
+        aroon30.downSeries("spline").stroke('#ff6d00', 2, '5 5 10');              
 
         // create scroller series with mapped data
         chart.scroller().line(mapping);
