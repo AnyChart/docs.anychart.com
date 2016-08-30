@@ -38,71 +38,71 @@ Add the `<script>` tag with the code shown below to any place in the page. In th
 <script>
 anychart.onDocumentReady(function() {
 
-	// create a circular gauge
-	gauge = anychart.circularGauge();
+    // create a circular gauge
+    gauge = anychart.circularGauge();
 
-	// set data
-	gauge.data([73.2]);
+    // set data
+    gauge.data([73.2]);
 
-	// set the start and sweep angles
-	gauge.startAngle(270);
-	gauge.sweepAngle(180);
+    // set the start and sweep angles
+    gauge.startAngle(270);
+    gauge.sweepAngle(180);
 
-	// turn off the background frame
-	gauge.fill('#FFFFFF').stroke(null);
+    // turn off the background frame
+    gauge.fill('#FFFFFF').stroke(null);
 
-	// configure the axis scale
-	gauge.axis().scale().minimum(0);
-	gauge.axis().scale().maximum(100);
+    // configure the axis scale
+    gauge.axis().scale().minimum(0);
+    gauge.axis().scale().maximum(100);
 
-	// set the position of axis labels
-	gauge.axis().labels().position('outside');
+    // set the position of axis labels
+    gauge.axis().labels().position('outside');
 
-	// set the axis width
-	gauge.axis().width(1);
+    // set the axis width
+    gauge.axis().width(1);
 
-	// set the starting point of the needle
-	gauge.needle().startRadius('0%');
+    // set the starting point of the needle
+    gauge.needle().startRadius('0%');
 
-	// configure color zones
-	gauge.range(0, {
-	    from: 0,
-	    to: 30,
-	    position: 'inside',
-	    fill: '#009900 0.4',
-	    startSize: 50,
-	    endSize: 50,
-	    radius: 98
-	});
+    // configure color zones
+    gauge.range(0, {
+        from: 0,
+        to: 30,
+        position: 'inside',
+        fill: '#009900 0.4',
+        startSize: 50,
+        endSize: 50,
+        radius: 98
+    });
 
-	gauge.range(1, {
-	    from: 30,
-	    to: 70,
-	    position: 'inside',
-	    fill: '#ffa000 0.4',
-	    startSize: 50,
-	    endSize: 50,
-	    radius: 98
-	});
+    gauge.range(1, {
+        from: 30,
+        to: 70,
+        position: 'inside',
+        fill: '#ffa000 0.4',
+        startSize: 50,
+        endSize: 50,
+        radius: 98
+    });
 
-	gauge.range(2, {
-	    from: 70,
-	    to: 100,
-	    position: 'inside',
-	    fill: '#dd2c00 0.4',
-	    startSize: 50,
-	    endSize: 50,
-	    radius: 98
-	});
+    gauge.range(2, {
+        from: 70,
+        to: 100,
+        position: 'inside',
+        fill: '#dd2c00 0.4',
+        startSize: 50,
+        endSize: 50,
+        radius: 98
+    });
 
-	// set the title of the gauge
-	gauge.title('Pressure');
+    // set the title of the gauge
+    gauge.title('Pressure');
 
-	// set the container id
-	gauge.container('container');
+    // set the container id
+    gauge.container('container');
 
-	// initiate drawing the gauge
-	gauge.draw();
+    // initiate drawing the gauge
+    gauge.draw();
 });
 </script>
 ```
@@ -134,71 +134,71 @@ The sample above can be launched and explored in AnyChart PlayGround. You can al
     <script type="text/javascript">
 anychart.onDocumentReady(function() {
 
-	// create a circular gauge
-	gauge = anychart.circularGauge();
+    // create a circular gauge
+    gauge = anychart.circularGauge();
 
-	// set data
-	gauge.data([73.2]);
+    // set data
+    gauge.data([73.2]);
 
-	// set the start and sweep angles
-	gauge.startAngle(270);
-	gauge.sweepAngle(180);
+    // set the start and sweep angles
+    gauge.startAngle(270);
+    gauge.sweepAngle(180);
 
-	// turn off the background frame
-	gauge.fill('#FFFFFF').stroke(null);
+    // turn off the background frame
+    gauge.fill('#FFFFFF').stroke(null);
 
-	// configure the axis scale
-	gauge.axis().scale().minimum(0);
-	gauge.axis().scale().maximum(100);
+    // configure the axis scale
+    gauge.axis().scale().minimum(0);
+    gauge.axis().scale().maximum(100);
 
-	// set the position of axis labels
-	gauge.axis().labels().position('outside');
+    // set the position of axis labels
+    gauge.axis().labels().position('outside');
 
-	// set the axis width
-	gauge.axis().width(1);
+    // set the axis width
+    gauge.axis().width(1);
 
-	// set the starting point of the needle
-	gauge.needle().startRadius('0%');
+    // set the starting point of the needle
+    gauge.needle().startRadius('0%');
 
-	// configure color zones
-	gauge.range(0, {
-	    from: 0,
-	    to: 30,
-	    position: 'inside',
-	    fill: '#009900 0.4',
-	    startSize: 50,
-	    endSize: 50,
-	    radius: 98
-	});
+    // configure color zones
+    gauge.range(0, {
+        from: 0,
+        to: 30,
+        position: 'inside',
+        fill: '#009900 0.4',
+        startSize: 50,
+        endSize: 50,
+        radius: 98
+    });
 
-	gauge.range(1, {
-	    from: 30,
-	    to: 70,
-	    position: 'inside',
-	    fill: '#ffa000 0.4',
-	    startSize: 50,
-	    endSize: 50,
-	    radius: 98
-	});
+    gauge.range(1, {
+        from: 30,
+        to: 70,
+        position: 'inside',
+        fill: '#ffa000 0.4',
+        startSize: 50,
+        endSize: 50,
+        radius: 98
+    });
 
-	gauge.range(2, {
-	    from: 70,
-	    to: 100,
-	    position: 'inside',
-	    fill: '#dd2c00 0.4',
-	    startSize: 50,
-	    endSize: 50,
-	    radius: 98
-	});
+    gauge.range(2, {
+        from: 70,
+        to: 100,
+        position: 'inside',
+        fill: '#dd2c00 0.4',
+        startSize: 50,
+        endSize: 50,
+        radius: 98
+    });
 
-	// set the title of the gauge
-	gauge.title('Pressure');
+    // set the title of the gauge
+    gauge.title('Pressure');
 
-	// set the container id
-	gauge.container('container');
+    // set the container id
+    gauge.container('container');
 
-	// initiate drawing the gauge
-	gauge.draw();
+    // initiate drawing the gauge
+    gauge.draw();
 });
 </script>
 </body>
