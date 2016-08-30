@@ -11,7 +11,7 @@
 
   chart = anychart.area();
 
-  chart.title("Axes Labels Enable/Disable Sample");
+  chart.title("Axes Labels Scaling Sample");
 
   chart.area([
     ["January" , 10000],
@@ -24,43 +24,27 @@
   var yScale = chart.yScale();
   yScale.minimum(8000);
   yScale.maximum(20000);
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(2000);
+  var ticks = chart.yScale().ticks();
+  ticks.interval(2000);
 
   // set function to format y axis labels
   var yLabels = chart.yAxis(0).labels();
-  yLabels.textFormatter(dollarFormatter);
+  yLabels.textFormatter("$ {%Value}{groupsSeparator: }");
   // set y axis title
-  var yAxis = chart.yAxis(0);
-  yAxis.title("Revenue in US Dollars");
+  var yTitle = chart.yAxis(0).title();
+  yTitle.text("Revenue in US Dollars");
 
   // adjust additional axis
-  var yAxsi1 = chart.yAxis(1);
-  yAxsi1.orientation("right");
-  yAxsi1.title("Revenue in Euros");
+  var yAxis1 = chart.yAxis(1);
+  yAxis1.orientation("right");
+  yAxis1.title("Revenue in Euros");
 
   // formats labels of additional axis
   var yLabels1 = chart.yAxis(1).labels();
-  yLabels1.textFormatter(function(){
-    var value = this.value;
-    // scale USD to EUR
-    value = Math.round(value*0.7094716);
-    return "€ " + value;
-  });
+  yLabels1.textFormatter("€ {%Value}{scale:(113e-2)|( )}");
 
   var xAxis = chart.xAxis();
   xAxis.title("Month");
-
-  // limits length of x axis labels to 3 or less
-  chart.xAxis().labels().textFormatter(function(){
-    var value = this.value;
-    value = value.substr(0, 3);
-    return value
-  });
-
-  function dollarFormatter() {
-    return "$" + (this.value/1000) + " 000 USD";
-  }
 
   chart.container("container");
   chart.draw();

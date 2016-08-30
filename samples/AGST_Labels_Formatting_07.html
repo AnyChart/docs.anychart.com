@@ -9,69 +9,145 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="stage">anychart.onDocumentReady(function() {
 
+  // data set
+  data = anychart.data.set([
+    ["P1", 16, 20],
+    ["P2", 12, 18],
+    ["P3", 9, 14]
+  ]);
+
+  // data remapping
+  seriesData_1 = data.mapAs({x: [0], value: [1]});
+  seriesData_2 = data.mapAs({x: [0], value: [2]});
+
   stage = anychart.graphics.create("container");
 
-  // title settings
-  var mainTitle = anychart.ui.title();
-  mainTitle.parentBounds(0, 0, stage.width(), stage.height()*0.1);
-  mainTitle.text("Y-Axis Labels: width is set to 70 pixels");
-  mainTitle.container(stage);
-  mainTitle.draw();
+  // setting main title
+  title = anychart.ui.title();
+  title.parentBounds(0, 0, stage.width(), stage.height()*0.1);
+  title.text("Axes Labels Visual Setting & Positining");
+  title.container(stage);
+  title.draw();
 
-  // first chart
-  var firstChart = anychart.column();
+  // Chart without labels adjusting
+  defaultLabels = anychart.column();
 
-  // setting stroke for chart container
-  var firstBackground = firstChart.background();
-  firstBackground.stroke("#CCCCCC");
+  // setting title
+  defaultLabels.title("Default labels");
 
-  // setting position and bounds
-  firstChart.bounds(0, "10%", "100%", "45%");
-
-  // formatting labels value using function
-  var firstLabels = firstChart.yAxis().labels();
-  firstLabels.width(80);
-  firstLabels.hAlign("right");
-  firstLabels.textFormatter("{%Value}{groupsSeparator:.}");
-
-  firstChart.column([
-      ["P1", 698712],
-      ["P2", 378162],
-      ["P3", 739123],
-      ["P4", 515632],
-      ["P5", 161294]
-  ]);
+  // setting series data
+  defaultLabels.column(seriesData_1);
+  defaultLabels.column(seriesData_2);
 
   // draw container
-  firstChart.container(stage);
-  firstChart.draw();
+  defaultLabels.container(stage);
+  defaultLabels.draw();
 
 
-  // second chart
-  var secondChart = anychart.column();
+  // chart with rotated labels
+  rotatedLabels = anychart.column();
+  rotatedLabels.title("Rotated labels");
+  rotatedLabels.bounds("50%", "10%", "50%", "45%");
+  rotatedBackground = rotatedLabels.background();
+  rotatedBackground.stroke("#CCCCCC");
 
-  // adjusting chart container position
-  secondChart.bounds(0, "55%", "100%", "45%");
-  var secondBackground = secondChart.background();
-  secondBackground.stroke("#CCCCCC");
+  // set scale minimum
+  rotatedYScale = rotatedLabels.yScale();
+  rotatedYScale.minimum(0);
 
-  // adjusting axis labels using function
-  var secondYLabels = secondChart.yAxis().labels();
-  secondYLabels.width(80);
-  secondYLabels.hAlign("right");
+  // rotating labels
+  rotatedXAxis = rotatedLabels.xAxis().labels();
+  rotatedXAxis.rotation(-90);
+  rotatedYAxis = rotatedLabels.yAxis().labels();
+  rotatedYAxis.rotation(-90);
 
-  secondChart.column([
-    ["P1", 12],
-    ["P2", 62],
-    ["P3", 23],
-    ["P4", 32],
-    ["P5", 74]
+  rotatedLabels.column(seriesData_1);
+  rotatedLabels.column(seriesData_2);
+
+  rotatedLabels.container(stage);
+  rotatedLabels.draw();
+
+
+  // chart with stagger mode
+  staggerLabels = anychart.column();
+  staggerLabels.title("Stagger Labels");
+  staggerLabels.bounds(0, "55%", "50%", "45%");
+  staggerBackground = staggerLabels.background();
+  staggerBackground.stroke("#CCCCCC");
+
+  // enabling stagger mode
+  staggerxAxis = staggerLabels.xAxis();
+  staggerxAxis.staggerMode(true);
+  // adjusting settings for stagger mode
+  staggerxAxis.staggerLines(2);
+
+  // set scale minimum
+  staggerYScale = staggerLabels.yScale();
+  staggerYScale.minimum(0);
+
+  // data set for stagger mode sample
+  staggerData = anychart.data.set([
+    ["Category1", 16, 20],
+    ["Category2", 12, 18],
+    ["Category3", 9, 14],
+    ["Category4", 13, 15],
+    ["Category5", 19, 16],
+    ["Category6", 14, 10],
+    ["Category7", 11, 22],
+    ["Category8", 17, 11],
+    ["Category9", 9, 14]
   ]);
 
-  // draw
-  secondChart.container(stage);
-  secondChart.draw();
+  // data remapping for stagger sample
+  staggerSeriesData_1 = staggerData.mapAs({x: [0], value: [1]});
+  staggerSeriesData_2 = staggerData.mapAs({x: [0], value: [2]});
 
+  staggerLabels.column(staggerSeriesData_1);
+  staggerLabels.column(staggerSeriesData_2);
+
+  staggerLabels.container(stage);
+  staggerLabels.draw();
+
+
+  // chat with labels inside
+  labelsInside = anychart.scatter();
+  labelsInside.padding(10, 10, 0, 10);
+
+  // setting data
+  line = labelsInside.line([
+    [-4, 16],
+    [-2, 20],
+    [-1, 15],
+    [2, 20],
+    [3, 18],
+    [4, 16]
+  ]);
+  line.tooltip(false);
+
+  labelsInside.title("Labels Inside");
+  labelsInside.bounds("50%", "55%", "50%", "45%");
+  innerBackground = labelsInside.background();
+  innerBackground.stroke("#CCCCCC");
+
+  // adjusting scales
+  innerXTicks = labelsInside.xScale().ticks();
+  innerXTicks.interval(1);
+
+  // setting labels a bit higher and adjusting its values
+  innerLabels = labelsInside.xAxis().labels();
+  innerLabels.offsetY(-25);
+  innerLabels.width(45);
+
+  // disabling first and last labels
+  innerAxis = labelsInside.xAxis();
+  innerAxis.drawFirstLabel(false);
+  innerAxis.drawLastLabel(false);
+
+  // disabling labels for y axis
+  labelsInside.yAxis(false);
+
+  labelsInside.container(stage);
+  labelsInside.draw();
 });</script>
 </head>
 <body>

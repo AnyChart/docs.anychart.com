@@ -11,7 +11,7 @@
 
   chart = anychart.area();
 
-  chart.title("Axes Labels Visual Setting");
+  chart.title("Axes Labels Enable/Disable Sample");
 
   chart.area([
     ["January" , 10000],
@@ -27,28 +27,40 @@
   var yTicks = chart.yScale().ticks();
   yTicks.interval(2000);
 
-  yLabels.textWrap(true);
-  yLabels.textFormatter("${%Value}");
-  // set axes title
-  var yAxis = chart.yAxis();
+  // set function to format y axis labels
+  var yLabels = chart.yAxis(0).labels();
+  yLabels.textFormatter(dollarFormatter);
+  // set y axis title
+  var yAxis = chart.yAxis(0);
   yAxis.title("Revenue in US Dollars");
+
+  // adjust additional axis
+  var yAxsi1 = chart.yAxis(1);
+  yAxsi1.orientation("right");
+  yAxsi1.title("Revenue in Euros");
+
+  // formats labels of additional axis
+  var yLabels1 = chart.yAxis(1).labels();
+  yLabels1.textFormatter(function(){
+    var value = this.value;
+    // scale USD to EUR
+    value = Math.round(value*0.7094716);
+    return "€ " + value;
+  });
+
   var xAxis = chart.xAxis();
   xAxis.title("Month");
 
-  // set the font settings for the X axis labels
-  var xLabels = chart.xAxis().labels();
-  xLabels.fontFamily("Courier");
-  xLabels.fontColor("#125393");
-  xLabels.offsetY(5);
-  xLabels.padding(3);
-  xLabels.fontWeight("bold");
+  // limits length of x axis labels to 3 or less
+  chart.xAxis().labels().textFormatter(function(){
+    var value = this.value;
+    value = value.substr(0, 3);
+    return value
+  });
 
-  // background settings
-  var xLabelsBackground = chart.xAxis().labels().background();
-  xLabelsBackground.enabled(true);
-  xLabelsBackground.stroke("#cecece");
-  xLabelsBackground.cornerType("round");
-  xLabelsBackground.corners(5);
+  function dollarFormatter() {
+    return "$" + (this.value/1000) + " 000 USD";
+  }
 
   chart.container("container");
   chart.draw();

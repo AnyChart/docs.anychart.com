@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  chart = anychart.column();
+  chart = anychart.bar();
 
   // setting title
-  chart.title("X-Axis labels: width is 60px");
+  chart.title("Y axis Labels stick to the right");
 
   // seting data
-  chart.column([
-    ["People's Republic of China", 1336717952],
+  chart.bar([
+    ["People's\nRepublic\nof China", 1336717952],
     ["India", 1189172864],
-    ["United States of America", 313232032],
-    ["Russian Federation", 138739888],
+    ["United\nStates of\nAmerica", 313232032],
+    ["Russian\nFederation", 138739888],
     ["Japan", 126475664]
   ]);
 
@@ -30,8 +30,8 @@
   yLabels.textFormatter("${%Value}{scale: (1)(1000)(1000)(1000)|( k)( m)( M)( B)}");
   var xLabels = chart.xAxis().labels();
   xLabels.textWrap("byLetter");
-  xLabels.hAlign("center");
-  xLabels.width(60);
+  xLabels.width(75);
+  xLabels.hAlign("right");
 
   // draw chart
   chart.container("container");

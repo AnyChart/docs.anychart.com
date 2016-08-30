@@ -22,14 +22,14 @@
 
 ## Overview
 
-With AnyChart you have a full control over the axes labels, you can format them, tune visual appearance and position.
+With AnyChart, you've got a full control over the axes labels: you can format them, tune visual appearance and position.
 All major settings and features of axes labels are described in this tutorial.
 
 
 ## Enable or Disable
 
 Each axis in AnyChart has its own labels settings. All these settings can be configured in labels sub parameter of the given axis. 
-Labels for all axes are enabled by default. To enable or disable labels for the axis use the {api:anychart.core.axes.Linear#labels}enabled(){api} method:
+Labels for all axes are enabled by default. To enable or disable labels for an axis use the {api:anychart.core.axes.Linear#labels}enabled(){api} method:
 
 ```
 var labels = chart.xAxis().labels();
@@ -42,13 +42,13 @@ A line chart with labels enabled for both Y-Axes and disabled for X-Axis is show
 
 ## Formatting Labels
 
-In order to make chart readable and understandable it is very important to format axes labels in a proper way, e.g. add "$" prefix if values are given in dollars or add "°F" postfix if values are given in Fahrenheit degrees.
+In order to make a chart readable and understandable it is very important to format axes labels in a proper way, e.g. add "$" prefix if values are given in dollars or add "°F" postfix if values are given in Fahrenheit degrees.
   
-You can get a full control over the axis labels by using {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} method.
+You can get a full control over the axis labels with the {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} method.
   
-It's possible to make text formatting easier by using tokens - special substrings that represent each a label parameter. A token looks like {%KeywordName}, for example {%Value} or {%AxisName}. Before displaying the text each token is being replaced by a corresponding value. In the [Text Formatters article](Text_Formatters#tokens_list) you can find a list of available tokens.
+It's possible to make text formatting easier by using tokens - special substrings that represent each a label parameter. A token looks like {%KeywordName}, for example {%Value} or {%AxisName}. Before displaying each token is being replaced by a corresponding value. In the [Text Formatters article](Text_Formatters#tokens_list) you can find a list of available tokens.
 
-TextFormatter works with function or with a string with or without tokens. A default axis label shows the axis value and the default label textFormatter looks like the following:
+TextFormatter works with function or with a string with or without tokens. A default axis label shows the axis value and the default label's textFormatter looks like the following:
 
 ```
 chart.axis().textFormatter(function(){
@@ -60,7 +60,15 @@ The following code sample demonstrates setting the same parameter to show using 
 ```
 chart.axis().textFormatter("{%Value}");
 ```
-Tokens can be also used in xml and json, unlike other formatting methods.
+
+Tokens can be also used in xml and json, unlike other formatting methods. Setting tokens through the json format looks like the following:
+
+```
+"labels":{
+  "enabled":true,
+  "textFormatter":"$ {%Value}{groupsSeparator: }"
+}
+```
 
 
 ### Prefixes and Postfixes
@@ -71,7 +79,7 @@ There are several ways how to edit prefix or postfix of the label. The easiest w
 chart.yAxis().labels().textFormatter("${%Value}");
 ```
 
-The code above will show the axis value with the dollar sign as prefix. Also, it's possible to set a formatting function:
+The code above shows the axis value with the dollar sign as prefix. Also, it's possible to set a formatting function. This code recalculates the dollar-axis values into euro and sets the euro sign as a prefix:
 
 ```
 chart.yAxis(1).labels()textFormatter(function(){
@@ -89,14 +97,15 @@ chart.yAxis(1).labels()textFormatter(function(){
 
 It might be necessary to format the value that corresponds to the label, e.g. do scaling or some mathematical operations using tokens, textFormatter or any other javascript functions.
   
-  
 Here is a sample of financial chart with euro and dollar axes. Axis that represents dollar rate is set as main and the additional euro axis gets value from the dollar axis and transforms it into euro according to the exchange rate. Some separators are added to adjust X-axis labels visual appearance.
 
 ```
-// надо починить как-то чтоб пересчитывалось в токенах
+// formats labels of additional axis
+var yLabels1 = chart.yAxis(1).labels();
+yLabels1.textFormatter("€ {%Value}{scale:(113e-2)|()}");
 ```
 
-{sample}AGST\_Labels\_Formatting\_02\_1{sample}
+{sample}AGST\_Labels\_Formatting\_03{sample}
 
 Find more about text formatting parameters in the [Text Formatters article](Common_Settings/Text_Formatters#formatting_parameters).
 
@@ -114,7 +123,7 @@ chart.xAxis().labels().textFormatter(function(){
 });
 ```
 
-{sample}AGST\_Labels\_Formatting\_03{sample}
+{sample}AGST\_Labels\_Formatting\_04{sample}
 
 To limit the number of decimal characters or edit the separator use [formatting parameters](Common_Settings/Text_Formatters#formatting_parameters).
 
@@ -153,7 +162,7 @@ xLabelsBackground.cornerType("round");
 xLabelsBackground.corners(5);
 ```
 
-{sample}AGST\_Labels\_Formatting\_04{sample}
+{sample}AGST\_Labels\_Formatting\_05{sample}
 
 Find more about background settings in [Background tutorial](../Appearance_Settings/Background).
 
@@ -175,7 +184,7 @@ var xLabels = chart.xAxis().labels();
 xLabels.offsetY(5);
 ```
 
-{sample}AGST\_Labels\_Formatting\_04\_1{sample}
+{sample}AGST\_Labels\_Formatting\_06{sample}
 
 ### Padding
 
@@ -220,15 +229,14 @@ There are special methods for editing the first label (the one with the minimal 
 ```
 
 <a name="dashboard"/></a>
-{sample}AGST\_Labels\_Formatting\_05{sample}
+{sample}AGST\_Labels\_Formatting\_07{sample}
 
 
 <a name="y-axis_labels-fixed-width"/>
 ## Y-Axis Labels: Fixed Width
 
-It's possible to set fixed custom width for Y-Axis labels. This function may be of great use in Dashboards when it's necessary to sync several charts left and/or right border, which is especially needed when they are displayed in a column and share the same X-Axis arguments.
-   
-   
+It's possible to set fixed custom width for Y axis labels. This function may be of great use in dashboards when it's necessary to sync several charts left and/or right border, which is especially needed when they are displayed in a column and share the same X axis arguments.
+
 To set the axis width use {api:anychart.core.ui.Label#width}width(){api} attribute for {api:anychart.core.ui.Label}labels(){api}, which accepts positive integer values in pixels:
 
 ```
@@ -239,7 +247,7 @@ To set the axis width use {api:anychart.core.ui.Label#width}width(){api} attribu
 Sample dashboard shows two charts with values in completely different ranges: the upper chart shows up to hundreds of 
 thousands and the one beneath shows only hundreds. As the result, the charts' Y axes aren't synced to the left:
 
-{sample}AGST\_Labels\_Formatting\_06{sample}
+{sample}AGST\_Labels\_Formatting\_08{sample}
 
 ```
   var labels = chart.yAxis().labels();
@@ -248,9 +256,9 @@ thousands and the one beneath shows only hundreds. As the result, the charts' Y 
 
 There is the same data with Y axis label width set to 70 pixels, which results in synced left border:
 
-{sample}AGST\_Labels\_Formatting\_07{sample}
+{sample}AGST\_Labels\_Formatting\_09{sample}
 
-Please note that width resriction can lead to wrapping the labels' content, so the label text might not fit the custom width. 
+Please note that width restriction can lead to wrapping the labels' content, so the label text might not fit the custom width. 
 
 <a name="x-axis-labels-wrapping-width"/>
 ## X-Axis Labels: Fixed Width and Text Wrapping
@@ -259,7 +267,7 @@ Sometimes you may encounter a situation when point names (which are used as argu
 
 The following example demonstrates standard behavior of the X axis labels. As you can see long labels cause component to skip several labels in order to prevent overlapping:
 
-{sample}AGST\_Labels\_Formatting\_08{sample}
+{sample}AGST\_Labels\_Formatting\_10{sample}
 
 The following sample demonstrates exactly the same configuration but the labels width is set manually to 60 pixels. In this case, component wraps text in order to fit the width:
   
@@ -271,16 +279,15 @@ xLabels.width(60);
 xLabels.textWrap("byLetter");
 ```
 
-{sample}AGST\_Labels\_Formatting\_09{sample}
-
+{sample}AGST\_Labels\_Formatting\_11{sample}
 
 This works for other plot types as well. The following example demonstrates the same data displayed on a bar chart:
 
-{sample}AGST\_Labels\_Formatting\_10{sample}
+{sample}AGST\_Labels\_Formatting\_12{sample}
 
 ## Overlapping
 
-As far as your labels can be unlimited in width AnyChart provides some tools to make axis labels more manageable. You can define the labels' visibility for the case of overlapping. The {api:anychart.core.axes.Linear#overlapMode}overlapMode{api} method of a chart's {api:anychart.core.axes.Linear}axis{api} uses "noOverlap" and "allowOverlap" parameters to control overlapping labels:
+As far as labels can be unlimited in width, AnyChart provides some tools to make axis labels more manageable. It's possible to define the labels' visibility for the case of overlapping. The {api:anychart.core.axes.Linear#overlapMode}overlapMode{api} method of a chart's {api:anychart.core.axes.Linear}axis{api} uses "noOverlap" and "allowOverlap" parameters to control overlapping labels:
 
 ```
 // x axis getter
@@ -289,7 +296,7 @@ var xAxis = chart.xAxis();
 xAxis.overlapMode("allowOverlap");
 ```
 
-**Note**: the overlap is disabled by default. The sample below demonstrates x labels with overlapping allowed:
+**Note**: overlapping is disabled by default. The sample below demonstrates x labels with overlapping allowed:
 
-{sample}AGST\_Labels\_Formatting\_11{sample}
+{sample}AGST\_Labels\_Formatting\_13{sample}
 
