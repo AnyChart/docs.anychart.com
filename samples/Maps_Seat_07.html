@@ -9,55 +9,57 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css">
 
     <script x-export="chart">
-
 anychart.onDocumentReady(function () {
-// The data that have been used for this sample can be taken from the CDN
 $.ajax({
     type: "GET",
-    // The data that have been used for this sample can be taken from the CDN load SVG image using jQuery ajax
-    url: "http://static.anychart.com/images/docs/house1.svg",
+    url: "http://static.anychart.com/images/docs/house.svg",
     success: function (svgData) {
-
-        // data set
-        chart = anychart.seatMap([
-            {id: "Hall", value: "720", info: "30\' 0\" x 24\'0\"", sq: "720 sq. ft."},
-            {id: "Room2", value: "165", info: "15\' 0\" x 11\'0\"", sq: "165 sq. ft."},
-            {id: "WC", value: "49", info: "7\' 0\" x 7\'0\"", sq: "49 sq. ft."},
-            {id: "Room1", value: "143", info: "11\' 0\" x 13\'0\"", sq: "143 sq. ft."},
-            {id: "Kitchen", value: "208", info: "13\' 0\" x 16\'0\"", sq: "208 sq. ft."}
-        ]);
-        // set svg data
-        chart.geoData(svgData);
-
-        series = chart.getSeries(0);
-
-        
-        // set the tooltips
-        tooltips = series.tooltip();
-
-        // set the tooltips titles and body texts
-        tooltips.titleFormatter("{%id}");
-        tooltips.textFormatter("{%info}");
-
-        // set the tooltips colors
-        tooltips.background("green 0.8");
-        tooltips.separator("white");
-
-        // set the filling color
-        series.fill("white");
-
-        // load svg-file without elements with no values
-        chart.unboundRegions(anychart.enums.MapUnboundRegionsMode.HIDE);
-
-        // set container id for the chart
-        chart.container("container");
-        // initiate chart drawing
-        chart.draw();
-
-    }
+            createSeatMap(svgData);
+        }
+    });
 });
-});
-    </script>
+
+function createSeatMap(svg){
+    // create a new seat map
+    chart = anychart.seatMap();
+    // load SVG data
+    chart.geoData(svg);  
+    // set the title      
+    chart.title("Adjust tooltips");
+    // create new series
+    seatMapSeries = chart.choropleth();
+    // load data
+    seatMapSeries.data([
+        {id: "Hall", value: "720", info: "30\' 0\" x 24\'0\"", sq: "720 sq. ft."},
+        {id: "Room2", value: "165", info: "15\' 0\" x 11\'0\"", sq: "165 sq. ft."},
+        {id: "WC", value: "49", info: "7\' 0\" x 7\'0\"", sq: "49 sq. ft."},
+        {id: "Room1", value: "143", info: "11\' 0\" x 13\'0\"", sq: "143 sq. ft."},
+        {id: "Kitchen", value: "208", info: "13\' 0\" x 16\'0\"", sq: "208 sq. ft."}
+    ]);
+
+    // set the filling color
+    seatMapSeries.fill("white");
+
+    // set the tooltips
+    tooltips = seatMapSeries.tooltip();
+
+    // set the tooltips titles and body texts
+    tooltips.titleFormatter("{%id}");
+    tooltips.textFormatter("{%info}");
+
+    // set the tooltips colors
+    tooltips.background("green 0.8");
+    tooltips.separator("white");
+    
+    // load SVG image and don't show elements without values in the data set
+    chart.unboundRegions("hide");         
+
+    // set container id for the chart
+    chart.container("container");
+    // initiate chart drawing
+    chart.draw();  
+};
+</script>
 </head>
 <body>
 <div id="container"></div>

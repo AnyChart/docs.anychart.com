@@ -11,53 +11,54 @@
     <script x-export="chart">
 
 anychart.onDocumentReady(function () {
-// The data that have been used for this sample can be taken from the CDN
 $.ajax({
     type: "GET",
-    // The data that have been used for this sample can be taken from the CDN load SVG image using jQuery ajax
-    url: "http://static.anychart.com/images/docs/house1.svg",
+    url: "http://static.anychart.com/images/docs/house.svg",
     success: function (svgData) {
+            createSeatMap(svgData);
+        }
+    });
+});
 
-        // data set
-        chart = anychart.seatMap([
+function createSeatMap(svg){
+    // create a new seat map
+    chart = anychart.seatMap();
+    // load SVG data
+    chart.geoData(svg);              
+    // set the title      
+    chart.title("Adjust labels");  
+    // create new series
+    seatMapSeries = chart.choropleth();
+    // load data
+    seatMapSeries.data([
             {id: "Hall", value: "720", info: "30\' 0\" x 24\'0\"", sq: "720 sq. ft."},
             {id: "Room2", value: "165", info: "15\' 0\" x 11\'0\"", sq: "165 sq. ft."},
             {id: "WC", value: "49", info: "7\' 0\" x 7\'0\"", sq: "49 sq. ft."},
             {id: "Room1", value: "143", info: "11\' 0\" x 13\'0\"", sq: "143 sq. ft."},
             {id: "Kitchen", value: "208", info: "13\' 0\" x 16\'0\"", sq: "208 sq. ft."}
-        ]);
-        // set svg data
-        chart.geoData(svgData);
+    ]);
 
-        series = chart.getSeries(0);
+    // set the filling color
+    seatMapSeries.fill("white");
+    // allow labels to overlap each other
+    seatMapSeries.overlapMode("allowOverlap");
+    seatMapSeries.tooltip(false);
 
-        labels = series.labels();
+    labels = seatMapSeries.labels();
+    // enable labels and adjust them
+    labels.enabled(true);
+    seatMapSeries.labels({fontSize: 10, background: {fill: 'green .3'}});
+    labels.textFormatter("{%id} \n{%info} \n{%sq}");
+    labels.offsetY(-13);
 
-        // enable labels and adjust them
-        labels.enabled(false);
-        series.labels({fontSize: 10, background: {fill: 'green .3'}});
-        labels.textFormatter("{%id} \n{%info} \n{%sq}");
-        labels.offsetY(-13);
+    // load svg-file without elements with no values
+    chart.unboundRegions(anychart.enums.MapUnboundRegionsMode.HIDE);
 
-        // allow labels to overlap each other
-        series.overlapMode("allowOverlap");
-
-        series.tooltip(false);
-
-        // set the filling color
-        series.fill("white");
-
-        // load svg-file without elements with no values
-        chart.unboundRegions(anychart.enums.MapUnboundRegionsMode.HIDE);
-
-        // set container id for the chart
-        chart.container("container");
-        // initiate chart drawing
-        chart.draw();
-
-    }
-});
-});
+    // set container id for the chart
+    chart.container("container");
+    // initiate chart drawing
+    chart.draw();  
+};
     </script>
 </head>
 <body>
