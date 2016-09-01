@@ -11,45 +11,50 @@
 
   chart = anychart.area();
 
-  chart.title("Axes Labels Visual Setting");
+  chart.title("Axes Labels TextOverflow");
 
   chart.area([
-    ["January" , 10000],
-    ["February" , 12000],
-    ["March" , 10000],
-    ["April" , 11000],
-    ["May" , 19000]
+    ["Sales in January" , 10000],
+    ["Sales in February" , 12000],
+    ["Sales in March" , 10000],
+    ["Sales in April" , 11000],
+    ["Sales in May" , 19000]
   ]);
 
-  yScale = chart.yScale();
+  var yScale = chart.yScale();
   yScale.minimum(8000);
   yScale.maximum(20000);
-  yTicks = chart.yScale().ticks();
+  var yTicks = chart.yScale().ticks();
   yTicks.interval(2000);
 
-  yLabels = chart.yAxis().labels();
-  yLabels.textWrap(true);
-  yLabels.textFormatter("${%Value}");
-  // set axes title
-  yAxis = chart.yAxis();
+  // set function to format y axis labels
+  var yLabels = chart.yAxis(0).labels();
+  yLabels.textFormatter("${%Value}{groupsSeparator: }");
+  // set y axis title
+  var yAxis = chart.yAxis(0);
   yAxis.title("Revenue in US Dollars");
-  xAxis = chart.xAxis();
+
+  // adjust additional axis
+  var yAxsi1 = chart.yAxis(1);
+  yAxsi1.orientation("right");
+  yAxsi1.title("Revenue in Euros");
+
+  // formats labels of additional axis
+  var yLabels1 = chart.yAxis(1).labels();
+  yLabels1.textFormatter(function(){
+    var value = this.value;
+    // scale USD to EUR
+    value = Math.round(value*0.7094716);
+    return "€ " + value;
+  });
+
+  var xAxis = chart.xAxis();
   xAxis.title("Month");
 
-  // set the font settings for the X axis labels
-  xLabels = chart.xAxis().labels();
-  xLabels.fontFamily("Courier");
-  xLabels.fontColor("#125393");
-  xLabels.offsetY(5);
-  xLabels.padding(3);
-  xLabels.fontWeight("bold");
-
-  // background settings
-  xLabelsBackground = chart.xAxis().labels().background();
-  xLabelsBackground.enabled(true);
-  xLabelsBackground.stroke("#cecece");
-  xLabelsBackground.cornerType("round");
-  xLabelsBackground.corners(5);
+  // format labels
+  chart.xAxis().labels().width(45);
+  chart.xAxis().labels().height(50);
+  chart.xAxis().labels().textOverflow(anychart.graphics.vector.Text.TextOverflow.ELLIPSIS);
 
   chart.container("container");
   chart.draw();

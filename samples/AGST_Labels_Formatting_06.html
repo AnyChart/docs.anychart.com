@@ -11,7 +11,7 @@
 
   chart = anychart.area();
 
-  chart.title("Axes Labels Positining");
+  chart.title("Axes Labels Visual Setting");
 
   chart.area([
     ["January" , 10000],
@@ -21,33 +21,23 @@
     ["May" , 19000]
   ]);
 
-  var yScale = chart.yScale();
+  yScale = chart.yScale();
   yScale.minimum(8000);
   yScale.maximum(20000);
-  var yTicks = chart.yScale().ticks();
+  yTicks = chart.yScale().ticks();
   yTicks.interval(2000);
 
-  // set function to format y axis labels
-  var yLabels = chart.yAxis().labels();
-  yLabels.hAlign("center");
-  var xLabels = chart.xAxis().labels();
-  xLabels.offsetY(-30);
+  yLabels = chart.yAxis().labels();
   yLabels.textWrap(true);
-  yLabels.textFormatter(function(){
-    var value = this.value;
-    // scale USD to EUR
-    value = Math.round(value*6.65);
-    return "$" + this.value + "\n¥ " + value;
-  });
-
+  yLabels.textFormatter("${%Value}");
   // set axes title
-  var yAxis = chart.yAxis();
+  yAxis = chart.yAxis();
   yAxis.title("Revenue in US Dollars");
-  var xAxis = chart.xAxis();
+  xAxis = chart.xAxis();
   xAxis.title("Month");
 
   // set the font settings for the X axis labels
-  var xLabels = chart.xAxis().labels();
+  xLabels = chart.xAxis().labels();
   xLabels.fontFamily("Courier");
   xLabels.fontColor("#125393");
   xLabels.offsetY(5);
@@ -55,12 +45,11 @@
   xLabels.fontWeight("bold");
 
   // background settings
-  var xLabelsBackground = chart.xAxis().labels().background();
+  xLabelsBackground = chart.xAxis().labels().background();
   xLabelsBackground.enabled(true);
   xLabelsBackground.stroke("#cecece");
   xLabelsBackground.cornerType("round");
   xLabelsBackground.corners(5);
-
 
   chart.container("container");
   chart.draw();

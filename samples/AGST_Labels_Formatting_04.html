@@ -11,7 +11,7 @@
 
   chart = anychart.area();
 
-  chart.title("Axes Labels Enable/Disable Sample");
+  chart.title("Limit the number of symbols in the Axes Labels");
 
   chart.area([
     ["January" , 10000],
@@ -29,7 +29,7 @@
 
   // set function to format y axis labels
   var yLabels = chart.yAxis(0).labels();
-  yLabels.textFormatter(dollarFormatter);
+  yLabels.textFormatter("${%Value}{groupsSeparator: }");
   // set y axis title
   var yAxis = chart.yAxis(0);
   yAxis.title("Revenue in US Dollars");
@@ -57,10 +57,6 @@
     value = value.substr(0, 3);
     return value
   });
-
-  function dollarFormatter() {
-    return "$" + (this.value/1000) + " 000 USD";
-  }
 
   chart.container("container");
   chart.draw();

@@ -125,6 +125,18 @@ chart.xAxis().labels().textFormatter(function(){
 
 {sample}AGST\_Labels\_Formatting\_04{sample}
 
+Another way to limit the labels' length is to use the {api:anychart.core.ui.Label#width}width(){api} and the {api:anychart.core.ui.LabelsFactory.Label#textOverflow}textOverflow(){api} methods. The {api:anychart.core.ui.LabelsFactory.Label#textOverflow}textOverflow(){api} method allows to set how to show the text which overflows the defined width: simply cut it or to show it with an ellipsis in the restricted area.
+
+
+```
+// format labels
+chart.xAxis().labels().width(45);
+chart.xAxis().labels().height(50);
+chart.xAxis().labels().textOverflow(anychart.graphics.vector.Text.TextOverflow.ELLIPSIS);
+```
+
+{sample}AGST\_Labels\_Formatting\_05{sample}
+
 To limit the number of decimal characters or edit the separator use [formatting parameters](Common_Settings/Text_Formatters#formatting_parameters).
 
 ## Visual Appearance
@@ -162,7 +174,7 @@ xLabelsBackground.cornerType("round");
 xLabelsBackground.corners(5);
 ```
 
-{sample}AGST\_Labels\_Formatting\_05{sample}
+{sample}AGST\_Labels\_Formatting\_06{sample}
 
 Find more about background settings in [Background tutorial](../Appearance_Settings/Background).
 
@@ -184,7 +196,7 @@ var xLabels = chart.xAxis().labels();
 xLabels.offsetY(5);
 ```
 
-{sample}AGST\_Labels\_Formatting\_06{sample}
+{sample}AGST\_Labels\_Formatting\_07{sample}
 
 ### Padding
 
@@ -194,6 +206,8 @@ To change the paddings between the label's background borders and the text use {
 var normalYAxisLabels = normalLabels.yAxis().labels();
 normalYAxisLabels.padding(0, 10, 15, 0);
 ```
+
+{sample}AGST\_Labels\_Formatting\_08{sample}
 
 This method also allows to put the labels inside of a chart, i.e. on the other side of the axis they belong to. This is demonstrated in the [dashboard](#dashboard) below.
 
@@ -205,6 +219,8 @@ One of the most useful features of label positioning is ability to show rotated 
   var yAxisLabels = chart.yAxis().labels();
   yAxisLabels.rotation(90)
 ```
+
+{sample}AGST\_Labels\_Formatting\_09{sample}
 
 ### Stagger Mode
 
@@ -218,6 +234,8 @@ xAxis.staggerMode(true);
 xAxis.staggerLines(2);
 ```
 
+{sample}AGST\_Labels\_Formatting\_10{sample}
+
 ## First and Last Labels
 
 There are special methods for editing the first label (the one with the minimal value) on the axis and the last label (maximal value). You can force them to be shown or hide them using the {api:anychart.core.axes.Linear#drawFirstLabel}drawFirstLabel(){api} and {api:anychart.core.axes.Linear#drawLastLabel}drawLastLabel(){api} methods.
@@ -228,8 +246,7 @@ There are special methods for editing the first label (the one with the minimal 
   xAxis.drawLastLabel(false);
 ```
 
-<a name="dashboard"/></a>
-{sample}AGST\_Labels\_Formatting\_07{sample}
+{sample}AGST\_Labels\_Formatting\_11{sample}
 
 
 <a name="y-axis_labels-fixed-width"/>
@@ -247,7 +264,7 @@ To set the axis width use {api:anychart.core.ui.Label#width}width(){api} attribu
 Sample dashboard shows two charts with values in completely different ranges: the upper chart shows up to hundreds of 
 thousands and the one beneath shows only hundreds. As the result, the charts' Y axes aren't synced to the left:
 
-{sample}AGST\_Labels\_Formatting\_08{sample}
+{sample}AGST\_Labels\_Formatting\_12{sample}
 
 ```
   var labels = chart.yAxis().labels();
@@ -256,7 +273,7 @@ thousands and the one beneath shows only hundreds. As the result, the charts' Y 
 
 There is the same data with Y axis label width set to 70 pixels, which results in synced left border:
 
-{sample}AGST\_Labels\_Formatting\_09{sample}
+{sample}AGST\_Labels\_Formatting\_13{sample}
 
 Please note that width restriction can lead to wrapping the labels' content, so the label text might not fit the custom width. 
 
@@ -267,7 +284,7 @@ Sometimes you may encounter a situation when point names (which are used as argu
 
 The following example demonstrates standard behavior of the X axis labels. As you can see long labels cause component to skip several labels in order to prevent overlapping:
 
-{sample}AGST\_Labels\_Formatting\_10{sample}
+{sample}AGST\_Labels\_Formatting\_14{sample}
 
 The following sample demonstrates exactly the same configuration but the labels width is set manually to 60 pixels. In this case, component wraps text in order to fit the width:
   
@@ -279,11 +296,11 @@ xLabels.width(60);
 xLabels.textWrap("byLetter");
 ```
 
-{sample}AGST\_Labels\_Formatting\_11{sample}
+{sample}AGST\_Labels\_Formatting\_15{sample}
 
 This works for other plot types as well. The following example demonstrates the same data displayed on a bar chart:
 
-{sample}AGST\_Labels\_Formatting\_12{sample}
+{sample}AGST\_Labels\_Formatting\_16{sample}
 
 ## Overlapping
 
@@ -298,5 +315,5 @@ xAxis.overlapMode("allowOverlap");
 
 **Note**: overlapping is disabled by default. The sample below demonstrates x labels with overlapping allowed:
 
-{sample}AGST\_Labels\_Formatting\_13{sample}
+{sample}AGST\_Labels\_Formatting\_17{sample}
 

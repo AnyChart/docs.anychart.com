@@ -7,147 +7,63 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
+    <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data set
-  data = anychart.data.set([
-    ["P1", 16, 20],
-    ["P2", 12, 18],
-    ["P3", 9, 14]
+  chart = anychart.area();
+
+  chart.title("Axes Labels Positining");
+
+  chart.area([
+    ["January" , 10000],
+    ["February" , 12000],
+    ["March" , 10000],
+    ["April" , 11000],
+    ["May" , 19000]
   ]);
 
-  // data remapping
-  seriesData_1 = data.mapAs({x: [0], value: [1]});
-  seriesData_2 = data.mapAs({x: [0], value: [2]});
+  var yScale = chart.yScale();
+  yScale.minimum(8000);
+  yScale.maximum(20000);
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(2000);
 
-  stage = anychart.graphics.create("container");
+  // set function to format y axis labels
+  var yLabels = chart.yAxis().labels();
+  yLabels.hAlign("center");
+  var xLabels = chart.xAxis().labels();
+  xLabels.offsetY(-30);
+  yLabels.textWrap(true);
+  yLabels.textFormatter(function(){
+    var value = this.value;
+    // scale USD to EUR
+    value = Math.round(value*6.65);
+    return "$" + this.value + "\n¥ " + value;
+  });
 
-  // setting main title
-  title = anychart.ui.title();
-  title.parentBounds(0, 0, stage.width(), stage.height()*0.1);
-  title.text("Axes Labels Visual Setting & Positining");
-  title.container(stage);
-  title.draw();
+  // set axes title
+  var yAxis = chart.yAxis();
+  yAxis.title("Revenue in US Dollars");
+  var xAxis = chart.xAxis();
+  xAxis.title("Month");
 
-  // Chart without labels adjusting
-  defaultLabels = anychart.column();
+  // set the font settings for the X axis labels
+  var xLabels = chart.xAxis().labels();
+  xLabels.fontFamily("Courier");
+  xLabels.fontColor("#125393");
+  xLabels.offsetY(5);
+  xLabels.padding(3);
+  xLabels.fontWeight("bold");
 
-  // setting title
-  defaultLabels.title("Default labels");
-
-  // setting series data
-  defaultLabels.column(seriesData_1);
-  defaultLabels.column(seriesData_2);
-
-  // draw container
-  defaultLabels.container(stage);
-  defaultLabels.draw();
-
-
-  // chart with rotated labels
-  rotatedLabels = anychart.column();
-  rotatedLabels.title("Rotated labels");
-  rotatedLabels.bounds("50%", "10%", "50%", "45%");
-  rotatedBackground = rotatedLabels.background();
-  rotatedBackground.stroke("#CCCCCC");
-
-  // set scale minimum
-  rotatedYScale = rotatedLabels.yScale();
-  rotatedYScale.minimum(0);
-
-  // rotating labels
-  rotatedXAxis = rotatedLabels.xAxis().labels();
-  rotatedXAxis.rotation(-90);
-  rotatedYAxis = rotatedLabels.yAxis().labels();
-  rotatedYAxis.rotation(-90);
-
-  rotatedLabels.column(seriesData_1);
-  rotatedLabels.column(seriesData_2);
-
-  rotatedLabels.container(stage);
-  rotatedLabels.draw();
+  // background settings
+  var xLabelsBackground = chart.xAxis().labels().background();
+  xLabelsBackground.enabled(true);
+  xLabelsBackground.stroke("#cecece");
+  xLabelsBackground.cornerType("round");
+  xLabelsBackground.corners(5);
 
 
-  // chart with stagger mode
-  staggerLabels = anychart.column();
-  staggerLabels.title("Stagger Labels");
-  staggerLabels.bounds(0, "55%", "50%", "45%");
-  staggerBackground = staggerLabels.background();
-  staggerBackground.stroke("#CCCCCC");
-
-  // enabling stagger mode
-  staggerxAxis = staggerLabels.xAxis();
-  staggerxAxis.staggerMode(true);
-  // adjusting settings for stagger mode
-  staggerxAxis.staggerLines(2);
-
-  // set scale minimum
-  staggerYScale = staggerLabels.yScale();
-  staggerYScale.minimum(0);
-
-  // data set for stagger mode sample
-  staggerData = anychart.data.set([
-    ["Category1", 16, 20],
-    ["Category2", 12, 18],
-    ["Category3", 9, 14],
-    ["Category4", 13, 15],
-    ["Category5", 19, 16],
-    ["Category6", 14, 10],
-    ["Category7", 11, 22],
-    ["Category8", 17, 11],
-    ["Category9", 9, 14]
-  ]);
-
-  // data remapping for stagger sample
-  staggerSeriesData_1 = staggerData.mapAs({x: [0], value: [1]});
-  staggerSeriesData_2 = staggerData.mapAs({x: [0], value: [2]});
-
-  staggerLabels.column(staggerSeriesData_1);
-  staggerLabels.column(staggerSeriesData_2);
-
-  staggerLabels.container(stage);
-  staggerLabels.draw();
-
-
-  // chat with labels inside
-  labelsInside = anychart.scatter();
-  labelsInside.padding(10, 10, 0, 10);
-
-  // setting data
-  line = labelsInside.line([
-    [-4, 16],
-    [-2, 20],
-    [-1, 15],
-    [2, 20],
-    [3, 18],
-    [4, 16]
-  ]);
-  line.tooltip(false);
-
-  labelsInside.title("Labels Inside");
-  labelsInside.bounds("50%", "55%", "50%", "45%");
-  innerBackground = labelsInside.background();
-  innerBackground.stroke("#CCCCCC");
-
-  // adjusting scales
-  innerXTicks = labelsInside.xScale().ticks();
-  innerXTicks.interval(1);
-
-  // setting labels a bit higher and adjusting its values
-  innerLabels = labelsInside.xAxis().labels();
-  innerLabels.offsetY(-25);
-  innerLabels.width(45);
-
-  // disabling first and last labels
-  innerAxis = labelsInside.xAxis();
-  innerAxis.drawFirstLabel(false);
-  innerAxis.drawLastLabel(false);
-
-  // disabling labels for y axis
-  labelsInside.yAxis(false);
-
-  labelsInside.container(stage);
-  labelsInside.draw();
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

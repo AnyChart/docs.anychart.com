@@ -11,60 +11,38 @@
 
   stage = anychart.graphics.create("container");
 
-  // main title settings
-  mainTitle = anychart.ui.title();
-  mainTitle.parentBounds(0, 0, stage.width(), stage.height()*0.1);
-  mainTitle.text("Y axis Labels: width calculated automatically");
-  mainTitle.container(stage);
-  mainTitle.draw();
-
-  // first chart
-  firstChart = anychart.column();
-
-  // setting stroke for chart contaoner
-  firstBackground = firstChart.background();
-  firstBackground.stroke("#CCCCCC");
-
-  // setting position and bounds
-  firstChart.bounds(0, "10%", "100%", "45%");
-
-  // formatting labels value using function
-  firstYLabels = firstChart.yAxis().labels();
-  firstYLabels.textFormatter("{%Value}{groupsSeparator:.}");
-
-  firstChart.column([
-    ["P1", 698712],
-    ["P2", 378162],
-    ["P3", 739123],
-    ["P4", 515632],
-    ["P5", 161294]
+  // data set
+  data = anychart.data.set([
+    ["P1", 16, 20],
+    ["P2", 12, 18],
+    ["P3", 9, 14]
   ]);
+
+  // data remapping
+  seriesData_1 = data.mapAs({x: [0], value: [1]});
+  seriesData_2 = data.mapAs({x: [0], value: [2]});
+
+  // setting main title
+  title = anychart.ui.title();
+  title.parentBounds(0, 0, stage.width(), stage.height()*0.1);
+  title.text("Axes Labels Visual Setting & Positining");
+  title.container(stage);
+  title.draw();
+
+  // Chart without labels adjusting
+  defaultLabels = anychart.column();
+
+  // setting title
+  defaultLabels.title("Default labels");
+
+  // setting series data
+  defaultLabels.column(seriesData_1);
+  defaultLabels.column(seriesData_2);
 
   // draw container
-  firstChart.container(stage);
-  firstChart.draw();
+  defaultLabels.container(stage);
+  defaultLabels.draw();
 
-  // second chart
-  var secondChart = anychart.column();
-
-  // adjusting chart container position
-  secondChart.bounds(0, "55%", "100%", "45%");
-  var secondBackground = secondChart.background();
-  secondBackground.stroke("#CCCCCC");
-
-  // adjusting axis labels using function
-  var secondYLabels = secondChart.yAxis().labels();
-
-  secondChart.column([
-    ["P1", 12],
-    ["P2", 62],
-    ["P3", 23],
-    ["P4", 32],
-    ["P5", 74]
-  ]);
-
-  secondChart.container(stage);
-  secondChart.draw();
 });</script>
 </head>
 <body>
