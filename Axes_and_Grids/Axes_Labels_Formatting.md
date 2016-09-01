@@ -127,7 +127,6 @@ chart.xAxis().labels().textFormatter(function(){
 
 Another way to limit the labels' length is to use the {api:anychart.core.ui.Label#width}width(){api} and the {api:anychart.core.ui.LabelsFactory.Label#textOverflow}textOverflow(){api} methods. The {api:anychart.core.ui.LabelsFactory.Label#textOverflow}textOverflow(){api} method allows to set how to show the text which overflows the defined width: simply cut it or to show it with an ellipsis in the restricted area.
 
-
 ```
 // format labels
 chart.xAxis().labels().width(45);
@@ -146,7 +145,6 @@ Visual appearance of axes labels can be customized according to the chart design
 Learn more about these settings in: [Background tutorial](../Appearance_Settings/Background), [Text Settings tutorial](../Appearance_Settings/Text_Settings).
 
 The basic settings that allow to tune labels appearance and some special features (Multi-line labels) are considered below.
-
 
 ### Font
 
@@ -210,7 +208,7 @@ Setting padding allows to position labels somehow unusual, for example, inside o
 ```
 // setting labels a bit higher and adjusting its values
 innerLabels = labelsInside.xAxis().labels();
-innerLabels.offsetY(-25);
+innerLabels.offsetY(-30);
 ```
 
 {sample}AGST\_Labels\_Formatting\_08{sample}
