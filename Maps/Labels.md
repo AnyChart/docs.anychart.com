@@ -312,7 +312,7 @@ series_union.labels().connectorStroke("gold");
 
 ## Callout
 
-In AnyMaps, it's possible not to connect labels to their regions and display them in a row or column, on a side of the map. To create an array of this type use the {api:}callout(){api} method. This will create an entity similar to axis on charts. The callout entity is not being zoomed or moved while map is, it looks and behaves like a colorRange element.
+In AnyMaps, it's possible not to connect labels to their regions and display them in a row or column, on a side of the map. To create an array of this type use the {api:anychart.charts.Map#callout}callout(){api} method. This will create an entity similar to axis on charts. The callout entity is not being zoomed or moved while map is, it looks and behaves like a colorRange element.
 
 The code sample below demonstrates creating of two callouts, to the left and to the right of the maps:
 
@@ -322,7 +322,7 @@ calloutLeft = map.callout(0);
 calloutRight = map.callout(1);
 ```
 
-After creating the elements it's necessary to fill in the arrays with regions' IDs that will be demonstrated in those callout elements through the {api:}items(){api} method.
+After creating the elements it's necessary to fill in the arrays with regions' IDs that will be demonstrated in those callout elements through the {api:anychart.core.ui.Callout#items}items(){api} method.
 
 ```
 // fill in the arrays
@@ -330,7 +330,7 @@ calloutBottom.items(["US.AL", "US.FL", "US.GA", "US.SC", "US.NC", "US.VA", "US.M
 calloutRight.items(["US.NH", "US.VT", "US.MA", "US.CT", "US.RI", "US.NJ", "US.DE", "US.MD", "US.PA", "US.NY"]);
 ```
 
-The {api:}align(){api} method helps to set the position of the label text inside of the callout. The position of the whole callout is being set through the {api:}orientation(){api} method:
+The {api:anychart.core.ui.Callout#align}align(){api} method helps to set the position of the label text inside of the callout. The position of the whole callout is being set through the {api:anychart.core.ui.Callout#orientation}orientation(){api} method:
 
 ```
 // set the callout positions
@@ -342,7 +342,7 @@ calloutBottom.align("center");
 calloutRight.align("center");  
 ```
 
-To change the size of callout labels, use {api:}width(){api} method. As each callout label has a form of a square, only one measure is necessary. Though, if it's necessary to make the labels rectangular instead of a square, set the length to the whole callout element through the {api:}length(){api} element.
+To change the size of callout labels, use {api:anychart.core.ui.Callout#width}width(){api} method. As each callout label has a form of a square, only one measure is necessary. Though, if it's necessary to make the labels rectangular instead of a square, set the length to the whole callout element through the {api:anychart.core.ui.Callout#length}length(){api} element.
 
 ```  
 // set the width and length
@@ -353,7 +353,7 @@ calloutRight.width(50);
 
 {sample}Maps\_Labels\_12{sample}
 
-The text that labels represent can be formatted as the usual labels text, but remember that formatting labels of the whole series will lead to changes in all labels of this series, so if you need to format only those labels that are shown in the callout element, use data set. It's possible to change the size of the label text through the {api:}fontSize(){api} method and {api:}connnectorStroke(){api} method to set the color of the connector. The {api:anychart.core.ui.LabelsFactory.Label#textFormatter}textFormatter(){api} method allows to change the text displayed by the labels.
+The text that labels represent can be formatted as the usual labels text, but remember that formatting labels of the whole series will lead to changes in all labels of this series, so if you need to format only those labels that are shown in the callout element, use data set. It's possible to change the size of the label text through the {api:anychart.core.ui.LabelsFactory.Label#fontSize}fontSize(){api} method and {api:}connnectorStroke(){api} method to set the color of the connector. The {api:anychart.core.ui.LabelsFactory.Label#textFormatter}textFormatter(){api} method allows to change the text displayed by the labels.
 
 ```
 var dataSet_obama = anychart.data.set([
