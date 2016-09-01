@@ -148,7 +148,7 @@ Learn more about these settings in: [Background tutorial](../Appearance_Settings
 The basic settings that allow to tune labels appearance and some special features (Multi-line labels) are considered below.
 
 
-## Font
+### Font
 
 Font settings of labels are configured as any text. You can specify font face, size and color or set the text to HTML mode using {api:anychart.core.ui.Label#fontFamily}fontFamily(){api}, {api:anychart.core.ui.Label#fontSize}fontSize(){api}, {api:anychart.core.ui.Label#fontColor}fontColor(){api} and {api:anychart.core.ui.Label#useHtml}useHtml(){api} methods. 
 
@@ -185,8 +185,7 @@ AnyChart provides a number of options to control the position of axes labels, de
 ### Labels Alignment
 
 To specify how labels are aligned set {api:anychart.graphics.vector.Text#hAlign}hAlign(){api} and {api:anychart.graphics.vector.Text#vAlign}vAlign(){api} methods. Using the {api:anychart.graphics.vector.Text#hAlign}hAlign(){api} method makes a noticable change if the labels consist of several lines.
-  
-Also, to change the position of the labels and make them to show inside a chart plot set {api:anychart.core.ui.Label#offsetX}offsetX(){api} for yAxis and {api:anychart.core.ui.Label#offsetY}offsetY(){api} for xAxis.
+
 
 ```
 // set function to format axes labels
@@ -203,13 +202,18 @@ xLabels.offsetY(5);
 To change the paddings between the label's background borders and the text use {api:anychart.core.ui.Label#padding}padding(){api}. This parameter's value is to be set in px. Padding may contain up to 4 values in the following order: Top, Right, Bottom and Left. It is not necessary to set all 4 values. 
 
 ```
-var normalYAxisLabels = normalLabels.yAxis().labels();
-normalYAxisLabels.padding(0, 10, 15, 0);
+labels.padding(0, 10, 15, 0);
+```
+
+Setting padding allows to position labels somehow unusual, for example, inside of a chart (on the other side of the axis). The next sample shows how to use the {api:anychart.core.ui.Label#padding}padding(){api} method for that. Also, there are {api:anychart.core.ui.Label#offsetX}offsetX(){api} and {api:anychart.core.ui.Label#offsetY}offsetY(){api} methods can be used for the same purpose.
+
+```
+// setting labels a bit higher and adjusting its values
+innerLabels = labelsInside.xAxis().labels();
+innerLabels.offsetY(-25);
 ```
 
 {sample}AGST\_Labels\_Formatting\_08{sample}
-
-This method also allows to put the labels inside of a chart, i.e. on the other side of the axis they belong to. This is demonstrated in the [dashboard](#dashboard) below.
 
 ### Rotation
 
@@ -241,9 +245,10 @@ xAxis.staggerLines(2);
 There are special methods for editing the first label (the one with the minimal value) on the axis and the last label (maximal value). You can force them to be shown or hide them using the {api:anychart.core.axes.Linear#drawFirstLabel}drawFirstLabel(){api} and {api:anychart.core.axes.Linear#drawLastLabel}drawLastLabel(){api} methods.
 
 ```
-  var xAxis = chart.xAxis();
-  xAxis.drawFirstLabel(false);
-  xAxis.drawLastLabel(false);
+// disabling first and last labels
+staggerAxis = staggerLabels.xAxis();
+staggerAxis.drawFirstLabel(false);
+staggerAxis.drawLastLabel(false);
 ```
 
 {sample}AGST\_Labels\_Formatting\_11{sample}

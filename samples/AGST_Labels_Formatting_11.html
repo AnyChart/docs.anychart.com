@@ -11,43 +11,49 @@
 
   stage = anychart.graphics.create("container");
 
-  // chat with labels inside
-  labelsInside = anychart.scatter();
+  // chart with stagger mode
+  staggerLabels = anychart.column();
+  staggerLabels.title("Hiding the First and the Last labels");
+  staggerBackground = staggerLabels.background();
+  staggerBackground.stroke("#CCCCCC");
 
-  // setting data
-  line = labelsInside.line([
-    [-4, 16],
-    [-2, 20],
-    [-1, 15],
-    [2, 20],
-    [3, 18],
-    [4, 16]
+  // enabling stagger mode
+  staggerxAxis = staggerLabels.xAxis();
+  staggerxAxis.staggerMode(true);
+  // adjusting settings for stagger mode
+  staggerxAxis.staggerLines(2);
+
+  // set scale minimum
+  staggerYScale = staggerLabels.yScale();
+  staggerYScale.minimum(0);
+
+  // data set for stagger mode sample
+  staggerData = anychart.data.set([
+    ["Category1", 16, 20],
+    ["Category2", 12, 18],
+    ["Category3", 9, 14],
+    ["Category4", 13, 15],
+    ["Category5", 19, 16],
+    ["Category6", 14, 10],
+    ["Category7", 11, 22],
+    ["Category8", 17, 11],
+    ["Category9", 9, 14]
   ]);
-  line.tooltip(false);
 
-  labelsInside.title("Labels Inside");
-  innerBackground = labelsInside.background();
-  innerBackground.stroke("#CCCCCC");
+  // data remapping for stagger sample
+  staggerSeriesData_1 = staggerData.mapAs({x: [0], value: [1]});
+  staggerSeriesData_2 = staggerData.mapAs({x: [0], value: [2]});
 
-  // adjusting scales
-  innerXTicks = labelsInside.xScale().ticks();
-  innerXTicks.interval(1);
-
-  // setting labels a bit higher and adjusting its values
-  innerLabels = labelsInside.xAxis().labels();
-  innerLabels.offsetY(-25);
-  innerLabels.width(45);
+  staggerLabels.column(staggerSeriesData_1);
+  staggerLabels.column(staggerSeriesData_2);
 
   // disabling first and last labels
-  innerAxis = labelsInside.xAxis();
-  innerAxis.drawFirstLabel(false);
-  innerAxis.drawLastLabel(false);
+  staggerAxis = staggerLabels.xAxis();
+  staggerAxis.drawFirstLabel(false);
+  staggerAxis.drawLastLabel(false);
 
-  // disabling labels for y axis
-  labelsInside.yAxis(false);
-
-  labelsInside.container(stage);
-  labelsInside.draw();
+  staggerLabels.container(stage);
+  staggerLabels.draw();
 });</script>
 </head>
 <body>

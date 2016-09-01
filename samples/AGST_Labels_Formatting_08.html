@@ -11,38 +11,38 @@
 
   stage = anychart.graphics.create("container");
 
-  // data set
-  data = anychart.data.set([
-    ["P1", 16, 20],
-    ["P2", 12, 18],
-    ["P3", 9, 14]
+  // chart with labels inside
+  labelsInside = anychart.scatter();
+
+  // setting data
+  line = labelsInside.line([
+    [-4, 16],
+    [-2, 20],
+    [-1, 15],
+    [2, 20],
+    [3, 18],
+    [4, 16]
   ]);
+  line.tooltip(false);
 
-  // data remapping
-  seriesData_1 = data.mapAs({x: [0], value: [1]});
-  seriesData_2 = data.mapAs({x: [0], value: [2]});
+  labelsInside.title("Labels Inside");
+  innerBackground = labelsInside.background();
+  innerBackground.stroke("#CCCCCC");
 
-  // setting main title
-  title = anychart.ui.title();
-  title.parentBounds(0, 0, stage.width(), stage.height()*0.1);
-  title.text("Axes Labels Visual Setting & Positining");
-  title.container(stage);
-  title.draw();
+  // adjusting scales
+  innerXTicks = labelsInside.xScale().ticks();
+  innerXTicks.interval(1);
 
-  // Chart without labels adjusting
-  defaultLabels = anychart.column();
+  // setting labels a bit higher and adjusting its values
+  innerLabels = labelsInside.xAxis().labels();
+  innerLabels.offsetY(-25);
+  innerLabels.width(45);
 
-  // setting title
-  defaultLabels.title("Default labels");
+  // disabling labels for y axis
+  labelsInside.yAxis(false);
 
-  // setting series data
-  defaultLabels.column(seriesData_1);
-  defaultLabels.column(seriesData_2);
-
-  // draw container
-  defaultLabels.container(stage);
-  defaultLabels.draw();
-
+  labelsInside.container(stage);
+  labelsInside.draw();
 });</script>
 </head>
 <body>
