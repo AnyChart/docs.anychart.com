@@ -23,7 +23,6 @@ Use the {api:anychart.xxx}yearStarts(){api} method to set the number of the firs
 ```
 // set March as the beginning of the year
 calendar.yearStarts(2);
-
 ```
 Use the {api:anychart.xxx}weekStarts(){api} method to set the beginning of the week, days being numbered from 0 (Monday) to 6 (Sunday):
 
