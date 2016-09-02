@@ -7,46 +7,41 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function() {
 
-  chart = anychart.column();
+  stage = anychart.graphics.create("container");
 
-  // setting title
-  chart.title("X-Axis labels: width is 100% (no wrapping)");
+  // chart with labels inside
+  labelsInside = anychart.scatter();
 
   // setting data
-  chart.column([
-      ["People's Republic of China", 1336717952],
-      ["India", 1189172864],
-      ["United States of America", 313232032],
-      ["Russian Federation", 138739888],
-      ["Japan", 126475664]
+  line = labelsInside.line([
+    [-4, 16],
+    [-2, 20],
+    [-1, 15],
+    [2, 20],
+    [3, 18],
+    [4, 16]
   ]);
+  line.tooltip(false);
 
-  // adjusting labels
-  var yTicks = chart.yScale().ticks();
-  yTicks.interval(200000000);
-  var yLabels = chart.yAxis().labels();
-  yLabels.textFormatter(function(){
-    var value = this.value;
-    if (value>1000000){
-      if (value>999999999){
-        value = value/1000000000 + " B ";
-      }
-      else{
-        value = value/1000000 + " M ";
-      }
-    }
-    return value;
-  });
+  labelsInside.title("Labels Inside");
+  innerBackground = labelsInside.background();
+  innerBackground.stroke("#CCCCCC");
 
-  // force labels to hide value, if the previous one is too big, set text position to center
-  var xAxis = chart.xAxis();
-  xAxis.overlapMode(false);
+  // adjusting scales
+  innerXTicks = labelsInside.xScale().ticks();
+  innerXTicks.interval(1);
 
-  // draw chart
-  chart.container("container");
-  chart.draw();
+  // setting labels a bit higher and adjusting its values
+  innerLabels = labelsInside.xAxis().labels();
+  innerLabels.offsetY(-30);
+
+  // disabling labels for y axis
+  labelsInside.yAxis(false);
+
+  labelsInside.container(stage);
+  labelsInside.draw();
 });</script>
 </head>
 <body>

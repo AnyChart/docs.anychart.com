@@ -1,0 +1,79 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="stage">anychart.onDocumentReady(function() {
+
+  stage = anychart.graphics.create("container");
+
+  // title settings
+  var mainTitle = anychart.ui.title();
+  mainTitle.parentBounds(0, 0, stage.width(), stage.height()*0.1);
+  mainTitle.text("Y axis Labels: width is set to 70 pixels");
+  mainTitle.container(stage);
+  mainTitle.draw();
+
+  // first chart
+  var firstChart = anychart.column();
+
+  // setting stroke for chart container
+  var firstBackground = firstChart.background();
+  firstBackground.stroke("#CCCCCC");
+
+  // setting position and bounds
+  firstChart.bounds(0, "10%", "100%", "45%");
+
+  // formatting labels value using function
+  var firstLabels = firstChart.yAxis().labels();
+  firstLabels.width(80);
+  firstLabels.hAlign("right");
+  firstLabels.textFormatter("{%Value}{groupsSeparator:.}");
+
+  firstChart.column([
+      ["P1", 698712],
+      ["P2", 378162],
+      ["P3", 739123],
+      ["P4", 515632],
+      ["P5", 161294]
+  ]);
+
+  // draw container
+  firstChart.container(stage);
+  firstChart.draw();
+
+  // second chart
+  var secondChart = anychart.column();
+
+  // adjusting chart container position
+  secondChart.bounds(0, "55%", "100%", "45%");
+  var secondBackground = secondChart.background();
+  secondBackground.stroke("#CCCCCC");
+
+  // adjusting axis labels using function
+  var secondYLabels = secondChart.yAxis().labels();
+  secondYLabels.width(80);
+  secondYLabels.hAlign("right");
+
+  secondChart.column([
+    ["P1", 12],
+    ["P2", 62],
+    ["P3", 23],
+    ["P4", 32],
+    ["P5", 74]
+  ]);
+
+  // draw
+  secondChart.container(stage);
+  secondChart.draw();
+
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

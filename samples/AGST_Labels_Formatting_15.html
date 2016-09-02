@@ -1,0 +1,44 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  chart = anychart.column();
+
+  // setting title
+  chart.title("X-Axis labels: width is 60px");
+
+  // seting data
+  chart.column([
+    ["People's Republic of China", 1336717952],
+    ["India", 1189172864],
+    ["United States of America", 313232032],
+    ["Russian Federation", 138739888],
+    ["Japan", 126475664]
+  ]);
+
+  // adjusting labels
+  var yTicks = chart.yScale().ticks();
+  yTicks.interval(200000000);
+  var yLabels = chart.yAxis().labels();
+  yLabels.textFormatter("${%Value}{scale: (1)(1000)(1000)(1000)|(k)(m)(M)(B)}");
+  var xLabels = chart.xAxis().labels();
+  xLabels.textWrap("byLetter");
+  xLabels.hAlign("center");
+  xLabels.width(60);
+
+  // draw chart
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

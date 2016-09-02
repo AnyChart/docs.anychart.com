@@ -29,7 +29,7 @@
 
   // set function to format y axis labels
   var yLabels = chart.yAxis(0).labels();
-  yLabels.textFormatter(dollarFormatter);
+  yLabels.textFormatter("${%Value}");
   // set y axis title
   var yTitle = chart.yAxis(0).title();
   yTitle.text("Revenue in US Dollars");
@@ -43,29 +43,13 @@
   var yLabels1 = chart.yAxis(1).labels();
   yLabels1.textFormatter(function(){
     var value = this.value;
-    // scale of USD
-    value = value*0.7094716;
-    // num decimal
-    value = value.toFixed(2);
-    // thousand separator
-    var num = value.split(".");
-    var main = "";
-    for (var i=1;(i*3)<num[0].length;i++)
-      main = "'"+num[0].substr(num[0].length-(i*3), 3) + main;
-    var tail = num[0].substr(0, num[0].length-(main.length-main.length/4));
-    num[0]=tail+main;
-    // decimal Separator
-    value = num.join(".");
-
+    // scale USD to EUR
+    value = Math.round(value*0.7094716);
     return "€ " + value;
   });
 
   var xAxis = chart.xAxis();
   xAxis.title("Month");
-
-  function dollarFormatter() {
-    return "$" + (this.value/1000) + " 000 USD";
-  }
 
   chart.container("container");
   chart.draw();
