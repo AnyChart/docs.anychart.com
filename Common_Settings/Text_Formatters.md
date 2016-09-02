@@ -13,7 +13,6 @@
   * [getSeriesMeta](#getseriesmeta)
   * [getStat](#getstat)
 
-
 ## Overview
 
 Sometimes it might be necessary to display any text with the points on a chart for some reasons. That's when you need to use the {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} method.
@@ -361,7 +360,6 @@ lineTooltip.textFormatter("{%SeriesName}: {%Value}{decimalsCount:1}%");
 Here is a chart with a tooltip configured using tokens with options:
 
 {sample}CS\_TextFormatter\_01{sample}
-  
 
 ### Formatting Parameters List  
 
@@ -515,6 +513,7 @@ labels_winter.enabled(true);
 labels_winter.textFormatter(function(){
     return(this.seriesName + ": $" + this.value);
 });
+
 var labels_summer = series_summer.labels();
 labels_summer.enabled(true);
 labels_summer.textFormatter(function(){
@@ -579,7 +578,7 @@ tooltip.textFormatter(function(){
 });
 ```
 
-Here is a sample with additional information in the chart tooltip. Full information on tooltip settings can be found in [Tooltip article](../Common_Settings/Tooltip).
+Here is a sample with additional information in the chart tooltip. Full information on tooltip settings can be found in [Tooltip article](Tooltip).
 
 {sample}CS\_TextFormatter\_08{sample}
 
