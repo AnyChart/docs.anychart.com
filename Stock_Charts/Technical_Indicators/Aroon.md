@@ -58,12 +58,12 @@ Vizualization of an indicator depends on the type of a series you display it wit
 
 ```
 // create Aroon indicator with period 25 and shown as lines on the second plot
-aroon25 = plot_1.roc(mapping, 25);
+aroon25 = plot_1.aroon(mapping, 25);
 aroon25.upSeries().stroke('#bf360c');
 aroon25.downSeries().stroke('#ff6d00');
 
 // create Aroon indicator with period 30 and shown as splines on the third plot
-aroon30 = thirdPlot.aroon(mapping);
+aroon30 = plot_2.aroon(mapping);
 aroon30.period(30);
 aroon30.upSeries().seriesType("spline");
 aroon30.upSeries().stroke('#bf360c', 2, '5 5 10');
