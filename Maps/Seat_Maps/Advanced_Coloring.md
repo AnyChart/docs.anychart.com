@@ -3,29 +3,26 @@ Advanced Coloring
 ===========
 
 * [Overview](#overview)
-* [Colors](#colors)
- * [Elements coloring](#elements_coloring)
- * [Attributes coloring](#attributes_coloring)
- * [Palette](#palette)
- * [ColorScale and ColorRange](#colorscale_and_colorrange)
+* [Using SVG Image Colors](#using_svg_image_colors)
+* [Selective Coloring](#selective_coloring)
+* [Palette](#palette)
+* [Color Scale and Color Range](#color_scale_and_color_range)
 
 
 ## Overview
 
-There are several ways to color a set map. First option is to use the data set to set all the colors, as usual: read about it in the [Seat Map](Seat_Map) article. The second way is to use standard methods like {api:anychart.ui.Background#fill}fill(){api} and {api:anychart.ui.Background#stroke}stroke(){api}; the third way is to use classes of elements that are set in the tags in the SVG code; also, you may use AnyChart palette to set the necessary colors (this method is only reliable when there are several series on a Map) and use ColorScale and ColorRange - all these options are described in this tutorial.
+There are several ways to color a set map. First option is to use the data set to set all the colors, as usual: read about it in the [Seat Map](Seat_Map) article. The second way is to use standard methods like {api:anychart.ui.Background#fill}fill(){api} and {api:anychart.ui.Background#stroke}stroke(){api}; the third way is to use classes of elements that are set in the tags in the SVG code; also, you may use AnyChart palette to set the necessary colors (this method is only reliable when there are several series on a Map) and use Color Scale and Color Range - all these options are described in this tutorial.
 
-The SVG image was taken from the [Seat Map](Seat_Map) and [Preparing SVG Image](Preparing_SVG_Image) articles as the basis for the samples below. That's how an SVG image looks like with the default color palette:
+The SVG image in the sample below is the same file as in some samples from the from the [Seat Map](Seat_Map) and [Preparing SVG Image](Preparing_SVG_Image) articles as the basis for the samples below. That's how an SVG image looks like with the default AnyChart color palette:
 
-{sample}Maps\_Seat\_01{sample}
+{sample}Maps\_Seat\_Advanced\_Coloring\_00{sample}
 
 
-## Colors
+## Using SVG Image Colors
 
-Note that the colors of the picture in the sample are different from the defined (you can find the original SVG picture <a href="http://static.anychart.com/images/docs/house.svg">[here](../../images/house.svg)). To return the colors that were used in the original SVG picture and change the interactivity colors, use some methods that are considered below.
+The colors of the picture in the sample are different from the defined (you can find the original SVG picture <a href="http://static.anychart.com/images/docs/house.svg">[here](../../images/house.svg)). Using original colors used on the picture in considered in this paragraph, as well as using these colors as a basis of hovering and selecting colors. 
 
-### Elements coloring
-
-To return the colors that were used in the SVG picture, or to set new custom colors use the {api:anychart.ui.Background#fill}fill(){api} and {api:anychart.ui.Background#stroke}stroke(){api} methods. Though, it's important to remember that not all of the elements in the SVG file have the "fill" attribute. Before setting the value to the "fill" field it's necessary to check if the element has it, and if so, set the fill color to this element. Setting colors through this method will look like the following:
+To set the colors of the original SVG image, or to set new custom colors use the {api:anychart.ui.Background#fill}fill(){api} and {api:anychart.ui.Background#stroke}stroke(){api} methods. Though, it's important to remember that not all of the elements in the SVG file have the "fill" attribute. Before setting the value to the "fill" field it's necessary to check if the element has it, and if so, set the fill color to this element. Setting colors through this method will look like the following:
 
 
 ```
@@ -76,7 +73,10 @@ series.selectStroke(function () {
 {sample}Maps\_Seat\_Advanced\_Coloring\_02{sample}
 
 
-### Attributes coloring
+## Selective Coloring
+
+It's also possible to change the colors of separate elements, of parts of a group, if there are any. Though, it's necessary to know the group's structure and the classes set to those elements. In case no classes are set, it's necessary to set them, as the classes help to define the elements.
+и здесь написать что - можно раскрашивать отдельно, но для этого нужно знать какая структура у групп и если не заданы классы их нужно задать и это выглядит вот так (а не "let's set classes")
 
 It's also possible to change the colors of the parts of a group, if there are any. Let's set classes for those elements and put several elements into the plan and repaint them on being hovered.
 
@@ -126,16 +126,16 @@ chart.palette(["#ff0000", "#990000", "#ffcc33", "#996633"]);
 
 {sample}Maps\_Seat\_Advanced\_Coloring\_04{sample}
 
-## ColorScale and ColorRange
+## Color Scale and Color Range
 
-It's possible to add ColorRange and use ColorScale in AnyChart Seat Maps. ColorRange looks like a range bar, colored as gradient or like a number of colored boxes, each presenting a range of values. It is rather useful in identifying the value that each point on a map presents.
+It's possible to add Color Range and use Color Scale in AnyChart Seat Maps. Color Range looks like a range bar, colored as gradient or like a number of colored boxes, each presenting a range of values. It is rather useful in identifying the value that each point on a map presents.
 
-To enable ColorRange, set "true" as an argument to the {api:anychart.charts.Map#colorRange}colorRange(){api} method. To make it work properly set the colors and the type of the ColorScale. You can find information about colorScale adjusting in the [ColorRange article](../ColorRange).
+To enable Color Range, set "true" as an argument to the {api:anychart.charts.Map#Color Range}Color Range(){api} method. To make it work properly set the colors and the type of the Color Scale. You can find information about Color Scale adjusting in the [Color Range article](../Color Range).
 
 ```
 // set the ranges for the scale
-currentColorScale = anychart.scales.ordinalColor();
-currentColorScale.ranges([
+currentColor Scale = anychart.scales.ordinalColor();
+currentColor Scale.ranges([
         {from: 0, to: 3.5},
         {from: 4, to: 5.5},
         {from: 6, to: 7.5},
@@ -146,12 +146,12 @@ currentColorScale.ranges([
 var colors = anychart.color.singleHueProgression("#336666");
 
 // define the colors 
-currentColorScale.colors(colors);
-series.colorScale(currentColorScale);
+currentColor Scale.colors(colors);
+series.Color Scale(currentColor Scale);
 
-// create and enable the colorRange
-var colorRange = chart.colorRange();
-colorRange.enabled(true);
+// create and enable the Color Range
+var Color Range = chart.Color Range();
+Color Range.enabled(true);
 ```
 
 {sample}Maps\_Seat\_Advanced\_Coloring\_05{sample}
