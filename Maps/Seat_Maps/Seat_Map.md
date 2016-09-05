@@ -7,6 +7,7 @@ Seat Maps
 * [SVG Data](#svg_data)
  * [AJAX](#ajax)
  * [As String](#as_string)
+ * [HTML DOM Image](#html_dom_image)
 * [Map Data](#map_data)
 * [Coloring](#coloring)
 * [Unbound Regions](#unbound_regions)
@@ -63,6 +64,29 @@ svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
 ```
 
 {sample}Maps\_Seat\_02{sample}
+
+### HTML DOM Image
+
+This option is nice if the svg-file is located in the same directory as the map file. It is necessary to use event listeners in case you'd prefer this way of getting the SVG, as the file will not be loaded asynchronously.
+ 
+It's necessary to put an object with the link to the SVG-file into the "body" section of the Map file. 
+
+```
+<body>
+<div id="container"></div>
+<object style="width: 0; height: 0;" data="house.svg" type="image/svg+xml" id="house" width="100%" height="100%"></object>
+</body>
+```
+
+It's necessary to use {api:anychart#onDocumentLoad}onDocumentLoad(){api} method to let the code run after the page and all external files are loaded.
+
+```
+anychart.onDocumentLoad(function() {
+  // note that you should use onDocumentLoad to get the image
+  var imageElement = document.getElementById("house");
+```
+
+The sample that demonstrates using DOM can be found <a href="http://www.anychart.com/demos/seatmap/html-dom-embed.html">here<a>.
 
 
 ## Map Data
