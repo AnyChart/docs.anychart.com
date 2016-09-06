@@ -67,9 +67,9 @@ svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
 
 ### HTML DOM Image
 
-This option is nice if the svg-file is located in the same directory as the map file. It is necessary to use event listeners in case you'd prefer this way of getting the SVG, as the file will not be loaded asynchronously.
- 
-It's necessary to put an object with the link to the SVG-file into the "body" section of the Map file. 
+This option is nice if the svg-file is located in the same domen as the map file. It works only when this condition is met because of the Same Origin Policy which you can read about [here](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy). It is necessary to use event listeners in case you'd prefer this way of getting the SVG, as the file will not be loaded asynchronously.
+
+Put an object with the link to the SVG-file into the "body" section of the Map file. 
 
 ```
 <body>
@@ -78,7 +78,7 @@ It's necessary to put an object with the link to the SVG-file into the "body" se
 </body>
 ```
 
-It's necessary to use {api:anychart#onDocumentLoad}onDocumentLoad(){api} method to let the code run after the page and all external files are loaded.
+Use the {api:anychart#onDocumentLoad}onDocumentLoad(){api} method to let the code run after the page is loaded with all external files.
 
 ```
 anychart.onDocumentLoad(function() {
