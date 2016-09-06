@@ -117,11 +117,15 @@ series.hoverFill(function(){
 
 Palette is a color scheme which is being used to set the colors to the series of a chart. Using the {api:anychart.charts.Map#palette}palette(){api} method, it's possible to set the default palette or to define custom colors. Note that this method is effective when the SVG image contains several series.
 
-The following sample has no grouping, but it's reasonable to form several series out of seats due to their costs. Each seat has its own ID. 
+The following sample has no grouping, but it's reasonable to form several series out of seats due to the rows. Each seat has its own ID. The palette is being formed out of two different hues, which are considered as the original and the resulting colors of the 8-step gradient.
 
 ```
+palette = anychart.palettes.rangeColors();
+palette.items(["#F44336", "#FCEF86"]);
+palette.count(8);
+
 // setting custom colors to the chart palette
-chart.palette(["#ff0000", "#990000", "#ffcc33", "#996633"]);
+chart.palette(palette);
 ```
 
 {sample}Maps\_Seat\_Advanced\_Coloring\_04{sample}
@@ -130,12 +134,47 @@ chart.palette(["#ff0000", "#990000", "#ffcc33", "#996633"]);
 
 It's possible to add Color Range and use Color Scale in AnyChart Seat Maps. Color Range looks like a range bar, colored as gradient or like a number of colored boxes, each presenting a range of values. It is rather useful in identifying the value that each point on a map presents.
 
-To enable Color Range, set "true" as an argument to the {api:anychart.charts.Map#Color Range}Color Range(){api} method. To make it work properly set the colors and the type of the Color Scale. You can find information about Color Scale adjusting in the [Color Range article](../Color Range).
+To make it work properly set the colors and the type of the Color Scale. You can find information about Color Scale adjusting in the [Color Scale & Color Range article](../ColorRange).
+
+Now, look at the next sample. The ranges are set as an array. Each range has its own color defined through the data set. 
+
+```
+// set the ranges for the scale and corresponding colors
+colorScale = anychart.scales.ordinalColor();
+colorScale.ranges([
+    {from: 0, to: 3.5, color: "#FCEF86"},
+    {from: 4, to: 5.5, color: "#EC8A00"},
+    {from: 6, to: 7.5, color: "#1368C4"},
+    {from: 8, to: 12, color: "#9F0856"}
+]);
+```
+
+After being created, a Color Scale should be bend to a series:
+
+```
+// set color scale to a series 
+series.colorScale(colorScale);
+```
+
+So, each series on a map is able to have its own Color Scale, which can be quite useful in some situations.
+
+Color Scale and Color Range are different objects. Creating and enabling the Color Scale doesn't mean that the Color Range automatically appears in a chart. To add a Color Range use {api}colorrange(){api} or {api}enabled(){api} property of a Color Range entity.
+
+```
+// create and enable the colorRange
+chart.colorRange(true); 
+```
+
+{sample}Maps\_Seat\_Advanced\_Coloring\_05{sample}
+
+
+There are some other ways to set colors for a Color Scale; for example, it's possible to set a gradient mode, which you can find more about in the [Color Range article](../Color_Range). Setting colors for diggerent ranges as a gradient of a hue (or several hues) can make the chart more illustrative. Also, it makes unnecessary to set a distinct color for each value range.
+In the sample below the ranges are set without colors for each of the ranges, but the colors of the Color Scale are defined as a progression of the hue through the {api:anychart.color#singleHueProgression}singleHueProgression(){api} function. 
 
 ```
 // set the ranges for the scale
-currentColor Scale = anychart.scales.ordinalColor();
-currentColor Scale.ranges([
+currentColorScale = anychart.scales.ordinalColor();
+currentColorScale.ranges([
         {from: 0, to: 3.5},
         {from: 4, to: 5.5},
         {from: 6, to: 7.5},
@@ -146,12 +185,12 @@ currentColor Scale.ranges([
 var colors = anychart.color.singleHueProgression("#336666");
 
 // define the colors 
-currentColor Scale.colors(colors);
-series.Color Scale(currentColor Scale);
+currentColorScale.colors(colors);
+series.ColorScale(currentColorScale);
 
 // create and enable the Color Range
-var Color Range = chart.Color Range();
-Color Range.enabled(true);
+var colorrange = chart.colorrange();
+colorrange.enabled(true);
 ```
 
-{sample}Maps\_Seat\_Advanced\_Coloring\_05{sample}
+{sample}Maps\_Seat\_Advanced\_Coloring\_06{sample}
