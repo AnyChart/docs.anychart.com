@@ -17,7 +17,7 @@ Seat Maps
 
 ## Overview
 
-Seat Maps are diagrams of the seat layout inside a building, passenger aircraft or else. Aircraft Seat Maps are published by airlines for informational purposes, and they are used by passengers to select a seat when booking a ticket or checking in for a flight. Theatre, stadium or arena seat maps are used the same way. With AnyMap you can create any kind of seat maps, schemes or interactive layouts.
+Seat Map is a diagram of a seat layout inside a building, passenger aircraft or else. Aircraft Seat Maps are published by airlines for informational purposes, and they are used by passengers to select a seat when booking a ticket or checking in for a flight. Theatre, stadium or arena seat maps are used the same way. With AnyMap you can create any kind of seat maps, schemes or interactive layouts.
 
 
 ## Preparing SVG Image
@@ -133,7 +133,7 @@ Colors can be also defined through the SVG code and several other ways. See the 
 
 Use the {api:anychart.charts.Map#unboundRegions}unboundRegion(){api} method to define how the regions (points, seats) that have no value defined in the data set.
 
-There are two modes of coloring unboun regions: "as-is" and "hide". In the "as-is" mode the unbound region is colored according to the settings in the SVG image, with no reaction when being hovered or selected:
+There are two modes of coloring unbound regions: "as-is" and "hide". In the "as-is" mode the unbound region is colored according to the settings in the SVG image, with no reaction when being hovered or selected:
 
 ```
 // load SVG image using original colors used for points without values in the data set

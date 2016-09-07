@@ -154,7 +154,7 @@ series.colorScale(colorScale);
 
 So, each series on a map is able to have its own Color Scale, which can be quite useful in some situations.
 
-Color Scale and Color Range are different objects. Creating and enabling the Color Scale doesn't mean that the Color Range automatically appears in a chart. To add a Color Range use {api:anychart.charts.Map#colorRange}colorrange(){api} or {api:anychart.core.ui.ColorRange#enabled}enabled(){api} property of a Color Range entity.
+Color Scale and Color Range are different objects. Creating and enabling the Color Scale doesn't mean that the Color Range automatically appears in a chart. To add a Color Range use {api:anychart.charts.Map#colorRange}colorRange(){api} or {api:anychart.core.ui.ColorRange#enabled}enabled(){api} method of a Color Range control.
 
 ```
 // create and enable the colorRange
@@ -164,8 +164,8 @@ chart.colorRange(true);
 {sample}Maps\_Seat\_Advanced\_Coloring\_05{sample}
 
 
-There are some other ways to set colors for a Color Scale; for example, it is possible to set a gradient mode, which you can find more about in the [Color Range article](../Color_Range). Setting colors for diggerent ranges as a gradient of a hue (or several hues) can make the chart more illustrative. Also, it makes unnecessary to set a distinct color for each value range.
-In the sample below the ranges are set without colors for each of the ranges, but the colors of the Color Scale are defined as a progression of the hue through the {api:anychart.color#singleHueProgression}singleHueProgression(){api} function. 
+There are some other ways to set colors for a Color Scale; for example, it is possible to set a gradient mode, which you can find more about in the [Color Range article](../Color_Range). Setting ranges' colors using color gradient can make the chart more illustrative. Also, it makes unnecessary to set a distinct color for each value range.
+In the sample below the ranges are set without colors for each of them, but the colors of the Color Scale are defined as a progression of a hue through the {api:anychart.color#singleHueProgression}singleHueProgression(){api} function. 
 
 ```
 // set the ranges for the scale
@@ -185,7 +185,7 @@ currentColorScale.colors(colors);
 series.ColorScale(currentColorScale);
 
 // create and enable the Color Range
-var colorrange = chart.colorrange();
+var colorrange = chart.colorRange();
 colorrange.enabled(true);
 ```
 
