@@ -67,9 +67,9 @@ svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
 
 ### HTML DOM Image
 
-This option is nice if the svg-file is located in the same domen as the map file. It works only when this condition is met because of the Same Origin Policy which you can read about [here](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy). It is necessary to use event listeners in case you'd prefer this way of getting the SVG, as the file will not be loaded asynchronously.
+Another option is to embed image in HTML DOM and then obtain it from the DOM when page is loaded. **Note** that this option works only when the SVG file is located in the same domain as the map file because of the [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy). 
 
-Put an object with the link to the SVG-file into the "body" section of the Map file. 
+Put an '<object>' with the link to the SVG file into the '<body>' section of the Map file. 
 
 ```
 <body>
@@ -85,8 +85,7 @@ anychart.onDocumentLoad(function() {
   // note that you should use onDocumentLoad to get the image
   var imageElement = document.getElementById("house");
 ```
-
-The sample that demonstrates using DOM can be found <a href="http://www.anychart.com/demos/seatmap/html-dom-embed.html">here<a>.
+Take a look at the <a href="http://www.anychart.com/demos/seatmap/html-dom-embed.html">AnyChart Seat map sample</a> with an SVG file loaded from HTML DOM.
 
 
 ## Map Data

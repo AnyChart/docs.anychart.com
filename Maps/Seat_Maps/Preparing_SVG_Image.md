@@ -12,12 +12,12 @@ Preparing SVG Image
 
 ## Overview
 
-In this article you will find a process of creating an SVG picture suitable for using in AnyChart Seat Maps. Adobe Illustrator is used here for drawing a picture, but it's possible to use any other SVG supporting program.
+In this article you will find a process of creating an SVG picture suitable for using in AnyChart Seat Maps. Adobe Illustrator is used here for drawing a picture, but it is possible to use any other SVG supporting program.
 
 
 ## Creating a picture
 
-Let's create a picture as a usual project in Illustrator, using its basic components and tools. Let's draw a simple house plan. For drawing, let's use a "figures" and a "feather" tools for creating squares, circles, polygons and curves. 
+Let's create a picture as a usual project in Illustrator, using its basic components and tools. Let's draw a simple house plan. For drawing use a "figures" and a "feather" tools for creating squares, circles, polygons and curves. 
 
 Create the image file: "File" -> "New":
 
@@ -29,13 +29,13 @@ Let's first define the perimeter and form of the house and use a "Rectangle Tool
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic03\_rectangle.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic03\_rectangle.png" alt="pic03\_rectangle" title="pic03\_rectangle" border="0" width=600 align="center"></a>
 
-Now, it's possible to draw the walls and partitions inside, forming the rooms. You can use several tools: Line Segment or Arc Tool (they both are under the same pic of Line Segment Tool, to show other variations of Segment tools click the Line Segment Tool and hold the mouse button for a couple of seconds), Rectangle Tool and its variations, Pen Tool, and the Slice Tool might be quite useful for planning. Let's use Line Segments to draw the walls.
+Now, it is possible to draw the walls and partitions inside, forming the rooms. You can use several tools: Line Segment or Arc Tool (they both are under the same pic of Line Segment Tool, to show other variations of Segment tools click the Line Segment Tool and hold the mouse button for a couple of seconds), Rectangle Tool and its variations, Pen Tool, and the Slice Tool might be quite useful for planning. Let's use Line Segments to draw the walls.
 
 Note: to draw a straight line or curve at an angle, multiple of 45* or 90*, hold the Shift key on your keyboard while drawing.
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic04\_preplan.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic04\_preplan.png" alt="pic04\_preplan" title="pic04\_preplan" border="0" width=600 align="center"></a>
 
-After the walls are drawn, it's time to draw the doors. Let's mark them as two short lines on a wall.
+After the walls are drawn, it is time to draw the doors. Let's mark them as two short lines on a wall.
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic05\_preplan\_with\_doors.png"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic05\_preplan\_with\_doors.png" alt="pic05\_preplan\_with\_doors" title="pic05\_preplan\_with\_doors" border="0" width=600 align="center"></a>
 
@@ -61,12 +61,12 @@ Now, the layout of the house is visible again. Let's add some "furniture" into t
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic10\_fixed\_perimeter.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic10\_fixed\_perimeter.png" alt="pic10\_fixed\_perimeter" title="pic10\_fixed\_perimeter" border="0" width=600 align="center"></a>
 
-The Rectangle, Line and Arc Tools were used in creating the picture above. This picture is unfinished yet, it becomes only a basis for the working SVG file. Now it's time to work with grouping to have each room as a group, which will help to make the map interactive.
+The Rectangle, Line and Arc Tools were used in creating the picture above. This picture is unfinished yet, it becomes only a basis for the working SVG file. Now it is time to work with grouping to have each room as a group, which will help to make the map interactive.
 
 
 ## Grouping
 
-To make the image suitable for using in AnyChart Seat Maps, let's group elements in a way it's convenient to work with them. It's better to outline each room as a separate path, so they will become separate shapes. 
+To make the image suitable for using in AnyChart Seat Maps, let's group elements in a way it is convenient to work with them. It is better to outline each room as a separate path, so they will become separate shapes. 
 
 To group several elements, select all of them, right-click and select "Group". Don't forget to join the paths if you used lines/arcs for drawing, otherwise you won't have any opportunity to fill the objects with color.
 
@@ -78,7 +78,7 @@ After each room is a separate group and all groups are ready for the further tra
 
 ## Setting ID
 
-Now it's time to give an ID for each group. These groups will later become the Map points (regions). 
+Now it is time to give an ID for each group. These groups will later become the Map points (regions). 
 
 There are two options: you can set the ID in Adobe Illustrator or through the code. 
 
@@ -98,7 +98,7 @@ Now, let's do the same with the rooms.
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic14\_layers\_rooms.png"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic14\_layers\_rooms.png" alt="pic14\_layers\_rooms" title="pic14\_layers\_rooms" border="0" width=600 align="center"></a> 
 
-It's a good idea to group doors and furniture and put them inside the groups of those rooms they belong to. That's what the Layers window will show after the 
+It is a good idea to group lines, curves and shapes that form doors and furniture and put them inside of the groups of those rooms they belong to. The "Layers" window shows the content of the groups. 
 
 Save the picture in .SVG format. 
 
@@ -108,7 +108,7 @@ Another way to set the names for groups is to do it through the SVG code of the 
 
 ### SVG Code
 
-Open this file in any editor that supports SVG files. Look through the code. All "g" tags mean "groups" - those groups which creation is demonstrated in the picture before. Add the "id" field to each group you need to be highlighted (rooms in the current case). Remember that id's have to be unique.
+Open this file in any editor that supports SVG files. Look through the code. All "g" tags mean "groups" - those groups which creation is demonstrated in the picture before. Add the "id" field to each group you need to be highlighted (rooms in the current case). Remember that IDs have to be unique.
 
 ```
 <g id="kitсhen">
@@ -118,7 +118,7 @@ Open this file in any editor that supports SVG files. Look through the code. All
 </g>
 ```
 
-Inline groups might have its own id's due to some reasons. Elements inside of the groups might have classes; set classes to each element you need to react on hovering or selecting. All elements that belong to the same class will have the same interactive settings, so be careful with setting them. Let's set the classes to the texts.
+Inline groups might have their own ID's due to some reasons. Elements inside of the groups might have classes; set classes to each element you need to react on hovering or selecting. All elements that belong to the same class will have the same interactive settings, so be careful with setting them. Let's set the classes to the texts.
 
 ```
 <text class="info" transform="matrix(1 0 0 1 172.5244 131.3237)"><tspan x="0" y="0" fill="#996633" font-family="'ArialMT'" font-size="16.6934">Room 1</tspan><tspan x="-21.189" y="20.032" fill="#996633" font-family="'ArialMT'" font-size="16.6934">11&apos; 0&quot; x 13&apos; 0&quot;</tspan></text>

@@ -40,13 +40,13 @@ function createSeatMap(svg){
     // load svg-file how it looked(colors stroke/fill except for elements of series)
     chart.unboundRegions("as-is");
 
-    // sets fill series
+    // sets series fill 
     seatMapSeries.fill(function () {
         var attrs = this.attributes;
         if (attrs) return attrs.fill;
     });
 
-    // sets stroke series
+    // sets series stroke 
     seatMapSeries.stroke(function () {
         var attrs = this.attributes;
         // if the stroke attribute exists in the SVG file then color it with a color set in the document
