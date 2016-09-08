@@ -31,25 +31,25 @@ Let's first define the perimeter and form of the house and use a "Rectangle Tool
 
 Now, it is possible to draw the walls and partitions inside, forming the rooms. You can use several tools: Line Segment or Arc Tool (they both are under the same picture of Line Segment Tool, to show other variations of Segment tools click the Line Segment Tool and hold the mouse button for a couple of seconds), Rectangle Tool and its variations, Pen Tool, and the Slice Tool might be quite useful for planning. Let's use Line Segments to draw the walls.
 
-Note: to draw a straight line or curve at an angle, multiple of 45* or 90*, hold the Shift key on your keyboard while drawing.
+Note: to draw a straight line or curve at an angle, multiple of 45°, hold the Shift key on your keyboard while drawing.
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic04\_preplan.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic04\_preplan.png" alt="pic04\_preplan" title="pic04\_preplan" border="0" width=600 align="center"></a>
 
-After the walls are drawn, it is time to draw the doors. Let's mark them as two short lines on a wall.
+After the walls are drawn, it is time to draw the doors. In this plan they are marked as two short lines on a wall.
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic05\_preplan\_with\_doors.png"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic05\_preplan\_with\_doors.png" alt="pic05\_preplan\_with\_doors" title="pic05\_preplan\_with\_doors" border="0" width=600 align="center"></a>
 
 Now, let's get rid of the extra elements like paths and parts of figures that are not necessary anymore.
 
-Adobe Illustrator has a panel of tools, which are very useful in some cases about shapes and figures. For example, on the current plan, the shape of the house perimeter is complicated: the main entrance is not on the same line as surrounding rooms, and the hall has got a full-height window in a shape of arc. Let's subtract the small rectangle that barricades the entrance and the hall room with the arc-shaped window out of the big one that was initially drawn as a guide perimeter. Press "Window" in the main menu and find the "Pathfinder" tool, or simply press Shift+Ctrl+F9.
+Adobe Illustrator has a panel of tools, which is very useful in some cases about shapes and figures. For example, on the current plan, the shape of the house perimeter is complicated: the main entrance is not on the same line as surrounding rooms, and the hall has got a full-height window in a shape of arc. Let's subtract the small rectangle that barricades the entrance and the hall room with the arc-shaped window out of the big one that was initially drawn as a guide perimeter. Press "Window" in the main menu and find the "Pathfinder" tool, or simply press Shift+Ctrl+F9.
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic06\_pathfinder.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic06\_pathfinder.png" alt="pic06\_pathfinder" title="pic06\_pathfinder" border="0" width=600 align="center"></a>
 
-Select those two shapes that you need to subtract one from other: the first one to select should be that one that should be subtracted. Hold the Shift key while selecting the shapes. Then choose the "Minus front" button from the Shape Modes on the Pathfinder tab.
+Select those two shapes that you need to subtract one from other: the first one to select should be the one to subtract. Hold the Shift key while selecting the shapes. Then choose the "Minus front" button from the Shape Modes on the Pathfinder tab.
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic07\_minus\_front.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic07\_minus\_front.png" alt="pic07\_minus\_front" title="pic07\_minus\_front" border="0" width=600 align="center"></a>
 
-The picture below demonstrates the situation you may get into: the new shape comes to the front layer and covers almost everything. 
+The picture below demonstrates a situation you may get into: a new shape comes to the front layer and covers almost everything. 
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic08\_after\_minus\_front.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic08\_after\_minus\_front.png" alt="pic08\_after\_minus\_front" title="pic08\_after\_minus\_front" border="0" width=600 align="center"></a>
 
@@ -57,30 +57,31 @@ Right-click on this shape and choose "Arrange" -> "Send to back".
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic09\_arrange\_sent\_to\_back.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic09\_arrange\_sent\_to\_back.png" alt="pic09\_arrange\_sent\_to\_back" title="pic09\_arrange\_sent\_to\_back" border="0" width=600 align="center"></a>
 
-Now, the layout of the house is visible again. Let's add some "furniture" into the plan.
+Now, the layout with the house is visible again. Let's add some "furniture" into the plan.
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic10\_fixed\_perimeter.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic10\_fixed\_perimeter.png" alt="pic10\_fixed\_perimeter" title="pic10\_fixed\_perimeter" border="0" width=600 align="center"></a>
 
-The Rectangle, Line and Arc Tools were used in creating the picture above. This picture is unfinished yet, it becomes only a basis for the working SVG file. Now it is time to work with grouping to have each room as a group, which will help to make the map interactive.
+The Rectangle, Line and Arc Tools were used in creating the picture above. This picture is unfinished yet, being only a basis for the working SVG file. Now it is time to work with grouping to have each room as a group, which will help to make the map interactive.
 
 
 ## Grouping
 
-To make the image suitable for using in AnyChart Seat Maps, let's group elements in a way it is convenient to work with them. It is better to outline each room as a separate path, so they will become separate shapes. 
+To make the image suitable for AnyChart Seat Maps, group elements in a way it is convenient to work with them. It is better to outline each room as a separate path, so they will become separate shapes. 
 
-To group several elements, select all of them, right-click and select "Group". Don't forget to join the paths if you used lines/arcs for drawing, otherwise you won't have any opportunity to fill the objects with color.
+To group several elements, select all of them, right-click and select "Group". Don't forget to join the paths if you used lines/arcs for drawing, otherwise you will have no opportunity to fill the objects with color.
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic11\_group.png" target="_blank"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic11\_group.png" alt="pic11\_group" title="pic11\_group" border="0" width=600 align="center"></a>
 
 Do the same with the walls to form the rooms as groups. 
 
-After each room is a separate group and all groups are ready for the further transformations, the next step is setting the IDs.
+After each room becomes a separate group and all groups are ready for the further transformations, you can go to the next step and set the IDs.
+
 
 ## Setting ID
 
-Now it is time to give an ID for each group. These groups will later become the Map points (regions). 
+Setting IDs for the groups helps to manage the last ones as Map points (regions). 
 
-There are two options: you can set the ID in Adobe Illustrator or through the code. 
+There are two options: you can set the ID in Adobe Illustrator or do it through the code. 
 
 ### Adobe Illustrator
 
@@ -90,11 +91,11 @@ After all room in your picture have become groups, the window with Layers will s
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic12\_layers.png"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic12\_layers.png" alt="pic12\_layers" title="pic12\_layers" border="0" width=600 align="center"></a>
 
-Note that there are blue indicators in front of objects' names. They show the chosen (highlighted) element. Note that there is a group with no name and several paths inside. This group represents the sofa. To give it a name click twice on the "<Group>" and enter the preferred name. Let it be "sofa".
+Note that there are blue indicators in front of objects' names (the picture below). They show the chosen (highlighted) element. Note that there is a group with no name and several paths inside. This group represents the sofa. To give it a name click twice on the '\<Group\>' and enter the preferred name. Let it be "sofa".
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic13\_layers\_sofa.png"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic13\_layers\_sofa.png" alt="pic13\_layers\_sofa" title="pic13\_layers\_sofa" border="0" width=600 align="center"></a> 
 
-Now, let's do the same with the rooms.
+Now, do the same with the rooms.
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic14\_layers\_rooms.png"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic14\_layers\_rooms.png" alt="pic14\_layers\_rooms" title="pic14\_layers\_rooms" border="0" width=600 align="center"></a> 
 
@@ -108,7 +109,7 @@ Another way to set the names for groups is to do it through the SVG code of the 
 
 ### SVG Code
 
-Open this file in any editor that supports SVG files. Look through the code. All "g" tags mean "groups" - those groups which creation is demonstrated in the picture before. Add the "id" field to each group you need to be highlighted (rooms in the current case). Remember that IDs have to be unique.
+Open this file in any editor that supports SVG files. Look through the code. All "g" tags mean "groups" - those groups which creation is demonstrated in the picture before. Add the "id" field to each group you need to manage. Remember that IDs have to be unique.
 
 ```
 <g id="kitсhen">
@@ -118,14 +119,14 @@ Open this file in any editor that supports SVG files. Look through the code. All
 </g>
 ```
 
-Inline groups might have their own ID's due to some reasons. Elements inside of the groups might have classes; set classes to each element you need to react on hovering or selecting. All elements that belong to the same class will have the same interactive settings, so be careful with setting them. Let's set the classes to the texts.
+Inline groups might have their own ID's due to some reasons. Elements inside of the groups might have classes; set classes to each element you need to react on hovering or selecting. All elements that belong to the same class have the same interactive settings, so be careful with setting them. Set the classes to the texts.
 
 ```
 <text class="info" transform="matrix(1 0 0 1 172.5244 131.3237)"><tspan x="0" y="0" fill="#996633" font-family="'ArialMT'" font-size="16.6934">Room 1</tspan><tspan x="-21.189" y="20.032" fill="#996633" font-family="'ArialMT'" font-size="16.6934">11&apos; 0&quot; x 13&apos; 0&quot;</tspan></text>
 ```
 
-If there are lines demonstrating some extra elements you don't need anymore, find these lines in the code of the SVG image and simply delete them. This will simplify your work with the file.
+If there are lines demonstrating some extra elements not necessary anymore, find these lines in the code of the SVG image and simply delete them. This will simplify your work with the file.
 
-Now, the SVG image is ready for the further work and transformations. For the further info & tutorial, open the [Seat Map](Seat_Map) article.
+Now, the SVG image is ready for the further work and transformations. For more info & tutorial, open the [Seat Map](Seat_Map) article.
 
-To explore the SVG file used in this article, <a href="http://static.anychart.com/images/docs/house.svg">download it</a>.
+You can <a href="http://static.anychart.com/images/docs/house.svg">download the SVG file</a> used in this article.

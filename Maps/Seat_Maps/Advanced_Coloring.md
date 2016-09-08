@@ -11,16 +11,16 @@ Advanced Coloring
 
 ## Overview
 
-There are several ways to color a seat map. The first option is to set the colors [through the data set](Seat_Map#coloring). The second way is to set custom or original colors [through the coloring methods](#using_svg_image_colors) like {api:anychart.core.map.series.Choropleth#fill}fill(){api} and {api:anychart.core.map.series.Choropleth#stroke}stroke(){api} - in this case it's possible to color each element of a group differently, depending on those elements' classes set in the SVG code. One more option is to [use AnyChart palette](#palette) to set the necessary colors and use Color Scale and Color Range (reliable for a Map with several series).
+There are several ways to color a seat map. The first option is to set the colors [through the data set](Seat_Map#coloring). The second way is to set custom or original colors [through the coloring methods](#using_svg_image_colors) like {api:anychart.core.map.series.Choropleth#fill}fill(){api} and {api:anychart.core.map.series.Choropleth#stroke}stroke(){api} - in this case it's possible to color each element of a group differently, depending on those elements' classes set in the SVG code. Another options are to [use AnyChart palette](#palette) to set the necessary colors (reliable for a Map with several series) and to [use Color Scale and Color Range](#color_scale_and_color_range).
 
-The SVG image in the sample below is the same file as in some samples from the [Seat Map](Seat_Map) and [Preparing SVG Image](Preparing_SVG_Image) articles as the basis for the samples below. That is how an SVG image looks like with the default AnyChart color palette:
+The SVG image in the sample below is the same file as was used in some samples from the [Seat Map](Seat_Map) and [Preparing SVG Image](Preparing_SVG_Image) articles. That is how an SVG image looks like with the default AnyChart color palette:
 
 {sample}Maps\_Seat\_Advanced\_Coloring\_00{sample}
 
 
 ## Using SVG Image Colors
 
-The colors in the sample picture are different from the defined (check out the seat map <a href="http://static.anychart.com/images/docs/house.svg">source SVG image</a> to see the original colors). Using original colors used in the picture is considered in this section, as well as using these colors as a basis for hovering and selecting colors. 
+The colors in the sample picture are different from the defined (check out the seat map <a href="http://static.anychart.com/images/docs/house.svg">source SVG image</a> to see the original colors). Setting original colors used in the picture is considered in this section, as well as using these colors as a basis for hovering and selecting colors. 
 
 To set the colors of the original SVG image, or to set new custom colors use the {api:anychart.core.map.series.Choropleth#fill}fill(){api} and {api:anychart.core.map.series.Choropleth#Stroke}stroke(){api} methods. Though, it is important to remember that not all of the elements in the SVG file have the "fill" attribute. Before setting the value to the "fill" field it is necessary to check if the element has it, and if so, set the fill color to this element. Setting colors through this method looks like the following:
 

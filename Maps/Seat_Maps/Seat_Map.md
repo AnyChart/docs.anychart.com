@@ -17,7 +17,7 @@ Seat Maps
 
 ## Overview
 
-Seat Map is a diagram of a seat layout inside a building, passenger aircraft or else. Aircraft Seat Maps are published by airlines for informational purposes, and they are used by passengers to select a seat when booking a ticket or checking in for a flight. Theatre, stadium or arena seat maps are used the same way. With AnyMap you can create any kind of seat maps, schemes or interactive layouts.
+Seat Map is a diagram of a seat layout inside a building, passenger aircraft or else. Aircraft Seat Maps are published by airlines for informational purposes, as well as they are used by passengers to select a seat when booking a ticket or checking in for a flight. Theatre, stadium or arena seat maps are used the same way. With AnyMap you can create any kind of seat maps, schemes or interactive layouts.
 
 
 ## Preparing SVG Image
@@ -29,7 +29,7 @@ If you need to create your own SVG picture in a graphic editor, study the [Prepa
 
 ## SVG Data
 
-There are two ways to load SVG image into a Seat Map: load it using the AJAX technology or add SVG as string variable.
+There are three ways to load SVG image into a Seat Map: using the AJAX technology, add SVG as string variable or through the HTML DOM.
 
 ### AJAX
 
@@ -52,7 +52,7 @@ url: "http://static.anychart.com/images/docs/house.svg",
 
 ### As String
 
-Another way to use SVG image is to put it directly in the script as a string. This way may suit you if the SVG image is not too big.
+Another way to use SVG image is to put it directly in the script as a string. This way may suit you if the SVG code is not too long.
 
 ```
 svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
@@ -69,7 +69,7 @@ svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
 
 Another option is to embed image in HTML DOM and then obtain it from the DOM when page is loaded. **Note** that this option works only when the SVG file is located in the same domain as the map file because of the [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy). 
 
-Put an '<object>' with the link to the SVG file into the '<body>' section of the Map file. 
+Put an '\<object\>' with the link to the SVG file into the '\<body\>' section of the Map file. 
 
 ```
 <body>
@@ -131,7 +131,7 @@ Colors can be also defined through the SVG code and several other ways. See the 
 
 ## Unbound Regions
 
-Use the {api:anychart.charts.Map#unboundRegions}unboundRegion(){api} method to define how the regions (points, seats) that have no value defined in the data set.
+Use the {api:anychart.charts.Map#unboundRegions}unboundRegion(){api} method to define how the regions (points, seats) that have no value are defined in the data set.
 
 There are two modes of coloring unbound regions: "as-is" and "hide". In the "as-is" mode the unbound region is colored according to the settings in the SVG image, with no reaction when being hovered or selected:
 
@@ -154,7 +154,7 @@ chart.unboundRegions("hide");
 
 ### Labels and Tooltips
 
-Working with Seat Map labels and tooltips is absolutely identical to working with labels and tooltips in Maps, learn more in Maps/Tooltips and Maps/Labels articles. Usual {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods are used to work with them:
+Working with Seat Map labels and tooltips is absolutely identical to working with labels and tooltips in Maps. Learn more in the [Map Tooltips](Maps/Tooltips) and [Map Labels](Maps/Labels) articles. The {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods are used to work with them:
 
 ```
 // data set
