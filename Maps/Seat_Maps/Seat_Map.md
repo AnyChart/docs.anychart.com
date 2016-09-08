@@ -69,7 +69,7 @@ svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
 
 Another option is to embed image in HTML DOM and then obtain it from the DOM when page is loaded. **Note** that this option works only when the SVG file is located in the same domain as the map file because of the [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy). 
 
-Put an '\<object\>' with the link to the SVG file into the '\<body\>' section of the Map file. 
+Put an `<object>` with the link to the SVG file into the `<body>` section of the Map file. 
 
 ```
 <body>
