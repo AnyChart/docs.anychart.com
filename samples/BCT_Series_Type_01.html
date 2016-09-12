@@ -26,22 +26,22 @@
     chart.container(stage);
     chart.draw();
 
+    // create a label for switching to the line series
+    createLabel("Switch to Line", 10, function() {
+        // change the series type
+        series.seriesType("line");
+        chart.title("Switching the Series Type \n Line");
+    });  
+
     // create a label for switching to the column series
-    createLabel("Switch to Column", 10, function() {
+    createLabel("Switch to Column", 127, function() {
         // change the series type
         series.seriesType("column");
         chart.title("Switching the Series Type \n Column");
     });    
-
-    // create a label for switching to the line series
-    createLabel("Switch to Line", 150, function() {
-        // change the series type
-        series.seriesType("line");
-        chart.title("Switching the Series Type \n Line");
-    });    
-
+  
     // create a label for switching to the area series
-    createLabel("Switch to Area", 267, function() {
+    createLabel("Switch to Area", 265, function() {
         // change the series type
         series.seriesType("area");
         chart.title("Switching the Series Type \n Area");

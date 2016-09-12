@@ -6,7 +6,7 @@ Our stock charts provide a method allowing to change the series type if the curr
 
 To switch the series type, use the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method of a series and set the series type name as a string parameter. A series type name used as a parameter is identical to the method used for creating series of this type.
 
-The sample below demonstrates how the feature works with column, line, and area series, which require only one value:
+The sample below demonstrates how the feature works with line, column, and area series, which require only one value:
 
 ```
 table.addData([
@@ -35,7 +35,7 @@ scrollerSeries.seriesType("column");
 
 {sample}STOCK\_Series\_Type\_01{sample}
 
-In the following sample, the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method is applied to Japanese candlestick and OHLC series, which require four values, as well as to a range area series:
+In the following sample, the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method is applied to OHLC and Japanese candlestick series, which require four values, as well as to a range area series:
 
 ```
 table = anychart.data.table("x");
