@@ -110,7 +110,7 @@ function createSeatMap(svg){
     // load SVG data
     chart.geoData(svg);
     // set the title
-    chart.title("ColorRange and ColorScale"); 
+    chart.title("Color Range with Color Scale"); 
     series = chart.choropleth(dataSet);
 
     // set the tooltips
@@ -119,12 +119,7 @@ function createSeatMap(svg){
         if (this.value == 10) return "Best seats (Rows 3-8)";  
         if (this.value == 7.5) return "Back seats";
         if (this.value == 5.5) return "Side seats";
-        if (this.value == 3.5) return "Side seats";
-    });
-
-    series.tooltip().textFormatter(function(){
-        if (this.getDataValue("extra") == "RESTRICTED VIEW") return "£"+this.value+"\nRESTRICTED VIEW"
-        else return "£"+this.value;
+        if (this.value == 3.5) return "Side seats \nRESTRICTED VIEW";
     });
 
     // set the ranges for the scale
@@ -136,28 +131,12 @@ function createSeatMap(svg){
             {from: 8, to: 12}
         ]);
 
-    //set the color progression
+    // set the single hue progression
     var colors = anychart.color.singleHueProgression("#336666");
-
+        
     // define the colors 
     currentColorScale.colors(colors);
     series.colorScale(currentColorScale);
-
-    // set the tooltips
-    series.tooltip().titleFormatter("Side places");
-    series.tooltip().textFormatter(function(){
-        if (this.extra == "RESTRICTED VIEW") return "£{%Value} \nRESTRICTED VIEW"
-        else return "£{%Value}";
-    });
-
-    // set the colors and ranges for the scale
-    series.colorScale(anychart.scales.linearColor());
-
-    //set the single hue progression
-    var colors = anychart.color.singleHueProgression('#33cc00');
-        
-    // define the colors 
-    series.colorScale().colors(colors);
 
     // create and enable the colorRange
     var colorRange = chart.colorRange();
