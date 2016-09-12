@@ -1,6 +1,6 @@
 {:index 3}
 Switching the Series Type
-========
+=========================
 
 Our stock charts provide a method allowing to change the series type if the current type and the new one have the same or similar fields. See the [list of supported series](Supported_Series#list_of_supported_series) to find out what series types can be converted to each other.
 
@@ -32,6 +32,7 @@ var scrollerSeries = chart.scroller().area(table.mapAs({'value': 'value'}));
 series.seriesType("column");
 scrollerSeries.seriesType("column");
 ```
+
 {sample}STOCK\_Series\_Type\_01{sample}
 
 In the following sample, the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method is applied to Japanese candlestick and OHLC series, which require four values, as well as to a range area series:
@@ -58,6 +59,7 @@ var scrollerSeries = chart.scroller().ohlc(table.mapAs({'open':"o",'high': "h", 
 series.seriesType("rangeArea");
 scrollerSeries.seriesType("rangeArea");
 ```
+
 {sample}STOCK\_Series\_Type\_02{sample}
 
 Please note that the range area series uses only two values from the data set, but it works because the names of the data fields used ("low" and "high") are the same that range area series have by default. So, series types do not have to use the same number of fields to be convertible to each other.
