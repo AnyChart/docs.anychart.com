@@ -28,7 +28,7 @@
     chart.plot(0).yAxis().labels().textFormatter("{%Value}m");
 
     // set the chart title and padding
-    chart.title('Stock series changing demo');
+    chart.title('Switching the Series Type in Stock Charts');
     chart.title().padding(20);
 
     // create a scroller series with values
@@ -43,7 +43,7 @@
         // change the series type
         series.seriesType("column");
         scrollerSeries.seriesType("column");
-        chart.title("Stock series changing demo \n Column");
+        chart.title("Switching the Series Type in Stock Charts \n Column");
     });    
 
     // create a label for switching to the line series
@@ -51,7 +51,7 @@
         // change the series type
         series.seriesType("line");
         scrollerSeries.seriesType("line");
-        chart.title("Stock series changing demo \n Line");
+        chart.title("Switching the Series Type in Stock Charts \n Line");
     });    
 
     // create a label for switching to the area series
@@ -59,7 +59,7 @@
         // change the series type
         series.seriesType("area");
         scrollerSeries.seriesType("area");
-        chart.title("Stock series changing demo \n Area");
+        chart.title("Switching the Series Type in Stock Charts \n Area");
     });    
 
 });
