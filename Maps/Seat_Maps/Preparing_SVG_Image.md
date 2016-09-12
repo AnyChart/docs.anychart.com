@@ -91,7 +91,7 @@ After all room in your picture have become groups, the window with Layers will s
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic12\_layers.png"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic12\_layers.png" alt="pic12\_layers" title="pic12\_layers" border="0" width=600 align="center"></a>
 
-Note that there are blue indicators in front of objects' names (the picture below). They show the chosen (highlighted) element. Note that there is a group with no name and several paths inside. This group represents the sofa. To give it a name click twice on the '\<Group\>' and enter the preferred name. Let it be "sofa".
+Note that there are blue indicators in front of objects' names (the picture below). They show the chosen (highlighted) element. Note that there is a group with no name and several paths inside. This group represents the sofa. To give it a name click twice on the `<Group>` and enter the preferred name. Let it be "sofa".
 
 <a href="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic13\_layers\_sofa.png"><img src="http://docs.anychart.stg/static/DVF-2340-Seat-Map/pic13\_layers\_sofa.png" alt="pic13\_layers\_sofa" title="pic13\_layers\_sofa" border="0" width=600 align="center"></a> 
 
