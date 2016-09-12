@@ -31,7 +31,7 @@
 
   // set the title and its preferences
   map.title().useHtml(true).hAlign('center');
-  map.title('<span style="font-size: 14px;"></span><br><span style="font-size:12px;">Set the connector stroke colors</span>');
+  map.title('<span style="font-size: 14px;">Sex ratio</span><br><span style="font-size:12px;">Set the connector stroke colors</span>');
 
   // set the series
   var series_1 = map.choropleth(dataSet_1);
@@ -44,6 +44,14 @@
   // set the labels
   labels_1 = series_1.labels();
   labels_2 = series_2.labels();
+
+  // set the tooltips
+  series_1.tooltip().textFormatter(function(){
+    return "More women"
+  });
+  series_2.tooltip().textFormatter(function(){
+    return "More men"
+  });
 
   // set the connector stroke color
   labels_2.connectorStroke("green", 2, "3 3");

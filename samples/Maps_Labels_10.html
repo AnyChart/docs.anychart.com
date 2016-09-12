@@ -31,7 +31,7 @@
 
   // set the title and its preferences
   map.title().useHtml(true).hAlign('center');
-  map.title('<span style="font-size: 14px;">Presidental elections 2012</span><br><span style="font-size:12px;">Set the overlapping mode</span>');
+  map.title('<span style="font-size: 14px;">Sex ratio</span><br><span style="font-size:12px;">Set the outside labels</span>');
 
   // set the series
   var series_1 = map.choropleth(dataSet_1);
@@ -40,6 +40,14 @@
   // enable labels
   series_1.labels(true);
   series_2.labels(true);
+
+  // set the tooltips
+  series_1.tooltip().textFormatter(function(){
+    return "More women"
+  });
+  series_2.tooltip().textFormatter(function(){
+    return "More men"
+  });
 
   // set the labels
   labels_1 = series_1.labels();

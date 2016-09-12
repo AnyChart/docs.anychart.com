@@ -312,8 +312,8 @@ After creating the elements it is necessary to fill in the arrays with regions' 
 
 ```
 // fill in the arrays
-calloutBottom.items(["US.AL", "US.FL", "US.GA", "US.SC", "US.NC", "US.VA", "US.MN" ,"US.ID", "US.CA", "US.IL", "US.WI"]);
-calloutRight.items(["US.NH", "US.VT", "US.MA", "US.CT", "US.RI", "US.NJ", "US.DE", "US.MD", "US.PA", "US.NY"]);
+calloutBottom.items(["AU.CT"]);
+calloutRight.items(["AU.JB"]);
 ```
 
 The {api:anychart.core.ui.Callout#align}align(){api} method helps to set the position of the label text inside of the callout. The position of the whole callout is being set through the {api:anychart.core.ui.Callout#orientation}orientation(){api} method:
@@ -332,9 +332,10 @@ To change the size of callout labels, use {api:anychart.core.ui.Callout#width}wi
 
 ```  
 // set the width and length
-calloutBottom.width(30);
-calloutBottom.length(400);
-calloutRight.width(50);
+calloutBottom.width(50);
+calloutBottom.length(300);
+  calloutRight.width(70);
+  calloutRight.length(100);
 ```
 
 {sample}Maps\_Labels\_12{sample}
@@ -342,16 +343,8 @@ calloutRight.width(50);
 The text that labels represent can be formatted as the usual labels text, but remember that formatting labels of the whole series will lead to changes in all labels of this series, so if you need to format only those labels that are shown in the callout element, use data set. It is possible to change the size of the label text through the {api:anychart.core.ui.LabelsFactory.Label#fontSize}fontSize(){api} method and {api:anychart.core.ui.LabelsFactory#connectorStroke}connnectorStroke(){api} method to set the color of the connector. The {api:anychart.core.ui.LabelsFactory.Label#textFormatter}textFormatter(){api} method allows to change the text displayed by the labels.
 
 ```
-var dataSet_obama = anychart.data.set([
-{id: 'US.WA', name: "Washington", value: 12},
-{id: 'US.CA', name: "California", value: 55, label:{textFormatter: "CA"}},
-{id: 'US.NV', name: "Nevada", value: 6},
-{id: 'US.OR', name: "Oregon", value: 7},
-{id: 'US.CO', name: "Colorado", value: 9},
-{id: 'US.NM', name: "New Mexico", value: 5},
-{id: 'US.WI', name: "Wisconsin", value: 10, label:{textFormatter: "WI"}},
-{id: 'US.IL', name: "Illinois", value: 20, label:{textFormatter: "IL"}},
-{id: 'US.MN', name: "Minnesota", value: 10, label:{textFormatter: "MN"}},
+{'id': 'AU.JB', 'value': 0, label:{textFormatter: "Jervis \nBay \nTerritory", fontColor: "white"}},
+{'id': 'AU.CT', 'value': 3, label:{fontColor: "white"}}
 ```
 
 

@@ -13,14 +13,14 @@
  map = anychart.map();
   // data set for the choropeth series
   var dataSet_1 = anychart.data.set([
-    {'id': 'AU.JB', 'value': 0, label: {x: 153, y: -33, positionMode: "absolute"}, connectorStroke: "red"},
+    {'id': 'AU.JB', 'value': 0},
     {'id': 'AU.NT', 'value': 1},
     {'id': 'AU.WA', 'value': 2},
     {'id': 'AU.NS', 'value': 4}
   ]);
 
   var dataSet_2 = anychart.data.set([
-    {'id': 'AU.CT', 'value': 3, label: {x: 7, y: 5, positionMode: "relative"}},
+    {'id': 'AU.CT', 'value': 3},
     {'id': 'AU.SA', 'value': 5},
     {'id': 'AU.VI', 'value': 6},
     {'id': 'AU.QL', 'value': 7},
@@ -32,29 +32,29 @@
 
   // set the title and its preferences
   map.title().useHtml(true).hAlign('center');
-  map.title('<span style="font-size: 14px;">Presidental elections 2012</span><br><span style="font-size:12px;">Set and format the callout labels</span>');
+  map.title('<span style="font-size: 14px;">Sex ratio</span><br><span style="font-size:12px;">Set and format the callout labels</span>');
 
   // set the series
-  var series_obama = map.choropleth(dataSet_obama);
-  var series_romney = map.choropleth(dataSet_romney);
+  var series_1 = map.choropleth(dataSet_1);
+  var series_2 = map.choropleth(dataSet_2);
 
   // enable labels
-  series_obama.labels(true);
-  series_romney.labels(true);
+  series_1.labels(true);
+  series_2.labels(true);
 
   // set the labels
-  labels_obama = series_obama.labels();
-  labels_romney = series_obama.labels();
+  labels_1 = series_1.labels();
+  labels_2 = series_1.labels();
 
   // set the overlapping mode for the map
   map.overlapMode(false);
 
   // set the tooltips
-  series_obama.tooltip().textFormatter(function(){
-    return "Most voted for Obama"
+  series_1.tooltip().textFormatter(function(){
+    return "More women"
   });
-  series_romney.tooltip().textFormatter(function(){
-    return "Most voted for Romney"
+  series_2.tooltip().textFormatter(function(){
+    return "More men"
   });
 
   // create the callout
@@ -63,10 +63,11 @@
 
   // set the connector stroke color
   calloutRight.labels().connectorStroke('navy');
+  calloutBottom.labels().connectorStroke('navy');
 
   // fill in the arrays
-  calloutBottom.items(["US.AL", "US.FL", "US.GA", "US.SC", "US.NC", "US.VA", "US.MN" ,"US.ID"]);
-  calloutRight.items(["US.NH", "US.VT", "US.MA", "US.CT", "US.RI", "US.NJ", "US.DE", "US.MD"]);
+  calloutBottom.items(["AU.CT"]);
+  calloutRight.items(["AU.JB"]);
   
   // set the callouts positions
   calloutBottom.orientation("bottom");
@@ -77,10 +78,10 @@
   calloutRight.align("center");  
   
   // set the width and length
-  calloutBottom.width(30);
-  calloutBottom.length(500);
-  calloutRight.width(50);
-  calloutRight.length(300);
+  calloutBottom.width(50);
+  calloutBottom.length(300);
+  calloutRight.width(70);
+  calloutRight.length(100);
 
   // set the container
   map.container('container');

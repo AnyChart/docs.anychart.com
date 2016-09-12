@@ -7,96 +7,55 @@
   <meta name="is-new" content="false"/>
   <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="http://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
+  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script x-export="map">anychart.onDocumentReady(function() {
 
   map = anychart.map();
   // data set for the choropeth series
-  var dataSet_obama = anychart.data.set([
-    {id: 'US.WA', name: "Washington", value: 12},
-    {id: 'US.CA', name: "California", value: 55, label:{textFormatter: "CA"}},
-    {id: 'US.NV', name: "Nevada", value: 6},
-    {id: 'US.OR', name: "Oregon", value: 7},
-    {id: 'US.CO', name: "Colorado", value: 9},
-    {id: 'US.NM', name: "New Mexico", value: 5},
-    {id: 'US.WI', name: "Wisconsin", value: 10, label:{textFormatter: "WI"}},
-    {id: 'US.IL', name: "Illinois", value: 20, label:{textFormatter: "IL"}},
-    {id: 'US.MN', name: "Minnesota", value: 10, label:{textFormatter: "MN"}},
-    {id: 'US.IA', name: "Iowa", value: 6},
-    {id: 'US.MI', name: "Michigan", value: 16},
-    {id: 'US.OH', name: "Ohio", value: 18},
-    {id: 'US.PA', name: "Pennsylvania", value: 20, label:{textFormatter: "PA"}},
-    {id: 'US.NY', name: "New York", value: 29, label:{textFormatter: "NY"}},
-    {id: 'US.CT', name: "Connecticut", value: 7, label:{textFormatter: "CT"}},
-    {id: 'US.MA', name: "Massachusetts", value: 11, connectorStroke: "red", label:{textFormatter: "MA"}},
-    {id: 'US.NH', name: "New Hampshire", value: 4, label:{textFormatter: "NH"}},
-    {id: 'US.RI', name: "Rhode Island", value: 4, label:{textFormatter: "RI"}},
-    {id: 'US.VT', name: "Vermont", value: 3, label:{textFormatter: "VT"}},
-    {id: 'US.ME', name: "Maine", value: 4},
-    {id: 'US.VA', name: "Virginia", value: 13, label:{textFormatter: "VA"}},
-    {id: 'US.FL', name: "Florida", value: 29, label:{textFormatter: "FL"}},
-    {id: 'US.DE', name: "Delaware", value: 3, label:{textFormatter: "DE"}},
-    {id: 'US.DC', name: "District of Columbia", value: 3},
-    {id: 'US.NJ', name: "New Jersey", value: 14, label:{textFormatter: "NJ"}},
-    {id: 'US.HI', name: "Hawaii", value: 4},
-    {id: 'US.MD', name: "Maryland", value: 10, label:{textFormatter: "MD"}},
-]);
+  var dataSet_1 = anychart.data.set([
+    {'id': 'AU.JB', 'value': 0, label:{textFormatter: "Jervis \nBay \nTerritory", fontColor: "white"}},
+    {'id': 'AU.NT', 'value': 1},
+    {'id': 'AU.WA', 'value': 2},
+    {'id': 'AU.NS', 'value': 4}
+  ]);
 
-var dataSet_romney = anychart.data.set([
-    {id: 'US.MT', name: "Montana", value: 3},
-    {id: 'US.ND', name: "North Dakota", value: 3},
-    {id: 'US.ID', name: "Idaho", value: 4, label:{textFormatter: "ID"}},
-    {id: 'US.UT', name: "Utah", value: 6},
-    {id: 'US.WY', name: "Wyoming", value: 3},
-    {id: 'US.MO', name: "Missouri", value: 10},
-    {id: 'US.NE', name: "Nebraska", value: 5},
-    {id: 'US.SD', name: "South Dakota", value: 3},
-    {id: 'US.KS', name: "Kansas", value: 6},
-    {id: 'US.IN', name: "Indiana", value: 11},
-    {id: 'US.AR', name: "Arkansas", value: 6},
-    {id: 'US.LA', name: "Louisiana", value: 8},
-    {id: 'US.TX', name: "Texas", value: 38},
-    {id: 'US.AL', name: "Alabama", value: 9, label:{textFormatter: "AL"}},
-    {id: 'US.GA', name: "Georgia", value: 16, label:{textFormatter: "GA"}},
-    {id: 'US.MS', name: "Mississippi", value: 6},
-    {id: 'US.SC', name: "South Carolina", value: 9, label:{textFormatter: "SC"}},
-    {id: 'US.NC', name: "North Carolina", value: 15, label:{textFormatter: "NC"}},
-    {id: 'US.TN', name: "Tennessee", value: 11},
-    {id: 'US.KY', name: "Kentucky", value: 8},
-    {id: 'US.WV', name: "West Virginia", value: 5},
-    {id: 'US.AZ', name: "Arizona", value: 11},
-    {id: 'US.OK', name: "Oklahoma", value: 7},
-    {id: 'US.AK', name: "Alaska", value: 3}
-]);
+  var dataSet_2 = anychart.data.set([
+    {'id': 'AU.CT', 'value': 3, label:{fontColor: "white"}},
+    {'id': 'AU.SA', 'value': 5},
+    {'id': 'AU.VI', 'value': 6},
+    {'id': 'AU.QL', 'value': 7},
+    {'id': 'AU.TS', 'value': 8}
+  ]);
 
-  map.geoData("anychart.maps.united_states_of_america");
+
+  map.geoData("anychart.maps.australia");
 
   // set the title and its preferences
   map.title().useHtml(true).hAlign('center');
-  map.title('<span style="font-size:14px;">Presidental elections 2012</span><br><span style="font-size:12px;">Adjust the connector stroke of the callout labels</span>');
+  map.title('<span style="font-size:14px;">Sex ratio</span><br><span style="font-size:12px;">Adjust label settings</span>');
 
   // set the series
-  var series_obama = map.choropleth(dataSet_obama);
-  var series_romney = map.choropleth(dataSet_romney);
+  var series_1 = map.choropleth(dataSet_1);
+  var series_2 = map.choropleth(dataSet_2);
 
   // enable labels
-  series_obama.labels(true);
-  series_romney.labels(true);
+  series_1.labels(true);
+  series_2.labels(true);
 
   // set the labels
-  labels_obama = series_obama.labels();
-  labels_romney = series_obama.labels();
+  labels_1 = series_1.labels();
+  labels_2 = series_1.labels();
 
     
   // set the overlapping mode for the map
   map.overlapMode("noOverlap");
 
   // set the tooltips
-  series_obama.tooltip().textFormatter(function(){
-    return "Most voted for Obama"
+  series_1.tooltip().textFormatter(function(){
+    return "More women"
   });
-  series_romney.tooltip().textFormatter(function(){
-    return "Most voted for Romney"
+  series_2.tooltip().textFormatter(function(){
+    return "More men"
   });
 
   // create the callout
@@ -108,8 +67,8 @@ var dataSet_romney = anychart.data.set([
   calloutBottom.labels().connectorStroke('navy');
 
   // fill in the arrays
-  calloutBottom.items(["US.AL", "US.FL", "US.GA", "US.SC", "US.NC", "US.VA", "US.MN" ,"US.ID", "US.CA", "US.IL", "US.WI"]);
-  calloutRight.items(["US.NH", "US.VT", "US.MA", "US.CT", "US.RI", "US.NJ", "US.DE", "US.MD", "US.PA", "US.NY"]);
+  calloutBottom.items(["AU.CT"]);
+  calloutRight.items(["AU.JB"]);
   
   // set the callouts positions
   calloutBottom.orientation("bottom");
@@ -120,10 +79,10 @@ var dataSet_romney = anychart.data.set([
   calloutRight.align("center");  
   
   // set the width and length
-  calloutBottom.width(30);
-  calloutBottom.length(500);
-  calloutRight.width(50);
-  calloutRight.length(300);
+  calloutBottom.width(50);
+  calloutBottom.length(300);
+  calloutRight.width(70);
+  calloutRight.length(100);
 
   // set the container
   map.container('container');
