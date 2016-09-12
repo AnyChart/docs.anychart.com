@@ -1,7 +1,7 @@
 Switching the Series Type
 =========================
 
-AnyChart provides a method allowing to change the series type if the current type and the new one have the same or similar fields. See the [list of supported series](../Quick_Start/Supported_Charts_Types) to find out what series types can be converted to each other.
+AnyChart provides a method allowing to change the series type if the current type and the new one have the same or similar fields. See the [list of supported chart types](../Quick_Start/Supported_Charts_Types) to find out what series types can be converted to each other.
 
 To switch the series type, use the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method of a series and set the name of the series type as a string parameter. The name of a series type used as a parameter is identical to the method used for creating series of this type.
 
