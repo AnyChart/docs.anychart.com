@@ -75,28 +75,30 @@ In the sample above there are many settings for custom graphic elements and a li
 
 ## Source Data Access
 
-Labels are not only used to show the names of the regions or any other information that is defined in the data set. It is possible to adjust labels to make them show some properties that are defined only in the data source. In AnyMap there is a {api:anychart.core.ChoroplethPoint#getFeatureProp}getFeatureProp(){api} method, that allows to get any information from the geoJson data. Look at the next sample and explore it in the playground to understand how it works.
+Labels can get information to show not only from data sets, it is possible to obtain any property defined in the GeoJSON map source file. Look at the next sample and explore it in the playground to understand how it works.
 
-That is how properties look in geoJSON:
+Labels are not only used to show the names of the regions or any other information that is defined in the data set. It is possible to adjust labels to make them show some properties that are defined only in the data source. In AnyMap there is a {api:anychart.core.ChoroplethPoint#getFeatureProp}getFeatureProp(){api} method, that allows to get any information from the GeoJson data. Look at the next sample and explore it in the playground to understand how it works.
+
+That is how properties look in GeoJSON:
 
 ```
 "properties": {
-	"labelrank": 2, 
-	"code_hasc": "AU.NT", 
-	"name": "Northern Territory", 
-	"admin": "Australia", 
-	"type_en": "Territory", 
-	"region": "", 
-	"woe_id": 2344701, 
-	"longitude": 133, 
-	"woe_name": "Northern Territory", 
-	"fips": "AS03", 
-	"woe_label": "Northern Territory, AU, Australia", 
-	"latitude": -20, 
-	"iso_a2": "AU", 
-	"postal": "NT", 
-	"type": "Territory", 
-	"id": "AU.NT"
+"labelrank": 2, 
+"code_hasc": "AU.NT", 
+"name": "Northern Territory", 
+"admin": "Australia", 
+"type_en": "Territory", 
+"region": "", 
+"woe_id": 2344701, 
+"longitude": 133, 
+"woe_name": "Northern Territory", 
+"fips": "AS03", 
+"woe_label": "Northern Territory, AU, Australia", 
+"latitude": -20, 
+"iso_a2": "AU", 
+"postal": "NT", 
+"type": "Territory", 
+"id": "AU.NT"
 }
 
 ```
@@ -104,24 +106,23 @@ That is how properties look in geoJSON:
 There are some properties that are not mentioned in the data set, but still it is possible to get those values and show them in labels. Let's get the longitude and latitude using {api:anychart.core.ChoroplethPoint#getFeatureProp}getFeatureProp(){api} method:
 
 ```
-// get some values from geoJSON
+// get some values from GeoJSON
 map.listen("pointMouseOver", function (e) {
-  // Gets point properties.
-  var properties = e.point.getFeatureProp();
-  //labels.text(text);
-  labels.textFormatter("Name: " + properties.name + "\nLongitude: " + properties.longitude + "\nLatitude: " + properties.latitude)
+// gets point properties
+var properties = e.point.getFeatureProp();
+labels.textFormatter("Name: " + properties.name + "\nLongitude: " + properties.longitude + "\nLatitude: " + properties.latitude)
 });
 
 map.listen("pointMouseOut", function (e) {
-  // Gets point properties.
-  var properties = e.point.getFeatureProp();
-  labels.textFormatter("Name" + properties.name);
+// gets point properties
+var properties = e.point.getFeatureProp();
+labels.textFormatter("Name" + properties.name);
 });
 ```
 
 {sample}Maps\_Labels\_03{sample}
 
-You can find the geoJSON map on our [cdn](http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.json).
+You can find the map of Australia in GeoJSON map on [AnyChart CDN](http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.json).
 
 
 ## Overlap
@@ -152,9 +153,9 @@ The {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} meth
 
 ```
 // set the overlapping mode for the map
-  map.overlapMode(false);
-  // enable overlapping for series
-  series_obama.overlapMode("allowOverlap");
+map.overlapMode(false);
+// enable overlapping for series
+series_obama.overlapMode("allowOverlap");
 ```
 
 {sample}Maps\_Labels\_05{sample}
@@ -163,17 +164,17 @@ Note that this setting isn't being changed if the map is zoomed, but during the 
 
 It is also possible to manage each region's label separately. If there are several labels in a series overlapping each other, set the "labelrank" property to those regions. The label of a region with a higher labelrank will be shown, while other overlapping labels will be disabled. It helps to show as many labels as possible. If there are two labels belong to different series with the same "labelrank" value, the "index" parameter set to the series will solve the problem.
 
-Those properties can be set through the geoJSON code or through the data set.
+Those properties can be set through the GeoJSON code or through the data set.
 
 ```
 var dataSet_obama = anychart.data.set([
-    {id: 'US.WA', name: "Washington", value: 12},
-    {id: 'US.CA', name: "California", value: 55, "labelrank": 5},
-    {id: 'US.NV', name: "Nevada", value: 6, "labelrank": 3},
-    {id: 'US.OR', name: "Oregon", value: 7},
-    {id: 'US.CO', name: "Colorado", value: 9},
-    {id: 'US.NM', name: "New Mexico", value: 5},
-    {id: 'US.WI', name: "Wisconsin", value: 10, "labelrank": 5},
+{id: 'US.WA', name: "Washington", value: 12},
+{id: 'US.CA', name: "California", value: 55, "labelrank": 5},
+{id: 'US.NV', name: "Nevada", value: 6, "labelrank": 3},
+{id: 'US.OR', name: "Oregon", value: 7},
+{id: 'US.CO', name: "Colorado", value: 9},
+{id: 'US.NM', name: "New Mexico", value: 5},
+{id: 'US.WI', name: "Wisconsin", value: 10, "labelrank": 5},
 ```
 
 Note that the map's or series' overlapping mode set through the {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} method has the highest priority, so even if some of the labels have the highest labelrank, but overlapping is forbidden for this series or the whole map, those labels will not be displayed. The similar situation is for the opposite case: if your series has overlapping allowed, setting labelranks will have no sense as all labels will be displayed anyway.
@@ -196,39 +197,39 @@ To set the custom position of the labels inside the regions, set "middle-x" and 
 Another property is responsible for positioning around the "middle-x" and "middle-y" coordinates: set "middleXYmode" as relative or absolute. When the "middleXYmode" property is "relative", the default middle-x and middle-y values will be considered as 0.5, so keep it in mind while setting the "middle-x" and "middle-y" properties.
 
 ```
-  var dataSet_obama = anychart.data.set([
-    {id: 'US.WA', name: "Washington", value: 12},
-    {id: 'US.CA', name: "California", value: 55, "labelrank": 5},
-    {id: 'US.NV', name: "Nevada", value: 6, "labelrank": 3, "middle-x": 0.5, "middle-y": 0.3, middleXYMode: "relative"},
-    {id: 'US.OR', name: "Oregon", value: 7},
-    {id: 'US.CO', name: "Colorado", value: 9},
-    {id: 'US.NM', name: "New Mexico", value: 5},
-    {id: 'US.WI', name: "Wisconsin", value: 10, "labelrank": 5},
+var dataSet_obama = anychart.data.set([
+{id: 'US.WA', name: "Washington", value: 12},
+{id: 'US.CA', name: "California", value: 55, "labelrank": 5},
+{id: 'US.NV', name: "Nevada", value: 6, "labelrank": 3, "middle-x": 0.5, "middle-y": 0.3, middleXYMode: "relative"},
+{id: 'US.OR', name: "Oregon", value: 7},
+{id: 'US.CO', name: "Colorado", value: 9},
+{id: 'US.NM', name: "New Mexico", value: 5},
+{id: 'US.WI', name: "Wisconsin", value: 10, "labelrank": 5},
 ```
 
 {sample}Maps\_Labels\_07{sample}
 
-These properties can be set through the geoJSON code:
+These properties can be set through the GeoJSON code:
 
 ```
 "properties": {
-	"labelrank": 0, 
-	"code_hasc": "US.MI", 
-	"name": "Michigan", 
-	"admin": "United States of America", 
-	"type_en": "State", 
-	"region": "Midwest", 
-	"woe_id": 2347581, 
-	"woe_name": "Michigan", 
-	"longitude": -84, 
-	"woe_label": "Michigan, US, United States", 
-	"fips": "US26", 
-	"iso_a2": "US", 
-	"latitude": 43, 
-	"objectid_1": 3202, 
-	"postal": "MI", 
-	"type": "State", 
-	"id": "US.MI"
+"labelrank": 0, 
+"code_hasc": "US.MI", 
+"name": "Michigan", 
+"admin": "United States of America", 
+"type_en": "State", 
+"region": "Midwest", 
+"woe_id": 2347581, 
+"woe_name": "Michigan", 
+"longitude": -84, 
+"woe_label": "Michigan, US, United States", 
+"fips": "US26", 
+"iso_a2": "US", 
+"latitude": 43, 
+"objectid_1": 3202, 
+"postal": "MI", 
+"type": "State", 
+"id": "US.MI"
 }},
 ```
 {sample}Maps\_Labels\_08{sample}
@@ -237,25 +238,25 @@ The following sample demonstrates several region labels set with "absolute" posi
 
 ```
 var dataSet_union = anychart.data.set([
-    {id: 'US.MN', name: "Minnesota"},
-    {id: 'US.CA', name: "California", "labelrank": 5},
-    {id: 'US.NV', name: "Nevada", "labelrank": 3, "middle-x": -117.2, "middle-y": 40.06, middleXYMode: "absolute"},
-    {id: 'US.OR', name: "Oregon"},
-    {id: 'US.IA', name: "Iowa"},
-    {id: 'US.KS', name: "Kansas"},
-    {id: 'US.CT', name: "Connecticut"},
-    {id: 'US.MA', name: "Massachusetts"},
-    {id: 'US.NH', name: "New Hampshire"},
-    {id: 'US.RI', name: "Rhode Island"},
-    {id: 'US.VT', name: "Vermont"},
-    {id: 'US.IL', name: "Illinois", "middle-x": -89.5, "middle-y": 40.2, middleXYMode: "absolute"},
-    {id: 'US.IN', name: "Indiana"},
-    {id: 'US.OH', name: "Ohio"},
-    {id: 'US.WI', name: "Wisconsin", "labelrank": 5},
-    {id: 'US.NY', name: "New York"},
-    {id: 'US.PA', name: "Pennsylvania", "middle-x": -80.3, "middle-y": 41.9, middleXYMode: "absolute"},
-    {id: 'US.ME', name: "Maine"},
-    {id: 'US.MI', name: "Michigan", "labelrank": 3, "middle-x": -86.5, "middle-y": 46.4, "middleXYMode": "absolute"}
+{id: 'US.MN', name: "Minnesota"},
+{id: 'US.CA', name: "California", "labelrank": 5},
+{id: 'US.NV', name: "Nevada", "labelrank": 3, "middle-x": -117.2, "middle-y": 40.06, middleXYMode: "absolute"},
+{id: 'US.OR', name: "Oregon"},
+{id: 'US.IA', name: "Iowa"},
+{id: 'US.KS', name: "Kansas"},
+{id: 'US.CT', name: "Connecticut"},
+{id: 'US.MA', name: "Massachusetts"},
+{id: 'US.NH', name: "New Hampshire"},
+{id: 'US.RI', name: "Rhode Island"},
+{id: 'US.VT', name: "Vermont"},
+{id: 'US.IL', name: "Illinois", "middle-x": -89.5, "middle-y": 40.2, middleXYMode: "absolute"},
+{id: 'US.IN', name: "Indiana"},
+{id: 'US.OH', name: "Ohio"},
+{id: 'US.WI', name: "Wisconsin", "labelrank": 5},
+{id: 'US.NY', name: "New York"},
+{id: 'US.PA', name: "Pennsylvania", "middle-x": -80.3, "middle-y": 41.9, middleXYMode: "absolute"},
+{id: 'US.ME', name: "Maine"},
+{id: 'US.MI', name: "Michigan", "labelrank": 3, "middle-x": -86.5, "middle-y": 46.4, "middleXYMode": "absolute"}
 ]);
 ```
 {sample}Maps\_Labels\_09{sample}
@@ -265,17 +266,17 @@ Note that if the middleXYMode property is absolute, it is necessary to set both 
 
 ### Out of region labels
 
-If it is necessary to show the labels for those tiny regions, it is possible to display labels outside of the them. In this case set the X and Y coordinates of a label through the geo data or data set of your map. Set the "positionMode" property (through the data set or the geoJSON) to set the correct positioning of the label according to the coordinates set. There are three position modes: relative, absolute and offset. Setting positionMode as "offset" will lead to considering the "x" coordinate as angle (in grades) and y as the connector length. Note that in this mode the distance between the middle point of the region and its labels will not change even when map is being zoomed.
+If it is necessary to show the labels for those tiny regions, it is possible to display labels outside of the them. In this case set the X and Y coordinates of a label through the geo data or data set of your map. Set the "positionMode" property (through the data set or the GeoJSON) to set the correct positioning of the label according to the coordinates set. There are three position modes: relative, absolute and offset. Setting positionMode as "offset" will lead to considering the "x" coordinate as angle (in grades) and y as the connector length. Note that in this mode the distance between the middle point of the region and its labels will not change even when map is being zoomed.
 
 In the sample below there are some regions with labels set as inside (with middle-coordinates) and others are set as outside in different modes.
 
 ```  
 var dataSet_1 = anychart.data.set([
-    {'id': 'AU.JB', 'value': 0, label: {x: 153, y: -33, positionMode: "absolute"}},
-    {'id': 'AU.NT', 'value': 1},
-    {'id': 'AU.WA', 'value': 2},
-    {'id': 'AU.CT', 'value': 3, label: {x: 7, y: 5, positionMode: "relative"}},
-    {'id': 'AU.NS', 'value': 4}
+{'id': 'AU.JB', 'value': 0, label: {x: 153, y: -33, positionMode: "absolute"}},
+{'id': 'AU.NT', 'value': 1},
+{'id': 'AU.WA', 'value': 2},
+{'id': 'AU.CT', 'value': 3, label: {x: 7, y: 5, positionMode: "relative"}},
+{'id': 'AU.NS', 'value': 4}
 ]);
 ```
 
@@ -285,7 +286,7 @@ On the previous sample you can see a connector between each outside label and it
 
 ```
 var dataSet_1 = anychart.data.set([
-    {'id': 'AU.JB', 'value': 0, label: {x: 153, y: -33, positionMode: "absolute"}, connectorStroke: "red"},
+    {'id': 'AU.JB', 'value': 0, label: {x: 153, y: -33, positionMode: "absolute"}, connectorStroke: "red"}
 ]);
 
 // set the connector stroke color
