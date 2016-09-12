@@ -30,25 +30,25 @@
     chart.container(stage);
     chart.draw();
 
-    // create a label for switching to the column series
-    createLabel("Switch to Column", 10, function() {
+    // create a label for switching to the line series
+    createLabel("Switch to OHLC", 10, function() {
         // change the series type
-        series.seriesType("column");
-        chart.title("Switching the Series Type \n Column");
+        series.seriesType("ohlc");
+        chart.title("Switching the Series Type \n OHLC");
     });    
 
-    // create a label for switching to the line series
-    createLabel("Switch to Line", 150, function() {
+    // create a label for switching to the column series
+    createLabel("Switch to Japanese Candlestick", 140, function() {
         // change the series type
-        series.seriesType("line");
-        chart.title("Switching the Series Type \n Line");
+        series.seriesType("candlestick");
+        chart.title("Switching the Series Type \n Japanese Candlestick");
     });    
 
     // create a label for switching to the area series
-    createLabel("Switch to Area", 267, function() {
+    createLabel("Switch to Range Area", 375, function() {
         // change the series type
-        series.seriesType("area");
-        chart.title("Switching the Series Type \n Area");
+        series.seriesType("rangeArea");
+        chart.title("Switching the Series Type \n Range Area");
     });    
 
 });
