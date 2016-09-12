@@ -79,44 +79,37 @@ Labels can get information to show not only from data sets, it is possible to ob
 
 Labels are not only used to show the names of the regions or any other information that is defined in the data set. It is possible to adjust labels to make them show some properties that are defined only in the data source. In AnyMap there is a {api:anychart.core.ChoroplethPoint#getFeatureProp}getFeatureProp(){api} method, that allows to get any information from the GeoJson data. Look at the next sample and explore it in the playground to understand how it works.
 
-That is how properties look in GeoJSON:
+That is how properties are set in GeoJSON:
 
 ```
 "properties": {
-"labelrank": 2, 
-"code_hasc": "AU.NT", 
-"name": "Northern Territory", 
-"admin": "Australia", 
-"type_en": "Territory", 
-"region": "", 
-"woe_id": 2344701, 
-"longitude": 133, 
-"woe_name": "Northern Territory", 
-"fips": "AS03", 
-"woe_label": "Northern Territory, AU, Australia", 
-"latitude": -20, 
-"iso_a2": "AU", 
-"postal": "NT", 
-"type": "Territory", 
-"id": "AU.NT"
+    "labelrank": 2, 
+    "code_hasc": "AU.NT", 
+    "name": "Northern Territory", 
+    "admin": "Australia", 
+    "type_en": "Territory", 
+    "region": "", 
+    "woe_id": 2344701, 
+    "longitude": 133, 
+    "woe_name": "Northern Territory", 
+    "fips": "AS03", 
+    "woe_label": "Northern Territory, AU, Australia", 
+    "latitude": -20, 
+    "iso_a2": "AU", 
+    "postal": "NT", 
+    "type": "Territory", 
+    "id": "AU.NT"
 }
-
 ```
 
-There are some properties that are not mentioned in the data set, but still it is possible to get those values and show them in labels. Let's get the longitude and latitude using {api:anychart.core.ChoroplethPoint#getFeatureProp}getFeatureProp(){api} method:
+You can obtain and use any property specified in GeoJSON. Let's get and show the postal code and region type on the label using {api:anychart.core.ChoroplethPoint#getFeatureProp}getFeatureProp(){api} method:
 
 ```
-// get some values from GeoJSON
-map.listen("pointMouseOver", function (e) {
-// gets point properties
-var properties = e.point.getFeatureProp();
-labels.textFormatter("Name: " + properties.name + "\nLongitude: " + properties.longitude + "\nLatitude: " + properties.latitude)
-});
-
-map.listen("pointMouseOut", function (e) {
-// gets point properties
-var properties = e.point.getFeatureProp();
-labels.textFormatter("Name" + properties.name);
+// format labels text
+labels.textFormatter(function (e) {
+    // Gets point source region properties.
+    var properties = e.regionProperties;
+    return properties["postal"] + " (" + properties["type"] + ")";
 });
 ```
 
@@ -127,7 +120,7 @@ You can find the map of Australia in GeoJSON map on [AnyChart CDN](http://cdn.an
 
 ## Overlap
 
-Some maps might contain several tiny regions, which labels are not able to suit the sizes of their regions. In these cases it is just necessary to have an opportunity to disable and enable some of them.
+Some maps contain tiny regions, so it is just necessary to have an opportunity to control labels overlap. In these cases it is just necessary to have an opportunity to disable and enable some of them.
 
 ### Map
 
@@ -167,7 +160,6 @@ It is also possible to manage each region's label separately. If there are sever
 Those properties can be set through the GeoJSON code or through the data set.
 
 ```
-var dataSet_obama = anychart.data.set([
 {id: 'US.WA', name: "Washington", value: 12},
 {id: 'US.CA', name: "California", value: 55, "labelrank": 5},
 {id: 'US.NV', name: "Nevada", value: 6, "labelrank": 3},
@@ -197,7 +189,6 @@ To set the custom position of the labels inside the regions, set "middle-x" and 
 Another property is responsible for positioning around the "middle-x" and "middle-y" coordinates: set "middleXYmode" as relative or absolute. When the "middleXYmode" property is "relative", the default middle-x and middle-y values will be considered as 0.5, so keep it in mind while setting the "middle-x" and "middle-y" properties.
 
 ```
-var dataSet_obama = anychart.data.set([
 {id: 'US.WA', name: "Washington", value: 12},
 {id: 'US.CA', name: "California", value: 55, "labelrank": 5},
 {id: 'US.NV', name: "Nevada", value: 6, "labelrank": 3, "middle-x": 0.5, "middle-y": 0.3, middleXYMode: "relative"},
@@ -213,23 +204,23 @@ These properties can be set through the GeoJSON code:
 
 ```
 "properties": {
-"labelrank": 0, 
-"code_hasc": "US.MI", 
-"name": "Michigan", 
-"admin": "United States of America", 
-"type_en": "State", 
-"region": "Midwest", 
-"woe_id": 2347581, 
-"woe_name": "Michigan", 
-"longitude": -84, 
-"woe_label": "Michigan, US, United States", 
-"fips": "US26", 
-"iso_a2": "US", 
-"latitude": 43, 
-"objectid_1": 3202, 
-"postal": "MI", 
-"type": "State", 
-"id": "US.MI"
+    "labelrank": 0, 
+    "code_hasc": "US.MI", 
+    "name": "Michigan", 
+    "admin": "United States of America", 
+    "type_en": "State", 
+    "region": "Midwest", 
+    "woe_id": 2347581, 
+    "woe_name": "Michigan", 
+    "longitude": -84, 
+    "woe_label": "Michigan, US, United States", 
+    "fips": "US26", 
+    "iso_a2": "US", 
+    "latitude": 43, 
+    "objectid_1": 3202, 
+    "postal": "MI", 
+    "type": "State", 
+    "id": "US.MI"
 }},
 ```
 {sample}Maps\_Labels\_08{sample}
@@ -237,7 +228,6 @@ These properties can be set through the GeoJSON code:
 The following sample demonstrates several region labels set with "absolute" positioning through the data set:
 
 ```
-var dataSet_union = anychart.data.set([
 {id: 'US.MN', name: "Minnesota"},
 {id: 'US.CA', name: "California", "labelrank": 5},
 {id: 'US.NV', name: "Nevada", "labelrank": 3, "middle-x": -117.2, "middle-y": 40.06, middleXYMode: "absolute"},
@@ -257,7 +247,6 @@ var dataSet_union = anychart.data.set([
 {id: 'US.PA', name: "Pennsylvania", "middle-x": -80.3, "middle-y": 41.9, middleXYMode: "absolute"},
 {id: 'US.ME', name: "Maine"},
 {id: 'US.MI', name: "Michigan", "labelrank": 3, "middle-x": -86.5, "middle-y": 46.4, "middleXYMode": "absolute"}
-]);
 ```
 {sample}Maps\_Labels\_09{sample}
 
@@ -271,13 +260,11 @@ If it is necessary to show the labels for those tiny regions, it is possible to 
 In the sample below there are some regions with labels set as inside (with middle-coordinates) and others are set as outside in different modes.
 
 ```  
-var dataSet_1 = anychart.data.set([
 {'id': 'AU.JB', 'value': 0, label: {x: 153, y: -33, positionMode: "absolute"}},
 {'id': 'AU.NT', 'value': 1},
 {'id': 'AU.WA', 'value': 2},
 {'id': 'AU.CT', 'value': 3, label: {x: 7, y: 5, positionMode: "relative"}},
 {'id': 'AU.NS', 'value': 4}
-]);
 ```
 
 {sample}Maps\_Labels\_10{sample}
@@ -334,8 +321,8 @@ To change the size of callout labels, use {api:anychart.core.ui.Callout#width}wi
 // set the width and length
 calloutBottom.width(50);
 calloutBottom.length(300);
-  calloutRight.width(70);
-  calloutRight.length(100);
+calloutRight.width(70);
+calloutRight.length(100);
 ```
 
 {sample}Maps\_Labels\_12{sample}
