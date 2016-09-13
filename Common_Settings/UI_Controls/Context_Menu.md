@@ -34,16 +34,16 @@ Here is a sample with enabled context menu:
 The Context Menu is enabled by default and if you have no need in the menu you can disable it using {api:anychart.ui.ContextMenu#enabled}.enabled(){api} method:
 
 ```
-  var chart = anychart.column();
-  var menu = chart.contextMenu();
-  menu.enabled(false);
+var chart = anychart.column();
+var menu = chart.contextMenu();
+menu.enabled(false);
 ```
 
-*Note:* there is even more simple way to disable context menu: pass *false* to the {api:anychart.core.Chart#contextMenu}.contextMenu(){api} method:
+**Note:** there is even more simple way to disable context menu: pass *false* to the {api:anychart.core.Chart#contextMenu}.contextMenu(){api} method:
 
 ```
-  var chart = anychart.column();
-  chart.contextMenu(false);
+var chart = anychart.column();
+chart.contextMenu(false);
 ```
 
 {sample}CS\_ContextMenu\_02{sample}
