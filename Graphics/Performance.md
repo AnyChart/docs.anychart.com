@@ -1,4 +1,4 @@
-{:index 1}
+{:index 9}
 # GraphicsJS Overview
 
 * [Overview](#overview)
