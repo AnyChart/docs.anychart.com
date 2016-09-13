@@ -18,7 +18,7 @@ GraphicsJS has one the most powerful [line drawing features](Paths) among SVG/VM
 
 GraphicsJS has the richest [text features](Text_and_Fonts), for example, SVG/VML technologies do not provide this out of the box, as well as most of other JavaScript drawing libraries. GraphicsJS supports multiline texts and also offers text measurement, including width, height, as well as wrap, overflow, indent, spacing, align, etc.
 
-GraphicsJS has [Virtual DOM](Virtual_DOM) which makes drawing more robust and manageable.
+GraphicsJS has implements the [Virtual DOM](Virtual_DOM) which makes drawing more robust and manageable.
 
 GraphicsJS uses smart layering system for elements and [layers](Layers). GraphicsJS supports z-index. Typically, if you ever decided to change the overlapping order, you would have to erase everything and draw the whole picture again, from scratch. With GraphicsJS, you are given the power to arrange this dynamically, which is extremely helpful when you are creating some big graphical thing and it is important for you to specify which elements must be seen at one moment or another.
 
@@ -42,7 +42,7 @@ If you it is your first experience with JavaScript drawing libraries, we suggest
 * [Paths](Paths), [Shapes](Shapes), [Text_and_Fonts](Text_and_Fonts) and [Color](/Color) are the articles on drawing primitives, of which everything consists of.
 * [Layers](Layers) article explains how the basic elements may be grouped and arranged.
 * [Transformations](Transformations) article explains how you can change elements and groups.
-* [Events](Events) article describes GraphicsJS object model.
+* [Events](Events) article describes GraphicsJS event model.
 
 If you are done with articles listed above, or you are an experienced user of [AnyChart 7](http://www.anychart.com/), or  a person with the rich JavaScript-coding background, you may jump right into:
 
