@@ -3,43 +3,61 @@ Seat Maps
 ===========
 
 * [Overview](#overview)
-* [Preparing SVG Image](#preparing_svg_image)
+* [Preparing an SVG Image](#preparing_an_svg_image)
 * [SVG Data](#svg_data)
  * [AJAX](#ajax)
- * [As String](#as_string)
+ * [As a String](#as_a_string)
  * [HTML DOM Image](#html_dom_image)
-* [Map Data](#map_data)
+* [Mapping Data](#mapping_data)
 * [Coloring](#coloring)
 * [Unbound Regions](#unbound_regions)
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Gallery Samples](#gallery_samples)
 
+---> Как все-таки - с заглавных букв пишем названия графиков или со строчных? Я всегда писала со строчной, т.к. это избавляет от необходимости палить случаи, когда речь не об эничартовских графиках, а об этом типе графика вообще (и заглавная тогда по идее не нужна). Пишешь все со строчной и не паришься. Но может, в маркетинговых целях и для улучшения читаемости заглавные нужны? В этой статье заглавные не трогала, хотя есть разнобой. Хочу услышать ответ, чтобы знать, как самой-то писать. И да, надо будет потом еще перепроверить по статье капитализацию, обязательно.
 
 ## Overview
 
-Seat Map is a diagram of a seat layout inside a building, passenger aircraft or else. Aircraft Seat Maps are published by airlines for informational purposes, as well as they are used by passengers to select a seat when booking a ticket or checking in for a flight. Theatre, stadium or arena seat maps are used the same way. With AnyMap you can create any kind of seat maps, schemes or interactive layouts.
+With AnyMap you can create any kind of seat maps, schemes, and interactive layouts.
 
+A Seat Map is a diagram of a seat layout inside a passenger aircraft, theater, stadium, arena, or any other building or space. Such layouts are published for informational purposes: for example, aircraft Seat Maps allow passengers to select a seat when booking a ticket or checking in for a flight. Other Seat Maps are mostly used in the similar way.
 
-## Preparing SVG Image
+---> as well as they are used by passengers - ПОЧЕМУ as well? Я СЧИТАЮ, ЭТО ЧАСТЬ "informational purposes". ПОПРАВИЛА.
+---> "the same way" is a colloquial form of "in the same way" - ХОЗЯЙКЕ НА ЗАМЕТКУ!
+---> НЕМНОГО ПЕРЕПИСАЛА АБЗАЦ НА СВОЙ ВКУС, ДОБАВИЛА СВЯЗНОСТИ. ПЕРВОЕ ПРЕДЛОЖЕНИЕ (РАНЬШЕ ОНО БЫЛО ПОСЛЕДНИМ) ОСОБЕННО СЛОЖНО СВЯЗАТЬ С ОСТАЛЬНЫМИ. НО ВРОДЕ ТАКОЙ ВАРИАНТ БОЛЕЕ ИЛИ МЕНЕЕ НОРМ.
 
-To create a Seat Map with AnyMap you need an SVG image formatted in a specific way. Learn how an existing SVG image can be loaded, and how it should be formatted in [Custom SVG Maps](Custom_SVG_Maps) article.
+## Preparing an SVG Image
+
+To create a Seat Map with AnyMap, you need an SVG image formatted in a specific way. Read the [Custom SVG Maps](Custom_SVG_Maps) article to learn how an existing SVG image can be loaded, and how it should be formatted.
 
 If you need to create your own SVG picture in a graphic editor, study the [Preparing SVG Image](Preparing_SVG_Image) article.
 
 
 ## SVG Data
 
-There are three ways to load SVG image into a Seat Map: using the AJAX technology, add SVG as string variable or through the HTML DOM.
+---> ХОЧЕТСЯ ГЛАГОЛ. Uploading SVG Data? Uploading an SVG Image?
+     МОЖНО ЕЩЕ ПРЕДЫДУЩИЙ ПОМЕНЯТЬ НА: Preparing SVG Data.
+
+There are three ways to upload an SVG image into a Seat Map: you can use the AJAX technology, add an SVG as a string variable, or add it through the HTML DOM.
+
+---> ПЕРЕЧИТАЙ ЭТО ПРЕДЛОЖЕНИЕ - НЕ ПОТЕРЯЛСЯ СМЫСЛ В РЕЗУЛЬТАТЕ ПРАВОК?
 
 ### AJAX
 
-There are a lot ways to use AJAX in the JavaScript. In this article we use jQuery library to do that. To include the jQuery library use the script tag:
+---> Using AJAX ? ЕСЛИ ПЕРЕДЕЛАТЬ ОБЩЕЕ ЗАГЛАВИЕ (СМ. ВЫШЕ) И ЧУТЬ РАСШИРИТЬ ЗАГОЛОВКИ, ОГЛАВЛЕНИЕ БУДЕТ БОЛЕЕ ЧИТАЕМЫМ
+
+In this article, AJAX is used in JavaScript with the help of the jQuery library, thought there are a lot of other ways. To include jQuery, add the script tag:
+
+---> НЕМНОГО ВСЕ ПЕРЕСТРОИЛА, ТОЖЕ ПРОЧИТАЙ
+---> МОЖЕТ, СЛОВО script КАК-ТО ВЫДЕЛИТЬ НАДО?
 
 ```
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 ```
 
-Load SVG file using .ajax request:
+To load the SVG file, use .ajax request:
+
+КАКОЙ АРТИКЛЬ НУЖЕН ПЕРЕД .ajax request? ЭТО КАКОЙ-ТО УНИКАЛЬНЫЙ ЗАПРОС (THE) ИЛИ ОНИ РАЗНЫЕ БЫВАЮТ?
 
 ```
 $.ajax({
@@ -50,9 +68,9 @@ url: "http://static.anychart.com/images/docs/house.svg",
 {sample}Maps\_Seat\_01{sample}
 
 
-### As String
+### As a String
 
-Another way to use SVG image is to put it directly in the script as a string. This way may suit you if the SVG code is not too long.
+Another way to add an SVG image is to put it directly into the script as a string. This way may suit you if the SVG code is not too long.
 
 ```
 svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
@@ -67,7 +85,11 @@ svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
 
 ### HTML DOM Image
 
-Another option is to embed image in HTML DOM and then obtain it from the DOM when page is loaded. **Note** that this option works only when the SVG file is located in the same domain as the map file because of the [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy). 
+---> As a HTML DOM Image ? Using (the) HTML DOM ?
+
+Finally, there is an option to embed your image in the HTML DOM and then obtain it from the DOM when page is loaded. **Note** that this option works only when the SVG file is located in the same domain as the map file because of the [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy). 
+
+---> В ДРУГОМ МЕСТО ДО ЭТОГО БЫЛО НАПИСАНО "the HTML DOM", Я И ТУТ ДЛЯ ЕДИНООБРАЗИЯ АРТИКЛЬ ПОСТАВИЛА, НО НЕ ЗНАЮ, КАК ПРАВИЛЬНО, ТК. НЕ ЗНАЮ, ЧТО ЭТО ТАКОЕ.
 
 Put an `<object>` with the link to the SVG file into the `<body>` section of the Map file. 
 
@@ -85,15 +107,18 @@ anychart.onDocumentLoad(function() {
   // note that you should use onDocumentLoad to get the image
   var imageElement = document.getElementById("house");
 ```
-Take a look at the <a href="http://www.anychart.com/demos/seatmap/html-dom-embed.html">AnyChart Seat map sample</a> with an SVG file loaded from HTML DOM.
+Take a look at the <a href="http://www.anychart.com/demos/seatmap/html-dom-embed.html">AnyChart Seat map sample</a> with an SVG file loaded from the HTML DOM.
 
+---> И ТУТ ДОБАВИЛА the (HTML DOM).
 
-## Map Data
+## Mapping Data
 
-When SVG image is loaded as a source you need to add data for a Seat Map. Data points' IDs should correspond the groups' IDs in the SVG file.
+When the SVG image is loaded as a source, you need to add data for the Seat Map. The IDs of data points should correspond the IDs of groups in the SVG file.
+
+---> you need to add data: МОЖЕТ, ТУТ ЛУЧШЕ map?
 
 ```
-// create new series
+// create a new series
 seatMapSeries = chart.choropleth();
 // load data
 seatMapSeries.data([
@@ -107,7 +132,7 @@ seatMapSeries.data([
 
 {sample}Maps\_Seat\_01{sample}
 
-If you open the original SVG image, you can easily notice that the colors in the sample above are different from those defined in the image itself. Working with colors in Seat Maps is described in the next section.
+If you open the original SVG image, you can easily notice that the colors in the sample above are different from those defined in the image itself. The next section explains how to work with colors in Seat Maps.
 
 
 ## Coloring
@@ -126,7 +151,7 @@ chart = anychart.seatMap([
 
 {sample}Maps\_Seat\_03{sample}
 
-Colors can be also defined through the SVG code and several other ways. See the [Advanced Coloring](Advanced_Coloring) article to learn more.
+Colors can be also defined through the SVG code and in several other ways. See the [Advanced Coloring](Advanced_Coloring) article to learn more.
 
 
 ## Unbound Regions
@@ -142,7 +167,7 @@ chart.unboundRegions("as-is");
 
 {sample}Maps\_Seat\_04{sample}
 
-When you set "hide" as the argument of the {api:anychart.charts.Map#unboundRegions}unboundRegion(){api} method, regions with no values are not shown at all. You can see that in the sample below, the kitchen is not displayed at all.
+When you set "hide" as the argument of the {api:anychart.charts.Map#unboundRegions}unboundRegion(){api} method, regions with no values are not shown at all. You can see that in the sample below the kitchen is not displayed at all.
 
 ```
 // load SVG image and don't show elements without values in the data set
@@ -154,7 +179,9 @@ chart.unboundRegions("hide");
 
 ### Labels and Tooltips
 
-Working with Seat Map labels and tooltips is absolutely identical to working with labels and tooltips in Maps. Learn more in the [Map Tooltips](Maps/Tooltips) and [Map Labels](Maps/Labels) articles. The {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods are used to work with them:
+To configure labels and tooltips, use the {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods. Working with Seat Map labels and tooltips is absolutely identical to working with labels and tooltips in Maps, so you can learn more from the [Map Tooltips](Maps/Tooltips) and [Map Labels](Maps/Labels) articles.
+
+---> ПЕРЕСТРОИЛА АБЗАЦ, ПЕРЕЧИТАЙ
 
 ```
 // data set
@@ -174,7 +201,12 @@ labels.textFormatter("{%id} \n{%info} \n{%sq}");
 
 {sample}Maps\_Seat\_06{sample}
 
-To change the information shown in tooltips, use the {api:anychart.charts.Map#tooltip}tooltip(){api} method. Text in the tooltip title and text of the body of a tooltip are formatted using the {api:anychart.core.ui.ChartTooltip#titleFormatter}titleFormatter(){api} and {api:anychart.core.ui.ChartTooltip#textFormatter}textFormatter(){api} methods. Find more information about tooltips in our [Tooltips](../../Common_Settings/Tooltip) and [Map Tooltips](../Tooltips) articles.
+To change the information shown in tooltips, use the {api:anychart.charts.Map#tooltip}tooltip(){api} method. Text in the tooltip title and text in the tooltip body are formatted using the {api:anychart.core.ui.ChartTooltip#titleFormatter}titleFormatter(){api} and {api:anychart.core.ui.ChartTooltip#textFormatter}textFormatter(){api} methods. Find more information about tooltips in our [Tooltips](../../Common_Settings/Tooltip) and [Map Tooltips](../Tooltips) articles.
+
+---> Text in the tooltip title and text of the body of a tooltip are formatted...
+     МОЖЕТ, ТАК? The title and body are formatted...
+
+---> is formatted using... А МОЖЕТ ЗДЕСЬ via? Повтора не будет.
 
 ```
 // set the tooltips
