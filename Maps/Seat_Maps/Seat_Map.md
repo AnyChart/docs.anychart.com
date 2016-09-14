@@ -14,13 +14,11 @@ Seat Maps
 * [Labels and Tooltips](#labels_and_tooltips)
 * [Gallery Samples](#gallery_samples)
 
----> Как все-таки - с заглавных букв пишем названия графиков или со строчных? Я всегда писала со строчной, т.к. это избавляет от необходимости палить случаи, когда речь не об эничартовских графиках, а об этом типе графика вообще (и заглавная тогда по идее не нужна). Пишешь все со строчной и не паришься. Но может, в маркетинговых целях и для улучшения читаемости заглавные нужны? В этой статье заглавные не трогала, хотя есть разнобой. Хочу услышать ответ, чтобы знать, как самой-то писать. И да, надо будет потом еще перепроверить по статье капитализацию, обязательно.
-
 ## Overview
 
 With AnyMap you can create any kind of seat maps, schemes, and interactive layouts.
 
-A Seat Map is a diagram of a seat layout inside a passenger aircraft, theater, stadium, arena, or any other building or space. Such layouts are published for informational purposes: for example, aircraft Seat Maps allow passengers to select a seat when booking a ticket or checking in for a flight. Other Seat Maps are mostly used in the similar way.
+A seat map is a diagram of a seat layout inside a passenger aircraft, theater, stadium, arena, or any other building or space. Such layouts are published for informational purposes: for example, aircraft seat maps allow passengers to select a seat when booking a ticket or checking in for a flight. Other seat maps are mostly used in the similar way.
 
 ---> as well as they are used by passengers - ПОЧЕМУ as well? Я СЧИТАЮ, ЭТО ЧАСТЬ "informational purposes". ПОПРАВИЛА.
 ---> "the same way" is a colloquial form of "in the same way" - ХОЗЯЙКЕ НА ЗАМЕТКУ!
@@ -28,7 +26,7 @@ A Seat Map is a diagram of a seat layout inside a passenger aircraft, theater, s
 
 ## Preparing an SVG Image
 
-To create a Seat Map with AnyMap, you need an SVG image formatted in a specific way. Read the [Custom SVG Maps](Custom_SVG_Maps) article to learn how an existing SVG image can be loaded, and how it should be formatted.
+To create a seat map with AnyMap, you need an SVG image formatted in a specific way. Read the [Custom SVG Maps](Custom_SVG_Maps) article to learn how an existing SVG image can be loaded, and how it should be formatted.
 
 If you need to create your own SVG picture in a graphic editor, study the [Preparing SVG Image](Preparing_SVG_Image) article.
 
@@ -38,7 +36,7 @@ If you need to create your own SVG picture in a graphic editor, study the [Prepa
 ---> ХОЧЕТСЯ ГЛАГОЛ. Uploading SVG Data? Uploading an SVG Image?
      МОЖНО ЕЩЕ ПРЕДЫДУЩИЙ ПОМЕНЯТЬ НА: Preparing SVG Data.
 
-There are three ways to upload an SVG image into a Seat Map: you can use the AJAX technology, add an SVG as a string variable, or add it through the HTML DOM.
+There are three ways to upload an SVG image into a seat map: you can use the AJAX technology, add an SVG as a string variable, or add it through the HTML DOM.
 
 ---> ПЕРЕЧИТАЙ ЭТО ПРЕДЛОЖЕНИЕ - НЕ ПОТЕРЯЛСЯ СМЫСЛ В РЕЗУЛЬТАТЕ ПРАВОК?
 
@@ -89,7 +87,7 @@ svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
 
 Finally, there is an option to embed your image in the HTML DOM and then obtain it from the DOM when page is loaded. **Note** that this option works only when the SVG file is located in the same domain as the map file because of the [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy). 
 
----> В ДРУГОМ МЕСТО ДО ЭТОГО БЫЛО НАПИСАНО "the HTML DOM", Я И ТУТ ДЛЯ ЕДИНООБРАЗИЯ АРТИКЛЬ ПОСТАВИЛА, НО НЕ ЗНАЮ, КАК ПРАВИЛЬНО, ТК. НЕ ЗНАЮ, ЧТО ЭТО ТАКОЕ.
+---> В ДРУГОМ МЕСТЕ ДО ЭТОГО БЫЛО НАПИСАНО "the HTML DOM", Я И ТУТ ДЛЯ ЕДИНООБРАЗИЯ АРТИКЛЬ ПОСТАВИЛА, НО НЕ ЗНАЮ, КАК ПРАВИЛЬНО, ТК. НЕ ЗНАЮ, ЧТО ЭТО ТАКОЕ.
 
 Put an `<object>` with the link to the SVG file into the `<body>` section of the Map file. 
 
@@ -107,13 +105,13 @@ anychart.onDocumentLoad(function() {
   // note that you should use onDocumentLoad to get the image
   var imageElement = document.getElementById("house");
 ```
-Take a look at the <a href="http://www.anychart.com/demos/seatmap/html-dom-embed.html">AnyChart Seat map sample</a> with an SVG file loaded from the HTML DOM.
+Take a look at the <a href="http://www.anychart.com/demos/seatmap/html-dom-embed.html">AnyChart Seat Map sample</a> with an SVG file loaded from the HTML DOM.
 
 ---> И ТУТ ДОБАВИЛА the (HTML DOM).
 
 ## Mapping Data
 
-When the SVG image is loaded as a source, you need to add data for the Seat Map. The IDs of data points should correspond the IDs of groups in the SVG file.
+When the SVG image is loaded as a source, you need to add data for the seat map. The IDs of data points should correspond the IDs of groups in the SVG file.
 
 ---> you need to add data: МОЖЕТ, ТУТ ЛУЧШЕ map?
 
@@ -132,12 +130,12 @@ seatMapSeries.data([
 
 {sample}Maps\_Seat\_01{sample}
 
-If you open the original SVG image, you can easily notice that the colors in the sample above are different from those defined in the image itself. The next section explains how to work with colors in Seat Maps.
+If you open the original SVG image, you can easily notice that the colors in the sample above are different from those defined in the image itself. The next section explains how to work with colors in seat maps.
 
 
 ## Coloring
 
-The easiest way to change the colors of the Seat Map elements is to use the data set. Just add the necessary fields to the objects (points):
+The easiest way to change the colors of the seat map elements is to use the data set. Just add the necessary fields to the objects (points):
 
 ```
 chart = anychart.seatMap([
@@ -179,7 +177,7 @@ chart.unboundRegions("hide");
 
 ### Labels and Tooltips
 
-To configure labels and tooltips, use the {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods. Working with Seat Map labels and tooltips is absolutely identical to working with labels and tooltips in Maps, so you can learn more from the [Map Tooltips](Maps/Tooltips) and [Map Labels](Maps/Labels) articles.
+To configure labels and tooltips, use the {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods. Working with labels and tooltips in Seat Maps is absolutely identical to working with labels and tooltips in Maps, so you can learn more from the [Map Tooltips](Maps/Tooltips) and [Map Labels](Maps/Labels) articles.
 
 ---> ПЕРЕСТРОИЛА АБЗАЦ, ПЕРЕЧИТАЙ
 
@@ -226,4 +224,4 @@ tooltips.separator("white");
 
 ## Gallery Samples
 
-You can find samples of using SVG images in Seat Maps in [AnyMap: Seat Maps Gallery](http://www.anychart.com/products/anymap/gallery/Seat_Maps/). 
+You can find samples of using SVG images in seat maps in [AnyMap: Seat Maps Gallery](http://www.anychart.com/products/anymap/gallery/Seat_Maps/). 
