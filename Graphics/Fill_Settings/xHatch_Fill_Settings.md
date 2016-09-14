@@ -16,7 +16,7 @@ We provide a list of hatch fill presets, full list of them is available in the {
 
 In case of graphic elements, you need to set hatchFill through the **.fill()** method: 
 ```
-    .fill(acgraph.hatchFill('soliddiamond'));
+.fill(acgraph.hatchFill('soliddiamond'));
 ```
 
 {sample}GFX\_hatch\_hatchFill{sample}
@@ -32,8 +32,7 @@ If needed, you can color the hatch using Hex, RGB, HSL or HTML color name with t
     * Single value <code>{api:anychart.graphics.vector.Fill}fill{api}('color **opacity**')</code> (one string value separated by space).
 
 ```
-            ellipse.fill(acgraph.hatchFill('plaid', 'gold 0.5'));
-
+ellipse.fill(acgraph.hatchFill('plaid', 'gold 0.5'));
 ```
 
 {sample}GFX\_hatch\_color{sample}
@@ -42,7 +41,7 @@ If needed, you can color the hatch using Hex, RGB, HSL or HTML color name with t
 Hatch lines thickness is set using thickness parameter:
 
 ```
-    circle.fill(acgraph.hatchFill('diagonal', 'red', 5.01));
+  circle.fill(acgraph.hatchFill('diagonal', 'red', 5.01));
 ```
 
 {sample}GFX\_hatch\_thickness{sample}
@@ -53,7 +52,7 @@ Note that several types of hatchFill don't have stroke to define thickness.
 Also, you can modify hatch using size parameter, which changes the size of the pattern:
 
 ```
-    ellipse.fill(acgraph.hatchFill('horizontal', 'gold 1.5', 2, 5));
+ellipse.fill(acgraph.hatchFill('horizontal', 'gold 1.5', 2, 5));
 ```
 
 {sample}GFX\_hatch\_size{sample}
@@ -62,24 +61,24 @@ Also, you can modify hatch using size parameter, which changes the size of the p
 If you are not satisfied with presets, you can create your own pattern, here an example: 
 
 ```
-  // initialize pattern
-  var pattern = stage.pattern(new acgraph.math.Rect(0,0,stage.width(),stage.height()));
-  // circles settings
-  var circles = {
-    cx: stage.width()/2,
-    cy: stage.height()/2,
-    step : 5
-  };
-  var max_circle_radius = Math.max(stage.width(), stage.height())/2;
-  // draw circles
-  for (var i = 0; i < max_circle_radius; i++){
-    pattern.circle(circles.cx, circles.cy, circles.step*i).fill('none').stroke('1 blue 0.9');
-  }
+// initialize pattern
+var pattern = stage.pattern(new acgraph.math.Rect(0,0,stage.width(),stage.height()));
+// circles settings
+var circles = {
+  cx: stage.width()/2,
+  cy: stage.height()/2,
+  step : 5
+};
+var max_circle_radius = Math.max(stage.width(), stage.height())/2;
+// draw circles
+for (var i = 0; i < max_circle_radius; i++){
+  pattern.circle(circles.cx, circles.cy, circles.step*i).fill('none').stroke('1 blue 0.9');
+}
 ```
 
 {sample}GFX\_hatch\_pattern{sample}
 
 Note that in case of using pattern you should create it as for a hatchFill, but define it as an object for the .fill() settings:
 ```
-	ellipse.fill(pattern);
+ellipse.fill(pattern);
 ```
