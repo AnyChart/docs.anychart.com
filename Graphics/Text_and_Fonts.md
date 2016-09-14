@@ -1,5 +1,5 @@
 {:index 8}
-# Fonts
+# GraphicsJS Text and Fonts
 
 * [Overview](#overview)
 

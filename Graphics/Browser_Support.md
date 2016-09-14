@@ -1,7 +1,7 @@
 {:index 9.1}
 # GraphicsJS Browser Support
 
-GraphicsJS comes packaged with an SVG and VML renderers.GraphicsJS rely on Google Closure Library in full compliance with Google JavaScript Style Guide. 
+GraphicsJS comes packaged with SVG and VML renderers. GraphicsJS rely on Google Closure Library in full compliance with Google JavaScript Style Guide. 
 
 ## Browser Support
 

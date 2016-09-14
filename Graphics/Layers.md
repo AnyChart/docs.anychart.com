@@ -2,51 +2,45 @@
 # GraphicsJS Layers
 
 * [Overview](#overview)
+* [Creating and Managing](#creating_and_managing)
+* [Transformation](#transformation)
+* [Clipping and Bounds](#clipping_and_bounds)
+* [zIndex](#zindex)
 
-Layers are transparent by default, have no bounds and you can create as many layers as necessary:
+## Overview 
 
-```
-// set layers of stage
-var layer_cube = stage.layer(); // layer for the cube
-var layer_cylinder = stage.layer(); // layer for the cylinder
-var layer_prism = stage.layer(); // layer for the hexagonal prism
-var layer_main_shadow = stage.layer(); // layer for the big shadow under the figures 
-var layer_5 = stage.layer();
-```
+{api:anychart.graphics.vector.Layer}Layer{api} is an object used to group elements in GraphicsJS. Elements must be grouped if you want to apply similar changes to them,  [transformation](Transformations) and alike. You can change layers in [suspended mode](Virtual_DOM), increasing performance and improving user experience.
 
-Using layers makes it easier to operate with groups of elements. It's possible to transform, remove or add a plenty of elements with the only line. 
+Layers are transparent, by default they have no bounds (which can be changed using {api:anychart.graphics.vector.Layer#clip}clip(){api} method) and you can create as many layers as necessary, including nested layers (using {api:anychart.graphics.vector.Layer#appendChild}appendChild(){api} method).
 
-{sample}GRAPHICS\_Basics\_04{sample}
+Some basic samples of working with layers can be found in the [Basics: Layers](Basics#layers) article.
 
-Layers mat be transformed using [Transformations](Transformations) and you can change layers in [suspended mode](Virtual_DOM). For example, we use {api:anychart.graphics.vector.Element#translate}translate(){api} to change the layers' position, {api:anychart.graphics.vector.Element#rotate}rotate(){api} to rotate them and {api:anychart.graphics.vector.Element#scale}scale(){api}, if we need to scale it in some way.
+## Creating and Managing
 
-It's possible to add and remove elements on a layer separately using names or indexes. Use the {api:anychart.graphics.vector.Stage#addChild}addChild(){api} method to add an element to a stage or layer by its name if you have already created it using the AnyChart constructor. 
+Layers can be created using:
 
-The similar method {api:anychart.graphics.vector.Stage#addChildAt}addChildAt(){api} will allow you to put the new element between the existing layers or behind them by defining not only the name but the index for this element.
+* {api:anychart.graphics.vector.Stage#layer}stage.layer(){api} method to create stage bound layer.
+* {api:anychart.graphics#layer}anychart.graphics.layer(){api} method to create an unbound layer.
 
-The same thing is with removing elements. We use {api:anychart.graphics.vector.Element#remove}remove(){api} to remove the element. As layers are elements themselves, so they can be put each into other. 
- 
-In the example above we used 5 different layers to build each figure and its shadows on each layer. Now if we remove any layer, it will look like we've removed a figure. 
+To remove a layer use:
 
-Let's use the {api:anychart.graphics.vector.Stage#removeChild}remove(){api} method to remove the cylinder with its shadow.
+* {api:anychart.graphics.vector.Layer#remove}remove(){api} method.
 
-```
-//remove the cylinder layer
-layer_cylinder.remove();
-```
+To append new elements to a layer use:
 
-{sample}GRAPHICS\_Basics\_05{sample}
+* {api:anychart.graphics.vector.Layer#appendChild}appendChild(){api} or {api:anychart.graphics.vector.Layer#appendChild}appendChildAt(){api} methods in case of appending unbound elements,
+* or use {api:anychart.graphics.vector.Layer#rect}layer.rect(){api}, {api:anychart.graphics.vector.Layer#circle}layer.circle(){api}, {api:anychart.graphics.vector.Layer#path}layer.path(){api}, and others to create elements directly in a layer.
 
-The situation would be different if we decided to remove the cube also. In this case we should have used the {api:anychart.graphics.vector.Element#remove}remove(){api} method to get rid of the big shadow under all objects which is situated on the separate layer.
+Do not forget you can [suspend and resume](Virtual_DOM) rendering while changing layers or elements within layers.
 
-```
-// remove the cylinder layer
-layer_cylinder.remove();
+## Transformation
 
-// remove the cube and shadows
-layer_cube.remove();
-layer_main_shadow.remove();
-layer_5.removeChild(cube_shadow_prism);
-```
+Using layers makes it easier to operate with groups of elements. It's possible to transform them as a whole instead of working with each shape, path and element separately. See [Transformation](Transformations) article.
 
-{sample}GRAPHICS\_Basics\_06{sample}/
+## Clipping and Bounds
+
+By default each layer has no bounds and spans across the parent, you can change bounds of a layer using {api:anychart.graphics.vector.Layer#clip()}clip(){api} method, clipping can be of any custom shape.
+
+## zIndex
+
+You can swap layers using {api:anychart.graphics.vector.Layer#swapChildren}swapChildren(){api} or {api:anychart.graphics.vector.Layer#swapChildrenAt}swapChildrenAt(){api} methods of a parent, or by changing zIndex using {api:anychart.graphics.vector.Layer#swapChildren}zIndex(){api} method.

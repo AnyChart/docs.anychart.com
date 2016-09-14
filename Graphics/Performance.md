@@ -1,6 +1,4 @@
 {:index 9}
-# GraphicsJS Overview
+# GraphicsJS Performance Tips
 
-* [Overview](#overview)
-
-http://www.graphicsjs.org/
+*Coming soon*

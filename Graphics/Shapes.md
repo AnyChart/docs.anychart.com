@@ -1,5 +1,5 @@
 {:index 7}
-# GraphicsJS Overview
+# GraphicsJS Shapes and Primitives
 
 * [Overview](#overview)
 

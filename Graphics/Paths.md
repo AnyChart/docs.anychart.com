@@ -1,5 +1,5 @@
 {:index 6}
-# GraphicsJS Overview
+# GraphicsJS Path
 
 * [Overview](#overview)
 

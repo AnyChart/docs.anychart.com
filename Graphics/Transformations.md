@@ -2,8 +2,13 @@
 # GraphicsJS Transformations
 
 * [Overview](#overview)
+* [Methods](#methods)
 
-GraphicsJS provides a convenient Transformations API that allows to move, scale, rotate and shear both elements and groups of elements. Transformations, in good hands, when used along with [flexible Event Model](Events) and [Virtual DOM](Virtual_DOM), is a very powerfull tool.
+## Overview
+
+GraphicsJS provides a convenient Transformations API that allows to move, scale, rotate and shear both elements and groups of elements. Transformations, in good hands, when used along with [Layers](Layers), [flexible Event Model](Events) and [Virtual DOM](Virtual_DOM), is a very powerfull tool.
+
+## Methods
 
 The following methods allow you to work with transformation matrix, which is the fastest way to change elements, especially in groups:
 
