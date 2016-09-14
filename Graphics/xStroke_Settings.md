@@ -56,10 +56,10 @@ Stroke thickness can be set in several ways:
  `'thickness colorSetting'`
 * as an Object:
 ```
-{
-  thickness: value,
-  otherParams ...
-}
+ {
+    thickness: value,
+    otherParams ...
+ }
 ```
 
 {sample}GFX\_stroke_thickness{sample}
@@ -70,10 +70,10 @@ Dash settings can be set in two ways:
  `stroke(colorSettings, thickness, dashSetting, otherParams...)`
 * as an Object:
 ```
-{
-  dash: value,
-  otherParams ...
-}
+ {
+    dash: value,
+    otherParams ...
+ }
 ```
 
 Dash settings are set by a string with numbers separated by spaces. This string is used as the dash pattern. For example, if string value is `5` – the resulting pattern will be `5 5 5 5 5 ...`, and if string value is  `5 5 10`, that will result with `5 5 10 5 5 10 5 5 10 ...`.
@@ -92,11 +92,11 @@ Every number in an odd position is a dash length, and every number in an even po
  `stroke(colorSettings, thickness, dashSetting, lineJoin, lineCap)`
 * as an Object:
 ```
-{
-  lineJoin: value,
-  lineCap: value,
-  otherParams ...
-}
+ {
+    lineJoin: value,
+    lineCap: value,
+    otherParams ...
+ }
 ```
 {sample}GFX\_stroke\_cap\_join{sample}
 ```

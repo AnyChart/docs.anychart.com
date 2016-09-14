@@ -65,7 +65,7 @@ stage.circle(200, 250, 100);
 stage.rect(25, 50, 350, 300);
 ```
 
-{sample}GRAPHICS\_Basics\_01{sample}
+{sample}GFX\_Basics\_01{sample}
 
 There are a lot of shapes and predefined paths in GraphicsJS: see [Shapes](Shapes) and [Paths](Paths) articles for more.
 
@@ -107,7 +107,7 @@ stage.circle(200, 250, 100)
             .fill(['gold', 'white'],30);
 ```
 
-{sample}GRAPHICS\_Basics\_03{sample}
+{sample}GFX\_Basics\_03{sample}
 
 Visit the [Fill](/Fill_Settings) or the [Stroke Guide](/Stroke_Settings) to learn more about coloring.
 
@@ -129,7 +129,7 @@ var layer_main_shadow = stage.layer(); // shadow layer
 
 And here is a sample with all these shapes and layers:
 
-{sample}GRAPHICS\_Basics\_04{sample}
+{sample}GFX\_Basics\_04{sample}
 
 Layers can be transformed. For example, in the sample above the {api:anychart.graphics.vector.Element#translate}translate(){api} method is used to change the layers' position, the {api:anychart.graphics.vector.Element#rotate}rotate(){api} method to rotate and {api:anychart.graphics.vector.Element#scale}scale(){api}, if we need to scale it in some way.
 
@@ -148,7 +148,7 @@ Let's use the {api:anychart.graphics.vector.Stage#removeChild}remove(){api} meth
 layer_cylinder.remove();
 ```
 
-{sample}GRAPHICS\_Basics\_05{sample}
+{sample}GFX\_Basics\_05{sample}
 
 The situation would be different if we decided to remove the cube also. In this case we should have used the {api:anychart.graphics.vector.Element#remove}remove(){api} method to get rid of the big shadow under all objects which is situated on the separate layer.
 
@@ -162,7 +162,7 @@ layer_main_shadow.remove();
 layer_5.removeChild(cube_shadow_prism);
 ```
 
-{sample}GRAPHICS\_Basics\_06{sample}
+{sample}GFX\_Basics\_06{sample}
 
 ## Text and image
 
@@ -181,7 +181,7 @@ textElement.color('red');
 
 That's how the sample will look like with our added text element:
 
-{sample}GRAPHICS\_Basics\_07{sample}
+{sample}GFX\_Basics\_07{sample}
 
 There are far much more settings to fix with the text elements. You can find all of them in [Text and Fonts](Text_and_Fonts) article and in {api:anychart.graphics.vector.Text}GraphicsJS Text Class API{api}.
 
@@ -191,7 +191,7 @@ And again a section for AnyChart 7 users: if you are still in doubt about why to
 
 Let's use stage to create a simple bar chart with an unusual marker:
 
-{sample}GRAPHICS\_Basics\_08{sample}
+{sample}GFX\_Basics\_08{sample}
 
 ```
 // a function that enables custom marker display and resize
