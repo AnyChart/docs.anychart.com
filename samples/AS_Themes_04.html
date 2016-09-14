@@ -7,41 +7,71 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-
+    <script x-export="stage">anychart.onDocumentReady(function() {
   // create variable for custom theme
   var customTheme = {
-    "defaultFontSettings": {
-      "fontSize": 9,
-      "fontWeight": 100,
-      "fontColor": "#0000CD"
+    // define settings for bar charts
+    "bar": {
+      "title": "Bar Chart",
+      "defaultXAxisSettings": {
+        "title": {
+          "text": "Retail Channel",
+          "enabled": true
+        }
+      },
+      "defaultYAxisSettings": {
+        "title": {
+          "text": "Sales",
+          "enabled": true
+        }
+      },
+      "padding": 0
     },
-    "chart": {
-      "title": false,
-      "legend": false
+    // settings for column charts
+    "column": {
+      "title": "Column Chart",
+      "defaultXAxisSettings": {
+        "title": {
+          "text": "Retail Channel",
+          "enabled": true
+        }
+      },
+      "defaultYAxisSettings": {
+        "title": {
+          "text": "Sales",
+          "enabled": true
+        }
+      },
+      "padding": 0
     }
   };
 
   // data
   var data = anychart.data.set([
-    ["Alice", 33],
-    ["Bob",   23],
-    ["Jake",  35]
+    ["Department Stores", 637166],
+    ["Discount Stores", 721630],
+    ["Men's/Women's Specialty Stores", 148662],
+    ["All other outlets", 90000]
   ]);
 
   // apply custom theme
   anychart.theme(customTheme);
 
-  var table = anychart.ui.table();
-  table.contents([
-    [
-      anychart.column(data),
-      anychart.pie(data),
-      anychart.radar(data)
-    ]
-  ]);
-  table.container("container");
-  table.draw();
+  // set stage
+  stage = anychart.graphics.create("container");
+
+  // set chart type
+  var bar = anychart.bar();
+  bar.bounds(0, 0, "100%", "50%");
+  bar.bar(data);
+  bar.container(stage);
+  bar.draw();
+
+  var column = anychart.column();
+  column.column(data);
+  column.bounds(0, "50%", "100%", "50%");
+  column.container(stage);
+  column.draw();
 });</script>
 </head>
 <body>
