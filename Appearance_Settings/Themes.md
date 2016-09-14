@@ -8,6 +8,7 @@
 * [External Themes](#external_themes)
  * [Default Theme](#default_theme)
  * [Old Theme](#old_theme) 
+* [Several Themes](#several_themes)
 * [Append Theme](#append_theme)
 * [Multiple Chart Types](#multiple_chart_types)
 * [Themes Use in Dashboard Mode](#themes_use_in_dashboard_mode)
@@ -239,19 +240,6 @@ var customTheme = {
 };
 ```
 
-
-It's possible to set several themes through one {api:anychart#theme}theme(){api} method. Themes, set as an array, will be applied to a chart one after another, in the order they are set.
-
-Let's create a chart with three different external themes. Each theme is responsible for one chart type settings.
-
-```
-// apply custom external themes
-anychart.theme([barTheme, columnTheme, lineTheme]);
-```
-
-{sample}AS\_Themes\_02{sample}
-
-
 ### Default Theme
 
 You can find the **defaultTheme.js** in **binaries** folder in the downloaded AnyChart package.
@@ -268,20 +256,36 @@ AnyChart provides [several default themes](#out_of_the_box_themes) along with th
 anychart.theme(anychart.themes.v6);
 ```
 
+## Several Themes
+
+It is possible to set several themes through one {api:anychart#theme}theme(){api} method. Themes, set as an array, will be applied to a chart one after another, in the order they are set.
+
+Let's create a chart with three different themes. Each theme is responsible for one chart type settings. 
+
+```
+// apply custom themes
+anychart.theme([barTheme, columnTheme, splineTheme]);
+```
+
+{sample}AS\_Themes\_02{sample}
+
+Explore the chart in the playground to understand how it works. It is possible to set external themes as well.
+
+
 ## Append Theme
 
 In some situations, it might be necessary to add some settings to all charts simultaneously over an existing theme. In this case AnyChart provides an {api:anychart#appendTheme}appendtheme(){api} method allowing to add a theme over another one. Settings defined through this method have higher priority than those set through the {api:anychart#theme}theme(){api} method. The next sample demonstrates it. 
 
 ```
 // append a theme 
-anychart.appendTheme(additionalTheme);
+anychart.appendTheme(additional_theme);
 ```
 
 The additional theme has the majority of the color and format settings, while the internal one contains some basic settings.
 
 {sample}AS\_Themes\_03{sample}
 
-Explore the sample in the playground for better understanding.
+Note that both themes contain title text settings but those in the additional theme are applied due to its higher priority.
 
 
 ## Multiple Chart Types
@@ -307,7 +311,7 @@ var customTheme = {
 };
 ```
 
-Sample below shows two charts with minimal settings, both of them use one theme with title settings.
+The sample below shows two charts using the same theme with title settings.
 
 {sample :width 690 :height 680}AS\_Themes\_04{sample}
 

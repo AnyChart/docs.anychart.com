@@ -6,9 +6,6 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
-    <script src="https://static.anychart.com/data/themes/bar_theme.js"></script>
-    <script src="https://static.anychart.com/data/themes/spline_theme.js"></script>
-    <script src="https://static.anychart.com/data/themes/column_theme.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="stage">anychart.onDocumentReady(function() {
 
@@ -21,7 +18,7 @@
     ["All other outlets", 90000, 61000, 72000, 94000, 83000]
   ]);
 
-  // apply custom external themes
+  // apply custom themes
   anychart.theme([barTheme, columnTheme, splineTheme]);
 
   // create charts
@@ -53,7 +50,63 @@
   columnChart.draw();
   splineChart.container(stage);
   splineChart.draw();
-});</script>
+});
+
+barTheme = {
+  "bar": {
+    "title": "Bar Chart",
+    "defaultXAxisSettings": {
+      "title": "Retail Channel"
+    },
+    "defaultYAxisSettings": {
+      "title": "Sales"
+    },
+    "background":{
+      "fill": "#999999 .1"
+    },
+    "bounds": [0, 0, '50%', '50%']
+}
+};
+
+columnTheme = {
+  "column": {
+    "title": "Column Chart",
+    "defaultXAxisSettings": {
+      "title": "Retail Channel"
+    },
+    "defaultYAxisSettings": {
+      "title": "Sales"
+    },
+    "background":"#999999 .1",
+    "palette": {
+      "type": "distinct",
+      "items": ["#9f8170", "#828282"]
+    },
+    "bounds": ['50%', 0, '50%', '50%']
+}
+};
+
+splineTheme = {
+  "line": {
+    "title": "Line Chart",
+    "defaultXAxisSettings": {
+      "title": "Retail Channel"
+    },
+    "defaultYAxisSettings": {
+      "title": "Sales"
+    },
+    "background":{
+      "fill": "#999999 .1"
+    },
+    "palette": {
+      "type": "distinct",
+      "items": ["#9f8170", "#000", "#911e42", "#21421e"]
+    },
+    "bounds": [0, '50%', '100%', '50%']
+}
+};
+
+</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
