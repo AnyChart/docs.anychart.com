@@ -10,7 +10,7 @@
 
 You can think of GraphicsJS as a paintbox with a brush, GraphicsJS may be used for data visualization, charting, game design or else. [AnyChart charting libraries](http://www.anychart.com/) rendering is based fully on it.
 
-You can find some specific samples at [http://www.graphicsjs.org/](http://www.graphicsjs.org/), along with source code: [galaxy](http://playground.anychart.com/gallery/latest/Graphics/Galaxy-plain), [rain](http://playground.anychart.com/gallery/latest/Graphics/Rain-plain), [bonfire](http://playground.anychart.com/gallery/latest/Graphics/Bonfire-plain), [Bender](http://playground.anychart.com/gallery/7.11.1/Graphics/Bender-plain), and a [playable 15-puzzle](http://playground.anychart.com/gallery/7.11.1/Graphics/Puzzle_15-plain). All of these were created with GraphicsJS only.
+You can find some specific samples at [http://www.graphicsjs.org/](http://www.graphicsjs.org/), along with source code: [galaxy](http://playground.anychart.com/gallery/latest/Graphics/Galaxy-plain), [rain](http://playground.anychart.com/gallery/latest/Graphics/Rain-plain), [bonfire](http://playground.anychart.com/gallery/latest/Graphics/Bonfire-plain), [Bender](http://playground.anychart.com/gallery/latest/Graphics/Bender-plain), and a [playable 15-puzzle](http://playground.anychart.com/gallery/latest/Graphics/Puzzle_15-plain). All of these were created with GraphicsJS only.
 
 GraphicsJS allows to visualize complicated mathematical algorithms very conveniently and easily, e.g. the [galaxy](http://playground.anychart.com/gallery/latest/Graphics/Galaxy-plain) demo is based on [Archimedean spiral](https://en.wikipedia.org/wiki/Archimedean_spiral).
 
@@ -24,7 +24,7 @@ GraphicsJS uses smart layering system for elements and [layers](Layers). Graphic
 
 GraphicsJS provides a convenient [Transformations](Transformations) API that allows to move, scale, rotate and shear both elements and groups of elements. Transformations, in good hands, when used along with [flexible Event Model](Events) and [Virtual DOM](Virtual_DOM), is a very powerfull tool.
 
-GraphicsJS supports legacy browsers including IE6+. 
+GraphicsJS [supports legacy browsers including IE6+](Browser_Support). 
 
 GraphicsJS API is very convenient to use. Our [API](https://api.anychart.com/latest/anychart.graphics) is very concise and provides chaining support, which makes it possible to use a dozen lines of code where other libraries require a hundred.
 

@@ -9,4 +9,4 @@ To set listening function use {api:anychart.graphics.events#listen}{api} or {api
 
 To stop listening use {api:anychart.graphics.events#unlisten}unlisten(){api}, {api:anychart.graphics.events#unlistenByKey}unlistenByKey(){api}, and {api:anychart.graphics.events#removeAll}removeAll(){api} methods.
 
-To work prevent propagation use {api:anychart.graphics.events.BrowserEvent#preventDefault}preventDefault(){api}, {api:anychart.graphics.events.BrowserEvent#stopPropagation(){api}, and {api:anychart.graphics.events.BrowserEvent#stopWrapperPropagation(){api} methods.
+To work prevent propagation use {api:anychart.graphics.events.BrowserEvent#preventDefault}preventDefault(){api}, {api:anychart.graphics.events.BrowserEvent#stopPropagation(){api}, and {api:anychart.graphics.events.BrowserEvent#stopWrapperPropagation()}stopWrapperPropagation(){api} methods.

@@ -6,26 +6,30 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function() {
 
-    // set stage
+    // create a stage
     stage = anychart.graphics.create("container");
     
+    // scale the whole stage
     stage.scale(0.7, 0.7, 0, 0);
-    // set layers of stage
-    var layer_cube = stage.layer(); // layer for the cube
-    var layer_cylinder = stage.layer(); // layer for the cylinder
-    var layer_prism = stage.layer(); // layer for the hexagonal prism
-    var layer_main_shadow = stage.layer(); // layer for the big shadow under the figures 
+
+    // create layers
+    var layer_cube = stage.layer();        // cube layer
+    var layer_cylinder = stage.layer();    // cylinder layer
+    var layer_prism = stage.layer();       // hexagonal prism layer
+    var layer_main_shadow = stage.layer(); // shadow layer
     var layer_5 = stage.layer();
 
     // creating the cube
-                
+    
+    // create abstract rects and fills   
     var rect = anychart.math.rect(50, 250, 100, 200); 
     var fill = {keys:["#666","#888", "#ccc"], angle:135, mode:rect}; 
     var rect_2 = anychart.math.rect(50, 200, 200, 100);     
     var fill_2 = {keys:["#666","#666", "#ccc"], angle:185, mode:rect_2};  
     
+    // draw cube sides
     var cube_top = layer_cube.path().moveTo(200, 200)
                 .lineTo(300, 250)
                 .lineTo(150, 300)
@@ -79,7 +83,7 @@
     layer_5.zIndex(5);
     
     
-    // creating the cylinder
+    // creating a cylinder
     var ellipse_top = layer_cylinder.ellipse(50,50,150,30)
                 .fill(["#f0f0f0", "#f0f0f0", "#aaa"],-30)
                 .zIndex(3);
@@ -128,7 +132,7 @@
     layer_cylinder.zIndex(3);
     
     
-    // creating the prism
+    // creating a prism
     
     var prism_hex_edge = layer_prism.path().moveTo(200,400)
                 .lineTo(215,460)

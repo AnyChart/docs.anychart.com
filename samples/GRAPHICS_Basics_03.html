@@ -6,12 +6,12 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
+    <script x-export="stage">anychart.onDocumentReady(function() {
 
     // set stage
     stage = anychart.graphics.create("container");
 
-    // draw the circle
+    // draw a circle
     stage.circle(200, 250, 100)
                 .stroke("red")
                 .zIndex(2)
@@ -21,7 +21,7 @@
     stage.rect(25, 50, 350, 300)
                 .fill("grey 0.1");
 	
-	// draw the triangle
+	// draw a triangle
     stage.path().moveTo(25, 350)
                 .lineTo(200, 50)
                 .lineTo(375, 350)
@@ -30,7 +30,7 @@
                 .zIndex(1)
                 .close();
                 
-    // draw the wand in the middle
+    // draw a wand in the middle
     stage.path().moveTo(200,50)
                 .lineTo(200,350)
                 .zIndex(3)

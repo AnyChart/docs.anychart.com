@@ -14,7 +14,7 @@
     
     // data
     var data = anychart.data.set([
-        ["USA", 10, 8.5], // 7-10 days off, depends on the state
+        ["USA", 10, 8.5], 
         ["Japan", 15, 18],
         ["China", 7, 26,
             {
@@ -42,7 +42,7 @@
     var chart = anychart.bar();
 
     // chart title
-    chart.title("Amount of official holidays and days off in different countries (2015)");
+    chart.title("Number of official holidays and days off in different countries (2015)");
 
     // set axes titles
     var xAxis = chart.xAxis();
@@ -69,7 +69,7 @@
     series = chart.bar(days_off);
     series.name("Days off");
     series.labels().textFormatter(function() {
-       if (this.index == 2) return "Lets go party!";
+       if (this.index == 2) return "Let's go party!";
        return this.value;
     });
 
