@@ -11,18 +11,31 @@ Advanced Coloring
 
 ## Overview
 
-There are several ways to color a seat map. The first option is to set the colors [through the data set](Seat_Map#coloring). The second way is to set custom or original colors [through the coloring methods](#using_svg_image_colors) like {api:anychart.core.map.series.Choropleth#fill}fill(){api} and {api:anychart.core.map.series.Choropleth#stroke}stroke(){api} - in this case it's possible to color each element of a group differently, depending on those elements' classes set in the SVG code. Another options are to [use AnyChart palette](#palette) to set the necessary colors (reliable for a Map with several series) and to [use Color Scale and Color Range](#color_scale_and_color_range).
+There are several ways to color a seat map. The first way is to set colors [through the data set](Seat_Map#coloring). The second way is to set original or custom colors [through the coloring methods](#using_svg_image_colors) like {api:anychart.core.map.series.Choropleth#fill}fill(){api} and {api:anychart.core.map.series.Choropleth#stroke}stroke(){api}: in this case it is possible to color all elements of a group differently, depending on their classes set in the SVG code. Other options are to [use AnyChart palette](#palette) to set the necessary colors (reliable for a Map with several series) and to [use Color Scale and Color Range](#color_scale_and_color_range).
 
-The SVG image in the sample below is the same file as was used in some samples from the [Seat Map](Seat_Map) and [Preparing SVG Image](Preparing_SVG_Image) articles. That is how an SVG image looks like with the default AnyChart color palette:
+---> through the coloring methods like - ПОЧЕМУ like? ЕСТЬ ЕЩЕ ДРУГИЕ МЕТОДЫ?
+---> depending on their classes set in the SVG code
+	 МОЖЕТ depending on what classes are set to them in the SVG code ИЛИ КАК-ТО ТАК?
+---> ВАРИАНТ УПРОЩЕНИЯ ПОСЛЕДНЕГО ПРЕДЛОЖЕНИЯ:
+     You can also [use AnyChart palette](#palette) (reliable for a Map with several series) or [use Color Scale and Color Range](#color_scale_and_color_range).
+---> reliable - ЧТО-ТО НАПРЯГАЕТ, ХОТЯ НЕ УВЕРЕНА. МОЖЕТ works for Maps with several series?
+                И ДО КУЧИ several ЗАМЕНИТЬ НА multiple?
+
+The sample below demonstrates how an SVG image looks like with the default AnyChart color palette (the SVG image used there is also used in some samples from the [Seat Map](Seat_Map) and [Preparing SVG Image](Preparing_SVG_Image) articles):
 
 {sample}Maps\_Seat\_Advanced\_Coloring\_00{sample}
 
 
 ## Using SVG Image Colors
 
-The colors in the sample picture are different from the defined (check out the seat map <a href="http://static.anychart.com/images/docs/house.svg">source SVG image</a> to see the original colors). Setting original colors used in the picture is considered in this section, as well as using these colors as a basis for hovering and selecting colors. 
+The colors in the sample picture are different from the defined ones (check out the seat map <a href="http://static.anychart.com/images/docs/house.svg">source SVG image</a> to see the original colors). Setting original colors used in the picture is considered in this section, as well as using these colors as a basis for hovering and selecting colors. 
 
-To set the colors of the original SVG image, or to set new custom colors use the {api:anychart.core.map.series.Choropleth#fill}fill(){api} and {api:anychart.core.map.series.Choropleth#Stroke}stroke(){api} methods. Though, it is important to remember that not all of the elements in the SVG file have the "fill" attribute. Before setting the value to the "fill" field it is necessary to check if the element has it, and if so, set the fill color to this element. Setting colors through this method looks like the following:
+---> check out the seat map - Я БЫ ЭТО ПРОСТО СНЯЛА, ЛИШНИЕ СЛОВА. Check out the source SVG image - И ВСЕ.
+---> the defined ones - А НЕ default ЛИ ИМЕЕТСЯ В ВИДУ?
+
+To set the colors of the original SVG image, or to set new custom colors, use the {api:anychart.core.map.series.Choropleth#fill}fill(){api} and {api:anychart.core.map.series.Choropleth#Stroke}stroke(){api} methods. Though, it is important to remember that not all of the elements in SVG files have the "fill" attribute. Before setting the value to the "fill" field, it is necessary to check if the element has it, and if it does, you should set the fill color to this element. Setting colors through this method looks like the following:
+
+---> Setting colors through this method - НАВЕРНОЕ methods. НО НА ВСЯКИЙ СЛУЧАЙ УТОЧНЯЮ.
 
 ```
 // sets series fill 
@@ -41,7 +54,7 @@ series.stroke(function () {
 
 {sample}Maps\_Seat\_Advanced\_Coloring\_01{sample}
 
-To change the interactivity colors (colors of elements or groups on hover and on select) use the following methods: {api:anychart.core.map.series.Choropleth#hoverFill}hoverFill(){api}, {api:anychart.core.map.series.Choropleth#hoverStroke}hoverStroke(){api}, {api:anychart.core.map.series.Choropleth#selectFill}selectFill(){api} and {api:anychart.core.map.series.Choropleth#selectStroke}selectStroke(){api}
+To change the interactivity colors (colors of elements or groups on hover and select), use the following methods: {api:anychart.core.map.series.Choropleth#hoverFill}hoverFill(){api}, {api:anychart.core.map.series.Choropleth#hoverStroke}hoverStroke(){api}, {api:anychart.core.map.series.Choropleth#selectFill}selectFill(){api} and {api:anychart.core.map.series.Choropleth#selectStroke}selectStroke(){api}
 
 ```
 // set the hoverFill color 
@@ -74,7 +87,9 @@ series.selectStroke(function () {
 
 ## Selective Coloring
 
-It is also possible to change the colors of separate elements, or parts of a group, if there are any. Though, it is necessary to know the group's structure and the classes set to those elements. In case no classes are set, it is necessary to set them, as the classes help to define the elements.
+It is also possible to change the colors of separate elements or of parts of a group, if there are any. However, it is necessary to know the group's structure and the classes set to those elements. In case no classes are set, it is necessary to set them, as the classes help to define the elements.
+
+---> It is also possible to change the colors of separate elements or of parts of a group - СМЫСЛ ЖЕ НОРМ? ИСПРАВИЛА ЧУТЬ-ЧУТЬ, НО СОМНЕВАЮСЬ.
 
 ```
 <g id="hotplate">
@@ -111,9 +126,18 @@ series.hoverFill(function(){
 
 ## Palette
 
-Palette is a color scheme which is being used to set the colors to the series of a chart. Using the {api:anychart.charts.Map#palette}palette(){api} method, it is possible to set the default palette or to define custom colors. Note that this method is effective when the SVG image contains several series.
+Palette is a color scheme which is used to set colors to the series of a chart. Using the {api:anychart.charts.Map#palette}palette(){api} method, it is possible to set the default palette or to define custom colors. Note that this method is effective when the SVG image contains several series.
 
-The following sample has no grouping, but it is reasonable to form several series out of seats due to the rows. Each seat has its own ID. The palette is being formed out of two different hues, which are considered as the original and the resulting colors of the 8-step gradient.
+---> is effective when - ЖЕЛАТЕЛЬНО ПРОЯСНИТЬ. ИМЕЕТСЯ В ВИДУ works only when? ИЛИ is most useful when?
+
+The following sample has no grouping, but it is reasonable to group seats into several series due to the rows. Each seat has its own ID. The palette is formed out of two different hues, which are considered as the original and the resulting colors of the 8-step gradient.
+
+---> due to the rows - МОЖЕТ ТАК: to show rows / to work with rows ?
+---> НЕ ПОНЯЛА КАК ВТОРОЕ ПРЕДЛОЖЕНИЕ СВЯЗАНО С ТРЕТЬИМ (ЕСЛИ НЕТ, НАДО КАК-ТО ИНАЧЕ ПРЕПОДНЕСТИ)
+---> out of two different hues, which are considered as the original and the resulting colors of the 8-step gradient
+     ПЛОХО ЧИТАЕТСЯ, И НЕ УВЕРЕНА, ЧТО ТУТ as МОЖНО ИСПОЛЬЗОВАТЬ. ДА И ПОЧЕМУ considered - РАЗВЕ ЭТО ЧЬЕ-ТО МНЕНИЕ?
+     МОЖЕТ ТАК? out of two different hues: the original and the resulting colors of the 8-step gradient
+---> The following sample has no grouping. Точно групп нет? На пример мышку наводишь - номера рядов пишутся.
 
 ```
 palette = anychart.palettes.rangeColors();
