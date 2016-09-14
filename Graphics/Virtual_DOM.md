@@ -51,3 +51,48 @@ And the following methods allow you to suspend and resume rendering at any time,
 * {api:anychart.graphics.vector.Stage#isSuspended}isSuspended(){api}
 * {api:anychart.graphics.vector.Stage#render}render(){api}
 * {api:anychart.graphics.vector.Stage#isRendering}isRendering{api}
+
+Here is a sample that shows how objects can be created, added and how rendering can be controlled:
+
+{sample}GFX\_DOM\_1{sample}
+
+In this sample you can see that it is possible to create shapes and add them to a DOM:
+
+```
+stage = anychart.graphics.create("container");
+
+// create a text
+var singleText = anychart.graphics.text(20, 10, "Click here to resume");
+singleText.fontSize(14);
+
+// create a rectangle
+var rectangle = anychart.graphics.rect(0, 0, 400, 400);
+rectangle.fill("#FFFFFF 0.01");
+rectangle.stroke(null);
+
+// add object to a stage
+stage.addChild(singleText);
+stage.addChild(rectangle)
+```
+
+How you can suspend rendering:
+
+```
+// suspend rendering
+stage.suspend();
+```
+
+How you can listen to [Events](Events) and resume rendering of needed:
+
+```
+anychart.graphics.events.listen(rectangle, "click", function() {
+    if (stage.isSuspended()){
+        stage.resume();
+        // remove objects
+        stage.removeChild(singleText);
+        stage.removeChild(rectangle);
+    }
+});    
+```
+
+
