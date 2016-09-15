@@ -1,43 +1,44 @@
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
-    stage = anychart.graphics.create("container");
+<meta charset="UTF-8"/>
+<meta name="tags" content="[]"/>
+<meta name="index" content="1000"/>
+<meta name="is-new" content="false"/>
+<script src="../anychart-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+<script x-export="stage">
+stage = acgraph.create("container");
 
-    // create a text
-    var singleText = anychart.graphics.text(20, 10, "Click here to resume");
-    singleText.fontSize(14);
+// create a text
+var singleText = anychart.graphics.text(20, 10, "Click here to resume");
+singleText.fontSize(14);
 
-    // create a rectangle
-    var rectangle = anychart.graphics.rect(0, 0, 400, 400);
-    rectangle.fill("#FFFFFF 0.01");
-    rectangle.stroke(null);
+// create a rectangle
+var rectangle = anychart.graphics.rect(0, 0, 400, 400);
+rectangle.fill("#FFFFFF 0.01");
+rectangle.stroke(null);
 
-    // add object to a stage
-    stage.addChild(singleText);
-    stage.addChild(rectangle)
+// add object to a stage
+stage.addChild(singleText);
+stage.addChild(rectangle)
 
-    // Suspends rendering.
-    stage.suspend();
-    
-    // create objects as part of the stage
-    stage.text(10, 30, "Rendering resumed");
-    stage.circle(100, 100, 50).fill("red 0.2").stroke("2 blue");
-    
-    rectangle.listen("click", function() {
-        if (stage.isSuspended()){
-            stage.resume();
-            // remove objects
-            stage.removeChild(singleText);
-            stage.removeChild(rectangle);
-        }
-    });    
-});</script>
+// Suspends rendering.
+stage.suspend();
+
+// create objects as part of the stage
+stage.text(10, 30, "Rendering resumed");
+stage.circle(100, 100, 50).fill("red 0.2").stroke("2 blue");
+
+rectangle.listen("click", function() {
+    if (stage.isSuspended()){
+        stage.resume();
+        // remove objects
+        stage.removeChild(singleText);
+        stage.removeChild(rectangle);
+    }
+});    
+
+</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
