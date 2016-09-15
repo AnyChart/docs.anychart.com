@@ -11,9 +11,16 @@
 
     stage = anychart.graphics.create("container");
 
-    stage.rect(10, 10, 100, 200).fill(anychart.graphics.hatchFill("verticalbrick"));
-    stage.circle(150, 150, 30).fill(anychart.graphics.hatchFill("percent60"));
+    // pattern
+    var pattern = stage.pattern(new anychart.graphics.math.Rect(0,0,20,20));
+    
+    pattern.circle(10, 10, 8).fill("none").stroke("1 blue 0.9");
+    pattern.star5(10, 10, 6).fill("1 blue 0.9");
 
+    // create chart
+    stage.rect(0, 0, 150, 50).fill(pattern);
+    stage.circle(150, 150, 50).fill(pattern);
+    
 });</script>
 </head>
 <body>

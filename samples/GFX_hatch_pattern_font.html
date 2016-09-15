@@ -11,9 +11,15 @@
 
     stage = anychart.graphics.create("container");
 
-    stage.rect(10, 10, 100, 200).fill(anychart.graphics.hatchFill("verticalbrick"));
-    stage.circle(150, 150, 30).fill(anychart.graphics.hatchFill("percent60"));
+    // 169 is a char code of copyright symbol
+    var text = anychart.graphics.text().text(String.fromCharCode(169));
+    var pattern = stage.pattern(text.getBounds());
+    pattern.addChild(text);
 
+    // create chart
+    stage.rect(0, 0, 150, 50).fill(pattern);
+    stage.circle(150, 150, 50).fill(pattern);
+    
 });</script>
 </head>
 <body>

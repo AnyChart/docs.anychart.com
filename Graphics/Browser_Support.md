@@ -1,4 +1,4 @@
-{:index 9.1}
+{:index 9}
 # GraphicsJS Browser Support
 
 GraphicsJS comes packaged with SVG and VML renderers. GraphicsJS rely on Google Closure Library in full compliance with Google JavaScript Style Guide. 

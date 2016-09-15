@@ -32,7 +32,7 @@ Do not invoke class constructor directly. Use {api:anychart.graphics.vector.Stag
 <tr><td>{api:anychart.graphics.vector.Path#quadraticCurveTo}quadraticCurveTo(){api}</td><td>Adds specified points to the path, drawing sequentially a quadratic Bezier curve from the current point to the next.</td></tr>
 </table>
 
-Here is a sample code that shows how to create a closed shape using a path, and fill it with a [pattern fill](/Fill/Pattern):
+Here is a sample code that shows how to create a closed shape using a path, and fill it with a [hatch fill](Hatch_Fill_Settings):
 
 ```
 stage = anychart.graphics.create("container");
@@ -52,7 +52,7 @@ linePath.fill(stage.hatchFill("backwardDiagonal", "#2196F3 0.9", 1));
 
 {sample}GFX\_Paths\_1{sample}
 
-Here is a sample code that shows how to create an open line using a path, and make its [stroke](/Stroke_Settings/) [Dashed](/Stroke/Dash):
+Here is a sample code that shows how to create an open line using a path, and make its [stroke dashed](Stroke_Settings#dash):
 
 ```
 stage = anychart.graphics.create("container");
