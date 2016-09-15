@@ -4,7 +4,7 @@
 <meta name="tags" content="[]"/>
 <meta name="index" content="1000"/>
 <meta name="is-new" content="false"/>
- <script src="https://cdn.anychart.com/js/latest/graphics.min.js"></script>
+<script src="../anychart-bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
 <script x-export="chart">
 stage = acgraph.create("container");
@@ -18,7 +18,7 @@ anychart.ui.background()
             mode: acgraph.vector.ImageFillMode.STRETCH
         })
         .stroke("1 #000")
-        .bounds(anychart.math.rect(2, 18, stage.width() / 2 - 4, stage.height() - 22))
+        .bounds(acgraph.math.rect(2, 18, stage.width() / 2 - 4, stage.height() - 22))
         .container(stage)
         .draw();
 stage.text(stage.width() / 2 + 20, 0, "Pattern image");
@@ -28,7 +28,7 @@ anychart.ui.background()
             mode: acgraph.vector.ImageFillMode.TILE
         })
         .stroke("1 #000")
-        .bounds(anychart.math.rect(stage.width() / 2 + 2, 18, stage.width() / 2 - 4, stage.height() - 22))
+        .bounds(acgraph.math.rect(stage.width() / 2 + 2, 18, stage.width() / 2 - 4, stage.height() - 22))
         .container(stage)
         .draw();
 </script>
