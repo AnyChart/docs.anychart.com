@@ -6,12 +6,10 @@
 <meta name="is-new" content="false"/>
  <script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
 <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-<script x-export="chart">
+<script x-export="stage">
 stage = acgraph.create("container");
-
-stage
-    .rect(0, 0, stage.width(), stage.height())
-    .fill(["red", "yellow"]);
+stage.rect(0, 0, stage.width(), stage.height())
+     .fill(["red", "yellow"]);
 </script>
 </head>
 <body>
