@@ -12,7 +12,7 @@ stage = acgraph.create("container");
 var background1 = anychart.ui.background();
 background1.fill("none");
 background1.stroke("orange", 15, null, "round");
-background1.bounds(acgraph.math.rect(22, 18, stage.width() - 44, stage.height() / 3 - 22));
+background1.bounds(acgraph.math.Rect(22, 18, stage.width() - 44, stage.height() / 3 - 22));
 background1.container(stage);
 background1.draw();
 var background2 = anychart.ui.background();
@@ -23,7 +23,7 @@ background2.stroke({
   lineJoin: "bevel"
 });
 
-background2.bounds(acgraph.math.rect(22, stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 - 22));
+background2.bounds(acgraph.math.Rect(22, stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 - 22));
 background2.container(stage);
 background2.draw();
 
@@ -35,7 +35,7 @@ series.stroke({
   lineJoin: "bevel",
   lineCap: "round"
 });
-line.bounds(acgraph.math.rect(22, 2*stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 -20));
+line.bounds(acgraph.math.Rect(22, 2*stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 -20));
 
 line.container(stage);
 line.draw();

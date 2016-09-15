@@ -12,13 +12,13 @@
         anychart.ui.background()
                 .fill("#FF6666")
                 .stroke("#FF6666")
-                .bounds(acgraph.math.rect(0, stage.height() / 3, stage.width(), stage.height() / 3))
+                .bounds(acgraph.math.Rect(0, stage.height() / 3, stage.width(), stage.height() / 3))
                 .container(stage).draw();
 
         for (var i = 1; i < 11; i = i + 3) {
             var label = anychart.ui.label()
                     .parentBounds(
-                    acgraph.math.rect(
+                    acgraph.math.Rect(
                             (stage.width() / 12) * (i - 1) + (stage.width() / 36),
                             stage.height() / 9,
                             stage.width() / 12,

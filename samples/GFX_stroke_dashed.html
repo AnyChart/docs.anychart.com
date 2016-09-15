@@ -12,7 +12,7 @@ stage = acgraph.create("container");
 anychart.ui.background()
     .fill("none")
     .stroke("orange", 5, "5 5")
-    .bounds(acgraph.math.rect(22, 2*stage.height() / 3 - 20, stage.width() - 44, stage.height() / 3 - 22))
+    .bounds(acgraph.math.Rect(22, 2*stage.height() / 3 - 20, stage.width() - 44, stage.height() / 3 - 22))
     .container(stage)
     .draw();
 
