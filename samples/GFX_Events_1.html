@@ -1,33 +1,32 @@
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
-    stage = anychart.graphics.create("container");
-    
-    layer = stage.layer();
-    
-    var textObject = layer.text(70, 55, "Click on this TEXT");
-    textObject.style({fontSize: "18px"});
-    textObject.selectable(false);
+<meta charset="UTF-8"/>
+<meta name="tags" content="[]"/>
+<meta name="index" content="1000"/>
+<meta name="is-new" content="false"/>
+ <script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
+<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+<script x-export="stage">
+stage = acgraph.create("container");
 
-    var counter = 0;
-    
-    // Adds an event listener to a text
-    textObject.listen("click", function(e) {
-        counter++;
-        textObject.text("You clicked " + counter + " times. Click again.");
-    });
+layer = stage.layer();
 
-    // Adds an event listener to a layer
-    layer.listen("click", function(e) {
-        // change text color
-        textObject.color(getRandomColor());
-    });
+var textObject = layer.text(70, 55, "Click on this TEXT");
+textObject.style({fontSize: "18px"});
+textObject.selectable(false);
+
+var counter = 0;
+
+// Adds an event listener to a text
+textObject.listen("click", function(e) {
+    counter++;
+    textObject.text("You clicked " + counter + " times. Click again.");
+});
+
+// Adds an event listener to a layer
+layer.listen("click", function(e) {
+    // change text color
+    textObject.color(getRandomColor());
 });
 
 function getRandomColor() {
@@ -37,7 +36,9 @@ function getRandomColor() {
   green = Math.floor(Math.random() * (max - min)) + min;
   blue = Math.floor(Math.random() * (max - min)) + min;
   return "rgb("+ red + "," + green + "," + blue + ")";
-}</script>
+}
+
+</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

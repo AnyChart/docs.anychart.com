@@ -89,7 +89,7 @@ stage.path().moveTo(200,50)
             .lineTo(200,350);
 ```
 
-{sample}GRAPHICS\_Basics\_02{sample}
+{sample}GFX\_Basics\_02{sample}
 
 As you can see, {api:anychart.graphics.vector.Path#moveTo}moveTo(){api} function is used to define the starting point of a drawing. To draw a line to the next point the {api:anychart.graphics.vector.Path#lineTo}lineTo(){api} method is used. To define that the particular drawing is finished the {api:anychart.graphics.vector.Path#close}close(){api} method is used.
 

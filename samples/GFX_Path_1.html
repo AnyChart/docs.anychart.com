@@ -1,26 +1,26 @@
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
-    stage = anychart.graphics.create("container");
+<meta charset="UTF-8"/>
+<meta name="tags" content="[]"/>
+<meta name="index" content="1000"/>
+<meta name="is-new" content="false"/>
+<script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
+<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+<script x-export="stage">
+stage = acgraph.create("container");
 
-    var linePath = stage.path();
-    // starting point
-    linePath.moveTo(200, 100);
-    // Add commands to the path
-    linePath.arcToByEndPoint(300, 100, 250, 50, true, true);
-    linePath.lineTo(250, 50);
-    // make the path a closed shape
-    linePath.close();
-    
-    // fill with a pattern fill    
-    linePath.fill(stage.hatchFill("backwardDiagonal", "#2196F3 0.9", 1));
-});</script>
+var linePath = stage.path();
+// starting point
+linePath.moveTo(200, 100);
+// Add commands to the path
+linePath.arcToByEndPoint(300, 100, 250, 50, true, true);
+linePath.lineTo(250, 50);
+// make the path a closed shape
+linePath.close();
+
+// fill with a pattern fill
+linePath.fill(stage.hatchFill("backwardDiagonal", "#2196F3 0.9", 1));
+</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

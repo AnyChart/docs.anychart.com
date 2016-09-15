@@ -1,39 +1,38 @@
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="1000"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="stage">anychart.onDocumentReady(function() {
-    stage = anychart.graphics.create("container");
+<meta charset="UTF-8"/>
+<meta name="tags" content="[]"/>
+<meta name="index" content="1000"/>
+<meta name="is-new" content="false"/>
+ <script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
+<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+<script x-export="stage">
 
-    layer1 = stage.layer();
+stage = acgraph.create("container");
 
-    rect1 = layer1.rect(150, 150, 100, 100);
-    rect1.fill("black");
-    
+layer1 = stage.layer();
 
-    layer2 = anychart.graphics.layer();
-    rect2 = layer2.rect(150, 150, 150, 150);
-    rect2.fill("green");
+rect1 = layer1.rect(150, 150, 100, 100);
+rect1.fill("black");
 
-    stage.addChild(layer2);
 
-    clipShape = new anychart.graphics.vector.Circle(150, 150, 50);
+layer2 = acgraph.layer();
+rect2 = layer2.rect(150, 150, 150, 150);
+rect2.fill("green");
 
-    // Sets clipping of the layer.
-    layer1.clip(clipShape);
-    
-    layer2.listen("click", function(e){
-        rect2.fill("red");
-        //stage.swapChildren(layer1, layer2);
-        //layer2.remove();
-        layer1.zIndex(1000);
-    });
-    
-});</script>
+stage.addChild(layer2);
+
+clipShape = new acgraph.vector.Circle(150, 150, 50);
+
+// Sets clipping of the layer.
+layer1.clip(clipShape);
+
+layer2.listen("click", function(e){
+    rect2.fill("red");
+    layer1.zIndex(1000);
+});
+
+</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
