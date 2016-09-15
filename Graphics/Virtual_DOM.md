@@ -6,7 +6,7 @@
 
 ## Overview
 
-GraphicsJS implements Virtual_DOM) which makes drawing more robust and manageable.
+GraphicsJS implements Virtual DOM which makes drawing more robust and manageable.
 
 DOM stands for Document Object Model and it is an abstraction of a structured text. For example, for web developers, this text is an HTML code, and the DOM is simply called HTML DOM. Elements of HTML are nodes in the DOM.
 
