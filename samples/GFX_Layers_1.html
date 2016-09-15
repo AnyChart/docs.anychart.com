@@ -16,13 +16,13 @@ rect1 = layer1.rect(150, 150, 100, 100);
 rect1.fill("black");
 
 
-layer2 = anychart.graphics.layer();
+layer2 = acgraph.layer();
 rect2 = layer2.rect(150, 150, 150, 150);
 rect2.fill("green");
 
 stage.addChild(layer2);
 
-clipShape = new anychart.graphics.vector.Circle(150, 150, 50);
+clipShape = new acgraph.vector.Circle(150, 150, 50);
 
 // Sets clipping of the layer.
 layer1.clip(clipShape);
