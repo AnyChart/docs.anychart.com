@@ -77,7 +77,7 @@ In the sample above there are many settings for custom graphic elements and a li
 
 Labels can get information to show not only from data sets, it is possible to obtain any property defined in the GeoJSON map source file. Look at the next sample and explore it in the playground to understand how it works.
 
-Labels are not only used to show the names of the regions or any other information that is defined in the data set. It is possible to adjust labels to make them show some properties that are defined only in the data source. In AnyMap there is a {api:anychart.core.ChoroplethPoint#getFeatureProp}getFeatureProp(){api} method, that allows to get any information from the GeoJson data. Look at the next sample and explore it in the playground to understand how it works.
+Labels are not only used to show the names of the regions or any other information that is defined in the data set. It is possible to adjust labels to make them show some properties that are defined only in the data source. 
 
 That is how properties are set in GeoJSON:
 
@@ -102,13 +102,13 @@ That is how properties are set in GeoJSON:
 }
 ```
 
-You can obtain and use any property specified in GeoJSON. Let's get and show the postal code and region type on the label using {api:anychart.core.ChoroplethPoint#getFeatureProp}getFeatureProp(){api} method:
+Use the **regionProperties** property of the text formatter context to get any information from the GeoJson data. Look at the next sample and explore it in the playground to understand how it works:
 
 ```
 // format labels text
-labels.textFormatter(function (e) {
+labels.textFormatter(function () {
     // Gets point source region properties.
-    var properties = e.regionProperties;
+    var properties = this.regionProperties;
     return properties["postal"] + " (" + properties["type"] + ")";
 });
 ```
@@ -189,13 +189,21 @@ To set the custom position of the labels inside the regions, set "middle-x" and 
 Another property is responsible for positioning around the "middle-x" and "middle-y" coordinates: set "middleXYmode" as relative or absolute. When the "middleXYmode" property is "relative", the default middle-x and middle-y values will be considered as 0.5, so keep it in mind while setting the "middle-x" and "middle-y" properties.
 
 ```
-{id: 'US.WA', name: "Washington", value: 12},
-{id: 'US.CA', name: "California", value: 55, "labelrank": 5},
-{id: 'US.NV', name: "Nevada", value: 6, "labelrank": 3, "middle-x": 0.5, "middle-y": 0.3, middleXYMode: "relative"},
-{id: 'US.OR', name: "Oregon", value: 7},
-{id: 'US.CO', name: "Colorado", value: 9},
-{id: 'US.NM', name: "New Mexico", value: 5},
-{id: 'US.WI', name: "Wisconsin", value: 10, "labelrank": 5},
+// data sets for the series
+var dataSet_1 = anychart.data.set([
+    {'id': 'AU.JB', 'value': 1.5, "labelrank": 0, "middle-x": 0.5, "middle-y": 0.3, "middleXYMode": "relative"},
+    {'id': 'AU.NT', 'value': 2, "middle-y": 0.5, "middleXYMode": "relative"},
+    {'id': 'AU.WA', 'value': 3.2},
+    {'id': 'AU.NS', 'value': 2.7}
+]);
+
+var dataSet_2 = anychart.data.set([
+    {'id': 'AU.CT', 'value': 1.12, "labelrank": 9},
+    {'id': 'AU.SA', 'value': 2.9, "labelrank": 5, "middle-x": 0.5, "middle-y": 0.3, "middleXYMode": "relative"},
+    {'id': 'AU.VI', 'value': 3.86, "middle-x": 0.4, "middle-y": 0.6, "middleXYMode": "relative"},
+    {'id': 'AU.QL', 'value': 1.1, "middle-x": 0.4, "middle-y": 0.6, "middleXYMode": "relative"},
+    {'id': 'AU.TS', 'value': 1.6}
+]);
 ```
 
 {sample}Maps\_Labels\_07{sample}
@@ -205,48 +213,55 @@ These properties can be set through the GeoJSON code:
 ```
 "properties": {
     "labelrank": 0, 
-    "code_hasc": "US.MI", 
-    "name": "Michigan", 
-    "admin": "United States of America", 
-    "type_en": "State", 
-    "region": "Midwest", 
-    "woe_id": 2347581, 
-    "woe_name": "Michigan", 
-    "longitude": -84, 
-    "woe_label": "Michigan, US, United States", 
-    "fips": "US26", 
-    "iso_a2": "US", 
-    "latitude": 43, 
-    "objectid_1": 3202, 
-    "postal": "MI", 
-    "type": "State", 
-    "id": "US.MI"
-}},
+    "code_hasc": "AU.JB", 
+    "name": "Jervis Bay Territory", 
+    "admin": "Australia", 
+    "type_en": "Territory", 
+    "region": "", "woe_id": 1102841, 
+    "longitude": 150, 
+    "woe_name": "Jervis Bay", 
+    "fips": "", 
+    "woe_label": "", 
+    "latitude": -35, 
+    "iso_a2": "AU", 
+    "postal": "JB", 
+    "type": "Territory", 
+    "id": "AU.JB", 
+    "middle-x": 0.5, 
+    "middle-y": 0.3, 
+    "middleXYMode": "relative"
+},
 ```
+
+Put the GeoJSON code with edits as a function into the JS file and link the last:
+```
+<script src="http://static.anychart.com/data/maps/docs/australia_with_settings.js" data-export="true"></script>
+```
+
+Then load the data from the JS file:
+```
+map.geoData(getData());
+```
+
 {sample}Maps\_Labels\_08{sample}
 
 The following sample demonstrates several region labels set with "absolute" positioning through the data set:
 
 ```
-{id: 'US.MN', name: "Minnesota"},
-{id: 'US.CA', name: "California", "labelrank": 5},
-{id: 'US.NV', name: "Nevada", "labelrank": 3, "middle-x": -117.2, "middle-y": 40.06, middleXYMode: "absolute"},
-{id: 'US.OR', name: "Oregon"},
-{id: 'US.IA', name: "Iowa"},
-{id: 'US.KS', name: "Kansas"},
-{id: 'US.CT', name: "Connecticut"},
-{id: 'US.MA', name: "Massachusetts"},
-{id: 'US.NH', name: "New Hampshire"},
-{id: 'US.RI', name: "Rhode Island"},
-{id: 'US.VT', name: "Vermont"},
-{id: 'US.IL', name: "Illinois", "middle-x": -89.5, "middle-y": 40.2, middleXYMode: "absolute"},
-{id: 'US.IN', name: "Indiana"},
-{id: 'US.OH', name: "Ohio"},
-{id: 'US.WI', name: "Wisconsin", "labelrank": 5},
-{id: 'US.NY', name: "New York"},
-{id: 'US.PA', name: "Pennsylvania", "middle-x": -80.3, "middle-y": 41.9, middleXYMode: "absolute"},
-{id: 'US.ME', name: "Maine"},
-{id: 'US.MI', name: "Michigan", "labelrank": 3, "middle-x": -86.5, "middle-y": 46.4, "middleXYMode": "absolute"}
+var dataSet_1 = anychart.data.set([
+    {'id': 'AU.JB', 'value': 1.5, "labelrank": 5, "middle-y": -36.085, "middle-x": 154.34, "middleXYMode": "absolute"}, 
+    {'id': 'AU.NT', 'value': 2, "middle-y": -20.159, "middle-x": 133.66, "middleXYMode": "absolute"},
+    {'id': 'AU.WA', 'value': 3.2},
+    {'id': 'AU.NS', 'value': 2.7}
+]);
+
+var dataSet_2 = anychart.data.set([
+    {'id': 'AU.CT', 'value': 1.12, "labelrank": 9, "middle-y": -35.355, "middle-x": 148.94, "middleXYMode": "absolute"}, 
+    {'id': 'AU.SA', 'value': 2.9, "labelrank": 5, "middle-y": -28.86, "middle-x": 134.678, "middleXYMode": "absolute"},
+    {'id': 'AU.VI', 'value': 3.86, "middle-y": -37.68, "middle-x": 143.77, "middleXYMode": "absolute"},
+    {'id': 'AU.QL', 'value': 1.1, "middle-y": -23.335, "middle-x": 143.71, "middleXYMode": "absolute"},
+    {'id': 'AU.TS', 'value': 1.6}
+]);
 ```
 {sample}Maps\_Labels\_09{sample}
 

@@ -35,9 +35,9 @@
   labels.enabled(true);
 
   // format labels text
-  labels.textFormatter(function (e) {
+  labels.textFormatter(function () {
     // Gets point source region properties.
-    var properties = e.regionProperties;
+    var properties = this.regionProperties;
     return properties["postal"] + " (" + properties["type"] + ")";
   });
 
