@@ -1,3 +1,5 @@
+{:index 8.5}
+
 # Stroke Settings
 
 * [Overview](#overview)
