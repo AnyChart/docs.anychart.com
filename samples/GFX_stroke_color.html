@@ -11,13 +11,13 @@ stage = acgraph.create("container");
 anychart.ui.background()
     .fill("none")
     .stroke("5 orange .7")
-    .bounds(acgraph.math.rect(22, 18, stage.width() - 44, stage.height() / 3 - 22))
+    .bounds(acgraph.math.Rect(22, 18, stage.width() - 44, stage.height() / 3 - 22))
     .container(stage)
     .draw();
 anychart.ui.background()
     .fill("none")
     .stroke(["red", "blue"], 15)
-    .bounds(acgraph.math.rect(22, stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 - 22))
+    .bounds(acgraph.math.Rect(22, stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 - 22))
     .container(stage)
     .draw();
 anychart.ui.background()
@@ -29,7 +29,7 @@ anychart.ui.background()
       fx: .3,
       fy: .4
     }, 4)
-    .bounds(acgraph.math.rect(22, 3 * stage.height() / 3 - 35, stage.width() - 44, 5))
+    .bounds(acgraph.math.Rect(22, 3 * stage.height() / 3 - 35, stage.width() - 44, 5))
     .container(stage)
     .draw();
 </script>

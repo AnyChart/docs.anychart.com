@@ -11,7 +11,7 @@ stage = acgraph.create("container");
 var fillSettings = {
     keys: [".1 red", ".5 green", ".9 blue"],
     angle: -45,
-    mode: acgraph.math.rect(5, 0, 395, 200),
+    mode: acgraph.math.Rect(5, 0, 395, 200),
     opacity: .2
 };
 stage
@@ -21,17 +21,17 @@ fillSettings.opacity = 1;
 stage.text(20, 3, "shape 1");
 anychart.ui.background()
         .fill(fillSettings)
-        .bounds(acgraph.math.rect(20, 20, 100, 70))
+        .bounds(acgraph.math.Rect(20, 20, 100, 70))
         .container(stage).draw();
 stage.text(60, 120, "shape 2");
 anychart.ui.background()
         .fill(fillSettings)
-        .bounds(acgraph.math.rect(60, 140, 70, 50))
+        .bounds(acgraph.math.Rect(60, 140, 70, 50))
         .container(stage).draw();
 stage.text(270, 73, "shape 3");
 anychart.ui.background()
         .fill(fillSettings)
-        .bounds(acgraph.math.rect(270, 93, 100, 100))
+        .bounds(acgraph.math.Rect(270, 93, 100, 100))
         .container(stage).draw();
 </script>
 </head>
