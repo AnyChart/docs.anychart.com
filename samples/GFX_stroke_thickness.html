@@ -4,31 +4,20 @@
     <meta name="tags" content="[]"/>
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
-     <script src="../anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="stage">
-
-    stage = acgraph.create("container");
-    anychart.ui.background()
+stage = acgraph.create("container");
+stage.rect(22, 18, stage.width() - 44, stage.height() / 3 - 22)
         .fill("none")
-        .stroke("5 orange")
-        .bounds(acgraph.math.Rect(22, 18, stage.width() - 44, stage.height() / 3 - 22))
-        .container(stage)
-        .draw();
-    anychart.ui.background()
+        .stroke("5 orange");
+stage.rect(22, stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 - 22)
         .fill("none")
-        .stroke("grey", 15)
-        .bounds(acgraph.math.Rect(22, stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 - 22))
-        .container(stage)
-        .draw();
-    anychart.ui.background()
+        .stroke("grey", 15);
+stage.rect(22, stage.height() / 3 + 18, stage.width() - 44, stage.height() / 3 - 22)
         .fill("none")
-        .stroke({thickness: .4})
-        .bounds(acgraph.math.Rect(22, 2 * stage.height() / 3 + 40, stage.width() - 44, 25))
-        .container(stage)
-        .draw();
-
-</script>
+        .stroke({thickness: .4});
+    </script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
