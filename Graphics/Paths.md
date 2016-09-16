@@ -69,4 +69,4 @@ linePath.arcToByEndPoint(180, 50, 10, 10, true, true);
 linePath.stroke({color: "#2196F3"}, 2, "10 12", "round", "round");
 ```
 
-    {sample}GFX\_path\_2{sample}
+{sample}GFX\_path\_2{sample}
