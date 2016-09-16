@@ -4,20 +4,16 @@
 <meta name="tags" content="[]"/>
 <meta name="index" content="1000"/>
 <meta name="is-new" content="false"/>
-<script src="../anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
 <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
 <script x-export="stage">
 stage = acgraph.create("container");
 stage.text(stage.width() / 12, 3, "no angle preservation (45\u00b0)");
-anychart.ui.background()
-        .fill(["0.4 black", ".6 white"], 45)
-        .bounds(acgraph.math.Rect(stage.width() / 12, 20, stage.width() / 4, stage.height() - 40))
-        .container(stage).draw();
+stage.rect(stage.width() / 12, 20, stage.width() / 4, stage.height() - 40)
+        .fill(["0.4 black", ".6 white"], 45);
 stage.text(7 * stage.width() / 12, 3, "angle preservation (45\u00b0)");
-anychart.ui.background()
-        .fill(["0.4 black", ".6 white"], 45, true)
-        .bounds(acgraph.math.Rect(7 * stage.width() / 12, 20, stage.width() / 4, stage.height() - 40))
-        .container(stage).draw();
+stage.rect(7 * stage.width() / 12, 20, stage.width() / 4, stage.height() - 40)
+        .fill(["0.4 black", ".6 white"], 45, true);
 </script>
 </head>
 <body>
