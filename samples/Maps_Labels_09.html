@@ -45,13 +45,6 @@ series_2.labels(true);
 labels_1 = series_1.labels();
 labels_2 = series_2.labels();
 
-// add mouseMove listener to calc lat/long
-map.listen('click',function(evt) {
-    var localCord = map.globalToLocal(evt.clientX, evt.clientY);
-    var latLong = map.inverseTransform(localCord.x, localCord.y);
-    console.log(latLong.lat, latLong.long);
-});
-
 // set the overlapping mode for the map
 map.overlapMode(false);
 
