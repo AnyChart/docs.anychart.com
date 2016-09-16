@@ -212,24 +212,26 @@ These properties can be set through the GeoJSON code:
 
 ```
 "properties": {
-    "labelrank": 0, 
-    "code_hasc": "AU.JB", 
-    "name": "Jervis Bay Territory", 
-    "admin": "Australia", 
-    "type_en": "Territory", 
-    "region": "", "woe_id": 1102841, 
-    "longitude": 150, 
-    "woe_name": "Jervis Bay", 
-    "fips": "", 
-    "woe_label": "", 
-    "latitude": -35, 
-    "iso_a2": "AU", 
-    "postal": "JB", 
-    "type": "Territory", 
-    "id": "AU.JB", 
+    "labelrank": 5, 
     "middle-x": 0.5, 
     "middle-y": 0.3, 
-    "middleXYMode": "relative"
+    "middleXYMode": 
+    "relative", 
+    "code_hasc": "AU.SA", 
+    "name": "South Australia", 
+    "admin": "Australia", 
+    "type_en": "State", 
+    "region": "", 
+    "woe_id": 2344703, 
+    "longitude": 135, 
+    "woe_name": "South Australia", 
+    "fips": "AS05", 
+    "woe_label": "South Australia, AU, Australia", 
+    "latitude": -29, 
+    "iso_a2": "AU", 
+    "postal": "SA", 
+    "type": "State", 
+    "id": "AU.SA"
 },
 ```
 
