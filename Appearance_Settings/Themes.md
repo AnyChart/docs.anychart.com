@@ -258,9 +258,9 @@ anychart.theme(anychart.themes.v6);
 
 ## Several Themes
 
-It is possible to set several themes through one {api:anychart#theme}theme(){api} method. Themes, set as an array, will be applied to a chart one after another, in the order they are set, so the last theme in the array has the highest priority.
+It is possible to set several themes through one {api:anychart#theme}theme(){api} method. Themes, set as an array, will be applied to a chart or all charts on a dashboard one after another, in the order they are set, so the settings from the last theme in the array have the highest priority.
 
-The chart below has three different themes applied. Each theme is responsible for one chart type settings except for the bar chart title - you can see that this setting is being redefined in all themes and the final bar chart title text is taken from the Spline Chart theme - the last one applied. 
+The chart below has three different themes applied. Each theme contains several settings for one of the chart types demonstrated on a dashboard, as well as several general settings for all charts, and those settings values are being redefined in each theme. You can notice that those values of the general settings defined in the last theme set (namely, in the Spline Chart theme) are finally applied to the dashboard.
 
 ```
 // apply custom themes

@@ -10,6 +10,7 @@
     <script x-export="stage">anychart.onDocumentReady(function() {
 
   var stage = anychart.graphics.create("container");
+
   // data
   var dataSet = anychart.data.set([
     ["Department Stores", 637166, 254463, 353554, 856175],
@@ -54,7 +55,6 @@
 
 barTheme = {
   "bar": {
-    "title": "Bar Chart",
     "defaultXAxisSettings": {
       "title": "Retail Channel"
     },
@@ -65,12 +65,27 @@ barTheme = {
       "fill": "#999999 .1"
     },
     "bounds": [0, 0, '50%', '50%']
+  },
+  "defaultTitle": {
+    "enabled": true,
+    "hAlign": "left"
+  },
+  "defaultTooltip": {
+      "enabled": true,
+      "title": false,
+      "separator": false
+  },
+  "chart": {
+    "title": {
+      "text": "Bar Chart",
+      "fontSize": 20,
+      "fontColor": "black"
+    }
   }
 };
 
 columnTheme = {
   "column": {
-    "title": "Column Chart",
     "defaultXAxisSettings": {
       "title": "Retail Channel"
     },
@@ -84,14 +99,21 @@ columnTheme = {
     },
     "bounds": ['50%', 0, '50%', '50%']
   },
-  "bar": {
-    "title": "Bar Chart title set through the Column Chart Theme"
+  "chart": {
+    "title": {
+      "text": "Bar and Column Charts",
+      "fontSize": 18,
+      "fontColor": "red",
+      "align": "right"
+    },
+    "tooltip":{
+       "displayMode": "separated"
+    }
   }
 };
 
 splineTheme = {
   "line": {
-    "title": "Line Chart",
     "defaultXAxisSettings": {
       "title": "Retail Channel"
     },
@@ -107,8 +129,17 @@ splineTheme = {
     },
     "bounds": [0, '50%', '100%', '50%']
   },
-  "bar": {
-    "title": "Bar Chart title set through the Spline Chart Theme"
+  "chart": {
+    "title": {
+      "text": "Bar, Column and Spline Charts",
+      "fontSize": 16,
+      "fontColor": "#c1876b",
+      "align": "center"
+    },
+    "tooltip":{
+       "displayMode": "union",
+       "positionMode": "point"
+    }
   }
 };
 
