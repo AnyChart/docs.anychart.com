@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="tags" content="[]"/>
+<meta name="index" content="1000"/>
+<meta name="is-new" content="false"/>
+<script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
+<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+<script x-export="stage">
+stage = acgraph.create("container");
+
+var linePath = stage.path();
+// starting point
+linePath.moveTo(200, 100);
+// Add commands to the path
+linePath.arcToByEndPoint(300, 100, 250, 50, true, true);
+linePath.lineTo(250, 50);
+linePath.arcToByEndPoint(180, 50, 10, 10, true, true);
+
+// dash stroke and color a path
+linePath.stroke({color: "#2196F3"}, 2, "10 12", "round", "round");
+</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

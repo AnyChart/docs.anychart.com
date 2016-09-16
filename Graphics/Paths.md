@@ -50,7 +50,7 @@ linePath.close();
 linePath.fill(stage.hatchFill("backwardDiagonal", "#2196F3 0.9", 1));
 ```
 
-{sample}GFX\_Paths\_1{sample}
+{sample}GFX\_path\_1{sample}
 
 Here is a sample code that shows how to create an open line using a path, and make its [stroke dashed](Stroke_Settings#dash):
 
@@ -69,4 +69,4 @@ linePath.arcToByEndPoint(180, 50, 10, 10, true, true);
 linePath.stroke({color: "#2196F3"}, 2, "10 12", "round", "round");
 ```
 
-{sample}GFX\_Paths\_2{sample}
+{sample}GFX\_path\_1{sample}
