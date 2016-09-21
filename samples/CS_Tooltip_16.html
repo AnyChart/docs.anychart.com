@@ -22,21 +22,32 @@
   var data2 = data.mapAs({x: [0], value: [2]});
 
   // chart type
-  chart = anychart.area();
+  chart = anychart.column();
 
   // set title
-  chart.title("Union Tooltip");
+  chart.title("Tooltip Position");
 
   // set series
-  var series1 = chart.splineArea(data1);
+  var series1 = chart.column(data1);
   series1.name("Year 2008");
-  var series2 = chart.splineArea(data2);
+  var series2 = chart.column(data2);
   series2.name("Year 2009");
 
   // tooltip settings
   var tooltip = chart.tooltip();
-  // set display mode
-  tooltip.displayMode("union");
+  // set tooltip display mode
+  tooltip.positionMode("point");
+
+  var tooltip1 = series1.tooltip();
+  tooltip1.position("leftCenter");
+
+  var tooltip2 = series2.tooltip();
+  tooltip2.position("rightCenter");
+
+  tooltip1.anchor("rightCenter");
+  tooltip2.anchor("leftCenter");
+  tooltip1.offsetX(0);
+  tooltip2.offsetX(0);
 
   // draw
   chart.container("container");

@@ -20,26 +20,20 @@
   // chart type
   chart = anychart.bar();
   var series = chart.bar(data);
-  series.name("Year 2008");
+  series.name("Sales");
 
   // set title
-  chart.title("Adjusted Tooltip Background");
+  chart.title("Tooltip Visual Appearance");
+
 
   // disable tooltip for the first series
-  var tooltipBackground = series.tooltip().background();
-
-  tooltipBackground.fill("#EEE 0.8");
-  tooltipBackground.stroke("#888");
-  tooltipBackground.cornerType("roundInner");
-  tooltipBackground.corners(5);
-
-  // font settings for tooltip text
   var tooltip = series.tooltip();
-  tooltip.fontColor("#444");
-  tooltip.fontWeight(900);
-  var title = series.tooltip().title();
-  title.fontWeight(900);
-  title.fontColor("#444");
+
+  tooltip.fontSize("13");
+  tooltip.fontStyle("italic");
+  tooltip.fontFamily("Calibri");
+  tooltip.title(false);
+  tooltip.separator(false);
 
   // draw
   chart.container("container");
