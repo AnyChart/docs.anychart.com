@@ -47,7 +47,7 @@
         chart.legend().enabled(false);
 
         chart.listen("mouseMove", function (e) {
-            tooltip.css({"left": $('#' + el).width() - e["clientX"] + 20, "top": e["clientY"] + 10});
+            tooltip.css({"left": e["offsetX"] + 20, "top": e["offsetY"] + 10});
         });
 
         chart.listen("pointMouseOver", function (e) {
