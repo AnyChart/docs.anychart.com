@@ -11,7 +11,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
       tooltip = $("<div></div>").css({"position": "absolute", "pointerEvents": "none"});
-      $("container").closest('.iframe-tag').append(tooltip);
+      $("container").parent('.iframe-tag').append(tooltip);
 
       // data
       var data = anychart.data.set([
