@@ -12,8 +12,7 @@
 
         tooltip = $("<div></div>").css({"position": "absolute", "pointerEvents": "none"});
         var el = 'container';
-        var $el = '#' + el;
-        $el.parent('.iframe-tag').append(tooltip);
+        $('#' + el).parent('.iframe-tag').append(tooltip);
 
         // data
         var data = anychart.data.set([
@@ -48,7 +47,7 @@
         chart.legend().enabled(false);
 
         chart.listen("mouseMove", function (e) {
-            tooltip.css({"left": $el.width() - e["clientX"] + 20, "top": e["clientY"] + 10});
+            tooltip.css({"left": $('#' + el).width() - e["clientX"] + 20, "top": e["clientY"] + 10});
         });
 
         chart.listen("pointMouseOver", function (e) {
