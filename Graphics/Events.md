@@ -5,6 +5,7 @@
 * [Listening](#listening)
 * [Unlistening](#unlistening)
 * [Propagation](#propagation)
+* [Stage](#stage)
 
 ## Overview
 
@@ -92,3 +93,15 @@ Try the sample and explore it in the Playground:
 {sample}GFX\_Events\_3{sample}
 
 
+## Stage
+
+Besides all mentioned, there are also events managed by stage. There are four of them: 
+- STAGE_RESIZE - listen to this event when you need some changes or actions done on a stage while it is being resized
+- STAGE_RENDERED - listen to this event when you need some changes or actions done on a stage when it is rendered, i.e. when all images have been loaded to a stage
+- RENDER_START - listen to this event when you need some changes or actions done on a stage when the rendering process of the stage has started
+- RENDER_FINISH - listen to this event when you need some changes or actions done on a stage when the rendering process of the stage has finished
+
+```
+```
+
+{sample}GFX\_Events\_4{sample}

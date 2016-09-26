@@ -10,14 +10,13 @@
 <script x-export="stage">
 stage = acgraph.create("container");
 
-var boldHatch = acgraph.hatchFill("diamiond", "black", 4);
-var thinHatch = acgraph.hatchFill("diamiond", "black", 0.5);
+// Creates clip instance.
+var clipArea = acgraph.clip(10, 10, 90, 90);
 
-stage.rect(100, 10, 400, 40).fill(boldHatch);
-stage.rect(100, 90, 400, 40).fill(thinHatch);
-stage.rect(100, 170, 400, 40).fill(boldHatch);
-stage.rect(100, 240, 400, 40).fill(thinHatch);
-stage.rect(100, 310, 400, 40).fill(boldHatch);
+var blueCircle = acgraph.circle(50, 50, 50);
+blueCircle.fill("#2196F3");
+blueCircle.parent(stage);
+blueCircle.clip(clipArea);
 </script>
 </head>
 <body>

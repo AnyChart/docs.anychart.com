@@ -10,14 +10,8 @@
 <script x-export="stage">
 stage = acgraph.create("container");
 
-var boldHatch = acgraph.hatchFill("diamiond", "black", 4);
-var thinHatch = acgraph.hatchFill("diamiond", "black", 0.5);
-
-stage.rect(100, 10, 400, 40).fill(boldHatch);
-stage.rect(100, 90, 400, 40).fill(thinHatch);
-stage.rect(100, 170, 400, 40).fill(boldHatch);
-stage.rect(100, 240, 400, 40).fill(thinHatch);
-stage.rect(100, 310, 400, 40).fill(boldHatch);
+// Draws star.
+acgraph.vector.primitives.star(stage, 100, 70, 50, 17, 7, 20, -0.9);
 </script>
 </head>
 <body>
