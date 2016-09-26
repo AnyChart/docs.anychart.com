@@ -4,7 +4,7 @@
 <meta name="tags" content="[]"/>
 <meta name="index" content="1000"/>
 <meta name="is-new" content="false"/>
-<script src="../anychart-bundle.min.js"></script>
+<script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
 <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
 <script x-export="stage">
 stage = acgraph.create("container");
@@ -12,25 +12,19 @@ stage.path()
         .moveTo(stage.width() / 2, 0)
         .lineTo(stage.width() / 2, stage.height());
 stage.text(20, 0, "Stretch image");
-anychart.ui.background()
+stage.rect(2, 18, stage.width() / 2 - 4, stage.height() - 22)
         .fill({
             src: "http://static.anychart.com/images/kitty.png",
             mode: acgraph.vector.ImageFillMode.STRETCH
         })
-        .stroke("1 #000")
-        .bounds(acgraph.math.Rect(2, 18, stage.width() / 2 - 4, stage.height() - 22))
-        .container(stage)
-        .draw();
+        .stroke("1 #000");
 stage.text(stage.width() / 2 + 20, 0, "Pattern image");
-anychart.ui.background()
+stage.rect(stage.width() / 2 + 2, 18, stage.width() / 2 - 4, stage.height() - 22)
         .fill({
             src: "http://static.anychart.com/images/kitty.png",
             mode: acgraph.vector.ImageFillMode.TILE
         })
-        .stroke("1 #000")
-        .bounds(acgraph.math.Rect(stage.width() / 2 + 2, 18, stage.width() / 2 - 4, stage.height() - 22))
-        .container(stage)
-        .draw();
+        .stroke("1 #000");
 </script>
 </head>
 <body>
