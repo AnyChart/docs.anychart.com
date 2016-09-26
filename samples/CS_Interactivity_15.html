@@ -48,9 +48,9 @@
             var clientX = e['offsetX'];
             var clientY = e['offsetY'];
 
-            var container = $(this.container().getStage().container());
-            if (!container.find('.custom-tooltip').length){
-                container.append(tooltip);
+            var $container = $(this.container().getStage().container());
+            if (!$container.find('.custom-tooltip').length){
+                $container.append(tooltip);
             }
             var containerOffset = container.offset();
             var scrollLeft = $(document).scrollLeft();

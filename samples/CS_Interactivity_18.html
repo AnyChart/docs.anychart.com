@@ -121,9 +121,9 @@
 
             // adjust tooltip position on mouse move
             chart.listen("mouseMove", function (e) {
-                var container = $(this.container().getStage().container());
-                if (!container.find('.custom-tooltip').length) {
-                    container.append(tooltip);
+                var $container = $(this.container().getStage().container());
+                if (!$container.find('.custom-tooltip').length) {
+                    $container.append(tooltip);
                     createTooltipChart();
                 }
 
