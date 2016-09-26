@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function () {
 
-        tooltip = $("<div></div>").css({"position": "absolute", "pointerEvents": "none"});
-        var el = 'container';
-        $('#' + el).parent('.iframe-tag').append(tooltip);
+        tooltip = $("<div class='custom-tooltip'></div>").css({"position": "absolute", "pointerEvents": "none"});
 
         // data
         var data = anychart.data.set([
@@ -47,7 +45,20 @@
         chart.legend().enabled(false);
 
         chart.listen("mouseMove", function (e) {
-            tooltip.css({"left": e["offsetX"] + 20, "top": e["offsetY"] + 10});
+            var clientX = e['offsetX'];
+            var clientY = e['offsetY'];
+
+            var container = $(this.container().getStage().container());
+            if (!container.find('.custom-tooltip').length){
+                container.append(tooltip);
+            }
+            var containerOffset = container.offset();
+            var scrollLeft = $(document).scrollLeft();
+            var scrollTop = $(document).scrollTop();
+
+            var x = clientX - (containerOffset.left - scrollLeft);
+            var y = clientY - (containerOffset.top - scrollTop);
+            tooltip.css({"left": x + 20, "top": y + 10, "z-index": 10000});
         });
 
         chart.listen("pointMouseOver", function (e) {
