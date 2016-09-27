@@ -10,9 +10,15 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function () {
 
-        tooltip = $("<div></div>").css({"position": "absolute", "pointerEvents": "none"});
-        var el = 'container';
-        $('#' + el).parent('.iframe-tag').append(tooltip);
+        tooltip = $("<div class='custom-tooltip'></div>").css({
+            "position": "absolute",
+            "pointerEvents": "none",
+            "width": "100px",
+            "background": "#fff",
+            "padding": "4px",
+            "border": "solid black 2px",
+            "display": "none"
+        });
 
         // data
         var data = anychart.data.set([
@@ -47,22 +53,25 @@
         chart.legend().enabled(false);
 
         chart.listen("mouseMove", function (e) {
-            tooltip.css({"left": e["offsetX"] + 20, "top": e["offsetY"] + 10});
+            var clientX = e['offsetX'];
+            var clientY = e['offsetY'];
+            var $container = $(this.container().getStage().container());
+
+            if (!$container.find('.custom-tooltip').length) {
+                $container.append(tooltip);
+            }
+
+            tooltip.css({"left": clientX + 20, "top": clientY + 10, "z-index": 10000});
         });
 
         chart.listen("pointMouseOver", function (e) {
-            tooltip.css({
-                "width": "100px",
-                "display": "block",
-                "background": "#fff",
-                "padding": "4px",
-                "border": "solid black 2px"
-            });
+            tooltip.css({"display": "block"});
+
             var ind = e.pointIndex;
             tooltip.html(data.row(ind)[0] + " has eaten " + data.row(ind)[1] + " pieces of pizza in total");
         });
 
-        chart.listen("pointMouseOut", function (e) {
+        chart.listen("pointMouseOut", function () {
             tooltip.css("display", "none");
         });
 
