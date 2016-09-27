@@ -14,9 +14,11 @@
             "position": "absolute",
             "pointerEvents": "none",
             "width": "100px",
+            "height": "100px",
             "background": "#fff",
             "padding": "4px",
-            "border": "solid black 2px"
+            "border": "solid black 2px",
+            "display": "none"
         });
 
         // data
@@ -70,7 +72,7 @@
             tooltip.html(data.row(ind)[0] + " has eaten " + data.row(ind)[1] + " pieces of pizza in total");
         });
 
-        chart.listen("pointMouseOut", function (e) {
+        chart.listen("pointMouseOut", function () {
             tooltip.css("display", "none");
         });
 
