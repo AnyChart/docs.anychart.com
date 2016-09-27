@@ -121,20 +121,23 @@
 
             // adjust tooltip position on mouse move
             chart.listen("mouseMove", function (e) {
+                var clientX = e['offsetX'];
+                var clientY = e['offsetY'];
                 var $container = $(this.container().getStage().container());
+
                 if (!$container.find('.custom-tooltip').length) {
                     $container.append(tooltip);
                     createTooltipChart();
                 }
 
                 // prevent tooltip from leaving the screen
-                var left = (e["offsetX"] - 10) - tooltip.width() / 2;
+                var left = (clientX - 10) - tooltip.width() / 2;
                 if (left + tooltip.width() > chart.container().width())
                     left = chart.container().width() - 2 - tooltip.width();
                 if (left < 0)
                     left = 0;
                 // get mouse position and move tooltip
-                tooltip.css({"left": left, "top": (e["offsetY"] - 10) - tooltip.height()});
+                tooltip.css({"left": left, "top": (clientY - 10) - tooltip.height()});
             });
 
             // draw

@@ -47,18 +47,13 @@
         chart.listen("mouseMove", function (e) {
             var clientX = e['offsetX'];
             var clientY = e['offsetY'];
-
             var $container = $(this.container().getStage().container());
-            if (!$container.find('.custom-tooltip').length){
+
+            if (!$container.find('.custom-tooltip').length) {
                 $container.append(tooltip);
             }
-            var containerOffset = $container.offset();
-            var scrollLeft = $(document).scrollLeft();
-            var scrollTop = $(document).scrollTop();
 
-            var x = clientX - (containerOffset.left - scrollLeft);
-            var y = clientY - (containerOffset.top - scrollTop);
-            tooltip.css({"left": x + 20, "top": y + 10, "z-index": 10000});
+            tooltip.css({"left": clientX + 20, "top": clientY + 10, "z-index": 10000});
         });
 
         chart.listen("pointMouseOver", function (e) {
