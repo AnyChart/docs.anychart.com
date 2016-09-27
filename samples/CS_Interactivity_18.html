@@ -52,7 +52,10 @@
             // chart title
             var title = chart.title();
             title.useHtml(true);
-            title.text("<span style=\"color:#545f69; font-size: 18px;\">Sales volume</span><br><span style=\"color:#545f69; font-size: 10px\">ACME Corp.</span>");
+            title.text("<span style=\"color:#545f69; font-size: 18px;\">" +
+                    "Sales volume</span>" +
+                    "<br>" +
+                    "<span style=\"color:#545f69; font-size: 10px\">ACME Corp.</span>");
             title.enabled(true);
 
             // set axes titles

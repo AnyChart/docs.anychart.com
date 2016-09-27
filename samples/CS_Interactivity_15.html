@@ -10,7 +10,14 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function () {
 
-        tooltip = $("<div class='custom-tooltip'></div>").css({"position": "absolute", "pointerEvents": "none"});
+        tooltip = $("<div class='custom-tooltip'></div>").css({
+            "position": "absolute",
+            "pointerEvents": "none",
+            "width": "100px",
+            "background": "#fff",
+            "padding": "4px",
+            "border": "solid black 2px"
+        });
 
         // data
         var data = anychart.data.set([
@@ -57,13 +64,8 @@
         });
 
         chart.listen("pointMouseOver", function (e) {
-            tooltip.css({
-                "width": "100px",
-                "display": "block",
-                "background": "#fff",
-                "padding": "4px",
-                "border": "solid black 2px"
-            });
+            tooltip.css({"display": "block"});
+
             var ind = e.pointIndex;
             tooltip.html(data.row(ind)[0] + " has eaten " + data.row(ind)[1] + " pieces of pizza in total");
         });
