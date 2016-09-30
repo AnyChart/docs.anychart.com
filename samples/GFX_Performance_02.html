@@ -11,35 +11,50 @@ stage = acgraph.create("container");
 
 var start;
 var finish;
-var label;
 
-stage.listen("renderstart", function(){
-    start = (new Date()).getTime();
-});
-
-stage.listenOnce("renderfinish", function(){
-    finish = (new Date()).getTime();
-    var labelBg = stage.rect();
-    label = stage.text(130,130);
-    label.text((finish - start) + "ms");
+var labelBg = stage.rect();
+var label = stage.text(130,130);
+    label.text("Click here to start the process of rendering");
     var labelBounds = label.getBounds();
     labelBg
         .setX((labelBounds.left)-20)
         .setY((labelBounds.top)+20)
         .setWidth(labelBounds.width+40)
         .setHeight(labelBounds.height-40)
-        .fill("#fff");
+        .fill("#fff")
+        .stroke("#000")
+        .cursor("pointer");
     label.zIndex(1000000);
+    label.disablePointerEvents(true);
+    labelBg.zIndex(1000000);
+
+
+stage.listen("renderstart", function(){
+    start = (new Date()).getTime();
 });
 
-var rectSide = 10;
+// this is to be performed on a click
+labelBg.listen("click", function(){
 
-for (var i = 0; i < 5000; i++) {
+stage.listenOnce("renderfinish", function(){
+    finish = (new Date()).getTime();
+    label.text((finish - start) + "ms");
+    var labelBounds = label.getBounds();
+    labelBg
+        .setX((labelBounds.left)-20)
+        .setY((labelBounds.top)+20)
+        .setWidth(labelBounds.width+40)
+        .setHeight(labelBounds.height-40);
+});
+
+for (var i = 0; i < 3000; i++) {
     var left = Math.random() * 300;
-    var qwer = Math.random() * 300;    
-    var rect = stage.rect(left, qwer, rectSide, rectSide);
+    var qwer = Math.random() * 300;
+    
+    var rect = stage.rect(left, qwer, 10, 10);
     rect.fill('green');
 }
+});
 </script>
 </head>
 <body>
