@@ -54,17 +54,7 @@
   tooltip1.textFormatter("Manager: <b>{%x}</b><br>Sales: <b>{%value}</b>");
   tooltip2.textFormatter(formattingFunction);
   tooltip3.textFormatter(formattingFunction);
-  tooltip4.textFormatter(function(){
-    var value = (this.value).toString();
-    var formattedValue = "";
-    for (var i = 3; i<value.length; i=i+3)
-      formattedValue = "," + value.substr((value.length-i), 3) + formattedValue;
-    var remainingValue = value.substr(0, value.length-(formattedValue.length-formattedValue.length/4));
-
-    value = remainingValue + formattedValue;
-
-    return "<a style=\"font-weight: 400;\">Manager: </a><a style=\"font-weight: 900;\">" + this.x + "</a><br><a style=\"font-weight: 400;\">Sales: <a><a style=\"font-weight: 900;\">" + this.valuePrefix + value + "</a>"
-  });
+  tooltip4.textFormatter("Manager: <b>{%x}</b> <br>Sales: <b>${%Value}{groupsSeparator:,}</b>");
 
   tooltip5.textFormatter(
     // get formatting function of the first series tooltip
