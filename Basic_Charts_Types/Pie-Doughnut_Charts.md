@@ -204,7 +204,7 @@ That's how a chart with Aquastyle set looks like:
 
 In this section we will explain how to add and configure data labels and tooltips.
 <!--Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
-To configure data labels and tooltips for all series use {api:anychart.charts.Pie#labels}**.labels()**{api} and {api:anychart.charts.Pie#tooltip}**.tooltip()**{api} methods. These will help you to adjust visual appearance, positioning and format.
+To configure data labels and tooltips for all series use {api:anychart.charts.Pie#labels}**.labels()**{api} and {api:anychart.charts.Pie#tooltip}tooltip()**{api} methods. These will help you to adjust visual appearance, positioning and format.
 
 ### Labels
 

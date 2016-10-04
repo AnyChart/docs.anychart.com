@@ -292,7 +292,7 @@ Using these settings we've set red color for every falling OHLC point and green 
 In this section we will explain how to add and configure data labels and tooltips.<!-- Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
   
   
-If you want to configure data labels and tooltips for all series - you should do that using {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the bottom of the data points, also, we will format labels so they show only the date and tooltip will show detailed description.
+If you want to configure data labels and tooltips for all series - you should do that using {api:anychart.core.cartesian.series.OHLC#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.OHLC#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the bottom of the data points, also, we will format labels so they show only the date and tooltip will show detailed description.
   
   
 When formatting data labels text and tooltip we can use {api:anychart.core.ui.Tooltip#textFormatter}**.textFormatter()**{api} and {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api}.

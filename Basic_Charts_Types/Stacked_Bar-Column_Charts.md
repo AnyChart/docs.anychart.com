@@ -47,7 +47,7 @@ Just change "column" to "bar" and get your data displayed as a bar chart:
   series = chart.column(seriesData_4);
 ```
 
-Also, tooltips can be enabled/disabled by adjusting {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} method:
+Also, tooltips can be enabled/disabled by adjusting {api:anychart.charts.Cartesian#tooltip}tooltip(){api} method:
 
 ```
     series = chart.column(seriesData_1);
@@ -97,7 +97,7 @@ Mapping for series must be done like this:
   var dataMap2011_3 = dataSet.mapAs({x: [0], value: [3]});
 ```
 
-After data mapping let's proceed to clustering series. First of all, we need to create a scale for each group of series and define {api:anychart.scales.Linear#stackMode}**.stackMode()**{api} for each scale. After that we will apply our scale for each series group.
+After data mapping let's proceed to clustering series. First of all, we need to create a scale for each group of series and define {api:anychart.scales.Linear#stackMode}stackMode(){api} for each scale. After that we will apply our scale for each series group.
 
 ```
   var scale2010 = chart.yScale();
@@ -107,7 +107,7 @@ After data mapping let's proceed to clustering series. First of all, we need to 
   scale2011.stackMode("value");
 ```
 
-To apply scales to the series we use {api:anychart.core.cartesian.series.Column#yScale}**.yScale()**{api} method with the scale as method's parameter:
+To apply scales to the series we use {api:anychart.core.cartesian.series.Column#yScale}yScale(){api} method with the scale as method's parameter:
 
 ```
   var series2010_1 = chart.column(dataMap2010_1);

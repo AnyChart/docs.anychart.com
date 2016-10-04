@@ -241,7 +241,7 @@ Sample below demonstrates two radar charts with adjusted visualisation of the ra
 
 In this section we will explain how to add and configure data labels and tooltips.
 
-If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.core.polar.series.Base#labels}**.labels()**{api} and {api:anychart.core.polar.series.Base#tooltip}**.tooltip()**{api} methods. You can tune visual appearance, positioning and format of labels and tooltips.
+If you want to configure data labels and tooltips for all series - you should do that in {api:anychart.charts.Polar#label}label(){api} and {api:anychart.charts.Polar#tooltip}tooltip(){api} methods. You can tune visual appearance, positioning and format of labels and tooltips.
 
 ```
   // chart type

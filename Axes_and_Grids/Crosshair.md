@@ -72,7 +72,7 @@ Use the standard function to disable the axes labels.
 
 ### Change text
 
-The crosshair label's format is the same as axis label's format by default. You may use the {api:anychart.core.ui.CrosshairLabel#textFormatter}**textFormatter()**{api} to change the crosshair's labels' performance. 
+The crosshair label's format is the same as axis label's format by default. You may use the {api:anychart.core.ui.CrosshairLabel#w}**textFormatter()**{api} to change the crosshair's labels' performance. 
 
 ```
   // set the label performance

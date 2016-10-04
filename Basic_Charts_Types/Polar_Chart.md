@@ -231,11 +231,11 @@ This sample below demonstrates two polar charts with adjusted visualisation of t
 
 ### Labels and Tooltips
 
-In this section we will explain how to add and configure data labels and tooltips. To configure data labels and tooltips for all series use {api:anychart.charts.Pie#labels}**.labels()**{api} and {api:anychart.charts.Pie#tooltip}**.tooltip()**{api} methods. These will help you to adjust visual appearance, positioning and format.
+In this section we will explain how to add and configure data labels and tooltips. To configure data labels and tooltips for all series use {api:anychart.charts.Pie#labels}labels(){api} and {api:anychart.charts.Pie#tooltip}tooltip(){api} methods. These will help you to adjust visual appearance, positioning and format.
 
 Let's do that with the following example: we will make data labels bold, format labels so they show only the the value of the point and tooltips to show detailed description.
 
-When formatting tooltips, we use  {api:anychart.core.ui.Tooltip#textFormatter}**.textFormatter()**{api} to adjust source of content and visual appearance. To control labels’ position we may use  {api:anychart.core.ui.Label#position}**.position()**{api} parameter.
+When formatting tooltips, we use {api:anychart.core.ui.Tooltip#textFormatter}textFormatter(){api} to adjust source of content and visual appearance. To control labels’ position use {api:anychart.core.ui.Label#position}position(){api} parameter.
 
 Next sample demonstrates bold series labels which display value of a point and tooltip shows detailed description.
 

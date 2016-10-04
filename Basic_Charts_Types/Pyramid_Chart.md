@@ -21,7 +21,7 @@ Pyramid chart is a kind of [Funnel chart](../Basic_Charts_Types/Funnel_Chart) th
 
 ## Chart
 
-To create html5 Pyramid chart with AnyChart you have to set {api:anychart#pyramid}**.pyramid()**{api} method.
+To create html5 Pyramid chart with AnyChart you have to set {api:anychart#pyramid}pyramid(){api} method.
 
 ```
 var chart = anychart.pyramid();
@@ -79,7 +79,7 @@ Base of a pyramid is the largest horizontal line of the pyramid chart. In this s
 
 ### Size
 
-You can set base size in pixels or in percentage ratio. Use string value for {api:anychart.charts.Pyramid#baseWidth}**.baseWidth()**{api} to define flexible base size in percentage ratio.
+You can set base size in pixels or in percentage ratio. Use string value for {api:anychart.charts.Pyramid#baseWidth}baseWidth(){api} to define flexible base size in percentage ratio.
 
 ```
 var chart = anychart.pyramid(data);
@@ -90,11 +90,11 @@ chart.baseWidth("50%")
 
 {sample}BCT\_PyramidChart\_02{sample}
 
-*Note:* Define value of {api:anychart.charts.Pyramid#baseWidth}**.baseWidth()**{api} using numbers to set fixed size of the base.
+*Note:* Define value of {api:anychart.charts.Pyramid#baseWidth}baseWidth(){api} using numbers to set fixed size of the base.
 
 ## Position
 
-By default, base of the pyramid is placed at the bottom of the chart. Use {api:anychart.charts.Pyramid#reversed}**.reversed()**{api} method to turn the pyramid upside down.
+By default, base of the pyramid is placed at the bottom of the chart. Use {api:anychart.charts.Pyramid#reversed}reversed(){api} method to turn the pyramid upside down.
 
 ```
 var chart = anychart.pyramid(data);
@@ -109,7 +109,7 @@ Here is how reversed pyramid looks like:
 
 ## Padding
 
-As you can see, each part of a pyramid is separated from another with some space. The space between each part of pyramid chart is controlled by a {api:anychart.charts.Pyramid#pointsPadding}**.pointsPadding()**{api} parameter. Next sample of the pyramid chart has no spacing.
+As you can see, each part of a pyramid is separated from another with some space. The space between each part of pyramid chart is controlled by a {api:anychart.charts.Pyramid#pointsPadding}pointsPadding(){api} parameter. Next sample of the pyramid chart has no spacing.
 
 ```
 // disable spacing between parts of the chart
@@ -148,11 +148,11 @@ Using such settings we've created a pyramid colored in Gold, dark red border and
 
 ## Labels
  
-Labels of a pyramid are text boxes with additional information for presented data. You can tune labels using {api:anychart.charts.Pyramid#labels}**.labels()**{api} method.
+Labels of a pyramid are text boxes with additional information for presented data. You can tune labels using {api:anychart.charts.Pyramid#labels}labels(){api} method.
 
 ### Connectors
 
-The line that joins a label with a particular pyramid point is called connector. You can tune connectors visual appearance using {api:anychart.charts.Pyramid#connectorStroke}**.connectorsStroke()**{api} method. 
+The line that joins a label with a particular pyramid point is called connector. You can tune connectors visual appearance using {api:anychart.charts.Pyramid#connectorStroke}connectorsStroke(){api} method. 
 
 ```
   var chart = anychart.pyramid(data);
@@ -173,14 +173,14 @@ You can find more information about lines in [Line Settings tutorial](../Appeara
 
 ### Position
 
-Position of the labels is controlled by {api:anychart.core.ui.LabelsFactory#position}**.position()**{api} method. There are five acceptable values for pyramid labels:
+Position of the labels is controlled by {api:anychart.core.ui.LabelsFactory#position}position(){api} method. There are five acceptable values for pyramid labels:
 * **inside** - place labels inside each pyramid point.
 * **outsideLeftInColumn** - place labels to the left of the pyramid and align them in a column.
 * **outsideRightInColumn** - place labels to the right of the pyramid and align them in a column.
 * **outsideLeft** - place labels to the left of the pyramid.
 * **outsideRight** - place labels to the right of the pyramid.
 
-If you are using **outsideLeft** or **outsideRight** you can adjust length of labels connectors. Use {api:anychart.charts.Pyramid#connectorLength}**.connectorsLength()**{api} parameter to set custom length for all labels connectors.
+If you are using **outsideLeft** or **outsideRight** you can adjust length of labels connectors. Use {api:anychart.charts.Pyramid#connectorLength}connectorsLength(){api} parameter to set custom length for all labels connectors.
 
 ```
 var chart = anychart.pyramid(data);
@@ -189,13 +189,13 @@ chart.labels().position('outsideRight');  // place labels to the right
 chart.connectorLength(45);    // set 45px connectors length
 ```
 
-Using these settings we have set each label 45px to the right from the each pyramid point. Using {api:anychart.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method we can adjust content for the labels.
+Using these settings we have set each label 45px to the right from the each pyramid point. Using {api:anychart.ui.LabelsFactory#textFormatter}textFormatter(){api} method we can adjust content for the labels.
 
 {sample}BCT\_PyramidChart\_07{sample}
 
 ### Overlapping
 
-After adjusting content of the pyramid labels some of them moved to prevent overlapping. You can control overlapping using {api:anychart.charts.Pyramid#overlapMode}**.overlapMode()**{api}. Sample below demonstrates labels with allowed overlapping state.
+After adjusting content of the pyramid labels some of them moved to prevent overlapping. You can control overlapping using {api:anychart.charts.Pyramid#overlapMode}overlapMode(){api}. Sample below demonstrates labels with allowed overlapping state.
 
 ```
 var chart = anychart.pyramid(data);
@@ -203,13 +203,13 @@ var chart = anychart.pyramid(data);
 chart.overlapMode("allowOverlap");
 ```
 
-*Note:* if you want to hide connectors set **null** value for {api:anychart.charts.Pyramid#connectorStroke}**.connectorsStroke()**{api} method.
+*Note:* if you want to hide connectors set **null** value for {api:anychart.charts.Pyramid#connectorStroke}connectorsStroke(){api} method.
 
 {sample}BCT\_PyramidChart\_08{sample}
 
 ## Tooltip
 
-In this section we will explain how to tune pyramid tooltip. Method {api:anychart.charts.Pyramid#tooltip}**.tooltip()**{api} controls tooltip of the pyramid. With the following example let's force tooltip to show detailed description of the pyramid.
+In this section we will explain how to tune pyramid tooltip. Method {api:anychart.charts.Pyramid#tooltip}tooltip(){api} controls tooltip of the pyramid. With the following example let's force tooltip to show detailed description of the pyramid.
 
 {sample}BCT\_PyramidChart\_09{sample}
 

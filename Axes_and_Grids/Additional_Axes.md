@@ -26,7 +26,7 @@ Consider using multiple axes when you need:
 
 ## Declaration
 
-If you want to declare an additional axis all you need to do is to set index to it, and set as many {api:anychart.charts.Cartesian#yAxis}**yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**xAxis()**{api} methods as you want:
+If you want to declare an additional axis all you need to do is to set index to it, and set as many {api:anychart.charts.Cartesian#yAxis}yAxis(){api} or {api:anychart.charts.Cartesian#xAxis}xAxis(){api} methods as you want:
 
 ```
   // First additional axis
@@ -93,7 +93,7 @@ In the a sample below we will add one additional axis and set value ranges and t
 
 ## Binding Series
 
-To bind data series to the certain axis you should specify it in {api:anychart.core.cartesian.series.Base#yScale}**series.yScale()**{api} or {api:anychart.core.cartesian.series.Base#xScale}**series.xScale()**{api} attribute. By default all series work with {api:anychart.charts.Cartesian#yScale}**chart.yScale()**{api} or {api:anychart.charts.Cartesian#xScale}**chart.xScale()**{api}:
+To bind data series to the certain axis you should specify it in {api:anychart.core.cartesian.series.Base#yScale}series.yScale(){api} or {api:anychart.core.cartesian.series.Base#xScale}series.xScale(){api} attribute. By default all series work with {api:anychart.charts.Cartesian#yScale}chart.yScale(){api} or {api:anychart.charts.Cartesian#xScale}chart.xScale(){api}:
 
 ```
   var firstSeries = anychart.data.set([
@@ -234,7 +234,7 @@ dollars and in percents of GDP. We need to create one additional Axis adjust bot
     extraYAxis.scale(extraYScale);
 ```
 
-We defined two axes and will create one series of a {api:anychart.core.cartesian.series.Column}**Column**{api} type to show debt and bind it to {api:anychart.charts.Cartesian#yAxis}**yAxis**{api}, one series of a {api:anychart.core.cartesian.series.Line}**Line**{api} type to show percentage changes.
+We defined two axes and will create one series of a {api:anychart.core.cartesian.series.Column}Column{api} type to show debt and bind it to {api:anychart.charts.Cartesian#yAxis}yAxis{api}, one series of a {api:anychart.core.cartesian.series.Line}Line{api} type to show percentage changes.
 
 Here it is - a sample chart comparing the US debt, in dark red, to the debts percent of GDP, in blue.
 

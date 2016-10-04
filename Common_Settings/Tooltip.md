@@ -45,13 +45,13 @@ Hover each of the series to see the difference.
 
 ## Settings Inheritance
 
-One of the most useful and practical features of AnyChart Tooltips is their ability to inherit settings. It means that if there are some settings defined for tooltips of a whole chart, the series' tooltips will inherit and have the same settings. 
+One of the most useful and practical features of AnyChart Tooltips is their ability to inherit settings. It means that if there are some settings defined for tooltips of a whole chart, the series' tooltips will inherit them and have the same settings. 
 All tooltip settings can be separated in two parts: simple and complex (or complicated). Let's first talk about simple ones.
 
 ### Simple settings
 
-These are settings which can have an only parameter as a value - such text settings like {api}fontColor(){api} or {api}fontFace(){api}. 
-For example, let's set "gold" color to the {api}fontColor(){api} method for the whole chart tooltips and "green" for the same method of one of the series. 
+These are settings which can have an only parameter as a value - such text settings like {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api} or {api:anychart.core.ui.Tooltip#fontFace}fontFace(){api}. 
+For example, let's set "gold" color to the {api:anychart.core.ui.Tooltip#fontColor}fontColor(){api} method for the whole chart tooltips and "green" for the same method of one of the series. 
 
 ```
 // settings
@@ -66,7 +66,7 @@ You can notice that three series have tooltips with text of gold color and only 
 
 ### Complex 
 
-There are four tooltip settings that can have more than one value so they are being called complex. These settings are {api}background(){api}, {api}padding(){api}, {api}title(){api} and {api}separator(){api}. Series tooltips inherit those settings from chart tooltip settings as well as simple ones.
+There are four tooltip settings that can have more than one value so they are being called complex. These settings are {api:anychart.core.ui.Tooltip#background}background(){api}, {api:anychart.core.ui.Tooltip#padding}padding(){api}, {api:anychart.core.ui.Tooltip#title}title(){api} and {api:anychart.core.ui.Tooltip#separator}separator(){api}. Series tooltips inherit those settings from chart tooltip settings as well as simple ones.
 
 Let's adjust some of these settings to show how it works.
 
@@ -108,8 +108,8 @@ Here is a sample of a chart with the tooltip in a **single** state:
 
 ### Union
 
-Union display mode helps to display information about one point for all series in one tooltip. These display mode may be of great use for comparing series data. Here is a sample of the union tooltip.
-                                                                                                                                                                                                                                        d
+Union display mode helps to display information about one point for all series in one tooltip. This display mode may be of great use for comparing series data. Here is a sample of the union tooltip.
+
 ```
 // get chart's tooltip
 var tooltip = chart.tooltip();
@@ -203,7 +203,7 @@ For adjusting text of the tooltip title use the {api:anychart.core.ui.Tooltip#ti
 
 ### Content
 
-In case you need more complex content formatting there is the {api:anychart.core.ui.tooltip#textFormatter}textFormatting(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in [Text Formatters article](../Common_Settings/Text_Formatters).
+In case you need more complex content formatting there is the {api:anychart.core.ui.tooltip#textFormatter}textFormatting(){api} method that uses a function or a string token as a parameter. More information on adjusting text can be found in the [Text Formatters article](../Common_Settings/Text_Formatters).
 
 ```
 var tooltip = chart.tooltip();
@@ -226,7 +226,7 @@ tooltip.textFormatter("Manager: <b>{%x}</b>\nSales volume: <b>${%Value}</b>");
 {sample}CS\_Tooltip\_13\_1{sample}
 
 
-Use several formatting ways if there are some series on your chart of charts on a dashboard which tooltips need different formatting:
+Use several formatting ways if there are some series on your chart or charts on a dashboard which tooltips need different formatting:
 
 ```
 // set the tooltip title and text for the Column Chart
@@ -261,16 +261,18 @@ columnChart.tooltip().height(80);
 
 ## Other Visual Settings
 
+This section describes how to adjust some visual settings that are not essential but can be quite useful.
+
 
 ### Prefix and Postfix
 
-Use {api:anychart.core.ui.Tooltip#valuePrefix}valuePrefix(){api} and {api:anychart.core.ui.Tooltip#valuePostfix}valuePostfix(){api} methods to add symbols or the whole words before/after tooltip content. These methods can be used to set dollar symbol as prefix ($) or degrees fahrenheit as postfix (°F).
+Use {api:anychart.core.ui.Tooltip#valuePrefix}valuePrefix(){api} and {api:anychart.core.ui.Tooltip#valuePostfix}valuePostfix(){api} methods to add symbols, whole words or anything before/after tooltip content. These methods can be used to set dollar symbol as prefix ($) or degrees fahrenheit as postfix (°F).
 
 {sample}CS\_Tooltip\_11{sample}
 
 ### Background
 
-Tooltip background appearance can be controlled using {api:anychart.core.ui.Tooltip#background}background(){api} method. More information about adjusting backgrounds can be found in [Background tutorial](../Appearance_Settings/Background).
+Tooltip background appearance can be controlled using {api:anychart.core.ui.Tooltip#background}background(){api} method. More information about adjusting background can be found in [Background tutorial](../Appearance_Settings/Background).
 
 ```
 var background = chart.tooltip().background();
@@ -301,24 +303,23 @@ Note that this method can be applied only for tooltips of the whole chart, as th
 
 ## Position
 
-There are several methods for managing tooltips position on the chart. This section contains information on most of this methods.
+There are several methods for managing tooltips position on the chart. This section contains information on most of these methods.
   
-AnyChart html5 charting library allows to choose should the tooltip bind to cursor position, hovered point or to the exact place on the chart plot. Use {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to choose a target for binding tooltip to. *float* parameter is the default one for this method and makes tooltip to follow your cursor. *point* parameter binds tooltip to the hovered series point. Use *chart* parameter for {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to bind tooltip to a place on the chart plot.
+AnyChart html5 charting library allows to choose should the tooltip be bound to a cursor position, hovered point or to the exact place on the chart plot. Use {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to choose a target for binding tooltip to. *float* parameter is the default one for this method and makes tooltip to follow the cursor. Setting *point* and a parameter binds tooltip to the hovered series point. Use the *chart* parameter for the {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api} method to bind tooltips to a place on the chart plot.
 
 ```
 var tooltip = chart.tooltip();
 tooltip.positionMode("point");
 ```
 
-Here is a sample with the tooltip sticks to the hovered point:
+Here is a sample with the tooltip sticked to the hovered point:
 
 {sample}CS\_Tooltip\_14{sample}
 
 ### Fixed Tooltip Position
 
 You can bind tooltips to a certain point on the chart plot using **chart** as a value for {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api}. The sample of such settings can be found [below](#sample). You have to manage other tooltip parameters along with {api:anychart.core.ui.Tooltip#positionMode}positionMode(){api}.
-  
-  
+
 You can choose which part of the tooltip should be considered as anchor and used for position managing. {api:anychart.core.ui.Tooltip#anchor}anchor(){api} method defines the main part of the tooltip for further positioning.
 
 ```
@@ -362,8 +363,6 @@ tooltip.hideDelay(1000);
 ```
 
 ### Themes
-
----->>>>>>> тут тоже наверное по другому
 
 Tooltips can be adjusted using AnyChart Themes. Themes makes it possible to set the same settings for several charts. Here is a sample of adjusting tooltips using themes:
 
