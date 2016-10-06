@@ -211,6 +211,8 @@ Another way to emphasize the start and/or end points is to create a Marker serie
 
 ### Labels and Tooltips
 
+Labels and tooltips in Connector Maps are to be adjusted with the {api:anychart.core.map.series.Connector#labels}labels(){api} and {api:anychart.core.map.series.Connector#tooltip}tooltip(){api} methods.
+
 Adjusting the position of labels is similar to adjusting it for the markers. Set "start", "end", "middle", or ratio from 0 to 1, or a percent value for the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} method. 
 
 The anchor of the label depends on its position and its connector's curvature, but can be adjusted as well by using the {api:anychart.core.ui.LabelsFactory.Label#anchor}anchor(){api} method.
@@ -222,22 +224,22 @@ Tooltips have similar methods of adjusting. Use {api:anychart.core.ui.Tooltip#te
 All label settings can be also defined through the dataSet as well.
 
 ```
-	// create data set
-	var data = anychart.data.set([    
-	    {points: [51.5, -3.2, 57.1, -2.19], from: "Cardiff", to: "Aberdeen", time: "2h 20m"},
-	    {points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m", label:{anchor:"leftTop"}},
-	    {points: [54.7, -5.9, 57.6,-3.9], from: "Dublin", to: "Iverness", time: "2h 35m"}
-	]);
+// create data set
+var data = anychart.data.set([    
+	{points: [51.5, -3.2, 57.1, -2.19], from: "Cardiff", to: "Aberdeen", time: "2h 20m"},
+	{points: [55.9, -3.2, 51.45, 0], from: "Edinburgh", to: "London", time: "1h 15m", label:{anchor:"leftTop"}},
+	{points: [54.7, -5.9, 57.6,-3.9], from: "Dublin", to: "Iverness", time: "2h 35m"}
+]);
 
-	// set the labels
-	var labels = series.labels();
-	labels.enabled(true);
-	labels.position("end");
-	labels.anchor("leftBottom");
-	labels.textFormatter("To {%to}");
+// set the labels
+var labels = series.labels();
+labels.enabled(true);
+labels.position("end");
+labels.anchor("leftBottom");
+labels.textFormatter("To {%to}");
 
-	// tooltip adjusting
-	series.tooltip().textFormatter("A flight from {%from} to {%to} takes at least {%time}");
+// tooltip adjusting
+series.tooltip().textFormatter("A flight from {%from} to {%to} takes at least {%time}");
 ```
 
 {sample}Maps\_Connectors\_11{sample}

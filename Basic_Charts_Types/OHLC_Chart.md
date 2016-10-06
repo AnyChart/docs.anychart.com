@@ -106,7 +106,7 @@ Now we need to convert this data table into acceptable format. In terms of AnyCh
   chart.ohlc(data);
 ```
 
-As you can see, we've specified chart type as {api:anychart.core.cartesian.series.OHLC}**OHLC**{api} and set name, open, high, low, close parameters.
+As you can see, we've specified chart type as {api:anychart.core.cartesian.series.OHLC}OHLC{api} and set name, open, high, low, close parameters.
   
   
 Here it is - AnyChart can now visualize your data. Look at the chart sample below and click "Launch in playground" to examine sample's code.
@@ -223,7 +223,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 ### Orientation
 
-With AnyChart you can place axes to any side if the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
+With AnyChart you can place axes to any side if the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}orientation(){api} parameter of {api:anychart.charts.Cartesian#yAxis}yAxis(){api} or {api:anychart.charts.Cartesian#xAxis}xAxis(){api} methods.
 
 ```
   var xAxis = chart.xAxis();
@@ -238,7 +238,7 @@ And here is the demonstration of this feature on the Single-series sample:
 
 ### Logarithmic Scale
 
-AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by {api:anychart.scales.Logarithmic}**.scale()**{api}:
+AnyChart allows to make Y, X or any extra axis Logarithmic. This is controlled by {api:anychart.scales.Logarithmic}scale(){api}:
 
 ```
   logScale = anychart.scales.log();
@@ -253,7 +253,7 @@ And here is the demonstration of Logarithmic Y Axis on slightly modified the Sin
 
 ### Minimum and Maximum
 
-By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjusted the scale, it's desirable to set {api:anychart.scales.ScatterTicks#interval}**.ticks().interval()**{api} as well, in case default interval is twisted:
+By default AnyChart calculates axis minimum and maximum automatically, you can see this on the scale positioning chart sample above: minimal value on the Y Axis is 500, and maximum is 535. You can control these values by setting {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} parameters of {api:anychart.charts.Cartesian#yScale}yScale(){api} method. As far as you want to adjusted the scale, it's desirable to set {api:anychart.scales.ScatterTicks#interval}ticks().interval(){api} as well, in case default interval is twisted:
 
 ```
   var yScale = chart.yScale();
@@ -269,7 +269,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 ## Visualization
 
-In this section we will describe main parts of OHLC chart visualization and ways to adjust it.<!-- Also you will see list of predefined styles.--> Visual appearance of OHLC is defined using certain methods and parameters. The most important for OHLC parameters are {api:anychart.core.cartesian.series.OHLC#fallingStroke}**.fallingStroke()**{api} and {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}.
+In this section we will describe main parts of OHLC chart visualization and ways to adjust it.<!-- Also you will see list of predefined styles.--> Visual appearance of OHLC is defined using certain methods and parameters. The most important for OHLC parameters are {api:anychart.core.cartesian.series.OHLC#fallingStroke}fallingStroke(){api} and {api:anychart.core.cartesian.series.OHLC#risingStroke}risingStroke(){api}.
 
 ### Basic sample
 
@@ -292,10 +292,10 @@ Using these settings we've set red color for every falling OHLC point and green 
 In this section we will explain how to add and configure data labels and tooltips.<!-- Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
   
   
-If you want to configure data labels and tooltips for all series - you should do that using {api:anychart.core.cartesian.series.OHLC#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.OHLC#tooltip}**.tooltip()**{api} methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the bottom of the data points, also, we will format labels so they show only the date and tooltip will show detailed description.
+If you want to configure data labels and tooltips for all series - you should do that using {api:anychart.core.cartesian.series.OHLC#labels}labels(){api} and {api:anychart.core.cartesian.series.OHLC#tooltip}tooltip(){api} methods. You can tune their visual appearance, positioning and format. Let's do that in the following example: we will make data labels appear to the bottom of the data points, also, we will format labels so they show only the date and tooltip will show detailed description.
   
   
-When formatting data labels text and tooltip we can use {api:anychart.core.ui.Tooltip#textFormatter}**.textFormatter()**{api} and {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api}.
+When formatting data labels text and tooltip we can use {api:anychart.core.ui.Tooltip#textFormatter}textFormatter(){api} and {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api}.
 
 {sample}BCT\_OHLC\_Chart\_07{sample}
 <!--
@@ -315,12 +315,12 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 Let's demonstrate how to apply different colors to different data series. As far as this series has two types of points (with rising and falling values) it has two methods for adjusting series color. 
 
 
-To apply the color to the series we need to set {api:anychart.core.cartesian.series.OHLC#fallingStroke}**.fallingStroke()**{api} parameter to define color for all points with falling values and {api:anychart.core.cartesian.series.Candlestick#risingStroke}**.risingStroke()**{api} parameter to define color for all points with rising values:
+To apply the color to the series we need to set {api:anychart.core.cartesian.series.OHLC#fallingStroke}fallingStroke(){api} parameter to define color for all points with falling values and {api:anychart.core.cartesian.series.Candlestick#risingStroke}risingStroke(){api} parameter to define color for all points with rising values:
 
 {sample}BCT\_OHLC\_Chart\_08{sample}
 
 In the sample below we will see how we can colorize individual points. We have chart with one series and predefined color for all elements. We will set "Rgb(180,77,77)" color for minimum point and "Rgb(77,180,77)" for the maximal one.
-As you see it is very easy to do by setting {api:anychart.core.cartesian.series.OHLC#fallingStroke}**.fallingStroke()**{api} and {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api} parameter for point.
+As you see it is very easy to do by setting {api:anychart.core.cartesian.series.OHLC#fallingStroke}fallingStroke(){api} and {api:anychart.core.cartesian.series.OHLC#risingStroke}risingStroke(){api} parameter for point.
 
 {sample}BCT\_OHLC\_Chart\_09{sample}
 

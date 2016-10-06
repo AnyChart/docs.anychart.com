@@ -16,7 +16,7 @@ Project Gantt Chart is intended for showing a progress of completion of a single
 
 ## Chart
 
-To create JavaScript Project Gantt Chart you should use the {api:anychart#ganttProject}**anychart.ganttProject()**{api} method.
+To create JavaScript Project Gantt Chart you should use the {api:anychart#ganttProject}ganttProject(){api} method.
 
 ```
 // chart type
@@ -137,19 +137,19 @@ You can control if the summary task is expanded or collapsed using these methods
 <th>Description</th>
 </tr>
 <tr>
-<td>{api:anychart.charts.Gantt#expandAll}**expandAll()**{api}</td>
+<td>{api:anychart.charts.Gantt#expandAll}expandAll(){api}</td>
 <td>Allows to expand all tasks.</td>
 </tr>
 <tr>
-<td>{api:anychart.charts.Gantt#collapseAll}**collapseAll()**{api}</td>
+<td>{api:anychart.charts.Gantt#collapseAll}collapseAll(){api}</td>
 <td>Used to collapse all tasks.</td>
 </tr>
 <tr>
-<td>{api:anychart.charts.Gantt#expandTask}**expandTask(taskID)**{api}</td>
+<td>{api:anychart.charts.Gantt#expandTask}expandTask(taskID){api}</td>
 <td>Expands one task.</td>
 </tr>
 <tr>
-<td>{api:anychart.charts.Gantt#collapseTask}**collapseTask(taskID)**{api}</td>
+<td>{api:anychart.charts.Gantt#collapseTask}collapseTask(taskID){api}</td>
 <td>Collapses one task.</td>
 </tr>
 </tbody>
@@ -231,7 +231,7 @@ To configure how actual or baseline bar looks like you need to set the "fill" va
 
 ### Swap Actual and Planned
 
-If you want to display Planned (baseline) bars above the Actual bars, use *baselineAbove()* method of the {api:anychart.charts.Gantt#getTimeline}**Timeline**{api}:
+If you want to display Planned (baseline) bars above the Actual bars, use *baselineAbove()* method of the {api:anychart.charts.Gantt#getTimeline}Timeline{api}:
 
 ```
 chart.getTimeline().baselineAbove(true);
@@ -245,9 +245,9 @@ This is how it works:
 
 If there is a need to add an additional connection between tasks, you can define connectors with these settings:
 
-{api:anychart.enums.GanttDataFields#CONNECTOR_TYPE}**connectorType**{api}. It can belong to one of four types: StartStart, StartFinish, FinishStart, FinishFinish
+{api:anychart.enums.GanttDataFields#CONNECTOR_TYPE}connectorType{api}. It can belong to one of four types: StartStart, StartFinish, FinishStart, FinishFinish
 
-{api:anychart.enums.GanttDataFields#CONNECT_TO}**connectTo(taskID)**{api}. It defines another node which will be connected with the first. For this purpose use the "id" value.
+{api:anychart.enums.GanttDataFields#CONNECT_TO}connectTo(taskID){api}. It defines another node which will be connected with the first. For this purpose use the "id" value.
 
 Types of task connectors:
 

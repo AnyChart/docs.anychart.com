@@ -25,25 +25,25 @@ XML Schema specifies a XML-based format to define the structure of XML data (vis
 
 ## XML vs JavaScript
 
-To load chart configuration in XML format you should use {api:anychart#fromXml}**.fromXML()**{api} method. Setting data using XML format is very similar to the way of setting data in JavaScript. The name of each tag in XML configuration corresponds to the name of a method and names of parameters for tags correspond to parameter in JavaScript. Snippet below shows a sample of setting data in XML format for the simple chart.
+To load chart configuration in XML format you should use {api:anychart#fromXml}fromXML(){api} method. Setting data using XML format is very similar to the way of setting data in JavaScript. The name of each tag in XML configuration corresponds to the name of a method and names of parameters for tags correspond to parameter in JavaScript. Snippet below shows a sample of setting data in XML format for the simple chart.
 
 ```
-  // xml data
-  var xml = '<?xml version="1.0" encoding="utf-8"?>' +
-    '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.4.1/schema.xsd">' +
-      '<chart type="pie" container="container" title="XML Sample Pie">' +
-         '<data>' +
-              '<point name="Apples" value="128.14" fill="Green"/>'+
-              '<point name="Oranges" value="128.14" fill="Orange"/>'+
-        '</data>'+
-      '</chart>'+
-    '</anychart>';
+// xml data
+var xml = '<?xml version="1.0" encoding="utf-8"?>' +
+  '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.4.1/schema.xsd">' +
+    '<chart type="pie" container="container" title="XML Sample Pie">' +
+        '<data>' +
+            '<point name="Apples" value="128.14" fill="Green"/>'+
+            '<point name="Oranges" value="128.14" fill="Orange"/>'+
+      '</data>'+
+    '</chart>'+
+  '</anychart>';
 
-  // set XML data to the chart
-  var chart = anychart.fromXml(xml);
+// set XML data to the chart
+var chart = anychart.fromXml(xml);
 
-  // draw chart
-  chart.draw();
+// draw chart
+chart.draw();
 ```
 
 This configuration creates chart like the one below
@@ -53,7 +53,7 @@ This configuration creates chart like the one below
 **Note:** Pie chart can have only one series of data and requires no **<series></series>** tag. 
   
   
-Use {api:anychart}AnyChart API{api} to adjust any parameter of a chart. XML configuration uses the same names as methods and parameters do and it is quite easy to set any required parameter with XML data set. Also, XML uses [snakeCase](http://en.wikipedia.org/wiki/Snake_case) for names of tags and parameters and names of methods and parameters have to be transformed from [camelCase](http://en.wikipedia.org/wiki/CamelCase) to [snakeCase](http://en.wikipedia.org/wiki/Snake_case). It requires to replace every capital letter with small letter and set underscore before this letter (e.g. hatch fill can be set with JavaScript using "hatchFill" parameter and with XML using "hatch_fill" parameter). {api:anychart}AnyChart API{api} describes how every method and parameter are used. The structure is pretty much the same for  XML configuration. For instance, you can find {api:anychart#column}**column()**{api} method in API to create column chart. 
+Use {api:anychart}AnyChart API{api} to adjust any parameter of a chart. XML configuration uses the same names as methods and parameters do and it is quite easy to set any required parameter with XML data set. Also, XML uses [snakeCase](http://en.wikipedia.org/wiki/Snake_case) for names of tags and parameters and names of methods and parameters have to be transformed from [camelCase](http://en.wikipedia.org/wiki/CamelCase) to [snakeCase](http://en.wikipedia.org/wiki/Snake_case). It requires to replace every capital letter with small letter and set underscore before this letter (e.g. hatch fill can be set with JavaScript using "hatchFill" parameter and with XML using "hatch_fill" parameter). {api:anychart}AnyChart API{api} describes how every method and parameter are used. The structure is pretty much the same for  XML configuration. For instance, you can find {api:anychart#column}column(){api} method in API to create column chart. 
 
 ```
   anychart.column([128.14, 112.61, 163.21, 229.98]).container('container').draw();
@@ -62,23 +62,22 @@ Use {api:anychart}AnyChart API{api} to adjust any parameter of a chart. XML conf
 The same chart can be created using XML
 
 ```
-  anychart.fromXml(
-    '<?xml version="1.0" encoding="utf-8"?>' +
-      '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +
-      
-        '<chart type="column" container="container">' +
-          '<series_list>'+
-            '<series type="column">'+
-              '<data>'+
-                '<point value="128.14"/>'+ 
-                '<point value="112.61"/>'+ 
-                '<point value="163.21"/>'+ 
-                '<point value="229.98"/>'+
-              '</data>'+
+anychart.fromXml(
+  '<?xml version="1.0" encoding="utf-8"?>' +
+    '<anychart xmlns="http://anychart.com/products/anychart7/schemas/7.3.0/schema.xsd">' +      
+      '<chart type="column" container="container">' +
+        '<series_list>'+
+          '<series type="column">'+
+            '<data>'+
+              '<point value="128.14"/>'+ 
+              '<point value="112.61"/>'+ 
+              '<point value="163.21"/>'+ 
+              '<point value="229.98"/>'+
+            '</data>'+
           '</series_list>'+
-        '</chart>'+
-      '</anychart>'
-    ).draw();
+      '</chart>'+
+    '</anychart>'
+).draw();
 ```
 
 As you can see, XML format isn't limited only to setting chart type and its data, but can set container for the chart as well.
@@ -87,31 +86,31 @@ As you can see, XML format isn't limited only to setting chart type and its data
 Another example: Y-Scale is configured using {api:anychart.charts.Cartesian#yScale}yScale(){api} method and in JavaScript you use code like this:
 
 ```
-  // set chart type
-  var chart = anychart.column();
+// set chart type
+var chart = anychart.column();
   
-  chart.yScale()    // adjust y scale
-    .minimum(100)   // set minimum value
-    .maximum(350);  // set maximum value
+chart.yScale()    // adjust y scale
+  .minimum(100)   // set minimum value
+  .maximum(350);  // set maximum value
 ```
 
 and in XML format this looks like
 
 ```xml
-  <!-- set chart type and chart container -->
-  <chart type="column" container="container">
+<!-- set chart type and chart container -->
+<chart type="column" container="container">
   
-    <!-- set scale type and anjust minimum & maximum values -->
-    <y_scale type="line" minimum="100" maximum="350"/>
+<!-- set scale type and anjust minimum & maximum values -->
+<y_scale type="line" minimum="100" maximum="350"/>
     
-  </chart>
+</chart>
 ```
 
 {sample}WD\_Data\_from\_XML\_02{sample}
 
 ## Serialization
 
-Predefined settings from JavaScript format can be serialized into XML format. Method {api:anychart.core.Chart#toXml}**.toXml()**{api} transfers current chart settings into XML string. This string contains chart settings in XML format and can be used to store chart data and configuration but note, that when label or tooltip text formatting function is redefined in JavaScript code - it can't be serialized..
+Predefined settings from JavaScript format can be serialized into XML format. Method {api:anychart.core.Chart#toXml}toXml(){api} transfers current chart settings into XML string. This string contains chart settings in XML format and can be used to store chart data and configuration but note, that when label or tooltip text formatting function is redefined in JavaScript code - it can't be serialized..
 
 {sample}WD\_Data\_from\_XML\_03{sample}
 
@@ -120,27 +119,27 @@ Predefined settings from JavaScript format can be serialized into XML format. Me
 XML data set can contain one or several series - almost the same way you can do it in JavaScript. Sample below demonstrates chart with several series from XML.
 
 ```xml
-  <!-- series for this chart -->
-  <series_list>
-    <!-- series settings -->
-    <series series_type="line">
-      <!-- data set -->
-      <data>
-        <point x="0" value="0"/>
-        <point x="50" value="100"/>
-        <point x="100" value="0"/>
-      </data>
-    </series>
-  <!-- second series set -->
-    <series series_type="line" stroke="red">
-      <!-- data set -->
-      <data>
-        <point x="50" value="0"/>
-        <point x="100" value="100"/>
-        <point x="50" value="0"/>
-      </data>
-    </series>
-  </series_list>
+<!-- series for this chart -->
+<series_list>
+  <!-- series settings -->
+  <series series_type="line">
+    <!-- data set -->
+    <data>
+      <point x="0" value="0"/>
+      <point x="50" value="100"/>
+      <point x="100" value="0"/>
+    </data>
+  </series>
+<!-- second series set -->
+  <series series_type="line" stroke="red">
+    <!-- data set -->
+    <data>
+      <point x="50" value="0"/>
+      <point x="100" value="100"/>
+      <point x="50" value="0"/>
+    </data>
+  </series>
+</series_list>
 ```
 
 Here is a sample setting two series using XML format.
@@ -154,18 +153,18 @@ Here is a sample setting two series using XML format.
 Data from XML can contain all possible settings for controlling chart grid, axis line along with tick marks and labels, axis scale and other visual appearance settings. Sample below demonstrates setting axes names and adjusting scales orientation.
 
 ```xml
-  <!-- x axes setting -->
-  <x_axes>
-    <!-- adjust default x axis -->
-    <axis orientation="top" title="false"/>
-  </x_axes>
-  <!-- y axes settings -->
-  <y_axes>
-    <!-- adjust default y axis -->
-    <axis orientation="right" title="false"/>
-  </y_axes>
-  <!-- y scale setting -->
-  <y_scale inverted="true"/>
+<!-- x axes setting -->
+<x_axes>
+  <!-- adjust default x axis -->
+  <axis orientation="top" title="false"/>
+</x_axes>
+<!-- y axes settings -->
+<y_axes>
+  <!-- adjust default y axis -->
+  <axis orientation="right" title="false"/>
+</y_axes>
+<!-- y scale setting -->
+<y_scale inverted="true"/>
 ```
 
 Here is a sample of adjusted axes 
@@ -177,13 +176,13 @@ Here is a sample of adjusted axes
 Visual settings can be vital for a chart. XML can contain any method and parameter for adjusting visual settings. Here is configuration for column chart of golden color with brick hatch.
 
 ```xml
-  <!-- series settings -->
-  <series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonalbrick">
+<!-- series settings -->
+<series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonalbrick">
 
-    <!-- customize hover hatch fill -->
-    <hover_hatch_fill type="diagonalbrick" color="darkred"/>
+  <!-- customize hover hatch fill -->
+  <hover_hatch_fill type="diagonalbrick" color="darkred"/>
 
-  </series>
+</series>
 ```
 
 {sample}WD\_Data\_from\_XML\_06{sample}

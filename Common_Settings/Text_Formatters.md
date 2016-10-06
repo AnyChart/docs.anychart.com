@@ -13,7 +13,7 @@
 
 ## Overview
 
-Sometimes it might be necessary to display any text with the points on a chart for some reasons. That's when you need to use the {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method.
+Sometimes it might be necessary to display any text with the points on a chart for some reasons. That's when you need to use the {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} method.
 
 ## String Tokens
 
@@ -171,7 +171,7 @@ There are some standard fields available in formatters depending on a chart type
 
 <table class="dtTABLE">
 <tr>
-<th>Chart type(s)</th><th>Default fields of {api:anychart.core.ui.LabelsFactory#textFormatter}**series.labels().textFormatter()**{api}</th>
+<th>Chart type(s)</th><th>Default fields of {api:anychart.core.ui.LabelsFactory#textFormatter}series.labels().textFormatter(){api}</th>
 </tr>
 <tr>
 <td>Area<br>Bar<br>Column<br>Error<br>Marker<br>Percent Stacked Area<br>Percent Spline Area<br>Percent StepLine Area<br>Percent Stacked Bar<br>Percent Stacked Column<br>Polar<br>Radar<br>Sparkline<br>Stacked Line<br>Stacked Spline</td>
@@ -204,7 +204,7 @@ x<br>seriesName<br>index<br>value<br>valueLowerError<br>valueUpperError<br>xLowe
 <tr>
 <td>Pie/Donut<br>Funnel<br>Pyramid
 </td>
-<td>**Note!** As those types have an only series by default,<br> you should use the {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method with chart.label().<br>x<br>value<br>index</td>
+<td>**Note!** As those types have an only series by default,<br> you should use the {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} method with chart.label().<br>x<br>value<br>index</td>
 </tr>
 </table>
 
@@ -236,7 +236,7 @@ Let's look at those examples to understand how it works.
 
 {sample}CS\_TextFormatter\_01{sample}
 
-First of all, you should enable the labels. Then set the fields of values you want those labels to show using the {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} function according to the table above.
+First of all, you should enable the labels. Then set the fields of values you want those labels to show using the {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} function according to the table above.
 
 This function can return more than one value. The sample below demonstrates it.
 
@@ -256,7 +256,7 @@ This function can return more than one value. The sample below demonstrates it.
 
 ###Extra fields
 
-The number and variety of default fields might be not enough in some cases. Sometimes it's necessary to show some extra information. In this case you should use one of the following methods: {api:anychart.core.utils.SeriesPointContextProvider#getStat}**.getStat()**{api}, {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api} or {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}**.getSeriesMeta()**{api}. Which one to use depends on the unique situation.
+The number and variety of default fields might be not enough in some cases. Sometimes it's necessary to show some extra information. In this case you should use one of the following methods: {api:anychart.core.utils.SeriesPointContextProvider#getStat}getStat(){api}, {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}getDataValue(){api} or {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}getSeriesMeta(){api}. Which one to use depends on the unique situation.
 
 ####getDataValue
 
@@ -279,10 +279,10 @@ Using these methods, you can display the values from the extra params, if you ha
 
 {sample}CS\_TextFormatter\_03{sample}
 
-In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "redundant" value for the second point of the second series and displayed it, using {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api}.
+In this sample we have added some extra information to the data: we defined the "extra\_inf" parameter of "redundant" value for the second point of the second series and displayed it, using {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}getDataValue(){api}.
   
   
-Managing additional information for chart tooltips works pretty much the same as it does for chart labels. Define extra parameter in your data set and use the name of your parameter as a value for {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}**.getDataValue()**{api} method.
+Managing additional information for chart tooltips works pretty much the same as it does for chart labels. Define extra parameter in your data set and use the name of your parameter as a value for {api:anychart.core.utils.SeriesPointContextProvider#getDataValue}getDataValue(){api} method.
 
 ```
     // map data for series
@@ -356,7 +356,7 @@ To add any parameter to the meta of the series, you need to set the parameter na
 
 {sample}CS\_TextFormatter\_04{sample}
 
-**Note!** There's no {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}**.getSeriesMeta()**{api} method in Pie, Funnel or Pyramid Charts.
+**Note!** There's no {api:anychart.core.utils.SeriesPointContextProvider#getSeriesMeta}getSeriesMeta(){api} method in Pie, Funnel or Pyramid Charts.
 
 ####getStat
 
@@ -364,7 +364,7 @@ This method is to be used when you need to display some statistic information. T
 
 <table class="dtTABLE">
 <tr>
-<th>Chart type(s)</th><th>Default fields of {api:anychart.core.ui.LabelsFactory#textFormatter}**series.labels().textFormatter()**{api}</th>
+<th>Chart type(s)</th><th>Default fields of {api:anychart.core.ui.LabelsFactory#textFormatter}series.labels().textFormatter(){api}</th>
 </tr>
 <tr>
 <td>Area<br>Bar<br>Box<br>Bubble<br>Column<br>Error<br>Marker<br>Percent Stacked Area<br>Percent Spline Area<br>Percent StepLine Area<br>Percent Stacked Bar<br>Percent Stacked Column<br>Polar<br>Radar<br>Range Line<br>Range Spline Area<br>Range Column<br>Range Bar<br>Scatter<br>Sparkline<br>Stacked Line<br>Stacked Spline</td>
@@ -393,7 +393,7 @@ average - average value (sum / count)</td>
 </tr>
 </table>
 
-Here is a sample of the {api:anychart.core.utils.SeriesPointContextProvider#getStat}**.getStat()**{api} method usage in the Pie chart. Note there's no need in enabling the labels for a Pie chart, because they are enabled by default.
+Here is a sample of the {api:anychart.core.utils.SeriesPointContextProvider#getStat}getStat(){api} method usage in the Pie chart. Note there's no need in enabling the labels for a Pie chart, because they are enabled by default.
 
 ```
     //textFormatter

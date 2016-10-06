@@ -27,7 +27,7 @@ Let's consider those situations.
 
 ### Normal points and series
 
-You might have defined a number of series for some reason. As you don't use the colorScale, it's possible to color the map the same as series of basic charts: use simple {api:anychart.core.map.series.Base#fill}**.fill()**{api} method.
+You might have defined a number of series for some reason. As you don't use the colorScale, it's possible to color the map the same as series of basic charts: use simple {api:anychart.core.map.series.Base#fill}fill(){api} method.
 
 ```
 	// set the color for the regions of the first series
@@ -84,7 +84,7 @@ By default there's no color for the hovered points but the settings, which make 
 ```
 {sample}Maps\_Visualisation\_03{sample}
 
-We use a simple {api:anychart.core.map.series.Base#hoverFill}**.hoverFill()**{api} method for changing the default color of hovered regions.
+We use a simple {api:anychart.core.map.series.Base#hoverFill}hoverFill(){api} method for changing the default color of hovered regions.
 
 As you might have noticed, we've used an image as a hoverFill. So it's not necessary to fill the points only with colors.
 
@@ -92,7 +92,7 @@ The same as in the paragraph about normal points and series, you still can use t
 
 ### Selected points and series
 
-Finally, it's possible to change the default selecting color. Use {api:anychart.core.map.series.Base#selectFill}**.selectFill()**{api} for that.
+Finally, it's possible to change the default selecting color. Use {api:anychart.core.map.series.Base#selectFill}selectFill(){api} for that.
 
 ```
     // set the color for the selections of the first series
@@ -113,7 +113,7 @@ There are four ways of coloring the map series using palettes.
 
 #### Using array
 
-You may define the colors you want to use in your map as an array using {api}**.palette()**{api} method.
+You may define the colors you want to use in your map as an array using {api}palette(){api} method.
 
 ```
 	// set the palette
@@ -125,7 +125,7 @@ Note that you should define as many colors as there are regions you've got on th
 
 #### Using RangeColors
 
-For using rangeColors you should create a new palette and set colors and number of them to it. Use method {api:anychart.palettes.RangeColors}**.anychart.palettes.rangeColors()**{api} to create the palette.
+For using rangeColors you should create a new palette and set colors and number of them to it. Use method {api:anychart.palettes.RangeColors}anychart.palettes.rangeColors(){api} to create the palette.
 
 ```
     // Creates palette
@@ -142,7 +142,7 @@ As you may notice, it works almost the same as in the previous case, just the de
 
 #### Using DistinctColors
 
-The difference between this coloring option and previous ones is fully independence of regions' colors. You might want one series to be colored with a gradient and another one with a plain color, and the {api:anychart.palettes.DistinctColors}**.DistinctColors**{api} method is able to do that.
+The difference between this coloring option and previous ones is fully independence of regions' colors. You might want one series to be colored with a gradient and another one with a plain color, and the {api:anychart.palettes.DistinctColors}DistinctColors{api} method is able to do that.
 
 ```
     // Creates palette
@@ -162,7 +162,7 @@ This way of coloring is not possible using other palette types.
 
 ## LinearColorScale
 
-Besides those mentioned options, you may use scale to color the Map with multiple series. The usage of LinearColorScale is almost the same in this case as with ColorRange (read about it [here](../ColorRange)). However, put your attention at the fact that here is a Map with multiple series apart from Map with one range-colored series that you can find in the ColorRange article. So the way of using the {api:anychart.core.map.scale.LinearColor}**.LinearColor**{api} method is a bit different.
+Besides those mentioned options, you may use scale to color the Map with multiple series. The usage of LinearColorScale is almost the same in this case as with ColorRange (read about it [here](../ColorRange)). However, put your attention at the fact that here is a Map with multiple series apart from Map with one range-colored series that you can find in the ColorRange article. So the way of using the {api:anychart.core.map.scale.LinearColor}LinearColor{api} method is a bit different.
 
 ```
 	// map the data of two dataSets

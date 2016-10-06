@@ -43,7 +43,7 @@ To enable such legend in your chart just enable it:
 chart.legend(true);
 ```
 
-In the live sample, please notice that when you move the mouse over the series name in legend - all series elements are highlighted
+In the live sample, please notice that when you move the mouse over the series name in legend - all series elements are highlighted.
 
 {sample}AS\_Legend\_01{sample}
 
@@ -129,7 +129,7 @@ Here is a sample with adjusted legend size
 
 {sample}AS\_Legend\_06{sample}
 
-*Note:* the space between data plot and legend is controlled using {api:anychart.core.ui.Legend#padding}**padding(){api} method.
+*Note:* the space between data plot and legend is controlled using {api:anychart.core.ui.Legend#padding}padding(){api} method.
 
 ### Paging
 
@@ -148,7 +148,7 @@ paginator.orientation("right");
 
 ### Marker Symbol
 
-When you are working with line and spline chart you may use markers to distinguish different series. By default AnyChart charting library shows marker symbols in legend - only color representation is used in a small line icon. If you want to tune markers in legend icons you have to adjust {api:anychart.core.ui.LegendItem}**legendItem(){api} method. Sample code presented below.
+When you are working with line and spline chart you may use markers to distinguish different series. By default AnyChart charting library shows marker symbols in legend - only color representation is used in a small line icon. If you want to tune markers in legend icons you have to adjust {api:anychart.core.ui.LegendItem}legendItem(){api} method. Sample code presented below.
 
 ```
 // chart data 

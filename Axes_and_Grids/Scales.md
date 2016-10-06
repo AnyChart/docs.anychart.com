@@ -25,11 +25,11 @@ Scales allow you to control such features as minimum and maximum scale values, s
 In this section we will explain main scales options.
   
   
-If you want to control any of scale settings - you should do that using {api:anychart.scales}**scale()**{api} method.
+If you want to control any of scale settings - you should do that using {api:anychart.scales}scale(){api} method.
 
 ## Types
 
-There are four types of scales in AnyChart charting framework: {api:anychart.scales.Linear}**"Linear"**{api}, {api:anychart.scales.Logarithmic}**"Logarithmic"**{api}, {api:anychart.scales.Ordinal}**"Ordinal"**{api} and {api:anychart.scales.DateTime}**"DateTime"**{api}. To set scale type use appropriate constructor:
+There are four types of scales in AnyChart charting framework: {api:anychart.scales.Linear}"Linear"{api}, {api:anychart.scales.Logarithmic}"Logarithmic"{api}, {api:anychart.scales.Ordinal}"Ordinal"{api} and {api:anychart.scales.DateTime}"DateTime"{api}. To set scale type use appropriate constructor:
 
 ```
   chart.xScale(anychart.scales.linear());
@@ -72,7 +72,7 @@ Ordinal scale type is a default type for xScale in all cartesian charts. Values 
 ```
 {sample}AGST\_Scales\_03{sample}
 
-**Note**: You can set custom names for ordinal scale using {api:anychart.scales.Ordinal#names}**names()**{api} method. Use string parameter for this method to set data field with names for scale values or use array as parameter for {api:anychart.scales.Ordinal#names}**names()**{api} method to set custom names.
+**Note**: You can set custom names for ordinal scale using {api:anychart.scales.Ordinal#names}names(){api} method. Use string parameter for this method to set data field with names for scale values or use array as parameter for {api:anychart.scales.Ordinal#names}names(){api} method to set custom names.
 
 ### Date Time
 
@@ -107,7 +107,7 @@ Scale mode defines some additional behavior of a chart. In the table below all m
 </tr>
 </tbody></table>
 
-To change scale mode you need to set {api:anychart.enums.ScaleStackMode}**stackMode()**{api} parameter. Possible attributes are: **value** and **percent**.
+To change scale mode you need to set {api:anychart.enums.ScaleStackMode}stackMode(){api} parameter. Possible attributes are: **value** and **percent**.
 
 ```
   var yScale = chart.yScale();
@@ -120,7 +120,7 @@ In the sample below stacked and percent stacked scales are demonstrated on the s
 
 ### Clustered
 
-For stacked charts with multiple series it is possible to divide stacked series into groups. The groups can be created by using a new y scale for each group. New scale should be used as a parameter of {api:anychart.core.cartesian.series.ContinuousBase#yScale}**.yScale()**{api} method for each series in the group:
+For stacked charts with multiple series it is possible to divide stacked series into groups. The groups can be created by using a new y scale for each group. New scale should be used as a parameter of {api:anychart.core.cartesian.series.ContinuousBase#yScale}yScale(){api} method for each series in the group:
 
 ```
   var newScale = anychart.scales.linear()
@@ -167,7 +167,7 @@ Sample below shows how soft minimum and soft maximum help to show data better th
 
 ## Stick to Zero
 
-{api:anychart.scales.Linear#stickToZero}**stickToZero()**{api} method allows to disable the default scale autocalculation behavior and always include zero in scale range.
+{api:anychart.scales.Linear#stickToZero}stickToZero(){api} method allows to disable the default scale autocalculation behavior and always include zero in scale range.
 
 ## Minor and Major Ticks
 
@@ -207,7 +207,7 @@ In the sample below you can see how offsets settings affects js chart. The chart
 
 ## Inversion
 
-If you want to display scale in the inverted mode use {api:anychart.scales.Linear#inverted}**inverted()**{api} method with "true" parameter.
+If you want to display scale in the inverted mode use {api:anychart.scales.Linear#inverted}inverted(){api} method with "true" parameter.
 
 ```
   var yScale = chart.yScale();

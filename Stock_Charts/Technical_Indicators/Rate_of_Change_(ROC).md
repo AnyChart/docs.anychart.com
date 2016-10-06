@@ -15,7 +15,7 @@ Mathematical description of the indicator: [Rate of change (ROC) Mathematical De
 
 ## Adding indicator
 
-ROC indicator is added using {api:anychart.core.stock.Plot#roc}.roc(){api} method, it requires a mapping with value field in it:
+ROC indicator is added using {api:anychart.core.stock.Plot#roc}roc(){api} method, it requires a mapping with value field in it:
 
 ```
 // create data table on loaded data

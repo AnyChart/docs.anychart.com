@@ -12,11 +12,11 @@
 
 ## Overview
 
-Every js chart in AnyChart can have one default title and unlimited number of additional custom titles. These text fields are used to create description for the chart data. By default, the {api:anychart.core.ui.Title}**.title()**{api} is placed on the top of the chart.
+Every js chart in AnyChart can have one default title and unlimited number of additional custom titles. These text fields are used to create description for the chart data. By default, the {api:anychart.core.ui.Title}title(){api} is placed on the top of the chart.
 
 ## Default Title
 
-Every chart has default title and this title can be enabled or disabled using {api:anychart.core.ui.Title#enabled}**.enabled()**{api} parameter
+Every chart has default title and this title can be enabled or disabled using {api:anychart.core.ui.Title#enabled}enabled(){api} parameter
 
 ```
   // chart type
@@ -31,7 +31,7 @@ Every chart has default title and this title can be enabled or disabled using {a
 
 ## Setting Text
 
-Of course you can specify your own texts for a title using {api:anychart.core.ui.Title#text}**.text()**{api} parameter, just like that:
+Of course you can specify your own texts for a title using {api:anychart.core.ui.Title#text}text(){api} parameter, just like that:
 
 ```
   // set chart type
@@ -52,7 +52,7 @@ This section describes title visual appearance and ways to adjust it.
 
 ### Position
 
-Title can be placed anywhere on the chart plot. Parameter {api:anychart.core.ui.Title#orientation}**.orientation()**{api} sticks title to the side of the plot and parameter {api:anychart.core.ui.Title#align}**.align()**{api} controls alignment of the title. 
+Title can be placed anywhere on the chart plot. Parameter {api:anychart.core.ui.Title#orientation}orientation(){api} sticks title to the side of the plot and parameter {api:anychart.core.ui.Title#align}align(){api} controls alignment of the title. 
 
 ```
   // adjust title
@@ -67,7 +67,7 @@ Title can be placed anywhere on the chart plot. Parameter {api:anychart.core.ui.
 
 ### Background 
 
-You can tune background of a title. Use {api:anychart.core.ui.Title#background}**.background()**{api} method to configure visual appearance of a background. Full information on adjusting background can be found in [Background](../Appearance_Settings/Background) article.
+You can tune background of a title. Use {api:anychart.core.ui.Title#background}background(){api} method to configure visual appearance of a background. Full information on adjusting background can be found in [Background](../Appearance_Settings/Background) article.
 
 {sample}AS\_Titles\_04{sample}
 
@@ -92,7 +92,7 @@ Text is the main part of a title. Visit {api:anychart.core.ui.Title}API{api} to 
 
 ## HTML in Title
 
-You can use HTML formatted text of a title. Use {api:anychart.core.ui.Title#useHtml}**.useHtml()**{api} parameter an option to use HTML tags in title text.
+You can use HTML formatted text of a title. Use {api:anychart.core.ui.Title#useHtml}useHtml(){api} parameter an option to use HTML tags in title text.
 
 ```
   var title = chart.title();

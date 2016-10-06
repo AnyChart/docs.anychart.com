@@ -24,32 +24,32 @@ Tree Data Structure is crucial for [AnyGantt: AnyChart Gantt Charts](../Gantt_Ch
 In this sample we will use standalone Datagrid to show how to work with tree data. AnyChart charting library accepts two methods of setting data tree: through table and through tree. The code below demonstrates setting the same data through both methods. You can also use CSV, which is similar to table in terms of structure, but set differently, see [Gantt: Getting Data from JSON, XML or CSV](../Gantt_Chart/Data_from_JSON,_XML,_CSV#csv) to learn more.
 
 ```
-  //Data set through tree method
-  var treeType = anychart.data.tree(
-    // section with raw data in a tree format
-    [
-      {name: 'Node 1'},
-      {name: 'Parent Node', children:[
-        {name: 'Child Node 1'},
-        {name: 'Child Node 2'},
-      ]},
-      {name: 'Node 2'}
-    ],
-    anychart.enums.TreeFillingMethod.AS_TREE  // data type settings
-  );
+//Data set through tree method
+var treeType = anychart.data.tree(
+  // section with raw data in a tree format
+  [
+    {name: 'Node 1'},
+    {name: 'Parent Node', children:[
+      {name: 'Child Node 1'},
+      {name: 'Child Node 2'},
+    ]},
+    {name: 'Node 2'}
+  ],
+  anychart.enums.TreeFillingMethod.AS_TREE  // data type settings
+);
 
-  //Data set through table method
-  var treeType = anychart.data.tree(
-    // section with raw data in a table format
-    [
-      {name: 'Node 1', id: 1},
-      {name: 'Parent Node', id: 2},
-      {name: 'Child Node 1', parent: 2, id: 3},
-      {name: 'Child Node 2', parent: 2, id: 4},
-      {name: 'Node 2', id: 5}
-    ],
-    anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
-  );
+//Data set through table method
+var treeType = anychart.data.tree(
+  // section with raw data in a table format
+  [
+    {name: 'Node 1', id: 1},
+    {name: 'Parent Node', id: 2},
+    {name: 'Child Node 1', parent: 2, id: 3},
+    {name: 'Child Node 2', parent: 2, id: 4},
+    {name: 'Node 2', id: 5}
+  ],
+  anychart.enums.TreeFillingMethod.AS_TABLE // data type settings
+);
 ```
 
 Here is a sample with the result of processing data from the code above.
@@ -76,22 +76,22 @@ You can add some data as a tree using several methods. Sample below demonstrates
 
 {sample :width 690 :height 400}Data\_Tree\_02{sample}
 
-Adding a child is quite a useful method of adjusting data in real time and visualizing actual processes.Nevertheless, adding only one child at a time may appear to be ineffective for managing data. Transferring prepared data with predefined hierarchy is an advanced way of managing data in a tree.  You need the data type and the data itself to use the {api:anychart.data.Tree#addData}.addData(){api} method.
+Adding a child is quite a useful method of adjusting data in real time and visualizing actual processes.Nevertheless, adding only one child at a time may appear to be ineffective for managing data. Transferring prepared data with predefined hierarchy is an advanced way of managing data in a tree.  You need the data type and the data itself to use the {api:anychart.data.Tree#addData}addData(){api} method.
 
 ```
-  // data to add
-  var newData = [
-    {name: 'new Node 1', id: '6'},
-    {name: 'new Parent Node', id: '7'},
-    {name: 'new Node 3', id: '8'},
-    {name: 'new Child Node', parent: 7, id: '9'}
-  ];
+// data to add
+var newData = [
+  {name: 'new Node 1', id: '6'},
+  {name: 'new Parent Node', id: '7'},
+  {name: 'new Node 3', id: '8'},
+  {name: 'new Child Node', parent: 7, id: '9'}
+];
 
-  // adding data
-  tree.addData(
-    newData,                                  // data
-    anychart.enums.TreeFillingMethod.AS_TABLE // data type
-  );
+// adding data
+tree.addData(
+  newData,                                  // data
+  anychart.enums.TreeFillingMethod.AS_TABLE // data type
+);
 ```
 
 You can see how it works on the sample below.
@@ -126,7 +126,7 @@ function addValue() {
 As far as we can add data, we can remove it too. Use {api:anychart.data.Tree#removeChild}removeChild(){api} method to delete an item from data set.
 
 ```
-  tree.removeChildAt(0); // remove first element in data tree
+tree.removeChildAt(0); // remove first element in data tree
 ```
 
 The sample below demonstrates removing first element from the data tree.

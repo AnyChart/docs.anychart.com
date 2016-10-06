@@ -117,16 +117,16 @@ the difference between within-class values is the smallest.	-->
 You can set the classes only by yourself<!--, no matter which classification method you decided to use-->. The sample of data classification is shown below.
 ```
 // making of the ordinal colorRange
-            ordinalScale = anychart.scales.ordinalColor([
-                {less: 100},
-                {from: 100, to: 150},
-                {from: 150, to: 200},
-                {from: 200, to: 350},
-                {greater:250}
-            ]);            
+ordinalScale = anychart.scales.ordinalColor([
+    {less: 100},
+    {from: 100, to: 150},
+    {from: 150, to: 200},
+    {from: 200, to: 350},
+    {greater:250}
+]);            
 ```
 
-To set the colors for each range use the **{api:anychart.palettes.RangeColors}.colors(){api}** method. The number of colors you define should be the same as the number of ranges you have defined before:
+To set the colors for each range use the {api:anychart.palettes.RangeColors}colors(){api} method. The number of colors you define should be the same as the number of ranges you have defined before:
 
 ```
 ordinalScale.colors(['rgb(253,225,86)','rgb(248,196,57)', 'rgb(244,168,19)', 'rgb(198,109,1)', 'rgb(152,58,0)']);
@@ -140,7 +140,7 @@ That's how it all looks in the sample. Here we have changed the data a bit and r
 
 Unclassed Choropleth is a Choropleth Map, which scale is Linear, Logarithmic or DateTime, and, consequently, a ColorRange is Linear.
 It means that there is no certain value bounds between colors, and a ColorRange looks like a single bar painted as a gradient.
-It's necessary to define the first and the last colors, and the shades will be counted automatically. Use {api}**.colorScale()**{api} method to set the colors.
+It's necessary to define the first and the last colors, and the shades will be counted automatically. Use {api:anychart.core.map.series.Choropleth#colorScale}colorScale(){api} method to set the colors.
 
 That's how it looks in a code:
 

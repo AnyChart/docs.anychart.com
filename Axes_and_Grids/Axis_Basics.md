@@ -25,7 +25,7 @@ In this section we will demonstrate most of the axes visualization options, whic
 
 ## Declaration
 
-If you want to control any of the axes settings - you should do that using {api:anychart.core.axes}**Axis**{api} methods:
+If you want to control any of the axes settings - you should do that using {api:anychart.core.axes}Axis{api} methods:
 
 ```
   var xAxis = chart.xAxis();
@@ -34,7 +34,7 @@ If you want to control any of the axes settings - you should do that using {api:
 
 ## Title
 
-You can define a title of any axis, you can control its position and font, when specifying text. Full reference of parameters can be found in Reference: {api:anychart.core.axes.Linear#title}**yAxis().title()**{api} or {api:anychart.core.axes.Linear#title}**xAxis().title()**{api}. Here is a sample titles definition:
+You can define a title of any axis, you can control its position and font, when specifying text. Full reference of parameters can be found in Reference: {api:anychart.core.axes.Linear#title}yAxis().title(){api} or {api:anychart.core.axes.Linear#title}xAxis().title(){api}. Here is a sample titles definition:
 
 ```
   var yTitle = chart.yAxis().title();
@@ -51,7 +51,7 @@ As you can see, we've set titles both to X and Y axis.
 
 ## Orientation
 
-With AnyChart web charts you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}**orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**xAxis()**{api} methods. Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Positioning and Inverting Templates](Axis_Orientation).
+With AnyChart web charts you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.core.axes.Linear#orientation}orientation(){api} parameter of {api:anychart.charts.Cartesian#yAxis}yAxis(){api} or {api:anychart.charts.Cartesian#xAxis}xAxis(){api} methods. Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Positioning and Inverting Templates](Axis_Orientation).
 
 ```
   var yAxis = chart.yAxis();
@@ -66,7 +66,7 @@ And here is the demonstration of this feature on the Single series column chart:
 
 ## Labels
 
-To enable or disable axis labels you need to specify {api:anychart.core.ui.LabelsFactory#enabled}**labels().enabled()**{api} parameter of an axis. You can specify how labels should look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
+To enable or disable axis labels you need to specify {api:anychart.core.ui.LabelsFactory#enabled}labels().enabled(){api} parameter of an axis. You can specify how labels should look like, padding between labels and an axis line, should labels be rotated or staggered, etc.
 
 Learn more about axes labels formatting in [Axes Labels Tutorial](Axes_Labels_Formatting)
     
@@ -120,7 +120,7 @@ Here is a sample of two similar charts with adaptive and fixed stagger modes ena
 ## Axis Line and Zero Line
 
 It is possible to tune visual appearance of axis line and zero line. To do this you need to use 
-{api:anychart.charts.Cartesian#lineMarker}**lineMarker()**{api} method.
+{api:anychart.charts.Cartesian#lineMarker}lineMarker(){api} method.
 
 ```
   var line = chart.lineMarker();
@@ -128,13 +128,13 @@ It is possible to tune visual appearance of axis line and zero line. To do this 
   line.stroke("2 red");
 ```
 
-As in any line, you can make it gradient, change opacity and thickness using {api:anychart.core.axes.Linear#stroke}**stroke()**{api} method. Read more about lines in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines)
+As in any line, you can make it gradient, change opacity and thickness using {api:anychart.core.axes.Linear#stroke}stroke(){api} method. Read more about lines in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines)
 
 {sample}AGST\_Axes\_Basic\_06{sample}
 
 ## Tickmarks
 
-Tickmarks are the small marks used to represent a point on an axis scale, there are major and minor ticks, first used to indicate major step of an axis scale, second - minor step. You can control their appearance and position. To enable/disable ticks set **.enabled(true)** or **.enabled(false)** to {api:anychart.core.axes.Linear#ticks}**ticks()**{api} or {api:anychart.core.axes.Linear#minorTicks}**minorTicks()**{api}
+Tickmarks are the small marks used to represent a point on an axis scale, there are major and minor ticks, first used to indicate major step of an axis scale, second - minor step. You can control their appearance and position. To enable/disable ticks set "true" or "false" to the {api:anychart.core.axes.Ticks#enabled}enabled(){api} method of the {api:anychart.core.axes.Linear#ticks}ticks(){api} or {api:anychart.core.axes.Linear#minorTicks}minorTicks(){api}
 
 ```
   var minorTicks = chart.yScale().minorTicks;
@@ -143,7 +143,7 @@ Tickmarks are the small marks used to represent a point on an axis scale, there 
   majorTicks.enabled(false)
 ```
 
-Ticks can be placed **inside** or **outside** relatively to the axis line. These features are controlled by {api:anychart.core.axes.Ticks#position}**position()**{api} attributes:
+Ticks can be placed **inside** or **outside** relatively to the axis line. These features are controlled by {api:anychart.core.axes.Ticks#position}position(){api} attributes:
 
 ```
   var yAxisTicks = chart.yAxis().ticks();
@@ -159,7 +159,7 @@ The dashboard below shows how these settings work:
 
 ## Grids
 
-There are two types of grid in AnyChart charting framework - major grid that can be controlled using {api:anychart.charts.Cartesian#grid}**grid()**{api} method and minor grid that is controlled with {api:anychart.charts.Cartesian#minorGrid}**minorGrid()**{api} method. To enable major grid use {api:anychart.core.grids.Linear#enabled}**enabled(true)**{api} method for {api:anychart.charts.Cartesian#grid}**grid()**{api} and if you want to display minor grid use {api:anychart.core.grids.Linear#enabled}**enabled(true)**{api} method for {api:anychart.charts.Cartesian#minorGrid}**minorGrid()**{api}.
+There are two types of grid in AnyChart charting framework - major grid that can be controlled using {api:anychart.charts.Cartesian#grid}grid(){api} method and minor grid that is controlled with {api:anychart.charts.Cartesian#minorGrid}minorGrid(){api} method. To enable major grid use {api:anychart.core.grids.Linear#enabled}enabled(true){api} method for {api:anychart.charts.Cartesian#grid}grid(){api} and if you want to display minor grid use {api:anychart.core.grids.Linear#enabled}enabled(true){api} method for {api:anychart.charts.Cartesian#minorGrid}minorGrid(){api}.
 
 ```
   // enable major grid
@@ -176,7 +176,7 @@ Here is how default grid and minor grid of cartesian chart looks like:
 
 ### Visualization
 
-You can control visual appearance of grid lines using {api:anychart.grids.Linear#stroke}**stroke()**{api} method. Full information on lines settings can be found in [lines tutorial](../Appearance_Settings/Lines_Settings).
+You can control visual appearance of grid lines using {api:anychart.grids.Linear#stroke}stroke(){api} method. Full information on lines settings can be found in [lines tutorial](../Appearance_Settings/Lines_Settings).
 
 ```
   var grid = chart.grid();
@@ -190,7 +190,7 @@ You can control visual appearance of grid lines using {api:anychart.grids.Linear
 
 {sample}AGST\_Axes\_Basic\_09{sample}
 
-Grid's fill is controlled by two methods: {api:anychart.grids.Linear#evenFill}**evenFill()**{api} method controls inner color of all even spaces between grid lines and {api:anychart.grids.Linear#oddFill}**oddFill()**{api} method controls the color settings of all odd spaces.
+Grid's fill is controlled by two methods: {api:anychart.grids.Linear#evenFill}evenFill(){api} method controls inner color of all even spaces between grid lines and {api:anychart.grids.Linear#oddFill}oddFill(){api} method controls the color settings of all odd spaces.
 
 ```
   // grid settings
@@ -203,11 +203,11 @@ Grid's fill is controlled by two methods: {api:anychart.grids.Linear#evenFill}**
 
 {sample}AGST\_Axes\_Basic\_10{sample}
 
-**Note**: Grid lines correlate with [ticks of the chart scale](./Scales#minor_and_major_ticks). To manage lines number adjust {api:anychart.scales.ScatterTicks#interval}**interval()**{api} parameter of the chart scale. Use {api:anychart.grids.Linear#axis}**axis()**{api} method to bind grid to an axis which is bound to a scale, or use {api:anychart.grids.Linear#scale}**scale()**{api} method to bind grid to a custom scale. See [Layout](#layout) section below to learn more.
+**Note**: Grid lines correlate with [ticks of the chart scale](./Scales#minor_and_major_ticks). To manage lines number adjust {api:anychart.scales.ScatterTicks#interval}interval(){api} parameter of the chart scale. Use {api:anychart.grids.Linear#axis}axis(){api} method to bind grid to an axis which is bound to a scale, or use {api:anychart.grids.Linear#scale}scale(){api} method to bind grid to a custom scale. See [Layout](#layout) section below to learn more.
 
 ### Layout
 
-Either grids and minor grids can be placed vertically or horizontally on the chart. You can control grids placement in two ways, the first is to bind a grid to an appropriate axis using {api:anychart.grids.Linear#axis}**axis()**{api} method:
+Either grids and minor grids can be placed vertically or horizontally on the chart. You can control grids placement in two ways, the first is to bind a grid to an appropriate axis using {api:anychart.grids.Linear#axis}axis(){api} method:
 
 ```
   // create major and minor grids and bind them to X and Y axes
@@ -228,7 +228,7 @@ In such case the grid will be bound to this axis and change its orientation and 
 
 {sample}AGST\_Axes\_Basic\_11{sample}
 
-Alternatively, you can control grid using {api:anychart.grids.Linear#layout}**layout()**{api} method and {api:anychart.grids.Linear#scale}**scale()**{api} methods. This can be done like shown below and is used in dashboards and charts with complex configurations:
+Alternatively, you can control grid using {api:anychart.grids.Linear#layout}layout(){api} method and {api:anychart.grids.Linear#scale}scale(){api} methods. This can be done like shown below and is used in dashboards and charts with complex configurations:
 
 ```
   var grid = chart.grid();
@@ -237,7 +237,7 @@ Alternatively, you can control grid using {api:anychart.grids.Linear#layout}**la
 
 ```
 
-As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts_Types/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these charts you can use {api:anychart.grids.Radar#layout}**layout("circuit")**{api} to define circular layout or {api:anychart.grids.Polar#layout}**layout("radial")**{api} to enable radial grid layout. 
+As far as [radar](../Basic_Charts_Types/Radar_Chart) and [polar](../Basic_Charts_Types/Polar_Chart) charts appearance vary greatly from other chart types, these chart types have their own grid layouts. For these charts you can use the {api:anychart.grids.Radar#layout}layout(){api} method to define circular or radial grid layout.
 
 ```
   // create radar chart

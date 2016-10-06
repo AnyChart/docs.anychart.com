@@ -31,33 +31,33 @@ AnyChart comes with a number of Out of the box themes that can be used to change
 Out of the box Themes can be located either at [Themes Section at AnyChart CDN](https://cdn.anychart.com/#themes) or in the AnyChart Downloadable Package, these themes change the look, feel and layout of every chart, map, gauge, treemap or stock chart. You are free to use and modify these themes as you want. To use any of these themes you need, just with any [External theme](#external_themes) reference the proper file in HTML document and then apply theme by name:
 
 ```
-  <head>
-    <!--Link to the files with out of the box themes -->
-    <script src="https://cdn.anychart.com/themes/latest/coffee.min.js"></script>
-    <script src="https://cdn.anychart.com/themes/latest/dark_blue.min.js"></script>
-    <script>
-      anychart.onDocumentReady(function() {
-        // data
-        var data = anychart.data.set([
-          ["Department Stores", 637166],
-          ["Discount Stores", 721630],
-          ["Men's/Women's Specialty Stores", 148662],
-          ["All other outlets", 90000]
-        ]);
+<head>
+  <!--Link to the files with out of the box themes -->
+  <script src="https://cdn.anychart.com/themes/latest/coffee.min.js"></script>
+  <script src="https://cdn.anychart.com/themes/latest/dark_blue.min.js"></script>
+  <script>
+    anychart.onDocumentReady(function() {
+      // data
+      var data = anychart.data.set([
+        ["Department Stores", 637166],
+        ["Discount Stores", 721630],
+        ["Men's/Women's Specialty Stores", 148662],
+        ["All other outlets", 90000]
+      ]);
       
-        // apply coffee theme
-        anychart.theme(anychart.themes.coffee);
+      // apply coffee theme
+      anychart.theme(anychart.themes.coffee);
 
-        // apply dark blue theme
-        // anychart.theme(anychart.themes.darkBlue);
+      // apply dark blue theme
+      // anychart.theme(anychart.themes.darkBlue);
 
-        var chart = anychart.bar();
-        chart.bar(data);
-        chart.container("container");
-        chart.draw();
-      });
-    </script>
-  </head>
+      var chart = anychart.bar();
+      chart.bar(data);
+      chart.container("container");
+      chart.draw();
+    });
+  </script>
+</head>
 ```
 
 You can find minified and uncompressed themes at CDN, it is recommended to use minifed themes in production, uncompressed themes can be used to create new themes, you can compress them with the JavaScript compression tool of your choice or use uncompressed. 
@@ -75,64 +75,64 @@ To create a theme is to create variable with all desirable chart settings and se
 Suppose you want to create a bar charts many times, and all of them will use the same axes and chart titles.
 
 ```
-  // data
-  var data = anychart.data.set([
-    ["Department Stores", 637166],
-    ["Discount Stores", 721630],
-    ["Men's/Women's Specialty Stores", 148662],
-    ["All other outlets", 90000]
-  ]);
+// data
+var data = anychart.data.set([
+  ["Department Stores", 637166],
+  ["Discount Stores", 721630],
+  ["Men's/Women's Specialty Stores", 148662],
+  ["All other outlets", 90000]
+]);
 
-  // chart type
-  var chart = anychart.bar();
+// chart type
+var chart = anychart.bar();
 
-  // set title
-  chart.title("Bar Chart");
+// set title
+chart.title("Bar Chart");
 
-  // set axes titles
-  var xAxis = chart.xAxis();
-  xAxis.title("Retail Channel");
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales");
+// set axes titles
+var xAxis = chart.xAxis();
+xAxis.title("Retail Channel");
+var yAxis = chart.yAxis();
+yAxis.title("Sales");
 
-  // set data
-  chart.bar(data);
+// set data
+chart.bar(data);
 ```
 
 You can predefine these settings in a theme and use it anytime you want. Below is the snippet of variable that contains AnyChart theme.
 
 ```
-  // create variable for custom theme
-  var customTheme = {
-    // define settings for bar charts
-    "bar": {
-      // set chart title
+// create variable for custom theme
+var customTheme = {
+  // define settings for bar charts
+  "bar": {
+    // set chart title
+    "title": {
+      // set title text
+      "text": "Bar Chart",
+      // display title
+      "enabled": true
+    },
+    // settings for default x axis
+    "defaultXAxisSettings": {
+      // set x axis title
       "title": {
         // set title text
-        "text": "Bar Chart",
-        // display title
+        "text": "Retail Channel",
+        // force title to be shown
         "enabled": true
-      },
-      // settings for default x axis
-      "defaultXAxisSettings": {
-        // set x axis title
-        "title": {
-          // set title text
-          "text": "Retail Channel",
-          // force title to be shown
-          "enabled": true
-        }
-      },
-      // settings for default y axis
-      "defaultYAxisSettings": {
-        // set axis name
-        "title": {
-          "text": "Sales",
-          "enabled": true
-        }
+      }
+    },
+    // settings for default y axis
+    "defaultYAxisSettings": {
+      // set axis name
+      "title": {
+        "text": "Sales",
+        "enabled": true
       }
     }
-  };
+  }
+};
 ```
 
 Now, when simple theme is ready we will learn where we can store it and how to apply it.
@@ -142,99 +142,99 @@ Now, when simple theme is ready we will learn where we can store it and how to a
 You can store a theme right where your chart code is, just be sure to apply the theme before you create a chart:
 
 ```
-  // create variable for custom theme
-  var customTheme = {
-    // define settings for bar charts
-    "bar": {
-      // set chart title
+// create variable for custom theme
+var customTheme = {
+  // define settings for bar charts
+  "bar": {
+    // set chart title
+    "title": {
+      "text": "Bar Chart",
+      "enabled": true
+    },
+    // settings for default x axis
+    "defaultXAxisSettings": {
+      // set x axis title
       "title": {
-        "text": "Bar Chart",
+        "text": "Retail Channel",
         "enabled": true
-      },
-      // settings for default x axis
-      "defaultXAxisSettings": {
-        // set x axis title
-        "title": {
-          "text": "Retail Channel",
-          "enabled": true
-        }
-      },
-      // settings for default y axis
-      "defaultYAxisSettings": {
-        // set axis name
-        "title": {
-          "text": "Sales",
-          "enabled": true
-        }
+      }
+    },
+    // settings for default y axis
+    "defaultYAxisSettings": {
+      // set axis name
+      "title": {
+        "text": "Sales",
+        "enabled": true
       }
     }
-  };
+  }
+};
   
-  // data
-  var data = anychart.data.set([
-    ["Department Stores", 637166],
-    ["Discount Stores", 721630],
-    ["Men's/Women's Specialty Stores", 148662],
-    ["All other outlets", 90000]
-  ]);
+// data
+var data = anychart.data.set([
+  ["Department Stores", 637166],
+  ["Discount Stores", 721630],
+  ["Men's/Women's Specialty Stores", 148662],
+  ["All other outlets", 90000]
+]);
   
-  // apply theme
-  anychart.theme(customTheme);
+// apply theme
+anychart.theme(customTheme);
   
-  var chart = anychart.bar();
-  chart.bar(data);
-  chart.container("container");
-  chart.draw();
+var chart = anychart.bar();
+chart.bar(data);
+chart.container("container");
+chart.draw();
 ```
 
 Sample chart using internal theme, click "Launch in playground" to view JS settings:
 
 {sample}AS\_Themes\_01{sample}
 
-##External Themes
+## External Themes
 
 Next, you can create a file with several themes and use it to store settings. In this case you need to reference this file in the page where your chart is using **script** tag.
 
 ```
-  <head>
-    <!--Link to the file with the custom theme-->
-    <script src="custom_theme.js"></script>
-    <script>
-      anychart.onDocumentReady(function() {
-        // data
-        var data = anychart.data.set([
-          ["Department Stores", 637166],
-          ["Discount Stores", 721630],
-          ["Men's/Women's Specialty Stores", 148662],
-          ["All other outlets", 90000]
-        ]);
+<head>
+  <!--Link to the file with the custom theme-->
+  <script src="custom_theme.js"></script>
+  <script>
+    anychart.onDocumentReady(function() {
+      // data
+      var data = anychart.data.set([
+        ["Department Stores", 637166],
+        ["Discount Stores", 721630],
+        ["Men's/Women's Specialty Stores", 148662],
+        ["All other outlets", 90000]
+      ]);
       
-        // apply custom theme
-        anychart.theme(customTheme);
+      // apply custom theme
+      anychart.theme(customTheme);
 
-        var chart = anychart.bar();
-        chart.bar(data);
-        chart.container("container");
-        chart.draw();
-      });
-    </script>
-  </head>
+      var chart = anychart.bar();
+      chart.bar(data);
+      chart.container("container");
+      chart.draw();
+    });
+  </script>
+</head>
 ```
 
 The content of **custom_theme.js** should be something like the snippet below:
 
 ```
-  var customTheme = {
-    "bar": {
-      "title": "Bar Chart",
-      "defaultXAxisSettings": {
-        "title": "Retail Channel"
-      },
-      "defaultYAxisSettings": {
-        "title": "Sales"
-      }
+var customTheme = {
+  "bar": {
+    "title": "Bar Chart",
+    "defaultXAxisSettings": {
+      "title": "Retail Channel"
+    },
+    "defaultYAxisSettings": {
+      "title": "Sales"
     }
-  };
+  }
+};
 ```
 
 ### Default Theme
@@ -246,11 +246,11 @@ This file can be found in **binaries** folder in the downloaded AnyChart package
 
 ### Old Theme
   
-AnyChart provides [several default themes](#out_of_the_box_themes) along with the opportunity to [create custom themes](#create_theme). One of default themes is the default one from AnyChart 5.x, 6.x. To use old theme you have to reference special theme file with the name **v6.js**. This file can be found in **binaries** folder in the downloaded AnyChart package. After referencing the file you can use {api:anychart#theme}**theme()**{api} method with **anychart.themes.v6** parameter to apply old theme:
+AnyChart provides [several default themes](#out_of_the_box_themes) along with the opportunity to [create custom themes](#create_theme). One of default themes is the default one from AnyChart 5.x, 6.x. To use old theme you have to reference special theme file with the name **v6.js**. This file can be found in **binaries** folder in the downloaded AnyChart package. After referencing the file you can use {api:anychart#theme}theme(){api} method with **anychart.themes.v6** parameter to apply old theme:
 
 ```
-  // apply old theme
-  anychart.theme(anychart.themes.v6);
+// apply old theme
+anychart.theme(anychart.themes.v6);
 ```
 
 ##Multiple Chart Types
@@ -258,22 +258,22 @@ AnyChart provides [several default themes](#out_of_the_box_themes) along with th
 The main purpose of AnyChart Themes is to simplify the process of chart creation, so one theme can store settings for the different chart types. 
 
 ```
-  var customTheme = {
-    // settings for bar charts
-    "bar": {
-      "title": {
-        "text": "Bar Chart",
-        "enabled": true
-      }
-    },
-    // settings for column charts
-    "column": {
-      "title": {
-        "text": "Column Chart",
-        "enabled": true
-      }
+var customTheme = {
+  // settings for bar charts
+  "bar": {
+    "title": {
+      "text": "Bar Chart",
+      "enabled": true
     }
-  };
+  },
+  // settings for column charts
+  "column": {
+    "title": {
+      "text": "Column Chart",
+      "enabled": true
+    }
+  }
+};
 ```
 
 Sample below shows two charts with minimal settings, both of them use one theme with title settings.
@@ -288,11 +288,11 @@ In the sample below a table contains several charts. Settings for these charts a
 
 ##Reset Theme
 
-There is one very important thing you need to remember when you work with themes in Dashboard mode: after the theme is defined in code every chart uses this theme until you set another theme. To reset theme to the default or to the new one you have to use {api:anychart#theme}**theme()**{api} method again.
+There is one very important thing you need to remember when you work with themes in Dashboard mode: after the theme is defined in code every chart uses this theme until you set another theme. To reset theme to the default or to the new one you have to use {api:anychart#theme}theme(){api} method again.
 
 ```
-  // return default theme to the charts below
-  anychart.theme(null);
+// return default theme to the charts below
+anychart.theme(null);
 ```
 
 ## Global Settings, Defaults and Theme Reference

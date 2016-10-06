@@ -40,7 +40,7 @@ In the sample below we display the map of the USA (colored states are states whe
   series.legendItem().iconType("circle");
 ```
 
-Note that this series is colored using the colorScale and the color of the state depends on the value it represents. We have changed the legendItem icon from default rectangular to circle using {api:anychart.core.ui.LegendItem#iconType}**.iconType()**{api}.
+Note that this series is colored using the colorScale and the color of the state depends on the value it represents. We have changed the legendItem icon from default rectangular to circle using {api:anychart.core.ui.LegendItem#iconType}iconType(){api}.
 
 
 ## Multiple Legends
@@ -89,7 +89,7 @@ var series_other = map.choropleth(dataSet_other);
 
 ## Undefined Regions In Legend
 
-If you've got a lot of undefined regions, but you need to color them, use an {api}**.unboundRegions()**{api} method:
+If you've got a lot of undefined regions, but you need to color them, use an {api}unboundRegions(){api} method:
 
 ```
 	// set the color for undefined (unbound) regions

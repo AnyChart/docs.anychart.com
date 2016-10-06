@@ -244,7 +244,7 @@ In this section we will explain how to add and configure data labels and tooltip
 
 <!--  Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips tutorials.  -->   
 
-If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Column#labels}labels(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods. Adding attributes with values to these methods will lead to changes in visual appearance, position and format. 
+If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Column#labels}labels(){api} and {api:anychart.core.cartesian.series.Column#tooltip}tooltip(){api} methods. Adding attributes with values to these methods will lead to changes in visual appearance, position and format. 
 
 With the following example let's make data labels appear in the center of the columns, format them to show only the value corresponding to the column and tooltip to show detailed description.  
 

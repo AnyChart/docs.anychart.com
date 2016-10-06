@@ -254,13 +254,13 @@ That's how it looks like on a chart:
 
 {sample}BCT\_BoxChart\_02{sample}
 
-##Axes
+## Axes
 
 In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and many more. All axis features are described in [Axes Basics](../Axes_and_Grids/Axis_Basics), [Axes Scales](../Axes_and_Grids/Scales) and [Extra Axes tutorial](../Axes_and_Grids/Additional_Axes), in this section we will quickly demonstrate how axis orientation can be adjusted, how axis scale can be inverted and how minimum and maximum values can be controlled.
 
-###Orientation
+### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust the {api:anychart.enums.Orientation}**.orientation()**{api} parameter of the {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust the {api:anychart.enums.Orientation}orientation(){api} parameter of the {api:anychart.charts.Cartesian#yAxis}yAxis(){api} or {api:anychart.charts.Cartesian#xAxis}xAxis(){api} methods.
 Position depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) Templates.
 
 ```
@@ -276,7 +276,7 @@ And here is the demonstration of this feature on the Single-series sample:
 
 ###Inversion
 
-AnyChart Charting Framework allows scale inversion. Just add the {api:anychart.scales.Base#inverted}**.inverted()**{api} method to the scale you want to invert, for example:
+AnyChart Charting Framework allows scale inversion. Just add the {api:anychart.scales.Base#inverted}inverted(){api} method to the scale you want to invert, for example:
  
 ```
   // adjust y scale
@@ -293,7 +293,7 @@ Only one line changes the view a lot:
 In case your data values start far from the beginning of the scale or end far from the point you really need to show and analyse, you may have no desire to keep any empty space in the chart. Then use this ability of AnyChart to set the minimum and the maximum values shown on the axis.
   
   
-You can control these values by setting {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method. As far as you want to adjust the scale, set {api:anychart.scales.ScatterTicks#interval}**.ticks().interval()**{api} as well, in case the default interval is twisted:
+You can control these values by setting {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} parameters of {api:anychart.charts.Cartesian#yScale}yScale(){api} method. As far as you want to adjust the scale, set {api:anychart.scales.ScatterTicks#interval}ticks().interval(){api} as well, in case the default interval is twisted:
 
 ```
   var yScale = chart.yScale();
@@ -381,7 +381,7 @@ Now let's apply these setting to the sample.
 ##Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips.
-If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.polar.series.Box#labels}**.labels()**{api} and {api:anychart.charts.Cartesian#tooltip}**.tooltip()**{api} methods. Adding attributes with values to these methods will change visual appearance, position and format of these elements.
+If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.polar.series.Box#labels}labels(){api} and {api:anychart.core.cartesian.series.Box#tooltip}tooltip(){api} methods. Adding attributes with values to these methods will change visual appearance, position and format of these elements.
 With the following example let's make data labels appear to the top from the boxes, format them to show only the number of the range and force tooltips to show detailed description.
 
 ```
@@ -441,7 +441,7 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 ###Colorizing elements
   
-Now let's study how to apply different colors to different data series. To apply the color to the exact series we need to set the {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter in the {api:anychart.core.cartesian.series}**series**{api}. In the sample below we compare salaries of 5 different ranges in December 2014, January and February 2015. Let's color each series to different color. Here is the sample:
+Now let's study how to apply different colors to different data series. To apply the color to the exact series we need to set the {api:anychart.graphics.vector.Fill}fill(){api} parameter in the {api:anychart.core.cartesian.series}series{api}. In the sample below we compare salaries of 5 different ranges in December 2014, January and February 2015. Let's color each series to different color. Here is the sample:
 
 {sample}BCT\_BoxChart\_10{sample}
 
@@ -467,7 +467,7 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see Hatch Fill tutorial.
   
   
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart a with 3 series with 5 data points in each. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.graphics.vector.HatchFill}**.hatchFill()**{api} parameter:
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart a with 3 series with 5 data points in each. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.graphics.vector.HatchFill}hatchFill(){api} parameter:
 
 ```
   //hatch fill

@@ -48,15 +48,15 @@ If you want to define a total error value and/or the upper and lower error value
 <th width="88"><b>Description</b></th>
 </tr>
 <tr>
-<td>{api:anychart.core.utils.Error#valueError}**.valueError()**{api}</td>
+<td>{api:anychart.core.utils.Error#valueError}valueError(){api}</td>
 <td>Used to set a total error value</td>
 </tr>
 <tr>
-<td>{api:anychart.core.utils.Error#valueLowerError}**.valueLowerError()**{api}</td>
+<td>{api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api}</td>
 <td>Used to set a lower error value</td>
 </tr>
 <tr>
-<td>{api:anychart.core.utils.Error#valueUpperError}**.valueUpperError()**{api}</td>
+<td>{api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api}</td>
 <td>Used to set an upper error value</td>
 </tr>
 </tbody>
@@ -76,7 +76,7 @@ If you need different error lines for each data point, you can add values to a d
 
 {sample}Error\_Chart\_10{sample}
 
-If you use only the {api:anychart.core.utils.Error#valueError}**.valueError()**{api} method, the upper and lower values will be equal to half of the specified value. The method {api:anychart.core.utils.Error#valueError}**.valueError()**{api} usage has priority over that of {api:anychart.core.utils.Error#valueLowerError}**.valueLowerError()**{api} or {api:anychart.core.utils.Error#valueUpperError}**.valueUpperError()**{api} usage. The code below demonstrates an error where the upper and lower values are equal to 3.
+If you use only the {api:anychart.core.utils.Error#valueError}valueError(){api} method, the upper and lower values will be equal to half of the specified value. The method {api:anychart.core.utils.Error#valueError}valueError(){api} usage has priority over that of {api:anychart.core.utils.Error#valueLowerError}valueLowerError(){api} or {api:anychart.core.utils.Error#valueUpperError}valueUpperError(){api} usage. The code below demonstrates an error where the upper and lower values are equal to 3.
 
 ```
   var error = series.error();
@@ -104,7 +104,7 @@ As you can see we've created the error bars on a chart using the settings listed
 
 {sample}Error\_Chart\_01{sample}
 
-Also it should be noted that you can do the same using the {api:anychart.core.cartesian.series.Base#error}**.error()**{api} method. The sample below demonstrates how to apply a total error to a full data set.
+Also it should be noted that you can do the same using the {api:anychart.core.cartesian.series.Base#error}error(){api} method. The sample below demonstrates how to apply a total error to a full data set.
 
 ```
   //set the error value in numbers
@@ -130,15 +130,15 @@ Error bars can be displayed for the series x value, y value or both. You should 
 <th width="88"><b>Description</b></th>
 </tr>
 <tr>
-<td>{api:anychart.core.utils.Error#xError}**.xError()**{api}</td>
+<td>{api:anychart.core.utils.Error#xError}xError(){api}</td>
 <td>Used to set a common series x error value</td>
 </tr>
 <tr>
-<td>{api:anychart.core.utils.Error#xLowerError}**.xLowerError()**{api}</td>
+<td>{api:anychart.core.utils.Error#xLowerError}xLowerError(){api}</td>
 <td>Used to set a lower x error value</td>
 </tr>
 <tr>
-<td>{api:anychart.core.utils.Error#xUpperError}**.xUpperError()**{api}</td>
+<td>{api:anychart.core.utils.Error#xUpperError}xUpperError(){api}</td>
 <td>Used to set an upper x error value</td>
 </tr>
 </tbody>
@@ -160,7 +160,7 @@ X value error value must be defined in numbers or percentage of total value.
   error.xError("15%")
 ```
 
-The same rules can be applied in case of scatter plot. Below is a demonstration of error defined with the foreground {api:anychart.core.utils.Error#xError}**.xError()**{api} method.
+The same rules can be applied in case of scatter plot. Below is a demonstration of error defined with the foreground {api:anychart.core.utils.Error#xError}xError(){api} method.
 
 {sample}Error\_Chart\_04{sample}
 
@@ -170,7 +170,7 @@ It is also possible to apply a separate error bar to each data point within a se
 
 ### Error Mode
 
-If you want to specify the visibility of the upper and lower error values - you should use the {api:anychart.core.utils.Error#mode}**.mode()**{api} method:
+If you want to specify the visibility of the upper and lower error values - you should use the {api:anychart.core.utils.Error#mode}mode(){api} method:
 
 <table width="430" border="1" class="dtTABLE">
 <tbody><tr>
@@ -240,11 +240,11 @@ AnyChart html5 charting framework provides a few opportunities to configure an e
 <th width="88"><b>Description</b></th>
 </tr>
 <tr>
-<td>{api:anychart.core.utils.Error#xErrorWidth}**.xErrorWidth()**{api}</td>
+<td>{api:anychart.core.utils.Error#xErrorWidth}xErrorWidth(){api}</td>
 <td>Used to set a series x value error width</td>
 </tr>
 <tr>
-<td>{api:anychart.core.utils.Error#valueErrorWidth}**.valueErrorWidth()**{api}</td>
+<td>{api:anychart.core.utils.Error#valueErrorWidth}valueErrorWidth(){api}</td>
 <td>Used to set an y value error width</td>
 </tr>
 </tbody>
@@ -268,11 +268,11 @@ To change the error color you have to use the following settings:
 <th width="88"><b>Description</b></th>
 </tr>
 <tr>
-<td>{api:anychart.core.utils.Error#xErrorStroke}**.xErrorStroke()**{api}</td>
+<td>{api:anychart.core.utils.Error#xErrorStroke}xErrorStroke(){api}</td>
 <td>Used to configure an x error stroke</td>
 </tr>
 <tr>
-<td>{api:anychart.core.utils.Error#valueErrorStroke}**.valueErrorStroke()**{api}</td>
+<td>{api:anychart.core.utils.Error#valueErrorStroke}valueErrorStroke(){api}</td>
 <td>Used to configre a series error stroke</td>
 </tr>
 </tbody>
@@ -303,7 +303,7 @@ Look at the chart sample below and click on it to see it's javascript source.
 
 ## Labels And Tooltips
 
-If you want to configure data labels and tooltips to display information about the error bars - you should do that in {api:anychart.charts.Cartesian#label}**.label()**{api} and {api:anychart.charts.Cartesian#tooltips}**.tooltips()**{api} methods. You can tune their visual appearance, positioning and format.
+If you want to configure data labels and tooltips to display information about the error bars - you should do that in {api:anychart.charts.Cartesian#label}label(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods. You can tune their visual appearance, positioning and format.
 
 {sample}Error\_Chart\_13{sample}
 

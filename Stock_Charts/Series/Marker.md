@@ -127,7 +127,7 @@ series.name("UK");
 
 Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
 
-To switch the series use {api:anychart.core.stock.series.Base#seriesType}.seriesType(){api} method.
+To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
 ## Visualization
 
@@ -135,7 +135,7 @@ Some Stock Marker visualization settings are different from the similar ones in 
 
 ### Coloring
 
-Coloring is a very useful feature when it comes to emphasizing some values or series on a chart. In stocks, use {api:anychart.core.stock.series.Marker#fill}.fill(){api} and {api:anychart.core.stock.series.Marker#stroke}.stroke(){api} to change the default colors. 
+Coloring is a very useful feature when it comes to emphasizing some values or series on a chart. In stocks, use {api:anychart.core.stock.series.Marker#fill}fill(){api} and {api:anychart.core.stock.series.Marker#stroke}stroke(){api} to change the default colors. 
 
 AnyStocks have one more interesting feature. In case of having problems with eyesight, you might want to use hatch fillings, which monochrome palette allows to distinguish series without coloring them differently. Let's use our previous sample to show those features in action.
 
@@ -156,8 +156,8 @@ Note that despite being fill with hatch fills, the lower chart has not become ea
 
 ### Marker type 
 
-Marker series have one more special feature: a marker type. It's possible to define special markers form for the whole series (which can be useful in multi-series stocks) or for some particular points in order to emphasize their importance (e.g. the highest and the lowest values). The {api:anychart.core.stock.series.Marker#type}.type(){api} method is responsible for that.
-Another useful setting is marker size. It's possible to make markers much bigger or smaller. In our case it's definiteley necessary to enlarge the markers. We will use {api:anychart.core.stock.series.Marker#size}.size(){api} method.
+Marker series have one more special feature: a marker type. It's possible to define special markers form for the whole series (which can be useful in multi-series stocks) or for some particular points in order to emphasize their importance (e.g. the highest and the lowest values). The {api:anychart.core.stock.series.Marker#type}type(){api} method is responsible for that.
+Another useful setting is marker size. It's possible to make markers much bigger or smaller. In our case it's definiteley necessary to enlarge the markers. We will use {api:anychart.core.stock.series.Marker#size}size(){api} method.
 
 ```
 // type and size

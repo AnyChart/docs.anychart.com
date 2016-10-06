@@ -204,7 +204,7 @@ All axis features are described in [Axes Basic](../Axes_and_Grids/Axis_Basics) t
 
 ### Orientation
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
+With AnyChart you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}orientation(){api} parameter of {api:anychart.charts.Cartesian#yAxis}yAxis(){api} or {api:anychart.charts.Cartesian#xAxis}xAxis(){api} methods.
   
   
 The position depends on the plot type and inversion of axes. See list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
@@ -222,7 +222,7 @@ And here is the demonstration of this feature in the Single-series sample:
 
 ### Inversion
 
-AnyChart allows to invert any axis: Y, X or any other scale. Inversion is controlled by axis {api:anychart.scales.Linear#inverted}**.inverted()**{api}:
+AnyChart allows to invert any axis: Y, X or any other scale. Inversion is controlled by axis {api:anychart.scales.Linear#inverted}inverted(){api}:
 
 ```
   var yScale = chart.yScale();
@@ -235,7 +235,7 @@ And here is the demonstration of Y-Axis inversion in the Single-series sample:
 
 ### Minimum and Maximum
 
-AnyChart calculates axis minimum and maximum automatically. The minimal value on Y-Axis is 800, the maximum is 1.600, as you can see in the sample above. You can control these values by setting {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method; let's look at what will happen if we define 0 and 1800 as the min amd the max values on the Y-Axis:
+AnyChart calculates axis minimum and maximum automatically. The minimal value on Y-Axis is 800, the maximum is 1.600, as you can see in the sample above. You can control these values by setting {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} parameters of {api:anychart.charts.Cartesian#yScale}yScale(){api} method; let's look at what will happen if we define 0 and 1800 as the min amd the max values on the Y-Axis:
 
 ```
   var yScale = chart.yScale();
@@ -251,7 +251,7 @@ And here is the demonstration of maximum and minimum values on the Single-series
 
 ## Visualization
 
-In this section we will describe main parts of marker chart visualization and ways to adjust it. Visual appearance of areas is defined using certain methods. For Marker chart the main thing is the {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter.
+In this section we will describe main parts of marker chart visualization and ways to adjust it. Visual appearance of areas is defined using certain methods. For Marker chart the main thing is the {api:anychart.graphics.vector.Fill}fill(){api} parameter.
 
 ### Basic Sample
 
@@ -284,7 +284,7 @@ In this section we will explain how to add and configure data labels and tooltip
 <!-- Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips-->.
   
   
-If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Marker#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Marker#tooltip}**.tooltip()**{api} methods. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
+If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Marker#labels}labels(){api} and {api:anychart.core.cartesian.series.Marker#tooltip}tooltip(){api} methods. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
   
   
 With the following example let's make data labels appear to the top from the data points, format them to show only the value corresponding to the point and force tooltips to show detailed description.
@@ -337,7 +337,7 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 ### Colorizing Elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.graphics.vector.Fill}**.fill()**{api} parameters in the {api:anychart.core.ui.MarkersFactory}**.marker()**{api} method. In the sample below we've got 5 series with sample data and we'll color each series to different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.graphics.vector.Fill}fill(){api} parameters in the {api:anychart.core.ui.MarkersFactory}marker(){api} method. In the sample below we've got 5 series with sample data and we'll color each series to different color. Here is the sample:
 
 {sample}BCT\_Marker\_Chart\_09{sample}
 
@@ -378,7 +378,7 @@ That's how a part of a code of the sample above looks like:
   series5.fill("#BCBD46");
 ```
 
-In the sample below we colorized individual points. We've got a chart with one series and predefined colors for all elements. Let's color the minimum and the maximum points in "Rgb(180,77,77)" and "Rgb(77,180,77)" accordingly. As you can see it is very easy to do by setting {api:anychart.graphics.vector.Fill}**.fill()**{api} parameter for the point.
+In the sample below we colorized individual points. We've got a chart with one series and predefined colors for all elements. Let's color the minimum and the maximum points in "Rgb(180,77,77)" and "Rgb(77,180,77)" accordingly. As you can see it is very easy to do by setting {api:anychart.graphics.vector.Fill}fill(){api} parameter for the point.
 
 {sample}BCT\_Marker\_Chart\_10{sample}
 
@@ -411,7 +411,7 @@ AnyChart takes care of visualization and users convenience seriously - that is w
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
 To see whole range of available hatch types see [Hatch Fill](../Appearance_Settings/Hatch_Fill) tutorial.
   
-To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5-series with 2 data points in each. For every series we've applied different hatch fills by setting a hatch type for {api:anychart.core.scatter.series.Marker#hatchFill}**.hatchFill()**{api} parameter and set all series in grey color (#EEEEEE).
+To demonstrate hatch fill feature we've prepared the following sample. As you see it is completely monochrome. We have chart with 5-series with 2 data points in each. For every series we've applied different hatch fills by setting a hatch type for {api:anychart.core.scatter.series.Marker#hatchFill}hatchFill(){api} parameter and set all series in grey color (#EEEEEE).
 
 Here's a part of the code of the sample below:
 

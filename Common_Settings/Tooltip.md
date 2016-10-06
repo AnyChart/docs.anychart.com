@@ -197,9 +197,10 @@ There are two parts of a tooltip that can hold some information: its title and i
 For adjusting text of the tooltip title use the {api:anychart.core.ui.Tooltip#titleFormatter}titleFormatter(){api} method. This method uses function or string with tokens as a parameter and can help you to format title in any desirable way.
 
 ```
+tooltip1.titleFormatter("Manager: {%x}");
 ```
 
-{sample}CS\_Tooltip\_13{sample}
+{sample}CS\_Tooltip\_14{sample}
 
 ### Content
 
@@ -223,7 +224,7 @@ tooltip.positionMode("point");
 tooltip.textFormatter("Manager: <b>{%x}</b>\nSales volume: <b>${%Value}</b>");
 ```
 
-{sample}CS\_Tooltip\_13\_1{sample}
+{sample}CS\_Tooltip\_15{sample}
 
 
 Use several formatting ways if there are some series on your chart or charts on a dashboard which tooltips need different formatting:
@@ -240,7 +241,7 @@ seriesSpline.tooltip().textFormatter(function(e){
 });
 ```
 
-{sample}CS\_Tooltip\_13\_2{sample}
+{sample}CS\_Tooltip\_16{sample}
 
 
 **Note**: You can find information on custom tooltips and an example of using a chart as a tooltip in the [Interactivity article](../Common_Settings/Interactivity#creating_custom_tooltip)
@@ -256,7 +257,7 @@ columnChart.tooltip().width(200);
 columnChart.tooltip().height(80);
 ```
 
-{sample}CS\_Tooltip\_13\_3{sample}
+{sample}CS\_Tooltip\_17{sample}
 
 
 ## Other Visual Settings
@@ -298,7 +299,7 @@ chart.tooltip().allowLeaveChart(true);
 
 Note that this method can be applied only for tooltips of the whole chart, as this setting is chart-oriented.
 
-{sample}CS\_Tooltip\_12\_1{sample}
+{sample}CS\_Tooltip\_13{sample}
 
 
 ## Position
@@ -314,7 +315,7 @@ tooltip.positionMode("point");
 
 Here is a sample with the tooltip sticked to the hovered point:
 
-{sample}CS\_Tooltip\_14{sample}
+{sample}CS\_Tooltip\_18{sample}
 
 ### Fixed Tooltip Position
 
@@ -333,7 +334,7 @@ tooltip.anchor("bottomLeft");
 Here is a sample of two series with fixed tooltip position. Tooltip settings are the same except for the the tooltip anchor.
 
 <a name="sample"></a>
-{sample}CS\_Tooltip\_15{sample}
+{sample}CS\_Tooltip\_19{sample}
 
 Along with the main point for tooltip you can set the point to which the tooltip should be bound. Use {api:anychart.core.ui.Tooltip#position}position(){api} method to set the point for tooltip to be bound to.
 
@@ -347,7 +348,7 @@ tooltip2.position("rightCenter");
 
 That is how the sample with the code from above looks like:
 
-{sample}CS\_Tooltip\_16{sample}
+{sample}CS\_Tooltip\_20{sample}
 
 **Note**: You can shift tooltips position using {api:anychart.core.ui.Tooltip#offsetX}offsetX(){api} and {api:anychart.core.ui.Tooltip#offsetY}offsetY(){api} methods.
 
@@ -394,4 +395,4 @@ var themeSettings = {
 
 Settings for the tooltip in the sample below were applied using themes. Click "launch in playground" to see how settings for tooltip can be applied using AnyChart themes.
 
-{sample}CS\_Tooltip\_17{sample}
+{sample}CS\_Tooltip\_21{sample}

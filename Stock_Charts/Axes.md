@@ -42,13 +42,13 @@ While a lot of AnyStock Axes settings are the same as Basic charts', there is a 
 
 ##Tickmarks
 
-The ticks in AnyStocks are a little bit different too. As the X-axis is an area, the ticks are being placed inside of it. Let's enable both major (with {api:anychart.core.axes.StockDateTime#ticks}**.ticks()**{api} method) and minor (with {api:anychart.core.axes.StockDateTime#minorTicks}**.minorTicks()**{api} method) ticks: 
+The ticks in AnyStocks are a little bit different too. As the X-axis is an area, the ticks are being placed inside of it. Let's enable both major (with {api:anychart.core.axes.StockDateTime#ticks}ticks(){api} method) and minor (with {api:anychart.core.axes.StockDateTime#minorTicks}minorTicks(){api} method) ticks: 
 
 {sample}STOCK\_Axes\_01{sample}
 
 Scroll the chart to see them all.
 
-We can adjust the length of ticks on X-axis only by setting another height for the axis with the {api:anychart.core.axes.StockDateTime#height}**.height()**{api} method of the axis. Ticks themselves don't have this method. 
+We can adjust the length of ticks on X-axis only by setting another height for the axis with the {api:anychart.core.axes.StockDateTime#height}height(){api} method of the axis. Ticks themselves don't have this method. 
 
 You can find how to work with the X-axis height in the [Axis Line](#axis_line) part of the article.
 
@@ -56,7 +56,7 @@ You can find how to work with the X-axis height in the [Axis Line](#axis_line) p
 
 Labels of the X-axis have an additional feature: it is a helper label that "saves" the scrolled major label value. Just scroll the previous example and watch the scrolled labels.
 
-That happens when the helperLabel is on (by default). You can disable it by passing false to the {api:anychart.core.axes.StockDateTime#showHelperLabel}**.showHelperLabel()**{api} method.
+That happens when the helperLabel is on (by default). You can disable it by passing false to the {api:anychart.core.axes.StockDateTime#showHelperLabel}showHelperLabel(){api} method.
 
 ```
 	// disabling the Helper Label
@@ -65,7 +65,7 @@ That happens when the helperLabel is on (by default). You can disable it by pass
 
 {sample}STOCK\_Axes\_02{sample}
 
-Finally, as our X-axis is an area, the labels are placed and might be moved only inside of this area. For example, let's put our labels (both major and minor) to the right of the ticks we have enabled before. We use {api:anychart.core.ui.Label#position}**.position()**{api} and {api:anychart.core.ui.Label#anchor}**.anchor()**{api} to move them correctly.
+Finally, as our X-axis is an area, the labels are placed and might be moved only inside of this area. For example, let's put our labels (both major and minor) to the right of the ticks we have enabled before. We use {api:anychart.core.ui.Label#position}position(){api} and {api:anychart.core.ui.Label#anchor}anchor(){api} to move them correctly.
 
 ```
 	// moving the labels
@@ -78,7 +78,7 @@ Finally, as our X-axis is an area, the labels are placed and might be moved only
 
 ## Axis Line
 
-In AnyStock, the x-axis is not a line, but an area with the background and height. We can change these parameters using {api:anychart.core.axes.StockDateTime#background}**.background()**{api} and {api:anychart.core.axes.StockDateTime#height}**.height()**{api} methods. Let's apply these methods:
+In AnyStock, the x-axis is not a line, but an area with the background and height. We can change these parameters using {api:anychart.core.axes.StockDateTime#background}background(){api} and {api:anychart.core.axes.StockDateTime#height}height(){api} methods. Let's apply these methods:
 
 ```
 	// changing the background and the height of the axis

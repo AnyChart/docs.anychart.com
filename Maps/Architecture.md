@@ -25,7 +25,7 @@ Main ideas of AnyChart Maps are:
 * You provide AnyChart component the data you want to display (such as values, region ID's, extra information)
 * The GeoData and your Data together with AnyChart component create a map
 
-We recommend to go through the [AnyMap Quick Start](./Quick_Start) where you can find the basic information about AnyMap architecture.
+We recommend to go through the [AnyMap Quick Start](../Quick_Start) where you can find the basic information about AnyMap architecture.
 
 ## Supported Formats
 

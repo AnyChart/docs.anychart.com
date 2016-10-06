@@ -19,7 +19,7 @@ To work with large data sets and represent them successfully on the screen AnySt
 
 ## Settings
 
-There are several methods for adjusting Grouping. We can define the maximum number of the points show using the {api:anychart.core.stock.Grouping#maxVisiblePoints}.maxVisiblePoints(){api} method, the minimum width for each point using {api:anychart.core.stock.Grouping#minPixPerPoint}.minPixPerPoint(){api} and work with grouping states using other settings that are described in this article.
+There are several methods for adjusting Grouping. We can define the maximum number of the points show using the {api:anychart.core.stock.Grouping#maxVisiblePoints}maxVisiblePoints(){api} method, the minimum width for each point using {api:anychart.core.stock.Grouping#minPixPerPoint}minPixPerPoint(){api} and work with grouping states using other settings that are described in this article.
 
 ### Default
 
@@ -65,7 +65,7 @@ Let's consider all methods that can adjust the grouping feature of a stock chart
 
 #### Levels
 
-There is a [list of levels](#list_of_the_levels) where you can find the necessary one or take one of them as the unit and set the necessary count of these units using the {api:anychart.core.stock.Grouping#levels}.levels(){api} method. Note that if your data might be grouped in several non-default levels, you should define them all, so the parameter of the {api:anychart.core.stock.Grouping#levels}.levels(){api} method looks like an array of objects, like in the sample below:
+There is a [list of levels](#list_of_the_levels) where you can find the necessary one or take one of them as the unit and set the necessary count of these units using the {api:anychart.core.stock.Grouping#levels}levels(){api} method. Note that if your data might be grouped in several non-default levels, you should define them all, so the parameter of the {api:anychart.core.stock.Grouping#levels}levels(){api} method looks like an array of objects, like in the sample below:
 
 ```
 	// define the grouping
@@ -81,11 +81,11 @@ There is a [list of levels](#list_of_the_levels) where you can find the necessar
 ```
 {sample}STOCK\_Grouping\_02{sample}
 
-In this sample we've got 46 points, each point represents a period of 5 years, while the maximum level by default is 1 year. So, to make the data group in longer periods - in 10 or 20 years - we need to set all these levels using the {api:anychart.core.stock.Grouping#levels}.levels(){api} method.
+In this sample we've got 46 points, each point represents a period of 5 years, while the maximum level by default is 1 year. So, to make the data group in longer periods - in 10 or 20 years - we need to set all these levels using the {api:anychart.core.stock.Grouping#levels}levels(){api} method.
 
 #### Set Maximum Points Number
 
-If it is necessary to change the maximum default number of the points that can be shown on the chart simultaneously, use the {api:anychart.core.stock.Grouping#maxVisiblePoints}.maxVisiblePoints(){api} method. Choose the maximum number of points depending on your needs. Let's take an Area Stock Chart as an example (check the [Stock Chart Manual](Quick_Start) to know how to create a Stock Chart).
+If it is necessary to change the maximum default number of the points that can be shown on the chart simultaneously, use the {api:anychart.core.stock.Grouping#maxVisiblePoints}maxVisiblePoints(){api} method. Choose the maximum number of points depending on your needs. Let's take an Area Stock Chart as an example (check the [Stock Chart Manual](Quick_Start) to know how to create a Stock Chart).
 
 ```
 // set the maximal number of points
@@ -94,11 +94,11 @@ grouping.maxVisiblePoints(20);
 
 {sample}STOCK\_Grouping\_03{sample}
 
-Note that in case you've got the same situation when your data doesn't work the default levels, you should set the levels properly to make the {api:anychart.core.stock.Grouping#maxVisiblePoints}.maxVisiblePoints(){api} method effective.
+Note that in case you've got the same situation when your data doesn't work the default levels, you should set the levels properly to make the {api:anychart.core.stock.Grouping#maxVisiblePoints}maxVisiblePoints(){api} method effective.
 
 #### Set Minimum Width for a Point
 
-Another way to set the maximum number of points is to set the minimum value for the width of each point of a stock chart, using the {api:anychart.core.stock.Grouping#minPixPerPoint}.minPixPerPoint(){api} method. When this value (due to changing the scroller width) reaches the defined one, all data points gets grouped into longer categories to fit the setting. 
+Another way to set the maximum number of points is to set the minimum value for the width of each point of a stock chart, using the {api:anychart.core.stock.Grouping#minPixPerPoint}minPixPerPoint(){api} method. When this value (due to changing the scroller width) reaches the defined one, all data points gets grouped into longer categories to fit the setting. 
 
 This sample demonstrates an OHLC Stock Chart with a great amount of data with minimum point width set to 10px.
 
@@ -111,7 +111,7 @@ grouping.minPixPerPoint(10);
 
 #### Force settings
 
-There can be a situation when your data is arranged in smaller levels than you need to demonstrate, or there are custom grouping settings that you need to apply no matter what. Use {api:anychart.core.stock.Grouping#forced}.forced(){api} with "true" parameter to force a stock chart to group points even when it's not necessary.
+There can be a situation when your data is arranged in smaller levels than you need to demonstrate, or there are custom grouping settings that you need to apply no matter what. Use {api:anychart.core.stock.Grouping#forced}forced(){api} with "true" parameter to force a stock chart to group points even when it's not necessary.
 
 ```
 // force the series to group always
@@ -122,7 +122,7 @@ grouping.forced(true);
 
 #### Grouping interval
 
-To get the current grouping interval use the {api:anychart.core.stock.Grouping#getCurrentDataInterval}.getCurrentDataInterval(){api} method. 
+To get the current grouping interval use the {api:anychart.core.stock.Grouping#getCurrentDataInterval}getCurrentDataInterval(){api} method. 
 
 ```
 // Get the current data interval and show it in the title.
@@ -133,7 +133,7 @@ chart.title("The current level is " + grouping.getCurrentDataInterval().count + 
 
 #### Disable 
 
-To enable or disable grouping use {api:anychart.core.stock.Grouping#enabled}.enabled(){api} method. It works the same as with other features. As it is enabled by default, we've disabled it in the next sample.
+To enable or disable grouping use {api:anychart.core.stock.Grouping#enabled}enabled(){api} method. It works the same as with other features. As it is enabled by default, we've disabled it in the next sample.
 
 ```
 // disable the grouping feature
@@ -144,7 +144,7 @@ grouping.enabled(false);
 
 #### Get the grouping state
 
-You can use {api:anychart.core.stock.Grouping#isGrouped}.isGrouped(){api} method to determine if the data is grouped at the moment. You can create a special element on your chart or use some default elements to demonstrate if the grouping is enabled or not. In the following sample we've used the chart title to show that.
+You can use {api:anychart.core.stock.Grouping#isGrouped}isGrouped(){api} method to determine if the data is grouped at the moment. You can create a special element on your chart or use some default elements to demonstrate if the grouping is enabled or not. In the following sample we've used the chart title to show that.
 
 ```
 

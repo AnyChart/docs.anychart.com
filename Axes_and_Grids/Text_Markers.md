@@ -13,7 +13,7 @@ Text Markers are useful when you want to place custom texts or description with 
 
 These text markers are just custom text placed on chart.
 
-To add custom text you need to create {api:anychart.charts.Cartesian#textMarker}**textMarker()**{api} and set {api:anychart.core.axisMarkers.Text#value}**value()**{api}, {api:anychart.core.axisMarkers.Text#axis}**axis()**{api} and {api:anychart.core.axisMarkers.Text#text}**text()**{api}.You may use other options, but previous three are mandatory.
+To add custom text you need to create {api:anychart.charts.Cartesian#textMarker}textMarker(){api} and set {api:anychart.core.axisMarkers.Text#value}value(){api}, {api:anychart.core.axisMarkers.Text#axis}axis(){api} and {api:anychart.core.axisMarkers.Text#text}text(){api}.You may use other options, but previous three are mandatory.
 
 ```
   var textMarker = chart.textMarker();
@@ -33,9 +33,9 @@ Sample below shows several variants of Text Marker usage: marking up values (Hig
 
 ## Settings
 
-You can configure text marker placement, font, anchor and text of any custom text using {api:anychart.core.axisMarkers.Text#value}**value()**{api}, {api:anychart.core.axisMarkers.Text#align}**align()**{api}, {api:anychart.core.axisMarkers.Text#anchor}**anchor()**{api}, {api:anychart.graphics.vector.Text#fontSize}**fontSize()**{api}, {api:anychart.core.axisMarkers.Text#offsetX}**offsetX()**{api}, {api:anychart.core.axisMarkers.Text#offsetY}**offsetY()**{api}, {api:anychart.core.axisMarkers.Text#text}**text()**{api} methods.
+You can configure text marker placement, font, anchor and text of any custom text using {api:anychart.core.axisMarkers.Text#value}value(){api}, {api:anychart.core.axisMarkers.Text#align}align(){api}, {api:anychart.core.axisMarkers.Text#anchor}anchor(){api}, {api:anychart.graphics.vector.Text#fontSize}fontSize(){api}, {api:anychart.core.axisMarkers.Text#offsetX}offsetX(){api}, {api:anychart.core.axisMarkers.Text#offsetY}offsetY(){api}, {api:anychart.core.axisMarkers.Text#text}text(){api} methods.
 
-Markers placement is controlled using {api:anychart.enums.Align}**align()**{api} parameter.
+Markers placement is controlled using {api:anychart.enums.Align}align(){api} parameter.
 
 ```
   var textMarker = chart.textMarker();

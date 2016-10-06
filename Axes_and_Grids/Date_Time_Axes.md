@@ -123,7 +123,7 @@ That's it - chart with DateTime Y Axis is ready:
 
 ## Major and Minor Interval Ticks
 
-For datetime axes you can set Major and Minor Ticks using {api:anychart.scales.DateTime#ticks}**ticks()**{api} and {api:anychart.scales.DateTime#minorTicks}**minorTicks()**{api} methods of the scale:
+For datetime axes you can set Major and Minor Ticks using {api:anychart.scales.DateTime#ticks}ticks(){api} and {api:anychart.scales.DateTime#minorTicks}minorTicks(){api} methods of the scale:
 
 ```
   var ticks = chart.yScale().ticks();

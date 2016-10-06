@@ -42,10 +42,13 @@ series
         .hoverHatchFill('diagonalbrick', '#0000A0')
 ```
 
-If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
+If you want to configure data labels and tooltips for all series - you should use {api:anychart.charts.Cartesian#labels}labels(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
 
 ```
-series.tooltip().enabled(true).title().enabled(true).text('Information:');
+tooltips = series.tooltip();
+tooltips.enabled(true);
+ttTitle = tooltips.title().enabled(true);
+ttTitle.text('Information:');
 series.labels().enabled(true).anchor('leftCenter').position('rightCenter').fontSize(13);
 ```
 
@@ -85,4 +88,4 @@ It was a simple demonstration of this feature, we've created the sample below to
 
 ## Supported Functionality
 
-In this way you can configure all main series settings like {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api}, {api:anychart.core.polar.series.Marker#fill}**.fill()**{api}, {api:anychart.core.polar.series.Marker#stroke}**.stroke()**{api}, {api:anychart.core.cartesian.series.Line#markers}**.markers()**{api}.
+In this way you can configure all main series settings like {api:anychart.core.cartesian.series.Base#labels}labels(){api}, {api:anychart.core.polar.series.Marker#fill}fill(){api}, {api:anychart.core.polar.series.Marker#stroke}stroke(){api}, {api:anychart.core.cartesian.series.Line#markers}markers(){api}.

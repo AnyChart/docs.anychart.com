@@ -25,7 +25,7 @@ The radar chart is also known as a web chart, spider chart, star chart, cobweb c
 
 ## Chart
 
-AnyChart JavaScript charting library allows to display three types of series on Radar chart: Line, Area and Marker. You need to create chart using {api:anychart.charts.Radar}**anychart.radar()**{api} method to display Radar chart:
+AnyChart JavaScript charting library allows to display three types of series on Radar chart: Line, Area and Marker. You need to create chart using {api:anychart.charts.Radar}nychart.radar(){api} method to display Radar chart:
 
 ```
 // chart type
@@ -54,7 +54,7 @@ Radar chart has several distinctive configuration options, which are presented i
 
 ### Start angle
 
-By default radar starts drawing from the top center point (0°), but you can change this using {api:anychart.charts.Radar#startAngle}**.startAngle()**{api} parameter:
+By default radar starts drawing from the top center point (0°), but you can change this using {api:anychart.charts.Radar#startAngle}startAngle(){api} parameter:
 
 ```
 chart.startAngle(90);
@@ -66,7 +66,7 @@ Here is the radar chart sample with starting angle shifted to 90°:
 
 ### Plot background
 
-You can change radar background using {api:anychart.core.ui.Background}**.background()**{api} method, learn more about this method at [Background settings tutorial](../Appearance_Settings/Background).
+You can change radar background using {api:anychart.core.ui.Background}background(){api} method, learn more about this method at [Background settings tutorial](../Appearance_Settings/Background).
 
 ```
 var background = chart.background();
@@ -90,7 +90,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 ### Stroke
 
-Axis stroke appearance is controlled by {api:anychart.core.axes.Radar#stroke}**.stroke()**{api} parameter.
+Axis stroke appearance is controlled by {api:anychart.core.axes.Radar#stroke}stroke(){api} parameter.
 
 ```
 // set chart type
@@ -110,7 +110,7 @@ Here is a sample of a chart with tuned X and Y axes. Y-axis dashed stroke and X-
 
 ### Inversion
 
-AnyChart allows to invert any axis. Inversion is controlled by axis {api:anychart.scales.Linear#inverted}**.inverted()**{api} method:
+AnyChart allows to invert any axis. Inversion is controlled by axis {api:anychart.scales.Linear#inverted}inverted(){api} method:
 
 ```
 var yScale = chart.yScale();
@@ -122,7 +122,7 @@ Look at the demonstration of Y-Axis inversion in the sample below:
 
 ### Logarithmic Scale
 
-You can set a logarithmic scale type using {api:anychart.scales.Logarithmic}**.scale()**{api} method. More information about scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
+You can set a logarithmic scale type using {api:anychart.scales.Logarithmic}scale(){api} method. More information about scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
 
 ```
 // create logarithmic scale
@@ -140,7 +140,7 @@ Here is the demonstration of Logarithmic Y-Axis on a simple radar with area seri
 
 ### Stacked Mode
 
-Multiple area series can be presented with usage of stacked mode for Y scale. Stacked mode helps to visualize data in a convenient way for comparing different data series which share one of the values. Use {api:anychart.enums.ScaleStackMode}**.stackMode()**{api} parameter to enable stacked mode.
+Multiple area series can be presented with usage of stacked mode for Y scale. Stacked mode helps to visualize data in a convenient way for comparing different data series which share one of the values. Use {api:anychart.enums.ScaleStackMode}stackMode(){api} parameter to enable stacked mode.
 
 ```
 // set chart type
@@ -153,7 +153,7 @@ yScale.stackMode("value");
 
 {sample}BCT\_RadarChart\_07{sample}
 
-Percent stacked mode calculates the proportion of each point to the category sum and uses this percentage as a value. To enable this mode set {api:anychart.enums.ScaleStackMode#PERCENT}**.stackMode("percent")**{api}.
+Percent stacked mode calculates the proportion of each point to the category sum and uses this percentage as a value. To enable this mode set {api:anychart.enums.ScaleStackMode#PERCENT}stackMode("percent"){api}.
 
 {sample}BCT\_RadarChart\_08{sample}
 
@@ -199,7 +199,7 @@ You can change labels' background. Learn more about background configuration in 
 
 {sample}BCT\_RadarChart\_10{sample}
 
-You can hide the first and/or the last use of labels {api:anychart.core.axes.Linear#drawFirstLabel}**.drawFirstLabel()**{api} and {api:anychart.core.axes.Linear#drawLastLabel}**.drawLastLabel()**{api} parameters:
+You can hide the first and/or the last use of labels {api:anychart.core.axes.Linear#drawFirstLabel}drawFirstLabel(){api} and {api:anychart.core.axes.Linear#drawLastLabel}drawLastLabel(){api} parameters:
 
 ```
   // adjust y axis settings

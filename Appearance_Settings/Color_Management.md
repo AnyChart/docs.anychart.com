@@ -16,7 +16,7 @@ AnyChart html5 charting library allows you to set color of any element of the ch
 
 ## Color Formats
 
-As it is said above AnyChart supports the following color setting notation, which means you can use any of them when setting a value of {api:anychart.color}**color()**{api}, {api:anychart.graphics.vector.Fill}**fill()**{api}, and other attributes in any method:
+As it is said above AnyChart supports the following color setting notation, which means you can use any of them when setting a value of {api:anychart.color}color(){api}, {api:anychart.graphics.vector.Fill}fill(){api}, and other attributes in any method:
 
 * Hexadecimal (html-like)
 * Red Green Blue
@@ -30,7 +30,7 @@ Hexadecimal notation is widely used in HTML. A hex triplet is a six-digit, three
 When setting color using Hexadecimal notation you should use "#" before hex constant itself, for example, to set font color to blue you should specify:
 
 ```
-  .fontColor("#0000FF");
+.fontColor("#0000FF");
 ```
 
 ### RGB Macro
@@ -38,7 +38,7 @@ When setting color using Hexadecimal notation you should use "#" before hex cons
 This format, just as Hexadecimal, sets color using three components: red, green and blue, but uses decimal, not hexadecimal values, for example: RGB(255,255,0) stands for absolutely Yellow. The syntax: RGB(red,green,blue), where red, green and blue – decimal values, that vary from 0 to 255.
 
 ```
-  .fontColor("rgb(0,0,255)");
+.fontColor("rgb(0,0,255)");
 ```
 
 ### Web Colors
@@ -46,7 +46,7 @@ This format, just as Hexadecimal, sets color using three components: red, green 
 Also you can use Web Color constants. For example: "Red", "Gold", "RoyalBlue", etc. Table with full list of color constants, along with their hexadecimal, RGB and HSB you can find on [Web Color Constants Table](Colors_Table).
 
 ```
-  .fontColor("blue");
+.fontColor("blue");
 ```
 
 ## Color Transformation
@@ -76,10 +76,10 @@ To make design easier - AnyChart Provides several color transformation functions
 
 ### Light Color
 
-{api:anychart.color#lighten}**lighten()**{api} function is used to return for sure a color that is lighter than a given, for example, if input color is Black - we will get some non-black color, that can be used for highlighting element. Input color can be specified in any of the specified above.
+{api:anychart.color#lighten}lighten(){api} function is used to return for sure a color that is lighter than a given, for example, if input color is Black - we will get some non-black color, that can be used for highlighting element. Input color can be specified in any of the specified above.
 
 ```
-  anychart.color.lighten("#FF0000", 0.2)
+anychart.color.lighten("#FF0000", 0.2)
 ```
 
 <table width="700" class="dtTABLE">
@@ -101,10 +101,10 @@ To make design easier - AnyChart Provides several color transformation functions
 
 ### Dark Color
 
-{api:anychart.color#darken}**darken()**{api} function is used to return for sure a color that is darker than a given, for example, if input color is White - we will get some non-white color, that can be used for outlining an element. Input color can be specified in any of the specified above.
+{api:anychart.color#darken}darken(){api} function is used to return for sure a color that is darker than a given, for example, if input color is White - we will get some non-white color, that can be used for outlining an element. Input color can be specified in any of the specified above.
 
 ```
-  anychart.color.darken("#FF0000", 0.2)
+anychart.color.darken("#FF0000", 0.2)
 ```
 
 <table width="700" class="dtTABLE">
@@ -126,16 +126,16 @@ To make design easier - AnyChart Provides several color transformation functions
 
 ### Blend
 
-{api:anychart.color#blend}**blend()**{api} function allows you to mix two colors with a given ratio, it gives even wider control over getting the right tone.
+{api:anychart.color#blend}blend(){api} function allows you to mix two colors with a given ratio, it gives even wider control over getting the right tone.
 
 ```
-  var color1 = [255, 0, 0];
-  var color2 = [0, 0, 255];
+var color1 = [255, 0, 0];
+var color2 = [0, 0, 255];
 
-  function colorizer(){
-    var mixColor1 = anychart.color.blend(color1, color2, 0.2);
-    return "rgb(" + mixColor1.join(",") + ")";
-  }
+function colorizer(){
+  var mixColor1 = anychart.color.blend(color1, color2, 0.2);
+  return "rgb(" + mixColor1.join(",") + ")";
+}
 ```
 
 <table width="700" class="dtTABLE">

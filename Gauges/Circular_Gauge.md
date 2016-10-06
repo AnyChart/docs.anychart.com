@@ -59,7 +59,7 @@ That's how it looks like in a sample:
 
 There are two ways of how we can set the starting angles for our axes: tuning the axes only or the whole gauge. 
 
-Method {api:anychart.core.axes.Circular#startAngle}**.startAngle()**{api} will fix the angle you need the gauge or the axis to start from, and use {api:anychart.core.axes.Circular#sweepAngle}**.sweepAngle()**{api} to limit the angle which would be drawn.
+Method {api:anychart.core.axes.Circular#startAngle}startAngle(){api} will fix the angle you need the gauge or the axis to start from, and use {api:anychart.core.axes.Circular#sweepAngle}sweepAngle(){api} to limit the angle which would be drawn.
 
 Axes itself have no default starting angle - it takes the gauge setting as the default - and no default limitations except which are set for the whole gauge. But it's possible to make the axis settings different from those which the gauge has.
 
@@ -102,7 +102,7 @@ In general, gauge scale settings is the same as the standard scale. You can find
 
 Axis in gauges are not the same as in the other basic chart types. There's no X- and Y-axis, the only axis that a gauge displays and uses is a circular axis that is situated along the frame. Generally, axis in Gauges behaves like a series in other chart types. The Gauge can be multi-axes.
 
-Let's enable the axis to see the changes we make and set its width and radius at once. To make it we use the {api:anychart.core.axes.Circular#radius}**.radius()**{api} and the {api:anychart.core.axes.Circular#width}**.width()**{api} methods.
+Let's enable the axis to see the changes we make and set its width and radius at once. To make it we use the {api:anychart.core.axes.Circular#radius}radius(){api} and the {api:anychart.core.axes.Circular#width}width(){api} methods.
 
 ```
     //axis settings
@@ -113,7 +113,7 @@ Let's enable the axis to see the changes we make and set its width and radius at
 
 ###Minimum and Maximum
 
-Let's limit the axis with the values we want to be displayed. To set the limits, we used the {api:anychart.scales.ScatterBase#minimum}**.minimum()**{api} and the {api:anychart.scales.ScatterBase#maximum}**.maximum()**{api} methods. Let it be from 0 to 120 mph:
+Let's limit the axis with the values we want to be displayed. To set the limits, we used the {api:anychart.scales.ScatterBase#minimum}minimum(){api} and the {api:anychart.scales.ScatterBase#maximum}maximum(){api} methods. Let it be from 0 to 120 mph:
 
 ```
     //scale settings
@@ -144,7 +144,7 @@ At the moment our speedometer has only 4 ticks each 40 mph, that is not actually
         .enabled(true);
 ```
 
-To enable the ticks and set the interval we used the {api:anychart.core.axes.Circular#ticks}**.ticks()**{api} method and the {api:anychart.core.axes.Circular#minorTicks}**.minorTicks()**{api} for our minor ticks acordingly.
+To enable the ticks and set the interval we used the {api:anychart.core.axes.Circular#ticks}ticks(){api} method and the {api:anychart.core.axes.Circular#minorTicks}minorTicks(){api} for our minor ticks acordingly.
 
 {sample}GAUGE\_Circular\_04{sample}
 
@@ -208,7 +208,7 @@ There are 4 different types of pointers avaliable: needle, knob, bar and marker.
 ```
 {sample}GAUGE\_Circular\_06{sample}
 
-To bind the pointers to the axis and data we want them to show, we use {api:anychart.core.gauge.pointers.Bar#axisIndex}**.axisIndex()**{api} and {api:anychart.core.gauge.pointers.Bar#dataIndex}**.dataIndex()**{api} methods. The value transmitted to the method is the number of axis or data accordingly.
+To bind the pointers to the axis and data we want them to show, we use {api:anychart.core.gauge.pointers.Bar#axisIndex}axisIndex(){api} and {api:anychart.core.gauge.pointers.Bar#dataIndex}dataIndex(){api} methods. The value transmitted to the method is the number of axis or data accordingly.
 
 For more information look up the [Pointers and Data](../Gauges/Pointers_and_Data) tutorial.
 
@@ -241,11 +241,11 @@ Like with any other chart type, we can set the chart label and adjust it. Let ou
         .zIndex(10);
 ```
 
-Besides the label itself, we have to adjust its look. First of all, to put the label in the center of the gauge we use the {api:anychart.enums.Anchor}**.anchor()**{api} method. Then we have to change the size of the label, because it looks too small by default. For this we use the usual methods {api:anychart.core.ui.Label#width}**.width()**{api} and {api:anychart.core.ui.Label#height}**.height()**{api} to set the bounds of the label area and add the {api:anychart.core.ui.Label#adjustFontSize}**.adjustFontSize(){api}** method to make our label fit the defined parameters. 
+Besides the label itself, we have to adjust its look. First of all, to put the label in the center of the gauge we use the {api:anychart.enums.Anchor}anchor(){api} method. Then we have to change the size of the label, because it looks too small by default. For this we use the usual methods {api:anychart.core.ui.Label#width}width(){api} and {api:anychart.core.ui.Label#height}height(){api} to set the bounds of the label area and add the {api:anychart.core.ui.Label#adjustFontSize}adjustFontSize(){api} method to make our label fit the defined parameters. 
 
-Now let's put our label in the center of the area: use {api:anychart.graphics.vector.Text#hAlign}**.hAlign()**{api}. To shift the label a bit up we used the {api:anychart.core.ui.Label#offsetX}**.offsetX**{api} and {api:anychart.core.ui.Label#offsetY}**.offsetY**{api} methods.
+Now let's put our label in the center of the area: use {api:anychart.graphics.vector.Text#hAlign}hAlign(){api}. To shift the label a bit up we used the {api:anychart.core.ui.Label#offsetX}offsetX{api} and {api:anychart.core.ui.Label#offsetY}offsetY{api} methods.
 
-Then we should put the name of the car company beside the cap to make the look of our chart more real. For that we use the {api:}**.zIndex()**{api} parameter.  
+Then we should put the name of the car company beside the cap to make the look of our chart more real. For that we use the {api:}zIndex(){api} parameter.  
 
 {sample}GAUGE\_Circular\_08{sample}
 
@@ -267,7 +267,7 @@ AnyChart charting library uses default color palette to colorize data elements o
 
 ###Colorizing Elements
 
-As you see, our speedometer does not look attractive at the moment. Let's colorize its elements to make the look of the speedometer more realistic and learn at once, how to apply different colors to different data. To apply the color to the exact element we need to set {api:anychart.graphics.vector.Fill}**.fill()**{api}  and {api:anychart.graphics.vector.Stroke}**.stroke()**{api} parameters or {api:anychart.graphics.vector}**.fontColor()**{api} for the labels. Let's change the colors to the elements on our sample:
+As you see, our speedometer does not look attractive at the moment. Let's colorize its elements to make the look of the speedometer more realistic and learn at once, how to apply different colors to different data. To apply the color to the exact element we need to set {api:anychart.graphics.vector.Fill}fill(){api}  and {api:anychart.graphics.vector.Stroke}stroke(){api} parameters or {api:anychart.graphics.vector}fontColor(){api} for the labels. Let's change the colors to the elements on our sample:
 
 {sample}GAUGE\_Circular\_10{sample}
 

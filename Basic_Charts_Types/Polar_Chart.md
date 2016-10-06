@@ -23,7 +23,7 @@ Polar chart plot allows to draw scatter chart using the polar coordinate system,
 
 ## Chart
 
-AnyChart javascript charting library allows to display three types of series on a Polar chart: Line, Area and Marker. You should create a chart using {api:anychart.charts.Polar}**anychart.polar()**{api} method to display Polar chart:
+AnyChart javascript charting library allows to display three types of series on a Polar chart: Line, Area and Marker. You should create a chart using {api:anychart.charts.Polar}anychart.polar(){api} method to display Polar chart:
 
 ```
 // chart type
@@ -57,7 +57,7 @@ Polar chart has several distinctive configuration options which are presented in
 
 ### Start angle
 
-By default in Polar charts drawing starts from the top center point (0°), but you can change this using {api:anychart.charts.Polar#startAngle}**.startAngle()**{api} parameter:
+By default in Polar charts drawing starts from the top center point (0°), but you can change this using {api:anychart.charts.Polar#startAngle}startAngle(){api} parameter:
 
 ```
 chart.startAngle(90);
@@ -69,7 +69,7 @@ Below you can see our sample chart with starting angle shifted to 90°:
 
 ### Plot background
 
-You can change polar background using {api:anychart.core.ui.Background}**.background()**{api} method. Learn more about it in [Background settings tutorial](../Appearance_Settings/Background).
+You can change polar background using {api:anychart.core.ui.Background}background(){api} method. Learn more about it in [Background settings tutorial](../Appearance_Settings/Background).
 
 ```
 var background = chart.background();
@@ -93,7 +93,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 ### Stroke
 
-Axis stroke appearance is controlled by {api:anychart.core.grids.Polar#stroke}**.stroke()**{api} parameter.
+Axis stroke appearance is controlled by {api:anychart.core.grids.Polar#stroke}stroke(){api} parameter.
 
 ```
 // set chart type
@@ -113,7 +113,7 @@ Here is a sample of tuned X and Y axes. Y axis has a dashed stroke and X axis ha
 
 ### Inversion
 
-AnyChart allows to invert any axis. Inversion is controlled by axis {api:anychart.scales.Linear#inverted}**.inverted()**{api} parameter:
+AnyChart allows to invert any axis. Inversion is controlled by axis {api:anychart.scales.Linear#inverted}inverted(){api} parameter:
 
 ```
 var yScale = chart.yScale();
@@ -126,7 +126,7 @@ Take a look at the demonstration of Y Axis inversion on the sample below:
 
 ### Logarithmic Scale
 
-Logarithmic scale can be used in polar charts. You can set the scale type using {api:anychart.scales}**.scale()**{api} method. More information about scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
+Logarithmic scale can be used in polar charts. You can set the scale type using {api:anychart.scales}scale(){api} method. More information about scale types can be found in [Scale tutorial](../Axes_and_Grids/Scales#types)
 
 ```
 // create logarithmic scale
@@ -187,7 +187,7 @@ labelsBackground.corners(5);
 
 {sample}BCT\_PolarChart\_08{sample}
 
-You can hide first and/or last labels using {api:anychart.core.axes.Radial#drawFirstLabel}**.drawFirstLabel()**{api} and {api:anychart.core.axes.Radial#drawLastLabel}**.drawLastLabel()**{api} parameters:
+You can hide first and/or last labels using {api:anychart.core.axes.Radial#drawFirstLabel}drawFirstLabel(){api} and {api:anychart.core.axes.Radial#drawLastLabel}drawLastLabel(){api} parameters:
 
 ```
 var yAxis = chart.yAxis();

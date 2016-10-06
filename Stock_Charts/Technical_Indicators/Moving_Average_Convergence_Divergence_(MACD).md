@@ -15,7 +15,7 @@ Mathematical description of the indicator: [Moving Average Convergence/Divergenc
 
 ## Adding indicator
 
-MACD indicator is added using {api:anychart.core.stock.Plot#macd}.macd(){api} method, it requires a mapping with value field in it:
+MACD indicator is added using {api:anychart.core.stock.Plot#macd}macd(){api} method, it requires a mapping with value field in it:
 
 ```
 // create data table on loaded data
