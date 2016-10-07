@@ -27,7 +27,7 @@ Every chart has default title and this title can be enabled or disabled using {a
   title.enabled(true);
 ```
 
-{sample}AS\_Titles\_01{sample}
+{sample}CS\_Titles\_01{sample}
 
 ## Setting Text
 
@@ -42,7 +42,7 @@ Of course you can specify your own texts for a title using {api:anychart.core.ui
   title.text("Sales Performance");
 ```
 
-{sample}AS\_Titles\_02{sample}
+{sample}CS\_Titles\_02{sample}
 
 *Note:* there is even more simple way to set custom text for a title. Text can be set using **chart.title("Sales Performance")** method without additional parameters.
 
@@ -63,13 +63,13 @@ Title can be placed anywhere on the chart plot. Parameter {api:anychart.core.ui.
   title.align("left");
 ```
 
-{sample}AS\_Titles\_03{sample}
+{sample}CS\_Titles\_03{sample}
 
 ### Background 
 
 You can tune background of a title. Use {api:anychart.core.ui.Title#background}background(){api} method to configure visual appearance of a background. Full information on adjusting background can be found in [Background](../Appearance_Settings/Background) article.
 
-{sample}AS\_Titles\_04{sample}
+{sample}CS\_Titles\_04{sample}
 
 ### Text Settings
 
@@ -88,7 +88,7 @@ Text is the main part of a title. Visit {api:anychart.core.ui.Title}API{api} to 
   title.fontFamily("Tahoma");
 ```
 
-{sample}AS\_Titles\_05{sample}
+{sample}CS\_Titles\_05{sample}
 
 ## HTML in Title
 
@@ -113,4 +113,4 @@ You can use HTML formatted text of a title. Use {api:anychart.core.ui.Title#useH
 
 You can make your chart title interactive by adding event listeners of a different types. Sample below shows {api:anychart.enums.EventType}pointClick{api} event that triggers alert() function.
 
-{sample}AS\_Titles\_08{sample}
+{sample}CS\_Titles\_08{sample}

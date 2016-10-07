@@ -13,7 +13,7 @@
   stage = anychart.graphics.create("container");
   
   // Title settings
-  var title = anychart.ui.title();
+  var title = anychart.standalones.title();
   title.fontFamily("verdana, helvetica, arial, sans-serif").fontWeight("normal");
   title.text("<span style='color:#86cf38; font-size: 16px;'>System Availability</span> <span style='color: #666666; font-size: 10px; font-weight: normal;'>(last 30 days)</span>");
   title.orientation("top").align("left").vAlign("bottom").margin(10).padding(0).height(20).useHtml(true);
@@ -51,7 +51,7 @@
   // Table settings
   
   // create table
-  var table = anychart.ui.table();
+  var table = anychart.standalones.table();
   
   table.top(title.getRemainingBounds().getTop());
   
@@ -123,7 +123,7 @@
   }
   
   // create legend
-  var legend = anychart.ui.legend();
+  var legend = anychart.standalones.legend();
   legend.itemsFormatter(function(){
     var items = [
       {

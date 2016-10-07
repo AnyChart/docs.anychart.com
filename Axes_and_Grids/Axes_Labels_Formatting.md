@@ -34,8 +34,8 @@ Each axis in AnyChart JavaScript graphs has its own labels settings, these setti
 By default labels for all axes are enabled. You can enable or disable labels for the given axis using enabled method of {api:anychart.core.axes.Linear#labels}labels(){api} method:
 
 ```
-  var labels = chart.xAxis().labels();
-  labels.enabled(false);
+var labels = chart.xAxis().labels();
+labels.enabled(false);
 ```
 
 In the sample below a line chart with Y-Axis, X-Axis and Secondary Y-Axis is shown, with labels enabled for both Y Axes and disabled for X-Axis:
@@ -94,8 +94,8 @@ var yAxis1 = chart.yAxis(1);
 yAxis1.orientation("right");
 yAxis1.title("Revenue in Euros");
   
-  var yLabels1 = chart.yAxis(1).labels();
-  yLabels1.textFormatter(function(){
+var yLabels1 = chart.yAxis(1).labels();
+yLabels1.textFormatter(function(){
   var value = this.value;
   // scale of USD
   value = value*0.7094716;
@@ -142,12 +142,12 @@ In this section we will cover the basics that allow to tune labels appearance an
 Font settings of labels are configured as any text. You can specify size, face and color or set the text to HTML mode:
 
 ```
-  var labels = chart.xAxis().labels();
-  labels.fontFamily("Courier");
-  labels.fontSize(12);
-  labels.fontColor("#125393");
-  labels.fontWeight("bold");
-  labels.useHtml(false);
+var labels = chart.xAxis().labels();
+labels.fontFamily("Courier");
+labels.fontSize(12);
+labels.fontColor("#125393");
+labels.fontWeight("bold");
+labels.useHtml(false);
 ```
 
 You can look at font settings at work in the [sample below](#sample).
@@ -157,8 +157,8 @@ You can look at font settings at work in the [sample below](#sample).
 With AnyChart html5 charts it is possible to control labels' alignment. It is useful, for example, when you want to set multiple label values on one scale:
 
 ```
-  var labels = chart.yAxis().labels();
-  labels.hAlign("right");
+var labels = chart.yAxis().labels();
+labels.hAlign("right");
 ```
 
 ### Background
@@ -169,9 +169,9 @@ As stated in the beginning of this section - you can learn more about background
 Labels background is configured with (api:anychart.core.ui.Label#background)**.background()**{api} method of {api:anychart.core.axes.Linear#labels}labels(){api}. Here are sample settings - background is enabled for xAxis and only stroke method is adjusted:
 
 ```   
-  var labelsBackground = chart.xAxis().labels().background();
-  labelsBackground.enabled(true);
-  labelsBackground.stroke("#cecece");
+var labelsBackground = chart.xAxis().labels().background();
+labelsBackground.enabled(true);
+labelsBackground.stroke("#cecece");
 ```
 
 In this sample we will demonstrate labels background settings, multi-line labels and align and font settings:
@@ -235,9 +235,9 @@ and Last label (maximal value). You can force them to be shown or hide them usin
 Turning off the last the first label is shown on the [dashboard above](#dashboard) in "Labels Inside" Line chart.
 
 ```
-  var xAxis = chart.xAxis();
-  xAxis.drawFirstLabel(false);
-  xAxis.drawLastLabel(false);
+var xAxis = chart.xAxis();
+xAxis.drawFirstLabel(false);
+xAxis.drawLastLabel(false);
 ```
 
 <a name="y-axis_labels-fixed-width"/>
@@ -251,8 +251,8 @@ This function may be of great use when you use Dashboards and you want to sync s
 To set the width you should use {api:anychart.core.ui.Label#width}width(){api} attribute for {api:anychart.core.ui.Label}labels(){api}, which accepts positive integer values in pixels:
 
 ```
-  var labels = chart.yAxis().labels();
-  labels.width(50);
+var labels = chart.yAxis().labels();
+labels.width(50);
 ```
 
 Sample dashboard shows two charts with values in completely different ranges: upper charts shows up to hundreds of 
@@ -273,8 +273,8 @@ Sometimes you may encounter situation when point names (which are used as argume
 To set the fixed width you have to use {api:anychart.core.ui.Label#width}width(){api} attribute in {api:anychart.core.ui.Label}labels(){api} element:
 
 ```
-  var xLabels = chart.xAxis().labels();
-  xLabels.width(60);
+var xLabels = chart.xAxis().labels();
+xLabels.width(60);
 ```
 
 The following example demonstrates standard behavior of the X-Axis labels. As you can see long labels cause component to skip several labels in order to prevent overlapping:

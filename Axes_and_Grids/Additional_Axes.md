@@ -29,19 +29,18 @@ Consider using multiple axes when you need:
 If you want to declare an additional axis all you need to do is to set index to it, and set as many {api:anychart.charts.Cartesian#yAxis}yAxis(){api} or {api:anychart.charts.Cartesian#xAxis}xAxis(){api} methods as you want:
 
 ```
-  // First additional axis
-  var yAxis1 = chart.yAxis(1);
-  yAxis1.orientation("right");
-  yAxis1.title("First additional axis");
+// First additional axis
+var yAxis1 = chart.yAxis(1);
+yAxis1.orientation("right");
+yAxis1.title("First additional axis");
   
-  // Second additional axis
-  var yAxis2 = chart.yAxis(2);
-  yAxis2.orientation("right");
-  yAxis2.title("Second additional axis");
+// Second additional axis
+var yAxis2 = chart.yAxis(2);
+yAxis2.orientation("right");
+yAxis2.title("Second additional axis");
   
-  // Third additional axis
-  var yAxis3 = chart.yAxis(3);
-  yAxis3.orientation("right");
+// Third additional axis
+var yAxis3 = chart.yAxis(3);yAxis3.orientation("right");
   yAxis3.title("Third additional axis");
 ```
 

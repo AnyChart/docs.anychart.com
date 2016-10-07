@@ -11,9 +11,9 @@ Custom labels are text or image elements that can be placed anywhere on your cha
 
 ## Text Labels
 
-The sample below demonstrates a {api:anychart.ui.Label}label{api} placed in the right top corner, containing some information about the chart data.
+The sample below demonstrates a {api:anychart.standalones.Label}label{api} placed in the right top corner, containing some information about the chart data.
 
-{sample}AS\_Labels\_01{sample}
+{sample}CS\_Labels\_01{sample}
 
 ## Image Labels
 
@@ -52,7 +52,7 @@ image.zIndex(chart.zIndex() + 1);
 
 These settings will allow you to display chart the following way:
 
-{sample}AS\_Labels\_02{sample}
+{sample}CS\_Labels\_02{sample}
 
 ## Attaching Actions
 
@@ -60,7 +60,7 @@ You can attach actions to labels and turn them into controls that can change an 
 
 Sample below will demonstrate you calling external function on image labels click.
 
-Note: In the previous sample we've used {api:anychart.ui.Label}label(){api} without text but with an image as a background. For such cases you can use {api:anychart.graphics.vector.Stage#image}image(){api} method.
+Note: In the previous sample we've used {api:anychart.standalones.Label}label(){api} without text but with an image as a background. For such cases you can use {api:anychart.graphics.vector.Stage#image}image(){api} method.
 
 ```
 var image = stage.image();
@@ -95,4 +95,4 @@ myImage.listen(
 
 Here is a js chart with three custom images. Click on any of them invokes function of redrawing chart using same data but different chart type.
 
-{sample}AS\_Labels\_03{sample}
+{sample}CS\_Labels\_03{sample}
