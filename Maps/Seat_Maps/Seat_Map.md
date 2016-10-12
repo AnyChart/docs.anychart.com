@@ -43,7 +43,7 @@ To load the SVG file, use an .ajax request:
 ```
 $.ajax({
 type: "GET",
-url: "http://static.anychart.com/images/docs/house.svg",
+url: "http://static.anychart.com/images/docs/seat_map/house.svg",
 ```
 
 {sample}Maps\_Seat\_01{sample}
