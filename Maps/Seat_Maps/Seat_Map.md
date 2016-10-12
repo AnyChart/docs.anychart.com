@@ -20,42 +20,25 @@ With AnyMap you can create any kind of seat maps, schemes, and interactive layou
 
 A seat map is a diagram of a seat layout inside a passenger aircraft, theater, stadium, arena, or any other building or space. Such layouts are published for informational purposes: for example, aircraft seat maps allow passengers to select a seat when booking a ticket or checking in for a flight. Other seat maps are mostly used in the similar way.
 
----> as well as they are used by passengers - ПОЧЕМУ as well? Я СЧИТАЮ, ЭТО ЧАСТЬ "informational purposes". ПОПРАВИЛА.
----> "the same way" is a colloquial form of "in the same way" - ХОЗЯЙКЕ НА ЗАМЕТКУ!
----> НЕМНОГО ПЕРЕПИСАЛА АБЗАЦ НА СВОЙ ВКУС, ДОБАВИЛА СВЯЗНОСТИ. ПЕРВОЕ ПРЕДЛОЖЕНИЕ (РАНЬШЕ ОНО БЫЛО ПОСЛЕДНИМ) ОСОБЕННО СЛОЖНО СВЯЗАТЬ С ОСТАЛЬНЫМИ. НО ВРОДЕ ТАКОЙ ВАРИАНТ БОЛЕЕ ИЛИ МЕНЕЕ НОРМ.
-
 ## Preparing an SVG Image
 
 To create a seat map with AnyMap, you need an SVG image formatted in a specific way. Read the [Custom SVG Maps](Custom_SVG_Maps) article to learn how an existing SVG image can be loaded, and how it should be formatted.
 
 If you need to create your own SVG picture in a graphic editor, study the [Preparing SVG Image](Preparing_SVG_Image) article.
 
-
 ## SVG Data
-
----> ХОЧЕТСЯ ГЛАГОЛ. Uploading SVG Data? Uploading an SVG Image?
-     МОЖНО ЕЩЕ ПРЕДЫДУЩИЙ ПОМЕНЯТЬ НА: Preparing SVG Data.
 
 There are three ways to upload an SVG image into a seat map: you can use the AJAX technology, add an SVG as a string variable, or add it through the HTML DOM.
 
----> ПЕРЕЧИТАЙ ЭТО ПРЕДЛОЖЕНИЕ - НЕ ПОТЕРЯЛСЯ СМЫСЛ В РЕЗУЛЬТАТЕ ПРАВОК?
-
 ### AJAX
 
----> Using AJAX ? ЕСЛИ ПЕРЕДЕЛАТЬ ОБЩЕЕ ЗАГЛАВИЕ (СМ. ВЫШЕ) И ЧУТЬ РАСШИРИТЬ ЗАГОЛОВКИ, ОГЛАВЛЕНИЕ БУДЕТ БОЛЕЕ ЧИТАЕМЫМ
-
 In this article, AJAX is used in JavaScript with the help of the jQuery library, thought there are a lot of other ways. To include jQuery, add the script tag:
-
----> НЕМНОГО ВСЕ ПЕРЕСТРОИЛА, ТОЖЕ ПРОЧИТАЙ
----> МОЖЕТ, СЛОВО script КАК-ТО ВЫДЕЛИТЬ НАДО?
 
 ```
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 ```
 
-To load the SVG file, use .ajax request:
-
-КАКОЙ АРТИКЛЬ НУЖЕН ПЕРЕД .ajax request? ЭТО КАКОЙ-ТО УНИКАЛЬНЫЙ ЗАПРОС (THE) ИЛИ ОНИ РАЗНЫЕ БЫВАЮТ?
+To load the SVG file, use an .ajax request:
 
 ```
 $.ajax({
@@ -64,7 +47,6 @@ url: "http://static.anychart.com/images/docs/house.svg",
 ```
 
 {sample}Maps\_Seat\_01{sample}
-
 
 ### As a String
 
@@ -83,11 +65,7 @@ svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
 
 ### HTML DOM Image
 
----> As a HTML DOM Image ? Using (the) HTML DOM ?
-
 Finally, there is an option to embed your image in the HTML DOM and then obtain it from the DOM when page is loaded. **Note** that this option works only when the SVG file is located in the same domain as the map file because of the [Same Origin Policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy). 
-
----> В ДРУГОМ МЕСТЕ ДО ЭТОГО БЫЛО НАПИСАНО "the HTML DOM", Я И ТУТ ДЛЯ ЕДИНООБРАЗИЯ АРТИКЛЬ ПОСТАВИЛА, НО НЕ ЗНАЮ, КАК ПРАВИЛЬНО, ТК. НЕ ЗНАЮ, ЧТО ЭТО ТАКОЕ.
 
 Put an `<object>` with the link to the SVG file into the `<body>` section of the Map file. 
 
@@ -107,13 +85,9 @@ anychart.onDocumentLoad(function() {
 ```
 Take a look at the <a href="http://www.anychart.com/demos/seatmap/html-dom-embed.html">AnyChart Seat Map sample</a> with an SVG file loaded from the HTML DOM.
 
----> И ТУТ ДОБАВИЛА the (HTML DOM).
-
 ## Mapping Data
 
 When the SVG image is loaded as a source, you need to add data for the seat map. The IDs of data points should correspond the IDs of groups in the SVG file.
-
----> you need to add data: МОЖЕТ, ТУТ ЛУЧШЕ map?
 
 ```
 // create a new series
@@ -132,7 +106,6 @@ seatMapSeries.data([
 
 If you open the original SVG image, you can easily notice that the colors in the sample above are different from those defined in the image itself. The next section explains how to work with colors in seat maps.
 
-
 ## Coloring
 
 The easiest way to change the colors of the seat map elements is to use the data set. Just add the necessary fields to the objects (points):
@@ -150,7 +123,6 @@ chart = anychart.seatMap([
 {sample}Maps\_Seat\_03{sample}
 
 Colors can be also defined through the SVG code and in several other ways. See the [Advanced Coloring](Advanced_Coloring) article to learn more.
-
 
 ## Unbound Regions
 
@@ -174,12 +146,9 @@ chart.unboundRegions("hide");
 
 {sample}Maps\_Seat\_05{sample}
 
-
 ### Labels and Tooltips
 
 To configure labels and tooltips, use the {api:anychart.charts.Map#label}label(){api} and {api:anychart.charts.Map#tooltip}tooltip(){api} methods. Working with labels and tooltips in Seat Maps is absolutely identical to working with labels and tooltips in Maps, so you can learn more from the [Map Tooltips](Maps/Tooltips) and [Map Labels](Maps/Labels) articles.
-
----> ПЕРЕСТРОИЛА АБЗАЦ, ПЕРЕЧИТАЙ
 
 ```
 // data set
@@ -201,11 +170,6 @@ labels.textFormatter("{%id} \n{%info} \n{%sq}");
 
 To change the information shown in tooltips, use the {api:anychart.charts.Map#tooltip}tooltip(){api} method. Text in the tooltip title and text in the tooltip body are formatted using the {api:anychart.core.ui.ChartTooltip#titleFormatter}titleFormatter(){api} and {api:anychart.core.ui.ChartTooltip#textFormatter}textFormatter(){api} methods. Find more information about tooltips in our [Tooltips](../../Common_Settings/Tooltip) and [Map Tooltips](../Tooltips) articles.
 
----> Text in the tooltip title and text of the body of a tooltip are formatted...
-     МОЖЕТ, ТАК? The title and body are formatted...
-
----> is formatted using... А МОЖЕТ ЗДЕСЬ via? Повтора не будет.
-
 ```
 // set the tooltips
 tooltips = series.tooltip();
@@ -220,7 +184,6 @@ tooltips.separator("white");
 ```
 
 {sample}Maps\_Seat\_07{sample}
-
 
 ## Gallery Samples
 
