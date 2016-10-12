@@ -144,7 +144,7 @@ The {api:anychart.core.map.series.Choropleth#overlapMode}overlapMode(){api} meth
 ```
 // set the overlapping mode for the map
 map.overlapMode(false);
-// enable overlapping for series
+// enable overlapping for the series
 series_obama.overlapMode("allowOverlap");
 ```
 
@@ -185,7 +185,7 @@ To set the custom position of the labels inside the regions, set "middle-x" and 
 Another property is responsible for positioning around the "middle-x" and "middle-y" coordinates: set "middleXYmode" as relative or absolute. When the "middleXYmode" property is "relative", the default middle-x and middle-y values will be considered as 0.5, so keep it in mind while setting the "middle-x" and "middle-y" properties.
 
 ```
-// data sets for the series
+// data sets for series
 var dataSet_1 = anychart.data.set([
     {'id': 'AU.JB', 'value': 1.5, "labelrank": 0, "middle-x": 0.5, "middle-y": 0.3, "middleXYMode": "relative"},
     {'id': 'AU.NT', 'value': 2, "middle-y": 0.5, "middleXYMode": "relative"},
@@ -304,7 +304,7 @@ In AnyMaps, it is possible not to connect labels to their regions and display th
 The code sample below demonstrates creating of two callouts, to the left and to the right of the maps:
 
 ```
-// create the callouts
+// create callouts
 calloutLeft = map.callout(0);
 calloutRight = map.callout(1);
 ```
@@ -312,7 +312,7 @@ calloutRight = map.callout(1);
 After creating the elements it is necessary to fill in the arrays with regions' IDs that will be demonstrated in those callout elements through the {api:anychart.core.ui.Callout#items}items(){api} method.
 
 ```
-// fill in the arrays
+// set regions
 calloutBottom.items(["AU.CT"]);
 calloutRight.items(["AU.JB"]);
 ```
@@ -320,11 +320,11 @@ calloutRight.items(["AU.JB"]);
 The {api:anychart.core.ui.Callout#align}align(){api} method helps to set the position of the label text inside of the callout. The position of the whole callout is being set through the {api:anychart.core.ui.Callout#orientation}orientation(){api} method:
 
 ```
-// set the callout positions
+// set callout positions
 calloutBottom.orientation("bottom");
 calloutRight.orientation("right");
   
-// set the label text position
+// set label text position
 calloutBottom.align("center");
 calloutRight.align("center");  
 ```
@@ -332,7 +332,7 @@ calloutRight.align("center");
 To change the size of callout labels, use {api:anychart.core.ui.Callout#width}width(){api} method. By default, callout labels have a form of a square, so it is necessary to set only one measure. Though, if it is necessary to make the labels rectangular instead of a square, set the length to the whole callout element through the {api:anychart.core.ui.Callout#length}length(){api} element.
 
 ```  
-// set the width and length
+// set width and length
 calloutBottom.width(50);
 calloutBottom.length(300);
 calloutRight.width(70);

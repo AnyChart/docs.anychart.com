@@ -11,7 +11,7 @@
   <script x-export="map">anychart.onDocumentReady(function() {
 
   map = anychart.map();
-  // data set for the choropeth series
+  // data set for the choropleth series
 var dataSet_obama = anychart.data.set([
     {id: 'US.WA', name: "Washington", value: 12},
     {id: 'US.CA', name: "California", value: 55, "labelrank": 5},
@@ -85,10 +85,10 @@ var dataSet_romney = anychart.data.set([
 
   // set the overlapping mode for the map
   map.overlapMode(false);
-  // enable overlapping for series
+  // enable overlapping for the series
   series_obama.overlapMode("allowOverlap");
 
-  // set the tooltips
+  // set tooltips
   series_obama.tooltip().textFormatter("Most voted for Obama");
   series_romney.tooltip().textFormatter("Most voted for Romney");
 

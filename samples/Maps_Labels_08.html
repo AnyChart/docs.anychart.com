@@ -11,7 +11,7 @@
 <script x-export="map">anychart.onDocumentReady(function() {
 
 map = anychart.map();
-// data set for the choropeth series
+// data set for the choropleth series
 var dataSet_1 = anychart.data.set([
   {'id': 'AU.JB', 'value': 1.5},
   {'id': 'AU.NT', 'value': 2},
@@ -31,7 +31,7 @@ map.geoData(getData());
 
 // set the title and its preferences
 map.title().useHtml(true).hAlign('center');
-map.title('<span style="font-size: 14px;">Sex ratio</span><br><span style="font-size:12px;">Set custom position for inside labels through the data set</span>');
+map.title('<span style="font-size: 14px;">Labels Settings</span><br><span style="font-size:12px;">Set custom position for inside labels through the data set</span>');
 
 // set the series
 var series_1 = map.choropleth(dataSet_1);
@@ -44,7 +44,7 @@ series_2.labels(true);
 // set the overlapping mode for the map
 map.overlapMode(false);
 
-// set the tooltips
+// set tooltips
 series_1.tooltip().textFormatter("More women");
 series_2.tooltip().textFormatter("More men");
 

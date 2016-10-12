@@ -32,7 +32,7 @@
 
   // set the title and its preferences
   map.title().useHtml(true).hAlign('center');
-  map.title('<span style="font-size:14px;">Sex ratio</span><br><span style="font-size:12px;">Adjust label settings</span>');
+  map.title('<span style="font-size:14px;">Callout</span><br><span style="font-size:12px;">Adjust label settings</span>');
 
   // set the series
   var series_1 = map.choropleth(dataSet_1);
@@ -45,23 +45,23 @@
   // set the overlapping mode for the map
   map.overlapMode("noOverlap");
 
-  // set the tooltips
+  // set tooltips
   series_1.tooltip().textFormatter("More women");
   series_2.tooltip().textFormatter("More men");
 
-  // create the callout
+  // create callouts
   calloutRight = map.callout(0);
   calloutBottom = map.callout(1);
 
-  // set the connector stroke color
+  // set connectors stroke color
   calloutRight.labels().connectorStroke('navy');
   calloutBottom.labels().connectorStroke('navy');
 
-  // fill in the arrays
+  // set regions
   calloutBottom.items(["AU.CT"]);
   calloutRight.items(["AU.JB"]);
   
-  // set the callouts positions
+  // set callouts positions
   calloutBottom.orientation("bottom");
   calloutRight.orientation("right");
   
@@ -69,7 +69,7 @@
   calloutBottom.align("center");
   calloutRight.align("center");  
   
-  // set the width and length
+  // set width and length
   calloutBottom.width(50);
   calloutBottom.length(300);
   calloutRight.width(70);

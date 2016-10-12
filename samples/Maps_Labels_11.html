@@ -11,7 +11,7 @@
   <script x-export="map">anychart.onDocumentReady(function() {
 
   map = anychart.map();
-  // data set for the choropeth series
+  // data set for the choropleth series
   var dataSet_1 = anychart.data.set([
     {'id': 'AU.JB', 'value': 1.5, label: {x: 153, y: -33, positionMode: "absolute"}, connectorStroke: "red"},
     {'id': 'AU.NT', 'value': 2},
@@ -31,9 +31,9 @@
 
   // set the title and its preferences
   map.title().useHtml(true).hAlign('center');
-  map.title('<span style="font-size: 14px;">Sex ratio</span><br><span style="font-size:12px;">Set the connector stroke colors</span>');
+  map.title('<span style="font-size: 14px;">Labels Settings</span><br><span style="font-size:12px;">Set the connector stroke colors</span>');
 
-  // set the series
+  // set series
   var series_1 = map.choropleth(dataSet_1);
   var series_2 = map.choropleth(dataSet_2);
 
@@ -41,7 +41,7 @@
   series_1.labels(true);
   series_2.labels(true);
 
-  // set the tooltips
+  // set tooltips
   series_1.tooltip().textFormatter("More women");
   series_2.tooltip().textFormatter("More men");
 
@@ -50,7 +50,7 @@
 
   // set the overlapping mode for the map
   map.overlapMode(false);
-  // enable overlapping for series
+  // enable overlapping for the series
   series_1.overlapMode("allowOverlap");
 
   // set the container

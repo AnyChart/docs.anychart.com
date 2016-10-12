@@ -11,7 +11,7 @@
   <script x-export="map">anychart.onDocumentReady(function() {
 
  map = anychart.map();
-  // data set for the choropeth series
+  // data set for the choropleth series
   var dataSet_1 = anychart.data.set([
     {'id': 'AU.JB', 'value': 1.5},
     {'id': 'AU.NT', 'value': 2},
@@ -31,7 +31,7 @@
 
   // set the title and its preferences
   map.title().useHtml(true).hAlign('center');
-  map.title('<span style="font-size: 14px;">Sex ratio</span><br><span style="font-size:12px;">Set and format the callout labels</span>');
+  map.title('<span style="font-size: 14px;">Callout</span><br><span style="font-size:12px;">Set and format the callout labels</span>');
 
   // set the series
   var series_1 = map.choropleth(dataSet_1);
@@ -56,11 +56,11 @@
   calloutRight.labels().connectorStroke('navy');
   calloutBottom.labels().connectorStroke('navy');
 
-  // fill in the arrays
+  // set regions
   calloutBottom.items(["AU.CT"]);
   calloutRight.items(["AU.JB"]);
   
-  // set the callouts positions
+  // set position
   calloutBottom.orientation("bottom");
   calloutRight.orientation("right");
   
@@ -68,7 +68,7 @@
   calloutBottom.align("center");
   calloutRight.align("center");  
   
-  // set the width and length
+  // set width and length
   calloutBottom.width(50);
   calloutBottom.length(300);
   calloutRight.width(70);
