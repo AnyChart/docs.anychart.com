@@ -4,11 +4,7 @@ Switching the Series Type
 
 Our stock charts provide a method allowing to change the series type if the current type and the new one have the same or similar fields. See the [list of supported series](Supported_Series#list_of_supported_series) to find out what series types can be converted to each other.
 
-To switch the series type, use the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method of the series and set the name of the series type as a string parameter. The name of a series type used as a parameter is identical to the method used for creating series of this type.
-
-(? ВАРИАНТ - ПЕРВОЕ ВЫКИНУТЬ, А ВТОРОЕ ЗАКОНЧИТЬ ТАК: ...set the name of the series type as a string parameter (the name is identical to the method used for creating series of this type).)
-
-(? method of a series - правильно артикль стоит? имеется же в виду не сферическая серия в вакууме, а та серия, с которой работает юзер? или нет? может выкинуть "a series"?)
+To switch the series type, use the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method of the series and set the name of the series type as a string parameter. The name of the series type used as a parameter is identical to the method used for creating series of this type.
 
 The sample below demonstrates how the feature works with line, column, and area series, which require only one value:
 
