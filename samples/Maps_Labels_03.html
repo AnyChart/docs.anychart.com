@@ -1,0 +1,55 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyMap"/>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
+  <script x-export="map">anychart.onDocumentReady(function() {
+
+  map = anychart.map();
+  var dataSet = anychart.data.set([
+    {'id': 'AU.WA'}, 
+    {'id': 'AU.JB'}, 
+    {'id': 'AU.NS'}, 
+    {'id': 'AU.VI'}, 
+    {'id': 'AU.NT'}, 
+    {'id': 'AU.TS'}, 
+    {'id': 'AU.CT'},
+    {'id': 'AU.SA'}, 
+    {'id': 'AU.QL'}  
+  ]);
+
+  map.geoData(anychart.maps.australia);
+
+  // set the title and its preferences
+  map.title('Getting data from GeoJSON');
+
+  // set the series
+  var series = map.choropleth(dataSet);
+  // enable labels
+  labels = series.labels();
+  labels.enabled(true);
+
+  // format labels text
+  labels.textFormatter(function () {
+    // Gets point source region properties.
+    var properties = this.regionProperties;
+    return properties["postal"] + " (" + properties["type"] + ")";
+  });
+
+  // set the container
+  map.container('container');
+  map.draw();
+  });
+
+</script>
+
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

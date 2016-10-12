@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta name="x-cat-tags" content="anyMap"/>
+<meta charset="UTF-8"/>
+<meta name="tags" content="[]"/>
+<meta name="index" content="1000"/>
+<meta name="is-new" content="false"/>
+<script src="../anychart-bundle.min.js"></script>
+<link rel="stylesheet" href="http://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+<script src="http://static.anychart.com/data/maps/docs/australia_with_settings.js" data-export="true"></script>
+<script x-export="map">anychart.onDocumentReady(function() {
+
+map = anychart.map();
+// data set for the choropleth series
+var dataSet_1 = anychart.data.set([
+  {'id': 'AU.JB', 'value': 1.5},
+  {'id': 'AU.NT', 'value': 2},
+  {'id': 'AU.WA', 'value': 3.2},
+  {'id': 'AU.NS', 'value': 2.7}
+]);
+
+var dataSet_2 = anychart.data.set([
+  {'id': 'AU.CT', 'value': 1.12},
+  {'id': 'AU.SA', 'value': 2.9},
+  {'id': 'AU.VI', 'value': 3.86},
+  {'id': 'AU.QL', 'value': 1.1},
+  {'id': 'AU.TS', 'value': 1.6}
+]);
+
+map.geoData(getData());
+
+// set the title and its preferences
+map.title().useHtml(true).hAlign('center');
+map.title('<span style="font-size: 14px;">Labels Settings</span><br><span style="font-size:12px;">Set custom position for inside labels through the data set</span>');
+
+// set the series
+var series_1 = map.choropleth(dataSet_1);
+var series_2 = map.choropleth(dataSet_2);
+
+// enable labels
+series_1.labels(true);
+series_2.labels(true);
+
+// set the overlapping mode for the map
+map.overlapMode(false);
+
+// set tooltips
+series_1.tooltip().textFormatter("More women");
+series_2.tooltip().textFormatter("More men");
+
+// set the container
+map.container('container');
+map.draw();
+});
+
+</script>
+
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
