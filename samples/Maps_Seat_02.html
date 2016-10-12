@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="2"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js" data-export="true"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css">
+
+    <script x-export="chart">
+anychart.onDocumentReady(function () {
+    svgString = "<svg xmlns='http://www.w3.org/2000/svg'>" +
+    "<g>" +
+    "<circle id='Seat 1' cx='50' cy='50' r='20'></circle>" +
+    "<circle id='Seat 2' cx='100' cy='50' r='20'></circle>" +
+    "<circle id='Seat 3' cx='150' cy='50' r='20'></circle>" +
+    "</g></svg>";
+    
+    chart = anychart.seatMap();
+    
+    // Set data as an SVG string.
+    chart.geoData(svgString);
+    // set the title      
+    chart.title("Load SVG from a string");
+    
+    seatmap = chart.choropleth([
+        {id: "Seat 1", value: "$10"},
+        {id: "Seat 2", value: "$10"}
+    ]);
+    
+    chart.title("Set Seat Map Source as an SVG string.");
+    seatmap.tooltip().title("Description");
+    
+    chart.container("container");
+    chart.draw();
+});
+    
+</script>
+</head>
+<body>
+<div id="container"></div>
+</body>
+</html>

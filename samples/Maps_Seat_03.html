@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="2"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js" data-export="true"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css">
+
+    <script x-export="chart">
+
+anychart.onDocumentReady(function () {
+$.ajax({
+    type: "GET",
+    url: "http://static.anychart.com/images/docs/seat_map/house.svg",
+    success: function (svgData) {
+            createSeatMap(svgData);
+        }
+    });
+});
+
+function createSeatMap(svg){
+    // create a new seat map
+    chart = anychart.seatMap();
+    // load SVG data
+    chart.geoData(svg);
+    // set the title  
+    chart.title("Adjust colors through the data set");    
+    // create new series
+    seatMapSeries = chart.choropleth();
+    // load data
+    seatMapSeries.data([
+        {id: "Hall", value: "720"},
+        {id: "Room2", value: "165"},
+        {id: "WC", value: "49", fill: "gold 0.5", hoverFill: "green 0.1", hoverStroke: "3 green"},
+        {id: "Room1", value: "143", hoverFill: "blue 0.1", hoverStroke: "3 navy"},
+        {id: "Kitchen", value: "208"}
+    ]);
+    // set container id for the chart
+    chart.container("container");
+    // initiate chart drawing
+    chart.draw();  
+};
+</script>
+</head>
+<body>
+<div id="container"></div>
+</body>
+</html>

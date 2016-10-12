@@ -101,7 +101,7 @@ or in `<desc>` node as a content of `<id>` node:
 
 **NOTE:** if some parent element has an `id` and its child element has it too: parent element will be considered by AnyMap.
 
-If you want to assign any other text data to an element, like you do in GeoJSON or SHP you can de that in `<desc>` as well - all this data can be accessed by AnyMap when it comes to formatting tooltips and labels:
+If you want to assign any other text data to an element, like you do in GeoJSON or SHP you can do that in `<desc>` as well - all this data can be accessed by AnyMap when it comes to formatting tooltips and labels:
 
 ```
 <rect x="161.141" y="144.445" width="164" height="64">
