@@ -193,7 +193,6 @@ There is a sample chart with an internal theme. Click "Launch in playground" to 
 
 {sample}AS\_Themes\_01{sample}
 
-
 ## External Themes
 
 Next, you can create a file with several themes or several files with themes and use them to store settings. In this case you need to reference this file in the page where your chart is using the **script** tag.
@@ -274,7 +273,7 @@ Explore the chart in the playground to understand how it works. It is possible t
 
 ## Append Theme
 
-In some situations, it might be necessary to add some settings to all charts simultaneously over an existing theme. In this case AnyChart provides an {api:anychart#appendTheme}appendtheme(){api} method allowing to add a theme over another one. Settings defined through this method have higher priority than those set through the {api:anychart#theme}theme(){api} method. The next sample demonstrates it. 
+In some situations, it might be necessary to add some settings to all charts simultaneously over an existing theme. In this case AnyChart provides an {api:anychart#appendTheme}appendtheme(){api} method allowing to add a theme over another one. Settings defined through this method have higher priority than those set through the {api:anychart#theme}theme(){api} method. The next sample demonstrates this. 
 
 ```
 // append a theme 
