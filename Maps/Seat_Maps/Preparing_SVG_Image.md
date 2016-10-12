@@ -35,7 +35,7 @@ Note: to draw a straight line or curve at an angle, multiple of 45°, hold the S
 
 After the walls are drawn, it is time to draw the doors. In this plan they are marked as two short lines on a wall.
 
-<a href="http://static.anychart.com/images/docs/seat\_map/05\_preplan\_with\_doors.png"><img src="http://static.anychart.com/images/docs/seat\_map/05\_preplan\_with\_doors.png" alt="Plan Draft with Doors" title="Plan Draft with Doors" border="0" width=600 align="center"></a>
+<a href="http://static.anychart.com/images/docs/seat\_map/05\_preplan\_with\_doors.png" target="_blank"><img src="http://static.anychart.com/images/docs/seat\_map/05\_preplan\_with\_doors.png" alt="Plan Draft with Doors" title="Plan Draft with Doors" border="0" width=600 align="center"></a>
 
 Now, let's get rid of the extra elements like paths and parts of figures that are not necessary anymore.
 
@@ -85,21 +85,21 @@ In the previous picture you can see a new window with Layers. To enable it, clic
 
 After all room in your picture have become groups, the window with Layers will show the groups and their components.
 
-<a href="http://static.anychart.com/images/docs/seat\_map/12\_layers.png"><img src="http://static.anychart.com/images/docs/seat\_map/12\_layers.png" alt="Layers" title="Layers" border="0" width=600 align="center"></a>
+<a href="http://static.anychart.com/images/docs/seat\_map/12\_layers.png" target="_blank"><img src="http://static.anychart.com/images/docs/seat\_map/12\_layers.png" alt="Layers" title="Layers" border="0" width=600 align="center"></a>
 
 Note that there are blue indicators in front of objects' names (the picture below). They show the chosen (highlighted) element. Note that there is a group with no name and several paths inside. This group represents the sofa. To give it a name click twice on the `<Group>` and enter the preferred name. Let it be "sofa".
 
-<a href="http://static.anychart.com/images/docs/seat\_map/13\_layers\_sofa.png"><img src="http://static.anychart.com/images/docs/seat\_map/13\_layers\_sofa.png" alt="Layers - sofa" title="Layers - sofa" border="0" width=600 align="center"></a> 
+<a href="http://static.anychart.com/images/docs/seat\_map/13\_layers\_sofa.png" target="_blank"><img src="http://static.anychart.com/images/docs/seat\_map/13\_layers\_sofa.png" alt="Layers - sofa" title="Layers - sofa" border="0" width=600 align="center"></a> 
 
 Now, do the same with the rooms.
 
-<a href="http://static.anychart.com/images/docs/seat\_map/14\_layers\_rooms.png"><img src="http://static.anychart.com/images/docs/seat\_map/14\_layers\_rooms.png" alt="Layers - rooms" title="Layers - rooms" border="0" width=600 align="center"></a> 
+<a href="http://static.anychart.com/images/docs/seat\_map/14\_layers\_rooms.png" target="_blank"><img src="http://static.anychart.com/images/docs/seat\_map/14\_layers\_rooms.png" alt="Layers - rooms" title="Layers - rooms" border="0" width=600 align="center"></a> 
 
 It is a good idea to group lines, curves and shapes that form doors and furniture and put them inside of the groups of those rooms they belong to. The "Layers" window shows the content of the groups. 
 
 Save the picture in .SVG format. 
 
-<a href="http://static.anychart.com/images/docs/seat\_map/15\_svg\_image.png"><img src="http://static.anychart.com/images/docs/seat\_map/15\_svg\_image.png" alt="Save as svg image" title="Save as svg image" border="0" width=600 align="center"></a>
+<a href="http://static.anychart.com/images/docs/seat\_map/15\_svg\_image.png" target="_blank"><img src="http://static.anychart.com/images/docs/seat\_map/15\_svg\_image.png" alt="Save as svg image" title="Save as svg image" border="0" width=600 align="center"></a>
 
 Another way to set the names for groups is to do it through the SVG code of the file.
 
