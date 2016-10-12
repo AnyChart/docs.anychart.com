@@ -27,7 +27,6 @@
     {'id': 'AU.TS', 'value': 1.6}
   ]);
 
-
   map.geoData("anychart.maps.australia");
 
   // set the title and its preferences
@@ -42,20 +41,12 @@
   series_1.labels(true);
   series_2.labels(true);
 
-  // set the labels
-  labels_1 = series_1.labels();
-  labels_2 = series_1.labels();
-
   // set the overlapping mode for the map
   map.overlapMode(false);
 
   // set the tooltips
-  series_1.tooltip().textFormatter(function(){
-    return "More women"
-  });
-  series_2.tooltip().textFormatter(function(){
-    return "More men"
-  });
+  series_1.tooltip().textFormatter("More women");
+  series_2.tooltip().textFormatter("More men");
 
   // create the callout
   calloutRight = map.callout(0);

@@ -83,17 +83,14 @@ var dataSet_romney = anychart.data.set([
   series_obama.labels(true);
   series_romney.labels(true);
 
-  // set the labels
-  labels_obama = series_obama.labels();
-  labels_romney = series_romney.labels();
   // set the overlapping mode for the map
   map.overlapMode(false);
   // enable overlapping for series
-  series_obama.overlapMode("allowOverlap");
+  series_obama.labels().overlapMode("allowOverlap");
 
   // the following lines mean the same as the lines above
   // map.overlapMode(anychart.enums.LabelsOverlapMode.NO_OVERLAP);
-  // series_obama.overlapMode(true);
+  // series_obama.labels().overlapMode(true);
 
   // set the container
   map.container('container');

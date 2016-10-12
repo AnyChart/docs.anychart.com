@@ -72,7 +72,6 @@ image.zIndex(map.zIndex()+1);
 
 In the sample above there are many settings for custom graphic elements and a listener used, which monitors resizing of a stage and recalculates the coordinates of the image. Visit the [Common Labels](../Common_Settings/Labels) and [Text Settings](../Appearance_Settings/Text_Settings) articles to know more about those appearance settings. The [Event Listener](../Common_Settings/Event_Listeners) article will help you to understand the listeners.
 
-
 ## Source Data Access
 
 Labels can get information to show not only from data sets, it is possible to obtain any property defined in the GeoJSON map source file. Look at the next sample and explore it in the playground to understand how it works.
@@ -117,14 +116,13 @@ labels.textFormatter(function () {
 
 You can find the map of Australia in GeoJSON map on [AnyChart CDN](http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.json).
 
-
 ## Overlap
 
 Some maps contain tiny regions, so it is just necessary to have an opportunity to control labels overlap. In these cases it is just necessary to have an opportunity to disable and enable some of them.
 
 ### Map
 
-In AnyMap, the {api:anychart.charts.Map#overlapMode}overlapMode(){api} method stands for hiding and showing this kind of labels. It supports two types of arguments: boolean and string. If use booleans, "true" allows labels to overlap each other, "false" disables those which overlap. If use enums, "anychart.enums.LabelsOverlapMode.NO_OVERLAP" will disable overlapping labels and "anychart.enums.LabelsOverlapMode.ALLOW_OVERLAP" will allow it. Look at the next sample.
+In AnyMap, the {api:anychart.charts.Map#overlapMode}overlapMode(){api} method stands for hiding and showing this kind of labels. It supports two types of arguments: boolean and string. If use booleans, "true" allows labels to overlap each other, "false" disables those which overlap. If use enums, "anychart.enums.LabelsOverlapMode.NO\_OVERLAP" will disable overlapping labels and "anychart.enums.LabelsOverlapMode.ALLOW\_OVERLAP" will allow it. Look at the next sample.
 
 ```
 map.overlapMode(false);
@@ -136,7 +134,6 @@ map.overlapMode("noOverlap");
 Both code samples do the same: disable labels that overlap each other.
 
 {sample}Maps\_Labels\_04{sample}
-
 
 ### Series
 
@@ -174,7 +171,6 @@ Note that the map's or series' overlapping mode set through the {api:anychart.co
 {sample}Maps\_Labels\_06{sample}
 
 You can see that the label of Virginia is still displayed despite it has the lower labelrank set than West Virginia has. It is easily explained by the fact that the overlappping mode is turned off for the Border States series, which West Virginia belongs to. Also, you could have noticed that Wisconsin state label is now displayed while the label of Michigan became hidden. The labels of Maryland and Delaware are both shown despite they've got different labelranks - it means that the overlapping is allowed for the series those states belong to. That is how the labelranks work.
-
 
 ## Positioning
 
@@ -236,11 +232,13 @@ These properties can be set through the GeoJSON code:
 ```
 
 Put the GeoJSON code with edits as a function into the JS file and link the last:
+
 ```
-<script src="http://static.anychart.com/data/maps/docs/australia_with_settings.js" data-export="true"></script>
+<script src="http://static.anychart.com/data/maps/docs/australia_with_settings.js"></script>
 ```
 
 Then load the data from the JS file:
+
 ```
 map.geoData(getData());
 ```
@@ -265,10 +263,10 @@ var dataSet_2 = anychart.data.set([
     {'id': 'AU.TS', 'value': 1.6}
 ]);
 ```
+
 {sample}Maps\_Labels\_09{sample}
 
-Note that if the middleXYMode property is absolute, it is necessary to set both middle-x and middle-y. Middle-x stands for longitude and middle-y represents latitude for the label.
-
+Note that if the *middleXYMode* property is absolute, it is necessary to set both middle-x and middle-y. Middle-x stands for longitude and middle-y represents latitude for the label.
 
 ### Out of region labels
 
@@ -299,10 +297,9 @@ series_2.labels().connectorStroke("green", 2, "3 3");
 
 {sample}Maps\_Labels\_11{sample}
 
-
 ## Callout
 
-In AnyMaps, it is possible not to connect labels to their regions and display them in a row or column, on a side of the map. To create an array of this type use the {api:anychart.charts.Map#callout}callout(){api} method. This will create an entity similar to axis on charts. The callout entity is not being zoomed or moved while map is, it looks and behaves like a colorRange element.
+In AnyMaps, it is possible not to connect labels to their regions and display them in a row or column, on a side of the map. To create an array of this type use the {api:anychart.charts.Map#callout}callout(){api} method. This will create an entity similar to axis on charts. The callout entity is not being zoomed or moved when map is moved or zoomed.
 
 The code sample below demonstrates creating of two callouts, to the left and to the right of the maps:
 
@@ -350,6 +347,5 @@ The text that labels represent can be formatted as the usual labels text, but re
 {'id': 'AU.JB', 'value': 0, label:{textFormatter: "Jervis \nBay \nTerritory", fontColor: "white"}},
 {'id': 'AU.CT', 'value': 3, label:{fontColor: "white"}}
 ```
-
 
 {sample}Maps\_Labels\_13{sample}

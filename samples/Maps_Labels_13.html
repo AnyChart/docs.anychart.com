@@ -11,7 +11,8 @@
   <script x-export="map">anychart.onDocumentReady(function() {
 
   map = anychart.map();
-  // data set for the choropeth series
+
+  // data set for the choropleth series
   var dataSet_1 = anychart.data.set([
     {'id': 'AU.JB', 'value': 1.5, label:{textFormatter: "Jervis \nBay \nTerritory", fontColor: "white"}},
     {'id': 'AU.NT', 'value': 2},
@@ -27,7 +28,6 @@
     {'id': 'AU.TS', 'value': 1.6}
   ]);
 
-
   map.geoData("anychart.maps.australia");
 
   // set the title and its preferences
@@ -41,22 +41,13 @@
   // enable labels
   series_1.labels(true);
   series_2.labels(true);
-
-  // set the labels
-  labels_1 = series_1.labels();
-  labels_2 = series_1.labels();
-
     
   // set the overlapping mode for the map
   map.overlapMode("noOverlap");
 
   // set the tooltips
-  series_1.tooltip().textFormatter(function(){
-    return "More women"
-  });
-  series_2.tooltip().textFormatter(function(){
-    return "More men"
-  });
+  series_1.tooltip().textFormatter("More women");
+  series_2.tooltip().textFormatter("More men");
 
   // create the callout
   calloutRight = map.callout(0);
