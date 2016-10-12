@@ -1,0 +1,50 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // create variable for custom theme
+  var customTheme = {
+    "defaultFontSettings": {
+      "fontSize": 9,
+      "fontWeight": 100,
+      "fontColor": "#0000CD"
+    },
+    "chart": {
+      "title": false,
+      "legend": false
+    }
+  };
+
+  // data
+  var data = anychart.data.set([
+    ["Alice", 33],
+    ["Bob",   23],
+    ["Jake",  35]
+  ]);
+
+  // apply custom theme
+  anychart.theme(customTheme);
+
+  var table = anychart.ui.table();
+  table.contents([
+    [
+      anychart.column(data),
+      anychart.pie(data),
+      anychart.radar(data)
+    ]
+  ]);
+  table.container("container");
+  table.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
