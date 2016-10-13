@@ -211,7 +211,7 @@ In AnyChart JavaScript Charting Library, axis is an object that allows you to co
 
 ### Orientation
 
-With AnyChart Charting Framework you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}orientation(){api} parameter of {api:anychart.core.axes.Linear}yAxis(){api} or {api:anychart.core.axes.Linear}xis(){api} method.
+With AnyChart Charting Framework you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}orientation(){api} parameter of {api:anychart.core.axes.Linear}yAxis(){api} or {api:anychart.core.axes.Linear}xAxis(){api} method.
   
 Axes position depends on plot type, orientation and inversion of axes.
 

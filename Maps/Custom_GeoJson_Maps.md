@@ -21,9 +21,7 @@ The AnyChart Maps are supplied in [GeoJSON](https://en.wikipedia.org/wiki/GeoJSO
 
 Now let's walk through the process of creating a custom map. Note that there are many ways of working with QGIS, so some commands or interface might be different due to version of the program or the platform used. Only one way of using QGIS is considered here, so look up their documentation if you need any extra information.
 
-1) Get the QGIS from [http://qgis.org/en/site/forusers/downl
-
-oad.html](http://qgis.org/en/site/forusers/download.html). 
+1) Get the QGIS from [http://qgis.org/en/site/forusers/download.html](http://qgis.org/en/site/forusers/download.html). 
 
 2) When you have installed the QGIS, the first step is importing your data.  Let's take the World Map as a source and select North America for demonstration. Select the "Add Vector Layer" in the "Layer" menu.
 

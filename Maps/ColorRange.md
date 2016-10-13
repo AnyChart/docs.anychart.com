@@ -89,8 +89,8 @@ There are some visual preferences of a ColorRange that might be set different fr
 A simple function {api:anychart.core.ui.ColorRange#orientation}orientation(){api} is used for the changing the position. An argument should be a string with one of the following values: 'right', 'left', 'bottom' or 'top'.
 
 ```
-	// put the colorRange to the right from the map
-	colorRange.orientation('right');
+// put the colorRange to the right from the map
+colorRange.orientation('right');
 ```
 
 {sample}Maps\_ColorRange\_04{sample}
@@ -100,8 +100,8 @@ A simple function {api:anychart.core.ui.ColorRange#orientation}orientation(){api
 The ColorRange length adjusting is quite usual: as for any other components, just add the {api:anychart.core.ui.ColorRange#length}length(){api} method to the colorRange.
 
 ```
-	// set the colorRange length
-	colorRange.length(100);
+// set the colorRange length
+colorRange.length(100);
 ```
 
 {sample}Maps\_ColorRange\_05{sample}
@@ -112,8 +112,8 @@ When you need to change the distance between the ColorRange and the map itself o
 You may define and only argument or all four (if you want them different) for all sides. Look at the following sample:
 
 ```
-	// set the colorRange padding 
-	colorRange.padding(100);
+// set the colorRange padding 
+colorRange.padding(100);
 ```
 
 In case you set the only value, this value will be interpreted as the same padding to each of the map field sides.
@@ -123,8 +123,8 @@ In case you set the only value, this value will be interpreted as the same paddi
 And if you define all four padding values, you'll be able to change the distance between the ColorKange and both map and its field borders. 
 
 ```
-	// set the colorRange padding 
-	colorRange.padding(0, 100, 0, -100);
+// set the colorRange padding 
+colorRange.padding(0, 100, 0, -100);
 ```
 
 {sample}Maps\_ColorRange\_07{sample}
@@ -136,9 +136,9 @@ As you can see, the usage of this method with ColorRange is the same as in simpl
 To stroke the ColorRange, use the {api:anychart.core.ui.ColorRange#stroke}stroke(){api} method. We have already done it before - in the sample with a Bi-polar progression (Ordinal Scale). 
 
 ```
-	// create, enable and stroke the colorRange
-	var colorRange = map.colorRange();
-	colorRange.enabled(true).stroke('#BBB');
+// create, enable and stroke the colorRange
+var colorRange = map.colorRange();
+colorRange.enabled(true).stroke('#BBB');
 ```
 
 {sample}Maps\_ColorRange\_08{sample}
@@ -146,12 +146,11 @@ To stroke the ColorRange, use the {api:anychart.core.ui.ColorRange#stroke}stroke
 
 ### Labels
 
-You can enable, disable, color the labels in different colors, apply some features to format the labels of a colorRange. Use usual {api:anychart.core.map.series.Base#labels}
-labels(){api} method to adjust them.
+You can enable, disable, color the labels in different colors, apply some features to format the labels of a colorRange. Use usual {api:anychart.core.map.series.Base#labels}labels(){api} method to adjust them.
 
 ```
-	// disable the labels
-	colorRange.labels(false);
+// disable the labels
+colorRange.labels(false);
 ```
 
 {sample}Maps\_ColorRange\_09{sample}
@@ -159,8 +158,8 @@ labels(){api} method to adjust them.
 You can also create an object:
 
 ```
-	// adjust the labels
-	colorRange.labels({'fontSize':10, 'fontColor':'green'});
+// adjust the labels
+colorRange.labels({'fontSize':10, 'fontColor':'green'});
 ```
 
 {sample}Maps\_ColorRange\_10{sample}
@@ -172,9 +171,9 @@ Marker on a ColorRange is needed to demonstrate the position of the value on a C
 You can change the marker type, for example:
 
 ```
-	// change the default marker type to diamond
-    var marker = colorRange.marker();
-    marker.type("diamond");
+// change the default marker type to diamond
+var marker = colorRange.marker();
+marker.type("diamond");
 ```
 
 {sample}Maps\_ColorRange\_11{sample}
@@ -182,11 +181,11 @@ You can change the marker type, for example:
 Now let's change our marker's color and size:
 
 ```
-	// change the default marker color to purple
-    marker.fill("purple");
-	
-	// set the size to your marker
-    marker.size(7);
+// change the default marker color to purple
+marker.fill("purple");
+
+// set the size to your marker
+marker.size(7);
 ```
 
 {sample}Maps\_ColorRange\_12{sample}

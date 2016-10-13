@@ -218,7 +218,7 @@ And here is a simple illustration of this idea:
 
 ### Data Grid Width
 
-It is possible to configure your html5 Gantt Charts by simply dragging and dropping data grid splitter. Also you can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}splitterPosition()**{api} method:
+It is possible to configure your html5 Gantt Charts by simply dragging and dropping data grid splitter. Also you can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}splitterPosition(){api} method:
 
 ```
 //set width to 100
