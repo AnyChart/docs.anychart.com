@@ -5,9 +5,9 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="stage">
-stage = acgraph.create("container");
+
+stage = acgraph.create();
 stage.rect(22, 18, stage.width() - 44, stage.height() / 3 - 22)
         .fill("none")
         .stroke("5 orange .7");
@@ -29,5 +29,8 @@ stage.rect(22, 3 * stage.height() / 3 - 35, stage.width() - 44, 5)
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>
+<script>
+    stage.container('container')
+</script>
 </body>
 </html>
