@@ -43,27 +43,21 @@
     chart.draw();
 
     // create a label for the ellipse annotation
-    createLabel("Ellipse", 50, function() {
+    createLabel("Ellipse", 10, function() {
         // start drawing the annotation
         controller.startDrawing("ellipse");
     });
 
     // create a label for the rectangle annotation
-    createLabel("Rectangle", 110, function() {
+    createLabel("Rectangle", 70, function() {
         // start drawing the annotation
         controller.startDrawing("rectangle");
     });
 
     // create a label for the triangle annotation
-    createLabel("Triangle", 195, function() {
+    createLabel("Triangle", 155, function() {
         // start drawing the annotation
         controller.startDrawing("triangle");
-    });
-
-    // create a label for removing the annotations
-    createLabel("Remove All", 290, function() {
-        // remove all the annotations
-        chart.annotations().removeAllAnnotations();
     });
 });
 
