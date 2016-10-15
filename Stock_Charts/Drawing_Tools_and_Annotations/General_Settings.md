@@ -11,11 +11,11 @@
 
 ## Overview
 
-Coming soon.
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ## Hardcoding Annotations
 
-Adding in code or [Serialize and Deserialize](Serializing_Deserializing) as a list.
+... Adding in code or [Serialize and Deserialize](Serializing_Deserializing) as a list. ...
 
 ```
 anychart.onDocumentReady(function () {
@@ -40,12 +40,21 @@ anychart.onDocumentReady(function () {
 });
 ```
 
+{sample}STOCK\_Drawing\_General\_01{sample}
+
 ## States
 
-hover, selected, drawing, edit:
-fill, stroke, trend_line, label
+... hover, selected, drawing, edit: fill, stroke, trend_line, label ...
+
+
+```
+```
+
+{sample}STOCK\_Drawing\_General\_02{sample}
 
 ## Hover Gap
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ```
 var controller = chart.annotations();
@@ -60,15 +69,28 @@ controller.ellipse({
 });
 ```
 
+{sample}STOCK\_Drawing\_General\_03{sample}
+
 <a name="binding"></a>
 ## Binding to Axes
 
-Coming soon.
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+```
+```
+
+{sample}STOCK\_Drawing\_General\_04{sample}
 
 ## Drawing
 
-[Drawing](Drawing).
+... [Drawing](Drawing). ...
+
+
+```
+```
+
+{sample}STOCK\_Drawing\_General\_05{sample}
 
 ## Defaults
 
-Coming soon.
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
