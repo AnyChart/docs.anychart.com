@@ -74,16 +74,8 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 // an auxiliary variable for working with annotations
 var controller = plot.annotations();
 
-// create an ellipse annotation and configure its visual settings and hover gap
+// create an ellipse annotation and configure its hover gap
 controller.ellipse({
-    xAnchor: '2006-11-20',
-    valueAnchor: 25.92,
-    secondXAnchor: '2007-02-24',
-    secondValueAnchor: 31.92,
-    hoverFill: "#398CAE 0.3",
-    hoverStroke: "2 #FF0000",
-    selectFill: "#398CAE 0.3",
-    selectStroke: "5 #FF0000",
     hoverGap: 30
 });
 ```
@@ -95,24 +87,11 @@ controller.ellipse({
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ```
-// create a stock chart
-chart = anychart.stock();
-
-// create a plot on the chart
-var plot = chart.plot(0);
-
 // create an additional Y-scale
 var extraYScale = anychart.scales.linear();
 
 // create an additional Y-axis
 var extraYAxis = plot.yAxis(1);
-
-// create an OHLC series
-var ohlcSeries = plot.ohlc(ohlcMapping);
-
-// create a line series and bind it to the additional Y-scale
-var lineSeries = plot.line(lineMapping);
-lineSeries.yScale(extraYScale);
 
 // an auxiliary variable for working with annotations
 var controller = plot.annotations();
