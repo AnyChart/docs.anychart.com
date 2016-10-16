@@ -53,7 +53,7 @@ controller.ellipse({
 
 In addition to the basic properties defining the position of an annotation, you can configure its visual settings, for example, the fill and stroke colors. To make the annotation look different when being hovered or selected, use such settings as hoverFill, hoverStroke, selectFill, etc. Please note that the list of the available settings depends on the annotation type.
 
-In the sample below, there are two annotations, an Ellipse and an Infinite Line, which change on hover and select. Like in the previous sample, object notation is used to configure the properties:
+In the sample below, there are two annotations, an Ellipse and an Infinite Line, which change when a user hovers or select them. Like in the previous sample, object notation is used to configure the properties:
 
 ```
 // an auxiliary variable for working with annotations
