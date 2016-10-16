@@ -35,7 +35,8 @@
     // an auxiliary variable for working with annotations
     var controller = plot.annotations();
 
-    // set the chart title
+    // set the chart position and title
+    chart.top(15);
     chart.title("Drawing Annotations");
 
     // set the chart container and initiate drawing the chart
@@ -58,6 +59,12 @@
     createLabel("Triangle", 155, function() {
         // start drawing the annotation
         controller.startDrawing("triangle");
+    });
+
+        // create a label for removing annotations
+    createLabel("Remove All", 240, function() {
+        // remove all annotations
+        controller.removeAllAnnotations();
     });
 });
 

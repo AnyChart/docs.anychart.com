@@ -2,20 +2,25 @@
 #General Settings
 
 * [Overview](#overview)
-* [Hardcoding Annotations](#hardcoding_annotations)
+* [Hardcoding](#hardcoding_annotations)
 * [Visual Settings](#visual_settings)
 * [Hover Gap](#hover_gap)
-* [Binding to Axes](#binding_to axes)
+* [Binding to Axes](#binding_to_axes)
 * [Drawing](#drawing)
 * [Defaults](#defaults)
 
 ## Overview
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+In this article, you can learn about the main general settings of annotations, allowing to [hardcode](#hardcoding) or [draw](#drawing) them, [bind them to axes](#binding_to_axes), and configure [visual settings](#visual_settings) and [hover gap](#hover_gap).
 
-## Hardcoding Annotations
+## Hardcoding
 
-... Adding in code or [Serialize and Deserialize](Serializing_Deserializing) as a list. ...
+To add an annotation to a chart, refer to the {api:anychart.core.annotations.PlotController}annotations(){api} object and call one of the methods used for creating annotations: {api:anychart.core.annotations.Ellipse}ellipse(){api}, {api:anychart.core.annotations.Rectangle}rectangle(){api}, {api:anychart.core.annotations.Triangle}triangle(){api}, and so on. You can find the full list of the available types of annotations in the [Overview](Overview#annotation_types) section.
+
+You can configure annotations, like most other entities in AnyChart, in two ways: using either JavaScript API methods or object notation. As a rule, object notation is the most convenient way to set the properties of an annotation (see the [Serializing and Deserializing](Serializing_Deserializing) article).
+
+The following sample shows how to create an Ellipse annotation and use object notation to configure it:
+
 
 ```
 // create a stock chart
@@ -44,8 +49,11 @@ controller.ellipse({
 
 ## Visual Settings
 
-... hover, selected, drawing, edit: fill, stroke, trend_line, label ...
+??? НУЖНЫ ЛИ ССЫЛКИ НА МЕТОДЫ И КУДА ИХ СТАВИТЬ, ВЕДЬ МЕТОДЫ РАЗНЕСЕНЫ ПО РАЗНЫМ ТИПАМ АННОТАЦИЙ?
 
+In addition to the basic properties defining the position of an annotation, you can configure its visual settings, for example, the fill and stroke colors. To make the annotation look different when being hovered or selected, use such settings as hoverFill, hoverStroke, selectFill, etc. Please note that the list of the available settings depends on the annotation type.
+
+In the sample below, there are two annotations, an Ellipse and an Infinite Line, which change on hover and select. Like in the previous sample, object notation is used to configure the properties:
 
 ```
 // an auxiliary variable for working with annotations
@@ -68,7 +76,9 @@ controller.ellipse({
 
 ## Hover Gap
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+??? НУЖНА ЛИ ССЫЛКА НА МЕТОД И КУДА ЕЕ СТАВИТЬ?
+
+Another setting of annotations you can configure is hover gap (hoverGap). In this sample, it is increased to 30:
 
 ```
 // an auxiliary variable for working with annotations
@@ -84,7 +94,11 @@ controller.ellipse({
 
 ## Binding to Axes
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+??? КУДА СТАВИТЬ ССЫЛКИ НА МЕТОДЫ?
+
+If there is an extra axis on your plot, you can bind an annotation to that axis using the yScale() or xScale() method. By default, all annotations are bound to the main axes.
+
+In the sample below, there is an Infinite Line annotation, bound to the main Y-scale, and an Ellipse annotation, bound to the additional Y-scale:
 
 ```
 // create an additional Y-scale
@@ -120,8 +134,9 @@ ellipse.yScale(extraYScale);
 
 ## Drawing
 
-... [Drawing](Drawing). ...
+??? ССЫЛКА В ПРАВИЛЬНОЕ МЕСТО ДАНА? НАВЕРНЯКА ENUMS - НЕ ЕДИНСТВЕННЫЙ СПОСОБ, НО ДРУГОГО НЕ ЗНАЮ, ПОЭТОМУ ПОКА ТАК
 
+To provide users with the opportunity draw annotations, use the {api:anychart.core.annotations.PlotController#startDrawing}startDrawing(){api} method and specify the annotation type by using one of the enums for the {api:anychart.enums.AnnotationTypes}Annotation Types(){api} list. To learn more, see this article: [Drawing](Drawing).
 
 ```
 // an auxiliary variable for working with annotations
@@ -130,6 +145,8 @@ var controller = plot.annotations();
 // start drawing the annotation
 controller.startDrawing("ellipse");
 ```
+
+Here is a basic sample, demonstrating how the Drawing feature is used. Users can draw Ellipses, Rectangles, and Triangles or remove all annotations from the plot:
 
 {sample}STOCK\_Drawing\_General\_05{sample}
 
