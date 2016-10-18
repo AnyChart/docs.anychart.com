@@ -2,19 +2,21 @@
 #Ellipse
 
 * [Overview](#overview)
+* [Basic settings](#basic_settings)
 * [Visual Settings](#visual_settings)
 
 ## Overview
 
-{api:anychart.xxx}XXX(){api} 
+The Ellipse annotation allows to add an ellipse or a circle to a chart.
 
-Ellipse annotation allows to add an ellipse or circle to the chart.
-
-To learn about basic settings please refer to [Drawing Tools and Annotations: General Settings](General_Settings) article.
-
-To learn more about drawing process and its management please refer to [Drawing Tools and Annotations: Drawing](Drawing) article.
+[Drawing Tools and Annotations: General Settings](General_Settings)
+[Drawing Tools and Annotations: Drawing](Drawing)
+[Drawing Tools and Annotations: Seiralizing Deserializing](Serializing and Deserializing)
 
 
+## Basic Settings
+
+ЧТОБЫ ЗАДАТЬ ЭЛЛИПС, НУЖНО 4 ТОЧКИ...
 ```
     // sample comment
     sample.code();
@@ -23,6 +25,8 @@ To learn more about drawing process and its management please refer to [Drawing 
 {sample}STOCK\_Drawing\_Ellipse\_01{sample}
 
 ## Visual Settings
+
+СПИСОК НАСТРОЕК
 
 ```
     // sample comment
