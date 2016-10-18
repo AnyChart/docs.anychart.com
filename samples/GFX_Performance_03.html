@@ -11,7 +11,8 @@ stage = acgraph.create("container");
 
 var start;
 var finish;
-
+// a layer for green squares to be reused each new generation
+var rectLayer = stage.layer();
 var labelBg = stage.rect();
 var label = stage.text(130,130);
     label.text("Click here to start the process of rendering");
@@ -35,6 +36,7 @@ stage.listen("renderstart", function(){
 
 // this is to be performed on a click
 labelBg.listen("click", function(){
+rectLayer.removeChildren();
 
 stage.listenOnce("renderfinish", function(){
     finish = (new Date()).getTime();
@@ -48,7 +50,7 @@ stage.listenOnce("renderfinish", function(){
 });
 
 stage.suspend();
-for (var i = 0; i < 3000; i++) {
+for (var i = 0; i < 5000; i++) {
     var left = Math.random() * 300;
     var qwer = Math.random() * 300;
     
@@ -57,6 +59,8 @@ for (var i = 0; i < 3000; i++) {
 }
 stage.resume();
 });
+
+
 
 </script>
 </head>
