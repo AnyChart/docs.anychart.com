@@ -49,7 +49,7 @@ controller.ellipse({
 
 ## Visual Settings
 
-In addition to the basic properties that determine the position of an annotation, you can configure its visual settings, for example, fill and stroke colors. To make the annotation look different when being hovered or selected, use methods like {api:anychart.core.annotations.Triangle#hoverFill}hoverFill(){api} for the {api:anychart.core.annotations.Triangle}Trianlge annotation{api}. To find more, see the {api:anychart.core.annotations}API{api} or the articles on [annotation types](Overview#annotation_types) in this section, and please note that the list of the available settings depends on the annotation type.
+In addition to the basic properties that determine the position of an annotation, you can configure its visual settings, for example, fill and stroke colors. To make the annotation look different when being hovered or selected, use methods like {api:anychart.core.annotations.Triangle#hoverFill}hoverFill(){api} (this one is for the Triangle annotation) or {api:anychart.core.annotations.Rectangle#selectStroke}selectStroke(){api} (this one is for the Rectangle). To find more, see the {api:anychart.core.annotations}API{api} or the articles on [annotation types](Overview#annotation_types) in this section, and please note that the list of the available settings depends on the annotation type.
 
 In the sample below, there are two annotations, an Ellipse and an Infinite Line, which change when a user hovers or select them. Like in the previous sample, object notation is used to configure the properties:
 
