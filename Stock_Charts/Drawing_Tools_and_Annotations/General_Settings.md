@@ -74,7 +74,7 @@ controller.ellipse({
 
 ## Hover Gap
 
-Another setting of annotations you can configure is the hover gap (use the {api:anychart.core.annotations.Base#hoverGap}hoverGap(){api} method). In this sample, it is increased to 30:
+Another setting of annotations you can configure is the hover gap: use the {api:anychart.core.annotations.Base#hoverGap}hoverGap(){api} method. In this sample, it is increased to 30:
 
 ```
 // an auxiliary variable for working with annotations
