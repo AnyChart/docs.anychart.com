@@ -74,8 +74,6 @@ controller.ellipse({
 
 ## Hover Gap
 
-??? НУЖНА ЛИ ССЫЛКА НА МЕТОД И КУДА ЕЕ СТАВИТЬ?
-
 Another setting of annotations you can configure is the hover gap (use the {api:anychart.core.annotations.Base#hoverGap}hoverGap(){api} method). In this sample, it is increased to 30:
 
 ```
@@ -91,8 +89,6 @@ controller.ellipse({
 {sample}STOCK\_Drawing\_General\_03{sample}
 
 ## Binding to Axes
-
-??? КУДА СТАВИТЬ ССЫЛКИ НА МЕТОДЫ?
 
 If there is an extra axis on your plot, you can bind an annotation to that axis using the {api:anychart.core.annotations.Base#yScale}yScale(){api} or {api:anychart.core.annotations.Base#xScale}xScale(){api} method. By default, all annotations are bound to the main axes.
 
