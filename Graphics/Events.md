@@ -95,7 +95,7 @@ Try the sample and explore it in the Playground:
 
 ## Stage
 
-Besides all mentioned, there are also events managed by stage. There are four of them: 
+Besides all mentioned, there are also {apy:anychart.graphics.vector.Stage.EventType}events{api} managed by stage. There are four of them: 
 - STAGE_RESIZE (stageresize) - listen to this event when you need some changes or actions done on a stage while it is being resized
 - STAGE_RENDERED (stagerendered) - listen to this event when you need some changes or actions done on a stage when it is rendered, i.e. when all images have been loaded to a stage
 - RENDER_START (renderstart) - listen to this event when you need some changes or actions done on a stage when the stage rendering process has started

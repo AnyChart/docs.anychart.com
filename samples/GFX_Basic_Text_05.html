@@ -12,10 +12,12 @@
 stage = acgraph.create("container");
 
 // create the text style object
-textStyle = {fontFamily: "Georgia", fontSize: "15px", color: "green"};
+textStyle = {fontFamily: "FontAwesome", fontSize: "15px", color: "green"};
 
 // create the text element
-text = stage.text().htmlText("<i class='fa fa-camera' aria-hidden='true'>This is custom font</i>");
+text = stage.text();
+text.style(textStyle);
+text.htmlText("This is custom font: <i class='fa fa-camera' aria-hidden='true'>q</i>");
 </script>
 </head>
 <body>

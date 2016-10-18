@@ -8,13 +8,6 @@
 * [External fonts](#external_fonts)
 * [Multiline](#multiline)
 
-http://www.graphicsjs.org/
-
-a) базовые методы
-б) получение размера текста
-в) использование внешних скриптов
-г) мультилайн
-
 ## Basic Methods
  
 There are several methods adjusting custom text on a stage. You can find all of them in our <a href="http://api.anychart.stg/develop/anychart.graphics.vector.Text">text API</a>. This article describes some basic methods which allow to set that the and adjust several parameters.
@@ -27,7 +20,7 @@ Use the {api:anychart.graphics#text}text(){api} method to set your custom text. 
 // set the text
 stage.text(20, 20, "This is my custom text");
 ```
-{sample}GFX\_Basic\_Text\_01{sample}
+{sample :width 832 :height 120}GFX\_Basic\_Text\_01{sample}
 
 Let's now consider some basic styling methods. The {api:}fontSize(){api} method changes your font size, to change the font itself use {api:}fontFamily(){api}, the {api:}color(){api} method stands for setting the text color. Let's adjust the text from above with those methods:
 
@@ -37,7 +30,7 @@ text.fontFamily("Georgia");
 text.fontSize("15px");
 text.color("green");
 ```
-{sample}GFX\_Basic\_Text\_02{sample}
+{sample :width 832 :height 120}GFX\_Basic\_Text\_02{sample}
 
 Now, let's now create the style formatting object and put it as the forth parameter to the {api:anychart.graphics#text}text(){api} method.
 
@@ -48,7 +41,7 @@ textStyle = {fontFamily: "Georgia", fontSize: "15px", color: "green"};
 // set the text
 stage.text(20,20,"This is my custom text", textStyle);
 ```
-{sample}GFX\_Basic\_Text\_03{sample}
+{sample :width 832 :height 120}GFX\_Basic\_Text\_03{sample}
 
 
 ## Getting the text size
@@ -78,7 +71,7 @@ rect.fill("gold");
 // set the stage as a parent of your text
 text.parent(stage);
 ```
-{sample}GFX\_Basic\_Text\_04{sample}
+{sample :width 832 :height 120}GFX\_Basic\_Text\_04{sample}
 
 Creating the text element as a child of acgraph instead of the stage allows to put the golden rect on it prior to the text element, while the rect has the cooridinates and bounds of this text element.
 
@@ -102,7 +95,7 @@ Then set the font as a class:
 text = stage.text().htmlText("<i class='fa fa-camera' aria-hidden='true'></i> - Click for a snapshot");
 ```
 
-{sample}GFX\_Basic\_Text\_05{sample}
+{sample :width 832 :height 120}GFX\_Basic\_Text\_05{sample}
 
 
 ### Text Fonts
@@ -117,7 +110,7 @@ If you want to use a custom font in your chart, use one of the services providin
 font-family: 'Dancing Script', cursive;
 ```
 
-{sample}GFX\_Basic\_Text\_06{sample}
+{sample :width 832 :height 120}GFX\_Basic\_Text\_06{sample}
 
 
 ## Multiline
@@ -139,4 +132,4 @@ text2.letterSpacing(3);
 text2.lineHeight(20);
 ```
 
-{sample}GFX\_Basic\_Text\_07{sample}
+{sample :width 832 :height 120}GFX\_Basic\_Text\_07{sample}

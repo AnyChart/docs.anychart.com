@@ -10,12 +10,19 @@
 <script x-export="stage">
 stage = acgraph.create("container");
 
-// Draws star.
-var star = acgraph.vector.primitives.star(stage, 100, 70, 50, 17, 7, 20, -0.9);
+// create a triangle
+triangle = stage.triangleUp(110, 95, 80);
+triangle.fill("#d77d31");
+triangle.stroke(null);
 
-// color the star with a golden color
-star.fill("gold");
+// get the triangle center point
+triangleCenterX = triangle.getBounds().getLeft()+triangle.getBounds().getWidth()/2;
+triangleCenterY = triangle.getBounds().getTop()+triangle.getBounds().getHeight()/2;
 
+// create a circle
+circle = stage.circle(triangleCenterX, triangleCenterY, 20);
+circle.fill("#8ccb5e");
+circle.stroke(null);
 </script>
 </head>
 <body>

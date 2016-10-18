@@ -10,12 +10,16 @@
 <script x-export="stage">
 stage = acgraph.create("container");
 
-// Draws star.
-var star = acgraph.vector.primitives.star(stage, 100, 70, 50, 17, 7, 20, -0.9);
+triangle = stage.triangleUp(110, 95, 80);
 
-// color the star with a golden color
-star.fill("gold");
+transformedTriangle = stage.triangleUp(110, 95, 80);
 
+transformedTriangle.fill("#80461b");
+
+// transform the triangle
+transformedTriangle.setPosition(250, 15);
+transformedTriangle.rotate(45, 300, 15);
+transformedTriangle.scale(1.5, 0.5, 0, 50);
 </script>
 </head>
 <body>
