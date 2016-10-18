@@ -49,9 +49,7 @@ controller.ellipse({
 
 ## Visual Settings
 
-??? НУЖНЫ ЛИ ССЫЛКИ НА МЕТОДЫ И КУДА ИХ СТАВИТЬ, ВЕДЬ МЕТОДЫ РАЗНЕСЕНЫ ПО РАЗНЫМ ТИПАМ АННОТАЦИЙ?
-
-In addition to the basic properties defining the position of an annotation, you can configure its visual settings, for example, the fill and stroke colors. To make the annotation look different when being hovered or selected, use such settings as hoverFill, hoverStroke, selectFill, etc. Please note that the list of the available settings depends on the annotation type.
+In addition to the basic properties that determine the position of an annotation, you can configure its visual settings, for example, fill and stroke colors. To make the annotation look different when being hovered or selected, use methods like {api:anychart.core.annotations.Triangle#hoverFill}hoverFill(){api} for the {api:anychart.core.annotations.Triangle}Trianlge annotation{api}. To find more, see the {api:anychart.core.annotations}API{api} or the articles on [annotation types(Overview#annotation_types) in this section, and please note that the list of the available settings depends on the annotation type.
 
 In the sample below, there are two annotations, an Ellipse and an Infinite Line, which change when a user hovers or select them. Like in the previous sample, object notation is used to configure the properties:
 
@@ -78,7 +76,7 @@ controller.ellipse({
 
 ??? НУЖНА ЛИ ССЫЛКА НА МЕТОД И КУДА ЕЕ СТАВИТЬ?
 
-Another setting of annotations you can configure is hover gap (hoverGap). In this sample, it is increased to 30:
+Another setting of annotations you can configure is the hover gap (use the {api:anychart.core.annotations.Base#hoverGap}hoverGap(){api} method). In this sample, it is increased to 30:
 
 ```
 // an auxiliary variable for working with annotations
@@ -96,7 +94,7 @@ controller.ellipse({
 
 ??? КУДА СТАВИТЬ ССЫЛКИ НА МЕТОДЫ?
 
-If there is an extra axis on your plot, you can bind an annotation to that axis using the yScale() or xScale() method. By default, all annotations are bound to the main axes.
+If there is an extra axis on your plot, you can bind an annotation to that axis using the {api:anychart.core.annotations.Base#yScale}yScale(){api} or {api:anychart.core.annotations.Base#xScale}xScale(){api} method. By default, all annotations are bound to the main axes.
 
 In the sample below, there is an Infinite Line annotation, bound to the main Y-scale, and an Ellipse annotation, bound to the additional Y-scale:
 
@@ -136,7 +134,7 @@ ellipse.yScale(extraYScale);
 
 ??? ССЫЛКА В ПРАВИЛЬНОЕ МЕСТО ДАНА? НАВЕРНЯКА ENUMS - НЕ ЕДИНСТВЕННЫЙ СПОСОБ, НО ДРУГОГО НЕ ЗНАЮ, ПОЭТОМУ ПОКА ТАК
 
-To provide users with the opportunity draw annotations, use the {api:anychart.core.annotations.PlotController#startDrawing}startDrawing(){api} method and specify the annotation type by using one of the enums for the {api:anychart.enums.AnnotationTypes}Annotation Types(){api} list. To learn more, see this article: [Drawing](Drawing).
+To provide users with the opportunity draw annotations, use the {api:anychart.core.annotations.PlotController#startDrawing}startDrawing(){api} method and specify the annotation type by using one of the {api:anychart.enums.AnnotationTypes}Annotation Type Enums{api}. To learn more, see this article: [Drawing](Drawing).
 
 ```
 // an auxiliary variable for working with annotations
@@ -149,7 +147,3 @@ controller.startDrawing("ellipse");
 Here is a basic sample, demonstrating how the Drawing feature is used. Users can draw Ellipses, Rectangles, and Triangles or remove all annotations from the plot:
 
 {sample}STOCK\_Drawing\_General\_05{sample}
-
-## Defaults
-
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
