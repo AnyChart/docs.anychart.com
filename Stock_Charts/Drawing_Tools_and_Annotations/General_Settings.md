@@ -49,7 +49,7 @@ controller.ellipse({
 
 ## Visual Settings
 
-In addition to the basic properties that determine the position of an annotation, you can configure its visual settings, for example, fill and stroke colors. To make the annotation look different when being hovered or selected, use methods like {api:anychart.core.annotations.Triangle#hoverFill}hoverFill(){api} for the {api:anychart.core.annotations.Triangle}Trianlge annotation{api}. To find more, see the {api:anychart.core.annotations}API{api} or the articles on [annotation types(Overview#annotation_types) in this section, and please note that the list of the available settings depends on the annotation type.
+In addition to the basic properties that determine the position of an annotation, you can configure its visual settings, for example, fill and stroke colors. To make the annotation look different when being hovered or selected, use methods like {api:anychart.core.annotations.Triangle#hoverFill}hoverFill(){api} for the {api:anychart.core.annotations.Triangle}Trianlge annotation{api}. To find more, see the {api:anychart.core.annotations}API{api} or the articles on [annotation types](Overview#annotation_types) in this section, and please note that the list of the available settings depends on the annotation type.
 
 In the sample below, there are two annotations, an Ellipse and an Infinite Line, which change when a user hovers or select them. Like in the previous sample, object notation is used to configure the properties:
 
@@ -128,7 +128,7 @@ ellipse.yScale(extraYScale);
 
 ## Drawing
 
-To provide users with the opportunity draw annotations, use the {api:anychart.core.annotations.PlotController#startDrawing}startDrawing(){api} method and specify the annotation type by using one of the {api:anychart.enums.AnnotationTypes}Annotation Type Enums{api}. To learn more, see this article: [Drawing](Drawing).
+To provide users with the opportunity draw annotations, use the {api:anychart.core.annotations.PlotController#startDrawing}startDrawing(){api} method and specify the annotation type by using one of the {api:anychart.enums.AnnotationTypes}Annotation Types enums{api}. To learn more, see this article: [Drawing](Drawing).
 
 ```
 // an auxiliary variable for working with annotations
