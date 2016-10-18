@@ -2,10 +2,11 @@
 #Ellipse
 
 * [Overview](#overview)
-* [Hardcoding](#hardcoding)
 * [Visual Settings](#visual_settings)
 
 ## Overview
+
+{api:anychart.xxx}XXX(){api} 
 
 Ellipse annotation allows to add an ellipse or circle to the chart.
 
@@ -13,10 +14,20 @@ To learn about basic settings please refer to [Drawing Tools and Annotations: Ge
 
 To learn more about drawing process and its management please refer to [Drawing Tools and Annotations: Drawing](Drawing) article.
 
-## Hardcoding
 
-Coming soon.
+```
+    // sample comment
+    sample.code();
+```
+
+{sample}STOCK\_Drawing\_Ellipse\_01{sample}
 
 ## Visual Settings
 
-Coming soon.
+```
+    // sample comment
+    sample.code();
+```
+
+{sample}STOCK\_Drawing\_Ellipse\_02{sample}
+
