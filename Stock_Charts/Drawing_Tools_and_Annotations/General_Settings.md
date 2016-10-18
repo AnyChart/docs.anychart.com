@@ -132,8 +132,6 @@ ellipse.yScale(extraYScale);
 
 ## Drawing
 
-??? ССЫЛКА В ПРАВИЛЬНОЕ МЕСТО ДАНА? НАВЕРНЯКА ENUMS - НЕ ЕДИНСТВЕННЫЙ СПОСОБ, НО ДРУГОГО НЕ ЗНАЮ, ПОЭТОМУ ПОКА ТАК
-
 To provide users with the opportunity draw annotations, use the {api:anychart.core.annotations.PlotController#startDrawing}startDrawing(){api} method and specify the annotation type by using one of the {api:anychart.enums.AnnotationTypes}Annotation Type Enums{api}. To learn more, see this article: [Drawing](Drawing).
 
 ```
