@@ -39,7 +39,7 @@ var menu = chart.contextMenu();
 menu.enabled(false);
 ```
 
-*Note:* there is even more simple way to disable context menu: pass *false* to the {api:anychart.core.Chart#contextMenu}.contextMenu(){api} method:
+**Note:** there is even more simple way to disable context menu: pass *false* to the {api:anychart.core.Chart#contextMenu}.contextMenu(){api} method:
 
 ```
 var chart = anychart.column();
