@@ -9,16 +9,20 @@
 
 The Ellipse annotation allows to add an ellipse or a circle to a chart.
 
+This article explains how to add an Ellipse and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
+
 * [Drawing Tools and Annotations: General Settings](General_Settings)
 * [Drawing Tools and Annotations: Drawing](Drawing)
-* [Drawing Tools and Annotations: Seiralizing Deserializing](Serializing and Deserializing)
+* [Drawing Tools and Annotations: Serializing and Deserializing](Serializing_Deseializing)
+
+You can find other settings (which work with all annotation types), such as configuring hover gap and binding to axes, in the [Drawing Tools and Annotations: General Settings](General_Settings) article. To learn how to provide users with the opportunity to draw annotations, see [Drawing Tools and Annotations: Drawing](Drawing), and to learn about serializing and deserializing the settings, see [Drawing Tools and Annotations: Serializing and Deserializing](Serializing_Deseializing).
 
 
 ## Basic Settings
 
 To add an Ellipse annotation to a chart, refer to the {api:anychart.core.annotations.PlotController}annotations(){api} object and call the {api:anychart.core.annotations.Ellipse}ellipse(){api} method.
 
-The next step is to use the {api:anychart.core.annotations.Ellipse#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Ellipse#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Ellipse#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Ellipse#secondValueAnchor}secondValueAnchor(){api} methods setting 4 points that determine the position of the ellipse. Usually, the most convenient way to do this is object notation (see the [Serializing and Deserializing](Serializing_Deserializing) article):
+The next step is to use the {api:anychart.core.annotations.Ellipse#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Ellipse#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Ellipse#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Ellipse#secondValueAnchor}secondValueAnchor(){api} methods setting 4 points that determine the position of the ellipse. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart
