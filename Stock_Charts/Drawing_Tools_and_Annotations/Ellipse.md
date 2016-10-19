@@ -13,7 +13,7 @@ This article explains how to add an Ellipse and configure its basic and visual s
 
 * [Drawing Tools and Annotations: General Settings](General_Settings)
 * [Drawing Tools and Annotations: Drawing](Drawing)
-* [Drawing Tools and Annotations: Serializing and Deserializing](Serializing_Deseializing)
+* [Drawing Tools and Annotations: Serializing and Deserializing](Serializing_Deserializing)
 
 ## Basic Settings
 
