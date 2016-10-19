@@ -16,7 +16,8 @@ The Ellipse annotation allows to add an ellipse or a circle to a chart.
 
 ## Basic Settings
 
-ЧТОБЫ ЗАДАТЬ ЭЛЛИПС, НУЖНО 4 ТОЧКИ...
+To add an Ellipse annotation to a chart, refer to the {api:anychart.core.annotations.PlotController}annotations(){api} object and call the {api:anychart.core.annotations.Ellipse}ellipse(){api} method. The next step is to set 4 points that determine the position of the ellipse: use the xAnchor(), valueAnchor(), secondXAnchor(), and secondValueAnchor() methods. Usually, the most convenient way to do this is object notation (see the [Serializing and Deserializing](Serializing_Deserializing) article):
+
 ```
 // create a stock chart
 chart = anychart.stock();
@@ -40,11 +41,19 @@ controller.ellipse({
 });
 ```
 
+This is how it looks like:
+
 {sample}STOCK\_Drawing\_Ellipse\_01{sample}
 
 ## Visual Settings
 
-СПИСОК НАСТРОЕК
+You can also configure the visual settings of an Ellipse annotation:
+
+* The color(), fill(), hatchFill(), and stroke() methods set the color, fill, hatch fill, and stroke.
+* The hoverFill(), hoverHatchFill(), and hoverStroke() methods configure the visual settings on hover.
+* The selectFill(), selectHatchFill(), and selectStroke() methods configure the visual settings on select.
+
+In the sample below...
 
 ```
 // an auxiliary variable for working with annotations
