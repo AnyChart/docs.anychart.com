@@ -18,7 +18,7 @@ The Ellipse annotation allows to add an ellipse or a circle to a chart.
 
 To add an Ellipse annotation to a chart, refer to the {api:anychart.core.annotations.PlotController}annotations(){api} object and call the {api:anychart.core.annotations.Ellipse}ellipse(){api} method.
 
-The next step is to set 4 points that determine the position of the ellipse: use the {api:anychart.core.annotations.Ellipse#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Ellipse#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Ellipse#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Ellipse#secondValueAnchor}secondValueAnchor(){api} methods. Usually, the most convenient way to do this is object notation (see the [Serializing and Deserializing](Serializing_Deserializing) article):
+The next thing you need to do is use the {api:anychart.core.annotations.Ellipse#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Ellipse#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Ellipse#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Ellipse#secondValueAnchor}secondValueAnchor(){api} methods to set 4 points determining the position of the ellipse. Usually, the most convenient way to do this is object notation (see the [Serializing and Deserializing](Serializing_Deserializing) article):
 
 ```
 // create a stock chart
@@ -52,7 +52,7 @@ This is how it looks like:
 You can also configure the visual settings of an Ellipse annotation:
 
 * {api:anychart.core.annotations.Ellipse#color}color(){api}, {api:anychart.core.annotations.Ellipse#fill}fill(){api}, {api:anychart.core.annotations.Ellipse#hatchFill}hatchFill(){api}, {api:anychart.core.annotations.Ellipse#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.annotations.Ellipse#hoverFill}hoverFill(){api}, {api:anychart.core.annotations.Ellipse#hoverHatchFill}hoverHatchFill(){api},{api:anychart.core.annotations.Ellipse#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+* {api:anychart.core.annotations.Ellipse#hoverFill}hoverFill(){api}, {api:anychart.core.annotations.Ellipse#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.annotations.Ellipse#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 * {api:anychart.core.annotations.Ellipse#selectFill}selectFill(){api}, {api:anychart.core.annotations.Ellipse#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.annotations.Ellipse#selectStroke}selectStroke(){api} configure the visual settings on select
 
 In the sample below, there is an Ellipse annotation with some of the visual settings configured. Like in the previous sample, object notation is used:
