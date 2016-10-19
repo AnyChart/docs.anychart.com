@@ -15,9 +15,6 @@ This article explains how to add an Ellipse and configure its basic and visual s
 * [Drawing Tools and Annotations: Drawing](Drawing)
 * [Drawing Tools and Annotations: Serializing and Deserializing](Serializing_Deseializing)
 
-You can find other settings (which work with all annotation types), such as configuring hover gap and binding to axes, in the [Drawing Tools and Annotations: General Settings](General_Settings) article. To learn how to provide users with the opportunity to draw annotations, see [Drawing Tools and Annotations: Drawing](Drawing), and to learn about serializing and deserializing the settings, see [Drawing Tools and Annotations: Serializing and Deserializing](Serializing_Deseializing).
-
-
 ## Basic Settings
 
 To add an Ellipse annotation to a chart, refer to the {api:anychart.core.annotations.PlotController}annotations(){api} object and call the {api:anychart.core.annotations.Ellipse}ellipse(){api} method.
