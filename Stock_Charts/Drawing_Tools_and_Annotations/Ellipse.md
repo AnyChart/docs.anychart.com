@@ -16,7 +16,9 @@ The Ellipse annotation allows to add an ellipse or a circle to a chart.
 
 ## Basic Settings
 
-To add an Ellipse annotation to a chart, refer to the {api:anychart.core.annotations.PlotController}annotations(){api} object and call the {api:anychart.core.annotations.Ellipse}ellipse(){api} method. The next step is to set 4 points that determine the position of the ellipse: use the xAnchor(), valueAnchor(), secondXAnchor(), and secondValueAnchor() methods. Usually, the most convenient way to do this is object notation (see the [Serializing and Deserializing](Serializing_Deserializing) article):
+To add an Ellipse annotation to a chart, refer to the {api:anychart.core.annotations.PlotController}annotations(){api} object and call the {api:anychart.core.annotations.Ellipse}ellipse(){api} method.
+
+The next step is to set 4 points that determine the position of the ellipse: use the {api:anychart.core.annotations.Ellipse#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Ellipse#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Ellipse#secondXAnchor}secondXAnchor(), and {api:anychart.core.annotations.Ellipse#secondValueAnchor}secondValueAnchor(){api} methods. Usually, the most convenient way to do this is object notation (see the [Serializing and Deserializing](Serializing_Deserializing) article):
 
 ```
 // create a stock chart
@@ -49,11 +51,11 @@ This is how it looks like:
 
 You can also configure the visual settings of an Ellipse annotation:
 
-* The color(), fill(), hatchFill(), and stroke() methods set the color, fill, hatch fill, and stroke.
-* The hoverFill(), hoverHatchFill(), and hoverStroke() methods configure the visual settings on hover.
-* The selectFill(), selectHatchFill(), and selectStroke() methods configure the visual settings on select.
+* The {api:anychart.core.annotations.Ellipse#color}color(){api}, {api:anychart.core.annotations.Ellipse#fill}fill(){api}, {api:anychart.core.annotations.Ellipse#hatchFill}hatchFill(){api}, and {api:anychart.core.annotations.Ellipse#stroke}stroke(){api} methods set the color, fill, hatch fill, and stroke.
+* The {api:anychart.core.annotations.Ellipse#hoverFill}hoverFill(){api}, {api:anychart.core.annotations.Ellipse#hoverHatchFill}hoverHatchFill(){api}, and {api:anychart.core.annotations.Ellipse#hoverStroke}hoverStroke(){api} methods configure the visual settings on hover.
+* The {api:anychart.core.annotations.Ellipse#selectFill}selectFill(){api}, {api:anychart.core.annotations.Ellipse#selectHatchFill}selectHatchFill(){api}, and {api:anychart.core.annotations.Ellipse#selectStroke}selectStroke(){api} methods configure the visual settings on select.
 
-In the sample below...
+In the sample below, there is an Ellipse annotation with some of the visual settings configured. Like in the previous one, object notation is used:
 
 ```
 // an auxiliary variable for working with annotations
