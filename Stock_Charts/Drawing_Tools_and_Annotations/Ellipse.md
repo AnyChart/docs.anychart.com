@@ -56,7 +56,7 @@ You can also configure the visual settings of an Ellipse annotation:
 * {api:anychart.core.annotations.Ellipse#hoverFill}hoverFill(){api}, {api:anychart.core.annotations.Ellipse#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.annotations.Ellipse#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 * {api:anychart.core.annotations.Ellipse#selectFill}selectFill(){api}, {api:anychart.core.annotations.Ellipse#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.annotations.Ellipse#selectStroke}selectStroke(){api} configure the visual settings on select
 
-In the sample below, there are two Ellipse annotation with some of the visual settings configured. Both object notation and regular notation are used:
+In the sample below, there are two Ellipse annotation with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
 // create the first ellipse annotation and configure its visual settings
