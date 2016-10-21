@@ -17,7 +17,7 @@ This article explains how to add an Ellipse and configure its basic and visual s
 
 ## Basic Settings
 
-To add an Ellipse annotation to a chart, refer to the {api:anychart.core.annotations.PlotController}annotations(){api} object and call the {api:anychart.core.annotations.Ellipse}ellipse(){api} method.
+To add an Ellipse annotation to a chart, call the {api:anychart.core.annotations.Ellipse}ellipse(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
 Next, use the {api:anychart.core.annotations.Ellipse#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Ellipse#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Ellipse#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Ellipse#secondValueAnchor}secondValueAnchor(){api} methods to set 4 points that determine the position of the ellipse. Usually, the most convenient way to do this is object notation:
 
@@ -32,7 +32,7 @@ var plot = chart.plot(0);
 var lineSeries = plot.line(mapping);
 lineSeries.name('CSCO');
 
-// an auxiliary variable for working with annotations
+// access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
 
 // create an ellipse annotation
@@ -56,14 +56,11 @@ You can also configure the visual settings of an Ellipse annotation:
 * {api:anychart.core.annotations.Ellipse#hoverFill}hoverFill(){api}, {api:anychart.core.annotations.Ellipse#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.annotations.Ellipse#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 * {api:anychart.core.annotations.Ellipse#selectFill}selectFill(){api}, {api:anychart.core.annotations.Ellipse#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.annotations.Ellipse#selectStroke}selectStroke(){api} configure the visual settings on select
 
-In the sample below, there is an Ellipse annotation with some of the visual settings configured. Like in the previous sample, object notation is used:
+In the sample below, there are two Ellipse annotation with some of the visual settings configured. Both object notation and regular notation are used:
 
 ```
-// an auxiliary variable for working with annotations
-var controller = plot.annotations();
-
-// create an ellipse annotation and configure its visual settings
-controller.ellipse({
+// create the first ellipse annotation and configure its visual settings
+ellipse1 = controller.ellipse({
     xAnchor: '2006-11-20',
     valueAnchor: 25.92,
     secondXAnchor: '2007-02-24',
@@ -71,7 +68,22 @@ controller.ellipse({
     hoverFill: "#398CAE 0.3",
     hoverStroke: "2 #FF0000",
     selectFill: "#398CAE 0.3",
+    selectHatchFill: "brick",
     selectStroke: "5 #FF0000"
+});
+
+// create the second ellipse annotation
+ellipse2 = controller.ellipse();
+
+// set the position of the second annotation
+ellipse2.xAnchor('2005-11-20');
+ellipse2.valueAnchor(15.55);
+ellipse2.secondXAnchor('2007-02-25');
+ellipse2.secondValueAnchor(23.30);
+ 
+// configure the visual settings of the second annotation
+ellipse2.stroke({color: "#2196F3"}, 3, "10 2");
+ellipse2.fill(null);
 });
 ```
 
