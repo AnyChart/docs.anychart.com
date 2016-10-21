@@ -19,7 +19,7 @@ This article explains how to add a Triangle and configure its basic and visual s
 
 To add a Triangle annotation to a chart, call the {api:anychart.core.annotations.Triangle}triangle(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.Triangle#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Triangle#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Triangle#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Triangle#secondValueAnchor}secondValueAnchor(){api} methods to set 3 points that determine the position of the triangle. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.Triangle#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Triangle#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Triangle#secondXAnchor}secondXAnchor(){api}, {api:anychart.core.annotations.Triangle#secondValueAnchor}secondValueAnchor(){api}, {api:anychart.core.annotations.Triangle#secondXAnchor}thirdXAnchor(){api} and {api:anychart.core.annotations.Triangle#secondValueAnchor}thirdValueAnchor(){api} methods to set 3 points that determine the position of the triangle. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart
