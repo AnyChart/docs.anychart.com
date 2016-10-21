@@ -84,7 +84,6 @@ ellipse2.secondValueAnchor(23.30);
 // configure the visual settings of the second annotation
 ellipse2.stroke({color: "#2196F3"}, 3, "10 2");
 ellipse2.fill(null);
-});
 ```
 
 {sample}STOCK\_Drawing\_Ellipse\_02{sample}
