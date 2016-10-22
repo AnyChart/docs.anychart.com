@@ -58,7 +58,7 @@ You can also configure the visual settings of a Triangle annotation:
 * {api:anychart.core.annotations.Triangle#hoverFill}hoverFill(){api}, {api:anychart.core.annotations.Triangle#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.annotations.Triangle#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 * {api:anychart.core.annotations.Triangle#selectFill}selectFill(){api}, {api:anychart.core.annotations.Triangle#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.annotations.Triangle#selectStroke}selectStroke(){api} configure the visual settings on select
 
-In the sample below, there are two Triangle annotation with some of the visual settings configured (by using an object in the first case and methods in the second):
+In the sample below, there are two Triangle annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
 // create the first triangle annotation and configure its visual settings

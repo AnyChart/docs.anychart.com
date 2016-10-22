@@ -53,7 +53,7 @@ You can also configure the visual settings of an Vertical Line annotation:
 * {api:anychart.core.annotations.VerticalLine#hoverStroke}hoverStroke(){api} configures the stroke on hover
 * {api:anychart.core.annotations.VerticalLine#selectStroke}selectStroke(){api} configures the Stroke on select
 
-In the sample below, there are two Vertical Line annotation with some of the visual settings configured (by using an object in the first case and methods in the second):
+In the sample below, there are two Vertical Line annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
 // create the first vertical line annotation and configure its visual settings

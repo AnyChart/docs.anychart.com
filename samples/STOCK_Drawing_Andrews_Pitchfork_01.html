@@ -32,16 +32,18 @@
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
-    // create an ellipse annotation
-    controller.ellipse({
-        xAnchor: '2006-11-20',
-        valueAnchor: 25.92,
-        secondXAnchor: '2007-02-24',
-        secondValueAnchor: 31.92
+    // create an Andrews' pitchfork annotation
+    controller.andrewsPitchfork({
+        xAnchor: '2006-10-15',
+        valueAnchor: 24.55,
+        secondXAnchor: '2007-01-07',
+        secondValueAnchor: 28.92,
+        thirdXAnchor: '2007-05-20',
+        thirdValueAnchor: 25.52
     });
 
     // set the chart title
-    chart.title("Ellipse: Basic Settings");
+    chart.title("Andrews' Pitchfork: Basic Settings");
 
     // set the container id
     chart.container("container");

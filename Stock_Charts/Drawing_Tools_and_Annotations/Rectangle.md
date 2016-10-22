@@ -56,7 +56,7 @@ You can also configure the visual settings of a Rectangle annotation:
 * {api:anychart.core.annotations.Rectangle#hoverFill}hoverFill(){api}, {api:anychart.core.annotations.Rectangle#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.annotations.Rectangle#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 * {api:anychart.core.annotations.Rectangle#selectFill}selectFill(){api}, {api:anychart.core.annotations.Rectangle#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.annotations.Rectangle#selectStroke}selectStroke(){api} configure the visual settings on select
 
-In the sample below, there are two Rectangle annotation with some of the visual settings configured (by using an object in the first case and methods in the second):
+In the sample below, there are two Rectangle annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
 // create the first rectangle annotation and configure its visual settings
