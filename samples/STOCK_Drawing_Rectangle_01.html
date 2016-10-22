@@ -32,8 +32,8 @@
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
-    // create a lineSegment annotation
-    controller.lineSegment({
+    // create a rectangle annotation
+    controller.rectangle({
         xAnchor: '2006-11-19',
         valueAnchor: 29.84,
         secondXAnchor: '2007-03-25',
@@ -41,7 +41,7 @@
     });
 
     // set the chart title
-    chart.title("LinLine Segment: Basic Settings");
+    chart.title("Rectangle: Basic Settings");
 
     // set the container id
     chart.container("container");
