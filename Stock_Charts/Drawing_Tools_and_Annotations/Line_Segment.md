@@ -1,5 +1,5 @@
 {:index 3}
-#Line
+#Line Segment
 
 * [Overview](#overview)
 * [Basic settings](#basic_settings)
