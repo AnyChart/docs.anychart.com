@@ -116,4 +116,4 @@ text2.letterSpacing(3);
 text2.lineHeight(20);
 ```
 
-{sample :width 832 :height 120}GFX\_Basic\_Text\_07{sample}
+{sample :width 832 :height 155}GFX\_Basic\_Text\_07{sample}
