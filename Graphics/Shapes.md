@@ -28,7 +28,7 @@ The {api:anychart.graphics#rect}rect(){api} method allows to draw a rectangle of
 ```
 stage.rect(100, 10, 400, 40);
 ```
-{sample :width 832 :height 150}GFX\_Basic\_Shapes\_01{sample}
+{sample :width 832 :height 200}GFX\_Basic\_Shapes\_01{sample}
 
 ### Circle
 
@@ -40,7 +40,7 @@ Let's add a circle to the picture from the sample above.
 // draw a circle
 stage.circle(300, 150, 70);
 ```
-{sample :width 832 :height 150}GFX\_Basic\_Shapes\_02{sample}
+{sample :width 832 :height 200}GFX\_Basic\_Shapes\_02{sample}
 
 ### Ellipse
 
@@ -50,7 +50,7 @@ Another simple shape is ellipse. Use {api:anychart.graphics#ellipse}ellipse(){ap
 // draw an ellipse
 stage.ellipse(300, 300, 200, 50);
 ```
-{sample :width 832 :height 150}GFX\_Basic\_Shapes\_03{sample}
+{sample :width 832 :height 200}GFX\_Basic\_Shapes\_03{sample}
 
 
 ## Predefined Shapes
@@ -173,7 +173,7 @@ The following sample demonstrates creating a shape from predefined objects.
 // draws a star
 acgraph.vector.primitives.star(stage, 200, 70, 50, 17, 7, 20, -0.9);
 ```
-{sample :width 832 :height 150}GFX\_Basic\_Shapes\_04{sample}
+{sample :width 832 :height 200}GFX\_Basic\_Shapes\_04{sample}
 
 ## Clip
 
@@ -187,7 +187,7 @@ var clipArea = acgraph.clip(10, 10, 90, 90);
 
 blueCircle.clip(clipArea);
 ```
-{sample :width 832 :height 150}GFX\_Basic\_Shapes\_05{sample}
+{sample :width 832 :height 200}GFX\_Basic\_Shapes\_05{sample}
 
 
 ## Coloring
@@ -209,7 +209,7 @@ Use the {api:anychart.graphics.vector.Shape#fill}fill(){api} method to fill the 
 star.fill("gold")";
 
 ```
-{sample :width 832 :height 150}GFX\_Basic\_Shapes\_06{sample}
+{sample :width 832 :height 200}GFX\_Basic\_Shapes\_06{sample}
 
 
 ### Stroke
@@ -220,5 +220,5 @@ Use the {api:anychart.graphics.vector.Shape#stroke}stroke(){api} method to strok
 // set the stroke color to the star
 star.stroke("#000000", "4");
 ```
-{sample :width 832 :height 150}GFX\_Basic\_Shapes\_07{sample}
+{sample :width 832 :height 200}GFX\_Basic\_Shapes\_07{sample}
 

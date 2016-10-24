@@ -82,23 +82,6 @@ If you need to customize your chart, it is a good idea to use some unusual fonts
 AnyChart provides an opportinity to use external fonts without unnecessary obstacles. <!--There are two font types that can be used within our charts: icon fonts and text fonts. -->
 
 
-[//]: # (### Icon Fonts
-
-If you need some icons on your chart, you can use an external icon font instead of uploading images for each icon. Reference the necessary font on the Web:
-
-```
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-```
-
-Then set the font as a class:
-
-```
-text = stage.text().htmlText("<i class='fa fa-camera' aria-hidden='true'></i> - Click for a snapshot");
-```
-
-{sample :width 832 :height 120}GFX\_Basic\_Text\_05{sample}
-)
-
 ### Text Fonts
 
 If you want to use a custom font in your chart, use one of the services providing those fonts - for example, Google Fonts. Put a link to the css file of the font you want to use and don't forget to define the necessary font in the code of your chart:
