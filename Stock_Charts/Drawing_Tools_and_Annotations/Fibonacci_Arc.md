@@ -7,7 +7,7 @@
 
 ## Overview
 
-The Fibonacci Arc annotation allows to add a fibonacci arc to a chart.
+The Fibonacci Arc annotation allows to add a Fibonacci arc to a chart.
 
 This article explains how to add a Fibonacci Arc and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
@@ -19,7 +19,7 @@ This article explains how to add a Fibonacci Arc and configure its basic and vis
 
 To add a Fibonacci Arc annotation to a chart, call the {api:anychart.core.annotations.PlotController#fibonacciArc}fibonacciArc(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.FibonacciArc#valueAnchor}valueAnchor(){api}, method to set the point that determines the position of the Fibonacci Arc. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.FibonacciArc#valueAnchor}valueAnchor(){api}, method to set 4 points that determine the position of the Fibonacci Arc. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart
@@ -31,7 +31,7 @@ var plot = chart.plot(0);
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
 
-// create a fibonacci arc annotation
+// create a Fibonacci Arc annotation
 controller.fibonacciArc({
     valueAnchor: 33.13
 });
@@ -52,14 +52,14 @@ You can also configure the visual settings of a Fibonacci Arc annotation:
 In the sample below, there are two Fibonacci Arc annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first fibonacci arc annotation and configure its visual settings
+// create the first Fibonacci Arc annotation and configure its visual settings
 horizontalLine1 = controller.fibonacciArc({
     valueAnchor: 33.13,
     hoverStroke: "2 #FF0000",
     selectStroke: "5 #FF0000"
 });
 
-// create the second fibonacci arc annotation
+// create the second Fibonacci Arc annotation
 horizontalLine2 = controller.fibonacciArc();
 
 // set the position of the second annotation

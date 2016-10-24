@@ -31,7 +31,7 @@ var plot = chart.plot(0);
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
 
-// create a horizontal line annotation
+// create a Horizontal Line annotation
 controller.horizontalLine({
     valueAnchor: 33.13
 });
@@ -52,14 +52,14 @@ You can also configure the visual settings of a Horizontal Line annotation:
 In the sample below, there are two Horizontal Line annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first horizontal line annotation and configure its visual settings
+// create the first Horizontal Line annotation and configure its visual settings
 horizontalLine1 = controller.horizontalLine({
     valueAnchor: 33.13,
     hoverStroke: "2 #FF0000",
     selectStroke: "5 #FF0000"
 });
 
-// create the second horizontal line annotation
+// create the second Horizontal Line annotation
 horizontalLine2 = controller.horizontalLine();
 
 // set the position of the second annotation

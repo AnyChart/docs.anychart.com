@@ -31,7 +31,7 @@ var plot = chart.plot(0);
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
 
-// create an ellipse annotation
+// create an Ellipse annotation
 controller.ellipse({
     xAnchor: '2006-11-20',
     valueAnchor: 25.92,
@@ -55,7 +55,7 @@ You can also configure the visual settings of an Ellipse annotation:
 In the sample below, there are two Ellipse annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first ellipse annotation and configure its visual settings
+// create the first Ellipse annotation and configure its visual settings
 ellipse1 = controller.ellipse({
     xAnchor: '2006-11-20',
     valueAnchor: 25.92,
@@ -68,7 +68,7 @@ ellipse1 = controller.ellipse({
     selectStroke: "5 #FF0000"
 });
 
-// create the second ellipse annotation
+// create the second Ellipse annotation
 ellipse2 = controller.ellipse();
 
 // set the position of the second annotation

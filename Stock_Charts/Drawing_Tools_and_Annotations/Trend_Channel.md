@@ -31,7 +31,7 @@ var plot = chart.plot(0);
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
 
-// create a trend channel annotation
+// create a Trend Channel annotation
 controller.trendChannel({
     xAnchor: '2007-01-07',
     valueAnchor: 28.92,
@@ -57,7 +57,7 @@ You can also configure the visual settings of a Trend Channel annotation:
 In the sample below, there are two Trend Channel annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first trend channel annotation and configure its visual settings
+// create the first Trend Channel annotation and configure its visual settings
 trendChannel1 = controller.trendChannel({
     xAnchor: '2007-01-07',
     valueAnchor: 28.92,
@@ -72,7 +72,7 @@ trendChannel1 = controller.trendChannel({
     selectStroke: "5 #FF0000"
 });
 
-// create the second trend channel annotation
+// create the second Trend Channel annotation
 trendChannel2 = controller.trendChannel();
 
 // set the position of the second annotation

@@ -31,7 +31,7 @@ var plot = chart.plot(0);
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
 
-// create a rectangle annotation
+// create a Rectangle annotation
 controller.rectangle({
     xAnchor: '2006-11-19',
     valueAnchor: 29.84,
@@ -55,7 +55,7 @@ You can also configure the visual settings of a Rectangle annotation:
 In the sample below, there are two Rectangle annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first rectangle annotation and configure its visual settings
+// create the first Rectangle annotation and configure its visual settings
 rectangle1 = controller.rectangle({
     xAnchor: '2006-11-19',
     valueAnchor: 29.84,
@@ -68,7 +68,7 @@ rectangle1 = controller.rectangle({
     selectStroke: "5 #FF0000"
 });
 
-// create the second rectangle annotation
+// create the second Rectangle annotation
 rectangle2 = controller.rectangle();
 
 // set the position of the second annotation

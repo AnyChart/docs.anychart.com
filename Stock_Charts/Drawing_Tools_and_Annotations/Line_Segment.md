@@ -31,7 +31,7 @@ var plot = chart.plot(0);
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
 
-// create a line annotation
+// create a Line annotation
 controller.line({
     xAnchor: '2006-07-30',
     valueAnchor: 17.24,
@@ -55,7 +55,7 @@ You can also configure the visual settings of a Line annotation:
 In the sample below, there are two Line annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first line annotation and configure its visual settings
+// create the first Line annotation and configure its visual settings
 line1 = controller.line({
     xAnchor: '2006-07-30',
     valueAnchor: 17.24,
@@ -65,7 +65,7 @@ line1 = controller.line({
     selectStroke: "5 #FF0000"
 });
 
-// create the second line annotation
+// create the second Line annotation
 line2 = controller.line();
 
 // set the position of the second annotation

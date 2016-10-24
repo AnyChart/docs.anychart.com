@@ -31,7 +31,7 @@ var plot = chart.plot(0);
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
 
-// create a triangle annotation
+// create a Triangle annotation
 controller.triangle({
     xAnchor: '2006-03-14',
     valueAnchor: 25.14,
@@ -57,7 +57,7 @@ You can also configure the visual settings of a Triangle annotation:
 In the sample below, there are two Triangle annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first triangle annotation and configure its visual settings
+// create the first Triangle annotation and configure its visual settings
 triangle1 = controller.triangle({
     xAnchor: '2006-03-14',
     valueAnchor: 25.14,
@@ -72,7 +72,7 @@ triangle1 = controller.triangle({
     selectStroke: "5 #FF0000"
 });
 
-// create the second triangle annotation
+// create the second Triangle annotation
 triangle2 = controller.triangle();
 
 // set the position of the second annotation

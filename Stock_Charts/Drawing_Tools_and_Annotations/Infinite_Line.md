@@ -31,7 +31,7 @@ var plot = chart.plot(0);
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
 
-// create an infinite line annotation
+// create an Infinite Line annotation
 controller.infiniteLine({
     xAnchor: '2006-07-30',
     valueAnchor: 17.24,
@@ -55,7 +55,7 @@ You can also configure the visual settings of an Infinite Line annotation:
 In the sample below, there are two Infinite Line annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first infinite line annotation and configure its visual settings
+// create the first Infinite Line annotation and configure its visual settings
 infiniteLine1 = controller.infiniteLine({
     xAnchor: '2006-07-30',
     valueAnchor: 17.24,
@@ -65,7 +65,7 @@ infiniteLine1 = controller.infiniteLine({
     selectStroke: "5 #FF0000"
 });
 
-// create the second infinite line annotation
+// create the second Infinite Line annotation
 infiniteLine2 = controller.infiniteLine();
 
 // set the position of the second annotation

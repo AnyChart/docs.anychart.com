@@ -31,7 +31,7 @@ var plot = chart.plot(0);
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
 
-// create a vertical line annotation
+// create a Vertical Line annotation
 controller.verticalLine({
     xAnchor: '2007-09-23'
 });
@@ -52,14 +52,14 @@ You can also configure the visual settings of a Vertical Line annotation:
 In the sample below, there are two Vertical Line annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first vertical line annotation and configure its visual settings
+// create the first Vertical Line annotation and configure its visual settings
 verticalLine1 = controller.verticalLine({
     xAnchor: '2007-09-23',
     hoverStroke: "2 #FF0000",
     selectStroke: "5 #FF0000"
 });
 
-// create the second vertical line annotation
+// create the second Vertical Line annotation
 verticalLine2 = controller.verticalLine();
 
 // set the position of the second annotation

@@ -31,7 +31,7 @@ var plot = chart.plot(0);
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
 
-// create an ray annotation
+// create a Ray annotation
 controller.ray({
     xAnchor: '2006-07-30',
     valueAnchor: 17.24,
@@ -55,7 +55,7 @@ You can also configure the visual settings of a Ray annotation:
 In the sample below, there are two Ray annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first ray annotation and configure its visual settings
+// create the first Ray annotation and configure its visual settings
 ray1 = controller.ray({
     xAnchor: '2006-07-30',
     valueAnchor: 17.24,
@@ -65,7 +65,7 @@ ray1 = controller.ray({
     selectStroke: "5 #FF0000"
 });
 
-// create the second ray annotation
+// create the second Ray annotation
 ray2 = controller.ray();
 
 // set the position of the second annotation
