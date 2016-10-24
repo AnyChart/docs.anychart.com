@@ -7,9 +7,9 @@
 
 ## Overview
 
-The Horizontal Line annotation allows to add an horizontal line to a chart.
+The Horizontal Line annotation allows to add a horizontal line to a chart.
 
-This article explains how to add an Horizontal Line and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
+This article explains how to add a Horizontal Line and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
 * [Drawing Tools and Annotations: General Settings](General_Settings)
 * [Drawing Tools and Annotations: Drawing](Drawing)
@@ -17,7 +17,7 @@ This article explains how to add an Horizontal Line and configure its basic and 
 
 ## Basic Settings
 
-To add an Horizontal Line annotation to a chart, call the {api:anychart.core.annotations.PlotController#horizontalLine}horizontalLine(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
+To add a Horizontal Line annotation to a chart, call the {api:anychart.core.annotations.PlotController#horizontalLine}horizontalLine(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
 Next, use the {api:anychart.core.annotations.HorizontalLine#valueAnchor}valueAnchor(){api}, method to set the point that determines the position of the Horizontal Line. Usually, the most convenient way to do this is object notation:
 
@@ -43,7 +43,7 @@ This is how it looks like:
 
 ## Visual Settings
 
-You can also configure the visual settings of an Horizontal Line annotation:
+You can also configure the visual settings of a Horizontal Line annotation:
 
 * {api:anychart.core.annotations.HorizontalLine#color}color(){api} and {api:anychart.core.annotations.HorizontalLine#stroke}stroke(){api} set the color and stroke
 * {api:anychart.core.annotations.HorizontalLine#hoverStroke}hoverStroke(){api} configures the stroke on hover

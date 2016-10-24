@@ -32,18 +32,24 @@
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
-    // create a triangle annotation
-    controller.triangle({
-        xAnchor: '2006-03-14',
-        valueAnchor: 25.14,
-        secondXAnchor: '2007-02-25',
-        secondValueAnchor: 34.5,
-        thirdXAnchor: '2007-02-04',
-        thirdValueAnchor: 20.65
+    // create the first horizontal line annotation and configure its visual settings
+    horizontalLine1 = controller.horizontalLine({
+        valueAnchor: 33.13,
+        hoverStroke: "2 #FF0000",
+        selectStroke: "5 #FF0000"
     });
 
+    // create the second horizontal line annotation
+    horizontalLine2 = controller.horizontalLine();
+
+    // set the position of the second annotation
+    horizontalLine2.valueAnchor(14.18);
+     
+    // configure the visual settings of the second annotation
+    horizontalLine2.stroke("#2196F3", 3, "10 2");
+
     // set the chart title
-    chart.title("Triangle: Basic Settings");
+    chart.title("Horizontal Line: Visual Settings");
 
     // set the container id
     chart.container("container");
