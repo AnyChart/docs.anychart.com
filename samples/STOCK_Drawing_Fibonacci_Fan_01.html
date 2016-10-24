@@ -32,8 +32,8 @@
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
-    // create a Fibonacci Arc annotation
-    controller.fibonacciArc({
+    // create a Fibonacci Fan annotation
+    controller.fibonacciFan({
         xAnchor: "2006-07-30",
         valueAnchor: 17.24,
         secondXAnchor: "2007-01-07",
@@ -41,7 +41,7 @@
     });
 
     // set the chart title
-    chart.title("Fibonacci Arc: Basic Settings");
+    chart.title("Fibonacci Fan: Basic Settings");
 
     // set the container id
     chart.container("container");

@@ -1,5 +1,5 @@
 {:index 3}
-#Fibonacci Arc
+#Fibonacci Fan
 
 * [Overview](#overview)
 * [Basic settings](#basic_settings)
@@ -7,9 +7,9 @@
 
 ## Overview
 
-The Fibonacci Arc annotation allows to add a Fibonacci arc to a chart.
+The Fibonacci Fan annotation allows to add a Fibonacci fan to a chart.
 
-This article explains how to add a Fibonacci Arc and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
+This article explains how to add a Fibonacci Fan and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
 * [Drawing Tools and Annotations: General Settings](General_Settings)
 * [Drawing Tools and Annotations: Drawing](Drawing)
@@ -17,9 +17,9 @@ This article explains how to add a Fibonacci Arc and configure its basic and vis
 
 ## Basic Settings
 
-To add a Fibonacci Arc annotation to a chart, call the {api:anychart.core.annotations.PlotController#fibonacciArc}fibonacciArc(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
+To add a Fibonacci Fan annotation to a chart, call the {api:anychart.core.annotations.PlotController#fibonacciFan}fibonacciFan(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.FibonacciArc#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.FibonacciArc#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.FibonacciArc#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.FibonacciArc#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the Fibonacci Arc. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.FibonacciFan#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.FibonacciFan#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.FibonacciFan#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.FibonacciFan#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the Fibonacci Fan. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart
@@ -31,8 +31,8 @@ var plot = chart.plot(0);
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
 
-// create a Fibonacci Arc annotation
-controller.fibonacciArc({
+// create a Fibonacci Fan annotation
+controller.fibonacciFan({
     xAnchor: "2006-07-30",
     valueAnchor: 17.24,
     secondXAnchor: "2007-01-07",
@@ -42,21 +42,21 @@ controller.fibonacciArc({
 
 This is how it looks like:
 
-{sample}STOCK\_Drawing\_Fibonacci\_Arc\_01{sample}
+{sample}STOCK\_Drawing\_Fibonacci\_Fan\_01{sample}
 
 ## Visual Settings
 
-You can also configure the visual settings of a Fibonacci Arc annotation:
+You can also configure the visual settings of a Fibonacci Fan annotation:
 
-* {api:anychart.core.annotations.FibonacciArc#color}color(){api}, {api:anychart.core.annotations.FibonacciArc#stroke}stroke(){api}, and {api:anychart.core.annotations.FibonacciArc#trend}trend(){api} set the color and stroke of the annotation and its trend
-* {api:anychart.core.annotations.FibonacciArc#hoverStroke}hoverStroke(){api} and {api:anychart.core.annotations.FibonacciArc#hoverTrend}hoverTrend(){api} configure the visual settings on hover
-* {api:anychart.core.annotations.FibonacciArc#selectStroke}selectStroke(){api} and {api:anychart.core.annotations.FibonacciArc#selectTrend}selectTrend(){api} configure the visual settings on select
+* {api:anychart.core.annotations.FibonacciFan#color}color(){api}, {api:anychart.core.annotations.FibonacciFan#stroke}stroke(){api}, and {api:anychart.core.annotations.FibonacciFan#trend}trend(){api} set the color and stroke of the annotation and its trend
+* {api:anychart.core.annotations.FibonacciFan#hoverStroke}hoverStroke(){api} and {api:anychart.core.annotations.FibonacciFan#hoverTrend}hoverTrend(){api} configure the visual settings on hover
+* {api:anychart.core.annotations.FibonacciFan#selectStroke}selectStroke(){api} and {api:anychart.core.annotations.FibonacciFan#selectTrend}selectTrend(){api} configure the visual settings on select
 
-In the sample below, there are two Fibonacci Arc annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
+In the sample below, there are two Fibonacci Fan annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first Fibonacci Arc annotation and configure its visual settings
-fibonacciArc1 = controller.fibonacciArc({
+// create the first Fibonacci Fan annotation and configure its visual settings
+fibonacciFan1 = controller.fibonacciFan({
     xAnchor: "2006-07-30",
     valueAnchor: 17.24,
     secondXAnchor: "2007-01-07",
@@ -67,17 +67,17 @@ fibonacciArc1 = controller.fibonacciArc({
     selectStroke: "5 #FF0000"        
 });
 
-// create the second Fibonacci Arc annotation
-fibonacciArc2 = controller.fibonacciArc();
+// create the second Fibonacci Fan annotation
+fibonacciFan2 = controller.fibonacciFan();
 
 // set the position of the second annotation
-fibonacciArc2.xAnchor("2004-01-11");
-fibonacciArc2.valueAnchor(29.13);
-fibonacciArc2.secondXAnchor("2004-08-08");
-fibonacciArc2.secondValueAnchor(17.86);
+fibonacciFan2.xAnchor("2004-01-11");
+fibonacciFan2.valueAnchor(29.13);
+fibonacciFan2.secondXAnchor("2004-08-08");
+fibonacciFan2.secondValueAnchor(17.86);
  
 // configure the visual settings of the second annotation
-fibonacciArc2.stroke("#2196F3", 3, "10 2");
+fibonacciFan2.stroke("#2196F3", 3, "10 2");
 ```
 
-{sample}STOCK\_Drawing\_Fibonacci\_Arc\_02{sample}
+{sample}STOCK\_Drawing\_Fibonacci\_Fan\_02{sample}

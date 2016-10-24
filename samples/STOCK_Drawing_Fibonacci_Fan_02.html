@@ -32,8 +32,8 @@
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
-    // create the first Fibonacci Arc annotation and configure its visual settings
-    fibonacciArc1 = controller.fibonacciArc({
+    // create the first Fibonacci Fan annotation and configure its visual settings
+    fibonacciFan1 = controller.fibonacciFan({
         xAnchor: "2006-07-30",
         valueAnchor: 17.24,
         secondXAnchor: "2007-01-07",
@@ -44,20 +44,20 @@
         selectStroke: "5 #FF0000"        
     });
 
-    // create the second Fibonacci Arc annotation
-    fibonacciArc2 = controller.fibonacciArc();
+    // create the second Fibonacci Fan annotation
+    fibonacciFan2 = controller.fibonacciFan();
 
     // set the position of the second annotation
-    fibonacciArc2.xAnchor("2004-01-11");
-    fibonacciArc2.valueAnchor(29.13);
-    fibonacciArc2.secondXAnchor("2004-08-08");
-    fibonacciArc2.secondValueAnchor(17.86);
+    fibonacciFan2.xAnchor("2004-01-11");
+    fibonacciFan2.valueAnchor(29.13);
+    fibonacciFan2.secondXAnchor("2004-08-08");
+    fibonacciFan2.secondValueAnchor(17.86);
      
     // configure the visual settings of the second annotation
-    fibonacciArc2.stroke("#2196F3", 3, "10 2");
+    fibonacciFan2.stroke("#2196F3", 3, "10 2");
 
     // set the chart title
-    chart.title("Fibonacci Arc: Visual Settings");
+    chart.title("Fibonacci Fan: Visual Settings");
 
     // set the container id
     chart.container("container");
