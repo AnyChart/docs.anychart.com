@@ -10,12 +10,16 @@
 <script x-export="stage">
 stage = acgraph.create("container");
 
-rect = stage.rect(100, 10, 400, 40);
-rect.fill("#80461b");
+triangle = stage.triangleUp(110, 95, 80);
 
-// add the transformation matrix
-rect.setTransformationMatrix(0.5, 0.3, 1.5, 0.5, 0, 0);
+transformedTriangle = stage.triangleUp(110, 95, 80);
 
+transformedTriangle.fill("#80461b");
+
+// transform the triangle
+transformedTriangle.setPosition(250, 15);
+transformedTriangle.rotate(45, 300, 15);
+transformedTriangle.scale(1.5, 0.5, 0, 50);
 </script>
 </head>
 <body>

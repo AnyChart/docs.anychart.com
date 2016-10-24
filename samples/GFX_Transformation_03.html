@@ -10,16 +10,19 @@
 <script x-export="stage">
 stage = acgraph.create("container");
 
+// create a triangle
 triangle = stage.triangleUp(110, 95, 80);
+triangle.fill("#d77d31");
+triangle.stroke(null);
 
-transformedTriangle = stage.triangleUp(110, 95, 80);
+// get the triangle center point
+triangleCenterX = triangle.getBounds().getLeft()+triangle.getBounds().getWidth()/2;
+triangleCenterY = triangle.getBounds().getTop()+triangle.getBounds().getHeight()/2;
 
-transformedTriangle.fill("#80461b");
-
-// transform the triangle
-transformedTriangle.setPosition(250, 15);
-transformedTriangle.rotate(45, 300, 15);
-transformedTriangle.scale(1.5, 0.5, 0, 50);
+// create a circle
+circle = stage.circle(triangleCenterX, triangleCenterY, 20);
+circle.fill("#8ccb5e");
+circle.stroke(null);
 </script>
 </head>
 <body>

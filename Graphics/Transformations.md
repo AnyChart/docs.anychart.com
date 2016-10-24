@@ -20,10 +20,10 @@ The following samples demonstrate a shape drawn on a stage and the same shape wi
 
 ```
 // add the transformation matrix
-rect.setTransformationMatrix(0.5, 0.3, 1.5, 0.5, 0, 0);
+rect.setTransformationMatrix(1, 0.05, 1.5, 0.5, 1, 1);
 ```
 
-{sample :width 410 :height 150}GFX\_Transformation\_01{sample} {sample :width 410 :height 150}GFX\_Transformation\_02{sample}
+{sample :width 410 :height 250}GFX\_Transformation\_01{sample} 
 
 
 To change specific settings use:
@@ -46,7 +46,7 @@ transformedTriangle.rotate(45, 300, 15);
 transformedTriangle.scale(1.5, 0.5, 0, 50);
 ```
 
-{sample :width 830 :height 150}GFX\_Transformation\_03{sample}
+{sample :width 830 :height 150}GFX\_Transformation\_02{sample}
 
 
 To get the bounds, dimensions, and coordinates use:
@@ -74,4 +74,4 @@ triangleCenterY = triangle.getBounds().getTop()+triangle.getBounds().getHeight()
 circle = stage.circle(triangleCenterX, triangleCenterY, 20);
 ```
 
-{sample :width 830 :height 150}GFX\_Transformation\_04{sample}
+{sample :width 830 :height 150}GFX\_Transformation\_03{sample}

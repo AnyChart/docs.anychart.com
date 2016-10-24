@@ -10,8 +10,14 @@
 <script x-export="stage">
 stage = acgraph.create("container");
 
-rect = stage.rect(100, 10, 400, 40);
-rect.fill("#80461b");
+rect_1 = stage.rect(50, 10, 300, 40);
+rect_1.fill("#80461b");
+
+rect_2 = stage.rect(350, 10, 300, 40);
+rect_2.fill("#80461b");
+
+// add the transformation matrix
+rect_2.setTransformationMatrix(1, 0.05, 1.5, 0.5, 1, 1);
 
 </script>
 </head>
