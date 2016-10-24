@@ -48,9 +48,9 @@ This is how it looks like:
 
 You can also configure the visual settings of a Fibonacci Fan annotation:
 
-* {api:anychart.core.annotations.FibonacciFan#color}color(){api}, {api:anychart.core.annotations.FibonacciFan#stroke}stroke(){api}, and {api:anychart.core.annotations.FibonacciFan#trend}trend(){api} set the color and stroke of the annotation and its trend
-* {api:anychart.core.annotations.FibonacciFan#hoverStroke}hoverStroke(){api} and {api:anychart.core.annotations.FibonacciFan#hoverTrend}hoverTrend(){api} configure the visual settings on hover
-* {api:anychart.core.annotations.FibonacciFan#selectStroke}selectStroke(){api} and {api:anychart.core.annotations.FibonacciFan#selectTrend}selectTrend(){api} configure the visual settings on select
+* {api:anychart.core.annotations.FibonacciFan#color}color(){api}, {api:anychart.core.annotations.FibonacciFan#stroke}stroke(){api}, {api:anychart.core.annotations.FibonacciFan#trend}trend(){api}, and {api:anychart.core.annotations.FibonacciFan#grid}grid(){api} set the color and stroke of the annotation, its trend, and grid
+* {api:anychart.core.annotations.FibonacciFan#hoverStroke}hoverStroke(){api}, {api:anychart.core.annotations.FibonacciFan#hoverTrend}hoverTrend(){api}, and {api:anychart.core.annotations.FibonacciFan#hoverGrid}hoverGrid(){api} configure the visual settings on hover
+* {api:anychart.core.annotations.FibonacciFan#selectStroke}selectStroke(){api}, {api:anychart.core.annotations.FibonacciFan#selectTrend}selectTrend(){api} and {api:anychart.core.annotations.FibonacciFan#selectGrid}selectGrid(){api} configure the visual settings on select
 
 In the sample below, there are two Fibonacci Fan annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
