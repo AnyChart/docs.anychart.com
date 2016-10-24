@@ -17,7 +17,7 @@ This article explains how to add an Vertical Line and configure its basic and vi
 
 ## Basic Settings
 
-To add an Vertical Line annotation to a chart, call the {api:anychart.core.annotations.VerticalLine}verticalLine(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
+To add an Vertical Line annotation to a chart, call the {api:anychart.core.annotations.PlotController#verticalLine}verticalLine(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
 Next, use the {api:anychart.core.annotations.VerticalLine#valueAnchor}xAnchor(){api}, method to set the point that determines the position of the Vertical Line. Usually, the most convenient way to do this is object notation:
 
@@ -27,10 +27,6 @@ chart = anychart.stock();
 
 // create a plot on the chart
 var plot = chart.plot(0);
-
-// create a line series
-var lineSeries = plot.line(mapping);
-lineSeries.name('CSCO');
 
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
@@ -70,7 +66,7 @@ verticalLine2 = controller.verticalLine();
 verticalLine2.xAnchor('2005-05-22');
  
 // configure the visual settings of the second annotation
-verticalLine2.stroke({color: "#2196F3"}, 3, "10 2");
+verticalLine2.stroke("#2196F3", 3, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Vertical\_Line\_02{sample}

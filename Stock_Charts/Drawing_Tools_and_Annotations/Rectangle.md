@@ -17,7 +17,7 @@ This article explains how to add a Rectangle and configure its basic and visual 
 
 ## Basic Settings
 
-To add a Rectangle annotation to a chart, call the {api:anychart.core.annotations.Rectangle}rectangle(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
+To add a Rectangle annotation to a chart, call the {api:anychart.core.annotations.PlotController#rectangle}rectangle(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
 Next, use the {api:anychart.core.annotations.Rectangle#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Rectangle#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Rectangle#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Rectangle#secondValueAnchor}secondValueAnchor(){api} methods to set 4 points that determine the position of the rectangle. Usually, the most convenient way to do this is object notation:
 
@@ -27,10 +27,6 @@ chart = anychart.stock();
 
 // create a plot on the chart
 var plot = chart.plot(0);
-
-// create a line series
-var lineSeries = plot.line(mapping);
-lineSeries.name('CSCO');
 
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
@@ -82,7 +78,7 @@ rectangle2.secondXAnchor('2007-02-25');
 rectangle2.secondValueAnchor(23.30);
  
 // configure the visual settings of the second annotation
-rectangle2.stroke({color: "#2196F3"}, 3, "10 2");
+rectangle2.stroke("#2196F3", 3, "10 2");
 rectangle2.fill(null);
 ```
 

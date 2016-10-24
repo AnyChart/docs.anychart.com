@@ -17,7 +17,7 @@ This article explains how to add an Horizontal Line and configure its basic and 
 
 ## Basic Settings
 
-To add an Horizontal Line annotation to a chart, call the {api:anychart.core.annotations.HorizontalLine}horizontalLine(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
+To add an Horizontal Line annotation to a chart, call the {api:anychart.core.annotations.PlotController#horizontalLine}horizontalLine(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
 Next, use the {api:anychart.core.annotations.HorizontalLine#valueAnchor}valueAnchor(){api}, method to set the point that determines the position of the Horizontal Line. Usually, the most convenient way to do this is object notation:
 
@@ -27,10 +27,6 @@ chart = anychart.stock();
 
 // create a plot on the chart
 var plot = chart.plot(0);
-
-// create a line series
-var lineSeries = plot.line(mapping);
-lineSeries.name('CSCO');
 
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
@@ -70,7 +66,7 @@ horizontalLine2 = controller.horizontalLine();
 horizontalLine2.valueAnchor(14.18);
  
 // configure the visual settings of the second annotation
-horizontalLine2.stroke({color: "#2196F3"}, 3, "10 2");
+horizontalLine2.stroke("#2196F3", 3, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Horizontal\_Line\_02{sample}

@@ -17,7 +17,7 @@ This article explains how to add a Triangle and configure its basic and visual s
 
 ## Basic Settings
 
-To add a Triangle annotation to a chart, call the {api:anychart.core.annotations.Triangle}triangle(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
+To add a Triangle annotation to a chart, call the {api:anychart.core.annotations.PlotController#triangle}triangle(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
 Next, use the {api:anychart.core.annotations.Triangle#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Triangle#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Triangle#secondXAnchor}secondXAnchor(){api}, {api:anychart.core.annotations.Triangle#secondValueAnchor}secondValueAnchor(){api}, {api:anychart.core.annotations.Triangle#secondXAnchor}thirdXAnchor(){api} and {api:anychart.core.annotations.Triangle#secondValueAnchor}thirdValueAnchor(){api} methods to set 3 points that determine the position of the triangle. Usually, the most convenient way to do this is object notation:
 
@@ -27,10 +27,6 @@ chart = anychart.stock();
 
 // create a plot on the chart
 var plot = chart.plot(0);
-
-// create a line series
-var lineSeries = plot.line(mapping);
-lineSeries.name('CSCO');
 
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
@@ -88,7 +84,7 @@ triangle2.thirdXAnchor('2005-10-02');
 triangle2.thirdValueAnchor(15);
 
 // configure the visual settings of the second annotation
-triangle2.stroke({color: "#2196F3"}, 3, "10 2");
+triangle2.stroke("#2196F3", 3, "10 2");
 triangle2.fill(null);
 ```
 

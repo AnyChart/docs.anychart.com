@@ -17,7 +17,7 @@ This article explains how to add a Trend Channel and configure its basic and vis
 
 ## Basic Settings
 
-To add a Trend Channel annotation to a chart, call the {api:anychart.core.annotations.TrendChannel}trendChannel(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
+To add a Trend Channel annotation to a chart, call the {api:anychart.core.annotations.PlotController#trendChannel}trendChannel(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
 Next, use the {api:anychart.core.annotations.TrendChannel#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.TrendChannel#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.TrendChannel#secondXAnchor}secondXAnchor(){api}, {api:anychart.core.annotations.TrendChannel#secondValueAnchor}secondValueAnchor(){api}, {api:anychart.core.annotations.TrendChannel#secondXAnchor}thirdXAnchor(){api} and {api:anychart.core.annotations.TrendChannel#secondValueAnchor}thirdValueAnchor(){api} methods to set 3 points that determine the position of the trendChannel. Usually, the most convenient way to do this is object notation:
 
@@ -27,10 +27,6 @@ chart = anychart.stock();
 
 // create a plot on the chart
 var plot = chart.plot(0);
-
-// create a line series
-var lineSeries = plot.line(mapping);
-lineSeries.name('CSCO');
 
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
@@ -88,7 +84,7 @@ trendChannel2.thirdXAnchor('2004-08-08');
 trendChannel2.thirdValueAnchor(17.86);
 
 // configure the visual settings of the second annotation
-trendChannel2.stroke({color: "#2196F3"}, 3, "10 2");
+trendChannel2.stroke("#2196F3", 3, "10 2");
 trendChannel2.fill(null);
 ```
 

@@ -17,7 +17,7 @@ This article explains how to add an Ellipse and configure its basic and visual s
 
 ## Basic Settings
 
-To add an Ellipse annotation to a chart, call the {api:anychart.core.annotations.Ellipse}ellipse(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
+To add an Ellipse annotation to a chart, call the {api:anychart.core.annotations.PlotController#ellipse}ellipse(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
 Next, use the {api:anychart.core.annotations.Ellipse#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Ellipse#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Ellipse#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Ellipse#secondValueAnchor}secondValueAnchor(){api} methods to set 4 points that determine the position of the ellipse. Usually, the most convenient way to do this is object notation:
 
@@ -27,10 +27,6 @@ chart = anychart.stock();
 
 // create a plot on the chart
 var plot = chart.plot(0);
-
-// create a line series
-var lineSeries = plot.line(mapping);
-lineSeries.name('CSCO');
 
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
@@ -82,7 +78,7 @@ ellipse2.secondXAnchor('2007-02-25');
 ellipse2.secondValueAnchor(23.30);
  
 // configure the visual settings of the second annotation
-ellipse2.stroke({color: "#2196F3"}, 3, "10 2");
+ellipse2.stroke("#2196F3", 3, "10 2");
 ellipse2.fill(null);
 ```
 

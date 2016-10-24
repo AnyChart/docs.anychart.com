@@ -7,7 +7,7 @@
 
 ## Overview
 
-The Andrews' Pitchfork annotation allows to add an Andrews' pitchfork (a technical indicator developed by Alan Andrews) to a chart.
+The Andrews' Pitchfork annotation allows to add an Andrews' pitchfork (an analysis tool developed by Alan Andrews) to a chart.
 
 This article explains how to add an Andrews' Pitchfork and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
@@ -17,7 +17,7 @@ This article explains how to add an Andrews' Pitchfork and configure its basic a
 
 ## Basic Settings
 
-To add an Andrews' Pitchfork annotation to a chart, call the {api:anychart.core.annotations.AndrewsPitchfork}andrewsPitchfork(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
+To add an Andrews' Pitchfork annotation to a chart, call the {api:anychart.core.annotations.PlotController#andrewsPitchfork}andrewsPitchfork(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
 Next, use the {api:anychart.core.annotations.AndrewsPitchfork#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.AndrewsPitchfork#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.AndrewsPitchfork#secondXAnchor}secondXAnchor(){api}, {api:anychart.core.annotations.AndrewsPitchfork#secondValueAnchor}secondValueAnchor(){api}, {api:anychart.core.annotations.AndrewsPitchfork#secondXAnchor}thirdXAnchor(){api} and {api:anychart.core.annotations.AndrewsPitchfork#secondValueAnchor}thirdValueAnchor(){api} methods to set 3 points that determine the position of the andrewsPitchfork. Usually, the most convenient way to do this is object notation:
 
@@ -27,10 +27,6 @@ chart = anychart.stock();
 
 // create a plot on the chart
 var plot = chart.plot(0);
-
-// create a line series
-var lineSeries = plot.line(mapping);
-lineSeries.name('CSCO');
 
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
@@ -85,7 +81,7 @@ andrewsPitchfork2.thirdXAnchor('2008-02-10');
 andrewsPitchfork2.thirdValueAnchor(23.30);
 
 // configure the visual settings of the second annotation
-andrewsPitchfork2.stroke({color: "#2196F3"}, 3, "10 2");
+andrewsPitchfork2.stroke("#2196F3", 3, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Andrews\_Pitchfork\_02{sample}

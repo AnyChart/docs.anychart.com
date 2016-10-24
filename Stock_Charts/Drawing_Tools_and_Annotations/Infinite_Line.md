@@ -17,7 +17,7 @@ This article explains how to add an Infinite Line and configure its basic and vi
 
 ## Basic Settings
 
-To add an Infinite Line annotation to a chart, call the {api:anychart.core.annotations.InfiniteLine}infiniteLine(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
+To add an Infinite Line annotation to a chart, call the {api:anychart.core.annotations.PlotController#infiniteLine}infiniteLine(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
 Next, use the {api:anychart.core.annotations.InfiniteLine#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.InfiniteLine#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.InfiniteLine#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.InfiniteLine#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the Infinite Line. Usually, the most convenient way to do this is object notation:
 
@@ -27,10 +27,6 @@ chart = anychart.stock();
 
 // create a plot on the chart
 var plot = chart.plot(0);
-
-// create a line series
-var lineSeries = plot.line(mapping);
-lineSeries.name('CSCO');
 
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
@@ -79,7 +75,7 @@ infiniteLine2.secondXAnchor('2007-09-23');
 infiniteLine2.secondValueAnchor(33.13);
  
 // configure the visual settings of the second annotation
-infiniteLine2.stroke({color: "#2196F3"}, 3, "10 2");
+infiniteLine2.stroke("#2196F3", 3, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Infinite\_Line\_02{sample}

@@ -17,7 +17,7 @@ This article explains how to add a Line and configure its basic and visual setti
 
 ## Basic Settings
 
-To add a Line annotation to a chart, call the {api:anychart.core.annotations.Line}line(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
+To add a Line annotation to a chart, call the {api:anychart.core.annotations.PlotController#line}line(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
 Next, use the {api:anychart.core.annotations.Line#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Line#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Line#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Line#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the line. Usually, the most convenient way to do this is object notation:
 
@@ -27,10 +27,6 @@ chart = anychart.stock();
 
 // create a plot on the chart
 var plot = chart.plot(0);
-
-// create a line series
-var lineSeries = plot.line(mapping);
-lineSeries.name('CSCO');
 
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
@@ -79,7 +75,7 @@ line2.secondXAnchor('2007-01-07');
 line2.secondValueAnchor(28.92);
  
 // configure the visual settings of the second annotation
-line2.stroke({color: "#2196F3"}, 3, "10 2");
+line2.stroke("#2196F3", 3, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Line\_02{sample}
