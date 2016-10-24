@@ -47,7 +47,7 @@ You can also configure the visual settings of a Horizontal Line annotation:
 
 * {api:anychart.core.annotations.HorizontalLine#color}color(){api} and {api:anychart.core.annotations.HorizontalLine#stroke}stroke(){api} set the color and stroke
 * {api:anychart.core.annotations.HorizontalLine#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.annotations.HorizontalLine#selectStroke}selectStroke(){api} configures the Stroke on select
+* {api:anychart.core.annotations.HorizontalLine#selectStroke}selectStroke(){api} configures the stroke on select
 
 In the sample below, there are two Horizontal Line annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 

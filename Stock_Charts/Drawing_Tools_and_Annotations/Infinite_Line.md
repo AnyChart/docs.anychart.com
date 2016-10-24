@@ -50,7 +50,7 @@ You can also configure the visual settings of an Infinite Line annotation:
 
 * {api:anychart.core.annotations.InfiniteLine#color}color(){api} and {api:anychart.core.annotations.InfiniteLine#stroke}stroke(){api} set the color and stroke
 * {api:anychart.core.annotations.InfiniteLine#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.annotations.InfiniteLine#selectStroke}selectStroke(){api} configures the Stroke on select
+* {api:anychart.core.annotations.InfiniteLine#selectStroke}selectStroke(){api} configures the stroke on select
 
 In the sample below, there are two Infinite Line annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 

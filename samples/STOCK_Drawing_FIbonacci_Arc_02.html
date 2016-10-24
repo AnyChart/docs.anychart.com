@@ -32,24 +32,24 @@
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
-    // create the first horizontal line annotation and configure its visual settings
-    horizontalLine1 = controller.horizontalLine({
+    // create the first fibonacci arc annotation and configure its visual settings
+    fibonacciArc1 = controller.fibonacciArc({
         valueAnchor: 33.13,
         hoverStroke: "2 #FF0000",
         selectStroke: "5 #FF0000"
     });
 
-    // create the second horizontal line annotation
-    horizontalLine2 = controller.horizontalLine();
+    // create the second fibonacci arc annotation
+    fibonacciArc2 = controller.fibonacciArc();
 
     // set the position of the second annotation
-    horizontalLine2.valueAnchor(14.18);
+    fibonacciArc2.valueAnchor(14.18);
      
     // configure the visual settings of the second annotation
-    horizontalLine2.stroke("#2196F3", 3, "10 2");
+    fibonacciArc2.stroke("#2196F3", 3, "10 2");
 
     // set the chart title
-    chart.title("Horizontal Line: Visual Settings");
+    chart.title("Fibonacci Arc: Visual Settings");
 
     // set the container id
     chart.container("container");
