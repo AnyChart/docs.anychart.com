@@ -79,11 +79,9 @@ Creating the text element as a child of acgraph instead of the stage allows to p
 
 If you need to customize your chart, it is a good idea to use some unusual fonts. Though, it might be quite complicated to install fonts in a chart, as there are a lot of things to manage with using extra files. 
 
-AnyChart provides an opportinity to use external fonts without unnecessary obstacles. <!--There are two font types that can be used within our charts: icon fonts and text fonts.
+AnyChart provides an opportinity to use external fonts without unnecessary obstacles. <!--There are two font types that can be used within our charts: icon fonts and text fonts. -->
 
-### Icon Fonts
-
-If you need some icons on your chart, you can use an external icon font instead of uploading images for each icon. Reference the necessary font on the Web:
+<!--If you need some icons on your chart, you can use an external icon font instead of uploading images for each icon. Reference the necessary font on the Web:
 
 ```
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
