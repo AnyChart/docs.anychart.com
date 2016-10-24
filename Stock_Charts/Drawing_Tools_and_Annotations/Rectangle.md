@@ -19,7 +19,7 @@ This article explains how to add a Rectangle and configure its basic and visual 
 
 To add a Rectangle annotation to a chart, call the {api:anychart.core.annotations.PlotController#rectangle}rectangle(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.Rectangle#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Rectangle#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Rectangle#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Rectangle#secondValueAnchor}secondValueAnchor(){api} methods to set 4 points that determine the position of the rectangle. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.Rectangle#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Rectangle#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Rectangle#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Rectangle#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the rectangle. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart
@@ -33,9 +33,9 @@ var controller = plot.annotations();
 
 // create a Rectangle annotation
 controller.rectangle({
-    xAnchor: '2006-11-19',
+    xAnchor: "2006-11-19",
     valueAnchor: 29.84,
-    secondXAnchor: '2007-03-25',
+    secondXAnchor: "2007-03-25",
     secondValueAnchor: 25.11
 });
 ```
@@ -57,9 +57,9 @@ In the sample below, there are two Rectangle annotations with some of the visual
 ```
 // create the first Rectangle annotation and configure its visual settings
 rectangle1 = controller.rectangle({
-    xAnchor: '2006-11-19',
+    xAnchor: "2006-11-19",
     valueAnchor: 29.84,
-    secondXAnchor: '2007-03-25',
+    secondXAnchor: "2007-03-25",
     secondValueAnchor: 25.11
     hoverFill: "#398CAE 0.3",
     hoverStroke: "2 #FF0000",
@@ -72,9 +72,9 @@ rectangle1 = controller.rectangle({
 rectangle2 = controller.rectangle();
 
 // set the position of the second annotation
-rectangle2.xAnchor('2005-11-20');
+rectangle2.xAnchor("2005-11-20");
 rectangle2.valueAnchor(15.55);
-rectangle2.secondXAnchor('2007-02-25');
+rectangle2.secondXAnchor("2007-02-25");
 rectangle2.secondValueAnchor(23.30);
  
 // configure the visual settings of the second annotation

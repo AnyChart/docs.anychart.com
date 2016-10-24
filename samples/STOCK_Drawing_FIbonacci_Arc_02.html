@@ -17,7 +17,7 @@
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({'value': 4});
+    var mapping = dataTable.mapAs({"value": 4});
 
     // create a stock chart
     chart = anychart.stock();
@@ -27,23 +27,31 @@
 
     // create a line series
     var lineSeries = plot.line(mapping);
-    lineSeries.name('CSCO');
+    lineSeries.name("CSCO");
 
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
     // create the first Fibonacci Arc annotation and configure its visual settings
     fibonacciArc1 = controller.fibonacciArc({
-        valueAnchor: 33.13,
+        xAnchor: "2006-07-30",
+        valueAnchor: 17.24,
+        secondXAnchor: "2007-01-07",
+        secondValueAnchor: 28.92,
+        hoverTrend: "2 #0000FF",
         hoverStroke: "2 #FF0000",
-        selectStroke: "5 #FF0000"
+        selectTrend: "5 #0000FF",
+        selectStroke: "5 #FF0000"        
     });
 
     // create the second Fibonacci Arc annotation
     fibonacciArc2 = controller.fibonacciArc();
 
     // set the position of the second annotation
-    fibonacciArc2.valueAnchor(14.18);
+    fibonacciArc2.xAnchor("2004-01-11");
+    fibonacciArc2.valueAnchor(29.13);
+    fibonacciArc2.secondXAnchor("2004-08-08");
+    fibonacciArc2.secondValueAnchor(17.86);
      
     // configure the visual settings of the second annotation
     fibonacciArc2.stroke("#2196F3", 3, "10 2");

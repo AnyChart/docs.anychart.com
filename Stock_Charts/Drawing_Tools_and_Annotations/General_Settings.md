@@ -1,4 +1,4 @@
-{:index 2}
+"index 2}
 #General Settings
 
 * [Overview](#overview)
@@ -31,16 +31,16 @@ var plot = chart.plot(0);
 
 // create a line series
 var lineSeries = plot.line(mapping);
-lineSeries.name('CSCO');
+lineSeries.name("CSCO");
 
 // an auxiliary variable for working with annotations
 var controller = plot.annotations();
 
 // create an ellipse annotation
 controller.ellipse({
-    xAnchor: '2006-11-20',
+    xAnchor: "2006-11-20",
     valueAnchor: 25.92,
-    secondXAnchor: '2008-08-10',
+    secondXAnchor: "2008-08-10",
     secondValueAnchor: 24.91,
 });
 ```
@@ -59,9 +59,9 @@ var controller = plot.annotations();
 
 // create an ellipse annotation and configure its visual settings
 controller.ellipse({
-    xAnchor: '2006-11-20',
+    xAnchor: "2006-11-20",
     valueAnchor: 25.92,
-    secondXAnchor: '2007-02-24',
+    secondXAnchor: "2007-02-24",
     secondValueAnchor: 31.92,
     hoverFill: "#398CAE 0.3",
     hoverStroke: "2 #FF0000",
@@ -106,17 +106,17 @@ var controller = plot.annotations();
 
 // create an infinite line annotation (automatically bound to the main Y-scale)
 controller.infiniteLine({
-    xAnchor: '2004-01-06',
+    xAnchor: "2004-01-06",
     valueAnchor: 2039.63,
-    secondXAnchor: '2004-01-15',
+    secondXAnchor: "2004-01-15",
     secondValueAnchor: 2088.10
 });
 
 //create an ellipse annotation
 var ellipse = controller.ellipse({
-    xAnchor: '2004-01-07',
+    xAnchor: "2004-01-07",
     valueAnchor: 2583950080,
-    secondXAnchor: '2004-01-09',
+    secondXAnchor: "2004-01-09",
     secondValueAnchor: 2783950080
 });
 

@@ -17,7 +17,7 @@
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({'value': 4});
+    var mapping = dataTable.mapAs({"value": 4});
 
     // create a stock chart
     chart = anychart.stock();
@@ -27,14 +27,14 @@
 
     // create a line series
     var lineSeries = plot.line(mapping);
-    lineSeries.name('CSCO');
+    lineSeries.name("CSCO");
 
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
     // create the first Vertical Line annotation and configure its visual settings
     verticalLine1 = controller.verticalLine({
-        xAnchor: '2007-09-23',
+        xAnchor: "2007-09-23",
         hoverStroke: "2 #FF0000",
         selectStroke: "5 #FF0000"
     });
@@ -43,7 +43,7 @@
     verticalLine2 = controller.verticalLine();
 
     // set the position of the second annotation
-    verticalLine2.xAnchor('2005-05-22');
+    verticalLine2.xAnchor("2005-05-22");
      
     // configure the visual settings of the second annotation
     verticalLine2.stroke("#2196F3", 3, "10 2");

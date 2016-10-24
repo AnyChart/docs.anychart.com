@@ -17,7 +17,7 @@
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({'value': 4});
+    var mapping = dataTable.mapAs({"value": 4});
 
     // create a stock chart
     chart = anychart.stock();
@@ -27,18 +27,18 @@
 
     // create a line series
     var lineSeries = plot.line(mapping);
-    lineSeries.name('CSCO');
+    lineSeries.name("CSCO");
 
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
     // create a Triangle annotation
     controller.triangle({
-        xAnchor: '2006-03-14',
+        xAnchor: "2006-03-14",
         valueAnchor: 25.14,
-        secondXAnchor: '2007-02-25',
+        secondXAnchor: "2007-02-25",
         secondValueAnchor: 34.5,
-        thirdXAnchor: '2007-02-04',
+        thirdXAnchor: "2007-02-04",
         thirdValueAnchor: 20.65
     });
 

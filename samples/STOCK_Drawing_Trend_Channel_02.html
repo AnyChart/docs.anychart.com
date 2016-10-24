@@ -17,7 +17,7 @@
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({'value': 4});
+    var mapping = dataTable.mapAs({"value": 4});
 
     // create a stock chart
     chart = anychart.stock();
@@ -27,18 +27,18 @@
 
     // create a line series
     var lineSeries = plot.line(mapping);
-    lineSeries.name('CSCO');
+    lineSeries.name("CSCO");
 
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
     // create the first Trend Channel annotation and configure its visual settings
     trendChannel1 = controller.trendChannel({
-        xAnchor: '2007-01-07',
+        xAnchor: "2007-01-07",
         valueAnchor: 28.92,
-        secondXAnchor: '2007-09-23',
+        secondXAnchor: "2007-09-23",
         secondValueAnchor: 33.13,
-        thirdXAnchor: '2006-07-30',
+        thirdXAnchor: "2006-07-30",
         thirdValueAnchor: 17.24,
         hoverFill: "#398CAE 0.3",
         hoverStroke: "2 #FF0000",
@@ -51,11 +51,11 @@
     trendChannel2 = controller.trendChannel();
 
     // set the position of the second annotation
-    trendChannel2.xAnchor('2004-01-11');
+    trendChannel2.xAnchor("2004-01-11");
     trendChannel2.valueAnchor(29.13);
-    trendChannel2.secondXAnchor('2005-10-30');
+    trendChannel2.secondXAnchor("2005-10-30");
     trendChannel2.secondValueAnchor(17.87);
-    trendChannel2.thirdXAnchor('2004-08-08');
+    trendChannel2.thirdXAnchor("2004-08-08");
     trendChannel2.thirdValueAnchor(17.86);
  
     // configure the visual settings of the second annotation

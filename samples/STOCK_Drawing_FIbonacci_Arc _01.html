@@ -17,7 +17,7 @@
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({'value': 4});
+    var mapping = dataTable.mapAs({"value": 4});
 
     // create a stock chart
     chart = anychart.stock();
@@ -27,14 +27,17 @@
 
     // create a line series
     var lineSeries = plot.line(mapping);
-    lineSeries.name('CSCO');
+    lineSeries.name("CSCO");
 
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
     // create a Fibonacci Arc annotation
     controller.fibonacciArc({
-        valueAnchor: 33.13
+        xAnchor: "2006-07-30",
+        valueAnchor: 17.24,
+        secondXAnchor: "2007-01-07",
+        secondValueAnchor: 28.92
     });
 
     // set the chart title

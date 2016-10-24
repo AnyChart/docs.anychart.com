@@ -17,7 +17,7 @@
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({'value': 4});
+    var mapping = dataTable.mapAs({"value": 4});
 
     // create a stock chart
     chart = anychart.stock();
@@ -27,16 +27,16 @@
 
     // create a line series
     var lineSeries = plot.line(mapping);
-    lineSeries.name('CSCO');
+    lineSeries.name("CSCO");
 
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
     // create the first Infinite Line annotation and configure its visual settings
     infiniteLine1 = controller.infiniteLine({
-        xAnchor: '2006-07-30',
+        xAnchor: "2006-07-30",
         valueAnchor: 17.24,
-        secondXAnchor: '2008-04-27',
+        secondXAnchor: "2008-04-27",
         secondValueAnchor: 26.75,
         hoverStroke: "2 #FF0000",
         selectStroke: "5 #FF0000"
@@ -46,9 +46,9 @@
     infiniteLine2 = controller.infiniteLine();
 
     // set the position of the second annotation
-    infiniteLine2.xAnchor('2004-06-06');
+    infiniteLine2.xAnchor("2004-06-06");
     infiniteLine2.valueAnchor(23.82);
-    infiniteLine2.secondXAnchor('2007-09-23');
+    infiniteLine2.secondXAnchor("2007-09-23");
     infiniteLine2.secondValueAnchor(33.13);
      
     // configure the visual settings of the second annotation

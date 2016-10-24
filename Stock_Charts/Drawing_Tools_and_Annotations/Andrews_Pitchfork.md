@@ -33,11 +33,11 @@ var controller = plot.annotations();
 
 // create an Andrews' Pitchfork annotation
 controller.andrewsPitchfork({
-    xAnchor: '2006-10-15',
+    xAnchor: "2006-10-15",
     valueAnchor: 24.55,
-    secondXAnchor: '2007-01-07',
+    secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
-    thirdXAnchor: '2007-05-20',
+    thirdXAnchor: "2007-05-20",
     thirdValueAnchor: 25.52
 });
 ```
@@ -59,11 +59,11 @@ In the sample below, there are two Andrews' Pitchfork annotations with some of t
 ```
 // create the first Andrews' Pitchfork annotation and configure its visual settings
 andrewsPitchfork1 = controller.andrewsPitchfork({
-    xAnchor: '2006-10-15',
+    xAnchor: "2006-10-15",
     valueAnchor: 24.55,
-    secondXAnchor: '2007-01-07',
+    secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
-    thirdXAnchor: '2007-05-20',
+    thirdXAnchor: "2007-05-20",
     thirdValueAnchor: 25.52,
     hoverStroke: "2 #FF0000",
     selectStroke: "5 #FF0000"
@@ -73,11 +73,11 @@ andrewsPitchfork1 = controller.andrewsPitchfork({
 andrewsPitchfork2 = controller.andrewsPitchfork();
 
 // set the position of the second annotation
-andrewsPitchfork2.xAnchor('2007-12-16');
+andrewsPitchfork2.xAnchor("2007-12-16");
 andrewsPitchfork2.valueAnchor(28.60);
-andrewsPitchfork2.secondXAnchor('2008-08-10');
+andrewsPitchfork2.secondXAnchor("2008-08-10");
 andrewsPitchfork2.secondValueAnchor(24.91);
-andrewsPitchfork2.thirdXAnchor('2008-02-10');
+andrewsPitchfork2.thirdXAnchor("2008-02-10");
 andrewsPitchfork2.thirdValueAnchor(23.30);
 
 // configure the visual settings of the second annotation

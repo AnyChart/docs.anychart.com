@@ -17,7 +17,7 @@
     dataTable.addData(get_csco_daily_short_data());
 
     // map the data
-    var mapping = dataTable.mapAs({'value': 4});
+    var mapping = dataTable.mapAs({"value": 4});
 
     // create a stock chart
     chart = anychart.stock();
@@ -27,18 +27,18 @@
 
     // create a line series
     var lineSeries = plot.line(mapping);
-    lineSeries.name('CSCO');
+    lineSeries.name("CSCO");
 
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
     // create an Andrews' Pitchfork annotation
     controller.andrewsPitchfork({
-        xAnchor: '2006-10-15',
+        xAnchor: "2006-10-15",
         valueAnchor: 24.55,
-        secondXAnchor: '2007-01-07',
+        secondXAnchor: "2007-01-07",
         secondValueAnchor: 28.92,
-        thirdXAnchor: '2007-05-20',
+        thirdXAnchor: "2007-05-20",
         thirdValueAnchor: 25.52
     });
 

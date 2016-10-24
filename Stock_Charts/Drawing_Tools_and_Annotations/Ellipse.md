@@ -19,7 +19,7 @@ This article explains how to add an Ellipse and configure its basic and visual s
 
 To add an Ellipse annotation to a chart, call the {api:anychart.core.annotations.PlotController#ellipse}ellipse(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.Ellipse#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Ellipse#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Ellipse#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Ellipse#secondValueAnchor}secondValueAnchor(){api} methods to set 4 points that determine the position of the ellipse. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.Ellipse#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Ellipse#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Ellipse#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Ellipse#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the ellipse. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart
@@ -33,9 +33,9 @@ var controller = plot.annotations();
 
 // create an Ellipse annotation
 controller.ellipse({
-    xAnchor: '2006-11-20',
+    xAnchor: "2006-11-20",
     valueAnchor: 25.92,
-    secondXAnchor: '2008-08-10',
+    secondXAnchor: "2008-08-10",
     secondValueAnchor: 24.91,
 });
 ```
@@ -57,9 +57,9 @@ In the sample below, there are two Ellipse annotations with some of the visual s
 ```
 // create the first Ellipse annotation and configure its visual settings
 ellipse1 = controller.ellipse({
-    xAnchor: '2006-11-20',
+    xAnchor: "2006-11-20",
     valueAnchor: 25.92,
-    secondXAnchor: '2007-02-24',
+    secondXAnchor: "2007-02-24",
     secondValueAnchor: 31.92,
     hoverFill: "#398CAE 0.3",
     hoverStroke: "2 #FF0000",
@@ -72,9 +72,9 @@ ellipse1 = controller.ellipse({
 ellipse2 = controller.ellipse();
 
 // set the position of the second annotation
-ellipse2.xAnchor('2005-11-20');
+ellipse2.xAnchor("2005-11-20");
 ellipse2.valueAnchor(15.55);
-ellipse2.secondXAnchor('2007-02-25');
+ellipse2.secondXAnchor("2007-02-25");
 ellipse2.secondValueAnchor(23.30);
  
 // configure the visual settings of the second annotation
