@@ -1,5 +1,5 @@
 {:index 3}
-#Horizontal Line
+#Fibonacci Arc
 
 * [Overview](#overview)
 * [Basic settings](#basic_settings)
@@ -7,9 +7,9 @@
 
 ## Overview
 
-The Horizontal Line annotation allows to add a horizontal line to a chart.
+The Fibonacci Arc annotation allows to add a Fibonacci arc to a chart.
 
-This article explains how to add a Horizontal Line and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
+This article explains how to add a Fibonacci Arc and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
 * [Drawing Tools and Annotations: General Settings](General_Settings)
 * [Drawing Tools and Annotations: Drawing](Drawing)
@@ -17,9 +17,9 @@ This article explains how to add a Horizontal Line and configure its basic and v
 
 ## Basic Settings
 
-To add a Horizontal Line annotation to a chart, call the {api:anychart.core.annotations.PlotController#horizontalLine}horizontalLine(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
+To add a Fibonacci Arc annotation to a chart, call the {api:anychart.core.annotations.PlotController#fibonacciArc}fibonacciArc(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.HorizontalLine#valueAnchor}valueAnchor(){api}, method to set the point that determines the position of the Horizontal Line. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.FibonacciArc#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.FibonacciArc#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.FibonacciArc#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.FibonacciArc#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the Fibonacci Arc. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart
@@ -31,42 +31,53 @@ var plot = chart.plot(0);
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
 
-// create a horizontal line annotation
-controller.horizontalLine({
-    valueAnchor: 33.13
+// create a Fibonacci Arc annotation
+controller.fibonacciArc({
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
+    secondXAnchor: "2007-01-07",
+    secondValueAnchor: 28.92
 });
 ```
 
 This is how it looks like:
 
-{sample}STOCK\_Drawing\_Horizontal\_Line\_01{sample}
+{sample}STOCK\_Drawing\_Fibonacci\_Arc\_01{sample}
 
 ## Visual Settings
 
-You can also configure the visual settings of a Horizontal Line annotation:
+You can also configure the visual settings of a Fibonacci Arc annotation:
 
-* {api:anychart.core.annotations.HorizontalLine#color}color(){api} and {api:anychart.core.annotations.HorizontalLine#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.annotations.HorizontalLine#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.annotations.HorizontalLine#selectStroke}selectStroke(){api} configures the stroke on select
+* {api:anychart.core.annotations.FibonacciArc#color}color(){api}, {api:anychart.core.annotations.FibonacciArc#stroke}stroke(){api}, and {api:anychart.core.annotations.FibonacciArc#trend}trend(){api} set the color and stroke of the annotation and its trend
+* {api:anychart.core.annotations.FibonacciArc#hoverStroke}hoverStroke(){api} and {api:anychart.core.annotations.FibonacciArc#hoverTrend}hoverTrend(){api} configure the visual settings on hover
+* {api:anychart.core.annotations.FibonacciArc#selectStroke}selectStroke(){api} and {api:anychart.core.annotations.FibonacciArc#selectTrend}selectTrend(){api} configure the visual settings on select
 
-In the sample below, there are two Horizontal Line annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
+In the sample below, there are two Fibonacci Arc annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first horizontal line annotation and configure its visual settings
-horizontalLine1 = controller.horizontalLine({
-    valueAnchor: 33.13,
+// create the first Fibonacci Arc annotation and configure its visual settings
+fibonacciArc1 = controller.fibonacciArc({
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
+    secondXAnchor: "2007-01-07",
+    secondValueAnchor: 28.92,
+    hoverTrend: "2 #0000FF",
     hoverStroke: "2 #FF0000",
-    selectStroke: "5 #FF0000"
+    selectTrend: "5 #0000FF",
+    selectStroke: "5 #FF0000"        
 });
 
-// create the second horizontal line annotation
-horizontalLine2 = controller.horizontalLine();
+// create the second Fibonacci Arc annotation
+fibonacciArc2 = controller.fibonacciArc();
 
 // set the position of the second annotation
-horizontalLine2.valueAnchor(14.18);
+fibonacciArc2.xAnchor("2004-01-11");
+fibonacciArc2.valueAnchor(29.13);
+fibonacciArc2.secondXAnchor("2004-08-08");
+fibonacciArc2.secondValueAnchor(17.86);
  
 // configure the visual settings of the second annotation
-horizontalLine2.stroke("#2196F3", 3, "10 2");
+fibonacciArc2.stroke("#2196F3", 3, "10 2");
 ```
 
-{sample}STOCK\_Drawing\_Horizontal\_Line\_02{sample}
+{sample}STOCK\_Drawing\_Fibonacci\_Arc\_02{sample}
