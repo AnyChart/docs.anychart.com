@@ -23,7 +23,7 @@ The following sample demonstrates a shape drawn on a stage and the same shape wi
 rect.setTransformationMatrix(1, 0.05, 1.5, 0.5, 1, 1);
 ```
 
-{sample :width 830 :height 250}GFX\_Transformation\_01{sample} 
+{sample :width 830 :height 150}GFX\_Transformation\_01{sample} 
 
 
 To change specific settings use:
