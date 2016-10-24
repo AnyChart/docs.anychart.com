@@ -48,9 +48,9 @@ This is how it looks like:
 
 You can also configure the visual settings of a Fibonacci Arc annotation:
 
-* {api:anychart.core.annotations.FibonacciArc#color}color(){api} and {api:anychart.core.annotations.FibonacciArc#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.annotations.FibonacciArc#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.annotations.FibonacciArc#selectStroke}selectStroke(){api} configures the stroke on select
+* {api:anychart.core.annotations.FibonacciArc#color}color(){api}, {api:anychart.core.annotations.FibonacciArc#stroke}stroke(){api}, and {api:anychart.core.annotations.FibonacciArc#trend}trend(){api} set the color and stroke of the annotation and its trend
+* {api:anychart.core.annotations.FibonacciArc#hoverStroke}hoverStroke(){api} and {api:anychart.core.annotations.FibonacciArc#hoverTrend}hoverTrend(){api} configure the visual settings on hover
+* {api:anychart.core.annotations.FibonacciArc#selectStroke}selectStroke(){api} and {api:anychart.core.annotations.FibonacciArc#selectTrend}selectTrend(){api} configure the visual settings on select
 
 In the sample below, there are two Fibonacci Arc annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
