@@ -7,7 +7,7 @@
 
 ## Overview
 
-The Fibonacci Time Zones annotation allows to add a Fibonacci time zones to a chart.
+The Fibonacci Time Zones annotation allows to add Fibonacci time zones to a chart.
 
 This article explains how to add a Fibonacci Time Zones and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
