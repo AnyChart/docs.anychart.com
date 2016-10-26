@@ -63,6 +63,7 @@ fibonacciFan1 = controller.fibonacciFan({
     secondValueAnchor: 28.92,
     hoverTrend: "#0000FF",
     hoverGrid: "#0000FF",
+    hoverStroke: "#FF0000",
     selectTrend: "2 #0000FF",
     selectStroke: "2 #FF0000"     
 });
@@ -77,7 +78,7 @@ fibonacciFan2.secondXAnchor("2004-08-08");
 fibonacciFan2.secondValueAnchor(17.86);
  
 // configure the visual settings of the second annotation
-fibonacciFan2.stroke("#2196F3", 3, "10 2");
+fibonacciFan2.stroke("#2196F3", 2, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Fan\_02{sample}

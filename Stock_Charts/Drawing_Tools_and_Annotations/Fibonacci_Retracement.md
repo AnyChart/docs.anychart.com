@@ -61,10 +61,10 @@ fibonacciRetracement1 = controller.fibonacciRetracement({
     valueAnchor: 17.24,
     secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
-    hoverTrend: "2 #0000FF",
-    hoverStroke: "2 #FF0000",
-    selectTrend: "5 #0000FF",
-    selectStroke: "5 #FF0000"        
+    hoverTrend: "#0000FF",
+    hoverStroke: "#FF0000",
+    selectTrend: "2 #0000FF",
+    selectStroke: "2 #FF0000"        
 });
 
 // create the second Fibonacci Retracement annotation
@@ -77,7 +77,7 @@ fibonacciRetracement2.secondXAnchor("2004-08-08");
 fibonacciRetracement2.secondValueAnchor(17.86);
  
 // configure the visual settings of the second annotation
-fibonacciRetracement2.stroke("#2196F3", 3, "10 2");
+fibonacciRetracement2.stroke("#2196F3", 2, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Retracement\_02{sample}

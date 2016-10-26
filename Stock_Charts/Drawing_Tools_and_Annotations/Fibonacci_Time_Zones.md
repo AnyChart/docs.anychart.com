@@ -1,5 +1,5 @@
 {:index 3}
-#Fibonacci Arc
+#Fibonacci Time Zones
 
 * [Overview](#overview)
 * [Basic settings](#basic_settings)
@@ -7,9 +7,9 @@
 
 ## Overview
 
-The Fibonacci Arc annotation allows to add a Fibonacci arc to a chart.
+The Fibonacci Time Zones annotation allows to add a Fibonacci time zones to a chart.
 
-This article explains how to add a Fibonacci Arc and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
+This article explains how to add a Fibonacci Time Zones and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
 * [Drawing Tools and Annotations: General Settings](General_Settings)
 * [Drawing Tools and Annotations: Drawing](Drawing)
@@ -17,9 +17,9 @@ This article explains how to add a Fibonacci Arc and configure its basic and vis
 
 ## Basic Settings
 
-To add a Fibonacci Arc annotation to a chart, call the {api:anychart.core.annotations.PlotController#fibonacciArc}fibonacciArc(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
+To add a Fibonacci Time Zones annotation to a chart, call the {api:anychart.core.annotations.PlotController#fibonacciTimezones}fibonacciTimezones(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.FibonacciArc#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.FibonacciArc#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.FibonacciArc#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.FibonacciArc#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the Fibonacci Arc. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.FibonacciTimezones#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.FibonacciTimezones#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.FibonacciTimezones#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.FibonacciTimezones#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the Fibonacci Time Zones. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart
@@ -31,8 +31,8 @@ var plot = chart.plot(0);
 // access the annotations() object of the plot to work with annotations
 var controller = plot.annotations();
 
-// create a Fibonacci Arc annotation
-controller.fibonacciArc({
+// create a Fibonacci Time Zones annotation
+controller.fibonacciTimezones({
     xAnchor: "2006-07-30",
     valueAnchor: 17.24,
     secondXAnchor: "2007-01-07",
@@ -42,42 +42,42 @@ controller.fibonacciArc({
 
 This is how it looks like:
 
-{sample}STOCK\_Drawing\_Fibonacci\_Arc\_01{sample}
+{sample}STOCK\_Drawing\_Fibonacci\_Time\_Zones\_01{sample}
 
 ## Visual Settings
 
-You can also configure the visual settings of a Fibonacci Arc annotation:
+You can also configure the visual settings of a Fibonacci Time Zones annotation:
 
-* {api:anychart.core.annotations.FibonacciArc#color}color(){api}, {api:anychart.core.annotations.FibonacciArc#stroke}stroke(){api}, and {api:anychart.core.annotations.FibonacciArc#trend}trend(){api} set the color and stroke of the annotation and its trend
-* {api:anychart.core.annotations.FibonacciArc#hoverStroke}hoverStroke(){api} and {api:anychart.core.annotations.FibonacciArc#hoverTrend}hoverTrend(){api} configure the visual settings on hover
-* {api:anychart.core.annotations.FibonacciArc#selectStroke}selectStroke(){api} and {api:anychart.core.annotations.FibonacciArc#selectTrend}selectTrend(){api} configure the visual settings on select
+* {api:anychart.core.annotations.FibonacciTimezones#color}color(){api}, {api:anychart.core.annotations.FibonacciTimezones#stroke}stroke(){api}, and {api:anychart.core.annotations.FibonacciTimezones#trend}trend(){api} set the color and stroke of the annotation and its trend
+* {api:anychart.core.annotations.FibonacciTimezones#hoverStroke}hoverStroke(){api} and {api:anychart.core.annotations.FibonacciTimezones#hoverTrend}hoverTrend(){api} configure the visual settings on hover
+* {api:anychart.core.annotations.FibonacciTimezones#selectStroke}selectStroke(){api} and {api:anychart.core.annotations.FibonacciTimezones#selectTrend}selectTrend(){api} configure the visual settings on select
 
-In the sample below, there are two Fibonacci Arc annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
+In the sample below, there are two Fibonacci Timezones annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
 ```
-// create the first Fibonacci Arc annotation and configure its visual settings
-fibonacciArc1 = controller.fibonacciArc({
+// create the first Fibonacci Time Zones annotation and configure its visual settings
+fibonacciTimezones1 = controller.fibonacciTimezones({
     xAnchor: "2006-07-30",
     valueAnchor: 17.24,
     secondXAnchor: "2007-01-07",
     secondValueAnchor: 28.92,
-    hoverTrend: "2 #0000FF",
-    hoverStroke: "2 #FF0000",
-    selectTrend: "5 #0000FF",
-    selectStroke: "5 #FF0000"        
+    hoverTrend: "#0000FF",
+    hoverStroke: "#FF0000",
+    selectTrend: "2 #0000FF",
+    selectStroke: "2 #FF0000"        
 });
 
-// create the second Fibonacci Arc annotation
-fibonacciArc2 = controller.fibonacciArc();
+// create the second Fibonacci Time Zones annotation
+fibonacciTimezones2 = controller.fibonacciTimezones();
 
 // set the position of the second annotation
-fibonacciArc2.xAnchor("2004-01-11");
-fibonacciArc2.valueAnchor(29.13);
-fibonacciArc2.secondXAnchor("2004-08-08");
-fibonacciArc2.secondValueAnchor(17.86);
+fibonacciTimezones2.xAnchor("2004-01-11");
+fibonacciTimezones2.valueAnchor(29.13);
+fibonacciTimezones2.secondXAnchor("2004-08-08");
+fibonacciTimezones2.secondValueAnchor(17.86);
  
 // configure the visual settings of the second annotation
-fibonacciArc2.stroke("#2196F3", 3, "10 2");
+fibonacciTimezones2.stroke("#2196F3", 2, "10 2");
 ```
 
-{sample}STOCK\_Drawing\_Fibonacci\_Arc\_02{sample}
+{sample}STOCK\_Drawing\_Fibonacci\_Time\_Zones\_02{sample}
