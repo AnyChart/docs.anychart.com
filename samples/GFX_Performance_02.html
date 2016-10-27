@@ -28,32 +28,28 @@ var label = stage.text(130,130);
     label.disablePointerEvents(true);
     labelBg.zIndex(1000000);
 
-
-stage.listen("renderstart", function(){
-    start = (new Date()).getTime();
-});
-
 // this is to be performed on a click
-labelBg.listen("click", function(){
+labelBg.listenOnce("click", function(){
 
-stage.listenOnce("renderfinish", function(){
+    start = (new Date()).getTime();
+
+    for (var i = 0; i < 3000; i++) {
+        var left = Math.random() * 300;
+        var qwer = Math.random() * 300;
+        
+        var rect = stage.rect(left, qwer, 10, 10);
+        rect.fill('green');
+    }
+
     finish = (new Date()).getTime();
-    label.text((finish - start) + "ms");
+    label.text((finish - start) + "ms");    
+
     var labelBounds = label.getBounds();
     labelBg
         .setX((labelBounds.left)-20)
         .setY((labelBounds.top)+20)
         .setWidth(labelBounds.width+40)
         .setHeight(labelBounds.height-40);
-});
-
-for (var i = 0; i < 3000; i++) {
-    var left = Math.random() * 300;
-    var qwer = Math.random() * 300;
-    
-    var rect = stage.rect(left, qwer, 10, 10);
-    rect.fill('green');
-}
 });
 </script>
 </head>

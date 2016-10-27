@@ -115,7 +115,6 @@ stage.listen("stageresize", function(){
 
 {sample}GFX\_Events\_04{sample}
 
-
 The following samples demonstrates the time between rendering start and finish. The "renderstart" and "renderfinish" methods are listened to:
 
 ```

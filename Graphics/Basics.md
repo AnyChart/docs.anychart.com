@@ -10,7 +10,6 @@
   * [Coloring](#coloring)
 * [Layers](#layers)
 * [Text and image](#text_and_image)
-* [Custom marker](#custom_marker)
   
 ## Overview
 
@@ -184,25 +183,4 @@ That's how the sample will look like with our added text element:
 {sample}GFX\_Basics\_07{sample}
 
 There are far much more settings to fix with the text elements. You can find all of them in [Text and Fonts](Text_and_Fonts) article and in {api:anychart.graphics.vector.Text}GraphicsJS Text Class API{api}.
-
-##Custom marker
-
-And again a section for AnyChart 7 users: if you are still in doubt about why to use GraphicsJS, pay some attention to this section. Here we will talk about custom markers that can be simply created using GraphicsJS. 
-
-Let's use stage to create a simple bar chart with an unusual marker:
-
-{sample}GFX\_Basics\_08{sample}
-
-```
-// a function that enables custom marker display and resize
-function customMarkerDrawer(path, x, y, size) {
-    // create a custom marker
-    path.moveTo(x, y)
-                .lineTo(x + 25, y - 20)
-                .arcTo(50,25,180,325)
-                .close();
-}    
-```
-
-Using GraphicsJS makes it simple to create new forms and shapes which may become markers on a chart or visualize something else, e.g. it can be useful in dashboards building.  Visit [Stage-Based Layout](../Dashboards/Stage-Based_Layout) tutorial to read more about using GraphicsJS in dashboards. You can also visit [AnyChart Custom Drawings Gallery](http://www.anychart.com/products/anychart/gallery/Custom_Drawing/) to see how you can make use of custom drawing capabilities in AnyChart.
 

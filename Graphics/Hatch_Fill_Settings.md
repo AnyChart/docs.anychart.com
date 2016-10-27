@@ -28,7 +28,7 @@ In case of graphic elements, you need to set hatchFill through the **fill()** me
 fill(anychart.graphics.hatchFill('soliddiamond'));
 ```
 
-{sample}GFX\_hatch\_hatchFill{sample}
+{sample :height 260}GFX\_hatch\_hatchFill{sample}
 
 ### Color
 
@@ -95,7 +95,7 @@ stage.circle(150, 150, 50).fill(pattern);
 
 Here is a sample:
 
-{sample}GFX\_hatch\_pattern\_shape{sample}
+{sample :height 230}GFX\_hatch\_pattern\_shape{sample}
 
 ### Font
 
@@ -110,4 +110,4 @@ var pattern = stage.pattern(text.getBounds());
 pattern.addChild(text);
 ```
 
-{sample}GFX\_hatch\_pattern\_font{sample}
+{sample :height 230}GFX\_hatch\_pattern\_font{sample}

@@ -9,13 +9,11 @@
  * [Fill](#fill)
  * [Stroke](#stroke)
 
-
 ## Overview
 
-GraphicsJS is a lightweight JavaScript graphics library which allows to create graphic elements for all purposes, from simple to quite complicated. This article describes how to draw simple shapes using GraphicsJS and use them for creating more complex shapes.
+GraphicsJS is a lightweight JavaScript graphics library which allows to create graphic elements for all purposes, from very simple to very complex. This article describes how to draw simple shapes using GraphicsJS and use them to create more complex shapes.
 
-When you work with GraphicsJS, you need to set stage as a container. On the [Quick Start page](Quick_Start) you can find how to use stage as a container.
-
+When you work with GraphicsJS, you need to set stage as a container. On the [Quick Start page](Quick_Start) and [Basics](Basics) you can find how to use stage as a container.
 
 ## Basic Shapes
 
@@ -28,7 +26,8 @@ The {api:anychart.graphics#rect}rect(){api} method allows to draw a rectangle of
 ```
 stage.rect(100, 10, 400, 40);
 ```
-{sample :width 832 :height 150}GFX\_Basic\_Shapes\_01{sample}
+
+{sample :height 150}GFX\_Basic\_Shapes\_01{sample}
 
 ### Circle
 
@@ -40,7 +39,8 @@ Let's add a circle to the picture from the sample above.
 // draw a circle
 stage.circle(300, 150, 70);
 ```
-{sample :width 832 :height 250}GFX\_Basic\_Shapes\_02{sample}
+
+{sample :height 250}GFX\_Basic\_Shapes\_02{sample}
 
 ### Ellipse
 
@@ -50,15 +50,14 @@ Another simple shape is ellipse. Use {api:anychart.graphics#ellipse}ellipse(){ap
 // draw an ellipse
 stage.ellipse(300, 300, 200, 50);
 ```
-{sample :width 832 :height 250}GFX\_Basic\_Shapes\_03{sample}
 
+{sample :height 500}GFX\_Basic\_Shapes\_03{sample}
 
 ## Predefined Shapes
 
 Predefined Shapes are complex shapes which can be drawn on a stage using paths or with the help of special methods. Below you can find a list of those shapes which can significally shorten and simplify your code. Some of them need a basic shape to be applied to.
 
-
-<table width="700" border="1" class="dtTABLE">
+<table>
 <tbody><tr>
 <th width="50"><b>Method</b></th>
 <th width="130"><b>Parameters</b></th>
@@ -173,11 +172,12 @@ The following sample demonstrates creating a shape from predefined objects.
 // draws a star
 acgraph.vector.primitives.star(stage, 200, 70, 50, 17, 7, 20, -0.9);
 ```
-{sample :width 832 :height 150}GFX\_Basic\_Shapes\_04{sample}
+
+{sample :height 150}GFX\_Basic\_Shapes\_04{sample}
 
 ## Clip
 
-Clipping objects leads to creating new shapes and forms which can be used as custom graphic elements. Use the {api:anychart.graphics#clip}clip(){api} method to clip objects into one and create a new shape. 
+Clipping objects leads to creating new shapes and forms which can be used as custom graphic elements. Use the {api:anychart.graphics#clip}clip(){api} method to clip objects and create a new shape. 
 
 ```
 stage = acgraph.create("container");
@@ -187,8 +187,8 @@ var clipArea = acgraph.clip(10, 10, 90, 90);
 
 blueCircle.clip(clipArea);
 ```
-{sample :width 832 :height 150}GFX\_Basic\_Shapes\_05{sample}
 
+{sample :height 150}GFX\_Basic\_Shapes\_05{sample}
 
 ## Coloring
 
@@ -197,8 +197,7 @@ There are several methods that can be used for coloring the shapes. You can find
  - [Hatch Fill Settings](Hatch_Fill_Settings)
  - [Stroke Settings](Stroke_Settings)
 
-Our coloring methods accept values in HEX notation ("#00033A"), as web color ("black") and in RGB format ("rgb(0,0,255)"). Find more about acceptable color formats in the (../Appearance_Settings/Color_Management#color_formats).
-
+Coloring methods accept values in HEX notation ("#00033A"), as web color ("black"), in RGB format ("rgb(0,0,255)") and more. Color can be set as rgb, rgba, hex, hsl, hsla or web constant, just as you do in [CSS Color](http://www.w3schools.com/cssref/css_colors_legal.asp).
 
 ### Fill
 
@@ -207,18 +206,17 @@ Use the {api:anychart.graphics.vector.Shape#fill}fill(){api} method to fill the 
 ```
 // color the star with a golden color
 star.fill("gold")";
-
 ```
-{sample :width 832 :height 150}GFX\_Basic\_Shapes\_06{sample}
 
+{sample :height 150}GFX\_Basic\_Shapes\_06{sample}
 
 ### Stroke
 
-Use the {api:anychart.graphics.vector.Shape#stroke}stroke(){api} method to stroke the shape. You can also set the thickness of a stroking line and some other settings you can find more about in the [Stroke Settings](Stroke_Settings) article..
+Use the {api:anychart.graphics.vector.Shape#stroke}stroke(){api} method to stroke the shape. You can also set the thickness of a stroking line and some other settings you can find more about in the [Stroke Settings](Stroke_Settings) article.
 
 ```
 // set the stroke color to the star
 star.stroke("#000000", "4");
 ```
-{sample :width 832 :height 150}GFX\_Basic\_Shapes\_07{sample}
 
+{sample :height 150}GFX\_Basic\_Shapes\_07{sample}
