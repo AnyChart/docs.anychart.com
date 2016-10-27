@@ -3,11 +3,12 @@
 
 * [Overview](#overview)
 * [Basic settings](#basic_settings)
+* [Type and Size](#type_and_size)
 * [Visual Settings](#visual_settings)
 
 ## Overview
 
-The Marker annotation allows to add a marker a chart.
+The Marker annotation allows to add a marker to a chart.
 
 This article explains how to add a Marker and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
@@ -33,14 +34,22 @@ var controller = plot.annotations();
 
 // create a Marker annotation
 controller.marker({
-    xAnchor: "2007-01-07",
-    valueAnchor: 28.92,
+    xAnchor: "2007-09-23",
+    valueAnchor: 33.13,
 });
 ```
 
 This is how it looks like:
 
 {sample}STOCK\_Drawing\_Marker\_01{sample}
+
+##Type and Size
+
+```
+XXXXXXXXXXXXX
+```
+
+{sample}STOCK\_Drawing\_Marker\_02{sample}
 
 ## Visual Settings
 
@@ -55,10 +64,8 @@ In the sample below, there are two Marker annotations with some of the visual se
 ```
 // create the first Marker annotation and configure its visual settings
 marker1 = controller.marker({
-    xAnchor: "2006-11-20",
-    valueAnchor: 25.92,
-    secondXAnchor: "2007-02-24",
-    secondValueAnchor: 31.92,
+    xAnchor: "2007-09-23",
+    valueAnchor: 33.13,
     hoverFill: "#398CAE 0.3",
     hoverStroke: "2 #FF0000",
     selectFill: "#398CAE 0.3",
@@ -70,15 +77,13 @@ marker1 = controller.marker({
 marker2 = controller.marker();
 
 // set the position of the second annotation
-marker2.xAnchor("2005-11-20");
-marker2.valueAnchor(15.55);
-marker2.secondXAnchor("2007-02-25");
-marker2.secondValueAnchor(23.30);
+marker2.xAnchor("2009-03-01");
+marker2.valueAnchor(14.18);
  
 // configure the visual settings of the second annotation
 marker2.stroke("#2196F3", 3, "10 2");
 marker2.fill(null);
 ```
 
-{sample}STOCK\_Drawing\_Marker\_02{sample}
+{sample}STOCK\_Drawing\_Marker\_03{sample}
 

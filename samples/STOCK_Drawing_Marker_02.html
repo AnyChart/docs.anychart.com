@@ -32,32 +32,27 @@
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
-    // create the first Marker annotation and configure its visual settings
+    // create the first Marker annotation, set its type, and configure the size and offset
     marker1 = controller.marker({
-        xAnchor: "2006-11-20",
-        valueAnchor: 25.92,
-        secondXAnchor: "2007-02-24",
-        secondValueAnchor: 31.92,
-        hoverFill: "#398CAE 0.3",
-        hoverStroke: "2 #FF0000",
-        selectFill: "#398CAE 0.3",
-        selectHatchFill: "brick",
-        selectStroke: "5 #FF0000"
+        xAnchor: "2007-09-23",
+        valueAnchor: 33.13,
+        markerType: "triangleDown",
+        offsetY: 50
     });
 
     // create the second Marker annotation
     marker2 = controller.marker();
 
     // set the position of the second annotation
-    marker2.xAnchor("2005-11-20");
-    marker2.valueAnchor(15.55);
-    marker2.secondXAnchor("2007-02-25");
-    marker2.secondValueAnchor(23.30);
-     
-    // configure the visual settings of the second annotation
-    marker2.stroke("#2196F3", 3, "10 2");
-    marker2.fill(null);
+    marker2.xAnchor("2009-03-01");
+    marker2.valueAnchor(14.18);
 
+    // set the type of the second annotation
+    marker2.markerType("triangleUp");
+
+    // configure the size and offset of the second annotation
+    marker2.offsetY(50);
+     
     // set the chart title
     chart.title("Marker: Visual Settings");
 
