@@ -3,26 +3,26 @@
 <meta charset="UTF-8"/>
 <script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
 <script x-export="stage">
-// create a stage for the Deathly Hallows symbol
-stage = acgraph.create('container');
+	// create a stage for the Deathly Hallows symbol
+	stage = acgraph.create('container');
 
-// draw the square
-stage.rect(25, 50, 350, 300);
+	// draw the square
+	stage.rect(25, 50, 350, 300);
 
-// draw the circle
-stage.circle(200, 250, 100);
+	// draw the circle
+	stage.circle(200, 250, 100);
 
-// draw the triangle
-stage.path()
-    .moveTo(25, 350)
-    .lineTo(200, 50)
-    .lineTo(375, 350)
-    .close();
+	// draw the triangle
+	stage.path()
+	    .moveTo(25, 350)
+	    .lineTo(200, 50)
+	    .lineTo(375, 350)
+	    .close();
 
-// draw the wand in the middle
-stage.path()
-    .moveTo(200, 50)
-    .lineTo(200, 350);
+	// draw the wand in the middle
+	stage.path()
+	    .moveTo(200, 50)
+	    .lineTo(200, 350);
 </script>
 </head>
 <body>

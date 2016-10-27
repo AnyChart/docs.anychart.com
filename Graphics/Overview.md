@@ -41,7 +41,7 @@ We recommend everyone to start with:
 If you it is your first experience with JavaScript drawing libraries, we suggest the following reading order:
 
 * [Basics](Basics) article lays out a general idea of the library and explains how things work.
-* [Paths](Paths), [Shapes](Shapes), [Text_and_Fonts](Text_and_Fonts) are the articles on drawing primitives, of which everything consists of.
+* [Paths](Paths), [Shapes](Shapes), [Text and Fonts](Text_and_Fonts) are the articles on drawing primitives, of which everything consists of.
 * [Layers](Layers) article explains how the basic elements may be grouped and arranged.
 * [Transformations](Transformations) article explains how you can change elements and groups.
 * [Events](Events) article describes GraphicsJS event model.

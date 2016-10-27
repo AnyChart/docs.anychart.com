@@ -10,14 +10,14 @@
 <script x-export="stage">
 stage = acgraph.create("container");
 
-var boldHatch = acgraph.hatchFill("diamiond", "black", 4);
-var thinHatch = acgraph.hatchFill("diamiond", "black", 0.5);
+// set the text
+text = stage.text(20,20,"This is my custom text");
 
-stage.rect(100, 10, 400, 40).fill(boldHatch);
-stage.rect(100, 90, 400, 40).fill(thinHatch);
-stage.rect(100, 170, 400, 40).fill(boldHatch);
-stage.rect(100, 240, 400, 40).fill(thinHatch);
-stage.rect(100, 310, 400, 40).fill(boldHatch);
+// create the text style 
+text.fontFamily("Georgia");
+text.fontSize("15px");
+text.color("green");
+
 </script>
 </head>
 <body>

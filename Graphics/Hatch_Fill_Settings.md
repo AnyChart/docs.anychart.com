@@ -28,7 +28,7 @@ In case of graphic elements, you need to set hatchFill through the **fill()** me
 fill(anychart.graphics.hatchFill('soliddiamond'));
 ```
 
-{sample}GFX\_hatch\_hatchFill{sample}
+{sample :height 260}GFX\_hatch\_hatchFill{sample}
 
 ### Color
 
@@ -95,12 +95,11 @@ stage.circle(150, 150, 50).fill(pattern);
 
 Here is a sample:
 
-{sample}GFX\_hatch\_pattern\_shape{sample}
+{sample :height 230}GFX\_hatch\_pattern\_shape{sample}
 
 ### Font
 
-The flexibility of GraphicsJS allows to create not only shapes-based patterns, but also font-based. An example of doing so with an Interdex font can be found in [AnyChart Interdex Hatch Fill Sample](
-http://playground.anychart.com/gallery/latest/Custom_Drawing/HatchFill_By_Font).
+The flexibility of GraphicsJS allows to create not only shapes-based patterns, but also font-based. An example of doing so with an Interdex font can be found in [AnyChart Interdex Hatch Fill Sample](http://playground.anychart.com/gallery/latest/Custom_Drawing/HatchFill_By_Font).
 
 Here is a simplified version of a font-based pattern fill:
 
@@ -110,4 +109,4 @@ var pattern = stage.pattern(text.getBounds());
 pattern.addChild(text);
 ```
 
-{sample}GFX\_hatch\_pattern\_font{sample}
+{sample :height 230}GFX\_hatch\_pattern\_font{sample}

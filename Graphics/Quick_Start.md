@@ -27,13 +27,12 @@ Example:
 
 ## Create a drawing
 
-Put the JavaScript tag `<script>` with the following code anywhere in the “head” or “body” section.
+Put the JavaScript tag `<script>` with the following code anywhere after the `<div>` section.
 
 Example:
 
 ```
 <script>
-anychart.onDocumentReady(function(){
     // create a stage for the Deathly Hallows symbol
     stage = anychart.graphics.create('container');
 
@@ -54,7 +53,6 @@ anychart.onDocumentReady(function(){
     stage.path()
         .moveTo(200, 50)
         .lineTo(200, 350);
-});
 </script>
 ```
   
@@ -73,8 +71,10 @@ Below you can see how your full web page code should look like:
 <head>
     <meta charset="UTF-8"/>
     <script src="https://cdn.anychart.com/js/latest/graphics.min.js"></script>
+</head>
+<body>
+    <div id="container" style="width: 100%; height: 100%"></div>
     <script>
-    anychart.onDocumentReady(function(){
         // create a stage for the Deathly Hallows symbol
         stage = anychart.graphics.create('container');
 
@@ -95,11 +95,7 @@ Below you can see how your full web page code should look like:
         stage.path()
             .moveTo(200, 50)
             .lineTo(200, 350);
-    });
     </script>
-</head>
-<body>
-<div id="container" style="width: 100%; height: 100%"></div>
 </body>
 </html>
 ```

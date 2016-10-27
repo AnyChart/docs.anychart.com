@@ -6,18 +6,16 @@
 <meta name="index" content="1000"/>
 <meta name="is-new" content="false"/>
 <script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> 
 <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
 <script x-export="stage">
-var stage_font = acgraph.create("container");
+stage = acgraph.create("container");
 
-// 169 is a char code of copyright symbol
-var text = acgraph.text().text(String.fromCharCode(169));
-var pattern_font = stage_font.pattern(text.getBounds());
-pattern_font.addChild(text);
+// create the text style object
+textStyle = {fontFamily: "Dancing Script", fontSize: "25px", color: "green", fontStyle: "italic"};
 
-// create chart
-stage_font.rect(0, 0, 150, 50).fill(pattern_font);
-stage_font.circle(150, 150, 50).fill(pattern_font);
+// create the text element
+text = stage.text(20, 20, "This is my custom font", textStyle);
 </script>
 </head>
 <body>

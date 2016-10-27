@@ -6,18 +6,18 @@
 <meta name="index" content="1000"/>
 <meta name="is-new" content="false"/>
 <script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
 <script x-export="stage">
-var stage_font = acgraph.create("container");
+stage = acgraph.create("container");
 
-// 169 is a char code of copyright symbol
-var text = acgraph.text().text(String.fromCharCode(169));
-var pattern_font = stage_font.pattern(text.getBounds());
-pattern_font.addChild(text);
+// create the text style object
+textStyle = {fontFamily: "FontAwesome", fontSize: "15px", color: "green"};
 
-// create chart
-stage_font.rect(0, 0, 150, 50).fill(pattern_font);
-stage_font.circle(150, 150, 50).fill(pattern_font);
+// create the text element
+text = stage.text();
+text.style(textStyle);
+text.htmlText("This is custom font: <i class='fa fa-camera' aria-hidden='true'>q</i>");
 </script>
 </head>
 <body>
