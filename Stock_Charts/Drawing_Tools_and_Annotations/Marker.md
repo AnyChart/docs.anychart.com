@@ -45,6 +45,10 @@ This is how it looks like:
 
 ##Type and Size
 
+In AnyChart, there are 22 types of markers you can choose from. By default, a Marker annotation looks like a down arrow. To pick another type, use the {api:anychart.core.annotations.Marker#color}color(){api}
+
+In the following sample, there are two Marker annotations with the size and offset configured (by using an object in the first case and methods in the second). The first annotation is of the default type (down arrow), and the type of the second one is set to up arrow:
+
 ```
 // create the first Marker annotation and configure its size and offset
 marker1 = controller.marker({
@@ -79,7 +83,7 @@ You can also configure the visual settings of a Marker annotation:
 * {api:anychart.core.annotations.Marker#hoverFill}hoverFill(){api}, {api:anychart.core.annotations.Marker#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.annotations.Marker#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 * {api:anychart.core.annotations.Marker#selectFill}selectFill(){api}, {api:anychart.core.annotations.Marker#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.annotations.Marker#selectStroke}selectStroke(){api} configure the visual settings on select
 
-In the sample below, there are two Marker annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
+In the sample below, there are two Marker annotations with some of the visual settings configured:
 
 ```
 // create the first Marker annotation and configure its visual settings
