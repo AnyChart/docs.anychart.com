@@ -1,4 +1,4 @@
-"index 3}
+{:index 3}
 #Infinite Line
 
 * [Overview](#overview)

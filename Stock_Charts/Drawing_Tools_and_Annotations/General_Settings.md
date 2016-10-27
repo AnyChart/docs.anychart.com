@@ -1,4 +1,4 @@
-"index 2}
+{:index 2}
 #General Settings
 
 * [Overview](#overview)
