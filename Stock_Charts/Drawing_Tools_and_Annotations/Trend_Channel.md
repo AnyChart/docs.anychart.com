@@ -19,7 +19,7 @@ This article explains how to add a Trend Channel and configure its basic and vis
 
 To add a Trend Channel annotation to a chart, call the {api:anychart.core.annotations.PlotController#trendChannel}trendChannel(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.TrendChannel#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.TrendChannel#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.TrendChannel#secondXAnchor}secondXAnchor(){api}, {api:anychart.core.annotations.TrendChannel#secondValueAnchor}secondValueAnchor(){api}, {api:anychart.core.annotations.TrendChannel#secondXAnchor}thirdXAnchor(){api} and {api:anychart.core.annotations.TrendChannel#secondValueAnchor}thirdValueAnchor(){api} methods to set 3 points that determine the position of the trendChannel. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.TrendChannel#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.TrendChannel#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.TrendChannel#secondXAnchor}secondXAnchor(){api}, {api:anychart.core.annotations.TrendChannel#secondValueAnchor}secondValueAnchor(){api}, {api:anychart.core.annotations.TrendChannel#secondXAnchor}thirdXAnchor(){api} and {api:anychart.core.annotations.TrendChannel#secondValueAnchor}thirdValueAnchor(){api} methods to set 3 points that determine the position of the trend channel. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart

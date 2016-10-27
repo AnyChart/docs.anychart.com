@@ -19,7 +19,7 @@ This article explains how to add a Horizontal Line and configure its basic and v
 
 To add a Horizontal Line annotation to a chart, call the {api:anychart.core.annotations.PlotController#horizontalLine}horizontalLine(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.HorizontalLine#valueAnchor}valueAnchor(){api}, method to set the value that determines the position of the Horizontal Line. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.HorizontalLine#valueAnchor}valueAnchor(){api}, method to set the value that determines the position of the horizontal line. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart

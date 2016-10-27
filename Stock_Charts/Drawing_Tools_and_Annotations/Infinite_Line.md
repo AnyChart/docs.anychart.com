@@ -19,7 +19,7 @@ This article explains how to add an Infinite Line and configure its basic and vi
 
 To add an Infinite Line annotation to a chart, call the {api:anychart.core.annotations.PlotController#infiniteLine}infiniteLine(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.InfiniteLine#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.InfiniteLine#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.InfiniteLine#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.InfiniteLine#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the Infinite Line. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.InfiniteLine#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.InfiniteLine#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.InfiniteLine#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.InfiniteLine#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the infinite line. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart

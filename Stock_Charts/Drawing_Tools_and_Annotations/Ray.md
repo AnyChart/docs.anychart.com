@@ -7,7 +7,7 @@
 
 ## Overview
 
-The Ray annotation allows to add an ray to a chart.
+The Ray annotation allows to add a ray to a chart.
 
 This article explains how to add a Ray and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
@@ -19,7 +19,7 @@ This article explains how to add a Ray and configure its basic and visual settin
 
 To add a Ray annotation to a chart, call the {api:anychart.core.annotations.PlotController#ray}ray(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.Ray#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Ray#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Ray#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Ray#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the Ray. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.Ray#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Ray#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Ray#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Ray#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the ray. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart

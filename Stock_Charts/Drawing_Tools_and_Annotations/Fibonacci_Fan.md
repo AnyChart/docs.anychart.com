@@ -19,7 +19,7 @@ This article explains how to add a Fibonacci Fan and configure its basic and vis
 
 To add a Fibonacci Fan annotation to a chart, call the {api:anychart.core.annotations.PlotController#fibonacciFan}fibonacciFan(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.FibonacciFan#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.FibonacciFan#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.FibonacciFan#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.FibonacciFan#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the Fibonacci Fan. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.FibonacciFan#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.FibonacciFan#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.FibonacciFan#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.FibonacciFan#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the Fibonacci fan. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart

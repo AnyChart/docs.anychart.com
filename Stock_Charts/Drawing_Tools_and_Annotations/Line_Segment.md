@@ -19,7 +19,7 @@ This article explains how to add a Line and configure its basic and visual setti
 
 To add a Line annotation to a chart, call the {api:anychart.core.annotations.PlotController#line}line(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.Line#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Line#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Line#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Line#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the line. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.Line#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.Line#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.Line#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.Line#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the line segment. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart

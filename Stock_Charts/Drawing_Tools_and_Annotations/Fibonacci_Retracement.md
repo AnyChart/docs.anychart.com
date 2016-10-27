@@ -19,7 +19,7 @@ This article explains how to add a Fibonacci Retracement and configure its basic
 
 To add a Fibonacci Retracement annotation to a chart, call the {api:anychart.core.annotations.PlotController#fibonacciRetracement}fibonacciRetracement(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.FibonacciRetracement#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.FibonacciRetracement#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.FibonacciRetracement#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.FibonacciRetracement#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the Fibonacci Retracement. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.FibonacciRetracement#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.FibonacciRetracement#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.FibonacciRetracement#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.FibonacciRetracement#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the Fibonacci retracement. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart

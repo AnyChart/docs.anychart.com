@@ -19,7 +19,7 @@ This article explains how to add a Fibonacci Time Zones and configure its basic 
 
 To add a Fibonacci Time Zones annotation to a chart, call the {api:anychart.core.annotations.PlotController#fibonacciTimezones}fibonacciTimezones(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.FibonacciTimezones#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.FibonacciTimezones#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.FibonacciTimezones#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.FibonacciTimezones#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the Fibonacci Time Zones. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.FibonacciTimezones#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.FibonacciTimezones#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.FibonacciTimezones#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.FibonacciTimezones#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the Fibonacci time zones. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart

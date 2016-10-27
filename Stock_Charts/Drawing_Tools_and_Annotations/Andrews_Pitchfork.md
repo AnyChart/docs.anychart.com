@@ -19,7 +19,7 @@ This article explains how to add an Andrews' Pitchfork and configure its basic a
 
 To add an Andrews' Pitchfork annotation to a chart, call the {api:anychart.core.annotations.PlotController#andrewsPitchfork}andrewsPitchfork(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
 
-Next, use the {api:anychart.core.annotations.AndrewsPitchfork#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.AndrewsPitchfork#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.AndrewsPitchfork#secondXAnchor}secondXAnchor(){api}, {api:anychart.core.annotations.AndrewsPitchfork#secondValueAnchor}secondValueAnchor(){api}, {api:anychart.core.annotations.AndrewsPitchfork#secondXAnchor}thirdXAnchor(){api} and {api:anychart.core.annotations.AndrewsPitchfork#secondValueAnchor}thirdValueAnchor(){api} methods to set 3 points that determine the position of the andrewsPitchfork. Usually, the most convenient way to do this is object notation:
+Next, use the {api:anychart.core.annotations.AndrewsPitchfork#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.AndrewsPitchfork#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.AndrewsPitchfork#secondXAnchor}secondXAnchor(){api}, {api:anychart.core.annotations.AndrewsPitchfork#secondValueAnchor}secondValueAnchor(){api}, {api:anychart.core.annotations.AndrewsPitchfork#secondXAnchor}thirdXAnchor(){api} and {api:anychart.core.annotations.AndrewsPitchfork#secondValueAnchor}thirdValueAnchor(){api} methods to set 3 points that determine the position of the Andrews' pitchfork. Usually, the most convenient way to do this is object notation:
 
 ```
 // create a stock chart

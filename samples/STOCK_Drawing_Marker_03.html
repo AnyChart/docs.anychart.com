@@ -32,30 +32,34 @@
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
-    // create the first Ray annotation and configure its visual settings
-    ray1 = controller.ray({
-        xAnchor: "2006-07-30",
-        valueAnchor: 17.24,
-        secondXAnchor: "2008-04-27",
-        secondValueAnchor: 26.75,
+    // create the first Marker annotation and configure its visual settings
+    marker1 = controller.marker({
+        xAnchor: "2006-11-20",
+        valueAnchor: 25.92,
+        secondXAnchor: "2007-02-24",
+        secondValueAnchor: 31.92,
+        hoverFill: "#398CAE 0.3",
         hoverStroke: "2 #FF0000",
+        selectFill: "#398CAE 0.3",
+        selectHatchFill: "brick",
         selectStroke: "5 #FF0000"
     });
 
-    // create the second Ray annotation
-    ray2 = controller.ray();
+    // create the second Marker annotation
+    marker2 = controller.marker();
 
     // set the position of the second annotation
-    ray2.xAnchor("2004-06-06");
-    ray2.valueAnchor(23.82);
-    ray2.secondXAnchor("2007-09-23");
-    ray2.secondValueAnchor(33.13);
+    marker2.xAnchor("2005-11-20");
+    marker2.valueAnchor(15.55);
+    marker2.secondXAnchor("2007-02-25");
+    marker2.secondValueAnchor(23.30);
      
     // configure the visual settings of the second annotation
-    ray2.stroke("#2196F3", 3, "10 2");
+    marker2.stroke("#2196F3", 3, "10 2");
+    marker2.fill(null);
 
     // set the chart title
-    chart.title("Ray: Visual Settings");
+    chart.title("Marker: Visual Settings");
 
     // set the container id
     chart.container("container");
