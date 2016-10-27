@@ -1,0 +1,58 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+   
+    // the data used in this sample can be obtained from the CDN
+    // http://cdn.anychart.com/csv-data/csco-daily.js
+    // create a data table using this data
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_csco_daily_short_data());
+
+    // map the data
+    var mapping = dataTable.mapAs({"value": 4});
+
+    // create a stock chart
+    chart = anychart.stock();
+
+    // create a plot on the chart
+    var plot = chart.plot(0);
+
+    // create a line series
+    var lineSeries = plot.line(mapping);
+    lineSeries.name("CSCO");
+
+    // access the annotations() object of the plot to work with annotations
+    var controller = plot.annotations();
+
+    // create a Tend Channel annotation
+    controller.trendChannel({
+        xAnchor: "2007-01-07",
+        valueAnchor: 28.92,
+        secondXAnchor: "2007-09-23",
+        secondValueAnchor: 33.13,
+        thirdXAnchor: "2006-07-30",
+        thirdValueAnchor: 17.24
+    });
+
+    // set the chart title
+    chart.title("Trend Channel: Basic Settings");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

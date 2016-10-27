@@ -1,0 +1,74 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <script src="http://cdn.anychart.com/csv-data/csco-daily-short.js" data-export="true"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+   
+    // the data used in this sample can be obtained from the CDN
+    // http://cdn.anychart.com/csv-data/csco-daily.js
+    // create a data table using this data
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_csco_daily_short_data());
+
+    // map the data
+    var mapping = dataTable.mapAs({"value": 4});
+
+    // create a stock chart
+    chart = anychart.stock();
+
+    // create a plot on the chart
+    var plot = chart.plot(0);
+
+    // create a line series
+    var lineSeries = plot.line(mapping);
+    lineSeries.name("CSCO");
+
+    // access the annotations() object of the plot to work with annotations
+    var controller = plot.annotations();
+
+    // create the first Ellipse annotation and configure its visual settings
+    ellipse1 = controller.ellipse({
+        xAnchor: "2006-11-20",
+        valueAnchor: 25.92,
+        secondXAnchor: "2007-02-24",
+        secondValueAnchor: 31.92,
+        hoverFill: "#398CAE 0.3",
+        hoverStroke: "2 #FF0000",
+        selectFill: "#398CAE 0.3",
+        selectHatchFill: "brick",
+        selectStroke: "5 #FF0000"
+    });
+
+    // create the second Ellipse annotation
+    ellipse2 = controller.ellipse();
+
+    // set the position of the second annotation
+    ellipse2.xAnchor("2005-11-20");
+    ellipse2.valueAnchor(15.55);
+    ellipse2.secondXAnchor("2007-02-25");
+    ellipse2.secondValueAnchor(23.30);
+     
+    // configure the visual settings of the second annotation
+    ellipse2.stroke("#2196F3", 3, "10 2");
+    ellipse2.fill(null);
+
+    // set the chart title
+    chart.title("Ellipse: Visual Settings");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

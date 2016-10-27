@@ -11,7 +11,7 @@
 
 ## Overview
 
-Coming soon.
+This article describes methods that allow user of your application to draw annotations on Stock Chart plots.
 
 ## Sample App
 
@@ -23,8 +23,7 @@ You can download application source or simply fork it on [GitHub: AnyStock - Dra
 
 ## Initiate
 
-{api:anychart.core.annotations.PlotController#startDrawing}startDrawing(){api}
-{api:anychart.core.annotations.ChartController#startDrawing}startDrawing(){api}
+To start drawing use {api:anychart.core.annotations.PlotController#startDrawing}PlotController startDrawing(){api} method or {api:anychart.core.annotations.ChartController#startDrawing}ChartController startDrawing(){api} method.
 
 ```
 plot.annotations().startDrawing("infiniteLine");
@@ -33,8 +32,7 @@ plot.annotations().startDrawing({type: "infiniteLine", color: "red"});
 
 ## Cancel
 
-{api:anychart.core.annotations.PlotController#cancelDrawing}cancelDrawing(){api}
-{api:anychart.core.annotations.ChartController#cancelDrawing}cancelDrawing(){api}
+To cancel drawing process use {api:anychart.core.annotations.PlotController#cancelDrawing}PlotController cancelDrawing(){api} method or {api:anychart.core.annotations.ChartController#cancelDrawing}ChartController cancelDrawing(){api} method.
 
 ```
 plot.annotations().cancelDrawing()
@@ -72,22 +70,24 @@ anychart.onDocumentReady(function() {
 
 ## Managing
 
-getAnnotationAt()
-getAnnotationsCount()
-removeAnnotation()
-removeAnnotationAt()
-removeAllAnnotations() 
-getSelectedAnnotation()
-select(Annotation) 
-unselect()
+There are several methods that allow you to manage annotations:
+
+- {api:anychart.core.annotations.PlotController#getAnnotationAt}getAnnotationAt(){api}
+- {api:anychart.core.annotations.PlotController#getAnnotationsCount}getAnnotationsCount(){api}
+- {api:anychart.core.annotations.PlotController#removeAnnotation}removeAnnotation(){api}
+- {api:anychart.core.annotations.PlotController#removeAnnotationAt}removeAnnotationAt(){api}
+- {api:anychart.core.annotations.PlotController#removeAllAnnotations}removeAllAnnotations(){api}
+- {api:anychart.core.annotations.PlotController#getSelectedAnnotation}getSelectedAnnotation(){api}
+- {api:anychart.core.annotations.PlotController#select}select(){api}
+- {api:anychart.core.annotations.PlotController#unselect}unselect(){api}
 
 ## Events
 
-The following events can be handled when working with annotations:
+The following {api:anychart.enums.EventType}events{api} can be handled when working with annotations:
 
 <table>
 <tr><th>Enum Constant</th><th>String Value</th><th>Description</th></tr>
-<tr><td>ANNOTATION_DRAWING_FINISH</td><td>annotationDrawingFinish</td><td>Event type for the annotation drawing finish.</td></tr>
+<tr><td>ANNOTATION\_DRAWING\_FINISH</td><td>annotationDrawingFinish</td><td>Event type for the annotation drawing finish.</td></tr>
 <tr><td>ANNOTATION_SELECT</td><td>annotationSelect</td><td>Event type for the annotation select.</td></tr>
 <tr><td>ANNOTATION_UNSELECT</td><td>annotationUnselect</td><td>Event type for the annotation unselect.</td></tr>
 </table>

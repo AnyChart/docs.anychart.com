@@ -2,22 +2,82 @@
 #Fibonacci Arc
 
 * [Overview](#overview)
-* [Hardcoding](#hardcoding)
+* [Basic settings](#basic_settings)
 * [Visual Settings](#visual_settings)
 
 ## Overview
 
-Fibonacci Arc is a charting technique consisting of three curved lines that are drawn for the purpose of anticipating key support and resistance levels, and areas of ranging.
+The Fibonacci Arc annotation allows to add a Fibonacci arc to a chart.
 
-To learn about basic settings please refer to [Drawing Tools and Annotations: General Settings](General_Settings) article.
+This article explains how to add a Fibonacci Arc and configure its basic and visual settings. You can find more settings and other useful information in the articles describing annotations in general:
 
-To learn more about drawing process and its management please refer to [Drawing Tools and Annotations: Drawing](Drawing) article.
+* [Drawing Tools and Annotations: General Settings](General_Settings)
+* [Drawing Tools and Annotations: Drawing](Drawing)
+* [Drawing Tools and Annotations: Serializing and Deserializing](Serializing_Deserializing)
 
-## Hardcoding
+## Basic Settings
 
-Coming soon.
+To add a Fibonacci Arc annotation to a chart, call the {api:anychart.core.annotations.PlotController#fibonacciArc}fibonacciArc(){api} method of the {api:anychart.core.annotations.PlotController}annotations(){api} object.
+
+Next, use the {api:anychart.core.annotations.FibonacciArc#xAnchor}xAnchor(){api}, {api:anychart.core.annotations.FibonacciArc#valueAnchor}valueAnchor(){api}, {api:anychart.core.annotations.FibonacciArc#secondXAnchor}secondXAnchor(){api}, and {api:anychart.core.annotations.FibonacciArc#secondValueAnchor}secondValueAnchor(){api} methods to set 2 points that determine the position of the Fibonacci arc. Usually, the most convenient way to do this is object notation:
+
+```
+// create a stock chart
+chart = anychart.stock();
+
+// create a plot on the chart
+var plot = chart.plot(0);
+
+// access the annotations() object of the plot to work with annotations
+var controller = plot.annotations();
+
+// create a Fibonacci Arc annotation
+controller.fibonacciArc({
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
+    secondXAnchor: "2007-01-07",
+    secondValueAnchor: 28.92
+});
+```
+
+This is how it looks like:
+
+{sample}STOCK\_Drawing\_Fibonacci\_Arc\_01{sample}
 
 ## Visual Settings
 
-Coming soon.
+You can also configure the visual settings of a Fibonacci Arc annotation:
 
+* {api:anychart.core.annotations.FibonacciArc#color}color(){api}, {api:anychart.core.annotations.FibonacciArc#stroke}stroke(){api}, and {api:anychart.core.annotations.FibonacciArc#trend}trend(){api} set the color and stroke of the annotation and its trend
+* {api:anychart.core.annotations.FibonacciArc#hoverStroke}hoverStroke(){api} and {api:anychart.core.annotations.FibonacciArc#hoverTrend}hoverTrend(){api} configure the visual settings on hover
+* {api:anychart.core.annotations.FibonacciArc#selectStroke}selectStroke(){api} and {api:anychart.core.annotations.FibonacciArc#selectTrend}selectTrend(){api} configure the visual settings on select
+
+In the sample below, there are two Fibonacci Arc annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
+
+```
+// create the first Fibonacci Arc annotation and configure its visual settings
+fibonacciArc1 = controller.fibonacciArc({
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
+    secondXAnchor: "2007-01-07",
+    secondValueAnchor: 28.92,
+    hoverTrend: "2 #0000FF",
+    hoverStroke: "2 #FF0000",
+    selectTrend: "5 #0000FF",
+    selectStroke: "5 #FF0000"        
+});
+
+// create the second Fibonacci Arc annotation
+fibonacciArc2 = controller.fibonacciArc();
+
+// set the position of the second annotation
+fibonacciArc2.xAnchor("2004-01-11");
+fibonacciArc2.valueAnchor(29.13);
+fibonacciArc2.secondXAnchor("2004-08-08");
+fibonacciArc2.secondValueAnchor(17.86);
+ 
+// configure the visual settings of the second annotation
+fibonacciArc2.stroke("#2196F3", 3, "10 2");
+```
+
+{sample}STOCK\_Drawing\_Fibonacci\_Arc\_02{sample}
