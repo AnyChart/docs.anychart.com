@@ -10,16 +10,17 @@
 
 ## Basic Methods
  
-There are several methods adjusting custom text on a stage. You can find all of them in our <a href="http://api.anychart.stg/develop/anychart.graphics.vector.Text">text API</a>. This article describes some basic methods which allow to set that the and adjust several parameters.
+There are several methods adjusting custom text on a stage. You can find all of them in our <a href="http://api.anychart.stg/develop/anychart.graphics.vector.Text">text API</a>. This article describes some basic methods which allow to set text and adjust its parameters.
 
 ### Set the text
 
-Use the {api:anychart.graphics#text}text(){api} method to set your custom text. This method accepts X and Y coordinates of the top-left corner of the text element, the string of the text and the style object. Style object is not necessary. In the following sample we add some text with no special style to the point (20, 20).
+Use the {api:anychart.graphics#text}text(){api} method to create text objects. This method accepts X and Y coordinates of the top-left corner of the text element, the string of the text and the style object. Style object is not necessary. In the following sample we add some text with no special style to the point (20, 20).
 
 ```
 // set the text
 stage.text(20, 20, "This is my custom text");
 ```
+
 {sample :width 832 :height 120}GFX\_Basic\_Text\_01{sample}
 
 Let's now consider some basic styling methods. The {api:}fontSize(){api} method changes your font size, to change the font itself use {api:}fontFamily(){api}, the {api:}color(){api} method stands for setting the text color. Let's adjust the text from above with those methods:
@@ -41,13 +42,14 @@ textStyle = {fontFamily: "Georgia", fontSize: "15px", color: "green"};
 // set the text
 stage.text(20,20,"This is my custom text", textStyle);
 ```
+
 {sample :width 832 :height 120}GFX\_Basic\_Text\_03{sample}
 
 
 ## Getting the text size
 
 In case you need to get the size of the text element before it is being demonstrated on a chart, you can use one of the several special methods: 
- - {api:anychart.graphics.vector.Text#getAbsoluteBounds}getCBounds(){api} - Gets the bounds of the text element in absolute coordinates of the root element coordinate system
+ - {api:anychart.graphics.vector.Text#getAbsoluteBounds}getAbsoluteBounds(){api} - Gets the bounds of the text element in absolute coordinates of the root element coordinate system
  - {api:anychart.graphics.vector.Text#getAbsoluteHeight}getAbsoluteHeight(){api} - Returns height of the text element within root bounds
  - {api:anychart.graphics.vector.Text#getAbsoluteWidth}getAbsoluteWidth(){api} - Returns the width of the text element within root bounds
  - {api:anychart.graphics.vector.Text#getAbsoluteX}getAbsoluteX(){api} - Returns an absolute X (root element coordinate system)
@@ -71,6 +73,7 @@ rect.fill("gold");
 // set the stage as a parent of your text
 text.parent(stage);
 ```
+
 {sample :width 832 :height 120}GFX\_Basic\_Text\_04{sample}
 
 Creating the text element as a child of acgraph instead of the stage allows to put the golden rect on it prior to the text element, while the rect has the cooridinates and bounds of this text element.
@@ -79,8 +82,7 @@ Creating the text element as a child of acgraph instead of the stage allows to p
 
 If you need to customize your chart, it is a good idea to use some unusual fonts. Though, it might be quite complicated to install fonts in a chart, as there are a lot of things to manage with using extra files. 
 
-AnyChart provides an opportinity to use external fonts without unnecessary obstacles. <!--There are two font types that can be used within our charts: icon fonts and text fonts. -->
-
+AnyChart provides an opportinity to use external fonts without unnecessary obstacles.
 
 ### Text Fonts
 
@@ -99,7 +101,7 @@ font-family: 'Dancing Script', cursive;
 
 ## Multiline
 
-Usually, in SVG it is not possible to make a text element of several lines, but in AnyChart you can manage your text elements however you like. There are several methods allow to make the text be demonstrated in several lines, like setting {api:anychart.graphics.vector.Text#width}width(){api}, {api:anychart.graphics.vector.Text#height}height(){api}, {api:anychart.graphics.vector.Text#letterSpacing}letterSpacing(){api}, {api:anychart.graphics.vector.Text#textWrap}textWrap(){api} and {api:anychart.graphics.vector.Text#lineHeight}lineHeight(){api} can format the text in the necessary way. Also it is possible to set the text as an HTML object using the {api:anychart.graphics.vector.Text#htmlText}htmlText(){api} method.
+Usually, in SVG it is not possible to create a multiline text element but with Graphics JS you can do that. There are several methods that allow to manage multiline text, like setting {api:anychart.graphics.vector.Text#width}width(){api}, {api:anychart.graphics.vector.Text#height}height(){api}, {api:anychart.graphics.vector.Text#letterSpacing}letterSpacing(){api}, {api:anychart.graphics.vector.Text#textWrap}textWrap(){api} and {api:anychart.graphics.vector.Text#lineHeight}lineHeight(){api} can format the text in the necessary way. Also it is possible to set the text as an HTML object using the {api:anychart.graphics.vector.Text#htmlText}htmlText(){api} method.
 
 ```
 // create the text element as html
@@ -107,6 +109,7 @@ text1  = stage.text().htmlText("<p fontFace='Dancing Script'>This is my custom t
 
 // create second text 
 text2 = stage.text(20, 50, "This is my second custom text element, which is made multiline with the help of AnyChart Graphics methods", textStyle);
+
 // text settings
 text2.width(150);
 text2.height(150);
