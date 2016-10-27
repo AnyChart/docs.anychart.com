@@ -1,4 +1,4 @@
-"index 3}
+{:index 3}
 #Horizontal Line
 
 * [Overview](#overview)
