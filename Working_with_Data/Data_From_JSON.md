@@ -42,9 +42,9 @@ var json = {
     "container": "container"
   }
 };
-
+  
 var chart = anychart.fromJson(json);
-
+  
 // draw chart
 chart.draw();
 ```
@@ -140,7 +140,7 @@ JSON data set can contain one or several series - almost the same way you can do
 }]
 ```
 
-and here is a sample with multiple series
+Here is a sample with multiple series:
 
 {sample}WD\_Data\_from\_JSON\_04{sample}
 
@@ -173,7 +173,7 @@ Data from JSON can contain all possible settings for controlling chart grid, axi
 }
 ```
 
-Here is a sample with adjusted axes
+Here is a sample with adjusted axes:
 
 {sample}WD\_Data\_from\_JSON\_05{sample}
 

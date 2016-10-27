@@ -15,7 +15,7 @@ Mathematical description of the indicator: [Simple moving average (SMA) Mathemat
 
 ## Adding indicator
 
-SMA indicator is added using {api:anychart.core.stock.Plot#sma}.sma(){api} method, it requires a mapping with value field in it:
+SMA indicator is added using {api:anychart.core.stock.Plot#sma}sma(){api} method, it requires a mapping with value field in it:
 
 ```
 // create data table on loaded data

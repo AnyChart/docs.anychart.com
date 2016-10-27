@@ -22,49 +22,21 @@
   var data2 = data.mapAs({x: [0], value: [2]});
 
   // chart type
-  chart = anychart.line();
+  chart = anychart.column();
 
   // set title
-  chart.title("Separated Tooltip");
+  chart.title("Single Tooltip Display Mode");
 
   // set series
-  var series1 = chart.line(data1);
+  var series1 = chart.column(data1);
   series1.name("Year 2008");
-  var series2 = chart.line(data2);
+  var series2 = chart.column(data2);
   series2.name("Year 2009");
 
+  // tooltip settings
   var tooltip = chart.tooltip();
-  tooltip.displayMode("separated");
-  tooltip.positionMode("point");
-
-  var tooltip1 = series1.tooltip();
-  tooltip1.anchor("bottomCenter");
-  tooltip1.title(false);
-  tooltip1.separator(false);
-
-  var tooltip2 = series2.tooltip();
-  tooltip2.anchor("bottomCenter");
-  tooltip2.title(false);
-  tooltip2.separator(false);
-
-  var interactivity = chart.interactivity();
-  interactivity.hoverMode("byX");
-  interactivity.selectionMode("none");
-
-  var crosshair = chart.crosshair();
-  crosshair.enabled(true);
-  crosshair.yStroke(false);
-  crosshair.yLabel(false);
-
-  series1.markers(false);
-  series2.markers(false);
-
-  var hoverMarkers1 = series1.hoverMarkers();
-  hoverMarkers1.enabled(true);
-  hoverMarkers1.size(3);
-  var hoverMarkers2 = series2.hoverMarkers();
-  hoverMarkers2.enabled(true);
-  hoverMarkers2.size(3);
+  // enables "single" display mode. This mode is default one
+  tooltip.displayMode("single");
 
   // draw
   chart.container("container");

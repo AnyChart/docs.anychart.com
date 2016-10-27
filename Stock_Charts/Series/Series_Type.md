@@ -4,9 +4,7 @@ Switching the Series Type
 
 Our stock charts provide a method allowing to change the series type if the current type and the new one have the same or similar fields. See the [list of supported series](Supported_Series#list_of_supported_series) to find out what series types can be converted to each other.
 
-To switch the series type, use the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method of the series and set the name of the series type as a string parameter. The name of the series type used as a parameter is identical to the method used for creating series of this type.
-
-The sample below demonstrates how the feature works with line, column, and area series, which require only one value:
+To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method of a series and set the series name as a string parameter. Series names used as parameters are identical the methods used for creating the series. Let's create a couple of samples to make it clear how to use the feature.
 
 ```
 table.addData([
@@ -22,10 +20,10 @@ table.addData([
 // map the data
 mapping = table.mapAs({'x':"x", 'value':"value"});  
 
-// set the series type
+// set the series
 var series = chart.plot(0).line(mapping);
 
-// create a scroller series with values
+// create scroller series with values
 var scrollerSeries = chart.scroller().area(table.mapAs({'value': 'value'}));
 
 // change the series type
@@ -49,10 +47,10 @@ table.addData([
 // map the data
 mapping = table.mapAs({'open':"o",'high': "h", 'low':"l", 'close':"c"});
 
-// set the series type
+// set the series
 var series = chart.plot(0).ohlc(mapping);
 
-// create a scroller series with o/h/l/c values
+// create scroller series with "close" values
 var scrollerSeries = chart.scroller().ohlc(table.mapAs({'open':"o",'high': "h", 'low':"l", 'close':"c"}));
 
 // change the series type

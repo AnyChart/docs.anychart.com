@@ -19,24 +19,24 @@ Adding in code or [Serialize and Deserialize](Serializing_Deserializing) as a li
 
 ```
 anychart.onDocumentReady(function () {
-    chart = anychart.line([6, 10, 18, 11, 9]);
-    chart.yScale().minimum(0);
-    chart.xScale("linear");
+chart = anychart.line([6, 10, 18, 11, 9]);
+chart.yScale().minimum(0);
+chart.xScale("linear");
 
-    var controller = chart.annotations();
+var controller = chart.annotations();
 
-    // Create ellipse annotation.
-    controller.ellipse({
-        xAnchor: 1.9,
-        valueAnchor: 17,
-        secondXAnchor: 2.1,
-        secondValueAnchor: 19,
-        fill: "#F44336 0.3"
-    });
+// Create ellipse annotation.
+controller.ellipse({
+    xAnchor: 1.9,
+    valueAnchor: 17,
+    secondXAnchor: 2.1,
+    secondValueAnchor: 19,
+    fill: "#F44336 0.3"
+});
 
-    chart.title("Create ellipse annotation.");
-    chart.container("container");
-    chart.draw();
+chart.title("Create ellipse annotation.");
+chart.container("container");
+chart.draw();
 });
 ```
 

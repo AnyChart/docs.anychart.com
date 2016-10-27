@@ -39,6 +39,8 @@ There are three marker types we've got in Gantt Charts:
 
 Let's make a couple of samples with these markers.
 
+
+
 First of all, let's create 2 line markers: one showing the current date and second one - the date when the ongoing process should become finished.
 
 ```

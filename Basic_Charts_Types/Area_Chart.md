@@ -174,13 +174,13 @@ chart.area3d(seriesData_1);
 chart.area3d(seriesData_2);
 ```
 
-As now we have multi-series chart we don't want to set the **chart type** for each series individually (there can be more than two series in a multi-series chart), so we set the **chart** as {api:anychart#area}**anychart.area()**{api}. Now all series in the chart will be of Area type by default.
+As now we have multi-series chart we don't want to set the **chart type** for each series individually (there can be more than two series in a multi-series chart), so we set the **chart** as {api:anychart#area}anychart.area(){api}. Now all series in the chart will be of Area type by default.
 
 {sample}BCT\_AreaChart\_03{sample}
 
 ### 3D Area Chart
 
-Anychart provides an opportunity to use 3d version of area charts. Use {api:anychart#area3d}**.area3d()**{api} method to create 3d area chart. 
+Anychart provides an opportunity to use 3d version of area charts. Use {api:anychart#area3d}area3d(){api} method to create 3d area chart. 
 
 ```
 // define data set
@@ -198,7 +198,7 @@ var chart = anychart.area3d();
 chart.area(data);
 ```
 
-As you can see from the snippet above, you need to use {api:anychart.core.cartesian.series.Area3d}**.area()**{api} method to create 3D area series. Here is a sample of a 3D area chart:
+As you can see from the snippet above, you need to use the {api:anychart.core.cartesian.series.Area3d}area()api} method to create 3D area series. Here is a sample of a 3D area chart:
 
 {sample}BCT\_AreaChart\_12{sample}
 
@@ -211,7 +211,7 @@ In AnyChart JavaScript Charting Library, axis is an object that allows you to co
 
 ### Orientation
 
-With AnyChart Charting Framework you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.core.axes.Linear}**.yAxis()**{api} or {api:anychart.core.axes.Linear}**.xAxis()**{api} method.
+With AnyChart Charting Framework you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}orientation(){api} parameter of {api:anychart.core.axes.Linear}yAxis(){api} or {api:anychart.core.axes.Linear}xAxis(){api} method.
   
 Axes position depends on plot type, orientation and inversion of axes.
 
@@ -238,10 +238,10 @@ And here is the demonstration of Y Axis inversion on the Single-series sample:
 
 ### Minimum and Maximum
 
-AnyChart calculates axis minimum and maximum automatically. You can see this on the scale inversion chart sample above: the minimal value on the Y Axis is 8.000, and the maximum is 20.000. You can control these values by setting **.maximum()** and **.minimum()**. :
+AnyChart calculates axis minimum and maximum automatically. You can see this on the scale inversion chart sample above: the minimal value on the Y Axis is 8.000, and the maximum is 20.000. You can control these values by setting {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api}. :
 
 ```
-    chart.yScale().minimum(0).maximum(50000);
+chart.yScale().minimum(0).maximum(50000);
 ```
 
 Here is the demonstration of maximum and minimum values in the Single-series sample:
@@ -250,19 +250,19 @@ Here is the demonstration of maximum and minimum values in the Single-series sam
 
 ## Visualization
 
-In this section we will describe main parts of area chart visualization and ways to adjust it. Visual appearances of areas are defined using certain methods. For Area chart the main thing is the {api:anychart.graphics.vector.Fill}**.fill()**{api} method.
+In this section we will describe main parts of area chart visualization and ways to adjust it. Visual appearances of areas are defined using certain methods. For Area chart the main thing is the {api:anychart.graphics.vector.Fill}fill(){api} method.
 
 ### Basic Sample
 
 Now, let's look how to change the look of an Area.  Here is a basic sample:
 
 ```
-    chart.area(data)
-        .fill('Gold')
-        .hoverFill("darkred")
-        .stroke('#56561a', 4, 0.4)
-        .hatchFill('diagonalbrick', 'gray')
-        .hoverHatchFill('diagonalbrick', 'black');
+chart.area(data)
+  .fill('Gold')
+  .hoverFill("darkred")
+  .stroke('#56561a', 4, 0.4)
+  .hatchFill('diagonalbrick', 'gray')
+  .hoverHatchFill('diagonalbrick', 'black');
 ```
 
 Using such settings we've created a look with area colored in Gold, rather thick border line, hatch filled with DiagonalBrick. Also, we've defined that when the area is hovered it's hatch will be highlighted with black and the chart will be filled with dark red.
@@ -276,10 +276,10 @@ Now let's apply this style to the chart:
 Color is not the only way to design a chart. In this sample we will demonstrate how to use a picture as a fill:
 
 ```
-    chart.area(data).fill({
-        src: 'http://static.anychart.com/anychart_site_header.png',
-        mode: acgraph.vector.ImageFillMode.STRETCH
-    })
+chart.area(data).fill({
+  src: 'http://static.anychart.com/anychart_site_header.png',
+  mode: acgraph.vector.ImageFillMode.STRETCH
+})
 ```
 
 {sample}BCT\_AreaChart\_08{sample}
@@ -288,9 +288,9 @@ Color is not the only way to design a chart. In this sample we will demonstrate 
 
 In this section we will explain how to add and configure data labels and tooltips.
 
-If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
+If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Area#labels}labels(){api} and {api:anychart.core.cartesian.series.Area#tooltip}tooltip(){api} methods. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
 
-When formatting data labels' text we use {api:anychart.core.ui.LabelsFactory#textFormatter}**.textFormatter()**{api} method to show month's name. 
+When formatting data labels' text we use {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} method to show month's name. 
 
 ```
   var series = chart.area(data);
@@ -312,7 +312,7 @@ In the sample below we take single-series data described above and mark the high
 To make the marker more visually appealing we set its size to 12px.
 
 ```
-    {x: 'March', value: 18000, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}},
+{x: 'March', value: 18000, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}},
 ```
 
 It can be clearly seen on the chart that March was the most successful month in sales:
@@ -323,7 +323,7 @@ It can be clearly seen on the chart that March was the most successful month in 
 
 AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fillings, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
 
-To demonstrate hatch fill feature we've prepared the following sample. As you can see, it is completely monochrome. We have a chart with 3 series, each with 5 data points. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}**.hatchFill()**{api} parameter.
+To demonstrate hatch fill feature we've prepared the following sample. As you can see, it is completely monochrome. We have a chart with 3 series, each with 5 data points. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}hatchFill(){api} parameter.
 
 ```
     .hatchFill('soliddiamond')

@@ -291,7 +291,7 @@ It's possible to set some additional information through the data that is to be 
 
 ### Tooltip
 
-Tooltips are small windows that pop up when you hover a point. They are shown next to the cursor and follows it by default. We can change their appearance and behavior using several the {api:anychart.charts.TreeMap#tooltip}.tooltip(){api} method. To format the text and title of tooltips we use {api:anychart.core.ui.ChartTooltip#textFormatter}.textFormatter(){api} and {api:anychart.core.ui.ChartTooltip#titleFormatter}.titleFormatter(){api}; to change the position we use special positioning methods: {api:anychart.core.ui.ChartTooltip#positionMode}.positionMode(){api} and {api:anychart.core.ui.ChartTooltip#anchor}.anchor(){api}, which you can find in the [Tooltip article](../Common_Settings/Tooltip#position). Let's now adjust the tooltips text:
+Tooltips are small windows that pop up when you hover a point. They are shown next to the cursor and follows it by default. We can change their appearance and behavior using several the {api:anychart.charts.TreeMap#tooltip}.tooltip(){api} method. To format the text and title of tooltips we use {api:anychart.core.ui.Tooltip#textFormatter}.textFormatter(){api} and {api:anychart.core.ui.Tooltip#titleFormatter}.titleFormatter(){api}; to change the position we use special positioning methods: {api:anychart.core.ui.Tooltip#positionMode}.positionMode(){api} and {api:anychart.core.ui.Tooltip#anchor}.anchor(){api}, which you can find in the [Tooltip article](../Common_Settings/Tooltip#position). Let's now adjust the tooltips text:
 
 ```
 // tooltips settings

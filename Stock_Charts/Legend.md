@@ -108,7 +108,7 @@ item.iconType("ohlc");
 
 ## Custom Item
 
-When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.ui.Legend#itemsFormatter}**itemsFormatter(){api} method. 
+When creating legend you can add your own items with any information you want to see on the legend, to do that use {api:anychart.ui.Legend#itemsFormatter}itemsFormatter(){api} method. 
 
 ```
 var legend = chart.legend();

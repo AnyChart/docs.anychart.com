@@ -78,7 +78,7 @@ series_rub.name("Euro to Dollar Rate");
 
 It's quite clear that it's not a good idea to combine series describing even similar parameters changes, but in such different value ranges. In situations like this it's much better to use plots. Plots are AnyStock features of a very good help when we've got several series like two of them above which values correspond to the same X-axis categories.
 
-To create a new plot, use the {api:anychart.charts.Stock#plot}.plot(){api} method. Don't forget to set the plot index (basically, its number) as an argument for this method.
+To create a new plot, use the {api:anychart.charts.Stock#plot}plot(){api} method. Don't forget to set the plot index (basically, its number) as an argument for this method.
 
 ```
 // set the series
@@ -98,7 +98,7 @@ Read more about plots in the [Plots tutorial](../Chart_Plots).
 
 Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
 
-To switch the series use {api:anychart.core.stock.series.Base#seriesType}.seriesType(){api} method.
+To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
 ## Visualization
 
@@ -106,7 +106,7 @@ There are some visual parameters of the Line series, such as color, stroke width
 
 ### Coloring
 
-In Lines, there's no filling colors due to chart specifics. To set the stroke color for the line series use {api:anychart.core.stock.series.Line#stroke}.stroke(){api} with a color set as a parameter.
+In Lines, there's no filling colors due to chart specifics. To set the stroke color for the line series use {api:anychart.core.stock.series.Line#stroke}stroke(){api} with a color set as a parameter.
 
 ```
 // coloring
@@ -117,7 +117,7 @@ series_euro.stroke("#ff0000");
 
 ### Hovered state
 
-When you hover a point in a stock chart, there's a crosshair shows up, highlighting the hovered point. This can be adjusted as well using the {api:anychart.core.stock.Plot#dateTimeHighlighter}.dateTimeHighlighter(){api} method. A highlighter (or a crosshair) is held to a plot, so it's possible to make all highlighters different of edit only one of them. Its parameters are color, thickness, dashPattern, lineJoin and lineCap, though it's not necessary to define them all.
+When you hover a point in a stock chart, there's a crosshair shows up, highlighting the hovered point. This can be adjusted as well using the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method. A highlighter (or a crosshair) is held to a plot, so it's possible to make all highlighters different of edit only one of them. Its parameters are color, thickness, dashPattern, lineJoin and lineCap, though it's not necessary to define them all.
 
 ```
 // crosshair adjusting

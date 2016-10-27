@@ -89,7 +89,7 @@ legend.itemsSourceMode('CATEGORIES');
 
 ## Undefined Regions In Legend
 
-If you've got a lot of undefined regions (regions with no data), but you need to color them, use the {api}unboundRegions(){api} method:
+If you've got a lot of undefined regions (regions with no data), but you need to color them, use the {api:anychart.charts.Map#unboundRegions}unboundRegions(){api} method:
 
 ```
 // set the color for undefined (unbound) regions

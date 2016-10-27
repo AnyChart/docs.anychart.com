@@ -97,10 +97,8 @@ and in XML format this looks like
 ```xml
 <!-- set chart type and chart container -->
 <chart type="column" container="container">
-
-  <!-- set scale type and anjust minimum & maximum values -->
-  <y_scale type="line" minimum="100" maximum="350"/>
-  
+<!-- set scale type and anjust minimum & maximum values -->
+<y_scale type="line" minimum="100" maximum="350"/>
 </chart>
 ```
 
@@ -151,18 +149,18 @@ Here is a sample setting two series using XML format.
 Data from XML can contain all possible settings for controlling chart grid, axis line along with tick marks and labels, axis scale and other visual appearance settings. Sample below demonstrates setting axes names and adjusting scales orientation.
 
 ```xml
-  <!-- x axes setting -->
-  <x_axes>
-    <!-- adjust default x axis -->
-    <axis orientation="top" title="false"/>
-  </x_axes>
-  <!-- y axes settings -->
-  <y_axes>
-    <!-- adjust default y axis -->
-    <axis orientation="right" title="false"/>
-  </y_axes>
-  <!-- y scale setting -->
-  <y_scale inverted="true"/>
+<!-- x axes setting -->
+<x_axes>
+  <!-- adjust default x axis -->
+  <axis orientation="top" title="false"/>
+</x_axes>
+<!-- y axes settings -->
+<y_axes>
+  <!-- adjust default y axis -->
+  <axis orientation="right" title="false"/>
+</y_axes>
+<!-- y scale setting -->
+<y_scale inverted="true"/>
 ```
 
 Here is a sample of adjusted axes 
@@ -174,13 +172,13 @@ Here is a sample of adjusted axes
 Visual settings can be vital for a chart. XML can contain any method and parameter for adjusting visual settings. Here is configuration for column chart of golden color with brick hatch.
 
 ```xml
-  <!-- series settings -->
-  <series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonalbrick">
+<!-- series settings -->
+<series fill="gold" stroke="gray" hover_stroke="darkred" hatch_fill="diagonalbrick">
 
-    <!-- customize hover hatch fill -->
-    <hover_hatch_fill type="diagonalbrick" color="darkred"/>
+  <!-- customize hover hatch fill -->
+  <hover_hatch_fill type="diagonalbrick" color="darkred"/>
 
-  </series>
+</series>
 ```
 
 {sample}WD\_Data\_from\_XML\_06{sample}

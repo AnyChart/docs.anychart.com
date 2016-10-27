@@ -74,7 +74,7 @@ var dataSet = data.mapAs({
 var chart = anychart.heatMap(dataSet);
 ```
 
-As you can see, the data set is used as a parameter for  the {api:anychart#heatMap}**.heatMap()**{api} method.
+As you can see, the data set is used as a parameter for  the {api:anychart#heatMap}heatMap(){api} method.
   
 Here is a heat map with the data from above:
 
@@ -86,7 +86,7 @@ While the majority of chart types represent differences in values of data points
 
 ### Color Scale
 
-There are several ways of managing heat map's colors. The best one of them all is using a {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to define heat map's colors. Use {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale as a parameter for {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} method to create an array of ranges and define the color for each range. All values for ranges are to be defined by a user.
+There are several ways of managing heat map's colors. The best one of them all is using a {api:anychart.charts.HeatMap#colorScale}colorScale(){api} method to define heat map's colors. Use {api:anychart.scales.OrdinalColor}ordinalColor(){api} scale as a parameter for {api:anychart.charts.HeatMap#colorScale}colorScale(){api} method to create an array of ranges and define the color for each range. All values for ranges are to be defined by a user.
 
 ```
 var chart = anychart.heatMap(dataSet);
@@ -107,7 +107,7 @@ colorScale.ranges([
 chart.colorScale(colorScale);
 ```
 
-Here is a sample of a heat map with {api:anychart.scales.OrdinalColor}**.ordinalColor()**{api} scale:
+Here is a sample of a heat map with {api:anychart.scales.OrdinalColor}ordinalColor(){api} scale:
 
 {sample}BCT\_HeatMapChart\_02{sample}
 
@@ -164,11 +164,11 @@ var chart = anychart.heatMap([
 
 ##Visualization
 
-Even though the {api:anychart.charts.HeatMap#colorScale}**.colorScale()**{api} is the most convenient way of managing heat map's colors you can still set a single color for all points of a heat map and define a color for points' border.
+Even though the {api:anychart.charts.HeatMap#colorScale}colorScale(){api} is the most convenient way of managing heat map's colors you can still set a single color for all points of a heat map and define a color for points' border.
 
-You can set heat map's colors either [in your dataSet](#direct_coloring) or using special methods. The easiest way to set the heat map's color is {api:anychart.charts.HeatMap#fill}**.fill()**{api} method.
+You can set heat map's colors either [in your dataSet](#direct_coloring) or using special methods. The easiest way to set the heat map's color is {api:anychart.charts.HeatMap#fill}fill(){api} method.
   
-You can set a solid fill for each cell of the heat map. Use {api:anychart.charts.HeatMap#fill}**.fill()**{api} method to define custom color for every cell. Information on setting a color for a custom range of heat parameters can be found in [Color Scale section](#color_scale). 
+You can set a solid fill for each cell of the heat map. Use {api:anychart.charts.HeatMap#fill}fill(){api} method to define custom color for every cell. Information on setting a color for a custom range of heat parameters can be found in [Color Scale section](#color_scale). 
 
 ```
 var chart = anychart.heatMap(dataSet);
@@ -176,7 +176,7 @@ var chart = anychart.heatMap(dataSet);
 chart.fill("#FFD54F");
 ```
 
-Along with a single color for all points, you can manage the color of all points' borders. The heat map chart borders are controlled by {api:anychart.charts.HeatMap#stroke}**.stroke()**{api} method. Alone with {api:anychart.charts.HeatMap#stroke}**.stroke()**{api} method you can set **"stroke"** parameter for an [individual point](#direct_coloring).
+Along with a single color for all points, you can manage the color of all points' borders. The heat map chart borders are controlled by {api:anychart.charts.HeatMap#stroke}.stroke(){api} method. Alone with {api:anychart.charts.HeatMap#stroke}stroke(){api} method you can set **"stroke"** parameter for an [individual point](#direct_coloring).
 
 ```
 // create chart
@@ -190,7 +190,7 @@ Here is a sample with solid inner color and adjusted strokes.
 
 ## Labels
 
-Labels are text boxes with additional information for presented data. You can tune labels using {api:anychart.charts.HeatMap#labels}**.labels()**{api} method.
+Labels are text boxes with additional information for presented data. You can tune labels using {api:anychart.charts.HeatMap#labels}labels(){api} method.
 
 ```
 // create chart
@@ -213,7 +213,7 @@ Here is a sample of a js Heat map with formatted labels.
 
 {sample}BCT\_HeatMapChart\_05{sample}
 
-Heat map is a kind of chart that usually contains quite a few points in dataSet. That is why heat maps have special {api:anychart.charts.HeatMap#labelsDisplayMode}**.labelsDisplayMode()**{api} method for managing labels appearance on the chart plot. There are three possible modes of displaying labels: **"clip"**, **"drop"**, **"alwaysShow"**.
+Heat map is a kind of chart that usually contains quite a few points in dataSet. That is why heat maps have special {api:anychart.charts.HeatMap#labelsDisplayMode}labelsDisplayMode(){api} method for managing labels appearance on the chart plot. There are three possible modes of displaying labels: **"clip"**, **"drop"**, **"alwaysShow"**.
 
 * **"Clip"** parameter makes all labels be displayed regardless the width of each point. If a label doesn't fit the point width, a part of this label will be cropped.
 * **"Drop"** parameter hides the whole label, if it doesn't fit point's width
@@ -223,7 +223,7 @@ Heat map is a kind of chart that usually contains quite a few points in dataSet.
 
 ## Tooltip
 
-In this section we will explain how to tune heat map's tooltip. Method {api:anychart.charts.HeatMap#tooltip}**.tooltip()**{api} controls tooltip of the heat map. In [Tooltip](../Common_Settings/Tooltip) article you can find some information on how to adjust tooltip content and tooltip visual appearance.
+In this section we will explain how to tune heat map's tooltip. Method {api:anychart.charts.HeatMap#tooltip}tooltip(){api} controls tooltip of the heat map. In [Tooltip](../Common_Settings/Tooltip) article you can find some information on how to adjust tooltip content and tooltip visual appearance.
 
 ```
 chart = anychart.heatMap(dataSet);
@@ -241,10 +241,10 @@ tooltip.textFormatter(function(){
 
 ## Scroller
 
-As far as AnyChart doesn't limit the number of points on a chart, you may face a problem of having too many data points on your chart plot. The solution of this problem is simple: use {api:anychart.charts.Cartesian#xScroller}**.xScroller()**{api} and {api:anychart.charts.Cartesian#yScroller}**.yScroller()**{api} methods. These methods create scrollers on the chart plot and limits the amount of visible data points at the same time.
+As far as AnyChart doesn't limit the number of points on a chart, you may face a problem of having too many data points on your chart plot. The solution of this problem is simple: use {api:anychart.charts.Cartesian#xScroller}xScroller(){api} and {api:anychart.charts.Cartesian#yScroller}yScroller(){api} methods. These methods create scrollers on the chart plot and limits the amount of visible data points at the same time.
   
   
-You can manage chart's zoomed space using {api:anychart.charts.Cartesian#xZoom}**.xZoom()**{api} and {api:anychart.charts.Cartesian#yZoom}**.yZoom()**{api} methods. More information on scroller and zoom managing can be found in [Scroller article](../Common_Settings/Scroller).
+You can manage chart's zoomed space using {api:anychart.charts.Cartesian#xZoom}xZoom(){api} and {api:anychart.charts.Cartesian#yZoom}yZoom(){api} methods. More information on scroller and zoom managing can be found in [Scroller article](../Common_Settings/Scroller).
 
 ```
 // create horizontal chart scroller

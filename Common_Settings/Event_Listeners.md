@@ -18,7 +18,7 @@ In AnyChart html5 charting library, when user interacts with a chart, there's an
 Events are distributed to the chart elements (title, legend, axis, etc.), and to make those elements respond to events, you should attach event listeners to them. 
 Event Listeners are simply JavaScript functions once applied to an object wait for the defined action over this object to be performed. 
 It's possible to apply more than one listener to an object. 
-There are 5 listener methods ({api:anychart.core.Base#listen}**.listen()**{api}, {api:anychart.core.Base#listenOnce}**.listenOnce()**{api}, {api:anychart.core.Base#removeAllListeners}**.removeAllListeners()**{api}, {api:anychart.core.Base#unlisten}**.unlisten()**{api} and {api:anychart.core.Base#unlistenByKey}**.unlistenByKey()**{api}) and a lot of event types, which you can read about in this article.
+There are 5 listener methods ({api:anychart.core.Base#listen}listen(){api}, {api:anychart.core.Base#listenOnce}listenOnce(){api}, {api:anychart.core.Base#removeAllListeners}removeAllListeners(){api}, {api:anychart.core.Base#unlisten}unlisten(){api} and {api:anychart.core.Base#unlistenByKey}unlistenByKey(){api}) and a lot of event types, which you can read about in this article.
 
 ## Listener Types
 
@@ -27,7 +27,7 @@ There are five listener methods in Anychart, each type for a special case. Read 
 <a name="listen"></a>
 ###listen()
 
-This listener type adds an event listener to an implementing object. You can add the {api:anychart.core.Base#listen}**.listen()**{api} method to an object more than once (but not to an event); each time it's added its key is returned.
+This listener type adds an event listener to an implementing object. You can add the {api:anychart.core.Base#listen}listen(){api} method to an object more than once (but not to an event); each time it's added its key is returned.
 Look at the sample and through its code. It's necessary to define the event type and the action to perform. 
 
 ```
@@ -49,7 +49,7 @@ chart.listen("click", function(){
 ###listenOnce()
 
 This listener type adds an event listener, that should react only once. It means that when the defined event happens for the first time, this listener reacts and then disables itself, so there will be no reaction when the event happens again.
-You can add the {api:anychart.core.Base#listenOnce}**.listenOnce()**{api} method to an object more than once; each time it's added its key is returned.
+You can add the {api:anychart.core.Base#listenOnce}listenOnce(){api} method to an object more than once; each time it's added its key is returned.
 It's necessary to define the event type and the action to perform to get any reaction on the event. 
 
 ```
@@ -68,7 +68,7 @@ range.listenOnce("dblClick",
 ###removeAllListeners()
 
 This listener type removes all event listeners from the object, unless you define the particular type.
-You can add the {api:anychart.core.Base#removeAllListeners}**.removeAllListeners()**{api} method to an object more than once.
+You can add the {api:anychart.core.Base#removeAllListeners}removeAllListeners(){api} method to an object more than once.
 
 ```
 // remove all listeners
@@ -79,14 +79,14 @@ chart.listen("dblClick", function(){
 
 {sample}CMN\_Event\_Listener\_03{sample}
 
-Note that when you intend to stop listen to an only event or all of them, you should add an {api:anychart.core.Base#unlisten}**.unlisten()**{api} method from inside of the {api:anychart.core.Base#listen}**.listen()**{api} one. 
+Note that when you intend to stop listen to an only event or all of them, you should add an {api:anychart.core.Base#unlisten}unlisten(){api} method from inside of the {api:anychart.core.Base#listen}listen(){api} one. 
 
 <a name="unlisten">
 ###unlisten()
 
-This listener type disables the particular listener added using the {api:anychart.core.Base#listen}**.listen()**{api} or {api:anychart.core.Base#listenOnce}**.listenOnce()**{api} methods. 
-You can add the {api:anychart.core.Base#unlisten}**.unlisten()**{api} method to an object more than once. The method requires the same parameters as the listener which is removing with this.
-To stop listen to the particular action, place an {api:anychart.core.Base#unlisten}**.unlisten**(){api} method to the event you\d like to stop listen to inside the {api:anychart.core.Base#listen}**.listen()**{api} method, enabled for any action.
+This listener type disables the particular listener added using the {api:anychart.core.Base#listen}listen(){api} or {api:anychart.core.Base#listenOnce}listenOnce(){api} methods. 
+You can add the {api:anychart.core.Base#unlisten}unlisten(){api} method to an object more than once. The method requires the same parameters as the listener which is removing with this.
+To stop listen to the particular action, place an {api:anychart.core.Base#unlisten}unlisten(){api} method to the event you would like to stop listen to inside the {api:anychart.core.Base#listen}listen(){api} method, enabled for any action.
 
 ```
 // create a function for what to listen and then unlisten
@@ -115,8 +115,8 @@ chart.listenOnce("click",function(){
 <a name="unlistenbykey">
 ###unlistenByKey()
 
-This listener type removes an event listener which was added with {api:anychart.core.Base#listen}**.listen()**{api} by the key returned by {api:anychart.core.Base#listen}**.listen()**{api} or {api:anychart.core.Base#listenOnce}**.listenOnce()**{api}. The only parameter of this method is the key to be listened to.
-You can use the {api:anychart.core.Base#unlistenByKey}**.unlistenByKey()**{api} method more than once with one object.
+This listener type removes an event listener which was added with {api:anychart.core.Base#listen}listen(){api} by the key returned by {api:anychart.core.Base#listen}listen(){api} or {api:anychart.core.Base#listenOnce}listenOnce(){api}. The only parameter of this method is the key to be listened to.
+You can use the {api:anychart.core.Base#unlistenByKey}unlistenByKey(){api} method more than once with one object.
 Look at the sample and its code. It's necessary to define the key of the listener that you need to disable.
 
 ```
@@ -253,7 +253,7 @@ chart.listen("pointDblClick", function(e){
 
 To make your chart more flexible, AnyChart js charting framework provides several ways of managing states of a single point. Event's parameter contains a number of properties that can ease interactivity managing.
 
-For instance, **point** property can be used to get the point that triggered the event. This property provides pretty much the same options as {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method does. All methods of a {api:anychart.core.SeriesPoint}**series point**{api} can be invoked upon this property.
+For instance, **point** property can be used to get the point that triggered the event. This property provides pretty much the same options as {api:anychart.core.SeriesBase#getPoint}getPoint(){api} method does. All methods of a {api:anychart.core.SeriesPoint}series point{api} can be invoked upon this property.
 
 As an example, let's use **pointsHover** event to find out the index of the hovered point and set hovered state for adjacent points.
 

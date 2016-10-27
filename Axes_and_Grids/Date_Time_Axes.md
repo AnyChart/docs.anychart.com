@@ -17,7 +17,7 @@ You can use Date/Time values as input data for chart using Date Time Axes. In th
 You can make both X and/or Y axis a DateTime axis, to do that, set scale type to {api:anychart.scales.DateTime}DateTime{api}:
 
 ```
-  var dateScale = anychart.scales.dateTime();
+var dateScale = anychart.scales.dateTime();
 ```
 
 ### Sample Range Bar With Y DateTime Axis
@@ -123,7 +123,7 @@ That's it - chart with DateTime Y Axis is ready:
 
 ## Major and Minor Interval Ticks
 
-For datetime axes you can set Major and Minor Ticks using {api:anychart.scales.DateTime#ticks}**ticks()**{api} and {api:anychart.scales.DateTime#minorTicks}**minorTicks()**{api} methods of the scale:
+For datetime axes you can set Major and Minor Ticks using {api:anychart.scales.DateTime#ticks}ticks(){api} and {api:anychart.scales.DateTime#minorTicks}minorTicks(){api} methods of the scale:
 
 ```
   var ticks = chart.yScale().ticks();

@@ -249,7 +249,7 @@ allowed us to plot data within hundreds and within thousands on the same plot:
 
 ## Labels and Tooltips
 
-If you want to configure data labels and tooltips for all series - you should use{api:anychart.core.scatter.series.Base#labels}.labels(){api} and {api:anychart.core.scatter.series.Base#tooltip}.tooltip(){api} methods. You can tune the visual appearance, positioning and format of labels and tooltips.
+If you want to configure data labels and tooltips for all series - you should use{api:anychart.core.scatter.series.Base#labels}labels(){api} and {api:anychart.charts.Scatter#tooltip}tooltip(){api} methods. You can tune the visual appearance, positioning and format of labels and tooltips.
 
 ```
 // set labels

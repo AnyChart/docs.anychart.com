@@ -64,9 +64,9 @@ And now let's talk about customising the charts' behaviour. There are two levels
 
 ### Charts behaviour
 
-We can make some changes in charts behaviour using the {api:anychart.core.utils.Interactivity}**.interactivity()**{api} method. It helps to adjust hover and select settings, as well as create a "highlighting area" - a spot of a custom-defined radius that highlights (hovers) all points within that radius.
+We can make some changes in charts behaviour using the {api:anychart.core.utils.Interactivity}interactivity(){api} method. It helps to adjust hover and select settings, as well as create a "highlighting area" - a spot of a custom-defined radius that highlights (hovers) all points within that radius.
 
-So, if we need to change something with hover, we should use {api:anychart.core.utils.Interactivity#hoverMode}**.hoverMode()**{api} with an argument "bySpot" or "byX". In first case we may adjust the radius of a "spot", making it bigger or smaller.
+So, if we need to change something with hover, we should use {api:anychart.core.utils.Interactivity#hoverMode}hoverMode(){api} with an argument "bySpot" or "byX". In first case we may adjust the radius of a "spot", making it bigger or smaller.
 
 There are also two basic events: hover and select.
 
@@ -108,7 +108,7 @@ Now, let's have a look at the **select and multi-select** features.
 
 ### Select
 
-If you want to change the selection settings, use the {api:anychart.core.utils.Interactivity#selectionMode}**.selectionMode()**{api} method with one of the following arguments: "none", "singleSelect" or "multiSelect". The "none" value disables the ability to select completely, "singleSelect" disables multi-select and "multiSelect" is the default.
+If you want to change the selection settings, use the {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} method with one of the following arguments: "none", "singleSelect" or "multiSelect". The "none" value disables the ability to select completely, "singleSelect" disables multi-select and "multiSelect" is the default.
   
 The **Shift** key is used as it is usually used with selection: if you need to select several points, hold **Shift** key while clicking them one by one.
 Selection feature is enabled by default, to switch it off do the following:
@@ -153,9 +153,9 @@ interactivity.selectionMode("singleSelect");
 <a name="series_hover"></a>
 #### Hover 
 
-Usually, when you hover a point, it becomes highlighted. However, if you are creating a custom dashboard or a complex control elements, it might be necessary to highlight the points before you even drag a cursor over a chart. In this case use the {api:anychart.core.SeriesBase#hover}**.hover()**{api} method with a number of point (or array of numbers) that needs to be highlighted at the moment of loading.
+Usually, when you hover a point, it becomes highlighted. However, if you are creating a custom dashboard or a complex control elements, it might be necessary to highlight the points before you even drag a cursor over a chart. In this case use the {api:anychart.core.SeriesBase#hover}hover(){api} method with a number of point (or array of numbers) that needs to be highlighted at the moment of loading.
 
-If you provide no arguments to the {api:anychart.core.SeriesBase#hover}**.hover()**{api} function, all points of the series (a series itself) will be hovered, no matter which interactivity type you use.
+If you provide no arguments to the {api:anychart.core.SeriesBase#hover}hover(){api} function, all points of the series (a series itself) will be hovered, no matter which interactivity type you use.
 
 Change the hovering mode in playground and see the difference.
 
@@ -165,7 +165,7 @@ series_1.hover([4, 6, 12, 16]);
 series_2.hover([0, 1, 5, 10, 11, 16, 17, 20]);	
 ```
 
-If you need to unhover a number of points automatically in some case, use {api:anychart.core.SeriesBase#unhover}**.unhover()**{api} method. You can define the points you'd like to unhover or leave the method with no parameters - this will unhover all points of the series.
+If you need to unhover a number of points automatically in some case, use {api:anychart.core.SeriesBase#unhover}unhover(){api} method. You can define the points you'd like to unhover or leave the method with no parameters - this will unhover all points of the series.
 
 ```
 chart.title().listen("mouseOut", function(){
@@ -179,7 +179,7 @@ chart.title().listen("mouseOut", function(){
 <a name="series_select"> </a>
 #### Select 
 
-There might be some points which you'd like to be selected by default or adjust the selecting feature according to your needs. The method {api:anychart.core.SeriesBase#select}**.select()**{api} works here (similar to {api:anychart.core.SeriesBase#hover}**.hover()**{api}).
+There might be some points which you'd like to be selected by default or adjust the selecting feature according to your needs. The method {api:anychart.core.SeriesBase#select}select(){api} works here (similar to {api:anychart.core.SeriesBase#hover}hover(){api}).
 
 ```
 // making series_1 and some points of series_2 selected
@@ -191,13 +191,13 @@ series_2.select([0, 1, 2, 3, 4, 5, 10, 11, 12, 13, 16, 17, 18, 20]);
 
 The same as with hovering action, just define an array with the numbers and you'll get a couple of points selected at the beginning.
   
-Note that if there is no arguments for the {api:anychart.core.SeriesBase#select}**.select()**{api} function, the continuous series will be selected, but not the discrete one.
+Note that if there is no arguments for the {api:anychart.core.SeriesBase#select}select(){api} function, the continuous series will be selected, but not the discrete one.
   
 If you need the whole series being selected as the chart is created, don't define the arguments at all. Try to do that in playground and see what difference it makes.
   
 Some of our html5 charts might have something specific about their series - for example, maps or OHLC charts. Those components and charts have special setting for selections.
   
-We can adjust the color of selection using the {api:anychart.core.cartesian.series.Column#selectFill}**.selectFill**{api} (or {api:anychart.core.cartesian.series.Column#selectHatchFill}**.selectHatchFill**{api} for monochromatic), the selection stroke color - {api:anychart.core.cartesian.series.Column#selectStroke}**.selectStroke()**{api}. 
+We can adjust the color of selection using the {api:anychart.core.cartesian.series.Column#selectFill}selectFill{api} (or {api:anychart.core.cartesian.series.Column#selectHatchFill}selectHatchFill{api} for monochromatic), the selection stroke color - {api:anychart.core.cartesian.series.Column#selectStroke}selectStroke(){api}. 
 
 Let's change the selection settings for the box chart.
 
@@ -210,7 +210,7 @@ series.select([2,4,9]);
 
 {sample}CS\_Interactivity\_10{sample} 
 
-OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}**.risingStroke()**{api}, {api:anychart.core.cartesian.series.OHLC#selectrisingStroke}**.selectRisingStroke()**{api} or {api: anychart.core.cartesian.series.OHLC#hoverFallingStroke}**.hoverFallingStroke()**{api}. You can find more in {api:anychart.core.cartesian.series.OHLC}API Reference{api}.
+OHLC charts have special settings such as {api:anychart.core.cartesian.series.OHLC#risingStroke}risingStroke(){api}, {api:anychart.core.cartesian.series.OHLC#selectrisingStroke}selectRisingStroke(){api} or {api:anychart.core.cartesian.series.OHLC#hoverFallingStroke}hoverFallingStroke(){api}. You can find more in {api:anychart.core.cartesian.series.OHLC}API Reference{api}.
 
 ```
 // change the selected regions color to the dark violet from the default
@@ -223,13 +223,13 @@ series.select([1,2,5,6,7,9]);
 
 {sample}CS\_Interactivity\_11{sample} 
 
-If you want to disable the selection ability, use "none" as the {api:anychart.core.utils.Interactivity#selectionMode}**.selectionMode()**{api} argument.
+If you want to disable the selection ability, use "none" as the {api:anychart.core.utils.Interactivity#selectionMode}selectionMode(){api} argument.
 
-To unselect the points without preventing the selection ability use {api:anychart.core.SeriesBase#unselect}**.unselect()**{api} method. As well as in the situation with unhovering, you can define the points or set no parameters to the method. Try to use it in our playground.
+To unselect the points without preventing the selection ability use {api:anychart.core.SeriesBase#unselect}unselect(){api} method. As well as in the situation with unhovering, you can define the points or set no parameters to the method. Try to use it in our playground.
 
 #### Single Point
 
-Along with hovering and selecting of a number of points you can manage the current state of a single point. Use {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method to get a point of a series. Pass point's index as a parameter for this method. 
+Along with hovering and selecting of a number of points you can manage the current state of a single point. Use {api:anychart.core.SeriesBase#getPoint}getPoint(){api} method to get a point of a series. Pass point's index as a parameter for this method. 
 
 ```
 // set series data
@@ -261,11 +261,11 @@ for (var i=0; series.getPoint(i).exists();i++){
 }
 ```
 
-As you can see, we have created a column series, variable for default AnyChart palette using {api:anychart.palettes#distinctColors}**.distinctColors()**{api} method and set a color for each point depending on point's index. Moreover, the *for* loop uses {api:anychart.core.SeriesPoint#exists}**.exists()**{api} method to check, whether the point exists or not. Custom color for a point is applied using {api:anychart.core.SeriesPoint#set}**.set()**{api} method.
+As you can see, we have created a column series, variable for default AnyChart palette using {api:anychart.palettes#distinctColors}distinctColors(){api} method and set a color for each point depending on point's index. Moreover, the *for* loop uses {api:anychart.core.SeriesPoint#exists}exists(){api} method to check, whether the point exists or not. Custom color for a point is applied using {api:anychart.core.SeriesPoint#set}set(){api} method.
 
 {sample}CS\_Interactivity\_21{sample}
 
-Previous sample demonstrates how to change a single point's appearance. Using {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api}, we also can make a point hovered or selected through the {api:anychart.core.SeriesPoint#hovered}**.hovered()**{api} or {api:anychart.core.SeriesPoint#selected}**.selected()**{api} methods accordingly.
+Previous sample demonstrates how to change a single point's appearance. Using {api:anychart.core.SeriesBase#getPoint}getPoint(){api}, we also can make a point hovered or selected through the {api:anychart.core.SeriesPoint#hovered}hovered(){api} or {api:anychart.core.SeriesPoint#selected}selected(){api} methods accordingly.
 
 ```
 var point = series.getPoint(3);
@@ -280,7 +280,7 @@ Next sample uses chart's legend to trigger changes of a point. When we hover an 
 
 ## Single Series Chart
 
-As you know, AnyChart supports quite a variety of chart types. Some of them are single series charts, such as pie chart, funnel chart or pyramid chart. Managing their points is much easier than managing a number of points in a series. Use {api:anychart.core.Point}**.getPoint()**{api} as a chart method to get the point you need:
+As you know, AnyChart supports quite a variety of chart types. Some of them are single series charts, such as pie chart, funnel chart or pyramid chart. Managing their points is much easier than managing a number of points in a series. Use {api:anychart.core.Point}getPoint(){api} as a chart method to get the point you need:
 
 ```
 // set chart data
@@ -290,7 +290,7 @@ var chart = funnel(data);
 var point = chart.getPoint(3);
 ```
 
-The way of managing chart's points is pretty much the same as the one in [single point](#single_point) section. Use {api:anychart.core.Point#hovered}**.hovered()**{api} and {api:anychart.core.Point#selected}**.selected()**{api} methods to adjust current state of any point. The {api:anychart.core.Point#set}**.set()**{api} method allows you to change or create any property (field) of a point.
+The way of managing chart's points is pretty much the same as the one in [single point](#single_point) section. Use {api:anychart.core.Point#hovered}hovered(){api} and {api:anychart.core.Point#selected}selected(){api} methods to adjust current state of any point. The {api:anychart.core.Point#set}set(){api} method allows you to change or create any property (field) of a point.
 
 ```
 var chart = anychart.funnel(data);
@@ -301,7 +301,7 @@ var point = chart.getPoint(5);
 point.set("fill", "red");
 ```
 
-Below there is a sample of a funnel chart. This chart shows sales proccess and each point corresponds to a certain stage. Using {api:anychart.core.SeriesBase#getPoint}**.getPoint()**{api} method we have colored each point separately according to the value of the point before it. Hover a point to see the tooltip that contains information on the difference. Information on getting value from custom points' field can be found in [Text Formatters article](../Common_Settings/Text_Formatters).
+Below there is a sample of a funnel chart. This chart shows sales proccess and each point corresponds to a certain stage. Using {api:anychart.core.SeriesBase#getPoint}getPoint(){api} method we have colored each point separately according to the value of the point before it. Hover a point to see the tooltip that contains information on the difference. Information on getting value from custom points' field can be found in [Text Formatters article](../Common_Settings/Text_Formatters).
 
 {sample}CS\_Interactivity\_22{sample}
 
@@ -313,7 +313,7 @@ You can add a listener to any chart element, forcing it to react in some way. Fo
 
 You can find more about listeners [here](../Common_Settings/Event_Listeners).
 
-**Note**: Points of a pie chart can't be selected. Use **.exploded()** method to adjust current state of pie's slice.
+**Note**: Points of a pie chart can't be selected. Use {api:anychart.charts.Pie#explode}exploded(){api} method to adjust current state of pie's slice.
 
 #### Navigating by URL
 
@@ -325,7 +325,7 @@ Explore the code of this sample in the playground.
 
 #### DrillDown
 
-Using all these features, it's possible to create a drilldown chart. You can easily get points' data through the **.pointSelect()** method and show or hide them. Look at the following sample:
+Using all these features, it's possible to create a drilldown chart. You can easily get points' data using the "pointSelect" event and show or hide them. Look at the following sample:
 
 {sample}CS\_Interactivity\_13{sample} 
 

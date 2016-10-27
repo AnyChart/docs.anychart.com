@@ -23,21 +23,21 @@ Let's create a stock chart with column series used and adjust some parameters.
 AnyStock Charts can process table-formatted data. We can arrange the data as array of arrays and as array of objects. The next two code samples contain the same data but formatted differently.
 
 ```
-    table = anychart.data.table();
-    table.addData([
-        ['2015-12-24T12:00:00', 27],
-        ['2015-12-25T12:00:00', 25.5],
-        ['2015-12-26T12:00:00', 23.1],
-        ['2015-12-27T12:00:00', 26.9],
-        ['2015-12-28T12:00:00', 29.7],
-        ['2015-12-29T12:00:00', 30.3],
-        ['2015-12-30T12:00:00', 23.7],
-        ['2015-12-31T12:00:00', 20.4],
-       	['2016-01-28T12:00:00', 28.7]
-    ]);
+table = anychart.data.table();
+table.addData([
+  ['2015-12-24T12:00:00', 27],
+  ['2015-12-25T12:00:00', 25.5],
+  ['2015-12-26T12:00:00', 23.1],
+  ['2015-12-27T12:00:00', 26.9],
+  ['2015-12-28T12:00:00', 29.7],
+  ['2015-12-29T12:00:00', 30.3],
+  ['2015-12-30T12:00:00', 23.7],
+  ['2015-12-31T12:00:00', 20.4],
+  ['2016-01-28T12:00:00', 28.7]
+]);
 
-    mapping = table.mapAs();
-    mapping.addField('value', 1);
+mapping = table.mapAs();
+mapping.addField('value', 1);
 ```
 
 {sample}STOCK\_Column\_01{sample}
@@ -45,18 +45,18 @@ AnyStock Charts can process table-formatted data. We can arrange the data as arr
 In the code sample above the data is set as array of arrays and mapped. It's necessary to map the data whichever array type you use.
 
 ```
-    table = anychart.data.table("x");
-    table.addData([
-      {"x":'2015-12-24T12:00:00', value: 27},
-      {"x":'2015-12-25T12:00:00', value: 25.5},
-      {"x":'2015-12-26T12:00:00', value: 23.1},
-      {"x":'2015-12-27T12:00:00', value: 26.9},
-      {"x":'2015-12-28T12:00:00', value: 29.7},
-      {"x":'2015-12-29T12:00:00', value: 30.3},
-      {"x":'2015-12-30T12:00:00', value: 23.7}
-    ]);
+table = anychart.data.table("x");
+table.addData([
+  {"x":'2015-12-24T12:00:00', value: 27},
+  {"x":'2015-12-25T12:00:00', value: 25.5},
+  {"x":'2015-12-26T12:00:00', value: 23.1},
+  {"x":'2015-12-27T12:00:00', value: 26.9},
+  {"x":'2015-12-28T12:00:00', value: 29.7},
+  {"x":'2015-12-29T12:00:00', value: 30.3},
+  {"x":'2015-12-30T12:00:00', value: 23.7}
+]);
 
-    mapping = table.mapAs({'x':"x", 'value':"value"});
+mapping = table.mapAs({'x':"x", 'value':"value"});
 ```
 
 {sample}STOCK\_Column\_02{sample}
@@ -69,7 +69,7 @@ Of course, stock column charts can contain several series. You can find how to c
 
 Stocks usually demonstrate a number of charts, making the stock more informative. Sometimes these series are of different types. The sample below contains two plots with column series, but it's possible to add series of other types.
 
-For creating a new plot the {api:anychart.charts.Stock#plot}.plot(){api} method is being used. It's necessary to set the plot index as an argument to create a new or access existing plot.
+For creating a new plot the {api:anychart.charts.Stock#plot}plot(){api} method is being used. It's necessary to set the plot index as an argument to create a new or access existing plot.
 
 ```
 // series of the first plot
@@ -91,7 +91,7 @@ As stocks are intended to show big arrays of data, this data needs to be compres
 
 Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
 
-To switch the series use {api:anychart.core.stock.series.Base#seriesType}.seriesType(){api} method.
+To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
 ## Visualization
 
@@ -99,17 +99,17 @@ There are some parameters that influences the columns' appearance - their color,
 
 ### Coloring
 
-As in case with all basic series, Column series in Stocks can be colored. To change the default colors of the columns filling and stroke use {api:anychart.core.stock.series.Column#fill}.fill(){api} and {api:anychart.core.stock.series.Column#stroke}.stroke(){api}. Also it's possible to highlight a series not with a color but with a hatch filling (which can be very useful in case a person with sight problems will be exploring your charts) using {api:anychart.core.stock.series.Column#hatchFill}.hatchFill(){api} method. Let's change the color of one of our series and add hatch settings to another. The third series is left untouched to make the difference between the adjusted series and default one more notable.
+As in case with all basic series, Column series in Stocks can be colored. To change the default colors of the columns filling and stroke use {api:anychart.core.stock.series.Column#fill}fill(){api} and {api:anychart.core.stock.series.Column#stroke}stroke(){api}. Also it's possible to highlight a series not with a color but with a hatch filling (which can be very useful in case a person with sight problems will be exploring your charts) using {api:anychart.core.stock.series.Column#hatchFill}hatchFill(){api} method. Let's change the color of one of our series and add hatch settings to another. The third series is left untouched to make the difference between the adjusted series and default one more notable.
 
 ```
-    // australia series coloring
-    series_as.fill("#CC9933");
-    series_as.stroke("#663300");
+// australia series coloring
+series_as.fill("#CC9933");
+series_as.stroke("#663300");
 
-    // sydney series coloring
-    series_sydney.fill("#fff");
-    series_sydney.hatchFill("cross");
-    series_sydney.stroke("#000");
+// sydney series coloring
+series_sydney.fill("#fff");
+series_sydney.hatchFill("cross");
+series_sydney.stroke("#000");
 ```
 
 {sample}STOCK\_Column\_04{sample}
@@ -118,15 +118,15 @@ As in case with all basic series, Column series in Stocks can be colored. To cha
 
 When a point is hovered, there is a crosshair being displayed over a hovered point. If there are several points belong to one time point, all of them are being hovered simultaneously. 
 
-Crosshair is identified as a {api:anychart.core.stock.Plot#dateTimeHighlighter}.dateTimeHighlighter(){api}, so we need to set the stroke color, thickness and style settings as parameters of this method to change the defaults. Also it's possible to make a highlighter of different style instead of a simple line. Let's adjust the crosshair in our sample.
+Crosshair is identified as a {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api}, so we need to set the stroke color, thickness and style settings as parameters of this method to change the defaults. Also it's possible to make a highlighter of different style instead of a simple line. Let's adjust the crosshair in our sample.
 
 Note that a crosshair belongs to a chart plot, so it's possible to make a crosshair of every plot unique if necessary.
 
 ```
-  	// crosshair settings
-    chart.plot(0).dateTimeHighlighter("#663300", 1.5, "6 2", "round");
-    chart.plot(1).dateTimeHighlighter("#999", 1.5);
-    chart.plot(2).dateTimeHighlighter("#000066", 1.5, "7 4");
+// crosshair settings
+chart.plot(0).dateTimeHighlighter("#663300", 1.5, "6 2", "round");
+chart.plot(1).dateTimeHighlighter("#999", 1.5);
+chart.plot(2).dateTimeHighlighter("#000066", 1.5, "7 4");
 ```
 
 {sample}STOCK\_Column\_05{sample}

@@ -92,7 +92,7 @@ Now, it's time to enable the drill down interactivity in our map.
 
 ## Drill Down Map
 
-To enable the drill down in the map, we use {api:anychart.charts.Map#drillDownMap}.drillDownMap(){api} method. Explore the next sample.
+To enable the drill down in the map, we use {api:anychart.charts.Map#drillDownMap}drillDownMap(){api} method. Explore the next sample.
 
 ```
 usaMap.drillDownMap({
@@ -104,11 +104,11 @@ usaMap.drillDownMap({
 usaMap.interactivity().selectionMode("drillDown");
 ```
 
-Note that using this method requires setting the {api:anychart.charts.Map#interactivity}.interactivity(){api} method into drillDown mode.
+Note that using this method requires setting the {api:anychart.charts.Map#interactivity}interactivity(){api} method into drillDown mode.
 
 {sample}Maps\_Drill\_Down\_Basic\_01{sample}
 
-By default, the {api:anychart.charts.Map#drillUp}.drillUp(){api} method is performed on "Esc" click, so use Esc to open the map of the previous level in the sample.
+By default, the {api:anychart.charts.Map#drillUp}drillUp(){api} method is performed on "Esc" click, so use Esc to open the map of the previous level in the sample.
 
 ## Adjust settings
 

@@ -25,11 +25,9 @@
 With AnyChart, you've got a full control over the axes labels: you can format them, tune visual appearance and position.
 All major settings and features of axes labels are described in this tutorial.
 
-
 ## Enable or Disable
 
-Each axis in AnyChart has its own labels settings. All these settings can be configured in labels sub parameter of the given axis. 
-Labels for all axes are enabled by default. To enable or disable labels for an axis use the {api:anychart.core.axes.Linear#labels}enabled(){api} method:
+Each axis in AnyChart JavaScript graphs has its own labels settings. By default labels for all axes are enabled. You can enable or disable labels for the given axis using enabled method of {api:anychart.core.axes.Linear#labels}labels(){api} method:
 
 ```
 var labels = chart.xAxis().labels();
@@ -44,7 +42,7 @@ A line chart with labels enabled for both Y-Axes and disabled for X-Axis is show
 
 In order to make a chart readable and understandable it is very important to format axes labels in a proper way, e.g. add "$" prefix if values are given in dollars or add "°F" postfix if values are given in Fahrenheit degrees.
   
-You can get a full control over the axis labels with the {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} method.
+You have a full control over the axis labels in {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} parameter of {api:anychart.core.axes.Linear#labels}labels(){api} method.
   
 It's possible to make text formatting easier by using tokens - special substrings that represent each a label parameter. A token looks like {%KeywordName}, for example {%Value} or {%AxisName}. Before displaying each token is being replaced by a corresponding value. In the [Text Formatters article](Text_Formatters#tokens_list) you can find a list of available tokens.
 
@@ -70,7 +68,6 @@ Tokens can be also used in xml and json, unlike other formatting methods. Settin
 }
 ```
 
-
 ### Prefixes and Postfixes
 
 There are several ways how to edit prefix or postfix of the label. The easiest way is to use tokens through the {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} method:
@@ -91,7 +88,6 @@ chart.yAxis(1).labels()textFormatter(function(){
 ```
 
 {sample}AGST\_Labels\_Formatting\_02{sample}
-
 
 ### Number Formatting
 
@@ -151,12 +147,12 @@ The basic settings that allow to tune labels appearance and some special feature
 Font settings of labels are configured as any text. You can specify font face, size and color or set the text to HTML mode using {api:anychart.core.ui.Label#fontFamily}fontFamily(){api}, {api:anychart.core.ui.Label#fontSize}fontSize(){api}, {api:anychart.core.ui.Label#fontColor}fontColor(){api} and {api:anychart.core.ui.Label#useHtml}useHtml(){api} methods. 
 
 ```
-  var labels = chart.xAxis().labels();
-  labels.fontFamily("Courier");
-  labels.fontSize(12);
-  labels.fontColor("#125393");
-  labels.fontWeight("bold");
-  labels.useHtml(false);
+var labels = chart.xAxis().labels();
+labels.fontFamily("Courier");
+labels.fontSize(12);
+labels.fontColor("#125393");
+labels.fontWeight("bold");
+labels.useHtml(false);
 ```
 
 ### Background
@@ -183,7 +179,6 @@ AnyChart provides a number of options to control the position of axes labels, de
 ### Labels Alignment
 
 To specify how labels are aligned set {api:anychart.graphics.vector.Text#hAlign}hAlign(){api} and {api:anychart.graphics.vector.Text#vAlign}vAlign(){api} methods. Using the {api:anychart.graphics.vector.Text#hAlign}hAlign(){api} method makes a noticable change if the labels consist of several lines.
-
 
 ```
 // set function to format axes labels
@@ -218,8 +213,8 @@ innerLabels.offsetY(-30);
 One of the most useful features of label positioning is ability to show rotated labels. To rotate labels set the angle of rotation in the {api:anychart.core.ui.LabelsFactory#rotation}rotation(){api} method:
 
 ```
-  var yAxisLabels = chart.yAxis().labels();
-  yAxisLabels.rotation(90)
+var yAxisLabels = chart.yAxis().labels();
+yAxisLabels.rotation(90)
 ```
 
 {sample}AGST\_Labels\_Formatting\_09{sample}
@@ -251,7 +246,6 @@ staggerAxis.drawLastLabel(false);
 
 {sample}AGST\_Labels\_Formatting\_11{sample}
 
-
 <a name="y-axis_labels-fixed-width"/>
 ## Y-Axis Labels: Fixed Width
 
@@ -260,8 +254,8 @@ It's possible to set fixed custom width for Y axis labels. This function may be 
 To set the axis width use {api:anychart.core.ui.Label#width}width(){api} attribute for {api:anychart.core.ui.Label}labels(){api}, which accepts positive integer values in pixels:
 
 ```
-  var labels = chart.yAxis().labels();
-  labels.width(50);
+var labels = chart.yAxis().labels();
+labels.width(50);
 ```
 
 Sample dashboard shows two charts with values in completely different ranges: the upper chart shows up to hundreds of 
@@ -270,8 +264,8 @@ thousands and the one beneath shows only hundreds. As the result, the charts' Y 
 {sample}AGST\_Labels\_Formatting\_12{sample}
 
 ```
-  var labels = chart.yAxis().labels();
-  labels.width(70);
+var labels = chart.yAxis().labels();
+labels.width(70);
 ```
 
 There is the same data with Y axis label width set to 70 pixels, which results in synced left border:
@@ -301,13 +295,13 @@ xLabels.textWrap("byLetter");
 
 {sample}AGST\_Labels\_Formatting\_15{sample}
 
-This works for other plot types as well. The following example demonstrates the same data displayed on a bar chart:
+This works as well for other plot types. The following example demonstrates the same data displayed on a bar chart. In order to align multiline text to the right side {api:anychart.graphics.vector.Text#hAlign}hAlign(){api} attribute is set to right:
 
 {sample}AGST\_Labels\_Formatting\_16{sample}
 
 ## Overlapping
 
-As far as labels can be unlimited in width, AnyChart provides some tools to make axis labels more manageable. It's possible to define the labels' visibility for the case of overlapping. The {api:anychart.core.axes.Linear#overlapMode}overlapMode{api} method of a chart's {api:anychart.core.axes.Linear}axis{api} uses "noOverlap" and "allowOverlap" parameters to control overlapping labels:
+As far as your labels can be unlimited in width AnyChart provides some tools to make axis labels more manageable. You can define the labels' visibility for the case of overlapping. The {api:anychart.core.axes.Linear#overlapMode}overlapMode(){api} of a chart's {api:anychart.core.axes.Linear}axis{api} uses **noOverlap** and **allowOverlap** parameters to control overlapping labels:
 
 ```
 // x axis getter
@@ -319,4 +313,3 @@ xAxis.overlapMode("allowOverlap");
 **Note**: overlapping is disabled by default. The sample below demonstrates x labels with overlapping allowed:
 
 {sample}AGST\_Labels\_Formatting\_17{sample}
-

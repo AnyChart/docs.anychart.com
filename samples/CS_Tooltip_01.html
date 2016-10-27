@@ -34,12 +34,7 @@
   series2.name("Year 2009");
 
   // disable tooltip for the first series
-  var tooltip1 = series1.tooltip();
-  tooltip1.enabled(false);
-
-  // enable tooltip for the second series
-  var tooltip2 = series2.tooltip();
-  tooltip2.enabled(true);
+  var tooltip1 = series1.tooltip(false);
 
   // draw
   chart.container("container");

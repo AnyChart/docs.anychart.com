@@ -20,8 +20,7 @@ Below you will find the reference of the most important parameters of the mentio
 ## Stroke
 
 Border is configured using {api:anychart.core.ui.Background#stroke}stroke(){api} parameter. Stroke can be **"Solid"**, **"Dashed"** and **"Gradient"**. If type is **"Solid"**, then color is specified using color attribute; to configure **"Gradient"** you have to use gradient keys. Dashed borders have to be set with special keys too.
-  
-  
+    
 Sample solid stroke settings:
 
 ```
@@ -94,7 +93,7 @@ The same sample, but with radial gradient fill:
 
 ### Image
 
-Image fill allows you to set an image as a background. An image can be **stretched**, **tiled** or fit by **proportions**. Supported image formats are JPEG, GIF, PNG. Sample image background:
+Image fill allows you to set an image as a background. An image can be **stretched**, **tiled**, fit by **proportions** and **fit by maximal side**. See {api:anychart.graphics.vector.ImageFillMode}ImageFillMode Enum{api}. Supported image formats are JPEG, GIF, PNG. Sample image background:
 
 ```
 chart.background().fill({
@@ -135,7 +134,7 @@ The dashboard below demonstrates all possible corners types:
 
 ## Hatch Fill
 
-AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
+Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
 
 We've got a chart a with 5 series with 5 data points in each. For every series we've applied different hatch fills by setting hatch type through the {api:anychart.charts.Cartesian#hatchFillPalette}hatchFill(){api} parameter. As you can see, they can be either completely monochrome or colored.
 
@@ -150,4 +149,3 @@ series0.hatchFill("VERTICALBRICK");
 In the sample below there are all hatch types shown that are available in AnyChart. Explore the sample in the playground to see all these types' names.
 
 {sample :height 680}AS\_Background\_08{sample}
-

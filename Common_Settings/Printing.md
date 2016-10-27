@@ -11,7 +11,7 @@ Although AnyChart is intended for creation interactive charts for web we provide
 
 ## Chart Printing
 
-You can print any chart at any time using {api:anychart.core.Chart#print}**.print()**{api} method.
+You can print any chart at any time using {api:anychart.core.Chart#print}print(){api} method.
 
 ```
   // this method will print your chart
@@ -24,7 +24,7 @@ You can play with this sample try to change printing layout or paper size along 
 
 ## Stage Printing
 
-It is not a problem to print several charts or the whole dashboard using AnyChart Charting Framework. You can do it by placing every object for printing on the same stage and call {api:anychart.graphics.vector.Stage#print}**.print()**{api} method for stage instead of a single chart.
+It is not a problem to print several charts or the whole dashboard using AnyChart Charting Framework. You can do it by placing every object for printing on the same stage and call {api:anychart.graphics.vector.Stage#print}print(){api} method for stage instead of a single chart.
 
 ```
   // stage to print
@@ -72,4 +72,4 @@ Here is a sample for printing chart on paper of **A2** format with **landscape**
 
 {sample}Exports\_04{sample}
 
-**Note**: consider using {api:anychart.core.ui.toolbar.Toolbar}**anychart.toolbar()**{api} method if you want to add multiple ways of printing to your chart.
+**Note**: consider using {api:anychart.core.ui.toolbar.Toolbar}anychart.toolbar(){api} method if you want to add multiple ways of printing to your chart.

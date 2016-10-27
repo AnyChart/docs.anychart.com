@@ -78,7 +78,7 @@ Now we need to convert this data table into an acceptable format. In terms of An
   chart.line(data);
 ```
 
-As you can see, we've specified the chart's type using {api:anychart.core.cartesian.series.Line}**anychart.line()**{api} method, defined data source using {api:anychart.charts.Cartesian#line}**chart.line(data)**{api} and set data with {api:anychart.data#set}**anychart.data.set()**{api}.
+As you can see, we've specified the chart's type using {api:anychart.core.cartesian.series.Line}anychart.line(){api} method, defined data source using {api:anychart.charts.Cartesian#line}chart.line(data){api} and set data with {api:anychart.data#set}anychart.data.set(){api}.
 
 {sample}BCT\_LineChart\_01{sample}
 
@@ -178,7 +178,7 @@ As we did in single-series line sample above we need to convert this table into 
   chart.line(seriesData_2);
 ```
 
-As you can see, to add a new line series you just have to use {api:anychart.core.cartesian.series.Line}**.line()**{api} method as many times as many series you need.
+As you can see, to add a new line series you just have to use {api:anychart.core.cartesian.series.Line}line(){api} method as many times as many series you need.
 
 {sample}BCT\_LineChart\_04{sample}
 
@@ -188,7 +188,7 @@ In AnyChart axis is an object that allows you to configure chart grid, axis line
 
 ### Orientation
 
-With AnyChart web graphs you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}**.orientation()**{api} parameter of {api:anychart.charts.Cartesian#yAxis}**.yAxis()**{api} or {api:anychart.charts.Cartesian#xAxis}**.xAxis()**{api} methods.
+With AnyChart web graphs you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}orientation(){api} parameter of {api:anychart.charts.Cartesian#yAxis}yAxis(){api} or {api:anychart.charts.Cartesian#xAxis}xAxis(){api} methods.
   
 The position depends on the plot type and inversion of axes. See list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
 
@@ -205,7 +205,7 @@ Below this you can see the demonstration of this feature in the Single-series sa
 
 ### Inversion
 
-AnyChart allows to invert any scale you want. Inversion is controlled by {api:anychart.scales.Linear#inverted}**.inverted()**{api} method:
+AnyChart allows to invert any scale you want. Inversion is controlled by {api:anychart.scales.Linear#inverted}inverted(){api} method:
 
 ```
   var yScale = chart.yScale();
@@ -218,7 +218,7 @@ And here is the demonstration of Y Scale inversion on the Single-series sample:
 
 ### Minimum and Maximum
 
-AnyChart calculates axis minimum and maximum automatically. The minimal value on Y-Axis is 8000, the maximum is 20000, as you can see in the sample above. You can control these values by setting {api:anychart.scales.Linear#maximum}**.maximum()**{api} and {api:anychart.scales.Linear#minimum}**.minimum()**{api} parameters of {api:anychart.charts.Cartesian#yScale}**.yScale()**{api} method; let's look at what will happen if we define 0 and 50000 as the min amd the max values on the Y-Axis:
+AnyChart calculates axis minimum and maximum automatically. The minimal value on Y-Axis is 8000, the maximum is 20000, as you can see in the sample above. You can control these values by setting {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} parameters of {api:anychart.charts.Cartesian#yScale}yScale(){api} method; let's look at what will happen if we define 0 and 50000 as the min amd the max values on the Y-Axis:
 
 ```
   var yScale = chart.yScale();
@@ -296,7 +296,7 @@ Now let's take a sample of a single-series chart described above, define style i
 In this section we will explain how to add and configure data labels and tooltips.
 <!-- Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
   
-If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Base#labels}**.labels()**{api} and {api:anychart.core.cartesian.series.Base#tooltip}**.tooltip()**{api} methods.
+If you want to configure data labels and tooltips for all series - you should use {api:anychart.charts.Cartesian#labels}labels(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods.
   
   
 With the following example let's make data labels appear to the top from the data points, format them to show only the value corresponding to the point values and force tooltips to show detailed description.
@@ -350,7 +350,7 @@ AnyChart uses default color palette to colorize data elements of chart automatic
 
 ### Colorizing Elements
 
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.graphics.vector.Stroke}**.stroke()**{api} parameter for this series. In the sample below we've got 5 series with sample data and we'll color each series to different color. Here is the sample:
+Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.graphics.vector.Stroke}stroke(){api} parameter for this series. In the sample below we've got 5 series with sample data and we'll color each series to different color. Here is the sample:
 
 {sample}BCT\_LineChart\_11{sample}
 

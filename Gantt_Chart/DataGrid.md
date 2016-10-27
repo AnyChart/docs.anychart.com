@@ -22,7 +22,7 @@ By default, JS Gantt Chart displays two columns: rows counts and names of Gantt 
 
 {sample :width 690 :height 190}GANTT\_Basic\_Sample{sample}
 
-The **set of columns** is set and defined using the {api:anychart.core.ui.DataGrid#column}**.column()**{api} method:
+The **set of columns** is set and defined using the {api:anychart.core.ui.DataGrid#column}column(){api} method:
 
 ```
 //create new column contains names
@@ -39,7 +39,7 @@ var firstColumn = dataGrid.column(10);
 var secondColumn = dataGrid.column(20);
 ```
 
-For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method see the [Content](#inner_content) topic.
+For more information about the {api:anychart.core.ui.DataGrid.Column#textFormatter}textFormatter(){api} method see the [Content](#inner_content) topic.
 
 The sample below shows Resource Gantt Chart, note that the third column is created to display the start data value.
 
@@ -75,7 +75,7 @@ title.hAlign("left");
 <a name="inner_content">
 ### Content
 
-Column content can be tuned as well as its title. The easiest way to manage column content is [using presets](./DataGrid_Column_Presets). The advanced one is {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api} method. It used to define a cell text value formatter, so you can pass your own custom function as an argument.
+Column content can be tuned as well as its title. The easiest way to manage column content is [using presets](./DataGrid_Column_Presets). The advanced one is {api:anychart.core.ui.DataGrid.Column#textFormatter}textFormatter(){api} method. It used to define a cell text value formatter, so you can pass your own custom function as an argument.
 ```
 //create a column contains all IDs
 column.textFormatter(function(item) {
@@ -103,13 +103,13 @@ function customColumnTextFormatter(item){
 }
 ```
 
-Here is a sample with the complex {api:anychart.core.ui.DataGrid.Column#textFormatter}**textFormatter()**{api}.
+Here is a sample with the complex {api:anychart.core.ui.DataGrid.Column#textFormatter}textFormatter(){api}.
 
 {sample :width 690 :height 220}GANTT\_Chart\_17{sample}
 
 ### Width
 
-You should use the {api:anychart.core.ui.DataGrid.Column#width}**width()**{api} method for customizing the column width.
+You should use the {api:anychart.core.ui.DataGrid.Column#width}width(){api} method for customizing the column width.
 
 ```
 //set column width to 30
@@ -127,11 +127,11 @@ These methods can be used to change the background color:
 <td>Description</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.DataGrid#backgroundFill}**backgroundFill()**{api}</td>
+<td>{api:anychart.core.ui.DataGrid#backgroundFill}backgroundFill(){api}</td>
 <td>Allows to set background fill.</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.DataGrid#rowFill}**rowFill()**{api}</td>
+<td>{api:anychart.core.ui.DataGrid#rowFill}rowFill(){api}</td>
 <td>Used to collapse all tasks.</td>
 </tr>
 </tbody>
@@ -154,11 +154,11 @@ By default, the odd and the even fields are differentiated by their fill. To cha
 <td>Description</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.DataGrid#rowOddFill}**rowOddFill()**{api}</td>
+<td>{api:anychart.core.ui.DataGrid#rowOddFill}rowOddFill(){api}</td>
 <td>Used to set row odd fill.</td>
 </tr>
 <tr>
-<td>{api:anychart.core.ui.DataGrid#rowEvenFill}**rowEvenFill()**{api}</td>
+<td>{api:anychart.core.ui.DataGrid#rowEvenFill}rowEvenFill(){api}</td>
 <td>Used to set row even fill.</td>
 </tr>
 </tbody>
@@ -180,11 +180,11 @@ Use these methods to change the rows fill color of the main chart plot:
 <td>Description</td>
 </tr>
 <tr>
-<td>{api:anychart.core.gantt.Timeline#rowOddFill}**rowOddFill()**{api}</td>
+<td>{api:anychart.core.gantt.Timeline#rowOddFill}rowOddFill(){api}</td>
 <td>Used to set row odd fill.</td>
 </tr>
 <tr>
-<td>{api:anychart.core.gantt.Timeline#rowEvenFill}**rowEvenFill()**{api}</td>
+<td>{api:anychart.core.gantt.Timeline#rowEvenFill}rowEvenFill(){api}</td>
 <td>Used to set row even fill.</td>
 </tr>
 </tbody>
@@ -205,7 +205,7 @@ In the sample below the odd rows are colored with a solid fill as well as the ev
 
 ### Turning On/Off
 
-By default Data Grid is turned on. If you need to show only timeline and timeline plot - you can turn Data Grid off using the {api:anychart.charts.Gantt#dataGrid}**.dataGrid()**{api} with <b>false</b> as the argument:
+By default Data Grid is turned on. If you need to show only timeline and timeline plot - you can turn Data Grid off using the {api:anychart.charts.Gantt#dataGrid}dataGrid(){api} with <b>false</b> as the argument:
 
 ```
 //disable data grid
@@ -218,7 +218,7 @@ And here is a simple illustration of this idea:
 
 ### Data Grid Width
 
-It is possible to configure your html5 Gantt Charts by simply dragging and dropping data grid splitter. Also you can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}**.splitterPosition()**{api} method:
+It is possible to configure your html5 Gantt Charts by simply dragging and dropping data grid splitter. Also you can define the width of Data Grid with {api:anychart.charts.Gantt#splitterPosition}splitterPosition(){api} method:
 
 ```
 //set width to 100
@@ -231,13 +231,13 @@ Data Grid supports hierarchical data representation, so if the data is complicat
 
 {sample :width 690 :height 210}GANTT\_Chart\_08{sample}
 
-Please note that it is also possible to configure the expand/collapse button settings using the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons}**.collapseExpandButtons()**{api} method.
+Please note that it is also possible to configure the expand/collapse button settings using the {api:anychart.core.ui.DataGrid.Column#collapseExpandButtons}, collapseExpandButtons(){api} method.
 
 ```
 column.collapseExpandButtons(false);
 ```
 
-You can set the left padding in a cell depending on a tree data item's depth with {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}**.depthPaddingMultiplier()**{api} method to to customize the data view.
+You can set the left padding in a cell depending on a tree data item's depth with {api:anychart.core.ui.DataGrid.Column#depthPaddingMultiplier}depthPaddingMultiplier(){api} method to to customize the data view.
 
 ```
 column.depthPaddingMultiplier(8);

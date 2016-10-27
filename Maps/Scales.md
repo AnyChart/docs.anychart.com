@@ -27,7 +27,7 @@ This type of ColorScale looks like a number of boxes with different colors. Colo
 {sample}Maps\_Scales\_01{sample}
 
 No parameters are necessary here, but it's possible to use this method to define the ranges and its colors. However, it can be done later. In case no colors are defined, the default first-series color will be applied. If you haven't set the ranges, the map will show only the borders (both inner and outer) of the chosen territory.
-Although, if you decide to set the colors or ranges later, you may use the **{api:anychart.scales.OrdinalColor#colors}.colors(){api}** and **{api:anychart.scales.OrdinalColor#ranges}.ranges(){api}** accordingly.
+Although, if you decide to set the colors or ranges later, you may use the {api:anychart.scales.OrdinalColor#colors}colors(){api} and {api:anychart.scales.OrdinalColor#ranges}ranges(){api} accordingly.
 The following code does the same as the code above.
 
 ```
@@ -81,7 +81,7 @@ This palette type is usually used to show the difference in values of something 
 </tbody>
 </table>
 
-To make a single-hue progression use the **{api:anychart.color#singleHueProgression}anychart.color.singleHueProgression(){api}** function. You may not define the colors - in this case the shades will be generated for the default color. 
+To make a single-hue progression use the {api:anychart.color#singleHueProgression}anychart.color.singleHueProgression(){api} function. You may not define the colors - in this case the shades will be generated for the default color. 
 
 {sample}Maps\_Scales\_03{sample}
 
@@ -137,7 +137,7 @@ of the darker end point hues into a gray shade representing the middle. An examp
 </tbody>
 </table>
 
-To make a bi-hue progression use the **{api:anychart.color#biHueProgression}anychart.color.biHueProgression(){api}**
+To make a bi-hue progression use the {api:anychart.color#biHueProgression}anychart.color.biHueProgression(){api}
 function. You may not define the colors - in this case the shades will be generated for the default color. 
 
 {sample}Maps\_Scales\_05{sample}
@@ -169,7 +169,7 @@ For example, from yellow through orange to brown or from light-green to deep-eme
 </tbody>
 </table>
 
-Use the **{api:anychart.color#biHueProgression}anychart.color.biHueProgression(){api}** to make a progression between two similar hues.
+Use the {api:anychart.color#biHueProgression}anychart.color.biHueProgression(){api} to make a progression between two similar hues.
 In case you haven't defined any of the colors, they will be generated automatically (of the default color). 
 
 {sample}Maps\_Scales\_07{sample}

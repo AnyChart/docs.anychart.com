@@ -9,7 +9,7 @@ JavaScript Resources Gantt Chart is one of two types of Gantt Charts. It is inte
 
 ## Chart
 
-The JS Resource Gantt Chart creation is the same as JS Project Chart except you should define the resource chat type using the {api:anychart#ganttResource}**ganttResource()**{api} method:
+The JS Resource Gantt Chart creation is the same as JS Project Chart except you should define the resource chat type using the {api:anychart#ganttResource}ganttResource(){api} method:
 
 ```
 //create resource gantt chart
@@ -31,18 +31,18 @@ Also there is an ability to expand resources using parent property.
 <td>Description</td>
 </tr>
 <tr>
-<td>{api:anychart.charts.Gantt#expandAll}**expandAll()**{api}</td>
+<td>{api:anychart.charts.Gantt#expandAll}expandAll(){api}</td>
 <td>Allows to expand all tasks.</td>
 </tr>
 <tr>
-<td>{api:anychart.charts.Gantt#collapseAll}**collapseAll()**{api}</td>
+<td>{api:anychart.charts.Gantt#collapseAll}collapseAll(){api}</td>
 <td>Used to collapse all tasks.</td>
 </tr><tr>
-<td>{api:anychart.charts.Gantt#expandTask}**expandTask(taskID)**{api}</td>
+<td>{api:anychart.charts.Gantt#expandTask}expandTask(taskID){api}</td>
 <td>Expands one task.</td>
 </tr>
 <tr>
-<td>{api:anychart.charts.Gantt#collapseTask}**collapseTask(taskID)**{api}</td>
+<td>{api:anychart.charts.Gantt#collapseTask}collapseTask(taskID){api}</td>
 <td>Collapses one task.</td>
 </tr>
 </tbody>

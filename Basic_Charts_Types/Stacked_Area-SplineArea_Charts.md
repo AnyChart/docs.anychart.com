@@ -83,7 +83,7 @@ Here is a sample html5 step stacked area chart:
 
 ### 3D Series
 
-Along with common area charts you can use 3D mode for displaying your area charts. Use {api:anychart#area3d}**.area3d()**{api} method to enable area 3D mode.
+Along with common area charts you can use 3D mode for displaying your area charts. Use {api:anychart#area3d}area3d(){api} method to enable area 3D mode.
 
 ```
 var chart = anychart.area3d();

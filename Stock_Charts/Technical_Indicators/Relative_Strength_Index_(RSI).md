@@ -15,7 +15,7 @@ Mathematical description of the indicator: [The Relative Strength Index (RSI) Ma
 
 ## Adding indicator
 
-RSI indicator is added using {api:anychart.core.stock.Plot#rsi}.rsi(){api} method, it requires a mapping with value field in it:
+RSI indicator is added using {api:anychart.core.stock.Plot#rsi}rsi(){api} method, it requires a mapping with value field in it:
 
 ```
 // create data table on loaded data

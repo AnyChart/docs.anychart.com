@@ -10,41 +10,35 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
   var data = anychart.data.set([
-    ["John" , 10000, 12000],
-    ["Jake" , 12000, 15000],
-    ["Peter" , 18000, 16000],
-    ["James" , 11000, 13000],
-    ["Mary" , 9000, 19000]
+    ["John", 10000],
+    ["Jake", 12000],
+    ["Peter", 18000],
+    ["James", 11000],
+    ["Mary", 9000]
   ]);
 
-  // map data for the each series
-  var data1 = data.mapAs({x: [0], value: [1]});
-  var data2 = data.mapAs({x: [0], value: [2]});
-
   // chart type
-  chart = anychart.column();
+  chart = anychart.bar();
+  var series = chart.bar(data);
+  series.name("Year 2008");
 
   // set title
-  chart.title("Tooltip Anchor");
+  chart.title("Tooltips can leave the chart bounds");
 
-  var series1 = chart.column(data1);
-  series1.name("Year 2008");
-  var series2 = chart.column(data2);
-  series2.name("Year 2009");
+  // set the padding for the chart
+  chart.margin("15%");
+  chart.background("green 0.1");
 
-  // tooltip settings
-  var tooltip = chart.tooltip();
+  // let tooltips to leave the chart bounds
+  chart.tooltip().allowLeaveChart(true);
 
-  // set union display mode
-  tooltip.displayMode("union");
+  series.tooltip().textFormatter("This tooltip can be demonstrated out of the chart, if this becomes necessary to show it all");
 
-  // set tooltip display mode
-  tooltip.positionMode("chart");
-
-  // set tooltip anchor
-  tooltip.anchor("topRight");
-
-  tooltip.position("topRight");
+  // font settings for tooltip text
+  var tooltip = series.tooltip();
+  tooltip.fontWeight(900);
+  var title = series.tooltip().title();
+  title.fontWeight(900);
 
   // draw
   chart.container("container");

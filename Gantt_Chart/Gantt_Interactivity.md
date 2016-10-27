@@ -27,7 +27,7 @@ External environment can call AnyGantt Functions to load data to the gantt chart
 
 ### Tooltips
 
-As in the basic charts, Gantt tooltips are designed to show the main information about the item in short. However, Gantt tooltips are special because of the Gantt diagrams itself. Simple charts' tooltips usually show the name of the item and its value (if it exists), but in Gantts, the basic tooltip, besides the name of the item (which is usually also written in the Data Grid section), will show the start and end date/time and the duration of the hovered item (process). Note that there is a difference between Project Gantts and Resource Gantts tooltips: 
+As in the basic charts, Gantt tooltips are designed to show the main information about the item in short. However, Gantt tooltips are special because of the Gantt diagrams itself. Simple charts' tooltips usually show the name of the item and its value (if it exists), but in Gantts, the basic tooltip, besides the name of the item (which is usually also written in the Data Grid section), will show the start and end date/time and the duration of the hovered item (process). Note that there is a difference between Project Gantts {api:anychart.ui.ProjectTimeline#tooltip}tooltip(){api} and Resource Gantts {api:anychart.ui.ResourceTimeline#tooltip}tooltip(){api}: 
 
 {sample :width 825 :height 300 }GANTT\_Interactivity\_01{sample}
 
@@ -55,7 +55,7 @@ When you need a tooltip that will show more or less than it does by default, you
 
 {sample :width 825 :height 200 }GANTT\_Interactivity\_04{sample}
 
-As you can see, tooltips of this gantt are the same in both datagrid and timeline parts. We have only changed the timeline part tooltip using simple {api:anychart.core.ui.Tooltip#textFormatter}**.textFormatter()**{api} method:
+As you can see, tooltips of this gantt are the same in both datagrid and timeline parts. We have only changed the timeline part tooltip using simple {api:anychart.core.ui.Tooltip#textFormatter}textFormatter(){api} method:
 
 ```
 	chart.getTimeline().tooltip().textFormatter(function (e) {
@@ -71,7 +71,7 @@ You can find more about text formatters [here](../../Common_Settings/Text_Format
 ### Hover
 
 All default colors might be changed according to your needs and preferences. By default, there is one hovering color for both timeline and datagrid parts. 
-You can change them using {api:anychart.core.ui.Timeline#rowHoverFill}**.getTimeline().rowHoverFill()**{api} and {api:anychart.core.ui.DataGrid#rowHoverFill}**.dataGrid().rowHoverFill()**{api} accordingly:
+You can change them using {api:anychart.core.ui.Timeline#rowHoverFill}getTimeline().rowHoverFill(){api} and {api:anychart.core.ui.DataGrid#rowHoverFill}rowHoverFill(){api} accordingly:
 
 ```
   chart.dataGrid().rowHoverFill('#DEFFE3')
@@ -83,7 +83,7 @@ You can change them using {api:anychart.core.ui.Timeline#rowHoverFill}**.getTime
 ### Select
 
 There are some default colors that might not fit your needs or the color scheme, so they can be changed. 
-For changing the selected item color use {api:anychart.core.ui.Timeline#selectedElementFill}**.getTimeline().selectedElementFill()**{api} method and for the selected row there is a {api:anychart.charts.Gantt#rowSelectedFill}**.rowSelectedFill()**{api} method. 
+For changing the selected item color use {api:anychart.core.ui.Timeline#selectedElementFill}getTimeline().selectedElementFill(){api} method and for the selected row there is a {api:anychart.charts.Gantt#rowSelectedFill}rowSelectedFill(){api} method. 
 In the following sample we have changed the default selecting color using those methods.
 
 {sample :width 825 :height 200 }GANTT\_Interactivity\_06{sample}

@@ -15,7 +15,7 @@ Mathematical description of the indicator: [Exponential Moving Average (EMA) Mat
 
 ## Adding indicator
 
-EMA indicator is added using {api:anychart.core.stock.Plot#ema}.ema(){api} method, it requires a mapping with value field in it:
+EMA indicator is added using {api:anychart.core.stock.Plot#ema}ema(){api} method, it requires a mapping with value field in it:
 
 ```
 // create data table on loaded data

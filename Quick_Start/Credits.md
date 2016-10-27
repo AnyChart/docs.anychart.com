@@ -47,6 +47,7 @@ credits.url("http://www.anychart.com/buy/");
 {sample}Credits\_03{sample}
 
 ### Logo
+
 Logo picture can be adjusted as well. Use {api:anychart.core.ui.ChartCredits#logoSrc}logoScr(){api} method to set custom image.
 
 ```

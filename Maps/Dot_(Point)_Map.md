@@ -32,7 +32,7 @@ When you hover a point you can see the information it contains.
 
 ## Creating Markers
 
-To create Dot/Point/Marker type series in Maps we use {api:anychart.charts.Map#marker}**.marker**{api} method.
+To create Dot/Point/Marker type series in Maps we use {api:anychart.charts.Map#marker}marker{api} method.
 
 ```
 	// create marker series
@@ -110,7 +110,7 @@ We can edit the appearance of our map as we want. We can change the color of the
 
 ### Labels and Tooltips
 
-We can change our labels and tooltips behavior by using standard {api:anychart.core.map.series.Marker#labels}**.labels()**{api} and {api:anychart.core.map.series.Marker#tooltip}**.tooltip()**{api} methods. We can format the text and their appearance or disable them using those methods. Let's adjust tooltips to show no title and no separator but the yearly profit value. Look how it's done and format the labels also:
+We can change our labels and tooltips behavior by using standard {api:anychart.core.map.series.Marker#labels}labels(){api} and {api:anychart.core.map.series.Marker#tooltip}tooltip(){api} methods. We can format the text and their appearance or disable them using those methods. Let's adjust tooltips to show no title and no separator but the yearly profit value. Look how it's done and format the labels also:
 
 ```
     // format the tooltips
@@ -124,7 +124,7 @@ We can change our labels and tooltips behavior by using standard {api:anychart.c
 ```
 {sample}Maps\_Marker\_05{sample}
 
-It's possible to change labels and tooltips for the points in another state. To edit the behavior of the hovered points labels we use {api:anychart.core.map.series.Marker#hoverLabels}**.hoverLabels()**{api} and for selected ones we use {api:anychart.core.map.series.Marker#selectLabels}**.selectLabels()**{api}. Let's make our labels to become of dark red color and of bigger size when hovered and selected.
+It's possible to change labels and tooltips for the points in another state. To edit the behavior of the hovered points labels we use {api:anychart.core.map.series.Marker#hoverLabels}hoverLabels(){api} and for selected ones we use {api:anychart.core.map.series.Marker#selectLabels}selectLabels(){api}. Let's make our labels to become of dark red color and of bigger size when hovered and selected.
 
 ```
     // hovered and selected labels
@@ -140,7 +140,7 @@ You can find more information about formatting labels and tooltips in the [Label
 
 ### Series colors
 
-We can also edit the series here as in all other maps. To change the series filling and stroking colors we use {api:anychart.core.map.series.Marker#fill}**.fill()**{api} and {api:anychart.core.map.series.Marker#stroke}**.stroke()**{api} methods. Also we can change the markers' size with the {api:anychart.core.map.series.Marker#size}**.size()**{api} method. For hovered state we've got {api:anychart.core.map.series.Marker#hoverFill}**.hoverFill()**{api}, {api:anychart.core.map.series.Marker#hoverStroke}**.hoverStroke()**{api} and {api:anychart.core.map.series.Marker#hoverSize}**.hoverSize()**{api}.
+We can also edit the series here as in all other maps. To change the series filling and stroking colors we use {api:anychart.core.map.series.Marker#fill}fill(){api} and {api:anychart.core.map.series.Marker#stroke}stroke(){api} methods. Also we can change the markers' size with the {api:anychart.core.map.series.Marker#size}size(){api} method. For hovered state we've got {api:anychart.core.map.series.Marker#hoverFill}hoverFill(){api}, {api:anychart.core.map.series.Marker#hoverStroke}hoverStroke(){api} and {api:anychart.core.map.series.Marker#hoverSize}hoverSize(){api}.
 
 Let's add another series demonstrating the CITRUS company profit rates and change the ACME series's marker stroke color to green and the filling color to gold, and make the markers of the second series bigger in size. 
 
@@ -157,7 +157,7 @@ Let's add another series demonstrating the CITRUS company profit rates and chang
 
 ### Markers
 
-Also we can change the shape of the markers using the {api:anychart.core.scatter.series.Marker#type}**.type()**{api} method (and {api:anychart.core.scatter.series.Marker#hoverType}**.hoverType()**{api} for hovered state). Here we should set the string value, one from the {api:anychart.enums.MarkerType}**marker type list**{api}. Let's change the marker types for both series below.
+Also we can change the shape of the markers using the {api:anychart.core.scatter.series.Marker#type}type(){api} method (and {api:anychart.core.scatter.series.Marker#hoverType}hoverType(){api} for hovered state). Here we should set the string value, one from the {api:anychart.enums.MarkerType}marker type list{api}. Let's change the marker types for both series below.
 
 ```
 	// change the markers type
@@ -167,7 +167,7 @@ Also we can change the shape of the markers using the {api:anychart.core.scatter
 ```
 {sample}Maps\_Marker\_08{sample}
 
-We can customize our map by creating our own, unique markers. We need to set a function as a value for the {api:anychart.core.scatter.series.Marker#type}**.type()**{api} method:
+We can customize our map by creating our own, unique markers. We need to set a function as a value for the {api:anychart.core.scatter.series.Marker#type}type(){api} method:
 
 ```
 	// creating a custom marker for the CITRUS company series using a function
@@ -189,7 +189,7 @@ We can customize our map by creating our own, unique markers. We need to set a f
 
 Note that we've created a detached function to draw a marker in order not to be obliged to create this marker several times.
 
-Another way to create unique markers is to set an image (or an array of images) as an argument for {api:anychart.core.map.series.Marker#fill}**.fill()**{api} and {api:anychart.core.map.series.Marker#hoverFill}**.hoverFill()**{api} methods. The following sample describes this in details. Note that in this example we have also used external function for the same purpose as before.
+Another way to create unique markers is to set an image (or an array of images) as an argument for {api:anychart.core.map.series.Marker#fill}fill(){api} and {api:anychart.core.map.series.Marker#hoverFill}hoverFill(){api} methods. The following sample describes this in details. Note that in this example we have also used external function for the same purpose as before.
 
 ```
     // set the images for our series defined in normal state

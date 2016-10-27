@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-
   var data = anychart.data.set([
     ["John", 10000],
     ["Jake", 12000],
@@ -19,12 +18,28 @@
   ]);
 
   // chart type
-  chart = anychart.column();
-  var series = chart.column(data);
+  chart = anychart.bar();
+  var series = chart.bar(data);
   series.name("Year 2008");
 
-  var tooltip = chart.tooltip();
-  tooltip.positionMode("point");
+  // set title
+  chart.title("Adjusted Tooltip Background");
+
+  // disable tooltip for the first series
+  var tooltipBackground = series.tooltip().background();
+
+  tooltipBackground.fill("#EEE 0.8");
+  tooltipBackground.stroke("#888");
+  tooltipBackground.cornerType("roundInner");
+  tooltipBackground.corners(5);
+
+  // font settings for tooltip text
+  var tooltip = series.tooltip();
+  tooltip.fontColor("#444");
+  tooltip.fontWeight(900);
+  var title = series.tooltip().title();
+  title.fontWeight(900);
+  title.fontColor("#444");
 
   // draw
   chart.container("container");

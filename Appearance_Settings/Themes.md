@@ -46,7 +46,7 @@ Out of the box Themes can be located either at [Themes Section at AnyChart CDN](
         ["Men's/Women's Specialty Stores", 148662],
         ["All other outlets", 90000]
       ]);
-    
+
       // apply coffee theme
       anychart.theme(anychart.themes.coffee);
 
@@ -182,7 +182,7 @@ var data = anychart.data.set([
 
 // apply theme
 anychart.theme(customTheme);
-
+  
 var chart = anychart.bar();
 chart.bar(data);
 chart.container("container");
@@ -270,7 +270,6 @@ anychart.theme([barTheme, columnTheme, splineTheme]);
 
 Explore the chart in the playground to understand how it works. It is possible to set external themes as well.
 
-
 ## Append Theme
 
 In some situations, it might be necessary to add some settings to all charts simultaneously over an existing theme. In this case AnyChart provides an {api:anychart#appendTheme}appendtheme(){api} method allowing to add a theme over another one. Settings defined through this method have higher priority than those set through the {api:anychart#theme}theme(){api} method. The next sample demonstrates this. 
@@ -285,7 +284,6 @@ The additional theme has the majority of the color and format settings, while th
 {sample}AS\_Themes\_03{sample}
 
 Note that both themes contain title text settings but those in the additional theme are applied due to its higher priority.
-
 
 ## Multiple Chart Types
 
@@ -314,17 +312,15 @@ The sample below shows two charts using the same theme with title settings.
 
 {sample :width 690 :height 680}AS\_Themes\_04{sample}
 
-
 ## Themes Use in Dashboard Mode
 
 In the sample below a table contains several charts. Settings for these charts are predefined in the theme. It is very convenient - these charts have many similar settings. Click "Launch in playground" to examine the code of the sample.
 
 {sample :width 690 :height 680}AS\_Themes\_05{sample}
 
-
 ## Reset Theme
 
-There is one very important thing you need to remember when you work with themes in Dashboard mode: after the theme is defined in code every chart uses this theme until you set another theme. To reset theme to the default or to the new one you have to use {api:anychart#theme}**theme()**{api} method again.
+There is one very important thing you need to remember when you work with themes in Dashboard mode: after the theme is defined in code every chart uses this theme until you set another theme. To reset theme to the default or to the new one you have to use {api:anychart#theme}theme(){api} method again.
 
 ```
 // return default theme to the charts below

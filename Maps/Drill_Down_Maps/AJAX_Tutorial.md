@@ -107,9 +107,9 @@ You can find links to all maps in <a href="http://cdn.anychart.com/#map-collecti
 
 ### Drill To
 
-To drill to a map we use the {api:anychart.charts.Map#drillTo}.drillTo(){api} method, which requires the id of the map and the map name. 
+To drill to a map we use the {api:anychart.charts.Map#drillTo}drillTo(){api} method, which requires the id of the map and the map name. 
 
-So, when AJAX request is successfully performed, we create a map, pass the data that we got into the new map's geoData, then create a series and use a {api:anychart.charts.Map#drillTo}.drillTo{api} method to load the map of the selected region and perform the drill down. So the "success" field of the AJAX request will look like the following:
+So, when AJAX request is successfully performed, we create a map, pass the data that we got into the new map's geoData, then create a series and use a {api:anychart.charts.Map#drillTo}drillTo{api} method to load the map of the selected region and perform the drill down. So the "success" field of the AJAX request will look like the following:
 
 ```
 success: function(data){
