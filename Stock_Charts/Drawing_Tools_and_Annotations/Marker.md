@@ -34,8 +34,8 @@ var controller = plot.annotations();
 
 // create a Marker annotation
 controller.marker({
-    xAnchor: "2007-09-23",
-    valueAnchor: 33.13,
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24
 });
 ```
 
@@ -46,7 +46,27 @@ This is how it looks like:
 ##Type and Size
 
 ```
-XXXXXXXXXXXXX
+// create the first Marker annotation and configure its size and offset
+marker1 = controller.marker({
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
+    size: 40,
+    offsetY: -10
+});
+
+// create the second Marker annotation
+marker2 = controller.marker();
+
+// set the position of the second annotation
+marker2.xAnchor("2007-09-23");
+marker2.valueAnchor(33.13);
+
+// set the type of the second annotation
+marker2.markerType("arrowDown");
+
+// configure the size and offset of the second annotation
+marker2.size(40);
+marker2.offsetY(10);
 ```
 
 {sample}STOCK\_Drawing\_Marker\_02{sample}
@@ -64,8 +84,8 @@ In the sample below, there are two Marker annotations with some of the visual se
 ```
 // create the first Marker annotation and configure its visual settings
 marker1 = controller.marker({
-    xAnchor: "2007-09-23",
-    valueAnchor: 33.13,
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
     hoverFill: "#398CAE 0.3",
     hoverStroke: "2 #FF0000",
     selectFill: "#398CAE 0.3",
@@ -77,9 +97,12 @@ marker1 = controller.marker({
 marker2 = controller.marker();
 
 // set the position of the second annotation
-marker2.xAnchor("2009-03-01");
-marker2.valueAnchor(14.18);
- 
+marker2.xAnchor("2007-09-23");
+marker2.valueAnchor(33.13);
+
+// set the type of the second annotation
+marker2.markerType("arrowDown");
+
 // configure the visual settings of the second annotation
 marker2.stroke("#2196F3", 3, "10 2");
 marker2.fill(null);
