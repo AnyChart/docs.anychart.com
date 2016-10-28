@@ -8,16 +8,16 @@
 <script src="https://cdn.anychart.com/js/latest/graphics.min.js" data-export="true"></script>
 <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
 <script x-export="stage">
-var stage_font = acgraph.create("container");
+var stage = acgraph.create("container");
 
 // 169 is a char code of copyright symbol
 var text = acgraph.text().text(String.fromCharCode(169));
-var pattern_font = stage_font.pattern(text.getBounds());
+var pattern_font = stage.pattern(text.getBounds());
 pattern_font.addChild(text);
 
 // create chart
-stage_font.rect(0, 0, 150, 50).fill(pattern_font);
-stage_font.circle(150, 150, 50).fill(pattern_font);
+stage.rect(0, 0, 150, 50).fill(pattern_font);
+stage.circle(150, 150, 50).fill(pattern_font);
 </script>
 </head>
 <body>
