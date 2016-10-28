@@ -31,7 +31,7 @@
 
     // get chart data grid link to set column settings
     var dataGrid = chart.dataGrid();
-    chart.getTimeline().tooltip().content().useHtml(true);
+    chart.getTimeline().tooltip().useHtml(true);
     chart.getTimeline().tooltip().textFormatter(function (e) {
 var item = e['item'];
 return item.get('name') + '<br>' + 'Start time: ' + anychart.utils.defaultDateFormatter(item.meta('minPeriodDate')) + '<br>'

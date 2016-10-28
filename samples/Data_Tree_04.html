@@ -19,7 +19,7 @@
   stage = anychart.graphics.create("container");
 
   // create Data Grid
-  treeDataGrid = anychart.ui.dataGrid();
+  treeDataGrid = anychart.standalones.dataGrid();
 
   // set Data Tree
   treeDataGrid.data(tree).titleHeight(20);
@@ -48,7 +48,7 @@
   // draw chart
   treeDataGrid.container(stage).height(127).top(37).draw();
 
-  var title = anychart.ui.title();
+  var title = anychart.standalones.title();
   title.parentBounds(0, 0, "100%", 30)
     .text("Data from Custom Columns")
     .container(stage)

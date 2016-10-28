@@ -52,7 +52,7 @@
 
 // create custom button and put it on the stage
 function createLabel(text, offset, action) {
-    var customLabel = anychart.ui.label();
+    var customLabel = anychart.standalones.label();
     customLabel.text(text);
     customLabel.parentBounds(offset, 30, 100, 100);
     customLabel.listen("click", action);

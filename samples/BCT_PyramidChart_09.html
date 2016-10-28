@@ -21,10 +21,9 @@
   
   chart.labels(false);
   
-  var tooltipContent = chart.tooltip().content();
-  tooltipContent.useHtml(true);
-  tooltipContent.fontWeight(400);
   var tooltip = chart.tooltip();
+  tooltip.useHtml(true);
+
   tooltip.textFormatter(function(){
     return "<b>Year</b>: 2005"+
       "<br><b>Store</b>: Nerds Inc."+

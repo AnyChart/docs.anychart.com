@@ -26,12 +26,9 @@
   chart = anychart.column();
   
   // tune legend tooltip content appearance
-  var tooltipContent = chart.legend().tooltip().content();
-  // enable HTML
-  tooltipContent.useHtml(true);
-  // set font weight
-  tooltipContent.fontWeight(400);
   var tooltip = chart.legend().tooltip();
+  // enable HTML
+  tooltip.useHtml(true);
   tooltip.enabled(true);
   tooltip.textFormatter(function(){
     return this.meta.legendTooltipText;

@@ -21,7 +21,7 @@
   stage = anychart.graphics.create("container");
 
   // create Data Grid
-  treeDataGrid = anychart.ui.dataGrid();
+  treeDataGrid = anychart.standalones.dataGrid();
 
   // set Data Tree
   treeDataGrid.data(tree).titleHeight(20);
@@ -67,7 +67,7 @@
     .container(stage)
     .top(triggerButton.offsetHeight + 7).width("100%").draw();
 
-  var title = anychart.ui.title();
+  var title = anychart.standalones.title();
   title.parentBounds(0, 0, "100%", 30)
     .text("Click on button to add Data into Data Tree")
     .container(stage)

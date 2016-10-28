@@ -16,7 +16,7 @@
   ];
   var treeData = anychart.data.tree(data, anychart.enums.TreeFillingMethod.AS_TABLE);
 
-  var dataGrid = anychart.ui.dataGrid();
+  var dataGrid = anychart.standalones.dataGrid();
   dataGrid.data(treeData);
   var column0 = dataGrid.column(0);
   column0.title("Raw Data");

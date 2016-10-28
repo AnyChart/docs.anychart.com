@@ -81,7 +81,7 @@
   legendTitle.hAlign("center");
 
   // settings for legend tooltips
-  legend.tooltip().content().useHtml(true).fontWeight(400);
+  legend.tooltip().useHtml(true).fontWeight(400);
   // set source of content for legend tooltips
   legend.tooltip().textFormatter(function(){
     return this.meta.legendText;
