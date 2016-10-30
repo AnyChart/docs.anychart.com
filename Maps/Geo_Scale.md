@@ -1,5 +1,5 @@
 {:index 13.5}
-# Map Axes
+# Map Geo Scale
 
 * [Overview](#overview)
 * [Tick intervals](#tick_intervals)
@@ -33,7 +33,7 @@ var mapScale = map.scale();
 
 // set scale minimums and maximums
 mapScale.minimumX(110);
-mapScale.maximumX(160);
+mapScale.maximumX(150);
 mapScale.minimumY(-50);
 mapScale.maximumY(-10);
 ```
