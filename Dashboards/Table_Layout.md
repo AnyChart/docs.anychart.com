@@ -1,3 +1,5 @@
+{:index 2}
+
 # Table Layout
 
 * [Overview](#overview)

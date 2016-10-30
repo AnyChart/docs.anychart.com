@@ -1,3 +1,5 @@
+{:index 1}
+
 # Stage-based Layout
 
 * [Overview](#overview)
