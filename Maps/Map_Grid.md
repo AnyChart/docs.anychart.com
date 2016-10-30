@@ -30,10 +30,8 @@ To tune grid lines use {api:anychart.core.grids.MapSettings#stroke}stroke(){api}
 var grids = map.grids();
 grids.stroke("Black", 2, "5 2");
 grids.minorStroke("Black", 0.5);
-
-{sample}Maps\_Grid\_02{sample}
-
 ```
+{sample}Maps\_Grid\_02{sample}
 
 ## Interlace
 
