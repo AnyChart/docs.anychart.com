@@ -26,10 +26,13 @@
     map.geoData(anychart.maps.australia);
     map.choropleth(dataSetForSeries);
 
-    // enable grids
-    map.grids(true);
+    grids = map.grids();
+    grids.enabled(true);
+    // configure grid strokes
+    grids.stroke("Black", 1, "5 5");
+    grids.minorStroke("Black", 0.2);
 
-    map.title("Map Parallels and Meridians Grid Enabled");
+    map.title("Map Parallels and Meridians Grid Lines Configured");
     map.container("container");
     map.draw();
 });</script>

@@ -4,13 +4,6 @@
 * [Overview](#overview)
 * [Lines](#grid_lines)
 * [Interlace](#interlace)
-* [Precision](#precision) 
-* [Axes](#axes)
- * [Lines](#lines)
- * [Labels](#labels)
- * [Ticks](#ticks)
- * [Titles](#titles)
-* [Geo Scale](#geo_scale)
 
 ## Overview
 
@@ -18,11 +11,11 @@ Drawing Parallels and Meridians Grid is controlled using Map Grid object describ
 
 ## Grid
 
-Map grid is a single object, use {api}grid(){api} method to control it:
+Map grid is a single object, use {api:anychart.charts.Map#grids}grids(){api} method to control it:
 
 ```
 var map = anychart.map();
-map.grid(true);
+map.grids(true);
 ```
 
 Here is a sample of a map with a grid with default setttings turned on:
@@ -31,27 +24,26 @@ Here is a sample of a map with a grid with default setttings turned on:
 
 ## Lines
 
+To tune grid lines use {api:anychart.core.grids.MapSettings#stroke}stroke(){api} and {api:anychart.core.grids.MapSettings#minorStroke}minorStroke(){api} methods:
+
 ```
-var grid = map.grid();
-grid.stroke("White 0.5");
-grid.minorStroke("White 0.1");
+var grids = map.grids();
+grids.stroke("Black", 2, "5 2");
+grids.minorStroke("Black", 0.5);
+
+{sample}Maps\_Grid\_02{sample}
+
 ```
 
 ## Interlace
 
-To make grid more aesthetically please or to avoid using grid lines alltogether you can use interlaced fill:
+To make grid more aesthetically pleasing or to avoid using grid lines alltogether you can use interlaced fill, which is configured using {api:anychart.core.grids.MapSettings#evenFill}evenFill(){api} and {api:anychart.core.grids.MapSettings#oddFill}oddFill(){api} methods:
 
 ```
-map.grid().oddFill("Blue 0.5");
-map.grid().evenFill("LightBlue 0.5");
+map.grids().oddFill("Blue 0.5");
+map.grids().evenFill("LightBlue 0.5");
 ```
 
-## Precision
+{sample}Maps\_Grid\_03{sample}
 
-Grid display precision is controlled using {api}precision(){api} method:
-
-```
-var grid = map.grid();
-grid.precision(0.5);
-```
 

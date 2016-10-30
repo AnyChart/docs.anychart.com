@@ -1,16 +1,11 @@
 {:index 13.5}
 # Map Axes
 
-* [Overview](#overview)
-* [Lines](#grid_lines)
-* [Interlace](#interlace)
-* [Precision](#precision) 
-* [Axes](#axes)
- * [Lines](#lines)
- * [Labels](#labels)
- * [Ticks](#ticks)
- * [Titles](#titles)
-* [Geo Scale](#geo_scale)
+* [Overview](#axes)
+* [Lines](#lines)
+* [Labels](#labels)
+* [Ticks](#ticks)
+* [Titles](#titles)
 
 ## Overview
 
