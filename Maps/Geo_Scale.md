@@ -1,0 +1,40 @@
+{:index 13.5}
+# Map Axes
+
+* [Overview](#overview)
+* [Tick intervals](#tick_intervals)
+* [Minimum and Maximum](#minimum_and_maximum)
+
+## Overview
+
+Geo Scale controls parameters that define numerical parameters that primarily affect how [Map Grid](Map_Grid) and [Map_Axes](Map_Axes) are displayed.
+
+## Tick intervals
+
+You can control major and minor tick intervals using {api:anychart.scales.GeoTicks#interval}interval(){api} of {api:anychart.scales.Geo#xMinorTicks}xMinorTicks(){api}, {api:anychart.scales.Geo#yMinorTicks}yMinorTicks(){api}, {api:anychart.scales.Geo#xTicks}xTicks(){api} and {api:anychart.scales.Geo#yTicks}yTicks(){api}: 
+
+```
+var scale = map.scale();
+scale.xTicks.interval(10);
+scale.yTicks.interval(10);
+scale.xMinorTicks.interval(2);
+scale.yMinorTicks.interval(2);
+```
+
+{sample}Maps\_Geo\_Scale\_01{sample}
+
+## Minimum and Maximum
+
+Controlling minimum and maximum for scales allows you to control the area of the map displayed, it is done using {api:anychart.scales.Geo#maximumX}maximumX(){api}, {api:anychart.scales.Geo#maximumY}maximumY(){api}, {api:anychart.scales.Geo#minimumX}minimumX(){api} and {api:anychart.scales.Geo#minimumY}minimumY(){api} methods:
+
+```
+var mapScale = map.scale();
+
+// set scale minimums and maximums
+mapScale.minimumX(110);
+mapScale.maximumX(160);
+mapScale.minimumY(-50);
+mapScale.maximumY(-10);
+```
+
+{sample}Maps\_Geo\_Scale\_02{sample}
