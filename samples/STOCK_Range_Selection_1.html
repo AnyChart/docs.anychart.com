@@ -23,12 +23,15 @@
             currentPlot.line(mapping);
 
             var rangeSelector = anychart.ui.rangeSelector();
+            var rangeSelector = anychart.ui.rangePicker();
 
-            chart.title("Renders the range picker into");
+            chart.title("Render the range selectors into a chart instance");
+
             chart.container("container");
             chart.draw();
 
-            // Renders the range picker into.
+            // Render the range picker into an instance of a stock chart
+            rangePicker.render(chart);
             rangeSelector.render(chart);
         });
 </script>
