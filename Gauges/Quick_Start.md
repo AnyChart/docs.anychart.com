@@ -1,11 +1,9 @@
 {:index 1}
-Gauges Quick Start
-===========
-  
-## Getting started with Gauges
-###1. Include Gauges into Your Web Page
-Reference the JavaScript file in the &lt;head&gt; section of your web page.
-You can use the link as shown below or download anychart.min.js from the [download page](../Quick_Start/Downloading_AnyChart) and then put it into any folder of your site (you’ll have to use your own link in this case).
+#Quick Start
+
+## Creating a Circular Gauge
+###1. Including a Circular Gauge into Your Web Page
+Reference the _anychart.min.js_ JavaScript file in the `<head>` section of your web page. You can use the link as shown below or download the file from the [download page](../Quick_Start/Downloading_AnyChart) and then put it into any folder of your site (in this case, you have to use your own link).
 
 ```
 <head>
@@ -13,33 +11,26 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 </head>
 ```
 
-###2. Create a Container for the Chart
-Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. Unless you don’t, AnyChart will use 100% of the container.
-Example:
+###2. Creating a Container for the Gauge
+Add a block-based HTML element to your page and set the `id`, `width` and `height` attributes (when they are not set, AnyChart uses 100% of the container):
+
+(??? block-based HTML element не гуглится) 
+
 ```
 <body>
     <div id="container" style="width: 500px; height: 400px;"></div>
 </body>
 ```
-###3. Prepare your Data
+###3. Preparing your Data
 
-Gauges provide quite a few opportunities to work with data (such as setting tree like hierarchy with parent/child division), thus it requires preparing data before usage. Raw data set for the JavaScript Gauge chart may look like any of these:
+AnyChart provides quite a few opportunities to work with data, so you need to prepare your data before usage. A raw data set for a circular gauge chart may look like this:
 
 ```
 dataSet = anychart.data.set([81,34.5]);
 ```
 
-```
-dataSet = anychart.data.set([
-      {value: 81},
-      [34.5]
-]);
-```
-
-###4. Create a chart
-Add the JavaScript tag `<script>` with the following code anywhere in the page. 
-This code example uses JavaScript API to create a chart, but you also can use JSON or XML format. <!--See [Supported Data Formats](../Working_with_Data/Supported_Data_Formats) to learn more about supported formats.-->
-Example:
+###4. Creating a Gauge
+Add the `<script>` tag with the following code to any place in the page (in this sample, JavaScript API is used to create a chart, but you can also use JSON or XML format):
 
 ```
 <script>
@@ -91,12 +82,14 @@ anychart.onDocumentReady(function() {
 </script>
 ```
   
-## The result
-###See the result
-After all these steps you should have the following result. You can launch and explore this example further here:
+## The Result
+
+Here is the result all these steps lead to:
+
 {sample :width 690 :height 250}GAUGE\_Basic\_Sample{sample}
-###Full source code
-You can copy this to a file on your computer and open it in your browser to display the js Gauge shown above:
+
+The sample above can be launched and explored in AnyChart PlayGround. You can also copy this code to a file on your computer and open it in your browser to display the gauge:
+
 ```
 <!doctype html>
 <html>
