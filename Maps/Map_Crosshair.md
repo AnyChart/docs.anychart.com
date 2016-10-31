@@ -23,7 +23,7 @@ If you want to switch the Crosshair on, use the {api:anychart.charts.Map#crossha
 // turn the crosshair on
 map.crosshair(true);
 ```
-{sample}Map\_Crosshair\_01{sample}
+{sample}Maps\_Crosshair\_01{sample}
 
 ## Appearance
 
@@ -36,7 +36,7 @@ In some situations you may not need one or both lines but highlighted labels are
 var crosshair = map.crosshair();
 crosshair.xStroke(null); 
 ```
-{sample}Map\_Crosshair\_02{sample}
+{sample}Maps\_Crosshair\_02{sample}
 
 ## Labels
 
@@ -49,7 +49,7 @@ Use the standard function to disable the axes labels.
 var crosshair = map.crosshair();
 crosshair.yLabel(false);
 ```
-{sample}Map\_Crosshair\_03{sample}
+{sample}Maps\_Crosshair\_03{sample}
 
 ### Change text
 
@@ -65,8 +65,4 @@ yLabel.textFormatter(function() {
 
 Here is the sample with customized both x and y crosshair labels.
 
-{sample}Map\_Crosshair\_04{sample}
-
-As far as you can use any function as {api:anychart.core.ui.CrosshairLabel#textFormatter}textFormatter(){api} of crosshair labels you use these labels to display additional information. Here is a sample with more complex labels formatter.
-
-{sample}AGST\_Crosshair\_05{sample}
+{sample}Maps\_Crosshair\_04{sample}
