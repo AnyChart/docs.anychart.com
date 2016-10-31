@@ -1,0 +1,33 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyMap"/>
+  <meta charset="UTF-8"/>
+  <meta name="tags" content="[]"/>
+  <meta name="index" content="1000"/>
+  <meta name="is-new" content="false"/>
+  <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+  <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
+  <script x-export="map">anychart.onDocumentReady(function () {
+
+    map = anychart.map();
+    map.geoData(anychart.maps.australia);
+
+    // enable crosshair
+    map.crosshair(true);
+    // disable x line
+    map.crosshair().xStroke(null); 
+
+    map.axes(true);
+    map.grids(true);
+
+    map.title("Disable X Line of Crosshair");
+    map.container("container");
+    map.draw();
+});</script>
+
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
