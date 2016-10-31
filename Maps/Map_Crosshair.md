@@ -17,7 +17,7 @@ Crosshair listens to these events: mouseMove, mouseOver, mouseOut, when mouse is
  
 ## Enable           
  
-If you want to switch the Crosshair on, set the {api:anychart.core.ui.Crosshair}crosshair(){api} as true:
+If you want to switch the Crosshair on, use the {api:anychart.charts.Map#crosshair}crosshair(){api} method:
 
 ```
 // turn the crosshair on
@@ -36,7 +36,7 @@ In some situations you may not need one or both lines but highlighted labels are
 var crosshair = map.crosshair();
 crosshair.xStroke(null); 
 ```
-{sample}AGST\_Crosshair\_03{sample}
+{sample}Map\_Crosshair\_02{sample}
 
 ## Labels
 
@@ -49,24 +49,24 @@ Use the standard function to disable the axes labels.
 var crosshair = map.crosshair();
 crosshair.yLabel(false);
 ```
-{sample}AGST\_Crosshair\_04{sample}
+{sample}Map\_Crosshair\_03{sample}
 
 ### Change text
 
 The crosshair label's format is the same as axis label's format by default. You may use the {api:anychart.core.ui.CrosshairLabel#textFormatter}textFormatter(){api} to change the crosshair's labels' performance. 
 
 ```
-// set the label performance
+// set the label formatting
 var yLabel = map.crosshair().yLabel();
 yLabel.textFormatter(function() {
-return this.value + "deg";
+	return "Lon:" + this.value;
 });
 ```
 
 Here is the sample with customized both x and y crosshair labels.
 
-{sample}AGST\_Crosshair\_05{sample}
+{sample}Map\_Crosshair\_04{sample}
 
 As far as you can use any function as {api:anychart.core.ui.CrosshairLabel#textFormatter}textFormatter(){api} of crosshair labels you use these labels to display additional information. Here is a sample with more complex labels formatter.
 
-{sample}AGST\_Crosshair\_06{sample}
+{sample}AGST\_Crosshair\_05{sample}
