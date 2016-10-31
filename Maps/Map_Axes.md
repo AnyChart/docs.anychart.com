@@ -13,20 +13,24 @@ Drawing Parallels and Meridians Axes, Labels and Ticks is controlled using Map A
 
 Axes are objects used to control how bounding lines, labels and tickmarks look. Placement of tickmarks is controlled by [Geo Scale](Geo_Scale).
 
+Configuring axes is done using {api:anychart.charts.Map#axes}axes(){api} object represented by an instance of {api:anychart.core.axes.MapSettings}axes.MapSettings{api} class.
+
 ### Lines
 
-To configure all lines at once use {api}stroke(){api}:
+To configure all lines at once use {api:anychart.core.axes.MapSettings#stroke}stroke(){api}:
 
 ```
-map.axes().stroke();
+map.axes().stroke("Black", 2, "5 5");
 ```
 
 To override common settings and enable/disable or format lines on selected sides:
 
 ```
-map.axes().right().stroke("Black");
-map.axes().top().stroke("White");
+map.axes().right().stroke("Black 2");
+map.axes().top().stroke("Black", 2, "5 5");
 ```
+
+{sample}Maps\_Axes\_01{sample}
 
 ### Labels
 
@@ -44,6 +48,8 @@ map.axes().right().labels(false);
 map.axes().top().minorLabels(true);
 ```
 
+{sample}Maps\_Axes\_02{sample}
+
 ### Ticks
 
 To configure all ticks at once use:
@@ -56,9 +62,13 @@ map.axes().minorTicks();
 To override common settings and enable/disable or format labels on selected sides:
 
 ```
-map.axes().right().ticks(false);
+map.axes(true);
+map.axes().ticks().stroke("Red");        
+map.axes().top().ticks(false;
 map.axes().top().minorTicks(false);
 ```
+
+{sample}Maps\_Axes\_03{sample}
 
 ### Titles
 
@@ -69,4 +79,6 @@ map.axes().right().title(false);
 map.axes().left().title("Latitude");
 map.axes().left().title().fontSize(14);
 ```
+
+{sample}Maps\_Axes\_04{sample}
 
