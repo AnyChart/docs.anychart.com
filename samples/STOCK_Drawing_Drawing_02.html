@@ -37,37 +37,29 @@
 
     // set the chart position and title
     chart.top(15);
-    chart.title("Drawing Annotations");
+    chart.title("Cancelling Drawing");
 
     // set the chart container and initiate drawing the chart
     chart.container(stage);
     chart.draw();
 
-    // create a label for the ellipse annotation
-    createLabel("Ellipse", 10, function() {
-        // start drawing the annotation
-        controller.cancelDrawing();
-        controller.startDrawing("ellipse");
-    });
-
-    // create a label for the rectangle annotation
-    createLabel("Rectangle", 70, function() {
-        // start drawing the annotation
-        controller.cancelDrawing();
-        controller.startDrawing("rectangle");
-    });
-
-    // create a label for the triangle annotation
-    createLabel("Triangle", 155, function() {
+    // create a label for the Triangle annotation
+    createLabel("Triangle", 10, function() {
         // start drawing the annotation
         controller.cancelDrawing();
         controller.startDrawing("triangle");
     });
 
-        // create a label for removing annotations
+    // create a label for the Andrews' Pitchfork annotation
+    createLabel("Andrews' Pitchfork", 85, function() {
+        // start drawing the annotation
+        controller.cancelDrawing();
+        controller.startDrawing("andrewsPitchfork");
+    });
+
+    // create a label for removing annotations
     createLabel("Remove All", 240, function() {
         // remove all annotations
-        controller.cancelDrawing();
         controller.removeAllAnnotations();
     });
 });

@@ -36,7 +36,7 @@ lineSeries.name("CSCO");
 // an auxiliary variable for working with annotations
 var controller = plot.annotations();
 
-// create an ellipse annotation
+// create an Ellipse annotation
 controller.ellipse({
     xAnchor: "2006-11-20",
     valueAnchor: 25.92,
@@ -57,7 +57,7 @@ In the sample below, there are two annotations, an Ellipse and an Infinite Line,
 // an auxiliary variable for working with annotations
 var controller = plot.annotations();
 
-// create an ellipse annotation and configure its visual settings
+// create an Ellipse annotation and configure its visual settings
 controller.ellipse({
     xAnchor: "2006-11-20",
     valueAnchor: 25.92,
@@ -80,7 +80,7 @@ Another setting of annotations you can configure is the hover gap: use the {api:
 // an auxiliary variable for working with annotations
 var controller = plot.annotations();
 
-// create an ellipse annotation and configure its hover gap
+// create an Ellipse annotation and configure its hover gap
 controller.ellipse({
     hoverGap: 30
 });
@@ -104,7 +104,7 @@ var extraYAxis = plot.yAxis(1);
 // an auxiliary variable for working with annotations
 var controller = plot.annotations();
 
-// create an infinite line annotation (automatically bound to the main Y-scale)
+// create an Infinite Line annotation (automatically bound to the main Y-scale)
 controller.infiniteLine({
     xAnchor: "2004-01-06",
     valueAnchor: 2039.63,
@@ -112,7 +112,7 @@ controller.infiniteLine({
     secondValueAnchor: 2088.10
 });
 
-//create an ellipse annotation
+//create an Ellipse annotation
 var ellipse = controller.ellipse({
     xAnchor: "2004-01-07",
     valueAnchor: 2583950080,
@@ -120,7 +120,7 @@ var ellipse = controller.ellipse({
     secondValueAnchor: 2783950080
 });
 
-// bind the ellipse annotation to the additional Y-scale
+// bind the Ellipse annotation to the additional Y-scale
 ellipse.yScale(extraYScale);
 ```
 

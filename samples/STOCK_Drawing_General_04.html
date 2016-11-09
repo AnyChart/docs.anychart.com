@@ -73,7 +73,7 @@
     // an auxiliary variable for working with annotations
     var controller = plot.annotations();
 
-    // create an infinite line annotation (automatically bound to the main Y-scale)
+    // create an Infinite Line annotation (automatically bound to the main Y-scale)
     controller.infiniteLine({
         xAnchor: "2004-01-06",
         valueAnchor: 2039.63,
@@ -81,7 +81,7 @@
         secondValueAnchor: 2088.10
     });
 
-    //create an ellipse annotation
+    //create an Ellipse annotation
     var ellipse = controller.ellipse({
         xAnchor: "2004-01-07",
         valueAnchor: 2583950080,
@@ -89,7 +89,7 @@
         secondValueAnchor: 2783950080
     });
 
-    // bind the ellipse annotation to the additional Y-scale
+    // bind the Ellipse annotation to the additional Y-scale
     ellipse.yScale(extraYScale);
 
     // set the chart title
