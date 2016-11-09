@@ -43,22 +43,29 @@
     chart.container(stage);
     chart.draw();
 
-    // create a label for the Triangle annotation
-    createLabel("Triangle", 10, function() {
-        // start drawing the annotation
-        controller.cancelDrawing();
-        controller.startDrawing("triangle");
-    });
-
     // create a label for the Andrews' Pitchfork annotation
-    createLabel("Andrews' Pitchfork", 85, function() {
+    createLabel("Andrews' Pitchfork", 10, function() {
         // start drawing the annotation
         controller.cancelDrawing();
         controller.startDrawing("andrewsPitchfork");
     });
 
+    // create a label for the Triangle annotation
+    createLabel("Triangle", 150, function() {
+        // start drawing the annotation
+        controller.cancelDrawing();
+        controller.startDrawing("triangle");
+    });
+
+    // create a label for the Ellipse annotation
+    createLabel("Ellipse", 219, function() {
+        // start drawing the annotation
+        controller.cancelDrawing();
+        controller.startDrawing("ellipse");
+    });
+
     // create a label for removing annotations
-    createLabel("Remove All", 240, function() {
+    createLabel("Remove All", 300, function() {
         // remove all annotations
         controller.removeAllAnnotations();
     });
