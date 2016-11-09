@@ -67,10 +67,13 @@
         controller.removeAllAnnotations();
     });
 
-    var firstAnnotation = controller.getAnnotationAt(0);
-    firstAnnotation.listen("annotationSelect", function(){
-        firstAnnotation.stroke("#009688", 3, "5 2", "round");
+    chart.listen("annotationSelect", function(e){
+        var selectedAnnotation = e.annotation;
+        selectedAnnotation.selectStroke("#009688", 3, "5 2", "round");
+
+        chart.title("Annotation of " + selectedAnnotation.getType() + " is selected.");
     });
+    
 });
 
 // a helper function for creating buttons

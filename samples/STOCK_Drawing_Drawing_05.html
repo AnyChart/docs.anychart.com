@@ -78,7 +78,7 @@
         controller.removeAllAnnotations();
     });
 
-    // create a label for selecting the first drawn annotation
+    // create a label for selecting the first annotation
     createLabel("Select the First", 415, function() {
         // get the first annotation
         var firstAnnotation = controller.getAnnotationAt(0);
@@ -97,7 +97,7 @@
         // get the selected annotation
         var selectedAnnotation = controller.getSelectedAnnotation(); 
         // forbid editing the annotation
-        selectedAnnotation.allowEdit(false);
+        selectedAnnotation.allowEdit(false);        
     });
 });
 
