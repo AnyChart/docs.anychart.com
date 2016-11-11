@@ -37,8 +37,6 @@ plot.annotations().startDrawing({type: "triangle", color: "red"});
 
 Here is a basic sample, demonstrating how the Drawing feature is used. Users can draw Andrews' Pitchforks, Triangles, and Ellipses or remove all annotations from the plot (to learn more about removing annotations, see the [Removing](#removing) subsection below):
 
-{sample}STOCK\_Drawing\_General\_03{sample}
-
 ```
 // an auxiliary variable for working with annotations
 var controller = plot.annotations();
