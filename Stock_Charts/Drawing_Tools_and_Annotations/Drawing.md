@@ -104,13 +104,17 @@ xxxxxxxxxxxxxxxxxxxx
 There are several methods that allow you to manage annotations:
 
 - {api:anychart.core.annotations.PlotController#getAnnotationAt}getAnnotationAt(){api}
+- {api:anychart.core.annotations.PlotController#getSelectedAnnotation}getSelectedAnnotation(){api}
 - {api:anychart.core.annotations.PlotController#getAnnotationsCount}getAnnotationsCount(){api}
+
 - {api:anychart.core.annotations.PlotController#removeAnnotation}removeAnnotation(){api}
 - {api:anychart.core.annotations.PlotController#removeAnnotationAt}removeAnnotationAt(){api}
 - {api:anychart.core.annotations.PlotController#removeAllAnnotations}removeAllAnnotations(){api}
-- {api:anychart.core.annotations.PlotController#getSelectedAnnotation}getSelectedAnnotation(){api}
+
 - {api:anychart.core.annotations.PlotController#select}select(){api}
 - {api:anychart.core.annotations.PlotController#unselect}unselect(){api}
+
+The first 3 methods ({api:anychart.core.annotations.PlotController#getAnnotationAt}getAnnotationAt(){api}, {api:anychart.core.annotations.PlotController#getSelectedAnnotation}getSelectedAnnotation(){api}, and {api:anychart.core.annotations.PlotController#getAnnotationsCount}getAnnotationsCount(){api}) are used get an annotation with a (???) certain index, a selected annotation, or the total number of annotations. The rest of the methods, combined with these 3, allow to remove and select/unselect annotations.
 
 ### Removing
 
