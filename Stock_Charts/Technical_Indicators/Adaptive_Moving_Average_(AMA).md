@@ -52,7 +52,7 @@ var ama = plot.ama(mapping, 10, 5, 20, "column");
 
 The series type defining is not necessary, as it is possible to change the series type any time through the {api:anychart.core.stock.series.Column#seriesType}seriesType(){api} method.
 
-Also, note that this indicator needs periods, but there are default period values that are taken if they are not defined by the user - like in the sample above. Those default values are 20 for a period, 3 for a fast period and 30 for a slow period.
+Also, note that this indicator needs periods, but there are default period values that are taken if they are not defined by the user - like in the sample above. Those default values are 20 for a period, 2 for a fast period and 30 for a slow period.
 
 ## Visualization
 
