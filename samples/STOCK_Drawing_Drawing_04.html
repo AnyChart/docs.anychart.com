@@ -37,7 +37,7 @@
 
     // set the chart position and title
     chart.top(15);
-    chart.title("XXXXXXXXXXXXXXXXXXXXX");
+    chart.title("Removing");
 
     // set the chart container and initiate drawing the chart
     chart.container(stage);
@@ -70,7 +70,7 @@
     // create a label for removing the last drawn annotation
     createLabel("Remove the Last", 390, function() {
         // get the number of annotations
-    	var annotationsCount = controller.getAnnotationsCount();
+        var annotationsCount = controller.getAnnotationsCount();
         // remove the last annotation
         controller.removeAnnotationAt(annotationsCount - 1);
     });

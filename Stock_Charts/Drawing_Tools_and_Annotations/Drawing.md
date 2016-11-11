@@ -80,8 +80,10 @@ anychart.onDocumentReady(function() {
 
 ## <a name='forbidding\_allowing\_editing'>Forbidding/Allowing Editing</a>
 
+(???) To forbid or allow editing an annotation, use the **allowEdit()** method (editing is allowed by default) of your annotation. For example, {api:anychart.anychart.core.annotations.Triangle#allowEdit}allowEdit(){api} in case of a Triangle annotation:
+
 ```
-xxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 ## Managing Annotations
@@ -97,19 +99,54 @@ There are several methods that allow you to manage annotations:
 - {api:anychart.core.annotations.PlotController#select}select(){api}
 - {api:anychart.core.annotations.PlotController#unselect}unselect(){api}
 
-The {api:anychart.core.annotations.PlotController#getAnnotationAt}getAnnotationAt(){api}, {api:anychart.core.annotations.PlotController#getSelectedAnnotation}getSelectedAnnotation(){api}, and {api:anychart.core.annotations.PlotController#getAnnotationsCount}getAnnotationsCount(){api}) methods are used get an annotation with a (???) certain index, a selected annotation, or the total number of annotations. The rest of the methods, combined with these 3, allow to remove and select/unselect annotations.
+The {api:anychart.core.annotations.PlotController#getAnnotationAt}getAnnotationAt(){api}, {api:anychart.core.annotations.PlotController#getSelectedAnnotation}getSelectedAnnotation(){api}, and {api:anychart.core.annotations.PlotController#getAnnotationsCount}getAnnotationsCount(){api} methods are used get an annotation with a (???) certain index, a selected annotation, or the total number of annotations. The rest of the methods, combined with these 3, allow to remove and select/unselect annotations.
 
 ### Removing
+
+The {api:anychart.core.annotations.PlotController#removeAnnotation}removeAnnotation(){api} and {api:anychart.core.annotations.PlotController#removeAnnotationAt}removeAnnotationAt(){api} methods are used to remove a single annotation, and {api:anychart.core.annotations.PlotController#removeAllAnnotations}removeAllAnnotations(){api} removes all annotations.
+
+In the following sample, there are buttons allowing to remove all annotations, the last drawn annotation, and a selected one:
+
+```
+// remove all annotations
+plot.annotations().removeAllAnnotations();
+
+// get the number of annotations
+var annotationsCount = plot.annotations().getAnnotationsCount();
+
+// remove the last annotation
+plot.annotations().removeAnnotationAt(annotationsCount - 1);
+
+// get the selected annotation
+var selectedAnnotation = plot.annotations().getSelectedAnnotation(); 
+
+// remove the selected annotation
+plot.annotations().removeAnnotation(selectedAnnotation);
+});
+```
 
 {sample}STOCK\_Drawing\_Drawing\_04{sample}
 
 ### <a name='selecting\_unselecting'>Selecting/Unselecting</a>
 
+To select or unselect an annotation, use the {api:anychart.core.annotations.PlotController#select}select(){api} and {api:anychart.core.annotations.PlotController#unselect}unselect(){api} methods:
+
+```
+// get the first annotation
+var firstAnnotation = plot.annotations().getAnnotationAt(0);
+
+// select the first annotation
+plot.annotations().select(firstAnnotation);
+
+// unselect a selected annotation
+plot.annotations().unselect();
+```
+
 {sample}STOCK\_Drawing\_Drawing\_05{sample}
 
 ## (???) Handling Events
 
-The following {api:anychart.enums.EventType}events{api} can be handled when working with annotations:
+When working with annotations, the following {api:anychart.enums.EventType}events{api} can be handled:
 
 <table>
 <tr><th>Enum Constant</th><th>String Value</th><th>Description</th></tr>
@@ -117,5 +154,20 @@ The following {api:anychart.enums.EventType}events{api} can be handled when work
 <tr><td>ANNOTATION_SELECT</td><td>annotationSelect</td><td>Event type for the annotation select.</td></tr>
 <tr><td>ANNOTATION_UNSELECT</td><td>annotationUnselect</td><td>Event type for the annotation unselect.</td></tr>
 </table>
+
+(???) Please note that you should create a listener of a chart.
+
+In the sample below, a listener is used to change the visual settings of annotations and the chart title on selection:
+
+```
+// create an event listener for selection
+chart.listen("annotationSelect", function(e){
+    var selectedAnnotation = e.annotation;
+    // change the annotation stroke on selection
+    selectedAnnotation.selectStroke("#FF0000", 3, "5 2", "round");
+    // change the chart title on selection
+    chart.title("The " + selectedAnnotation.getType() + " annotation is selected.");
+});
+```
 
 {sample}STOCK\_Drawing\_Drawing\_06{sample}

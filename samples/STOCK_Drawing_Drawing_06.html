@@ -37,7 +37,7 @@
 
     // set the chart position and title
     chart.top(15);
-    chart.title("XXXXXXXXXXXXXXXXXXXXX");
+    chart.title("Handling Events");
 
     // set the chart container and initiate drawing the chart
     chart.container(stage);
@@ -67,7 +67,7 @@
         controller.removeAllAnnotations();
     });
 
-    // create an even listener for selection
+    // create an event listener for selection
     chart.listen("annotationSelect", function(e){
         var selectedAnnotation = e.annotation;
         // change the annotation stroke on selection
