@@ -73,8 +73,9 @@ anychart.onDocumentReady(function() {
 
     // start drawing the annotation.
     chart.annotations().startDrawing("triangle");
-});
 ```
+
+In this sample, annotations can be drawn only on the first (OHLC) plot:
 
 {sample}STOCK\_Drawing\_Drawing\_03{sample}
 
