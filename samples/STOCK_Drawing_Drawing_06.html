@@ -67,11 +67,13 @@
         controller.removeAllAnnotations();
     });
 
+    // create an even listener for selection
     chart.listen("annotationSelect", function(e){
         var selectedAnnotation = e.annotation;
-        selectedAnnotation.selectStroke("#009688", 3, "5 2", "round");
-
-        chart.title("Annotation of " + selectedAnnotation.getType() + " is selected.");
+        // change the annotation stroke on selection
+        selectedAnnotation.selectStroke("#FF0000", 3, "5 2", "round");
+        // change the chart title on selection
+        chart.title("The " + selectedAnnotation.getType() + " annotation is selected.");
     });
     
 });

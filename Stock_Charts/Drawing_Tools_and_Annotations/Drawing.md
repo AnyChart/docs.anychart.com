@@ -2,45 +2,68 @@
 #Drawing
 
 * [Overview](#overview)
-* [Sample App](#sample_app)
-* [Initiate](#initiate)
-* [Cancel](#cancel)
-* [Forbid](#forbid)
-* [Managing](#managing)
-* [Events](#events)
+* [Sample Application](#sample_application)
+* [Initiating Drawing](#initiating_drawing)
+* [Canceling Drawing](#canceling_drawing)
+* [Forbidding Drawing](#forbidding_drawing)
+* [Forbidding/Allowing Editing](#forbidding_allowing_editing)
+* [Managing Annotations](#managing_annotations)
+ * [Removing](#removing)
+ * [Selecting/Unselecting](#selecting_unselecting)
+* [(???) Handling Events](#events)
 
 ## Overview
 
-This article describes methods that allow user of your application to draw annotations on Stock Chart plots.
+This article describes methods that allows users to draw annotations on AnyStock plots.
 
-## Sample App
+Please note: when working with annotations, you can use methods of either the plot or the chart (see the {api:anychart.core.annotations.PlotController}PlotController{api} and {api:anychart.core.annotations.ChartController}ChartController{api} sections in our API). Of course, if there is only one plot on your chart, there is no significant difference between these two options.
 
-To make the integration process easier and give you the general idea how [AnyStock Stock Drawing Tools](Overview) can be implemented we have created a sample web application with open source.
+## Sample Application
+
+To make the integration process easier for you, we created a sample web application with open source, demonstrating how [AnyStock Stock Drawing Tools](Overview) can be implemented.
 
 You can see the application live at [http://www.anychart.com/products/anystock/drawing_tools/](http://www.anychart.com/products/anystock/drawing_tools/).
 
-You can download application source or simply fork it on [GitHub: AnyStock - Drawing Tools and Annotations Demo](https://github.com/AnyChart/anystock-drawing-tools-and-annotations-demo) page.
+To download its source (or simply fork it), visit this page: [GitHub: AnyStock - Drawing Tools and Annotations Demo](https://github.com/AnyChart/anystock-drawing-tools-and-annotations-demo).
 
-## Initiate
+## Initiating Drawing
 
-To start drawing use {api:anychart.core.annotations.PlotController#startDrawing}PlotController startDrawing(){api} method or {api:anychart.core.annotations.ChartController#startDrawing}ChartController startDrawing(){api} method.
+To initiate drawing, call the {api:anychart.core.annotations.PlotController#startDrawing}PlotController startDrawing(){api} method or {api:anychart.core.annotations.ChartController#startDrawing}ChartController startDrawing(){api} method and specify the annotation type by choosing one of the {api:anychart.enums.AnnotationTypes}Annotation Types enums{api}. (???????) Use object notation to configure annotations:
 
 ```
-plot.annotations().startDrawing("infiniteLine");
-plot.annotations().startDrawing({type: "infiniteLine", color: "red"});
+plot.annotations().startDrawing("triangle");
+plot.annotations().startDrawing({type: "triangle", color: "red"});
 ```
 
-## Cancel
+Here is a basic sample, demonstrating how the Drawing feature is used. Users can draw Andrews' Pitchforks, Triangles, and Ellipses or remove all annotations from the plot (to learn more about removing annotations, see the [Removing](#removing) subsection below):
 
-To cancel drawing process use {api:anychart.core.annotations.PlotController#cancelDrawing}PlotController cancelDrawing(){api} method or {api:anychart.core.annotations.ChartController#cancelDrawing}ChartController cancelDrawing(){api} method.
+{sample}STOCK\_Drawing\_General\_03{sample}
+
+```
+// an auxiliary variable for working with annotations
+var controller = plot.annotations();
+
+// start drawing the Andrews' Pitchfork annotation
+controller.startDrawing("andrewsPitchfork");
+```
+
+{sample}STOCK\_Drawing\_Drawing\_01{sample}
+
+## Canceling Drawing
+
+To cancel the drawing process, call the {api:anychart.core.annotations.PlotController#cancelDrawing}PlotController cancelDrawing(){api} method or {api:anychart.core.annotations.ChartController#cancelDrawing}ChartController cancelDrawing(){api} method:
 
 ```
 plot.annotations().cancelDrawing()
 ```
 
-## Forbid
+These methods can be used, for example, with such annotation types as Andrews' Pitchfork and Triangle. A user has to set 3 points to draw them and may want to cancel drawing after setting 2 points. In the following sample, when you set 2 points and click any of the buttons that initiate drawing, the drawing process is canceled, and the points disappear:
 
-To forbid drawing annotations on some of the plots use {api:anychart.core.annotations.PlotController#enabled}enabled(){api} method.
+{sample}STOCK\_Drawing\_Drawing\_02{sample}
+
+## Forbidding Drawing
+
+To forbid drawing annotations on some of the plots, use the {api:anychart.core.annotations.PlotController#enabled}enabled(){api} method.
 
 ```
 anychart.onDocumentReady(function() {
@@ -68,7 +91,15 @@ anychart.onDocumentReady(function() {
 });
 ```
 
-## Managing
+{sample}STOCK\_Drawing\_Drawing\_03{sample}
+
+## <a name='forbidding\_allowing\_editing'>Forbidding/Allowing Editing</a>
+
+```
+xxxxxxxxxxxxxxxxxxxx
+```
+
+## Managing Annotations
 
 There are several methods that allow you to manage annotations:
 
@@ -81,7 +112,15 @@ There are several methods that allow you to manage annotations:
 - {api:anychart.core.annotations.PlotController#select}select(){api}
 - {api:anychart.core.annotations.PlotController#unselect}unselect(){api}
 
-## Events
+### Removing
+
+{sample}STOCK\_Drawing\_Drawing\_04{sample}
+
+### <a name='selecting\_unselecting'>Selecting/Unselecting</a>
+
+{sample}STOCK\_Drawing\_Drawing\_05{sample}
+
+## (???) Handling Events
 
 The following {api:anychart.enums.EventType}events{api} can be handled when working with annotations:
 
@@ -91,3 +130,5 @@ The following {api:anychart.enums.EventType}events{api} can be handled when work
 <tr><td>ANNOTATION_SELECT</td><td>annotationSelect</td><td>Event type for the annotation select.</td></tr>
 <tr><td>ANNOTATION_UNSELECT</td><td>annotationUnselect</td><td>Event type for the annotation unselect.</td></tr>
 </table>
+
+{sample}STOCK\_Drawing\_Drawing\_06{sample}
