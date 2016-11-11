@@ -28,7 +28,7 @@ To download its source (or simply fork it), visit this page: [GitHub: AnyStock -
 
 ## Initiating Drawing
 
-To initiate drawing, call the {api:anychart.core.annotations.PlotController#startDrawing}PlotController startDrawing(){api} method or {api:anychart.core.annotations.ChartController#startDrawing}ChartController startDrawing(){api} method and specify the annotation type by choosing one of the {api:anychart.enums.AnnotationTypes}Annotation Types enums{api}. (???????) Use object notation to configure annotations:
+To initiate drawing, call the {api:anychart.core.annotations.PlotController#startDrawing}PlotController startDrawing(){api} method or {api:anychart.core.annotations.ChartController#startDrawing}ChartController startDrawing(){api} method and specify the annotation type by choosing one of the {api:anychart.enums.AnnotationTypes}Annotation Types enums{api}. (???) Use object notation to configure annotations:
 
 ```
 plot.annotations().startDrawing("triangle");
