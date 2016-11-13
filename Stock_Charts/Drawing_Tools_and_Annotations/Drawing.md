@@ -175,7 +175,7 @@ When working with annotations, the following {api:anychart.enums.EventType}event
 <tr><td>ANNOTATION_UNSELECT</td><td>annotationUnselect</td><td>Event type for the annotation unselect.</td></tr>
 </table>
 
-Please note that you should attach listeners to the chart objects.
+Please note that you should attach listeners to the chart object.
 
 In the sample below, a listener is used to change the visual settings of annotations and the chart title on selection:
 
