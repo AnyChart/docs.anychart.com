@@ -79,7 +79,7 @@ In this sample, annotations can be drawn only on the first (OHLC) plot:
 
 ## <a name='forbidding\_allowing\_editing'>Forbidding/Allowing Editing</a>
 
-To forbid or allow editing an annotation, use the {api:anychart.anychart.core.annotations.Base#allowEdit}allowEdit(){api} method (by default editing is allowed):
+To forbid or allow editing an annotation, use the {api:anychart.core.annotations.Base#allowEdit}allowEdit(){api} method (by default editing is allowed):
 
 ```
 // create an Ellipse annotation
