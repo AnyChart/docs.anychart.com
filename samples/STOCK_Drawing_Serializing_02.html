@@ -25,46 +25,52 @@
     // create a stock chart
     chart = anychart.stock();
 
-    // create a plot on the chart
-    var plot = chart.plot(0);
+    // create an OHLC series
+    var series1 = chart.plot(0).line(mapping);
+    series1.name("Series 1")
 
     // create a line series
-    var lineSeries = plot.line(mapping);
-    lineSeries.name("CSCO");
+    var series2 = chart.plot(1).area(mapping);
+    series2.name("Series 2")
 
-    // an auxiliary variable for working with annotations
-    var controller = plot.annotations();
+    // an auxiliary variable for working with annotations on the first plot
+    var controller1 = chart.plot(0).annotations();
+
+    // an auxiliary variable for working with annotations on the second plot
+    var controller2 = chart.plot(1).annotations();
 
     // set the chart position and title
     chart.top(15);
-    chart.title("Initiating Drawing");
+    chart.title("Serializing and Deserializing (XML)");
 
     // set the chart container and initiate drawing the chart
     chart.container(stage);
     chart.draw();
 
-    // create a label for the Andrews' Pitchfork annotation
-    createLabel("Andrews' Pitchfork", 10, function() {
-        // start drawing the annotation
-        controller.startDrawing("andrewsPitchfork");
-    });
-
-    // create a label for the Triangle annotation
-    createLabel("Triangle", 150, function() {
-        // start drawing the annotation
-        controller.startDrawing("triangle");
-    });
-
     // create a label for the Ellipse annotation
-    createLabel("Ellipse", 219, function() {
-        // start drawing the annotation
-        controller.startDrawing("ellipse");
+    createLabel("Ellipse", 150, function() {
+        // start drawing the annotation on the first plot
+        controller1.startDrawing("ellipse");
+    });
+
+    // create a label for the Rectangle annotation
+    createLabel("Rectangle", 208, function() {
+        // start drawing the annotation on the first plot
+        controller1.startDrawing("rectangle");
     });
 
     // create a label for removing annotations
-    createLabel("Remove All", 300, function() {
-        // remove all annotations
-        controller.removeAllAnnotations();
+    createLabel("Remove All", 312, function() {
+        // remove annotations from all plots
+        chart.annotations().removeAllAnnotations();
+    });
+
+    // create a label for serializing annotations from the first plot and deserializing them to the second one
+    createLabel("Copy to the Second Plot", 423, function() {
+        // serialize annotations from the first plot
+        var xml = controller1.toXml();
+        // deserialize the annotations to the second plot
+        controller2.fromXml(xml);
     });
 });
 
