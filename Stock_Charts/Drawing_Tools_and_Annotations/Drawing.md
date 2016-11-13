@@ -10,7 +10,7 @@
 * [Managing Annotations](#managing_annotations)
  * [Removing](#removing)
  * [Selecting/Unselecting](#selecting_unselecting)
-* [(???) Handling Events](#events)
+* [Handling Events](#handling_events)
 
 ## Overview
 
@@ -28,7 +28,7 @@ To download its source (or simply fork it), visit this page: [GitHub: AnyStock -
 
 ## Initiating Drawing
 
-To initiate drawing, call the {api:anychart.core.annotations.PlotController#startDrawing}PlotController startDrawing(){api} method or {api:anychart.core.annotations.ChartController#startDrawing}ChartController startDrawing(){api} method and specify the annotation type by choosing one of the {api:anychart.enums.AnnotationTypes}Annotation Types enums{api}. (???) Use object notation to configure annotations:
+To initiate drawing, call the {api:anychart.core.annotations.PlotController#startDrawing}PlotController startDrawing(){api} method or {api:anychart.core.annotations.ChartController#startDrawing}ChartController startDrawing(){api} method and specify the annotation type by choosing one of the {api:anychart.enums.AnnotationTypes}Annotation Types enums{api}. Use object notation to configure annotations:
 
 ```
 plot.annotations().startDrawing("triangle");
@@ -47,7 +47,7 @@ To cancel the drawing process, call the {api:anychart.core.annotations.PlotContr
 plot.annotations().cancelDrawing()
 ```
 
-These methods can be used, for example, with such annotation types as Andrews' Pitchfork and Triangle. A user has to set 3 points to draw them and may want to cancel drawing after setting 2 points. In the following sample, when you set 2 points and click any of the buttons that initiate drawing, the drawing process is canceled, and the points disappear:
+For example, you have to set 3 points to draw Andrews' Pitchfork and Triangle annotations and may want to cancel drawing after setting 2 points. In the following sample, when you set 2 points and click any of the buttons that initiate drawing, the drawing process is canceled, and the points disappear:
 
 {sample}STOCK\_Drawing\_Drawing\_02{sample}
 
@@ -56,23 +56,21 @@ These methods can be used, for example, with such annotation types as Andrews' P
 To forbid drawing annotations on some of the plots, use the {api:anychart.core.annotations.PlotController#enabled}enabled(){api} method:
 
 ```
-anychart.onDocumentReady(function() {
+// create a stock chart
+chart = anychart.stock();
 
-    // create a stock chart
-    chart = anychart.stock();
+// create two plots
+chart.plot(0).ohlc(mapping);
+chart.plot(1).line(mapping);
 
-    // create two plots
-    chart.plot(0).ohlc(mapping);
-    chart.plot(1).line(mapping);
+// allow drawing on the first plot
+chart.plot(0).annotations().enabled(true);
 
-    // allow drawing on the first plot
-    chart.plot(0).annotations().enabled(true);
+// forbid drawing on the second plot
+chart.plot(1).annotations().enabled(false);
 
-    // forbid drawing on the second plot
-    chart.plot(1).annotations().enabled(false);
-
-    // start drawing the annotation.
-    chart.annotations().startDrawing("triangle");
+// start drawing the annotation.
+chart.annotations().startDrawing("triangle");
 ```
 
 In this sample, annotations can be drawn only on the first (OHLC) plot:
@@ -81,11 +79,33 @@ In this sample, annotations can be drawn only on the first (OHLC) plot:
 
 ## <a name='forbidding\_allowing\_editing'>Forbidding/Allowing Editing</a>
 
-(???) To forbid or allow editing an annotation, use the **allowEdit()** method (editing is allowed by default) of your annotation. For example, {api:anychart.anychart.core.annotations.Triangle#allowEdit}allowEdit(){api} in case of a Triangle annotation:
+To forbid or allow editing an annotation, use the {api:anychart.anychart.core.annotations.Base#allowEdit}allowEdit(){api} method (by default editing is allowed):
 
 ```
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// create an Ellipse annotation
+var ellipse = plot.annotations().ellipse({
+    xAnchor: "2006-11-20",
+    valueAnchor: 25.92,
+    secondXAnchor: "2007-02-24",
+    secondValueAnchor: 31.92,
+});
+
+// create an Infinite Line annotation
+var infiniteLine = plot.annotations().infiniteLine({
+    xAnchor: "2005-09-04",
+    valueAnchor: 18.58,
+    secondXAnchor: "2008-08-10",
+    secondValueAnchor: 24.91,
+});
+
+//disable interactivity for the Ellipse annotation
+ellipse.allowEdit(false);
+
+// enable interactivity for the Infinite Line annotation
+infiniteLine.allowEdit(true);
 ```
+
+{sample}STOCK\_Drawing\_Drawing\_04{sample}
 
 ## Managing Annotations
 
@@ -100,7 +120,7 @@ There are several methods that allow you to manage annotations:
 - {api:anychart.core.annotations.PlotController#select}select(){api}
 - {api:anychart.core.annotations.PlotController#unselect}unselect(){api}
 
-The {api:anychart.core.annotations.PlotController#getAnnotationAt}getAnnotationAt(){api}, {api:anychart.core.annotations.PlotController#getSelectedAnnotation}getSelectedAnnotation(){api}, and {api:anychart.core.annotations.PlotController#getAnnotationsCount}getAnnotationsCount(){api} methods are used get an annotation with a (???) certain index, a selected annotation, or the total number of annotations. The rest of the methods, combined with these 3, allow to remove and select/unselect annotations.
+The {api:anychart.core.annotations.PlotController#getAnnotationAt}getAnnotationAt(){api}, {api:anychart.core.annotations.PlotController#getSelectedAnnotation}getSelectedAnnotation(){api}, and {api:anychart.core.annotations.PlotController#getAnnotationsCount}getAnnotationsCount(){api} methods are used get an annotation with a certain index, a selected annotation, or the total number of annotations. The rest of the methods, combined with these 3, allow to remove and select/unselect annotations.
 
 ### Removing
 
@@ -123,10 +143,9 @@ var selectedAnnotation = plot.annotations().getSelectedAnnotation();
 
 // remove the selected annotation
 plot.annotations().removeAnnotation(selectedAnnotation);
-});
 ```
 
-{sample}STOCK\_Drawing\_Drawing\_04{sample}
+{sample}STOCK\_Drawing\_Drawing\_05{sample}
 
 ### <a name='selecting\_unselecting'>Selecting/Unselecting</a>
 
@@ -143,9 +162,9 @@ plot.annotations().select(firstAnnotation);
 plot.annotations().unselect();
 ```
 
-{sample}STOCK\_Drawing\_Drawing\_05{sample}
+{sample}STOCK\_Drawing\_Drawing\_06{sample}
 
-## (???) Handling Events
+## Handling Events
 
 When working with annotations, the following {api:anychart.enums.EventType}events{api} can be handled:
 
@@ -156,7 +175,7 @@ When working with annotations, the following {api:anychart.enums.EventType}event
 <tr><td>ANNOTATION_UNSELECT</td><td>annotationUnselect</td><td>Event type for the annotation unselect.</td></tr>
 </table>
 
-(???) Please note that you should create a listener of a chart.
+Please note that you should attach listener to a chart.
 
 In the sample below, a listener is used to change the visual settings of annotations and the chart title on selection:
 
@@ -171,4 +190,4 @@ chart.listen("annotationSelect", function(e){
 });
 ```
 
-{sample}STOCK\_Drawing\_Drawing\_06{sample}
+{sample}STOCK\_Drawing\_Drawing\_07{sample}

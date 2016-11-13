@@ -35,20 +35,9 @@
     // an auxiliary variable for working with annotations
     var controller = plot.annotations();
 
-    // create a Rectangle annotation
-    var rectangle = controller.rectangle({
-        xAnchor: "2006-11-19",
-        valueAnchor: 29.84,
-        secondXAnchor: "2007-03-25",
-        secondValueAnchor: 25.11
-    });
-
-    // disable interactivity for the Rectangle annotation
-    rectangle.allowEdit(false);
-
     // set the chart position and title
     chart.top(15);
-    chart.title("Selecting and Unselecting");
+    chart.title("Removing Annotations");
 
     // set the chart container and initiate drawing the chart
     chart.container(stage);
@@ -78,26 +67,20 @@
         controller.removeAllAnnotations();
     });
 
-    // create a label for selecting the first annotation
-    createLabel("Select the First", 415, function() {
-        // get the first annotation
-        var firstAnnotation = controller.getAnnotationAt(0);
-        // select the first annotation
-        controller.select(firstAnnotation);
+    // create a label for removing the last drawn annotation
+    createLabel("Remove the Last", 390, function() {
+        // get the number of annotations
+        var annotationsCount = controller.getAnnotationsCount();
+        // remove the last annotation
+        controller.removeAnnotationAt(annotationsCount - 1);
     });
 
-    // create a label for unselecting a selected annotation
-    createLabel("Unselect", 536, function() {
-        // unselect the annotation
-        controller.unselect();
-    });
-
-    // create a label for forbidding editing a selected annotation
-    createLabel("Forbid Editing", 636, function() {
-        // get the selected annotation
+    // create a label for removing a selected annotation
+    createLabel("Remove Selected", 520, function() {
+    	// get the selected annotation
         var selectedAnnotation = controller.getSelectedAnnotation(); 
-        // forbid editing the annotation
-        selectedAnnotation.allowEdit(false);        
+        // remove the annotation
+        controller.removeAnnotation(selectedAnnotation);
     });
 });
 
