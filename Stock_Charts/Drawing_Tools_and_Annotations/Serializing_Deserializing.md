@@ -16,9 +16,9 @@ If you want to save annotations drawn by a user or to load them to a chart, you 
 
 To create a list of annotations in JSON format, use the {api:anychart.core.annotations.PlotController#toJson}toJson(){api} method. It has two optional parameters: **stringify** and **includeTheme**. The first parameter determines whether the JSON list is returned as a string or as an object, and the second determines whether the [theme](../../Appearance_Settings/Themes) settings are included into the list. By default both values are false, and the list is returned as an object and without the theme settings.
 
-To load the list of annotations, use the {api:anychart.core.annotations.PlotController#fromJson}fromJson(){api} method.
+To load the list of annotations, call the {api:anychart.core.annotations.PlotController#fromJson}fromJson(){api} method.
 
-In the following sample, these two methods are used to serialize annotations drawn on the first plot and then deserialize them to the second plot:
+In the following sample, these two methods are used to serialize annotations drawn (as well as [hardcoded](General_Settings#hardcoding_annotations)) on the first plot and then deserialize them to the second plot:
 
 ```
 // create a stock chart
@@ -49,11 +49,11 @@ controller2.fromJson(json);
 
 ### XML
 
-To create a list of annotations in XML format, use the {api:anychart.core.annotations.PlotController#toXml}toXml(){api} method.  It has two optional parameters: **asXmlNode** and **includeTheme**. The first parameter determines whether the JSON list is returned as an XML node or as a string, and the second determines whether the [theme](../Appearance_Settings/Themes) settings are included into the list. By default both values are false, and the list is returned as a string and without the theme settings.
+To create a list of annotations in XML format, use the {api:anychart.core.annotations.PlotController#toXml}toXml(){api} method.  It has two optional parameters: **asXmlNode** and **includeTheme**. The first parameter determines whether the JSON list is returned as an XML node or as a string, and the second determines whether the [theme](../../Appearance_Settings/Themes) settings are included into the list. By default both values are false, and the list is returned as a string and without the theme settings.
 
-To load the list of annotations, use the {api:anychart.core.annotations.PlotController#fromXml}fromXml(){api} method.
+To load the list of annotations, call the {api:anychart.core.annotations.PlotController#fromXml}fromXml(){api} method.
 
-In the sample below, these two methods are used to serialize annotations drawn on the first plot and then deserialize them to the second plot:
+In the sample below, these two methods are used to serialize annotations drawn (as well as [hardcoded](General_Settings#hardcoding_annotations)) on the first plot and then deserialize them to the second plot:
 
 ```
 // create a stock chart
