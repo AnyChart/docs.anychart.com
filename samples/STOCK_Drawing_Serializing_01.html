@@ -25,11 +25,11 @@
     // create a stock chart
     chart = anychart.stock();
 
-    // create an OHLC series
+    // create a line series
     var series1 = chart.plot(0).line(mapping);
     series1.name("Series 1")
 
-    // create a line series
+    // create an area series
     var series2 = chart.plot(1).area(mapping);
     series2.name("Series 2")
 
