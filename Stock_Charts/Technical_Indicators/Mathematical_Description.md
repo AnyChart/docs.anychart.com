@@ -54,7 +54,7 @@ Each point of the Adaptive Moving Average indicator is calculated by the followi
 
 1. Calculate the ER:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/ama\_er.png" width="650"></center>
+<center><img src="http://static.anychart.com/images/technical_indicators/ama\_er.png" width="343"></center>
 
 2. Then, use the following formula to calculate the SSC value:
 
@@ -62,7 +62,7 @@ Each point of the Adaptive Moving Average indicator is calculated by the followi
 
 3. Now, use the results from the actions made before and calcuate the indicator io:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/ama\_ama.png" width="650"></center>
+<center><img src="http://static.anychart.com/images/technical_indicators/ama\_ama.png" width="391"></center>
 
 ## Aroon
 
@@ -120,7 +120,7 @@ Coming soon.
 
 This indicator points are calculated by the following formula:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/mma.png" width="680"></center>
+<center><img src="http://static.anychart.com/images/technical_indicators/mma.png" width="400"></center>
 
 ## Money Flow Index (MFI)
 
