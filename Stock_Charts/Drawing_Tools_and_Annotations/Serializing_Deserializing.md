@@ -6,13 +6,6 @@
  * [JSON](#json)
  * [XML](#xml)
 
-
-toJson() - у этого метода есть два параметра (факультативных), описать их действие 
-один определяет, возвращать JSON list of annotation в виде объекта или в виде строки (по умолчанию это объект)
-второй - включать ли в этот список theme settings (ссылка на статью о темах)
-
-toXml() - аналогично
-
 ## Overview
 
 If you want to save annotations drawn by a user or to load them to a chart, you can use the {api:anychart.core.annotations.PlotController#getAnnotationAt}getAnnotationAt(){api} and {api:anychart.core.annotations.PlotController#getAnnotationsCount}getAnnotationsCount(){api} methods to go through all annotations and gather the data you need. But there is an easier way: you can also use built-in methods for serializing and deserializing annotations, which allow to work with the data either in JSON or in XML format. To learn more, see this article.
@@ -86,6 +79,5 @@ var xml = controller1.toXml();
 // deserialize the annotations to the second plot
 controller2.fromXml(xml);
 ```
-
 
 {sample}STOCK\_Drawing\_Serializing\_02{sample}
