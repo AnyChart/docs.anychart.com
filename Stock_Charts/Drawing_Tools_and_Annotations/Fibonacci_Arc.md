@@ -2,7 +2,8 @@
 #Fibonacci Arc
 
 * [Overview](#overview)
-* [Basic settings](#basic_settings)
+* [Basic Settings](#basic_settings)
+* [Configuring Levels](#configuring_levels)
 * [Visual Settings](#visual_settings)
 
 ## Overview
@@ -44,6 +45,13 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Fibonacci\_Arc\_01{sample}
 
+## Configuring Levels
+
+```
+```
+
+{sample}STOCK\_Drawing\_Fibonacci\_Arc\_02{sample}
+
 ## Visual Settings
 
 You can also configure the visual settings of a Fibonacci Arc annotation:
@@ -80,4 +88,4 @@ fibonacciArc2.secondValueAnchor(17.86);
 fibonacciArc2.stroke("#2196F3", 3, "10 2");
 ```
 
-{sample}STOCK\_Drawing\_Fibonacci\_Arc\_02{sample}
+{sample}STOCK\_Drawing\_Fibonacci\_Arc\_03{sample}

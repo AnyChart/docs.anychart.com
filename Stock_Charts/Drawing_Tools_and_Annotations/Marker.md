@@ -2,7 +2,7 @@
 #Marker
 
 * [Overview](#overview)
-* [Basic settings](#basic_settings)
+* [Basic Settings](#basic_settings)
 * [Type and Size](#type_and_size)
 * [Visual Settings](#visual_settings)
 
