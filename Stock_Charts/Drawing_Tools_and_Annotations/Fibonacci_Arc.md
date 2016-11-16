@@ -47,7 +47,14 @@ This is how it looks like:
 
 ## Configuring Levels
 
+You can set the positions and (implicitly) number of levels of a Fibonacci Arc annotation: use the {api:anychart.core.annotations.FibonacciArc#secondValueAnchor}levels(){api} method with an array of values that specify the positions of levels against the Y-axis:
+
 ```
+fibonacciArc.levels([0, 0.2, 0.4, 0.7, 1]);
+
+controller.fibonacciArc({
+    levels: [0, 0.2, 0.4, 0.7, 1]
+});
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Arc\_02{sample}
