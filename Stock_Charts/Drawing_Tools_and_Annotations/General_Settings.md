@@ -5,7 +5,7 @@
 * [Hardcoding](#hardcoding_annotations)
 * [Visual Settings](#visual_settings)
 * [Hover Gap](#hover_gap)
-* [Forbidding/Allowing Editing](#forbidding_allowing_editing)
+* [Forbidding Editing](#forbidding_editing)
 * [Binding to Axes](#binding_to_axes)
 * [Drawing](#drawing)
 
@@ -71,15 +71,22 @@ controller.ellipse({
 
 {sample}STOCK\_Drawing\_General\_02{sample}
 
-You can also configure the visual settings of markers: use the {api:anychart.core.annotations.Triangle#markers}markers(){api},  {api:anychart.core.annotations.Triangle#hovermarkers}hoverMarkers(){api}, and {api:anychart.core.annotations.Triangle#selectMarkers}selectMarkers(){api} methods.
+You can also configure the visual settings of markers: use the {api:anychart.core.annotations.Triangle#markers}markers(){api},  {api:anychart.core.annotations.Base#hovermarkers}hoverMarkers(){api}, and {api:anychart.core.annotations.Base#selectMarkers}selectMarkers(){api} methods.
 
-In this sample...
+In this sample, the hover and select colors of the Ellipse markers are set, and the Infinite Line markers are disabled on select:
+
+```
+// configure the markers
+ellipse.hoverMarkers({size: 6, fill: "#8BC34A"});
+ellipse.selectMarkers({size: 6, fill: "#8BC34A"});
+infiniteLine.selectMarkers(false);
+```
 
 {sample}STOCK\_Drawing\_General\_03{sample}
 
 ## Hover Gap
 
-Another setting of annotations you can configure is the hover gap: use the {api:anychart.core.annotations.Base#hoverGap}hoverGap(){api} method. In this sample, it is increased to 30:
+Another setting of annotations you can configure is the hover gap: use the {api:anychart.core.annotations.Base#hoverGap}hoverGap(){api} method. In the following sample, it is increased to 30:
 
 ```
 // an auxiliary variable for working with annotations
@@ -93,11 +100,14 @@ controller.ellipse({
 
 {sample}STOCK\_Drawing\_General\_04{sample}
 
-## <a name='forbidding\_allowing\_editing'>Forbidding/Allowing Editing</a>
+## Forbidding Editing
 
 To forbid or allow editing an annotation, use the {api:anychart.core.annotations.Base#allowEdit}allowEdit(){api} method (by default editing is allowed):
 
 ```
+// an auxiliary variable for working with annotations
+var controller = plot.annotations();
+
 // create an Ellipse annotation
 var ellipse = plot.annotations().ellipse({
     xAnchor: "2006-11-20",

@@ -6,7 +6,7 @@
 * [Initiating Drawing](#initiating_drawing)
 * [Canceling Drawing](#canceling_drawing)
 * [Forbidding Drawing](#forbidding_drawing)
-* [Forbidding/Allowing Editing](#forbidding_allowing_editing)
+* [Forbidding Editing](#forbidding_editing)
 * [Managing Annotations](#managing_annotations)
  * [Removing](#removing)
  * [Selecting/Unselecting](#selecting_unselecting)
@@ -77,9 +77,9 @@ In this sample, annotations can be drawn only on the first (OHLC) plot:
 
 {sample}STOCK\_Drawing\_Drawing\_03{sample}
 
-## Forbidding/Allowing Editing</a>
+## Forbidding Editing</a>
 
-To forbid or allow editing an annotation, use the {api:anychart.core.annotations.Base#allowEdit}allowEdit(){api} method. You can find more information in this article: [General Settings](General_Settings#forbidding_allowing_editing)
+To forbid or allow editing an annotation, use the {api:anychart.core.annotations.Base#allowEdit}allowEdit(){api} method. You can find more information in this article: [General Settings](General_Settings#forbidding_editing)
 
 ## Managing Annotations
 
@@ -121,7 +121,8 @@ plot.annotations().removeAnnotation(selectedAnnotation);
 
 {sample}STOCK\_Drawing\_Drawing\_04{sample}
 
-### <a name='selecting\_unselecting'>Selecting/Unselecting</a>
+<a name='selecting\_unselecting'></a>
+###Selecting/Unselecting
 
 To select or unselect an annotation, use the {api:anychart.core.annotations.PlotController#select}select(){api} and {api:anychart.core.annotations.PlotController#unselect}unselect(){api} methods:
 
