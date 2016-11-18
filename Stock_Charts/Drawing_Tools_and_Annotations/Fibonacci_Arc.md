@@ -47,12 +47,15 @@ This is how it looks like:
 
 ## Configuring Levels
 
-You can set the number (implicitly) and positions a Fibonacci Arc's levels against the Y-axis: use the {api:anychart.core.annotations.FibonacciArc#secondValueAnchor}levels(){api} method and pass an array of values as a parameter:
+You can set the levels of a Fibonacci Arc annotation by using the {api:anychart.core.annotations.FibonacciArc#levels}levels(){api} method and passing an array of values as a parameter:
 
 ```
-fibonacciArc.levels([0, 0.2, 0.4, 0.7, 1]);
-
+// create a Fibonacci Arc annotation
 controller.fibonacciArc({
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
+    secondXAnchor: "2007-01-07",
+    secondValueAnchor: 28.92,
     levels: [0, 0.2, 0.4, 0.7, 1]
 });
 ```
@@ -66,8 +69,6 @@ You can also configure the visual settings of a Fibonacci Arc annotation:
 * {api:anychart.core.annotations.FibonacciArc#color}color(){api}, {api:anychart.core.annotations.FibonacciArc#stroke}stroke(){api}, and {api:anychart.core.annotations.FibonacciArc#trend}trend(){api} set the color and stroke of the annotation and its trend
 * {api:anychart.core.annotations.FibonacciArc#hoverStroke}hoverStroke(){api} and {api:anychart.core.annotations.FibonacciArc#hoverTrend}hoverTrend(){api} configure the visual settings on hover
 * {api:anychart.core.annotations.FibonacciArc#selectStroke}selectStroke(){api} and {api:anychart.core.annotations.FibonacciArc#selectTrend}selectTrend(){api} configure the visual settings on select
-
-To change the visual settings of the levels, ...
 
 In the sample below, there are two Fibonacci Arc annotations with some of the visual settings configured (by using an object in the first case and methods in the second):
 
@@ -98,3 +99,36 @@ fibonacciArc2.stroke("#2196F3", 3, "10 2");
 ```
 
 {sample}STOCK\_Drawing\_Fibonacci\_Arc\_03{sample}
+
+To configure the visual settings of a certain level, use the {api:anychart.core.annotations.FibonacciArc#stroke}stroke(){api},  {api:anychart.core.annotations.FibonacciArc#hoverStroke}hoverStroke(){api}, and {api:anychart.core.annotations.FibonacciArc#selectStroke}selectStroke(){api} methods with a function as a parameter. In this function, get level values from the context:
+
+```
+// create a Fibonacci Arc annotation
+controller.fibonacciArc({
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
+    secondXAnchor: "2007-01-07",
+    secondValueAnchor: 28.92,
+    stroke: colorLevels,
+    hoverStroke: colorLevels,
+    selectStroke: colorLevels
+});
+
+function colorLevels(){
+  if (this.level!==undefined)
+  {
+    switch (this.level) {
+        case 0.5:
+            return "Red";
+            break;
+        case 0.618:
+            return {color: "Blue", dash: "2 2"};
+            break;
+        default:
+                return "Black"
+        }
+  }
+};
+```
+
+{sample}STOCK\_Drawing\_Fibonacci\_Arc\_04{sample}

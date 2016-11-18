@@ -3,6 +3,7 @@
 
 * [Overview](#overview)
 * [Basic Settings](#basic_settings)
+* [Configuring Levels](#configuring_levels)
 * [Visual Settings](#visual_settings)
 
 ## Overview
@@ -44,6 +45,23 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Fibonacci\_Retracement\_01{sample}
 
+## Configuring Levels
+
+You can set the levels of a Fibonacci Retracement annotation by using the {api:anychart.core.annotations.FibonacciRetracement#levels}levels(){api} method and passing an array of values as a parameter:
+
+```
+// create a Fibonacci Retracement annotation
+controller.fibonacciRetracement({
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
+    secondXAnchor: "2007-01-07",
+    secondValueAnchor: 28.92,
+    levels: [0, 0.2, 0.4, 0.7, 1]
+});
+```
+
+{sample}STOCK\_Drawing\_Fibonacci\_Retracement\_02{sample}
+
 ## Visual Settings
 
 You can also configure the visual settings of a Fibonacci Retracement annotation:
@@ -80,4 +98,38 @@ fibonacciRetracement2.secondValueAnchor(17.86);
 fibonacciRetracement2.stroke("#2196F3", 2, "10 2");
 ```
 
-{sample}STOCK\_Drawing\_Fibonacci\_Retracement\_02{sample}
+{sample}STOCK\_Drawing\_Fibonacci\_Retracement\_03{sample}
+
+To configure the visual settings of a certain level, use the {api:anychart.core.annotations.FibonacciRetracement#stroke}stroke(){api},  {api:anychart.core.annotations.FibonacciRetracement#hoverStroke}hoverStroke(){api}, and {api:anychart.core.annotations.FibonacciRetracement#selectStroke}selectStroke(){api} methods with a function as a parameter. In this function, get level values from the context:
+
+```
+// create a Fibonacci Retracement annotation
+controller.fibonacciRetracement({
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
+    secondXAnchor: "2007-01-07",
+    secondValueAnchor: 28.92,
+    stroke: colorLevels,
+    hoverStroke: colorLevels,
+    selectStroke: colorLevels
+});
+
+
+function colorLevels(){
+  if (this.level!==undefined)
+  {
+    switch (this.level) {
+        case 0.5:
+            return "Red";
+            break;
+        case 0.618:
+            return {color: "Blue", dash: "2 2"};
+            break;
+        default:
+                return "Black"
+        }
+  }
+};
+```
+
+{sample}STOCK\_Drawing\_Fibonacci\_Retracement\_04{sample}

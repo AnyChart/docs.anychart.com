@@ -3,6 +3,7 @@
 
 * [Overview](#overview)
 * [Basic Settings](#basic_settings)
+* [Configuring Levels](#configuring_levels)
 * [Visual Settings](#visual_settings)
 
 ## Overview
@@ -33,16 +34,34 @@ var controller = plot.annotations();
 
 // create a Fibonacci Fan annotation
 controller.fibonacciFan({
-    xAnchor: "2006-07-30",
-    valueAnchor: 17.24,
-    secondXAnchor: "2007-01-07",
-    secondValueAnchor: 28.92
+    xAnchor: "2007-01-07",
+    valueAnchor: 28.92,
+    secondXAnchor: "2009-03-01",
+    secondValueAnchor: 14.18
 });
 ```
 
 This is how it looks like:
 
 {sample}STOCK\_Drawing\_Fibonacci\_Fan\_01{sample}
+
+## Configuring Levels and Time Levels
+
+You can set the levels of a Fibonacci Fan annotation by using the {api:anychart.core.annotations.FibonacciFan#levels}levels(){api} and {api:anychart.core.annotations.FibonacciFan#timeLevels}levels(){api} methods and passing arrays of values as parameters:
+
+```
+// create a Fibonacci Fan annotation
+controller.fibonacciFan({
+    xAnchor: "2007-01-07",
+    valueAnchor: 28.92,
+    secondXAnchor: "2009-03-01",
+    secondValueAnchor: 14.18,
+    levels: [0, 0.2, 0.4, 0.7, 1],
+    timeLevels: [0, 0.2, 0.4, 0.7, 1]
+});
+```
+
+{sample}STOCK\_Drawing\_Fibonacci\_Fan\_02{sample}
 
 ## Visual Settings
 
@@ -56,11 +75,11 @@ In the sample below, there are two Fibonacci Fan annotations with some of the vi
 
 ```
 // create the first Fibonacci Fan annotation and configure its visual settings
-fibonacciFan1 = controller.fibonacciFan({
-    xAnchor: "2006-07-30",
-    valueAnchor: 17.24,
-    secondXAnchor: "2007-01-07",
-    secondValueAnchor: 28.92,
+    fibonacciFan1 = controller.fibonacciFan({
+    xAnchor: "2007-01-07",
+    valueAnchor: 28.92,
+    secondXAnchor: "2009-03-01",
+    secondValueAnchor: 14.18,
     hoverTrend: "#0000FF",
     hoverGrid: "#0000FF",
     hoverStroke: "#FF0000",
@@ -72,13 +91,58 @@ fibonacciFan1 = controller.fibonacciFan({
 fibonacciFan2 = controller.fibonacciFan();
 
 // set the position of the second annotation
-fibonacciFan2.xAnchor("2004-01-11");
-fibonacciFan2.valueAnchor(29.13);
-fibonacciFan2.secondXAnchor("2004-08-08");
-fibonacciFan2.secondValueAnchor(17.86);
+fibonacciFan2.xAnchor("2006-07-30");
+fibonacciFan2.valueAnchor(17.24);
+fibonacciFan2.secondXAnchor("2004-01-11");
+fibonacciFan2.secondValueAnchor(29.13);
  
 // configure the visual settings of the second annotation
 fibonacciFan2.stroke("#2196F3", 2, "10 2");
 ```
 
-{sample}STOCK\_Drawing\_Fibonacci\_Fan\_02{sample}
+{sample}STOCK\_Drawing\_Fibonacci\_Fan\_03{sample}
+
+To configure the visual settings of a certain level or time zone, use the {api:anychart.core.annotations.FibonacciFan#stroke}stroke(){api},  {api:anychart.core.annotations.FibonacciFan#hoverStroke}hoverStroke(){api}, and {api:anychart.core.annotations.FibonacciFan#selectStroke}selectStroke(){api} methods with a function as a parameter. In this function, get level and time level values from the context:
+
+```
+// create a Fibonacci Fan annotation
+controller.fibonacciFan({
+    xAnchor: "2007-01-07",
+    valueAnchor: 28.92,
+    secondXAnchor: "2009-03-01",
+    secondValueAnchor: 14.18,
+    stroke: colorLevels,
+    hoverStroke: colorLevels,
+    selectStroke: colorLevels
+});
+
+
+function colorLevels(){
+  if (this.level!==undefined)
+  {
+    switch (this.level) {
+        case 0.5:
+            return "Red";
+            break;
+        case 0.618:
+            return {color: "Blue", dash: "2 2"};
+            break;
+        default:
+                return "Black"
+        }
+  } else {
+    switch (this.timeLevel) {
+        case 0.618:
+            return "Red";
+            break;
+        case 0.5:
+            return {color: "Blue", dash: "2 2"};
+            break;
+        default:
+                return "Black";
+     }
+    }
+};
+```
+
+{sample}STOCK\_Drawing\_Fibonacci\_Fan\_04{sample}
