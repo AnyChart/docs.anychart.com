@@ -121,7 +121,7 @@ ellipse.allowEdit(false);
 infiniteLine.allowEdit(true);
 ```
 
-{sample}STOCK\_General\_05{sample}
+{sample}STOCK\_Drawing\_General\_05{sample}
 
 ## Binding to Axes
 

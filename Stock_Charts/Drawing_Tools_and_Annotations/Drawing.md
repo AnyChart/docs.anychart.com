@@ -77,7 +77,7 @@ In this sample, annotations can be drawn only on the first (OHLC) plot:
 
 {sample}STOCK\_Drawing\_Drawing\_03{sample}
 
-## <a name='forbidding\_allowing\_editing'>Forbidding/Allowing Editing</a>
+## Forbidding/Allowing Editing</a>
 
 To forbid or allow editing an annotation, use the {api:anychart.core.annotations.Base#allowEdit}allowEdit(){api} method. You can find more information in this article: [General Settings](General_Settings#forbidding_allowing_editing)
 

@@ -3,7 +3,7 @@
 
 * [Overview](#overview)
 * [Basic Settings](#basic_settings)
-* [Configuring Levels](#configuring_levels)
+* [Configuring Levels](#configuring_levels_and_Time_Levels)
 * [Visual Settings](#visual_settings)
 
 ## Overview
@@ -47,7 +47,7 @@ This is how it looks like:
 
 ## Configuring Levels and Time Levels
 
-You can set the levels of a Fibonacci Fan annotation by using the {api:anychart.core.annotations.FibonacciFan#levels}levels(){api} and {api:anychart.core.annotations.FibonacciFan#timeLevels}levels(){api} methods and passing arrays of values as parameters:
+You can set the levels and time levels of a Fibonacci Fan annotation by using the {api:anychart.core.annotations.FibonacciFan#levels}levels(){api} and {api:anychart.core.annotations.FibonacciFan#timeLevels}timeLevels(){api} methods and passing arrays of values as parameters:
 
 ```
 // create a Fibonacci Fan annotation
@@ -102,7 +102,7 @@ fibonacciFan2.stroke("#2196F3", 2, "10 2");
 
 {sample}STOCK\_Drawing\_Fibonacci\_Fan\_03{sample}
 
-To configure the visual settings of a certain level or time zone, use the {api:anychart.core.annotations.FibonacciFan#stroke}stroke(){api},  {api:anychart.core.annotations.FibonacciFan#hoverStroke}hoverStroke(){api}, and {api:anychart.core.annotations.FibonacciFan#selectStroke}selectStroke(){api} methods with a function as a parameter. In this function, get level and time level values from the context:
+To configure the visual settings of a certain level or time level, use the {api:anychart.core.annotations.FibonacciFan#stroke}stroke(){api},  {api:anychart.core.annotations.FibonacciFan#hoverStroke}hoverStroke(){api}, and {api:anychart.core.annotations.FibonacciFan#selectStroke}selectStroke(){api} methods with a function as a parameter. In this function, get level and time level values from the context:
 
 ```
 // create a Fibonacci Fan annotation
