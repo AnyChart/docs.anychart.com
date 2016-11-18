@@ -79,33 +79,7 @@ In this sample, annotations can be drawn only on the first (OHLC) plot:
 
 ## <a name='forbidding\_allowing\_editing'>Forbidding/Allowing Editing</a>
 
-To forbid or allow editing an annotation, use the {api:anychart.core.annotations.Base#allowEdit}allowEdit(){api} method (by default editing is allowed):
-
-```
-// create an Ellipse annotation
-var ellipse = plot.annotations().ellipse({
-    xAnchor: "2006-11-20",
-    valueAnchor: 25.92,
-    secondXAnchor: "2007-02-24",
-    secondValueAnchor: 31.92,
-});
-
-// create an Infinite Line annotation
-var infiniteLine = plot.annotations().infiniteLine({
-    xAnchor: "2005-09-04",
-    valueAnchor: 18.58,
-    secondXAnchor: "2008-08-10",
-    secondValueAnchor: 24.91,
-});
-
-//disable interactivity for the Ellipse annotation
-ellipse.allowEdit(false);
-
-// enable interactivity for the Infinite Line annotation
-infiniteLine.allowEdit(true);
-```
-
-{sample}STOCK\_Drawing\_Drawing\_04{sample}
+To forbid or allow editing an annotation, use the {api:anychart.core.annotations.Base#allowEdit}allowEdit(){api} method. You can find more information in this article: [General Settings](General_Settings#forbidding_allowing_editing)
 
 ## Managing Annotations
 
@@ -145,7 +119,7 @@ var selectedAnnotation = plot.annotations().getSelectedAnnotation();
 plot.annotations().removeAnnotation(selectedAnnotation);
 ```
 
-{sample}STOCK\_Drawing\_Drawing\_05{sample}
+{sample}STOCK\_Drawing\_Drawing\_04{sample}
 
 ### <a name='selecting\_unselecting'>Selecting/Unselecting</a>
 
@@ -162,7 +136,7 @@ plot.annotations().select(firstAnnotation);
 plot.annotations().unselect();
 ```
 
-{sample}STOCK\_Drawing\_Drawing\_06{sample}
+{sample}STOCK\_Drawing\_Drawing\_05{sample}
 
 ## Handling Events
 
@@ -190,4 +164,4 @@ chart.listen("annotationSelect", function(e){
 });
 ```
 
-{sample}STOCK\_Drawing\_Drawing\_07{sample}
+{sample}STOCK\_Drawing\_Drawing\_06{sample}

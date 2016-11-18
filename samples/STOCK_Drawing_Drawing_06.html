@@ -37,7 +37,7 @@
 
     // set the chart position and title
     chart.top(15);
-    chart.title("Selecting and Unselecting Annotations");
+    chart.title("Handling Events");
 
     // set the chart container and initiate drawing the chart
     chart.container(stage);
@@ -65,21 +65,19 @@
     createLabel("Remove All", 300, function() {
         // remove all annotations
         controller.removeAllAnnotations();
+        // change the chart title
+        chart.title("Handling Events");
     });
 
-    // create a label for selecting the first annotation
-    createLabel("Select the First", 415, function() {
-        // get the first annotation
-        var firstAnnotation = controller.getAnnotationAt(0);
-        // select the first annotation
-        controller.select(firstAnnotation);
+    // create an event listener for selection
+    chart.listen("annotationSelect", function(e){
+        var selectedAnnotation = e.annotation;
+        // change the annotation stroke on selection
+        selectedAnnotation.selectStroke("#FF0000", 3, "5 2", "round");
+        // change the chart title on selection
+        chart.title("The " + selectedAnnotation.getType() + " annotation is selected.");
     });
-
-    // create a label for unselecting a selected annotation
-    createLabel("Clear Selection", 536, function() {
-        // unselect the annotation
-        controller.unselect();
-    });
+    
 });
 
 // a helper function for creating buttons
