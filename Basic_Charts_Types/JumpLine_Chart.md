@@ -1,5 +1,5 @@
 {:index 1}
-# Line Chart
+# JumpLine Chart
 
 * [Overview](#overview)
 * [Chart](#chart)
@@ -9,12 +9,11 @@
   * [Orientation](#orientation)
   * [Inversion](#inversion)
   * [Minimum and Maximum](#minimum_and_maximum)
+* [Colors](#colors)
+* [Markers](#markers)
 * [Visualization](#visualization)
   * [Basic Sample](#basic_sample)
 * [Labels and Tooltips](#labels_and_tooltips)
-* [Markers](#markers)
-* [Colors](#colors)
-  * [Colorizing Elements](#colorizing_elements)
 * [Samples](#samples)
 
 ## Overview
@@ -155,7 +154,7 @@ yAxis.orientation("right");
 
 Below this you can see the demonstration of this feature in the Single-series sample:
 
-{sample}BCT\_LineChart\_05{sample}
+{sample}BCT\_JumpLine\_Chart\_03{sample}
 
 Try to swap the axes and watch the consequences:
 
@@ -166,11 +165,11 @@ var yAxis = chart.yAxis();
 yAxis.orientation("bottom");
 ```
 
-Below this you can see the demonstration of this feature in the Single-series sample:
+Watch the demonstration of this feature in the Single-series sample below:
 
-{sample}BCT\_LineChart\_05{sample}
+{sample}BCT\_JumpLine\_Chart\_04{sample}
 
-The result looks a bit like a [Stick Chart](Stick_Chart), but the length (which is actually width) is the same for 
+The result looks a bit like a [Stick Chart](Stick_Chart), but the length (which is actually width) is the same for all points, while in the Stick Charts the length of the sticks is important.
 
 ### Inversion
 
@@ -183,7 +182,7 @@ yScale.inverted(true);
 
 And here is the demonstration of Y Scale inversion on the Single-series sample:
 
-{sample}BCT\_LineChart\_06{sample}
+{sample}BCT\_JumpLine\_Chart\_05{sample}
 
 ### Minimum and Maximum
 
@@ -197,20 +196,20 @@ yScale.maximum(30000);
 
 And here is the demonstration of setting the max and min values in the Single-series sample:
 
-{sample}BCT\_LineChart\_07{sample}
+{sample}BCT\_JumpLine\_Chart\_06{sample}
 
-## Visualization
 
-This section gives an overview of applying some methods and creating styles for making a custom visualization of your chart.
 
-The first way to set the series color is to create a style using the {api:}stroke(){api}, {api:}hoverStroke(){api} and {api:}selectStroke(){api} methods.
+## Colors
+
+The first way to set the series color is to create a style for the series using the {api:}stroke(){api}, {api:}hoverStroke(){api} and {api:}selectStroke(){api} methods.
 
 ```
-series1.stroke("#663399", 3);
-series1.hoverStroke("#663399");
-series1.selectStroke("#663399");
+series1.stroke("#67329c", 3);
+series1.hoverStroke("#9966cc", 3);
+series1.selectStroke("#663399", 3);
 ```
-{sample}BCT\_LineChart\_07{sample}
+{sample}BCT\_JumpLine\_Chart\_07{sample}
 
 The second way to set colors and stroke decoration is to use the data set. This way is the best in cases when it is necessary to set different colors for different points (e.g. to highlight some of them due to some reason).
 
@@ -222,31 +221,63 @@ var dataSet = anychart.data.set([
   ["April", 11000, 15000, "black", "navy"],
   ["May", 9000, 14000],
 ]);
+var seriesData_1 = dataSet.mapAs({x: [0], value: [1], stroke: [3]});
+var seriesData_2 = dataSet.mapAs({x: [0], value: [2], stroke: [4]});
 ```
-{sample}BCT\_LineChart\_07{sample}
+{sample}BCT\_JumpLine\_Chart\_08{sample}
 
-There is one more way to set the colors for all the chart. It is possible to create a style
+There is one more way to set the colors for all the chart. It is possible to create a palette for the whole chart or to set a predefined one. Find the list of palettes in the [Palettes article](../Appearance_Settings/Palettes).
 
 
-In this section we will describe the main parts of the line chart style and demonstrate how this style can be applied.
-<!-- Also you will see the list of predefined styles.-->
+## Markers
 
-The main idea of styles is to segregate visualization and data definition. Visual appearance of lines is defined in certain styles. 
-<!--Style can be applied to data series, data category or single data point.-->
+Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including JumpLines.
 
-<!--Line chart style can be configured in <line_style> and <line_series> nodes.-->
-Also, styles are used to make charts interactive, so you can define how elements should be displayed by default and when hovered.
-<!-- More information about these features can be found in Interactivity tutorial.-->
+There are two ways to set the markers. First id to enable the markers for the series, like setting te color:
+
+```
+// create markers
+markers = series1.markers();
+markers.enabled(true);
+```
+
+{sample}BCT\_JumpLine\_Chart\_09{sample}
+
+The second one is to add a marker to the exact point, using the data set:
+
+```
+{
+  x: "March",
+  value: 18000,
+  marker:{
+    enabled: true,
+    type: "star5",
+    fill: "#d84b20",
+    size: 12},
+  hoverMarker: {size: 22}
+}
+```
+
+And here is a result - March is the most profitable month and we are showing this on the chart:
+
+{sample}BCT\_JumpLine\_Chart\_10{sample}
+
+
+## Visualization
+
+This section gives an overview of making custom visualization of your chart.
+
+At first, let's creat e a simple style.
 
 ### Basic Sample
 
-Now, let's look how to create a simple style and apply it to the chart. As we've already said a style consists of several elements, and its acceptable structure is given downwards:
+Now, let's look how to create a simple style and apply it to the chart. A style consists of several elements, such as stroke colors in all states, marker shape, color and size in all states, etc.
 
 ```
   // line settings
-  series.stroke(
+  series2.stroke(
     // set line color
-    "Rgb(86,86,26)",
+    "#025669",
     // set line size
     4
   );
@@ -254,7 +285,7 @@ Now, let's look how to create a simple style and apply it to the chart. As we've
   // line settings in hovered state
   series.hoverStroke(
     // set line color
-    "Rgb(86,86,26)",
+    "#04a7cc",
     // set line size
     4
   );
@@ -265,9 +296,9 @@ Now, let's look how to create a simple style and apply it to the chart. As we've
   // set marker type
   markers.type("star5");
   // set marker inner color
-  markers.fill("gold");
+  markers.fill("#d69942");
   // set marker border
-  markers.stroke("darkred");
+  markers.stroke("#916321");
   // set marker size
   markers.size(7);
   
@@ -276,82 +307,32 @@ Now, let's look how to create a simple style and apply it to the chart. As we've
   // marker size
   hoverMarkers.size(7);
   // marker inner color
-  hoverMarkers.fill("darkred");
+  hoverMarkers.fill("#deaf6d");
   // marker border
-  hoverMarkers.stroke("gold");
+  hoverMarkers.stroke("#916321");
 ```
 
 Using such settings we've redefined line color and made it rather thick. Also, we've redefined settings for each point marker along with settings for each marker in hovered state.
-<!--
-Now let's take a sample of a single-series chart described above, define style in JSON and apply it to all chart elements, using <line_series style="style1"/>
--->
-{sample}BCT\_LineChart\_08{sample}
+
+{sample}BCT\_JumpLine\_Chart\_11{sample}
 
 ## Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips.
-<!-- Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
   
-If you want to configure data labels and tooltips for all series - you should use {api:anychart.charts.Cartesian#labels}labels(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods.
+To configure data labels and tooltips for all series use {api:anychart.charts.Cartesian#labels}labels(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods.
   
   
 With the following example let's make data labels appear to the top from the data points, format them to show only the value corresponding to the point values and force tooltips to show detailed description.
 
-{sample}BCT\_LineChart\_09{sample}
+{sample}BCT\_JumpLine\_Chart\_12{sample}
 
-<!--Related Help Topics:
 
-* Learn more about labels and tooltips in Labels and tooltips
-* Full Keywords reference and formatting guide:Labels and tooltips
-* Full reference of data labels settings can be found in XML Reference, particularly <label_style> and <label> nodes.
--->
 
-## Markers
 
-Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including lines.
-  
-  
-In the sample below we take single-series data described above and mark the highest point in series with a "Star5" of the "Gold" color.
-  
-  
-To make marker visually appealing we set its size to 12 pixels in normal state, and 22px while hovered.
 
-  
-```
-  {
-    x: "March",
-    value: 18000,
-    marker:{
-      enabled: true,
-      type: "star5",
-      fill: "gold",
-      size: 12},
-    hoverMarker: {size: 22}
-  }
-```
 
-And here is a result - March is the most profitable month and we are showing this on the chart:
-
-{sample}BCT\_LineChart\_10{sample}
-
-<!--
-Related help topics:
-You can read more about working with markers in Markers tutorial.
-Full reference of marker style can be found in XML Reference, particularly <marker_style> node.
--->
-
-## Colors
-
-AnyChart uses default color palette to colorize data elements of chart automatically if you have not defined special colors, though it allows you to specify colors for the points.
-
-### Colorizing Elements
-
-Let's demonstrate how to apply different colors to different data series. To apply the color to the exact series we need to set {api:anychart.graphics.vector.Stroke}stroke(){api} parameter for this series. In the sample below we've got 5 series with sample data and we'll color each series to different color. Here is the sample:
-
-{sample}BCT\_LineChart\_11{sample}
-
-**Note**: you can find more information about lines' visual appearance in [Line Settings tutorial](../Appearance_Settings/Lines_Settings).
 
 ## Samples
 
-You can see a lot of other samples in [AnyChart Web Line, Spline, Step-Line Charts Gallery](http://anychart.com/products/anychart/gallery/Line,_Spline,_Step-Line_Charts/).
+Find a lot of other samples in [AnyChart Web Line, Spline, Step-Line Charts Gallery](http://anychart.com/products/anychart/gallery/Line,_Spline,_Step-Line_Charts/).
