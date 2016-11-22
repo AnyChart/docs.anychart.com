@@ -11,14 +11,14 @@
 
   // data
 var dataSet = anychart.data.set([
-  ["January", 10000, 12000],
-  ["February", 12000, 15000],
+  ["January", 10000, 12000, "red", "green"],
+  ["February", 12000, 15000, "red", "gold"],
   ["March", 18000, 16000],
-  ["April", 11000, 15000],
+  ["April", 11000, 15000, "black", "navy"],
   ["May", 9000, 14000],
 ]);
-var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
-var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+var seriesData_1 = dataSet.mapAs({x: [0], value: [1], stroke: [3]});
+var seriesData_2 = dataSet.mapAs({x: [0], value: [2], stroke: [4]});
 var chart = anychart.line();
 series1 = chart.jumpLine(seriesData_1);
 series2 = chart.jumpLine(seriesData_2);
@@ -29,7 +29,7 @@ series1.hoverStroke("#9966cc", 3);
 series1.selectStroke("#663399", 3);
 
   // title
-  chart.title("JumpLine Chart");
+  chart.title("Colors set through the data set");
 
   // set axes titles
   var xAxis = chart.xAxis();

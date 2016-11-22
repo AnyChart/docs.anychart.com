@@ -11,10 +11,10 @@
 
   // data
 var dataSet = anychart.data.set([
-  ["January", 10000, 12000, "red", "green"],
-  ["February", 12000, 15000, "red", "gold"],
+  ["January", 10000, 12000],
+  ["February", 12000, 15000],
   ["March", 18000, 16000],
-  ["April", 11000, 15000, "black", "navy"],
+  ["April", 11000, 15000],
   ["May", 9000, 14000],
 ]);
 var seriesData_1 = dataSet.mapAs({x: [0], value: [1], stroke: [3]});
@@ -28,8 +28,12 @@ series1.stroke("#67329c", 3);
 series1.hoverStroke("#9966cc", 3);
 series1.selectStroke("#663399", 3);
 
+// create markers
+markers = series1.markers();
+markers.enabled(true);
+
   // title
-  chart.title("JumpLine Chart");
+  chart.title("JumpLine Chart with markers enabled");
 
   // set axes titles
   var xAxis = chart.xAxis();

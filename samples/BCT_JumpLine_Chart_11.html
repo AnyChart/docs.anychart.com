@@ -13,7 +13,7 @@
 var dataSet = anychart.data.set([
   {x: "January", value: 10000},
   {x: "February", value: 12000},
-  {x: "March", value: 18000, marker:{enabled: true, type: "star5", fill: "#d84b20", size: 12}, hoverMarker: {size: 22}},
+  {x: "March", value: 18000},
   {x: "April", value: 11000},
   {x: "May", value: 9000},
 ]);
@@ -29,18 +29,35 @@ series.selectStroke("#663399", 3);
 markers = series.markers();
 markers.enabled(true);
 
-  // title
-  chart.title("JumpLine Chart with a marker set through the data set");
+// title
+chart.title("Labels and Tooltips setting");
 
-  // set axes titles
-  var xAxis = chart.xAxis();
-  xAxis.title("Sales");
-  var yAxis = chart.yAxis();
-  yAxis.title("Month");
+// set axes titles
+var xAxis = chart.xAxis();
+xAxis.title("Sales");
+var yAxis = chart.yAxis();
+yAxis.title("Month");
 
-  // draw
-  chart.container("container");
-  chart.draw();
+// stroke settings
+series.stroke("#025669", 4);
+series.hoverStroke("#04a7cc", 4);
+
+// format the labels
+labels = series.labels();
+labels.enabled(true);
+labels.textFormatter("${%Value}");
+labels.position("center");
+labels.anchor("bottom");
+
+// set the tooltips
+tooltips = series.tooltip();
+tooltips.textFormatter("${%Value}");
+tooltips.background("#e0d6d1");
+tooltips.fontColor("#4d3c33");
+
+// draw
+chart.container("container");
+chart.draw();
 });</script>
 </head>
 <body>

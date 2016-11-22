@@ -23,13 +23,13 @@ var chart = anychart.line();
 series1 = chart.jumpLine(seriesData_1);
 series2 = chart.jumpLine(seriesData_2);
 
-  // title
-  chart.title("JumpLine Chart");
+// set a style
+series1.stroke("#67329c", 3);
+series1.hoverStroke("#9966cc", 3);
+series1.selectStroke("#663399", 3);
 
-  var yScale = chart.yScale();
-  yScale.inverted(true);
-  yScale.minimum(0);
-  yScale.maximum(30000);
+  // title
+  chart.title("Stroking colors");
 
   // set axes titles
   var xAxis = chart.xAxis();

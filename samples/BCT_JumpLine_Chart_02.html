@@ -8,8 +8,7 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
-
-  // data
+// data
 var dataSet = anychart.data.set([
   ["January", 10000, 12000],
   ["February", 12000, 15000],
@@ -23,18 +22,18 @@ var chart = anychart.line();
 series1 = chart.jumpLine(seriesData_1);
 series2 = chart.jumpLine(seriesData_2);
 
-  // title
-  chart.title("JumpLine Chart");
+// title
+chart.title("Multi-series JumpLine Chart");
 
-  // set axes titles
-  var xAxis = chart.xAxis();
-  xAxis.title("Sales");
-  var yAxis = chart.yAxis();
-  yAxis.title("Month");
+// set axes titles
+var xAxis = chart.xAxis();
+xAxis.title("Sales");
+var yAxis = chart.yAxis();
+yAxis.title("Month");
 
-  // draw
-  chart.container("container");
-  chart.draw();
+// draw
+chart.container("container");
+chart.draw();
 });</script>
 </head>
 <body>

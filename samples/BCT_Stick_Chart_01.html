@@ -11,23 +11,16 @@
 
   // data
 var dataSet = anychart.data.set([
-  ["January", 10000, 12000],
-  ["February", 12000, 15000],
-  ["March", 18000, 16000],
-  ["April", 11000, 15000],
-  ["May", 9000, 14000],
+  {x: "January", value: 10000},
+  {x: "February", value: 12000},
+  {x: "March", value: 18000},
+  {x: "April", value: 11000},
+  {x: "May", value: 9000},
 ]);
-var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
-var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
 var chart = anychart.line();
-series1 = chart.jumpLine(seriesData_1);
-series2 = chart.jumpLine(seriesData_2);
-
+series = chart.stick(dataSet);
 // title
-chart.title("Inverted scales");
-
-var yScale = chart.yScale();
-yScale.inverted(true);
+chart.title("Single Series Stick Chart");
 
 // set axes titles
 var xAxis = chart.xAxis();

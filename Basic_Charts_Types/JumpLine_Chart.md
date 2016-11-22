@@ -24,7 +24,7 @@ JumpLine Charts are usually used for demonstrating rates.
 
 ## Chart
 
-The JumpLine Chart is created by the {api:}jumpline(){api} method. The following sections tell all about creating ang managing them. 
+The JumpLine Chart is created by the {api:anychart.charts.Cartesian#jumpLine}jumpline(){api} method. The following sections tell all about creating ang managing them. 
 
 ### Single Series Chart
 
@@ -130,7 +130,7 @@ series1 = chart.jumpLine(seriesData_1);
 series2 = chart.jumpLine(seriesData_2);
 ```
 
-As you can see, adding a new series is done by using the {api}jumpLine(){api} method each time.
+As you can see, adding a new series is done by using the {api:anychart.charts.Cartesian#jumpLine}jumpLine(){api} method each time.
 
 {sample}BCT\_JumpLine\_Chart\_02{sample}
 
@@ -152,24 +152,10 @@ var yAxis = chart.yAxis();
 yAxis.orientation("right");
 ```
 
-Below this you can see the demonstration of this feature in the Single-series sample:
+Below this you can see the demonstration of this feature in the Multi-series sample:
 
 {sample}BCT\_JumpLine\_Chart\_03{sample}
 
-Try to swap the axes and watch the consequences:
-
-```
-var xAxis = chart.xAxis();
-xAxis.orientation("left");
-var yAxis = chart.yAxis();
-yAxis.orientation("bottom");
-```
-
-Watch the demonstration of this feature in the Single-series sample below:
-
-{sample}BCT\_JumpLine\_Chart\_04{sample}
-
-The result looks a bit like a [Stick Chart](Stick_Chart), but the length (which is actually width) is the same for all points, while in the Stick Charts the length of the sticks is important.
 
 ### Inversion
 
@@ -180,13 +166,13 @@ var yScale = chart.yScale();
 yScale.inverted(true);
 ```
 
-And here is the demonstration of Y Scale inversion on the Single-series sample:
+And here is the demonstration of Y Scale inversion on the Multi-series sample:
 
-{sample}BCT\_JumpLine\_Chart\_05{sample}
+{sample}BCT\_JumpLine\_Chart\_04{sample}
 
 ### Minimum and Maximum
 
-When you set the data for your chart, the min amd max values of this chart axes are set automatically. Though, it is possible to force them and set custom axes extreme values. Use the {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} methods to set max and min values for each axis. 
+When you set the data for your chart, the min and max values of this chart axes are set automatically. Though, it is possible to force them and set custom axes extreme values. Use the {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} methods to set max and min values for each axis. 
 
 ```
 var yScale = chart.yScale();
@@ -194,22 +180,22 @@ yScale.minimum(0);
 yScale.maximum(30000);
 ```
 
-And here is the demonstration of setting the max and min values in the Single-series sample:
+And here is the demonstration of setting the max and min values in the Multi-series sample:
 
-{sample}BCT\_JumpLine\_Chart\_06{sample}
+{sample}BCT\_JumpLine\_Chart\_05{sample}
 
 
 
 ## Colors
 
-The first way to set the series color is to create a style for the series using the {api:}stroke(){api}, {api:}hoverStroke(){api} and {api:}selectStroke(){api} methods.
+The first way to set the series color is to create a style for the series using the {api:anychart.core.cartesian.series.JumpLine#stroke}stroke(){api}, {api:anychart.core.cartesian.series.JumpLine#hoverStroke}hoverStroke(){api} and {api:anychart.core.cartesian.series.JumpLine#selectStroke}selectStroke(){api} methods.
 
 ```
 series1.stroke("#67329c", 3);
 series1.hoverStroke("#9966cc", 3);
 series1.selectStroke("#663399", 3);
 ```
-{sample}BCT\_JumpLine\_Chart\_07{sample}
+{sample}BCT\_JumpLine\_Chart\_06{sample}
 
 The second way to set colors and stroke decoration is to use the data set. This way is the best in cases when it is necessary to set different colors for different points (e.g. to highlight some of them due to some reason).
 
@@ -224,7 +210,7 @@ var dataSet = anychart.data.set([
 var seriesData_1 = dataSet.mapAs({x: [0], value: [1], stroke: [3]});
 var seriesData_2 = dataSet.mapAs({x: [0], value: [2], stroke: [4]});
 ```
-{sample}BCT\_JumpLine\_Chart\_08{sample}
+{sample}BCT\_JumpLine\_Chart\_07{sample}
 
 There is one more way to set the colors for all the chart. It is possible to create a palette for the whole chart or to set a predefined one. Find the list of palettes in the [Palettes article](../Appearance_Settings/Palettes).
 
@@ -233,7 +219,7 @@ There is one more way to set the colors for all the chart. It is possible to cre
 
 Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including JumpLines.
 
-There are two ways to set the markers. First id to enable the markers for the series, like setting te color:
+There are two ways to set the markers. First is to enable the markers for the series, like setting the color:
 
 ```
 // create markers
@@ -241,7 +227,7 @@ markers = series1.markers();
 markers.enabled(true);
 ```
 
-{sample}BCT\_JumpLine\_Chart\_09{sample}
+{sample}BCT\_JumpLine\_Chart\_08{sample}
 
 The second one is to add a marker to the exact point, using the data set:
 
@@ -260,38 +246,26 @@ The second one is to add a marker to the exact point, using the data set:
 
 And here is a result - March is the most profitable month and we are showing this on the chart:
 
-{sample}BCT\_JumpLine\_Chart\_10{sample}
+{sample}BCT\_JumpLine\_Chart\_09{sample}
 
 
 ## Visualization
 
 This section gives an overview of making custom visualization of your chart.
 
-At first, let's creat e a simple style.
+At first, let's create a simple style.
 
 ### Basic Sample
 
-Now, let's look how to create a simple style and apply it to the chart. A style consists of several elements, such as stroke colors in all states, marker shape, color and size in all states, etc.
+Now, let's look how to create a simple style and apply it to the chart. A style consists of several elements, such as stroke colors in all states, marker shape, color and size in all states, etc. - so basically, style is a composition of all features described before.
 
 ```
-  // line settings
-  series2.stroke(
-    // set line color
-    "#025669",
-    // set line size
-    4
-  );
-  
-  // line settings in hovered state
-  series.hoverStroke(
-    // set line color
-    "#04a7cc",
-    // set line size
-    4
-  );
-    
+  // stroke settings
+  series.stroke("#025669", 4);
+  series.hoverStroke("#04a7cc", 4);
+      
   var markers = series.markers();
-  // enables markers
+  // enable markers
   markers.enabled(true);
   // set marker type
   markers.type("star5");
@@ -314,23 +288,32 @@ Now, let's look how to create a simple style and apply it to the chart. A style 
 
 Using such settings we've redefined line color and made it rather thick. Also, we've redefined settings for each point marker along with settings for each marker in hovered state.
 
-{sample}BCT\_JumpLine\_Chart\_11{sample}
+{sample}BCT\_JumpLine\_Chart\_10{sample}
 
 ## Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips.
   
 To configure data labels and tooltips for all series use {api:anychart.charts.Cartesian#labels}labels(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods.
-  
-  
+    
 With the following example let's make data labels appear to the top from the data points, format them to show only the value corresponding to the point values and force tooltips to show detailed description.
 
-{sample}BCT\_JumpLine\_Chart\_12{sample}
+```
+// format the labels
+labels = series.labels();
+labels.enabled(true);
+labels.textFormatter("${%Value}");
+labels.position("center");
+labels.anchor("bottom");
 
+// set the tooltips
+tooltips = series.tooltip();
+tooltips.textFormatter("${%Value}");
+tooltips.background("#e0d6d1");
+tooltips.fontColor("#4d3c33");
+```
 
-
-
-
+{sample}BCT\_JumpLine\_Chart\_11{sample}
 
 
 ## Samples

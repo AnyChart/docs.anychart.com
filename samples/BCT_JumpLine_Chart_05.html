@@ -24,10 +24,12 @@ series1 = chart.jumpLine(seriesData_1);
 series2 = chart.jumpLine(seriesData_2);
 
   // title
-  chart.title("JumpLine Chart");
+  chart.title("Minimum and maximum scale values");
 
   var yScale = chart.yScale();
   yScale.inverted(true);
+  yScale.minimum(0);
+  yScale.maximum(30000);
 
   // set axes titles
   var xAxis = chart.xAxis();

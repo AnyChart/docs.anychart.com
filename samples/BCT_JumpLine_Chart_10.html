@@ -11,35 +11,57 @@
 
   // data
 var dataSet = anychart.data.set([
-  ["January", 10000, 12000],
-  ["February", 12000, 15000],
-  ["March", 18000, 16000],
-  ["April", 11000, 15000],
-  ["May", 9000, 14000],
+  {x: "January", value: 10000},
+  {x: "February", value: 12000},
+  {x: "March", value: 18000, marker:{enabled: true, type: "star5", fill: "#d84b20", size: 12}, hoverMarker: {size: 22}},
+  {x: "April", value: 11000},
+  {x: "May", value: 9000},
 ]);
-var seriesData_1 = dataSet.mapAs({x: [0], value: [1], stroke: [3]});
-var seriesData_2 = dataSet.mapAs({x: [0], value: [2], stroke: [4]});
 var chart = anychart.line();
-series1 = chart.jumpLine(seriesData_1);
-series2 = chart.jumpLine(seriesData_2);
+series = chart.jumpLine(dataSet);
 
 // set a style
-series1.stroke("#67329c", 3);
-series1.hoverStroke("#9966cc", 3);
-series1.selectStroke("#663399", 3);
+series.stroke("#67329c", 3);
+series.hoverStroke("#9966cc", 3);
+series.selectStroke("#663399", 3);
 
 // create markers
-markers = series1.markers();
+markers = series.markers();
 markers.enabled(true);
 
   // title
-  chart.title("JumpLine Chart");
+  chart.title("Set a style");
 
   // set axes titles
   var xAxis = chart.xAxis();
   xAxis.title("Sales");
   var yAxis = chart.yAxis();
   yAxis.title("Month");
+
+  // stroke settings
+  series.stroke("#025669", 4);
+  series.hoverStroke("#04a7cc", 4);
+      
+  var markers = series.markers();
+  // enable markers
+  markers.enabled(true);
+  // set marker type
+  markers.type("star5");
+  // set marker inner color
+  markers.fill("#d69942");
+  // set marker border
+  markers.stroke("#916321");
+  // set marker size
+  markers.size(7);
+  
+  // settings for hovered marker
+  var hoverMarkers = series.hoverMarkers();
+  // marker size
+  hoverMarkers.size(7);
+  // marker inner color
+  hoverMarkers.fill("#deaf6d");
+  // marker border
+  hoverMarkers.stroke("#916321");
 
   // draw
   chart.container("container");
