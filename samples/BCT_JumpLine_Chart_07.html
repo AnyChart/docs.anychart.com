@@ -8,32 +8,38 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
-// data
+
+  // data
 var dataSet = anychart.data.set([
-  ["January", 10000, 12000],
-  ["February", 12000, 15000],
+  ["January", 10000, 12000, "red", "green"],
+  ["February", 12000, 15000, "red", "gold"],
   ["March", 18000, 16000],
-  ["April", 11000, 15000],
+  ["April", 11000, 15000, "black", "navy"],
   ["May", 9000, 14000],
 ]);
-var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
-var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+var seriesData_1 = dataSet.mapAs({x: [0], value: [1], stroke: [3]});
+var seriesData_2 = dataSet.mapAs({x: [0], value: [2], stroke: [4]});
 var chart = anychart.line();
 series1 = chart.jumpLine(seriesData_1);
 series2 = chart.jumpLine(seriesData_2);
 
-// title
-chart.title("Multi-series JumpLine Chart");
+// set a style
+series1.stroke("#67329c", 3);
+series1.hoverStroke("#9966cc", 3);
+series1.selectStroke("#663399", 3);
 
-// set axes titles
-var xAxis = chart.xAxis();
-xAxis.title("Sales");
-var yAxis = chart.yAxis();
-yAxis.title("Month");
+  // title
+  chart.title("Colors set through the data set");
 
-// draw
-chart.container("container");
-chart.draw();
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Sales");
+  var yAxis = chart.yAxis();
+  yAxis.title("Month");
+
+  // draw
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>
