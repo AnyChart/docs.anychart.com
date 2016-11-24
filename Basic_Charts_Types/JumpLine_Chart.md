@@ -4,7 +4,7 @@
 * [Overview](#overview)
 * [Chart](#chart)
   * [Single Series Chart](#single_series_chart)
-  * [Multi-series Chart](#multi-series_chart)
+  * [Multi Series Chart](#multi_series_chart)
 * [Axes](#axes)
   * [Orientation](#orientation)
   * [Inversion](#inversion)
@@ -41,19 +41,19 @@ Let's look at the single-series JumpLine Chart created using the following data 
 </tr>
 <tr>
 <td>February</td>
-<td> $12000</td>
+<td>$12000</td>
 </tr>
 <tr>
 <td>March</td>
-<td> $18000</td>
+<td>$18000</td>
 </tr>
 <tr>
 <td>April</td>
-<td> $11000</td>
+<td>$11000</td>
 </tr>
 <tr>
 <td>May</td>
-<td> $9000</td>
+<td>$9000</td>
 </tr>
 </tbody></table>
 
@@ -74,7 +74,7 @@ chart.jumpLine(data);
 {sample}BCT\_JumpLine\_Chart\_01{sample}
 
 
-### Multi-series Chart
+### Multi Series Chart
 
 To compare two or more data arrays use multi-series JumpLine Charts as it is shown in the sample below.
 

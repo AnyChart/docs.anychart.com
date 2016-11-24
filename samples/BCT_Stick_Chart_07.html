@@ -9,20 +9,38 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data
+// data
 var dataSet = anychart.data.set([
-  {x: "Alex", value: 10000},
-  {x: "Josh", value: 12000},
-  {x: "Jane", value: 13500},
-  {x: "April", value: 19000},
-  {x: "Mary", value: 15000}
+  ["Alex", 10000, 9000, 13000],
+  ["Josh", 12000, 12200, 10000],
+  ["Jane", 13500, 8000, 9500],
+  ["April", 19000, 14000, 17000],
+  ["Mary", 15000, 15000, 13700]
 ]);
 var chart = anychart.line();
-series = chart.stick(dataSet);
-// title
-chart.title("Single Series Stick Chart (data is set as array of objects)");
 
-// set axes titles
+// map the data
+dataSetMappingJan = dataSet.mapAs({x: [0], value: [1]});
+dataSetMappingFeb = dataSet.mapAs({x: [0], value: [2]});
+dataSetMappingMar = dataSet.mapAs({x: [0], value: [3]});
+
+// create series
+seriesJan = chart.stick(dataSetMappingJan);
+seriesFeb = chart.stick(dataSetMappingFeb);
+seriesMar = chart.stick(dataSetMappingMar);
+
+// set series names
+seriesJan.name("January");
+seriesFeb.name("February");
+seriesMar.name("March");
+
+// title
+chart.title("Setting the stacking mode");
+
+// make all series stacked
+chart.stackMode("value");
+
+// set axes titles and orientation
 var xAxis = chart.xAxis();
 xAxis.title("Sales");
 var yAxis = chart.yAxis();
