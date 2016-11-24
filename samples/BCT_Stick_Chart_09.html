@@ -19,6 +19,9 @@ var dataSet = anychart.data.set([
 ]);
 var chart = anychart.line();
 
+// set palette to a chart:
+chart.palette(anychart.palettes.provence);
+
 // map the data
 dataSetMappingJan = dataSet.mapAs({x: [0], value: [1]});
 dataSetMappingFeb = dataSet.mapAs({x: [0], value: [2]});
@@ -35,11 +38,7 @@ seriesFeb.name("February");
 seriesMar.name("March");
 
 // title
-chart.title("Setting the stacking mode");
-
-// make all series stacked
-yScale = chart.yScale();
-yScale.stackMode("value");
+chart.title("Set the palette for the chart");
 
 // set axes titles and orientation
 var xAxis = chart.xAxis();

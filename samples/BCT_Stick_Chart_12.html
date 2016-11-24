@@ -11,35 +11,22 @@
 
 // data
 var dataSet = anychart.data.set([
-  ["Alex", 10000, 9000, 13000],
-  ["Josh", 12000, 12200, 10000],
-  ["Jane", 13500, 8000, 9500],
-  ["April", 19000, 14000, 17000],
-  ["Mary", 15000, 15000, 13700]
+  {x: "Alex", value: 10000, stroke: "red", label: {enabled: true, text: "The worst coworker. SHAME!!!"}},
+  {x: "Josh", value: 12000},
+  {x: "Jane", value: 13500},
+  {x: "April", value: 19000, marker:{fill: "green", size: 5}, label: {enabled: true, text: "The best coworker"}},
+  {x: "Mary", value: 15000}
 ]);
 var chart = anychart.line();
 
-// map the data
-dataSetMappingJan = dataSet.mapAs({x: [0], value: [1]});
-dataSetMappingFeb = dataSet.mapAs({x: [0], value: [2]});
-dataSetMappingMar = dataSet.mapAs({x: [0], value: [3]});
-
 // create series
-seriesJan = chart.stick(dataSetMappingJan);
-seriesFeb = chart.stick(dataSetMappingFeb);
-seriesMar = chart.stick(dataSetMappingMar);
+seriesJan = chart.stick(dataSet);
 
 // set series names
 seriesJan.name("January");
-seriesFeb.name("February");
-seriesMar.name("March");
 
 // title
-chart.title("Setting the stacking mode");
-
-// make all series stacked
-yScale = chart.yScale();
-yScale.stackMode("value");
+chart.title("Settings Through the DataSet");
 
 // set axes titles and orientation
 var xAxis = chart.xAxis();

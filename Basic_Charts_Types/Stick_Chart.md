@@ -10,11 +10,12 @@
   * [Inversion](#inversion)
   * [Minimum and Maximum](#minimum_and_maximum)
 * [Stacking](#stacking)
-* [Colors](#colors)
-* [Markers](#markers)
 * [Visualization](#visualization)
+  * [Colors](#colors)
+  * [Markers](#markers)
   * [Basic Sample](#basic_sample)
-* [Labels and Tooltips](#labels_and_tooltips)
+  * [Labels and Tooltips](#labels_and_tooltips)
+  * [Using the DataSet](#using_the_dataset)
 * [Samples](#samples)
 
 ## Overview
@@ -172,29 +173,101 @@ yScale.maximum(20000);
 
 ## Stacking
 
-There is another feature can be applied to this series type. As well as [Columns](Column_Chart), Stick Charts can make their series stacked. Apply the {api:anychart.scales.Linear#stackMode}stackMode(){api} method to the chart to make all series stacked.
+There is another feature can be applied to this series type. As well as [Columns](Column_Chart), Stick Charts can make their series stacked. Apply the {api:anychart.scales.Linear#stackMode}stackMode(){api} method to the scale to make all series stacked.
 
 Let's reduce the previous axes and scales changes and apply the stacking mode:
 
 ```
-chart.stackMode("value");
+yScale.stackMode("value");
 ```
-
 {sample}BCT\_Stick\_Chart\_07{sample}
 
 
-## Colors
-
-If you want to make your chart bright, colorful and extraordinary, use several coloring methods: {api:}stroke(){api}, {api:}hoverStroke(){api} and {api:}selectStroke(){api} to set the stroking colors.
-
-
-## Markers
-
 ## Visualization
 
-### Basic Sample 
+This paragraph considers the chart's view, coloring, creating some elements.
 
-## Labels and Tooltips
+
+### Colors
+
+If you want to make your chart bright, colorful and extraordinary, use several coloring methods: {api:anychart.core.cartesian.series.Stick#stroke}stroke(){api}, {api:anychart.core.cartesian.series.Stick#hoverStroke}hoverStroke(){api} and {api:anychart.core.cartesian.series.Stick#selectStroke}selectStroke(){api} to set the stroking colors. These methods can be also used for setting the stroking width.
+
+```
+// set the colors
+seriesJan.stroke("#c77036", 3)
+seriesJan.hoverStroke("#deaa88", 3);
+seriesJan.selectStroke("#000", 3);
+
+seriesFeb.stroke("#4d3c33", 3)
+seriesFeb.hoverStroke("#8a6c5c", 3);
+seriesFeb.selectStroke("#000", 3);
+
+seriesMar.stroke("#4f7942", 3)
+seriesMar.hoverStroke("#7eb06f", 3);
+seriesMar.selectStroke("#000", 3);
+```
+{sample}BCT\_Stick\_Chart\_08{sample}
+
+### Palette
+
+Another way to set the colors for all elements is to create and apply the palette or apply one of the existing palettes AnyChart provides. Find the list of AnyChart palettes on the [Palettes page](../Appearance_Settings/Palettes).
+
+Let's add a Provence Palette to this chart:
+
+```
+// set palette to a chart:
+chart.palette(anychart.palettes.provence);
+```
+
+{sample}BCT\_Stick\_Chart\_09{sample}
+
+
+### Markers
+
+If it is necessary to highlight some points for some reasons, it is possible to use markers. Markers are created through the {api:anychart.core.cartesian.series.Stick#markers}markers(){api} method. Each series has its own markers.
+
+```
+// set markers
+markersJan = seriesJan.markers();
+markersJan.enabled(true);
+```
+
+It is also possible to change the shape, size and color of the markers.
+
+```
+markersJan.fill("red");
+markersJan.type("star7");
+markersJan.size(7);
+```
+{sample}BCT\_Stick\_Chart\_10{sample}
+
+
+### Labels and Tooltips
+
+Labels are small text elements which are supposed to be permanently shown somewhere next to the point and to demonstrate some information about this point.
+
+```
+
+```
+
+{sample}BCT\_Stick\_Chart\_11{sample}
+
+
+### Using the DataSet 
+
+It is also possible to use the data sets for adjusting the chart's view. This method is quite useful in case you need to emphasize one of the points for some reasons (e.g. the higest or the lowest value). Let's set special marker for the highest value and a special stroking color for the lowest value, and unique labels for them.
+
+```
+var dataSet = anychart.data.set([
+  {x: "Alex", value: 10000, stroke: "red", label: "The worst coworker. SHAME!!!"},
+  {x: "Josh", value: 12000},
+  {x: "Jane", value: 13500},
+  {x: "April", value: 19000, marker:{fill: "green", size: 5}, label: "The best coworker"},
+  {x: "Mary", value: 15000}
+]);
+```
+
+{sample}BCT\_Stick\_Chart\_12{sample}
 
 
 ## Samples
