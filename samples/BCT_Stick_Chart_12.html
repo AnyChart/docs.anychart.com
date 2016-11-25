@@ -11,10 +11,10 @@
 
 // data
 var dataSet = anychart.data.set([
-  {x: "Alex", value: 10000, stroke: "red", label: {enabled: true, text: "The worst coworker. SHAME!!!"}},
+  {x: "Alex", value: 10000, stroke: "red", label: {enabled: true, textFormatter: "The worst coworker. SHAME!!!"}},
   {x: "Josh", value: 12000},
   {x: "Jane", value: 13500},
-  {x: "April", value: 19000, marker:{fill: "green", size: 5}, label: {enabled: true, text: "The best coworker"}},
+  {x: "April", value: 19000, stroke: "green", marker:{enabled: true, fill: "green", size: 5}, label: {enabled: true, textFormatter: "The best coworker"}},
   {x: "Mary", value: 15000}
 ]);
 var chart = anychart.line();

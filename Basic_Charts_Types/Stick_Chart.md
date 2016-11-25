@@ -244,12 +244,46 @@ markersJan.size(7);
 
 ### Labels and Tooltips
 
-Labels are small text elements which are supposed to be permanently shown somewhere next to the point and to demonstrate some information about this point.
+Labels are small text elements which are supposed to be permanently shown somewhere next to the point and to demonstrate some information about this point. Labels are to be created with the {api:}labels(){api} method.
 
 ```
-
+// create and enable labels
+labelsFeb = seriesFeb.labels();
+labelsFeb.enabled(true);
 ```
 
+Tooltips are pop elements with some information about the points which are popping only when a point is hovered. Tooltips are created through the {api:}tooltip(){api} method of the series or chart. Find more about tooltips in the [Tooltip article](../Common_Settings/Tooltip).
+
+```
+// create and enable tooltips
+tooltipsMar = seriesMar.tooltip();
+tooltipsMar.enabled(true);
+```
+
+Both labels and tooltips can be adjusted. If it is necessary to change the text of the decoration of these elements, use special methods, like {api:}background(){api} for the setting the background, {api:}textFormatter{api} for changing the text demonstrated by these elements, etc. 
+
+```
+// create and enable labels
+labelsFeb = seriesFeb.labels();
+labelsFeb.enabled(true);
+labelsFeb.fontSize(10);
+labelsFeb.textFormatter("{%x} earned ${%Value} in {%SeriesName}");
+
+// adjust chart tooltips
+tooltips = chart.tooltip();
+tooltips.displayMode("single");
+
+// adjust series tooltips
+titleTooltipMar = seriesMar.tooltip().title();
+tooltipsMar = seriesMar.tooltip();
+tooltipsMar.enabled(true);
+tooltipsMar.background("#ccffe6");
+tooltipsMar.fontColor("#000000");
+tooltipsMar.fontSize(10);
+titleTooltipMar.fontColor("#000000");
+titleTooltipMar.fontWeight("bold");
+titleTooltipMar.fontSize(10);
+```
 {sample}BCT\_Stick\_Chart\_11{sample}
 
 
@@ -259,14 +293,13 @@ It is also possible to use the data sets for adjusting the chart's view. This me
 
 ```
 var dataSet = anychart.data.set([
-  {x: "Alex", value: 10000, stroke: "red", label: "The worst coworker. SHAME!!!"},
+  {x: "Alex", value: 10000, stroke: "red", label: {enabled: true, textFormatter: "The worst coworker. SHAME!!!"}},
   {x: "Josh", value: 12000},
   {x: "Jane", value: 13500},
-  {x: "April", value: 19000, marker:{fill: "green", size: 5}, label: "The best coworker"},
+  {x: "April", value: 19000, stroke: "green", marker:{enabled: true, fill: "green", size: 5}, label: {enabled: true, textFormatter: "The best coworker"}},
   {x: "Mary", value: 15000}
 ]);
 ```
-
 {sample}BCT\_Stick\_Chart\_12{sample}
 
 

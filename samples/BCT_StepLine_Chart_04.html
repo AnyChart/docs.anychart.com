@@ -31,7 +31,11 @@
   yAxis.title("Month");
 
   // set data
-  series = chart.stepLine(data);
+  series1 = chart.stepLine(data);
+  series1.markers(true);
+
+  // this line can be dropped as this is set by default
+  series1.stepDirection("backward");
 
   // draw
   chart.container("container");
