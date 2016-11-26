@@ -54,7 +54,7 @@ series1.stepDirection("center");
 {sample}BCT\_StepLine\_Chart\_02{sample}
 
 
-If you set "forward" into the {api:anychart.core.cartesian.series.StepLine#stepDirection}stepDirection(){api} method, the line segments will start from the points, i.e. the data points will be the starting points for each horizontal line segment:
+If you set "forward" into the {api:anychart.core.cartesian.series.StepLine#stepDirection}stepDirection(){api} method, the line segments will start from the points, i.e. the data points will become the starting points for each horizontal line segment:
 
 ```
 // set data
@@ -92,44 +92,40 @@ With AnyChart web graphs you can place axes to any side of the chart, all you ne
 The position depends on the plot type and inversion of axes. See list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
 
 ```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
+var xAxis = chart.xAxis();
+xAxis.orientation("top");
 ```
 
 AnyChart allows to invert any scale you want. Inversion is controlled by {api:anychart.scales.Linear#inverted}inverted(){api} method:
 
 ```
-  var yScale = chart.yScale();
-  yScale.inverted(true);
+var yScale = chart.yScale();
+yScale.inverted(true);
 ```
 
-AnyChart calculates axis minimum and maximum values automatically. The minimal value on Y-Axis is 8000, the maximum is 20000, as you can see in the sample above. You can control these values by setting {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} parameters of {api:anychart.charts.Cartesian#yScale}yScale(){api} method; let's look at what will happen if we define 0 and 50000 as the min amd the max values on the Y-Axis:
+AnyChart calculates axis minimum and maximum values automatically. The minimal value on Y-Axis is 8000, the maximum is 20000, as you can see in the sample above. You can control these values by setting {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} parameters of {api:anychart.charts.Cartesian#yScale}yScale(){api} method. The following code sample demonstrates defining 0 and 50000 as the min and the max values on the Y-Scale:
 
 ```
-  var yScale = chart.yScale();
-  yScale.minimum(0);
-  yScale.maximum(50000);
+var yScale = chart.yScale();
+yScale.minimum(0);
+yScale.maximum(50000);
 ```
 
-And here is the demonstration of setting the max and min values in the Single-series sample:
+And here is the demonstration of setting the max and min values for the inverted Y-Scale with top-oriented X-Scale in the Single-series sample:
 
 {sample}BCT\_StepLine\_Chart\_05{sample}
 
 ## Visualization
 
 In this section we will describe the main parts of the line chart style and demonstrate how this style can be applied.
-<!-- Also you will see the list of predefined styles.-->
 
 The main idea of styles is to segregate visualization and data definition. Visual appearance of lines is defined in certain styles. 
-<!--Style can be applied to data series, data category or single data point.-->
 
-<!--Line chart style can be configured in <line_style> and <line_series> nodes.-->
 Also, styles are used to make charts interactive, so you can define how elements should be displayed by default and when hovered.
-<!-- More information about these features can be found in Interactivity tutorial.-->
 
 ### Basic Sample
 
-Now, let's look how to create a simple style and apply it to the chart. As we've already said a style consists of several elements, and its acceptable structure is given downwards:
+Now, let's look how to create a simple style and apply it to the chart. As we've already said a style consists of several elements, and its acceptable structure is given below:
 
 ```
   // line settings
@@ -171,9 +167,7 @@ Now, let's look how to create a simple style and apply it to the chart. As we've
 ```
 
 Using such settings we've redefined line color and made it rather thick. Also, we've redefined settings for each point marker along with settings for each marker in hovered state.
-<!--
-Now let's take a sample of a single-series chart described above, define style in JSON and apply it to all chart elements, using <line_series style="style1"/>
--->
+
 {sample}BCT\_StepLine\_Chart\_06{sample}
 
 **Note**: you can find more information about lines' visual appearance in [Line Settings tutorial](../Appearance_Settings/Lines_Settings).
@@ -181,12 +175,21 @@ Now let's take a sample of a single-series chart described above, define style i
 ## Labels and Tooltips
 
 In this section we will explain how to add and configure data labels and tooltips.
-<!-- Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips.-->
   
-If you want to configure data labels and tooltips for all series - you should use {api:anychart.charts.Cartesian#labels}labels(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods.
-  
-  
-With the following example let's make data labels appear to the top from the data points, format them to show only the value corresponding to the point values and force tooltips to show detailed description.
+If you want to configure data labels and tooltips for all series - use {api:anychart.charts.Cartesian#labels}labels(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods.     
+With the following example, let's make data labels appear to the bottom from the data points and disable tooltips:
+
+```
+// enable and adjust labels
+labels = series.labels();
+labels.enabled(true);
+labels.position("bottom");
+labels.anchor("top");
+
+// disable tooltips
+tooltips = chart.tooltip();
+tooltips.enabled(false);
+```
 
 {sample}BCT\_StepLine\_Chart\_07{sample}
 
