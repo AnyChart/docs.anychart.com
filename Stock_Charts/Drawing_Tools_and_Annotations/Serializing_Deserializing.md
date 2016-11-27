@@ -1,4 +1,4 @@
-{:index 2.6}
+{:index 2.3}
 #Serializing and Deserializing
 
 * [Overview](#overview)
