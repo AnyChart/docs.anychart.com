@@ -16,7 +16,7 @@
 
 ## Overview
 
-[AnyChart Stock offers a large set of features that allow you to build your online financial portal. One of the most exciting features is the ability to draw/display on the chart custom objects (drawing tools) or, as they are called in our documentation and settings, annotations.]
+AnyChart Stock offers a large set of features that allow you to build your online financial portal. One of the most exciting features is the ability to draw/display on the chart custom objects (drawing tools) or, as they are called in our documentation and settings, annotations.
 
 (???) Мой вариант: [AnyStock](../Overview) offers a large set of features for creating online financial charts, and one of the most exciting features are drawing tools: they provide you with the ability to draw/display custom objects on a chart. In our documentation they are usually called annotations.
 
@@ -26,7 +26,7 @@ In this section you can find all important information on working with annotatio
 
 ## Sample Application
 
-[To make the integration process easier and give you the general idea how [AnyStock Drawing Tools](Overview) can be implemented, we created a sample web application with open source.]
+To make the integration process easier and give you the general idea how [AnyStock Drawing Tools](Overview) can be implemented, we created a sample web application with open source.
 
 (???) Зачем в овервью ссылка на овервью и об интеграции чего идет речь?
 
@@ -34,7 +34,7 @@ In this section you can find all important information on working with annotatio
 
 To see the application live, visit [http://www.anychart.com/products/anystock/drawing_tools/](http://www.anychart.com/products/anystock/drawing_tools/).
 
-You can also download its source or simply fork it on [GitHub: AnyStock - Drawing Tools and Annotations Demo](https://github.com/AnyChart/anystock-drawing-tools-and-annotations-demo) page.
+You can also download its source or simply fork it here: [GitHub: AnyStock - Drawing Tools and Annotations Demo](https://github.com/AnyChart/anystock-drawing-tools-and-annotations-demo).
 
 ## General Settings
 
@@ -75,10 +75,10 @@ Here is a full list of annotations available in AnyStock (with links to the arti
 <a name="signals"></a>
 ### Labels, Buy/Sell Signals
 
-(???) Поскольку сейчас тут одни маркеры, может перенести их в Other Tools и эту секцию убрать? И не назвать ли ссылку просто "Markers" (а не "Buy/Sell Signals, Markers")
-
 * [Buy/Sell Signals, Markers](Marker)
 * [Label](Label)
+
+(???) не назвать ли ссылку просто "Markers" (а не "Buy/Sell Signals, Markers"), а раздел - Labels and Markers?
 
 ### Other Tools
 
