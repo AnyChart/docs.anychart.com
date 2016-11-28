@@ -6,31 +6,20 @@
 * [General Settings](#general_settings)
 * [Annotation Types](#annotation_types)
  * [Fibonacci Tools](#fibonacci_tools)
- * [Lines, Trend Lines, Rays](#lines)
+ * [Trend Lines](#trend_lines)
  * [Geometric Shapes](#geometric_shapes)
- * [Labels, Buy/Sell Signals, Markers](#signals)
+ * [Labels, Markers, Buy/Sell Signals](#signals)
  * [Other Tools](#other_tools)
-
-
-(???) Посмотри на индексы в статьях. Все нормально?
 
 ## Overview
 
-AnyChart Stock offers a large set of features that allow you to build your online financial portal. One of the most exciting features is the ability to draw/display on the chart custom objects (drawing tools) or, as they are called in our documentation and settings, annotations.
-
-(???) Мой вариант: [AnyStock](../Overview) offers a large set of features for creating online financial charts, and one of the most exciting features are drawing tools: they provide you with the ability to draw/display custom objects on a chart. In our documentation they are usually called annotations.
-
-(???) Ссылка на продукт точно нужна? Раньше она была в разделе "типы аннотаций", но я ее перенесла сюда - здесь же первое упоминание.
+[AnyStock](../Overview) offers a large set of features for creating online financial charts, and one of the most exciting features are drawing tools: they provide you with the ability to draw/display custom objects on a chart. In our documentation they are usually called annotations.
 
 In this section you can find all important information about working with annotations in general and with certain types of them.
 
 ## Sample Application
 
-To make the integration process easier and give you the general idea how [AnyStock Drawing Tools](Overview) can be implemented, we created a sample web application with open source.
-
-(???) Зачем в овервью ссылка на овервью и об интеграции чего идет речь?
-
-Мой вариант: To demonstrate how AnyStock drawing tools can be implemented, we created a sample web application with open source.
+To demonstrate how AnyStock drawing tools can be implemented, we created a sample web application with open source.
 
 To see the application live, visit [http://www.anychart.com/products/anystock/drawing_tools/](http://www.anychart.com/products/anystock/drawing_tools/).
 
@@ -55,10 +44,7 @@ Here is a full list of annotations available in AnyStock (with links to the arti
 * [Fibonacci Retracement](Fibonacci_Retracement)
 * [Fibonacci Time Zones](Fibonacci_Time_Zones)
 
-<a name="lines"></a>
-### Lines, Trend Lines, Rays
-
-(???) а что из этого относится к Trend Lines? может просто назвать раздел Lines? Ну или Trend Lines, если это просто другой способ обозначить то же самое.
+### Trend Lines
 
 * [Line Segment](Line_Segment)
 * [Infinite Line](Infinite_Line)
@@ -73,12 +59,10 @@ Here is a full list of annotations available in AnyStock (with links to the arti
 * [Triangle](Triangle)
 
 <a name="signals"></a>
-### Labels, Buy/Sell Signals
+### Labels, Markers, Buy/Sell Signals
 
-* [Buy/Sell Signals, Markers](Marker)
-* [Label](Label)
-
-(???) не назвать ли ссылку просто "Markers" (а не "Buy/Sell Signals, Markers"), а раздел - Labels and Markers?
+* [Markers, Buy/Sell Signals](Marker)
+* [Labels](Label)
 
 ### Other Tools
 
