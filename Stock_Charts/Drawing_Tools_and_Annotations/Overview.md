@@ -22,7 +22,7 @@ AnyChart Stock offers a large set of features that allow you to build your onlin
 
 (???) Ссылка на продукт точно нужна? Раньше она была в разделе "типы аннотаций", но я ее перенесла сюда - здесь же первое упоминание.
 
-In this section you can find all important information on working with annotations in general and with certain types of them.
+In this section you can find all important information about working with annotations in general and with certain types of them.
 
 ## Sample Application
 
