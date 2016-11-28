@@ -21,7 +21,12 @@
 
 ## Overview
 
-Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts emphasize the magnitude of change over time, and can be used to draw attention to the total value across a trend. For example, data that represents profit over time can be plotted in an area chart to emphasize the total profit.
+Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts emphasize the magnitude of change over time and can be used to draw attention to the total value across a trend. For example, data that represents profit over time can be plotted in an area chart to emphasize the total profit.
+
+(???) Предлагаю добавить:
+
+In this article you can learn about the types of area charts available in AnyChart and find out to configure their visual settings and such elements as axes, labels, tooltips, markers.
+
 
 ## Chart
 
