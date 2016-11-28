@@ -23,18 +23,17 @@
 
 Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts emphasize the magnitude of change over time and can be used to draw attention to the total value across a trend. For example, data that represents profit over time can be plotted in an area chart to emphasize the total profit.
 
-(???) Предлагаю добавить:
-
+(???) предлагаю добавить:
 In this article you can learn about the types of area charts available in AnyChart and find out to configure their visual settings and such elements as axes, labels, tooltips, markers.
 
 
 ## Chart
 
-Depending on the data model and the visualization purpose the AnyChart JavaScript area charts may contain one or several series.
+Depending on the data model you use and on the purpose of your visualization, AnyChart JavaScript area charts can contain one or several series.
 
 ### Single Series Area Chart
 
-Let's have a look at the single series area chart created using the following data: sales of ACME Corp. through several months in a year:
+In the sample below, there is a single-series area chart showing sales of ACME Corp. through several months in a year. Here is the data in a table view (??? можно же так сказать?):
 
 <table width="287" border="1" class="dtTABLE">
 <tbody>
@@ -95,26 +94,26 @@ to see the full source code, alter and play with the sample or download it.
 
 ### Single Series Spline Area Chart
 
-For better look of your charts you can use SplineArea chart type:
+To improve the design of your chart, you can turn it into a Spline Area chart:
 
 ```
-    // data
-    var data = anychart.data.set([
-        ['January', 10000],
-        ['February', 12000],
-        ['March', 18000],
-        ['April', 11000],
-        ['May', 9000]
-    ]);
+// data
+var data = anychart.data.set([
+    ['January', 10000],
+    ['February', 12000],
+    ['March', 18000],
+    ['April', 11000],
+    ['May', 9000]
+]);
 
-    // setting chart type
-    chart = anychart.area();
-	
-	// set data and define chart type
-    chart.splineArea(data);
+// set the chart type
+chart = anychart.area();
+
+// set data and define chart type
+chart.splineArea(data);
 ```
 
-Here is the same chart as shown above, but in Spline mode:
+Here is the same chart as shown above, but in the Spline mode:
 
 {sample}BCT\_AreaChart\_02{sample}
 
