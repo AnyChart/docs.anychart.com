@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // define data set
+  // create a data set
   var data = anychart.data.set([
     ["January", 10000],
     ["February", 12000],
@@ -18,15 +18,17 @@
     ["May", 9000]
   ]);
 
-  // create 3D chart's plot
+  // create a 3D chart
   chart = anychart.area3d();
 
-  // create series
+  // create a series
   var series = chart.area(data);
   series.name("Sales 2009");
 
-  // draw
+  // set the container id
   chart.container("container");
+
+  // initiate drawing the chart
   chart.draw();
 });</script>
 </head>

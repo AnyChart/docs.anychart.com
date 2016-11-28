@@ -72,15 +72,15 @@ in series represents monthly sales volume. We will use the easiest method of dat
 like this:
 
 ```
-  anychart.data.set([
-    ["January", 10000],
-    ["February", 12000],
-    ["March", 18000],
-    ["April", 11000],
-    ["May", 9000]
-  ]);
-  chart = anychart.area();
-  chart.area(data);
+anychart.data.set([
+  ["January", 10000],
+  ["February", 12000],
+  ["March", 18000],
+  ["April", 11000],
+  ["May", 9000]
+]);
+chart = anychart.area();
+chart.area(data);
 ```
 
 As you can see, we've created a Data Set. Every object is a point with parameters. The first column is a 
