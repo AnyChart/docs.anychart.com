@@ -11,34 +11,70 @@
 
   // data
 var dataSet = anychart.data.set([
-  ["January", 10000, 12000],
-  ["February", 12000, 15000],
-  ["March", 18000, 16000],
-  ["April", 11000, 15000],
-  ["May", 9000, 14000],
+  {x: "January", value: 10000},
+  {x: "February", value: 12000},
+  {x: "March", value: 18000},
+  {x: "April", value: 11000},
+  {x: "May", value: 9000},
 ]);
-var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
-var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
 var chart = anychart.line();
-series1 = chart.jumpLine(seriesData_1);
-series2 = chart.jumpLine(seriesData_2);
+series = chart.jumpLine(dataSet);
 
-  // title
-  chart.title("Set axes orientation");
+// set a style
+series.stroke("#67329c", 3);
+series.hoverStroke("#9966cc", 3);
+series.selectStroke("#663399", 3);
 
-  // create axes and set orientation
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("right");
+// create markers
+markers = series.markers();
+markers.enabled(true);
 
-  // set axes titles
-  xAxis.title("Sales");
-  yAxis.title("Month");
+// title
+chart.title("JumpLine with some settings adjusted");
 
-  // draw
-  chart.container("container");
-  chart.draw();
+// set axes titles
+var xAxis = chart.xAxis();
+xAxis.title("Sales");
+var yAxis = chart.yAxis();
+yAxis.title("Month");
+
+// enable grids
+chart.grid(0, {axis: chart.xAxis()});
+chart.grid(1, {axis: chart.yAxis()});
+minorGrid = chart.minorGrid();
+minorGrid.enabled(true);
+
+// orientation setting
+xAxis.orientation("top");
+
+// invert a scale
+yScale = chart.yScale();
+yScale.inverted(true);
+
+// set max and min values
+yScale.minimum(5000);
+yScale.maximum(25000);
+
+// stroke settings
+series.stroke("#025669", 4);
+series.hoverStroke("#04a7cc", 4);
+
+// format the labels
+labels = series.labels();
+labels.enabled(true);
+labels.textFormatter("${%Value}");
+labels.position("center");
+labels.anchor("bottom");
+
+// set the tooltips
+tooltips = series.tooltip();
+tooltips.textFormatter("${%Value}");
+tooltips.background("#e0d6d1");
+tooltips.fontColor("#4d3c33");
+
+// draw
+chart.container("container");
+chart.draw();
 });</script>
 </head>
 <body>

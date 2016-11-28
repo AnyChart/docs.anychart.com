@@ -7,6 +7,8 @@
   * [Single Series Spline Chart](#single_series_spline_chart)
   * [Single Series Step Line Chart](#single_series_step_line_chart)
   * [Multi-series Line Chart](#multi-series_line_chart)
+  * [JumpLine Chart](#jumpline_chart)
+  * [Stick Chart](#stick_chart)
 * [Axes](#axes)
   * [Orientation](#orientation)
   * [Inversion](#inversion)
@@ -181,6 +183,34 @@ As we did in single-series line sample above we need to convert this table into 
 As you can see, to add a new line series you just have to use {api:anychart.core.cartesian.series.Line}line(){api} method as many times as many series you need.
 
 {sample}BCT\_LineChart\_04{sample}
+
+### JumpLine Chart
+
+JumpLine Chart is a kind of StepLine or Column Chart that uses only horizontal segments as points, releasing the vertical segments connecting the horizontal ones with each other. It is to be created with the {api:anychart.charts.Cartesian#jumpLine}jumpLine(){api} method. Look at the next sample:
+
+```
+// chart type
+chart = anychart.line();
+// set data
+chart.jumpLine(dataSet);
+```
+
+{sample}BCT\_JumpLine\_Chart\_01{sample}
+
+Find all information about JumpLine Charts in the [JumpLine Chart article](JumpLine_Chart).
+
+### Stick Chart
+
+Stick Chart looks like a Column Chart with no width of the columns. So, this chart does not use the horizontal segments of a Column (or StepLine) Chart. Sticks are being created with the {api:anychart.charts.Cartesian#stick}stick(){api} method. 
+
+```
+var chart = anychart.line();
+series = chart.stick(dataSet);
+```
+
+{sample}BCT\_Stick\_Chart\_01{sample}
+
+Find all information about Stick Charts in the [Stick Chart article](Stick_Chart).
 
 ## Axes
 

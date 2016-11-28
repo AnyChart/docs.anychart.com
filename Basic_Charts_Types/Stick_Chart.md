@@ -3,19 +3,8 @@
 
 * [Overview](#overview)
 * [Chart](#chart)
-  * [Single Series Chart](#single_series_chart)
-  * [Multi Series Chart](#multi_series_chart)
-* [Axes](#axes)
-  * [Orientation](#orientation)
-  * [Inversion](#inversion)
-  * [Minimum and Maximum](#minimum_and_maximum)
+* [Adjusting](#adjusting)
 * [Stacking](#stacking)
-* [Visualization](#visualization)
-  * [Colors](#colors)
-  * [Markers](#markers)
-  * [Basic Sample](#basic_sample)
-  * [Labels and Tooltips](#labels_and_tooltips)
-  * [Using the DataSet](#using_the_dataset)
 * [Samples](#samples)
 
 ## Overview
@@ -24,40 +13,9 @@ Stick Charts look like Column Charts with no width. This series can be quite use
 
 ## Chart
 
-Stick Chart is a variation of a Line Chart (though looks more like column), so when a Stick Chart is created it is necessary to create a Line Chart first and set the series of Stick type.
+Stick Chart is a variation of a [Line Chart](Line_Chart) (though looks more like column), so when a Stick Chart is created it is necessary to create a Line Chart first and set the series of a Stick type.
 
-### Single Series Chart
-
-A simple stick chart can be created with the {api:anychart.charts.Cartesian#stick}stick(){api} method. Create a data set for one series and set this series of a Stick type. The following table represents the 
-
-<table width="287" border="1" class="dtTABLE">
-<tbody><tr>
-<th width="88"><b>Manager</b></th>
-<th width="88"><b>Sales</b></th>
-</tr>
-<tr>
-<td>Alex</td>
-<td>$10000</td>
-</tr>
-<tr>
-<td>Josh</td>
-<td>$12000</td>
-</tr>
-<tr>
-<td>Jane</td>
-<td>$13500</td>
-</tr>
-<tr>
-<td>April</td>
-<td>$19000</td>
-</tr>
-<tr>
-<td>Mary</td>
-<td>$15000</td>
-</tr>
-</tbody></table>
-
-After converting this data into acceptable format, it became looking like the following:
+A simple stick chart can be created with the {api:anychart.charts.Cartesian#stick}stick(){api} method. Let's create a data set for one series and set this series of a Stick type. 
 
 ```
 var dataSet = anychart.data.set([
@@ -93,37 +51,16 @@ series = chart.stick(dataSetMapping);
 
 You can notice that the result is absolutely the same. Choose the most comfortable way of arranging the data for you.
 
-
-### Multi Series Chart
-
 The Stick Charts can be multi-series, similar to the Line, Area, Step-Line Charts, etc. All you need to do is to add values into the array.
-
-```
-// data
-var dataSet = anychart.data.set([
-  ["Alex", 10000, 9000, 13000],
-  ["Josh", 12000, 12200, 10000],
-  ["Jane", 13500, 8000, 9500],
-  ["April", 19000, 14000, 17000],
-  ["Mary", 15000, 15000, 13700]
-]);
-var chart = anychart.line();
-
-// map the data
-dataSetMappingJan = dataSet.mapAs({x: [0], value: [1]});
-dataSetMappingFeb = dataSet.mapAs({x: [0], value: [2]});
-dataSetMappingMar = dataSet.mapAs({x: [0], value: [3]});
-
-// create series
-seriesJan = chart.stick(dataSetMappingJan);
-seriesFeb = chart.stick(dataSetMappingFeb);
-seriesMar = chart.stick(dataSetMappingMar);
-```
 
 {sample}BCT\_Stick\_Chart\_03{sample}
 
+Explore the code of the sample in the playground.
 
-## Axes
+
+## Adjusting
+
+All elements and features of a Stick Chart can be adjusted 
 
 Axes are elements responsible for the grids, markers, axes labels. They are used to manage all these elements. Find more information about axes in the [Axes and Grids](../Axes_and_Grids/Axis_Basics) section.
 
