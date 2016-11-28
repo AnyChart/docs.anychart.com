@@ -1,0 +1,45 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+  chart = anychart.column();
+  series = chart.column([10, 20, 15, 30, 5]);
+  var shapes = series.rendering().shapes().get();
+  shapes.pop();
+  series.rendering()
+      .start(function() {console.log('Drawing start', this)})
+      .point(drawer)
+      .finish(function() {console.log('Drawing finish', this)})
+      .shapes()
+          .set(shapes);
+  chart.container('container').draw();
+});
+
+function drawer() {
+  if (this.missing) {
+    console.log('Missing');
+    return;
+  }
+  var shapes = this.getShapesGroup(this.pointState);
+  console.log('Point', this,  shapes);
+
+  var leftX = this.x - this.pointWidth / 2;
+  var rightX = leftX + this.pointWidth;
+
+  shapes['path']
+      .moveTo(leftX, this.zero)
+      .lineTo(this.x, this.value)
+      .lineTo(rightX, this.zero)
+      .close();
+}</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
