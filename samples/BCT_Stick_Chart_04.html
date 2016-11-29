@@ -34,16 +34,58 @@ seriesJan.name("January");
 seriesFeb.name("February");
 seriesMar.name("March");
 
+// set the colors
+seriesJan.stroke("#c77036", 2)
+seriesJan.hoverStroke("#deaa88", 2);
+seriesJan.selectStroke("#000", 2);
+
+seriesFeb.stroke("#4d3c33", 2)
+seriesFeb.hoverStroke("#8a6c5c", 2);
+seriesFeb.selectStroke("#000", 2);
+
+seriesMar.stroke("#4f7942", 2)
+seriesMar.hoverStroke("#7eb06f", 2);
+seriesMar.selectStroke("#000", 2);
+
 // title
-chart.title("Axes orientation changed");
+chart.title("Stick Chart with settings adjusted and yScale stacked");
+
+// create and enable labels
+labelsFeb = seriesFeb.labels();
+labelsFeb.enabled(true);
+labelsFeb.fontSize(10);
+labelsFeb.textFormatter("{%x} earned ${%Value} in {%SeriesName}");
+
+// create and enable tooltips
+tooltips = chart.tooltip();
+tooltips.displayMode("single");
+
+titleTooltip = chart.tooltip().title();
+tooltips = chart.tooltip();
+tooltips.enabled(true);
+tooltips.background("#ccffe6");
+tooltips.fontColor("#000000");
+tooltips.fontSize(10);
+titleTooltip.fontColor("#000000");
+titleTooltip.fontWeight("bold");
+titleTooltip.fontSize(10);
+
+// set markers
+markersJan = seriesJan.markers();
+markersJan.enabled(true);
+markersJan.fill("red");
+markersJan.type("star7");
+markersJan.size(7);
 
 // set axes titles and orientation
 var xAxis = chart.xAxis();
-xAxis.orientation("top");
 xAxis.title("Sales");
 var yAxis = chart.yAxis();
-yAxis.orientation("right");
 yAxis.title("Manager");
+
+// enable stacking
+yScale = chart.yScale();
+yScale.stackMode("value");
 
 // draw
 chart.container("container");

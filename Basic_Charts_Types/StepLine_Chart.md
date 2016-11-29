@@ -5,10 +5,8 @@
 * [Chart](#chart)
 * [Special StepLine Features](#special_stepline_features)
   * [Step Direction](#step_direction)
-* [Axes](#axes)
-* [Visualization](#visualization)
-* [Labels and Tooltips](#labels_and_tooltips)
-* [Markers](#markers)
+* [Adjusting](#adjusting)
+* [Samples](#samples)
 
 ## Overview
 
@@ -83,115 +81,23 @@ series1.stepDirection("backward");
 This method also works for [Area Charts](Area_Chart), [Range Area Charts](Range_Area-SplineArea_Charts).
 
 
-## Axes
+## Adjusting
 
-In AnyChart axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
+All elements and features of a StepLine Chart can be adjusted due to the exact purposes of a chart.
 
-With AnyChart web graphs you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}orientation(){api} parameter of {api:anychart.charts.Cartesian#yAxis}yAxis(){api} or {api:anychart.charts.Cartesian#xAxis}xAxis(){api} methods.
-  
-The position depends on the plot type and inversion of axes. See list of all possible orientation and inversion  settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
+Axes are responsible for the grids, markers, axes labels. Sometimes it might be necessary to change axes orientation, for example, to put the Y-Axis from the left side of the chart to its right side. Use the {api:anychart.core.axes.Linear#orientation}orientation(){api} method.
 
-```
-var xAxis = chart.xAxis();
-xAxis.orientation("top");
-```
+Axes are based on scales - elements that allow you to control such features as minimum and maximum scale values, scale inversion, intervals, scale type and so on. The {api:anychart.scales.Linear#inverted}inverted(){api} method allows to invert the scale, and the {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} methods are used to set the min and max values of the scale. You can find a lot of information about scales in the [Scales article](../Axes_and_Grids/Scales).
 
-AnyChart allows to invert any scale you want. Inversion is controlled by {api:anychart.scales.Linear#inverted}inverted(){api} method:
+Markers are special elements which are supposed to emphasize the point for some reasons. They are to be added by the {api:anychart.core.cartesian.series.Stick#markers}markers(){api} method. It is possible to change their shape, size and color.
 
-```
-var yScale = chart.yScale();
-yScale.inverted(true);
-```
+There are also some text elements supposed to tell the customer some information about the point. Labels are elements that are permanently shown (though, this can be changed and adjusted) somewhere next to the point and tooltips are pop-up elements that are shown on a point hovered. Add the labels and tooltips with the {api:anychart.charts.Cartesian#labels}labels(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods. Both elements' text can be adjusted through the {api:anychart.core.ui.Tooltip#textFormatter}textFormatter(){api} method.
 
-AnyChart calculates axis minimum and maximum values automatically. The minimal value on Y-Axis is 8000, the maximum is 20000, as you can see in the sample above. You can control these values by setting {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} parameters of {api:anychart.charts.Cartesian#yScale}yScale(){api} method. The following code sample demonstrates defining 0 and 50000 as the min and the max values on the Y-Scale:
+After all elements have been adjusted to demonstrate the necessary information about the point, it is a good time for changing the colors. There are several ways to set the colors to the series, points of other elements. You can use the data set, set the colors through some special methods or add/create a color [palette](Appearance_Settings/Palettes). 
 
-```
-var yScale = chart.yScale();
-yScale.minimum(0);
-yScale.maximum(50000);
-```
+The sample below demonstrates a JumpLine Chart with the adjusted parameters described before. Explore it in the playground to see the code.
 
-And here is the demonstration of setting the max and min values for the inverted Y-Scale with top-oriented X-Scale in the Single-series sample:
-
-{sample}BCT\_StepLine\_Chart\_05{sample}
-
-## Visualization
-
-In this section we will describe the main parts of the line chart style and demonstrate how this style can be applied.
-
-The main idea of styles is to segregate visualization and data definition. Visual appearance of lines is defined in certain styles. 
-
-Also, styles are used to make charts interactive, so you can define how elements should be displayed by default and when hovered.
-
-### Basic Sample
-
-Now, let's look how to create a simple style and apply it to the chart. As we've already said a style consists of several elements, and its acceptable structure is given below:
-
-```
-  // line settings
-  series.stroke(
-    // set line color
-    "Rgb(86,86,26)",
-    // set line size
-    4
-  );
-  
-  // line settings in hovered state
-  series.hoverStroke(
-    // set line color
-    "Rgb(86,86,26)",
-    // set line size
-    4
-  );
-    
-  var markers = series.markers();
-  // enables markers
-  markers.enabled(true);
-  // set marker type
-  markers.type("star5");
-  // set marker inner color
-  markers.fill("gold");
-  // set marker border
-  markers.stroke("darkred");
-  // set marker size
-  markers.size(7);
-  
-  // settings for hovered marker
-  var hoverMarkers = series.hoverMarkers();
-  // marker size
-  hoverMarkers.size(7);
-  // marker inner color
-  hoverMarkers.fill("darkred");
-  // marker border
-  hoverMarkers.stroke("gold");
-```
-
-Using such settings we've redefined line color and made it rather thick. Also, we've redefined settings for each point marker along with settings for each marker in hovered state.
-
-{sample}BCT\_StepLine\_Chart\_06{sample}
-
-**Note**: you can find more information about lines' visual appearance in [Line Settings tutorial](../Appearance_Settings/Lines_Settings).
-
-## Labels and Tooltips
-
-In this section we will explain how to add and configure data labels and tooltips.
-  
-If you want to configure data labels and tooltips for all series - use {api:anychart.charts.Cartesian#labels}labels(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods.     
-With the following example, let's make data labels appear to the bottom from the data points and disable tooltips:
-
-```
-// enable and adjust labels
-labels = series.labels();
-labels.enabled(true);
-labels.position("bottom");
-labels.anchor("top");
-
-// disable tooltips
-tooltips = chart.tooltip();
-tooltips.enabled(false);
-```
-
-{sample}BCT\_StepLine\_Chart\_07{sample}
+{sample}BCT\_Stick\_Chart\_05{sample}
 
 
 ## Samples

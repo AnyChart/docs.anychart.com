@@ -8,28 +8,73 @@
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
-// data
+
+  // data
 var dataSet = anychart.data.set([
-  ["January", 10000, 12000],
-  ["February", 12000, 15000],
-  ["March", 18000, 16000],
-  ["April", 11000, 15000],
-  ["May", 9000, 14000],
+  {x: "January", value: 1.25},
+  {x: "February", value: 1.25},
+  {x: "March", value: 1.5},
+  {x: "April", value: 1.5},
+  {x: "May", value: 1.75},
+  {x: "June", value: 1.75},
+  {x: "July", value: 1.75},
+  {x: "August", value: 2},
+  {x: "September", value: 2},
+  {x: "October", value: 2.25},
+  {x: "November", value: 2.25},
+  {x: "December", value: 2.5}
 ]);
-var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
-var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
 var chart = anychart.line();
-series1 = chart.jumpLine(seriesData_1);
-series2 = chart.jumpLine(seriesData_2);
+series = chart.jumpLine(dataSet);
+
+// set a style
+series.stroke("#67329c", 3);
+series.hoverStroke("#9966cc", 3);
+series.selectStroke("#663399", 3);
+
+// create markers
+markers = series.markers();
+markers.enabled(true);
 
 // title
-chart.title("Multi-series JumpLine Chart");
+chart.title("Interest rates continue to increase");
 
 // set axes titles
 var xAxis = chart.xAxis();
-xAxis.title("Sales");
+xAxis.title("Month");
 var yAxis = chart.yAxis();
-yAxis.title("Month");
+yAxis.title("%");
+
+// set min and max values
+yScale = chart.yScale();
+yScale.minimum(0);
+yScale.maximum(3.0);
+
+// enable grids
+chart.grid(0, {axis: chart.xAxis()});
+chart.grid(1, {axis: chart.yAxis()});
+minorGrid = chart.minorGrid();
+minorGrid.enabled(true);
+
+// orientation setting
+xAxis.orientation("top");
+
+// stroke settings
+series.stroke("#025669", 4);
+series.hoverStroke("#04a7cc", 4);
+
+// format the labels
+labels = series.labels();
+labels.enabled(true);
+labels.textFormatter("%{%Value}");
+labels.position("center");
+labels.anchor("bottom");
+
+// set the tooltips
+tooltips = series.tooltip();
+tooltips.textFormatter("%{%Value}");
+tooltips.background("#e0d6d1");
+tooltips.fontColor("#4d3c33");
 
 // draw
 chart.container("container");

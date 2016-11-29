@@ -8,7 +8,7 @@
 
 ## Overview
 
-When your data can be arraged in a table format on a worksheet, there are several chart types suit for demonstrating this data. JumpLine Chart is one of those. These Charts are quite alike Line Charts, or even more alike StepLine charts: JumpLine counts the data points as the center points of "jumps" - horizontal line segments of a category width. The difference between StepLine and JumpLine is in vertical line segments, connecting the "steps" of a StepLine: in JumpLine, nothing connects the points. 
+When your data can be arranged in a table format on a worksheet, there are several chart types suit for demonstrating this data. JumpLine Chart is one of those. These Charts are quite alike Line Charts, or even more alike StepLine charts: JumpLine counts the data points as the center points of "jumps" - horizontal line segments of a category width. The difference between StepLine and JumpLine is in vertical line segments, connecting the "steps" of a StepLine: in JumpLine, nothing connects the points. 
 
 JumpLine Charts are usually used for demonstrating rates.
 
@@ -32,13 +32,6 @@ chart.jumpLine(data);
 
 {sample}BCT\_JumpLine\_Chart\_01{sample}
 
-JumpLine Chart can also have several series:
-
-
-{sample}BCT\_JumpLine\_Chart\_02{sample}
-
-Explore the sample in the playground to see the code.
-
 
 ## Adjusting
 
@@ -56,7 +49,7 @@ Coloring the chart is usually the final step in its creating as all elements of 
 
 The sample below demonstrates a JumpLine Chart with the adjusted parameters described before. Explore it in the playground to see the code.
 
-{sample}BCT\_JumpLine\_Chart\_03{sample}
+{sample}BCT\_JumpLine\_Chart\_02{sample}
 
 
 ## Samples

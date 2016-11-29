@@ -34,10 +34,50 @@ seriesJan.name("January");
 seriesFeb.name("February");
 seriesMar.name("March");
 
-// title
-chart.title("Multi Series Stick Chart");
+// set the colors
+seriesJan.stroke("#c77036", 2)
+seriesJan.hoverStroke("#deaa88", 2);
+seriesJan.selectStroke("#000", 2);
 
-// set axes titles
+seriesFeb.stroke("#4d3c33", 2)
+seriesFeb.hoverStroke("#8a6c5c", 2);
+seriesFeb.selectStroke("#000", 2);
+
+seriesMar.stroke("#4f7942", 2)
+seriesMar.hoverStroke("#7eb06f", 2);
+seriesMar.selectStroke("#000", 2);
+
+// title
+chart.title("Stick Chart with settings adjusted");
+
+// create and enable labels
+labelsFeb = seriesFeb.labels();
+labelsFeb.enabled(true);
+labelsFeb.fontSize(10);
+labelsFeb.textFormatter("{%x} earned ${%Value} in {%SeriesName}");
+
+// create and enable tooltips
+tooltips = chart.tooltip();
+tooltips.displayMode("single");
+
+titleTooltipMar = seriesMar.tooltip().title();
+tooltipsMar = seriesMar.tooltip();
+tooltipsMar.enabled(true);
+tooltipsMar.background("#ccffe6");
+tooltipsMar.fontColor("#000000");
+tooltipsMar.fontSize(10);
+titleTooltipMar.fontColor("#000000");
+titleTooltipMar.fontWeight("bold");
+titleTooltipMar.fontSize(10);
+
+// set markers
+markersJan = seriesJan.markers();
+markersJan.enabled(true);
+markersJan.fill("red");
+markersJan.type("star7");
+markersJan.size(7);
+
+// set axes titles and orientation
 var xAxis = chart.xAxis();
 xAxis.title("Sales");
 var yAxis = chart.yAxis();
