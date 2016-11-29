@@ -29,6 +29,9 @@ function drawer() {
   var shapes = this.getShapesGroup(this.pointState);
   console.log('Point', this,  shapes);
 
+  y = this.series.transformY(10);
+  x = this.series.transformX(2);
+
   var leftX = this.x - this.pointWidth / 2;
   var rightX = leftX + this.pointWidth;
 
