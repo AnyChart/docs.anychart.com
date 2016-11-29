@@ -54,21 +54,21 @@ Each point of the Adaptive Moving Average indicator is calculated by the followi
 
 1. Calculate the ER:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/ama\_er.png" width="343"></center>
+<center><img src="http://static.anychart.com/images/technical\_indicators/ama\_er.png" width="343"></center>
 
 2. Then, use the following formula to calculate the SSC value:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/ama\_ssc.png" width="650"></center>
+<center><img src="http://static.anychart.com/images/technical\_indicators/ama\_ssc.png" width="650"></center>
 
 3. Now, use the results from the actions made before and calcuate the indicator io:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/ama\_ama.png" width="391"></center>
+<center><img src="http://static.anychart.com/images/technical\_indicators/ama\_ama.png" width="391"></center>
 
 ## Aroon
 
 Aroon indicator in each point is calculated according to the following formula:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/aroon.png" width="650"></center>
+<center><img src="http://static.anychart.com/images/technical\_indicators/aroon.png" width="650"></center>
 
 ## Average True Range (ATR)
 
@@ -110,7 +110,7 @@ Coming soon.
 
 Exponential Moving Average in each point is calculated according to the following formula:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/ema.png" width="680"></center>
+<center><img src="http://static.anychart.com/images/technical\_indicators/ema.png" width="680"></center>
 
 ## Keltner Channels
 
@@ -120,7 +120,7 @@ Coming soon.
 
 This indicator points are calculated by the following formula:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/mma.png" width="400"></center>
+<center><img src="http://static.anychart.com/images/technical\_indicators/mma.png" width="400"></center>
 
 ## Money Flow Index (MFI)
 
@@ -138,13 +138,13 @@ Moving Average Convergence/Divergence indicator is calculated as follows:
 	<li>EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#exponential_moving_average)</a>. Slow period 
 	and fast period are set by <strong>slowPeriod</strong> (default 26) and <strong>fastPeriod</strong> (default 12) parameters of {api:anychart.core.stock.indicators.MACD}.macd(){api} method.</li>
 	<li>MACD series value is calculated:<br>
-<img src="http://static.anychart.com/images/technical_indicators/macd-macd.png"/></li>
+<img src="http://static.anychart.com/images/technical\_indicators/macd-macd.png"/></li>
 	<li>EMA\[signal period\]<sub>i</sub> of MACD series values is calculated by [EMA formula](#exponential_moving_average), where signal period is set
 	by <strong>signalPeriod</strong> parameter.</li>
 	<li>Signal series value is calculated:<br>
-<img src="http://static.anychart.com/images/technical_indicators/macd-signal.png"/></li>
+<img src="http://static.anychart.com/images/technical\_indicators/macd-signal.png"/></li>
 	<li>Histogram series is calculated:<br>
-<img src="http://static.anychart.com/images/technical_indicators/macd-histogram.png"/></li>
+<img src="http://static.anychart.com/images/technical\_indicators/macd-histogram.png"/></li>
 </ol>
 
 ## Moving Average Envelopes
@@ -167,7 +167,7 @@ Coming soon.
 
 Rate of Change is calculated according to this formula:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/roc.png"/></center>
+<center><img src="http://static.anychart.com/images/technical\_indicators/roc.png"/></center>
 
 ## Relative Strength Index
 
@@ -175,19 +175,19 @@ Relative Strength Index is calculated as follows:
 
 <ol>
 	<li>Upward change (U) or downward change (D) sequences are calculated:<br>
-<img src="http://static.anychart.com/images/technical_indicators/rsi-u-d.png"/></li>
+<img src="http://static.anychart.com/images/technical\_indicators/rsi-u-d.png"/></li>
 	<li>Then two averages are calculated:<br>
-<img src="http://static.anychart.com/images/technical_indicators/rsi-mau.png"/><br>
-<img src="http://static.anychart.com/images/technical_indicators/rsi-mad.png"/></li>
+<img src="http://static.anychart.com/images/technical\_indicators/rsi-mau.png"/><br>
+<img src="http://static.anychart.com/images/technical\_indicators/rsi-mad.png"/></li>
 	<li>And final RSI formula is :<br>
-<img src="http://static.anychart.com/images/technical_indicators/rsi-rsi.png"></li>
+<img src="http://static.anychart.com/images/technical\_indicators/rsi-rsi.png"></li>
 </ol>
 
 ## Simple Moving Average
 
 Simple Moving Average in each point is calculated according to the following formula:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/sma.png"></center>
+<center><img src="http://static.anychart.com/images/technical\_indicators/sma.png"></center>
 
 ## Stochastic Oscillator (Full)
 
