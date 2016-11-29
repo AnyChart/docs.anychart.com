@@ -1,89 +1,147 @@
-{:index 2.5}
+{:index 2.2}
 #Drawing
 
 * [Overview](#overview)
-* [Sample App](#sample_app)
-* [Initiate](#initiate)
-* [Cancel](#cancel)
-* [Forbid](#forbid)
-* [Managing](#managing)
-* [Events](#events)
+* [Sample Application](#sample_application)
+* [Initiating Drawing](#initiating_drawing)
+* [Canceling Drawing](#canceling_drawing)
+* [Forbidding Drawing](#forbidding_drawing)
+* [Forbidding Editing](#forbidding_editing)
+* [Managing Annotations](#managing_annotations)
+ * [Removing](#removing)
+ * [Selecting/Unselecting](#selecting_unselecting)
+* [Handling Events](#handling_events)
 
 ## Overview
 
-This article describes methods that allow user of your application to draw annotations on Stock Chart plots.
+This article describes methods that allows users to draw annotations on AnyStock plots.
 
-## Sample App
+Please note: when working with annotations, you can use methods of either the plot or the chart (see the {api:anychart.core.annotations.PlotController}PlotController{api} and {api:anychart.core.annotations.ChartController}ChartController{api} sections in our API). Of course, if there is only one plot on your chart, there is no significant difference between these two options.
 
-To make the integration process easier and give you the general idea how [AnyStock Stock Drawing Tools](Overview) can be implemented we have created a sample web application with open source.
+## Sample Application
+
+To make the integration process easier for you, we created a sample web application with open source, demonstrating how [AnyStock Stock Drawing Tools](Overview) can be implemented.
 
 You can see the application live at [http://www.anychart.com/products/anystock/drawing_tools/](http://www.anychart.com/products/anystock/drawing_tools/).
 
-You can download application source or simply fork it on [GitHub: AnyStock - Drawing Tools and Annotations Demo](https://github.com/AnyChart/anystock-drawing-tools-and-annotations-demo) page.
+To download its source (or simply fork it), visit this page: [GitHub: AnyStock - Drawing Tools and Annotations Demo](https://github.com/AnyChart/anystock-drawing-tools-and-annotations-demo).
 
-## Initiate
+## Initiating Drawing
 
-To start drawing use {api:anychart.core.annotations.PlotController#startDrawing}PlotController startDrawing(){api} method or {api:anychart.core.annotations.ChartController#startDrawing}ChartController startDrawing(){api} method.
+To initiate drawing, call the {api:anychart.core.annotations.PlotController#startDrawing}PlotController startDrawing(){api} method or {api:anychart.core.annotations.ChartController#startDrawing}ChartController startDrawing(){api} method and specify the annotation type by choosing one of the {api:anychart.enums.AnnotationTypes}Annotation Types enums{api}. Use object notation to configure annotations:
 
 ```
-plot.annotations().startDrawing("infiniteLine");
-plot.annotations().startDrawing({type: "infiniteLine", color: "red"});
+plot.annotations().startDrawing("triangle");
+plot.annotations().startDrawing({type: "triangle", color: "red"});
 ```
 
-## Cancel
+Here is a basic sample, demonstrating how the Drawing feature is used. Users can draw Andrews' Pitchforks, Triangles, and Ellipses or remove all annotations from the plot (to learn more about removing annotations, see the [Removing](#removing) subsection below):
 
-To cancel drawing process use {api:anychart.core.annotations.PlotController#cancelDrawing}PlotController cancelDrawing(){api} method or {api:anychart.core.annotations.ChartController#cancelDrawing}ChartController cancelDrawing(){api} method.
+{sample}STOCK\_Drawing\_Drawing\_01{sample}
+
+## Canceling Drawing
+
+To cancel the drawing process, call the {api:anychart.core.annotations.PlotController#cancelDrawing}PlotController cancelDrawing(){api} method or {api:anychart.core.annotations.ChartController#cancelDrawing}ChartController cancelDrawing(){api} method:
 
 ```
 plot.annotations().cancelDrawing()
 ```
 
-## Forbid
+For example, you have to set 3 points to draw Andrews' Pitchfork and Triangle annotations and may want to cancel drawing after setting 2 points. In the following sample, when you set 2 points and click any of the buttons that initiate drawing, the drawing process is canceled, and the points disappear:
 
-To forbid drawing annotations on some of the plots use {api:anychart.core.annotations.PlotController#enabled}enabled(){api} method.
+{sample}STOCK\_Drawing\_Drawing\_02{sample}
+
+## Forbidding Drawing
+
+To forbid drawing annotations on some of the plots, use the {api:anychart.core.annotations.PlotController#enabled}enabled(){api} method:
 
 ```
-anychart.onDocumentReady(function() {
-    var dataTable = anychart.data.table();
-    dataTable.addData(get_dji_daily_short_data());
+// create a stock chart
+chart = anychart.stock();
 
-    var mapping = dataTable.mapAs({value: 1});
+// create two plots
+chart.plot(0).ohlc(mapping);
+chart.plot(1).line(mapping);
 
-    chart = anychart.stock();
+// allow drawing on the first plot
+chart.plot(0).annotations().enabled(true);
 
-    chart.plot(0).line(mapping);
-    chart.plot(1).line(mapping);
+// forbid drawing on the second plot
+chart.plot(1).annotations().enabled(false);
 
-    // allow drawing on the first plot
-    chart.plot(0).annotations().enabled(true);
-    // forbid drawing on the second plot
-    chart.plot(1).annotations().enabled(false);
-
-    chart.title("Start annotation drawing. Use mouse to draw annotation.");
-    chart.container("container");
-    chart.draw();
-
-    // Start annotation drawing.
-    chart.annotations().startDrawing("triangle");
-});
+// start drawing the annotation.
+chart.annotations().startDrawing("triangle");
 ```
 
-## Managing
+In this sample, annotations can be drawn only on the first (OHLC) plot:
+
+{sample}STOCK\_Drawing\_Drawing\_03{sample}
+
+## Forbidding Editing</a>
+
+To forbid or allow editing an annotation, use the {api:anychart.core.annotations.Base#allowEdit}allowEdit(){api} method. You can find more information in this article: [General Settings](General_Settings#forbidding_editing)
+
+## Managing Annotations
 
 There are several methods that allow you to manage annotations:
 
 - {api:anychart.core.annotations.PlotController#getAnnotationAt}getAnnotationAt(){api}
+- {api:anychart.core.annotations.PlotController#getSelectedAnnotation}getSelectedAnnotation(){api}
 - {api:anychart.core.annotations.PlotController#getAnnotationsCount}getAnnotationsCount(){api}
 - {api:anychart.core.annotations.PlotController#removeAnnotation}removeAnnotation(){api}
 - {api:anychart.core.annotations.PlotController#removeAnnotationAt}removeAnnotationAt(){api}
 - {api:anychart.core.annotations.PlotController#removeAllAnnotations}removeAllAnnotations(){api}
-- {api:anychart.core.annotations.PlotController#getSelectedAnnotation}getSelectedAnnotation(){api}
 - {api:anychart.core.annotations.PlotController#select}select(){api}
 - {api:anychart.core.annotations.PlotController#unselect}unselect(){api}
 
-## Events
+The {api:anychart.core.annotations.PlotController#getAnnotationAt}getAnnotationAt(){api}, {api:anychart.core.annotations.PlotController#getSelectedAnnotation}getSelectedAnnotation(){api}, and {api:anychart.core.annotations.PlotController#getAnnotationsCount}getAnnotationsCount(){api} methods are used get an annotation with a certain index, a selected annotation, or the total number of annotations. The rest of the methods, combined with these 3, allow to remove and select/unselect annotations.
 
-The following {api:anychart.enums.EventType}events{api} can be handled when working with annotations:
+### Removing
+
+The {api:anychart.core.annotations.PlotController#removeAnnotation}removeAnnotation(){api} and {api:anychart.core.annotations.PlotController#removeAnnotationAt}removeAnnotationAt(){api} methods are used to remove a single annotation, and {api:anychart.core.annotations.PlotController#removeAllAnnotations}removeAllAnnotations(){api} removes all annotations.
+
+In the following sample, there are buttons allowing to remove all annotations, the last drawn annotation, and a selected one:
+
+```
+// remove all annotations
+plot.annotations().removeAllAnnotations();
+
+// get the number of annotations
+var annotationsCount = plot.annotations().getAnnotationsCount();
+
+// remove the last annotation
+plot.annotations().removeAnnotationAt(annotationsCount - 1);
+
+// get the selected annotation
+var selectedAnnotation = plot.annotations().getSelectedAnnotation(); 
+
+// remove the selected annotation
+plot.annotations().removeAnnotation(selectedAnnotation);
+```
+
+{sample}STOCK\_Drawing\_Drawing\_04{sample}
+
+<a name='selecting\_unselecting'></a>
+###Selecting/Unselecting
+
+To select or unselect an annotation, use the {api:anychart.core.annotations.PlotController#select}select(){api} and {api:anychart.core.annotations.PlotController#unselect}unselect(){api} methods:
+
+```
+// get the first annotation
+var firstAnnotation = plot.annotations().getAnnotationAt(0);
+
+// select the first annotation
+plot.annotations().select(firstAnnotation);
+
+// unselect a selected annotation
+plot.annotations().unselect();
+```
+
+{sample}STOCK\_Drawing\_Drawing\_05{sample}
+
+## Handling Events
+
+When working with annotations, the following {api:anychart.enums.EventType}events{api} can be handled:
 
 <table>
 <tr><th>Enum Constant</th><th>String Value</th><th>Description</th></tr>
@@ -91,3 +149,20 @@ The following {api:anychart.enums.EventType}events{api} can be handled when work
 <tr><td>ANNOTATION_SELECT</td><td>annotationSelect</td><td>Event type for the annotation select.</td></tr>
 <tr><td>ANNOTATION_UNSELECT</td><td>annotationUnselect</td><td>Event type for the annotation unselect.</td></tr>
 </table>
+
+Please note that you should attach listeners to the chart object.
+
+In the sample below, a listener is used to change the visual settings of annotations and the chart title on selection:
+
+```
+// create an event listener for selection
+chart.listen("annotationSelect", function(e){
+    var selectedAnnotation = e.annotation;
+    // change the annotation stroke on selection
+    selectedAnnotation.selectStroke("#FF0000", 3, "5 2", "round");
+    // change the chart title on selection
+    chart.title("The " + selectedAnnotation.getType() + " annotation is selected.");
+});
+```
+
+{sample}STOCK\_Drawing\_Drawing\_06{sample}

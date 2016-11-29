@@ -32,33 +32,18 @@
     // access the annotations() object of the plot to work with annotations
     var controller = plot.annotations();
 
-    // create the first Fibonacci Fan annotation and configure its visual settings
-    fibonacciFan1 = controller.fibonacciFan({
-        xAnchor: "2006-07-30",
-        valueAnchor: 17.24,
-        secondXAnchor: "2007-01-07",
-        secondValueAnchor: 28.92,
-        hoverTrend: "#0000FF",
-        hoverGrid: "#0000FF",
-        hoverStroke: "#FF0000",
-        selectTrend: "2 #0000FF",
-        selectStroke: "2 #FF0000"        
+    // create a Fibonacci Fan annotation
+        controller.fibonacciFan({
+        xAnchor: "2007-01-07",
+        valueAnchor: 28.92,
+        secondXAnchor: "2009-03-01",
+        secondValueAnchor: 14.18,
+        levels: [0, 0.2, 0.4, 0.7, 1],
+        timeLevels: [0, 0.2, 0.4, 0.7, 1]
     });
 
-    // create the second Fibonacci Fan annotation
-    fibonacciFan2 = controller.fibonacciFan();
-
-    // set the position of the second annotation
-    fibonacciFan2.xAnchor("2004-01-11");
-    fibonacciFan2.valueAnchor(29.13);
-    fibonacciFan2.secondXAnchor("2004-08-08");
-    fibonacciFan2.secondValueAnchor(17.86);
-     
-    // configure the visual settings of the second annotation
-    fibonacciFan2.stroke("#2196F3", 2, "10 2");
-
     // set the chart title
-    chart.title("Fibonacci Fan: Visual Settings");
+    chart.title("Fibonacci Fan: Configuring Levels and Time Levels");
 
     // set the container id
     chart.container("container");

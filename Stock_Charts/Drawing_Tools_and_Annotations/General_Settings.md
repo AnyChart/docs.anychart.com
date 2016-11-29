@@ -1,13 +1,13 @@
-{:index 2}
+{:index 2.1}
 #General Settings
 
 * [Overview](#overview)
-* [Hardcoding](#hardcoding_annotations)
+* [Hardcoding](#hardcoding)
 * [Visual Settings](#visual_settings)
 * [Hover Gap](#hover_gap)
+* [Forbidding Editing](#forbidding_editing)
 * [Binding to Axes](#binding_to_axes)
 * [Drawing](#drawing)
-* [Defaults](#defaults)
 
 ## Overview
 
@@ -20,7 +20,6 @@ To add an annotation to a chart, refer to the {api:anychart.core.annotations.Plo
 You can configure annotations, like most other entities in AnyChart, in two ways: using either JavaScript API methods or object notation. As a rule, object notation is the most convenient way to set the properties of an annotation (see the [Serializing and Deserializing](Serializing_Deserializing) article).
 
 The following sample shows how to create an Ellipse annotation and use object notation to configure it:
-
 
 ```
 // create a stock chart
@@ -36,7 +35,7 @@ lineSeries.name("CSCO");
 // an auxiliary variable for working with annotations
 var controller = plot.annotations();
 
-// create an ellipse annotation
+// create an Ellipse annotation
 controller.ellipse({
     xAnchor: "2006-11-20",
     valueAnchor: 25.92,
@@ -57,7 +56,7 @@ In the sample below, there are two annotations, an Ellipse and an Infinite Line,
 // an auxiliary variable for working with annotations
 var controller = plot.annotations();
 
-// create an ellipse annotation and configure its visual settings
+// create an Ellipse annotation and configure its visual settings
 controller.ellipse({
     xAnchor: "2006-11-20",
     valueAnchor: 25.92,
@@ -72,21 +71,67 @@ controller.ellipse({
 
 {sample}STOCK\_Drawing\_General\_02{sample}
 
+You can also configure the visual settings of markers: use the {api:anychart.core.annotations.Triangle#markers}markers(){api},  {api:anychart.core.annotations.Base#hovermarkers}hoverMarkers(){api}, and {api:anychart.core.annotations.Base#selectMarkers}selectMarkers(){api} methods.
+
+In this sample, the hover and select colors of the Ellipse markers are set to green, and the Infinite Line markers are disabled on select:
+
+```
+// configure the markers
+ellipse.hoverMarkers({size: 6, fill: "#8BC34A"});
+ellipse.selectMarkers({size: 6, fill: "#8BC34A"});
+infiniteLine.selectMarkers(false);
+```
+
+{sample}STOCK\_Drawing\_General\_03{sample}
+
 ## Hover Gap
 
-Another setting of annotations you can configure is the hover gap: use the {api:anychart.core.annotations.Base#hoverGap}hoverGap(){api} method. In this sample, it is increased to 30:
+Another setting of annotations you can configure is the hover gap: use the {api:anychart.core.annotations.Base#hoverGap}hoverGap(){api} method. In the following sample, it is increased to 30:
 
 ```
 // an auxiliary variable for working with annotations
 var controller = plot.annotations();
 
-// create an ellipse annotation and configure its hover gap
+// create an Ellipse annotation and configure its hover gap
 controller.ellipse({
     hoverGap: 30
 });
 ```
 
-{sample}STOCK\_Drawing\_General\_03{sample}
+{sample}STOCK\_Drawing\_General\_04{sample}
+
+## Forbidding Editing
+
+To forbid or allow editing an annotation, use the {api:anychart.core.annotations.Base#allowEdit}allowEdit(){api} method (by default editing is allowed):
+
+```
+// an auxiliary variable for working with annotations
+var controller = plot.annotations();
+
+// create an Ellipse annotation
+var ellipse = plot.annotations().ellipse({
+    xAnchor: "2006-11-20",
+    valueAnchor: 25.92,
+    secondXAnchor: "2007-02-24",
+    secondValueAnchor: 31.92,
+});
+
+// create an Infinite Line annotation
+var infiniteLine = plot.annotations().infiniteLine({
+    xAnchor: "2005-09-04",
+    valueAnchor: 18.58,
+    secondXAnchor: "2008-08-10",
+    secondValueAnchor: 24.91,
+});
+
+//disable interactivity for the Ellipse annotation
+ellipse.allowEdit(false);
+
+// enable interactivity for the Infinite Line annotation
+infiniteLine.allowEdit(true);
+```
+
+{sample}STOCK\_Drawing\_General\_05{sample}
 
 ## Binding to Axes
 
@@ -104,7 +149,7 @@ var extraYAxis = plot.yAxis(1);
 // an auxiliary variable for working with annotations
 var controller = plot.annotations();
 
-// create an infinite line annotation (automatically bound to the main Y-scale)
+// create an Infinite Line annotation (automatically bound to the main Y-scale)
 controller.infiniteLine({
     xAnchor: "2004-01-06",
     valueAnchor: 2039.63,
@@ -112,7 +157,7 @@ controller.infiniteLine({
     secondValueAnchor: 2088.10
 });
 
-//create an ellipse annotation
+//create an Ellipse annotation
 var ellipse = controller.ellipse({
     xAnchor: "2004-01-07",
     valueAnchor: 2583950080,
@@ -120,11 +165,10 @@ var ellipse = controller.ellipse({
     secondValueAnchor: 2783950080
 });
 
-// bind the ellipse annotation to the additional Y-scale
+// bind the Ellipse annotation to the additional Y-scale
 ellipse.yScale(extraYScale);
 ```
-
-{sample}STOCK\_Drawing\_General\_04{sample}
+{sample}STOCK\_Drawing\_General\_06{sample}
 
 ## Drawing
 
@@ -140,4 +184,4 @@ controller.startDrawing("ellipse");
 
 Here is a basic sample, demonstrating how the Drawing feature is used. Users can draw Ellipses, Rectangles, and Triangles or remove all annotations from the plot:
 
-{sample}STOCK\_Drawing\_General\_05{sample}
+{sample}STOCK\_Drawing\_General\_07{sample}

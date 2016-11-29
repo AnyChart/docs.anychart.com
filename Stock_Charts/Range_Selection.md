@@ -8,8 +8,10 @@
 * [Adjusting Range Selector](#adjusting_range_selector)
  * [Customizing preset periods](#customizing_preset_periods)
  * [Creating custom periods](#creating_custom_periods)
+ * [Zoom To Label](#zoom_to_label)
 * [Adjusting Range Picker](#adjusting_range_picker)
  * [Input date format](#input_date_format)
+ * [From and To Labels](#from_and_to_labels)
 
 ## Overview
 
@@ -146,6 +148,15 @@ rangeSelector.ranges([{
 
 {sample}STOCK\_Range\_Selection\_04{sample}
 
+### Zoom To Label
+
+You can change the text in the label that accompanies Range selector using {api:anychart.ui.RangeSelector#zoomLabelText}zoomLabelText(){api} method:
+
+```
+var rangeSelector = anychart.ui.rangeSelector();
+rangeSelector.zoomLabelText("Show:");
+```
+
 ## Adjusting Range Picker
 
 ### Input date format
@@ -160,3 +171,13 @@ rangePicker.format('dd MM yyyy');
 ```
 
 {sample}STOCK\_Range\_Selection\_05{sample}
+
+### From and To Labels
+
+You can change the text of labels using {api:anychart.ui.RangePicker#fromLabelText}fromLabelText(){api} and {api:anychart.ui.RangePicker#toLabelText}toLabelText(){api} method:
+
+```
+var rangePicker = anychart.ui.rangePicker();
+rangePicker.fromLabelText("Start:");
+rangePicker.toLabelText("End:");
+```
