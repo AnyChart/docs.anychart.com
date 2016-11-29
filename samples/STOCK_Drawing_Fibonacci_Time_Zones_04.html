@@ -38,18 +38,36 @@
         valueAnchor: 17.24,
         secondXAnchor: "2007-01-07",
         secondValueAnchor: 28.92,
-        levels: [0, 0.2, 0.4, 0.7, 1]
+        stroke: colorLevels,
+        hoverStroke: colorLevels,
+        selectStroke: colorLevels
     });
 
     // set the chart title
-    chart.title("Fibonacci Time Zones: Configuring Levels");
+    chart.title("Fibonacci Time Zones: Visual Settings (Levels)");
 
     // set the container id
     chart.container("container");
 
     // initiate drawing the chart
     chart.draw();
-});</script>
+});
+
+function colorLevels(){
+  if (this.level!==undefined)
+  {
+    switch (this.level) {
+        case 1:
+            return "Red";
+            break;
+        case 2:
+            return {color: "Blue", dash: "2 2"};
+            break;
+        default:
+                return "Black"
+        }
+  }
+};</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

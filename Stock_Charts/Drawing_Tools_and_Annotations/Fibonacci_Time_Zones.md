@@ -2,7 +2,8 @@
 #Fibonacci Time Zones
 
 * [Overview](#overview)
-* [Basic settings](#basic_settings)
+* [Basic Settings](#basic_settings)
+* [Configuring Levels](#configuring_levels)
 * [Visual Settings](#visual_settings)
 
 ## Overview
@@ -44,6 +45,23 @@ This is how it looks like:
 
 {sample}STOCK\_Drawing\_Fibonacci\_Time\_Zones\_01{sample}
 
+## Configuring Levels
+
+You can set the levels of a Fibonacci Time Zones annotation by using the {api:anychart.core.annotations.FibonacciTimezones#levels}levels(){api} method and passing an array of values as a parameter:
+
+```
+// create a Fibonacci Time Zones annotation
+controller.fibonacciTimezones({
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
+    secondXAnchor: "2007-01-07",
+    secondValueAnchor: 28.92,
+    levels: [0, 0.2, 0.4, 0.7, 1]
+});
+```
+
+{sample}STOCK\_Drawing\_Fibonacci\_Time\_Zones\_02{sample}
+
 ## Visual Settings
 
 You can also configure the visual settings of a Fibonacci Time Zones annotation:
@@ -73,11 +91,45 @@ fibonacciTimezones2 = controller.fibonacciTimezones();
 // set the position of the second annotation
 fibonacciTimezones2.xAnchor("2004-01-11");
 fibonacciTimezones2.valueAnchor(29.13);
-fibonacciTimezones2.secondXAnchor("2004-08-08");
-fibonacciTimezones2.secondValueAnchor(17.86);
+fibonacciTimezones2.secondXAnchor("2004-06-06");
+fibonacciTimezones2.secondValueAnchor(23.82);   
  
 // configure the visual settings of the second annotation
 fibonacciTimezones2.stroke("#2196F3", 2, "10 2");
 ```
 
-{sample}STOCK\_Drawing\_Fibonacci\_Time\_Zones\_02{sample}
+{sample}STOCK\_Drawing\_Fibonacci\_Time\_Zones\_03{sample}
+
+To configure the visual settings of a certain level, use the {api:anychart.core.annotations.FibonacciTimezones#stroke}stroke(){api},  {api:anychart.core.annotations.FibonacciTimezones#hoverStroke}hoverStroke(){api}, and {api:anychart.core.annotations.FibonacciTimezones#selectStroke}selectStroke(){api} methods with a function as a parameter. In this function, get level values from the context:
+
+```
+// create a Fibonacci Time Zones annotation
+controller.fibonacciTimezones({
+    xAnchor: "2006-07-30",
+    valueAnchor: 17.24,
+    secondXAnchor: "2007-01-07",
+    secondValueAnchor: 28.92,
+    stroke: colorLevels,
+    hoverStroke: colorLevels,
+    selectStroke: colorLevels
+});
+
+
+function colorLevels(){
+  if (this.level!==undefined)
+  {
+    switch (this.level) {
+        case 1:
+            return "Red";
+            break;
+        case 2:
+            return {color: "Blue", dash: "2 2"};
+            break;
+        default:
+                return "Black"
+        }
+  }
+};
+```
+
+{sample}STOCK\_Drawing\_Fibonacci\_Time\_Zones\_04{sample}
