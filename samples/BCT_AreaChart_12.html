@@ -21,9 +21,14 @@
   // create a 3D chart
   chart = anychart.area3d();
 
-  // create a series
+  // create an area series and set the data
   var series = chart.area(data);
+
+  // set the series title
   series.name("Sales 2009");
+
+  // set the chart title
+  chart.title("3D Area Chart");
 
   // set the container id
   chart.container("container");

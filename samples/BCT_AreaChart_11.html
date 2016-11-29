@@ -34,20 +34,20 @@
     // set the chart type
     chart = anychart.area();
 
-    // set the data for the first series and configure its visual settings
+    // create the first series, set the data, and configure the visual settings of the series
     var series1 = chart.splineArea(seriesData_1);
     series1.hatchFill("soliddiamond");
     series1.fill("#EEEEEE");
 
-    // set the data for the second series and configure its visual settings
+    // create the second series, set the data, and configure the visual settings of the series
     var series2 = chart.splineArea(seriesData_2);
     series2.hatchFill("forwarddiagonal");
     series2.fill("#EEEEEE");
 
-    // set the data for the third series and configure its visual settings
+    // create the third series, set the data, and configure the visual settings of the series
     var series3 = chart.splineArea(seriesData_3);
-    series3.fill("#EEEEEE");
     series3.hatchFill("backwarddiagonal");
+    series3.fill("#EEEEEE");
 
     // set the chart title
     chart.title("Hatch Fill");

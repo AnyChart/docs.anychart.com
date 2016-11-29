@@ -23,7 +23,6 @@
 
 Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts emphasize the magnitude of change over time and can be used to draw attention to the total value across a trend. For example, data that represents profit over time can be plotted in an area chart to emphasize the total profit.
 
-(???) предлагаю добавить:
 In this article you can learn about the types of area charts available in AnyChart and find out to configure their visual settings and such elements as axes, labels, tooltips, markers.
 
 
@@ -33,7 +32,7 @@ Depending on the data model you use and on the purpose of your visualization, An
 
 ### Single Series Area Chart
 
-In the sample below, there is a single-series area chart showing sales of ACME Corp. through several months in a year. Here is the data in a table view (??? можно же так сказать?):
+In the sample below, there is a single-series area chart showing sales of ACME Corp. through several months in a year. Here is the data in a table view:
 
 <table width="287" border="1" class="dtTABLE">
 <tbody>
@@ -97,7 +96,7 @@ to see the full source code, alter and play with the sample or download it.
 To improve the design of your chart, you can turn it into a Spline Area chart:
 
 ```
-// data
+// create a data set
 var data = anychart.data.set([
     ['January', 10000],
     ['February', 12000],
@@ -109,7 +108,7 @@ var data = anychart.data.set([
 // set the chart type
 chart = anychart.area();
 
-// set data and define chart type
+// create a spline area series and set the data
 chart.splineArea(data);
 ```
 
@@ -163,7 +162,7 @@ these two samples is the fact that now we have two series of the data: one serie
 names to each series:
 
 ```
-// define data set
+// create a data set
 var data = anychart.data.set([
   ["January", 10000],
   ["February", 12000],
@@ -187,7 +186,7 @@ As now we have multi-series chart we don't want to set the **chart type** for ea
 Anychart provides an opportunity to use 3d version of area charts. Use {api:anychart#area3d}area3d(){api} method to create 3d area chart. 
 
 ```
-// define data set
+// create a data set
 var data = anychart.data.set([
   ["Department Stores", 637166],
   ["Discount Stores", 721630],
@@ -195,10 +194,10 @@ var data = anychart.data.set([
   ["All other outlets", 90000]
 ]);
 
-// create 3D chart's plot
+// create a 3D chart
 var chart = anychart.area3d();
 
-// create series
+// create an area series and set the data
 chart.area(data);
 ```
 
