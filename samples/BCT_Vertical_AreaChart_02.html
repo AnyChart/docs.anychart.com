@@ -54,6 +54,9 @@
     yScale.minimum(0);
     yScale.maximum(50000);
 
+    // configure tooltips
+    chart.tooltip().textFormatter("Month: {%x} \nSales: ${%Value}");
+
     // set the chart title
     chart.title("Vertical Area Chart (Customization)");
 
