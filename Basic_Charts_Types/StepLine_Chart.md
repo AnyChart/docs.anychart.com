@@ -85,19 +85,19 @@ This method also works for [Area Charts](Area_Chart), [Range Area Charts](Range_
 
 All elements and features of a StepLine Chart can be adjusted due to the exact purposes of a chart.
 
-Axes are responsible for the grids, markers, axes labels. Sometimes it might be necessary to change axes orientation, for example, to put the Y-Axis from the left side of the chart to its right side. Use the {api:anychart.core.axes.Linear#orientation}orientation(){api} method.
+Axes are responsible for the grids, markers, axes labels. If you need to change the axes orientation, e.g. to put the Y-Axis from the left side of the chart to its right side or to pick the X-Axis from the bottom of the chart up to its top, use the {api:anychart.core.axes.Linear#orientation}orientation(){api} method.
 
-Axes are based on scales - elements that allow you to control such features as minimum and maximum scale values, scale inversion, intervals, scale type and so on. The {api:anychart.scales.Linear#inverted}inverted(){api} method allows to invert the scale, and the {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} methods are used to set the min and max values of the scale. You can find a lot of information about scales in the [Scales article](../Axes_and_Grids/Scales).
+Scales control the minimum and maximum values shown on the axes, axes inversion, intervals between ticks, as axes are based on scales. To invert the scale use the {api:anychart.scales.Linear#inverted}inverted(){api} method, and the {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} methods to set the min and max values of the scale. You can find a lot of information about scales in the [Scales article](../Axes_and_Grids/Scales).
 
-Markers are special elements which are supposed to emphasize the point for some reasons. They are to be added by the {api:anychart.core.cartesian.series.Stick#markers}markers(){api} method. It is possible to change their shape, size and color.
+If you need to emphasize the point for some reasons, use the {api:anychart.core.cartesian.series.Stick#markers}markers(){api} method to create abd adjust the markers.
 
 There are also some text elements supposed to tell the customer some information about the point. Labels are elements that are permanently shown (though, this can be changed and adjusted) somewhere next to the point and tooltips are pop-up elements that are shown on a point hovered. Add the labels and tooltips with the {api:anychart.charts.Cartesian#labels}labels(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods. Both elements' text can be adjusted through the {api:anychart.core.ui.Tooltip#textFormatter}textFormatter(){api} method.
 
-After all elements have been adjusted to demonstrate the necessary information about the point, it is a good time for changing the colors. There are several ways to set the colors to the series, points of other elements. You can use the data set, set the colors through some special methods or add/create a color [palette](Appearance_Settings/Palettes). 
+After you have adjusted all elements and make them demonstrate all information about the point you need, it is time for changing the colors. There are several ways to set the colors to the series, points of other elements. You can also use the data set if you need to color some points , set the colors through some special methods or add/create a color [palette](Appearance_Settings/Palettes). 
 
-The sample below demonstrates a JumpLine Chart with the adjusted parameters described before. Explore it in the playground to see the code.
+The sample below demonstrates a StepLine Chart with the adjusted parameters described before. Explore it in the playground to see the code.
 
-{sample}BCT\_Stick\_Chart\_05{sample}
+{sample}BCT\_StepLine\_Chart\_05{sample}
 
 
 ## Samples

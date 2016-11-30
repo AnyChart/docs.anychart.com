@@ -66,7 +66,7 @@ There are also some text elements supposed to tell the customer some information
 
 After all elements have been adjusted to demonstrate the necessary information about the point, it is a good time for changing the colors. There are several ways to set the colors to the series, points of other elements. You can use the data set, set the colors through some special methods or add/create a color [palette](Appearance_Settings/Palettes). 
 
-The sample below demonstrates a JumpLine Chart with the adjusted parameters described before. Explore it in the playground to see the code.
+The sample below demonstrates a Stick Chart with the adjusted parameters described before. Explore it in the playground to see the code.
 
 {sample}BCT\_Stick\_Chart\_03{sample}
 
