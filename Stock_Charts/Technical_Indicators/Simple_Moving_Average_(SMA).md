@@ -44,7 +44,7 @@ Here is a live sample:
 
 ## Indicator parameters
 
-SMA indicator need three parameters: mapping with value field in it, period and a type of series to be displayed as:
+SMA indicator needs three parameters: mapping with value field in it, period and a type of series to be displayed as:
 
 ```
 var sma10 = plot.sma(mapping, 10, "column");
