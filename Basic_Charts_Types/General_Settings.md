@@ -9,7 +9,7 @@
 * [Tooltips](#tooltips)
 * [Legend](#legend)
 * [Axes and Scales](#axes_and_scales)
-  * [Subsection 1](#subsection)
+  * [Stacking](#stacking)
 * [Interactivity](#interactivity)
 * [Events](#events)
 * [Vertical Charts](#vertical_charts)
