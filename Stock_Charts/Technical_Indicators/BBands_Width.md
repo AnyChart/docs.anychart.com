@@ -76,3 +76,5 @@ BBandsWidth10.stroke('#bf360c');
 var BBandsWidth50 = plot_1.bbandsWidth(mapping, 50, "column").series();
 BBandsWidth50.fill('#ff6d00');
 ```
+
+{sample}STOCK\_Technical\_Indicators\_BBandsWidth\_02{sample}

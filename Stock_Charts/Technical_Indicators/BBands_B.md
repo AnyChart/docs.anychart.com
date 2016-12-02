@@ -11,7 +11,7 @@
 
 ## Overview
 
-BBands %B is one of two indicators derived from [Bollinger Bands](Bollinger_Bands), according to the creator of those indicators, John Bollinger. The other indicator is [Bollinger Band Width](Bollinger_Band_Width).
+BBands %B is one of two indicators derived from [Bollinger Bands](Bollinger_Bands), according to the creator of those indicators, John Bollinger. The other indicator is [Bollinger Band Width](BBands_Width).
 
 %B quantifies a security's price relative to the upper and lower Bollinger Band. There are six basic relationship levels:
 
@@ -84,3 +84,5 @@ BBandsB10.seriesType("column");
 var BBandsB50 = plot_1.bbandsB(mapping, 50, 0.2, "column").series();
 BBandsB50.fill('#ff6d00');
 ```
+
+{sample}STOCK\_Technical\_Indicators\_BBandsB\_02{sample}
