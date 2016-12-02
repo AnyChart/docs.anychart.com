@@ -11,20 +11,72 @@
 
 // data
 var dataSet = anychart.data.set([
-  ["Alex", 10000],
-  ["Josh", 12000],
-  ["Jane", 13500],
-  ["April", 19000],
-  ["Mary", 15000]
+  ["Alex", 10000, 9000, 13000],
+  ["Josh", 12000, 12200, 10000],
+  ["Jane", 13500, 8000, 9500],
+  ["April", 19000, 14000, 17000],
+  ["Mary", 15000, 15000, 13700]
 ]);
 var chart = anychart.line();
-dataSetMapping = dataSet.mapAs({x: [0], value: [1]});
-series = chart.stick(dataSetMapping);
+
+// map the data
+dataSetMappingJan = dataSet.mapAs({x: [0], value: [1]});
+dataSetMappingFeb = dataSet.mapAs({x: [0], value: [2]});
+dataSetMappingMar = dataSet.mapAs({x: [0], value: [3]});
+
+// create series
+seriesJan = chart.stick(dataSetMappingJan);
+seriesFeb = chart.stick(dataSetMappingFeb);
+seriesMar = chart.stick(dataSetMappingMar);
+
+// set series names
+seriesJan.name("January");
+seriesFeb.name("February");
+seriesMar.name("March");
+
+// set the colors
+seriesJan.stroke("#c77036", 2)
+seriesJan.hoverStroke("#deaa88", 2);
+seriesJan.selectStroke("#000", 2);
+
+seriesFeb.stroke("#4d3c33", 2)
+seriesFeb.hoverStroke("#8a6c5c", 2);
+seriesFeb.selectStroke("#000", 2);
+
+seriesMar.stroke("#4f7942", 2)
+seriesMar.hoverStroke("#7eb06f", 2);
+seriesMar.selectStroke("#000", 2);
 
 // title
-chart.title("Single Series Stick Chart (data is set as array of arrays)");
+chart.title("Stick Chart with settings adjusted");
 
-// set axes titles
+// create and enable labels
+labelsFeb = seriesFeb.labels();
+labelsFeb.enabled(true);
+labelsFeb.fontSize(10);
+labelsFeb.textFormatter("{%x} earned ${%Value} in {%SeriesName}");
+
+// create and enable tooltips
+tooltips = chart.tooltip();
+tooltips.displayMode("single");
+
+titleTooltip = chart.tooltip().title();;
+tooltips.enabled(true);
+tooltips.background("#ccffe6");
+tooltips.fontColor("#000000");
+tooltips.fontSize(10);
+titleTooltip.fontColor("#000000");
+titleTooltip.fontWeight("bold");
+titleTooltip.fontSize(10);
+
+// set markers
+markersJan = seriesJan.markers();
+markersJan.enabled(true);
+markersJan.fill("red");
+markersJan.type("star7");
+markersJan.size(7);
+
+// set axes titles and orientation
 var xAxis = chart.xAxis();
 xAxis.title("Sales");
 var yAxis = chart.yAxis();

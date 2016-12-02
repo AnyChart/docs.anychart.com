@@ -18,22 +18,6 @@ Stick Chart is a variation of a [Line Chart](Line_Chart) (though looks more like
 A simple stick chart can be created with the {api:anychart.charts.Cartesian#stick}stick(){api} method. Let's create a data set for one series and set this series of a Stick type. 
 
 ```
-var dataSet = anychart.data.set([
-  {x: "Alex", value: 10000},
-  {x: "Josh", value: 12000},
-  {x: "Jane", value: 13500},
-  {x: "April", value: 19000},
-  {x: "Mary", value: 15000}
-]);
-var chart = anychart.line();
-series = chart.stick(dataSet);
-```
-
-{sample}BCT\_Stick\_Chart\_01{sample}
-
-There is another way how the data can be arranged. Let's convert the array of objects demonstrated above into the array of array and map it then:
-
-```
 // data
 var dataSet = anychart.data.set([
   ["Alex", 10000],
@@ -47,7 +31,7 @@ dataSetMapping = dataSet.mapAs({x: [0], value: [1]});
 series = chart.stick(dataSetMapping);
 ```
 
-{sample}BCT\_Stick\_Chart\_02{sample}
+{sample}BCT\_Stick\_Chart\_01{sample}
 
 You can notice that the result is absolutely the same. Choose the most comfortable way of arranging the data for you.
 
@@ -64,11 +48,11 @@ Markers are special elements which are supposed to emphasize the point for some 
 
 There are also some text elements supposed to tell the customer some information about the point. Labels are elements that are permanently shown (though, this can be changed and adjusted) somewhere next to the point and tooltips are pop-up elements that are shown on a point hovered. Add the labels and tooltips with the {api:anychart.charts.Cartesian#labels}labels(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods. Both elements' text can be adjusted through the {api:anychart.core.ui.Tooltip#textFormatter}textFormatter(){api} method.
 
-After all elements have been adjusted to demonstrate the necessary information about the point, it is a good time for changing the colors. There are several ways to set the colors to the series, points of other elements. You can use the data set, set the colors through some special methods or add/create a color [palette](Appearance_Settings/Palettes). 
+After all elements have been adjusted to demonstrate the necessary information about the point, it is a good time for changing the colors. There are several ways to set the colors to the series, points or other elements. You can use the data set, set the colors through some special methods or add/create a color [palette](Appearance_Settings/Palettes). 
 
 The sample below demonstrates a Stick Chart with the adjusted parameters described before. Explore it in the playground to see the code.
 
-{sample}BCT\_Stick\_Chart\_03{sample}
+{sample}BCT\_Stick\_Chart\_02{sample}
 
 
 ## Stacking
@@ -80,8 +64,6 @@ Let's reduce the previous axes and scales changes and apply the stacking mode:
 ```
 yScale.stackMode("value");
 ```
-{sample}BCT\_Stick\_Chart\_04{sample}
-
 
 ## Samples
 

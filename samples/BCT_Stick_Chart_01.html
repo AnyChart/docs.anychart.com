@@ -7,26 +7,40 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script src="http://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // data
-var dataSet = anychart.data.set([
-  {x: "Alex", value: 10000},
-  {x: "Josh", value: 12000},
-  {x: "Jane", value: 13500},
-  {x: "April", value: 19000},
-  {x: "Mary", value: 15000}
-]);
-var chart = anychart.line();
-series = chart.stick(dataSet);
-// title
-chart.title("Single Series Stick Chart (data is set as array of objects)");
+var dataTable = anychart.data.table();
+dataTable.addData(get_csco_daily_data());
 
-// set axes titles
-var xAxis = chart.xAxis();
-xAxis.title("Sales");
-var yAxis = chart.yAxis();
-yAxis.title("Manager");
+// map loaded data
+mappingStick = dataTable.mapAs({x: [0], value: [4]});
+mappingOHLC = dataTable.mapAs({x: [0], open: [1], high: [2], low: [3], close: [4]});
+
+// create stock chart
+chart = anychart.stock();
+
+// create plot on the chart
+plot0 = chart.plot(0);
+plot1 = chart.plot(1);
+
+// create ohlc series
+ohlcSeries = plot0.ohlc(mappingOHLC);
+ohlcSeries.name('CSCO');
+ohlcSeries.stroke('2px #64b5f6');
+
+// create stick series
+stickSeries = plot1.stick(mappingStick);
+stickSeries.name('CSCO');
+stickSeries.stroke('2px #64b5f6');
+
+p0Xaxis = plot0.xAxis();
+p1Xaxis = plot1.xAxis();
+p0Yaxis = plot0.yAxis();
+p1Yaxis = plot1.yAxis();
+
+// title
+chart.title("Stock Chart with OHLC and Stick series");
 
 // draw
 chart.container("container");
