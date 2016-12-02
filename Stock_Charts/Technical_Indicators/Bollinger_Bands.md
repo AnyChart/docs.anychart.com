@@ -27,20 +27,19 @@ The data set for the BBands indicator needs those fields which are necessary for
 
 ```
 // map loaded data for the ohlc series
-    var mapping = dataTable.mapAs({
-        'open': 1,
-        'high': 2,
-        'low': 3,
-        'close': 4,
-        'value': {column: 4, type: 'close'}
-    });
+var mapping = dataTable.mapAs({
+    'open': 1,
+    'high': 2,
+    'low': 3,
+    'close': 4,
+    'value': {column: 4, type: 'close'}
+});
 
 // create stock chart
 chart = anychart.stock();
 
 // create plot on the chart
 var plot = chart.plot(0);
-
 ```
 
 ### Indicator Declaration
@@ -65,8 +64,9 @@ var bbands = plot.bbands(mapping, 10, 3, "spline", "spline");
 
 ## Visualization
 
-Vizualization of an indicator depends on the type of a series you display it with. Here is a sample where both Up and Down series of the BBands indicator are colored:
+Visualization of an indicator depends on the type of a series you display it with. Here is a sample where both Up and Down series of the BBands indicator are colored:
 
+```
 // color the series
 var bbandsUpSeries = bbands.upSeries();
 bbandsUpSeries.stroke('#bf360c');

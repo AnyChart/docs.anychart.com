@@ -11,7 +11,7 @@
 
 ## Overview
 
-BBands %B is one of two indicators derived from Bollinger Bands, according to the creator of those indicators, John Bollinger. The other indicator is [Bollinger Band Width](Bollinger_Band_Width).
+BBands %B is one of two indicators derived from [Bollinger Bands](Bollinger_Bands), according to the creator of those indicators, John Bollinger. The other indicator is [Bollinger Band Width](Bollinger_Band_Width).
 
 %B quantifies a security's price relative to the upper and lower Bollinger Band. There are six basic relationship levels:
 
@@ -31,7 +31,7 @@ To add any indicator to the chart, you need to create the data set and map it pr
 
 ### Preparing the data 
 
-The data set for the BBands indicator needs those fields which are necessary for the series you plan to use - for example, "value" is necessary to set the Line series, but the OHLC and Candlestick Chart need four values ("open", "high", "low" and "close"). 
+The data set for the BBands %B indicator needs those fields which are necessary for the series you plan to use - for example, "value" is necessary to set the Line series, but the OHLC and Candlestick Chart need four values ("open", "high", "low" and "close"). 
 
 ```
 // map loaded data for the ohlc series
@@ -48,7 +48,6 @@ chart = anychart.stock();
 
 // create plot on the chart
 var plot = chart.plot(0);
-
 ```
 
 ### Indicator Declaration
@@ -57,7 +56,7 @@ The {api:anychart.core.stock.Plot#bbandsB}bbandsB(){api} method will create a BB
 
 ```
 // create BBands indicators
-var bbands = plot.bbandsB(mapping);
+var bbandsB = plot.bbandsB(mapping);
 ```
 
 {sample}STOCK\_Technical\_Indicators\_BBandsB\_01{sample}
@@ -68,19 +67,20 @@ var bbands = plot.bbandsB(mapping);
 BBands %B indicator requires an only parameter: the mapping. Though, there are three parameters extra, which have default values if are not defined: period, deviation and series type.
 
 ```
-var bbands = plot.bbands(mapping, 10, 3, "spline");
+var bbandsB = plot.bbandsB(mapping, 10, 3, "spline");
 ```
 
 ## Visualization
 
-Vizualization of an indicator depends on the type of a series you display it with. Let's look at the next sample where two BBands %B with different parameters and settings are added to different plots:
+Visualization of an indicator depends on the type of a series you display it with. Let's look at the next sample where two BBands %B with different parameters and settings are added to different plots:
 
 ```
 // create BBandsB indicator with period 10 and show as line on the first plot
 var BBandsB10 = plot_0.bbandsB(mapping, 10).series();
-BBandsB10.stroke('#bf360c');
+BBandsB10.fill('#bf360c');
+BBandsB10.seriesType("column");
 
 // create SMA indicator with period 50 and show as column on the second plot
-var BBandsB50 = plot_1.bbandsB(mapping, 50, "column").series();
+var BBandsB50 = plot_1.bbandsB(mapping, 50, 0.2, "column").series();
 BBandsB50.fill('#ff6d00');
 ```

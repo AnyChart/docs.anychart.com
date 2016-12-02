@@ -70,13 +70,13 @@ This indicator is calculated in three steps:
 
 2. Use the next formula to calculate the standard deviation:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/bbands-standart-deviation.png" width="650"></center>
+<center><img src="http://static.anychart.com/images/technical_indicators/bbands-standart-deviation.png" width="300"></center>
 
 3. Bollinger Bands values are calculated according to this formula, where "d" is set using deviation attribute in <bbands_indicator> node:
 
-<center><img src="http://static.anychart.com/images/technical_indicators/bbands.png" width="650"></center>
+<center><img src="http://static.anychart.com/images/technical_indicators/bbands.png" width="225"></center>
 
-Look through the [BBands](Bollinger_Bands_(BBands)) article for a detailed tutorial of its creating.
+Look through the [BBands](Bollinger_Bands) article for a detailed tutorial of its creating.
 
 ## BBands %B
 
@@ -84,7 +84,7 @@ The following formula is to be used for calculating this indicator:
 
 <center><img src="http://static.anychart.com/images/technical_indicators/bbandsb.png" width="650"></center>
 
-Look through the [BBands %B](BBands_B) article for a detailed tutorial of its creating.
+Look through the [BBands %B](BBands B) article for a detailed tutorial of its creating.
 
 ## BBands Width
 
