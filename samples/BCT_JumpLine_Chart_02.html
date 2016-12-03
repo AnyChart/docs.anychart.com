@@ -11,18 +11,18 @@
 
   // data
 var dataSet = anychart.data.set([
-  {x: "January", value: 1.25},
-  {x: "February", value: 1.25},
-  {x: "March", value: 1.5},
-  {x: "April", value: 1.5},
+  {x: "Jan", value: 1.25},
+  {x: "Feb", value: 1.25},
+  {x: "Mar", value: 1.5},
+  {x: "Apr", value: 1.5},
   {x: "May", value: 1.75},
-  {x: "June", value: 1.75},
-  {x: "July", value: 1.75},
-  {x: "August", value: 2},
-  {x: "September", value: 2},
-  {x: "October", value: 2.25},
-  {x: "November", value: 2.25},
-  {x: "December", value: 2.5}
+  {x: "Jun", value: 1.75},
+  {x: "Jul", value: 1.75},
+  {x: "Aug", value: 2},
+  {x: "Sep", value: 2},
+  {x: "Oct", value: 2.25},
+  {x: "Nov", value: 2.25},
+  {x: "Dec", value: 2.5}
 ]);
 var chart = anychart.line();
 series = chart.jumpLine(dataSet);
@@ -63,16 +63,9 @@ xAxis.orientation("top");
 series.stroke("#025669", 4);
 series.hoverStroke("#04a7cc", 4);
 
-// format the labels
-labels = series.labels();
-labels.enabled(true);
-labels.textFormatter("%{%Value}");
-labels.position("center");
-labels.anchor("bottom");
-
 // set the tooltips
 tooltips = series.tooltip();
-tooltips.textFormatter("%{%Value}");
+tooltips.textFormatter("{%Value} %");
 tooltips.background("#e0d6d1");
 tooltips.fontColor("#4d3c33");
 

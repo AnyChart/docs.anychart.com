@@ -7,80 +7,55 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script src="http://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-// data
-var dataSet = anychart.data.set([
-  ["Alex", 10000, 9000, 13000],
-  ["Josh", 12000, 12200, 10000],
-  ["Jane", 13500, 8000, 9500],
-  ["April", 19000, 14000, 17000],
-  ["Mary", 15000, 15000, 13700]
-]);
-var chart = anychart.line();
+var dataTable = anychart.data.table();
+dataTable.addData(get_csco_daily_data());
 
-// map the data
-dataSetMappingJan = dataSet.mapAs({x: [0], value: [1]});
-dataSetMappingFeb = dataSet.mapAs({x: [0], value: [2]});
-dataSetMappingMar = dataSet.mapAs({x: [0], value: [3]});
+// map loaded data
+mappingStick = dataTable.mapAs({x: 0, value: 5});
+mappingOHLC = dataTable.mapAs({x: 0, open: 1, high: 2, low: 3, close: 4});
 
-// create series
-seriesJan = chart.stick(dataSetMappingJan);
-seriesFeb = chart.stick(dataSetMappingFeb);
-seriesMar = chart.stick(dataSetMappingMar);
+// create stock chart
+chart = anychart.stock();
 
-// set series names
-seriesJan.name("January");
-seriesFeb.name("February");
-seriesMar.name("March");
+// create plot on the chart
+plot0 = chart.plot(0);
+plot1 = chart.plot(1);
 
-// set the colors
-seriesJan.stroke("#c77036", 2)
-seriesJan.hoverStroke("#deaa88", 2);
-seriesJan.selectStroke("#000", 2);
+// create ohlc series
+ohlcSeries = plot0.ohlc(mappingOHLC);
+ohlcSeries.name('CSCO');
+ohlcSeries.stroke('2px #64b5f6');
 
-seriesFeb.stroke("#4d3c33", 2)
-seriesFeb.hoverStroke("#8a6c5c", 2);
-seriesFeb.selectStroke("#000", 2);
+// create stick series
+stickSeries = plot1.stick(mappingStick);
+stickSeries.name('Stick');
+stickSeries.stroke('2px #64b5f6');
 
-seriesMar.stroke("#4f7942", 2)
-seriesMar.hoverStroke("#7eb06f", 2);
-seriesMar.selectStroke("#000", 2);
+p0Xaxis = plot0.xAxis();
+p1Xaxis = plot1.xAxis();
+p0Yaxis = plot0.yAxis();
+p1Yaxis = plot1.yAxis();
+
+// format the labels
+p1YAxisLabels = p1Yaxis.labels();
+p1YAxisLabels.textFormatter("{%Value}{scale: (1) (1000000)|(a) (M)}");
+
+// color the series
+stickSeries.stroke("#996633");
+
+// enable the grid
+grid = plot1.grid();
+grid.enabled(true);
+
+// adjust the tooltip
+tooltip = chart.tooltip();
+tooltip.background("#003300 0.7");
 
 // title
-chart.title("Stick Chart with settings adjusted");
-
-// create and enable labels
-labelsFeb = seriesFeb.labels();
-labelsFeb.enabled(true);
-labelsFeb.fontSize(10);
-labelsFeb.textFormatter("{%x} earned ${%Value} in {%SeriesName}");
-
-// create and enable tooltips
-tooltips = chart.tooltip();
-tooltips.displayMode("single");
-
-titleTooltip = chart.tooltip().title();;
-tooltips.enabled(true);
-tooltips.background("#ccffe6");
-tooltips.fontColor("#000000");
-tooltips.fontSize(10);
-titleTooltip.fontColor("#000000");
-titleTooltip.fontWeight("bold");
-titleTooltip.fontSize(10);
-
-// set markers
-markersJan = seriesJan.markers();
-markersJan.enabled(true);
-markersJan.fill("red");
-markersJan.type("star7");
-markersJan.size(7);
-
-// set axes titles and orientation
-var xAxis = chart.xAxis();
-xAxis.title("Sales");
-var yAxis = chart.yAxis();
-yAxis.title("Manager");
+chart.title("Stock Chart with OHLC and Stick series");
 
 // draw
 chart.container("container");

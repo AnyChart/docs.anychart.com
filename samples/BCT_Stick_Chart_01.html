@@ -14,8 +14,8 @@ var dataTable = anychart.data.table();
 dataTable.addData(get_csco_daily_data());
 
 // map loaded data
-mappingStick = dataTable.mapAs({x: [0], value: [4]});
-mappingOHLC = dataTable.mapAs({x: [0], open: [1], high: [2], low: [3], close: [4]});
+mappingStick = dataTable.mapAs({x: 0, value: 5});
+mappingOHLC = dataTable.mapAs({x: 0, open: 1, high: 2, low: 3, close: 4});
 
 // create stock chart
 chart = anychart.stock();
@@ -31,7 +31,7 @@ ohlcSeries.stroke('2px #64b5f6');
 
 // create stick series
 stickSeries = plot1.stick(mappingStick);
-stickSeries.name('CSCO');
+stickSeries.name('Stick');
 stickSeries.stroke('2px #64b5f6');
 
 p0Xaxis = plot0.xAxis();
