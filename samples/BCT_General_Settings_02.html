@@ -13,8 +13,8 @@
     var data = anychart.data.set([
       ["January", 10000],
       ["February", 12000],
-      ["March", 18000],
-      ["April", 11000],
+      ["March", 13000],
+      ["April", 10000],
       ["May", 9000]
     ]);
 
@@ -22,16 +22,22 @@
     chart = anychart.line();
 
     // create a series and set the data
-    chart.line(data);
+    series = chart.area(data);
+
+    // enable markers on the series, set their type and configure visual settings
+    series.markers(true);
+    series.markers().type("star5");
+    series.markers().fill("gold");
+    series.markers().size(10);
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
-    xAxis.title("XXX");
+    xAxis.title("Month");
     var yAxis = chart.yAxis();
-    yAxis.title("XXX");
+    yAxis.title("Sales");
 
     // set the chart title
-    chart.title("XXX");
+    chart.title("Markers (Series)");
 
     // set the container id
     chart.container("container");
