@@ -11,18 +11,18 @@
 
     // create a data set
     var dataSet = anychart.data.set([
-      ["January", 3.8, 10000],
-      ["February", 5.5, 12000],
-      ["March", 9.9, 18000,],
-      ["April", 15.7, 11000],
-      ["May", 21.5, 9000]
-      ["June", 26.3, 9000]
-      ["July", 29.3, 9000]
-      ["August", 28.4, 9000]
-      ["September", 24.4, 9000]
-      ["Obtober", 18.3, 9000]
-      ["November", 12.3, 9000]
-      ["December", 6.6, 9000]
+      ["January", 3.8, 5.5, 6.9],
+      ["February", 5.5, 7.0, 9.6],
+      ["March", 9.9, 11.7, 13.3],
+      ["April", 15.7, 17.6, 19.7],
+      ["May", 21.5, 23.3, 25.8],
+      ["June", 26.3, 28.5, 30.2],
+      ["July", 29.3, 31.6, 33.5],
+      ["August", 28.4, 30.6, 32.8],
+      ["September", 24.4, 26.5, 28.0],
+      ["October", 18.3, 20.6, 22.4],
+      ["November", 12.3, 14.4, 16.5],
+      ["December", 6.6, 8.7, 10.4]
     ]);
 
     // map the data
@@ -33,46 +33,50 @@
     // set the chart type
     chart = anychart.line();
 
-    // create the first series (spline area), set the data and title
-    var series1 = chart.verticalSplineArea(seriesData_1);
-    series1.name("xxx");
+    // set the interactivity mode
+    chart.interactivity().hoverMode("single");
+
+    // create the first series (area), set the data and title
+    var series1 = chart.area(seriesData_1);
+    series1.name("Average for 20 Years");
 
     // configure the visual settings of the first series
-    series1.fill("#339966", 0.4);
-    series1.hoverFill("#339966", 0.8);
-    series1.selectFill("#339966");
-    series1.stroke("#133926");
-    series1.hoverStroke("#133926", 2);
-    series1.selectStroke("#133926", 3);
+    series1.fill("#2EFEF7", 0.4);
+    series1.hoverFill("#2EFEF7", 0.8);
+    series1.selectFill("#2EFEF7");
+    series1.stroke("#04B4AE");
+    series1.hoverStroke("#04B4AE", 2);
+    series1.selectStroke("#04B4AE", 3);
 
-    // create the second series (spline area), set the data and title  
-    var series2 = chart.verticalSplineArea(seriesData_2);
-    series2.name("xxx");
+      // create the second series (line), set the data and title  
+    var series2 = chart.line(seriesData_2);
+    series2.name("2017");
 
-    // configure the visual settings of the first series
-    series2.fill("#336699", 0.4);
-    series2.hoverFill("#336699", 0.8);
-    series2.selectFill("#336699");
-    series2.stroke("#132639");
-    series2.hoverStroke("#132639", 2);
-    series2.selectStroke("#132639", 3);
+    // configure the visual settings of the second series
+    series2.stroke("#04B404");
+    series2.hoverStroke("#04B404", 2);
+    series2.selectStroke("#04B404", 3);
 
-    // set the minimum and maximum values for the Y-scale
-    var yScale = chart.yScale();
-    yScale.minimum(0);
-    yScale.maximum(50000);
+    // create the third series (line), set the data and title  
+    var series3 = chart.line(seriesData_3);
+    series3.name("2017 (Forecast)");
 
-    // configure tooltips
-    chart.tooltip().textFormatter("Month: {%x} \nSales: ${%Value}");
+    // configure the visual settings of the third series
+    series3.stroke("#AEB404", 1, "10 5", "round");
+    series3.hoverStroke("#AEB404", 2, "10 5", "round");
+    series3.selectStroke("#AEB404", 3, "10 5",  "round");
+
+    // turn the legend on
+    chart.legend(true);
 
     // set the chart title
-    chart.title("Vertical Area Chart (Customization)");
+    chart.title("Visual Settings");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
     xAxis.title("Month");
     var yAxis = chart.yAxis();
-    yAxis.title("Sales");
+    yAxis.title("Temperature");
 
     // set the container id
     chart.container("container");
