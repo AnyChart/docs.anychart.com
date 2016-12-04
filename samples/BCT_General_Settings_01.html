@@ -41,21 +41,21 @@
     series1.name("Average for 20 Years");
 
     // configure the visual settings of the first series
-    series1.fill("#2EFEF7", 0.4);
-    series1.hoverFill("#2EFEF7", 0.8);
-    series1.selectFill("#2EFEF7");
+    series1.fill("#04B4AE", 0.3);
+    series1.hoverFill("#04B4AE", 0.5);
+    series1.selectFill("#04B4AE", 0.5);
     series1.stroke("#04B4AE");
-    series1.hoverStroke("#04B4AE", 2);
-    series1.selectStroke("#04B4AE", 3);
+    series1.hoverStroke("#04B4AE", 4);
+    series1.selectStroke("#04B4AE", 4);
 
       // create the second series (line), set the data and title  
     var series2 = chart.line(seriesData_2);
-    series2.name("2017");
+    series2.name("2016");
 
     // configure the visual settings of the second series
     series2.stroke("#04B404");
-    series2.hoverStroke("#04B404", 2);
-    series2.selectStroke("#04B404", 3);
+    series2.hoverStroke("#04B404", 4);
+    series2.selectStroke("#04B404", 4);
 
     // create the third series (line), set the data and title  
     var series3 = chart.line(seriesData_3);
@@ -63,8 +63,8 @@
 
     // configure the visual settings of the third series
     series3.stroke("#AEB404", 1, "10 5", "round");
-    series3.hoverStroke("#AEB404", 2, "10 5", "round");
-    series3.selectStroke("#AEB404", 3, "10 5",  "round");
+    series3.hoverStroke("#AEB404", 4, "10 5", "round");
+    series3.selectStroke("#AEB404", 4, "10 5",  "round");
 
     // turn the legend on
     chart.legend(true);
