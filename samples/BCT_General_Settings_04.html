@@ -28,9 +28,7 @@
     series.labels(true);
     series.labels().fontColor("green");
     series.labels().fontWeight(900);
-    series.labels().textFormatter(function(){
-      return "$ " + this['value'];
-    });
+    series.labels().textFormatter("${%value}");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
