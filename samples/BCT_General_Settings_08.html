@@ -9,29 +9,30 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // create a data set
-    var data = anychart.data.set([
-      ["January", 10000],
-      ["February", 12000],
-      ["March", 18000],
-      ["April", 11000],
-      ["May", 9000]
-    ]);
+    // create data and configure a tooltip
+    var data = [
+      {x: "John", value:10000},
+      {x: "Jake", value:12000},
+      {x: "Peter", value:13000, tooltip:{title:"Peter (Best!)"}},
+      {x: "James", value:10000},
+      {x: "Mary", value:9000}
+    ];
 
     // set chart type
-    chart = anychart.line();
+    chart = anychart.column();
 
-    // create a series and set the data
-    chart.line(data);
+    // create a series, set the data and title
+    series = chart.column(data);
+    series.name("Sales");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
-    xAxis.title("XXX");
+    xAxis.title("Manager");
     var yAxis = chart.yAxis();
-    yAxis.title("XXX");
+    yAxis.title("Sales");
 
     // set the chart title
-    chart.title("XXX");
+    chart.title("Tooltips (Point)");
 
     // set the container id
     chart.container("container");
