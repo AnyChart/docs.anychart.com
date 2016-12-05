@@ -9,96 +9,65 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-// data
-var data = anychart.data.set([
-  ["January", 10000],
-  ["February", 12000],
-  ["March", 18000],
-  ["April", 11000],
-  ["May", 9000]
-]);
+  // data
+  var data = anychart.data.set([
+    ["1995", 0.10],
+    ["1996", 0.10],
+    ["1997", 0.12],
+    ["1998", 0.13],
+    ["1999", 0.15],
+    ["2000", 0.15],
+    ["2001", 0.17],
+    ["2002", 0.17],
+    ["2003", 0.17],
+    ["2004", 0.21],
+    ["2005", 0.23],
+    ["2006", 0.27],
+    ["2007", 0.27],
+    ["2008", 0.29],
+    ["2009", 0.30],
+    ["2010", 0.30],
+    ["2011", 0.30],
+    ["2012", 0.31],
+    ["2013", 0.31],
+    ["2014", 0.33],
+    ["2015", 0.33],
+    ["2016", 0.35]
+  ]);
 
-// chart type
-chart = anychart.line();
+  // chart type
+  chart = anychart.line();
   
-// title
-chart.title("StepLine Chart with chart elements adjusted");
+  // title
+  chart.title("StepLine Chart with settings adjusted");
 
-// set axes titles
-var xAxis = chart.xAxis();
-xAxis.title("Sales");
-var yAxis = chart.yAxis();
-yAxis.title("Month");
+  // set axes titles
+  var xAxis = chart.xAxis();
+  xAxis.title("Year");
+  var yAxis = chart.yAxis();
+  yAxis.title("Rates");
+  yAxis.orientation("right");
 
-// change the xAxis orientation
-var xAxis = chart.xAxis();
-xAxis.orientation("top");
+  yAxisLabels = yAxis.labels();
+  yAxisLabels.textFormatter("${%Value}{decimalsCount:2}");
 
-// invert the Y-Scale
-var yScale = chart.yScale();
-yScale.inverted(true);
+  // set max and min
+  yScale = chart.yScale();
+  yScale.maximum(0.45);
+  yScale.minimum(0.05);
+  ticks = yScale.ticks();
+  ticks.interval(0.05);
 
-// set the max and min values
-yScale.minimum(0);
-yScale.maximum(50000);
+  // set data
+  series1 = chart.stepLine(data);
+  series1.stroke("#996633");
 
-// set data
-series = chart.stepLine(data);
-series.markers(true);
+  // this line can be dropped as this is set by default
+  series1.stepDirection("backward");
 
-// enable and adjust labels
-labels = series.labels();
-labels.enabled(true);
-labels.position("bottom");
-labels.anchor("top");
-
-// disable tooltips
-tooltips = chart.tooltip();
-tooltips.enabled(false);
-
-  // line settings
-  series.stroke(
-    // set line color
-    "Rgb(86,86,26)",
-    // set line size
-    4
-  );
-  
-  // line settings in hovered state
-  series.hoverStroke(
-    // set line color
-    "Rgb(86,86,26)",
-    // set line size
-    4
-  );
-    
-  var markers = series.markers();
-  // enables markers
-  markers.enabled(true);
-  // set marker type
-  markers.type("star5");
-  // set marker inner color
-  markers.fill("gold");
-  // set marker border
-  markers.stroke("darkred");
-  // set marker size
-  markers.size(7);
-  
-  // settings for hovered marker
-  var hoverMarkers = series.hoverMarkers();
-  // marker size
-  hoverMarkers.size(7);
-  // marker inner color
-  hoverMarkers.fill("darkred");
-  // marker border
-  hoverMarkers.stroke("gold");
-
-// this line can be dropped as this is set by default
-series.stepDirection("backward");
-
-// draw
-chart.container("container");
-chart.draw();
+  // draw
+  chart.container("container");
+  chart.draw();
 });</script>
 </head>
 <body>

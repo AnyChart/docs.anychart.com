@@ -11,24 +11,41 @@
 
   // data
   var data = anychart.data.set([
-    ["January", 10000],
-    ["February", 12000],
-    ["March", 18000],
-    ["April", 11000],
-    ["May", 9000]
+    ["1995", 0.10],
+    ["1996", 0.10],
+    ["1997", 0.12],
+    ["1998", 0.13],
+    ["1999", 0.15],
+    ["2000", 0.15],
+    ["2001", 0.17],
+    ["2002", 0.17],
+    ["2003", 0.17],
+    ["2004", 0.21],
+    ["2005", 0.23],
+    ["2006", 0.27],
+    ["2007", 0.27],
+    ["2008", 0.29],
+    ["2009", 0.30],
+    ["2010", 0.30],
+    ["2011", 0.30],
+    ["2012", 0.31],
+    ["2013", 0.31],
+    ["2014", 0.33],
+    ["2015", 0.33],
+    ["2016", 0.35]
   ]);
 
   // chart type
   chart = anychart.line();
   
   // title
-  chart.title("StepLine Chart");
+  chart.title("StepLine Chart: Postal Rates");
 
   // set axes titles
   var xAxis = chart.xAxis();
-  xAxis.title("Sales");
+  xAxis.title("Year");
   var yAxis = chart.yAxis();
-  yAxis.title("Month");
+  yAxis.title("Rates");
 
   // set data
   series = chart.stepLine(data);
