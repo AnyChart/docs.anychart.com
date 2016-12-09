@@ -23,14 +23,14 @@
     var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
     // set the chart type
-    chart = anychart.verticalColumn();
+    chart = anychart.bar();
 
     // create the first series, set the data and title
-    series1 = chart.column(seriesData_1);
+    series1 = chart.bar(seriesData_1);
     series1.name("Sales in April");
 
     // create the second series, set the data and title
-    series2 = chart.line(seriesData_2);
+    series2 = chart.verticalLine(seriesData_2);
     series2.name("Best Sales");
 
     // set the titles of the axes

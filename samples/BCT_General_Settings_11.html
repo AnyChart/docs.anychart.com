@@ -11,27 +11,72 @@
 
     // create a data set
     var data = anychart.data.set([
-      ["January", 10000],
-      ["February", 12000],
-      ["March", 18000],
-      ["April", 11000],
-      ["May", 9000]
+      ["John", 10000],
+      ["Jake", 12000],
+      ["Peter", 13000],
+      ["James", 10000],
+      ["Mary", 9000]
     ]);
 
-    // set chart type
+    // set the chart type
     chart = anychart.line();
 
-    // create a series and set the data
-    chart.line(data);
+    // create a series, set the data and title
+    series = chart.column(data);
+    series.name("Sales");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
-    xAxis.title("XXX");
+    xAxis.title("Manager");
     var yAxis = chart.yAxis();
-    yAxis.title("XXX");
+    yAxis.title("Sales, $");
 
     // set the chart title
-    chart.title("XXX");
+    chart.title("Events");
+
+    /*// create an event listener for hovering the chart
+    chart.listen("mouseOver", function(e){
+      // change the chart title on hovering the chart
+      chart.title("HI, MOTHERFUCKER");
+    });
+
+    // create an event listener for unhovering the chart
+    chart.listen("mouseOut", function(e){
+      // change the chart title on unhovering the chart
+      chart.title("SEE YA LATER");
+    });
+
+    // create an event listener for selecting the chart
+    chart.listen("mouseDown", function(e){
+      // change the chart title on selecting the chart
+      chart.title("OUCH!");
+    });*/
+    
+    // create an event listener for hovering points
+    chart.listen("pointsHover", function(e){
+      // get the category the hovered points belong to
+      var name = e.point.getStat("categoryName");
+      // change the chart title on hovering points
+      chart.title(name);
+    });
+
+    // create an event listener for selecting points
+    chart.listen("pointsSelect", function(e){
+      // get the value of the selected points
+      var value = e.point.getStat("value");
+      // change the chart title on selecting points
+      chart.title("$" + value);
+    });
+
+    // create an event listener for double-clicking a point
+    chart.listen("pointDblClick", function(e){
+      // get the category the double-clicked point belongs to
+      var name = e.point.getStat("categoryName");
+      // get the value of the double-clicked point
+      var value = e.point.getStat("value");
+      // change the chart title on double-clicking a point
+      chart.title(name + ": $" + value);
+    });
 
     // set the container id
     chart.container("container");
