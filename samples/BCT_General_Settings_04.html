@@ -21,8 +21,9 @@
     // set the chart type
     chart = anychart.line();
 
-    // create a series and set the data
+    // create a series, set the data and title
     series = chart.column(data);
+    series.name("Sales");
 
     // enable and configure labels on the series
     series.labels(true);
@@ -34,7 +35,7 @@
     var xAxis = chart.xAxis();
     xAxis.title("Manager");
     var yAxis = chart.yAxis();
-    yAxis.title("Sales");
+    yAxis.title("Sales, $");
 
     // set the chart title
     chart.title("Labels (Series)");

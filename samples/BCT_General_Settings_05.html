@@ -21,14 +21,15 @@
     // set chart type
     chart = anychart.column();
 
-    // create a series and set the data
+    // create a series, set the data and title
     chart.column(data);
+    series.name("Sales");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
     xAxis.title("Manager");
     var yAxis = chart.yAxis();
-    yAxis.title("Sales");
+    yAxis.title("Sales, $");
 
     // set the chart title
     chart.title("Labels (Point)");
