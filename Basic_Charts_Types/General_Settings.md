@@ -77,6 +77,11 @@
 
 {sample}BCT\_General\_Settings\_07{sample}
 
+```
+    // sample comment
+    sample.code();
+```
+
 ## Legend
 
 ```
@@ -86,6 +91,13 @@
 
 {sample}BCT\_General\_Settings\_08{sample}
 
+```
+    // sample comment
+    sample.code();
+```
+
+{sample}BCT\_General\_Settings\_09{sample}
+
 ## Axes and Scales
 
 ```
@@ -93,7 +105,7 @@
     sample.code();
 ```
 
-{sample}BCT\_General\_Settings\_09{sample}
+{sample}BCT\_General\_Settings\_10{sample}
 
 ### Stacking
 
@@ -106,7 +118,7 @@
     sample.code();
 ```
 
-{sample}BCT\_General\_Settings\_10{sample}
+{sample}BCT\_General\_Settings\_11{sample}
 
 ## Vertical Charts
 
@@ -115,7 +127,7 @@
     sample.code();
 ```
 
-{sample}BCT\_General\_Settings\_11{sample}
+{sample}BCT\_General\_Settings\_12{sample}
 
 ## 3D Charts
 

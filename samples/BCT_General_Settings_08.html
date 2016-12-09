@@ -9,22 +9,34 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // create data and configure a tooltip
-    var data = [
-      {x: "John", value:10000},
-      {x: "Jake", value:12000},
-      {x: "Peter", value:13000, tooltip:{title:"Peter (Best!)"}},
-      {x: "James", value:10000},
-      {x: "Mary", value:9000}
-    ];
+    // create a data set
+    var data = anychart.data.set([
+      ["John", 10000, 12500],
+      ["Jake", 12000, 15000],
+      ["Peter", 13000, 16500],
+      ["James", 10000, 13500],
+      ["Mary", 9000, 11000]
+    ]);
 
-    // set chart type
+    // map the data
+    var seriesData_1 = data.mapAs({x: [0], value: [1]});
+    var seriesData_2 = data.mapAs({x: [0], value: [2]});
+
+    // set the chart type
     chart = anychart.column();
 
-    // create a series, set the data and title
-    series = chart.column(data);
-    series.name("Sales");
+    // create the first series, set the data and title
+    series1 = chart.column(seriesData_1);
+    series1.name("Sales in 2015");
 
+    // create the second series, set the data and title
+    series2 = chart.column(seriesData_2);
+    series2.name("Sales in 2016");
+
+    // enable the legend
+    var legend = chart.legend();
+    legend.enabled(true);
+    
     // set the titles of the axes
     var xAxis = chart.xAxis();
     xAxis.title("Manager");
@@ -32,7 +44,7 @@
     yAxis.title("Sales");
 
     // set the chart title
-    chart.title("Tooltips (Point)");
+    chart.title("Legend (Multiple Series)");
 
     // set the container id
     chart.container("container");
