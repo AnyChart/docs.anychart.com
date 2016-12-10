@@ -26,7 +26,7 @@ To learn how to prepare your data for using it in AnyChart, see this article: [W
 
 You can configure some visual settings of your chart: for example, stroke and fill color, fill or hatch fill pattern, and so on. For different chart types different settings are available.
 
-For more information, read the [Appearance Settings](../Appearance_Settings) article and articles about chart types you are interested in.
+More information can be found in the [Appearance Settings](../Appearance_Settings) article and articles about particular chart types.
 
 In the following sample, there is a chart with an Area series and two Line series. In all series stroke, hover stroke, and select stroke are configured, and in the Area series, in addition to that, fill, hover fill, and select fill are set:
 
