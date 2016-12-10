@@ -23,14 +23,14 @@
     var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
     // set the chart type
-    chart = anychart.column();
+    var chart = anychart.column();
 
     // create the first series, set the data and title
-    series1 = chart.column(seriesData_1);
+    var series1 = chart.column(seriesData_1);
     series1.name("Sales in 2015");
 
     // create the second series, set the data and title
-    series2 = chart.column(seriesData_2);
+    var series2 = chart.column(seriesData_2);
     series2.name("Sales in 2016");
 
     // enable the legend

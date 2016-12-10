@@ -19,10 +19,10 @@
     ];
 
     // set chart type
-    chart = anychart.column();
+    var chart = anychart.column();
 
     // create a series, set the data and title
-    chart.column(data);
+    var series = chart.column(data);
     series.name("Sales");
 
     // set the titles of the axes

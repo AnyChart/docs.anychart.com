@@ -19,10 +19,10 @@
     ]);
 
     // set the chart type
-    chart = anychart.line();
+    var chart = anychart.line();
 
     // create a series, set the data and title
-    series = chart.column(data);
+    var series = chart.column(data);
     series.name("Sales");
 
     // set the titles of the axes
@@ -34,24 +34,18 @@
     // set the chart title
     chart.title("Events");
 
-    /*// create an event listener for hovering the chart
+    // create an event listener for hovering the chart
     chart.listen("mouseOver", function(e){
-      // change the chart title on hovering the chart
-      chart.title("HI, MOTHERFUCKER");
+      // change the cursor style on hovering the chart
+      document.body.style.cursor = "pointer";
     });
 
     // create an event listener for unhovering the chart
     chart.listen("mouseOut", function(e){
-      // change the chart title on unhovering the chart
-      chart.title("SEE YA LATER");
+      // set the default cursor style on unhovering the chart
+      document.body.style.cursor = "auto";
     });
-
-    // create an event listener for selecting the chart
-    chart.listen("mouseDown", function(e){
-      // change the chart title on selecting the chart
-      chart.title("OUCH!");
-    });*/
-    
+   
     // create an event listener for hovering points
     chart.listen("pointsHover", function(e){
       // get the category the hovered points belong to
