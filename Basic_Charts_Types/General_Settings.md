@@ -221,11 +221,15 @@ You can create stacked charts by enabling a special mode of the scale that makes
 
 ## Interactivity
 
-[Interactivity](../Common_Settings/Interactivity)
+You can change the default interactivity settings of any chart in AnyChart: see the [Interactivity](../Common_Settings/Interactivity) article.
 
 ## Events
 
-[Event Listeners](../Common_Settings/Event_Listeners)
+To make your chart more interactive, you can listen to such events as clicking, hovering, or unhovering (a chart or a point) and others. 
+
+See the [Event Listeners](../Common_Settings/Event_Listeners) to learn how to work with events.
+
+In this sample, event listeners are used to change the chart title on hovering, selecting, and double-clicking a point and to customize the cursor style on hovering and unhovering the chart:
 
 ```
 // create an event listener for hovering the chart
@@ -271,7 +275,7 @@ chart.listen("pointDblClick", function(e){
 
 ## Vertical Charts
 
-[Vertical Charts](../Basic_Charts_Types/Vertical_Charts)
+(???) [Vertical Charts](../Basic_Charts_Types/Vertical_Charts)
 
 ```
 // set the chart type
@@ -288,8 +292,8 @@ var series2 = chart.line(seriesData_2);
 
 ## 3D Charts
 
-[3D Charts](../Basic_Charts_Types/3D_Charts)
+Using AnyChart, you can create 3D versions of the following chart types: Area, Bar, Column, and Pie. Read more: [3D Charts](../Basic_Charts_Types/3D_Charts).
 
 ## Custom Drawing
 
-???
+(???)
