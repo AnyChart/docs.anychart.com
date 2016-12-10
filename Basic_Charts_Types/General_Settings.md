@@ -20,7 +20,11 @@
 
 ## Data
 
+[Working with Data](../Working_with_Data)
+
 ## Visual Settings
+
+[Appearance Settings](../Appearance_Settings)
 
 ```
     // sample comment
@@ -30,6 +34,8 @@
 {sample}BCT\_General\_Settings\_01{sample}
 
 ## Markers
+
+??? [Marker_Chart](Marker_Chart)
 
 ```
     // sample comment
@@ -47,6 +53,8 @@
 
 ## Labels
 
+[Labels](../Common_Settings#labels)
+
 ```
     // sample comment
     sample.code();
@@ -63,6 +71,8 @@
 
 ## Tooltips
 
+[Tooltips](../Common_Settings#tooltip)
+
 ```
     // sample comment
     sample.code();
@@ -77,12 +87,9 @@
 
 {sample}BCT\_General\_Settings\_07{sample}
 
-```
-    // sample comment
-    sample.code();
-```
-
 ## Legend
+
+[Legend](../Common_Settings#legend)
 
 ```
     // sample comment
@@ -100,6 +107,9 @@
 
 ## Axes and Scales
 
+[Axes and Grids](../Axes_and_Grids)
+
+
 ```
     // sample comment
     sample.code();
@@ -109,9 +119,16 @@
 
 ### Stacking
 
+???
+
 ## Interactivity
 
+[Interactivity](../Common_Settings#interactivity)
+
+
 ## Events
+
+[Event Listeners](../Common_Settings#event_listeners)
 
 ```
     // sample comment
@@ -122,6 +139,8 @@
 
 ## Vertical Charts
 
+[Vertical Charts](../Basic_Charts_Types#vertical_charts)
+
 ```
     // sample comment
     sample.code();
@@ -131,19 +150,8 @@
 
 ## 3D Charts
 
+[3D Charts](../Basic_Charts_Types#3d_charts)
+
 ## Custom Drawing
 
-
-{api:anychart.xxx}XXX(){api} 
-
-а) [Pointers and Data](../Gauges/Pointers_and_Data) или 
-если ссылка на др. папку; если она на уровень выше, добавить еще ../
-
-б) [Pointers and Data](Pointers_and_Data)
-если документ в той же папке
-
-в) [General Settings](../General_Settings#forbidding _editing)
-ссылка на подраздел в другой папке
-
-г) [General Settings](General_Settings#forbidding _editing)
-ссылка на подраздел в той же папке
+???
