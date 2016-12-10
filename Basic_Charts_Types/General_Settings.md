@@ -56,9 +56,11 @@ series3.selectStroke("#AEB404", 4, "10 5",  "round");
 
 Markers are... (???)
 
-Markers can be configured both for on whole series and in a single point. Available settings include type, size, the fill color, and others (see the (???) [Marker_Chart](Marker_Chart) article).
+All chart types allow configuring markers: both on a whole series and in a single point. Available settings include type, size, fill color, and others.
 
-In the following sample, there are two Line series. On one of them you can see how markers look by default (in the case of Line series, they can be seen only on hover and select), and on the other a few custom settings are configured:
+For further information, see the (???) [Marker_Chart](Marker_Chart) article.
+
+In the following sample, there are two Line series. On one of them you can see how markers look by default: in the case of Line series, they can be seen only on hover and select. On the other series a few custom settings are configured:
 
 ```
 // enable and configure markers on the first series
@@ -68,7 +70,7 @@ series1.markers().fill("gold");
 series1.markers().size(10);
 ```
 
-This sample shows how you can configure a marker in a single point:
+This sample shows how you can configure markers in particular points:
 
 {sample}BCT\_General\_Settings\_02{sample}
 
@@ -86,9 +88,11 @@ var data = [
 
 ## Labels
 
-Labels are text or image elements that can be placed anywhere on your chart...
+Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-[Labels](../Common_Settings/Labels)
+Read more: [Labels](../Common_Settings/Labels).
+
+In the sample below, there is a Column chart with labels enabled on the whole series. Some font settings and a text formatter are applied:
 
 ```
 // enable and configure labels on the series
@@ -97,6 +101,8 @@ series.labels().fontColor("green");
 series.labels().fontWeight(900);
 series.labels().textFormatter("${%value}");
 ```
+
+The next sample shows how to configure labels in particular points:
 
 {sample}BCT\_General\_Settings\_04{sample}
 
@@ -115,7 +121,11 @@ var data = [
 
 ## Tooltips
 
-[Tooltips](../Common_Settings/Tooltip)
+A tooltip is a text box displayed when a point on a chart is hovered (in all charts tooltips are enabled by default, but it is possible to turn them off). There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on. Also note that tooltips can be configured either on the whole chart or on each sereis of a multi-series chart separately.
+
+To learn more, see the [Tooltip](../Common_Settings/Tooltip) article.
+
+In this sample, there is a Column chart with two series, and tooltips are configured on the whole chart, so they look the same on both series:
 
 ```
 // configure tooltips on the chart
@@ -124,6 +134,8 @@ chart.tooltip().textFormatter("Manager: {%CategoryName} \n{%SeriesName}: ${%valu
 ```
 
 {sample}BCT\_General\_Settings\_06{sample}
+
+Here tooltips are configured on each series separately, and the tooltip text on the first series differs from that on the second one:
 
 ```
 // configure tooltips on the first series
