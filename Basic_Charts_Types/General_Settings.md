@@ -118,15 +118,21 @@ var data = [
 [Tooltips](../Common_Settings/Tooltip)
 
 ```
-    // sample comment
-    sample.code();
+// configure tooltips on the chart
+chart.tooltip().title("Information");
+chart.tooltip().textFormatter("Manager: {%CategoryName} \n{%SeriesName}: ${%value}");
 ```
 
 {sample}BCT\_General\_Settings\_06{sample}
 
 ```
-    // sample comment
-    sample.code();
+// configure tooltips on the first series
+series1.tooltip().title("Last Year");
+series1.tooltip().textFormatter("Manager: {%CategoryName} \nSales: ${%value}");
+
+// configure tooltips on the second series
+series2.tooltip().title("This Year");
+series2.tooltip().textFormatter("Manager: {%CategoryName} \nSales: ${%value}");
 ```
 
 {sample}BCT\_General\_Settings\_07{sample}
@@ -136,15 +142,20 @@ var data = [
 [Legend](../Common_Settings/Legend)
 
 ```
-    // sample comment
-    sample.code();
+// enable the legend
+var legend = chart.legend();
+legend.enabled(true);
 ```
 
 {sample}BCT\_General\_Settings\_08{sample}
 
 ```
-    // sample comment
-    sample.code();
+// enable the legend
+var legend = chart.legend();
+legend.enabled(true);
+
+// set the source of legend items
+legend.itemsSourceMode("categories");
 ```
 
 {sample}BCT\_General\_Settings\_09{sample}
@@ -155,8 +166,30 @@ var data = [
 
 
 ```
-    // sample comment
-    sample.code();
+// configure the main Y-scale
+var yScale1 = anychart.scales.linear();
+yScale1.maximum(20000);
+
+// configure an extra Y-scale
+var yScale2 = anychart.scales.linear();
+yScale2.maximum(150);
+
+// configure the main Y-axis
+var yAxis1 = chart.yAxis(0);
+yAxis1.scale(yScale1);
+yAxis1.title("Sales, $");
+
+// configure an extra Y-axis
+var yAxis2 = chart.yAxis(1);
+yAxis2.orientation("right")
+yAxis2.scale(yScale2);
+yAxis2.title("Number of Items Sold");
+
+// bind the first series to the main Y-scale
+series1.yScale(yScale1);
+
+// bind the second series to the extra Y-scale
+series2.yScale(yScale2);
 ```
 
 {sample}BCT\_General\_Settings\_10{sample}
@@ -175,8 +208,43 @@ var data = [
 [Event Listeners](../Common_Settings/Event_Listeners)
 
 ```
-    // sample comment
-    sample.code();
+// create an event listener for hovering the chart
+chart.listen("mouseOver", function(e){
+  // change the cursor style on hovering the chart
+  document.body.style.cursor = "pointer";
+});
+
+// create an event listener for unhovering the chart
+chart.listen("mouseOut", function(e){
+  // set the default cursor style on unhovering the chart
+  document.body.style.cursor = "auto";
+});
+
+// create an event listener for hovering points
+chart.listen("pointsHover", function(e){
+  // get the category the hovered points belong to
+  var name = e.point.getStat("categoryName");
+  // change the chart title on hovering points
+  chart.title(name);
+});
+
+// create an event listener for selecting points
+chart.listen("pointsSelect", function(e){
+  // get the value of the selected points
+  var value = e.point.getStat("value");
+  // change the chart title on selecting points
+  chart.title("$" + value);
+});
+
+// create an event listener for double-clicking a point
+chart.listen("pointDblClick", function(e){
+  // get the category the double-clicked point belongs to
+  var name = e.point.getStat("categoryName");
+  // get the value of the double-clicked point
+  var value = e.point.getStat("value");
+  // change the chart title on double-clicking a point
+  chart.title(name + ": $" + value);
+});
 ```
 
 {sample}BCT\_General\_Settings\_11{sample}
@@ -186,8 +254,14 @@ var data = [
 [Vertical Charts](../Basic_Charts_Types/Vertical_Charts)
 
 ```
-    // sample comment
-    sample.code();
+// set the chart type
+var chart = anychart.bar();
+
+// create the first series and set the data
+var series1 = chart.bar(seriesData_1);
+
+// create the second series and set the data
+var series2 = chart.line(seriesData_2);
 ```
 
 {sample}BCT\_General\_Settings\_12{sample}
