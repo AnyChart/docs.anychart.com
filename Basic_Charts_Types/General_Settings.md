@@ -121,7 +121,7 @@ var data = [
 
 ## Tooltips
 
-A tooltip is a text box displayed when a point on a chart is hovered (in all charts tooltips are enabled by default, but it is possible to turn them off). There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on. Also note that tooltips can be configured either on the whole chart or on each sereis of a multi-series chart separately.
+A tooltip is a text box displayed when a point on a chart is hovered (in all charts tooltips are enabled by default, but it is possible to turn them off). There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on. Also note that tooltips can be configured either on the whole chart or on each series of a multi-series chart separately.
 
 To learn more, see the [Tooltip](../Common_Settings/Tooltip) article.
 
@@ -151,7 +151,11 @@ series2.tooltip().textFormatter("Manager: {%CategoryName} \nSales: ${%value}");
 
 ## Legend
 
-[Legend](../Common_Settings/Legend)
+A legend is a table on a chart listing and explaining the symbols and colors used there and displaying additional information that helps user to understand the chart. This element is supported by all charts in AnyChart: it is turned off by default, but can be enabled and, if needed, configured. You can customize the title, position, visual style, legend tooltips and add some other perks.
+
+For more information, read this article: [Legend](../Common_Settings/Legend).
+
+The following sample shows a multi-series Column chart with a default legend enabled. As you can see, it includes the names and colors of the series:
 
 ```
 // enable the legend
@@ -160,6 +164,8 @@ legend.enabled(true);
 ```
 
 {sample}BCT\_General\_Settings\_08{sample}
+
+In this sample, there is a single-series Column chart and a custom legend displaying the list of categories:
 
 ```
 // enable the legend
@@ -174,8 +180,11 @@ legend.itemsSourceMode("categories");
 
 ## Axes and Scales
 
-[Axes and Grids](../Axes_and_Grids)
+In AnyChart axes are used to control grids, axes labels, lines, and tick marks. They depend on [scales](../Axes_and_Grids). There are a lot of settings that can be applied to axes and scales: for example, you can change the orientation of axes or invert them, set the minimum and maximum values of a scale and configure its ticks, and so on. All chatr types allow you to add extra scales and axes and bind and different series to different scales.
 
+Learn more about axes and scales: [Axes and Grids](../Axes_and_Grids/Scales).
+
+In the sample below, there is a multi-series chart with a Column series bound to the default Y-axis an a Line series bound to an additional Y-axis:
 
 ```
 // configure the main Y-scale
@@ -208,12 +217,11 @@ series2.yScale(yScale2);
 
 ### Stacking
 
-???
+You can create stacked charts by enabling a special mode of the scale that makes series stack together: [Stack Mode](../Axes_and_Grids/Scales#stack_mode).
 
 ## Interactivity
 
 [Interactivity](../Common_Settings/Interactivity)
-
 
 ## Events
 
