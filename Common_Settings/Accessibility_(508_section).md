@@ -13,23 +13,23 @@
 
 ## What is Section 508
 
-The Web unites millions of people all over the world. Though, some web users are part-disabled, who cannot use some electronic devices, e.g. mouse, keyboards, etc. For example, in case when a visually-impaired searches through the Internet, the best option is to use a screen reader which reads the page content and makes it understandable for such person.
+The Web unites millions of people all over the world. Some web users are part-disabled, they can't use some electronic devices, e.g. mouse, keyboards, etc. When a visually-impaired users use the Internet, the best option is to use a screen reader which reads the page content and makes it understandable to such persons.
 
-In general, international 508 section standards are being invented due to make technology and Internet available for all users, regardless of disability status. Using these standards is a way to provide such people more opportunities. AnyChart supports these standards.
+International accessibility standards are invented to make technology and the Internet available to all users, regardless of disability status. Using these standards is a way to provide such people more opportunities. AnyChart supports these standards.
 
 You can find a lot of information about section 508 at [https://www.section508.gov/](https://www.section508.gov/).
 
-There are several methods AnyChart supports for accessibility. The main idea lies in creating special tags (ARIA tags) in SVG structure (the chart itself), which is rendered by AnyChart component. These tags help screen readers to perceive the chart content as readable DOM structure and pronounce it correctly, which helps disabled people to understand the information performed on out charts better. 
+There are several methods AnyChart supports that make charts accessible. The main idea is in creating special tags (ARIA tags) in SVG structure of a chart or a map. These tags help screen readers to make the chart content readable and pronounce it correctly, it helps disabled people to understand the information on charts and maps. 
 
 ## Why a11y
 
-Accessibility is often abbreviated as the numeronym **a11y**, where the number 11 refers to the number of letters omitted. This parallels the abbreviations of internationalization and [localization](Localization) as i18n and l10n respectively, and follows an Information and Communications Technology (ICT)-oriented convention, which is used widely in the software community.
+Accessibility is often abbreviated as the numeronym **a11y**, where the number 11 refers to the number of letters omitted. This parallels the abbreviations of internationalization and [localization](Localization) as i18n and l10n respectively and follows an Information and Communications Technology (ICT)-oriented convention, which is used widely in the software community.
 
 ## Default
 
-The acessibilty support is enabled by default. It means that you don't need to enable accessibility unless you've turned it off. Switching the accessibility support off will lead to absence of both ARIA-tags and ARIA-labels in the SVG structure, so the information available to a screen reader will be barely understandable..
+The accessibility support is enabled by default. It means that you don't need to enable accessibility unless you've turned it off. Switching the accessibility support off will lead to the absence of both ARIA-tags and ARIA-labels in the SVG structure, so the information available to a screen reader will be barely understandable.
 
-The default Accessibility mode is ["Chart Elements"](chart_elements_mode), which means a user interacts with a chart and its elements, using a keyboard for navigation between them. If you change the mode to the ["Data Table"](data_table_mode), an invisible readable table with chart data will be generated. In this case, an interaction between a user and a chart will be performed through this table, which cells represent the data points of the chart.
+The default Accessibility mode is ["Chart Elements"](chart_elements_mode), which means a user interacts with a chart and its elements, using a keyboard to navigate between them. If you change the mode to the ["Data Table"](data_table_mode), an invisible readable table with the chart data will be generated. In this case, an interaction between a user and a chart will be performed through this table, which cells represent the data points of the chart.
 
 ## Enable/Disable
 
@@ -57,35 +57,34 @@ series.a11y(true);
 
 ## Accessible Elements
 
-Before we pass to some specific settings of accessibility support, let's prepare our chart's elements. We need to set the chart title and series titles through the {api:anychart.core.Chart#a11y}a11y(){api} method to make them recognized and readable by VoiceOver. Let's use the {api:anychart.core.utils.ChartA11y#titleFormatter}titleFormatter(){api} method for both chart and series.
+Before we go into to some specific settings of accessibility, let's configure chart elements. We need to set the chart title and series titles using the {api:anychart.core.Chart#a11y}a11y(){api} method to make them  readable by VoiceOver. Let's use the {api:anychart.core.utils.ChartA11y#titleFormatter}titleFormatter(){api} method for both chart and series.
 
 ```
-  // set the titleFormatter for the chart
-  chart.a11y().titleFormatter(function(e){
-    var chart = this.chart;
-    return "Data Plot Y Sum is " + chart.getStat("dataPlotYSum") + "\n" +
-                "First Series Y minimum is " + chart.getSeries(0).getStat("seriesYMin") + "\n" +
-                "First Series Y maximum is " + chart.getSeries(0).getStat("seriesYMax");
-  });
+// set the titleFormatter for the chart
+chart.a11y().titleFormatter(function(e){
+  var chart = this.chart;
+  return "Data Plot Y Sum is " + chart.getStat("dataPlotYSum") + "\n" +
+              "First Series Y minimum is " + chart.getSeries(0).getStat("seriesYMin") + "\n" +
+              "First Series Y maximum is " + chart.getSeries(0).getStat("seriesYMax");
+});
 
-  // set the titleFormatter for the series
-  series2014.a11y().titleFormatter(function(e){
-    var series = this.series;
-    return "This series named " + series.name() + " has its maximum value in $" + series.getStat("seriesYMax") + ", the average in $" +  series.getStat("average") + " and minimum value in $" + series.getStat("seriesYMin");
-  });
+// set the titleFormatter for the series
+series2014.a11y().titleFormatter(function(e){
+  var series = this.series;
+  return "This series named " + series.name() + " has its maximum value in $" + series.getStat("seriesYMax") + ", the average in $" +  series.getStat("average") + " and minimum value in $" + series.getStat("seriesYMin");
+});
 ```
 
 {sample}CMN\_508\_Section\_02{sample}
 
-The next part of the article tells about accessibility modes: in dependency of the chosen mode this information will be transformed differently.
 
 ## Accessibility Modes
 
-AnyChart supports two modes of accessibility: representing the chart/series elements as chart elements or as elements of a table. Choose the one you prefer and use the {api:anychart.core.utils.ChartA11y#mode}mode(){api} method to set it. Two following samples demonstrate both modes and the difference between them.
+AnyChart supports two accessibility modes: representing the chart/series elements as chart elements or as elements of a table. Choose the one you prefer and use the {api:anychart.core.utils.ChartA11y#mode}mode(){api} method to set it. Two following samples demonstrate both modes and the difference between them.
 
 ## Chart Elements Mode
 
-The "chartElements" mode is enabled by default. In this mode, the VoiceOver informs a user, which hot-keys usage leads to interacting with which element of a chart. The chart title, taken from *titleFormatter()* or from *title()* methods, is transformed into an ARIA tag of the corresponding SVG element.
+The "chartElements" mode is enabled by default. In this mode, a user interacts with elements of a chart. The chart title, created by *titleFormatter()* or by *title()* methods, is transformed into an ARIA tag of the corresponding SVG element.
 
 ```
 // set the accessibility mode as chart elements
@@ -98,7 +97,7 @@ Note that setting the mode to the chart does not affect the series.
 
 ## Data Table Mode
 
-In this mode, an invisible table is being generated on a chart. This table contains the chart title (taken from *titleFormatter()* or from *title()* methods) as the table's head, and all information shown on the chart is transformed into a table structure, i.e. as cells, and the VoiceOver reads it appropriately. The navigation between cells is organized through the hot-keys, no interaction with the chart is supposed. 
+In this mode, an invisible table with chart data is generated. This table contains the chart title (taken from *titleFormatter()* or from *title()* methods) as the table's head, and all information shown on the chart is transformed into a table structure, and the VoiceOver reads it appropriately.  
 
 ```
 // set the accessibility mode as table data
