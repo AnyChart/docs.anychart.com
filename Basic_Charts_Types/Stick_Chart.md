@@ -24,7 +24,12 @@ var dataSet = anychart.data.set([
   ["Josh", 12000],
   ["Jane", 13500],
   ["April", 19000],
-  ["Mary", 15000]
+  ["Mary", 15000],
+  ["George", 11000],
+  ["Elizabeth", 11500],
+  ["Sybill", 17000],
+  ["Jacob", 10000],
+  ["Tony", 9000]
 ]);
 var chart = anychart.line();
 dataSetMapping = dataSet.mapAs({x: [0], value: [1]});

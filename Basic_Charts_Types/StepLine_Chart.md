@@ -18,11 +18,12 @@ The StepLine Chart is a kind of Line Chart of a special view and purpose. It is 
 
 ```
 var data = anychart.data.set([
-  ["January", 10000],
-  ["February", 12000],
-  ["March", 18000],
-  ["April", 11000],
-  ["May", 9000]
+	["1995", 0.10],
+    ["1996", 0.10],
+    ["1997", 0.12],
+    ["1998", 0.13],
+    ["1999", 0.15],
+    ["2000", 0.15]
 ]);
 chart = anychart.line();
 series = chart.stepline(data);
