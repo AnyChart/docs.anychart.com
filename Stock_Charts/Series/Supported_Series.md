@@ -45,8 +45,8 @@ AnyStock supports a lot of different series types. For the general information o
 <td>x, value</td>
 </tr>
 <tr>
-<td>Stick series in AnyStock</td>
-<td>*Coming soon*</td>
+<td>[Stick series in AnyStock](Stick)</td>
+<td>x, value</td>
 </tr>
 <tr>
 <td>[Range Column series in AnyStock](Range_Column)</td>
@@ -78,6 +78,10 @@ AnyStock supports a lot of different series types. For the general information o
 </tr>
 <tr>
 <td>[Step Line series in AnyStock](Step_Line)</td>
+<td>x, value</td>
+</tr>
+<tr>
+<td>[JumpLine series in AnyStock](JumpLine)</td>
 <td>x, value</td>
 </tr>
 </tbody></table>
