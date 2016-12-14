@@ -1,7 +1,7 @@
-# AnyStock Line Series
+# AnyStock JumpLine Series
 
 * [Overview](#overview)
-* [AnyStock Line Series Adjustment](#anystock_line_series_adjustment)
+* [AnyStock JumpLine Series Adjustment](#anystock_jumpline_series_adjustment)
  * [Data](#data)
  * [Switching series type](#switching_series_type)
 * [Visualization](#visualization)
@@ -10,28 +10,26 @@
 
 ## Overview
 
-Line Series is usually used to show a some parameter changing in time or in dependency of some other changing parameter or categories, which values are used as values on X-axis. Lines are popular in describing statistical information, such as birth rates, currency rates changing, temperature and so on. Read more about Line Series in the [Line Series tutorial](../../Basic_Chart_Types/Line_Chart).
+JumpLine Series are quite alike Column or StepLine Series, but the difference is in points view: while the points of Column Series are columns, the points of Line Series are simple points connected with line segments, the JumpLine Series uses line segments of the value height - like columns with no width. Read more about JumpLine Series in the [JumpLine Series tutorial](../../Basic_Chart_Types/JumpLine_Chart).
 
-The main difference between usual Line Series and Line Series in Stocks is in amount of information displayed. Stocks are intended to show far much more information than basic charts, so some features are different due to this reason. Let's now consider using Lines in Stocks.
+The main difference between basic JumpLine Series and JumpLine Series in Stocks is in amount of information displayed. Stocks are intended to show bigger amount of information than basic charts, so some features are different due to this reason. Let's now consider using JumpLine Series in Stocks.
 
-## AnyStock Line Series Adjustment
+## AnyStock JumpLine Series Adjustment
 
-Before looking at some methods in stocks, it's necessary to add some data. 
+Before considering the series in stocks, it's necessary to add some data. 
  
 ### Data
 
-The data in stocks should be table-formatted, though there are two ways of setting it: as array of arrays or as array of objects. Using the first way, you define the values only and then map the dataSet. In the second case you need to name each value and then map the dataSet as well. Let's create two samples with the same data differently arranged.
+The data in stocks should be formatted as table, though there are two ways of setting it: as array of arrays or as array of objects. Using the first way, you define the values only and then map the dataSet. In the second case you need to name each value and then map the dataSet as well. Let's create two samples with the same data differently arranged.
 
 ```
 // set the data
 table = anychart.data.table();
 table.addData([
-    ['2016-01-01T12:00:00', 1.0860],
-    ['2016-01-04T12:00:00', 1.0832],
-    ['2016-01-05T12:00:00', 1.0780],
-    ['2016-01-06T12:00:00', 1.0781],
-    ['2016-01-07T12:00:00', 1.0936],
-    ['2016-01-08T12:00:00', 1.0932]
+    ['2004-01-02', 29955800],
+    ['2004-01-05', 38892100],
+    ['2004-01-06', 43684400],
+    ['2004-01-07', 48757500]
 ]);
 
 // map the data
@@ -39,7 +37,7 @@ mapping = table.mapAs();
 mapping.addField('value', 1);
 ```
 
-{sample}STOCK\_Line\_01{sample}
+{sample}STOCK\_JumpLine\_01{sample}
 
 In the sample above we arranged data as an array of arrays. The next sample contains the same data, but this time it's arranged as an array of objects.
 
@@ -47,24 +45,21 @@ In the sample above we arranged data as an array of arrays. The next sample cont
 // set the data
 table = anychart.data.table("x");
 table.addData([
-    {'x':"2016-01-01T12:00:00", 'value': 1.0860},
-    {'x':"2016-01-04T12:00:00", 'value': 1.0832},
-    {'x':"2016-01-05T12:00:00", 'value': 1.0780},
-    {'x':"2016-01-06T12:00:00", 'value': 1.0781},
-    {'x':"2016-01-07T12:00:00", 'value': 1.0936},
-    {'x':"2016-01-08T12:00:00", 'value': 1.0932},
+    {'x':"2004-01-02", 'value': 29955800},
+    {'x':"2004-01-05", 'value': 38892100},
+    {'x':"2004-01-06", 'value': 43684400},
+    {'x':"2004-01-07", 'value': 48757500},
 ]);
 
 // map the data
 mapping = table.mapAs({'x': 'x', 'value': 'value'});
-
 ```
 
-{sample}STOCK\_Line\_02{sample}
+{sample}STOCK\_JumpLine\_02{sample}
 
 It's rather clear that there's no difference in both samples, so there's no matter for your stock appearance which data type you choose - it depends only on your preferences. Find more about setting and arranging data in Stocks in the [Stocks Data tutorial](../Data).
 
-A stock can contain several series. There are also two ways of creating a multi-series stock: creating several series in one plot or creating several plots with a series (or several series again) in each. Let's create a sample with several series belong to one plot and another sample demonstrating a multi-plot stock. You can find more about multi-series Line charts in the [Line Chart](../../Basic_Chart_Types/Line_Chart#multi_series) tutorial.
+A stock can contain several series. There are also two ways of creating a multi-series stock: creating several series in one plot or creating several plots with a series (or several series again) in each. Let's create a sample with several series belong to one plot and another sample demonstrating a multi-plot stock. 
 
 ```
 // set the series
@@ -74,7 +69,7 @@ var series_rub = chart.plot(0).line(mapping_rub);
 series_rub.name("Rub to Dollar Rate");
 ```
 
-{sample}STOCK\_Line\_03{sample}
+{sample}STOCK\_JumpLine\_03{sample}
 
 It's quite clear that it's not a good idea to combine series describing even similar parameters changes, but in such different value ranges. In situations like this it's much better to use plots. Plots are AnyStock features of a very good help when we've got several series like two of them above which values correspond to the same X-axis categories.
 
@@ -88,7 +83,7 @@ var series_rub = chart.plot(1).line(mapping_rub);
 series_rub.name("Rub to Dollar Rate");
 ```
 
-{sample}STOCK\_Line\_04{sample}
+{sample}STOCK\_JumpLine\_04{sample}
 
 Note that the only difference here with the previous sample is in setting another plot ID.
 
@@ -102,18 +97,18 @@ To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesT
 
 ## Visualization
 
-There are some visual parameters of the Line series, such as color, stroke width, line style and other. Look through the next paragraph to get acknowledged with those and how to manage them.
+There are some visual parameters of the JumpLine series, such as color, stroke width, line style and other. This paragraph helps to consider those.
 
 ### Coloring
 
-In Lines, there's no filling colors due to chart specifics. To set the stroke color for the line series use {api:anychart.core.stock.series.Line#stroke}stroke(){api} with a color set as a parameter.
+JumpLine has no fill due to series specifics. To set the stroke color for the series use {api:anychart.core.stock.series.Line#stroke}stroke(){api} with a color set as a parameter.
 
 ```
 // coloring
 series_euro.stroke("#ff0000");
 ```
 
-{sample}STOCK\_Line\_05{sample}
+{sample}STOCK\_JumpLine\_05{sample}
 
 ### Hovered state
 
@@ -124,4 +119,4 @@ When you hover a point in a stock chart, there's a crosshair shows up, highlight
 chart.plot(0).dateTimeHighlighter("green", 0.5, "10 4");
 ```
 
-{sample}STOCK\_Line\_06{sample}
+{sample}STOCK\_JumpLine\_06{sample}

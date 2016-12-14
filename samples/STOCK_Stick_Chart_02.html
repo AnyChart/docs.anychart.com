@@ -1,0 +1,68 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script src="http://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+var dataTable = anychart.data.table();
+dataTable.addData(get_csco_daily_data());
+
+// map loaded data
+mappingStick = dataTable.mapAs({x: 0, value: 5});
+mappingOHLC = dataTable.mapAs({x: 0, open: 1, high: 2, low: 3, close: 4});
+
+// create stock chart
+chart = anychart.stock();
+
+// create plot on the chart
+plot0 = chart.plot(0);
+plot1 = chart.plot(1);
+
+// create ohlc series
+ohlcSeries = plot0.ohlc(mappingOHLC);
+ohlcSeries.name('CSCO');
+ohlcSeries.stroke('2px #64b5f6');
+
+// create stick series
+stickSeries = plot1.stick(mappingStick);
+stickSeries.name('Stick');
+stickSeries.stroke('2px #64b5f6');
+
+p0Xaxis = plot0.xAxis();
+p1Xaxis = plot1.xAxis();
+p0Yaxis = plot0.yAxis();
+p1Yaxis = plot1.yAxis();
+
+// format the labels
+p1YAxisLabels = p1Yaxis.labels();
+p1YAxisLabels.textFormatter("{%Value}{scale: (1) (1000000)|(a) (M)}");
+
+// color the series
+stickSeries.stroke("#996633");
+
+// enable the grid
+grid = plot1.grid();
+grid.enabled(true);
+
+// adjust the tooltip
+tooltip = chart.tooltip();
+tooltip.background("#003300 0.7");
+
+// title
+chart.title("Stock Chart with OHLC and Stick series");
+
+// draw
+chart.container("container");
+chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
