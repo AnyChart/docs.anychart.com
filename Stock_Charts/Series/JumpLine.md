@@ -12,8 +12,6 @@
 
 JumpLine Series are quite alike Column or StepLine Series, but the difference is in points view: while the points of Column Series are columns, the points of Line Series are simple points connected with line segments, the JumpLine Series uses line segments of the value height - like columns with no width. Read more about JumpLine Series in the [JumpLine Series tutorial](../../Basic_Chart_Types/JumpLine_Chart).
 
-The main difference between basic JumpLine Series and JumpLine Series in Stocks is in an amount of information displayed. Stocks are intended to show a bigger amount of information than basic charts, so some features are different due to this reason. Let's now consider using JumpLine Series in Stocks.
-
 ## AnyStock JumpLine Series Adjustment
 
 Before considering the series in stocks, it's necessary to add some data. 

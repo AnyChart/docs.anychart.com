@@ -12,8 +12,6 @@
 
 Stick Series are quite an alike Column, but the difference is in points view: while the points of Column Series are columns, the Stick Series uses line segments of the value height - like columns with no width. Read more about Stick Series in the [Stick Series tutorial](../../Basic_Chart_Types/Stick_Chart).
 
-The main difference between usual Stick Series and Stick Series in Stocks is in the amount of information displayed. Stocks are intended to show a bigger amount of information than basic charts, so some features are different due to this reason. Let's now consider using Sticks in Stocks.
-
 ## AnyStock Stick Series Adjustment
 
 Before considering the series in stocks, it's necessary to add some data. 
