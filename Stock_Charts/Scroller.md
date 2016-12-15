@@ -20,7 +20,7 @@ Scroller in AnyStock charts is much alike basic Scroller, which you can find inf
 
 ## Enable
 
-We use standard {api:anychart.core.ui.Scroller#enabled}enabled(){api} method to switch the scroller on and off. While the scroller is enabled by default, you can always switch it off by setting "false" to this method :
+We use standard {api:anychart.core.ui.Scroller#enabled}enabled(){api} method to switch the scroller on and off. While the scroller is enabled by default, you can always switch it off by setting "false" to this method:
 
 ```
 // turn it off
@@ -30,8 +30,6 @@ chart.scroller().enabled(false);
 {sample}STOCK\_Scroller\_01{sample}
 
 Also, we can pass the "true" or "false" value straight to the {api:anychart.charts.Cartesian#xScroller}scroller(){api} method.
-
-{sample}STOCK\_Scroller\_01\_1{sample}
 
 Now you can see that there is a scroller shown up, but the general view has not changed (though, you can drag the scroller thumbs and change the view). 
 
@@ -60,7 +58,7 @@ Note that opposite to scroller in basic charts, we can zoom the AnyStock charts 
 
 ### Background Series
 
-Now, as we have tried to change some elements that are common for the AnyStock and the Basic scroller, let's adjust some params that only AnyStock scroller can have. We can add any of [supported series](Supported_Series) to the scroller if necessary, so the scroller will display a thumbnail AnyStock chart in its background. Let's define the thumbnail series of column type and look at it:
+Now, as we have tried to change some elements that are common for the AnyStock and the Basic scroller, let's adjust some parameters that only AnyStock scroller can have. We can add any of [supported series](Supported_Series) to the scroller if necessary, so the scroller will display a thumbnail AnyStock chart in its background. Let's define the thumbnail series of column type and look at it:
 
 {sample}STOCK\_Scroller\_03{sample}
 
@@ -111,7 +109,7 @@ Each time when a user interacts with a chart scroller, there's an event object g
 There are 4 special stock scroller events, which you can use to provoke some reaction from your chart or from scroller itself. We can use these events to handle user actions, e.g. to display a chosen time interval as text or to update any extra UI elements. Let's look at the list of those events.
 
 Events that can be listened by a chart:
-* **selectedrangebeforechange** - dispathes before we change the selected range of the scroller
+* **selectedrangebeforechange** - dispatches before we change the selected range of the scroller
 * **selectedrangechangestart** - dispatches when we start changing a scroller, on \mouseDown\ event 
 * **selectedrangechange** - dispatches when you change a scroller somehow, on \mouseMove\ event
 * **selectedrangechangefinish** - dispatches when you release the mouse button and finish the scroller change, on \mouseUp\ event
@@ -121,21 +119,6 @@ Now, let's create a couple of event listeners with these events.
 ```
 // events
 chart.listen("selectedrangechangestart", function(e){
-    chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
-    console.log(anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy'), anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
-});
-
-chart.listen("selectedrangebeforechange", function(e){
-    chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
-    console.log(anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy'), anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));            
-});
-
-chart.listen("selectedrangechange", function(e){
-    chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
-    console.log(anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy'), anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
-});
-
-chart.listen("selectedrangechangefinish", function(e){
     chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
     console.log(anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy'), anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
 });
