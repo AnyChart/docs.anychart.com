@@ -1,7 +1,7 @@
-# AnyStock StepLine Series
+# AnyStock Stick Series
 
 * [Overview](#overview)
-* [AnyStock StepLine Series Adjustment](#anystock_line_series_adjustment)
+* [AnyStock Stick Series Adjustment](#anystock_line_series_adjustment)
  * [Data](#data)
  * [Switching series type](#switching_series_type)
 * [Visualization](#visualization)
@@ -14,7 +14,7 @@ Stick Series are quite alike Column, but the difference is in points view: while
 
 The main difference between usual Stick Series and Stick Series in Stocks is in amount of information displayed. Stocks are intended to show bigger amount of information than basic charts, so some features are different due to this reason. Let's now consider using Sticks in Stocks.
 
-## AnyStock StepLine Series Adjustment
+## AnyStock Stick Series Adjustment
 
 Before considering the series in stocks, it's necessary to add some data. 
  
@@ -105,7 +105,7 @@ In Stick, there's no filling colors due to series specifics. To set the stroke c
 
 ```
 // coloring
-series_euro.stroke("#ff0000");
+series_total.stroke("#ff0000");
 ```
 
 {sample}STOCK\_Stick\_05{sample}

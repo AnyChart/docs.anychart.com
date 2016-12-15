@@ -63,10 +63,10 @@ A stock can contain several series. There are also two ways of creating a multi-
 
 ```
 // set the series
-var series_euro = chart.plot(0).line(mapping_euro);
-series_euro.name("Euro to Dollar Rate");
-var series_rub = chart.plot(0).line(mapping_rub);
-series_rub.name("Rub to Dollar Rate");
+var series_total = chart.plot(0).jumpLine(mapping_total);
+series_total.name("Total Request number");
+var series_region = chart.plot(0).jumpLine(mapping_region);
+series_region.name("Region Request Number");
 ```
 
 {sample}STOCK\_JumpLine\_03{sample}
@@ -77,10 +77,10 @@ To create a new plot, use the {api:anychart.charts.Stock#plot}plot(){api} method
 
 ```
 // set the series
-var series_euro = chart.plot(0).line(mapping_euro);
-series_euro.name("Euro to Dollar Rate");
-var series_rub = chart.plot(1).line(mapping_rub);
-series_rub.name("Rub to Dollar Rate");
+var series_total = chart.plot(0).jumpLine(mapping_total);
+series_total.name("Total Request number");
+var series_region = chart.plot(1).jumpLine(mapping_region);
+series_region.name("Region Request Number");
 ```
 
 {sample}STOCK\_JumpLine\_04{sample}
@@ -105,7 +105,7 @@ JumpLine has no fill due to series specifics. To set the stroke color for the se
 
 ```
 // coloring
-series_euro.stroke("#ff0000");
+series_total.stroke("#ff0000");
 ```
 
 {sample}STOCK\_JumpLine\_05{sample}

@@ -114,7 +114,7 @@ Color scheme makes your chart unique and helps to distinguish the series. For al
 
 ```
 // coloring
-series_totals.stroke("#ff0000");
+series_total.stroke("#ff0000");
 ```
 
 {sample}STOCK\_Step\_Line\_05{sample}
