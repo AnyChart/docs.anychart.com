@@ -12,7 +12,7 @@
 
 JumpLine Series are quite alike Column or StepLine Series, but the difference is in points view: while the points of Column Series are columns, the points of Line Series are simple points connected with line segments, the JumpLine Series uses line segments of the value height - like columns with no width. Read more about JumpLine Series in the [JumpLine Series tutorial](../../Basic_Chart_Types/JumpLine_Chart).
 
-The main difference between basic JumpLine Series and JumpLine Series in Stocks is in amount of information displayed. Stocks are intended to show bigger amount of information than basic charts, so some features are different due to this reason. Let's now consider using JumpLine Series in Stocks.
+The main difference between basic JumpLine Series and JumpLine Series in Stocks is in an amount of information displayed. Stocks are intended to show a bigger amount of information than basic charts, so some features are different due to this reason. Let's now consider using JumpLine Series in Stocks.
 
 ## AnyStock JumpLine Series Adjustment
 
@@ -20,7 +20,7 @@ Before considering the series in stocks, it's necessary to add some data.
  
 ### Data
 
-The data in stocks should be formatted as table, though there are two ways of setting it: as array of arrays or as array of objects. Using the first way, you define the values only and then map the dataSet. In the second case you need to name each value and then map the dataSet as well. Let's create two samples with the same data differently arranged.
+The data in stocks should be formatted as a table, though there are two ways of setting it: as an array of arrays or as an array of objects. Using the first way, you define the values only and then map the dataSet. In the second case you need to name each value and then map the dataSet as well. Let's create two samples with the same data differently arranged.
 
 ```
 // set the data
@@ -71,7 +71,7 @@ series_region.name("Region Request Number");
 
 {sample}STOCK\_JumpLine\_03{sample}
 
-It's quite clear that it's not a good idea to combine series describing even similar parameters changes, but in such different value ranges. In situations like this it's much better to use plots. Plots are AnyStock features of a very good help when we've got several series like two of them above which values correspond to the same X-axis categories.
+It's quite clear that it's not a good idea to combine series describing even similar parameters changes, but in such different value ranges. In situations like this, it's much better to use plots. Plots are AnyStock features of a very good help when we've got several series like two of them above which values correspond to the same X-axis categories.
 
 To create a new plot, use the {api:anychart.charts.Stock#plot}plot(){api} method. Don't forget to set the plot index (basically, its number) as an argument for this method.
 
@@ -91,7 +91,7 @@ Read more about plots in the [Plots tutorial](../Chart_Plots).
 
 ### Switching series type
 
-Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
+Our stocks have a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
