@@ -76,23 +76,23 @@ This indicator is calculated in three steps:
 
 <center><img src="http://static.anychart.com/images/technical_indicators/bbands.png" width="225"></center>
 
-Look through the [BBands](Bollinger_Bands) article for a detailed tutorial of its creating.
+Look through the [Bollinger Bands](Bollinger_Bands) article for a detailed tutorial of its creating.
 
-## BBands %B
+## Bollinger Bands %B
 
 The following formula is to be used for calculating this indicator:
 
 <center><img src="http://static.anychart.com/images/technical_indicators/bbandsb.png" width="650"></center>
 
-Look through the [BBands %B](BBands B) article for a detailed tutorial of its creating.
+Look through the [Bollinger Bands %B](Bollinger_Bands_%B) article for a detailed tutorial of its creating.
 
-## BBands Width
+## Bollinger Bands Width
 
-The BBands Width indicator is calculated with this formula:
+The Bollinger Bands Width indicator is calculated with this formula:
 
 <center><img src="http://static.anychart.com/images/technical_indicators/bbandswidth.png" width="650"></center>
 
-This indicator creating is described in the [BBands Width article](BBands_Width).
+This indicator creating is described in the [Bollinger Bands Width article](Bollinger_Bands_Width).
 
 Coming soon.
 
