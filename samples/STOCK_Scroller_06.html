@@ -118,24 +118,20 @@ dataTable.addData([
 
         // events
          chart.listen("selectedrangechangestart", function(e){
-            chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
-             console.log(anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy'), anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
+            chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected,'dd MMM yyyy'));
          });
 
          chart.listen("selectedrangebeforechange", function(e){
-            chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
-             console.log(anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy'), anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));            
+            chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected,'dd MMM yyyy'));         
          });
 
         chart.listen("selectedrangechange", function(e){
-            chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
-            console.log(anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy'), anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
+            chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected,'dd MMM yyyy'));
         });
 
-         chart.listen("selectedrangechangefinish", function(e){
-            chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
-             console.log(anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy'), anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
-         });
+        chart.listen("selectedrangechangefinish", function(e){
+            chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected,'dd MMM yyyy'));
+        });
 
         // initiate chart drawing
         chart.draw();

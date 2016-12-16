@@ -16,11 +16,11 @@ AnyStock provides a lot of features and tools to a chart viewer to make the work
 
 Scroller is a complex component, which consists of the several configurable parts: Scroller itself, thumbnail series in its background (optional) and thumbs. Actually, it looks almost like a thumbnail chart which has a couple of managing tools.
 
-Scroller in AnyStock charts is much alike basic Scroller, which you can find information about [here](../Common_Settings/Scroller). In this article we will mostly focus on those features that differ the AnyStock Scroller from the Basic one.
+Scroller in AnyStock charts is much alike basic Scroller (read about it in the [Scroller](../Common_Settings/Scroller) article). This article mostly considers those features that differ the AnyStock Scroller from the Basic one.
 
 ## Enable
 
-We use standard {api:anychart.core.ui.Scroller#enabled}enabled(){api} method to switch the scroller on and off. While the scroller is enabled by default, you can always switch it off by setting "false" to this method:
+Use standard {api:anychart.core.ui.Scroller#enabled}enabled(){api} method to switch the scroller on and off. While the scroller is enabled by default, it is always possible to switch it off by setting "false" to this method:
 
 ```
 // turn it off
@@ -29,19 +29,19 @@ chart.scroller().enabled(false);
 
 {sample}STOCK\_Scroller\_01{sample}
 
-Also, we can pass the "true" or "false" value straight to the {api:anychart.charts.Cartesian#xScroller}scroller(){api} method.
+Also, it is possible to enable/disable the scroller by passing the "true" or "false" value straight to the {api:anychart.charts.Cartesian#xScroller}scroller(){api} method.
 
-Now you can see that there is a scroller shown up, but the general view has not changed (though, you can drag the scroller thumbs and change the view). 
+Now the scroller shows up, but the general view has not changed yet (though, it is possible to drag the scroller thumbs and change the view). 
 
-Let's now look at the features of the scroller we can adjust.
+Let's now look at the features of the scroller which can be adjusted.
 
 ## Adjust
 
-As we have already noted, the Stock Scroller has both the Basic Scroller features and special ones. Let's work with basic features first.
+As has already been noted, the Stock Scroller has both the Basic Scroller features and special ones. Let's work with basic features first.
 
 ### Basic Adjusting
 
-Note that we cannot change the position of the scroller as well as its orientation, as its function is to scroll the time (X) axis. Also, it cannot hide automatically. Though, we are able to change the visual settings of the scroller. Look at the sample below. We have set the default zoom to only 10 points, disabled thumbs, changed the scroller color and prohibited the range changing. For all these changes we used {api:anychart.core.stock.Scroller#selectedRange}selectedRange(){api}, {api:anychart.core.stock.Scroller#allowRange}thumbs(){api}, {api:anychart.core.stock.Scroller#fill}fill(){api}, {api:anychart.core.stock.Scroller#selectedFill}selectedFill(){api} and {api:anychart.core.stock.Scroller#allowRangeChange}allowRangeChange(){api}:
+Note that the position of the scroller cannot be changed, as well as its orientation, as its function is to scroll the time (X) axis. Also, it cannot hide automatically. Though, it is possible to change the visual settings of the scroller. Look at the sample below. Zoom is set into only 10 points, thumbs are disabled, the scroller colors are changed and the range changing is prohibited. There are several methods used for causing all these changes: {api:anychart.core.stock.Scroller#selectedRange}selectedRange(){api}, {api:anychart.core.stock.Scroller#allowRange}thumbs(){api}, {api:anychart.core.stock.Scroller#fill}fill(){api}, {api:anychart.core.stock.Scroller#selectedFill}selectedFill(){api} and {api:anychart.core.stock.Scroller#allowRangeChange}allowRangeChange(){api}:
 
 ```
 // adjust the scroller
@@ -54,11 +54,11 @@ chart.scroller().allowRangeChange(false);
 
 {sample}STOCK\_Scroller\_02{sample}
 
-Note that opposite to scroller in basic charts, we can zoom the AnyStock charts only by setting the selected range.
+Note that opposite to scroller in basic charts, it is possible to zoom the AnyStock charts only by setting the selected range.
 
 ### Background Series
 
-Now, as we have tried to change some elements that are common for the AnyStock and the Basic scroller, let's adjust some parameters that only AnyStock scroller can have. We can add any of [supported series](Supported_Series) to the scroller if necessary, so the scroller will display a thumbnail AnyStock chart in its background. Let's define the thumbnail series of column type and look at it:
+Now, as common elements for the AnyStock and the Basic scroller are changed, let's adjust some parameters that only AnyStock scroller can have. Let's add any of the [supported series](Supported_Series) to the scroller if necessary, so the scroller will display a thumbnail AnyStock chart in its background. Let's define the thumbnail series of column type and look at it:
 
 {sample}STOCK\_Scroller\_03{sample}
 
@@ -71,7 +71,7 @@ Visit [Supported series](Supported_Series) articles to know more about series su
 
 ### Scroller Axis
 
-There's one more feature that only AnyStock scroller has - an additional axis inside, which helps to control the shown and hidden parts of the data and not to get lost. It's enabled by default, but we can disable it:
+There's one more feature that only AnyStock scroller has - an additional axis inside, which helps to control the shown and hidden parts of the data and not to get lost. Let's disable it:
 
 ```
 // create scroller series with mapped data
@@ -104,15 +104,15 @@ minorLabels.fontColor('#000');
 
 ## Events
 
-Each time when a user interacts with a chart scroller, there's an event object generated by JavaScript that represents the user's actions. To use events for such purposes we need event listeners as well - you can find any necessary information about them in [Event Listeners](../Common_Settings/Event_Listeners) article.
+Each time when a user interacts with a chart scroller, there's an event object generated by JavaScript that represents the user's actions. To use events for such purposes event listeners are necessary as well (find all about them in [Event Listeners](../Common_Settings/Event_Listeners) article).
 
-There are 4 special stock scroller events, which you can use to provoke some reaction from your chart or from scroller itself. We can use these events to handle user actions, e.g. to display a chosen time interval as text or to update any extra UI elements. Let's look at the list of those events.
+There are 4 special stock scroller events can be tracked when the range of the demonstrated data is changed (also with using scroller). These events can be used to handle user actions, e.g. to display a chosen time interval as text or to update any extra UI elements. Let's look at the list of those events.
 
 Events that can be listened by a chart:
-* **selectedrangebeforechange** - dispatches before we change the selected range of the scroller
-* **selectedrangechangestart** - dispatches when we start changing a scroller, on \mouseDown\ event 
-* **selectedrangechange** - dispatches when you change a scroller somehow, on \mouseMove\ event
-* **selectedrangechangefinish** - dispatches when you release the mouse button and finish the scroller change, on \mouseUp\ event
+* **selectedrangebeforechange** - dispatches before user changes the selected range of the scroller
+* **selectedrangechangestart** - dispatches when user starts changing a scroller, on \mouseDown\ event 
+* **selectedrangechange** - dispatches when user changes a scroller somehow, on \mouseMove\ event
+* **selectedrangechangefinish** - dispatches when user releases the mouse button and finishes the scroller change, on \mouseUp\ event
 
 Now, let's create a couple of event listeners with these events. 
 
@@ -120,7 +120,6 @@ Now, let's create a couple of event listeners with these events.
 // events
 chart.listen("selectedrangechangestart", function(e){
     chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
-    console.log(anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy'), anychart.format.dateTime(e.lastSelected, 'dd MMM yyyy'));
 });
 ```
 
