@@ -18,6 +18,18 @@
 
 ## Overview
 
+In AnyChart, you always work with a series, no matter what chart type you create. It is the series type that determines what (and how) is drawn on a chart. Please note that it can be changed on-the-fly: [Series Type](Series_Type)).
+
+Some series types can be shown on a chart simultaneously, and some cannot. There are chart types that can be only single-series and chart types that can be multi-series. Some series can have both horizontal and vertical orientation. Some  can be drawn in 3D.
+
+However, despite all the differences, many settings are configured the same way in case of all series types, and this article is a brief overview of such settings. There are also links to articles where each of the features is explained in more detail.
+
+Alternative sources of information about general settings are the {api:anychart.core.SeriesBase}methods of the 'anychart' class{api} in our API.
+(??? правильно ли сформулировала, правильная ли ссылка?)
+
+To learn about unique settings of any series type, see articles about particular types. For example, to find out what visual settings are available for the Area series, you should read this article: [Area Chart](Area_Chart). The information about different modes of the Step Line series can be found here: [Line-Spline-Stepline-Charts](/Line-Spline-StepLine_Charts#single_series_step_line_chart).
+(??? та ли ссылка? больше ничего не нашла, а про разные режимы там вроде нет ничего!)
+
 ## Data
 
 To learn how to prepare your data for using it in AnyChart, see this article: [Working with Data](../Working_with_Data).
@@ -54,11 +66,9 @@ series3.selectStroke("#AEB404", 4, "10 5",  "round");
 
 ## Markers
 
-Markers are... (???)
+Markers are special symbols that mark certain points on a series. As a rule, they are used to mark certain values on a series or to make series on a multi-series chart more distinguishable.
 
 All chart types allow configuring markers: both on a whole series and in a single point. Available settings include type, size, fill color, and others.
-
-For further information, see the (???) [Marker_Chart](Marker_Chart) article.
 
 In the following sample, there are two Line series. On one of them you can see how markers look by default: in the case of Line series, they can be seen only on hover and select. On the other series a few custom settings are configured:
 
@@ -180,7 +190,7 @@ legend.itemsSourceMode("categories");
 
 ## Axes and Scales
 
-In AnyChart axes are used to control grids, axes labels, lines, and tick marks. They depend on [scales](../Axes_and_Grids). There are a lot of settings that can be applied to axes and scales: for example, you can change the orientation of axes or invert them, set the minimum and maximum values of a scale and configure its ticks, and so on. All chatr types allow you to add extra scales and axes and bind and different series to different scales.
+In AnyChart axes are used to control grids, axes labels, lines, and tick marks. They depend on [scales](../Axes_and_Grids). There are a lot of settings that can be applied to axes and scales: for example, you can change the orientation of axes or invert them, set the minimum and maximum values of a scale and configure its ticks, and so on. All chart types allow you to add extra scales and axes and bind different series to different scales.
 
 Learn more about axes and scales: [Axes and Grids](../Axes_and_Grids/Scales).
 
@@ -275,25 +285,14 @@ chart.listen("pointDblClick", function(e){
 
 ## Vertical Charts
 
-(???) [Vertical Charts](../Basic_Charts_Types/Vertical_Charts)
-
-```
-// set the chart type
-var chart = anychart.bar();
-
-// create the first series and set the data
-var series1 = chart.bar(seriesData_1);
-
-// create the second series and set the data
-var series2 = chart.line(seriesData_2);
-```
+Most types of series can be drawn both in horizontal and vertical orientation. To find out how to do it, and what series this feature works with, see the [Vertical Charts](Vertical_Charts) article.
 
 {sample}BCT\_General\_Settings\_12{sample}
 
 ## 3D Charts
 
-Using AnyChart, you can create 3D versions of the following chart types: Area, Bar, Column, and Pie. Read more: [3D Charts](../Basic_Charts_Types/3D_Charts).
+Using AnyChart, you can create 3D versions of the following chart types: Area, Bar, Column, and Pie. Read more: [3D Charts](3D_Charts).
 
 ## Custom Drawing
 
-(???)
+It is possible to override the rendering function for most types of series. This remarkable feature allows you to create your own unique types of series and charts. For more information, see this article: [Custom Drawing](Custom Drawing).
