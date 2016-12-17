@@ -25,10 +25,8 @@ Some series types can be shown on a chart simultaneously, and some cannot. There
 However, despite all the differences, many settings are configured in the same way for of all series types, and this article is a brief overview of such settings. There are also links to articles where each of the features is explained in more detail.
 
 Alternative sources of information about general settings are the {api:anychart.core.SeriesBase}methods of the 'anychart' class{api} in our API.
-(??? правильно ли сформулировала, правильная ли ссылка?)
 
-To learn about the unique settings of a series type, see the article about that type. For example, to find out what visual settings are available for the Area series, you should read this article: [Area Chart](Area_Chart), and the information about different modes of the Step Line series can be found here: [Line-Spline-Stepline-Charts](/Line-Spline-StepLine_Charts#single_series_step_line_chart).
-(??? та ли ссылка? больше ничего не нашла, а про разные режимы там вроде нет ничего!)
+To learn about the unique settings of a series type, see the article about that type. For example, to find out what visual settings are available for the Area series, you should read this article: [Area Chart](Area_Chart), and the information about different modes of the Step Line series can be found here: [StepLine Chart](StepLine_Chart).
 
 ## Data
 
