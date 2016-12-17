@@ -8,9 +8,9 @@
 
 ## Overview
 
-Bollinger BandWidth is an indicator derived from Bollinger Bands. There are two indicators derived from [Bollinger Bands](Bollinger_Bands), according to the creator John Bollinger, and the second one is the [Bollinger Bands %B](Bollinger_Bands_B).
+Bollinger Bands Width is an indicator derived from Bollinger Bands. There are two indicators derived from [Bollinger Bands](Bollinger_Bands), according to the creator John Bollinger, and the second one is the [Bollinger Bands %B](Bollinger_Bands_B).
 
-Non-normalized BandWidth measures the distance, or difference, between the upper band and the lower band. BandWidth decreases as Bollinger Bands narrow and increases as Bollinger Bands widen, because Bollinger Bands are based on the standard deviation.
+Non-normalized Bollinger Bands Width measures the distance, or difference, between the upper band and the lower band. Bollinger Bands Width decreases as Bollinger Bands narrow and increases as Bollinger Bands widen, because Bollinger Bands are based on the standard deviation.
 
 Mathematical description of the indicator please see at: [Mathematical Description of Bollinger Bands Width](Mathematical_Description).
 
@@ -18,7 +18,7 @@ Mathematical description of the indicator please see at: [Mathematical Descripti
 ## Adding indicator
 
 
-Bollinger Bands Width indicator is to be added through the {api:anychart.core.stock.Plot#bbandsWidth}bbandsWidth(){api} method, requiring a mapping with value field in it (if a series of one parameter is used, like Line or Column):
+Bollinger Bands Width indicator is to be added through the {api:anychart.core.stock.Plot#bbandsWidth}bbandsWidth(){api} method, requiring a mapping with value field in it:
 
 ```
 var dataTable = anychart.data.table();
@@ -33,7 +33,7 @@ chart = anychart.stock();
 // create plot on the chart
 var plot = chart.plot(0);
 
-// create Bollinger Bands Width indicators
+// create Bollinger Bands Width indicator
 var bbandsW = plot.bbandsWidth(mapping);
 ```
 

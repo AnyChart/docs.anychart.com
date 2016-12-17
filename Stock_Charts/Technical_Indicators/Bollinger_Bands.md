@@ -66,7 +66,7 @@ Live sample:
 
 ## Visualization using ranges
 
-Visualization of the Bollinger Bands indicator can be done with Range series - Range Area, Range SplineArea, etc. in case of using them, it is not necessary to creating two series of one indicator. Let's use the Range SplineArea for the Bollinger Bands indicator visualization.
+Visualization of the Bollinger Bands indicator can be done with Range series - Range Area, Range SplineArea, etc. Let's use the Range SplineArea for the Bollinger Bands indicator visualization.
 
 ```
 // create BBands indicators
