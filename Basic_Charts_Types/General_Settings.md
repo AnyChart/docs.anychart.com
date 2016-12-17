@@ -22,12 +22,12 @@ In AnyChart, you always work with a series, no matter what chart type you create
 
 Some series types can be shown on a chart simultaneously, and some cannot. There are chart types that can be only single-series and chart types that can be multi-series. Some series can have both horizontal and vertical orientation. Some  can be drawn in 3D.
 
-However, despite all the differences, many settings are configured the same way in case of all series types, and this article is a brief overview of such settings. There are also links to articles where each of the features is explained in more detail.
+However, despite all the differences, many settings are configured in the same way for of all series types, and this article is a brief overview of such settings. There are also links to articles where each of the features is explained in more detail.
 
 Alternative sources of information about general settings are the {api:anychart.core.SeriesBase}methods of the 'anychart' class{api} in our API.
 (??? правильно ли сформулировала, правильная ли ссылка?)
 
-To learn about unique settings of any series type, see articles about particular types. For example, to find out what visual settings are available for the Area series, you should read this article: [Area Chart](Area_Chart). The information about different modes of the Step Line series can be found here: [Line-Spline-Stepline-Charts](/Line-Spline-StepLine_Charts#single_series_step_line_chart).
+To learn about the unique settings of a series type, see the article about that type. For example, to find out what visual settings are available for the Area series, you should read this article: [Area Chart](Area_Chart), and the information about different modes of the Step Line series can be found here: [Line-Spline-Stepline-Charts](/Line-Spline-StepLine_Charts#single_series_step_line_chart).
 (??? та ли ссылка? больше ничего не нашла, а про разные режимы там вроде нет ничего!)
 
 ## Data
