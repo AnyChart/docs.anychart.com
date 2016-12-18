@@ -84,7 +84,7 @@ The following formula is to be used for calculating this indicator:
 
 <center><img src="http://static.anychart.com/images/technical_indicators/bbandsb.png" width="650"></center>
 
-Look through the [Bollinger Bands %B](Bollinger_Bands_%B) article for a detailed tutorial of its creating.
+Look through the [Bollinger Bands %B](Bollinger_Bands_B) article for a detailed tutorial of its creating.
 
 ## Bollinger Bands Width
 

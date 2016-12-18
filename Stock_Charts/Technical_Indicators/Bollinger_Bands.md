@@ -69,7 +69,7 @@ Live sample:
 Visualization of the Bollinger Bands indicator can be done with Range series - Range Area, Range SplineArea, etc. Let's use the Range SplineArea for the Bollinger Bands indicator visualization.
 
 ```
-// create BBands indicators
+// create Bollinger Bands indicators
 var bbands = plot.bbands(mapping);
 
 // Set period.
