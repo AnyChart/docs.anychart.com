@@ -26,7 +26,7 @@
     chart = anychart.verticalArea();
 
     // create the first series (spline area), set the data and title
-    var series1 = chart.verticalSplineArea(seriesData_1);
+    var series1 = chart.splineArea(seriesData_1);
     series1.name("2004");
 
     // configure the visual settings of the first series
@@ -38,7 +38,7 @@
     series1.selectStroke("#133926", 3);
 
     // create the second series (spline area), set the data and title  
-    var series2 = chart.verticalSplineArea(seriesData_2);
+    var series2 = chart.splineArea(seriesData_2);
     series2.name("2005");
 
     // configure the visual settings of the first series
