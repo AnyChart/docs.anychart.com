@@ -4,12 +4,17 @@
 * [Creating a Vertical Chart/Series](#creating_a_vertical_chart_series)
 * [Changing the Orientation On-The-Fly](#onthefly)
 
+? Писать ли что-то про колумны/бары, про их уникальность?
+? Нужен ли полный список серий, которые могут быть вертикальными?
+
 ## Overview
 
 <a name='creating_a_vertical_chart_series'></a>
 ## Creating a Vertical Chart/Series
 
-To create a vertical chart, use one of the three chart constructors: {api:anychart.xxx}XXX(){api}, {api:anychart.xxx}XXX(){api}, and {api:anychart.xxx}XXX(){api}. There is no essential difference between them: they just switch the orientation of the axes, drawing the X-axis vertically and the Y-axis horizontally.
+To create a vertical chart, use one of the three chart constructors: {api:anychart.xxx}XXX(){api}, {api:anychart.xxx}XXX(){api}, and {api:anychart.xxx}XXX(){api}.
+
+There is no essential difference between them: they just switch the orientation of the axes, drawing the X-axis vertically and the Y-axis horizontally.
 
 By default, if you just pass the data to the chart constructor, a series of the same type is created. For example, in the following sample the **verticalArea** chart constructor draws a chart with an Area series: 
 
@@ -29,22 +34,28 @@ chart = anychart.verticalArea(data);
 
 {sample}BCT\_Vertical\_Charts\_01{sample}
 
-After creating a vertical chart, you can also specify the series type, choosing one to the types that can be vertical. 
+After creating a vertical chart, you can also specify the series type, choosing one of the types that can be vertical. 
+
+In the sample below, the {api:anychart.xxx}verticalArea(){api} chart constructor is used with the {api:anychart.xxx}splineArea(){api} method to create two Spline Area series:
 
 {api:anychart.xxx}XXX(){api} 
 
 ```
 // set the chart type
-var chart = anychart.bar();
+var chart = anychart.verticalArea();
 
-// create the first series
-var series1 = chart.bar(seriesData_1);
+// create the first series, set the data and name
+var series1 = chart.splineArea(seriesData_1);
+series1.name("2004");
 
-// create the second series
-var series2 = chart.line(seriesData_2);
+// create the second series, set the data and name  
+var series2 = chart.splineArea(seriesData_2);
+series2.name("2005");
 ```
 
 {sample}BCT\_Vertical\_Charts\_02{sample}
+
+The next sample shows...
 
 ```
 // set the chart type
