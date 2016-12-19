@@ -1,15 +1,17 @@
 #Vertical Charts
 
 * [Overview](#overview)
-* [Section 1](#section_1)
-* [Section 2](#section_2)
+* [Creating a Vertical Chart/Series](#creating_a_vertical_chart_series)
 * [Changing the Orientation On-The-Fly](#onthefly)
 
 ## Overview
 
-{api:anychart.xxx}XXX(){api} 
+<a name='creating_a_vertical_chart_series'></a>
+## Creating a Vertical Chart/Series
 
-## Section 1
+To create a vertical chart, use one of the three chart constructors: {api:anychart.xxx}XXX(){api}, {api:anychart.xxx}XXX(){api}, and {api:anychart.xxx}XXX(){api}. There is no essential difference between them: they just switch the orientation of the axes, drawing the X-axis vertically and the Y-axis horizontally.
+
+By default, if you just pass the data to the chart constructor, a series of the same type is created. For example, in the following sample the **verticalArea** chart constructor draws a chart with an Area series: 
 
 ```
 // create a data set
@@ -27,7 +29,9 @@ chart = anychart.verticalArea(data);
 
 {sample}BCT\_Vertical\_Charts\_01{sample}
 
-## Section 1
+After creating a vertical chart, you can also specify the series type, choosing one to the types that can be vertical. 
+
+{api:anychart.xxx}XXX(){api} 
 
 ```
 // set the chart type
