@@ -10,37 +10,37 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a data set
-    var data = anychart.data.set([
-      ["John", 10000, 12500],
-      ["Jake", 12000, 15000],
-      ["Peter", 13000, 16500],
-      ["James", 10000, 13000],
-      ["Mary", 9000, 11000]
+    var dataSet = anychart.data.set([
+      ["January", 12000, 10000],
+      ["February", 15000, 12000],
+      ["March", 16000, 14000],
+      ["April", 15000, 13000],
+      ["May", 14000, 9000]
     ]);
 
     // map the data
-    var seriesData_1 = data.mapAs({x: [0], value: [1]});
-    var seriesData_2 = data.mapAs({x: [0], value: [2]});
+    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+    var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
 
     // set the chart type
-    var chart = anychart.bar();
+    var chart = anychart.verticalArea();
 
     // create the first series, set the data and name
-    var series1 = chart.bar(seriesData_1);
-    series1.name("Sales in April");
+    var series1 = chart.splineArea(seriesData_1);
+    series1.name("2004");
 
-    // create the second series, set the data and name
-    var series2 = chart.line(seriesData_2);
-    series2.name("Best Sales");
+    // create the second series, set the data and name  
+    var series2 = chart.splineArea(seriesData_2);
+    series2.name("2005");
+
+    // set the chart title
+    chart.title("Vertical Charts: Two Spline Area Series");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
-    xAxis.title("Manager");
+    xAxis.title("Month");
     var yAxis = chart.yAxis();
     yAxis.title("Sales, $");
-
-    // set the chart title
-    chart.title("Vertical Charts: Bar and Line Series");
 
     // set the container id
     chart.container("container");

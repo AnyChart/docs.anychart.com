@@ -12,8 +12,17 @@
 ## Section 1
 
 ```
-    // sample comment
-    sample.code();
+// create a data set
+var data = anychart.data.set([
+  ["January", 10000],
+  ["February", 12000],
+  ["March", 18000],
+  ["April", 11000],
+  ["May", 9000]
+]);
+
+// set the chart type
+chart = anychart.verticalArea(data);
 ```
 
 {sample}BCT\_Vertical\_Charts\_01{sample}
