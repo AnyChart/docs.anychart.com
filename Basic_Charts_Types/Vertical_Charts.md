@@ -4,19 +4,22 @@
 * [Creating a Vertical Chart/Series](#creating_a_vertical_chart_series)
 * [Changing the Orientation On-The-Fly](#onthefly)
 
-? Писать ли что-то про колумны/бары, про их уникальность?
-? Нужен ли полный список серий, которые могут быть вертикальными?
+Писать ли что-то про колумны/бары, про их уникальность?
+Нужен ли полный список серий, которые могут быть вертикальными?
+Нужно ли какие-то пункты развернуть?
+На isVertical какая ссылка? Что-то сообразить не могу.
+Названия пока не смогла придумать лучше.
 
 ## Overview
 
 <a name='creating_a_vertical_chart_series'></a>
 ## Creating a Vertical Chart/Series
 
-To create a vertical chart, use one of the three chart constructors: {api:anychart.xxx}anychart.bar(){api}, {api:anychart.xxx}anychart.verticalLine(){api}, and {api:anychart.xxx}anychart.vertecalArea(){api}.
+To create a vertical chart, use one of the three chart constructors: {api:anychart#bar}anychart.bar(){api}, {api:anychart#verticalLine}anychart.verticalLine(){api}, and {api:anychartverticalArea}anychart.verticalArea(){api}.
 
 There is no essential difference between them: they just switch the orientation of the axes, drawing the X-axis vertically and the Y-axis horizontally.
 
-By default, if you just pass the data to the chart constructor, a series of the same type is created. For example, in the following sample the **verticalArea** chart constructor draws a chart with an Area series: 
+By default, if you just pass the data to the chart constructor, a series of the same type is created. For example, in the following sample the verticalArea() chart constructor draws a chart with an Area series: 
 
 ```
 // create a data set
@@ -36,7 +39,7 @@ chart = anychart.verticalArea(data);
 
 After creating a vertical chart, you can also specify the series type, choosing one of the types that can be vertical. 
 
-In the sample below, the {api:anychart.xxx}anychart.verticalArea(){api} chart constructor is used with the {api:anychart.xxx}splineArea(){api} method to create two Spline Area series:
+In the sample below, the {api:anychart#verticalArea}anychart.verticalArea(){api} chart constructor is used with the {api:anychart.charts.Cartesian#splineArea}splineArea(){api} method to create two Spline Area series:
 
 ```
 // set the chart type
@@ -53,7 +56,7 @@ series2.name("2005");
 
 {sample}BCT\_Vertical\_Charts\_02{sample}
 
-In the next sample there are two series, Bar and Line, created by the {api:anychart.xxx}bar(){api} and {api:anychart.xxx}line(){api} methods (the chart constructor is {api:anychart.xxx}anychart.bar(){api}):
+In the next sample there are two series, Bar and Line, created by the {api:anychart.charts.Cartesian#bar}bar(){api} and {api:anychart.charts.Cartesian#line}line(){api} methods, and the chart constructor is {api:anychart#bar}anychart.bar(){api}:
 
 ```
 // set the chart type
@@ -71,9 +74,9 @@ var series2 = chart.line(seriesData_2);
 <a name='onthefly'></a>
 ## Changing the Orientation On-The-Fly
 
-You can change the orientation of the series on-the-fly (after creating them) by calling the {api:anychart.xxx}isVertical(){api} method and setting its parameter to either 'true' or 'false'. Please, keep in mind that it affects only the series, not the axes.
+You can change the orientation of series on-the-fly (after creating them) by calling the {api:anychart.xxx}isVertical(){api} method and setting its parameter to either 'true' or 'false'. Please, keep in mind that it affects only the series, not the axes.
 
-In the following sample, this method is used to draw a horizontal and a vertical series on the same chart:
+In the following sample, this method is used to draw a horizontal (Column) and a vertical (Bar) series on the same chart:
 
 ```
 // set the chart type
@@ -91,7 +94,7 @@ chart.getSeriesAt(0).isVertical(true);
 
 {sample}BCT\_Vertical\_Charts\_04{sample}
 
-To change the orientation of the whole chart on-the-fly, you should change the orientation of both the series and the axes (use the {api:anychart.xxx}orientation(){api} method):
+To change the orientation of the whole chart on-the-fly, you should change the orientation of both the series and the axes (use the {api:anychart.core.axes.Linear#orientation}orientation(){api} method):
 
 ```
 // set the chart type
