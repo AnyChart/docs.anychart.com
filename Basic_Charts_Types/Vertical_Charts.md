@@ -71,6 +71,10 @@ var series2 = chart.line(seriesData_2);
 <a name='onthefly'></a>
 ## Changing the Orientation On-The-Fly
 
+You can change the orientation of the series on-the-fly (after creating them) by calling the {api:anychart.xxx}isVertical(){api} method and setting its parameter to either 'true' or 'false'. Please, keep in mind that it affects only the series, not the axes.
+
+In the following sample, this method is used to draw a horizontal and a vertical series on the same chart:
+
 ```
 // set the chart type
 var chart = anychart.column();
@@ -86,6 +90,8 @@ chart.getSeriesAt(0).isVertical(true);
 ```
 
 {sample}BCT\_Vertical\_Charts\_04{sample}
+
+To change the orientation of the whole chart on-the-fly, you should change the orientation of both the series and the axes (use the {api:anychart.xxx}orientation(){api} method):
 
 ```
 // set the chart type
