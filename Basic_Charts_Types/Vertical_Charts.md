@@ -12,6 +12,8 @@
 
 ## Overview
 
+Most types of series can be drawn both in horizontal and vertical orientation, and this article explains how do it. It also  tells how to change the orientation of a chart on-the-fly.
+
 <a name='creating_a_vertical_chart_series'></a>
 ## Creating a Vertical Chart/Series
 
@@ -94,7 +96,7 @@ chart.getSeriesAt(0).isVertical(true);
 
 {sample}BCT\_Vertical\_Charts\_04{sample}
 
-To change the orientation of the whole chart on-the-fly, you should change the orientation of both the series and the axes (use the {api:anychart.core.axes.Linear#orientation}orientation(){api} method):
+To change the orientation of the whole chart on-the-fly, you should change the orientation of both the series and the [axes](..Axes_and_Grids/Axis_Orientation) (use the {api:anychart.core.axes.Linear#orientation}orientation(){api} method):
 
 ```
 // set the chart type
