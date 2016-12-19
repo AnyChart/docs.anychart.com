@@ -12,7 +12,7 @@
 <a name='creating_a_vertical_chart_series'></a>
 ## Creating a Vertical Chart/Series
 
-To create a vertical chart, use one of the three chart constructors: {api:anychart.xxx}XXX(){api}, {api:anychart.xxx}XXX(){api}, and {api:anychart.xxx}XXX(){api}.
+To create a vertical chart, use one of the three chart constructors: {api:anychart.xxx}anychart.bar(){api}, {api:anychart.xxx}anychart.verticalLine(){api}, and {api:anychart.xxx}anychart.vertecalArea(){api}.
 
 There is no essential difference between them: they just switch the orientation of the axes, drawing the X-axis vertically and the Y-axis horizontally.
 
@@ -36,9 +36,7 @@ chart = anychart.verticalArea(data);
 
 After creating a vertical chart, you can also specify the series type, choosing one of the types that can be vertical. 
 
-In the sample below, the {api:anychart.xxx}verticalArea(){api} chart constructor is used with the {api:anychart.xxx}splineArea(){api} method to create two Spline Area series:
-
-{api:anychart.xxx}XXX(){api} 
+In the sample below, the {api:anychart.xxx}anychart.verticalArea(){api} chart constructor is used with the {api:anychart.xxx}splineArea(){api} method to create two Spline Area series:
 
 ```
 // set the chart type
@@ -55,7 +53,7 @@ series2.name("2005");
 
 {sample}BCT\_Vertical\_Charts\_02{sample}
 
-The next sample shows...
+In the next sample there are two series, Bar and Line, created by the {api:anychart.xxx}bar(){api} and {api:anychart.xxx}line(){api} methods (the chart constructor is {api:anychart.xxx}anychart.bar(){api}):
 
 ```
 // set the chart type
