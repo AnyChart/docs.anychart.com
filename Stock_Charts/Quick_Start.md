@@ -8,7 +8,7 @@ Include the JavaScript file in the `<head>` section of your web page - visit the
 
 ```
 <head>
-  <script src="//cdn.anychart.com/js/latest/anystock.min.js" type="text/javascript"></script> 
+  <script src="https://cdn.anychart.com/js/latest/anystock.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -156,7 +156,7 @@ You can copy this to a file on your computer and open it in your browser to disp
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <script src="http://cdn.anychart.com/js/latest/anystock.min.js" type="text/javascript"></script> 
+    <script src="https://cdn.anychart.com/js/latest/anystock.min.js" type="text/javascript"></script>
     <script>
 	var table, mapping, chart;
 	anychart.onDocumentReady(function() {

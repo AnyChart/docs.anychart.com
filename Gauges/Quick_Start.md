@@ -7,7 +7,7 @@ Reference the _anychart.min.js_ JavaScript file in the `<head>` section of your 
 
 ```
 <head>
-    <script src="//cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script> 
+    <script src="https://cdn.anychart.com/js/latest/anychart.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -94,7 +94,7 @@ The sample above can be launched and explored in AnyChart PlayGround. You can al
 <!doctype html>
 <html>
 <head>
-  <script src="//cdn.anychart.com/js/special/anychart.min.js"></script>
+  <script src="https://cdn.anychart.com/js/special/anychart.min.js"></script>
   <style>
     html, body, #container {
       width: 100%;

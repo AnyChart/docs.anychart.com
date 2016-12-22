@@ -10,7 +10,7 @@ Reference the JavaScript file in the `<head>` section of your web page.
 
 ```
 <head>
-    <script src="//cdn.anychart.com/js/latest/anymap.min.js" type="text/javascript"></script> 
+    <script src="https://cdn.anychart.com/js/latest/anymap.min.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -22,7 +22,7 @@ Reference the Map JavaScript file in the `<head>` section of your web page.
 
 ```
 <head>
-    <script src="https://cdn.anychart.com/geodata/countries/aus/australia.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js"></script>
 </head>
 ```
 
