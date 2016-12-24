@@ -4,9 +4,6 @@
 * [Creating a Vertical Chart/Series](#creating_a_vertical_chart_series)
 * [Changing the Orientation On-The-Fly](#onthefly)
 
-На isVertical какая ссылка? Что-то сообразить не могу.
-Названия пока не смогла придумать лучше.
-
 ## Overview
 
 Most types of series can be drawn both in horizontal and vertical orientation, and this article explains how do it. It also  tells how to change the orientation of a chart on-the-fly.
