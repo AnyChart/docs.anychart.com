@@ -4,9 +4,6 @@
 * [Creating a Vertical Chart/Series](#creating_a_vertical_chart_series)
 * [Changing the Orientation On-The-Fly](#onthefly)
 
-Писать ли что-то про колумны/бары, про их уникальность?
-Нужен ли полный список серий, которые могут быть вертикальными?
-Нужно ли какие-то пункты развернуть?
 На isVertical какая ссылка? Что-то сообразить не могу.
 Названия пока не смогла придумать лучше.
 
@@ -17,11 +14,13 @@ Most types of series can be drawn both in horizontal and vertical orientation, a
 <a name='creating_a_vertical_chart_series'></a>
 ## Creating a Vertical Chart/Series
 
-To create a vertical chart, use one of the three chart constructors: {api:anychart#bar}anychart.bar(){api}, {api:anychart#verticalLine}anychart.verticalLine(){api}, and {api:anychartverticalArea}anychart.verticalArea(){api}.
+(??? any.chart.verticalArea или просто verticalArea, как лучше?)
+To create a vertical chart, use one of the three chart constructors: {api:anychart#bar}anychart.bar(){api}, {api:anychart#verticalLine}anychart.verticalLine(){api}, and {api:anychart#verticalArea}anychart.verticalArea(){api}.
 
 There is no essential difference between them: they just switch the orientation of the axes, drawing the X-axis vertically and the Y-axis horizontally.
 
-By default, if you just pass the data to the chart constructor, a series of the same type is created. For example, in the following sample the verticalArea() chart constructor draws a chart with an Area series: 
+(??? тот же вопрос, что выше)
+By default, if you just pass the data to the chart constructor, a series of the same type is created. For example, in the following sample the {api:anychart#verticalArea}anychart.verticalArea(){api} chart constructor draws a chart with an Area series: 
 
 ```
 // create a data set
@@ -39,8 +38,12 @@ chart = anychart.verticalArea(data);
 
 {sample}BCT\_Vertical\_Charts\_01{sample}
 
-After creating a vertical chart, you can also specify the series type, choosing one of the types that can be vertical. 
+After creating a vertical chart, you can also specify the series type.
 
+(???)
+Most of the series types in AnyChart can be vertical – to find out whether this option is available for the series you need to draw, check whether the class of the series has the **isVertical** method. For example, here is the {api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the {api:anychart.core.cartesian.series.Line}Line{api} series.
+
+(??? verticalArea или anychart.verticalArea?)
 In the sample below, the {api:anychart#verticalArea}anychart.verticalArea(){api} chart constructor is used with the {api:anychart.charts.Cartesian#splineArea}splineArea(){api} method to create two Spline Area series:
 
 ```
@@ -58,6 +61,7 @@ series2.name("2005");
 
 {sample}BCT\_Vertical\_Charts\_02{sample}
 
+(??? прежний вопрос)
 In the next sample there are two series, Bar and Line, created by the {api:anychart.charts.Cartesian#bar}bar(){api} and {api:anychart.charts.Cartesian#line}line(){api} methods, and the chart constructor is {api:anychart#bar}anychart.bar(){api}:
 
 ```
@@ -76,7 +80,8 @@ var series2 = chart.line(seriesData_2);
 <a name='onthefly'></a>
 ## Changing the Orientation On-The-Fly
 
-You can change the orientation of series on-the-fly (after creating them) by calling the {api:anychart.xxx}isVertical(){api} method and setting its parameter to either 'true' or 'false'. Please, keep in mind that it affects only the series, not the axes.
+(???)
+You can change the orientation of series on-the-fly (after creating them) by calling the **isVertical** method and setting its parameter to either 'true' or 'false' (for example, here is the {api:anychart.{api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api}}isVertical(){api} method of the Line series). Please, keep in mind that it affects only the series, not the axes.
 
 In the following sample, this method is used to draw a horizontal (Column) and a vertical (Bar) series on the same chart:
 
