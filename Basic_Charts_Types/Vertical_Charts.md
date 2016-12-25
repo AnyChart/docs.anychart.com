@@ -11,13 +11,11 @@ Most types of series can be drawn both in horizontal and vertical orientation, a
 <a name='creating_a_vertical_chart_series'></a>
 ## Creating a Vertical Chart/Series
 
-(??? any.chart.verticalArea или просто verticalArea, как лучше?)
 To create a vertical chart, use one of the three chart constructors: {api:anychart#bar}anychart.bar(){api}, {api:anychart#verticalLine}anychart.verticalLine(){api}, and {api:anychart#verticalArea}anychart.verticalArea(){api}.
 
 There is no essential difference between them: they just switch the orientation of the axes, drawing the X-axis vertically and the Y-axis horizontally.
 
-(??? тот же вопрос, что выше)
-By default, if you just pass the data to the chart constructor, a series of the same type is created. For example, in the following sample the {api:anychart#verticalArea}anychart.verticalArea(){api} chart constructor draws a chart with an Area series: 
+By default, if you just pass the data to the chart constructor, a series of the same type is created. For example, in the following sample the {api:anychart#verticalArea}verticalArea(){api} chart constructor draws a chart with an Area series: 
 
 ```
 // create a data set
@@ -40,8 +38,7 @@ After creating a vertical chart, you can also specify the series type.
 (???)
 Most of the series types in AnyChart can be vertical – to find out whether this option is available for the series you need to draw, check whether the class of the series has the **isVertical** method. For example, here is the {api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the {api:anychart.core.cartesian.series.Line}Line{api} series.
 
-(??? verticalArea или anychart.verticalArea?)
-In the sample below, the {api:anychart#verticalArea}anychart.verticalArea(){api} chart constructor is used with the {api:anychart.charts.Cartesian#splineArea}splineArea(){api} method to create two Spline Area series:
+In the sample below, the {api:anychart#verticalArea}verticalArea(){api} chart constructor is used with the {api:anychart.charts.Cartesian#splineArea}splineArea(){api} method to create two Spline Area series:
 
 ```
 // set the chart type
@@ -58,8 +55,7 @@ series2.name("2005");
 
 {sample}BCT\_Vertical\_Charts\_02{sample}
 
-(??? прежний вопрос)
-In the next sample there are two series, Bar and Line, created by the {api:anychart.charts.Cartesian#bar}bar(){api} and {api:anychart.charts.Cartesian#line}line(){api} methods, and the chart constructor is {api:anychart#bar}anychart.bar(){api}:
+In the next sample there are two series, Bar and Line, created by the {api:anychart.charts.Cartesian#bar}bar(){api} and {api:anychart.charts.Cartesian#line}line(){api} methods, and the chart constructor is {api:anychart#bar}bar(){api}:
 
 ```
 // set the chart type
