@@ -11,28 +11,32 @@
 
     // create a data set
     var dataSet = anychart.data.set([
-      ["A", 300, 1500],
-      ["B", 3000, 2500],
-      ["C", 5000, 6500],
-      ["D", 6000, 13000],
-      ["F", 6500, 11000]
+      ["A", 300, 12000, 10000],
+      ["B", 3000, 15000, 12000],
+      ["C", 5000, 16000, 14000],
+      ["D", 6000, 15000, 13000],
+      ["F", 6500, 14000, 9000]
     ]);
 
     // map the data
     var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
     var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+    var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
 
     // set the chart type
     var chart = anychart.column();
 
     // create the first series, set the data
-    var series1 = chart.column(seriesData_1);
+    var series1 = chart.area(seriesData_1);
 
     // create the second series, set the data
-    var series2 = chart.column(seriesData_2);
+    var series2 = chart.area(seriesData_2);
 
-    // change the orientation of the second series to vertical
-    chart.getSeriesAt(0).isVertical(true);
+    // create the third series, set the data
+    var series2 = chart.column(seriesData_3);
+
+    // change the orientation of the third series to vertical
+    chart.getSeriesAt(2).isVertical(true);
 
     // set the chart title
     chart.title("Changing the Orientation of a Series");
