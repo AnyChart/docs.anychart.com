@@ -28,7 +28,7 @@ var data = anychart.data.set([
 ]);
 
 // set the chart type
-chart = anychart.verticalArea(data);
+var chart = anychart.verticalArea(data);
 ```
 
 {sample}BCT\_Vertical\_Charts\_01{sample}
@@ -101,7 +101,7 @@ To change the orientation of the whole chart on-the-fly, you should change the o
 
 ```
 // set the chart type
-chart = anychart.column();
+var chart = anychart.column();
 
 // create the first series
 var series1 = chart.column(seriesData_1);

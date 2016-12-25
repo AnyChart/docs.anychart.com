@@ -23,31 +23,35 @@
     var seriesData_2 = dataSet.mapAs({x: [0], value: [2], marker: [3]});
 
     // set the chart type
-    chart = anychart.area();
+    var chart = anychart.area();
+
+    // set the interactivity mode
+    chart.interactivity().hoverMode("single");
 
     // create the first series (spline area), set the data and name
     var series1 = chart.splineArea(seriesData_1);
     series1.name("2004");
 
     // configure the visual settings of the first series
-    series1.fill("#339966", 0.4);
-    series1.hoverFill("#339966", 0.8);
-    series1.selectFill("#339966");
-    series1.stroke("#133926");
-    series1.hoverStroke("#133926", 2);
-    series1.selectStroke("#133926", 3);
+
+    series1.fill("#00cc99", 0.3);
+    series1.hoverFill("#00cc99", 0.3);
+    series1.selectFill("#00cc99", 0.5);
+    series1.stroke("#00cc99", 1, "10 5", "round");
+    series1.hoverStroke("#00cc99", 2, "10 5", "round");
+    series1.selectStroke("#00cc99", 4, "10 5", "round");
 
     // create the second series (spline area), set the data and name  
     var series2 = chart.splineArea(seriesData_2);
     series2.name("2005");
 
     // configure the visual settings of the first series
-    series2.fill("#336699", 0.4);
-    series2.hoverFill("#336699", 0.8);
-    series2.selectFill("#336699");
-    series2.stroke("#132639");
-    series2.hoverStroke("#132639", 2);
-    series2.selectStroke("#132639", 3);
+    series2.fill("#0066cc", 0.3);
+    series2.hoverFill("#0066cc", 0.3);
+    series2.selectFill("#0066cc", 0.5);
+    series2.stroke("#0066cc");
+    series2.hoverStroke("#0066cc", 2);
+    series2.selectStroke("#0066cc", 4);
 
     // set the chart title
     chart.title("Area Chart (Visual Settings)");
