@@ -80,16 +80,19 @@ In the following sample this method is used to draw two horizontal (Area) and a 
 
 ```
 // set the chart type
-var chart = anychart.column();
+var chart = anychart.area();
 
 // create the first series
-var series1 = chart.column(seriesData_1);
+var series1 = chart.area(seriesData_1);
 
 // create the second series
-var series2 = chart.column(seriesData_2);
+var series2 = chart.area(seriesData_2);
 
-// change the orientation of the second series to vertical
-chart.getSeriesAt(0).isVertical(true);
+// create the third series
+var series2 = chart.column(seriesData_3);
+
+// change the orientation of the third series to vertical
+chart.getSeriesAt(2).isVertical(true);
 ```
 
 {sample}BCT\_Vertical\_Charts\_04{sample}
