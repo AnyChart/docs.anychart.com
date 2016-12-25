@@ -13,7 +13,7 @@
     sample.code();
 ```
 
-{sample}BCT\_Vertical\_AreaChart_01{sample}
+{sample}BCT\_Vertical\_AreaChart\_01{sample}
 
 ## Section 3
 
@@ -22,7 +22,7 @@
     sample.code();
 ```
 
-{sample}BCT\_Vertical\_AreaChart_02{sample}
+{sample}BCT\_Vertical\_AreaChart\_02{sample}
 
 
 
