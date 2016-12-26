@@ -10,14 +10,13 @@
 ## Overview
 
 ??? Я это определение с небольшими корректировками скопировала из старой статьи. Ничего, что оно спизжено из документации к Экселю? Просо так я его поправить не могу, потому что оно особое, не видимость описывает (в отличие от тех, что сразу находятся), а зрит в корень и не смешивает Area с Line. При таком определении как раз становится понятно, что "с нуля"" Area не должны начинаться. Но если надо, потом подумаю еще, конечно. Сейчас уже не успеваю.
+??? Есть какая-то статья, рассказывающая про мультисерийность, чтобы на нее сослаться с "multi-series"?
 
 An area chart shows data arranged in columns or rows. This chart type emphasizes the magnitude of change over time and can be used to highlight the total value across a trend. For example, an area chart displaying profit over time can emphasize the total profit.
 
-??? Есть какая-то статья, рассказывающая про мультисерийность, чтобы на нее сослаться с "multi-series"?
+In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Area chart. In addition, area charts can be multi-series, [vertical](Vertical_Charts), [3D](3D_Charts), and [stacked](../Axes_and_Grids/Scales#stack_mode).
 
-In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Area chart. In addition, area charts can be **multi-series**, **vertical**, **3D**, and **stacked** – to learn more, read the articles about [Vertical Charts](Vertical_Charts), [3D Charts](3D_Charts), and [Stack Mode](../Axes_and_Grids/Scales#stack_mode).
-
-The special feature of this chart type is the **spline mode**, which allows creating spline area series – see the [Spline Mode](#spline mode) section of this article.
+The special feature of this chart type, covered in this article, is the  [spline mode](#spline mode), which allows creating spline area series.
 
 The article also explains how to create a basic area chart and configure its visual settings. 
 
