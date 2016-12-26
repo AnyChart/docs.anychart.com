@@ -11,9 +11,10 @@ An Area Chart is...
 
 ## Basic Settings
 
-To create an Area chart, use the {api:anychart#Area}anychart.Area(){api} chart constructor, and to create an Area series, call the {api:anychart.core.cartesian.series.Area}Area{api} method. By default, when you just pass the data to the Area chart constructor, it draws an Area series.
+(??? anychart.area() или anychart.Area()? и не нужно ли для симметрии сделать series.area?)
+To create an Area chart, use the {api:anychart#Area}anychart.area(){api} chart constructor, and to create an Area series, call the {api:anychart.core.cartesian.series.Area}area(){api} method. By default, when you just pass the data to the Area chart constructor, it draws an Area series.
 
-Here is a sample demonstrating how a basic Area Chart is created:
+The following sample demonstrates how a basic Area Chart is created:
 
 ```
 // create a data set
@@ -42,7 +43,7 @@ chart.draw();
 
 ## Visual Settings
 
-Here is a full list of methods used for configuring visual settings that are available for Area series:
+Here is a full list of methods used to configure visual settings that are available for Area series:
 
 * {api:anychart.core.cartesian.series.Area#color}color(){api}, {api:anychart.core.cartesian.series.Area#fill}fill(){api}, {api:anychart.core.cartesian.series.Area#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Area#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
 * {api:anychart.core.cartesian.series.Area#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Area#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Area#hoverStroke}hoverStroke(){api} configure the visual settings on hover
