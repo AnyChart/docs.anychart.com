@@ -99,14 +99,14 @@ series2.selectStroke("#0066cc", 4);
 ## Special Settings
 ### Spline Mode
 
-To improve the design of your area chart, you can turn its series into spline area series by using the {api:anychart.core.cartesian.series.splineArea}splineArea(){api} method (instead of {api:anychart.core.cartesian.series.Area}area(){api}):
+To improve the design of your area chart, you can turn its series into spline area series by using the {api:anychart.core.cartesian.series.splineArea}splineArea(){api} method:
 
 ```
 // set the chart type
 var chart = anychart.area();
 
 // create a spline area series and set the data
-chart.area(data);
+chart.splineArea(data);
 ```
 
 {sample}BCT\_AreaChart\_03{sample}
