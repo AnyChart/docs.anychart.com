@@ -11,7 +11,7 @@ An Area Chart is...
 
 ## Basic Settings
 
-To create an Area chart, use the {api:anychart#Area}anychart.Area(){api} chart constructor, and to create an Area series, call the {api:anychart.core.cartesian.series.Area}Area{api} method. By default, if you just pass the data to the Area chart constructor, it draws an Area series.
+To create an Area chart, use the {api:anychart#Area}anychart.Area(){api} chart constructor, and to create an Area series, call the {api:anychart.core.cartesian.series.Area}Area{api} method. By default, when you just pass the data to the Area chart constructor, it draws an Area series.
 
 Here is a sample demonstrating how a basic Area Chart is created:
 

@@ -15,7 +15,7 @@ To create a vertical chart, use one of the three chart constructors: {api:anycha
 
 There is no essential difference between them: they just switch the orientation of the axes, drawing the X-axis vertically and the Y-axis horizontally.
 
-By default, if you just pass the data to the chart constructor, a series of the same type is created. For example, in the following sample the {api:anychart#verticalArea}verticalArea(){api} chart constructor draws a chart with an Area series: 
+By default, when you just pass the data to the chart constructor, a series of the same type is created. For example, in the following sample the {api:anychart#verticalArea}verticalArea(){api} chart constructor draws a chart with an Area series: 
 
 ```
 // create a data set
