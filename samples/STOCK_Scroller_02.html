@@ -22,15 +22,18 @@ chart = anychart.stock();
 // add a series
 chart.plot(0).line(mapping);
 
-// set container id for the chart
-chart.container('container');
-
 // adjust the scroller
 chart.selectRange('2004-01-02','2004-01-15');
 chart.scroller().thumbs(false);
 chart.scroller().fill('green 0.1');
 chart.scroller().selectedFill('green 0.5');
 chart.scroller().allowRangeChange(false);
+
+// adjust the title according to scroller
+chart.title("Adjust the scroller");
+
+// set container id for the chart
+chart.container('container');
 
 // initiate chart drawing
 chart.draw();

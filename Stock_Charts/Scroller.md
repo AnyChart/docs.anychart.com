@@ -50,7 +50,7 @@ chart.scroller().allowRangeChange(false);
 
 {sample}STOCK\_Scroller\_02{sample}
 
-Note that opposite to basic charts scrollr, it is possible to zoom the AnyStock charts only by setting the selected range.
+Note that opposite to basic charts scroller, it is possible to zoom the AnyStock charts only by setting the selected range.
 
 ### Background Series
 
@@ -63,7 +63,7 @@ chart.scroller().column(mapping);
 
 {sample}STOCK\_Scroller\_03{sample}
 
-Visit [Supported series](Supported_Series) articles to know more about series supported by AnyStock Charts.
+Visit [Supported series](Supported_Series) article to know more about series supported by AnyStock Charts.
 
 ### Scroller Axis
 
@@ -76,24 +76,19 @@ chart.scroller().xAxis(false);
 
 {sample}STOCK\_Scroller\_04{sample}
 
-We can also adjust the labels of the axis. For example, let's make them of black color and format them to show the first day of each month.
+We can also adjust the labels of the axis. For example, let's make them of black color and format them to show the year and the date for first days of each week.
 
 ```
-// adjust the scroller axis
-
-var labels = chart.scroller().xAxis().labels();
-
-var minorLabels = chart.scroller().xAxis().minorLabels();
-    
 labels.textFormatter(function() {
-  return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
+  return "'" + anychart.format.dateTime(this.tickValue, "yy");
 });
 labels.fontColor('#000');
 
 minorLabels.textFormatter(function(){
-  return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
+  return anychart.format.dateTime(this.tickValue, 'MMM, d');
 });
 minorLabels.fontColor('#000');
+minorLabels.fontSize(9);
 ```
 
 {sample}STOCK\_Scroller\_05{sample}

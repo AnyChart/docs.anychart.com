@@ -22,34 +22,11 @@ chart = anychart.stock();
 // add a series
 chart.plot(0).line(mapping);
 
-// set container id for the chart
-chart.container('container');
-
 // create scroller series with mapped data
 chart.scroller().column(mapping);
 
-// adjust the scroller
-chart.selectRange('2004-01-02','2004-01-15');
-chart.scroller().thumbs(false);
-chart.scroller().fill('green 0.1');
-chart.scroller().selectedFill('green 0.5');
-
+// adjust the title according to scroller
 chart.title("Drag the scroller to watch the seelcted range is changing");
-
-// adjust the scroller axis
-var labels = chart.scroller().xAxis().labels();
-
-var minorLabels = chart.scroller().xAxis().minorLabels();
-    
-labels.textFormatter(function() {
-  return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
-});
-labels.fontColor('#000');
-
-minorLabels.textFormatter(function(){
-  return anychart.format.dateTime(this.tickValue, 'dd MMM yyyy');
-});
-minorLabels.fontColor('#000');
 
 // events
 chart.listen("selectedrangechangestart", function(e){
@@ -68,12 +45,22 @@ chart.listen("selectedrangechangefinish", function(e){
     chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected,'dd MMM yyyy'));
 });
 
+// set container id for the chart
+chart.container('container');
+
 // initiate chart drawing
 chart.draw();
 });
 
 function getData(){
 return [
+    ['2003-12-24', 2011.08],
+    ['2003-12-25', 2020.78],
+    ['2003-12-26', 2044.55],
+    ['2003-12-29', 2056.75],
+    ['2003-12-30', 2089.60],
+    ['2003-12-31', 2083.63],
+    ['2004-01-01', 2093.54],
     ['2004-01-02', 2011.08],
     ['2004-01-05', 2020.78],
     ['2004-01-06', 2044.55],
