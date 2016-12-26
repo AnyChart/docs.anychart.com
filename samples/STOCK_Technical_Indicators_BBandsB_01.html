@@ -27,15 +27,17 @@ var mapping = dataTable.mapAs({
 chart = anychart.stock();
 
 // create plot on the chart
-var plot = chart.plot(0);
+var plotSeries = chart.plot(0);
+plotSeries.height("80%");
+var plotIndicator = chart.plot(1);
 
 // create line series
-var ohlcSeries = plot.ohlc(mapping);
+var ohlcSeries = plotSeries.ohlc(mapping);
 ohlcSeries.name('CSCO');
 ohlcSeries.stroke('2px #64b5f6');
 
 // create BBands indicators with period 20
-var bbands = plot.bbandsB(mapping);
+var bbands = plotIndicator.bbandsB(mapping);
 
 // create scroller series with mapped data
 chart.scroller().line(mapping);
