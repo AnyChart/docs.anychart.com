@@ -38,7 +38,7 @@ You can configure some visual settings of your chart: for example, stroke and fi
 
 More information can be found in the [Appearance Settings](../Appearance_Settings) article and articles about particular chart types.
 
-In the following sample, there is a chart with an Area series and two Line series. In all series stroke, hover stroke, and select stroke are configured, and in the Area series, in addition to that, fill, hover fill, and select fill are set:
+In the following sample, there is a chart with an area series and two line series. In all series stroke, hover stroke, and select stroke are configured, and in the area series, in addition to that, fill, hover fill, and select fill are set:
 
 ```
 // configure the visual settings of the first series
@@ -68,7 +68,7 @@ Markers are special symbols that mark certain points on a series. As a rule, the
 
 All chart types allow configuring markers: both on a whole series and in a single point. Available settings include type, size, fill color, and others.
 
-In the following sample, there are two Line series. On one of them you can see how markers look by default: in the case of Line series, they can be seen only on hover and select. On the other series a few custom settings are configured:
+In the following sample, there are two line series. On one of them you can see how markers look by default: in the case of Line series, they can be seen only on hover and select. On the other series a few custom settings are configured:
 
 ```
 // enable and configure markers on the first series
@@ -100,7 +100,7 @@ Labels are text or image elements that can be placed anywhere on any chart (you 
 
 Read more: [Labels](../Common_Settings/Labels).
 
-In the sample below, there is a Column chart with labels enabled on the whole series. Some font settings and a text formatter are applied:
+In the sample below, there is a column chart with labels enabled on the whole series. Some font settings and a text formatter are applied:
 
 ```
 // enable and configure labels on the series
@@ -133,7 +133,7 @@ A tooltip is a text box displayed when a point on a chart is hovered (in all cha
 
 To learn more, see the [Tooltip](../Common_Settings/Tooltip) article.
 
-In this sample, there is a Column chart with two series, and tooltips are configured on the whole chart, so they look the same on both series:
+In this sample, there is a column chart with two series, and tooltips are configured on the whole chart, so they look the same on both series:
 
 ```
 // configure tooltips on the chart
@@ -163,7 +163,7 @@ A legend is a table on a chart listing and explaining the symbols and colors use
 
 For more information, read this article: [Legend](../Common_Settings/Legend).
 
-The following sample shows a multi-series Column chart with a default legend enabled. As you can see, it includes the names and colors of the series:
+The following sample shows a multi-series column chart with a default legend enabled. As you can see, it includes the names and colors of the series:
 
 ```
 // enable the legend
@@ -173,7 +173,7 @@ legend.enabled(true);
 
 {sample}BCT\_General\_Settings\_08{sample}
 
-In this sample, there is a single-series Column chart and a custom legend displaying the list of categories:
+In this sample, there is a single-series column chart and a custom legend displaying the list of categories:
 
 ```
 // enable the legend
@@ -192,7 +192,7 @@ In AnyChart axes are used to control grids, axes labels, lines, and tick marks. 
 
 Learn more about axes and scales: [Axes and Grids](../Axes_and_Grids/Scales).
 
-In the sample below, there is a multi-series chart with a Column series bound to the default Y-axis an a Line series bound to an additional Y-axis:
+In the sample below, there is a multi-series chart with a column series bound to the default Y-axis an a line series bound to an additional Y-axis:
 
 ```
 // configure the main Y-scale

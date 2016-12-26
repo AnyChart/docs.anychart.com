@@ -28,8 +28,8 @@
     // set the interactivity mode
     chart.interactivity().hoverMode("single");
 
-    // create the first series (spline area), set the data and name
-    var series1 = chart.splineArea(seriesData_1);
+    // create the first series, set the data and name
+    var series1 = chart.area(seriesData_1);
     series1.name("2004");
 
     // configure the visual settings of the first series
@@ -40,8 +40,8 @@
     series1.hoverStroke("#00cc99", 2, "10 5", "round");
     series1.selectStroke("#00cc99", 4, "10 5", "round");
 
-    // create the second series (spline area), set the data and name  
-    var series2 = chart.splineArea(seriesData_2);
+    // create the second series, set the data and name  
+    var series2 = chart.area(seriesData_2);
     series2.name("2005");
 
     // configure the visual settings of the second series
@@ -53,7 +53,7 @@
     series2.selectStroke("#0066cc", 4);
 
     // set the chart title
-    chart.title("Area Chart (Visual Settings)");
+    chart.title("Area Chart: Visual Settings");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();

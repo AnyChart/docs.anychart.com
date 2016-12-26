@@ -4,17 +4,32 @@
 * [Overview](#overview)
 * [Basic Settings](#basic_settings)
 * [Visual Settings](#visual_settings)
+* [Special Settings](#special_settings)
+  * [Spline Mode](#spline mode)
 
 ## Overview
 
-An Area Chart is...
+??? Я это определение с небольшими корректировками скопировала из старой статьи. Ничего, что оно спизжено из документации к Экселю? Просо так я его поправить не могу, потому что оно особое, не видимость описывает (в отличие от тех, что сразу находятся), а зрит в корень и не смешивает Area с Line. При таком определении как раз становится понятно, что "с нуля"" Area не должны начинаться. Но если надо, потом подумаю еще, конечно. Сейчас уже не успеваю.
+
+An area chart shows data arranged in columns or rows. This chart type emphasizes the magnitude of change over time and can be used to highlight the total value across a trend. For example, an area chart displaying profit over time can emphasize the total profit.
+
+??? Есть какая-то статья, рассказывающая про мультисерийность, чтобы на нее сослаться с "multi-series"?
+
+In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Area chart. In addition, area charts can be **multi-series**, **vertical**, **3D**, and **stacked** – to learn more, read the articles about [Vertical Charts](Vertical_Charts), [3D Charts](3D_Charts), and [Stack Mode](../Axes_and_Grids/Scales#stack_mode).
+
+The special feature of this chart type is the **spline mode**, which allows creating spline area series – see the [Spline Mode](#spline mode) section of this article.
+
+The article also explains how to create a basic area chart and configure its visual settings. 
 
 ## Basic Settings
 
-(??? anychart.area() или anychart.Area()? и не нужно ли для симметрии сделать series.area?)
-To create an Area chart, use the {api:anychart#Area}anychart.area(){api} chart constructor, and to create an Area series, call the {api:anychart.core.cartesian.series.Area}area(){api} method. By default, when you just pass the data to the Area chart constructor, it draws an Area series.
+??? anychart.area() или anychart.Area()?
+??? и не нужно ли для симметрии сделать series.area?
+??? можно ли охарактеризовать метод, который создает серию, как series constructor?
 
-The following sample demonstrates how a basic Area Chart is created:
+To create an area chart, use the {api:anychart#Area}anychart.area(){api} chart constructor, and to create an area series, call the {api:anychart.core.cartesian.series.Area}area(){api} method. By default, when you just pass the data to this chart constructor, it draws an area series.
+
+The following sample demonstrates how a basic area chart is created:
 
 ```
 // create a data set
@@ -43,17 +58,21 @@ chart.draw();
 
 ## Visual Settings
 
-Here is a full list of methods used to configure visual settings that are available for Area series:
+??? Про image fill тут не стоит писать? Наверное, если человек до такой штуки додумается, он сможет и выудить эту инфу из Appearance Settings (ссылку я ниже поставила).
+
+Here is a full list of methods used to configure visual settings that are available for the Area series:
 
 * {api:anychart.core.cartesian.series.Area#color}color(){api}, {api:anychart.core.cartesian.series.Area#fill}fill(){api}, {api:anychart.core.cartesian.series.Area#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Area#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
 * {api:anychart.core.cartesian.series.Area#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Area#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Area#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 * {api:anychart.core.cartesian.series.Area#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Area#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Area#selectStroke}selectStroke(){api} configure the visual settings on select
 
-In the sample below, there are two Spline Area series with some of the visual settings configured:
+You can learn more from the [Appearance Settings](../Appearance_Settings) article.
+
+In the sample below, there are two area series with some of the visual settings configured:
 
 ```
-// create the first series (spline area)
-var series1 = chart.splineArea(seriesData_1);
+// create the first series
+var series1 = chart.area(seriesData_1);
 
 // configure the visual settings of the first series
 series1.fill("#00cc99", 0.3);
@@ -63,8 +82,8 @@ series1.stroke("#00cc99", 1, "10 5", "round");
 series1.hoverStroke("#00cc99", 2, "10 5", "round");
 series1.selectStroke("#00cc99", 4, "10 5", "round");
 
-// create the second series (spline area) 
-var series2 = chart.splineArea(seriesData_2);
+// create the second series
+var series2 = chart.area(seriesData_2);
 
 // configure the visual settings of the second series
 series2.fill("#0066cc", 0.3);
@@ -77,25 +96,17 @@ series2.selectStroke("#0066cc", 4);
 
 {sample}BCT\_AreaChart\_02{sample}
 
+## Special Settings
+### Spline Mode
 
-{api:anychart.xxx}XXX(){api} 
+To improve the design of your area chart, you can turn its series into spline area series by using the {api:anychart.core.cartesian.series.splineArea}splineArea(){api} method (instead of {api:anychart.core.cartesian.series.Area}area(){api}):
 
+```
+// set the chart type
+var chart = anychart.area();
 
-а)
-#Title
+// create a spline area series and set the data
+chart.area(data);
+```
 
-б)
-Title
-=====
-
-* [Section 1](#section_1)
-* [Section 2](#section_2)
-  * [Subsection 1](#subsection_1)
-  * [Subsection 1](#subsection_1)
-
-## Section 1
-
-<a name='section\_1'></a>
-## Section 1
-
-### Subsection 1
+{sample}BCT\_AreaChart\_03{sample}
