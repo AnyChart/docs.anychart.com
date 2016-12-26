@@ -9,8 +9,8 @@
 
 ## Overview
 
-??? Я это определение с небольшими корректировками скопировала из старой статьи. Ничего, что оно спизжено из документации к Экселю? Просо так я его поправить не могу, потому что оно особое, не видимость описывает (в отличие от тех, что сразу находятся), а зрит в корень и не смешивает Area с Line. При таком определении как раз становится понятно, что "с нуля"" Area не должны начинаться. Но если надо, потом подумаю еще, конечно. Сейчас уже не успеваю.
-??? Есть какая-то статья, рассказывающая про мультисерийность, чтобы на нее сослаться с "multi-series"?
+ВОПРОС: Я это определение с небольшими корректировками скопировала из старой статьи. Ничего, что оно спизжено из документации к Экселю? Просо так я его поправить не могу, потому что оно особое, не видимость описывает (в отличие от тех, что сразу находятся), а зрит в корень и не смешивает Area с Line. При таком определении как раз становится понятно, что "с нуля"" Area не должны начинаться. Но если надо, потом подумаю еще, конечно. Сейчас уже не успеваю.
+ВОПРОС: Есть какая-то статья, рассказывающая про мультисерийность, чтобы на нее сослаться с "multi-series"?
 
 An area chart shows data arranged in columns or rows. This chart type emphasizes the magnitude of change over time and can be used to highlight the total value across a trend. For example, an area chart displaying profit over time can emphasize the total profit.
 
@@ -22,9 +22,9 @@ The article also explains how to create a basic area chart and configure its vis
 
 ## Basic Settings
 
-??? anychart.area() или anychart.Area()?
-??? и не нужно ли для симметрии сделать series.area?
-??? можно ли охарактеризовать метод, который создает серию, как series constructor?
+ВОПРОС: anychart.area() или anychart.Area()?
+ВОПРОС: и не нужно ли для симметрии сделать series.area?
+ВОПРОС: можно ли охарактеризовать метод, который создает серию, как series constructor?
 
 To create an area chart, use the {api:anychart#Area}anychart.area(){api} chart constructor, and to create an area series, call the {api:anychart.core.cartesian.series.Area}area(){api} method. By default, when you just pass the data to this chart constructor, it draws an area series.
 
@@ -57,7 +57,7 @@ chart.draw();
 
 ## Visual Settings
 
-??? Про image fill тут не стоит писать? Наверное, если человек до такой штуки додумается, он сможет и выудить эту инфу из Appearance Settings (ссылку я ниже поставила).
+ВОПРОС: Про image fill тут не стоит писать? Наверное, если человек до такой штуки додумается, он сможет и выудить эту инфу из Appearance Settings (ссылку я ниже поставила).
 
 Here is a full list of methods used to configure visual settings that are available for the Area series:
 
