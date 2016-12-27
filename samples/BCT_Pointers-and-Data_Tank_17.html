@@ -1,0 +1,69 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+  
+  // create data set on our data
+  var dataSet = anychart.data.set([68, 20]);
+  
+  // set the gauge type
+  var gauge = anychart.gauges.linear();
+  gauge.data(dataSet);
+
+  // tank creating
+  var tankF = gauge.tank(0);
+  tankF.name("°F");
+  tankF.color("#ed4830", 0.3);
+  tankF.width("10%");
+
+  var tankC = gauge.tank(1);
+  tankC.name("°C");
+  tankC.offset("11%");
+  tankC.color("#ed4830");
+  tankC.width("10%");
+
+  // Set scale Celsius
+   var scale = gauge.scale();
+  scale.minimum(0);
+  scale.maximum(70);
+  scale.ticks().interval(5);
+
+  // Add Celsius axis with custom labels
+  var axisC = gauge.axis(0);
+  axisC.minorTicks(true);
+  axisC.labels().fontColor("#800000");
+  axisC.scale(scale);
+  axisC.orientation('left');
+  axisC.offset('7%');
+
+  // Add custom right axis with custom labels
+  var axisF = gauge.axis(1);
+  axisF.minorTicks(true);
+  axisF.orientation('right');
+  axisF.labels().fontColor("#800000");
+  axisF.offset('5%');
+  axisF.scale(scale);
+
+  // set colors for empty parts of tanks
+  tankF.emptyFill("#fbceb1");
+  tankF.hoverEmptyFill(anychart.color.lighten("#fbceb1"));
+  tankF.selectEmptyFill(anychart.color.darken("#fbceb1"));
+  tankC.emptyHatchFill("backwardDiagonal");
+  tankC.hoverEmptyHatchFill("forwardDiagonal");
+  tankC.selectEmptyHatchFill("diagonalCross");
+  
+  // draw the chart
+  gauge.container("container");
+  gauge.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
