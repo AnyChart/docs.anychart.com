@@ -52,7 +52,11 @@
 
   // set colors for empty parts of tanks
   tankF.emptyFill("#fbceb1");
+  tankF.hoverEmptyFill(anychart.color.lighten("#fbceb1"));
+  tankF.selectEmptyFill(anychart.color.darken("#fbceb1"));
   tankC.emptyHatchFill("backwardDiagonal");
+  tankC.hoverEmptyHatchFill("forwardDiagonal");
+  tankC.selectEmptyHatchFill("diagonalCross");
   
   // draw the chart
   gauge.container("container");
