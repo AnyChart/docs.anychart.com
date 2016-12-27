@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
   
   // create data set on our data
-  var dataSet = anychart.data.set([20, 68]);
+  var dataSet = anychart.data.set([68, 20]);
   
   // set the gauge type
   var gauge = anychart.gauges.linear();
@@ -18,14 +18,14 @@
 
   // tank creating
   var tankF = gauge.tank(0);
-  tankF.name("°C");
-  tankF.color("#ffe0b2");
+  tankF.name("°F");
+  tankF.color("#ed4830", 0.3);
   tankF.width("10%");
 
   var tankC = gauge.tank(1);
-  tankC.name("°F");
+  tankC.name("°C");
   tankC.offset("11%");
-  tankC.color("#ffe0b2");
+  tankC.color("#ed4830");
   tankC.width("10%");
 
   // Set axis scale settings
@@ -34,30 +34,26 @@
   scale.maximum(70);
 
   // Set scale Celsius
-  var Cscale = anychart.scales.linear();
-  Cscale.minimum(0);
-  Cscale.maximum(70);
-  Cscale.ticks().interval(5);
-
-  // Set scale Fahrenheit
-  var Fscale = anychart.scales.linear();
-  Fscale.minimum(0);
-  Fscale.maximum(70);
-  Fscale.ticks().interval(5);
+  var scale = anychart.scales.linear();
+  scale.minimum(0);
+  scale.maximum(70);
+  scale.ticks().interval(5);
 
   // Add Celsius axis with custom labels
   var axisC = gauge.axis(0);
   axisC.minorTicks(true);
-  axisC.scale(Cscale);
-  axisC.orientation('right');
-  axisC.offset('5%');
+  axisC.labels().fontColor("#800000");
+  axisC.scale(scale);
+  axisC.orientation('left');
+  axisC.offset('7%');
 
   // Add custom right axis with custom labels
   var axisF = gauge.axis(1);
   axisF.minorTicks(true);
-  axisF.orientation('left');
-  axisF.offset('7%');
-  axisF.scale(Fscale);
+  axisF.orientation('right');
+  axisF.labels().fontColor("#800000");
+  axisF.offset('5%');
+  axisF.scale(scale);
   
   // draw the chart
   gauge.container("container");
