@@ -1,7 +1,6 @@
-{:index 999}
-#3D Charts
+{:index 1}
+#Overview
 
-* [Overview](#overview)
 * [Single Series](#single_series)
  * [Area](#area)
  * [Bar](#bar_chart)
@@ -15,8 +14,6 @@
 * [Visualization](#visualization)
  * [Angle](#angle)
  * [Aspect](#aspect)
-
-## Overview
 
 Even though there are quite a few types of charts that can be used for data visualization, AnyChart always tries to achieve more. Using AnyChart component you can create 3d versions of some chart types. 3D mode was created as alternative visual appearance of the common types of charts. Please, do not abuse this feature cause it may be misleading.
 

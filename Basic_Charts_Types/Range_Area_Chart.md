@@ -1,5 +1,5 @@
 {:index 1}
-# Range Line/Spline Area Chart
+# Range Area Chart
 
 * [Overview](#overview)
 * [Chart](#chart)

@@ -1,5 +1,5 @@
 {:index 1}
-# Range Column/Bar chart
+# Range Bar Chart
                                                                          
 * [Overview](#overview)
 * [Chart](#chart)

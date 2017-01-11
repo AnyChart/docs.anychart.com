@@ -1,5 +1,5 @@
 {:index 1}
-# Stacked Line/Spline Charts
+# Stacked Area Chart
 
  * [Overview](#overview)
  * [Chart](#chart)

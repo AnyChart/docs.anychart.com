@@ -1,5 +1,5 @@
 {:index 1}
-# Stacked Bar/Column Charts
+# Percent Stacked Bar Chart
 
 * [Overview](#overview)
 * [Chart](#chart)

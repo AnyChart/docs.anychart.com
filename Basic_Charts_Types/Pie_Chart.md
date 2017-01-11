@@ -1,5 +1,5 @@
 {:index 1}
-#Pie and Doughnut Chart
+#Pie Chart
 
 * [Overview](#overview)
 * [Chart](#chart)

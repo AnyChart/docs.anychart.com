@@ -1,4 +1,4 @@
-{:index 0.5}
+{:index 0.6}
 #General Settings
 
 * [Overview](#overview)
@@ -225,7 +225,7 @@ series2.yScale(yScale2);
 
 ### Stacking
 
-You can create stacked charts by enabling a special mode of the scale that makes series stack together: [Stack Mode](../Axes_and_Grids/Scales#stack_mode).
+You can create stacked charts by enabling a special mode of the scale that makes series stack together: [Stacked Charts](Stacked_Charts/Overview).
 
 ## Interactivity
 
@@ -283,13 +283,13 @@ chart.listen("pointDblClick", function(e){
 
 ## Vertical Charts
 
-Most types of series can be drawn both in horizontal and vertical orientation. To find out how to do it, and what series this feature works with, see the [Vertical Charts](Vertical_Charts) article.
+Most types of series can be drawn both in horizontal and vertical orientation. To find out how to do it, and what series this feature works with, see the article about [Vertical Charts](Vertical_Charts/Overview).
 
 {sample}BCT\_General\_Settings\_12{sample}
 
 ## 3D Charts
 
-Using AnyChart, you can create 3D versions of the following chart types: Area, Bar, Column, and Pie. Read more: [3D Charts](3D_Charts).
+Using AnyChart, you can create 3D versions of the following chart types: Area, Bar, Column, and Pie. Read more: [3D Charts](3D_Charts/Overview).
 
 ## Custom Drawing
 
