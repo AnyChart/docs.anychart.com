@@ -107,7 +107,7 @@ Also, you can copy and paste this code to a file on your computer and run it in 
 ### Learn more
 
 * Explore [JavaScript API Reference](https://api.anychart.com/latest/anychart.graphics)
-* See [GraphicsJS Site](http://www.graphicsjs.com/)
+* See [GraphicsJS Site](http://www.graphicsjs.org/)
 * Go on with [GraphicsJS Docs](Overview)
 * Read Harry Potter book series to learn more about the Deathly Hallows
 
