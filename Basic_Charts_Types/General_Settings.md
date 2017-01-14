@@ -64,7 +64,7 @@ series3.selectStroke("#AEB404", 4, "10 5",  "round");
 
 ## Markers
 
-{api:anychart.standalones.MarkersFactory#anchor}Markers(){api} are special symbols that mark certain points on a series. As a rule, they are used to mark certain values on a series or to make series on a multi-series chart more distinguishable.
+{api:anychart.standalones.MarkersFactory#anchor}Markers{api} are special symbols that mark certain points on a series. As a rule, they are used to mark certain values on a series or to make series on a multi-series chart more distinguishable.
 
 All chart types allow configuring markers: both on a whole series and in a single point. Available settings include type, size, fill color, and others.
 
