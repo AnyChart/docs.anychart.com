@@ -43,7 +43,7 @@ var data = anychart.data.set([
 var chart = anychart.area();
 
 // create an area series and set the data
-series = chart.area(data);
+var series = chart.area(data);
 
 // set the container id
 chart.container("container");

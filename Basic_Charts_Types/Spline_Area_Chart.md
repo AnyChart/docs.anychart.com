@@ -1,33 +1,22 @@
 {:index 1}
-#Area Chart
+#Spline Area Chart
 
 * [Overview](#overview)
 * [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
-* [Special Settings](#special_settings)
-  * [Labels](#labels)
-  * [Tooltips](#tooltips)
-  * [Stacked Area](#stacked_area)
-  * [Vertical Area](#vertical_area)
-  * [3D Area](#3d_area)
 
 ## Overview
 
-An area chart shows data arranged in columns or rows. This chart type emphasizes the magnitude of change over time and can be used to highlight the total value across a trend. For example, an area chart displaying profit over time can emphasize the total profit.
+A spline area chart is an area chart in which data points are connected by smooth curves. Like a regular area chart, it shows data arranged in columns or rows and emphasizes the magnitude of change over time, highlighting the total value across a trend. This modification is used to improve the design of a chart.
 
-In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Area chart. In addition, area charts can be multi-series, [vertical](Vertical_Charts/Overview), [3D](3D_Charts/Overview), and [stacked](Stacked_Charts/Overview).
+(???) ничего же, что технически речь идет о серии? можно здесь употреблять слово "чарт"?
 
-There are two modifications of the Area chart: [Spline Area](Spline_Area_Chart) and [Step Area](Step_Area_Chart).
+The Spline Area and Area chart types share all the settings, so this article explains just how to create a basic spline area chart. To learn more, see the [Area Chart](Area_Chart) article.
 
-The article explains how to create a basic area chart and configure its visual settings as well as the settings that are specific to this type.
+##Basic Settings
 
-## Basic Settings
+(???) а тут уже пишу про серию, нормально? и нормально ли утверждение про any other chart constructor?
 
-To create an area chart, use the {api:anychart#area}anychart.area(){api} chart constructor. If you pass the data to this chart constructor, it creates an area series.
-
-To create an area series explicitly, call the {api:anychart.charts.Cartesian#area}area(){api} method.
-
-The following sample demonstrates how a basic area chart is created:
+To create a spline area series, use the {api:anychart.charts.Cartesian#splineArea}splineArea(){api} (before, of course, you should create a chart by using the {api:anychart#area}anychart.area(){api} method or any other chart constructor):
 
 ```
 // create a data set
@@ -42,8 +31,8 @@ var data = anychart.data.set([
 // create a chart
 var chart = anychart.area();
 
-// create an area series and set the data
-series = chart.area(data);
+// create a spline area series and set the data
+var series = splineArea(data);
 
 // set the container id
 chart.container("container");
@@ -52,97 +41,4 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\_AreaChart\_01{sample}
-
-## Visual Settings
-
-Here is a full list of methods used to configure visual settings that are available for the Area series:
-
-* {api:anychart.core.cartesian.series.Area#color}color(){api}, {api:anychart.core.cartesian.series.Area#fill}fill(){api}, {api:anychart.core.cartesian.series.Area#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Area#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.cartesian.series.Area#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Area#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Area#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.cartesian.series.Area#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Area#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Area#selectStroke}selectStroke(){api} configure the visual settings on select
-
-You can learn more from the [Appearance Settings](../Appearance_Settings) article.
-
-In the sample below, there are two area series with some of the visual settings configured:
-
-```
-// create the first series
-var series1 = chart.area(seriesData_1);
-
-// configure the visual settings of the first series
-series1.fill("#00cc99", 0.3);
-series1.hoverFill("#00cc99", 0.3);
-series1.selectFill("#00cc99", 0.5);
-series1.stroke("#00cc99", 1, "10 5", "round");
-series1.hoverStroke("#00cc99", 2, "10 5", "round");
-series1.selectStroke("#00cc99", 4, "10 5", "round");
-
-// create the second series
-var series2 = chart.area(seriesData_2);
-
-// configure the visual settings of the second series
-series2.fill("#0066cc", 0.3);
-series2.hoverFill("#0066cc", 0.3);
-series2.selectFill("#0066cc", 0.5);
-series2.stroke("#0066cc");
-series2.hoverStroke("#0066cc", 2);
-series2.selectStroke("#0066cc", 4);
-```
-
-{sample}BCT\_AreaChart\_02{sample}
-
-## Special Settings
-
-### Labels
-
-Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
-
-(???) отмечаю на будущее, что нужно добавить текст
-
-To configure a label on an Area chart, you need to know the following peculiarities regarding formatting and positioning lables.... 
-
-### Tooltips
-
-A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
-
-(???) отмечаю на будущее, что нужно добавить текст
-
-In case of Area charts, there are some peculiarities in formatting the text of tooltips...
-
-### Stacked Area
-
-(???) нужна ли тут еще ссылка на Overview?
-
-Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
-
-In AnyChart, you can enable a special mode of the scale making series stack together and create stacked versions of the Area chart and its modifications:
-
-* [Stacked Area](Stacked_Charts/Stacked_Area_Chart)
-* [Percent Stacked Area](Stacked_Charts/Persent_Stacked_Area_Chart)
-
-* [Stacked Spline Area](Stacked_Charts/Stacked_Spline_Area_Chart)
-* [Percent Stacked Spline Area](Stacked_Charts/Persent_Stacked_Spline_Area_Chart)
-
-* [Stacked Step Area](Stacked_Charts/Stacked_Step_Area_Chart)
-* [Percent Stacked Step Area](Stacked_Charts/Persent_Stacked_Area_Chart)
-
-### Vertical Area
-
-(???) тут ведь такие ссылки будут? будут же отдельные статьи?
-
-Area series, like most types of series in AnyChart, can be drawn both in horizontal and vertical orientation. To find out how to do it, see the following articles:
-
-* [Vertical Area](Vertical_Charts/Vertical_Area_Chart)
-* [Vertical Spline Area](Vertical_Charts/Vertical_Spline_Area_Chart)
-* [Vertical Step Area](Vertical_Charts/Vertical_Step_Area_Chart)
-
-### 3D Area
-
-(???) а тут?
-
-Using AnyChart, you can create 3D Area charts:
-
-* [3D Area](3D_Charts/3D_Area_Chart)
-* [3D Spline Area](3D_Charts/3D_Spline_Area_Chart)
-* [3D Step Area](3D_Charts/3D_Step_Area_Chart)
+{sample}BCT\_SplineArea\_Chart{sample}
