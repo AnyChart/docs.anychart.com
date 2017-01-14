@@ -120,10 +120,8 @@ In AnyChart, you can enable a special mode of the scale making series stack toge
 
 * [Stacked Area](Stacked_Charts/Stacked_Area_Chart)
 * [Percent Stacked Area](Stacked_Charts/Persent_Stacked_Area_Chart)
-
 * [Stacked Spline Area](Stacked_Charts/Stacked_Spline_Area_Chart)
 * [Percent Stacked Spline Area](Stacked_Charts/Persent_Stacked_Spline_Area_Chart)
-
 * [Stacked Step Area](Stacked_Charts/Stacked_Step_Area_Chart)
 * [Percent Stacked Step Area](Stacked_Charts/Persent_Stacked_Area_Chart)
 
