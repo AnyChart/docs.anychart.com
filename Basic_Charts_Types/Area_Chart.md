@@ -5,6 +5,11 @@
 * [Basic Settings](#basic_settings)
 * [Visual Settings](#visual_settings)
 * [Special Settings](#special_settings)
+  * [Labels](#labels)
+  * [Tooltips](#tooltips)
+  * [Stacked Area](#stacked_area)
+  * [Vertical Area](#vertical_area)
+  * [3D Area](#3d_area)
 
 ## Overview
 
@@ -12,9 +17,9 @@ An area chart shows data arranged in columns or rows. This chart type emphasizes
 
 In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Area chart. In addition, area charts can be multi-series, [vertical](Vertical_Charts/Overview), [3D](3D_Charts/Overview), and [stacked](Stacked_Charts/Overview).
 
-(!!!) Есть две вариации area: spline area и step area (+ссылки)
+There are two modifications of the Area chart: [Spline Area](Spline_Area_Chart) and [Step Area](Step_Area_Chart).
 
-The article explains how to create a basic area chart and configure its visual settings as well as the settings... специфичные для этого типа. (!!!) 
+The article explains how to create a basic area chart and configure its visual settings as well as the settings that are specific to this type.
 
 ## Basic Settings
 
@@ -34,11 +39,11 @@ var data = anychart.data.set([
   ["May", 9000]
 ]);
 
-// create a chart (!!!)
+// create a chart
 var chart = anychart.area();
 
 // create an area series and set the data
-series = chart.area(data); (!!!)
+series = chart.area(data);
 
 // set the container id
 chart.container("container");
@@ -89,20 +94,55 @@ series2.selectStroke("#0066cc", 4);
 
 ## Special Settings
 
-Labels
+### Labels
 
-Что такое label?
-Особенности форматирования (foramtting):
-Особенности позиционирования (positioning):
+Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-Tooltips
+(???) отмечаю на будущее, что нужно добавить текст
 
-Что такое tooltip?
-Особенности форматирования: 
+To configure a label on an Area chart, you need to know the following peculiarities regarding formatting and positioning lables.... 
 
+### Tooltips
 
-Stacked Area
-Vertical Area
-3D Area
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
-{sample}BCT\_AreaChart\_03{sample} (!!!) удалить пример
+(???) отмечаю на будущее, что нужно добавить текст
+
+In case of Area charts, there are some peculiarities in formatting the text of tooltips...
+
+### Stacked Area
+
+(???) нужна ли тут еще ссылка на Overview?
+
+Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
+
+In AnyChart, you can enable a special mode of the scale making series stack together and create stacked versions of the Area chart and its modifications:
+
+* [Stacked Area](Stacked_Charts/Stacked_Area_Chart)
+* [Percent Stacked Area](Stacked_Charts/Persent_Stacked_Area_Chart)
+
+* [Stacked Spline Area](Stacked_Charts/Stacked_Spline_Area_Chart)
+* [Percent Stacked Spline Area](Stacked_Charts/Persent_Stacked_Spline_Area_Chart)
+
+* [Stacked Step Area](Stacked_Charts/Stacked_Step_Area_Chart)
+* [Percent Stacked Step Area](Stacked_Charts/Persent_Stacked_Area_Chart)
+
+### Vertical Area
+
+(???) тут ведь такие ссылки будут? будут же отдельные статьи?
+
+Area series, like most types of series in AnyChart, can be drawn both in horizontal and vertical orientation. To find out how to do it, see the following articles:
+
+* [Vertical Area](Vertical_Charts/Vertical_Area_Chart)
+* [Vertical Spline Area](Vertical_Charts/Vertical_Spline_Area_Chart)
+* [Vertical Step Area](Vertical_Charts/Vertical_Step_Area_Chart)
+
+### 3D Area
+
+(???) а тут?
+
+Using AnyChart, you can create 3D Area charts:
+
+* [3D Area](3D_Charts/3D_Area_Chart)
+* [3D Spline Area](3D_Charts/3D_Spline_Area_Chart)
+* [3D Step Area](3D_Charts/3D_Step_Area_Chart)

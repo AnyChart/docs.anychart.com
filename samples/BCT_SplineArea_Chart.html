@@ -18,14 +18,14 @@
       ["May", 9000]
     ]);
 
-    // set the chart type
-   var chart = anychart.area();
+    // create a chart
+    var chart = anychart.area();
 
-    // create a spline area series and set the data
-    chart.splineArea(data);
-
+    // create an area series and set the data
+    var series = chart.area(data);
+    
     // set the chart title
-    chart.title("Area Chart: Spline Mode");
+    chart.title("Area Chart: Basic Sample");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
