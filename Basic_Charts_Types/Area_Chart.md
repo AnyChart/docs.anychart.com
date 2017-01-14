@@ -5,30 +5,22 @@
 * [Basic Settings](#basic_settings)
 * [Visual Settings](#visual_settings)
 * [Special Settings](#special_settings)
-  * [Spline Mode](#spline mode)
 
 ## Overview
 
-ВОПРОС: Я это определение с небольшими корректировками скопировала из старой статьи. Ничего, что оно спизжено из документации к Экселю? Просто так я его поправить не могу, потому что оно особое, не видимость описывает (в отличие от тех, что сразу находятся), а зрит в корень и не смешивает Area с Line. При таком определении как раз становится понятно, что "с нуля"" Area не должны начинаться. Но если надо, потом подумаю еще, конечно. Сейчас уже не успеваю.
-ВОПРОС: Есть какая-то статья, рассказывающая про мультисерийность, чтобы на нее сослаться с "multi-series"?
-
-ВОПРОС: Есть вариант обзор настроек перенести в раздел Special Settings (до подраздела Spline Mode). Как тебе? Это ыло бы логично, правда плохо, что не сразу с порога все видно. Можно еще маркированным списком оформить - тогда информация точно будет сразу считываться... Я колеблюсь, не знаю, что выбрать.
-
 An area chart shows data arranged in columns or rows. This chart type emphasizes the magnitude of change over time and can be used to highlight the total value across a trend. For example, an area chart displaying profit over time can emphasize the total profit.
 
-In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Area chart. In addition, area charts can be multi-series, [vertical](Vertical_Charts), [3D](3D_Charts), and [stacked](../Axes_and_Grids/Scales#stack_mode).
+In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Area chart. In addition, area charts can be multi-series, [vertical](Vertical_Charts/Overview), [3D](3D_Charts/Overview), and [stacked](Stacked_Charts/Overview).
 
-The special feature of this chart type, covered in this article, is the  [spline mode](#spline mode), which allows creating spline area series.
+(!!!) Есть две вариации area: spline area и step area (+ссылки)
 
-The article also explains how to create a basic area chart and configure its visual settings. 
+The article explains how to create a basic area chart and configure its visual settings as well as the settings... специфичные для этого типа. (!!!) 
 
 ## Basic Settings
 
-ВОПРОС: anychart.area() или anychart.Area()?
-ВОПРОС: и не нужно ли для симметрии сделать series.area?
-ВОПРОС: можно ли охарактеризовать метод, который создает серию, как series constructor?
+To create an area chart, use the {api:anychart#area}anychart.area(){api} chart constructor. If you pass the data to this chart constructor, it creates an area series.
 
-To create an area chart, use the {api:anychart#Area}anychart.area(){api} chart constructor, and to create an area series, call the {api:anychart.core.cartesian.series.Area}area(){api} method. By default, when you just pass the data to this chart constructor, it draws an area series.
+To create an area series explicitly, call the {api:anychart.charts.Cartesian#area}area(){api} method.
 
 The following sample demonstrates how a basic area chart is created:
 
@@ -42,11 +34,11 @@ var data = anychart.data.set([
   ["May", 9000]
 ]);
 
-// set the chart type
+// create a chart (!!!)
 var chart = anychart.area();
 
 // create an area series and set the data
-chart.area(data);
+series = chart.area(data); (!!!)
 
 // set the container id
 chart.container("container");
@@ -58,8 +50,6 @@ chart.draw();
 {sample}BCT\_AreaChart\_01{sample}
 
 ## Visual Settings
-
-ВОПРОС: Про image fill тут не стоит писать? Наверное, если человек до такой штуки додумается, он сможет и выудить эту инфу из Appearance Settings (ссылку я ниже поставила).
 
 Here is a full list of methods used to configure visual settings that are available for the Area series:
 
@@ -98,16 +88,21 @@ series2.selectStroke("#0066cc", 4);
 {sample}BCT\_AreaChart\_02{sample}
 
 ## Special Settings
-### Spline Mode
 
-To improve the design of your area chart, you can turn its series into spline area series by using the {api:anychart.core.cartesian.series.splineArea}splineArea(){api} method:
+Labels
 
-```
-// set the chart type
-var chart = anychart.area();
+Что такое label?
+Особенности форматирования (foramtting):
+Особенности позиционирования (positioning):
 
-// create a spline area series and set the data
-chart.splineArea(data);
-```
+Tooltips
 
-{sample}BCT\_AreaChart\_03{sample}
+Что такое tooltip?
+Особенности форматирования: 
+
+
+Stacked Area
+Vertical Area
+3D Area
+
+{sample}BCT\_AreaChart\_03{sample} (!!!) удалить пример

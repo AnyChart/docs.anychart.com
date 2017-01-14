@@ -64,7 +64,7 @@ series3.selectStroke("#AEB404", 4, "10 5",  "round");
 
 ## Markers
 
-Markers are special symbols that mark certain points on a series. As a rule, they are used to mark certain values on a series or to make series on a multi-series chart more distinguishable.
+{api:anychart.standalones.MarkersFactory#anchor}Markers(){api} are special symbols that mark certain points on a series. As a rule, they are used to mark certain values on a series or to make series on a multi-series chart more distinguishable.
 
 All chart types allow configuring markers: both on a whole series and in a single point. Available settings include type, size, fill color, and others.
 
@@ -97,8 +97,6 @@ var data = [
 ## Labels
 
 Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
-
-Read more: [Labels](../Common_Settings/Labels).
 
 In the sample below, there is a column chart with labels enabled on the whole series. Some font settings and a text formatter are applied:
 
