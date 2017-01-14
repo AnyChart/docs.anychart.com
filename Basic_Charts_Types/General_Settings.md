@@ -223,11 +223,13 @@ series2.yScale(yScale2);
 
 ### Stacking
 
-You can create stacked charts by enabling a special mode of the scale that makes series stack together: [Stacked Charts](Stacked_Charts/Overview).
+Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms.
+
+In AnyChart, you can create stacked and percent stacked charts of various types by enabling a special mode of the scale that makes series stack together: [Stacked Charts](Stacked_Charts/Overview).
 
 ## Interactivity
 
-You can change the default interactivity settings of any chart in AnyChart: see the [Interactivity](../Common_Settings/Interactivity) article.
+You can change the default behavior of a chart or a series in AnyChart. By default, when a user hovers a point, it is highlighted, and a tooltip is shown; clicking a legend element hides/shows a series it represents, and so on. The [Interactivity](../Common_Settings/Interactivity) article explains how to change the defaults and create custom interactivity settings.
 
 ## Events
 
