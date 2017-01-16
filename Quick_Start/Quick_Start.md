@@ -22,7 +22,7 @@ You can use the link as shown below or download anychart.min.js from the [downlo
 
 ###2. Create a container for the chart
 
-Add a block-based HTML element into your page, set the `id`, `width` and `height` attributes. Unless you don’t, AnyChart charting library will use 100% of the container.
+Add a block-level HTML element into your page, set the `id`, `width` and `height` attributes. Unless you don’t, AnyChart charting library will use 100% of the container.
 
 Example:
 ```
