@@ -12,7 +12,7 @@ The Spline Area and Area chart types share all the settings, so this article exp
 
 ##Basic Settings
 
-To create a spline area series, use the {api:anychart.charts.Cartesian#splineArea}splineArea(){api} (before, of course, you should create a chart by using the {api:anychart#area}anychart.area(){api} method or any other chart constructor):
+To create a spline area series, use the {api:anychart.charts.Cartesian#splineArea}splineArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor):
 
 ```
 // create a data set
@@ -28,7 +28,7 @@ var data = anychart.data.set([
 var chart = anychart.area();
 
 // create a spline area series and set the data
-var series = splineArea(data);
+var series = chart.splineArea(data);
 
 // set the container id
 chart.container("container");

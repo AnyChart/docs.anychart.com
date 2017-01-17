@@ -12,7 +12,7 @@ The Step Area and Area chart types share all the settings, so this article expla
 
 ##Basic Settings
 
-To create a step area series, use the {api:anychart.charts.Cartesian#stepArea}stepArea(){api} (before, of course, you should create a chart by using the {api:anychart#area}anychart.area(){api} method or any other chart constructor):
+To create a step area series, use the {api:anychart.charts.Cartesian#stepArea}stepArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor):
 
 ```
 // create a data set
@@ -28,7 +28,7 @@ var data = anychart.data.set([
 var chart = anychart.area();
 
 // create a step area series and set the data
-var series = stepArea(data);
+var series = chart.stepArea(data);
 
 // set the container id
 chart.container("container");
@@ -37,4 +37,4 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\_StepArea\_Chart{sample}
+{sample}BCT\_StepArea\_Chart\_01{sample}
