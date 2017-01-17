@@ -11,7 +11,9 @@
 
 ## Overview
 
-(???) A line chart ... This chart type...
+A line chart is a chart that shows information as a series of data points connected by straight line segments.
+
+This chart type is very common in many fields. As a rule, it is used to emphasize trends in data over equal time intervals, such as months, quarters, fiscal years, and so on.
 
 In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Line chart. In addition, line charts can be multi-series and [vertical](Vertical_Charts/Overview).
 

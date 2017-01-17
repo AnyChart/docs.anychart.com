@@ -11,11 +11,15 @@
 
     // create a data set
     var data = anychart.data.set([
-      ["January", 10000],
-      ["February", 12000],
-      ["March", 18000],
-      ["April", 11000],
-      ["May", 9000]
+      ["1995", 0.10],
+      ["1996", 0.10],
+      ["1997", 0.12],
+      ["1998", 0.13],
+      ["1999", 0.15],
+      ["2000", 0.15],
+      ["2001", 0.15],
+      ["2002", 0.19],
+      ["2003", 0.20],
     ]);
 
     // create a chart
@@ -25,13 +29,13 @@
     var series = chart.stepLine(data);
     
     // set the chart title
-    chart.title("Step Line Chart");
+    chart.title("Step Line Chart: Postal Rates");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
-    xAxis.title("Month");
+    xAxis.title("Year");
     var yAxis = chart.yAxis();
-    yAxis.title("Sales, $");
+    yAxis.title("Rate");
 
     // set the container id
     chart.container("container");

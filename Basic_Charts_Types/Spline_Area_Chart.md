@@ -6,7 +6,9 @@
 
 ## Overview
 
-A spline area chart is an area chart in which data points are connected by smooth curves. Like a regular area chart, it shows data arranged in columns or rows and emphasizes the magnitude of change over time, highlighting the total value across a trend. This modification is used to improve the design of a chart.
+A spline area chart is an area chart in which data points are connected by smooth curves: this modification is aimed to improve the design of a chart.
+
+Like in the regular area chart, the area between the line segments and the X-axis is filled with a color or a pattern to emphasize the magnitude of change over time.
 
 The Spline Area and Area chart types share all the settings, so this article explains just how to create a basic spline area chart. To learn more, see the [Area Chart](Area_Chart) article.
 
