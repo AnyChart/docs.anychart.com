@@ -33,7 +33,6 @@ var chart = anychart.verticalArea(data);
 
 After creating a vertical chart, you can also specify the series type.
 
-(???)
 Most of the series types in AnyChart can be vertical – to find out whether this option is available for the series you need to draw, check whether the class of the series has the **isVertical** method. For example, here is the {api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the {api:anychart.core.cartesian.series.Line}Line{api} series.
 
 In the sample below, the {api:anychart#verticalArea}verticalArea(){api} chart constructor is used with the {api:anychart.charts.Cartesian#splineArea}splineArea(){api} method to create two spline area series:
@@ -71,7 +70,6 @@ var series2 = chart.line(seriesData_2);
 <a name='onthefly'></a>
 ## Changing the Orientation On-The-Fly
 
-(???)
 After creating a series, you can change its orientation on-the-fly by calling the **isVertical** method and setting its parameter to either 'true' or 'false' (for example, here is the {api:anychart.{api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the Line series). Please, keep in mind that it affects only the series, not the axes.
 
 In the following sample this method is used to draw two horizontal (area) and a vertical (bar) series on the same chart:

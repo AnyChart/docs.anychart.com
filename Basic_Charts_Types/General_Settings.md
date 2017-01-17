@@ -18,15 +18,13 @@
 
 ## Overview
 
-In AnyChart, you always work with a series, no matter what chart type you create. It is the series type that determines what (and how) is drawn on a chart. Please note that it can be changed on-the-fly: [Series Type](Series_Type)).
+In AnyChart, you always work with a series, no matter what chart type you create. It is the series type that determines what (and how) is drawn on a chart. Please note that it can be changed on-the-fly: [Series Type](Series_Type).
 
 Some series types can be shown on a chart simultaneously, and some cannot. There are chart types that can be only single-series and chart types that can be multi-series. Some series can have both horizontal and vertical orientation. Some  can be drawn in 3D.
 
 However, despite all the differences, many settings are configured in the same way for of all series types, and this article is a brief overview of such settings. There are also links to articles where each of the features is explained in more detail.
 
 Alternative sources of the information about general settings are the {api:anychart.core.SeriesBase}methods of the 'anychart' class{api} in our API.
-
-(???) Тут был еще второй пример, но из-за изменения структуры документации он накрылся. Теперь даже не знаю, что вставить: поскольку все стало логичнее, принципиально отличного примера, кажется не приведешь. Может, и не надо?
 
 To learn about the unique settings of a series type, see the article about that type. For example, to find out what visual settings are available for the Area series, you should read the [Area Chart](Area_Chart) article.
 
@@ -286,8 +284,6 @@ chart.listen("pointDblClick", function(e){
 ## Vertical Charts
 
 Most types of series can be drawn both in horizontal and vertical orientation. To find out how to do it, and what series this feature works with, see the article about [Vertical Charts](Vertical_Charts/Overview).
-
-{sample}BCT\_General\_Settings\_12{sample}
 
 ## 3D Charts
 

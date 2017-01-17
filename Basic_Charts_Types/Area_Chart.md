@@ -112,11 +112,11 @@ In case of Area charts, there are some peculiarities in formatting the text of t
 
 ### Stacked Area
 
-(???) нужна ли тут еще ссылка на Overview?
-
 Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
 
-In AnyChart, you can enable a special mode of the scale making series stack together and create stacked versions of the Area chart and its modifications:
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts (Overview)](Stacked_Charts/Overview).
+
+To learn about the stacked versions of the Area chart and its modifications, see:
 
 * [Stacked Area](Stacked_Charts/Stacked_Area_Chart)
 * [Percent Stacked Area](Stacked_Charts/Persent_Stacked_Area_Chart)
@@ -127,9 +127,9 @@ In AnyChart, you can enable a special mode of the scale making series stack toge
 
 ### Vertical Area
 
-(???) тут ведь такие ссылки будут? будут же отдельные статьи?
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical_Charts/Overview).
 
-Area series, like most types of series in AnyChart, can be drawn both in horizontal and vertical orientation. To find out how to do it, see the following articles:
+Here is the information about creating vertical area series:
 
 * [Vertical Area](Vertical_Charts/Vertical_Area_Chart)
 * [Vertical Spline Area](Vertical_Charts/Vertical_Spline_Area_Chart)
@@ -137,9 +137,11 @@ Area series, like most types of series in AnyChart, can be drawn both in horizon
 
 ### 3D Area
 
-(???) а тут?
+Using AnyChart, you can create 3D versions of some chart types, including the Area chart.
 
-Using AnyChart, you can create 3D Area charts:
+To learn about 3D charts in general, see [3D Charts (Overview)](3D_Charts/Overview).
+
+3D area charts are described in the following articles:
 
 * [3D Area](3D_Charts/3D_Area_Chart)
 * [3D Spline Area](3D_Charts/3D_Spline_Area_Chart)
