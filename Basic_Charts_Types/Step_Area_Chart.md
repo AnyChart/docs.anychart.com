@@ -79,7 +79,7 @@ In the <strong>forward</strong> mode data points are the starting points of hori
 series.stepDirection("forward");
 ```
 
-{sample}BCT\_StepLinAreae\_Chart\_03{sample}
+{sample}BCT\_StepArea\_Chart\_03{sample}
 
 The <strong>backward</strong> mode sets data points as the final points of horizontal segments: 
 
