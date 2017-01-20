@@ -45,7 +45,7 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\_StepLine\_Chart\_02{sample}
+{sample}BCT\_Step\_Line\_Chart\_02{sample}
 
 ## Special Settings 
 
@@ -70,14 +70,14 @@ series.stepDirection("center");
 
 In the <strong>forward</strong> mode data points are the starting points of horizontal segments:  
 
-{sample}BCT\_StepLine\_Chart\_02{sample}
+{sample}BCT\_Step\_Line\_Chart\_02{sample}
 
 ```
 // set the step direction to the center mode (default)
 series.stepDirection("forward");
 ```
 
-{sample}BCT\_StepLine\_Chart\_03{sample}
+{sample}BCT\_Step\_Line\_Chart\_03{sample}
 
 The <strong>backward</strong> mode sets data points as the final points of horizontal segments: 
 
@@ -86,4 +86,4 @@ The <strong>backward</strong> mode sets data points as the final points of horiz
 series.stepDirection("backward");
 ```
 
-{sample}BCT\_StepLine\_Chart\_04{sample}
+{sample}BCT\_Step\_Line\_Chart\_04{sample}

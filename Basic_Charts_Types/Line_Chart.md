@@ -52,7 +52,7 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\_LineChart\_01{sample}
+{sample}BCT\_Line\_Chart\_01{sample}
 
 ## Visual Settings
 
@@ -84,7 +84,7 @@ series2.hoverStroke("#0066cc", 2);
 series2.selectStroke("#0066cc", 4);
 ```
 
-{sample}BCT\_LineChart\_02{sample}
+{sample}BCT\_Line\_Chart\_02{sample}
 
 ## Special Settings
 

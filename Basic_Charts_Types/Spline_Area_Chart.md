@@ -39,4 +39,4 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\_SplineArea\_Chart{sample}
+{sample}BCT\_Spline\_Area\_Chart{sample}
