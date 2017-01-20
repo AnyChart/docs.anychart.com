@@ -58,9 +58,9 @@ chart.draw();
 
 Here is a full list of methods used to configure visual settings that are available for the Line series:
 
-* {api:anychart.core.cartesian.series.line#color}color(){api} and {api:anychart.core.cartesian.series.line#stroke}stroke(){api} set the color and stroke
-* {api:anychart.core.cartesian.series.line#hoverStroke}hoverStroke(){api} configures the stroke on hover
-* {api:anychart.core.cartesian.series.line#selectStroke}selectStroke(){api} configures the stroke on select
+* {api:anychart.core.cartesian.series.Line#color}color(){api} and {api:anychart.core.cartesian.series.Line#stroke}stroke(){api} set the color and stroke
+* {api:anychart.core.cartesian.series.Line#hoverStroke}hoverStroke(){api} configures the stroke on hover
+* {api:anychart.core.cartesian.series.Line#selectStroke}selectStroke(){api} configures the stroke on select
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) article.
 
