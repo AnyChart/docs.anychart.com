@@ -18,7 +18,7 @@ A column chart is...
 
 This chart type...
 
-In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Column chart. In addition, column charts can be multi-series, stacked](Stacked_Charts/Overview), [vertical](Vertical_Charts/Overview) (the vertical column chart is called [bar chart](Bar_Chart)), and [3D](3D_Charts/Overview).
+In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Column chart. In addition, column charts can be multi-series, [stacked](Stacked_Charts/Overview), [vertical](Vertical_Charts/Overview) (the vertical column chart is called [bar chart](Bar_Chart)), and [3D](3D_Charts/Overview).
 
 The article explains how to create a basic column chart and configure its visual settings as well as the settings that are specific to this type.
 

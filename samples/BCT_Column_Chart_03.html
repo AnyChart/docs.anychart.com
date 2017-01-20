@@ -22,7 +22,7 @@
     var seriesData_1 = data.mapAs({x: [0], value: [1]});
     var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
-    // set the chart type
+    // create a chart
     var chart = anychart.column();
 
     // create the first series, set the data and name
@@ -33,12 +33,8 @@
     var series2 = chart.column(seriesData_2);
     series2.name("Sales in 2016");
 
-    // configure tooltips on the chart
-    chart.tooltip().title("Information");
-    chart.tooltip().textFormatter("Manager: {%CategoryName} \n{%SeriesName}: ${%value}");
-
     // set the chart title
-    chart.title("Tooltips (Chart)");
+    chart.title("Column Chart: Padding");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
