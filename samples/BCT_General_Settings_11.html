@@ -25,14 +25,14 @@
     var series = chart.column(data);
     series.name("Sales");
 
+    // set the chart title
+    chart.title("Events");
+
     // set the titles of the axes
     var xAxis = chart.xAxis();
     xAxis.title("Manager");
     var yAxis = chart.yAxis();
     yAxis.title("Sales, $");
-
-    // set the chart title
-    chart.title("Events");
 
     // create an event listener for hovering the chart
     chart.listen("mouseOver", function(e){

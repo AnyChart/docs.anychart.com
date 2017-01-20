@@ -24,15 +24,15 @@
     // create a series, set the data and name
     var series = chart.column(data);
     series.name("Sales");
+    
+    // set the chart title
+    chart.title("Labels (Point)");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
     xAxis.title("Manager");
     var yAxis = chart.yAxis();
     yAxis.title("Sales, $");
-
-    // set the chart title
-    chart.title("Labels (Point)");
 
     // set the container id
     chart.container("container");

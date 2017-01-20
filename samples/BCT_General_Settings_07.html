@@ -41,14 +41,14 @@
     series2.tooltip().title("This Year");
     series2.tooltip().textFormatter("Manager: {%CategoryName} \nSales: ${%value}");
 
+    // set the chart title
+    chart.title("Tooltips (Series)");
+
     // set the titles of the axes
     var xAxis = chart.xAxis();
     xAxis.title("Manager");
     var yAxis = chart.yAxis();
     yAxis.title("Sales, $");
-
-    // set the chart title
-    chart.title("Tooltips (Series)");
 
     // set the container id
     chart.container("container");

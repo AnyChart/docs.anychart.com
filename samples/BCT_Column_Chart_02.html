@@ -22,29 +22,41 @@
     var seriesData_1 = data.mapAs({x: [0], value: [1]});
     var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
-    // set the chart type
+    // create a chart
     var chart = anychart.column();
 
     // create the first series, set the data and name
     var series1 = chart.column(seriesData_1);
     series1.name("Sales in 2015");
 
+    // configure the visual settings of the first series
+    series1.fill("#00cc99", 0.3);
+    series1.hoverFill("#00cc99", 0.3);
+    series1.selectFill("#00cc99", 0.5);
+    series1.stroke("#00cc99", 1, "10 5", "round");
+    series1.hoverStroke("#00cc99", 2, "10 5", "round");
+    series1.selectStroke("#00cc99", 4, "10 5", "round");
+
     // create the second series, set the data and name
     var series2 = chart.column(seriesData_2);
     series2.name("Sales in 2016");
 
-    // configure tooltips on the chart
-    chart.tooltip().title("Information");
-    chart.tooltip().textFormatter("Manager: {%CategoryName} \n{%SeriesName}: ${%value}");
+    // configure the visual settings of the second series
+    series2.fill("#0066cc", 0.3);
+    series2.hoverFill("#0066cc", 0.3);
+    series2.selectFill("#0066cc", 0.5);
+    series2.stroke("#0066cc");
+    series2.hoverStroke("#0066cc", 2);
+    series2.selectStroke("#0066cc", 4);
+
+    // set the chart title
+    chart.title("Column Chart: Visual Settings");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
     xAxis.title("Manager");
     var yAxis = chart.yAxis();
     yAxis.title("Sales, $");
-
-    // set the chart title
-    chart.title("Tooltips (Chart)");
 
     // set the container id
     chart.container("container");

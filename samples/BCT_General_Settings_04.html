@@ -31,14 +31,14 @@
     series.labels().fontWeight(900);
     series.labels().textFormatter("${%value}");
 
+    // set the chart title
+    chart.title("Labels (Series)");
+
     // set the titles of the axes
     var xAxis = chart.xAxis();
     xAxis.title("Manager");
     var yAxis = chart.yAxis();
     yAxis.title("Sales, $");
-
-    // set the chart title
-    chart.title("Labels (Series)");
 
     // set the container id
     chart.container("container");

@@ -61,9 +61,6 @@ The default mode is <strong>center</strong>. In this case data points are placed
 // create a step line series and set the data
 var series = chart.stepLine(data);
 
-// enable markers
-series.markers(true);
-
 // set the step direction to the center mode
 series.stepDirection("center");
 ```
