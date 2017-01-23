@@ -33,6 +33,12 @@
     var series2 = chart.column(seriesData_2);
     series2.name("Sales in 2016");
 
+    // set the padding between columns
+    chart.barsPadding(-0.5);
+
+    // set the padding between column groups
+    chart.barGroupsPadding(2);
+
     // set the chart title
     chart.title("Column Chart: Padding");
 

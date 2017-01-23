@@ -14,11 +14,22 @@
 
 ## Overview
 
-A column chart is...
+(???) Смотрю, сделали чартопедию. Там сказано, что колумны - это вертикальные бары.
 
-This chart type...
+см.: http://www.anychart.com/chartopedia/chart-types/bar-chart/
 
-In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Column chart. In addition, column charts can be multi-series, [stacked](Stacked_Charts/Overview), [vertical](Vertical_Charts/Overview) (the vertical column chart is called [bar chart](Bar_Chart)), and [3D](3D_Charts/Overview).
+А мы тут пишем обратное! Возможно, и там и там надо писать, что бывает так называют, а бывает так... по-честному)) Естественно, обозначив, что в эничарте column принят за горизонтальный чарт. В связи с этим напрашивается вопрос, а не сделать ли статью на бары полноценной?
+
+
+(???) На месте первого предложения было переработанное определение из википедии, но у меня есть вопросы к тому, как оно переработано. Оставила пока почти как там. остальную часть абзаца тоже посмотри. Важно ли примечание в скобках? ставить его особо больше некуда, но оно перегружает эту типа определительную часть. Подцепила в чартопедии, решила пока взять на всякий случай.
+
+A column chart is a chart that visualizes data as a set of rectangular columns, their lengths being proportional to the values they represent. While the Y-axis shows the values, the X-axis shows the categories they belong to (in multi-series column charts, values are grouped by categories).
+
+(???) Тоже переделывала, читай внимательно, не сказанула ли херни. Про time-based data хорошо бы пояснить - я не помню точно, но было какое-то объяснение, когда лучше лайн брать, а когда бар... Не знаешь случайно? лайн показывает тренд, это наиболее распространенный случай, а вот бар... Может, он magnitude подчеркивает? Пока что-то не смогла ничего найти.
+
+This chart type is used very widely to show comparison among categories and sometimes to visualize time-based data.
+
+In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Column chart. In addition, column charts can be multi-series, [stacked](Stacked_Charts/Overview), [vertical](Vertical_Charts/Overview) (the vertical column chart is called the [bar chart](Bar_Chart)), and [3D](3D_Charts/Overview).
 
 The article explains how to create a basic column chart and configure its visual settings as well as the settings that are specific to this type.
 
@@ -97,7 +108,30 @@ series2.selectStroke("#0066cc", 4);
 
 ### Padding
 
-...
+To configure the paddings between columns and column groups (in multi-series charts), use these methods:
+
+* {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api}
+* {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}
+
+(???) читай следующий абзац внимательно, я его редактировала
+
+Paddings are measured as a ratio to the width of columns (the width is calculated automatically). So, if {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} is set to 0.5, the space between two columns is half the width of the column. If {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} or {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api} is set to 0, there is no space between columns or column groups. Finally, {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} with negative parameter makes columns overlap each other.
+
+(???) альтернативный вариант, сокращенный. может, он лучше...
+
+Paddings are measured as a ratio to the width of columns (the width is calculated automatically). So, if a padding is < 1, the space between column or column groups is less than the width of the column, and vice versa. If you set a padding to 0, there is no space between columns/groups, and a negative parameter makes columns overlap each other.
+
+In the following sample, there is a multi-series column chart with barsPadding() and barGroupsPadding() set to -0.5 and 2 correspondingly:
+
+```
+// set the padding between columns
+chart.barsPadding(-0.5);
+
+// set the padding between column groups
+chart.barGroupsPadding(2);
+```
+
+{sample}BCT\_Column\_Chart\_03{sample}
 
 ### Labels
 
@@ -131,7 +165,8 @@ To learn about the stacked versions of the Column chart, see:
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical_Charts/Overview).
 
-The vertical column chart is called bar chart. Read more: [Bar Chart](Bar_Chart).
+(???) норм определила?
+The vertical column chart is called the bar chart: it shows categories on the Y-axis instead of the X-axis and represents values as bars instead of columns. Read more: [Bar Chart](Bar_Chart).
 
 ### 3D Column
 
