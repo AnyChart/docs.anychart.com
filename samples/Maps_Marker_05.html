@@ -6,8 +6,8 @@
   <meta name="index" content="1000"/>
   <meta name="is-new" content="false"/>
   <script src="../anychart-bundle.min.js"></script>
-    <link rel="stylesheet" href="//cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-  <script src="//cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
+    <link rel="stylesheet" href="http://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+  <script src="http://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
   <script x-export="usaMap">
 anychart.onDocumentReady(function () {
@@ -15,13 +15,13 @@ anychart.onDocumentReady(function () {
     // create the dataset of points that are defined by latitude and longtitude values
     var dataSet_lat_long = anychart.data.set([
         {lat: 33.75, long: -112.18, name: "Stepford branch", value: 321},
-        {lat: 28.50, long: -135.24, name: "Metropolis branch", value: 293},
-        {lat: 23.12, long: -148.62, name: "Haddonfield branch", value: 312},
-        {lat: 17.89, long: -145.09, name: "Marlberry branch", value: 198},
-        {lat: 33.28, long: -135.58, name: "Sunnydale branch", value: 309},
+        {lat: 37.50, long: -101.52, name: "Metropolis branch", value: 293},
+        {lat: 43.12, long: -108.62, name: "Haddonfield branch", value: 312},
+        {lat: 28.89, long: -100.09, name: "Marlberry branch", value: 198},
+        {lat: 33.28, long: -84.28, name: "Sunnydale branch", value: 309},
         {lat: 39.21, long: -116.44, name: "Landmark branch", value: 215},
-        {lat: 32.26, long: -151.44, name: "Springfield branch", value: 219},
-        {lat: 27.63, long: -152.37, name: "Vice City branch", value: 179}
+        {lat: 32.26, long: -99.88, name: "Springfield branch", value: 219},
+        {lat: 43.63, long: -90.37, name: "Vice City branch", value: 179}
     ]);
 
     usaMap = anychart.map();
