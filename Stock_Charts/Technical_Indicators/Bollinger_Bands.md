@@ -17,7 +17,7 @@ Mathematical description of the indicator: [Bollinger Bands](Mathematical_Descri
 
 ## Adding indicator
 
-Bollinger Bands indicator is added using {api:anychart.core.stock.Plot#bbands}bbands(){api} method, it requires a mapping with value field in it:
+Bollinger Bands indicator is added using {api:anychart.core.stock.Plot#bbands}bbands(){api} method. It requires a mapping with the value field in it:
 
 ```
 var dataTable = anychart.data.table();
@@ -41,7 +41,7 @@ var bbands = plot.bbands(mapping);
 
 ## Indicator parameters
 
-Bollinger Bands indicator needs only the "mapping" parameter. Optional ones are: "period", "deviation", "up" and "down" series types.
+Bollinger Bands indicator needs only the "mapping" parameter. Optional parameters are: "period", "deviation", "up" and "down" series types.
 
 ```
 var bbands = plot.bbands(mapping, 10, 3, "spline", "spline");
@@ -63,17 +63,10 @@ Live sample:
 
 {sample}STOCK\_Technical\_Indicators\_BBands\_02{sample}
 
-
 ## Visualization using ranges
 
-Visualization of the Bollinger Bands indicator can be done with Range series - Range Area, Range SplineArea, etc. Let's use the Range SplineArea for the Bollinger Bands indicator visualization.
+Visualization of the Bollinger Bands indicator can be done with Range series - [Range Area](../Series/Range_Area), [Range Spline Area](../Series/Range_Spline_Area), etc. 
 
-```
-// create Bollinger Bands indicators
-var bbands = plot.bbands(mapping);
-
-// Set period.
-bbands.period(10);
-```
+The sample below uses Range Spline Area for the Bollinger Bands indicator visualization.
 
 {sample}STOCK\_Technical\_Indicators\_BBands\_03{sample}

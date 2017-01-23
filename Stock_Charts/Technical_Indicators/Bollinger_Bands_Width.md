@@ -5,20 +5,17 @@
 * [Indicator parameters](#indicator_parameters)
 * [Visualization](#visualization)
 
-
 ## Overview
 
-Bollinger Bands Width is an indicator derived from Bollinger Bands. There are two indicators derived from [Bollinger Bands](Bollinger_Bands): the Bollinger Bands Width and the [Bollinger Bands %B](Bollinger_Bands_B).
+Bollinger Bands Width is an indicator derived from [Bollinger Bands](Bollinger_Bands). 
 
-Non-normalized Bollinger Bands Width measures the distance, or difference, between the upper band and the lower band. Bollinger Bands Width decreases as Bollinger Bands narrow and increases as Bollinger Bands widen, because Bollinger Bands are based on the standard deviation.
+Non-normalized Bollinger Bands Width measures the distance, or difference, between the upper band and the lower band. Bollinger Bands Width decreases as Bollinger Bands narrow and increases as Bollinger Bands widen because Bollinger Bands are based on the standard deviation.
 
 Mathematical description of the indicator: [Mathematical Description of Bollinger Bands Width](Mathematical_Description).
 
-
 ## Adding indicator
 
-
-Bollinger Bands Width indicator is added through the {api:anychart.core.stock.Plot#bbandsWidth}bbandsWidth(){api} method, requiring a mapping with value field in it:
+Bollinger Bands Width indicator is added using the {api:anychart.core.stock.Plot#bbandsWidth}bbandsWidth(){api} method. It requires a mapping with the value field in it:
 
 ```
 var dataTable = anychart.data.table();

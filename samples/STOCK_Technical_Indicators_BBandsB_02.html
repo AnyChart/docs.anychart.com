@@ -26,27 +26,18 @@ var mapping = dataTable.mapAs({
 // create stock chart
 chart = anychart.stock();
 
-// create plots on the chart
-var plot_ohlc = chart.plot(0);
-var plot_jc = chart.plot(1);
-var plot_indicator = chart.plot(2);
-
-// create line series
-var ohlcSeries = plot_ohlc.ohlc(mapping);
+// create ohlc series
+var ohlcSeries = chart.plot(0).ohlc(mapping);
 ohlcSeries.name('CSCO');
 ohlcSeries.stroke('2px #64b5f6');
 
-var jcSeries = plot_jc.candlestick(mapping);
-jcSeries.name('CSCO');
-jcSeries.stroke('2px #64b5f6');
-
-// create BBandsB indicator with period 10 and show as line on the first plot
-var BBandsB10 = plot_indicator.bbandsB(mapping, 10, 0.2, "line").series();
+// create BBandsB indicator with period 10 and show as line on the second plot
+var BBandsB10 = chart.plot(1).bbandsB(mapping, 10, 0.2, "line").series();
 BBandsB10.stroke('#bf360c');
 
-// create SMA indicator with period 50 and show as column on the second plot
-var BBandsB50 = plot_indicator.bbandsB(mapping, 50, 0.6, "line").series();
-BBandsB50.stroke('#ff6d00');
+// create BBandsB indicator with period 50 and show as column on the third plot
+var BBandsB50 = chart.plot(2).bbandsB(mapping, 50, 0.6, "column").series();
+BBandsB50.fill('#ff6d00');
 
 // create scroller series with mapped data
 chart.scroller().line(mapping);
