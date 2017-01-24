@@ -19,15 +19,15 @@
     ]);
 
     // create a chart
-    var chart = anychart.column();
+    var chart = anychart.bar();
 
-    // create a column series and set the data
-    var series = chart.column(data);
+    // create a bar series and set the data
+    var series = chart.bar(data);
 
     // set the chart title
-    chart.title("Column Chart: Padding (Single Series)");
+    chart.title("Bar Chart: Padding (Single Series)");
 
-    // set the padding between column groups
+    // set the padding between bar groups
     chart.barGroupsPadding(0);
 
     // set the titles of the axes

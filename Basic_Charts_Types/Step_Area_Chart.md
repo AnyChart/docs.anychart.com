@@ -58,9 +58,6 @@ There are three modes of step direction: center, backward, and forward.
 The default mode is <strong>center</strong>. In this case data points are placed to the center of horizontal segments:
 
 ```
-// create a step area series and set the data
-var series = chart.stepArea(data);
-
 // set the step direction to the center mode
 series.stepDirection("center");
 ```
