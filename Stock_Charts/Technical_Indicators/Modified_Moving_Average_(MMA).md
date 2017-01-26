@@ -7,13 +7,14 @@
 
 ## Overview
 
-A Modified Moving Average (MMA) is an indicator that shows the average value of a security's price over a period of time. It works very similar to the Exponential Moving Average, they are equivalent but for different periods (e.g. the MMA value for a 14-day period will be the same as EMA-value for a 27-days period).
+A Modified Moving Average (MMA) (also known as Running Moving Average (RMA), or SMoothed Moving Average (SMMA)) is an indicator that shows the average value of a security's price over a period of time. It works very similar to the Exponential Moving Average, they are equivalent but for different periods (e.g. the MMA value for a 14-day period will be the same as EMA-value for a 27-days period).
 
 MMA is partly counted like SMA: the first point of the MMA is calculated the same way it is done for SMA. However, other points are calculated differently: we need to add the new price first and then subtract the last average from the resulting sum. 
 
 AnyChart Stock allows you to add MMA with desired period to any of your charts.
 
 Find the mathematical description of the indicator on the [Modified moving average (MMA) Mathematical Description](Mathematical_Description#mma) page.
+
 
 ## Adding indicator
 
