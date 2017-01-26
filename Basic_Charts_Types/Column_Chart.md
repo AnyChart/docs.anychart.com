@@ -86,6 +86,7 @@ var series2 = chart.column(seriesData_2);
 series2.fill("#0066cc", 0.3);
 series2.hoverFill("#0066cc", 0.3);
 series2.selectFill("#0066cc", 0.5);
+series2.hatchFill("zigzag", "#808080", 1, 15);
 series2.stroke("#0066cc");
 series2.hoverStroke("#0066cc", 2);
 series2.selectStroke("#0066cc", 4);
