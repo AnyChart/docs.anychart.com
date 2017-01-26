@@ -13,7 +13,7 @@ A step area chart is an area chart in which points are connected by horizontal a
 
 Step area charts are used to visualize changes occurring at irregular intervals: for example, changes in tax rates or interest rates. While the basic area chart shows both the trend in data and the magnitude of change over time, the step area chart draws attention from the trend to highlight periods with no change and emphasize the exact time of each change (as well as its magnitude).
 
-The Step Area and Area chart types share all the settings, so this article explains just how to create a basic Step Area chart and configure its only special setting – step direction. To learn about other settings, see the [Area Chart](Area_Chart) article.
+The Step Area and Area chart types share almost all the settings, so this article explains just how to create a basic Step Area chart and configure its only special setting – step direction. To learn about other settings, see the [Area Chart](Area_Chart) article.
 
 See also:
 
@@ -55,7 +55,7 @@ chart.draw();
 
 ## Settings
 
-The Step Area chart is a modification of the Area chart, so these two types share all the settings. You can find more settings in this article: [Area Chart](Area_Chart).
+The Step Area chart is a modification of the Area chart, so these two types share almost all the settings. You can find more settings in this article: [Area Chart](Area_Chart).
 
 Also, in AnyChart there are many settings that are configured in the same way for all chart types, including the Step Area chart (for example, legend and interactivity settings): [General Settings](General_Settings).
 
