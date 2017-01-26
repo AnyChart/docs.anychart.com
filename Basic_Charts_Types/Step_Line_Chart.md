@@ -2,7 +2,8 @@
 #Step Line Chart
 
 * [Overview](#overview)
-* [Basic Settings](#basic_settings)
+* [Quick Start](#quick_start)
+* [Settings](#settings)
 * [Special Settings](#special_settings)
   * [Step Direction](#step_direction)
 
@@ -14,7 +15,7 @@ Step line charts are used to visualize changes occurring at irregular intervals:
 
 The Step Line and Line chart types share almost all the settings, so this article explains just how to create a basic step line chart and configure its only specific setting – step direction. To learn about other settings, see the [Line Chart](Line_Chart) article.
 
-##Basic Settings
+##Quick Start
 
 To create a step line series, use the {api:anychart.charts.Cartesian#stepLine}stepLine(){api} method (before, of course, you should create a chart by using {api:anychart#line}anychart.line(){api} or any other cartesian chart constructor):
 

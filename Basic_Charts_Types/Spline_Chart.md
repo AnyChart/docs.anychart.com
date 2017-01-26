@@ -2,7 +2,8 @@
 #Spline Chart
 
 * [Overview](#overview)
-* [Basic Settings](#basic_settings)
+* [Quick Start](#quick_start)
+* [Settings](#settings)
 
 ## Overview
 
@@ -12,7 +13,7 @@ Like the regular line chart, it is commonly used to emphasize trends in data ove
 
 The Line and Spline chart types share all the settings, so this article explains just how to create a basic spline chart. To learn more, see the [Line Chart](Line_Chart) article.
 
-##Basic Settings
+##Quick Start
 
 To create a spline series, use the {api:anychart.charts.Cartesian#spline}spline(){api} method (before, of course, you should create a chart by using {api:anychart#line}anychart.line(){api} or any other cartesian chart constructor):
 

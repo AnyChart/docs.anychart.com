@@ -2,7 +2,8 @@
 #Step Area Chart
 
 * [Overview](#overview)
-* [Basic Settings](#basic_settings)
+* [Quick Start](#quick_start)
+* [Settings](#settings)
 * [Special Settings](#special_settings)
   * [Step Direction](#step_direction)
 
@@ -14,7 +15,7 @@ Step area charts are used to visualize changes occurring at irregular intervals:
 
 The Step Area and Area chart types share all the settings, so this article explains just how to create a basic step area chart and configure its only specific setting – step direction. To learn about other settings, see the [Area Chart](Area_Chart) article.
 
-##Basic Settings
+##Quick Start
 
 To create a step area series, use the {api:anychart.charts.Cartesian#stepArea}stepArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor):
 

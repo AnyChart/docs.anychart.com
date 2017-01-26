@@ -32,9 +32,10 @@ It has two modifications:
 * [Spline Area](Spline_Area_Chart)
 * [Step Area](Step_Area_Chart).
 
-There are also settings that affect all chart types in AnyChart, including the Area chart. To learn more, read the [General Settings](General_Settings) article.
+See also:
 
-In addition, see a full list of methods available for the Area series: you can find it in {api:anychart.core.cartesian.series.Area}AnyChart API{api}.
+* [General Settings](General_Settings) (settings that affect all chart types)
+* {api:anychart.core.cartesian.series.Area}AnyChart API{api} (a full list of methods available for Area series).
 
 ## Quick Start
 

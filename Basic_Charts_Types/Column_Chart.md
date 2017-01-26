@@ -28,8 +28,6 @@ In AnyChart, this chart type can be:
 * [vertical](Vertical_Charts/Overview) ([bar](Bar_Chart))
 * [3D](3D_Charts/Overview).
 
-This article explains how to create a basic Column chart and configure its visual settings as well as settings that are specific to the type.
-
 There are also settings that affect all chart types in AnyChart, including the Column chart. To learn more, read the [General Settings](General_Settings) article.
 
 In addition, see the a list of methods available for the Column series: you can find it in {api:anychart.core.cartesian.series.Column}AnyChart API{api}.
