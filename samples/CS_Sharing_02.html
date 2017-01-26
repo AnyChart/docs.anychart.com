@@ -6,9 +6,28 @@
     <meta name="index" content="1000"/>
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">
+    var chart;
+
     anychart.onDocumentReady(function() {
+
+    var container = $('#container');
+
+        var b = $('<button/>');
+    b.html('Share');
+    b.click(function() {
+        chart.shareWithFacebook("Link", "anychart.com", "AnyChart Area Chart", "The sample of an Area Chart created with AnyChart");
+    });
+    b.css('position', 'relative')
+            .css('left', 0)
+            .css('top', 0)
+            .css('z-index', 1000);
+    container.append(b);
 
     // create a data set
     var data = anychart.data.set([
@@ -39,7 +58,20 @@
 
     // initiate drawing the chart
     chart.draw();
+
+    // document.getElementById('share').addEventListener('click', function() {
+    //   chart.shareWithFacebook();
+    // })
+
+    
 });
+
+
+
+    function share(){
+        chart.shareWithFacebook();
+    }
+
 </script>
 </head>
 <body>
