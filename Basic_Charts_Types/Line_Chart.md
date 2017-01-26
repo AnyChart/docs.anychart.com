@@ -28,9 +28,10 @@ It has two modifications:
 * [Spline](Spline_Chart)
 * [Step Line](Step_Line_Chart).
 
-There are also settings that affect all chart types in AnyChart, including the Line chart. To learn more, read the [General Settings](General_Settings) article.
+See also:
 
-In addition, see a full list of methods available for the Line series: you can find it in {api:anychart.core.cartesian.series.Line}AnyChart API{api}.
+* [General Settings](General_Settings) (settings that affect all chart types)
+* {api:anychart.core.cartesian.series.Line}AnyChart API{api} (a full list of methods available for the Line series).
 
 ## Quick Start
 
@@ -67,7 +68,7 @@ chart.draw();
 
 ## General Settings
 
-In AnyChart there are many settings that are configured in the same way for all chart types, including the Line chart, such as, for example, legend and interactivity settings.
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Line chart (for example, legend and interactivity settings).
 
 Here is an overview of general settings: [General Settings](General_Settings).
 

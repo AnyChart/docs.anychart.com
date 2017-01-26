@@ -13,11 +13,16 @@ A step area chart is an area chart in which points are connected by horizontal a
 
 Step area charts are used to visualize changes occurring at irregular intervals: for example, changes in tax rates or interest rates. While the basic area chart shows both the trend in data and the magnitude of change over time, the step area chart draws attention from the trend to highlight periods with no change and emphasize the exact time of each change (as well as its magnitude).
 
-The Step Area and Area chart types share all the settings, so this article explains just how to create a basic step area chart and configure its only specific setting – step direction. To learn about other settings, see the [Area Chart](Area_Chart) article.
+The Step Area and Area chart types share all the settings, so this article explains just how to create a basic Step Area chart and configure its only special setting – step direction. To learn about other settings, see the [Area Chart](Area_Chart) article.
+
+See also:
+
+* [General Settings](General_Settings) (settings that affect all chart types)
+* {api:anychart.core.cartesian.series.StepArea}AnyChart API{api} (a full list of methods available for the Step Area series).
 
 ##Quick Start
 
-To create a step area series, use the {api:anychart.charts.Cartesian#stepArea}stepArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor):
+To create a Step Area series, use the {api:anychart.charts.Cartesian#stepArea}stepArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor):
 
 ```
 // create a data set
@@ -48,11 +53,19 @@ chart.draw();
 
 {sample}BCT\_Step\_Area\_Chart\_01{sample}
 
+## Settings
+
+The Step Area chart is a modification of the Area chart, so these two types share all the settings. You can find more settings in this article: [Area Chart](Area_Chart).
+
+Also, in AnyChart there are many settings that are configured in the same way for all chart types, including the Step Area chart (for example, legend and interactivity settings): [General Settings](General_Settings).
+
+In addition, see a full list of methods available for the Step Area series: you can find it in {api:anychart.core.cartesian.series.StepArea}AnyChart API{api}.
+
 ## Special Settings 
 
 ### Step Direction
 
-The step area chart is formed by horizontal area segments of the same width as the category, connected with each other by vertical segments. To set the exact way these segments are placed, use this method: {api:anychart.core.cartesian.series.StepArea#stepDirection}stepArea(){api}.
+The Step Area chart is formed by horizontal area segments of the same width as the category, connected with each other by vertical segments. To set the exact way these segments are placed, use this method: {api:anychart.core.cartesian.series.StepArea#stepDirection}stepArea(){api}.
 
 There are three modes of step direction: center, backward, and forward.
 

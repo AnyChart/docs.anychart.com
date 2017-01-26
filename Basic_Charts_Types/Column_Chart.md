@@ -28,9 +28,10 @@ In AnyChart, this chart type can be:
 * [vertical](Vertical_Charts/Overview) ([bar](Bar_Chart))
 * [3D](3D_Charts/Overview).
 
-There are also settings that affect all chart types in AnyChart, including the Column chart. To learn more, read the [General Settings](General_Settings) article.
+See also:
 
-In addition, see the a list of methods available for the Column series: you can find it in {api:anychart.core.cartesian.series.Column}AnyChart API{api}.
+* [General Settings](General_Settings) (settings that affect all chart types)
+* {api:anychart.core.cartesian.series.Column}AnyChart API{api} (a full list of methods available for the Column series).
 
 ## Quick Start
 
@@ -67,7 +68,7 @@ chart.draw();
 
 ## General Settings
 
-In AnyChart there are many settings that are configured in the same way for all chart types, including the Column chart, such as, for example, legend and interactivity settings.
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Column chart (for example, legend and interactivity settings).
 
 Here is an overview of general settings: [General Settings](General_Settings).
 

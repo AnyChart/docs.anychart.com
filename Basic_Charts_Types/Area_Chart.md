@@ -35,7 +35,7 @@ It has two modifications:
 See also:
 
 * [General Settings](General_Settings) (settings that affect all chart types)
-* {api:anychart.core.cartesian.series.Area}AnyChart API{api} (a full list of methods available for Area series).
+* {api:anychart.core.cartesian.series.Area}AnyChart API{api} (a full list of methods available for the Area series).
 
 ## Quick Start
 
@@ -72,7 +72,7 @@ chart.draw();
 
 ## General Settings
 
-In AnyChart there are many settings that are configured in the same way for all chart types, including the Area chart, such as, for example, legend and interactivity settings.
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Area chart (for example, legend and interactivity settings).
 
 Here is an overview of general settings: [General Settings](General_Settings).
 
