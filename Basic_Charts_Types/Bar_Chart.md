@@ -2,9 +2,10 @@
 #Bar Chart
 
 * [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+* [Quick Start](#quick_start)
+* [General Settings](#general_settings)
 * [Special Settings](#special_settings)
+  * [Appearance](#appearance)
   * [Padding](#padding)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
@@ -15,19 +16,27 @@
 
 A bar chart is a chart that visualizes data as a set of rectangular bars, their lengths being proportional to the values they represent. The horizontal axis shows the values, and the vertical axis shows the categories they belong to. So, the bar chart is a [vertical](Vertical_Charts/Overview) version of the [column chart](Column_Chart). In multi-series bar charts, values are grouped by categories.
 
-This chart type is used very widely to show comparison among categories and sometimes to visualize time-based data. Also, categories with long names may be a reason to prefer the bar chart to the column chart.
+The bar chart is used very widely to show comparison among categories and sometimes to visualize time-based data. Also, categories with long names may be a reason to prefer the bar chart to the column chart.
 
-In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Bar chart. In addition, this type can be multi-series, [stacked](Stacked_Charts/Overview), and [3D](3D_Charts/Overview).
+This article explains how to create a basic Bar chart as well as configure  settings that are specific to the type.
 
-The article explains how to create a basic bar chart and configure its visual settings as well as the settings that are specific to this type.
+In AnyChart, this chart type can be:
 
-## Basic Settings
+* multi-series
+* [stacked](Stacked_Charts/Overview)
+* [3D](3D_Charts/Overview)
 
-To create a bar chart, use the {api:anychart#bar}anychart.bar(){api} chart constructor. If you pass the data to this chart constructor, it creates a bar series.
+There are also settings that affect all chart types in AnyChart, including the Bar chart. To learn more, read the [General Settings](General_Settings) article.
 
-To create a bar series explicitly, call the {api:anychart.charts.Cartesian#bar}bar(){api} method.
+In addition, see a full list of methods available for the Bar series: you can find it in {api:anychart.core.cartesian.series.Bar}AnyChart API{api}.
 
-The following sample demonstrates how a basic bar chart is created:
+## Quick Start
+
+To create a Bar chart, use the {api:anychart#bar}anychart.bar(){api} chart constructor. If you pass the data to this chart constructor, it creates a Bar series.
+
+To create a Bar series explicitly, call the {api:anychart.charts.Cartesian#bar}bar(){api} method.
+
+The following sample demonstrates how a basic Bar chart is created:
 
 ```
 // create a data set
@@ -54,7 +63,15 @@ chart.draw();
 
 {sample}BCT\_Bar\_Chart\_01{sample}
 
-## Visual Settings
+## General Settings
+
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Bar chart, such as, for example, legend and interactivity settings.
+
+Here is an overview of general settings: [General Settings](General_Settings).
+
+## Special Settings
+
+### Appearance
 
 Here is a full list of methods used to configure visual settings that are available for the Bar series:
 
@@ -64,7 +81,7 @@ Here is a full list of methods used to configure visual settings that are availa
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) article.
 
-In the sample below, there are two bar series with some of the visual settings configured:
+In the sample below, there are two Bar series with some of the appearance settings configured:
 
 ```
 // create the first series
@@ -93,8 +110,6 @@ series2.selectStroke("#0066cc", 4);
 
 {sample}BCT\_Bar\_Chart\_02{sample}
 
-## Special Settings
-
 ### Padding
 
 To set the padding between bars and bar groups, use these methods:
@@ -118,7 +133,7 @@ chart.barGroupsPadding(0);
 
 The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multi-series charts: it sets the padding between bars within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
 
-In the sample below, there is a multi-series bar chart with the padding between bars and between bar groups set to -0.5 and 2 correspondingly:
+In the sample below, there is a multi-series Bar chart with the padding between bars and between bar groups set to -0.5 and 2 correspondingly:
 
 ```
 // create the first series
@@ -169,4 +184,4 @@ Using AnyChart, you can create 3D versions of some chart types, including the Ba
 
 To learn about 3D charts in general, see [3D Charts (Overview)](3D_Charts/Overview).
 
-The 3D bar chart is described in the following article: [3D Bar Chart](3D_Charts/3D_Bar_Chart).
+The 3D Bar chart is described in the following article: [3D Bar Chart](3D_Charts/3D_Bar_Chart).

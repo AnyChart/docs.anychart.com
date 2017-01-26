@@ -3,7 +3,7 @@
 
 * [Overview](#overview)
 * [Data](#data)
-* [Visual Settings](#visual_settings)
+* [Appearance Settings](#appearance_settings)
 * [Markers](#markers)
 * [Labels](#labels)
 * [Tooltips](#tooltips)
@@ -22,25 +22,28 @@ In AnyChart, you always work with a series, no matter what chart type you create
 
 Some series types can be shown on a chart simultaneously, and some cannot. There are chart types that can be only single-series and chart types that can be multi-series. Some series can have both horizontal and vertical orientation. Some  can be drawn in 3D.
 
-However, despite all the differences, many settings are configured in the same way for of all series types, and this article is a brief overview of such settings. There are also links to articles where each of the features is explained in more detail.
+However, despite all the differences, many settings are configured in the same way for all series types, and this article is a brief overview of such settings. There are also links to articles where each of the features is explained in more detail.
 
-Alternative sources of the information about general settings are the {api:anychart.core.SeriesBase}methods of the 'anychart' class{api} in our API.
+The {api:anychart.core.SeriesBase}methods of the 'anychart' class{api} in our API are the alternative source of information about general settings.
 
-To learn about the unique settings of a series type, see the article about that type. For example, to find out what visual settings are available for the Area series, you should read the [Area Chart](Area_Chart) article.
+To learn about the settings that are specific to a certain series type, see the article about that type. For example, to find out what appearance settings are available for the Area series, you should read the [Area Chart](Area_Chart) article.
 
 ## Data
 
 To learn how to prepare your data for using it in AnyChart, see this article: [Working with Data](../Working_with_Data).
 
-## Visual Settings
+## Appearance Settings
 
 You can configure some visual settings of your chart: for example, stroke and fill color, fill or hatch fill pattern, and so on. For different chart types different settings are available.
 
 More information can be found in the [Appearance Settings](../Appearance_Settings) article and articles about particular chart types.
 
-In the following sample, there is a chart with an area series and two line series. In all series stroke, hover stroke, and select stroke are configured, and in the area series, in addition to that, fill, hover fill, and select fill are set:
+In the following sample, there is a chart with an Area series and two Line series. In all series stroke, hover stroke, and select stroke are configured, and in the Area series, in addition to that, fill, hover fill, select fill, and hatch fill are set:
 
 ```
+// create the first series (area)
+var series1 = chart.area(seriesData_1);
+
 // configure the visual settings of the first series
 series1.fill("#04B4AE", 0.3);
 series1.hoverFill("#04B4AE", 0.5);
@@ -50,10 +53,16 @@ series1.stroke("#04B4AE");
 series1.hoverStroke("#04B4AE", 4);
 series1.selectStroke("#04B4AE", 4);
 
+// create the second series (line)  
+var series2 = chart.line(seriesData_2);
+
 // configure the visual settings of the second series
 series2.stroke("#04B404");
 series2.hoverStroke("#04B404", 4);
 series2.selectStroke("#04B404", 4);
+
+// create the third series (line)  
+var series3 = chart.line(seriesData_3);
 
 // configure the visual settings of the third series
 series3.stroke("#AEB404", 1, "10 5", "round");
@@ -69,7 +78,7 @@ series3.selectStroke("#AEB404", 4, "10 5",  "round");
 
 All chart types allow configuring markers: both on a whole series and in a single point. Available settings include type, size, fill color, and others.
 
-In the following sample, there are two line series. On one of them you can see how markers look by default: in the case of Line series, they can be seen only on hover and select. On the other series a few custom settings are configured:
+In the following sample, there are two Line series. On one of them you can see how markers look by default: in the case of Line series, they can be seen only on hover and select. On the other series a few custom settings are configured:
 
 ```
 // enable and configure markers on the first series
@@ -99,7 +108,7 @@ var data = [
 
 Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-In the sample below, there is a column chart with labels enabled on the whole series. Some font settings and a text formatter are applied:
+In the sample below, there is a Column chart with labels enabled on the whole series. Some font settings and a text formatter are applied:
 
 ```
 // enable and configure labels on the series
@@ -132,7 +141,7 @@ A tooltip is a text box displayed when a point on a chart is hovered (in all cha
 
 To learn more, see the [Tooltip](../Common_Settings/Tooltip) article.
 
-In this sample, there is a column chart with two series, and tooltips are configured on the whole chart, so they look the same on both series:
+In this sample, there is a Column chart with two series, and tooltips are configured on the whole chart, so they look the same on both series:
 
 ```
 // configure tooltips on the chart
@@ -162,7 +171,7 @@ A legend is a table on a chart listing and explaining the symbols and colors use
 
 For more information, read this article: [Legend](../Common_Settings/Legend).
 
-The following sample shows a multi-series column chart with a default legend enabled. As you can see, it includes the names and colors of the series:
+The following sample shows a multi-series Column chart with a default legend enabled. As you can see, it includes the names and colors of the series:
 
 ```
 // enable the legend
@@ -172,7 +181,7 @@ legend.enabled(true);
 
 {sample}BCT\_General\_Settings\_08{sample}
 
-In this sample, there is a single-series column chart and a custom legend displaying the list of categories:
+In this sample, there is a single-series Column chart and a custom legend displaying the list of categories:
 
 ```
 // enable the legend
@@ -191,7 +200,7 @@ In AnyChart axes are used to control grids, axes labels, lines, and tick marks. 
 
 Learn more about axes and scales: [Axes and Grids](../Axes_and_Grids/Scales).
 
-In the sample below, there is a multi-series chart with a column series bound to the default Y-axis an a line series bound to an additional Y-axis:
+In the sample below, there is a multi-series chart with a Column series bound to the default Y-axis, and a Line series bound to an additional Y-axis:
 
 ```
 // configure the main Y-scale

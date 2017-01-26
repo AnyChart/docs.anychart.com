@@ -2,9 +2,10 @@
 #Line Chart
 
 * [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+* [Quick Start](#quick_start)
+* [General Settings](#general_settings)
 * [Special Settings](#special_settings)
+  * [Appearance](#appearance)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
   * [Vertical Line](#vertical_line)
@@ -13,21 +14,31 @@
 
 A line chart is a chart that shows information as a series of data points connected by straight line segments.
 
-This chart type is very common in many fields. As a rule, it is used to emphasize trends in data over equal time intervals, such as months, quarters, fiscal years, and so on.
+The line chart is very common in many fields. As a rule, it is used to emphasize trends in data over equal time intervals, such as months, quarters, fiscal years, and so on.
 
-In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Line chart. In addition, this type can be multi-series and [vertical](Vertical_Charts/Overview).
+This article explains how to create a basic Line chart as well as configure  settings that are specific to the type.
 
-There are two modifications of the Line chart: [Spline](Spline_Chart) and [Step Line](Step_Line_Chart).
+In AnyChart, the Line chart can be:
 
-The article explains how to create a basic line chart and configure its visual settings as well as the settings that are specific to this type.
+* multi-series
+* [vertical](Vertical_Charts/Overview)
 
-## Basic Settings
+It has two modifications:
 
-To create a line chart, use the {api:anychart#line}anychart.line(){api} chart constructor. If you pass the data to this chart constructor, it creates a line series.
+* [Spline](Spline_Chart)
+* [Step Line](Step_Line_Chart).
 
-To create a line series explicitly, call the {api:anychart.charts.Cartesian#line}line(){api} method.
+There are also settings that affect all chart types in AnyChart, including the Line chart. To learn more, read the [General Settings](General_Settings) article.
 
-The following sample demonstrates how a basic line chart is created:
+In addition, see a full list of methods available for the Line series: you can find it in {api:anychart.core.cartesian.series.Line}AnyChart API{api}.
+
+## Quick Start
+
+To create a Line chart, use the {api:anychart#line}anychart.line(){api} chart constructor. If you pass the data to this chart constructor, it creates a line series.
+
+To create a Line series explicitly, call the {api:anychart.charts.Cartesian#line}line(){api} method.
+
+The following sample demonstrates how a basic Line chart is created:
 
 ```
 // create a data set
@@ -54,7 +65,15 @@ chart.draw();
 
 {sample}BCT\_Line\_Chart\_01{sample}
 
-## Visual Settings
+## General Settings
+
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Line chart, such as, for example, legend and interactivity settings.
+
+Here is an overview of general settings: [General Settings](General_Settings).
+
+## Special Settings
+
+### Appearance
 
 Here is a full list of methods used to configure visual settings that are available for the Line series:
 
@@ -64,7 +83,7 @@ Here is a full list of methods used to configure visual settings that are availa
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) article.
 
-In the sample below, there are two line series with some of the visual settings configured:
+In the sample below, there are two Line series with some of the appearance settings configured:
 
 ```
 // create the first series
@@ -86,8 +105,6 @@ series2.selectStroke("#0066cc", 4);
 
 {sample}BCT\_Line\_Chart\_02{sample}
 
-## Special Settings
-
 ### Labels
 
 Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
@@ -108,7 +125,7 @@ In case of Line charts, there are some peculiarities in formatting the text of t
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical_Charts/Overview).
 
-Here is the information about creating vertical line series:
+Here is the information about creating Vertical Line series:
 
 * [Vertical Line](Vertical_Charts/Vertical_Line_Chart)
 * [Vertical Spline](Vertical_Charts/Vertical_Spline_Chart)

@@ -2,9 +2,10 @@
 #Column Chart
 
 * [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+* [Quick Start](#quick_start)
+* [General Settings](#general_settings)
 * [Special Settings](#special_settings)
+  * [Appearance](#appearance)
   * [Padding](#padding)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
@@ -16,19 +17,30 @@
 
 A column chart is a chart that visualizes data as a set of rectangular columns, their lengths being proportional to the values they represent. The vertical axis shows the values, and the horizontal axis shows the categories they belong to. In multi-series column charts, values are grouped by categories.
 
-This chart type is used very widely to show comparison among categories and sometimes to visualize time-based data.
+The column chart is used very widely to show comparison among categories and sometimes to visualize time-based data.
 
-In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Column chart. In addition, this type can be multi-series, [stacked](Stacked_Charts/Overview), [vertical](Vertical_Charts/Overview) (the vertical column chart is called the [bar chart](Bar_Chart)), and [3D](3D_Charts/Overview).
+This article explains how to create a basic Column chart as well as configure  settings that are specific to the type.
 
-The article explains how to create a basic column chart and configure its visual settings as well as the settings that are specific to this type.
+In AnyChart, this chart type can be:
 
-## Basic Settings
+* multi-series
+* [stacked](Stacked_Charts/Overview)
+* [vertical](Vertical_Charts/Overview) ([bar](Bar_Chart))
+* [3D](3D_Charts/Overview).
 
-To create a column chart, use the {api:anychart#column}anychart.column(){api} chart constructor. If you pass the data to this chart constructor, it creates a column series.
+This article explains how to create a basic Column chart and configure its visual settings as well as settings that are specific to the type.
 
-To create a column series explicitly, call the {api:anychart.charts.Cartesian#column}column(){api} method.
+There are also settings that affect all chart types in AnyChart, including the Column chart. To learn more, read the [General Settings](General_Settings) article.
 
-The following sample demonstrates how a basic column chart is created:
+In addition, see the a list of methods available for the Column series: you can find it in {api:anychart.core.cartesian.series.Column}AnyChart API{api}.
+
+## Quick Start
+
+To create a Column chart, use the {api:anychart#column}anychart.column(){api} chart constructor. If you pass the data to this chart constructor, it creates a Column series.
+
+To create a Column series explicitly, call the {api:anychart.charts.Cartesian#column}column(){api} method.
+
+The following sample demonstrates how a basic Column chart is created:
 
 ```
 // create a data set
@@ -55,7 +67,15 @@ chart.draw();
 
 {sample}BCT\_Column\_Chart\_01{sample}
 
-## Visual Settings
+## General Settings
+
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Column chart, such as, for example, legend and interactivity settings.
+
+Here is an overview of general settings: [General Settings](General_Settings).
+
+## Special Settings
+
+### Appearance
 
 Here is a full list of methods used to configure visual settings that are available for the Column series:
 
@@ -65,7 +85,7 @@ Here is a full list of methods used to configure visual settings that are availa
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) article.
 
-In the sample below, there are two column series with some of the visual settings configured:
+In the sample below, there are two Column series with some of the appearance settings configured:
 
 ```
 // create the first series
@@ -94,8 +114,6 @@ series2.selectStroke("#0066cc", 4);
 
 {sample}BCT\_Column\_Chart\_02{sample}
 
-## Special Settings
-
 ### Padding
 
 To set the padding between columns and column groups, use these methods:
@@ -119,7 +137,7 @@ chart.barGroupsPadding(0);
 
 The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multi-series charts: it sets the padding between columns within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
 
-In the sample below, there is a multi-series column chart with the padding between columns and between column groups set to -0.5 and 2 correspondingly:
+In the sample below, there is a multi-series Column chart with the padding between columns and between column groups set to -0.5 and 2 correspondingly:
 
 ```
 // create the first series
@@ -177,4 +195,4 @@ Using AnyChart, you can create 3D versions of some chart types, including the Co
 
 To learn about 3D charts in general, see [3D Charts (Overview)](3D_Charts/Overview).
 
-The 3D column chart is described in the following article: [3D Column Chart](3D_Charts/3D_Column_Chart).
+The 3D Column chart is described in the following article: [3D Column Chart](3D_Charts/3D_Column_Chart).

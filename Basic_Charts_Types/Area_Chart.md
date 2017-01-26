@@ -2,9 +2,10 @@
 #Area Chart
 
 * [Overview](#overview)
-* [Basic Settings](#basic_settings)
-* [Visual Settings](#visual_settings)
+* [Quick Start](#quick_start)
+* [General Settings](#general_settings)
 * [Special Settings](#special_settings)
+  * [Appearance](#appearance)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
   * [Stacked Area](#stacked_area)
@@ -15,21 +16,33 @@
 
 An area chart is a chart type based on the line chart: it also shows information as a series of data points connected by straight line segments, but the area between the X-axis and the line segments is filled with a color or a pattern.
 
-This chart type emphasizes the magnitude of change over time and can be used to highlight the total value across a trend. For example, an area chart displaying profit over time can emphasize the total profit.
+The area chart emphasizes the magnitude of change over time and can be used to highlight the total value across a trend. For example, an area chart displaying profit over time can emphasize the total profit.
 
-In the [General Settings](General_Settings) article, you can find an overview of general settings that are available for all chart types in AnyChart, including the Area chart. In addition, this type can be multi-series, [stacked](Stacked_Charts/Overview), [vertical](Vertical_Charts/Overview), and [3D](3D_Charts/Overview).
+This article explains how to create a basic Area chart as well as configure  settings that are specific to the type.
 
-There are two modifications of the Area chart: [Spline Area](Spline_Area_Chart) and [Step Area](Step_Area_Chart).
+In AnyChart, the Area chart can be:
 
-The article explains how to create a basic area chart and configure its visual settings as well as the settings that are specific to this type.
+* multi-series
+* [stacked](Stacked_Charts/Overview)
+* [vertical](Vertical_Charts/Overview)
+* [3D](3D_Charts/Overview)
 
-## Basic Settings
+It has two modifications:
 
-To create an area chart, use the {api:anychart#area}anychart.area(){api} chart constructor. If you pass the data to this chart constructor, it creates an area series.
+* [Spline Area](Spline_Area_Chart)
+* [Step Area](Step_Area_Chart).
 
-To create an area series explicitly, call the {api:anychart.charts.Cartesian#area}area(){api} method.
+There are also settings that affect all chart types in AnyChart, including the Area chart. To learn more, read the [General Settings](General_Settings) article.
 
-The following sample demonstrates how a basic area chart is created:
+In addition, see a full list of methods available for the Area series: you can find it in {api:anychart.core.cartesian.series.Area}AnyChart API{api}.
+
+## Quick Start
+
+To create an Area chart, use the {api:anychart#area}anychart.area(){api} chart constructor. If you pass the data to this chart constructor, it creates an Area series.
+
+To create an Area series explicitly, call the {api:anychart.charts.Cartesian#area}area(){api} method.
+
+The following sample demonstrates how a basic Area chart is created:
 
 ```
 // create a data set
@@ -56,7 +69,15 @@ chart.draw();
 
 {sample}BCT\_Area\_Chart\_01{sample}
 
-## Visual Settings
+## General Settings
+
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Area chart, such as, for example, legend and interactivity settings.
+
+Here is an overview of general settings: [General Settings](General_Settings).
+
+## Special Settings
+
+### Appearance
 
 Here is a full list of methods used to configure visual settings that are available for the Area series:
 
@@ -66,7 +87,7 @@ Here is a full list of methods used to configure visual settings that are availa
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) article.
 
-In the sample below, there are two area series with some of the visual settings configured:
+In the sample below, there are two Area series with some of the appearance settings configured:
 
 ```
 // create the first series
@@ -94,8 +115,6 @@ series2.selectStroke("#0066cc", 4);
 ```
 
 {sample}BCT\_Area\_Chart\_02{sample}
-
-## Special Settings
 
 ### Labels
 
@@ -132,7 +151,7 @@ To learn about the stacked versions of the Area chart and its modifications, see
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical_Charts/Overview).
 
-Here is the information about creating vertical area series:
+Here is the information about creating Vertical Area series:
 
 * [Vertical Area](Vertical_Charts/Vertical_Area_Chart)
 * [Vertical Spline Area](Vertical_Charts/Vertical_Spline_Area_Chart)
@@ -144,7 +163,7 @@ Using AnyChart, you can create 3D versions of some chart types, including the Ar
 
 To learn about 3D charts in general, see [3D Charts (Overview)](3D_Charts/Overview).
 
-3D area charts are described in the following articles:
+3D Area charts are described in the following articles:
 
 * [3D Area](3D_Charts/3D_Area_Chart)
 * [3D Spline Area](3D_Charts/3D_Spline_Area_Chart)
