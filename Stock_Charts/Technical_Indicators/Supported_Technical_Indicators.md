@@ -40,13 +40,13 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<td>[Relative Strength Index (RSI)](Relative_Strength_Index_\(RSI\))</td>
 		</tr>
 		<tr>
-			<td>[Running Moving Average (RMA)](Modified_Moving_Average_\(MMA\)</td>
+			<td>[Running Moving Average (RMA)](Modified_Moving_Average_\(MMA\))</td>
 		</tr>		
 		<tr>
 			<td>[Simple Moving Average (SMA)](Simple_Moving_Average_\(SMA\))</td>
 		</tr>	
 		<tr>
-			<td>[SMoothed Moving Average (SMMA)]((Modified_Moving_Average_\(MMA\)</td>
+			<td>[SMoothed Moving Average (SMMA)](Modified_Moving_Average_\(MMA\))</td>
 		</tr>				
 	</tbody>
 </table>
