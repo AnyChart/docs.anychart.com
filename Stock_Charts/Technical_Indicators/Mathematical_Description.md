@@ -4,7 +4,7 @@
 
 * [Overview](#overview)
 * [Accumulation Distribution Line (ADL)](#)
-* [Adaptive Moving Average (AMA)](#)
+* [Adaptive Moving Average (AMA)](#ama)
 * [Aroon](#aroon)
 * [Average True Range (ATR)](#)
 * [Bollinger Bands (BBands)](#)
@@ -17,7 +17,7 @@
 * [Directional Movement Indicator (DMI)](#)
 * [Exponential Moving Average (EMA)](#exponential_moving_average)
 * [Keltner Channels](#)
-* [Modified (Smoothed) Moving Average (MMA)](#)
+* [Modified Moving Average (MMA)](#mma)
 * [Money Flow Index (MFI)](#)
 * [Momentum](#)
 * [Moving Average Convergence Divergence (MACD)](#moving_average_convergence_divergence)
@@ -53,15 +53,10 @@ Coming soon.
 Each point of the Adaptive Moving Average indicator is calculated by the following steps:
 
 1. Calculate the ER:
-
 <center><img src="http://static.anychart.com/images/technical\_indicators/ama\_er.png" width="343"></center>
-
 2. Then, use the following formula to calculate the SSC value:
-
 <center><img src="http://static.anychart.com/images/technical\_indicators/ama\_ssc.png" width="650"></center>
-
-3. Now, use the results from the actions made before and calcuate the indicator io:
-
+3. Now, use the results from the actions made before and calcuate the indicator:
 <center><img src="http://static.anychart.com/images/technical\_indicators/ama\_ama.png" width="391"></center>
 
 ## Aroon
