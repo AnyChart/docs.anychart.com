@@ -1,4 +1,4 @@
-# Modified (Smoothed) Moving Average
+# Modified Moving Average
 
 * [Overview](#overview)
 * [Adding indicator](#adding_indicator)
@@ -13,7 +13,7 @@ MMA is partly counted like SMA: the first point of the MMA is calculated the sam
 
 AnyChart Stock allows you to add MMA with desired period to any of your charts.
 
-Find the mathematical description of the indicator on the [Modified moving average (MMA) Mathematical Description](Mathematical_Description) page.
+Find the mathematical description of the indicator on the [Modified moving average (MMA) Mathematical Description](Mathematical_Description#mma) page.
 
 ## Adding indicator
 
@@ -52,7 +52,7 @@ MMA indicator needs three parameters, as SMA and EMA: mapping with value field i
 var mma10 = plot.mma(mapping, 10, "column");
 ```
 
-The last parameter (the series type) is optional, as it is possible to change the series type any time through the {api:anychart.core.stock.series.Column#seriesType}seriesType(){api} method.
+The last parameter allows to change the series type, it is possible to change the series type at any time using the {api:anychart.core.stock.series.Column#seriesType}seriesType(){api} method.
 
 ## Visualization
 
@@ -60,7 +60,7 @@ Visualization of an indicator depends on the type of a series was chosen to disp
 
 ```
 // create MMA indicator with period 10 and show as line on the first plot
-var mma20 = plot_0.mma(mapping, 10).series();
+var mma10 = plot_0.mma(mapping, 10).series();
 mma10.stroke('#bf360c');
 
 // create MMA indicator with period 30 and show as column on the second plot
