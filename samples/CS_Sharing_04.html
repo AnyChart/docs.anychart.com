@@ -21,7 +21,7 @@
         var b = $('<button/>');
     b.html('Share');
     b.click(function() {
-        chart.shareWithFacebook("Sharing with Facebook sample", "anychart.com", "AnyChart Area Chart", "The sample of an Area Chart created with AnyChart");
+        chart.shareWithTwitter();
     });
     b.css('position', 'relative')
             .css('left', 0)
@@ -58,11 +58,6 @@
 
     // initiate drawing the chart
     chart.draw();
-
-    // document.getElementById('share').addEventListener('click', function() {
-    //   chart.shareWithFacebook();
-    // })
-
     
 });
 

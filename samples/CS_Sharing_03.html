@@ -21,7 +21,7 @@
         var b = $('<button/>');
     b.html('Share');
     b.click(function() {
-        chart.shareWithFacebook("Sharing with Facebook sample", "anychart.com", "AnyChart Area Chart", "The sample of an Area Chart created with AnyChart");
+        chart.shareWithFacebook({caption:"Sharing with Facebook sample", link: "anychart.com", name: "AnyChart Area Chart", description: "The sample of an Area Chart created with AnyChart"});
     });
     b.css('position', 'relative')
             .css('left', 0)

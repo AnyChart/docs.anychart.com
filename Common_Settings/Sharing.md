@@ -42,7 +42,7 @@ For sharing with Twitter use {api:anychart.core.Chart.prototype.shareWithTwitter
 
 ## Adjusting
 
-When sharing is done through the context menu, the sharing function uses default setting values. The image of the chart will be shared with no link on the sample, and the hostname of the link will be displayed as the picture name. Though, all sharing methods described above have several settings which can be adjusted due to your special needs.
+When sharing is done through the context menu, the sharing function uses default settings' values. The image of the chart will be shared with no link on the sample, and the hostname of the link will be displayed as the picture name. Though, all sharing methods described above have several settings which can be adjusted due to your special needs.
 
 ### Facebook
 
@@ -59,24 +59,76 @@ The name of the link attached. Makes sense when the link is set.
 
 
 ```
-  // this method will print your chart
-  chart.shareWithFacebook("Link", "anychart.com", "AnyChart Area Chart", "The sample of an Area Chart created with AnyChart");
+// this method will share the sample with Facebook
+chart.shareWithFacebook("Sharing with Facebook sample", "anychart.com", "AnyChart Area Chart", "The sample of an Area Chart created with AnyChart");
 ```
-
 
 {sample}CS\_Sharing\_02{sample}
 
+All parameters can be defined as objects:
 
-anychart.core.Chart.prototype.shareWithLinkedIn(opt_captionOrOptions, opt_description)
+```
+// this method will share the sample with Facebook
+chart.shareWithFacebook({caption:"Sharing with Facebook sample", link: "anychart.com", name: "AnyChart Area Chart", description: "The sample of an Area Chart created with AnyChart"});
+```
 
-caption - если не задан, то будет 'AnyChart'. Значение по умолчанию задано потому что если не будет никакого заголовка, то в окне диалога не будет кнопки "Редактировать", и не получится написать ничего другого вручную.
-description - если не задано, будет использоваться caption
+{sample}CS\_Sharing\_03{sample}
 
-Из контекстного меню вызывается без параметров.
-anychart.core.Chart.prototype.shareWithPinterest = function(opt_linkOrOptions, opt_description)
 
-link - прикреплённая ссылка
-description - текстовое описание
+### Twitter
+
+While sharing with Twitter there are no extra options to be adjusted, as it is not supposed by the service. So, the only way to share the sample with Twitter is to share the picture with no parameters and links attached:
+
+```
+// share the chart with Facebook
+shareButton.click(function(){
+  chart.shareWithTwitter();  
+});
+```
+
+{sample}CS\_Sharing\_04{sample}
+
+
+### LinkedIn
+
+There are only two options which can be defined extra for the LinkedIn:
+
+ - caption 
+Caption is the picture name that is always shown. When not specified, the hostname of the link is taken as the caption. If there is no caption, there would be no "Edit" button and it will be impossible to write the caption manually.
+ - description
+The description of the sample demonstrated. If not specified, the default caption will be used as the description.
+
+
+```
+// this method will share the sample with Facebook
+chart.shareWithLinkedIn("Sharing with LinkedIn", "This is a sample of an Area Chart created with AnyChart");
+```
+
+{sample}CS\_Sharing\_05{sample}
+
+As well as with Facebook, sharing with LinkedIn can be done using objects.
+
+
+### Pinterest
+
+When sharing with Pinterest, it is possible to specify two settings also:
+
+ - link
+The link attached to the shared sample/image
+ - description
+The description of the sample
+
+```
+// this method will share the sample with Facebook
+chart.shareWithLinkedIn("Sharing with LinkedIn", "This is a sample of an Area Chart created with AnyChart");
+```
+
+{sample}CS\_Sharing\_06{sample}
+
+It is also possible to set the values 
+
+### 
+
 
 Из контекстного меню вызывается без параметров.
 Всем методам можно задавать параметры объектом
