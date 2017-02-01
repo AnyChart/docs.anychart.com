@@ -29,7 +29,7 @@ This article explains how to create a basic Area chart as well as configure  set
 <tr><th colspan=2>? OPTIONS</th></tr>
 <tr><td>Stacked</td><td>YES</td></tr>
 <tr><td>Vertical</td><td>YES</td></tr>
-<tr><td>3D</td><td></td>YES</tr>
+<tr><td>3D</td><td>YES</td></tr>
 <tr><td>Error</td><td>YES</td></tr>
 <tr><th colspan=2>? RELATED TYPES</th></tr>
 <tr><td>Spline Area</td></tr>
