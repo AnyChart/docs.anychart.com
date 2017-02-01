@@ -20,6 +20,25 @@ The area chart emphasizes the magnitude of change over time and can be used to h
 
 This article explains how to create a basic Area chart as well as configure  settings that are specific to the type.
 
+<table>
+<tr><th colspan=2>API</th></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.Area}anychart.core.cartesian.series.Area{api}</td></tr>
+<tr><th colspan=2>DATA</th></tr>
+<tr><td>Data Fields</td><td>x/name, y/value</td></tr>
+<tr><td>Multi-Series</td><td>YES</td></tr>
+<tr><th colspan=2>? OPTIONS</th></tr>
+<tr><td>Stacked</td><td>YES</td></tr>
+<tr><td>Vertical</td><td>YES</td></tr>
+<tr><td>3D</td><td></td>YES</tr>
+<tr><td>Error</td><td>YES</td></tr>
+<tr><th colspan=2>? RELATED TYPES</th></tr>
+<tr><td>Spline Area</td></tr>
+<tr><td>Step Area</td></tr>
+<tr><td>? Range Area</td></tr>
+<tr><td>? Range Spline Area</td></tr>
+<tr><td>? Range Step Area</td></tr>
+</table>
+
 In AnyChart, the Area chart can be:
 
 * multi-series

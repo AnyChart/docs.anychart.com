@@ -15,6 +15,25 @@ Step area charts are used to visualize changes occurring at irregular intervals:
 
 The Step Area and Area chart types share almost all the settings, so this article explains just how to create a basic Step Area chart and configure its only special setting – step direction. To learn about other settings, see the [Area Chart](Area_Chart) article.
 
+<table>
+<tr><th colspan=2>API</th></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.StepArea}anychart.core.cartesian.series.StepArea{api}</td></tr>
+<tr><th colspan=2>DATA</th></tr>
+<tr><td>Data Fields</td><td>x/name, y/value</td></tr>
+<tr><td>Multi-Series</td><td>YES</td></tr>
+<tr><th colspan=2>? OPTIONS</th></tr>
+<tr><td>Stacked</td><td>YES</td></tr>
+<tr><td>Vertical</td><td>YES</td></tr>
+<tr><td>3D</td><td></td>NO</tr>
+<tr><td>Error</td><td>YES</td></tr>
+<tr><th colspan=2>? RELATED TYPES</th></tr>
+<tr><td>Area</td></tr>
+<tr><td>Spline Area</td></tr>
+<tr><td>? Range Area</td></tr>
+<tr><td>? Range Spline Area</td></tr>
+<tr><td>? Range Step Area</td></tr>
+</table>
+
 See also:
 
 * [General Settings](General_Settings) (settings that affect all chart types)
