@@ -67,6 +67,17 @@ Aroon indicator in each point is calculated according to the following formula:
 
 ## Average True Range (ATR)
 
+Average True Range in each point is calculated according to the following formula:
+
+<center><img src="http://static.anychart.com/images/technical\_indicators/atr.png" width="650"></center>
+
+This formula is based on the True Range definition. TR is defined as the greatest of the following:
+
+- current High less the current Low;
+- current High less the previous Close (absolute value)
+- current Low less the previous Close (absolute value)
+
+
 Coming soon.
 
 ## Bollinger Bands (BBands)
