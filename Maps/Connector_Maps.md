@@ -111,6 +111,14 @@ One of the Connector Maps features is the ability to create segments: several co
 
 There are several connectors created that consist of a number of segments. To create a multi-segmental connector add a pair of values (representing longitude and latitude) to the data of this connector. Watch the number of values: it should stay even in each point (connector) data.
 
+If there is something wrong with the coordinates or if your sample creates an error, check if you have attached the link on the proj4.js in your sample code:
+
+```
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
+</head>
+```
+
 ## Altering Connectors
 
 ### Connector settings

@@ -3,7 +3,7 @@ Dot (Point) Maps
 ===========
 
 * [Overview](#overview)
-* [Creating Bubbles](#creating_bubbles)
+* [Creating Markers](#creating_markers)
  * [Data](#data)
   * [Latitude and Longitude](#latitude_and_longitude)
   * [Region ID](#region_id)
@@ -69,6 +69,15 @@ That's how it looks like in the code:
 Now look at the example below. Here we can see a Dot Map where each point contains not only the coordinates but also some extra information about the point, like the number of the ACME Corp. branch and the yearly profit this branch makes.
 
 {sample}Maps\_Marker\_02{sample}
+
+
+If there is something wrong with the coordinates or if the sample creates an error, check if you have attached the link on the proj4.js in your sample code:
+
+```
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
+</head>
+```
 
 #### Region ID
 
