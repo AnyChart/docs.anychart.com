@@ -31,7 +31,7 @@ In AnyChart, this chart type can be:
 See also:
 
 * [General Settings](General_Settings) (settings that affect all chart types)
-* {api:anychart.core.cartesian.series.Column}AnyChart API{api} (a full list of methods available for the Column series).
+* {api:anychart.core.cartesian.series.Column}anychart.core.cartesian.series.Column{api} (a full list of methods available for the Column series).
 
 ## Quick Start
 

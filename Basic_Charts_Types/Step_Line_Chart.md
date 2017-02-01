@@ -18,7 +18,7 @@ The Step Line and Line chart types share almost all the settings, so this articl
 See also:
 
 * [General Settings](General_Settings) (settings that affect all chart types)
-* {api:anychart.core.cartesian.series.StepLine}AnyChart API{api} (a full list of methods available for the Step Line series).
+* {api:anychart.core.cartesian.series.StepLine}anychart.core.cartesian.series.StepLine{api} (a full list of methods available for the Step Line series).
 
 ##Quick Start
 

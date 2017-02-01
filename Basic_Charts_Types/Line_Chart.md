@@ -31,7 +31,7 @@ It has two modifications:
 See also:
 
 * [General Settings](General_Settings) (settings that affect all chart types)
-* {api:anychart.core.cartesian.series.Line}AnyChart API{api} (a full list of methods available for the Line series).
+* {api:anychart.core.cartesian.series.Line}anychart.core.cartesian.series.Line{api} (a full list of methods available for the Line series).
 
 ## Quick Start
 

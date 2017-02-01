@@ -29,7 +29,7 @@ In AnyChart, this chart type can be:
 See also:
 
 * [General Settings](General_Settings) (settings that affect all chart types)
-* {api:anychart.core.cartesian.series.Bar}AnyChart API{api} (a full list of methods available for the Bar series).
+* {api:anychart.core.cartesian.series.Bar}anychart.core.cartesian.series.Bar{api} (a full list of methods available for the Bar series).
 
 ## Quick Start
 

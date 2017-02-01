@@ -16,7 +16,7 @@ The Line and Spline chart types share all the settings, so this article explains
 See also:
 
 * [General Settings](General_Settings) (settings that affect all chart types)
-* {api:anychart.core.cartesian.series.Spline}AnyChart API{api} (a full list of methods available for the Spline series).
+* {api:anychart.core.cartesian.series.Spline}anychart.core.cartesian.series.Spline{api} (a full list of methods available for the Spline series).
 
 ##Quick Start
 

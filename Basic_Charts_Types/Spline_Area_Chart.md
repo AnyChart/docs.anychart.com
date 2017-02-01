@@ -16,7 +16,7 @@ The Spline Area and Area chart types share all the settings, so this article exp
 See also:
 
 * [General Settings](General_Settings) (settings that affect all chart types)
-* {api:anychart.core.cartesian.series.SplineArea}AnyChart API{api} (a full list of methods available for the Spline Area series).
+* {api:anychart.core.cartesian.series.SplineArea}anychart.core.cartesian.series.SplineArea{api} (a full list of methods available for the Spline Area series).
 
 ##Quick Start
 

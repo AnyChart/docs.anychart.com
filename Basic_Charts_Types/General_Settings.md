@@ -24,7 +24,7 @@ Some series types can be shown on a chart simultaneously, and some cannot. There
 
 However, despite all the differences, many settings are configured in the same way for all series types, and this article is a brief overview of such settings. There are also links to articles where each of the features is explained in more detail.
 
-The {api:anychart.core.SeriesBase}methods of the 'anychart' class{api} in our API are the alternative source of information about general settings.
+Methods of the {api:anychart.core.SeriesBase}anychart.core.SeriesBase{api} class in our API are the alternative source of information about general settings.
 
 To learn about the settings that are specific to a certain series type, see the article about that type. For example, to find out what appearance settings are available for the Area series, you should read the [Area Chart](Area_Chart) article.
 
