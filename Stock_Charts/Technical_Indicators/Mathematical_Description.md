@@ -16,6 +16,7 @@
 * [Chaikin Volatility (CHV)](#)
 * [Directional Movement Indicator (DMI)](#)
 * [Exponential Moving Average (EMA)](#exponential_moving_average)
+* [KDJ](#)
 * [Keltner Channels](#)
 * [Modified Moving Average (MMA)](#mma)
 * [Money Flow Index (MFI)](#)
@@ -71,7 +72,7 @@ Average True Range in each point is calculated according to the following formul
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/atr.png" width="650"></center>
 
-This formula is based on the True Range definition. TR is defined as the greatest of the following:
+This formula is based on the True Range definition. ATR is defined as the greatest of the following:
 
 - current High less the current Low;
 - current High less the previous Close (absolute value)
@@ -117,6 +118,20 @@ Coming soon.
 Exponential Moving Average in each point is calculated according to the following formula:
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/ema.png" width="680"></center>
+
+## KDJ
+
+KDJ is calculated quite alike Stochastic indicator, it uses EMA also, but the difference is in having a J line.
+
+<ol>
+	<li>The %K line is calculated the following way:<br>
+<center><img src="http://static.anychart.com/images/technical\_indicators/kdj1.png" width="680"></center>
+	<li>To create the %D line, use the next formula:<br>
+<center><img src="http://static.anychart.com/images/technical\_indicators/kdj2.png" width="680"></center>
+	<li>This is how the %J line is calculated:<br>
+<center><img src="http://static.anychart.com/images/technical\_indicators/kdj3.png" width="680"></center>
+</ol>
+
 
 ## Keltner Channels
 
@@ -195,7 +210,7 @@ Simple Moving Average in each point is calculated according to the following for
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/sma.png"></center>
 
-## Stochastic Oscillator (Full)
+## Stochastic Oscillator
 
 Coming soon.
 

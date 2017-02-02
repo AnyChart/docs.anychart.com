@@ -25,8 +25,8 @@ dataTable.addData(get_data());
 
 // map loaded data
 var mapping = dataTable.mapAs();
-mapping.addField('open', 1, 'first');
 mapping.addField('high', 2, 'max');
+mapping.addField('low', 3, 'min');
 mapping.addField('close', 4, 'last');
 
 // create stock chart
@@ -35,7 +35,7 @@ chart = anychart.stock();
 // create plot on the chart
 var plot = chart.plot(0);
 
-// create AMA indicator
+// create ATR indicator
 var atr = plot.atr(mapping).series();
 atr.stroke('#bf360c');
 ```

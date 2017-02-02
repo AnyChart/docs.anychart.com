@@ -7,7 +7,7 @@
     <meta name="is-new" content="false"/>
     <script src="../anychart-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script src="//cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
+    <script src="http://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
         // The data used in this sample can be obtained from the CDN
         // http://cdn.anychart.com/csv-data/csco-daily.js
@@ -15,7 +15,10 @@
         var dataTable = anychart.data.table();
         dataTable.addData(get_csco_daily_data());
         // map loaded data
-        var mapping = dataTable.mapAs({'value': 4});
+        var mapping = dataTable.mapAs();
+        mapping.addField('high', 2, 'max');
+        mapping.addField('low', 3, 'min');
+        mapping.addField('close', 4, 'last');
         // create stock chart
         chart = anychart.stock();
         // create plots on the chart
@@ -31,13 +34,13 @@
         lineSeries_1.name('CSCO');
         lineSeries_1.stroke('2px #64b5f6');
 
-        // create first AMA indicator of default series type
-        var ama_1 = plot_0.ama(mapping, 10, 5, 20).series();
-        ama_1.stroke('#bf360c');
+        // create first ATR indicator of default series type
+        var atr_1 = plot_0.atr(mapping, 10).series();
+        atr_1.stroke('#bf360c');
 
-        // create second AMA indicator of column series
-        var ama_2 = plot_1.ama(mapping, 30, 10, 50, "column").series();
-        ama_2.fill('#ff6d00');
+        // create second ATR indicator of column series
+        var atr_2 = plot_1.atr(mapping, 30, "column").series();
+        atr_2.fill('#ff6d00');
         
         // set container id for the chart
         chart.container('container');

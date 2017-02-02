@@ -17,9 +17,10 @@
 
         // map loaded data
         var mapping = dataTable.mapAs();
-        mapping.addField('high', 2, 'max');
-        mapping.addField('low', 3, 'min');
-        mapping.addField('close', 4, 'last');
+        mapping.addField("high", 2, "max");
+        mapping.addField("low", 3, "min");
+        mapping.addField("close", 4, "last");
+        mapping.addField("value", 4, "value");
 
         // create stock chart
         chart = anychart.stock();
@@ -29,18 +30,24 @@
 
         // create line series
         var lineSeries = plot.line(mapping);
-        lineSeries.name('CSCO');
-        lineSeries.stroke('2px #64b5f6');
+        lineSeries.name("CSCO");
+        lineSeries.stroke("2px #64b5f6");
 
-        // create ATR indicator
-        var atr = plot.atr(mapping).series();
-        atr.stroke('#bf360c');
+        var EMA = plot.ema(mapping, 20).series();
+        EMA.stroke('#bf360c');
+
+        var SMA = plot.sma(mapping, 20).series();
+        SMA.stroke('#bf360c');
+
+        // create stochastic indicator
+        var stochastic = plot.stochastic(mapping, 10, EMA, 10, SMA, 20).series();
+        stochastic.stroke("#bf360c");
 
         // create scroller series with mapped data
         chart.scroller().line(mapping);
 
         // set container id for the chart
-        chart.container('container');
+        chart.container("container");
         
         // initiate chart drawing
         chart.draw();
