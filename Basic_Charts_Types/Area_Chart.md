@@ -24,7 +24,7 @@ This article explains how to create a basic Area chart as well as configure  set
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Area}anychart.core.cartesian.series.Area{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>x/name, y/value</td></tr>
+<tr><td>Data Fields</td><td>x, value</td></tr>
 <tr><td>Multi-Series</td><td>YES</td></tr>
 <tr><th colspan=2>? OPTIONS</th></tr>
 <tr><td>Stacked</td><td>[Stacked Area](Stacked_Charts/Stacked_Area_Chart), [Percent Stacked Area](Stacked_Charts/Persent_Stacked_Area_Chart)</td></tr>
