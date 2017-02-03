@@ -1,5 +1,5 @@
 {:index 1}
-# Radar Chart
+# Overview
 
 * [Overview](#overview)
 * [Chart](#chart)

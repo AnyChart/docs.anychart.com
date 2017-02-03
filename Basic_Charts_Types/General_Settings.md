@@ -1,4 +1,4 @@
-{:index 0.6}
+{:index 0.7}
 #General Settings
 
 * [Overview](#overview)

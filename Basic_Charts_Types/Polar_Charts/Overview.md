@@ -1,5 +1,5 @@
 {:index 1}
-# Polar Chart
+# Overview
 
 * [Overview](#overview)
 * [Chart](#chart)
