@@ -27,7 +27,7 @@ This article explains how to create a basic Area chart as well as configure  set
 <tr><td>Data Fields</td><td>x/name, y/value</td></tr>
 <tr><td>Multi-Series</td><td>YES</td></tr>
 <tr><th colspan=2>? OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[Stacked Area](Stacked_Charts/Stacked_Area_Chart)</td></tr>
+<tr><td>Stacked</td><td>[Stacked Area](Stacked_Charts/Stacked_Area_Chart), [Percent Stacked Area](Stacked_Charts/Persent_Stacked_Area_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Vertical Area](Vertical_Charts/Vertical_Area_Chart)</td></tr>
 <tr><td>3D</td><td>[3D Area](3D_Charts/3D_Area_Chart)</td></tr>
 <tr><td>Error</td><td>???</td></tr>
