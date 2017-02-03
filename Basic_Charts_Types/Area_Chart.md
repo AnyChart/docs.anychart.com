@@ -32,18 +32,18 @@ This article explains how to create a basic Area chart as well as configure  set
 <tr><td>3D</td><td>[3D Area](3D_Charts/3D_Area_Chart)</td></tr>
 <tr><td>Error</td><td>???</td></tr>
 <tr><th colspan=2>? SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td></tr><td>[Polar Area](Polar_Charts/Vertical_Area_Chart)</td></tr>
-<tr><td>Radar</td></tr><td>[Radar Area](Radar_Charts/Radar_Area_Chart)</td></tr>
-<tr><td>Scatter</td></tr><td>[Scatter Area](Scatter_Charts/Vertical_Area_Chart)</td></tr>
-<tr><td>Stock</td></tr><td>[Stock Area](../Stock_Charts/Series/Area)</td></tr>
+<tr><td>Polar</td><td>[Polar Area](Polar_Charts/Vertical_Area_Chart)</td></tr>
+<tr><td>Radar</td><td>[Radar Area](Radar_Charts/Radar_Area_Chart)</td></tr>
+<tr><td>Scatter</td><td>[Scatter Area](Scatter_Charts/Vertical_Area_Chart)</td></tr>
+<tr><td>Stock</td><td>[Stock Area](../Stock_Charts/Series/Area)</td></tr>
 <tr><th colspan=2>? RELATED TYPES</th></tr>
 <tr><td>[Spline Area](Spline_Area_Chart)</td></tr>
 <tr><td>[Step Area](Step_Area_Chart)</td></tr>
 <tr><td>? [Range Area](Range_Area_Chart)</td></tr>
 <tr><td>? [Range Spline Area](Range_Spline_Area_Chart)</td></tr>
-<tr><td>? [Range Step Area](Range_Step_ Area_Chart)</td></tr>
+<tr><td>? [Range Step Area](Range_Step_Area_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td><a href="http://www.anychart.com/chartopedia/chart-types/area-chart/">Chartopedia: Area Chart</a>a></td></tr>
+<tr><td><a href="http://www.anychart.com/chartopedia/chart-types/area-chart/">Chartopedia: Area Chart</a></td></tr>
 <tr><td>[General Settings](General_Settings)</td></tr>
 </table>
 
