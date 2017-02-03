@@ -26,17 +26,17 @@ This article explains how to create a basic Area chart as well as configure  set
 <tr><th colspan=2>DATA</th></tr>
 <tr><td>Data Fields</td><td>x, value</td></tr>
 <tr><td>Multi-Series</td><td>YES</td></tr>
-<tr><th colspan=2>? OPTIONS</th></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>[Stacked Area](Stacked_Charts/Stacked_Area_Chart), [Percent Stacked Area](Stacked_Charts/Persent_Stacked_Area_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Vertical Area](Vertical_Charts/Vertical_Area_Chart)</td></tr>
 <tr><td>3D</td><td>[3D Area](3D_Charts/3D_Area_Chart)</td></tr>
 <tr><td>Error</td><td>???</td></tr>
-<tr><th colspan=2>? SUPPORTED CHART PLOTS</th></tr>
+<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>[Polar Area](Polar_Charts/Vertical_Area_Chart)</td></tr>
 <tr><td>Radar</td><td>[Radar Area](Radar_Charts/Radar_Area_Chart)</td></tr>
 <tr><td>Scatter</td><td>[Scatter Area](Scatter_Charts/Vertical_Area_Chart)</td></tr>
 <tr><td>Stock</td><td>[Stock Area](../Stock_Charts/Series/Area)</td></tr>
-<tr><th colspan=2>? RELATED TYPES</th></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td>[Spline Area](Spline_Area_Chart)</td></tr>
 <tr><td>[Step Area](Step_Area_Chart)</td></tr>
 <tr><td>? [Range Area](Range_Area_Chart)</td></tr>
