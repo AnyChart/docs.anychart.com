@@ -18,7 +18,7 @@ An area chart is a chart type based on the line chart: it also shows information
 
 The area chart emphasizes the magnitude of change over time and can be used to highlight the total value across a trend. For example, an area chart displaying profit over time can emphasize the total profit.
 
-This article explains how to create a basic Area chart as well as configure  settings that are specific to the type.
+This article explains how to create a basic Area chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of Area Chart's characteristics:
 
 <table border="1" class="dtTABLE">
 <tr><th colspan=2>API</th></tr>
@@ -46,23 +46,6 @@ This article explains how to create a basic Area chart as well as configure  set
 <tr><td><a href="http://www.anychart.com/chartopedia/chart-types/area-chart/" target="_blank">Chartopedia: Area Chart</a></td></tr>
 <tr><td>[General Settings](General_Settings)</td></tr>
 </table>
-
-In AnyChart, the Area chart can be:
-
-* multi-series
-* [stacked](Stacked_Charts/Overview)
-* [vertical](Vertical_Charts/Overview)
-* [3D](3D_Charts/Overview)
-
-It has two modifications:
-
-* [Spline Area](Spline_Area_Chart)
-* [Step Area](Step_Area_Chart).
-
-See also:
-
-* [General Settings](General_Settings) (settings that affect all chart types)
-* {api:anychart.core.cartesian.series.Area}AnyChart API{api} (a full list of methods available for the Area series).
 
 ## Quick Start
 
