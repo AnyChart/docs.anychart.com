@@ -13,31 +13,34 @@ A step area chart is an area chart in which points are connected by horizontal a
 
 Step area charts are used to visualize changes occurring at irregular intervals: for example, changes in tax rates or interest rates. While the basic area chart shows both the trend in data and the magnitude of change over time, the step area chart draws attention from the trend to highlight periods with no change and emphasize the exact time of each change (as well as its magnitude).
 
-The Step Area and Area chart types share almost all the settings, so this article explains just how to create a basic Step Area chart and configure its only special setting – step direction. To learn about other settings, see the [Area Chart](Area_Chart) article.
+The Step Area and Area chart types share almost all the settings, so this article explains just how to create a basic Step Area chart and configure its only special setting – step direction. To learn about other settings, see the [Area Chart](Area_Chart) article. Alos, you can see the table below to get a brief overview of Step Area Chart's characteristics:
 
 <table border="1" class="dtTABLE">
 <tr><th colspan=2>API</th></tr>
-<tr><td>Class</td><td>{api:anychart.core.cartesian.series.StepArea}anychart.core.cartesian.series.StepArea{api}</td></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.Area}anychart.core.cartesian.series.StepArea{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>x/name, y/value</td></tr>
-<tr><td>Multi-Series</td><td>YES</td></tr>
-<tr><th colspan=2>? OPTIONS</th></tr>
-<tr><td>Stacked</td><td>YES</td></tr>
-<tr><td>Vertical</td><td>YES</td></tr>
-<tr><td>3D</td><td>NO</td></tr>
-<tr><td>Error</td><td>YES</td></tr>
-<tr><th colspan=2>? RELATED TYPES</th></tr>
-<tr><td>Area</td></tr>
-<tr><td>Spline Area</td></tr>
-<tr><td>? Range Area</td></tr>
-<tr><td>? Range Spline Area</td></tr>
-<tr><td>? Range Step Area</td></tr>
+<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>[Stacked Step Area](Stacked_Charts/Stacked_Step_Area_Chart), [Percent Stacked Step Area](Stacked_Charts/Persent_Stacked_Step_Area_Chart)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Area](Vertical_Charts/Vertical_Step_Area_Chart)</td></tr>
+<tr><td>3D</td><td>N/A</td></tr>
+<tr><td>Error Bars</td><td>[Step Area Chart with Error Bars](Error_Chart)</td></tr>
+<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>[Stock Step Area](../Stock_Charts/Series/Step_Area)</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td>[Area](Area_Chart)</td></tr>
+<tr><td>[Spline Area](Spline_Area_Chart)</td></tr>
+<tr><td>[Range Area](Range_Area_Chart)</td></tr>
+<tr><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
+<tr><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
+<tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td><a href="http://www.anychart.com/chartopedia/chart-types/step-area-chart/" target="_blank">Chartopedia: Area Chart</a></td></tr>
+<tr><td>[General Settings](General_Settings)</td></tr>
 </table>
-
-See also:
-
-* [General Settings](General_Settings) (settings that affect all chart types)
-* {api:anychart.core.cartesian.series.StepArea}AnyChart API{api} (a full list of methods available for the Step Area series).
 
 ##Quick Start
 

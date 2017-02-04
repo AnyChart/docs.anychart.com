@@ -34,7 +34,7 @@ This article explains how to create a basic Area chart as well as configure sett
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>[Polar Area](Polar_Plot/Polar_Area_Chart)</td></tr>
 <tr><td>Radar</td><td>[Radar Area](Radar_Plot/Radar_Area_Chart)</td></tr>
-<tr><td>Scatter</td><td>[Scatter Area](Scatter_Plot/Vertical_Area_Chart)</td></tr>
+<tr><td>Scatter</td><td>[Scatter Area](Scatter_Plot/Scatter_Area_Chart)</td></tr>
 <tr><td>Stock</td><td>[Stock Area](../Stock_Charts/Series/Area)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td>[Spline Area](Spline_Area_Chart)</td></tr>
