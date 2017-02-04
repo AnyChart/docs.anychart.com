@@ -13,7 +13,7 @@ Like in the regular area chart, the area between the line segments and the X-axi
 
 The Spline Area and Area chart types share all the settings, so this article explains just how to create a basic Spline Area chart. To learn about other settings, read the [Area Chart](Area_Chart) article. You can also see the table below to get a brief overview of the Spline Area Chart's characteristics:
 
-<table border="1" class="dtTABLE">
+<table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.SplineArea}anychart.core.cartesian.series.SplineArea{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>

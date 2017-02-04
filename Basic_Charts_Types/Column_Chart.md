@@ -21,7 +21,7 @@ The column chart is used very widely to show comparison among categories and som
 
 This article explains how to create a basic Column chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Column Chart's characteristics:
 
-<table border="1" class="dtTABLE">
+<table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Column}anychart.core.cartesian.series.Column{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>

@@ -13,7 +13,7 @@ Like the regular line chart, it is commonly used to emphasize trends in data ove
 
 The Line and Spline chart types share all the settings, so this article explains just how to create a basic Spline chart. To learn about other settings, read the [Line Chart](Line_Chart) article. You can also see the table below to get a brief overview of the Spline Chart's characteristics:
 
-<table border="1" class="dtTABLE">
+<table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Spline}anychart.core.cartesian.series.Spline{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>

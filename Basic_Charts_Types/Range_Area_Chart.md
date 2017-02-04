@@ -1,75 +1,177 @@
 {:index 1}
-# Range Area Chart
+#Area Chart
 
 * [Overview](#overview)
-* [Chart](#chart)
-* [Temperature Range Area Chart Sample](#temperature_range_area_chart_sample)
-* [Configuration](#configuration)
-<!--* [3D Mode](#3d_mode)-->
+* [Quick Start](#quick_start)
+* [General Settings](#general_settings)
+* [Special Settings](#special_settings)
+  * [Appearance](#appearance)
+  * [Labels](#labels)
+  * [Tooltips](#tooltips)
+  * [Stacked Area](#stacked_area)
+  * [Vertical Area](#vertical_area)
+  * [3D Area](#3d_area)
 
 ## Overview
 
-The Range Line/Spline Area charts displays a range of data by plotting two Y values per data point. Each Y value used is drawn as the upper and the lower bounds of an area.
-  
-  
-Some data may look very nice and are easily understood in this form, in which an area spans a region from the minimum value to the maximum value.
+An range area chart is a chart type related to the area chart: it also...
 
-## Chart
+The range area chart emphasizes...
 
-As range area charts have to define lower and upper bounds of area - you have to specify these two values in each column using **"low"** and **"high"** parameters.
-    
-Also "RangeLineArea" or "RangeSpineArea" series type should be specified.
+This article explains how to create a basic Range Area chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Range Area Chart's characteristics:
+
+<table border="1" class="seriesTABLE">
+<tr><th colspan=2>API</th></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.RangeArea}anychart.core.cartesian.series.RangeArea{api}</td></tr>
+<tr><th colspan=2>DATA</th></tr>
+<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>[Stacked Range Area](Stacked_Charts/Stacked_Range_Area_Chart), [Percent Stacked Range Area](Stacked_Charts/Persent_Stacked_Range_Area_Chart)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Range Area](Vertical_Charts/Vertical_Range_Area_Chart)</td></tr>
+<tr><td>3D</td><td>N/A</td></tr>
+<tr><td>Error Bars</td><td>N/A</td></tr>
+<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>[Stock Range Area](../Stock_Charts/Series/Range_Area)</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td>[Area](Area_Chart)</td></tr>
+<tr><td>[Spline Area](Spline_Area_Chart)</td></tr>
+<tr><td>[Step Area](Step_Area_Chart)</td></tr>
+<tr><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
+<tr><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
+<tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td><a href="http://www.anychart.com/chartopedia/chart-types/range-area-chart/" target="_blank">Chartopedia: Range Area Chart</a></td></tr>
+<tr><td>[General Settings](General_Settings)</td></tr>
+</table>
+
+## Quick Start
+
+To create an Area chart, use the {api:anychart#area}anychart.area(){api} chart constructor. If you pass the data to this chart constructor, it creates an Area series.
+
+To create an Area series explicitly, call the {api:anychart.charts.Cartesian#area}area(){api} method.
+
+The following sample demonstrates how a basic Area chart is created:
 
 ```
-    chart.rangeArea([
-        {low: 6.1, high: 0.7},
-        {low: 6.3, high: 0.6},
-        {low: 8.5, high: 1.9}
-    ]);
+// create a data set
+var data = anychart.data.set([
+  ["January", 10000],
+  ["February", 12000],
+  ["March", 18000],
+  ["April", 11000],
+  ["May", 9000]
+]);
+
+// create a chart
+var chart = anychart.area();
+
+// create an area series and set the data
+var series = chart.area(data);
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
-## Temperature Range Area Chart Sample
+{sample}BCT\Range_Area\_Chart\_01{sample}
 
-This sample shows how ranges can be used to create JavaScript graph of temperature averages, the data is taken from UK average weather statistics from 1971 to 2000:
+## General Settings
 
-{sample}BCT_Range\_Area-SplineArea\_Charts\_01{sample}
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Area chart (for example, legend and interactivity settings).
 
-## Configuration
-Range area charts are configured and tuned almost the same way as usual Area charts.<!--, with the only difference: as we have to Y values (high and low point) - we have two tooltips, two labels, two markers and two lines-->.
-  
-  
-So, to configure them we use the {api:anychart.core.cartesian.series.RangeArea}**rangeArea**{api} parameter that holds labels and markers settings.
-  
-  
-Here is the way of changing upper markers:
+Here is an overview of general settings: [General Settings](General_Settings).
+
+## Special Settings
+
+### Appearance
+
+Here is a full list of methods used to configure visual settings that are available for the Area series:
+
+* {api:anychart.core.cartesian.series.Area#color}color(){api}, {api:anychart.core.cartesian.series.Area#fill}fill(){api}, {api:anychart.core.cartesian.series.Area#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Area#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
+* {api:anychart.core.cartesian.series.Area#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Area#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Area#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+* {api:anychart.core.cartesian.series.Area#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Area#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Area#selectStroke}selectStroke(){api} configure the visual settings on select
+
+You can learn more from the [Appearance Settings](../Appearance_Settings) article.
+
+In the sample below, there are two Area series with some of the appearance settings configured:
 
 ```
-    chart.rangeSplineArea([
-        {x: "A", low:0, high: 100},
-        {x: "B", low:100, high: 200},
-        {x: "C", low:60, high: 200},
-        {x: "D", low:0, high: 60}
-    ]).markers().enabled(true);
+// create the first series
+var series1 = chart.area(seriesData_1);
+
+// configure the visual settings of the first series
+series1.fill("#00cc99", 0.3);
+series1.hoverFill("#00cc99", 0.3);
+series1.selectFill("#00cc99", 0.5);
+series1.stroke("#00cc99", 1, "10 5", "round");
+series1.hoverStroke("#00cc99", 2, "10 5", "round");
+series1.selectStroke("#00cc99", 4, "10 5", "round");
+
+// create the second series
+var series2 = chart.area(seriesData_2);
+
+// configure the visual settings of the second series
+series2.fill("#0066cc", 0.3);
+series2.hoverFill("#0066cc", 0.3);
+series2.selectFill("#0066cc", 0.5);
+series2.hatchFill("zigzag", "#808080", 1, 15);
+series2.stroke("#0066cc");
+series2.hoverStroke("#0066cc", 2);
+series2.selectStroke("#0066cc", 4);
 ```
 
-Here is the result of applying these settings to the sample data:
+{sample}BCT\Range_Area\_Chart\_02{sample}
 
-{sample}BCT_Range\_Area-SplineArea\_Charts\_02{sample}
-<!--
-## 3D Mode
+### Labels
 
-Use **.area3d()** method to enable 3d mode of area chart.
-```
-var chart = anychart.area3d();
-var series1 = chart.area3d(dataSet1);
-series1.name("Sales 2009");
-var series2 = chart.area3d(dataSet2);
-series2.name("Sales 2010");
-var series3 = chart.area3d(dataSet3);
-series3.name("Sales 2011");
-```
+Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-Here is a sample how 3d area looks like: 
+(???) отмечаю на будущее, что нужно добавить текст
 
-{sample}BCT_Range\_Area-SplineArea\_Charts\_03{sample}
--->
+To configure a label on an Area chart, you need to know the following peculiarities regarding formatting and positioning lables.... 
+
+### Tooltips
+
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+
+(???) отмечаю на будущее, что нужно добавить текст
+
+In case of Area charts, there are some peculiarities in formatting the text of tooltips...
+
+### Stacked Area
+
+Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
+
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts (Overview)](Stacked_Charts/Overview).
+
+To learn about the stacked versions of the Area chart and its modifications, see:
+
+* [Stacked Area](Stacked_Charts/Stacked_Area_Chart)
+* [Percent Stacked Area](Stacked_Charts/Persent_Stacked_Area_Chart)
+* [Stacked Spline Area](Stacked_Charts/Stacked_Spline_Area_Chart)
+* [Percent Stacked Spline Area](Stacked_Charts/Persent_Stacked_Spline_Area_Chart)
+* [Stacked Step Area](Stacked_Charts/Stacked_Step_Area_Chart)
+* [Percent Stacked Step Area](Stacked_Charts/Persent_Stacked_Area_Chart)
+
+### Vertical Area
+
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical_Charts/Overview).
+
+Here is the information about creating Vertical Area series:
+
+* [Vertical Area](Vertical_Charts/Vertical_Area_Chart)
+* [Vertical Spline Area](Vertical_Charts/Vertical_Spline_Area_Chart)
+* [Vertical Step Area](Vertical_Charts/Vertical_Step_Area_Chart)
+
+### 3D Area
+
+Using AnyChart, you can create 3D versions of some chart types, including the Area chart.
+
+To learn about 3D charts in general, see [3D Charts (Overview)](3D_Charts/Overview).
+
+The 3D Area chart is described in the following article: [3D Area Chart](3D_Charts/3D_Area_Chart)

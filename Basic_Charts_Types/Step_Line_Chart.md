@@ -15,7 +15,7 @@ Step line charts are used to visualize changes occurring at irregular intervals:
 
 The Step Line and Line chart types share almost all the settings, so this article explains just how to create a basic Step Line chart and configure its only special setting – step direction. To learn about other settings, read the [Line Chart](Line_Chart) article. You can also see the table below to get a brief overview of the Step Line Chart's characteristics:
 
-<table border="1" class="dtTABLE">
+<table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.StepLine}anychart.core.cartesian.series.StepLine{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>

@@ -18,7 +18,7 @@ The line chart is very common in many fields. As a rule, it is used to emphasize
 
 This article explains how to create a basic Line chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of Line Chart's characteristics:
 
-<table border="1" class="dtTABLE">
+<table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Line}anychart.core.cartesian.series.Line{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
