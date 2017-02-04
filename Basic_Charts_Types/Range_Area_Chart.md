@@ -49,11 +49,9 @@ This article explains how to create a basic Range Area chart as well as configur
 
 ## Quick Start
 
-To create an Area chart, use the {api:anychart#area}anychart.area(){api} chart constructor. If you pass the data to this chart constructor, it creates an Area series.
+To create a Range Area series, use the {api:anychart.charts.Cartesian#rangeArea}rangeArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor).
 
-To create an Area series explicitly, call the {api:anychart.charts.Cartesian#area}area(){api} method.
-
-The following sample demonstrates how a basic Area chart is created:
+The following sample demonstrates how a basic Range Area chart is created:
 
 ```
 // create a data set
@@ -78,7 +76,7 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\Range_Area\_Chart\_01{sample}
+{sample}BCT\Range\_Area\_Chart\_01{sample}
 
 ## General Settings
 
@@ -125,7 +123,7 @@ series2.hoverStroke("#0066cc", 2);
 series2.selectStroke("#0066cc", 4);
 ```
 
-{sample}BCT\Range_Area\_Chart\_02{sample}
+{sample}BCT\Range\_Area\_Chart\_02{sample}
 
 ### Labels
 
