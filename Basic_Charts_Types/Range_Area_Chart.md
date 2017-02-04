@@ -8,13 +8,11 @@
   * [Appearance](#appearance)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
-  * [Stacked Area](#stacked_area)
-  * [Vertical Area](#vertical_area)
-  * [3D Area](#3d_area)
+  * [Vertical Range Area](#vertical_range_area)
 
 ## Overview
 
-An range area chart is a chart type related to the area chart: it also...
+An range area chart is a chart type ...
 
 The range area chart emphasizes...
 
@@ -27,7 +25,7 @@ This article explains how to create a basic Range Area chart as well as configur
 <tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[Stacked Range Area](Stacked_Charts/Stacked_Range_Area_Chart), [Percent Stacked Range Area](Stacked_Charts/Persent_Stacked_Range_Area_Chart)</td></tr>
+<tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>[Vertical Range Area](Vertical_Charts/Vertical_Range_Area_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
@@ -56,18 +54,18 @@ The following sample demonstrates how a basic Range Area chart is created:
 ```
 // create a data set
 var data = anychart.data.set([
-  ["January", 10000],
-  ["February", 12000],
-  ["March", 18000],
-  ["April", 11000],
-  ["May", 9000]
+  ["January", 0.7, 6.1],
+  ["February", 0.6, 6.3],
+  ["March", 1.9, 8.5],
+  ["April", 3.1, 10.8],
+  ["May", 5.7, 14.4]
 ]);
 
 // create a chart
 var chart = anychart.area();
 
-// create an area series and set the data
-var series = chart.area(data);
+// create a range area series and set the data
+var series = chart.rangeArea(data);
 
 // set the container id
 chart.container("container");
@@ -80,7 +78,7 @@ chart.draw();
 
 ## General Settings
 
-In AnyChart there are many settings that are configured in the same way for all chart types, including the Area chart (for example, legend and interactivity settings).
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Range Area chart (for example, legend and interactivity settings).
 
 Here is an overview of general settings: [General Settings](General_Settings).
 
@@ -90,17 +88,17 @@ Here is an overview of general settings: [General Settings](General_Settings).
 
 Here is a full list of methods used to configure visual settings that are available for the Area series:
 
-* {api:anychart.core.cartesian.series.Area#color}color(){api}, {api:anychart.core.cartesian.series.Area#fill}fill(){api}, {api:anychart.core.cartesian.series.Area#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Area#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
-* {api:anychart.core.cartesian.series.Area#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Area#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Area#hoverStroke}hoverStroke(){api} configure the visual settings on hover
-* {api:anychart.core.cartesian.series.Area#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Area#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Area#selectStroke}selectStroke(){api} configure the visual settings on select
+* {api:anychart.core.cartesian.series.RangeArea#color}color(){api}, {api:anychart.core.cartesian.series.RangeArea#fill}fill(){api}, {api:anychart.core.cartesian.series.RangeArea#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.RangeArea#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
+* {api:anychart.core.cartesian.series.RangeArea#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.RangeArea#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.RangeArea#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+* {api:anychart.core.cartesian.series.RangeArea#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.RangeArea#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.RangeArea#selectStroke}selectStroke(){api} configure the visual settings on select
 
 You can learn more from the [Appearance Settings](../Appearance_Settings) article.
 
-In the sample below, there are two Area series with some of the appearance settings configured:
+In the sample below, there are two Range Area series with some of the appearance settings configured:
 
 ```
 // create the first series
-var series1 = chart.area(seriesData_1);
+var series1 = chart.rangeArea(seriesData_1);
 
 // configure the visual settings of the first series
 series1.fill("#00cc99", 0.3);
@@ -111,7 +109,7 @@ series1.hoverStroke("#00cc99", 2, "10 5", "round");
 series1.selectStroke("#00cc99", 4, "10 5", "round");
 
 // create the second series
-var series2 = chart.area(seriesData_2);
+var series2 = chart.rangeAarea(seriesData_2);
 
 // configure the visual settings of the second series
 series2.fill("#0066cc", 0.3);
@@ -131,7 +129,7 @@ Labels are text or image elements that can be placed anywhere on any chart (you 
 
 (???) отмечаю на будущее, что нужно добавить текст
 
-To configure a label on an Area chart, you need to know the following peculiarities regarding formatting and positioning lables.... 
+To configure a label on a Range Area chart, you need to know the following peculiarities regarding formatting and positioning lables.... 
 
 ### Tooltips
 
@@ -139,37 +137,14 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 (???) отмечаю на будущее, что нужно добавить текст
 
-In case of Area charts, there are some peculiarities in formatting the text of tooltips...
+In case of Range Area charts, there are some peculiarities in formatting the text of tooltips...
 
-### Stacked Area
-
-Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
-
-In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts (Overview)](Stacked_Charts/Overview).
-
-To learn about the stacked versions of the Area chart and its modifications, see:
-
-* [Stacked Area](Stacked_Charts/Stacked_Area_Chart)
-* [Percent Stacked Area](Stacked_Charts/Persent_Stacked_Area_Chart)
-* [Stacked Spline Area](Stacked_Charts/Stacked_Spline_Area_Chart)
-* [Percent Stacked Spline Area](Stacked_Charts/Persent_Stacked_Spline_Area_Chart)
-* [Stacked Step Area](Stacked_Charts/Stacked_Step_Area_Chart)
-* [Percent Stacked Step Area](Stacked_Charts/Persent_Stacked_Area_Chart)
-
-### Vertical Area
+### Vertical Range Area
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical_Charts/Overview).
 
-Here is the information about creating Vertical Area series:
+Here is the information about creating Vertical Range Area series:
 
-* [Vertical Area](Vertical_Charts/Vertical_Area_Chart)
-* [Vertical Spline Area](Vertical_Charts/Vertical_Spline_Area_Chart)
-* [Vertical Step Area](Vertical_Charts/Vertical_Step_Area_Chart)
-
-### 3D Area
-
-Using AnyChart, you can create 3D versions of some chart types, including the Area chart.
-
-To learn about 3D charts in general, see [3D Charts (Overview)](3D_Charts/Overview).
-
-The 3D Area chart is described in the following article: [3D Area Chart](3D_Charts/3D_Area_Chart)
+* [Vertical Range Area](Vertical_Charts/Vertical_Ragne_Area_Chart)
+* [Vertical Range Spline Area](Vertical_Charts/Vertical_Range_Spline_Area_Chart)
+* [Vertical Range Step Area](Vertical_Charts/Vertical_Range_Step_Area_Chart)

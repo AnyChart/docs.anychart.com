@@ -81,7 +81,7 @@ The Step Area chart is a modification of the Area chart, so these two types shar
 
 Also, in AnyChart there are many settings that are configured in the same way for all chart types, including the Step Area chart (for example, legend and interactivity settings): [General Settings](General_Settings).
 
-In addition, see a full list of methods available for the Step Area series: you can find it in {api:anychart.core.cartesian.series.StepArea}AnyChart API{api}.
+In addition, see a full list of methods available for the Step Area series: {api:anychart.core.cartesian.series.StepArea}anychart.core.cartesian.series.StepArea{api}.
 
 ## Special Settings 
 

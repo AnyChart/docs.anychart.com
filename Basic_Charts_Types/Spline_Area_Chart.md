@@ -75,4 +75,4 @@ The Spline Area chart is a modification of the Area chart, so these two types sh
 
 Also, in AnyChart there are many settings that are configured in the same way for all chart types, including the Spline Area chart (for example, legend and interactivity settings): [General Settings](General_Settings).
 
-In addition, see a full list of methods available for the Spline Area series: you can find it in {api:anychart.core.cartesian.series.SplineArea}AnyChart API{api}.
+In addition, see a full list of methods available for the Spline Area series: {api:anychart.core.cartesian.series.SplineArea}anychart.core.cartesian.series.SplineArea{api}.
