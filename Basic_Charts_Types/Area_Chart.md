@@ -24,17 +24,17 @@ This article explains how to create a basic Area chart as well as configure  set
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.core.cartesian.series.Area}anychart.core.cartesian.series.Area{api}</td></tr>
 <tr><th colspan=2>DATA</th></tr>
-<tr><td>Data Fields</td><td>x, value</td></tr>
-<tr><td>Multi-Series</td><td>YES</td></tr>
+<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multi-Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>[Stacked Area](Stacked_Charts/Stacked_Area_Chart), [Percent Stacked Area](Stacked_Charts/Persent_Stacked_Area_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Vertical Area](Vertical_Charts/Vertical_Area_Chart)</td></tr>
 <tr><td>3D</td><td>[3D Area](3D_Charts/3D_Area_Chart)</td></tr>
-<tr><td>Error</td><td>???</td></tr>
+<tr><td>Error Bars</td><td>[Area Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
-<tr><td>Polar</td><td>[Polar Area](Polar_Charts/Vertical_Area_Chart)</td></tr>
-<tr><td>Radar</td><td>[Radar Area](Radar_Charts/Radar_Area_Chart)</td></tr>
-<tr><td>Scatter</td><td>[Scatter Area](Scatter_Charts/Vertical_Area_Chart)</td></tr>
+<tr><td>Polar</td><td>[Polar Area](Polar_Plot/Polar_Area_Chart)</td></tr>
+<tr><td>Radar</td><td>[Radar Area](Radar_Plot/Radar_Area_Chart)</td></tr>
+<tr><td>Scatter</td><td>[Scatter Area](Scatter_Plot/Vertical_Area_Chart)</td></tr>
 <tr><td>Stock</td><td>[Stock Area](../Stock_Charts/Series/Area)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td>[Spline Area](Spline_Area_Chart)</td></tr>
@@ -191,8 +191,4 @@ Using AnyChart, you can create 3D versions of some chart types, including the Ar
 
 To learn about 3D charts in general, see [3D Charts (Overview)](3D_Charts/Overview).
 
-3D Area charts are described in the following articles:
-
-* [3D Area](3D_Charts/3D_Area_Chart)
-* [3D Spline Area](3D_Charts/3D_Spline_Area_Chart)
-* [3D Step Area](3D_Charts/3D_Step_Area_Chart)
+The 3D Area chart is described in the following article: [3D Area Chart](3D_Charts/3D_Area_Chart)
