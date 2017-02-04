@@ -74,7 +74,7 @@ chart.container("container");
 chart.draw();
 ```
 
-{sample}BCT\Range\_Area\_Chart\_01{sample}
+{sample}BCT\_Range\_Area\_Chart\_01{sample}
 
 ## General Settings
 
@@ -121,7 +121,7 @@ series2.hoverStroke("#0066cc", 2);
 series2.selectStroke("#0066cc", 4);
 ```
 
-{sample}BCT\Range\_Area\_Chart\_02{sample}
+{sample}BCT\_Range\_Area\_Chart\_02{sample}
 
 ### Labels
 
