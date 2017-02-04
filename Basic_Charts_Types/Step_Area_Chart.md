@@ -11,7 +11,7 @@
 
 A step area chart is an area chart in which points are connected by horizontal and vertical line segments, looking like steps of a staircase. The area between the line segments and the X-axis is filled with a color or a pattern.
 
-Step area charts are used to visualize changes occurring at irregular intervals: for example, changes in tax rates or interest rates. While the basic area chart shows both the trend in data and the magnitude of change over time, the step area chart draws attention from the trend to highlight periods with no change and emphasize the exact time of each change (as well as its magnitude).
+Step area charts are used when it is necessary to highlight the irregularity of changes: for example, when changes in tax rates or interest rates are visualized. While the basic area chart shows both the trend in data and the magnitude of change over time, the step area chart draws attention from the trend to show periods with no change and emphasize the exact time of each change (as well as its magnitude).
 
 The Step Area and Area chart types share almost all the settings, so this article explains just how to create a basic Step Area chart and configure its only special setting – step direction. To learn about other settings, read the [Area Chart](Area_Chart) article. You can also see the table below to get a brief overview of the Step Area Chart's characteristics:
 
@@ -57,7 +57,7 @@ var data = anychart.data.set([
   ["2000", 0.15],
   ["2001", 0.15],
   ["2002", 0.19],
-  ["2003", 0.20],
+  ["2003", 0.20]
 ]);
 
 // create a chart
