@@ -39,7 +39,7 @@ This article explains how to create a basic Bar chart as well as configure  sett
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td>[Column](Column_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td><a href="http://www.anychart.com/chartopedia/chart-types/area-chart/" target="_blank">Chartopedia: Area Chart</a></td></tr>
+<tr><td><a href="http://www.anychart.com/chartopedia/chart-types/bar-chart/" target="_blank">Chartopedia: Bar Chart</a></td></tr>
 <tr><td>[General Settings](General_Settings)</td></tr>
 </table>
 
