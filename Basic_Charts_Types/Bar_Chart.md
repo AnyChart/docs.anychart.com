@@ -18,18 +18,30 @@ A bar chart is a chart that visualizes data as a set of rectangular bars, their 
 
 The bar chart is used very widely to show comparison among categories and sometimes to visualize time-based data. Also, categories with long names may be a reason to prefer the bar chart to the column chart.
 
-This article explains how to create a basic Bar chart as well as configure  settings that are specific to the type.
+This article explains how to create a basic Bar chart as well as configure  settings that are specific to the type. In addition, you see the table below to get a brief overview of the Bar Chart's characteristics:
 
-In AnyChart, this chart type can be:
-
-* multi-series
-* [stacked](Stacked_Charts/Overview)
-* [3D](3D_Charts/Overview)
-
-See also:
-
-* [General Settings](General_Settings) (settings that affect all chart types)
-* {api:anychart.core.cartesian.series.Bar}anychart.core.cartesian.series.Bar{api} (a full list of methods available for the Bar series).
+<table border="1" class="dtTABLE">
+<tr><th colspan=2>API</th></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.Bar}anychart.core.cartesian.series.Bar{api}</td></tr>
+<tr><th colspan=2>DATA</th></tr>
+<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>[Stacked Bar](Stacked_Charts/Stacked_Bar_Chart), [Percent Stacked Bar](Stacked_Charts/Persent_Stacked_Bar_Chart)</td></tr>
+<tr><td>Vertical</td><td>N/A</td></tr>
+<tr><td>3D</td><td>[3D Bar](3D_Charts/3D_Bar_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Bar Chart with Error Bars](Error_Chart)</td></tr>
+<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>N/A</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td>[Column](Column_Chart)</td></tr>
+<tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td><a href="http://www.anychart.com/chartopedia/chart-types/area-chart/" target="_blank">Chartopedia: Area Chart</a></td></tr>
+<tr><td>[General Settings](General_Settings)</td></tr>
+</table>
 
 ## Quick Start
 

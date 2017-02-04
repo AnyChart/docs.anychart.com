@@ -16,22 +16,31 @@ A line chart is a chart that shows information as a series of data points connec
 
 The line chart is very common in many fields. As a rule, it is used to emphasize trends in data over equal time intervals, such as months, quarters, fiscal years, and so on.
 
-This article explains how to create a basic Line chart as well as configure  settings that are specific to the type.
+This article explains how to create a basic Line chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of Line Chart's characteristics:
 
-In AnyChart, the Line chart can be:
-
-* multi-series
-* [vertical](Vertical_Charts/Overview)
-
-It has two modifications:
-
-* [Spline](Spline_Chart)
-* [Step Line](Step_Line_Chart).
-
-See also:
-
-* [General Settings](General_Settings) (settings that affect all chart types)
-* {api:anychart.core.cartesian.series.Line}anychart.core.cartesian.series.Line{api} (a full list of methods available for the Line series).
+<table border="1" class="dtTABLE">
+<tr><th colspan=2>API</th></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.Line}anychart.core.cartesian.series.Line{api}</td></tr>
+<tr><th colspan=2>DATA</th></tr>
+<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>N/A</td></tr>
+<tr><td>Vertical</td><td>[Vertical Line](Vertical_Charts/Vertical_Line_Chart)</td></tr>
+<tr><td>3D</td><td>N/A</td></tr>
+<tr><td>Error Bars</td><td>[Line Chart with Error Bars](Error_Chart)</td></tr>
+<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
+<tr><td>Polar</td><td>[Polar Line](Polar_Plot/Polar_Line_Chart)</td></tr>
+<tr><td>Radar</td><td>[Radar Line](Radar_Plot/Radar_Line_Chart)</td></tr>
+<tr><td>Scatter</td><td>[Scatter Line](Scatter_Plot/Scatter_Line_Chart)</td></tr>
+<tr><td>Stock</td><td>[Stock Line](../Stock_Charts/Series/Line)</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td>[Spline](Spline_Chart)</td></tr>
+<tr><td>[Step Line](Step_Line_Chart)</td></tr>
+<tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td><a href="http://www.anychart.com/chartopedia/chart-types/line-chart/" target="_blank">Chartopedia: Line Chart</a></td></tr>
+<tr><td>[General Settings](General_Settings)</td></tr>
+</table>
 
 ## Quick Start
 

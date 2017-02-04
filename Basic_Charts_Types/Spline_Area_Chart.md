@@ -11,12 +11,34 @@ A spline area chart is an area chart in which data points are connected by smoot
 
 Like in the regular area chart, the area between the line segments and the X-axis is filled with a color or a pattern to emphasize the magnitude of change over time.
 
-The Spline Area and Area chart types share all the settings, so this article explains just how to create a basic Spline Area chart. Learn more: [Area Chart](Area_Chart).
+The Spline Area and Area chart types share all the settings, so this article explains just how to create a basic Spline Area chart. To learn about other settings, read the [Area Chart](Area_Chart) article. You can also see the table below to get a brief overview of the Spline Area Chart's characteristics:
 
-See also:
-
-* [General Settings](General_Settings) (settings that affect all chart types)
-* {api:anychart.core.cartesian.series.SplineArea}anychart.core.cartesian.series.SplineArea{api} (a full list of methods available for the Spline Area series).
+<table border="1" class="dtTABLE">
+<tr><th colspan=2>API</th></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.SplineArea}anychart.core.cartesian.series.SplineArea{api}</td></tr>
+<tr><th colspan=2>DATA</th></tr>
+<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>[Stacked Spline Area](Stacked_Charts/Stacked_Spline_Area_Chart), [Percent Stacked Spline Area](Stacked_Charts/Persent_Stacked_Spline_Area_Chart)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Spline Area](Vertical_Charts/Vertical_Spline_Area_Chart)</td></tr>
+<tr><td>3D</td><td>N/A</td></tr>
+<tr><td>Error Bars</td><td>[Spline Area Chart with Error Bars](Error_Chart)</td></tr>
+<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>[Stock Spline Area](../Stock_Charts/Series/Spline_Area)</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td>[Area](Area_Chart)</td></tr>
+<tr><td>[Step Area](ST\tep_Area_Chart)</td></tr>
+<tr><td>[Range Area](Range_Area_Chart)</td></tr>
+<tr><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
+<tr><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
+<tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td><a href="http://www.anychart.com/chartopedia/chart-types/spline-area-chart/" target="_blank">Chartopedia: Spline Area Chart</a></td></tr>
+<tr><td>[General Settings](General_Settings)</td></tr>
+</table>
 
 ##Quick Start
 

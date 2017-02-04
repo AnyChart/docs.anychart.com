@@ -11,12 +11,31 @@ A spline chart is a line chart in which data points are connected by smooth curv
 
 Like the regular line chart, it is commonly used to emphasize trends in data over equal time intervals.
 
-The Line and Spline chart types share all the settings, so this article explains just how to create a basic Spline chart. To learn more, see the [Line Chart](Line_Chart) article.
+The Line and Spline chart types share all the settings, so this article explains just how to create a basic Spline chart. To learn about other settings, read the [Line Chart](Line_Chart) article. You can also see the table below to get a brief overview of the Spline Chart's characteristics:
 
-See also:
-
-* [General Settings](General_Settings) (settings that affect all chart types)
-* {api:anychart.core.cartesian.series.Spline}anychart.core.cartesian.series.Spline{api} (a full list of methods available for the Spline series).
+<table border="1" class="dtTABLE">
+<tr><th colspan=2>API</th></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.Spline}anychart.core.cartesian.series.Spline{api}</td></tr>
+<tr><th colspan=2>DATA</th></tr>
+<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>N/A</td></tr>
+<tr><td>Vertical</td><td>[Vertical Spline](Vertical_Charts/Vertical_Spline_Chart)</td></tr>
+<tr><td>3D</td><td>N/A</td></tr>
+<tr><td>Error Bars</td><td>[Spline Chart with Error Bars](Error_Chart)</td></tr>
+<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>[Stock Spline](../Stock_Charts/Series/Spline)</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td>[Line](Line_Chart)</td></tr>
+<tr><td>[Step Line](Step_Line_Chart)</td></tr>
+<tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td><a href="http://www.anychart.com/chartopedia/chart-types/spline-chart/" target="_blank">Chartopedia: Spline Chart</a></td></tr>
+<tr><td>[General Settings](General_Settings)</td></tr>
+</table>
 
 ##Quick Start
 

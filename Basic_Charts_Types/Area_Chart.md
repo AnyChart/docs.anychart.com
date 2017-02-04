@@ -18,7 +18,7 @@ An area chart is a chart type based on the line chart: it also shows information
 
 The area chart emphasizes the magnitude of change over time and can be used to highlight the total value across a trend. For example, an area chart displaying profit over time can emphasize the total profit.
 
-This article explains how to create a basic Area chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of Area Chart's characteristics:
+This article explains how to create a basic Area chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Area Chart's characteristics:
 
 <table border="1" class="dtTABLE">
 <tr><th colspan=2>API</th></tr>
@@ -34,7 +34,7 @@ This article explains how to create a basic Area chart as well as configure sett
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>[Polar Area](Polar_Plot/Polar_Area_Chart)</td></tr>
 <tr><td>Radar</td><td>[Radar Area](Radar_Plot/Radar_Area_Chart)</td></tr>
-<tr><td>Scatter</td><td>[Scatter Area](Scatter_Plot/Scatter_Area_Chart)</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>[Stock Area](../Stock_Charts/Series/Area)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td>[Spline Area](Spline_Area_Chart)</td></tr>

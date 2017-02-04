@@ -13,12 +13,31 @@ A step line chart is a line chart in which points are connected by horizontal an
 
 Step line charts are used to visualize changes occurring at irregular intervals: for example, changes in tax rates or interest rates. While the line chart emphasizes the trend in data over time, the step line chart draws attention from the trend to highlight periods with no change and emphasize the exact time of each change as well as its magnitude.
 
-The Step Line and Line chart types share almost all the settings, so this article explains just how to create a basic Step Line chart and configure its only special setting – step direction. To learn about other settings, see the [Line Chart](Line_Chart) article.
+The Step Line and Line chart types share almost all the settings, so this article explains just how to create a basic Step Line chart and configure its only special setting – step direction. To learn about other settings, read the [Line Chart](Line_Chart) article. You can also see the table below to get a brief overview of the Step Line Chart's characteristics:
 
-See also:
-
-* [General Settings](General_Settings) (settings that affect all chart types)
-* {api:anychart.core.cartesian.series.StepLine}anychart.core.cartesian.series.StepLine{api} (a full list of methods available for the Step Line series).
+<table border="1" class="dtTABLE">
+<tr><th colspan=2>API</th></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.StepLine}anychart.core.cartesian.series.StepLine{api}</td></tr>
+<tr><th colspan=2>DATA</th></tr>
+<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>N/A</td></tr>
+<tr><td>Vertical</td><td>[Vertical Step Line](Vertical_Charts/Vertical_Step_Line_Chart)</td></tr>
+<tr><td>3D</td><td>N/A</td></tr>
+<tr><td>Error Bars</td><td>[Step Line Chart with Error Bars](Error_Chart)</td></tr>
+<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>[Stock Step Line](../Stock_Charts/Series/Step_Line)</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td>[Line](Line_Chart)</td></tr>
+<tr><td>[Spline](Spline_Chart)</td></tr>
+<tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td><a href="http://www.anychart.com/chartopedia/chart-types/stepline-chart/" target="_blank">Chartopedia: Step Line Chart</a></td></tr>
+<tr><td>[General Settings](General_Settings)</td></tr>
+</table>
 
 ##Quick Start
 
