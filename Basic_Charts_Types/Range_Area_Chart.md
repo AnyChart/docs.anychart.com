@@ -49,6 +49,18 @@ This article explains how to create a basic Range Area chart as well as configur
 
 To create a Range Area series, use the {api:anychart.charts.Cartesian#rangeArea}rangeArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor).
 
+...you need to specify these two values by using the "low" and "high" parameters. That is how it looks like in object notation:
+
+```
+var data = [
+  {x: "January", low: 0.7, high: 6.1},
+  {x: "February", low: 0.6, high: 6.3},
+  {x: "March", low: 1.9, high: 8.5},
+  {x: "April", low: 3.1, high: 10.8},
+  {x: "May", low: 5.7, high: 14.4}
+];
+```
+
 The following sample demonstrates how a basic Range Area chart is created:
 
 ```
