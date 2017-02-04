@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a data set
-    var dataSet = anychart.data.set([
+    var data = anychart.data.set([
       ["January", 12000, 10000],
       ["February", 15000, 12000],
       ["March", 16000, 18000],
@@ -19,8 +19,8 @@
     ]);
 
     // map the data
-    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
-    var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+    var seriesData_1 = data.mapAs({x: [0], value: [1]});
+    var seriesData_2 = data.mapAs({x: [0], value: [2]});
 
     // create a chart
     var chart = anychart.area();

@@ -10,17 +10,17 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a data set
-    var dataSet = anychart.data.set([
-      ["January", 12000, 10000],
-      ["February", 15000, 12000],
-      ["March", 16000, 18000],
-      ["April", 15000, 11000],
-      ["May", 14000, 9000]
+    var data = anychart.data.set([
+      ["January", 0.7, 6.1, 8.1, 12.6],
+      ["February", 0.6, 6.3, 8.5, 12.2],
+      ["March", 1.9, 8.5, 10.3, 13.1],
+      ["April", 3.1, 10.8, 13.4, 15.9],
+      ["May", 5.7, 14.4, 14.9, 16.4]
     ]);
 
     // map the data
-    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
-    var seriesData_2 = dataSet.mapAs({x: [0], value: [2], marker: [3]});
+    var seriesData_1 = data.mapAs({x: [0], low: [1], high: [2]});
+    var seriesData_2 = data.mapAs({x: [0], low: [3], high: [4]});
 
     // create a chart
     var chart = anychart.area();
@@ -29,7 +29,7 @@
     chart.interactivity().hoverMode("single");
 
     // create the first series, set the data and name
-    var series1 = chart.area(seriesData_1);
+    var series1 = chart.rangeArea(seriesData_1);
     series1.name("2004");
 
     // configure the visual settings of the first series
@@ -41,25 +41,26 @@
     series1.selectStroke("#00cc99", 4, "10 5", "round");
 
     // create the second series, set the data and name  
-    var series2 = chart.area(seriesData_2);
+    var series2 = chart.rangeArea(seriesData_2);
     series2.name("2005");
 
     // configure the visual settings of the second series
     series2.fill("#0066cc", 0.3);
     series2.hoverFill("#0066cc", 0.3);
     series2.selectFill("#0066cc", 0.5);
+    series2.hatchFill("zigzag", "#808080", 1, 15);
     series2.stroke("#0066cc");
     series2.hoverStroke("#0066cc", 2);
     series2.selectStroke("#0066cc", 4);
-
+    
     // set the chart title
-    chart.title("Area Chart: Visual Settings");
+    chart.title("Range Area Chart: Visual Settings");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
     xAxis.title("Month");
     var yAxis = chart.yAxis();
-    yAxis.title("Sales, $");
+    yAxis.title("Temperature, °C");
 
     // set the container id
     chart.container("container");
