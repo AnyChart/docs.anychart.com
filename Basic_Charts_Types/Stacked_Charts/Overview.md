@@ -29,7 +29,7 @@ chart.yScale().stackMode("value");
 
 Here is a basic sample of a stacked column chart:
 
-{sample}BCT\_General\_Settings\Stacking_01{sample}
+{sample}BCT\_Stacking\_01{sample}
 
 ## Percent Stacking
 
@@ -47,7 +47,7 @@ Percent stacked charts usually need some fine tuning to get going:
 
 ### Scale Interval
 
-Setting scale to percent stacked mode will force it's [minimum and maximum](./Axes_and_Grids/Scales#minimum_and_maximum) to 0 and 100 but tick interval will remain auto-calculated. If you want to change interval use ticks interval settings:
+Setting scale to percent stacked mode will force it's [minimum and maximum](/Axes_and_Grids/Scales#minimum_and_maximum) to 0 and 100 but tick interval will remain auto-calculated. If you want to change interval use ticks interval settings:
 
 ```
 // set stacking mode for the default primary value scale
@@ -58,7 +58,7 @@ chart.yScale().ticks().interval(25);
 
 ### Axis Percent Labels
 
-To add percent symbol to axis labels use [Axes Labels](./Axes_and_Grids/Axes_Labels_Formatting) formatting:
+To add percent symbol to axis labels use [Axes Labels](/Axes_and_Grids/Axes_Labels_Formatting) formatting:
 
 ```
 // set axis labels formatting
@@ -67,7 +67,7 @@ chart.yAxis().labels().textFormatter("{%Value}%");
 
 ### Tooltips and Labels
 
-To add percent symbol and show percentage instead (or in addition to) in tooltips and labels use [Text Formatters](./Common_Settings/Text_Formatters):
+To add percent symbol and show percentage instead (or in addition to) in tooltips and labels use [Text Formatters](/Common_Settings/Text_Formatters):
 
 ```
 // set tooltip formatting
@@ -76,7 +76,7 @@ chart.tooltip().textFormatter("{%yPercentOfCategory}%");
 
 Here is a sample percent stacked chart with all typical settings put together:
 
-{sample}BCT\_General\_Settings\Stacking_02{sample}
+{sample}BCT\_Stacking\_02{sample}
 
 ## Combination
 
@@ -111,7 +111,7 @@ chart.column(seriesData_5).yScale(yScale3);
 chart.column(seriesData_6).yScale(yScale3);
 ```
 
-{sample}BCT\_General\_Settings\Stacking_03{sample}
+{sample}BCT\_Stacking\_03{sample}
 
 If you do this with value stacking mode you should not forget about minimum and maximum auto-calculation and sync axes. The easiest way is to set the same values to minimums and maximums:
 
@@ -147,7 +147,7 @@ else
 
 Here is a sample of clustered value stacked column chart with synced scales:
 
-{sample}BCT\_General\_Settings\Stacking_04{sample}
+{sample}BCT\_Stacking\_04{sample}
 
 
 ### Overlay
@@ -173,7 +173,7 @@ chart.column(seriesData_3).yScale(yScale2);
 chart.column(seriesData_4).yScale(yScale2);
 ```
 
-{sample}BCT\_General\_Settings\Stacking_05{sample}
+{sample}BCT\_Stacking\_05{sample}
 
 ### With unstackable series
 
@@ -189,7 +189,7 @@ chart.column(seriesData_2);
 chart.line(seriesData_3);
 ```
 
-{sample}BCT\_General\_Settings\Stacking_06{sample}
+{sample}BCTStacking_06{sample}
 
 ## Supported Series Samples
 

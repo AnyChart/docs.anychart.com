@@ -17,15 +17,15 @@
 		["Autumn", 16000, 16000, 16000]
 	]);
 
-	var dataSet1 = data.mapAs({x: [0], value: [1]});
-	var dataSet2 = data.mapAs({x: [0], value: [2]});
-	var dataSet3 = data.mapAs({x: [0], value: [3]});
+	var dataSet1 = data.mapAs({x: 0, value: 1});
+	var dataSet2 = data.mapAs({x: 0, value: 2});
+	var dataSet3 = data.mapAs({x: 0, value: 3});
 
 	// set chart type
-	chart = anychart.area3d();
+	chart = anychart.area();
 
 	// setting title
-	chart.title("Percent Stacked 3D Column Chart");
+	chart.title("Percent Stacked Step Area Chart");
 
 	// set axes titles
 	var xAxis = chart.xAxis();
@@ -37,11 +37,11 @@
 	yScale.stackMode("percent");
 
 	// set data
-	var series1 = chart.area(dataSet1);
+	var series1 = chart.stepArea(dataSet1);
 	series1.name("Sales 2009");
-	var series2 = chart.area(dataSet2);
+	var series2 = chart.stepArea(dataSet2);
 	series2.name("Sales 2010");
-	var series3 = chart.area(dataSet3);
+	var series3 = chart.stepArea(dataSet3);
 	series3.name("Sales 2011");
 
 	// draw chart
