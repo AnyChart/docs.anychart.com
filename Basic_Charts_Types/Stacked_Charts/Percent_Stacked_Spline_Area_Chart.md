@@ -12,7 +12,7 @@ Concept of stacking in AnyChart is explain in [Stacked Charts](Overview) article
 
 ## Chart
 
-To build a Percent Stacked Spline Area Chart you should create a simple multi-series [../Spline_Area_Chart] and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to *percent*:
+To build a Percent Stacked Spline Area Chart you should create a simple multi-series (Spline Area Chart)[../Spline_Area_Chart] and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to *percent*:
 
 ```
 // create a chart
@@ -27,4 +27,4 @@ chart.splineArea(data2);
 
 A sample of a percent stacked spline area chart:
 
-{sample}BCT_Percent-Stacked\_Area-SplineArea\_Charts\_02{sample}
+{sample}BCT\_Percent\_Stacked\_Spline\_Area\_Chart{sample}

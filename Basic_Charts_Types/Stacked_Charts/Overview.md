@@ -189,7 +189,7 @@ chart.column(seriesData_2);
 chart.line(seriesData_3);
 ```
 
-{sample}BCTStacking_06{sample}
+{sample}BCT\_Stacking\_06{sample}
 
 ## Supported Series Samples
 
