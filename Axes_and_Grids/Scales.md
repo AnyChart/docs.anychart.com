@@ -8,7 +8,6 @@
   * [Ordinal](#ordinal)
   * [Date Time](#date_time)
 * [Stack Mode](#stack_mode)
-  * [Clustered](#clustered)
 * [Minimum and Maximum](#minimum_and_maximum) 
 * [Soft Minimum and Soft Maximum](#soft_minimum_and_soft_maximum) 
 * [Stick to Zero](#stick_to_zero)
@@ -23,7 +22,7 @@ Scales allow you to control such features as minimum and maximum scale values, s
   
 In this section main scales options are explained.
   
-API starting point for everything you can do with scales is: {api:anychart.scales}scales{api} namespace.
+API starting point for everything you can do with scales is: {api:anychart.scales}anychart.scales{api} namespace.
 
 ## Types
 

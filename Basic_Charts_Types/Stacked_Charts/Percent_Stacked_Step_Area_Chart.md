@@ -12,7 +12,7 @@ Concept of stacking in AnyChart is explain in [Stacked Charts](Overview) article
 
 ## Chart
 
-To build a Percent Stacked Step Area Chart you should create a simple multi-series (Step Area Chart)[../Step_Area_Chart] and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to *percent*:
+To build a Percent Stacked Step Area Chart you should create a simple multi-series [Step Area Chart](../Step_Area_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to *percent*:
 
 ```
 // create a chart
