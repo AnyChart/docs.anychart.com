@@ -27,7 +27,7 @@ This article explains how to create a basic Bar chart as well as configure  sett
 <tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[Stacked Bar](Stacked_Charts/Stacked_Bar_Chart), [Percent Stacked Bar](Stacked_Charts/Persent_Stacked_Bar_Chart)</td></tr>
+<tr><td>Stacked</td><td>[Stacked Bar](Stacked/Value/Bar_Chart), [Percent Stacked Bar](Stacked/Perсent/Bar_Chart)</td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
 <tr><td>3D</td><td>[3D Bar](3D_Charts/3D_Bar_Chart)</td></tr>
 <tr><td>Error Bars</td><td>[Bar Chart with Error Bars](Error_Chart)</td></tr>
@@ -184,12 +184,12 @@ In case of Bar charts, there are some peculiarities in formatting the text of to
 
 Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
 
-In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts (Overview)](Stacked_Charts/Overview).
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts (Overview)](Stacked/Overview).
 
 To learn about the stacked versions of the Bar chart, see:
 
-* [Stacked Bar](Stacked_Charts/Stacked_Bar_Chart)
-* [Percent Stacked Bar](Stacked_Charts/Persent_Stacked_Bar_Chart)
+* [Stacked Bar](Stacked/Value/Bar_Chart)
+* [Percent Stacked Bar](Stacked/Perсent/Bar_Chart)
 
 ### 3D Bar
 

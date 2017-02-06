@@ -28,7 +28,7 @@ This article explains how to create a basic Column chart as well as configure se
 <tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[Stacked Column](Stacked_Charts/Stacked_Column_Chart), [Percent Stacked Column](Stacked_Charts/Persent_Stacked_Column_Chart)</td></tr>
+<tr><td>Stacked</td><td>[Stacked Column](Stacked/Value/Column_Chart), [Percent Stacked Column](Stacked/Perсent/Column_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Bar](Bar_Chart)</td></tr>
 <tr><td>3D</td><td>[3D Column](3D_Charts/3D_Column_Chart)</td></tr>
 <tr><td>Error Bars</td><td>[Column Chart with Error Bars](Error_Chart)</td></tr>
@@ -185,12 +185,12 @@ In case of Column charts, there are some peculiarities in formatting the text of
 
 Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
 
-In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts (Overview)](Stacked_Charts/Overview).
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts (Overview)](Stacked/Overview).
 
 To learn about the stacked versions of the Column chart, see:
 
-* [Stacked Column](Stacked_Charts/Stacked_Column_Chart)
-* [Percent Stacked Column](Stacked_Charts/Persent_Stacked_Column_Chart)
+* [Stacked Column](Stacked/Value/Column_Chart)
+* [Percent Stacked Column](Stacked/Perсent/Column_Chart)
 
 <a name='vertical_column'></a>
 ### Vertical Column (Bar)

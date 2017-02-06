@@ -199,13 +199,13 @@ chart.line(seriesData_3);
 
 ## Supported Series Samples
 
-* [Stacked Area Chart](Stacked_Area_Chart)
-* [Stacked Bar Chart](Stacked_Bar_Chart)
-* [Stacked Column Chart](Stacked_Column_Chart)
-* [Stacked Step Area Chart](Stacked_Step_Area_Chart)
-* [Stacked Stick Chart](Stacked_Area_Chart)
-* [Percent Stacked Area Chart](Percent_Stacked_Area_Chart)
-* [Percent Stacked Bar Chart](Percent_Stacked_Bar_Chart)
-* [Percent Stacked Column Chart](Percent_Stacked_Column_Chart)
-* [Percent Stacked Step Area Chart](Percent_Stacked_Step_Area_Chart)
-* [Percent Stacked Stick Chart](Percent_Stacked_Stick_Chart)
+* [Stacked Area Chart](./Value/Area_Chart)
+* [Stacked Bar Chart](./Value/Bar_Chart)
+* [Stacked Column Chart](./Value/Column_Chart)
+* [Stacked Step Area Chart](./Value/Step_Area_Chart)
+* [Stacked Stick Chart](./Value/Stick_Chart)
+* [Percent Stacked Area Chart](./Percent/Area_Chart)
+* [Percent Stacked Bar Chart](./Percent/Bar_Chart)
+* [Percent Stacked Column Chart](./Percent/Column_Chart)
+* [Percent Stacked Step Area Chart](./Percent/Step_Area_Chart)
+* [Percent Stacked Stick Chart](./Percent/Stick_Chart)

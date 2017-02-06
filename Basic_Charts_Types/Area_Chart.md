@@ -27,7 +27,7 @@ This article explains how to create a basic Area chart as well as configure sett
 <tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[Stacked Area](Stacked_Charts/Stacked_Area_Chart), [Percent Stacked Area](Stacked_Charts/Persent_Stacked_Area_Chart)</td></tr>
+<tr><td>Stacked</td><td>[Stacked Area](Stacked/Value/Area_Chart), [Percent Stacked Area](Stacked/Perсent/Area_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Vertical Area](Vertical_Charts/Vertical_Area_Chart)</td></tr>
 <tr><td>3D</td><td>[3D Area](3D_Charts/3D_Area_Chart)</td></tr>
 <tr><td>Error Bars</td><td>[Area Chart with Error Bars](Error_Chart)</td></tr>
@@ -147,16 +147,16 @@ In case of Area charts, there are some peculiarities in formatting the text of t
 
 Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
 
-In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts (Overview)](Stacked_Charts/Overview).
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts (Overview)](Stacked/Overview).
 
 To learn about the stacked versions of the Area chart and its modifications, see:
 
-* [Stacked Area](Stacked_Charts/Stacked_Area_Chart)
-* [Percent Stacked Area](Stacked_Charts/Persent_Stacked_Area_Chart)
-* [Stacked Spline Area](Stacked_Charts/Stacked_Spline_Area_Chart)
-* [Percent Stacked Spline Area](Stacked_Charts/Persent_Stacked_Spline_Area_Chart)
-* [Stacked Step Area](Stacked_Charts/Stacked_Step_Area_Chart)
-* [Percent Stacked Step Area](Stacked_Charts/Persent_Stacked_Area_Chart)
+* [Stacked Area](Stacked/Value/Area_Chart)
+* [Percent Stacked Area](Stacked/Perсent/Area_Chart)
+* [Stacked Spline Area](Stacked/Value/Spline_Area_Chart)
+* [Percent Stacked Spline Area](Stacked/Perсent/Spline_Area_Chart)
+* [Stacked Step Area](Stacked/Value/Step_Area_Chart)
+* [Percent Stacked Step Area](Stacked/Perсent/Area_Chart)
 
 ### Vertical Area
 
