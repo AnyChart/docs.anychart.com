@@ -26,6 +26,7 @@ dataTable.addData(get_data());
 
 // map loaded data
 var mapping = dataTable.mapAs();
+mapping.addField("open", 1, "first");
 mapping.addField('high', 2, 'max');
 mapping.addField('low', 3, 'min');
 mapping.addField('close', 4, 'last');
@@ -37,8 +38,11 @@ chart = anychart.stock();
 var plot = chart.plot(0);
 
 // create stochastic indicator
-var stochastic = plot.stochastic(mapping).series();
-stochastic.stroke('#bf360c');
+var stochastic = plot.stochastic(mapping, 10, "EMA", 10, "SMA", 20);
+stochastic_k = stochastic.kSeries();
+stochastic_k.stroke("#bf360c");
+stochastic_d = stochastic.dSeries();
+stochastic_d.stroke("#ff6d00");
 ```
 
 Here is a live sample:
@@ -47,18 +51,31 @@ Here is a live sample:
 
 ## Indicator parameters
 
-Stochastic indicator has a lot of optional parameters: a period for the %K value, the moving average type of the indicator for the %K value, a period for the rounded %K value, the moving average type of the indicator for the %D value, a period for the %D value, and series types of the %K and %D values. None of them are necessary, as all have default values, but can be set. The following code sample will lead to the stochastic indicator which %K value is calculated with a period of 10 and through the EMA type and %D value is calculated with the period of 20 and through the SMA type.
+Stochastic indicator has a lot of optional parameters: 
+ - a period for the %K value
+ - the moving average type of the indicator for the %K value
+ - a period for the rounded %K value
+ - the moving average type of the indicator for the %D value
+ - a period for the %D value
+ - series type of the %K value
+ - series type of the %D value
+
+None of them are necessary, as all have default values, but can be set. The following code sample will lead to the stochastic indicator which %K value is calculated with a period of 10 through the EMA type and %D value is calculated with the period of 20 and through the SMA type.
 
 ```
 var stochastic = plot.stochastic(mapping, 10, EMA, 10, SMA, 20);
+stochastic_k = stochastic.kSeries();
+stochastic_d = stochastic.dSeries();
 ```
+
+Note that this indicator has several series and uses {api:}kSeries(){api} and {api:}dSeries(){api} for creating the appropriate series.
 
 The series type defining is not necessary, as it is possible to change the series type any time using the {api:anychart.core.stock.series.Column#seriesType}seriesType(){api} method.
 
 
 ## Visualization
 
-Stochastic indicator visualization can be adjusted the same way as the others. It depends on the chosen series type. The sample below demonstrates two plots with KDJ indicators with different parameters and visualisation settings.
+Stochastic indicator visualization can be adjusted the same way as the others. It depends on the chosen series type. The sample below demonstrates two plots with stochastic indicators with different parameters and visualisation settings.
 
 ```
 // create first stochastic indicator of default series type

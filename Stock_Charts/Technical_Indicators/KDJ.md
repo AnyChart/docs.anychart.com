@@ -47,7 +47,16 @@ Here is a live sample:
 
 ## Indicator parameters
 
-KDJ indicator has a lot of optional parameters: a period for the %K value, the moving average type of the indicator for the %K value, a period for the rounded %K value, the moving average type of the indicator for the %D value, a period for the %D value, multipliers of the %K and %D values for %J value calculating and series types of the %K, %D and %J values. None of them are necessary, as all have default values, but can be set. The following code sample will lead to the KDJ indicator which %K value is calculated with a period of 10 and through the EMA type and %D value is calculated with the period of 20 and through the SMA type.
+KDJ indicator has a lot of optional parameters: 
+- a period for the %K value 
+- the moving average type of the indicator for the %K value
+- a period for the smoothed %K value
+- the moving average type of the indicator for the %D value
+- a period for the %D value
+- multipliers of the %K and %D values for %J value calculating 
+- series types of the %K, %D and %J values. 
+
+None of these parameters are necessary, as all have default values, but can be set. The following code sample will lead to the KDJ indicator which %K value is calculated with a period of 10 and through the EMA type and %D value is calculated with the period of 20 and through the SMA type.
 
 ```
 var kdj = plot.kdj(mapping, 10, EMA, 10, SMA, 20);
