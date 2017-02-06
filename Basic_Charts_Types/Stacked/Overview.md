@@ -17,7 +17,7 @@
 
 The stacked charts are a popular visual aid used for categorizing and comparing the parts of a whole. Each element in the chart represents a whole, and the segments represent parts of that whole. Different colors used for the segments distinguish the categories. Stacked charts are also known as stacked graphs. 
 
-In AnyChart stacking is a [special mode of a Scale](/Axes_and_Grids/Scales#stack_mode) set by {api:anychart.scales.Linear#stackMode}stackMode(){api} method, and [several types of series](#supported_series_samples) are compatible with this mode. If a series can not be stacked it simply [ignores the mode](#with_unstackable_series).
+In AnyChart stacking is a [special mode of a Scale](/Axes_and_Grids/Scales#stack_mode) set by [stackMode()](https://api.anychart.com/latest/?entry=stackMode) method, and [several types of series](#supported_series_samples) are compatible with this mode. If a series can not be stacked it simply [ignores the mode](#with_unstackable_series).
 
 There are two modes of stacking: **value** and **percent**. These article explains everything there is to know about stacking settings and options.
 
@@ -209,3 +209,17 @@ chart.line(seriesData_3);
 * [Percent Stacked Column Chart](./Percent/Column_Chart)
 * [Percent Stacked Step Area Chart](./Percent/Step_Area_Chart)
 * [Percent Stacked Stick Chart](./Percent/Stick_Chart)
+* [Vertical Stacked Area Chart](./Value/Vertical_Area_Chart)
+* [Vertical Stacked Step Area Chart](./Value/Vertical_Step_Area_Chart)
+* [Vertical Stacked Stick Chart](./Value/Vertical_Stick_Chart)
+* [Vertical Percent Stacked Area Chart](./Percent/Vertical_Area_Chart)
+* [Vertical Percent Stacked Step Area Chart](./Percent/Vertical_Step_Area_Chart)
+* [Vertical Percent Stacked Stick Chart](./Percent/Vertical_Stick_Chart)
+* [3D Stacked Area Chart](./Value/3D/Area_Chart)
+* [3D Stacked Bar Chart](./Value/3D_Bar_Chart)
+* [3D Stacked Column Chart](./Value/3D_Column_Chart)
+* [3D Percent Stacked Area Chart](./Percent/3D_Area_Chart)
+* [3D Percent Stacked Bar Chart](./Percent/3D_Bar_Chart)
+* [3D Percent Stacked Column Chart](./Percent/3D_Column_Chart)
+* [3D Vertical Stacked Area Chart](./Value/3D_Vertical_Area_Chart)
+* [3D Vertical Percent Stacked Area Chart](./Percent/3D_Vertical_Area_Chart)
