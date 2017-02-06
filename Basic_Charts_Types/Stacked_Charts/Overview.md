@@ -17,7 +17,7 @@
 
 The stacked charts are a popular visual aid used for categorizing and comparing the parts of a whole. Each element in the chart represents a whole, and the segments represent parts of that whole. Different colors used for the segments distinguish the categories. Stacked charts are also known as stacked graphs. 
 
-In AnyChart stacking is a [special mode of a Scale](/Axes_and_Grids/Scales#stack_mode) set by {api:anychart.scales.Linear#stackMode}stackMode(){} method, and [several types of series](#supported_series_samples) are compatible with this mode. If a series can not be stacked it simply [ignores the mode](#with_unstackable_series).
+In AnyChart stacking is a [special mode of a Scale](/Axes_and_Grids/Scales#stack_mode) set by {api:anychart.scales.Linear#stackMode}stackMode(){api} method, and [several types of series](#supported_series_samples) are compatible with this mode. If a series can not be stacked it simply [ignores the mode](#with_unstackable_series).
 
 There are two modes of stacking: **value** and **percent**. These article explains everything there is to know about stacking settings and options.
 
@@ -46,7 +46,7 @@ To create a **percent stacked** chart you need to set scale stackMode to "percen
 var chart = anychart.column();
 
 // set stacking mode for the default primary value scale
-chart.yScale().stackMode("value");
+chart.yScale().stackMode("percent");
 ```
 
 Percent stacked charts usually need some fine tuning to get going:
