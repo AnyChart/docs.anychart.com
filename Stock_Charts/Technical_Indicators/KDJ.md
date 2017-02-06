@@ -64,7 +64,9 @@ None of these parameters are necessary, as all have default values, but can be s
 var kdj = plot.kdj(mapping, 10, EMA, 10, SMA, 20);
 ```
 
-The series type defining is not necessary, as it is possible to change the series type any time using the {api:anychart.core.stock.series.Column#seriesType}seriesType(){api} method.
+There are three series that form the KDJ indicator, so there is a methods for each of them: {api:anychart.core.stock.indicators.KDJ#kSeries}kSeries(){api} for drawing the %K series, {api:anychart.core.stock.indicators.KDJ#dSeries}dSeries(){api} for drawing the %D series and the {api:anychart.core.stock.indicators.KDJ#jSeries}jSeries(){api} for drawing the %J series.
+
+The series type defining is not necessary, as it is possible to change the series type any time using the {api:anychart.core.stock.series.Column#seriesType}seriesType(){api} method. 
 
 
 ## Visualization
