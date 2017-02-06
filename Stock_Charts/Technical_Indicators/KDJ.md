@@ -37,8 +37,10 @@ chart = anychart.stock();
 var plot = chart.plot(0);
 
 // create KDJ indicator
-var kdj = plot.kdj(mapping).series();
-kdj.stroke('#bf360c');
+var kdj = plot.kdj(mapping, 10, "EMA", 10, "SMA", 20);
+kdj.kSeries().stroke("#bf360c");
+kdj.dSeries().stroke("#02660c");
+kdj.jSeries().stroke("#0228b2");
 ```
 
 Here is a live sample:
@@ -71,12 +73,16 @@ KDJ indicator visualization can be adjusted the same way as the others. It depen
 
 ```
 // create first KDJ indicator of default series type
-var kdj_1 = plot_0.kdj(mapping, 10, EMA, 10, SMA, 20).series();
-kdj_1.stroke('#bf360c');
+var kdj_1 = plot_0.kdj(mapping, 10, "EMA", 10, "SMA", 20);
+kdj_1.kSeries().stroke("#bf360c");
+kdj_1.dSeries().stroke("#02660c");
+kdj_1.jSeries().stroke("#0228b2");
 
 // create second KDJ indicator of column series
-var kdj_2 = plot_1.kdj(mapping, 30, SMA, 30, EMA, 15).series();
-kdj_2.fill('#ff6d00');
+var kdj_2 = plot_1.kdj(mapping, 14, "EMA", 5, "EMA", 5, -2, 3, "spline", "spline", "spline");
+kdj_2.kSeries().stroke("#bf360c");
+kdj_2.dSeries().stroke("#02660c");
+kdj_2.jSeries().stroke("#0228b2");
 ```
 
 {sample}STOCK\_Technical\_Indicators\_KDJ\_02{sample}

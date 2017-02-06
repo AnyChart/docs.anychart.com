@@ -72,7 +72,7 @@ stochastic_k = stochastic.kSeries();
 stochastic_d = stochastic.dSeries();
 ```
 
-Note that this indicator has several series and uses {api:}kSeries(){api} and {api:}dSeries(){api} for creating the appropriate series.
+Note that this indicator has several series and uses {api:anychart.core.stock.indicators.Stochastic#kSeries}kSeries(){api} and {api:anychart.core.stock.indicators.Stochastic#dSeries}dSeries(){api} for creating the appropriate series.
 
 The series type defining is not necessary, as it is possible to change the series type any time using the {api:anychart.core.stock.series.Column#seriesType}seriesType(){api} method.
 

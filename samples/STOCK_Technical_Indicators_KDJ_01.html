@@ -17,6 +17,7 @@
 
         // map loaded data
         var mapping = dataTable.mapAs();
+        mapping.addField("open", 1, "first");
         mapping.addField("high", 2, "max");
         mapping.addField("low", 3, "min");
         mapping.addField("close", 4, "last");
@@ -28,13 +29,15 @@
         var plot = chart.plot(0);
 
         // create line series
-        var lineSeries = plot.line(mapping);
-        lineSeries.name("CSCO");
-        lineSeries.stroke("2px #64b5f6");
+        var ohlcSeries = plot.ohlc(mapping);
+        ohlcSeries.name("CSCO");
+        ohlcSeries.stroke("2px #64b5f6");
 
         // create KDJ indicator
-        var kdj = plot.kdj(mapping, 10, EMA, 10, SMA, 20).series();
-        kdj.stroke("#bf360c");
+        var kdj = plot.kdj(mapping, 10, "EMA", 10, "SMA", 20);
+        kdj.kSeries().stroke("#bf360c");
+        kdj.dSeries().stroke("#02660c");
+        kdj.jSeries().stroke("#0228b2");
 
         // create scroller series with mapped data
         chart.scroller().line(mapping);
