@@ -27,7 +27,7 @@ This article explains how to create a basic Bar chart as well as configure  sett
 <tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
-<tr><td>Stacked</td><td>[Stacked Bar](Stacked/Value/Bar_Chart), [Percent Stacked Bar](Stacked/Perсent/Bar_Chart)</td></tr>
+<tr><td>Stacked</td><td>[Stacked Bar](Stacked/Value/Bar_Chart), [Percent Stacked Bar](Stacked/Percent/Bar_Chart)</td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
 <tr><td>3D</td><td>[3D Bar](3D_Charts/3D_Bar_Chart)</td></tr>
 <tr><td>Error Bars</td><td>[Bar Chart with Error Bars](Error_Chart)</td></tr>
@@ -189,7 +189,7 @@ In AnyChart, you can enable a special mode of the scale to make series stack tog
 To learn about the stacked versions of the Bar chart, see:
 
 * [Stacked Bar](Stacked/Value/Bar_Chart)
-* [Percent Stacked Bar](Stacked/Perсent/Bar_Chart)
+* [Percent Stacked Bar](Stacked/Percent/Bar_Chart)
 
 ### 3D Bar
 
