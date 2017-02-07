@@ -49,7 +49,7 @@ Multiple Legends might be useful when you need to show different data in one map
 
 {sample}Maps\_Legend\_02{sample}
 
-Note that the colorRange is activated but it displays only the first series color changes. This is so because of two reasons: first - the second series has no values due to its absence; second - the colorRange is able to work only with one series. Read more about ColorRange [here](../ColorRange).
+Note that the colorRange is activated but it displays only the first series color changes. This is so because of two reasons: first - the second series has no values due to its absence; second - the colorRange is able to work only with one series. Read more about ColorRange [here](./ColorRange).
 
 
 ## Thresholds in Legend
