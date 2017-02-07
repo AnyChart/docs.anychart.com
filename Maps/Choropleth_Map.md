@@ -162,7 +162,7 @@ And there's the sample with the colorRange of linear type:
 {sample}Maps\_Choropleth\_04{sample}
 
 <br>
-Read more about ColorRange [here](../Color_Range.md).
+Read more about ColorRange [here](./ColorRange).
 
 ## Advantages and Disadvantages
 
@@ -190,9 +190,7 @@ Variations within map units are hidden, and for this reason smaller units are be
 <br>
 
 If you are still in doubt about using a choropleth, check those which are a bit similar:
-- [Dot Density Maps](../Dot_Density_Map)
-- [Graduated/Proportional Symbol Maps](../Proportional_Symbol_Map)
-- [Cartograms](../Cartogram)
+- [Graduated/Proportional Symbol Maps](./Proportional_Symbol_Map)
 <br>
 These 3 map types can all handle raw data (e.g., simple counts, totals) opposite to choropleths that require the standardized data.
 

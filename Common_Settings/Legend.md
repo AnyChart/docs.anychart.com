@@ -74,7 +74,7 @@ Sometimes you need the title to a legend and sometimes it is superfluous: to ena
   title.enabled(true);
 ```
 
-To specify and format your own title for the legend use {api:anychart.core.ui.Title#text}**.text()**{api} method of a {api:anychart.core.ui.Legend#title}**.title()**{api}. For more information about title settings please refer to the [Title](../Appearance_Settings/Title) article.
+To specify and format your own title for the legend use {api:anychart.core.ui.Title#text}**.text()**{api} method of a {api:anychart.core.ui.Legend#title}**.title()**{api}. For more information about title settings please refer to the [Title](../Appearance_Settings/Text_Settings) article.
 
 ```
   var title = chart.legend().title();
@@ -108,7 +108,7 @@ As far as a legend is a part of a chart, its appearance should be tuned properly
 
 ### Background
 
-Legend background allows you to configure the border and the inner color of the legend. Method {api:anychart.core.ui.Legend#background}**.background()**{api} controls background visual appearance. To learn more about background setting please study the [background tutorial](Background).
+Legend background allows you to configure the border and the inner color of the legend. Method {api:anychart.core.ui.Legend#background}**.background()**{api} controls background visual appearance. To learn more about background setting please study the [background tutorial](../Appearance_Settings/Background).
 
 {sample}AS\_Legend\_05{sample}
 

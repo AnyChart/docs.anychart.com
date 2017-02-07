@@ -23,7 +23,7 @@ with links to tutorials where you can find out how to create them.
 <tr><td>[Gantt Chart](../Gantt_Chart/Quick_Start)</td><td></td><td></td></tr>
 <tr><td>[Funnel Chart](../Basic_Charts_Types/Funnel_Chart)</td><td>Yes</td><td>No</td></tr>
 <tr><td>[Line Chart](../Basic_Charts_Types/Line-Spline-StepLine_Charts)</td><td>Yes</td><td>Yes</td></tr>
-<tr><td>[Maps - Geo Maps](../Maps/Overview)</td><td></td><td></td></tr>
+<tr><td>[Maps - Geo Maps](../Maps/Quick_Start)</td><td></td><td></td></tr>
 <tr><td>[Maps - Colored Choropleth](../Maps/Choropleth_Map)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Maps - Proportional Bubbles](../Maps/Proportional_Symbol_Map)</td><td>Yes</td><td>Yes</td></tr>
 <tr><td>[Marker Chart](../Basic_Charts_Types/Marker_Chart)</td><td>Yes</td><td>Yes</td></tr>

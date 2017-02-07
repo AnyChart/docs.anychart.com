@@ -408,7 +408,7 @@ It's also possible to emphasize any other point besides the special ones. To col
 
 ###HatchFill
 
-AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch Fill tutorial](../Appearance_Settings/Hatch_Fill).
+AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. To see whole range of available hatch types see [Hatch Fill tutorial](../Appearance_Settings/Color_Management).
 Downwards you can see a couple of WinLoss Sparklines which we've colored with hatchFills using  special parameters such as {api:anychart.charts.Sparkline#negativeFill}**.negativeFill()**{api}, {api:anychart.charts.Sparkline#negativeHatchFill}**.negativeHatchFill**{api} parameter opposite to {api:anychart.graphics.vector.Fill}**fill()**{api} parameter used to colorize the series and set all series in light grey color.
 
 ```
@@ -431,7 +431,7 @@ It's also possible to add a hatchfill to a point through the data - if you need 
 
 {sample :width 688 :height 100}BCT\_Sparkline\_Chart\_18{sample}
 
-To learn more about hatch fills visit the [Hatch Tutorial](../Appearance_Settings/Hatch_Fill) page.
+To learn more about hatch fills visit the [Hatch Tutorial](../Appearance_Settings/Color_Management) page.
 
 ##Layout
 
