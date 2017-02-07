@@ -28,7 +28,7 @@ This article explains how to create a basic Bar chart as well as configure  sett
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>[Stacked Bar](Stacked/Value/Bar_Chart), [Percent Stacked Bar](Stacked/Percent/Bar_Chart)</td></tr>
-<tr><td>Vertical</td><td>N/A</td></tr>
+<tr><td>Vertical</td><td>[Bar](Bar_Chart)</td></tr>
 <tr><td>3D</td><td>[3D Bar](3D_Charts/3D_Bar_Chart)</td></tr>
 <tr><td>Error Bars</td><td>[Bar Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
@@ -37,7 +37,7 @@ This article explains how to create a basic Bar chart as well as configure  sett
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td>[Column](Column_Chart)</td></tr>
+<tr><td></td><td>[Column](Column_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td><a href="http://www.anychart.com/chartopedia/chart-types/bar-chart/" target="_blank">Chartopedia: Bar Chart</a></td></tr>
 <tr><td>[General Settings](General_Settings)</td></tr>

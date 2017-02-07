@@ -35,11 +35,11 @@ This article explains how to create a basic Range Area chart as well as configur
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>[Stock Range Area](../Stock_Charts/Series/Range_Area)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td>[Area](Area_Chart)</td></tr>
-<tr><td>[Spline Area](Spline_Area_Chart)</td></tr>
-<tr><td>[Step Area](Step_Area_Chart)</td></tr>
-<tr><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
-<tr><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
+<tr><td></td><td>[Area](Area_Chart)</td></tr>
+<tr><td></td><td>[Spline Area](Spline_Area_Chart)</td></tr>
+<tr><td></td><td>[Step Area](Step_Area_Chart)</td></tr>
+<tr><td></td><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
+<tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td><a href="http://www.anychart.com/chartopedia/chart-types/range-area-chart/" target="_blank">Chartopedia: Range Area Chart</a></td></tr>
 <tr><td>[General Settings](General_Settings)</td></tr>

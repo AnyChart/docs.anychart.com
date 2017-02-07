@@ -32,8 +32,8 @@ The Step Line and Line chart types share almost all the settings, so this articl
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>[Stock Step Line](../Stock_Charts/Series/Step_Line)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td>[Line](Line_Chart)</td></tr>
-<tr><td>[Spline](Spline_Chart)</td></tr>
+<tr><td></td><td>[Line](Line_Chart)</td></tr>
+<tr><td></td><td>[Spline](Spline_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td><a href="http://www.anychart.com/chartopedia/chart-types/stepline-chart/" target="_blank">Chartopedia: Step Line Chart</a></td></tr>
 <tr><td>[General Settings](General_Settings)</td></tr>

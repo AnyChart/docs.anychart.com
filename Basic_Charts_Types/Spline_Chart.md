@@ -30,8 +30,8 @@ The Line and Spline chart types share all the settings, so this article explains
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>[Stock Spline](../Stock_Charts/Series/Spline)</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td>[Line](Line_Chart)</td></tr>
-<tr><td>[Step Line](Step_Line_Chart)</td></tr>
+<tr><td></td><td>[Line](Line_Chart)</td></tr>
+<tr><td></td><td>[Step Line](Step_Line_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
 <tr><td><a href="http://www.anychart.com/chartopedia/chart-types/spline-chart/" target="_blank">Chartopedia: Spline Chart</a></td></tr>
 <tr><td>[General Settings](General_Settings)</td></tr>
