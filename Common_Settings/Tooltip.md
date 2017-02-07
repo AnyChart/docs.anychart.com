@@ -11,11 +11,10 @@
  * [Title](#title)
  * [Separator](#separator)
  * [Content](#content)
- * [Size](#size)
-* [Other Visual Settings](#other_visual_settings)
  * [Prefix and Postfix](#prefix_and_postfix)
- * [Background](#background)
- * [Out of chart](#out_of_chart)
+* [Size](#size)
+* [Background](#background)
+* [Out of chart](#out_of_chart)
 * [Position](#position)
  * [Fixed Tooltip Position](#fixed_tooltip_position)
 * [Hiding Time](#hiding_time)
@@ -237,7 +236,13 @@ seriesSpline.tooltip().textFormatter(function(e){
 
 **Note**: You can find information on custom tooltips and an example of using a chart as a tooltip in the [Interactivity article](../Common_Settings/Interactivity#creating_custom_tooltip)
 
-### Size
+### Prefix and Postfix
+
+Use {api:anychart.core.ui.Tooltip#valuePrefix}valuePrefix(){api} and {api:anychart.core.ui.Tooltip#valuePostfix}valuePostfix(){api} methods to add symbols, whole words or anything before/after tooltip content. These methods can be used to set dollar symbol as prefix ($) or degrees fahrenheit as postfix (°F).
+
+{sample}CS\_Tooltip\_11{sample}
+
+## Size
 
 Width and height can be also set for all tooltips at once or for the determined series. Use {api:anychart.core.ui.Tooltip#width}width(){api} and {api:anychart.core.ui.Tooltip#height}height(){api} to set the corresponding parameters. Don't forget to format the text of the tooltip properly to avoid text overflowing or to set the width corresponding to the maximum text length.
 
@@ -249,17 +254,7 @@ columnChart.tooltip().height(80);
 
 {sample}CS\_Tooltip\_17{sample}
 
-## Other Visual Settings
-
-This section describes how to adjust some visual settings that are not essential but can be quite useful.
-
-### Prefix and Postfix
-
-Use {api:anychart.core.ui.Tooltip#valuePrefix}valuePrefix(){api} and {api:anychart.core.ui.Tooltip#valuePostfix}valuePostfix(){api} methods to add symbols, whole words or anything before/after tooltip content. These methods can be used to set dollar symbol as prefix ($) or degrees fahrenheit as postfix (°F).
-
-{sample}CS\_Tooltip\_11{sample}
-
-### Background
+## Background
 
 Tooltip background appearance can be controlled using {api:anychart.core.ui.Tooltip#background}background(){api} method. More information about adjusting background can be found in [Background tutorial](../Appearance_Settings/Background).
 
@@ -275,7 +270,7 @@ That is how tooltip background with the settings from above looks like:
 
 {sample}CS\_Tooltip\_12{sample}
 
-### Out of chart
+## Out of chart
 
 In case when a tooltip on a chart is too big it may become a problem to demonstrate it within the chart bounds, you can allow the tooltip to be shown out of a chart. Set "true" to {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} to allow tooltips to leave the chart bounds.
 
@@ -351,7 +346,7 @@ tooltip.hideDelay(1000);
 
 ### Themes
 
-Tooltips can be adjusted using AnyChart Themes. Themes makes it possible to set the same settings for several charts. Here is a sample of adjusting tooltips using themes:
+Tooltips can be adjusted using [AnyChart Themes](../Appearance_Settings/Themes). Themes makes it possible to set the same settings for several charts. Here is a sample of adjusting tooltips using themes:
 
 ```
 var themeSettings = {
