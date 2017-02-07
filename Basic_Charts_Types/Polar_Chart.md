@@ -105,7 +105,7 @@ Axis stroke appearance is controlled by {api:anychart.core.grids.Polar#stroke}**
   yAxis.stroke("2 #9900FF");
 ```
 
-More information on possible stroke settings can be found in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines).
+More information on possible stroke settings can be found in [Strokes and Lines tutorial](../Appearance_Settings/Lines_Settings).
 
 Here is a sample of tuned X and Y axes. Y axis has a dashed stroke and X axis has a stroke colored with gradient.
 
