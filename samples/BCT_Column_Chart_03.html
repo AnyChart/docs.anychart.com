@@ -11,11 +11,11 @@
 
     // create a data set
     var data = anychart.data.set([
-      ["John", 10000],
-      ["Jake", 12000],
-      ["Peter", 13000],
-      ["James", 10000],
-      ["Mary", 9000]
+      {x: "John", value: 10000, fill :"#ff0000", stroke: "#ff0000"},
+      {x: "Jake", value: 12000, fill: "#ffff00", stroke: "#ffff00"},
+      {x: "Peter", value: 13000, fill: "#00ff00", stroke: "#00ff00"},
+      {x: "James", value: 10000, fill: "#0000ff", stroke: "#0000ff"},
+      {x: "Mary", value: 9000, fill: "#ff00ff", stroke: "#ff00ff"}
     ]);
 
     // create a chart
@@ -25,10 +25,7 @@
     var series = chart.column(data);
 
     // set the chart title
-    chart.title("Column Chart: Padding (Single Series)");
-
-    // set the padding between column groups
-    chart.barGroupsPadding(0);
+    chart.title("Column Chart: Appearance (Particular Column)");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();

@@ -123,6 +123,41 @@ series2.selectStroke("#0066cc", 4);
 
 {sample}BCT\_Bar\_Chart\_02{sample}
 
+If you use object notation to set the data, you can change the appearance of particular bars by adding visual parameters to the data set:
+
+```
+// create a data set
+var data = anychart.data.set([
+  {x: "John", value: 10000, fill :"#ff0000", stroke: "#ff0000"},
+  {x: "Jake", value: 12000, fill: "#ffff00", stroke: "#ffff00"},
+  {x: "Peter", value: 13000, fill: "#00ff00", stroke: "#00ff00"},
+  {x: "James", value: 10000, fill: "#0000ff", stroke: "#0000ff"},
+  {x: "Mary", value: 9000, fill: "#ff00ff", stroke: "#ff00ff"}
+]);
+```
+
+{sample}BCT\_Bar\_Chart\_03{sample}
+
+If you use an array to set the data, you can also configure the appearance of each bar separately, but in a slightly different way. After adding visual parameters to the data set, you have to map their data fields so that the parameters can be interpreted by the component:
+
+
+```
+// create a data set
+var data = anychart.data.set([
+  ["John", 10000, 12500, "#ff0000", "#ff0000", "#ffcccc", "#ffcccc"],
+  ["Jake", 12000, 15000, "#ffff00", "#ffff00", "#ffffcc", "#ffffcc"],
+  ["Peter", 13000, 16500, "#00ff00", "#00ff00", "#ccffcc", "#ccffcc"],
+  ["James", 10000, 13000, "#0000ff", "#0000ff", "#ccccff", "#ccccff"],
+  ["Mary", 9000, 11000, "#ff00ff", "#ff00ff", "#ffccff", "#ffccff"]
+]);
+
+// map the data
+var seriesData_1 = data.mapAs({x: [0], value: [1], fill: [3], stroke: [4]});
+var seriesData_2 = data.mapAs({x: [0], value: [2], fill: [5], stroke: [6]});
+```
+
+{sample}BCT\_Bar\_Chart\_04{sample}
+
 ### Padding
 
 To set the padding between bars and bar groups, use these methods:
@@ -142,7 +177,7 @@ var series = chart.bar(data);
 chart.barGroupsPadding(0);
 ```
 
-{sample}BCT\_Bar\_Chart\_03{sample}
+{sample}BCT\_Bar\_Chart\_05{sample}
 
 The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multi-series charts: it sets the padding between bars within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
 
@@ -162,7 +197,7 @@ chart.barsPadding(-0.5);
 chart.barGroupsPadding(2);
 ```
 
-{sample}BCT\_Bar\_Chart\_04{sample}
+{sample}BCT\_Bar\_Chart\_06{sample}
 
 ### Labels
 
