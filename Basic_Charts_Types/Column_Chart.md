@@ -138,7 +138,7 @@ var data = anychart.data.set([
 
 {sample}BCT\_Column\_Chart\_03{sample}
 
-If you use an array to set the data, you can also configure the appearance of each column separately, but in a slightly different way. After adding visual parameters to the data set, you have to map their data fields so that the parameters can be interpreted by the component:
+If you use an array to set the data, you can also configure the appearance of each column separately, but in a slightly different way. After adding visual parameters to the data set, you have to map fields for them so that they can be interpreted by the component:
 
 ```
 // create a data set
