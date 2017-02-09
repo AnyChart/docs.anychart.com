@@ -44,11 +44,11 @@ To create a Spline series, use the {api:anychart.charts.Cartesian#spline}spline(
 ```
 // create a data set
 var data = anychart.data.set([
-  ["January", 10000],
-  ["February", 12000],
-  ["March", 18000],
-  ["April", 11000],
-  ["May", 9000]
+  {x: "January", value: 10000},
+  {x: "February", value: 12000},
+  {x: "March", value: 18000},
+  {x: "April", value: 11000},
+  {x: "May", value: 9000}
 ]);
 
 // create a chart
