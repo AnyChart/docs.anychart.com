@@ -87,7 +87,7 @@ That is how labels background with the settings from above looks like:
 
 {sample}CS\_Labels\_04{sample}
 
-## Font
+### Font
 
 Font settings are set as for any other [Text](Text_Settings):
 
@@ -101,9 +101,34 @@ chart.labels().fontWeight(900);
 
 {sample}CS\_Labels\_05{sample}
 
-## Position
+### Position
 
-Anchors list
+Labels postions is set using an anchor set by {api:anychart.standalones.LabelsFactory#anchor}anchor(){api} and {api:anychart.standalones.LabelsFactory#position}position(){api} methods. Anchor and position are set with values from {api:anychart.enums.Anchor}anychart.enums.Anchor{api} and {api:anychart.enums.Position}anychart.enums.Position{api} enums. 
+
+Fine tuning can be done using {api:anychart.standalones.LabelsFactory#offsetX}offsetX(){api} and {api:anychart.standalones.LabelsFactory#offsetY}offsetY(){api} methods.
+
+Labels are rotated using {api:anychart.standalones.LabelsFactory#rotation}rotation(){api} method.
+
+Here is how you can put labels in the center of columns:
+
+```
+// set labels position
+labels = series.labels();
+labels.position("Center");
+labels.anchor("Center");
+```
+
+And here is a sample of rotated labels put on top of columns:
+
+```
+// set labels position
+labels = chart.getSeries(0).labels();
+labels.enabled(true);
+labels.position("TopCenter");
+labels.anchor("Left");
+labels.offsetY(-10);
+labels.rotation(-90);
+```
 
 {sample}CS\_Labels\_06{sample}
 
@@ -117,9 +142,11 @@ series.labels().width(200);
 series.labels().height(80);
 ```
 
+In the sample below we have also used {api:anychart.standalones.LabelsFactory#vAlign}vAilgn(){api} and {api:anychart.standalones.LabelsFactory#hAlign}hAlign(){api} methods to set proper text placement:
+
 {sample}CS\_Labels\_07{sample}
 
-### Themes
+## Themes
 
 Labels can be adjusted using [AnyChart Themes](../Appearance_Settings/Themes). Themes make it possible to set the same settings for several charts. Here is a sample of adjusting labels using themes:
 

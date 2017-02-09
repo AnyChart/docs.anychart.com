@@ -1,0 +1,40 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // create a chart
+  chart = anychart.pie([
+    {x: "Identity",          value: 3}, 
+    {x: "Non-contradiction", value: 3}, 
+    {x: "Excluded middle",   value: 3}
+  ]);
+
+  // set labels position
+  labels = chart.labels();
+  labels.width(80);
+  labels.height(40);
+
+  labels.background().enabled(true);
+  labels.background().fill("Black 0.4");
+  labels.vAlign("center");
+  labels.hAlign("center");
+
+  // set title
+  chart.title("Labels size");
+
+  // draw
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
