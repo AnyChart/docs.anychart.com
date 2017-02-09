@@ -11,22 +11,22 @@
 
     // create a data set
     var data = anychart.data.set([
-      ["1995", 0.10],
-      ["1996", 0.10],
-      ["1997", 0.12],
-      ["1998", 0.13],
-      ["1999", 0.15],
-      ["2000", 0.15],
-      ["2001", 0.15],
-      ["2002", 0.19],
-      ["2003", 0.20]
+      {x: "1995", low: 0.10, high: 0.15},
+      {x: "1996", low: 0.10, high: 0.15},
+      {x: "1997", low: 0.12, high: 0.17},
+      {x: "1998", low: 0.13, high: 0.20},
+      {x: "1999", low: 0.15, high: 0.20},
+      {x: "2000", low: 0.15, high: 0.22},
+      {x: "2001", low: 0.15, high: 0.22},
+      {x: "2002", low: 0.19, high: 0.23},
+      {x: "2003", low: 0.20, high: 0.23}
     ]);
 
     // create a chart
     var chart = anychart.area();
 
-    // create a step area series and set the data
-    var series = chart.stepArea(data);
+    // create a range step area series and set the data
+    var series = chart.rangeStepArea(data);
 
     // set step direction to the backward mode
     series.stepDirection("backward");
@@ -35,13 +35,13 @@
     series.markers(true);   
 
     // set the chart title
-    chart.title("Step Area Chart. Step Direction: Backward");
+    chart.title("Range Step Area Chart. Step Direction: Backward");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
     xAxis.title("Year");
     var yAxis = chart.yAxis();
-    yAxis.title("Rate");
+    yAxis.title("Min and Max Rate");
 
     // set the container id
     chart.container("container");
