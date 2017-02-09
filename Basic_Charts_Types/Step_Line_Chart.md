@@ -63,6 +63,9 @@ var chart = anychart.line();
 // create a step line series and set the data
 var series = chart.stepLine(data);
 
+// set step direction to the forward mode
+series.stepDirection("forward");
+
 // set the container id
 chart.container("container");
 
@@ -86,31 +89,22 @@ In addition, see a full list of methods available for the Step Line series: {api
 
 The Step Line chart is formed by horizontal line segments of the same width as the category, connected with each other by vertical segments. To set the exact way these segments are placed, use this method: {api:anychart.core.cartesian.series.StepLine#stepDirection}stepDirection(){api}.
 
-There are three modes of step direction: center, backward, and forward.
-
-The default mode is <strong>center</strong>. In this case data points are placed to the center of horizontal segments:
-
-```
-// set the step direction to the center mode
-series.stepDirection("center");
-```
+There are three modes of step direction: center, backward, and forward (the default mode is <strong>center</strong>: in this case data points are placed to the center of horizontal segments).
 
 In the <strong>forward</strong> mode data points are the starting points of horizontal segments:  
 
-{sample}BCT\_Step\_Line\_Chart\_02{sample}
-
 ```
-// set the step direction to the center mode (default)
+// set step direction to the forward mode
 series.stepDirection("forward");
 ```
 
-{sample}BCT\_Step\_Line\_Chart\_03{sample}
+{sample}BCT\_Step\_Line\_Chart\_02{sample}
 
 The <strong>backward</strong> mode sets data points as the final points of horizontal segments: 
 
 ```
-// set the step direction to the center mode (default)
+// set step direction to the backward mode
 series.stepDirection("backward");
 ```
 
-{sample}BCT\_Step\_Line\_Chart\_04{sample}
+{sample}BCT\_Step\_Line\_Chart\_03{sample}

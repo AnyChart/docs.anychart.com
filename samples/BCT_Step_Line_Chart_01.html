@@ -27,7 +27,10 @@
 
     // create a step line series and set the data
     var series = chart.stepLine(data);
-    
+
+    // set step direction to the forward mode
+    series.stepDirection("forward");   
+
     // set the chart title
     chart.title("Step Line Chart: Postal Rates");
 
