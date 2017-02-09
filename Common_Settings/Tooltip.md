@@ -334,7 +334,7 @@ That is how the sample with the code from above looks like:
 
 ## Hiding Time
 
-In some cases you may need to display a tooltip for a couple of moments after a point was unhovered. Use {api:anychart.core.ui.Tooltip#hideDelay}hideDelay(){api} method to set timer to display tooltip a bit longer.
+In some cases you may need to display a tooltip for a couple of moments after a point is no longer hovered (mouse left a point). Use {api:anychart.core.ui.Tooltip#hideDelay}hideDelay(){api} method to set timer to display tooltip a bit longer.
 
 ```
 // tooltip settings
@@ -346,7 +346,7 @@ tooltip.hideDelay(1000);
 
 ### Themes
 
-Tooltips can be adjusted using [AnyChart Themes](../Appearance_Settings/Themes). Themes makes it possible to set the same settings for several charts. Here is a sample of adjusting tooltips using themes:
+Tooltips can be adjusted using [AnyChart Themes](../Appearance_Settings/Themes). Themes make it possible to set the same settings for several charts. Here is a sample of adjusting tooltips using themes:
 
 ```
 var themeSettings = {
@@ -374,6 +374,6 @@ var themeSettings = {
 };
 ```
 
-Settings for the tooltip in the sample below were applied using themes. Click "launch in playground" to see how settings for tooltip can be applied using AnyChart themes.
+Settings for the tooltip in the sample below are applied using themes. Click "launch in playground" to see how settings for tooltip can be applied using AnyChart themes.
 
 {sample}CS\_Tooltip\_21{sample}
