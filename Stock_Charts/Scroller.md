@@ -61,7 +61,7 @@ Note that opposite to scroller in basic charts, we can zoom the AnyStock charts 
 
 ### Background Series
 
-Now, as we have tried to change some elements that are common for the AnyStock and the Basic scroller, let's adjust some params that only AnyStock scroller can have. We can add any of [supported series](./Series/Supported_Series) to the scroller if necessary, so the scroller will display a thumbnail AnyStock chart in its background. Let's define the thumbnail series of column type and look at it:
+Now, as we have tried to change some elements that are common for the AnyStock and the Basic scroller, let's adjust some params that only AnyStock scroller can have. We can add any of [supported series](../Series/Supported_Series) to the scroller if necessary, so the scroller will display a thumbnail AnyStock chart in its background. Let's define the thumbnail series of column type and look at it:
 
 {sample}STOCK\_Scroller\_03{sample}
 
@@ -70,7 +70,7 @@ Now, as we have tried to change some elements that are common for the AnyStock a
     chart.scroller().column(line_3_mapping);
 ```
 
-Visit [Supported series](./Series/Supported_Series) articles to know more about series supported by AnyStock Charts.
+Visit [Supported series](../Series/Supported_Series) articles to know more about series supported by AnyStock Charts.
 
 ### Scroller Axis
 
