@@ -33,7 +33,7 @@ You can see that the whole chart is somewhat divided in two parts, where one con
 ### AnyStock Series Adjusting
 
 
-Series in AnyStock chart are much alike normal series of Basic charts, except for having "hovered" and "selected" state. So we can adjust the colors of the series in normal state, adjust the tooltips, etc. Let's now create a sample with adjusted colors and tooltips
+Series in AnyStock chart are much alike normal series of Basic charts, except for having "hovered" and "selected" state. So we can adjust the colors of the series in normal state, adjust the tooltips, etc. Let's now create a sample with adjusted colors and tooltips.
 
 ```
     // create column series
