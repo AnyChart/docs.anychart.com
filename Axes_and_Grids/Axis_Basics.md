@@ -130,7 +130,7 @@ It is possible to tune visual appearance of axis line and zero line. To do this 
   line.stroke("2 red");
 ```
 
-As in any line, you can make it gradient, change opacity and thickness using {api:anychart.core.axes.Linear#stroke}**stroke()**{api} method. Read more about lines in [Strokes and Lines tutorial](../Appearance_Settings/Strokes_and_Lines)
+As in any line, you can make it gradient, change opacity and thickness using {api:anychart.core.axes.Linear#stroke}**stroke()**{api} method. Read more about lines in [Strokes and Lines tutorial](../Appearance_Settings/Lines_Settings)
 
 {sample}AGST\_Axes\_Basic\_06{sample}
 
