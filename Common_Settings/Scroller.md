@@ -118,7 +118,7 @@ Let's now talk about the scroller itself. Look through the next paragraph.
 
 
 
-### Scroll <a href="scroll_2"></a>
+### Scroll
 
 The scroll bar is rather flexible in its look and behavior. We can change the colors, sizes, positioning, etc. Let's make some changes with a couple of previous samples.
 
