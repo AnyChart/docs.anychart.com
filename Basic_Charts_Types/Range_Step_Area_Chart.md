@@ -23,7 +23,7 @@ The Range Step Area and Range Area chart types share almost all the settings, so
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical Step Area](Vertical_Charts/Vertical_Step_Area_Chart)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Range Step Area](Vertical_Charts/Vertical_Range_Step_Area_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
@@ -38,7 +38,7 @@ The Range Step Area and Range Area chart types share almost all the settings, so
 <tr><td></td><td>[Range Area](Range_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/range-stepline-area-chart/" target="_blank">Chartopedia: Range Step Area Chart</a></td></tr>
+<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/range-steplinearea-chart/" target="_blank">Chartopedia: Range Step Area Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
