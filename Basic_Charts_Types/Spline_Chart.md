@@ -42,14 +42,14 @@ The Line and Spline chart types share all the settings, so this article explains
 To create a Spline series, use the {api:anychart.charts.Cartesian#spline}spline(){api} method (before, of course, you should create a chart by using {api:anychart#line}anychart.line(){api} or any other cartesian chart constructor):
 
 ```
-// create a data set
-var data = anychart.data.set([
+// create data
+var data = [
   {x: "January", value: 10000},
   {x: "February", value: 12000},
   {x: "March", value: 18000},
   {x: "April", value: 11000},
   {x: "May", value: 9000}
-]);
+];
 
 // create a chart
 var chart = anychart.line();

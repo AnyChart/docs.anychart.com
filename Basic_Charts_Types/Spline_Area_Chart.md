@@ -45,14 +45,14 @@ The Spline Area and Area chart types share all the settings, so this article exp
 To create a Spline Area series, use the {api:anychart.charts.Cartesian#splineArea}splineArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor):
 
 ```
-// create a data set
-var data = anychart.data.set([
+// create data
+var data = [
   {x: "January", value: 10000},
   {x: "February", value: 12000},
   {x: "March", value: 18000},
   {x: "April", value: 11000},
   {x: "May", value: 9000}
-]);
+];
 
 // create a chart
 var chart = anychart.area();

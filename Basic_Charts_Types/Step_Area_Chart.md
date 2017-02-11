@@ -47,8 +47,8 @@ The Step Area and Area chart types share almost all the settings, so this articl
 To create a Step Area series, use the {api:anychart.charts.Cartesian#stepArea}stepArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor):
 
 ```
-// create a data set
-var data = anychart.data.set([
+// create data
+var data = [
   {x: "1995", value: 0.10},
   {x: "1996", value: 0.10},
   {x: "1997", value: 0.12},
@@ -58,7 +58,7 @@ var data = anychart.data.set([
   {x: "2001", value: 0.15},
   {x: "2002", value: 0.19},
   {x: "2003", value: 0.20}
-]);
+];
 
 // create a chart
 var chart = anychart.area();
@@ -90,7 +90,7 @@ In addition, see a full list of methods available for the Step Area series: {api
 
 ### Step Direction
 
-The Step Area chart is formed by horizontal area segments of the same width as the category, connected with each other by vertical segments. To set the exact way these segments are placed, use this method: {api:anychart.core.cartesian.series.StepArea#stepDirection}stepArea(){api}.
+The Step Area chart is formed by horizontal area segments of the same width as the category, connected with each other by vertical segments. To set the exact way these segments are placed, use this method: {api:anychart.core.cartesian.series.StepArea#stepDirection}stepDirection(){api}.
 
 There are three modes of step direction: center, backward, and forward. The default mode is <strong>center</strong> (in this case data points are placed to the center of horizontal segments).
 
