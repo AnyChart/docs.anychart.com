@@ -1,5 +1,5 @@
 {:index 1}
-#Spline Area Chart
+#Range Spline Area Chart
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)
@@ -44,6 +44,7 @@ The Range Spline Area and Range Area chart types share all the settings, so this
 
 To create a Range Spline Area series, use the {api:anychart.charts.Cartesian#rangeSplineArea}rangeSplineArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor):
 
+```
 // create data
 var data = [
   {x: "January", low: 0.7, high: 6.1},
