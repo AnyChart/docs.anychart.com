@@ -12,9 +12,9 @@
 
 ## Overview
 
-An range area chart is a chart type ...
+A range area chart shows information as a range of data by plotting two Y-values (low and high) per data point. It looks like two lines, the area between them usually being filled with color or a pattern.
 
-The range area chart emphasizes...
+Such charts are used to emphasize the magnitude difference between high and low values and in the same time to highlight trends in data over time.
 
 This article explains how to create a basic Range Area chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Range Area Chart's characteristics:
 
@@ -49,7 +49,7 @@ This article explains how to create a basic Range Area chart as well as configur
 
 To create a Range Area series, use the {api:anychart.charts.Cartesian#rangeArea}rangeArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor).
 
-...you need to specify these two values by using the "low" and "high" parameters. That is how it looks like in object notation:
+Since range area charts plot two Y-values per data point, you need to specify two values for each category by using the "low" and "high" parameters. That is how it looks like in object notation:
 
 ```
 var data = [
