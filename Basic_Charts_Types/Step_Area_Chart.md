@@ -9,7 +9,7 @@
 
 ## Overview
 
-A step area chart is an area chart in which points are connected by horizontal and vertical line segments, looking like steps of a staircase. The area between the line segments and the X-axis is filled with a color or a pattern.
+A step area chart is an area chart in which points are connected by horizontal and vertical line segments, looking like steps of a staircase. The area between the line segments and the X-axis is filled with color or a pattern.
 
 Step area charts are used when it is necessary to highlight the irregularity of changes: for example, when changes in tax rates or interest rates are visualized. While the basic area chart shows both the trend in data and the magnitude of change over time, the step area chart draws attention from the trend to show periods with no change and emphasize the exact time of each change (as well as its magnitude).
 
@@ -90,7 +90,7 @@ In addition, see a full list of methods available for the Step Area series: {api
 
 ### Step Direction
 
-The Step Area chart is formed by horizontal area segments of the same width as the category, connected with each other by vertical segments. To set the exact way these segments are placed, use this method: {api:anychart.core.cartesian.series.StepArea#stepDirection}stepDirection(){api}.
+The Step Area chart is formed by horizontal line segments of the same width as the category, connected with each other by vertical segments. To set the exact way these segments are placed, use this method: {api:anychart.core.cartesian.series.StepArea#stepDirection}stepDirection(){api}.
 
 There are three modes of step direction: center, backward, and forward. The default mode is <strong>center</strong> (in this case data points are placed to the center of horizontal segments).
 

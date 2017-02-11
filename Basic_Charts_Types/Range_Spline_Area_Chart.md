@@ -9,7 +9,7 @@
 
 A range spline area chart is a range area chart in which data points are connected by smooth curves: this modification is aimed to improve the design of a chart.
 
-Like a regular range area chart, it looks like two lines representing low and high Y-values, the area between these lines being filled with a color or a pattern to emphasize the difference between high and low values.
+Like the regular range area chart, it looks like two lines representing low and high Y-values, the area between these lines being filled with color or a pattern to emphasize the difference between high and low values.
 
 The Range Spline Area and Range Area chart types share all the settings, so this article explains just how to create a basic Range Area chart. To learn about other settings, read the [Range Area Chart](Range_Area_Chart) article. You can also see the table below to get a brief overview of the Range Spline Area Chart's characteristics:
 
@@ -36,7 +36,7 @@ The Range Spline Area and Range Area chart types share all the settings, so this
 <tr><td></td><td>[Range Area](Range_Area_Chart)</td></tr>
 <tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/range-spline-area-chart/" target="_blank">Chartopedia: Range Spline Area Chart</a></td></tr>
+<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/range-splinearea-chart/" target="_blank">Chartopedia: Range Spline Area Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
