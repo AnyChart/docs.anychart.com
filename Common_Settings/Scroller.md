@@ -8,6 +8,8 @@
  * [Get the limits ratio](#get_the_limits_ratio)
  * [Allow range change](#allow_range_change) 
 * [Scroll bar](#scroll_bar)
+ * [Orientation](#orientation)
+ * [Position](#position)
  * [Colors](#colors)
  * [Size](#size)
  * [Thumbs](#thumbs)
@@ -20,7 +22,6 @@
 Sometimes when there is too much data that it cannot be displayed simultaneously keeping it comfortable for understanding. In this case we can enable the scroller.
 
 Use {api:anychart.core.ui.Scroller#enabled}enabled(){api} method to switch the scroller on and off. Passing "true" to the {api:anychart.charts.Cartesian#xScroller}xScroller(){api} method is a shortcut to enable scroller:
-
 
 ```
 // turn on X Scroller
@@ -41,7 +42,7 @@ The simplest way of limiting the show area is using the ratio. Do this with the 
 
 ```
 // set zoom ratio
-chart.xZoom.setTo(0, 0.3);
+chart.xZoom().setTo(0, 0.3);
 ```
 
 {sample}CS\_Scroller\_02{sample}
@@ -61,7 +62,7 @@ chart.yZoom().setToValues("Part 1", "Part 4");
 
 ### Limits by the number of points
 
-The third way of setting the limits is to set the number of points from the beginning or end of the scale. We set the number of points, the second boolean parameter defines if the points should be counted from the end of the scale and the third parameter is the scale. The point will be counted from start by default, if you need them to be counted from end, set "true" as se second value.
+The third way of setting the limits is to set the number of points from the beginning or end of the scale. We set the number of points, the second boolean parameter defines if the points should be counted from the end of the scale and the third parameter is the scale. The point will be counted from start by default, if you need them to be counted from end, set "true" as the second value.
 
 ```
 // set limits using a number of points
@@ -85,17 +86,17 @@ xZoom.setToPointsCount(5);
 chart.title("The chart shows the part from " + xZoom.getStartRatio() + " and ends at " + xZoom.getEndRatio());
 ```
 
-{sample}CS\_Scroller\_06{sample}
+{sample}CS\_Scroller\_05{sample}
 
 ### Allow range change
 
-While your chart displays only a part of all information, you might want to manage the amount of displayed using {api:anychart.core.ui.Scroller#allowRangeChange}allowRangeChange(){api}. This method is used to allow and prevent changing the amount of displayed by lengthening of shortening the scroll bar range. It's allowed by default; let's prevent this using the {api:anychart.core.ui.Scroller#allowRangeChange}allowRangeChange(){api} method.
+To limit the amount of items displayed you can use the {api:anychart.core.ui.Scroller#allowRangeChange}allowRangeChange(){api} method. 
 
 ``` 
-// change the scroller orientation
+// forbid scroller range change
 chart.xScroller().allowRangeChange(false);
 ```
-{sample}CS\_Scroller\_10{sample}
+{sample}CS\_Scroller\_06{sample}
 
 ## Scroll bar
 
@@ -103,7 +104,7 @@ The scroll bar is flexible in its look and behavior, you can change colors, size
 
 ### Orientation
 
-With the {api:anychart.core.ui.Scroller#orientation}orientation(){api} method we can set the orientation of the scroller. 
+With the {api:anychart.core.ui.Scroller#orientation}orientation(){api} method you can set the orientation of the scroller. 
 
 ```	
 // change the scroller orientation
@@ -126,7 +127,7 @@ chart.xScroller().position("beforeAxes");
 
 ### Colors
 
-Colors of the scroll bar can be easily changed with simple methods {api:anychart.core.ui.Scroller#fill}fill(){api}, {api:anychart.core.ui.Scroller#selectedFill}selectedFill(){api} and {api:anychart.core.ui.Scroller#outlineStroke}outlineStroke(){api}. Let's now create an example of a column chart with modified scroll bar. The {api:anychart.core.ui.Scroller#fill}fill(){api} method colors the background of the scroll bar and the {api:anychart.core.ui.Scroller#selectedFill}selectedFill(){api} method colors the bar itself.
+Colors of the scroll bar can be easily changed with simple methods {api:anychart.core.ui.Scroller#fill}fill(){api}, {api:anychart.core.ui.Scroller#selectedFill}selectedFill(){api} and {api:anychart.core.ui.Scroller#outlineStroke}outlineStroke(){api}:
 
 ```
 // set the fill color
@@ -139,7 +140,7 @@ chart.xScroller().selectedFill("#339966");
 chart.xScroller().outlineStroke("#33CC33", 2);
 ```
 
-{sample}CS\_Scroller\_11{sample}
+{sample}CS\_Scroller\_09{sample}
 
 ### Size
 
@@ -153,7 +154,7 @@ chart.xScroller().minHeight(5);
 chart.xScroller().maxHeight(35);
 ```
 
-{sample}CS\_Scroller\_12{sample}
+{sample}CS\_Scroller\_10{sample}
 
 ### Thumbs
 
@@ -161,42 +162,50 @@ The scroll bar thumbs can be adjusted too. You change their look, dimensions or 
  - {api:anychart.core.ui.Scroller.Thumbs#enabled}enabled(){api} method enables and disables thumbs.
  - {api:anychart.core.ui.Scroller.Thumbs#autoHide}autoHide(){api} method sets if thumbs are displayed only when the scroll bar is hovered.
  - {api:anychart.core.ui.Scroller.Thumbs#fill}fill(){api} and {api:anychart.core.ui.Scroller.Thumbs#stroke}stroke(){api} color thumbs in the default state.
- - {api:anychart.core.ui.Scroller.Thumbs#hoverFillhoverFill(){api} and {api:anychart.core.ui.Scroller.Thumbs#hoverStroke}hoverStroke(){api} color thumbs in hovered state.
+ - {api:anychart.core.ui.Scroller.Thumbs#hoverFill}hoverFill(){api} and {api:anychart.core.ui.Scroller.Thumbs#hoverStroke}hoverStroke(){api} color thumbs in hovered state.
 
 ```
 // adjusting the thumbs behavior and look
-xScroller.thumbs().autoHide(true);
-xScroller.thumbs().hoverFill("#FFD700");
+chart.xScroller().thumbs().autoHide(true);
+chart.xScroller().thumbs().hoverFill("#FFD700");
 ```
 
-{sample}CS\_Scroller\_13{sample}
+{sample}CS\_Scroller\_11{sample}
 
 ## Live update
 
-By default, the chart is changing while being scrolled. It can be prevented. To redraw a chart only when the mouse button is released use the {api:anychart.charts.Cartesian.XZoom#continuous}continuous(){api} method. This may improve user experience when you show very large data sets.
+By default, the chart is changing while being scrolled. To redraw a chart only when the mouse button is released use the {api:anychart.charts.Cartesian.XZoom#continuous}continuous(){api} method. This may improve user experience when you show very large data sets.
 
 ```
 // prevent the scrolling while the button is not released yet
 chart.xZoom().continuous(false);
 ```
 
-{sample}CS\_Scroller\_05{sample}
+{sample}CS\_Scroller\_12{sample}
 
 ### Auto hide
 
-You can prevent the scroller from showing if there is no need in it. For example, if your dataSet has 20 points while you allow to show only 15 and you've removed five or more points by clicking on them, there's no need in scroll bar anymore. Use the {api:anychart.core.ui.Scroller#autoHide}autoHide(){api} method in such cases:
+You can prevent the scroller from showing if there is no need in it. Use the {api:anychart.core.ui.Scroller#autoHide}autoHide(){api} method in such cases:
 
 ``` 
 // autoHide the scroller
 chart.xScroller().autoHide(true);
 ```
-{sample}CS\_Scroller\_09{sample}
+
+In this sample a dataSet has 20 points, zoom settings allow to show only 15. You can remove points simply by clicking them, and when 15 or less are left - scroll bar will disappear.
+
+{sample}CS\_Scroller\_13{sample}
 
 ## Events
 
 Basic information about event listeners can be found in the [Event Listeners tutorial](Event_Listeners).
 
-There are three events which scroller can dispatch: **scrollerchange**, **scrollerchangestart**, and **scrollerchangefinish**.These events are dispatched when we drag the scroll bar. All events provide information about the source of changes (thumbDrag, selectedRangeDrag or backgroundClick), the startRatio and endRatio values.
+There are three events which scroller can dispatch: 
+- **scrollerchange**
+- **scrollerchangestart**
+- **scrollerchangefinish**.
+
+These events are dispatched when we drag the scroll bar, click on it or change it's size. All events provide information about the source of changes (thumbDrag, selectedRangeDrag or backgroundClick), the startRatio and endRatio values.
 
 Here is the sample of **scrollerchangefinish** event listener:
 

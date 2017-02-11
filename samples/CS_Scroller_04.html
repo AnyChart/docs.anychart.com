@@ -10,7 +10,27 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
     chart = anychart.line();
 
-    var dataSet = anychart.data.set([
+    // enable the scroller
+    chart.xScroller(true);
+
+    // Zooms series by defined points count.
+    chart.xZoom().setToPointsCount(10, true);
+
+    // create a series
+    var series = chart.column(getData());
+    series.name("New users");
+
+    chart.xAxis().title("Month");
+    chart.yAxis().title("New users");
+    chart.title("New internet users \nLimit the shown points' number to 10");
+
+
+    chart.container("container");
+    chart.draw();
+});
+
+function getData(){
+    return [
     ["Jan 15", 2094],
     ["Feb 15", 1865],
     ["Mar 15", 2051],
@@ -19,7 +39,7 @@
     ["Jun 15", 1044],
     ["Jul 15", 1935],
     ["Aug 15", 2109],
-    ["Sept 15", 2002],
+    ["Sep 15", 2002],
     ["Oct 15", 1609],
     ["Nov 15", 1634],
     ["Dec 15", 2403],
@@ -35,28 +55,8 @@
     ["Oct 16", 1534],
     ["Nov 16", 1911],
     ["Dec 16", 2323]
-    ]);
-
-    //create series
-    var series = chart.column(dataSet);
-
-    series.name("New users");
-
-    chart.xAxis().title("Month");
-    chart.yAxis().title("New users");
-    chart.title("New internet users \nLimit the shown points' number to 10");
-
-    // enable the scroller
-    chart.xScroller(true);
-
-    var xZoom = chart.xZoom();
-
-    // Zooms series by defined points count.
-    xZoom.setToPointsCount(10, true);
-
-    chart.container("container");
-    chart.draw();
-});</script>
+    ];
+};</script>
 </head>
 <body>
 <div id="container" style="width: 100%; height: 100%"></div>

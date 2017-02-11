@@ -39,33 +39,15 @@
             {y: "Part 7", x: "Undetected", heat: 9}
         ];
 
-        // set chart type
+        // create heat map chart
         chart = anychart.heatMap(data);
 
-        // enable the scroller
+        // enable scrollers
         chart.yScroller(true);
         chart.xScroller(true);
 
-
-        // create linerColor scale
-        var colorScale = anychart.scales.ordinalColor();
-        
-        // set range of heat parameter's values and corresponding colors
-        colorScale.ranges([
-            {less: 7, color: "#33CC33"},
-            {from: 7, to: 22, color: "#CCFF66"},
-            {from: 22, to: 32, color: "#EB9E33"},
-            {greater: 32, color: "#FF3300"}
-        ]);
-
-        // apply colorScale for colorizing heatMap chart
-        chart.colorScale(colorScale);
-
-        // set the yZoom
-        var yZoom = chart.yZoom();
-
-        // turn it on
-        yZoom.setToValues("Part 1", "Part 4");
+        // define Y zoom limits
+        chart.yZoom().setToValues("Part 1", "Part 4");
 
         chart.container("container");
         chart.draw();
