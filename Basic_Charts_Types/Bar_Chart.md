@@ -123,37 +123,37 @@ series2.selectStroke("#0066cc", 4);
 
 {sample}BCT\_Bar\_Chart\_02{sample}
 
-If you use object notation to set the data, you can change the appearance of particular bars by adding visual parameters to the data set:
+If you use object notation to set the data, you can change the appearance (and some other settings) of particular bars by adding special fields to the data set:
 
 ```
 // create a data set
 var data = anychart.data.set([
-  {x: "John", value: 10000, fill :"#ff0000", stroke: "#ff0000"},
-  {x: "Jake", value: 12000, fill: "#ffff00", stroke: "#ffff00"},
-  {x: "Peter", value: 13000, fill: "#00ff00", stroke: "#00ff00"},
-  {x: "James", value: 10000, fill: "#0000ff", stroke: "#0000ff"},
-  {x: "Mary", value: 9000, fill: "#ff00ff", stroke: "#ff00ff"}
+  {x: "John", value: 10000},
+  {x: "Jake", value: 12000},
+  {x: "Peter", value: 13000, fill: "#5cd65c", stroke: null, label: {enabled: true}},
+  {x: "James", value: 10000},
+  {x: "Mary", value: 9000}
 ]);
 ```
 
 {sample}BCT\_Bar\_Chart\_03{sample}
 
-If you use an array to set the data, you can also configure the appearance of each bar separately, but in a slightly different way. After adding visual parameters to the data set, you have to map fields for them so that they can be interpreted by the component:
+If you use an array to set the data, you can also configure the appearance of each bar separately, but in a slightly different way. You should first add visual parameters to the data set and then map fields for them so that they can be interpreted by the component:
 
 
 ```
 // create a data set
 var data = anychart.data.set([
-  ["John", 10000, 12500, "#ff0000", "#ff0000", "#ffcccc", "#ffcccc"],
-  ["Jake", 12000, 15000, "#ffff00", "#ffff00", "#ffffcc", "#ffffcc"],
-  ["Peter", 13000, 16500, "#00ff00", "#00ff00", "#ccffcc", "#ccffcc"],
-  ["James", 10000, 13000, "#0000ff", "#0000ff", "#ccccff", "#ccccff"],
-  ["Mary", 9000, 11000, "#ff00ff", "#ff00ff", "#ffccff", "#ffccff"]
+  ["John", 10000, 12500],
+  ["Jake", 12000, 15000],
+  ["Peter", 13000, 16500, "#5cd65c", "#009933", null, {enabled: true}],
+  ["James", 10000, 13000],
+  ["Mary", 9000, 11000]
 ]);
 
 // map the data
-var seriesData_1 = data.mapAs({x: [0], value: [1], fill: [3], stroke: [4]});
-var seriesData_2 = data.mapAs({x: [0], value: [2], fill: [5], stroke: [6]});
+var seriesData_1 = data.mapAs({x: [0], value: [1], fill: [3], stroke: [5], label: [6]});
+var seriesData_2 = data.mapAs({x: [0], value: [2], fill: [4], stroke: [5], label: [6]});
 ```
 
 {sample}BCT\_Bar\_Chart\_04{sample}
