@@ -1,7 +1,7 @@
 #Scroller
 
 * [Overview](#overview)
-* [Zoom Settings](#zoom)
+* [Zoom Settings](#zoom_settings)
  * [Limits by ratio](#limits_by_ratio)
  * [Limits by values](#limits_by_values)
  * [Limits by the number of points](#limits_by_the_number_of_points)
@@ -9,7 +9,7 @@
  * [Allow range change](#allow_range_change) 
 * [Scroll bar](#scroll_bar)
  * [Colors](#colors)
- * [Dimensions](#dimensions)
+ * [Size](#size)
  * [Thumbs](#thumbs)
 * [Live update](#live_update)
 * [Auto hide](#auto_hide)
@@ -103,18 +103,19 @@ The scroll bar is flexible in its look and behavior, you can change colors, size
 
 ### Orientation
 
-With the {api:anychart.core.ui.Scroller#orientation}orientation(){api} method we can set the orientation of the scroller. Let's create a simple bar chart with zoom and a scroller with orientation to the right.
+With the {api:anychart.core.ui.Scroller#orientation}orientation(){api} method we can set the orientation of the scroller. 
 
 ```	
 // change the scroller orientation
-chart.xScroller().orientation("right");
+chart.xScroller().orientation("top");
+chart.yScroller().orientation("left");
 ```
 
 {sample}CS\_Scroller\_07{sample}
 
 ### Position
 
-Scroller can be displayed in "afterAxes" or "beforeAxes" positions. The afterAxes position is set by default.
+Scroller can be displayed in "afterAxes" or "beforeAxes" positions. The "afterAxes" position is set by default.
 
 ```	
 // change the scroller orientation
@@ -140,16 +141,16 @@ chart.xScroller().outlineStroke("#33CC33", 2);
 
 {sample}CS\_Scroller\_11{sample}
 
-### Dimensions
+### Size
 
-Now, let's adjust the scroll bar for the previous sample. We can set the scroll bar's height using the {api:anychart.ui.Scroller#height}height(){api} setter method. There are also methods {api:anychart.ui.Scroller#maxHeight}maxHeight(){api} and {api:anychart.ui.Scroller#minHeight}minHeight(){api} which are rather useful when your charts are being resized - these methods help to control the dimensions of the scroll bar and the charts' general view as a consequence. Let's look at the following sample.
+To adjust scroll bar height (width) use the {api:anychart.ui.Scroller#height}height(){api} method. There are also  {api:anychart.ui.Scroller#maxHeight}maxHeight(){api} and {api:anychart.ui.Scroller#minHeight}minHeight(){api} methods which are useful when your charts are being resized.
 
 ```
 // set the bar height
-xScroller.minHeight(5);
+chart.xScroller().minHeight(5);
 
 // set the bar height
-xScroller.maxHeight(35);
+chart.xScroller().maxHeight(35);
 ```
 
 {sample}CS\_Scroller\_12{sample}
@@ -157,7 +158,7 @@ xScroller.maxHeight(35);
 ### Thumbs
 
 The scroll bar thumbs can be adjusted too. You change their look, dimensions or enable/disable them. 
- - {api:anychart.core.ui.Scroller.Thumbs#enabled}enabled(){api} method enabled and disabled thumbs.
+ - {api:anychart.core.ui.Scroller.Thumbs#enabled}enabled(){api} method enables and disables thumbs.
  - {api:anychart.core.ui.Scroller.Thumbs#autoHide}autoHide(){api} method sets if thumbs are displayed only when the scroll bar is hovered.
  - {api:anychart.core.ui.Scroller.Thumbs#fill}fill(){api} and {api:anychart.core.ui.Scroller.Thumbs#stroke}stroke(){api} color thumbs in the default state.
  - {api:anychart.core.ui.Scroller.Thumbs#hoverFillhoverFill(){api} and {api:anychart.core.ui.Scroller.Thumbs#hoverStroke}hoverStroke(){api} color thumbs in hovered state.
@@ -181,7 +182,7 @@ chart.xZoom().continuous(false);
 
 {sample}CS\_Scroller\_05{sample}
 
-### Autohide
+### Auto hide
 
 You can prevent the scroller from showing if there is no need in it. For example, if your dataSet has 20 points while you allow to show only 15 and you've removed five or more points by clicking on them, there's no need in scroll bar anymore. Use the {api:anychart.core.ui.Scroller#autoHide}autoHide(){api} method in such cases:
 
