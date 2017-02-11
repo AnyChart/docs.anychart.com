@@ -14,11 +14,9 @@ AnyStock provides a lot of features and tools to a chart viewer to make the work
 
 Scroller is a complex component that consists of the several configurable parts: Scroller itself, thumbnail series in its background (optional) and thumbs.
 
-Scroller in AnyStock charts is much alike basic Scroller (read about it in the [Scroller](../Common_Settings/Scroller) article). This article mostly considers those features that differ the AnyStock Scroller from the Basic one.
+Note: this is a Scroller for Stock charts, basic charts have their own [basic scroller](../Common_Settings/Scroller) with slightly different settings.
 
-Use the {api:anychart.core.stock.Scroller#enabled}enabled(){api} method to switch the scroller on and off. The scroller is enabled by default, to switch it off set "false" to this method:
-
-Also, it is possible to enable/disable the scroller by passing the "true" or "false" value straight to the {api:anychart.charts.Stock#scroller}scroller(){api} method.
+ The scroller is enabled by default, it is possible to enable/disable the scroller by passing the "true" or "false" value to the {api:anychart.charts.Stock#scroller}scroller(){api} method or {api:anychart.core.stock.Scroller#enabled}enabled(){api} method:
 
 
 ```
@@ -36,7 +34,7 @@ chart.scroller().enabled(false);
 In Stock charts the position of the scroller cannot be changed, as well as its orientation, as its function is to scroll the time (X) axis. 
 
  There are several basic methods to configure the scroller:
- - {api:anychart.charts.Stock#selectRange}selectRange(){api},
+ - {api:anychart.charts.Stock#selectRange}selectRange(){api}
  - {api:anychart.core.stock.Scroller#allowRange}thumbs(){api}
  - {api:anychart.core.stock.Scroller#fill}fill(){api}
  - {api:anychart.core.stock.Scroller#selectedFill}selectedFill(){api}
@@ -89,7 +87,7 @@ labels.textFormatter(function() {
   return "'" + anychart.format.dateTime(this.tickValue, "yy");
 });
 // set labels color
-labels.fontColor('#000');
+labels.fontColor('#000000');
 
 // set minor labels text format
 minorLabels.textFormatter(function(){
@@ -97,7 +95,7 @@ minorLabels.textFormatter(function(){
 });
 
 // set minor labels font 
-minorLabels.fontColor('#000');
+minorLabels.fontColor('#000000');
 minorLabels.fontSize(9);
 ```
 
@@ -110,10 +108,10 @@ You can handle scroller events using event listeners (find out more about them i
 There are 4 events that can be handled when the selected time range changes. These events can be used to handle user actions, e.g. to display a chosen time interval as text or to update any extra UI elements. 
 
 Events that can be listened by a chart:
-* **selectedrangebeforechange** - dispatches before user changes the selected range of the scroller
-* **selectedrangechangestart** - dispatches when user starts changing a scroller, on *mouseDown* event 
-* **selectedrangechange** - dispatches when user changes a scroller somehow, on *mouseMove* event
-* **selectedrangechangefinish** - dispatches when user releases the mouse button and finishes the scroller change, on *mouseUp* event
+- **selectedrangebeforechange** - dispatches before user changes the selected range of the scroller
+- **selectedrangechangestart** - dispatches when user starts changing a scroller, on *mouseDown* event 
+- **selectedrangechange** - dispatches when user changes a scroller somehow, on *mouseMove* event
+- **selectedrangechangefinish** - dispatches when user releases the mouse button and finishes the scroller change, on *mouseUp* event
 
 Here is a sample listener:
 
