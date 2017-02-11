@@ -19,11 +19,11 @@ var mapping = dataTable.mapAs({'value': 1});
 // create stock chart
 chart = anychart.stock();
 
-// add a series
-chart.plot(0).line(mapping);
-
 // disable scroller
 chart.scroller().enabled(false);
+
+// add a series
+chart.plot(0).line(mapping);
 
 // adjust the title according to scroller
 chart.title("Turn the scroller off");

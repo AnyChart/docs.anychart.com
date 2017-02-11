@@ -22,21 +22,11 @@ chart = anychart.stock();
 // add a series
 chart.plot(0).line(mapping);
 
-// create scroller series with mapped data
-chart.scroller().column(mapping);
-
-// desbuld
-chart.title("Disable the scroller axis");
-
-// adjust the scroller
-chart.selectRange('2004-01-02','2004-01-15');
-chart.scroller().thumbs(false);
-chart.scroller().fill('green 0.1');
-chart.scroller().selectedFill('green 0.5');
-chart.scroller().allowRangeChange(false);
-
 // disable the scroller axis
 chart.scroller().xAxis(false);
+
+// chart title
+chart.title("Disable the scroller axis");
 
 // set container id for the chart
 chart.container('container');

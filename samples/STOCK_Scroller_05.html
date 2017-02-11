@@ -22,34 +22,27 @@ chart = anychart.stock();
 // add a series
 chart.plot(0).line(mapping);
 
-// create scroller series with mapped data
-chart.scroller().column(mapping);
+// access labels
+labels = chart.scroller().xAxis().labels();
+minorLabels = chart.scroller().xAxis().minorLabels();
 
-// adjust the scroller
-chart.selectRange('2004-01-02','2004-01-15');
-chart.scroller().thumbs(false);
-chart.scroller().fill('green 0.1');
-chart.scroller().selectedFill('green 0.5');
-chart.scroller().allowRangeChange(false);
-
-// adjust the scroller axis
-var labels = chart.scroller().xAxis().labels();
-
-var minorLabels = chart.scroller().xAxis().minorLabels();
-
-// adjust scroller labels    
+// set major labels text format
 labels.textFormatter(function() {
   return "'" + anychart.format.dateTime(this.tickValue, "yy");
 });
+// set labels color
 labels.fontColor('#000');
 
+// set minor labels text format
 minorLabels.textFormatter(function(){
   return anychart.format.dateTime(this.tickValue, 'MMM, d');
 });
+
+// set minor labels font 
 minorLabels.fontColor('#000');
 minorLabels.fontSize(9);
 
-// adjust the title according to scroller
+// adjust the title
 chart.title("Format the scroller labels");
 
 // set container id for the chart

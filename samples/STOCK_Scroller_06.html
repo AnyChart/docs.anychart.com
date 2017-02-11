@@ -22,28 +22,20 @@ chart = anychart.stock();
 // add a series
 chart.plot(0).line(mapping);
 
-// create scroller series with mapped data
-chart.scroller().column(mapping);
-
-// adjust the title according to scroller
-chart.title("Drag the scroller to watch the seelcted range is changing");
-
 // events
-chart.listen("selectedrangechangestart", function(e){
+// create a listener function
+listener = function(e){
     chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected,'dd MMM yyyy'));
-});
+}
 
-chart.listen("selectedrangebeforechange", function(e){
-    chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected,'dd MMM yyyy'));
-});
+// attach it to all required events
+chart.listen("selectedrangechangestart", listener);
+chart.listen("selectedrangebeforechange", listener);
+chart.listen("selectedrangechange", listener);
+chart.listen("selectedrangechangefinish", listener);
 
-chart.listen("selectedrangechange", function(e){
-    chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected,'dd MMM yyyy'));
-});
-
-chart.listen("selectedrangechangefinish", function(e){
-    chart.title("The selected range is: " + anychart.format.dateTime(e.firstSelected, 'dd MMM yyyy') + " - " + anychart.format.dateTime(e.lastSelected,'dd MMM yyyy'));
-});
+// adjust the title
+chart.title("Drag the scroller to watch the selected range is changing");
 
 // set container id for the chart
 chart.container('container');
@@ -51,6 +43,7 @@ chart.container('container');
 // initiate chart drawing
 chart.draw();
 });
+
 
 function getData(){
 return [

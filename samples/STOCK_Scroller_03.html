@@ -25,14 +25,7 @@ chart.plot(0).line(mapping);
 // create scroller series with mapped data
 chart.scroller().column(mapping);
 
-// adjust the scroller
-chart.selectRange('2004-01-02','2004-01-15');
-chart.scroller().thumbs(false);
-chart.scroller().fill('green 0.1');
-chart.scroller().selectedFill('green 0.5');
-chart.scroller().allowRangeChange(false);
-
-// adjust the title according to scroller
+// adjust the title 
 chart.title("Adjust the scroller series type");
 
 // set container id for the chart
