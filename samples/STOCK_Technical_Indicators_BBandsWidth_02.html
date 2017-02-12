@@ -9,54 +9,47 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script src="http://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-// The data used in this sample can be obtained from the CDN
-// http://cdn.anychart.com/csv-data/csco-daily.js
-// create data table on loaded data
-var dataTable = anychart.data.table();
-dataTable.addData(get_csco_daily_data());
+    // The data used in this sample can be obtained from the CDN
+    // http://cdn.anychart.com/csv-data/csco-daily.js
+    // create data table on loaded data
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_csco_daily_data());
 
-var mapping = dataTable.mapAs({
-    'open': 1,
-    'high': 2,
-    'low': 3,
-    'close': 4,
-    'value': {column: 4, type: 'close'}
-});
+    var mapping = dataTable.mapAs({
+        'open': 1,
+        'high': 2,
+        'low': 3,
+        'close': 4,
+        'value': {column: 4, type: 'close'}
+    });
 
-// create stock chart
-chart = anychart.stock();
+    // create stock chart
+    chart = anychart.stock();
 
-// create plots on the chart
-var plot_0 = chart.plot(0);
-var plot_1 = chart.plot(1);
+    // create plots on the chart
+    var plot_0 = chart.plot(0);
+    var plot_1 = chart.plot(1);
 
-// create japanese candestick series for the plot 0
-var candlestickSeries0 = plot_0.candlestick(mapping);
-candlestickSeries0.name('CSCO');
-candlestickSeries0.stroke('2px #64b5f6');
+    // create japanese candestick series for the plot 0
+    plot_0.candlestick(mapping).name('CSCO');
 
-// create japanese candestick series for the plot 1
-var candlestickSeries1 = plot_1.candlestick(mapping);
-candlestickSeries1.name('CSCO');
-candlestickSeries1.stroke('2px #64b5f6');
+    // create japanese candestick series for the plot 1
+    plot_1.candlestick(mapping).name('CSCO');
 
-// create BBands Width indicator with period 10 and show as line on the first plot
-var BBandsWidth10 = plot_0.bbandsWidth(mapping, 10).series();
-BBandsWidth10.stroke('#bf360c');
+    // create BBands Width indicator with period 10 and show as line on the first plot
+    plot_0.bbandsWidth(mapping, 10).series();
 
-// create BBands Width indicator with period 50 and show as column on the second plot
-var BBandsWidth50 = plot_1.bbandsWidth(mapping, 50, 3, "column").series();
-BBandsWidth50.fill("#ff6d00 0.3");
-BBandsWidth50.zIndex(0);
+    // create BBands Width indicator with period 50 and show as column on the second plot
+    plot_1.bbandsWidth(mapping, 50, 3, "column");
 
-// create scroller series with mapped data
-chart.scroller().line(mapping);
+    // create scroller series with mapped data
+    chart.scroller().line(mapping);
 
-// set container id for the chart
-chart.container('container');
-        
-// initiate chart drawing
-chart.draw();
+    // set container id for the chart
+    chart.container('container');
+            
+    // initiate chart drawing
+    chart.draw();
 });
 
 </script>

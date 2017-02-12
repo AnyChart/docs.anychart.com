@@ -39,7 +39,7 @@ var bbandsW = plot.bbandsWidth(mapping);
 
 ## Indicator parameters
 
-Bollinger Bands Width indicator, similar to other Bollinger Bands indicators, requires only the "mapping" parameter. Optional parameters are "period" (20 by default), "deviation" (2 by default) and "series type" ("line" by default).
+Bollinger Bands Width indicator requires only the "mapping" parameter. Optional parameters are "period", "deviation" and "series type".
 
 ```
 var bbandsWidth = plot.bbandsWidth(mapping, 50, 3, "spline");

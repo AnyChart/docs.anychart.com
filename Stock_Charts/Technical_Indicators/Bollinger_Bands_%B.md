@@ -7,7 +7,7 @@
 
 ## Overview
 
-Bollinger Bands %B is one a indicator derived from [Bollinger Bands](Bollinger_Bands).
+Bollinger Bands %B is an indicator derived from [Bollinger Bands](Bollinger_Bands).
 
 %B quantifies a security's price relative to the upper and lower Bollinger Band. There are six basic relationship levels:
 
@@ -45,7 +45,7 @@ var bbandsB = plot.bbandsB(mapping);
 
 ## Indicator parameters
 
-Bollinger Bands %B indicator requires only one parameter - "mapping". Other parameters are "period", "deviation" and "series type".
+Bollinger Bands %B indicator requires only the "mapping" parameter. Optional parameters are "period", "deviation" and "series type".
 
 ```
 var bbandsB = plot.bbandsB(mapping, 10, 3, "spline");
@@ -53,7 +53,7 @@ var bbandsB = plot.bbandsB(mapping, 10, 3, "spline");
 
 ## Visualization
 
-Visualization of an indicator depends on the type of a series you display it with. Let's look at the next sample where two Bollinger Bands %B with different parameters and settings are added to one separate plots:
+Visualization of an indicator depends on the type of a series you display it with. Let's look at the next sample where two Bollinger Bands %B with different parameters and settings are added to separate plots:
 
 ```
 // create BBandsB indicator with period 10 and show as line on the second plot

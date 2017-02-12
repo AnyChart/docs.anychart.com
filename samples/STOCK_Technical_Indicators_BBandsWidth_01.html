@@ -9,42 +9,37 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script src="http://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
     <script x-export="chart">anychart.onDocumentReady(function() {
-// The data used in this sample can be obtained from the CDN
-// http://cdn.anychart.com/csv-data/csco-daily.js
-// create data table on loaded data
-var dataTable = anychart.data.table();
-dataTable.addData(get_csco_daily_data());
+    // The data used in this sample can be obtained from the CDN
+    // http://cdn.anychart.com/csv-data/csco-daily.js
+    // create data table on loaded data
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_csco_daily_data());
 
-var mapping = dataTable.mapAs({
-    'open': 1,
-    'high': 2,
-    'low': 3,
-    'close': 4,
-    'value': {column: 4, type: 'close'}
-});
+    var mapping = dataTable.mapAs({
+        'open': 1,
+        'high': 2,
+        'low': 3,
+        'close': 4,
+        'value': {column: 4, type: 'close'}
+    });
 
-// create stock chart
-chart = anychart.stock();
+    // create stock chart
+    chart = anychart.stock();
 
-// create plot on the chart
-var plot = chart.plot(0);
+    // create line series
+    chart.plot(0).ohlc(mapping).name('CSCO');
 
-// create line series
-var ohlcSeries = plot.ohlc(mapping);
-ohlcSeries.name('CSCO');
-ohlcSeries.stroke('2px #64b5f6');
+    // create Bollinger Bands Width indicator
+    chart.plot(0).bbandsWidth(mapping);
 
-// create BBands indicator with period 20
-var bbandsW = plot.bbandsWidth(mapping);
+    // create scroller series with mapped data
+    chart.scroller().line(mapping);
 
-// create scroller series with mapped data
-chart.scroller().line(mapping);
-
-// set container id for the chart
-chart.container('container');
-        
-// initiate chart drawing
-chart.draw();
+    // set container id for the chart
+    chart.container('container');
+            
+    // initiate chart drawing
+    chart.draw();
 });
 
 </script>

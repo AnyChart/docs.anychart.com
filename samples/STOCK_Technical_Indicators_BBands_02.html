@@ -9,48 +9,45 @@
     <script src="http://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
-// The data used in this sample can be obtained from the CDN
-// http://cdn.anychart.com/csv-data/csco-daily.js
-// create data table on loaded data
-var dataTable = anychart.data.table();
-dataTable.addData(get_csco_daily_data());
+    // The data used in this sample can be obtained from the CDN
+    // http://cdn.anychart.com/csv-data/csco-daily.js
+    // create data table on loaded data
+    var dataTable = anychart.data.table();
+    dataTable.addData(get_csco_daily_data());
 
-var mapping = dataTable.mapAs({
-    'open': 1,
-    'high': 2,
-    'low': 3,
-    'close': 4,
-    'value': {column: 4, type: 'close'}
-});
+    var mapping = dataTable.mapAs({
+        'open': 1,
+        'high': 2,
+        'low': 3,
+        'close': 4,
+        'value': {column: 4, type: 'close'}
+    });
 
-// create stock chart
-chart = anychart.stock();
+    // create stock chart
+    chart = anychart.stock();
 
-// create plot on the chart
-var plot = chart.plot(0);
+    // create plot on the chart
+    var plot = chart.plot(0);
 
-// create line series
-var ohlcSeries = plot.ohlc(mapping);
-ohlcSeries.name('CSCO');
-ohlcSeries.stroke('2px #64b5f6');
+    // create line series
+    plot.ohlc(mapping).name('CSCO');
 
-// create BBands indicators
-var bbands = plot.bbands(mapping, 10, 3, "spline", "spline");
+    // create Bollinger Bands indicator with splines
+    var bbands = plot.bbands(mapping, 10, 3, "spline", "spline", "spline");
 
-// color the series
-var bbandsUpSeries = bbands.upSeries();
-bbandsUpSeries.stroke('#bf360c');
-var bbandsDownSeries = bbands.downSeries();
-bbandsDownSeries.stroke('#000000');
+    // color the series
+    bbands.upperSeries().stroke('#bf360c');
+    bbands.middleSeries().stroke('#ff6600');
+    bbands.lowerSeries().stroke('#bf360c');
 
-// create scroller series with mapped data
-chart.scroller().line(mapping);
+    // create scroller series with mapped data
+    chart.scroller().line(mapping);
 
-// set container id for the chart
-chart.container('container');
-        
-// initiate chart drawing
-chart.draw();
+    // set container id for the chart
+    chart.container('container');
+            
+    // initiate chart drawing
+    chart.draw();
 });
 
 </script>

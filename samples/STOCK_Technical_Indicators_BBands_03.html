@@ -12,15 +12,15 @@
     var dataTable = anychart.data.table();
     dataTable.addData(get_csco_daily_data());
 
-    var mapping = dataTable.mapAs();
-    mapping.addField('open', 1, 'first');
-    mapping.addField('high', 2, 'max');
-    mapping.addField('low', 3, 'min');
-    mapping.addField('close', 4, 'last');
-    mapping.addField('value', 4, 'last');
+    var mapping = dataTable.mapAs({
+        'open': 1,
+        'high': 2,
+        'low': 3,
+        'close': 4,
+        'value': {column: 4, type: 'close'}
+    });
 
     chart = anychart.stock();
-    chart.padding(10, 10, 10, 50);
 
     // Create computer.
     var computer = dataTable.createComputer(mapping);
@@ -35,11 +35,11 @@
     computer.setCalculationFunction(anychart.math.bbands.calculationFunction);
 
     // Define output fields
-    computer.addOutputField('upResult');
-    computer.addOutputField('downResult');
+    computer.addOutputField('upperResult');
+    computer.addOutputField('lowerResult');
     
     // Add a range spline series using the data from the computer
-    bbandsSeries = chart.plot().rangeSplineArea(dataTable, {high: computer.getFieldIndex('upResult'), low: computer.getFieldIndex('downResult')});
+    bbandsSeries = chart.plot().rangeSplineArea(dataTable, {high: computer.getFieldIndex('upperResult'), low: computer.getFieldIndex('lowerResult')});
 
     // Set name and visual effects
     bbandsSeries.name("BBands");
