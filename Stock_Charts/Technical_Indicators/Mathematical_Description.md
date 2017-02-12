@@ -64,7 +64,7 @@ See [Aroon](Aroon) article.
 
 Coming soon.
 
-## Bollinger Bands (BBands)
+## Bollinger Bands
 
 This indicator is calculated in three steps:
 
