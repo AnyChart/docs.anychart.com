@@ -8,7 +8,7 @@
 * [Aroon](#aroon)
 * [Average True Range (ATR)](#)
 * [Bollinger Bands (BBands)](#bollinger_bands)
-* [Bollinger Bands %B](#bbollinger_bands)
+* [Bollinger Bands %B](#bollinger&#95;bands&#95;%b)
 * [Bollinger Bands Width (BBW)](#bollinger_bands_width)
 * [Commodity Channel Index (CCI)](#)
 * [Chaikin Money Flow (CMF)](#)
@@ -25,7 +25,7 @@
 * [On Balance Volume (OBV)](#)
 * [Parabolic SAR (PSAR)](#)
 * [Price Channels](#)
-* [Rate of Change (ROC)](#roc)
+* [Rate of Change (ROC)](#rate_of_change)
 * [Relative Strength Index (RSI)](#relative_strength_index)
 * [Simple Moving Average (SMA)](#simple_moving_average)
 * [Stochastic Oscillator (Fast,Slow)](#)
@@ -86,7 +86,7 @@ The Bollinger Bands %B indicator is calculated according to the following formul
 
 <center><img src="http://static.anychart.com/images/technical_indicators/bbandsb.png" width="650"></center>
 
-See [Bollinger Bands %B](Bollinger_Bands_%B) article.
+See [Bollinger Bands %B](Bollinger_Bands_%25B) article.
 
 ## Bollinger Bands Width
 
@@ -161,7 +161,7 @@ Moving Average Convergence/Divergence indicator is calculated as follows:
 <img src="http://static.anychart.com/images/technical_indicators/macd-histogram.png"/></li>
 </ol>
 
-See [Moving Average Convergence Divergence](Moving\_Average\_Convergence\_Divergence\_(MACD)) article.
+See [Moving Average Convergence Divergence](Moving\_Average\_Convergence\_Divergence\_\(MACD\)) article.
 
 ## Moving Average Envelopes
 
@@ -185,7 +185,7 @@ Rate of Change is calculated according to this formula:
 
 <center><img src="http://static.anychart.com/images/technical_indicators/roc.png"/></center>
 
-See [Rate of Change](Rate\_of\_Change\_(ROC)) article.
+See [Rate of Change](Rate\_of\_Change\_\(ROC\)) article.
 
 ## Relative Strength Index
 
@@ -201,7 +201,7 @@ Relative Strength Index is calculated as follows:
 <img src="http://static.anychart.com/images/technical_indicators/rsi-rsi.png"></li>
 </ol>
 
-See [Relative Strength Index](Relative\_Strength\_Index\_(RSI)) article.
+See [Relative Strength Index](Relative\_Strength\_Index\_\(RSI\)) article.
 
 ## Simple Moving Average
 
@@ -209,7 +209,7 @@ Simple Moving Average in each point is calculated according to the following for
 
 <center><img src="http://static.anychart.com/images/technical_indicators/sma.png"></center>
 
-See [Simple Moving Average](Simple\_Moving\_Average\_(SMA)) article.
+See [Simple Moving Average](Simple\_Moving\_Average\_\(SMA\)) article.
 
 ## Stochastic Oscillator (Full)
 
