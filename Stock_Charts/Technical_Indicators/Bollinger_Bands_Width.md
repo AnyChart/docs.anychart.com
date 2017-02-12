@@ -51,11 +51,11 @@ Visualization of an indicator depends on the type of a series you display it wit
 
 ```
 // create Bollinger Bands Width indicator with period 10 and show as line on the first plot
-var BBandsWidth10 = plot_0.bbandsWidth(mapping, 10).series();
+var BBandsWidth10 = chart.plot(0).bbandsWidth(mapping, 10).series();
 BBandsWidth10.stroke('#bf360c');
 
 // create Bollinger Bands Width indicator with period 50 and show as column on the second plot
-var BBandsWidth50 = plot_1.bbandsWidth(mapping, 50, "column").series();
+var BBandsWidth50 = chart.plot(1).bbandsWidth(mapping, 50, "column").series();
 BBandsWidth50.fill('#ff6d00');
 ```
 

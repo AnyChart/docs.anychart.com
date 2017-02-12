@@ -26,21 +26,14 @@
     // create stock chart
     chart = anychart.stock();
 
-    // create plots on the chart
-    var plot_0 = chart.plot(0);
-    var plot_1 = chart.plot(1);
+    // create japanese candestick series
+    chart.plot(0).candlestick(mapping).name('CSCO');
 
-    // create japanese candestick series for the plot 0
-    plot_0.candlestick(mapping).name('CSCO');
+    // create BBands Width indicator with period 10 and show as line on the second plot
+    chart.plot(1).bbandsWidth(mapping, 10).series();
 
-    // create japanese candestick series for the plot 1
-    plot_1.candlestick(mapping).name('CSCO');
-
-    // create BBands Width indicator with period 10 and show as line on the first plot
-    plot_0.bbandsWidth(mapping, 10).series();
-
-    // create BBands Width indicator with period 50 and show as column on the second plot
-    plot_1.bbandsWidth(mapping, 50, 3, "column");
+    // create BBands Width indicator with period 50 and show as column on the third plot
+    chart.plot(2).bbandsWidth(mapping, 50, 3, "column");
 
     // create scroller series with mapped data
     chart.scroller().line(mapping);
