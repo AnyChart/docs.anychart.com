@@ -47,7 +47,7 @@ var bbands = plot.bbands(mapping, 10, 3, "spline", "spline", "spline");
 
 ## Visualization using lines
 
-Visualization of an indicator depends on the type of a series you display it with. Here is a sample where both Up and Down series of the Bollinger Bands indicator are colored:
+Visualization of an indicator depends on the type of a series you display it with. Here is a sample where all series of the Bollinger Bands indicator are colored:
 
 ```
 var bbands = plot.bbands(mapping);
