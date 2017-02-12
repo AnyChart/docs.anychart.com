@@ -1,0 +1,64 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["QTR1", 3.8, 5.5, 6.9, 7.9],
+      ["QTR2", 5.5, 7.0, 9.6, 8.6],
+      ["QTR3", 9.9, 9.7, 8.3, 7.3],
+      ["QTR4", 5.7, 7.6, 9.7, 8.7]
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
+    var seriesData_3 = data.mapAs({x: 0, value: 3});
+    var seriesData_4 = data.mapAs({x: 0, value: 4});
+
+    // set the chart type
+    var chart = anychart.column();
+
+    // create scales and set stacking modes
+    yScale1 = anychart.scales.linear();
+    yScale1.stackMode("percent");
+
+    yScale2 = anychart.scales.linear();
+    yScale2.stackMode("percent");
+
+    // create the series and assign different scales:
+    chart.area(seriesData_1).yScale(yScale1);
+    chart.area(seriesData_2).yScale(yScale1);
+
+    chart.column(seriesData_3).yScale(yScale2);
+    chart.column(seriesData_4).yScale(yScale2);
+
+    // set axis settings
+    // you need to assign a proper scale
+    // to an axis if you don't reuse primary y scale
+    chart.yAxis().scale(yScale1);
+    // you can avoid this setting by reusing primary y scale:
+    // yScale1 = chart.yScale();
+
+    // set the chart title
+    chart.title("Percent Stacked Chart - Area/Column Overlay");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

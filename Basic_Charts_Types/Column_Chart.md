@@ -1,355 +1,241 @@
 {:index 1}
-# Column Chart
+#Column Chart
 
 * [Overview](#overview)
-* [Chart](#chart)
-  * [Single Series](#single_series)
-  * [Multi-series](#multi-series)
-  * [3D Series](#3d_series)
-* [Axes](#axes)
-  * [Orientation](#orientation)
-  * [Inversion](#inversion)
-  * [Minimum and Maximum](#minimum_and_maximum)
-* [Padding](#padding)
-* [Visualization](#visualization)
-  * [Basic Sample](#basic_sample)
-* [Labels and Tooltips](#labels_and_tooltips)
-* [Markers](#markers)
-* [Colors](#colors)
-  * [Colorizing Elements](#colorizing_elements)
-* [Hatch Fills](#hatch_fills)
-* [Samples](#samples)
+* [Quick Start](#quick_start)
+* [General Settings](#general_settings)
+* [Special Settings](#special_settings)
+  * [Appearance](#appearance)
+  * [Padding](#padding)
+  * [Labels](#labels)
+  * [Tooltips](#tooltips)
+  * [Stacked Column](#stacked_column)
+  * [Vertical Column (Bar)](#vertical_column)
+  * [3D Column](#3d_column)
 
 ## Overview
 
-A column chart is a modification of a bar chart, the only difference is its orientation: instead of horizontal bars and categories usually kept along the Y-axis, a Column Chart has vertical rectangular bars of lengths usually proportional to the magnitudes or frequencies of what they represent. If you want to build a horizontally oriented bar chart, please go to the [Bar Chart](Bar_Chart) section.
+A column chart is a chart that visualizes data as a set of rectangular columns, their lengths being proportional to the values they represent. The vertical axis shows the values, and the horizontal axis shows the categories they belong to. In multi-series column charts, values are grouped by categories.
 
-Column charts are useful for showing data changes over a period of time or for illustrating comparisons among items. In column charts, categories are typically organized along the horizontal axis and values along the vertical axis.
+The column chart is used very widely to show comparison among categories and sometimes to visualize time-based data.
 
-## Chart
+This article explains how to create a basic Column chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Column Chart's characteristics:
 
-Depending on the data model and the visualization purpose the column chart may contain single or multiple series.
-
-### Single-Series
-
-Let's look at the following data - sales of several managers in one quarter:
-
-<table width="260px">
-<tr>
-<th width="170px">Name</th>
-<th width="90px">Sales</th>
-</tr>
-<tr>
-<td>John</td>
-<td>$10000</td>
-</tr>
-<tr>
-<td>Jake</td>
-<td>$12000</td>
-</tr>
-<tr>
-<td>Peter</td>
-<td>$18000</td>
-</tr>
-<tr>
-<td>James</td>
-<td>$11000</td>
-</tr>
-<tr>
-<td>Mary</td>
-<td>$9000</td>
-</tr>
+<table border="1" class="seriesTABLE">
+<tr><th colspan=2>API</th></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.Column}anychart.core.cartesian.series.Column{api}</td></tr>
+<tr><th colspan=2>DATA</th></tr>
+<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>[Stacked Column](Stacked/Value/Column_Chart), [Percent Stacked Column](Stacked/Percent/Column_Chart)</td></tr>
+<tr><td>Vertical</td><td>[Bar](Bar_Chart)</td></tr>
+<tr><td>3D</td><td>[3D Column](3D_Charts/3D_Column_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Column Chart with Error Bars](Error_Chart)</td></tr>
+<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>[Stock Column](../Stock_Charts/Series/Column)</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td></td><td>[Bar](Bar_Chart)</td></tr>
+<tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/column-chart/" target="_blank">Chartopedia: Column Chart</a></td></tr>
+<tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
-Now we need to convert this data table into an acceptable format. In terms of the AnyChart data model we have one series of data (Sales) with categories that hold managers names. Each point in series represents one manager and his/her sales. Converted Data looks like:
+## Quick Start
+
+To create a Column chart, use the {api:anychart#column}anychart.column(){api} chart constructor. If you pass the data to this chart constructor, it creates a Column series.
+
+To create a Column series explicitly, call the {api:anychart.charts.Cartesian#column}column(){api} method.
+
+The following sample demonstrates how a basic Column chart is created:
 
 ```
-  chart.column([
-    ["John" , 10000],
-    ["Jake" , 12000],
-    ["Peter" , 18000],
-    ["James" , 11000],
-    ["Mary" , 9000]
-  ]);
-```
-
-{sample}BCT\_ColumnChart\_01{sample}
-
-### Multi-series
-
-To compare 2 or more data rows you should build a multi-series column chart as it is shown in the sample below.
-
-Let's compare the First quarter sales with the Second quarter sales:
-
-<table width="300px">
-<tr>
-<td>John</td>
-<td>$10000</td>
-<td>$12000</td>
-</tr>
-<tr>
-<td>Jake</td>
-<td>$12000</td>
-<td>$15000</td>
-</tr>
-<tr>
-<td>Peter</td>
-<td>$18000</td>
-<td>$16000</td>
-</tr>
-<tr>
-<td>James</td>
-<td>$11000</td>
-<td>$13000</td>
-</tr>
-<tr>
-<td>Mary</td>
-<td>$9000</td>
-<td>$19000</td>
-</tr>
-</table>
-
-As we did in single-series column sample above, here we need to convert this table, the only difference between these two samples is the fact that now we have two series of data - one series for each quarter, and we give proper names to each series:
-
-```
-  var data = anychart.data.set([
-    ["John" , 10000, 12000],
-    ["Jake" , 12000, 15000],
-    ["Peter", 18000, 16000],
-    ["James", 11000, 13000],
-    ["Mary" , 9000, 19000]
-  ]);
-```
-
-Let's set {api:anychart#column}column(){api} chart type as default one and create two {api:anychart.core.cartesian.series.Column}column(){api} series using our data.
-
-{sample}BCT\_ColumnChart\_02{sample}
-
-### 3D Series
-
-Along with common series appearance you can enable 3D mode for column chart. Use {api:anychart#column3d}column3d(){api} method to enable 3D mode. 3D column series are controlled by the {api:anychart.core.cartesian.series.Column3d}column(){api} method.
-
-```
-// define data set
+// create a data set
 var data = anychart.data.set([
-  ["Department Stores", 637166],
-  ["Discount Stores", 721630],
-  ["Men's/Women's Specialty Stores", 148662],
-  ["All other outlets", 90000]
+  ["John", 10000],
+  ["Jake", 12000],
+  ["Peter", 13000],
+  ["James", 10000],
+  ["Mary", 9000]
 ]);
 
-// create chart
-var chart = anychart.column3d();
+// create a chart
+var chart = anychart.column();
 
-// create series
+// create a column series and set the data
 var series = chart.column(data);
-series.name("Sales 2009");
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
-More information about 3D charts can be found in [3D Charts article](../Basic_Charts_Types/3D_Charts).
+{sample}BCT\_Column\_Chart\_01{sample}
 
-{sample}BCT\_ColumnChart\_13{sample}
+## General Settings
 
-## Axes
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Column chart (for example, legend and interactivity settings).
 
-In AnyChart Charting Framework axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale and settings and else. All axis features are described in [Axes Basics](../Axes_and_Grids/Axis_Basics) tutorial. In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values.
+Here is an overview of general settings: [General Settings](General_Settings).
 
-### Orientation
+## Special Settings
 
-With AnyChart you can place axes to any side of the chart, all you need to do is to adjust {api:anychart.enums.Orientation}orientation(){api} parameter of {api:anychart.charts.Cartesian#yAxis}yAxis(){api} or {api:anychart.charts.Cartesian#xAxis}xAxis(){api} methods.
+### Appearance
 
-Orientation depends on plot type and inversion of axes, you will find list of all possible orientation and inversion settings in [Axes Orientation](../Axes_and_Grids/Axis_Orientation) tutorial.
+Here is a full list of methods used to configure visual settings that are available for the Column series:
 
-```
-  var xAxis = chart.xAxis();
-  xAxis.orientation("top");
-  var yAxis = chart.yAxis();
-  yAxis.orientation("right");
-```
+* {api:anychart.core.cartesian.series.Column#color}color(){api}, {api:anychart.core.cartesian.series.Column#fill}fill(){api}, {api:anychart.core.cartesian.series.Column#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Column#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
+* {api:anychart.core.cartesian.series.Column#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Column#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Column#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+* {api:anychart.core.cartesian.series.Column#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Column#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Column#selectStroke}selectStroke(){api} configure the visual settings on select
 
-Look at the demonstration of this feature in the Single-series sample:
+You can learn more from the [Appearance Settings](../Appearance_Settings) article.
 
-{sample}BCT\_ColumnChart\_03{sample}
-
-### Inversion
-
-AnyChart allows to invert any axis: Y, X or any extra. Inversion is controlled by axis {api:anychart.scales.Linear#inverted}scale().inverted(){api}:
+In the sample below, there are two Column series with some of the appearance settings configured:
 
 ```
-  var yScale = chart.yScale();
-  yScale.inverted(true);
+// create the first series
+var series1 = chart.column(seriesData_1);
+
+// configure the visual settings of the first series
+series1.fill("#00cc99", 0.3);
+series1.hoverFill("#00cc99", 0.3);
+series1.selectFill("#00cc99", 0.5);
+series1.stroke("#00cc99", 1, "10 5", "round");
+series1.hoverStroke("#00cc99", 2, "10 5", "round");
+series1.selectStroke("#00cc99", 4, "10 5", "round");
+
+// create the second series
+var series2 = chart.column(seriesData_2);
+
+// configure the visual settings of the second series
+series2.fill("#0066cc", 0.3);
+series2.hoverFill("#0066cc", 0.3);
+series2.selectFill("#0066cc", 0.5);
+series2.hatchFill("zigzag", "#808080", 1, 15);
+series2.stroke("#0066cc");
+series2.hoverStroke("#0066cc", 2);
+series2.selectStroke("#0066cc", 4);
 ```
-Look at the demonstration of Y-Axis inversion in the Single-series sample:
+{sample}BCT\_Column\_Chart\_02{sample}
 
-{sample}BCT\_ColumnChart\_04{sample}
-
-### Minimum and Maximum
-
-By default AnyChart calculates axis the minimum and the maximum automatically. You can see this on the scale inversion chart sample above: the minimal value of the Y-Axis is 6.000, and maximum is 21.000. You can control these values by setting {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} parameters of the scale:
-
-```
-  var yScale = chart.yScale();
-  yScale.minimum(6000);
-  yScale.maximum(20000);
-```
-
-Look at the demonstration of the maximum and the minimum values in the Single-series sample:
-
-{sample}BCT\_ColumnChart\_05{sample}
-
-## Padding
-
-The special thing about column charts are the paddings between columns and column groups (in multi-series charts). To set paddings you need to use {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} or {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api} parameters. Paddings are measured as a ratio to column width (columns widths are calculated automatically). For example, if you set {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} to 0.5, the space between two columns will be equal to the half of each column width. If you don't want any padding between columns or groups you should set {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} and {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api} to 0.  
-  
-Here is the sample of multi-series column chart with {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} and {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api} set to -0.5 and 2; accordingly, negative {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} leads to columns overlay and large {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api} moves column groups away from each other:
-
-{sample}BCT\_ColumnChart\_06{sample}
-
-## Visualization
-
-In this section we will describe the main elements of column chart style and demonstrate how style can be applied.
-
-The main idea of styles is to segregate visualization and data definition. Visual appearance of columns is defined using certain styles. The style can be applied to all column charts or a single column.
-  
-Styles are also used to make charts interactive: you can define how elements will be displayed by default and when hovered.
-
-### Basic Sample
-
-Now, let's find out how to create a simple style and apply it to the chart. As we've already mentioned, style consists of several elements, like in the structure below:
+If you use object notation to set the data, you can change the appearance of particular columns by adding visual parameters to the data set:
 
 ```
-  var series = chart.column([
-    ['John' , 10000],
-    ['Jake' , 12000],
-    ['Peter' , 18000],
-    ['James' , 11000],
-    ['Mary' , 9000]
-  ]);
-  series.fill("Gold");
-  series.hoverStroke("darkred", 4);
-  series.stroke("#56561a", 4);
-  series.hatchFill("diagonalbrick", "gray");
-  series.hoverHatchFill("diagonalbrick", "darkred");
+// create a data set
+var data = anychart.data.set([
+  {x: "John", value: 10000, fill :"#ff0000", stroke: "#ff0000"},
+  {x: "Jake", value: 12000, fill: "#ffff00", stroke: "#ffff00"},
+  {x: "Peter", value: 13000, fill: "#00ff00", stroke: "#00ff00"},
+  {x: "James", value: 10000, fill: "#0000ff", stroke: "#0000ff"},
+  {x: "Mary", value: 9000, fill: "#ff00ff", stroke: "#ff00ff"}
+]);
 ```
 
-Using such settings we've created a style that defines columns of Gold color, rather thick border, hatch filled with DiagonalBrick and a couple of effects. Also, we've defined that when user will move cursor over an element it will be highlighted with a DarkRed thick border and hatch fill colored DarkRed too.
-   
-Now we will take a sample single series chart described above and apply it to all chart elements.
+{sample}BCT\_Column\_Chart\_03{sample}
 
-{sample}BCT\_ColumnChart\_07{sample}
-
-## Labels and Tooltips
-
-In this section we will explain how to add and configure data labels and tooltips.
-
-<!--  Full explanation of formatting and tuning visual appearance for them can be found in Labels and tooltips tutorials.  -->   
-
-If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Column#labels}labels(){api} and {api:anychart.core.cartesian.series.Column#tooltip}tooltip(){api} methods. Adding attributes with values to these methods will lead to changes in visual appearance, position and format. 
-
-With the following example let's make data labels appear in the center of the columns, format them to show only the value corresponding to the column and tooltip to show detailed description.  
-
-{sample}BCT\_ColumnChart\_08{sample}
-
-## Markers
-
-Marker is an object with a specified shape, size, and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including columns.
-  
-In the sample below we take single-series data described above and mark the highest column in series with a "Star5" of the "Gold" color.
-
-To make marker visually appealing we set its size to 12 pixels in normal state, and 22px while hovered.
+If you use an array to set the data, you can also configure the appearance of each column separately, but in a slightly different way. After adding visual parameters to the data set, you have to map fields for them so that they can be interpreted by the component:
 
 ```
-  {
-  // set x
-    x: 'Peter',
-    // set value
-    value: 18000,
-    // marker settings
-    marker:{
-    // marker type
-      type:'star5',
-      // marker color
-      fill:'gold',
-      // marker size
-      size: 12,
-      // initiate marker draw
-      enabled: true
-    },
-    // adjust marker size on mouse over
-    hoverMarker: {size: 22}
-  },
+// create a data set
+var data = anychart.data.set([
+  ["John", 10000, 12500, "#ff0000", "#ff0000", "#ffcccc", "#ffcccc"],
+  ["Jake", 12000, 15000, "#ffff00", "#ffff00", "#ffffcc", "#ffffcc"],
+  ["Peter", 13000, 16500, "#00ff00", "#00ff00", "#ccffcc", "#ccffcc"],
+  ["James", 10000, 13000, "#0000ff", "#0000ff", "#ccccff", "#ccccff"],
+  ["Mary", 9000, 11000, "#ff00ff", "#ff00ff", "#ffccff", "#ffccff"]
+]);
+
+// map the data
+var seriesData_1 = data.mapAs({x: [0], value: [1], fill: [3], stroke: [4]});
+var seriesData_2 = data.mapAs({x: [0], value: [2], fill: [5], stroke: [6]});
 ```
 
-And here is a result - it's easy to notice that Peter sold more than others and we are showing this on the chart:
+{sample}BCT\_Column\_Chart\_04{sample}
 
-{sample}BCT\_ColumnChart\_09{sample}
+### Padding
 
-## Colors
+To set the padding between columns and column groups, use these methods:
 
-AnyChart javascript charting library uses default color palette to colorize data elements of chart automatically if you have not defined special colors.
+* {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api}
+* {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}
 
-### Colorizing Elements
+Padding is measured as a ratio to the width of columns (the width is calculated automatically). So, if it is < 1, the space between columns or column groups is less than the width of columns, and vice versa. If padding is set to 0, there is no space between columns/groups, and a negative parameter makes columns overlap each other.
 
-Now let's study how to apply different colors to different data series. To apply the color to the exact series we need to set the {api:anychart.graphics.vector.Fill}fill(){api} parameter in the {api:anychart.core.cartesian.series}series{api}. In the sample below we have 5 series with sample data, which we'll set in different color each. Each series represents the sales amount of a manager, quarters are categories. Here is the sample:
-
-{sample}BCT\_ColumnChart\_10{sample}
-
-Here's a part of the code of the sample above:
+Please note that in AnyChart single-series column charts are, technically speaking, composed of one-element column groups, so you should use {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api} to configure the padding between columns. In the following sample it is set to 0:
 
 ```
-  // data
-  var data = anychart.data.set([
-    ["First quarter", 10000, 12000, 18000, 11000, 9000],
-    ["Second quarter", 12000, 15000, 16000, 13000, 19000]
-  ]);
+// create a column series and set the data
+var series = chart.column(data);
 
-  // map data for the each series
-  var dataMap1 = data.mapAs({x: [0], value: [1]});
-  var dataMap2 = data.mapAs({x: [0], value: [2]});
-  var dataMap3 = data.mapAs({x: [0], value: [3]});
-  var dataMap4 = data.mapAs({x: [0], value: [4]});
-  var dataMap5 = data.mapAs({x: [0], value: [5]});
-
-  // chart type
-  var chart = anychart.column();
-
-  // set title
-  chart.title("Colorizing");
-  
-  // set chart legend settings
-  chart.legend(true);
-
-  // set first series data and color
-  var series = chart.column(dataMap1);
-  series.fill("#4A55C7");
-  series.name("John");
-
-  // other series names, data and color are to be set similarly to the former
+// set the padding between column groups
+chart.barGroupsPadding(0);
 ```
 
-Also, you might have noticed, that we enabled the {api:anychart.charts.Cartesian#legend}legend{api} element in this sample, which helped us to name each series differently.
+{sample}BCT\_Column\_Chart\_05{sample}
 
-Look at the individual columns we colorized in the sample below. We've got a chart with one series and predefined color for all elements. We set "#B44D4D" color for the minimum point and "Rgb(77,180,77)" for the maximum one.
-  
-As you see it is very easy to do by setting a value for the {api:anychart.graphics.vector.Fill}fill(){api} parameter of a point.
+The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multi-series charts: it sets the padding between columns within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
 
-{sample}BCT\_ColumnChart\_11{sample}
+In the sample below, there is a multi-series Column chart with the padding between columns and between column groups set to -0.5 and 2 correspondingly:
 
-Important Note:
+```
+// create the first series
+var series1 = chart.column(seriesData_1);
 
-AnyChart takes care of visualization and users convenience seriously - that is why we have a number of ways to set colors. For example, instead of "Rgb(180,77,77)" you can set "#b44d4d"- and the color will be the same. Depending on your system/site/application design you may need - and use - any of this color setting methods. But even this is not everything about colors in AnyChart: read more about setting colors below and in the following Help Sections:
+// create the second series
+var series2 = chart.column(seriesData_2);
 
-* Different ways of [setting colors](../Appearance_Settings/Color_Management) of elements
+// set the padding between columns
+chart.barsPadding(-0.5);
 
-## Hatch Fills
+// set the padding between column groups
+chart.barGroupsPadding(2);
+```
 
-AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fills, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
-To see whole range of available hatch types see [Hatch Fill](../Appearance_Settings/Hatch_Fill) tutorial.
- 
-To demonstrate hatch fill feature we've edited one of the previous samples. As you see now it is completely monochrome. We've got a 5-series chart with 2 data points in each series. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}hatchFill(){api} parameter opposite to {api:anychart.graphics.vector.Fill}fill(){api} parameter used to colorize the series and set all series in grey color (#EEEEEE).
+{sample}BCT\_Column\_Chart\_06{sample}
 
-{sample}BCT\_ColumnChart\_12{sample}
+### Labels
 
-## Samples
+Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-You can see a lot of other samples in [AnyChart Web Column Charts Gallery](http://anychart.com/products/anychart/gallery/Column_Charts/).
+(???) отмечаю на будущее, что нужно добавить текст
+
+To configure a label on a Column chart, you need to know the following peculiarities regarding formatting and positioning lables.... 
+
+### Tooltips
+
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+
+(???) отмечаю на будущее, что нужно добавить текст
+
+In case of Column charts, there are some peculiarities in formatting the text of tooltips...
+
+### Stacked Column
+
+Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
+
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts (Overview)](Stacked/Overview).
+
+To learn about the stacked versions of the Column chart, see:
+
+* [Stacked Column](Stacked/Value/Column_Chart)
+* [Percent Stacked Column](Stacked/Percent/Column_Chart)
+
+<a name='vertical_column'></a>
+### Vertical Column (Bar)
+
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical_Charts/Overview).
+
+The vertical column chart is called the bar chart: it shows categories on the vertical axis instead of the horizontal axis and represents values as bars instead of columns. Read more: [Bar Chart](Bar_Chart).
+
+### 3D Column
+
+Using AnyChart, you can create 3D versions of some chart types, including the Column chart.
+
+To learn about 3D charts in general, see [3D Charts (Overview)](3D_Charts/Overview).
+
+The 3D Column chart is described in the following article: [3D Column Chart](3D_Charts/3D_Column_Chart).

@@ -1,0 +1,53 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["John", 10000],
+      ["Jake", 12000],
+      ["Peter", 13000],
+      ["James", 10000],
+      ["Mary", 9000]
+    ]);
+
+    // set the chart type
+    var chart = anychart.line();
+
+    // create a series, set the data and name
+    var series = chart.column(data);
+    series.name("Sales");
+
+    // enable and configure labels on the series
+    series.labels(true);
+    series.labels().fontColor("green");
+    series.labels().fontWeight(900);
+    series.labels().textFormatter("${%value}");
+
+    // set the chart title
+    chart.title("Labels (Series)");
+
+    // set the titles of the axes
+    var xAxis = chart.xAxis();
+    xAxis.title("Manager");
+    var yAxis = chart.yAxis();
+    yAxis.title("Sales, $");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

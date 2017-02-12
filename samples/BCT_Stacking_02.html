@@ -1,0 +1,58 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["QTR1", 2, 2, 6],
+      ["QTR2", 3, 3, 4],
+      ["QTR3", 4, 4, 2],
+      ["QTR4", 5, 2.5, 2.5]
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
+    var seriesData_3 = data.mapAs({x: 0, value: 3});
+
+    // set the chart type
+    var chart = anychart.column();
+
+    // set stacking mode for the default primary value scale
+    chart.yScale().stackMode("percent");
+
+    // set labels/ticks interval 
+    chart.yScale().ticks().interval(25);
+
+    // set axis labels formatting
+    chart.yAxis().labels().textFormatter("{%Value}%");
+
+    // set tooltip formatting
+    chart.tooltip().textFormatter("{%yPercentOfCategory}{decimalCount:2}%");
+ 
+    // create the series
+    chart.column(seriesData_1);
+    chart.column(seriesData_2);
+    chart.column(seriesData_3);
+
+    // set the chart title
+    chart.title("Stacked Chart - Percent Mode");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

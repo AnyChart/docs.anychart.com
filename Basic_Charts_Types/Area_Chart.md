@@ -2,164 +2,58 @@
 #Area Chart
 
 * [Overview](#overview)
-* [Chart](#chart)
-  * [Single Series Area Chart](#single_series_area_chart)
-  * [Single Series Spline Area Chart](#single_series_spline_area_chart)
-  * [Multi-series](#multi-series)
-  * [3D Area Chart](#3d_area_chart)
-* [Axes](#axes)
-  * [Orientation](#orientation)
-  * [Inversion](#inversion)
-  * [Minimum and Maximum](#minimum_and_maximum)
-* [Visualization](#visualization)
-  * [Basic Sample](#basic_sample)
-  * [Image Fill](#image_fill)
-* [Labels and Tooltips](#labels_and_tooltips)
-* [Markers](#markers)
-* [Hatch Fills](#hatch_fills)
-* [Samples](#samples)
+* [Quick Start](#quick_start)
+* [General Settings](#general_settings)
+* [Special Settings](#special_settings)
+  * [Appearance](#appearance)
+  * [Labels](#labels)
+  * [Tooltips](#tooltips)
+  * [Stacked Area](#stacked_area)
+  * [Vertical Area](#vertical_area)
+  * [3D Area](#3d_area)
 
 ## Overview
 
-Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts emphasize the magnitude of change over time and can be used to draw attention to the total value across a trend. For example, data that represents profit over time can be plotted in an area chart to emphasize the total profit.
+An area chart is a chart type based on the line chart: it also shows information as a series of data points connected by straight line segments, but the area between the X-axis and the line segments is filled with a color or a pattern.
 
-In this article you can learn about the types of area charts available in AnyChart and find out to configure their visual settings and such elements as axes, labels, tooltips, markers.
+The area chart emphasizes the magnitude of change over time and can be used to highlight the total value across a trend. For example, an area chart displaying profit over time can emphasize the total profit.
 
+This article explains how to create a basic Area chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Area Chart's characteristics:
 
-## Chart
-
-Depending on the data model you use and on the purpose of your visualization, AnyChart JavaScript area charts can contain one or several series.
-
-### Single Series Area Chart
-
-In the sample below, there is a single-series area chart showing sales of ACME Corp. through several months in a year. Here is the data in a table view:
-
-<table width="287" border="1" class="dtTABLE">
-<tbody>
-<tr>
-<th width="88"><b>Month</b></th>
-<th width="88"><b>Sales</b></th>
-</tr>
-<tr>
-<td>January</td>
-<td>$10000</td>
-</tr>
-<tr>
-<td>February</td>
-<td> $12000</td>
-</tr>
-<tr>
-<td>March</td>
-<td> $18000</td>
-</tr>
-<tr>
-<td>April</td>
-<td> $11000</td>
-</tr>
-<tr>
-<td>May</td>
-<td> $9000</td>
-</tr>
-</tbody>
+<table border="1" class="seriesTABLE">
+<tr><th colspan=2>API</th></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.Area}anychart.core.cartesian.series.Area{api}</td></tr>
+<tr><th colspan=2>DATA</th></tr>
+<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>[Stacked Area](Stacked/Value/Area_Chart), [Percent Stacked Area](Stacked/Percent/Area_Chart)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Area](Vertical_Charts/Vertical_Area_Chart)</td></tr>
+<tr><td>3D</td><td>[3D Area](3D_Charts/3D_Area_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Area Chart with Error Bars](Error_Chart)</td></tr>
+<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
+<tr><td>Polar</td><td>[Polar Area](Polar_Plot/Polar_Area_Chart)</td></tr>
+<tr><td>Radar</td><td>[Radar Area](Radar_Plot/Radar_Area_Chart)</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>[Stock Area](../Stock_Charts/Series/Area)</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td></td><td>[Spline Area](Spline_Area_Chart)</td></tr>
+<tr><td></td><td>[Step Area](Step_Area_Chart)</td></tr>
+<tr><td></td><td>[Range Area](Range_Area_Chart)</td></tr>
+<tr><td></td><td>[Range Spline Area](Range_Spline_Area_Chart)</td></tr>
+<tr><td></td><td>[Range Step Area](Range_Step_Area_Chart)</td></tr>
+<tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/area-chart/" target="_blank">Chartopedia: Area Chart</a></td></tr>
+<tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
-Now we need to convert this data table into the format that can be used by AnyChart. See more about formats in 
-[Supported Data Formats](../Working_with_Data/Supported_Data_Formats) article.
-  
-In terms of AnyChart data model we have one series of data (Sales) with categories that hold months names. Each point 
-in series represents monthly sales volume. We will use the easiest method of data setting, which looks 
-like this:
+## Quick Start
 
-```
-anychart.data.set([
-  ["January", 10000],
-  ["February", 12000],
-  ["March", 18000],
-  ["April", 11000],
-  ["May", 9000]
-]);
-chart = anychart.area();
-chart.area(data);
-```
+To create an Area chart, use the {api:anychart#area}anychart.area(){api} chart constructor. If you pass the data to this chart constructor, it creates an Area series.
 
-As you can see, we've created a Data Set. Every object is a point with parameters. The first column is a 
-category and the second one is a value.
-  
-  
-Here it is: now AnyChart can visualize your data. Look at the chart sample below and click on "Launch in playground" 
-to see the full source code, alter and play with the sample or download it.
+To create an Area series explicitly, call the {api:anychart.charts.Cartesian#area}area(){api} method.
 
-{sample}BCT\_AreaChart\_01{sample}
-
-### Single Series Spline Area Chart
-
-To improve the design of your chart, you can turn it into a Spline Area chart:
-
-```
-// create a data set
-var data = anychart.data.set([
-    ['January', 10000],
-    ['February', 12000],
-    ['March', 18000],
-    ['April', 11000],
-    ['May', 9000]
-]);
-
-// set the chart type
-chart = anychart.area();
-
-// create a spline area series and set the data
-chart.splineArea(data);
-```
-
-Here is the same chart as shown above, but in the Spline mode:
-
-{sample}BCT\_AreaChart\_02{sample}
-
-### Multi-series
-
-To compare two or more data sets you should use multi-series area charts as it is shown in the sample below.
-  
-Let's compare 2003 sales to 2004 sales:
-
-<table width="375" border="1" class="dtTABLE">
-<tbody>
-<tr>
-<th width="88"><b>Month</b></th>
-<th width="88"><b>2003 Sales</b></th>
-<th width="88"><b>2004 Sales</b></th>
-</tr>
-<tr>
-<td>January</td>
-<td>$10000</td>
-<td>$12000</td>
-</tr>
-<tr>
-<td>February</td>
-<td> $12000</td>
-<td> $15000</td>
-</tr>
-<tr>
-<td>March</td>
-<td> $18000</td>
-<td> $16000</td>
-</tr>
-<tr>
-<td>April</td>
-<td> $11000</td>
-<td> $15000</td>
-</tr>
-<tr>
-<td>May</td>
-<td> $9000</td>
-<td> $14000</td>
-</tr>
-</tbody>
-</table>
-
-As we have done in single series area sample above we need to convert this table in AnyChart format, the only difference between 
-these two samples is the fact that now we have two series of the data: one series for each year, and we give proper 
-names to each series:
+The following sample demonstrates how a basic Area chart is created:
 
 ```
 // create a data set
@@ -171,171 +65,113 @@ var data = anychart.data.set([
   ["May", 9000]
 ]);
 
-var chart = anychart.area3d();
-
-chart.area3d(seriesData_1);
-chart.area3d(seriesData_2);
-```
-
-As now we have multi-series chart we don't want to set the **chart type** for each series individually (there can be more than two series in a multi-series chart), so we set the **chart** as {api:anychart#area}anychart.area(){api}. Now all series in the chart will be of Area type by default.
-
-{sample}BCT\_AreaChart\_03{sample}
-
-### 3D Area Chart
-
-Anychart provides an opportunity to use 3d version of area charts. Use {api:anychart#area3d}area3d(){api} method to create 3d area chart. 
-
-```
-// create a data set
-var data = anychart.data.set([
-  ["Department Stores", 637166],
-  ["Discount Stores", 721630],
-  ["Men's/Women's Specialty Stores", 148662],
-  ["All other outlets", 90000]
-]);
-
-// create a 3D chart
-var chart = anychart.area3d();
+// create a chart
+var chart = anychart.area();
 
 // create an area series and set the data
-chart.area(data);
+var series = chart.area(data);
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
-As you can see from the snippet above, you need to use the {api:anychart.core.cartesian.series.Area3d}area()api} method to create 3D area series. Here is a sample of a 3D area chart:
+{sample}BCT\_Area\_Chart\_01{sample}
 
-{sample}BCT\_AreaChart\_12{sample}
+## General Settings
 
-**Note**: more information about 3D charts can be found in [3D Charts article](#../Basic_Charts_Types/3D_Charts).
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Area chart (for example, legend and interactivity settings).
 
-## Axes
+Here is an overview of general settings: [General Settings](General_Settings).
 
-In AnyChart JavaScript Charting Library, axis is an object that allows you to configure chart grid, axis line along with tick marks and labels, axis scale, settings, etc. In this section we will quickly demonstrate how we can adjust axis orientation, invert axis scale and control minimum and maximum values, you can find all axis features in
-[Axes tutorial](../Axes_and_Grids/Axis_Basics).
+## Special Settings
 
-### Orientation
+### Appearance
 
-With AnyChart Charting Framework you can place axes to any side of the chart, all you need to do is to adjust orientation with {api:anychart.core.axes.Linear#orientation}orientation(){api} parameter of {api:anychart.core.axes.Linear}yAxis(){api} or {api:anychart.core.axes.Linear}xAxis(){api} method.
-  
-Axes position depends on plot type, orientation and inversion of axes.
+Here is a full list of methods used to configure visual settings that are available for the Area series:
 
-```
-  chart.xAxis(0).orientation('top');
-  chart.yAxis(0).orientation('right');
-```
+* {api:anychart.core.cartesian.series.Area#color}color(){api}, {api:anychart.core.cartesian.series.Area#fill}fill(){api}, {api:anychart.core.cartesian.series.Area#hatchFill}hatchFill(){api}, {api:anychart.core.cartesian.series.Area#stroke}stroke(){api} set the color, fill, hatch fill, and stroke
+* {api:anychart.core.cartesian.series.Area#hoverFill}hoverFill(){api}, {api:anychart.core.cartesian.series.Area#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.core.cartesian.series.Area#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+* {api:anychart.core.cartesian.series.Area#selectFill}selectFill(){api}, {api:anychart.core.cartesian.series.Area#selectHatchFill}selectHatchFill(){api}, {api:anychart.core.cartesian.series.Area#selectStroke}selectStroke(){api} configure the visual settings on select
 
-Here is the demonstration of this feature in the Single-series sample:
+You can learn more from the [Appearance Settings](../Appearance_Settings) article.
 
-{sample}BCT\_AreaChart\_04{sample}
-
-### Inversion
-
-AnyChart allows you to invert any axis (Y, X or any extra). Inversion is controlled by axis **.inverted()**:
+In the sample below, there are two Area series with some of the appearance settings configured:
 
 ```
-  chart.yScale().inverted(true);
+// create the first series
+var series1 = chart.area(seriesData_1);
+
+// configure the visual settings of the first series
+series1.fill("#00cc99", 0.3);
+series1.hoverFill("#00cc99", 0.3);
+series1.selectFill("#00cc99", 0.5);
+series1.stroke("#00cc99", 1, "10 5", "round");
+series1.hoverStroke("#00cc99", 2, "10 5", "round");
+series1.selectStroke("#00cc99", 4, "10 5", "round");
+
+// create the second series
+var series2 = chart.area(seriesData_2);
+
+// configure the visual settings of the second series
+series2.fill("#0066cc", 0.3);
+series2.hoverFill("#0066cc", 0.3);
+series2.selectFill("#0066cc", 0.5);
+series2.hatchFill("zigzag", "#808080", 1, 15);
+series2.stroke("#0066cc");
+series2.hoverStroke("#0066cc", 2);
+series2.selectStroke("#0066cc", 4);
 ```
 
-And here is the demonstration of Y Axis inversion on the Single-series sample:
+{sample}BCT\_Area\_Chart\_02{sample}
 
-{sample}BCT\_AreaChart\_05{sample}
+### Labels
 
-### Minimum and Maximum
+Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-AnyChart calculates axis minimum and maximum automatically. You can see this on the scale inversion chart sample above: the minimal value on the Y Axis is 8.000, and the maximum is 20.000. You can control these values by setting {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api}. :
+(???) отмечаю на будущее, что нужно добавить текст
 
-```
-chart.yScale().minimum(0).maximum(50000);
-```
+To configure a label on an Area chart, you need to know the following peculiarities regarding formatting and positioning lables.... 
 
-Here is the demonstration of maximum and minimum values in the Single-series sample:
+### Tooltips
 
-{sample}BCT\_AreaChart\_06{sample}
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
-## Visualization
+(???) отмечаю на будущее, что нужно добавить текст
 
-In this section we will describe main parts of area chart visualization and ways to adjust it. Visual appearances of areas are defined using certain methods. For Area chart the main thing is the {api:anychart.graphics.vector.Fill}fill(){api} method.
+In case of Area charts, there are some peculiarities in formatting the text of tooltips...
 
-### Basic Sample
+### Stacked Area
 
-Now, let's look how to change the look of an Area.  Here is a basic sample:
+Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
 
-```
-chart.area(data)
-  .fill('Gold')
-  .hoverFill("darkred")
-  .stroke('#56561a', 4, 0.4)
-  .hatchFill('diagonalbrick', 'gray')
-  .hoverHatchFill('diagonalbrick', 'black');
-```
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts (Overview)](Stacked/Overview).
 
-Using such settings we've created a look with area colored in Gold, rather thick border line, hatch filled with DiagonalBrick. Also, we've defined that when the area is hovered it's hatch will be highlighted with black and the chart will be filled with dark red.
+To learn about the stacked versions of the Area chart and its modifications, see:
 
-Now let's apply this style to the chart:
+* [Stacked Area](Stacked/Value/Area_Chart)
+* [Percent Stacked Area](Stacked/Percent/Area_Chart)
+* [Stacked Spline Area](Stacked/Value/Spline_Area_Chart)
+* [Percent Stacked Spline Area](Stacked/Percent/Spline_Area_Chart)
+* [Stacked Step Area](Stacked/Value/Step_Area_Chart)
+* [Percent Stacked Step Area](Stacked/Percent/Area_Chart)
 
-{sample}BCT\_AreaChart\_07{sample}
+### Vertical Area
 
-### Image Fill
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical_Charts/Overview).
 
-Color is not the only way to design a chart. In this sample we will demonstrate how to use a picture as a fill:
+Here is the information about creating Vertical Area series:
 
-```
-chart.area(data).fill({
-  src: 'http://static.anychart.com/anychart_site_header.png',
-  mode: acgraph.vector.ImageFillMode.STRETCH
-})
-```
+* [Vertical Area](Vertical_Charts/Vertical_Area_Chart)
+* [Vertical Spline Area](Vertical_Charts/Vertical_Spline_Area_Chart)
+* [Vertical Step Area](Vertical_Charts/Vertical_Step_Area_Chart)
 
-{sample}BCT\_AreaChart\_08{sample}
+### 3D Area
 
-## Labels and Tooltips
+Using AnyChart, you can create 3D versions of some chart types, including the Area chart.
 
-In this section we will explain how to add and configure data labels and tooltips.
+To learn about 3D charts in general, see [3D Charts (Overview)](3D_Charts/Overview).
 
-If you want to configure data labels and tooltips for all series - you should use {api:anychart.core.cartesian.series.Area#labels}labels(){api} and {api:anychart.core.cartesian.series.Area#tooltip}tooltip(){api} methods. Adding attributes with values to these methods, you can change visual appearance, position and format of the same-named elements.
-
-When formatting data labels' text we use {api:anychart.core.ui.LabelsFactory#textFormatter}textFormatter(){api} method to show month's name. 
-
-```
-  var series = chart.area(data);
-  series.labels().enabled(true).rotation(90).textFormatter(function(point){
-    return point.x;
-  });
-  series.tooltip().enabled(true).titleFormatter(function(){return 'Your Tooltip Title'});
-```
-
-{sample}BCT\_AreaChart\_10{sample}
-
-## Markers
-
-Marker is an object with a specified shape, size and color or an image used to mark and to identify chart elements. AnyChart allows to add markers to any data element including areas.
-  
-  
-In the sample below we take single-series data described above and mark the highest point in series with a **"Star"** of the **"Gold"** color.
-
-To make the marker more visually appealing we set its size to 12px.
-
-```
-{x: 'March', value: 18000, marker:{type:'star5', fill:'gold', size: 12, enabled: true}, hoverMarker: {size: 22}},
-```
-
-It can be clearly seen on the chart that March was the most successful month in sales:
-
-{sample}BCT\_AreaChart\_09{sample}
-
-## Hatch Fills
-
-AnyChart technology allows printing charts out. Some printers may render colors differently from the image we see on monitors, so it may be hard to distinguish charts colored differently on monitors and similarly on prints. Also it is impossible to identify colors on prints of monochrome printers. AnyChart has a very useful feature - hatch fillings, ideal for differentiating elements on black and white display or for those who are color blind. Hatch fill is fully-independent structure, it doesn't rely on color fill and has its own settings. 
-
-To demonstrate hatch fill feature we've prepared the following sample. As you can see, it is completely monochrome. We have a chart with 3 series, each with 5 data points. For every series we've applied different hatch fills by setting hatch type for the {api:anychart.charts.Cartesian#hatchFillPalette}hatchFill(){api} parameter.
-
-```
-    .hatchFill('soliddiamond')
-    .hatchFill('forwarddiagonal')
-    .hatchFill('backwarddiagonal');
-```
-
-{sample}BCT\_AreaChart\_11{sample}
-
-## Samples
-
- You can see a lot of other samples in [AnyChart Web Area Charts Gallery](http://anychart.com/products/anychart/gallery/Area,_Spline-Area,_Step-Area_Charts).
+The 3D Area chart is described in the following article: [3D Area Chart](3D_Charts/3D_Area_Chart)
