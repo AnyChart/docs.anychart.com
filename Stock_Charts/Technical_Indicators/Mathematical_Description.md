@@ -150,7 +150,7 @@ Moving Average Convergence/Divergence indicator is calculated as follows:
 
 <ol>
 	<li>EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#exponential_moving_average)</a>. Slow period 
-	and fast period are set by <strong>slowPeriod</strong> (default 26) and <strong>fastPeriod</strong> (default 12) parameters of {api:anychart.core.stock.indicators.MACD}.macd(){api} method.</li>
+	and fast period are set by <strong>slowPeriod</strong> (default 26) and <strong>fastPeriod</strong> (default 12) parameters of {api:anychart.core.stock.indicators.MACD}macd(){api} method.</li>
 	<li>MACD series value is calculated:<br>
 <img src="http://static.anychart.com/images/technical_indicators/macd-macd.png"/></li>
 	<li>EMA\[signal period\]<sub>i</sub> of MACD series values is calculated by [EMA formula](#exponential_moving_average), where signal period is set
