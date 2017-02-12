@@ -18,7 +18,7 @@ Bollinger Bands %B is an indicator derived from [Bollinger Bands](Bollinger_Band
 - %B is above .50 when price is above the middle band (SMA)
 - %B is below .50 when price is below the middle band (SMA)
 
-Mathematical description of the indicator can be found on the following page: [Mathematical Description of Bollinger Bands %B](Mathematical_Description)
+Mathematical description of the indicator can be found on the following page: [Mathematical Description of Bollinger Bands %B](Mathematical_Description#bollinger_bands_b)
 
 ## Adding indicator
 
