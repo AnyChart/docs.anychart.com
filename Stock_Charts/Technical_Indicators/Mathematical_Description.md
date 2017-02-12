@@ -8,8 +8,8 @@
 * [Aroon](#aroon)
 * [Average True Range (ATR)](#)
 * [Bollinger Bands (BBands)](#bollinger_bands)
-* [Bollinger Bands %B](#bollinger\_bands\_b)
-* [Bollinger Bands Width (BBW)](#bollinger\_bands\_width)
+* [Bollinger Bands %B](#bbollinger_bands)
+* [Bollinger Bands Width (BBW)](#bollinger_bands_width)
 * [Commodity Channel Index (CCI)](#)
 * [Chaikin Money Flow (CMF)](#)
 * [Chaikin Oscillator (CHO)](#)
@@ -54,7 +54,7 @@ Coming soon.
 
 ## Aroon
 
-Aroon indicator in each point is calculated according to the following formula:
+Aroon indicator is calculated according to the following formula:
 
 <center><img src="http://static.anychart.com/images/technical_indicators/aroon.png" width="650"></center>
 
@@ -64,7 +64,6 @@ See [Aroon](Aroon) article.
 
 Coming soon.
 
-<a name="bollinger_bands"></a>
 ## Bollinger Bands (BBands)
 
 This indicator is calculated in three steps:
@@ -81,25 +80,23 @@ This indicator is calculated in three steps:
 
 See [Bollinger Bands](Bollinger_Bands) article.
 
-<a name="bollinger_bands_b"></a>
 ## Bollinger Bands %B
 
-The following formula is to be used for calculating this indicator:
+The Bollinger Bands %B indicator is calculated according to the following formula:
 
 <center><img src="http://static.anychart.com/images/technical_indicators/bbandsb.png" width="650"></center>
 
 See [Bollinger Bands %B](Bollinger_Bands_%B) article.
 
-<a name="bollinger_bands_width"></a>
 ## Bollinger Bands Width
 
-The Bollinger Bands Width indicator is calculated with this formula:
+The Bollinger Bands Width indicator is calculated according to the following formula:
 
 ```
 bandwidth = (upperBB − lowerBB) / middleBB
 ```
 
-This indicator creating is described in the [Bollinger Bands Width article](Bollinger_Bands_Width).
+See [Bollinger Bands Width article](Bollinger_Bands_Width) article.
 
 Coming soon.
 
