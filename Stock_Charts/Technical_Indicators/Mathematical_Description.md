@@ -7,15 +7,15 @@
 * [Adaptive Moving Average (AMA)](#ama)
 * [Aroon](#aroon)
 * [Average True Range (ATR)](#)
-* [Bollinger Bands (BBands)](#)
-* [BBands %B](#)
-* [BBands Width](#)
+* [Bollinger Bands (BBands)](#bollinger_bands)
+* [Bollinger Bands %B](#bollinger&#95;bands&#95;%b)
+* [Bollinger Bands Width (BBW)](#bollinger_bands_width)
 * [Commodity Channel Index (CCI)](#)
 * [Chaikin Money Flow (CMF)](#)
 * [Chaikin Oscillator (CHO)](#)
 * [Chaikin Volatility (CHV)](#)
 * [Directional Movement Indicator (DMI)](#)
-* [Exponential Moving Average (EMA)](#exponential_moving_average)
+* [Exponential Moving Average (EMA)](#exponential\_moving\_average)
 * [Keltner Channels](#)
 * [Modified Moving Average (MMA)](#mma)
 * [Money Flow Index (MFI)](#)
@@ -25,7 +25,7 @@
 * [On Balance Volume (OBV)](#)
 * [Parabolic SAR (PSAR)](#)
 * [Price Channels](#)
-* [Rate of Change (ROC)](#roc)
+* [Rate of Change (ROC)](#rate_of_change)
 * [Relative Strength Index (RSI)](#relative_strength_index)
 * [Simple Moving Average (SMA)](#simple_moving_average)
 * [Stochastic Oscillator (Fast,Slow)](#)
@@ -61,23 +61,49 @@ Each point of the Adaptive Moving Average indicator is calculated by the followi
 
 ## Aroon
 
-Aroon indicator in each point is calculated according to the following formula:
+Aroon indicator is calculated according to the following formula:
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/aroon.png" width="650"></center>
+
+See [Aroon](Aroon) article.
 
 ## Average True Range (ATR)
 
 Coming soon.
 
-## Bollinger Bands (BBands)
+## Bollinger Bands
 
-Coming soon.
+This indicator is calculated in three steps:
 
-## BBands %B
+1. Calculate the SMA according to the SMA formula.
 
-Coming soon.
+2. Use the next formula to calculate the standard deviation:
 
-## BBands Width
+<center><img src="http://static.anychart.com/images/technical_indicators/bbands-standart-deviation.png" width="300"></center>
+
+3. Bollinger Bands values are calculated according to this formula, where "d" is set using deviation attribute in <bbands_indicator> node:
+
+<center><img src="http://static.anychart.com/images/technical_indicators/bbands.png" width="225"></center>
+
+See [Bollinger Bands](Bollinger_Bands) article.
+
+## Bollinger Bands %B
+
+The Bollinger Bands %B indicator is calculated according to the following formula:
+
+<center><img src="http://static.anychart.com/images/technical_indicators/bbandsb.png" width="650"></center>
+
+See [Bollinger Bands %B](Bollinger_Bands_%25B) article.
+
+## Bollinger Bands Width
+
+The Bollinger Bands Width indicator is calculated according to the following formula:
+
+```
+bandwidth = (upperBB − lowerBB) / middleBB
+```
+
+See [Bollinger Bands Width article](Bollinger_Bands_Width) article.
 
 Coming soon.
 
@@ -107,6 +133,8 @@ Exponential Moving Average in each point is calculated according to the followin
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/ema.png" width="680"></center>
 
+See [Exponential Moving Average (EMA)](Exponential\_Moving\_Average\_(EMA))
+
 ## Keltner Channels
 
 Coming soon.
@@ -131,7 +159,7 @@ Moving Average Convergence/Divergence indicator is calculated as follows:
 
 <ol>
 	<li>EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#exponential_moving_average)</a>. Slow period 
-	and fast period are set by <strong>slowPeriod</strong> (default 26) and <strong>fastPeriod</strong> (default 12) parameters of {api:anychart.core.stock.indicators.MACD}.macd(){api} method.</li>
+	and fast period are set by <strong>slowPeriod</strong> (default 26) and <strong>fastPeriod</strong> (default 12) parameters of {api:anychart.core.stock.indicators.MACD}macd(){api} method.</li>
 	<li>MACD series value is calculated:<br>
 <img src="http://static.anychart.com/images/technical\_indicators/macd-macd.png"/></li>
 	<li>EMA\[signal period\]<sub>i</sub> of MACD series values is calculated by [EMA formula](#exponential_moving_average), where signal period is set
@@ -141,6 +169,8 @@ Moving Average Convergence/Divergence indicator is calculated as follows:
 	<li>Histogram series is calculated:<br>
 <img src="http://static.anychart.com/images/technical\_indicators/macd-histogram.png"/></li>
 </ol>
+
+See [Moving Average Convergence Divergence](Moving\_Average\_Convergence\_Divergence\_\(MACD\)) article.
 
 ## Moving Average Envelopes
 
@@ -164,6 +194,8 @@ Rate of Change is calculated according to this formula:
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/roc.png"/></center>
 
+See [Rate of Change](Rate\_of\_Change\_\(ROC\)) article.
+
 ## Relative Strength Index
 
 Relative Strength Index is calculated as follows:
@@ -178,11 +210,15 @@ Relative Strength Index is calculated as follows:
 <img src="http://static.anychart.com/images/technical\_indicators/rsi-rsi.png"></li>
 </ol>
 
+See [Relative Strength Index](Relative\_Strength\_Index\_\(RSI\)) article.
+
 ## Simple Moving Average
 
 Simple Moving Average in each point is calculated according to the following formula:
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/sma.png"></center>
+
+See [Simple Moving Average](Simple\_Moving\_Average\_\(SMA\)) article.
 
 ## Stochastic Oscillator (Full)
 
