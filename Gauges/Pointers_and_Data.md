@@ -29,16 +29,16 @@ In case you have more that one value in your dataset, you should use the {api:an
 Let's add the second point to the data and enable two pointers: the bar and the marker. Let's bind the bar pointer to the new data point:
 
 ```
-//add the second data point
+// add the second data point
 var dataSet = anychart.data.set([60,110]);
 
-//marker
+// marker
 var marker = gauge.marker();
 marker.enabled(true);
 marker.dataIndex();
 marker.size(7);
        
-//bar
+// bar
 var bar = gauge.bar(0);
 bar.width(3);
 bar.dataIndex(1);
@@ -128,20 +128,20 @@ All we need to do is to change the value of the {api:anychart.core.gauge.pointer
 // add the second data point
 var dataSet = anychart.data.set([60,120,170]);
   
-// marker_1
+// marker #1
 var marker = gauge.marker(0);
 marker.enabled(true);
 marker.dataIndex(0);
 marker.axisIndex(0);
 marker.size(5);
       
-// marker_2
+// marker #2
 var marker_1 = gauge.marker(1);
 marker_1.dataIndex(1);
 marker_1.axisIndex(0);
 marker_1.size(6);
 
-// marker_3
+// marker #3
 var marker_2 = gauge.marker(2);
 marker_2.dataIndex(2);
 marker_2.axisIndex(0);
@@ -160,22 +160,21 @@ Below you can see a simple example Gauge with the bar pointer and the code for t
 {sample}BCT\_Pointers-and-Data\_Bar\_01{sample} 
 
 ```
-//bar
+// bar
 var bar = gauge.bar();
 bar.enabled(true);
 ```
 
 In the sample above we have only enabled the bar. Let's now change its width and radius.
 
-
 ```
-//bar
+// bar
 var bar = gauge.bar(0);
-//you can remove this if you add any parameters to the bar
 bar.enabled(true);
 bar.width(3);
 bar.radius(100);
 ```
+
 {sample}BCT\_Pointers-and-Data\_Bar\_02{sample} 
 
 There's a lot of parameters to be adjusted else. For example, a bar pointer can be colored with a single color or with a gradient, we can set the position of the bar according to the defined radius, snap it to the exact data point and axis, set the stroke. 
@@ -203,7 +202,7 @@ Marker is a pointer that is more demonstrative when used with a bar pointer. It 
 Let's first enable a marker:
 
 ```  
-//marker
+// marker
 var marker = gauge.marker();
 marker.enabled(true);
 ```
@@ -211,7 +210,7 @@ marker.enabled(true);
 The marker size is rather small by default, so we need to use the {api:anychart.core.gauge.pointers.Marker#size}size(){api} method to make the marker visible, so the code will look as below:
 
 ```  
-//marker
+// marker
 var marker = gauge.marker();
 marker.enabled(true);
 marker.size(7);
@@ -222,7 +221,7 @@ marker.size(7);
 It's not the best view when the marker covers the value on the axis, so now let's adjust the position of the marker according to the circle of the default or defined radius. As with bars, the marker might be in its center, outside or inside it. Let's set the marker's position to outside and look how will it change the view: 
 
 ```
-//marker
+// marker
 var marker = gauge.marker();
 marker.position("outside");
 marker.size(7);
@@ -233,7 +232,7 @@ marker.size(7);
 Now our marker is outside the axis, but it doesn't point at the value. Let's change its type:
 
 ```
-//marker
+// marker
 var marker = gauge.marker();
 marker.position("outside");
 marker.type("triangledown");
@@ -247,7 +246,7 @@ marker.size(7);
 Let's now look at the needles - the most common pointer used with Gauges. 
 
 ```
-//needle
+// needle
 var needle = gauge.needle();
 needle.enabled(true);
 ```
@@ -259,7 +258,7 @@ Needle can be a thin stick or a pointer of a complex form - you can regulate its
 Let's make our needle thiner to the end, wider to the center and a bit thiner to the start:
 
 ```
-//needle
+// needle
 var needle = gauge.needle(8);
 needle.startWidth(1);
 needle.middleWidth(3);
@@ -271,7 +270,7 @@ needle.endWidth(0);
 As we can see, the needle starts not from the gauge center. Let's adjust the start, the middle and the end of our needle with methods {api:anychart.core.gauge.pointers.Needle#startRadius}startRadius(){api}, {api:anychart.core.gauge.pointers.Needle#middleRadius}middleRadius(){api} and {api:anychart.core.gauge.pointers.Needle#endRadius}endRadius(){api}. The value transmitted to this method can be in pixels or percents.
 
 ```
-//needle
+// needle
 var needle = gauge.needle(8);
 needle.startRadius("0%");
 needle.endRadius("80%");
@@ -292,7 +291,7 @@ Knob is a full-curcle pointer that is nice to use with a needle or marker pointe
 As you can see, this pointer is completely different from others. The first thing we'll adjust will be the number of the knob's projections (vertices). For that we use the {api:anychart.core.gauge.pointers.Knob#verticesCount}verticesCount(){api} method. 
 
 ```
-//knob
+// knob
 var knob = gauge.knob(0);
 knob.verticesCount(15);
 ```
@@ -302,7 +301,7 @@ knob.verticesCount(15);
 The curvature of vertices can be adjusted too. Use the {api:anychart.core.gauge.pointers.Knob#verticesCurvature}verticesCurvature(){api} method and set the value from 0 to 1 (0.5 is set by default). The less the value is the more convex the vertices are. The more the value the more concave they are.
 
 ```
-//knob
+// knob
 var knob = gauge.knob();
 knob.verticesCount(15);
 knob.verticesCurvature(.1);
@@ -313,7 +312,7 @@ knob.verticesCurvature(.1);
 The next feature we can adjust is the ratio, which spilts into the {api:anychart.core.gauge.pointers.Knob#topRatio}topRatio(){api} and {api:anychart.core.gauge.pointers.Knob#bottomRatio}bottomRatio(){api} methods. The values for these methods might be from 0 to 1 as well.
 
 ```
-//knob
+// knob
 var knob = gauge.knob(0);
 knob.verticesCount(15);
 knob.verticesCurvature(.1);
@@ -326,7 +325,7 @@ knob.bottomRatio(1);
 If you set the {api:anychart.core.gauge.pointers.Knob#verticesCurvature}verticesCurvature(){api} and the {api:anychart.core.gauge.pointers.Knob#bottomRatio}bottomRatio(){api} values to default (0.5), the vertices would look like triangles directed up from the knob:
 
 ```
-//knob
+// knob
 var knob = gauge.knob(0)
 knob.verticesCount(15)
 knob.verticesCurvature(.5)
@@ -341,7 +340,7 @@ If you set {api:anychart.core.gauge.pointers.Knob#verticesCurvature}verticesCurv
 The last feature avaliable at the moment for only the knob pointers is radius, which is split the same way as ratio. Use the {api:anychart.core.gauge.pointers.Knob#topRadius}topRadius(){api} and the {api:anychart.core.gauge.pointers.Knob#bottomRadius}bottomRadius(){api} methods to set the radius for the outer side (height of the vertices) and the inner side (depth of dimples) accordingly. For clearer representation let's get rid of the ratio settings.
 
 ```
-//knob
+// knob
 var knob = gauge.knob(0);
 knob.verticesCount(15);
 knob.verticesCurvature(.5);
@@ -350,7 +349,6 @@ knob.bottomRadius(50);
 ```
 
 {sample}BCT\_Pointers-and-Data\_Knob\_15{sample} 
-
 
 ### Tank
 
@@ -369,7 +367,7 @@ There are several settings can be adjusted for the Tank pointer. It is possible 
 ```
 // set colors for empty parts of tanks
 tankF.emptyFill("#fbceb1");
-tankC.emptyHatchFill("backwardDiagonal");
+tankC.emptyHatchFill("percent30");
 ```
 
 {sample}BCT\_Pointers-and-Data\_Tank\_17{sample} 
@@ -378,10 +376,12 @@ It is possible to make the colors of empty parts change on hovered and selected 
 
 ```
 // set colors for empty parts of tanks
+tankF.emptyFill("#fbceb1");
 tankF.hoverEmptyFill(anychart.color.lighten("#fbceb1"));
 tankF.selectEmptyFill(anychart.color.darken("#fbceb1"));
-tankC.hoverEmptyHatchFill("forwardDiagonal");
-tankC.selectEmptyHatchFill("diagonalCross");
+tankC.emptyHatchFill("percent05");
+tankC.hoverEmptyHatchFill("percent25");
+tankC.selectEmptyHatchFill("percent50");
 ```
 
 {sample}BCT\_Pointers-and-Data\_Tank\_18{sample} 

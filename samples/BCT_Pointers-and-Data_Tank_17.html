@@ -10,7 +10,7 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
   
   // create data set on our data
-  var dataSet = anychart.data.set([68, 20]);
+  var dataSet = anychart.data.set([38, 20]);
   
   // set the gauge type
   var gauge = anychart.gauges.linear();
@@ -42,7 +42,7 @@
 
   // set colors for empty parts of tanks
   tankF.emptyFill("#fbceb1");
-  tankC.emptyHatchFill("backwardDiagonal");
+  tankC.emptyHatchFill("percent30");
   
   // draw the chart
   gauge.container("container");
