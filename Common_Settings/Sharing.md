@@ -4,24 +4,18 @@ Sharing
 ======================
 
 * [Overview](#overview)
-* [Methods](#methods)
-* [Adjusting](#adjusting)
  * [Facebook](#facebook)
  * [Twitter](#twitter)
  * [LinkedIn](#linkedin)
  * [Pinterest](#pinterest)
-* [Export settings](#export_settings)
- * [Facebook](#facebook)
- * [Twitter](#twitter)
- * [LinkedIn](#linkedin)
- * [Pinterest](#pinterest)
+ * [Defaults](#defaults)
+ * [Sharing Buttons Samples](#sharing_buttons_samples)
+
 
 
 ## Overview
 
 Sharing is a feature allowing to put an image imitating sample made with AnyChart component to your page in a social network like Facebook, Pinterest and else. This article describes the settings and methods necessary for sharing activation, adjusting and using.
-
-## Methods
 
 There are two ways how to share a chart on any of the social networks. First one is to use the context menu, which provides four social networks for a chart sharing.
 
