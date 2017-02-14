@@ -21,7 +21,7 @@ The purpose of the Pareto chart is to highlight the most important among a (typi
 
 ## Quick Start
 
-Pareto chart:
+To create a Pareto chart use {api:anychart#pareto}pareto(){api} method, you can pass the data right into constructor:
 
 ```
 chart = anychart.pareto([
@@ -36,7 +36,10 @@ chart.container("container");
 chart.draw();
 ```
 
+Here is a basic Pareto chart, you can see that AnyChart automatically created two axes and two series:
+
 {sample}BCT\_Pareto\_Chart\_01{sample}
+
 
 ## Data
 
@@ -98,6 +101,15 @@ chart.getSeries(1).labels();
 ### Pareto tokens
 
 ```
+
+
+anychart.enums.StringToken.CUMULATIVE_FREQUENCY = '%CF';
+
+/**
+ * Relative frequency of the point. Used in pareto series.
+ */
+anychart.enums.StringToken.RELATIVE_FREQUENCY = "%RF";
+
 // line series labels
 chart.getSeries(0).labels("{%CF} and {%RF}");
 // columns series labels
