@@ -1,50 +1,50 @@
 <html>
 <head>
-  <meta name="x-cat-tags" content="anyStock"/>
-    <meta charset="UTF-8"/>
-    <meta name="tags" content="[]"/>
-    <meta name="index" content="2"/>
-    <meta name="is-new" content="false"/>
-    <script src="../anychart-bundle.min.js"></script>
-    <script src="http://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
-    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
-    <script x-export="chart">anychart.onDocumentReady(function() {
-    // The data used in this sample can be obtained from the CDN
-    // http://cdn.anychart.com/csv-data/csco-daily.js
-    // create data table on loaded data
-    var dataTable = anychart.data.table();
-    dataTable.addData(get_csco_daily_data());
+<meta name="x-cat-tags" content="anyStock"/>
+<meta charset="UTF-8"/>
+<meta name="tags" content="[]"/>
+<meta name="index" content="2"/>
+<meta name="is-new" content="false"/>
+<script src="../anychart-bundle.min.js"></script>
+<script src="http://cdn.anychart.com/csv-data/csco-daily.js" data-export="true"></script>
+<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+<script x-export="chart">anychart.onDocumentReady(function() {
+// The data used in this sample can be obtained from the CDN
+// http://cdn.anychart.com/csv-data/csco-daily.js
+// create data table on loaded data
+var dataTable = anychart.data.table();
+dataTable.addData(get_csco_daily_data());
 
-    var mapping = dataTable.mapAs({
-        'open': 1,
-        'high': 2,
-        'low': 3,
-        'close': 4,
-        'value': {column: 4, type: 'close'}
-    });
+var mapping = dataTable.mapAs({
+    'open': 1,
+    'high': 2,
+    'low': 3,
+    'close': 4,
+    'value': {column: 4, type: 'close'}
+});
 
-    // create stock chart
-    chart = anychart.stock();
+// create stock chart
+chart = anychart.stock();
 
-    // create ohlc series
-    chart.plot(0).ohlc(mapping).name('CSCO');
+// create ohlc series
+chart.plot(0).ohlc(mapping).name('CSCO');
 
-    // create Bollinger Bands %B indicator with period 10 and show as a line on the second plot
-    var BBandsB10 = chart.plot(1).bbandsB(mapping, 10, 0.2, "line").series();
-    BBandsB10.stroke('#bf360c');
+// create Bollinger Bands %B indicator with period 10 and show as a line on the second plot
+var BBandsB10 = chart.plot(1).bbandsB(mapping, 10, 0.2, "line").series();
+BBandsB10.stroke('#bf360c');
 
-    // create Bollinger Bands %B indicator with period 50 and show as a column on the third plot
-    var BBandsB50 = chart.plot(2).bbandsB(mapping, 50, 0.6, "column").series();
-    BBandsB50.fill('#ff6d00');
+// create Bollinger Bands %B indicator with period 50 and show as a column on the third plot
+var BBandsB50 = chart.plot(2).bbandsB(mapping, 50, 0.6, "column").series();
+BBandsB50.fill('#ff6d00');
 
-    // create scroller series with mapped data
-    chart.scroller().line(mapping);
+// create scroller series with mapped data
+chart.scroller().line(mapping);
 
-    // set container id for the chart
-    chart.container('container');
-            
-    // initiate chart drawing
-    chart.draw();
+// set container id for the chart
+chart.container('container');
+        
+// initiate chart drawing
+chart.draw();
 });
 
 </script>
