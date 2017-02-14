@@ -39,20 +39,11 @@
   scale.maximum(70);
   scale.ticks().interval(5);
 
-  // Add Celsius axis with custom labels
-  var axisC = gauge.axis(0);
-  axisC.minorTicks(true);
-  axisC.labels().fontColor("#800000");
-  axisC.scale(scale);
-  axisC.orientation('left');
-  axisC.offset('11%');
-
-  // Add custom right axis with custom labels
-  var axisF = gauge.axis(1);
-  axisF.minorTicks(true);
-  axisF.orientation('right');
-  axisF.labels().fontColor("#800000");
-  axisF.scale(scale);
+  // Add axis with custom labels
+  var axis = gauge.axis(0);
+  axis.minorTicks(true);
+  axis.scale(scale);
+  axis.offset('-11%');
   
   // draw the chart
   gauge.container("container");
