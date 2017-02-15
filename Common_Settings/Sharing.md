@@ -4,13 +4,12 @@ Sharing
 ======================
 
 * [Overview](#overview)
- * [Facebook](#facebook)
- * [Twitter](#twitter)
- * [LinkedIn](#linkedin)
- * [Pinterest](#pinterest)
- * [Defaults](#defaults)
- * [Sharing Buttons Samples](#sharing_buttons_samples)
-
+* [Facebook](#facebook)
+* [Twitter](#twitter)
+* [LinkedIn](#linkedin)
+* [Pinterest](#pinterest)
+* [Defaults](#defaults)
+* [Sharing Buttons Samples](#sharing_buttons_samples)
 
 
 ## Overview
@@ -38,31 +37,37 @@ Explore the sample in the playground to see the code.
 
 For sharing with Twitter use {api:anychart.core.Chart#shareWithTwitter}shareWithTwitter(){api}, with Pinterest - {api:anychart.core.Chart#shareWithPinterest}shareWithPinterest(){api}, with LinkedIn - {api:anychart.core.Chart#shareWithLinkedIn}shareWithLinkedIn(){api}.
 
-
-## Adjusting
-
 When sharing is done through the context menu, the sharing function uses default settings' values. The image of the chart will be shared with no link on the sample, and the hostname of the link will be displayed as the picture name. Though, all sharing methods described above have several settings which can be adjusted due to your special needs.
 
-### Facebook
+## Facebook
 
 The options which can be tuned for sharing with Facebook are the following:
 
- - caption
-Caption is the picture name that is always shown. When not specified, the hostname of the link is taken as the caption.
- - link
-The link attached to the shared sample/image
- - name
-The name of the link attached. Makes sense when the link is set.
- - description
- The description of the sample. Makes sense when the link is set.
-
+<table>
+<tr>
+<td>caption</td>
+<td>Caption is the picture name that is always shown. When not specified, the hostname of the link is taken as the caption</td>
+</tr>
+<tr>
+<td>link</td>
+<td>The link attached to the shared sample/image</td>
+</tr>
+<tr>
+<td>name</td>
+<td>The name of the link attached. Makes sense when the link is set</td>
+</tr>
+<tr>
+<td>description</td>
+<td>The description of the sample. Makes sense when the link is set</td>
+</tr>
+</table>
 
 ```
 // this method will share the sample with Facebook
 chart.shareWithFacebook("Sharing with Facebook sample", "anychart.com", "AnyChart Area Chart", "The sample of an Area Chart created with AnyChart");
 ```
 
-{sample}CS\_Sharing\_02{sample}
+{sample}CS\_Sharing\_\_02{sample}
 
 All parameters can be defined as an object. This may be useful when it is not necessary to set all parameters.
 
@@ -71,24 +76,24 @@ All parameters can be defined as an object. This may be useful when it is not ne
 chart.shareWithFacebook({caption:"Sharing with Facebook sample", link: "anychart.com", name: "AnyChart Area Chart", description: "The sample of an Area Chart created with AnyChart"});
 ```
 
-{sample}CS\_Sharing\_03{sample}
+{sample}CS\_Sharing\_\_03{sample}
 
 
-### Twitter
+## Twitter
 
 While sharing with Twitter there are no extra options to be adjusted, as it is not supposed by the service. So, the only way to share the sample with Twitter is to share the picture with no parameters and links attached:
 
 ```
-// share the chart with Facebook
+// share the chart with Twitter
 shareButton.click(function(){
   chart.shareWithTwitter();  
 });
 ```
 
-{sample}CS\_Sharing\_04{sample}
+{sample}CS\_Sharing\_\_04{sample}
 
 
-### LinkedIn
+## LinkedIn
 
 There are only two options which can be defined extra for the LinkedIn:
 
@@ -106,12 +111,12 @@ The description of the sample demonstrated. If not specified, the default captio
 chart.shareWithLinkedIn("Sharing with LinkedIn", "This is a sample of an Area Chart created with AnyChart");
 ```
 
-{sample}CS\_Sharing\_05{sample}
+{sample}CS\_Sharing\_\_05{sample}
 
 As well as with Facebook, sharing with LinkedIn settings can be defined as an object.
 
 
-### Pinterest
+## Pinterest
 
 When sharing with Pinterest, it is possible to specify two settings also:
 
@@ -125,15 +130,15 @@ The description of the sample
 chart.shareWithPinterest("Sharing with Pinterest", "This is a sample of an Area Chart created with AnyChart");
 ```
 
-{sample}CS\_Sharing\_06{sample}
+{sample}CS\_Sharing\_\_06{sample}
 
 It is also possible to adjust the settings of an object.
 
 
 
-## Export settings
+## Defaults
 
-There are several methods responsible for export settings. Those methods usage allows not to define the parameters of the sharing methods and to define some parameters more. It is also possible to set them as an object.
+There are anychart.export.* methods responsible for export settings. Those methods usage is basically setting the defaults which can be set once for all sharing cases. The methods allow setting the defaults as parameters or as an object.
 
 ### Facebook
 
