@@ -25,6 +25,15 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<td>[Aroon](Aroon)</td>
 		</tr>
 		<tr>
+			<td>[Bollinger Bands](Bollinger_Bands)</td>
+		</tr>
+		<tr>
+			<td>[Bollinger Bands %B](Bollinger_Bands_%25B)</td>
+		</tr>
+		<tr>
+			<td>[Bollinger Bands Width](Bollinger_Bands_Width)</td>
+		</tr>		
+		<tr>
 			<td>[Exponential Moving Average (EMA)](Exponential_Moving_Average_\(EMA\))</td>
 		</tr>		
 		<tr>
