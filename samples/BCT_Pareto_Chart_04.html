@@ -20,14 +20,21 @@
 	// create a Pareto chart with data
 	chart = anychart.pareto(data);
 
-	// get the column series and format tooltip
-	chart.getSeriesAt(0).tooltip().textFormatter("Value: {%Value}");
+	// line series enable labels
+	chart.getSeries(0).labels(true);
+	chart.getSeries(0).labels().position("Center");
+	chart.getSeries(0).labels().anchor("Center");
 
-	// get the line series and format tooltip
-	chart.getSeriesAt(1).tooltip().textFormatter("Cumulative Frequency: {%CF}% \n Relative Frequency: {%RF}%");
+	// columns series enable labels
+	chart.getSeries(1).labels(false);
+	chart.getSeries(1).selectLabels().enabled(true);
+	chart.getSeries(1).selectLabels().anchor("bottom");
+	chart.getSeries(1).hoverLabels(true);
+	chart.getSeries(1).hoverLabels().anchor("bottom");
+	chart.getSeries(1).hoverLabels().textFormatter("{%Value}%");
 
 	// set chart title text settings
-	chart.title("Pareto chart: tooltip configuration");
+	chart.title("Pareto chart: labels configuration");
 
 	// set container id for the chart
 	chart.container('container');

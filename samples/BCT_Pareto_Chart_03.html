@@ -19,7 +19,7 @@ chart = anychart.pareto([
 ]);
 
 // get pareto column series and create
-// fill and stroke functions
+// fill and stroke 
 var column = chart.getSeriesAt(0);
 column.fill(function () {
     if (this.rf < 10) {

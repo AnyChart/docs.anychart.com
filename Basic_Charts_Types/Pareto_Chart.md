@@ -12,6 +12,7 @@
  * [Axes and Scales](#axes_and_scales)
  * [Pareto Analysis Axes Markers](#pareto_analysis_axes_markers)
  * [Data](#data)
+* [Events](#events)
 
 ## Overview
 
@@ -39,7 +40,7 @@ chart.container("container");
 chart.draw();
 ```
 
-Here is a basic Pareto chart, you can see that AnyChart automatically created two axes and two series:
+Here is a basic Pareto chart, you can see that AnyChart automatically creates two axes and two series:
 
 {sample}BCT\_Pareto\_Chart\_01{sample}
 
@@ -47,14 +48,18 @@ Here is a basic Pareto chart, you can see that AnyChart automatically created tw
 
 ### Series
 
+AnyChart Pareto charts automatically creates two series: line and column, the instances of {api:anychart.core.cartesian.series.Column}Column{api} and {api:anychart.core.cartesian.series.Line}Line{api} classes. You can access these series using {api:anychart.charts.Cartesian#getSeries}getSeries(){api} or {api:anychart.charts.Cartesian#getSeriesAt}getSeriesAt(){api} methods.
+
+The column series has the index that equals "0" and the line series the index that eqauls "1":
+
 ```
 // make column series white with black border and hatch fill
-chart.getSeries(0).fill(null);
-chart.getSeries(0).stroke("#000000");
-chart.getSeries(0).hatchFill("#zigzag");
+chart.getSeriesAt(0).fill(null);
+chart.getSeriesAt(0).stroke("#000000");
+chart.getSeriesAt(0).hatchFill("#zigzag");
 
 // make line series black and dashed
-chart.getSeries(1).stroke("#000000", "2", "2 2");
+chart.getSeriesAt(1).stroke("#000000", "2", "2 2");
 ```
 
 {sample}BCT\_Pareto\_Chart\_02{sample}
@@ -107,17 +112,17 @@ To configure Pareto series labels settings please study general [Labels Tutorial
 
 ```
 // line series enable labels
-chart.getSeries(0).labels(true);
-chart.getSeries(0).labels().position("Center");
-chart.getSeries(0).labels().anchor("Center");
+chart.getSeriesAt(0).labels(true);
+chart.getSeriesAt(0).labels().position("Center");
+chart.getSeriesAt(0).labels().anchor("Center");
 
 // columns series enable labels
-chart.getSeries(1).labels(false);
-chart.getSeries(1).selectLabels().enabled(true);
-chart.getSeries(1).selectLabels().anchor("bottom");
-chart.getSeries(1).hoverLabels(true);
-chart.getSeries(1).hoverLabels().anchor("bottom");
-chart.getSeries(1).hoverLabels().textFormatter("{%Value}%");
+chart.getSeriesAt(1).labels(false);
+chart.getSeriesAt(1).selectLabels().enabled(true);
+chart.getSeriesAt(1).selectLabels().anchor("bottom");
+chart.getSeriesAt(1).hoverLabels(true);
+chart.getSeriesAt(1).hoverLabels().anchor("bottom");
+chart.getSeriesAt(1).hoverLabels().textFormatter("{%Value}%");
 ```
 
 Here is a sample of a Pareto chart with a custom labels configuration:
@@ -136,7 +141,7 @@ chart.getSeriesAt(0).tooltip().textFormatter("Value: {%Value}");
 chart.getSeriesAt(1).tooltip().textFormatter("Cumulative Frequency: {%CF}% \n Relative Frequency: {%RF}%");
 ```
 
-{sample}BCT\_Pareto\_Chart\_04{sample}
+{sample}BCT\_Pareto\_Chart\_05{sample}
 
 ### Axes and Scales
 
@@ -148,9 +153,9 @@ To access scales and axis use the following code:
 
 ```
 // main scale
-valueScale = chart.getSeries(0).yScale();
+valueScale = chart.getSeriesAt(0).yScale();
 // percent scale
-percentScale = chart.getSeries(0).yScale();
+percentScale = chart.getSeriesAt(0).yScale();
 
 // value axis 
 valueAxis = chart.yAxis(0);
@@ -160,7 +165,7 @@ percentAxis = chart.yAxis(1);
 
 Using these variables you can change scale intervals, axes colors and so on:
 
-{sample}BCT\_Pareto\_Chart\_05{sample}
+{sample}BCT\_Pareto\_Chart\_06{sample}
 
 ### Pareto Analysis Axes Markers
 
@@ -168,11 +173,13 @@ To display lines that are usually used to do 80/20 rule analysis and alike, you 
 
 Here is a sample of a Pareto chart with 80% line and label displayed:
 
-{sample}BCT\_Pareto\_Chart\_06{sample}
+{sample}BCT\_Pareto\_Chart\_07{sample}
 
 ### Data
 
-Initial set:
+In AnyChart Pareto Charts you should work with data in a way that is differs a little from the way you work with data with other charts.
+
+You [should not create series explicitly](#series), a chart does it for you. The easiest way to pass data is to pass it to {api:anychart#pareto}pareto(){api} constructor:
 
 ```
 dataset = [
@@ -185,7 +192,7 @@ dataset = [
 chart = anychart.pareto(dataset);
 ```
 
-Reset:
+If you want to reset all data you can do that using the {api:anychart.charts.Pareto#data}data(){api} method:
 
 ```
 dataset = [
@@ -200,7 +207,7 @@ chart = anychart.pareto();
 chart.data(dataset);
 ```
 
-Append:
+If you want to append some data (everything is recalculated automatically when you do so) you can use the {api:anychart.data.View#concat}concat(){api} method along with the {api:anychart.charts.Pareto#data}data(){api} methods:
 
 ```
 data = [
@@ -219,7 +226,13 @@ extra_data = [
         {x: "H", 89},
         ]
 
-chart.data().add(extra_data);
+newData = chart.data().concat(extra_data);
+
+chart.data(extra_data);
 ```
 
-{sample}BCT\_Pareto\_Chart\_07{sample}
+## Events
+
+There are no special events in Pareto charts, you can use everything you can use in other similar chart types. See:
+- [Event Listeners](../Common_Settings/Event_Listeners)
+- [Interactivity](../Common_Settings/Interactivity)

@@ -18,32 +18,28 @@ chart = anychart.pareto([
   {x: "Defect 5", value: 14},
 ]);
 
+// main scale
+valueScale = chart.getSeries(0).yScale();
+// percent scale
+percentScale = chart.getSeries(1).yScale();
+
+// set ticks interval
+valueScale.ticks().interval(30);
+percentScale.ticks().interval(10);
+
+// value axis 
+valueAxis = chart.yAxis(0);
 // percent axis
 percentAxis = chart.yAxis(1);
-
-// create horizontal line marker
-lineMarker = chart.lineMarker();
-// bind to percent axis
-lineMarker.axis(percentAxis);
-lineMarker.value(80);
-lineMarker.stroke("#FF0000", 1, "5 2");
-
-// create horizontal line marker
-textMarker = chart.textMarker();
-// bind to percent axis
-textMarker.axis(percentAxis);
-textMarker.text("80%");
-// set marker alignment
-textMarker.align("right");
-// set anchor
-textMarker.anchor("rightbottom");
-textMarker.offsetX(5);
-textMarker.value(80);
-textMarker.fontColor("#FF0000");
-
+// don't display the last label
+valueAxis.drawLastLabel(false);
+// color percent axis
+percentAxis.stroke("#FF0000");
+percentAxis.ticks().stroke("#FF0000");
+percentAxis.labels().fontColor("#FF0000");
 
 // set the chart title
-chart.title("Pareto Chart: Axes Lines");
+chart.title("Pareto Chart: Axes and Scales");
 
 // set the container id
 chart.container("container");
