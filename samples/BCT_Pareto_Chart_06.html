@@ -18,29 +18,32 @@ chart = anychart.pareto([
   {x: "Defect 5", value: 14},
 ]);
 
-// get pareto column series and create
-// fill and stroke functions
-var column = chart.getSeriesAt(0);
-column.fill(function () {
-    if (this.rf < 10) {
-        return '#E24B26'
-    } else {
-        return this.sourceColor;
-    }
-});
-column.stroke(function () {
-    if (this.rf < 10) {
-        return anychart.color.darken('#E24B26');
-    } else {
-        return this.sourceColor;
-    }
-});
+// percent axis
+percentAxis = chart.yAxis(1);
 
-// format column series label to show RF
-column.labels().enabled(true).textFormatter('{%RF}%');
+// create horizontal line marker
+lineMarker = chart.lineMarker();
+// bind to percent axis
+lineMarker.axis(percentAxis);
+lineMarker.value(80);
+lineMarker.stroke("#FF0000", 1, "5 2");
+
+// create horizontal line marker
+textMarker = chart.textMarker();
+// bind to percent axis
+textMarker.axis(percentAxis);
+textMarker.text("80%");
+// set marker alignment
+textMarker.align("right");
+// set anchor
+textMarker.anchor("rightbottom");
+textMarker.offsetX(5);
+textMarker.value(80);
+textMarker.fontColor("#FF0000");
+
 
 // set the chart title
-chart.title("Pareto Chart: Conditional coloring");
+chart.title("Pareto Chart: Axes Lines");
 
 // set the container id
 chart.container("container");
