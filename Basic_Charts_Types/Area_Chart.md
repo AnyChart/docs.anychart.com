@@ -30,7 +30,7 @@ This article explains how to create a basic Area chart as well as configure sett
 <tr><td>Stacked</td><td>[Stacked Area](Stacked/Value/Area_Chart), [Percent Stacked Area](Stacked/Percent/Area_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Vertical Area](Vertical_Charts/Vertical_Area_Chart)</td></tr>
 <tr><td>3D</td><td>[3D Area](3D_Charts/3D_Area_Chart)</td></tr>
-<tr><td>Error Bars</td><td>[Area with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Area Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>[Polar Area](Polar_Plot/Polar_Area_Chart)</td></tr>
 <tr><td>Radar</td><td>[Radar Area](Radar_Plot/Radar_Area_Chart)</td></tr>

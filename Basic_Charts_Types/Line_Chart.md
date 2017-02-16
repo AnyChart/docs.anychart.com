@@ -28,7 +28,7 @@ This article explains how to create a basic Line chart as well as configure sett
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>[Vertical Line](Vertical_Charts/Vertical_Line_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Line with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Line Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>[Polar Line](Polar_Plot/Polar_Line_Chart)</td></tr>
 <tr><td>Radar</td><td>[Radar Line](Radar_Plot/Radar_Line_Chart)</td></tr>

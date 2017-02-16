@@ -31,7 +31,7 @@ This article explains how to create a basic Column chart as well as configure se
 <tr><td>Stacked</td><td>[Stacked Column](Stacked/Value/Column_Chart), [Percent Stacked Column](Stacked/Percent/Column_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Bar](Bar_Chart)</td></tr>
 <tr><td>3D</td><td>[3D Column](3D_Charts/3D_Column_Chart)</td></tr>
-<tr><td>Error Bars</td><td>[Column with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Column Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
@@ -180,7 +180,7 @@ chart.barGroupsPadding(0);
 
 The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multi-series charts: it sets the padding between columns within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
 
-In the sample below, there is a multi-series Column chart with the padding between columns and between column groups set to -0.5 and 2 correspondingly:
+In the sample below, there is a multi-series Column chart with the padding between columns and between column groups set to -0.5 and 2:
 
 ```
 // create the first series

@@ -30,7 +30,7 @@ This article explains how to create a basic Bar chart as well as configure  sett
 <tr><td>Stacked</td><td>[Stacked Bar](Stacked/Value/Bar_Chart), [Percent Stacked Bar](Stacked/Percent/Bar_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Bar](Bar_Chart)</td></tr>
 <tr><td>3D</td><td>[3D Bar](3D_Charts/3D_Bar_Chart)</td></tr>
-<tr><td>Error Bars</td><td>[Bar with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Bar Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
@@ -181,7 +181,7 @@ chart.barGroupsPadding(0);
 
 The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multi-series charts: it sets the padding between bars within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
 
-In the sample below, there is a multi-series Bar chart with the padding between bars and between bar groups set to -0.5 and 2 correspondingly:
+In the sample below, there is a multi-series Bar chart with the padding between bars and between bar groups set to -0.5 and 2:
 
 ```
 // create the first series

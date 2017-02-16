@@ -23,7 +23,7 @@ The Spline Area and Area chart types share all the settings, so this article exp
 <tr><td>Stacked</td><td>[Stacked Spline Area](Stacked/Value/Spline_Area_Chart), [Percent Stacked Spline Area](Stacked/Percent/Spline_Area_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Vertical Spline Area](Vertical_Charts/Vertical_Spline_Area_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
-<tr><td>Error Bars</td><td>[Spline Area with Error Bars](Error_Chart)</td></tr>
+<tr><td>Error Bars</td><td>[Spline Area Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
 <tr><td>Radar</td><td>N/A</td></tr>
