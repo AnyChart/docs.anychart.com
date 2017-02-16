@@ -44,7 +44,7 @@ The Range Spline Area and Range Area chart types share all the settings, so this
 
 To create a Range Spline Area series, use the {api:anychart.charts.Cartesian#rangeSplineArea}rangeSplineArea(){api} method (before, of course, you should create a chart by using {api:anychart#area}anychart.area(){api} or any other cartesian chart constructor).
 
-Since range area charts plot two Y-values per data point, you need to specify two values for each category by using the "low" and "high" parameters.
+Since range area charts plot two Y-values per data point, you need to specify two values for each category by using the <strong>"low"</strong>strong> and <strong>"high"</strong> parameters. 
 
 ```
 // create data
@@ -77,4 +77,4 @@ The Rangee Spline Area chart is a modification of the Range Area chart, so these
 
 Also, in AnyChart there are many settings that are configured in the same way for all chart types, including the Range Spline Area chart (for example, legend and interactivity settings): [General Settings](General_Settings).
 
-In addition, see a full list of methods available for the Range Spline Area series: {api:anychart.core.cartesian.series.RangeSplineArea}anychart.core.cartesian.series.RangeSplineArea{api}.
+In addition, see the full list of methods available for the Range Spline Area series: {api:anychart.core.cartesian.series.RangeSplineArea}anychart.core.cartesian.series.RangeSplineArea{api}.

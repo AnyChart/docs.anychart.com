@@ -81,7 +81,7 @@ The Step Line chart is a modification of the Line chart, so these two types shar
 
 Also, in AnyChart there are many settings that are configured in the same way for all chart types, including the Step Line chart (for example, legend and interactivity settings): [General Settings](General_Settings).
 
-In addition, see a full list of methods available for the Step Line series: {api:anychart.core.cartesian.series.StepLine}anychart.core.cartesian.series.StepLine{api}.
+In addition, see the full list of methods available for the Step Line series: {api:anychart.core.cartesian.series.StepLine}anychart.core.cartesian.series.StepLine{api}.
 
 ## Special Settings 
 
