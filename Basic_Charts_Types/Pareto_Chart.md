@@ -3,13 +3,12 @@
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)
-* [Data](#chart)
-* [Visualization](#visualization)
- * [Line Series](#line_series)
- * [Column Series](#line_series) 
-* [Labels And Tooltips](#labels_and_tooltips)
- * [Pareto tokens](#pareto_tokens)
-* [Axes](#axes)
+* [Special Settings](#special_settings)
+ * [Series](#series)
+ * [Coloring condition](#coloring_condition)
+ * [Labels And Tooltips](#labels_and_tooltips)
+ * [Axes](#axes)
+ * [Data](#data)
 
 ## Overview
 
@@ -21,15 +20,16 @@ The purpose of the Pareto chart is to highlight the most important among a (typi
 
 ## Quick Start
 
-To create a Pareto chart use {api:anychart#pareto}pareto(){api} method, you can pass the data right into constructor:
+To create a Pareto chart use {api:anychart#pareto}pareto(){api} method, you can pass the data right into the constructor:
 
 ```
 chart = anychart.pareto([
-        {x: "A", 19},
-        {x: "B", 9},
-        {x: "C", 29},
-        {x: "D", 89},
-        ]);
+  {x: "Defect 1", 19},
+  {x: "Defect 2", 9},
+  {x: "Defect 3", 28},
+  {x: "Defect 4", 87},
+  {x: "Defect 5", 14},
+]);
 
 chart.container("container");
 
@@ -40,8 +40,63 @@ Here is a basic Pareto chart, you can see that AnyChart automatically created tw
 
 {sample}BCT\_Pareto\_Chart\_01{sample}
 
+## Special Settings
 
-## Data
+### Series
+
+```
+// make line series black and dashed
+chart.getSeries(0).stroke("#000000", "2", "2 2");
+
+// make column series white with black border and hatch fill
+chart.getSeries(1).fill("#FFFFFF");
+chart.getSeries(1).stroke("#000000");
+chart.getSeries(1).hatchFill("#zigzag");
+```
+
+{sample}BCT\_Pareto\_Chart\_02{sample}
+
+### Coloring condition
+
+To color in a custom way
+
+{sample}BCT\_Pareto\_Chart\_03{sample}
+
+### Labels And Tooltips
+
+```
+// line series labels
+chart.getSeries(0).labels();
+// columns series labels
+chart.getSeries(1).labels();
+```
+
+Pareto tokens
+
+```
+anychart.enums.StringToken.CUMULATIVE_FREQUENCY = '%CF';
+anychart.enums.StringToken.RELATIVE_FREQUENCY = "%RF";
+
+// line series labels
+chart.getSeries(0).labels("{%CF} and {%RF}");
+// columns series labels
+chart.getSeries(1).labels("{%CF} and {%RF}");
+```
+
+{sample}BCT\_Pareto\_Chart\_04{sample}
+
+### Axes
+
+```
+// left axis
+chart.yAxis(0).labels();
+// right axis
+chart.yAxis(1).labels();
+```
+
+{sample}BCT\_Pareto\_Chart\_05{sample}
+
+### Data
 
 Set
 
@@ -51,7 +106,7 @@ data = [
         {x: "B", 9},
         {x: "C", 29},
         {x: "D", 89},
-        ];
+       ];
 chart = anychart.pareto(data);
 ```
 
@@ -64,6 +119,7 @@ data = [
         {x: "C", 29},
         {x: "D", 89},
         ];
+
 chart = anychart.pareto(data);
 
 extra_data = [
@@ -76,52 +132,5 @@ extra_data = [
 chart.data().add(extra_data);
 ```
 
-## Visualization
-
-
-```
-// line series 
-chart.getSeries(0).stroke("#000000", "2", "2 2");
-// columns series 
-chart.getSeries(1).fill("#FFFFFF");
-chart.getSeries(1).hatchFill("#zigzag");
-
-```
-
-
-## Labels And Tooltips
-
-```
-// line series labels
-chart.getSeries(0).labels();
-// columns series labels
-chart.getSeries(1).labels();
-```
-
-### Pareto tokens
-
-```
-
-
-anychart.enums.StringToken.CUMULATIVE_FREQUENCY = '%CF';
-
-/**
- * Relative frequency of the point. Used in pareto series.
- */
-anychart.enums.StringToken.RELATIVE_FREQUENCY = "%RF";
-
-// line series labels
-chart.getSeries(0).labels("{%CF} and {%RF}");
-// columns series labels
-chart.getSeries(1).labels("{%CF} and {%RF}");
-```
-
-# Axes
-
-```
-// left axis
-chart.yAxis(0).labels();
-// right axis
-chart.yAxis(1).labels();
-```
+{sample}BCT\_Pareto\_Chart\_06{sample}
 

@@ -19,7 +19,13 @@ chart = anychart.pareto([
 ]);
 
 // set the chart title
-chart.title("Pareto Chart: Basic Sample");
+chart.title("Pareto Chart: Configure Series Labels");
+
+// line series enable labels
+chart.getSeries(0).labels(true);
+
+// columns series enable labels
+chart.getSeries(1).labels(true);
 
 // set the container id
 chart.container("container");
