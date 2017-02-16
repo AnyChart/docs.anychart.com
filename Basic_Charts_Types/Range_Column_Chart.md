@@ -9,7 +9,7 @@
   * [Padding](#padding)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
-  * [Vertical Range Column (Range Bar)](#vertical_range_column)
+  * [Vertical Range Column](#vertical_range_column)
 
 ## Overview
 
@@ -224,8 +224,7 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 
 In case of Range Column charts, there are some peculiarities in formatting the text of tooltips...
 
-<a name='vertical_range_column'></a>
-### Vertical Range Column (Range Bar)
+### Vertical Range Column
 
 Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical_Charts/Overview).
 
