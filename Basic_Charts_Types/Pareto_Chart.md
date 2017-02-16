@@ -13,6 +13,7 @@
  * [Pareto Analysis Axes Markers](#pareto_analysis_axes_markers)
  * [Data](#data)
 * [Events](#events)
+* [Samples](#samples)
 
 ## Overview
 
@@ -241,3 +242,7 @@ chart.data(extra_data);
 There are no special events in Pareto charts, you can use everything you can use in other similar chart types. See:
 - [Event Listeners](../Common_Settings/Event_Listeners)
 - [Interactivity](../Common_Settings/Interactivity)
+
+## Samples
+
+You can find more ready to use samples of Pareto Charts in [AnyChart Pareto Charts](http://www.anychart.com/products/anychart/gallery/Pareto_Charts/) Gallery.
