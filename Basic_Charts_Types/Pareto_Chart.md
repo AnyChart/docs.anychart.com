@@ -64,6 +64,11 @@ chart.getSeriesAt(1).stroke("#000000", "2", "2 2");
 
 {sample}BCT\_Pareto\_Chart\_02{sample}
 
+If you need more information about configuring series, please see:
+- [General Settings](General_Settings)
+- [Line Chart](Line_Chart)
+- [Column Chart](Column_Chart)
+
 ### Pareto tokens
 
 When AnyChart creates a Pareto chart cumulative and relative frequency values are calculated to build a line and a column series that represent changes of these values. These values are available in [coloring functions](#coloring_condition) and in [tooltips](#tooltips) and [labels](#labels) formatters. 
