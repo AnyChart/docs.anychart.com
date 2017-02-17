@@ -22,7 +22,7 @@ There are two ways how to share a chart on any of the social networks. First one
 
 A pop-up window of the chosen social network will show up and suggest to write a comment (if you've been logged in) or to log in. The chart will be transformed into a *\.PNG image.
 
-Another way to share a chart in any social network is to use special sharing methods. There is a special sharing method for each network. So, the {api:anychart.core.Chart#shareWithFacebook}.shareWithFacebook(){api} method is being used for sharing a chart with Facebook. For sharing with Twitter use {api:anychart.core.Chart#shareWithTwitter}shareWithTwitter(){api}, with Pinterest - {api:anychart.core.Chart#shareWithPinterest}shareWithPinterest(){api}, with LinkedIn - {api:anychart.core.Chart#shareWithLinkedIn}shareWithLinkedIn(){api}.
+Another way to share a chart in any social network is to use special sharing methods. There is a special sharing method for each network. So, the {api:anychart.core.Chart#shareWithFacebook}shareWithFacebook(){api} method is being used for sharing a chart with Facebook. For sharing with Twitter use {api:anychart.core.Chart#shareWithTwitter}shareWithTwitter(){api}, with Pinterest - {api:anychart.core.Chart#shareWithPinterest}shareWithPinterest(){api}, with LinkedIn - {api:anychart.core.Chart#shareWithLinkedIn}shareWithLinkedIn(){api}.
 
 When sharing is done through the context menu, the sharing function uses default settings' values. The image of the chart will be shared with no link on the sample, and the hostname of the link will be displayed as the picture name. Though, all sharing methods described above have several settings which can be adjusted due to your special needs.
 
@@ -65,6 +65,8 @@ chart.shareWithFacebook({caption:"Sharing with Facebook sample", link: "anychart
 
 {sample}CS\_Sharing\_\_03{sample}
 
+There is one more way to change the sharing settings. The {api:anychart.exports#facebook}anychart.exports.facebook(){api} method is used for setting the defaults. Read more about this in the [Defaults](#defaults) section.
+
 
 ## Twitter
 
@@ -79,6 +81,8 @@ shareButton.click(function(){
 
 {sample}CS\_Sharing\_\_04{sample}
 
+It is possible to change some default settings of export by using the {api:anychart.exports#twitter}anychart.exports.twitter(){api} method. Read more about this in the [Defaults](#defaults) section.
+
 
 ## LinkedIn
 
@@ -91,7 +95,7 @@ There are only two options which can be defined extra for the LinkedIn:
 </tr>
 <tr>
 <td>description</td>
-<td>TThe description of the sample demonstrated. If not specified, the default caption will be used as the description.</td>
+<td>The description of the sample demonstrated. If not specified, the default caption will be used as the description.</td>
 </tr>
 </table>
 
@@ -102,7 +106,14 @@ chart.shareWithLinkedIn("Sharing with LinkedIn", "This is a sample of an Area Ch
 
 {sample}CS\_Sharing\_\_05{sample}
 
-As well as with Facebook, sharing with LinkedIn settings can be defined as an object.
+As well as with Facebook, sharing with LinkedIn settings can be defined as an object:
+
+```
+// this method will share the sample with Facebook
+chart.shareWithLinkedIn({caption: "Sharing with LinkedIn", description: "This is a sample of an Area Chart created with AnyChart"});
+```
+
+It is possible to change some default settings of export to LinkedIn by using the {api:anychart.exports#linkedin}anychart.exports.linkedin(){api} method. Read more about this in the [Defaults](#defaults) section.
 
 
 ## Pinterest
@@ -116,20 +127,25 @@ When sharing with Pinterest, it is possible to specify two settings also:
 </tr>
 <tr>
 <td>description</td>
-<td>TThe description of the sample demonstrated.</td>
+<td>The description of the sample demonstrated.</td>
 </tr>
 </table>
 
 ```
 // this method will share the sample with Pinterest
-chart.shareWithPinterest("Sharing with Pinterest", "This is a sample of an Area Chart created with AnyChart");
+chart.shareWithPinterest("http://pinterest.com", "This is a sample of an Area Chart created with AnyChart");
 ```
 
 {sample}CS\_Sharing\_\_06{sample}
 
-It is also possible to adjust the settings of an object.
+It is also possible to adjust the settings of an object:
 
+```
+// this method will share the sample with Pinterest
+chart.shareWithPinterest({link: "http://pinterest.com", description: "This is a sample of an Area Chart created with AnyChart"});
+```
 
+Use the {api:anychart.exports#pinterest}anychart.exports.pinterest(){api} method to adjust the export default settings. Read more about this in the [Defaults](#defaults) section.
 
 ## Defaults
 
@@ -168,6 +184,8 @@ Use {api:anychart.exports#facebook}anychart.exports.facebook(){api} to set the f
 </tr>
 </table>
 
+If it is necessary, it is possible to change the sharing application. If you want to create your own sharing application, visit the <a href="https://developers.facebook.com/docs/apps/register">Facebook application creating page</a> and create your own application. Then, copy the ID of your application and set it as default for the exporting method.
+
 Use {api:anychart.exports#twitter}anychart.exports.twitter(){api} to set the following:
 
 <table>
@@ -184,6 +202,8 @@ Use {api:anychart.exports#twitter}anychart.exports.twitter(){api} to set the fol
 <td>The height of the picture shared</td>
 </tr>
 </table>
+
+If it is necessary, it is possible to change the sharing application. If you want to create your own sharing application, visit the <a href="https://apps.twitter.com">Twitter application creating page</a> and create your own application. Then, copy the URL of your newly-created application and set it as default for the "url" parameter of the exporting method.
 
 Use {api:anychart.exports#linkedin}anychart.exports.linkedin(){api} to set the following:
 
@@ -227,7 +247,7 @@ Use {api:anychart.exports#pinterest}anychart.exports.pinterest(){api} to set the
 </tr>
 </table>
 
-The following sample demonstrates setting defauts for all 4 metworks available at the moment. The defaults for sharing with Facebook are set as an object. Note that when the parameters are set as object, it is not necessary to set all of them, following the order.
+The following sample demonstrates setting defaults for all 4 networks available at the moment. The defaults for sharing with Facebook are set as an object. Note that when the parameters are set as object, it is not necessary to set all of them, following the order.
 
 ```
 // this method defines the facebook export settings
@@ -264,6 +284,9 @@ anychart.exports.pinterest("http://anychart.com", undefined, "800", undefined);
 {sample}CS\_Sharing\_\_07{sample}
 
 
-## Sharing Buttons Samples
+## Sharing Buttons Sample
 
-This sample demonstrates how to share a chart through creating custom buttons.
+This sample demonstrates how to share a chart through creating custom buttons. Explore it in the playground to 
+
+
+{sample}CS\_Sharing\_\_08{sample}
