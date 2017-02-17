@@ -74,9 +74,7 @@ While sharing with Twitter there are no extra options to be adjusted, as it is n
 
 ```
 // share the chart with Twitter
-shareButton.click(function(){
-  chart.shareWithTwitter();  
-});
+chart.shareWithTwitter();  
 ```
 
 {sample}CS\_Sharing\_\_04{sample}
@@ -145,7 +143,7 @@ It is also possible to adjust the settings of an object:
 chart.shareWithPinterest({link: "http://pinterest.com", description: "This is a sample of an Area Chart created with AnyChart"});
 ```
 
-Use the {api:anychart.exports#pinterest}anychart.exports.pinterest(){api} method to adjust the export default settings. Read more about this in the [Defaults](#defaults) section.
+Use the {api:anychart.exports#pinterest}anychart.exports.pinterest(){api} method to adjust the export default settings. Read more about this in the next section.
 
 ## Defaults
 
@@ -286,7 +284,7 @@ anychart.exports.pinterest("http://anychart.com", undefined, "800", undefined);
 
 ## Sharing Buttons Sample
 
-This sample demonstrates how to share a chart through creating custom buttons. Explore it in the playground to 
+This sample demonstrates how to share a chart through creating custom buttons. Explore it in the playground to see the code.
 
 
 {sample}CS\_Sharing\_\_08{sample}
