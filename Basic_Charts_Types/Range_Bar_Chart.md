@@ -145,7 +145,7 @@ var data = anychart.data.set([
 ]);
 ```
 
-{sample}BCT\_Range\_ColumBarn\_Chart\_03{sample}
+{sample}BCT\_Range\_Bar\_Chart\_03{sample}
 
 If you use an array to set the data, you can also configure the appearance of each bar separately, but in a slightly different way. You should first add visual parameters to the data set and then map fields for them so that they can be interpreted by the component:
 
