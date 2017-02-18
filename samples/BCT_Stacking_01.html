@@ -22,19 +22,20 @@
     var seriesData_2 = data.mapAs({x: 0, value: 2});
     var seriesData_3 = data.mapAs({x: 0, value: 3});
 
-    // set the chart type
+    // create a chart
     var chart = anychart.column();
 
-    // set stacking mode for the default primary value scale
-    chart.yScale().stackMode("value");
+    // enable the value stacking mode
+    var yScale = chart.yScale();
+    yScale.stackMode("value");
 
-    // create the series
-    chart.column(seriesData_1);
-    chart.column(seriesData_2);
-    chart.column(seriesData_3);
+    // create column series
+    var series1 = chart.column(seriesData_1);
+    var series2 = chart.column(seriesData_2);
+    var series3 = chart.column(seriesData_3);
 
     // set the chart title
-    chart.title("Stacked Chart - Value Mode");
+    chart.title("Stacked Chart: Value Mode");
 
     // set the container id
     chart.container("container");

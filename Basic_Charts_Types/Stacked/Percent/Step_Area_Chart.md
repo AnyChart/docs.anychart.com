@@ -18,13 +18,13 @@ To build a Percent Stacked Step Area Chart, you should create a multi-series [St
 // create a chart
 var chart = chart.area();
 
-// create step area series
-var series1 = chart.stepArea(seriesData_1);
-var series2 = chart.stepArea(seriesData_2);
-
 // enable the stacking mode
 var yScale = chart.yScale();
 yScale.stackMode("percent");
+
+// create step area series
+var series1 = chart.stepArea(seriesData_1);
+var series2 = chart.stepArea(seriesData_2);
 ```
 
 {sample}BCT\_Percent\_Stacked\_Step\_Area\_Chart{sample}

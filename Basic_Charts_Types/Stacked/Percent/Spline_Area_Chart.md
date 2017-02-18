@@ -18,13 +18,13 @@ To build a Percent Stacked Spline Area Chart, you should create a multi-series [
 // create a chart
 var chart = chart.area();
 
-// create spline area series
-var series1 = chart.splineArea(seriesData_1);
-var series2 = chart.splineArea(seriesData_2);
-
 // enable the stacking mode
 var yScale = chart.yScale();
 yScale.stackMode("percent");
+
+// create spline area series
+var series1 = chart.splineArea(seriesData_1);
+var series2 = chart.splineArea(seriesData_2);
 ```
 
 {sample}BCT\_Percent\_Stacked\_Spline\_Area\_Chart{sample}

@@ -22,28 +22,26 @@
     var seriesData_2 = data.mapAs({x: 0, value: 2});
     var seriesData_3 = data.mapAs({x: 0, value: 3});
 
-    // set the chart type
+    // create a chart
     var chart = anychart.column();
 
-    // set stacking mode for the default primary value scale
-    chart.yScale().stackMode("percent");
+    // enable the value stacking mode
+    var yScale = chart.yScale();
+    yScale.stackMode("percent");
 
-    // set labels/ticks interval 
-    chart.yScale().ticks().interval(25);
-
-    // set axis labels formatting
+    // configure labels on the Y-axis
     chart.yAxis().labels().textFormatter("{%Value}%");
 
-    // set tooltip formatting
+    // configure tooltips
     chart.tooltip().textFormatter("{%yPercentOfCategory}{decimalCount:2}%");
  
-    // create the series
-    chart.column(seriesData_1);
-    chart.column(seriesData_2);
-    chart.column(seriesData_3);
+    // create column series
+    var series1 = chart.column(seriesData_1);
+    var series2 = chart.column(seriesData_2);
+    var series3 = chart.column(seriesData_3);
 
     // set the chart title
-    chart.title("Stacked Chart - Percent Mode");
+    chart.title("Stacked Chart: Percent Mode");
 
     // set the container id
     chart.container("container");

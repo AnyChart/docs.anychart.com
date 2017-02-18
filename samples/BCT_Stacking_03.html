@@ -25,39 +25,45 @@
     var seriesData_5 = data.mapAs({x: 0, value: 5});
     var seriesData_6 = data.mapAs({x: 0, value: 6});
 
-    // set the chart type
+    // create a chart
     var chart = anychart.column();
 
-    // create scales and set stacking modes
-    yScale1 = anychart.scales.linear();
+    // create scales and enable the percent stacking mode
+    var yScale1 = anychart.scales.linear();
     yScale1.stackMode("percent");
 
-    yScale2 = anychart.scales.linear();
+    var yScale2 = anychart.scales.linear();
     yScale2.stackMode("percent");
 
-    yScale3 = anychart.scales.linear();
+    var yScale3 = anychart.scales.linear();
     yScale3.stackMode("percent");
 
-    // create the series and assign different scales:
-    chart.column(seriesData_1).yScale(yScale1);
-    chart.column(seriesData_2).yScale(yScale1);
-
-    chart.column(seriesData_3).yScale(yScale2);
-    chart.column(seriesData_4).yScale(yScale2);
-    
-    chart.column(seriesData_5).yScale(yScale3);
-    chart.column(seriesData_6).yScale(yScale3);
-
-    // set axis settings
+    // configure labels on the Y-axis
     chart.yAxis().labels().textFormatter("{%Value}%");
-    // you need to assign a proper scale
-    // to an axis if you don't reuse primary y scale
-    chart.yAxis().scale(yScale1);
-    // you can avoid this setting by reusing primary y scale:
+
+    // bind the Y-axis to the first scale
+    // you can avoid this setting by reusing the primary Y-scale:
     // yScale1 = chart.yScale();
+    chart.yAxis().scale(yScale1);
+
+    // create column series and bind them to different scales
+    var series1 = chart.column(seriesData_1)
+    series1.yScale(yScale1);
+    var series2 = chart.column(seriesData_2)
+    series2.yScale(yScale1);
+
+    var series3 = chart.column(seriesData_3)
+    series3.yScale(yScale2);
+    var series4 = chart.column(seriesData_4)
+    series4.yScale(yScale2);
+    
+    var series5 = chart.column(seriesData_5)
+    series5.yScale(yScale3);
+    var series6 = chart.column(seriesData_6)
+    series6.yScale(yScale3);
 
     // set the chart title
-    chart.title("Percent Stacked Chart - Clustered");
+    chart.title("Percent Stacked Chart: Clustered");
 
     // set the container id
     chart.container("container");

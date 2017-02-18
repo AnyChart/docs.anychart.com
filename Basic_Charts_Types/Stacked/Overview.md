@@ -8,7 +8,7 @@
  * [Axis Percent Labels](#axis_percent_labels)
  * [Tooltips and Labels](#tooltips_and_labels)
 * [Combination](#combination)
- * [Clustered](#clusteretd)
+ * [Clustered](#clustered)
  * [Overlay](#overlay)
  * [With unstackable series](#with_unstackable_series)
 * [Supported Series Samples](#supported_series_samples)

@@ -18,13 +18,13 @@ To build a Percent Stacked Area Chart, you should create a multi-series [Area Ch
 // create a chart
 var chart = chart.area();
 
-// create area series
-var series1 = chart.area(seriesData_1);
-var series2 = chart.area(seriesData_2);
-
 // enable the stacking mode
 var yScale = chart.yScale();
 yScale.stackMode("percent");
+
+// create area series
+var series1 = chart.area(seriesData_1);
+var series2 = chart.area(seriesData_2);
 ```
 
 {sample}BCT\_Percent\_Stacked\_Area\_Chart{sample}

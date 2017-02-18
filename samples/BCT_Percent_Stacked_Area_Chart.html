@@ -25,6 +25,19 @@
   // create a chart
   var chart = anychart.area();
 
+  // enable the percent stacking mode
+  var yScale = chart.yScale();
+  yScale.stackMode("percent");
+
+  // set the titles of the axes
+  var xAxis = chart.xAxis();
+  xAxis.title("Season");
+  var yAxis = chart.yAxis();
+  yAxis.title("Sales, %");
+
+  // configure labels on the Y-axis
+  yAxis.labels().textFormatter("{%Value}%");
+
   // create area series, set the data and names
   var series1 = chart.area(seriesData_1);
   series1.name("Sales in 2009");
@@ -35,20 +48,6 @@
 
   // set the chart title
   chart.title("Percent Stacked Area Chart");
-
-  // set the titles of the axes
-  var xAxis = chart.xAxis();
-  xAxis.title("Season");
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales, %");
-
-  // enable the percent stacking mode
-  var yScale = chart.yScale();
-  yScale.stackMode("percent");
-
-  // configure the labels of the Y-axis
-  var yLabels = chart.yAxis();
-  yLabels.labels().textFormatter("{%Value}%");
 
   // set the container id
   chart.container("container");
