@@ -8,7 +8,7 @@
 
 A percent stacked step area chart (also known as a 100% stacked step area chart) is a multi-series area chart that displays the trend of the percentage each value contributes over time or categories.
 
-The concept of stacking in AnyChart is explained in this article: [Stacked Charts](Overview).
+The concept of stacking in AnyChart is explained in this article: [Stacked Charts (Overview)](../Overview).
 
 ## Chart
 
