@@ -6,22 +6,25 @@
 
 ## Overview
 
-Percent stacked area chart, also known as 100% stacked area charts are multi-series area charts that display the trend of the percentage each value contributes over time or categories.
+A percent stacked area chart (also known as a 100% stacked area chart) is a multi-series area chart that displays the trend of the percentage each value contributes over time or categories.
 
-Concept of stacking in AnyChart is explain in [Stacked Charts](Overview) article.
+The concept of stacking in AnyChart is explained in this article: [Stacked Charts](Overview).
 
 ## Chart
 
-To build a Percent Stacked Area Chart you should create a simple multi-series [Area Chart](../Area_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to *percent*:
+To build a Percent Stacked Area Chart, you should create a multi-series [Area Chart](../../Area_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to <strong>percent</strong>:
 
 ```
 // create a chart
-chart = chart.area();
+var chart = chart.area();
 
-// set stack mode
-chart.yScale().stackMode("percent");
+// create area series
+var series1 = chart.area(seriesData_1);
+var series2 = chart.area(seriesData_2);
+
+// enable the stacking mode
+var yScale = chart.yScale();
+yScale.stackMode("percent");
 ```
-
-A sample of a percent stacked area chart:
 
 {sample}BCT\_Percent\_Stacked\_Area\_Chart{sample}

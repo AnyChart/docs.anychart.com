@@ -9,51 +9,51 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // create data set on our data
-  var dataSet = anychart.data.set([
+  // create a data set
+  var data = anychart.data.set([
     ["Winter", 12000, 12000, 10000],
     ["Spring", 13000, 12000, 17000],
     ["Summer", 25000, 15000, 19000],
     ["Autumn", 16000, 16000, 16000]
   ]);
 
-  // map data for the first series, take x from the zero column and value from the first column of data set
-  var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+  // map the data
+  var seriesData_1 = data.mapAs({x: [0], value: [1]});
+  var seriesData_2 = data.mapAs({x: [0], value: [2]});
+  var seriesData_3 = data.mapAs({x: [0], value: [3]});
 
-  // map data for the second series, take x from the zero column and value from the second column of data set
-  var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+  // create a chart
+  var chart = anychart.area();
 
-  // map data for the second series, take x from the zero column and value from the third column of data set
-  var seriesData_3 = dataSet.mapAs({x: [0], value: [3]});
+  // create spline area series, set the data and names
+  var series1 = chart.splineArea(seriesData_1);
+  series1.name("Sales in 2009");
+  var series2 = chart.splineArea(seriesData_2);
+  series2.name("Sales in 2010");
+  var series3 = chart.splineArea(seriesData_3);
+  series3.name("Sales in 2011");
 
-  // create area chart
-  chart = anychart.area();
-
-  // chart title
+  // set the chart title
   chart.title("Percent Stacked Spline Area Chart");
 
-  // set axes title
+  // set the titles of the axes
   var xAxis = chart.xAxis();
   xAxis.title("Season");
   var yAxis = chart.yAxis();
-  yAxis.title("Percent");
+  yAxis.title("Sales, %");
 
-  // set container id for the chart
-  chart.container("container");
-
-  // set chart Y scale settings
+  // enable the percent stacking mode
   var yScale = chart.yScale();
   yScale.stackMode("percent");
 
-  // set yAxis labels formatting, force it to add % to values
+  // configure labels
   var yLabels = chart.yAxis().labels();
   yLabels.textFormatter("{%Value}%");
 
-  chart.splineArea(seriesData_1);
-  chart.splineArea(seriesData_2);
-  chart.splineArea(seriesData_3);
+  // set the container id
+  chart.container("container");
 
-  // initiate chart drawing
+  // initiate drawing the chart
   chart.draw();
 });</script>
 </head>

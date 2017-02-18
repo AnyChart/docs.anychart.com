@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-	// data
+	// create a data set
 	var data = anychart.data.set([
 		["Winter", 12000, 12000, 10000],
 		["Spring", 13000, 12000, 17000],
@@ -17,36 +17,49 @@
 		["Autumn", 16000, 16000, 16000]
 	]);
 
-	var dataSet1 = data.mapAs({x: 0, value: 1});
-	var dataSet2 = data.mapAs({x: 0, value: 2});
-	var dataSet3 = data.mapAs({x: 0, value: 3});
+    // map the data
+	var seriesData_1 = data.mapAs({x: 0, value: 1});
+	var seriesData_2 = data.mapAs({x: 0, value: 2});
+	var seriesData_3 = data.mapAs({x: 0, value: 3});
 
-	// set chart type
-	chart = anychart.area();
+	// create a chart
+	var chart = anychart.area();
 
-	// setting title
-	chart.title("Percent Stacked Step Area Chart");
+	// create step area series, set the data and names
+	var series1 = chart.stepArea(seriesData_1);
+	series1.name("Sales in 2009");
+	var series2 = chart.stepArea(seriesData_2);
+	series2.name("Sales in 2010");
+	var series3 = chart.stepArea(seriesData_3);
+	series3.name("Sales in 2011");
 
-	// set axes titles
-	var xAxis = chart.xAxis();
-	xAxis.title("Month");
-	var yAxis = chart.yAxis();
-	yAxis.title("Sales");
+	// set step direction of all the series to the forward mode
+    series1.stepDirection("forward");
+    series2.stepDirection("forward");
+    series3.stepDirection("forward");
 
+    // set the chart title
+    chart.title("Percent Stacked Step Area Chart");
+
+    // set the titles of the axes
+    var xAxis = chart.xAxis();
+    xAxis.title("Season");
+    var yAxis = chart.yAxis();
+    yAxis.title("Sales, %");
+
+    // enable the percent stacking mode
 	var yScale = chart.yScale();
 	yScale.stackMode("percent");
 
-	// set data
-	var series1 = chart.stepArea(dataSet1);
-	series1.name("Sales 2009");
-	var series2 = chart.stepArea(dataSet2);
-	series2.name("Sales 2010");
-	var series3 = chart.stepArea(dataSet3);
-	series3.name("Sales 2011");
+	// configure labels
+    var yLabels = chart.yAxis().labels();
+    yLabels.textFormatter("{%Value}%");
 
-	// draw chart
-	chart.container("container");
-	chart.draw();
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
 });</script>
 </head>
 <body>
