@@ -14,7 +14,7 @@
 
 A range area chart displays information as a range of data by plotting two Y-values (low and high) per data point. It looks like two lines, the area between them usually being filled with color or a pattern.
 
-Such charts are used to emphasize the magnitude of difference between high and low values and in the same time to show trends in data over time.
+Such charts are used to emphasize the magnitude of difference between high and low values and at the same time to show trends in data over time.
 
 This article explains how to create a basic Range Area chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Range Area Chart's characteristics:
 

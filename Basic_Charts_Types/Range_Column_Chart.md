@@ -13,9 +13,9 @@
 
 ## Overview
 
-A range column chart...
+A range column chart displays information as a range of data by plotting two Y-values (low and high) per data point. The vertical axis shows the values, and the horizontal axis shows the categories they belong to; in multi-series range column charts, values are grouped by categories.
 
-The range column chart...
+This type is sometimes referred to as the floating column chart since it looks like a set of columns "floating" above the horizontal axis. It is used to show the difference between high and low values while visualizing time-based data or showing comparison among categories.
 
 This article explains how to create a basic Range Column chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Range Column Chart's characteristics:
 
