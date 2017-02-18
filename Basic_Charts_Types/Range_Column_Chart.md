@@ -190,7 +190,7 @@ chart.barGroupsPadding(0);
 
 The {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} method works only with multi-series charts: it sets the padding between columns within a group. The space between groups is set via {api:anychart.charts.Cartesian#barGroupsPadding}barGroupsPadding(){api}.
 
-If you set {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} to -1, you can create an imitation of a [stacked](Stacked/Overview) chart, which is not bound to zero. See the sample below (there is a multi-series Range Column chart with the padding between columns and between column groups set to -1 and 2):
+If you set {api:anychart.charts.Cartesian#barsPadding}barsPadding(){api} to -1, you can create an imitation of a [stacked chart](Stacked/Overview), which is not bound to zero. See the sample below (there is a multi-series Range Column chart with the padding between columns and between column groups set to -1 and 2):
 
 ```
 // create the first series
