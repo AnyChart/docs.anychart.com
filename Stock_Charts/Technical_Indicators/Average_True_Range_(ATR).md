@@ -24,6 +24,7 @@ dataTable.addData(get_data());
 
 // map loaded data
 var mapping = dataTable.mapAs();
+mapping.addField('open', 1, "first");
 mapping.addField('high', 2, 'max');
 mapping.addField('low', 3, 'min');
 mapping.addField('close', 4, 'last');

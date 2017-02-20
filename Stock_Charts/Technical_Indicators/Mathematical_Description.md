@@ -1,6 +1,6 @@
 {:index 3}
 
-#Technical Indicators
+#Technical Indicators Mathematical Decsription
 
 * [Overview](#overview)
 * [Accumulation Distribution Line (ADL)](#)
@@ -70,7 +70,7 @@ Aroon indicator in each point is calculated according to the following formula:
 
 Average True Range in each point is calculated according to the following formula:
 
-<center><img src="http://static.anychart.com/images/technical\_indicators/atr.png" width="650"></center>
+<center><img src="http://static.anychart.com/images/technical\_indicators/atr.png" width="550"></center>
 
 This formula is based on the True Range definition. ATR is defined as the greatest of the following:
 
@@ -117,7 +117,7 @@ Coming soon.
 
 Exponential Moving Average in each point is calculated according to the following formula:
 
-<center><img src="http://static.anychart.com/images/technical\_indicators/ema.png" width="680"></center>
+<center><img src="http://static.anychart.com/images/technical\_indicators/ema.png" width="500"></center>
 
 ## KDJ
 
@@ -125,11 +125,11 @@ KDJ is calculated quite alike [Stochastic](#stochastic_oscillator) indicator, bu
 
 <ol>
 	<li>The %K line is calculated the following way:<br>
-<center><img src="http://static.anychart.com/images/technical\_indicators/kdj1.png" width="680"></center>
+<center><img src="http://static.anychart.com/images/technical\_indicators/kdj1.png"></center>
 	<li>To create the %D line, use the next formula:<br>
-<center><img src="http://static.anychart.com/images/technical\_indicators/kdj2.png" width="680"></center>
+<center><img src="http://static.anychart.com/images/technical\_indicators/kdj2.png"></center>
 	<li>This is how the %J line is calculated:<br>
-<center><img src="http://static.anychart.com/images/technical\_indicators/kdj3.png" width="680"></center>
+<center><img src="http://static.anychart.com/images/technical\_indicators/kdj3.png"></center>
 </ol>
 
 
@@ -159,13 +159,13 @@ Moving Average Convergence/Divergence indicator is calculated as follows:
 	<li>EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#exponential_moving_average)</a>. Slow period 
 	and fast period are set by <strong>slowPeriod</strong> (default 26) and <strong>fastPeriod</strong> (default 12) parameters of {api:anychart.core.stock.indicators.MACD}.macd(){api} method.</li>
 	<li>MACD series value is calculated:<br>
-<img src="http://static.anychart.com/images/technical\_indicators/macd-macd.png"/></li>
+<center><img src="http://static.anychart.com/images/technical\_indicators/macd-macd.png"/></li></center>
 	<li>EMA\[signal period\]<sub>i</sub> of MACD series values is calculated by [EMA formula](#exponential_moving_average), where signal period is set
 	by <strong>signalPeriod</strong> parameter.</li>
 	<li>Signal series value is calculated:<br>
-<img src="http://static.anychart.com/images/technical\_indicators/macd-signal.png"/></li>
+<center><img src="http://static.anychart.com/images/technical\_indicators/macd-signal.png"/></li></center>
 	<li>Histogram series is calculated:<br>
-<img src="http://static.anychart.com/images/technical\_indicators/macd-histogram.png"/></li>
+<center><img src="http://static.anychart.com/images/technical\_indicators/macd-histogram.png"/></li></center>
 </ol>
 
 ## Moving Average Envelopes
@@ -196,12 +196,12 @@ Relative Strength Index is calculated as follows:
 
 <ol>
 	<li>Upward change (U) or downward change (D) sequences are calculated:<br>
-<img src="http://static.anychart.com/images/technical\_indicators/rsi-u-d.png"/></li>
+<center><img src="http://static.anychart.com/images/technical\_indicators/rsi-u-d.png"/></li></center>
 	<li>Then two averages are calculated:<br>
-<img src="http://static.anychart.com/images/technical\_indicators/rsi-mau.png"/><br>
-<img src="http://static.anychart.com/images/technical\_indicators/rsi-mad.png"/></li>
+<center><img src="http://static.anychart.com/images/technical\_indicators/rsi-mau.png"/><br></center>
+<center><img src="http://static.anychart.com/images/technical\_indicators/rsi-mad.png"/></li></center>
 	<li>And final RSI formula is :<br>
-<img src="http://static.anychart.com/images/technical\_indicators/rsi-rsi.png"></li>
+<center><img src="http://static.anychart.com/images/technical\_indicators/rsi-rsi.png"></li></center>
 </ol>
 
 ## Simple Moving Average

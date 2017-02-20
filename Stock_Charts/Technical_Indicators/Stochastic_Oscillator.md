@@ -10,7 +10,7 @@
 
 ## Overview
 
-A technical indicator is a calculation based on historic price, volume, or open interest information that aims to forecast financial market direction. Technical indicators are fundamental part of technical analysis and are typically plotted as a chart pattern to try to predict the market trend. Indicators generally overlay on price chart data to indicate where the price is going, or whether the price is in an "overbought" condition or an "oversold" condition. Stochastic oscillator is a momentum indicator, introduced by George Lane in the 1950s. It serves for comparing the closing price of a commodity to its price range over a given time span. The %K and %D lines 
+Stochastic oscillator is a momentum indicator, introduced by George Lane in the 1950s. It serves for comparing the closing price of a commodity to its price range over a given time span. The %K and %D lines are supposed to show whether it's better to buy or sell: the moments when whose two lines cross each other are counted as the best for money operations.
 
 There are three subtypes of Stochastic Oscillator - Fast Stochastic, Slow Stochastic and Full Stochastic. AnyChart Stock allows adding all of these types using the same method with different parameters.
 
