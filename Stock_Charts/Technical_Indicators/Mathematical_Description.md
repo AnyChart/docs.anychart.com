@@ -29,7 +29,7 @@
 * [Rate of Change (ROC)](#roc)
 * [Relative Strength Index (RSI)](#relative_strength_index)
 * [Simple Moving Average (SMA)](#simple_moving_average)
-* [Stochastic Oscillator (Fast,Slow)](#)
+* [Stochastic Oscillator (Fast,Slow)](#stochastic_oscillator)
 * [TRIX](#)
 * [Volume + MA](#)
 * [Williams %R](#)
@@ -218,31 +218,31 @@ The defaults create a Fast Stochastic Oscillator indicator.
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/fastK.png"></center>
 
-, where pK is the first period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %K value.
+where pK is the first period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %K value.
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/fastD.png"></center>
 
-, where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
+where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
 
 While Fast Stochastic Oscillator is used for signals, the Slow Stochastic Oscillator is supposed to reflect this emphasis. 
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/slowK.png"></center>
 
-, where 3 is a default period for getting slow K.
+where 3 is a default period for getting slow K.
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/slowD.png"></center>
 
-, where 3 is a default period for getting slow D.
+where 3 is a default period for getting slow D.
 
 The Full Stochastic Oscillator is a fully customizable version of the Slow Stochastic Oscillator. Users can set the look-back period, the number of periods to slow %K and the number of periods for the %D moving average. 
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/fullK.png"></center>
 
-, where p2 is the second period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the smoothed %K value.
+where p2 is the second period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the smoothed %K value.
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/fullD.png"></center>
 
-, where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
+where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
 
 
 ## TRIX

@@ -3,16 +3,11 @@
 * [Overview](#overview)
 * [Adding indicator](#adding_indicator)
 * [Indicator parameters](#indicator_parameters)
-* [Full](#full)
-* [Fast](#fast)
-* [Slow](#slow)
 * [Visualization](#visualization)
 
 ## Overview
 
-A technical indicator is a calculation based on some parameters which is supposed to predict the direction of the financial market. Indicators are usually drawn over the price chart data to indicate where the price is going, or whether the price is in an "overbought" condition or an "oversold" condition. 
-
-KDJ is a momentum indicator, using a divergence line. It is a derived form of the [Stochastic indicatior](Stochastic) with the only difference of having an extra line called the J line. The J line represents the divergence of the %D value from the %K. The value of J can go beyond [0, 100] for %K and %D lines on the chart.
+KDJ is a momentum indicator, using a divergence line. It is a derived form of the [Stochastic indicatior](Stochastic_Oscillator) with the only difference of having an extra line called the J line. Values of %K and %D lines show if the security is overbought (over 80) or oversold (below 20). The moments of %K crossing %D are the moments for selling or buying. The J line represents the divergence of the %D value from the %K. The value of J can go beyond [0, 100] for %K and %D lines on the chart.
 
 Find the mathematical description of the indicator on the [KDJ Mathematical Description](Mathematical_Description#kdj) page.
 
@@ -70,27 +65,6 @@ var kdj = plot.kdj(mapping, 10, EMA, 10, SMA, 20);
 There are three series that form the KDJ indicator, so there is a methods for each of them: {api:anychart.core.stock.indicators.KDJ#kSeries}kSeries(){api} for drawing the %K series, {api:anychart.core.stock.indicators.KDJ#dSeries}dSeries(){api} for drawing the %D series and the {api:anychart.core.stock.indicators.KDJ#jSeries}jSeries(){api} for drawing the %J series.
 
 The series type defining is not necessary, as it is possible to change the series type any time using the {api:anychart.core.stock.series.Column#seriesType}seriesType(){api} method. 
-
-### Full
-
-There are some default values need to be set for the methods for creating the KDJ indicator of Full subtype.
-
-```
-```
-
-### Fast
-
-The following values need to be set for the methods for creating the KDJ indicator of Fast subtype.
-
-```
-```
-
-### Slow
-
-These values are necessary to be set for the methods for creating the KDJ indicator of Slow subtype.
-
-```
-```
 
 
 ## Visualization
