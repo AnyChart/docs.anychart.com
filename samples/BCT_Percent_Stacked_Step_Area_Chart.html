@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-	// create a data set
-	var data = anychart.data.set([
-		["Winter", 12000, 12000, 10000],
-		["Spring", 13000, 12000, 17000],
-		["Summer", 25000, 15000, 19000],
-		["Autumn", 16000, 16000, 16000]
-	]);
+    // create a data set
+    var data = anychart.data.set([
+      ["Winter", 20000, 40000, 20000],
+      ["Spring", 20000, 40000, 40000],
+      ["Summer", 40000, 30000, 30000],
+      ["Autumn", 20000, 20000, 40000]
+    ]);
 
     // map the data
 	var seriesData_1 = data.mapAs({x: 0, value: 1});
@@ -26,30 +26,23 @@
 	var chart = anychart.area();
 
     // enable the percent stacking mode
-	var yScale = chart.yScale();
-	yScale.stackMode("percent");
+    chart.yScale().stackMode("percent");
 
-    // set the titles of the axes
-    var xAxis = chart.xAxis();
-    xAxis.title("Season");
-    var yAxis = chart.yAxis();
-    yAxis.title("Sales, %");
-
-    // configure labels on the Y-axis
-    yAxis.labels().textFormatter("{%Value}%");
-
-    // create step area series, set the data and names
+    // create step area series, set the data
 	var series1 = chart.stepArea(seriesData_1);
-	series1.name("Sales in 2009");
 	var series2 = chart.stepArea(seriesData_2);
-	series2.name("Sales in 2010");
 	var series3 = chart.stepArea(seriesData_3);
-	series3.name("Sales in 2011");
 
 	// set step direction of all the series to the forward mode
     series1.stepDirection("forward");
     series2.stepDirection("forward");
     series3.stepDirection("forward");
+
+    // configure tooltips
+    chart.tooltip().textFormatter("{%yPercentOfCategory}{decimalCount:2}%");
+
+    // configure labels on the Y-axis
+    chart.yAxis().labels().textFormatter("{%Value}%");
 
 	// set the chart title
     chart.title("Percent Stacked Step Area Chart");

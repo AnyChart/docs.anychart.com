@@ -25,9 +25,17 @@
     // create a chart
     var chart = anychart.column();
 
-    // enable the value stacking mode
-    var yScale = chart.yScale();
-    yScale.stackMode("percent");
+    /* enable the percent stacking mode
+    on the default primary value scale*/
+    chart.yScale().stackMode("percent");
+
+    // set the tick interval on the value scale
+    chart.yScale().ticks().interval(20);
+
+    // create column series
+    chart.column(seriesData_1);
+    chart.column(seriesData_2);
+    chart.column(seriesData_3);
 
     // configure labels on the Y-axis
     chart.yAxis().labels().textFormatter("{%Value}%");
@@ -35,11 +43,6 @@
     // configure tooltips
     chart.tooltip().textFormatter("{%yPercentOfCategory}{decimalCount:2}%");
  
-    // create column series
-    var series1 = chart.column(seriesData_1);
-    var series2 = chart.column(seriesData_2);
-    var series3 = chart.column(seriesData_3);
-
     // set the chart title
     chart.title("Stacked Chart: Percent Mode");
 

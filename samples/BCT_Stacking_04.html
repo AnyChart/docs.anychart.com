@@ -23,7 +23,7 @@
     var seriesData_3 = data.mapAs({x: 0, value: 3});
     var seriesData_4 = data.mapAs({x: 0, value: 4});
 
-    // set the chart type
+    // create a chart
     var chart = anychart.column();
 
     // create scales and set stacking modes
@@ -33,23 +33,21 @@
     yScale2 = anychart.scales.linear();
     yScale2.stackMode("value");
 
-    // create the series and assign different scales:
+    // create column series and bind them to different scales
     chart.column(seriesData_1).yScale(yScale1);
     chart.column(seriesData_2).yScale(yScale1);
 
     chart.column(seriesData_3).yScale(yScale2);
     chart.column(seriesData_4).yScale(yScale2);
 
-
-    // set axis settings
-    // you need to assign a proper scale
-    // to an axis if you don't reuse primary y scale
+    /* bind the Y-axis to the first scale
+    you can avoid this setting by reusing the primary Y-scale
+    when you create yScale1:
+    var yScale1 = chart.yScale();*/
     chart.yAxis().scale(yScale1);
-    // you can avoid this setting by reusing primary y scale:
-    // yScale1 = chart.yScale();
 
     // set the chart title
-    chart.title("Percent Stacked Chart - Clustered");
+    chart.title("Value Stacked Chart: Clustered");
 
     // set the container id
     chart.container("container");
@@ -57,7 +55,7 @@
     // initiate drawing the chart
     chart.draw();
 
-    // sync scales minimums and maximums
+    // sync minimums and maximums of the scales
     if (yScale1.maximum() > yScale2.maximum())
         yScale2.maximum(yScale1.maximum());
     else

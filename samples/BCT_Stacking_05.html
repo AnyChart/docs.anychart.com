@@ -11,10 +11,10 @@
 
     // create a data set
     var data = anychart.data.set([
-      ["QTR1", 3.8, 5.5, 6.9, 7.9],
-      ["QTR2", 5.5, 7.0, 9.6, 8.6],
-      ["QTR3", 9.9, 9.7, 8.3, 7.3],
-      ["QTR4", 5.7, 7.6, 9.7, 8.7]
+      ["QTR1", 2.5, 2.0, 2.5, 3.0],
+      ["QTR2", 2.0, 1.5, 3.0, 3.5],
+      ["QTR3", 1.5, 2.5, 3.5, 2.5],
+      ["QTR4", 3.5, 2.5, 2.5, 1.5]
     ]);
 
     // map the data
@@ -23,7 +23,7 @@
     var seriesData_3 = data.mapAs({x: 0, value: 3});
     var seriesData_4 = data.mapAs({x: 0, value: 4});
 
-    // set the chart type
+    // create a chart
     var chart = anychart.column();
 
     // create scales and set stacking modes
@@ -33,22 +33,28 @@
     yScale2 = anychart.scales.linear();
     yScale2.stackMode("percent");
 
-    // create the series and assign different scales:
+    // create area and column series
+    // bind them to different scales
     chart.area(seriesData_1).yScale(yScale1);
     chart.area(seriesData_2).yScale(yScale1);
 
     chart.column(seriesData_3).yScale(yScale2);
     chart.column(seriesData_4).yScale(yScale2);
 
-    // set axis settings
-    // you need to assign a proper scale
-    // to an axis if you don't reuse primary y scale
+    /* bind the Y-axis to the first scale
+    you can avoid this setting by reusing the primary Y-scale
+    when you create yScale1:
+    var yScale1 = chart.yScale();*/
     chart.yAxis().scale(yScale1);
-    // you can avoid this setting by reusing primary y scale:
-    // yScale1 = chart.yScale();
+
+    // configure labels on the Y-axis
+    chart.yAxis().labels().textFormatter("{%Value}%");
+
+    // configure tooltips
+    chart.tooltip().textFormatter("{%yPercentOfCategory}{decimalCount:2}%");
 
     // set the chart title
-    chart.title("Percent Stacked Chart - Area/Column Overlay");
+    chart.title("Percent Stacked Chart: Area/Column Overlay");
 
     // set the container id
     chart.container("container");

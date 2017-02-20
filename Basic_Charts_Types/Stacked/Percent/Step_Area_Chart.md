@@ -2,7 +2,7 @@
 # Percent Stacked Step Area Chart
 
 * [Overview](#overview)
-* [Chart](#chart)
+* [Quick Start](#quick_start)
 
 ## Overview
 
@@ -10,7 +10,7 @@ A percent stacked step area chart (also known as a 100% stacked step area chart)
 
 The concept of stacking in AnyChart is explained in this article: [Stacked Charts (Overview)](../Overview).
 
-## Chart
+## Quick Start
 
 To build a Percent Stacked Step Area Chart, you should create a multi-series [Step Area Chart](../../Step_Area_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to <strong>percent</strong>:
 
@@ -18,9 +18,8 @@ To build a Percent Stacked Step Area Chart, you should create a multi-series [St
 // create a chart
 var chart = chart.area();
 
-// enable the stacking mode
-var yScale = chart.yScale();
-yScale.stackMode("percent");
+// enable the percent stacking mode
+chart.yScale().stackMode("percent");
 
 // create step area series
 var series1 = chart.stepArea(seriesData_1);

@@ -29,7 +29,8 @@ To create a **value stacked** chart you need to set scale stackMode to "value":
 // create a chart
 var chart = anychart.column();
 
-// set stacking mode for the default primary value scale
+/* enable the value stacking mode
+on the default primary value scale*/
 chart.yScale().stackMode("value");
 ```
 
@@ -45,7 +46,8 @@ To create a **percent stacked** chart you need to set scale stackMode to "percen
 // create a chart
 var chart = anychart.column();
 
-// set stacking mode for the default primary value scale
+/* enable the percent stacking mode
+on the default primary value scale*/
 chart.yScale().stackMode("percent");
 ```
 
@@ -56,10 +58,12 @@ Percent stacked charts usually need some fine tuning to get going:
 Setting scale to percent stacked mode will force it's [minimum and maximum](/Axes_and_Grids/Scales#minimum_and_maximum) to 0 and 100 but tick interval will remain auto-calculated. If you want to change interval use ticks interval settings:
 
 ```
-// set stacking mode for the default primary value scale
+/* enable the value stacking mode
+on the default primary value scale*/
 chart.yScale().stackMode("value");
-// change interval
-chart.yScale().ticks().interval(25);
+
+// set the tick interval on the value scale
+chart.yScale().ticks().interval(20);
 ```
 
 ### Axis Percent Labels
@@ -67,7 +71,7 @@ chart.yScale().ticks().interval(25);
 To add percent symbol to axis labels use [Axes Labels](/Axes_and_Grids/Axes_Labels_Formatting) formatting:
 
 ```
-// set axis labels formatting
+// configure labels on the Y-axis
 chart.yAxis().labels().textFormatter("{%Value}%");
 ```
 
@@ -76,7 +80,7 @@ chart.yAxis().labels().textFormatter("{%Value}%");
 To add percent symbol and show percentage instead (or in addition to) in tooltips and labels use [Text Formatters](/Common_Settings/Text_Formatters):
 
 ```
-// set tooltip formatting
+// configure tooltips
 chart.tooltip().textFormatter("{%yPercentOfCategory}%");
 ```
 
@@ -93,20 +97,17 @@ With column, bar or stick series types it is possible to create so-called "clust
 Here us a sample of percent stacked clustered chart:
 
 ```
-// create a chart
-var chart = anychart.column();
-
 // create scales and set stacking modes
-yScale1 = anychart.scales.linear();
+var yScale1 = anychart.scales.linear();
 yScale1.stackMode("percent");
 
-yScale2 = anychart.scales.linear();
+var yScale2 = anychart.scales.linear();
 yScale2.stackMode("percent");
 
-yScale3 = anychart.scales.linear();
+var yScale3 = anychart.scales.linear();
 yScale3.stackMode("percent");
 
-// create the series and assign different scales:
+// create column series and bind them to different scales:
 chart.column(seriesData_1).yScale(yScale1);
 chart.column(seriesData_2).yScale(yScale1);
 
@@ -122,8 +123,8 @@ chart.column(seriesData_6).yScale(yScale3);
 If you do this with value stacking mode you should not forget about minimum and maximum auto-calculation and sync axes. The easiest way is to set the same values to minimums and maximums:
 
 ```
-// set minimums and maximums
 // create scales and set stacking modes
+// set maximums and minimums
 yScale1 = anychart.scales.linear();
 yScale1.stackMode("value");
 yScale1.maximum(20);
@@ -138,7 +139,7 @@ yScale2.minimum(0);
 But you can also sync scales after they auto-calculate their minimums and maximums, it can be done like that in case of two scales:
 
 ```
-// sync scales minimums and maximums
+// sync minimums and maximums of the scales
 if (yScale1.maximum() > yScale2.maximum())
     yScale2.maximum(yScale1.maximum());
 else
@@ -171,7 +172,8 @@ yScale1.stackMode("percent");
 yScale2 = anychart.scales.linear();
 yScale2.stackMode("percent");
 
-// create the series and assign different scales:
+// create area and column series
+//bind them to different scales:
 chart.area(seriesData_1).yScale(yScale1);
 chart.area(seriesData_2).yScale(yScale1);
 
@@ -186,10 +188,11 @@ chart.column(seriesData_4).yScale(yScale2);
 When you combine a set of stackable series with any number of series if unstackable type the stackable series form a stack and unstackable series are displayed as always. This way you can show a trend over a stack without creating any extra scales. Please see a sample below:
 
 ```
-// set stack mode
+/* enable the value stacking mode
+on the default primary value scale*/
 chart.yScale().stackMode("value");
 
-// create series
+// create column and line series
 chart.column(seriesData_1);
 chart.column(seriesData_2);
 chart.line(seriesData_3);

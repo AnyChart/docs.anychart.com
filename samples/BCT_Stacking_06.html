@@ -22,19 +22,20 @@
     var seriesData_2 = data.mapAs({x: 0, value: 2});
     var seriesData_3 = data.mapAs({x: 0, value: 3});
 
-    // set the chart type
+    // create a chart
     var chart = anychart.column();
 
-    // set stack mode
+    /* enable the value stacking mode
+    on the default primary value scale*/
     chart.yScale().stackMode("value");
 
-    // create series
+    // create column and line series
     chart.column(seriesData_1);
     chart.column(seriesData_2);
     chart.line(seriesData_3);
 
     // set the chart title
-    chart.title("Stacked Chart - Unstackable Series Overlay");
+    chart.title("Value Stacked Chart: Overlay of Unstackable Series");
 
     // set the container id
     chart.container("container");

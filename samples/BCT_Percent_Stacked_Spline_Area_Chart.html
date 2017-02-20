@@ -11,10 +11,10 @@
 
   // create a data set
   var data = anychart.data.set([
-    ["Winter", 12000, 12000, 10000],
-    ["Spring", 13000, 12000, 17000],
-    ["Summer", 25000, 15000, 19000],
-    ["Autumn", 16000, 16000, 16000]
+    ["Winter", 20000, 40000, 20000],
+    ["Spring", 20000, 40000, 40000],
+    ["Summer", 40000, 30000, 30000],
+    ["Autumn", 20000, 20000, 40000]
   ]);
 
   // map the data
@@ -26,25 +26,18 @@
   var chart = anychart.area();
 
   // enable the percent stacking mode
-  var yScale = chart.yScale();
-  yScale.stackMode("percent");
+  chart.yScale().stackMode("percent");
 
-  // set the titles of the axes
-  var xAxis = chart.xAxis();
-  xAxis.title("Season");
-  var yAxis = chart.yAxis();
-  yAxis.title("Sales, %");
+  // create spline area series, set the data
+  var series1 = chart.splineArea(seriesData_1);
+  var series2 = chart.splineArea(seriesData_2);
+  var series3 = chart.splineArea(seriesData_3);
+
+  // configure tooltips
+  chart.tooltip().textFormatter("{%yPercentOfCategory}{decimalCount:2}%");
 
   // configure labels on the Y-axis
-  yAxis.labels().textFormatter("{%Value}%");
-
-  // create spline area series, set the data and names
-  var series1 = chart.splineArea(seriesData_1);
-  series1.name("Sales in 2009");
-  var series2 = chart.splineArea(seriesData_2);
-  series2.name("Sales in 2010");
-  var series3 = chart.splineArea(seriesData_3);
-  series3.name("Sales in 2011");
+  chart.yAxis().labels().textFormatter("{%Value}%");
 
   // set the chart title
   chart.title("Percent Stacked Spline Area Chart");

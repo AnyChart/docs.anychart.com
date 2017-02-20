@@ -2,7 +2,7 @@
 # Percent Stacked Spline Area Chart
 
 * [Overview](#overview)
-* [Chart](#chart)
+* [Quick Start](#quick_start)
 
 ## Overview
 
@@ -10,7 +10,7 @@ A percent stacked spline area chart (also known as a 100% stacked spline area ch
 
 The concept of stacking in AnyChart is explained in this article: [Stacked Charts (Overview)](../Overview).
 
-## Chart
+## Quick Start
 
 To build a Percent Stacked Spline Area Chart, you should create a multi-series [Spline Area Chart](../../Spline_Area_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to <strong>percent</strong>:
 
@@ -18,9 +18,8 @@ To build a Percent Stacked Spline Area Chart, you should create a multi-series [
 // create a chart
 var chart = chart.area();
 
-// enable the stacking mode
-var yScale = chart.yScale();
-yScale.stackMode("percent");
+// enable the percent stacking mode
+chart.yScale().stackMode("percent");
 
 // create spline area series
 var series1 = chart.splineArea(seriesData_1);

@@ -25,14 +25,14 @@
     // create a chart
     var chart = anychart.column();
 
-    // enable the value stacking mode
-    var yScale = chart.yScale();
-    yScale.stackMode("value");
+    /* enable the value stacking mode
+    on the default primary value scale*/
+    chart.yScale().stackMode("value");
 
     // create column series
-    var series1 = chart.column(seriesData_1);
-    var series2 = chart.column(seriesData_2);
-    var series3 = chart.column(seriesData_3);
+    chart.column(seriesData_1);
+    chart.column(seriesData_2);
+    chart.column(seriesData_3);
 
     // set the chart title
     chart.title("Stacked Chart: Value Mode");
