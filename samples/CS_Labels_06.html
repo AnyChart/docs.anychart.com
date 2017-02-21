@@ -1,0 +1,38 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // create a chart
+  chart = anychart.column([
+    {x: "Thesis",     value: 1770}, 
+    {x: "Antithesis", value: 1807}, 
+    {x: "Synthesis",  value: 1831}
+  ]);
+
+  // set labels position
+  labels = chart.getSeries(0).labels();
+  labels.enabled(true);
+  labels.position("TopCenter");
+  labels.anchor("Left");
+  labels.offsetY(-10);
+  labels.rotation(-90);
+
+  // set title
+  chart.title("Labels position");
+
+  // draw
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
