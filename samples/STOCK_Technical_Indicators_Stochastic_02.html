@@ -14,39 +14,39 @@
         // create data table on loaded data
         var dataTable = anychart.data.table();
         dataTable.addData(get_csco_daily_data());
+
         // map loaded data
         var mapping = dataTable.mapAs();
         mapping.addField("open", 1, "first");
         mapping.addField("high", 2, "max");
         mapping.addField("low", 3, "min");
         mapping.addField("close", 4, "last");
+        mapping.addField("value", 5, "value");
+
         // create stock chart
         chart = anychart.stock();
-        // create plots on the chart
-        var plot_0 = chart.plot(0);
-        var plot_1 = chart.plot(1);
 
-        // create line series on both of them
-        var lineSeries_0 = plot_0.ohlc(mapping);
-        lineSeries_0.name("CSCO");
-        lineSeries_0.stroke("2px #64b5f6");
+        // create plot on the chart
+        var plot = chart.plot(0);
 
-        var lineSeries_1 = plot_1.ohlc(mapping);
-        lineSeries_1.name("CSCO");
-        lineSeries_1.stroke("2px #64b5f6");
+        // create line series
+        var lineSeries = plot.ohlc(mapping);
+        lineSeries.name("CSCO");
+        lineSeries.stroke("2px #64b5f6");
 
-        // create first stochastic indicator of default series type
-        var stochastic_1 = plot_0.stochastic(mapping, 10, "EMA", 10, "SMA", 20);
-        stochastic_1.kSeries().stroke("#bf360c");
-        stochastic_1.dSeries().stroke("#bf309c");
+        // create stochastic indicator
+        var stochastic = plot.stochastic(mapping, 14, "SMA", 1, "SMA", 3);
+        stochastic_k = stochastic.kSeries();
+        stochastic_k.stroke("#bf360c");
+        stochastic_d = stochastic.dSeries();
+        stochastic_d.stroke("#ff6d00");
 
-        // create second stochastic indicator of column series
-        var stochastic_2 = plot_1.stochastic(mapping, 14, "EMA", 5, "EMA", 5, "spline", "spline");
-        stochastic_2.kSeries().stroke("#ff6d00");
-        stochastic_2.dSeries().stroke("#ff6d99");
-        
+        // create scroller series with mapped data
+        chart.scroller().line(mapping);
+
         // set container id for the chart
         chart.container("container");
+        
         // initiate chart drawing
         chart.draw();
     });
