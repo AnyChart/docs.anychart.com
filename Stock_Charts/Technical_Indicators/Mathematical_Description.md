@@ -4,9 +4,9 @@
 
 * [Overview](#overview)
 * [Accumulation Distribution Line (ADL)](#)
-* [Adaptive Moving Average (AMA)](#ama)
+* [Adaptive Moving Average (AMA)](#adaptive_moving_average)
 * [Aroon](#aroon)
-* [Average True Range (ATR)](#)
+* [Average True Range (ATR)](#average_true_range)
 * [Bollinger Bands (BBands)](#)
 * [BBands %B](#)
 * [BBands Width](#)
@@ -16,7 +16,7 @@
 * [Chaikin Volatility (CHV)](#)
 * [Directional Movement Indicator (DMI)](#)
 * [Exponential Moving Average (EMA)](#exponential_moving_average)
-* [KDJ](#)
+* [KDJ](#kdj)
 * [Keltner Channels](#)
 * [Modified Moving Average (MMA)](#mma)
 * [Money Flow Index (MFI)](#)
@@ -45,11 +45,11 @@ For all formulas and indicators below:
 	<li><strong>X<sub>i</sub></strong> is the value passed by the data source.</li>
 </ul>
 
-## Accumulation Distribution Line (ADL)
+## Accumulation Distribution Line
 
 Coming soon.
 
-## Adaptive Moving Average (AMA)
+## Adaptive Moving Average
 
 Each point of the Adaptive Moving Average indicator is calculated by the following steps:
 
@@ -66,7 +66,7 @@ Aroon indicator in each point is calculated according to the following formula:
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/aroon.png" width="650"></center>
 
-## Average True Range (ATR)
+## Average True Range
 
 Average True Range in each point is calculated according to the following formula:
 
@@ -77,7 +77,6 @@ This formula is based on the True Range definition. ATR is defined as the greate
 - current High less the current Low;
 - current High less the previous Close (absolute value)
 - current Low less the previous Close (absolute value)
-
 
 Coming soon.
 
@@ -143,7 +142,7 @@ This indicator points are calculated by the following formula:
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/mma.png" width="400"></center>
 
-## Money Flow Index (MFI)
+## Money Flow Index
 
 Coming soon.
 
@@ -243,7 +242,6 @@ where p2 is the second period that is set through the {api:anychart.core.stock.P
 <center><img src="http://static.anychart.com/images/technical\_indicators/fullD.png"></center>
 
 where p3 is the third period that is set through the {api:anychart.core.stock.Plot#stochastic}stochastic(){api} method, which is a period for the %D value.
-
 
 ## TRIX
 
