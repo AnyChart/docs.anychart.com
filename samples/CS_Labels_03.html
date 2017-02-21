@@ -1,0 +1,49 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // create a chart
+  chart = anychart.column();
+
+  // set title
+  chart.title("Formatting labels");
+
+  // add a data series
+  series = chart.column([
+    {x: "Faster",   value: 1}, 
+    {x: "Higher",   value: 3, selected: true}, 
+    {x: "Stronger", value: 2}
+  ]);
+
+  // enable labels for a series
+  series.labels(true);
+  series.selectLabels(true);
+
+  // enable labels for a series
+  series.labels().textFormatter("{%x}");
+  series.selectLabels().textFormatter("{%x}");
+
+  // background border color
+  series.labels().background().stroke("#663399");
+  series.selectLabels().background().stroke("Green");
+
+  // font color
+  series.labels().fontColor("#663399");
+  series.selectLabels().fontColor("Green");
+
+  // draw
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>
