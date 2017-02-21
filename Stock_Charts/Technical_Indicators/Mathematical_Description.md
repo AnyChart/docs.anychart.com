@@ -18,7 +18,7 @@
 * [Exponential Moving Average (EMA)](#exponential\_moving\_average)
 * [KDJ](#kdj)
 * [Keltner Channels](#)
-* [Modified Moving Average (MMA)](#mma)
+* [Modified (Smoothed) Moving Average (MMA)](#modified_moving_average)
 * [Money Flow Index (MFI)](#)
 * [Momentum](#)
 * [Moving Average Convergence Divergence (MACD)](#moving_average_convergence_divergence)
@@ -51,7 +51,7 @@ Coming soon.
 
 ## Adaptive Moving Average
 
-Each point of the Adaptive Moving Average indicator is calculated by the following steps:
+Each point of the [Adaptive Moving Average](Adaptive\_Moving\_Average\_(AMA)) indicator is calculated by the following steps:
 
 1. Calculate the ER:
 <center><img src="http://static.anychart.com/images/technical\_indicators/ama\_er.png" width="343"></center>
@@ -62,13 +62,13 @@ Each point of the Adaptive Moving Average indicator is calculated by the followi
 
 ## Aroon
 
-Aroon indicator is calculated according to the following formula:
+[Aroon](Aroon) indicator is calculated according to the following formula:
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/aroon.png" width="650"></center>
 
 ## Average True Range
 
-Average True Range in each point is calculated according to the following formula:
+[Average True Range](Average\_True\_Range\_(ATR)) in each point is calculated according to the following formula:
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/atr.png" width="550"></center>
 
@@ -80,7 +80,7 @@ This formula is based on the True Range definition. ATR is defined as the greate
 
 ## Bollinger Bands
 
-This indicator is calculated in three steps:
+[Bollinger Bands](Bollinger_Bands) indicator is calculated in three steps:
 
 1. Calculate the SMA according to the SMA formula.
 
@@ -92,25 +92,19 @@ This indicator is calculated in three steps:
 
 <center><img src="http://static.anychart.com/images/technical_indicators/bbands.png" width="225"></center>
 
-See [Bollinger Bands](Bollinger_Bands) article.
-
 ## Bollinger Bands %B
 
-The Bollinger Bands %B indicator is calculated according to the following formula:
+The [Bollinger Bands %B](Bollinger_Bands_%25B) indicator is calculated according to the following formula:
 
 <center><img src="http://static.anychart.com/images/technical_indicators/bbandsb.png" width="650"></center>
 
-See [Bollinger Bands %B](Bollinger_Bands_%25B) article.
-
 ## Bollinger Bands Width
 
-The Bollinger Bands Width indicator is calculated according to the following formula:
+The [Bollinger Bands Width article](Bollinger_Bands_Width) indicator is calculated according to the following formula:
 
 ```
 bandwidth = (upperBB − lowerBB) / middleBB
 ```
-
-See [Bollinger Bands Width article](Bollinger_Bands_Width) article.
 
 Coming soon.
 
@@ -136,13 +130,13 @@ Coming soon.
 
 ## Exponential Moving Average
 
-Exponential Moving Average in each point is calculated according to the following formula:
+[Exponential Moving Average](Exponential\_Moving\_Average\_(EMA)) in each point is calculated according to the following formula:
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/ema.png" width="500"></center>
 
 ## KDJ
 
-KDJ is calculated quite alike [Stochastic](#stochastic_oscillator) indicator, but the difference is in having a J line, which Stochastic does not have.
+[KDJ](KDJ) is calculated quite alike [Stochastic](#stochastic_oscillator) indicator, but the difference is in having a J line, which Stochastic does not have.
 
 <ol>
 	<li>The %K line is calculated the following way:<br>
@@ -153,15 +147,13 @@ KDJ is calculated quite alike [Stochastic](#stochastic_oscillator) indicator, bu
 <center><img src="http://static.anychart.com/images/technical\_indicators/kdj3.png"></center>
 </ol>
 
-See [Exponential Moving Average (EMA)](Exponential\_Moving\_Average\_(EMA))
-
 ## Keltner Channels
 
 Coming soon.
 
-## Modified (Smoothed) Moving Average (MMA)
+## Modified Moving Average
 
-This indicator points are calculated by the following formula:
+[Modified Moving Average](Modified\_Moving\_Average\_(MMA)) indicator points are calculated by the following formula:
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/mma.png" width="400"></center>
 
@@ -175,7 +167,7 @@ Coming soon.
 
 ## Moving Average Convergence Divergence
 
-Moving Average Convergence/Divergence indicator is calculated as follows:
+[Moving Average Convergence Divergence](Moving\_Average\_Convergence\_Divergence\_\(MACD\)) indicator is calculated as follows:
 
 <ol>
 	<li>EMA\[slow period\]<sub>i</sub> and EMA\[fast period\]<sub>i</sub> is calculated by [EMA formula](#exponential_moving_average)</a>. Slow period 
@@ -189,8 +181,6 @@ Moving Average Convergence/Divergence indicator is calculated as follows:
 	<li>Histogram series is calculated:<br>
 <center><img src="http://static.anychart.com/images/technical\_indicators/macd-histogram.png"/></li></center>
 </ol>
-
-See [Moving Average Convergence Divergence](Moving\_Average\_Convergence\_Divergence\_\(MACD\)) article.
 
 ## Moving Average Envelopes
 
@@ -210,15 +200,13 @@ Coming soon.
 
 ## Rate of Change
 
-Rate of Change is calculated according to this formula:
+[Rate of Change](Rate\_of\_Change\_\(ROC\)) is calculated according to this formula:
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/roc.png"/></center>
 
-See [Rate of Change](Rate\_of\_Change\_\(ROC\)) article.
-
 ## Relative Strength Index
 
-Relative Strength Index is calculated as follows:
+[Relative Strength Index](Relative\_Strength\_Index\_\(RSI\)) is calculated as follows:
 
 <ol>
 	<li>Upward change (U) or downward change (D) sequences are calculated:<br>
@@ -230,17 +218,15 @@ Relative Strength Index is calculated as follows:
 <center><img src="http://static.anychart.com/images/technical\_indicators/rsi-rsi.png"></li></center>
 </ol>
 
-See [Relative Strength Index](Relative\_Strength\_Index\_\(RSI\)) article.
-
 ## Simple Moving Average
 
-Simple Moving Average in each point is calculated according to the following formula:
+[Simple Moving Average](Simple\_Moving\_Average\_(SMA)) in each point is calculated according to the following formula:
 
 <center><img src="http://static.anychart.com/images/technical\_indicators/sma.png"></center>
 
 ## Stochastic Oscillator
 
-This indicator contains two series, both being calculated with the help of other indicators (EMA or SMA). Also it has 3 types: Fast Stochastic Oscillator, Slow Stochastic Oscillator and Full Stochastic Oscillator.
+[Stochastic Oscillator](Stochastic_Oscillator) indicator has two series, both being calculated with the help of other indicators (EMA or SMA). Also it has 3 types: Fast Stochastic Oscillator, Slow Stochastic Oscillator and Full Stochastic Oscillator.
 
 The defaults create a Fast Stochastic Oscillator indicator.
 
