@@ -18,7 +18,7 @@ Sharing is a feature allowing to put an image imitating sample made with AnyChar
 
 There are two ways how to share a chart on any of the social networks. First one is to use the context menu, which provides four social networks for a chart sharing.
 
-<a href="http://static.anychart.com/images/context\_menu\_example.png" target="_blank"><img width = "700" src = "http://static.anychart.com/images/context\_menu\_example.png"></a>
+<a href="http://static.anychart.com/images/share.png" target="_blank"><img width = "700" src = "http://static.anychart.com/images/share.png"></a>
 
 A pop-up window of the chosen social network will show up and suggest to write a comment (if you've been logged in) or to log in. The chart will be transformed into a *\.PNG image.
 
