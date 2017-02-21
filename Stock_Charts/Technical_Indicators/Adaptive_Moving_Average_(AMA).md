@@ -50,13 +50,11 @@ AMA indicator needs five parameters: mapping with value field in it (required), 
 var ama = plot.ama(mapping, 10, 5, 20, "column");
 ```
 
-The series type defining is not necessary, as it is possible to change the series type any time using the {api:anychart.core.stock.series.Column#seriesType}seriesType(){api} method.
-
-Also, note that this indicator needs periods, but there are default period values that are taken if they are not defined by the user - like in the sample above. Those default values are 20 for a period, 2 for a fast period and 30 for a slow period.
+It is possible to change the series type any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
 ## Visualization
 
-Visualization of an indicator depends on which series type was chosen to display it. Here is a sample where AMA with different parameters and settings is added to different plots:
+Visualization of an indicator depends on series type. Here is a sample where AMA with different parameters and settings is added to different plots:
 
 ```
 // create first AMA indicator of default series type

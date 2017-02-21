@@ -7,13 +7,15 @@
 
 ## Overview
 
-KDJ is a momentum indicator, using a divergence line. It is a derived form of the [Stochastic indicatior](Stochastic_Oscillator) with the only difference of having an extra line called the J line. Values of %K and %D lines show if the security is overbought (over 80) or oversold (below 20). The moments of %K crossing %D are the moments for selling or buying. The J line represents the divergence of the %D value from the %K. The value of J can go beyond [0, 100] for %K and %D lines on the chart.
+KDJ indicator is a technical indicator used to analyze and predict changes in stock trends and price patterns in a traded asset. KDJ indicator is also known as the random index. It is a very practical technical indicator which is most commonly used in market trend analysis of short-term stock.
 
-Find the mathematical description of the indicator on the [KDJ Mathematical Description](Mathematical_Description#kdj) page.
+KDJ is a derived form of the [Stochastic Oscillator Indicatior](Stochastic_Oscillator) with the only difference of having an extra line called the J line. Values of %K and %D lines show if the security is overbought (over 80) or oversold (below 20). The moments of %K crossing %D are the moments for selling or buying. The J line represents the divergence of the %D value from the %K. The value of J can go beyond [0, 100] for %K and %D lines on the chart.
+
+Mathematical description: [KDJ Mathematical Description](Mathematical_Description#kdj).
 
 ## Adding indicator
 
-KDJ indicator is added through the {api:anychart.core.stock.Plot#kdj}kdj(){api} method. It requires three data fields: High, Low and Close:
+KDJ indicator is added using the {api:anychart.core.stock.Plot#kdj}kdj(){api} method. It requires three data fields: High, Low and Close:
 
 ```
 // create data table on loaded data
@@ -58,16 +60,18 @@ KDJ indicator has a lot of optional parameters:
 - multipliers of the %K and %D values for %J value calculating 
 - series types of the %K, %D and %J values. 
 
-The following code sample demonstrates a KDJ indicator with %K value with period of 10 and EMA smoothing and %D value with period of 20 and SMA smoothing.
+The following code shows how to create a KDJ indicator with %K value with period of 10 and EMA smoothing and %D value with period of 20 and SMA smoothing.
 
 ```
 var kdj = plot.kdj(mapping, 10, "EMA", 10, "SMA", 20);
 ```
 
-There are three series that form the KDJ indicator, so there is a methods for each of them: {api:anychart.core.stock.indicators.KDJ#kSeries}kSeries(){api} for drawing the %K series, {api:anychart.core.stock.indicators.KDJ#dSeries}dSeries(){api} for drawing the %D series and the {api:anychart.core.stock.indicators.KDJ#jSeries}jSeries(){api} for drawing the %J series.
+There are three series that form the KDJ indicator, so there is a methods for each of them:
+- {api:anychart.core.stock.indicators.KDJ#kSeries}kSeries(){api} for the %K series,
+- {api:anychart.core.stock.indicators.KDJ#dSeries}dSeries(){api} for the %D series,
+- {api:anychart.core.stock.indicators.KDJ#jSeries}jSeries(){api} for the %J series.
 
-The series type defining is not necessary, as it is possible to change the series type any time using the {api:anychart.core.stock.series.Column#seriesType}seriesType(){api} method. 
-
+It is possible to change the series type any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method. 
 
 ## Visualization
 

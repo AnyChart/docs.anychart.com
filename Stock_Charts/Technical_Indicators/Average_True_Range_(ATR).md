@@ -9,11 +9,11 @@
 
 Developed by J. Welles Wilder, the Average True Range (ATR) is an indicator that measures volatility. As with most of his indicators, Wilder designed ATR with commodities and daily prices in mind. Commodities are frequently more volatile than stocks. They were are often subject to gaps and limit moves, which occur when a commodity opens up or down its maximum allowed move for the session. A volatility formula based only on the high-low range would fail to capture volatility from gap or limit moves. Wilder created Average True Range to capture this "missing" volatility. It is important to remember that ATR does not provide an indication of price direction, just volatility.
 
-Find the mathematical description of the indicator on the [Average True Range (ATR) Mathematical Description](Mathematical_Description#ama) page.
+Mathematical description: [Average True Range (ATR) Mathematical Description](Mathematical_Description#ama).
 
 ## Adding indicator
 
-ATR indicator is added through the {api:anychart.core.stock.Plot#atr}atr(){api} method. It requires three data fields: High, Low and Close:
+ATR indicator is added using the {api:anychart.core.stock.Plot#atr}atr(){api} method. It requires three data fields: High, Low and Close:
 
 ```
 // create data table on loaded data
@@ -46,18 +46,15 @@ Here is a live sample:
 
 ## Indicator parameters
 
-Average True Range indicator has only one type specific parameter - period, which has to be an integer value more than 1.
+Average True Range indicator has three parameters: mapping, period, which has to be an integer value more than 1, and series type:
 
 ```
-var atr = plot.atr(mapping, 10);
+var atr = plot.atr(mapping, 10, "line");
 ```
-
-The series type defining is not necessary, as it is possible to change the series type any time using the {api:anychart.core.stock.series.Column#seriesType}seriesType(){api} method.
-
 
 ## Visualization
 
-Visualization of an indicator depends on which series type was chosen to display it. Here is a sample where ATR with different parameters and settings is added to different plots:
+Visualization of an indicator depends on series type. Here is a sample where ATR with different parameters and settings is added to different plots:
 
 ```
 // create first AMA indicator of default series type
@@ -65,7 +62,7 @@ var atr_1 = plot_0.atr(mapping, 10).series();
 atr_1.stroke('#bf360c');
 
 // create second AMA indicator of column series
-var atr_2 = plot_1.atr(mapping, 30, "area").series();
+var atr_2 = plot_1.atr(mapping, 30, "column").series();
 atr_2.fill('#ff6d00');
 ```
 
