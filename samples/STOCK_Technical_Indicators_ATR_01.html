@@ -36,10 +36,7 @@
         // create ATR indicator
         var atr = plot.atr(mapping).series();
         atr.stroke('#bf360c');
-
-        // create scroller series with mapped data
-        chart.scroller().line(mapping);
-
+        
         // set container id for the chart
         chart.container('container');
         
