@@ -97,6 +97,15 @@ series.geoIdField("code_hasc");
 
 {sample}Maps\_Proportional\_Symbol\_02{sample}
 
+If there is something wrong with the coordinates or if the sample creates an error, check if you have attached the link on the proj4.js in your sample code:
+
+```
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
+</head>
+```
+
+
 ### Size
 
 You can adjust how the bubbles' size is defined. For this we use two methods: {api:anychart.charts.Map#maxBubbleSize}maxBubbleSize(){api} and {api:anychart.charts.Map#minBubbleSize}minBubbleSize(){api}. Let's see how it is done:
