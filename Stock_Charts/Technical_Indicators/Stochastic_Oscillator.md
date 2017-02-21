@@ -33,6 +33,7 @@ mapping.addField("open", 1, "first");
 mapping.addField("high", 2, "max");
 mapping.addField("low", 3, "min");
 mapping.addField("close", 4, "last");
+mapping.addField("value", 5, "value");
 
 // create stock chart
 chart = anychart.stock();
@@ -79,7 +80,7 @@ Note that this indicator has several series and uses {api:anychart.core.stock.in
 
 The series type defining is not necessary, as it is possible to change the series type any time using the {api:anychart.core.stock.series.Column#seriesType}seriesType(){api} method.
 
-Stochastic Oscillator of Fast modification is created by default, so the same result will be reached with setting only a mapping:
+Stochastic Oscillator of Fast modification is created by default, so the same result is reached with setting only a mapping:
 
 ```
 // set stochastic indicator of fast type
@@ -88,7 +89,7 @@ var stochastic = plot.stochastic(mapping);
 
 ### Fast
 
-The following values need to be set to create the Fast Stochastic Oscillator indicator:
+The following values need to be set to create the Fast Stochastic Oscillator indicator:о
 
 ```
 // set stochastic indicator of fast type
@@ -110,7 +111,7 @@ var stochastic = plot.stochastic(mapping, 14, "SMA", 3, "SMA", 3);
 
 ### Full
 
-There are no default values for creating the Full Stochastic Oscillator. All periods used for calculation of the %K and the %D lines have to be integer values and the modification chosen between EMA and SMA.
+There are no default values for creating the Full Stochastic Oscillator. All periods used for calculation of the %K and the %D lines have to be integer values and the modifications should be EMA and SMA.
 
 ```
 // set stochastic indicator of full type
@@ -136,4 +137,4 @@ stochastic_2.kSeries().stroke("#ff6d00");
 stochastic_2.dSeries().stroke("#ff6d99");
 ```
 
-{sample}STOCK\_Technical\_Indicators\_Stochastic\_02{sample}
+{sample}STOCK\_Technical\_Indicators\_Stochastic\_05{sample}
