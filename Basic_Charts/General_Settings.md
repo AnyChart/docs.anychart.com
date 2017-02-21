@@ -293,11 +293,11 @@ chart.listen("pointDblClick", function(e){
 
 ## Vertical Charts
 
-Most types of series can be drawn both in horizontal and vertical orientation. To find out how to do it, and what series this feature works with, see the article about [Vertical Charts](Vertical_Charts/Overview).
+Most types of series can be drawn both in horizontal and vertical orientation. To find out how to do it, and what series this feature works with, see the article about [Vertical Charts](Vertical/Overview).
 
 ## 3D Charts
 
-Using AnyChart, you can create 3D versions of the following chart types: Area, Bar, Column, and Pie. Read more: [3D Charts](3D_Charts/Overview).
+Using AnyChart, you can create 3D versions of the following chart types: Area, Bar, Column, and Pie. Read more: [3D Charts](3D/Overview).
 
 ## Custom Drawing
 

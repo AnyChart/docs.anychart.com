@@ -18,7 +18,7 @@
 
 ## Overview
 
-Funnel charts are so-called Accumulation charts and they show percentage ratio. Funnel charts are often used to represent stages in a sales process and show the amount of potential revenue for each stage. This type of chart can also be useful in identifying potential problem areas in an organization’s sales processes. A funnel chart is similar to a [stacked percent column chart](../Basic_Charts_Types/Percent_Stacked_Bar-Column_Charts).
+Funnel charts are so-called Accumulation charts and they show percentage ratio. Funnel charts are often used to represent stages in a sales process and show the amount of potential revenue for each stage. This type of chart can also be useful in identifying potential problem areas in an organization’s sales processes. A funnel chart is somewhat similar to a [stacked](Stacked/Overview) column chart.
 
 ## Chart
 

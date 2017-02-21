@@ -11,7 +11,7 @@
 
 ## Overview
 
-Step Area Series is quite similar to Area series, both in visualization and purpose. It uses one value for a point, but the points look like steps instead of vertexes of a polygon. Find more information about using Step Ares and Area Series in Basic Charts in the [Area Charts tutorial](../../Basic_Charts_Types/Area_Chart).
+Step Area Series is quite similar to Area series, both in visualization and purpose. It uses one value for a point, but the points look like steps instead of vertexes of a polygon. Find more information about using Step Area in Basic Charts in the [Step Area Chart tutorial](../../Basic_Charts/Area_Chart).
 
 There are some settings differently managed when we use Step Area in Stocks, so let's look at them in this article.
 

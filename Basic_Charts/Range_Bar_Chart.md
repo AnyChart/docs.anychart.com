@@ -12,7 +12,7 @@
 
 ## Overview
 
-A range bar chart displays information as a range of data by plotting two Y-values (low and high) per data point. The vertical axis shows the values, and the horizontal axis shows the categories they belong to. So, the range bar chart is a [vertical](Vertical_Charts/Overview) version of the [range column chart](Range_Column_Chart). In multi-series range bar charts, values are grouped by categories.
+A range bar chart displays information as a range of data by plotting two Y-values (low and high) per data point. The vertical axis shows the values, and the horizontal axis shows the categories they belong to. So, the range bar chart is a [vertical](Vertical/Overview) version of the [range column chart](Range_Column_Chart). In multi-series range bar charts, values are grouped by categories.
 
 This type is sometimes referred to as the floating bar chart since it looks like a set of bar "floating" above the horizontal axis. It is used to show the difference between high and low values while visualizing time-based data or showing comparison among categories.
 

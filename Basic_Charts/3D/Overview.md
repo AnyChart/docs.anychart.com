@@ -9,8 +9,7 @@
 * [Multiple Series](#multiple_series)
  * [Multi-Series](#multi-series)
  * [Z Distribution](#z_distribution) 
- * [Value Stacked](#value_stacked)
- * [Percent Stacked](#percent_stacked)
+ * [Stacked](#stacked)
 * [Visualization](#visualization)
  * [Angle](#angle)
  * [Aspect](#aspect)
@@ -111,9 +110,8 @@ var data = anychart.data.set([
 var chart = anychart.pie3d(data);
 ```
 
-More information about pie charts can be found in [pie and doughnut chart article](../Basic_Charts_Types/Pie-Doughnut_Charts).
-  
-  
+More information about pie charts can be found in [Pie Chart](../Basic_Charts/Pie_Chart) and [Doughnut Chart](../Basic_Charts/Doughnut_Chart) articles.
+
 Here is a sample of 3d pie chart:
 
 {sample}BCT\_3d\_04{sample}
@@ -165,42 +163,9 @@ Here is a sample of a Multi-series chart with Z Distribution enabled:
 
 {sample}BCT\_3d\_09{sample}
 
-### Value Stacked
+### Stacked
 
-Value stacked 3d charts are multi-series charts that display series point value upon the same point of the previous series. To enable value stacked mode you need to call {api:anychart.scales.Linear#stackMode}stackMode(){api} method with **value** parameter. The {api:anychart.scales.Linear#stackMode}stackMode(){api} method should be invoked for chart's y scale. Chart's y scale is controlled by {api:anychart.charts.Cartesian3d#yScale}yScale(){api} method. Here is a snippet of setting value stacked mode:
-
-```
-// create chart 3d plot
-var chart = anychart.area3d();
-// getter for y scale
-var yScale = chart.yScale();
-// set "value" stacked mode
-yScale.stackMode("value");
-```
-
-Here is a sample of 3D stacked area chart:
-
-{sample}BCT\_3d\_06{sample}
-
-### Percent Stacked
-
-Percent Stacked 3d charts is quite similar to a simple 2d percent stacked chart. Information about percent stacked area charts can be found in [percent stacked area-splineArea charts tutorial](../Basic_Charts_Types/Percent_Stacked_Area-SplineArea_Charts) and information about percent stacked bars and columns can be found in [percent stacked bar-column charts tutorial](../Basic_Charts_Types/Percent_Stacked_Area-SplineArea_Charts).
-  
-  
-To enable percent stacked mode you have to use {api:anychart.scales.Linear#stackMode}stackMode(){api} method with **percent** parameter for chart's y scale.
-
-```
-// create chart 3d plot
-var chart = anychart.area3d();
-// getter for y scale
-var yScale = chart.yScale();
-// set "percent" stacked mode
-yScale.stackMode("percent");
-```
-
-Let's see, how percent stacked 3d column chart looks like:
-
-{sample}BCT\_3d\_07{sample}
+Stacked 3d charts are multi-series charts that display series point value upon the same point of the previous series.To enable value stacked mode you need to use {api:anychart.scales.Linear#stackMode}stackMode(){api} method of Y Scale. Please learn more about stacking in [Stacked Charts](Stacked/Overview)
 
 ## Visualization
 

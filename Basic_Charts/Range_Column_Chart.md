@@ -226,6 +226,6 @@ In case of Range Column charts, there are some peculiarities in formatting the t
 
 ### Vertical Range Column
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical_Charts/Overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
 
 The vertical range column chart is called the range bar chart: it shows categories on the vertical axis instead of the horizontal axis and represents values as bars instead of columns. Read more: [Range Bar Chart](Range_Bar_Chart).

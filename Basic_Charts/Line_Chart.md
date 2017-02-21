@@ -26,7 +26,7 @@ This article explains how to create a basic Line chart as well as configure sett
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical Line](Vertical_Charts/Vertical_Line_Chart)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Line](Vertical/Vertical_Line_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>[Line Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
@@ -133,10 +133,10 @@ In case of Line charts, there are some peculiarities in formatting the text of t
 
 ### Vertical Line
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical_Charts/Overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
 
 Here is the information about creating Vertical Line series:
 
-* [Vertical Line](Vertical_Charts/Vertical_Line_Chart)
-* [Vertical Spline](Vertical_Charts/Vertical_Spline_Chart)
-* [Vertical Step Line](Vertical_Charts/Vertical_Step_Line_Chart)
+* [Vertical Line](Vertical/Vertical_Line_Chart)
+* [Vertical Spline](Vertical/Vertical_Spline_Chart)
+* [Vertical Step Line](Vertical/Vertical_Step_Line_Chart)

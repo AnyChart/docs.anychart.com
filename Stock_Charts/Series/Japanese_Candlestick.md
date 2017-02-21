@@ -124,7 +124,7 @@ Coloring series can help you to stress some changes in the watched values. As th
 
 AnyStocks also have a Hatch feature that would be quite useful for people with some sight problems. Use hatch fillings for a Candlestick stock with the {api:anychart.core.stock.series.Candlestick#fallingHatchFill}fallingHatchFill(){api} and {api:anychart.core.stock.series.Candlestick#risingHatchFill}risingHatchFill(){api} methods.
 
-More about visualization and colors can be found in the [OHLC Charts](../../Basic_Charts_Types/OHLC_Chart#visualization) article.
+More about visualization and colors can be found in the [OHLC Charts](../../Basic_Charts/OHLC_Chart#visualization) article.
 
 Let's change the defaults for one of the series in the previous sample.
 

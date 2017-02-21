@@ -21,7 +21,7 @@ An example of proportional circles is shown below.
 
 {sample}Maps\_Proportional\_Symbol\_01{sample}
 
-The Bubble series in AnyChart JavaScript Maps is quite similar to the Basic JavaScript Bubble series. You can read about Bubble Charts in the [Bubble Chart tutorial](../Basic_Charts_Types/Bubble_Chart), and in this article we will consider significant issues of Bubble charts used with maps.
+The Bubble series in AnyChart JavaScript Maps is quite similar to the Basic JavaScript Bubble series. You can read about Bubble Charts in the [Bubble Chart tutorial](../Basic_Charts/Bubble_Chart), and in this article we will consider significant issues of Bubble charts used with maps.
 
 ## Creating Bubbles
 
@@ -134,7 +134,7 @@ map.minBubbleSize('1%');
 
 ## Altering Bubble Series
 
-Altering the series looks pretty much the same as in [basic Bubble Charts](../Basic_Charts_Types/Bubble_Chart#colors). We can easily do it here. Let's look through a couple of samples.
+Altering the series looks pretty much the same as in [basic Bubble Charts](../Basic_Charts/Bubble_Chart#colors). We can easily do it here. Let's look through a couple of samples.
 
 ### Series colors
 
@@ -262,4 +262,4 @@ series_2.geoIdField("code_hasc");
 
 {sample}Maps\_Proportional\_Symbol\_13{sample}
 
-As you can see, we can operate the series on a map quite easy and similar to working with basic charts. Find more about Choropleth series in the [Choropleth tutorial](Choropleth_Map) and some other features of Bubble series in the [Bubble tutorial](../Basic_Charts_Types/Bubble_Chart).
+As you can see, we can operate the series on a map quite easy and similar to working with basic charts. Find more about Choropleth series in the [Choropleth tutorial](Choropleth_Map) and some other features of Bubble series in the [Bubble tutorial](../Basic_Charts/Bubble_Chart).

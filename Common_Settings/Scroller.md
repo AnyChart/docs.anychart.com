@@ -51,7 +51,7 @@ chart.xZoom().setTo(0, 0.3);
 
 Another option is to define the particular values which exist on the scale. In this case you have to set the scale as the third parameter, the default xScale is used when no scale is specified. If you like to zoom the chart to the area from "Part 1" to "Part 4" on the heatmap we should use the {api:anychart.charts.Cartesian.XZoom#setToValues}setToValues(){api} method:
 
-**Note:** only [Heat maps](../Basic_Charts_Types/Heat_Map_Chart) support scroll or zoom by Y in this version.
+**Note:** only [Heat maps](../Basic_Charts/Heat_Map_Chart) support scroll or zoom by Y in this version.
 
 ```
 // set zoom limits by values

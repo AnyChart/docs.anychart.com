@@ -14,7 +14,7 @@
 
 ## Overview
 
-A bar chart is a chart that visualizes data as a set of rectangular bars, their lengths being proportional to the values they represent. The horizontal axis shows the values, and the vertical axis shows the categories they belong to. So, the bar chart is a [vertical](Vertical_Charts/Overview) version of the [column chart](Column_Chart). In multi-series bar charts, values are grouped by categories.
+A bar chart is a chart that visualizes data as a set of rectangular bars, their lengths being proportional to the values they represent. The horizontal axis shows the values, and the vertical axis shows the categories they belong to. So, the bar chart is a [vertical](Vertical/Overview) version of the [column chart](Column_Chart). In multi-series bar charts, values are grouped by categories.
 
 The bar chart is used very widely to show comparison among categories and sometimes to visualize time-based data. Also, categories with long names may be a reason to prefer the bar chart to the column chart.
 

@@ -112,7 +112,7 @@ There are some parameters responsible for the stock appearance, managing its col
 
 Colors are a good help in emphasizing some important moments in the data. OHLC charts have no filling colors as they use only lines for representing the data, but there is a stroke parameter. To change the default stroke colors setting use {api:anychart.core.stock.series.OHLC#fallingStroke}fallingStroke(){api} and {api:anychart.core.stock.series.OHLC#risingStroke}risingStroke(){api} methods for changing the colors of the falling and the rising. It's possible to change the line style as well using the same method.
 
-More about visualization and colors find in the [OHLC Charts](../../Basic_Charts_Types/OHLC_Chart#visualization) article.
+More about visualization and colors find in the [OHLC Charts](../../Basic_Charts/OHLC_Chart#visualization) article.
 
 Let's change the defaults for one of the series in the previous sample.
 

@@ -17,7 +17,7 @@
 
 ## Overview
 
-Pyramid chart is a kind of [Funnel chart](../Basic_Charts_Types/Funnel_Chart) that presents data in the similar way the funnel does. The main different of the pyramid chart from the funnel is an absence of the neck part. 
+Pyramid chart is a kind of [Funnel chart](../Basic_Charts/Funnel_Chart) that presents data in the similar way the funnel does. The main different of the pyramid chart from the funnel is an absence of the neck part. 
 
 ## Chart
 
