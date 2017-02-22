@@ -6,7 +6,7 @@
 * [Special Settings](#special_settings)
  * [Data](#data)
  * [Series](#series)
- * [Pareto tokens](pareto_tokens) 
+ * [Pareto tokens](#pareto_tokens) 
  * [Coloring conditions](#coloring_conditions)
  * [Labels](#labels)
  * [Tooltips](#tooltips)
@@ -142,7 +142,7 @@ tooltip.textFormatter("Cumulative frequency: {%CF} \n Relative frequency: {%RF}"
 
 See below to learn more about using these values in chart's configuration.
 
-### Coloring condition
+### Coloring conditions
 
 AnyChart coloring settings are very flexible and color may be set not only as a value but also as a function. In case of Pareto charts this option, along with [Pareto tokens](#pareto_tokens), allows to color items on condition.
 
