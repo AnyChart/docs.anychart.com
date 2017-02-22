@@ -101,7 +101,7 @@ And here is a sample where you can see all methods in action:
 To save chart in Pdf format use: {api:anychart.core.Chart#saveAsPdf}saveAsPdf{api} method:
 
 ```
-// in PDF format
+// initiate saving chart in PDF format
 chart.saveAsPdf();
 ```
 
@@ -109,33 +109,33 @@ chart.saveAsPdf();
 
 ## Data
 
-AnyChart provides several methods for saving current chart's data. Output formats are {api:anychart.core.Chart#saveAsCsv}CSV{api} and {api:anychart.core.Chart#saveAsXlsx}XLSX{api} (Excel file).
+AnyChart provides several methods for saving current chart's data. Output formats are {api:anychart.core.Chart#saveAsCsv}CSV{api} and {api:anychart.core.Chart#saveAsXlsx}saveAsXlsx(){api} (Excel file).
 
 {api:anychart.enums.ChartDataExportMode}ChartDataExportMode{api} parameter defines what data is exported: only the data used by chart (SPECIFIC), all data in the data set (RAW) and a special mode for stock charts allows to export grouped data (GROUPED).
 
 ### CSV
 
-With {api:anychart.core.Chart#saveAsCsv}CSV{api} you can set how you export data and file name:
+With {api:anychart.core.Chart#saveAsCsv}saveAsCsv(){api} you can set how you export data and file name:
 
 ```
-saveAsCsv({chartDataExportMode: "anychart.enums.ChartDataExportMode.RAW", csvSettings: {"rowsSeparator": "\n", "columnsSeparator": ",", "ignoreFirstRow": true}, filename: "csv_file"});
+saveAsCsv({chartDataExportMode: anychart.enums.ChartDataExportMode.RAW, csvSettings: {"rowsSeparator": "\n", "columnsSeparator": ",", "ignoreFirstRow": true}, filename: "csv_file"});
 ```
 
 ### Excel
 
-With {api:anychart.core.Chart#saveAsXlsx}XLSX{api} you can set how you export data and file name:
+With {api:anychart.core.Chart#saveAsXlsx}saveAsXlsx(){api} you can set how you export data and file name:
 
 ```
-// this method will chart's data in Xlsx format
-chart.saveAsXlsx({chartDataExportMode: "anychart.enums.ChartDataExportMode.SPECIFIC", filename: "excel"});
+// initiate saving chart's data in Xlsx format
+chart.saveAsXlsx({chartDataExportMode: anychart.enums.ChartDataExportMode.SPECIFIC, filename: "excel"});
 ```
 
 To launch the export you need to use these methods as shown:
 
 ```
-// this method will chart's data in Xlsx format
+// initiate saving chart's data in Xlsx format
 chart.saveAsXlsx();
-// this method will chart's data in CSV format
+// initiate saving chart's data in CSV format
 chart.saveAsCsv();
 ```
 
