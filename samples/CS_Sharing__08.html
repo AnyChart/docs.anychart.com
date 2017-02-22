@@ -12,7 +12,6 @@
   crossorigin="anonymous" data-export="true"></script>
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">
-
     anychart.onDocumentReady(function() {  
     // create pie chart with passed data
     chart = anychart.pie([
@@ -34,61 +33,63 @@
 
     // create empty area in pie chart
     chart.innerRadius('30%');
-    chart.margin().right(150);
 
     // initiate chart drawing
     chart.draw();
 
-    createButton("Facebook");
-    createButton("Twitter");
-    createButton("LinkedIn");
-    createButton("Pinterest");
+    var domContainer = chart.container().container();
+    
+    createButton("Facebook", domContainer);
+    createButton("Twitter", domContainer);
+    createButton("LinkedIn", domContainer);
+    createButton("Pinterest", domContainer);
+    
+    console.log(chart.container().container());
 });
 
 
-function createButton(name){
-    var container = $('#container');        
+    function createButton(name, domContainer){
+    var container = $(domContainer);        
 
     var imageSrc, clickCallback, topOffset;
     switch (name) {
-        case "Facebook":
-            imageSrc = 'http://static.anychart.com/images/fbicon.png';
-            clickCallback = chart.shareWithFacebook;
-            topOffset = 50;
-            break;
-        case "Twitter":
-            imageSrc = 'http://static.anychart.com/images/twicon.png';
-            clickCallback = chart.shareWithTwitter;
-            topOffset = 85;
-            break;
-        case "LinkedIn":
-            imageSrc = 'http://static.anychart.com/images/linkicon.png';
-            clickCallback = chart.shareWithLinkedIn;
-            topOffset = 120;
-            break;
-        case "Pinterest":
-            imageSrc = 'http://static.anychart.com/images/pinicon.png';
-            clickCallback = chart.shareWithPinterest;
-            topOffset = 155;
-            break;
+    case "Facebook":
+        imageSrc = 'http://static.anychart.com/images/fbicon.png';
+        clickCallback = chart.shareWithFacebook;
+        topOffset = 50;
+        break;
+    case "Twitter":
+        imageSrc = 'http://static.anychart.com/images/twicon.png';
+        clickCallback = chart.shareWithTwitter;
+        topOffset = 85;
+        break;
+    case "LinkedIn":
+        imageSrc = 'http://static.anychart.com/images/linkicon.png';
+        clickCallback = chart.shareWithLinkedIn;
+        topOffset = 120;
+        break;
+    case "Pinterest":
+        imageSrc = 'http://static.anychart.com/images/pinicon.png';
+        clickCallback = chart.shareWithPinterest;
+        topOffset = 155;
+        break;
     }
     var button = $('<img/>');
     button.click(function() {
         clickCallback.call(chart);
     });
     button.attr("src", imageSrc);
-        
+
     button.css('right', 50)
-        .css('top', topOffset)
-        .css('z-index', 1000)
-        .css('position', 'absolute')
-        .css("cursor", "pointer");
+            .css('top', topOffset)
+            .css('z-index', 1000)
+            .css('position', 'absolute')
+            .css("cursor", "pointer");
 
     button.attr("width", "25");
     button.attr("height", "25");
     container.append(button);        
 };
-
 </script>
 </head>
 <body>
