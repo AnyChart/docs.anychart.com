@@ -1,0 +1,50 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create a data set
+    var data = anychart.data.set([
+      {x: "January", value: 10000},
+      {x: "February", value: 12000},
+      {x: "March", value: 18000},
+      {x: "April", value: 11000},
+      {x: "May", value: 9000}
+    ]);
+
+    // set the chart type
+    chart = anychart.area();
+
+    // create a series, set the data, and add an image fill
+    var series = chart.area(data);
+    series.fill({
+      src: "http://static.anychart.com/images/underwater.jpg",
+      mode: acgraph.vector.ImageFillMode.STRETCH
+    });
+
+    // set the chart title
+    chart.title("Visual Settings (Image Fill)");
+
+    // set title of the axes
+    var xAxis = chart.xAxis();
+    xAxis.title("Retail Channel");
+    var yAxis = chart.yAxis();
+    yAxis.title("Sales");
+
+    // set the container id
+    chart.container("container");
+
+    //initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

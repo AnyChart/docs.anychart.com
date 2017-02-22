@@ -11,10 +11,10 @@
 
     // create a data set
     var data = anychart.data.set([
-      ["QTR1", 3.8, 5.5, 6.9, 7.9, 6.9, 7.9],
-      ["QTR2", 5.5, 7.0, 9.6, 8.6, 9.6, 8.6],
-      ["QTR3", 9.9, 9.7, 8.3, 7.3, 8.3, 7.3],
-      ["QTR4", 5.7, 7.6, 9.7, 8.7, 9.7, 8.7]
+      ["QTR1", 1.5, 2.5, 2.0, 1.5, 1.5, 1.0],
+      ["QTR2", 0.5, 2.0, 3.0, 2.5, 1.5, 0.5],
+      ["QTR3", 1.5, 3.0, 2.5, 1.5, 0.5, 1.0],
+      ["QTR4", 1.5, 2.0, 2.5, 1.5, 1.5, 1.0]
     ]);
 
     // map the data
@@ -25,20 +25,20 @@
     var seriesData_5 = data.mapAs({x: 0, value: 5});
     var seriesData_6 = data.mapAs({x: 0, value: 6});
 
-    // set the chart type
+    // create a chart
     var chart = anychart.column();
 
     // create scales and set stacking modes
-    yScale1 = anychart.scales.linear();
+    var yScale1 = anychart.scales.linear();
     yScale1.stackMode("percent");
 
-    yScale2 = anychart.scales.linear();
+    var yScale2 = anychart.scales.linear();
     yScale2.stackMode("percent");
 
-    yScale3 = anychart.scales.linear();
+    var yScale3 = anychart.scales.linear();
     yScale3.stackMode("percent");
 
-    // create the series and assign different scales:
+    // create column series and bind them to different scales
     chart.column(seriesData_1).yScale(yScale1);
     chart.column(seriesData_2).yScale(yScale1);
 
@@ -48,16 +48,20 @@
     chart.column(seriesData_5).yScale(yScale3);
     chart.column(seriesData_6).yScale(yScale3);
 
-    // set axis settings
-    chart.yAxis().labels().textFormatter("{%Value}%");
-    // you need to assign a proper scale
-    // to an axis if you don't reuse primary y scale
+    /* bind the Y-axis to the first scale
+    you can avoid this setting by reusing the primary Y-scale
+    when you create yScale1:
+    var yScale1 = chart.yScale();*/
     chart.yAxis().scale(yScale1);
-    // you can avoid this setting by reusing primary y scale:
-    // yScale1 = chart.yScale();
+
+    // configure labels on the Y-axis
+    chart.yAxis().labels().textFormatter("{%Value}%");
+
+    // configure tooltips
+    chart.tooltip().textFormatter("{%yPercentOfCategory}{decimalCount:2}%");
 
     // set the chart title
-    chart.title("Percent Stacked Chart - Clustered");
+    chart.title("Percent Stacked Chart: Clustered");
 
     // set the container id
     chart.container("container");

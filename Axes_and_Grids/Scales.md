@@ -83,7 +83,7 @@ chart.yScale(anychart.scales.dateTime());
 
 ## Stack Mode
 
-Scales control series stacking. Full description of stacking options can be found in [Stacked Charts](../Basic_Charts_Types/Stacked/Overview).
+Scales control series stacking. Full description of stacking options can be found in [Stacked Charts](../Basic_Charts/Stacked/Overview).
 
 To change scale mode you need to use {api:anychart.scales.Linear#stackMode}stackMode(){api} method. Possible values come from {api:anychart.enums.ScaleStackMode}anychart.enums.ScaleStackMode{api}:
 

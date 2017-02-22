@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-    // create a data set
-    var data = anychart.data.set([
+    // create data
+    var data = [
       {x: "1995", value: 0.10},
       {x: "1996", value: 0.10},
       {x: "1997", value: 0.12},
@@ -20,7 +20,7 @@
       {x: "2001", value: 0.15},
       {x: "2002", value: 0.19},
       {x: "2003", value: 0.20}
-    ]);
+    ];
     
     // create a chart
     var chart = anychart.line();

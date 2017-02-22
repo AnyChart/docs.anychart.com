@@ -11,16 +11,16 @@
 
     // create a data set
     var data = anychart.data.set([
-      ["John", 10000, 12500, "#ff0000", "#ff0000", "#ffcccc", "#ffcccc"],
-      ["Jake", 12000, 15000, "#ffff00", "#ffff00", "#ffffcc", "#ffffcc"],
-      ["Peter", 13000, 16500, "#00ff00", "#00ff00", "#ccffcc", "#ccffcc"],
-      ["James", 10000, 13000, "#0000ff", "#0000ff", "#ccccff", "#ccccff"],
-      ["Mary", 9000, 11000, "#ff00ff", "#ff00ff", "#ffccff", "#ffccff"]
+      ["John", 10000, 12500],
+      ["Jake", 12000, 15000],
+      ["Peter", 13000, 16500, "#5cd65c", "#009933", null, {enabled: true}],
+      ["James", 10000, 13000],
+      ["Mary", 9000, 11000]
     ]);
 
     // map the data
-    var seriesData_1 = data.mapAs({x: [0], value: [1], fill: [3], stroke: [4]});
-    var seriesData_2 = data.mapAs({x: [0], value: [2], fill: [5], stroke: [6]});
+    var seriesData_1 = data.mapAs({x: [0], value: [1], fill: [3], stroke: [5], label: [6]});
+    var seriesData_2 = data.mapAs({x: [0], value: [2], fill: [4], stroke: [5], label: [6]});
 
     // create a chart
     var chart = anychart.bar();

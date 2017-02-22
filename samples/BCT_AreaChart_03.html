@@ -1,0 +1,53 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+    // create a data set
+    var dataSet = anychart.data.set([
+      ["January", 12000, 10000],
+      ["February", 15000, 12000],
+      ["March", 16000, 18000],
+      ["April", 15000, 11000],
+      ["May", 14000, 9000]
+    ]);
+
+    // map the data
+    var seriesData_1 = dataSet.mapAs({x: [0], value: [1]});
+    var seriesData_2 = dataSet.mapAs({x: [0], value: [2]});
+
+    // set the chart type
+    chart = anychart.area();
+
+    // create series, set the data and the titles of the series
+    var series1 = chart.area(seriesData_1);
+    series1.name("2004");
+    var series2 = chart.area(seriesData_2);
+    series2.name("2005");
+
+    // set the chart title
+    chart.title("Multi-Series Area Chart");
+
+    // set the titles of the axes
+    var xAxis = chart.xAxis();
+    xAxis.title("Month");
+    var yAxis = chart.yAxis();
+    yAxis.title("Sales");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

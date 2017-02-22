@@ -11,7 +11,7 @@
 
 ## Overview
 
-Range Step Area Series is quite similar to Range Area series, both in visualization and purpose. It uses two values for a point, each point looks like a both-sided step, so the whole series form a polygon. Find more information about using Range Areas of different types in Basic Charts in the [Range Step Area Charts tutorial](../../Basic_Charts_Types/Range_Area-SplineArea_Charts).
+Range Step Area Series is quite similar to Range Area series, both in visualization and purpose. It uses two values for a point, each point looks like a both-sided step, so the whole series form a polygon. Find more information about using Range Areas of different types in Basic Charts in the [Range Step Area Charts tutorial](../../Basic_Charts/Range_Step_Area_Chart).
 
 There are some settings differently managed when we use Range Step Area in Stocks, so let's look at them in this article.
 
