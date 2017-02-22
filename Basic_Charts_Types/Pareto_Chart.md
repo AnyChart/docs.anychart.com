@@ -4,6 +4,7 @@
 * [Overview](#overview)
 * [Quick Start](#quick_start)
 * [Special Settings](#special_settings)
+ * [Data](#data)
  * [Series](#series)
  * [Pareto tokens](pareto_tokens) 
  * [Coloring conditions](#coloring_conditions)
@@ -11,7 +12,6 @@
  * [Tooltips](#tooltips)
  * [Axes and Scales](#axes_and_scales)
  * [Pareto Analysis Axes Markers](#pareto_analysis_axes_markers)
- * [Data](#data)
 * [Events](#events)
 * [Samples](#samples)
 
@@ -47,9 +47,69 @@ Here is a basic Pareto chart, you can see that AnyChart automatically creates tw
 
 ## Special Settings
 
+### Data
+
+In AnyChart Pareto Charts you should work with data in a way that is differs a little from the way you work with data with other charts.
+
+The data you supply to Pareto charts should contain at least two fields: argument and values, the latter can be only non-negative.
+
+You should not sort data, AnyChart does it for you. [Cumulative Frequency and Relative Frequency](#pareto_tokens) are also calculated automatically and two series are created using these values.
+
+You [should not create series explicitly](#series), a chart does it for you. The easiest way to pass data is to pass it to {api:anychart#pareto}pareto(){api} constructor:
+
+```
+dataset = [
+        {x: "A", 19},
+        {x: "B", 9},
+        {x: "C", 29},
+        {x: "D", 89},
+       ];
+
+chart = anychart.pareto(dataset);
+```
+
+If you want to reset all data you can do that using the {api:anychart.charts.Pareto#data}data(){api} method:
+
+```
+dataset = [
+        {x: "A", 19},
+        {x: "B", 9},
+        {x: "C", 29},
+        {x: "D", 89},
+       ];
+
+chart = anychart.pareto();
+
+chart.data(dataset);
+```
+
+If you want to append some data (everything is recalculated automatically when you do so) you can use the {api:anychart.data.View#concat}concat(){api} method along with the {api:anychart.charts.Pareto#data}data(){api} methods:
+
+```
+data = [
+        {x: "A", 19},
+        {x: "B", 9},
+        {x: "C", 29},
+        {x: "D", 89},
+        ];
+
+chart = anychart.pareto(data);
+
+extra_data = [
+        {x: "E", 19},
+        {x: "F", 9},
+        {x: "G", 29},
+        {x: "H", 89},
+        ]
+
+newData = chart.data().concat(extra_data);
+
+chart.data(extra_data);
+```
+
 ### Series
 
-AnyChart Pareto charts automatically creates two series: line and column, the instances of {api:anychart.core.cartesian.series.Column}Column{api} and {api:anychart.core.cartesian.series.Line}Line{api} classes. You can access these series using {api:anychart.charts.Cartesian#getSeries}getSeries(){api} or {api:anychart.charts.Cartesian#getSeriesAt}getSeriesAt(){api} methods.
+AnyChart Pareto charts [sorts data, calculates cumulative and relative frequency](#data) and automatically creates two series: line and column, the instances of {api:anychart.core.cartesian.series.Column}Column{api} and {api:anychart.core.cartesian.series.Line}Line{api} classes. You can access these series using {api:anychart.charts.Cartesian#getSeries}getSeries(){api} or {api:anychart.charts.Cartesian#getSeriesAt}getSeriesAt(){api} methods.
 
 The column series has the index that equals "0" and the line series the index that eqauls "1":
 
@@ -93,19 +153,19 @@ This is a sample code that shows how to color a column series of a Pareto chart 
 // fill and stroke functions
 var column = chart.getSeriesAt(0);
 column.fill(function () {
-    if (this.rf < 10) {
-        return '#E24B26'
-    } else {
-        return this.sourceColor;
-    }
-});
+        if (this.rf < 10) {
+            return '#E24B26'
+        } else {
+            return this.sourceColor;
+        }
+    });
 column.stroke(function () {
-    if (this.rf < 10) {
-        return anychart.color.darken('#E24B26');
-    } else {
-        return this.sourceColor;
-    }
-});
+        if (this.rf < 10) {
+            return anychart.color.darken('#E24B26');
+        } else {
+            return this.sourceColor;
+        }
+    });
 ```
 
 Here is a live sample of such chart:
@@ -180,62 +240,6 @@ To display lines that are usually used to do 80/20 rule analysis and alike, you 
 Here is a sample of a Pareto chart with 80% line and label displayed:
 
 {sample}BCT\_Pareto\_Chart\_07{sample}
-
-### Data
-
-In AnyChart Pareto Charts you should work with data in a way that is differs a little from the way you work with data with other charts.
-
-You [should not create series explicitly](#series), a chart does it for you. The easiest way to pass data is to pass it to {api:anychart#pareto}pareto(){api} constructor:
-
-```
-dataset = [
-        {x: "A", 19},
-        {x: "B", 9},
-        {x: "C", 29},
-        {x: "D", 89},
-       ];
-
-chart = anychart.pareto(dataset);
-```
-
-If you want to reset all data you can do that using the {api:anychart.charts.Pareto#data}data(){api} method:
-
-```
-dataset = [
-        {x: "A", 19},
-        {x: "B", 9},
-        {x: "C", 29},
-        {x: "D", 89},
-       ];
-
-chart = anychart.pareto();
-
-chart.data(dataset);
-```
-
-If you want to append some data (everything is recalculated automatically when you do so) you can use the {api:anychart.data.View#concat}concat(){api} method along with the {api:anychart.charts.Pareto#data}data(){api} methods:
-
-```
-data = [
-        {x: "A", 19},
-        {x: "B", 9},
-        {x: "C", 29},
-        {x: "D", 89},
-        ];
-
-chart = anychart.pareto(data);
-
-extra_data = [
-        {x: "E", 19},
-        {x: "F", 9},
-        {x: "G", 29},
-        {x: "H", 89},
-        ]
-
-newData = chart.data().concat(extra_data);
-
-chart.data(extra_data);
-```
 
 ## Events
 
