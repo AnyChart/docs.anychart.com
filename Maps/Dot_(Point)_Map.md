@@ -71,13 +71,8 @@ Now look at the example below. Here we can see a Dot Map where each point contai
 {sample}Maps\_Marker\_02{sample}
 
 
-If there is something wrong with the coordinates or if the sample creates an error, check if you have attached the link on the proj4.js in your sample code:
+Note: this sample uses third party proj4.js library, to learn how, why and figure out if you need it please see [Map Projections](Map_Projections) article.
 
-```
-<head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-</head>
-```
 
 #### Region ID
 

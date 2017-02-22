@@ -111,13 +111,8 @@ One of the Connector Maps features is the ability to create segments: several co
 
 There are several connectors created that consist of a number of segments. To create a multi-segmental connector add a pair of values (representing longitude and latitude) to the data of this connector. Watch the number of values: it should stay even in each point (connector) data.
 
-If there is something wrong with the coordinates or if your sample creates an error, check if you have attached the link on the proj4.js in your sample code:
+Note: this sample uses third party proj4.js library, to learn how, why and figure out if you need it please see [Map Projections](Map_Projections) article.
 
-```
-<head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-</head>
-```
 
 ## Altering Connectors
 
@@ -161,19 +156,19 @@ Note that curvature may be negative. Negative value make the segment's curve go 
 Two more features of our map connector series are {api:anychart.core.map.series.Connector#startSize}.startSize(){api} and {api:anychart.core.map.series.Connector#endSize}.endSize(){api}. These methods can make a connector look more like an arrow, tapering or expanding its curve. These settings are also available to be adjusted through the data set. In the next sample we've defined both settings for the series in general.
 
 ```
-	// changing the startSize and endSize of the connectors
-	series.startSize(10);
-	series.endSize(0);
+// changing the startSize and endSize of the connectors
+series.startSize(10);
+series.endSize(0);
 ```
 
 {sample}Maps\_Connectors\_08{sample}
 
 ### Series colors
 
-As soon as our connectors acquire some width, we can set the filling color for them. There are several method used for changing the default colors: {api:anychart.core.map.series.Connector#fill}.fill(){api} and {api:anychart.core.map.series.Connector#stroke}.stroke(){api} methods are used to color connectors in normal state, colors can be also defined through the dataset. It's possible to change colors for hovered and selected states using {api:anychart.core.map.series.Connector#hoverFill}.hoverFill(){api}, {api:anychart.core.map.series.Connector#hoverstroke}.hoverStroke(){api}, {api:anychart.core.map.series.Connector#selectFill}.selectFill(){api} and {api:anychart.core.map.series.Connector#selectStroke}.selectStroke(){api} methods. Note that fill color is used only with start or end size greater than zero. Only stroke color is visible by default.
+As soon as our connectors acquire some width, we can set the filling color for them. There are several method used for changing the default colors: {api:anychart.core.map.series.Connector#fill}fill(){api} and {api:anychart.core.map.series.Connector#stroke}stroke(){api} methods are used to color connectors in normal state, colors can be also defined through the dataset. It's possible to change colors for hovered and selected states using {api:anychart.core.map.series.Connector#hoverFill}hoverFill(){api}, {api:anychart.core.map.series.Connector#hoverstroke}hoverStroke(){api}, {api:anychart.core.map.series.Connector#selectFill}selectFill(){api} and {api:anychart.core.map.series.Connector#selectStroke}selectStroke(){api} methods. Note that fill color is used only with start or end size greater than zero. Only stroke color is visible by default.
 
 ```
-	// setting colors for hovered and selected
+// setting colors for hovered and selected
 	series.fill("#FF9966");
 	series.stroke("#CCCC99");
 	series.hoverFill("#996633");
@@ -184,13 +179,13 @@ As soon as our connectors acquire some width, we can set the filling color for t
 
 {sample}Maps\_Connectors\_09{sample}
 
-Curvature parameter cannot be different for hovered and selected states, as well as the {api:anychart.core.map.series.Connector#endSize}.endSize(){api} and {api:anychart.core.map.series.Connector#startSize}.startSize(){api} parameters. They stay the same in all states.
+Curvature parameter cannot be different for hovered and selected states, as well as the {api:anychart.core.map.series.Connector#endSize}endSize(){api} and {api:anychart.core.map.series.Connector#startSize}startSize(){api} parameters. They stay the same in all states.
 
 ### Markers
 
-To change the position of a marker on a connector use {api:anychart.core.ui.MarkersFactory.Marker#position}.position(){api} method. It accepts string values like "start", "end", "middle", or ratio from 0 to 1, or a percent value as a parameter. This method manages each marker's position on a connector and can be defined through the dataSet as well.
+To change the position of a marker on a connector use {api:anychart.core.ui.MarkersFactory.Marker#position}position(){api} method. It accepts string values like "start", "end", "middle", or ratio from 0 to 1, or a percent value as a parameter. This method manages each marker's position on a connector and can be defined through the dataSet as well.
 
-The anchor of the marker depends on its position and its connector's curvature, though it can be adjusted. Use the {api:anychart.core.ui.MarkersFactory.Marker#anchor}.anchor(){api} method to set it. You will need to define a string value, chosing one from the {api:anychart.enums.Anchor}Anchor type list{api}. Look at the next sample. Anchors are set for the markers, which are transformed to look more like arrows using the {api:anychart.core.ui.MarkersFactory.Marker#type}.type(){api} method. All default marker types can be found on the {api:anychart.enums.Marker}Marker Type list{api}.
+The anchor of the marker depends on its position and its connector's curvature, though it can be adjusted. Use the {api:anychart.core.ui.MarkersFactory.Marker#anchor}anchor(){api} method to set it. You will need to define a string value, chosing one from the {api:anychart.enums.Anchor}Anchor type list{api} Look at the next sample. Anchors are set for the markers, which are transformed to look more like arrows using the {api:anychart.core.ui.MarkersFactory.Marker#type}.type(){api} method. All default marker types can be found on the {api:anychart.enums.Marker}Marker Type list{api}.
 
 ```
 	// create data set
