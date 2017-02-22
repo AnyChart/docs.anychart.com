@@ -43,13 +43,11 @@
     createButton("Twitter", domContainer);
     createButton("LinkedIn", domContainer);
     createButton("Pinterest", domContainer);
-    
-    console.log(chart.container().container());
 });
 
 
     function createButton(name, domContainer){
-    var container = $(domContainer);        
+    var c = $(domContainer);        
 
     var imageSrc, clickCallback, topOffset;
     switch (name) {
@@ -88,7 +86,7 @@
 
     button.attr("width", "25");
     button.attr("height", "25");
-    container.append(button);        
+    c.append(button);        
 };
 </script>
 </head>
