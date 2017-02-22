@@ -11,7 +11,7 @@ An Adaptive Moving Average (AMA) is another indicator like SMA, MMA and EMA, but
 
 AnyChart Stock allows you to add AMA with desired period to any of your charts.
 
-Find the mathematical description of the indicator on the [Modified moving average (MMA) Mathematical Description](Mathematical_Description) page.
+Find the mathematical description of the indicator on the [Adaptive moving average (AMA) Mathematical Description](Mathematical_Description#ama) page.
 
 ## Adding indicator
 
@@ -44,19 +44,17 @@ Here is a live sample:
 
 ## Indicator parameters
 
-AMA indicator needs five parameters: mapping with value field in it, three periods: period, fast period and slow period; and a type of series to be displayed as.
+AMA indicator needs five parameters: mapping with value field in it (required), three periods: period, fast period and slow period; and a type of series to be displayed as.
 
 ```
 var ama = plot.ama(mapping, 10, 5, 20, "column");
 ```
 
-The series type defining is not necessary, as it is possible to change the series type any time through the {api:anychart.core.stock.series.Column#seriesType}seriesType(){api} method.
-
-Also, note that this indicator needs periods, but there are default period values that are taken if they are not defined by the user - like in the sample above. Those default values are 20 for a period, 2 for a fast period and 30 for a slow period.
+It is possible to change the series type any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
 ## Visualization
 
-Visualization of an indicator depends on which series type was chosen to display it. Here is a sample where AMA with different parameters and settings is added to different plots:
+Visualization of an indicator depends on series type. Here is a sample where AMA with different parameters and settings is added to different plots:
 
 ```
 // create first AMA indicator of default series type

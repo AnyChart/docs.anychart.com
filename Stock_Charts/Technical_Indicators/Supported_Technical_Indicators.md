@@ -25,6 +25,15 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<td>[Aroon](Aroon)</td>
 		</tr>
 		<tr>
+			<td>[Bollinger Bands](Bollinger_Bands)</td>
+		</tr>
+		<tr>
+			<td>[Bollinger Bands %B](Bollinger_Bands_%25B)</td>
+		</tr>
+		<tr>
+			<td>[Bollinger Bands Width](Bollinger_Bands_Width)</td>
+		</tr>		
+		<tr>
 			<td>[Exponential Moving Average (EMA)](Exponential_Moving_Average_\(EMA\))</td>
 		</tr>		
 		<tr>
@@ -40,7 +49,13 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<td>[Relative Strength Index (RSI)](Relative_Strength_Index_\(RSI\))</td>
 		</tr>
 		<tr>
+			<td>[Running Moving Average (RMA)](Modified_Moving_Average_\(MMA\))</td>
+		</tr>		
+		<tr>
 			<td>[Simple Moving Average (SMA)](Simple_Moving_Average_\(SMA\))</td>
-		</tr>			
+		</tr>	
+		<tr>
+			<td>[SMoothed Moving Average (SMMA)](Modified_Moving_Average_\(MMA\))</td>
+		</tr>				
 	</tbody>
 </table>

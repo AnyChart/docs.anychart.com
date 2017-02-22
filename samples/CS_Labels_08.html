@@ -1,0 +1,54 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  var themeSettings = {
+    "column":{
+      "defaultSeriesSettings":{
+        "column":{
+          "labels": {
+            "enabled": true,
+            "anchor": "Center",
+            "position": "Center",
+            "fontFamily": "Courier",
+            "fontSize": 18,
+            "fontColor": "#ffffff",
+            "textFormatter": "${%Value}"
+          }
+        }
+      }
+    }
+  };
+
+  var data = [
+    {x: "Ricky Roma",  value: 20000, fill: "#6F4E37", stroke: "#6F4E37"},
+    {x: "Shelley Levene",  value: 12000},
+    {x: "George Aaronow", value: 18000},
+    {x: "Dave Moss", value: 11000},
+    {x: "John Williamson",  value: 9000}
+  ];
+
+  anychart.theme(themeSettings);
+
+  // chart type
+  chart = anychart.column(data);
+  
+  // set title
+  chart.title("Label Theme");
+
+  // assign a container and draw a chart
+  chart.container("container");
+  chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

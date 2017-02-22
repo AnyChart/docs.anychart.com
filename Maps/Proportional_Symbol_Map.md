@@ -21,7 +21,7 @@ An example of proportional circles is shown below.
 
 {sample}Maps\_Proportional\_Symbol\_01{sample}
 
-The Bubble series in AnyChart JavaScript Maps is quite similar to the Basic JavaScript Bubble series. You can read about Bubble Charts in the [Bubble Chart tutorial](../Basic_Charts_Types/Bubble_Chart), and in this article we will consider significant issues of Bubble charts used with maps.
+The Bubble series in AnyChart JavaScript Maps is quite similar to the Basic JavaScript Bubble series. You can read about Bubble Charts in the [Bubble Chart tutorial](../Basic_Charts/Bubble_Chart), and in this article we will consider significant issues of Bubble charts used with maps.
 
 ## Creating Bubbles
 
@@ -97,6 +97,15 @@ series.geoIdField("code_hasc");
 
 {sample}Maps\_Proportional\_Symbol\_02{sample}
 
+If there is something wrong with the coordinates or if the sample creates an error, check if you have attached the link on the proj4.js in your sample code:
+
+```
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
+</head>
+```
+
+
 ### Size
 
 You can adjust how the bubbles' size is defined. For this we use two methods: {api:anychart.charts.Map#maxBubbleSize}maxBubbleSize(){api} and {api:anychart.charts.Map#minBubbleSize}minBubbleSize(){api}. Let's see how it is done:
@@ -125,7 +134,7 @@ map.minBubbleSize('1%');
 
 ## Altering Bubble Series
 
-Altering the series looks pretty much the same as in [basic Bubble Charts](../Basic_Charts_Types/Bubble_Chart#colors). We can easily do it here. Let's look through a couple of samples.
+Altering the series looks pretty much the same as in [basic Bubble Charts](../Basic_Charts/Bubble_Chart#colors). We can easily do it here. Let's look through a couple of samples.
 
 ### Series colors
 
@@ -253,4 +262,4 @@ series_2.geoIdField("code_hasc");
 
 {sample}Maps\_Proportional\_Symbol\_13{sample}
 
-As you can see, we can operate the series on a map quite easy and similar to working with basic charts. Find more about Choropleth series in the [Choropleth tutorial](Choropleth_Map) and some other features of Bubble series in the [Bubble tutorial](../Basic_Charts_Types/Bubble_Chart).
+As you can see, we can operate the series on a map quite easy and similar to working with basic charts. Find more about Choropleth series in the [Choropleth tutorial](Choropleth_Map) and some other features of Bubble series in the [Bubble tutorial](../Basic_Charts/Bubble_Chart).

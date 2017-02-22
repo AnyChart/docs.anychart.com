@@ -1,98 +1,175 @@
-# Labels 
+#Labels
 
 * [Overview](#overview)
-* [Text Labels](#text_labels)
-* [Image Labels](#image_labels)
-* [Attaching Actions](#attaching_actions)
+* [Basic Settings](#basic_setings)
+ * [Enable](#enable)
+ * [Format Text](#format_text)
+* [Visual Settings](#visual_settings)
+ * [Background](#background)
+ * [Font](#font)
+ * [Position](#position)
+ * [Size](#size)
+* [Themes](#themes)
 
 ## Overview
 
-Custom labels are text or image elements that can be placed anywhere on your chart or map to add descriptions or comments. Labels also can have actions attached.
+Label is a text box that can be displayed along a point on a chart. Labels usually shows the information that each point contains. It may display any additional information if it is defined by the labels settings.
 
-## Text Labels
+You can configure different settings for labels on select and hover.
 
-The sample below demonstrates a {api:anychart.standalones.Label}label{api} placed in the right top corner, containing some information about the chart data.
+## Basic Setting
+
+### Enable
+
+In most of the cases, series labels are disabled by default. To enable them set "true" using the {api:anychart.core.ui.LabelsFactory#enabled}enabled(){api} method.
+
+```
+// create a chart
+chart = anychart.column();
+
+// add a data series
+series = chart.column([
+  {x: "Veni", value: 1}, 
+  {x: "Vidi", value: 2}, 
+  {x: "Vici", value: 3}
+]);
+
+// enable labels for a series
+// in any state
+series.labels(true);
+series.selectLabels(true);
+series.hoverLabels(true);
+```
 
 {sample}CS\_Labels\_01{sample}
 
-## Image Labels
+### Format Text 
 
-If you want to use image as a label and you don't need any text on this image, use {api:anychart.graphics.vector.Stage}stage(){api} and define the image and its appearance settings using the {api:anychart.graphics.vector.Stage#image}image(){api} method of the stage. 
-  
-The sample below shows a revenue chart with AnyChart logo in the left top corner of data plot. The code should be similar to this one:
+You can specify the text displayed in labels using [Text Formatters](Text_Formatters) mechanism. Here is how you can show a name of point instead of a value:
 
 ```
-// create stage
-var stage = anychart.graphics.create("container");
-
-// define chart type and set data
-var chart = anychart.pieChart([
-  {x: "Product A", value: 9000},
-  {x: "Product B", value: 5000},
-  {x: "Product C", value: 1400},
-  {x: "Product D", value: 590},
-  {x: "Product E", value: 8813}
-]);
-
-// create image label
-var image = stage.image();
-// set image source
-image.src("//static.anychart.com/images/logo_anychart.gif");
-// set spacing from the top
-image.y(15);
-// set spacing from the left
-image.x(25);
-// set width of the image
-image.width(50);
-// set height of the image
-image.height(50);
-// manage overlapping
-image.zIndex(chart.zIndex() + 1);
+series.labels().textFormatter("{%x}");
 ```
-
-These settings will allow you to display chart the following way:
 
 {sample}CS\_Labels\_02{sample}
 
-## Attaching Actions
+## Visual Settings
 
-You can attach actions to labels and turn them into controls that can change an appearance of a chart or invoke some external function.
-
-Sample below will demonstrate you calling external function on image labels click.
-
-Note: In the previous sample we've used {api:anychart.standalones.Label}label(){api} without text but with an image as a background. For such cases you can use {api:anychart.graphics.vector.Stage#image}image(){api} method.
+You can also change background, font and other settings.
 
 ```
-var image = stage.image();
-// source of the image
-image.src("//static.anychart.com/images/column.png")
-// set width of the image
-image.width(25)
-// set height of the image
-image.height(25)
-// set spacing from the top
-image.y(20)
-// manage overlapping
-image.zIndex(2)
-// set spacing from the left
-image.x(35);
+// background border color
+series.labels().background().stroke("#663399");
+series.selectLabels().background().stroke("Green");
+
+// font color
+series.labels().fontColor("#663399");
+series.selectLabels().fontColor("Green");
 ```
-
-To attach an action to the image you have to set {api:anychart.graphics.vector.Image#listen}listen(){api} method for the {api:anychart.graphics.vector.Stage#image}image(){api} Full list of available actions is described in [Event Listeners article](../Common_Settings/Event_Listeners).
-
-```
-var myImage = stage.image();
-myImage.src("//static.anychart.com/images/column.png");
-myImage.align("topleft");
-
-myImage.listen(
-  // event type
-  "click",
-  // your function
-  function() {/*custom function code*/}
-)
-```
-
-Here is a js chart with three custom images. Click on any of them invokes function of redrawing chart using same data but different chart type.
 
 {sample}CS\_Labels\_03{sample}
+
+### Background
+
+Labels background can be set using {api:anychart.core.ui.LabelsFactory#background}background(){api} method. More information about adjusting background can be found in [Background tutorial](../Appearance_Settings/Background).
+
+```
+// background settings
+var background = series.labels().background();
+background.enabled(true);
+background.fill("#EEEEEE 0.8");
+background.stroke("#888888");
+background.cornerType("round");
+background.corners(5);
+```
+
+That is how labels background with the settings from above looks like:
+
+{sample}CS\_Labels\_04{sample}
+
+### Font
+
+Font settings are set as for any other [Text](Text_Settings):
+
+```
+// font labels font settings
+chart.labels().fontFamily("Menlo");
+chart.labels().fontSize(18);
+chart.labels().fontDecoration("underline");
+chart.labels().fontWeight(900);
+```
+
+{sample}CS\_Labels\_05{sample}
+
+### Position
+
+Labels postions is set using an anchor set by {api:anychart.standalones.LabelsFactory#anchor}anchor(){api} and {api:anychart.standalones.LabelsFactory#position}position(){api} methods. Anchor and position are set with values from {api:anychart.enums.Anchor}anychart.enums.Anchor{api} and {api:anychart.enums.Position}anychart.enums.Position{api} enums. 
+
+Fine tuning can be done using {api:anychart.standalones.LabelsFactory#offsetX}offsetX(){api} and {api:anychart.standalones.LabelsFactory#offsetY}offsetY(){api} methods.
+
+Labels are rotated using {api:anychart.standalones.LabelsFactory#rotation}rotation(){api} method.
+
+Here is how you can put labels in the center of columns:
+
+```
+// set labels position
+labels = series.labels();
+labels.position("Center");
+labels.anchor("Center");
+```
+
+And here is a sample of rotated labels put on top of columns:
+
+```
+// set labels position
+labels = chart.getSeries(0).labels();
+labels.enabled(true);
+labels.position("TopCenter");
+labels.anchor("Left");
+labels.offsetY(-10);
+labels.rotation(-90);
+```
+
+{sample}CS\_Labels\_06{sample}
+
+### Size
+
+Use {api:anychart.core.ui.LabelsFactory#width}width(){api} and {api:anychart.core.ui.LabelsFactory#height}height(){api} to set the labels width and height. Don't forget to format the text of the label properly to avoid text overflow.
+
+```
+// set labels size
+series.labels().width(200);
+series.labels().height(80);
+```
+
+In the sample below we have also used {api:anychart.standalones.LabelsFactory#vAlign}vAilgn(){api} and {api:anychart.standalones.LabelsFactory#hAlign}hAlign(){api} methods to set proper text placement:
+
+{sample}CS\_Labels\_07{sample}
+
+## Themes
+
+Labels can be adjusted using [AnyChart Themes](../Appearance_Settings/Themes). Themes make it possible to set the same settings for several charts. Here is a sample of adjusting labels using themes:
+
+```
+var themeSettings = {
+  "column":{
+    // series hub
+    "defaultSeriesSettings":{
+      // series settings
+      "column":{
+        // label settings
+        "labels": {
+          "anchor": "bottomCenter",
+          "position": "topCenter",
+          "fontFamily": "Menlo",
+          "fontSize": 14
+        }
+      }
+    }
+  }
+};
+```
+
+Settings for the labels in the sample below are applied using themes. Click "launch in playground" to see how settings for labels can be applied using AnyChart themes.
+
+{sample}CS\_Labels\_08{sample}

@@ -1,4 +1,4 @@
-{:index 1}
+{:index 1 :title "Quick Start | AnyChart"}
 Quick Start
 ===========
   

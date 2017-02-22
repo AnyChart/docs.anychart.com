@@ -1,0 +1,34 @@
+<html>
+<head>
+<meta name="x-cat-tags" content="anyChart"/>
+<meta charset="UTF-8"/>
+<meta name="tags" content="[]"/>
+<meta name="index" content="1000"/>
+<meta name="is-new" content="false"/>
+<script src="../anychart-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+<script x-export="chart">anychart.onDocumentReady(function() {
+
+// create a Pareto chart
+chart = anychart.pareto([
+  {x: "Defect 1", value: 19},
+  {x: "Defect 2", value: 9},
+  {x: "Defect 3", value: 28},
+  {x: "Defect 4", value: 87},
+  {x: "Defect 5", value: 14},
+]);
+
+// set the chart title
+chart.title("Pareto Chart: Basic Sample");
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

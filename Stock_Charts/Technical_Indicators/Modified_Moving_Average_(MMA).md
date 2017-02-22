@@ -1,4 +1,4 @@
-# Modified (Smoothed) Moving Average
+# Modified Moving Average
 
 * [Overview](#overview)
 * [Adding indicator](#adding_indicator)
@@ -7,17 +7,18 @@
 
 ## Overview
 
-A Modified Moving Average (MMA) is an indicator that shows the average value of a security's price over a period of time. It works very similar to the Exponential Moving Average, they are equivalent but for different periods (e.g. the MMA value for a 14-day period will be the same as EMA-value for a 27-days period).
+A Modified Moving Average (MMA) (**also known as Running Moving Average (RMA), or SMoothed Moving Average (SMMA)**) is an indicator that shows the average value of a security's price over a period of time. It works very similar to the Exponential Moving Average, they are equivalent but for different periods (e.g. the MMA value for a 14-day period will be the same as EMA-value for a 27-days period).
 
-MMA is partly counted like SMA: the first point of the MMA is calculated the same way it is done for SMA. However, other points are calculated differently: we need to add the new price first and then subtract the last average from the resulting sum. 
+MMA is partly calculated like SMA: the first point of the MMA is calculated the same way it is done for SMA. However, other points are calculated differently:the new price is added first and then the last average is subtracted from the resulting sum. 
 
 AnyChart Stock allows you to add MMA with desired period to any of your charts.
 
-Find the mathematical description of the indicator on the [Modified moving average (MMA) Mathematical Description](Mathematical_Description) page.
+Find the mathematical description of the indicator on the [Modified moving average (MMA) Mathematical Description](Mathematical_Description#mma) page.
+
 
 ## Adding indicator
 
-MMA indicator is added using {api:anychart.core.stock.Plot#mma}mma(){api} method, it requires a mapping with a value field in it:
+MMA indicator is added using the {api:anychart.core.stock.Plot#mma}mma(){api} method, it requires a mapping with a value field in it:
 
 ```
 // create data table on loaded data
@@ -51,16 +52,15 @@ MMA indicator needs three parameters, as SMA and EMA: mapping with value field i
 ```
 var mma10 = plot.mma(mapping, 10, "column");
 ```
-
-The last parameter (the series type) is optional, as it is possible to change the series type any time through the {api:anychart.core.stock.series.Column#seriesType}seriesType(){api} method.
+It is possible to change the series type at any time using the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
 ## Visualization
 
-Visualization of an indicator depends on the type of a series was chosen to display it. Here is a sample where MMA with different parameters and settings is added to different plots:
+Visualization of an indicator depends on the series type. Here is a sample where MMA with different parameters and settings is added to different plots:
 
 ```
 // create MMA indicator with period 10 and show as line on the first plot
-var mma20 = plot_0.mma(mapping, 10).series();
+var mma10 = plot_0.mma(mapping, 10).series();
 mma10.stroke('#bf360c');
 
 // create MMA indicator with period 30 and show as column on the second plot
