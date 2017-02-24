@@ -10,15 +10,13 @@
 
 ## Overview
 
-Stick Series are quite an alike Column, but the difference is in points view: while the points of Column Series are columns, the Stick Series uses line segments of the value height - like columns with no width. Read more about Stick Series in the [Stick Series tutorial](../../Basic_Chart_Types/Stick_Chart).
+Stick Series are quite an like [Column](Column), but with no width. Read more about Stick Series in the [Stick Series tutorial](../../Basic_Charts/Stick_Chart).
 
 ## AnyStock Stick Series Adjustment
-
-Before considering the series in stocks, it's necessary to add some data. 
  
 ### Data
 
-The data in stocks should be formatted as a table, though there are two ways of setting it: as an array of arrays or as an array of objects. Using the first way, you define the values only and then map the dataSet. In the second case you need to name each value and then map the dataSet as well. Let's create two samples with the same data differently arranged.
+The data in stocks should be formatted as a table, there are two ways of setting it: as an array of arrays or as an array of objects. Using the first way, you define the values only and then map the dataSet. In the second case you need to name each value and then map the dataSet as well. Let's create two samples with the same data differently arranged.
 
 ```
 // set the data
@@ -41,30 +39,30 @@ In the sample above we arranged data as an array of arrays. The next sample cont
 
 ```
 // set the data
-table = anychart.data.table("x");
+table = anychart.data.table('x');
 table.addData([
-    {'x':"2004-01-02", 'value': 29955800},
-    {'x':"2004-01-05", 'value': 38892100},
-    {'x':"2004-01-06", 'value': 43684400},
-    {'x':"2004-01-07", 'value': 48757500},
+    {x:'2004-01-02', value: 29955800},
+    {x:'2004-01-05', value: 38892100},
+    {x:'2004-01-06', value: 43684400},
+    {x:'2004-01-07', value: 48757500},
 ]);
 
 // map the data
-mapping = table.mapAs({'x': 'x', 'value': 'value'});
+mapping = table.mapAs({x: 'x', value: 'value'});
 ```
 
 {sample}STOCK\_Stick\_02{sample}
 
-It's rather clear that there's no difference in both samples, so there's no matter for your stock appearance which data type you choose - it depends only on your preferences. Find more about setting and arranging data in Stocks in the [Stocks Data tutorial](../Data).
+NFind more about setting and arranging data in Stocks in the [Stocks Data tutorial](../Data).
 
 A stock can contain several series. There are also two ways of creating a multi-series stock: creating several series in one plot or creating several plots with a series (or several series again) in each. Let's create a sample with several series belong to one plot and another sample demonstrating a multi-plot stock. 
 
 ```
 // set the series
 var series_total = chart.plot(0).stick(mapping_total);
-series_total.name("Total Request number");
+series_total.name('Total Request number');
 var series_region = chart.plot(0).stick(mapping_region);
-series_region.name("Region Request Number");
+series_region.name('Region Request Number');
 ```
 
 {sample}STOCK\_Stick\_03{sample}
@@ -76,9 +74,9 @@ To create a new plot, use the {api:anychart.charts.Stock#plot}plot(){api} method
 ```
 // set the series
 var series_total = chart.plot(0).stick(mapping_total);
-series_total.name("Total Request number");
+series_total.name('Total Request number');
 var series_region = chart.plot(1).stick(mapping_region);
-series_region.name("Region Request Number");
+series_region.name('Region Request Number');
 ```
 
 {sample}STOCK\_Stick\_04{sample}
@@ -103,7 +101,7 @@ In Stick, there's no filling colors due to series specifics. To set the stroke c
 
 ```
 // coloring
-series_total.stroke("#ff0000");
+series_total.stroke('#ff0000');
 ```
 
 {sample}STOCK\_Stick\_05{sample}
@@ -114,7 +112,7 @@ When you hover a point in a stock chart, there's a crosshair shows up, highlight
 
 ```
 // crosshair adjusting
-chart.plot(0).dateTimeHighlighter("green", 0.5, "10 4");
+chart.plot(0).dateTimeHighlighter('green', 0.5, '10 4');
 ```
 
 {sample}STOCK\_Stick\_06{sample}
