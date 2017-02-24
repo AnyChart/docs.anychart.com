@@ -21,11 +21,15 @@ AnyStock supports a lot of different series types. For the general information o
 <td>x, value</td>
 </tr>
 <tr>
+<td>[Column series in AnyStock](Column)</td>
+<td>x, value</td>
+</tr>
+<tr>
 <td>[Japanese Candlestick series in AnyStock](Japanese_Candlestick)</td>
 <td>x, open, high, low, close</td>
 </tr>
 <tr>
-<td>[Column series in AnyStock](Column)</td>
+<td>[JumpLine series in AnyStock](JumpLine)</td>
 <td>x, value</td>
 </tr>
 <tr>
@@ -39,21 +43,13 @@ AnyStock supports a lot of different series types. For the general information o
 <tr>
 <td>[OHLC series in AnyStock](OHLC)</td>
 <td>x, open, high, low, close</td>
-</tr>
+</tr> 
 <tr>
-<td>[Spline Area series in AnyStock](Spline_Area)</td>
-<td>x, value</td>
-</tr>
-<tr>
-<td>Stick series in AnyStock</td>
-<td>*Coming soon*</td>
-</tr>
-<tr>
-<td>[Range Column series in AnyStock](Range_Column)</td>
+<td>[Range Area series in AnyStock](Range_Area)</td>
 <td>x, high, low</td>
 </tr>
 <tr>
-<td>[Range Area series in AnyStock](Range_Area)</td>
+<td>[Range Column series in AnyStock](Range_Column)</td>
 <td>x, high, low</td>
 </tr>
 <tr>
@@ -78,6 +74,10 @@ AnyStock supports a lot of different series types. For the general information o
 </tr>
 <tr>
 <td>[Step Line series in AnyStock](Step_Line)</td>
+<td>x, value</td>
+</tr>
+<tr>
+<td>[Stick series in AnyStock](Stick)</td>
 <td>x, value</td>
 </tr>
 </tbody></table>

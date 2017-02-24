@@ -148,9 +148,9 @@ anychart.onDocumentReady(function() {
     chart = anychart.stock();
 
     // set the series
-    var series_total = chart.plot(0).stepLine(mapping_total);
+    var series_total = chart.plot(0).jumpLine(mapping_total);
     series_total.name("Total Request number");
-    var series_region = chart.plot(1).stepLine(mapping_region);
+    var series_region = chart.plot(1).jumpLine(mapping_region);
     series_region.name("Region Request Number");
 
     // coloring
@@ -159,7 +159,7 @@ anychart.onDocumentReady(function() {
     // crosshair adjusting
     chart.plot(0).dateTimeHighlighter("green", 0.5, "10 4");
 
-    chart.title('Stock StepLine Demo');
+    chart.title('Stock JumpLine Demo');
 
     // y-axis labels formatting
     chart.plot(0).yAxis().labels().textFormatter(function(){

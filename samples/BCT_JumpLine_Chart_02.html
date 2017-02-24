@@ -1,0 +1,76 @@
+<html>
+<head>
+  <meta name="x-cat-tags" content="anyChart"/>
+    <meta charset="UTF-8"/>
+    <meta name="tags" content="[]"/>
+    <meta name="index" content="1000"/>
+    <meta name="is-new" content="false"/>
+    <script src="../anychart-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
+    <script x-export="chart">anychart.onDocumentReady(function() {
+
+  // data
+var dataSet = anychart.data.set([
+  {x: "Jan", value: 1.25},
+  {x: "Feb", value: 1.25},
+  {x: "Mar", value: 1.5},
+  {x: "Apr", value: 1.5},
+  {x: "May", value: 1.75},
+  {x: "Jun", value: 1.75},
+  {x: "Jul", value: 1.75},
+  {x: "Aug", value: 2},
+  {x: "Sep", value: 2},
+  {x: "Oct", value: 2.25},
+  {x: "Nov", value: 2.25},
+  {x: "Dec", value: 2.5}
+]);
+var chart = anychart.line();
+series = chart.jumpLine(dataSet);
+
+// set a style
+series.stroke("#67329c", 3);
+series.hoverStroke("#9966cc", 3);
+series.selectStroke("#663399", 3);
+
+// title
+chart.title("Interest rates continue to increase");
+
+// set axes titles
+var xAxis = chart.xAxis();
+xAxis.title("Month");
+var yAxis = chart.yAxis();
+yAxis.title("%");
+
+// set min and max values
+yScale = chart.yScale();
+yScale.minimum(0);
+yScale.maximum(3.0);
+
+// enable grids
+chart.grid(0, {axis: chart.xAxis()});
+chart.grid(1, {axis: chart.yAxis()});
+minorGrid = chart.minorGrid();
+minorGrid.enabled(true);
+
+// orientation setting
+xAxis.orientation("top");
+
+// stroke settings
+series.stroke("#025669", 4);
+series.hoverStroke("#04a7cc", 4);
+
+// set the tooltips
+tooltips = series.tooltip();
+tooltips.textFormatter("{%Value} %");
+tooltips.background("#e0d6d1");
+tooltips.fontColor("#4d3c33");
+
+// draw
+chart.container("container");
+chart.draw();
+});</script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 100%"></div>
+</body>
+</html>

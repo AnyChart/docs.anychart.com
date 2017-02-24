@@ -11,7 +11,7 @@
 
 ## Overview
 
-Step Line Series is usually used to show how a parameter changes its value in time or in dependancy of some other parameter which values are used as categories (e.g. branches of a company). It is rather similar to Line Series. Find all information about using Step Lines in Basic Charts in the [StepLine Charts tutorial](../../Basic_Chart_Types/Line-Spline-StepLine_Charts).
+Step Line Series is usually used to show how a parameter changes its value in time or in dependency of some other parameter which values are used as categories (e.g. branches of a company). It is rather similar to Line Series. Find all information about using Step Lines in Basic Charts in the [StepLine Charts tutorial](../../Basic_Chart_Types/Line-Spline-StepLine_Charts).
 
 This series type is popular to be used in Stocks, as well as Line series. There are some aspects different between managing StepLines in Basic Charts and in Stocks. This article will consider those aspects.
 
@@ -21,7 +21,7 @@ The first difference between Basic Charts and Stocks is the data defining.
 
 ### Data 
 
-The Data in Stocks should be represented in table format and arranged as array of arrays or objects. Look at the next two samples: they demonstrate the same data differently arranged.
+The Data in Stocks should be represented in table format and arranged as an array of arrays or objects. Look at the next two samples: they demonstrate the same data differently arranged.
 
 ```
 // set the data
@@ -65,11 +65,11 @@ mapping = table.mapAs({'x': 'x', 'value': 'value'});
 
 {sample}STOCK\_Step\_Line\_02{sample}
 
-It's clear that there is no difference between those samples. So, you are free to choose how you will arrange your data. You can read more about mananging Data in Stocks in the [Stock Data tutorial](../Data).
+It's clear that there is no difference between those samples. So, you are free to choose how you will arrange your data. You can read more about managing Data in Stocks in the [Stock Data tutorial](../Data).
 
 ### Multi-series
 
-Stocks are often used to show several parameters changing, so it's possible to create a multi-series chart. There are two ways as well. First is to create several series in one plot, so the steplines will be able to cross each ohter; the second one is to create several plots and distribute the series among them. Let's consider both ways.
+Stocks are often used to show several parameters changing, so it's possible to create a multi-series chart. There are two ways as well. First is to create several series in one plot, so the steplines will be able to cross each other; the second one is to create several plots and distribute the series among them. Let's consider both ways.
 
 This sample shows a simple multi-series Step Line stock. 
 
@@ -100,7 +100,7 @@ More about plots can be found in the [Plots tutorial](../Chart_Plots).
 
 ### Switching series type
 
-Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
+Our stocks have a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
@@ -110,11 +110,11 @@ When a series used in Stocks, there are some visualization settings are being ma
 
 ### Coloring
 
-Color scheme makes your chart unique and helps to distinguish the series. For all Line-type series there are no filling colors, but we can change the stroke color using the {api:anychart.core.stock.series.StepLine#stroke}stroke(){api} method.
+The color scheme makes your chart unique and helps to distinguish the series. For all Line-type series, there are no filling colors, but we can change the stroke color using the {api:anychart.core.stock.series.StepLine#stroke}stroke(){api} method.
 
 ```
 // coloring
-series_totals.stroke("#ff0000");
+series_total.stroke("#ff0000");
 ```
 
 {sample}STOCK\_Step\_Line\_05{sample}

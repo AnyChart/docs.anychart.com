@@ -71,7 +71,7 @@ A stock can contain several series. There are also two ways of creating a multi-
 var series_euro = chart.plot(0).line(mapping_euro);
 series_euro.name("Euro to Dollar Rate");
 var series_rub = chart.plot(0).line(mapping_rub);
-series_rub.name("Euro to Dollar Rate");
+series_rub.name("Rub to Dollar Rate");
 ```
 
 {sample}STOCK\_Line\_03{sample}
@@ -85,7 +85,7 @@ To create a new plot, use the {api:anychart.charts.Stock#plot}plot(){api} method
 var series_euro = chart.plot(0).line(mapping_euro);
 series_euro.name("Euro to Dollar Rate");
 var series_rub = chart.plot(1).line(mapping_rub);
-series_rub.name("Euro to Dollar Rate");
+series_rub.name("Rub to Dollar Rate");
 ```
 
 {sample}STOCK\_Line\_04{sample}
