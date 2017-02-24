@@ -11,23 +11,19 @@
 
 ## Overview
 
-OHLC Charts, or Open-High-Low-Close, are the most poplular in finances, economics and trades, as this series use four parameters to watch the prices changing: open - the opening price of some goods or shares; high - the highest price that was reached during the day; low - the lowest price that was reached during the day; close - closing price, i.e. the price of the goods or shares at the moment of the period finishes. Read more about Basic OHLC Charts in the [OHLC Chart article](../../Basic_Chart_Types/OHLC_Chart).
+OHLC Charts, or Open-High-Low-Close, are the most poplular in finances, economics and trades, as this series use four parameters to watch the prices changing: open - the opening price of some goods or shares; high - the highest price that was reached during the day; low - the lowest price that was reached during the day; close - closing price, i.e. the price of the goods or shares at the moment of the period finishes. Read more about Basic OHLC Charts in the [OHLC Chart article](../../Basic_Charts/OHLC_Chart).
 
-This series type is often used in stocks. This article will help you to adjust some settings of OHLC Charts in Stocks.
-
+See also: [Candlestick](Candlestick).
 
 ## AnyStock OHLC Series Adjustment
 
-Before looking at some parameters that are specifically adjusted in stocks, let's consider the data setting.
-
-
 ### Data
 
-The data in stocks shall be represented in table format. There are two ways how to arrange the data: as array of array or as array of objects. Let's now create a couple of samples with the same data but different ways of its arranging. This will help to understand the principles data arranging.
+The data in stocks must be represented in table format. There are two ways how to arrange the data: as array of array or as array of objects. Let's now create a couple of samples with the same data but different ways of its arranging. This will help to understand the principles data arranging.
 
 ```
 // set the data
-table = anychart.data.table("x");
+table = anychart.data.table('x');
 table.addData([        
 	{'x': '2015-04-01', 'o': 18.23, 'h': 19.36, 'l': 18.18, 'c': 19.31},
 	{'x': '2015-04-02', 'o': 19.50, 'h': 19.89, 'l': 19.00, 'c': 19.29},
@@ -75,46 +71,37 @@ chart = anychart.stock();
 
 // set the series
 var series = chart.plot(0).ohlc(mapping);
-series.name("ACME Corp. stock prices (apr 2015 - jul 2015)");
+series.name("ACME Corp. stock prices");
 ```
 
 {sample}STOCK\_OHLC\_01{sample}
 
-As in case with the most of the basic charts, OHLC Stocks can contain several series. In creating multi-series stock, there are two options as well: we can create several series in one plot or create several plots and distribute the series between them. A tutorial about creating a multi-series OHLC Chart can be found [here](../../Basic_Chart_Types/OHLC_Chart#multi_series). 
-
-Plots are something like frames in the chart, that let us to display several series in one chart without them crossing each other. You can find all information about the plots in stocks in the [Chart Plot](../Chart_Plots) article. Now, let's create a sample with two plots each holding a series.
+Multiple series in different plots:
 
 ```
 // set the series
 var series_acme = chart.plot(0).ohlc(mapping_acme);
-series_acme.name("ACME Corp. stock prices (apr 2015 - jul 2015)");
+series_acme.name("ACME Corp. stock prices");
 // set the series
 var series_globex = chart.plot(1).ohlc(mapping_globex);
-series_globex.name("Globex Corp. stock prices (apr 2015 - jul 2015)");
+series_globex.name("Globex Corp. stock prices");
 ```
+
+You can find all information about the plots in stocks in the [Chart Plot](../Chart_Plots) article.
 
 {sample}STOCK\_OHLC\_03{sample}
 
-
 ### Switching series type
 
-Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
+You can change the type of the series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-
 ## Visualization
-
-There are some parameters responsible for the stock appearance, managing its colors and behavior. Let's now talk about them.
-
 
 ### Coloring
 
-Colors are a good help in emphasizing some important moments in the data. OHLC charts have no filling colors as they use only lines for representing the data, but there is a stroke parameter. To change the default stroke colors setting use {api:anychart.core.stock.series.OHLC#fallingStroke}fallingStroke(){api} and {api:anychart.core.stock.series.OHLC#risingStroke}risingStroke(){api} methods for changing the colors of the falling and the rising. It's possible to change the line style as well using the same method.
-
-More about visualization and colors find in the [OHLC Charts](../../Basic_Charts/OHLC_Chart#visualization) article.
-
-Let's change the defaults for one of the series in the previous sample.
+ To change the default stroke colors setting use {api:anychart.core.stock.series.OHLC#fallingStroke}fallingStroke(){api} and {api:anychart.core.stock.series.OHLC#risingStroke}risingStroke(){api} methods:
 
 ```
 // coloring
@@ -126,13 +113,11 @@ series_acme.risingStroke("#339999", 1.5, "6 2", "bevel");
 
 ### Hovered state
 
-When a point is hovered, stock behaves differently from basic charts. A point is highlighted with a crosshair instead of different color. A crosshair, which is identified as {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api}, can be adjusted: it's possible to change its color, thickness, dash pattern, line joining type and line cap - the same params that both stroke types have. Look through the API to know more. Let's edit the highlighter of the upper plot.
+Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
 
 ```
 // highlighter (crosshair) adjusting
 chart.plot(0).dateTimeHighlighter("#0000FF", 0.5);
 ```
 
-{sample}STOCK\_OHLC\_05{sample}
-
-Together with the crosshair, a tooltip of union type is shown, demonstrating values of all hovered points. 
+{sample}STOCK\_OHLC\_05{sample} 

@@ -10,13 +10,11 @@
 
 ## Overview
 
-Range Area demonstrates how a range of some object's volume changes in time or during some process. There are two values to be set for this series: low and high. Find more about this series type in [Range Area Chart](../../Basic_Chart_Types/Range_Area-SplineArea_Charts).
+Range Area demonstrates how a range of some object's volume changes in time or during some process. There are two values to be set for this series: low and high. Find more about this series type in [Range Area Chart](../../Basic_Charts/Range_Area_Chart).
 
-This series is can be successfully used as stock series. There are some things different about parameters of Range Area in Basic Charts and in Stocks due to a big amount of data in the last case, so we will consider those in this article.
+See also: [Range Spline Area](Range_Spline_Area).
 
 ## AnyStock Range Area Series Adjustment
-
-At first, let's look at the data of the Range Area Stocks.
 
 ### Data
 
@@ -26,7 +24,7 @@ The data in this sample below is arranged as array of objects.
 
 ```
 // set the data
-table = anychart.data.table("x");
+table = anychart.data.table('x');
 table.addData([
     {x: "2000-01-01", low: 2, high: 6},
     {x: "2000-02-01", low: 2, high: 7},
@@ -43,7 +41,7 @@ table.addData([
 ]);
   
 // map the data
-mapping = table.mapAs({'x':"x", 'high':"high", 'low': "low"});
+mapping = table.mapAs({x:'x', high:'high', low: 'low'});
 
 // chart type
 chart = anychart.stock();
@@ -90,19 +88,17 @@ series.name("Temperature Range");
 
 {sample}STOCK\_Range\_Area\_02{sample}
 
-You can see that nothing changes in the view of a stock even if the method of data arranging is different. So you are free to choose the way you prefer or the one that is better for your goals.
-
-Now, let's add a series to one of the previous samples.
+Simple multi-series chart:
 
 ```
 // set the data
 table = anychart.data.table();
 table.addData([
-    ["2000-01-01", 2, 6, -3, 4],
-    ["2000-02-01", 2, 7, -2, 5],
-    ["2000-03-01", 3, 10, 2, 10],
-    ["2000-04-01", 5, 13, 7, 16],
-    ["2000-05-01", 8, 17, 12, 22]
+    ['2000-01-01', 2, 6, -3, 4],
+    ['2000-02-01', 2, 7, -2, 5],
+    ['2000-03-01', 3, 10, 2, 10],
+    ['2000-04-01', 5, 13, 7, 16],
+    ['2000-05-01', 8, 17, 12, 22]
 ]);
   
 // map the data
@@ -127,11 +123,7 @@ series_ny.name("Temperature Range (New York 2000-2004)");
 
 {sample}STOCK\_Range\_Area\_03{sample}
 
-Adding more series to the stock chart will make it less understandable. In this case it's better to use plots - a feature that helps to place several series in one chart separately from each other, making it easier to get the values.
-
-To create a plot use {api:anychart.charts.Stock#plot}plot(){api} and set the plot index as an argument for this method.
-
-You can find all information about plots in the [Plot tutorial](../Chart_Plots).
+Multiple series in different plots:
 
 ```
 // set the series
@@ -145,20 +137,19 @@ series_ny.name("Temperature Range (New York 2000-2004)");
 
 {sample}STOCK\_Range\_Area\_04{sample}
 
+You can find all information about plots in the [Plot tutorial](../Chart_Plots).
+
 ### Switching series type
 
-Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
+You can change the type of the series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-
 ## Visualization
-
-Some Stock Range Area visualization settings are different from the similar ones in Basic Range Area due to its specifics. Let's have a look at them.
 
 ### Coloring
 
-Colors help us to distinguish the series, especialy when we'got a number of them in one plot. There are default colors that can be adjusted if necessary. Use {api:anychart.core.stock.series.RangeArea#fill}fill(){api} for changing the range filling color. This method usage would look like the following:
+Use {api:anychart.core.stock.series.RangeArea#fill}fill(){api} to changing the fill color:
 
 ```
 // set the colors
@@ -168,12 +159,13 @@ series_ny.fill("#33CCCC 0.5");
 
 {sample}STOCK\_Range\_Area\_05{sample}
 
-However, there is a category of people who cannot understand the colors. There is a hatch filling feature in AnyStocks helps in case of having some sight problems. Use {api:anychart.core.stock.series.RangeArea#hatchFill}hatchFill(){api} to set the hatch filling for your Range Area. Look up the {api:anychart.graphics.vector.HatchFill.HatchFillType}HatchFill pattern list{api} to choose the style you prefer.
+Use the {api:anychart.core.stock.series.RangeArea#hatchFill}hatchFill(){api} to set the hatch fill.
 
 ```
 // set the colors
 series_lon.fill("#fff 0.5");
 series_ny.fill("#fff 0.5");
+// set hatch fill
 series_lon.hatchFill("horizontalBrick");
 series_ny.hatchFill("confetti");
 ```
@@ -182,7 +174,7 @@ series_ny.hatchFill("confetti");
 
 ### Hovered state
 
-While it's common for the Basic Charts to change the series colors or behaviour when they are hovered, it's different in stocks.When we hover a point, a crosshair shows up with a tooltip demonstrating all the values that belong to this point. It can be adjusted as well: use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} to change the croshair's defaults.
+Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
 
 ```
 // crosshair settings

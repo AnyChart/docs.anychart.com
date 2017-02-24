@@ -53,9 +53,9 @@ mapping = table.mapAs({x: 'x', value: 'value'});
 
 {sample}STOCK\_Stick\_02{sample}
 
-NFind more about setting and arranging data in Stocks in the [Stocks Data tutorial](../Data).
+Find out more about setting and arranging data in Stocks in the [Stocks Data tutorial](../Data).
 
-A stock can contain several series. There are also two ways of creating a multi-series stock: creating several series in one plot or creating several plots with a series (or several series again) in each. Let's create a sample with several series belong to one plot and another sample demonstrating a multi-plot stock. 
+Simple multi-series chart:
 
 ```
 // set the series
@@ -67,9 +67,7 @@ series_region.name('Region Request Number');
 
 {sample}STOCK\_Stick\_03{sample}
 
-It's quite clear that it's not a good idea to combine series describing even similar parameters changes, but in such different value ranges. In situations like this, it's much better to use plots. Plots are AnyStock features of a very good help when we've got several series like two of them above which values correspond to the same X-axis categories.
-
-To create a new plot, use the {api:anychart.charts.Stock#plot}plot(){api} method. Don't forget to set the plot index (basically, its number) as an argument for this method.
+Multiple series on different plots:
 
 ```
 // set the series
@@ -81,23 +79,19 @@ series_region.name('Region Request Number');
 
 {sample}STOCK\_Stick\_04{sample}
 
-Note that the only difference here with the previous sample is in setting another plot ID.
-
 Read more about plots in the [Plots tutorial](../Chart_Plots).
 
 ### Switching series type
 
-Our stocks have a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
+You can change the type of series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
 ## Visualization
 
-There are some visual parameters of the Stick series, such as color, stroke width, line style and other. This paragraph helps to consider those.
-
 ### Coloring
 
-In Stick, there's no filling colors due to series specifics. To set the stroke color for the series use {api:anychart.core.stock.series.Line#stroke}stroke(){api} with a color set as a parameter.
+To set the stroke color for the series use the {api:anychart.core.stock.series.Line#stroke}stroke(){api} method.
 
 ```
 // coloring
@@ -108,10 +102,10 @@ series_total.stroke('#ff0000');
 
 ### Hovered state
 
-When you hover a point in a stock chart, there's a crosshair shows up, highlighting the hovered point. This can be adjusted as well using the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method. A highlighter (or a crosshair) is held to a plot, so it's possible to make all highlighters different of edit only one of them. Its parameters are color, thickness, dashPattern, lineJoin and lineCap, though it's not necessary to define them all.
+Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
 
 ```
-// crosshair adjusting
+// crosshair settings
 chart.plot(0).dateTimeHighlighter('green', 0.5, '10 4');
 ```
 

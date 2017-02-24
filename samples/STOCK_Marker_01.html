@@ -10,7 +10,7 @@
 anychart.onDocumentReady(function() {
 
     // set the data
-    table = anychart.data.table("x");
+    table = anychart.data.table('x');
     table.addData([
         {x:'1790-01-01', value: 3929},
         {x:'1795-01-01', value: 4390},
@@ -42,26 +42,11 @@ anychart.onDocumentReady(function() {
         {x:'1925-01-01', value: 118323},
         {x:'1930-01-01', value: 123202},
         {x:'1935-01-01', value: 126232},
-        {x:'1940-01-01', value: 132164},
-        {x:'1945-01-01', value: 144773},
-        {x:'1950-01-01', value: 151325},
-        {x:'1955-01-01', value: 160460},
-        {x:'1960-01-01', value: 179323},
-        {x:'1965-01-01', value: 188232},
-        {x:'1970-01-01', value: 203211},
-        {x:'1975-01-01', value: 215789},
-        {x:'1980-01-01', value: 226545},
-        {x:'1985-01-01', value: 239905},
-        {x:'1990-01-01', value: 248709},
-        {x:'1995-01-01', value: 272119},
-        {x:'2000-01-01', value: 281421},
-        {x:'2005-01-01', value: 299456},
-        {x:'2010-01-01', value: 308745},
-        {x:'2015-01-01', value: 318914}
+        {x:'1940-01-01', value: 132164}
     ]);
   
     // map the data
-    mapping = table.mapAs({'x':"x", 'value':"value"});
+    mapping = table.mapAs({x:'x', value:'value'});
 
     // chart type
     chart = anychart.stock();

@@ -10,7 +10,7 @@
     <script x-export="chart">
 anychart.onDocumentReady(function() {
 
-  table = anychart.data.table("x");
+  table = anychart.data.table('x');
   table.addData([
         {"x":'2015-12-24T12:00:00', value_as: 27, value_sydney: 23.6},
         {"x":'2015-12-25T12:00:00', value_as: 25.5, value_sydney: 24.8},
@@ -42,12 +42,7 @@ anychart.onDocumentReady(function() {
         {"x":'2016-01-20T12:00:00', value_as: 29.9, value_sydney: 28.3},
         {"x":'2016-01-21T12:00:00', value_as: 24.9, value_sydney: 25.9},
         {"x":'2016-01-22T12:00:00', value_as: 29.9, value_sydney: 26.3},
-        {"x":'2016-01-23T12:00:00', value_as: 23.9, value_sydney: 26.2},
-        {"x":'2016-01-24T12:00:00', value_as: 27.9, value_sydney: 25.9},
-        {"x":'2016-01-25T12:00:00', value_as: 28.2, value_sydney: 23.5},
-        {"x":'2016-01-26T12:00:00', value_as: 22.7, value_sydney: 25.4},
-        {"x":'2016-01-27T12:00:00', value_as: 30.3, value_sydney: 26.2},
-        {"x":'2016-01-28T12:00:00', value_as: 28.7, value_sydney: 27}
+        {"x":'2016-01-23T12:00:00', value_as: 23.9, value_sydney: 26.2}
   ]);
 
   mapping_as = table.mapAs({'x':"x", 'value':"value_as"});

@@ -10,13 +10,9 @@
 
 ## Overview
 
-Candlestick Charts are often used for representing changes of prices. This series uses four parameters, as OHLC charts: Open, High, Low and Close. Those params describe the price at the moment of the period starts ("open"), the highest value the prices reached during the period ("high"), the lowest value the price came to during the period ("low") and the price at the moment of the period ends ("close").
-
-Candlestick are very popular series to be used in stocks as well. The amount of data used in stocks influences some of the settings and behavior of the series, which are going to be explored and explained in this article.
+Candlestick Charts are to representing changes of stock prices. This series has four data fields (as [OHLC]() charts): Open, High, Low and Close. Those params describe the price at the moment of the period starts ("open"), the highest value the prices reached during the period ("high"), the lowest value the price came to during the period ("low") and the price at the moment of the period ends ("close").
 
 ## AnyStock Candlestick Series Adjustment
-
-In stocks, there are several parameters that are different from the basic charts. In this article we will consider them in general.
 
 ### Data
 
@@ -24,7 +20,7 @@ Data in stocks should be defined as table. There are two ways of data arranging:
 
 ```
 // set the data
-table = anychart.data.table("x");
+table = anychart.data.table('x');
 table.addData([
     {'x': '2004-01-02', 'o': 92.86, 'h': 93.05, 'l': 91.20, 'c': 91.55},
     {'x': '2004-01-05', 'o': 92.00, 'h': 93.09, 'l': 92.00, 'c': 93.05},
@@ -72,9 +68,7 @@ series.name("ACME Corp.");
 
 {sample}STOCK\_Candlestick\_02{sample}
 
-You can easily notice that there is no difference in both stocks performing. So, choose the data type you prefer to work with, as it has nothing to do with the stocks view.
-
-It's possible to create a multi-series stock. It can be reached through two ways as well: we can create a chart with several series in one chart (plot) or create several plots and distribute the series among them. Let's use our previous sample: add the data for the second series and look how stock will look like.
+Simple multi-series chart:
 
 ```
 // set the series for ACME
@@ -88,7 +82,7 @@ series_globex.name("Globex Corp.");
 
 {sample}STOCK\_Candlestick\_03{sample}
 
-It's obvious that this information in a stock is rather hard to understand. Let's look how adding a plot can help in this situation.
+Multiple series on different plots:
 
 ```
 // set the series for ACME
@@ -102,31 +96,27 @@ series_globex.name("Globex Corp.");
 
 {sample}STOCK\_Candlestick\_04{sample}
 
-So, plots are a kind of chart frames that allow to show several series with completely different range of values, making the information clear for the auditorium.  
-
 Find more information about using plots in stocks in the [Chart Plots](../Chart_Plots) article.
-
 
 ### Switching series type
 
-Our stocks has a method allowing to change the series type at once if the current series and the replacing one have the same or similar fields. Look up the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series) to be sure it's possible to switch those series you need.
+You can change the type of the series to another compatible type. See the [Series Type](Series_Type) and [series types table](Supported_Series#list_of_supported_series).
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method.
 
-
 ## Visualization
-
-There are some settings that form the stock appearance, managing its colors and behavior. Let's now talk about them.
 
 ### Coloring
 
-Coloring series can help you to stress some changes in the watched values. As there are "falling" and "rising" candlesticks, there are also two methods for filling and stroking the data points: {api:anychart.core.stock.series.Candlestick#fallingStroke}fallingStroke(){api} and {api:anychart.core.stock.series.Candlestick#risingStroke}risingStroke(){api} are used to change the default stroking colors and {api:anychart.core.stock.series.Candlestick#fallingFill}fallingFill(){api} and {api:anychart.core.stock.series.Candlestick#risingFill}risingFill(){api}.
+There are "falling" and "rising" candlesticks, fill and stroke for them is set using these methods:
+- {api:anychart.core.stock.series.Candlestick#fallingStroke}fallingStroke(){api},
+- {api:anychart.core.stock.series.Candlestick#risingStroke}risingStroke(){api},
+- {api:anychart.core.stock.series.Candlestick#fallingFill}fallingFill(){api},
+- {api:anychart.core.stock.series.Candlestick#risingFill}risingFill(){api}.
 
-AnyStocks also have a Hatch feature that would be quite useful for people with some sight problems. Use hatch fillings for a Candlestick stock with the {api:anychart.core.stock.series.Candlestick#fallingHatchFill}fallingHatchFill(){api} and {api:anychart.core.stock.series.Candlestick#risingHatchFill}risingHatchFill(){api} methods.
-
-More about visualization and colors can be found in the [OHLC Charts](../../Basic_Charts/OHLC_Chart#visualization) article.
-
-Let's change the defaults for one of the series in the previous sample.
+To set hatch fill for a Candlestick use:
+- {api:anychart.core.stock.series.Candlestick#fallingHatchFill}fallingHatchFill(){api},
+- {api:anychart.core.stock.series.Candlestick#risingHatchFill}risingHatchFill(){api} methods.
 
 ```
 // set the custom colors for Globex series
@@ -148,7 +138,7 @@ series_acme.fallingStroke("#000");
 
 ### Hovered state
 
-When a point is hovered, stock behaves differently from basic charts. A point is highlighted with a crosshair instead of different color. A crosshair, which is identified as {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api}, can be adjusted: it's possible to change its color, thickness, dash pattern, line joining type and line cap - the same params that both stroke types have. Look through the API to know more. Let's edit the highlighter of the lower plot.
+Use the {api:anychart.core.stock.Plot#dateTimeHighlighter}dateTimeHighlighter(){api} method to adjust crosshair. 
 
 ```
 // highlighter (crosshair) adjusting
@@ -157,4 +147,4 @@ chart.plot(1).dateTimeHighlighter("#0000FF", 0.5);
 
 {sample}STOCK\_Candlestick\_06{sample}
 
-Together with the crosshair, a tooltip of union type is shown, demonstrating values of all hovered points. 
+ 
