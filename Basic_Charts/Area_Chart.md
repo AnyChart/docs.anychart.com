@@ -29,7 +29,7 @@ This article explains how to create a basic Area chart as well as configure sett
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>[Stacked Area](Stacked/Value/Area_Chart), [Percent Stacked Area](Stacked/Percent/Area_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Vertical Area](Vertical/Vertical_Area_Chart)</td></tr>
-<tr><td>3D</td><td>[3D Area](3D_Charts/3D_Area_Chart)</td></tr>
+<tr><td>3D</td><td>[3D Area](3D/3D_Area_Chart)</td></tr>
 <tr><td>Error Bars</td><td>[Area Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>[Polar Area](Polar_Plot/Polar_Area_Chart)</td></tr>
@@ -147,7 +147,7 @@ In case of Area charts, there are some peculiarities in formatting the text of t
 
 Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
 
-In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts (Overview)](Stacked/Overview).
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](Stacked/Overview).
 
 To learn about the stacked versions of the Area chart and its modifications, see:
 
@@ -160,7 +160,7 @@ To learn about the stacked versions of the Area chart and its modifications, see
 
 ### Vertical Area
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
 Here is the information about creating Vertical Area series:
 
@@ -172,6 +172,6 @@ Here is the information about creating Vertical Area series:
 
 Using AnyChart, you can create 3D versions of some chart types, including the Area chart.
 
-To learn about 3D charts in general, see [3D Charts (Overview)](3D_Charts/Overview).
+To learn about 3D charts in general, see [3D Charts](3D/Overview).
 
-The 3D Area chart is described in the following article: [3D Area Chart](3D_Charts/3D_Area_Chart)
+The 3D Area chart is described in the following article: [3D Area Chart](3D/3D_Area_Chart)

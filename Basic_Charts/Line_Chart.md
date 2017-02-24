@@ -133,7 +133,7 @@ In case of Line charts, there are some peculiarities in formatting the text of t
 
 ### Vertical Line
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
 Here is the information about creating Vertical Line series:
 

@@ -30,7 +30,7 @@ This article explains how to create a basic Column chart as well as configure se
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>[Stacked Column](Stacked/Value/Column_Chart), [Percent Stacked Column](Stacked/Percent/Column_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Bar](Bar_Chart)</td></tr>
-<tr><td>3D</td><td>[3D Column](3D_Charts/3D_Column_Chart)</td></tr>
+<tr><td>3D</td><td>[3D Column](3D/3D_Column_Chart)</td></tr>
 <tr><td>Error Bars</td><td>[Column Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
@@ -218,7 +218,7 @@ In case of Column charts, there are some peculiarities in formatting the text of
 
 Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
 
-In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts (Overview)](Stacked/Overview).
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](Stacked/Overview).
 
 To learn about the stacked versions of the Column chart, see:
 
@@ -228,7 +228,7 @@ To learn about the stacked versions of the Column chart, see:
 <a name='vertical_column'></a>
 ### Vertical Column (Bar)
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
 The vertical column chart is called the bar chart: it shows categories on the vertical axis instead of the horizontal axis and represents values as bars instead of columns. Read more: [Bar Chart](Bar_Chart).
 
@@ -236,6 +236,6 @@ The vertical column chart is called the bar chart: it shows categories on the ve
 
 Using AnyChart, you can create 3D versions of some chart types, including the Column chart.
 
-To learn about 3D charts in general, see [3D Charts (Overview)](3D_Charts/Overview).
+To learn about 3D charts in general, see [3D Charts](3D/Overview).
 
 The 3D Column chart is described in the following article: [3D Column Chart](3D_Charts/3D_Column_Chart).
