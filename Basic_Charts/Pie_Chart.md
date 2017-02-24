@@ -55,6 +55,12 @@ Here is a full list of methods used to configure visual settings that are availa
 
 animation, background, hatchFillPalette, palette, connectorStroke?
 
+{sample}BCT\_Pie\_Chart\_02{sample}
+
+{sample}BCT\_Pie\_Chart\_03{sample}
+
+{sample}BCT\_Pie\_Chart\_04{sample}
+
 You can learn more from the [Appearance Settings](../Appearance_Settings) article.
 
 ### Labels
