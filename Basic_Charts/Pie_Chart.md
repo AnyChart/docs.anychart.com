@@ -96,7 +96,7 @@ chart.fill("aquastyle");
 {sample}BCT\_Pie\_Chart\_03{sample}
 
 ```
-// create a data set
+// create data
 var data = [
   {x: "Pacman", value: 400, fill: "#ffff00", hatchFill: "percent50"},
   {x: "Not Pacman", value: 130, fill: "#404040"},
@@ -162,7 +162,7 @@ chart.sort("desc");
 ### Exploded Slices
 
 ```
-    // create a data set
+    // create a data
     var data = [
       {x: "A", value: 637166},
       {x: "B", value: 721630},
