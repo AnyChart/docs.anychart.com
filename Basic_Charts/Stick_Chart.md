@@ -42,32 +42,27 @@ This article explains how to create a basic Stick chart as well as configure set
 
 ## Quick Start
 
-Stick Chart is a variation of a [Line Chart](Line_Chart) (though it may look like a slender [column](Column_Chart)), so when a Stick Chart is created it is necessary to create a Line Chart first and set the series of a Stick type.
+Stick Chart is a variation of a [Column](Column_Chart), so when a Stick Chart is created it is necessary to create a Column Chart first and set the series of a Stick type.
 
-To create a Stick chart, use the {api:anychart#line}anychart.line(){api} chart constructor. 
+To create a Stick chart, use the {api:anychart#column}anychart.column(){api} chart constructor. 
 
-After you created a line chart use the {api:anychart.charts.Cartesian#stick}stick(){api} method.
+After you created a column chart use the {api:anychart.charts.Cartesian#stick}stick(){api} method.
 
 ```
-// data
-var dataSet = anychart.data.set([
-  ["Alex", 10000],
-  ["Josh", 12000],
-  ["Jane", 13500],
-  ["April", 19000],
-  ["Mary", 15000],
-  ["George", 11000],
-  ["Elizabeth", 11500],
-  ["Sybill", 17000],
-  ["Jacob", 10000],
-  ["Tony", 9000]
-]);
+// create a data set
+var data = [
+  {x: "January", value: 10000},
+  {x: "February", value: 12000},
+  {x: "March", value: 18000},
+  {x: "April", value: 11000},
+  {x: "May", value: 9000}
+];
 
-var chart = anychart.line();
+// create a chart
+chart = anychart.column();
 
-dataSetMapping = dataSet.mapAs({x: [0], value: [1]});
-
-series = chart.stick(dataSetMapping);
+// create a stick series and set the data
+var series = chart.stick(data);
 ```
 
 {sample}BCT\_Stick\_Chart\_01{sample}

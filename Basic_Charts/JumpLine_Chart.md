@@ -46,7 +46,7 @@ Jump Line Charts are usually used for demonstrating rates.
 
 To create a  chart, use the {api:anychart#line}anychart.line(){api} chart constructor. 
 
-To create a Jump line series call the {api:anychart.charts.Cartesian#jumpline}jumpline(){api} method.
+To create a Jump line series call the {api:anychart.charts.Cartesian#jumpLine}jumpLine(){api} method.
 
 The following sample demonstrates how a basic Jump Line chart is created:
 
@@ -64,7 +64,7 @@ var data = [
 var chart = anychart.line();
 
 // create a jump line series and set the data
-var series = chart.jumpline(data);
+var series = chart.jumpLine(data);
 
 // set the container id
 chart.container("container");
@@ -97,7 +97,7 @@ In the sample below, there are two Jump Line series with some of the appearance 
 
 ```
 // create the first series
-var series1 = chart.jumpline(seriesData_1);
+var series1 = chart.jumpLine(seriesData_1);
 
 // configure the visual settings of the first series
 series1.stroke("#00cc99", 1, "10 5", "round");
@@ -105,7 +105,7 @@ series1.hoverStroke("#00cc99", 2, "10 5", "round");
 series1.selectStroke("#00cc99", 4, "10 5", "round");
 
 // create the second series
-var series2 = chart.jumpline(seriesData_2);
+var series2 = chart.jumpLine(seriesData_2);
 
 // configure the visual settings of the second series
 series2.stroke("#0066cc");
