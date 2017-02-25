@@ -2,20 +2,51 @@
 # Stick Chart
 
 * [Overview](#overview)
-* [Chart](#chart)
-* [Adjusting](#adjusting)
-* [Stacking](#stacking)
-* [Samples](#samples)
+* [Quick Start](#quick_start)
+* [General Settings](#general_settings)
+* [Special Settings](#special_settings)
+  * [Appearance](#appearance)
+  * [Labels](#labels)
+  * [Tooltips](#tooltips)
+  * [Vertical Stick](#vertical_stick)
 
 ## Overview
 
-Stick Charts look like Column Charts with no width. This series can be quite useful in case when your dataset is quite big and it is not comfortable to use Stocks. Sticks are good at demonstrating some discrete data.
+Stick Charts look like Column Charts with no width. Sticks are good at demonstrating some discrete data.
 
-## Chart
+This article explains how to create a basic Stick chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of Stick Chart's characteristics:
 
-Stick Chart is a variation of a [Line Chart](Line_Chart) (though looks more like column), so when a Stick Chart is created it is necessary to create a Line Chart first and set the series of a Stick type.
+<table border="1" class="seriesTABLE">
+<tr><th colspan=2>API</th></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.Stick}anychart.core.cartesian.series.Stick{api}</td></tr>
+<tr><th colspan=2>DATA</th></tr>
+<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>[Stacked Stick](Stacked/Value/Stick_Chart), [Percent Stacked Stick](Stacked/Percent/Stick_Chart)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Stick](Vertical/Stick_Chart)</td></tr>
+<tr><td>3D</td><td>N/A</td></tr>
+<tr><td>Error Bars</td><td>[Stick Chart with Error Bars](Error_Chart)</td></tr>
+<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>[Stock Stick](../Stock_Charts/Series/Stick)</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td></td><td>[Column](Column_Chart)</td></tr>
+<tr><td></td><td>[Line](Line_Chart)</td></tr>
+<tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/stick-chart/" target="_blank">Chartopedia: Stick Chart</a></td></tr>
+<tr><td></td><td>[General Settings](General_Settings)</td></tr>
+</table>
 
-A simple stick chart can be created with the {api:anychart.charts.Cartesian#stick}stick(){api} method. Let's create a data set for one series and set this series of a Stick type. 
+## Quick Start
+
+Stick Chart is a variation of a [Line Chart](Line_Chart) (though it may look like a slender [column](Column_Chart)), so when a Stick Chart is created it is necessary to create a Line Chart first and set the series of a Stick type.
+
+To create a Stick chart, use the {api:anychart#line}anychart.line(){api} chart constructor. 
+
+After you created a line chart use the {api:anychart.charts.Cartesian#stick}stick(){api} method.
 
 ```
 // data
@@ -31,45 +62,76 @@ var dataSet = anychart.data.set([
   ["Jacob", 10000],
   ["Tony", 9000]
 ]);
+
 var chart = anychart.line();
+
 dataSetMapping = dataSet.mapAs({x: [0], value: [1]});
+
 series = chart.stick(dataSetMapping);
 ```
 
 {sample}BCT\_Stick\_Chart\_01{sample}
 
-You can notice that the result is absolutely the same. Choose the most comfortable way of arranging the data for you.
+## General Settings
 
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Stick chart (for example, legend and interactivity settings).
 
-## Adjusting
+Read the overview of general settings: [General Settings](General_Settings).
 
-All elements and features of a Stick Chart can be adjusted due to the exact purposes of a chart.
+## Special Settings
 
-Axes are elements responsible for the grids, markers, axes labels. They are used to manage all these elements. Find more information about axes in the [Axes and Grids](../Axes_and_Grids/Axis_Basics) article. Axes can be easily reoriented on a chart with the {api:anychart.core.axes.Linear#orientation}orientation(){api} method.
+### Appearance
 
-Axes are based on scales - elements that allow you to control such features as minimum and maximum scale values, scale inversion, intervals, scale type and so on. The {api:anychart.scales.Linear#inverted}inverted(){api} method allows to invert the scale, and the {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} methods are used to set the min and max values of the scale. You can find a lot of information about scales in the [Scales article](../Axes_and_Grids/Scales).
+Here is a full list of methods used to configure visual settings that are available for the Stick series:
 
-Markers are special elements which are supposed to emphasize the point for some reasons. They are to be added by the {api:anychart.core.cartesian.series.Stick#markers}markers(){api} method. It is possible to change their shape, size and color.
+* {api:anychart.core.cartesian.series.Stick#color}color(){api} and {api:anychart.core.cartesian.series.Stick#stroke}stroke(){api} set the color and stroke
+* {api:anychart.core.cartesian.series.Stick#hoverStroke}hoverStroke(){api} configures the stroke on hover
+* {api:anychart.core.cartesian.series.Stick#selectStroke}selectStroke(){api} configures the stroke on select
 
-There are also some text elements supposed to tell the customer some information about the point. Labels are elements that are permanently shown (though, this can be changed and adjusted) somewhere next to the point and tooltips are pop-up elements that are shown on a point hovered. Add the labels and tooltips with the {api:anychart.charts.Cartesian#labels}labels(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods. Both elements' text can be adjusted through the {api:anychart.core.ui.Tooltip#textFormatter}textFormatter(){api} method.
+You can learn more from the [Appearance Settings](../Appearance_Settings) article.
 
-After all elements have been adjusted to demonstrate the necessary information about the point, it is a good time for changing the colors. There are several ways to set the colors to the series, points or other elements. You can use the data set, set the colors through some special methods or add/create a color [palette](Appearance_Settings/Palettes). 
+In the sample below, there are two Stick series with some of the appearance settings configured:
 
-The sample below demonstrates a Stick Chart with the adjusted parameters described before. Explore it in the playground to see the code.
+```
+// create the first series
+var series1 = chart.stick(seriesData_1);
+
+// configure the visual settings of the first series
+series1.stroke("#00cc99", 1, "10 5", "round");
+series1.hoverStroke("#00cc99", 2, "10 5", "round");
+series1.selectStroke("#00cc99", 4, "10 5", "round");
+
+// create the second series
+var series2 = chart.stick(seriesData_2);
+
+// configure the visual settings of the second series
+series2.stroke("#0066cc");
+series2.hoverStroke("#0066cc", 2);
+series2.selectStroke("#0066cc", 4);
+```
 
 {sample}BCT\_Stick\_Chart\_02{sample}
 
+### Labels
 
-## Stacking
+Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
-There is another feature can be applied to this series type. As well as [Columns](Column_Chart), Stick Charts can make their series stacked. Apply the {api:anychart.scales.Linear#stackMode}stackMode(){api} method to the scale to make all series stacked.
+(???) отмечаю на будущее, что нужно добавить текст
 
-Let's reduce the previous axes and scales changes and apply the stacking mode:
+To configure a label on a Stick chart, you need to know the following peculiarities regarding formatting and positioning lables.... 
 
-```
-yScale.stackMode("value");
-```
+### Tooltips
 
-## Samples
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
 
-Find a lot of other samples in [AnyChart Web Line, Spline, Step-Line Charts Gallery](http://anychart.com/products/anychart/gallery/Line,_Spline,_Step-Line_Charts/).
+(???) отмечаю на будущее, что нужно добавить текст
+
+In case of Stick charts, there are some peculiarities in formatting the text of tooltips...
+
+### Vertical Stick
+
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
+
+Here is the information about creating Vertical Stick series:
+
+* [Vertical Stick](Vertical/Stick_Chart)

@@ -1,57 +1,140 @@
 {:index 1}
-# JumpLine Chart
+# Jump Line Chart
 
 * [Overview](#overview)
-* [Chart](#chart)
-* [Adjusting](#adjusting)
-* [Samples](#samples)
+* [Quick Start](#quick_start)
+* [General Settings](#general_settings)
+* [Special Settings](#special_settings)
+  * [Appearance](#appearance)
+  * [Labels](#labels)
+  * [Tooltips](#tooltips)
+  * [Vertical Jump Line](#vertical_jump_line)
 
 ## Overview
 
-When your data can be arranged in a table format on a worksheet, there are several chart types suit for demonstrating this data. JumpLine Chart is one of those. These Charts are quite alike Line Charts, or even more alike StepLine charts: JumpLine counts the data points as the center points of "jumps" - horizontal line segments of a category width. The difference between StepLine and JumpLine is in vertical line segments, connecting the "steps" of a StepLine: in JumpLine, nothing connects the points. 
+Jump Line Chart is similar to [Line Chart](Line_Chart) and [Step Line Chart](Step_Line_Chart): Jump Line considers the data points as the center points of "jumps" - horizontal line segments of a category width. 
 
-JumpLine Charts are usually used for demonstrating rates.
+The difference between Step Line and Jump Line is in vertical line segments, connecting the "steps" of a Step Line: nothing connects the points in JumpLine. 
 
-All features common with the Line Charts are described in detail in the [Line Chart article](Line_Chart).
+Jump Line Charts are usually used for demonstrating rates.
 
-## Chart
+<table border="1" class="seriesTABLE">
+<tr><th colspan=2>API</th></tr>
+<tr><td>Class</td><td>{api:anychart.core.cartesian.series.Jumpline}anychart.core.cartesian.series.Jumpline{api}</td></tr>
+<tr><th colspan=2>DATA</th></tr>
+<tr><td>Data Fields</td><td>[x, value](../Working_with_Data/Overview)</td></tr>
+<tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
+<tr><th colspan=2>OPTIONS</th></tr>
+<tr><td>Stacked</td><td>N/A</td></tr>
+<tr><td>Vertical</td><td>[Vertical Jump Line](Vertical/Jump_Line_Chart)</td></tr>
+<tr><td>3D</td><td>N/A</td></tr>
+<tr><td>Error Bars</td><td>[Jump Line Chart with Error Bars](Error_Chart)</td></tr>
+<tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
+<tr><td>Polar</td><td>N/A</td></tr>
+<tr><td>Radar</td><td>N/A</td></tr>
+<tr><td>Scatter</td><td>N/A</td></tr>
+<tr><td>Stock</td><td>[Stock Line](../Stock_Charts/Series/Jump_Line)</td></tr>
+<tr><th colspan=2>RELATED TYPES</th></tr>
+<tr><td></td><td>[Line](Line_Chart)</td></tr>
+<tr><td></td><td>[Step Line](Step_Line_Chart)</td></tr>
+<tr><th colspan=2>SEE ALSO</th></tr>
+<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/jump-line-chart/" target="_blank">Chartopedia: Jump Line Chart</a></td></tr>
+<tr><td></td><td>[General Settings](General_Settings)</td></tr>
+</table>
 
-The JumpLine Chart is created by the {api:anychart.charts.Cartesian#jumpLine}jumpLine(){api} method. Look at the single-series JumpLine Chart :
+## Quick Start
+
+To create a  chart, use the {api:anychart#line}anychart.line(){api} chart constructor. 
+
+To create a Jump line series call the {api:anychart.charts.Cartesian#jumpline}jumpline(){api} method.
+
+The following sample demonstrates how a basic Jump Line chart is created:
 
 ```
-var data = anychart.data.set([
-  ["January", 10000],
-  ["February", 12000],
-  ["March", 18000],
-  ["April", 11000],
-  ["May", 9000]
-]);
+// create a data set
+var data = [
+  {x: "January", value: 10000},
+  {x: "February", value: 12000},
+  {x: "March", value: 18000},
+  {x: "April", value: 11000},
+  {x: "May", value: 9000}
+];
+
+// create a chart
 var chart = anychart.line();
-chart.jumpLine(data);
+
+// create a jump line series and set the data
+var series = chart.jumpline(data);
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
-{sample}BCT\_JumpLine\_Chart\_01{sample}
+{sample}BCT\_Jump\_Line\_Chart\_01{sample}
 
+## General Settings
 
-## Adjusting
+In AnyChart there are many settings that are configured in the same way for all chart types, including the Jump Line chart (for example, legend and interactivity settings).
 
-You can find the detailed information about adjusting chart elements and features separately in the [Line Chart tutorial](Line_Chart). This section briefly tells about adjusting such elements and features like [axes](../../Axes_and_Grids/Axis_Basics), [scales](../Axes_and_Grids/Scales), text elements and setting the colors.
+Read the overview of general settings: [General Settings](General_Settings).
 
-For some reasons, you may need to put the X-Axis above the Chart or Y-Axis to the right from the chart, i.e. to change the orientation. The {api:anychart.core.axes.Linear#orientation}orientation(){api} method allows do it. There are four possible values for this method: "top", "bottom", "right" and "left".
+## Special Settings
 
-As well as axes depend on scales, there are some scaling settings which affect the axes: inversion and setting the extreme values. To invert the axis, use the {api:anychart.scales.Linear#inverted}inverted(){api} method, to set the max and min values use the {api:anychart.scales.Linear#maximum}maximum(){api} and {api:anychart.scales.Linear#minimum}minimum(){api} methods.
+### Appearance
 
-Sometimes it is necessary to highlight a point - for example, the best or the worst value. Markers are elements used for emphasizing the points. Use the {api:anychart.core.cartesian.series.JumpLine#markers}markers(){api} method to create and adjust them.
+Here is a full list of methods used to configure visual settings that are available for the Jump Line series:
 
-Labels and tooltips are small text elements which are supposed to show some basic or extra information about the point. These elements are created with the {api:anychart.charts.Cartesian#labels}labels(){api} and {api:anychart.charts.Cartesian#tooltip}tooltip(){api} methods.
+* {api:anychart.core.cartesian.series.Jumpline#color}color(){api} and {api:anychart.core.cartesian.series.Jumpline#stroke}stroke(){api} set the color and stroke
+* {api:anychart.core.cartesian.series.Jumpline#hoverStroke}hoverStroke(){api} configures the stroke on hover
+* {api:anychart.core.cartesian.series.Jumpline#selectStroke}selectStroke(){api} configures the stroke on select
 
-Coloring the chart is usually the final step in its creating as all elements of the chart can be colored due to the color palette chosen for each particular chart. There are several ways to set the colors to the series, points of other elements. You can use the data set, set the colors through some special methods or add/create a color [palette](Appearance_Settings/Palettes). 
+You can learn more from the [Appearance Settings](../Appearance_Settings) article.
 
-The sample below demonstrates a JumpLine Chart with the adjusted parameters described before. Explore it in the playground to see the code.
+In the sample below, there are two Jump Line series with some of the appearance settings configured:
 
-{sample}BCT\_JumpLine\_Chart\_02{sample}
+```
+// create the first series
+var series1 = chart.jumpline(seriesData_1);
 
+// configure the visual settings of the first series
+series1.stroke("#00cc99", 1, "10 5", "round");
+series1.hoverStroke("#00cc99", 2, "10 5", "round");
+series1.selectStroke("#00cc99", 4, "10 5", "round");
 
-## Samples
+// create the second series
+var series2 = chart.jumpline(seriesData_2);
 
-Find a lot of other samples in [AnyChart Web Line, Spline, Step-Line Charts Gallery](http://anychart.com/products/anychart/gallery/Line,_Spline,_Step-Line_Charts/).
+// configure the visual settings of the second series
+series2.stroke("#0066cc");
+series2.hoverStroke("#0066cc", 2);
+series2.selectStroke("#0066cc", 4);
+```
+
+{sample}BCT\_Jump\_Line\_Chart\_02{sample}
+
+### Labels
+
+Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+
+(???) отмечаю на будущее, что нужно добавить текст
+
+To configure a label on a Jump Line chart, you need to know the following peculiarities regarding formatting and positioning lables.... 
+
+### Tooltips
+
+A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
+
+(???) отмечаю на будущее, что нужно добавить текст
+
+In case of Jump Line charts, there are some peculiarities in formatting the text of tooltips...
+
+### Vertical Jump Line
+
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
+
+Here is the information about creating Vertical Jump Line series:
+
+* [Vertical Jump Line](Vertical/Jump_Line_Chart)

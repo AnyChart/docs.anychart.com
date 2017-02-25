@@ -26,7 +26,7 @@ This article explains how to create a basic Range Area chart as well as configur
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical Range Area](Vertical/Vertical_Range_Area_Chart)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Range Area](Vertical/Range_Area_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>[Range Area Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
@@ -157,6 +157,6 @@ Most types of series in AnyChart can be drawn both in horizontal and vertical or
 
 Here is the information about creating Vertical Range Area series:
 
-* [Vertical Range Area](Vertical/Vertical_Ragne_Area_Chart)
-* [Vertical Range Spline Area](Vertical/Vertical_Range_Spline_Area_Chart)
-* [Vertical Range Step Area](Vertical/Vertical_Range_Step_Area_Chart)
+* [Vertical Range Area](Vertical/Ragne_Area_Chart)
+* [Vertical Range Spline Area](Vertical/Range_Spline_Area_Chart)
+* [Vertical Range Step Area](Vertical/Range_Step_Area_Chart)

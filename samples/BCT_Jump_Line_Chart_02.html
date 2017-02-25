@@ -11,11 +11,18 @@
 
     // create a data set
     var data = anychart.data.set([
-      ["January", 12000, 10000],
-      ["February", 15000, 12000],
-      ["March", 16000, 18000],
-      ["April", 15000, 11000],
-      ["May", 14000, 9000]
+        ["Jan", 1.25, 2.25],
+        ["Feb", 1.25, 2.25],
+        ["Mar", 1.5, 2.5],
+        ["Apr", 1.5, 2.5],
+        ["May", 1.75, 2.75],
+        ["Jun", 1.75, 2.75],
+        ["Jul", 1.75, 2.75],
+        ["Aug", 2, 3],
+        ["Sep", 2, 3],
+        ["Oct", 2.25, 3.25],
+        ["Nov", 2.25, 3.25],
+        ["Dec", 2.5, 3.5]
     ]);
 
     // map the data
@@ -29,7 +36,7 @@
     chart.interactivity().hoverMode("single");
 
     // create the first series, set the data and name
-    var series1 = chart.stick(seriesData_1);
+    var series1 = chart.jumpline(seriesData_1);
     series1.name("2004");
 
     // configure the visual settings of the first series
@@ -38,7 +45,7 @@
     series1.selectStroke("#00cc99", 4, "10 5", "round");
 
     // create the second series, set the data and name  
-    var series2 = chart.stick(seriesData_2);
+    var series2 = chart.jumpline(seriesData_2);
     series2.name("2005");
 
     // configure the visual settings of the second series
@@ -47,13 +54,13 @@
     series2.selectStroke("#0066cc", 4);
 
     // set the chart title
-    chart.title("Stick Chart: Appearance");
+    chart.title("Jump Line Chart: Appearance");
 
     // set the titles of the axes
     var xAxis = chart.xAxis();
     xAxis.title("Month");
     var yAxis = chart.yAxis();
-    yAxis.title("Sales, $");
+    yAxis.title("Rate, %");
 
     // set the container id
     chart.container("container");
