@@ -18,7 +18,7 @@
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
 <tr><td>Vertical</td><td>N/A</td></tr>
-<tr><td>3D</td><td>[3D Pie](3D_Charts/3D_Pie_Chart)</td></tr>
+<tr><td>3D</td><td>[3D Doughnut](3D_Charts/3D_Doughnut_Chart)</td></tr>
 <tr><td>Error Bars</td><td>N/A</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
@@ -26,15 +26,15 @@
 <tr><td>Scatter</td><td>N/A</td></tr>
 <tr><td>Stock</td><td>N/A</td></tr>
 <tr><th colspan=2>RELATED TYPES</th></tr>
-<tr><td></td><td>[Doughnut](Doughnut_Chart)</td></tr>
+<tr><td></td><td>[Pie](Pie_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/pie-chart/" target="_blank">Chartopedia: Pie Chart</a></td></tr>
+<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/doughnut-chart/" target="_blank">Chartopedia: Doughnut Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
 ##Quick Start
 
-{sample}BCT\_Pie\_Chart\_01{sample}
+{sample}BCT\Doughnut\_Chart\_01{sample}
 
 ## Settings
 
@@ -48,10 +48,6 @@ In addition, see the full list of methods available for the Step Line series: {a
 
 ### Labels
 
-Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
+{sample}BCT\_Doughnut\_Chart\_02{sample}
 
-(???) отмечаю на будущее, что нужно добавить текст
-
-To configure a label on a Pie chart, you need to know the following peculiarities regarding formatting and positioning lables.... 
-
-{sample}BCT\_Pie\_Chart\_05{sample}
+{sample}BCT\_Doughnut\_Chart\_03{sample}

@@ -8,9 +8,9 @@
   * [Appearance](#appearance)
   * [Labels](#labels)
   * [Tooltips](#tooltips)
-  * [Start Angle](start_angle)
-  * [Sorting Slices](sorting_slices)
-  * [Exploded Slices](exploded_slices)
+  * [Start Angle](#start_angle)
+  * [Sorting Slices](#sorting_slices)
+  * [Exploded Slices](#exploded_slices)
 
 ##Overview
 

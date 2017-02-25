@@ -10,28 +10,23 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a data set
-    var data = anychart.data.set([
-      ["January", 10000],
-      ["February", 12000],
-      ["March", 18000],
-      ["April", 11000],
-      ["May", 9000]
-    ]);
+    var data = [
+      {x: "A", value: 637166},
+      {x: "B", value: 721630},
+      {x: "C", value: 148662},
+      {x: "D", value: 78662},
+      {x: "E", value: 90000}
+    ];
 
-    // create a chart
-    var chart = anychart.area();
+    // create a chart and set the data
+    var chart = anychart.pie(data);
 
-    // create an area series and set the data
-    var series = chart.area(data);
-    
+    // set the inner radius
+    // to turn the pie chart into a doughnut chart
+    chart.innerRadius("30%");
+
     // set the chart title
-    chart.title("Area Chart: Basic Sample");
-
-    // set the titles of the axes
-    var xAxis = chart.xAxis();
-    xAxis.title("Month");
-    var yAxis = chart.yAxis();
-    yAxis.title("Sales, $");
+    chart.title("Doughnut Chart: Basic Sample");
 
     // set the container id
     chart.container("container");
