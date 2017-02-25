@@ -38,9 +38,9 @@
 
 ## Settings
 
-[Pie Chart](Pie_Chart)
-[General Settings](General_Settings)
-{api:anychart.charts.Pie}anychart.charts.Pie{api}
+* [Pie Chart](Pie_Chart)
+* [General Settings](General_Settings)
+* {api:anychart.charts.Pie}anychart.charts.Pie{api}
 
 ## Special Settings
 
