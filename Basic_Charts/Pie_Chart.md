@@ -40,7 +40,7 @@
 ##Quick Start
 
 ```
-// create a data set
+// create data
 var data = [
   {x: "A", value: 637166},
   {x: "B", value: 721630},
