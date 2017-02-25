@@ -39,6 +39,26 @@
 
 ##Quick Start
 
+```
+// create a data set
+var data = [
+  {x: "A", value: 637166},
+  {x: "B", value: 721630},
+  {x: "C", value: 148662},
+  {x: "D", value: 78662},
+  {x: "E", value: 90000}
+];
+
+// create a chart and set the data
+var chart = anychart.pie(data);
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
+```
+
 {sample}BCT\_Pie\_Chart\_01{sample}
 
 ##General Settings
@@ -56,11 +76,32 @@ Here is a full list of methods used to configure visual settings that are availa
 * {api:anychart.charts.Pie#fill}fill(){api}, {api:anychart.charts.Pie#hatchFill}hatchFill(){api}, {api:anychart.charts.Pie#stroke}stroke(){api} set the fill, hatch fill, and stroke
 * {api:anychart.charts.Pie#hoverFill}hoverFill(){api}, {api:anychart.charts.Pie#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.Pie#hoverStroke}hoverStroke(){api} configure the visual settings on hover
 
-animation, background, hatchFillPalette, palette, connectorStroke?
+```
+// configure visual settings
+chart.fill("#0066cc", 0.5);
+chart.hoverFill("#0066cc", 0.6);
+chart.hatchFill("backwarddiagonal", "#808080");
+chart.hoverHatchFill("backwarddiagonal", "#0066cc", 3);
+chart.stroke("#808080", 3);
+chart.hoverStroke("#0066cc", 3);
+```
 
 {sample}BCT\_Pie\_Chart\_02{sample}
 
+```
+// enable aqua style
+chart.fill("aquastyle");
+```
+
 {sample}BCT\_Pie\_Chart\_03{sample}
+
+```
+// create a data set
+var data = [
+  {x: "Pacman", value: 400, fill: "#ffff00", hatchFill: "percent50"},
+  {x: "Not Pacman", value: 130, fill: "#404040"},
+];
+```
 
 {sample}BCT\_Pie\_Chart\_04{sample}
 
@@ -74,6 +115,21 @@ Labels are text or image elements that can be placed anywhere on any chart (you 
 
 To configure a label on a Pie chart, you need to know the following peculiarities regarding formatting and positioning lables.... 
 
+```
+// set the position of labels
+chart.labels().position('outside');
+
+// configure connectors
+chart.connectorStroke(
+// thickness, color
+  "2 #595959",
+// opacity
+  1,
+// dashes and gaps
+  "2 2"
+);
+```
+
 {sample}BCT\_Pie\_Chart\_05{sample}
 
 ### Tooltips
@@ -86,12 +142,43 @@ In case of Pie charts, there are some peculiarities in formatting the text of to
 
 ### Start Angle
 
+```
+chart.startAngle(90);
+```
+
 {sample}BCT\_Pie\_Chart\_06{sample}
 
 ### Sorting Slices
 
+```
+chart.sort("asc");
+```
+```
+chart.sort("desc");
+```
+
 {sample}BCT\_Pie\_Chart\_07{sample}
 
 ### Exploded Slices
+
+```
+    // create a data set
+    var data = [
+      {x: "A", value: 637166},
+      {x: "B", value: 721630},
+      {x: "C", value: 148662},
+      {x: "D", value: 78662, exploded: true},
+      {x: "E", value: 90000}
+    ];
+
+    // create a chart and set the data
+    var chart = anychart.pie(data);
+
+    // set the explosion range
+    chart.explode (30);
+
+    // explode the first slice
+    chart.explodeSlice(2, true);
+```
 
 {sample}BCT\_Pie\_Chart\_08{sample}

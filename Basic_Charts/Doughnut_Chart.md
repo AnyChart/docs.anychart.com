@@ -34,6 +34,30 @@
 
 ##Quick Start
 
+```
+// create a data set
+var data = [
+  {x: "A", value: 637166},
+  {x: "B", value: 721630},
+  {x: "C", value: 148662},
+  {x: "D", value: 78662},
+  {x: "E", value: 90000}
+];
+
+// create a pie chart and set the data
+var chart = anychart.pie(data);
+
+// set the inner radius
+// (to turn the pie chart into a doughnut chart)
+chart.innerRadius("30%");
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
+```
+
 {sample}BCT\_Doughnut\_Chart\_01{sample}
 
 ## Settings
@@ -46,6 +70,29 @@
 
 ### Labels
 
+```
+// set the position of labels
+chart.labels().position('outside');
+
+// configure connectors
+chart.connectorStroke(
+// thickness, color
+  "2 #595959",
+// opacity
+  1,
+// dashes and gaps
+  "2 2"
+);
+```
+
 {sample}BCT\_Doughnut\_Chart\_02{sample}
+
+```
+// set the position of labels
+chart.labels().position('inside');
+
+// set the offset for the labels
+chart.insideLabelsOffset("-75%");
+```
 
 {sample}BCT\_Doughnut\_Chart\_03{sample}
