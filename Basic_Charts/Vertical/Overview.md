@@ -1,5 +1,5 @@
 {:index 1}
-#Overview
+#Vertical Charts
 
 * [Creating a Vertical Chart/Series](#creating_a_vertical_chart_series)
 * [Changing the Orientation On-The-Fly](#onthefly)

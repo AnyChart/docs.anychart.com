@@ -7,7 +7,11 @@
 * [Special Settings](#special_settings)
   * [Appearance](#appearance)
   * [Labels](#labels)
+    * [Outer Labels](#outer_labels)
   * [Tooltips](#tooltips)
+  * [Start Angle](start_angle)
+  * [Sorting Slices](sorting_slices)
+  * [Exploding Slices](exploding_slices)
 
 ##Overview
 
@@ -71,6 +75,10 @@ Labels are text or image elements that can be placed anywhere on any chart (you 
 
 To configure a label on a Pie chart, you need to know the following peculiarities regarding formatting and positioning lables.... 
 
+#### Outer Labels
+
+{sample}BCT\_Pie\_Chart\_05{sample}
+
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
@@ -78,3 +86,15 @@ A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on 
 (???) отмечаю на будущее, что нужно добавить текст
 
 In case of Pie charts, there are some peculiarities in formatting the text of tooltips...
+
+### Start Angle
+
+{sample}BCT\_Pie\_Chart\_06{sample}
+
+### Sorting Slices
+
+{sample}BCT\_Pie\_Chart\_07{sample}
+
+### Exploding Slices
+
+{sample}BCT\_Pie\_Chart\_08{sample}

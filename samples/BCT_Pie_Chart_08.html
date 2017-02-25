@@ -10,19 +10,25 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 
     // create a data set
-    var data = anychart.data.set([
+    var data = [
       {x: "A", value: 637166},
-      {x: "B", value: 721630},
+      {x: "B", value: 721630, exploded: true},
       {x: "C", value: 148662},
       {x: "D", value: 78662},
-      {x: "E", value:  90000}
-    ]);
+      {x: "E", value: 90000}
+    ];
 
     // create a chart and set the data
     var chart = anychart.pie(data);
 
+    // set the explosion range
+    chart.explode (30);
+
+    // explode the first slice
+    chart.explodeSlice(0, true);
+
     // set the chart title
-    chart.title("Pie Chart: Basic Sample");
+    chart.title("Pie Chart: Exploded Slices");
 
     // set the container id
     chart.container("container");
