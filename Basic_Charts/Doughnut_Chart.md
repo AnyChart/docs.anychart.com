@@ -28,21 +28,19 @@
 <tr><th colspan=2>RELATED TYPES</th></tr>
 <tr><td></td><td>[Pie](Pie_Chart)</td></tr>
 <tr><th colspan=2>SEE ALSO</th></tr>
-<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/doughnut-chart/" target="_blank">Chartopedia: Doughnut Chart</a></td></tr>
+<tr><td></td><td><a href="http://www.anychart.com/chartopedia/chart-types/donut-chart/" target="_blank">Chartopedia: Doughnut Chart</a></td></tr>
 <tr><td></td><td>[General Settings](General_Settings)</td></tr>
 </table>
 
 ##Quick Start
 
-{sample}BCT\Doughnut\_Chart\_01{sample}
+{sample}BCT\_Doughnut\_Chart\_01{sample}
 
 ## Settings
 
-The Step Line chart is a modification of the Line chart, so these two types share almost all the settings. You can find more settings in this article: [Line Chart](Line_Chart).
-
-Also, in AnyChart there are many settings that are configured in the same way for all chart types, including the Step Line chart (for example, legend and interactivity settings): [General Settings](General_Settings).
-
-In addition, see the full list of methods available for the Step Line series: {api:anychart.core.cartesian.series.StepLine}anychart.core.cartesian.series.StepLine{api}.
+[Pie Chart](Pie_Chart)
+[General Settings](General_Settings)
+{api:anychart.charts.Pie}anychart.charts.Pie{api}
 
 ## Special Settings
 
