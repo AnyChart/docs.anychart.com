@@ -3,6 +3,7 @@
 * [Overview](#overview)
 * [AnyStock Stick Series Adjustment](#anystock_stick_series_adjustment)
  * [Data](#data)
+ * [Multi-series](#multi_series)  
  * [Switching series type](#switching_series_type)
 * [Visualization](#visualization)
  * [Coloring](#coloring)
@@ -10,13 +11,15 @@
 
 ## Overview
 
-Stick Series are quite an like [Column](Column), but with no width. Read more about Stick Series in the [Stick Series tutorial](../../Basic_Charts/Stick_Chart).
+Stick Series is very similar to [Column](Column) but with no width. Read more about Stick Series in the [Stick Series tutorial](../../Basic_Charts/Stick_Chart).
 
 ## AnyStock Stick Series Adjustment
  
 ### Data
 
-The data in stocks should be formatted as a table, there are two ways of setting it: as an array of arrays or as an array of objects. Using the first way, you define the values only and then map the dataSet. In the second case you need to name each value and then map the dataSet as well. Let's create two samples with the same data differently arranged.
+The data in stocks should be formatted as a table, there are two ways of setting it: as an array of arrays or as an array of objects. 
+
+Here is how to set data as an array of arrays, array contains values and then you map the data set to tell the component which column contains values.
 
 ```
 // set the data
@@ -35,7 +38,7 @@ mapping.addField('value', 1);
 
 {sample}STOCK\_Stick\_01{sample}
 
-In the sample above we arranged data as an array of arrays. The next sample contains the same data, but this time it's arranged as an array of objects.
+The next sample contains the same data, arranged as an array of objects.
 
 ```
 // set the data
@@ -54,6 +57,8 @@ mapping = table.mapAs({x: 'x', value: 'value'});
 {sample}STOCK\_Stick\_02{sample}
 
 Find out more about setting and arranging data in Stocks in the [Stocks Data tutorial](../Data).
+
+### Multi series
 
 Simple multi-series chart:
 

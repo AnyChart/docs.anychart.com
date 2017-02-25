@@ -3,6 +3,7 @@
 * [Overview](#overview)
 * [AnyStock Column Adjustment](#anystock_column_series_adjustment)
  * [Data](#data)
+ * [Multi-series](#multi_series)  
  * [Switching series type](#switching_series_type)
 * [Visualization](#visualization)
  * [Coloring](#coloring)
@@ -16,20 +17,22 @@ Column series is a standard series that uses columns to show the values of a par
 
 ### Data
 
-AnyStock Charts can process table-formatted data. We can arrange the data as array of arrays and as array of objects. The next two code samples contain the same data but formatted differently.
+The data in stocks should be formatted as a table, there are two ways of setting it: as an array of arrays or as an array of objects. 
+
+Here is how to set data as an array of arrays, array contains values and then you map the data set to tell the component which column contains values.
 
 ```
 table = anychart.data.table();
 table.addData([
-  ['2015-12-24T12:00:00', 27],
-  ['2015-12-25T12:00:00', 25.5],
-  ['2015-12-26T12:00:00', 23.1],
-  ['2015-12-27T12:00:00', 26.9],
-  ['2015-12-28T12:00:00', 29.7],
-  ['2015-12-29T12:00:00', 30.3],
-  ['2015-12-30T12:00:00', 23.7],
-  ['2015-12-31T12:00:00', 20.4],
-  ['2016-01-28T12:00:00', 28.7]
+  ['2015-12-24', 27],
+  ['2015-12-25', 25.5],
+  ['2015-12-26', 23.1],
+  ['2015-12-27', 26.9],
+  ['2015-12-28', 29.7],
+  ['2015-12-29', 30.3],
+  ['2015-12-30', 23.7],
+  ['2015-12-31', 20.4],
+  ['2016-01-28', 28.7]
 ]);
 
 mapping = table.mapAs();
@@ -38,18 +41,18 @@ mapping.addField('value', 1);
 
 {sample}STOCK\_Column\_01{sample}
 
-In the code sample above the data is set as array of arrays and mapped. It's necessary to map the data whichever array type you use.
+The next sample contains the same data arranged as array of objects.
 
 ```
 table = anychart.data.table('x');
 table.addData([
-  {"x":'2015-12-24T12:00:00', value: 27},
-  {"x":'2015-12-25T12:00:00', value: 25.5},
-  {"x":'2015-12-26T12:00:00', value: 23.1},
-  {"x":'2015-12-27T12:00:00', value: 26.9},
-  {"x":'2015-12-28T12:00:00', value: 29.7},
-  {"x":'2015-12-29T12:00:00', value: 30.3},
-  {"x":'2015-12-30T12:00:00', value: 23.7}
+  {"x":'2015-12-24', value: 27},
+  {"x":'2015-12-25', value: 25.5},
+  {"x":'2015-12-26', value: 23.1},
+  {"x":'2015-12-27', value: 26.9},
+  {"x":'2015-12-28', value: 29.7},
+  {"x":'2015-12-29', value: 30.3},
+  {"x":'2015-12-30', value: 23.7}
 ]);
 
 mapping = table.mapAs({x:'x', value:'value'});
@@ -58,6 +61,8 @@ mapping = table.mapAs({x:'x', value:'value'});
 {sample}STOCK\_Column\_02{sample}
 
 More about data settings in stocks can be found in the [Stock Data tutorial](../Data).
+
+### Multi series
 
 Multiple series on different plots:
 

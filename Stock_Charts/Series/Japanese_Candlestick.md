@@ -3,6 +3,7 @@
 * [Overview](#overview)
 * [AnyStock Candlestick Series Adjustment](#anystock_candlestick_series_adjustment)
  * [Data](#data)
+ * [Multi-series](#multi_series)  
  * [Switching series type](#switching_series_type)
 * [Visualization](#visualization)
  * [Coloring](#coloring)
@@ -16,7 +17,39 @@ Candlestick Charts are to representing changes of stock prices. This series has 
 
 ### Data
 
-Data in stocks should be defined as table. There are two ways of data arranging: as array of objects and as array of arrays. Below you can find two samples with the same data but different types of this data arranged. The first sample demonstrates the view of the stock with the data arranged as array of objects. The second one shows a stock which data is an array of arrays.
+The data in stocks should be formatted as a table, there are two ways of setting it: as an array of arrays or as an array of objects. 
+
+Here is how to set data as an array of arrays, array contains values and then you map the data set to tell the component which column contains values.
+
+```
+// set the data
+table = anychart.data.table();
+table.addData([
+    ['2004-01-02', 92.86, 93.05, 91.20, 91.55],
+    ['2004-01-05', 92.00, 93.09, 92.00, 93.05],
+    ['2004-01-06', 92.20, 93.19, 92.14, 93.06],
+    ['2004-01-07', 93.14, 93.38, 92.47, 92.78],
+    ['2004-01-08', 93.21, 93.21, 92.03, 93.04]
+]);
+  
+// map the data
+mapping = table.mapAs();
+mapping.addField('open', 1);
+mapping.addField('high', 2);
+mapping.addField('low', 3);
+mapping.addField('close', 4);
+
+// chart type
+chart = anychart.stock();
+
+// set the series
+var series = chart.plot(0).candlestick(mapping);
+series.name("ACME Corp.");
+```
+
+{sample}STOCK\_Candlestick\_01{sample}
+
+The next sample contains the same data arranged as array of objects.
 
 ```
 // set the data
@@ -38,35 +71,11 @@ var series = chart.plot(0).candlestick(mapping);
 series.name("ACME Corp.");
 ```
 
-{sample}STOCK\_Candlestick\_01{sample}
-
-```
-// set the data
-table = anychart.data.table();
-table.addData([
-    ['2004-01-02', 92.86, 93.05, 91.20, 91.55, 5327800],
-    ['2004-01-05', 92.00, 93.09, 92.00, 93.05, 5276300],
-    ['2004-01-06', 92.20, 93.19, 92.14, 93.06, 4380000],
-    ['2004-01-07', 93.14, 93.38, 92.47, 92.78, 4927600],
-    ['2004-01-08', 93.21, 93.21, 92.03, 93.04, 6179800]
-]);
-  
-// map the data
-mapping = table.mapAs();
-mapping.addField('open', 1);
-mapping.addField('high', 2);
-mapping.addField('low', 3);
-mapping.addField('close', 4);
-
-// chart type
-chart = anychart.stock();
-
-// set the series
-var series = chart.plot(0).candlestick(mapping);
-series.name("ACME Corp.");
-```
-
 {sample}STOCK\_Candlestick\_02{sample}
+
+The next sample contains the same data arranged as array of objects.
+
+### Multi series
 
 Simple multi-series chart:
 

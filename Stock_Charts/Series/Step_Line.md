@@ -17,7 +17,9 @@ Step Line Series is rather similar to [Line Series](Line). Find all information 
 
 ### Data 
 
-The Data in Stocks should be represented in table format and arranged as an array of arrays or objects. Look at the next two samples: they demonstrate the same data differently arranged.
+The data in stocks should be formatted as a table, there are two ways of setting it: as an array of arrays or as an array of objects. 
+
+Here is how to set data as an array of arrays, array contains values and then you map the data set to tell the component which column contains values.
 
 ```
 // set the data
@@ -63,7 +65,7 @@ mapping = table.mapAs({x: 'x', value: 'value'});
 
 You can read more about managing Data in Stocks in the [Stock Data tutorial](../Data).
 
-### Multi-series
+### Multi series
 
 This sample shows a simple multi-series Step Line stock. 
 

@@ -19,34 +19,9 @@ See also: [Candlestick](Candlestick).
 
 ### Data
 
-The data in stocks must be represented in table format. There are two ways how to arrange the data: as array of array or as array of objects. Let's now create a couple of samples with the same data but different ways of its arranging. This will help to understand the principles data arranging.
+The data in stocks should be formatted as a table, there are two ways of setting it: as an array of arrays or as an array of objects. 
 
-```
-// set the data
-table = anychart.data.table('x');
-table.addData([        
-	{'x': '2015-04-01', 'o': 18.23, 'h': 19.36, 'l': 18.18, 'c': 19.31},
-	{'x': '2015-04-02', 'o': 19.50, 'h': 19.89, 'l': 19.00, 'c': 19.29},
-	{'x': '2015-04-03', 'o': 19.13, 'h': 19.15, 'l': 18.43, 'c': 18.75},
-	{'x': '2015-04-06', 'o': 18.54, 'h': 18.76, 'l': 18.27, 'c': 18.76},
-	{'x': '2015-04-07', 'o': 18.76, 'h': 19.14, 'l': 18.63, 'c': 18.76},
-	{'x': '2015-04-08', 'o': 18.97, 'h': 19.62, 'l': 18.96, 'c': 19.19}
-]);
-  
-// map the data
-mapping = table.mapAs({'open':"o",'high': "h", 'low':"l", 'close':"c"});
-chart = anychart.stock();
-
-// set the series
-var series = chart.plot(0).ohlc(mapping);
-series.name("ACME Corp. stock prices (apr 2015 - jul 2015)");
-```
-
-{sample}STOCK\_OHLC\_02{sample}
-
-This sample had its data arranged as an array of objects. It's necessary to define the fields' names in the data table, despite later this data will be mapped. Also we have to define the name of the X-Axis variable to the {api:anychart.data#table}table(){api} method.
-
-The next sample contains the same data items arranged as array of arrays. 
+Here is how to set data as an array of arrays, array contains values and then you map the data set to tell the component which column contains values.
 
 ```
 // set the data
@@ -75,6 +50,31 @@ series.name("ACME Corp. stock prices");
 ```
 
 {sample}STOCK\_OHLC\_01{sample}
+
+The next sample contains the same data arranged as array of objects. 
+
+```
+// set the data
+table = anychart.data.table('x');
+table.addData([        
+	{'x': '2015-04-01', 'o': 18.23, 'h': 19.36, 'l': 18.18, 'c': 19.31},
+	{'x': '2015-04-02', 'o': 19.50, 'h': 19.89, 'l': 19.00, 'c': 19.29},
+	{'x': '2015-04-03', 'o': 19.13, 'h': 19.15, 'l': 18.43, 'c': 18.75},
+	{'x': '2015-04-06', 'o': 18.54, 'h': 18.76, 'l': 18.27, 'c': 18.76},
+	{'x': '2015-04-07', 'o': 18.76, 'h': 19.14, 'l': 18.63, 'c': 18.76},
+	{'x': '2015-04-08', 'o': 18.97, 'h': 19.62, 'l': 18.96, 'c': 19.19}
+]);
+  
+// map the data
+mapping = table.mapAs({'open':"o",'high': "h", 'low':"l", 'close':"c"});
+chart = anychart.stock();
+
+// set the series
+var series = chart.plot(0).ohlc(mapping);
+series.name("ACME Corp. stock prices");
+```
+
+{sample}STOCK\_OHLC\_02{sample}
 
 Multiple series in different plots:
 

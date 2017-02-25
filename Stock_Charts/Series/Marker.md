@@ -17,7 +17,37 @@ With Marker series every point on the plot is presented with a symbol. Find more
 
 ### Data
 
-The first difference between Basic Charts and AnyStock is the data format. All data points in Stocks should be represented in table format. Let's create a sample to show how it looks like: 
+The data in stocks should be formatted as a table, there are two ways of setting it: as an array of arrays or as an array of objects. 
+
+Here is how to set data as an array of arrays, array contains values and then you map the data set to tell the component which column contains values.
+
+```
+// set the data
+table = anychart.data.table();
+table.addData([
+	['1990-01-01', 248709],
+	['1995-01-01', 272119],
+	['2000-01-01', 281421],
+	['2005-01-01', 299456],
+	['2010-01-01', 308745],
+	['2015-01-01', 318914]
+]);
+
+// map the data
+mapping = table.mapAs();
+mapping.addField('value', 1);
+
+// chart type
+chart = anychart.stock();
+
+// set the series
+var series = chart.plot(0).marker(mapping);
+series.name("USA");
+```
+
+{sample}STOCK\_Marker\_01{sample}
+
+The next sample contains the same data arranged as array of objects.
 
 ```
 // set the data
@@ -35,34 +65,6 @@ table.addData([
 
 // map the data
 mapping = table.mapAs({x:'x', value:'value'});
-
-// chart type
-chart = anychart.stock();
-
-// set the series
-var series = chart.plot(0).marker(mapping);
-series.name("USA");
-```
-
-{sample}STOCK\_Marker\_01{sample}
-
-In this sample, the data was arranged as array of objects. Now, let's look at the same sample with this data arranged as array of arrays.
-
-```
-// set the data
-table = anychart.data.table();
-table.addData([
-	['1990-01-01', 248709],
-	['1995-01-01', 272119],
-	['2000-01-01', 281421],
-	['2005-01-01', 299456],
-	['2010-01-01', 308745],
-	['2015-01-01', 318914]
-]);
-
-// map the data
-mapping = table.mapAs();
-mapping.addField('value', 1);
 
 // chart type
 chart = anychart.stock();

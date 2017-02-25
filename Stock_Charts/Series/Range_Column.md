@@ -3,6 +3,7 @@
 * [Overview](#overview)
 * [AnyStock Range Column Series Adjustment](#anystock_range_column_series_adjustment)
  * [Data](#data)
+ * [Multi-series](#multi_series)  
  * [Switching series type](#switching_series_type)
 * [Visualization](#visualization)
  * [Coloring](#coloring)
@@ -16,7 +17,9 @@ Range Column series is quite similar to Basic [Column Chart](Column). You can fi
 
 ### Data
 
-AnyStock Charts can process table-formatted data. We can arrange the data as array of arrays or as array of objects. The next two code samples contain the same data which is formatted differently.
+The data in stocks should be formatted as a table, there are two ways of setting it: as an array of arrays or as an array of objects. 
+
+Here is how to set data as an array of arrays, array contains values and then you map the data set to tell the component which column contains values.
 
 ```
 table = anychart.data.table();
@@ -36,7 +39,7 @@ mapping.addField('high', 2);
 
 {sample}STOCK\_Range\_Column\_01{sample}
 
-In the code sample above the data is set as array of arrays and mapped. It's necessary to map the data, no matter how you arrange yor data.
+The next sample contains the same data arranged as array of objects.
 
 ```
 table = anychart.data.table('x');
@@ -55,6 +58,8 @@ mapping = table.mapAs({low: 'low', high: 'high'});
 {sample}STOCK\_Range\_Column\_02{sample}
 
 More about data settings in stocks can be found in the [Stock Data tutorial](../Data). Now, let's look at some stock settings.
+
+### Multi series
 
 Multiple series on different plots:
 

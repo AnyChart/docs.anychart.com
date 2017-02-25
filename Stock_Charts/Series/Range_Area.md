@@ -3,6 +3,7 @@
 * [Overview](#overview)
 * [AnyStock Range Area Series Adjustment](#anystock_range_area_series_adjustment)
  * [Data](#data)
+ * [Multi-series](#multi_series)  
  * [Switching series type](#switching_series_type)
 * [Visualization](#visualization)
  * [Coloring](#coloring)
@@ -18,42 +19,9 @@ See also: [Range Spline Area](Range_Spline_Area).
 
 ### Data
 
-The data in Stocks should be defined in table format, arranged as array of arrays or array of objects. The next two samples demonstrates stocks with the same data differently arranged. Look through the code samples or explore the samples in our playground to understand the difference between these two types.
+The data in stocks should be formatted as a table, there are two ways of setting it: as an array of arrays or as an array of objects. 
 
-The data in this sample below is arranged as array of objects.
-
-```
-// set the data
-table = anychart.data.table('x');
-table.addData([
-    {x: "2000-01-01", low: 2, high: 6},
-    {x: "2000-02-01", low: 2, high: 7},
-    {x: "2000-03-01", low: 3, high: 10},
-    {x: "2000-04-01", low: 5, high: 13},
-    {x: "2000-05-01", low: 8, high: 17},
-    {x: "2000-06-01", low: 11, high: 20},
-    {x: "2000-07-01", low: 13, high: 22},
-    {x: "2000-08-01", low: 13, high: 21},
-    {x: "2000-09-01", low: 11, high: 19},
-    {x: "2000-10-01", low: 8, high: 14},
-    {x: "2000-11-01", low: 5, high: 10},
-    {x: "2000-12-01", low: 5, high: 7}
-]);
-  
-// map the data
-mapping = table.mapAs({x:'x', high:'high', low: 'low'});
-
-// chart type
-chart = anychart.stock();
-
-// set the series
-var series = chart.plot(0).rangeArea(mapping);
-series.name("Temperature Range");
-```
-
-{sample}STOCK\_Range\_Area\_01{sample}
-
-The next sample demonstrates the data arranged as array of arrays. 
+Here is how to set data as an array of arrays, array contains values and then you map the data set to tell the component which column contains values.
 
 ```
 // set the data
@@ -86,7 +54,42 @@ var series = chart.plot(0).rangeArea(mapping);
 series.name("Temperature Range");
 ```
 
+{sample}STOCK\_Range\_Area\_01{sample}
+
+The next sample demonstrates the data arranged as array of objects.
+
+```
+// set the data
+table = anychart.data.table('x');
+table.addData([
+    {x: "2000-01-01", low: 2, high: 6},
+    {x: "2000-02-01", low: 2, high: 7},
+    {x: "2000-03-01", low: 3, high: 10},
+    {x: "2000-04-01", low: 5, high: 13},
+    {x: "2000-05-01", low: 8, high: 17},
+    {x: "2000-06-01", low: 11, high: 20},
+    {x: "2000-07-01", low: 13, high: 22},
+    {x: "2000-08-01", low: 13, high: 21},
+    {x: "2000-09-01", low: 11, high: 19},
+    {x: "2000-10-01", low: 8, high: 14},
+    {x: "2000-11-01", low: 5, high: 10},
+    {x: "2000-12-01", low: 5, high: 7}
+]);
+  
+// map the data
+mapping = table.mapAs({x:'x', high:'high', low: 'low'});
+
+// chart type
+chart = anychart.stock();
+
+// set the series
+var series = chart.plot(0).rangeArea(mapping);
+series.name("Temperature Range");
+```
+
 {sample}STOCK\_Range\_Area\_02{sample}
+
+### Multi series
 
 Simple multi-series chart:
 

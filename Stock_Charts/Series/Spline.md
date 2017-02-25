@@ -19,7 +19,9 @@ Read more about Basic Spline in the [Spline Chart article](../../Basic_Charts/Sp
 
 ### Data 
 
-The Data in Stocks should be represented in table format and arranged as array of arrays or objects. Look at the next two samples: they display the same data, but in the first sample the data is set as array of objects, while the second sample demonstrates this data as array of arrays.
+The data in stocks should be formatted as a table, there are two ways of setting it: as an array of arrays or as an array of objects. 
+
+Here is how to set data as an array of arrays, array contains values and then you map the data set to tell the component which column contains values.
 
 ```
 // set the data
@@ -60,7 +62,7 @@ mapping.addField('value', 1);
 
 You are free to choose how you will arrange your data. You can read more about mananging Data in Stocks in the [Stock Data tutorial](../Data).
 
-### Multi-series
+### Multi series
 
 This sample shows a simple multi-series Spline stock. 
 

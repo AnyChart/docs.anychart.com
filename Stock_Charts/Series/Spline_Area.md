@@ -3,6 +3,7 @@
 * [Overview](#overview)
 * [AnyStock Spline Area Series Adjustment](#anystock_spline_area_series_adjustment)
  * [Data](#data)
+ * [Multi-series](#multi_series)  
  * [Switching series type](#switching_series_type)
 * [Visualization](#visualization)
  * [Coloring](#coloring)
@@ -16,7 +17,9 @@ Spline Area series is very similar to [Area series](Area). To know how to manage
 
 ### Data
 
-Data in stocks should be set in the table format. It can be arranged in two ways: as array of arrays and as array of objects. Let's create two samples demonstrating the same data that will be arranged differently.
+The data in stocks should be formatted as a table, there are two ways of setting it: as an array of arrays or as an array of objects. 
+
+Here is how to set data as an array of arrays, array contains values and then you map the data set to tell the component which column contains values.
 
 ```
 // set the data
@@ -37,7 +40,7 @@ mapping.addField('value', 1);
 
 {sample}STOCK\_Spline\_Area\_01{sample}
 
-The sample above demonstrates how a stock looks with its data arranged as an array of arrays. The next sample contains the same data arranged as array of objects.
+The next sample demonstrates the data arranged as array of objects. 
 
 ```
 // set the data
@@ -58,6 +61,8 @@ mapping = table.mapAs({x:'x', value:'value'});
 {sample}STOCK\_Spline\_Area\_02{sample}
 
 To know more about the data setting in stocks see [Stock Data tutorial](../Data). 
+
+### Multi series
 
 Simple multi-series chart:
 

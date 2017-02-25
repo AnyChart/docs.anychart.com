@@ -3,6 +3,7 @@
 * [Overview](#overview)
 * [AnyStock Line Series Adjustment](#anystock_line_series_adjustment)
  * [Data](#data)
+ * [Multi-series](#multi_series)  
  * [Switching series type](#switching_series_type)
 * [Visualization](#visualization)
  * [Coloring](#coloring)
@@ -16,18 +17,20 @@ Line Series is usually used to show a some parameter changing in time or in depe
  
 ### Data
 
-The data in stocks should be table-formatted, though there are two ways of setting it: as array of arrays or as array of objects. Using the first way, you define the values only and then map the dataSet. In the second case you need to name each value and then map the dataSet as well. Let's create two samples with the same data differently arranged.
+The data in stocks should be formatted as a table, there are two ways of setting it: as an array of arrays or as an array of objects. 
+
+Here is how to set data as an array of arrays, array contains values and then you map the data set to tell the component which column contains values. 
 
 ```
 // set the data
 table = anychart.data.table();
 table.addData([
-    ['2016-01-01T12:00:00', 1.0860],
-    ['2016-01-04T12:00:00', 1.0832],
-    ['2016-01-05T12:00:00', 1.0780],
-    ['2016-01-06T12:00:00', 1.0781],
-    ['2016-01-07T12:00:00', 1.0936],
-    ['2016-01-08T12:00:00', 1.0932]
+    ['2016-01-01', 1.0860],
+    ['2016-01-04', 1.0832],
+    ['2016-01-05', 1.0780],
+    ['2016-01-06', 1.0781],
+    ['2016-01-07', 1.0936],
+    ['2016-01-08', 1.0932]
 ]);
 
 // map the data
@@ -37,28 +40,29 @@ mapping.addField('value', 1);
 
 {sample}STOCK\_Line\_01{sample}
 
-In the sample above we arranged data as an array of arrays. The next sample contains the same data, but this time it's arranged as an array of objects.
+The next sample contains the same data arranged as array of objects.
 
 ```
 // set the data
 table = anychart.data.table('x');
 table.addData([
-    {'x':"2016-01-01T12:00:00", 'value': 1.0860},
-    {'x':"2016-01-04T12:00:00", 'value': 1.0832},
-    {'x':"2016-01-05T12:00:00", 'value': 1.0780},
-    {'x':"2016-01-06T12:00:00", 'value': 1.0781},
-    {'x':"2016-01-07T12:00:00", 'value': 1.0936},
-    {'x':"2016-01-08T12:00:00", 'value': 1.0932},
+    {'x':"2016-01-01", 'value': 1.0860},
+    {'x':"2016-01-04", 'value': 1.0832},
+    {'x':"2016-01-05", 'value': 1.0780},
+    {'x':"2016-01-06", 'value': 1.0781},
+    {'x':"2016-01-07", 'value': 1.0936},
+    {'x':"2016-01-08", 'value': 1.0932},
 ]);
 
 // map the data
 mapping = table.mapAs({x: 'x', value: 'value'});
-
 ```
 
 {sample}STOCK\_Line\_02{sample}
 
 Find more about setting and arranging data in Stocks in the [Stocks Data tutorial](../Data).
+
+### Multi series
 
 Simple multi-series chart:
 

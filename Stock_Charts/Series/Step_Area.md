@@ -17,7 +17,9 @@ Step Area Series is quite similar to [Area series](Area), both in visualization 
 
 ### Data
 
-When we set the data for the Step Area series in Stocks, we need to set it in table format, arranged as array of arrays or array of objects. Look through the next two samples: they both display the same data, but in the first one it is arranged as array of arrays.
+The data in stocks should be formatted as a table, there are two ways of setting it: as an array of arrays or as an array of objects. 
+
+Here is how to set data as an array of arrays, array contains values and then you map the data set to tell the component which column contains values.
 
 ```
 // set the data
@@ -63,7 +65,7 @@ mapping = table.mapAs({x: 'x', value: 'value'});
 
 You can read more about mananging Data in Stocks in the [Stock Data tutorial](../Data).
 
-### Multi-series
+### Multi series
 
 Simple multi-series chart:
 
