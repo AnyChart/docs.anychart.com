@@ -18,7 +18,7 @@
  * [Wagner6](#wagner6)
  * [WSG84](#wsg84)
 * [Changing region projection](#changing_region_projection)
- * [Using PROJ4.JS](#using_proj.js)
+ * [Using PROJ4.JS](#using_proj4.js)
 
 ##Overview
 
