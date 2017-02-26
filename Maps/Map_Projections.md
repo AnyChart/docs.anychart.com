@@ -280,7 +280,7 @@ All samples above show how to change projection of a map, but there is also an o
 
 ### Using PROJ4.JS
 
-Proj4 is a JavaScript library to transform coordinates from one coordinate system to another, including datum transformations. It is necessary to reference Proj4 if the map uses traditional coordinates for setting the position of any component of the map such as labels, bubbles, etc. Also proj4 is essential to be added when the map uses some projection. Reference it with the ```<script>``` tag:
+Proj4 is a JavaScript library to transform coordinates from one coordinate system to another, including datum transformations. It is necessary to reference Proj4 if the map uses traditional coordinates for setting the position of any component of the map such as labels, bubbles, etc. Also proj4 is essential to be added when the map uses some projection. Reference it with the `<script>` tag:
 
 ```
 <head>
