@@ -11,6 +11,12 @@
   <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script x-export="map">anychart.onDocumentReady(function() {
 
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See http://docs.anychart.com/latest/Maps/Map_Projections
+
     var dataSet = anychart.data.set([
       {'id': 'AU.WA', 'value': 170},  // Western Australia
       {'id': 'AU.NS', 'value': 260},  // New South Wales

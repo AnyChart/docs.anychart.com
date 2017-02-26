@@ -12,6 +12,12 @@
   <script x-export="chart">
   anychart.onDocumentReady(function() {
 
+// This sample uses 3rd party proj4 component
+// that makes it possible to set coordinates
+// for the points and labels on the map and
+// required for custom projections and grid labels formatting.
+// See http://docs.anychart.com/latest/Maps/Map_Projections
+
 // create data set
 var dataSet = anychart.data.set([
     {'size': 7565500, 'x':"6803", 'y': "-1537"},
@@ -38,10 +44,10 @@ series.geoIdField("code_hasc");
 // set container id for the chart
 map.container('container');
 
-      map.listen('mousemove', function(e) {
-          var scale = map.scale();
-          console.log(scale.inverseTransform(e.clientX, e.clientY));
-      });
+map.listen('mousemove', function(e) {
+  var scale = map.scale();
+  console.log(scale.inverseTransform(e.clientX, e.clientY));
+});
 
 // initiate chart drawing
 map.draw();

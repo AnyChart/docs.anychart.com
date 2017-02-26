@@ -11,9 +11,11 @@
   <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script x-export="map">anychart.onDocumentReady(function () {
 
-    // This sample uses the 3rd party proj4.js library for
-    // getting and setting the coordinates. 
-    // Find more information about using this in the "Map Projections" article.
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See http://docs.anychart.com/latest/Maps/Map_Projections
 
     map = anychart.map();
     map.geoData(anychart.maps.australia);

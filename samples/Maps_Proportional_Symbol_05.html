@@ -10,7 +10,13 @@
   <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
   <script x-export="chart">
-      anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function() {
+
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See http://docs.anychart.com/latest/Maps/Map_Projections
 
     // create data set
     var dataSet = anychart.data.set([
@@ -32,31 +38,31 @@
     //create bubble series
     var series = map.bubble(dataSet);
 
-      // changes the fill and hoverFill colors
-      series.fill("#90caf9");
-      series.hoverFill("#b3e5fc");
-      series.labels().fontColor("#0277bd");
-      series.hoverLabels().fontColor("#01579b");
+    // changes the fill and hoverFill colors
+    series.fill("#90caf9");
+    series.hoverFill("#b3e5fc");
+    series.labels().fontColor("#0277bd");
+    series.hoverLabels().fontColor("#01579b");
 
-      // changes the stroke and hoverStroke colors
-      series.stroke("#64b5f6");
-      series.hoverStroke("#81d4fa");
+    // changes the stroke and hoverStroke colors
+    series.stroke("#64b5f6");
+    series.hoverStroke("#81d4fa");
 
-      // sets the select colors
-      series.selectStroke("#546e7a");
-      series.selectFill("#78909c");
-      series.selectLabels().fontColor("#263238");
+    // sets the select colors
+    series.selectStroke("#546e7a");
+    series.selectFill("#78909c");
+    series.selectLabels().fontColor("#263238");
 
-//set series geo id field settings
-series.geoIdField("code_hasc");
+    //set series geo id field settings
+    series.geoIdField("code_hasc");
 
-// set container id for the chart
-map.container('container');
+    // set container id for the chart
+    map.container('container');
 
-// initiate chart drawing
-map.draw();
+    // initiate chart drawing
+    map.draw();
 
-    });
+});
 </script>
 
 </head>

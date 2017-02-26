@@ -12,6 +12,12 @@
   <script x-export="chart">
   anychart.onDocumentReady(function() {
 
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See http://docs.anychart.com/latest/Maps/Map_Projections
+
 // create data set
 var dataSet = anychart.data.set([
     {'id': 'AU.NS', 'size': 7565500},
@@ -23,23 +29,23 @@ var dataSet = anychart.data.set([
     {'id': 'AU.TS', 'size': 514700}
 ]);
 
-// create map chart
-map = anychart.map();
+  // create map chart
+  map = anychart.map();
 
-// set geodata using http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js
-map.geoData(anychart.maps.australia);
+  // set geodata using http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js
+  map.geoData(anychart.maps.australia);
 
-//create bubble series
-var series = map.bubble(dataSet);
+  //create bubble series
+  var series = map.bubble(dataSet);
 
-//set series geo id field settings
-series.geoIdField("code_hasc");
+  //set series geo id field settings
+  series.geoIdField("code_hasc");
 
-// set container id for the chart
-map.container('container');
+  // set container id for the chart
+  map.container('container');
 
-// initiate chart drawing
-map.draw();
+  // initiate chart drawing
+  map.draw();
 });
 </script>
 
