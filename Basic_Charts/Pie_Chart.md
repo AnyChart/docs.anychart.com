@@ -16,6 +16,12 @@
 
 ##Overview
 
+A pie chart...
+
+The pie chart...
+
+This article explains how to create a basic Pie chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Pie chart's characteristics:
+
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
 <tr><td>Class</td><td>{api:anychart.charts.Pie}anychart.charts.Pie{api}</td></tr>
@@ -40,6 +46,8 @@
 </table>
 
 ##Quick Start
+
+To create a Pie chart, use the {api:anychart#area}anychart.pie(){api} chart constructor, like in the following sample:
 
 ```
 // create data
@@ -73,10 +81,14 @@ Read the overview of general settings: [General Settings](General_Settings).
 
 ### Appearance
 
-Here is a full list of methods used to configure visual settings that are available for the Pie series:
+Here is a full list of methods used to configure visual settings that are available for the Pie chart:
 
 * {api:anychart.charts.Pie#fill}fill(){api}, {api:anychart.charts.Pie#hatchFill}hatchFill(){api}, {api:anychart.charts.Pie#stroke}stroke(){api} set the fill, hatch fill, and stroke
 * {api:anychart.charts.Pie#hoverFill}hoverFill(){api}, {api:anychart.charts.Pie#hoverHatchFill}hoverHatchFill(){api}, {api:anychart.charts.Pie#hoverStroke}hoverStroke(){api} configure the visual settings on hover
+
+You can learn more from the [Appearance Settings](../Appearance_Settings) article.
+
+In the sample below, there a Pie chart with some of the appearance settings configured:
 
 ```
 // configure visual settings
@@ -90,12 +102,15 @@ chart.hoverStroke("#0066cc", 3);
 
 {sample}BCT\_Pie\_Chart\_02{sample}
 
+There is a special visual setting available the Pie chart – Aqua Style. To apply it, use the {api:anychart.charts.Pie#fill}fill(){api} method with the <strong>"aquastyle"</strong> parameter:
+
 ```
 // enable aqua style
 chart.fill("aquastyle");
 ```
-
 {sample}BCT\_Pie\_Chart\_03{sample}
+
+Please note that the methods listed above affect the whole chart. The appearance of particular slices can be configured by adding special fields to the data, which should be set in object notation:
 
 ```
 // create data
@@ -119,6 +134,8 @@ To configure a label on a Pie chart, you need to know the following peculiaritie
 
 #### Outer Labels
 
+...
+
 ```
 // configure connectors
 chart.connectorStroke({color: "#595959", thickness: 2, dash:"2 2"});
@@ -136,6 +153,8 @@ In case of Pie charts, there are some peculiarities in formatting the text of to
 
 ### Start Angle
 
+...
+
 ```
 chart.startAngle(90);
 ```
@@ -143,6 +162,8 @@ chart.startAngle(90);
 {sample}BCT\_Pie\_Chart\_06{sample}
 
 ### Sorting Slices
+
+...
 
 ```
 chart.sort("asc");
@@ -154,6 +175,8 @@ chart.sort("desc");
 {sample}BCT\_Pie\_Chart\_07{sample}
 
 ### Exploded Slices
+
+...
 
 ```
     // create a data
@@ -179,6 +202,7 @@ chart.sort("desc");
 
 ### Radius
 
+...
 задавать можно как в процентах от его bounds, так и в числах
 
 {sample}BCT\_Pie\_Chart\_09{sample}

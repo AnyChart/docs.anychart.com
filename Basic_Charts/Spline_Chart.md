@@ -11,7 +11,7 @@ A spline chart is a line chart in which data points are connected by smooth curv
 
 Like the regular line chart, it is commonly used to emphasize trends in data over equal time intervals.
 
-The Line and Spline chart types share all the settings, so this article explains just how to create a basic Spline chart. To learn about other settings, read the [Line Chart](Line_Chart) article. You can also see the table below to get a brief overview of the Spline Chart's characteristics:
+The Line and Spline chart types share all the settings, so this article explains just how to create a basic Spline chart. To learn about other settings, read the [Line Chart](Line_Chart) article. You can also see the table below to get a brief overview of the Spline chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>

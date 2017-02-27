@@ -19,7 +19,7 @@ A column chart is a chart that visualizes data as a set of rectangular columns, 
 
 The column chart is used very widely to show comparison among categories and sometimes to visualize time-based data.
 
-This article explains how to create a basic Column chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Column Chart's characteristics:
+This article explains how to create a basic Column chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Column chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
