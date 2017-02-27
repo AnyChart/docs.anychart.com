@@ -12,16 +12,13 @@
         margin: 0;
         padding: 0;
       }
-    </style>
-
-    
+    </style>    
 </head>
 <body>
 <div id="container"></div>
 <script x-export="stage">
 
 stage = acgraph.create("container");
-console.log(stage.width(), stage.getBounds());
  stage.rect(22, 18, stage.width() - 44, stage.height() / 3 - 22)
          .fill("none")
          .stroke("5 orange .7");
