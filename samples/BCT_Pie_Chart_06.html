@@ -23,7 +23,7 @@
 
     // set the position and data for the first pie chart
     var pie1 = anychart.pie(data);
-    pie1.title("Start Angle: Default");
+    pie1.title("Start Angle: Default (0°)");
     pie1.bounds(0, 0, "50%", "100%");
     formatPie(pie1);
 
@@ -39,8 +39,6 @@
 /* a helper function for configuring
 and drawing pie charts*/
 function formatPie(pie){
-  // disable the legend
-  pie.legend(false);
   // set the chart container
   pie.container(stage);
   // initiate drawing the chart

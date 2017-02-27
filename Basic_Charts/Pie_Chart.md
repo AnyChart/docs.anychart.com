@@ -134,7 +134,13 @@ To configure a label on a Pie chart, you need to know the following peculiaritie
 
 #### Outer Labels
 
-...
+By default, labels are placed on the Pie chart. However, you can place them outside of the chart by using the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} method:
+
+```
+// set the position of labels
+chart.labels().position('outside');
+```
+To configure connectors (the lines connecting labels with slices), call the {api:anychart.charts.Pie#connectorStroke}connectorStroke(){api} method:
 
 ```
 // configure connectors
@@ -142,6 +148,8 @@ chart.connectorStroke({color: "#595959", thickness: 2, dash:"2 2"});
 ```
 
 {sample}BCT\_Pie\_Chart\_05{sample}
+
+Other settings available for outer labels are {api:anychart.charts.Pie#outsideLabelsSpace}outsideLabelsSpace(){api} and {api:anychart.charts.Pie#outsideLabelsCriticalAngle}outsideLabelsCriticalAngle(){api}.
 
 ### Tooltips
 
@@ -153,9 +161,12 @@ In case of Pie charts, there are some peculiarities in formatting the text of to
 
 ### Start Angle
 
-...
+You can set the start angle of the first slice by using the {api:anychart.charts.Pie#startAngle}startAngle(){api} method. The angle is 0° by default.
+
+In the sample below, the start angle of the first chart is not configured, and for the second chart it is set to 90°:
 
 ```
+// set the start angle
 chart.startAngle(90);
 ```
 
@@ -163,7 +174,7 @@ chart.startAngle(90);
 
 ### Sorting Slices
 
-...
+In AnyChart you can sort the slices of a Pie chart in an ascending or descending order if you use the {api:anychart.charts.Pie#sort}sort(){api} method and <strong>"asc"</strong> or <strong>"desc"</strong> as a parameter (there is no sorting by default):
 
 ```
 chart.sort("asc");
@@ -176,33 +187,51 @@ chart.sort("desc");
 
 ### Exploded Slices
 
-...
+By default, there is no spaces between the slices, and when a user clicks a slice, it "explodes", moving away from the others.
+
+You can configure the range of explosion by using the {api:anychart.charts.Pie#explode}explode(){api} method:
 
 ```
-    // create a data
-    var data = [
-      {x: "A", value: 637166},
-      {x: "B", value: 721630},
-      {x: "C", value: 148662},
-      {x: "D", value: 78662, exploded: true},
-      {x: "E", value: 90000}
-    ];
-
-    // create a chart and set the data
-    var chart = anychart.pie(data);
-
-    // set the explosion range
-    chart.explode (30);
-
-    // explode the first slice
-    chart.explodeSlice(2, true);
+// set the explosion range
+chart.explode (30);
 ```
+
+To make some slices exploded by default, use the {api:anychart.charts.Pie#explodeSlice}explodeSlice(){api} method with two parameters. The first one is the number of the slice (numbering starts from 0), and the second one is boolean that enables explosion:
+
+```
+// explode the third slice
+chart.explodeSlice(2, true);
+```
+Another way to enable explosion is to add a special field to your data, which should be set as an object:
+
+```
+// create a data
+var data = [
+  {x: "A", value: 637166},
+  {x: "B", value: 721630},
+  {x: "C", value: 148662},
+  {x: "D", value: 78662, exploded: true},
+  {x: "E", value: 90000}
+];
+```
+
+In this sample, there is a Pie chart with two slices exploded by default and the explosion range set to 30:
 
 {sample}BCT\_Pie\_Chart\_08{sample}
 
 ### Radius
 
-...
-задавать можно как в процентах от его bounds, так и в числах
+To set the radius of a Pie chart, call the {api:anychart.charts.Pie#radius}radius(){api} method and specify either a value or a percentage of the chart's bounds:
+
+```
+chart.radius("205");
+```
+```
+chart.radius("30%");
+```
+
+In the following sample, the radius of the first Pie chart is not configured, and the radius of the second one is set to 30%:
 
 {sample}BCT\_Pie\_Chart\_09{sample}
+
+There is also the {api:anychart.charts.Pie#innerRadius}innerRadius(){api} method: it allows you to set the inner radius of a Pie chart, thus turning it into a Doughnut chart. Read more in the [Doughnut](Doughnut_Chart) article.
