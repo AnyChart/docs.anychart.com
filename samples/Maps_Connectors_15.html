@@ -19,6 +19,12 @@
     <div id="container"></div>
   <script x-export="map">anychart.onDocumentReady(function() {
 
+// This sample uses 3rd party proj4 component
+// that makes it possible to set coordinates
+// for the points and labels on the map and
+// required for custom projections and grid labels formatting.
+// See http://docs.anychart.com/latest/Maps/Map_Projections
+
 // create data set
 var data = anychart.data.set([    
     {points: [32, -106.8, 35, -103.5], curvature: -0.27},

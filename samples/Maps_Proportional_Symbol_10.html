@@ -10,70 +10,76 @@
   <script src="//cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
   <script x-export="chart">
-      anychart.onDocumentReady(function() {
+anychart.onDocumentReady(function() {
 
-          // create data set
-          var dataSet = anychart.data.set([
-              {'id': 'AU.NS', 'size': 7565500, 'name': 'New South Wales'},
-              {'id': 'AU.NT', 'size': 243700, 'name': 'Northern Territory'},
-              {'id': 'AU.WA', 'size': 2565600, 'name': 'Western Australia'},
-              {'id': 'AU.SA', 'size': 1682600, 'name': 'South Australia'},
-              {'id': 'AU.VI', 'size': 5866300, 'name': 'Victoria'},
-              {'id': 'AU.QL', 'size': 4750500, 'name': 'Queensland'},
-              {'id': 'AU.TS', 'size': 514700, 'name': 'Tasmania'}
-          ]);
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See http://docs.anychart.com/latest/Maps/Map_Projections
 
-          // create map chart
-          map = anychart.map();
+    // create data set
+    var dataSet = anychart.data.set([
+        {'id': 'AU.NS', 'size': 7565500, 'name': 'New South Wales'},
+        {'id': 'AU.NT', 'size': 243700, 'name': 'Northern Territory'},
+        {'id': 'AU.WA', 'size': 2565600, 'name': 'Western Australia'},
+        {'id': 'AU.SA', 'size': 1682600, 'name': 'South Australia'},
+        {'id': 'AU.VI', 'size': 5866300, 'name': 'Victoria'},
+        {'id': 'AU.QL', 'size': 4750500, 'name': 'Queensland'},
+        {'id': 'AU.TS', 'size': 514700, 'name': 'Tasmania'}
+    ]);
 
-          // set geodata using http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js
-          map.geoData(anychart.maps.australia);
+    // create map chart
+    map = anychart.map();
 
-          //create bubble series
-          var series = map.bubble(dataSet);
+    // set geodata using http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js
+    map.geoData(anychart.maps.australia);
 
-          // changes the fill and hoverFill colors
-          series.fill("#90caf9");
-          series.hoverFill("#b3e5fc");
-          series.labels().fontColor("#0277bd");
-          series.hoverLabels().fontColor("#01579b");
+    //create bubble series
+    var series = map.bubble(dataSet);
 
-          // changes the stroke and hoverStroke colors
-          series.stroke("#64b5f6");
-          series.hoverStroke("#81d4fa");
+    // changes the fill and hoverFill colors
+    series.fill("#90caf9");
+    series.hoverFill("#b3e5fc");
+    series.labels().fontColor("#0277bd");
+    series.hoverLabels().fontColor("#01579b");
 
-          // sets the select colors
-          series.selectStroke("#546e7a");
-          series.selectFill("#78909c");
-          series.selectLabels().fontColor("#263238");
+    // changes the stroke and hoverStroke colors
+    series.stroke("#64b5f6");
+    series.hoverStroke("#81d4fa");
 
-          // set the maximum size of the bubble
-          map.maxBubbleSize('10%');
+    // sets the select colors
+    series.selectStroke("#546e7a");
+    series.selectFill("#78909c");
+    series.selectLabels().fontColor("#263238");
 
-          // set the minimum size of the bubble
-          map.minBubbleSize('2%');
+    // set the maximum size of the bubble
+    map.maxBubbleSize('10%');
 
-          // set the text color
-          series.labels().fontColor('black');
-          series.labels().fontSize(10);
+    // set the minimum size of the bubble
+    map.minBubbleSize('2%');
 
-          // format the labels
-          series.labels().textFormatter(function(){
-              return(this.getDataValue("name")+"\n"+this.size);
-          });
-          series.labels().anchor('center');
-          series.labels().position('center');
+    // set the text color
+    series.labels().fontColor('black');
+    series.labels().fontSize(10);
 
-//set series geo id field settings
-          series.geoIdField("code_hasc");
+    // format the labels
+    series.labels().textFormatter(function(){
+        return(this.getDataValue("name")+"\n"+this.size);
+    });
+    series.labels().anchor('center');
+    series.labels().position('center');
 
-// set container id for the chart
-          map.container('container');
+    //set series geo id field settings
+    series.geoIdField("code_hasc");
 
-// initiate chart drawing
-          map.draw();
+    // set container id for the chart
+    map.container('container');
 
-      });
+    // initiate chart drawing
+    map.draw();
+
+});
     
 </script>
 

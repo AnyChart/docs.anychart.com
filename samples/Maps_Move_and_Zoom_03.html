@@ -11,6 +11,12 @@
   <script x-export="map">
 anychart.onDocumentReady(function() {
 
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See http://docs.anychart.com/latest/Maps/Map_Projections
+
     // set the data
     var dataSet = anychart.data.set([
         {id: "AU.CT", value: 15, title: "Australian Capital Territory"},

@@ -10,6 +10,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
   <script x-export="chart">
 anychart.onDocumentReady(function() {
+
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See http://docs.anychart.com/latest/Maps/Map_Projections
+
     // create data set
     var dataSet = anychart.data.set([
       {'id': 'US.MA', 'value': 0},
@@ -86,7 +93,8 @@ anychart.onDocumentReady(function() {
     // draw the map
     map.draw();
 });
-    </script>
+
+</script>
 
 </head>
 <body>

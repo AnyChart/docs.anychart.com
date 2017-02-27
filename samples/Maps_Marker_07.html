@@ -12,6 +12,12 @@
   <script x-export="usaMap">
 anychart.onDocumentReady(function () {
 
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See http://docs.anychart.com/latest/Maps/Map_Projections
+
     // create the dataset of points that are defined by latitude and longtitude values
     var dataSet_ACME = anychart.data.set([
         {lat: 33.75, long: -112.18, name: "Stepford ACME Corp. branch", value: 321},

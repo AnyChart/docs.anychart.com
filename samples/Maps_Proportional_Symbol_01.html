@@ -9,37 +9,43 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
   <script src="//cdn.anychart.com/geodata/1.2.0/countries/united_kingdom/united_kingdom.js" data-export="true"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js" data-export="true"></script>
-  <script x-export="chart">
-  
-  anychart.onDocumentReady(function() {
+  <script x-export="chart">  
 
-// create data set
-var dataSet = anychart.data.set([
-    {'id': 'GB.DU', 'size': 3},
-    {'id': 'GB.HI', 'size': 1}
-    ]);
+anychart.onDocumentReady(function() {
 
-// create map chart
-map = anychart.map();
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See http://docs.anychart.com/latest/Maps/Map_Projections
 
-// set geodata using http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js
-map.geoData(anychart.maps['united_kingdom']);
+  // create data set
+  var dataSet = anychart.data.set([
+      {'id': 'GB.DU', 'size': 3},
+      {'id': 'GB.HI', 'size': 1}
+  ]);
 
-//create bubble series
-var series = map.bubble(dataSet);
+  // create map chart
+  map = anychart.map();
 
-// set max and min bubble sizes
-map.maxBubbleSize(35);
-map.minBubbleSize(10);
+  // set geodata using http://cdn.anychart.com/geodata/1.2.0/countries/australia/australia.js
+  map.geoData(anychart.maps['united_kingdom']);
 
-//set series geo id field settings
-series.geoIdField("code_hasc");
+  //create bubble series
+  var series = map.bubble(dataSet);
 
-// set container id for the chart
-map.container('container');
+  // set max and min bubble sizes
+  map.maxBubbleSize(35);
+  map.minBubbleSize(10);
 
-// initiate chart drawing
-map.draw();
+  //set series geo id field settings
+  series.geoIdField("code_hasc");
+
+  // set container id for the chart
+  map.container('container');
+
+  // initiate chart drawing
+  map.draw();
 });
 
 </script>

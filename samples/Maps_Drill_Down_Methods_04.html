@@ -20,10 +20,17 @@
     <div id="container"></div>
     <script x-export="chart">
 anychart.onDocumentReady(function () {
-        // create a container for maps and a button
+
+    // This sample uses 3rd party proj4 component
+    // that makes it possible to set coordinates
+    // for the points and labels on the map and
+    // required for custom projections and grid labels formatting.
+    // See http://docs.anychart.com/latest/Maps/Map_Projections
+
+    // create a container for maps and a button
     stage = anychart.graphics.create("container");
 
-        // data sets
+    // data sets
     worldDataSet = anychart.data.set([
         {id: "US"}
     ]);
@@ -31,7 +38,7 @@ anychart.onDocumentReady(function () {
         {id: "US.TX"}
     ]);
 
-        // world map
+    // world map
     chart = anychart.map();
     chart.geoData(anychart.maps.world);
     worldSeries = chart.choropleth(worldDataSet);
@@ -41,31 +48,31 @@ anychart.onDocumentReady(function () {
     usaMap.geoData(anychart.maps.united_states_of_america);
     usaSeries = usaMap.choropleth(usaDataSet);
 
-        // texas map
+    // texas map
     txMap = anychart.map();
     txMap.geoData(anychart.maps["texas"]);
 
     // set drill down for maps
     worldSeries.listen("pointClick", function(e) {
-        // Drill down to the specified map.
+    // Drill down to the specified map.
         chart.drillTo(e.point.get("id"), usaMap);
     });
 
     usaSeries.listen("pointClick", function(e) {
-        // Drill down to the specified map.
+    // Drill down to the specified map.
         chart.drillTo(e.point.get("id"), txMap);
     });
 
     // listen for draw event and update path in a title
     chart.listen("chartDraw",function(){
-      // get drilldown path
-      var path = chart.getDrilldownPath();
+    // get drilldown path
+    var path = chart.getDrilldownPath();
       
-      // get link to the current chart
-      var cv = path[path.length - 1].getCurrentChart();
+    // get link to the current chart
+    var cv = path[path.length - 1].getCurrentChart();
       
-      // update path in the title of appropriate instance
-      cv.title(printPath(path))
+    // update path in the title of appropriate instance
+    cv.title(printPath(path))
     });
 
     // create drill up label
@@ -74,7 +81,7 @@ anychart.onDocumentReady(function () {
       chart.drillUp();
     });
     
-        // set chart bounds and display it
+    // set chart bounds and display it
     chart.container(stage);
     chart.draw();
 
