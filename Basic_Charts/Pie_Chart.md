@@ -134,7 +134,7 @@ To configure a label on a Pie chart, you need to know the following peculiaritie
 
 #### Outer Labels
 
-By default, labels are placed on the Pie chart. However, you can place them outside of the chart by using the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} method:
+By default, labels are placed on the Pie chart. However, you can place them outside of the chart by using the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} method with the <strong>"outside"</strong> parameter:
 
 ```
 // set the position of labels
@@ -196,7 +196,7 @@ You can configure the range of explosion by using the {api:anychart.charts.Pie#e
 chart.explode (30);
 ```
 
-To make some slices exploded by default, use the {api:anychart.charts.Pie#explodeSlice}explodeSlice(){api} method with two parameters. The first one is the number of the slice (numbering starts from 0), and the second one is boolean that enables explosion:
+To make some slices exploded by default, use the {api:anychart.charts.Pie#explodeSlice}explodeSlice(){api} method with two parameters. The first one is the number of a slice (numbering starts from 0), and the second one is a boolean that enables explosion:
 
 ```
 // explode the third slice
@@ -234,4 +234,4 @@ In the following sample, the radius of the first Pie chart is not configured, an
 
 {sample}BCT\_Pie\_Chart\_09{sample}
 
-There is also the {api:anychart.charts.Pie#innerRadius}innerRadius(){api} method: it allows you to set the inner radius of a Pie chart, thus turning it into a Doughnut chart. Read more in the [Doughnut](Doughnut_Chart) article.
+The {api:anychart.charts.Pie#innerRadius}innerRadius(){api} method allows you to set the inner radius of a Pie chart (which is 0 by default), thus turning it into a Doughnut chart. Read more in the [Doughnut](Doughnut_Chart) article.

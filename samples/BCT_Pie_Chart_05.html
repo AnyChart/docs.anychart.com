@@ -25,14 +25,7 @@
     chart.labels().position('outside');
 
     // configure connectors
-    chart.connectorStroke(
-    // thickness, color
-      "2 #595959",
-    // opacity
-      1,
-    // dashes and gaps
-      "2 2"
-    );
+    chart.connectorStroke({color: "#595959", thickness: 2, dash:"2 2"});
 
     // disable the legend
     chart.legend(false);
