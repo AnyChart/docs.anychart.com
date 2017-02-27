@@ -1,4 +1,4 @@
-{:index 1}
+{:index 6}
 # Stick Chart
 
 * [Overview](#overview)

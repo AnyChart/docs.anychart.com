@@ -3,6 +3,7 @@ Custom Drawing
 =========================
 
 * [Overview](#overview)
+* [Compatibility](#compatibility)
 * [Drawer](#drawer)
  * [Point Renderer](#basic_drawer)
  * [Shapes Manager](#shapes_manager)
@@ -23,13 +24,17 @@ However, if you also have on option to change the way the series is drawn and pr
 
 Some modifications can be done very easy, some require understanding how AnyChart draws series, and sometimes you will need more than one function to customize series display. This article will guide you through this process and provide [several examples](#samples) you can use to create your own custom series.
 
-At the moment you can override renderers only 
+# Compatibility
+
+At the moment you can override renderers only for the following series: Area, Area3d, Bar, Bar3d, Box, Bubble, Candlestick, Column, Column3d, JumpLine, Line, Marker, OHLC, RangeArea, RangeBar, RangeColumn, RangeSplineArea, RangeStepArea, Spline, SplineArea, StepArea, StepLine, Stick. 
+
+You can do this in Basic (Cartesian) Charts, [Scatter Charts](Scatter/Overview) and [Stock Charts](../Stock_Charts), you can't do that in Radar and Polar Charts.
 
 # Rendering Object
 
-Rendering object provides you access to all the things you need to override standard drawing functions with your own. Drawer object itself does nothing, it is just a collection of functions and settings. Rendering object is an instance of anychart.core.series.RenderingSettings class.
+Rendering object provides you access to all things you need to override standard drawing functions with your own. Rendering object itself does nothing, it is just a collection of functions and settings. Rendering object is an instance of {api:anychart.core.series.RenderingSettings}RenderingSettings{api} class.
 
-Here is how you get the link to rendering object:
+Here is how you get the link to the rendering object:
 
 ```
 // get the drawer object
@@ -38,7 +43,7 @@ mySeries = chart.column([["A",1],["B",2],["C",3],])
 renderer = mySeries.rendering();
 ```
 
-Please note that you need to override renderer for **each instance** of the series you want to customize, you can not just tell the component to display all series of the given type in a different way, you need to assign a custom renderer to every instance you create. Having a single renderer object comes in handy in such cases, you just go like this:
+Please note that you need to override renderer for **each instance** of the series you want to customize, you can't just tell the component to display all series of the given type in a different way, you need to assign a custom renderer to every instance you create. Having a single renderer object comes in handy in such cases, you just go like this:
 
 ```
 // create some custom drawer
@@ -49,15 +54,15 @@ chart = anychart.cartesian();
 
 // create series and assign drawers
 series_1 = chart.column([["A",1],["B",2],["C",3]])
-series_1.drawer(customRenderer);
+series_1.rendering(customRenderingObject);
 
 series_2 = chart.column([["A",2],["B",4],["C",7]])
-series_2.drawer(customRenderer);
+series_2.rendering(customRenderer);
 ```
 
 ## Point Renderer
 
-Point renderer is a basic function that is responsible for the way each element (point) of any series is displayed, use XXX method of a drawer object to override this function:
+Point renderer is a basic function that is responsible for the way each element (point) of any series is displayed, use {api:anychart.core.series.RenderingSettings#point}point(){api} method of the rendering settings object to override this function:
 
 ```
 // point renderer

@@ -1,4 +1,4 @@
-{:index 1}
+{:index 4.1}
 #Spline Chart
 
 * [Overview](#overview)

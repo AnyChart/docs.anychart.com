@@ -1,4 +1,4 @@
-{:index 1}
+{:index 3.1}
 #Range Step Area Chart
 
 * [Overview](#overview)

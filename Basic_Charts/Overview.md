@@ -1,4 +1,4 @@
-{:index 0.5}
+{:index 0.4}
 #Overview
 
 * [Section 1](#section_1)
