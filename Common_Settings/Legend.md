@@ -107,8 +107,9 @@ legend.enabled(true);
 // set position mode
 legend.positionMode("outside");
 // set position and alignement
-legend.position("top");
-legend.align("right");
+legend.position("bottom");
+legend.align("center");
+legend.itemsLayout("horizontalExpandable");
 ```
 
 {sample}CS\_Legend\_04{sample}
@@ -186,7 +187,7 @@ legend.paginator().orientation("bottom");
 
 See how these settings work in the following interactive sample: you can click buttons to add or remove series and see how legend and chart change their sizes. Once the legend reached maximum allowed size - a [paginator](#paginator) appears.
 
-{sample}CS\_Legend\_06\_01{sample}
+{sample}CS\_Legend\_06\_1{sample}
 
 ### Fixed
 
@@ -210,7 +211,7 @@ legend.padding(10);
 
 Here is a sample a legend with a fixed size:
 
-{sample}CS\_Legend\_06\_02{sample}
+{sample}CS\_Legend\_06\_2{sample}
 
 ## Paging
 
