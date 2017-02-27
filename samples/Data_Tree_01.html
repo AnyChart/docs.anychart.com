@@ -22,7 +22,7 @@
 	dataGrid = anychart.standalones.dataGrid();
 
 	// set Data Tree
-	dataGrid.data(tree).titleHeight(20);
+	dataGrid.data(tree).headerHeight(20);
 
 	// create button for Parent node
 	dataGrid.listen("signal", dataGrid.draw, false, dataGrid);
@@ -33,7 +33,7 @@
 	// draw chart
 	dataGrid.container("container").draw();
 
-	dataGrid.container().height(fullChildrenHeight()+dataGrid.top()+dataGrid.titleHeight()+1);
+	dataGrid.container().height(fullChildrenHeight()+dataGrid.top()+dataGrid.headerHeight()+1);
 
 	// get height of all children of the tree
 	function fullChildrenHeight() {
