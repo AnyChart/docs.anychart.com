@@ -23,27 +23,19 @@
 
     // set the position and data for the first pie chart
     var pie1 = anychart.pie(data);
-    pie1.title("No Sorting");
-    pie1.bounds(0, 0, "33.3%", "100%");
+    pie1.title("Radius: Default");
+    pie1.bounds(0, 0, "50%", "100%");
     formatPie(pie1);
 
     // set the position and data for the second pie chart
     var pie2 = anychart.pie(data);
-    pie2.title("Ascending Order");
-    pie2.bounds("33.3%", 0, "33.3%", "100%");
+    pie2.title("Radius: 30%");
+    pie2.bounds("50%", 0, "50%", "100%");
     formatPie(pie2);
-    // set sorting mode
-    pie2.sort("asc");
-
-    // set the position and data for the third pie
-    var pie3 = anychart.pie(data);
-    pie3.title("Descending Order");
-    pie3.bounds("66.6%", 0, "33.3%", "100%");
-    formatPie(pie3);
-      // set sorting mode
-    pie3.sort("desc");
+    // set the radius
+    pie2.radius("30%");
 });
-    
+
 /* a helper function for configuring
 and drawing pie charts*/
 function formatPie(pie){

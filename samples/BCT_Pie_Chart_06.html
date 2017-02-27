@@ -22,18 +22,18 @@
     stage = anychart.graphics.create("container");
 
     // set the position and data for the first pie chart
-    var pie = anychart.pie(data);
-    pie.title("Start Angle: Default");
-    pie.bounds(0, 0, "50%", "100%");
-    formatPie(pie);
+    var pie1 = anychart.pie(data);
+    pie1.title("Start Angle: Default");
+    pie1.bounds(0, 0, "50%", "100%");
+    formatPie(pie1);
 
     // set the position and data for the second pie chart
-    var pie_angle = anychart.pie(data);
-    pie_angle.title("Start Angle: 90°");
-    pie_angle.bounds("50%", 0, "50%", "100%");
-    formatPie(pie_angle);
+    var pie2 = anychart.pie(data);
+    pie2.title("Start Angle: 90°");
+    pie2.bounds("50%", 0, "50%", "100%");
+    formatPie(pie2);
     // set the start angle
-    pie_angle.startAngle(90);
+    pie2.startAngle(90);
 });
 
 /* a helper function for configuring

@@ -7,10 +7,12 @@
 * [Special Settings](#special_settings)
   * [Appearance](#appearance)
   * [Labels](#labels)
+    * [Outer Labels](#outer_labels)
   * [Tooltips](#tooltips)
   * [Start Angle](#start_angle)
   * [Sorting Slices](#sorting_slices)
   * [Exploded Slices](#exploded_slices)
+  * [Radius](#radius)
 
 ##Overview
 
@@ -115,19 +117,11 @@ Labels are text or image elements that can be placed anywhere on any chart (you 
 
 To configure a label on a Pie chart, you need to know the following peculiarities regarding formatting and positioning lables.... 
 
-```
-// set the position of labels
-chart.labels().position('outside');
+#### Outer Labels
 
+```
 // configure connectors
-chart.connectorStroke(
-// thickness, color
-  "2 #595959",
-// opacity
-  1,
-// dashes and gaps
-  "2 2"
-);
+chart.connectorStroke({color: "#595959", thickness: 2, dash:"2 2"});
 ```
 
 {sample}BCT\_Pie\_Chart\_05{sample}
@@ -182,3 +176,9 @@ chart.sort("desc");
 ```
 
 {sample}BCT\_Pie\_Chart\_08{sample}
+
+### Radius
+
+задавать можно как в процентах от его bounds, так и в числах
+
+{sample}BCT\_Pie\_Chart\_09{sample}
