@@ -138,7 +138,7 @@ By default, labels are placed on the Pie chart. However, you can place them outs
 
 ```
 // set the position of labels
-chart.labels().position('outside');
+chart.labels().position("outside");
 ```
 To configure connectors (the lines connecting labels with slices), call the {api:anychart.charts.Pie#connectorStroke}connectorStroke(){api} method:
 
@@ -167,7 +167,7 @@ In the sample below, the start angle of the first chart is not configured, and f
 
 ```
 // set the start angle
-chart.startAngle(90);
+pie2.startAngle(90);
 ```
 
 {sample}BCT\_Pie\_Chart\_06{sample}
@@ -177,10 +177,9 @@ chart.startAngle(90);
 In AnyChart you can sort the slices of a Pie chart in an ascending or descending order if you use the {api:anychart.charts.Pie#sort}sort(){api} method and <strong>"asc"</strong> or <strong>"desc"</strong> as a parameter (there is no sorting by default):
 
 ```
-chart.sort("asc");
-```
-```
-chart.sort("desc");
+// set sorting mode
+pie2.sort("asc");
+pie3.sort("desc");
 ```
 
 {sample}BCT\_Pie\_Chart\_07{sample}
@@ -196,7 +195,7 @@ You can configure the range of explosion by using the {api:anychart.charts.Pie#e
 chart.explode (30);
 ```
 
-To make some slices exploded by default, use the {api:anychart.charts.Pie#explodeSlice}explodeSlice(){api} method with two parameters. The first one is the number of a slice (numbering starts from 0), and the second one is a boolean that enables explosion:
+To make some slices exploded by default, use the {api:anychart.charts.Pie#explodeSlice}explodeSlice(){api} method with two parameters. The first one is the number of a slice (numbering starts from 0), and the second one is a boolean value that enables explosion:
 
 ```
 // explode the third slice
@@ -223,14 +222,12 @@ In this sample, there is a Pie chart with two slices exploded by default and the
 
 To set the radius of a Pie chart, call the {api:anychart.charts.Pie#radius}radius(){api} method and specify either a value or a percentage of the chart's bounds:
 
-```
-chart.radius("205");
-```
-```
-chart.radius("30%");
-```
-
 In the following sample, the radius of the first Pie chart is not configured, and the radius of the second one is set to 30%:
+
+```
+// set the radius
+pie2.radius("30%")
+```
 
 {sample}BCT\_Pie\_Chart\_09{sample}
 

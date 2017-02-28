@@ -20,7 +20,9 @@ The Doughnut chart is a modification of the Pie chart and shares almost all the 
 
 ##Quick Start
 
-To create a Doughnut chart, use the {api:anychart#area}anychart.pie(){api} chart constructor and the {api:anychart#innerRadius}anychart.innerRadius(){api} method to set the inner radius, which is 0 by default:
+To create a Doughnut chart, use the {api:anychart#area}anychart.pie(){api} chart constructor and the {api:anychart#innerRadius}anychart.innerRadius(){api} method to set the inner radius. The radius is 0 by default and can be set either as a value or a percentage of the chart's bounds.
+
+The following sample shows how to create a basic Doughnut chart:
 
 ```
 // create data
@@ -66,7 +68,7 @@ By default, labels are placed on the Doughnut chart. However, you can place them
 
 ```
 // set the position of labels
-chart.labels().position('outside');
+chart.labels().position("outside");
 ```
 To configure connectors (the lines connecting labels with slices), call the {api:anychart.charts.Pie#connectorStroke}connectorStroke(){api} method:
 
@@ -87,7 +89,7 @@ The sample below shows a Doughnut chart with inner labels. The offset is -75%:
 
 ```
 // set the position of labels
-chart.labels().position('inside');
+chart.labels().position("inside");
 
 // set the offset for the labels
 chart.insideLabelsOffset("-75%");
