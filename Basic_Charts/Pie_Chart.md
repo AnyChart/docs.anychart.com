@@ -126,11 +126,7 @@ You can learn more from the [Appearance Settings](../Appearance_Settings) articl
 
 ### Labels
 
-Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
-
-(???) отмечаю на будущее, что нужно добавить текст
-
-To configure a label on a Pie chart, you need to know the following peculiarities regarding formatting and positioning lables.... 
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 #### Outer Labels
 
@@ -154,14 +150,9 @@ In this sample, there are outside labels with customized connectors:
 
 {sample}BCT\_Pie\_Chart\_05{sample}
 
-
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
-
-(???) отмечаю на будущее, что нужно добавить текст
-
-In case of Pie charts, there are some peculiarities in formatting the text of tooltips...
 
 ### Start Angle
 

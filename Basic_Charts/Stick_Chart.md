@@ -109,19 +109,11 @@ series2.selectStroke("#0066cc", 4);
 
 ### Labels
 
-Labels are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
-
-(???) отмечаю на будущее, что нужно добавить текст
-
-To configure a label on a Stick chart, you need to know the following peculiarities regarding formatting and positioning lables.... 
+[Labels](../Common_Settings/Labels) are text or image elements that can be placed anywhere on any chart (you can enable them on a whole series or in a single point). For text labels, font settings and [text formatters](../Common_Settings/Text_Formatters) are available.
 
 ### Tooltips
 
 A [Tooltip](../Common_Settings/Tooltip) is a text box displayed when a point on a chart is hovered. There is a number of visual and other settings available: for example, you can edit the text by using font settings and [text formatters](../Common_Settings/Text_Formatters), change the style of background, adjust the position of a tooltip, and so on.
-
-(???) отмечаю на будущее, что нужно добавить текст
-
-In case of Stick charts, there are some peculiarities in formatting the text of tooltips...
 
 ### Vertical Stick
 
