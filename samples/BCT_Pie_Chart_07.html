@@ -32,7 +32,7 @@
     pie2.title("Ascending Order");
     pie2.bounds("33.3%", 0, "33.3%", "100%");
     formatPie(pie2);
-    // set sorting mode
+    // set the sorting mode
     pie2.sort("asc");
 
     // set the position and data for the third pie
@@ -40,8 +40,11 @@
     pie3.title("Descending Order");
     pie3.bounds("66.6%", 0, "33.3%", "100%");
     formatPie(pie3);
-      // set sorting mode
+      // set the sorting mode
     pie3.sort("desc");
+
+    // disable the legend
+    chart.legend(false);
 });
     
 /* a helper function for configuring

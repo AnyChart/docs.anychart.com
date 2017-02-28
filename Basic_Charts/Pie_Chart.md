@@ -102,7 +102,7 @@ chart.hoverStroke("#0066cc", 3);
 
 {sample}BCT\_Pie\_Chart\_02{sample}
 
-There is a special visual setting available the Pie chart – Aqua Style. To apply it, use the {api:anychart.charts.Pie#fill}fill(){api} method with the <strong>"aquastyle"</strong> parameter:
+There is also a special visual setting available for the Pie chart – Aqua Style. To apply it, use the {api:anychart.charts.Pie#fill}fill(){api} method with the <strong>"aquastyle"</strong> parameter:
 
 ```
 // enable aqua style
@@ -140,6 +140,7 @@ By default, labels are placed on the Pie chart. However, you can place them outs
 // set the position of labels
 chart.labels().position("outside");
 ```
+
 To configure connectors (the lines connecting labels with slices), call the {api:anychart.charts.Pie#connectorStroke}connectorStroke(){api} method:
 
 ```
@@ -147,9 +148,12 @@ To configure connectors (the lines connecting labels with slices), call the {api
 chart.connectorStroke({color: "#595959", thickness: 2, dash:"2 2"});
 ```
 
+Other settings available for outer labels are {api:anychart.charts.Pie#outsideLabelsSpace}outsideLabelsSpace(){api} and {api:anychart.charts.Pie#outsideLabelsCriticalAngle}outsideLabelsCriticalAngle(){api}.
+
+In this sample, there are outside labels with customized connectors:
+
 {sample}BCT\_Pie\_Chart\_05{sample}
 
-Other settings available for outer labels are {api:anychart.charts.Pie#outsideLabelsSpace}outsideLabelsSpace(){api} and {api:anychart.charts.Pie#outsideLabelsCriticalAngle}outsideLabelsCriticalAngle(){api}.
 
 ### Tooltips
 
@@ -177,7 +181,7 @@ pie2.startAngle(90);
 In AnyChart you can sort the slices of a Pie chart in an ascending or descending order if you use the {api:anychart.charts.Pie#sort}sort(){api} method and <strong>"asc"</strong> or <strong>"desc"</strong> as a parameter (there is no sorting by default):
 
 ```
-// set sorting mode
+// set the sorting mode
 pie2.sort("asc");
 pie3.sort("desc");
 ```
@@ -186,7 +190,7 @@ pie3.sort("desc");
 
 ### Exploded Slices
 
-By default, there is no spaces between the slices, and when a user clicks a slice, it "explodes", moving away from the others.
+By default, there is no spaces between the slices of a Pie chart, and when a user clicks a slice, it "explodes", moving away from the others.
 
 You can configure the range of explosion by using the {api:anychart.charts.Pie#explode}explode(){api} method:
 
@@ -201,6 +205,7 @@ To make some slices exploded by default, use the {api:anychart.charts.Pie#explod
 // explode the third slice
 chart.explodeSlice(2, true);
 ```
+
 Another way to enable explosion is to add a special field to your data, which should be set as an object:
 
 ```
@@ -220,7 +225,7 @@ In this sample, there is a Pie chart with two slices exploded by default and the
 
 ### Radius
 
-To set the radius of a Pie chart, call the {api:anychart.charts.Pie#radius}radius(){api} method and specify either a value or a percentage of the chart's bounds:
+To set the radius of a Pie chart, call the {api:anychart.charts.Pie#radius}radius(){api} method and specify either a value or a percentage of the chart's bounds.
 
 In the following sample, the radius of the first Pie chart is not configured, and the radius of the second one is set to 30%:
 
