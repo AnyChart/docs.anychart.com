@@ -42,14 +42,13 @@
     formatPie(pie3);
       // set the sorting mode
     pie3.sort("desc");
-
-    // disable the legend
-    chart.legend(false);
 });
     
 /* a helper function for configuring
 and drawing pie charts*/
 function formatPie(pie){
+  // disable the legend
+  pie.legend(false);
   // set the chart container
   pie.container(stage);
   // initiate drawing the chart

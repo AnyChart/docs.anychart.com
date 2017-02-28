@@ -10,7 +10,7 @@
     * [Outer Labels](#outer_labels)
   * [Tooltips](#tooltips)
   * [Start Angle](#start_angle)
-  * [Sorting Slices](#sorting_slices)
+  * [Sorting Order](#sorting_order)
   * [Exploded Slices](#exploded_slices)
   * [Radius](#radius)
 
@@ -47,7 +47,7 @@ This article explains how to create a basic Pie chart as well as configure setti
 
 ##Quick Start
 
-To create a Pie chart, use the {api:anychart#area}anychart.pie(){api} chart constructor, like in the following sample:
+To create a Pie chart, use the {api:anychart#pie}anychart.pie(){api} chart constructor, like in the following sample:
 
 ```
 // create data
@@ -167,7 +167,7 @@ pie2.startAngle(90);
 
 {sample}BCT\_Pie\_Chart\_06{sample}
 
-### Sorting Slices
+### Sorting Order
 
 In AnyChart you can sort the slices of a Pie chart in an ascending or descending order if you use the {api:anychart.charts.Pie#sort}sort(){api} method and <strong>"asc"</strong> or <strong>"desc"</strong> as a parameter (there is no sorting by default):
 

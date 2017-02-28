@@ -19,7 +19,7 @@ The Doughnut chart is a modification of the Pie chart and shares almost all the 
 
 ##Quick Start
 
-To create a Doughnut chart, use the {api:anychart#area}anychart.pie(){api} chart constructor and the {api:anychart#innerRadius}anychart.innerRadius(){api} method to set the inner radius. The radius is 0 by default and can be set either as a value or a percentage of the chart's bounds.
+To create a Doughnut chart, use the {api:anychart#pie}anychart.pie(){api} chart constructor and the {api:anychart.charts.Pie#innerRadius}innerRadius(){api} method to set the inner radius. The radius is 0 by default and can be set either as a value or a percentage of the chart's bounds.
 
 The following sample shows how to create a basic Doughnut chart:
 
@@ -51,7 +51,7 @@ chart.draw();
 
 ## Settings
 
-The Doughnut chart is a modification of the Pie chart, so these two types share almost all the settings. You can find more settings in this article: [Pie Chart](Line_Chart).
+The Doughnut chart is a modification of the Pie chart, so these two types share almost all the settings. You can find more settings in this article: [Pie Chart](Pie_Chart).
 
 Also, in AnyChart there are many settings that are configured in the same way for all chart types, including the Doughnut chart (for example, legend and interactivity settings): [General Settings](General_Settings).
 
@@ -84,7 +84,7 @@ In this sample, there are outside labels with customized connectors:
 
 #### Inner Labels
 
-To place labels into the blank area in the center of a Doughnut chart, call the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} method with the <strong>"inside"</strong> parameter. You can also set the space between the inner labels and the chart (offset) by using the {api:anychart#insideLabelsOffset}anychart.isideLabelsOffset(){api} method.
+To place labels into the blank area in the center of a Doughnut chart, call the {api:anychart.core.ui.LabelsFactory.Label#position}position(){api} method with the <strong>"inside"</strong> parameter. You can also configure the offset of the inner labels by using the {api:anychart.charts.Pie#insideLabelsOffset}isideLabelsOffset(){api} method.
 
 The sample below shows a Doughnut chart with inner labels, the offset is -75%:
 
