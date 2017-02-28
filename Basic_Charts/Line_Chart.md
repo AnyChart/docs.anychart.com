@@ -16,7 +16,7 @@ A line chart is a chart that shows information as a series of data points connec
 
 The line chart is very common in many fields. As a rule, it is used to emphasize trends in data over equal time intervals, such as months, quarters, fiscal years, and so on.
 
-This article explains how to create a basic Line chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of Line Chart's characteristics:
+This article explains how to create a basic Line chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of Line chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
@@ -133,7 +133,7 @@ In case of Line charts, there are some peculiarities in formatting the text of t
 
 ### Vertical Line
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
 Here is the information about creating Vertical Line series:
 

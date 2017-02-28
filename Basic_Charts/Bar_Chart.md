@@ -18,7 +18,7 @@ A bar chart is a chart that visualizes data as a set of rectangular bars, their 
 
 The bar chart is used very widely to show comparison among categories and sometimes to visualize time-based data. Also, categories with long names may be a reason to prefer the bar chart to the column chart.
 
-This article explains how to create a basic Bar chart as well as configure  settings that are specific to the type. In addition, you see the table below to get a brief overview of the Bar Chart's characteristics:
+This article explains how to create a basic Bar chart as well as configure  settings that are specific to the type. In addition, you see the table below to get a brief overview of the Bar chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
@@ -29,7 +29,7 @@ This article explains how to create a basic Bar chart as well as configure  sett
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>[Stacked Bar](Stacked/Value/Bar_Chart), [Percent Stacked Bar](Stacked/Percent/Bar_Chart)</td></tr>
 <tr><td>Vertical</td><td>[Bar](Bar_Chart)</td></tr>
-<tr><td>3D</td><td>[3D Bar](3D_Charts/3D_Bar_Chart)</td></tr>
+<tr><td>3D</td><td>[3D Bar](3D/3D_Bar_Chart)</td></tr>
 <tr><td>Error Bars</td><td>[Bar Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
 <tr><td>Polar</td><td>N/A</td></tr>
@@ -219,7 +219,7 @@ In case of Bar charts, there are some peculiarities in formatting the text of to
 
 Stacked and percent stacked charts are multi-series charts where related values are placed atop one another, which allows comparing the the contribution of a value to a total, either in absolute or percentage terms. 
 
-In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts (Overview)](Stacked/Overview).
+In AnyChart, you can enable a special mode of the scale to make series stack together: see [Stacked Charts](Stacked/Overview).
 
 To learn about the stacked versions of the Bar chart, see:
 
@@ -230,6 +230,6 @@ To learn about the stacked versions of the Bar chart, see:
 
 Using AnyChart, you can create 3D versions of some chart types, including the Bar chart.
 
-To learn about 3D charts in general, see [3D Charts (Overview)](3D_Charts/Overview).
+To learn about 3D charts in general, see [3D Charts (Overview)](3D/Overview).
 
-The 3D Bar chart is described in the following article: [3D Bar Chart](3D_Charts/3D_Bar_Chart).
+The 3D Bar chart is described in the following article: [3D Bar Chart](3D/3D_Bar_Chart).

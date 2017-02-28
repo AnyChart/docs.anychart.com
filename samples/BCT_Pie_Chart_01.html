@@ -9,27 +9,26 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-  // set chart type and data
-  chart = anychart.pie([
-    {name:"Department Stores", value: 637166, exploded: true},
-    ["Discount Stores", 721630],
-    ["Men's/Women's Stores", 148662],
-    ["Juvenile Specialty Stores", 78662],
-    ["All other outlets", 90000]
-  ]);
+    // create data
+    var data = [
+      {x: "A", value: 637166},
+      {x: "B", value: 721630},
+      {x: "C", value: 148662},
+      {x: "D", value: 78662},
+      {x: "E", value: 90000}
+    ];
 
-  // set chart title text settings
-  chart.title("Exploded Slices");
+    // create a chart and set the data
+    var chart = anychart.pie(data);
 
-  // disabling legend title and title separator
-  chart.legend(false);
+    // set the chart title
+    chart.title("Pie Chart: Basic Sample");
 
-  // set explosion range
-  chart.explode(30);
+    // set the container id
+    chart.container("container");
 
-  // draw
-  chart.container("container");
-  chart.draw();
+    // initiate drawing the chart
+    chart.draw();
 });</script>
 </head>
 <body>

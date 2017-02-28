@@ -16,7 +16,7 @@ A range area chart displays information as a range of data by plotting two Y-val
 
 Such charts are used to emphasize the magnitude of difference between high and low values and at the same time to show trends in data over time.
 
-This article explains how to create a basic Range Area chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Range Area Chart's characteristics:
+This article explains how to create a basic Range Area chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Range Area chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
@@ -153,7 +153,7 @@ In case of Range Area charts, there are some peculiarities in formatting the tex
 
 ### Vertical Range Area
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
 Here is the information about creating Vertical Range Area series:
 

@@ -17,7 +17,7 @@ A range column chart displays information as a range of data by plotting two Y-v
 
 This type is sometimes referred to as the floating column chart since it looks like a set of columns "floating" above the horizontal axis. It is used to show the difference between high and low values while visualizing time-based data or showing comparison among categories.
 
-This article explains how to create a basic Range Column chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Range Column Chart's characteristics:
+This article explains how to create a basic Range Column chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Range Column chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
@@ -226,6 +226,6 @@ In case of Range Column charts, there are some peculiarities in formatting the t
 
 ### Vertical Range Column
 
-Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts (Overview)](Vertical/Overview).
+Most types of series in AnyChart can be drawn both in horizontal and vertical orientation: [Vertical Charts](Vertical/Overview).
 
 The vertical range column chart is called the range bar chart: it shows categories on the vertical axis instead of the horizontal axis and represents values as bars instead of columns. Read more: [Range Bar Chart](Range_Bar_Chart).

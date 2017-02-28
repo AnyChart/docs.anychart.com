@@ -16,7 +16,7 @@ A range bar chart displays information as a range of data by plotting two Y-valu
 
 This type is sometimes referred to as the floating bar chart since it looks like a set of bar "floating" above the horizontal axis. It is used to show the difference between high and low values while visualizing time-based data or showing comparison among categories.
 
-This article explains how to create a basic Range Bar chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Range Bar Chart's characteristics:
+This article explains how to create a basic Range Bar chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Range Bar chart's characteristics:
 
 <table border="1" class="seriesTABLE">
 <tr><th colspan=2>API</th></tr>
