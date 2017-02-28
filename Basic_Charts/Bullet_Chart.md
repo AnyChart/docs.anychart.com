@@ -18,8 +18,7 @@
 ## Overview
 
 A Bullet Chart is a variation of [Bar Chart](Bar_Chart) designed to compare a single, primary measure (for example, current year-to-date revenue) to one or more other measures to enrich its meaning (for example, compared to a target), and displays it in the context of qualitative ranges of performance, such as poor, satisfactory, and good. The qualitative ranges are displayed as blocks of one hue but with varying intensity, making them discernible by those who are color blind and to restrict the use of colors on the dashboard to a minimum.
-  
-  
+
 Bullet chart always uses only one data series, but a dashboard may contain several bullet charts at the same time. This kind of charts can be of great help in some cases as far as it provides the clearest presentation of the data using less space.
 
 ## Chart
