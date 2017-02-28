@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
 <script x-export="chart">anychart.onDocumentReady(function () {
 // create a chart
-chart = anychart.rangeColumn();
+chart = anychart.column();
 
     // create data set on our data
     var data = [
@@ -36,8 +36,6 @@ chart = anychart.rangeColumn();
     // call a custom function that changes series rendering
     cherryChartRendering(series);
 
-    // enable x axis
-    chart.xAxis(true);
     // set container id for the chart and initiate chart drawing
     chart.container('container').draw();
 });
