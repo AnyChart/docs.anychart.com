@@ -25,6 +25,9 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 			<td>[Aroon](Aroon)</td>
 		</tr>
 		<tr>
+			<td>[Average True Range (ATR)](Average\_True_Range\_\(ATR\))
+		</tr>
+		<tr>
 			<td>[Bollinger Bands](Bollinger_Bands)</td>
 		</tr>
 		<tr>
@@ -35,7 +38,10 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 		</tr>		
 		<tr>
 			<td>[Exponential Moving Average (EMA)](Exponential_Moving_Average_\(EMA\))</td>
-		</tr>		
+		</tr>
+		<tr>
+			<td>[KDJ](KDJ)</td>
+		</tr>
 		<tr>
 			<td>[Modified (Smoothed) Moving Average](Modified_Moving_Average_\(MMA\))</td>
 		</tr>
@@ -56,6 +62,9 @@ You can also create any kind of custom indicator yourself using our [Custom Indi
 		</tr>	
 		<tr>
 			<td>[SMoothed Moving Average (SMMA)](Modified_Moving_Average_\(MMA\))</td>
-		</tr>				
+		</tr>
+		<tr>
+			<td>[Stochastic Oscillator](Stochastic_Oscillator)</td>
+		</tr>
 	</tbody>
 </table>

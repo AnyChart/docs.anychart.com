@@ -1,4 +1,4 @@
-{:index 1}
+{:index 4.1}
 #Spline Chart
 
 * [Overview](#overview)
@@ -21,7 +21,7 @@ The Line and Spline chart types share all the settings, so this article explains
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical Spline](Vertical/Vertical_Spline_Chart)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Spline](Vertical/Spline_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>[Spline Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>

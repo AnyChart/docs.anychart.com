@@ -26,7 +26,7 @@ This article explains how to create a basic Line chart as well as configure sett
 <tr><td>Multiple Series</td><td>[YES](../Working_with_Data/Overview)</td></tr>
 <tr><th colspan=2>OPTIONS</th></tr>
 <tr><td>Stacked</td><td>N/A</td></tr>
-<tr><td>Vertical</td><td>[Vertical Line](Vertical/Vertical_Line_Chart)</td></tr>
+<tr><td>Vertical</td><td>[Vertical Line](Vertical/Line_Chart)</td></tr>
 <tr><td>3D</td><td>N/A</td></tr>
 <tr><td>Error Bars</td><td>[Line Chart with Error Bars](Error_Chart)</td></tr>
 <tr><th colspan=2>SUPPORTED CHART PLOTS</th></tr>
@@ -52,13 +52,13 @@ The following sample demonstrates how a basic Line chart is created:
 
 ```
 // create a data set
-var data = anychart.data.set([
-  ["January", 10000],
-  ["February", 12000],
-  ["March", 18000],
-  ["April", 11000],
-  ["May", 9000]
-]);
+var data = [
+  {x: "January", value: 10000},
+  {x: "February", value: 12000},
+  {x: "March", value: 18000},
+  {x: "April", value: 11000},
+  {x: "May", value: 9000}
+];
 
 // create a chart
 var chart = anychart.line();
@@ -137,6 +137,6 @@ Most types of series in AnyChart can be drawn both in horizontal and vertical or
 
 Here is the information about creating Vertical Line series:
 
-* [Vertical Line](Vertical/Vertical_Line_Chart)
-* [Vertical Spline](Vertical/Vertical_Spline_Chart)
-* [Vertical Step Line](Vertical/Vertical_Step_Line_Chart)
+* [Vertical Line](Vertical/Line_Chart)
+* [Vertical Spline](Vertical/Spline_Chart)
+* [Vertical Step Line](Vertical/Step_Line_Chart)

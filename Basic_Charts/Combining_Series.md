@@ -1,2 +1,6 @@
-{:index 0.6}
+{:index 0.55}
 #Combining series
+
+#Overview
+
+#Samples

@@ -2,23 +2,23 @@
 Switching the Series Type
 =========================
 
-Our stock charts provide a method allowing to change the series type if the current type and the new one have the same or similar fields. See the [list of supported series](Supported_Series#list_of_supported_series) to find out what series types can be converted to each other.
+You can change the series type on the fly if the current type and the new one have the same or similar fields. See the [list of supported series](Supported_Series#list_of_supported_series) to find out what series types can be converted to each other.
 
 To switch the series use {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method of a series and set the series name as a string parameter. Series names used as parameters are identical the methods used for creating the series. Let's create a couple of samples to make it clear how to use the feature.
 
 ```
 table.addData([
-    {x:'1790-01-01', value:3929214},
-    {x:'1795-01-01', value:4390561},
-    {x:'1800-01-01', value:5236631},
-    {x:'1805-01-01', value:5989289},
-    {x:'1810-01-01', value:7239881},
-    {x:'1815-01-01', value:8722382},
-    {x:'1820-01-01', value:9638453}
+    {x:'1790-01-01', value: 3929214},
+    {x:'1795-01-01', value: 4390561},
+    {x:'1800-01-01', value: 5236631},
+    {x:'1805-01-01', value: 5989289},
+    {x:'1810-01-01', value: 7239881},
+    {x:'1815-01-01', value: 8722382},
+    {x:'1820-01-01', value: 9638453}
 ]);
 
 // map the data
-mapping = table.mapAs({'x':"x", 'value':"value"});  
+mapping = table.mapAs({x:'x', value:'value'});  
 
 // set the series
 var series = chart.plot(0).line(mapping);
@@ -36,7 +36,7 @@ scrollerSeries.seriesType("column");
 In the following sample, the {api:anychart.core.stock.series.Base#seriesType}seriesType(){api} method is applied to OHLC and Japanese candlestick series, which require four values, as well as to a range area series:
 
 ```
-table = anychart.data.table("x");
+table = anychart.data.table('x');
 table.addData([
     {'x': '2015-04-01', 'o': 18.23, 'h': 19.36, 'l': 18.18, 'c': 19.31},
     {'x': '2015-04-02', 'o': 19.50, 'h': 19.89, 'l': 19.00, 'c': 19.29},
