@@ -20,9 +20,9 @@ Checking compatibility is very easy with [AnyChart API](http://api.anychart.com/
 - {api:anychart.enums.ScatterSeriesType}anychart.enums.ScatterSeriesType{api} lists all series compatible within [Scatter Plot](Scatter_Plot/Overview).
 - {api:anychart.enums.PolarSeriesType}anychart.enums.PolarSeriesType{api} lists all series compatible within [Polar Plot](Polar_Plot/Overview).
 - {api:anychart.enums.RadarSeriesType}anychart.enums.RadarSeriesType{api} lists all series compatible within [Radar Plot](Radar_Plot/Overview).
-- {api:anychart.enums.SparklineSeriesType}anychart.enums.SparklineSeriesType{api} lists all series compatible within [Sparkline Chart](Sparkline Chart).
+- {api:anychart.enums.SparklineSeriesType}anychart.enums.SparklineSeriesType{api} lists all series compatible within [Sparkline Chart](Sparkline_Chart).
 - {api:anychart.enums.MapSeriesType}anychart.enums.MapSeriesType{api} lists all series compatible within [Geo Maps](../Maps/Quick_Start)
-- {api:anychart.enums.StockSeriesType}anychart.enums.StockSeriesType{api} lists all series compatible within [Geo Maps](../Stock_Charts/Overview)
+- {api:anychart.enums.StockSeriesType}anychart.enums.StockSeriesType{api} lists all series compatible within [Stock Charts](../Stock_Charts/Overview)
 
 ##Wrong argument order
 
