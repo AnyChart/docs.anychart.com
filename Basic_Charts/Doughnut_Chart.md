@@ -77,9 +77,11 @@ To configure connectors (the lines connecting labels with slices), call the {api
 chart.connectorStroke({color: "#595959", thickness: 2, dash:"2 2"});
 ```
 
-{sample}BCT\_Doughnut\_Chart\_02{sample}
-
 Other settings available for outer labels are {api:anychart.charts.Pie#outsideLabelsSpace}outsideLabelsSpace(){api} and {api:anychart.charts.Pie#outsideLabelsCriticalAngle}outsideLabelsCriticalAngle(){api}.
+
+In this sample, there are outside labels with customized connectors:
+
+{sample}BCT\_Doughnut\_Chart\_02{sample}
 
 #### Inner Labels
 
