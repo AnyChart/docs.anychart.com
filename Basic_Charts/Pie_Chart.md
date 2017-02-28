@@ -16,9 +16,9 @@
 
 ##Overview
 
-A pie chart...
+A pie chart is a circular chart looking like a pie divided into slices (sectors). Slices show the percentage each value contributes to a total, the area of each slice being proportional to the quantity it represents, and the circle representing 100%. A pie chart with a blank circular area in the center is called a [doughnut chart](Doughnut_Chart).
 
-The pie chart...
+Pie charts are used very widely with small sets of data to compare categories. They cannot be multi-series and should not be used when there are more than just a few categories.
 
 This article explains how to create a basic Pie chart as well as configure settings that are specific to the type. You can also see the table below to get a brief overview of the Pie chart's characteristics:
 
@@ -236,4 +236,4 @@ pie2.radius("30%")
 
 {sample}BCT\_Pie\_Chart\_09{sample}
 
-The {api:anychart.charts.Pie#innerRadius}innerRadius(){api} method allows you to set the inner radius of a Pie chart (which is 0 by default), thus turning it into a Doughnut chart. Read more in the [Doughnut](Doughnut_Chart) article.
+The {api:anychart.charts.Pie#innerRadius}innerRadius(){api} method allows you to set the inner radius of a Pie chart (which is 0 by default), thus turning it into a Doughnut chart. Read more in the [Doughnut Chart](Doughnut_Chart) article.

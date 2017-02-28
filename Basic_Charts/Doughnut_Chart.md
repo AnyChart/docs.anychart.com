@@ -11,12 +11,11 @@
 
 ##Overview
 
-A doughnut chart is a pie chart with a blank area in the center... 
+A doughnut (or donut) chart is a pie chart with a "hole" – a blank circular area in the center. The chart is divided into parts that show the percentage each value contributes to a total. 
 
-Like the regular pie chart...
-Drives attention from the central area to emphasize...
+Like the regular pie chart, the doughnut chart is used with small sets of data to compare categories. It drives attention from the area taken by each part to emphasize the length of arcs. The blank space also allows displaying some additional information in the center: for example, labels, the name of a selected category, or the chart title.
 
-The Doughnut chart is a modification of the Pie chart and shares almost all the setting with it, so this article explains just how to create a basic Doughnut chart and configure its labels. To learn about other settings, read the [Pie Chart](Line_Chart) article. See also <a href="http://www.anychart.com/chartopedia/chart-types/donut-chart/" target="_blank">Chartopedia: Doughnut Chart</a>.
+The Doughnut chart is a modification of the Pie chart and shares almost all the setting with it, so this article explains just how to create a basic Doughnut chart and configure its labels. To learn about other settings, read the [Pie Chart](Pie_Chart) article. See also <a href="http://www.anychart.com/chartopedia/chart-types/donut-chart/" target="_blank">Chartopedia: Doughnut Chart</a>.
 
 ##Quick Start
 
