@@ -1,92 +1,34 @@
-{:index 1}
+{:index 0}
 # Stacked Area Chart
 
- * [Overview](#overview)
- * [Chart](#chart)
- * [Spline Stacked Area](#spline_stacked_area)
- * [Step Stacked Area](#step_stacked_area)
- * [3D Series](#3d_series)
+* [Overview](#overview)
+* [Quick Start](#quick_start)
+* [Adjusting](#adjusting)
 
 ## Overview
 
-Data that is arranged in columns or rows on a worksheet can be plotted in an area chart. Area charts are good at emphasizing the magnitude of changes over time, as well as at drawing attention to the total value across a trend.
-  
-Stacked area charts are multi-series area charts that display the trend each value contribute over time or categories.
+A Stacked Area Chart is a multi-series Area Chart that displays the trend of the value each series contributes over time or categories.
 
-## Chart
+The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../Overview).
 
-As stacked charts should show contribution of different components to the total, we will demonstrate them on sales of an imaginable ACME FastFood, Corp. Let's assume that it sells Ice Creams, Chocolate Bars and Coke all through the year.
-  
-So, now we've got three series of data - one series for each product. Let's define categories as seasons of a year.
+## Quick Start
+
+To build a Stacked Area Chart, create a multi-series [Area Chart](../../Area_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>value</strong>:
 
 ```
-  var dataSet = anychart.data.set([
-    ["Winter", 12000, 12000, 10000],
-    ["Spring", 13000, 12000, 17000],
-    ["Summer", 25000, 15000, 19000],
-    ["Autumn", 16000, 16000, 16000]
-  ]);
+// create a chart
+var chart = chart.area();
+
+// enable the percent stacking mode
+chart.yScale().stackMode("value");
+
+// create area series
+var series1 = chart.area(seriesData_1);
+var series2 = chart.area(seriesData_2);
 ```
 
-Now we have to tell Y-Axis to display these series in a stacked area:
+{sample}BCT\_Percent\_Stacked\_Area\_Chart{sample}
 
-```
-  chart.yScale().stackMode('value');
-```
+## Adjusting
 
-And set "Area" as a default series type:
-
-```
-  chart = anychart.area();
-```
-
-{sample}BCT_Stacked\_Area-SplineArea\_Charts\_01{sample}
-
-## Spline Stacked Area
-
-This type of area chart makes your data look a bit more attractive: points and angles are replaced with a single spline. Just change default series type to "SplineArea" and get your data displayed in a more appealing way.
-Just change default series type to {api:anychart.core.cartesian.series.SplineArea}"SplineArea"{api} and get your data displayed in more appealing way:
-
-```
-    chart.splineArea(seriesData_1);
-```
-<!--Also, let's add area tooltips and make them more informative, to that we will change their format:
-
-XML Syntax
-XML Code
-Plain code
-01
-<area_series>
-02
-  <tooltip_settings enabled="true">
-03
-    <format><![CDATA[{%SeriesName} - {%Value}$ - {%YPercentOfCategory}{numDecimals:2}%]]></format>
-04
-  </tooltip_settings>
-05
-</area_series>-->
-Here is a sample spline stacked area chart:
-
-{sample}BCT_Stacked\_Area-SplineArea\_Charts\_02{sample}
-
-## Step Stacked Area
-
-Just change default series type to "stepArea" and get your data displayed in more comparable way:
-
-```
-  chart.stepArea(seriesData_1);
-```
-
-Here is a sample html5 step stacked area chart:
-
-{sample}BCT_Stacked\_Area-SplineArea\_Charts\_03{sample}
-
-### 3D Series
-
-Along with common area charts you can use 3D mode for displaying your area charts. Use {api:anychart#area3d}area3d(){api} method to enable area 3D mode.
-
-```
-var chart = anychart.area3d();
-```
-
-{sample}BCT_Stacked\_Area-SplineArea\_Charts\_04{sample}
+The Area series' settings are mostly the same as other series'. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).

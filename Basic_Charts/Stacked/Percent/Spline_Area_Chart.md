@@ -1,8 +1,9 @@
-{:index 1}
+{:index 3}
 # Percent Stacked Spline Area Chart
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)
+* [Adjusting](#adjusting)
 
 ## Overview
 
@@ -27,3 +28,7 @@ var series2 = chart.splineArea(seriesData_2);
 ```
 
 {sample}BCT\_Percent\_Stacked\_Spline\_Area\_Chart{sample}
+
+## Adjusting
+
+The Spline Area series' settings are mostly the same as other series'. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).
