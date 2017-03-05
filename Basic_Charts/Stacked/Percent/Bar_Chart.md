@@ -13,7 +13,7 @@ The concept of stacking in AnyChart is explained in this article: [Stacked Chart
 
 ## Quick Start
 
-To build a Percent Stacked Bar Chart, you should create a multi-series [Step Bar Chart](../../Step_Bar_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to <strong>percent</strong>:
+To build a Percent Stacked Bar Chart, you should create a multi-series [Bar Chart](../../Bar_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to <strong>percent</strong>:
 
 ```
 // create a chart
