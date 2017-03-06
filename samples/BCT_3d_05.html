@@ -22,7 +22,10 @@
 	chart = anychart.column3d();
 
 	// configure the z-aspect of the chart
-	chart.zAspect(160);
+	chart.zAspect(100);
+
+	// configure the z-angle of the chart
+	chart.zAngle(70);
 
 	// create a column series and set the data
 	var series = chart.column(data);

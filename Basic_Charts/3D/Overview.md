@@ -6,7 +6,6 @@
 * [Multiple Series](#multiple_series)
  * [Multi-Series](#multi-series)
  * [Z Distribution](#z_distribution) 
- * [Stacked](#stacked)
 * [Visualization](#visualization)
  * [Angle](#angle)
  * [Aspect](#aspect)
@@ -72,10 +71,6 @@ chart.zDistribution(true);
 Here is a sample of a Multi-series chart with Z Distribution enabled:
 
 {sample}BCT\_3d\_03{sample}
-
-### Stacked
-
-Stacked 3d charts are multi-series charts that display series point value upon the same point of the previous series.To enable value stacked mode you need to use {api:anychart.scales.Linear#stackMode}stackMode(){api} method of Y Scale. Please learn more about stacking in [Stacked Charts](Stacked/Overview)
 
 ## Visualization
 
