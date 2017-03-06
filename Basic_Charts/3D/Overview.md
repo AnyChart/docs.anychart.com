@@ -1,11 +1,8 @@
 {:index 1}
-#Overview
+#3D Charts
 
+* [Overview](#overview)
 * [Single Series](#single_series)
- * [Area](#area)
- * [Bar](#bar_chart)
- * [Column](#column)
- * [Pie](#pie)
 * [Multiple Series](#multiple_series)
  * [Multi-Series](#multi-series)
  * [Z Distribution](#z_distribution) 
@@ -13,6 +10,8 @@
 * [Visualization](#visualization)
  * [Angle](#angle)
  * [Aspect](#aspect)
+
+## Overview
 
 Even though there are quite a few types of charts that can be used for data visualization, AnyChart always tries to achieve more. Using AnyChart component you can create 3d versions of some chart types. 3D mode was created as alternative visual appearance of the common types of charts. Please, do not abuse this feature cause it may be misleading.
 
@@ -22,99 +21,10 @@ To make 3D Effect more appealing don't forget to turn on grids.
 
 Depending on the data model and visualization purpose you can use different 3d chart types. This section contains information on every 3d chart type.
 
-### Area
-
-Area charts emphasize the magnitude of change over time, and can be used to draw attention to the total value across a trend. Method {api:anychart#area3d}area3d(){api} creates 3D plot for your series. Use your data as a parameter for {api:anychart.core.cartesian.series.Area3d}area(){api} method to visualize it as 3D area series.
-
-```
-// define data set
-var data = anychart.data.set([
-  ["Department Stores", 637166],
-  ["Discount Stores", 721630],
-  ["Men's/Women's Specialty Stores", 148662],
-  ["All other outlets", 90000]
-]);
-
-// create 3D chart's plot
-var chart = anychart.area3d();
-
-// create series
-chart.area(data);
 ```
 
-Here is a sample how simple 3d area looks like:
-
+```
 {sample}BCT\_3d\_01{sample}
-
-<a name="bar_chart"></a>
-### Bar
-
-3D bar chart can be created as easy as area chart. Firstly, you have to create 3d chart plot using {api:anychart#bar3d}bar3d(){api} method. After creating the plot pass your data to {api:anychart.core.cartesian.series.Bar3d}bar(){api} method just like that:
-
-```
-// define data set
-var data = anychart.data.set([
-  ["Department Stores", 637166],
-  ["Discount Stores", 721630],
-  ["Men's/Women's Specialty Stores", 148662],
-  ["All other outlets", 90000]
-]);
-
-// create chart
-var chart = anychart.bar3d();
-
-// create series
-chart.bar(data);
-```
-
-And here is a sample with the settings from above:
-
-{sample}BCT\_3d\_02{sample}
-
-### Column
-
-3D column chart is very similar to 3D bar chart and it is a kind of vertically orientated 3D bar plot. 3D column plot is controlled by {api:anychart#column3d}column3d(){api} method. After creating chart’s plot you need to pass your data to {api:anychart.core.cartesian.series.Column3d}column(){api} method to create 3d column series.
-
-```
-// define data set
-var data = anychart.data.set([
-  ["Department Stores", 637166],
-  ["Discount Stores", 721630],
-  ["Men's/Women's Specialty Stores", 148662],
-  ["All other outlets", 90000]
-]);
-
-// create chart
-var chart = anychart.column3d();
-
-// create series
-chart.column(data); 
-```
-
-{sample}BCT\_3d\_03{sample}
-
-### Pie
-
-3D pie chart is a way of presenting single series of data as a percentage of the whole pie. Use {api:anychart#pie3d}pie3d(){api} method to enable 3D mode for pie chart.
-
-```
-// define data set
-var data = anychart.data.set([
-  ["Department Stores", 637166],
-  ["Discount Stores", 721630],
-  ["Men's/Women's Specialty Stores", 148662],
-  ["All other outlets", 90000]
-]);
-
-// create 3d pie chart
-var chart = anychart.pie3d(data);
-```
-
-More information about pie charts can be found in [Pie Chart](../Basic_Charts/Pie_Chart) and [Doughnut Chart](../Basic_Charts/Doughnut_Chart) articles.
-
-Here is a sample of 3d pie chart:
-
-{sample}BCT\_3d\_04{sample}
 
 ## Multiple Series
 
@@ -148,7 +58,7 @@ chart.column(Sales2004);
 
 Here is a sample of multi-series bar chart
 
-{sample}BCT\_3d\_05{sample}
+{sample}BCT\_3d\_02{sample}
 
 ### Z Distribution
 
@@ -161,7 +71,7 @@ chart.zDistribution(true);
 
 Here is a sample of a Multi-series chart with Z Distribution enabled:
 
-{sample}BCT\_3d\_09{sample}
+{sample}BCT\_3d\_03{sample}
 
 ### Stacked
 
@@ -185,6 +95,8 @@ chart.zAngle(20);
 
 **Note**: {api:anychart.charts.Cartesian3d#zAngle}zAngle(){api} range is limited and can't be less than 0 and greater than 90.
 
+{sample}BCT\_3d\_04{sample}
+
 ### Aspect
 
 For three- imensional charts it might be necessary to adjust depth of the plot. The {api:anychart.charts.Cartesian3d#zAspect}zAspect(){api} method controls depth of the 3D chart's plot.
@@ -200,7 +112,7 @@ chart.zAngle(70);
 
 Let's use these settings and create 3d chart with 40px depth and adjusted angle of view:
 
-{sample}BCT\_3d\_08{sample}
+{sample}BCT\_3d\_05{sample}
 
 **Note**: the plot's depth can be set in pixels using a numeric parameter for {api:anychart.charts.Cartesian3d#zAspect}zAspect(){api} method or in percentage depending on the size of the least points side.
 
