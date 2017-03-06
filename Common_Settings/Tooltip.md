@@ -15,6 +15,7 @@
 * [Size](#size)
 * [Background](#background)
 * [Out of chart](#out_of_chart)
+* [Out of stage](#out_of_stage)
 * [Position](#position)
  * [Fixed Tooltip Position](#fixed_tooltip_position)
 * [Hiding Time](#hiding_time)
@@ -282,6 +283,20 @@ chart.tooltip().allowLeaveChart(true);
 Note that this method can be applied only for all tooltips in a chart, it can't be set for the given series.
 
 {sample}CS\_Tooltip\_13{sample}
+
+Note: this method allows or forbids the tooltips to overflow not only the chart, but the element they belong to. For example, if a tooltip of a great size belongs to a legend or a dataGrid, setting "true" for the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} method will lead to this tooltip allowing to overflow that legend or the dataGrid.
+
+## Out of stage
+
+One chart or any other tooltip parent element may not be the same size as its stage. Stage an be smaller or greater, so if it is necessary to allow or deny the tooltip to be shown outside of the stage, use the {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} method.
+
+```
+// allow tooltips to leave the chart bounds
+chart.tooltip().allowLeaveChart(true);
+```
+
+{sample}CS\_Tooltip\_13\_1{sample}
+
 
 ## Position
 
