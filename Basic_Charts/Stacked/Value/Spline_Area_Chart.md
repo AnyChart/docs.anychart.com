@@ -13,7 +13,7 @@ The concept of stacking in AnyChart is described in this article: [Stacked (Over
 
 ## Quick Start
 
-To build a Stacked Spline Area Chart, create a multi-series [Spline Area Chart](../../Area_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>value</strong>:
+To build a Stacked Spline Area Chart, create a multi-series [Spline Area Chart](../../Spline_Area_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>value</strong>:
 
 ```
 // create a chart

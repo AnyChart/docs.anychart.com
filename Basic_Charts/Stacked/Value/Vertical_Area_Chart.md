@@ -13,7 +13,7 @@ The concept of stacking in AnyChart is described in this article: [Stacked (Over
 
 ## Quick Start
 
-To build a Vertical Stacked Area Chart, create a multi-series [Vertical Stacked Area Chart](../../Vertical/Stacked_Area_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>value</strong>:
+To build a Vertical Stacked Area Chart, create a multi-series [Vertical Area Chart](../../Vertical/Area_Chart) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>value</strong>:
 
 ```
 // create a chart

@@ -1,4 +1,4 @@
-{:index 1}
+{:index 0}
 #Vertical Charts
 
 * [Creating a Vertical Chart/Series](#creating_a_vertical_chart_series)

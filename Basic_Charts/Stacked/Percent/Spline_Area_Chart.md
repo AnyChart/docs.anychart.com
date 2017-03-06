@@ -7,7 +7,7 @@
 
 ## Overview
 
-A percent stacked spline area chart (also known as a 100% stacked spline area chart) is a multi-series area chart that displays the trend of the percentage each value contributes over time or categories.
+A Percent Stacked Spline Area Chart (also known as a 100% Stacked Spline Area Chart) is a multi-series area chart that displays the trend of the percentage each value contributes over time or categories.
 
 The concept of stacking in AnyChart is explained in this article: [Stacked Charts (Overview)](../Overview).
 
