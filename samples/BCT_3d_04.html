@@ -9,20 +9,26 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-	// set data and chart type
-	chart = anychart.pie3d([
-		{name: "Department Stores",         value: 637166},
-		{name: "Discount Stores",           value: 721630},
-		{name: "Men's/Women's Stores",      value: 148662},
-		{name: "Juvenile Specialty Stores", value: 78662},
-		{name: "All other outlets",         value: 90000}
-	]);
+    // create data
+    var data = [
+      {x: "A", value: 637166},
+      {x: "B", value: 721630},
+      {x: "C", value: 148662},
+      {x: "D", value: 78662},
+      {x: "E", value: 90000}
+    ];
 
+    // create a 3d pie chart and set the data
+    chart = anychart.pie(data)
+
+    // set the chart title
 	chart.title("3D Pie Chart");
 
-	// draw
-	chart.container("container");
-	chart.draw();
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
 });</script>
 </head>
 <body>

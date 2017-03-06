@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 
-	// data
+	// create a data set
 	var data = anychart.data.set([
 		["January", 10000],
 		["February", 12000],
@@ -18,15 +18,18 @@
 		["May", 9000]
 	]);
 
-	// set chart type
-	chart = anychart.column3d();
+	// create a 3d bar chart
+	chart = anychart.bar3d();
 
-	// setting title
-	chart.title("3D Column Chart");
-
-    // enabled grids
+    // enable grids
     chart.grid(0).enabled(true);
-    chart.grid(1).enabled(true).layout("vertical");
+    chart.grid(1).enabled(true).layout("horizontal");	
+
+	// create a bar series and set the data
+	var series = chart.bar(data);
+
+    // set the chart title
+	chart.title("3D Bar Chart");
 
 	// set axes titles
 	var xAxis = chart.xAxis();
@@ -34,12 +37,10 @@
 	var yAxis = chart.yAxis();
 	yAxis.title("Sales");
 
-	// set data
-	var series = chart.column(data);
-	series.name("Sales 2009");
-
-	// draw chart
+	// set the container id
 	chart.container("container");
+
+	// initiate drawing the chart
 	chart.draw();
 });</script>
 </head>
