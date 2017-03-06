@@ -1,4 +1,4 @@
-{:index 0}
+{:index 8}
 # Vertical Stacked Step Area Chart
 
 * [Overview](#overview)

@@ -1,4 +1,4 @@
-{:index 1}
+{:index 5}
 # Stacked Stick Chart
 
 * [Overview](#overview)

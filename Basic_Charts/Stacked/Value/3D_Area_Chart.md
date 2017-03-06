@@ -1,4 +1,4 @@
-{:index 0}
+{:index 10}
 # 3D Stacked Area Chart
 
 * [Overview](#overview)
@@ -7,13 +7,13 @@
 
 ## Overview
 
-A Stacked 3D Area Chart is a multi-series 3D Area Chart that displays the trend of the value each series contributes over time or categories.
+A 3D Stacked Area Chart is a multi-series 3D Area Chart that displays the trend of the value each series contributes over time or categories.
 
 The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../Overview).
 
 ## Quick Start
 
-To build a Stacked 3D Area Chart, create a multi-series [3D Area Chart](../../3D/Overview#area) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>value</strong>:
+To build a 3D Stacked Area Chart, create a multi-series [3D Area Chart](../../3D/Overview#area) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>value</strong>:
 
 ```
 // create a chart
@@ -27,8 +27,8 @@ var series1 = chart.area(seriesData_1);
 var series2 = chart.area(seriesData_2);
 ```
 
-{sample}BCT\_Stacked\_3D\_Area\_Chart{sample}
+{sample}BCT\_3D\_Stacked\_Area\_Chart{sample}
 
 ## Adjusting
 
-The Stacked 3D Area series' settings are mostly the same as other series' ones. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).
+The 3D Stacked Area series' settings are mostly the same as other series' ones. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).

@@ -1,4 +1,4 @@
-{:index 0}
+{:index 3}
 # Stacked Spline Area Chart
 
 * [Overview](#overview)

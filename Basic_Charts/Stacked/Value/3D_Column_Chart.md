@@ -1,4 +1,4 @@
-{:index 0}
+{:index 12}
 # 3D Stacked Column Chart
 
 * [Overview](#overview)
@@ -7,13 +7,13 @@
 
 ## Overview
 
-A Stacked 3D Column Chart is a multi-series 3D Column Chart that displays the trend of the value each series contributes over time or categories.
+A 3D Stacked Column Chart is a multi-series 3D Column Chart that displays the trend of the value each series contributes over time or categories.
 
 The concept of stacking in AnyChart is described in this article: [Stacked (Overview)](../Overview).
 
 ## Quick Start
 
-To build a Stacked 3D Column Chart, create a multi-series [3D Column Chart](../../3D/Overview#column) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>value</strong>:
+To build a 3D Stacked Column Chart, create a multi-series [3D Column Chart](../../3D/Overview#column) and set the {api:anychart.scales.Linear#stackMode}stackMode(){api} method into <strong>value</strong>:
 
 ```
 // create a chart
@@ -23,12 +23,12 @@ var chart = chart.column3d();
 chart.yScale().stackMode("value");
 
 // create 3d column series
-var series1 = chart.column3d(seriesData_1);
-var series2 = chart.column3d(seriesData_2);
+var series1 = chart.column(seriesData_1);
+var series2 = chart.column(seriesData_2);
 ```
 
-{sample}BCT\_Stacked\_3D\_Column\_Chart{sample}
+{sample}BCT\_3D\_Stacked\_Column\_Chart{sample}
 
 ## Adjusting
 
-The Stacked 3D Column series' settings are mostly the same as other series' ones. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).
+The 3D Stacked Column series' settings are mostly the same as other series' ones. The majority of information about adjusting series in AnyChart is given in the [General Settings article](../../General_Settings).

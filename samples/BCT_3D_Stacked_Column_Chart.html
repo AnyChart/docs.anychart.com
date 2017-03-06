@@ -25,7 +25,7 @@
 	chart = anychart.column3d();
 
 	// setting title
-	chart.title("Stacked 3D Column Chart");
+	chart.title("3D Stacked Column Chart");
 
     // enabled grids
     chart.grid(0).enabled(true);
@@ -38,7 +38,13 @@
 	yAxis.title("Sales");
 
 	var yScale = chart.yScale();
-	yScale.stackMode("percent");
+	yScale.stackMode("value");
+
+  	// configure tooltips
+  	chart.tooltip().textFormatter("{%Value}");
+
+	// configure labels on the Y-axis
+  	yAxis.labels().textFormatter("{%Value}");
 
 	// set data
 	var series1 = chart.column(dataSet1);

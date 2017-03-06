@@ -1,4 +1,4 @@
-{:index 0}
+{:index 6}
 # Vertical Stacked Area Chart
 
 * [Overview](#overview)

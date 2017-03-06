@@ -1,4 +1,4 @@
-{:index 0}
+{:index 4}
 # Stacked Step Area Chart
 
 * [Overview](#overview)

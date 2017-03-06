@@ -26,7 +26,7 @@
   var chart = anychart.bar3d();
 
   // enable the percent stacking mode
-  chart.yScale().stackMode("value");
+  chart.yScale().stackMode("percent");
 
   // create area series, set the data
   var series1 = chart.bar(seriesData_1);
@@ -34,10 +34,10 @@
   var series3 = chart.bar(seriesData_3);
 
   // configure tooltips
-  chart.tooltip().textFormatter("{%Value}");
+  chart.tooltip().textFormatter("{%Value} ({%YPercentOfCategory}{decimalsCount:2}%)");
 
   // configure labels on the Y-axis
-  chart.yAxis().labels().textFormatter("{%Value}");
+  chart.yAxis().labels().textFormatter("{%Value}%");
 
   // set the chart title
   chart.title("3D Stacked Bar Chart");

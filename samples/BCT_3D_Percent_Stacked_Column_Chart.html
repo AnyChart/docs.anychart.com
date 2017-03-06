@@ -22,13 +22,10 @@
 	var dataSet3 = data.mapAs({x: [0], value: [3]});
 
 	// set chart type
-	chart = anychart.area3d();
-
-	var yScale = chart.yScale();
-	yScale.stackMode("value");
+	chart = anychart.column3d();
 
 	// setting title
-	chart.title("3D Stacked Area Chart");
+	chart.title("3D Percent Stacked Column Chart");
 
     // enabled grids
     chart.grid(0).enabled(true);
@@ -40,12 +37,21 @@
 	var yAxis = chart.yAxis();
 	yAxis.title("Sales");
 
-	// create series
-	var series1 = chart.area(dataSet1);
+	var yScale = chart.yScale();
+	yScale.stackMode("percent");
+
+  	// configure tooltips
+  	chart.tooltip().textFormatter("{%Value} ({%YPercentOfCategory}{decimalsCount:2}%)");
+
+	// configure labels on the Y-axis
+  	yAxis.labels().textFormatter("{%Value}%");
+
+	// set data
+	var series1 = chart.column(dataSet1);
 	series1.name("Sales 2009");
-	var series2 = chart.area(dataSet2);
+	var series2 = chart.column(dataSet2);
 	series2.name("Sales 2010");
-	var series3 = chart.area(dataSet3);
+	var series3 = chart.column(dataSet3);
 	series3.name("Sales 2011");
 
 	// draw chart
