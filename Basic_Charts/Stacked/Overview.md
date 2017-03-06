@@ -228,5 +228,3 @@ chart.line(seriesData_3);
 * [3D Percent Stacked Area Chart](./Percent/3D_Area_Chart)
 * [3D Percent Stacked Bar Chart](./Percent/3D_Bar_Chart)
 * [3D Percent Stacked Column Chart](./Percent/3D_Column_Chart)
-* [3D Vertical Stacked Area Chart](./Value/3D_Vertical_Area_Chart)
-* [3D Vertical Percent Stacked Area Chart](./Percent/3D_Vertical_Area_Chart)
