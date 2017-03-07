@@ -17,9 +17,16 @@ This article explains how to create and configure 3D charts.
 
 ## Quick Start
 
-To create a 3D chart, use one of the following chart constructors: {api:anychart#area3d}anychart.area3d(){api}, {api:anychart#column3d}anychart.column3d(){api}, {api:anychart#bar3d}anychart.bar3d(){api}, {api:anychart#pie3d}anychart.pie3d(){api}.
+To create a 3D chart, use one of the following chart constructors:
+* {api:anychart#area3d}anychart.area3d(){api}
+* {api:anychart#column3d}anychart.column3d(){api}
+* {api:anychart#bar3d}anychart.bar3d(){api}
+* {api:anychart#pie3d}anychart.pie3d(){api}
 
-You can either pass your data to the chart constructor or create a series, using one of these methods: {api:anychart.charts.Cartesian#area}area(){api}, {api:anychart.charts.Cartesian#column}column(){api}, {api:anychart.charts.Cartesian#bar}bar(){api} (the second option is not available for the 3D Pie chart):
+You can either pass your data to the chart constructor or create a series, using one of these methods:
+* {api:anychart.charts.Cartesian#area}area(){api}
+* {api:anychart.charts.Cartesian#column}column(){api}
+* {api:anychart.charts.Cartesian#bar}bar(){api}
 
 ```
 // create a 3d column chart
@@ -36,7 +43,7 @@ var series = chart.column(data);
 
 3D charts can be shown from different angles of view: to set the angle, use the {api:anychart.charts.Cartesian3d#zAngle}zAngle(){api} method with any 3D chart except the 3D Pie.
 
-**Note** The value you use as a parameter should fall in the range from 0 to 90. By default, the angle is 45°. 
+**Note:** The value you use as a parameter should fall in the range from 0 to 90. By default, the angle is 45°. 
 
 In the following sample, there is a 3D Column chart with the Z-angle set to 20°.
 
@@ -52,7 +59,7 @@ chart.zAngle(20);
 
 3D charts can vary in depth: you can set it by using the {api:anychart.charts.Cartesian3d#zAspect}zAspect(){api} method with any 3D chart except the 3D Pie.
 
-**Note** ???
+**Note:** ???
 
 In the sample below, there is a 3D Column chart with the Z-aspect set to 100 (the Z-angle is also configured):
 
