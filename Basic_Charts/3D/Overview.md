@@ -57,7 +57,7 @@ chart.zAngle(20);
 <a name='z_aspect'></a>
 ## Z-Aspect
 
-3D charts can vary in depth: you can set it by using the {api:anychart.charts.Cartesian3d#zAspect}zAspect(){api} method with any 3D chart except the 3D Pie.
+3D charts can vary in depth: to set it, us the {api:anychart.charts.Cartesian3d#zAspect}zAspect(){api} method with any 3D chart except the 3D Pie.
 
 **Note:** ???
 
