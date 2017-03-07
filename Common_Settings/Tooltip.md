@@ -273,29 +273,48 @@ That is how tooltip background with the settings from above looks like:
 
 ## Out of chart
 
-In case when a tooltip on a chart is too big it may become a problem to demonstrate it within the chart bounds, you can allow the tooltip to be shown out of a chart. Set "true" to {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} to allow tooltips to leave the chart bounds.
+In case when a tooltip on a chart is too big it may become a problem to demonstrate it within the chart bounds, you can allow the tooltip to be shown out of a chart. Set "true" to {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} to allow tooltips to leave the chart bounds. This method can be applied for the chart so it will affect all series simultaneously, or to series separately:
 
 ```
 // allow tooltips to leave the chart bounds
-chart.tooltip().allowLeaveChart(true);
+series1.tooltip().allowLeaveChart(true);
+
+// forbid tooltips to leave the chart bounds
+series2.tooltip().allowLeaveChart(false);
 ```
 
-Note that this method can be applied only for all tooltips in a chart, it can't be set for the given series.
-
 {sample}CS\_Tooltip\_13{sample}
+
+Note that series' settings are supposed to override the chart's settings.
 
 Note: this method allows or forbids the tooltips to overflow not only the chart, but the element they belong to. For example, if a tooltip of a great size belongs to a legend or a dataGrid, setting "true" for the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} method will lead to this tooltip allowing to overflow that legend or the dataGrid.
 
 ## Out of stage
 
+One chart or any other tooltip parent element may not be the same size as its stage. Stage can be smaller or greater, so if it is necessary to allow or deny the tooltip to be shown outside of the stage, use the {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} method.
+
+```
+// allow tooltips to leave the chart bounds
+series1.tooltip().allowLeaveStage(true);
+```
+
+{sample}CS\_Tooltip\_13\_1{sample}
+
+Note that the stage the chart belongs to is considered as the stage of the tooltip of this chart. 
+
+## Out of screen
+
+If it is necessary to show the tooltip regardless of whether the tooltip is shown
 One chart or any other tooltip parent element may not be the same size as its stage. Stage an be smaller or greater, so if it is necessary to allow or deny the tooltip to be shown outside of the stage, use the {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} method.
 
 ```
 // allow tooltips to leave the chart bounds
-chart.tooltip().allowLeaveChart(true);
+series.tooltip().allowLeaveScreen(true);
 ```
 
-{sample}CS\_Tooltip\_13\_1{sample}
+{sample}CS\_Tooltip\_13\_2{sample}
+
+Note that the default
 
 
 ## Position
