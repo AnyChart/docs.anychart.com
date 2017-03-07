@@ -66,9 +66,7 @@ chart.zAspect(100);
 <a name='z_distribution'></a>
 ## Z-Distribution
 
-In 3D multi-series charts, series are distributed along the X-axis by defalut (like in 2D charts). However, they can be distributed along the Z-axis by calling the {api:anychart.charts.Cartesian3d#zDistribution}zDistribution(){api} and using **true** as a parameter ( while **false** enables the default distribution along the X-axis):
-
-{api:anychart.charts.Cartesian3d#zDistribution}zDistribution(){api}
+In 3D multi-series charts, series are distributed along the X-axis by defalut. However, you can also distribute them along the Z-axis: call the {api:anychart.charts.Cartesian3d#zDistribution}zDistribution(){api} and use **true** as a parameter (**false** enables the default X-distribution):
 
 ```
 // enable the z-axis distribution mode
