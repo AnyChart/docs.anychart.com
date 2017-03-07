@@ -11,27 +11,24 @@
 
 	// create a data set
 	var data = anychart.data.set([
-		["Winter", 12000, 12000, 10000],
-		["Spring", 13000, 12000, 17000],
-		["Summer", 25000, 15000, 19000],
-		["Autumn", 16000, 16000, 16000]
+		["January", 10000],
+		["February", 12000],
+		["March", 18000],
+		["April", 11000],
+		["May", 9000]
 	]);
-
-	// map the data
-	var seriesData_1 = data.mapAs({x: [0], value: [1]});
-	var seriesData_2 = data.mapAs({x: [0], value: [2]});
-	var seriesData_3 = data.mapAs({x: [0], value: [3]});
 
 	// create a 3d column chart
 	chart = anychart.column3d();
 
-	// create series (column) and set the data
-	var series1 = chart.column(seriesData_1);
-	var series2 = chart.column(seriesData_2);
-	var series3 = chart.column(seriesData_3);
+	// configure the z-angle of the chart
+	chart.zAngle(20);
+
+	// create a column series and set the data
+	var series = chart.column(data);
 
 	// set the chart title
-	chart.title("3D Charts: Multiple Series");
+	chart.title("3D Charts: Z-Angle");
 
 	// set the container id
 	chart.container("container");
