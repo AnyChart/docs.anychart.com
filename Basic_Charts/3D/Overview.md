@@ -28,6 +28,8 @@ You can either pass your data to the chart constructor or create a series, using
 * {api:anychart.charts.Cartesian#column}column(){api}
 * {api:anychart.charts.Cartesian#bar}bar(){api}
 
+That is how it looks like:
+
 ```
 // create a 3d column chart
 chart = anychart.column3d();
@@ -73,7 +75,9 @@ chart.zAspect(100);
 <a name='z_distribution'></a>
 ## Z-Distribution
 
-In 3D multi-series charts, series are distributed along the X-axis by defalut. However, you can also distribute them along the Z-axis: call the {api:anychart.charts.Cartesian3d#zDistribution}zDistribution(){api} and use **"true"** as a parameter (**"false"** enables the default X-distribution):
+In 3D multi-series charts, series are distributed along the X-axis by defalut. However, you can also distribute them along the Z-axis: call the {api:anychart.charts.Cartesian3d#zDistribution}zDistribution(){api} method and use **"true"** as a parameter. The **"false"** paramater enables the default X-distribution.
+
+Here is a sample 3D Column chart with the Z-axis distribution enabled:
 
 ```
 // enable the z-axis distribution mode
