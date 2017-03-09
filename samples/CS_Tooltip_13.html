@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdn.anychart.com/css/latest/anychart-ui.min.css"/>
     <script x-export="chart">anychart.onDocumentReady(function() {
 var stage = anychart.graphics.create("container");
-var stage2 = anychart.graphics.create("container2");
 
   var dataSet = anychart.data.set([
     ["John", 10000, 13000],
@@ -30,7 +29,7 @@ var stage2 = anychart.graphics.create("container2");
   series2.name("Year 2010");
 
   // set title
-  chart.title("Tooltips can leave the chart bounds");
+  chart.title("Tooltips of one of the series can leave the chart bounds");
 
   // set the padding for the chart
   chart.bounds(10, 20, "85%", "50%");
@@ -41,6 +40,7 @@ var stage2 = anychart.graphics.create("container2");
   series2.tooltip().allowLeaveChart(false);
 
   series1.tooltip().textFormatter("This tooltip can be demonstrated out of the chart, if this becomes necessary to show it all");
+  series2.tooltip().textFormatter("This tooltip is not able to be demonstrated out of the chart");
 
   // font settings for tooltip text
   var tooltip1 = series1.tooltip();
@@ -55,6 +55,5 @@ var stage2 = anychart.graphics.create("container2");
 </head>
 <body>
 <div id="container" style="width: 70%; height: 100%; background-color: Honeydew; float: left;"></div>
-<div id="container2" style="width: 30%; height: 100%; margin-left:70%;"></div>
 </body>
 </html>
