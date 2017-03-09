@@ -16,6 +16,7 @@
 * [Background](#background)
 * [Out of chart](#out_of_chart)
 * [Out of stage](#out_of_stage)
+ * [Tooltip global container](#tooltip_global_container)
 * [Out of screen](#out_of_screen)
 * [Position](#position)
  * [Fixed Tooltip Position](#fixed_tooltip_position)
@@ -286,9 +287,9 @@ series2.tooltip().allowLeaveChart(false);
 
 {sample}CS\_Tooltip\_13{sample}
 
-Note that series' settings are supposed to override the chart's settings, so the chart's tooltips settings are inherited by the third series with no settings adjusted.
+Note that series' individual tooltip settings are supposed to override the chart's tooltip settings, so the chart's tooltips settings are inherited by the third series with no settings adjusted.
 
-Also note that this method allows or forbids the tooltips to overflow not only the chart, but the element they belong to. For example, if a tooltip of a great size belongs to a legend or a dataGrid, setting "true" for the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} method will lead to this tooltip allowing to overflow that legend or the dataGrid.
+Also note that this method allows or forbids the tooltips to overflow not only the chart, but the element they belong to. For example, if a tooltip of a great size belongs to a legend or a dataGrid, setting "true" for the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} method will lead to this tooltip allowing to overflow that [legend](../Common_Settings/Legend) or the [dataGrid](../Gantt_Chart/DataGrid).
 
 ## Out of stage
 
@@ -305,7 +306,11 @@ chart.tooltip().allowLeaveStage(false);
 
 {sample}CS\_Tooltip\_13\_1{sample}
 
-Note: that stage the chart belongs to is considered as the stage of the tooltip of this chart. 
+Note: that stage the chart belongs to is considered as the stage of the tooltip of this chart.
+
+### Tooltip global container
+
+When any tooltip gets both methods {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} and {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} set as "true", the tooltip becomes the child element of the whole page. This may lead to a situation when the tooltip is left on the page after it has been reloaded. In this case, the only way to hide the tooltips left is to call the {api:anychart.utils#hideTooltips}anychart.utils.hideTooltips(){api} method.
 
 ## Out of screen
 
