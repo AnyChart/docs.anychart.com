@@ -10,16 +10,17 @@
     <script x-export="chart">anychart.onDocumentReady(function() {
 var stage = anychart.graphics.create("container");
 
-  var dataSet = anychart.data.set([
-    ["John", 10000, 13000],
-    ["Jake", 12000, 10000],
-    ["Peter", 18000, 19000],
-    ["James", 11000, 10000],
-    ["Mary", 9000, 16000]
+var dataSet = anychart.data.set([
+    ["John", 10000, 13000, 15000],
+    ["Jake", 12000, 10000, 18000],
+    ["Peter", 18000, 19000, 16000],
+    ["James", 11000, 10000, 14000],
+    ["Mary", 9000, 16000, 19000]
   ]);
 
   var data1 = dataSet.mapAs({x: [0], value: [1]});
   var data2 = dataSet.mapAs({x: [0], value: [2]});
+  var data3 = dataSet.mapAs({x: [0], value: [3]});
 
   // chart type
   chart = anychart.bar();
@@ -27,12 +28,14 @@ var stage = anychart.graphics.create("container");
   series1.name("Year 2008");
   series2 = chart.bar(data2);
   series2.name("Year 2010");
+  series3 = chart.bar(data3);
+  series3.name("Year 2012");
 
   // set title
   chart.title("Tooltips of one of the series can leave the chart bounds");
 
   // set the padding for the chart
-  chart.bounds(10, 20, "85%", "50%");
+  chart.bounds(10, 20, "90%", "70%");
   chart.background("green 0.1");
 
   // let tooltips to leave the chart bounds
@@ -48,13 +51,16 @@ var stage = anychart.graphics.create("container");
   var title1 = series1.tooltip().title();
   title1.fontWeight(900);
 
+  // adjust chart tooltips for the third series
+  chart.tooltip().textFormatter("This series tooltips' settings are inherited from chart tooltip defaults");
+  
   // draw
   chart.container(stage);
   chart.draw();
 
-  // for better illustration
-  document.getElementById('container').style.width='70%';
-  document.getElementById('container').style.background='#F0FFF0';
+  // limit the stage parameters for better illustration
+  document.getElementById("container").style.width="85%";
+  document.getElementById("container").style.background="#F0FFF0";
 });</script>
 </head>
 <body>

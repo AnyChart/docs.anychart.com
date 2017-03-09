@@ -16,6 +16,7 @@
 * [Background](#background)
 * [Out of chart](#out_of_chart)
 * [Out of stage](#out_of_stage)
+* [Out of screen](#out_of_screen)
 * [Position](#position)
  * [Fixed Tooltip Position](#fixed_tooltip_position)
 * [Hiding Time](#hiding_time)
@@ -273,7 +274,7 @@ That is how tooltip background with the settings from above looks like:
 
 ## Out of chart
 
-In case when a tooltip on a chart is too big it may become a problem to demonstrate it within the chart bounds, you can allow the tooltip to be shown out of a chart. Set "true" to {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} to allow tooltips to leave the chart bounds. This method can be applied for the chart so it will affect all series simultaneously, or to series separately:
+In case when a tooltip on a chart is too big it may become a problem to demonstrate it within the chart bounds, you can allow the tooltip to be shown out of a chart. Set "true" to {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} to allow series tooltips to leave the chart bounds. This method can also be applied for the chart so it will affect all series simultaneously, or to series separately:
 
 ```
 // allow tooltips to leave the chart bounds
@@ -285,36 +286,40 @@ series2.tooltip().allowLeaveChart(false);
 
 {sample}CS\_Tooltip\_13{sample}
 
-Note that series' settings are supposed to override the chart's settings.
+Note that series' settings are supposed to override the chart's settings, so the chart's tooltips settings are inherited by the third series with no settings adjusted.
 
-Note: this method allows or forbids the tooltips to overflow not only the chart, but the element they belong to. For example, if a tooltip of a great size belongs to a legend or a dataGrid, setting "true" for the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} method will lead to this tooltip allowing to overflow that legend or the dataGrid.
+Also note that this method allows or forbids the tooltips to overflow not only the chart, but the element they belong to. For example, if a tooltip of a great size belongs to a legend or a dataGrid, setting "true" for the {api:anychart.core.ui.Tooltip#allowLeaveChart}allowLeaveChart(){api} method will lead to this tooltip allowing to overflow that legend or the dataGrid.
 
 ## Out of stage
 
-One chart or any other tooltip parent element may not be the same size as its stage. Stage can be smaller or greater, so if it is necessary to allow or deny the tooltip to be shown outside of the stage, use the {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} method.
+One chart or any other tooltip parent element may not be the same size as its stage. Stage can be smaller or greater, so if it is necessary to allow or deny the tooltip to be shown outside of the stage, use the {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} method. This method can also be applied for the chart so it will affect all series simultaneously, or to series separately:
 
 ```
-// allow tooltips to leave the chart bounds
+// adjust series tooltips
 series1.tooltip().allowLeaveStage(true);
+series2.tooltip().allowLeaveStage(false);
+
+// adjust chart tooltips for the third series
+chart.tooltip().allowLeaveStage(false);
 ```
 
 {sample}CS\_Tooltip\_13\_1{sample}
 
-Note that the stage the chart belongs to is considered as the stage of the tooltip of this chart. 
+Note: that stage the chart belongs to is considered as the stage of the tooltip of this chart. 
 
 ## Out of screen
 
-If it is necessary to show the tooltip regardless of whether the tooltip is shown
-One chart or any other tooltip parent element may not be the same size as its stage. Stage an be smaller or greater, so if it is necessary to allow or deny the tooltip to be shown outside of the stage, use the {api:anychart.core.ui.Tooltip#allowLeaveStage}allowLeaveStage(){api} method.
+If it is necessary to show the tooltip regardless of whether the tooltip is shown fully or not, use the {api:anychart.core.ui.Tooltip#allowLeaveScreen}allowLeaveScreen(){api} method. Setting "true" will make tooltips of the series or chart to follow the cursor and to go beyond the screen.
 
 ```
-// allow tooltips to leave the chart bounds
-series.tooltip().allowLeaveScreen(true);
+// adjust series tooltips
+series1.tooltip().allowLeaveScreen(true);
+series2.tooltip().allowLeaveScreen(false);
 ```
+
+The third series inherit the chart's defaults in this sample.
 
 {sample}CS\_Tooltip\_13\_2{sample}
-
-Note that the default
 
 
 ## Position
