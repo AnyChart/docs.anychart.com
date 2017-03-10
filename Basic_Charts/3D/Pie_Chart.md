@@ -1,3 +1,4 @@
+{:index 2}
 # 3D Pie Chart
 
 * [Overview](#overview)
@@ -5,24 +6,17 @@
 
 ## Overview
 
-A percent stacked area chart (also known as a 100% stacked area chart) is a multi-series area chart that displays the trend of the percentage each value contributes over time or categories.
+This article explains how to create a 3D Pie chart in AnyChart.
 
-The concept of stacking in AnyChart is explained in this article: [Stacked (Overview)](../Overview).
+To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). You can also read about the settings available for the [Pie Chart](../Pie_Chart), most of them shared by 3D Pie.
 
 ## Quick Start
 
-To build a Percent Stacked Area Chart, you should create a multi-series [Area Chart](../../Area_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to <strong>percent</strong>:
+To build a 3D Pie Chart, use the {api:anychart#pie3d}anychart.bar3d(){api} chart constructor:
 
 ```
-// create a chart
-var chart = chart.area();
-
-// enable the percent stacking mode
-chart.yScale().stackMode("percent");
-
-// create area series
-var series1 = chart.area(seriesData_1);
-var series2 = chart.area(seriesData_2);
+// create a 3d pie chart
+chart = anychart.pie3d();
 ```
 
-{sample}BCT\_Percent\_Stacked\_Area\_Chart{sample}
+{sample}BCT\_3D\_Pie\_Chart{sample}

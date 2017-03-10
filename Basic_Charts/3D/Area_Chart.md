@@ -8,7 +8,7 @@
 
 This article explains how to create a 3D Area chart in AnyChart.
 
-To learn more about 3D charts in general and how to customize them, see the [3D Charts](Overview) article. You can also read about the settings available for the [Area Chart](../Area_Chart), most of them shared by 3D Area.
+To learn more about 3D charts in general and how to customize them, see [3D Charts (Overview)](Overview). You can also read about the settings available for the [Area Chart](../Area_Chart), most of them shared by 3D Area.
 
 ## Quick Start
 
