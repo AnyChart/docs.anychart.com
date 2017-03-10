@@ -19,14 +19,14 @@ This article explains how to create and configure 3D charts.
 
 To create a 3D chart, use one of the following chart constructors:
 * {api:anychart#area3d}anychart.area3d(){api}
-* {api:anychart#column3d}anychart.column3d(){api}
 * {api:anychart#bar3d}anychart.bar3d(){api}
+* {api:anychart#column3d}anychart.column3d(){api}
 * {api:anychart#pie3d}anychart.pie3d(){api}
 
 You can either pass your data to the chart constructor or create a series, using one of these methods:
 * {api:anychart.charts.Cartesian#area}area(){api}
-* {api:anychart.charts.Cartesian#column}column(){api}
 * {api:anychart.charts.Cartesian#bar}bar(){api}
+* {api:anychart.charts.Cartesian#column}column(){api}
 
 That is how it looks like:
 
@@ -105,11 +105,11 @@ chart.zDistribution(true);
 
 Here you can learn more about the supported types of 3D charts:
 
-* [3D Area](3D_Area_Chart)
-* [3D Bar](3D_Bar_Chart)
-* [3D Column](3D_Column_Chart)
-* [3D Pie](3D_Pie_Chart)
-* [3D Doughnut](3D_Doughnut_Chart)
+* [3D Area](Area_Chart)
+* [3D Bar](Bar_Chart)
+* [3D Column](Column_Chart)
+* [3D Pie](Pie_Chart)
+* [3D Doughnut](Doughnut_Chart)
 
 See also 3D [stacked](../Stacked/Overview) charts:
 
