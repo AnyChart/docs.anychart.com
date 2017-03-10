@@ -1,5 +1,5 @@
 {:index 1}
-# Percent Stacked Area Chart
+# 3D Bar Chart
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)

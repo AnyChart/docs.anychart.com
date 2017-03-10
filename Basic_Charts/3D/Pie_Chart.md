@@ -1,5 +1,4 @@
-{:index 1}
-# Percent Stacked Area Chart
+# 3D Pie Chart
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)

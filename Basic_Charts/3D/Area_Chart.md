@@ -1,29 +1,25 @@
-{:index 1}
-# Percent Stacked Area Chart
+{:index 2}
+# 3D Area Chart
 
 * [Overview](#overview)
 * [Quick Start](#quick_start)
 
 ## Overview
 
-A percent stacked area chart (also known as a 100% stacked area chart) is a multi-series area chart that displays the trend of the percentage each value contributes over time or categories.
+This article explains how to create a 3D Area chart in AnyChart.
 
-The concept of stacking in AnyChart is explained in this article: [Stacked (Overview)](../Overview).
+To learn more about 3D charts in general and how to customize them, see the [3D Charts](Overview) article. In addition, You can also read about the settings available for the [Area Chart](../Area_Chart) (most of them are shared by the 3D Area chart).
 
 ## Quick Start
 
-To build a Percent Stacked Area Chart, you should create a multi-series [Area Chart](../../Area_Chart) and set {api:anychart.scales.Linear#stackMode}stackMode(){api} to <strong>percent</strong>:
+To build a 3D Area Chart, use the {api:anychart#area3d}anychart.area3d(){api} chart constructor. You can either pass your data to the chart constructor or create a series, using the {api:anychart.charts.Cartesian#area}area(){api} method:
 
 ```
-// create a chart
-var chart = chart.area();
+// create a 3d area chart
+chart = anychart.area3d();
 
-// enable the percent stacking mode
-chart.yScale().stackMode("percent");
-
-// create area series
-var series1 = chart.area(seriesData_1);
-var series2 = chart.area(seriesData_2);
+// create an area series and set the data
+var series = chart.area(data);
 ```
 
-{sample}BCT\_Percent\_Stacked\_Area\_Chart{sample}
+{sample}BCT\_3D\_Area\_Chart{sample}
