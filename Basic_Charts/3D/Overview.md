@@ -31,11 +31,26 @@ You can either pass your data to the chart constructor or create a series, using
 That is how it looks like:
 
 ```
+// create a data set
+var data = anychart.data.set([
+  ["January", 10000],
+  ["February", 12000],
+  ["March", 18000],
+  ["April", 11000],
+  ["May", 9000]
+]);
+
 // create a 3d column chart
 chart = anychart.column3d();
 
 // create a column series and set the data
 var series = chart.column(data);
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
 ```
 
 {sample}BCT\_3d\_01{sample}
@@ -59,15 +74,15 @@ chart.zAngle(20);
 <a name='z_aspect'></a>
 ## Z-Aspect
 
-3D charts can vary in depth: to set it, us the {api:anychart.charts.Cartesian3d#zAspect}zAspect(){api} method with any 3D chart except the 3D Pie.
+3D charts can vary in depth: to set it, use the {api:anychart.charts.Cartesian3d#zAspect}zAspect(){api} method with any 3D chart except the 3D Pie.
 
-**Note:** ???
+**Note:** You can set the depth either in pixels (numeric value) or in percentage (string value).
 
-In the sample below, there is a 3D Column chart with the Z-aspect set to 100 (the Z-angle is also configured):
+In the sample below, there is a 3D Column chart with the Z-aspect set to 100% (the Z-angle is also configured):
 
 ```
 // configure the z-aspect of the chart
-chart.zAspect(100);
+chart.zAspect("100%"");
 ```
 
 {sample}BCT\_3d\_03{sample}
@@ -88,17 +103,19 @@ chart.zDistribution(true);
 
 ##Supported Types
 
+Here you can learn more about the supported types of 3D charts:
+
 * [3D Area](3D_Area_Chart)
 * [3D Bar](3D_Bar_Chart)
 * [3D Column](3D_Column_Chart)
 * [3D Pie](3D_Pie_Chart)
-* [3D Vertical Area](3D_Vertical_Area_Chart)
-* [3D Value Stacked Area](3D_Value_Stacked_Area_Chart)
-* [3D Value Stacked Bar](3D_Value_Stacked_Bar_Chart)
-* [3D Value Stacked Column](3D_Value_Stacked_Column_Chart)
-* [3D Percent Stacked Area](3d_Percent_Stacked_Area_Chart)
-* [3D Percent Stacked Bar](3D_Percent_Stacked_Bar_Chart)
-* [3D Percent Stacked Column](3D_Column_Chart)
-* [3D Percent Stacked Column](3D_Percent_Stacked_Column_Chart)
-* [3D Vertical Value Stacked Area](3D_Vertical_Value_Stacked_Area_Chart)
-* [3D Vertical Percent Stacked Area](3D_Vertical_Percent_Stacked_Area_Chart)
+* [3D Doughnut](3D_Doughnut_Chart)
+
+See also 3D [stacked](../Stacked/Overview) charts:
+
+* [3D Value Stacked Area](../Stacked/Value/3D_Area_Chart)
+* [3D Value Stacked Bar](../Stacked/Value/3D_Bar_Chart)
+* [3D Value Stacked Column](../Stacked/Value/3D_Column_Chart)
+* [3D Percent Stacked Area](../Stacked/Percent/3D_Area_Chart)
+* [3D Percent Stacked Bar](../Stacked/Percent/3D_Bar_Chart)
+* [3D Percent Stacked Column](../Stacked/Percent/3D_Column_Chart)
