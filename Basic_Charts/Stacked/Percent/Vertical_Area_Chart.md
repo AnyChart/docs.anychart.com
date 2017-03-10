@@ -1,4 +1,4 @@
-{:index 4}
+{:index 6}
 # Vertical Percent Stacked Area Chart
 
 * [Overview](#overview)
@@ -27,7 +27,7 @@ var series1 = chart.area(seriesData_1);
 var series2 = chart.area(seriesData_2);
 ```
 
-{sample}BCT\_Percent\_Stacked\_Area\_Chart{sample}
+{sample}BCT\_Vertical\_Percent\_Stacked\_Area\_Chart{sample}
 
 ## Adjusting
 

@@ -1,4 +1,4 @@
-{:index 0}
+{:index 10}
 # 3D Percent Stacked Area Chart
 
 * [Overview](#overview)

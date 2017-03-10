@@ -1,4 +1,4 @@
-{:index 7}
+{:index 9}
 # Vertical Percent Stacked Stick Chart
 
 * [Overview](#overview)

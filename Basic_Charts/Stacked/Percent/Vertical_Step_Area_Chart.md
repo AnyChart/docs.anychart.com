@@ -1,4 +1,4 @@
-{:index 6}
+{:index 8}
 # Vertical Percent Stacked Step Area Chart
 
 * [Overview](#overview)

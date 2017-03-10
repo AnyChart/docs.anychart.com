@@ -1,4 +1,4 @@
-{:index 5}
+{:index 7}
 # Vertical Percent Stacked Spline Area Chart
 
 * [Overview](#overview)

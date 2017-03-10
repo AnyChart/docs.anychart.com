@@ -1,4 +1,4 @@
-{:index 0}
+{:index 12}
 # 3D Percent Stacked Column Chart
 
 * [Overview](#overview)

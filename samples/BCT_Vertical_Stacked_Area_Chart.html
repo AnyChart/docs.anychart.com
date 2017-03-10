@@ -26,7 +26,7 @@
   var chart = anychart.verticalArea();
 
   // enable the percent stacking mode
-  chart.yScale().stackMode("percent");
+  chart.yScale().stackMode("value");
 
   // create area series, set the data
   var series1 = chart.area(seriesData_1);
@@ -40,7 +40,7 @@
   chart.yAxis().labels().textFormatter("{%Value}");
 
   // set the chart title
-  chart.title("Vertical Percent Stacked Area Chart");
+  chart.title("Vertical Stacked Area Chart");
 
   // set the container id
   chart.container("container");
