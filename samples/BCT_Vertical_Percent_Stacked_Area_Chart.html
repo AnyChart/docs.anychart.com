@@ -29,9 +29,9 @@
   chart.yScale().stackMode("percent");
 
   // create stepArea series, set the data
-  var series1 = chart.stepArea(seriesData_1);
-  var series2 = chart.stepArea(seriesData_2);
-  var series3 = chart.stepArea(seriesData_3);
+  var series1 = chart.area(seriesData_1);
+  var series2 = chart.area(seriesData_2);
+  var series3 = chart.area(seriesData_3);
 
   // configure tooltips
   chart.tooltip().textFormatter("{%yPercentOfCategory}{decimalCount:2}%");
