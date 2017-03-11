@@ -63,9 +63,9 @@ chart.draw();
 
 After creating a series, you can change its orientation on-the-fly by calling the **isVertical** method and setting its parameter to either 'true' or 'false' (for example, here is the {api:anychart.{api:anychart.core.cartesian.series.Line#isVertical}isVertical(){api} method of the Line series).
 
-**Note** This setting affects only the series, not the axes.
+**Note:** This setting affects only the series, not the axes.
 
-In the following sample this method is used to draw two horizontal (area) and a vertical (bar) series on the same chart:
+In the following sample, this method is used to draw two horizontal (area) and a vertical (bar) series on the same chart:
 
 ```
 // create a chart
